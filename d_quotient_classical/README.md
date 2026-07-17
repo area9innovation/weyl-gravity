@@ -132,14 +132,19 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json`](certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json)
 - Full gauge-fixed causal-homotopy V2 proof:
   [`reports/berger-54-row-causal-green-homotopy-v2.md`](reports/berger-54-row-causal-green-homotopy-v2.md)
-- Abstract cyclic causal-transfer theorem for support-local SDRs, finite direct
-  sums and finite cyclic shears:
+- Abstract cyclic causal-transfer theorem for support-local SDR lifts and
+  descents, finite direct sums and finite cyclic shears:
   [`certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json`](certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json)
 - Human-readable theorem, proof and Berger 26-to-54 / coupled 36-to-64 replay:
   [`reports/abstract-cyclic-causal-transfer.md`](reports/abstract-cyclic-causal-transfer.md)
 - Strict portable consumer gate and accepted Berger adapter:
   [`schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json`](schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
   [`certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json`](certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json)
+- Second non-cylinder consumer: doubled adjoint-tractor mixed detour on
+  Minkowski with exact cyclic flavor shear and parent-to-BGG descent:
+  [`certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR.json`](certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR.json),
+  [`certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_CAUSAL_TRANSFER_CONSUMER.json`](certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_CAUSAL_TRANSFER_CONSUMER.json),
+  [`reports/minkowski-doubled-adjoint-tractor-mixed-detour.md`](reports/minkowski-doubled-adjoint-tractor-mixed-detour.md)
 - Cyclic causal D-Cartan V2 contraction through arity two:
   [`certificates/BERGER_CAUSAL_D_CARTAN_V2.json`](certificates/BERGER_CAUSAL_D_CARTAN_V2.json)
 - Causal-hull and cyclic-Reynolds V2 proof:

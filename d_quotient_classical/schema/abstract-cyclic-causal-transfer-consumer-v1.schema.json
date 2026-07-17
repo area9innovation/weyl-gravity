@@ -5,7 +5,7 @@
   "additionalProperties": false,
   "required": [
     "schema", "result_id", "theorem_ref", "setting_id", "generality_level",
-    "base_domain", "complexes", "pairing_and_signs", "SDR", "endpoint_green",
+    "base_domain", "complexes", "pairing_and_signs", "SDR", "causal_input",
     "shears", "preflight", "flags", "claim_boundary"
   ],
   "properties": {
@@ -40,14 +40,16 @@
     },
     "SDR": {
       "type": "object", "additionalProperties": false,
-      "required": ["ref", "formula", "finite_order_support_local", "chain_maps", "side_conditions", "operator_domains_preserved"],
+      "required": ["ref", "transfer_direction", "formula", "finite_order_support_local", "chain_maps", "side_conditions", "operator_domains_preserved"],
       "properties": {
-        "ref": {"$ref": "#/$defs/ref"}, "formula": {"type": "string"},
+        "ref": {"$ref": "#/$defs/ref"},
+        "transfer_direction": {"enum": ["ENDPOINT_TO_FULL_LIFT", "FULL_TO_ENDPOINT_DESCENT"]},
+        "formula": {"type": "string"},
         "finite_order_support_local": {"const": true}, "chain_maps": {"const": true},
         "side_conditions": {"const": true}, "operator_domains_preserved": {"const": true}
       }
     },
-    "endpoint_green": {
+    "causal_input": {
       "type": "object", "additionalProperties": false,
       "required": ["ref", "route", "advanced_and_retarded", "both_inverse_identities", "same_sided_support", "adjoint_reversal"],
       "properties": {
@@ -72,10 +74,10 @@
     },
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["ABSTRACT_CAUSAL_TRANSFER_CONSUMER_ACCEPTED", "BERGER_54_ROW_CAUSAL_TRANSFER_REPLAYED", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "G3_OPEN_BACKGROUND_CLASS", "QUANTUM_CLAIM"],
+      "required": ["ABSTRACT_CAUSAL_TRANSFER_CONSUMER_ACCEPTED", "CAUSAL_TRANSFER_REPLAYED", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "G3_OPEN_BACKGROUND_CLASS", "QUANTUM_CLAIM"],
       "properties": {
         "ABSTRACT_CAUSAL_TRANSFER_CONSUMER_ACCEPTED": {"const": true},
-        "BERGER_54_ROW_CAUSAL_TRANSFER_REPLAYED": {"const": true},
+        "CAUSAL_TRANSFER_REPLAYED": {"const": true},
         "TIMELIKE_BOUNDARY_VERSION": {"const": false}, "HADAMARD_TRANSFER": {"const": false},
         "G3_OPEN_BACKGROUND_CLASS": {"const": false}, "QUANTUM_CLAIM": {"const": false}
       }

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/minkowski-doubled-adjoint-tractor-mixed-detour-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "claim_status", "dependency_tags", "dependency_refs",
+    "background", "detour", "pairing", "exact_flavor_fixture", "exact_checks",
+    "flags", "source_manifest", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-minkowski-doubled-adjoint-tractor-mixed-detour-v1"},
+    "result_id": {"const": "MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR"},
+    "claim_status": {"const": "SECOND_NONCYLINDER_DETOUR_CONSUMER_CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["abstract_transfer", "kostant", "differential_bgg", "parent_green"],
+      "properties": {
+        "abstract_transfer": {"$ref": "#/$defs/ref"},
+        "kostant": {"$ref": "#/$defs/ref"},
+        "differential_bgg": {"$ref": "#/$defs/ref"},
+        "parent_green": {"$ref": "#/$defs/ref"}
+      }
+    },
+    "background": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spacetime", "not_conformal_cylinder", "globally_hyperbolic", "timelike_boundary", "riemann_tensor", "schouten_tensor", "adjoint_tractor_connection_flat"],
+      "properties": {
+        "spacetime": {"const": "Minkowski R^{1,3}"},
+        "not_conformal_cylinder": {"const": true},
+        "globally_hyperbolic": {"const": true},
+        "timelike_boundary": {"const": false},
+        "riemann_tensor": {"const": "0"},
+        "schouten_tensor": {"const": "0"},
+        "adjoint_tractor_connection_flat": {"const": true}
+      }
+    },
+    "detour": {
+      "type": "object", "additionalProperties": false,
+      "required": ["single_parent_degree_ranks", "single_endpoint_degree_ranks", "doubled_parent_degree_ranks", "doubled_endpoint_degree_ranks", "second_copy_normalization", "mixed_presentation", "off_diagonal_coupling", "parent_causal_input", "descent", "flat_differential_BGG_series_terminates_after"],
+      "properties": {
+        "single_parent_degree_ranks": {"const": [15, 60, 60, 15]},
+        "single_endpoint_degree_ranks": {"const": [4, 9, 9, 4]},
+        "doubled_parent_degree_ranks": {"const": [30, 120, 120, 30]},
+        "doubled_endpoint_degree_ranks": {"const": [8, 18, 18, 8]},
+        "second_copy_normalization": {"type": "string"},
+        "mixed_presentation": {"type": "string"},
+        "off_diagonal_coupling": {"type": "string"},
+        "parent_causal_input": {"type": "string"},
+        "descent": {"type": "string"},
+        "flat_differential_BGG_series_terminates_after": {"const": 2}
+      }
+    },
+    "pairing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["unmixed_flavor_metric", "mixed_flavor_metric", "shear_is_pairing_isometry_between_presentations", "degreewise_sign_involution_unchanged", "advanced_retarded_adjoint_reversal"],
+      "properties": {
+        "unmixed_flavor_metric": {"const": [[1, 0], [0, 1]]},
+        "mixed_flavor_metric": {"const": [[1, -1], [-1, 2]]},
+        "shear_is_pairing_isometry_between_presentations": {"const": true},
+        "degreewise_sign_involution_unchanged": {"const": true},
+        "advanced_retarded_adjoint_reversal": {"const": true}
+      }
+    },
+    "exact_flavor_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient_field", "flavor_normalization", "flavor_shear", "flavor_shear_inverse", "transported_flavor_pairing", "mixed_unary_matrix", "mixed_homotopy_matrix", "identity_defects"],
+      "properties": {
+        "coefficient_field": {"const": "Q"},
+        "flavor_normalization": {"type": "array"},
+        "flavor_shear": {"const": [[1, 1], [0, 1]]},
+        "flavor_shear_inverse": {"const": [[1, -1], [0, 1]]},
+        "transported_flavor_pairing": {"const": [[1, -1], [-1, 2]]},
+        "mixed_unary_matrix": {"type": "array"},
+        "mixed_homotopy_matrix": {"type": "array"},
+        "identity_defects": {"type": "object", "minProperties": 10, "additionalProperties": {"const": 0}}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 12, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["SECOND_NONCYLINDER_DETOUR_CONSUMER", "MIXED_FIELD_CAUSAL_TRANSFER_CONSUMER", "G3_OPEN_BACKGROUND_CLASS", "INTERACTING_MIXED_FIELD_THEORY", "HIGHER_SPIN_DISCOVERY", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "QUANTUM_CLAIM"],
+      "properties": {
+        "SECOND_NONCYLINDER_DETOUR_CONSUMER": {"const": true},
+        "MIXED_FIELD_CAUSAL_TRANSFER_CONSUMER": {"const": true},
+        "G3_OPEN_BACKGROUND_CLASS": {"const": false},
+        "INTERACTING_MIXED_FIELD_THEORY": {"const": false},
+        "HIGHER_SPIN_DISCOVERY": {"const": false},
+        "TIMELIKE_BOUNDARY_VERSION": {"const": false},
+        "HADAMARD_TRANSFER": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "source_manifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["producer", "independent_verifier", "tests", "strict_schema", "consumer_schema"],
+      "properties": {
+        "producer": {"$ref": "#/$defs/source"},
+        "independent_verifier": {"$ref": "#/$defs/source"},
+        "tests": {"$ref": "#/$defs/source"},
+        "strict_schema": {"$ref": "#/$defs/source"},
+        "consumer_schema": {"$ref": "#/$defs/source"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 700}
+  },
+  "$defs": {
+    "ref": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"}, "result_id": {"type": "string", "minLength": 8},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

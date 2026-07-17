@@ -9,7 +9,8 @@
       "result_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
       "sha256": "8893fa0457e513913e0a71c5e0f1923ff06cb8c32f7a662808c5c9ee37f7e521"
     },
-    "side_conditions": true
+    "side_conditions": true,
+    "transfer_direction": "ENDPOINT_TO_FULL_LIFT"
   },
   "base_domain": {
     "globally_hyperbolic": true,
@@ -19,6 +20,18 @@
     "support_rule": "supp Lambda_+/- f subset J^+/-(supp f)",
     "timelike_boundary": false,
     "zero_mode_rule": "retain spatial zero modes; no elliptic or harmonic projector"
+  },
+  "causal_input": {
+    "adjoint_reversal": true,
+    "advanced_and_retarded": true,
+    "both_inverse_identities": true,
+    "ref": {
+      "path": "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb"
+    },
+    "route": "WITNESS_COMPANION_GREEN",
+    "same_sided_support": true
   },
   "claim_boundary": "This adapter proves that the complete 54-row Berger gravity--clock unary complex satisfies every input gate of the abstract cyclic causal-transfer theorem and inherits its advanced/retarded chain homotopies from the independently certified retained 26-row endpoint. Its degreewise adjoint signs are derived from the exact odd BV pairing rather than replaced by one scalar sign. It is a G2 application on one globally hyperbolic background without timelike boundary. It does not prove a second detour consumer, a uniform G3 background family, boundary-domain transfer, Hadamard or wavefront-set transport, interactions, a QME result, or any quantum claim. The frozen generator remains K_Berger rather than raw affine D.",
   "complexes": {
@@ -51,21 +64,9 @@
       "rows": 54
     }
   },
-  "endpoint_green": {
-    "adjoint_reversal": true,
-    "advanced_and_retarded": true,
-    "both_inverse_identities": true,
-    "ref": {
-      "path": "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
-      "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
-      "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb"
-    },
-    "route": "WITNESS_COMPANION_GREEN",
-    "same_sided_support": true
-  },
   "flags": {
     "ABSTRACT_CAUSAL_TRANSFER_CONSUMER_ACCEPTED": true,
-    "BERGER_54_ROW_CAUSAL_TRANSFER_REPLAYED": true,
+    "CAUSAL_TRANSFER_REPLAYED": true,
     "G3_OPEN_BACKGROUND_CLASS": false,
     "HADAMARD_TRANSFER": false,
     "QUANTUM_CLAIM": false,
@@ -87,10 +88,10 @@
   "preflight": {
     "all_shears_admissible": true,
     "boundary_conditions_declared": true,
+    "causal_input_Green_package_exact": true,
     "consumer_accepted": true,
     "cyclic_SDR_exact": true,
     "degreewise_sign_data_present": true,
-    "endpoint_Green_package_exact": true,
     "operator_domains_declared": true,
     "same_sided_support_declared": true,
     "typed_complexes": true
@@ -114,6 +115,6 @@
   "theorem_ref": {
     "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
     "result_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
-    "sha256": "5dc4d82289e2d542d7f1bef58efa14a5ddf4d779b65017ba77b36fa092b27576"
+    "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
   }
 }

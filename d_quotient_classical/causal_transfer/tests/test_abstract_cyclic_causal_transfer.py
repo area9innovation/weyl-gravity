@@ -22,6 +22,11 @@ class AbstractCyclicCausalTransferTests(unittest.TestCase):
             self.payload["conclusions"]["SDR_transport_formula"],
             "Lambda_C,+/-=h+i Lambda_E,+/- p",
         )
+        self.assertEqual(
+            self.payload["conclusions"]["SDR_descent_formula"],
+            "Lambda_E,+/-=p Lambda_C,+/- i",
+        )
+        self.assertTrue(self.payload["flags"]["ABSTRACT_CAUSAL_DESCENT_CERTIFIED"])
 
     def test_cyclic_and_shear_closure(self):
         self.assertTrue(self.payload["flags"]["ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED"])
@@ -35,7 +40,6 @@ class AbstractCyclicCausalTransferTests(unittest.TestCase):
 
     def test_generality_is_fail_closed(self):
         self.assertFalse(self.payload["generality"]["G3_background_class_promoted"])
-        self.assertFalse(self.payload["flags"]["SECOND_NONCYLINDER_DETOUR_CONSUMER"])
         self.assertFalse(self.payload["flags"]["HADAMARD_TRANSFER"])
 
     def test_raw_D_not_promoted(self):

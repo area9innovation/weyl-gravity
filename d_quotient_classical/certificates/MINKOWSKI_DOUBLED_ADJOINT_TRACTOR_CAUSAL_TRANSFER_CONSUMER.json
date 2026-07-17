@@ -1,0 +1,120 @@
+{
+  "SDR": {
+    "chain_maps": true,
+    "finite_order_support_local": true,
+    "formula": "Lambda52,+/-=p2 Lambda300,+/- i2",
+    "operator_domains_preserved": true,
+    "ref": {
+      "path": "covariant_completion/certificates/adjoint_tractor_bgg_differential_screen.json",
+      "result_id": "ADJOINT_TRACTOR_BGG_DIFFERENTIAL_SCREEN",
+      "sha256": "b6aa38eaef76eb55e9594ab92477d722172934739a268b98809bd6cb12639151"
+    },
+    "side_conditions": true,
+    "transfer_direction": "FULL_TO_ENDPOINT_DESCENT"
+  },
+  "base_domain": {
+    "globally_hyperbolic": true,
+    "solution_space": "smooth same-sided advanced or retarded sections in every degree",
+    "source_space": "Gamma_c smooth sections in every doubled parent and endpoint degree",
+    "spacetime": "Minkowski R^{1,3}",
+    "support_rule": "supp Lambda_+/- f subset J^+/-(supp f)",
+    "timelike_boundary": false,
+    "zero_mode_rule": "no spatial, helicity, harmonic, or pseudodifferential projector is used"
+  },
+  "causal_input": {
+    "adjoint_reversal": true,
+    "advanced_and_retarded": true,
+    "both_inverse_identities": true,
+    "ref": {
+      "path": "covariant_completion/certificates/adjoint_tractor_green_transfer.json",
+      "result_id": "ADJOINT_TRACTOR_GREEN_TRANSFER",
+      "sha256": "228e4ffd21fccdac155629342ea75ab590f10b75272dcfe20fdc2fa304edb7d8"
+    },
+    "route": "DIRECT_GREEN_HOMOTOPY",
+    "same_sided_support": true
+  },
+  "claim_boundary": "This adapter validates a second, non-cylinder G2 consumer of the abstract cyclic causal-transfer theorem. The causal input is the doubled flat adjoint-tractor parent detour on Minkowski; the transfer direction is descent through the finite differential BGG SDR to the doubled 4-9-9-4 endpoint. Opposite normalization of the second copy and a pairing-isometric triangular flavor shear give a nontrivially coupled unary presentation. The construction is nevertheless linearly equivalent to two free copies and is only a portability stress test. It neither supplies an interaction vertex nor promotes a higher-spin, G3 open-background, timelike-boundary, Hadamard, renormalized, anomaly, QME, or quantum theorem. It does not alter any curved-cylinder certificate and does not infer curved BGG exactness from flat Minkowski data.",
+  "complexes": {
+    "endpoint": {
+      "degree_ranks": [
+        8,
+        18,
+        18,
+        8
+      ],
+      "q_ref": {
+        "path": "covariant_completion/certificates/adjoint_tractor_bgg_differential_screen.json",
+        "result_id": "ADJOINT_TRACTOR_BGG_DIFFERENTIAL_SCREEN",
+        "sha256": "b6aa38eaef76eb55e9594ab92477d722172934739a268b98809bd6cb12639151"
+      },
+      "rows": 52
+    },
+    "full": {
+      "degree_ranks": [
+        30,
+        120,
+        120,
+        30
+      ],
+      "q_ref": {
+        "path": "covariant_completion/certificates/adjoint_tractor_green_transfer.json",
+        "result_id": "ADJOINT_TRACTOR_GREEN_TRANSFER",
+        "sha256": "228e4ffd21fccdac155629342ea75ab590f10b75272dcfe20fdc2fa304edb7d8"
+      },
+      "rows": 300
+    }
+  },
+  "flags": {
+    "ABSTRACT_CAUSAL_TRANSFER_CONSUMER_ACCEPTED": true,
+    "CAUSAL_TRANSFER_REPLAYED": true,
+    "G3_OPEN_BACKGROUND_CLASS": false,
+    "HADAMARD_TRANSFER": false,
+    "QUANTUM_CLAIM": false,
+    "TIMELIKE_BOUNDARY_VERSION": false
+  },
+  "generality_level": "G2_COMPLETE_LINEAR_COMPLEX_ON_ONE_BACKGROUND",
+  "pairing_and_signs": {
+    "cyclic_SDR_verified": true,
+    "formal_adjoint": "sharp from the adjoint-tractor/form pairing tensored with the transported flavor metric",
+    "pairing_ref": {
+      "path": "d_quotient_classical/certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR.json",
+      "result_id": "MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR",
+      "sha256": "7e9a3d2d697666c55f0051dbb5cf245470408a83c92b39ae64b46b891657c4d1"
+    },
+    "scalar_uniform_sign_assumed": false,
+    "sign_representation": "PAIRING_MATRIX_DERIVED_DEGREEWISE_INVOLUTION",
+    "sign_rule": "Lambda_+^sharp=Sigma Lambda_- Sigma^-1 in complementary degree"
+  },
+  "preflight": {
+    "all_shears_admissible": true,
+    "boundary_conditions_declared": true,
+    "causal_input_Green_package_exact": true,
+    "consumer_accepted": true,
+    "cyclic_SDR_exact": true,
+    "degreewise_sign_data_present": true,
+    "operator_domains_declared": true,
+    "same_sided_support_declared": true,
+    "typed_complexes": true
+  },
+  "result_id": "MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_CAUSAL_TRANSFER_CONSUMER",
+  "schema": "pure-weyl-abstract-cyclic-causal-transfer-consumer-v1",
+  "setting_id": "minkowski_doubled_opposite_normalization_adjoint_tractor_detour",
+  "shears": {
+    "boundary_domain_preserved": true,
+    "degreewise_sign_intertwining": true,
+    "finite_order": true,
+    "finite_order_inverse": true,
+    "pairing_unitary": true,
+    "ref": {
+      "path": "d_quotient_classical/certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR.json",
+      "result_id": "MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR",
+      "sha256": "7e9a3d2d697666c55f0051dbb5cf245470408a83c92b39ae64b46b891657c4d1"
+    },
+    "support_local": true
+  },
+  "theorem_ref": {
+    "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+    "result_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+    "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
+  }
+}

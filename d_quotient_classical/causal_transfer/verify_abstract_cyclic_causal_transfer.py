@@ -51,10 +51,13 @@ def verify(path: Path, consumer_path: Path = DEFAULT_CONSUMER) -> None:
     h[1, 3] = 1
     endpoint = sp.Matrix([[0, 1], [0, 0]])
     transferred = h + i * endpoint * p
+    descended = p * transferred * i
     if not _is_zero(q * h + h * q - (sp.eye(4) - i * p)):
         raise AssertionError("independent SDR identity failed")
     if not _is_zero(q * transferred + transferred * q - sp.eye(4)):
         raise AssertionError("independent transferred homotopy failed")
+    if not _is_zero(d * descended + descended * d - sp.eye(2)):
+        raise AssertionError("independent descended homotopy failed")
 
     j_e = sp.Matrix([[0, 1], [-1, 0]])
     j_c = sp.Matrix([[0, 0, 1, 0], [0, 0, 0, 1], [-1, 0, 0, 0], [0, -1, 0, 0]])
@@ -89,8 +92,9 @@ def verify(path: Path, consumer_path: Path = DEFAULT_CONSUMER) -> None:
         raise AssertionError("certificate exact check dropped")
     if data["flags"]["ABSTRACT_CAUSAL_TRANSFER_CERTIFIED"] is not True:
         raise AssertionError("abstract theorem not promoted")
+    if data["flags"]["ABSTRACT_CAUSAL_DESCENT_CERTIFIED"] is not True:
+        raise AssertionError("abstract causal descent not promoted")
     for forbidden in (
-        "SECOND_NONCYLINDER_DETOUR_CONSUMER",
         "G3_OPEN_BACKGROUND_CLASS",
         "TIMELIKE_BOUNDARY_VERSION",
         "HADAMARD_TRANSFER",

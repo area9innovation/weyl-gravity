@@ -30,29 +30,32 @@
     },
     "hypotheses": {
       "type": "object", "additionalProperties": false,
-      "required": ["base", "complexes", "cyclic_support_local_SDR", "endpoint_option_A", "endpoint_option_B", "cyclic_endpoint", "finite_shear"],
+      "required": ["base", "complexes", "cyclic_support_local_SDR", "endpoint_option_A", "endpoint_option_B", "full_descent_option", "cyclic_endpoint", "finite_shear"],
       "properties": {
         "base": {"type": "string"}, "complexes": {"type": "string"},
         "cyclic_support_local_SDR": {"type": "array", "minItems": 7, "items": {"type": "string"}},
         "endpoint_option_A": {"type": "string"}, "endpoint_option_B": {"type": "string"},
+        "full_descent_option": {"type": "string"},
         "cyclic_endpoint": {"type": "string"}, "finite_shear": {"type": "string"}
       }
     },
     "conclusions": {
       "type": "object", "additionalProperties": false,
-      "required": ["SDR_transport_formula", "chain_identity", "support", "cyclic_adjoint", "direct_sum", "finite_cyclic_shear", "no_endpoint_factorization_required"],
+      "required": ["SDR_transport_formula", "chain_identity", "SDR_descent_formula", "descent_chain_identity", "support", "cyclic_adjoint", "direct_sum", "finite_cyclic_shear", "no_transferred_factorization_required"],
       "properties": {
         "SDR_transport_formula": {"const": "Lambda_C,+/-=h+i Lambda_E,+/- p"},
         "chain_identity": {"type": "string"}, "support": {"type": "string"},
+        "SDR_descent_formula": {"const": "Lambda_E,+/-=p Lambda_C,+/- i"},
+        "descent_chain_identity": {"type": "string"},
         "cyclic_adjoint": {"type": "string"}, "direct_sum": {"type": "string"},
-        "finite_cyclic_shear": {"type": "string"}, "no_endpoint_factorization_required": {"type": "string"}
+        "finite_cyclic_shear": {"type": "string"}, "no_transferred_factorization_required": {"type": "string"}
       }
     },
     "proof_ledger": {
       "type": "object", "additionalProperties": false,
-      "required": ["witness_route", "SDR_route", "support_route", "adjoint_route", "shear_route"],
+      "required": ["witness_route", "SDR_route", "SDR_descent_route", "support_route", "adjoint_route", "shear_route"],
       "properties": {
-        "witness_route": {"type": "string"}, "SDR_route": {"type": "string"},
+        "witness_route": {"type": "string"}, "SDR_route": {"type": "string"}, "SDR_descent_route": {"type": "string"},
         "support_route": {"type": "string"}, "adjoint_route": {"type": "string"},
         "shear_route": {"type": "string"}
       }
@@ -99,13 +102,13 @@
     "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["ABSTRACT_CAUSAL_TRANSFER_CERTIFIED", "ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED", "ABSTRACT_FINITE_CYCLIC_SHEAR_TRANSFER_CERTIFIED", "BERGER_FIRST_CAUSAL_TRANSFER_CONSUMER", "SECOND_NONCYLINDER_DETOUR_CONSUMER", "G3_OPEN_BACKGROUND_CLASS", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "QUANTUM_CLAIM"],
+      "required": ["ABSTRACT_CAUSAL_TRANSFER_CERTIFIED", "ABSTRACT_CAUSAL_DESCENT_CERTIFIED", "ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED", "ABSTRACT_FINITE_CYCLIC_SHEAR_TRANSFER_CERTIFIED", "BERGER_FIRST_CAUSAL_TRANSFER_CONSUMER", "G3_OPEN_BACKGROUND_CLASS", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "QUANTUM_CLAIM"],
       "properties": {
         "ABSTRACT_CAUSAL_TRANSFER_CERTIFIED": {"const": true},
+        "ABSTRACT_CAUSAL_DESCENT_CERTIFIED": {"const": true},
         "ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED": {"const": true},
         "ABSTRACT_FINITE_CYCLIC_SHEAR_TRANSFER_CERTIFIED": {"const": true},
         "BERGER_FIRST_CAUSAL_TRANSFER_CONSUMER": {"const": true},
-        "SECOND_NONCYLINDER_DETOUR_CONSUMER": {"const": false},
         "G3_OPEN_BACKGROUND_CLASS": {"const": false},
         "TIMELIKE_BOUNDARY_VERSION": {"const": false},
         "HADAMARD_TRANSFER": {"const": false},

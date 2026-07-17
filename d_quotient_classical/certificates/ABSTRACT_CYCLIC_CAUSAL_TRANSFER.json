@@ -10,15 +10,17 @@
     "gravity_formula": "Lambda54,+/-=S_cl+iota_cl Lambda26,+/- pi_cl",
     "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
   },
-  "claim_boundary": "This is a conditional abstract transfer theorem. It proves that already-existing advanced and retarded endpoint Green homotopies, or homotopies constructed from an independently certified Green companion, transport through a finite-order support-local cyclic SDR, finite direct sums, and finite cyclic shears. It does not prove that a proposed endpoint operator is Green hyperbolic, and the finite exact fixture is only an audit of the universal algebra. The Berger 26-to-54 and coupled 36-to-64 constructions are the first G2 consumer; no second non-cylinder detour consumer or uniform G3 background class is yet certified. The theorem excludes pseudodifferential projectors and infinite-order or non-support-local inverses. It does not address timelike boundaries unless all domains and boundary conditions satisfy the hypotheses, and it does not transport wavefront-set, Hadamard, renormalized, interacting, QME, anomaly, or quantum data. Berger equivariance is for K_Berger=D-omega R; it does not repair or promote the open affine raw-D Cartan problem.",
+  "claim_boundary": "This is a conditional abstract transfer theorem. It proves that already-existing advanced and retarded Green homotopies, or homotopies constructed from an independently certified Green companion, lift or descend through a finite-order support-local cyclic SDR and survive finite direct sums and finite cyclic shears. It does not prove that a proposed causal-input operator is Green hyperbolic, and the finite exact fixture is only an audit of the universal algebra. The Berger 26-to-54 and coupled 36-to-64 constructions are its embedded first G2 replay; additional consumers are certified by downstream artifacts rather than promoted inside this upstream theorem certificate. No uniform G3 background class is certified. The theorem excludes pseudodifferential projectors and infinite-order or non-support-local inverses. It does not address timelike boundaries unless all domains and boundary conditions satisfy the hypotheses, and it does not transport wavefront-set, Hadamard, renormalized, interacting, QME, anomaly, or quantum data. Berger equivariance is for K_Berger=D-omega R; it does not repair or promote the open affine raw-D Cartan problem.",
   "claim_status": "ABSTRACT_CAUSAL_TRANSFER_CERTIFIED",
   "conclusions": {
+    "SDR_descent_formula": "Lambda_E,+/-=p Lambda_C,+/- i",
     "SDR_transport_formula": "Lambda_C,+/-=h+i Lambda_E,+/- p",
     "chain_identity": "q_C Lambda_C,+/-+Lambda_C,+/- q_C=1_C",
     "cyclic_adjoint": "Lambda_C,+^sharp=Sigma_C Lambda_C,- Sigma_C^-1",
+    "descent_chain_identity": "q_E Lambda_E,+/-+Lambda_E,+/- q_E=1_E",
     "direct_sum": "finite direct sums transfer componentwise",
     "finite_cyclic_shear": "for q'=U q U^-1, Lambda'_+/-=U Lambda_+/- U^-1 has the same chain, support, and cyclic-adjoint properties",
-    "no_endpoint_factorization_required": "the theorem needs endpoint Green homotopies or a Green companion; it does not require a scalar-symbol factorization of every reduced middle operator",
+    "no_transferred_factorization_required": "the theorem needs a causal homotopy or Green companion on the declared input side; it does not require a scalar-symbol factorization of the transferred complex",
     "support": "supp Lambda_C,+/- f is contained in J^+/-(supp f)"
   },
   "consumer_contract": {
@@ -29,11 +31,11 @@
       "boundary-condition preservation",
       "support-local cyclic SDR identities",
       "pairing-derived degreewise sign involutions",
-      "endpoint Green homotopy or witness/companion/Green package",
+      "causal-input homotopy or witness/companion/Green package",
       "finite-order inverse and sign-intertwining for every shear"
     ],
     "schema_path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json",
-    "schema_sha256": "b5c9c90dd76d6bd88117608665272508314565554a6db2efc8716f86da2fa671"
+    "schema_sha256": "0a3501e764122f282a1e6a2a415bf37edb034b77ffc521cd8ab51cd3c0cdd5d4"
   },
   "dependency_refs": {
     "berger_54_to_26_sdr": {
@@ -85,6 +87,7 @@
     "finite_direct_sum_closure": true,
     "finite_exact_fixture_all_defects_zero": true,
     "same_sided_support_transport": true,
+    "universal_SDR_causal_descent_identity": true,
     "universal_SDR_chain_identity": true,
     "universal_witness_to_homotopy_algebra": true
   },
@@ -109,6 +112,9 @@
     "identity_defects": {
       "algebraic_homotopy_adjoint": 0,
       "cyclic_shear": 0,
+      "descended_homotopy": 0,
+      "descended_homotopy_adjoint": 0,
+      "descent_recovers_endpoint": 0,
       "endpoint_homotopy": 0,
       "endpoint_homotopy_adjoint": 0,
       "endpoint_nilpotency": 0,
@@ -141,6 +147,7 @@
     }
   },
   "flags": {
+    "ABSTRACT_CAUSAL_DESCENT_CERTIFIED": true,
     "ABSTRACT_CAUSAL_TRANSFER_CERTIFIED": true,
     "ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED": true,
     "ABSTRACT_FINITE_CYCLIC_SHEAR_TRANSFER_CERTIFIED": true,
@@ -148,7 +155,6 @@
     "G3_OPEN_BACKGROUND_CLASS": false,
     "HADAMARD_TRANSFER": false,
     "QUANTUM_CLAIM": false,
-    "SECOND_NONCYLINDER_DETOUR_CONSUMER": false,
     "TIMELIKE_BOUNDARY_VERSION": false
   },
   "generality": {
@@ -172,9 +178,11 @@
     ],
     "endpoint_option_A": "advanced/retarded degree-minus-one maps Lambda_E,+/- with q_E Lambda_E,+/-+Lambda_E,+/- q_E=1_E and same-sided causal support",
     "endpoint_option_B": "a finite-order witness W with P=q_E W+W q_E, degreewise advanced/retarded Green operators G_P,+/-, and causal uniqueness giving q_E G_P,+/-=G_P,+/- q_E; then Lambda_E,+/-=W G_P,+/-",
-    "finite_shear": "optional support-local chain isomorphism U with finite-order support-local inverse, U^sharp=U^-1, and U Sigma_C=Sigma_C U; a sufficient implementation is U=1+N with filtration-nilpotent N and a finite inverse"
+    "finite_shear": "optional support-local chain isomorphism U with finite-order support-local inverse, U^sharp=U^-1, and U Sigma_C=Sigma_C U; a sufficient implementation is U=1+N with filtration-nilpotent N and a finite inverse",
+    "full_descent_option": "alternatively, advanced/retarded degree-minus-one maps Lambda_C,+/- on C descend to E by p Lambda_C,+/- i"
   },
   "proof_ledger": {
+    "SDR_descent_route": "q_E(p Lambda_C i)+(p Lambda_C i)q_E=p(q_C Lambda_C+Lambda_C q_C)i=p i=1",
     "SDR_route": "q_C(h+i Lambda_E p)+(h+i Lambda_E p)q_C=(1-i p)+i(q_E Lambda_E+Lambda_E q_E)p=1",
     "adjoint_route": "take the graded adjoint and use the Sigma intertwiners, i^sharp=p, p^sharp=i, h^sharp=Sigma_C h Sigma_C^-1, and endpoint advanced/retarded reversal",
     "shear_route": "conjugate the chain identity by U; support follows from locality of U and U^-1, while U^sharp=U^-1 transports the adjoint relation",
@@ -186,23 +194,23 @@
   "source_manifest": {
     "consumer_schema": {
       "path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json",
-      "sha256": "b5c9c90dd76d6bd88117608665272508314565554a6db2efc8716f86da2fa671"
+      "sha256": "0a3501e764122f282a1e6a2a415bf37edb034b77ffc521cd8ab51cd3c0cdd5d4"
     },
     "independent_verifier": {
       "path": "d_quotient_classical/causal_transfer/verify_abstract_cyclic_causal_transfer.py",
-      "sha256": "13674b1f235b0bd40d35ea311e3cb3190bd0d03a51b9f112b0de9cb8623789b4"
+      "sha256": "1b11a364b25f0b998015180ce9be19de9ff03ce42e1235d98cbd2a841deb8719"
     },
     "producer": {
       "path": "d_quotient_classical/causal_transfer/abstract_cyclic_causal_transfer.py",
-      "sha256": "fd931c7e5374f7a6a4e878542730852571685267b325166b8f5527ad5f71c5b6"
+      "sha256": "9e75fa8127ae349535c3be1816a7a713b7b56e7868e172638cb94efde4ea6ea0"
     },
     "strict_schema": {
       "path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-v1.schema.json",
-      "sha256": "be1cce02c39d8892cc95fec5cb71249d4e4df8aa94c036dd6411add83540cd33"
+      "sha256": "e75479a22bc353646216150f81c2d4b2eaf94898b312d571db81d458c77b1d0d"
     },
     "tests": {
       "path": "d_quotient_classical/causal_transfer/tests/test_abstract_cyclic_causal_transfer.py",
-      "sha256": "c97ac44ff0fdb17ceabab08f6bc3ebfd37be268a400a32509a479255479a5ef1"
+      "sha256": "1660496061393eb3e1c1172fd2d7d374b56db903d405eaeb4d48a8cb5c8392af"
     }
   },
   "verification_commands": [

@@ -25,6 +25,23 @@ Then
 q_C Lambda_C,+/- + Lambda_C,+/- q_C = 1_C.
 ```
 
+The same SDR also transfers a parent homotopy downward.  If `C` already has
+`Lambda_C,+/-`, then
+
+```text
+Lambda_E,+/- = p Lambda_C,+/- i
+```
+
+satisfies
+
+```text
+q_E Lambda_E,+/- + Lambda_E,+/- q_E
+  = p(q_C Lambda_C,+/- + Lambda_C,+/- q_C)i
+  = p i = 1_E.
+```
+
+This is the direction used by tractor/BGG compression.
+
 Moreover, `Lambda_C,+/-` has the same advanced or retarded support.  Indeed,
 the endpoint term is a composition of support-local maps with a same-sided
 causal map, while `supp(hf)` is contained in `supp(f)`, hence in both its
@@ -91,7 +108,7 @@ to intertwine the degreewise sign involution.
 Every new application must validate the strict consumer contract before any
 coefficient search.  It requires typed complexes, operator domains, boundary
 conditions, same-sided support, all cyclic SDR identities, pairing-derived
-degreewise signs, an endpoint Green package, and a finite local inverse for
+degreewise signs, a causal-input Green package, and a finite local inverse for
 every shear.  Missing data produce a rejected preflight rather than an
 inferred transfer theorem.
 
@@ -119,8 +136,8 @@ frozen unary generator is `K_Berger=D-omega R`, not raw affine `D`.
 ## Scope
 
 This result is an abstract conditional theorem plus one complete `G2`
-consumer.  It does not itself establish endpoint Green hyperbolicity.  It
+consumer.  It does not itself establish causal-input Green hyperbolicity.  It
 does not cover pseudodifferential projectors, timelike-boundary domains,
 Hadamard wavefront sets, renormalized products, interactions, or quantum
-claims.  A second non-cylinder detour consumer and a uniform `G3` background
-class remain open.
+claims.  Downstream consumers are certified in their own acyclic artifacts;
+a uniform `G3` background class remains open.

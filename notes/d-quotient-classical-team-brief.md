@@ -1027,12 +1027,19 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 7. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
    acceptance flags pass; until then the relative observable functor remains
    a preflight and must not reconstruct the Einstein map independently.
-8. C-G1 is certified as `ABSTRACT_CYCLIC_CAUSAL_TRANSFER`.  Preserve it as a
-   regression input.  A bounded causal parallel rail may now begin C-G5 (one
-   non-cylinder detour consumer) or state the C-G2 uniform background
-   hypotheses; neither displaces the branch projector required for the
-   connected physical story.
-9. Continue the deformation, Yang--Mills and boundary rails as independent
+8. C-G1 is certified as `ABSTRACT_CYCLIC_CAUSAL_TRANSFER`, including both SDR
+   lift and descent.  C-G5 now has a second non-cylinder `G2` consumer: the
+   doubled adjoint-tractor mixed detour on Minkowski.  Preserve both as
+   regression inputs.  The remaining causal generality gate is C-G2: state
+   and verify uniform hypotheses on an open background class.  This does not
+   displace the branch projector required for the connected physical story.
+9. Queue `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` as the next classical-to-
+   quantum handoff.  It must be an authoritative, support-local minimal-BV
+   antifield/Koszul--Tate export with typed rows, pairings, signs, provenance,
+   and exact unary identities.  The quantum team owns independent validation
+   and the subsequent minimal-BV `H^{0,4}` and `H^{1,4}` quotient.  Until the
+   export lands, both quotient promotions remain fail closed.
+10. Continue the deformation, Yang--Mills and boundary rails as independent
    generality tests, not prerequisites for the Berger relational-observable
    or causal-transfer gates.
 

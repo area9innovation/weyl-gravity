@@ -94,6 +94,16 @@ h^\sharp=\Sigma_C h\Sigma_C^{-1},\qquad
 \]
 Thus no uniform scalar sign is assumed across all degrees.
 
+The same cyclic SDR also transfers an already constructed parent homotopy
+downward:
+\[
+\Lambda_{E,\pm}=p\Lambda_{C,\pm}i,
+\qquad
+q_E\Lambda_{E,\pm}+\Lambda_{E,\pm}q_E
+=p(q_C\Lambda_{C,\pm}+\Lambda_{C,\pm}q_C)i=1_E.
+\]
+This is the direction used by differential tractor/BGG compression.
+
 The content-addressed first consumer is the Berger gravity--clock complex:
 
 ```text
@@ -110,12 +120,22 @@ The exact certificate and independent replay are
 New applications must first satisfy the strict
 [`consumer contract`](../d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
 which requires typed operator domains, boundary conditions, pairing-derived
-sign data, the exact cyclic SDR, endpoint Green data, and finite local inverses
+sign data, the exact cyclic SDR, causal-input Green data, and finite local inverses
 for all shears.  The accepted Berger adapter is
 [`BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER`](../d_quotient_classical/certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json).
-The theorem is background-uniform as a conditional statement, while its first
-consumer remains `G2`: no open `G3` background family has yet been proved to
-satisfy the analytic hypotheses uniformly.
+The theorem is background-uniform as a conditional statement. Two `G2`
+consumers are now certified: the Berger lift above and a non-cylinder
+parent-to-endpoint descent on Minkowski. The latter doubles the flat
+adjoint-tractor detour with opposite normalization, applies a cyclic triangular
+flavor shear, and descends the parent Hodge homotopy through the exact flat
+differential BGG retract. Its proof and portable adapter are
+[`MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR`](../d_quotient_classical/certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR.json)
+and
+[`MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_CAUSAL_TRANSFER_CONSUMER`](../d_quotient_classical/certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_CAUSAL_TRANSFER_CONSUMER.json).
+The mixed unary presentation has a nonzero off-diagonal block, but is linearly
+equivalent to two free copies; it is a portability test, not an interacting
+model. No open `G3` background family has yet been proved to satisfy the
+analytic hypotheses uniformly.
 
 The earlier conformal-cylinder construction remains the motivating detour
 example:
@@ -130,8 +150,9 @@ example:
 Its proof factors the construction into curvature prolongation, exact
 tractor-to-BGG contraction, filtered homological perturbation, finite local
 shears, and cyclic adjoint transport. Each factor has an explicit inverse or
-homotopy identity and a support ledger. Recasting that full construction as a
-second content-addressed consumer of the abstract theorem is still open.
+homotopy identity and a support ledger. Recasting the full curved-cylinder
+construction as a standalone content-addressed consumer remains separate from
+the flat Minkowski portability pilot.
 
 ## 5. Consequence in their language
 
@@ -149,14 +170,15 @@ The abstract result is conditional: it does **not** establish endpoint Green
 hyperbolicity on a proposed background. It does not cover timelike boundaries,
 interactions, a Hadamard state, time-ordered products, or the quantum master
 equation. The surviving $H^4$ classes are centered deformation classes, not
-one-particle gravitons. A second non-Berger detour consumer is still required
-to test the reusable hypotheses outside the first certified application.
+one-particle gravitons. The second non-Berger detour consumer is now present,
+but uniform `G3` background dependence and timelike-boundary domains remain
+open.
 
 ## 7. One useful question for adjacent experts
 
-> Which small non-cylinder detour complex gives the sharpest test of the
-> theorem's support-local cyclic-SDR hypotheses, especially when the natural
-> contraction contains differential rather than pointwise shears?
+> Can the same consumer contract be verified uniformly on a nontrivial open
+> family of curved backgrounds, including stable operator domains and
+> degreewise Green estimates?
 
 ## Reproducibility receipt
 
@@ -165,8 +187,8 @@ source papers: arXiv:2207.04069v2; arXiv:math/0606401v2
 project source: Paper 8 artifact-ready snapshot and current master
 verification: commands in section 3
 dependency tag: LORENTZIAN-CAUSAL
-generality level: ABSTRACT_CONDITIONAL_THEOREM; G2_FIRST_CONSUMER
-lifecycle state: ABSTRACT_THEOREM_CERTIFIED_SECOND_CONSUMER_OPEN
+generality level: ABSTRACT_CONDITIONAL_THEOREM; TWO_G2_CONSUMERS
+lifecycle state: ABSTRACT_THEOREM_AND_SECOND_NONCYLINDER_CONSUMER_CERTIFIED
 claim flag: ABSTRACT_CAUSAL_TRANSFER_CERTIFIED
-open fields: second non-cylinder consumer; G3 family; boundary version
+open fields: G3 family; boundary version; Hadamard transfer
 ```

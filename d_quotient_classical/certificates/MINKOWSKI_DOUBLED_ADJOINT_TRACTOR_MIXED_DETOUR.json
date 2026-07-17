@@ -1,0 +1,252 @@
+{
+  "background": {
+    "adjoint_tractor_connection_flat": true,
+    "globally_hyperbolic": true,
+    "not_conformal_cylinder": true,
+    "riemann_tensor": "0",
+    "schouten_tensor": "0",
+    "spacetime": "Minkowski R^{1,3}",
+    "timelike_boundary": false
+  },
+  "claim_boundary": "This certificate is a non-cylinder G2 portability consumer for the abstract cyclic causal-transfer theorem. It uses the flat adjoint-tractor Yang--Mills detour on Minkowski, doubles it with opposite differential normalization, applies a finite exact triangular flavor shear, and descends the parent causal homotopy through the already-certified flat differential BGG SDR. The coupled presentation has a nonzero off-diagonal unary operator but is linearly equivalent to two free copies. It is not an interacting mixed-field model, a higher-spin construction, a uniform open-background theorem, a timelike-boundary result, a Hadamard or wavefront-set theorem, or a quantum claim. It does not promote the separate curved-cylinder endpoint flags and it does not use the unresolved curved PBW screen as evidence.",
+  "claim_status": "SECOND_NONCYLINDER_DETOUR_CONSUMER_CERTIFIED",
+  "dependency_refs": {
+    "abstract_transfer": {
+      "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+      "result_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+      "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
+    },
+    "differential_bgg": {
+      "path": "covariant_completion/certificates/adjoint_tractor_bgg_differential_screen.json",
+      "result_id": "ADJOINT_TRACTOR_BGG_DIFFERENTIAL_SCREEN",
+      "sha256": "b6aa38eaef76eb55e9594ab92477d722172934739a268b98809bd6cb12639151"
+    },
+    "kostant": {
+      "path": "covariant_completion/certificates/adjoint_tractor_kostant_compression.json",
+      "result_id": "ADJOINT_TRACTOR_KOSTANT_COMPRESSION",
+      "sha256": "6984f2c8cfd95c6c7ee79aaf4fc9f8a7021ea8efb6576365088cb7e943007fbd"
+    },
+    "parent_green": {
+      "path": "covariant_completion/certificates/adjoint_tractor_green_transfer.json",
+      "result_id": "ADJOINT_TRACTOR_GREEN_TRANSFER",
+      "sha256": "228e4ffd21fccdac155629342ea75ab590f10b75272dcfe20fdc2fa304edb7d8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "detour": {
+    "descent": "Lambda_endpoint,+/-=p_2 Lambda_parent,+/- i_2",
+    "doubled_endpoint_degree_ranks": [
+      8,
+      18,
+      18,
+      8
+    ],
+    "doubled_parent_degree_ranks": [
+      30,
+      120,
+      120,
+      30
+    ],
+    "flat_differential_BGG_series_terminates_after": 2,
+    "mixed_presentation": "U diag(Q,-Q) U^-1 with U=[[1,1],[0,1]]",
+    "off_diagonal_coupling": "-2 Q in the upper-right flavor block",
+    "parent_causal_input": "degreewise normally hyperbolic adjoint-tractor Hodge companion",
+    "second_copy_normalization": "Q_2=-Q_1 and Lambda_2=-Lambda_1",
+    "single_endpoint_degree_ranks": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "single_parent_degree_ranks": [
+      15,
+      60,
+      60,
+      15
+    ]
+  },
+  "exact_checks": {
+    "Minkowski_parent_connection_flat": true,
+    "degreewise_adjoint_reversal_preserved": true,
+    "flat_differential_BGG_SDR_exact": true,
+    "mixed_presentation_has_nonzero_off_diagonal_operator": true,
+    "opposite_normalization_chain_identity_exact": true,
+    "parent_Hodge_companion_degreewise_normally_hyperbolic": true,
+    "parent_advanced_retarded_homotopy_available": true,
+    "parent_to_endpoint_descent_identity_exact": true,
+    "same_sided_support_preserved": true,
+    "triangular_flavor_shear_has_finite_inverse": true,
+    "triangular_flavor_shear_is_cyclic_with_transported_pairing": true,
+    "two_copy_direct_sum_exact": true
+  },
+  "exact_flavor_fixture": {
+    "coefficient_field": "Q",
+    "flavor_normalization": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        -1
+      ]
+    ],
+    "flavor_shear": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "flavor_shear_inverse": [
+      [
+        1,
+        -1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "identity_defects": {
+      "base_chain_homotopy": 0,
+      "conjugation_nontrivial": 0,
+      "flavor_isometry": 0,
+      "mixed_adjoint": 0,
+      "mixed_chain_homotopy": 0,
+      "mixed_nilpotency": 0,
+      "normalization_square": 0,
+      "shear_inverse_left": 0,
+      "shear_inverse_right": 0,
+      "sign_intertwining": 0,
+      "transported_flavor_metric": 0
+    },
+    "mixed_homotopy_matrix": [
+      [
+        0,
+        1,
+        0,
+        -2
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "mixed_unary_matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        -2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        0
+      ]
+    ],
+    "transported_flavor_pairing": [
+      [
+        1,
+        -1
+      ],
+      [
+        -1,
+        2
+      ]
+    ]
+  },
+  "flags": {
+    "G3_OPEN_BACKGROUND_CLASS": false,
+    "HADAMARD_TRANSFER": false,
+    "HIGHER_SPIN_DISCOVERY": false,
+    "INTERACTING_MIXED_FIELD_THEORY": false,
+    "MIXED_FIELD_CAUSAL_TRANSFER_CONSUMER": true,
+    "QUANTUM_CLAIM": false,
+    "SECOND_NONCYLINDER_DETOUR_CONSUMER": true,
+    "TIMELIKE_BOUNDARY_VERSION": false
+  },
+  "pairing": {
+    "advanced_retarded_adjoint_reversal": true,
+    "degreewise_sign_involution_unchanged": true,
+    "mixed_flavor_metric": [
+      [
+        1,
+        -1
+      ],
+      [
+        -1,
+        2
+      ]
+    ],
+    "shear_is_pairing_isometry_between_presentations": true,
+    "unmixed_flavor_metric": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "result_id": "MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_MIXED_DETOUR",
+  "schema": "pure-weyl-minkowski-doubled-adjoint-tractor-mixed-detour-v1",
+  "source_manifest": {
+    "consumer_schema": {
+      "path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json",
+      "sha256": "0a3501e764122f282a1e6a2a415bf37edb034b77ffc521cd8ab51cd3c0cdd5d4"
+    },
+    "independent_verifier": {
+      "path": "d_quotient_classical/causal_transfer/verify_minkowski_doubled_adjoint_tractor_pilot.py",
+      "sha256": "1570f79bb5d4b23178fb1851800604e75d8917e635ca29cd7cb61cfdaaf2129c"
+    },
+    "producer": {
+      "path": "d_quotient_classical/causal_transfer/minkowski_doubled_adjoint_tractor_pilot.py",
+      "sha256": "66570184889a7a232ed26392b495f79eaad140b3a8482b5871938f11a1272f7b"
+    },
+    "strict_schema": {
+      "path": "d_quotient_classical/schema/minkowski-doubled-adjoint-tractor-mixed-detour-v1.schema.json",
+      "sha256": "aa385d00af3781877a71f06fe2754520dc725e0c64e0c4a7916b77093a700cb9"
+    },
+    "tests": {
+      "path": "d_quotient_classical/causal_transfer/tests/test_minkowski_doubled_adjoint_tractor_pilot.py",
+      "sha256": "9287c8ec1166c5a4ed6ef07efd531d10b6e36caa1df610bf9a474da5bd7915d8"
+    }
+  }
+}
