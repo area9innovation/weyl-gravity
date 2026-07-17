@@ -24,6 +24,38 @@ presymplectic degeneracy and the renormalized covariant phase-space charge.
 The centered classes \([W_+^2]\) and \([W_-^2]\) are deformation/vertex
 classes.  They are not one-particle graviton states.
 
+## Shared relative-complex assignment
+
+Use the canonical Einstein--Weyl spine in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).  The classical
+team owns `RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1`; it does not own a
+second construction of the linear Einstein inclusion.
+
+For every declared background, charge fibre, boundary condition, and quotient:
+
+1. import the Einstein team's map/cofiber certificate by content hash;
+2. test whether the full residual action, especially \(D\), is equivariant on
+   the map and descends to the cofiber;
+3. determine whether taking the Taub-zero or charge-zero derived sector
+   commutes with forming the relative cofiber;
+4. construct the contravariant observable map
+   \(\iota^*: \operatorname{Obs}(\mathcal E_{\rm Weyl})\to
+   \operatorname{Obs}(\mathcal E_{\rm Einstein})\);
+5. identify relational or curvature observables that annihilate the Einstein
+   image and therefore detect the relative sector; and
+6. place the Berger clock/redshift observable in this diagram, including any
+   failure caused by global winding, boundary dressing, or charge variation.
+
+Return exact defects rather than forcing equivariance.  A solution-level
+comparison is not an observable map, and `D_GAUGE` in one derived sector is
+not evidence that the cofiber construction commutes with that quotient.
+
+Use the shared row format:
+
+| Setting | Map \(\iota\) | Cofiber | Relative pairing | \(\mathfrak O_2\) | Residual action | Observable map | Quantum lift |
+|---|---|---|---|---|---|---|---|
+| Explicit background/sector/boundaries | imported status + hash | imported status | imported or checked | imported status | computed verdict | computed verdict | `NOT_APPLICABLE` |
+
 ## Live Berger nonlinear handoff (2026-07-17)
 
 The authoritative 54-row support-local classical Taylor data are now complete

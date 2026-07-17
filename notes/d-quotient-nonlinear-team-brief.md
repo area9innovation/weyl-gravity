@@ -39,6 +39,45 @@ operator fingerprints, not portable map entries, and does not compute
 The retained/nonminimal contraction and nonlinear tensor export remain
 separate required inputs.
 
+## Shared relative-complex assignment
+
+Use the canonical Einstein--Weyl spine in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).  The nonlinear
+team owns `EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE`.
+
+Import the Einstein team's linear map and cofiber by content hash and the
+classical team's authoritative \(q_2,q_3\) tensors through the existing import
+gate.  Do not rebuild either input.  On every declared setting compute the
+arity-two morphism defect
+
+\[
+\Delta_2(x,y)=q_2^{\rm Weyl}(\iota x,\iota y)
+-\iota q_2^{\rm Einstein}(x,y),
+\]
+
+project it to the relative cofiber, and classify it as zero, exact with an
+explicit \(\iota_2\), or obstructed with a cohomology witness.  Then compute
+the complete arity-three morphism identity, including the \(q_3\), mixed
+\(q_2\iota_2\), and \(\iota_2q_2\) terms.  Construct \(\iota_3\) when the
+defect is exact.
+
+Resolve, rather than suppress, the bracket channels
+
+\[
+EE\to X,\qquad EX\to E\oplus X,\qquad XX\to E\oplus X,
+\]
+
+and test their cyclicity under the transported/direct relative forms.  These
+channels decide whether Einstein data are closed, obstructed, or sourced by
+extra modes.  Do not call the result an interacting extension until the
+relevant \(L_\infty\) identities and domain conditions pass.
+
+Use the shared row format:
+
+| Setting | Map \(\iota\) | Cofiber | Relative pairing | \(\mathfrak O_2\) | Residual action | Observable map | Quantum lift |
+|---|---|---|---|---|---|---|---|
+| Explicit background/sector/boundaries | imported status + hash | imported/constructed | cyclicity verdict | computed verdict | derivation defect | dependency only | `NOT_APPLICABLE` |
+
 ## Work package N-D1: transfer the full low-arity structure
 
 Write the interacting cohomological vector field and transferred operations as

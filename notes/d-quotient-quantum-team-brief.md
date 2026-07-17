@@ -42,6 +42,37 @@ right-hand side receives no operator, boundary, or central correction.
 The centered classical classes \([W_+^2]\) and \([W_-^2]\) are
 deformation/vertex classes, not one-particle gravitons.
 
+## Shared relative-complex assignment
+
+Use the canonical Einstein--Weyl spine in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).  The quantum
+team owns `QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT` and must import, not
+reconstruct, the classical triangle and its maps by content hash.
+
+After the local QME has the declared disposition, determine:
+
+1. whether renormalized restriction along \(\iota\) intertwines the Einstein
+   and Weyl Ward/QME operators;
+2. the relative anomaly class left after subtracting the pulled-back Einstein
+   contribution, with antifield and boundary sectors kept explicit;
+3. whether the classical cofiber pairing and determinant factorization survive
+   renormalization or acquire mixing/contact defects;
+4. whether a BRST-compatible Hadamard state on the Weyl complex restricts to
+   the declared Einstein state and induces any state on the relative cofiber;
+5. whether the quantum \(D\)-Cartan identity commutes with restriction and the
+   relative triangle.
+
+Report `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, `REDUCED-MODE`, and
+`LORENTZIAN-CAUSAL` evidence separately.  No determinant or reduced-mode
+factorization may promote the relative object to a Lorentzian particle or
+Hilbert-space statement.
+
+Use the shared row format:
+
+| Setting | Map \(\iota\) | Cofiber | Relative pairing | \(\mathfrak O_2\) | Residual action | Observable map | Quantum lift |
+|---|---|---|---|---|---|---|---|
+| Explicit background/sector/boundaries | imported status + hash | imported status | renormalized verdict | imported dependency | Ward/Cartan verdict | algebra restriction | lifecycle + dependency tag |
+
 ## Work package Q-D1: classify the obstruction
 
 Define the defect

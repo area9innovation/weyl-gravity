@@ -27,6 +27,43 @@ bootstrap inputs only.  They do not establish a full Lorentzian off-shell BV
 propagator, support-compatible Green complex, null-infinity charge theorem, or
 scattering equivalence.
 
+## Shared relative-complex assignment
+
+Use the canonical Einstein--Weyl spine in
+[`universe-building-roadmap.md`](universe-building-roadmap.md).  The Einstein
+team owns `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`, the authoritative
+linear input for all other teams.
+
+For each declared background, charge fibre, boundary condition, and global
+mode domain:
+
+1. construct \(\iota:\mathcal E_{\rm Einstein}\to\mathcal E_{\rm Weyl}\) on
+   fields, ghosts, antifields, equations, and Noether identities;
+2. decide whether it is an injective off-shell chain map, only an on-shell
+   solution map, or obstructed, retaining the normalized chain-map defect;
+3. construct the mapping cofiber regardless of whether a strict quotient
+   bundle exists, and compute its cohomology in generic axial, polar,
+   exceptional, global, and boundary sectors;
+4. compare \(\Omega_{\rm Einstein}\), \(\iota^*\Omega_{\rm Weyl}\), and the
+   cofiber form using the direct action/Lee--Wald current and all required
+   boundary terms; and
+5. package the quadratic extension bilinear
+   \(\mathfrak O_2:H_{\rm Einstein}^{\otimes2}\to H(\operatorname{Cone}\iota)\)
+   across fixed and variable charge fibres, with exact witnesses.
+
+Use `STRICT_SHORT_EXACT_SEQUENCE` only after off-shell injectivity and global
+domain closure are proved.  The already certified complete on-shell inclusion,
+including curvature and background-flux mixing, is valuable but remains
+`ONSHELL_MAP_ONLY` until that gate passes.  This relative theorem should be the
+organizing spine of the Einstein-sector paper rather than an appendix assembled
+from isolated mode results.
+
+Use the shared row format:
+
+| Setting | Map \(\iota\) | Cofiber | Relative pairing | \(\mathfrak O_2\) | Residual action | Observable map | Quantum lift |
+|---|---|---|---|---|---|---|---|
+| Explicit background/sector/boundaries | computed disposition | computed status | direct-current verdict | computed status | exported dependency | exported dependency | exported dependency |
+
 ## E-D1a status: generator identification completed
 
 The exact seed certificate

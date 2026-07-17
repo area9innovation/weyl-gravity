@@ -55,48 +55,161 @@ word cylinder, wave, or Einstein.
 The shortest independent paths are now:
 
 ```text
-Classical:  complete support-local Berger q2
-Nonlinear:  solve the Berger metric mixed-order Green block, then lift
-Einstein:   close global compact pairs and the Weyl--Maxwell pullback
-Quantum:    classify/compute the anomaly and restore or obstruct the QME
+Einstein:   define the linear Einstein--Weyl map, cofiber, and relative pairing
+Nonlinear:  compute the mixed relative q2/q3 defects through arity three
+Classical:  descend the residual action and relational observables across the map
+Quantum:    classify the relative anomaly/QME defect after the classical import gate
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
 than moving whole teams now.
 
+## The relative Einstein--Weyl spine
+
+The common organizing object for the next phase is the relation between the
+Einstein and Weyl gauge complexes.  It is indexed by the full claim tuple
+
+\[
+(\text{theory},\text{background},\text{generator},\text{phase space},
+  \text{boundaries},\text{lifecycle}),
+\]
+
+and must not be promoted from one setting to another without a certified map.
+The preferred linear statement is the derived triangle
+
+\[
+\mathcal E_{\rm Einstein}
+ \xrightarrow{\ \iota\ }
+\mathcal E_{\rm Weyl}
+ \longrightarrow
+\mathcal C_{\rm extra}:=\operatorname{Cone}(\iota)
+ \longrightarrow
+\mathcal E_{\rm Einstein}[1].
+\]
+
+A strict short exact sequence
+
+\[
+0\longrightarrow\mathcal E_{\rm Einstein}
+ \xrightarrow{\ \iota\ }
+\mathcal E_{\rm Weyl}
+ \longrightarrow\mathcal E_{\rm extra}
+\longrightarrow0
+\]
+
+may be claimed only after \(\iota\) is an injective off-shell chain map on the
+declared fields, ghosts, antifields, identities, global modes, charge fibres,
+and boundary domain.  Until then each setting receives exactly one of four
+fail-closed dispositions:
+
+1. `STRICT_SHORT_EXACT_SEQUENCE`;
+2. `DERIVED_COFIBER_TRIANGLE`;
+3. `ONSHELL_MAP_ONLY`;
+4. `MAP_OBSTRUCTED`, with an explicit normalized defect.
+
+The word *extra* therefore names a relative cofiber, not a universal new
+particle species.  Its cohomology and physical interpretation may change with
+background, boundaries, charge sector, and quotient.
+
+### Structures carried by the spine
+
+The linear certificate must keep three forms distinct:
+
+\[
+\Omega_{\rm Einstein},\qquad
+\iota^*\Omega_{\rm Weyl},\qquad
+\Omega_{\rm extra}.
+\]
+
+Equality, proportionality, degeneracy, signature, and boundary defects are
+separate outcomes.  A reduced-Hessian form is not silently substituted for an
+action-derived Lee--Wald or shifted BV form.
+
+The first nonlinear obstruction is the cofiber class
+
+\[
+\mathfrak O_2(x,y)=
+\big[\pi_{\rm extra}
+q_2^{\rm Weyl}(\iota x,\iota y)\big]
+\in H(\mathcal C_{\rm extra}),
+\]
+
+or its precise cokernel analogue when only an on-shell map exists.  It must be
+reported as zero, exact with a displayed primitive, or nonzero with a witness.
+At arity three the mixed \(q_2\) and \(q_3\) terms determine whether an
+\(L_\infty\) morphism can correct the linear inclusion.  A graded splitting
+\(L_{\rm Weyl}\simeq L_{\rm Einstein}\oplus L_{\rm extra}\) is not a direct
+sum of interacting theories: the mixed brackets are the physics to compute.
+
+Residual symmetries must act equivariantly on the triangle or leave a measured
+defect.  Observables run contravariantly,
+
+\[
+\iota^*:\operatorname{Obs}(\mathcal E_{\rm Weyl})
+\longrightarrow\operatorname{Obs}(\mathcal E_{\rm Einstein}),
+\]
+
+while observables that annihilate the Einstein image are candidate detectors
+of the relative sector.  Relational clock observables must be placed in this
+diagram rather than compared only at the level of solutions.
+
+### Current lifecycle boundary
+
+The standard compact Einstein--Maxwell solution inclusion is certified
+on-shell, including the declared curvature and background-flux mixing.  This
+does not yet provide an off-shell BV chain map.  Generic axial relative modes
+and a direct current calculation provide substantial cofiber and pairing data,
+but the polar, exceptional, global, and boundary domains are not complete.
+Quadratic extension/obstruction fixtures exist, but not yet a complete
+relative obstruction theorem.  Residual equivariance, the observable map, the
+relative \(L_\infty\) morphism, and the quantum lift remain open until their
+own certificates land.
+
+### Shared relative reporting contract
+
+Every team must add a row for each setting it touches.  `OPEN` and
+`NOT_APPLICABLE` are valid results; an empty cell is not.
+
+| Setting | Map \(\iota\) | Cofiber | Relative pairing | \(\mathfrak O_2\) | Residual action | Observable map | Quantum lift |
+|---|---|---|---|---|---|---|---|
+| Declared background, phase space, charges, and boundaries | strict / derived / on-shell / obstructed | complex and cohomology status | BV / Lee--Wald / Green status | zero / exact / obstructed / open | equivariant / defect / open | constructed / defect / open | lifecycle tag / open |
+
+The first integrated milestone is
+`EINSTEIN_WEYL_RELATIVE_SPINE_V1`.  It is reached only when the Einstein
+linear certificate, nonlinear arity-three disposition, classical
+symmetry/observable disposition, and quantum dependency ledger cross-reference
+one another by content hash without upgrading one another's lifecycle state.
+
 ### Classical ownership
 
-The classical team owns the authoritative support-local `q2` export,
-including antifield/Koszul--Tate rows, exact cyclicity, provenance, and a
-fail-closed domain statement.  It must not duplicate the Green construction.
-
-When the `q2` export lands, the classical team moves to the first observer
-rail: construct a relational observable and an operational redshift fixture
-on the Berger background, using only the domain that survives the nonlinear
-and causal gates.
+The authoritative support-local Berger tensors are now certified through
+arity three.  The classical team therefore moves to
+`RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1`: import the Einstein map by hash,
+test residual equivariance and quotient/cofiber compatibility, and construct
+the observable pullback and relative-sector detectors.  The first concrete
+observer fixture remains the Berger relational observable and operational
+redshift rail, using only the domain that survives the nonlinear and causal
+gates.  It must not duplicate the Einstein map or the Green construction.
 
 ### Nonlinear ownership
 
-While the classical `q2` producer is active, the nonlinear team owns the
-metric and metric-antifield mixed-order Green realization, completion of the
-retained 26-row advanced/retarded homotopy, and its certified lift through the
-54-to-26 contraction.  The ghost endpoint factorization has already been
-imported and replayed; it is a seed, not the completed Green theorem.  This is
-a temporary causal assignment, not evidence for an interacting theorem.
-
-When `q2` lands, the nonlinear team imports it by hash, replays it
-independently, and returns to the full arity-two Cartan defect.  It then tests
-the first genuinely dangerous resonant channel before broad matter surveys.
+The nonlinear team imports the certified support-local \(q_2,q_3\) tensors by
+hash and owns `EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE`: compute
+the arity-two and arity-three morphism defects and all mixed Einstein/extra
+channels.  In parallel it may finish the metric and metric-antifield
+mixed-order Green realization, retained advanced/retarded homotopy, and lift
+through the contraction.  The Green rail and the interacting relative rail
+must retain separate lifecycle labels; neither certifies the other.
 
 ### Einstein ownership
 
-The standard compact radiative master modes now have an action-normalized,
-positive covariant pairing.  The Einstein team next owns the global `ell=0`
-and axial `ell=1` twist pairs and the independent pullback of the
-Weyl--Maxwell presymplectic form.  It must then distinguish the standard
-Einstein wave directions from any extra fourth-order adjoint directions and
-determine their norms.  The next nonlinear question is whether the wave
-directions pass the quadratic Taub/extension test.
+The Einstein team owns `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.  It must
+upgrade the certified on-shell inclusion to an off-shell BV chain-map verdict,
+construct the mapping cofiber, and compare the Einstein, pulled-back Weyl, and
+relative action-derived forms.  Generic axial results are inputs, not the
+complete theorem: polar, exceptional, global, charge-fibre, and boundary
+sectors must be declared explicitly.  It also exports the quadratic
+Taub/extension bilinear that the nonlinear team will refine.
 
 Only after those compact gates are explicit should the same team promote an
 asymptotic, black-hole, or scattering claim.  It may build those programmes in
@@ -104,11 +217,14 @@ parallel, but their certificates require new phase spaces and boundaries.
 
 ### Quantum ownership
 
-The quantum team owns the local anomaly/QME disposition and must preserve the
-declared lifecycle states.  It should formulate the observable algebra and
-pairing without assuming in advance that the answer is a positive Hilbert or
-Fock space.  Krein, BRST, and positive physical completions are possible
-outcomes to compare, not imported axioms.
+The quantum team owns the local anomaly/QME disposition and
+`QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT`.  After the classical import gate,
+it tests whether restriction, anomaly classes, states, pairings, and the
+quantum \(D\)-Cartan identity respect the relative triangle.  It must preserve
+the declared lifecycle states and formulate the observable algebra without
+assuming in advance a positive Hilbert or Fock space.  Krein, BRST, and
+positive physical completions are possible outcomes to compare, not imported
+axioms.
 
 Particles become an active physical claim only after a Lorentzian causal
 framework, a state condition such as Hadamard, the physical cohomology and
