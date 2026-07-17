@@ -20,6 +20,12 @@ that a uniform factor two on Maxwell-output terms preserves `q1/q2` and
 removes 938 retained defects.  The remaining 15 ghost-density defects keep
 the classical mixed vertex fail-closed.
 
+The frontier imports this status through the content-addressed quantum replay
+and defect-atlas certificates. It deliberately does not hash the classical
+team's mutable working payload, so an in-progress repair cannot silently
+change or stale the canonical frontier before a committed candidate is
+accepted.
+
 The companion is certified null-cone decomposable, but the Hadamard existence
 audit proves that this does not supply a state.  The twenty-row bosonic
 companion already fails the normally-hyperbolic hypothesis through its

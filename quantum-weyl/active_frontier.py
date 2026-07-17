@@ -27,7 +27,6 @@ DEPENDENCIES = {
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
     "coupled_cyclicity_atlas": HERE / "transfer/certificates/BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS.json",
-    "classical_transferred_mixed_q2": ROOT / "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "base_Hadamard_parametrix": HERE / "lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
     "typed_companion": HERE / "lorentzian/certificates/BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT.json",
@@ -108,7 +107,6 @@ def _load() -> dict[str, dict[str, Any]]:
             "total_defect_coefficients"
         ]
         != 953
-        or values["classical_transferred_mixed_q2"].get("shape") != [36, 36, 36]
     ):
         raise ValueError("coupled cyclicity atlas frontier drifted")
     hadamard_flags = values["Hadamard_lift"].get("claim_flags", {})
