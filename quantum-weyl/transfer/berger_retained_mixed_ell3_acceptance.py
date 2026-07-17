@@ -29,7 +29,7 @@ from .berger_retained_26_q2_transfer import _transfer_inner, _transfer_outer
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-CLASSICAL_COMMIT = "41c58d2086d77158ab442841d00588d7b560cbd8"
+CLASSICAL_COMMIT = "e99d0c1d39490de5261fc6ca1dc2aeaa0d149655"
 TRANSFER = "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_TRANSFER.json"
 TRANSFER_SCHEMA = "d_quotient_classical/schema/berger-retained-mixed-ell3-transfer-v1.schema.json"
 CARRIER = "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json"

@@ -1,7 +1,7 @@
 # Independent acceptance of the retained Berger mixed ell3
 
 The quantum-side consumer independently accepts the retained typed
-gravity--Maxwell `ell3` at classical commit `41c58d20`. It reconstructs the
+gravity--Maxwell `ell3` at classical hardening commit `e99d0c1d`. It reconstructs the
 explicit cyclic 64-to-36 contraction without importing the classical
 producer and matches all 25,950 retained contact coefficients exactly.
 
@@ -14,10 +14,9 @@ has an output row supported by the retained projection. The other two
 relative exchange channels have no raw coefficient pairs. Consequently all
 three retained `q2 S q2` exchange sectors vanish exactly.
 
-This independently corrects the producer receipt's support-only explanation:
-the first channel does have full-complex carriers; its retained projection is
-zero. The final transferred theorem is accepted, but the stronger claim that
-the relevant outer coefficients are absent is not used.
+This independently agrees with the hardened producer's exchange-vanishing
+ledger: the first channel has full-complex carriers, while its retained
+projection is zero.
 
 The retained relative arity-three identity closes on all 36 rows. Mutating
 one retained coefficient produces two exact defects. The nonzero bracket

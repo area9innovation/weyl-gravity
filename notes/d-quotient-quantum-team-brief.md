@@ -80,8 +80,8 @@ The typed classical mixed \(q_3\) and its retained \(\ell_3\) transfer have
 since landed and passed independent quantum-side import acceptance. The
 consumer parses 59,598 full coefficients, reproduces 25,950 retained contact
 coefficients, verifies all 36 retained arity-three identities, and rejects a
-localized mutation. Its exact exchange replay also corrects the producer's
-support-only explanation: the gravity-outer/mixed-inner channel has 144 raw
+localized mutation. Its exact exchange replay agrees with the hardened
+producer ledger: the gravity-outer/mixed-inner channel has 144 raw
 pairs and 342 canonical full-complex PBW coefficients, but none survives the
 retained output projection. The other two exchange channels have no raw
 pairs, so all three retained exchange sectors vanish exactly.

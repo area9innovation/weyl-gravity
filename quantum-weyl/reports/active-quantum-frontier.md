@@ -23,8 +23,8 @@ graded-symmetry defect count is zero, and the mixed arity-three identity
 vanishes on all 64 rows. A one-coefficient mutation produces two defects.
 The retained (ell_3) is now independently accepted: all 25,950 contact
 coefficients match, all 36 retained arity-three rows close, and a localized
-mutation is rejected. The exact exchange replay corrects the producer's
-support-only explanation. There are 144 raw gravity-outer/mixed-inner pairs
+mutation is rejected. The exact exchange replay agrees with the hardened
+producer ledger. There are 144 raw gravity-outer/mixed-inner pairs
 and 342 canonical full-complex PBW coefficients, but none survives retained
 output projection; the other two exchange sectors have no raw pairs. Thus all
 three retained exchange sectors vanish exactly. Projection onto the
