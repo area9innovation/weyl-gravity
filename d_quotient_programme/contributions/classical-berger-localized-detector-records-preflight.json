@@ -7,7 +7,7 @@
   "boundary_conditions": "R x Berger S3 with no spatial boundary; fixed-coupling linearized background, homogeneous compact-S3 Maxwell switch-on currents, nonbackreacting local probe rods, and two compact relational detector windows",
   "lifecycle_layer": "LORENTZIAN_CAUSAL",
   "claim_status": "PARTIAL",
-  "verdict": "RANK_TWO_CAUSAL_RECORD_TRANSFER_CERTIFIED_LOCALIZED_EMITTER_AND_D_DESCENT_OPEN",
+  "verdict": "REPAIRED_Q2_IMPORTED_LINEAR_RANK_TWO_SURVIVES_APPARATUS_EXTENSION_OPEN",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
   "established": [
     "standard-sign probe-rod Cauchy solutions give nondegenerate relational Jacobians on some local neighborhoods of both detector centers",
@@ -17,24 +17,30 @@
     "two predeclared smooth conserved e1/e2 switch-on currents have exact full-Maxwell retarded solutions",
     "the physical matrix M_ab=Q_a[d G_ret J_b] is diag(C_00,C_11) with both diagonal entries positive and therefore has rank two",
     "the two retarded source basis signals produce distinguishable persistent memory vectors (C_00,0) and (0,C_11)",
-    "Diff, Weyl, and Maxwell-gauge covariance hold for the declared probe functionals"
+    "Diff, Weyl, and Maxwell-gauge covariance hold for the declared probe functionals",
+    "the repaired cyclic q2 imports exactly on the existing 64 gravity-clock-Maxwell BV rows and contains the Maxwell stress vertex q2(A,A)->h_hat_plus",
+    "the first-order rank-two source-to-memory coefficient survives as the linear term of the interacting expansion",
+    "the exact first obstruction to nonlinear promotion is typed: the 64-row ledger contains no rod, detector-polarization, memory, or emitter BV rows",
+    "dynamical rod-dependent smearing produces a required p-A-R q3 block, so q2 alone cannot certify nonlinear observer consistency"
   ],
   "not_established": [
     "rank two for two spatially localized emitter worldtubes rather than homogeneous compact-S3 currents",
     "full localized-source-support to detector-window causal incidence and no-wrap margins",
     "raw-D descent after adjoining the source, probe-rod, and memory sectors",
-    "K_Berger compatibility in the interacting complex",
-    "rod backreaction, detector recoil, gravity backreaction, or a quantum observer algebra"
+    "a common cyclic BV ledger containing the rod, polarization, memory, and emitter variables, antifields, and action-derived q1/q2/q3 blocks",
+    "K_Berger compatibility or raw-D descent on that extended interacting complex",
+    "a backreacted metric/apparatus solution and rank-two detector response after gravitational recoil",
+    "a nonlinear classical or quantum observer algebra"
   ],
   "evidence": {
-    "path": "closed_universe_observers/certificates/BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER.json",
-    "commit": "5b08869dd3fd74c95d63e2189029a6d47f377b79",
-    "sha256": "09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23"
+    "path": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json",
+    "commit": "60314ae0b15cf6a9875567c207c66f8764dd7482",
+    "sha256": "9df5e1d697af3366198c40ae73477bd39899b164a4e671bdafb7d33385305523"
   },
   "verification_commands": [
-    "python3 closed_universe_observers/generate_berger_smeared_retarded_transfer.py --check",
-    "python3 closed_universe_observers/verify_berger_smeared_retarded_transfer.py",
-    "python3 -m pytest -q closed_universe_observers/tests/test_berger_smeared_retarded_transfer.py"
+    "python3 closed_universe_observers/generate_berger_observer_interaction_import_gate.py --check",
+    "python3 closed_universe_observers/verify_berger_observer_interaction_import_gate.py",
+    "python3 -m pytest -q closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py closed_universe_observers/tests/test_comparison_ledger.py"
   ],
-  "next_gate": "BERGER_SPATIALLY_LOCALIZED_TWO_SOURCE_TRANSFER_THEN_D_AND_K_BERGER_DESCENT"
+  "next_gate": "BERGER_ACTION_DERIVED_ROD_POLARIZATION_MEMORY_EMITTER_BV_EXTENSION_THROUGH_Q3"
 }
