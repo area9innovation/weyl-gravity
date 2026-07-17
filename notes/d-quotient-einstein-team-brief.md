@@ -1220,15 +1220,37 @@ external specialist review, subject to the documented final human
 accountability pass. The literal unreduced four-dimensional quadratic
 action-density expansion remains an optional audit, not a freeze gate.
 
-`EINSTEIN_WEYL_POLAR_OFFSHELL_OPERATOR_PREFLIGHT` also fixes the next relative
-calculation. The source Diff gauge leaves `(A,B,C,K,U)`, while the additional
-target Weyl gauge contracts this to `(A+K,B,C-K,U)`. The contraction kernel
-is the pure-Weyl vector `(-1,0,1,1,0)`; its sphere-tracefree Einstein row is
-exactly `-1`, so it contains no Einstein solution. The remaining missing
-object is the independent four-by-four target polar Euler operator. The
-existing two-by-two polar target current is evaluated only on reconstructed
-Einstein representatives and cannot replace that operator. The next exact
-test is `L_WM^P S_P=J_P E_P`, followed by the ungauged Noether lift.
+`EINSTEIN_WEYL_POLAR_OFFSHELL_OPERATOR_PREFLIGHT` fixes the source Diff slice
+`(A,B,C,K,U)` and the target Weyl contraction `(A+K,B,C-K,U)`. Its pure-Weyl
+kernel `(-1,0,1,1,0)` has sphere-tracefree Einstein row `-1`, so it contains
+no Einstein solution. `EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR` now closes the
+next off-shell gate. Independent four-dimensional `ell=2,3,4` Bach--Maxwell
+linearizations reconstruct the generic degree-two-in-`lambda` target
+operator. The action-normalized four-by-four Hessian is formally self-adjoint
+and satisfies the exact polynomial square
+
+```text
+H_P S_P = J_P E_P
+```
+
+without dividing by `k`, `omega`, `lambda-2`, or either characteristic. Its
+determinant is
+
+```text
+(9/16) lambda^3 (lambda-2) p^2 q,
+p=omega^2-k^2-lambda+2/3,
+q=(omega^2-k^2)^2-2lambda(omega^2-k^2)+lambda(lambda-2).
+```
+
+Over `Frac(Q(lambda,k))[omega]` the determinantal divisors are
+`1,1,p,p^2 q`, so the invariant factors are `1,1,p,p q`. Since
+`Res_omega(p,q)=4(9lambda-2)^2/81`, the physical `ell>=2` locus has the same
+generic primary pattern as the axial block: two extra `p` summands and the
+Einstein `q` summand. This certifies the extra polar equation module and the
+Einstein off-shell coefficient square, but not yet the polar extra Lee--Wald
+current, an integral all-momentum physical-ring theorem, the ungauged BV/
+Noether lift, or final residual survival. Those are the remaining Paper-A-
+expansion gates; the theorem-frozen axial paper does not depend on them.
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
@@ -1246,8 +1268,9 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Extend the completed generic axial extra classification to the polar target
-   block and perform final residual descent.
+1. Promote the generic polar extra equation module to the physical coefficient
+   ring, compute its Lee--Wald current and coefficient extractors, and perform
+   final residual descent for both extra parities.
 2. Extend the certified axial detector and negative-definite `ell=2,k=0`
    extra Taub test to nonzero momentum, higher harmonics, and parity-compatible
    `EE`, `EX`, and `XX` source channels; then construct a relational or

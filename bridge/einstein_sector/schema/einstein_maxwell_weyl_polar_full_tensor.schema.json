@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-polar-full-tensor-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "provenance", "domain", "row_order", "samples", "lambda_reconstruction", "target_operator", "chain_square", "characteristic_and_module", "classification", "next_gate", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-polar-full-tensor-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_full_tensor.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR"},
+    "result_state": {"const": "GENERIC_POLAR_OFFSHELL_OPERATOR_AND_EINSTEIN_CHAIN_SQUARE_CERTIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "row_order": {"type": "array", "minItems": 8, "maxItems": 8},
+    "samples": {"type": "object", "required": ["2", "3", "4"]},
+    "lambda_reconstruction": {"type": "object", "properties": {"degree_bound": {"const": 2}, "all_sample_defects_zero": {"const": true}, "hidden_denominators_absent": {"const": true}}, "required": ["degree_bound", "all_sample_defects_zero", "hidden_denominators_absent"]},
+    "target_operator": {"type": "object", "properties": {"formally_self_adjoint": {"const": true}}, "required": ["formally_self_adjoint", "action_matrix", "tensor_matrix"]},
+    "chain_square": {"type": "object", "properties": {"polynomial_no_shell_division": {"const": true}}, "required": ["identity", "target_field_map", "equation_row_map", "polynomial_no_shell_division", "defect"]},
+    "characteristic_and_module": {"type": "object", "required": ["extra_shell_p", "Einstein_shell_q", "determinant", "monic_determinantal_divisors", "invariant_factors_over_Q_lambda_k_omega", "resultant_p_q", "primary_decomposition"]},
+    "classification": {"type": "object", "properties": {"direct_target_polar_Euler_samples_constructed": {"const": true}, "Einstein_branch_substitution_used": {"const": false}, "generic_lambda_operator_reconstructed": {"const": true}, "action_normalized_operator_constructed": {"const": true}, "formal_self_adjointness_certified": {"const": true}, "polar_chain_map_constructed": {"const": true}, "extra_polar_characteristic_certified": {"const": true}, "polar_Lee_Wald_current_on_extra_branch_certified": {"const": false}, "final_residual_descent_certified": {"const": false}}, "required": ["direct_target_polar_Euler_samples_constructed", "Einstein_branch_substitution_used", "generic_lambda_operator_reconstructed", "action_normalized_operator_constructed", "formal_self_adjointness_certified", "polar_chain_map_constructed", "extra_polar_characteristic_certified", "polar_Lee_Wald_current_on_extra_branch_certified", "final_residual_descent_certified"]},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 2}
+  },
+  "additionalProperties": false
+}

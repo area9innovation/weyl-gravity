@@ -1,0 +1,374 @@
+{
+  "chain_square": {
+    "defect": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "equation_row_map": [
+      [
+        "k**2 + lambda - 1",
+        "3*k*omega",
+        "(4*k**2 + lambda)/2",
+        "0",
+        "0",
+        "(2*k**2 - lambda)/2",
+        "3*lambda*(lambda - 2)/4",
+        "0"
+      ],
+      [
+        "-k*omega",
+        "-3*k**2 - 3*lambda + 3*omega**2 + 2",
+        "k*omega",
+        "0",
+        "0",
+        "2*k*omega",
+        "0",
+        "0"
+      ],
+      [
+        "(lambda - 4*omega**2)/2",
+        "-3*k*omega",
+        "lambda - omega**2 - 1",
+        "0",
+        "0",
+        "(lambda + 2*omega**2)/2",
+        "-3*lambda*(lambda - 2)/4",
+        "0"
+      ],
+      [
+        "-2*omega**2",
+        "-4*k*omega",
+        "-2*k**2",
+        "0",
+        "0",
+        "2*lambda",
+        "-lambda*(lambda - 2)",
+        "0"
+      ]
+    ],
+    "identity": "H_P*S_P=J_P*E_P",
+    "polynomial_no_shell_division": true,
+    "source_coordinates": [
+      "A",
+      "B",
+      "C",
+      "K",
+      "U"
+    ],
+    "source_row_order": [
+      "00",
+      "01",
+      "11",
+      "0a",
+      "1a",
+      "sphere_trace",
+      "sphere_tracefree",
+      "maxwell_axial_density"
+    ],
+    "supporting_source_rows": [
+      0,
+      1,
+      2,
+      5,
+      6
+    ],
+    "target_field_map": [
+      [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "characteristic_and_module": {
+    "Einstein_shell_q": "-2*lambda*(-k**2 + omega**2) + lambda*(lambda - 2) + (-k**2 + omega**2)**2",
+    "determinant": "lambda**3*(lambda - 2)*(3*k**2 + 3*lambda - 3*omega**2 - 2)**2*(k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4)/16",
+    "extra_polar_quotient_candidate": "(K[omega]/(p))^2",
+    "extra_shell_p": "-k**2 - lambda + omega**2 + 2/3",
+    "invariant_factors_over_Q_lambda_k_omega": [
+      "1",
+      "1",
+      "-k**2 - lambda + omega**2 + 2/3",
+      "-(3*k**2 + 3*lambda - 3*omega**2 - 2)*(k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4)/3"
+    ],
+    "monic_determinantal_divisors": [
+      "1",
+      "1",
+      "-k**2 - lambda + omega**2 + 2/3",
+      "(3*k**2 + 3*lambda - 3*omega**2 - 2)**2*(k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4)/9"
+    ],
+    "primary_decomposition": "(K[omega]/(p))^2 direct-sum K[omega]/(q)",
+    "resultant_p_q": "4*(9*lambda - 2)**2/81"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE certificate constructs the generic polar target Hessian, its polynomial Einstein chain square, determinant, and generic-field primary decomposition. It does not yet certify the extra polar Lee-Wald current, the integral physical-ring specialization at every allowed momentum, the ungauged BV lift, final residual descent, nonlinear closure, causal scattering, or a quantum interpretation.",
+  "classification": {
+    "Einstein_branch_substitution_used": false,
+    "action_normalized_operator_constructed": true,
+    "direct_target_polar_Euler_samples_constructed": true,
+    "extra_polar_characteristic_certified": true,
+    "final_residual_descent_certified": false,
+    "formal_self_adjointness_certified": true,
+    "generic_lambda_operator_reconstructed": true,
+    "off_shell_omega_and_k_retained": true,
+    "polar_Lee_Wald_current_on_extra_branch_certified": false,
+    "polar_chain_map_constructed": true,
+    "polar_primary_decomposition_certified_over_generic_physical_field": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "direct coordinate linearization on target Weyl gauge slice (A+K,B,C-K,U), arbitrary omega and k, explicit Y_ell0",
+  "lambda_reconstruction": {
+    "all_sample_defects_zero": true,
+    "argument": "a fourth-order natural tensor operator on a scalar spherical harmonic contains at most two Laplace eigenvalues",
+    "degree_bound": 2,
+    "generic_rows": {
+      "maxwell_axial_density": "-(-A_t + C_t + 2*U*k**2 + 2*U*lambda - 2*U*omega**2)/2",
+      "metric_00": "-(2*A_t*k**4 + 4*A_t*k**2*lambda + 2*A_t*lambda**2 - 3*A_t*lambda + 4*B*k**3*omega + 4*B*k*lambda*omega + C_t*k**2*lambda + 2*C_t*k**2*omega**2 + C_t*lambda**2 - C_t*lambda*omega**2 + C_t*lambda + 4*U*lambda)/4",
+      "metric_01": "(2*A_t*k**3*omega + 2*A_t*k*lambda*omega - 3*B*k**2*lambda + 4*B*k**2*omega**2 - 3*B*lambda**2 + 3*B*lambda*omega**2 + 2*B*lambda - 2*C_t*k*lambda*omega + 2*C_t*k*omega**3)/4",
+      "metric_0a": "-I*(2*A_t*k**2*omega + 2*A_t*lambda*omega - 3*A_t*omega + 3*B*k**3 + 3*B*k*lambda + B*k*omega**2 - 2*B*k + 3*C_t*k**2*omega + C_t*lambda*omega - C_t*omega**3 + C_t*omega + 4*U*omega)/4",
+      "metric_11": "-(A_t*k**2*lambda + 2*A_t*k**2*omega**2 + A_t*lambda**2 - A_t*lambda*omega**2 + A_t*lambda - 4*B*k*lambda*omega + 4*B*k*omega**3 + 2*C_t*lambda**2 - 4*C_t*lambda*omega**2 - 3*C_t*lambda + 2*C_t*omega**4 - 4*U*lambda)/4",
+      "metric_1a": "-I*(A_t*k**3 + A_t*k*lambda - 3*A_t*k*omega**2 + A_t*k - B*k**2*omega + 3*B*lambda*omega - 3*B*omega**3 - 2*B*omega + 2*C_t*k*lambda - 2*C_t*k*omega**2 - 3*C_t*k - 4*U*k)/4",
+      "sphere_trace": "-(2*A_t*k**4 + 3*A_t*k**2*lambda - 2*A_t*k**2*omega**2 + A_t*lambda**2 + A_t*lambda*omega**2 - 4*A_t*lambda + 4*B*k**3*omega + 8*B*k*lambda*omega - 4*B*k*omega**3 + C_t*k**2*lambda + 2*C_t*k**2*omega**2 - C_t*lambda**2 + 3*C_t*lambda*omega**2 + 4*C_t*lambda - 2*C_t*omega**4 + 8*U*lambda)/8",
+      "sphere_tracefree": "-(A_t*k**2 + A_t*lambda - 3*A_t*omega**2 - 2*A_t - 4*B*k*omega - 3*C_t*k**2 - C_t*lambda + C_t*omega**2 + 2*C_t)/4"
+    },
+    "hidden_denominators_absent": true,
+    "nodes": [
+      6,
+      12,
+      20
+    ],
+    "row_degrees": {
+      "maxwell_axial_density": 1,
+      "metric_00": 2,
+      "metric_01": 2,
+      "metric_0a": 1,
+      "metric_11": 2,
+      "metric_1a": 1,
+      "sphere_trace": 2,
+      "sphere_tracefree": 1
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "construct the polar extra-branch Lee-Wald current and coefficient extractors, then perform the final residual/gauge descent",
+  "provenance": {
+    "engines": {
+      "bridge/einstein_sector/einstein_maxwell_weyl_axial_ell2_full_tensor.py": "e688393e9fb31bb55972f243554544c4ecac8409c6cf2d4fa5c8f039cd98aa25"
+    },
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_full_tensor.py",
+    "generator_sha256": "1230f1ea1ffdb81b5209ff410e7b3e4b6cd16ac11c9ce0de481f0474b1cc7f11",
+    "inputs": {
+      "bridge/certificates/einstein_weyl_polar_offshell_operator_preflight.json": "5496a7e1124ba8ca0526dd439b11336280bcfaf0c7dcb757eddbbb89ee82612f"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR",
+  "result_state": "GENERIC_POLAR_OFFSHELL_OPERATOR_AND_EINSTEIN_CHAIN_SQUARE_CERTIFIED",
+  "row_order": [
+    "metric_00",
+    "metric_01",
+    "metric_11",
+    "metric_0a",
+    "metric_1a",
+    "sphere_trace",
+    "sphere_tracefree",
+    "maxwell_axial_density"
+  ],
+  "samples": {
+    "2": {
+      "lambda": 6,
+      "rows": {
+        "maxwell_axial_density": "-(-A_t + C_t + 2*U*k**2 - 2*U*omega**2 + 12*U)/2",
+        "metric_00": "-(A_t*k**4 + 12*A_t*k**2 + 27*A_t + 2*B*k**3*omega + 12*B*k*omega + C_t*k**2*omega**2 + 3*C_t*k**2 - 3*C_t*omega**2 + 21*C_t + 12*U)/2",
+        "metric_01": "(A_t*k**3*omega + 6*A_t*k*omega + 2*B*k**2*omega**2 - 9*B*k**2 + 9*B*omega**2 - 48*B + C_t*k*omega**3 - 6*C_t*k*omega)/2",
+        "metric_0a": "-I*(2*A_t*k**2*omega + 9*A_t*omega + 3*B*k**3 + B*k*omega**2 + 16*B*k + 3*C_t*k**2*omega - C_t*omega**3 + 7*C_t*omega + 4*U*omega)/4",
+        "metric_11": "-(A_t*k**2*omega**2 + 3*A_t*k**2 - 3*A_t*omega**2 + 21*A_t + 2*B*k*omega**3 - 12*B*k*omega + C_t*omega**4 - 12*C_t*omega**2 + 27*C_t - 12*U)/2",
+        "metric_1a": "-I*(A_t*k**3 - 3*A_t*k*omega**2 + 7*A_t*k - B*k**2*omega - 3*B*omega**3 + 16*B*omega - 2*C_t*k*omega**2 + 9*C_t*k - 4*U*k)/4",
+        "sphere_trace": "-(A_t*k**4 - A_t*k**2*omega**2 + 9*A_t*k**2 + 3*A_t*omega**2 + 6*A_t + 2*B*k**3*omega - 2*B*k*omega**3 + 24*B*k*omega + C_t*k**2*omega**2 + 3*C_t*k**2 - C_t*omega**4 + 9*C_t*omega**2 - 6*C_t + 24*U)/4",
+        "sphere_tracefree": "-(A_t*k**2 - 3*A_t*omega**2 + 4*A_t - 4*B*k*omega - 3*C_t*k**2 + C_t*omega**2 - 4*C_t)/4"
+      }
+    },
+    "3": {
+      "lambda": 12,
+      "rows": {
+        "maxwell_axial_density": "-(-A_t + C_t + 2*U*k**2 - 2*U*omega**2 + 24*U)/2",
+        "metric_00": "-(A_t*k**4 + 24*A_t*k**2 + 126*A_t + 2*B*k**3*omega + 24*B*k*omega + C_t*k**2*omega**2 + 6*C_t*k**2 - 6*C_t*omega**2 + 78*C_t + 24*U)/2",
+        "metric_01": "(A_t*k**3*omega + 12*A_t*k*omega + 2*B*k**2*omega**2 - 18*B*k**2 + 18*B*omega**2 - 204*B + C_t*k*omega**3 - 12*C_t*k*omega)/2",
+        "metric_0a": "-I*(2*A_t*k**2*omega + 21*A_t*omega + 3*B*k**3 + B*k*omega**2 + 34*B*k + 3*C_t*k**2*omega - C_t*omega**3 + 13*C_t*omega + 4*U*omega)/4",
+        "metric_11": "-(A_t*k**2*omega**2 + 6*A_t*k**2 - 6*A_t*omega**2 + 78*A_t + 2*B*k*omega**3 - 24*B*k*omega + C_t*omega**4 - 24*C_t*omega**2 + 126*C_t - 24*U)/2",
+        "metric_1a": "-I*(A_t*k**3 - 3*A_t*k*omega**2 + 13*A_t*k - B*k**2*omega - 3*B*omega**3 + 34*B*omega - 2*C_t*k*omega**2 + 21*C_t*k - 4*U*k)/4",
+        "sphere_trace": "-(A_t*k**4 - A_t*k**2*omega**2 + 18*A_t*k**2 + 6*A_t*omega**2 + 48*A_t + 2*B*k**3*omega - 2*B*k*omega**3 + 48*B*k*omega + C_t*k**2*omega**2 + 6*C_t*k**2 - C_t*omega**4 + 18*C_t*omega**2 - 48*C_t + 48*U)/4",
+        "sphere_tracefree": "-(A_t*k**2 - 3*A_t*omega**2 + 10*A_t - 4*B*k*omega - 3*C_t*k**2 + C_t*omega**2 - 10*C_t)/4"
+      }
+    },
+    "4": {
+      "lambda": 20,
+      "rows": {
+        "maxwell_axial_density": "-(-A_t + C_t + 2*U*k**2 - 2*U*omega**2 + 40*U)/2",
+        "metric_00": "-(A_t*k**4 + 40*A_t*k**2 + 370*A_t + 2*B*k**3*omega + 40*B*k*omega + C_t*k**2*omega**2 + 10*C_t*k**2 - 10*C_t*omega**2 + 210*C_t + 40*U)/2",
+        "metric_01": "(A_t*k**3*omega + 20*A_t*k*omega + 2*B*k**2*omega**2 - 30*B*k**2 + 30*B*omega**2 - 580*B + C_t*k*omega**3 - 20*C_t*k*omega)/2",
+        "metric_0a": "-I*(2*A_t*k**2*omega + 37*A_t*omega + 3*B*k**3 + B*k*omega**2 + 58*B*k + 3*C_t*k**2*omega - C_t*omega**3 + 21*C_t*omega + 4*U*omega)/4",
+        "metric_11": "-(A_t*k**2*omega**2 + 10*A_t*k**2 - 10*A_t*omega**2 + 210*A_t + 2*B*k*omega**3 - 40*B*k*omega + C_t*omega**4 - 40*C_t*omega**2 + 370*C_t - 40*U)/2",
+        "metric_1a": "-I*(A_t*k**3 - 3*A_t*k*omega**2 + 21*A_t*k - B*k**2*omega - 3*B*omega**3 + 58*B*omega - 2*C_t*k*omega**2 + 37*C_t*k - 4*U*k)/4",
+        "sphere_trace": "-(A_t*k**4 - A_t*k**2*omega**2 + 30*A_t*k**2 + 10*A_t*omega**2 + 160*A_t + 2*B*k**3*omega - 2*B*k*omega**3 + 80*B*k*omega + C_t*k**2*omega**2 + 10*C_t*k**2 - C_t*omega**4 + 30*C_t*omega**2 - 160*C_t + 80*U)/4",
+        "sphere_tracefree": "-(A_t*k**2 - 3*A_t*omega**2 + 18*A_t - 4*B*k*omega - 3*C_t*k**2 + C_t*omega**2 - 18*C_t)/4"
+      }
+    }
+  },
+  "schema": "einstein-maxwell-weyl-polar-full-tensor-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_full_tensor.schema.json",
+  "schema_sha256": "4d24295820a962b74621a33afe5e0722564869f220e08384c7ea4acc6b5cdcad",
+  "target_operator": {
+    "action_matrix": [
+      [
+        "(2*k**4 + 4*k**2*lambda + 2*lambda**2 - 3*lambda)/4",
+        "k*omega*(k**2 + lambda)",
+        "(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "lambda"
+      ],
+      [
+        "k*omega*(k**2 + lambda)",
+        "-(3*k**2*lambda - 4*k**2*omega**2 + 3*lambda**2 - 3*lambda*omega**2 - 2*lambda)/2",
+        "-k*omega*(lambda - omega**2)",
+        "0"
+      ],
+      [
+        "(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "-k*omega*(lambda - omega**2)",
+        "(2*lambda**2 - 4*lambda*omega**2 - 3*lambda + 2*omega**4)/4",
+        "-lambda"
+      ],
+      [
+        "lambda",
+        "0",
+        "-lambda",
+        "-2*lambda*(k**2 + lambda - omega**2)"
+      ]
+    ],
+    "action_row_selection": [
+      "-metric_00",
+      "2*metric_01",
+      "-metric_11",
+      "2*lambda*maxwell_axial_density"
+    ],
+    "coordinates": [
+      "A_t=A+K",
+      "B",
+      "C_t=C-K",
+      "U"
+    ],
+    "formally_self_adjoint": true,
+    "tensor_matrix": [
+      [
+        "-(2*k**4 + 4*k**2*lambda + 2*lambda**2 - 3*lambda)/4",
+        "-k*omega*(k**2 + lambda)",
+        "-(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "-lambda"
+      ],
+      [
+        "k*omega*(k**2 + lambda)/2",
+        "-(3*k**2*lambda - 4*k**2*omega**2 + 3*lambda**2 - 3*lambda*omega**2 - 2*lambda)/4",
+        "-k*omega*(lambda - omega**2)/2",
+        "0"
+      ],
+      [
+        "-(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "k*omega*(lambda - omega**2)",
+        "-(2*lambda**2 - 4*lambda*omega**2 - 3*lambda + 2*omega**4)/4",
+        "lambda"
+      ],
+      [
+        "-I*omega*(2*k**2 + 2*lambda - 3)/4",
+        "-I*k*(3*k**2 + 3*lambda + omega**2 - 2)/4",
+        "-I*omega*(3*k**2 + lambda - omega**2 + 1)/4",
+        "-I*omega"
+      ],
+      [
+        "-I*k*(k**2 + lambda - 3*omega**2 + 1)/4",
+        "I*omega*(k**2 - 3*lambda + 3*omega**2 + 2)/4",
+        "-I*k*(2*lambda - 2*omega**2 - 3)/4",
+        "I*k"
+      ],
+      [
+        "-(2*k**4 + 3*k**2*lambda - 2*k**2*omega**2 + lambda**2 + lambda*omega**2 - 4*lambda)/8",
+        "-k*omega*(k**2 + 2*lambda - omega**2)/2",
+        "-(k**2*lambda + 2*k**2*omega**2 - lambda**2 + 3*lambda*omega**2 + 4*lambda - 2*omega**4)/8",
+        "-lambda"
+      ],
+      [
+        "-(k**2 + lambda - 3*omega**2 - 2)/4",
+        "k*omega",
+        "(3*k**2 + lambda - omega**2 - 2)/4",
+        "0"
+      ],
+      [
+        "1/2",
+        "0",
+        "-1/2",
+        "-k**2 - lambda + omega**2"
+      ]
+    ],
+    "trace_defect": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "trace_identity": "-metric_00+metric_11+2*sphere_trace=0"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_full_tensor --verify bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_full_tensor.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_full_tensor",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_full_tensor --ell 2"
+  ]
+}
