@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-branch-carrier-architecture-preflight-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "dependency_refs", "exact_import_checks", "architecture_options", "selection_verdict", "acceptance_contract", "quantum_critical_path", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-branch-carrier-architecture-preflight-v1"},
+    "result_id": {"const": "BERGER_BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT"},
+    "result_state": {"const": "ARCHITECTURES_COMPARED_ACCEPTANCE_CONTRACT_READY_NO_BRANCH_PROJECTOR_ACCEPTED"},
+    "lifecycle_layer": {"const": "OPTIONAL_CLASSICAL_BRANCH_INTERPRETATION_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "exact_import_checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}},
+    "architecture_options": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rank_46_STF2_graph_carrier", "covariant_curvature_mapping_cylinder"],
+      "properties": {
+        "rank_46_STF2_graph_carrier": {"type": "object"},
+        "covariant_curvature_mapping_cylinder": {"type": "object"}
+      }
+    },
+    "selection_verdict": {
+      "type": "object",
+      "required": ["preferred_first_attempt", "reason", "fallback", "neither_architecture_currently_authorizes_branch_mixing", "rank_46_is_quantum_prerequisite", "rank_46_is_Paper_11_interpretation_followup"],
+      "properties": {
+        "preferred_first_attempt": {"const": "rank_46_STF2_graph_carrier"},
+        "reason": {"type": "string", "minLength": 1},
+        "fallback": {"type": "string", "minLength": 1},
+        "neither_architecture_currently_authorizes_branch_mixing": {"const": true},
+        "rank_46_is_quantum_prerequisite": {"const": false},
+        "rank_46_is_Paper_11_interpretation_followup": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "acceptance_contract": {"type": "object"},
+    "quantum_critical_path": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ARCHITECTURE_PREFLIGHT_COMPLETE", "RANK_46_FIRST_ATTEMPT_SELECTED", "COVARIANT_MAPPING_CYLINDER_REUSE_AUDITED", "RANK_46_CARRIER_IMPORTED", "BRANCH_PROJECTOR_ACCEPTED", "ELL3_BRANCH_MIXING_AUTHORIZED", "RANK_46_IS_QUANTUM_PREREQUISITE", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ARCHITECTURE_PREFLIGHT_COMPLETE": {"const": true},
+        "RANK_46_FIRST_ATTEMPT_SELECTED": {"const": true},
+        "COVARIANT_MAPPING_CYLINDER_REUSE_AUDITED": {"const": true},
+        "RANK_46_CARRIER_IMPORTED": {"const": false},
+        "BRANCH_PROJECTOR_ACCEPTED": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "RANK_46_IS_QUANTUM_PREREQUISITE": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "consumer_provenance": {"type": "object"},
+    "verification_receipts": {"type": "array", "minItems": 4},
+    "higher_tiers_not_run": {"type": "object"}
+  }
+}

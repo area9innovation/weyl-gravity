@@ -34,6 +34,7 @@ DEPENDENCIES = {
     "retained_mixed_ell3_full_BV_cyclicity": HERE / "transfer/certificates/BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY.json",
     "residual_ell3_projection_readiness": HERE / "transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json",
     "retained_36_branch_projector_obstruction": HERE / "transfer/certificates/BERGER_RETAINED_36_BRANCH_PROJECTOR_OBSTRUCTION_IMPORT.json",
+    "branch_carrier_architecture_preflight": HERE / "transfer/certificates/BERGER_BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "base_Hadamard_parametrix": HERE / "lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
     "typed_companion": HERE / "lorentzian/certificates/BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT.json",
@@ -68,6 +69,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "retained_mixed_ell3_full_BV_cyclicity": "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_ACCEPTED",
         "residual_ell3_projection_readiness": "CONSUMER_READY_EXACT_SPLIT_FIELD_CONTRACT_BRANCH_BASIS_INPUT_NOT_SUPPLIED",
         "retained_36_branch_projector_obstruction": "RETAINED_36_CANONICAL_SAME_BUNDLE_ROUTE_OBSTRUCTED_ENLARGED_CARRIER_REQUIRED",
+        "branch_carrier_architecture_preflight": "ARCHITECTURES_COMPARED_ACCEPTANCE_CONTRACT_READY_NO_BRANCH_PROJECTOR_ACCEPTED",
         "causal_chain": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
         "base_Hadamard_parametrix": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
         "typed_companion": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN",
@@ -325,6 +327,30 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("retained-36 branch-projector obstruction frontier drifted")
+    architecture = values["branch_carrier_architecture_preflight"]
+    architecture_flags = architecture.get("claim_flags", {})
+    architecture_selection = architecture.get("selection_verdict", {})
+    architecture_quantum_path = architecture.get("quantum_critical_path", {})
+    if (
+        architecture_flags.get("ARCHITECTURE_PREFLIGHT_COMPLETE") is not True
+        or architecture_flags.get("RANK_46_FIRST_ATTEMPT_SELECTED") is not True
+        or architecture_flags.get("COVARIANT_MAPPING_CYLINDER_REUSE_AUDITED")
+        is not True
+        or architecture_flags.get("RANK_46_CARRIER_IMPORTED") is not False
+        or architecture_flags.get("BRANCH_PROJECTOR_ACCEPTED") is not False
+        or architecture_flags.get("ELL3_BRANCH_MIXING_AUTHORIZED") is not False
+        or architecture_flags.get("RANK_46_IS_QUANTUM_PREREQUISITE") is not False
+        or architecture_flags.get("QUANTUM_CLAIM") is not False
+        or architecture_selection.get("preferred_first_attempt")
+        != "rank_46_STF2_graph_carrier"
+        or architecture_selection.get("rank_46_is_quantum_prerequisite")
+        is not False
+        or architecture_quantum_path.get("ordered_gates", [None])[0]
+        != "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS"
+        or architecture.get("next_gate")
+        != "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE"
+    ):
+        raise ValueError("branch-carrier architecture preflight frontier drifted")
     hadamard_flags = values["Hadamard_lift"].get("claim_flags", {})
     if (
         hadamard_flags.get("BERGER_COVARIANCE_LIFT_26_TO_54") is not True
@@ -403,8 +429,8 @@ def build() -> dict[str, Any]:
         },
         "active_rows": {
             "classical_interacting_input": {
-                "status": "RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_ACCEPTED_RETAINED_36_CANONICAL_BRANCH_PROJECTOR_OBSTRUCTED",
-                "next_gate": "CONSTRUCT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+                "status": "RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_ACCEPTED_RETAINED_36_PROJECTOR_OBSTRUCTED_ARCHITECTURE_PREFLIGHT_COMPLETE_OPTIONAL_FOLLOWUP",
+                "next_gate": "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
             },
             "local_obstruction_space": {
                 "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_FULL_BV_OPEN",
@@ -488,6 +514,11 @@ def build() -> dict[str, Any]:
                 "active_result_id": "BERGER_RETAINED_36_BRANCH_PROJECTOR_OBSTRUCTION_IMPORT",
                 "disposition": "SUPERSEDED_AS_NEXT_GATE_STATUS_SOURCE_HISTORY_RETAINED_VALID_CONSUMER_CONTRACT",
             },
+            {
+                "historical_result_id": "BERGER_RETAINED_36_BRANCH_PROJECTOR_OBSTRUCTION_IMPORT",
+                "active_result_id": "BERGER_BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT",
+                "disposition": "SUPERSEDED_AS_NEXT_GATE_STATUS_SOURCE_HISTORY_RETAINED_VALID_OBSTRUCTION",
+            },
         ],
         "claim_flags": {
             "ACTIVE_FRONTIER_LEDGER": True,
@@ -504,12 +535,15 @@ def build() -> dict[str, Any]:
             "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY": True,
             "RETAINED_36_CANONICAL_LOCAL_PROJECTOR_OBSTRUCTION_IMPORTED": True,
             "RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED": True,
+            "BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE": True,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
             "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED": True,
             "HADAMARD_EXISTENCE_THEOREM_APPLIES": False,
             "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED": False,
+            "RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED": False,
+            "RANK_46_IS_QUANTUM_PREREQUISITE": False,
             "FULL_BV_G2_COMPLETE": False,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
@@ -519,14 +553,14 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "CONSTRUCT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+            "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
-            "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
             "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
             "QME_RESTORATION_OR_OBSTRUCTION",
             "QUANTUM_RESIDUAL_TRANSFER",
+            "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
         ],
         "claim_boundary": (
             "This machine-generated frontier selects current status artifacts without "
@@ -561,7 +595,14 @@ def build() -> dict[str, Any]:
             "dual, giving a candidate retained rank 46. This candidate is not yet a certified "
             "projector. Filtered or mapping-cylinder carriers remain open, and any nonlocal split "
             "must remain REDUCED-MODE. The topological o direction remains outside the dynamical "
-            "branch list. This is a classical LOCAL-ALGEBRAIC acceptance, not a quantum result. "
+            "branch list. A separate architecture preflight selects the rank-46 STF2 graph carrier "
+            "as the preferred minimal setting-specific first attempt and imports the established "
+            "386=356+30 covariant curvature mapping cylinder only as a certified reuse library and "
+            "fallback. Neither route currently supplies a Berger branch adapter or authorizes "
+            "mixing. Rank-46 resolution is an optional Paper 11 interpretation follow-up, not a "
+            "quantum prerequisite: minimal antifield BV cohomology and regulated repository Slavnov "
+            "breaking remain the algebraic critical path, while stationary/Hadamard construction is "
+            "parallel. This is a classical LOCAL-ALGEBRAIC acceptance, not a quantum result. "
             "The companion is null-cone decomposable, but this does not imply existence of a "
             "Hadamard state: the bosonic analytic hypothesis failure and the later full-BV "
             "BRST/Krein and physical-positivity gate are recorded separately. "
@@ -610,6 +651,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("RETAINED_36_CANONICAL_LOCAL_PROJECTOR_OBSTRUCTION_IMPORTED")
         is not True
         or flags.get("RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED") is not True
+        or flags.get("BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE") is not True
         or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
         or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
@@ -635,6 +677,7 @@ def validate(result: dict[str, Any]) -> None:
             "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY",
             "RETAINED_36_CANONICAL_LOCAL_PROJECTOR_OBSTRUCTION_IMPORTED",
             "RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED",
+            "BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
@@ -642,5 +685,5 @@ def validate(result: dict[str, Any]) -> None:
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")
-    if len(result.get("supersession_ledger", [])) != 12:
+    if len(result.get("supersession_ledger", [])) != 13:
         raise ValueError("active frontier supersession ledger drifted")

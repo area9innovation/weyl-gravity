@@ -63,6 +63,14 @@ its cyclic dual, yielding a retained rank of 46. It is the next construction
 gate, not a certified projector. Filtered or mapping-cylinder carriers remain
 open; nonlocal spectral splitting must remain explicitly `REDUCED-MODE`.
 
+The architecture preflight now makes the sequencing precise. The rank-46
+STF2 graph carrier is the preferred minimal Berger-specific first attempt.
+The established 16-block curvature mapping cylinder and its `386=356+30`
+causal hybrid are certified reuse infrastructure and the fallback route, but
+they do not yet provide a Berger-to-retained-36 branch adapter or nonlinear
+`ell3` lift. Neither route authorizes a mixing table. Rank-46 branch resolution
+is an optional Paper 11 interpretation follow-up, not a quantum prerequisite.
+
 The frontier imports the obstruction through its pinned quantum-side consumer
 and imports the earlier interaction repair through the content-addressed
 quantum acceptance certificate. The 1,234/953 defect atlas remains an exact
@@ -92,22 +100,22 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. construct and certify the candidate retained 46-row STF2-plus-dual support-local branch carrier, or supply an explicitly filtered/mapping-cylinder alternative;
-2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
+1. minimal BV cohomology with Koszul--Tate rows;
+2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;
-5. minimal BV cohomology with Koszul--Tate rows;
-6. regulated repository Slavnov breaking;
-7. QME restoration or obstruction;
-8. residual quantum transfer.
+5. regulated repository Slavnov breaking;
+6. QME restoration or obstruction;
+7. residual quantum transfer;
+8. optionally, import the rank-46 STF2 carrier or an admissible filtered/mapping-cylinder alternative for Paper 11 branch interpretation.
 
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.
 
 Tier-1 rerun on 2026-07-17: frontier generation/reproduction took 0.04 s,
-independent verification took 0.11 s, eight frontier tests took 0.16 s
+independent verification took 0.12 s, eight frontier tests took 0.15 s
 (0.05 s inside the test runner), and strict Draft 2020-12 validation took
-1.07 s. The coupled repair's affected
+1.20 s. The coupled repair's affected
 exact chain was run separately at Tier 2 and is recorded in its acceptance
 report. Tier 3 was not run because no quantum lifecycle or paper theorem is
 promoted.

@@ -47,13 +47,25 @@ class ActiveFrontierTests(unittest.TestCase):
             flags["RETAINED_36_CANONICAL_LOCAL_PROJECTOR_OBSTRUCTION_IMPORTED"]
         )
         self.assertTrue(flags["RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED"])
+        self.assertTrue(flags["BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE"])
         self.assertFalse(flags["RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED"])
+        self.assertFalse(flags["RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED"])
+        self.assertFalse(flags["RANK_46_IS_QUANTUM_PREREQUISITE"])
         row = self.payload["active_rows"]["classical_interacting_input"]
         self.assertIn("FULL_BV_CYCLICITY_ACCEPTED", row["status"])
-        self.assertIn("RETAINED_36_CANONICAL_BRANCH_PROJECTOR_OBSTRUCTED", row["status"])
+        self.assertIn("RETAINED_36_PROJECTOR_OBSTRUCTED", row["status"])
+        self.assertIn("ARCHITECTURE_PREFLIGHT_COMPLETE", row["status"])
         self.assertEqual(
             row["next_gate"],
-            "CONSTRUCT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+            "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
+        )
+        self.assertEqual(
+            self.payload["ordered_next_gates"][0],
+            "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
+        )
+        self.assertEqual(
+            self.payload["ordered_next_gates"][-1],
+            "OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE",
         )
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:

@@ -412,11 +412,23 @@ candidate is not yet a projector certificate. Filtered or mapping-cylinder
 carriers remain allowed, while nonlocal spectral splitting must be tagged
 `REDUCED-MODE`.
 
-The active quantum gate is:
+The branch-interpretation follow-up is:
 
 ```text
-CONSTRUCT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1
+OPTIONAL_IMPORT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1_OR_ALTERNATIVE
 ```
+
+It is not the first quantum gate. The algebraic quantum critical path remains
+minimal BV (H^{0,4}) and (H^{1,4}) with the Koszul--Tate rows, followed by
+the regulated repository Slavnov breaking and QME disposition. The
+stationary/Hadamard construction remains a parallel analytic rail.
+
+The architecture preflight selects the rank-46 STF2 graph carrier as the
+preferred minimal Berger-specific attempt. The already certified 16-block
+curvature mapping cylinder and `386=356+30` causal hybrid are a reuse library
+and fallback, not an existing Berger branch adapter. Both routes must satisfy
+the same exact carrier, cyclicity, intertwining, locality, nonlinear-lift and
+mutation conditions before a mixing table is permitted.
 
 ## Common background matrix
 
