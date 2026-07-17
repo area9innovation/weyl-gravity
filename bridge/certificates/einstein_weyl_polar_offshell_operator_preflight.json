@@ -1,0 +1,168 @@
+{
+  "available_exact_inputs": {
+    "Einstein_Maxwell": "complete 8-by-5 gauge-fixed polar equation matrix on (A,B,C,K,U)",
+    "Weyl_Maxwell_current": "2-by-2 direct Lee-Wald current only after reconstruction onto Einstein master representatives",
+    "Weyl_Maxwell_full_Euler_operator": null
+  },
+  "claim_boundary": "This preflight certifies the correct polar Weyl gauge contraction and proves that its field kernel contains no Einstein-Maxwell solution. It does not construct the target polar Bach-Maxwell Euler operator, an off-shell polar chain map, a polar cofiber, an extra polar solution, a causal theory, or a quantum lift. It does not alter the theorem-frozen scope of Paper A, which excludes the polar extra branch.",
+  "classification": {
+    "correct_target_polar_field_slice_certified": true,
+    "full_target_polar_Euler_operator_constructed": false,
+    "paper_A_freeze_affected": false,
+    "polar_mapping_cofiber_constructed": false,
+    "polar_offshell_chain_map_constructed": false,
+    "polar_offshell_chain_map_obstructed": false,
+    "quantum_import_gate_satisfied": false,
+    "source_solution_kernel_injects_through_target_Weyl_slice": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic polar ell>=2 compact Fourier-polynomial block on the fixed magnetic bundle, before final residual quotient",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the independent four-dimensional target polar Euler operator on the four-coordinate Weyl gauge slice, then solve or obstruct the polynomial row factorization L_WM^P S_P=J_P E_P",
+  "operator_acceptance_contract": {
+    "chain_square_to_solve": "L_WM^P*S_P=J_P*E_P for a polynomial 4-by-8 equation-row map J_P",
+    "cofiber_gate": "construct the polar mapping cone only after these squares vanish; otherwise retain the normalized defect",
+    "field_map": "S_P:(A,B,C,K,U)->(A+K,B,C-K,U)",
+    "required_properties": [
+      "direct four-dimensional tensor derivation before Einstein branch substitution",
+      "formal self-adjointness under (omega,k)->(-omega,-k) and transpose",
+      "no inversion of k, omega, lambda-2, or either characteristic polynomial",
+      "exact determinant and physical-ring invariant-factor audit"
+    ],
+    "required_target_operator": "a polynomial 4-by-4 action-normalized Weyl-Maxwell Hessian L_WM^P(lambda,k,omega)",
+    "source_operator": "the certified 8-by-5 Einstein-Maxwell polar equation matrix E_P",
+    "target_coordinates": [
+      "A+K",
+      "B",
+      "C-K",
+      "U"
+    ],
+    "ungauged_lift": "lift through the three source polar Diff ghosts and four target Diff x Weyl ghosts, then verify the equation/identity square"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_weyl_polar_offshell_operator_preflight.py",
+    "generator_sha256": "4f272e28d4e43d7f58af5d2e96e3852eae0ade4f5bea0421caadf98d7d436285",
+    "inputs": {
+      "polar_pullback": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_all_ell_symplectic_restriction.json",
+        "sha256": "828089c487a834b7c2718a00177ff68633e930d178e898563531b70d5917cb02"
+      },
+      "relative_triangle_preflight": {
+        "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+        "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+      },
+      "source_polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+        "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+      },
+      "target_current_on_Einstein_image": {
+        "path": "bridge/certificates/weyl_maxwell_polar_arbitrary_lambda_fixture.json",
+        "sha256": "1e4eadf36ac504c6cb4a997ff90b4e6d1963cc20c8a810a7fa84fde0cd0a3bae"
+      }
+    }
+  },
+  "recommended_computation": {
+    "fixtures": [
+      "ell=2",
+      "ell=3",
+      "ell=4"
+    ],
+    "method": "directly linearize 3*B_ab-T_ab and Maxwell on independent polar coefficients, impose G=h_A=K'=0 only after deriving the tensor rows, and retain arbitrary omega and k",
+    "promotion_rule": "interpolate in lambda only after proving the natural-operator degree bound and checking absence of hidden denominators"
+  },
+  "result_id": "EINSTEIN_WEYL_POLAR_OFFSHELL_OPERATOR_PREFLIGHT",
+  "result_state": "TARGET_WEYL_GAUGE_CONTRACTION_CERTIFIED_FULL_POLAR_EULER_OPERATOR_MISSING",
+  "schema": "einstein-weyl-polar-offshell-operator-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_weyl_polar_offshell_operator_preflight.schema.json",
+  "schema_sha256": "c0a5daac314562344247832af609912614659f9ead6f8f4af976a4a4924c7d7c",
+  "target_Weyl_gauge_contraction": {
+    "induced_map_on_Einstein_solution_kernel_injective": true,
+    "kernel_interpretation": "the kernel is the residual pure-Weyl metric direction (-1,0,1,1,0) on the source Diff gauge slice",
+    "no_division_used": true,
+    "source_gauge_fixed_coordinates": [
+      "A",
+      "B",
+      "C",
+      "K",
+      "U"
+    ],
+    "source_kernel_intersection": "zero because the sphere-tracefree Einstein row equals -1 on the Weyl vector",
+    "source_operator_on_kernel": [
+      "k**2 + lambda",
+      "-k*omega",
+      "-lambda + omega**2",
+      "I*omega",
+      "-I*k",
+      "-(2*k**2 + lambda - 2*omega**2 - 2)/2",
+      "-1",
+      "0"
+    ],
+    "symbols": {
+      "k": "k",
+      "lambda": "lambda",
+      "omega": "omega"
+    },
+    "target_field_map": [
+      [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "target_field_map_kernel": [
+      "-1",
+      "0",
+      "1",
+      "1",
+      "0"
+    ],
+    "target_field_map_rank": 4,
+    "target_gauge_fixed_coordinates": [
+      "A+K",
+      "B",
+      "C-K",
+      "U"
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_polar_offshell_operator_preflight --verify bridge/certificates/einstein_weyl_polar_offshell_operator_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_polar_offshell_operator_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_polar_offshell_operator_preflight"
+  ],
+  "why_the_current_is_not_the_operator": {
+    "missing_information": [
+      "the four independent target gauge-fixed Euler rows",
+      "algebraic lower-order terms not recoverable from a Green current alone",
+      "the extra target characteristic and invariant factors",
+      "the equation and Noether row maps needed for an off-shell chain square"
+    ],
+    "restricted_domain": "the current fixture substitutes the two Einstein master representatives and assumes nonzero mu before the separately certified mu=0 closure",
+    "verdict": "THE_EXISTING_POLAR_CURRENT_CANNOT_CERTIFY_A_POLAR_OFFSHELL_CHAIN_MAP"
+  }
+}

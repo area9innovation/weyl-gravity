@@ -1214,9 +1214,21 @@ complete exceptional-stratum table, make the relative endomorphism `R` the
 phase-space comparison invariant, replace symplectic ``signature'' by
 positive-frequency Hermitian-current inertia, globalize the magnetic-bundle
 gauge action and large-gauge holonomy, and state the three-point spectral
-interpolation lemma explicitly.  This remains `CLASSIFIED`, not
-`THEOREM_FROZEN`; the literal unreduced four-dimensional quadratic
-action-density expansion is still an open normalization audit.
+interpolation lemma explicitly. Following the final internal referee pass,
+the scoped mathematical claims are now `THEOREM_FROZEN` and ready for
+external specialist review, subject to the documented final human
+accountability pass. The literal unreduced four-dimensional quadratic
+action-density expansion remains an optional audit, not a freeze gate.
+
+`EINSTEIN_WEYL_POLAR_OFFSHELL_OPERATOR_PREFLIGHT` also fixes the next relative
+calculation. The source Diff gauge leaves `(A,B,C,K,U)`, while the additional
+target Weyl gauge contracts this to `(A+K,B,C-K,U)`. The contraction kernel
+is the pure-Weyl vector `(-1,0,1,1,0)`; its sphere-tracefree Einstein row is
+exactly `-1`, so it contains no Einstein solution. The remaining missing
+object is the independent four-by-four target polar Euler operator. The
+existing two-by-two polar target current is evaluated only on reconstructed
+Einstein representatives and cannot replace that operator. The next exact
+test is `L_WM^P S_P=J_P E_P`, followed by the ungauged Noether lift.
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.

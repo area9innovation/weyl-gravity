@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-weyl-polar-offshell-operator-preflight-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "provenance", "domain", "available_exact_inputs", "target_Weyl_gauge_contraction", "why_the_current_is_not_the_operator", "operator_acceptance_contract", "recommended_computation", "classification", "next_gate", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-weyl-polar-offshell-operator-preflight-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_weyl_polar_offshell_operator_preflight.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_WEYL_POLAR_OFFSHELL_OPERATOR_PREFLIGHT"},
+    "result_state": {"const": "TARGET_WEYL_GAUGE_CONTRACTION_CERTIFIED_FULL_POLAR_EULER_OPERATOR_MISSING"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "available_exact_inputs": {"type": "object"},
+    "target_Weyl_gauge_contraction": {"type": "object"},
+    "why_the_current_is_not_the_operator": {"type": "object"},
+    "operator_acceptance_contract": {"type": "object"},
+    "recommended_computation": {"type": "object"},
+    "classification": {"type": "object", "properties": {"correct_target_polar_field_slice_certified": {"const": true}, "full_target_polar_Euler_operator_constructed": {"const": false}, "polar_offshell_chain_map_constructed": {"const": false}, "paper_A_freeze_affected": {"const": false}, "quantum_import_gate_satisfied": {"const": false}}, "required": ["correct_target_polar_field_slice_certified", "full_target_polar_Euler_operator_constructed", "polar_offshell_chain_map_constructed", "paper_A_freeze_affected", "quantum_import_gate_satisfied"]},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}
