@@ -923,6 +923,15 @@ They return the two extra coordinates exactly and annihilate the complete
 certified generic axial Einstein image. Final `SO(4,2)`, relational, causal,
 and asymptotic descent remain open.
 
+The scoped compact linear manuscript is now assembled at
+paper/10-compact-einstein-maxwell-weyl-phase-space.tex. It states the
+complete standard Einstein--Maxwell harmonic inclusion theorem and the
+complete generic axial extra-branch theorem in one narrative, while keeping
+the polar extra branch, final residual descent, literal four-dimensional
+action-density expansion, nonlinear closure, causal scattering, and quantum
+ghost interpretation explicit as nonclaims. Its fail-closed input ledger is
+paper/10-compact-einstein-maxwell-weyl-phase-space-claim-map.json.
+
 The first quadratic self-extension test is now exact on the full real
 `ell=2,k=0` extra span. With
 
