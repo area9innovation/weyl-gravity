@@ -811,7 +811,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | known target; re-audit charge | known target | proved baseline | zero in stated absolute residual complex | \(I_2\) on centered degree-four classes | proper solution sector |
-| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | exact on the infinite homogeneous lattice; full 4D arity two open | exact 54-to-26 reduction; retained endpoint open | not computed | unary cyclic pairing exact; nonlinear/causal transport open | not classified |
+| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | complete 54-row causal cyclic \(K_{\rm Berger}\)-Cartan contraction through arity three | complete advanced/retarded 54-row chain contractions | no Paper-IX one-particle claim; G0 Maxwell signal fixture certified separately | complete classical cyclic pairing through arity three; no Hadamard or quantum pairing | certified non-Einstein Weyl--matter control branch |
 | Cylinder + scalar clock | open | open | open | open | open | open |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |
@@ -820,16 +820,19 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Export the complete support-local four-dimensional Berger \(q_2\), including
-   antifield/Koszul--Tate rows and exact cyclicity.
-2. Hand the frozen export to the nonlinear team by content hash and support its
-   independent replay; do not duplicate the retained Green construction now
-   owned there in parallel.
-3. Combine the completed \(q_2\) with the frozen local \(D\)-action and the
-   imported Green-domain certificate to run the support-local all-row
-   arity-two Cartan test.
-4. After those gates freeze the admissible domain, construct a Berger
-   relational observable and an operational redshift fixture.
+1. Keep the Paper IX clean-tree replay as the sole deferred freeze gate; do
+   not reopen the already-certified \(q_2,q_3\), Green, or arity-three Cartan
+   calculations.
+2. Extend the complete 64-row gravity--clock--Maxwell unary complex by the
+   standard causal Maxwell BV contraction and transport the first mixed
+   \(q_2\) vertex through the \(54\to26\) cyclic SDR.
+3. Use that transferred vertex to replace the spatially averaged G0 redshift
+   fixture by a compact retarded signal and then a localized clock-referenced
+   emitter/receiver observable. Keep backreaction and apparatus recoil as
+   separately promoted gates.
+4. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
+   acceptance flags pass; until then the relative observable functor remains
+   a preflight and must not reconstruct the Einstein map independently.
 5. Continue the deformation, Yang--Mills, and boundary-condition rails as
    independent generality tests rather than prerequisites for the Berger gate.
 

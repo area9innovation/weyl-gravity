@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-maxwell-unary-contraction-transfer-v1.json",
+  "title": "Berger Maxwell causal unary contraction and transferred q2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "dimension_ledger", "maxwell_unary_contraction",
+    "combined_causal_contraction", "first_transferred_mixed_vertex",
+    "exact_checks", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-maxwell-unary-contraction-transfer-v1"},
+    "result_id": {"const": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_MAXWELL_CAUSAL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_Q2"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["gravity_sdr", "retained_layout", "gravity_causal", "retained_causal", "coupled_q2", "coupled_q2_payload", "redshift_fixture"],
+      "properties": {
+        "gravity_sdr": {"$ref": "#/$defs/dependency"},
+        "retained_layout": {"$ref": "#/$defs/dependency"},
+        "gravity_causal": {"$ref": "#/$defs/dependency"},
+        "retained_causal": {"$ref": "#/$defs/dependency"},
+        "coupled_q2": {"$ref": "#/$defs/dependency"},
+        "coupled_q2_payload": {"$ref": "#/$defs/dependency"},
+        "redshift_fixture": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "dimension_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["gravity_clock_full_rows", "maxwell_rows", "combined_full_rows", "gravity_clock_retained_rows", "combined_endpoint_rows", "identities"],
+      "properties": {
+        "gravity_clock_full_rows": {"const": 54}, "maxwell_rows": {"const": 10},
+        "combined_full_rows": {"const": 64}, "gravity_clock_retained_rows": {"const": 26},
+        "combined_endpoint_rows": {"const": 36},
+        "identities": {"const": ["64=54+10", "36=26+10", "64=28+36"]}
+      }
+    },
+    "maxwell_unary_contraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complex", "witness_formula", "wave_identity", "principal_symbol", "green_homotopy", "support", "witness_record", "wave_record"],
+      "properties": {
+        "complex": {"type": "string", "minLength": 1}, "witness_formula": {"type": "string", "minLength": 1},
+        "wave_identity": {"type": "string", "minLength": 1}, "principal_symbol": {"type": "string", "minLength": 1},
+        "green_homotopy": {"type": "string", "minLength": 1}, "support": {"type": "string", "minLength": 1},
+        "witness_record": {"$ref": "#/$defs/matrix"}, "wave_record": {"$ref": "#/$defs/matrix"}
+      }
+    },
+    "combined_causal_contraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["endpoint", "formula", "identity", "support"],
+      "properties": {
+        "endpoint": {"type": "string", "minLength": 1}, "formula": {"type": "string", "minLength": 1},
+        "identity": {"type": "string", "minLength": 1}, "support": {"type": "string", "minLength": 1}
+      }
+    },
+    "first_transferred_mixed_vertex": {
+      "type": "object", "additionalProperties": false,
+      "required": ["payload_path", "payload_file_sha256", "payload_canonical_sha256", "formula", "term_count", "mixed_gravity_Maxwell_input_term_count", "pure_Maxwell_input_term_count", "nonzero_output_rows", "maximum_total_jet_order", "arity_two_defect_term_counts"],
+      "properties": {
+        "payload_path": {"const": "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json"},
+        "payload_file_sha256": {"$ref": "#/$defs/sha256"}, "payload_canonical_sha256": {"$ref": "#/$defs/sha256"},
+        "formula": {"const": "ell2_mixed=pi64 q2_Maxwell-overlay(iota36,iota36)"},
+        "term_count": {"const": 1522},
+        "mixed_gravity_Maxwell_input_term_count": {"type": "integer", "minimum": 1},
+        "pure_Maxwell_input_term_count": {"type": "integer", "minimum": 1},
+        "nonzero_output_rows": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0, "maximum": 35}},
+        "maximum_total_jet_order": {"const": 2},
+        "arity_two_defect_term_counts": {"type": "array", "minItems": 36, "maxItems": 36, "items": {"const": 0}}
+      }
+    },
+    "exact_checks": {"$ref": "#/$defs/exact_checks"},
+    "flags": {"$ref": "#/$defs/flags"},
+    "next_gate": {"const": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "exponents": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+    "operator_term": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [{"$ref": "#/$defs/exponents"}, {"type": "string", "minLength": 1}], "items": false
+    },
+    "matrix_entry": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0},
+        {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/operator_term"}}
+      ], "items": false
+    },
+    "matrix": {
+      "type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"const": [10, 10]},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/matrix_entry"}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Maxwell_q1_squared_zero", "Maxwell_witness_identity_exact", "Maxwell_wave_scalar_principal_symbol_all_10_rows", "Maxwell_q_commutes_with_wave", "Maxwell_complementary_degree_formal_adjointness", "Maxwell_advanced_retarded_Green_homotopies", "combined_pi_iota_identity", "combined_iota_and_pi_chain_maps", "combined_64_to_36_contraction_identity", "combined_64_row_advanced_retarded_chain_homotopies", "transferred_q2_arity_two_identity_all_36_rows", "transferred_q2_cyclicity_by_cyclic_SDR", "first_mixed_vertex_nonzero"],
+      "properties": {
+        "Maxwell_q1_squared_zero": {"const": true}, "Maxwell_witness_identity_exact": {"const": true},
+        "Maxwell_wave_scalar_principal_symbol_all_10_rows": {"const": true}, "Maxwell_q_commutes_with_wave": {"const": true},
+        "Maxwell_complementary_degree_formal_adjointness": {"const": true}, "Maxwell_advanced_retarded_Green_homotopies": {"const": true},
+        "combined_pi_iota_identity": {"const": true}, "combined_iota_and_pi_chain_maps": {"const": true},
+        "combined_64_to_36_contraction_identity": {"const": true}, "combined_64_row_advanced_retarded_chain_homotopies": {"const": true},
+        "transferred_q2_arity_two_identity_all_36_rows": {"const": true}, "transferred_q2_cyclicity_by_cyclic_SDR": {"const": true},
+        "first_mixed_vertex_nonzero": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_MAXWELL_UNARY_CONTRACTION", "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY", "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY", "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING", "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_MAXWELL_BACKREACTION", "BERGER_G1_COMPLETE_SIGNAL_SECTOR", "BERGER_HADAMARD_DATA", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_MAXWELL_UNARY_CONTRACTION": {"const": true}, "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY": {"const": true},
+        "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": true}, "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": {"const": true},
+        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": {"const": false}, "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
+        "BERGER_MAXWELL_BACKREACTION": {"const": false}, "BERGER_G1_COMPLETE_SIGNAL_SECTOR": {"const": false},
+        "BERGER_HADAMARD_DATA": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    }
+  }
+}

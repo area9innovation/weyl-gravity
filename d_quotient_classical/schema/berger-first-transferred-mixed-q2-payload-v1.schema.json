@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-first-transferred-mixed-q2-payload-v1.json",
+  "title": "First transferred Berger gravity-Maxwell q2 payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "coefficient_field", "pbw_basis", "shape", "formula", "rows", "canonical_sha256"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-first-transferred-mixed-q2-payload-v1"},
+    "result_id": {"const": "BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD"},
+    "coefficient_field": {"const": "Q(sqrt(10))"},
+    "pbw_basis": {"type": "string", "minLength": 1},
+    "shape": {"const": [36, 36, 36]},
+    "formula": {"const": "ell2_mixed=pi64 q2_Maxwell-overlay(iota36,iota36)"},
+    "rows": {
+      "type": "array", "minItems": 36, "maxItems": 36,
+      "items": {"$ref": "#/$defs/row"}
+    },
+    "canonical_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "word": {
+      "type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}
+    },
+    "term": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0, "maximum": 35},
+        {"$ref": "#/$defs/word"},
+        {"type": "integer", "minimum": 0, "maximum": 35},
+        {"$ref": "#/$defs/word"},
+        {"type": "string", "minLength": 1}
+      ],
+      "items": false
+    },
+    "row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["output", "terms", "canonical_sha256"],
+      "properties": {
+        "output": {"type": "integer", "minimum": 0, "maximum": 35},
+        "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+        "canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}
