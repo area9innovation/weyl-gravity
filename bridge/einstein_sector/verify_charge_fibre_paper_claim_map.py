@@ -111,6 +111,9 @@ def verify() -> None:
     for required_text in (
         "Theorem 3.1 (generic polar linear input)",
         "Proposition 4.1 (Taub pairing equals the stabilizer moment map)",
+        "D^2\\mathcal C_\\Sigma|_{\\bar\\Phi}[u,u]",
+        "d\\Sigma_{\\bar h}",
+        "No global\nSmith normal form over the multivariate ring",
         "pure extra generic mode: obstructed",
         "balanced Einstein--extra mode: extendible to second order",
         "Theorem 5.1 (pure-extra fixed-bundle no-go)",
@@ -125,6 +128,8 @@ def verify() -> None:
         assert required_text in manuscript, required_text
     assert "admits a real, periodic" not in manuscript
     assert "$\\Phi^{(2)}$ is real and periodic" not in manuscript
+    assert "axial Maxwell-density equations" not in manuscript
+    assert "2,qquad" not in manuscript
 
     claims = claim_map["certified_claims"]
     assert all(value is True for value in claims.values())
