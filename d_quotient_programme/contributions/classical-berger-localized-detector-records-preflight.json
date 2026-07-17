@@ -7,7 +7,7 @@
   "boundary_conditions": "R x Berger S3 with no spatial boundary; fixed-coupling linearized background, homogeneous compact-S3 Maxwell switch-on currents, nonbackreacting local probe rods, and two compact relational detector windows",
   "lifecycle_layer": "LORENTZIAN_CAUSAL",
   "claim_status": "PARTIAL",
-  "verdict": "REPAIRED_Q2_IMPORTED_LINEAR_RANK_TWO_SURVIVES_APPARATUS_EXTENSION_OPEN",
+  "verdict": "REPAIRED_Q2_IMPORTED_RANK_TWO_PROBE_BASELINE_APPARATUS_Q1_GREEN_OPEN",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
   "established": [
     "standard-sign probe-rod Cauchy solutions give nondegenerate relational Jacobians on some local neighborhoods of both detector centers",
@@ -19,28 +19,32 @@
     "the two retarded source basis signals produce distinguishable persistent memory vectors (C_00,0) and (0,C_11)",
     "Diff, Weyl, and Maxwell-gauge covariance hold for the declared probe functionals",
     "the repaired cyclic q2 imports exactly on the existing 64 gravity-clock-Maxwell BV rows and contains the Maxwell stress vertex q2(A,A)->h_hat_plus",
-    "the first-order rank-two source-to-memory coefficient survives as the linear term of the interacting expansion",
-    "the exact first obstruction to nonlinear promotion is typed: the 64-row ledger contains no rod, detector-polarization, memory, or emitter BV rows",
-    "dynamical rod-dependent smearing produces a required p-A-R q3 block, so q2 alone cannot certify nonlinear observer consistency"
+    "rank two remains an imported probe-limit baseline and is not promoted to the unconstructed extended rod-memory-Maxwell unary complex",
+    "the action-arity convention is fixed explicitly: p*A induces q1, p*A*deltaR induces q2, and p*A*deltaR*deltaR induces q3",
+    "detector polarization is the composite dTheta wedge dR^a and the current J_b remains an external q-closed conserved source at this gate",
+    "conditional on a gauge-compatible formal interacting deformation, the nonzero determinant constant term makes rank two formally stable",
+    "the nonlinear team owns the apparatus interaction tensors, cyclicity, K_Berger identities, Green homotopy, and backreaction; the closed-universe team owns their import and the observer-morphism test"
   ],
   "not_established": [
     "rank two for two spatially localized emitter worldtubes rather than homogeneous compact-S3 currents",
     "full localized-source-support to detector-window causal incidence and no-wrap margins",
     "raw-D descent after adjoining the source, probe-rod, and memory sectors",
-    "a common cyclic BV ledger containing the rod, polarization, memory, and emitter variables, antifields, and action-derived q1/q2/q3 blocks",
+    "a common cyclic rod-memory-Maxwell q1, BV pairing, and retarded Green homotopy",
+    "rank two for that extended linear complex rather than the imported probe baseline",
+    "the action-derived composite-polarization q2, conditional q3, higher smooth-profile operations, and cyclic cotangent partners",
     "K_Berger compatibility or raw-D descent on that extended interacting complex",
-    "a backreacted metric/apparatus solution and rank-two detector response after gravitational recoil",
+    "a dynamical emitter, backreacted metric/apparatus solution, or actual interacting observer deformation",
     "a nonlinear classical or quantum observer algebra"
   ],
   "evidence": {
     "path": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json",
-    "commit": "60314ae0b15cf6a9875567c207c66f8764dd7482",
-    "sha256": "9df5e1d697af3366198c40ae73477bd39899b164a4e671bdafb7d33385305523"
+    "commit": "f62e7d43627f35c73baba97cf23fcb6f8ca24e5c",
+    "sha256": "17cc190abb57658382da790118343bc85549d6ee889e1d10a55c5046b3252028"
   },
   "verification_commands": [
     "python3 closed_universe_observers/generate_berger_observer_interaction_import_gate.py --check",
     "python3 closed_universe_observers/verify_berger_observer_interaction_import_gate.py",
     "python3 -m pytest -q closed_universe_observers/tests/test_berger_observer_interaction_import_gate.py closed_universe_observers/tests/test_comparison_ledger.py"
   ],
-  "next_gate": "BERGER_ACTION_DERIVED_ROD_POLARIZATION_MEMORY_EMITTER_BV_EXTENSION_THROUGH_Q3"
+  "next_gate": "IMPORT_NONLINEAR_TEAM_APPARATUS_Q1_GREEN_AND_HIGHER_OPERATIONS_THEN_TEST_OBSERVER_MORPHISM"
 }
