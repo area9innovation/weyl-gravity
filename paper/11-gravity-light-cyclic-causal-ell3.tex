@@ -90,7 +90,10 @@ $550$-dimensional mixed $g^2A^2$ quartic sector is the image of admissible
 constant-field cyclic redefinitions, and a $51$-coefficient $F_3$ primitive
 removes the landed $63$-coordinate constant term.  Thus the displayed
 zero-derivative evaluations witness representative nonvanishing but cannot
-witness deformation-class nontriviality; the positive-jet complex is open.
+witness deformation-class nontriviality.  The complete first-jet physical
+page is also exact: retaining all zero-jet kernel freedom, the coupled Schur
+system admits an explicit four-axis positive-jet primitive.  The full-BV
+ghost/antifield completion and total jet order two remain open.
 A separate exact audit obstructs the canonical
 local same-bundle branch projector on the $36$-row carrier.  The resulting
 rank-$46$ spatial-STF2 graph prolongation and its cyclic dual are now
@@ -470,6 +473,40 @@ terms in $F_2,F_3$, PBW integration-by-parts relations, and cancellation of
 higher-order terms against the fourth-order unary operator have not yet been
 solved, and the $288$ ghost/antifield completion coefficients have not been
 independently matched by this primitive.
+
+\begin{proposition}[First positive-jet cyclic-redefinition screen]
+\label{prop:first-jet-redefinition}
+After exact first-order integration by parts, the mixed physical quartic has
+$1{,}330$ first-jet coordinates per PBW axis.  Let $A$ denote the zero-jet
+map of Proposition~\ref{prop:constant-redefinition}, $B_a$ the first-jet
+effect of its complete $2{,}690$-coefficient zero-jet ansatz, and $C$ the map
+from first-jet redefinitions.  The coupled equations
+\begin{equation}\label{eq:first-jet-schur}
+ Ax_0=t_0,
+ \qquad B_ax_0+Cy_a=t_{1,a},\quad a=0,1,2,3,
+\end{equation}
+have an exact solution over $\Q(\sqrt{10})$.  More precisely, $C$ has shape
+$1{,}330\times6{,}560$, rank $1{,}327$, and cokernel dimension three.  The
+cokernel-reduced Schur system has shape $562\times2{,}690$, rank $557$, and
+compatible target.  An exported primitive has $51$ zero-jet coefficients and
+respectively $43,94,95,108$ first-jet coefficients on the four PBW axes.
+\end{proposition}
+
+\begin{proof}
+The solver lowers the pinned $\ell_1,\ell_2,\ell_3$ tensors to local action
+densities and quotients total first derivatives with exact field-multiplicity
+weights.  It projects Equation~\eqref{eq:first-jet-schur} to the three exact
+cokernel rows of $C$ on each axis before solving for $x_0$; hence it retains
+the entire affine zero-jet solution space rather than extending the earlier
+chosen primitive by fiat.  Exact rank receipts and direct multiplication of
+the exported $x_0,y_a$ reconstruct the $550$ zero-jet coordinates and all
+four $1{,}330$-coordinate first-jet blocks.  A primitive-coefficient mutation
+fails the replay.
+\end{proof}
+
+This remains a physical-action filtration theorem.  It does not match the
+$288$ ghost/antifield completion coefficients and does not address total jet
+order two, where the landed $\ell_3$ has nonzero terms.
 
 \begin{corollary}[Exact sparse implementation audit]
 \label{cor:sparse-audit}
@@ -852,9 +889,11 @@ relational observables are still required.
 \item Nonvanishing of this coefficient representative proves neither a
 nonzero operation on $\ell_1$-cohomology nor a nontrivial cyclic deformation
 class.  The complete constant-field page is in fact removable by the exact
-$F_3$ primitive of Proposition~\ref{prop:constant-redefinition}; no
-positive-jet obstruction or trivialization has been computed, and no
-invariance under changing SDR is claimed.
+$F_3$ primitive of Proposition~\ref{prop:constant-redefinition}, and the
+first-jet physical page is removable by
+Proposition~\ref{prop:first-jet-redefinition}.  No full-BV or order-two
+obstruction or trivialization has been computed, and no invariance under
+changing SDR is claimed.
 \item Deformation/vertex classes are not one-particle states and are not
 included in the dynamical branch list used here.
 \item The vanishing one-particle cohomology of the separate free conformal
@@ -888,7 +927,9 @@ Artifact & Role\\
 \cert{BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY}
  & independent ghost/antifield completion and full retained BV cyclicity\\
 \cert{BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1}
- & exact G0 cyclic-redefinition primitive; positive-jet complex remains open\\
+ & exact constant-field physical-action cyclic-redefinition primitive\\
+\cert{BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1}
+ & exact coupled first-jet primitive; full BV and order two remain open\\
 \cert{BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2}
  & historical fail-closed input contract for the mixing table\\
 \cert{BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1}
@@ -932,6 +973,12 @@ PYTHONPATH=. python3 \
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
   verify_berger_retained_mixed_ell3_constant_field_redefinition.py
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_retained_mixed_ell3_first_jet_redefinition.py --check
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_retained_mixed_ell3_first_jet_redefinition.py
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.berger_residual_ell3_branch_projection_readiness_v2 --check
 PYTHONPATH=quantum-weyl python3 -m \
@@ -985,9 +1032,10 @@ nonlinear closure of the Einstein-like direction through this order; and a
 central topological action would isolate the vertex theory from the
 dynamical carrier.  The second is to test whether the selected mixed
 representative defines a nonzero cyclic deformation class or operation on
-$\ell_1$-cohomology.  Its constant-field page is now known to be exact, so
-the next deformation calculation starts at positive PBW jet order rather
-than reusing the two displayed zero-derivative evaluations.
+$\ell_1$-cohomology.  Its constant-field and first-jet physical-action pages
+are now known to be exact.  The next deformation calculation must therefore
+include the full BV completion and total PBW jet order two rather than reuse
+either displayed zero-derivative evaluations or first-order coefficients.
 
 The algebraic theorem does not need to wait for that verdict.  What the
 mixing table changes is its physical interpretation, not the existence of the

@@ -585,13 +585,26 @@ nonremovability witnesses.  This is a `G0`, `LOCAL-ALGEBRAIC` result: the
 positive-jet `F2,F3` complex, its higher-order cancellation conditions, and
 the operation on `ell1` cohomology remain open.
 
+The first positive-jet page has now also closed exactly.  The certificate
+`BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1` solves the coupled
+system `A*x0=t0`, `B_a*x0+C*y_a=t1_a` without freezing the earlier 51-term
+primitive: all 2,690 zero-jet coefficients remain available in the Schur
+solve.  Exact first-order integration by parts gives 1,330 coordinates per
+PBW axis.  The positive-jet map has rank 1,327 and cokernel dimension three;
+the resulting `562 x 2690` Schur system has rank 557 and accepts the target.
+An explicit primitive uses 51 zero-jet coefficients and positive-jet counts
+`(43,94,95,108)` on the four axes.  Thus neither jet order zero nor one of the
+degree-zero physical action supplies a nonremovability witness.  This remains
+`G0` and `LOCAL-ALGEBRAIC`: the 288 ghost/antifield coefficients and total jet
+order two are the next honest gate.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
-2. Continue the N-G4 cyclic-deformation test at positive PBW jet order.  Do
-   not reuse a zero-derivative coefficient as an obstruction: that complete
-   page is now certified exact.  Return either a jet-bounded admissible
-   trivializing \((F_2,F_3)\) or the first normalized positive-jet dual
+2. Continue N-G4 with the full-BV completion and total PBW jet order two.  Do
+   not reuse order-zero or order-one physical coefficients as obstructions:
+   both pages are certified exact.  Return either a complete jet-bounded
+   trivializing \((F_2,F_3)\) or the first normalized order-two/full-BV dual
    witness for the mixed \(\ell_3\).
 3. Keep the Green/BGG assignment as a bounded parallel theorem-extraction
    rail.  If continuing the Berger PDE construction, contract the acyclic

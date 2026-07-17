@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-retained-mixed-ell3-first-jet-redefinition-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "generality_level", "dependency_refs", "first_jet_quotient", "coupled_schur_problem", "exact_primitive", "rank_receipts", "exact_checks", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-mixed-ell3-first-jet-redefinition-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1"},
+    "result_state": {"const": "FIRST_JET_PHYSICAL_MIXED_QUARTIC_TRIVIALIZED_FULL_BV_AND_ORDER2_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality_level": {"const": "G0"},
+    "dependency_refs": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "first_jet_quotient": {
+      "type": "object",
+      "required": ["integration_by_parts", "zero_jet_dimension", "first_jet_dimension_per_axis", "first_jet_total_dimension", "raw_ell3_order_one_operator_coefficients", "lowered_order_one_density_terms", "canonical_target_nonzero_by_axis"],
+      "properties": {
+        "integration_by_parts": {"type": "string", "minLength": 1},
+        "zero_jet_dimension": {"const": 550},
+        "first_jet_dimension_per_axis": {"const": 1330},
+        "first_jet_total_dimension": {"const": 5320},
+        "raw_ell3_order_one_operator_coefficients": {"const": 6546},
+        "lowered_order_one_density_terms": {"const": 633},
+        "canonical_target_nonzero_by_axis": {"const": [58, 136, 136, 126]}
+      },
+      "additionalProperties": false
+    },
+    "coupled_schur_problem": {
+      "type": "object",
+      "required": ["formula", "A_shape", "A_nonzero_entries", "B_shape_each_axis", "B_nonzero_entries_by_axis", "C_shape_each_axis", "C_nonzero_entries", "C_rank", "C_cokernel_dimension", "Schur_shape", "Schur_nonzero_entries", "Schur_rank", "Schur_left_nullity", "target_compatible"],
+      "properties": {
+        "formula": {"type": "string"}, "A_shape": {"const": [550, 2690]}, "A_nonzero_entries": {"const": 5105},
+        "B_shape_each_axis": {"const": [1330, 2690]}, "B_nonzero_entries_by_axis": {"const": [2189, 6563, 6427, 6172]},
+        "C_shape_each_axis": {"const": [1330, 6560]}, "C_nonzero_entries": {"const": 16329}, "C_rank": {"const": 1327}, "C_cokernel_dimension": {"const": 3},
+        "Schur_shape": {"const": [562, 2690]}, "Schur_nonzero_entries": {"const": 5154}, "Schur_rank": {"const": 557}, "Schur_left_nullity": {"const": 5}, "target_compatible": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "exact_primitive": {
+      "type": "object",
+      "required": ["zero_jet_nonzero_count", "positive_jet_nonzero_by_axis", "zero_jet", "positive_jet_by_axis", "zero_jet_reconstruction_exact", "first_jet_reconstruction_exact_all_axes"],
+      "properties": {
+        "zero_jet_nonzero_count": {"const": 51}, "positive_jet_nonzero_by_axis": {"const": [43, 94, 95, 108]},
+        "zero_jet": {"type": "array", "minItems": 51, "maxItems": 51, "items": {"$ref": "#/$defs/zeroPrimitive"}},
+        "positive_jet_by_axis": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "items": {"$ref": "#/$defs/positivePrimitive"}}},
+        "zero_jet_reconstruction_exact": {"const": true}, "first_jet_reconstruction_exact_all_axes": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "rank_receipts": {"type": "object", "required": ["Schur_independent_rows", "Schur_basis_columns", "C_independent_rows", "C_basis_columns", "C_initial_matching_rank", "C_repair_column_count"], "properties": {
+      "Schur_independent_rows": {"type": "array", "minItems": 557, "maxItems": 557, "uniqueItems": true, "items": {"type": "integer"}},
+      "Schur_basis_columns": {"type": "array", "minItems": 557, "maxItems": 557, "uniqueItems": true, "items": {"type": "integer"}},
+      "C_independent_rows": {"type": "array", "minItems": 1327, "maxItems": 1327, "uniqueItems": true, "items": {"type": "integer"}},
+      "C_basis_columns": {"type": "array", "minItems": 1327, "maxItems": 1327, "uniqueItems": true, "items": {"type": "integer"}},
+      "C_initial_matching_rank": {"type": "integer", "minimum": 0, "maximum": 1327}, "C_repair_column_count": {"type": "integer", "minimum": 0, "maximum": 1327}
+    }, "additionalProperties": false},
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "claim_flags": {"type": "object", "required": ["FIRST_JET_PHYSICAL_ACTION_TRIVIALIZATION_COMPUTED", "FULL_BV_REDEFINITION_MATCHED", "JET_ORDER_TWO_OR_HIGHER_COMPUTED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "ELL3_NONREMOVABLE", "ELL3_BRANCH_MIXING_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {
+      "FIRST_JET_PHYSICAL_ACTION_TRIVIALIZATION_COMPUTED": {"const": true}, "FULL_BV_REDEFINITION_MATCHED": {"const": false}, "JET_ORDER_TWO_OR_HIGHER_COMPUTED": {"const": false}, "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false}, "ELL3_NONREMOVABLE": {"const": false}, "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+    }, "additionalProperties": false},
+    "next_gate": {"const": "BERGER_RETAINED_MIXED_ELL3_FULL_BV_AND_SECOND_JET_CYCLIC_REDEFINITION"},
+    "provenance": {"type": "object", "required": ["source_manifest", "verification_commands"], "properties": {
+      "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+      "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+    }, "additionalProperties": false},
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {"type": "object", "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false},
+    "zeroPrimitive": {"type": "object", "required": ["column", "arity", "output_local", "output_row", "input_locals", "input_rows", "coefficient"], "properties": {
+      "column": {"type": "integer", "minimum": 0, "maximum": 2689}, "arity": {"enum": ["F2", "F3"]}, "output_local": {"type": "integer"}, "output_row": {"type": "integer"}, "input_locals": {"type": "array", "items": {"type": "integer"}}, "input_rows": {"type": "array", "items": {"type": "integer"}}, "coefficient": {"type": "string"}
+    }, "additionalProperties": false},
+    "positivePrimitive": {"type": "object", "required": ["column", "arity", "output_local", "output_row", "input_locals", "input_rows", "derivative_input_local", "derivative_input_row", "coefficient"], "properties": {
+      "column": {"type": "integer", "minimum": 0, "maximum": 6559}, "arity": {"enum": ["F2", "F3"]}, "output_local": {"type": "integer"}, "output_row": {"type": "integer"}, "input_locals": {"type": "array", "items": {"type": "integer"}}, "input_rows": {"type": "array", "items": {"type": "integer"}}, "derivative_input_local": {"type": "integer"}, "derivative_input_row": {"type": "integer"}, "coefficient": {"type": "string"}
+    }, "additionalProperties": false}
+  }
+}

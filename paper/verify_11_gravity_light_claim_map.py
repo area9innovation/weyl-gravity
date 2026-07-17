@@ -25,7 +25,7 @@ def main() -> None:
     assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT"
     assert (
         payload["result_state"]
-        == "WRITING_STARTED_CONSTANT_FIELD_PHYSICAL_REDEFINITION_TRIVIALIZATION_FULL_BV_POSITIVE_JET_OPEN"
+        == "WRITING_STARTED_FIRST_JET_PHYSICAL_REDEFINITION_TRIVIALIZATION_FULL_BV_ORDER2_OPEN"
     )
     assert payload["lifecycle_state"] == "WRITING_STARTED"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
@@ -68,6 +68,7 @@ def main() -> None:
         "retained_46_physical_filtered_lift_obstructed",
         "retained_46_subprincipal_verdict_landed",
         "constant_field_physical_cyclic_redefinition_screen_computed",
+        "first_jet_physical_cyclic_redefinition_screen_computed",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -101,6 +102,11 @@ def main() -> None:
     assert claims["constant_field_coboundary_cokernel_dimension"] == 0
     assert claims["constant_field_target_nonzero_coordinate_count"] == 63
     assert claims["constant_field_explicit_F3_primitive_coefficient_count"] == 51
+    assert claims["first_jet_dimension_per_axis"] == 1330
+    assert claims["first_jet_positive_map_rank"] == 1327
+    assert claims["first_jet_positive_map_cokernel_dimension"] == 3
+    assert claims["first_jet_Schur_rank"] == 557
+    assert claims["first_jet_positive_primitive_counts"] == [43, 94, 95, 108]
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -155,8 +161,9 @@ def main() -> None:
     )
     assert (
         payload["next_gate"]["deformation_required_input"]
-        == "POSITIVE_JET_CYCLIC_REDEFINITION_COMPLEX"
+        == "FULL_BV_AND_SECOND_JET_CYCLIC_REDEFINITION_COMPLEX"
     )
+    assert payload["next_gate"]["first_jet_redefinition"] == "BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1"
     assert (
         payload["next_gate"]["required_input"]
         == "UNSPLIT_RETAINED_COMPLEX_OR_NONCONTRACTIBLE_FILTERED_ENLARGEMENT"
@@ -403,6 +410,16 @@ def main() -> None:
     assert constant_redefinition["claim_flags"]["CYCLIC_DEFORMATION_CLASS_DECIDED"] is False
     assert constant_redefinition["claim_flags"]["FULL_JET_BOUNDED_REDEFINITION_COMPUTED"] is False
 
+    first_jet = json.loads(
+        (ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1.json").read_text(encoding="utf-8")
+    )
+    assert first_jet["result_state"] == "FIRST_JET_PHYSICAL_MIXED_QUARTIC_TRIVIALIZED_FULL_BV_AND_ORDER2_OPEN"
+    assert first_jet["coupled_schur_problem"]["C_rank"] == 1327
+    assert first_jet["coupled_schur_problem"]["Schur_rank"] == 557
+    assert first_jet["exact_primitive"]["positive_jet_nonzero_by_axis"] == [43, 94, 95, 108]
+    assert first_jet["claim_flags"]["FULL_BV_REDEFINITION_MATCHED"] is False
+    assert first_jet["claim_flags"]["JET_ORDER_TWO_OR_HIGHER_COMPUTED"] is False
+
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,
         build as build_witness_columns,
@@ -441,6 +458,7 @@ def main() -> None:
         r"\begin{proposition}[Formal cyclic transfer through arity three]",
         r"\begin{theorem}[Nonzero retained mixed bracket for the frozen cyclic SDR]",
         r"\begin{proposition}[Constant-field cyclic-redefinition screen]",
+        r"\begin{proposition}[First positive-jet cyclic-redefinition screen]",
         r"\begin{proposition}[Independent degree-zero lowered cyclicity]",
         r"\begin{proposition}[Independent full-BV quartic cyclicity]",
         r"\begin{theorem}[Cyclic causal Cartan compatibility]",
@@ -458,6 +476,7 @@ def main() -> None:
         r"not yet a photon or graviton scattering amplitude",
         r"The complete constant-field page is in fact removable by the exact",
         r"BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1",
+        r"BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1",
         r"\input{paper/11-gravity-light-ell3-witness-inclusion-columns.tex}",
         r"\frac{71p_1^2+71p_2^2+9p_3^2}{80}",
         r"the smallest natural support-local candidate adds a spatial STF2 prolongation",
