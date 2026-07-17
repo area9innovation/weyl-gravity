@@ -1,0 +1,103 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE result classifies a fixed-(ell,|k|) paired-momentum common-zero cone. It does not prove quadratic-source solvability, classify cancellations between distinct |k|, include exceptional/global modes, or establish causal or quantum physics.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "complete_fixed_ell_absolute_k_common_zero_cone_classified": true,
+    "cross_absolute_k_cancellations_classified": false,
+    "exceptional_global_blocks_classified": false,
+    "nonzero_standing_wave_subcone_constructed": true,
+    "relative_phase_quadratic_source_classified": false,
+    "single_travelling_block_no_go_preserved": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G2_FIXED_ELL_AND_NONZERO_ABSOLUTE_MOMENTUM",
+  "interpretation": "Opposite travelling waves reopen the Taub-zero locus at nonzero momentum. Equal +k/-k branch densities cancel compact momentum exactly, after which the same negative Einstein-minus direction balances the positive Einstein-plus and extra occupations. This is a charge-cone theorem, not yet a second-order extension theorem, because the source sees phases that the density moment maps forget.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "evaluate the full quadratic source on the standing-wave face as a function of the relative +k/-k phases, then join compatible fibres across distinct |k|",
+  "paired_density_cone_theorem": {
+    "classification": "The complete common-zero cone in the paired fixed-(ell,|k|) block is exactly the inverse image of these five linear equations in the product of the six displayed positive-semidefinite rank strata.",
+    "common_zero_equations": {
+      "H": "sum_s eta_s*omega_s^2*(A_s^+ + A_s^-)=0",
+      "J_a": "sum_s eta_s*omega_s*(j_s,a^+ + j_s,a^-)=0 for a=1,2,3",
+      "P_x": "k*sum_s eta_s*omega_s*(A_s^+ - A_s^-)=0",
+      "signs": "eta_plus=eta_extra=+1, eta_minus=-1"
+    },
+    "density_matrices": {
+      "rho_extra^sigma": "positive semidefinite, rank<=4",
+      "rho_minus^sigma": "positive semidefinite, rank<=2",
+      "rho_plus^sigma": "positive semidefinite, rank<=2",
+      "sigma": "+ or - labels the sign of compact momentum"
+    },
+    "domain": "one physical ell>=2 and one nonzero allowed |k|=2*pi*|n|/L, with independent positive-frequency amplitudes at +k and -k",
+    "moments": {
+      "A_s^sigma": "tr(rho_s^sigma)",
+      "j_s,a^sigma": "tr(rho_s^sigma*T_ell,a)"
+    },
+    "reconstruction": "Every density satisfying the rank bounds factors as C^dagger*C and reconstructs positive-frequency amplitudes. Reality supplies the conjugate negative-frequency coefficients.",
+    "strict_extension_of_single_travelling_result": "A single nonzero-k travelling block has only the origin, but paired opposite momenta permit nonzero cancellation of P_x."
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_opposite_momentum_cone.py",
+    "generator_sha256": "dbbb6fb3a687b916f206c48d2cb70c47acab8177de33d8a2fb23dcd1dbbda0a9",
+    "inputs": {
+      "k0_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "moment_map_bridge": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_COMMON_ZERO_CONE",
+  "result_state": "PAIRED_OPPOSITE_MOMENTUM_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-opposite-momentum-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_opposite_momentum_cone.schema.json",
+  "schema_sha256": "4c829d2e6b0db6a9b52646f9c2d5adaec12bec24fb297ffbaa1af3df72d1df76",
+  "standing_wave_subcone": {
+    "P_x": "0 identically",
+    "all_five_moment_maps": "zero",
+    "balance": "a_minus=(omega_plus^2*a_plus+omega_extra^2*a_extra)/omega_minus^2",
+    "definition": "rho_s^+=rho_s^- for every branch s; this is the phase-insensitive standing-wave density condition",
+    "dimension_before_scale_and_phases": 2,
+    "exact_regressions": {
+      "ell=2,k2=1": "0",
+      "ell=2,k2=4": "0",
+      "ell=2,k2=9/4": "0",
+      "ell=3,k2=1": "0",
+      "ell=3,k2=4": "0",
+      "ell=3,k2=9/4": "0",
+      "ell=4,k2=1": "0",
+      "ell=4,k2=4": "0",
+      "ell=4,k2=9/4": "0",
+      "ell=5,k2=1": "0",
+      "ell=5,k2=4": "0",
+      "ell=5,k2=9/4": "0",
+      "ell=6,k2=1": "0",
+      "ell=6,k2=4": "0",
+      "ell=6,k2=9/4": "0",
+      "ell=7,k2=1": "0",
+      "ell=7,k2=4": "0",
+      "ell=7,k2=9/4": "0",
+      "ell=8,k2=1": "0",
+      "ell=8,k2=4": "0",
+      "ell=8,k2=9/4": "0"
+    },
+    "neutral_rank_one_face": "rho_s^+=rho_s^-=a_s*|ell,0><ell,0|",
+    "parameters": "a_plus,a_extra>=0, not both zero",
+    "warning": "Equal densities do not require pointwise equality of the +k and -k amplitude matrices; relative internal phases are invisible to stabilizer charges but can affect the quadratic source."
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_cone --verify bridge/certificates/einstein_maxwell_weyl_opposite_momentum_cone.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_opposite_momentum_cone"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Full generic k=0 Weyl--Maxwell moment-map cone certificate",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "frequencies", "density_cone_theorem",
+    "rotationally_neutral_subcone", "scope_boundaries", "classification",
+    "interpretation", "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-k0-moment-map-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FULL_GENERIC_K0_MOMENT_MAP_CONE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "density_cone_theorem": {
+      "type": "object",
+      "required": ["density_matrices", "common_zero_equations", "classification", "reconstruction"]
+    },
+    "rotationally_neutral_subcone": {
+      "type": "object",
+      "required": ["parameters", "a_minus", "moment_maps", "paper91_ray"]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "full_generic_k0_common_zero_cone_classified",
+        "all_ell_all_m_both_parities_and_all_extra_polarizations_included",
+        "full_quadratic_source_solvability_on_cone_classified",
+        "opposite_momentum_standing_waves_classified",
+        "exceptional_global_blocks_classified",
+        "Lorentzian_causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paired opposite-momentum Weyl--Maxwell moment-map cone",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "paired_density_cone_theorem", "standing_wave_subcone", "classification",
+    "interpretation", "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-opposite-momentum-cone-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_COMMON_ZERO_CONE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_fixed_ell_absolute_k_common_zero_cone_classified",
+        "nonzero_standing_wave_subcone_constructed",
+        "relative_phase_quadratic_source_classified",
+        "exceptional_global_blocks_classified",
+        "Lorentzian_causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

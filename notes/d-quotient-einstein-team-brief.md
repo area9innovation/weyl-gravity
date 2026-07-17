@@ -1482,6 +1482,84 @@ or integration to an exact all-orders family.  The next nonlinear target is
 the full `k=0` common-zero cone, followed by opposite-momentum standing-wave
 balances and the exceptional/global blocks.
 
+Those three next layers are now separated and certified.  First,
+`EINSTEIN_MAXWELL_WEYL_FULL_GENERIC_K0_MOMENT_MAP_CONE` classifies the entire
+finite-harmonic generic `k=0` common-zero set.  After exact Gram
+factorization, the amplitudes are equivalently positive-semidefinite spin
+density matrices
+
+```text
+rho_plus,ell >= 0, rank <= 2,
+rho_extra,ell >= 0, rank <= 4,
+rho_minus,ell >= 0, rank <= 2.
+```
+
+The cone is exactly the inverse image of `H=J_1=J_2=J_3=0` in the product of
+these rank strata; `P_x` vanishes identically.  This retains every `m`, both
+parities, both extra polarizations, and cross-`ell` charge cancellation.  In
+particular every fixed `ell>=2` has a two-parameter rotationally neutral face
+supported on `m=0`, with
+
+```text
+a_minus=(omega_plus^2 a_plus+omega_extra^2 a_extra)/omega_minus^2.
+```
+
+The Paper 91 ray is the `ell=2,a_plus=0` boundary of this face, not an
+isolated Taub-zero direction.
+
+Second, the full quadratic source has now been tested on the larger axial
+`ell=2,m=0` three-branch face.  The Einstein-plus, extra, and Einstein-minus
+homogeneous zero-frequency source vectors obey the exact rank-one identity
+
+```text
+S_s(0)=tau_s (1,0,1/2,0),
+```
+
+where `tau_s` is the same branch coefficient that appears in the
+constant-lapse Taub form.  Consequently the full homogeneous cokernel source
+cancels on the entire two-parameter positive quadrant whenever `H=0`, not
+only on the Paper 91 boundary ray.  All nine nonzero self/cross
+sum--difference channel types are off shell at polar output `ell=2,4`, with
+exact minimal-polynomial nonzero witnesses for both `p` and `q`; their
+homogeneous corrections are explicit.  The zero-frequency `ell=2,4` sources
+also have exact inverse corrections.  Therefore every point of this declared
+face, with arbitrary constant relative phases, has a spatially periodic
+finite-quasiperiodic second-order correction.  Other `m`, parity, extra
+polarization, and higher-`ell` faces remain open.
+
+Third, `EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_COMMON_ZERO_CONE` classifies a
+fixed generic `(ell,|k|)` pair.  Independent positive-frequency density
+matrices at `+k` and `-k` obey five additive linear charge equations.  Equal
+opposite-momentum branch densities cancel `P_x`; rank-one `m=0` densities and
+the same energy balance above give a nonzero two-parameter standing-wave
+Taub-zero face for every allowed nonzero `|k|`.  This does not contradict the
+single-travelling-block no-go.  Relative `+k/-k` phases are invisible to the
+moment maps and remain the load-bearing full-source gate.
+
+Finally,
+`EINSTEIN_MAXWELL_WEYL_STANDARD_EXCEPTIONAL_GLOBAL_MOMENT_MAPS` classifies
+the already certified standard exceptional blocks.  Physical `ell=1`
+oscillators are sign-definite and have only the origin as their isolated
+common-zero locus.  In homogeneous coordinates
+`(a,b,c,d,Q_e,W_x)`, after removing the common positive factor `2*pi*L`,
+
+```text
+mu_H=-a^2-b^2+b*d-Q_e^2,
+mu_Px=mu_Ja=0.
+```
+
+Thus the homogeneous block has an indefinite quadric, with static
+circumference `c` and flat holonomy `W_x` as spectators.  On the three twist
+pairs, `mu_H=2|B|^2` and `mu_J=-4 A cross B`; the isolated common-zero locus
+is the constant twist family `B=0`, tangent to exact lifted-rotation mapping
+tori.  Electric charge variation contributes `-Q_e^2`, the same sign as the
+positive-current extra sector, so it cannot rescue a pure-extra obstruction
+by itself.  It can participate in balances with Einstein-minus or
+twist-velocity data, but only when present at first order: a second-order
+charge shift cannot alter an adjoint-cokernel pairing.  Exceptional
+fourth-order target modes and the full source on the combined global cone
+remain open.
+
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
 
@@ -1492,22 +1570,22 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; `H`, `P_x`, and `J_i` are nonnull on the full generic phase space, so no absolute quotient is authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; common moment-map-zero locus open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
+| Compact Einstein--Maxwell product | sector-indexed; generic `k=0`, fixed `(ell,|k|)` opposite-momentum, and standard exceptional/global common-zero cones classified; no absolute quotient authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; one two-parameter axial `ell=2,m=0` face is second-order extendible, while the complete combined cone remains open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Classify the full `k=0` common `H,P_x,J_i` zero cone around the certified
-   balanced extension, then treat opposite-momentum standing-wave balances
-   and the exceptional/global real symplectic blocks; only afterward test a
-   quotient by a certified null subalgebra.  In parallel, prove or obstruct a
-   polynomial cyclic BV enhancement without inverting `k`, `omega`, `p`, or
-   `q`.
-2. For further common-zero amplitudes, compute the remaining adjoint-cokernel
-   pairings and parity-compatible `EE`, `EX`, and `XX` channels, distinguishing
-   coefficient-level second-order extension from all-orders integrability;
-   then construct a relational or geodesic-deviation detector realization.
+1. Extend the quadratic source-vector rank test from the certified axial
+   `ell=2,m=0` face to other `m`, parity, extra polarization, and general
+   `ell`; separately retain the relative phases in opposite-momentum
+   standing waves.  A rank increase, resonance, or new adjoint component is
+   the expected mechanism cutting the full Taub-zero density cone.
+2. Test the homogeneous quadric and twist-velocity mixed balances against the
+   complete quadratic source, and classify exceptional fourth-order target
+   modes.  Only after these gates should any null-subalgebra quotient be
+   attempted.  In parallel, prove or obstruct a polynomial cyclic BV
+   enhancement without inverting `k`, `omega`, `p`, or `q`.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

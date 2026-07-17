@@ -1,0 +1,180 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem classifies the full generic k=0 common H,P_x,J_i zero cone. It does not promote Taub-zero points to second-order solutions, classify nonzero opposite momenta or exceptional/global blocks, perform a stabilizer quotient, or establish a causal or quantum result.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "absolute_stabilizer_quotient_certified": false,
+    "all_ell_all_m_both_parities_and_all_extra_polarizations_included": true,
+    "cross_ell_charge_cancellations_included": true,
+    "exceptional_global_blocks_classified": false,
+    "full_generic_k0_common_zero_cone_classified": true,
+    "full_quadratic_source_solvability_on_cone_classified": false,
+    "opposite_momentum_standing_waves_classified": false,
+    "paper91_balanced_ray_embedded_in_general_cone": true
+  },
+  "density_cone_theorem": {
+    "classification": "The full finite-harmonic generic k=0 common-zero cone is exactly the inverse image of these four linear equations inside the product of the displayed positive-semidefinite rank strata.",
+    "common_zero_equations": {
+      "H": "sum_ell(omega_plus^2*A_plus + omega_extra^2*A_extra - omega_minus^2*A_minus)=0",
+      "J_a": "sum_ell(omega_plus*j_plus,a + omega_extra*j_extra,a - omega_minus*j_minus,a)=0 for a=1,2,3",
+      "P_x": "identically zero because k=0"
+    },
+    "cross_ell_rule": "Rotations preserve ell, but the total J_a and H charges are sums over ell; the equations retain every allowed cancellation between distinct ell blocks.",
+    "density_matrices": {
+      "rho_extra_ell": "C_extra_ell^dagger*C_extra_ell >= 0, rank<=4",
+      "rho_minus_ell": "C_minus_ell^dagger*C_minus_ell >= 0, rank<=2",
+      "rho_plus_ell": "C_plus_ell^dagger*C_plus_ell >= 0, rank<=2"
+    },
+    "gram_normalized_amplitude_matrices": {
+      "C_extra_ell": "Mat_(4 x (2ell+1))(C): two p-primary copies in each parity",
+      "C_minus_ell": "Mat_(2 x (2ell+1))(C): one Einstein-minus copy in each parity",
+      "C_plus_ell": "Mat_(2 x (2ell+1))(C): one Einstein-plus copy in each parity"
+    },
+    "real_field_rule": "Negative-frequency amplitudes are fixed by conjugation, so the positive-frequency density data classify real linear fields.",
+    "reconstruction": "Every allowed density matrix has a factorization rho=C^dagger*C with the displayed rank bound, and hence reconstructs amplitudes; two factorizations differ by an internal partial isometry and have identical stabilizer moment maps.",
+    "spin_moments": {
+      "angular": "j_s,ell,a=tr(rho_s,ell*T_ell,a), a=1,2,3, with T_ell,a Hermitian",
+      "occupation": "A_s,ell=tr(rho_s,ell)"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "finite-harmonic generic ell>=2 locally gauge-reduced real Weyl-Maxwell stationary solutions at k=0 on fixed P_N, before stabilizer quotient",
+  "frequencies": {
+    "exact_gaps": {
+      "omega_extra_squared_minus_omega_minus_squared": "sqrt(2)*sqrt(lambda) - 2/3",
+      "omega_plus_squared_minus_omega_extra_squared": "sqrt(2)*sqrt(lambda) + 2/3"
+    },
+    "omega_extra_squared": "lambda - 2/3",
+    "omega_minus_squared": "-sqrt(2)*sqrt(lambda) + lambda",
+    "omega_plus_squared": "sqrt(2)*sqrt(lambda) + lambda",
+    "ordering": "0<omega_minus<omega_extra<omega_plus for every physical lambda>=6",
+    "physical_domain": "lambda=ell*(ell+1), ell>=2"
+  },
+  "generality_level": "G3_ALL_GENERIC_ELL_K0_DENSITY_CONE",
+  "interpretation": "The Paper 91 balanced ray is not isolated at the level of quadratic stabilizer charges. The complete generic k=0 common-zero set is a rank-constrained spectrahedral cone, and every ell has a two-parameter rotationally neutral Einstein-plus/extra/Einstein-minus subcone. This is a moment-map/Taub-zero classification, not a theorem that every point solves the full second-order source equation.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "evaluate the complete quadratic Weyl-Maxwell source on the density-cone strata, beginning with the rotationally neutral fixed-ell faces; then classify opposite-momentum and exceptional/global blocks",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_k0_moment_map_cone.py",
+    "generator_sha256": "9e6cfffb692f72b15ad8f9fa758b0684504db4f911613b48affebd6c36f2ff3c",
+    "inputs": {
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "balanced_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+      },
+      "moment_map_bridge": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FULL_GENERIC_K0_MOMENT_MAP_CONE",
+  "result_state": "FULL_GENERIC_K0_COMMON_STABILIZER_ZERO_CONE_CLASSIFIED",
+  "rotationally_neutral_subcone": {
+    "a_minus": "(omega_plus^2*a_plus+omega_extra^2*a_extra)/omega_minus^2",
+    "all_ell_proof": "T_3|ell,0>=0 and T_plus/minus move m=0 to orthogonal m=+/-1 states; the displayed a_minus solves H exactly",
+    "densities": "rho_plus=a_plus*|ell,0><ell,0|, rho_extra=a_extra*|ell,0><ell,0|, rho_minus=a_minus*|ell,0><ell,0|",
+    "dimension_before_overall_scaling": 2,
+    "exact_regressions": {
+      "10": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "110"
+      },
+      "11": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "132"
+      },
+      "12": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "156"
+      },
+      "2": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "6"
+      },
+      "3": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "12"
+      },
+      "4": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "20"
+      },
+      "5": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "30"
+      },
+      "6": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "42"
+      },
+      "7": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "56"
+      },
+      "8": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "72"
+      },
+      "9": {
+        "all_three_rotation_expectations_zero": true,
+        "energy_remainder": "0",
+        "lambda": "90"
+      }
+    },
+    "moment_maps": {
+      "H": "0",
+      "J_1": "0",
+      "J_2": "0",
+      "J_3": "0",
+      "P_x": "0"
+    },
+    "paper91_ray": "ell=2, a_plus=0 is the certified balanced Einstein-minus/extra ray; it is a boundary ray of this two-parameter rotationally neutral cone",
+    "parameters": "for any fixed ell>=2 choose a_plus,a_extra>=0, not both zero"
+  },
+  "schema": "einstein-maxwell-weyl-k0-moment-map-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_k0_moment_map_cone.schema.json",
+  "schema_sha256": "fc5e0acb793e9b568f8470839601fb7a837ce670ff47cf4f3f33219037f8f81f",
+  "scope_boundaries": {
+    "classified": [
+      "all generic ell>=2 k=0 axial and polar Einstein-plus, Einstein-minus, and extra p-primary amplitudes",
+      "all m and every cancellation between ell blocks",
+      "the complete H,J_1,J_2,J_3 common-zero equations with P_x identically zero"
+    ],
+    "not_yet_classified": [
+      "which non-neutral density-cone strata solve the full quadratic Weyl-Maxwell source equation",
+      "opposite nonzero momentum standing waves",
+      "ell=0, ell=1, homogeneous, twist, electric-charge, and Wilson-line blocks",
+      "all-orders integrability or a stabilizer quotient"
+    ]
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_k0_moment_map_cone --verify bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_k0_moment_map_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_k0_moment_map_cone"
+  ]
+}

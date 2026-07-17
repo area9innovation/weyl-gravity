@@ -1,0 +1,863 @@
+{
+  "branch_representatives_Ht_Hx_Qt_Qx": {
+    "extra": [
+      "0",
+      "-2/3",
+      "0",
+      "6"
+    ],
+    "minus": [
+      "0",
+      "-2",
+      "0",
+      "2*sqrt(3)"
+    ],
+    "plus": [
+      "0",
+      "-2",
+      "0",
+      "-2*sqrt(3)"
+    ]
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem extends a declared two-parameter axial ell=2,m=0 face through second order. It does not classify the complete k=0 density cone, opposite-momentum phases, exceptional fourth-order modes, all-orders solutions, or causal/quantum physics.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "all_orders_integrability": false,
+    "arbitrary_constant_relative_phases_allowed": true,
+    "complete_k0_density_cone_second_order_classified": false,
+    "other_m_parity_extra_polarizations_classified": false,
+    "paper91_boundary_ray_strictly_extended": true,
+    "two_parameter_positive_quadrant_face_second_order_extendible": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "real axial ell=2,m=0,k=0 first-order tangents spanning Einstein-plus, the second extra representative, and Einstein-minus, with arbitrary constant branch phases",
+  "generality_level": "G2_ELL2_M0_AXIAL_THREE_BRANCH_FACE",
+  "interpretation": "Paper 91's balanced ray is not isolated even after the full second-order equation is imposed. On the declared axial ell=2,m=0 face, the three zero-frequency source vectors are the same cokernel vector multiplied by their Taub coefficients. Therefore every Taub-balanced positive combination cancels the only non-removable homogeneous source, while all sum/difference and ell=2,4 zero channels are off-shell invertible.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "repeat the source-vector rank test for other m, parity, extra polarization, and ell; a rank increase would cut the general density cone below its Taub-zero locus",
+  "nonzero_frequency_channel_ledger": {
+    "extra_plus_difference": {
+      "channel_kind": "difference",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "-4608*(-7854 - 4304*sqrt(3) + 2370*sqrt(2)*sqrt(sqrt(3) + 3) + 1497*sqrt(6)*sqrt(sqrt(3) + 3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 72*z**3 - 192*z**2 + 4416*z + 16064",
+            "nonzero_constant_term": "16064",
+            "value": "2*(-4*sqrt(6)*sqrt(sqrt(3) + 3) + 3*sqrt(3) + 9)/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4105728*z**3 + 387182592*z**2 - 9989259264*z + 77603012608",
+            "nonzero_constant_term": "77603012608",
+            "value": "-32*(-44 - 18*sqrt(3) + 9*sqrt(2)*sqrt(sqrt(3) + 3) + 8*sqrt(6)*sqrt(sqrt(3) + 3))/9"
+          },
+          "source_action_rows": [
+            "-2*(-6*sqrt(6)*sqrt(sqrt(3) + 3) + 6*sqrt(2)*sqrt(sqrt(3) + 3) + 12*sqrt(3) + 65)/7",
+            "0",
+            "2*(-1501 - 750*sqrt(3) + 198*sqrt(2)*sqrt(sqrt(3) + 3) + 386*sqrt(6)*sqrt(sqrt(3) + 3))/63",
+            "8*(-6*sqrt(6)*sqrt(sqrt(3) + 3) - 6*sqrt(3) + 2*sqrt(2)*sqrt(sqrt(3) + 3) + 45)/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "-96000*(-13756*sqrt(6)*sqrt(sqrt(3) + 3) - 51093 - 265*sqrt(3) + 8124*sqrt(2)*sqrt(sqrt(3) + 3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 + 96*z**3 + 312*z**2 - 10368*z - 42064",
+            "nonzero_constant_term": "-42064",
+            "value": "2*(-4*sqrt(6)*sqrt(sqrt(3) + 3) - 12 + 3*sqrt(3))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4595616*z**3 + 852249600*z**2 - 14822240256*z - 530744459264",
+            "nonzero_constant_term": "-530744459264",
+            "value": "-8*(-52*sqrt(6)*sqrt(sqrt(3) + 3) - 197 - 9*sqrt(3) + 36*sqrt(2)*sqrt(sqrt(3) + 3))/9"
+          },
+          "source_action_rows": [
+            "-4*(-60*sqrt(6)*sqrt(sqrt(3) + 3) - 155 + 15*sqrt(3) + 18*sqrt(2)*sqrt(sqrt(3) + 3))/7",
+            "0",
+            "-4*(-572*sqrt(6)*sqrt(sqrt(3) + 3) - 1805 + 18*sqrt(2)*sqrt(sqrt(3) + 3) + 201*sqrt(3))/105",
+            "48*(-6*sqrt(6)*sqrt(sqrt(3) + 3) - 11 + sqrt(3) + 2*sqrt(2)*sqrt(sqrt(3) + 3))/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "-(-4079 + 2916*sqrt(3))**4*(8 + 3*sqrt(6)*sqrt(sqrt(3) + 2))**4*(32 + 27*sqrt(4*sqrt(3) + 7))**4*(4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))**4*(-265 - 93*sqrt(3) + 36*sqrt(2)*sqrt(sqrt(3) + 3) + 56*sqrt(6)*sqrt(sqrt(3) + 3))/4458702729159531961547882573520",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "-8*(-265 - 93*sqrt(3) + 36*sqrt(2)*sqrt(sqrt(3) + 3) + 56*sqrt(6)*sqrt(sqrt(3) + 3))/45",
+        "4*(-265 - 93*sqrt(3) + 36*sqrt(2)*sqrt(sqrt(3) + 3) + 56*sqrt(6)*sqrt(sqrt(3) + 3))/45",
+        "0"
+      ],
+      "input_branches": [
+        "extra",
+        "plus"
+      ],
+      "output_frequency": "-(-4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))/3",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "9*z**4 - 204*z**2 - 288*z - 104",
+        "nonzero_constant_term": "-104",
+        "value": "-(-4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))/3"
+      },
+      "real_polarization_factor": "1/4"
+    },
+    "extra_plus_sum": {
+      "channel_kind": "sum",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "4608*(2370*sqrt(2)*sqrt(sqrt(3) + 3) + 4304*sqrt(3) + 7854 + 1497*sqrt(6)*sqrt(sqrt(3) + 3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 72*z**3 - 192*z**2 + 4416*z + 16064",
+            "nonzero_constant_term": "16064",
+            "value": "2*(3*sqrt(3) + 9 + 4*sqrt(6)*sqrt(sqrt(3) + 3))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4105728*z**3 + 387182592*z**2 - 9989259264*z + 77603012608",
+            "nonzero_constant_term": "77603012608",
+            "value": "32*(9*sqrt(2)*sqrt(sqrt(3) + 3) + 18*sqrt(3) + 8*sqrt(6)*sqrt(sqrt(3) + 3) + 44)/9"
+          },
+          "source_action_rows": [
+            "2*(-65 - 6*sqrt(6)*sqrt(sqrt(3) + 3) - 12*sqrt(3) + 6*sqrt(2)*sqrt(sqrt(3) + 3))/7",
+            "0",
+            "-2*(198*sqrt(2)*sqrt(sqrt(3) + 3) + 750*sqrt(3) + 1501 + 386*sqrt(6)*sqrt(sqrt(3) + 3))/63",
+            "-8*(-45 - 6*sqrt(6)*sqrt(sqrt(3) + 3) + 2*sqrt(2)*sqrt(sqrt(3) + 3) + 6*sqrt(3))/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "96000*(-13756*sqrt(6)*sqrt(sqrt(3) + 3) + 265*sqrt(3) + 8124*sqrt(2)*sqrt(sqrt(3) + 3) + 51093)",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 + 96*z**3 + 312*z**2 - 10368*z - 42064",
+            "nonzero_constant_term": "-42064",
+            "value": "2*(-12 + 3*sqrt(3) + 4*sqrt(6)*sqrt(sqrt(3) + 3))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4595616*z**3 + 852249600*z**2 - 14822240256*z - 530744459264",
+            "nonzero_constant_term": "-530744459264",
+            "value": "8*(-52*sqrt(6)*sqrt(sqrt(3) + 3) + 9*sqrt(3) + 36*sqrt(2)*sqrt(sqrt(3) + 3) + 197)/9"
+          },
+          "source_action_rows": [
+            "4*(-60*sqrt(6)*sqrt(sqrt(3) + 3) - 15*sqrt(3) + 18*sqrt(2)*sqrt(sqrt(3) + 3) + 155)/7",
+            "0",
+            "4*(-572*sqrt(6)*sqrt(sqrt(3) + 3) - 201*sqrt(3) + 18*sqrt(2)*sqrt(sqrt(3) + 3) + 1805)/105",
+            "-48*(-6*sqrt(6)*sqrt(sqrt(3) + 3) - sqrt(3) + 2*sqrt(2)*sqrt(sqrt(3) + 3) + 11)/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "(-4079 + 2916*sqrt(3))**4*(8 + 3*sqrt(6)*sqrt(sqrt(3) + 2))**4*(32 + 27*sqrt(4*sqrt(3) + 7))**4*(-4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))**4*(36*sqrt(2)*sqrt(sqrt(3) + 3) + 93*sqrt(3) + 265 + 56*sqrt(6)*sqrt(sqrt(3) + 3))/4458702729159531961547882573520",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "8*(36*sqrt(2)*sqrt(sqrt(3) + 3) + 93*sqrt(3) + 265 + 56*sqrt(6)*sqrt(sqrt(3) + 3))/45",
+        "-4*(36*sqrt(2)*sqrt(sqrt(3) + 3) + 93*sqrt(3) + 265 + 56*sqrt(6)*sqrt(sqrt(3) + 3))/45",
+        "0"
+      ],
+      "input_branches": [
+        "extra",
+        "plus"
+      ],
+      "output_frequency": "(4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))/3",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "9*z**4 - 204*z**2 - 288*z - 104",
+        "nonzero_constant_term": "-104",
+        "value": "(4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))/3"
+      },
+      "real_polarization_factor": "1/4"
+    },
+    "extra_self_sum": {
+      "channel_kind": "sum",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "27758592",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z - 16",
+            "nonzero_constant_term": "-16",
+            "value": "16"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z - 2008",
+            "nonzero_constant_term": "-2008",
+            "value": "2008/9"
+          },
+          "source_action_rows": [
+            "-157/21",
+            "0",
+            "-731/189",
+            "28"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "-12384000",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z - 2",
+            "nonzero_constant_term": "-2",
+            "value": "2"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z + 344",
+            "nonzero_constant_term": "344",
+            "value": "-344/9"
+          },
+          "source_action_rows": [
+            "-592/21",
+            "0",
+            "-16/315",
+            "32"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "13/960",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "416/135",
+        "-208/135",
+        "0"
+      ],
+      "input_branches": [
+        "extra",
+        "extra"
+      ],
+      "output_frequency": "8*sqrt(3)/3",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "3*z**2 - 64",
+        "nonzero_constant_term": "-64",
+        "value": "8*sqrt(3)/3"
+      },
+      "real_polarization_factor": "1/8"
+    },
+    "minus_extra_difference": {
+      "channel_kind": "difference",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "4608*(-4304*sqrt(3) - 1497*sqrt(6)*sqrt(3 - sqrt(3)) + 2370*sqrt(2)*sqrt(3 - sqrt(3)) + 7854)",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 72*z**3 - 192*z**2 + 4416*z + 16064",
+            "nonzero_constant_term": "16064",
+            "value": "-2*(-9 + 3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4105728*z**3 + 387182592*z**2 - 9989259264*z + 77603012608",
+            "nonzero_constant_term": "77603012608",
+            "value": "32*(-18*sqrt(3) - 8*sqrt(6)*sqrt(3 - sqrt(3)) + 9*sqrt(2)*sqrt(3 - sqrt(3)) + 44)/9"
+          },
+          "source_action_rows": [
+            "2*(-65 + 6*sqrt(2)*sqrt(3 - sqrt(3)) + 6*sqrt(6)*sqrt(3 - sqrt(3)) + 12*sqrt(3))/7",
+            "0",
+            "-2*(-750*sqrt(3) - 386*sqrt(6)*sqrt(3 - sqrt(3)) + 198*sqrt(2)*sqrt(3 - sqrt(3)) + 1501)/63",
+            "-8*(-45 - 6*sqrt(3) + 2*sqrt(2)*sqrt(3 - sqrt(3)) + 6*sqrt(6)*sqrt(3 - sqrt(3)))/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "96000*(-265*sqrt(3) + 8124*sqrt(2)*sqrt(3 - sqrt(3)) + 13756*sqrt(6)*sqrt(3 - sqrt(3)) + 51093)",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 + 96*z**3 + 312*z**2 - 10368*z - 42064",
+            "nonzero_constant_term": "-42064",
+            "value": "-2*(3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)) + 12)/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4595616*z**3 + 852249600*z**2 - 14822240256*z - 530744459264",
+            "nonzero_constant_term": "-530744459264",
+            "value": "8*(-9*sqrt(3) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 52*sqrt(6)*sqrt(3 - sqrt(3)) + 197)/9"
+          },
+          "source_action_rows": [
+            "4*(15*sqrt(3) + 18*sqrt(2)*sqrt(3 - sqrt(3)) + 155 + 60*sqrt(6)*sqrt(3 - sqrt(3)))/7",
+            "0",
+            "4*(18*sqrt(2)*sqrt(3 - sqrt(3)) + 201*sqrt(3) + 572*sqrt(6)*sqrt(3 - sqrt(3)) + 1805)/105",
+            "-48*(sqrt(3) + 2*sqrt(2)*sqrt(3 - sqrt(3)) + 11 + 6*sqrt(6)*sqrt(3 - sqrt(3)))/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "(4079 + 2916*sqrt(3))**4*(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**4*(3*sqrt(6)*sqrt(2 - sqrt(3)) + 8)**4*(27*sqrt(7 - 4*sqrt(3)) + 32)**4*(-93*sqrt(3) - 56*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 265)/4458702729159531961547882573520",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "8*(-93*sqrt(3) - 56*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 265)/45",
+        "-4*(-93*sqrt(3) - 56*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 265)/45",
+        "0"
+      ],
+      "input_branches": [
+        "minus",
+        "extra"
+      ],
+      "output_frequency": "(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "9*z**4 - 204*z**2 - 288*z - 104",
+        "nonzero_constant_term": "-104",
+        "value": "(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+      },
+      "real_polarization_factor": "1/4"
+    },
+    "minus_extra_sum": {
+      "channel_kind": "sum",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "-4608*(-7854 - 1497*sqrt(6)*sqrt(3 - sqrt(3)) + 2370*sqrt(2)*sqrt(3 - sqrt(3)) + 4304*sqrt(3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 72*z**3 - 192*z**2 + 4416*z + 16064",
+            "nonzero_constant_term": "16064",
+            "value": "2*(-3*sqrt(3) + 9 + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4105728*z**3 + 387182592*z**2 - 9989259264*z + 77603012608",
+            "nonzero_constant_term": "77603012608",
+            "value": "-32*(-44 - 8*sqrt(6)*sqrt(3 - sqrt(3)) + 9*sqrt(2)*sqrt(3 - sqrt(3)) + 18*sqrt(3))/9"
+          },
+          "source_action_rows": [
+            "-2*(-12*sqrt(3) + 6*sqrt(2)*sqrt(3 - sqrt(3)) + 6*sqrt(6)*sqrt(3 - sqrt(3)) + 65)/7",
+            "0",
+            "2*(-1501 - 386*sqrt(6)*sqrt(3 - sqrt(3)) + 198*sqrt(2)*sqrt(3 - sqrt(3)) + 750*sqrt(3))/63",
+            "8*(2*sqrt(2)*sqrt(3 - sqrt(3)) + 6*sqrt(3) + 6*sqrt(6)*sqrt(3 - sqrt(3)) + 45)/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "-96000*(-51093 + 265*sqrt(3) + 8124*sqrt(2)*sqrt(3 - sqrt(3)) + 13756*sqrt(6)*sqrt(3 - sqrt(3)))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 + 96*z**3 + 312*z**2 - 10368*z - 42064",
+            "nonzero_constant_term": "-42064",
+            "value": "2*(-12 - 3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 4595616*z**3 + 852249600*z**2 - 14822240256*z - 530744459264",
+            "nonzero_constant_term": "-530744459264",
+            "value": "-8*(-197 + 9*sqrt(3) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 52*sqrt(6)*sqrt(3 - sqrt(3)))/9"
+          },
+          "source_action_rows": [
+            "-4*(-155 - 15*sqrt(3) + 18*sqrt(2)*sqrt(3 - sqrt(3)) + 60*sqrt(6)*sqrt(3 - sqrt(3)))/7",
+            "0",
+            "-4*(-1805 - 201*sqrt(3) + 18*sqrt(2)*sqrt(3 - sqrt(3)) + 572*sqrt(6)*sqrt(3 - sqrt(3)))/105",
+            "48*(-11 - sqrt(3) + 2*sqrt(2)*sqrt(3 - sqrt(3)) + 6*sqrt(6)*sqrt(3 - sqrt(3)))/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "-(4079 + 2916*sqrt(3))**4*(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**4*(3*sqrt(6)*sqrt(2 - sqrt(3)) + 8)**4*(27*sqrt(7 - 4*sqrt(3)) + 32)**4*(-265 - 56*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 93*sqrt(3))/4458702729159531961547882573520",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "-8*(-265 - 56*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 93*sqrt(3))/45",
+        "4*(-265 - 56*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 93*sqrt(3))/45",
+        "0"
+      ],
+      "input_branches": [
+        "minus",
+        "extra"
+      ],
+      "output_frequency": "(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "9*z**4 - 204*z**2 + 288*z - 104",
+        "nonzero_constant_term": "-104",
+        "value": "(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+      },
+      "real_polarization_factor": "1/4"
+    },
+    "minus_plus_difference": {
+      "channel_kind": "difference",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "20736*(-61 + 25*sqrt(6))*(-5 + 3*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 120*z - 464",
+            "nonzero_constant_term": "-464",
+            "value": "-4*(-5 + 3*sqrt(6))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 240*z + 576",
+            "nonzero_constant_term": "576",
+            "value": "-24*(-5 + 2*sqrt(6))"
+          },
+          "source_action_rows": [
+            "6*(-69 + 8*sqrt(6))/7",
+            "0",
+            "6*(-183 + 68*sqrt(6))/7",
+            "-216/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "288000*(11 + 6*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))*(178*sqrt(6) + 453)",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 + 132*z - 380",
+            "nonzero_constant_term": "-380",
+            "value": "-2*(11 + 6*sqrt(6))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 240*z - 10176",
+            "nonzero_constant_term": "-10176",
+            "value": "8*(15 + 8*sqrt(6))"
+          },
+          "source_action_rows": [
+            "36*(50 + 29*sqrt(6))/7",
+            "0",
+            "36*(34 + 19*sqrt(6))/7",
+            "-288/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "-(-3 + sqrt(6))*(sqrt(3 - sqrt(3)) + sqrt(sqrt(3) + 3))**4/6",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "-48*(-3 + sqrt(6))",
+        "24*(-3 + sqrt(6))",
+        "0"
+      ],
+      "input_branches": [
+        "minus",
+        "plus"
+      ],
+      "output_frequency": "sqrt(2)*(-sqrt(sqrt(3) + 3) + sqrt(3 - sqrt(3)))",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "z**4 - 24*z**2 + 48",
+        "nonzero_constant_term": "48",
+        "value": "sqrt(2)*(-sqrt(sqrt(3) + 3) + sqrt(3 - sqrt(3)))"
+      },
+      "real_polarization_factor": "1/4"
+    },
+    "minus_plus_sum": {
+      "channel_kind": "sum",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "20736*(5 + 3*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))*(61 + 25*sqrt(6))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 120*z - 464",
+            "nonzero_constant_term": "-464",
+            "value": "4*(5 + 3*sqrt(6))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 240*z + 576",
+            "nonzero_constant_term": "576",
+            "value": "24*(2*sqrt(6) + 5)"
+          },
+          "source_action_rows": [
+            "-6*(8*sqrt(6) + 69)/7",
+            "0",
+            "-6*(68*sqrt(6) + 183)/7",
+            "-216/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "288000*(-453 + 178*sqrt(6))*(-11 + 6*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 + 132*z - 380",
+            "nonzero_constant_term": "-380",
+            "value": "2*(-11 + 6*sqrt(6))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 240*z - 10176",
+            "nonzero_constant_term": "-10176",
+            "value": "-8*(-15 + 8*sqrt(6))"
+          },
+          "source_action_rows": [
+            "-36*(-50 + 29*sqrt(6))/7",
+            "0",
+            "-36*(-34 + 19*sqrt(6))/7",
+            "-288/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "(sqrt(6) + 3)*(-sqrt(sqrt(3) + 3) + sqrt(3 - sqrt(3)))**4/6",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "48*(sqrt(6) + 3)",
+        "-24*(sqrt(6) + 3)",
+        "0"
+      ],
+      "input_branches": [
+        "minus",
+        "plus"
+      ],
+      "output_frequency": "sqrt(2)*(sqrt(3 - sqrt(3)) + sqrt(sqrt(3) + 3))",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "z**4 - 24*z**2 + 48",
+        "nonzero_constant_term": "48",
+        "value": "sqrt(2)*(sqrt(3 - sqrt(3)) + sqrt(sqrt(3) + 3))"
+      },
+      "real_polarization_factor": "1/4"
+    },
+    "minus_self_sum": {
+      "channel_kind": "sum",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "-497664*(-518 + 299*sqrt(3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 336*z + 1408",
+            "nonzero_constant_term": "1408",
+            "value": "-8*(-7 + 3*sqrt(3))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 1008*z + 5184",
+            "nonzero_constant_term": "5184",
+            "value": "-72*(-7 + 4*sqrt(3))"
+          },
+          "source_action_rows": [
+            "3*(-99 + 34*sqrt(3))/7",
+            "0",
+            "9*(-143 + 82*sqrt(3))/7",
+            "36*(-5 + 6*sqrt(3))/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "-288000*(-14133 + 7376*sqrt(3))",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 84*z - 1532",
+            "nonzero_constant_term": "-1532",
+            "value": "-2*(-7 + 12*sqrt(3))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 336*z + 15936",
+            "nonzero_constant_term": "15936",
+            "value": "-8*(-21 + 8*sqrt(3))"
+          },
+          "source_action_rows": [
+            "18*(-43 + 41*sqrt(3))/7",
+            "0",
+            "18*(11 + 103*sqrt(3))/35",
+            "288*(-2 + sqrt(3))/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "(2*sqrt(3) + 21)/40",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "-24*(-36 + 17*sqrt(3))/5",
+        "12*(-36 + 17*sqrt(3))/5",
+        "0"
+      ],
+      "input_branches": [
+        "minus",
+        "minus"
+      ],
+      "output_frequency": "2*sqrt(2)*sqrt(3 - sqrt(3))",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "z**4 - 48*z**2 + 384",
+        "nonzero_constant_term": "384",
+        "value": "2*sqrt(2)*sqrt(3 - sqrt(3))"
+      },
+      "real_polarization_factor": "1/8"
+    },
+    "plus_self_sum": {
+      "channel_kind": "sum",
+      "generic_polar_outputs": {
+        "2": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "497664*(299*sqrt(3) + 518)",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 336*z + 1408",
+            "nonzero_constant_term": "1408",
+            "value": "8*(3*sqrt(3) + 7)/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 1008*z + 5184",
+            "nonzero_constant_term": "5184",
+            "value": "72*(4*sqrt(3) + 7)"
+          },
+          "source_action_rows": [
+            "-3*(34*sqrt(3) + 99)/7",
+            "0",
+            "-9*(82*sqrt(3) + 143)/7",
+            "-36*(5 + 6*sqrt(3))/7"
+          ]
+        },
+        "4": {
+          "correction": "-H_P(lambda,0,Omega)^(-1)*S; unique because the displayed exact determinant is nonzero",
+          "operator_determinant": "288000*(7376*sqrt(3) + 14133)",
+          "p_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 84*z - 1532",
+            "nonzero_constant_term": "-1532",
+            "value": "2*(7 + 12*sqrt(3))/3"
+          },
+          "q_shell_witness": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 336*z + 15936",
+            "nonzero_constant_term": "15936",
+            "value": "8*(8*sqrt(3) + 21)"
+          },
+          "source_action_rows": [
+            "-18*(43 + 41*sqrt(3))/7",
+            "0",
+            "-18*(-11 + 103*sqrt(3))/35",
+            "-288*(sqrt(3) + 2)/7"
+          ]
+        }
+      },
+      "homogeneous_correction_C_K_U": [
+        "-(-21 + 2*sqrt(3))/40",
+        "0",
+        "0"
+      ],
+      "homogeneous_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "homogeneous_source_rows": [
+        "0",
+        "24*(17*sqrt(3) + 36)/5",
+        "-12*(17*sqrt(3) + 36)/5",
+        "0"
+      ],
+      "input_branches": [
+        "plus",
+        "plus"
+      ],
+      "output_frequency": "2*sqrt(2)*sqrt(sqrt(3) + 3)",
+      "output_frequency_nonzero_witness": {
+        "certified_nonzero": true,
+        "minimal_polynomial": "z**4 - 48*z**2 + 384",
+        "nonzero_constant_term": "384",
+        "value": "2*sqrt(2)*sqrt(sqrt(3) + 3)"
+      },
+      "real_polarization_factor": "1/8"
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_neutral_face_second_order.py",
+    "generator_sha256": "e1890821c311b2fea175673d15c624a87d7d3c02e070231efbf818fbab08c5bb",
+    "inputs": {
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "balanced_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+      },
+      "k0_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      }
+    },
+    "source_reuse": "the direct four-dimensional bilinear source polynomial is imported content-addressed from Paper 91's independently verified source certificate; no competing curvature reconstruction is introduced"
+  },
+  "raw_amplitude_balance": {
+    "Taub_coefficients": {
+      "extra": "-832/45",
+      "minus": "48*(-6 + 5*sqrt(3))/5",
+      "plus": "-48*(6 + 5*sqrt(3))/5"
+    },
+    "collinearity": "each vector equals tau_branch*(1,0,1/2,0)",
+    "combined_zero_source": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "entire_positive_quadrant_face_clears_homogeneous_cokernel": true,
+    "raw_squared_amplitudes": "x_plus,x_extra>=0 and x_minus as displayed; arbitrary constant phases are allowed",
+    "x_minus": "(312*x_extra + 260*sqrt(3)*x_extra + 1620*sqrt(3)*x_plus + 2997*x_plus)/1053",
+    "zero_source_vectors_E00_E11_E22_Maxwell1": {
+      "extra": [
+        "-832/45",
+        "0",
+        "-416/45",
+        "0"
+      ],
+      "minus": [
+        "48*(-6 + 5*sqrt(3))/5",
+        "0",
+        "24*(-6 + 5*sqrt(3))/5",
+        "0"
+      ],
+      "plus": [
+        "-48*(6 + 5*sqrt(3))/5",
+        "0",
+        "-24*(6 + 5*sqrt(3))/5",
+        "0"
+      ]
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_AXIAL_NEUTRAL_FACE_SECOND_ORDER",
+  "result_state": "TWO_PARAMETER_ELL2_AXIAL_NEUTRAL_FACE_SECOND_ORDER_EXTENDIBLE",
+  "schema": "einstein-maxwell-weyl-ell2-neutral-face-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_neutral_face_second_order.schema.json",
+  "schema_sha256": "da4a559bae2c13e2bc1afc6b9e291da24b47783270aa87cfcdd84f535783ea17",
+  "second_order_correction": {
+    "all_dependent_rows": "follow from the same constant-determinant Noether completion imported with the bilinear source certificate",
+    "all_nine_nonzero_frequency_pair_types_removable": true,
+    "all_zero_frequency_ell2_ell4_sources_removable": true,
+    "all_zero_frequency_homogeneous_sources_cancel": true,
+    "construction": "sum the displayed homogeneous corrections and unique polar inverse corrections, multiplying unit self/cross sources by the corresponding branch amplitudes and phases, then add complex conjugates",
+    "smooth_spatially_periodic_finite_quasiperiodic_correction": true
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_neutral_face_second_order --verify bridge/certificates/einstein_maxwell_weyl_ell2_neutral_face_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_neutral_face_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_neutral_face_second_order"
+  ],
+  "zero_frequency_ell2_ell4_channels": {
+    "2": {
+      "combined_source_action_rows": [
+        "-2*(-949*x_extra + 1924*sqrt(3)*x_extra + 11988*sqrt(3)*x_plus + 29970*x_plus)/819",
+        "0",
+        "94*(156*sqrt(3)*x_extra + 325*x_extra + 972*sqrt(3)*x_plus + 2430*x_plus)/819",
+        "8*(364*sqrt(3)*x_extra + 3237*x_extra + 2268*sqrt(3)*x_plus + 5670*x_plus)/819"
+      ],
+      "correction_At_B_Ct_U": [
+        "2*(91*x_extra + 78*sqrt(3)*x_extra + 486*sqrt(3)*x_plus + 1215*x_plus)/63",
+        "0",
+        "-22*(39*x_extra + 26*sqrt(3)*x_extra + 162*sqrt(3)*x_plus + 405*x_plus)/189",
+        "8*(156*sqrt(3)*x_extra + 325*x_extra + 972*sqrt(3)*x_plus + 2430*x_plus)/2457"
+      ],
+      "operator_determinant": "331776",
+      "operator_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "4": {
+      "combined_source_action_rows": [
+        "8*(26130*x_extra + 15314*sqrt(3)*x_extra + 95418*sqrt(3)*x_plus + 238545*x_plus)/819",
+        "0",
+        "8*(17862*x_extra + 12454*sqrt(3)*x_extra + 77598*sqrt(3)*x_plus + 193995*x_plus)/819",
+        "-64*(364*sqrt(3)*x_extra + 3237*x_extra + 2268*sqrt(3)*x_plus + 5670*x_plus)/819"
+      ],
+      "correction_At_B_Ct_U": [
+        "-8*(84344*sqrt(3)*x_extra + 155155*x_extra + 525528*sqrt(3)*x_plus + 1313820*x_plus)/1068795",
+        "0",
+        "-8*(42809*x_extra + 40612*sqrt(3)*x_extra + 253044*sqrt(3)*x_plus + 632610*x_plus)/1068795",
+        "-2*(806*sqrt(3)*x_extra + 6214*x_extra + 5022*sqrt(3)*x_plus + 12555*x_plus)/36855"
+      ],
+      "operator_determinant": "10899360000",
+      "operator_remainder": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  }
+}
