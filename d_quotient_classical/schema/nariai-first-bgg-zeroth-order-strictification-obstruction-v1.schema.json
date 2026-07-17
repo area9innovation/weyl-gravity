@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-first-bgg-zeroth-order-strictification-obstruction-v1.schema.json",
+  "title": "Nariai first-BGG zeroth-order strictification obstruction",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "conventions", "ansatz", "exact_data", "exact_checks", "obstruction", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-first-bgg-zeroth-order-strictification-obstruction-v1"},
+    "result_id": {"const": "NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1"},
+    "result_state": {"const": "ZEROTH_ORDER_STRICT_CHAIN_CORRECTION_OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["curved_parent", "pointwise_gate", "kostant_matrices", "differential_screen_matrices"],
+      "properties": {
+        "curved_parent": {"$ref": "#/$defs/dependency"},
+        "pointwise_gate": {"$ref": "#/$defs/dependency"},
+        "kostant_matrices": {"$ref": "#/$defs/dependency"},
+        "differential_screen_matrices": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "conventions": {
+      "type": "object",
+      "required": ["background", "schouten", "form_slot_curvature", "standard_tractor_middle_curvature", "fixed_first_bgg_operator"],
+      "properties": {
+        "background": {"type": "string"},
+        "schouten": {"const": "P_ab=(1/6)g_ab"},
+        "form_slot_curvature": {"type": "string"},
+        "standard_tractor_middle_curvature": {"const": "dual vector action -C_ab^T"},
+        "fixed_first_bgg_operator": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "ansatz": {
+      "type": "object",
+      "required": ["equation", "DeltaL0", "DeltaL1", "normalization", "scope"],
+      "properties": {
+        "equation": {"type": "string"},
+        "DeltaL0": {"const": "arbitrary zeroth-order 15x4 bundle map"},
+        "DeltaL1": {"const": "arbitrary zeroth-order 60x9 bundle map"},
+        "normalization": {"type": "string"},
+        "scope": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "exact_data": {
+      "type": "object",
+      "required": ["candidate_DeltaL0", "candidate_DeltaL1", "first_bgg_operator", "original_chain_defect", "residual_chain_defect", "normal_tractor_square"],
+      "properties": {
+        "candidate_DeltaL0": {"$ref": "#/$defs/sparse"},
+        "candidate_DeltaL1": {"$ref": "#/$defs/sparse"},
+        "first_bgg_operator": {"$ref": "#/$defs/table"},
+        "original_chain_defect": {"$ref": "#/$defs/table"},
+        "residual_chain_defect": {"$ref": "#/$defs/table"},
+        "normal_tractor_square": {"$ref": "#/$defs/table"}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["transverse_rank_set", "transverse_rows_inconsistent", "DeltaL0_rank", "DeltaL0_nonzero_entries", "DeltaL1_rank", "DeltaL1_nonzero_entries", "cross_form_defect_count", "cross_form_defects", "normalized_witness", "normalized_witness_value", "harmonic_projection_defect_ranks", "residual_orders", "residual_nonzero_entries", "normal_tractor_square_rank", "normal_tractor_square_nonzero_entries"],
+      "properties": {
+        "transverse_rank_set": {"const": [9]},
+        "transverse_rows_inconsistent": {"const": []},
+        "DeltaL0_rank": {"const": 4},
+        "DeltaL0_nonzero_entries": {"const": 4},
+        "DeltaL1_rank": {"const": 9},
+        "DeltaL1_nonzero_entries": {"const": 24},
+        "cross_form_defect_count": {"const": 12},
+        "cross_form_defects": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "array", "minItems": 4, "maxItems": 4}},
+        "normalized_witness": {"const": "3*(Y_from_form1-Y_from_form0)[K0,input0]"},
+        "normalized_witness_value": {"const": "1"},
+        "harmonic_projection_defect_ranks": {"const": [0, 0]},
+        "residual_orders": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "residual_nonzero_entries": {"type": "integer", "minimum": 1},
+        "normal_tractor_square_rank": {"const": 14},
+        "normal_tractor_square_nonzero_entries": {"const": 32}
+      },
+      "additionalProperties": false
+    },
+    "obstruction": {
+      "type": "object",
+      "required": ["reason", "smallest_exact_witness", "conclusion", "not_a_full_curved_bgg_no_go"],
+      "properties": {
+        "reason": {"type": "string"},
+        "smallest_exact_witness": {"type": "string"},
+        "conclusion": {"const": "zeroth-order corrections to L0 and L1 cannot strictify the first Nariai BGG square with K fixed"},
+        "not_a_full_curved_bgg_no_go": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1", "ZEROTH_ORDER_STRICTIFICATION_EXISTS", "GENUINELY_DERIVATIVE_CORRECTION_STILL_OPEN", "HOMOTOPY_COHERENT_CURVED_TRANSFER_STILL_OPEN", "NARIAI_CURVED_BGG_HPL_COMPRESSION", "NARIAI_GREEN_HOMOTOPY", "ALL_CURVED_COMPRESSIONS_OBSTRUCTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1": {"const": true},
+        "ZEROTH_ORDER_STRICTIFICATION_EXISTS": {"const": false},
+        "GENUINELY_DERIVATIVE_CORRECTION_STILL_OPEN": {"const": true},
+        "HOMOTOPY_COHERENT_CURVED_TRANSFER_STILL_OPEN": {"const": true},
+        "NARIAI_CURVED_BGG_HPL_COMPRESSION": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "ALL_CURVED_COMPRESSIONS_OBSTRUCTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_GENUINELY_DERIVATIVE_OR_HOMOTOPY_COHERENT_BGG_CORRECTION"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+      "additionalProperties": false
+    },
+    "sparse": {
+      "type": "object",
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "required": ["entries", "sha256"],
+      "properties": {
+        "entries": {"type": "array", "items": {"type": "object", "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/sparse"}}, "additionalProperties": false}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

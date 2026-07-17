@@ -169,6 +169,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   derivative splitting/HPL corrections are mandatory:
   [`certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json`](certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json),
   [`reports/nariai-pointwise-bgg-curvature-compression-obstruction.md`](reports/nariai-pointwise-bgg-curvature-compression-obstruction.md)
+- First strictification screen beyond that gate: with the Nariai covector and
+  dual-vector curvature actions kept distinct, arbitrary zeroth-order
+  corrections to both BGG splitting maps cannot make the first square strict.
+  The transverse equations uniquely fix the one-form correction, but the four
+  form slots leave twelve exact (1/3) mismatches (normalized witness one).
+  Genuinely derivative-dependent and homotopy-coherent curved transfer remain
+  open:
+  [`certificates/NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1.json`](certificates/NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1.json),
+  [`reports/nariai-first-bgg-zeroth-order-strictification-obstruction.md`](reports/nariai-first-bgg-zeroth-order-strictification-obstruction.md)
 - Strict portable consumer gate and accepted Berger adapter:
   [`schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json`](schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
   [`certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json`](certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json)
