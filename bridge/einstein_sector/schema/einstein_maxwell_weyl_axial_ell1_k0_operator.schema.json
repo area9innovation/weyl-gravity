@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Exceptional axial ell=1 k=0 Weyl--Maxwell operator",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "operator_theorem", "classification", "interpretation",
+    "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-ell1-k0-operator-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL1_K0_OPERATOR"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "classification": {
+      "type": "object",
+      "required": [
+        "standard_physical_shell_recovered", "zero_frequency_twist_recovered_without_frequency_inversion",
+        "extra_fourth_order_ell1_shell_discovered", "zero_fibre_physical_cokernel_equals_rotation_triplet",
+        "ell1_positive_frequency_Lee_Wald_inertia_of_extra_mode", "polar_ell1_extra_modes_classified",
+        "Lorentzian_causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

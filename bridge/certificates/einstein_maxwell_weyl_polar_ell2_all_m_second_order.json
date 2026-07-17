@@ -1,0 +1,544 @@
+{
+  "angular_selection": {
+    "axisymmetric_specialization": "m1=m2=0 kills odd L but the all-m theorem retains L=1,3",
+    "output_blocks": {
+      "0": {
+        "nonzero_witness": [
+          -2,
+          2,
+          0,
+          "sqrt(5)/5"
+        ],
+        "target_parity": "polar"
+      },
+      "1": {
+        "nonzero_witness": [
+          -2,
+          1,
+          -1,
+          "sqrt(15)/15"
+        ],
+        "target_parity": "axial"
+      },
+      "2": {
+        "nonzero_witness": [
+          -2,
+          0,
+          -2,
+          "sqrt(70)/35"
+        ],
+        "target_parity": "polar"
+      },
+      "3": {
+        "nonzero_witness": [
+          -2,
+          -1,
+          -3,
+          "sqrt(14)/14"
+        ],
+        "target_parity": "axial"
+      },
+      "4": {
+        "nonzero_witness": [
+          -2,
+          -2,
+          -4,
+          "1/3"
+        ],
+        "target_parity": "polar"
+      }
+    },
+    "parity_rule": "polar ell=2 has even spatial parity; its quadratic product is even, hence polar even-L and axial odd-L outputs",
+    "tensor_product": "V_2 tensor V_2 = V_0+V_1+V_2+V_3+V_4"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers all m only for pure polar ell=2,k=0 input. It does not include axial--polar cross terms, general ell, opposite momenta, all-orders integration, causal propagation, particles, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "all_m_polar_ell2_common_zero_cone_second_order_extendible": true,
+    "all_orders_integrability": false,
+    "axial_polar_mixed_cross_terms_classified": false,
+    "both_extra_polarizations_included": true,
+    "general_ell_classified": false,
+    "odd_L1_and_L3_channels_closed": true,
+    "opposite_momentum_phase_source_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "finite real polar ell=2,k=0 Weyl-Maxwell tangents with all m, Einstein-plus/minus and both extra polarizations, satisfying the complete H,J_i common-zero equations",
+  "generality_level": "G3_POLAR_ELL2_ALL_M_BOTH_EXTRA_POLARIZATIONS",
+  "interpretation": "The polar ell=2 sector has the same output parity and frequency ledger as the axial sector. Its only physical zero-frequency obstructions are again H and the rotation triplet. Hence the common-zero moment-map equations are sufficient for a complete second-order correction on the full polar block; the direct unit-extra source independently fixes the normalization of the scalar pairing.",
+  "lifecycle_state": "CLASSIFIED",
+  "linear_input": {
+    "extra_current_positive_nondegenerate_before_residual_descent": true,
+    "target_module": "K[omega]/(q) direct-sum (K[omega]/(p))^2",
+    "two_extra_polarizations": true
+  },
+  "next_gate": "classify axial--polar cross sources, whose odd total parity produces polar odd-L and axial even-L outputs, before taking the direct sum of the two cone theorems",
+  "nonzero_frequency_resonance_ledger": {
+    "axial_L1_nonzero_channels_off_twist_extra_and_standard_shells": true,
+    "axial_L3_nonzero_channels_off_p_and_q_shells": true,
+    "axial_L3_zero_channel": {
+      "invertible": true,
+      "p": "-34/3",
+      "q": "120"
+    },
+    "nine_nonzero_frequency_types": {
+      "extra_plus_difference": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**4 - 204*z**2 - 288*z - 104",
+            "nonzero_constant_term": "-104",
+            "value": "-(-4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))/3"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "81*z**4 - 2376*z**3 + 3456*z**2 + 121920*z + 270400",
+            "nonzero_constant_term": "270400",
+            "value": "2*(-4*sqrt(6)*sqrt(sqrt(3) + 3) + 3*sqrt(3) + 11)/3"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 120*z**3 + 960*z**2 + 1728*z + 704",
+            "nonzero_constant_term": "704",
+            "value": "2*(-4*sqrt(6)*sqrt(sqrt(3) + 3) + 3*sqrt(3) + 15)/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 840*z**2 - 3072*z + 23984",
+            "nonzero_constant_term": "23984",
+            "value": "2*(-4*sqrt(6)*sqrt(sqrt(3) + 3) + 3*sqrt(3))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 3055968*z**3 + 405098496*z**2 - 13858099200*z - 271387443200",
+            "nonzero_constant_term": "-271387443200",
+            "value": "-8*(-131 - 45*sqrt(3) - 4*sqrt(6)*sqrt(sqrt(3) + 3) + 36*sqrt(2)*sqrt(sqrt(3) + 3))/9"
+          }
+        },
+        "frequency": "-sqrt(2)*sqrt(sqrt(3) + 3) + 4*sqrt(3)/3"
+      },
+      "extra_plus_sum": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**4 - 204*z**2 - 288*z - 104",
+            "nonzero_constant_term": "-104",
+            "value": "(4*sqrt(3) + 3*sqrt(2)*sqrt(sqrt(3) + 3))/3"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "81*z**4 - 2376*z**3 + 3456*z**2 + 121920*z + 270400",
+            "nonzero_constant_term": "270400",
+            "value": "2*(3*sqrt(3) + 11 + 4*sqrt(6)*sqrt(sqrt(3) + 3))/3"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 120*z**3 + 960*z**2 + 1728*z + 704",
+            "nonzero_constant_term": "704",
+            "value": "2*(3*sqrt(3) + 15 + 4*sqrt(6)*sqrt(sqrt(3) + 3))/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 840*z**2 - 3072*z + 23984",
+            "nonzero_constant_term": "23984",
+            "value": "2*(3*sqrt(3) + 4*sqrt(6)*sqrt(sqrt(3) + 3))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 3055968*z**3 + 405098496*z**2 - 13858099200*z - 271387443200",
+            "nonzero_constant_term": "-271387443200",
+            "value": "8*(-4*sqrt(6)*sqrt(sqrt(3) + 3) + 45*sqrt(3) + 36*sqrt(2)*sqrt(sqrt(3) + 3) + 131)/9"
+          }
+        },
+        "frequency": "4*sqrt(3)/3 + sqrt(2)*sqrt(sqrt(3) + 3)"
+      },
+      "extra_self_sum": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**2 - 64",
+            "nonzero_constant_term": "-64",
+            "value": "8*sqrt(3)/3"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z - 52",
+            "nonzero_constant_term": "-52",
+            "value": "52/3"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z - 20",
+            "nonzero_constant_term": "-20",
+            "value": "20"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z - 10",
+            "nonzero_constant_term": "-10",
+            "value": "10"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z - 568",
+            "nonzero_constant_term": "-568",
+            "value": "568/9"
+          }
+        },
+        "frequency": "8*sqrt(3)/3"
+      },
+      "minus_extra_difference": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**4 - 204*z**2 - 288*z - 104",
+            "nonzero_constant_term": "-104",
+            "value": "(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))/3"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "81*z**4 - 2376*z**3 + 3456*z**2 + 121920*z + 270400",
+            "nonzero_constant_term": "270400",
+            "value": "-2*(-11 + 3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 120*z**3 + 960*z**2 + 1728*z + 704",
+            "nonzero_constant_term": "704",
+            "value": "-2*(-15 + 3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 840*z**2 - 3072*z + 23984",
+            "nonzero_constant_term": "23984",
+            "value": "-2*(3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 3055968*z**3 + 405098496*z**2 - 13858099200*z - 271387443200",
+            "nonzero_constant_term": "-271387443200",
+            "value": "8*(-45*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 131)/9"
+          }
+        },
+        "frequency": "-4*sqrt(3)/3 + sqrt(2)*sqrt(3 - sqrt(3))"
+      },
+      "minus_extra_sum": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**4 - 204*z**2 + 288*z - 104",
+            "nonzero_constant_term": "-104",
+            "value": "(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))/3"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "81*z**4 - 2376*z**3 + 3456*z**2 + 121920*z + 270400",
+            "nonzero_constant_term": "270400",
+            "value": "2*(-3*sqrt(3) + 11 + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 120*z**3 + 960*z**2 + 1728*z + 704",
+            "nonzero_constant_term": "704",
+            "value": "2*(-3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)) + 15)/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "3*z**4 - 840*z**2 - 3072*z + 23984",
+            "nonzero_constant_term": "23984",
+            "value": "2*(-3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "6561*z**4 - 3055968*z**3 + 405098496*z**2 - 13858099200*z - 271387443200",
+            "nonzero_constant_term": "-271387443200",
+            "value": "-8*(-131 + 4*sqrt(6)*sqrt(3 - sqrt(3)) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 45*sqrt(3))/9"
+          }
+        },
+        "frequency": "sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3)/3"
+      },
+      "minus_plus_difference": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**4 - 24*z**2 + 48",
+            "nonzero_constant_term": "48",
+            "value": "sqrt(2)*(-sqrt(sqrt(3) + 3) + sqrt(3 - sqrt(3)))"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 16*z - 32",
+            "nonzero_constant_term": "-32",
+            "value": "-4*(-2 + sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 192*z + 160",
+            "nonzero_constant_term": "160",
+            "value": "-4*(-8 + 3*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 12*z - 860",
+            "nonzero_constant_term": "-860",
+            "value": "-2*(-1 + 6*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z - 72",
+            "nonzero_constant_term": "-72",
+            "value": "72"
+          }
+        },
+        "frequency": "sqrt(2)*(-sqrt(sqrt(3) + 3) + sqrt(3 - sqrt(3)))"
+      },
+      "minus_plus_sum": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**4 - 24*z**2 + 48",
+            "nonzero_constant_term": "48",
+            "value": "sqrt(2)*(sqrt(3 - sqrt(3)) + sqrt(sqrt(3) + 3))"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 16*z - 32",
+            "nonzero_constant_term": "-32",
+            "value": "4*(2 + sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 192*z + 160",
+            "nonzero_constant_term": "160",
+            "value": "4*(3*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3) + 8)/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 12*z - 860",
+            "nonzero_constant_term": "-860",
+            "value": "2*(1 + 6*sqrt(3 - sqrt(3))*sqrt(sqrt(3) + 3))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z - 72",
+            "nonzero_constant_term": "-72",
+            "value": "72"
+          }
+        },
+        "frequency": "sqrt(2)*(sqrt(3 - sqrt(3)) + sqrt(sqrt(3) + 3))"
+      },
+      "minus_self_sum": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**4 - 48*z**2 + 384",
+            "nonzero_constant_term": "384",
+            "value": "2*sqrt(2)*sqrt(3 - sqrt(3))"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 40*z + 208",
+            "nonzero_constant_term": "208",
+            "value": "-4*(-5 + 2*sqrt(3))"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 408*z + 2896",
+            "nonzero_constant_term": "2896",
+            "value": "-4*(-17 + 6*sqrt(3))/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 228*z - 284",
+            "nonzero_constant_term": "-284",
+            "value": "-2*(-19 + 12*sqrt(3))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 624*z - 13248",
+            "nonzero_constant_term": "-13248",
+            "value": "-24*(-13 + 8*sqrt(3))"
+          }
+        },
+        "frequency": "2*sqrt(2)*sqrt(3 - sqrt(3))"
+      },
+      "plus_self_sum": {
+        "axial_L1": {
+          "Omega": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**4 - 48*z**2 + 384",
+            "nonzero_constant_term": "384",
+            "value": "2*sqrt(2)*sqrt(sqrt(3) + 3)"
+          },
+          "Omega_squared_minus_4": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 40*z + 208",
+            "nonzero_constant_term": "208",
+            "value": "4*(2*sqrt(3) + 5)"
+          },
+          "Omega_squared_minus_4_over_3": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 408*z + 2896",
+            "nonzero_constant_term": "2896",
+            "value": "4*(6*sqrt(3) + 17)/3"
+          }
+        },
+        "axial_L3": {
+          "p": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "9*z**2 - 228*z - 284",
+            "nonzero_constant_term": "-284",
+            "value": "2*(19 + 12*sqrt(3))/3"
+          },
+          "q": {
+            "certified_nonzero": true,
+            "minimal_polynomial": "z**2 - 624*z - 13248",
+            "nonzero_constant_term": "-13248",
+            "value": "24*(13 + 8*sqrt(3))"
+          }
+        },
+        "frequency": "2*sqrt(2)*sqrt(sqrt(3) + 3)"
+      }
+    },
+    "polar_L2_L4": "exact p/q nonresonance and zero-frequency inverses imported from the full-extra face"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_ell2_all_m_second_order.py",
+    "generator_sha256": "3c74c228263b2bf5d05c9bcbe1adea8859b43308b67166393f0b6e7ba4eaf3f3",
+    "inputs": {
+      "axial_all_m_output_audit": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_all_m_second_order.json",
+        "sha256": "968228f35342e018e63b22ee4d43a00eda541ce2e20e409e480e3d6fdcbd8be2"
+      },
+      "ell1_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "moment_map_bridge": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "polar_extra_cross_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_extra_cross_zero_source_fixture.json",
+        "sha256": "19a643b325bf799727cbd39f47a034379d2da0276211227929daaca913fa2533"
+      },
+      "polar_extra_e1_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_extra_e1_zero_source_fixture.json",
+        "sha256": "8a893cabb113254656bc965ea2d7305dc5271d31a906889894f4fccac4182a42"
+      },
+      "polar_extra_e2_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_extra_e2_zero_source_fixture.json",
+        "sha256": "ba3741a32cd734ecd6e4fc34e9d114730ce5a4794991d8a3361e85cd7574871d"
+      },
+      "polar_linear_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "polar_minus_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_minus_zero_source_fixture.json",
+        "sha256": "8a401df7af70b0bd8cf454b6f4ef225b8c7356a896c2dbb588fd9b13382f7bd3"
+      },
+      "polar_plus_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell2_plus_zero_source_fixture.json",
+        "sha256": "5e7d3ef17c58fcaacc95287f66523aed104b77cf070209a2ce8ae92ef49a418e"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ELL2_ALL_M_SECOND_ORDER",
+  "result_state": "COMPLETE_POLAR_ELL2_ALL_M_COMMON_ZERO_CONE_SECOND_ORDER_EXTENDIBLE",
+  "schema": "einstein-maxwell-weyl-polar-ell2-all-m-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_ell2_all_m_second_order.schema.json",
+  "schema_sha256": "9ea8b08ff38d33750a35bd0fd1c688f4adec4b2ffbfd1702b34a24f121badd9b",
+  "second_order_solution": {
+    "complete_for_declared_polar_cone": true,
+    "construction": "project the exact quadratic source to L=0,...,4 and every sum/difference frequency; impose H=J_i=0 on the only physical zero-frequency adjoint pairings and invert all remaining blocks",
+    "finite_for_finite_first_order_data": true,
+    "real_spatially_periodic": true,
+    "temporal_class": "finite quasiperiodic plus any exceptional zero-frequency polynomial/Jordan correction selected by the L1 solve",
+    "why_source_rank_is_not_an_extra_assumption": "Fredholm solvability depends on the complete adjoint cokernel, not on literal vanishing of each source row; the Taub bridge exhausts the physical L=0,1 pairings"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ell2_all_m_second_order --verify bridge/certificates/einstein_maxwell_weyl_polar_ell2_all_m_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_ell2_all_m_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ell2_all_m_second_order"
+  ],
+  "zero_frequency_descent": {
+    "P_x": "identically zero at k=0",
+    "axial_L1": {
+      "moment_map_identification": "the three physical adjoint pairings are mu_J1,mu_J2,mu_J3",
+      "raw_left_cokernel": "one universal Noether row plus one physical twist-adjoint row for each real M=-1,0,1",
+      "solvability_condition": "mu_J1=mu_J2=mu_J3=0",
+      "source_then_lies_in_operator_image": true
+    },
+    "axial_L3": "invertible at Omega=0 because p=-34/3 and q=120",
+    "polar_L0": {
+      "basis_normalization": "the unit e1=(0,1,0,0) has k=0 Hermitian current weight 9; the published Lee--Wald basis vector is 16*omega_e times e1",
+      "common_row_direction": [
+        "1",
+        "0",
+        "1/2",
+        "0"
+      ],
+      "direct_Hermitian_source_columns_plus_minus_e1_e2": {
+        "polar_extra_e1_fixture": [
+          "-12/5",
+          "0",
+          "-6/5",
+          "0"
+        ],
+        "polar_extra_e2_fixture": [
+          "-29952/5",
+          "0",
+          "-14976/5",
+          "0"
+        ],
+        "polar_minus_fixture": [
+          "-9504/5 + 6048*sqrt(3)/5",
+          "0",
+          "-4752/5 + 3024*sqrt(3)/5",
+          "0"
+        ],
+        "polar_plus_fixture": [
+          "-6048*sqrt(3)/5 - 9504/5",
+          "0",
+          "-3024*sqrt(3)/5 - 4752/5",
+          "0"
+        ]
+      },
+      "extra_e1_e2_interference": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "formal_obstruction": "the constant-lapse adjoint pairing is exactly mu_H by the Taub--Lee--Wald bridge",
+      "solvability_condition": "mu_H=0",
+      "source_cancellation": "Schur's lemma promotes the m=0 internal source matrix to every m; H=0 therefore cancels all four homogeneous source rows exactly",
+      "spacetime_row_rank": 1
+    },
+    "polar_L2_L4": "invertible at Omega=0"
+  }
+}

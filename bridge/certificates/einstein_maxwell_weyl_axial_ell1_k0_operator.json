@@ -1,0 +1,176 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem classifies only the axial ell=1,k=0 operator. It does not compute the extra mode current, polar exceptional modes, nonlinear closure, causal propagation, particles, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "ell1_positive_frequency_Lee_Wald_inertia_of_extra_mode": false,
+    "extra_fourth_order_ell1_shell_discovered": true,
+    "extra_shell_frequency_squared": "4/3",
+    "polar_ell1_extra_modes_classified": false,
+    "standard_physical_shell_recovered": true,
+    "zero_fibre_physical_cokernel_equals_rotation_triplet": true,
+    "zero_frequency_twist_recovered_without_frequency_inversion": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "axial ell=1,k=0 Weyl-Maxwell coefficient complex, all three real m by SO(3), before stabilizer quotient",
+  "generality_level": "G2_AXIAL_ELL1_K0_EXCEPTIONAL_OPERATOR",
+  "interpretation": "The exceptional axial ell=1 target contains more than the standard Einstein-Maxwell oscillator and the global twist. A distinct fourth-order primary occurs at omega^2=4/3. At zero frequency the raw two-dimensional left cokernel splits into the universal Noether identity and one physical twist-adjoint direction per m, exactly the structure needed for rotation Taub descent.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the direct Lee-Wald current on the omega^2=4/3 representative and classify the polar ell=1 fourth-order quotient",
+  "operator_theorem": {
+    "Noether_left_null": [
+      "-1",
+      "0",
+      "1",
+      "0"
+    ],
+    "nonzero_frequency_gauge_slice": {
+      "coefficient_order": [
+        "q_t",
+        "h_x",
+        "q_x"
+      ],
+      "condition": "omega!=0",
+      "determinant": "omega**2*(omega - 2)*(omega + 2)*(3*omega**2 - 4)",
+      "gauge_choice": "h_t=0",
+      "matrix": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "(3*omega**4 - 10*omega**2 - 4)/2",
+          "-2"
+        ],
+        [
+          "0",
+          "-2",
+          "omega**2 - 2"
+        ]
+      ],
+      "row_order": [
+        "2*metric_t",
+        "-2*metric_x",
+        "maxwell_x"
+      ]
+    },
+    "polynomial_gauge_column": [
+      "-omega",
+      "0",
+      "omega",
+      "0"
+    ],
+    "primary_shells": {
+      "extra_fourth_order": "omega^2=4/3",
+      "standard_Einstein_Maxwell": "omega^2=4",
+      "zero_frequency_twist": "omega^2=0"
+    },
+    "raw_coefficient_order": [
+      "h_t",
+      "h_x",
+      "q_t",
+      "q_x"
+    ],
+    "raw_matrix": [
+      [
+        "2",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "(3*omega**4 - 10*omega**2 - 4)/2",
+        "0",
+        "-2"
+      ],
+      [
+        "2",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "-2",
+        "0",
+        "omega**2 - 2"
+      ]
+    ],
+    "raw_row_order": [
+      "2*metric_t",
+      "-2*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ],
+    "representatives_Ht_Hx_Qt_Qx": {
+      "extra_fourth_order": [
+        "0",
+        "1",
+        "0",
+        "-3"
+      ],
+      "standard_physical": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "twist_zero": [
+        "0",
+        "1",
+        "0",
+        "-1"
+      ]
+    },
+    "zero_frequency_fibre": {
+      "Noether_identity_direction": [
+        "-1",
+        "0",
+        "1",
+        "0"
+      ],
+      "interpretation": "after removing the universal Noether identity, one physical adjoint condition remains; its three SO(3) copies are the rotation/Taub constraints",
+      "left_cokernel_dimension": 2,
+      "physical_twist_adjoint_direction": [
+        "0",
+        "-1",
+        "0",
+        "1"
+      ],
+      "raw_rank": 2
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_ell1_k0_operator.py",
+    "generator_sha256": "5e415734425d41a108ef3f89a5b71fd09e1f888ab1d68ea2208af1e07fece8c4",
+    "inputs": {
+      "axial_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+        "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+      },
+      "physical_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+        "sha256": "2596e01ea18030ffeced787629b3d5eba3f6a3d14c3e881e1a4dffd82405e674"
+      },
+      "twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+        "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL1_K0_OPERATOR",
+  "result_state": "EXCEPTIONAL_AXIAL_ELL1_TARGET_PRIMARY_DECOMPOSITION_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-axial-ell1-k0-operator-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_ell1_k0_operator.schema.json",
+  "schema_sha256": "28a03fbdcb8de734eee292891242007f9b2eaa9521e236865190ed8e603cf573",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell1_k0_operator --verify bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_ell1_k0_operator.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ell1_k0_operator"
+  ]
+}

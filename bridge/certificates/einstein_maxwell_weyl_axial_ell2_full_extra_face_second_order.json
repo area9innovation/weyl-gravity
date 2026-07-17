@@ -1,0 +1,122 @@
+{
+  "angular_and_frequency_closure": {
+    "axisymmetric_product": "two m=0 ell=2 axial modes produce only even polar L=0,2,4 outputs; odd L Clebsch-Gordan coefficients vanish",
+    "ell2_ell4_p_and_q_nonresonance_inherited": true,
+    "frequency_set": "adding e1 creates no new output frequencies because e1 and e2 share omega_extra",
+    "nine_frequency_types_inherited": true,
+    "zero_frequency_ell2_ell4_invertible": true
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem covers both axial extra polarizations only on the ell=2,m=0,k=0 face. It does not promote all m, polar parity, general ell, standing-wave phases, all-orders solutions, or causal/quantum claims.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "all_m_promoted": false,
+    "all_orders_integrability": false,
+    "arbitrary_constant_relative_phases_allowed": true,
+    "both_axial_extra_polarizations_included": true,
+    "general_ell_classified": false,
+    "opposite_momentum_phase_source_classified": false,
+    "polar_input_parity_classified": false,
+    "three_parameter_positive_cone_second_order_extendible": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "real axial ell=2,m=0,k=0 tangents spanning Einstein-plus, both degenerate extra p-primary representatives, and Einstein-minus",
+  "generality_level": "G2_ELL2_M0_AXIAL_BOTH_EXTRA_POLARIZATIONS",
+  "interpretation": "The second axial extra polarization does not cut the Paper-91 mixed cone. Its self-source lies on the same single spacetime cokernel ray, its interference source with the first extra polarization vanishes exactly, and its coefficient is proportional to the positive extra Lee-Wald Gram entry. The axisymmetric second-order cone therefore grows from two to three nonnegative parameters before overall scale and phases.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute odd-L zero-frequency channels for non-axisymmetric m data, then repeat the internal source-rank test in polar parity and at symbolic ell",
+  "nonzero_homogeneous_channels": {
+    "consequence": "every actual nonzero-frequency homogeneous source, including channels containing e1, has an algebraic correction",
+    "image_equals_Noether_kernel": true,
+    "left_null_conditions": [
+      "S_E00=0",
+      "S_E11/2+S_E22=0"
+    ],
+    "operator_rank_for_Omega_nonzero": 2,
+    "quadratic_Noether_reason": "the exact target Noether identity N(Phi)E(Phi)=0 gives N^(0)S^(2)=0 for every pair of on-shell first-order modes; at Omega!=0 these two conditions are precisely the left-null conditions"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order.py",
+    "generator_sha256": "08be677828236bd95f82929ab22fdb070ea476dbc19960c6722557ec4c6edce4",
+    "inputs": {
+      "axial_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+        "sha256": "9a99c658f34334386d56d6a569e81d73c31251bcd4592324553b7417b74d8f20"
+      },
+      "balanced_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+        "sha256": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+      },
+      "e1_e2": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_e1_e2_zero_source_fixture.json",
+        "sha256": "f71de36585989dd309c910749ed9aa12f54ca1f923bc3e5139d1138d04e368a0"
+      },
+      "e1_self": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_e1_zero_source_fixture.json",
+        "sha256": "8b9e4941105ffc90f4b197dafc0486fa50371f1e6ef8efa2279364db12c1b800"
+      },
+      "three_branch_face": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_neutral_face_second_order.json",
+        "sha256": "b09c28e32d976863c4236baacf99476e25667998f91901e5388f40056f12dfd4"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_FULL_EXTRA_FACE_SECOND_ORDER",
+  "result_state": "THREE_PARAMETER_AXISYMMETRIC_AXIAL_FACE_SECOND_ORDER_EXTENDIBLE",
+  "schema": "einstein-maxwell-weyl-axial-ell2-full-extra-face-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order.schema.json",
+  "schema_sha256": "5da8d29a5f89ad7d0ed332341c3bc5dcb471d0c86b4fbd2622869d0623a2e7db",
+  "second_order_correction": {
+    "complete_for_declared_face": true,
+    "homogeneous_nonzero": "exists by exact image=Noether-kernel equality",
+    "homogeneous_zero": "zero after the displayed H balance",
+    "polar_ell2_ell4": "unique exact inverse at zero and every inherited nonzero frequency",
+    "real_reconstruction": "multiply bilinear channel corrections by the chosen complex amplitudes and add conjugates"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell2_extra_zero_source_fixture --case e1_self --verify bridge/certificates/einstein_maxwell_weyl_axial_ell2_e1_zero_source_fixture.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell2_extra_zero_source_fixture --case e1_e2 --verify bridge/certificates/einstein_maxwell_weyl_axial_ell2_e1_e2_zero_source_fixture.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order --verify bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_axial_ell2_full_extra_face_second_order"
+  ],
+  "zero_frequency_source_rank": {
+    "Taub_source_coefficients": {
+      "extra_e1": "-1728/5",
+      "extra_e2": "-832/45",
+      "minus": "-288/5 + 48*sqrt(3)",
+      "plus": "-48*sqrt(3) - 288/5"
+    },
+    "balanced_remainder": "0",
+    "extra_interference_source": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "extra_internal_Hermitian_source_matrix": [
+      [
+        "-1728/5",
+        "0"
+      ],
+      [
+        "0",
+        "-832/45"
+      ]
+    ],
+    "extra_source_matrix_rank": 2,
+    "homogeneous_zero_source_cancels_on_entire_face": true,
+    "parameters": "x_plus,x_e1,x_e2>=0, not all zero; arbitrary constant complex phases",
+    "source_matrix_proportional_to_extra_Lee_Wald_Gram": true,
+    "source_row_direction": [
+      "1",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "spacetime_row_rank": 1,
+    "x_minus": "(972*x_e1 + 52*x_e2 + 162*x_plus + 135*sqrt(3)*x_plus)/(27*(-6 + 5*sqrt(3)))"
+  }
+}

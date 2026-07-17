@@ -1,0 +1,47 @@
+{
+  "case": "minus",
+  "claim_boundary": "This direct polar ell=2 axisymmetric fixture computes one Hermitian zero-source entry. Its aggregation, all-m promotion, nonzero channels, and other ell remain separate theorems.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "direct four-dimensional homogeneous zero-frequency quadratic source for polar ell=2,m=0,k=0 Weyl-Maxwell modes",
+  "generality_level": "G1_POLAR_ELL2_M0_K0_FIXTURE",
+  "homogeneous_source_rows_E00_E11_E22_Maxwell1": [
+    "864*(-11 + 7*sqrt(3))/5",
+    "0",
+    "432*(-11 + 7*sqrt(3))/5",
+    "0"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "mode_table_At_B_Ct_U_and_frequency": {
+    "extra_e1": {
+      "frequency": "4*sqrt(3)/3",
+      "representative": ["0", "1", "0", "0"]
+    },
+    "extra_e2": {
+      "frequency": "4*sqrt(3)/3",
+      "representative": ["-8", "0", "-72", "48"]
+    },
+    "minus": {
+      "frequency": "sqrt(6 - 2*sqrt(3))",
+      "representative": ["12", "0", "12 - 24*sqrt(3)", "6"]
+    },
+    "plus": {
+      "frequency": "sqrt(2*sqrt(3) + 6)",
+      "representative": ["12", "0", "12 + 24*sqrt(3)", "6"]
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_ell2_zero_source_fixture.py",
+    "generator_sha256": "a1ab4ac85b1e89bf22765dbd2842d314cc98a222ce48037d0bed4ecf5c98200e",
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_weyl_balanced_ell0_second_order.py",
+    "tensor_helper_sha256": "144dc9ea6173b8980e859b4d98ab41d3730631ae2292198701451f675fbb8ff0"
+  },
+  "real_channel_factor": "1/4",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ELL2_MINUS_ZERO_SOURCE_FIXTURE",
+  "result_state": "DIRECT_FOUR_DIMENSIONAL_ZERO_FREQUENCY_SOURCE_COMPUTED",
+  "schema": "einstein-maxwell-weyl-polar-ell2-zero-source-fixture-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_ell2_zero_source_fixture.schema.json",
+  "schema_sha256": "c33137da729cef62647539a7a6f3159f269b740b6a81baf5cd54e092c882885c"
+}

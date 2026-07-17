@@ -1524,8 +1524,84 @@ exact minimal-polynomial nonzero witnesses for both `p` and `q`; their
 homogeneous corrections are explicit.  The zero-frequency `ell=2,4` sources
 also have exact inverse corrections.  Therefore every point of this declared
 face, with arbitrary constant relative phases, has a spatially periodic
-finite-quasiperiodic second-order correction.  Other `m`, parity, extra
-polarization, and higher-`ell` faces remain open.
+finite-quasiperiodic second-order correction.  That axisymmetric fixture by
+itself did not settle other `m`, parity, the second extra polarization, or
+higher-`ell` faces; the next certificates close the first three at `ell=2`.
+
+The extra-polarization and angular gates are now sharper.  A second direct
+four-dimensional fixture for the axial `ell=2,m=0,k=0` extra basis gives
+
+```text
+S_e1(0)=(-1728/5,0,-864/5,0),
+S_e1,e2(0)=0.
+```
+
+Together with the previously used second extra vector, the internal extra
+source matrix is diagonal and is proportional to the direct Lee--Wald Gram
+matrix.  The complete axial axisymmetric face therefore has three independent
+nonnegative occupations `(a_plus,a_e1,a_e2)`, balanced by `a_minus`; its
+zero-frequency source still has one spacetime row and every nonzero block is
+off shell.
+
+Non-axisymmetric axial data introduce the odd output harmonics omitted by the
+axisymmetric calculation.  Direct specialization of the raw axial target
+operator at `ell=1,k=0` discovers, besides the twist and standard shells, an
+exceptional fourth-order primary
+
+```text
+omega^2=4/3,   representative (h_t,h_x,q_t,q_x)=(0,1,0,-3).
+```
+
+At zero frequency the only physical left-cokernel row is the twist adjoint,
+in three `SO(3)` copies; by the Taub--Lee--Wald bridge these are exactly the
+three rotation moment maps.  Exact minimal-polynomial checks show that every
+nonzero quadratic frequency misses the `ell=1` twist, extra, and standard
+shells, while the `ell=3` outputs miss both generic `p` and `q` shells.
+Consequently every finite real axial `ell=2,k=0` tangent with all `m`, both
+extra polarizations, and `H=J_1=J_2=J_3=0` has a complete second-order
+correction.  This is the full axial `ell=2` cone, not yet a statement about
+polar input, axial--polar cross terms, or general `ell`.
+
+The matching pure-polar `ell=2` gate now also closes.  Five direct
+four-dimensional Hermitian fixtures, in the basis
+`(Einstein-plus,Einstein-minus,extra-e1,extra-e2)`, give a rank-one
+homogeneous source matrix with common spacetime row
+
+```text
+(1,0,1/2,0),
+```
+
+and scalar columns
+
+```text
+-864(11+7 sqrt(3))/5,
+ 864(-11+7 sqrt(3))/5,
+-12/5,
+-29952/5.
+```
+
+The `extra-e1/extra-e2` interference column vanishes exactly.  The apparently
+small `-12/5` entry is a basis issue, not a current mismatch: the unit
+`B`-representative has current weight `9`, while the published Lee--Wald basis
+vector is `16 omega_e` times that unit vector.  Schur's lemma promotes this
+internal matrix from `m=0` to all `m`, so `H=0` cancels every homogeneous row.
+The odd `L=1,3` and nonzero-frequency output analysis is the same exact target
+ledger as in the axial theorem.  Hence every finite real pure-polar
+`ell=2,k=0` tangent with all `m`, both extra polarizations, and
+`H=J_1=J_2=J_3=0` also has a complete second-order correction.
+
+Axial and polar cone theorems must still not be added blindly.  Their cross
+terms have odd total parity and therefore populate polar odd `L` and axial
+even `L` blocks.  The exceptional polar `L=1` target and these cross sources
+are the next load-bearing gate.
+
+Verification receipt (2026-07-17): scoped compilation passed in `0.04 s`;
+four deterministic certificate replays passed in `2.69 s`; five independent
+verifiers and 13 unit tests passed in `3.11 s`; and the full direct
+four-dimensional polar Einstein-minus source replay passed in `840.06 s`.
+Tier 3 was not run because no shared core operator or programme-wide freeze
+changed; the complete affected certificate chain and direct source gate were
+run.
 
 Third, `EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_COMMON_ZERO_CONE` classifies a
 fixed generic `(ell,|k|)` pair.  Independent positive-frequency density
@@ -1570,17 +1646,19 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; generic `k=0`, fixed `(ell,|k|)` opposite-momentum, and standard exceptional/global common-zero cones classified; no absolute quotient authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; one two-parameter axial `ell=2,m=0` face is second-order extendible, while the complete combined cone remains open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
+| Compact Einstein--Maxwell product | sector-indexed; generic `k=0`, fixed `(ell,|k|)` opposite-momentum, and standard exceptional/global common-zero cones classified; no absolute quotient authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; the complete pure-axial and pure-polar `ell=2,k=0`, all-`m` common-zero cones are separately second-order extendible, while axial--polar cross terms and the complete combined cone remain open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Extend the quadratic source-vector rank test from the certified axial
-   `ell=2,m=0` face to other `m`, parity, extra polarization, and general
-   `ell`; separately retain the relative phases in opposite-momentum
-   standing waves.  A rank increase, resonance, or new adjoint component is
-   the expected mechanism cutting the full Taub-zero density cone.
+1. Compute the axial--polar `ell=2` cross source and classify the exceptional
+   polar `L=1` output.  Only this gate permits combining the separately
+   certified all-`m` axial and polar second-order cones.  Then lift the
+   source-rank/resonance theorem to general `ell`; separately retain relative
+   phases in opposite-momentum standing waves.  A rank increase, resonance,
+   or new adjoint component is the expected mechanism cutting the full
+   Taub-zero density cone.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be

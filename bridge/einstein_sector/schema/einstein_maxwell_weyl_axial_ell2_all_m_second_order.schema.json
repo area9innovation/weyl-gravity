@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "All-m axial ell=2 second-order cone",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "angular_selection", "zero_frequency_descent",
+    "nonzero_frequency_resonance_ledger", "second_order_solution",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-ell2-all-m-second-order-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_ALL_M_SECOND_ORDER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "classification": {
+      "type": "object",
+      "required": [
+        "all_m_axial_ell2_common_zero_cone_second_order_extendible",
+        "both_extra_polarizations_included", "odd_L1_and_L3_channels_closed",
+        "polar_input_parity_classified", "general_ell_classified",
+        "opposite_momentum_phase_source_classified", "all_orders_integrability",
+        "Lorentzian_causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

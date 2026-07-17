@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial ell=2 full-extra face second-order extension",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "zero_frequency_source_rank", "nonzero_homogeneous_channels",
+    "angular_and_frequency_closure", "second_order_correction", "classification",
+    "interpretation", "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-ell2-full-extra-face-second-order-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_AXIAL_ELL2_FULL_EXTRA_FACE_SECOND_ORDER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "classification": {
+      "type": "object",
+      "required": [
+        "both_axial_extra_polarizations_included",
+        "three_parameter_positive_cone_second_order_extendible",
+        "all_m_promoted", "polar_input_parity_classified",
+        "opposite_momentum_phase_source_classified", "all_orders_integrability",
+        "Lorentzian_causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
