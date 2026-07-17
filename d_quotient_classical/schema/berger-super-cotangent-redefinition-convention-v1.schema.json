@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-super-cotangent-redefinition-convention-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "generality_level", "scientific_replay", "claim_flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-super-cotangent-redefinition-convention-v1"},
+    "result_id": {"const": "BERGER_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1"},
+    "result_state": {"const": "DEGREE_ZERO_SUPER_COTANGENT_TAYLOR_LIFT_CONVENTION_CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality_level": {"const": "G0"},
+    "scientific_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula", "base_component_count", "lifted_component_count", "generated_seed_record_count", "generated_seed_records", "all_64_rows_match", "odd_sign_omission_mutation_defect_rows"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 60},
+        "base_component_count": {"const": 4},
+        "lifted_component_count": {"const": 8},
+        "generated_seed_record_count": {"const": 12},
+        "generated_seed_records": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["component", "role", "output", "inputs", "coefficient"],
+            "properties": {
+              "component": {"type": "integer", "minimum": 0, "maximum": 3},
+              "role": {"enum": ["base", "odd_input_dual", "even_input_dual"]},
+              "output": {"type": "integer", "minimum": 0, "maximum": 63},
+              "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 63}},
+              "coefficient": {"enum": ["-2", "2"]}
+            }
+          }
+        },
+        "all_64_rows_match": {"const": true},
+        "odd_sign_omission_mutation_defect_rows": {"const": [49, 50, 51, 52]}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["SUPER_COTANGENT_SIGN_CONVENTION_CERTIFIED", "FULL_BV_ELL3_REDEFINITION_COMPUTED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "QUANTUM_CLAIM"],
+      "properties": {
+        "SUPER_COTANGENT_SIGN_CONVENTION_CERTIFIED": {"const": true},
+        "FULL_BV_ELL3_REDEFINITION_COMPUTED": {"const": false},
+        "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RETAINED_MIXED_ELL3_FULL_BV_CODERIVATION_REDEFINITION_V1"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 20}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 400}
+  }
+}

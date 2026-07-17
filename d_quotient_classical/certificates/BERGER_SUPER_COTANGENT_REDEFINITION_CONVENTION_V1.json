@@ -1,0 +1,167 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC G0 certificate fixes the degree-zero super-cotangent Taylor-lift sign by independently regenerating the complete 64-row BV-canonical Maxwell covariant-ghost shear. It proves the opposite dual signs forced by odd versus even base inputs and rejects omission of the odd-input sign on four ghost-dual rows. It does not assemble a retained ell3 redefinition matrix, export a primitive or obstruction, decide a cyclic deformation class, restore a QME, or make a quantum claim.",
+  "claim_flags": {
+    "CYCLIC_DEFORMATION_CLASS_DECIDED": false,
+    "FULL_BV_ELL3_REDEFINITION_COMPUTED": false,
+    "QUANTUM_CLAIM": false,
+    "SUPER_COTANGENT_SIGN_CONVENTION_CERTIFIED": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generality_level": "G0",
+  "next_gate": "BERGER_RETAINED_MIXED_ELL3_FULL_BV_CODERIVATION_REDEFINITION_V1",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_super_cotangent_redefinition_convention.py": "63f6d7db29ee3a8df6fc19e85ea5d30f8f454fea8714d83b950ba4b3d0bbf809",
+      "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2.py": "14df496364cb8c2124b82403bce274dda389878cd27e76f7e298f7a9c759e9e3",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_super_cotangent_redefinition_convention.py": "455ecdd328af99c0f6c24a5d815712353781f96bc84b3d5405dec2ba7bc35ff1",
+      "d_quotient_classical/backreacted_clock/verify_berger_super_cotangent_redefinition_convention.py": "ad766c08438a02565f38dd0a311898096e574d654107e141e83c031af5d52553",
+      "d_quotient_classical/schema/berger-super-cotangent-redefinition-convention-v1.schema.json": "d9c7820cc51f6e9a5ba3cda33dc14b754e0acfdd58fc3b2f0fbe2d51a664fdec"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_super_cotangent_redefinition_convention.py --check",
+      "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_super_cotangent_redefinition_convention.py",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_super_cotangent_redefinition_convention -v",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-super-cotangent-redefinition-convention-v1.schema.json -d d_quotient_classical/certificates/BERGER_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1.json"
+    ]
+  },
+  "result_id": "BERGER_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1",
+  "result_state": "DEGREE_ZERO_SUPER_COTANGENT_TAYLOR_LIFT_CONVENTION_CERTIFIED",
+  "schema": "pure-weyl-berger-super-cotangent-redefinition-convention-v1",
+  "scientific_replay": {
+    "all_64_rows_match": true,
+    "base_component_count": 4,
+    "formula": "F^(i*)=-(-1)^parity(i) F^B with B* inserted before graded completion",
+    "generated_seed_record_count": 12,
+    "generated_seed_records": [
+      {
+        "coefficient": "-2",
+        "component": 0,
+        "inputs": [
+          3,
+          55
+        ],
+        "output": 54,
+        "role": "base"
+      },
+      {
+        "coefficient": "-2",
+        "component": 0,
+        "inputs": [
+          55,
+          63
+        ],
+        "output": 52,
+        "role": "odd_input_dual"
+      },
+      {
+        "coefficient": "2",
+        "component": 0,
+        "inputs": [
+          3,
+          63
+        ],
+        "output": 59,
+        "role": "even_input_dual"
+      },
+      {
+        "coefficient": "-2",
+        "component": 1,
+        "inputs": [
+          0,
+          56
+        ],
+        "output": 54,
+        "role": "base"
+      },
+      {
+        "coefficient": "-2",
+        "component": 1,
+        "inputs": [
+          56,
+          63
+        ],
+        "output": 49,
+        "role": "odd_input_dual"
+      },
+      {
+        "coefficient": "2",
+        "component": 1,
+        "inputs": [
+          0,
+          63
+        ],
+        "output": 60,
+        "role": "even_input_dual"
+      },
+      {
+        "coefficient": "-2",
+        "component": 2,
+        "inputs": [
+          1,
+          57
+        ],
+        "output": 54,
+        "role": "base"
+      },
+      {
+        "coefficient": "-2",
+        "component": 2,
+        "inputs": [
+          57,
+          63
+        ],
+        "output": 50,
+        "role": "odd_input_dual"
+      },
+      {
+        "coefficient": "2",
+        "component": 2,
+        "inputs": [
+          1,
+          63
+        ],
+        "output": 61,
+        "role": "even_input_dual"
+      },
+      {
+        "coefficient": "-2",
+        "component": 3,
+        "inputs": [
+          2,
+          58
+        ],
+        "output": 54,
+        "role": "base"
+      },
+      {
+        "coefficient": "-2",
+        "component": 3,
+        "inputs": [
+          58,
+          63
+        ],
+        "output": 51,
+        "role": "odd_input_dual"
+      },
+      {
+        "coefficient": "2",
+        "component": 3,
+        "inputs": [
+          2,
+          63
+        ],
+        "output": 62,
+        "role": "even_input_dual"
+      }
+    ],
+    "lifted_component_count": 8,
+    "odd_sign_omission_mutation_defect_rows": [
+      49,
+      50,
+      51,
+      52
+    ]
+  }
+}

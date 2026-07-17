@@ -598,12 +598,24 @@ degree-zero physical action supplies a nonremovability witness.  This remains
 `G0` and `LOCAL-ALGEBRAIC`: the 288 ghost/antifield coefficients and total jet
 order two are the next honest gate.
 
+The full-BV consumer now has a frozen Taylor-level sign prerequisite.
+`BERGER_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1` regenerates the landed
+64-row Maxwell covariant-ghost shear from the generic degree-zero formula
+`F^(i*)=-(-1)^parity(i) F^B`, with the dual output inserted before graded
+completion.  All rows agree exactly; suppressing the odd-input sign fails on
+the four ghost-dual rows 49--52.  This certificate does not decide the
+redefinition problem.  It exists to prevent the full-BV solver from extending
+the degree-zero physical absolute-weight shortcut into the suspended Darboux
+sectors, which is not an admissible convention.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
 2. Continue N-G4 with the full-BV completion and total PBW jet order two.  Do
    not reuse order-zero or order-one physical coefficients as obstructions:
-   both pages are certified exact.  Return either a complete jet-bounded
+   both pages are certified exact.  Build the full-BV coderivation matrix from
+   the certified super-cotangent Taylor lift, not from a naively lowered
+   absolute-weight Hamiltonian.  Return either a complete jet-bounded
    trivializing \((F_2,F_3)\) or the first normalized order-two/full-BV dual
    witness for the mixed \(\ell_3\).
 3. Keep the Green/BGG assignment as a bounded parallel theorem-extraction
