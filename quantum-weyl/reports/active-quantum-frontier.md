@@ -26,12 +26,17 @@ H14 quotients consequently have the same `2/1` dimensions.
 The exact Slavnov-breaking assembly preflight now reduces the four raw density
 coordinates to this three-class quotient, removes `omega BoxR` with its
 stored primitive, and binds the standard background vector
-`(199/30, -87/20, p_odd)` to complete quotient duals. The parity-odd entry is
-not computed. This proves only the inactive conditional implication that an
+`(199/30, -87/20, 0)` to complete quotient duals. The odd zero follows from
+an exact parity Ward identity for the declared standard real
+tensor-Laplacian heat-kernel regulator; it is not imported into the repository
+route before the operator and measure match. This proves only the inactive conditional implication that an
 exact repository match of either nonzero even coordinate would obstruct the
 strict fixed-field-content QME. An executable, content-addressed analytic
 handoff receiver now distinguishes the obstructed and counterterm-restorable
-branches. These results do not promote the lifecycle because the repository
+branches. The physical TT pair additionally has an exact auxiliary Schur and
+local-Jacobian identity, so the remaining auxiliary gap is repository row
+identification, normalization, contour, and finite phase rather than the
+Gaussian algebra. These results do not promote the lifecycle because the repository
 operator/measure match, global BRST Hadamard covariance, regulated Slavnov
 breaking, renormalized products, and QME remain open.
 

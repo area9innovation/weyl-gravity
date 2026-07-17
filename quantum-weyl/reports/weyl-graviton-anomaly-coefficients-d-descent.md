@@ -1,6 +1,6 @@
 # Weyl-graviton anomaly coefficients and the local (D) pullback
 
-Date: 2026-07-16
+Date: 2026-07-18
 
 Dependency tags: `EUCLIDEAN-SPECTRAL`, `LOCAL-ALGEBRAIC`
 
@@ -20,6 +20,12 @@ Weyl anomaly
 
 modulo the scheme-dependent \(\Box R\) term.  The repository now reconstructs
 both rational numbers rather than merely copying them as literature inputs.
+For the declared parity-even heat-kernel regulator, all four determinant
+factors are real transverse tensor Laplacians with scalar mass shifts and
+contain no epsilon tensor, Hodge star, or chiral projector. Orientation
+reversal therefore gives the exact Ward equation \(p=-p\) for the
+\(C\widetilde C\) coordinate. The rank-one rational system `[2] p=0` fixes
+\(p=0\); the mutation \(p=1\) has residual `2`.
 
 On a Ricci-flat background the determinant factorization gives
 
@@ -122,7 +128,10 @@ Lorentzian claim is made.
 The missing-arrow ledger is now explicit in
 `quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json`.
 The odd AFN0 source quotient is also complete with representative
-`omega C dual C`, while its numerical coefficient remains `NOT_COMPUTED`.
+`omega C dual C`. Its coefficient is now `WARD_VERIFIED_ZERO` for the
+declared standard parity-even determinant route, while the repository
+regulator coefficient remains `NOT_COMPUTED` until the operator and measure
+match is supplied.
 
 ## Provenance
 
@@ -140,7 +149,7 @@ Machine receipt:
 
 | Rail | Result |
 |---|---:|
-| `python3 -m unittest discover -s quantum-weyl/spectral/euclidean/tests -q` | 8 pass in 0.33 s |
+| scoped coefficient reconstruction suite | 9 pass |
 | local deterministic schema consumer | pass in 0.03 s |
 | `coefficient_certificate.py --check` | pass in 0.05 s |
 | certificate under hash seeds `1,7,123` | identical SHA-256 |

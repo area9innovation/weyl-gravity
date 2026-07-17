@@ -148,6 +148,7 @@ def _load() -> dict[str, dict[str, Any]]:
     if (
         values["background_coefficients"].get("result_stage") != "COEFFICIENT_COMPUTED"
         or coefficient_flags.get("STANDARD_BACKGROUND_A_AND_C_COMPUTED") is not True
+        or coefficient_flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or coefficient_flags.get("REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED")
         is not False
         or coefficient_flags.get("QME_RESTORED") is not False
@@ -158,6 +159,8 @@ def _load() -> dict[str, dict[str, Any]]:
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
+        or assembly_flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
+        or assembly_flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or assembly_flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or assembly_flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not False
         or assembly_flags.get("QME_OBSTRUCTED") is not False
@@ -511,7 +514,7 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "PARTIAL_STANDARD_VECTOR_BOUND_ANALYTIC_MATCHING_OPEN",
+            "G3": "FULL_STANDARD_VECTOR_AND_TT_AUXILIARY_IDENTITY_BOUND_ANALYTIC_MATCHING_OPEN",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
@@ -644,6 +647,8 @@ def build() -> dict[str, Any]:
             "RANK_46_IS_QUANTUM_PREREQUISITE": False,
             "FULL_BV_G2_COMPLETE": True,
             "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY": True,
+            "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": True,
+            "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -743,7 +748,8 @@ def validate(result: dict[str, Any]) -> None:
     if (
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
-        or ladder.get("G3") != "PARTIAL_STANDARD_VECTOR_BOUND_ANALYTIC_MATCHING_OPEN"
+        or ladder.get("G3")
+        != "FULL_STANDARD_VECTOR_AND_TT_AUXILIARY_IDENTITY_BOUND_ANALYTIC_MATCHING_OPEN"
         or any(
             not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
             for level in ("G4", "G5")
@@ -761,6 +767,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE") is not True
         or flags.get("FULL_BV_G2_COMPLETE") is not True
         or flags.get("SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY") is not True
+        or flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
+        or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
@@ -796,6 +804,8 @@ def validate(result: dict[str, Any]) -> None:
             "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE",
             "FULL_BV_G2_COMPLETE",
             "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY",
+            "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED",
+            "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",

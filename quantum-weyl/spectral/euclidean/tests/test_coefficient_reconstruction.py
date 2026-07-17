@@ -53,6 +53,20 @@ class WeylGravitonCoefficientTests(unittest.TestCase):
         )
         self.assertEqual(expected, Fraction(137, 60))
 
+    def test_standard_determinant_parity_ward_identity(self) -> None:
+        audit = CALC.standard_determinant_parity_audit()
+        self.assertEqual(audit["factor_count"], 4)
+        self.assertEqual(audit["ward_matrix"], [[2]])
+        self.assertEqual(audit["ward_matrix_rank"], 1)
+        self.assertEqual(audit["odd_coordinate"], "0")
+        self.assertEqual(audit["negative_control_p_equals_one_residual"], "2")
+        self.assertEqual(audit["status"], "WARD_VERIFIED_ZERO")
+
+        mutant = [dict(row) for row in CALC.spin_two_factor_ledger()]
+        mutant[0]["orientation_tensor_insertions"] = 1
+        with self.assertRaisesRegex(AssertionError, "parity-odd operator data"):
+            CALC.standard_determinant_parity_audit(mutant)
+
     def test_exact_D_reducibilities(self) -> None:
         cylinder = CALC.cylinder_d_reducibility()
         minkowski = CALC.minkowski_d_reducibility()
@@ -67,10 +81,13 @@ class WeylGravitonCoefficientTests(unittest.TestCase):
         cylinder = CALC.d_pullback(CALC.cylinder_d_reducibility())
         minkowski = CALC.d_pullback(CALC.minkowski_d_reducibility())
         self.assertEqual(cylinder["top_anomaly_status"], "ZERO")
-        self.assertEqual(cylinder["top_anomaly_coordinates"], {"C2": "0", "E4": "0"})
+        self.assertEqual(
+            cylinder["top_anomaly_coordinates"],
+            {"C2": "0", "CdualC": "0", "E4": "0"},
+        )
         self.assertEqual(
             minkowski["top_anomaly_coordinates"],
-            {"C2": "-199/30", "E4": "87/20"},
+            {"C2": "-199/30", "CdualC": "0", "E4": "87/20"},
         )
         for frame in (cylinder, minkowski):
             self.assertEqual(frame["intrinsic_type_A_lower_descent"], "ZERO_FOR_CONSTANT_SIGMA_D")
@@ -86,6 +103,7 @@ class WeylGravitonCoefficientTests(unittest.TestCase):
     def test_claim_boundary_is_fail_closed(self) -> None:
         flags = CERT.build_certificate()["claim_flags"]
         self.assertTrue(flags["STANDARD_BACKGROUND_A_AND_C_COMPUTED"])
+        self.assertTrue(flags["STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED"])
         self.assertTrue(flags["FULL_GAUGE_FIXED_BV_ANOMALY_BASIS_AVAILABLE"])
         self.assertTrue(flags["CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO"])
         for key in (

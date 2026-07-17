@@ -1,0 +1,170 @@
+{
+  "auxiliary_action": {
+    "auxiliary_equation": "f=A h",
+    "fields": [
+      "h_TT",
+      "f_TT"
+    ],
+    "locality": "SECOND_ORDER_IN_h_AND_ALGEBRAIC_IN_f_DIAGONAL",
+    "quadratic_form": "1/2 <h,2 A h> + <h,A f> - 1/2 <f,f>",
+    "substituted_action": "1/2 <h,A(A+2)h>"
+  },
+  "claim_boundary": "This exact EUCLIDEAN-SPECTRAL plus LOCAL-ALGEBRAIC preflight proves the local Schur-complement and block-determinant identity relating the two standard physical transverse-traceless spin-two factors Delta_2(2) Delta_2(4) to a second-order/algebraic auxiliary quadratic form. Under a translation-invariant normalized algebraic auxiliary measure, det(-I_f) has no background-dependent logarithmic coefficient. The repository physical Hessian, all ghost and nonminimal rows, action normalization, auxiliary contour, finite phase, zero modes, determinant measure and regulated Slavnov functional remain unmatched. No repository coefficient, elliptic certificate, QME disposition, Cartan classification, residual transfer or Lorentzian theorem is claimed.",
+  "claim_flags": {
+    "FULL_GHOST_AND_NONMINIMAL_OPERATOR_MATCH": false,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_AUXILIARY_MEASURE_MATCH": false,
+    "REPOSITORY_ELLIPTIC_COMPLEX_CERTIFIED": false,
+    "STANDARD_LOCAL_FIELD_DEPENDENT_JACOBIAN_ZERO": true,
+    "STANDARD_PHYSICAL_TT_AUXILIARY_SCHUR_IDENTITY": true
+  },
+  "dependency_hashes": {
+    "standard_coefficient_certificate": "74aefb607b9c7c74a5bce814babc558b901fcd7497a8f30cdc88b628534a06ab"
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL",
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_schur_identity": {
+    "block_determinant": [
+      {
+        "degree": 1,
+        "denominator": 1,
+        "numerator": -2
+      },
+      {
+        "degree": 2,
+        "denominator": 1,
+        "numerator": -1
+      }
+    ],
+    "block_entries": {
+      "K_ff": [
+        {
+          "degree": 0,
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      "K_fh": [
+        {
+          "degree": 1,
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "K_hf": [
+        {
+          "degree": 1,
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      "K_hh": [
+        {
+          "degree": 1,
+          "denominator": 1,
+          "numerator": 2
+        }
+      ]
+    },
+    "determinant_residual": [],
+    "fourth_order_target": [
+      {
+        "degree": 1,
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "degree": 2,
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "mass_gap": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "minus_fourth_order_target": [
+      {
+        "degree": 1,
+        "denominator": 1,
+        "numerator": -2
+      },
+      {
+        "degree": 2,
+        "denominator": 1,
+        "numerator": -1
+      }
+    ],
+    "schur_complement": [
+      {
+        "degree": 1,
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "degree": 2,
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "schur_residual": [],
+    "verified": true
+  },
+  "factor_match": {
+    "bundle": "real transverse traceless symmetric rank-two tensors",
+    "commutation_reason": "the factors differ by the scalar endomorphism 2 identity",
+    "fourth_order_operator": "A(A+2)",
+    "lower_factor": "A=Delta_2_perp(2)",
+    "lower_factor_id": "physical_depth_1",
+    "upper_factor": "A+2=Delta_2_perp(4)",
+    "upper_factor_id": "physical_depth_0"
+  },
+  "gaussian_measure_ledger": {
+    "block_determinant_identity": "det K=det(-I_f) det[A(A+2)]",
+    "contour_phase": "NOT_FIXED",
+    "field_dependent_jacobian": "NONE_FOR_TRANSLATION_INVARIANT_NORMALIZED_ALGEBRAIC_f_MEASURE",
+    "finite_normalization": "NOT_FIXED",
+    "local_logarithmic_coefficient_from_det_minus_identity": "ZERO_BACKGROUND_DEPENDENCE",
+    "repository_measure_match": "NOT_COMPUTED"
+  },
+  "minimal_missing_carrier": {
+    "required_output": "identify the repository gauge-fixed physical Hessian with A(A+2), match every ghost/nonminimal row and normalize the algebraic auxiliary measure and contour",
+    "standard_physical_TT_algebraic_identity_gap": false,
+    "status": "REPOSITORY_OPERATOR_NORMALIZATION_CONTOUR_AND_FULL_BV_ROW_MATCH_OPEN"
+  },
+  "negative_control": {
+    "determinant_residual": [
+      {
+        "degree": 1,
+        "denominator": 1,
+        "numerator": -1
+      }
+    ],
+    "mutation": "replace K_hh=2A by K_hh=3A",
+    "rejected": true,
+    "schur_residual": [
+      {
+        "degree": 1,
+        "denominator": 1,
+        "numerator": 1
+      }
+    ]
+  },
+  "next_gate": "MATCH_REPOSITORY_FULL_BV_ELLIPTIC_OPERATOR_MULTIPLICITIES_MEASURE_AND_CONTOUR",
+  "proof_sha256": "9d5f7bbcb446f4281a4a44e2f93f5d840890af62d72dc01995d5c8b463caa2d5",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/standard-spin2-auxiliary-fourth-order-match.md": "4dd57303dcd2c71b4d895eeb2335836af7abfc1292337dea2a2c21edcae1fcad",
+      "quantum-weyl/spectral/euclidean/auxiliary_fourth_order_match.py": "34e841eb01506d56a6c7a441c84c3b102f8d378c2b734be596110a16f1b93dd6",
+      "quantum-weyl/spectral/euclidean/schema/standard-spin2-auxiliary-fourth-order-match-v1.schema.json": "7c7eb241d409fa62eac5e7b2efe532e0ac60d1e5c9ca34bd98a9bce6c85bbe78",
+      "quantum-weyl/spectral/euclidean/tests/test_auxiliary_fourth_order_match.py": "5cddb4d34f3c7f24a2625b52effc430d17c11980b7ee2b71b3ef8caf8115f391",
+      "quantum-weyl/spectral/euclidean/verify_auxiliary_fourth_order_match.py": "12612a427d2db8089d9fa3070e4d069db15e7cab1b395a5d0016bf970be061e0"
+    }
+  },
+  "result_id": "STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH",
+  "result_state": "STANDARD_PHYSICAL_TT_SCHUR_AND_LOCAL_JACOBIAN_IDENTITY_VERIFIED_REPOSITORY_MATCH_OPEN",
+  "schema": "quantum-weyl-standard-spin2-auxiliary-fourth-order-match-v1"
+}

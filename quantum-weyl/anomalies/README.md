@@ -7,8 +7,10 @@ The historical candidate file does not itself claim a quotient theorem. The
 successor gauge-fixed result now completes `H^{1,4}(s|d)` on the regular Bach
 locus with even/odd dimensions `2/1`. The assembly preflight at
 `certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json` binds that
-quotient to the known standard background even coefficient vector while
-keeping repository coefficient matching, cancellation, and QME status open.
+quotient to the standard background vector `(199/30,-87/20,0)`. The odd zero
+is a verified Ward identity for the declared standard parity-even determinant
+regulator, not an assumption about the unmatched repository regulator.
+Repository coefficient matching, cancellation, and QME status remain open.
 
 All candidates reference their generated four-step universal Diff tower in
 `../local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.  A separate

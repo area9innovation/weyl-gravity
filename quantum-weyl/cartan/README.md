@@ -71,7 +71,7 @@ operator construction, and coefficient computation. The full minimal,
 nonminimal, pure-Diff, mixed Diff--Weyl, and canonically gauge-fixed local BV
 anomaly quotient is complete on the regular Bach locus, with even/odd
 dimensions `2/1`. The exact Slavnov assembly preflight binds the standard
-background even vector to that quotient and exposes a strict analytic input
+background vector `(199/30,-87/20,0)` to that quotient and exposes a strict analytic input
 schema, but does not identify it with the repository breaking. The classical
 26/54-row causal Green homotopy is imported; global BRST Hadamard covariance,
 renormalized products, and all order-one Ward operators remain absent.

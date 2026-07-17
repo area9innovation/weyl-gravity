@@ -3,7 +3,7 @@
   "$id": "https://area9.dk/schemas/quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "result_stage", "dependency_tags", "regularity_scope", "dependency_hashes", "accepted_export_schema", "receiver_mechanics", "cohomology_reduction", "standard_background_input", "complete_dual_witness_binding", "conditional_obstruction_theorem", "analytic_matching_ledger", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "required": ["schema", "result_id", "result_state", "result_stage", "dependency_tags", "regularity_scope", "dependency_hashes", "accepted_export_schema", "accepted_proof_result_ids", "receiver_mechanics", "cohomology_reduction", "standard_background_input", "complete_dual_witness_binding", "conditional_obstruction_theorem", "analytic_matching_ledger", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
   "properties": {
     "schema": {"const": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1"},
     "result_id": {"const": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"},
@@ -14,16 +14,32 @@
     "dependency_hashes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "Ward_insertion_contract"],
+      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "Ward_insertion_contract"],
       "properties": {
         "full_local_BV_G2": {"$ref": "#/$defs/hash"},
         "gauge_fixed_H14": {"$ref": "#/$defs/hash"},
         "BoxR_triviality": {"$ref": "#/$defs/hash"},
         "standard_background_coefficients": {"$ref": "#/$defs/hash"},
+        "standard_auxiliary_fourth_order_match": {"$ref": "#/$defs/hash"},
         "Ward_insertion_contract": {"$ref": "#/$defs/hash"}
       }
     },
     "accepted_export_schema": {"const": "quantum-weyl-regulated-slavnov-breaking-export-v1"},
+    "accepted_proof_result_ids": {
+      "const": {
+        "complete_complex_EUCLIDEAN_ELLIPTIC": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+        "complete_complex_LORENTZIAN_CAUSAL": "REPOSITORY_LORENTZIAN_CAUSAL_RENORMALIZED_PRODUCTS",
+        "multiplicity": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+        "auxiliary_fourth_order_match": "REPOSITORY_AUXILIARY_FOURTH_ORDER_MATCH",
+        "zero_mode_ledger": "REPOSITORY_ZERO_MODE_LEDGER",
+        "measure_contour": "REPOSITORY_MEASURE_CONTOUR_LEDGER",
+        "wess_zumino": "REGULATED_SLAVNOV_WESS_ZUMINO_CONSISTENCY",
+        "parity_ward_zero": "REPOSITORY_PARITY_WARD_IDENTITY",
+        "parity_coefficient": "REPOSITORY_PARITY_ODD_COEFFICIENT",
+        "qme_disposition": "REGULATED_SLAVNOV_QME_DISPOSITION",
+        "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM"
+      }
+    },
     "receiver_mechanics": {
       "type": "object",
       "additionalProperties": false,
@@ -59,7 +75,7 @@
     "standard_background_input": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["scope", "convention", "known_even_coordinates", "partial_quotient_coordinates", "parity_odd_status", "BoxR_status", "repository_matching_status"],
+      "required": ["scope", "convention", "known_even_coordinates", "quotient_coordinates", "parity_odd_status", "BoxR_status", "repository_matching_status"],
       "properties": {
         "scope": {"const": "STANDARD_ISOLATED_FOUR_DIMENSIONAL_CONFORMAL_SPIN_TWO_BACKGROUND_ANOMALY"},
         "convention": {"type": "string", "minLength": 30},
@@ -73,18 +89,18 @@
           ],
           "items": false
         },
-        "partial_quotient_coordinates": {
+        "quotient_coordinates": {
           "type": "array",
           "minItems": 3,
           "maxItems": 3,
           "prefixItems": [
             {"const": {"numerator": 199, "denominator": 30}},
             {"const": {"numerator": -87, "denominator": 20}},
-            {"const": "PARITY_ODD_COEFFICIENT_NOT_COMPUTED"}
+            {"const": {"numerator": 0, "denominator": 1}}
           ],
           "items": false
         },
-        "parity_odd_status": {"const": "NOT_COMPUTED_NOT_ASSUMED_ZERO"},
+        "parity_odd_status": {"const": "WARD_VERIFIED_ZERO_FOR_STANDARD_PARITY_EVEN_REGULATOR"},
         "BoxR_status": {"const": "SCHEME_DEPENDENT_EXACT_REMOVABLE"},
         "repository_matching_status": {"const": "NOT_COMPUTED"}
       }
@@ -117,17 +133,17 @@
       "additionalProperties": false,
       "required": ["discharged", "missing"],
       "properties": {
-        "discharged": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 10}},
+        "discharged": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string", "minLength": 10}},
         "missing": {
           "type": "array",
-          "minItems": 5,
-          "maxItems": 5,
+          "minItems": 4,
+          "maxItems": 4,
           "items": {
             "type": "object",
             "additionalProperties": false,
             "required": ["carrier_id", "required_output"],
             "properties": {
-              "carrier_id": {"enum": ["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "AUXILIARY_FOURTH_ORDER_MEASURE_MATCH", "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION", "PARITY_ODD_REGULATOR_WARD_IDENTITY_OR_COEFFICIENT"]},
+              "carrier_id": {"enum": ["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "REPOSITORY_FULL_BV_OPERATOR_AUXILIARY_NORMALIZATION_AND_CONTOUR_MATCH", "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION"]},
               "required_output": {"type": "string", "minLength": 20}
             }
           }
@@ -139,6 +155,8 @@
         "status": "EXACT_ANALYTIC_MATCHING_GAP",
         "algebraic_basis_gap": false,
         "coefficient_arithmetic_gap": false,
+        "standard_parity_gap": false,
+        "standard_physical_TT_auxiliary_identity_gap": false,
         "remaining_decision_gap": "the map from the standard background determinant to the repository regulated BV Slavnov functional",
         "no_further_local_graph_expansion_required": true
       }
@@ -147,6 +165,8 @@
       "const": {
         "FULL_GAUGE_FIXED_BV_H14_BOUND": true,
         "STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED": true,
+        "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": true,
+        "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": true,
         "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,
         "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": true,
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,
@@ -199,7 +219,7 @@
       "properties": {
         "witness_id": {"type": "string", "pattern": "^lambda_ANOM_"},
         "coordinates_on_quotient_basis": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
-        "standard_background_evaluation": {"oneOf": [{"$ref": "#/$defs/rational"}, {"const": "NOT_COMPUTED"}]},
+        "standard_background_evaluation": {"$ref": "#/$defs/rational"},
         "status": {"const": "TRANSPORTED_COMPLETE_QUOTIENT_COORDINATE_DUAL"}
       }
     },

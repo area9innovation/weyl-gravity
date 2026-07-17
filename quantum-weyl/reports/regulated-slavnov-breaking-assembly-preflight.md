@@ -24,15 +24,27 @@ matrix. It is the identity on the three nontrivial representatives and kills
 only `ANOM_OMEGA_BOX_R`.
 
 The independently reconstructed standard conformal-spin-two background
-vector therefore has partial quotient coordinates
+vector therefore has quotient coordinates
 
 \[
-\left({199\over30},-{87\over20},p_{\rm odd}\right),
+\left({199\over30},-{87\over20},0\right).
 \]
 
-where `p_odd` remains `NOT_COMPUTED`, not silently zero. Both known even
-coordinates evaluate nontrivially under the transported complete quotient
-duals.
+The odd zero is derived for the declared standard parity-even determinant
+regulator: its real tensor-Laplacian factors contain no orientation tensor,
+Hodge star, or chiral projector, and the exact Ward equation is `2 p=0`.
+This is not yet a statement about the unmatched repository regulator. Both
+even coordinates evaluate nontrivially under the transported complete
+quotient duals.
+
+The standard physical TT factor pair has also been matched exactly through
+an auxiliary Schur complement. With (A=\Delta_2^\perp(2)), the block
+quadratic form on `(h_TT,f_TT)` has determinant
+`det(-I_f) det[A(A+2)]`, reproducing
+`Delta_2_perp(2) Delta_2_perp(4)`. The algebraic auxiliary determinant has no
+background-dependent logarithmic coefficient under a normalized
+translation-invariant measure. Repository row identification, normalization,
+contour, and finite phase remain open.
 
 This proves a useful conditional theorem: if a repository regulator, measure,
 and regulated Slavnov functional match those two standard nontrivial
@@ -47,10 +59,10 @@ remaining inputs are analytic:
 
 - a repository Euclidean elliptic complex with exact multiplicities and
   action normalization;
-- the auxiliary/fourth-order measure Jacobian;
+- the full repository BV-row/operator match and the auxiliary normalization,
+  contour, and finite phase;
 - zero-mode, contour, and determinant-measure policies;
-- the regulated BV Slavnov action with Wess--Zumino consistency proof;
-- a parity-odd coefficient or a verified regulator Ward identity.
+- the regulated BV Slavnov action with Wess--Zumino consistency proof.
 
 The preflight does not call the standard heat-kernel vector a repository BV
 coefficient, does not activate the conditional obstruction, and makes no QME,
@@ -59,7 +71,16 @@ Cartan, residual-transfer, or Lorentzian claim.
 The accepted handoff schema
 `quantum-weyl-regulated-slavnov-breaking-export-v1` is executable. It requires
 content-addressed complex, multiplicity, auxiliary/fourth-order, zero-mode,
-measure/contour, Wess--Zumino, and parity proofs. Exact receiver fixtures
+measure/contour, Wess--Zumino, and parity proofs, with every analytic role
+explicitly marked `VERIFIED` and the classical commit equal to the frozen G2
+snapshot. The null commit is accepted only by the synthetic fixture path.
+On the physical path each JSON proof must also carry the role-specific
+`result_id` required by the receiver; an unrelated hashed artifact cannot be
+reused as an ellipticity, multiplicity, auxiliary, zero-mode, measure,
+Wess--Zumino, parity, QME-disposition, or counterterm proof.
+The complete role-to-`result_id` map is emitted as
+`accepted_proof_result_ids` in the assembly certificate.
+Exact receiver fixtures
 verify both lifecycle branches: a nonzero quotient vector is classified as an
 obstruction for strict field content, while a purely exact `omega BoxR`
 breaking is classified as restorable by its local counterterm.

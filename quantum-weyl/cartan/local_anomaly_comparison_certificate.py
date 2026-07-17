@@ -80,7 +80,12 @@ def _semantic_input_checks() -> tuple[dict[str, str], str]:
         or h14["claim_flags"]["COHOMOLOGY_COMPLETE"] is not True
     ):
         raise ValueError("gauge-fixed H14 quotient input is not complete")
-    if not coefficients["claim_flags"]["CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO"]:
+    if (
+        not coefficients["claim_flags"]["CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO"]
+        or not coefficients["claim_flags"]["STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED"]
+        or coefficients["coefficient_calculation"]["anomaly_coordinates"]
+        != {"C2": "199/30", "CdualC": "0", "E4": "-87/20"}
+    ):
         raise ValueError("coefficient input does not certify the cylinder pullback")
     if cartan["result_state"] != "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED":
         raise ValueError("Cartan input no longer has the expected fail-closed state")

@@ -8,16 +8,23 @@ Separately, the exact standard conformal-spin-two determinant reconstruction
 in [`coefficient_reconstruction.py`](coefficient_reconstruction.py) now gives
 
 \[
-a_2={87\over20},\qquad c_2={199\over30}
+a_2={87\over20},\qquad c_2={199\over30},\qquad p_2=0.
 \]
 
 from constant-curvature and Ricci-flat heat-kernel data, with an independent
-conical-sphere check of \(c_2\).  Its combined coefficient and local
+conical-sphere check of \(c_2\). The odd zero is an exact parity Ward result
+for the declared real tensor-Laplacian, parity-even heat-kernel regulator;
+it is not assumed for an unmatched repository regulator. Its combined coefficient and local
 one-generator \(D\)-descent receipt is
 [`WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json`](certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json).
+The companion
+[`STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json`](certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json)
+proves the exact TT Schur identity relating the physical second-order factor
+pair to a local second-order/algebraic auxiliary quadratic form. It does not
+fix the repository auxiliary measure or contour.
 The complete local gauge-fixed BV anomaly basis is now available on the
 regular Bach locus, so these numbers define candidate coordinates along
-`omega C2` and `omega E4`. This remains a standard background-anomaly result,
+`omega C2`, `omega E4`, and `omega C dual C`. This remains a standard background-anomaly result,
 not a computation of the repository BV Slavnov breaking: the elliptic
 operator, auxiliary/fourth-order Jacobian, measure, zero modes, and regulated
 Slavnov action still require a matched certificate.

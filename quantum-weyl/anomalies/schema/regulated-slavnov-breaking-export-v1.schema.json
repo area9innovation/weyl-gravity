@@ -33,12 +33,17 @@
     "operator_and_measure": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["complete_complex_artifact", "multiplicity_artifact", "auxiliary_fourth_order_match_artifact", "zero_mode_ledger_artifact", "measure_contour_artifact"],
+      "required": ["complete_complex_status", "complete_complex_artifact", "multiplicity_status", "multiplicity_artifact", "auxiliary_fourth_order_match_status", "auxiliary_fourth_order_match_artifact", "zero_mode_ledger_status", "zero_mode_ledger_artifact", "measure_contour_status", "measure_contour_artifact"],
       "properties": {
+        "complete_complex_status": {"const": "VERIFIED"},
         "complete_complex_artifact": {"$ref": "#/$defs/artifact"},
+        "multiplicity_status": {"const": "VERIFIED"},
         "multiplicity_artifact": {"$ref": "#/$defs/artifact"},
+        "auxiliary_fourth_order_match_status": {"const": "VERIFIED"},
         "auxiliary_fourth_order_match_artifact": {"$ref": "#/$defs/artifact"},
+        "zero_mode_ledger_status": {"const": "VERIFIED"},
         "zero_mode_ledger_artifact": {"$ref": "#/$defs/artifact"},
+        "measure_contour_status": {"const": "VERIFIED"},
         "measure_contour_artifact": {"$ref": "#/$defs/artifact"}
       }
     },

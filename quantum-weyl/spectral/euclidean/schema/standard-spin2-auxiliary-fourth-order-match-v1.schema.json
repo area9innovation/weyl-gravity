@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-standard-spin2-auxiliary-fourth-order-match-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_hashes", "factor_match", "auxiliary_action", "exact_schur_identity", "gaussian_measure_ledger", "negative_control", "claim_flags", "minimal_missing_carrier", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-standard-spin2-auxiliary-fourth-order-match-v1"},
+    "result_id": {"const": "STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH"},
+    "result_state": {"const": "STANDARD_PHYSICAL_TT_SCHUR_AND_LOCAL_JACOBIAN_IDENTITY_VERIFIED_REPOSITORY_MATCH_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL", "LOCAL-ALGEBRAIC"]},
+    "dependency_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["standard_coefficient_certificate"],
+      "properties": {"standard_coefficient_certificate": {"$ref": "#/$defs/hash"}}
+    },
+    "factor_match": {
+      "const": {
+        "bundle": "real transverse traceless symmetric rank-two tensors",
+        "lower_factor_id": "physical_depth_1",
+        "lower_factor": "A=Delta_2_perp(2)",
+        "upper_factor_id": "physical_depth_0",
+        "upper_factor": "A+2=Delta_2_perp(4)",
+        "commutation_reason": "the factors differ by the scalar endomorphism 2 identity",
+        "fourth_order_operator": "A(A+2)"
+      }
+    },
+    "auxiliary_action": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fields", "quadratic_form", "auxiliary_equation", "substituted_action", "locality"],
+      "properties": {
+        "fields": {"const": ["h_TT", "f_TT"]},
+        "quadratic_form": {"const": "1/2 <h,2 A h> + <h,A f> - 1/2 <f,f>"},
+        "auxiliary_equation": {"const": "f=A h"},
+        "substituted_action": {"const": "1/2 <h,A(A+2)h>"},
+        "locality": {"const": "SECOND_ORDER_IN_h_AND_ALGEBRAIC_IN_f_DIAGONAL"}
+      }
+    },
+    "exact_schur_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mass_gap", "block_entries", "block_determinant", "minus_fourth_order_target", "schur_complement", "fourth_order_target", "determinant_residual", "schur_residual", "verified"],
+      "properties": {
+        "mass_gap": {"const": {"numerator": 2, "denominator": 1}},
+        "block_entries": {
+          "const": {
+            "K_hh": [{"degree": 1, "numerator": 2, "denominator": 1}],
+            "K_hf": [{"degree": 1, "numerator": 1, "denominator": 1}],
+            "K_fh": [{"degree": 1, "numerator": 1, "denominator": 1}],
+            "K_ff": [{"degree": 0, "numerator": -1, "denominator": 1}]
+          }
+        },
+        "block_determinant": {"const": [{"degree": 1, "numerator": -2, "denominator": 1}, {"degree": 2, "numerator": -1, "denominator": 1}]},
+        "minus_fourth_order_target": {"const": [{"degree": 1, "numerator": -2, "denominator": 1}, {"degree": 2, "numerator": -1, "denominator": 1}]},
+        "schur_complement": {"const": [{"degree": 1, "numerator": 2, "denominator": 1}, {"degree": 2, "numerator": 1, "denominator": 1}]},
+        "fourth_order_target": {"const": [{"degree": 1, "numerator": 2, "denominator": 1}, {"degree": 2, "numerator": 1, "denominator": 1}]},
+        "determinant_residual": {"const": []},
+        "schur_residual": {"const": []},
+        "verified": {"const": true}
+      }
+    },
+    "gaussian_measure_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["block_determinant_identity", "field_dependent_jacobian", "local_logarithmic_coefficient_from_det_minus_identity", "contour_phase", "finite_normalization", "repository_measure_match"],
+      "properties": {
+        "block_determinant_identity": {"const": "det K=det(-I_f) det[A(A+2)]"},
+        "field_dependent_jacobian": {"const": "NONE_FOR_TRANSLATION_INVARIANT_NORMALIZED_ALGEBRAIC_f_MEASURE"},
+        "local_logarithmic_coefficient_from_det_minus_identity": {"const": "ZERO_BACKGROUND_DEPENDENCE"},
+        "contour_phase": {"const": "NOT_FIXED"},
+        "finite_normalization": {"const": "NOT_FIXED"},
+        "repository_measure_match": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "negative_control": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mutation", "determinant_residual", "schur_residual", "rejected"],
+      "properties": {
+        "mutation": {"const": "replace K_hh=2A by K_hh=3A"},
+        "determinant_residual": {"const": [{"degree": 1, "numerator": -1, "denominator": 1}]},
+        "schur_residual": {"const": [{"degree": 1, "numerator": 1, "denominator": 1}]},
+        "rejected": {"const": true}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "STANDARD_PHYSICAL_TT_AUXILIARY_SCHUR_IDENTITY": true,
+        "STANDARD_LOCAL_FIELD_DEPENDENT_JACOBIAN_ZERO": true,
+        "FULL_GHOST_AND_NONMINIMAL_OPERATOR_MATCH": false,
+        "REPOSITORY_AUXILIARY_MEASURE_MATCH": false,
+        "REPOSITORY_ELLIPTIC_COMPLEX_CERTIFIED": false,
+        "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+        "QME_DISPOSITION": false
+      }
+    },
+    "minimal_missing_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "standard_physical_TT_algebraic_identity_gap", "required_output"],
+      "properties": {
+        "status": {"const": "REPOSITORY_OPERATOR_NORMALIZATION_CONTOUR_AND_FULL_BV_ROW_MATCH_OPEN"},
+        "standard_physical_TT_algebraic_identity_gap": {"const": false},
+        "required_output": {"type": "string", "minLength": 80}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "MATCH_REPOSITORY_FULL_BV_ELLIPTIC_OPERATOR_MULTIPLICITIES_MEASURE_AND_CONTOUR"},
+    "claim_boundary": {"type": "string", "minLength": 300},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_sha256"],
+      "properties": {
+        "source_sha256": {
+          "type": "object", "minProperties": 5, "maxProperties": 5,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

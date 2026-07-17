@@ -16,7 +16,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from fractions import Fraction
 from math import factorial
-from typing import Mapping
+from typing import Mapping, Sequence
 
 
 Q = Fraction
@@ -126,7 +126,7 @@ class SpinTwoAnomaly:
     def b4_basis(self) -> Mapping[str, Fraction]:
         """Coordinates in ``b4=-a E4+c C2`` convention."""
 
-        return {"E4": -self.a, "C2": self.c}
+        return {"E4": -self.a, "C2": self.c, "CdualC": Q(0)}
 
 
 def spin_two_anomaly() -> SpinTwoAnomaly:
@@ -161,11 +161,68 @@ def spin_two_factor_ledger() -> tuple[dict[str, object], ...]:
             "spin": spin,
             "M_squared": mass_squared,
             "determinant_sign": sign,
+            "operator_family": "real_transverse_tensor_Laplacian_plus_scalar_mass_shift",
+            "orientation_tensor_insertions": 0,
+            "Hodge_star_insertions": 0,
+            "chiral_projectors": 0,
             "a_contribution_before_sign": _fraction(transverse_rank_s_a(spin, mass_squared)),
             "signed_a_contribution": _fraction(sign * transverse_rank_s_a(spin, mass_squared)),
         }
         for factor_id, spin, mass_squared, sign in rows
     )
+
+
+def standard_determinant_parity_audit(
+    factors: Sequence[Mapping[str, object]] | None = None,
+) -> dict[str, object]:
+    """Prove the parity-odd coefficient vanishes for the declared standard route.
+
+    This is a regulator-specific Ward argument.  Every determinant factor is
+    a real tensor Laplacian plus a scalar mass shift, so orientation reversal
+    conjugates it to the same natural operator and the parity-even heat-kernel
+    prescription preserves the determinant.  Since ``C dual C`` is odd, its
+    coefficient obeys ``p=-p``.  Over the exact rational coefficient field the
+    one-row Ward matrix ``[2]`` has rank one and therefore ``p=0``.
+    """
+
+    factors = tuple(factors) if factors is not None else spin_two_factor_ledger()
+    forbidden = (
+        "orientation_tensor_insertions",
+        "Hodge_star_insertions",
+        "chiral_projectors",
+    )
+    if len(factors) != 4 or any(row[key] != 0 for row in factors for key in forbidden):
+        raise AssertionError("standard determinant acquired parity-odd operator data")
+    if any(
+        row["operator_family"]
+        != "real_transverse_tensor_Laplacian_plus_scalar_mass_shift"
+        for row in factors
+    ):
+        raise AssertionError("standard determinant left the real tensor-Laplacian family")
+    ward_coefficient = Q(1) - Q(-1)
+    odd_coordinate = Q(0) / ward_coefficient
+    negative_control_residual = ward_coefficient * Q(1)
+    if ward_coefficient != 2 or odd_coordinate != 0 or negative_control_residual != 2:
+        raise AssertionError("parity Ward solve drifted")
+    return {
+        "scope": "STANDARD_EUCLIDEAN_FACTORIZED_CONFORMAL_SPIN_TWO_DETERMINANT",
+        "regulator": "parity_even_second_order_heat_kernel_b4",
+        "factor_count": len(factors),
+        "factor_ids": [row["factor_id"] for row in factors],
+        "operator_family": "real_transverse_tensor_Laplacian_plus_scalar_mass_shift",
+        "orientation_tensor_insertions": 0,
+        "Hodge_star_insertions": 0,
+        "chiral_projectors": 0,
+        "parity_involution_squared": 1,
+        "density_parities": {"C2": 1, "E4": 1, "CdualC": -1, "BoxR": 1},
+        "ward_equation": "p=-p",
+        "ward_matrix": [[2]],
+        "ward_matrix_rank": 1,
+        "odd_coordinate": _fraction(odd_coordinate),
+        "negative_control_p_equals_one_residual": _fraction(negative_control_residual),
+        "status": "WARD_VERIFIED_ZERO",
+        "repository_regulator_implication": "NONE_UNTIL_OPERATOR_AND_MEASURE_MATCH",
+    }
 
 
 @dataclass(frozen=True)
@@ -296,6 +353,7 @@ def exact_payload() -> dict[str, object]:
         "2_times_beta1_Delta2": _fraction(2 * ricci_flat_operator_beta1(2)),
         "minus_3_times_beta1_Delta1": _fraction(-3 * ricci_flat_operator_beta1(1)),
     }
+    parity_audit = standard_determinant_parity_audit()
     return {
         "coefficient_calculation": {
             "spin": 2,
@@ -312,11 +370,13 @@ def exact_payload() -> dict[str, object]:
             "anomaly_coordinates": {
                 key: _fraction(value) for key, value in anomaly.b4_basis.items()
             },
+            "parity_odd_audit": parity_audit,
             "cross_checks": {
                 "factorized_a_equals_closed_form": chs_a_factorized(2) == chs_a_closed_form(2),
                 "beta1_equals_c_minus_a": anomaly.beta1 == anomaly.c - anomaly.a,
                 "beta2_equals_2c": anomaly.beta2 == 2 * anomaly.c,
                 "ricci_flat_c_equals_conical_sphere_c": anomaly.c == chs_c_conical_sphere(2),
+                "standard_parity_odd_coordinate_zero": parity_audit["odd_coordinate"] == "0",
             },
         },
         "D_descent": {

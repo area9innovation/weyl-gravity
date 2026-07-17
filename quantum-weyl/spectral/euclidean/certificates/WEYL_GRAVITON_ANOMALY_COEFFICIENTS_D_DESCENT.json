@@ -10,6 +10,7 @@
       "one_generator_exterior_relation": "c_D^2=0",
       "top_anomaly_coordinates": {
         "C2": "0",
+        "CdualC": "0",
         "E4": "0"
       },
       "top_anomaly_status": "ZERO",
@@ -49,6 +50,7 @@
       "one_generator_exterior_relation": "c_D^2=0",
       "top_anomaly_coordinates": {
         "C2": "-199/30",
+        "CdualC": "0",
         "E4": "87/20"
       },
       "top_anomaly_status": "NONZERO_LOCAL_COCYCLE_PULLBACK",
@@ -86,12 +88,13 @@
     "contour_policy": "irrelevant to the local logarithmic heat-kernel coefficient; no phase or finite part claimed",
     "determinant_factorization": "Weyl graviton on Ricci-flat and constant-curvature Einstein backgrounds",
     "gauge_and_ghost_policy": "factorized gauge-fixed determinant including the source's ghost determinants",
+    "parity_policy": "real tensor Laplacians with no epsilon, Hodge-star or chiral insertion; parity-even heat-kernel b4",
     "regularization": "second-order heat-kernel b4 / logarithmic UV coefficient",
     "repository_euclidean_gate": "LOCAL_BV_G2_COMPLETE_ELLIPTIC_OPERATOR_MEASURE_AND_AUXILIARY_MATCHING_OPEN",
     "zero_mode_policy": "unprojected-operator heat-kernel identities; no projected zeta zero-mode promotion"
   },
-  "certificate_hash": "477d2eaacdd9d6e9eadd710c12a000de1a3ee9efa8be4351e7ae3576ab67cd83",
-  "claim_boundary": "The exact numbers are the standard Euclidean background trace-anomaly coefficients reconstructed from the factorized conformal-spin-two determinant and heat-kernel formulae. The repository's complete local gauge-fixed BV anomaly basis is now available on the regular Bach locus, but the determinant is not yet matched to a repository elliptic operator, auxiliary/fourth-order Jacobian, measure, zero-mode policy, or regulated Slavnov action and therefore does not compute the quantum-master-equation breaking. The D result is only the one-generator pullback of the local ghost-number-one cocycle. Its vanishing on the closed vacuum cylinder follows from sigma_D=0 and does not establish a vanishing degree-zero quantum D-Cartan defect, boundary anomaly, measure anomaly, or Lorentzian theorem.",
+  "certificate_hash": "75d3cb05bc4b608b245f9aeb137205f8bbe6dc5cba959a0747e54d0aa5002e00",
+  "claim_boundary": "The exact numbers are the standard Euclidean background trace-anomaly coefficients reconstructed from the factorized conformal-spin-two determinant and heat-kernel formulae. For this declared parity-even standard regulator, an exact Ward audit proves the C dual C coordinate is zero because every factor is a real tensor Laplacian with no epsilon, Hodge-star or chiral insertion. The repository's complete local gauge-fixed BV anomaly basis is now available on the regular Bach locus, but the determinant is not yet matched to a repository elliptic operator, auxiliary/fourth-order Jacobian, measure, zero-mode policy, or regulated Slavnov action and therefore does not compute the quantum-master-equation breaking. The D result is only the one-generator pullback of the local ghost-number-one cocycle. Its vanishing on the closed vacuum cylinder follows from sigma_D=0 and does not establish a vanishing degree-zero quantum D-Cartan defect, boundary anomaly, measure anomaly, or Lorentzian theorem.",
   "claim_flags": {
     "CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO": true,
     "D_CARTAN_ANOMALY_CLASSIFIED": false,
@@ -101,45 +104,63 @@
     "QME_RESTORED": false,
     "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,
     "RESIDUAL_TRANSFERRED": false,
-    "STANDARD_BACKGROUND_A_AND_C_COMPUTED": true
+    "STANDARD_BACKGROUND_A_AND_C_COMPUTED": true,
+    "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": true
   },
   "coefficient_calculation": {
     "anomaly_coordinates": {
       "C2": "199/30",
+      "CdualC": "0",
       "E4": "-87/20"
     },
     "background_anomaly_convention": "(4 pi)^(-2) [c C2-a E4] modulo BoxR",
     "closed_form_a": "87/20",
     "constant_curvature_factor_ledger": [
       {
+        "Hodge_star_insertions": 0,
         "M_squared": 4,
         "a_contribution_before_sign": "31/72",
+        "chiral_projectors": 0,
         "determinant_sign": 1,
         "factor_id": "physical_depth_0",
+        "operator_family": "real_transverse_tensor_Laplacian_plus_scalar_mass_shift",
+        "orientation_tensor_insertions": 0,
         "signed_a_contribution": "31/72",
         "spin": 2
       },
       {
+        "Hodge_star_insertions": 0,
         "M_squared": -4,
         "a_contribution_before_sign": "-269/360",
+        "chiral_projectors": 0,
         "determinant_sign": -1,
         "factor_id": "ghost_depth_0",
+        "operator_family": "real_transverse_tensor_Laplacian_plus_scalar_mass_shift",
+        "orientation_tensor_insertions": 0,
         "signed_a_contribution": "269/360",
         "spin": 0
       },
       {
+        "Hodge_star_insertions": 0,
         "M_squared": 2,
         "a_contribution_before_sign": "181/72",
+        "chiral_projectors": 0,
         "determinant_sign": 1,
         "factor_id": "physical_depth_1",
+        "operator_family": "real_transverse_tensor_Laplacian_plus_scalar_mass_shift",
+        "orientation_tensor_insertions": 0,
         "signed_a_contribution": "181/72",
         "spin": 2
       },
       {
+        "Hodge_star_insertions": 0,
         "M_squared": -3,
         "a_contribution_before_sign": "-79/120",
+        "chiral_projectors": 0,
         "determinant_sign": -1,
         "factor_id": "ghost_depth_1",
+        "operator_family": "real_transverse_tensor_Laplacian_plus_scalar_mass_shift",
+        "orientation_tensor_insertions": 0,
         "signed_a_contribution": "79/120",
         "spin": 1
       }
@@ -149,12 +170,46 @@
       "beta1_equals_c_minus_a": true,
       "beta2_equals_2c": true,
       "factorized_a_equals_closed_form": true,
-      "ricci_flat_c_equals_conical_sphere_c": true
+      "ricci_flat_c_equals_conical_sphere_c": true,
+      "standard_parity_odd_coordinate_zero": true
     },
     "derived_beta2_equals_2c": "199/15",
     "derived_c_equals_a_plus_beta1": "199/30",
     "effective_degrees_of_freedom_nu": 6,
     "independent_conical_sphere_c": "199/30",
+    "parity_odd_audit": {
+      "Hodge_star_insertions": 0,
+      "chiral_projectors": 0,
+      "density_parities": {
+        "BoxR": 1,
+        "C2": 1,
+        "CdualC": -1,
+        "E4": 1
+      },
+      "factor_count": 4,
+      "factor_ids": [
+        "physical_depth_0",
+        "ghost_depth_0",
+        "physical_depth_1",
+        "ghost_depth_1"
+      ],
+      "negative_control_p_equals_one_residual": "2",
+      "odd_coordinate": "0",
+      "operator_family": "real_transverse_tensor_Laplacian_plus_scalar_mass_shift",
+      "orientation_tensor_insertions": 0,
+      "parity_involution_squared": 1,
+      "regulator": "parity_even_second_order_heat_kernel_b4",
+      "repository_regulator_implication": "NONE_UNTIL_OPERATOR_AND_MEASURE_MATCH",
+      "scope": "STANDARD_EUCLIDEAN_FACTORIZED_CONFORMAL_SPIN_TWO_DETERMINANT",
+      "status": "WARD_VERIFIED_ZERO",
+      "ward_equation": "p=-p",
+      "ward_matrix": [
+        [
+          2
+        ]
+      ],
+      "ward_matrix_rank": 1
+    },
     "ricci_flat_factor_ledger": {
       "2_times_beta1_Delta2": "21/10",
       "minus_3_times_beta1_Delta1": "11/60"
@@ -208,16 +263,16 @@
     },
     "source_manifest": {
       "notes/conformal-c2k-coefficient-compensator.md": "a827430b4e7826302d3d2ce3e5606ea6b62aec9154156131241f03332724f35f",
-      "notes/d-quotient-quantum-team-brief.md": "845c670178a8d6475d0c8a10892492b6b7c9a2ee4e6b2baf8ceba64050480141",
+      "notes/d-quotient-quantum-team-brief.md": "9b964cfdfb9dc13b6670c6dcda037be80c2fb072cfa6075b3fd594c7d49ec42d",
       "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a",
-      "quantum-weyl/reports/weyl-graviton-anomaly-coefficients-d-descent.md": "5362b4d377a183d71fc0e63dd68e0da9da3c6a72d0d3ba0a0d6574a4a257994d",
-      "quantum-weyl/spectral/euclidean/README.md": "cd2b92b9aa310254018dd586e72e3a0867ce891bee4193f1353a136fbd43ce5a",
-      "quantum-weyl/spectral/euclidean/coefficient_certificate.py": "d793c23d73e232ea1f59b37b3b160b3d2137032de538997d948545619fe59128",
-      "quantum-weyl/spectral/euclidean/coefficient_reconstruction.py": "cd75d266265ff4f73b390b21a128eb9f97f59b4751ec43bc9b1f93048a4d9b28",
-      "quantum-weyl/spectral/euclidean/schema/weyl-graviton-anomaly-d-descent-v1.schema.json": "8fbfacf7a6b1f0b1d53d267a0988c83730118080144fef0d9dd3b5adb17b3542",
-      "quantum-weyl/spectral/euclidean/tests/test_coefficient_reconstruction.py": "48d698c7594af7ce5b10467bb73115d40b689b963966820ca4ef2834781c515b",
+      "quantum-weyl/reports/weyl-graviton-anomaly-coefficients-d-descent.md": "d35d6b01344bfcb2cca7fcf360e23a51e16ecc1ea39b7e0672099f16166d8421",
+      "quantum-weyl/spectral/euclidean/README.md": "d16a453399324c12d6d64def9e2c55a355f03cf3a92c2bc4d694c92032dec997",
+      "quantum-weyl/spectral/euclidean/coefficient_certificate.py": "3dfd7fac5355c3a750b29d021f98b01f7c5d82ef74af6e9cfe9261531777be80",
+      "quantum-weyl/spectral/euclidean/coefficient_reconstruction.py": "748f06a80b5ee7a3908c4fa7d6e0238fdfa114f8331cd15b48fd92360847960e",
+      "quantum-weyl/spectral/euclidean/schema/weyl-graviton-anomaly-d-descent-v1.schema.json": "b3b90bf464057716d7feacf82674cd67811ac0458aaf05be1bab41add2471223",
+      "quantum-weyl/spectral/euclidean/tests/test_coefficient_reconstruction.py": "e1b451b8263383f6a04a753cee82771bd87e6a0bcf85a646e6b0b0217f7ce357",
       "symbolic/verify_conformal_c2a_reducibilities.py": "d4f31b54fe3a2d8fdae8eb6b044638a846b780a12ca2a6a109e83e5e50d723f3"
     },
-    "source_manifest_sha256": "4b6050353ecb0bdc452caeb467c9b82387ceb9be247e785b1cf7816af0c07065"
+    "source_manifest_sha256": "e8eb2cd63c98dd576aa89faaa231d36a191a2763878fbbc6211992cf7915e2af"
   }
 }

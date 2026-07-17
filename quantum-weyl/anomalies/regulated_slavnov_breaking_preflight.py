@@ -30,6 +30,7 @@ DEPENDENCIES = {
     "gauge_fixed_H14": ROOT / "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json",
     "BoxR_triviality": ROOT / "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json",
     "standard_background_coefficients": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
+    "standard_auxiliary_fourth_order_match": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
 }
 
@@ -49,6 +50,19 @@ RAW_BASIS = (
     "ANOM_OMEGA_BOX_R",
 )
 QUOTIENT_BASIS = RAW_BASIS[:3]
+PROOF_RESULT_IDS = {
+    "complete_complex_EUCLIDEAN_ELLIPTIC": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+    "complete_complex_LORENTZIAN_CAUSAL": "REPOSITORY_LORENTZIAN_CAUSAL_RENORMALIZED_PRODUCTS",
+    "multiplicity": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+    "auxiliary_fourth_order_match": "REPOSITORY_AUXILIARY_FOURTH_ORDER_MATCH",
+    "zero_mode_ledger": "REPOSITORY_ZERO_MODE_LEDGER",
+    "measure_contour": "REPOSITORY_MEASURE_CONTOUR_LEDGER",
+    "wess_zumino": "REGULATED_SLAVNOV_WESS_ZUMINO_CONSISTENCY",
+    "parity_ward_zero": "REPOSITORY_PARITY_WARD_IDENTITY",
+    "parity_coefficient": "REPOSITORY_PARITY_ODD_COEFFICIENT",
+    "qme_disposition": "REGULATED_SLAVNOV_QME_DISPOSITION",
+    "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM",
+}
 
 
 def _sha256(path: Path) -> str:
@@ -85,6 +99,22 @@ def _artifact(value: object, *, repository_root: Path, label: str) -> dict[str, 
     return value
 
 
+def _require_json_result_id(
+    artifact: dict[str, str],
+    *,
+    repository_root: Path,
+    label: str,
+    expected_result_id: str,
+) -> None:
+    if artifact["format"] not in {"JSON_DATA", "JSON_PROOF"}:
+        raise ValueError(f"{label} must be a machine-readable JSON artifact")
+    value = json.loads((repository_root / artifact["path"]).read_text())
+    if value.get("result_id") != expected_result_id:
+        raise ValueError(
+            f"{label} has result_id {value.get('result_id')!r}, expected {expected_result_id!r}"
+        )
+
+
 def _rational_value(value: object, label: str) -> Fraction:
     if (
         not isinstance(value, dict)
@@ -98,7 +128,7 @@ def _rational_value(value: object, label: str) -> Fraction:
 
 
 def validate_regulated_breaking_export(
-    payload: object, *, repository_root: Path
+    payload: object, *, repository_root: Path, allow_synthetic_fixture: bool = False
 ) -> dict[str, Any]:
     """Validate and classify a physical regulator/Slavnov handoff."""
 
@@ -127,6 +157,17 @@ def validate_regulated_breaking_export(
         or len(payload["classical_commit"]) != 40
     ):
         raise ValueError("regulated-breaking export identity drifted")
+    frozen_g2 = json.loads(
+        (
+            repository_root
+            / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json"
+        ).read_text()
+    )
+    if allow_synthetic_fixture:
+        if payload["classical_commit"] != "0" * 40:
+            raise ValueError("synthetic receiver fixture must use the null commit")
+    elif payload["classical_commit"] != frozen_g2.get("classical_commit"):
+        raise ValueError("regulated-breaking classical commit does not match frozen G2")
     tags = payload["dependency_tags"]
     expected_analytic_tag = (
         "EUCLIDEAN-SPECTRAL"
@@ -159,10 +200,39 @@ def validate_regulated_breaking_export(
         "zero_mode_ledger_artifact",
         "measure_contour_artifact",
     }
-    if not isinstance(operator, dict) or set(operator) != artifact_fields:
+    status_fields = {
+        "complete_complex_status",
+        "multiplicity_status",
+        "auxiliary_fourth_order_match_status",
+        "zero_mode_ledger_status",
+        "measure_contour_status",
+    }
+    if not isinstance(operator, dict) or set(operator) != artifact_fields | status_fields:
         raise ValueError("regulated-breaking operator/measure fields drifted")
+    if any(operator[key] != "VERIFIED" for key in status_fields):
+        raise ValueError("regulated-breaking operator/measure proof status is incomplete")
+    role_result_ids = {
+        "complete_complex_artifact": (
+            PROOF_RESULT_IDS["complete_complex_EUCLIDEAN_ELLIPTIC"]
+            if payload["analytic_route"] == "EUCLIDEAN_ELLIPTIC"
+            else PROOF_RESULT_IDS["complete_complex_LORENTZIAN_CAUSAL"]
+        ),
+        "multiplicity_artifact": PROOF_RESULT_IDS["multiplicity"],
+        "auxiliary_fourth_order_match_artifact": PROOF_RESULT_IDS[
+            "auxiliary_fourth_order_match"
+        ],
+        "zero_mode_ledger_artifact": PROOF_RESULT_IDS["zero_mode_ledger"],
+        "measure_contour_artifact": PROOF_RESULT_IDS["measure_contour"],
+    }
     for key in sorted(artifact_fields):
-        _artifact(operator[key], repository_root=repository_root, label=key)
+        artifact = _artifact(operator[key], repository_root=repository_root, label=key)
+        if not allow_synthetic_fixture:
+            _require_json_result_id(
+                artifact,
+                repository_root=repository_root,
+                label=key,
+                expected_result_id=role_result_ids[key],
+            )
     if payload["coefficient_basis"] != list(RAW_BASIS):
         raise ValueError("regulated-breaking coefficient basis drifted")
     coefficients = payload["coefficients"]
@@ -183,16 +253,33 @@ def validate_regulated_breaking_export(
         not in {"COEFFICIENT_COMPUTED", "WARD_VERIFIED_ZERO"}
     ):
         raise ValueError("regulated-breaking consistency is incomplete")
-    _artifact(
+    wess_zumino_artifact = _artifact(
         consistency["wess_zumino_proof"],
         repository_root=repository_root,
         label="wess_zumino_proof",
     )
-    _artifact(
+    parity_artifact = _artifact(
         consistency["parity_proof"],
         repository_root=repository_root,
         label="parity_proof",
     )
+    if not allow_synthetic_fixture:
+        _require_json_result_id(
+            wess_zumino_artifact,
+            repository_root=repository_root,
+            label="wess_zumino_proof",
+            expected_result_id=PROOF_RESULT_IDS["wess_zumino"],
+        )
+        _require_json_result_id(
+            parity_artifact,
+            repository_root=repository_root,
+            label="parity_proof",
+            expected_result_id=(
+                PROOF_RESULT_IDS["parity_ward_zero"]
+                if consistency["parity_status"] == "WARD_VERIFIED_ZERO"
+                else PROOF_RESULT_IDS["parity_coefficient"]
+            ),
+        )
     classification = payload["classification"]
     if not isinstance(classification, dict) or set(classification) != {
         "status",
@@ -202,11 +289,18 @@ def validate_regulated_breaking_export(
     disposition = payload["qme_disposition"]
     if not isinstance(disposition, dict) or set(disposition) != {"status", "proof_artifact"}:
         raise ValueError("regulated-breaking QME disposition fields drifted")
-    _artifact(
+    disposition_artifact = _artifact(
         disposition["proof_artifact"],
         repository_root=repository_root,
         label="qme_disposition.proof_artifact",
     )
+    if not allow_synthetic_fixture:
+        _require_json_result_id(
+            disposition_artifact,
+            repository_root=repository_root,
+            label="qme_disposition.proof_artifact",
+            expected_result_id=PROOF_RESULT_IDS["qme_disposition"],
+        )
     nontrivial = any(values[:3])
     if nontrivial:
         if (
@@ -223,7 +317,16 @@ def validate_regulated_breaking_export(
         ):
             raise ValueError("trivial breaking has an invalid QME disposition")
         if counterterm is not None:
-            _artifact(counterterm, repository_root=repository_root, label="exact_counterterm")
+            counterterm_artifact = _artifact(
+                counterterm, repository_root=repository_root, label="exact_counterterm"
+            )
+            if not allow_synthetic_fixture:
+                _require_json_result_id(
+                    counterterm_artifact,
+                    repository_root=repository_root,
+                    label="exact_counterterm",
+                    expected_result_id=PROOF_RESULT_IDS["exact_counterterm"],
+                )
     if not isinstance(payload["claim_boundary"], str) or not payload["claim_boundary"]:
         raise ValueError("regulated-breaking claim boundary is missing")
     return {
@@ -261,14 +364,26 @@ def receiver_fixture_payload(
             "boundary_conditions": "closed",
         },
         "operator_and_measure": {
-            key: artifact
-            for key in (
-                "complete_complex_artifact",
-                "multiplicity_artifact",
-                "auxiliary_fourth_order_match_artifact",
-                "zero_mode_ledger_artifact",
-                "measure_contour_artifact",
-            )
+            **{
+                key: artifact
+                for key in (
+                    "complete_complex_artifact",
+                    "multiplicity_artifact",
+                    "auxiliary_fourth_order_match_artifact",
+                    "zero_mode_ledger_artifact",
+                    "measure_contour_artifact",
+                )
+            },
+            **{
+                key: "VERIFIED"
+                for key in (
+                    "complete_complex_status",
+                    "multiplicity_status",
+                    "auxiliary_fourth_order_match_status",
+                    "zero_mode_ledger_status",
+                    "measure_contour_status",
+                )
+            },
         },
         "coefficient_basis": list(RAW_BASIS),
         "coefficients": {
@@ -304,12 +419,14 @@ def _receiver_fixture() -> dict[str, Any]:
             nontrivial=True,
         ),
         repository_root=ROOT,
+        allow_synthetic_fixture=True,
     )
     restorable = validate_regulated_breaking_export(
         receiver_fixture_payload(
             (Fraction(0), Fraction(0), Fraction(0), Fraction(1)), nontrivial=False
         ),
         repository_root=ROOT,
+        allow_synthetic_fixture=True,
     )
     return {
         "scope": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY",
@@ -323,6 +440,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     h14 = values["gauge_fixed_H14"]
     triviality = values["BoxR_triviality"]
     coefficients = values["standard_background_coefficients"]
+    auxiliary = values["standard_auxiliary_fourth_order_match"]
     ward = values["Ward_insertion_contract"]
     if (
         g2.get("result_state")
@@ -354,12 +472,28 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         coefficients.get("result_state")
         != "STANDARD_SPIN2_BACKGROUND_COEFFICIENTS_COMPUTED_D_PULLBACK_CERTIFIED"
         or flags.get("STANDARD_BACKGROUND_A_AND_C_COMPUTED") is not True
+        or flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or flags.get("FULL_GAUGE_FIXED_BV_ANOMALY_BASIS_AVAILABLE") is not True
         or flags.get("REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED") is not False
         or coefficients.get("coefficient_calculation", {}).get("anomaly_coordinates")
-        != {"C2": "199/30", "E4": "-87/20"}
+        != {"C2": "199/30", "CdualC": "0", "E4": "-87/20"}
     ):
         raise ValueError("standard coefficient dependency drifted")
+    if (
+        auxiliary.get("result_state")
+        != "STANDARD_PHYSICAL_TT_SCHUR_AND_LOCAL_JACOBIAN_IDENTITY_VERIFIED_REPOSITORY_MATCH_OPEN"
+        or auxiliary.get("claim_flags", {}).get(
+            "STANDARD_PHYSICAL_TT_AUXILIARY_SCHUR_IDENTITY"
+        )
+        is not True
+        or auxiliary.get("claim_flags", {}).get(
+            "STANDARD_LOCAL_FIELD_DEPENDENT_JACOBIAN_ZERO"
+        )
+        is not True
+        or auxiliary.get("claim_flags", {}).get("REPOSITORY_AUXILIARY_MEASURE_MATCH")
+        is not False
+    ):
+        raise ValueError("standard auxiliary/fourth-order dependency drifted")
     if (
         ward.get("result_state") != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
         or ward.get("physical_input_status") != "NOT_RECEIVED"
@@ -385,9 +519,7 @@ def analysis() -> dict[str, Any]:
             "coordinates_on_quotient_basis": [
                 _fraction(1 if row == column else 0) for column in range(3)
             ],
-            "standard_background_evaluation": (
-                _fraction(quotient_image[row]) if row < 2 else "NOT_COMPUTED"
-            ),
+            "standard_background_evaluation": _fraction(quotient_image[row]),
             "status": "TRANSPORTED_COMPLETE_QUOTIENT_COORDINATE_DUAL",
         }
         for row, basis in enumerate(QUOTIENT_BASIS)
@@ -398,6 +530,7 @@ def analysis() -> dict[str, Any]:
         "quotient_basis": QUOTIENT_BASIS,
         "reduction_entries": reduction_entries,
         "even": [_fraction(value) for value in even],
+        "standard_quotient_vector": [_fraction(value) for value in quotient_image],
         "dependency_hashes": dependency_hashes,
     }
     return {
@@ -406,11 +539,7 @@ def analysis() -> dict[str, Any]:
         "quotient_basis": list(QUOTIENT_BASIS),
         "reduction_entries": reduction_entries,
         "standard_even_vector": [_fraction(value) for value in even],
-        "standard_quotient_partial_vector": [
-            _fraction(even[0]),
-            _fraction(even[1]),
-            "PARITY_ODD_COEFFICIENT_NOT_COMPUTED",
-        ],
+        "standard_quotient_vector": [_fraction(value) for value in quotient_image],
         "witness_rows": witness_rows,
         "proof_sha256": _canonical_hash(proof_payload),
     }
@@ -427,6 +556,7 @@ def build() -> dict[str, Any]:
         "regularity_scope": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY",
         "dependency_hashes": result["dependency_hashes"],
         "accepted_export_schema": EXPORT_SCHEMA_ID,
+        "accepted_proof_result_ids": PROOF_RESULT_IDS,
         "receiver_mechanics": _receiver_fixture(),
         "cohomology_reduction": {
             "raw_candidate_basis": result["raw_basis"],
@@ -444,8 +574,8 @@ def build() -> dict[str, Any]:
             "scope": "STANDARD_ISOLATED_FOUR_DIMENSIONAL_CONFORMAL_SPIN_TWO_BACKGROUND_ANOMALY",
             "convention": "(4 pi)^(-2) [c omega C2-a omega E4] modulo exact omega BoxR",
             "known_even_coordinates": result["standard_even_vector"],
-            "partial_quotient_coordinates": result["standard_quotient_partial_vector"],
-            "parity_odd_status": "NOT_COMPUTED_NOT_ASSUMED_ZERO",
+            "quotient_coordinates": result["standard_quotient_vector"],
+            "parity_odd_status": "WARD_VERIFIED_ZERO_FOR_STANDARD_PARITY_EVEN_REGULATOR",
             "BoxR_status": "SCHEME_DEPENDENT_EXACT_REMOVABLE",
             "repository_matching_status": "NOT_COMPUTED",
         },
@@ -472,6 +602,8 @@ def build() -> dict[str, Any]:
                 "pure-Diff and independent mixed Diff-Weyl exclusion",
                 "explicit omega BoxR primitive",
                 "exact standard background even coefficient reconstruction",
+                "standard parity-even determinant Ward identity fixing the odd coordinate to zero",
+                "standard physical TT auxiliary/fourth-order Schur and local Jacobian identity",
                 "portable renormalized Ward-insertion input contract",
             ],
             "missing": [
@@ -480,8 +612,8 @@ def build() -> dict[str, Any]:
                     "required_output": "ellipticity, exact field/ghost/auxiliary multiplicities and action normalization",
                 },
                 {
-                    "carrier_id": "AUXILIARY_FOURTH_ORDER_MEASURE_MATCH",
-                    "required_output": "local Jacobian and equality of nontrivial anomaly coordinates",
+                    "carrier_id": "REPOSITORY_FULL_BV_OPERATOR_AUXILIARY_NORMALIZATION_AND_CONTOUR_MATCH",
+                    "required_output": "identify all repository Hessian, ghost and nonminimal rows with the standard factorization and fix auxiliary normalization, measure and contour",
                 },
                 {
                     "carrier_id": "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER",
@@ -491,22 +623,22 @@ def build() -> dict[str, Any]:
                     "carrier_id": "REGULATED_BV_SLAVNOV_ACTION",
                     "required_output": "regularized antibracket/Slavnov breaking and Wess-Zumino consistency proof",
                 },
-                {
-                    "carrier_id": "PARITY_ODD_REGULATOR_WARD_IDENTITY_OR_COEFFICIENT",
-                    "required_output": "derived odd coefficient or a verified parity Ward identity",
-                },
             ],
         },
         "minimal_missing_carrier_theorem": {
             "status": "EXACT_ANALYTIC_MATCHING_GAP",
             "algebraic_basis_gap": False,
             "coefficient_arithmetic_gap": False,
+            "standard_parity_gap": False,
+            "standard_physical_TT_auxiliary_identity_gap": False,
             "remaining_decision_gap": "the map from the standard background determinant to the repository regulated BV Slavnov functional",
             "no_further_local_graph_expansion_required": True,
         },
         "claim_flags": {
             "FULL_GAUGE_FIXED_BV_H14_BOUND": True,
             "STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED": True,
+            "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": True,
+            "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
             "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -519,7 +651,7 @@ def build() -> dict[str, Any]:
         "proof_sha256": result["proof_sha256"],
         "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector. It proves the quotient reduction, removes omega BoxR with its explicit primitive, and proves the conditional implication that an identity match of the two nonzero even coordinates would obstruct the strict fixed-field-content QME. The antecedent is not established: no repository elliptic complex, auxiliary/fourth-order measure Jacobian, zero-mode/contour ledger, regulated BV Slavnov action, or parity-odd regulator verdict is supplied. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
+            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. It also proves the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. The antecedent is not established: no repository elliptic complex, auxiliary/fourth-order measure Jacobian, zero-mode/contour ledger, or regulated BV Slavnov action is supplied. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
         ),
         "provenance": {
             "source_sha256": {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -534,6 +666,8 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
     if (
         flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
+        or flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
+        or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or flags.get("CONDITIONAL_NONZERO_QME_CLASS_THEOREM") is not True
         or flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or any(

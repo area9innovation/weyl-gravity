@@ -27,6 +27,10 @@ class LocalAnomalyComparisonTests(unittest.TestCase):
             payload["source_local_cohomology"]["full_BV_lift_status"],
             "COMPLETE_ON_REGULAR_BACH_LOCUS",
         )
+        self.assertEqual(
+            payload["source_local_cohomology"]["odd_coefficient_status"],
+            "STANDARD_BACKGROUND_WARD_ZERO_REPOSITORY_NOT_COMPUTED",
+        )
         self.assertEqual(payload["cartan_defect_comparison"]["classification_status"], "NO_VERDICT")
         self.assertFalse(payload["cartan_defect_comparison"]["zero_local_pullback_implies_zero_cartan_defect"])
         self.assertEqual(payload["source_target_degree_audit"]["missing_arrow"], "RENORMALIZED_LOCAL_WARD_INSERTION")

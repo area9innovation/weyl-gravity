@@ -372,13 +372,21 @@ and an exact account of every normalization or scheme transformation, not
 numerical agreement on a single background.
 
 The exact standard conformal-spin-two background vector has now been
-reconstructed as `(199/30,-87/20)` in the even quotient and bound to the
-complete gauge-fixed BV basis. This is not yet the repository coefficient:
+reconstructed as `(199/30,-87/20,0)` and bound to the complete gauge-fixed
+BV basis. This is not yet the repository coefficient:
 the active gate is an exact match of the repository elliptic or causal
 operator, action normalization, auxiliary/fourth-order Jacobian,
 field/ghost multiplicities, zero modes, contour, measure, and regulated
-Slavnov functional. The parity-odd coordinate remains uncomputed rather than
-assumed zero.
+Slavnov functional. The parity-odd zero is derived from a Ward identity for
+the declared standard real tensor-Laplacian heat-kernel regulator; it is not
+assumed for the unmatched repository regulator.
+
+The standard physical TT factors `Delta_2_perp(2)` and
+`Delta_2_perp(4)` now also have an exact local auxiliary Schur-complement and
+block-determinant match. This removes the Gaussian algebra as a gap, but does
+not identify the full repository Hessian/ghost/nonminimal rows or fix the
+auxiliary normalization, contour, finite phase, zero modes, or determinant
+measure.
 
 ### Work package Q-G3: isolate the actual (D)-anomaly
 

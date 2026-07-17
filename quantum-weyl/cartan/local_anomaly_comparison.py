@@ -138,7 +138,7 @@ def comparison_payload() -> dict[str, object]:
             "even_standard_background_coefficient_coordinates": [
                 _fraction(value) for value in analysis["coefficient_vector"]
             ],
-            "odd_coefficient_status": "NOT_COMPUTED",
+            "odd_coefficient_status": "STANDARD_BACKGROUND_WARD_ZERO_REPOSITORY_NOT_COMPUTED",
             "full_BV_lift_status": "COMPLETE_ON_REGULAR_BACH_LOCUS",
         },
         "setting_specific_classical_inputs": [

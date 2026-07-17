@@ -28,7 +28,7 @@
     "coefficient_scope": {"type": "string", "minLength": 1},
     "coefficient_calculation": {
       "type": "object",
-      "required": ["constant_curvature_sum_a", "ricci_flat_sum_beta1_equals_c_minus_a", "derived_c_equals_a_plus_beta1", "anomaly_coordinates", "cross_checks"],
+      "required": ["constant_curvature_sum_a", "ricci_flat_sum_beta1_equals_c_minus_a", "derived_c_equals_a_plus_beta1", "anomaly_coordinates", "parity_odd_audit", "cross_checks"],
       "properties": {
         "constant_curvature_sum_a": {"const": "87/20"},
         "ricci_flat_sum_beta1_equals_c_minus_a": {"const": "137/60"},
@@ -37,9 +37,11 @@
         "derived_beta2_equals_2c": {"const": "199/15"},
         "anomaly_coordinates": {
           "type": "object",
-          "required": ["C2", "E4"],
-          "properties": {"C2": {"const": "199/30"}, "E4": {"const": "-87/20"}}
+          "additionalProperties": false,
+          "required": ["C2", "E4", "CdualC"],
+          "properties": {"C2": {"const": "199/30"}, "E4": {"const": "-87/20"}, "CdualC": {"const": "0"}}
         },
+        "parity_odd_audit": {"$ref": "#/$defs/parityAudit"},
         "cross_checks": {
           "type": "object",
           "additionalProperties": {"const": true}
@@ -59,8 +61,8 @@
             "weyl_compensator_sigma_D": {"const": "0"},
             "top_anomaly_coordinates": {
               "type": "object",
-              "properties": {"C2": {"const": "0"}, "E4": {"const": "0"}},
-              "required": ["C2", "E4"]
+              "properties": {"C2": {"const": "0"}, "E4": {"const": "0"}, "CdualC": {"const": "0"}},
+              "required": ["C2", "E4", "CdualC"]
             },
             "top_anomaly_status": {"const": "ZERO"}
           },
@@ -73,8 +75,8 @@
             "weyl_compensator_sigma_D": {"const": "-1"},
             "top_anomaly_coordinates": {
               "type": "object",
-              "properties": {"C2": {"const": "-199/30"}, "E4": {"const": "87/20"}},
-              "required": ["C2", "E4"]
+              "properties": {"C2": {"const": "-199/30"}, "E4": {"const": "87/20"}, "CdualC": {"const": "0"}},
+              "required": ["C2", "E4", "CdualC"]
             },
             "top_anomaly_status": {"const": "NONZERO_LOCAL_COCYCLE_PULLBACK"}
           },
@@ -91,6 +93,7 @@
       "type": "object",
       "required": [
         "STANDARD_BACKGROUND_A_AND_C_COMPUTED",
+        "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED",
         "FULL_GAUGE_FIXED_BV_ANOMALY_BASIS_AVAILABLE",
         "CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO",
         "MINKOWSKI_D_LOCAL_ANOMALY_PULLBACK_COMPUTED",
@@ -102,6 +105,7 @@
       ],
       "properties": {
         "STANDARD_BACKGROUND_A_AND_C_COMPUTED": {"const": true},
+        "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": {"const": true},
         "FULL_GAUGE_FIXED_BV_ANOMALY_BASIS_AVAILABLE": {"const": true},
         "CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO": {"const": true},
         "MINKOWSKI_D_LOCAL_ANOMALY_PULLBACK_COMPUTED": {"const": true},
@@ -116,5 +120,25 @@
     "claim_boundary": {"type": "string", "minLength": 1},
     "next_gate": {"type": "string", "minLength": 1},
     "certificate_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "parityAudit": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["scope", "factor_count", "orientation_tensor_insertions", "Hodge_star_insertions", "chiral_projectors", "ward_matrix", "ward_matrix_rank", "odd_coordinate", "negative_control_p_equals_one_residual", "status", "repository_regulator_implication"],
+      "properties": {
+        "scope": {"const": "STANDARD_EUCLIDEAN_FACTORIZED_CONFORMAL_SPIN_TWO_DETERMINANT"},
+        "factor_count": {"const": 4},
+        "orientation_tensor_insertions": {"const": 0},
+        "Hodge_star_insertions": {"const": 0},
+        "chiral_projectors": {"const": 0},
+        "ward_matrix": {"const": [[2]]},
+        "ward_matrix_rank": {"const": 1},
+        "odd_coordinate": {"const": "0"},
+        "negative_control_p_equals_one_residual": {"const": "2"},
+        "status": {"const": "WARD_VERIFIED_ZERO"},
+        "repository_regulator_implication": {"const": "NONE_UNTIL_OPERATOR_AND_MEASURE_MATCH"}
+      }
+    }
   }
 }

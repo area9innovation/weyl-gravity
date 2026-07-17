@@ -62,6 +62,8 @@
     "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED": true,
     "RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED": true,
     "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY": true,
+    "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": true,
+    "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": true,
     "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": true
   },
   "dependency_refs": {
@@ -73,7 +75,7 @@
     "Cartan_comparison": {
       "artifact_id": "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON",
       "path": "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
-      "sha256": "66231196d89e408538995744f1f73ba167069c1dba3fc981291966bced87f59e"
+      "sha256": "ade1995de47c1829998758f44953db9f6ba802d7a8e9f70b78e3f449873a0c04"
     },
     "H04_AFN0": {
       "artifact_id": "AFN0_H04_CANONICAL_QUOTIENT",
@@ -108,7 +110,7 @@
     "Slavnov_breaking_assembly": {
       "artifact_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
       "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
-      "sha256": "c16b22ae1a3a3ed72042ede25ef93425e0fe57fe780c2227bb8246877fccb2c1"
+      "sha256": "10d02b69ddf465731d82032fd0c7329f1aeb865f6bfc90952bb18518e1d3e4e3"
     },
     "antifield_import": {
       "artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
@@ -118,7 +120,7 @@
     "background_coefficients": {
       "artifact_id": "WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT",
       "path": "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
-      "sha256": "ad6a9036c90b98d0f2f6e0b6bb5238efe6d008bf21ef0e38bb3ce97a03173e55"
+      "sha256": "74aefb607b9c7c74a5bce814babc558b901fcd7497a8f30cdc88b628534a06ab"
     },
     "base_Hadamard_parametrix": {
       "artifact_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
@@ -244,20 +246,20 @@
     "G0": "PASSED",
     "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
     "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-    "G3": "PARTIAL_STANDARD_VECTOR_BOUND_ANALYTIC_MATCHING_OPEN",
+    "G3": "FULL_STANDARD_VECTOR_AND_TT_AUXILIARY_IDENTITY_BOUND_ANALYTIC_MATCHING_OPEN",
     "G4": "BLOCKED_QME_NOT_RESTORED",
     "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS"
   },
   "provenance": {
     "source_manifest": {
-      "active_frontier.py": "b53ed82e182ef0f2954ec5af7342c7ed4b608fedfd5dc6fafe400700fd938b36",
+      "active_frontier.py": "a801c698593e4f4038b3f8bdd9b46c5fa96e6594617301dcabf40f26510333df",
       "active_frontier_certificate.py": "dff13b382e7d4a19c82b26bfcbd65510442c936dbaf9df97a2e79b8432ec4630",
-      "reports/active-quantum-frontier.md": "0d245bf32192f6f4606f349ec1a0a17e279ee1d6e7206263f0345cc64daa93a9",
-      "schema/active-frontier-v1.schema.json": "66e105293cc13b93d4650840eac3c3898a3258bed4462ec4ce22fbf1cbff13f8",
-      "tests/test_active_frontier.py": "e5ff4100ce295bd735f07bdc2698463074329583d594605ca6ca664a95b067e6",
+      "reports/active-quantum-frontier.md": "781a59f2e29b3d80f432303275f0c00f9e23d74d4704a5ce1e3519073001bcbf",
+      "schema/active-frontier-v1.schema.json": "67dc343cc19abc8d7d130d7bce7cbc89bdc529bd90e37f08c160c53e1a9827e3",
+      "tests/test_active_frontier.py": "3c8db2514df805a830097b0f8b2e0ad6f89c55122d118d60f14aa7f66b8642ff",
       "verify_active_frontier.py": "5339fddda388b9a6df4ddc96fb6a4b3740c02b2b378ae1abdcc78a2a85ef4d07"
     },
-    "source_manifest_sha256": "a76d93c5164f454cc4c3c472fa9bbfaeb8a95ff6b2f18791cfce8976c1dda4a1"
+    "source_manifest_sha256": "23c74dd4d6837dbe322dd3097372df7db5b39469f4e0cc3773a8f91b39779dc9"
   },
   "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
   "result_state": "G2_LOCAL_BV_AND_SLAVNOV_ASSEMBLY_READY_GLOBAL_HADAMARD_QME_OPEN",

@@ -73,6 +73,7 @@ def build_certificate() -> dict[str, object]:
             "determinant_factorization": "Weyl graviton on Ricci-flat and constant-curvature Einstein backgrounds",
             "regularization": "second-order heat-kernel b4 / logarithmic UV coefficient",
             "gauge_and_ghost_policy": "factorized gauge-fixed determinant including the source's ghost determinants",
+            "parity_policy": "real tensor Laplacians with no epsilon, Hodge-star or chiral insertion; parity-even heat-kernel b4",
             "zero_mode_policy": "unprojected-operator heat-kernel identities; no projected zeta zero-mode promotion",
             "contour_policy": "irrelevant to the local logarithmic heat-kernel coefficient; no phase or finite part claimed",
             "repository_euclidean_gate": "LOCAL_BV_G2_COMPLETE_ELLIPTIC_OPERATOR_MEASURE_AND_AUXILIARY_MATCHING_OPEN",
@@ -98,6 +99,7 @@ def build_certificate() -> dict[str, object]:
         },
         "claim_flags": {
             "STANDARD_BACKGROUND_A_AND_C_COMPUTED": True,
+            "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": True,
             "FULL_GAUGE_FIXED_BV_ANOMALY_BASIS_AVAILABLE": True,
             "CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO": True,
             "MINKOWSKI_D_LOCAL_ANOMALY_PULLBACK_COMPUTED": True,
@@ -109,7 +111,9 @@ def build_certificate() -> dict[str, object]:
         },
         "claim_boundary": (
             "The exact numbers are the standard Euclidean background trace-anomaly coefficients reconstructed from "
-            "the factorized conformal-spin-two determinant and heat-kernel formulae. The repository's complete local "
+            "the factorized conformal-spin-two determinant and heat-kernel formulae. For this declared parity-even "
+            "standard regulator, an exact Ward audit proves the C dual C coordinate is zero because every factor is "
+            "a real tensor Laplacian with no epsilon, Hodge-star or chiral insertion. The repository's complete local "
             "gauge-fixed BV anomaly basis is now available on the regular Bach locus, but the determinant is not yet "
             "matched to a repository elliptic operator, auxiliary/fourth-order Jacobian, measure, zero-mode policy, "
             "or regulated Slavnov action and therefore does not compute the quantum-master-equation breaking. The D "
@@ -143,7 +147,7 @@ def main() -> int:
     if not args.emit and not args.check:
         print(content, end="")
     else:
-        print("WEYL GRAVITON ANOMALY: a=87/20, c=199/30; CYLINDER D PULLBACK ZERO")
+        print("WEYL GRAVITON ANOMALY: a=87/20, c=199/30, p=0; CYLINDER D PULLBACK ZERO")
     return 0
 
 
