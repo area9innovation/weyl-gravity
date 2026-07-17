@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-36-residual-branch-basis-preflight-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "setting_id", "dependency_tags",
+    "dependency_refs", "available_exact_inputs", "field_obstruction",
+    "even_odd_matrix_receipt", "minimal_contract_repairs", "v2_contract_requirements",
+    "separate_missing_carrier", "flags", "next_gate", "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-36-residual-branch-basis-preflight-v1"},
+    "result_id": {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_PREFLIGHT"},
+    "result_state": {"const": "INPUT_CONTRACT_FIELD_REPAIR_REQUIRED_BRANCH_PROJECTOR_STILL_MISSING"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {"$ref": "#/$defs/ref"}
+    },
+    "available_exact_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "retained_rank", "retained_q1", "retained_typed_cyclic_pairing",
+        "retained_mixed_ell3", "deformation_chiral_pairing_gram_imported", "parity_normalized_deformation_basis_over_declared_field",
+        "Einstein_like_extra_Weyl_Maxwell_branch_projector"
+      ],
+      "properties": {
+        "retained_rank": {"const": 36},
+        "retained_q1": {"const": true},
+        "retained_typed_cyclic_pairing": {"const": true},
+        "retained_mixed_ell3": {"const": true},
+        "deformation_chiral_pairing_gram_imported": {"const": false},
+        "parity_normalized_deformation_basis_over_declared_field": {"const": false},
+        "Einstein_like_extra_Weyl_Maxwell_branch_projector": {"const": false}
+      }
+    },
+    "field_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declared_field", "required_normalization_coefficient",
+        "sqrt2_is_member_of_declared_field", "proof",
+        "sympy_exact_membership_check", "consequence"
+      ],
+      "properties": {
+        "declared_field": {"const": "Q(sqrt(10))"},
+        "required_normalization_coefficient": {"const": "1/sqrt(2)"},
+        "sqrt2_is_member_of_declared_field": {"const": false},
+        "proof": {"type": "string", "minLength": 100},
+        "sympy_exact_membership_check": {"type": "string", "minLength": 20},
+        "consequence": {"type": "string", "minLength": 100}
+      }
+    },
+    "even_odd_matrix_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chiral_basis", "input_chiral_gram_assumption", "normalized_even_odd_matrix", "unnormalized_even_odd_matrix",
+        "normalized_gram", "unnormalized_gram", "parity_in_even_odd_basis",
+        "exact_checks"
+      ],
+      "properties": {
+        "chiral_basis": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "input_chiral_gram_assumption": {"const": "I2_FOR_BASIS_CHANGE_RECEIPT_ONLY_NOT_IMPORTED_AS_A_BERGER_BRANCH_ARTIFACT"},
+        "normalized_even_odd_matrix": {"$ref": "#/$defs/matrix"},
+        "unnormalized_even_odd_matrix": {"$ref": "#/$defs/matrix"},
+        "normalized_gram": {"$ref": "#/$defs/matrix"},
+        "unnormalized_gram": {"$ref": "#/$defs/matrix"},
+        "parity_in_even_odd_basis": {"$ref": "#/$defs/matrix"},
+        "exact_checks": {
+          "type": "object",
+          "minProperties": 4,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "minimal_contract_repairs": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "repair_id", "recommended", "operator_coefficient_field",
+          "deformation_coefficient_field", "normalization"
+        ],
+        "properties": {
+          "repair_id": {"enum": ["EXTEND_DEFORMATION_FIELD", "USE_UNNORMALIZED_PARITY_BASIS"]},
+          "recommended": {"type": "boolean"},
+          "operator_coefficient_field": {"const": "Q(sqrt(10))"},
+          "deformation_coefficient_field": {"type": "string"},
+          "normalization": {"type": "string", "minLength": 40}
+        }
+      }
+    },
+    "v2_contract_requirements": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 60}
+    },
+    "separate_missing_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status", "required_object", "why_q1_and_pairing_are_insufficient",
+        "next_mathematical_gate"
+      ],
+      "properties": {
+        "status": {"const": "NOT_EXPORTED_NOT_A_NONEXISTENCE_THEOREM"},
+        "required_object": {"type": "string", "minLength": 80},
+        "why_q1_and_pairing_are_insufficient": {"type": "string", "minLength": 100},
+        "next_mathematical_gate": {"type": "string", "minLength": 100}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "RETAINED_36_Q1_AVAILABLE", "RETAINED_36_TYPED_PAIRING_AVAILABLE",
+        "RETAINED_MIXED_ELL3_AVAILABLE",
+        "CURRENT_INPUT_SCHEMA_FIELD_CONSISTENT_WITH_NORMALIZED_EO_BASIS",
+        "DYNAMICAL_BRANCH_PROJECTOR_AVAILABLE",
+        "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_READY",
+        "ELL3_BRANCH_PROJECTION_AUTHORIZED", "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "RETAINED_36_Q1_AVAILABLE": {"const": true},
+        "RETAINED_36_TYPED_PAIRING_AVAILABLE": {"const": true},
+        "RETAINED_MIXED_ELL3_AVAILABLE": {"const": true},
+        "CURRENT_INPUT_SCHEMA_FIELD_CONSISTENT_WITH_NORMALIZED_EO_BASIS": {"const": false},
+        "DYNAMICAL_BRANCH_PROJECTOR_AVAILABLE": {"const": false},
+        "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_READY": {"const": false},
+        "ELL3_BRANCH_PROJECTION_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "REISSUE_BRANCH_BASIS_INPUT_SCHEMA_WITH_EXACT_DEFORMATION_FIELD_THEN_CONSTRUCT_DYNAMICAL_BRANCH_PROJECTOR"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "dependency_manifest_sha256"],
+      "properties": {
+        "source_manifest": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"$ref": "#/$defs/source"}
+        },
+        "dependency_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "path", "sha256"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "matrix": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

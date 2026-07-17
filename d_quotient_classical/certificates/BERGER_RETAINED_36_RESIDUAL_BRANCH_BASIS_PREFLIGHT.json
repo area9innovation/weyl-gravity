@@ -1,0 +1,181 @@
+{
+  "available_exact_inputs": {
+    "Einstein_like_extra_Weyl_Maxwell_branch_projector": false,
+    "deformation_chiral_pairing_gram_imported": false,
+    "parity_normalized_deformation_basis_over_declared_field": false,
+    "retained_mixed_ell3": true,
+    "retained_q1": true,
+    "retained_rank": 36,
+    "retained_typed_cyclic_pairing": true
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC preflight does not supply BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1. It proves that the current receiving contract combines the coefficient field Q(sqrt(10)) with a normalized even/odd deformation basis requiring 1/sqrt(2), which is not an element of that field. It gives two exact repairs and independently records that the available 36-row q1, pairing and ell3 artifacts still do not contain an Einstein-like/extra-Weyl/Maxwell dynamical branch projector. The absence of that export is not a global nonexistence theorem. No residual mixing, kinetic-sign, particle, QME, Hadamard or quantum claim is made.",
+  "dependency_refs": {
+    "accepted_retained_ell3": {
+      "path": "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json",
+      "sha256": "2c4592665084dd47958aa2c63f10a7f54d3bd9ff8d52f661d1a2fa78da877027"
+    },
+    "quantum_input_schema": {
+      "path": "quantum-weyl/transfer/schema/berger-residual-ell3-branch-basis-input-v1.schema.json",
+      "sha256": "2d2d54eff17430725d8ed102bd6b6accd3a3260decd09694af2f49d0cbc7c75f"
+    },
+    "quantum_readiness": {
+      "path": "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json",
+      "sha256": "61137d21a6ca27accb31a25cc49a340f566a987f2601c98a4e399854fd8c0ca3"
+    },
+    "typed_retained_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json",
+      "sha256": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "even_odd_matrix_receipt": {
+    "chiral_basis": [
+      "W_plus_squared",
+      "W_minus_squared"
+    ],
+    "exact_checks": {
+      "normalized_gram_is_identity": true,
+      "normalized_parity_is_even_odd": true,
+      "unnormalized_gram_is_two_identity": true,
+      "unnormalized_parity_is_even_odd": true
+    },
+    "input_chiral_gram_assumption": "I2_FOR_BASIS_CHANGE_RECEIPT_ONLY_NOT_IMPORTED_AS_A_BERGER_BRANCH_ARTIFACT",
+    "normalized_even_odd_matrix": [
+      [
+        "1/sqrt(2)",
+        "1/sqrt(2)"
+      ],
+      [
+        "1/sqrt(2)",
+        "-1/sqrt(2)"
+      ]
+    ],
+    "normalized_gram": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "parity_in_even_odd_basis": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "unnormalized_even_odd_matrix": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "-1"
+      ]
+    ],
+    "unnormalized_gram": [
+      [
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ]
+  },
+  "field_obstruction": {
+    "consequence": "The normalized e/o basis required by the readiness claim boundary cannot be represented by an artifact whose sole coefficient field is Q(sqrt(10)).",
+    "declared_field": "Q(sqrt(10))",
+    "proof": "If sqrt(2)=a+b sqrt(10) with rational a,b, squaring gives 2ab=0 and a^2+10b^2=2. If b=0 then a^2=2, impossible over Q; if a=0 then b^2=1/5, also impossible over Q.",
+    "required_normalization_coefficient": "1/sqrt(2)",
+    "sqrt2_is_member_of_declared_field": false,
+    "sympy_exact_membership_check": "QQ.algebraic_field(sqrt(10)).from_sympy(sqrt(2)) raises CoercionFailed"
+  },
+  "flags": {
+    "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_READY": false,
+    "CURRENT_INPUT_SCHEMA_FIELD_CONSISTENT_WITH_NORMALIZED_EO_BASIS": false,
+    "DYNAMICAL_BRANCH_PROJECTOR_AVAILABLE": false,
+    "ELL3_BRANCH_PROJECTION_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false,
+    "RETAINED_36_Q1_AVAILABLE": true,
+    "RETAINED_36_TYPED_PAIRING_AVAILABLE": true,
+    "RETAINED_MIXED_ELL3_AVAILABLE": true
+  },
+  "minimal_contract_repairs": [
+    {
+      "deformation_coefficient_field": "Q(sqrt(2),sqrt(10))",
+      "normalization": "retain e=(W_+^2+W_-^2)/sqrt(2), o=(W_+^2-W_-^2)/sqrt(2), Gram=I2",
+      "operator_coefficient_field": "Q(sqrt(10))",
+      "recommended": true,
+      "repair_id": "EXTEND_DEFORMATION_FIELD"
+    },
+    {
+      "deformation_coefficient_field": "Q(sqrt(10))",
+      "normalization": "use e0=W_+^2+W_-^2, o0=W_+^2-W_-^2, Gram=2 I2 and record the later scalar extension explicitly",
+      "operator_coefficient_field": "Q(sqrt(10))",
+      "recommended": false,
+      "repair_id": "USE_UNNORMALIZED_PARITY_BASIS"
+    }
+  ],
+  "next_gate": "REISSUE_BRANCH_BASIS_INPUT_SCHEMA_WITH_EXACT_DEFORMATION_FIELD_THEN_CONSTRUCT_DYNAMICAL_BRANCH_PROJECTOR",
+  "provenance": {
+    "dependency_manifest_sha256": "45fcb97a4ecf59cc0f2fcae9e1a912e2b4a0829d353459864018188e9488dd7a",
+    "source_manifest": [
+      {
+        "path": "d_quotient_classical/backreacted_clock/berger_retained_36_residual_branch_basis_preflight.py",
+        "role": "producer",
+        "sha256": "dd5fa8bd3dbd5321c8b1e89409d0a09c5b7edb2544c6d80a7376f4207373184b"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_retained_36_residual_branch_basis_preflight.py",
+        "role": "independent_verifier",
+        "sha256": "c1f79dc7a684cab035f82ebd86d652611aa4420b72f191722744fc3fa2367641"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_retained_36_residual_branch_basis_preflight.py",
+        "role": "tests",
+        "sha256": "7bc04467105fbeae18728363f2d930f124ea12870116fffb6a6469fdccd331e2"
+      },
+      {
+        "path": "d_quotient_classical/schema/berger-retained-36-residual-branch-basis-preflight-v1.schema.json",
+        "role": "schema",
+        "sha256": "5423ed09e270cd7685ae51d8f58a965a82e3c8cf5d5630c374541a051f12869a"
+      },
+      {
+        "path": "d_quotient_classical/reports/berger-retained-36-residual-branch-basis-preflight.md",
+        "role": "report",
+        "sha256": "7a9ebfa186d66cff6a138b6d7a85dd76b77f2bff99c7aa95f2e67fd7e8f848b9"
+      }
+    ]
+  },
+  "result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_PREFLIGHT",
+  "result_state": "INPUT_CONTRACT_FIELD_REPAIR_REQUIRED_BRANCH_PROJECTOR_STILL_MISSING",
+  "schema": "pure-weyl-berger-retained-36-residual-branch-basis-preflight-v1",
+  "separate_missing_carrier": {
+    "next_mathematical_gate": "construct the exact Berger dynamical branch carrier in a declared mode/support sector and verify projection times inclusion equals identity together with q1, pairing, parity, reality and K_Berger intertwining",
+    "required_object": "exact Einstein-like/extra-Weyl/Maxwell dynamical carrier with inclusion, projection, pairing, parity, real structure and K_Berger weights",
+    "status": "NOT_EXPORTED_NOT_A_NONEXISTENCE_THEOREM",
+    "why_q1_and_pairing_are_insufficient": "The 36-row SDR identifies a retained local BV carrier but does not choose a dynamical solution or residual-mode subquotient. Labeling rows cannot replace a q1-intertwining branch projection."
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "v2_contract_requirements": [
+    "split operator_field=Q(sqrt(10)) from deformation_field=Q(sqrt(2),sqrt(10))",
+    "import a content-addressed chiral deformation pairing and derive, rather than assume, the even/odd Gram matrix",
+    "separate dynamical branch carriers from deformation/vertex carriers with typed domains for pairing, parity and reality",
+    "declare the exact mode or support sector, BV degrees, chirality or polarization ranges and multiplicities before asserting branch exhaustiveness",
+    "type every artifact by schema, result_id, source and target ranks and degrees, coefficient field and exact chain/intertwining identities",
+    "replace free-form Maxwell branch names with canonical carrier IDs and dimensions",
+    "declare complexification and the antilinear real structure whenever mode carriers use the scalar i",
+    "pin Euler-Lagrange rank normalization, Pontryagin orientation and transgression conventions, plus mutation-tested witnesses for claimed zeros"
+  ]
+}
