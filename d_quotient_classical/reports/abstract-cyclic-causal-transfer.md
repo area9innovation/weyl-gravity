@@ -30,15 +30,24 @@ the endpoint term is a composition of support-local maps with a same-sided
 causal map, while `supp(hf)` is contained in `supp(f)`, hence in both its
 causal future and causal past.
 
-If the pairings and graded sign convention satisfy
+Let `Sigma_C` and `Sigma_E` be the degreewise sign involutions induced by the
+two graded pairings.  If
 
 ```text
-i^sharp=p,  p^sharp=i,  h^sharp=epsilon h,
-Lambda_E,+^sharp=epsilon Lambda_E,-,
+Sigma_C i = i Sigma_E,     p Sigma_C = Sigma_E p,
+i^sharp=p,                 p^sharp=i,
+h^sharp = Sigma_C h Sigma_C^-1,
+Lambda_E,+^sharp = Sigma_E Lambda_E,- Sigma_E^-1,
 ```
 
-then `Lambda_C,+^sharp=epsilon Lambda_C,-`.  Thus the complementary-degree
-advanced/retarded adjoint relation transfers with the chain contraction.
+then
+
+```text
+Lambda_C,+^sharp = Sigma_C Lambda_C,- Sigma_C^-1.
+```
+
+Thus the complementary-degree advanced/retarded adjoint relation transfers
+without assuming that one scalar sign works in every degree.
 
 ## Endpoint companion route
 
@@ -74,7 +83,17 @@ Lambda'_+/-    = U Lambda_+/- U^-1
 preserve the chain identity and same-sided support.  When `U^sharp=U^-1`, the
 cyclic adjoint relation is preserved as well.  A filtration-nilpotent shear
 `U=1+N` is a sufficient implementation because its inverse is a finite
-Neumann polynomial.
+Neumann polynomial.  The cyclic conclusion additionally requires the shear
+to intertwine the degreewise sign involution.
+
+## Portable consumer gate
+
+Every new application must validate the strict consumer contract before any
+coefficient search.  It requires typed complexes, operator domains, boundary
+conditions, same-sided support, all cyclic SDR identities, pairing-derived
+degreewise signs, an endpoint Green package, and a finite local inverse for
+every shear.  Missing data produce a rejected preflight rather than an
+inferred transfer theorem.
 
 ## Berger replay
 

@@ -137,6 +137,9 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json`](certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json)
 - Human-readable theorem, proof and Berger 26-to-54 / coupled 36-to-64 replay:
   [`reports/abstract-cyclic-causal-transfer.md`](reports/abstract-cyclic-causal-transfer.md)
+- Strict portable consumer gate and accepted Berger adapter:
+  [`schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json`](schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
+  [`certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json`](certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json)
 - Cyclic causal D-Cartan V2 contraction through arity two:
   [`certificates/BERGER_CAUSAL_D_CARTAN_V2.json`](certificates/BERGER_CAUSAL_D_CARTAN_V2.json)
 - Causal-hull and cyclic-Reynolds V2 proof:

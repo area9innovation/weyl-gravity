@@ -87,8 +87,12 @@ q_C\Lambda_{C,\pm}+\Lambda_{C,\pm}q_C
 \]
 Support follows because $i,p,h$ do not enlarge support.  Taking the graded
 adjoint proves advanced/retarded reversal from
-$i^\sharp=p$, $h^\sharp=\epsilon h$ and
-$\Lambda_{E,+}^\sharp=\epsilon\Lambda_{E,-}$.
+$i^\sharp=p$ and the pairing-derived degreewise sign involutions:
+\[
+h^\sharp=\Sigma_C h\Sigma_C^{-1},\qquad
+\Lambda_{E,+}^\sharp=\Sigma_E\Lambda_{E,-}\Sigma_E^{-1}.
+\]
+Thus no uniform scalar sign is assumed across all degrees.
 
 The content-addressed first consumer is the Berger gravity--clock complex:
 
@@ -103,6 +107,12 @@ Lambda64,+/-
 
 The exact certificate and independent replay are
 [`ABSTRACT_CYCLIC_CAUSAL_TRANSFER`](../d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json).
+New applications must first satisfy the strict
+[`consumer contract`](../d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
+which requires typed operator domains, boundary conditions, pairing-derived
+sign data, the exact cyclic SDR, endpoint Green data, and finite local inverses
+for all shears.  The accepted Berger adapter is
+[`BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER`](../d_quotient_classical/certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json).
 The theorem is background-uniform as a conditional statement, while its first
 consumer remains `G2`: no open `G3` background family has yet been proved to
 satisfy the analytic hypotheses uniformly.

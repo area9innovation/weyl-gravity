@@ -13,6 +13,7 @@ import sympy as sp
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT = ROOT / "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json"
+DEFAULT_CONSUMER = ROOT / "d_quotient_classical/certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json"
 
 
 def _sha(path: Path) -> str:
@@ -27,8 +28,9 @@ def _is_zero(a: sp.Matrix) -> bool:
     return all(sp.simplify(entry) == 0 for entry in a)
 
 
-def verify(path: Path) -> None:
+def verify(path: Path, consumer_path: Path = DEFAULT_CONSUMER) -> None:
     data = json.loads(path.read_text())
+    consumer = json.loads(consumer_path.read_text())
     for dependency in data["dependency_refs"].values():
         target = ROOT / dependency["path"]
         if _sha(target) != dependency["sha256"]:
@@ -54,11 +56,17 @@ def verify(path: Path) -> None:
     if not _is_zero(q * transferred + transferred * q - sp.eye(4)):
         raise AssertionError("independent transferred homotopy failed")
 
-    j_e = sp.Matrix([[0, 1], [1, 0]])
-    j_c = sp.Matrix([[0, 0, 1, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 1, 0, 0]])
+    j_e = sp.Matrix([[0, 1], [-1, 0]])
+    j_c = sp.Matrix([[0, 0, 1, 0], [0, 0, 0, 1], [-1, 0, 0, 0], [0, -1, 0, 0]])
+    sigma_e = sp.diag(1, -1)
+    sigma_c = sp.diag(1, 1, -1, -1)
     if not _is_zero(_sharp(i, j_e, j_c) - p):
         raise AssertionError("independent cyclic SDR adjoint failed")
-    if not _is_zero(_sharp(transferred, j_c, j_c) - transferred):
+    if not _is_zero(sigma_c * i - i * sigma_e) or not _is_zero(sigma_e * p - p * sigma_c):
+        raise AssertionError("independent degreewise sign intertwining failed")
+    if not _is_zero(_sharp(h, j_c, j_c) - sigma_c * h * sigma_c):
+        raise AssertionError("independent algebraic-homotopy sign rule failed")
+    if not _is_zero(_sharp(transferred, j_c, j_c) - sigma_c * transferred * sigma_c):
         raise AssertionError("independent transferred cyclic adjoint failed")
 
     n = sp.zeros(4)
@@ -70,6 +78,8 @@ def verify(path: Path) -> None:
         raise AssertionError("independent finite shear inverse failed")
     if not _is_zero(_sharp(u, j_c, j_c) - u_inverse):
         raise AssertionError("independent cyclic shear failed")
+    if not _is_zero(u * sigma_c - sigma_c * u):
+        raise AssertionError("independent shear sign intertwining failed")
     q_u = u * q * u_inverse
     lambda_u = u * transferred * u_inverse
     if not _is_zero(q_u * lambda_u + lambda_u * q_u - sp.eye(4)):
@@ -90,14 +100,24 @@ def verify(path: Path) -> None:
             raise AssertionError(f"forbidden promotion: {forbidden}")
     if "K_Berger" not in data["berger_consumer"]["generator_scope"]:
         raise AssertionError("Berger generator correction absent")
+    theorem_ref = consumer["theorem_ref"]
+    if theorem_ref["sha256"] != _sha(path) or theorem_ref["result_id"] != data["result_id"]:
+        raise AssertionError("portable consumer theorem reference drifted")
+    if not all(consumer["preflight"].values()):
+        raise AssertionError("portable consumer preflight failed")
+    if consumer["pairing_and_signs"]["scalar_uniform_sign_assumed"] is not False:
+        raise AssertionError("portable consumer collapsed degreewise signs")
+    if consumer["SDR"]["operator_domains_preserved"] is not True:
+        raise AssertionError("portable consumer lost operator-domain preservation")
     print("ABSTRACT_CYCLIC_CAUSAL_TRANSFER independent verification: PASS")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("path", nargs="?", type=Path, default=DEFAULT)
+    parser.add_argument("--consumer", type=Path, default=DEFAULT_CONSUMER)
     args = parser.parse_args()
-    verify(args.path)
+    verify(args.path, args.consumer)
 
 
 if __name__ == "__main__":

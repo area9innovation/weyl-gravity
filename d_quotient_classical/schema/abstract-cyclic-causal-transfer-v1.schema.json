@@ -6,7 +6,7 @@
   "required": [
     "schema", "result_id", "claim_status", "generality", "dependency_tags",
     "dependency_refs", "hypotheses", "conclusions", "proof_ledger",
-    "finite_exact_fixture", "berger_consumer", "exact_checks", "flags",
+    "finite_exact_fixture", "berger_consumer", "consumer_contract", "exact_checks", "flags",
     "source_manifest", "verification_commands", "claim_boundary"
   ],
   "properties": {
@@ -33,7 +33,7 @@
       "required": ["base", "complexes", "cyclic_support_local_SDR", "endpoint_option_A", "endpoint_option_B", "cyclic_endpoint", "finite_shear"],
       "properties": {
         "base": {"type": "string"}, "complexes": {"type": "string"},
-        "cyclic_support_local_SDR": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+        "cyclic_support_local_SDR": {"type": "array", "minItems": 7, "items": {"type": "string"}},
         "endpoint_option_A": {"type": "string"}, "endpoint_option_B": {"type": "string"},
         "cyclic_endpoint": {"type": "string"}, "finite_shear": {"type": "string"}
       }
@@ -59,10 +59,18 @@
     },
     "finite_exact_fixture": {
       "type": "object", "additionalProperties": false,
-      "required": ["coefficient_field", "endpoint_dimension", "full_dimension", "contracted_dimension", "fixture_role", "identity_defects"],
+      "required": ["coefficient_field", "endpoint_dimension", "full_dimension", "contracted_dimension", "degreewise_sign_operator", "fixture_role", "identity_defects"],
       "properties": {
         "coefficient_field": {"const": "Q"}, "endpoint_dimension": {"const": 2},
         "full_dimension": {"const": 4}, "contracted_dimension": {"const": 2},
+        "degreewise_sign_operator": {
+          "type": "object", "additionalProperties": false,
+          "required": ["endpoint_diagonal", "full_diagonal"],
+          "properties": {
+            "endpoint_diagonal": {"const": [1, -1]},
+            "full_diagonal": {"const": [1, 1, -1, -1]}
+          }
+        },
         "fixture_role": {"type": "string"},
         "identity_defects": {"type": "object", "minProperties": 20, "additionalProperties": {"const": 0}}
       }
@@ -76,6 +84,16 @@
         "coupled_formula": {"type": "string"}, "coupled_dimensions": {"type": "string"},
         "cyclic_shear": {"type": "string"}, "generator_scope": {"type": "string"},
         "all_rows_replayed": {"const": true}
+      }
+    },
+    "consumer_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_path", "schema_sha256", "required_gates", "Berger_adapter_path"],
+      "properties": {
+        "schema_path": {"type": "string"},
+        "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "required_gates": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+        "Berger_adapter_path": {"type": "string"}
       }
     },
     "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
@@ -95,10 +113,10 @@
       }
     },
     "source_manifest": {
-      "type": "object", "minProperties": 4, "maxProperties": 4,
+      "type": "object", "minProperties": 5, "maxProperties": 5,
       "additionalProperties": {"$ref": "#/$defs/source"}
     },
-    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "verification_commands": {"type": "array", "minItems": 5, "items": {"type": "string"}},
     "claim_boundary": {"type": "string", "minLength": 900}
   },
   "$defs": {

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/abstract-cyclic-causal-transfer-consumer-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "theorem_ref", "setting_id", "generality_level",
+    "base_domain", "complexes", "pairing_and_signs", "SDR", "endpoint_green",
+    "shears", "preflight", "flags", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-abstract-cyclic-causal-transfer-consumer-v1"},
+    "result_id": {"type": "string", "minLength": 8},
+    "theorem_ref": {"$ref": "#/$defs/ref"},
+    "setting_id": {"type": "string", "minLength": 8},
+    "generality_level": {"enum": ["G0_EXACT_FIXTURE", "G1_COMPLETE_SECTOR_ONE_BACKGROUND", "G2_COMPLETE_LINEAR_COMPLEX_ON_ONE_BACKGROUND", "G3_OPEN_BACKGROUND_CLASS_UNIFORM_HYPOTHESES"]},
+    "base_domain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spacetime", "globally_hyperbolic", "timelike_boundary", "source_space", "solution_space", "support_rule", "zero_mode_rule"],
+      "properties": {
+        "spacetime": {"type": "string"}, "globally_hyperbolic": {"const": true},
+        "timelike_boundary": {"type": "boolean"}, "source_space": {"type": "string", "minLength": 12},
+        "solution_space": {"type": "string", "minLength": 12}, "support_rule": {"type": "string", "minLength": 20},
+        "zero_mode_rule": {"type": "string", "minLength": 20}
+      }
+    },
+    "complexes": {
+      "type": "object", "additionalProperties": false, "required": ["full", "endpoint"],
+      "properties": {"full": {"$ref": "#/$defs/complex"}, "endpoint": {"$ref": "#/$defs/complex"}}
+    },
+    "pairing_and_signs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pairing_ref", "formal_adjoint", "sign_representation", "sign_rule", "scalar_uniform_sign_assumed", "cyclic_SDR_verified"],
+      "properties": {
+        "pairing_ref": {"$ref": "#/$defs/ref"}, "formal_adjoint": {"type": "string"},
+        "sign_representation": {"const": "PAIRING_MATRIX_DERIVED_DEGREEWISE_INVOLUTION"},
+        "sign_rule": {"type": "string", "minLength": 25},
+        "scalar_uniform_sign_assumed": {"const": false}, "cyclic_SDR_verified": {"const": true}
+      }
+    },
+    "SDR": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ref", "formula", "finite_order_support_local", "chain_maps", "side_conditions", "operator_domains_preserved"],
+      "properties": {
+        "ref": {"$ref": "#/$defs/ref"}, "formula": {"type": "string"},
+        "finite_order_support_local": {"const": true}, "chain_maps": {"const": true},
+        "side_conditions": {"const": true}, "operator_domains_preserved": {"const": true}
+      }
+    },
+    "endpoint_green": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ref", "route", "advanced_and_retarded", "both_inverse_identities", "same_sided_support", "adjoint_reversal"],
+      "properties": {
+        "ref": {"$ref": "#/$defs/ref"},
+        "route": {"enum": ["DIRECT_GREEN_HOMOTOPY", "WITNESS_COMPANION_GREEN"]},
+        "advanced_and_retarded": {"const": true}, "both_inverse_identities": {"const": true},
+        "same_sided_support": {"const": true}, "adjoint_reversal": {"const": true}
+      }
+    },
+    "shears": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ref", "finite_order", "finite_order_inverse", "support_local", "boundary_domain_preserved", "pairing_unitary", "degreewise_sign_intertwining"],
+      "properties": {
+        "ref": {"$ref": "#/$defs/ref"}, "finite_order": {"const": true},
+        "finite_order_inverse": {"const": true}, "support_local": {"const": true},
+        "boundary_domain_preserved": {"const": true}, "pairing_unitary": {"const": true},
+        "degreewise_sign_intertwining": {"const": true}
+      }
+    },
+    "preflight": {
+      "type": "object", "minProperties": 9, "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ABSTRACT_CAUSAL_TRANSFER_CONSUMER_ACCEPTED", "BERGER_54_ROW_CAUSAL_TRANSFER_REPLAYED", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "G3_OPEN_BACKGROUND_CLASS", "QUANTUM_CLAIM"],
+      "properties": {
+        "ABSTRACT_CAUSAL_TRANSFER_CONSUMER_ACCEPTED": {"const": true},
+        "BERGER_54_ROW_CAUSAL_TRANSFER_REPLAYED": {"const": true},
+        "TIMELIKE_BOUNDARY_VERSION": {"const": false}, "HADAMARD_TRANSFER": {"const": false},
+        "G3_OPEN_BACKGROUND_CLASS": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "$defs": {
+    "ref": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"}, "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "complex": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rows", "degree_ranks", "q_ref"],
+      "properties": {
+        "rows": {"type": "integer", "minimum": 1},
+        "degree_ranks": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+        "q_ref": {"$ref": "#/$defs/ref"}
+      }
+    }
+  }
+}

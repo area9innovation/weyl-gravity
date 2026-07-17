@@ -15,11 +15,25 @@
   "conclusions": {
     "SDR_transport_formula": "Lambda_C,+/-=h+i Lambda_E,+/- p",
     "chain_identity": "q_C Lambda_C,+/-+Lambda_C,+/- q_C=1_C",
-    "cyclic_adjoint": "Lambda_C,+^sharp=epsilon Lambda_C,-",
+    "cyclic_adjoint": "Lambda_C,+^sharp=Sigma_C Lambda_C,- Sigma_C^-1",
     "direct_sum": "finite direct sums transfer componentwise",
     "finite_cyclic_shear": "for q'=U q U^-1, Lambda'_+/-=U Lambda_+/- U^-1 has the same chain, support, and cyclic-adjoint properties",
     "no_endpoint_factorization_required": "the theorem needs endpoint Green homotopies or a Green companion; it does not require a scalar-symbol factorization of every reduced middle operator",
     "support": "supp Lambda_C,+/- f is contained in J^+/-(supp f)"
+  },
+  "consumer_contract": {
+    "Berger_adapter_path": "d_quotient_classical/certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json",
+    "required_gates": [
+      "typed complexes and row/degree ledger",
+      "operator domains and same-sided support categories",
+      "boundary-condition preservation",
+      "support-local cyclic SDR identities",
+      "pairing-derived degreewise sign involutions",
+      "endpoint Green homotopy or witness/companion/Green package",
+      "finite-order inverse and sign-intertwining for every shear"
+    ],
+    "schema_path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json",
+    "schema_sha256": "b5c9c90dd76d6bd88117608665272508314565554a6db2efc8716f86da2fa671"
   },
   "dependency_refs": {
     "berger_54_to_26_sdr": {
@@ -77,6 +91,18 @@
   "finite_exact_fixture": {
     "coefficient_field": "Q",
     "contracted_dimension": 2,
+    "degreewise_sign_operator": {
+      "endpoint_diagonal": [
+        1,
+        -1
+      ],
+      "full_diagonal": [
+        1,
+        1,
+        -1,
+        -1
+      ]
+    },
     "endpoint_dimension": 2,
     "fixture_role": "finite exact model of the universal algebraic identities; not evidence for Lorentzian endpoint existence",
     "full_dimension": 4,
@@ -86,22 +112,27 @@
       "endpoint_homotopy": 0,
       "endpoint_homotopy_adjoint": 0,
       "endpoint_nilpotency": 0,
+      "endpoint_sign_involution": 0,
       "full_homotopy_adjoint": 0,
       "full_nilpotency": 0,
+      "full_sign_involution": 0,
       "green_left_inverse": 0,
       "green_right_inverse": 0,
       "inclusion_adjoint": 0,
       "inclusion_chain_map": 0,
+      "inclusion_sign_intertwiner": 0,
       "nilpotent_square": 0,
       "projection_adjoint": 0,
       "projection_chain_map": 0,
       "projection_inclusion": 0,
+      "projection_sign_intertwiner": 0,
       "sdr_h_inclusion": 0,
       "sdr_h_square": 0,
       "sdr_identity": 0,
       "sdr_projection_h": 0,
       "shear_inverse_left": 0,
       "shear_inverse_right": 0,
+      "shear_sign_intertwiner": 0,
       "sheared_chain_homotopy": 0,
       "sheared_homotopy_adjoint": 0,
       "transferred_homotopy": 0,
@@ -129,22 +160,23 @@
   "hypotheses": {
     "base": "a time-oriented globally hyperbolic Lorentzian manifold without timelike boundary, or a declared boundary problem with all maps preserving its domain",
     "complexes": "cochain complexes (C,q_C) and (E,q_E) of finite-rank bundles with nondegenerate graded pairings",
-    "cyclic_endpoint": "Lambda_E,+^sharp=epsilon Lambda_E,- in complementary degree",
+    "cyclic_endpoint": "Lambda_E,+^sharp=Sigma_E Lambda_E,- Sigma_E^-1 in complementary degree",
     "cyclic_support_local_SDR": [
       "q_C i=i q_E and p q_C=q_E p",
       "p i=1_E",
       "q_C h+h q_C=1_C-i p",
       "h^2=0, h i=0, p h=0",
       "i,p,h are finite-order differential or pointwise maps and therefore support-nonincreasing",
-      "i^sharp=p, p^sharp=i, and h^sharp=epsilon h in the declared graded convention"
+      "degreewise sign involutions Sigma_C,Sigma_E satisfy Sigma_C i=i Sigma_E and p Sigma_C=Sigma_E p",
+      "i^sharp=p, p^sharp=i, and h^sharp=Sigma_C h Sigma_C^-1 in the declared graded convention"
     ],
     "endpoint_option_A": "advanced/retarded degree-minus-one maps Lambda_E,+/- with q_E Lambda_E,+/-+Lambda_E,+/- q_E=1_E and same-sided causal support",
     "endpoint_option_B": "a finite-order witness W with P=q_E W+W q_E, degreewise advanced/retarded Green operators G_P,+/-, and causal uniqueness giving q_E G_P,+/-=G_P,+/- q_E; then Lambda_E,+/-=W G_P,+/-",
-    "finite_shear": "optional support-local chain isomorphism U with finite-order support-local inverse and U^sharp=U^-1; a sufficient implementation is U=1+N with filtration-nilpotent N and a finite inverse"
+    "finite_shear": "optional support-local chain isomorphism U with finite-order support-local inverse, U^sharp=U^-1, and U Sigma_C=Sigma_C U; a sufficient implementation is U=1+N with filtration-nilpotent N and a finite inverse"
   },
   "proof_ledger": {
     "SDR_route": "q_C(h+i Lambda_E p)+(h+i Lambda_E p)q_C=(1-i p)+i(q_E Lambda_E+Lambda_E q_E)p=1",
-    "adjoint_route": "take the graded adjoint and use i^sharp=p, p^sharp=i, h^sharp=epsilon h, and endpoint advanced/retarded reversal",
+    "adjoint_route": "take the graded adjoint and use the Sigma intertwiners, i^sharp=p, p^sharp=i, h^sharp=Sigma_C h Sigma_C^-1, and endpoint advanced/retarded reversal",
     "shear_route": "conjugate the chain identity by U; support follows from locality of U and U^-1, while U^sharp=U^-1 transports the adjoint relation",
     "support_route": "support-local maps do not enlarge support and supp(f) is contained in both J^+(supp f) and J^-(supp f)",
     "witness_route": "q_E(WG)+(WG)q_E=(q_E W+W q_E)G=P G=1, using q_E G=G q_E"
@@ -152,27 +184,32 @@
   "result_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
   "schema": "pure-weyl-abstract-cyclic-causal-transfer-v1",
   "source_manifest": {
+    "consumer_schema": {
+      "path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json",
+      "sha256": "b5c9c90dd76d6bd88117608665272508314565554a6db2efc8716f86da2fa671"
+    },
     "independent_verifier": {
       "path": "d_quotient_classical/causal_transfer/verify_abstract_cyclic_causal_transfer.py",
-      "sha256": "0a0561617eabd8c36a4d35a7a48fc379dd99325e51d36324f96cfd65781ab9fd"
+      "sha256": "13674b1f235b0bd40d35ea311e3cb3190bd0d03a51b9f112b0de9cb8623789b4"
     },
     "producer": {
       "path": "d_quotient_classical/causal_transfer/abstract_cyclic_causal_transfer.py",
-      "sha256": "12349730599cd3d97c929ae23ccc491024abb6d589602092ce6c1f5dd7112f7a"
+      "sha256": "fd931c7e5374f7a6a4e878542730852571685267b325166b8f5527ad5f71c5b6"
     },
     "strict_schema": {
       "path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-v1.schema.json",
-      "sha256": "53eef366f04a2e95a868aaec9a34d118f0e647cd555e8bbc6066a8b7aa5ab98c"
+      "sha256": "be1cce02c39d8892cc95fec5cb71249d4e4df8aa94c036dd6411add83540cd33"
     },
     "tests": {
       "path": "d_quotient_classical/causal_transfer/tests/test_abstract_cyclic_causal_transfer.py",
-      "sha256": "5fdfc309e359c9e4bdc8d408335d0fc970787b2baba008442d1072c261a159fb"
+      "sha256": "c97ac44ff0fdb17ceabab08f6bc3ebfd37be268a400a32509a479255479a5ef1"
     }
   },
   "verification_commands": [
     "python3 -m d_quotient_classical.causal_transfer.abstract_cyclic_causal_transfer --check --guards",
     "python3 -m d_quotient_classical.causal_transfer.verify_abstract_cyclic_causal_transfer",
     "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_abstract_cyclic_causal_transfer",
-    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/abstract-cyclic-causal-transfer-v1.schema.json -d d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json"
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/abstract-cyclic-causal-transfer-v1.schema.json -d d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json -d d_quotient_classical/certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json"
   ]
 }
