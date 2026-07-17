@@ -1,0 +1,119 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC classical-input acceptance independently replays cyclic transposition of the complete 25,950-coefficient retained mixed ell3 over Q(sqrt(10)). It covers the separately certified 25,662 physical coefficients and all 288 ghost/antifield completion coefficients on retained output rows 23, 24, 25, 26, 32, 33 and 34. The suspended-Darboux rule combines the ordinary Koszul exchange sign with one polarization sign for each degree-two ghost-antifield slot; 120 completion coefficients carry the positive transpose sign and 168 carry the negative sign. Exact PBW integration by parts leaves zero coefficient or row defects. Omitting the degree-two polarization exposes 132 defects on all seven completion output rows. This closes full retained BV ell3 cyclicity only for the pinned classical tensor. It does not construct the residual branch basis or projector, restore a QME, construct Hadamard products, or make a quantum, Lorentzian, unitarity or particle-spectrum claim.",
+  "claim_flags": {
+    "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED": true,
+    "GHOST_ANTIFIELD_COMPLETION_CYCLICITY_INDEPENDENTLY_REPLAYED": true,
+    "PHYSICAL_QUARTIC_CYCLICITY_INDEPENDENTLY_REPLAYED": true,
+    "POLARIZATION_SIGN_MUTATION_REJECTED": true,
+    "QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RESIDUAL_BRANCH_PROJECTION_COMPUTED": false
+  },
+  "classical_commit": "e99d0c1d39490de5261fc6ca1dc2aeaa0d149655",
+  "cyclicity_scope": {
+    "checked": "all retained physical, ghost and antifield quartic coefficients",
+    "completion_coefficient_count": 288,
+    "degree_two_polarization": "epsilon_degree_two is one exactly on the retained degree-two ghost-antifield coordinates",
+    "formula": "transpose the first input by exact PBW adjunction with absolute typed-pairing component weights and the suspended-Darboux sign",
+    "transpose_sign": "(-1)^(parity(first)*parity(paired_output)+epsilon_degree_two(first)+epsilon_degree_two(paired_output))"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_replay": {
+    "backend": "independent-Q(sqrt(10))-PBW-full-BV-quartic-cyclicity-v1",
+    "classical_commit": "e99d0c1d39490de5261fc6ca1dc2aeaa0d149655",
+    "diagnostics": {
+      "full_BV_cyclicity_defect_count": 0,
+      "full_BV_cyclicity_defect_rows": 0,
+      "ghost_antifield_completion_coefficient_count": 288,
+      "ghost_antifield_completion_output_rows": [
+        23,
+        24,
+        25,
+        26,
+        32,
+        33,
+        34
+      ],
+      "ghost_antifield_negative_transpose_sign_count": 168,
+      "ghost_antifield_positive_transpose_sign_count": 120,
+      "omitted_degree_two_polarization_mutation_defect_count": 132,
+      "omitted_degree_two_polarization_mutation_defect_rows": 7,
+      "physical_pairing_weight_ledger": {
+        "Maxwell": {
+          "absolute_field_equation_weights": [
+            "2"
+          ],
+          "row_count": 4,
+          "signed_odd_pairing_entries": [
+            "2"
+          ]
+        },
+        "gravity": {
+          "absolute_field_equation_weights": [
+            "1"
+          ],
+          "row_count": 10,
+          "signed_odd_pairing_entries": [
+            "-1"
+          ]
+        }
+      },
+      "physical_quartic_coefficient_count": 25662,
+      "retained_ell3_coefficient_count": 25950
+    },
+    "elapsed_seconds": 8.162242,
+    "input_hashes": {
+      "legacy_layout_carrier": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4",
+      "retained_mixed_ell3_manifest": "c3dc93cbbfed36fbd800aba4bfee197d9b04fcb64420c03883fea5b1d360c948",
+      "typed_carrier": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88"
+    },
+    "verdict": "ACCEPTED_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_LOCAL_ALGEBRAIC"
+  },
+  "higher_tiers_not_run": {
+    "tier_3": "No classical source tensor, shared PBW engine, QME lifecycle state, Lorentzian analytic construction, theorem freeze, release boundary or quantum claim changed."
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT_ACCEPTANCE",
+  "next_gate": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1",
+  "provenance": {
+    "source_manifest": {
+      "quantum-weyl/reports/berger-retained-mixed-ell3-full-bv-cyclicity.md": "a68475ed82f93fa5bba626b06c2f8b7387cbd63753672ad6842ec92c1e8e7a37",
+      "quantum-weyl/transfer/berger_retained_mixed_ell3_ghost_antifield_cyclicity.py": "3d069c075f5c080346fb1d17b23e1c1d5cfa877da251e64be48b7fac41750780",
+      "quantum-weyl/transfer/berger_retained_mixed_ell3_ghost_antifield_cyclicity_certificate.py": "b585226f82f41106d969002a314924ad2a2d3b7c9c3103112fdaf77f6fb638fd",
+      "quantum-weyl/transfer/schema/berger-retained-mixed-ell3-full-bv-cyclicity-v1.schema.json": "d59697a9fb45e5e85841207827435e0f3bb8173c3ebcddc835469569450771a8",
+      "quantum-weyl/transfer/tests/test_berger_retained_mixed_ell3_ghost_antifield_cyclicity.py": "d0e35a379945b30398778c0a289a7a2ccd408b586bd8d96688fd3ff44b43543a",
+      "quantum-weyl/transfer/verify_berger_retained_mixed_ell3_ghost_antifield_cyclicity.py": "0b8eaa1a82a90ba8651bf0d6bdec9bd63f164ec694cba0ae813f0f1b7bec6844"
+    },
+    "source_manifest_sha256": "b95e54e867136a08d1a3c331d18a1074665142c44ca4561e74b0118510b755e6"
+  },
+  "result_id": "BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY",
+  "result_state": "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_ACCEPTED",
+  "schema": "quantum-weyl-berger-retained-mixed-ell3-full-bv-cyclicity-v1",
+  "verification_receipts": [
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_mixed_ell3_ghost_antifield_cyclicity_certificate --scientific",
+      "elapsed_seconds": 8.162242,
+      "status": "PASS",
+      "test_tier": 2
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_retained_mixed_ell3_ghost_antifield_cyclicity",
+      "elapsed_seconds": 0.6,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_retained_mixed_ell3_ghost_antifield_cyclicity.py -v",
+      "elapsed_seconds": 0.54,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-retained-mixed-ell3-full-bv-cyclicity-v1.schema.json -d quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY.json",
+      "elapsed_seconds": 1.12,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

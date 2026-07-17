@@ -93,9 +93,17 @@ coefficients with zero defects (7,506 gravity-output and 18,156
 Maxwell-output coefficients). The signed odd-pairing entries are -1 in gravity
 and +2 in Maxwell, while the physical field-equation transpose uses their
 absolute component weights 1 and 2. Changing the Maxwell pairing weight from
-two to one creates 17,108 defects on 14 rows. The remaining 288 coefficients are the
-ghost/antifield BV completion and have not yet received an independent cyclic
-transpose replay, so full retained BV cyclicity remains open.
+two to one creates 17,108 defects on 14 rows.
+
+The remaining 288 ghost/antifield coefficients have now received their own
+independent transpose replay. The suspended-Darboux rule combines ordinary
+Koszul exchange with one polarization sign for each degree-two
+ghost-antifield slot. It gives 120 positive and 168 negative transpose signs,
+with zero defects across the full 25,950 coefficients. Omitting the
+degree-two polarization term exposes 132 defects on all seven completion
+output rows. Full retained BV \(\ell_3\) cyclicity is therefore accepted for
+the pinned classical tensor; this is still `LOCAL-ALGEBRAIC`, not a QME or
+quantum result.
 
 This closes the classical retained arity-three import gate. The quantum-side
 receiving contract for the residual branch projection is ready and requires

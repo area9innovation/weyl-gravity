@@ -32,9 +32,12 @@ cyclicity is also independently replayed: all 25,662 physical coefficients
 reproduce under exact PBW transposition, while a Maxwell pairing-weight
 mutation creates 17,108 defects. The signed odd-pairing entries are -1 in
 gravity and +2 in Maxwell; the physical field-equation transpose uses their
-absolute component weights 1 and 2. The 288 ghost/antifield completion
-coefficients remain outside this replay, so full retained BV cyclicity is
-still open. Projection onto the
+absolute component weights 1 and 2. The remaining 288 ghost/antifield
+completion coefficients are now independently replayed as well. Their
+suspended-Darboux transpose uses 120 positive and 168 negative signs and has
+zero defects. Omitting the degree-two polarization sign exposes 132 defects
+on all seven completion rows. Full retained BV \(\ell_3\) cyclicity is therefore
+accepted for the pinned classical tensor. Projection onto the
 Einstein-like and extra-Weyl dynamical residual branches remains open, as does
 the separate action on the even/odd deformation-vertex basis. The topological
 odd direction is not treated as a third dynamical or particle branch.

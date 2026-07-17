@@ -36,6 +36,8 @@ def main() -> None:
         "retained_arity_three_identity_all_36_rows",
         "physical_quartic_cyclicity_independently_replayed",
         "pairing_weight_mutation_rejected",
+        "full_retained_BV_ell3_cyclicity_independently_replayed",
+        "degree_two_polarization_mutation_rejected",
         "coupled_K_Berger_cyclic_causal_Cartan_through_arity_three",
     }
     assert all(claims[name] is True for name in required_true)
@@ -44,7 +46,11 @@ def main() -> None:
     assert claims["physical_quartic_coefficient_count"] == 25_662
     assert claims["physical_quartic_cyclicity_defect_count"] == 0
     assert claims["pairing_weight_mutation_defect_count"] == 17_108
-    assert claims["unreplayed_ghost_antifield_coefficient_count"] == 288
+    assert claims["ghost_antifield_completion_coefficient_count"] == 288
+    assert claims["ghost_antifield_positive_transpose_sign_count"] == 120
+    assert claims["ghost_antifield_negative_transpose_sign_count"] == 168
+    assert claims["full_BV_cyclicity_defect_count"] == 0
+    assert claims["degree_two_polarization_mutation_defect_count"] == 132
     assert claims["gravity_output_two_Maxwell_input_count"] == 7_614
     assert claims["Maxwell_output_one_Maxwell_input_count"] == 18_336
 
@@ -62,6 +68,25 @@ def main() -> None:
         assert path.is_file(), relative
         assert _sha256(path) == expected, relative
 
+    full_BV = json.loads(
+        (
+            ROOT
+            / "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY.json"
+        ).read_text(encoding="utf-8")
+    )
+    full_diagnostics = full_BV["exact_replay"]["diagnostics"]
+    assert full_BV["claim_flags"][
+        "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED"
+    ] is True
+    assert full_diagnostics["ghost_antifield_completion_coefficient_count"] == 288
+    assert full_diagnostics["full_BV_cyclicity_defect_count"] == 0
+    assert (
+        full_diagnostics[
+            "omitted_degree_two_polarization_mutation_defect_count"
+        ]
+        == 132
+    )
+
     manuscript = ROOT / payload["manuscript"]
     assert _sha256(manuscript) == payload["manuscript_sha256"]
     text = manuscript.read_text(encoding="utf-8")
@@ -70,6 +95,7 @@ def main() -> None:
         r"\boxed{\text{The gravity--light interaction survives cyclic causal reduction through }\ell_3.}",
         r"\begin{theorem}[Gravity--light survival through $\ell_3$]",
         r"\begin{proposition}[Independent physical quartic cyclicity]",
+        r"\begin{proposition}[Independent full-BV quartic cyclicity]",
         r"\begin{theorem}[Cyclic causal Cartan compatibility]",
         r"25{,}950",
         r"25{,}662",
@@ -87,7 +113,6 @@ def main() -> None:
         "a Lorentzian quantum master equation is restored",
         "a positive-Hilbert-space theorem is proved",
         "arity four is certified",
-        "full retained BV cyclicity is independently replayed",
     ]
     for marker in forbidden_markers:
         assert marker not in text, marker

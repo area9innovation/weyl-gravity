@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-retained-mixed-ell3-full-bv-cyclicity-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_commit", "exact_replay", "cyclicity_scope", "claim_flags", "next_gate", "claim_boundary", "provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-mixed-ell3-full-bv-cyclicity-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY"},
+    "result_state": {"const": "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_ACCEPTED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT_ACCEPTANCE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_commit": {"const": "e99d0c1d39490de5261fc6ca1dc2aeaa0d149655"},
+    "exact_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["backend", "classical_commit", "input_hashes", "diagnostics", "verdict", "elapsed_seconds"],
+      "properties": {
+        "backend": {"const": "independent-Q(sqrt(10))-PBW-full-BV-quartic-cyclicity-v1"},
+        "classical_commit": {"const": "e99d0c1d39490de5261fc6ca1dc2aeaa0d149655"},
+        "input_hashes": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "diagnostics": {
+          "type": "object", "additionalProperties": false,
+          "required": ["retained_ell3_coefficient_count", "physical_quartic_coefficient_count", "ghost_antifield_completion_coefficient_count", "ghost_antifield_completion_output_rows", "ghost_antifield_positive_transpose_sign_count", "ghost_antifield_negative_transpose_sign_count", "full_BV_cyclicity_defect_count", "full_BV_cyclicity_defect_rows", "omitted_degree_two_polarization_mutation_defect_count", "omitted_degree_two_polarization_mutation_defect_rows", "physical_pairing_weight_ledger"],
+          "properties": {
+            "retained_ell3_coefficient_count": {"const": 25950},
+            "physical_quartic_coefficient_count": {"const": 25662},
+            "ghost_antifield_completion_coefficient_count": {"const": 288},
+            "ghost_antifield_completion_output_rows": {"const": [23, 24, 25, 26, 32, 33, 34]},
+            "ghost_antifield_positive_transpose_sign_count": {"const": 120},
+            "ghost_antifield_negative_transpose_sign_count": {"const": 168},
+            "full_BV_cyclicity_defect_count": {"const": 0},
+            "full_BV_cyclicity_defect_rows": {"const": 0},
+            "omitted_degree_two_polarization_mutation_defect_count": {"const": 132},
+            "omitted_degree_two_polarization_mutation_defect_rows": {"const": 7},
+            "physical_pairing_weight_ledger": {"const": {"gravity": {"signed_odd_pairing_entries": ["-1"], "absolute_field_equation_weights": ["1"], "row_count": 10}, "Maxwell": {"signed_odd_pairing_entries": ["2"], "absolute_field_equation_weights": ["2"], "row_count": 4}}}
+          }
+        },
+        "verdict": {"const": "ACCEPTED_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_LOCAL_ALGEBRAIC"},
+        "elapsed_seconds": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "cyclicity_scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["checked", "formula", "transpose_sign", "degree_two_polarization", "completion_coefficient_count"],
+      "properties": {
+        "checked": {"type": "string", "minLength": 40},
+        "formula": {"type": "string", "minLength": 80},
+        "transpose_sign": {"type": "string", "minLength": 80},
+        "degree_two_polarization": {"type": "string", "minLength": 70},
+        "completion_coefficient_count": {"const": 288}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["PHYSICAL_QUARTIC_CYCLICITY_INDEPENDENTLY_REPLAYED", "GHOST_ANTIFIELD_COMPLETION_CYCLICITY_INDEPENDENTLY_REPLAYED", "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED", "POLARIZATION_SIGN_MUTATION_REJECTED", "RESIDUAL_BRANCH_PROJECTION_COMPUTED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "PHYSICAL_QUARTIC_CYCLICITY_INDEPENDENTLY_REPLAYED": {"const": true},
+        "GHOST_ANTIFIELD_COMPLETION_CYCLICITY_INDEPENDENTLY_REPLAYED": {"const": true},
+        "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED": {"const": true},
+        "POLARIZATION_SIGN_MUTATION_REJECTED": {"const": true},
+        "RESIDUAL_BRANCH_PROJECTION_COMPUTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["test_tier", "command", "status", "elapsed_seconds"],
+        "properties": {
+          "test_tier": {"enum": [1, 2]},
+          "command": {"type": "string", "minLength": 80},
+          "status": {"const": "PASS"},
+          "elapsed_seconds": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    },
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_3"],
+      "properties": {"tier_3": {"type": "string", "minLength": 120}}
+    }
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

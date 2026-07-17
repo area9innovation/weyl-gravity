@@ -41,9 +41,10 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["MIXED_Q3_INDEPENDENTLY_ACCEPTED"])
         self.assertTrue(flags["RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED"])
         self.assertTrue(flags["RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED"])
+        self.assertTrue(flags["RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_ACCEPTED"])
         self.assertTrue(flags["RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY"])
         row = self.payload["active_rows"]["classical_interacting_input"]
-        self.assertIn("PHYSICAL_CYCLICITY_ACCEPTED", row["status"])
+        self.assertIn("FULL_BV_CYCLICITY_ACCEPTED", row["status"])
         self.assertIn("BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT", row["status"])
         self.assertEqual(
             row["next_gate"],

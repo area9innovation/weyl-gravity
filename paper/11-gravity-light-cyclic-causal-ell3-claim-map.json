@@ -9,7 +9,7 @@
   ],
   "headline": "The gravity-light interaction survives cyclic causal reduction through ell3.",
   "manuscript": "paper/11-gravity-light-cyclic-causal-ell3.tex",
-  "manuscript_sha256": "0b545925c8aee37f2615aa393a7106c706c4f76070e5307d1dafbcc0e899795a",
+  "manuscript_sha256": "6b22eb74e800dd4f0c7a0b6b07c254734610529a15f848f971d44118eb59299b",
   "paper_scope": {
     "background": "frozen positive rational Berger-clock gravity-clock-Maxwell fixture",
     "full_carrier_rows": 64,
@@ -37,14 +37,19 @@
     "physical_quartic_cyclicity_defect_count": 0,
     "pairing_weight_mutation_rejected": true,
     "pairing_weight_mutation_defect_count": 17108,
-    "unreplayed_ghost_antifield_coefficient_count": 288,
+    "ghost_antifield_completion_coefficient_count": 288,
+    "ghost_antifield_positive_transpose_sign_count": 120,
+    "ghost_antifield_negative_transpose_sign_count": 168,
+    "full_retained_BV_ell3_cyclicity_independently_replayed": true,
+    "full_BV_cyclicity_defect_count": 0,
+    "degree_two_polarization_mutation_rejected": true,
+    "degree_two_polarization_mutation_defect_count": 132,
     "coupled_K_Berger_cyclic_causal_Cartan_through_arity_three": true
   },
   "explicit_nonclaims": {
     "residual_branch_basis_input_available": false,
     "Einstein_like_extra_Weyl_mixing_table_computed": false,
     "topological_deformation_direction_classified": false,
-    "full_retained_BV_ell3_cyclicity_independently_replayed": false,
     "negative_kinetic_direction_inferred_from_ell3": false,
     "particle_scattering_amplitude_constructed": false,
     "Hadamard_state_constructed": false,
@@ -74,8 +79,9 @@
     "d_quotient_classical/certificates/PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF.json": "c4d89da3e3b68ae73b41eefc39132d124ae526cd3238b4c0a31636894a92b02a",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json": "2c4592665084dd47958aa2c63f10a7f54d3bd9ff8d52f661d1a2fa78da877027",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY.json": "4f9479466ddfcce957ba6b15f0c33f74b470d74e2424d0e04bc60dbacbd9a2e1",
+    "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY.json": "fc9b3581d2a3b849d5074e7526a8b8a3de6d849eeadc857387c28874bfc8b24e",
     "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json": "61137d21a6ca27accb31a25cc49a340f566a987f2601c98a4e399854fd8c0ca3",
-    "paper/verify_11_gravity_light_claim_map.py": "e91e7a92a412beec87fc06c0d9ed9d96d2e8704a0fa2ee109b753be86f5cf9b8"
+    "paper/verify_11_gravity_light_claim_map.py": "fe212fa24cc63ea6b7c18b584aad03d87c4ecf9d792b5a72f98a866744d4a8cd"
   },
   "verification_commands": [
     "python3 paper/verify_11_gravity_light_claim_map.py",
@@ -84,8 +90,8 @@
   "test_tier_receipt": {
     "tier_0": "JSON and Python parse, TeX compilation, scoped diff check and exact dependency hashes",
     "tier_1": "fail-closed independent claim-map verifier",
-    "tier_2": "not rerun because the manuscript imports unchanged content-addressed exact certificates and changes no mathematical input",
+    "tier_2": "full retained BV ell3 cyclicity replay rerun over all 25,950 exact coefficients with a 132-defect sign mutation",
     "tier_3": "not run because this is WRITING_STARTED, not a theorem freeze or lifecycle promotion"
   },
-  "claim_boundary": "This working draft assembles exact LOCAL-ALGEBRAIC retained ell2/ell3 transfer and physical quartic cyclicity with the separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan support theorem through arity three. It proves a nonzero retained gravity-light bracket on the 36-row carrier. It does not yet project onto Einstein-like, extra-Weyl and Maxwell dynamical branches; it keeps the topological odd deformation class outside the particle branch list. The 288 ghost/antifield coefficients lack an independent transpose replay. No Hadamard, renormalized-product, QME, particle, unitarity, all-orders or quantum theorem is promoted, and the paper remains WRITING_STARTED rather than THEOREM_FROZEN."
+  "claim_boundary": "This working draft assembles exact LOCAL-ALGEBRAIC retained ell2/ell3 transfer and full retained BV quartic cyclicity with the separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan support theorem through arity three. It proves a nonzero retained gravity-light bracket on the 36-row carrier and independently replays all 25,950 cyclic coefficients, including the 288-term ghost/antifield completion. It does not yet project onto Einstein-like, extra-Weyl and Maxwell dynamical branches; it keeps the topological odd deformation class outside the particle branch list. No Hadamard, renormalized-product, QME, particle, unitarity, all-orders or quantum theorem is promoted, and the paper remains WRITING_STARTED rather than THEOREM_FROZEN."
 }

@@ -56,6 +56,9 @@ arity-three $L_\infty$ rows close.  Lowering $\ell_3$ with the retained typed
 pairing independently reproduces all $25{,}662$ physical quartic
 coefficients with zero cyclicity defects; changing the Maxwell pairing weight
 from two to one produces $17{,}108$ exact defects on $14$ rows.
+The remaining $288$ ghost/antifield coefficients also replay exactly under
+the suspended-Darboux transpose, closing cyclicity of the full retained BV
+tensor.
 
 Together with the cyclic causal Cartan contraction for the
 background-fixing helical generator $K_{\rm Berger}$, these calculations
@@ -68,9 +71,9 @@ The statement is classical and carries separate \textsc{local-algebraic}
 and \textsc{lorentzian-causal} dependencies.  The causal claim concerns the
 unary Green contractions and the two-sided-causal-hull Cartan primitives;
 the Taylor operations themselves are support-local.  The retained complex is
-not yet the Einstein-like/extra-Weyl residual model.  Its mixing table, the
-$288$-coefficient ghost/antifield cyclicity replay, Hadamard products, QME
-restoration, and every quantum or particle interpretation remain open.
+not yet the Einstein-like/extra-Weyl residual model.  Its mixing table,
+Hadamard products, QME restoration, and every quantum or particle
+interpretation remain open.
 \end{abstract}
 
 \section*{AI-use disclosure and computational accountability}
@@ -318,11 +321,33 @@ The remaining
 \begin{equation}
  25{,}950-25{,}662=288
 \end{equation}
-coefficients are the ghost/antifield completion.  Their cyclicity is part of
-the classical typed-transfer theorem but has not yet received the same
-independent transpose replay.  Proposition~\ref{prop:cyclicity} is therefore
-a complete physical-quartic statement and explicitly not an independently
-replayed full-BV cyclicity theorem.
+coefficients are the ghost/antifield completion.  Their retained output rows
+are
+\[
+ 23,\ 24,\ 25,\ 26,\ 32,\ 33,\ 34.
+\]
+If $x$ is the transposed first input and $u$ is
+the coordinate paired with the output, the suspended-Darboux sign is
+\begin{equation}
+ (-1)^{|x||u|+\epsilon_2(x)+\epsilon_2(u)},
+ \qquad
+ \epsilon_2(v)=\begin{cases}1,&\deg v=2,\\0,&\text{otherwise.}\end{cases}
+\end{equation}
+Here the degree-two rows are precisely the retained ghost-antifield
+coordinates.
+
+\begin{proposition}[Independent full-BV quartic cyclicity]
+\label{prop:full-bv-cyclicity}
+The complete $25{,}950$-coefficient lowered retained $\ell_3$ satisfies exact
+cyclic transposition.  Within the $288$-coefficient completion, $120$
+coefficients carry the positive transpose sign and $168$ carry the negative
+sign.  The exact defect count is zero.  Omitting the degree-two polarization
+term exposes $132$ defects on all seven completion output rows.
+\end{proposition}
+
+This proposition is a full-BV statement about the pinned classical retained
+tensor.  It does not imply full BV local cohomology, a quantum master equation,
+or a Lorentzian quantum theory.
 
 \section{Causal compatibility through ternary order}\label{sec:causal}
 
@@ -464,6 +489,8 @@ Artifact & Role\\
  & exact independent $64\to36$ transfer and mutation witnesses\\
 \cert{BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY}
  & independent physical quartic cyclicity and pairing-weight mutation\\
+\cert{BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY}
+ & independent ghost/antifield completion and full retained BV cyclicity\\
 \cert{BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS}
  & fail-closed input contract for the mixing table\\
 \bottomrule
@@ -486,6 +513,10 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.berger_retained_mixed_ell3_physical_cyclicity_certificate --check
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_berger_retained_mixed_ell3_physical_cyclicity
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.berger_retained_mixed_ell3_ghost_antifield_cyclicity_certificate --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_berger_retained_mixed_ell3_ghost_antifield_cyclicity
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_berger_residual_ell3_branch_projection_readiness
 \end{verbatim}
