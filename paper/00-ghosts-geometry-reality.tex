@@ -42,7 +42,7 @@ The phrase ``higher-derivative ghost problem'' combines three different
 questions: which real-form completions exist for the local free dynamics,
 which classes survive local and residual gauge reduction, and whether a
 chosen completion persists under interaction.  This introduction organizes
-an eight-paper programme around those three levels.  Papers~I--III classify
+a nine-paper programme around those three levels.  Papers~I--III classify
 the Pais--Uhlenbeck and scalar-field completions, distinguish positive
 metrics from Krein real forms and vacuum covariance, and explain the Jordan
 limit.  Paper~IV adds local gauge reduction and Lorentz covariance in
@@ -80,7 +80,16 @@ The combined result is free and formal near the conformal cylinder: its
 field-side theorem is classical, while its state-side theorem uses a
 selected completed positive-frequency representation.  It is not a positive
 graviton Hilbert-space theorem, a Hadamard construction, a nonlinear
-stability theorem, or a renormalized quantum-master-equation result.  The programme therefore
+stability theorem, or a renormalized quantum-master-equation result.
+
+Paper~IX tests a distinct clock question inside the gauge-reduction level.
+On an exact positive-energy Berger universe, a rotating standard-sign scalar
+phase has nonzero momentum while the fixed-coupling compact constraint makes
+the total helical generator presymplectically null.  A complete $54$-row
+causal BV construction and action-derived $q_2,q_3$ extend that conclusion to
+a cyclic causal Cartan contraction through arity three.  This is a scoped
+classical Taylor theorem, not an all-orders, boundary, Hadamard, or quantum
+result.  The programme therefore
 replaces a single ghost verdict by a typed architecture: local completion,
 residual reduction, covariant causal transport, and interaction stability
 are related, but none substitutes for the others.
@@ -159,13 +168,14 @@ neither the residual gauge problem nor the interacting ghost problem.
 Residual reduction can remove locally propagating oscillator classes
 without changing their local equations, while interactions test whether a
 chosen free completion survives energy exchange.  The research programme
-therefore has two branches after the free gravity classification:
-Papers~V--VI study interaction stability, whereas Papers~VII--VIII study
-the state-side and covariant-side residual problems at the pure-Weyl
-boundary.
+therefore has three branches after the free gravity classification:
+Papers~V--VI study interaction stability, Papers~VII--VIII study the
+state-side and covariant-side residual problems at the pure-Weyl boundary,
+and Paper~IX tests a relational-clock realization of the $D$ quotient on a
+non-conformally-flat compact background.
 
 \paragraph{Series map.}
-The eight technical papers have distinct jobs.
+The nine technical papers have distinct jobs.
 \begin{enumerate}
 \item Paper~I reconstructs and classifies the positive free
 Pais--Uhlenbeck quantization.
@@ -182,14 +192,19 @@ resonant scalar obstructions.
 pure-Weyl boundary.
 \item Paper~VIII constructs the covariant causal bridge to Paper~VII's
 already computed residual result.
+\item Paper~IX constructs a healthy Berger phase clock and proves that total
+$D$ remains gauge linearly and causally null-homotopic through arity three on
+the declared fixed-coupling classical sector.
 \end{enumerate}
 Thus Papers~I--IV form the local free spine, Papers~V--VI the interaction
-branch, and Papers~VII--VIII the state/covariant residual branch.  Paper~VIII
-does not perform another Chevalley--Eilenberg calculation.
+branch, Papers~VII--VIII the state/covariant residual branch, and Paper~IX a
+relational-clock validation branch.  Paper~VIII does not perform another
+Chevalley--Eilenberg calculation, and Paper~IX does not recompute the residual
+$H^4$ group.
 
-A cross-programme $D$-quotient validation dossier now records the scope of
-this last branch.  Paper~IX is reserved for a possible classical theorem on
-Taub reduction, relational clocks, and boundary dependence.  The first
+A cross-programme $D$-quotient validation dossier records the scope of
+this last branch.  Paper~IX is the resulting classical theorem on
+Taub reduction, relational clocks, and interaction-order dependence.  The first
 scalar-clock gate is a certified no-go: for one real conformally coupled
 scalar the invariant homogeneous mode is a branch-local oscillator clock,
 but its positive improved stress is incompatible with the Bach-flat vacuum
@@ -223,13 +238,13 @@ declared smooth fixed-coupling linearized Berger phase space.  The phase is a
 genuine rotating clock coordinate whose nonzero momentum is fixed by the
 compact constraint, rather than a cost-free scalar label or a freely variable
 residual charge.  The minimal temporal/Weyl clock doublets and their BV-dual
-rows now contract by an exact support-local cyclic SDR, but this is not yet
-the retained all-row BV reduction or nonlinear
-stability theorem. Together
-these scoped results supply the scalar-clock
-half of the Paper~IX gate.  The paper is not part of the present eight-paper
-theorem sequence until at least one complete boundary or interaction theorem
-has also been certified.
+rows extend to a complete cyclic $54$-row gauge-fixed complex with advanced
+and retarded chain contractions.  Action differentiation supplies
+arbitrary-input four-dimensional $q_2$ and $q_3$, and the local $D$ derivation
+admits cyclic causal Cartan primitives through arity three.  These results
+close the classical interaction half of the Paper~IX gate.  They do not prove
+an all-orders nonlinear quotient, a boundary theorem, Hadamard data, or a
+quantum master equation.
 
 \keybox{Fourth-order theories can admit several inequivalent real-form
 completions of one complex spectral dynamics.  Local free geometry
@@ -276,9 +291,10 @@ IV & Covariant local free gravity classification & Linearized Einstein--Weyl the
 V--VI & Interaction deformation and obstruction & Stated perturbative orders and channels\\
 VII & Absolute residual $H^4$ and Krein pairing & Selected algebraic/energy-mode polarization\\
 VIII & Covariant causal BV--BFV transport & Free classical Lorentzian cylinder complex\\
+IX & Relational Berger clock and causal $D$-Cartan contraction & Fixed-coupling compact classical sector through arity three\\
 \bottomrule
 \end{tabular}
-\caption{Eight-paper programme grouped by mathematical role.}
+\caption{Nine-paper programme grouped by mathematical role.}
 \label{tab:programme-status}
 \end{table}
 
@@ -1588,24 +1604,31 @@ cohomology.
 \node[pap, fill=green!9, below=9mm of p7] (p8)
   {\textbf{Paper VIII}\\covariant causal transport\\
    $H^4_{\rm cov}\cong H^4_{\rm res}$};
+\node[pap, fill=purple!9, below=47mm of p4] (p9)
+  {\textbf{Paper IX}\\positive Berger clock\\
+   causal $D$-Cartan through arity three};
 \draw[arr] (p123) -- (p4);
 \draw[arr] (p4) -- (p5);
 \draw[arr] (p5) -- (p6);
 \draw[arr] (p4) -- (p7);
 \draw[arr] (p7) -- (p8);
+\draw[arr] (p4) -- (p9);
 \end{tikzpicture}
-\caption{Dependency structure of the eight technical papers.  The
-interaction branch and residual branch share the free gravity spine but
-answer different questions.  Within the residual branch, Paper~VII computes
-the state-side group and Paper~VIII proves covariant transport to it.}
+\caption{Dependency structure of the nine technical papers.  The interaction,
+residual and relational-clock branches share the free gravity spine but
+answer different questions.  Paper~VII computes the state-side group,
+Paper~VIII proves its covariant transport, and Paper~IX tests the $D$ quotient
+with a healthy clock and the first interaction tensors.}
 \label{fig:dependency}
 \end{figure}
 
-\keybox{The programme has one local free spine and two branches.
+\keybox{The programme has one local free spine and three branches.
 Interactions test whether a free completion survives physical conversion.
 Residual reduction determines the selected state cohomology, and covariant
 causal transport proves that the metric BV complex computes that same
-cohomology and pairing.}
+cohomology and pairing.  The relational-clock branch tests whether total
+time translation remains gauge after a physical clock and low-order
+interactions are added.}
 \section{What remains open}\label{sec:open}
 
 Paper~VIII closes the free classical covariant causal bridge in the selected
@@ -1620,9 +1643,8 @@ BRST-compatible microlocal state and renormalized time-ordered products;
 \item integration of the infinitesimal $\mathfrak{so}(4,2)$ action to an
 $SO(4,2)$ representation;
 \item alternative boundary, clock, relative, and deparametrized polarizations, in
-which $D$ or other generators may remain charges, together with the covariant
-retained-operator, nonminimal, causal, and stability audit of the positive Berger-clock
-background;
+which $D$ or other generators may remain charges, together with higher-arity
+and boundary stability of the positive Berger-clock contraction;
 \item nonlinear BV--BFV transfer and the higher Taub/Kuranishi maps near
 the conformal cylinder;
 \item interaction descent for the two surviving deformation classes;
@@ -1683,24 +1705,33 @@ using Paper~VII's CE theorem as an input rather than recomputing it.  The two
 surviving classes are deformation or vertex classes, not positive-norm
 one-particle gravitons.
 
+Paper~IX then tests the compact $D$ quotient in a setting with an actual
+healthy matter clock.  The exact Berger background has nonzero clock
+momentum, while the fixed-coupling lapse constraint makes its variation
+vanish on every smooth linearized tangent.  The complete causal $54$-row BV
+complex and action-derived $q_2,q_3$ extend the corresponding Cartan
+contraction through arity three.  This is a scoped classical theorem, not an
+all-orders nonlinear or quantum result.
+
 The resulting position is neither that higher-derivative ghosts are
 automatically harmless nor that they automatically invalidate a theory.
 The correct question must name the complex dynamics, real form, observable
 algebra, local and residual quotient, completion, causal realization, and
 interaction class being considered.
 
-\keybox{The eight-paper programme classifies the local free completions,
+\keybox{The nine-paper programme classifies the local free completions,
 tests their interacting stability, computes the selected pure-Weyl residual
-cohomology, and proves its covariant causal realization.  Its remaining
-frontier is nonlinear and quantum: alternative boundary problems, Hadamard
-state selection, the renormalized quantum master equation, anomalies, and
-unitarity.}
+cohomology, proves its covariant causal realization, and tests a healthy
+relational clock through arity three.  Its remaining frontier is higher-order,
+boundary, distributional, and quantum: alternative boundary problems,
+Hadamard state selection, the renormalized quantum master equation,
+anomalies, and unitarity.}
 
 \paragraph{Verification.}
 The finite-dimensional, variational, symplectic, causal, and modewise
 identities quoted here are tied to the verification repositories of
-Papers~I--VIII
-\cite{paperI,paperII,paperIII,paperIV,paperV,paperVI,paperVII,paperVIII}.
+Papers~I--IX
+\cite{paperI,paperII,paperIII,paperIV,paperV,paperVI,paperVII,paperVIII,paperIX}.
 Each technical paper states the category and claim boundary of its
 certificates; a certificate from one level is not evidence for a stronger
 level.
@@ -1878,6 +1909,10 @@ companion paper (Paper~VII), 2026.
 \bibitem{paperVIII}
 \emph{Causal curvature prolongation and covariant BV--BFV transport for
 free pure-Weyl gravity}, companion paper (Paper~VIII), 2026.
+
+\bibitem{paperIX}
+\emph{Relational clocks and causal Cartan contraction through arity three in
+pure-Weyl gravity on a Berger universe}, companion paper (Paper~IX), 2026.
 
 \bibitem{Folland}
 G.~B.~Folland,

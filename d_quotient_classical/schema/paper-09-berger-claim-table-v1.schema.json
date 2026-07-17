@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-paper-09-berger-claim-table-v1.json",
+  "title": "Paper IX Berger claim-to-certificate table",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "paper_state", "theorem_frozen", "paper_sources",
+    "setting", "claims", "claim_ids_complete", "required_signoffs",
+    "forbidden_promotions", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-paper-09-berger-claim-table-v1"},
+    "result_id": {"const": "PAPER_09_BERGER_CLAIM_TABLE"},
+    "paper_state": {"const": "WRITING_STARTED"},
+    "theorem_frozen": {"const": false},
+    "paper_sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "paper/09-relational-clocks-berger-d-cartan.tex",
+        "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex"
+      ],
+      "properties": {
+        "paper/09-relational-clocks-berger-d-cartan.tex": {
+          "$ref": "#/$defs/sha256"
+        },
+        "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "setting": {"type": "string", "minLength": 1},
+    "claims": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/claim"}
+    },
+    "claim_ids_complete": {
+      "const": [
+        "P09-C1", "P09-C2", "P09-C3", "P09-C4", "P09-C5",
+        "P09-C6", "P09-C7", "P09-C8", "P09-C9", "P09-C10"
+      ]
+    },
+    "required_signoffs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_team", "nonlinear_team", "quantum_team", "einstein_team"],
+      "properties": {
+        "classical_team": {"const": "DRAFTED"},
+        "nonlinear_team": {"const": "PENDING_ARITY_THREE_INTERPRETATION_REVIEW"},
+        "quantum_team": {"const": "PENDING_CLAIM_BOUNDARY_REVIEW"},
+        "einstein_team": {"const": "OPTIONAL_INTERNAL_REFEREE"}
+      }
+    },
+    "forbidden_promotions": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"const": "PAPER_09_NONLINEAR_SIGNOFF_AND_CLEAN_TREE_REPLAY"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id", "paper_sections", "claim", "certificate", "required_true",
+        "required_false", "certificate_path", "certificate_result_id",
+        "certificate_sha256", "certificate_claim_boundary"
+      ],
+      "properties": {
+        "claim_id": {"type": "string", "pattern": "^P09-C([1-9]|10)$"},
+        "paper_sections": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "claim": {"type": "string", "minLength": 1},
+        "certificate": {"type": "string", "pattern": "^[A-Z0-9_]+\\.json$"},
+        "required_true": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "required_false": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "certificate_path": {"type": "string", "minLength": 1},
+        "certificate_result_id": {"type": "string", "minLength": 1},
+        "certificate_sha256": {"$ref": "#/$defs/sha256"},
+        "certificate_claim_boundary": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

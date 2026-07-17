@@ -1,0 +1,214 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\title{Computational supplement for\\
+Relational clocks and causal Cartan contraction through arity three}
+\author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
+programme, mathematical direction, derivations, machine verification,
+referee analyses, and manuscript.  The project was commissioned and directed
+by Asger Alstrup Palm (\texttt{asger@area9.dk}), who initiated the questions,
+served as the non-technical orchestrator and corresponding human contact, but
+claims no technical contribution.}}
+\date{Working draft, July 2026}
+
+\begin{document}
+\raggedbottom
+\maketitle
+
+\begin{abstract}
+This supplement records the claim-to-certificate map, sparse-operation
+inventory, replay commands and release gates for
+\path{09-relational-clocks-berger-d-cartan.tex}.  It separates mathematical
+arguments from machine receipts and keeps the paper fail-closed: a certificate
+supports only the claim inside its declared phase space and boundary.  The
+working draft is not yet marked \texttt{THEOREM\_FROZEN}.
+\end{abstract}
+
+\section{Focused claim ledger}
+
+The authoritative machine-readable ledger is
+\path{../d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json}.
+The table below is its human-readable projection.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{0.09\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}
+  >{\raggedright\arraybackslash}X}
+\toprule
+Claim & Mathematical content & Authoritative certificate \\
+\midrule
+\texttt{P09-C1} & Exact smooth non-conformally-flat Berger clock family &
+\path{POSITIVE_BERGER_CLOCK_BACKGROUND.json} \\
+\texttt{P09-C2} & Standard-sign target, timelike phase, positive quartic and
+energy inequalities & \path{POSITIVE_BERGER_CLOCK_BACKGROUND.json} \\
+\texttt{P09-C3} & Internal current, nonzero $Q_R$ and
+$\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R$ &
+\path{BERGER_CLOCK_REDUCED_CHARGE_SEED.json} \\
+\texttt{P09-C4} & Fixed-coupling lapse constraint, compact averaging and
+$\delta Q_R=0$ on every smooth allowed tangent &
+\path{BERGER_FIXED_COUPLING_DELTA_CHARGE.json} \\
+\texttt{P09-C5} & Complete cyclic gauge-fixed $54$-row unary complex and
+support-local $54\to26$ contraction &
+\path{BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json} \\
+\texttt{P09-C6} & Advanced/retarded all-row chain contractions, support,
+adjointness and $D$-equivariance &
+\path{BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json} \\
+\texttt{P09-C7} & Complete arbitrary-input support-local $q_2$, cyclicity,
+$L_\infty$ identity and $D$ derivation &
+\path{BERGER_SUPPORT_LOCAL_Q2.json} \\
+\texttt{P09-C8} & Complete arbitrary-input support-local $q_3$, quartic
+cyclicity, arity-three identity and $L_D^{(3)}=0$ &
+\path{BERGER_SUPPORT_LOCAL_Q3.json} \\
+\texttt{P09-C9} & Cyclic causal Cartan contraction through arity two &
+\path{BERGER_CAUSAL_D_CARTAN_V2.json} \\
+\texttt{P09-C10} & Closed arity-three source and cyclic $C_4$ causal
+primitive on all $54$ rows &
+\path{BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+All paths in the JSON ledger are relative to
+\path{d_quotient_classical/certificates/} and are pinned by SHA-256.  The
+verifier rejects missing files, digest drift, a false required flag, a true
+forbidden downstream flag, or a manuscript claim identifier absent from both
+paper sources.
+
+\section{Exact operation inventory}
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+Operation & Rows & Nonzero rows & Sparse PBW terms & Maximum jet order \\
+\midrule
+$q_2$ & 54 & 39 & 150,305 & 6 \\
+$q_3$ & 54 & 12 & 5,812,130 & 8 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Both operations use exact coefficients in $\mathbb Q(\sqrt{10})$ at the
+rational Berger fixture.  The $q_3$ portable representation is a strict-JSON
+manifest plus $54$ deterministic gzip-compressed strict-JSON row chunks.
+Compression is storage only; the operation acts on arbitrary four-dimensional
+jets and is not a reduced-mode artifact.
+
+The recorded $q_3$ Tier-2 stages are:
+\begin{enumerate}
+\item action differentiation on the raw minimal complex;
+\item canonical clock and gauge-fermion transport to all $54$ rows;
+\item row-bounded exact replay of graded symmetry, $Q^2$, quartic cyclicity
+and $D$ derivation;
+\item portable row-chunk finalization;
+\item independent schema, hash, PBW and adjacent-Koszul audit.
+\end{enumerate}
+The independent consumer audits the frozen operation but does not independently
+rederive the Bach--clock expansion from the action.  The paper states this
+distinction explicitly.
+
+\section{Cartan sign and support audit}
+
+At arity three, the source
+\[
+ A_D^{(3)}=[q_3,\iota_D^{(1)}]+[q_2,\iota_D^{(2)}]-L_D^{(3)}
+\]
+has two normalized closure channels.  Their exact coefficients are
+\[
+ -\frac12+\frac12=0,
+ \qquad [q_3,D]=0.
+\]
+The first equality is graded Jacobi; the second is the imported local
+$D$-derivation identity with $L_D^{(3)}=0$.
+
+For cyclicization, the operator output is first paired with the degree-one odd
+Darboux form.  The resulting four-linear tensor uses the Koszul rotation
+\[
+ (-1)^{|x_0|(|x_1|+|x_2|+|x_3|)}.
+\]
+The actual degree multiplicities are
+\[
+ 5z^{-1}+22+22z+5z^2.
+\]
+The coefficient of $z^0$ in its fourth power is $978{,}736$.  Exhaustion over
+these actual degree classes gives zero $C_4$ group-law defects.  Exact group
+algebra arithmetic verifies
+\[
+ \left(\frac{1+\tau+\tau^2+\tau^3}{4}\right)^2
+ =\frac{1+\tau+\tau^2+\tau^3}{4}.
+\]
+
+The support claim is
+\[
+ \operatorname{supp}\iota_{D,\mathrm{cyc}}^{(3)}(f,g,h)
+ \subseteq J(\operatorname{supp}f\cup\operatorname{supp}g
+ \cup\operatorname{supp}h).
+\]
+The certificate deliberately rejects the stronger statement that this cyclic
+primitive is separately retarded or advanced.
+
+\section{Fast replay and frozen heavy tier}
+
+From the repository root for this programme, the focused fast checks are:
+\begin{verbatim}
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_causal_d_cartan_arity_three.py
+
+PYTHONPATH=. pytest -q \
+  d_quotient_classical/backreacted_clock/tests/\
+  test_berger_causal_d_cartan_arity_three.py \
+  d_quotient_classical/backreacted_clock/tests/\
+  test_paper_09_claim_table.py
+\end{verbatim}
+
+The complete $q_3$ derivation is not part of this fast rail.  Its recorded
+Tier-2 receipt is
+\path{../d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3_TIER2_RECEIPT.json}.
+Recompute that tier only when the action, convention, canonical maps, PBW
+engine or payload changes; otherwise verify and import its content-addressed
+output.
+
+\section{Fail-closed boundaries}
+
+The main theorem depends on the conjunction of the ten claims above.  It does
+not promote any of the following:
+\begin{itemize}
+\item all-orders nonlinear $D$-Cartan contraction;
+\item arity-four closure;
+\item a general-background nonlinear Koszul--Tate export;
+\item Hadamard or Feynman two-point functions;
+\item renormalized composites, anomaly cancellation or the quantum master
+equation;
+\item a positive graviton Hilbert space or interacting unitarity;
+\item a boundary, asymptotic, black-hole or scattering charge theorem.
+\end{itemize}
+The positive matter clock and the vanishing compact-universe tangent charge
+must not be transported to those settings without a new phase-space and
+boundary calculation.
+
+\section{Draft-to-freeze checklist}
+
+This draft may be promoted to \texttt{THEOREM\_FROZEN} only when:
+\begin{enumerate}
+\item every pinned certificate and independent verifier passes from a clean
+committed tree;
+\item the JSON claim ledger, this table and the manuscript theorem have no
+missing or broadened dependency;
+\item the nonlinear team independently imports the frozen $q_2$, $q_3$ and
+arity-three Cartan hashes and signs off Sections 6--7;
+\item the abstract, theorem and conclusion retain the classical,
+fixed-coupling, compact-Berger and arity-three limitations;
+\item the compiled main paper and supplement are reproduced from a clean
+checkout.
+\end{enumerate}
+
+The current state is \texttt{WRITING\_STARTED}; it is intentionally not
+\texttt{THEOREM\_FROZEN}.
+
+\end{document}

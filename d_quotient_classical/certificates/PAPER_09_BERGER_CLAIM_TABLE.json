@@ -1,0 +1,247 @@
+{
+  "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates. It does not freeze the theorem or promote any quantum, all-orders, Hadamard, boundary, scattering, or unitarity claim.",
+  "claim_ids_complete": [
+    "P09-C1",
+    "P09-C2",
+    "P09-C3",
+    "P09-C4",
+    "P09-C5",
+    "P09-C6",
+    "P09-C7",
+    "P09-C8",
+    "P09-C9",
+    "P09-C10"
+  ],
+  "claims": [
+    {
+      "certificate": "POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "certificate_claim_boundary": "This certificate proves an exact open family of smooth non-conformally-flat Bach-sourced backgrounds with a positive-energy rotating conformal-scalar phase clock and a positive quartic potential. It does not yet prove that D is gauge on the full perturbative covariant phase space; that requires the separate charge and all-row BV audit.",
+      "certificate_path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "certificate_result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "certificate_sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "claim": "An exact smooth non-conformally-flat positive Berger clock family exists.",
+      "claim_id": "P09-C1",
+      "paper_sections": [
+        "2"
+      ],
+      "required_false": [],
+      "required_true": [
+        "flags.exact_backreacted_background_exists"
+      ]
+    },
+    {
+      "certificate": "POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "certificate_claim_boundary": "This certificate proves an exact open family of smooth non-conformally-flat Bach-sourced backgrounds with a positive-energy rotating conformal-scalar phase clock and a positive quartic potential. It does not yet prove that D is gauge on the full perturbative covariant phase space; that requires the separate charge and all-row BV audit.",
+      "certificate_path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
+      "certificate_result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND",
+      "certificate_sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687",
+      "claim": "The clock has standard-sign matter, timelike phase and positive bounded-below quartic potential.",
+      "claim_id": "P09-C2",
+      "paper_sections": [
+        "2"
+      ],
+      "required_false": [
+        "flags.quantum_admissibility_proved"
+      ],
+      "required_true": [
+        "flags.positive_standard_scalar_kinetic",
+        "flags.everywhere_timelike_phase_clock",
+        "flags.bounded_below_quartic"
+      ]
+    },
+    {
+      "certificate": "BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "certificate_claim_boundary": "The certificate derives the covariant internal current, fixes the SU(2) volume, proves the nonzero clock momentum, audits the fixed-coupling stationary family, and derives Omega_total(delta,L_D)=omega delta Q_R on the Berger background. It does not establish whether an allowed fixed-coupling linearized tangent has delta Q_R nonzero, so it assigns no total D verdict.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "certificate_result_id": "BERGER_CLOCK_REDUCED_CHARGE_SEED",
+      "certificate_sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9",
+      "claim": "The internal clock charge is nonzero and Omega_total(delta,L_D)=omega delta Q_R.",
+      "claim_id": "P09-C3",
+      "paper_sections": [
+        "3"
+      ],
+      "required_false": [
+        "flags.total_covariant_D_charge_computed"
+      ],
+      "required_true": [
+        "flags.covariant_internal_current_derived",
+        "flags.global_internal_charge_computed",
+        "flags.helical_presymplectic_identity_derived"
+      ]
+    },
+    {
+      "certificate": "BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+      "certificate_claim_boundary": "At fixed alpha_B and lambda, the exact lapse constraint and compact spatial averaging prove delta Q_R=0 for every smooth linearized solution about the positive Berger clock background. Together with the certified helical current identity this gives D_GAUGE on that declared linearized phase space. The theorem does not supply the all-row BV retract, causal propagation, nonlinear stability, or any boundary or quantum result.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+      "certificate_result_id": "BERGER_FIXED_COUPLING_DELTA_CHARGE",
+      "certificate_sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786",
+      "claim": "At fixed couplings delta Q_R vanishes on every smooth allowed linearized tangent, so D is gauge in the declared compact phase space.",
+      "claim_id": "P09-C4",
+      "paper_sections": [
+        "3"
+      ],
+      "required_false": [
+        "flags.nonlinear_stability_proved"
+      ],
+      "required_true": [
+        "flags.homogeneous_lapse_constraint_exact",
+        "flags.full_mode_average_argument_exact",
+        "flags.total_helical_presymplectic_contraction_zero",
+        "flags.scoped_D_verdict_promoted"
+      ]
+    },
+    {
+      "certificate": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "certificate_claim_boundary": "This certificate applies the selected local gauge fermion as an exact BV-canonical shear and exports the complete gauge-fixed 54-row classical unary differential, cyclic pairing, and support-local contraction. It does not construct classical ell_2, the local D action or equivariance, a general nonlinear Koszul-Tate differential, causal Green operators, Hadamard data, or any quantum correction.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "certificate_result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "certificate_sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0",
+      "claim": "The complete 54-row gauge-fixed unary BV complex has a cyclic support-local contraction onto 26 retained rows.",
+      "claim_id": "P09-C5",
+      "paper_sections": [
+        "5"
+      ],
+      "required_false": [
+        "flags.BERGER_HADAMARD_DATA"
+      ],
+      "required_true": [
+        "flags.BERGER_COMPLETE_GAUGE_FIXED_UNARY_EXPORT",
+        "flags.BERGER_GAUGE_FERMION_CANONICAL_TRANSFORM",
+        "flags.BERGER_NONMINIMAL_COMPLETION"
+      ]
+    },
+    {
+      "certificate": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "certificate_claim_boundary": "This theorem constructs D-equivariant advanced and retarded chain contractions on every row of the complete 54-row gauge-fixed classical Berger BV complex. It does not construct Hadamard two-point functions, the cyclic arity-two D-Cartan contraction, renormalized composites, a QME solution, or a quantum theorem.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "certificate_result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "certificate_sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
+      "claim": "The complete 54-row complex has D-equivariant advanced and retarded chain contractions with causal support and adjointness.",
+      "claim_id": "P09-C6",
+      "paper_sections": [
+        "5"
+      ],
+      "required_false": [
+        "flags.BERGER_HADAMARD_DATA"
+      ],
+      "required_true": [
+        "flags.BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+        "flags.BERGER_CAUSAL_GREEN_HOMOTOPY_V2",
+        "exact_checks.advanced_chain_homotopy_identity",
+        "exact_checks.retarded_chain_homotopy_identity",
+        "exact_checks.D_equivariance",
+        "exact_checks.cyclic_advanced_retarded_adjointness"
+      ]
+    },
+    {
+      "certificate": "BERGER_SUPPORT_LOCAL_Q2.json",
+      "certificate_claim_boundary": "This theorem exports the complete arbitrary-input four-dimensional classical q2 on the frozen 54-row gauge-fixed Berger BV complex, including ghost, field, antifield and nonminimal canonical-transform rows. It proves the arity-two L-infinity identity, Koszul symmetry, cyclicity, and local D derivation exactly. It does not prove the nonlinear D-Cartan contraction, causal Green/Hadamard data, or a background-independent general antifield package.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
+      "certificate_result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "certificate_sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874",
+      "claim": "The complete arbitrary-input support-local q2 satisfies the arity-two L-infinity identity, cyclicity and D derivation.",
+      "claim_id": "P09-C7",
+      "paper_sections": [
+        "6"
+      ],
+      "required_false": [
+        "flags.GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT"
+      ],
+      "required_true": [
+        "flags.CLASSICAL_SUPPORT_LOCAL_Q2",
+        "flags.BERGER_LOCAL_D_ACTION_EQUIVARIANT_AT_ARITY_TWO",
+        "exact_checks.q1_q2_arity_two_nilpotency_raw_coefficientwise",
+        "exact_checks.BV_cyclicity_q2_coefficientwise_and_by_canonical_transport"
+      ]
+    },
+    {
+      "certificate": "BERGER_SUPPORT_LOCAL_Q3.json",
+      "certificate_claim_boundary": "This theorem exports the complete arbitrary-input four-dimensional classical q3 and explicit L_D3=0 declaration on the frozen 54-row gauge-fixed Berger BV complex. It proves the arity-three L-infinity identity, graded symmetry, action cyclicity, and local D derivation exactly. It does not by itself solve the arity-three D-Cartan recurrence, provide a background-independent antifield package, or establish a quantum or Hadamard theorem.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3.json",
+      "certificate_result_id": "BERGER_SUPPORT_LOCAL_Q3",
+      "certificate_sha256": "f55c145700cd30273e0f16d585bfd0815e5a8451606b0998bc706a8b61798cad",
+      "claim": "The complete arbitrary-input support-local q3 satisfies the arity-three L-infinity identity, quartic cyclicity and D derivation with L_D3=0.",
+      "claim_id": "P09-C8",
+      "paper_sections": [
+        "6"
+      ],
+      "required_false": [
+        "flags.GENERAL_LOCAL_ANTIFIELD_KOSZUL_TATE_EXPORT"
+      ],
+      "required_true": [
+        "flags.CLASSICAL_SUPPORT_LOCAL_Q3",
+        "flags.BERGER_LOCAL_D_ACTION_EQUIVARIANT_AT_ARITY_THREE",
+        "exact_checks.q1_q3_plus_q2_q2_arity_three_nilpotency_raw_coefficientwise",
+        "exact_checks.quartic_action_cyclicity_raw_coefficientwise",
+        "local_D_arity_three.D_q3_derivation"
+      ]
+    },
+    {
+      "certificate": "BERGER_CAUSAL_D_CARTAN_V2.json",
+      "certificate_claim_boundary": "This theorem constructs a cyclic two-sided-causal D-Cartan contraction through arity two on all 54 rows at the frozen rational Berger fixture. The q2 and D inputs are support-local, while the homotopies have causal-hull support. It does not claim a separately retarded cyclic binary primitive, arity-three closure, Hadamard data, anomaly cancellation, a QME solution, or a quantum result.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
+      "certificate_result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+      "certificate_sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444",
+      "claim": "The complete 54-row classical complex has a cyclic causal D-Cartan contraction through arity two.",
+      "claim_id": "P09-C9",
+      "paper_sections": [
+        "7"
+      ],
+      "required_false": [
+        "flags.BERGER_HADAMARD_DATA",
+        "flags.QUANTUM_CLAIM"
+      ],
+      "required_true": [
+        "flags.BERGER_CAUSAL_D_CARTAN_V2",
+        "flags.BERGER_CAUSAL_ARITY_TWO_SOURCE_CLOSED",
+        "flags.BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION"
+      ]
+    },
+    {
+      "certificate": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json",
+      "certificate_claim_boundary": "This theorem closes the classical D-Cartan recurrence through arity three on the complete arbitrary-input 54-row four-dimensional Berger BV complex. The q2, q3, D and pairing data are support-local; the cyclic primitives have two-sided causal-hull support. It does not claim a separately retarded cyclic ternary primitive, arity-four closure, Hadamard data, anomaly cancellation, a QME solution, or a quantum theorem.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json",
+      "certificate_result_id": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D",
+      "certificate_sha256": "0c304ca0dced538c4514dd8efbf8bf9e33a415772944818f7dadec1e88b7a829",
+      "claim": "The complete 54-row arbitrary-input arity-three Cartan source is closed and has a cyclic two-sided-causal primitive.",
+      "claim_id": "P09-C10",
+      "paper_sections": [
+        "7"
+      ],
+      "required_false": [
+        "flags.BERGER_HADAMARD_DATA",
+        "flags.QUANTUM_CLAIM"
+      ],
+      "required_true": [
+        "flags.BERGER_ARITY_THREE_D_CARTAN_SOURCE_CLOSED",
+        "flags.BERGER_ARITY_THREE_D_CARTAN_CYCLIC_COMPLETION",
+        "flags.BERGER_ARITY_THREE_D_CARTAN_FULL_4D",
+        "flags.BERGER_CAUSAL_D_CARTAN_THROUGH_ARITY_THREE"
+      ]
+    }
+  ],
+  "forbidden_promotions": [
+    "all-orders nonlinear D-Cartan",
+    "Hadamard state",
+    "quantum master equation",
+    "anomaly cancellation",
+    "positive graviton Hilbert space",
+    "boundary or asymptotic charge theorem"
+  ],
+  "next_gate": "PAPER_09_NONLINEAR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
+  "paper_sources": {
+    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "8e27bbabdad0f78ac7794268a0fa8f35e0929838b1a73039c91665208c64c385",
+    "paper/09-relational-clocks-berger-d-cartan.tex": "a8cc9eff28e8b232216f4067249701f3172b60a0b57d1d94cb4da9d6dff085e3"
+  },
+  "paper_state": "WRITING_STARTED",
+  "required_signoffs": {
+    "classical_team": "DRAFTED",
+    "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
+    "nonlinear_team": "PENDING_ARITY_THREE_INTERPRETATION_REVIEW",
+    "quantum_team": "PENDING_CLAIM_BOUNDARY_REVIEW"
+  },
+  "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
+  "schema": "pure-weyl-paper-09-berger-claim-table-v1",
+  "setting": "compact positive Berger clock; fixed couplings; smooth classical phase space; BV Taylor order through arity three",
+  "theorem_frozen": false
+}
