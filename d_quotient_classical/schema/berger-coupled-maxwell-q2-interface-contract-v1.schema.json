@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-coupled-maxwell-q2-interface-contract-v1.schema.json",
+  "title": "Berger coupled Maxwell q2 interface contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "combined_BV_interface", "mixed_q2_block_ledger", "standing_light_cyclic_regression", "full_export_acceptance_gate", "background_partition", "flags", "next_gate", "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-coupled-maxwell-q2-interface-contract-v1"},
+    "result_id": {"const": "BERGER_COUPLED_MAXWELL_Q2_INTERFACE_CONTRACT"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_64_ROW_INTERFACE_AND_CYCLIC_NORMALIZATION_FULL_SUPPORT_LOCAL_MIXED_Q2_INPUT_BLOCKED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semidirect_preflight", "gravity_contraction", "gravity_support_local_q2", "stress_physical_block", "balanced_second_order", "third_order_mixed_block"],
+      "properties": {
+        "semidirect_preflight": {"$ref": "#/$defs/dependency"},
+        "gravity_contraction": {"$ref": "#/$defs/dependency"},
+        "gravity_support_local_q2": {"$ref": "#/$defs/dependency"},
+        "stress_physical_block": {"$ref": "#/$defs/dependency"},
+        "balanced_second_order": {"$ref": "#/$defs/dependency"},
+        "third_order_mixed_block": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "combined_BV_interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_rows", "gravity_clock_rows", "maxwell_rows", "row_layout", "degree_ranks", "pairing", "canonical_Maxwell_Euler_row", "coefficient_domain_required"],
+      "properties": {
+        "total_rows": {"const": 64},
+        "gravity_clock_rows": {"const": 54},
+        "maxwell_rows": {"const": 10},
+        "row_layout": {"type": "array", "minItems": 64, "maxItems": 64, "items": {"$ref": "#/$defs/row"}},
+        "degree_ranks": {"const": [6, 26, 26, 6]},
+        "pairing": {"type": "string", "minLength": 100},
+        "canonical_Maxwell_Euler_row": {"const": "E_A=-d star_g dA"},
+        "coefficient_domain_required": {"const": "exact rational/algebraic local polydifferential coefficients at the declared Berger background"}
+      }
+    },
+    "mixed_q2_block_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["block", "generality", "status", "required_for_full_export"],
+        "properties": {
+          "block": {"type": "string", "minLength": 15},
+          "generality": {"type": "string", "minLength": 15},
+          "status": {"enum": ["IMPORTED_COMPLETE", "PHYSICAL_FIXTURE_CERTIFIED_SUPPORT_LOCAL_EXPORT_OPEN", "INPUT_BLOCKED"]},
+          "required_for_full_export": {"const": true}
+        }
+      }
+    },
+    "standing_light_cyclic_regression": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture", "metric_repository_identity", "metric_pairing_coordinate_weight", "equation_form_Maxwell_q2_e023_cosine", "canonical_BV_Euler_Maxwell_q2_e023_cosine", "sign_bridge", "equation_and_Euler_zero_loci_equal", "direct_action_pairing", "half_metric_repository_pairing", "averaged_Maxwell_BV_pairing", "cyclic_residual", "action_residual", "frequency_shift_unchanged_by_common_Euler_sign"],
+      "properties": {
+        "fixture": {"const": "A_st=2 cos(beta t)e1 with the certified diagonal h^(2)"},
+        "metric_repository_identity": {"const": "q2_metric_repository=2*d_h*d_epsilon^2 L_Maxwell"},
+        "metric_pairing_coordinate_weight": {"const": "1/2 on the repository metric Euler rows"},
+        "equation_form_Maxwell_q2_e023_cosine": {"const": "564428800/35920017"},
+        "canonical_BV_Euler_Maxwell_q2_e023_cosine": {"const": "-564428800/35920017"},
+        "sign_bridge": {"const": "E_A=-d star_g dA for S_M=-1/2 integral(F wedge star_g F) and pairing integral(delta A wedge delta A_plus)"},
+        "equation_and_Euler_zero_loci_equal": {"const": true},
+        "direct_action_pairing": {"const": "564428800/35920017"},
+        "half_metric_repository_pairing": {"const": "564428800/35920017"},
+        "averaged_Maxwell_BV_pairing": {"const": "564428800/35920017"},
+        "cyclic_residual": {"const": "0"},
+        "action_residual": {"const": "0"},
+        "frequency_shift_unchanged_by_common_Euler_sign": {"const": "-7055360*sqrt(10)/11973339"}
+      }
+    },
+    "full_export_acceptance_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "required_receipts", "first_transfer_consumer"],
+      "properties": {
+        "status": {"const": "INPUT_BLOCKED"},
+        "required_receipts": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string", "minLength": 50}},
+        "first_transfer_consumer": {"type": "string", "minLength": 120}
+      }
+    },
+    "background_partition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Berger_contract", "generic_axial_contract", "cross_substitution_allowed", "reason"],
+      "properties": {
+        "Berger_contract": {"const": "compact positive Berger clock background and its left-invariant Maxwell modes"},
+        "generic_axial_contract": {"const": "generic axial Weyl-Maxwell harmonic background handled by a separate classical adapter"},
+        "cross_substitution_allowed": {"const": false},
+        "reason": {"type": "string", "minLength": 120}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_COUPLED_MAXWELL_Q2_INTERFACE_CONTRACT", "BERGER_64_ROW_LAYOUT_FIXED", "BERGER_MAXWELL_CANONICAL_EULER_SIGN_FIXED", "BERGER_MIXED_Q2_CYCLIC_PHYSICAL_REGRESSION", "BERGER_PHYSICAL_AA_TO_HPLUS_BLOCK", "BERGER_PHYSICAL_HA_TO_APLUS_BLOCK", "BERGER_FULL_SUPPORT_LOCAL_AA_TO_HPLUS", "BERGER_FULL_SUPPORT_LOCAL_HA_TO_APLUS", "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2", "BERGER_MAXWELL_UNARY_CONTRACTION", "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING", "BERGER_AXIAL_BACKGROUND_ADAPTER", "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_COUPLED_MAXWELL_Q2_INTERFACE_CONTRACT": {"const": true},
+        "BERGER_64_ROW_LAYOUT_FIXED": {"const": true},
+        "BERGER_MAXWELL_CANONICAL_EULER_SIGN_FIXED": {"const": true},
+        "BERGER_MIXED_Q2_CYCLIC_PHYSICAL_REGRESSION": {"const": true},
+        "BERGER_PHYSICAL_AA_TO_HPLUS_BLOCK": {"const": true},
+        "BERGER_PHYSICAL_HA_TO_APLUS_BLOCK": {"const": true},
+        "BERGER_FULL_SUPPORT_LOCAL_AA_TO_HPLUS": {"const": false},
+        "BERGER_FULL_SUPPORT_LOCAL_HA_TO_APLUS": {"const": false},
+        "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": {"const": false},
+        "BERGER_MAXWELL_UNARY_CONTRACTION": {"const": false},
+        "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": {"const": false},
+        "BERGER_AXIAL_BACKGROUND_ADAPTER": {"const": false},
+        "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_COMPLETE_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_EXPORT"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_2", "tier_3"],
+      "properties": {
+        "tier_2": {"type": "string", "minLength": 130},
+        "tier_3": {"type": "string", "minLength": 130}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 850}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "result_id": {"type": "string", "minLength": 10},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "row_id", "degree", "sector"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 63},
+        "row_id": {"type": "string", "minLength": 1},
+        "degree": {"enum": [-1, 0, 1, 2]},
+        "sector": {"type": "string", "minLength": 5}
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {
+        "test_tier": {"const": 1},
+        "command": {"type": "string", "minLength": 40},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "status": {"const": "PASS"}
+      }
+    }
+  }
+}
