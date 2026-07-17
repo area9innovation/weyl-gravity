@@ -24,10 +24,8 @@
 \title{Einstein--Maxwell Waves inside Weyl--Maxwell Gravity\\
 on a Compact Product:\\
 Exact Linear Phase-Space Inclusion and the Extra Axial Branch}
-\author{GPT-5\thanks{OpenAI model. Contributed the mathematical synthesis,
-claim audit, and manuscript. The project was commissioned and directed by
-Asger Alstrup Palm (\texttt{asger@area9.dk}), who initiated the questions,
-coordinated the programme, and serves as corresponding human contact.}}
+\author{Asger Alstrup Palm\thanks{Corresponding author:
+\texttt{asger@area9.dk}.}}
 \date{Working draft, July 2026}
 
 \begin{document}
@@ -54,7 +52,8 @@ polynomial
  p_\lambda(M)=1+\frac32(M-\lambda),
 \]
 whose two normal-mode weights are $1\pm\frac32\sqrt{2\lambda}$. Thus each
-real spatial harmonic has relative signature $(2,2)$. The physical $\ell=1$
+real spatial harmonic has two positive and two negative relative branch
+coefficients. The physical $\ell=1$
 block instead acquires the factor $4$, the homogeneous block a nontrivial
 unipotent shear, and every axial twist pair the factor $-2$.
 
@@ -63,8 +62,9 @@ Einstein image, it contains two additional cyclic summands on
 $\omega^2-k^2=\lambda-2/3$. Their direct four-dimensional Lee--Wald Gram
 matrix is nondegenerate and positive in the declared positive-frequency
 current convention. The Einstein and extra modules are mutually orthogonal,
-and the complete generic axial target has classical signature $(3,1)$.
-Inverting the extra Gram matrix gives two conserved coefficient detectors
+and the normalized positive-frequency current has axial inertia $(3,1)$.
+Inverting the extra Gram matrix gives two conserved spectral coefficient
+extractors
 which annihilate the Einstein image.
 
 These are classical \textsc{local-algebraic}/\textsc{reduced-mode}
@@ -76,31 +76,40 @@ residual cohomology on a closed cylinder therefore answers a different
 question from the existence of local gravitational radiation.
 \end{abstract}
 
-\section*{Authorship and computational inputs}
-The named model author synthesized the exact results and wrote the
-manuscript. The mathematical inputs are independently generated exact
-certificates in the project repository. Section~\ref{sec:repro} gives their
-content hashes and verification commands. No floating-point calculation is
-used in a rank, signature, quotient, or on-shell identity reported here.
+\section*{AI-use disclosure and computational accountability}
+OpenAI GPT-5 was used substantively for mathematical synthesis, symbolic-code
+generation and debugging, literature organization, claim auditing, and
+manuscript drafting. The human author posed and refined the scientific
+questions, directed the repository workflow, selected the claims, and is
+responsible for reviewing the derivations and final text before submission.
+Every algebraic result used below is reproduced by deterministic exact
+scripts and independently checked by a second verifier; Section~\ref{sec:repro}
+gives content hashes and commands. No floating-point calculation is used in a
+rank, inertia, quotient, or on-shell identity. This disclosure follows the
+current APS requirement that substantive AI use be disclosed while the AI
+program is not listed as an author \cite{APSAI}.
 
 \tableofcontents
 
 \section{The question and the answer}\label{sec:intro}
 
-Every four-dimensional Einstein metric is Bach-flat, but the converse is
-false: conformal gravity has genuine non-Einstein solution branches
-\cite{Bach,Maldacena,DeserJoungWaldron}. In the
-coupled theory the relation is subtler still, because the Maxwell stress
-appears in both equations with different gravitational operators. The
-relevant question is consequently not whether one can fix Weyl gauge to
-obtain Einstein gravity. One cannot do so in general. It is instead:
+An Einstein--Maxwell solution need not solve Weyl--Maxwell theory, and even
+when it does, its tangent solutions need not inherit the Einstein--Maxwell
+phase-space form. We study a magnetically supported compactification of the
+Pleba\'nski--Hacyan direct-product electrovacuum
+\cite{PlebanskiHacyan,KrtousEtAl,Ortaggio}. It lies on the intersection of
+the two theories, and we determine both its induced Einstein image and the
+additional axial target. The relevant question is not whether one can fix
+Weyl gauge to obtain Einstein gravity---one cannot do so in general
+\cite{Bach,Maldacena,DeserJoungWaldron}---but instead:
 \begin{quote}
 On a common Einstein--Maxwell/Weyl--Maxwell background, which ordinary wave
 solutions embed, what phase-space form do they inherit, and which additional
 Weyl--Maxwell solutions remain?
 \end{quote}
 
-This paper answers that question completely for the standard harmonic
+To our knowledge, this paper answers that question for the first time as one
+combined phase-space/current/module calculation: completely for the standard harmonic
 Einstein--Maxwell tangent and for the generic axial part of the additional
 target on a fixed compact magnetic bundle. The answer has three logically
 separate layers:
@@ -123,13 +132,17 @@ can be stated schematically as
  \iota:\cT_{\rm EM}^{\rm std}\hookrightarrow\cT_{\rm WM},
  \qquad \ker(\iota^*\Omega_{\rm WM})=0,\\
  \iota^*\Omega_{\rm WM}\neq\Omega_{\rm EM},\\
- \cT_{\rm WM}^{\rm ax}/\iota(\cT_{\rm EM}^{\rm ax})
- \cong \bigl(F[\omega]/(p)\bigr)^2,
+ \left(\cT_{\rm WM}^{\rm ax}/\iota(\cT_{\rm EM}^{\rm ax})\right)_{\ell,n}
+ \cong \bigl(K_{\ell,n}[\omega]/(p)\bigr)^2,
  \qquad p=\omega^2-k^2-\lambda+\frac23 .
  \end{gathered}}
 \end{equation}
-Here $F=\operatorname{Frac}\R(\lambda,k)$ on the generic stratum. The last
-line is a canonical module quotient, not a choice of complement.
+Here $K_{\ell,n}$ is the characteristic-zero coefficient field after the
+physical specialization $\lambda=\ell(\ell+1)$ and
+$k=2\pi n/L$. The last line holds for every $\ell\geq2$ and every
+$n\in\mathbb Z$, including $n=0$; it is a canonical fibrewise module
+quotient, not a choice of complement. Section~\ref{sec:extra} proves this
+without inverting $k$, $\omega$, or either shell polynomial.
 
 \subsection{What is and is not frozen}
 The theorem level of this manuscript is deliberately asymmetric in parity.
@@ -157,11 +170,23 @@ We use signature $(-,+,+,+)$ and the actions
  &=\int_M\!\sqrt{-g}\left[
  \frac{R-2\Lambda}{2\kappa}-\frac14F_{ab}F^{ab}\right]d^4x,
  \label{eq:EM-action}\\
- S_{\rm WM}[g,A]
- &=\int_M\!\sqrt{-g}\left[
- \frac{\alpha_B}{8}C_{abcd}C^{abcd}-\frac14F_{ab}F^{ab}\right]d^4x .
- \label{eq:WM-action}
+S_{\rm WM}[g,A]
+&=\int_M\!\sqrt{-g}\left[
+\frac{\alpha_B}{8}C_{abcd}C^{abcd}-\frac14F_{ab}F^{ab}\right]d^4x .
+\label{eq:WM-action}
 \end{align}
+Our Bach convention is fixed by the metric variation
+\begin{equation}\label{eq:bach-variation}
+ \delta\!\int_M\sqrt{-g}\,C_{abcd}C^{abcd}\,d^4x
+ =4\int_M\sqrt{-g}\,B_{ab}\,\delta g^{ab}\,d^4x
+ +\int_{\partial M}\theta_C(g;\delta g),
+\end{equation}
+whereas
+$\delta S_{\rm Maxwell}=-\frac12\int\sqrt{-g}\,T_{ab}\delta g^{ab}$
+up to its boundary potential. Thus the bulk variation of
+\eqref{eq:WM-action} is
+$\frac12\int\sqrt{-g}(\alpha_BB_{ab}-T_{ab})\delta g^{ab}$, which fixes both
+the factor and sign in the field equation below.
 Thus
 \begin{align}
  G_{ab}+\Lambda g_{ab}&=\kappa T_{ab},
@@ -187,7 +212,8 @@ The same metric and field solve both theories on the incidence branch
 \end{equation}
 This is an intersection of solution loci, not a gauge equivalence.
 
-We specialize to the positive flat branch
+We specialize to the positive flat branch, locally the magnetically supported
+Pleba\'nski--Hacyan universe and globally its spatial circle compactification,
 \begin{equation}\label{eq:fixture}
  M=\R_t\times S^1_L\times S^2,\qquad
  (k_1,k_2)=(0,1),\qquad
@@ -197,18 +223,94 @@ The spatial Cauchy surface is the closed manifold $S^1\times S^2$. With
 minimal charge $q_{\min}=1$, flux quantization gives Chern number $N=2$.
 Throughout the paper the bundle $P_N$ is fixed. Uniform magnetic variation
 would change the topological sector and is not an allowed tangent.
+The local direct-product background belongs to the family studied in the
+Einstein--Maxwell literature \cite{PlebanskiHacyan,KrtousEtAl,Ortaggio} and
+in earlier and recent Bach/Weyl--Maxwell product analyses
+\cite{FiedlerSchimming,JizbaLeheckova}. The novelty claimed here is not the
+existence of the product or of selected exact waves. It is the complete
+fixed-bundle standard harmonic phase space, its exact relative Lee--Wald
+endomorphism, and the nonradical generic axial quotient.
+
+\subsection{Connections, bundle automorphisms, and global zero modes}
+Because $c_1(P_N)\neq0$, the background potential $\bar A$ is a connection on
+$P_N$, not a global one-form. For a second connection $A$ on the same bundle,
+however,
+\begin{equation}
+ a=A-\bar A\in\Omega^1(M)
+\end{equation}
+is a global adjoint-valued one-form. A bundle-covariant infinitesimal lift of
+a diffeomorphism and a vertical gauge transformation acts by
+\begin{equation}\label{eq:global-gauge}
+ \delta_{\xi,\chi}h=\mathcal L_\xi\bar g,\qquad
+ \delta_{\xi,\chi}a=\iota_\xi\bar F+d\chi .
+\end{equation}
+Locally this is the familiar
+$\mathcal L_\xi\bar A+d\chi_{\rm local}$ after absorbing
+$\iota_\xi\bar A$ into the vertical parameter. Equation
+\eqref{eq:global-gauge}, rather than a globally defined $\bar A$, is used when
+subtracting the common $\Diff\ltimes\mathcal G_{U(1)}$ action in the
+injectivity argument below.
+
+At the infinitesimal identity-component level the constant circle component
+$W_x$ is a real tangent coordinate. Globally, if $x$ has period $L$, a large
+$U(1)$ transformation shifts
+\begin{equation}
+ W_x\sim W_x+\frac{2\pi m}{q_{\min}L},\qquad m\in\mathbb Z.
+\end{equation}
+Thus the finite holonomy is a circle coordinate, while $Q_e$ is its local
+cotangent partner. Similarly, the three constant axial twists describe the
+tangent to an $SO(3)$ isometry holonomy around $S^1$. Large diffeomorphisms
+and conjugation can identify finite points; our theorem concerns the
+unreduced local tangent before that global moduli quotient.
 
 \subsection{Why the complete linear inclusion holds}
-For an Einstein--Maxwell solution, the difference between the Bach equation
-and the Einstein equation can be expressed through the Chevreton tensor of
-the Maxwell field. On the product fixture the background flux is parallel.
-The Chevreton defect \cite{Chevreton} is quadratic in $\nabla F$, so both its background value
-and first variation vanish. With the coupling relation \eqref{eq:incidence},
-every complete linearized Einstein--Maxwell solution therefore satisfies the
-complete linearized Weyl--Maxwell equations with the same pair $(h,a)$.
+To remove a convention ambiguity, let
+\begin{align}
+ \mathsf S_{abcd}={}&-\nabla_aF_{ce}\nabla_bF_d{}^e
+ -\nabla_aF_{de}\nabla_bF_c{}^e
+ +g_{ab}\nabla_fF_{ce}\nabla^fF_d{}^e\nonumber\\
+ &+\frac12g_{cd}\nabla_aF_{ef}\nabla_bF^{ef}
+ -\frac14g_{ab}g_{cd}\nabla_eF_{fh}\nabla^eF^{fh},\nonumber\\
+ H_{abcd}:={}&\frac12(\mathsf S_{abcd}+\mathsf S_{cdab}),qquad
+ H_{ab}:=H_{abc}{}^c,qquad C^{\rm Ch}_{ab}:=2\kappa H_{ab}.
+ \label{eq:chevreton-definition}
+\end{align}
+Thus $C^{\rm Ch}$ is explicitly homogeneous quadratic in $\nabla F$; the
+factor $2\kappa$ is part of our convention rather than an unstated change of
+the Chevreton tensor.
+For a source-free four-dimensional Einstein--Maxwell solution with
+cosmological constant, the convention-adjusted trace of the Chevreton tensor
+obeys the exact on-shell identity
+\begin{equation}\label{eq:chevreton-identity}
+ B_{ab}-\frac{2\kappa\Lambda}{3}T_{ab}
+ =C^{\rm Ch}_{ab}.
+\end{equation}
+This is Eq.~(66) of Bergqvist and Eriksson translated to
+\eqref{eq:bach-variation}, with the nonzero cosmological term retained
+\cite{BergqvistEriksson,BergqvistErikssonSenovilla}. Consequently, on the
+Einstein--Maxwell shell,
+\begin{equation}\label{eq:wm-defect}
+ \alpha_BB_{ab}-T_{ab}
+ =\alpha_B C^{\rm Ch}_{ab}
+ +\left(\frac{2\alpha_B\kappa\Lambda}{3}-1\right)T_{ab}.
+\end{equation}
+The incidence relation gives $2\alpha_B\kappa\Lambda/3=1$. On the product
+fixture $\bar\nabla\bar F=0$, while $C^{\rm Ch}$ is homogeneous quadratic in
+$\nabla F$. Therefore
+\begin{equation}
+ C^{\rm Ch}(\bar g,\bar F)=0,\qquad
+ \delta C^{\rm Ch}_{(\bar g,\bar F)}[h,a]=0,
+\end{equation}
+and linearizing \eqref{eq:wm-defect} along any solution of the complete
+linearized Einstein--Maxwell equations gives
+$\alpha_B\delta B_{ab}-\delta T_{ab}=0$. The Maxwell equation is identical
+in the two theories, so the same pair $(h,a)$ solves the complete linearized
+Weyl--Maxwell equations.
 
-This is an on-shell tangent statement. It is stronger than principal-symbol
-inclusion and weaker than an off-shell BV chain map. It also predicts its own
+This use of \eqref{eq:chevreton-identity} is an on-shell tangent statement,
+not an off-shell tensor identity modulo displayed Euler--Lagrange operators.
+It is stronger than principal-symbol inclusion and weaker than an off-shell
+BV chain map. It also predicts its own
 limitation: the first possible Chevreton failure is quadratic, so no
 nonlinear closure follows from the linear theorem.
 
@@ -228,15 +330,15 @@ imply
 On $Y_{\ell m}$ this is multiplication by $3\ell(\ell+1)+2$, hence smoothness
 forces $\sigma=0$.
 
-\begin{proposition}[Linear quotient inclusion]\label{prop:inclusion}
+\begin{theorem}[Fixed-bundle tangent inclusion]\label{prop:inclusion}
 On the fixed background \eqref{eq:fixture}, the identity tangent map sends
 every complete linearized Einstein--Maxwell solution to a linearized
 Weyl--Maxwell solution and descends injectively through the respective local
 gauge quotients.
-\end{proposition}
+\end{theorem}
 
 \begin{remark}
-Proposition~\ref{prop:inclusion} does not say that the two theories are gauge
+Theorem~\ref{prop:inclusion} does not say that the two theories are gauge
 equivalent. In particular, a generic Bach-flat solution need not be
 conformally Einstein, and Section~\ref{sec:extra} constructs additional
 target directions explicitly.
@@ -253,7 +355,11 @@ Write
 and $N_{\ell m}=\int_{S^2}|Y_{\ell m}|^2d\Omega>0$. A complex coefficient at
 $(n,\ell,m)$ is paired by reality with the coefficient at $(-n,\ell,-m)$.
 Equivalently one may use real spherical harmonics and cosine/sine circle
-modes. We use the latter convention for real mode counts.
+modes. We use the latter convention for real mode counts. The construction
+is complementary to the standard gauge-invariant Einstein--Maxwell
+master-equation framework \cite{KodamaIshibashi}: the compact product, fixed
+magnetic bundle, exceptional harmonics, and global Jordan blocks require the
+separate reduction given here.
 
 \subsection{Regular radiative blocks}
 For $\ell\geq2$, the axial and polar reductions each have two masters. In the
@@ -325,6 +431,42 @@ twist
 forms a Darboux pair. The would-be gauge generator is proportional to
 $x(A_m+B_mt)$ and is not periodic on $S^1$.
 
+For completeness, Table~\ref{tab:source-strata} records every exceptional
+intersection. ``Equation reduction'' counts the surviving coefficient
+functions after gauge fixing and then the independent second-order masters;
+it is more informative here than the rank of one Fourier matrix, whose rank
+jumps at the generalized zero-frequency block. Phase dimensions and current
+ranks are real and are stated per real spatial harmonic.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}llllcc@{}}
+\toprule
+Stratum & raw coefficients & gauge rank & equation reduction
+  & $\dim\cT$ & $\rank\Omega_{\rm EM}$\\
+\midrule
+$\ell=0$, $k\neq0$ & $5$ & $2$ & $3\to0$ & $0$ & $0$\\
+$\ell=0$, $k=0$ generalized & $5+W_x$ & $2$ & $(a,b,c,d,Q_e,W_x)$
+  & $6$ & $6$\\
+$\ell=1$, $k\neq0$ & $5_{\rm ax}+7_{\rm pol}$ & $2+3$
+  & $3+4\to1+1$ & $4$ & $4$\\
+$\ell=1$, $k=0$ & $5_{\rm ax}+7_{\rm pol}$ & $2+3$
+  & $1+1$ masters $+$ twist & $6$ & $6$\\
+$\ell\geq2$, $k=0$ & $6_{\rm ax}+8_{\rm pol}$ & $2+3$
+  & $4+5\to2+2$ & $8$ & $8$\\
+$\ell\geq2$, $k\neq0$ & $6_{\rm ax}+8_{\rm pol}$ & $2+3$
+  & $4+5\to2+2$ & $8$ & $8$\\
+\bottomrule
+\end{tabular}
+\caption{Complete standard source strata before the final residual quotient.
+At $\ell=0$, every nonzero Fourier block is pure gauge and the electric
+coefficient vanishes; exact rank witnesses are $k^4/2$ for $k\neq0$ and
+$\omega^4/2$ for $k=0$, $\omega\neq0$. The displayed homogeneous row keeps
+the polynomial Jordan solutions rather than imposing temporal boundedness.}
+\label{tab:source-strata}
+\end{table}
+
 \begin{theorem}[Complete source phase space]\label{thm:source-complete}
 Before the final residual quotient, the fixed-bundle standard harmonic
 Einstein--Maxwell tangent is the symplectic direct sum
@@ -338,7 +480,7 @@ The regular radiative forms, exceptional physical quotient, homogeneous
 block, and three twist pairs are all nondegenerate.
 \end{theorem}
 
-\section{The Weyl--Maxwell pullback on the Einstein image}
+\section{The relative phase-space endomorphism on the Einstein image}
 \label{sec:restriction}
 
 A solution inclusion need not preserve a symplectic structure. We use the
@@ -350,6 +492,16 @@ keep three objects separate:
  \Omega_{\rm WM}\ \hbox{on the full target}.
 \end{equation}
 The first two live on the same vector space but arise from different actions.
+Because $\Omega_{\rm EM}$ is nondegenerate on the source phase space, define
+the relative endomorphism $R$ invariantly by
+\begin{equation}\label{eq:relative-endomorphism}
+ \iota^*\Omega_{\rm WM}(u,v)=\Omega_{\rm EM}(u,Rv).
+\end{equation}
+The conjugacy class of $R$, with the identity field map and source
+normal-mode identification fixed, is the comparison datum. Abstractly, any
+two finite-dimensional nondegenerate real symplectic spaces of the same
+dimension are symplectomorphic; our claim is therefore not an absolute
+obstruction to some unrelated change of phase-space coordinates.
 
 \subsection{Regular radiation: one spectral polynomial}
 On both parities and for every $\ell\geq2$,
@@ -374,13 +526,14 @@ Neither vanishes for $\lambda\geq6$. The axial and polar branch weights are
 identical even though their off-shell coefficient matrices differ.
 
 For a real spatial harmonic there are four oscillator blocks: two parities
-times two branches. Hence the relative coefficient signature is
-\begin{equation}\label{eq:radiative-signature}
- \operatorname{sig}_{\rm rel}\bigl(\iota^*\Omega_{\rm WM}\bigr)=(2,2).
+times two branches. Hence the inertia of the symmetric branch-coefficient
+form associated with $R$ is
+\begin{equation}\label{eq:radiative-inertia}
+ \operatorname{inertia}_{\rm rel}(R)=(2,2).
 \end{equation}
-This is shorthand for the signs of the symmetric branch coefficients that
-multiply the standard real Darboux blocks. A symplectic form itself has no
-ordinary Sylvester signature.
+This counts the signs of the symmetric coefficients multiplying the standard
+real Darboux blocks. It is not a Sylvester signature of a real symplectic
+form, which has no such invariant.
 
 \subsection{Exceptional and global restrictions}
 The exceptional $\ell=1$ calculation cannot be obtained by blindly setting
@@ -404,7 +557,7 @@ On the homogeneous block, after the same common factor as in
  0&0&0&0&0&-2\\ 0&0&0&0&2&0
  \end{pmatrix}.
 \end{equation}
-Writing $R=(\Omega_{\rm EM}^{(0)})^{-1}\Omega_{\rm WM}^{(0)}$, one obtains
+In the matrix convention of \eqref{eq:relative-endomorphism}, one obtains
 \begin{equation}\label{eq:unipotent}
  R=I+N,\qquad N^2=0,\qquad\rank N=2.
 \end{equation}
@@ -434,7 +587,7 @@ is proportional to
 and therefore vanishes on the physical shell $\omega^2=4$ for both Jordan
 coordinates.
 
-\begin{theorem}[Complete standard harmonic inclusion]
+\begin{theorem}[Relative phase-space endomorphism]
 \label{thm:standard-inclusion}
 On the fixed compact background \eqref{eq:fixture}, and before the final
 residual quotient, the identity map
@@ -448,19 +601,21 @@ has nondegenerate target pullback:
 \end{equation}
 The pullback is the block-orthogonal direct sum of
 \eqref{eq:spectral-identity}, \eqref{eq:ell1-factor},
-\eqref{eq:hom-target}, and \eqref{eq:twist-factor}. The identity inclusion is
-not symplectic.
+\eqref{eq:hom-target}, and \eqref{eq:twist-factor}. Equivalently, $R$ is
+$p_\lambda(M)$ on regular radiation, $4I$ on the physical $\ell=1$ block,
+$I+N$ with $N^2=0$ and $\rank N=2$ on the homogeneous block, and $-2I$ on
+each twist pair. The identity inclusion does not preserve the two-forms.
 \end{theorem}
 
-\begin{corollary}[Restricted linear observables]
-On the restricted Einstein image, every linear Einstein--Maxwell observable
+\begin{corollary}[Restricted linear Hamiltonians]
+On the restricted Einstein image, every linear Einstein--Maxwell Hamiltonian
 has a unique target-restricted Hamiltonian vector after application of the
 inverse blockwise relative operator.
 \end{corollary}
 
 \begin{remark}
 The corollary is not an embedding into the full target observable algebra.
-Extending an observable away from the Einstein image and descending it under
+Extending a Hamiltonian away from the Einstein image and descending it under
 the final residual action are separate questions.
 \end{remark}
 
@@ -480,15 +635,62 @@ are
 \begin{equation}
  q(s)=(s-\lambda)^2-2\lambda,\qquad p(s)=s-\lambda+\frac23.
 \end{equation}
-Their resultant vanishes only at the algebraic collision $\lambda=2/9$,
-which is disjoint from the physical range $\lambda\geq6$. The exact
-Smith/module reduction gives
-\begin{equation}\label{eq:extra-module}
- \cQ_{\rm ax}^{\rm extra}
- :=\cT_{\rm WM}^{\rm ax}/\iota(\cT_{\rm EM}^{\rm ax})
- \cong\bigl(F[\omega]/(p)\bigr)^2,\qquad
- F=\operatorname{Frac}\R(\lambda,k).
+The fraction-field calculation over $\mathbb Q(\lambda,k)[\omega]$ is useful
+for discovery but, because it inverts $k$, cannot establish the zero-momentum
+specialization. We instead use
+\begin{equation}\label{eq:physical-ring}
+ R_{\rm phys}=\mathbb Q[\lambda,k,
+ \lambda^{-1},(\lambda-2)^{-1},(9\lambda-2)^{-1}]
 \end{equation}
+and regard the reduced Hessian as a matrix over
+$R_{\rm phys}[\omega]$. In particular, $k$, $\omega$, $p$, and $q$ are not
+units.
+
+There is a $2\times2$ unit minor $-\lambda^2$. Eliminating its corresponding
+block uses only the unit matrices $\operatorname{diag}(\lambda,-\lambda)$
+and gives a Schur complement $pT$, where, after removing the common unit
+$-3/4$,
+\begin{align}
+ a={}&k^4+2k^2\lambda-k^2\omega^2+\lambda^2-2\lambda,\nonumber\\
+ b={}&k\omega(k^2+2\lambda-\omega^2),\nonumber\\
+ d={}&k^2\omega^2-\lambda^2+2\lambda\omega^2+2\lambda-\omega^4,
+ \qquad T=-\frac34\begin{pmatrix}a&b\\b&d\end{pmatrix}.
+ \label{eq:physical-ring-T}
+\end{align}
+The entries generate the unit ideal because
+\begin{multline}\label{eq:physical-ring-bezout}
+ \omega^2(k^2+2\lambda-\omega^2)a
+ -k\omega(k^2+2\lambda-\omega^2)b
+ -\lambda(\lambda-2)d\\
+ =\lambda^2(\lambda-2)^2.
+\end{multline}
+It follows that the determinantal ideals are
+\begin{equation}\label{eq:physical-fitting}
+ I_1=(1),\qquad I_2=(1),\qquad I_3=(p),\qquad I_4=(p^2q).
+\end{equation}
+This is the no-$k$-torsion statement required for specialization.
+
+For every physical fibre
+$\lambda=\ell(\ell+1)$, $\ell\geq2$, and
+$k=2\pi n/L$, $n\in\mathbb Z$, the resulting PID calculation over
+$K_{\ell,n}[\omega]$ has Smith factors
+\begin{equation}\label{eq:fibre-smith}
+ 1,\quad1,\quad p,\quad pq.
+\end{equation}
+Moreover
+$\operatorname{Res}_{\omega}(p,q)=4(9\lambda-2)^2/81$ is nonzero on every
+physical fibre. The Chinese remainder theorem therefore gives the canonical
+extra quotient
+\begin{equation}\label{eq:extra-fibre-module}
+ \cQ_{{\rm ax},\ell,n}^{\rm extra}
+ :=\left(\cT_{\rm WM}^{\rm ax}/
+ \iota(\cT_{\rm EM}^{\rm ax})\right)_{\ell,n}
+ \cong\bigl(K_{\ell,n}[\omega]/(p)\bigr)^2.
+\end{equation}
+No global unimodular Smith transformations over the multivariate ring are
+claimed. Equation \eqref{eq:extra-fibre-module}, which is the theorem needed
+for the compact physical spectrum, includes $n=0$.
+
 Thus there are two independent additional cyclic summands on
 \begin{equation}\label{eq:extra-shell}
  \omega_e^2=k^2+\lambda-\frac23.
@@ -501,10 +703,24 @@ Convenient representatives are
 \end{equation}
 They are not defined by an arbitrary orthogonal complement: they represent a
 canonical quotient supported on a different invariant factor.
+At $k=0$ the representatives reduce to columns
+$(-\lambda,0,\lambda,0)^T$ and
+$(0,-2/3,0,\lambda)^T$; their lower $2\times2$ minor is $\lambda^2$, so the
+two extra directions remain independent. Two cyclic summands here mean four
+dimensions over $K_{\ell,n}$ before choosing a frequency root, two complex
+coefficients on the positive-frequency root, and four real phase-space
+dimensions per real spatial harmonic.
 
 \subsection{Direct Lee--Wald pairing}
-Normalize the direct current by $J^t/(-i\omega_eN_{\ell m})$ at positive
-frequency, suppressing the common positive circle volume. In the basis
+For any stationary positive-frequency block with time dependence
+$e^{-i\omega t}$, $\omega>0$, define the normalized Hermitian current form
+\begin{equation}\label{eq:hermitian-current}
+ h_+(u,v)=\frac{\Omega_{\rm WM}(\bar u,v)}
+ {-i\omega L N_{\ell m}},
+\end{equation}
+with the time orientation and overall action convention fixed by
+\eqref{eq:WM-action}. A different positive normalization of the circle
+integral does not change its inertia. In the basis
 \eqref{eq:extra-reps} its Gram matrix $G_X$ has entries
 \begin{align}
  (G_X)_{11}
@@ -523,23 +739,24 @@ On the extra shell,
  \det G_X=\frac13\lambda^4(\lambda-2)(9\lambda-2)>0.
 \end{equation}
 The first principal minor is also positive for every real $k$ and
-$\lambda\geq6$. Hence $\operatorname{sig}G_X=(2,0)$.
+$\lambda\geq6$. Hence $\operatorname{inertia}G_X=(2,0)$.
 
 The Einstein and extra primary modules are mutually Lee--Wald orthogonal.
 The two Einstein master branches contribute one positive and one negative
 coefficient in the same direct-current convention. Therefore:
 
-\begin{theorem}[Generic axial target classification]
+\begin{theorem}[Axial target decomposition and current inertia]
 \label{thm:axial-target}
 For every $\ell\geq2$, every real compact momentum $k$, and before the final
-residual quotient, the complete generic axial Weyl--Maxwell solution module
+residual quotient, the complete generic axial Weyl--Maxwell solution fibre
 is the Lee--Wald orthogonal direct sum of the two Einstein master branches and
-the rank-two extra module \eqref{eq:extra-module}. It is nondegenerate and has
-classical coefficient signature
+the two cyclic extra summands \eqref{eq:extra-fibre-module}. It is
+nondegenerate. On the positive-frequency eigenspace, the Hermitian current
+form \eqref{eq:hermitian-current} has inertia
 \begin{equation}
- \operatorname{sig}\cT_{\rm WM}^{\rm ax}=(3,1).
+ \operatorname{inertia}\bigl(h_+|_{\mathcal H^{\rm ax}_+}\bigr)=(3,1).
 \end{equation}
-The extra block has signature $(2,0)$; the negative target direction lies on
+The extra block has inertia $(2,0)$; the negative target direction lies on
 the minus Einstein-image branch.
 \end{theorem}
 
@@ -548,14 +765,14 @@ Theorem~\ref{thm:axial-target} is a sign theorem for a classical conserved
 current after a declared positive-frequency normalization. No compatible
 complex structure, positive one-particle inner product, BRST physical Hilbert
 space, or quantum time evolution has been constructed. Consequently the
-signature $(3,1)$ is not, by itself, a quantum ghost or unitarity theorem.
+inertia $(3,1)$ is not, by itself, a quantum ghost or unitarity theorem.
 The negative target coefficient belongs to $\iota^*\Omega_{\rm WM}$, not to
 the independent Einstein--Maxwell source action. Familiar higher-derivative
 ghost conclusions \cite{Stelle} require additional quantum structure not
 constructed here.
 \end{remark}
 
-\subsection{A detector for the extra coefficients}
+\subsection{A spectral coefficient extractor for the extra modes}
 Nondegeneracy makes the extra branch measurable within the declared reduced
 solution block. For an on-shell axial solution $\Phi$, define
 \begin{equation}\label{eq:detector}
@@ -570,8 +787,11 @@ direct substitution gives
 \end{equation}
 on the complete generic axial Einstein image. Thus the additional solutions
 are neither a reduced-current radical nor a relabeling of Einstein modes.
-The detector has not yet been descended through the final residual action or
-promoted to a relational, causal, asymptotic, or quantum observable.
+This is a conserved mode coefficient functional: it depends on the selected
+harmonic, stationary frequency splitting, and representatives. It is not a
+local spacetime observable. The extractor has not yet been descended through
+the final residual action or promoted to a relational, causal, asymptotic,
+Peierls, or quantum observable.
 
 \section{The normalization triangle}\label{sec:normalization}
 
@@ -607,11 +827,27 @@ of
 Second, the Green current generated by this Hessian obeys the exact local
 Green identity. Third, independent direct variation of the four-dimensional
 Weyl--Maxwell action gives a Lee--Wald current whose integral over $S^2$
-equals $N_{\ell m}$ times that reduced Green current. Complete
-independent-frequency matrices were checked at $\ell=2,3,4$; natural $SO(3)$
-equivariance and the degree-two spectral bound promote the equality to every
-$\ell\geq2$ and every $m$. No current improvement remains after
-compact-sphere integration.
+equals $N_{\ell m}$ times that reduced Green current.
+
+\begin{proposition}[Three-point spectral interpolation]
+\label{prop:interpolation}
+After the common harmonic norm $N_{\ell m}$ is removed, every entry of the
+difference between the direct integrated current and the reduced Green
+current is a polynomial in $\lambda$ of degree at most two. It has no
+rational denominator or square-root dependence, and $SO(3)$ equivariance
+makes it independent of $m$. The direct independent-frequency calculations
+at $\lambda=6,12,20$ vanish, so the difference vanishes for every
+$\lambda=\ell(\ell+1)$, $\ell\geq2$, and every $m$.
+\end{proposition}
+
+The polynomial bound is established before imposing either dispersion
+relation: the local curvature current contains at most two contracted sphere
+Laplacians after harmonic integration, and all integrations by parts use the
+polynomial identity $-\Delta_{S^2}Y=\lambda Y$. Thus no
+$\lambda$-dependent normalization is hidden in the interpolation. Covariant
+presymplectic potentials admit exact-improvement ambiguities
+\cite{HarlowWu}; here $a=A-\bar A$ is global on the fixed bundle, the Cauchy
+surface is closed, and integrated exact improvements vanish.
 
 \begin{proposition}[Hessian--Green--Lee--Wald triangle]
 \label{prop:triangle}
@@ -622,42 +858,31 @@ used in Theorem~\ref{thm:axial-target}.
 \end{proposition}
 
 Proposition~\ref{prop:triangle} is sufficient for the linear phase-space and
-signature theorems: it fixes the operator, local conservation law, direct
+current-inertia theorems: it fixes the operator, local conservation law, direct
 four-dimensional current, and overall action sign independently. A literal
 second expansion of the unreduced four-dimensional action density would be a
 valuable additional audit, but it is not used or claimed here.
 
-\section{Where did the graviton go?}\label{sec:interpretation}
+\section{Local modes and global residual cohomology}
+\label{sec:interpretation}
 
-The answer depends on which quotient and which boundary problem is being
-asked about.
+Three complexes must not be conflated. First, after local
+$\Diff\times U(1)$ reduction but before the final residual quotient, the
+metric-containing axial and polar modes \eqref{eq:dispersion}, with their
+flux-forced Maxwell dressings, exist and are nonnull for both source and
+target currents. These are the exact compact representatives of ordinary
+gravitational radiation on this background.
 
-\paragraph{Before the final residual quotient.}
-The usual gravitational radiation is represented by the axial and polar
-metric-containing normal modes \eqref{eq:dispersion}, together with their
-flux-forced Maxwell dressings. Every one of these standard modes has a
-nonzero source Lee--Wald pairing and a nonzero target pullback pairing. The
-physical $\ell=1$ quotient, generalized homogeneous modes, and twist pairs
-are nondegenerate as well. The graviton-like tangent has therefore not been
-removed at this stage.
+Second, a later quotient by global conformal residual symmetries can have
+vanishing invariant one-particle cohomology on the closed cylinder. That is
+a statement about global invariant states in a different complex; it neither
+sets the preceding local-gauge-reduced solutions to zero nor guarantees that
+the spectral extractors \eqref{eq:detector} survive the last descent.
 
-\paragraph{After a global residual quotient.}
-A residual cohomology calculation may further identify states under a global
-conformal action on a closed compact universe. If its one-particle sector
-vanishes, that statement concerns invariants of the fully reduced global
-state space. It does not retroactively make the pre-quotient solutions zero,
-nor does it show that local wave packets cannot solve the equations. The
-coefficient detectors \eqref{eq:detector} likewise exist before this last
-descent and may or may not survive it.
-
-\paragraph{Closed cylinder versus scattering.}
-The Cauchy surface here is $S^1\times S^2$ and has no null infinity.
-Asymptotically flat gravitational radiation is organized by Bondi news,
-symplectic flux through $\mathscr I^\pm$, and charged asymptotic symmetries.
-Transformations that are proper gauge on a compact slice can acquire boundary
-charges and cease to be gauge in that setting. Consequently a compact
-residual-cohomology statement cannot be used as evidence that the ordinary
-helicity-$\pm2$ scattering space vanishes.
+Third, $S^1\times S^2$ has no null infinity. An asymptotically flat radiative
+phase space changes the allowed transformations and can turn boundary-acting
+transformations into charged symmetries. No conclusion about its scattering
+states follows from the compact residual quotient studied here.
 
 \paragraph{Einstein is a sector, not a Weyl gauge.}
 The exact relation established here is
@@ -666,7 +891,7 @@ The exact relation established here is
  \subsetneq \Sol_{\rm WM}^{\rm lin,ax+standard}
 \end{equation}
 on the declared background and harmonic strata. The strictness is witnessed
-by \eqref{eq:extra-module}. Boundary conditions may later select an Einstein
+by \eqref{eq:extra-fibre-module}. Boundary conditions may later select an Einstein
 sector, but such selection is additional dynamics plus boundary data, not a
 local Weyl gauge fixing.
 
@@ -688,7 +913,11 @@ Hessian--Green--direct-Lee--Wald triangle of Proposition~\ref{prop:triangle}.
 \item \textbf{Nonlinear extension.} Linear inclusion does not imply that an
 Einstein tangent extends to a Weyl--Maxwell family. Fixed-bundle Taub tests
 already show scoped second-order obstructions; those belong to a separate
-nonlinear charge-fibre paper.
+nonlinear charge-fibre paper. Selected algebraically special Kundt waves on
+direct-product electrovacua are known to survive broad higher-order
+modifications \cite{KrtousEtAl,Ortaggio}; the open question here is whether
+the complete harmonic Einstein tangent, rather than those special exact
+families, is nonlinearly closed in this fixed compact theory.
 \item \textbf{Causal boundary selection and scattering.} A future theorem
 must specify asymptotically flat function spaces, retarded/advanced
 complexes, radiative symplectic flux, residual charges, and whether the
@@ -729,13 +958,16 @@ Result & Certificate role\\
 \cert{EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION}
 & Complete standard image, mixed orthogonality, and nondegenerate pullback.\\
 \cert{EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR}
-& Generic target operator, invariant factors, and extra quotient.\\
+& Generic target operator and fraction-field invariant factors.\\
+\cert{EINSTEIN_MAXWELL_WEYL_AXIAL_PHYSICAL_RING}
+& Physical-ring Fitting ideals and every compact-momentum fibre, including
+$k=0$.\\
 \cert{EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION}
-& Direct four-dimensional current and complete axial signature.\\
+& Direct four-dimensional current and complete axial current inertia.\\
 \cert{EINSTEIN_MAXWELL_WEYL_AXIAL_REDUCED_ACTION_HESSIAN}
 & Reduced Hessian and normalization triangle.\\
 \cert{EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR}
-& Conserved extra coefficient observables before residual descent.\\
+& Conserved extra spectral coefficient extractors before residual descent.\\
 \bottomrule
 \end{tabular}
 \caption{Principal exact inputs. The claim map also pins the exceptional and
@@ -750,6 +982,7 @@ formatting is typographical and each line is one shell command.
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_radiative_symplectic_matching.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator.py}
+\par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_physical_ring.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_lee_wald_completion.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_reduced_action_hessian.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_extra_detector.py}
@@ -770,7 +1003,8 @@ minus two on the twists.
 
 The target is strictly larger. Its generic axial quotient contains two
 additional nonradical solution summands, detected by conserved coefficient
-observables, and the complete direct-current axial signature is $(3,1)$.
+extractors, and the normalized positive-frequency axial current has inertia
+$(3,1)$.
 These statements settle where ordinary waves and one genuine extra branch
 sit before the final residual quotient. They do not turn a classical sign
 into a quantum ghost theorem, and they do not replace the separate causal
@@ -783,10 +1017,61 @@ R.~Bach,
 Kr\"ummungstensorbegriffs},
 Math. Z. \textbf{9} (1921) 110--135.
 
+\bibitem{PlebanskiHacyan}
+J.~F.~Pleba\'nski and S.~Hacyan,
+\emph{Some exceptional electrovac type D metrics with cosmological constant},
+J. Math. Phys. \textbf{20} (1979) 1004--1010,
+\href{https://doi.org/10.1063/1.524174}{doi:10.1063/1.524174}.
+
+\bibitem{FiedlerSchimming}
+B.~Fiedler and R.~Schimming,
+\emph{Exact solutions of the Bach field equations of general relativity},
+Rep. Math. Phys. \textbf{17} (1980) 15--36,
+\href{https://doi.org/10.1016/0034-4877(80)90073-7}%
+{doi:10.1016/0034-4877(80)90073-7}.
+
 \bibitem{Chevreton}
 M.~Chevreton,
 \emph{Sur le tenseur de super\'energie du champ \'electromagn\'etique},
 Nuovo Cimento \textbf{34} (1964) 901--913.
+
+\bibitem{BergqvistEriksson}
+G.~Bergqvist and I.~Eriksson,
+\emph{The Chevreton tensor and Einstein--Maxwell spacetimes conformal to
+Einstein spaces},
+Class. Quantum Grav. \textbf{24} (2007),
+\href{https://arxiv.org/abs/gr-qc/0703073}{arXiv:gr-qc/0703073}.
+
+\bibitem{BergqvistErikssonSenovilla}
+G.~Bergqvist, I.~Eriksson, and J.~M.~M.~Senovilla,
+\emph{New electromagnetic conservation laws},
+\href{https://arxiv.org/abs/gr-qc/0303036}{arXiv:gr-qc/0303036}.
+
+\bibitem{KodamaIshibashi}
+H.~Kodama and A.~Ishibashi,
+\emph{Master equations for perturbations of generalised static black holes
+with charge in higher dimensions},
+Prog. Theor. Phys. \textbf{111} (2004) 29--73,
+\href{https://arxiv.org/abs/hep-th/0308128}{arXiv:hep-th/0308128}.
+
+\bibitem{KrtousEtAl}
+P.~Krtou\v{s}, J.~Podolsk\'y, A.~Zelnikov, and H.~Kadlecov\'a,
+\emph{Higher-dimensional Kundt waves and gyratons},
+Phys. Rev. D \textbf{86} (2012) 044039,
+\href{https://arxiv.org/abs/1201.2813}{arXiv:1201.2813}.
+
+\bibitem{Ortaggio}
+M.~Ortaggio,
+\emph{Einstein--Maxwell fields as solutions of higher-order theories},
+Eur. Phys. J. C \textbf{82} (2022) 1056,
+\href{https://arxiv.org/abs/2205.14392}{arXiv:2205.14392}.
+
+\bibitem{JizbaLeheckova}
+P.~Jizba and T.~Lehe\v{c}kov\'a,
+\emph{Generalized Birkhoff theorems and $2+2$ direct product spacetimes in
+Weyl conformal gravity},
+Phys. Rev. D (2026),
+\href{https://arxiv.org/abs/2512.18482}{arXiv:2512.18482}.
 
 \bibitem{LeeWald}
 J.~Lee and R.~M.~Wald,
@@ -799,6 +1084,12 @@ V.~Iyer and R.~M.~Wald,
 hole entropy},
 Phys. Rev. D \textbf{50} (1994) 846--864,
 \href{https://arxiv.org/abs/gr-qc/9403028}{arXiv:gr-qc/9403028}.
+
+\bibitem{HarlowWu}
+D.~Harlow and J.-q.~Wu,
+\emph{Covariant phase space with boundaries},
+JHEP \textbf{10} (2020) 146,
+\href{https://arxiv.org/abs/1906.08616}{arXiv:1906.08616}.
 
 \bibitem{Maldacena}
 J.~Maldacena,
@@ -815,6 +1106,12 @@ J. Phys. A \textbf{46} (2013) 214019,
 K.~S.~Stelle,
 \emph{Renormalization of higher-derivative quantum gravity},
 Phys. Rev. D \textbf{16} (1977) 953--969.
+
+\bibitem{APSAI}
+American Physical Society,
+\emph{Appropriate use of AI tools}, author policy,
+\href{https://journals.aps.org/authors/appropriate-use-ai-tools}%
+{journals.aps.org/authors/appropriate-use-ai-tools}, accessed July 2026.
 \end{thebibliography}
 
 \end{document}

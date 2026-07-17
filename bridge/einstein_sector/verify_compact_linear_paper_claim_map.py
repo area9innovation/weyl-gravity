@@ -26,9 +26,10 @@ def main() -> None:
     assert claims["linear_solution_quotient_inclusion_injective"] is True
     assert claims["target_pullback_nondegenerate_on_complete_standard_image"] is True
     assert claims["identity_inclusion_symplectic"] is False
-    assert claims["regular_radiative_relative_signature_per_real_spatial_harmonic"] == [2, 2]
-    assert claims["generic_axial_extra_signature"] == [2, 0]
-    assert claims["complete_generic_axial_target_signature"] == [3, 1]
+    assert claims["regular_radiative_relative_inertia_per_real_spatial_harmonic"] == [2, 2]
+    assert claims["all_compact_momenta_including_k_zero_certified"] is True
+    assert claims["generic_axial_extra_positive_frequency_current_inertia"] == [2, 0]
+    assert claims["complete_generic_axial_positive_frequency_current_inertia"] == [3, 1]
 
     nonclaims = payload["explicit_nonclaims"]
     assert nonclaims
@@ -43,9 +44,12 @@ def main() -> None:
     text = manuscript.read_text(encoding="utf-8")
     normalized = " ".join(text.split())
     required = [
-        r"\begin{theorem}[Complete standard harmonic inclusion]",
-        r"\begin{theorem}[Generic axial target classification]",
-        r"\operatorname{sig}\cT_{\rm WM}^{\rm ax}=(3,1)",
+        r"\begin{theorem}[Fixed-bundle tangent inclusion]",
+        r"\begin{theorem}[Relative phase-space endomorphism]",
+        r"\begin{theorem}[Axial target decomposition and current inertia]",
+        r"\operatorname{inertia}\bigl(h_+|_{\mathcal H^{\rm ax}_+}\bigr)=(3,1)",
+        r"R_{\rm phys}=\mathbb Q[\lambda,k",
+        r"n\in\mathbb Z$, including $n=0$",
         "before the final residual quotient",
         "not, by itself, a quantum ghost or unitarity theorem",
         "The polar extra branch and the final residual descent remain open",
@@ -56,6 +60,7 @@ def main() -> None:
     forbidden = [
         "LORENTZIAN_CERTIFIED",
         "THEOREM_FROZEN",
+        r"\operatorname{sig}\cT_{\rm WM}^{\rm ax}",
         "the polar extra branch is complete",
         "proves asymptotically flat scattering",
     ]

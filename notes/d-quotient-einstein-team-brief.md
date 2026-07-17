@@ -1078,6 +1078,40 @@ for each external comparison.
 
 ## Common background matrix
 
+### 2026-07-17 Paper A referee repair: physical coefficient ring
+
+The generic axial fraction-field Smith calculation has been narrowed to its
+proper generic role.  The all-momentum theorem is now supported separately by
+`EINSTEIN_MAXWELL_WEYL_AXIAL_PHYSICAL_RING` over
+
+```text
+R_phys=Q[lambda,k,lambda^-1,(lambda-2)^-1,(9lambda-2)^-1].
+```
+
+The exact unit minor `-lambda^2`, Schur factorization `Schur=p*T`, and Bezout
+witness for the entries of `T` give Fitting ideals
+
+```text
+(1), (1), (p), (p^2*q).
+```
+
+No `k`, `omega`, `p`, or `q` is inverted.  Every physical
+`lambda=ell(ell+1)`, `ell>=2`, and every compact momentum, including `k=0`,
+therefore has fibrewise Smith factors `1,1,p,p*q` and canonical extra quotient
+`(K[omega]/(p))^2`.  At `k=0` the two displayed extra representatives have
+independence minor `lambda^2`.  Explicit global unimodular Smith
+transformations over the multivariate ring remain unclaimed.
+
+Paper A has also been revised to name the compactified Plebański--Hacyan
+fixture, display the Bach/action and on-shell Chevreton normalizations, give a
+complete exceptional-stratum table, make the relative endomorphism `R` the
+phase-space comparison invariant, replace symplectic ``signature'' by
+positive-frequency Hermitian-current inertia, globalize the magnetic-bundle
+gauge action and large-gauge holonomy, and state the three-point spectral
+interpolation lemma explicitly.  This remains `CLASSIFIED`, not
+`THEOREM_FROZEN`; the literal unreduced four-dimensional quadratic
+action-density expansion is still an open normalization audit.
+
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
 
@@ -1088,7 +1122,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: radiative signature `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before final residual quotient; identity inclusion is not symplectic |
+| Compact Einstein--Maxwell product | sector-indexed; not a universal D verdict | `OPEN` | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before final residual quotient; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
@@ -1116,7 +1150,7 @@ global modes have a certified Einstein--Maxwell covariant pairing.  The
 Weyl--Maxwell pullback is closed on the complete standard axial-plus-polar
 `ell>=2` block by the common spectral operator
 `1+(3/2)(M-lambda)`: all such modes remain nonnull, but the relative
-branch-coefficient signature is `(2,2)` and the identity inclusion is not
+branch-coefficient inertia is `(2,2)` and the identity inclusion is not
 symplectic.  The physical `ell=1` quotient is also closed by a separate direct
 exceptional current: both gauge rows vanish and the normalized pullback is
 exactly four times the Einstein--Maxwell form.  The homogeneous pullback is a
