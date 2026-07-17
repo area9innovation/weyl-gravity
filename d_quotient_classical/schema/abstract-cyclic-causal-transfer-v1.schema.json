@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/abstract-cyclic-causal-transfer-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "claim_status", "generality", "dependency_tags",
+    "dependency_refs", "hypotheses", "conclusions", "proof_ledger",
+    "finite_exact_fixture", "berger_consumer", "exact_checks", "flags",
+    "source_manifest", "verification_commands", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-abstract-cyclic-causal-transfer-v1"},
+    "result_id": {"const": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER"},
+    "claim_status": {"const": "ABSTRACT_CAUSAL_TRANSFER_CERTIFIED"},
+    "generality": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theorem_level", "first_consumer_level", "G3_background_class_promoted", "reason"],
+      "properties": {
+        "theorem_level": {"type": "string", "minLength": 40},
+        "first_consumer_level": {"const": "G2_COMPLETE_LINEAR_COMPLEX_ON_ONE_BACKGROUND"},
+        "G3_background_class_promoted": {"const": false},
+        "reason": {"type": "string", "minLength": 80}
+      }
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "minProperties": 7, "maxProperties": 7,
+      "additionalProperties": {"$ref": "#/$defs/dependency"}
+    },
+    "hypotheses": {
+      "type": "object", "additionalProperties": false,
+      "required": ["base", "complexes", "cyclic_support_local_SDR", "endpoint_option_A", "endpoint_option_B", "cyclic_endpoint", "finite_shear"],
+      "properties": {
+        "base": {"type": "string"}, "complexes": {"type": "string"},
+        "cyclic_support_local_SDR": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+        "endpoint_option_A": {"type": "string"}, "endpoint_option_B": {"type": "string"},
+        "cyclic_endpoint": {"type": "string"}, "finite_shear": {"type": "string"}
+      }
+    },
+    "conclusions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["SDR_transport_formula", "chain_identity", "support", "cyclic_adjoint", "direct_sum", "finite_cyclic_shear", "no_endpoint_factorization_required"],
+      "properties": {
+        "SDR_transport_formula": {"const": "Lambda_C,+/-=h+i Lambda_E,+/- p"},
+        "chain_identity": {"type": "string"}, "support": {"type": "string"},
+        "cyclic_adjoint": {"type": "string"}, "direct_sum": {"type": "string"},
+        "finite_cyclic_shear": {"type": "string"}, "no_endpoint_factorization_required": {"type": "string"}
+      }
+    },
+    "proof_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["witness_route", "SDR_route", "support_route", "adjoint_route", "shear_route"],
+      "properties": {
+        "witness_route": {"type": "string"}, "SDR_route": {"type": "string"},
+        "support_route": {"type": "string"}, "adjoint_route": {"type": "string"},
+        "shear_route": {"type": "string"}
+      }
+    },
+    "finite_exact_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient_field", "endpoint_dimension", "full_dimension", "contracted_dimension", "fixture_role", "identity_defects"],
+      "properties": {
+        "coefficient_field": {"const": "Q"}, "endpoint_dimension": {"const": 2},
+        "full_dimension": {"const": 4}, "contracted_dimension": {"const": 2},
+        "fixture_role": {"type": "string"},
+        "identity_defects": {"type": "object", "minProperties": 20, "additionalProperties": {"const": 0}}
+      }
+    },
+    "berger_consumer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["setting_id", "endpoint", "gravity_formula", "gravity_dimensions", "coupled_formula", "coupled_dimensions", "cyclic_shear", "generator_scope", "all_rows_replayed"],
+      "properties": {
+        "setting_id": {"type": "string"}, "endpoint": {"type": "string"},
+        "gravity_formula": {"type": "string"}, "gravity_dimensions": {"type": "string"},
+        "coupled_formula": {"type": "string"}, "coupled_dimensions": {"type": "string"},
+        "cyclic_shear": {"type": "string"}, "generator_scope": {"type": "string"},
+        "all_rows_replayed": {"const": true}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ABSTRACT_CAUSAL_TRANSFER_CERTIFIED", "ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED", "ABSTRACT_FINITE_CYCLIC_SHEAR_TRANSFER_CERTIFIED", "BERGER_FIRST_CAUSAL_TRANSFER_CONSUMER", "SECOND_NONCYLINDER_DETOUR_CONSUMER", "G3_OPEN_BACKGROUND_CLASS", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "QUANTUM_CLAIM"],
+      "properties": {
+        "ABSTRACT_CAUSAL_TRANSFER_CERTIFIED": {"const": true},
+        "ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED": {"const": true},
+        "ABSTRACT_FINITE_CYCLIC_SHEAR_TRANSFER_CERTIFIED": {"const": true},
+        "BERGER_FIRST_CAUSAL_TRANSFER_CONSUMER": {"const": true},
+        "SECOND_NONCYLINDER_DETOUR_CONSUMER": {"const": false},
+        "G3_OPEN_BACKGROUND_CLASS": {"const": false},
+        "TIMELIKE_BOUNDARY_VERSION": {"const": false},
+        "HADAMARD_TRANSFER": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "source_manifest": {
+      "type": "object", "minProperties": 4, "maxProperties": 4,
+      "additionalProperties": {"$ref": "#/$defs/source"}
+    },
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 900}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"}, "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

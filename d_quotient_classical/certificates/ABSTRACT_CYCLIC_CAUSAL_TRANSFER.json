@@ -1,0 +1,178 @@
+{
+  "berger_consumer": {
+    "all_rows_replayed": true,
+    "coupled_dimensions": "64=28 algebraic+(26 gravity-clock+10 Maxwell)",
+    "coupled_formula": "Lambda64,+/-=S64+iota64 (Lambda26,+/- direct-sum LambdaM,+/-) pi64",
+    "cyclic_shear": "the nilpotent finite BV-canonical gauge-fixing shear is invertible, support-local, and pairing preserving",
+    "endpoint": "certified retained 26-row Green homotopy",
+    "generator_scope": "the frozen unary equivariance is K_Berger=D-omega R; raw D is affine and is not promoted by this theorem",
+    "gravity_dimensions": "54=28 algebraic+26 causal",
+    "gravity_formula": "Lambda54,+/-=S_cl+iota_cl Lambda26,+/- pi_cl",
+    "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized"
+  },
+  "claim_boundary": "This is a conditional abstract transfer theorem. It proves that already-existing advanced and retarded endpoint Green homotopies, or homotopies constructed from an independently certified Green companion, transport through a finite-order support-local cyclic SDR, finite direct sums, and finite cyclic shears. It does not prove that a proposed endpoint operator is Green hyperbolic, and the finite exact fixture is only an audit of the universal algebra. The Berger 26-to-54 and coupled 36-to-64 constructions are the first G2 consumer; no second non-cylinder detour consumer or uniform G3 background class is yet certified. The theorem excludes pseudodifferential projectors and infinite-order or non-support-local inverses. It does not address timelike boundaries unless all domains and boundary conditions satisfy the hypotheses, and it does not transport wavefront-set, Hadamard, renormalized, interacting, QME, anomaly, or quantum data. Berger equivariance is for K_Berger=D-omega R; it does not repair or promote the open affine raw-D Cartan problem.",
+  "claim_status": "ABSTRACT_CAUSAL_TRANSFER_CERTIFIED",
+  "conclusions": {
+    "SDR_transport_formula": "Lambda_C,+/-=h+i Lambda_E,+/- p",
+    "chain_identity": "q_C Lambda_C,+/-+Lambda_C,+/- q_C=1_C",
+    "cyclic_adjoint": "Lambda_C,+^sharp=epsilon Lambda_C,-",
+    "direct_sum": "finite direct sums transfer componentwise",
+    "finite_cyclic_shear": "for q'=U q U^-1, Lambda'_+/-=U Lambda_+/- U^-1 has the same chain, support, and cyclic-adjoint properties",
+    "no_endpoint_factorization_required": "the theorem needs endpoint Green homotopies or a Green companion; it does not require a scalar-symbol factorization of every reduced middle operator",
+    "support": "supp Lambda_C,+/- f is contained in J^+/-(supp f)"
+  },
+  "dependency_refs": {
+    "berger_54_to_26_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION.json",
+      "result_id": "BERGER_54_ROW_CAUSAL_HOMOTOPY_REDUCTION",
+      "sha256": "8893fa0457e513913e0a71c5e0f1923ff06cb8c32f7a662808c5c9ee37f7e521"
+    },
+    "berger_coupled_64": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "berger_cyclic_64_to_36_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    },
+    "berger_cyclic_shear": {
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "berger_full_54": {
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b"
+    },
+    "berger_generator_semantics": {
+      "path": "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
+      "result_id": "BERGER_GENERATOR_CONJUGATION_AUDIT",
+      "sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149"
+    },
+    "berger_retained_26": {
+      "path": "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+      "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Berger_26_plus_Maxwell_to_64_consumer_replayed": true,
+    "Berger_26_to_54_consumer_replayed": true,
+    "Berger_generator_semantics_kept_fail_closed": true,
+    "cyclic_advanced_retarded_adjoint_transport": true,
+    "finite_cyclic_shear_closure": true,
+    "finite_direct_sum_closure": true,
+    "finite_exact_fixture_all_defects_zero": true,
+    "same_sided_support_transport": true,
+    "universal_SDR_chain_identity": true,
+    "universal_witness_to_homotopy_algebra": true
+  },
+  "finite_exact_fixture": {
+    "coefficient_field": "Q",
+    "contracted_dimension": 2,
+    "endpoint_dimension": 2,
+    "fixture_role": "finite exact model of the universal algebraic identities; not evidence for Lorentzian endpoint existence",
+    "full_dimension": 4,
+    "identity_defects": {
+      "algebraic_homotopy_adjoint": 0,
+      "cyclic_shear": 0,
+      "endpoint_homotopy": 0,
+      "endpoint_homotopy_adjoint": 0,
+      "endpoint_nilpotency": 0,
+      "full_homotopy_adjoint": 0,
+      "full_nilpotency": 0,
+      "green_left_inverse": 0,
+      "green_right_inverse": 0,
+      "inclusion_adjoint": 0,
+      "inclusion_chain_map": 0,
+      "nilpotent_square": 0,
+      "projection_adjoint": 0,
+      "projection_chain_map": 0,
+      "projection_inclusion": 0,
+      "sdr_h_inclusion": 0,
+      "sdr_h_square": 0,
+      "sdr_identity": 0,
+      "sdr_projection_h": 0,
+      "shear_inverse_left": 0,
+      "shear_inverse_right": 0,
+      "sheared_chain_homotopy": 0,
+      "sheared_homotopy_adjoint": 0,
+      "transferred_homotopy": 0,
+      "witness_companion": 0,
+      "witness_green_homotopy": 0
+    }
+  },
+  "flags": {
+    "ABSTRACT_CAUSAL_TRANSFER_CERTIFIED": true,
+    "ABSTRACT_CYCLIC_ADJOINT_TRANSFER_CERTIFIED": true,
+    "ABSTRACT_FINITE_CYCLIC_SHEAR_TRANSFER_CERTIFIED": true,
+    "BERGER_FIRST_CAUSAL_TRANSFER_CONSUMER": true,
+    "G3_OPEN_BACKGROUND_CLASS": false,
+    "HADAMARD_TRANSFER": false,
+    "QUANTUM_CLAIM": false,
+    "SECOND_NONCYLINDER_DETOUR_CONSUMER": false,
+    "TIMELIKE_BOUNDARY_VERSION": false
+  },
+  "generality": {
+    "G3_background_class_promoted": false,
+    "first_consumer_level": "G2_COMPLETE_LINEAR_COMPLEX_ON_ONE_BACKGROUND",
+    "reason": "the theorem is background-uniform, but no open background family has yet been shown to satisfy its analytic hypotheses uniformly",
+    "theorem_level": "ABSTRACT_CONDITIONAL_ALL_GLOBALLY_HYPERBOLIC_BACKGROUNDS_SATISFYING_DECLARED_HYPOTHESES"
+  },
+  "hypotheses": {
+    "base": "a time-oriented globally hyperbolic Lorentzian manifold without timelike boundary, or a declared boundary problem with all maps preserving its domain",
+    "complexes": "cochain complexes (C,q_C) and (E,q_E) of finite-rank bundles with nondegenerate graded pairings",
+    "cyclic_endpoint": "Lambda_E,+^sharp=epsilon Lambda_E,- in complementary degree",
+    "cyclic_support_local_SDR": [
+      "q_C i=i q_E and p q_C=q_E p",
+      "p i=1_E",
+      "q_C h+h q_C=1_C-i p",
+      "h^2=0, h i=0, p h=0",
+      "i,p,h are finite-order differential or pointwise maps and therefore support-nonincreasing",
+      "i^sharp=p, p^sharp=i, and h^sharp=epsilon h in the declared graded convention"
+    ],
+    "endpoint_option_A": "advanced/retarded degree-minus-one maps Lambda_E,+/- with q_E Lambda_E,+/-+Lambda_E,+/- q_E=1_E and same-sided causal support",
+    "endpoint_option_B": "a finite-order witness W with P=q_E W+W q_E, degreewise advanced/retarded Green operators G_P,+/-, and causal uniqueness giving q_E G_P,+/-=G_P,+/- q_E; then Lambda_E,+/-=W G_P,+/-",
+    "finite_shear": "optional support-local chain isomorphism U with finite-order support-local inverse and U^sharp=U^-1; a sufficient implementation is U=1+N with filtration-nilpotent N and a finite inverse"
+  },
+  "proof_ledger": {
+    "SDR_route": "q_C(h+i Lambda_E p)+(h+i Lambda_E p)q_C=(1-i p)+i(q_E Lambda_E+Lambda_E q_E)p=1",
+    "adjoint_route": "take the graded adjoint and use i^sharp=p, p^sharp=i, h^sharp=epsilon h, and endpoint advanced/retarded reversal",
+    "shear_route": "conjugate the chain identity by U; support follows from locality of U and U^-1, while U^sharp=U^-1 transports the adjoint relation",
+    "support_route": "support-local maps do not enlarge support and supp(f) is contained in both J^+(supp f) and J^-(supp f)",
+    "witness_route": "q_E(WG)+(WG)q_E=(q_E W+W q_E)G=P G=1, using q_E G=G q_E"
+  },
+  "result_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+  "schema": "pure-weyl-abstract-cyclic-causal-transfer-v1",
+  "source_manifest": {
+    "independent_verifier": {
+      "path": "d_quotient_classical/causal_transfer/verify_abstract_cyclic_causal_transfer.py",
+      "sha256": "0a0561617eabd8c36a4d35a7a48fc379dd99325e51d36324f96cfd65781ab9fd"
+    },
+    "producer": {
+      "path": "d_quotient_classical/causal_transfer/abstract_cyclic_causal_transfer.py",
+      "sha256": "12349730599cd3d97c929ae23ccc491024abb6d589602092ce6c1f5dd7112f7a"
+    },
+    "strict_schema": {
+      "path": "d_quotient_classical/schema/abstract-cyclic-causal-transfer-v1.schema.json",
+      "sha256": "53eef366f04a2e95a868aaec9a34d118f0e647cd555e8bbc6066a8b7aa5ab98c"
+    },
+    "tests": {
+      "path": "d_quotient_classical/causal_transfer/tests/test_abstract_cyclic_causal_transfer.py",
+      "sha256": "5fdfc309e359c9e4bdc8d408335d0fc970787b2baba008442d1072c261a159fb"
+    }
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.abstract_cyclic_causal_transfer --check --guards",
+    "python3 -m d_quotient_classical.causal_transfer.verify_abstract_cyclic_causal_transfer",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_abstract_cyclic_causal_transfer",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/abstract-cyclic-causal-transfer-v1.schema.json -d d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json"
+  ]
+}

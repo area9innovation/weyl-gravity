@@ -132,6 +132,11 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json`](certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json)
 - Full gauge-fixed causal-homotopy V2 proof:
   [`reports/berger-54-row-causal-green-homotopy-v2.md`](reports/berger-54-row-causal-green-homotopy-v2.md)
+- Abstract cyclic causal-transfer theorem for support-local SDRs, finite direct
+  sums and finite cyclic shears:
+  [`certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json`](certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json)
+- Human-readable theorem, proof and Berger 26-to-54 / coupled 36-to-64 replay:
+  [`reports/abstract-cyclic-causal-transfer.md`](reports/abstract-cyclic-causal-transfer.md)
 - Cyclic causal D-Cartan V2 contraction through arity two:
   [`certificates/BERGER_CAUSAL_D_CARTAN_V2.json`](certificates/BERGER_CAUSAL_D_CARTAN_V2.json)
 - Causal-hull and cyclic-Reynolds V2 proof:

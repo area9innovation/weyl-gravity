@@ -1,7 +1,8 @@
 # From Green-hyperbolic complexes to conformal detours
 
 *Bridge note for Lorentzian PDE, Green-hyperbolic-complex, and BGG/detour
-geometry researchers. Status: theorem-extraction draft, 17 July 2026.*
+geometry researchers. Status: abstract transfer theorem certified with a
+complete Berger consumer; second detour consumer open, 17 July 2026.*
 
 ## 1. Their object and the unresolved question
 
@@ -68,6 +69,47 @@ The exact claim and release rail are documented in
 
 ## 4. Added result
 
+> **Abstract cyclic causal-transfer theorem.** Let $(C,q_C)$ support-locally
+> and cyclically deformation-retract onto $(E,q_E)$ through $(i,p,h)$.  If
+> $E$ has advanced and retarded Green homotopies, then
+> \[
+> \Lambda_{C,\pm}=h+i\Lambda_{E,\pm}p
+> \]
+> are advanced and retarded Green homotopies on $C$.  Their same-sided
+> support and complementary-degree cyclic adjoint relation are preserved.
+> The property is also closed under finite direct sums and finite-order
+> support-local cyclic shears with finite-order inverses.
+
+The proof is algebraic once endpoint propagation exists:
+\[
+q_C\Lambda_{C,\pm}+\Lambda_{C,\pm}q_C
+=(1-ip)+i(q_E\Lambda_{E,\pm}+\Lambda_{E,\pm}q_E)p=1.
+\]
+Support follows because $i,p,h$ do not enlarge support.  Taking the graded
+adjoint proves advanced/retarded reversal from
+$i^\sharp=p$, $h^\sharp=\epsilon h$ and
+$\Lambda_{E,+}^\sharp=\epsilon\Lambda_{E,-}$.
+
+The content-addressed first consumer is the Berger gravity--clock complex:
+
+```text
+54 = 28 algebraic + 26 causal,
+Lambda54,+/- = S_cl + iota_cl Lambda26,+/- pi_cl.
+
+64 = 28 algebraic + (26 gravity-clock + 10 Maxwell),
+Lambda64,+/-
+  = S64 + iota64 (Lambda26,+/- direct-sum LambdaM,+/-) pi64.
+```
+
+The exact certificate and independent replay are
+[`ABSTRACT_CYCLIC_CAUSAL_TRANSFER`](../d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json).
+The theorem is background-uniform as a conditional statement, while its first
+consumer remains `G2`: no open `G3` background family has yet been proved to
+satisfy the analytic hypotheses uniformly.
+
+The earlier conformal-cylinder construction remains the motivating detour
+example:
+
 > **Concrete transfer theorem.** On the declared conformal-cylinder complex,
 > the support-local cyclic contraction from the tractor/prolonged parent to
 > the metric detour complex transfers retarded and advanced Green homotopies,
@@ -75,12 +117,11 @@ The exact claim and release rail are documented in
 > pairing. No canonical Green inverse of the isolated fourth-order metric
 > operator is required.
 
-The proof factors the construction into curvature prolongation, exact
+Its proof factors the construction into curvature prolongation, exact
 tractor-to-BGG contraction, filtered homological perturbation, finite local
 shears, and cyclic adjoint transport. Each factor has an explicit inverse or
-homotopy identity and a support ledger. Generality is currently `G2`: complete
-on one Lorentzian background. The abstract theorem with background-uniform
-hypotheses is not yet frozen.
+homotopy identity and a support ledger. Recasting that full construction as a
+second content-addressed consumer of the abstract theorem is still open.
 
 ## 5. Consequence in their language
 
@@ -94,20 +135,18 @@ definition.
 
 ## 6. Scope boundary
 
-This note does **not** establish the abstract transfer theorem on arbitrary
-globally hyperbolic manifolds. It does not cover timelike boundaries,
+The abstract result is conditional: it does **not** establish endpoint Green
+hyperbolicity on a proposed background. It does not cover timelike boundaries,
 interactions, a Hadamard state, time-ordered products, or the quantum master
 equation. The surviving $H^4$ classes are centered deformation classes, not
-one-particle gravitons. A second detour consumer is still required to separate
-the reusable hypotheses from cylinder-specific identities.
+one-particle gravitons. A second non-Berger detour consumer is still required
+to test the reusable hypotheses outside the first certified application.
 
 ## 7. One useful question for adjacent experts
 
-> Is support-preserving **cyclic** transfer already implied by the published
-> Green-hyperbolic-complex hypotheses when the contraction contains
-> finite-order differential shears, or is an additional wavefront/support or
-> pairing-compatibility hypothesis necessary? A counterexample would be as
-> useful as a positive abstraction theorem.
+> Which small non-cylinder detour complex gives the sharpest test of the
+> theorem's support-local cyclic-SDR hypotheses, especially when the natural
+> contraction contains differential rather than pointwise shears?
 
 ## Reproducibility receipt
 
@@ -116,8 +155,8 @@ source papers: arXiv:2207.04069v2; arXiv:math/0606401v2
 project source: Paper 8 artifact-ready snapshot and current master
 verification: commands in section 3
 dependency tag: LORENTZIAN-CAUSAL
-generality level: G2_COMPLETE_ONE_BACKGROUND
-lifecycle state: THEOREM_EXTRACTION
-claim flag: CONCRETE_CYCLIC_CAUSAL_TRANSFER_CERTIFIED
-open fields: abstract hypotheses; second consumer; boundary version
+generality level: ABSTRACT_CONDITIONAL_THEOREM; G2_FIRST_CONSUMER
+lifecycle state: ABSTRACT_THEOREM_CERTIFIED_SECOND_CONSUMER_OPEN
+claim flag: ABSTRACT_CAUSAL_TRANSFER_CERTIFIED
+open fields: second non-cylinder consumer; G3 family; boundary version
 ```
