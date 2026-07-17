@@ -295,6 +295,16 @@ than materialized.  This closes tensor-slot realizability, while signed factor
 actions, Bianchi/jet relations, integration by parts, the four-dimensional
 quotient, and production matrices remain open.
 
+The first ambient signed-factor quotient is certified by
+[`certificates/AFN0_AMBIENT_FACTOR_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR.json`](certificates/AFN0_AMBIENT_FACTOR_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR.json).
+For total degrees three and four, 388,011 raw contractions are partitioned
+exactly into 139,889 signed identical-factor orbits; 8,952 are killed by an
+odd stabilizer.  This bounded validation slice does not materialize the
+billion-scale degree-five/six sectors.  Intrinsic tensor identities,
+horizontal-form antisymmetry, Bianchi/jet relations, integration by parts,
+the four-dimensional quotient, and production `Q`/`d_h` matrices remain
+fail-closed.
+
 The first completed candidate quotient is the even Weyl-ghost AFN0 slice,
 certified by
 [`certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json`](certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json).

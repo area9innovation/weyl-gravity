@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-ambient-factor-orbit-v1.json",
+  "title": "AFN0 ambient signed factor-orbit certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "ambient_signature_source", "declared_quotient", "factor_orbit_bundle", "totals", "counts_by_sector", "signature_summaries", "checks", "next_gates", "claim_boundary", "analysis_sha256", "canonical_hashes", "certificate_sha256"],
+  "properties": {
+    "result_id": {"const": "AFN0_AMBIENT_FACTOR_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR"},
+    "result_state": {"const": "SIGNED_FACTOR_ORBITS_COMPLETE_IDENTITY_QUOTIENT_OPEN"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope_label": {"const": "AFN0_ONLY_TOTAL_DEGREES_THREE_FOUR"},
+    "ambient_signature_source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "analysis_sha256"],
+      "properties": {
+        "result_id": {"const": "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE"},
+        "analysis_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "declared_quotient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["implemented", "explicitly_excluded"],
+      "properties": {
+        "implemented": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+        "explicitly_excluded": {"type": "array", "minItems": 6, "items": {"type": "string"}}
+      }
+    },
+    "factor_orbit_bundle": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bundle_sha256", "profile_reduction_count", "path"],
+      "properties": {
+        "bundle_sha256": {"$ref": "#/$defs/hash"},
+        "profile_reduction_count": {"const": 192},
+        "path": {"type": "string", "pattern": "^ambient_factor_orbit_manifests/[0-9a-f]{64}\\.json$"}
+      }
+    },
+    "totals": {"$ref": "#/$defs/counts"},
+    "counts_by_sector": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {"$ref": "#/$defs/sectorCounts"}
+    },
+    "signature_summaries": {
+      "type": "array", "minItems": 144, "maxItems": 144,
+      "items": {"$ref": "#/$defs/summary"}
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_refined_degree_three_four_signatures_accounted_for", "all_factor_profiles_accounted_for", "signed_factor_actions_exact", "every_raw_graph_assigned_to_exactly_one_orbit", "every_orbit_size_divides_action_order", "Grassmann_odd_stabilizer_zeros_detected", "ambient_billion_graph_sectors_not_materialized"],
+      "properties": {
+        "all_refined_degree_three_four_signatures_accounted_for": {"const": "VERIFIED"},
+        "all_factor_profiles_accounted_for": {"const": "VERIFIED"},
+        "signed_factor_actions_exact": {"const": "VERIFIED"},
+        "every_raw_graph_assigned_to_exactly_one_orbit": {"const": "VERIFIED"},
+        "every_orbit_size_divides_action_order": {"const": "VERIFIED"},
+        "Grassmann_odd_stabilizer_zeros_detected": {"const": "VERIFIED"},
+        "ambient_billion_graph_sectors_not_materialized": {"const": "VERIFIED"}
+      }
+    },
+    "next_gates": {
+      "type": "object", "additionalProperties": false,
+      "required": ["intrinsic_tensor_and_Bianchi_quotient", "covariant_jet_commutators", "horizontal_form_antisymmetry", "integration_by_parts_quotient", "dimension_specific_antisymmetrization", "production_Q_dh_matrices", "total_degrees_five_six_factor_orbits"],
+      "properties": {
+        "intrinsic_tensor_and_Bianchi_quotient": {"const": "NOT_COMPUTED"},
+        "covariant_jet_commutators": {"const": "NOT_COMPUTED"},
+        "horizontal_form_antisymmetry": {"const": "NOT_COMPUTED"},
+        "integration_by_parts_quotient": {"const": "NOT_COMPUTED"},
+        "dimension_specific_antisymmetrization": {"const": "NOT_COMPUTED"},
+        "production_Q_dh_matrices": {"const": "NOT_COMPUTED"},
+        "total_degrees_five_six_factor_orbits": {"const": "NOT_COMPUTED_FACTORED_ONLY"}
+      }
+    },
+    "claim_boundary": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "analysis_sha256": {"$ref": "#/$defs/hash"},
+    "canonical_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest_sha256", "analysis_sha256", "bundle_sha256"],
+      "properties": {
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "analysis_sha256": {"$ref": "#/$defs/hash"},
+        "bundle_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "certificate_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["refined_signature_count", "factor_profile_count", "raw_graph_count", "signed_orbit_count", "surviving_orbit_count", "Grassmann_zero_orbit_count"],
+      "properties": {
+        "refined_signature_count": {"type": "integer", "minimum": 1},
+        "factor_profile_count": {"type": "integer", "minimum": 1},
+        "raw_graph_count": {"type": "integer", "minimum": 1},
+        "signed_orbit_count": {"type": "integer", "minimum": 1},
+        "surviving_orbit_count": {"type": "integer", "minimum": 1},
+        "Grassmann_zero_orbit_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "sectorCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parity", "total_degree", "refined_signature_count", "factor_profile_count", "raw_graph_count", "signed_orbit_count", "surviving_orbit_count", "Grassmann_zero_orbit_count"],
+      "properties": {
+        "parity": {"enum": ["even", "odd"]},
+        "total_degree": {"enum": [3, 4]},
+        "refined_signature_count": {"type": "integer", "minimum": 1},
+        "factor_profile_count": {"type": "integer", "minimum": 1},
+        "raw_graph_count": {"type": "integer", "minimum": 1},
+        "signed_orbit_count": {"type": "integer", "minimum": 1},
+        "surviving_orbit_count": {"type": "integer", "minimum": 1},
+        "Grassmann_zero_orbit_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["signature_sha256", "parity", "total_degree", "ghost_number", "form_degree", "factor_profile_count", "raw_graph_count", "signed_orbit_count", "surviving_orbit_count", "Grassmann_zero_orbit_count", "profile_reduction_manifest_sha256"],
+      "properties": {
+        "signature_sha256": {"$ref": "#/$defs/hash"},
+        "parity": {"enum": ["even", "odd"]},
+        "total_degree": {"enum": [3, 4]},
+        "ghost_number": {"type": "integer", "minimum": 0},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "factor_profile_count": {"type": "integer", "minimum": 1},
+        "raw_graph_count": {"type": "integer", "minimum": 1},
+        "signed_orbit_count": {"type": "integer", "minimum": 1},
+        "surviving_orbit_count": {"type": "integer", "minimum": 1},
+        "Grassmann_zero_orbit_count": {"type": "integer", "minimum": 0},
+        "profile_reduction_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}
