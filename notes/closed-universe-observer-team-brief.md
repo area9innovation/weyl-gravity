@@ -87,6 +87,25 @@ promoted to an unqualified 84-row theorem: the mixed
 `epsilon_R^2*kappa` profile/transport shift, apparatus interactions,
 `K_Berger` equivariance, and observer morphism remain open.
 
+### Immediate priority after the axial unary certificate
+
+1. Close the mixed \(\epsilon_R^2\kappa\) profile/transport shift, including
+   the rod and memory adjoints and the shifted gravity Hessian.  Return the
+   unqualified 84-row unary/cyclicity/causal theorem or its first normalized
+   obstruction.
+2. Only after that unary gate, construct the apparatus \(q_2,q_3\) rows and
+   test \(K_{\rm Berger}\)-equivariance and cyclicity.  Import the nonlinear
+   team's certified tensors; do not fork them.
+3. Construct the first observer morphism on the certified apparatus complex
+   and test whether the rank-two detector record survives backreaction.
+4. Import the classical team's C-G4 relational redshift observable as the
+   clock/signal object.  The observer team owns its detector realization and
+   record map, not a competing redshift definition.
+
+The separate-axis 84-row theorem is sufficient input for scoped first-jet
+tests, but it must not be advertised as the mixed-axis or fully interacting
+apparatus theorem.
+
 ### The adjacent closed-universe programme
 
 The comparison sources are:

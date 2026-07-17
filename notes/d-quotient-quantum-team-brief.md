@@ -447,13 +447,23 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Classify the first possible \(\mathcal A_D^{(1)}\) before computing its
-   coefficient.
-2. Compute the pure-Weyl coefficient and its counterterm dependence.
-3. Establish the local QME status without conflating anomaly types.
-4. Add the conformal scalar clock and recompute the obstruction.
-5. Transfer \(Q_1\) and \(G_1\) only if the QME gate passes.
-6. Add Yang--Mills and broader matter spectra only after the scalar rail is
+1. Complete Q-G1 beyond even AFN0: antifield/Koszul--Tate, odd, pure-Diff,
+   mixed, and descent carriers, with explicit primitives or dual witnesses.
+2. Compute the pure-Weyl anomaly coefficients by the two declared independent
+   presentations and record counterterm, zero-mode, and measure dependence.
+3. Construct the coefficient-bearing map to \(\mathcal A_D^{(1)}\) and
+   establish QME restoration or a normalized obstruction without conflating
+   local Weyl, residual-generator, boundary, and clock anomalies.
+4. Add the conformal scalar clock only after the pure-Weyl local disposition
+   is stable; then recompute the QME and \(D\)-Cartan defect.
+5. Treat the retained rank-46/filtered/mapping-cylinder carrier as a classical
+   import gate for later residual branch transfer, not as a prerequisite for
+   Q-G1--Q-G3 or the local QME calculation.  The ordered list in the active
+   frontier remains a dependency chain for residual quantum transfer, not the
+   team's immediate work schedule.
+6. Transfer \(Q_1\), \(G_1\), or the retained mixed interaction only after the
+   QME gate passes and the required classical carrier has been imported.
+7. Add Yang--Mills and broader matter spectra only after the scalar rail is
    understood.
 
 Keep the quantum construction representation-neutral until the physical

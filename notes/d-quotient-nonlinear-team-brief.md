@@ -416,9 +416,11 @@ It binds the sparse bilinear PBW tensor to the certified 54-row layout and the
 existing `q1`, `D54`, `iota_cl`, `pi_cl`, `S_cl`, and cyclic-pairing hashes.
 The authoritative support-local export subsequently landed and was consumed;
 the old readiness receipt remains only as a historical interface receipt. The
-pure gravity--clock arity-two and arity-three results are certified, while the
-separate repaired 64/36 gravity--Maxwell (q_2) now supplies the input for the
-next mixed (q_3) calculation.
+pure gravity--clock arity-two and arity-three results are certified.  The
+repaired 64/36 gravity--Maxwell \(q_2\), typed mixed \(q_3\), transferred
+\(\ell_3\), exchange audit, and full retained BV cyclicity have also landed.
+Their remaining gate is invariant physical meaning, not another replay of the
+same tensors.
 
 ### Work package N-G3: uniform background-interaction obstruction
 
@@ -435,6 +437,23 @@ Einstein and extra-Weyl modes, positive and negative pairing sectors,
 radiative and centered classes, and clock/gravity excitations.  Compute the
 first transferred vertex or certify its exact vanishing; do not reuse the
 free absence of one-particle cohomology as the conclusion.
+
+The immediate N-G4 target is the invariant disposition of the landed retained
+mixed \(\ell_3\).  On the unsplit cyclic 36-row carrier, construct the complete
+admissible cyclic, support-local, jet-bounded redefinition complex for
+\((F_2,F_3)\) and decide whether
+
+\[
+ \ell_3^{\rm mixed}\in
+ \operatorname{im}\bigl([\ell_1,F_3]+[\ell_2,F_2]\bigr).
+\]
+
+Return an explicit trivializing redefinition or a normalized dual witness
+annihilating every admissible redefinition while detecting \(\ell_3\).  This
+test does not require inventing Einstein-like and extra-Weyl labels on the
+unsplit carrier.  A branch-resolved mixing table begins only after an exact
+rank-46, filtered, or mapping-cylinder branch carrier is imported and
+accepted.
 
 ### Work package N-G5: Einstein projection and one amplitude fixture
 
@@ -480,7 +499,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | known classical target; import only after verification | free target; interacting identity open | proved free baseline | zero in stated free absolute residual complex | \(I_2\) on centered free classes; interacting open | proper free solution sector |
-| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | pure gravity--clock cyclic \(K_{\rm Berger}\)-Cartan contraction certified through arity three; repaired coupled Maxwell \(q_2\) accepted and mixed \(q_3\) open | classical advanced/retarded 54-row chain contractions certified; compact neutral Maxwell signal is sourced and unary | no Paper-IX one-particle claim | pure gravity--clock pairing complete; repaired coupled Maxwell overlay is cyclic on full 64 and retained 36 rows | certified non-Einstein Weyl--matter control branch |
+| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | pure gravity--clock cyclic \(K_{\rm Berger}\)-Cartan contraction certified through arity three; repaired coupled Maxwell \(q_2\), typed mixed \(q_3\), retained \(\ell_3\), and full retained BV cyclicity are exact | classical advanced/retarded 54-row chain contractions certified; compact neutral Maxwell signal is sourced and unary | no Paper-IX one-particle claim | typed gravity--clock--Maxwell pairing is cyclic on the declared full and retained carriers | certified non-Einstein Weyl--matter control branch; canonical support-local same-bundle branch projector is obstructed on retained 36 rows |
 | Cylinder + scalar clock | open | first matter test | open | open | open | open |
 | Cylinder + Yang--Mills | open | second matter test | open | open | open | open |
 | Weakly deformed background | open | mixed obstruction open | open | open | open | open |
@@ -531,26 +550,29 @@ The active PDE gate is now `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`:
 contract that incidence support-locally first, then construct the retained
 causal chain homotopy.
 
-1. Choose and certify a residual/BFV, derived zero-charge, or causal Green
-   extension of the complex.  The extension must state its rows, support
-   category, pairing, and replacement unary Cartan identity explicitly.
-2. On the causal route, construct
-   `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`. Do not require a
-   metric-causal inverse of the complete `L13` on arbitrary sources; that
-   architecture is exactly obstructed. Apply the certified support-local
-   clock/graph contraction first, construct the causal homotopy on retained
-   sources, prove cyclic adjointness, and lift it through the certified
-   54-to-26 contraction.
-3. Transfer the full `ell2` on the chosen extension and only then form the
-   corrected arity-two Cartan source.
-4. Solve for `iota_D^(2)` on that extension or retain its normalized
-   obstruction witness.
-5. Compute \(\ell_3\), the quartic identity, and the first resonant
-   \(+\lambda,-\lambda\to0\) instability channel.
-6. Add Yang--Mills only after the scalar-clock rail is understood.
+1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
+   exchange audit, and full retained BV cyclicity as complete on their pinned
+   carriers.  Do not recompute them as if they were open.
+2. Make the N-G4 cyclic-deformation test above the primary nonlinear task.
+   Return either an admissible trivializing \((F_2,F_3)\) or an exact
+   nonremovability witness for the mixed \(\ell_3\).
+3. Keep the Green/BGG assignment as a bounded parallel theorem-extraction
+   rail.  If continuing the Berger PDE construction, contract the acyclic
+   clock/graph incidence before constructing
+   `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`; do not demand a
+   metric-causal inverse of the obstructed complete `L13` architecture.
+4. Produce an Einstein-like/extra-Weyl/Maxwell mixing table only after an
+   exact rank-46, filtered, or mapping-cylinder carrier is imported.  A
+   nonlocal split must remain explicitly `REDUCED-MODE`.
+5. Add apparatus \(q_2,q_3\), \(K_{\rm Berger}\)-equivariance, and observer
+   morphism stability only after the observer team closes the mixed
+   \(\epsilon_R^2\kappa\) unary gate.
+6. Do not begin \(q_4/\ell_4\) merely because arity three landed.  Open arity
+   four or Yang--Mills only after the invariant \(\ell_3\) disposition or an
+   exact obstruction makes the next identity scientifically decisive.
 
-The Green assignment is a temporary parallelization and does not promote an
-interacting claim.  The handback and later physical activation gates are in
+The Green assignment is a temporary parallelization and does not replace the
+invariant interaction gate.  The handback and later physical activation gates are in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).
 
 Escalate immediately if the cubic defect is nontrivial, if cyclicity fails, or
