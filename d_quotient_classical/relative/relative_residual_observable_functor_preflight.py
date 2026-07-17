@@ -14,6 +14,7 @@ from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -22,6 +23,18 @@ BERGER = ROOT / "d_quotient_programme/contributions/einstein-berger-incidence.js
 QUANTUM = ROOT / "quantum-weyl/relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json"
 CERTIFICATE = ROOT / "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json"
 REPORT = ROOT / "d_quotient_classical/reports/relative-residual-observable-functor-preflight-v1.md"
+TRIANGLE_CANDIDATES = (
+    ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
+    ROOT / "bridge/certificates/einstein_weyl_relative_linear_triangle_v1.json",
+)
+TRIANGLE_FLAGS = (
+    "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS",
+    "SUPPORT_LOCAL_MAPPING_COFIBER",
+    "GLOBAL_ENDPOINTS_INCLUDED",
+    "PAIRING_OR_CURRENT_COMPATIBLE",
+    "H_PRODUCT_EQUIVARIANT",
+    "INDEPENDENT_VERIFIER_PASS",
+)
 
 
 def sha256(path: Path) -> str:
@@ -32,12 +45,52 @@ def load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def git(*args: str) -> str:
+    return subprocess.check_output(["git", *args], cwd=ROOT, text=True).strip()
+
+
+def committed_bytes(commit: str, path: Path) -> bytes:
+    relative = path.relative_to(ROOT)
+    return subprocess.check_output(["git", "show", f"{commit}:./{relative}"], cwd=ROOT)
+
+
 def dependency(path: Path, artifact_id: str) -> dict[str, str]:
+    relative = str(path.relative_to(ROOT))
+    commit = git("log", "-1", "--format=%H", "--", relative)
+    if not commit:
+        raise AssertionError(f"dependency is not committed: {relative}")
+    committed_hash = hashlib.sha256(committed_bytes(commit, path)).hexdigest()
+    if sha256(path) != committed_hash:
+        raise AssertionError(f"dependency has uncommitted drift: {relative}")
     return {
         "artifact_id": artifact_id,
-        "path": str(path.relative_to(ROOT)),
-        "sha256": sha256(path),
+        "path": relative,
+        "commit": commit,
+        "sha256": committed_hash,
     }
+
+
+def triangle_import() -> tuple[dict | None, Path | None]:
+    present = [path for path in TRIANGLE_CANDIDATES if path.exists()]
+    if len(present) > 1:
+        raise AssertionError("multiple authoritative triangle candidates exist")
+    if not present:
+        return None, None
+    path = present[0]
+    payload = load(path)
+    if payload.get("result_id") != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1":
+        raise AssertionError("triangle candidate has the wrong result_id")
+    if payload.get("claim_status") not in {
+        "CERTIFIED",
+        "THEOREM_FROZEN",
+        "CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE",
+    }:
+        raise AssertionError("triangle candidate is not certified")
+    flags = payload.get("flags", {})
+    missing = [key for key in TRIANGLE_FLAGS if flags.get(key) is not True]
+    if missing:
+        raise AssertionError("triangle candidate misses acceptance flags: " + ", ".join(missing))
+    return payload, path
 
 
 def build() -> dict:
@@ -54,11 +107,33 @@ def build() -> dict:
         raise AssertionError("quantum import gate unexpectedly promoted")
     if quantum["shared_relative_row"]["map_iota"] != "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH":
         raise AssertionError("quantum relative map disposition drifted")
+    triangle, triangle_path = triangle_import()
+    imported = triangle is not None
+
+    refs = {
+        "standard_harmonic_inclusion": dependency(
+            STANDARD, "compact_einstein_maxwell_weyl_standard_harmonic_inclusion"
+        ),
+        "berger_same_base_no_go": dependency(
+            BERGER, "compact_positive_berger_clock_einstein_incidence"
+        ),
+        "quantum_relative_readiness": dependency(
+            QUANTUM, "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS"
+        ),
+    }
+    if imported:
+        refs["off_shell_relative_triangle"] = dependency(
+            triangle_path, "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
+        )
 
     payload = {
         "schema": "pure-weyl-relative-residual-observable-functor-preflight-v1",
         "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1",
-        "result_state": "DEPENDENCY_CONTRACT_READY_OFFSHELL_TRIANGLE_MISSING",
+        "result_state": (
+            "OFFSHELL_TRIANGLE_IMPORTED_RELATIVE_FUNCTOR_CONSTRUCTION_OPEN"
+            if imported
+            else "DEPENDENCY_CONTRACT_READY_OFFSHELL_TRIANGLE_MISSING"
+        ),
         "setting": {
             "theory_pair": "Einstein-Maxwell_to_Weyl-Maxwell",
             "background": "compact_Einstein-Maxwell_product",
@@ -66,20 +141,10 @@ def build() -> dict:
             "phase_space": "complete_standard_harmonic_tangent_before_final_residual_quotient",
         },
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
-        "dependency_refs": {
-            "standard_harmonic_inclusion": dependency(
-                STANDARD, "compact_einstein_maxwell_weyl_standard_harmonic_inclusion"
-            ),
-            "berger_same_base_no_go": dependency(
-                BERGER, "compact_positive_berger_clock_einstein_incidence"
-            ),
-            "quantum_relative_readiness": dependency(
-                QUANTUM, "QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS"
-            ),
-        },
+        "dependency_refs": refs,
         "shared_relative_row": {
-            "map_iota": "ONSHELL_MAP_ONLY",
-            "cofiber": "BLOCKED_OFFSHELL_TRIANGLE_MISSING",
+            "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "ONSHELL_MAP_ONLY",
+            "cofiber": "IMPORTED_MAPPING_COFIBER" if imported else "BLOCKED_OFFSHELL_TRIANGLE_MISSING",
             "relative_pairing": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",
             "O2": "PARTIAL_FIXTURES_ONLY",
             "residual_action": "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING",
@@ -96,7 +161,9 @@ def build() -> dict:
                 "H_product_equivariance",
                 "content_addressed_certificate_and_independent_verifier",
             ],
-            "status": "MISSING",
+            "acceptance_flags": list(TRIANGLE_FLAGS),
+            "candidate_paths": [str(path.relative_to(ROOT)) for path in TRIANGLE_CANDIDATES],
+            "status": "IMPORTED" if imported else "MISSING",
         },
         "background_scope": {
             "common_product_background": "APPLICABLE",
@@ -105,13 +172,17 @@ def build() -> dict:
         "flags": {
             "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1": True,
             "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1": False,
-            "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED": False,
+            "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED": imported,
             "OBSERVABLE_PULLBACK_CONSTRUCTED": False,
             "RESIDUAL_EQUIVARIANCE_CERTIFIED": False,
             "COFIBER_COMPATIBILITY_CERTIFIED": False,
             "BERGER_SAME_BASE_RELATIVE_MAP_APPLICABLE": False,
         },
-        "next_gate": "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH",
+        "next_gate": (
+            "CONSTRUCT_RESIDUAL_EQUIVARIANCE_COFIBER_COMPATIBILITY_AND_OBSERVABLE_PULLBACK"
+            if imported
+            else "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH"
+        ),
         "claim_boundary": (
             "The exact on-shell standard-harmonic inclusion and reduced-mode pairing are imported by content hash. "
             "They do not define an off-shell BV chain map, mapping cofiber, residual-equivariant observable pullback, "
@@ -129,13 +200,17 @@ def verify(payload: dict) -> None:
     for item in payload["dependency_refs"].values():
         if sha256(ROOT / item["path"]) != item["sha256"]:
             raise AssertionError(f"dependency hash drifted: {item['path']}")
-    if payload["required_import"]["status"] != "MISSING":
-        raise AssertionError("missing triangle was silently promoted")
+    imported = payload["required_import"]["status"] == "IMPORTED"
+    if payload["flags"]["EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED"] is not imported:
+        raise AssertionError("triangle status and flag disagree")
     flags = payload["flags"]
     if flags["RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"] is not True:
         raise AssertionError("preflight not certified")
+    allowed_true = {"RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"}
+    if imported:
+        allowed_true.add("EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED")
     for key, value in flags.items():
-        if key != "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1" and value is not False:
+        if key not in allowed_true and value is not False:
             raise AssertionError(f"forbidden relative promotion: {key}")
 
 
@@ -145,10 +220,9 @@ def report_text(payload: dict) -> str:
 Result: `{payload['result_state']}`.
 
 The compact Einstein-Maxwell product supplies an exact on-shell harmonic
-inclusion and a nondegenerate reduced-mode pullback pairing.  It does not yet
-supply the off-shell BV triangle needed for a mapping cofiber, residual action,
-or observable pullback.  Those targets remain fail-closed until
-`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` is imported by content hash.
+inclusion and a nondegenerate reduced-mode pullback pairing.  Triangle import
+status is `{payload['required_import']['status']}`.  Residual equivariance and
+the observable pullback remain separate fail-closed constructions.
 
 The positive Berger clock is not a fallback common background: the certified
 incidence result excludes a same-base Einstein tangent there.
@@ -158,7 +232,6 @@ incidence result excludes a same-base Einstein tangent there.
 def guards(payload: dict) -> None:
     for key in (
         "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
-        "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED",
         "OBSERVABLE_PULLBACK_CONSTRUCTED",
         "RESIDUAL_EQUIVARIANCE_CERTIFIED",
         "COFIBER_COMPATIBILITY_CERTIFIED",

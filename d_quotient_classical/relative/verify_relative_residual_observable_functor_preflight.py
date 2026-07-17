@@ -27,17 +27,20 @@ def main() -> int:
     for item in certificate["dependency_refs"].values():
         if sha256(ROOT / item["path"]) != item["sha256"]:
             raise AssertionError(f"dependency hash mismatch: {item['path']}")
-    if certificate["shared_relative_row"] != {
+    imported = certificate["required_import"]["status"] == "IMPORTED"
+    expected_row = {
         "O2": "PARTIAL_FIXTURES_ONLY",
-        "cofiber": "BLOCKED_OFFSHELL_TRIANGLE_MISSING",
-        "map_iota": "ONSHELL_MAP_ONLY",
+        "cofiber": "IMPORTED_MAPPING_COFIBER" if imported else "BLOCKED_OFFSHELL_TRIANGLE_MISSING",
+        "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "ONSHELL_MAP_ONLY",
         "observable_map": "BLOCKED_OFFSHELL_PULLBACK_MISSING",
         "quantum_lift": "NOT_APPLICABLE_TO_CLASSICAL_PREFLIGHT",
         "relative_pairing": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",
         "residual_action": "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING",
-    }:
+    }
+    if certificate["shared_relative_row"] != expected_row:
         raise AssertionError("shared relative row drifted")
-    if sum(bool(v) for v in certificate["flags"].values()) != 1:
+    expected_true = 2 if imported else 1
+    if sum(bool(v) for v in certificate["flags"].values()) != expected_true:
         raise AssertionError("a downstream relative flag was promoted")
     print("relative residual/observable preflight independent audit: PASS")
     return 0
