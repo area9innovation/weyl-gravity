@@ -240,8 +240,20 @@ d\operatorname{vol}_{\widehat g},\qquad a=0,1,
 with declared polarizations in disjoint spacetime rod supports.  Their normalized
 dual-probe matrix is exactly `I_2`, and first-order probe memory registers retain
 the readings.  Exact central Hopf rays reach both detector centers before the
-half-fibre cut locus.  What remains open is the physical two-source/two-detector
-matrix `M_ab=Q_a[d G_ret J_b]` with fully smeared causal-support margins.
+half-fibre cut locus.
+
+The physical transfer has now also been evaluated for two predeclared smooth
+conserved switch-on currents in the exact homogeneous `e1/e2` Maxwell sector:
+
+\[
+M_{ab}=Q_a[dG_{\rm ret}J_b]
+=\begin{pmatrix}C_{00}&0\\0&C_{11}\end{pmatrix},
+\qquad C_{00},C_{11}>0.
+\]
+
+Thus the two emitted polarization signals produce distinguishable persistent
+record vectors.  The currents occupy the full compact Berger `S3`; this is not
+yet a spatially localized emitter-worldtube theorem.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.
@@ -261,7 +273,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | local rods, two independent smearings, persistent probe memories; transfer and quotient descent open | nonzero retarded signal and central no-wrap rays; smeared transfer matrix open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | localized persistent memories with rank-two response in the homogeneous source sector; quotient descent open | exact positive-diagonal retarded transfer; spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -274,25 +286,26 @@ pins the clock, redshift, Maxwell causal, retarded-signal, fixed-coupling
 raw-\(D\), and nonlinear \(K_{\rm Berger}\) certificates by path, result
 identifier, SHA-256 hash, and declared claim boundary.
 
-The primary missing objects are a rank-two smeared retarded response matrix for
-two predeclared compact currents, full support-to-window no-wrap witnesses,
-apparatus recoil, rod and gravity backreaction, observer-map compatibility
+The primary missing objects are a rank-two transfer from two spatially
+localized emitter worldtubes, full localized support-to-window no-wrap
+witnesses, apparatus recoil, rod and gravity backreaction, observer-map compatibility
 with raw \(D\), \(K_{\rm Berger}\), mixed \(q_3\), and higher brackets, a quantum
 BRST state space, a positive observer state with induced inner product, and a
 QME-restored Lorentzian observer theory.
 
 The first exact defect is consequently not “internal observers are
 impossible.”  It is: **the external and internal constructions currently live
-on different carriers, and the internal side lacks a rank-two physical transfer
-matrix and quotient-descended rod-memory sector needed to type a common functor.**
+on different carriers, and the internal side still lacks a quotient-descended,
+backreacting localized source-rod-memory sector needed to type a common functor.**
 
 ## Verification receipt
 
-Tier 0 passed Python compilation in 0.02 seconds and structured-data parsing in
-0.14 seconds.  Tier 1 passed certificate freshness, independent exact replay,
-the import/claim-ledger verifier, and seven scoped tests in 1.70 seconds.  Tier
-2 was not run because no imported mathematical input or certificate chain was
-modified and all imports are content-addressed.  Tier 3 was not run because no
-freeze, theorem promotion, shared-core change, or release was requested.  The
-exact commands, artifact hashes, lifecycle flags, and skip criteria are stored
-in `closed_universe_observers/receipts/FIRST_COMPARISON_TIER_RECEIPT.json`.
+The current affected chain passed Tier 0 compilation, JSON parsing, and scoped
+diff checks in 0.59 seconds.  Tier 1 passed three freshness checks, three
+independent replays, the import/claim-ledger verifier, six transfer mutations,
+and 16 scoped tests in 4.72 seconds.  Tier 2 was not run because no imported
+operator changed and the full affected observer chain was replayed.  Tier 3
+was not run because no freeze, paper-theorem promotion, shared-core change, or
+release was requested.  Exact commands, hashes, lifecycle flags, and skip
+criteria are stored in
+`closed_universe_observers/receipts/SMEARED_RETARDED_TRANSFER_TIER_RECEIPT.json`.

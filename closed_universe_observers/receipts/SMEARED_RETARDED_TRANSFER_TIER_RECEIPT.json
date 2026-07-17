@@ -1,0 +1,52 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "SMEARED_RETARDED_TRANSFER_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "tier_0": [
+    {
+      "command": "python3 -m compileall -q closed_universe_observers && parse every namespace JSON file with python3 -m json.tool && git diff --check -- closed_universe_observers",
+      "elapsed_seconds": "0.59",
+      "status": "PASS",
+      "scope": "all closed-universe observer Python, structured data, and scoped whitespace checks"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 closed_universe_observers/generate_rank_one_fixture.py --check && python3 closed_universe_observers/verify_rank_one_fixture.py && python3 closed_universe_observers/generate_berger_detector_records.py --check && python3 closed_universe_observers/verify_berger_detector_records.py && python3 closed_universe_observers/generate_berger_smeared_retarded_transfer.py --check && python3 closed_universe_observers/verify_berger_smeared_retarded_transfer.py && python3 closed_universe_observers/verify_comparison_ledger.py && python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "4.72",
+      "status": "PASS",
+      "scope": "three certificate freshness checks, three independent replays, historical/live import verification, six transfer mutations, and 16 scoped tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "criterion": "No authoritative classical operator or dependency changed; the new content-addressed bridge certificate directly replays the full affected observer comparison chain."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, paper theorem promotion, shared core algebra change, or release was requested."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/fixtures/berger_smeared_retarded_transfer_input.json", "sha256": "976a4413158c84f21b7af52caaf9cd182efc4390550cb48c044eb83f1f64ddaa"},
+    {"path": "closed_universe_observers/schema/berger-smeared-retarded-transfer-input-v1.schema.json", "sha256": "448a366a01c78129feae72e4bb1eb66f11a0329d51076d5e649398761ab8d145"},
+    {"path": "closed_universe_observers/schema/berger-smeared-retarded-transfer-v1.schema.json", "sha256": "cffb29c29421e5da976df39db78013c0209317df2cee8fff5d81cfa21dfad5fc"},
+    {"path": "closed_universe_observers/certificates/BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER.json", "sha256": "09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "b8cca18d69ebede2870e2801eb9ee85e6dfeecd10ba202479209315ab8dc14f7"},
+    {"path": "closed_universe_observers/schema/comparison-ledger-v1.schema.json", "sha256": "83fb6fa2a1eafa6bb5bee2b29bc9ff4fb2498f8c502da70ba5577aa67bcbe7b2"}
+  ],
+  "claim_flags": {
+    "TWO_PREDECLARED_COMPACT_CONSERVED_CURRENTS": true,
+    "FULL_MAXWELL_RETARDED_SOLUTIONS_EXACT": true,
+    "SMEARED_RETARDED_TRANSFER_MATRIX_RANK_TWO": true,
+    "TWO_CAUSALLY_ACQUIRED_MEMORY_RECORDS_DISTINGUISHABLE": true,
+    "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES": false,
+    "D_DESCENT_WITH_SOURCE_ROD_MEMORY_SECTOR_CERTIFIED": false,
+    "CLASSICAL_OBSERVER_MAP_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

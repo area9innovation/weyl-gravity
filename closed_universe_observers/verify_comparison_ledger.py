@@ -72,8 +72,8 @@ def main() -> int:
     if set(claim_index) != {"theory", "background", "state_object", "quotient", "observer", "boundaries", "lifecycle"}:
         raise AssertionError("seven-field claim index is incomplete")
     component_status = {item["requirement"]: item["status"] for item in ledger["classical_observer_map"]["components"]}
-    if component_status["two_distinguishable_clock_labelled_records"] != "CERTIFIED_SMEARINGS_MEMORY_TRANSFER_OPEN":
-        raise AssertionError("localized smearing/memory gate drifted")
+    if component_status["two_distinguishable_clock_labelled_records"] != "CERTIFIED_CAUSAL_RECORDS_D_DESCENT_OPEN":
+        raise AssertionError("physical rank-two detector-transfer gate drifted")
     if ledger["classical_observer_map"]["map_certified"] is not False:
         raise AssertionError("partial observer map was promoted")
     matrix = {row["setting"]: row for row in ledger["comparison_matrix"]}

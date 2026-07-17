@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-smeared-retarded-transfer-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "setting_id", "dependency_snapshot_commit", "clock_rate", "maxwell_frequency", "switch_on", "source_channels", "detectors", "mutations"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-smeared-retarded-transfer-input-v1"},
+    "setting_id": {"const": "compact_positive_berger_clock_homogeneous_maxwell_source_sector"},
+    "dependency_snapshot_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "clock_rate": {"const": "3/4"},
+    "maxwell_frequency": {"const": "2*sqrt(10)/3"},
+    "switch_on": {
+      "type": "object", "additionalProperties": false,
+      "required": ["physical_time_start", "physical_time_end", "profile"],
+      "properties": {
+        "physical_time_start": {"const": "-1/2"},
+        "physical_time_end": {"const": "-1/4"},
+        "profile": {"type": "string", "minLength": 1}
+      }
+    },
+    "source_channels": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "polarization", "phase_origin_physical_time", "homogeneous_potential"],
+        "properties": {
+          "id": {"enum": ["J0", "J1"]}, "polarization": {"enum": ["e1", "e2"]},
+          "phase_origin_physical_time": {"const": "0"},
+          "homogeneous_potential": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "detectors": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "clock_center", "clock_half_width", "electric_component", "smearing_mass"],
+        "properties": {
+          "id": {"enum": ["D0", "D1"]}, "clock_center": {"enum": ["3/16", "3/8"]},
+          "clock_half_width": {"const": "1/64"}, "electric_component": {"enum": ["e01", "e02"]},
+          "smearing_mass": {"const": "1"}
+        }
+      }
+    },
+    "mutations": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "patch", "expected_failed_requirement"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1}, "patch": {"type": "object", "minProperties": 1},
+          "expected_failed_requirement": {"enum": ["transfer_matrix_rank_two", "sources_strictly_before_detector_windows", "positive_diagonal_response", "currents_conserved", "full_maxwell_mode_equations_exact"]}
+        }
+      }
+    }
+  }
+}

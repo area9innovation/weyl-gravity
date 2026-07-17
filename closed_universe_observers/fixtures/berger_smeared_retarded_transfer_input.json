@@ -1,0 +1,74 @@
+{
+  "schema": "closed-universe-berger-smeared-retarded-transfer-input-v1",
+  "setting_id": "compact_positive_berger_clock_homogeneous_maxwell_source_sector",
+  "dependency_snapshot_commit": "e4f5c46fd7a04088e78e0374853b1f122ea223b1",
+  "clock_rate": "3/4",
+  "maxwell_frequency": "2*sqrt(10)/3",
+  "switch_on": {
+    "physical_time_start": "-1/2",
+    "physical_time_end": "-1/4",
+    "profile": "chi is smooth, chi=0 at and before t_start, chi=1 at and after t_end"
+  },
+  "source_channels": [
+    {
+      "id": "J0",
+      "polarization": "e1",
+      "phase_origin_physical_time": "0",
+      "homogeneous_potential": "u(t)e1 with u=sin(beta*t)/beta"
+    },
+    {
+      "id": "J1",
+      "polarization": "e2",
+      "phase_origin_physical_time": "0",
+      "homogeneous_potential": "u(t)e2 with u=sin(beta*t)/beta"
+    }
+  ],
+  "detectors": [
+    {
+      "id": "D0",
+      "clock_center": "3/16",
+      "clock_half_width": "1/64",
+      "electric_component": "e01",
+      "smearing_mass": "1"
+    },
+    {
+      "id": "D1",
+      "clock_center": "3/8",
+      "clock_half_width": "1/64",
+      "electric_component": "e02",
+      "smearing_mass": "1"
+    }
+  ],
+  "mutations": [
+    {
+      "name": "merge_source_polarizations",
+      "patch": {"source_polarizations": ["e1", "e1"]},
+      "expected_failed_requirement": "transfer_matrix_rank_two"
+    },
+    {
+      "name": "merge_detector_components",
+      "patch": {"detector_components": ["e01", "e01"]},
+      "expected_failed_requirement": "transfer_matrix_rank_two"
+    },
+    {
+      "name": "move_source_end_after_first_detector",
+      "patch": {"switch_on_end": "1/2"},
+      "expected_failed_requirement": "sources_strictly_before_detector_windows"
+    },
+    {
+      "name": "widen_windows_beyond_positive_phase_bound",
+      "patch": {"detector_clock_half_widths": ["2", "2"]},
+      "expected_failed_requirement": "positive_diagonal_response"
+    },
+    {
+      "name": "break_current_conservation",
+      "patch": {"source_divergence_residuals": ["epsilon", "0"]},
+      "expected_failed_requirement": "currents_conserved"
+    },
+    {
+      "name": "break_forced_maxwell_operator",
+      "patch": {"forced_operator_frequency_squared": "4"},
+      "expected_failed_requirement": "full_maxwell_mode_equations_exact"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-smeared-retarded-transfer-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "source_construction", "retarded_maxwell_solution", "detector_evaluation", "transfer_matrix", "memory_records", "mutation_results", "flags", "not_established", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-smeared-retarded-transfer-v1"},
+    "result_id": {"const": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER"},
+    "setting_id": {"const": "compact_positive_berger_clock_homogeneous_maxwell_source_sector"},
+    "claim_status": {"const": "CERTIFIED_RANK_TWO_CAUSAL_RECORD_TRANSFER_IN_HOMOGENEOUS_SOURCE_SECTOR"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["detector_preflight", "maxwell_mode", "causal_green", "retarded_signal"],
+      "properties": {
+        "detector_preflight": {"$ref": "#/$defs/dependency"}, "maxwell_mode": {"$ref": "#/$defs/dependency"},
+        "causal_green": {"$ref": "#/$defs/dependency"}, "retarded_signal": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "source_construction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["switch_profile", "support", "spatial_support", "potentials", "currents", "conservation", "divergence_residuals", "predeclared_before_evaluation"],
+      "properties": {
+        "switch_profile": {"$ref": "#/$defs/text"}, "support": {"$ref": "#/$defs/text"},
+        "spatial_support": {"$ref": "#/$defs/text"}, "potentials": {"$ref": "#/$defs/two_text"},
+        "currents": {"$ref": "#/$defs/two_text"}, "conservation": {"$ref": "#/$defs/text"},
+        "divergence_residuals": {"const": ["0", "0"]}, "predeclared_before_evaluation": {"const": true}
+      }
+    },
+    "retarded_maxwell_solution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frequency_beta", "forced_operator_frequency_squared", "reduced_equations", "homogeneous_wave_residuals", "full_form_source_residuals", "conservation_four_form_residuals", "lorenz_gauge_residuals", "phase_origin_electric_values", "full_form_embedding", "retarded_uniqueness", "advanced_solution_excluded"],
+      "properties": {
+        "frequency_beta": {"const": "2*sqrt(10)/3"}, "forced_operator_frequency_squared": {"const": "40/9"},
+        "reduced_equations": {"$ref": "#/$defs/two_text"},
+        "homogeneous_wave_residuals": {"const": ["0", "0"]}, "full_form_source_residuals": {"const": ["0", "0"]},
+        "conservation_four_form_residuals": {"const": ["0", "0"]}, "lorenz_gauge_residuals": {"const": ["0", "0"]},
+        "phase_origin_electric_values": {"const": ["1", "1"]},
+        "full_form_embedding": {"$ref": "#/$defs/text"}, "retarded_uniqueness": {"$ref": "#/$defs/text"},
+        "advanced_solution_excluded": {"const": true}
+      }
+    },
+    "detector_evaluation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["physical_time_centers", "physical_time_half_widths", "electric_components", "apparatus_polarization_forms", "covariance_scope", "smearing_conditions", "phase_spans", "positivity_witness", "cross_channel_vanishing"],
+      "properties": {
+        "physical_time_centers": {"const": ["1/4", "1/2"]}, "physical_time_half_widths": {"const": ["1/48", "1/48"]},
+        "electric_components": {"const": ["e01", "e02"]}, "smearing_conditions": {"$ref": "#/$defs/text"},
+        "apparatus_polarization_forms": {"const": ["P_0=e0 wedge e1", "P_1=e0 wedge e2"]},
+        "covariance_scope": {"$ref": "#/$defs/text"},
+        "phase_spans": {"const": ["13*sqrt(10)/72", "25*sqrt(10)/72"]},
+        "positivity_witness": {"$ref": "#/$defs/text"}, "cross_channel_vanishing": {"$ref": "#/$defs/text"}
+      }
+    },
+    "transfer_matrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["definition", "matrix", "entry_definitions", "determinant", "determinant_sign", "rank", "source_record_vectors"],
+      "properties": {
+        "definition": {"const": "M_ab=Q_a[d G_ret J_b]"}, "matrix": {"const": [["C_00", "0"], ["0", "C_11"]]},
+        "entry_definitions": {
+          "type": "object", "additionalProperties": false, "required": ["C_00", "C_11"],
+          "properties": {"C_00": {"$ref": "#/$defs/text"}, "C_11": {"$ref": "#/$defs/text"}}
+        },
+        "determinant": {"const": "C_00*C_11"}, "determinant_sign": {"const": "positive"}, "rank": {"const": 2},
+        "source_record_vectors": {"const": [["C_00", "0"], ["0", "C_11"]]}
+      }
+    },
+    "memory_records": {
+      "type": "object", "additionalProperties": false,
+      "required": ["record_equation", "final_matrix", "persistence", "distinguishable"],
+      "properties": {
+        "record_equation": {"$ref": "#/$defs/text"}, "final_matrix": {"$ref": "#/$defs/text"},
+        "persistence": {"$ref": "#/$defs/text"}, "distinguishable": {"const": true}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/mutation"}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TWO_PREDECLARED_COMPACT_CONSERVED_CURRENTS", "FULL_MAXWELL_RETARDED_SOLUTIONS_EXACT", "SMEARED_RETARDED_TRANSFER_MATRIX_RANK_TWO", "TWO_CAUSALLY_ACQUIRED_MEMORY_RECORDS_DISTINGUISHABLE", "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES", "APPARATUS_RECOIL_AND_BACKREACTION_INCLUDED", "D_DESCENT_WITH_SOURCE_ROD_MEMORY_SECTOR_CERTIFIED", "CLASSICAL_OBSERVER_MAP_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "TWO_PREDECLARED_COMPACT_CONSERVED_CURRENTS": {"const": true}, "FULL_MAXWELL_RETARDED_SOLUTIONS_EXACT": {"const": true},
+        "SMEARED_RETARDED_TRANSFER_MATRIX_RANK_TWO": {"const": true}, "TWO_CAUSALLY_ACQUIRED_MEMORY_RECORDS_DISTINGUISHABLE": {"const": true},
+        "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES": {"const": false}, "APPARATUS_RECOIL_AND_BACKREACTION_INCLUDED": {"const": false},
+        "D_DESCENT_WITH_SOURCE_ROD_MEMORY_SECTOR_CERTIFIED": {"const": false}, "CLASSICAL_OBSERVER_MAP_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "not_established": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["declared_input_sha256", "source_manifest"],
+      "properties": {
+        "declared_input_sha256": {"$ref": "#/$defs/sha256"},
+        "source_manifest": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/source"}}
+      }
+    },
+    "claim_boundary": {"$ref": "#/$defs/text"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "two_text": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "snapshot_commit", "sha256", "claim_boundary", "live_required_flags"],
+      "properties": {
+        "path": {"$ref": "#/$defs/text"}, "result_id": {"$ref": "#/$defs/text"},
+        "snapshot_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "sha256": {"$ref": "#/$defs/sha256"},
+        "claim_boundary": {"$ref": "#/$defs/text"},
+        "live_required_flags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "mutation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "expected_failed_requirement", "observed_requirement_value", "observed_structural_rank", "expected_failure_passed"],
+      "properties": {
+        "name": {"$ref": "#/$defs/text"},
+        "expected_failed_requirement": {"enum": ["transfer_matrix_rank_two", "sources_strictly_before_detector_windows", "positive_diagonal_response", "currents_conserved", "full_maxwell_mode_equations_exact"]},
+        "observed_requirement_value": {"const": false}, "observed_structural_rank": {"type": "integer", "minimum": 0, "maximum": 2},
+        "expected_failure_passed": {"const": true}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"],
+      "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}
+    }
+  }
+}
