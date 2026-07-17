@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/paper-09-theorem-freeze-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "paper_state", "claim_status", "dependency_tags", "source_snapshot", "dependency_refs", "theorem_inventory", "verification", "environment", "flags", "postfreeze_queue", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-paper-09-theorem-freeze-v1"},
+    "result_id": {"const": "PAPER_09_THEOREM_FREEZE"},
+    "paper_state": {"const": "THEOREM_FROZEN"},
+    "claim_status": {"const": "FROZEN_SCOPED_CLASSICAL_GRAVITY_CLOCK_THEOREM"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "source_snapshot": {"type": "object", "additionalProperties": false, "required": ["commit", "method", "working_tree_inputs"], "properties": {"commit": {"$ref": "#/$defs/commit"}, "method": {"$ref": "#/$defs/text"}, "working_tree_inputs": {"const": false}}},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "theorem_inventory": {"type": "object", "additionalProperties": false, "required": ["claim_count", "claim_ids", "primary_geometric_theorem", "primary_bv_theorem", "maxwell_main_theorem_included", "observer_84_row_main_theorem_included"], "properties": {"claim_count": {"const": 10}, "claim_ids": {"const": ["P09-C1", "P09-C2", "P09-C3", "P09-C4", "P09-C5", "P09-C6", "P09-C7", "P09-C8", "P09-C9", "P09-C10"]}, "primary_geometric_theorem": {"$ref": "#/$defs/text"}, "primary_bv_theorem": {"$ref": "#/$defs/text"}, "maxwell_main_theorem_included": {"const": false}, "observer_84_row_main_theorem_included": {"const": false}}},
+    "verification": {"type": "object", "additionalProperties": false, "required": ["authoritative_freeze_rail", "explicit_verifier_rail", "pdf_build", "broader_classical_package_audit", "commands"], "properties": {"authoritative_freeze_rail": {"$ref": "#/$defs/rail"}, "explicit_verifier_rail": {"type": "object"}, "pdf_build": {"type": "object"}, "broader_classical_package_audit": {"type": "object"}, "commands": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/text"}}}},
+    "environment": {"type": "object", "additionalProperties": false, "required": ["platform", "python", "sympy", "jsonschema", "pytest", "pdftex"], "properties": {"platform": {"$ref": "#/$defs/text"}, "python": {"$ref": "#/$defs/text"}, "sympy": {"$ref": "#/$defs/text"}, "jsonschema": {"$ref": "#/$defs/text"}, "pytest": {"$ref": "#/$defs/text"}, "pdftex": {"$ref": "#/$defs/text"}}},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["PAPER_09_THEOREM_FROZEN", "PAPER_09_TEN_CLAIMS_PINNED", "PAPER_09_AUTHORITATIVE_CLEAN_SNAPSHOT_REPLAY", "PAPER_09_PDFS_COMPILE", "PAPER_09_NONLINEAR_FROZEN_SIGNOFF", "PAPER_09_QUANTUM_BOUNDARY_SIGNOFF", "MAXWELL_MAIN_THEOREM_INCLUDED", "OBSERVER_84_ROW_MAIN_THEOREM_INCLUDED", "AFFINE_D_CARTAN_CERTIFIED", "ARITY_FOUR_OR_ALL_ORDERS_CERTIFIED", "HADAMARD_OR_QME_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"PAPER_09_THEOREM_FROZEN": {"const": true}, "PAPER_09_TEN_CLAIMS_PINNED": {"const": true}, "PAPER_09_AUTHORITATIVE_CLEAN_SNAPSHOT_REPLAY": {"const": true}, "PAPER_09_PDFS_COMPILE": {"const": true}, "PAPER_09_NONLINEAR_FROZEN_SIGNOFF": {"const": true}, "PAPER_09_QUANTUM_BOUNDARY_SIGNOFF": {"const": true}, "MAXWELL_MAIN_THEOREM_INCLUDED": {"const": false}, "OBSERVER_84_ROW_MAIN_THEOREM_INCLUDED": {"const": false}, "AFFINE_D_CARTAN_CERTIFIED": {"const": false}, "ARITY_FOUR_OR_ALL_ORDERS_CERTIFIED": {"const": false}, "HADAMARD_OR_QME_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "postfreeze_queue": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest"], "properties": {"source_manifest": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/source"}}}},
+    "claim_boundary": {"$ref": "#/$defs/text"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "commit", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "commit": {"$ref": "#/$defs/commit"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "source": {"type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"], "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "rail": {"type": "object", "additionalProperties": false, "required": ["status", "tests_passed", "tests_failed", "pytest_seconds", "wall_seconds", "maxrss_kb", "scope"], "properties": {"status": {"const": "PASS"}, "tests_passed": {"const": 47}, "tests_failed": {"const": 0}, "pytest_seconds": {"const": "135.33"}, "wall_seconds": {"const": "136.26"}, "maxrss_kb": {"const": 773600}, "scope": {"$ref": "#/$defs/text"}}}
+  }
+}
