@@ -71,6 +71,7 @@ EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION_CONTRIBUTION = PACKAGE / "contri
 EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_COMPLETION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-polar-lee-wald-completion.json"
 EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-polar-ungauged-noether-lift.json"
 EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-plebanski-hacyan-stabilizer.json"
+EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-moment-map-taub-bridge.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-extra-green-pairing.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-lee-wald-completion.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-extra-detector-taub.json"
@@ -1095,6 +1096,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
         "G2_PH_STABILIZER_PRIMARY_EQUIVARIANT_ABSOLUTE_QUOTIENT_NOT_AUTHORIZED",
     )
+    maxwell_weyl_moment_map_taub_bridge_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_moment_map_taub_bridge",
+        "einstein_maxwell_product_compact_weyl_generic_fixed_bundle_moment_map_taub",
+        "G2_GENERIC_PURE_EXTRA_FIXED_BUNDLE_TAUB_NO_GO",
+    )
     maxwell_weyl_axial_extra_green_pairing_contribution = _einstein_maxwell_second_order_contribution(
         EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION,
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
@@ -1386,6 +1393,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_PLEBANSKI_HACYAN_STABILIZER_CONTRIBUTION),
                 "payload": maxwell_weyl_plebanski_hacyan_stabilizer_contribution,
+            },
+            {
+                "path": str(EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE_CONTRIBUTION),
+                "payload": maxwell_weyl_moment_map_taub_bridge_contribution,
             },
             {
                 "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION.relative_to(ROOT)),
@@ -1911,6 +1923,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_PH_STABILIZER_PRIMARY_EQUIVARIANT_ABSOLUTE_QUOTIENT_NOT_AUTHORIZED",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_moment_map_taub_bridge",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_fixed_bundle_moment_map_taub",
+                "boundary_conditions": "generic axial and polar ell>=2 q/p-primary real solution space at every allowed compact momentum on fixed P_N; after local gauge reduction with the five background stabilizers retained; before mixed common-zero-locus, exceptional/global, cyclic, or causal completion",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_GENERIC_PURE_EXTRA_FIXED_BUNDLE_TAUB_NO_GO",
+            },
+            {
                 "setting_id": "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
                 "generator_id": "H_product",
                 "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_extra_reduced_green_pairing",
@@ -2191,6 +2212,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_polar_lee_wald_completion",
         "compact_einstein_maxwell_weyl_polar_ungauged_noether_lift",
         "compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent",
+        "compact_einstein_maxwell_weyl_moment_map_taub_bridge",
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
         "compact_einstein_maxwell_weyl_axial_lee_wald_completion",
         "compact_einstein_maxwell_weyl_axial_extra_detector_taub",
@@ -2250,6 +2272,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_polar_lee_wald_completion": "G2_GENERIC_POLAR_DIRECT_LEE_WALD_BLOCK_INERTIA_THREE_ONE",
         "compact_einstein_maxwell_weyl_polar_ungauged_noether_lift": "G2_GENERIC_POLAR_UNGAUGED_EQUATION_NOETHER_CHAIN_MAP",
         "compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent": "G2_PH_STABILIZER_PRIMARY_EQUIVARIANT_ABSOLUTE_QUOTIENT_NOT_AUTHORIZED",
+        "compact_einstein_maxwell_weyl_moment_map_taub_bridge": "G2_GENERIC_PURE_EXTRA_FIXED_BUNDLE_TAUB_NO_GO",
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
         "compact_einstein_maxwell_weyl_axial_lee_wald_completion": "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE",
         "compact_einstein_maxwell_weyl_axial_extra_detector_taub": "G2_AXIAL_EXTRA_DETECTOR_AND_ELL2_K0_NEGATIVE_DEFINITE_TAUB_OBSTRUCTION",
@@ -2369,6 +2392,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Weyl--Maxwell generic polar ungauged Noether lift was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell Plebanski--Hacyan stabilizer descent was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_moment_map_taub_bridge", {}).get("status") != "CERTIFIED":
+        errors.append("Weyl--Maxwell moment-map/Taub bridge was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_axial_extra_green_pairing", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell axial extra reduced-Green pairing was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_axial_lee_wald_completion", {}).get("status") != "CERTIFIED":
@@ -2846,6 +2871,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent",
             "drop_Einstein_Maxwell_Weyl_Plebanski_Hacyan_stabilizer_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_moment_map_taub_bridge",
+            "drop_Einstein_Maxwell_Weyl_moment_map_Taub_bridge_contribution",
         ),
         (
             "compact_einstein_maxwell_weyl_axial_extra_green_pairing",

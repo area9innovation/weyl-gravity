@@ -29,7 +29,7 @@
     ],
     "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "607be99928ca94515af4b8d96e0faff2229329d7",
+  "programme_base_commit": "d67b2b252436720a7b19ac9583a68fa55176fcf0",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -498,6 +498,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent",
       "status": "CERTIFIED",
       "verdict": "G2_PH_STABILIZER_PRIMARY_EQUIVARIANT_ABSOLUTE_QUOTIENT_NOT_AUTHORIZED"
+    },
+    {
+      "boundary_conditions": "generic axial and polar ell>=2 q/p-primary real solution space at every allowed compact momentum on fixed P_N; after local gauge reduction with the five background stabilizers retained; before mixed common-zero-locus, exceptional/global, cyclic, or causal completion",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_fixed_bundle_moment_map_taub",
+      "setting_id": "compact_einstein_maxwell_weyl_moment_map_taub_bridge",
+      "status": "CERTIFIED",
+      "verdict": "G2_GENERIC_PURE_EXTRA_FIXED_BUNDLE_TAUB_NO_GO"
     },
     {
       "boundary_conditions": "generic axial extra module with exact reduced-Hessian local Green current; physical ell>=2; before direct Lee-Wald match and final residual quotient",
@@ -2699,6 +2708,52 @@
         ]
       },
       "sha256": "18d9ff5157cc31d135aa07e089b3c2029f8580ab3df0a10fb5f3a8790b7f8514"
+    },
+    {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-moment-map-taub-bridge.json",
+      "payload": {
+        "boundary_conditions": "generic axial and polar ell>=2 Weyl-Maxwell q/p-primary real solution space on R_t x S1_L x S2 at fixed compact magnetic bundle P_N, every allowed momentum, after local gauge reduction with the five background stabilizers retained",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the closed-slice covariant Hamiltonian identity identifies each background-stabilizer quadratic moment map with the corresponding adjoint-cokernel Taub pairing",
+          "the repository sign and real-mode factor agree exactly with three independent direct tensor Taub calculations: the axial extra block and the axial and polar Einstein-minus fixtures at ell=2,k=0",
+          "the generic H, P_x, and J_i moment maps obey the certified harmonic, primary, and parity selection rules",
+          "the axial and polar generic p-primary current Grams are positive definite for every physical ell>=2 and every allowed compact momentum",
+          "the time-translation Taub pairing is therefore negative definite on every nonzero real pure-extra generic tangent, including finite and rapidly decreasing finite-energy superpositions",
+          "no nonzero real pure-extra generic tangent extends to second order in the fixed-bundle Weyl-Maxwell phase space"
+        ],
+        "evidence": {
+          "commit": "d67b2b252436720a7b19ac9583a68fa55176fcf0",
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "solve the indefinite common H, P_x, and J_i zero locus for mixed Einstein-extra amplitudes, then compute exceptional and generalized global moment maps; independently solve or obstruct the polynomial cyclic BV enhancement",
+        "not_established": [
+          "the common stabilizer-moment-map zero locus for mixed Einstein q-primary and extra p-primary amplitudes",
+          "exceptional, homogeneous, twist, Wilson-line, or charge-block moment maps",
+          "charge-varying second-order extensions or the remaining adjoint-cokernel pairings",
+          "an absolute stabilizer quotient, residual CE cohomology, or relational observable",
+          "a cyclic BV enhancement, causal propagation, asymptotic scattering, particles, quantum ghosts, or unitarity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_fixed_bundle_moment_map_taub",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_moment_map_taub_bridge",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_GENERIC_PURE_EXTRA_FIXED_BUNDLE_TAUB_NO_GO",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_moment_map_taub_bridge --verify bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_moment_map_taub_bridge",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_moment_map_taub_bridge",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "5da8cd4bfd9c368aaa42e8d7f9c8400ae84b2683d59709c20766b35ab58e7970"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json",

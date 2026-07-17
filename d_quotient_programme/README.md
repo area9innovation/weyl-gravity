@@ -114,6 +114,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-polar-ungauged-noether-lift-registration-receipt.md`](reports/einstein-maxwell-weyl-polar-ungauged-noether-lift-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-plebanski-hacyan-stabilizer.json`](contributions/einstein-maxwell-weyl-plebanski-hacyan-stabilizer.json)
 - [`reports/einstein-maxwell-weyl-plebanski-hacyan-stabilizer-registration-receipt.md`](reports/einstein-maxwell-weyl-plebanski-hacyan-stabilizer-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-moment-map-taub-bridge.json`](contributions/einstein-maxwell-weyl-moment-map-taub-bridge.json)
+- [`reports/einstein-maxwell-weyl-moment-map-taub-bridge-registration-receipt.md`](reports/einstein-maxwell-weyl-moment-map-taub-bridge-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)
