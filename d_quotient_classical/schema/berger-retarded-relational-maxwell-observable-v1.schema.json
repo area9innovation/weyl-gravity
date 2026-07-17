@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retarded-relational-maxwell-observable-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "setting_id", "generality_level",
+    "dependency_tags", "dependency_refs", "retarded_mode_preparation",
+    "relational_redshift", "gauge_and_causal_audit", "periodic_clock_and_crossings",
+    "reduced_symplectic_dynamics", "D_gauge_relational_evolution",
+    "localized_apparatus_obstruction", "exact_checks", "flags", "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retarded-relational-maxwell-observable-v1"},
+    "result_id": {"const": "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE"},
+    "result_state": {"const": "RETARDED_CLOCK_SLICE_OBSERVABLE_CERTIFIED_LOCALIZED_APPARATUS_BLOCKED_AT_MIXED_ORDER"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "generality_level": {"const": "G0_EXACT_RETARDED_TWO_PHASE_MODE_FIXTURE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "retarded_mode_preparation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "switch", "prepared_potential", "Lorenz_identity", "compact_source", "source_conservation", "retarded_identity", "nonzero_source", "post_source_signal", "causal_support", "actual_retarded_signal", "exact_exterior_form_audit"],
+      "properties": {
+        "mode": {"type": "string"}, "switch": {"type": "string"}, "prepared_potential": {"type": "string"},
+        "Lorenz_identity": {"type": "string"}, "compact_source": {"type": "string"}, "source_conservation": {"type": "string"},
+        "retarded_identity": {"type": "string"}, "nonzero_source": {"type": "string"}, "post_source_signal": {"type": "string"},
+        "causal_support": {"type": "string"}, "actual_retarded_signal": {"const": true},
+        "exact_exterior_form_audit": {"type": "object"}
+      }
+    },
+    "relational_redshift": {"type": "object"},
+    "gauge_and_causal_audit": {"type": "object"},
+    "periodic_clock_and_crossings": {
+      "type": "object", "required": ["clock_target", "lifted_label", "relative_frequency", "rotation_is_identity", "global_statement", "repeated_crossings_handled"],
+      "properties": {
+        "clock_target": {"const": "S1"}, "lifted_label": {"type": "string"}, "relative_frequency": {"type": "string"},
+        "rotation_is_identity": {"const": false}, "global_statement": {"type": "string"}, "repeated_crossings_handled": {"const": true}
+      }
+    },
+    "reduced_symplectic_dynamics": {"type": "object"},
+    "D_gauge_relational_evolution": {"type": "object"},
+    "localized_apparatus_obstruction": {
+      "type": "object", "required": ["status", "first_missing_order", "normalized_existing_witness", "not_a_nonexistence_theorem"],
+      "properties": {
+        "status": {"const": "EXACT_REQUIRED_INPUT_MISSING_STOP_FAIL_CLOSED"},
+        "first_missing_order": {"const": "r*kappa=epsilon_R^2*kappa"},
+        "normalized_existing_witness": {"type": "object"},
+        "not_a_nonexistence_theorem": {"const": true}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE", "BERGER_ACTUAL_RETARDED_REDSHIFT_TWO", "BERGER_CLOCK_LIFTED_REDUCED_BRACKET", "BERGER_NONTRIVIAL_RELATIONAL_TAU_EVOLUTION", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_MIXED_EPSILON_R2_KAPPA_APPARATUS", "BERGER_COMPLETE_GLOBAL_S1_CLOCK_OBSERVABLE_WITHOUT_WINDING", "BERGER_FULLY_BACKREACTED_MAXWELL_SIGNAL", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE": {"const": true},
+        "BERGER_ACTUAL_RETARDED_REDSHIFT_TWO": {"const": true},
+        "BERGER_CLOCK_LIFTED_REDUCED_BRACKET": {"const": true},
+        "BERGER_NONTRIVIAL_RELATIONAL_TAU_EVOLUTION": {"const": true},
+        "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
+        "BERGER_MIXED_EPSILON_R2_KAPPA_APPARATUS": {"const": false},
+        "BERGER_COMPLETE_GLOBAL_S1_CLOCK_OBSERVABLE_WITHOUT_WINDING": {"const": false},
+        "BERGER_FULLY_BACKREACTED_MAXWELL_SIGNAL": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "array", "minItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["role", "path", "sha256"],
+            "properties": {
+              "role": {"type": "string", "minLength": 1},
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 700}
+  }
+}

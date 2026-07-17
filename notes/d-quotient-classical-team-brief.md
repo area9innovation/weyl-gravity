@@ -916,6 +916,30 @@ evolution explicitly with the fixed-coupling identity
 \(\Omega(\delta,\mathcal L_D)=0\); do not treat the name “clock” as a
 relational-observable construction.
 
+The first scoped C-G4 milestone is now complete in
+`BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE`.  A compact spacetime Maxwell
+source prepares the certified two-phase mode before emission, so the exact
+\(1+z=2\) clock-slice reading is an actual retarded signal rather than a
+characteristic preflight.  The observable is Maxwell-gauge, Weyl,
+diffeomorphism and raw-\(D\) invariant, has retarded causal dependence, and is
+single-valued on the lifted phase clock labelled by
+\(\widetilde\tau=\tau+2\pi n\).  Its exact reduced block satisfies
+
+\[
+\{x,y\}=-\frac1{32\pi^2},\qquad
+\partial_{\widetilde\tau}Q=-\frac{8\sqrt{10}}9P,qquad
+\partial_{\widetilde\tau}P=\frac{8\sqrt{10}}9Q.
+\]
+
+Thus fixed-\(\widetilde\tau\) observables are raw-\(D\) invariant while the
+family evolves nontrivially with the clock reading.  This is an exact `G0`
+spatially averaged probe-mode theorem, not a complete harmonic sector or a
+fully backreacted signal.  The localized rod/memory observer morphism stops
+fail-closed at the first missing mixed coefficient
+\(\epsilon_R^2\kappa\): shifted detector profiles, clock transport and their
+cyclic adjoints are not present in the certified 84-row axial first-jet
+complex.  The observer team owns that mixed-order completion.
+
 ### Work package C-G5: one nearby detour-system pilot
 
 After C-G1 is certified, apply the abstract transfer theorem to one conformal
@@ -982,25 +1006,31 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    local-projector obstruction.  The quantum team must import that verdict and
    keep the branch-space \(\ell_3\) mixing table false.  Paper XI proceeds on
    the unsplit retained cyclic causal complex.
-5. **Next classical work package: C-G4.**  Construct one complete Berger
-   relational observable \(\mathcal O_A(\tau)\) and prove gauge invariance,
-   causal dependence, clock-chart domain, treatment of periodic crossings,
-   reduced brackets and nontrivial \(\tau\)-evolution.  Reconcile that
-   evolution explicitly with the fixed-coupling raw-\(D\) nullity theorem.
-6. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
+5. Treat the scoped rod-free C-G4 milestone as complete: the retarded
+   clock-slice Maxwell observable, winding-labelled periodic clock, reduced
+   bracket and nontrivial \(\widetilde\tau\)-evolution are exact.  Keep the
+   localized apparatus observable false until the observer team supplies the
+   mixed \(\epsilon_R^2\kappa\) coefficients.
+6. **Next classical work package: C-G1.**  Extract the abstract cyclic causal
+   transfer theorem from the completed 54/64-row constructions and re-run the
+   Berger complex as its first consumer.  Return either
+   `ABSTRACT_CAUSAL_TRANSFER_CERTIFIED` or the first exact cylinder-specific
+   obstruction.
+7. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
    acceptance flags pass; until then the relative observable functor remains
    a preflight and must not reconstruct the Einstein map independently.
-7. Open the rank-46 STF2 mapping-cylinder/projector investigation only as a
+8. Open the rank-46 STF2 mapping-cylinder/projector investigation only as a
    separate follow-up if branch-resolved mixing remains scientifically
    necessary.  It is not a prerequisite for Paper XI or C-G4.
-8. Continue C-G1 abstraction and the deformation, Yang--Mills and boundary
-   rails as independent generality tests, not prerequisites for the Berger
-   relational-observable gate.
+9. Continue the deformation, Yang--Mills and boundary rails as independent
+   generality tests, not prerequisites for the Berger relational-observable
+   or causal-transfer gates.
 
 The physical activation sequence and reassignment triggers are recorded in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).  The
-`BERGER_Q2_EXPORTED` trigger has fired; the classical team's current primary
-ownership is therefore the C-G4 clock/relational-observable rail.
+`BERGER_Q2_EXPORTED` and the scoped C-G4 trigger have fired; the classical
+team's current primary ownership is therefore C-G1 causal-transfer
+abstraction while the observer team owns localized apparatus completion.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
