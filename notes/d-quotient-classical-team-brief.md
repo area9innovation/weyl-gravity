@@ -916,8 +916,17 @@ independent consumer replays the nonconstant factor
 
 This does **not** cover arbitrary locally conformally flat topology, timelike
 boundaries, chart patching, or the original untransported coordinate gauge.
-The remaining C-G2 alternatives are a local-patching theorem or the first
-curvature obstruction on conformally Einstein/Bach-flat backgrounds.
+`CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1` closes the first
+curvature gate: unit Nariai is globally hyperbolic, Einstein and Bach-flat,
+but its normalized Weyl witness \((3/2)C_{2323}=1\) prevents the flat cylinder
+tractor connection from being related to it by the same invertible zero-order
+conjugation, even locally.  This is only a `LOCAL-ALGEBRAIC` obstruction; it
+does not exclude curved differential HPL corrections or an independently
+constructed Nariai Green homotopy.
+
+The remaining C-G2 alternatives are therefore a curved Bach-flat HPL
+correction/obstruction or a local-patching theorem within the conformally
+flat category.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
@@ -1061,8 +1070,10 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    and verify uniform hypotheses on an open background class.  The connected
    branch-projector request is now separately closed by item 6's obstruction.
    C-G2 has reached G3 on the global conformal orbit of the cylinder with a
-   transported gauge fermion.  Its next gate is local patching/new topology or
-   a conformally Einstein/Bach-flat curvature-obstruction calculation.
+   transported gauge fermion.  The same zero-order conjugation is now exactly
+   obstructed on unit Nariai by nonzero tractor curvature.  Its next gate is a
+   curved Bach-flat differential-HPL correction/obstruction or conformally
+   flat local patching/new topology.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -1081,7 +1092,8 @@ The physical activation sequence and reassignment triggers are recorded in
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
 have fired.  The classical team's current primary ownership is the rank-46
 subprincipal projector obstruction handoff; its next independent generality
-task is the next C-G2 gate beyond the certified global conformal-orbit class.
+task is the curved-HPL or patching gate beyond the certified global
+conformal-orbit class and normalized Nariai zero-order obstruction.
 The certified C-G1
 theorem may seed one bounded G3/second-consumer task, while the observer team
 owns localized apparatus completion.
@@ -1098,9 +1110,11 @@ a failed task.
 The rank-46 support-local projector rail is closed by its certified
 subprincipal obstruction.  C-G2 now certifies a G3 open class on the global
 conformal orbit of the cylinder, including exact weighted
-chain/Green/pairing transport and a nonconstant consumer.  The active next
-gate is either support-local patching to new conformally flat topology or a
-first conformally Einstein/Bach-flat curvature obstruction.  Fixed
+chain/Green/pairing transport and a nonconstant consumer.  Unit Nariai then
+gives a normalized nonzero-tractor-curvature obstruction to extending that
+same zero-order conjugation.  The active next gate is either a curved
+Bach-flat differential-HPL correction/obstruction or support-local patching
+to new conformally flat topology.  Fixed
 untransported gauges, timelike boundaries and Hadamard claims remain false.
 The full queue and
 morning handoff are authoritative in

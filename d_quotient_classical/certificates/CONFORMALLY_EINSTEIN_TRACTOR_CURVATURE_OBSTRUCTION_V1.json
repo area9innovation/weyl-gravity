@@ -1,0 +1,134 @@
+{
+  "claim_boundary": "This is a normalized local obstruction to extending the certified C-G2 global conformal-orbit theorem by the same invertible zero-order conformal/BV/tractor conjugation. The unit Nariai metric is a globally hyperbolic Einstein and hence Bach-flat control with nonzero Weyl, so its normal tractor connection cannot be pointwise gauge-conjugate to the flat tractor connection of the conformal cylinder. This does not obstruct a curvature-dependent differential HPL map, a larger parent complex, an independently constructed Green homotopy, local patching among conformally flat charts, or causal theory on all conformally Einstein or Bach-flat backgrounds. No Lorentzian-causal promotion is made for Nariai.",
+  "dependency_ref": {
+    "artifact_id": "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1",
+    "path": "d_quotient_classical/certificates/CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1.json",
+    "sha256": "6555e983ae42095fdef87b79f6530c4f3a2293fec3e54d43135116e04ef26a7a"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "source_tractor_curvature_zero": true,
+    "target_Weyl_is_nonzero": true,
+    "target_is_Bach_flat": true,
+    "target_is_Einstein": true,
+    "target_is_globally_hyperbolic": true,
+    "target_tractor_curvature_nonzero": true,
+    "zero_order_intertwiner_obstructed": true
+  },
+  "exact_curvature": {
+    "orthonormal_metric": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "ricci": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "tractor_curvature": "Omega^T_ab has Weyl block C_abcd and Cotton off-diagonal block; Cotton=0 but C_2323=2/3",
+    "weyl_components": {
+      "C_0101": "-2/3",
+      "C_0202": "1/3",
+      "C_2323": "2/3"
+    },
+    "weyl_trace_defect": "0"
+  },
+  "flags": {
+    "ALL_BACH_FLAT_BACKGROUNDS_OBSTRUCTED": false,
+    "CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1": true,
+    "CURVED_DIFFERENTIAL_HPL_CORRECTION_EXISTS": false,
+    "C_G2_ZERO_ORDER_CONJUGATION_EXTENDS_TO_NARIAI": false,
+    "LOCAL_PATCHING_OBSTRUCTED": false,
+    "NARIAI_GREEN_HOMOTOPY_CONSTRUCTED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "next_gate": "C_G2_BACH_FLAT_CURVED_HPL_CORRECTION_OR_OBSTRUCTION",
+  "obstruction": {
+    "attempted_extension": "an invertible zero-order bundle map U satisfying nabla^T_N U=U nabla^T_0, hence extending the C-G2 pointwise conformal/BV conjugation",
+    "conclusion": "no such zero-order conformal/tractor conjugation exists, even locally",
+    "forced_target_condition": "invertibility of U forces Omega^T_N=0",
+    "integrability_equation": "Omega^T_N U=U Omega^T_0",
+    "normalized_witness": "(3/2) C_2323",
+    "normalized_witness_value": "1",
+    "source_curvature": "Omega^T_0=0 because the conformal cylinder is conformally flat"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/conformally_einstein_curvature_obstruction.py": "496d9ced11964539011db8253492cd43508574b17f6f61e5fa137f2ab985ecd3",
+      "d_quotient_classical/causal_transfer/tests/test_conformally_einstein_curvature_obstruction.py": "3fc53148b3802aaa262fad552eb14f1e4bd4f6e82186c8944dae320173177876",
+      "d_quotient_classical/causal_transfer/verify_conformally_einstein_curvature_obstruction.py": "096f63b002c660e1d6989a894a9299fa0ca8e69f6ea819b95d054fec5273474b",
+      "d_quotient_classical/schema/conformally-einstein-tractor-curvature-obstruction-v1.schema.json": "f1eace5ac0a3bf5d9cd0f1cdc00d1883d09dd5281b430fe6d2e081f77fd71808"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/conformally_einstein_curvature_obstruction.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_conformally_einstein_curvature_obstruction.py",
+      "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_conformally_einstein_curvature_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/conformally-einstein-tractor-curvature-obstruction-v1.schema.json -d d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1",
+  "result_state": "ZERO_ORDER_CONFORMAL_CONJUGATION_OBSTRUCTED_ON_NARIAI",
+  "schema": "pure-weyl-conformally-einstein-tractor-curvature-obstruction-v1",
+  "target_background": {
+    "bach_flat": true,
+    "boundary": "no timelike boundary",
+    "cotton_zero": true,
+    "einstein": "Ric(g_N)=g_N",
+    "factor_curvatures": [
+      "1",
+      "1"
+    ],
+    "global_hyperbolicity": "t is a global temporal function and each {t=constant}=S1 x S2 is a compact Cauchy surface",
+    "locally_symmetric": true,
+    "manifold": "M_N=R x S1 x S2",
+    "metric": "g_N=-dt^2+cosh(t)^2 dchi^2+dOmega_2^2",
+    "name": "unit Nariai spacetime",
+    "orthonormal_signature": "(-,+,+,+)",
+    "scalar_curvature": "4"
+  }
+}

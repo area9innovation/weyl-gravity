@@ -153,6 +153,12 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   Green homotopies and one nonconstant bounded conformal factor:
   [`certificates/CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1.json`](certificates/CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1.json),
   [`reports/conformally-related-cyclic-causal-transfer.md`](reports/conformally-related-cyclic-causal-transfer.md)
+- First curvature gate beyond that orbit: the exact Nariai Weyl component
+  obstructs any extension by the same zero-order conformal/tractor
+  conjugation, while curved differential HPL and independent Green routes
+  remain open:
+  [`certificates/CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1.json`](certificates/CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1.json),
+  [`reports/conformally-einstein-tractor-curvature-obstruction.md`](reports/conformally-einstein-tractor-curvature-obstruction.md)
 - Strict portable consumer gate and accepted Berger adapter:
   [`schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json`](schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
   [`certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json`](certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json)
