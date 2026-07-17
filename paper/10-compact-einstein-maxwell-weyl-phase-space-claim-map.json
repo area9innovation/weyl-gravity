@@ -1,8 +1,8 @@
 {
   "schema": "compact-linear-paper-claim-map-v1",
   "result_id": "COMPACT_EINSTEIN_MAXWELL_WEYL_LINEAR_PAPER_A",
-  "result_state": "SCOPED_AXIAL_MANUSCRIPT_DRAFT_WITH_CERTIFIED_EXACT_INPUTS",
-  "lifecycle_state": "CLASSIFIED",
+  "result_state": "SCOPED_MATHEMATICAL_CLAIMS_THEOREM_FROZEN_EXTERNAL_SPECIALIST_REVIEW_PENDING",
+  "lifecycle_state": "THEOREM_FROZEN",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
   "manuscript": "paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
   "scope": {
@@ -10,6 +10,12 @@
     "standard_einstein_maxwell_image": "complete axial and polar harmonic tangent including regular radiation, physical ell=1 quotient, homogeneous generalized block, and axial twist",
     "extra_weyl_maxwell_target": "complete generic axial ell>=2 branch only",
     "quotient_stage": "after local gauge reduction and before final residual quotient"
+  },
+  "freeze_disposition": {
+    "mathematical_claims": "THEOREM_FROZEN",
+    "next_review": "external specialist review of the dual-number Chevreton bridge, exceptional harmonic reduction, and direct Lee-Wald normalization",
+    "human_accountability": "final human verification of the manuscript, deterministic certificates, citations, and authorship disclosure remains required before submission",
+    "additional_internal_major_calculation_required_before_circulation": false
   },
   "certified_claims": {
     "linear_solution_quotient_inclusion_injective": true,
@@ -54,6 +60,7 @@
   },
   "verification_commands": [
     "python3 bridge/einstein_sector/verify_compact_linear_paper_claim_map.py",
+    "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/10-compact-einstein-maxwell-weyl-phase-space.tex"
   ],
