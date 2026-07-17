@@ -415,6 +415,28 @@ for the outward-facing two-page note.
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
 | C1 | Mannheim/PT, Fock-BRST, and causal-BV benchmark — quantum with nonlinear | common-fixture comparison of state, metric, Jordan modes, BRST descent, and first vertex | QME and a common Lorentzian/asymptotic state space |
+| C2 | Closed-universe state collapse and observer-relative physics — quantum with classical-clock support | a typed comparison of the global quotient, observer algebra, and relational observables, followed by one common closed-universe fixture | literature/dictionary audit now; theorem comparison only after a BRST-compatible quantum state and QME disposition |
+
+The C2 comparison is promising precisely because it must not begin by
+identifying unlike objects.  Our current collapse is a classical/free BV
+statement: the selected Taub-zero compact quotient has no isolated
+one-particle classes, while two degree-four deformation classes remain.  The
+closed-universe literature instead discusses a nonperturbative quantum-gravity
+Hilbert space that is one-dimensional in a fixed theory or sector.  Its
+observer-relative recovery is nevertheless structurally adjacent to the
+Berger result, where a global generator can be null while a clock-defined
+observable evolves nontrivially.  The first deliverable is therefore a
+no-conflation dictionary among
+
+```text
+global Hilbert space / BV cohomology / one-particle complex / observable algebra,
+factorization / Taub-zero charge restriction / gauge quotient,
+external observer / relational clock / dressed internal observer.
+```
+
+Only after that dictionary should the teams ask whether both collapses are
+instances of a common reduction principle.  A shared compact topology is not
+by itself evidence that they are.
 
 The bridges touch, but do not adopt wholesale, the frameworks of Green
 hyperbolic complexes, tractor/BGG detours, linearization stability,
@@ -434,7 +456,11 @@ Primary external anchors are:
 - [Kubo--Kuntz conformal-gravity unitarity analysis](https://arxiv.org/abs/2202.08298);
 - [Weyl geometry and quantum anomalies](https://arxiv.org/abs/2407.02695);
 - [an asymptotic framework for gravitational scattering](https://arxiv.org/abs/2303.17124);
-- [relational observables in gravity](https://arxiv.org/abs/1109.0740).
+- [relational observables in gravity](https://arxiv.org/abs/1109.0740);
+- [the island rule and quantum extremal surfaces](https://arxiv.org/abs/1908.10996);
+- [closed universes, factorization, and ensemble averaging](https://arxiv.org/abs/2403.13047);
+- [Maldacena on including real observers in Euclidean gravity](https://arxiv.org/abs/2412.14014);
+- [Harlow--Usatyuk--Zhao on observers in a closed universe](https://arxiv.org/abs/2501.02359).
 
 ## Deferred theory-adapter queue
 

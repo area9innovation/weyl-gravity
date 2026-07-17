@@ -609,17 +609,7 @@ def readme_errors(text: str) -> list[str]:
         for suffix in (".tex", ".pdf"):
             if not (paper_dir / f"{basename}{suffix}").is_file():
                 errors.append(f"paper naming: missing shared artifact {basename}{suffix}")
-    for basename in LEGACY_PAPER_BASENAMES:
-        for suffix in (".tex", ".pdf"):
-            if (paper_dir / f"{basename}{suffix}").exists():
-                errors.append(f"paper naming: obsolete unnumbered artifact remains: {basename}{suffix}")
-    for path in paper_dir.iterdir():
-        if not path.is_file() or path.suffix not in {".tex", ".pdf"}:
-            continue
-        if path.name in UNNUMBERED_SUPPORT_TEX:
-            continue
-        if not NUMBERED_PAPER_ARTIFACT.fullmatch(path.name):
-            errors.append(f"paper naming: top-level publication artifact lacks a two-digit prefix: {path.name}")
+    errors.extend(paper_naming_errors())
     if re.search(r"\| 7[AB] \|", text):
         errors.append("README metadata: obsolete 7A/7B numbering remains")
     if "**Paper 7** (the residual state-side theorem)" not in text:
@@ -629,6 +619,52 @@ def readme_errors(text: str) -> list[str]:
     if "rather than recomputing the Chevalley--Eilenberg complex" not in flat:
         errors.append("README narrative: Paper 8 must disclaim recomputing residual CE cohomology")
     return errors
+
+
+def paper_naming_errors() -> list[str]:
+    """Check only the stable filename policy, independent of manuscript state."""
+
+    paper_dir = ROOT / "paper"
+    errors: list[str] = []
+    for basename in LEGACY_PAPER_BASENAMES:
+        for suffix in (".tex", ".pdf"):
+            if (paper_dir / f"{basename}{suffix}").exists():
+                errors.append(
+                    f"paper naming: obsolete unnumbered artifact remains: "
+                    f"{basename}{suffix}"
+                )
+    for path in paper_dir.iterdir():
+        if not path.is_file() or path.suffix not in {".tex", ".pdf"}:
+            continue
+        if path.name in UNNUMBERED_SUPPORT_TEX:
+            continue
+        if not NUMBERED_PAPER_ARTIFACT.fullmatch(path.name):
+            errors.append(
+                "paper naming: top-level publication artifact lacks a "
+                f"two-digit prefix: {path.name}"
+            )
+    return errors
+
+
+def paper_naming_fixture_failures() -> list[str]:
+    """Exercise the filename grammar without invoking a scientific audit."""
+
+    failures: list[str] = []
+    for valid_name in (
+        "09-future-paper.tex",
+        "10-future-paper.pdf",
+        "07-08-shared-supplement.tex",
+    ):
+        if not NUMBERED_PAPER_ARTIFACT.fullmatch(valid_name):
+            failures.append(f"paper naming guard rejected valid future name: {valid_name}")
+    for invalid_name in (
+        "9-future-paper.tex",
+        "future-paper.tex",
+        "paper-10-future.pdf",
+    ):
+        if NUMBERED_PAPER_ARTIFACT.fullmatch(invalid_name):
+            failures.append(f"paper naming guard accepted invalid name: {invalid_name}")
+    return failures
 
 
 def structural_errors(text: str) -> list[str]:
@@ -808,12 +844,7 @@ Interacting probability and unitarity remain open.
         fixture_errors = architecture_errors(fixture)
         if not any(expected in error for error in fixture_errors):
             failures.append(f"architecture guard fixture did not trigger: {name}")
-    for valid_name in ("09-future-paper.tex", "10-future-paper.pdf", "07-08-shared-supplement.tex"):
-        if not NUMBERED_PAPER_ARTIFACT.fullmatch(valid_name):
-            failures.append(f"paper naming guard rejected valid future name: {valid_name}")
-    for invalid_name in ("9-future-paper.tex", "future-paper.tex", "paper-10-future.pdf"):
-        if NUMBERED_PAPER_ARTIFACT.fullmatch(invalid_name):
-            failures.append(f"paper naming guard accepted invalid name: {invalid_name}")
+    failures.extend(paper_naming_fixture_failures())
     return failures
 
 
@@ -822,7 +853,27 @@ def main() -> None:
     parser.add_argument("--write-report", action="store_true")
     parser.add_argument("--check-report", action="store_true")
     parser.add_argument("--guards", action="store_true")
+    parser.add_argument(
+        "--filename-policy",
+        action="store_true",
+        help="check numbered paper filenames without running the manuscript audit",
+    )
     args = parser.parse_args()
+
+    if args.filename_policy:
+        errors = paper_naming_errors() + paper_naming_fixture_failures()
+        if errors:
+            for error in errors:
+                print("FAIL:", error)
+            raise SystemExit(1)
+        publication_count = sum(
+            path.is_file()
+            and path.suffix in {".tex", ".pdf"}
+            and path.name not in UNNUMBERED_SUPPORT_TEX
+            for path in (ROOT / "paper").iterdir()
+        )
+        print(f"PAPER FILENAME POLICY: ALL PASS artifacts={publication_count}")
+        return
 
     text = SOURCE.read_text(encoding="utf-8")
     report, errors = build_report(text)
