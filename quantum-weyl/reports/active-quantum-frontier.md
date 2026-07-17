@@ -24,11 +24,18 @@ vanishes on all 64 rows. A one-coefficient mutation produces two defects.
 The retained (ell_3) is now independently accepted: all 25,950 contact
 coefficients match, all 36 retained arity-three rows close, and a localized
 mutation is rejected. The exact exchange replay agrees with the hardened
-producer ledger. There are 144 raw gravity-outer/mixed-inner pairs
+producer ledger. There are 144 gravity-outer/mixed-inner coefficient pairs
 and 342 canonical full-complex PBW coefficients, but none survives retained
-output projection; the other two exchange sectors have no raw pairs. Thus all
+output projection; the other two exchange sectors have no outer/inner pairs. Thus all
 three retained exchange sectors vanish exactly. Projection onto the
-Einstein-like, extra-Weyl, and topological residual branches remains open.
+Einstein-like and extra-Weyl dynamical residual branches remains open, as does
+the separate action on the even/odd deformation-vertex basis. The topological
+odd direction is not treated as a third dynamical or particle branch.
+The strict receiving consumer for that projection is now ready. It requires
+exact gravity and Maxwell branch carriers, inclusion/projection maps, pairing,
+parity, real structure and `K_Berger` weights, plus a separate deformation
+basis, rank-one Euler--Lagrange map and topological transgression witness. No
+branch-basis manifest has yet been supplied.
 
 The frontier imports this status through the content-addressed quantum repair
 acceptance certificate. The earlier 1,234/953 defect atlas remains an exact
@@ -58,7 +65,7 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. project the accepted retained mixed (ell_3) onto the residual branch basis and compute its mixing table;
+1. supply the committed retained 36-row gravity-plus-Maxwell residual branch-basis manifest, then compute the accepted mixed (ell_3) projection and mixing table;
 2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;

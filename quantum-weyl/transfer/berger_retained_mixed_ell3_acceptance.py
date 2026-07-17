@@ -239,7 +239,15 @@ def _exchange_exact(
     inclusion: Mapping[q10.LinearKey, q10.Q10],
     projection: Mapping[q10.LinearKey, q10.Q10],
     parities: tuple[int, ...],
-) -> tuple[list[dict[TRowKey, q10.Q10]], int, int, int, int]:
+) -> tuple[
+    list[dict[TRowKey, q10.Q10]],
+    int,
+    int,
+    int,
+    list[int],
+    int,
+    int,
+]:
     """Construct one full ``pi q2(I2,iota)`` unshuffle sector exactly."""
 
     inner_by_output: dict[int, list[tuple[int, int, q10.Word, q10.Word, q10.Q10]]] = defaultdict(list)
@@ -319,13 +327,22 @@ def _exchange_exact(
                     )
                     unshuffle_contributions += 3
     full_coefficient_count = sum(map(len, full))
+    full_support_rows = [row for row, operator in enumerate(full) if operator]
     projected, projection_contributions = _postcompose_contact(full, projection, 36)
+    if any(source == 38 for _, source, _ in projection):
+        raise ValueError("certified projection unexpectedly retains full row 38")
+    mutated_projection = dict(projection)
+    mutated_projection[(0, 38, ())] = q10.ONE
+    projection_mutant, _ = _postcompose_contact(full, mutated_projection, 36)
+    projection_mutation_final_count = sum(map(len, projection_mutant))
     return (
         projected,
         raw_incidence,
         unshuffle_contributions,
         full_coefficient_count,
+        full_support_rows,
         projection_contributions,
+        projection_mutation_final_count,
     )
 
 
@@ -452,10 +469,12 @@ def scientific_replay(progress: callable | None = print) -> dict[str, Any]:
     gravity_flat = _flatten_q2(gravity_full)
     mixed_flat = _flatten_q2(mixed_full)
     exchange_parts = {}
-    raw_exchange_candidates = {}
+    exchange_outer_inner_pair_counts = {}
     exchange_unshuffle_contributions = {}
     exchange_full_coefficient_counts = {}
+    exchange_full_support_rows = {}
     exchange_projection_contributions = {}
+    exchange_projection_mutation_counts = {}
     for name, outer, inner in (
         ("gravity_outer_mixed_inner", gravity_flat, mixed_i2_flat),
         ("mixed_outer_gravity_inner", mixed_flat, gravity_i2_flat),
@@ -463,16 +482,40 @@ def scientific_replay(progress: callable | None = print) -> dict[str, Any]:
     ):
         (
             exchange_parts[name],
-            raw_exchange_candidates[name],
+            exchange_outer_inner_pair_counts[name],
             exchange_unshuffle_contributions[name],
             exchange_full_coefficient_counts[name],
+            exchange_full_support_rows[name],
             exchange_projection_contributions[name],
+            exchange_projection_mutation_counts[name],
         ) = _exchange_exact(outer, inner, inclusion, projection, parities)
     exchange_counts = {
         name: sum(map(len, rows)) for name, rows in exchange_parts.items()
     }
     if any(exchange_counts.values()):
         raise ValueError(f"exchange exact zero failed: {exchange_counts}")
+    expected_full_counts = {
+        "gravity_outer_mixed_inner": 342,
+        "mixed_outer_gravity_inner": 0,
+        "mixed_outer_mixed_inner": 0,
+    }
+    expected_full_support = {
+        "gravity_outer_mixed_inner": [38],
+        "mixed_outer_gravity_inner": [],
+        "mixed_outer_mixed_inner": [],
+    }
+    if (
+        exchange_full_coefficient_counts != expected_full_counts
+        or exchange_full_support_rows != expected_full_support
+        or transfer["exchange_ledger"]["raw_part_term_counts"] != expected_full_counts
+        or transfer["exchange_ledger"]["raw_part_nonzero_output_rows"]
+        != expected_full_support
+    ):
+        raise ValueError("full exchange support or producer ledger drifted")
+    if exchange_projection_mutation_counts != expected_full_counts:
+        raise ValueError(
+            "row-38 projection mutation did not expose the full exchange carrier"
+        )
     if progress:
         progress("all three q2 S q2 exchange sectors vanish exactly after retained projection")
 
@@ -509,11 +552,22 @@ def scientific_replay(progress: callable | None = print) -> dict[str, Any]:
         "mixed_inclusion2_coefficient_count": len(mixed_i2_flat),
         "gravity_inclusion2_support": gravity_i2_support,
         "mixed_inclusion2_support": mixed_i2_support,
-        "raw_exchange_candidate_counts": raw_exchange_candidates,
+        "exchange_outer_inner_pair_counts": exchange_outer_inner_pair_counts,
         "exchange_unshuffle_contribution_counts": exchange_unshuffle_contributions,
         "exchange_full_coefficient_counts": exchange_full_coefficient_counts,
+        "exchange_full_nonzero_output_rows": exchange_full_support_rows,
         "exchange_projection_contribution_counts": exchange_projection_contributions,
         "exchange_final_coefficient_counts": exchange_counts,
+        "exchange_projection_mutation": {
+            "added_projection_entry": {
+                "retained_target_row": 0,
+                "full_source_row": 38,
+                "coefficient": "1",
+            },
+            "final_coefficient_counts": exchange_projection_mutation_counts,
+            "mutant_rejected": True,
+        },
+        "producer_exchange_ledger_independently_matched": True,
         "retained_arity_three_defect_count": sum(identity_counts),
         "retained_arity_three_defect_rows": sum(bool(value) for value in identity_counts),
         "mutation_row": mutation_row,

@@ -40,11 +40,12 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["MIXED_Q3_INPUT_UNBLOCKED"])
         self.assertTrue(flags["MIXED_Q3_INDEPENDENTLY_ACCEPTED"])
         self.assertTrue(flags["RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED"])
+        self.assertTrue(flags["RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY"])
         row = self.payload["active_rows"]["classical_interacting_input"]
-        self.assertIn("RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED", row["status"])
+        self.assertIn("BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT", row["status"])
         self.assertEqual(
             row["next_gate"],
-            "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
+            "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
         )
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:

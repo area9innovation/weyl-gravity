@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-residual-ell3-branch-projection-readiness-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "dependency_ref", "input_contract", "exact_acceptance_conditions", "required_output", "synthetic_consumer_receipt", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-residual-ell3-branch-projection-readiness-v1"},
+    "result_id": {"const": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS"},
+    "result_state": {"const": "CONSUMER_READY_RESIDUAL_BRANCH_BASIS_INPUT_NOT_SUPPLIED"},
+    "lifecycle_layer": {"const": "CLASSICAL_RESIDUAL_INTERACTION_IMPORT_READINESS"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_ref": {"$ref": "#/$defs/dependency"},
+    "input_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_result_id", "manifest_schema", "ambient_retained_rank", "coefficient_field", "factorial_convention", "required_artifact_ids", "required_dynamical_gravity_branch_ids", "required_deformation_vertex_basis_ids", "Maxwell_branch_carrier_required", "category_separation", "content_addressing"],
+      "properties": {
+        "required_result_id": {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1"},
+        "manifest_schema": {"$ref": "#/$defs/schemaRef"},
+        "ambient_retained_rank": {"const": 36},
+        "coefficient_field": {"const": "Q(sqrt(10))"},
+        "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+        "required_artifact_ids": {"const": ["retained_q1", "dynamical_branch_ledger", "dynamical_branch_inclusion", "dynamical_branch_projection", "dynamical_branch_pairing_gram", "parity_operator", "real_structure", "K_Berger_weight_operator", "deformation_vertex_basis", "deformation_Euler_Lagrange_map", "topological_transgression_witness"]},
+        "required_dynamical_gravity_branch_ids": {"const": ["Einstein_like", "extra_Weyl"]},
+        "required_deformation_vertex_basis_ids": {"const": ["e_C2_dynamical", "o_C_dual_C_topological"]},
+        "Maxwell_branch_carrier_required": {"const": true},
+        "category_separation": {"const": "topological is a local deformation/vertex class, not a dynamical residual mode"},
+        "content_addressing": {"const": "git_commit_plus_blob_sha256_plus_internal_canonical_sha256"}
+      }
+    },
+    "exact_acceptance_conditions": {
+      "const": ["retained_row_order_matches_accepted_36_row_complex", "branch_labels_have_explicit_degree_parity_K_weight_and_sector", "dynamical_gravity_and_Maxwell_branch_lists_are_exhaustive_for_declared_projection_sector", "dynamical_branch_projection_times_inclusion_is_identity", "retained_q1_intertwines_inclusion_and_projection", "parity_is_an_involution_and_intertwines_both_maps", "K_Berger_weights_intertwine_both_maps", "real_structure_is_an_involution_and_intertwines_both_maps", "dynamical_branch_pairing_is_exact_nondegenerate_and_equals_the_pairing_pullback", "deformation_vertex_basis_is_exactly_e_and_o_without_particle_mode_identification", "Euler_Lagrange_map_has_rank_one_with_e_dynamical_and_o_topological", "topological_direction_has_a_normalized_transgression_or_nonmembership_witness", "ell3_mixing_entries_are_computed_by_exact_precomposition_and_postcomposition", "every_zero_mixing_entry_has_a_support_or_cancellation_witness", "graded_symmetry_and_cyclicity_are_replayed_in_branch_coordinates"]
+    },
+    "required_output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "dynamical_mixing_axes", "deformation_vertex_axes", "required_ledgers", "kinetic_or_pairing_health_inference_from_ell3_alone"],
+      "properties": {
+        "result_id": {"const": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE"},
+        "dynamical_mixing_axes": {"const": ["output_branch", "input_branch_1", "input_branch_2", "input_branch_3"]},
+        "deformation_vertex_axes": {"const": ["e_C2_dynamical", "o_C_dual_C_topological"]},
+        "required_ledgers": {"const": ["exact_nonzero_mixing_entries", "exact_zero_witnesses", "Einstein_like_extra_Weyl_mixing", "Maxwell_input_output_sectors", "parity_selection", "K_Berger_weight_selection", "cyclicity_defects", "deformation_vertex_action", "topological_transgression_and_centrality"]},
+        "kinetic_or_pairing_health_inference_from_ell3_alone": {"const": "FORBIDDEN"}
+      }
+    },
+    "synthetic_consumer_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ambient_rank", "branch_rank", "branch_ids", "deformation_vertex_basis_ids", "Euler_Lagrange_rank_by_deformation", "exact_checks", "projection_normalization_mutation_rejected", "receipt_sha256"],
+      "properties": {
+        "ambient_rank": {"const": 4},
+        "branch_rank": {"const": 3},
+        "branch_ids": {"const": ["Einstein_like", "extra_Weyl", "Maxwell_physical"]},
+        "deformation_vertex_basis_ids": {"const": ["e_C2_dynamical", "o_C_dual_C_topological"]},
+        "Euler_Lagrange_rank_by_deformation": {"const": {"e_C2_dynamical": 1, "o_C_dual_C_topological": 0}},
+        "exact_checks": {"$ref": "#/$defs/checks"},
+        "projection_normalization_mutation_rejected": {"const": true},
+        "receipt_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY", "EXACT_CONTRACTION_MUTATION_WITNESS", "RESIDUAL_BRANCH_BASIS_INPUT_AVAILABLE", "RESIDUAL_BRANCH_BASIS_ACCEPTED", "RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED", "RESIDUAL_ELL3_MIXING_TABLE_COMPUTED", "DEFORMATION_VERTEX_PROJECTION_COMPUTED", "TOPOLOGICAL_DEFORMATION_DIRECTION_CLASSIFIED", "RESIDUAL_QUANTUM_TRANSFERRED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY": {"const": true},
+        "EXACT_CONTRACTION_MUTATION_WITNESS": {"const": true},
+        "RESIDUAL_BRANCH_BASIS_INPUT_AVAILABLE": {"const": false},
+        "RESIDUAL_BRANCH_BASIS_ACCEPTED": {"const": false},
+        "RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED": {"const": false},
+        "RESIDUAL_ELL3_MIXING_TABLE_COMPUTED": {"const": false},
+        "DEFORMATION_VERTEX_PROJECTION_COMPUTED": {"const": false},
+        "TOPOLOGICAL_DEFORMATION_DIRECTION_CLASSIFIED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFERRED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "consumer_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_2", "tier_3"],
+      "properties": {
+        "tier_2": {"type": "string", "minLength": 180},
+        "tier_3": {"type": "string", "minLength": 150}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"const": "BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE"},
+        "path": {"const": "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "schemaRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"const": "quantum-weyl/transfer/schema/berger-residual-ell3-branch-basis-input-v1.schema.json"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["projection_inclusion_identity", "parity_ambient_involution", "parity_branch_involution", "parity_inclusion_intertwines", "parity_projection_intertwines"],
+      "properties": {
+        "projection_inclusion_identity": {"const": true},
+        "parity_ambient_involution": {"const": true},
+        "parity_branch_involution": {"const": true},
+        "parity_inclusion_intertwines": {"const": true},
+        "parity_projection_intertwines": {"const": true}
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["test_tier", "command", "status"],
+      "properties": {
+        "test_tier": {"const": 1},
+        "command": {"type": "string", "minLength": 90},
+        "status": {"const": "PASS"}
+      }
+    }
+  }
+}

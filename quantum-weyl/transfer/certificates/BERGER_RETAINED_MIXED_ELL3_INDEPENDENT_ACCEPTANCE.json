@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This LOCAL-ALGEBRAIC classical-import acceptance pins the retained typed mixed gravity-Maxwell ell3 at classical hardening commit e99d0c1d39490de5261fc6ca1dc2aeaa0d149655. Without importing or executing the classical producer, the quantum-side Q(sqrt(10)) PBW backend parses all 59,598 coefficients of the full mixed q3, reconstructs the explicit typed 64-to-36 contraction, and matches all 25,950 retained contact coefficients exactly. It independently reconstructs the 96 gravity and 12 mixed second-inclusion coefficients and verifies their supports. The gravity-outer/mixed-inner channel has 144 raw outer/inner coefficient pairs, producing 324 signed unshuffle contributions and 342 canonical full-complex PBW coefficients. None reaches a full output row supported by the retained projection, so that channel vanishes after exact retained output projection; the other two exchange channels have no raw coefficient pairs. This independently agrees with the hardened producer's exchange-vanishing ledger, and all three retained q2 S q2 exchange sectors are exactly zero. The relative retained arity-three identity closes on all 36 rows, and a one-coefficient retained-ell3 mutation creates two exact defects. The retained interaction has 7,614 gravity-output terms with two Maxwell inputs and 18,336 Maxwell-output terms with one Maxwell input. This proves a nontrivial retained gravity-light interaction but does not project onto Einstein-like, extra-Weyl or topological residual branches. Cyclicity is imported from the typed cyclic transfer theorem rather than independently replayed here. No unary kinetic operator changes, so no negative physical direction is introduced by this bracket; this is not a unitarity theorem. It does not compute a QME correction, restore a QME, construct renormalized Lorentzian products, certify a particle interpretation or make a quantum claim.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC classical-import acceptance pins the retained typed mixed gravity-Maxwell ell3 at classical hardening commit e99d0c1d39490de5261fc6ca1dc2aeaa0d149655. Without importing or executing the classical producer, the quantum-side Q(sqrt(10)) PBW backend parses all 59,598 coefficients of the full mixed q3, reconstructs the explicit typed 64-to-36 contraction, and matches all 25,950 retained contact coefficients exactly. It independently reconstructs the 96 gravity and 12 mixed second-inclusion coefficients and verifies their supports. The gravity-outer/mixed-inner channel has 144 outer/inner coefficient pairs, producing 324 signed unshuffle contributions and 342 canonical full-complex PBW coefficients, all in full output row 38. The certified retained projection annihilates that row, so the channel vanishes after exact retained output projection; the other two exchange channels have no outer/inner pairs. Adding the single mutant projection entry from full row 38 to retained row zero exposes all 342 coefficients, proving that the zero is projection-derived rather than hard-coded. This independently agrees with the hardened producer's exchange-vanishing ledger, and all three retained q2 S q2 exchange sectors are exactly zero. The relative retained arity-three identity closes on all 36 rows, and a one-coefficient retained-ell3 mutation creates two exact defects. The retained interaction has 7,614 gravity-output terms with two Maxwell inputs and 18,336 Maxwell-output terms with one Maxwell input. This proves a nontrivial retained gravity-light interaction but does not project onto Einstein-like, extra-Weyl or topological residual branches. Cyclicity is imported from the typed cyclic transfer theorem rather than independently replayed here. No unary kinetic operator changes, so no negative physical direction is introduced by this bracket; this is not a unitarity theorem. It does not compute a QME correction, restore a QME, construct renormalized Lorentzian products, certify a particle interpretation or make a quantum claim.",
   "claim_flags": {
     "EINSTEIN_EXTRA_WEYL_BRANCH_MIXING_COMPUTED": false,
     "LOCALIZED_RETAINED_ELL3_MUTATION_REJECTED": true,
@@ -11,19 +11,20 @@
     "RETAINED_MIXED_ELL3_CONTACT_INDEPENDENTLY_REPLAYED": true,
     "RETAINED_MIXED_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED": false,
     "RETAINED_MIXED_ELL3_PORTABLE_IMPORT_ACCEPTED": true,
+    "ROW_38_PROJECTION_MUTATION_REJECTED": true,
     "TOPOLOGICAL_DIRECTION_CLASSIFIED": false
   },
   "classical_commit": "e99d0c1d39490de5261fc6ca1dc2aeaa0d149655",
   "consumer_provenance": {
     "source_manifest": {
-      "quantum-weyl/reports/berger-retained-mixed-ell3-independent-acceptance.md": "fc5b912dc9f5e1dc16c5d6307ab3d2f50f25b515f7874a00b7eeb7c350d1a1ac",
-      "quantum-weyl/transfer/berger_retained_mixed_ell3_acceptance.py": "e1b9fa1c4e2e118ad9bbeae59025c796814eb79b016fa81cfdd240649d5997f4",
-      "quantum-weyl/transfer/berger_retained_mixed_ell3_acceptance_certificate.py": "81bec40d423fa5912ec5b55cacd14d5c2a6998b017e4ff4a48b1ccdd5bcf5402",
-      "quantum-weyl/transfer/schema/berger-retained-mixed-ell3-independent-acceptance-v1.schema.json": "81a2888d7d96f6bdd06c0441feae0c67e209a2faf3409c9a2cb063275bd5cdff",
-      "quantum-weyl/transfer/tests/test_berger_retained_mixed_ell3_acceptance.py": "6462138a775107bd48b666ea58accbff6b9831e896c1bfd2c4629370439e7333",
+      "quantum-weyl/reports/berger-retained-mixed-ell3-independent-acceptance.md": "808f4b0451c9533bb03964a6501ea4026de1b875d0bf3f28de3eb313dc01f813",
+      "quantum-weyl/transfer/berger_retained_mixed_ell3_acceptance.py": "ba9ae52c469f81881f429826060eff3377b63f3ec17b126e1609156f2fb72c08",
+      "quantum-weyl/transfer/berger_retained_mixed_ell3_acceptance_certificate.py": "85ac48d88f063ecabe9bb3863b8018551da6edb6574fce791e7f5cf5e198d3f7",
+      "quantum-weyl/transfer/schema/berger-retained-mixed-ell3-independent-acceptance-v1.schema.json": "efb3b6288cbb3598d156bedfe45c661a289f1710e32c7af0bb6a08035a8f90c2",
+      "quantum-weyl/transfer/tests/test_berger_retained_mixed_ell3_acceptance.py": "214754d9771e68bb79167398f8983a3f3eb8518619d5f4af016c358553f88983",
       "quantum-weyl/transfer/verify_berger_retained_mixed_ell3_acceptance.py": "595b9f27fe71aec190697fce9f4bbb44690349f9d9892f3165d0c20914ae3757"
     },
-    "source_manifest_sha256": "aa94317bbe6783ff39ea938b2ec1da176b51831eace133dfaaa40e4da17a5255"
+    "source_manifest_sha256": "321407c80ce48ec3bf784ecc3124993b94c344acbf2e4a783869b0b7de3d4338"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -48,10 +49,35 @@
         "mixed_outer_gravity_inner": 0,
         "mixed_outer_mixed_inner": 0
       },
+      "exchange_full_nonzero_output_rows": {
+        "gravity_outer_mixed_inner": [
+          38
+        ],
+        "mixed_outer_gravity_inner": [],
+        "mixed_outer_mixed_inner": []
+      },
+      "exchange_outer_inner_pair_counts": {
+        "gravity_outer_mixed_inner": 144,
+        "mixed_outer_gravity_inner": 0,
+        "mixed_outer_mixed_inner": 0
+      },
       "exchange_projection_contribution_counts": {
         "gravity_outer_mixed_inner": 0,
         "mixed_outer_gravity_inner": 0,
         "mixed_outer_mixed_inner": 0
+      },
+      "exchange_projection_mutation": {
+        "added_projection_entry": {
+          "coefficient": "1",
+          "full_source_row": 38,
+          "retained_target_row": 0
+        },
+        "final_coefficient_counts": {
+          "gravity_outer_mixed_inner": 342,
+          "mixed_outer_gravity_inner": 0,
+          "mixed_outer_mixed_inner": 0
+        },
+        "mutant_rejected": true
       },
       "exchange_unshuffle_contribution_counts": {
         "gravity_outer_mixed_inner": 324,
@@ -79,18 +105,14 @@
       "mutation_defect_count": 2,
       "mutation_row": 13,
       "mutation_term_index": 0,
-      "raw_exchange_candidate_counts": {
-        "gravity_outer_mixed_inner": 144,
-        "mixed_outer_gravity_inner": 0,
-        "mixed_outer_mixed_inner": 0
-      },
+      "producer_exchange_ledger_independently_matched": true,
       "retained_arity_three_defect_count": 0,
       "retained_arity_three_defect_rows": 0,
       "retained_ell2_coefficient_count": 1474,
       "retained_ell3_coefficient_count": 25950,
       "retained_ell3_nonzero_rows": 18
     },
-    "elapsed_seconds": 34.83051,
+    "elapsed_seconds": 31.171742,
     "input_hashes": {
       "full_mixed_q3_manifest": "cebf388d1bc83b8f3b3b892e52efb6784511124505c3517c02f4125952b78bf1",
       "full_typed_mixed_q2": "789c0a8fa75903a2f0a3c8e11138b64531185d08124c0d6b82dc46138b91a731",
@@ -137,7 +159,7 @@
   "verification_receipts": [
     {
       "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_mixed_ell3_acceptance_certificate --scientific",
-      "elapsed_seconds": 34.83051,
+      "elapsed_seconds": 31.171742,
       "status": "PASS",
       "test_tier": 2
     },

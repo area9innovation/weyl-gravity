@@ -81,13 +81,19 @@ since landed and passed independent quantum-side import acceptance. The
 consumer parses 59,598 full coefficients, reproduces 25,950 retained contact
 coefficients, verifies all 36 retained arity-three identities, and rejects a
 localized mutation. Its exact exchange replay agrees with the hardened
-producer ledger: the gravity-outer/mixed-inner channel has 144 raw
-pairs and 342 canonical full-complex PBW coefficients, but none survives the
-retained output projection. The other two exchange channels have no raw
-pairs, so all three retained exchange sectors vanish exactly.
+producer ledger: the gravity-outer/mixed-inner channel has 144 outer/inner
+coefficient pairs and 342 canonical full-complex PBW coefficients, but none
+survives the retained output projection. The other two exchange channels have
+no outer/inner pairs, so all three retained exchange sectors vanish exactly.
 
-This closes the classical retained arity-three import gate and opens the
-residual branch projection and mixing table. It does not perform residual
+This closes the classical retained arity-three import gate. The quantum-side
+receiving contract for the residual branch projection is ready and requires
+content-addressed gravity and Maxwell carriers, exact inclusion/projection,
+pairing, parity, real structure, and \(K_{\rm Berger}\) weights. Separately it
+requires the even/odd deformation basis, its rank-one Euler--Lagrange map, and
+a topological transgression witness; the odd topological direction is not a
+third dynamical branch. No branch-basis manifest has been supplied, so the
+mixing table remains open. This does not perform residual
 quantum transfer, calculate a repository anomaly coefficient, restore the
 QME, or establish a Lorentzian or particle claim. The pure gravity--clock
 Paper IX arity-three result is unaffected.
@@ -374,7 +380,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | classical target; quantum status to compute | classical target; compute defect | proved only classically | zero classically in stated complex; quantum open | \(I_2\) classically; \(G(\hbar)\) open | proper classical solution sector |
-| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish, while residual branch projection is open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; interaction mixing table open |
+| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish; branch-projection consumer ready, gravity-plus-Maxwell basis manifest absent | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; interaction mixing table open |
 | Cylinder + scalar clock | open | primary quantum test | open | open | open | open |
 | Cylinder + Yang--Mills | open | open after scalar | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |

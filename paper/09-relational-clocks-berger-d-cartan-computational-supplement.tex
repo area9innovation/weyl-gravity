@@ -13,7 +13,7 @@ referee analyses, and manuscript.  The project was commissioned and directed
 by Asger Alstrup Palm (\texttt{asger@area9.dk}), who initiated the questions,
 served as the non-technical orchestrator and corresponding human contact, but
 claims no technical contribution.}}
-\date{Working draft, July 2026}
+\date{Theorem-frozen version, July 2026}
 
 \begin{document}
 \raggedbottom
@@ -25,7 +25,9 @@ inventory, replay commands and release gates for
 \path{09-relational-clocks-berger-d-cartan.tex}.  It separates mathematical
 arguments from machine receipts and keeps the paper fail-closed: a certificate
 supports only the claim inside its declared phase space and boundary.  The
-working draft is not yet marked \texttt{THEOREM\_FROZEN}.
+manuscript is marked \texttt{THEOREM\_FROZEN} only for the ten classical
+gravity--clock claims below.  Maxwell and observer-apparatus results are not
+main-theorem dependencies.
 \end{abstract}
 
 The authorship line describes the research archive.  Venue-specific human
@@ -335,9 +337,9 @@ The positive matter clock and the vanishing compact-universe tangent charge
 must not be transported to those settings without a new phase-space and
 boundary calculation.
 
-\section{Draft-to-freeze checklist}
+\section{Theorem-freeze receipt}
 
-This draft may be promoted to \texttt{THEOREM\_FROZEN} only when:
+The frozen release satisfied the following checklist:
 \begin{enumerate}
 \item every pinned certificate and independent verifier passes from a clean
 committed tree;
@@ -358,7 +360,10 @@ fixed-coupling, compact-Berger and arity-three limitations;
 checkout.
 \end{enumerate}
 
-The current state is \texttt{WRITING\_STARTED}; it is intentionally not
-\texttt{THEOREM\_FROZEN}.
+The machine-readable replay and environment manifest is
+\path{../d_quotient_classical/certificates/PAPER_09_THEOREM_FREEZE.json}.
+The state is \texttt{THEOREM\_FROZEN}.  This lifecycle promotion freezes the
+scoped theorem and its evidence; it does not promote Maxwell, observer,
+Hadamard, QME or all-orders claims.
 
 \end{document}

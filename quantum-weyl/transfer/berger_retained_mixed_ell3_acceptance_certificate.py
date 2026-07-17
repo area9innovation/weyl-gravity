@@ -50,7 +50,7 @@ def build(*, run_scientific: bool) -> dict:
         "mixed_outer_gravity_inner": 0,
         "mixed_outer_mixed_inner": 0,
     }
-    expected_raw_exchange = {
+    expected_outer_inner_pairs = {
         "gravity_outer_mixed_inner": 144,
         "mixed_outer_gravity_inner": 0,
         "mixed_outer_mixed_inner": 0,
@@ -68,13 +68,26 @@ def build(*, run_scientific: bool) -> dict:
         or diagnostics.get("contact_changed_count") != 0
         or diagnostics.get("gravity_inclusion2_coefficient_count") != 96
         or diagnostics.get("mixed_inclusion2_coefficient_count") != 12
-        or diagnostics.get("raw_exchange_candidate_counts") != expected_raw_exchange
+        or diagnostics.get("exchange_outer_inner_pair_counts")
+        != expected_outer_inner_pairs
         or diagnostics.get("exchange_unshuffle_contribution_counts")
         != {"gravity_outer_mixed_inner": 324, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}
         or diagnostics.get("exchange_full_coefficient_counts")
         != {"gravity_outer_mixed_inner": 342, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}
+        or diagnostics.get("exchange_full_nonzero_output_rows")
+        != {"gravity_outer_mixed_inner": [38], "mixed_outer_gravity_inner": [], "mixed_outer_mixed_inner": []}
         or diagnostics.get("exchange_projection_contribution_counts") != expected_exchange
         or diagnostics.get("exchange_final_coefficient_counts") != expected_exchange
+        or diagnostics.get("exchange_projection_mutation", {}).get(
+            "final_coefficient_counts"
+        )
+        != {"gravity_outer_mixed_inner": 342, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}
+        or diagnostics.get("exchange_projection_mutation", {}).get(
+            "mutant_rejected"
+        )
+        is not True
+        or diagnostics.get("producer_exchange_ledger_independently_matched")
+        is not True
         or diagnostics.get("retained_arity_three_defect_count") != 0
         or diagnostics.get("retained_arity_three_defect_rows") != 0
         or diagnostics.get("mutation_defect_count", 0) <= 0
@@ -110,6 +123,7 @@ def build(*, run_scientific: bool) -> dict:
             "RETAINED_MIXED_ELL3_ALL_EXCHANGE_SECTORS_ZERO": True,
             "RETAINED_MIXED_ARITY_THREE_IDENTITY_INDEPENDENTLY_REPLAYED": True,
             "LOCALIZED_RETAINED_ELL3_MUTATION_REJECTED": True,
+            "ROW_38_PROJECTION_MUTATION_REJECTED": True,
             "RETAINED_MIXED_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED": False,
             "EINSTEIN_EXTRA_WEYL_BRANCH_MIXING_COMPUTED": False,
             "TOPOLOGICAL_DIRECTION_CLASSIFIED": False,
@@ -119,7 +133,7 @@ def build(*, run_scientific: bool) -> dict:
         },
         "next_gate": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC classical-import acceptance pins the retained typed mixed gravity-Maxwell ell3 at classical hardening commit e99d0c1d39490de5261fc6ca1dc2aeaa0d149655. Without importing or executing the classical producer, the quantum-side Q(sqrt(10)) PBW backend parses all 59,598 coefficients of the full mixed q3, reconstructs the explicit typed 64-to-36 contraction, and matches all 25,950 retained contact coefficients exactly. It independently reconstructs the 96 gravity and 12 mixed second-inclusion coefficients and verifies their supports. The gravity-outer/mixed-inner channel has 144 raw outer/inner coefficient pairs, producing 324 signed unshuffle contributions and 342 canonical full-complex PBW coefficients. None reaches a full output row supported by the retained projection, so that channel vanishes after exact retained output projection; the other two exchange channels have no raw coefficient pairs. This independently agrees with the hardened producer's exchange-vanishing ledger, and all three retained q2 S q2 exchange sectors are exactly zero. The relative retained arity-three identity closes on all 36 rows, and a one-coefficient retained-ell3 mutation creates two exact defects. The retained interaction has 7,614 gravity-output terms with two Maxwell inputs and 18,336 Maxwell-output terms with one Maxwell input. This proves a nontrivial retained gravity-light interaction but does not project onto Einstein-like, extra-Weyl or topological residual branches. Cyclicity is imported from the typed cyclic transfer theorem rather than independently replayed here. No unary kinetic operator changes, so no negative physical direction is introduced by this bracket; this is not a unitarity theorem. It does not compute a QME correction, restore a QME, construct renormalized Lorentzian products, certify a particle interpretation or make a quantum claim."
+            "This LOCAL-ALGEBRAIC classical-import acceptance pins the retained typed mixed gravity-Maxwell ell3 at classical hardening commit e99d0c1d39490de5261fc6ca1dc2aeaa0d149655. Without importing or executing the classical producer, the quantum-side Q(sqrt(10)) PBW backend parses all 59,598 coefficients of the full mixed q3, reconstructs the explicit typed 64-to-36 contraction, and matches all 25,950 retained contact coefficients exactly. It independently reconstructs the 96 gravity and 12 mixed second-inclusion coefficients and verifies their supports. The gravity-outer/mixed-inner channel has 144 outer/inner coefficient pairs, producing 324 signed unshuffle contributions and 342 canonical full-complex PBW coefficients, all in full output row 38. The certified retained projection annihilates that row, so the channel vanishes after exact retained output projection; the other two exchange channels have no outer/inner pairs. Adding the single mutant projection entry from full row 38 to retained row zero exposes all 342 coefficients, proving that the zero is projection-derived rather than hard-coded. This independently agrees with the hardened producer's exchange-vanishing ledger, and all three retained q2 S q2 exchange sectors are exactly zero. The relative retained arity-three identity closes on all 36 rows, and a one-coefficient retained-ell3 mutation creates two exact defects. The retained interaction has 7,614 gravity-output terms with two Maxwell inputs and 18,336 Maxwell-output terms with one Maxwell input. This proves a nontrivial retained gravity-light interaction but does not project onto Einstein-like, extra-Weyl or topological residual branches. Cyclicity is imported from the typed cyclic transfer theorem rather than independently replayed here. No unary kinetic operator changes, so no negative physical direction is introduced by this bracket; this is not a unitarity theorem. It does not compute a QME correction, restore a QME, construct renormalized Lorentzian products, certify a particle interpretation or make a quantum claim."
         ),
         "consumer_provenance": {
             "source_manifest": source_manifest,

@@ -37,8 +37,8 @@ def main() -> int:
     schema = json.loads(SCHEMA.read_text())
     jsonschema.Draft202012Validator.check_schema(schema)
     jsonschema.Draft202012Validator(schema).validate(table)
-    if table["theorem_frozen"] is not False:
-        raise AssertionError("working draft was prematurely frozen")
+    if table["theorem_frozen"] is not True or table["paper_state"] != "THEOREM_FROZEN":
+        raise AssertionError("Paper IX theorem freeze is absent")
     ids = [entry["claim_id"] for entry in table["claims"]]
     if ids != [f"P09-C{index}" for index in range(1, 11)]:
         raise AssertionError("claim ids are not the complete canonical sequence")
@@ -50,6 +50,8 @@ def main() -> int:
             raise AssertionError(f"paper source hash mismatch: {relative}")
         paper_text += path.read_text()
     for entry in table["claims"]:
+        if "MAXWELL" in entry["certificate_result_id"]:
+            raise AssertionError("Maxwell certificate entered the main theorem")
         if entry["claim_id"] not in paper_text:
             raise AssertionError(f"claim id absent from paper sources: {entry['claim_id']}")
         certificate_path = ROOT / entry["certificate_path"]
@@ -112,16 +114,21 @@ def main() -> int:
             if _lookup(certificate, dotted) is not False:
                 raise AssertionError(f"signoff forbidden promotion detected: {entry['team']} {dotted}")
     if table["required_signoffs"] != {
-        "classical_team": "DRAFTED",
+        "classical_team": "SIGNED_AND_FROZEN",
         "nonlinear_team": "SIGNED_K_GENERATOR_INTERPRETATION",
         "quantum_team": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED",
         "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
     }:
         raise AssertionError("authoritative signoff ledger drifted")
-    if table["next_gate"] != "PAPER_09_CLEAN_TREE_REPLAY_DEFERRED":
-        raise AssertionError("deferred clean-tree gate drifted")
+    if table["next_gate"] != "POST_FREEZE_OBSERVER_84_ROW_BACKGROUND_SUPPORT":
+        raise AssertionError("post-freeze observer handoff drifted")
+    if table["main_theorem_exclusions"][:2] != [
+        "Maxwell signal or redshift results",
+        "observer-apparatus or 84-row results",
+    ]:
+        raise AssertionError("main-theorem downstream exclusions drifted")
     print("PAPER_09_BERGER_CLAIM_TABLE independent audit: PASS")
-    print("claims=10 cross_checks=2 signoffs=2 theorem_frozen=false hashes_and_boundaries=exact")
+    print("claims=10 cross_checks=2 signoffs=2 theorem_frozen=true maxwell_excluded hashes_and_boundaries=exact")
     return 0
 
 

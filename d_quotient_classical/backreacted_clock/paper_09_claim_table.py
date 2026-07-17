@@ -276,8 +276,8 @@ def build() -> dict[str, object]:
     return {
         "schema": "pure-weyl-paper-09-berger-claim-table-v1",
         "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
-        "paper_state": "WRITING_STARTED",
-        "theorem_frozen": False,
+        "paper_state": "THEOREM_FROZEN",
+        "theorem_frozen": True,
         "paper_sources": {
             str(MAIN_PAPER.relative_to(ROOT)): _sha256(MAIN_PAPER),
             str(SUPPLEMENT.relative_to(ROOT)): _sha256(SUPPLEMENT),
@@ -328,7 +328,7 @@ def build() -> dict[str, object]:
             },
         ],
         "required_signoffs": {
-            "classical_team": "DRAFTED",
+            "classical_team": "SIGNED_AND_FROZEN",
             "nonlinear_team": "SIGNED_K_GENERATOR_INTERPRETATION",
             "quantum_team": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED",
             "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
@@ -344,14 +344,20 @@ def build() -> dict[str, object]:
             "integrated nonlinear D quotient",
             "global complete relational observable",
         ],
-        "next_gate": "PAPER_09_CLEAN_TREE_REPLAY_DEFERRED",
-        "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates, an exact generator-conjugation audit, one strategic independent action-to-q3 sector cross-check, and content-addressed nonlinear and quantum-team signoffs. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. The quantum signoff accepts only that classical input and blocks every quantum promotion. The clean-tree replay is deferred, so the theorem remains unfrozen. No affine D-Cartan, integrated nonlinear quotient, global complete observable, full second q3 derivation, convergent all-orders, Hadamard, quantum, boundary, scattering, or unitarity claim is promoted.",
+        "main_theorem_exclusions": [
+            "Maxwell signal or redshift results",
+            "observer-apparatus or 84-row results",
+            "affine raw-D Cartan",
+            "quantum or Hadamard results",
+        ],
+        "next_gate": "POST_FREEZE_OBSERVER_84_ROW_BACKGROUND_SUPPORT",
+        "claim_boundary": "This theorem-frozen table binds Paper IX to exactly ten scoped classical Berger gravity-clock certificates, an exact generator-conjugation audit, one strategic independent action-to-q3 sector cross-check, and content-addressed nonlinear and quantum-team signoffs. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. Maxwell signal, redshift, observer-apparatus, and 84-row results are excluded from the main theorem. No affine D-Cartan, integrated nonlinear quotient, global complete observable, full second q3 derivation, convergent all-orders, Hadamard, quantum, boundary, scattering, or unitarity claim is promoted.",
     }
 
 
 def verify(payload: dict[str, object]) -> None:
-    if payload["theorem_frozen"] is not False or payload["paper_state"] != "WRITING_STARTED":
-        raise AssertionError("draft was prematurely frozen")
+    if payload["theorem_frozen"] is not True or payload["paper_state"] != "THEOREM_FROZEN":
+        raise AssertionError("Paper IX theorem freeze is absent")
     expected = [spec["claim_id"] for spec in CLAIMS]
     if payload["claim_ids_complete"] != expected:
         raise AssertionError("claim-id ledger is incomplete or reordered")
@@ -362,6 +368,18 @@ def verify(payload: dict[str, object]) -> None:
     for claim_id in expected:
         if claim_id not in main or claim_id not in supplement:
             raise AssertionError(f"claim id is absent from a paper source: {claim_id}")
+    theorem_blocks = main.split("\\begin{theorem}")[1:]
+    theorem_text = "\n".join(block.split("\\end{theorem}", 1)[0] for block in theorem_blocks)
+    for forbidden in ("Maxwell", "observer-apparatus", "84-row"):
+        if forbidden in theorem_text:
+            raise AssertionError(f"main theorem illegally imports downstream result: {forbidden}")
+    if any("MAXWELL" in entry["certificate_result_id"] for entry in payload["claims"]):
+        raise AssertionError("Maxwell certificate entered the ten-claim theorem ledger")
+    if payload["main_theorem_exclusions"][:2] != [
+        "Maxwell signal or redshift results",
+        "observer-apparatus or 84-row results",
+    ]:
+        raise AssertionError("main-theorem downstream exclusions drifted")
     if payload["required_signoffs"]["nonlinear_team"] != "SIGNED_K_GENERATOR_INTERPRETATION":
         raise AssertionError("nonlinear signoff is absent or overpromoted")
     if payload["required_signoffs"]["quantum_team"] != "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED":
@@ -427,7 +445,7 @@ def main() -> int:
         raise AssertionError("Paper IX claim table drifted")
     if args.guards:
         mutants = (
-            ("freeze early", ("theorem_frozen",), True),
+            ("unfreeze theorem", ("theorem_frozen",), False),
             ("overpromote nonlinear signoff", ("required_signoffs", "nonlinear_team"), "APPROVED_UNSCOPED"),
             ("overpromote quantum signoff", ("required_signoffs", "quantum_team"), "QUANTUM_THEOREM_APPROVED"),
             ("drop signoff evidence", ("signoff_evidence",), payload["signoff_evidence"][:-1]),

@@ -18,7 +18,7 @@ class BergerRetainedMixedEll3AcceptanceTests(unittest.TestCase):
         self.assertEqual(diagnostics["contact_missing_count"], 0)
         self.assertEqual(diagnostics["contact_extra_count"], 0)
         self.assertEqual(diagnostics["contact_changed_count"], 0)
-        self.assertEqual(diagnostics["raw_exchange_candidate_counts"], {
+        self.assertEqual(diagnostics["exchange_outer_inner_pair_counts"], {
             "gravity_outer_mixed_inner": 144,
             "mixed_outer_gravity_inner": 0,
             "mixed_outer_mixed_inner": 0,
@@ -33,6 +33,11 @@ class BergerRetainedMixedEll3AcceptanceTests(unittest.TestCase):
             "mixed_outer_gravity_inner": 0,
             "mixed_outer_mixed_inner": 0,
         })
+        self.assertEqual(diagnostics["exchange_full_nonzero_output_rows"], {
+            "gravity_outer_mixed_inner": [38],
+            "mixed_outer_gravity_inner": [],
+            "mixed_outer_mixed_inner": [],
+        })
         self.assertEqual(diagnostics["exchange_projection_contribution_counts"], {
             "gravity_outer_mixed_inner": 0,
             "mixed_outer_gravity_inner": 0,
@@ -43,6 +48,18 @@ class BergerRetainedMixedEll3AcceptanceTests(unittest.TestCase):
             "mixed_outer_gravity_inner": 0,
             "mixed_outer_mixed_inner": 0,
         })
+        self.assertEqual(
+            diagnostics["exchange_projection_mutation"]["final_coefficient_counts"],
+            {
+                "gravity_outer_mixed_inner": 342,
+                "mixed_outer_gravity_inner": 0,
+                "mixed_outer_mixed_inner": 0,
+            },
+        )
+        self.assertTrue(
+            diagnostics["exchange_projection_mutation"]["mutant_rejected"]
+        )
+        self.assertTrue(diagnostics["producer_exchange_ledger_independently_matched"])
         self.assertEqual(diagnostics["retained_arity_three_defect_count"], 0)
         self.assertGreater(diagnostics["mutation_defect_count"], 0)
 

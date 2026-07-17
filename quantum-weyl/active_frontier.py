@@ -30,6 +30,7 @@ DEPENDENCIES = {
     "coupled_cyclicity_repair": HERE / "transfer/certificates/BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS.json",
     "mixed_q3_acceptance": HERE / "transfer/certificates/BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE.json",
     "retained_mixed_ell3_acceptance": HERE / "transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json",
+    "residual_ell3_projection_readiness": HERE / "transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "base_Hadamard_parametrix": HERE / "lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
     "typed_companion": HERE / "lorentzian/certificates/BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT.json",
@@ -60,6 +61,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "coupled_cyclicity_repair": "CORRECTED_CLASSICAL_REPAIR_ACCEPTED_MIXED_Q3_INPUT_UNBLOCKED",
         "mixed_q3_acceptance": "TYPED_MIXED_Q3_INDEPENDENTLY_ACCEPTED_RETAINED_ELL3_TRANSFER_OPEN",
         "retained_mixed_ell3_acceptance": "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED_RESIDUAL_BRANCH_PROJECTION_OPEN",
+        "residual_ell3_projection_readiness": "CONSUMER_READY_RESIDUAL_BRANCH_BASIS_INPUT_NOT_SUPPLIED",
         "causal_chain": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
         "base_Hadamard_parametrix": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
         "typed_companion": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN",
@@ -170,13 +172,38 @@ def _load() -> dict[str, dict[str, Any]]:
         or retained_ell3_flags.get("QUANTUM_CLAIM") is not False
         or retained_ell3.get("next_gate") != "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE"
         or retained_ell3_diagnostics.get("retained_ell3_coefficient_count") != 25_950
-        or retained_ell3_diagnostics.get("raw_exchange_candidate_counts", {}).get("gravity_outer_mixed_inner") != 144
+        or retained_ell3_diagnostics.get("exchange_outer_inner_pair_counts", {}).get("gravity_outer_mixed_inner") != 144
         or retained_ell3_diagnostics.get("exchange_full_coefficient_counts", {}).get("gravity_outer_mixed_inner") != 342
         or any(retained_ell3_diagnostics.get("exchange_final_coefficient_counts", {}).values())
         or retained_ell3_diagnostics.get("retained_arity_three_defect_count") != 0
         or retained_ell3_diagnostics.get("mutation_defect_count", 0) <= 0
     ):
         raise ValueError("retained mixed ell3 acceptance frontier drifted")
+    projection_readiness = values["residual_ell3_projection_readiness"]
+    projection_flags = projection_readiness.get("claim_flags", {})
+    if (
+        projection_flags.get("RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY") is not True
+        or projection_flags.get("RESIDUAL_BRANCH_BASIS_INPUT_AVAILABLE") is not False
+        or projection_flags.get("RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED") is not False
+        or projection_flags.get("RESIDUAL_ELL3_MIXING_TABLE_COMPUTED") is not False
+        or projection_flags.get("RESIDUAL_QUANTUM_TRANSFERRED") is not False
+        or projection_flags.get("QUANTUM_CLAIM") is not False
+        or projection_readiness.get("next_gate")
+        != "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST"
+        or projection_readiness.get("input_contract", {}).get(
+            "Maxwell_branch_carrier_required"
+        )
+        is not True
+        or projection_readiness.get("input_contract", {}).get(
+            "required_dynamical_gravity_branch_ids"
+        )
+        != ["Einstein_like", "extra_Weyl"]
+        or projection_readiness.get("input_contract", {}).get(
+            "required_deformation_vertex_basis_ids"
+        )
+        != ["e_C2_dynamical", "o_C_dual_C_topological"]
+    ):
+        raise ValueError("residual ell3 projection readiness frontier drifted")
     hadamard_flags = values["Hadamard_lift"].get("claim_flags", {})
     if (
         hadamard_flags.get("BERGER_COVARIANCE_LIFT_26_TO_54") is not True
@@ -255,8 +282,8 @@ def build() -> dict[str, Any]:
         },
         "active_rows": {
             "classical_interacting_input": {
-                "status": "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED_RESIDUAL_BRANCH_PROJECTION_OPEN",
-                "next_gate": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
+                "status": "RETAINED_MIXED_ELL3_ACCEPTED_BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT",
+                "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
             },
             "local_obstruction_space": {
                 "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_FULL_BV_OPEN",
@@ -330,6 +357,11 @@ def build() -> dict[str, Any]:
                 "active_result_id": "BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE",
                 "disposition": "SUPERSEDED_AS_INTERACTION_STATUS_SOURCE_HISTORY_RETAINED_VALID_FULL_Q3_ACCEPTANCE",
             },
+            {
+                "historical_result_id": "BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE",
+                "active_result_id": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS",
+                "disposition": "SUPERSEDED_AS_NEXT_GATE_STATUS_SOURCE_HISTORY_RETAINED_VALID_ELL3_ACCEPTANCE",
+            },
         ],
         "claim_flags": {
             "ACTIVE_FRONTIER_LEDGER": True,
@@ -341,6 +373,7 @@ def build() -> dict[str, Any]:
             "MIXED_Q3_INPUT_UNBLOCKED": True,
             "MIXED_Q3_INDEPENDENTLY_ACCEPTED": True,
             "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED": True,
+            "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY": True,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
@@ -355,7 +388,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
+            "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -375,11 +408,15 @@ def build() -> dict[str, Any]:
             "q3 is independently replayed with zero graded-symmetry and all-row arity-three "
             "defects, while a localized coefficient mutation is rejected. The retained ell3 "
             "contact is independently replayed coefficientwise with 25,950 terms. Exact PBW "
-            "construction finds 144 gravity-outer/mixed-inner raw pairs and 342 full-complex "
+            "construction finds 144 gravity-outer/mixed-inner coefficient pairs and 342 full-complex "
             "exchange coefficients, but none survives retained output projection; the other two "
-            "exchange sectors have no raw pairs. All three retained exchange sectors therefore "
+            "exchange sectors have no outer/inner pairs. All three retained exchange sectors therefore "
             "vanish, all 36 retained arity-three rows close, and a mutation is rejected. Residual "
-            "Einstein-like/extra-Weyl/topological branch projection remains open. This is a classical LOCAL-ALGEBRAIC "
+            "Einstein-like/extra-Weyl dynamical branch projection and separate e/o deformation-vertex "
+            "action remain open. The fail-closed consumer contract is ready and requires exact "
+            "gravity plus Maxwell carriers and keeps the topological o direction out of the "
+            "dynamical branch list, but no "
+            "branch-basis manifest has been supplied. This is a classical LOCAL-ALGEBRAIC "
             "acceptance, not a quantum result. "
             "The companion is null-cone decomposable, but this does not imply existence of a "
             "Hadamard state: the bosonic analytic hypothesis failure and the later full-BV "
@@ -423,6 +460,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("MIXED_Q3_INPUT_UNBLOCKED") is not True
         or flags.get("MIXED_Q3_INDEPENDENTLY_ACCEPTED") is not True
         or flags.get("RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED") is not True
+        or flags.get("RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY") is not True
         or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
         or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
@@ -443,6 +481,7 @@ def validate(result: dict[str, Any]) -> None:
             "MIXED_Q3_INPUT_UNBLOCKED",
             "MIXED_Q3_INDEPENDENTLY_ACCEPTED",
             "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED",
+            "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
@@ -450,5 +489,5 @@ def validate(result: dict[str, Any]) -> None:
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")
-    if len(result.get("supersession_ledger", [])) != 10:
+    if len(result.get("supersession_ledger", [])) != 11:
         raise ValueError("active frontier supersession ledger drifted")

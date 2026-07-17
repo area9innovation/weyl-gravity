@@ -7,13 +7,13 @@
   "required": [
     "schema", "result_id", "paper_state", "theorem_frozen", "paper_sources",
     "setting", "claims", "claim_ids_complete", "independent_cross_checks", "signoff_evidence", "required_signoffs",
-    "forbidden_promotions", "next_gate", "claim_boundary"
+    "forbidden_promotions", "main_theorem_exclusions", "next_gate", "claim_boundary"
   ],
   "properties": {
     "schema": {"const": "pure-weyl-paper-09-berger-claim-table-v1"},
     "result_id": {"const": "PAPER_09_BERGER_CLAIM_TABLE"},
-    "paper_state": {"const": "WRITING_STARTED"},
-    "theorem_frozen": {"const": false},
+    "paper_state": {"const": "THEOREM_FROZEN"},
+    "theorem_frozen": {"const": true},
     "paper_sources": {
       "type": "object",
       "additionalProperties": false,
@@ -64,7 +64,7 @@
       "additionalProperties": false,
       "required": ["classical_team", "nonlinear_team", "quantum_team", "einstein_team"],
       "properties": {
-        "classical_team": {"const": "DRAFTED"},
+        "classical_team": {"const": "SIGNED_AND_FROZEN"},
         "nonlinear_team": {"const": "SIGNED_K_GENERATOR_INTERPRETATION"},
         "quantum_team": {"const": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED"},
         "einstein_team": {"const": "OPTIONAL_INTERNAL_REFEREE"}
@@ -75,7 +75,15 @@
       "minItems": 6,
       "items": {"type": "string", "minLength": 1}
     },
-    "next_gate": {"const": "PAPER_09_CLEAN_TREE_REPLAY_DEFERRED"},
+    "main_theorem_exclusions": {
+      "const": [
+        "Maxwell signal or redshift results",
+        "observer-apparatus or 84-row results",
+        "affine raw-D Cartan",
+        "quantum or Hadamard results"
+      ]
+    },
+    "next_gate": {"const": "POST_FREEZE_OBSERVER_84_ROW_BACKGROUND_SUPPORT"},
     "claim_boundary": {"type": "string", "minLength": 1}
   },
   "$defs": {
