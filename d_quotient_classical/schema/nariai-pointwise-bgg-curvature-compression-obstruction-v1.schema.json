@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-pointwise-bgg-curvature-compression-obstruction-v1.schema.json",
+  "title": "Nariai pointwise BGG curvature-compression obstruction",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "construction", "exact_matrices", "exact_checks", "obstruction", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-pointwise-bgg-curvature-compression-obstruction-v1"},
+    "result_id": {"const": "NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1"},
+    "result_state": {"const": "POINTWISE_CURVATURE_COMPRESSION_NONCYCLIC"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["curved_parent", "kostant_sdr", "kostant_matrices"],
+      "properties": {"curved_parent": {"$ref": "#/$defs/dependency"}, "kostant_sdr": {"$ref": "#/$defs/dependency"}, "kostant_matrices": {"$ref": "#/$defs/dependency"}},
+      "additionalProperties": false
+    },
+    "construction": {
+      "type": "object",
+      "required": ["standard_tractor_curvature", "adjoint_action", "one_form_curvature_action", "pointwise_compression", "omitted_terms"],
+      "properties": {"standard_tractor_curvature": {"type": "string"}, "adjoint_action": {"type": "string"}, "one_form_curvature_action": {"type": "string"}, "pointwise_compression": {"const": "Q_F=-p1 (F dot) i1"}, "omitted_terms": {"type": "string"}},
+      "additionalProperties": false
+    },
+    "exact_matrices": {
+      "type": "object", "required": ["curvature_action", "pointwise_compressed_curvature", "cyclic_defect", "endpoint_pairing"],
+      "properties": {"curvature_action": {"$ref": "#/$defs/sparse"}, "pointwise_compressed_curvature": {"$ref": "#/$defs/sparse"}, "cyclic_defect": {"$ref": "#/$defs/sparse"}, "endpoint_pairing": {"$ref": "#/$defs/sparse"}},
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["curvature_action_rank", "curvature_action_nonzero_entries", "compressed_rank", "compressed_nonzero_entries", "compressed_characteristic_polynomial", "cyclic_defect_rank", "cyclic_defect_nonzero_entries", "normalized_witness", "normalized_witness_value"],
+      "properties": {
+        "curvature_action_rank": {"const": 54}, "curvature_action_nonzero_entries": {"const": 96},
+        "compressed_rank": {"const": 9}, "compressed_nonzero_entries": {"const": 13},
+        "compressed_characteristic_polynomial": {"const": "(3*lambda - 2)**4*(3*lambda + 1)**4*(3*lambda + 4)/19683"},
+        "cyclic_defect_rank": {"const": 2}, "cyclic_defect_nonzero_entries": {"const": 4},
+        "normalized_witness": {"const": "(J Q_F-Q_F^T J)[1,4]"}, "normalized_witness_value": {"const": "1"}
+      },
+      "additionalProperties": false
+    },
+    "obstruction": {
+      "type": "object", "required": ["failed_candidate", "reason", "conclusion", "not_a_global_no_go"],
+      "properties": {"failed_candidate": {"type": "string"}, "reason": {"type": "string"}, "conclusion": {"const": "derivative-dependent curved BGG splitting/HPL corrections are necessary"}, "not_a_global_no_go": {"const": true}},
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1", "POINTWISE_CURVATURE_COMPRESSION_IS_CYCLIC", "DERIVATIVE_BGG_CORRECTIONS_REQUIRED", "NARIAI_CURVED_BGG_HPL_COMPRESSION", "NARIAI_GREEN_HOMOTOPY", "ALL_CURVED_COMPRESSIONS_OBSTRUCTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1": {"const": true},
+        "POINTWISE_CURVATURE_COMPRESSION_IS_CYCLIC": {"const": false},
+        "DERIVATIVE_BGG_CORRECTIONS_REQUIRED": {"const": true},
+        "NARIAI_CURVED_BGG_HPL_COMPRESSION": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "ALL_CURVED_COMPRESSIONS_OBSTRUCTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_FIRST_DIFFERENTIAL_BGG_CORRECTION"},
+    "claim_boundary": {"type": "string", "minLength": 350},
+    "provenance": {"type": "object", "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}}, "additionalProperties": false}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {"type": "object", "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false},
+    "sparse": {"type": "object", "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}, "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}
+  }
+}

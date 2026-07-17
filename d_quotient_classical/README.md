@@ -164,6 +164,11 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   Nariai parent complex (without yet claiming BGG compression or Green data):
   [`certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json`](certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json),
   [`reports/conformally-einstein-yang-mills-detour-correction.md`](reports/conformally-einstein-yang-mills-detour-correction.md)
+- First Nariai BGG-compression gate: raw pointwise compression of the tractor
+  curvature action has a rank-two cyclic defect, proving that the omitted
+  derivative splitting/HPL corrections are mandatory:
+  [`certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json`](certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json),
+  [`reports/nariai-pointwise-bgg-curvature-compression-obstruction.md`](reports/nariai-pointwise-bgg-curvature-compression-obstruction.md)
 - Strict portable consumer gate and accepted Berger adapter:
   [`schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json`](schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
   [`certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json`](certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json)

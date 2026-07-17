@@ -1,0 +1,723 @@
+{
+  "claim_boundary": "This exact calculation inserts the Nariai Weyl curvature into the standard and adjoint tractor representations, applies the certified pointwise Kostant inclusion and projection, and proves that the raw compressed curvature action has a rank-two cyclic-adjoint defect with normalized witness one. It establishes that the pointwise term alone cannot be the curved endpoint correction. It does not obstruct the general Bach-flat deformation detour complex or a full differential BGG/HPL compression; on the contrary it identifies the omitted derivative splitting terms as mandatory. No endpoint equality, support, Green, causal, open-family, or quantum claim is made.",
+  "construction": {
+    "adjoint_action": "Omega_ad X=[Omega_standard,X] on the 15-dimensional adjoint tractor",
+    "omitted_terms": "derivative-dependent BGG splitting/HPL corrections",
+    "one_form_curvature_action": "(F dot Psi)_b=F_b^a Psi_a on the 60-dimensional parent middle row",
+    "pointwise_compression": "Q_F=-p1 (F dot) i1",
+    "standard_tractor_curvature": "Omega_ab has only the Weyl tangent block on Einstein Nariai because Cotton=0"
+  },
+  "dependency_refs": {
+    "curved_parent": {
+      "artifact_id": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1",
+      "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json",
+      "sha256": "1b5104082d72a2a6397b4a668a9a1008be22e1daf7481e5de37ad4c31126cee4"
+    },
+    "kostant_matrices": {
+      "artifact_id": "ADJOINT_TRACTOR_KOSTANT_COMPRESSION_MATRICES",
+      "path": "covariant_completion/certificates/adjoint_tractor_kostant_compression_matrices.json",
+      "sha256": "6959cb31fad909b88d92a55689e06d9740f715cf9296fea032f8f387ed768f26"
+    },
+    "kostant_sdr": {
+      "artifact_id": "ADJOINT_TRACTOR_KOSTANT_COMPRESSION",
+      "path": "covariant_completion/certificates/adjoint_tractor_kostant_compression.json",
+      "sha256": "6984f2c8cfd95c6c7ee79aaf4fc9f8a7021ea8efb6576365088cb7e943007fbd"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "compressed_characteristic_polynomial": "(3*lambda - 2)**4*(3*lambda + 1)**4*(3*lambda + 4)/19683",
+    "compressed_nonzero_entries": 13,
+    "compressed_rank": 9,
+    "curvature_action_nonzero_entries": 96,
+    "curvature_action_rank": 54,
+    "cyclic_defect_nonzero_entries": 4,
+    "cyclic_defect_rank": 2,
+    "normalized_witness": "(J Q_F-Q_F^T J)[1,4]",
+    "normalized_witness_value": "1"
+  },
+  "exact_matrices": {
+    "curvature_action": {
+      "entries": [
+        [
+          0,
+          16,
+          "2/3"
+        ],
+        [
+          0,
+          32,
+          "-1/3"
+        ],
+        [
+          0,
+          48,
+          "-1/3"
+        ],
+        [
+          1,
+          15,
+          "2/3"
+        ],
+        [
+          2,
+          30,
+          "-1/3"
+        ],
+        [
+          3,
+          45,
+          "-1/3"
+        ],
+        [
+          4,
+          37,
+          "1/3"
+        ],
+        [
+          4,
+          53,
+          "1/3"
+        ],
+        [
+          5,
+          22,
+          "2/3"
+        ],
+        [
+          5,
+          54,
+          "1/3"
+        ],
+        [
+          6,
+          23,
+          "2/3"
+        ],
+        [
+          6,
+          39,
+          "-1/3"
+        ],
+        [
+          7,
+          20,
+          "2/3"
+        ],
+        [
+          7,
+          34,
+          "1/3"
+        ],
+        [
+          8,
+          21,
+          "2/3"
+        ],
+        [
+          8,
+          49,
+          "1/3"
+        ],
+        [
+          9,
+          36,
+          "-1/3"
+        ],
+        [
+          9,
+          50,
+          "1/3"
+        ],
+        [
+          11,
+          27,
+          "-2/3"
+        ],
+        [
+          11,
+          43,
+          "1/3"
+        ],
+        [
+          11,
+          59,
+          "1/3"
+        ],
+        [
+          12,
+          26,
+          "-2/3"
+        ],
+        [
+          13,
+          41,
+          "1/3"
+        ],
+        [
+          14,
+          56,
+          "1/3"
+        ],
+        [
+          15,
+          1,
+          "2/3"
+        ],
+        [
+          16,
+          0,
+          "2/3"
+        ],
+        [
+          16,
+          32,
+          "-1/3"
+        ],
+        [
+          16,
+          48,
+          "-1/3"
+        ],
+        [
+          17,
+          31,
+          "1/3"
+        ],
+        [
+          18,
+          46,
+          "1/3"
+        ],
+        [
+          19,
+          35,
+          "-1/3"
+        ],
+        [
+          19,
+          51,
+          "-1/3"
+        ],
+        [
+          20,
+          7,
+          "2/3"
+        ],
+        [
+          20,
+          34,
+          "1/3"
+        ],
+        [
+          21,
+          8,
+          "2/3"
+        ],
+        [
+          21,
+          49,
+          "1/3"
+        ],
+        [
+          22,
+          5,
+          "2/3"
+        ],
+        [
+          22,
+          54,
+          "1/3"
+        ],
+        [
+          23,
+          6,
+          "2/3"
+        ],
+        [
+          23,
+          39,
+          "-1/3"
+        ],
+        [
+          24,
+          38,
+          "1/3"
+        ],
+        [
+          24,
+          52,
+          "-1/3"
+        ],
+        [
+          26,
+          12,
+          "-2/3"
+        ],
+        [
+          27,
+          11,
+          "-2/3"
+        ],
+        [
+          27,
+          43,
+          "-1/3"
+        ],
+        [
+          27,
+          59,
+          "-1/3"
+        ],
+        [
+          28,
+          42,
+          "1/3"
+        ],
+        [
+          29,
+          57,
+          "1/3"
+        ],
+        [
+          30,
+          2,
+          "-1/3"
+        ],
+        [
+          31,
+          17,
+          "1/3"
+        ],
+        [
+          32,
+          0,
+          "-1/3"
+        ],
+        [
+          32,
+          16,
+          "-1/3"
+        ],
+        [
+          32,
+          48,
+          "2/3"
+        ],
+        [
+          33,
+          47,
+          "-2/3"
+        ],
+        [
+          34,
+          7,
+          "1/3"
+        ],
+        [
+          34,
+          20,
+          "1/3"
+        ],
+        [
+          35,
+          19,
+          "-1/3"
+        ],
+        [
+          35,
+          51,
+          "2/3"
+        ],
+        [
+          36,
+          9,
+          "-1/3"
+        ],
+        [
+          36,
+          50,
+          "-2/3"
+        ],
+        [
+          37,
+          4,
+          "1/3"
+        ],
+        [
+          37,
+          53,
+          "2/3"
+        ],
+        [
+          38,
+          24,
+          "1/3"
+        ],
+        [
+          38,
+          52,
+          "-2/3"
+        ],
+        [
+          39,
+          6,
+          "-1/3"
+        ],
+        [
+          39,
+          23,
+          "-1/3"
+        ],
+        [
+          41,
+          13,
+          "1/3"
+        ],
+        [
+          42,
+          28,
+          "1/3"
+        ],
+        [
+          43,
+          11,
+          "1/3"
+        ],
+        [
+          43,
+          27,
+          "-1/3"
+        ],
+        [
+          43,
+          59,
+          "2/3"
+        ],
+        [
+          44,
+          58,
+          "-2/3"
+        ],
+        [
+          45,
+          3,
+          "-1/3"
+        ],
+        [
+          46,
+          18,
+          "1/3"
+        ],
+        [
+          47,
+          33,
+          "-2/3"
+        ],
+        [
+          48,
+          0,
+          "-1/3"
+        ],
+        [
+          48,
+          16,
+          "-1/3"
+        ],
+        [
+          48,
+          32,
+          "2/3"
+        ],
+        [
+          49,
+          8,
+          "1/3"
+        ],
+        [
+          49,
+          21,
+          "1/3"
+        ],
+        [
+          50,
+          9,
+          "1/3"
+        ],
+        [
+          50,
+          36,
+          "-2/3"
+        ],
+        [
+          51,
+          19,
+          "-1/3"
+        ],
+        [
+          51,
+          35,
+          "2/3"
+        ],
+        [
+          52,
+          24,
+          "-1/3"
+        ],
+        [
+          52,
+          38,
+          "-2/3"
+        ],
+        [
+          53,
+          4,
+          "1/3"
+        ],
+        [
+          53,
+          37,
+          "2/3"
+        ],
+        [
+          54,
+          5,
+          "1/3"
+        ],
+        [
+          54,
+          22,
+          "1/3"
+        ],
+        [
+          56,
+          14,
+          "1/3"
+        ],
+        [
+          57,
+          29,
+          "1/3"
+        ],
+        [
+          58,
+          44,
+          "-2/3"
+        ],
+        [
+          59,
+          11,
+          "1/3"
+        ],
+        [
+          59,
+          27,
+          "-1/3"
+        ],
+        [
+          59,
+          43,
+          "2/3"
+        ]
+      ],
+      "sha256": "60e7ec7eca984ade5f560b9542f308b78ba2aa3441ddb8868699e4b4bfb9c897",
+      "shape": [
+        60,
+        60
+      ]
+    },
+    "cyclic_defect": {
+      "entries": [
+        [
+          1,
+          4,
+          "1"
+        ],
+        [
+          1,
+          8,
+          "1"
+        ],
+        [
+          4,
+          1,
+          "-1"
+        ],
+        [
+          8,
+          1,
+          "-1"
+        ]
+      ],
+      "sha256": "22be54e25a328ed070e1fd9bca54f655e90ca7d6f96ff3b5362e5555374765e2",
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "endpoint_pairing": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ],
+        [
+          5,
+          5,
+          "1"
+        ],
+        [
+          6,
+          6,
+          "1"
+        ],
+        [
+          7,
+          7,
+          "1"
+        ],
+        [
+          8,
+          8,
+          "1"
+        ]
+      ],
+      "sha256": "3223a03fb4cb2282dccc6a63dac6d4482de2d4a7f3297293d850985d59fde089",
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "pointwise_compressed_curvature": {
+      "entries": [
+        [
+          0,
+          0,
+          "2/3"
+        ],
+        [
+          1,
+          1,
+          "2/3"
+        ],
+        [
+          1,
+          4,
+          "1"
+        ],
+        [
+          1,
+          8,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "-1/3"
+        ],
+        [
+          3,
+          3,
+          "-1/3"
+        ],
+        [
+          4,
+          4,
+          "-1/3"
+        ],
+        [
+          4,
+          8,
+          "-1"
+        ],
+        [
+          5,
+          5,
+          "-1/3"
+        ],
+        [
+          6,
+          6,
+          "-1/3"
+        ],
+        [
+          7,
+          7,
+          "2/3"
+        ],
+        [
+          8,
+          4,
+          "-1"
+        ],
+        [
+          8,
+          8,
+          "-1/3"
+        ]
+      ],
+      "sha256": "20ad780d5e9148fac2e18a7472fa4390b456272e14a3199ee6519be0a4376ae9",
+      "shape": [
+        9,
+        9
+      ]
+    }
+  },
+  "flags": {
+    "ALL_CURVED_COMPRESSIONS_OBSTRUCTED": false,
+    "DERIVATIVE_BGG_CORRECTIONS_REQUIRED": true,
+    "NARIAI_CURVED_BGG_HPL_COMPRESSION": false,
+    "NARIAI_GREEN_HOMOTOPY": false,
+    "NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1": true,
+    "POINTWISE_CURVATURE_COMPRESSION_IS_CYCLIC": false,
+    "QUANTUM_CLAIM": false
+  },
+  "next_gate": "C_G2_NARIAI_FIRST_DIFFERENTIAL_BGG_CORRECTION",
+  "obstruction": {
+    "conclusion": "derivative-dependent curved BGG splitting/HPL corrections are necessary",
+    "failed_candidate": "the raw pointwise curvature compression -p1(F dot)i1 used as the complete curved endpoint correction",
+    "not_a_global_no_go": true,
+    "reason": "it is not self-adjoint for the certified endpoint pairing"
+  },
+  "provenance": {
+    "source_manifest": {
+      "covariant_completion/curved_operator/adjoint_tractor_kostant_compression.py": "57c46c94701f57912612ad0e9100746a7acf533e44a35c3a712c40afd64efbb7",
+      "d_quotient_classical/causal_transfer/nariai_pointwise_bgg_curvature_compression.py": "b9fc11126fa54a09bfedbe7e86473ba37c85ec565e37b236190fe20f4cf9d711",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_pointwise_bgg_curvature_compression.py": "bb52bc6bbbfc6cf025eacd7a3ac0cf7e3e9ff216c5871c8c8089766e708e94c6",
+      "d_quotient_classical/causal_transfer/verify_nariai_pointwise_bgg_curvature_compression.py": "11f611407c071e01258aa6c4e4bd9eb040abf4039166d838951439916224eb39",
+      "d_quotient_classical/schema/nariai-pointwise-bgg-curvature-compression-obstruction-v1.schema.json": "ed7388e80a29a99c700d82b923225b358fa615a681c16e1b79911c9f70d1a546"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_pointwise_bgg_curvature_compression.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_pointwise_bgg_curvature_compression.py",
+      "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_pointwise_bgg_curvature_compression",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-pointwise-bgg-curvature-compression-obstruction-v1.schema.json -d d_quotient_classical/certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1",
+  "result_state": "POINTWISE_CURVATURE_COMPRESSION_NONCYCLIC",
+  "schema": "pure-weyl-nariai-pointwise-bgg-curvature-compression-obstruction-v1"
+}
