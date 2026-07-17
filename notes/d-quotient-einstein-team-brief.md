@@ -80,7 +80,41 @@ This does not freeze the requested V1 theorem. The lower-order curved row
 maps remain open in polar, exceptional, and global sectors. Until they are
 constructed or obstructed, the global cone is a defect-marked precomplex
 whose square is the normalized chain-map defect; it has no certified global
-cohomology and does not satisfy the quantum import gate. See
+cohomology and does not satisfy the quantum import gate. The generic-axial
+certificate remains a preflight and must not be renamed to the full result.
+
+### Exact V1 consumer contract
+
+The classical importer checks only these candidate paths:
+
+```text
+bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json
+bridge/certificates/einstein_weyl_relative_linear_triangle_v1.json
+```
+
+The selected artifact must have
+
+```text
+result_id = EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1
+claim_status = CERTIFIED | THEOREM_FROZEN |
+               CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE
+```
+
+and must set all six flags exactly to `true`:
+
+```text
+OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS
+SUPPORT_LOCAL_MAPPING_COFIBER
+GLOBAL_ENDPOINTS_INCLUDED
+PAIRING_OR_CURRENT_COMPATIBLE
+H_PRODUCT_EQUIVARIANT
+INDEPENDENT_VERIFIER_PASS
+```
+
+The artifact, schema, producer and independent verifier must be committed
+together. A principal-symbol theorem, generic-axial block, on-shell inclusion,
+or certificate missing any flag is rejected rather than partially promoted.
+See
 `notes/einstein-weyl-relative-linear-triangle-preflight.md`.
 
 ## E-D1a status: generator identification completed

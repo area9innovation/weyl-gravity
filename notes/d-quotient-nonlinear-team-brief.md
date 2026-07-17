@@ -25,6 +25,24 @@ The current low-arity transfer machinery and selected residual cubic data are
 a bootstrap, not proof that the complete support-local interacting BV tensor
 transfers or that the quotient is interaction-stable.
 
+## Paper IX nonlinear signoff commission
+
+Issue the machine-readable result
+`PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF` after independently checking the
+Paper IX claim table and its pinned `q2`, `q3`, Green-homotopy and Cartan
+certificates. The signoff must affirm only that the certified Taylor and
+Cartan operations concern
+
+\[
+K_{\rm Berger}=D-\omega R
+\]
+
+through arity three. It must explicitly reject affine raw-\(D\) Cartan,
+unconditional all-orders closure, residual/BFV promotion, Hadamard data, QME
+restoration and quantum claims. Publish a strict Draft 2020-12 schema,
+independent verifier, source hashes and mutation guards; prose approval is not
+a signoff.
+
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove
 `D_GAUGE` on `positive_berger_fixed_coupling_linearized_solutions`.  This

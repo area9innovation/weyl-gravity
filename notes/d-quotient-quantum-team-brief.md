@@ -42,6 +42,28 @@ right-hand side receives no operator, boundary, or central correction.
 The centered classical classes \([W_+^2]\) and \([W_-^2]\) are
 deformation/vertex classes, not one-particle gravitons.
 
+## Paper IX quantum claim-boundary signoff commission
+
+Issue the machine-readable result
+`PAPER_09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF` after independently checking the
+Paper IX claim table, generator-conjugation audit and causal Cartan artifacts.
+The acceptable statement is classical: the background stabilizer
+\(K_{\rm Berger}=D-\omega R\) has the certified causal Cartan contraction
+through arity three. The signoff must keep all of the following false:
+
+```text
+AFFINE_RAW_D_CARTAN
+ALL_ORDERS_K_CARTAN
+HADAMARD_STATE
+QME_RESTORED
+ANOMALY_CANCELLED
+QUANTUM_THEOREM
+```
+
+Publish a strict Draft 2020-12 schema, independent verifier, content-addressed
+dependencies and mutation guards. Do not infer quantum approval from the
+classical Green or cyclicity certificates.
+
 ## Shared relative-complex assignment
 
 Use the canonical Einstein--Weyl spine in

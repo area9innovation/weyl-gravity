@@ -211,6 +211,22 @@ complete theorem: polar, exceptional, global, charge-fibre, and boundary
 sectors must be declared explicitly.  It also exports the quadratic
 Taub/extension bilinear that the nonlinear team will refine.
 
+The full-triangle importer is automatic but strict. It accepts only an exact
+`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
+certificate paths in the Einstein-team brief, with all of:
+
+```text
+OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS = true
+SUPPORT_LOCAL_MAPPING_COFIBER = true
+GLOBAL_ENDPOINTS_INCLUDED = true
+PAIRING_OR_CURRENT_COMPATIBLE = true
+H_PRODUCT_EQUIVARIANT = true
+INDEPENDENT_VERIFIER_PASS = true
+```
+
+The current principal/generic-axial preflight is imported as partial evidence
+but cannot satisfy or rename this gate.
+
 Only after those compact gates are explicit should the same team promote an
 asymptotic, black-hole, or scattering claim.  It may build those programmes in
 parallel, but their certificates require new phase spaces and boundaries.
