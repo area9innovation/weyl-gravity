@@ -77,6 +77,11 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json`](certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json)
 - Complete retained minimal-operator report:
   [`reports/berger-retained-minimal-operator.md`](reports/berger-retained-minimal-operator.md)
+- Rank-46 physical-helicity projective module and exact subprincipal filtered
+  branch obstruction:
+  [`certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json`](certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json),
+  [`certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json`](certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json),
+  [`reports/berger-retained-46-stf2-subprincipal-branch-anchor-or-obstruction.md`](reports/berger-retained-46-stf2-subprincipal-branch-anchor-or-obstruction.md)
 - Berger causal-witness endpoint preflight:
   [`certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json`](certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json)
 - Berger causal-witness preflight report:

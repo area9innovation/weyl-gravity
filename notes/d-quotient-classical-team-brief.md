@@ -247,13 +247,30 @@ of the Berger endpoint and cannot be the image of the requested support-local,
 36-row carrier.  The exact certificate is
 `BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1`.
 
-This is scoped: it does not rule out a mixed-bundle Einstein-defect or
-curvature mapping cylinder, a higher-rank filtered carrier, or an explicitly
-nonlocal `REDUCED-MODE` splitting.  The exact symbol lower bound for a local
-enlargement is four BV rows (two real helicity-two directions and their cyclic
-duals); the smallest natural covariant candidate is an STF2 variable and its
-dual, adding ten rows to form a rank-46 carrier.  That candidate is not yet a
-certified projector.
+The natural rank-46 STF2 graph carrier has now also been decided negatively at
+the first nonzero filtered page.  The exact physical helicity module is the
+rank-two projective image of the TT idempotent.  At
+\(\zeta=(1,1,0,0)\), after allowing every principal gauge change, Hessian
+boundary and physical-equation representative, the permitted correction
+space has rank four.  Adjoining the \(V_2\) image of
+\(h_{22}-h_{33}\) raises it to five.  The normalized left-null witness
+
+\[
+\ell=(-5/31,10/31,0,0,25/31,0,\ldots,0)
+\]
+
+annihilates all permitted corrections and evaluates to \((1,0)\) on the two
+physical columns.  Hence the physical projective module does not descend to a
+closed filtered subcomplex, and the contractible rank-46 graph cannot supply
+the requested support-local branch projector.  This exact verdict is
+`BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1`.
+
+This remains scoped: it does not rule out a mixed-bundle curvature mapping
+cylinder, a noncontractible filtered carrier with a larger leading
+cohomology module, or an explicitly nonlocal `REDUCED-MODE` splitting.  At
+the standard fibre any repair needs at least one additional equation
+cohomology direction and its cyclic-dual field direction; the global
+covariant bundle rank is not certified by this pointwise lower bound.
 
 The category boundary is fixed.  Einstein-like and extra-Weyl are dynamical
 gravity branches; the odd topological direction remains in the separate
@@ -1016,14 +1033,15 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    bracket and nontrivial \(\widetilde\tau\)-evolution are exact.  Keep the
    localized apparatus observable false until the observer team supplies the
    mixed \(\epsilon_R^2\kappa\) coefficients.
-6. The rank-46 STF2 graph prolongation is now an exact cyclic carrier with a
-   contractible complement.  **Next classical branch task:** construct the
-   support-local Einstein-like/extra-Weyl projector on that carrier or return
-   its normalized obstruction.  If it passes, export the background-indexed
-   branch manifest, inclusions, projections, pairing, parity, real structure,
-   and `K_Berger` weights required by the nonlinear mixing consumer.  Do not
-   identify these Berger labels automatically with the actual
-   Einstein--Maxwell image on the Pleba\'nski--Hacyan background.
+6. The rank-46 STF2 graph prolongation is an exact cyclic carrier with a
+   contractible complement, but its requested physical branch projector is
+   now closed by the normalized subprincipal filtered obstruction.  The
+   nonlinear/quantum branch-space mixing table remains false; use the unsplit
+   retained cyclic causal complex.  Any future local repair must be a
+   noncontractible filtered or mixed-bundle enlargement, not another
+   contractible STF2 graph and not a reduced-mode projector.  Do not identify
+   Berger labels automatically with the actual Einstein--Maxwell image on the
+   Pleba\'nski--Hacyan background.
 7. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
    acceptance flags pass; until then the relative observable functor remains
    a preflight and must not reconstruct the Einstein map independently.
@@ -1031,8 +1049,8 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    lift and descent.  C-G5 now has a second non-cylinder `G2` consumer: the
    doubled adjoint-tractor mixed detour on Minkowski.  Preserve both as
    regression inputs.  The remaining causal generality gate is C-G2: state
-   and verify uniform hypotheses on an open background class.  This does not
-   displace the branch projector required for the connected physical story.
+   and verify uniform hypotheses on an open background class.  The connected
+   branch-projector request is now separately closed by item 6's obstruction.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` foundation is now
    exact: all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay.  The
@@ -1052,9 +1070,10 @@ The physical activation sequence and reassignment triggers are recorded in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).  The
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
 have fired.  The classical team's current primary ownership is the rank-46
-projector/branch-manifest decision.  The certified C-G1 theorem may seed one
-bounded G3/second-consumer task, while the observer team owns localized
-apparatus completion.
+subprincipal projector obstruction handoff; its next independent generality
+task is C-G2 (uniform conformally flat backgrounds).  The certified C-G1
+theorem may seed one bounded G3/second-consumer task, while the observer team
+owns localized apparatus completion.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

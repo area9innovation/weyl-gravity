@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-retained-46-stf2-subprincipal-branch-anchor-or-obstruction-v1.schema.json",
+  "title": "Berger retained rank-46 STF2 subprincipal branch verdict",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "method_tags",
+    "dependency_refs",
+    "filtered_lift_problem",
+    "normalized_obstruction",
+    "carrier_consequence",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-46-stf2-subprincipal-branch-anchor-or-obstruction-v1"},
+    "result_id": {"const": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1"},
+    "result_state": {"const": "SUBPRINCIPAL_PHYSICAL_MODULE_LIFT_OBSTRUCTED_AT_STANDARD_NULL_FIBRE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "method_tags": {"const": ["FILTERED-SYMBOL-COMPLEX", "PBW-REES-PAGE", "EXACT-LEFT-NULL-WITNESS"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": [
+        "physical_helicity_filtered_quotient",
+        "principal_branch_anchor",
+        "rank_46_STF2_graph_carrier",
+        "retained_minimal_q1",
+        "rank_36_fixture_authority",
+        "V2_artifact"
+      ],
+      "properties": {
+        "physical_helicity_filtered_quotient": {"$ref": "#/$defs/dependency"},
+        "principal_branch_anchor": {"$ref": "#/$defs/dependency"},
+        "rank_46_STF2_graph_carrier": {"$ref": "#/$defs/dependency"},
+        "retained_minimal_q1": {"$ref": "#/$defs/dependency"},
+        "rank_36_fixture_authority": {"$ref": "#/$defs/dependency"},
+        "V2_artifact": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "filtered_lift_problem": {
+      "type": "object",
+      "required": ["covector", "field_basis", "equation_dual_basis", "equation", "unknown_correction_shapes", "why_this_is_invariant", "absence_of_intermediate_page", "rank_ledger"],
+      "properties": {
+        "covector": {"const": [1, 1, 0, 0]},
+        "field_basis": {"const": ["h_hat_22-h_hat_33", "h_hat_23"]},
+        "equation_dual_basis": {"const": ["(h_hat_star_22-h_hat_star_33)/2", "h_hat_star_23"]},
+        "equation": {"type": "string", "minLength": 1},
+        "unknown_correction_shapes": {
+          "type": "object",
+          "required": ["B", "C", "A"],
+          "properties": {"B": {"const": [3, 2]}, "C": {"const": [10, 2]}, "A": {"const": [2, 2]}},
+          "additionalProperties": false
+        },
+        "why_this_is_invariant": {"type": "string", "minLength": 1},
+        "absence_of_intermediate_page": {"type": "string", "minLength": 1},
+        "rank_ledger": {
+          "type": "object",
+          "required": ["allowed_boundary", "plus_augmented", "cross_augmented", "both_augmented"],
+          "properties": {
+            "allowed_boundary": {"const": 4},
+            "plus_augmented": {"const": 5},
+            "cross_augmented": {"const": 4},
+            "both_augmented": {"const": 5}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "normalized_obstruction": {
+      "type": "object",
+      "required": ["fixture", "generic_left_null_covector", "generic_evaluation_on_physical_columns", "generic_obstruction_polynomial", "fixture_obstruction_value", "normalized_left_null_covector", "normalized_evaluation_on_physical_columns", "first_failed_polarization", "first_failed_equation", "cross_polarization_lifts", "cross_physical_equation_coefficient"],
+      "properties": {
+        "fixture": {
+          "type": "object",
+          "required": ["u", "v", "alpha_B"],
+          "properties": {"u": {"type": "string"}, "v": {"type": "string"}, "alpha_B": {"const": "5"}},
+          "additionalProperties": false
+        },
+        "generic_left_null_covector": {"$ref": "#/$defs/stringVector10"},
+        "generic_evaluation_on_physical_columns": {"const": [["-8*u*(u - v)", "0"]]},
+        "generic_obstruction_polynomial": {"const": "-8*u*(u-v)"},
+        "fixture_obstruction_value": {"const": "31/5"},
+        "normalized_left_null_covector": {"$ref": "#/$defs/stringVector10"},
+        "normalized_evaluation_on_physical_columns": {"const": [["1", "0"]]},
+        "first_failed_polarization": {"const": "h_hat_22-h_hat_33"},
+        "first_failed_equation": {"type": "string", "minLength": 1},
+        "cross_polarization_lifts": {"const": true},
+        "cross_physical_equation_coefficient": {"const": "71/40"}
+      },
+      "additionalProperties": false
+    },
+    "carrier_consequence": {
+      "type": "object",
+      "required": ["rank_46_contractible_graph_can_remove_obstruction", "reason", "requested_support_local_branch_projector_on_rank_46", "minimum_standard_fibre_enlargement", "global_covariant_enlargement_rank_certified", "next_honest_options"],
+      "properties": {
+        "rank_46_contractible_graph_can_remove_obstruction": {"const": false},
+        "reason": {"type": "string", "minLength": 1},
+        "requested_support_local_branch_projector_on_rank_46": {"const": false},
+        "minimum_standard_fibre_enlargement": {"type": "string", "minLength": 1},
+        "global_covariant_enlargement_rank_certified": {"const": false},
+        "next_honest_options": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["all_allowed_filtered_corrections_included", "gauge_representative_freedom_included", "allowed_boundary_rank_four", "plus_column_raises_rank_to_five", "cross_column_remains_in_allowed_boundary", "generic_left_null_witness_annihilates_allowed_boundary", "generic_obstruction_polynomial_exact", "fixture_obstruction_normalized_to_one", "cross_descent_coefficient_71_over_40", "rank_46_graph_SDR_preserves_obstruction_class"],
+      "properties": {
+        "all_allowed_filtered_corrections_included": {"const": true},
+        "gauge_representative_freedom_included": {"const": true},
+        "allowed_boundary_rank_four": {"const": true},
+        "plus_column_raises_rank_to_five": {"const": true},
+        "cross_column_remains_in_allowed_boundary": {"const": true},
+        "generic_left_null_witness_annihilates_allowed_boundary": {"const": true},
+        "generic_obstruction_polynomial_exact": {"const": true},
+        "fixture_obstruction_normalized_to_one": {"const": true},
+        "cross_descent_coefficient_71_over_40": {"const": true},
+        "rank_46_graph_SDR_preserves_obstruction_class": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["V2_FILTERED_DESCENT_COMPUTED", "SUBPRINCIPAL_BRANCH_ANCHOR_AVAILABLE", "RANK46_SUPPORT_LOCAL_BRANCH_PROJECTOR_ACCEPTED", "RANK46_PHYSICAL_FILTERED_LIFT_OBSTRUCTED", "GLOBAL_ALL_CARRIER_PROJECTOR_NO_GO", "ELL3_BRANCH_MIXING_AUTHORIZED", "QUANTUM_CLAIM"],
+      "properties": {
+        "V2_FILTERED_DESCENT_COMPUTED": {"const": true},
+        "SUBPRINCIPAL_BRANCH_ANCHOR_AVAILABLE": {"const": false},
+        "RANK46_SUPPORT_LOCAL_BRANCH_PROJECTOR_ACCEPTED": {"const": false},
+        "RANK46_PHYSICAL_FILTERED_LIFT_OBSTRUCTED": {"const": true},
+        "GLOBAL_ALL_CARRIER_PROJECTOR_NO_GO": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "UNSPLIT_RETAINED_COMPLEX_OR_NONCONTRACTIBLE_FILTERED_ENLARGEMENT"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "stringVector10": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"type": "string"}
+    }
+  }
+}
