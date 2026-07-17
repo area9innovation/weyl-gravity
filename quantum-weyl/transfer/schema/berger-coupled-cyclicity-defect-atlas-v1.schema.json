@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-coupled-cyclicity-defect-atlas-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "dependency_ref", "defect_payload", "retained_atlas", "minimal_hAA_fixture", "convention_sweep", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-coupled-cyclicity-defect-atlas-v1"},
+    "result_id": {"const": "BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS"},
+    "result_state": {"const": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT_DIAGNOSTIC"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_ref": {
+      "type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"const": "quantum-weyl/transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json"},
+        "result_id": {"const": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY"}, "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "defect_payload": {
+      "type": "object", "additionalProperties": false, "required": ["path", "entry_count", "canonical_sha256", "file_sha256"],
+      "properties": {
+        "path": {"const": "quantum-weyl/transfer/certificates/BERGER_COUPLED_RETAINED_CYCLICITY_DEFECT_PAYLOAD.json"},
+        "entry_count": {"const": 953}, "canonical_sha256": {"$ref": "#/$defs/hash"}, "file_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "retained_atlas": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_defect_coefficients", "Maxwell_slot_counts", "jet_order_counts", "field_category_counts", "degree_triple_counts", "coefficient_field_counts", "distinct_coefficients", "top_row_triples"],
+      "properties": {
+        "total_defect_coefficients": {"const": 953},
+        "Maxwell_slot_counts": {"const": [{"Maxwell_slots": 2, "count": 953}]},
+        "jet_order_counts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/countRow"}},
+        "field_category_counts": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/categoryRow"}},
+        "degree_triple_counts": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/degreeRow"}},
+        "coefficient_field_counts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/kindRow"}},
+        "distinct_coefficients": {"const": 36},
+        "top_row_triples": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"$ref": "#/$defs/categoryRow"}}
+      }
+    },
+    "minimal_hAA_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rows", "raw_q2_coefficients", "lowered_cubic_orbit", "normalized_defect_witnesses", "factor_two_diagnosis"],
+      "properties": {
+        "rows": {"const": {"h_hat_00": 3, "A_1": 28, "h_hat_star_00": 13, "A_plus_1": 32}},
+        "raw_q2_coefficients": {"type": "object", "minProperties": 3, "maxProperties": 3},
+        "lowered_cubic_orbit": {"type": "array", "minItems": 3, "maxItems": 3},
+        "normalized_defect_witnesses": {"type": "array", "minItems": 2, "maxItems": 2},
+        "factor_two_diagnosis": {"type": "string", "minLength": 180}
+      }
+    },
+    "convention_sweep": {
+      "type": "object", "additionalProperties": false, "required": ["pairing_sign_cases", "output_scaling_cases", "verdict"],
+      "properties": {
+        "pairing_sign_cases": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/sweepRow"}},
+        "output_scaling_cases": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/scalingRow"}},
+        "verdict": {"type": "string", "minLength": 220}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["EXACT_RETAINED_CYCLICITY_DEFECT_ATLAS", "EVERY_DEFECT_HAS_EXACTLY_TWO_MAXWELL_LEGS", "PHYSICAL_HAA_FACTOR_TWO_SEAM", "PAIRING_SIGN_ONLY_REPAIR_FOUND", "UNIFORM_MAXWELL_OUTPUT_X2_PRESERVES_Q1Q2", "UNIFORM_MAXWELL_OUTPUT_X2_COMPLETE_REPAIR", "COMPLETE_ADMISSIBLE_CYCLIC_REPAIR_FOUND", "MIXED_Q3_TRANSFERRED", "QUANTUM_CLAIM"],
+      "properties": {
+        "EXACT_RETAINED_CYCLICITY_DEFECT_ATLAS": {"const": true}, "EVERY_DEFECT_HAS_EXACTLY_TWO_MAXWELL_LEGS": {"const": true},
+        "PHYSICAL_HAA_FACTOR_TWO_SEAM": {"const": true}, "PAIRING_SIGN_ONLY_REPAIR_FOUND": {"const": false},
+        "UNIFORM_MAXWELL_OUTPUT_X2_PRESERVES_Q1Q2": {"const": true}, "UNIFORM_MAXWELL_OUTPUT_X2_COMPLETE_REPAIR": {"const": false},
+        "COMPLETE_ADMISSIBLE_CYCLIC_REPAIR_FOUND": {"const": false}, "MIXED_Q3_TRANSFERRED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "REPAIR_REMAINING_15_GHOST_DENSITY_DEFECTS_WITH_Q1Q2_PRESERVED"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 150}, "tier_3": {"type": "string", "minLength": 120}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "countRow": {"type": "object", "additionalProperties": false, "required": ["total_jet_order", "count"], "properties": {"total_jet_order": {"type": "integer", "minimum": 0}, "count": {"type": "integer", "minimum": 1}}},
+    "categoryRow": {"type": "object", "additionalProperties": false, "required": ["first", "second", "third", "count"], "properties": {"first": {"type": "string"}, "second": {"type": "string"}, "third": {"type": "string"}, "count": {"type": "integer", "minimum": 1}}},
+    "degreeRow": {"type": "object", "additionalProperties": false, "required": ["first_degree", "second_degree", "third_degree", "count"], "properties": {"first_degree": {"type": "integer"}, "second_degree": {"type": "integer"}, "third_degree": {"type": "integer"}, "count": {"type": "integer", "minimum": 1}}},
+    "kindRow": {"type": "object", "additionalProperties": false, "required": ["kind", "count"], "properties": {"kind": {"enum": ["rational_only", "sqrt10_bearing"]}, "count": {"type": "integer", "minimum": 1}}},
+    "sweepRow": {"type": "object", "additionalProperties": false, "required": ["convention", "retained_cyclicity_defect_count"], "properties": {"convention": {"type": "string"}, "retained_cyclicity_defect_count": {"type": "integer", "minimum": 0}}},
+    "scalingRow": {"type": "object", "additionalProperties": false, "required": ["convention", "retained_cyclicity_defect_count", "retained_q1_q2_defect_count"], "properties": {"convention": {"type": "string"}, "retained_cyclicity_defect_count": {"type": "integer", "minimum": 0}, "retained_q1_q2_defect_count": {"type": "integer", "minimum": 0}}},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["test_tier", "command", "elapsed_seconds", "status"], "properties": {"test_tier": {"const": 1}, "command": {"type": "string", "minLength": 80}, "elapsed_seconds": {"type": "number", "minimum": 0}, "status": {"const": "PASS"}}}
+  }
+}

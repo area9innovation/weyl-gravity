@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-coupled-retained-cyclicity-defect-payload-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "coefficient_field", "shape", "row_ids", "entries", "canonical_sha256"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-coupled-retained-cyclicity-defect-payload-v1"},
+    "result_id": {"const": "BERGER_COUPLED_RETAINED_CYCLICITY_DEFECT_PAYLOAD"},
+    "coefficient_field": {"const": "Q(sqrt(10))"},
+    "shape": {"const": [36, 36, 36]},
+    "row_ids": {"type": "array", "minItems": 36, "maxItems": 36, "items": {"type": "string", "minLength": 1}},
+    "entries": {"type": "array", "minItems": 953, "maxItems": 953, "items": {"$ref": "#/$defs/entry"}},
+    "canonical_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+    "rational": {
+      "type": "object", "additionalProperties": false, "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "not": {"const": 0}}}
+    },
+    "component": {"oneOf": [{"type": "integer"}, {"$ref": "#/$defs/rational"}]},
+    "coefficient": {
+      "type": "object", "additionalProperties": false, "required": ["rational", "sqrt10"],
+      "properties": {"rational": {"$ref": "#/$defs/component"}, "sqrt10": {"$ref": "#/$defs/component"}}
+    },
+    "entry": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0, "maximum": 35},
+        {"type": "integer", "minimum": 0, "maximum": 35},
+        {"type": "integer", "minimum": 0, "maximum": 35},
+        {"$ref": "#/$defs/word"}, {"$ref": "#/$defs/word"}, {"$ref": "#/$defs/coefficient"}
+      ],
+      "items": false
+    }
+  }
+}

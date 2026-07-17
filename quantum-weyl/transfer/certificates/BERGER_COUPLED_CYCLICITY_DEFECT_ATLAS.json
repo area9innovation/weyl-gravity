@@ -1,0 +1,497 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC diagnostic exports all 953 normalized retained cyclicity defect coefficients and localizes them by field content, cohomological degree, jet order and row triple. Every defect has exactly two Maxwell legs; 800 lie in the physical hAA sector, 138 in the diffeomorphism-ghost/potential-antifield completion and 15 in the Maxwell ghost-density completion. A uniform factor two on Maxwell-output q2 terms preserves the retained q1/q2 identity and removes the first 938 defects, but it leaves the 15 ghost-density defects. A further tested sector sign scaling makes cyclicity vanish only by creating 108 q1/q2 defects, so it is explicitly inadmissible. This atlas is a repair target, not a corrected q2, mixed-q3, causal, QME, particle, unitarity or quantum theorem.",
+  "claim_flags": {
+    "COMPLETE_ADMISSIBLE_CYCLIC_REPAIR_FOUND": false,
+    "EVERY_DEFECT_HAS_EXACTLY_TWO_MAXWELL_LEGS": true,
+    "EXACT_RETAINED_CYCLICITY_DEFECT_ATLAS": true,
+    "MIXED_Q3_TRANSFERRED": false,
+    "PAIRING_SIGN_ONLY_REPAIR_FOUND": false,
+    "PHYSICAL_HAA_FACTOR_TWO_SEAM": true,
+    "QUANTUM_CLAIM": false,
+    "UNIFORM_MAXWELL_OUTPUT_X2_COMPLETE_REPAIR": false,
+    "UNIFORM_MAXWELL_OUTPUT_X2_PRESERVES_Q1Q2": true
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "../reports/berger-coupled-cyclicity-defect-atlas.md": "a2de8b116b0825a464454797f48e4414dbedbc3b58064462cfc8750eb4778231",
+      "berger_coupled_cyclicity_defect_atlas.py": "33f499b8374e5029c4e98966dc38fd1767e2f06ad0613a4d5d88bb9e946864b5",
+      "berger_coupled_cyclicity_defect_atlas_certificate.py": "1ef42d0aaaf4d1c7979fcd39bbd6a91e96b4b2a4e655d3674e5da4c4ff734cda",
+      "schema/berger-coupled-cyclicity-defect-atlas-v1.schema.json": "aab6780a9451537b3faa4f707c2d8e0a1f46535af9d8239cbfcd98ed5ef3b38c",
+      "schema/berger-coupled-retained-cyclicity-defect-payload-v1.schema.json": "0c7000c9163b9c4037f6ab135638de13d62285680f502920253ae5e4d7bb7771",
+      "tests/test_berger_coupled_cyclicity_defect_atlas.py": "ef2ec855e7d97abf4336899d64589f815da1deaca6597de7f8437fa0e77c04ed",
+      "verify_berger_coupled_cyclicity_defect_atlas.py": "a1942175d941d3575da5012c1d510332ca8896617214cd707664e807e673bb10"
+    },
+    "source_manifest_sha256": "9da9e24d0ad762825113508b69a32fcd6408d15d8124604299a1d052432d95d6"
+  },
+  "convention_sweep": {
+    "output_scaling_cases": [
+      {
+        "convention": "exported",
+        "retained_cyclicity_defect_count": 953,
+        "retained_q1_q2_defect_count": 0
+      },
+      {
+        "convention": "uniform_Maxwell_output_x2",
+        "retained_cyclicity_defect_count": 15,
+        "retained_q1_q2_defect_count": 0
+      },
+      {
+        "convention": "cyclic_but_nonchain_sector_scaling",
+        "retained_cyclicity_defect_count": 0,
+        "retained_q1_q2_defect_count": 108
+      }
+    ],
+    "pairing_sign_cases": [
+      {
+        "convention": "exported",
+        "retained_cyclicity_defect_count": 953
+      },
+      {
+        "convention": "flip_Maxwell_ghost_pair",
+        "retained_cyclicity_defect_count": 953
+      },
+      {
+        "convention": "flip_all_Maxwell_potential_pairs",
+        "retained_cyclicity_defect_count": 953
+      },
+      {
+        "convention": "flip_entire_Maxwell_pairing",
+        "retained_cyclicity_defect_count": 953
+      }
+    ],
+    "verdict": "natural Maxwell pairing sign flips do not reduce the 953-term defect; uniform Maxwell-output x2 preserves q1/q2 and reduces it to the 15-term ghost-density sector; the only tested diagonal output scaling that makes cyclicity vanish creates 108 q1/q2 defects and is inadmissible"
+  },
+  "defect_payload": {
+    "canonical_sha256": "0c2c22a67697244c994a2583f08c65b704224eddc50fa01fc5556493c5e79822",
+    "entry_count": 953,
+    "file_sha256": "f77e3691f0fdd906f4736aa5bfaced8a3e5d9648f924b7df636227677d7c0f88",
+    "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_RETAINED_CYCLICITY_DEFECT_PAYLOAD.json"
+  },
+  "dependency_ref": {
+    "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
+    "result_id": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY",
+    "sha256": "a9ce3aea922acc27d69e0ea9d72c42212b32acb6f47f693b8286fb9dafcd7227"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "higher_tiers_not_run": {
+    "tier_2": "The full affected 953-coefficient defect and every tested convention are recomputed from the pinned carrier and transfer payload in Tier 1; no corrected classical tensor or downstream theorem is consumed.",
+    "tier_3": "No shared PBW engine, lifecycle promotion, theorem freeze, causal construction, QME state, or release boundary changes in this diagnostic atlas."
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT_DIAGNOSTIC",
+  "minimal_hAA_fixture": {
+    "factor_two_diagnosis": "the gravity-antifield output coefficient is 40/9 while each Maxwell-antifield output coefficient is 20/9; multiplying all Maxwell-output q2 terms by two repairs this orbit and all 938 potential-sector defects without breaking q1/q2",
+    "lowered_cubic_orbit": [
+      {
+        "coefficient": {
+          "rational": {
+            "denominator": 9,
+            "numerator": 20
+          },
+          "sqrt10": 0
+        },
+        "slots": [
+          "h_hat_00",
+          "A_1",
+          "A_1"
+        ]
+      },
+      {
+        "coefficient": {
+          "rational": {
+            "denominator": 9,
+            "numerator": 20
+          },
+          "sqrt10": 0
+        },
+        "slots": [
+          "A_1",
+          "h_hat_00",
+          "A_1"
+        ]
+      },
+      {
+        "coefficient": {
+          "rational": {
+            "denominator": 9,
+            "numerator": -40
+          },
+          "sqrt10": 0
+        },
+        "slots": [
+          "A_1",
+          "A_1",
+          "h_hat_00"
+        ]
+      }
+    ],
+    "normalized_defect_witnesses": [
+      {
+        "coefficient": {
+          "rational": {
+            "denominator": 9,
+            "numerator": -20
+          },
+          "sqrt10": 0
+        },
+        "left_word": [],
+        "right_word": [],
+        "slots": [
+          "h_hat_00",
+          "A_1",
+          "A_1"
+        ]
+      },
+      {
+        "coefficient": {
+          "rational": {
+            "denominator": 9,
+            "numerator": -20
+          },
+          "sqrt10": 0
+        },
+        "left_word": [],
+        "right_word": [],
+        "slots": [
+          "A_1",
+          "A_1",
+          "h_hat_00"
+        ]
+      }
+    ],
+    "raw_q2_coefficients": {
+      "q2_A1_A1_to_h_hat_star_00": {
+        "rational": {
+          "denominator": 9,
+          "numerator": 40
+        },
+        "sqrt10": 0
+      },
+      "q2_A1_h_hat_00_to_A_plus_1": {
+        "rational": {
+          "denominator": 9,
+          "numerator": 20
+        },
+        "sqrt10": 0
+      },
+      "q2_h_hat_00_A1_to_A_plus_1": {
+        "rational": {
+          "denominator": 9,
+          "numerator": 20
+        },
+        "sqrt10": 0
+      }
+    },
+    "rows": {
+      "A_1": 28,
+      "A_plus_1": 32,
+      "h_hat_00": 3,
+      "h_hat_star_00": 13
+    }
+  },
+  "next_gate": "REPAIR_REMAINING_15_GHOST_DENSITY_DEFECTS_WITH_Q1Q2_PRESERVED",
+  "result_id": "BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS",
+  "result_state": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
+  "retained_atlas": {
+    "Maxwell_slot_counts": [
+      {
+        "Maxwell_slots": 2,
+        "count": 953
+      }
+    ],
+    "coefficient_field_counts": [
+      {
+        "count": 729,
+        "kind": "rational_only"
+      },
+      {
+        "count": 224,
+        "kind": "sqrt10_bearing"
+      }
+    ],
+    "degree_triple_counts": [
+      {
+        "count": 800,
+        "first_degree": 0,
+        "second_degree": 0,
+        "third_degree": 0
+      },
+      {
+        "count": 36,
+        "first_degree": -1,
+        "second_degree": 1,
+        "third_degree": 0
+      },
+      {
+        "count": 36,
+        "first_degree": 0,
+        "second_degree": 1,
+        "third_degree": -1
+      },
+      {
+        "count": 36,
+        "first_degree": 1,
+        "second_degree": 0,
+        "third_degree": -1
+      },
+      {
+        "count": 30,
+        "first_degree": -1,
+        "second_degree": 0,
+        "third_degree": 1
+      },
+      {
+        "count": 9,
+        "first_degree": -1,
+        "second_degree": 2,
+        "third_degree": -1
+      },
+      {
+        "count": 3,
+        "first_degree": -1,
+        "second_degree": -1,
+        "third_degree": 2
+      },
+      {
+        "count": 3,
+        "first_degree": 2,
+        "second_degree": -1,
+        "third_degree": -1
+      }
+    ],
+    "distinct_coefficients": 36,
+    "field_category_counts": [
+      {
+        "count": 494,
+        "first": "gravity_metric",
+        "second": "Maxwell_potential",
+        "third": "Maxwell_potential"
+      },
+      {
+        "count": 306,
+        "first": "Maxwell_potential",
+        "second": "Maxwell_potential",
+        "third": "gravity_metric"
+      },
+      {
+        "count": 36,
+        "first": "Maxwell_potential",
+        "second": "Maxwell_potential_antifield",
+        "third": "gravity_ghost"
+      },
+      {
+        "count": 36,
+        "first": "Maxwell_potential_antifield",
+        "second": "Maxwell_potential",
+        "third": "gravity_ghost"
+      },
+      {
+        "count": 36,
+        "first": "gravity_ghost",
+        "second": "Maxwell_potential_antifield",
+        "third": "Maxwell_potential"
+      },
+      {
+        "count": 30,
+        "first": "gravity_ghost",
+        "second": "Maxwell_potential",
+        "third": "Maxwell_potential_antifield"
+      },
+      {
+        "count": 6,
+        "first": "gravity_ghost",
+        "second": "Maxwell_ghost_antifield",
+        "third": "Maxwell_ghost"
+      },
+      {
+        "count": 3,
+        "first": "Maxwell_ghost",
+        "second": "Maxwell_ghost_antifield",
+        "third": "gravity_ghost"
+      },
+      {
+        "count": 3,
+        "first": "Maxwell_ghost_antifield",
+        "second": "Maxwell_ghost",
+        "third": "gravity_ghost"
+      },
+      {
+        "count": 3,
+        "first": "gravity_ghost",
+        "second": "Maxwell_ghost",
+        "third": "Maxwell_ghost_antifield"
+      }
+    ],
+    "jet_order_counts": [
+      {
+        "count": 564,
+        "total_jet_order": 2
+      },
+      {
+        "count": 329,
+        "total_jet_order": 1
+      },
+      {
+        "count": 60,
+        "total_jet_order": 0
+      }
+    ],
+    "top_row_triples": [
+      {
+        "count": 7,
+        "first": "h_hat_00",
+        "second": "A_1",
+        "third": "A_1"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_00",
+        "second": "A_2",
+        "third": "A_2"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_00",
+        "second": "A_3",
+        "third": "A_3"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_11",
+        "second": "A_1",
+        "third": "A_1"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_11",
+        "second": "A_2",
+        "third": "A_2"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_11",
+        "second": "A_3",
+        "third": "A_3"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_22",
+        "second": "A_1",
+        "third": "A_1"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_22",
+        "second": "A_2",
+        "third": "A_2"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_22",
+        "second": "A_3",
+        "third": "A_3"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_33",
+        "second": "A_1",
+        "third": "A_1"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_33",
+        "second": "A_2",
+        "third": "A_2"
+      },
+      {
+        "count": 7,
+        "first": "h_hat_33",
+        "second": "A_3",
+        "third": "A_3"
+      },
+      {
+        "count": 6,
+        "first": "h_hat_00",
+        "second": "A_0",
+        "third": "A_0"
+      },
+      {
+        "count": 6,
+        "first": "h_hat_11",
+        "second": "A_0",
+        "third": "A_0"
+      },
+      {
+        "count": 6,
+        "first": "h_hat_22",
+        "second": "A_0",
+        "third": "A_0"
+      },
+      {
+        "count": 6,
+        "first": "h_hat_33",
+        "second": "A_0",
+        "third": "A_0"
+      },
+      {
+        "count": 5,
+        "first": "h_hat_12",
+        "second": "A_1",
+        "third": "A_2"
+      },
+      {
+        "count": 5,
+        "first": "h_hat_12",
+        "second": "A_2",
+        "third": "A_1"
+      },
+      {
+        "count": 5,
+        "first": "h_hat_13",
+        "second": "A_3",
+        "third": "A_1"
+      },
+      {
+        "count": 5,
+        "first": "h_hat_23",
+        "second": "A_3",
+        "third": "A_2"
+      }
+    ],
+    "total_defect_coefficients": 953
+  },
+  "schema": "quantum-weyl-berger-coupled-cyclicity-defect-atlas-v1",
+  "verification_receipts": [
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_coupled_cyclicity_defect_atlas_certificate --check",
+      "elapsed_seconds": 3.0,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_coupled_cyclicity_defect_atlas",
+      "elapsed_seconds": 3.0,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_coupled_cyclicity_defect_atlas.py -v",
+      "elapsed_seconds": 9.48,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-coupled-cyclicity-defect-atlas-v1.schema.json -d quantum-weyl/transfer/certificates/BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS.json",
+      "elapsed_seconds": 2.0,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-coupled-retained-cyclicity-defect-payload-v1.schema.json -d quantum-weyl/transfer/certificates/BERGER_COUPLED_RETAINED_CYCLICITY_DEFECT_PAYLOAD.json",
+      "elapsed_seconds": 3.19,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}
