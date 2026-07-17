@@ -43,6 +43,28 @@ restoration and quantum claims. Publish a strict Draft 2020-12 schema,
 independent verifier, source hashes and mutation guards; prose approval is not
 a signoff.
 
+### Coupled Maxwell cyclicity-repair gate
+
+Keep the certified 54-row pure gravity--clock result separate from the later
+64/36-row gravity--Maxwell overlay.  On the latter, the independent consumer
+replays all 1,522 transferred coefficients and both full and retained
+arity-two \(q_1q_2\) identities exactly, but finds 1,234 full and 953 retained
+odd-pairing cyclicity defects.  The retained atlas contains 800 physical
+metric--potential--potential terms, 138 ghost/potential-antifield terms, and
+15 Maxwell ghost-density terms.  A uniform factor two on Maxwell-output
+\(q_2\) removes the first 938 while preserving \(q_1q_2\), but the final 15
+remain; it is a partial diagnosis, not a repaired vertex.
+
+The fail-closed receiving contract is
+`quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json`.
+Its readiness certificate rejects the real obstructed baseline.  A committed
+candidate must independently pass strict hashes and schemas, full and retained
+\(q_1q_2\), full and retained cyclicity, coefficientwise transfer equality,
+and causal-unary preservation. Until then the coupled cyclic vertex,
+gravitational dressing, and mixed \(q_3\) remain blocked. This does not reopen
+the already-certified pure gravity--clock \(q_2,q_3\), or arity-three Cartan
+calculation.
+
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove
 `D_GAUGE` on `positive_berger_fixed_coupling_linearized_solutions`.  This
@@ -333,6 +355,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | known classical target; import only after verification | free target; interacting identity open | proved free baseline | zero in stated free absolute residual complex | \(I_2\) on centered free classes; interacting open | proper free solution sector |
+| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | pure gravity--clock cyclic \(K_{\rm Berger}\)-Cartan contraction certified through arity three; coupled Maxwell \(q_2\) cyclicity blocked | classical advanced/retarded 54-row chain contractions certified; compact neutral Maxwell signal is sourced and unary | no Paper-IX one-particle claim | pure gravity--clock pairing complete; coupled Maxwell overlay has 1,234 full and 953 retained exact cyclicity defects | certified non-Einstein Weyl--matter control branch |
 | Cylinder + scalar clock | open | first matter test | open | open | open | open |
 | Cylinder + Yang--Mills | open | second matter test | open | open | open | open |
 | Weakly deformed background | open | mixed obstruction open | open | open | open | open |
@@ -341,9 +364,10 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-The complete support-local `q2` is imported and its `q1/q2`, `D/q2`, and
-cyclic identities replay exactly.  The bare unary equation is not merely
-pending: the pinned null-symbol class proves that no finite-order
+The complete 54-row pure gravity--clock support-local `q2` is imported and its
+`q1/q2`, `D/q2`, and cyclic identities replay exactly. This sentence does not
+include the noncyclic coupled Maxwell overlay described above. The bare unary
+equation is not merely pending: the pinned null-symbol class proves that no finite-order
 support-local `iota_D^(1)` exists on the bare 26-row complex, and the
 `D`-equivariant SDR transfers that no-go to the bare 54-row extension.  Do not
 form the bare arity-two source `[q2,iota_D^(1)]`.

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-coupled-cyclicity-repair-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "input_contract", "obstructed_baseline", "acceptance_conditions", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-coupled-cyclicity-repair-readiness-v1"},
+    "result_id": {"const": "BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS"},
+    "result_state": {"const": "INPUT_BLOCKED_CORRECTED_CLASSICAL_COMMIT_NOT_SUPPLIED"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT_ACCEPTANCE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "input_contract": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256", "required_input"],
+      "properties": {
+        "path": {"const": "quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json"},
+        "sha256": {"$ref": "#/$defs/hash"}, "required_input": {"const": "COMMITTED_CORRECTED_CLASSICAL_REPAIR_MANIFEST"}
+      }
+    },
+    "obstructed_baseline": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "file_sha256", "canonical_sha256", "classical_commit", "verdict", "diagnostics"],
+      "properties": {
+        "path": {"const": "quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-obstructed-baseline.json"},
+        "file_sha256": {"$ref": "#/$defs/hash"}, "canonical_sha256": {"$ref": "#/$defs/hash"},
+        "classical_commit": {"const": "744383f2a21a05a1464f3a25b6569e2b001b4f20"},
+        "verdict": {"const": "REJECTED_EXACT_ALGEBRAIC_DEFECT"}, "diagnostics": {"$ref": "#/$defs/diagnostics"}
+      }
+    },
+    "acceptance_conditions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_q1_q2_defect_count", "full_cyclicity_defect_count", "transfer_missing_coefficient_count", "transfer_extra_coefficient_count", "transfer_changed_coefficient_count", "retained_q1_q2_defect_count", "retained_cyclicity_defect_count", "causal_unary_flags_preserved", "producer_cyclicity_claim_consistent", "verdict"],
+      "properties": {
+        "full_q1_q2_defect_count": {"const": 0}, "full_cyclicity_defect_count": {"const": 0},
+        "transfer_missing_coefficient_count": {"const": 0}, "transfer_extra_coefficient_count": {"const": 0}, "transfer_changed_coefficient_count": {"const": 0},
+        "retained_q1_q2_defect_count": {"const": 0}, "retained_cyclicity_defect_count": {"const": 0},
+        "causal_unary_flags_preserved": {"const": true}, "producer_cyclicity_claim_consistent": {"const": true},
+        "verdict": {"const": "ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["REPAIR_ACCEPTANCE_CONSUMER_READY", "OBSTRUCTED_BASELINE_REJECTED", "CORRECTED_CLASSICAL_INPUT_AVAILABLE", "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED", "MIXED_Q3_UNBLOCKED", "QUANTUM_CLAIM"],
+      "properties": {
+        "REPAIR_ACCEPTANCE_CONSUMER_READY": {"const": true}, "OBSTRUCTED_BASELINE_REJECTED": {"const": true},
+        "CORRECTED_CLASSICAL_INPUT_AVAILABLE": {"const": false}, "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED": {"const": false},
+        "MIXED_Q3_UNBLOCKED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SUPPLY_COMMITTED_CORRECTED_CLASSICAL_REPAIR_MANIFEST"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 8, "maxProperties": 8, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 170}, "tier_3": {"type": "string", "minLength": 140}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "diagnostics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_q1_q2_defect_count", "full_cyclicity_defect_count", "transfer_missing_coefficient_count", "transfer_extra_coefficient_count", "transfer_changed_coefficient_count", "retained_q1_q2_defect_count", "retained_cyclicity_defect_count", "causal_unary_flags_preserved", "producer_cyclicity_claim_consistent", "full_overlay_coefficient_count", "retained_transfer_coefficient_count", "inner_raw_contributions", "outer_Leibniz_contributions"],
+      "properties": {
+        "full_q1_q2_defect_count": {"const": 0}, "full_cyclicity_defect_count": {"const": 1234},
+        "transfer_missing_coefficient_count": {"const": 0}, "transfer_extra_coefficient_count": {"const": 0}, "transfer_changed_coefficient_count": {"const": 0},
+        "retained_q1_q2_defect_count": {"const": 0}, "retained_cyclicity_defect_count": {"const": 953},
+        "causal_unary_flags_preserved": {"const": true}, "producer_cyclicity_claim_consistent": {"const": false},
+        "full_overlay_coefficient_count": {"const": 1954}, "retained_transfer_coefficient_count": {"const": 1522},
+        "inner_raw_contributions": {"const": 1652}, "outer_Leibniz_contributions": {"const": 1522}
+      }
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false, "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {"test_tier": {"const": 1}, "command": {"type": "string", "minLength": 80}, "elapsed_seconds": {"type": "number", "minimum": 0}, "status": {"const": "PASS"}}
+    }
+  }
+}

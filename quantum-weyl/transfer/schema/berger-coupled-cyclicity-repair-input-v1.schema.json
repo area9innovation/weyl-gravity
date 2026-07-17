@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-coupled-cyclicity-repair-input-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "classical_commit", "artifacts", "declared_scope", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-coupled-cyclicity-repair-input-v1"},
+    "result_id": {"const": "BERGER_COUPLED_CYCLICITY_REPAIR_INPUT"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["carrier", "carrier_schema", "coupled_q2_payload", "coupled_q2_payload_schema", "transfer_certificate", "transfer_certificate_schema", "transferred_q2_payload", "transferred_q2_payload_schema"],
+      "properties": {
+        "carrier": {"$ref": "#/$defs/artifact"}, "carrier_schema": {"$ref": "#/$defs/artifact"},
+        "coupled_q2_payload": {"$ref": "#/$defs/artifact"}, "coupled_q2_payload_schema": {"$ref": "#/$defs/artifact"},
+        "transfer_certificate": {"$ref": "#/$defs/artifact"}, "transfer_certificate_schema": {"$ref": "#/$defs/artifact"},
+        "transferred_q2_payload": {"$ref": "#/$defs/artifact"}, "transferred_q2_payload_schema": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "declared_scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["setting_id", "coefficient_field", "full_rows", "retained_rows", "required_dependency_tags"],
+      "properties": {
+        "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+        "coefficient_field": {"const": "Q(sqrt(10))"}, "full_rows": {"const": 64}, "retained_rows": {"const": 36},
+        "required_dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 120}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 20}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

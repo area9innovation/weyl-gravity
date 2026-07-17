@@ -1,0 +1,107 @@
+{
+  "acceptance_conditions": {
+    "causal_unary_flags_preserved": true,
+    "full_cyclicity_defect_count": 0,
+    "full_q1_q2_defect_count": 0,
+    "producer_cyclicity_claim_consistent": true,
+    "retained_cyclicity_defect_count": 0,
+    "retained_q1_q2_defect_count": 0,
+    "transfer_changed_coefficient_count": 0,
+    "transfer_extra_coefficient_count": 0,
+    "transfer_missing_coefficient_count": 0,
+    "verdict": "ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR"
+  },
+  "claim_boundary": "This readiness result installs an exact LOCAL-ALGEBRAIC consumer and proves that the committed obstructed 64/36 Berger gravity-Maxwell baseline is rejected. It does not contain or anticipate a corrected classical tensor. Acceptance requires a committed, content-addressed carrier, q2 payload, transfer certificate, transferred payload, and their strict Draft 2020-12 schemas. The consumer independently recomputes the full and retained q1/q2 identities, full and retained cyclicity, and every transfer coefficient, while preserving the previously certified causal unary flags. Until all conditions pass simultaneously, the mixed cyclic vertex, gravitational dressing, mixed q3, residual transfer, QME, Lorentzian, particle, and quantum claims remain inactive.",
+  "claim_flags": {
+    "CORRECTED_CLASSICAL_INPUT_AVAILABLE": false,
+    "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED": false,
+    "MIXED_Q3_UNBLOCKED": false,
+    "OBSTRUCTED_BASELINE_REJECTED": true,
+    "QUANTUM_CLAIM": false,
+    "REPAIR_ACCEPTANCE_CONSUMER_READY": true
+  },
+  "consumer_provenance": {
+    "source_manifest": {
+      "quantum-weyl/reports/berger-coupled-cyclicity-repair-acceptance.md": "932ddc508063b6de8715b4e4dd35ecd19059b8290cda3f36217b8b4116c018d2",
+      "quantum-weyl/transfer/berger_coupled_cyclicity_repair_acceptance.py": "fe4acf909bfc7f5d9175e80d0a2876ddbefd5670de8f6a31163f09873e92fc86",
+      "quantum-weyl/transfer/berger_coupled_cyclicity_repair_readiness.py": "3b885841bf785be735694e5c40816137f78c8db5859e533eeacd8570104a1c1b",
+      "quantum-weyl/transfer/berger_coupled_cyclicity_repair_readiness_certificate.py": "2c2506667958eb6cd34800cef4ca32baa9732cefb1d273e01fcd7a03bd174dfa",
+      "quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json": "ac0a1c0f50733fcfdbda071e8f56110af3bd7ecd6e2df000c3cbec8e02fc2c48",
+      "quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-readiness-v1.schema.json": "c4826d3227deb193f9fb4851cfd4166740e7c3a915c5306f9dc3113330298751",
+      "quantum-weyl/transfer/tests/test_berger_coupled_cyclicity_repair_readiness.py": "051deb56cbdc488d019d65bbbb98203a6d6375fb2bb98f006cb2347fa9d21c8a",
+      "quantum-weyl/transfer/verify_berger_coupled_cyclicity_repair_readiness.py": "b1123f9c5239831fa88dc09dcdd4f2a009af4b3f4057ae2517f13ed9065c137e"
+    },
+    "source_manifest_sha256": "fd211d7649b985edc3f9997df80477ce81ff9c08a85fbb90fd3f4d6b93db9ece"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "higher_tiers_not_run": {
+    "tier_2": "No corrected classical mathematical input exists in this change. Tier 1 replays the complete obstructed baseline and all exact acceptance predicates; the affected certificate chain becomes mandatory when a candidate repair manifest is supplied.",
+    "tier_3": "No shared algebra engine, theorem freeze, lifecycle promotion, causal construction, QME state, Lorentzian certification, release boundary, or classical source artifact changes."
+  },
+  "input_contract": {
+    "path": "quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json",
+    "required_input": "COMMITTED_CORRECTED_CLASSICAL_REPAIR_MANIFEST",
+    "sha256": "ac0a1c0f50733fcfdbda071e8f56110af3bd7ecd6e2df000c3cbec8e02fc2c48"
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT_ACCEPTANCE",
+  "next_gate": "SUPPLY_COMMITTED_CORRECTED_CLASSICAL_REPAIR_MANIFEST",
+  "obstructed_baseline": {
+    "canonical_sha256": "0601975d608a3b71c0bb21ac2e1621133343507a910b7e095487e1f2091693d7",
+    "classical_commit": "744383f2a21a05a1464f3a25b6569e2b001b4f20",
+    "diagnostics": {
+      "causal_unary_flags_preserved": true,
+      "full_cyclicity_defect_count": 1234,
+      "full_overlay_coefficient_count": 1954,
+      "full_q1_q2_defect_count": 0,
+      "inner_raw_contributions": 1652,
+      "outer_Leibniz_contributions": 1522,
+      "producer_cyclicity_claim_consistent": false,
+      "retained_cyclicity_defect_count": 953,
+      "retained_q1_q2_defect_count": 0,
+      "retained_transfer_coefficient_count": 1522,
+      "transfer_changed_coefficient_count": 0,
+      "transfer_extra_coefficient_count": 0,
+      "transfer_missing_coefficient_count": 0
+    },
+    "file_sha256": "23734163d6d8d29577f4b33e5551a628051dd68182fac6f53e22c331a20a3f8d",
+    "path": "quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-obstructed-baseline.json",
+    "verdict": "REJECTED_EXACT_ALGEBRAIC_DEFECT"
+  },
+  "result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS",
+  "result_state": "INPUT_BLOCKED_CORRECTED_CLASSICAL_COMMIT_NOT_SUPPLIED",
+  "schema": "quantum-weyl-berger-coupled-cyclicity-repair-readiness-v1",
+  "verification_receipts": [
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_coupled_cyclicity_repair_readiness_certificate --check",
+      "elapsed_seconds": 2.85,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_coupled_cyclicity_repair_readiness",
+      "elapsed_seconds": 5.02,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_coupled_cyclicity_repair_readiness.py -v",
+      "elapsed_seconds": 13.49,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json -d quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-obstructed-baseline.json",
+      "elapsed_seconds": 1.6,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-readiness-v1.schema.json -d quantum-weyl/transfer/certificates/BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS.json",
+      "elapsed_seconds": 1.02,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}
