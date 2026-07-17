@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/classical-minimal-bv-antifield-export-v2-receiver-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "candidate_hashes", "classical_checks", "receiver_witness", "minimal_receiver_repairs", "rejected_shortcut", "flags", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "classical-minimal-bv-antifield-export-v2-receiver-obstruction-v1"},
+    "result_id": {"const": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_RECEIVER_OBSTRUCTION"},
+    "result_state": {"const": "CLASSICAL_FILTRATION_EXACT_RECEIVER_FINITE_CLOSURE_BLOCKED"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "candidate_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope_hash", "generator_hash", "atom_hash", "differential_hash", "dependency_hash"],
+      "properties": {
+        "scope_hash": {"$ref": "#/$defs/hash"}, "generator_hash": {"$ref": "#/$defs/hash"},
+        "atom_hash": {"$ref": "#/$defs/hash"}, "differential_hash": {"$ref": "#/$defs/hash"},
+        "dependency_hash": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "classical_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "receiver_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["consumer", "failure", "first_unbounded_even_atom", "tower_rule", "tower_prefix", "declared_candidate_ghost_range", "adapter_uses_declared_ghost_range", "adapter_uses_declared_engineering_bound"],
+      "properties": {
+        "consumer": {"const": "quantum-weyl/classical_import/verify_antifield_export_v2.py"},
+        "failure": {"const": "filtered adapter closure did not stabilize"},
+        "first_unbounded_even_atom": {"const": "Lie_omega=L_xi omega"},
+        "tower_rule": {"type": "string", "minLength": 60},
+        "tower_prefix": {"type": "array", "minItems": 8, "items": {"type": "object"}},
+        "declared_candidate_ghost_range": {"const": [-2, 2]},
+        "adapter_uses_declared_ghost_range": {"const": false},
+        "adapter_uses_declared_engineering_bound": {"const": false}
+      }
+    },
+    "minimal_receiver_repairs": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 60}},
+    "rejected_shortcut": {"type": "string", "minLength": 80},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["CLASSICAL_MINIMAL_BV_FILTRATION_IDENTITIES_EXACT", "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2", "MINIMAL_BV_H04_H14_AUTHORIZED", "QUANTUM_CLAIM"],
+      "properties": {
+        "CLASSICAL_MINIMAL_BV_FILTRATION_IDENTITIES_EXACT": {"const": true},
+        "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2": {"const": false},
+        "MINIMAL_BV_H04_H14_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 700}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
