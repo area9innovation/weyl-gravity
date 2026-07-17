@@ -12,7 +12,7 @@
     "the charge vanishes on the exact sector proposed for quotienting",
     "the zero-charge transformations close as a Lie algebra or declared algebroid",
     "the classical Cartan and causal homotopies exist in the declared support category",
-    "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while a conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported; advanced/retarded Green operators and causal support remain open",
+    "Berger retained q1, the cyclic 54-to-26 contraction, K_Berger action, complete q2 and q3, advanced/retarded all-row Green homotopies, and the cyclic two-sided-causal K-Cartan recurrence through arity three are complete; affine raw-D Cartan, Hadamard, QME, and all-orders closure remain open",
     "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
     "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
     "the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open",
@@ -20,22 +20,28 @@
     "quantum promotion requires a restored QME and renormalized Ward identity"
   ],
   "next_shared_gate": {
-    "gate_id": "BERGER_CYCLIC_36_ROW_ADVANCED_RETARDED_GREEN_OPERATORS",
+    "gate_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
     "owner_order": [
+      "einstein_boundary",
       "classical",
       "nonlinear",
-      "quantum",
-      "einstein_boundary"
+      "quantum"
     ],
-    "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates."
+    "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "0f2393240f53a09fb99d496f2d56faeb219d48b8",
+  "programme_base_commit": "1cd9f8e68774e68821b130ee01353075a42eae07",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
-      "promotion_gate": "certified scalar-clock scope theorem (the single-scalar no-go now qualifies) plus at least one complete boundary or interaction theorem",
-      "status": "RESERVED_NOT_STARTED",
-      "working_title": "When Is Cylinder Time Gauge? Taub Constraints, Relational Clocks, and Residual Reduction in Weyl Gravity"
+      "claim_table": {
+        "commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+        "path": "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
+        "sha256": "70f9a2ab46139a31aaac84b5864f526e946be4e1146725434618bd15a909f414"
+      },
+      "promotion_gate": "K-generator classical/nonlinear/quantum signoff and clean-tree replay; affine raw-D Cartan is not required for the scoped K theorem",
+      "status": "WRITING_STARTED",
+      "theorem_frozen": false,
+      "working_title": "A backreacting phase clock with fixed momentum in pure-Weyl gravity: fixed-coupling rigidity and causal BV Cartan analysis of the helical stabilizer"
     },
     "paper_X": {
       "promotion_gate": "complete classical nonlinear export and applicable QME/Ward gate",
@@ -45,7 +51,7 @@
     "papers_VII_VIII": "completed theorem retained with explicit compact phase-space scope"
   },
   "registry_hashes": {
-    "generator_registry": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
+    "generator_registry": "bd46ba02eaa31d9b63ada4e6d592b123ebd41dfdef1b642a1bf47daf105d24fa",
     "phase_space_registry": "c49d6d159ae992275de4b8449d24840f2abe08c527c494e2a3b47f08497a5b50"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
@@ -171,12 +177,21 @@
     },
     {
       "boundary_conditions": "closed Berger cylinder; co-rotating scalar dressing; raw D compared with K=D-omega R",
-      "generator_id": "D_compact",
+      "generator_id": "K_Berger",
       "lifecycle_layer": "CLASSICAL_CARTAN",
       "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
       "setting_id": "compact_positive_berger_clock_generator_conjugation",
       "status": "CERTIFIED",
       "verdict": "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE"
+    },
+    {
+      "boundary_conditions": "closed Berger cylinder at q=9/40; complete 54-row gauge-fixed complex; compact-source Green domain; cyclic higher primitives have causal-hull support",
+      "generator_id": "K_Berger",
+      "lifecycle_layer": "CLASSICAL_CARTAN",
+      "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+      "setting_id": "compact_positive_berger_clock_k_cartan_through_arity_three",
+      "status": "CERTIFIED",
+      "verdict": "K_CARTAN_CAUSAL_THROUGH_ARITY_THREE"
     },
     {
       "boundary_conditions": "closed Berger S3; certified positive-clock background; same clock stress in the tested Einstein equation",
@@ -395,6 +410,15 @@
       "verdict": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT"
     },
     {
+      "boundary_conditions": "fixed-P_N compact product; covariant principal complex and generic axial ell>=2 Fourier-polynomial block; polar, exceptional, global and boundary curved rows open",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_principal_and_generic_axial_relative_triangle_preflight",
+      "setting_id": "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+      "status": "CERTIFIED",
+      "verdict": "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT"
+    },
+    {
       "boundary_conditions": "fixed-P_N compact product; on-shell standard harmonic inclusion imported; off-shell BV triangle and observable pullback absent",
       "generator_id": "H_product",
       "lifecycle_layer": "CLASSICAL_BV",
@@ -494,22 +518,22 @@
       "verdict": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO"
     },
     {
-      "boundary_conditions": "closed Berger cylinder; exact support-local 54-to-26 contraction; bare local unary D-Cartan ansatz",
-      "generator_id": "D_compact",
+      "boundary_conditions": "closed Berger cylinder; exact support-local 54-to-26 contraction; bare local unary K-Cartan ansatz",
+      "generator_id": "K_Berger",
       "lifecycle_layer": "INTERACTING",
       "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
       "setting_id": "compact_positive_berger_clock_retained_q2_26",
       "status": "CERTIFIED",
-      "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED"
+      "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_K_CARTAN_OBSTRUCTED"
     },
     {
-      "boundary_conditions": "closed S3; retained q2 and cyclic 36-row analytic realization complete; endpoint Green operators and residual/BFV extension absent",
-      "generator_id": "D_compact",
+      "boundary_conditions": "closed Berger cylinder at q=9/40; complete q2/q3 and causal K-Cartan through arity three; all-orders and residual/BFV extensions absent",
+      "generator_id": "K_Berger",
       "lifecycle_layer": "INTERACTING",
-      "phase_space_id": "compact_interacting",
+      "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
       "setting_id": "compact_interacting",
-      "status": "BLOCKED",
-      "verdict": "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
+      "status": "PARTIAL",
+      "verdict": "K_CARTAN_THROUGH_ARITY_THREE_ALL_ORDERS_AND_RESIDUAL_BFV_OPEN"
     },
     {
       "boundary_conditions": "renormalized observable algebra not constructed",
@@ -1025,7 +1049,7 @@
           "path": "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
           "sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149"
         },
-        "generator_id": "D_compact",
+        "generator_id": "K_Berger",
         "lifecycle_layer": "CLASSICAL_CARTAN",
         "next_gate": "CONSTRUCT_AFFINE_D_CARTAN_OR_RETAIN_THE_SCOPED_K_ONLY_THEOREM",
         "not_established": [
@@ -1043,7 +1067,47 @@
           "python3 d_quotient_classical/backreacted_clock/verify_berger_generator_conjugation_audit.py"
         ]
       },
-      "sha256": "340fb255c31e867e83b3d521c8c37ceabe5bf046255d363d98f9b64c070499c9"
+      "sha256": "bb86955977f8f61fd07cadb0b4b582e3bee5f113c4d64a5da9f159dc7f126ac7"
+    },
+    {
+      "path": "d_quotient_programme/contributions/classical-berger-k-cartan-through-arity-three.json",
+      "payload": {
+        "boundary_conditions": "closed Berger cylinder at the rational q=9/40 fixture; complete gauge-fixed 54-row complex; compact-source Green domain; cyclic higher primitives have two-sided causal-hull support",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "established": [
+          "the complete 54-row complex has K_Berger-equivariant advanced and retarded chain contractions with causal support and complementary-degree adjointness",
+          "the arbitrary-input four-dimensional q2 and q3 satisfy their L-infinity identities, cyclicity and K_Berger derivation identities",
+          "the cyclic two-sided-causal K_Berger Cartan recurrence is solved through arity three"
+        ],
+        "evidence": {
+          "commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+          "path": "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
+          "sha256": "70f9a2ab46139a31aaac84b5864f526e946be4e1146725434618bd15a909f414"
+        },
+        "generator_id": "K_Berger",
+        "lifecycle_layer": "CLASSICAL_CARTAN",
+        "next_gate": "PAPER_09_K_GENERATOR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
+        "not_established": [
+          "affine raw-D Cartan at any nonlinear order",
+          "an unconditional or convergent all-orders K_Berger Cartan theorem",
+          "Hadamard data, QME restoration, anomaly cancellation or a quantum theorem",
+          "Paper IX theorem freeze or pending team signoffs"
+        ],
+        "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_positive_berger_clock_k_cartan_through_arity_three",
+        "team_id": "classical",
+        "verdict": "K_CARTAN_CAUSAL_THROUGH_ARITY_THREE",
+        "verification_commands": [
+          "python3 -m d_quotient_classical.backreacted_clock.paper_09_claim_table --check --guards",
+          "python3 d_quotient_classical/backreacted_clock/verify_paper_09_claim_table.py"
+        ]
+      },
+      "sha256": "4519283a8afe9a9d23b10ead5fb5be95ecbba272f9d7e94b946f9b2b4743f95d"
     },
     {
       "path": "d_quotient_programme/contributions/classical-relative-residual-observable-functor-preflight.json",
@@ -1061,9 +1125,9 @@
           "all off-shell relative and observable promotions remain fail-closed"
         ],
         "evidence": {
-          "commit": "0f2393240f53a09fb99d496f2d56faeb219d48b8",
+          "commit": "1cd9f8e68774e68821b130ee01353075a42eae07",
           "path": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
-          "sha256": "6eeea993d96dc352c9b08364d87518a9a1f19224a8df0a87bbf0ae81573f4e32"
+          "sha256": "e6ccda10b40fe2dc3365787df0ffc44fe71d8cd26341edf3d6c443ec36608cd9"
         },
         "generator_id": "H_product",
         "lifecycle_layer": "CLASSICAL_BV",
@@ -1086,7 +1150,7 @@
           "python3 -m unittest d_quotient_classical.relative.tests.test_relative_residual_observable_functor_preflight"
         ]
       },
-      "sha256": "2a7a3b983ff3dba2d6ba01a04c0721aa63f06e49019b8d057f858efdac10af79"
+      "sha256": "00da52acd86fc482beb8eb51d476cc0aaade05debf7cf5c6af9df5c07b8a6a15"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-ed1a-asymptotic-generator-gate.json",
@@ -2185,6 +2249,53 @@
       "sha256": "1e8ff935ef91e75d3d84953075264338a26f6b1c0bf8746ea7fe14179deea224"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-weyl-relative-linear-triangle-preflight.json",
+      "payload": {
+        "boundary_conditions": "compact R_t x S1_L x S2 fixed-P_N product; principal covector complex and generic axial ell>=2 Fourier-polynomial block before the final residual quotient; polar, exceptional, global and boundary curved row maps remain open",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the covariant principal minimal-BV Einstein-Maxwell to Weyl-Maxwell chain map has an exact nilpotent mapping cone",
+          "the principal cone is exact at the declared noncharacteristic covector and has cohomology dimensions (0,0,4,4,0) at the declared null covector",
+          "the complete generic axial ell>=2 block admits a strict polynomial off-shell chain map on ghosts, six ungauged fields, equations and Noether identities",
+          "the axial equation-row map uses only constant denominators and does not invert k, omega, lambda, exceptional harmonic factors or either dispersion polynomial",
+          "the generic axial solution cofiber is two copies of the extra p-primary cyclic summand and its direct four-dimensional Lee-Wald block is nonradical",
+          "the global curved mapping cone remains a defect-marked precomplex and does not satisfy the quantum import gate"
+        ],
+        "evidence": {
+          "commit": "9570f03c2a880dfbf600567a4d06ca9009b2cb8e",
+          "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+          "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "derive or obstruct the lower-order curved equation and identity row maps in polar, exceptional and global blocks, then assemble the all-sector cone and compare its action-derived relative form",
+        "not_established": [
+          "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+          "a full curved all-sector off-shell chain map or an exact obstruction to one",
+          "a global mapping-cofiber complex or its polar, exceptional, global and boundary cohomology",
+          "a strict short exact sequence of complexes",
+          "a complete relative quadratic obstruction bilinear",
+          "residual observable descent, causal propagation, particle interpretation or quantum lift"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_principal_and_generic_axial_relative_triangle_preflight",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_weyl_relative_linear_triangle_preflight --verify bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+          "python3 bridge/einstein_sector/verify_einstein_weyl_relative_linear_triangle_preflight.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_linear_triangle_preflight",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "b1bf021cdcc9b476dd8d07db8df4d58d7fe7b2619f67b2ab105a2e252fa76561"
+    },
+    {
       "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-extra-branch-preflight.json",
       "payload": {
         "boundary_conditions": "candidate full smooth periodic fixed-P_N Weyl-Maxwell harmonic solution complex on R_t x S1_L x S2; no bounded-time or final residual quotient imposed",
@@ -2643,27 +2754,27 @@
           "the complete 150305-coefficient support-local q2 is independently replayed and transferred through the exact cyclic 54-to-26 SDR",
           "the retained q2_26 has 54236 canonical Q(sqrt(10)) PBW coefficients on all 26 output rows through total jet order four",
           "the retained q1/q2 arity-two nilpotency and odd-Darboux BV-cyclicity defects vanish coefficientwise",
-          "an exact normalized null-symbol class obstructs every finite-order support-local unary D-Cartan homotopy on the bare retained 26-row complex and its bare 54-row extension"
+          "an exact normalized null-symbol class obstructs every finite-order support-local unary K-Cartan homotopy on the bare retained 26-row complex and its bare 54-row extension"
         ],
         "evidence": {
           "commit": "29fb5db6a70932ca68810cfcdc3c1187441de3fb",
           "path": "quantum-weyl/transfer/certificates/NONLINEAR_HOMOLOGICAL_TRANSFER_BOOTSTRAP.json",
           "sha256": "a544aceaea2618ba5a2a7d5b03e7f69b87c6ef3df156da3b7b0a16c04a37ae8d"
         },
-        "generator_id": "D_compact",
+        "generator_id": "K_Berger",
         "lifecycle_layer": "INTERACTING",
         "next_gate": "compute the characteristic symbol-cohomology carrier module, then construct residual/BFV and Lorentzian-causal Cartan extensions independently",
         "not_established": [
           "the minimal residual/cohomology ell2 beyond the retained q2_26 operation",
           "a residual/BFV or Lorentzian-causal Cartan extension",
-          "an interacting arity-two D-Cartan primitive on an admissible extension",
+          "an interacting arity-two K-Cartan primitive on the bare local ansatz (the later causal extension is registered separately)",
           "QME restoration, a quantum anomaly coefficient, or any Lorentzian-causal theorem"
         ],
         "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
         "schema": "pure-weyl-d-quotient-team-contribution-v1",
         "setting_id": "compact_positive_berger_clock_retained_q2_26",
         "team_id": "nonlinear",
-        "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
+        "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_K_CARTAN_OBSTRUCTED",
         "verification_commands": [
           "PYTHONPATH=quantum-weyl python3 -m transfer.berger_unary_d_cartan_obstruction_import_certificate --check",
           "PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_26_q2_transfer_certificate --check",
@@ -2671,7 +2782,7 @@
           "python3 quantum-weyl/transfer/nonlinear_transfer_certificate.py --check"
         ]
       },
-      "sha256": "836f0a6cd1fcc85f9ee0a85f32be8972badb815c827a26fad02b4af9062e0df1"
+      "sha256": "6963db21c0005edef4cb95130c37a8b0fb1bfe06c9b5bfb9831e0b0ac2225414"
     },
     {
       "path": "quantum-weyl/cartan/contributions/QUANTUM_CARTAN_BLOCKED.json",
@@ -2802,11 +2913,11 @@
   },
   "team_status": [
     {
-      "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 and portable 34-row minimal contraction extend to an exact cyclic support-local gauge-fixed 54-to-26 contraction. The complete support-local q2 and local D action are exported; the specialized characteristic symbol audit proves that the bare local unary Cartan equation has no solution.",
-      "next_gate": "compute the full characteristic symbol-cohomology carrier module and construct a retained causal Green extension without retrying the ruled-out bare local unary ansatz",
-      "result_state": "BERGER_GAUGE_FIXED_54_TO_26_CONTRACTION_Q2_AND_LOCAL_D_COMPLETE_CAUSAL_OPEN",
+      "established": "Raw D has nonzero but fixed clock momentum and is presymplectically null on the declared fixed-coupling linearized phase space. The background-fixing generator is K_Berger=D-omega R. The complete 54-row complex has K-equivariant advanced and retarded chain contractions, exact support-local q2 and q3, and a cyclic two-sided-causal K-Cartan primitive through arity three. Affine raw-D Cartan, Hadamard, QME, and all-orders claims remain open.",
+      "next_gate": "complete K-generator signoff and clean-tree replay for Paper IX; treat affine raw-D Cartan as a separate theorem",
+      "result_state": "BERGER_RAW_D_CHARGE_RIGIDITY_AND_K_CARTAN_THROUGH_ARITY_THREE_COMPLETE",
       "team_id": "classical",
-      "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE"
+      "verdict": "RAW_D_LINEAR_NULLITY_K_CARTAN_THROUGH_ARITY_THREE_AFFINE_D_OPEN"
     },
     {
       "established": "The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient, and the induced linear tangent quotient map into Weyl--Maxwell is injective. Exact arbitrary-harmonic Weyl--Maxwell restrictions are nondegenerate and relatively indefinite on every standard axial and polar ell>=2 block. Both parities have the same on-shell factors 1+/-(3/2)*sqrt(2lambda), although their off-shell matrices differ; neither inclusion is a symplectic embedding of the Einstein--Maxwell form.",
@@ -2816,11 +2927,11 @@
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },
     {
-      "established": "The complete classical 54-row support-local q2 is replayed and transferred exactly to retained q2_26. The bare local unary D-Cartan equation remains obstructed. A conditional causal unary/raw arity-two transfer theorem, principal-compatible rank-one wave extension, and cyclic 36-row analytic realization with nondegenerate pairing are imported by hash. No advanced/retarded Green operators or causal support theorem are supplied.",
-      "next_gate": "construct advanced and retarded Green operators with causal support for the cyclic 36-row analytic realization, then transport them to the retained endpoint without promoting the fail-closed residual/BFV or quantum gates",
-      "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
+      "established": "The complete support-local q2 and q3 and the all-row causal homotopies are available. Under the authoritative generator correction they give the cyclic causal K_Berger Cartan recurrence through arity three. This does not construct affine raw-D Cartan, all-orders closure, a residual/BFV lift, or a quantum theorem.",
+      "next_gate": "review and sign off the K_Berger generator interpretation and the through-arity-three claim boundary for Paper IX",
+      "result_state": "BERGER_Q2_Q3_AND_CAUSAL_K_CARTAN_AVAILABLE_SIGNOFF_PENDING",
       "team_id": "nonlinear",
-      "verdict": "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
+      "verdict": "CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_NONLINEAR_SIGNOFF_PENDING"
     },
     {
       "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, and a G0 Einstein--Weyl relative dependency ledger are registered",

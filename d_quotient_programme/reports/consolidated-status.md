@@ -37,9 +37,9 @@ background as a non-Einstein Weyl--matter branch.
 
 | Team | Current verdict | Established | Next gate |
 |---|---|---|---|
-| classical | `D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE` | The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 and portable 34-row minimal contraction extend to an exact cyclic support-local gauge-fixed 54-to-26 contraction. The complete support-local q2 and local D action are exported; the specialized characteristic symbol audit proves that the bare local unary Cartan equation has no solution. | compute the full characteristic symbol-cohomology carrier module and construct a retained causal Green extension without retrying the ruled-out bare local unary ansatz |
+| classical | `RAW_D_LINEAR_NULLITY_K_CARTAN_THROUGH_ARITY_THREE_AFFINE_D_OPEN` | Raw D has nonzero but fixed clock momentum and is presymplectically null on the declared fixed-coupling linearized phase space. The background-fixing generator is K_Berger=D-omega R. The complete 54-row complex has K-equivariant advanced and retarded chain contractions, exact support-local q2 and q3, and a cyclic two-sided-causal K-Cartan primitive through arity three. Affine raw-D Cartan, Hadamard, QME, and all-orders claims remain open. | complete K-generator signoff and clean-tree replay for Paper IX; treat affine raw-D Cartan as a separate theorem |
 | einstein_boundary | `PHASE_SPACE_NOT_CLOSED` | The fixed-bundle standard Einstein--Maxwell harmonic quotient and integrated Lee--Wald form are complete before final residual quotient, and the induced linear tangent quotient map into Weyl--Maxwell is injective. Exact arbitrary-harmonic Weyl--Maxwell restrictions are nondegenerate and relatively indefinite on every standard axial and polar ell>=2 block. Both parities have the same on-shell factors 1+/-(3/2)*sqrt(2lambda), although their off-shell matrices differ; neither inclusion is a symplectic embedding of the Einstein--Maxwell form. | combine the axial and polar results into one standard radiative restriction theorem, then compute physical ell=1, homogeneous, and twist blocks before solving extra fourth-order adjoint classes; independently complete the asymptotic Bach phase space and charge audit |
-| nonlinear | `CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING` | The complete classical 54-row support-local q2 is replayed and transferred exactly to retained q2_26. The bare local unary D-Cartan equation remains obstructed. A conditional causal unary/raw arity-two transfer theorem, principal-compatible rank-one wave extension, and cyclic 36-row analytic realization with nondegenerate pairing are imported by hash. No advanced/retarded Green operators or causal support theorem are supplied. | construct advanced and retarded Green operators with causal support for the cyclic 36-row analytic realization, then transport them to the retained endpoint without promoting the fail-closed residual/BFV or quantum gates |
+| nonlinear | `CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_NONLINEAR_SIGNOFF_PENDING` | The complete support-local q2 and q3 and the all-row causal homotopies are available. Under the authoritative generator correction they give the cyclic causal K_Berger Cartan recurrence through arity three. This does not construct affine raw-D Cartan, all-orders closure, a residual/BFV lift, or a quantum theorem. | review and sign off the K_Berger generator interpretation and the through-arity-three claim boundary for Paper IX |
 | quantum | `ANALYTIC_FRAMEWORK_MISSING` | the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, and a G0 Einstein--Weyl relative dependency ledger are registered | import EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 by content hash while completing the local anomaly/QME disposition; retain ANALYTIC_FRAMEWORK_MISSING before any relative anomaly or residual-transfer promotion |
 
 ## Setting ledger
@@ -59,7 +59,8 @@ background as a non-Einstein Weyl--matter branch.
 | compact_positive_berger_clock_fixed_coupling_linearized | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CHARGE | `CERTIFIED` | `D_GAUGE` |
 | compact_positive_berger_clock_minimal_bv_sdr | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `MINIMAL_CLOCK_SECTOR_SDR` |
 | compact_positive_berger_clock_retained_minimal_layout | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `RETAINED_MINIMAL_LAYOUT_FROZEN` |
-| compact_positive_berger_clock_generator_conjugation | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CARTAN | `CERTIFIED` | `FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE` |
+| compact_positive_berger_clock_generator_conjugation | `K_Berger` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CARTAN | `CERTIFIED` | `FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE` |
+| compact_positive_berger_clock_k_cartan_through_arity_three | `K_Berger` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_CARTAN | `CERTIFIED` | `K_CARTAN_CAUSAL_THROUGH_ARITY_THREE` |
 | compact_positive_berger_clock_einstein_incidence | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | CLASSICAL_BV | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
 | compact_einstein_maxwell_product_background | `H_product` | `einstein_maxwell_product_background` | CLASSICAL_BV | `CERTIFIED` | `COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND` |
 | compact_einstein_maxwell_product_tangent_preflight | `H_product` | `einstein_maxwell_product_principal_tangent_complex` | CLASSICAL_BV | `PARTIAL` | `PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES` |
@@ -84,6 +85,7 @@ background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_weyl_radiative_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_standard_radiative_restriction` | CLASSICAL_BV | `CERTIFIED` | `G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION` |
 | compact_einstein_maxwell_weyl_ell1_physical_restriction | `H_product` | `einstein_maxwell_product_compact_weyl_ell1_physical_quotient` | CLASSICAL_BV | `CERTIFIED` | `G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION` |
 | compact_einstein_maxwell_weyl_standard_harmonic_inclusion | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | CLASSICAL_BV | `CERTIFIED` | `G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT` |
+| compact_einstein_maxwell_weyl_relative_linear_triangle_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_principal_and_generic_axial_relative_triangle_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT` |
 | compact_einstein_maxwell_weyl_relative_functor_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | CLASSICAL_BV | `BLOCKED` | `BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` |
 | compact_einstein_maxwell_weyl_extra_branch_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_extra_branch_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT` |
 | compact_einstein_maxwell_weyl_axial_operator_module_preflight | `H_product` | `einstein_maxwell_product_compact_weyl_axial_operator_module_preflight` | CLASSICAL_BV | `CERTIFIED` | `G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS` |
@@ -95,8 +97,8 @@ background as a non-Einstein Weyl--matter branch.
 | compact_einstein_maxwell_weyl_axial_ee_ell2_source | `H_product` | `einstein_maxwell_product_compact_weyl_axial_ee_ell2_sum_frequency_block` | CLASSICAL_BV | `CERTIFIED` | `G1_MIXED_EE_AXIAL_ELL2_SUM_FREQUENCY_BLOCK_EXPLICITLY_REMOVABLE` |
 | compact_einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub | `H_product` | `einstein_maxwell_product_compact_fixed_bundle_hermitian_axial_polar_ell2_minus_pair` | CLASSICAL_BV | `CERTIFIED` | `G1_HERMITIAN_AXIAL_POLAR_ELL2_MINUS_PAIR_POSITIVE_TAUB_FIXED_BUNDLE_NO_GO` |
 | compact_selected_residual_HT1_q2 | `D_compact` | `compact_selected_residual_HT1` | INTERACTING | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
-| compact_positive_berger_clock_retained_q2_26 | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | INTERACTING | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
-| compact_interacting | `D_compact` | `compact_interacting` | INTERACTING | `BLOCKED` | `CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING` |
+| compact_positive_berger_clock_retained_q2_26 | `K_Berger` | `positive_berger_fixed_coupling_linearized_solutions` | INTERACTING | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_K_CARTAN_OBSTRUCTED` |
+| compact_interacting | `K_Berger` | `positive_berger_fixed_coupling_linearized_solutions` | INTERACTING | `PARTIAL` | `K_CARTAN_THROUGH_ARITY_THREE_ALL_ORDERS_AND_RESIDUAL_BFV_OPEN` |
 | compact_quantum | `D_compact` | `compact_quantum` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
 | compact_einstein_maxwell_weyl_relative_quantum_readiness | `D_compact` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | QUANTUM | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
 | asymptotic_real_cylinder_time | `H_ESU` | `asymptotically_flat_full_Bach` | LORENTZIAN_CAUSAL | `OPEN` | `PHASE_SPACE_NOT_CLOSED` |
@@ -111,7 +113,7 @@ background as a non-Einstein Weyl--matter branch.
 3. the charge vanishes on the exact sector proposed for quotienting
 4. the zero-charge transformations close as a Lie algebra or declared algebroid
 5. the classical Cartan and causal homotopies exist in the declared support category
-6. Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while a conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported; advanced/retarded Green operators and causal support remain open
+6. Berger retained q1, the cyclic 54-to-26 contraction, K_Berger action, complete q2 and q3, advanced/retarded all-row Green homotopies, and the cyclic two-sided-causal K-Cartan recurrence through arity three are complete; affine raw-D Cartan, Hadamard, QME, and all-orders closure remain open
 7. the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open
 8. the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open
 9. the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open
@@ -132,7 +134,8 @@ background as a non-Einstein Weyl--matter branch.
 | classical | `compact_positive_berger_clock_fixed_coupling_linearized` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `D_GAUGE` |
 | classical | `compact_positive_berger_clock_minimal_bv_sdr` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `MINIMAL_CLOCK_SECTOR_SDR` |
 | classical | `compact_positive_berger_clock_retained_minimal_layout` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_MINIMAL_LAYOUT_FROZEN` |
-| classical | `compact_positive_berger_clock_generator_conjugation` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE` |
+| classical | `compact_positive_berger_clock_generator_conjugation` | `K_Berger` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE` |
+| classical | `compact_positive_berger_clock_k_cartan_through_arity_three` | `K_Berger` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `K_CARTAN_CAUSAL_THROUGH_ARITY_THREE` |
 | classical | `compact_einstein_maxwell_weyl_relative_functor_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | `BLOCKED` | `BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` |
 | einstein_boundary | `asymptotic_real_cylinder_time` | `H_ESU` | `asymptotically_flat_full_Bach` | `PARTIAL` | `PHASE_SPACE_NOT_CLOSED` |
 | einstein_boundary | `compact_positive_berger_clock_einstein_incidence` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND` |
@@ -159,6 +162,7 @@ background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_weyl_radiative_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_standard_radiative_restriction` | `CERTIFIED` | `G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_ell1_physical_restriction` | `H_product` | `einstein_maxwell_product_compact_weyl_ell1_physical_quotient` | `CERTIFIED` | `G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_standard_harmonic_inclusion` | `H_product` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | `CERTIFIED` | `G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT` |
+| einstein_boundary | `compact_einstein_maxwell_weyl_relative_linear_triangle_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_principal_and_generic_axial_relative_triangle_preflight` | `CERTIFIED` | `G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_extra_branch_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_extra_branch_preflight` | `CERTIFIED` | `G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_axial_operator_module_preflight` | `H_product` | `einstein_maxwell_product_compact_weyl_axial_operator_module_preflight` | `CERTIFIED` | `G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_axial_operator` | `H_product` | `einstein_maxwell_product_compact_weyl_generic_axial_target_solution_module` | `CERTIFIED` | `G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE` |
@@ -169,19 +173,21 @@ background as a non-Einstein Weyl--matter branch.
 | einstein_boundary | `compact_einstein_maxwell_weyl_axial_ee_ell2_source` | `H_product` | `einstein_maxwell_product_compact_weyl_axial_ee_ell2_sum_frequency_block` | `CERTIFIED` | `G1_MIXED_EE_AXIAL_ELL2_SUM_FREQUENCY_BLOCK_EXPLICITLY_REMOVABLE` |
 | einstein_boundary | `compact_einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub` | `H_product` | `einstein_maxwell_product_compact_fixed_bundle_hermitian_axial_polar_ell2_minus_pair` | `CERTIFIED` | `G1_HERMITIAN_AXIAL_POLAR_ELL2_MINUS_PAIR_POSITIVE_TAUB_FIXED_BUNDLE_NO_GO` |
 | nonlinear | `compact_selected_residual_HT1_q2` | `D_compact` | `compact_selected_residual_HT1` | `PARTIAL` | `SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO` |
-| nonlinear | `compact_positive_berger_clock_retained_q2_26` | `D_compact` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED` |
+| nonlinear | `compact_positive_berger_clock_retained_q2_26` | `K_Berger` | `positive_berger_fixed_coupling_linearized_solutions` | `CERTIFIED` | `RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_K_CARTAN_OBSTRUCTED` |
 | quantum | `vacuum_cylinder` | `D_compact` | `compact_quantum` | `BLOCKED` | `NO_VERDICT` |
 | quantum | `compact_einstein_maxwell_weyl_relative_quantum_readiness` | `D_compact` | `einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent` | `BLOCKED` | `ANALYTIC_FRAMEWORK_MISSING` |
 
 ## Publication decision
 
-This remains a cross-programme validation dossier.  Paper IX is reserved but
-not started.  Its promotion gate is: certified scalar-clock scope theorem (the single-scalar no-go now qualifies) plus at least one complete boundary or interaction theorem.
+This remains a cross-programme validation dossier. Paper IX status is
+`WRITING_STARTED` and theorem freeze is
+`False`. Its freeze gate is:
+K-generator classical/nonlinear/quantum signoff and clean-tree replay; affine raw-D Cartan is not required for the scoped K theorem.
 Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
 The immediate shared calculation is
-`BERGER_CYCLIC_36_ROW_ADVANCED_RETARDED_GREEN_OPERATORS`: The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates.
+`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`: The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate.
 
 ## Imported evidence
 

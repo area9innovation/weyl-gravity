@@ -1,0 +1,33 @@
+{
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "team_id": "classical",
+  "setting_id": "compact_positive_berger_clock_k_cartan_through_arity_three",
+  "generator_id": "K_Berger",
+  "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+  "boundary_conditions": "closed Berger cylinder at the rational q=9/40 fixture; complete gauge-fixed 54-row complex; compact-source Green domain; cyclic higher primitives have two-sided causal-hull support",
+  "lifecycle_layer": "CLASSICAL_CARTAN",
+  "claim_status": "CERTIFIED",
+  "verdict": "K_CARTAN_CAUSAL_THROUGH_ARITY_THREE",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "established": [
+    "the complete 54-row complex has K_Berger-equivariant advanced and retarded chain contractions with causal support and complementary-degree adjointness",
+    "the arbitrary-input four-dimensional q2 and q3 satisfy their L-infinity identities, cyclicity and K_Berger derivation identities",
+    "the cyclic two-sided-causal K_Berger Cartan recurrence is solved through arity three"
+  ],
+  "not_established": [
+    "affine raw-D Cartan at any nonlinear order",
+    "an unconditional or convergent all-orders K_Berger Cartan theorem",
+    "Hadamard data, QME restoration, anomaly cancellation or a quantum theorem",
+    "Paper IX theorem freeze or pending team signoffs"
+  ],
+  "evidence": {
+    "path": "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
+    "commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+    "sha256": "70f9a2ab46139a31aaac84b5864f526e946be4e1146725434618bd15a909f414"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.backreacted_clock.paper_09_claim_table --check --guards",
+    "python3 d_quotient_classical/backreacted_clock/verify_paper_09_claim_table.py"
+  ],
+  "next_gate": "PAPER_09_K_GENERATOR_SIGNOFF_AND_CLEAN_TREE_REPLAY"
+}

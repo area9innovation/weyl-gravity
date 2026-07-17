@@ -53,6 +53,7 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/classical-berger-minimal-bv-sdr-registration-receipt.md`](reports/classical-berger-minimal-bv-sdr-registration-receipt.md)
 - [`reports/classical-berger-retained-layout-registration-receipt.md`](reports/classical-berger-retained-layout-registration-receipt.md)
 - [`reports/classical-berger-generator-conjugation-registration-receipt.md`](reports/classical-berger-generator-conjugation-registration-receipt.md)
+- [`reports/classical-berger-k-cartan-registration-receipt.md`](reports/classical-berger-k-cartan-registration-receipt.md)
 - [`reports/classical-relative-functor-preflight-registration-receipt.md`](reports/classical-relative-functor-preflight-registration-receipt.md)
 - [`reports/einstein-ed1a-registration-receipt.md`](reports/einstein-ed1a-registration-receipt.md)
 - [`contributions/einstein-berger-incidence.json`](contributions/einstein-berger-incidence.json)
@@ -131,9 +132,9 @@ verification.
 Papers VII--VIII retain their completed theorem, now with an explicit compact
 phase-space split. The certified one-real-scalar no-go and the scoped neutral
 two-field replacement supply the scalar-clock scope half of the Paper-IX gate;
-Paper IX is now writing-started. Its scoped theorem separates raw-(D)
+Paper IX is now writing-started. Its scoped theorem separates raw \(D\)
 fixed-coupling momentum rigidity and linear presymplectic nullity from the
-causal Cartan theorem for the background stabilizer (K=D-\omega R). It is not
+causal Cartan theorem for the background stabilizer \(K=D-\omega R\). It is not
 theorem-frozen until the declared generator signoffs and clean-tree replay pass.
 A possible Paper X is reserved for interaction and quantum stability after the
 applicable classical export and QME gates pass.
@@ -166,12 +167,12 @@ transferred exactly to a retained 26-row operation with 54,236 canonical
 coefficients; the retained arity-two and odd-Darboux cyclicity defects vanish.
 This retained operation is not yet the minimal residual/cohomology `ell2`.
 An independent exact characteristic-symbol calculation rules out the bare
-finite-order support-local unary `D`-Cartan homotopy.  The conditional causal
-transfer theorem, rank-one scalar-wave prolongation, and cyclic 36-row analytic
-realization with nondegenerate pairing are now imported independently.  They
-do not yet supply Green operators.  The next gate is to construct advanced and
-retarded inverses with causal support and transport them to the retained
-endpoint; residual/BFV and quantum promotion remain separate fail-closed gates.
+finite-order support-local unary `K`-Cartan homotopy. The completed endpoint
+construction instead supplies advanced and retarded all-row chain homotopies.
+Together with the exact four-dimensional `q2` and `q3`, it yields a cyclic
+two-sided-causal `K`-Cartan primitive through arity three. Affine raw-`D`
+Cartan, all-orders closure, residual/BFV transport, Hadamard data, and quantum
+promotion remain separate fail-closed gates.
 
 The Einstein team has separately proved that this Berger background is a
 genuine non-Einstein Weyl--matter branch.  It is neither Einstein,

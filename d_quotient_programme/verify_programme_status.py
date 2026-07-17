@@ -29,6 +29,7 @@ CLASSICAL_BERGER_FIXED_COUPLING_DELTA_CHARGE_CONTRIBUTION = PACKAGE / "contribut
 CLASSICAL_BERGER_MINIMAL_BV_CLOCK_SDR_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-minimal-bv-clock-sdr.json"
 CLASSICAL_BERGER_RETAINED_MINIMAL_LAYOUT_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-retained-minimal-layout.json"
 CLASSICAL_BERGER_GENERATOR_CONJUGATION_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-generator-conjugation.json"
+CLASSICAL_BERGER_K_CARTAN_CONTRIBUTION = PACKAGE / "contributions" / "classical-berger-k-cartan-through-arity-three.json"
 CLASSICAL_RELATIVE_FUNCTOR_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "classical-relative-residual-observable-functor-preflight.json"
 NONLINEAR_ND1_CONTRIBUTION = PACKAGE / "contributions" / "nonlinear-nd1-selected-residual-d-derivation.json"
 NONLINEAR_BERGER_RETAINED_Q2_CONTRIBUTION = (
@@ -61,6 +62,7 @@ EINSTEIN_MAXWELL_WEYL_POLAR_ALL_ELL_RESTRICTION_CONTRIBUTION = PACKAGE / "contri
 EINSTEIN_MAXWELL_WEYL_RADIATIVE_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-radiative-restriction.json"
 EINSTEIN_MAXWELL_WEYL_ELL1_PHYSICAL_RESTRICTION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-ell1-physical-restriction.json"
 EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_INCLUSION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-standard-harmonic-inclusion.json"
+EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-weyl-relative-linear-triangle-preflight.json"
 EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-extra-branch-preflight.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator-module-preflight.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator.json"
@@ -72,6 +74,7 @@ EINSTEIN_MAXWELL_WEYL_AXIAL_EE_ELL2_SOURCE_CONTRIBUTION = PACKAGE / "contributio
 EINSTEIN_MAXWELL_WEYL_HERMITIAN_AXIAL_POLAR_ELL2_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-hermitian-axial-polar-ell2-taub.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 QUANTUM_RELATIVE_CONTRIBUTION = PACKAGE / "contributions" / "quantum-relative-einstein-weyl-readiness.json"
+PAPER_IX_CLAIM_TABLE = ROOT / "d_quotient_classical" / "certificates" / "PAPER_09_BERGER_CLAIM_TABLE.json"
 
 TEAM_PATHS = {
     "classical": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
@@ -300,13 +303,13 @@ def _nonlinear_berger_retained_q2_contribution() -> dict[str, Any]:
         and contribution.get("team_id") == "nonlinear"
         and contribution.get("setting_id")
         == "compact_positive_berger_clock_retained_q2_26"
-        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("generator_id") == "K_Berger"
         and contribution.get("phase_space_id")
         == "positive_berger_fixed_coupling_linearized_solutions"
         and contribution.get("lifecycle_layer") == "INTERACTING"
         and contribution.get("claim_status") == "CERTIFIED"
         and contribution.get("verdict")
-        == "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED"
+        == "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_K_CARTAN_OBSTRUCTED"
         and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC"]
     ):
         raise AssertionError("nonlinear retained-q2 contribution scope drifted")
@@ -378,7 +381,7 @@ def _classical_berger_generator_conjugation_contribution() -> dict[str, Any]:
         contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
         and contribution.get("team_id") == "classical"
         and contribution.get("setting_id") == "compact_positive_berger_clock_generator_conjugation"
-        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("generator_id") == "K_Berger"
         and contribution.get("phase_space_id") == "positive_berger_fixed_coupling_linearized_solutions"
         and contribution.get("lifecycle_layer") == "CLASSICAL_CARTAN"
         and contribution.get("claim_status") == "CERTIFIED"
@@ -389,6 +392,26 @@ def _classical_berger_generator_conjugation_contribution() -> dict[str, Any]:
     evidence = contribution.get("evidence", {})
     if _sha256_bytes(_committed_bytes(evidence["commit"], evidence["path"])) != evidence.get("sha256"):
         raise AssertionError("classical Berger generator correction evidence hash drifted")
+    return contribution
+
+
+def _classical_berger_k_cartan_contribution() -> dict[str, Any]:
+    contribution = _load(CLASSICAL_BERGER_K_CARTAN_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "classical"
+        and contribution.get("setting_id") == "compact_positive_berger_clock_k_cartan_through_arity_three"
+        and contribution.get("generator_id") == "K_Berger"
+        and contribution.get("phase_space_id") == "positive_berger_fixed_coupling_linearized_solutions"
+        and contribution.get("lifecycle_layer") == "CLASSICAL_CARTAN"
+        and contribution.get("claim_status") == "CERTIFIED"
+        and contribution.get("verdict") == "K_CARTAN_CAUSAL_THROUGH_ARITY_THREE"
+        and contribution.get("dependency_tags") == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    ):
+        raise AssertionError("classical Berger K-Cartan contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    if _sha256_bytes(_committed_bytes(evidence["commit"], evidence["path"])) != evidence.get("sha256"):
+        raise AssertionError("classical Berger K-Cartan evidence hash drifted")
     return contribution
 
 
@@ -866,6 +889,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     berger_generator_conjugation_contribution = (
         _classical_berger_generator_conjugation_contribution()
     )
+    berger_k_cartan_contribution = _classical_berger_k_cartan_contribution()
     relative_functor_preflight_contribution = (
         _classical_relative_functor_preflight_contribution()
     )
@@ -1012,6 +1036,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
         "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
     )
+    relative_linear_triangle_preflight_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+        "einstein_maxwell_product_compact_weyl_principal_and_generic_axial_relative_triangle_preflight",
+        "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT",
+    )
     maxwell_weyl_extra_branch_preflight_contribution = _einstein_maxwell_second_order_contribution(
         EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION,
         "compact_einstein_maxwell_weyl_extra_branch_preflight",
@@ -1141,6 +1171,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(CLASSICAL_BERGER_GENERATOR_CONJUGATION_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(CLASSICAL_BERGER_GENERATOR_CONJUGATION_CONTRIBUTION),
                 "payload": berger_generator_conjugation_contribution,
+            },
+            {
+                "path": str(CLASSICAL_BERGER_K_CARTAN_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(CLASSICAL_BERGER_K_CARTAN_CONTRIBUTION),
+                "payload": berger_k_cartan_contribution,
             },
             {
                 "path": str(CLASSICAL_RELATIVE_FUNCTOR_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
@@ -1273,6 +1308,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_weyl_standard_harmonic_inclusion_contribution,
             },
             {
+                "path": str(EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT_CONTRIBUTION),
+                "payload": relative_linear_triangle_preflight_contribution,
+            },
+            {
                 "path": str(EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION),
                 "payload": maxwell_weyl_extra_branch_preflight_contribution,
@@ -1341,10 +1381,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "team_status": [
             {
                 "team_id": "classical",
-                "result_state": "BERGER_GAUGE_FIXED_54_TO_26_CONTRACTION_Q2_AND_LOCAL_D_COMPLETE_CAUSAL_OPEN",
-                "verdict": "D_GAUGE_ON_POSITIVE_BERGER_FIXED_COUPLING_LINEARIZED_SPACE",
-                "established": "The healthy positive Berger background has D_GAUGE on its fixed-coupling linearized phase space. The retained 26-row q1 and portable 34-row minimal contraction extend to an exact cyclic support-local gauge-fixed 54-to-26 contraction. The complete support-local q2 and local D action are exported; the specialized characteristic symbol audit proves that the bare local unary Cartan equation has no solution.",
-                "next_gate": "compute the full characteristic symbol-cohomology carrier module and construct a retained causal Green extension without retrying the ruled-out bare local unary ansatz",
+                "result_state": "BERGER_RAW_D_CHARGE_RIGIDITY_AND_K_CARTAN_THROUGH_ARITY_THREE_COMPLETE",
+                "verdict": "RAW_D_LINEAR_NULLITY_K_CARTAN_THROUGH_ARITY_THREE_AFFINE_D_OPEN",
+                "established": "Raw D has nonzero but fixed clock momentum and is presymplectically null on the declared fixed-coupling linearized phase space. The background-fixing generator is K_Berger=D-omega R. The complete 54-row complex has K-equivariant advanced and retarded chain contractions, exact support-local q2 and q3, and a cyclic two-sided-causal K-Cartan primitive through arity three. Affine raw-D Cartan, Hadamard, QME, and all-orders claims remain open.",
+                "next_gate": "complete K-generator signoff and clean-tree replay for Paper IX; treat affine raw-D Cartan as a separate theorem",
             },
             {
                 "team_id": "einstein_boundary",
@@ -1355,10 +1395,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "nonlinear",
-                "result_state": "CONDITIONAL_CAUSAL_D_CARTAN_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
-                "verdict": "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
-                "established": "The complete classical 54-row support-local q2 is replayed and transferred exactly to retained q2_26. The bare local unary D-Cartan equation remains obstructed. A conditional causal unary/raw arity-two transfer theorem, principal-compatible rank-one wave extension, and cyclic 36-row analytic realization with nondegenerate pairing are imported by hash. No advanced/retarded Green operators or causal support theorem are supplied.",
-                "next_gate": "construct advanced and retarded Green operators with causal support for the cyclic 36-row analytic realization, then transport them to the retained endpoint without promoting the fail-closed residual/BFV or quantum gates",
+                "result_state": "BERGER_Q2_Q3_AND_CAUSAL_K_CARTAN_AVAILABLE_SIGNOFF_PENDING",
+                "verdict": "CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_NONLINEAR_SIGNOFF_PENDING",
+                "established": "The complete support-local q2 and q3 and the all-row causal homotopies are available. Under the authoritative generator correction they give the cyclic causal K_Berger Cartan recurrence through arity three. This does not construct affine raw-D Cartan, all-orders closure, a residual/BFV lift, or a quantum theorem.",
+                "next_gate": "review and sign off the K_Berger generator interpretation and the through-arity-three claim boundary for Paper IX",
             },
             {
                 "team_id": "quantum",
@@ -1488,12 +1528,21 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "setting_id": "compact_positive_berger_clock_generator_conjugation",
-                "generator_id": "D_compact",
+                "generator_id": "K_Berger",
                 "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
                 "boundary_conditions": "closed Berger cylinder; co-rotating scalar dressing; raw D compared with K=D-omega R",
                 "lifecycle_layer": "CLASSICAL_CARTAN",
                 "status": "CERTIFIED",
                 "verdict": "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE",
+            },
+            {
+                "setting_id": "compact_positive_berger_clock_k_cartan_through_arity_three",
+                "generator_id": "K_Berger",
+                "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+                "boundary_conditions": "closed Berger cylinder at q=9/40; complete 54-row gauge-fixed complex; compact-source Green domain; cyclic higher primitives have causal-hull support",
+                "lifecycle_layer": "CLASSICAL_CARTAN",
+                "status": "CERTIFIED",
+                "verdict": "K_CARTAN_CAUSAL_THROUGH_ARITY_THREE",
             },
             {
                 "setting_id": "compact_positive_berger_clock_einstein_incidence",
@@ -1712,6 +1761,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_principal_and_generic_axial_relative_triangle_preflight",
+                "boundary_conditions": "fixed-P_N compact product; covariant principal complex and generic axial ell>=2 Fourier-polynomial block; polar, exceptional, global and boundary curved rows open",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT",
+            },
+            {
                 "setting_id": "compact_einstein_maxwell_weyl_relative_functor_preflight",
                 "generator_id": "H_product",
                 "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
@@ -1812,21 +1870,21 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "setting_id": "compact_positive_berger_clock_retained_q2_26",
-                "generator_id": "D_compact",
+                "generator_id": "K_Berger",
                 "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
-                "boundary_conditions": "closed Berger cylinder; exact support-local 54-to-26 contraction; bare local unary D-Cartan ansatz",
+                "boundary_conditions": "closed Berger cylinder; exact support-local 54-to-26 contraction; bare local unary K-Cartan ansatz",
                 "lifecycle_layer": "INTERACTING",
                 "status": "CERTIFIED",
-                "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
+                "verdict": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_K_CARTAN_OBSTRUCTED",
             },
             {
                 "setting_id": "compact_interacting",
-                "generator_id": "D_compact",
-                "phase_space_id": "compact_interacting",
-                "boundary_conditions": "closed S3; retained q2 and cyclic 36-row analytic realization complete; endpoint Green operators and residual/BFV extension absent",
+                "generator_id": "K_Berger",
+                "phase_space_id": "positive_berger_fixed_coupling_linearized_solutions",
+                "boundary_conditions": "closed Berger cylinder at q=9/40; complete q2/q3 and causal K-Cartan through arity three; all-orders and residual/BFV extensions absent",
                 "lifecycle_layer": "INTERACTING",
-                "status": "BLOCKED",
-                "verdict": "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING",
+                "status": "PARTIAL",
+                "verdict": "K_CARTAN_THROUGH_ARITY_THREE_ALL_ORDERS_AND_RESIDUAL_BFV_OPEN",
             },
             {
                 "setting_id": "compact_quantum",
@@ -1889,7 +1947,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "the charge vanishes on the exact sector proposed for quotienting",
             "the zero-charge transformations close as a Lie algebra or declared algebroid",
             "the classical Cartan and causal homotopies exist in the declared support category",
-            "Berger retained minimal q1, portable 34-row contraction, curved five-direction companion, support-local cyclic gauge-fixed 54-to-26 contraction, complete q2, local D action, and exact retained q2_26 transfer are complete; the bare local unary Cartan equation is obstructed, while a conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported; advanced/retarded Green operators and causal support remain open",
+            "Berger retained q1, the cyclic 54-to-26 contraction, K_Berger action, complete q2 and q3, advanced/retarded all-row Green homotopies, and the cyclic two-sided-causal K-Cartan recurrence through arity three are complete; affine raw-D Cartan, Hadamard, QME, and all-orders closure remain open",
             "the Einstein--Maxwell product common background is certified; its two tangent BV complexes, chain map, cohomology, presymplectic comparison, and all D/charge questions remain open",
             "the product principal tangent chain map is certified with two additional simple-symbol Weyl metric classes; the complete Einstein--Maxwell solution tangent also injects on shell by the Chevreton factorization, while off-shell BV rows, prolonged modes, cyclicity, presymplectic comparison, nonlinear closure, and all D/charge questions remain open",
             "the compact radion, duality, l=1 photon, and l=2 gravitational-plus fixtures assemble into a certified constant-lapse obstruction bilinear on their declared span, with exact charge-fibre cokernel behavior and relative Taub interpretation; the full harmonic domain and full cokernel remain open",
@@ -1900,9 +1958,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
             "papers_VII_VIII": "completed theorem retained with explicit compact phase-space scope",
             "paper_IX": {
-                "status": "RESERVED_NOT_STARTED",
-                "working_title": "When Is Cylinder Time Gauge? Taub Constraints, Relational Clocks, and Residual Reduction in Weyl Gravity",
-                "promotion_gate": "certified scalar-clock scope theorem (the single-scalar no-go now qualifies) plus at least one complete boundary or interaction theorem",
+                "status": "WRITING_STARTED",
+                "working_title": "A backreacting phase clock with fixed momentum in pure-Weyl gravity: fixed-coupling rigidity and causal BV Cartan analysis of the helical stabilizer",
+                "promotion_gate": "K-generator classical/nonlinear/quantum signoff and clean-tree replay; affine raw-D Cartan is not required for the scoped K theorem",
+                "theorem_frozen": False,
+                "claim_table": _team_input(str(PAPER_IX_CLAIM_TABLE.relative_to(ROOT))),
             },
             "paper_X": {
                 "status": "RESERVED_NOT_STARTED",
@@ -1911,9 +1971,9 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
         },
         "next_shared_gate": {
-            "gate_id": "BERGER_CYCLIC_36_ROW_ADVANCED_RETARDED_GREEN_OPERATORS",
-            "owner_order": ["classical", "nonlinear", "quantum", "einstein_boundary"],
-            "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates.",
+            "gate_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+            "owner_order": ["einstein_boundary", "classical", "nonlinear", "quantum"],
+            "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate.",
         },
         "claim_boundary": (
             "The dossier consolidates sector-indexed results. It does not promote a "
@@ -1981,6 +2041,7 @@ def validate(data: dict[str, Any]) -> list[str]:
     }
     for setting_id in (
         "compact_positive_berger_clock_generator_conjugation",
+        "compact_positive_berger_clock_k_cartan_through_arity_three",
         "compact_einstein_maxwell_weyl_relative_functor_preflight",
     ):
         if setting_id not in contribution_ids:
@@ -2016,6 +2077,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_radiative_restriction",
         "compact_einstein_maxwell_weyl_ell1_physical_restriction",
         "compact_einstein_maxwell_weyl_standard_harmonic_inclusion",
+        "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
         "compact_einstein_maxwell_weyl_extra_branch_preflight",
         "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
         "compact_einstein_maxwell_weyl_axial_operator",
@@ -2043,6 +2105,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_positive_berger_clock_minimal_bv_sdr": "MINIMAL_CLOCK_SECTOR_SDR",
         "compact_positive_berger_clock_retained_minimal_layout": "RETAINED_MINIMAL_LAYOUT_FROZEN",
         "compact_positive_berger_clock_generator_conjugation": "FROZEN_UNARY_GENERATOR_IS_K_RAW_D_AFFINE",
+        "compact_positive_berger_clock_k_cartan_through_arity_three": "K_CARTAN_CAUSAL_THROUGH_ARITY_THREE",
         "compact_positive_berger_clock_einstein_incidence": "EINSTEIN_TANGENT_NOT_APPLICABLE_AT_THIS_BACKGROUND",
         "compact_einstein_maxwell_product_background": "COMMON_EINSTEIN_MAXWELL_WEYL_MAXWELL_BACKGROUND",
         "compact_einstein_maxwell_product_tangent_preflight": "PRINCIPAL_TANGENT_CHAIN_MAP_WITH_EXTRA_WEYL_CLASSES",
@@ -2067,6 +2130,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_radiative_restriction": "G3_STANDARD_RADIATIVE_ALL_ELL_GE2_COMMON_SPECTRAL_NONDEGENERATE_INDEFINITE_RESTRICTION",
         "compact_einstein_maxwell_weyl_ell1_physical_restriction": "G3_PHYSICAL_ELL1_ALL_N_M_FACTOR_FOUR_QUOTIENT_RESTRICTION",
         "compact_einstein_maxwell_weyl_standard_harmonic_inclusion": "G4_COMPLETE_STANDARD_HARMONIC_PULLBACK_NONDEGENERATE_BEFORE_FINAL_QUOTIENT",
+        "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight": "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT",
         "compact_einstein_maxwell_weyl_relative_functor_preflight": "BLOCKED_ON_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "compact_einstein_maxwell_weyl_extra_branch_preflight": "G2_CANONICAL_EXTRA_QUOTIENT_AND_FULL_BLOCK_SOLVE_CONTRACT",
         "compact_einstein_maxwell_weyl_axial_operator_module_preflight": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
@@ -2078,7 +2142,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_axial_ee_ell2_source": "G1_MIXED_EE_AXIAL_ELL2_SUM_FREQUENCY_BLOCK_EXPLICITLY_REMOVABLE",
         "compact_einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub": "G1_HERMITIAN_AXIAL_POLAR_ELL2_MINUS_PAIR_POSITIVE_TAUB_FIXED_BUNDLE_NO_GO",
         "compact_selected_residual_HT1_q2": "SELECTED_RESIDUAL_D_DERIVATION_HOLDS_AT_ARITY_TWO",
-        "compact_positive_berger_clock_retained_q2_26": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_D_CARTAN_OBSTRUCTED",
+        "compact_positive_berger_clock_retained_q2_26": "RETAINED_Q2_26_COMPLETE_BARE_LOCAL_UNARY_K_CARTAN_OBSTRUCTED",
         "asymptotic_real_cylinder_time": "PHASE_SPACE_NOT_CLOSED",
     }
     for setting, verdict in required.items():
@@ -2101,9 +2165,9 @@ def validate(data: dict[str, Any]) -> list[str]:
     ):
         errors.append("relative quantum readiness was dropped or promoted")
     if ledger.get("compact_interacting", {}).get("verdict") != (
-        "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
+        "K_CARTAN_THROUGH_ARITY_THREE_ALL_ORDERS_AND_RESIDUAL_BFV_OPEN"
     ):
-        errors.append("cyclic analytic realization was erased or promoted to a Green theorem")
+        errors.append("Berger interaction row escaped its through-arity-three boundary")
     if ledger.get("compact_positive_berger_clock_retained_q2_26", {}).get(
         "status"
     ) != "CERTIFIED":
@@ -2118,6 +2182,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Berger retained minimal layout was dropped")
     if ledger.get("compact_positive_berger_clock_generator_conjugation", {}).get("status") != "CERTIFIED":
         errors.append("Berger D/K generator correction was dropped")
+    if ledger.get("compact_positive_berger_clock_k_cartan_through_arity_three", {}).get("status") != "CERTIFIED":
+        errors.append("Berger causal K-Cartan theorem was dropped")
     if ledger.get("compact_positive_berger_clock_minimal_bv_sdr", {}).get("status") != "CERTIFIED":
         errors.append("minimal Berger clock BV SDR was dropped")
     if ledger.get("compact_positive_berger_clock_einstein_incidence", {}).get("status") != "CERTIFIED":
@@ -2168,6 +2234,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("physical ell=1 Weyl--Maxwell quotient restriction theorem was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_standard_harmonic_inclusion", {}).get("status") != "CERTIFIED":
         errors.append("complete standard-harmonic Weyl--Maxwell inclusion theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_relative_linear_triangle_preflight", {}).get("status") != "CERTIFIED":
+        errors.append("relative Einstein--Weyl linear triangle preflight was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_relative_functor_preflight", {}).get("status") != "BLOCKED":
         errors.append("relative functor preflight promoted before the off-shell triangle")
     if ledger.get("compact_einstein_maxwell_weyl_extra_branch_preflight", {}).get("status") != "CERTIFIED":
@@ -2188,8 +2256,16 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Weyl--Maxwell mixed EE axial ell=2 source theorem was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell Hermitian axial-polar ell=2 Taub theorem was dropped")
-    if data.get("publication_plan", {}).get("paper_IX", {}).get("status") != "RESERVED_NOT_STARTED":
-        errors.append("Paper IX promoted before its gate")
+    paper_ix = data.get("publication_plan", {}).get("paper_IX", {})
+    if paper_ix.get("status") != "WRITING_STARTED" or paper_ix.get("theorem_frozen") is not False:
+        errors.append("Paper IX writing/freeze state drifted")
+    claim_table = paper_ix.get("claim_table", {})
+    if not (
+        claim_table.get("path") == str(PAPER_IX_CLAIM_TABLE.relative_to(ROOT))
+        and _sha256_bytes(_committed_bytes(claim_table.get("commit", ""), claim_table.get("path", "")))
+        == claim_table.get("sha256")
+    ):
+        errors.append("Paper IX claim-table provenance drifted")
     return errors
 
 
@@ -2282,8 +2358,10 @@ background as a non-Einstein Weyl--matter branch.
 
 ## Publication decision
 
-This remains a cross-programme validation dossier.  Paper IX is reserved but
-not started.  Its promotion gate is: {data['publication_plan']['paper_IX']['promotion_gate']}.
+This remains a cross-programme validation dossier. Paper IX status is
+`{data['publication_plan']['paper_IX']['status']}` and theorem freeze is
+`{data['publication_plan']['paper_IX']['theorem_frozen']}`. Its freeze gate is:
+{data['publication_plan']['paper_IX']['promotion_gate']}.
 Paper X remains reserved for interaction/quantum stability after its separate
 classical-export and QME gates.
 
@@ -2394,6 +2472,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_positive_berger_clock_generator_conjugation",
             "drop_Berger_generator_conjugation_contribution",
+        ),
+        (
+            "compact_positive_berger_clock_k_cartan_through_arity_three",
+            "drop_Berger_k_cartan_contribution",
         ),
         (
             "compact_einstein_maxwell_weyl_relative_functor_preflight",
@@ -2605,6 +2687,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
             "drop_Einstein_Maxwell_Weyl_standard_harmonic_inclusion_contribution",
         ),
         (
+            "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+            "drop_Einstein_Weyl_relative_linear_triangle_preflight_contribution",
+        ),
+        (
             "compact_einstein_maxwell_weyl_extra_branch_preflight",
             "drop_Einstein_Maxwell_Weyl_extra_branch_preflight_contribution",
         ),
@@ -2650,8 +2736,8 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         reject(guard_name, mutant)
 
     mutant = deepcopy(data)
-    mutant["publication_plan"]["paper_IX"]["status"] = "ACTIVE_THEOREM_PAPER"
-    reject("promote_paper_IX_before_gate", mutant)
+    mutant["publication_plan"]["paper_IX"]["theorem_frozen"] = True
+    reject("freeze_paper_IX_before_signoff", mutant)
 
     mutant = deepcopy(data)
     mutant["claim_key"] = ["team_id"]
