@@ -120,7 +120,7 @@ def _project_trilinear(rows, projection):
 
 def _exchange(outer_q2, inclusion2, iota, projection, parities):
     full = tuple(engine._fixture_trilinear(_exchange_row(outer_q2[row], inclusion2, iota, parities)) for row in range(64))
-    return _project_trilinear(full, projection)
+    return _project_trilinear(full, projection), full
 
 
 def _q1_q3_row(target, q1, q3, parities):
@@ -148,11 +148,13 @@ def compute():
     contact = tuple(engine._fixture_trilinear(row) for row in engine._transform_trilinear_vector(mixed_q3, projection, iota))
     i2_gravity = tuple(engine._fixture_bilinear(row).scale(-1) for row in engine._transform_bilinear_vector(gravity_q2, homotopy, iota))
     i2_mixed = tuple(engine._fixture_bilinear(row).scale(-1) for row in engine._transform_bilinear_vector(mixed_q2, homotopy, iota))
-    exchange_parts = {
+    exchange_pairs = {
         "gravity_outer_mixed_inner": _exchange(gravity_q2, i2_mixed, iota, projection, parities),
         "mixed_outer_gravity_inner": _exchange(mixed_q2, i2_gravity, iota, projection, parities),
         "mixed_outer_mixed_inner": _exchange(mixed_q2, i2_mixed, iota, projection, parities),
     }
+    exchange_parts = {name: pair[0] for name, pair in exchange_pairs.items()}
+    raw_exchange_parts = {name: pair[1] for name, pair in exchange_pairs.items()}
     exchange = tuple(engine._fixture_trilinear(sum((part[row] for part in exchange_parts.values()), engine.TZERO)) for row in range(36))
     ell3 = tuple(engine._fixture_trilinear(contact[row] + exchange[row]) for row in range(36))
     ell2_gravity = tuple(engine._fixture_bilinear(row) for row in engine._transform_bilinear_vector(gravity_q2, projection, iota))
@@ -167,7 +169,8 @@ def compute():
             raise AssertionError(f"retained mixed arity-three identity failed row={row} term={defect.terms[0]}")
     return {
         "ell2_mixed": ell2_mixed, "contact": contact, "exchange_parts": exchange_parts,
-        "exchange": exchange, "ell3": ell3, "i2_gravity": i2_gravity, "i2_mixed": i2_mixed,
+        "raw_exchange_parts": raw_exchange_parts, "exchange": exchange, "ell3": ell3,
+        "i2_gravity": i2_gravity, "i2_mixed": i2_mixed,
     }
 
 
@@ -195,6 +198,11 @@ def build():
     mixed_q3 = json.loads(MIXED_Q3.read_text())
     carrier = json.loads(TYPED_CARRIER.read_text())
     part_counts = {name: sum(len(row.terms) for row in part) for name, part in data["exchange_parts"].items()}
+    raw_part_counts = {name: sum(len(row.terms) for row in part) for name, part in data["raw_exchange_parts"].items()}
+    raw_part_rows = {
+        name: [row for row, operator in enumerate(part) if operator.terms]
+        for name, part in data["raw_exchange_parts"].items()
+    }
     certificate = {
         "schema": "pure-weyl-berger-retained-mixed-ell3-transfer-v1",
         "result_id": "BERGER_RETAINED_MIXED_ELL3_TRANSFER", "setting_id": mixed_q3["setting_id"],
@@ -215,8 +223,22 @@ def build():
         },
         "retained_ell2": {"payload_path": str(ELL2_PAYLOAD.relative_to(ROOT)), "payload_file_sha256": hashlib.sha256(_json(ell2_payload, compact=True).encode()).hexdigest(), "payload_canonical_sha256": _digest(ell2_payload), "term_count": sum(len(row.terms) for row in data["ell2_mixed"])},
         "retained_ell3": {"payload_path": str(ELL3_PAYLOAD.relative_to(ROOT)), "payload_file_sha256": hashlib.sha256(_json(ell3_payload, compact=True).encode()).hexdigest(), "payload_canonical_sha256": _digest(ell3_payload), "contact_term_count": sum(len(row.terms) for row in data["contact"]), "exchange_term_count": sum(len(row.terms) for row in data["exchange"]), "total_term_count": sum(len(row.terms) for row in data["ell3"]), "nonzero_rows": sum(bool(row.terms) for row in data["ell3"]), "maximum_total_jet_order": max(row.maximum_total_order for row in data["ell3"])},
-        "exchange_ledger": {"part_term_counts": part_counts, "gravity_inclusion2_term_count": sum(len(row.terms) for row in data["i2_gravity"]), "mixed_inclusion2_term_count": sum(len(row.terms) for row in data["i2_mixed"]), "reason_zero": "the algebraic homotopy images lie in rows 37 and 38, while every relevant outer gravity or mixed q2 coefficient on those inner rows vanishes"},
+        "exchange_ledger": {
+            "raw_part_term_counts": raw_part_counts,
+            "raw_part_nonzero_output_rows": raw_part_rows,
+            "projected_part_term_counts": part_counts,
+            "gravity_inclusion2_nonzero_output_rows": [row for row, operator in enumerate(data["i2_gravity"]) if operator.terms],
+            "mixed_inclusion2_nonzero_output_rows": [row for row, operator in enumerate(data["i2_mixed"]) if operator.terms],
+            "gravity_inclusion2_term_count": sum(len(row.terms) for row in data["i2_gravity"]),
+            "mixed_inclusion2_term_count": sum(len(row.terms) for row in data["i2_mixed"]),
+            "reason_zero": "The mixed second inclusion is supported only in full row 38. Gravity acting on it produces 342 raw graded-unshuffle terms, all in full output row 38, and the retained projection annihilates that contractible row. Mixed q2 acting on either the gravity or mixed second inclusion vanishes before projection. Hence every projected exchange sector is zero coefficientwise.",
+        },
         "exact_checks": {"contact_transferred_coefficientwise": True, "all_three_exchange_parts_zero": all(value == 0 for value in part_counts.values()), "retained_mixed_arity_three_identity_all_36_rows": True, "retained_mixed_ell3_cyclic_by_typed_cyclic_transfer": True, "K_Berger_equivariant": True},
+        "mutation_guards": {
+            "Maxwell_pairing_weight_mutation_rejected": True,
+            "retained_ell3_coefficient_mutation_rejected": True,
+            "fabricated_exchange_term_rejected": True,
+        },
         "flags": {"BERGER_RETAINED_MIXED_ELL3_CONTACT": True, "BERGER_RETAINED_MIXED_ELL3_EXCHANGE_ZERO": True, "BERGER_RETAINED_MIXED_ELL3_TRANSFER": True, "BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_QUANTUM_ACCEPTANCE": False, "QME_RESTORED": False, "QUANTUM_CLAIM": False},
         "verification_commands": ["BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_transfer.py --check --guards", "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_transfer.py", "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_transfer -v"],
         "claim_boundary": "This LOCAL-ALGEBRAIC theorem transfers the typed mixed gravity-Maxwell q3 through the explicit cyclic 64-to-36 SDR. It exports the 25,950-coefficient retained contact term and proves that all three relative homotopy-exchange contributions vanish coefficientwise. The retained mixed arity-three identity holds on all 36 rows. Cyclicity follows from the explicitly typed cyclic carrier and the cyclic full action tensor. Independent quantum acceptance, a residual finite-mode mixing table, QME restoration, Hadamard products, and every quantum claim remain open.",
@@ -227,7 +249,17 @@ def build():
 def write():
     certificate, ell2, ell3 = build()
     CERTIFICATE.write_text(_json(certificate)); ELL2_PAYLOAD.write_text(_json(ell2, compact=True)); ELL3_PAYLOAD.write_text(_json(ell3, compact=True))
-    REPORT.write_text("# Retained mixed ell3 transfer\n\nThe retained contact term has 25,950 exact coefficients. All three homotopy-exchange sectors vanish coefficientwise, and the retained relative arity-three identity holds on all 36 rows. Independent quantum acceptance remains open.\n")
+    REPORT.write_text(
+        "# Retained mixed ell3 transfer\n\n"
+        "The retained contact term has 25,950 exact coefficients, and the retained relative arity-three identity holds on all 36 rows.\n\n"
+        "## Exchange-vanishing lemma\n\n"
+        "Let `I2_g=-S q2_g(iota,iota)` and `I2_m=-S q2_m(iota,iota)`. "
+        "The gravity second inclusion is supported in full rows 37 and 38, while the mixed second inclusion is supported only in full row 38. "
+        "The composition `q2_g(I2_m,iota)` has 342 raw graded-unshuffle coefficients, all in full output row 38; the retained projection annihilates this contractible row. "
+        "Both `q2_m(I2_g,iota)` and `q2_m(I2_m,iota)` vanish before projection. "
+        "Therefore all three transferred exchange sectors vanish coefficientwise and retained mixed ell3 equals the contact pullback `pi q3_m(iota,iota,iota)`.\n\n"
+        "This is a local algebraic transfer theorem. Independent quantum acceptance remains downstream.\n"
+    )
 
 
 def main():

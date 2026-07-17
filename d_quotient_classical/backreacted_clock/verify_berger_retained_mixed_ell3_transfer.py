@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import copy
 import gzip
 import hashlib
 import json
@@ -35,6 +36,7 @@ ELL3_PAYLOAD = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_E
 UPSTREAM_Q2 = ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json"
 UPSTREAM_Q3 = ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3_PAYLOAD.json"
 TYPED_CARRIER = ROOT / "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json"
+CARRIER_SCHEMA = ROOT / "d_quotient_classical/schema/berger-portable-coupled-64-typed-pairing-36-sdr-v1.schema.json"
 LEGACY_LAYOUT = ROOT / "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json"
 SCHEMAS = {
     CERTIFICATE: ROOT / "d_quotient_classical/schema/berger-retained-mixed-ell3-transfer-v1.schema.json",
@@ -218,7 +220,45 @@ def _exchange(outer_q2, inclusion2, iota, projection, parities):
             if outer.terms and full[old].terms:
                 value += engine._apply_output_linear_trilinear(outer, full[old])
         result.append(engine._fixture_trilinear(value))
-    return tuple(result)
+    return tuple(result), full
+
+
+def _relative_defects(q1, ell3, parities, gravity_ell2, mixed_ell2, full_ell2):
+    defects = []
+    for row in range(36):
+        defect = _q1_q3_row(row, q1, ell3, parities)
+        defect += engine._q2_composed_with_q2_row(
+            gravity_ell2[row], mixed_ell2, parities
+        )
+        defect += engine._q2_composed_with_q2_row(
+            mixed_ell2[row], full_ell2, parities
+        )
+        defects.append(engine._fixture_trilinear(defect))
+    return tuple(defects)
+
+
+def _replace_first_coefficient(ell3):
+    mutated = list(ell3)
+    for row, operator in enumerate(mutated):
+        if not operator.terms:
+            continue
+        terms = list(operator.terms)
+        first = list(terms[0])
+        first[-1] += 1
+        terms[0] = tuple(first)
+        mutated[row] = engine.TrilinearOperator.from_terms(terms)
+        return tuple(mutated)
+    raise AssertionError("cannot mutate an empty retained ell3")
+
+
+def _add_fabricated_exchange_term(ell3):
+    mutated = list(ell3)
+    zero = _word((0, 0, 0, 0))
+    fabricated = engine.TrilinearOperator.from_terms(
+        [(0, zero, 0, zero, 0, zero, 1)]
+    )
+    mutated[0] = engine._fixture_trilinear(mutated[0] + fabricated)
+    return tuple(mutated)
 
 
 def verify() -> None:
@@ -299,7 +339,7 @@ def verify() -> None:
     parities = tuple(
         row["degree"] & 1 for row in layout["retained_complex"]["component_rows"]
     )
-    exchange_parts = {
+    exchange_pairs = {
         "gravity_outer_mixed_inner": _exchange(
             gravity_q2, mixed_i2, iota, projection, parities
         ),
@@ -310,6 +350,8 @@ def verify() -> None:
             upstream_q2, mixed_i2, iota, projection, parities
         ),
     }
+    exchange_parts = {name: pair[0] for name, pair in exchange_pairs.items()}
+    raw_exchange_parts = {name: pair[1] for name, pair in exchange_pairs.items()}
     exchange_counts = {
         name: sum(len(row.terms) for row in rows)
         for name, rows in exchange_parts.items()
@@ -320,7 +362,26 @@ def verify() -> None:
         "mixed_outer_mixed_inner": 0,
     }:
         raise AssertionError(f"exchange ledger overclaims zero exchange: {exchange_counts}")
-    if certificate["exchange_ledger"]["part_term_counts"] != exchange_counts:
+    raw_exchange_counts = {
+        name: sum(len(row.terms) for row in rows)
+        for name, rows in raw_exchange_parts.items()
+    }
+    raw_exchange_rows = {
+        name: [row for row, operator in enumerate(rows) if operator.terms]
+        for name, rows in raw_exchange_parts.items()
+    }
+    if raw_exchange_counts != {
+        "gravity_outer_mixed_inner": 342,
+        "mixed_outer_gravity_inner": 0,
+        "mixed_outer_mixed_inner": 0,
+    }:
+        raise AssertionError(f"raw exchange ledger drifted: {raw_exchange_counts}")
+    ledger = certificate["exchange_ledger"]
+    if ledger["raw_part_term_counts"] != raw_exchange_counts:
+        raise AssertionError("raw exchange count certificate drifted")
+    if ledger["raw_part_nonzero_output_rows"] != raw_exchange_rows:
+        raise AssertionError("raw exchange row certificate drifted")
+    if ledger["projected_part_term_counts"] != exchange_counts:
         raise AssertionError("exchange ledger drifted")
 
     retained_gravity_q2 = tuple(
@@ -331,19 +392,57 @@ def verify() -> None:
         engine._fixture_bilinear(retained_gravity_q2[row] + retained_mixed_q2[row])
         for row in range(36)
     )
-    for row in range(36):
-        defect = _q1_q3_row(row, q1, retained_mixed_q3, parities)
-        defect += engine._q2_composed_with_q2_row(
-            retained_gravity_q2[row], retained_mixed_q2, parities
-        )
-        defect += engine._q2_composed_with_q2_row(
-            retained_mixed_q2[row], retained_full_q2, parities
-        )
-        defect = engine._fixture_trilinear(defect)
+    defects = _relative_defects(
+        q1,
+        retained_mixed_q3,
+        parities,
+        retained_gravity_q2,
+        retained_mixed_q2,
+        retained_full_q2,
+    )
+    for row, defect in enumerate(defects):
         if defect.terms:
             raise AssertionError(
                 f"retained relative arity-three identity failed row={row} term={defect.terms[0]}"
             )
+
+    carrier_schema = json.loads(CARRIER_SCHEMA.read_text())
+    mutated_carrier = copy.deepcopy(carrier)
+    mutated_carrier["normalization"]["Maxwell_pairing_weight"] = 1
+    weight_rejected = bool(
+        list(Draft202012Validator(carrier_schema).iter_errors(mutated_carrier))
+    )
+    coefficient_rejected = any(
+        defect.terms
+        for defect in _relative_defects(
+            q1,
+            _replace_first_coefficient(retained_mixed_q3),
+            parities,
+            retained_gravity_q2,
+            retained_mixed_q2,
+            retained_full_q2,
+        )
+    )
+    exchange_rejected = any(
+        defect.terms
+        for defect in _relative_defects(
+            q1,
+            _add_fabricated_exchange_term(retained_mixed_q3),
+            parities,
+            retained_gravity_q2,
+            retained_mixed_q2,
+            retained_full_q2,
+        )
+    )
+    mutation_guards = {
+        "Maxwell_pairing_weight_mutation_rejected": weight_rejected,
+        "retained_ell3_coefficient_mutation_rejected": coefficient_rejected,
+        "fabricated_exchange_term_rejected": exchange_rejected,
+    }
+    if mutation_guards != certificate["mutation_guards"] or not all(
+        mutation_guards.values()
+    ):
+        raise AssertionError(f"mutation guard failed: {mutation_guards}")
 
     flags = certificate["flags"]
     if not flags["BERGER_RETAINED_MIXED_ELL3_TRANSFER"]:

@@ -34,14 +34,33 @@
     "retained_mixed_ell3_cyclic_by_typed_cyclic_transfer": true
   },
   "exchange_ledger": {
+    "gravity_inclusion2_nonzero_output_rows": [
+      37,
+      38
+    ],
     "gravity_inclusion2_term_count": 96,
+    "mixed_inclusion2_nonzero_output_rows": [
+      38
+    ],
     "mixed_inclusion2_term_count": 12,
-    "part_term_counts": {
+    "projected_part_term_counts": {
       "gravity_outer_mixed_inner": 0,
       "mixed_outer_gravity_inner": 0,
       "mixed_outer_mixed_inner": 0
     },
-    "reason_zero": "the algebraic homotopy images lie in rows 37 and 38, while every relevant outer gravity or mixed q2 coefficient on those inner rows vanishes"
+    "raw_part_nonzero_output_rows": {
+      "gravity_outer_mixed_inner": [
+        38
+      ],
+      "mixed_outer_gravity_inner": [],
+      "mixed_outer_mixed_inner": []
+    },
+    "raw_part_term_counts": {
+      "gravity_outer_mixed_inner": 342,
+      "mixed_outer_gravity_inner": 0,
+      "mixed_outer_mixed_inner": 0
+    },
+    "reason_zero": "The mixed second inclusion is supported only in full row 38. Gravity acting on it produces 342 raw graded-unshuffle terms, all in full output row 38, and the retained projection annihilates that contractible row. Mixed q2 acting on either the gravity or mixed second inclusion vanishes before projection. Hence every projected exchange sector is zero coefficientwise."
   },
   "flags": {
     "BERGER_RETAINED_MIXED_ELL3_CONTACT": true,
@@ -50,6 +69,11 @@
     "BERGER_RETAINED_MIXED_ELL3_TRANSFER": true,
     "QME_RESTORED": false,
     "QUANTUM_CLAIM": false
+  },
+  "mutation_guards": {
+    "Maxwell_pairing_weight_mutation_rejected": true,
+    "fabricated_exchange_term_rejected": true,
+    "retained_ell3_coefficient_mutation_rejected": true
   },
   "result_id": "BERGER_RETAINED_MIXED_ELL3_TRANSFER",
   "retained_ell2": {
@@ -71,12 +95,12 @@
   "schema": "pure-weyl-berger-retained-mixed-ell3-transfer-v1",
   "setting_id": "compact_positive_berger_clock_fixed_coupling",
   "source_manifest": {
-    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_transfer.py": "7da61389c3e0d1af80bb04f85b447b31fb40c7b2cd246a27713ee8a911331b6f",
-    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_transfer.py": "deae0a99b5eba7c212b1d91a5e8d858360bd4225bf434e48a276e45c1a14ebbe",
-    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_transfer.py": "8c6963b28eb189e0c75780700ebabbbd00beeb361185b0899bd246d471999da4",
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_transfer.py": "f6069fb8ee13aa0ea72d5cf806256cc3bd77ddd29152cbac7c039a499afc389b",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_transfer.py": "fb23b23e47f6e4398376d0e62123aba8d7548c2a98507f32330f41654cc231f3",
+    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_transfer.py": "23a707b0261befba51d62aaa86c4bcc28b0ce97262958b5ef9760561916fea06",
     "d_quotient_classical/schema/berger-retained-mixed-ell3-payload-v1.schema.json": "426acb967c7093c153371117c5112be33478731b019e45a84b233dd5f127f13a",
     "d_quotient_classical/schema/berger-retained-mixed-ell3-row-v1.schema.json": "eb8245e94234eac2b22b4f8288452af1d9e2453a2f63aacc6acecb85eba59002",
-    "d_quotient_classical/schema/berger-retained-mixed-ell3-transfer-v1.schema.json": "fea2db35366f56f1e48deb2d4f31f9688d738128353dd0d6804962387ac8c0b8",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-transfer-v1.schema.json": "34d680b008c5de557a70daef6d0c0ccb35181424e14df464f585acf1b92c44ae",
     "d_quotient_classical/schema/berger-retained-typed-mixed-ell2-payload-v1.schema.json": "e37e1a2847d96b07352ba76aac67da41c2fa222053046cec82bae7951f9587a5"
   },
   "transfer_formula": {

@@ -149,6 +149,10 @@ BERGER_RETAINED_MIXED_ELL3_TRANSFER proves
 coefficientwise.  The retained mixed contact contains 25,950 exact PBW
 coefficients in 18 nonzero rows, while each of the three possible relative
 homotopy-exchange sectors vanishes exactly.  The retained mixed arity-three
+exchange lemma is concrete: the only nonzero raw exchange has 342 terms, all
+in full contractible output row 38, which the retained projection
+annihilates; the other two exchange compositions vanish before projection.
+The retained mixed arity-three
 identity then closes on all 36 rows, with 1,474 retained mixed
 \(\ell_2\)-coefficients.  A separate verifier reconstructs the contact
 pullback, evaluates every graded exchange unshuffle, and replays all 36
