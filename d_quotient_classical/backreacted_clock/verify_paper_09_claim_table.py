@@ -87,8 +87,41 @@ def main() -> int:
         "BERGER_GENERATOR_CONJUGATION_AUDIT",
     ]:
         raise AssertionError("independent cross-check sequence drifted")
+    expected_signoffs = [
+        ("nonlinear_team", "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF", "SIGNED_SCOPED_K_THEOREM"),
+        ("quantum_team", "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF", "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED"),
+    ]
+    if len(table["signoff_evidence"]) != 2:
+        raise AssertionError("independent signoff evidence is incomplete")
+    for entry, expected in zip(table["signoff_evidence"], expected_signoffs):
+        observed = (entry["team"], entry["certificate_result_id"], entry["status"])
+        if observed != expected:
+            raise AssertionError(f"signoff identity or verdict mismatch: {observed}")
+        certificate_path = ROOT / entry["certificate_path"]
+        if _sha256(certificate_path) != entry["certificate_sha256"]:
+            raise AssertionError(f"signoff digest mismatch: {entry['team']}")
+        certificate = json.loads(certificate_path.read_text())
+        if certificate["result_id"] != entry["certificate_result_id"]:
+            raise AssertionError(f"signoff result id mismatch: {entry['team']}")
+        if certificate["claim_boundary"] != entry["certificate_claim_boundary"]:
+            raise AssertionError(f"signoff boundary mismatch: {entry['team']}")
+        for dotted in entry["required_true"]:
+            if _lookup(certificate, dotted) is not True:
+                raise AssertionError(f"signoff required true field failed: {entry['team']} {dotted}")
+        for dotted in entry["required_false"]:
+            if _lookup(certificate, dotted) is not False:
+                raise AssertionError(f"signoff forbidden promotion detected: {entry['team']} {dotted}")
+    if table["required_signoffs"] != {
+        "classical_team": "DRAFTED",
+        "nonlinear_team": "SIGNED_K_GENERATOR_INTERPRETATION",
+        "quantum_team": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED",
+        "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
+    }:
+        raise AssertionError("authoritative signoff ledger drifted")
+    if table["next_gate"] != "PAPER_09_CLEAN_TREE_REPLAY_DEFERRED":
+        raise AssertionError("deferred clean-tree gate drifted")
     print("PAPER_09_BERGER_CLAIM_TABLE independent audit: PASS")
-    print("claims=10 cross_checks=2 theorem_frozen=false hashes_and_boundaries=exact")
+    print("claims=10 cross_checks=2 signoffs=2 theorem_frozen=false hashes_and_boundaries=exact")
     return 0
 
 

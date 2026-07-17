@@ -13,7 +13,13 @@ def test_paper_09_claim_table_is_complete_and_fail_closed() -> None:
     theorem.verify(payload)
     assert payload["claim_ids_complete"] == [f"P09-C{index}" for index in range(1, 11)]
     assert payload["theorem_frozen"] is False
-    assert payload["required_signoffs"]["nonlinear_team"].startswith("PENDING")
+    assert payload["required_signoffs"]["nonlinear_team"] == "SIGNED_K_GENERATOR_INTERPRETATION"
+    assert payload["required_signoffs"]["quantum_team"] == "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED"
+    assert [entry["team"] for entry in payload["signoff_evidence"]] == [
+        "nonlinear_team",
+        "quantum_team",
+    ]
+    assert payload["next_gate"] == "PAPER_09_CLEAN_TREE_REPLAY_DEFERRED"
     assert payload["independent_cross_checks"][0]["supports_claim"] == "P09-C8"
     assert payload["independent_cross_checks"][1]["certificate_result_id"] == "BERGER_GENERATOR_CONJUGATION_AUDIT"
 

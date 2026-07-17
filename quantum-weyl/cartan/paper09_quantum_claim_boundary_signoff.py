@@ -30,6 +30,14 @@ SOURCES = {
     "paper": "paper/09-relational-clocks-berger-d-cartan.tex",
 }
 
+# This review consumed the pre-signoff claim table.  Pin that exact Git blob;
+# the live claim table is allowed to advance by recording the completed review.
+REVIEWED_CLAIM_TABLE = {
+    "path": SOURCES["claim_table"],
+    "commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+    "sha256": "70f9a2ab46139a31aaac84b5864f526e946be4e1146725434618bd15a909f414",
+}
+
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -43,7 +51,21 @@ def _commit(relpath: str) -> str:
     ).strip()
 
 
+def _git_blob(commit: str, relpath: str) -> bytes:
+    prefix = subprocess.check_output(
+        ["git", "rev-parse", "--show-prefix"], cwd=ROOT, text=True
+    ).strip()
+    return subprocess.check_output(
+        ["git", "show", f"{commit}:{prefix}{relpath}"], cwd=ROOT
+    )
+
+
 def _load(name: str) -> dict[str, Any]:
+    if name == "claim_table":
+        raw = _git_blob(REVIEWED_CLAIM_TABLE["commit"], REVIEWED_CLAIM_TABLE["path"])
+        if hashlib.sha256(raw).hexdigest() != REVIEWED_CLAIM_TABLE["sha256"]:
+            raise AssertionError("reviewed claim-table Git snapshot hash mismatch")
+        return json.loads(raw)
     return json.loads((ROOT / SOURCES[name]).read_text())
 
 
@@ -113,14 +135,16 @@ def _assert_source_semantics() -> dict[str, bool]:
 
 def build_certificate() -> dict[str, Any]:
     checks = _assert_source_semantics()
-    manifest = {
-        name: {
-            "path": relpath,
-            "commit": _commit(relpath),
-            "sha256": _sha256(ROOT / relpath),
-        }
-        for name, relpath in SOURCES.items()
-    }
+    manifest = {}
+    for name, relpath in SOURCES.items():
+        if name == "claim_table":
+            manifest[name] = dict(REVIEWED_CLAIM_TABLE)
+        else:
+            manifest[name] = {
+                "path": relpath,
+                "commit": _commit(relpath),
+                "sha256": _sha256(ROOT / relpath),
+            }
     return {
         "schema": "quantum-weyl-paper09-quantum-claim-boundary-signoff-v1",
         "result_id": "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF",

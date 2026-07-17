@@ -18,6 +18,8 @@ MAIN_PAPER = ROOT / "paper/09-relational-clocks-berger-d-cartan.tex"
 SUPPLEMENT = ROOT / "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex"
 Q3_CROSSCHECK = CERTIFICATE_DIR / "BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json"
 GENERATOR_AUDIT = CERTIFICATE_DIR / "BERGER_GENERATOR_CONJUGATION_AUDIT.json"
+NONLINEAR_SIGNOFF = CERTIFICATE_DIR / "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json"
+QUANTUM_SIGNOFF = ROOT / "quantum-weyl/cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF.json"
 
 
 CLAIMS = (
@@ -225,6 +227,52 @@ def build() -> dict[str, object]:
     for dotted in generator_required_false:
         if _lookup(generator_audit, dotted) is not False:
             raise AssertionError(f"generator audit required false field failed: {dotted}")
+
+    nonlinear_signoff = _read(NONLINEAR_SIGNOFF)
+    nonlinear_required_true = [
+        "flags.PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+        "flags.K_BERGER_CARTAN_THROUGH_ARITY_THREE",
+        "exact_checks.q2_action_derived_support_local_and_K_equivariant",
+        "exact_checks.q3_action_derived_support_local_and_K_equivariant",
+        "exact_checks.causal_chain_contractions_cover_all_54_rows",
+        "exact_checks.cyclic_K_Cartan_identity_through_arity_three",
+    ]
+    nonlinear_required_false = [
+        "flags.RAW_D_CARTAN_CERTIFIED",
+        "flags.ARITY_FOUR_CARTAN_CERTIFIED",
+        "flags.ALL_ORDERS_CARTAN_CERTIFIED",
+        "flags.QUANTUM_CLAIM",
+        "flags.THEOREM_FROZEN",
+    ]
+    for dotted in nonlinear_required_true:
+        if _lookup(nonlinear_signoff, dotted) is not True:
+            raise AssertionError(f"nonlinear signoff required true field failed: {dotted}")
+    for dotted in nonlinear_required_false:
+        if _lookup(nonlinear_signoff, dotted) is not False:
+            raise AssertionError(f"nonlinear signoff forbidden promotion detected: {dotted}")
+    if nonlinear_signoff.get("review_status") != "SIGNED_SCOPED_K_THEOREM":
+        raise AssertionError("nonlinear signoff verdict drifted")
+
+    quantum_signoff = _read(QUANTUM_SIGNOFF)
+    quantum_required_true = [
+        "theorem_flags.PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF",
+        "theorem_flags.PAPER09_CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_ACCEPTED",
+    ]
+    quantum_required_false = [
+        "theorem_flags.PAPER09_AFFINE_D_CARTAN_ACCEPTED",
+        "theorem_flags.PAPER09_HADAMARD_ACCEPTED",
+        "theorem_flags.PAPER09_QME_ACCEPTED",
+        "theorem_flags.PAPER09_ANOMALY_CANCELLATION_ACCEPTED",
+        "theorem_flags.PAPER09_QUANTUM_PROMOTION_ACCEPTED",
+    ]
+    for dotted in quantum_required_true:
+        if _lookup(quantum_signoff, dotted) is not True:
+            raise AssertionError(f"quantum signoff required true field failed: {dotted}")
+    for dotted in quantum_required_false:
+        if _lookup(quantum_signoff, dotted) is not False:
+            raise AssertionError(f"quantum signoff forbidden promotion detected: {dotted}")
+    if quantum_signoff.get("claim_status") != "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED":
+        raise AssertionError("quantum signoff verdict drifted")
     return {
         "schema": "pure-weyl-paper-09-berger-claim-table-v1",
         "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
@@ -257,10 +305,32 @@ def build() -> dict[str, object]:
                 "required_false": generator_required_false,
             }
         ],
+        "signoff_evidence": [
+            {
+                "team": "nonlinear_team",
+                "status": nonlinear_signoff["review_status"],
+                "certificate_path": str(NONLINEAR_SIGNOFF.relative_to(ROOT)),
+                "certificate_result_id": nonlinear_signoff["result_id"],
+                "certificate_sha256": _sha256(NONLINEAR_SIGNOFF),
+                "certificate_claim_boundary": nonlinear_signoff["claim_boundary"],
+                "required_true": nonlinear_required_true,
+                "required_false": nonlinear_required_false,
+            },
+            {
+                "team": "quantum_team",
+                "status": quantum_signoff["claim_status"],
+                "certificate_path": str(QUANTUM_SIGNOFF.relative_to(ROOT)),
+                "certificate_result_id": quantum_signoff["result_id"],
+                "certificate_sha256": _sha256(QUANTUM_SIGNOFF),
+                "certificate_claim_boundary": quantum_signoff["claim_boundary"],
+                "required_true": quantum_required_true,
+                "required_false": quantum_required_false,
+            },
+        ],
         "required_signoffs": {
             "classical_team": "DRAFTED",
-            "nonlinear_team": "PENDING_K_GENERATOR_INTERPRETATION_REVIEW",
-            "quantum_team": "PENDING_K_GENERATOR_CLAIM_BOUNDARY_REVIEW",
+            "nonlinear_team": "SIGNED_K_GENERATOR_INTERPRETATION",
+            "quantum_team": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED",
             "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
         },
         "forbidden_promotions": [
@@ -274,8 +344,8 @@ def build() -> dict[str, object]:
             "integrated nonlinear D quotient",
             "global complete relational observable",
         ],
-        "next_gate": "PAPER_09_K_GENERATOR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
-        "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates, an exact generator-conjugation audit and one strategic independent action-to-q3 sector cross-check. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. It does not construct affine D-Cartan data, freeze the theorem, or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, convergent all-orders, Hadamard, boundary, scattering, or unitarity claim.",
+        "next_gate": "PAPER_09_CLEAN_TREE_REPLAY_DEFERRED",
+        "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates, an exact generator-conjugation audit, one strategic independent action-to-q3 sector cross-check, and content-addressed nonlinear and quantum-team signoffs. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. The quantum signoff accepts only that classical input and blocks every quantum promotion. The clean-tree replay is deferred, so the theorem remains unfrozen. No affine D-Cartan, integrated nonlinear quotient, global complete observable, full second q3 derivation, convergent all-orders, Hadamard, quantum, boundary, scattering, or unitarity claim is promoted.",
     }
 
 
@@ -292,8 +362,10 @@ def verify(payload: dict[str, object]) -> None:
     for claim_id in expected:
         if claim_id not in main or claim_id not in supplement:
             raise AssertionError(f"claim id is absent from a paper source: {claim_id}")
-    if payload["required_signoffs"]["nonlinear_team"] != "PENDING_K_GENERATOR_INTERPRETATION_REVIEW":
-        raise AssertionError("nonlinear sign-off was promoted")
+    if payload["required_signoffs"]["nonlinear_team"] != "SIGNED_K_GENERATOR_INTERPRETATION":
+        raise AssertionError("nonlinear signoff is absent or overpromoted")
+    if payload["required_signoffs"]["quantum_team"] != "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED":
+        raise AssertionError("quantum claim-boundary signoff is absent or overpromoted")
     for entry in payload["claims"]:
         path = ROOT / entry["certificate_path"]
         if _sha256(path) != entry["certificate_sha256"]:
@@ -316,6 +388,25 @@ def verify(payload: dict[str, object]) -> None:
         for dotted in entry["required_false"]:
             if _lookup(certificate, dotted) is not False:
                 raise AssertionError(f"cross-check scope promotion detected: {dotted}")
+    expected_signoffs = [
+        ("nonlinear_team", "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF", "SIGNED_SCOPED_K_THEOREM"),
+        ("quantum_team", "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF", "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED"),
+    ]
+    if len(payload["signoff_evidence"]) != len(expected_signoffs):
+        raise AssertionError("signoff evidence is incomplete")
+    for entry, (team, result_id, status) in zip(payload["signoff_evidence"], expected_signoffs):
+        if (entry["team"], entry["certificate_result_id"], entry["status"]) != (team, result_id, status):
+            raise AssertionError("signoff identity or verdict drifted")
+        path = ROOT / entry["certificate_path"]
+        if _sha256(path) != entry["certificate_sha256"]:
+            raise AssertionError(f"signoff hash drifted: {team}")
+        certificate = _read(path)
+        for dotted in entry["required_true"]:
+            if _lookup(certificate, dotted) is not True:
+                raise AssertionError(f"signoff required true flag drifted: {team} {dotted}")
+        for dotted in entry["required_false"]:
+            if _lookup(certificate, dotted) is not False:
+                raise AssertionError(f"signoff scope promotion detected: {team} {dotted}")
 
 
 def _text(value: object) -> str:
@@ -337,11 +428,9 @@ def main() -> int:
     if args.guards:
         mutants = (
             ("freeze early", ("theorem_frozen",), True),
-            (
-                "forge nonlinear signoff",
-                ("required_signoffs", "nonlinear_team"),
-                "APPROVED",
-            ),
+            ("overpromote nonlinear signoff", ("required_signoffs", "nonlinear_team"), "APPROVED_UNSCOPED"),
+            ("overpromote quantum signoff", ("required_signoffs", "quantum_team"), "QUANTUM_THEOREM_APPROVED"),
+            ("drop signoff evidence", ("signoff_evidence",), payload["signoff_evidence"][:-1]),
             ("drop claim", ("claim_ids_complete",), payload["claim_ids_complete"][:-1]),
         )
         for name, path, value in mutants:

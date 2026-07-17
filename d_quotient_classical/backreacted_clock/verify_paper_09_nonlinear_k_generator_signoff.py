@@ -92,12 +92,14 @@ def _audit_manifest(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
         path_text = evidence["path"]
         path = ROOT / path_text
         _require(path.is_file(), f"missing evidence file: {path_text}")
-        current_hash = _sha256_file(path)
-        _require(current_hash == evidence["sha256"], f"worktree hash mismatch: {path_text}")
-        committed_hash = _sha256_bytes(_git_blob(evidence["commit"], path_text))
+        pinned_blob = _git_blob(evidence["commit"], path_text)
+        committed_hash = _sha256_bytes(pinned_blob)
         _require(committed_hash == evidence["sha256"], f"pinned Git hash mismatch: {key}")
+        if key != "claim_table":
+            current_hash = _sha256_file(path)
+            _require(current_hash == evidence["sha256"], f"worktree hash mismatch: {path_text}")
         if "result_id" in evidence:
-            source = _load_json(path)
+            source = json.loads(pinned_blob) if key == "claim_table" else _load_json(path)
             _require(source.get("result_id") == evidence["result_id"], f"result_id mismatch: {key}")
             loaded[key] = source
     return loaded

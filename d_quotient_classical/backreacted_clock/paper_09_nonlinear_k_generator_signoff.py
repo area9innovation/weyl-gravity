@@ -14,6 +14,16 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json"
 
+# The signoff reviewed the pre-signoff claim table.  Keep that input as a
+# content-addressed Git snapshot so the claim table can subsequently record
+# this signoff without creating a circular live-file dependency.
+REVIEWED_CLAIM_TABLE = {
+    "path": "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
+    "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
+    "commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+    "sha256": "70f9a2ab46139a31aaac84b5864f526e946be4e1146725434618bd15a909f414",
+}
+
 SOURCES: dict[str, tuple[str, str | None]] = {
     "claim_table": (
         "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
@@ -74,6 +84,9 @@ def _last_commit(path: str) -> str:
 def _manifest() -> dict[str, dict[str, str]]:
     manifest: dict[str, dict[str, str]] = {}
     for key, (path, result_id) in SOURCES.items():
+        if key == "claim_table":
+            manifest[key] = dict(REVIEWED_CLAIM_TABLE)
+            continue
         entry = {"path": path, "commit": _last_commit(path), "sha256": _sha256(ROOT / path)}
         if result_id is not None:
             entry["result_id"] = result_id

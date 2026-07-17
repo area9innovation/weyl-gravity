@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates, an exact generator-conjugation audit and one strategic independent action-to-q3 sector cross-check. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. It does not construct affine D-Cartan data, freeze the theorem, or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, convergent all-orders, Hadamard, boundary, scattering, or unitarity claim.",
+  "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates, an exact generator-conjugation audit, one strategic independent action-to-q3 sector cross-check, and content-addressed nonlinear and quantum-team signoffs. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. The quantum signoff accepts only that classical input and blocks every quantum promotion. The clean-tree replay is deferred, so the theorem remains unfrozen. No affine D-Cartan, integrated nonlinear quotient, global complete observable, full second q3 derivation, convergent all-orders, Hadamard, quantum, boundary, scattering, or unitarity claim is promoted.",
   "claim_ids_complete": [
     "P09-C1",
     "P09-C2",
@@ -269,7 +269,7 @@
       "supports_claim": "P09-C6--P09-C10"
     }
   ],
-  "next_gate": "PAPER_09_K_GENERATOR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
+  "next_gate": "PAPER_09_CLEAN_TREE_REPLAY_DEFERRED",
   "paper_sources": {
     "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "5ab17bdb53a8e2e23b9c2ecf20a541481a93952941e5c0935264b8e8d1e84194",
     "paper/09-relational-clocks-berger-d-cartan.tex": "fc9ef234ce6ccf1aea2426af88d3f9bb9497001761661d27cbccb95a673c9c01"
@@ -278,11 +278,55 @@
   "required_signoffs": {
     "classical_team": "DRAFTED",
     "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
-    "nonlinear_team": "PENDING_K_GENERATOR_INTERPRETATION_REVIEW",
-    "quantum_team": "PENDING_K_GENERATOR_CLAIM_BOUNDARY_REVIEW"
+    "nonlinear_team": "SIGNED_K_GENERATOR_INTERPRETATION",
+    "quantum_team": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED"
   },
   "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
   "schema": "pure-weyl-paper-09-berger-claim-table-v1",
   "setting": "one-parameter compact positive Berger S1 clock incidence family across the scalar coupling for fixed-coupling momentum rigidity and linear D nullity; exact rational q=9/40 representative for the 54-row classical K-Cartan result through arity three",
+  "signoff_evidence": [
+    {
+      "certificate_claim_boundary": "The nonlinear-team review signs the K_Berger=D-omega R interpretation of the existing 54-row action-derived q2/q3 and causal cyclic Cartan certificates through arity three. Raw D remains affine with a nonzero zeroth-arity component; no affine-D, arity-four, convergent all-orders, integrated quotient, Hadamard, quantum, or theorem-freeze claim is signed.",
+      "certificate_path": "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
+      "certificate_result_id": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+      "certificate_sha256": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8",
+      "required_false": [
+        "flags.RAW_D_CARTAN_CERTIFIED",
+        "flags.ARITY_FOUR_CARTAN_CERTIFIED",
+        "flags.ALL_ORDERS_CARTAN_CERTIFIED",
+        "flags.QUANTUM_CLAIM",
+        "flags.THEOREM_FROZEN"
+      ],
+      "required_true": [
+        "flags.PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+        "flags.K_BERGER_CARTAN_THROUGH_ARITY_THREE",
+        "exact_checks.q2_action_derived_support_local_and_K_equivariant",
+        "exact_checks.q3_action_derived_support_local_and_K_equivariant",
+        "exact_checks.causal_chain_contractions_cover_all_54_rows",
+        "exact_checks.cyclic_K_Cartan_identity_through_arity_three"
+      ],
+      "status": "SIGNED_SCOPED_K_THEOREM",
+      "team": "nonlinear_team"
+    },
+    {
+      "certificate_claim_boundary": "The quantum team accepts the classical, complete 54-row K_Berger=D-omega R causal cyclic Cartan theorem through arity three as correctly scoped input. It does not accept an affine raw-D Cartan theorem, Hadamard state, restored quantum master equation, anomaly cancellation, residual quantum transfer, or any quantum promotion.",
+      "certificate_path": "quantum-weyl/cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF.json",
+      "certificate_result_id": "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF",
+      "certificate_sha256": "b8de57523f816d12ef90886f4c9a1c14b9288a86dbc817742c559fca9a5eeda5",
+      "required_false": [
+        "theorem_flags.PAPER09_AFFINE_D_CARTAN_ACCEPTED",
+        "theorem_flags.PAPER09_HADAMARD_ACCEPTED",
+        "theorem_flags.PAPER09_QME_ACCEPTED",
+        "theorem_flags.PAPER09_ANOMALY_CANCELLATION_ACCEPTED",
+        "theorem_flags.PAPER09_QUANTUM_PROMOTION_ACCEPTED"
+      ],
+      "required_true": [
+        "theorem_flags.PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF",
+        "theorem_flags.PAPER09_CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_ACCEPTED"
+      ],
+      "status": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED",
+      "team": "quantum_team"
+    }
+  ],
   "theorem_frozen": false
 }

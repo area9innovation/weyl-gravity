@@ -15,6 +15,15 @@ CERT = ROOT / "quantum-weyl/cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_S
 SCHEMA = ROOT / "quantum-weyl/cartan/schema/paper09-quantum-claim-boundary-signoff-v1.schema.json"
 
 
+def _git_blob(commit: str, relpath: str) -> bytes:
+    prefix = subprocess.check_output(
+        ["git", "rev-parse", "--show-prefix"], cwd=ROOT, text=True
+    ).strip()
+    return subprocess.check_output(
+        ["git", "show", f"{commit}:{prefix}{relpath}"], cwd=ROOT
+    )
+
+
 def _at(obj: object, path: str) -> object:
     cur = obj
     for key in path.split("."):
@@ -30,24 +39,24 @@ def main() -> None:
     jsonschema.Draft202012Validator.check_schema(schema)
     jsonschema.validate(cert, schema, cls=jsonschema.Draft202012Validator)
 
-    for item in cert["source_manifest"].values():
+    for key, item in cert["source_manifest"].items():
         path = ROOT / item["path"]
-        if hashlib.sha256(path.read_bytes()).hexdigest() != item["sha256"]:
-            raise AssertionError(f"source hash mismatch: {item['path']}")
-        commit = subprocess.check_output(
-            ["git", "log", "-1", "--format=%H", "--", item["path"]],
-            cwd=ROOT,
-            text=True,
-        ).strip()
-        if commit != item["commit"]:
-            raise AssertionError(f"source commit mismatch: {item['path']}")
+        blob = _git_blob(item["commit"], item["path"])
+        if hashlib.sha256(blob).hexdigest() != item["sha256"]:
+            raise AssertionError(f"pinned source hash mismatch: {item['path']}")
+        if key != "claim_table" and hashlib.sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+            raise AssertionError(f"live source hash mismatch: {item['path']}")
 
     manifest = cert["source_manifest"]
-    loaded = {
-        key: json.loads((ROOT / item["path"]).read_text())
-        for key, item in manifest.items()
-        if item["path"].endswith(".json")
-    }
+    loaded = {}
+    for key, item in manifest.items():
+        if not item["path"].endswith(".json"):
+            continue
+        if key == "claim_table":
+            raw = _git_blob(item["commit"], item["path"])
+            loaded[key] = json.loads(raw)
+        else:
+            loaded[key] = json.loads((ROOT / item["path"]).read_text())
     generator = loaded["generator_audit"]
     arity3 = loaded["causal_k_cartan_arity_three"]
     qboundary = loaded["quantum_cartan_boundary"]
