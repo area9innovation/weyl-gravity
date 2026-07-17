@@ -34,6 +34,8 @@ python3 -m closed_universe_observers.generate_berger_84_row_normalized_profile_m
 python3 -m closed_universe_observers.verify_berger_84_row_normalized_profile_mixed_unary
 python3 -m closed_universe_observers.generate_berger_84_row_apparatus_q2_q3_k_gate --check
 python3 -m closed_universe_observers.verify_berger_84_row_apparatus_q2_q3_k_gate
+python3 -m closed_universe_observers.generate_berger_affine_k_observer_morphism --check
+python3 -m closed_universe_observers.verify_berger_affine_k_observer_morphism
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -105,6 +107,12 @@ closure, so no constant six-by-six internal rotation repairs the 84-row
 carrier.  Formal unary response rank remains two before quotient descent.
 The next gate is therefore the exact `q4` contraction or a recomputed
 co-rotating rod completion with at least 88 rows, followed by morphism replay.
+The affine-Ward successor closes the narrower and sufficient first option:
+it differentiates simultaneous `K` invariance to fix only
+`q4(K0,-,-,-)`, verifies the identity on an independent genuine fifth
+derivative, and certifies the rank-two coefficientwise family observer
+morphism through arity three.  Full `q4`, fixed-background linear-`K`
+descent, finite-parameter Green theory, and quantum claims remain open.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

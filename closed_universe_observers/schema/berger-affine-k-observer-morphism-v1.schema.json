@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-affine-k-observer-morphism-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "ward_contraction", "observer_morphism", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-affine-k-observer-morphism-v1"},
+    "result_id": {"const": "BERGER_AFFINE_K_OBSERVER_MORPHISM"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "COEFFICIENTWISE_AFFINE_K_OBSERVER_MORPHISM_THROUGH_ARITY_THREE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "ward_contraction": {
+      "type": "object", "additionalProperties": true,
+      "required": ["arity_three_formula", "uniqueness_scope", "fifth_derivative_specialization", "delete_contraction_mutation_defect_count"],
+      "properties": {
+        "arity_three_formula": {"type": "string"},
+        "uniqueness_scope": {"type": "string"},
+        "fifth_derivative_specialization": {"type": "object", "required": ["defect_count"], "properties": {"defect_count": {"const": 0}}},
+        "delete_contraction_mutation_defect_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "observer_morphism": {
+      "type": "object", "additionalProperties": true,
+      "required": ["domain", "map", "codomain", "K_compatibility", "exact_covariance_specialization", "formal_rank", "distinguishable_records", "scope"],
+      "properties": {"domain": {"type": "string"}, "map": {"type": "string"}, "codomain": {"type": "string"}, "K_compatibility": {"type": "string"}, "exact_covariance_specialization": {"type": "object", "required": ["K_covariance_defects", "rank"], "properties": {"K_covariance_defects": {"const": ["0", "0"]}, "rank": {"const": 2}}}, "formal_rank": {"const": 2}, "distinguishable_records": {"const": true}, "scope": {"type": "string"}}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["AFFINE_K_Q4_K0_CONTRACTION_CERTIFIED", "AFFINE_K_ARITY_THREE_WARD_IDENTITY_CERTIFIED", "COEFFICIENTWISE_OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "FORMAL_BACKREACTED_RECORD_RANK_TWO_CERTIFIED", "FULL_Q4_EXPORTED", "FIXED_BACKGROUND_LINEAR_K_DESCENT_CERTIFIED", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_CERTIFIED", "EMITTER_RECOIL_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "AFFINE_K_Q4_K0_CONTRACTION_CERTIFIED": {"const": true}, "AFFINE_K_ARITY_THREE_WARD_IDENTITY_CERTIFIED": {"const": true}, "COEFFICIENTWISE_OBSERVER_EVALUATION_MORPHISM_CERTIFIED": {"const": true}, "FORMAL_BACKREACTED_RECORD_RANK_TWO_CERTIFIED": {"const": true},
+        "FULL_Q4_EXPORTED": {"const": false}, "FIXED_BACKGROUND_LINEAR_K_DESCENT_CERTIFIED": {"const": false}, "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false}, "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_CERTIFIED": {"const": false}, "EMITTER_RECOIL_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"}, "claim_boundary": {"type": "string"}, "provenance": {"type": "object"}
+  }
+}

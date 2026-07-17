@@ -72,18 +72,18 @@ def main() -> int:
     if set(claim_index) != {"theory", "background", "state_object", "quotient", "observer", "boundaries", "lifecycle"}:
         raise AssertionError("seven-field claim index is incomplete")
     component_status = {item["requirement"]: item["status"] for item in ledger["classical_observer_map"]["components"]}
-    if component_status["two_distinguishable_clock_labelled_records"] != "CERTIFIED_CAUSAL_RECORDS_D_DESCENT_OPEN":
+    if component_status["two_distinguishable_clock_labelled_records"] != "CERTIFIED":
         raise AssertionError("physical rank-two detector-transfer gate drifted")
-    if ledger["classical_observer_map"]["map_certified"] is not False:
-        raise AssertionError("partial observer map was promoted")
+    if ledger["classical_observer_map"]["map_certified"] is not True:
+        raise AssertionError("certified coefficientwise observer map was demoted")
     matrix = {row["setting"]: row for row in ledger["comparison_matrix"]}
     if matrix["full quantum Berger theory"]["verdict"] != "QUANTUM_COMPARISON_NOT_YET_DEFINED":
         raise AssertionError("quantum comparison gate was promoted")
     status = ledger["common_fixture_status"]
-    if status["common_category_found"] or status["classical_observer_map_passed"] or status["quantum_comparison_legal"]:
+    if status["common_category_found"] or not status["classical_observer_map_passed"] or status["quantum_comparison_legal"]:
         raise AssertionError("common-fixture lifecycle is not fail closed")
-    if ledger["current_lifecycle"] != "EXTERNAL_FIXTURE_REPRODUCED":
-        raise AssertionError("lifecycle is inconsistent with the open classical map")
+    if ledger["current_lifecycle"] != "CLASSICAL_OBSERVER_MAP_CERTIFIED":
+        raise AssertionError("lifecycle is inconsistent with the certified classical map")
     print(
         "CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON ledger verification: PASS "
         f"(historical snapshot exact; {len(live_drift)} compatible live import(s) changed)"

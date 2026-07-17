@@ -19,16 +19,17 @@ The first exact result is asymmetric.
    map currently preserves product, pairing, and probability between those
    carriers.
 
-The lifecycle is therefore `EXTERNAL_FIXTURE_REPRODUCED`, not
-`CLASSICAL_OBSERVER_MAP_CERTIFIED`.  The overall verdict is
+The lifecycle is now `CLASSICAL_OBSERVER_MAP_CERTIFIED` on the explicitly
+coefficientwise affine-`K` family scope.  The overall verdict is still
 `QUANTUM_COMPARISON_NOT_YET_DEFINED`.  The detector densities now have an
 exact covariant clock-slice normalization, and the mixed `Q11` blocks,
 nilpotency/cyclicity, and bivariate formal Green coefficient are certified.
-The apparatus `q2,q3` action jets and cyclic completion are now exact.  Their
+The apparatus `q2,q3` action jets and cyclic completion are exact.  Their
 ordinary `K_Berger` test exposes a non-background-preserving rod/metric
-component, so the current classical recommendation is to construct
-`q4(K0,-,-,-)` or a time-translation-closed co-rotating rod replacement and
-then replay the observer morphism.  The
+component.  The Ward successor closes that precise defect without exporting
+full `q4`: the required contraction and the rank-two
+family morphism close through arity three.  The next classical task is C-G4
+import and product closure.  The
 resulting 84-row unary statement is coefficientwise through the mixed first
 jet; finite-parameter Green
 hyperbolicity is not.  This does not change
@@ -284,17 +285,18 @@ mixed `epsilon_R^2*kappa` profile and its four unary/adjoint blocks are now
 exact.  The apparatus cubic and quartic tensors are also exported as exact
 action-derivative families with cyclic cotangent partners.  Their unshifted
 arity-two/three identities and the first shifted arity-two identity close.
-Shifted arity three is input-blocked by `q4(K0,-,-,-)`, so the
-observer-morphism flags remain false.
+The Ward successor fixes the required `q4(K0,-,-,-)` contraction from
+simultaneous action invariance and closes shifted arity three without
+exporting full `q4`.
 Raw \(D\) is null on the declared tangent sector and the averaged observable is
 relationally \(D\)-invariant, but raw \(D\) changes the clock field.
 \(K_{\rm Berger}=D-\omega R\) is the background-preserving nonlinear generator;
-its Cartan identity is separately certified through arity three, while the
-observer map is not certified as a raw-\(D\)-descended or
-\(K_{\rm Berger}\)-morphism after adjoining rods and memory registers.  This
-is now an exact affine-action obstruction: the six rods have rank-eight
-time-translation closure, excluding repair by a constant internal six-by-six
-rotation.  The formal unary record matrix nevertheless retains rank two.
+its Cartan identity is separately certified through arity three.  The current
+apparatus action is affine because the six rods have rank-eight
+time-translation closure, but differentiated Ward invariance now certifies
+the simultaneous-family observer morphism and its rank-two record matrix.
+Raw-\(D\) descent and a linear `K` quotient at one fixed apparatus background
+are not claimed.
 
 The precise seven-field claim index, component verdicts, and gauge defects are
 machine-readable in the comparison ledger.
@@ -304,7 +306,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, exact stress compensation, normalized mixed unary first jet, and apparatus `q2,q3` action jets; quotient descent is blocked by affine-`K` arity three | exact positive-diagonal probe transfer and formal same-sided bivariate first-jet coefficients; finite-parameter Green hyperbolicity and spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism through arity three; product closure and fixed-background linear descent open | exact positive-diagonal probe transfer and formal same-sided bivariate first-jet coefficients; finite-parameter Green hyperbolicity and spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -320,22 +322,21 @@ identifier, SHA-256 hash, and declared claim boundary.
 The metric-dependent normalization of `chi_a`, mixed
 `epsilon_R^2*kappa` profile and adjoint, all-row mixed unary identities,
 formal Green coefficient, and apparatus `q2,q3` action jets with cyclic
-cotangent partners are no longer missing.  The primary missing object is now
-either the exact `q4(K0,-,-,-)` contraction or a recomputed co-rotating rod
-replacement.  The current six-rod span needs two additional real directions
-to close under time translation, implying at least an 88-row paired carrier.
+cotangent partners and the Ward-determined `q4(K0,-,-,-)` contraction are no
+longer missing.  The primary missing object is product closure with the C-G4
+signal object.  Full `q4`, higher brackets, and fixed-background linear descent
+remain separate.
 Further missing objects are a rank-two transfer from two
 spatially localized emitter worldtubes, emitter recoil and higher-order receiver backreaction,
-observer-map compatibility with raw \(D\), \(K_{\rm Berger}\), apparatus
-\(q_2,q_3\), and higher brackets, a quantum
+observer-map compatibility with raw \(D\) and higher brackets, a quantum
 BRST state space, a positive observer state with induced inner product, and a
 QME-restored Lorentzian observer theory.
 
 The first exact defect is consequently not “internal observers are
 impossible.”  It is: **the external and internal constructions currently live
-on different carriers, and the internal side still lacks an interacting,
-quotient-descended 84-row source-rod-memory morphism needed to type a common
-functor.**
+on different carriers; no typed functor yet preserves product, pairing, and
+probability between the coefficientwise classical record morphism and the
+external quantum code carrier.**
 
 ## Verification receipt
 
@@ -376,3 +377,8 @@ replays their scoped cyclic/arity identities, proves formal unary response
 rank two, and returns the exact affine-`K` arity-three `q4` obstruction.  Its
 receipt is
 `closed_universe_observers/receipts/APPARATUS_84_Q2_Q3_K_GATE_TIER_RECEIPT.json`.
+The Ward successor fixes only the required affine `q4(K0,-,-,-)` slice,
+verifies a genuine fifth-derivative identity and translated detector
+integrals, and promotes the rank-two coefficientwise family observer
+morphism through arity three.  Its receipt is
+`closed_universe_observers/receipts/AFFINE_K_OBSERVER_MORPHISM_TIER_RECEIPT.json`.

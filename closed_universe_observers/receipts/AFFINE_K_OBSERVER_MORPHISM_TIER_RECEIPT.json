@@ -1,0 +1,32 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "AFFINE_K_OBSERVER_MORPHISM_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Differentiated simultaneous K invariance fixes only q4(K0,-,-,-), closes affine arity three, and certifies the rank-two clock-labelled persistent-memory evaluation as a coefficientwise family observer morphism. Independent genuine fifth-derivative and translated-detector specializations pass. Full q4, fixed-background linear-K descent, finite-r Green hyperbolicity, localized emitters, recoil, and quantum claims remain open.",
+  "tier_0": [{"command": "py_compile, json.tool, git diff --check, source/dependency hash replay", "elapsed_seconds": "less than 1 plus final checks", "status": "PASS", "scope": "new producer, verifier, tests, schemas, certificate, ledger, reports, briefs, and roadmap"}],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_affine_k_observer_morphism --check", "elapsed_seconds": "under 2", "status": "PASS", "scope": "Ward contraction, q4-deletion mutation, detector covariance, rank, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_affine_k_observer_morphism", "elapsed_seconds": "under 2", "status": "PASS", "scope": "independent fifth derivative, independent detector integral, hashes, schema, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_affine_k_observer_morphism.py", "elapsed_seconds": "1.58", "status": "PASS", "scope": "all 3 Ward, record, rank, and scope tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-affine-k-observer-morphism-v1.schema.json -d closed_universe_observers/certificates/BERGER_AFFINE_K_OBSERVER_MORPHISM.json", "elapsed_seconds": "included in 15.43-second focused chain", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "classical-map lifecycle promotion, historical imports, current bridge hashes, and quantum fail-closed boundary"}
+  ],
+  "tier_2": [{"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "203.13", "status": "PASS", "scope": "all 73 closed-universe observer tests"}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "The lifecycle promotion is coefficientwise and family-level; it does not freeze or release a finite-parameter/all-orders theorem, alter shared core algebra, or promote any quantum lifecycle."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_AFFINE_K_OBSERVER_MORPHISM.json", "sha256": "b3dd4ec429fffab7a6a49d5495ce2ac1e8496cca16d83fbe9c8d41e0a75c07cc"},
+    {"path": "closed_universe_observers/schema/berger-affine-k-observer-morphism-v1.schema.json", "sha256": "6c7c526638fed12723e9981e514e3e5e9645c85a58a7c0b05874254a2d40f6ed"},
+    {"path": "closed_universe_observers/generate_berger_affine_k_observer_morphism.py", "sha256": "96d472e37e74d591ae62140404e7caa08c30ce35f8617bc3335eff209a4e40ae"},
+    {"path": "closed_universe_observers/verify_berger_affine_k_observer_morphism.py", "sha256": "82fd726168a13980ddff97ebb2f5b7b3b1619e735c2c6d1ab6152e8737b2d31a"},
+    {"path": "closed_universe_observers/tests/test_berger_affine_k_observer_morphism.py", "sha256": "f9d29e12b8c34a90647cda3510d58698278e60ae113085b016d99be3e31d39a5"},
+    {"path": "closed_universe_observers/reports/berger-affine-k-observer-morphism.md", "sha256": "6df7db2805b797e11d4600947f9efcb78d77f0c71af15b5e0c3da7a9c29e4cc6"},
+    {"path": "closed_universe_observers/verify_comparison_ledger.py", "sha256": "fa458c08bd505791d79abb6ed542fc33b9b7757abef89f6c66f287ced37dd38f"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "c0d5e28df0f7c868a6fc6043254d9c85c68ef8ced9d74c4db1825a31dd73d911"},
+    {"path": "closed_universe_observers/README.md", "sha256": "50b35d368c9724d60103f087179234b1ae57e0626cc027642580537e0125827e"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "c513e2782255809d967f9d6284b6d49596b7708f30a5260b2680840cbc8869f9"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "c86b3abae42d5faf0e9c0da180ec6c88c13c2251ad29352fb928fcadba737a8f"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "1b311b861cf875a5c13e49a055277d885ef8ad4478bd31b7e18278adc7d698e8"}
+  ],
+  "claim_flags": {"AFFINE_K_Q4_K0_CONTRACTION_CERTIFIED": true, "AFFINE_K_ARITY_THREE_WARD_IDENTITY_CERTIFIED": true, "COEFFICIENTWISE_OBSERVER_EVALUATION_MORPHISM_CERTIFIED": true, "FORMAL_BACKREACTED_RECORD_RANK_TWO_CERTIFIED": true, "FULL_Q4_EXPORTED": false, "FIXED_BACKGROUND_LINEAR_K_DESCENT_CERTIFIED": false, "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false, "QUANTUM_CLAIM": false}
+}

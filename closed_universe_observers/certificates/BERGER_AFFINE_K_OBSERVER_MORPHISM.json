@@ -1,0 +1,142 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL result differentiates the manifest simultaneous K-invariance of the imported base action and the covariant rod, memory, normalized readout, and scalar-BV apparatus action. It thereby fixes only the required affine slice q4(K0,-,-,-)=-[K1,q3], closes the arity-three Ward identity on the formal apparatus solution family, and proves covariance of the clock-labelled persistent-memory evaluation map under simultaneous K action on source and apparatus. Together with the determinant-unit response this certifies a rank-two classical observer morphism through arity three on that coefficientwise family. It does not export full q4, certify a linear K action at one fixed apparatus background, prove finite-r Green hyperbolicity, localize emitter worldtubes, include recoil, construct a quantum state, or make a quantum claim.",
+  "claim_status": "COEFFICIENTWISE_AFFINE_K_OBSERVER_MORPHISM_THROUGH_ARITY_THREE",
+  "dependency_refs": {
+    "apparatus_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE.json",
+      "result_id": "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
+      "sha256": "d94854ea0980d22b8a7e8b44a52dd50afa7afd8a0916aff52d3700d1eeb2d0b9"
+    },
+    "base_k": {
+      "path": "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
+      "result_id": "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE",
+      "sha256": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e"
+    },
+    "transfer": {
+      "path": "closed_universe_observers/certificates/BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER.json",
+      "result_id": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+      "sha256": "09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "AFFINE_K_ARITY_THREE_WARD_IDENTITY_CERTIFIED": true,
+    "AFFINE_K_Q4_K0_CONTRACTION_CERTIFIED": true,
+    "COEFFICIENTWISE_OBSERVER_EVALUATION_MORPHISM_CERTIFIED": true,
+    "EMITTER_RECOIL_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FIXED_BACKGROUND_LINEAR_K_DESCENT_CERTIFIED": false,
+    "FORMAL_BACKREACTED_RECORD_RANK_TWO_CERTIFIED": true,
+    "FULL_Q4_EXPORTED": false,
+    "QUANTUM_CLAIM": false,
+    "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_CERTIFIED": false
+  },
+  "next_gate": "IMPORT_C_G4_AS_SIGNAL_OBJECT_AND_TEST_PRODUCT_CLOSURE_OF_THE_TWO_RECORD_CLASSICAL_ALGEBRA_THEN_SEPARATELY_LOCALIZE_EMITTERS",
+  "observer_morphism": {
+    "K_compatibility": "change of variables in the covariant detector action plus the Ward contraction intertwines simultaneous source/apparatus K action through arity three",
+    "codomain": "two persistent scalar memory records with trivial K action after the compact detector support",
+    "distinguishable_records": true,
+    "domain": "simultaneous K-orbits of external q-closed conserved sources and formal apparatus solution families",
+    "exact_covariance_specialization": {
+      "K_covariance_defects": [
+        "0",
+        "0"
+      ],
+      "clone_mutation": false,
+      "determinant": "288*pi**2",
+      "diagonal_records": [
+        "12*pi",
+        "24*pi"
+      ],
+      "integration_cycle": "t in [0,2*pi] with simultaneous periodic translation",
+      "rank": 2
+    },
+    "formal_determinant_constant": "C_00*C_11",
+    "formal_rank": 2,
+    "interaction_compatibility": "memory transport/readout are components of the same cyclic BV action that defines q1,q2,q3 and the required q4 contraction",
+    "map": "J -> d G_ret J -> (lim_future m_0,lim_future m_1) at relational clock labels tau_0,tau_1",
+    "maxwell_gauge_compatibility": "W_a depends on F=dA, hence annihilates A -> A+d lambda",
+    "response_matrix": [
+      [
+        "C_00",
+        "0"
+      ],
+      [
+        "0",
+        "C_11"
+      ]
+    ],
+    "scope": "coefficientwise formal family morphism, not a fixed-background linear-K or finite-parameter theorem"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_affine_k_observer_morphism.py",
+        "sha256": "96d472e37e74d591ae62140404e7caa08c30ce35f8617bc3335eff209a4e40ae"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_affine_k_observer_morphism.py",
+        "sha256": "82fd726168a13980ddff97ebb2f5b7b3b1619e735c2c6d1ab6152e8737b2d31a"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_affine_k_observer_morphism.py",
+        "sha256": "f9d29e12b8c34a90647cda3510d58698278e60ae113085b016d99be3e31d39a5"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-affine-k-observer-morphism-v1.schema.json",
+        "sha256": "6c7c526638fed12723e9981e514e3e5e9645c85a58a7c0b05874254a2d40f6ed"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-affine-k-observer-morphism.md",
+        "sha256": "6df7db2805b797e11d4600947f9efcb78d77f0c71af15b5e0c3da7a9c29e4cc6"
+      }
+    ]
+  },
+  "result_id": "BERGER_AFFINE_K_OBSERVER_MORPHISM",
+  "schema": "closed-universe-berger-affine-k-observer-morphism-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "ward_contraction": {
+    "action_invariance": "L_K S_84=0 under simultaneous action on base fields, rods, memories, multipliers and cyclic partners",
+    "arity_three_formula": "q4(K0,x,y,z)=K1 q3(x,y,z)-q3(K1x,y,z)-q3(x,K1y,z)-q3(x,y,K1z)",
+    "delete_contraction_mutation_defect_count": 2,
+    "families": {
+      "base_64": "differentiated Diff x clock-internal invariance of the covariant gravity-clock-Maxwell master action",
+      "memory_transport": "differentiated invariance of integral p V_gTheta(m)",
+      "normalized_readout": "differentiated invariance of -kappa integral p W_a[A] with chi_a a relational clock-slice scalar density",
+      "rods": "differentiated invariance of -r/2 integral A_g(dR,dR)",
+      "scalar_BV": "differentiated semidirect BV covariance"
+    },
+    "fifth_derivative_specialization": {
+      "background": [
+        1,
+        2
+      ],
+      "defect": [
+        "0",
+        "0"
+      ],
+      "defect_count": 0,
+      "linear_generator": [
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "q4_K0": [
+        "-360",
+        "-120"
+      ],
+      "specialization_action": "S=(u^2+v^2)^3/6"
+    },
+    "uniqueness_scope": "the contraction on K0 is fixed; q4 on a complement of K0 is not fixed or exported"
+  }
+}

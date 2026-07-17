@@ -121,19 +121,23 @@ repair by a constant internal rotation of the existing six rods: their rank-6
 span has rank-8 time-translation closure.  Thus the first observer morphism is
 input-blocked on `q4`, not on signal distinguishability.
 
-### Immediate priority after the apparatus q2/q3 and K gate
+`BERGER_AFFINE_K_OBSERVER_MORPHISM` closes precisely the required slice
+without overclaiming full `q4`.  Differentiated simultaneous `K` invariance
+fixes `q4(K0,-,-,-)=-[K1,q3]`; an independent fifth-derivative audit and an
+exact translated-detector integral verify the Ward identity and record
+covariance.  The two persistent memories therefore define a rank-two
+coefficientwise affine-`K` family morphism through arity three.  This is not a
+linear quotient at one fixed apparatus background or a finite-parameter
+theorem.
 
-1. Choose and certify one exact symmetry repair: either import/construct the
-   base and apparatus contraction `q4(K0,-,-,-)`, or replace the rods by a
-   time-translation-closed co-rotating system.  The latter needs at least two
-   additional real rod directions and an 88-row pairing-preserving carrier,
-   followed by a fresh stress, `Phi2`, unary, and interaction calculation.
-2. Replay the first observer morphism only after that symmetry input closes.
-   The rank-two formal unary response is already certified on the maximal
-   Maxwell-gauge/cyclic subcarrier; do not call it quotient descent.
-3. Import the classical team's C-G4 relational redshift observable as the
-   clock/signal object.  The observer team owns its detector realization and
-   record map, not a competing redshift definition.
+### Immediate priority after the affine-K observer morphism
+
+1. Import C-G4 as the signal object and test product closure of the two-record
+   coefficientwise classical observer algebra.  The observer team owns its
+   detector realization and record map, not a competing redshift definition.
+2. Keep full `q4`, fixed-background linear-`K` descent, finite-parameter
+   Green hyperbolicity, and the optional 88-row co-rotating replacement as
+   distinct later gates.
 
 The repaired bivariate first-jet coefficient and formal causal correction are
 sufficient input for scoped first-jet tests, but they must not be advertised
