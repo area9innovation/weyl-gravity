@@ -1,0 +1,124 @@
+{
+  "schema": "einstein-maxwell-weyl-cross-ell-k0-resonance-census-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_cross_ell_k0_resonance_census.schema.json",
+  "schema_sha256": "edd8455b8392c6c09396eb3eea150e90322c88d2f075b745384aaa572c229af7",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CROSS_ELL_K0_RESONANCE_CENSUS",
+  "result_state": "EXACT_NO_RESONANCE_THROUGH_ELL_96",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G2_EXACT_FINITE_CROSS_ELL_WINDOW",
+  "domain": "all distinct generic input ells 2<=ell_1<ell_2<=96 at k=0, all three primary branches on each input, both temporal sum/difference channels, and every angularly possible target branch in either parity",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_cross_ell_k0_resonance_census.py",
+    "generator_sha256": "49700de858153511c5afc552c8462e6dd9839462986d4a623273ed4ba8351089"
+  },
+  "census": {
+    "ell_window": {
+      "minimum": 2,
+      "maximum": 96,
+      "distinct_inputs_only": true
+    },
+    "candidate_reduction": {
+      "uniform_branch_bound": "ell-1/2 < omega_branch(ell) < ell+3/2 for ell>=2",
+      "target_bound": "L-1 <= omega_target(L) < L+2 for L>=1",
+      "sum_candidates": "L=ell_1+ell_2-2, ell_1+ell_2-1, ell_1+ell_2",
+      "difference_candidates": "L=ell_2-ell_1, ell_2-ell_1+1, ell_2-ell_1+2",
+      "angular_statement": "these are a superset of every triangle-allowed output across both input parity choices"
+    },
+    "exact_method": "canonical Q-linear expansion in square roots of distinct squarefree positive integers of (C-A-B)^2-4AB; those radicals are Q-linearly independent",
+    "frequency_collision_checks": 40185,
+    "exact_frequency_collisions": [],
+    "squared_resonance_checks": 723330,
+    "exact_squared_resonance_candidates": [],
+    "audit_sha256": "089eaa3656aa3796785491d1874253c3d68a826885514f89cacb53a107e0619b",
+    "nearest_nonresonant_channel": {
+      "label_order": [
+        "ell_first",
+        "ell_second",
+        "branch_first",
+        "branch_second",
+        "temporal_channel",
+        "output_ell",
+        "target_branch"
+      ],
+      "labels": [
+        5,
+        34,
+        "extra",
+        "Einstein_plus",
+        "difference",
+        30,
+        "Einstein_minus"
+      ],
+      "numerical_frequency_defect": "4.5469744254234e-05",
+      "exact_squared_resonance_polynomial": [
+        {
+          "radicand": 1,
+          "coefficient": "-465056/9"
+        },
+        {
+          "radicand": 465,
+          "coefficient": "3472/3"
+        },
+        {
+          "radicand": 595,
+          "coefficient": "2768/3"
+        },
+        {
+          "radicand": 11067,
+          "coefficient": "40"
+        }
+      ],
+      "exact_nonzero": true
+    }
+  },
+  "classification": {
+    "no_distinct_ell_frequency_collision_in_window": true,
+    "no_cross_ell_nonzero_output_resonance_in_window": true,
+    "all_input_and_target_primary_branches_covered": true,
+    "both_input_parity_choices_covered_by_angular_superset": true,
+    "unbounded_cross_ell_theorem_proved": false,
+    "cross_ell_quadratic_source_solved": false
+  },
+  "interpretation": "No cross-ell superposition with input ell at most 96 fails second-order inversion through a kinematic target-shell resonance. The closest channel is an exact nonzero near-miss. Any obstruction in this window must come from an adjoint-cokernel projection or an angular/source identity, not from the nonzero-frequency determinant.",
+  "next_gate": "turn the six boundary-offset channel families into an unbounded Diophantine/nonresonance proof, then compute the mixed cross-ell zero/exceptional source projections on the common stabilizer-moment-map cone",
+  "claim_boundary": "This is an exact finite-window resonance census, not an unbounded cross-ell theorem and not a second-order extension theorem. Cross-ell source coefficients, opposite momenta and their phases, exceptional/global inputs, all-orders integration, causal propagation, and quantum claims remain open.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.06,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_resonance_census.json",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 51.0,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_cross_ell_k0_resonance_census --verify bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_resonance_census.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_cross_ell_k0_resonance_census.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_cross_ell_k0_resonance_census"
+      ],
+      "scope": "full 763,515-case exact producer replay, separately implemented full exact verifier, and four fast certificate-contract tests"
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "the census introduces no shared operator or upstream mathematical input and promotes only a fail-closed G2 finite window"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the unbounded cross-ell theorem and the mixed quadratic source remain explicitly open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_cross_ell_k0_resonance_census --verify bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_resonance_census.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_cross_ell_k0_resonance_census.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_cross_ell_k0_resonance_census"
+  ]
+}

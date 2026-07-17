@@ -1747,6 +1747,18 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    opposite-momentum standing waves.  A mixed-frequency resonance or new
    adjoint component is the expected mechanism cutting the full Taub-zero
    density cone beyond the certified blockwise theorem.
+
+   The first exact cross-`ell` census is now complete.  For every distinct
+   `2<=ell_1<ell_2<=96`, all three input primaries, all three target
+   primaries, both sum/difference channels, and an angular superset covering
+   both parity choices have no exact frequency collision or target-shell
+   resonance.  The exact radical audit contains `40,185` collision checks
+   and `723,330` squared-resonance checks.  The closest channel is the
+   nonzero `(ell_1,ell_2;L)=(5,34;30)`
+   `extra x Einstein-plus -> Einstein-minus` difference near-miss.  This is
+   a `G2` finite-window result, not the unbounded theorem.  The next step is
+   the uniform six-offset Diophantine proof followed by the cross-`ell`
+   source/cokernel calculation.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be
