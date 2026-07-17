@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Einstein--Maxwell--Weyl mixed moment-map zero-locus certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "provenance",
+    "domain",
+    "same_nonzero_k_travelling_block",
+    "minimal_k0_balanced_fixture",
+    "quadratic_preflight",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-mixed-moment-map-zero-locus-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_MIXED_MOMENT_MAP_ZERO_LOCUS"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "same_nonzero_k_travelling_block": {
+      "type": "object",
+      "required": ["verdict", "scope"]
+    },
+    "minimal_k0_balanced_fixture": {
+      "type": "object",
+      "required": ["common_moment_maps", "nonzero_real_linear_tangent"]
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "same_nonzero_k_travelling_common_H_Px_zero_locus_trivial",
+        "minimal_nonzero_all_five_moment_map_zero_fixture_constructed",
+        "ell0_quadratic_source_and_correction_computed",
+        "complete_second_order_extension_constructed",
+        "causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

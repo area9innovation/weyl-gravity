@@ -107,6 +107,26 @@ definite on the complete real pure-extra generic sector.  No nonzero tangent
 in that sector extends to second order.  This includes finite and rapidly
 decreasing finite-energy harmonic superpositions.
 
+The obstruction can nevertheless be cancelled by an Einstein component.  A
+single fixed nonzero-momentum travelling block cannot satisfy both the energy
+and momentum Taub constraints nontrivially, because
+$\omega_-<\omega_e<\omega_+$.  At zero momentum, however, the axial
+$\ell=2,m=0$ Einstein-minus mode and the second axial extra mode have a
+nonzero common-zero combination with
+
+$$
+|a_e|^2=\frac{27}{52}(5\sqrt3-6)|a_-|^2.
+$$
+
+All five background-stabilizer moment maps vanish on this real tangent.  Its
+complete quadratic source has only polar $\ell=0,2,4$ outputs.  Direct tensor
+expansion shows that the homogeneous zero-frequency sources cancel exactly;
+the remaining homogeneous channels have explicit corrections, while every
+$\ell=2,4$ channel is removed by an exact off-shell polar inverse.  Thus this
+declared mixed tangent has a complete second-order correction.  This is a
+single formal second-order extension, not an all-orders family or general
+closure theorem.
+
 ## 5. Consequence in their language
 
 The result promotes “hold the charge fixed” from an informal side condition
@@ -120,11 +140,12 @@ families without contradiction.
 
 This is `LOCAL-ALGEBRAIC/REDUCED-MODE`, not a causal nonlinear evolution
 theorem. The pure-extra generic block is now complete, but mixed
-Einstein--extra cancellations, exceptional/Jordan modes, the full common
-$H,P_x,J_i$ zero locus, charge-relaxed corrections, and any justified
-stabilizer quotient remain open. No asymptotic, scattering, or quantum claim
-follows. The result does not say that the entire Einstein sector fails
-nonlinearly.
+Einstein--extra cancellation is classified only for one extended fixture and
+one same-momentum no-go.  The full common $H,P_x,J_i$ zero locus,
+exceptional/Jordan modes, charge-relaxed corrections, all-orders
+integrability, and any justified stabilizer quotient remain open. No
+asymptotic, scattering, or quantum claim follows. The result does not say that
+the entire Einstein sector fails nonlinearly.
 
 ## 7. One useful question for adjacent experts
 
@@ -141,11 +162,13 @@ source paper: arXiv:1609.07703v1 and its cited classical framework
 project certificates: COMPACT_HARMONIC_DOMAIN_AND_TAUB_DESCENT;
   EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_G1;
   EINSTEIN_MAXWELL_WEYL_HERMITIAN_AXIAL_POLAR_ELL2_TAUB;
-  EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE
+  EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE;
+  EINSTEIN_MAXWELL_WEYL_MIXED_MOMENT_MAP_ZERO_LOCUS;
+  EINSTEIN_MAXWELL_WEYL_BALANCED_ELL0_SECOND_ORDER
 verification: section 3 plus certificate-local commands
 dependency tags: LOCAL-ALGEBRAIC; REDUCED-MODE
 generality level: G2_GENERIC_AXIAL_POLAR_ALL_PHYSICAL_ELL_K_MOMENT_MAP_TAUB
 lifecycle state: DRAFT_ALLOWED
-claim flag: GENERIC_PURE_EXTRA_FIXED_BUNDLE_TAUB_NO_GO_CERTIFIED
-open fields: mixed q/p zero locus; exceptional/global blocks; charge-relaxed extensions
+claim flag: PURE_EXTRA_NO_GO_AND_ONE_BALANCED_MIXED_SECOND_ORDER_EXTENSION_CERTIFIED
+open fields: full mixed zero locus; all-orders integrability; exceptional/global blocks
 ```

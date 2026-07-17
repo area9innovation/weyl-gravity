@@ -1,0 +1,304 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE result classifies one-block H/P_x charge balance, constructs one exact all-stabilizer-zero fixture, and excludes generic polar shell resonance in its ell=2,4 outputs. It does not yet decide the homogeneous ell=0 source, full second-order extension, distinct-momentum standing waves, a stabilizer quotient, causal propagation, or quantum theory.",
+  "classification": {
+    "absolute_stabilizer_quotient_certified": false,
+    "causal_or_quantum_claim": false,
+    "complete_second_order_extension_constructed": false,
+    "ell0_quadratic_source_and_correction_computed": false,
+    "generic_ell2_ell4_output_shell_resonances_excluded": true,
+    "minimal_nonzero_all_five_moment_map_zero_fixture_constructed": true,
+    "nonzero_k_cancellations_across_distinct_momenta_classified": false,
+    "remaining_adjoint_obstruction_exhibited": false,
+    "same_nonzero_k_travelling_common_H_Px_zero_locus_trivial": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic locally gauge-reduced axial/polar q/p-primary stationary solution space on the fixed compact magnetic bundle, with the five Plebanski-Hacyan stabilizers retained",
+  "generality_level": "G2_GENERIC_SAME_K_CONE_PLUS_G1_ELL2_K0_BALANCED_FIXTURE",
+  "interpretation": "The first mixed common-zero tangent exists, but only as charge balance between diagonal Einstein-minus and extra-primary contributions; it is not q-p interference. A single nonzero-k travelling block cannot balance both energy and momentum because the three shell frequencies are strictly ordered. The minimal k=0,m=0 fixture clears all five stabilizer/Taub charges. Its ell=2 and ell=4 quadratic outputs are automatically removable off shell; the only remaining second-order gate is the exceptional homogeneous ell=0 channel.",
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_k0_balanced_fixture": {
+    "Einstein_minus": {
+      "constant_lapse_Taub_coefficient": "48*(-6 + 5*sqrt(3))/5",
+      "frequency_squared": "6 - 2*sqrt(3)",
+      "raw_cosine_amplitude": "1",
+      "representative_Ht_Hx_Qt_Qx": [
+        "0",
+        "-2",
+        "0",
+        "2*sqrt(3)"
+      ]
+    },
+    "common_moment_maps": {
+      "H": "0",
+      "J1": "0 from the separate Jplus and Jminus expectations",
+      "J2": "0 from the separate Jplus and Jminus expectations",
+      "J3": "0",
+      "P_x": "0 because k=0",
+      "all_five_zero": true
+    },
+    "extra_e2": {
+      "constant_lapse_Taub_coefficient_per_unit_amplitude": "-832/45",
+      "frequency_squared": "16/3",
+      "positive_amplitude": "3*sqrt(39)*sqrt(-6 + 5*sqrt(3))/26",
+      "raw_cosine_amplitude_squared": "27*(-6 + 5*sqrt(3))/52",
+      "representative_Ht_Hx_Qt_Qx": [
+        "0",
+        "-2/3",
+        "0",
+        "6"
+      ]
+    },
+    "important_distinction": "q/p Lee-Wald mixed entries vanish; this is additive cancellation of diagonal charges, not a q-p interference term",
+    "labels": "axial ell=2,m=0,k=0; Einstein-minus q-primary plus the second axial extra p-primary representative",
+    "nonzero_real_linear_tangent": true
+  },
+  "next_gate": "compute the complete ell=0 quadratic source of the declared balanced fixture and solve the homogeneous fixed-bundle Weyl-Maxwell equation or exhibit an exceptional adjoint witness",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_mixed_moment_map_zero_locus.py",
+    "generator_sha256": "8aea6e035cd8a79618a8f21323807f3cbde2c88ed96bb641ee1ea04de92a9b9b",
+    "inputs": {
+      "Einstein_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json",
+        "sha256": "9e91cd4b9b501fdfe0fe4f09b52c9b059e16380e49564875d83487ed77f57d02"
+      },
+      "axial_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "extra_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_ell2_taub.json",
+        "sha256": "6a326de926f0d59d5300794665d0058af43841ee261dff92c6a2b9a68c3edf12"
+      },
+      "moment_map_bridge": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "quadratic_preflight": {
+    "axisymmetric_angular_outputs": [
+      0,
+      2,
+      4
+    ],
+    "ell_0_exceptional_conclusion": "not decided by the generic determinant; the homogeneous source/operator and fixed-charge rows must be computed directly",
+    "frequency_channels": {
+      "Einstein_self_sum_2omega_minus": {
+        "frequency_squared": "-8*(-3 + sqrt(3))",
+        "generic_outputs": {
+          "2": {
+            "p": {
+              "constant_coefficient": "1408",
+              "minimal_polynomial": "9*z**2 - 336*z + 1408",
+              "nonzero": true,
+              "value": "-8*(-7 + 3*sqrt(3))/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "5184",
+              "minimal_polynomial": "z**2 - 1008*z + 5184",
+              "nonzero": true,
+              "value": "-72*(-7 + 4*sqrt(3))"
+            }
+          },
+          "4": {
+            "p": {
+              "constant_coefficient": "-1532",
+              "minimal_polynomial": "9*z**2 - 84*z - 1532",
+              "nonzero": true,
+              "value": "-2*(-7 + 12*sqrt(3))/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "15936",
+              "minimal_polynomial": "z**2 - 336*z + 15936",
+              "nonzero": true,
+              "value": "-8*(-21 + 8*sqrt(3))"
+            }
+          }
+        }
+      },
+      "cross_difference_omega_extra_minus_omega_minus": {
+        "frequency_squared": "(-4*sqrt(3) + 3*sqrt(2)*sqrt(3 - sqrt(3)))**2/9",
+        "generic_outputs": {
+          "2": {
+            "p": {
+              "constant_coefficient": "16064",
+              "minimal_polynomial": "3*z**4 - 72*z**3 - 192*z**2 + 4416*z + 16064",
+              "nonzero": true,
+              "value": "-2*(-9 + 3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "77603012608",
+              "minimal_polynomial": "6561*z**4 - 4105728*z**3 + 387182592*z**2 - 9989259264*z + 77603012608",
+              "nonzero": true,
+              "value": "32*(-18*sqrt(3) - 8*sqrt(6)*sqrt(3 - sqrt(3)) + 9*sqrt(2)*sqrt(3 - sqrt(3)) + 44)/9"
+            }
+          },
+          "4": {
+            "p": {
+              "constant_coefficient": "-42064",
+              "minimal_polynomial": "3*z**4 + 96*z**3 + 312*z**2 - 10368*z - 42064",
+              "nonzero": true,
+              "value": "-2*(3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)) + 12)/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "-530744459264",
+              "minimal_polynomial": "6561*z**4 - 4595616*z**3 + 852249600*z**2 - 14822240256*z - 530744459264",
+              "nonzero": true,
+              "value": "8*(-9*sqrt(3) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 52*sqrt(6)*sqrt(3 - sqrt(3)) + 197)/9"
+            }
+          }
+        }
+      },
+      "cross_sum_omega_extra_plus_omega_minus": {
+        "frequency_squared": "(3*sqrt(2)*sqrt(3 - sqrt(3)) + 4*sqrt(3))**2/9",
+        "generic_outputs": {
+          "2": {
+            "p": {
+              "constant_coefficient": "16064",
+              "minimal_polynomial": "3*z**4 - 72*z**3 - 192*z**2 + 4416*z + 16064",
+              "nonzero": true,
+              "value": "2*(-3*sqrt(3) + 9 + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "77603012608",
+              "minimal_polynomial": "6561*z**4 - 4105728*z**3 + 387182592*z**2 - 9989259264*z + 77603012608",
+              "nonzero": true,
+              "value": "-32*(-44 - 8*sqrt(6)*sqrt(3 - sqrt(3)) + 9*sqrt(2)*sqrt(3 - sqrt(3)) + 18*sqrt(3))/9"
+            }
+          },
+          "4": {
+            "p": {
+              "constant_coefficient": "-42064",
+              "minimal_polynomial": "3*z**4 + 96*z**3 + 312*z**2 - 10368*z - 42064",
+              "nonzero": true,
+              "value": "2*(-12 - 3*sqrt(3) + 4*sqrt(6)*sqrt(3 - sqrt(3)))/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "-530744459264",
+              "minimal_polynomial": "6561*z**4 - 4595616*z**3 + 852249600*z**2 - 14822240256*z - 530744459264",
+              "nonzero": true,
+              "value": "-8*(-197 + 9*sqrt(3) + 36*sqrt(2)*sqrt(3 - sqrt(3)) + 52*sqrt(6)*sqrt(3 - sqrt(3)))/9"
+            }
+          }
+        }
+      },
+      "extra_self_sum_2omega_extra": {
+        "frequency_squared": "64/3",
+        "generic_outputs": {
+          "2": {
+            "p": {
+              "constant_coefficient": "-16",
+              "minimal_polynomial": "z - 16",
+              "nonzero": true,
+              "value": "16"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "-2008",
+              "minimal_polynomial": "9*z - 2008",
+              "nonzero": true,
+              "value": "2008/9"
+            }
+          },
+          "4": {
+            "p": {
+              "constant_coefficient": "-2",
+              "minimal_polynomial": "z - 2",
+              "nonzero": true,
+              "value": "2"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "344",
+              "minimal_polynomial": "9*z + 344",
+              "nonzero": true,
+              "value": "-344/9"
+            }
+          }
+        }
+      },
+      "zero": {
+        "frequency_squared": "0",
+        "generic_outputs": {
+          "2": {
+            "p": {
+              "constant_coefficient": "16",
+              "minimal_polynomial": "3*z + 16",
+              "nonzero": true,
+              "value": "-16/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "-24",
+              "minimal_polynomial": "z - 24",
+              "nonzero": true,
+              "value": "24"
+            }
+          },
+          "4": {
+            "p": {
+              "constant_coefficient": "58",
+              "minimal_polynomial": "3*z + 58",
+              "nonzero": true,
+              "value": "-58/3"
+            },
+            "polar_gauge_fixed_Hessian_invertible": true,
+            "q": {
+              "constant_coefficient": "-360",
+              "minimal_polynomial": "z - 360",
+              "nonzero": true,
+              "value": "360"
+            }
+          }
+        }
+      }
+    },
+    "generic_ell_2_and_4_conclusion": "every channel is off both p and q target shells, so the certified 4x4 action Hessian is invertible and these source blocks admit unique gauge-fixed corrections once their coefficients are inserted",
+    "input_parity": "axial times axial is polar/even"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_MIXED_MOMENT_MAP_ZERO_LOCUS",
+  "result_state": "SAME_K_TRAVELLING_ZERO_LOCUS_TRIVIAL_AND_MINIMAL_K0_BALANCED_FIXTURE_CERTIFIED",
+  "same_nonzero_k_travelling_block": {
+    "elimination": "A_extra*omega_extra**2 - A_extra*omega_extra*omega_minus - A_plus*omega_minus*omega_plus + A_plus*omega_plus**2",
+    "frequencies": {
+      "omega_extra_squared": "k^2+lambda-2/3",
+      "omega_minus_squared": "k^2+lambda-sqrt(2*lambda)",
+      "omega_plus_squared": "k^2+lambda+sqrt(2*lambda)",
+      "strict_order_for_lambda_at_least_6": "0<omega_minus<omega_extra<omega_plus"
+    },
+    "occupation_definition": "after exact Gram factorization, A_plus,A_extra,A_minus are sums of nonnegative squared amplitudes over m, parity, and the two extra polarizations; the Einstein-minus current contributes with the opposite sign",
+    "positivity_argument": "for k!=0 the P_x equation is available; both coefficients in the eliminated equation are strictly positive, so A_plus=A_extra=0, and then either original equation gives A_minus=0",
+    "rotation_constraints_needed_for_no_go": false,
+    "scope": "one fixed (k,ell) travelling block, allowing all m, both parities, both Einstein branches, and both extra polarizations; cancellations between distinct k blocks are not included",
+    "verdict": "THE_COMMON_H_PX_ZERO_LOCUS_IN_ONE_FIXED_NONZERO_K_TRAVELLING_BLOCK_IS_ZERO",
+    "zero_equations_after_common_positive_factor_removed": {
+      "H": "A_extra*omega_extra**2 - A_minus*omega_minus**2 + A_plus*omega_plus**2",
+      "P_x_over_k": "A_extra*omega_extra - A_minus*omega_minus + A_plus*omega_plus"
+    }
+  },
+  "schema": "einstein-maxwell-weyl-mixed-moment-map-zero-locus-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_mixed_moment_map_zero_locus.schema.json",
+  "schema_sha256": "7014d2ddcd3e1e080b6008603dc2cc413b0802f37dd5ded35842c41fa749805f",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_mixed_moment_map_zero_locus --verify bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_mixed_moment_map_zero_locus",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_mixed_moment_map_zero_locus"
+  ]
+}

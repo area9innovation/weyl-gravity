@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Balanced homogeneous second-order Weyl--Maxwell certificate",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "provenance",
+    "homogeneous_operator",
+    "bilinear_source_polynomial",
+    "homogeneous_channels",
+    "generic_polar_channels",
+    "second_order_correction",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-balanced-ell0-second-order-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_BALANCED_ELL0_SECOND_ORDER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "direct_homogeneous_operator_computed",
+        "direct_bilinear_homogeneous_source_computed",
+        "all_nonzero_frequency_homogeneous_channels_solved",
+        "combined_zero_constant_ansatz_solved",
+        "all_ell2_ell4_channels_solved_with_explicit_action_inverse",
+        "complete_generalized_zero_frequency_correction_constructed",
+        "complete_second_order_extension_constructed",
+        "remaining_adjoint_obstruction_exhibited",
+        "causal_or_quantum_claim"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1429,6 +1429,46 @@ remain open because the Einstein `q`-primary contribution is indefinite and
 can cancel the scalar `H` component.  Exceptional/Jordan blocks and the full
 common `H,P_x,J_i` zero locus also remain open.
 
+`EINSTEIN_MAXWELL_WEYL_MIXED_MOMENT_MAP_ZERO_LOCUS` and
+`EINSTEIN_MAXWELL_WEYL_BALANCED_ELL0_SECOND_ORDER` now resolve the first mixed
+component.  In a single fixed nonzero-`k` travelling block, simultaneous
+`H=P_x=0` is possible only for the zero tangent.  After Gram factorization the
+eliminated equation is
+
+```text
+omega_plus(omega_plus-omega_minus) A_plus
+ + omega_extra(omega_extra-omega_minus) A_extra = 0,
+```
+
+and both coefficients and occupations are nonnegative.  This no-go does not
+cover cancellations between distinct momenta.
+
+At `k=0`, a nonzero common-zero tangent does exist.  Take the axial
+`ell=2,m=0` Einstein-minus representative with unit cosine amplitude and the
+second axial extra representative with
+
+```text
+|a_extra|^2=(27/52)(5 sqrt(3)-6).
+```
+
+Its `H`, `P_x`, and all three rotation moment maps vanish.  This is additive
+charge balance between the diagonal `q` and `p` primaries, not a mixed
+Lee--Wald interference term.
+
+The complete quadratic extension test passes for this tangent.  Axial times
+axial produces only polar `ell=0,2,4` outputs at frequencies `0`,
+`2 omega_minus`, `2 omega_extra`, and `omega_extra +/- omega_minus`.  The two
+homogeneous zero-frequency sources cancel in every independent row.  Every
+nonzero homogeneous channel has an explicit exact correction, and every
+`ell=2,4` channel is off both target shells and is removed by the stored exact
+action-Hessian inverse.  All operator remainders vanish.  Thus a complete
+finite `Phi^(2)` exists for this declared real tangent.
+
+This proves one mixed second-order extension, not general nonlinear closure
+or integration to an exact all-orders family.  The next nonlinear target is
+the full `k=0` common-zero cone, followed by opposite-momentum standing-wave
+balances and the exceptional/global blocks.
+
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
 
@@ -1445,16 +1485,16 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Solve the indefinite common `H`, `P_x`, and `J_i` zero locus for mixed
-   Einstein--extra amplitudes, then complete the exceptional/global real
-   symplectic blocks and only afterward test a quotient by any certified null
-   subalgebra; in parallel, prove or obstruct a polynomial cyclic BV
-   enhancement of the polar equation/Noether chain map without inverting `k`,
-   `omega`, `p`, or `q`.
-2. On any mixed `q/p` amplitudes that survive all five stabilizer moment maps,
-   compute the remaining adjoint-cokernel pairings and the parity-compatible
-   `EE`, `EX`, and `XX` quadratic source channels; then construct a relational
-   or geodesic-deviation realization of the reduced detector.
+1. Classify the full `k=0` common `H,P_x,J_i` zero cone around the certified
+   balanced extension, then treat opposite-momentum standing-wave balances
+   and the exceptional/global real symplectic blocks; only afterward test a
+   quotient by a certified null subalgebra.  In parallel, prove or obstruct a
+   polynomial cyclic BV enhancement without inverting `k`, `omega`, `p`, or
+   `q`.
+2. For further common-zero amplitudes, compute the remaining adjoint-cokernel
+   pairings and parity-compatible `EE`, `EX`, and `XX` channels, distinguishing
+   coefficient-level second-order extension from all-orders integrability;
+   then construct a relational or geodesic-deviation detector realization.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately
