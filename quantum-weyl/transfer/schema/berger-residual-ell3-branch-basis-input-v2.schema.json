@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-residual-ell3-branch-basis-input-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "classical_commit", "setting_id", "dependency_tags", "accepted_ell3", "declared_scope", "artifacts", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-residual-ell3-branch-basis-input-v2"},
+    "result_id": {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "accepted_ell3": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "sha256"],
+      "properties": {
+        "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE"},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "declared_scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ambient_retained_rank", "operator_coefficient_field", "deformation_coefficient_field", "deformation_basis_normalization", "factorial_convention", "dynamical_gravity_branch_ids", "deformation_vertex_basis_ids", "Maxwell_branch_ids", "branch_list_exhaustive_for_declared_sector", "kinetic_health_claim"],
+      "properties": {
+        "ambient_retained_rank": {"const": 36},
+        "operator_coefficient_field": {"const": "Q(sqrt(10))"},
+        "deformation_coefficient_field": {"const": "Q(sqrt(2),sqrt(10))"},
+        "deformation_basis_normalization": {"const": "e=(W_plus_squared+W_minus_squared)/sqrt(2); o=(W_plus_squared-W_minus_squared)/sqrt(2); Gram=I2"},
+        "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+        "dynamical_gravity_branch_ids": {"const": ["Einstein_like", "extra_Weyl"]},
+        "deformation_vertex_basis_ids": {"const": ["e_C2_dynamical", "o_C_dual_C_topological"]},
+        "Maxwell_branch_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "branch_list_exhaustive_for_declared_sector": {"const": true},
+        "kinetic_health_claim": {"const": "NOT_PART_OF_ELL3_BRANCH_PROJECTION"}
+      }
+    },
+    "artifacts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["retained_q1", "dynamical_branch_ledger", "dynamical_branch_inclusion", "dynamical_branch_projection", "dynamical_branch_pairing_gram", "parity_operator", "real_structure", "K_Berger_weight_operator", "deformation_vertex_basis", "deformation_Euler_Lagrange_map", "topological_transgression_witness"],
+      "properties": {
+        "retained_q1": {"$ref": "#/$defs/operator_artifact"},
+        "dynamical_branch_ledger": {"$ref": "#/$defs/operator_artifact"},
+        "dynamical_branch_inclusion": {"$ref": "#/$defs/operator_artifact"},
+        "dynamical_branch_projection": {"$ref": "#/$defs/operator_artifact"},
+        "dynamical_branch_pairing_gram": {"$ref": "#/$defs/operator_artifact"},
+        "parity_operator": {"$ref": "#/$defs/operator_artifact"},
+        "real_structure": {"$ref": "#/$defs/operator_artifact"},
+        "K_Berger_weight_operator": {"$ref": "#/$defs/operator_artifact"},
+        "deformation_vertex_basis": {"$ref": "#/$defs/deformation_artifact"},
+        "deformation_Euler_Lagrange_map": {"$ref": "#/$defs/deformation_artifact"},
+        "topological_transgression_witness": {"$ref": "#/$defs/deformation_artifact"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact_core": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256", "canonical_sha256", "coefficient_field"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "canonical_sha256": {"$ref": "#/$defs/hash"},
+        "coefficient_field": {"type": "string"}
+      }
+    },
+    "operator_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/artifact_core"},
+        {"type": "object", "properties": {"coefficient_field": {"const": "Q(sqrt(10))"}}}
+      ]
+    },
+    "deformation_artifact": {
+      "allOf": [
+        {"$ref": "#/$defs/artifact_core"},
+        {"type": "object", "properties": {"coefficient_field": {"const": "Q(sqrt(2),sqrt(10))"}}}
+      ]
+    }
+  }
+}

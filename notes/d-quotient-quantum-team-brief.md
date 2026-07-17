@@ -106,13 +106,16 @@ the pinned classical tensor; this is still `LOCAL-ALGEBRAIC`, not a QME or
 quantum result.
 
 This closes the classical retained arity-three import gate. The quantum-side
-receiving contract for the residual branch projection is ready and requires
-content-addressed gravity and Maxwell carriers, exact inclusion/projection,
-pairing, parity, real structure, and \(K_{\rm Berger}\) weights. Separately it
-requires the even/odd deformation basis, its rank-one Euler--Lagrange map, and
-a topological transgression witness; the odd topological direction is not a
-third dynamical branch. No branch-basis manifest has been supplied, so the
-mixing table remains open. This does not perform residual
+V2 receiving contract for the residual branch projection is ready. It keeps
+the content-addressed gravity and Maxwell carriers, exact
+inclusion/projection, pairing, parity, real structure, and
+\(K_{\rm Berger}\) weights over \(\mathbb Q(\sqrt{10})\). The normalized
+even/odd deformation basis, its rank-one Euler--Lagrange map, and its
+topological transgression witness live over the exact extension
+\(\mathbb Q(\sqrt2,\sqrt{10})\), since \(1/\sqrt2\notin
+\mathbb Q(\sqrt{10})\). V1 remains an immutable receipt. The odd topological
+direction is not a third dynamical branch. No V2 branch-basis manifest has
+been supplied, so the mixing table remains open. This does not perform residual
 quantum transfer, calculate a repository anomaly coefficient, restore the
 QME, or establish a Lorentzian or particle claim. The pure gravity--clock
 Paper IX arity-three result is unaffected.

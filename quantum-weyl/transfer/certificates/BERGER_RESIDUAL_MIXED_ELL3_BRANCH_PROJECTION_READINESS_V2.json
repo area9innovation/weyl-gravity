@@ -1,0 +1,189 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC readiness result versions the branch-basis input contract after the classical preflight proved that the normalized even/odd deformation basis cannot live over Q(sqrt(10)) alone. The retained q1, ell3, dynamical inclusion/projection, pairing, parity, reality and K_Berger operator data remain over Q(sqrt(10)); only the normalized deformation basis, Euler-Lagrange map and topological transgression data use the exact extension Q(sqrt(2),sqrt(10)). The historical V1 contract remains an immutable receipt and is not rewritten. The exact synthetic contraction and mutation witness still pass. No branch-basis manifest or dynamical Einstein-like/extra-Weyl/Maxwell projector has been supplied, so no branch-space ell3, mixing table, deformation action or topological centrality is computed. This does not restore a QME, construct Hadamard products, identify a particle mode, or make a quantum, Lorentzian, positivity or unitarity claim.",
+  "claim_flags": {
+    "DEFORMATION_FIELD_EXTENDED_EXACTLY": true,
+    "DYNAMICAL_BRANCH_PROJECTOR_AVAILABLE": false,
+    "INPUT_SCHEMA_FIELD_CONSISTENT_WITH_NORMALIZED_EO_BASIS": true,
+    "OPERATOR_FIELD_REMAINS_Q_SQRT10": true,
+    "QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RESIDUAL_BRANCH_BASIS_INPUT_AVAILABLE": false,
+    "RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED": false,
+    "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY": true,
+    "RESIDUAL_ELL3_MIXING_TABLE_COMPUTED": false,
+    "RESIDUAL_QUANTUM_TRANSFERRED": false
+  },
+  "dependency_refs": {
+    "classical_field_obstruction_preflight": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_PREFLIGHT.json",
+      "result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_PREFLIGHT",
+      "sha256": "8882c7c73677ed7249b661e83d5ae911cd41ebc6badaae54c449c2ebac8c0d80"
+    },
+    "superseded_quantum_readiness_v1": {
+      "path": "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json",
+      "result_id": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS",
+      "sha256": "61137d21a6ca27accb31a25cc49a340f566a987f2601c98a4e399854fd8c0ca3"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_acceptance_conditions": [
+    "retained_row_order_matches_accepted_36_row_complex",
+    "branch_labels_have_explicit_degree_parity_K_weight_and_sector",
+    "dynamical_gravity_and_Maxwell_branch_lists_are_exhaustive_for_declared_projection_sector",
+    "dynamical_branch_projection_times_inclusion_is_identity",
+    "retained_q1_intertwines_inclusion_and_projection",
+    "parity_is_an_involution_and_intertwines_both_maps",
+    "K_Berger_weights_intertwine_both_maps",
+    "real_structure_is_an_involution_and_intertwines_both_maps",
+    "dynamical_branch_pairing_is_exact_nondegenerate_and_equals_the_pairing_pullback",
+    "deformation_vertex_basis_is_exactly_e_and_o_without_particle_mode_identification",
+    "Euler_Lagrange_map_has_rank_one_with_e_dynamical_and_o_topological",
+    "topological_direction_has_a_normalized_transgression_or_nonmembership_witness",
+    "ell3_mixing_entries_are_computed_by_exact_precomposition_and_postcomposition",
+    "every_zero_mixing_entry_has_a_support_or_cancellation_witness",
+    "graded_symmetry_and_cyclicity_are_replayed_in_branch_coordinates"
+  ],
+  "field_repair_receipt": {
+    "exact_field_membership_obstruction_imported": true,
+    "normalized_even_odd_basis_retained": true,
+    "obstruction": "1/sqrt(2) is not in Q(sqrt(10))",
+    "old_schema_rewritten": false,
+    "operator_field_unchanged": true,
+    "repair": "retain the operator carrier over Q(sqrt(10)) and extend only normalized deformation data to Q(sqrt(2),sqrt(10))"
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "No branch-basis manifest exists. Tier 1 covers the exact field repair, strict schemas, dependency hashes, synthetic contraction and normalization mutation.",
+    "tier_3": "No classical tensor, shared PBW engine, Lorentzian analytic construction, QME lifecycle, paper theorem freeze or release boundary changes."
+  },
+  "input_contract": {
+    "Maxwell_branch_carrier_required": true,
+    "ambient_retained_rank": 36,
+    "category_separation": "topological is a local deformation/vertex class, not a dynamical residual mode",
+    "content_addressing": "git_commit_plus_blob_sha256_plus_internal_canonical_sha256",
+    "deformation_coefficient_field": "Q(sqrt(2),sqrt(10))",
+    "manifest_schema": {
+      "path": "quantum-weyl/transfer/schema/berger-residual-ell3-branch-basis-input-v2.schema.json",
+      "sha256": "e6c7bcebfad40590e913485bed015f652fd52fac870b1dbbc5d9cb1c0550a14a"
+    },
+    "normalized_deformation_basis": [
+      "e_C2_dynamical",
+      "o_C_dual_C_topological"
+    ],
+    "normalized_deformation_gram": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "operator_coefficient_field": "Q(sqrt(10))",
+    "required_deformation_vertex_basis_ids": [
+      "e_C2_dynamical",
+      "o_C_dual_C_topological"
+    ],
+    "required_dynamical_gravity_branch_ids": [
+      "Einstein_like",
+      "extra_Weyl"
+    ],
+    "required_result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2"
+  },
+  "lifecycle_layer": "CLASSICAL_RESIDUAL_INTERACTION_IMPORT_READINESS",
+  "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2_MANIFEST",
+  "provenance": {
+    "dependency_manifest_sha256": "0a92fd492db2255c0445698dfa17c65f43ecd5901ee1567fe0c663da504e7a64",
+    "source_manifest": {
+      "quantum-weyl/reports/berger-residual-ell3-branch-projection-readiness-v2.md": "df417b396945220199aa1f93bb3a8b30a98dadceedd7f7d9081ba418e9bdcbcb",
+      "quantum-weyl/transfer/berger_residual_ell3_branch_projection_readiness_v2.py": "92ba2f0d70c2bf765c39b0d671eb6a86820acb4dcaf9e909ade135d238e3387d",
+      "quantum-weyl/transfer/schema/berger-residual-ell3-branch-basis-input-v2.schema.json": "e6c7bcebfad40590e913485bed015f652fd52fac870b1dbbc5d9cb1c0550a14a",
+      "quantum-weyl/transfer/schema/berger-residual-ell3-branch-projection-readiness-v2.schema.json": "e11e9c5fb429236ef9766fe0d0e2071b152aa0eecaadfb18403e05281c6143ca",
+      "quantum-weyl/transfer/tests/test_berger_residual_ell3_branch_projection_readiness_v2.py": "7cfa26ca193b6ba1f68875dc2b5ac84d90b0c88c11fe0dcb6be326c3683b93bf",
+      "quantum-weyl/transfer/verify_berger_residual_ell3_branch_projection_readiness_v2.py": "5191330c7c5b98b1d0aaf655b10ca1690cb0529a45b214fd050643f8e4d58787"
+    },
+    "source_manifest_sha256": "9b4f174aa2d5bec026a258d2622af7445d14e4371fe919f23bfb45ebf41dc012"
+  },
+  "required_output": {
+    "deformation_vertex_axes": [
+      "e_C2_dynamical",
+      "o_C_dual_C_topological"
+    ],
+    "dynamical_mixing_axes": [
+      "output_branch",
+      "input_branch_1",
+      "input_branch_2",
+      "input_branch_3"
+    ],
+    "kinetic_or_pairing_health_inference_from_ell3_alone": "FORBIDDEN",
+    "required_ledgers": [
+      "exact_nonzero_mixing_entries",
+      "exact_zero_witnesses",
+      "Einstein_like_extra_Weyl_mixing",
+      "Maxwell_input_output_sectors",
+      "parity_selection",
+      "K_Berger_weight_selection",
+      "cyclicity_defects",
+      "deformation_vertex_action",
+      "topological_transgression_and_centrality"
+    ],
+    "result_id": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE"
+  },
+  "result_id": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2",
+  "result_state": "CONSUMER_READY_EXACT_SPLIT_FIELD_CONTRACT_BRANCH_BASIS_INPUT_NOT_SUPPLIED",
+  "schema": "quantum-weyl-berger-residual-ell3-branch-projection-readiness-v2",
+  "supersession": {
+    "disposition": "HISTORY_RETAINED_FIELD_INCONSISTENCY_REPAIRED_BY_VERSIONED_CONTRACT",
+    "supersedes": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS"
+  },
+  "synthetic_consumer_receipt": {
+    "Euler_Lagrange_rank_by_deformation": {
+      "e_C2_dynamical": 1,
+      "o_C_dual_C_topological": 0
+    },
+    "ambient_rank": 4,
+    "branch_ids": [
+      "Einstein_like",
+      "extra_Weyl",
+      "Maxwell_physical"
+    ],
+    "branch_rank": 3,
+    "deformation_vertex_basis_ids": [
+      "e_C2_dynamical",
+      "o_C_dual_C_topological"
+    ],
+    "exact_checks": {
+      "parity_ambient_involution": true,
+      "parity_branch_involution": true,
+      "parity_inclusion_intertwines": true,
+      "parity_projection_intertwines": true,
+      "projection_inclusion_identity": true
+    },
+    "projection_normalization_mutation_rejected": true,
+    "receipt_sha256": "c17b4f19e3a62e8f2658f3ca7fe0590557a5a19772a032078c4305a55fd95ab5"
+  },
+  "verification_receipts": [
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_residual_ell3_branch_projection_readiness_v2 --check",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_residual_ell3_branch_projection_readiness_v2",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_residual_ell3_branch_projection_readiness_v2.py -v",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-residual-ell3-branch-basis-input-v2.schema.json",
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-berger-residual-ell3-branch-projection-readiness-v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "dependency_refs", "supersession", "input_contract", "field_repair_receipt", "exact_acceptance_conditions", "required_output", "synthetic_consumer_receipt", "claim_flags", "next_gate", "claim_boundary", "provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-residual-ell3-branch-projection-readiness-v2"},
+    "result_id": {"const": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2"},
+    "result_state": {"const": "CONSUMER_READY_EXACT_SPLIT_FIELD_CONTRACT_BRANCH_BASIS_INPUT_NOT_SUPPLIED"},
+    "lifecycle_layer": {"const": "CLASSICAL_RESIDUAL_INTERACTION_IMPORT_READINESS"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "supersession": {
+      "type": "object", "additionalProperties": false,
+      "required": ["supersedes", "disposition"],
+      "properties": {
+        "supersedes": {"const": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS"},
+        "disposition": {"const": "HISTORY_RETAINED_FIELD_INCONSISTENCY_REPAIRED_BY_VERSIONED_CONTRACT"}
+      }
+    },
+    "input_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required_result_id", "manifest_schema", "ambient_retained_rank", "operator_coefficient_field", "deformation_coefficient_field", "normalized_deformation_basis", "required_deformation_vertex_basis_ids", "normalized_deformation_gram", "required_dynamical_gravity_branch_ids", "Maxwell_branch_carrier_required", "category_separation", "content_addressing"],
+      "properties": {
+        "required_result_id": {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2"},
+        "manifest_schema": {"$ref": "#/$defs/path_hash"},
+        "ambient_retained_rank": {"const": 36},
+        "operator_coefficient_field": {"const": "Q(sqrt(10))"},
+        "deformation_coefficient_field": {"const": "Q(sqrt(2),sqrt(10))"},
+        "normalized_deformation_basis": {"const": ["e_C2_dynamical", "o_C_dual_C_topological"]},
+        "required_deformation_vertex_basis_ids": {"const": ["e_C2_dynamical", "o_C_dual_C_topological"]},
+        "normalized_deformation_gram": {"const": [["1", "0"], ["0", "1"]]},
+        "required_dynamical_gravity_branch_ids": {"const": ["Einstein_like", "extra_Weyl"]},
+        "Maxwell_branch_carrier_required": {"const": true},
+        "category_separation": {"type": "string", "minLength": 70},
+        "content_addressing": {"const": "git_commit_plus_blob_sha256_plus_internal_canonical_sha256"}
+      }
+    },
+    "field_repair_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["obstruction", "repair", "operator_field_unchanged", "normalized_even_odd_basis_retained", "old_schema_rewritten", "exact_field_membership_obstruction_imported"],
+      "properties": {
+        "obstruction": {"const": "1/sqrt(2) is not in Q(sqrt(10))"},
+        "repair": {"type": "string", "minLength": 100},
+        "operator_field_unchanged": {"const": true},
+        "normalized_even_odd_basis_retained": {"const": true},
+        "old_schema_rewritten": {"const": false},
+        "exact_field_membership_obstruction_imported": {"const": true}
+      }
+    },
+    "exact_acceptance_conditions": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 10}},
+    "required_output": {"type": "object", "minProperties": 3},
+    "synthetic_consumer_receipt": {"type": "object", "minProperties": 5},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY", "INPUT_SCHEMA_FIELD_CONSISTENT_WITH_NORMALIZED_EO_BASIS", "OPERATOR_FIELD_REMAINS_Q_SQRT10", "DEFORMATION_FIELD_EXTENDED_EXACTLY", "RESIDUAL_BRANCH_BASIS_INPUT_AVAILABLE", "DYNAMICAL_BRANCH_PROJECTOR_AVAILABLE", "RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED", "RESIDUAL_ELL3_MIXING_TABLE_COMPUTED", "RESIDUAL_QUANTUM_TRANSFERRED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY": {"const": true},
+        "INPUT_SCHEMA_FIELD_CONSISTENT_WITH_NORMALIZED_EO_BASIS": {"const": true},
+        "OPERATOR_FIELD_REMAINS_Q_SQRT10": {"const": true},
+        "DEFORMATION_FIELD_EXTENDED_EXACTLY": {"const": true},
+        "RESIDUAL_BRANCH_BASIS_INPUT_AVAILABLE": {"const": false},
+        "DYNAMICAL_BRANCH_PROJECTOR_AVAILABLE": {"const": false},
+        "RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED": {"const": false},
+        "RESIDUAL_ELL3_MIXING_TABLE_COMPUTED": {"const": false},
+        "RESIDUAL_QUANTUM_TRANSFERRED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2_MANIFEST"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256", "dependency_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "dependency_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "items": {"type": "object", "required": ["test_tier", "command", "status"], "properties": {"test_tier": {"const": 1}, "command": {"type": "string", "minLength": 60}, "status": {"const": "PASS"}}}},
+    "higher_tiers_not_run": {"type": "object", "required": ["tier_2", "tier_3"], "properties": {"tier_2": {"type": "string", "minLength": 100}, "tier_3": {"type": "string", "minLength": 100}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "path_hash": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

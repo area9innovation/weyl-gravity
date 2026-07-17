@@ -41,11 +41,14 @@ accepted for the pinned classical tensor. Projection onto the
 Einstein-like and extra-Weyl dynamical residual branches remains open, as does
 the separate action on the even/odd deformation-vertex basis. The topological
 odd direction is not treated as a third dynamical or particle branch.
-The strict receiving consumer for that projection is now ready. It requires
+The strict V2 receiving consumer for that projection is now ready. It keeps
 exact gravity and Maxwell branch carriers, inclusion/projection maps, pairing,
-parity, real structure and `K_Berger` weights, plus a separate deformation
-basis, rank-one Euler--Lagrange map and topological transgression witness. No
-branch-basis manifest has yet been supplied.
+parity, real structure and `K_Berger` weights over `Q(sqrt(10))`. The
+normalized deformation basis, rank-one Euler--Lagrange map and topological
+transgression witness instead use the exact extension
+`Q(sqrt(2),sqrt(10))`, because `1/sqrt(2)` is not in `Q(sqrt(10))`. V1 remains
+an immutable historical receipt. No branch-basis manifest has yet been
+supplied.
 
 The frontier imports this status through the content-addressed quantum repair
 acceptance certificate. The earlier 1,234/953 defect atlas remains an exact

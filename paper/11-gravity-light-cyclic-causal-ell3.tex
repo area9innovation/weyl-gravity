@@ -426,6 +426,11 @@ The deformation/vertex basis is separate:
  \qquad
  o_{C\widetilde C}=\frac{[W_+^2]-[W_-^2]}{\sqrt2}.
 \end{equation}
+The dynamical operator data in Equation~\eqref{eq:mixing} remain over
+$\Q(\sqrt{10})$.  The normalization in Equation~\eqref{eq:eo} requires the
+exact scalar extension $\Q(\sqrt2,\sqrt{10})$, since
+$1/\sqrt2\notin\Q(\sqrt{10})$.  The versioned V2 input contract records these
+fields separately rather than weakening the normalization or rewriting V1.
 Its Euler--Lagrange map has the required rank pattern
 \begin{equation}
  \rank E(e_{C^2})=1,
@@ -491,7 +496,7 @@ Artifact & Role\\
  & independent physical quartic cyclicity and pairing-weight mutation\\
 \cert{BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY}
  & independent ghost/antifield completion and full retained BV cyclicity\\
-\cert{BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS}
+\cert{BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2}
  & fail-closed input contract for the mixing table\\
 \bottomrule
 \end{tabularx}
@@ -518,7 +523,9 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_berger_retained_mixed_ell3_ghost_antifield_cyclicity
 PYTHONPATH=quantum-weyl python3 -m \
-  transfer.verify_berger_residual_ell3_branch_projection_readiness
+  transfer.berger_residual_ell3_branch_projection_readiness_v2 --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_berger_residual_ell3_branch_projection_readiness_v2
 \end{verbatim}
 
 The companion machine-readable claim map records the dependency hashes,

@@ -9,13 +9,14 @@
   ],
   "headline": "The gravity-light interaction survives cyclic causal reduction through ell3.",
   "manuscript": "paper/11-gravity-light-cyclic-causal-ell3.tex",
-  "manuscript_sha256": "6b22eb74e800dd4f0c7a0b6b07c254734610529a15f848f971d44118eb59299b",
+  "manuscript_sha256": "21e8224ee1f06481d64c7fd7ba4dab12b6ccbce9bf29337f344a552a1708c034",
   "paper_scope": {
     "background": "frozen positive rational Berger-clock gravity-clock-Maxwell fixture",
     "full_carrier_rows": 64,
     "retained_carrier_rows": 36,
     "maximum_Taylor_arity": 3,
-    "coefficient_field": "Q(sqrt(10))",
+    "operator_coefficient_field": "Q(sqrt(10))",
+    "deformation_coefficient_field": "Q(sqrt(2),sqrt(10))",
     "factorial_convention": "suspended-graded-symmetric-factorial-v1",
     "causal_scope": "same-sided unary Green homotopies and two-sided-causal-hull cyclic K_Berger Cartan primitives through arity three",
     "residual_scope": "retained carrier before Einstein-like/extra-Weyl/Maxwell branch projection"
@@ -61,7 +62,7 @@
   },
   "next_gate": {
     "status": "INPUT_BLOCKED",
-    "required_input": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1",
+    "required_input": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2",
     "required_output": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
     "dynamical_branch_ids": [
       "Einstein_like",
@@ -80,8 +81,8 @@
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json": "2c4592665084dd47958aa2c63f10a7f54d3bd9ff8d52f661d1a2fa78da877027",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY.json": "4f9479466ddfcce957ba6b15f0c33f74b470d74e2424d0e04bc60dbacbd9a2e1",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY.json": "fc9b3581d2a3b849d5074e7526a8b8a3de6d849eeadc857387c28874bfc8b24e",
-    "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json": "61137d21a6ca27accb31a25cc49a340f566a987f2601c98a4e399854fd8c0ca3",
-    "paper/verify_11_gravity_light_claim_map.py": "fe212fa24cc63ea6b7c18b584aad03d87c4ecf9d792b5a72f98a866744d4a8cd"
+    "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json": "a9927fa7d4d0a267ca188c6ea1e746c60f7f27ca880393e936c65807c75d6088",
+    "paper/verify_11_gravity_light_claim_map.py": "b7765b445676e37a212f5e7aa03e89ed899afb326a6c4e08976760429e525570"
   },
   "verification_commands": [
     "python3 paper/verify_11_gravity_light_claim_map.py",
@@ -93,5 +94,5 @@
     "tier_2": "full retained BV ell3 cyclicity replay rerun over all 25,950 exact coefficients with a 132-defect sign mutation",
     "tier_3": "not run because this is WRITING_STARTED, not a theorem freeze or lifecycle promotion"
   },
-  "claim_boundary": "This working draft assembles exact LOCAL-ALGEBRAIC retained ell2/ell3 transfer and full retained BV quartic cyclicity with the separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan support theorem through arity three. It proves a nonzero retained gravity-light bracket on the 36-row carrier and independently replays all 25,950 cyclic coefficients, including the 288-term ghost/antifield completion. It does not yet project onto Einstein-like, extra-Weyl and Maxwell dynamical branches; it keeps the topological odd deformation class outside the particle branch list. No Hadamard, renormalized-product, QME, particle, unitarity, all-orders or quantum theorem is promoted, and the paper remains WRITING_STARTED rather than THEOREM_FROZEN."
+  "claim_boundary": "This working draft assembles exact LOCAL-ALGEBRAIC retained ell2/ell3 transfer and full retained BV quartic cyclicity with the separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan support theorem through arity three. It proves a nonzero retained gravity-light bracket on the 36-row carrier and independently replays all 25,950 cyclic coefficients, including the 288-term ghost/antifield completion. The V2 receiving contract keeps operator data over Q(sqrt(10)) and uses Q(sqrt(2),sqrt(10)) only for normalized deformation data. It does not yet project onto Einstein-like, extra-Weyl and Maxwell dynamical branches; it keeps the topological odd deformation class outside the particle branch list. No Hadamard, renormalized-product, QME, particle, unitarity, all-orders or quantum theorem is promoted, and the paper remains WRITING_STARTED rather than THEOREM_FROZEN."
 }

@@ -32,7 +32,7 @@ DEPENDENCIES = {
     "retained_mixed_ell3_acceptance": HERE / "transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json",
     "retained_mixed_ell3_physical_cyclicity": HERE / "transfer/certificates/BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY.json",
     "retained_mixed_ell3_full_BV_cyclicity": HERE / "transfer/certificates/BERGER_RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY.json",
-    "residual_ell3_projection_readiness": HERE / "transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json",
+    "residual_ell3_projection_readiness": HERE / "transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "base_Hadamard_parametrix": HERE / "lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
     "typed_companion": HERE / "lorentzian/certificates/BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT.json",
@@ -65,7 +65,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "retained_mixed_ell3_acceptance": "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED_RESIDUAL_BRANCH_PROJECTION_OPEN",
         "retained_mixed_ell3_physical_cyclicity": "PHYSICAL_QUARTIC_CYCLICITY_INDEPENDENTLY_ACCEPTED_FULL_BV_CYCLICITY_OPEN",
         "retained_mixed_ell3_full_BV_cyclicity": "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_ACCEPTED",
-        "residual_ell3_projection_readiness": "CONSUMER_READY_RESIDUAL_BRANCH_BASIS_INPUT_NOT_SUPPLIED",
+        "residual_ell3_projection_readiness": "CONSUMER_READY_EXACT_SPLIT_FIELD_CONTRACT_BRANCH_BASIS_INPUT_NOT_SUPPLIED",
         "causal_chain": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
         "base_Hadamard_parametrix": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
         "typed_companion": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN",
@@ -267,8 +267,14 @@ def _load() -> dict[str, dict[str, Any]]:
         or projection_flags.get("RESIDUAL_ELL3_MIXING_TABLE_COMPUTED") is not False
         or projection_flags.get("RESIDUAL_QUANTUM_TRANSFERRED") is not False
         or projection_flags.get("QUANTUM_CLAIM") is not False
+        or projection_flags.get(
+            "INPUT_SCHEMA_FIELD_CONSISTENT_WITH_NORMALIZED_EO_BASIS"
+        )
+        is not True
+        or projection_flags.get("OPERATOR_FIELD_REMAINS_Q_SQRT10") is not True
+        or projection_flags.get("DEFORMATION_FIELD_EXTENDED_EXACTLY") is not True
         or projection_readiness.get("next_gate")
-        != "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST"
+        != "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2_MANIFEST"
         or projection_readiness.get("input_contract", {}).get(
             "Maxwell_branch_carrier_required"
         )
@@ -362,7 +368,7 @@ def build() -> dict[str, Any]:
         "active_rows": {
             "classical_interacting_input": {
                 "status": "RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_ACCEPTED_BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT",
-                "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
+                "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2_MANIFEST",
             },
             "local_obstruction_space": {
                 "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_FULL_BV_OPEN",
@@ -469,7 +475,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
+            "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2_MANIFEST",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -502,7 +508,8 @@ def build() -> dict[str, Any]:
             "that omits the degree-two polarization exposes 132 defects on seven rows. Residual "
             "Einstein-like/extra-Weyl dynamical branch projection and separate e/o deformation-vertex "
             "action remain open. The fail-closed consumer contract is ready and requires exact "
-            "gravity plus Maxwell carriers and keeps the topological o direction out of the "
+            "gravity plus Maxwell carriers over Q(sqrt(10)); normalized deformation data use the "
+            "exact extension Q(sqrt(2),sqrt(10)). This versioned repair keeps the topological o direction out of the "
             "dynamical branch list, but no "
             "branch-basis manifest has been supplied. This is a classical LOCAL-ALGEBRAIC "
             "acceptance, not a quantum result. "

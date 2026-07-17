@@ -48,7 +48,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertIn("BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT", row["status"])
         self.assertEqual(
             row["next_gate"],
-            "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
+            "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2_MANIFEST",
         )
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:

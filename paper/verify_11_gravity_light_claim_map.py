@@ -26,6 +26,11 @@ def main() -> None:
     )
     assert payload["lifecycle_state"] == "WRITING_STARTED"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    assert payload["paper_scope"]["operator_coefficient_field"] == "Q(sqrt(10))"
+    assert (
+        payload["paper_scope"]["deformation_coefficient_field"]
+        == "Q(sqrt(2),sqrt(10))"
+    )
 
     claims = payload["certified_claims"]
     required_true = {
@@ -60,7 +65,7 @@ def main() -> None:
     assert payload["next_gate"]["status"] == "INPUT_BLOCKED"
     assert (
         payload["next_gate"]["required_input"]
-        == "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1"
+        == "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2"
     )
 
     for relative, expected in payload["inputs"].items():
@@ -102,6 +107,7 @@ def main() -> None:
         r"17{,}108",
         r"The odd topological direction can be central or inert as a deformation class",
         r"the authoritative branch-basis manifest has not been supplied",
+        r"1/\sqrt2\notin\Q(\sqrt{10})",
         r"not yet a photon or graviton scattering amplitude",
     ]
     for marker in required_markers:
