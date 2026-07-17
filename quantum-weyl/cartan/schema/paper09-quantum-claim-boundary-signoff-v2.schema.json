@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-paper09-quantum-claim-boundary-signoff-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "claim_status", "dependency_tags", "review_role",
+    "claim_boundary", "freeze_snapshot", "approved_classical_scope", "outside_paper09_followups",
+    "forbidden_promotions", "quantum_lifecycle", "independent_exact_checks",
+    "source_manifest", "theorem_flags", "next_gate", "verification_receipt"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-paper09-quantum-claim-boundary-signoff-v2"},
+    "result_id": {"const": "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF_V2"},
+    "claim_status": {"const": "POST_FREEZE_SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "LORENTZIAN-CAUSAL"}],
+      "items": false
+    },
+    "review_role": {"const": "INDEPENDENT_QUANTUM_TEAM_POST_FREEZE_REVIEW"},
+    "claim_boundary": {"type": "string", "minLength": 150},
+    "freeze_snapshot": {
+      "type": "object", "additionalProperties": false,
+      "required": ["paper_state", "theorem_frozen", "predecessor_signoff_retained", "hash_cycle_avoided_by_versioned_reissue"],
+      "properties": {
+        "paper_state": {"const": "THEOREM_FROZEN"},
+        "theorem_frozen": {"const": true},
+        "predecessor_signoff_retained": {"const": true},
+        "hash_cycle_avoided_by_versioned_reissue": {"const": true}
+      }
+    },
+    "approved_classical_scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generator", "rows", "maximum_arity", "maxwell_in_main_theorem", "quantum_status"],
+      "properties": {
+        "generator": {"const": "K_Berger=D-omega R"},
+        "rows": {"const": 54},
+        "maximum_arity": {"const": 3},
+        "maxwell_in_main_theorem": {"const": false},
+        "quantum_status": {"const": "NOT_PROMOTED"}
+      }
+    },
+    "outside_paper09_followups": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "prefixItems": [
+        {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1"},
+        {"const": "mixed gravity-Maxwell residual branch projection"},
+        {"const": "observer-apparatus 84-row extension"}
+      ],
+      "items": false
+    },
+    "forbidden_promotions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["affine_raw_D_Cartan", "all_orders_K_Cartan", "Hadamard_state", "QME_restored", "anomaly_cancellation", "residual_quantum_transfer", "quantum_theorem"],
+      "properties": {
+        "affine_raw_D_Cartan": {"const": false},
+        "all_orders_K_Cartan": {"const": false},
+        "Hadamard_state": {"const": false},
+        "QME_restored": {"const": false},
+        "anomaly_cancellation": {"const": false},
+        "residual_quantum_transfer": {"const": false},
+        "quantum_theorem": {"const": false}
+      }
+    },
+    "quantum_lifecycle": {
+      "type": "object", "additionalProperties": false,
+      "required": ["CLASSIFIED", "COEFFICIENT_COMPUTED", "QME_RESTORED", "RESIDUAL_TRANSFERRED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "CLASSIFIED": {"const": "CLASSICAL_INPUT_ONLY"},
+        "COEFFICIENT_COMPUTED": {"const": "NOT_REACHED_FOR_QUANTUM_CARTAN"},
+        "QME_RESTORED": {"const": "NOT_REACHED"},
+        "RESIDUAL_TRANSFERRED": {"const": "BLOCKED_PENDING_QME_RESTORED"},
+        "LORENTZIAN_CERTIFIED": {"const": "CLASSICAL_CAUSAL_INPUT_ONLY"}
+      }
+    },
+    "independent_exact_checks": {
+      "type": "object", "minProperties": 18,
+      "additionalProperties": {"const": true}
+    },
+    "source_manifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frozen_claim_table", "frozen_paper", "predecessor_quantum_signoff", "generator_audit", "causal_green_54", "causal_k_cartan_arity_two", "causal_k_cartan_arity_three", "quantum_cartan_boundary"],
+      "properties": {
+        "frozen_claim_table": {"$ref": "#/$defs/source"},
+        "frozen_paper": {"$ref": "#/$defs/source"},
+        "predecessor_quantum_signoff": {"$ref": "#/$defs/source"},
+        "generator_audit": {"$ref": "#/$defs/source"},
+        "causal_green_54": {"$ref": "#/$defs/source"},
+        "causal_k_cartan_arity_two": {"$ref": "#/$defs/source"},
+        "causal_k_cartan_arity_three": {"$ref": "#/$defs/source"},
+        "quantum_cartan_boundary": {"$ref": "#/$defs/source"}
+      }
+    },
+    "theorem_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["PAPER09_FROZEN_CLASSICAL_K_CARTAN_ACCEPTED", "PAPER09_AFFINE_D_CARTAN_ACCEPTED", "PAPER09_HADAMARD_ACCEPTED", "PAPER09_QME_ACCEPTED", "PAPER09_ANOMALY_CANCELLATION_ACCEPTED", "PAPER09_RESIDUAL_QUANTUM_TRANSFER_ACCEPTED", "PAPER09_QUANTUM_PROMOTION_ACCEPTED", "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF_V2"],
+      "properties": {
+        "PAPER09_FROZEN_CLASSICAL_K_CARTAN_ACCEPTED": {"const": true},
+        "PAPER09_AFFINE_D_CARTAN_ACCEPTED": {"const": false},
+        "PAPER09_HADAMARD_ACCEPTED": {"const": false},
+        "PAPER09_QME_ACCEPTED": {"const": false},
+        "PAPER09_ANOMALY_CANCELLATION_ACCEPTED": {"const": false},
+        "PAPER09_RESIDUAL_QUANTUM_TRANSFER_ACCEPTED": {"const": false},
+        "PAPER09_QUANTUM_PROMOTION_ACCEPTED": {"const": false},
+        "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF_V2": {"const": true}
+      }
+    },
+    "next_gate": {"const": "NO_PAPER09_QUANTUM_GATE_CLASSICAL_THEOREM_FROZEN"},
+    "verification_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "commands"],
+      "properties": {
+        "tier_0": {"const": "PASS_PARSE_STRICT_SCHEMA_AND_DIFF_CHECK"},
+        "tier_1": {"const": "PASS_PRODUCER_INDEPENDENT_VERIFIER_AND_TEST"},
+        "tier_2": {"const": "NOT_REQUIRED_NO_MATHEMATICAL_INPUT_CHANGED"},
+        "tier_3": {"const": "NOT_RUN_POST_FREEZE_REVIEW_DOES_NOT_PROMOTE_QUANTUM_LIFECYCLE"},
+        "commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 10}}
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
