@@ -3,14 +3,14 @@
   "$id": "https://example.invalid/closed-universe/berger-84-row-rod-gravity-unary-v1.schema.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "coefficient_scope", "canonical_clock_dressing", "rod_gauge_blocks", "raw_covariant_rod_hessian", "bv_noether_audit", "coupled_causal_witness", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "coefficient_scope", "canonical_clock_dressing", "rod_gauge_blocks", "physical_phi2_tensor", "raw_covariant_rod_hessian", "bv_noether_audit", "coupled_causal_witness", "mixed_r_kappa_preflight", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
   "properties": {
     "schema": {"const": "closed-universe-berger-84-row-rod-gravity-unary-v1"},
     "result_id": {"const": "BERGER_84_ROW_ROD_GRAVITY_UNARY"},
     "setting_id": {"$ref": "#/$defs/text"},
-    "claim_status": {"const": "ROD_GRAVITY_BV_BLOCKS_AND_AXIAL_FIRST_JET_CAUSAL_COMPLEX_CERTIFIED_MIXED_JET_OPEN"},
+    "claim_status": {"const": "ROD_GRAVITY_BV_BLOCKS_AND_FORMAL_AXIAL_FIRST_JET_CAUSAL_COMPLEX_CERTIFIED_PRINCIPAL_ORDER_CORRECTED_MIXED_JET_OPEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
-    "dependency_refs": {"type": "object", "minProperties": 9, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "dependency_refs": {"type": "object", "minProperties": 10, "additionalProperties": {"$ref": "#/$defs/dependency"}},
     "coefficient_scope": {"type": "object"},
     "canonical_clock_dressing": {"type": "object"},
     "rod_gauge_blocks": {
@@ -28,6 +28,24 @@
       },
       "additionalProperties": true
     },
+    "physical_phi2_tensor": {
+      "type": "object",
+      "required": ["vector_shape", "vector_index_rule", "metric_component_order", "spatial_basis_order", "temporal_frequency_order", "assembled_sparse_coefficients", "assembled_nonzero_counts", "assembled_canonical_sha256", "spatial_derivative_matrices", "negative_equals_conjugate_positive", "reality_defect_count"],
+      "properties": {
+        "vector_shape": {"const": [10, 10]},
+        "vector_index_rule": {"$ref": "#/$defs/text"},
+        "metric_component_order": {"type": "array"},
+        "spatial_basis_order": {"type": "array"},
+        "temporal_frequency_order": {"type": "array"},
+        "assembled_sparse_coefficients": {"type": "object"},
+        "assembled_nonzero_counts": {"type": "object"},
+        "assembled_canonical_sha256": {"$ref": "#/$defs/sha256"},
+        "spatial_derivative_matrices": {"type": "array"},
+        "negative_equals_conjugate_positive": {"const": true},
+        "reality_defect_count": {"const": 0}
+      },
+      "additionalProperties": true
+    },
     "raw_covariant_rod_hessian": {"type": "object"},
     "bv_noether_audit": {
       "type": "object",
@@ -37,22 +55,59 @@
     },
     "coupled_causal_witness": {
       "type": "object",
-      "required": ["advanced_support", "retarded_support", "advanced_chain_defect_count", "retarded_chain_defect_count", "operator_order_audit", "laurent_inverse_audit", "schur_feedback_deletion_defect_count"],
+      "required": ["advanced_support", "retarded_support", "advanced_chain_defect_count", "retarded_chain_defect_count", "operator_order_audit", "q2_principal_order_audit", "laurent_inverse_audit", "schur_feedback_deletion_defect_count"],
       "properties": {
         "advanced_support": {"const": true}, "retarded_support": {"const": true},
         "advanced_chain_defect_count": {"const": 0}, "retarded_chain_defect_count": {"const": 0},
         "operator_order_audit": {"type": "object"},
+        "q2_principal_order_audit": {
+          "type": "object",
+          "required": ["maximum_argument_order", "maximum_total_order", "fourth_order_argument_term_count", "classification", "physical_contracted_principal_order", "exact_non_cancellation_after_physical_phi2_contraction_certified", "physical_contraction_witness", "prior_order_two_classification_rejected"],
+          "properties": {
+            "maximum_argument_order": {"const": 4},
+            "maximum_total_order": {"const": 4},
+            "fourth_order_argument_term_count": {"type": "integer", "minimum": 1},
+            "classification": {"const": "FOURTH_ORDER_DIAGONAL_PRINCIPAL_DEFORMATION"},
+            "physical_contracted_principal_order": {"const": 4},
+            "exact_non_cancellation_after_physical_phi2_contraction_certified": {"const": true},
+            "physical_contraction_witness": {"type": "object"},
+            "prior_order_two_classification_rejected": {"const": true}
+          },
+          "additionalProperties": true
+        },
         "laurent_inverse_audit": {"type": "object"},
         "schur_feedback_deletion_defect_count": {"type": "integer", "minimum": 1}
       },
       "additionalProperties": true
     },
-    "mutation_results": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "required": ["name", "defect", "defect_count", "detected"], "properties": {"name": {"$ref": "#/$defs/text"}, "defect": {"$ref": "#/$defs/text"}, "defect_count": {"type": "integer", "minimum": 1}, "detected": {"const": true}}, "additionalProperties": true}},
+    "mixed_r_kappa_preflight": {
+      "type": "object",
+      "required": ["status", "unary_coefficient_ring", "causal_coefficient_window", "unary_decomposition", "mixed_nilpotency_identity", "mixed_cyclicity_identity", "physical_phi2_reference_sha256", "required_Q11_blocks", "transport_variation", "pairing_transport", "arity_boundary", "mixed_green_coefficient", "acceptance", "mixed_Q11_computed", "mixed_green_computed"],
+      "properties": {
+        "status": {"const": "PREFLIGHT_COMPLETE_COEFFICIENTS_NOT_COMPUTED"},
+        "unary_coefficient_ring": {"$ref": "#/$defs/text"},
+        "causal_coefficient_window": {"type": "object"},
+        "unary_decomposition": {"$ref": "#/$defs/text"},
+        "mixed_nilpotency_identity": {"$ref": "#/$defs/text"},
+        "mixed_cyclicity_identity": {"$ref": "#/$defs/text"},
+        "physical_phi2_reference_sha256": {"$ref": "#/$defs/sha256"},
+        "required_Q11_blocks": {"type": "array"},
+        "transport_variation": {"type": "object"},
+        "pairing_transport": {"type": "object"},
+        "arity_boundary": {"type": "object"},
+        "mixed_green_coefficient": {"$ref": "#/$defs/text"},
+        "acceptance": {"type": "array"},
+        "mixed_Q11_computed": {"const": false},
+        "mixed_green_computed": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "mutation_results": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["name", "defect", "defect_count", "detected"], "properties": {"name": {"$ref": "#/$defs/text"}, "defect": {"$ref": "#/$defs/text"}, "defect_count": {"type": "integer", "minimum": 1}, "detected": {"const": true}}, "additionalProperties": true}},
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["CLOCK_DRESSED_ROD_COORDINATES_CANONICAL", "GAMMA_R_EXPLICIT", "GAMMA_R_SHARP_EXPLICIT", "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED", "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED", "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED", "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED", "84_ROW_Q1_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED", "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED", "84_ROW_Q2_Q3_CERTIFIED", "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "QUANTUM_CLAIM"],
+      "required": ["CLOCK_DRESSED_ROD_COORDINATES_CANONICAL", "GAMMA_R_EXPLICIT", "GAMMA_R_SHARP_EXPLICIT", "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED", "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED", "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED", "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED", "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED", "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED", "MIXED_R_KAPPA_PREFLIGHT_COMPLETE", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "84_ROW_Q1_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED", "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED", "84_ROW_Q2_Q3_CERTIFIED", "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "QUANTUM_CLAIM"],
       "properties": {
-        "CLOCK_DRESSED_ROD_COORDINATES_CANONICAL": {"const": true}, "GAMMA_R_EXPLICIT": {"const": true}, "GAMMA_R_SHARP_EXPLICIT": {"const": true}, "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED": {"const": true}, "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED": {"const": true}, "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": {"const": true}, "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": {"const": true}, "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": {"const": true},
+        "CLOCK_DRESSED_ROD_COORDINATES_CANONICAL": {"const": true}, "GAMMA_R_EXPLICIT": {"const": true}, "GAMMA_R_SHARP_EXPLICIT": {"const": true}, "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED": {"const": true}, "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED": {"const": true}, "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": {"const": true}, "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": {"const": true}, "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": {"const": true}, "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED": {"const": true}, "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED": {"const": true}, "MIXED_R_KAPPA_PREFLIGHT_COMPLETE": {"const": true}, "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
         "84_ROW_Q1_CERTIFIED": {"const": false}, "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": {"const": false}, "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": {"const": false}, "84_ROW_Q2_Q3_CERTIFIED": {"const": false}, "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": {"const": false}, "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
       }
     },

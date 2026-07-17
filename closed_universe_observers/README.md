@@ -53,9 +53,15 @@ advanced/retarded inverse are certified; together with the base rows they
 form a 72-row causal subcomplex.  The six clock-dressed rod diffeomorphism
 blocks, their cotangent adjoints, the action-derived gravity--rod Hessian, and
 the coupled causal witness are now also exported.  An exact Schur--Laurent
-inverse certifies the full 84-row differential, unary cyclicity, and causal
-chain contraction on the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)`
-axes.  The unqualified full-84 theorem remains open because the mixed
+inverse certifies the 84-row differential and unary cyclicity, together with
+a formal coefficientwise causal chain contraction, on the separate `(0,0)`,
+`(epsilon_R^2,0)`, and `(0,kappa)` axes.  A corrected payload audit treats
+`q2(Phi2,-)` as a fourth-order diagonal principal deformation and explicitly
+exhibits the nonzero contracted principal coefficient `623/81`; it explicitly
+does not claim finite-parameter Green hyperbolicity.  The physical `Phi2` is
+now exported in one canonical tensor/harmonic/frequency order, and the mixed
+coefficient ring and varied-adjoint requirements are frozen.  The unqualified
+full-84 theorem remains open because the mixed
 `epsilon_R^2*kappa` profile/transport shift has not been computed.  The
 observer team now also exports six exact global detector-indexed rod fields
 on the compact Berger cylinder.  They reproduce both detector-event identity
@@ -72,9 +78,10 @@ clock-transported memories, detector-block-local composite polarizations,
 independent `epsilon_R`/`kappa` grading, the exact profile two-jet through
 `q3`, external-source boundary, and the physical real two-detector `Phi2`.
 The historical 78-row gate remains scoped history and is not a forward
-construction input.  The shifted Euler equations and unary/causal complex now
-close on the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes, while
-the mixed axis, apparatus interactions, and observer morphism remain open.
+construction input.  The shifted Euler equations and unary complex close on
+the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes, with a formal
+coefficientwise causal contraction; the mixed axis, finite-parameter Green
+theorem, apparatus interactions, and observer morphism remain open.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

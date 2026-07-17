@@ -80,16 +80,23 @@ nonzero rod diffeomorphism action and the missing gravity--rod Hessian,
 cotangent-adjoint, shifted-metric-Hessian, and causal-witness payloads.
 `BERGER_84_ROW_ROD_GRAVITY_UNARY` now supplies those six clock-dressed gauge
 blocks, their exact odd-pairing adjoints, the covariant action Hessian, the
-`q2(Phi2,-)` base shift, and a coupled principal causal witness.  Its explicit
-Schur--Laurent inverse certifies nilpotency, unary cyclicity, and causal chain
-identities on those same three separate axes.  The result is deliberately not
-promoted to an unqualified 84-row theorem: the mixed
+`q2(Phi2,-)` base shift, and a coupled formal causal witness.  A correction
+audit finds that `q2(Phi2,-)` is a fourth-order diagonal principal deformation,
+not the previously stated order-two subprincipal term; the exact physical
+contraction witness is `623/81` on an `e3^4 h_hat_00` coefficient.  The Schur--Laurent
+formula therefore certifies only a formal coefficientwise same-sided inverse,
+not finite-parameter Green hyperbolicity.  Nilpotency and unary cyclicity
+remain certified on those same three separate axes.  The physical `Phi2` now
+has one canonical machine-readable tensor export, and the mixed coefficient,
+density-adjoint, and identity conventions are frozen.  The result is
+deliberately not promoted to an unqualified 84-row theorem: the mixed
 `epsilon_R^2*kappa` profile/transport shift, apparatus interactions,
 `K_Berger` equivariance, and observer morphism remain open.
 
 ### Immediate priority after the axial unary certificate
 
-1. Close the mixed \(\epsilon_R^2\kappa\) profile/transport shift, including
+1. Use the corrected fourth-order principal classification and canonical
+   `Phi2` export to close the mixed \(\epsilon_R^2\kappa\) profile/transport shift, including
    the rod and memory adjoints and the shifted gravity Hessian.  Return the
    unqualified 84-row unary/cyclicity/causal theorem or its first normalized
    obstruction.
@@ -102,8 +109,9 @@ promoted to an unqualified 84-row theorem: the mixed
    clock/signal object.  The observer team owns its detector realization and
    record map, not a competing redshift definition.
 
-The separate-axis 84-row theorem is sufficient input for scoped first-jet
-tests, but it must not be advertised as the mixed-axis or fully interacting
+The separate-axis 84-row unary theorem and formal causal coefficient are
+sufficient input for scoped first-jet tests, but they must not be advertised
+as a finite-parameter Green theorem, mixed-axis theorem, or fully interacting
 apparatus theorem.
 
 ### The adjacent closed-universe programme

@@ -24,8 +24,9 @@ The lifecycle is therefore `EXTERNAL_FIXTURE_REPRODUCED`, not
 `QUANTUM_COMPARISON_NOT_YET_DEFINED`.  The current classical recommendation is
 to compute the mixed `epsilon_R^2*kappa` apparatus jet, then construct the
 apparatus interactions and test the observer morphism.  The separate-axis
-84-row unary and causal complex is now certified; this does not change the
-quantum lifecycle.  There is not yet a bridge theorem or a scoped no-go
+84-row unary complex and formal coefficientwise causal contraction are now
+certified; finite-parameter Green hyperbolicity is not.  This does not change
+the quantum lifecycle.  There is not yet a bridge theorem or a scoped no-go
 suitable for a new paper.
 
 Dependency boundary: the fixture is `LOCAL-ALGEBRAIC` and
@@ -267,8 +268,11 @@ two-detector `Phi2`.  The exact memory--Maxwell unary and finite two-channel
 advanced/retarded inverse now extend the base to a certified 72-row causal
 subcomplex.  The clock-dressed rod gauge blocks, their cotangent adjoints, the
 action-derived gravity--rod Hessian, and an explicit Schur--Laurent inverse
-now extend this to a certified 84-row unary and causal complex on the separate
-`(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes.  The mixed
+now extend this to a certified 84-row unary complex and formal coefficientwise
+causal contraction on the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)`
+axes.  The corrected payload audit classifies `q2(Phi2,-)` as a fourth-order
+principal deformation and exhibits the nonzero contracted coefficient
+`623/81`, so no finite-parameter Green theorem is claimed.  The mixed
 `epsilon_R^2*kappa` profile and transport shift remains open, so the
 unqualified full-84 flags remain false.
 Raw \(D\) is null on the declared tangent sector and the averaged observable is
@@ -286,7 +290,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, exact stress compensation, and an 84-row axial first-jet causal complex; interacting quotient descent open | exact positive-diagonal retarded transfer and Schur--Laurent separate-axis Green operator; spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, exact stress compensation, and an 84-row axial unary complex; interacting quotient descent open | exact positive-diagonal probe transfer and a formal Schur--Laurent separate-axis causal coefficient; finite-parameter Green hyperbolicity and spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -332,3 +336,8 @@ coefficients, both rank-three detector blocks, the negative cotangent
 transpose, exact Hessian fixtures, and the two-sided Schur--Laurent inverse;
 its receipt is
 `closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_UNARY_TIER_RECEIPT.json`.
+The subsequent principal-order correction independently reconstructs the
+physical `Phi2`, recounts all 7,488 raw fourth-order terms, verifies the exact
+nonzero contracted coefficient `623/81`, and records the mixed-jet preflight;
+its receipt is
+`closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_PRINCIPAL_CORRECTION_TIER_RECEIPT.json`.

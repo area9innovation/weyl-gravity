@@ -3,15 +3,17 @@
 
 The result is an exact covariant first-jet construction.  It exports the
 nonzero spatial diffeomorphism action of all six global rods, its BV cotangent
-adjoint, the action-derived mixed Hessian blocks, and a coupled principal
-causal witness.  The background and Green expansions are asymptotic in
-r=epsilon_R^2 and use Laurent leading order on the canonically paired rod
-equation rows.  Mixed r*kappa coefficients remain outside this certificate.
+adjoint, the action-derived mixed Hessian blocks, and a formal coefficientwise
+causal witness.  The corrected principal-symbol audit treats
+q2(Phi2,-) as a fourth-order diagonal deformation, not as a subprincipal
+perturbation.  Mixed r*kappa coefficients remain outside this certificate;
+their coefficient ring and required identities are exported as a preflight.
 """
 
 from __future__ import annotations
 
 import argparse
+from functools import lru_cache
 import hashlib
 import json
 from pathlib import Path
@@ -21,6 +23,7 @@ from jsonschema import Draft202012Validator
 import sympy as sp
 
 from closed_universe_observers import generate_berger_global_detector_rods as rods
+from closed_universe_observers import generate_berger_global_rod_q1_solvability as rod_solv
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +41,7 @@ DEPENDENCIES = {
     "base_64_causal": ROOT / "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
     "base_64_q2": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
     "base_64_q2_payload": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
+    "base_54_q2_payload": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json",
     "clock_sdr": ROOT / "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
 }
 SOURCE_FILES = {
@@ -59,6 +63,12 @@ def _sha256(path: Path) -> str:
 
 def _canonical_hash(value: Any) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+@lru_cache(maxsize=32)
+def _load_json_cached(path_text: str, sha256: str) -> dict[str, Any]:
+    del sha256
+    return json.loads(Path(path_text).read_text())
 
 
 def _rod_fields(global_rods: dict[str, Any]) -> list[tuple[str, sp.Expr, dict[sp.Symbol, sp.Expr], sp.Expr]]:
@@ -147,6 +157,12 @@ def gamma_export(global_rods: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+@lru_cache(maxsize=4)
+def _cached_gamma(global_rods_sha256: str) -> dict[str, Any]:
+    return gamma_export(_load_json_cached(str(DEPENDENCIES["global_rods"]), global_rods_sha256))
+
+
+@lru_cache(maxsize=1)
 def _action_hessian_specializations() -> dict[str, Any]:
     """Check commuting second variations of the scalar density exactly."""
 
@@ -183,8 +199,194 @@ def _action_hessian_specializations() -> dict[str, Any]:
     }
 
 
-def _mutation_results(gamma: dict[str, Any], hessian: dict[str, Any]) -> list[dict[str, Any]]:
-    """Evaluate the five fail-closed mutations from exported exact data."""
+def _sparse_vector(value: sp.Matrix) -> list[list[Any]]:
+    return [[index, sp.sstr(sp.factor(value[index]))] for index in range(value.rows) if value[index] != 0]
+
+
+def _primitive_matrix(block: dict[str, Any]) -> sp.Matrix:
+    matrix = sp.zeros(100, 3)
+    for column, entries in enumerate(block["canonical_primitives_sparse"]):
+        for row, coefficient in entries:
+            matrix[row, column] = sp.sympify(coefficient, locals={"I": sp.I})
+    return matrix
+
+
+def _payload_scalar(value: dict[str, Any]) -> sp.Expr:
+    def rational(item: Any) -> sp.Rational:
+        if isinstance(item, dict):
+            return sp.Rational(item["numerator"], item["denominator"])
+        return sp.Rational(item)
+
+    return rational(value["rational"]) + rational(value.get("sqrt10", 0)) * sp.sqrt(10)
+
+
+def physical_phi2_export(handoff: dict[str, Any], solvability: dict[str, Any]) -> dict[str, Any]:
+    """Assemble the physical real Phi2 in one canonical 10 x 10 basis."""
+
+    synthesis = handoff["physical_backreaction_synthesis"]
+    zero_primitive = _primitive_matrix(solvability["exact_blocks"]["zero"])
+    positive_primitive = _primitive_matrix(solvability["exact_blocks"]["positive"])
+    zero_coefficients = sp.Matrix([sp.sympify(value, locals={"I": sp.I}) for value in synthesis["zero_frequency_coefficients"]])
+    positive_coefficients = sp.Matrix([sp.sympify(value, locals={"I": sp.I}) for value in synthesis["positive_frequency_coefficients"]])
+    negative_coefficients = sp.Matrix([sp.sympify(value, locals={"I": sp.I}) for value in synthesis["negative_frequency_coefficients"]])
+    zero = (zero_primitive * zero_coefficients).applyfunc(sp.simplify)
+    positive = (positive_primitive * positive_coefficients).applyfunc(sp.simplify)
+    negative = (positive_primitive.conjugate() * negative_coefficients).applyfunc(sp.simplify)
+    reality_defects = sum(
+        sp.trigsimp(sp.expand_complex(negative[index] - sp.conjugate(positive[index]))) != 0
+        for index in range(100)
+    )
+    zero_reality_defects = sum(
+        sp.trigsimp(sp.expand_complex(value - sp.conjugate(value))) != 0 for value in zero
+    )
+    if reality_defects or zero_reality_defects:
+        raise AssertionError("assembled physical Phi2 failed its exact reality condition")
+
+    carrier_rows = sorted(handoff["carrier"]["component_rows"], key=lambda row: row["index"])
+    metric_rows = [row["row_id"] for row in carrier_rows if 5 <= row["index"] <= 14]
+    if metric_rows != [
+        "h_hat_00", "h_hat_01", "h_hat_02", "h_hat_03", "h_hat_11",
+        "h_hat_12", "h_hat_13", "h_hat_22", "h_hat_23", "h_hat_33",
+    ]:
+        raise AssertionError("physical Phi2 metric-component order drifted")
+    spatial_basis = solvability["finite_sector"]["spatial_basis"]
+    if len(spatial_basis) != 10:
+        raise AssertionError("physical Phi2 spatial basis drifted")
+    derivative_matrices = []
+    for axis, matrix in enumerate(rod_solv._spatial_matrices(), start=1):
+        entries = [
+            [row, column, sp.sstr(sp.factor(matrix[row, column]))]
+            for row in range(matrix.rows)
+            for column in range(matrix.cols)
+            if matrix[row, column] != 0
+        ]
+        derivative_matrices.append({
+            "operator": f"e{axis}",
+            "shape": [10, 10],
+            "entries": entries,
+            "canonical_sha256": _canonical_hash(entries),
+        })
+    sparse = {
+        "zero": _sparse_vector(zero),
+        "positive": _sparse_vector(positive),
+        "negative": _sparse_vector(negative),
+    }
+    return {
+        "vector_shape": [10, 10],
+        "vector_index_rule": "index=10*metric_component_index+spatial_basis_index",
+        "metric_component_order": metric_rows,
+        "spatial_basis_order": spatial_basis,
+        "temporal_frequency_order": ["0", "+sqrt(58)/3", "-sqrt(58)/3"],
+        "temporal_derivative_multipliers": ["0", "I*sqrt(58)/3", "-I*sqrt(58)/3"],
+        "assembled_sparse_coefficients": sparse,
+        "assembled_nonzero_counts": {name: len(entries) for name, entries in sparse.items()},
+        "assembled_canonical_sha256": _canonical_hash(sparse),
+        "spatial_derivative_matrices": derivative_matrices,
+        "reconstruction": "Phi2(t,x)=sum_C,b [v0_Cb+exp(I*sqrt(58)*t/3)v+_Cb+exp(-I*sqrt(58)*t/3)v-_Cb] basis_b(x) e^C",
+        "negative_equals_conjugate_positive": True,
+        "reality_defect_count": reality_defects + zero_reality_defects,
+        "source": "physical two-detector synthesis of the pinned canonical retained-mode primitives",
+    }
+
+
+def q2_principal_order_audit(payload: dict[str, Any], phi2: dict[str, Any]) -> dict[str, Any]:
+    """Classify q2(Phi2,-) and exhibit an exact nonzero order-four coefficient."""
+
+    histogram: dict[tuple[int, int], int] = {}
+    metric_term_count = 0
+    for row in payload["rows"]:
+        if not 27 <= row["output"] <= 36:
+            continue
+        for first, first_word, second, second_word, _coefficient in row["terms"]:
+            if 5 <= first <= 14 and 5 <= second <= 14:
+                orders = (sum(first_word), sum(second_word))
+                histogram[orders] = histogram.get(orders, 0) + 1
+                metric_term_count += 1
+    maximum_argument_order = max(max(orders) for orders in histogram)
+    maximum_total_order = max(sum(orders) for orders in histogram)
+    fourth_order_terms = sum(count for orders, count in histogram.items() if 4 in orders)
+    if maximum_argument_order != 4 or maximum_total_order != 4 or fourth_order_terms == 0:
+        raise AssertionError("pure-Weyl q2 principal-order audit drifted")
+
+    # A single exact contracted coefficient is sufficient to rule out complete
+    # cancellation of the fourth-order principal part.  This coefficient is
+    # the zero-frequency, first-spatial-basis component multiplying
+    # e3^4 h_hat_00 in the h_hat_00-antifield equation.
+    witness_output = 27
+    witness_fluctuation = 5
+    witness_word = [0, 0, 0, 4]
+    witness_spatial_basis = 0
+    zero_phi2 = {
+        index: sp.sympify(coefficient, locals={"I": sp.I})
+        for index, coefficient in phi2["assembled_sparse_coefficients"]["zero"]
+    }
+    contracted_witness = sp.S.Zero
+    for row in payload["rows"]:
+        if row["output"] != witness_output:
+            continue
+        for first, first_word, second, second_word, coefficient in row["terms"]:
+            scalar = _payload_scalar(coefficient)
+            if first == witness_fluctuation and first_word == witness_word and 5 <= second <= 14 and sum(second_word) == 0:
+                contracted_witness += scalar * zero_phi2.get(10 * (second - 5) + witness_spatial_basis, 0)
+            if second == witness_fluctuation and second_word == witness_word and 5 <= first <= 14 and sum(first_word) == 0:
+                contracted_witness += scalar * zero_phi2.get(10 * (first - 5) + witness_spatial_basis, 0)
+    contracted_witness = sp.factor(contracted_witness)
+    if contracted_witness != sp.Rational(623, 81):
+        raise AssertionError("physical Phi2 fourth-order contraction witness drifted")
+    return {
+        "payload_shape": payload["shape"],
+        "metric_input_rows": list(range(5, 15)),
+        "metric_antifield_output_rows": list(range(27, 37)),
+        "metric_metric_term_count": metric_term_count,
+        "derivative_order_histogram": [
+            {"first_argument_order": orders[0], "second_argument_order": orders[1], "term_count": count}
+            for orders, count in sorted(histogram.items())
+        ],
+        "maximum_argument_order": maximum_argument_order,
+        "maximum_total_order": maximum_total_order,
+        "fourth_order_argument_term_count": fourth_order_terms,
+        "physical_phi2_nonzero_coefficient_count": sum(phi2["assembled_nonzero_counts"].values()),
+        "classification": "FOURTH_ORDER_DIAGONAL_PRINCIPAL_DEFORMATION",
+        "physical_contracted_principal_order": 4,
+        "exact_non_cancellation_after_physical_phi2_contraction_certified": True,
+        "physical_contraction_witness": {
+            "output_row": witness_output,
+            "output_component": "h_hat_00_antifield",
+            "fluctuation_input_row": witness_fluctuation,
+            "fluctuation_component": "h_hat_00",
+            "fluctuation_derivative_word_e0_e1_e2_e3": witness_word,
+            "background_temporal_frequency": "0",
+            "background_spatial_basis_index": witness_spatial_basis,
+            "contracted_coefficient": sp.sstr(contracted_witness),
+        },
+        "fail_closed_rule": "treat q2(Phi2,-) as order four unless an exact contracted cancellation certificate is supplied",
+        "prior_order_two_classification_rejected": True,
+    }
+
+
+@lru_cache(maxsize=4)
+def _cached_physical_phi2(handoff_sha256: str, solvability_sha256: str) -> dict[str, Any]:
+    del handoff_sha256, solvability_sha256
+    return physical_phi2_export(
+        json.loads(DEPENDENCIES["authoritative_handoff"].read_text()),
+        json.loads(DEPENDENCIES["rod_q1_solvability"].read_text()),
+    )
+
+
+@lru_cache(maxsize=4)
+def _cached_principal_audit(
+    payload_sha256: str, handoff_sha256: str, solvability_sha256: str
+) -> dict[str, Any]:
+    payload = json.loads(DEPENDENCIES["base_54_q2_payload"].read_text())
+    phi2 = _cached_physical_phi2(handoff_sha256, solvability_sha256)
+    del payload_sha256
+    return q2_principal_order_audit(payload, phi2)
+
+
+def _mutation_results(
+    gamma: dict[str, Any], hessian: dict[str, Any], principal: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Evaluate the fail-closed mutations from exported exact data."""
 
     flipped_sign_defects = sum(
         sp.sympify(entry["coefficient"], locals=SYMPY_LOCALS) != 0
@@ -226,10 +428,16 @@ def _mutation_results(gamma: dict[str, Any], hessian: dict[str, Any]) -> list[di
             "defect_count": mixed_promotion_defects,
             "detected": mixed_promotion_defects > 0,
         },
+        {
+            "name": "demote_q2_Phi2_to_order_two",
+            "defect": "fourth-order pure-Weyl metric q2 terms are discarded from the principal deformation",
+            "defect_count": principal["fourth_order_argument_term_count"],
+            "detected": principal["maximum_argument_order"] == 4,
+        },
     ]
 
 
-def _operator_order_audit() -> dict[str, Any]:
+def _operator_order_audit(principal: dict[str, Any]) -> dict[str, Any]:
     diagonal = {
         "gravity_clock": 4,
         "maxwell": 2,
@@ -242,15 +450,78 @@ def _operator_order_audit() -> dict[str, Any]:
         {"block": "K_Rh", "order": 1, "comparison_order": 2},
         {"block": "K_hR", "order": 1, "comparison_order": 2},
         {"block": "Delta_K_hh_rod", "order": 0, "comparison_order": 4},
-        {"block": "Delta_K_hh_base", "order": 2, "comparison_order": 4},
     ]
-    defect_count = sum(entry["order"] >= entry["comparison_order"] for entry in cross)
-    if defect_count:
-        raise AssertionError("rod--gravity block changed the pinned diagonal principal part")
+    strict_cross_defect_count = sum(entry["order"] >= entry["comparison_order"] for entry in cross)
+    if strict_cross_defect_count:
+        raise AssertionError("an off-diagonal rod--gravity block reached principal order")
     return {
         "diagonal_orders": diagonal,
         "cross_block_orders": cross,
-        "principal_part_defect_count": defect_count,
+        "strictly_subprincipal_cross_defect_count": strict_cross_defect_count,
+        "diagonal_principal_deformations": [
+            {
+                "block": "Delta_K_hh_base=q2_64(Phi2,-)",
+                "order": principal["maximum_argument_order"],
+                "comparison_order": 4,
+                "classification": "PRINCIPAL_NOT_SUBPRINCIPAL",
+            }
+        ],
+        "principal_deformation_count": 1,
+        "unchanged_principal_symbol_claim": False,
+    }
+
+
+def mixed_r_kappa_preflight(phi2: dict[str, Any]) -> dict[str, Any]:
+    """Freeze the coefficient and adjoint conventions for the next gate."""
+
+    return {
+        "status": "PREFLIGHT_COMPLETE_COEFFICIENTS_NOT_COMPUTED",
+        "unary_coefficient_ring": "K[r,kappa]/(r^2,kappa^2) for coefficient identities only, K generated by sqrt(10),sqrt(58),I and the exact detector phase constants",
+        "causal_coefficient_window": {
+            "ring": "K((r))[[kappa]]",
+            "checked_r_powers": [-1, 0, 1],
+            "checked_kappa_powers": [0, 1, 2],
+            "rule": "compare Laurent coefficients in the displayed window; do not quotient by r^2 after adjoining r^-1",
+        },
+        "unary_decomposition": "Q=Q00+r Q10+kappa Q01+r*kappa Q11+O(r^2,kappa^2)",
+        "mixed_nilpotency_identity": "[Q00,Q11]+[Q10,Q01]=0",
+        "mixed_cyclicity_identity": "Omega(Q11 x,y)+graded Omega(x,Q11 y) cancels the r*kappa pairing-transport terms induced by Q10 and Q01",
+        "physical_phi2_reference_sha256": phi2["assembled_canonical_sha256"],
+        "background_fields_at_order_r": {
+            "metric": "g_r=gHat+r Phi2",
+            "clock_scalar": "Theta_bar unchanged; its metric dual and normalized flow change",
+            "rod_scalars": "Rbar_aI unchanged at this order in the divided profile; their metric contractions change",
+            "maxwell_memory": "Abar=mbar=pbar=0",
+        },
+        "required_Q11_blocks": [
+            "delta_r B_a^(0) from inverse metric, Hodge pairing, normalized detector density, and physical volume",
+            "delta_r T from n_Theta(g_r)",
+            "delta_r B_a^sharp and delta_r T^sharp after cotangent density transport to the frozen 84-row pairing",
+            "the r-correction of the clock/rod canonical dressing wherever it enters the kappa readout rows",
+        ],
+        "transport_variation": {
+            "definition": "T_r=n_Theta(g_r)^mu nabla_mu, n_Theta^mu=nabla^mu Theta/(nabla Theta)^2",
+            "delta_n": "-Phi2^{mu nu} partial_nu Theta/X+nabla^mu Theta Phi2^{alpha beta} partial_alpha Theta partial_beta Theta/X^2, X=(nabla Theta)^2",
+            "raw_metric_adjoint": "T_r^*=-T_r-div_{g_r}(n_Theta(g_r))",
+            "base_identity_not_reusable": "T0*=-T0 follows from stationarity only; it must not be frozen at order r",
+        },
+        "pairing_transport": {
+            "physical_density_ratio": "D_r=dvol_{g_r}/dvol_gHat=1+r/2 tr_gHat(Phi2)+O(r^2)",
+            "rule": "derive raw adjoints with dvol_{g_r}, then conjugate every antifield-density block to the frozen 84-row pairing; do not transpose B_a or T before this transport",
+        },
+        "arity_boundary": {
+            "included": "only the shifted background coefficients B_a^(0)(g_r) and T(g_r) entering q1",
+            "excluded": "B_a^(1) and B_a^(2), which belong to apparatus q2 and q3",
+        },
+        "mixed_green_coefficient": "G11=-G00 P11 G00+G00 P10 G00 P01 G00+G00 P01 G00 P10 G00, with all products noncommutative and same-sided",
+        "acceptance": [
+            "export every nonzero Q11 block and its frozen-pairing adjoint",
+            "verify the mixed nilpotency and cyclicity identities coefficientwise on all 84 rows",
+            "verify both multiplication orders of the bivariate Laurent Green coefficient and same-sided support",
+            "reject promotion if T*=-T is reused without the divergence/density correction",
+        ],
+        "mixed_Q11_computed": False,
+        "mixed_green_computed": False,
     }
 
 
@@ -263,6 +534,7 @@ def _laurent_coefficient_defect_count(matrix: sp.Matrix, parameter: sp.Symbol) -
     )
 
 
+@lru_cache(maxsize=2)
 def rod_gravity_laurent_inverse_audit(*, delete_schur_feedback: bool = False) -> dict[str, Any]:
     """Verify a noncommutative exact-matrix model of the first-jet inverse."""
 
@@ -306,7 +578,11 @@ def rod_gravity_laurent_inverse_audit(*, delete_schur_feedback: bool = False) ->
 
 
 def build() -> dict[str, Any]:
-    values = {name: json.loads(path.read_text()) for name, path in DEPENDENCIES.items()}
+    dependency_hashes = {name: _sha256(path) for name, path in DEPENDENCIES.items()}
+    values = {
+        name: _load_json_cached(str(path), dependency_hashes[name])
+        for name, path in DEPENDENCIES.items()
+    }
     required = {
         "unary_completion_gate": ("flags", "BASE_MEMORY_72_ROW_CAUSAL_SUBCOMPLEX_CERTIFIED"),
         "authoritative_handoff": ("flags", "AUTHORITATIVE_84_ROW_FORWARD_INTERFACE"),
@@ -322,10 +598,19 @@ def build() -> dict[str, Any]:
             raise AssertionError(f"required input dropped: {name}.{flag}")
     if values["base_64_q2_payload"]["shape"] != [64, 64, 64]:
         raise AssertionError("coupled q2 payload shape drifted")
+    if values["base_54_q2_payload"]["shape"] != [54, 54, 54]:
+        raise AssertionError("gravity q2 payload shape drifted")
 
-    gamma = gamma_export(values["global_rods"])
+    gamma = _cached_gamma(dependency_hashes["global_rods"])
     hessian_checks = _action_hessian_specializations()
-    operator_orders = _operator_order_audit()
+    handoff_sha256 = dependency_hashes["authoritative_handoff"]
+    solvability_sha256 = dependency_hashes["rod_q1_solvability"]
+    phi2 = _cached_physical_phi2(handoff_sha256, solvability_sha256)
+    principal_audit = _cached_principal_audit(
+        dependency_hashes["base_54_q2_payload"], handoff_sha256, solvability_sha256
+    )
+    operator_orders = _operator_order_audit(principal_audit)
+    mixed_preflight = mixed_r_kappa_preflight(phi2)
     laurent_inverse = rod_gravity_laurent_inverse_audit()
     laurent_mutation = rod_gravity_laurent_inverse_audit(delete_schur_feedback=True)
     if laurent_inverse["left_inverse_defect_count_through_r"] or laurent_inverse["right_inverse_defect_count_through_r"]:
@@ -340,13 +625,13 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-84-row-rod-gravity-unary-v1",
         "result_id": "BERGER_84_ROW_ROD_GRAVITY_UNARY",
         "setting_id": handoff["setting_id"],
-        "claim_status": "ROD_GRAVITY_BV_BLOCKS_AND_AXIAL_FIRST_JET_CAUSAL_COMPLEX_CERTIFIED_MIXED_JET_OPEN",
+        "claim_status": "ROD_GRAVITY_BV_BLOCKS_AND_FORMAL_AXIAL_FIRST_JET_CAUSAL_COMPLEX_CERTIFIED_PRINCIPAL_ORDER_CORRECTED_MIXED_JET_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: {
                 "path": str(path.relative_to(ROOT)),
-                "sha256": _sha256(path),
-                "result_id": values[name].get("result_id", "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD"),
+                "sha256": dependency_hashes[name],
+                "result_id": values[name].get("result_id", path.stem),
             }
             for name, path in DEPENDENCIES.items()
         },
@@ -372,6 +657,7 @@ def build() -> dict[str, Any]:
             "temporal_rod_gauge_column_removed_without_quotienting": True,
         },
         "rod_gauge_blocks": gamma,
+        "physical_phi2_tensor": phi2,
         "raw_covariant_rod_hessian": {
             "action": "S_rod=-r/2 sum_aI integral dvol_g g^{mu nu} partial_mu R_aI partial_n R_aI",
             "K_RR": "r Box_gHat delta R_aI",
@@ -399,28 +685,30 @@ def build() -> dict[str, Any]:
             "W84": "W72 direct_sum W_rod, with W_rod(R_aI_plus)=R_aI and zero on rod fields; cotangent and gauge partners are fixed by cyclic adjunction",
             "wave_operator": "P84=q84 W84+W84 q84",
             "principal_diagonal": [
-                "the pinned gravity-clock sector has scalar biwave principal symbol (zeta_g^2)^2",
+                "the gravity-clock biwave principal symbol is deformed coefficientwise by r q2(Phi2,-), including fourth-order fluctuation derivatives",
                 "the pinned Maxwell sector has scalar wave principal symbol zeta_g^2",
                 "each of six rod sectors has r zeta_g^2",
                 "each memory sector has the already-certified clock-transport principal symbol",
             ],
-            "cross_order": "Gamma_R is order zero; K_Rh and K_hR are at most order one; Delta_K_hh_rod is order zero, hence none changes the diagonal characteristic set",
-            "green_hyperbolic_reduction": "reduce the biwave blocks to two normally-hyperbolic stages and adjoin the six normally-hyperbolic rod waves; lower-order coupled terms preserve the same-sided advanced/retarded Cauchy problem",
-            "green_operator": "G_P84,+/- is the unique same-sided Green operator of P84 on compactly supported tests in the nonzero-r Laurent domain",
+            "cross_order": "Gamma_R is order zero; K_Rh and K_hR are at most order one; Delta_K_hh_rod is order zero. These rod cross blocks are subprincipal, while q2(Phi2,-) is a fourth-order diagonal principal deformation.",
+            "green_hyperbolic_reduction": "coefficientwise formal causal perturbation: insert the local fourth-order q2(Phi2,-) between pinned same-sided base Green operators and combine it with the rod Schur--Laurent blocks; locality preserves the chosen causal side term by term",
+            "green_operator": "G_P84,+/- is a formal same-sided Laurent coefficientwise inverse through the axial first jet; finite-r existence, uniqueness, and Green hyperbolicity are not asserted",
             "chain_homotopy": "Lambda84,+/-=W84 G_P84,+/-",
-            "chain_identity": "q84 Lambda84,+/-+Lambda84,+/- q84=P84 G_P84,+/-=I84 through the certified axial first jet",
+            "chain_identity": "q84 Lambda84,+/-+Lambda84,+/- q84=P84 G_P84,+/-=I84 coefficientwise through the certified axial first jet",
             "advanced_support": True,
             "retarded_support": True,
             "advanced_chain_defect_count": 0,
             "retarded_chain_defect_count": 0,
             "operator_order_audit": operator_orders,
+            "q2_principal_order_audit": principal_audit,
             "laurent_inverse_audit": laurent_inverse,
             "schur_feedback_deletion_defect_count": (
                 laurent_mutation["left_inverse_defect_count_through_r"]
                 + laurent_mutation["right_inverse_defect_count_through_r"]
             ),
         },
-        "mutation_results": _mutation_results(gamma, hessian_checks),
+        "mixed_r_kappa_preflight": mixed_preflight,
+        "mutation_results": _mutation_results(gamma, hessian_checks, principal_audit),
         "flags": {
             "CLOCK_DRESSED_ROD_COORDINATES_CANONICAL": True,
             "GAMMA_R_EXPLICIT": True,
@@ -430,6 +718,10 @@ def build() -> dict[str, Any]:
             "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": True,
             "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": True,
             "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": True,
+            "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED": True,
+            "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED": True,
+            "MIXED_R_KAPPA_PREFLIGHT_COMPLETE": True,
+            "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": False,
             "84_ROW_Q1_CERTIFIED": False,
             "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": False,
             "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": False,
@@ -440,7 +732,7 @@ def build() -> dict[str, Any]:
         },
         "next_gate": "COMPUTE_MIXED_EPSILON_R2_KAPPA_SHIFT_OF_PROFILE_TRANSPORT_AND_REPLAY_FULL_84_ROW_UNARY",
         "claim_boundary": (
-            "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL certificate exports the six clock-dressed rod spatial-diffeomorphism blocks and their odd-pairing adjoints, the covariant action-derived rod--gravity Hessian, the q2(Phi2,-) shifted base block, and a coupled principal causal witness. It proves nilpotency, unary cyclicity, and advanced/retarded chain identities on the separate (0,0), (epsilon_R^2,0), and (0,kappa) axial first-jet sectors, using nonzero epsilon_R^2 Laurent Green asymptotics on the canonically paired rod rows. It does not certify the mixed epsilon_R^2*kappa shift of the detector profile and clock transport, a nonperturbative or all-orders 84-row q1/Green complex, apparatus q2/q3, K_Berger equivariance, the observer morphism, deformed rank two, emitter recoil, a Lorentzian quantum theory, or a quantum claim."
+            "This corrected exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL certificate exports the six clock-dressed rod spatial-diffeomorphism blocks and their odd-pairing adjoints, the covariant action-derived rod--gravity Hessian, a canonical physical Phi2 tensor, and the q2(Phi2,-) shifted base block. It proves nilpotency and unary cyclicity on the separate (0,0), (epsilon_R^2,0), and (0,kappa) axial first-jet sectors and constructs formal coefficientwise same-sided advanced/retarded chain identities in the nonzero-r Laurent domain. The corrected principal audit records that q2(Phi2,-) contains fourth-order metric-fluctuation derivatives; it is a diagonal principal deformation, not a subprincipal perturbation. Accordingly this certificate does not prove finite-r existence, uniqueness, or Green hyperbolicity. It freezes the bivariate coefficient, density-adjoint, and identity conventions for the next mixed epsilon_R^2*kappa calculation but does not compute that mixed coefficient, an all-orders 84-row q1/Green complex, apparatus q2/q3, K_Berger equivariance, the observer morphism, deformed rank two, emitter recoil, a Lorentzian quantum theory, or a quantum claim."
         ),
         "provenance": {
             "source_commit": "WORKTREE",

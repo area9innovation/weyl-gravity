@@ -34,7 +34,7 @@ three-by-three block, in base ghost order `(e1,e2,e3)`, is
 and therefore has determinant one.  The antifield block is the negative
 formal transpose required by the frozen odd pairing.
 
-## Hessian and causal witness
+## Hessian, principal-order correction, and formal causal witness
 
 The mixed blocks are obtained from the standard-sign scalar action.  Their
 covariant formulas are exported before transport through the clock dressing;
@@ -42,12 +42,23 @@ exact rational action specializations verify commuting mixed and metric
 second variations.  The shifted base block is the pinned support-local
 `q2_64(Phi2,-)` tensor.
 
-The extended witness has diagonal principal pieces: the certified gravity
-biwave, Maxwell wave, six scalar rod waves, and the certified memory
-transport.  All new cross terms are lower order.  Thus the coupled wave
-operator has same-sided advanced and retarded Green operators for fixed
-nonzero `r=epsilon_R^2`, and `Lambda=W G_P` gives the chain contraction on the
-certified axial first jet.
+The physical real `Phi2` is now assembled rather than left behind two
+indirection layers.  Its machine-readable tensor uses the ten metric
+components, ten declared spatial harmonics, and temporal frequencies
+`0,+sqrt(58)/3,-sqrt(58)/3`; the negative block is the exact conjugate of the
+positive block.  Sparse coefficient vectors and three spatial derivative
+matrices make the field directly usable by the mixed calculation.
+
+The original causal rationale incorrectly classified `q2(Phi2,-)` as order
+two.  The pinned pure-Weyl payload has 53,468 metric--metric terms and 7,488
+terms with four derivatives on one argument.  The corrected certificate
+contracts the physical zero-frequency `Phi2` exactly and obtains the nonzero
+coefficient `623/81` multiplying `e3^4 h_hat_00` in the
+`h_hat_00`-antifield equation.  Thus this block is constructively a
+fourth-order diagonal principal deformation, rather than merely being
+classified that way fail-closed.
+The rod off-diagonal blocks remain strictly subprincipal, but the gravity
+principal symbol is not claimed to remain unchanged.
 
 The Laurent inverse is checked explicitly, not inferred from the diagonal
 alone.  In gravity--rod block form the specialized operator is
@@ -70,16 +81,46 @@ G22 =  r^-1 D^-1 + D^-1 C S^-1 B D^-1.
 Both multiplication orders have zero coefficients at Laurent powers
 `r^-1`, `r^0`, and `r^1` in exact noncommuting rational-matrix fixtures.
 Deleting the Schur feedback `B D^-1 C` produces a nonzero first-order defect.
-Because each term composes same-sided base and rod Green operators with local
-cross blocks, advanced/retarded support is preserved at this axial first jet.
+Here `A1` includes the fourth-order principal deformation.  The formula is a
+formal coefficientwise inverse: each coefficient composes same-sided pinned
+Green operators with local differential insertions, so causal support is
+preserved term by term.  It does not establish existence, uniqueness, or
+Green hyperbolicity for a finite nonzero `r` operator.
 
 The canonical rod pairing makes the Green operator Laurent-singular as
 `r -> 0`; this is recorded rather than hidden.  The mixed
 `epsilon_R^2*kappa` corrections to `B_a`, `T`, and their adjoints are not yet
 present, so the unqualified full-84 flags remain false.
 
-Accordingly, the result certifies the full 84-row differential, unary
-cyclicity, and causal chain contraction only on the three separate axial
-bidegrees `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)`.  It is not an
-all-orders 84-row theorem and does not cover the mixed axis, apparatus
-`q2/q3`, `K_Berger` equivariance, the observer morphism, or a quantum theory.
+Accordingly, the result certifies the 84-row differential and unary cyclicity
+on the three separate axial bidegrees `(0,0)`, `(epsilon_R^2,0)`, and
+`(0,kappa)`, together with a formal coefficientwise causal chain contraction.
+It is not a finite-parameter or all-orders 84-row Green theorem.
+
+## Mixed-order preflight
+
+The next coefficient is frozen as
+
+```text
+Q=Q00+r Q10+kappa Q01+r*kappa Q11+O(r^2,kappa^2),
+[Q00,Q11]+[Q10,Q01]=0.
+```
+
+Unary identities use the four displayed bidegrees.  Causal identities use a
+coefficient window in `K((r))[[kappa]]`, retaining Laurent powers
+`r^-1,r^0,r^1` and memory powers through `kappa^2`; this is not represented by
+the inconsistent quotient `r^2=0` after adjoining `r^-1`.
+
+The shifted transport adjoint must be recomputed:
+
+```text
+T_r* = -T_r - div_g_r(n_Theta(g_r)).
+```
+
+The stationary identity `T0*=-T0` cannot be reused.  The physical density
+ratio and every `B_a`/`T` cotangent block must first be expanded and then
+transported to the frozen 84-row pairing.  This gate includes only shifted
+background `B_a^(0)` and `T`; `B_a^(1)` and `B_a^(2)` remain the later
+apparatus `q2` and `q3` calculation.  The mixed coefficient itself,
+`K_Berger` equivariance, observer morphism, deformed rank two, and every
+quantum claim remain open.

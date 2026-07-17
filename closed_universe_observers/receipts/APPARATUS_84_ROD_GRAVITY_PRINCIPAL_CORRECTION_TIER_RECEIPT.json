@@ -1,0 +1,82 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "APPARATUS_84_ROD_GRAVITY_PRINCIPAL_CORRECTION_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The physical Phi2 is exported in a canonical exact tensor/harmonic/frequency order. The pure-Weyl payload contains 7488 terms with four derivatives on one metric argument, and exact contraction with the physical zero-frequency Phi2 gives the nonzero coefficient 623/81 multiplying e3^4 h_hat_00 in the h_hat_00-antifield equation. Thus q2(Phi2,-) is a fourth-order diagonal principal deformation. The rod cross blocks remain strictly subprincipal. The Schur--Laurent construction certifies only formal coefficientwise same-sided causal chain identities; finite-r existence, uniqueness, and Green hyperbolicity are not certified. The mixed r*kappa coefficient ring, varied transport adjoint, density transport, arity boundary, nilpotency identity, and Green formula are frozen, but Q11 and its mixed Green coefficient are not computed.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile on the producer, verifier, and focused test; python3 -m json.tool on the schema, certificate, and comparison ledger; git diff --check on all scoped paths",
+      "elapsed_seconds": "0.15",
+      "status": "PASS",
+      "scope": "Python syntax, structured data, reports, brief, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --check",
+      "elapsed_seconds": "26.32",
+      "status": "PASS",
+      "scope": "dependency compatibility, canonical physical Phi2 reconstruction, exact contracted principal witness, mixed-jet preflight, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_rod_gravity_unary",
+      "elapsed_seconds": "52.89",
+      "status": "PASS",
+      "scope": "independent Phi2 reconstruction, pure-Weyl order recount, exact 623/81 contraction replay, Laurent inverse, hashes, semantic boundary, and mutations"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_84_row_rod_gravity_unary.py",
+      "elapsed_seconds": "80.28",
+      "status": "PASS",
+      "scope": "all 11 focused rod--gravity unary, principal-order, Phi2, formal-causal, and mixed-preflight tests"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-84-row-rod-gravity-unary-v1.schema.json -d closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json",
+      "elapsed_seconds": "3.85",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_comparison_ledger",
+      "elapsed_seconds": "0.19",
+      "status": "PASS",
+      "scope": "historical snapshot replay plus corrected live 84-row import"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "195.70",
+      "status": "PASS",
+      "scope": "all 57 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This correction narrows the causal claim and freezes a preflight; it does not create a classical freeze, finite-r or all-orders 84-row theorem, shared core-algebra change, QME lifecycle promotion, release, or explicitly requested full-repository run."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json", "sha256": "5ed2374ecf8ca67fe7d550698d15b2a2c6eaefae2157499d02a4c0204bb9e55b"},
+    {"path": "closed_universe_observers/schema/berger-84-row-rod-gravity-unary-v1.schema.json", "sha256": "eea47fcb8d4ae36fca643f4ff2a595be0e808f618c969167b8c24b18702c9ec0"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "8b7174bb26754722b61f5acc261885d6134aabb8d32b75092cea6af8c57ab92d"},
+    {"path": "closed_universe_observers/reports/berger-84-row-rod-gravity-unary.md", "sha256": "0db0b89b93ede3c714f3e7003687b5b626a82b581288f16c1e03715952763b45"},
+    {"path": "closed_universe_observers/generate_berger_84_row_rod_gravity_unary.py", "sha256": "0eea91fa79d5762b2a1d845e374fefbedd1b3f053ca114828a1471bc75795b95"},
+    {"path": "closed_universe_observers/verify_berger_84_row_rod_gravity_unary.py", "sha256": "4504638e005299fda51240cc0e05cbd3f30408c23d576a64370a826628a90cee"}
+  ],
+  "claim_flags": {
+    "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED": true,
+    "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED": true,
+    "MIXED_R_KAPPA_PREFLIGHT_COMPLETE": true,
+    "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": true,
+    "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": true,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
