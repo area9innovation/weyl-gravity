@@ -87,8 +87,9 @@ Hadamard products, QME restoration, and every quantum or particle
 interpretation remain open.  A separate exact audit obstructs the canonical
 local same-bundle branch projector on the $36$-row carrier.  The resulting
 rank-$46$ spatial-STF2 graph prolongation and its cyclic dual are now
-constructed as an exact local cyclic carrier, but no branch projector or
-nonlinear lift has yet been certified on it.
+constructed as an exact local cyclic carrier.  Its principal wave module is
+a nonsplit Einstein/extra-Weyl filtration, so the next branch gate is the
+exact subprincipal extension rather than a principal direct-sum projector.
 \end{abstract}
 
 \section*{AI-use disclosure and computational accountability}
@@ -145,9 +146,10 @@ subsequent exact audit now obstructs the canonical support-local same-bundle
 Einstein-like/extra-Weyl projector on the $36$-row carrier.  Residual descent
 therefore requires an enlarged or differently organized carrier.  The
 natural rank-$46$ STF2 graph carrier has now passed its exact unary cyclic-SDR
-gate, but its branch projector and nonlinear lift remain open, so a branch
-mixing table is still unauthorized.  Deformation/vertex classes belong to a
-separate complex and are not used in the theorem below.
+gate.  Its principal direct-sum anchor is obstructed, while the lower-order
+Berger splitting and nonlinear lift remain open, so a branch mixing table is
+still unauthorized.  Deformation/vertex classes belong to a separate complex
+and are not used in the theorem below.
 
 \section{Complexes, conventions, and claim boundary}\label{sec:setup}
 
@@ -690,6 +692,41 @@ so this construction changes neither the retained cohomology nor, by itself,
 the physical branch content.
 \end{proposition}
 
+The graph extension does not, however, split the repeated physical wave layer
+at principal order.  Put
+\begin{equation}
+ A=\Q(\sqrt{10})[\epsilon]/(\epsilon^2),\qquad
+ \epsilon=-p_0^2+p_1^2+p_2^2+p_3^2.
+\end{equation}
+For each physical helicity, the Einstein-like layer is the submodule
+$E=\epsilon A$ and the generalized extra-Weyl layer is the quotient $A/E$.
+
+\begin{proposition}[Normalized principal branch-anchor obstruction]
+The exact sequence
+\begin{equation}
+ 0\longrightarrow \epsilon A\longrightarrow A
+ \longrightarrow A/(\epsilon)\longrightarrow0
+\end{equation}
+does not split $A$-linearly.  Indeed, an attempted section has
+$s(1)=1+b\epsilon$, whereas $A$-linearity requires
+$\epsilon s(1)=0$ and exact multiplication gives
+\begin{equation}
+ \epsilon s(1)=\epsilon.
+\end{equation}
+The functional extracting the coefficient of $\epsilon$ evaluates this
+defect to one and annihilates every correction $b\epsilon$.  Equivalently, an
+endomorphism $a+b\epsilon$ is idempotent only for $(a,b)=(0,0)$ or $(1,0)$.
+The real helicity multiplicity is two and the witness has
+$K_{\rm Berger}$-weight zero.
+\end{proposition}
+
+This obstruction excludes a nonzero principal direct-sum anchor and prevents
+the zero, identity, or contractible-auxiliary projector from being promoted
+as the physical branch split.  It is not a no-go for the full rank-$46$
+projector: lower-order Berger terms may deform the repeated leading factor and
+split it.  The next exact input is therefore the order-two extension class
+$V_2$ in $A_{10}=\Box_2^2+V_2$ on the physical helicity quotient.
+
 This is the honest enlarged carrier, not yet the branch theorem.  It does not
 supply an Einstein-like/extra-Weyl projector, a $q_2,q_3$ lift,
 $K_{\rm Berger}$ equivariance, or causal support on $\cR_{46}$.
@@ -705,9 +742,10 @@ relabelled as a third dynamical particle branch.
 
 The obstruction neither invalidates Theorem~\ref{thm:survival} nor computes a
 branch mixing table.  Together with the graph-carrier construction it
-sharpens the next gate to a binary rank-$46$ projector verdict: construct the
-exact branch projector or return a normalized obstruction, before lifting the
-nonlinear brackets.
+sharpens the next gate to a binary subprincipal verdict: construct a nontrivial
+lower-order branch anchor reproducing the exact $V_2$ extension class, or
+return its normalized obstruction, before solving the complete projector or
+lifting the nonlinear brackets.
 
 \section{Interpretation and nonclaims}\label{sec:interpretation}
 
@@ -772,6 +810,8 @@ Artifact & Role\\
  & normalized obstruction to the canonical local $36$-row projector\\
 \cert{BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1}
  & exact local cyclic graph carrier; rank-$46$ branch projector still open\\
+\cert{BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1}
+ & normalized nonsplitting witness; subprincipal branch anchor required\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -810,6 +850,12 @@ PYTHONPATH=. python3 \
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
   verify_berger_retained_46_stf2_prolongation_branch_carrier.py
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_retained_46_stf2_principal_branch_anchor.py --check --guards
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_retained_46_stf2_principal_branch_anchor.py
 \end{verbatim}
 \endgroup
 
@@ -820,8 +866,8 @@ working draft rather than a theorem freeze.
 \section{Outlook}\label{sec:outlook}
 
 Paper~11 now has two mathematical continuations.  The first is to decide the
-rank-$46$ STF2 branch-projector-or-obstruction gate, materialize the cyclic
-$q_2,q_3$ lift if that gate is positive, and compute
+rank-$46$ STF2 subprincipal branch-anchor gate, solve the complete projector
+if that gate is positive, materialize the cyclic $q_2,q_3$ lift, and compute
 Equation~\eqref{eq:mixing}.  A nonzero
 Einstein/extra-Weyl entry would turn the additional Weyl physics into an
 explicit interaction channel; a block-diagonal table would establish

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-46-stf2-principal-branch-anchor-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "dependency_refs",
+    "exact_import_checks",
+    "principal_filtered_module",
+    "idempotent_audit",
+    "normalized_obstruction_witness",
+    "scientific_disposition",
+    "required_subprincipal_anchor",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-46-stf2-principal-branch-anchor-v1"},
+    "result_id": {"const": "BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1"},
+    "result_state": {"const": "PRINCIPAL_DIRECT_SUM_ANCHOR_OBSTRUCTED_FILTERED_SUBPRINCIPAL_GATE_REQUIRED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["rank_36_projector_obstruction", "rank_46_STF2_graph_carrier", "rank_46_projector_solver_contract"],
+      "properties": {
+        "rank_36_projector_obstruction": {"$ref": "#/$defs/dependency"},
+        "rank_46_STF2_graph_carrier": {"$ref": "#/$defs/dependency"},
+        "rank_46_projector_solver_contract": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "exact_import_checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+    "principal_filtered_module": {
+      "type": "object",
+      "required": ["coefficient_field", "scalar_wave_polynomial", "algebra", "real_physical_helicity_multiplicity", "Einstein_submodule", "extra_Weyl_quotient", "exact_sequence", "rank_46_effect"],
+      "properties": {
+        "coefficient_field": {"const": "Q(sqrt(10))"},
+        "scalar_wave_polynomial": {"type": "string"},
+        "algebra": {"const": "A=Q(sqrt(10))[epsilon]/(epsilon^2)"},
+        "real_physical_helicity_multiplicity": {"const": 2},
+        "Einstein_submodule": {"type": "string"},
+        "extra_Weyl_quotient": {"type": "string"},
+        "exact_sequence": {"const": "0 -> E -> A -> X -> 0"},
+        "rank_46_effect": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "idempotent_audit": {
+      "type": "object",
+      "required": ["generic_endomorphism", "idempotence_equations", "solutions_a_b", "only_trivial_principal_idempotents", "forbidden_false_anchors"],
+      "properties": {
+        "generic_endomorphism": {"const": "c=a+b epsilon"},
+        "idempotence_equations": {"const": ["a^2=a", "(2a-1)b=0"]},
+        "solutions_a_b": {"const": [["0", "0"], ["1", "0"]]},
+        "only_trivial_principal_idempotents": {"const": true},
+        "forbidden_false_anchors": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "normalized_obstruction_witness": {
+      "type": "object",
+      "required": ["attempted_section", "A_linearity_equation", "exact_defect", "normalized_dual_functional", "normalized_evaluation", "annihilates_all_section_corrections", "D_weight", "K_Berger_weight", "field_content"],
+      "properties": {
+        "attempted_section": {"type": "string"},
+        "A_linearity_equation": {"type": "string"},
+        "exact_defect": {"const": "epsilon s(1)=epsilon"},
+        "normalized_dual_functional": {"const": "coefficient_of(epsilon)"},
+        "normalized_evaluation": {"const": "1"},
+        "annihilates_all_section_corrections": {"type": "string"},
+        "D_weight": {"const": 0},
+        "K_Berger_weight": {"const": 0},
+        "field_content": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "scientific_disposition": {
+      "type": "object",
+      "required": ["principal_Einstein_extra_Weyl_direct_sum_anchor_exists", "principal_filtered_Einstein_in_extra_Weyl_extension_exists", "declared_225_coefficient_solver_authorized_as_currently_anchored", "full_rank_46_lower_order_projector_ruled_out", "reason_full_projector_not_ruled_out", "couples_Einstein_like_and_extra_Weyl", "negative_physical_direction_introduced", "negative_direction_scope", "REDUCED_MODE_limitation"],
+      "properties": {
+        "principal_Einstein_extra_Weyl_direct_sum_anchor_exists": {"const": false},
+        "principal_filtered_Einstein_in_extra_Weyl_extension_exists": {"const": true},
+        "declared_225_coefficient_solver_authorized_as_currently_anchored": {"const": false},
+        "full_rank_46_lower_order_projector_ruled_out": {"const": false},
+        "reason_full_projector_not_ruled_out": {"type": "string", "minLength": 80},
+        "couples_Einstein_like_and_extra_Weyl": {"const": true},
+        "negative_physical_direction_introduced": {"const": false},
+        "negative_direction_scope": {"type": "string"},
+        "REDUCED_MODE_limitation": {"type": "string", "minLength": 80}
+      },
+      "additionalProperties": false
+    },
+    "required_subprincipal_anchor": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["PRINCIPAL_FILTERED_MODULE_CERTIFIED", "NORMALIZED_PRINCIPAL_ANCHOR_OBSTRUCTION_FOUND", "PRINCIPAL_DIRECT_SUM_BRANCH_ANCHOR_ACCEPTED", "FULL_RANK_46_PROJECTOR_SOLVE_RUN", "FULL_RANK_46_PROJECTOR_OBSTRUCTED", "SUBPRINCIPAL_ANCHOR_REQUIRED", "ELL3_BRANCH_MIXING_AUTHORIZED", "QUANTUM_CLAIM"],
+      "properties": {
+        "PRINCIPAL_FILTERED_MODULE_CERTIFIED": {"const": true},
+        "NORMALIZED_PRINCIPAL_ANCHOR_OBSTRUCTION_FOUND": {"const": true},
+        "PRINCIPAL_DIRECT_SUM_BRANCH_ANCHOR_ACCEPTED": {"const": false},
+        "FULL_RANK_46_PROJECTOR_SOLVE_RUN": {"const": false},
+        "FULL_RANK_46_PROJECTOR_OBSTRUCTED": {"const": false},
+        "SUBPRINCIPAL_ANCHOR_REQUIRED": {"const": true},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 700}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

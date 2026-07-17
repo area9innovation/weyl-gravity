@@ -1,0 +1,125 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate decides only the principal-symbol branch-anchor gate for the landed rank-46 STF2 cyclic graph carrier. The repeated helicity-two wave module is the nonsplit dual-number extension 0 -> epsilon A -> A -> A/(epsilon) -> 0; the displayed coefficient-of-epsilon functional is a normalized witness against every principal A-linear section. Because the added STF2 graph complement is contractible, it does not by itself turn this filtration into an Einstein-like/extra-Weyl direct sum. This result blocks the currently stated principal direct-sum anchor and excludes trivial or auxiliary projectors from being called physical branches. It does not rule out an exact lower-order Berger splitting, filtered branch theory, enlarged mapping cylinder, or separately tagged REDUCED-MODE decomposition. It does not authorize ell3 mixing, infer a negative kinetic direction, restore a QME, or make a quantum claim.",
+  "claim_flags": {
+    "ELL3_BRANCH_MIXING_AUTHORIZED": false,
+    "FULL_RANK_46_PROJECTOR_OBSTRUCTED": false,
+    "FULL_RANK_46_PROJECTOR_SOLVE_RUN": false,
+    "NORMALIZED_PRINCIPAL_ANCHOR_OBSTRUCTION_FOUND": true,
+    "PRINCIPAL_DIRECT_SUM_BRANCH_ANCHOR_ACCEPTED": false,
+    "PRINCIPAL_FILTERED_MODULE_CERTIFIED": true,
+    "QUANTUM_CLAIM": false,
+    "SUBPRINCIPAL_ANCHOR_REQUIRED": true
+  },
+  "dependency_refs": {
+    "rank_36_projector_obstruction": {
+      "artifact_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
+      "sha256": "2a06fb31f888cab2d0c3e3481a559623098b3efba42cc0cd7b9b2759552e980c"
+    },
+    "rank_46_STF2_graph_carrier": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json",
+      "sha256": "13d164e952e35b96b5f755786dc86f069d3451f6e0a33eefe27f845e9866e1c7"
+    },
+    "rank_46_projector_solver_contract": {
+      "artifact_id": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1.json",
+      "sha256": "25f89b9da2a3381315e9f973200483b8981b743545e9352471a2f8bc11b15c7d"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_import_checks": {
+    "physical_helicity_rank_two_imported": true,
+    "rank_36_dual_number_principal_module_imported": true,
+    "rank_36_only_trivial_principal_idempotents_imported": true,
+    "rank_46_added_complement_contractible": true,
+    "rank_46_graph_SDR_imported": true,
+    "rank_46_retained_cohomology_unchanged": true,
+    "rank_46_solver_contract_imported": true
+  },
+  "idempotent_audit": {
+    "forbidden_false_anchors": [
+      "P_E=0, P_X=P_gravity",
+      "P_E=P_gravity, P_X=0",
+      "project only onto the contractible STF2 auxiliary doublet"
+    ],
+    "generic_endomorphism": "c=a+b epsilon",
+    "idempotence_equations": [
+      "a^2=a",
+      "(2a-1)b=0"
+    ],
+    "only_trivial_principal_idempotents": true,
+    "solutions_a_b": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ]
+  },
+  "next_gate": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1",
+  "normalized_obstruction_witness": {
+    "A_linearity_equation": "epsilon s(1)=s(epsilon . 1)=0",
+    "D_weight": 0,
+    "K_Berger_weight": 0,
+    "annihilates_all_section_corrections": "coefficient_of(epsilon^2 b)=0",
+    "attempted_section": "s(1)=1+b epsilon",
+    "exact_defect": "epsilon s(1)=epsilon",
+    "field_content": "one repeated helicity-two Jordan chain, with real multiplicity two",
+    "normalized_dual_functional": "coefficient_of(epsilon)",
+    "normalized_evaluation": "1"
+  },
+  "principal_filtered_module": {
+    "Einstein_submodule": "E=epsilon A=ker(epsilon:A->A)",
+    "algebra": "A=Q(sqrt(10))[epsilon]/(epsilon^2)",
+    "coefficient_field": "Q(sqrt(10))",
+    "exact_sequence": "0 -> E -> A -> X -> 0",
+    "extra_Weyl_quotient": "X=A/E",
+    "rank_46_effect": "the added STF2 graph complement is contractible, so it does not split this retained principal extension",
+    "real_physical_helicity_multiplicity": 2,
+    "scalar_wave_polynomial": "epsilon=-p0^2+p1^2+p2^2+p3^2"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_retained_46_stf2_principal_branch_anchor.py": "35bd616030b6042d77ece9c8dc27e1fd18c4b14936e760b87d67bf6ac3200abd",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_retained_46_stf2_principal_branch_anchor.py": "825b8c7ba2bf15fb37570a8e480b964521d706d65c3d87f698dda6fa7add6200",
+      "d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_principal_branch_anchor.py": "b58b64a6e2158ec828afa457b0a0b48b3594620a841a9e89a875b195e58fa71d",
+      "d_quotient_classical/schema/berger-retained-46-stf2-principal-branch-anchor-v1.schema.json": "c68f97e3f888397340eded1fc6429ab15b722c2f9e536e4143ea714708ad22f2"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_principal_branch_anchor.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_principal_branch_anchor.py",
+      "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_46_stf2_principal_branch_anchor",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-retained-46-stf2-principal-branch-anchor-v1.schema.json -d d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1.json"
+    ]
+  },
+  "required_subprincipal_anchor": {
+    "anti_triviality_conditions": [
+      "both branch maps act nontrivially on the physical helicity quotient",
+      "neither branch is the contractible STF2 doublet",
+      "the branch filtration or splitting reproduces the exact V2 extension class",
+      "real and K_Berger compatibility are exact"
+    ],
+    "input": "exact order-two Berger remainder V2 in A10=Box_2^2+V2 on the physical helicity quotient",
+    "required_output": "nontrivial lower-order branch inclusion/dual normalization or normalized obstruction"
+  },
+  "result_id": "BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1",
+  "result_state": "PRINCIPAL_DIRECT_SUM_ANCHOR_OBSTRUCTED_FILTERED_SUBPRINCIPAL_GATE_REQUIRED",
+  "schema": "pure-weyl-berger-retained-46-stf2-principal-branch-anchor-v1",
+  "scientific_disposition": {
+    "REDUCED_MODE_limitation": "frequency, TT, helicity or generalized-mode splittings may choose a nonlocal complement, but cannot be imported into this LOCAL-ALGEBRAIC verdict",
+    "couples_Einstein_like_and_extra_Weyl": true,
+    "declared_225_coefficient_solver_authorized_as_currently_anchored": false,
+    "full_rank_46_lower_order_projector_ruled_out": false,
+    "negative_direction_scope": "a principal module extension changes no unary kinetic sign and supports no unitarity inference",
+    "negative_physical_direction_introduced": false,
+    "principal_Einstein_extra_Weyl_direct_sum_anchor_exists": false,
+    "principal_filtered_Einstein_in_extra_Weyl_extension_exists": true,
+    "reason_full_projector_not_ruled_out": "lower-order Berger terms may deform epsilon^2=0 and split coincident leading factors; the subprincipal extension must be computed exactly"
+  }
+}

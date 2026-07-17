@@ -25,7 +25,7 @@ def main() -> None:
     assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT"
     assert (
         payload["result_state"]
-        == "WRITING_STARTED_RANK46_SOLVER_CONTRACT_READY_PROJECTOR_OPEN"
+        == "WRITING_STARTED_RANK46_PRINCIPAL_ANCHOR_OBSTRUCTED_SUBPRINCIPAL_OPEN"
     )
     assert payload["lifecycle_state"] == "WRITING_STARTED"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
@@ -62,6 +62,9 @@ def main() -> None:
         "retained_46_Schur_complement_equals_A10",
         "retained_46_exact_graph_shear_exported",
         "retained_46_projector_solver_contract_frozen",
+        "retained_46_principal_filtered_module_certified",
+        "retained_46_principal_direct_sum_anchor_obstructed",
+        "retained_46_subprincipal_anchor_required",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -83,6 +86,7 @@ def main() -> None:
     assert claims["retained_46_total_rows"] == 46
     assert claims["retained_46_degree_ranks"] == [4, 19, 19, 4]
     assert claims["retained_46_projector_independent_graph_coefficient_count"] == 225
+    assert claims["retained_46_principal_anchor_normalized_evaluation"] == "1"
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -109,7 +113,7 @@ def main() -> None:
     assert all(value is False for value in nonclaims.values())
     assert (
         payload["next_gate"]["status"]
-        == "RANK46_GRAPH_CARRIER_ACCEPTED_PROJECTOR_OPEN"
+        == "RANK46_PRINCIPAL_ANCHOR_OBSTRUCTED_SUBPRINCIPAL_OPEN"
     )
     assert (
         payload["next_gate"]["carrier"]
@@ -120,8 +124,12 @@ def main() -> None:
         == "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1"
     )
     assert (
+        payload["next_gate"]["principal_anchor"]
+        == "BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1"
+    )
+    assert (
         payload["next_gate"]["required_input"]
-        == "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"
+        == "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1"
     )
 
     for relative, expected in payload["inputs"].items():
@@ -293,6 +301,27 @@ def main() -> None:
         == 225
     )
 
+    principal_anchor = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert (
+        principal_anchor["result_state"]
+        == "PRINCIPAL_DIRECT_SUM_ANCHOR_OBSTRUCTED_FILTERED_SUBPRINCIPAL_GATE_REQUIRED"
+    )
+    assert principal_anchor["idempotent_audit"]["solutions_a_b"] == [
+        ["0", "0"],
+        ["1", "0"],
+    ]
+    assert (
+        principal_anchor["normalized_obstruction_witness"]["normalized_evaluation"]
+        == "1"
+    )
+    assert principal_anchor["claim_flags"]["FULL_RANK_46_PROJECTOR_OBSTRUCTED"] is False
+    assert principal_anchor["claim_flags"]["SUBPRINCIPAL_ANCHOR_REQUIRED"] is True
+
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,
         build as build_witness_columns,
@@ -353,7 +382,10 @@ def main() -> None:
         r"A_{10}+F^\dagger F&-F^\dagger",
         r"q_1^{46}S_{46}+S_{46}q_1^{46} =I_{46}-\iota_{36}^{46}\pi_{46}^{36}",
         r"BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
-        r"binary rank-$46$ projector verdict",
+        r"\begin{proposition}[Normalized principal branch-anchor obstruction]",
+        r"A=\Q(\sqrt{10})[\epsilon]/(\epsilon^2)",
+        r"\epsilon s(1)=\epsilon",
+        r"binary subprincipal verdict",
     ]
     for marker in required_markers:
         assert marker in normalized, marker
