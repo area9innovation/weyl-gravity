@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-polar-physical-completion-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "provenance", "domain", "action_normalization", "physical_ring", "Einstein_primary_image", "classification", "interpretation", "next_gate", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-polar-physical-completion-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_physical_completion.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"},
+    "result_state": {"const": "POLAR_PHYSICAL_RING_EINSTEIN_PRIMARY_IMAGE_AND_ACTION_NORMALIZATION_CERTIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "generality_level": {"const": "G2_POLAR_ALL_PHYSICAL_ELL_K_OPERATOR_MODULE"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "action_normalization": {"type": "object", "properties": {"identity_verified": {"const": true}, "derived_row_weights": {"const": ["-1", "2", "-1", "2*lambda"]}}, "required": ["identity_verified", "derived_row_weights", "four_dimensional_first_variation_convention", "direct_Legendre_checks"]},
+    "physical_ring": {"type": "object", "properties": {"localization_factors_nonzero_for_every_physical_lambda_ge_6": {"const": true}}, "required": ["physical_coefficient_ring", "not_inverted", "I2_Bezout_witness", "I3_Bezout_witness", "determinantal_ideals_over_R_phys_P_omega", "zero_momentum_audit"]},
+    "Einstein_primary_image": {"type": "object", "properties": {"Einstein_image_equals_complete_q_primary_summand": {"const": true}}, "required": ["source_module", "target_physical_fiber_primary_decomposition", "chain_square_verified", "source_solution_map_injective", "Einstein_image_equals_complete_q_primary_summand", "canonical_extra_polar_quotient_on_every_physical_fiber"]},
+    "classification": {"type": "object", "properties": {"action_row_weights_derived_from_four_dimensional_variation": {"const": true}, "formal_self_adjointness_is_not_the_sole_normalization_argument": {"const": true}, "physical_ring_determinantal_ideals_certified": {"const": true}, "all_physical_lambda_and_compact_momenta_including_zero_certified": {"const": true}, "Einstein_image_equals_complete_q_primary_summand": {"const": true}, "canonical_extra_polar_quotient_two_p_summands": {"const": true}, "polar_extra_Lee_Wald_current_certified": {"const": false}, "ungauged_BV_lift_certified": {"const": false}, "final_residual_descent_certified": {"const": false}, "causal_or_quantum_claim": {"const": false}}, "required": ["action_row_weights_derived_from_four_dimensional_variation", "formal_self_adjointness_is_not_the_sole_normalization_argument", "physical_ring_determinantal_ideals_certified", "all_physical_lambda_and_compact_momenta_including_zero_certified", "Einstein_image_equals_complete_q_primary_summand", "canonical_extra_polar_quotient_two_p_summands", "polar_extra_Lee_Wald_current_certified", "ungauged_BV_lift_certified", "final_residual_descent_certified", "causal_or_quantum_claim"]},
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}

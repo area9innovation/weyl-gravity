@@ -1,0 +1,346 @@
+{
+  "Einstein_primary_image": {
+    "Einstein_image_equals_complete_q_primary_summand": true,
+    "canonical_extra_polar_quotient_on_every_physical_fiber": "(K[omega]/(p))^2",
+    "chain_square": "H_P*S_P=J_P*E_P",
+    "chain_square_verified": true,
+    "dimension_equality_forces_surjectivity_onto_q_primary": true,
+    "injectivity_inputs": [
+      "the ell>=2 polar source gauge slice has no residual smooth gauge",
+      "the target field-map kernel is the pure-Weyl vector (-1,0,1,1,0)",
+      "the source sphere-tracefree row equals -1 on that vector"
+    ],
+    "p_q_resultant": "4*(9*lambda - 2)**2/81",
+    "q_annihilates_source_image": true,
+    "q_is_a_unit_on_each_p_primary_summand": true,
+    "source_image_lies_in_complete_q_primary_summand": true,
+    "source_master_Smith_factors": [
+      "1",
+      "k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4"
+    ],
+    "source_master_presentation": [
+      [
+        "-k**2 - lambda + omega**2",
+        "2*lambda"
+      ],
+      [
+        "1",
+        "-k**2 - lambda + omega**2"
+      ]
+    ],
+    "source_module": "K[omega]/(q)",
+    "source_module_K_dimension": 4,
+    "source_solution_map_injective": true,
+    "target_physical_fiber_primary_decomposition": "(K[omega]/(p))^2 direct_sum K[omega]/(q)",
+    "target_q_primary_K_dimension": 4
+  },
+  "action_normalization": {
+    "Maxwell_axial_norm_identity": "integral_S2 X_a X^a=lambda*integral_S2 Y^2",
+    "common_rescaling": "the reduced Hessian represents 2*delta S_WM divided by the scalar harmonic norm and circle length",
+    "derived_row_weights": [
+      "-1",
+      "2",
+      "-1",
+      "2*lambda"
+    ],
+    "direct_Legendre_checks": [
+      {
+        "axial_one_form_norm_without_2pi": "12/5",
+        "ell": 2,
+        "lambda": 6,
+        "ratio": "6",
+        "scalar_norm_without_2pi": "2/5"
+      },
+      {
+        "axial_one_form_norm_without_2pi": "24/7",
+        "ell": 3,
+        "lambda": 12,
+        "ratio": "12",
+        "scalar_norm_without_2pi": "2/7"
+      },
+      {
+        "axial_one_form_norm_without_2pi": "40/9",
+        "ell": 4,
+        "lambda": 20,
+        "ratio": "20",
+        "scalar_norm_without_2pi": "2/9"
+      }
+    ],
+    "four_dimensional_first_variation_convention": "delta S_WM=(1/2) integral sqrt(-g) (3B_ab-T_ab) delta g^ab + integral partial_a(sqrt(-g)F^ab) delta A_b",
+    "identity_verified": true,
+    "inverse_metric_variation_00_01_11": [
+      "-A_t",
+      "B",
+      "-C_t"
+    ],
+    "normalized_action_matrix": [
+      [
+        "(2*k**4 + 4*k**2*lambda + 2*lambda**2 - 3*lambda)/4",
+        "k*omega*(k**2 + lambda)",
+        "(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "lambda"
+      ],
+      [
+        "k*omega*(k**2 + lambda)",
+        "-(3*k**2*lambda - 4*k**2*omega**2 + 3*lambda**2 - 3*lambda*omega**2 - 2*lambda)/2",
+        "-k*omega*(lambda - omega**2)",
+        "0"
+      ],
+      [
+        "(k**2*lambda + 2*k**2*omega**2 + lambda**2 - lambda*omega**2 + lambda)/4",
+        "-k*omega*(lambda - omega**2)",
+        "(2*lambda**2 - 4*lambda*omega**2 - 3*lambda + 2*omega**4)/4",
+        "-lambda"
+      ],
+      [
+        "lambda",
+        "0",
+        "-lambda",
+        "-2*lambda*(k**2 + lambda - omega**2)"
+      ]
+    ],
+    "row_selection": [
+      "metric_00",
+      "metric_01",
+      "metric_11",
+      "maxwell_axial_density"
+    ],
+    "symmetric_01_contraction_multiplicity": 2
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate closes physical specialization, primary-image identification, and reduced action normalization for polar ell>=2. It does not construct the polar extra Lee-Wald current, an ungauged BV chain map, final residual states, causal boundary data, scattering, or a quantum norm/ghost theorem.",
+  "classification": {
+    "Einstein_image_equals_complete_q_primary_summand": true,
+    "action_row_weights_derived_from_four_dimensional_variation": true,
+    "all_physical_lambda_and_compact_momenta_including_zero_certified": true,
+    "canonical_extra_polar_quotient_two_p_summands": true,
+    "causal_or_quantum_claim": false,
+    "final_residual_descent_certified": false,
+    "formal_self_adjointness_is_not_the_sole_normalization_argument": true,
+    "physical_ring_determinantal_ideals_certified": true,
+    "polar_extra_Lee_Wald_current_certified": false,
+    "ungauged_BV_lift_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "polar ell>=2 Weyl-Maxwell coefficient complex on the fixed compact magnetic bundle, every allowed compact momentum including k=0, before ungauged and final residual descent",
+  "generality_level": "G2_POLAR_ALL_PHYSICAL_ELL_K_OPERATOR_MODULE",
+  "interpretation": "The polar target contains exactly the complete Einstein q-primary module plus two additional p-primary cyclic summands on every physical ell>=2 compact-momentum fiber. The action normalization follows directly from the four-dimensional variational convention and harmonic norms. This is an off-shell coefficient/module theorem, not yet a statement about the polar extra Lee-Wald pairing or residual physical states.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the direct four-dimensional polar extra Lee-Wald current and coefficient extractors, then lift the polynomial square to the ungauged Noether/BV complex and perform final residual descent",
+  "physical_ring": {
+    "I1_unit_entry": "H[0,3]=lambda",
+    "I2_Bezout_witness": {
+      "coefficients": [
+        "(45*k**2*lambda**2 + 12*k**2*lambda + 20*k**2 - 120*lambda**3 + 75*lambda**2*omega**2 + 220*lambda**2 - 196*lambda*omega**2 + 376*lambda - 132*omega**2 + 96)/(3*(5*lambda + 6)*(9*lambda + 2))",
+        "32*k*omega*(lambda + 2)*(15*lambda + 7)/(3*(5*lambda + 6)*(9*lambda + 2))",
+        "5*lambda*(45*lambda**2 + 12*lambda + 20)/(3*(5*lambda + 6)*(9*lambda + 2))",
+        "-(180*k**2*lambda**2 + 48*k**2*lambda + 80*k**2 - 45*lambda**3 + 540*lambda**2*omega**2 - 612*lambda**2 + 768*lambda*omega**2 + 44*lambda + 144*omega**2 + 96)/(3*(5*lambda + 6)*(9*lambda + 2))",
+        "-8/3"
+      ],
+      "identity_verified": true,
+      "minor_labels": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "normalized_generators": [
+        "(3*k**2*lambda - 4*k**2*omega**2 + 3*lambda**2 - 3*lambda*omega**2 - 2*lambda)/2",
+        "k*omega*(lambda - omega**2)",
+        "-(2*k**4 + 5*k**2*lambda + 2*k**2*omega**2 + 3*lambda**2 - lambda*omega**2 - 2*lambda)/4",
+        "-(k**2*lambda + 2*k**2*omega**2 + 3*lambda**2 - 5*lambda*omega**2 - 2*lambda + 2*omega**4)/4",
+        "-(6*k**2*lambda**2 - 12*k**2*lambda*omega**2 - 9*k**2*lambda + 6*k**2*omega**4 + 12*k**2*omega**2 + 6*lambda**3 - 18*lambda**2*omega**2 - 13*lambda**2 + 18*lambda*omega**4 + 17*lambda*omega**2 + 6*lambda - 6*omega**6 - 4*omega**4)/8"
+      ],
+      "unit_target": "-lambda*(3*lambda - 2)**2*(5*lambda + 6)/(6*(9*lambda + 2))"
+    },
+    "I3_Bezout_witness": {
+      "all_nonzero_three_minors_divisible_by_p": true,
+      "coefficients": [
+        "3*(lambda - 2)*(3*k**2*lambda - 4*k**2 + 3*lambda**2 - 3*lambda*omega**2 - 2*lambda + 4*omega**2 - 4)/(lambda*(3*lambda - 4)**2)",
+        "3*(lambda - 2)*(9*k**2*lambda**2 - 30*k**2*lambda + 24*k**2 - 9*lambda**2*omega**2 + 30*lambda*omega**2 - 16*lambda - 24*omega**2 + 24)/(8*lambda*(3*lambda - 4)**2)",
+        "-3*(lambda - 2)*(9*k**2*lambda**2 - 30*k**2*lambda + 24*k**2 - 9*lambda**2*omega**2 + 30*lambda*omega**2 - 16*lambda - 24*omega**2 + 24)/(8*lambda*(3*lambda - 4)**2)"
+      ],
+      "identity_verified": true,
+      "minor_labels": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      ],
+      "normalization": "minor/(3*lambda^2*p)",
+      "normalized_generators": [
+        "(3*k**4*lambda - 6*k**4 + 6*k**2*lambda**2 - 6*k**2*lambda*omega**2 - 14*k**2*lambda + 12*k**2*omega**2 + 3*lambda**3 - 6*lambda**2*omega**2 - 14*lambda**2 + 3*lambda*omega**4 + 14*lambda*omega**2 + 8*lambda - 6*omega**4)/32",
+        "-(2*k**4 + 5*k**2*lambda - 2*k**2*omega**2 + 3*lambda**2 - lambda*omega**2 - 2*lambda)/8",
+        "(k**2*lambda - 2*k**2*omega**2 + 3*lambda**2 - 5*lambda*omega**2 - 2*lambda + 2*omega**4)/8"
+      ],
+      "number_nonzero_three_minors": 16,
+      "unit_target": "3*(lambda - 2)**3*(3*lambda - 2)**2/(32*(3*lambda - 4)**2)"
+    },
+    "determinantal_ideals_over_R_phys_P_omega": {
+      "I1": "(1)",
+      "I2": "(1)",
+      "I3": "(p)",
+      "I4": "(p^2*q)",
+      "invariant_factors_on_every_physical_fiber": [
+        "1",
+        "1",
+        "p",
+        "p*q"
+      ],
+      "no_k_torsion": true
+    },
+    "localization_factors_nonzero_for_every_physical_lambda_ge_6": true,
+    "not_inverted": [
+      "k",
+      "omega",
+      "p",
+      "q"
+    ],
+    "physical_coefficient_ring": "R_phys^P=Q[lambda,k,lambda^(-1),(lambda-2)^(-1),(3lambda-2)^(-1),(3lambda-4)^(-1),(5lambda+6)^(-1),(9lambda+2)^(-1),(9lambda-2)^(-1)]",
+    "polynomial_variable": "omega",
+    "shells": {
+      "p": "-(3*k**2 + 3*lambda - 3*omega**2 - 2)/3",
+      "q": "k**4 + 2*k**2*lambda - 2*k**2*omega**2 + lambda**2 - 2*lambda*omega**2 - 2*lambda + omega**4",
+      "resultant": "4*(9*lambda - 2)**2/81"
+    },
+    "zero_momentum_audit": {
+      "extra_representatives_order_At_B_Ct_U": [
+        [
+          "0",
+          "-8"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-12*lambda"
+        ],
+        [
+          "0",
+          "3*(3*lambda - 2)"
+        ]
+      ],
+      "independence_minor": "3*(3*lambda - 2)",
+      "on_p_shell_defect": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "zero_momentum_retained": true
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_physical_completion.py",
+    "generator_sha256": "43713d4c09597ab3e2da66f28008e4b2d644d1531c4c7ea27f1062b3803819c9",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_polar_master_complex.json": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5",
+      "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20",
+      "bridge/certificates/einstein_weyl_polar_offshell_operator_preflight.json": "5496a7e1124ba8ca0526dd439b11336280bcfaf0c7dcb757eddbbb89ee82612f"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
+  "result_state": "POLAR_PHYSICAL_RING_EINSTEIN_PRIMARY_IMAGE_AND_ACTION_NORMALIZATION_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-polar-physical-completion-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_physical_completion.schema.json",
+  "schema_sha256": "87ad239580602a9ae6a2aa404e53ec9fb54c3017f6db1c919d5d5f848a8e6e94",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_physical_completion --verify bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_completion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_physical_completion"
+  ]
+}

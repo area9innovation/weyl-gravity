@@ -1246,11 +1246,53 @@ Over `Frac(Q(lambda,k))[omega]` the determinantal divisors are
 `1,1,p,p^2 q`, so the invariant factors are `1,1,p,p q`. Since
 `Res_omega(p,q)=4(9lambda-2)^2/81`, the physical `ell>=2` locus has the same
 generic primary pattern as the axial block: two extra `p` summands and the
-Einstein `q` summand. This certifies the extra polar equation module and the
-Einstein off-shell coefficient square, but not yet the polar extra Lee--Wald
-current, an integral all-momentum physical-ring theorem, the ungauged BV/
-Noether lift, or final residual survival. Those are the remaining Paper-A-
-expansion gates; the theorem-frozen axial paper does not depend on them.
+Einstein `q` summand.
+
+`EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION` now removes the remaining
+coefficient-ring and interpretation qualifications.  Over the physical
+localization
+
+```text
+R_phys^P=Q[lambda,k,
+ lambda^-1,(lambda-2)^-1,(3lambda-2)^-1,(3lambda-4)^-1,
+ (5lambda+6)^-1,(9lambda+2)^-1,(9lambda-2)^-1]
+```
+
+explicit Bezout combinations of the two-by-two and three-by-three minors give
+
+```text
+I1=(1), I2=(1), I3=(p), I4=(p^2 q).
+```
+
+Every localization factor is nonzero for `lambda=ell(ell+1)>=6`; `k`,
+`omega`, `p`, and `q` are not inverted.  Hence every allowed compact momentum,
+including `k=0`, has fibrewise invariant factors `1,1,p,p q`.  At `k=0` two
+explicit extra representatives have independence minor `3(3lambda-2)`.
+
+The source master presentation has Smith factors `1,q`, so its module is
+`K[omega]/(q)`.  The polynomial square maps it into the target, the preflight
+kernel theorem makes that map injective, and `q` is a unit on the two
+`p`-primary summands.  Since the source and target `q`-primary dimensions are
+both `deg(q)=4`, the Einstein image equals the complete `q`-primary summand.
+The polar extra quotient is therefore canonically
+`(K[omega]/(p))^2` on every physical fibre.
+
+Finally, the action row weights are no longer fixed only by formal
+self-adjointness.  From
+
+```text
+delta S_WM=(1/2) integral sqrt(-g)(3B-T)_ab delta g^ab
+           + integral partial_a(sqrt(-g)F^ab) delta A_b
+```
+
+the inverse-metric variations give `(-1,2,-1)` for `(00,01,11)`, while
+`integral X_a X^a=lambda integral Y^2` gives `2lambda` for Maxwell after the
+common `2 delta S` normalization.  Thus the four-dimensional harmonic
+variation derives the action weights `(-1,2,-1,2lambda)` independently.
+
+The remaining polar gates are the direct extra Lee--Wald current and
+extractors, the ungauged BV/Noether lift, and final residual survival.  The
+theorem-frozen axial Paper A does not depend on those extensions.
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
@@ -1268,9 +1310,9 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Promote the generic polar extra equation module to the physical coefficient
-   ring, compute its Lee--Wald current and coefficient extractors, and perform
-   final residual descent for both extra parities.
+1. Compute the direct polar extra Lee--Wald current and coefficient extractors,
+   lift the polar square to the ungauged BV/Noether complex, and perform final
+   residual descent for both extra parities.
 2. Extend the certified axial detector and negative-definite `ell=2,k=0`
    extra Taub test to nonzero momentum, higher harmonics, and parity-compatible
    `EE`, `EX`, and `XX` source channels; then construct a relational or
