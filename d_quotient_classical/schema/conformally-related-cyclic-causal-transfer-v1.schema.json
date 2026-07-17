@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/conformally-related-cyclic-causal-transfer-v1.schema.json",
+  "title": "Globally conformal cyclic causal BV transfer",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "background_class", "finite_BV_canonical_map", "transport_theorem", "nonconstant_consumer", "exact_checks", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-conformally-related-cyclic-causal-transfer-v1"},
+    "result_id": {"const": "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1"},
+    "result_state": {"const": "G3_GLOBAL_CONFORMAL_ORBIT_CAUSAL_TRANSFER_CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["abstract_causal_transfer", "cylinder_full_green_homotopy", "cylinder_current_comparison", "minimal_field_dictionary", "minimal_atom_manifest"],
+      "properties": {
+        "abstract_causal_transfer": {"$ref": "#/$defs/dependency"},
+        "cylinder_full_green_homotopy": {"$ref": "#/$defs/dependency"},
+        "cylinder_current_comparison": {"$ref": "#/$defs/dependency"},
+        "minimal_field_dictionary": {"$ref": "#/$defs/dependency"},
+        "minimal_atom_manifest": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "background_class": {
+      "type": "object",
+      "required": ["manifold", "reference_metric", "metrics", "parameter_space", "topology", "global_hyperbolicity", "causal_sets", "boundary", "uniformity_scope"],
+      "properties": {
+        "manifold": {"const": "M=R x S^3"},
+        "reference_metric": {"type": "string"},
+        "metrics": {"type": "string"},
+        "parameter_space": {"type": "string"},
+        "topology": {"type": "string"},
+        "global_hyperbolicity": {"type": "string"},
+        "causal_sets": {"type": "string"},
+        "boundary": {"const": "no timelike boundary"},
+        "uniformity_scope": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "finite_BV_canonical_map": {
+      "type": "object",
+      "required": ["phi", "minimal_rows", "derived_rows", "nonminimal_and_prolonged_rows", "inverse", "group_law", "odd_pairing", "finite_fixture_tangent_matrix", "finite_fixture_cotangent_matrix", "finite_fixture_defects"],
+      "properties": {
+        "phi": {"const": "log Omega"},
+        "minimal_rows": {
+          "type": "object",
+          "required": ["h", "xi", "omega", "g_star", "xi_star", "omega_star"],
+          "properties": {
+            "h": {"const": "h_phi=exp(2 phi) h"},
+            "xi": {"const": "xi_phi=xi"},
+            "omega": {"const": "omega_phi=omega-xi(phi)"},
+            "g_star": {"const": "g_star_phi=exp(-2 phi) g_star"},
+            "xi_star": {"const": "xi_star_phi=xi_star+d(phi) omega_star"},
+            "omega_star": {"const": "omega_star_phi=omega_star"}
+          },
+          "additionalProperties": false
+        },
+        "derived_rows": {
+          "type": "object",
+          "required": ["E_g", "N_xi", "N_omega"],
+          "properties": {"E_g": {"type": "string"}, "N_xi": {"type": "string"}, "N_omega": {"type": "string"}},
+          "additionalProperties": false
+        },
+        "nonminimal_and_prolonged_rows": {"type": "string", "minLength": 20},
+        "inverse": {"type": "string"},
+        "group_law": {"type": "string"},
+        "odd_pairing": {"type": "string"},
+        "finite_fixture_tangent_matrix": {"$ref": "#/$defs/matrix3"},
+        "finite_fixture_cotangent_matrix": {"$ref": "#/$defs/matrix3"},
+        "finite_fixture_defects": {
+          "type": "object",
+          "required": ["tangent_inverse_left", "tangent_inverse_right", "full_inverse_left", "full_inverse_right", "odd_pairing_preserved", "finite_group_composition"],
+          "properties": {
+            "tangent_inverse_left": {"const": 0}, "tangent_inverse_right": {"const": 0},
+            "full_inverse_left": {"const": 0}, "full_inverse_right": {"const": 0},
+            "odd_pairing_preserved": {"const": 0}, "finite_group_composition": {"const": 0}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "transport_theorem": {
+      "type": "object",
+      "required": ["differential", "advanced_retarded_homotopies", "chain_identity", "support", "cyclic_adjoint", "current", "causal_quasi_isomorphism", "proof"],
+      "properties": {
+        "differential": {"type": "string"}, "advanced_retarded_homotopies": {"type": "string"},
+        "chain_identity": {"type": "string"}, "support": {"type": "string"},
+        "cyclic_adjoint": {"type": "string"}, "current": {"type": "string"},
+        "causal_quasi_isomorphism": {"type": "string"}, "proof": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "nonconstant_consumer": {
+      "type": "object",
+      "required": ["phi", "Omega", "bounds", "d_phi", "nonconstant", "all_derivatives_bounded", "same_causal_cones", "transported_complete_complex"],
+      "properties": {
+        "phi": {"const": "log(1+1/(10*(1+t^2)))"},
+        "Omega": {"type": "string"},
+        "bounds": {
+          "type": "object",
+          "required": ["Omega_minus_1", "11_over_10_minus_Omega", "conclusion"],
+          "properties": {"Omega_minus_1": {"type": "string"}, "11_over_10_minus_Omega": {"type": "string"}, "conclusion": {"const": "1<Omega<=11/10"}},
+          "additionalProperties": false
+        },
+        "d_phi": {"type": "string"},
+        "nonconstant": {"const": true}, "all_derivatives_bounded": {"const": true},
+        "same_causal_cones": {"const": true}, "transported_complete_complex": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["minimal_row_weights_imported", "affine_Weyl_ghost_term_included", "cotangent_antifield_shear_included", "finite_map_invertible", "finite_group_law_exact", "BV_pairing_preserved", "transported_gauge_fermion_declared", "chain_identity_transports_by_conjugation", "advanced_retarded_support_preserved", "cyclic_adjoint_transports", "current_pairing_transports", "nonconstant_global_consumer_exact"],
+      "properties": {
+        "minimal_row_weights_imported": {"const": true}, "affine_Weyl_ghost_term_included": {"const": true},
+        "cotangent_antifield_shear_included": {"const": true}, "finite_map_invertible": {"const": true},
+        "finite_group_law_exact": {"const": true}, "BV_pairing_preserved": {"const": true},
+        "transported_gauge_fermion_declared": {"const": true}, "chain_identity_transports_by_conjugation": {"const": true},
+        "advanced_retarded_support_preserved": {"const": true}, "cyclic_adjoint_transports": {"const": true},
+        "current_pairing_transports": {"const": true}, "nonconstant_global_consumer_exact": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1", "G3_OPEN_BACKGROUND_CLASS", "ALL_GLOBALLY_CONFORMALLY_CYLINDRICAL_METRICS_IN_CLASS", "ALL_LOCALLY_CONFORMALLY_FLAT_TOPOLOGIES", "FIXED_UNTRANSFORMED_GAUGE_FERMION", "TIMELIKE_BOUNDARY_VERSION", "HADAMARD_TRANSFER", "QUANTUM_CLAIM"],
+      "properties": {
+        "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1": {"const": true},
+        "G3_OPEN_BACKGROUND_CLASS": {"const": true},
+        "ALL_GLOBALLY_CONFORMALLY_CYLINDRICAL_METRICS_IN_CLASS": {"const": true},
+        "ALL_LOCALLY_CONFORMALLY_FLAT_TOPOLOGIES": {"const": false},
+        "FIXED_UNTRANSFORMED_GAUGE_FERMION": {"const": false},
+        "TIMELIKE_BOUNDARY_VERSION": {"const": false},
+        "HADAMARD_TRANSFER": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_LOCAL_PATCHING_OR_CONFORMALLY_EINSTEIN_CURVATURE_OBSTRUCTION"},
+    "claim_boundary": {"type": "string", "minLength": 200},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object", "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+      "additionalProperties": false
+    },
+    "matrix3": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}}
+    }
+  }
+}

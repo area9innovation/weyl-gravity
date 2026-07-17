@@ -904,11 +904,20 @@ uniform background class C-G2, not another cylinder replay.
 
 ### Work package C-G2: conformally flat background class
 
-Test the theorem on all globally hyperbolic conformally flat spacetimes
-satisfying explicit conformal-factor, topology, and boundary hypotheses.
-Determine conformal transport of the BV complex and pairing, global Green
-support, patching, and which residual-cohomology statements disappear while
-the causal complex survives.
+`CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1` now certifies the first G3
+open class: the fixed cylinder manifold with metrics
+\(g_\varphi=e^{2\varphi}g_0\), where \(\varphi\in C_b^\infty\) lies in a
+declared open bounded-smooth neighbourhood.  The exact finite BV map includes
+the affine Diff--Weyl ghost term \(\omega_\varphi=\omega-\xi(\varphi)\) and
+its cotangent shear.  Conjugation transports the differential, gauge fermion,
+Green homotopies, causal support, cyclic adjoint and current pairing.  An
+independent consumer replays the nonconstant factor
+\(1+1/(10(1+t^2))\).
+
+This does **not** cover arbitrary locally conformally flat topology, timelike
+boundaries, chart patching, or the original untransported coordinate gauge.
+The remaining C-G2 alternatives are a local-patching theorem or the first
+curvature obstruction on conformally Einstein/Bach-flat backgrounds.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
@@ -1071,7 +1080,8 @@ The physical activation sequence and reassignment triggers are recorded in
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
 have fired.  The classical team's current primary ownership is the rank-46
 subprincipal projector obstruction handoff; its next independent generality
-task is C-G2 (uniform conformally flat backgrounds).  The certified C-G1
+task is the next C-G2 gate beyond the certified global conformal-orbit class.
+The certified C-G1
 theorem may seed one bounded G3/second-consumer task, while the observer team
 owns localized apparatus completion.
 
@@ -1085,13 +1095,13 @@ a failed task.
 ### Current eight-hour assignment (2026-07-17)
 
 The rank-46 support-local projector rail is closed by its certified
-subprincipal obstruction.  The active independent task is now **C-G2**:
-prove or obstruct cyclic causal transfer on an open class of globally
-hyperbolic conformally flat backgrounds.  State the complete conformal-factor class,
-derive every weighted chain/SDR/Green/pairing intertwiner, and independently
-verify one nonconstant conformal factor.  If the causal-support layer cannot
-close, return the exact algebraic intertwining theorem and first support or
-cyclic obstruction without claiming `LORENTZIAN-CAUSAL`.  The full queue and
+subprincipal obstruction.  C-G2 now certifies a G3 open class on the global
+conformal orbit of the cylinder, including exact weighted
+chain/Green/pairing transport and a nonconstant consumer.  The active next
+gate is either support-local patching to new conformally flat topology or a
+first conformally Einstein/Bach-flat curvature obstruction.  Fixed
+untransported gauges, timelike boundaries and Hadamard claims remain false.
+The full queue and
 morning handoff are authoritative in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

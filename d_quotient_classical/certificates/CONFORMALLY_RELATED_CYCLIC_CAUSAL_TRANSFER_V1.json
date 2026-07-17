@@ -1,0 +1,173 @@
+{
+  "background_class": {
+    "boundary": "no timelike boundary",
+    "causal_sets": "J_g_phi^+/-=J_g0^+/- as subsets of M",
+    "global_hyperbolicity": "positive conformal rescaling preserves global hyperbolicity and the Cauchy surfaces {t=constant}",
+    "manifold": "M=R x S^3",
+    "metrics": "g_phi=exp(2 phi) g0",
+    "parameter_space": "U_epsilon={phi in C_b^infinity(M,R): sup_M |phi|<epsilon}, epsilon>0",
+    "reference_metric": "g0=-dt^2+dOmega_3^2",
+    "topology": "bounded-smooth Frechet topology; U_epsilon is open by the C0 seminorm",
+    "uniformity_scope": "smooth and support categories; Sobolev estimates require the corresponding finite C_b derivative seminorms of phi"
+  },
+  "claim_boundary": "This theorem promotes a genuine G3 open class on the fixed cylinder manifold: every bounded-smooth positive global conformal rescaling in U_epsilon inherits the complete smooth/support causal BV homotopies and cyclic current pairing from the certified cylinder complex by the displayed finite BV-canonical gauge transformation. The Weyl ghost affine term and its cotangent antifield shear are essential. The gauge-fixed and prolonged rows use the transported gauge fermion; this theorem does not assert that the original untransformed coordinate gauge has identical coefficients. It does not cover conformally flat manifolds requiring multiple conformal charts, new topology, timelike boundaries, Sobolev-uniform estimates without derivative bounds, Hadamard products, interactions, anomalies, or quantum theory.",
+  "dependency_refs": {
+    "abstract_causal_transfer": {
+      "artifact_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+      "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+      "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
+    },
+    "cylinder_current_comparison": {
+      "artifact_id": "pure-weyl-prolonged-current-comparison-v1",
+      "path": "covariant_completion/certificates/curved_prolonged_current_comparison.json",
+      "sha256": "0a0f2d440c9a9466468bc493b61d8c52f0bb4634a22871d0118140043e2b89ac"
+    },
+    "cylinder_full_green_homotopy": {
+      "artifact_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+      "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+      "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee"
+    },
+    "minimal_atom_manifest": {
+      "artifact_id": "CLASSICAL_MINIMAL_BV_KT_ADAPTED_ATOM_BASIS_V2",
+      "path": "d_quotient_classical/minimal_bv_antifield/foundation/atom_basis_manifest.json",
+      "sha256": "8bb38ab39dacb2dfea36e2d2fd4873df221a64057a9bc8d05174f6b9615db378"
+    },
+    "minimal_field_dictionary": {
+      "artifact_id": "CLASSICAL_MINIMAL_BV_FIELD_DICTIONARY_V2",
+      "path": "d_quotient_classical/minimal_bv_antifield/foundation/field_dictionary.json",
+      "sha256": "9a898f03fab150f38dfcd1a78bf6b9ae00b8b42f66613c453328d5fee23f781b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "BV_pairing_preserved": true,
+    "advanced_retarded_support_preserved": true,
+    "affine_Weyl_ghost_term_included": true,
+    "chain_identity_transports_by_conjugation": true,
+    "cotangent_antifield_shear_included": true,
+    "current_pairing_transports": true,
+    "cyclic_adjoint_transports": true,
+    "finite_group_law_exact": true,
+    "finite_map_invertible": true,
+    "minimal_row_weights_imported": true,
+    "nonconstant_global_consumer_exact": true,
+    "transported_gauge_fermion_declared": true
+  },
+  "finite_BV_canonical_map": {
+    "derived_rows": {
+      "E_g": "E_g,phi=exp(-2 phi) E_g",
+      "N_omega": "N_omega,phi=N_omega",
+      "N_xi": "N_xi,phi=N_xi+d(phi) N_omega"
+    },
+    "finite_fixture_cotangent_matrix": [
+      [
+        "1/r",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "a"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "finite_fixture_defects": {
+      "finite_group_composition": 0,
+      "full_inverse_left": 0,
+      "full_inverse_right": 0,
+      "odd_pairing_preserved": 0,
+      "tangent_inverse_left": 0,
+      "tangent_inverse_right": 0
+    },
+    "finite_fixture_tangent_matrix": [
+      [
+        "r",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-a",
+        "1"
+      ]
+    ],
+    "group_law": "U_psi U_phi=U_(phi+psi)",
+    "inverse": "U_phi^-1=U_-phi with the inverse affine ghost/cotangent shear",
+    "minimal_rows": {
+      "g_star": "g_star_phi=exp(-2 phi) g_star",
+      "h": "h_phi=exp(2 phi) h",
+      "omega": "omega_phi=omega-xi(phi)",
+      "omega_star": "omega_star_phi=omega_star",
+      "xi": "xi_phi=xi",
+      "xi_star": "xi_star_phi=xi_star+d(phi) omega_star"
+    },
+    "nonminimal_and_prolonged_rows": "transport every generalized-auxiliary defining row by the same tangent map and every dual row by its inverse formal adjoint; equivalently transport the gauge fermion rather than reusing the untransformed cylinder gauge",
+    "odd_pairing": "U_phi^sharp Omega_BV U_phi=Omega_BV",
+    "phi": "log Omega"
+  },
+  "flags": {
+    "ALL_GLOBALLY_CONFORMALLY_CYLINDRICAL_METRICS_IN_CLASS": true,
+    "ALL_LOCALLY_CONFORMALLY_FLAT_TOPOLOGIES": false,
+    "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1": true,
+    "FIXED_UNTRANSFORMED_GAUGE_FERMION": false,
+    "G3_OPEN_BACKGROUND_CLASS": true,
+    "HADAMARD_TRANSFER": false,
+    "QUANTUM_CLAIM": false,
+    "TIMELIKE_BOUNDARY_VERSION": false
+  },
+  "next_gate": "C_G2_LOCAL_PATCHING_OR_CONFORMALLY_EINSTEIN_CURVATURE_OBSTRUCTION",
+  "nonconstant_consumer": {
+    "Omega": "1 + 1/(10*t**2 + 10)",
+    "all_derivatives_bounded": true,
+    "bounds": {
+      "11_over_10_minus_Omega": "t**2/(10*(t**2 + 1))",
+      "Omega_minus_1": "1/(10*(t**2 + 1))",
+      "conclusion": "1<Omega<=11/10"
+    },
+    "d_phi": "-2*t/((t**2 + 1)*(10*t**2 + 11))",
+    "nonconstant": true,
+    "phi": "log(1+1/(10*(1+t^2)))",
+    "same_causal_cones": true,
+    "transported_complete_complex": true
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/conformally_related_cyclic_causal_transfer.py": "c5aae98bd0bac0086bf4a81938ba7b2ea25d750ff603e857133a072a15225c5a",
+      "d_quotient_classical/causal_transfer/tests/test_conformally_related_cyclic_causal_transfer.py": "65bfa85e6cedf8bd96d463e9827f33fe76794f9cfea8fd34004d3b8179a05943",
+      "d_quotient_classical/causal_transfer/verify_conformally_related_cyclic_causal_transfer.py": "6be146cbdca94a8b9ea04e7b1778f048453653930ad3fe545721578ca9891811",
+      "d_quotient_classical/schema/conformally-related-cyclic-causal-transfer-v1.schema.json": "ab67c87a782d0b83952725b81014b2d4dc63479c227c636cdad9402f16495a89"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/conformally_related_cyclic_causal_transfer.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_conformally_related_cyclic_causal_transfer.py",
+      "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_conformally_related_cyclic_causal_transfer",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/conformally-related-cyclic-causal-transfer-v1.schema.json -d d_quotient_classical/certificates/CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1.json"
+    ]
+  },
+  "result_id": "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1",
+  "result_state": "G3_GLOBAL_CONFORMAL_ORBIT_CAUSAL_TRANSFER_CERTIFIED",
+  "schema": "pure-weyl-conformally-related-cyclic-causal-transfer-v1",
+  "transport_theorem": {
+    "advanced_retarded_homotopies": "Lambda_phi,+/-=U_phi Lambda_0,+/- U_phi^-1",
+    "causal_quasi_isomorphism": "the compact-to-spacelike-compact causal map transports by U_phi",
+    "chain_identity": "Q_phi Lambda_phi,+/-+Lambda_phi,+/- Q_phi=1",
+    "current": "Omega_Sigma,phi(U_phi u,U_phi v)=Omega_Sigma,0(u,v); transported improvements remain d+Q exact",
+    "cyclic_adjoint": "Lambda_phi,+^sharp=Sigma_phi Lambda_phi,- Sigma_phi^-1",
+    "differential": "Q_phi=U_phi Q_0 U_phi^-1",
+    "proof": "conjugate the cylinder chain identity; U_phi and U_phi^-1 are pointwise support-local, preserve the odd pairing, and positive conformal rescaling leaves the causal relation unchanged",
+    "support": "supp Lambda_phi,+/- f subset J_g_phi^+/-(supp f)"
+  }
+}
