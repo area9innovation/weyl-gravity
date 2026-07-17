@@ -1,0 +1,40 @@
+{
+  "boundary_conditions": "compact R_t x S1_L x S2 fixed-P_N product; principal covector complex and generic axial ell>=2 Fourier-polynomial block before the final residual quotient; polar, exceptional, global and boundary curved row maps remain open",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the covariant principal minimal-BV Einstein-Maxwell to Weyl-Maxwell chain map has an exact nilpotent mapping cone",
+    "the principal cone is exact at the declared noncharacteristic covector and has cohomology dimensions (0,0,4,4,0) at the declared null covector",
+    "the complete generic axial ell>=2 block admits a strict polynomial off-shell chain map on ghosts, six ungauged fields, equations and Noether identities",
+    "the axial equation-row map uses only constant denominators and does not invert k, omega, lambda, exceptional harmonic factors or either dispersion polynomial",
+    "the generic axial solution cofiber is two copies of the extra p-primary cyclic summand and its direct four-dimensional Lee-Wald block is nonradical",
+    "the global curved mapping cone remains a defect-marked precomplex and does not satisfy the quantum import gate"
+  ],
+  "evidence": {
+    "commit": "9570f03c2a880dfbf600567a4d06ca9009b2cb8e",
+    "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+    "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "derive or obstruct the lower-order curved equation and identity row maps in polar, exceptional and global blocks, then assemble the all-sector cone and compare its action-derived relative form",
+  "not_established": [
+    "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+    "a full curved all-sector off-shell chain map or an exact obstruction to one",
+    "a global mapping-cofiber complex or its polar, exceptional, global and boundary cohomology",
+    "a strict short exact sequence of complexes",
+    "a complete relative quadratic obstruction bilinear",
+    "residual observable descent, causal propagation, particle interpretation or quantum lift"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_principal_and_generic_axial_relative_triangle_preflight",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_relative_linear_triangle_preflight",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_relative_linear_triangle_preflight --verify bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_relative_linear_triangle_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_linear_triangle_preflight",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

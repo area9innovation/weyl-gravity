@@ -1,8 +1,8 @@
 # Cross-programme \(D\)-quotient validation dossier
 
 This directory consolidates the four investigations of whether cylinder time
-translation/dilatation may be quotiented as gauge.  It is a validation dossier,
-not yet Paper IX.
+translation/dilatation may be quotiented as gauge. It is the validation dossier
+underlying the Paper IX draft; the paper is writing-started and not theorem-frozen.
 
 The dossier never assigns one universal Boolean to \(D\).  Every claim is
 keyed by
@@ -45,6 +45,7 @@ change the verdict or lifecycle rules in this dossier.
 - [`contributions/classical-berger-minimal-bv-clock-sdr.json`](contributions/classical-berger-minimal-bv-clock-sdr.json)
 - [`contributions/classical-berger-retained-minimal-layout.json`](contributions/classical-berger-retained-minimal-layout.json)
 - [`contributions/classical-berger-generator-conjugation.json`](contributions/classical-berger-generator-conjugation.json)
+- [`contributions/classical-berger-k-cartan-through-arity-three.json`](contributions/classical-berger-k-cartan-through-arity-three.json)
 - [`contributions/classical-relative-residual-observable-functor-preflight.json`](contributions/classical-relative-residual-observable-functor-preflight.json)
 - [`reports/classical-positive-berger-clock-registration-receipt.md`](reports/classical-positive-berger-clock-registration-receipt.md)
 - [`reports/classical-berger-clock-charge-seed-registration-receipt.md`](reports/classical-berger-clock-charge-seed-registration-receipt.md)
@@ -94,6 +95,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md`](reports/einstein-maxwell-weyl-ell1-physical-restriction-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-standard-harmonic-inclusion.json`](contributions/einstein-maxwell-weyl-standard-harmonic-inclusion.json)
 - [`reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md`](reports/einstein-maxwell-weyl-standard-harmonic-inclusion-registration-receipt.md)
+- [`contributions/einstein-weyl-relative-linear-triangle-preflight.json`](contributions/einstein-weyl-relative-linear-triangle-preflight.json)
+- [`reports/einstein-weyl-relative-linear-triangle-preflight-registration-receipt.md`](reports/einstein-weyl-relative-linear-triangle-preflight-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-extra-branch-preflight.json`](contributions/einstein-maxwell-weyl-extra-branch-preflight.json)
 - [`reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md`](reports/einstein-maxwell-weyl-extra-branch-preflight-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-operator-module-preflight.json`](contributions/einstein-maxwell-weyl-axial-operator-module-preflight.json)
@@ -128,8 +131,10 @@ verification.
 Papers VII--VIII retain their completed theorem, now with an explicit compact
 phase-space split. The certified one-real-scalar no-go and the scoped neutral
 two-field replacement supply the scalar-clock scope half of the Paper-IX gate;
-Paper IX remains reserved until at least one complete boundary or interaction
-theorem also lands.
+Paper IX is now writing-started. Its scoped theorem separates raw-(D)
+fixed-coupling momentum rigidity and linear presymplectic nullity from the
+causal Cartan theorem for the background stabilizer (K=D-\omega R). It is not
+theorem-frozen until the declared generator signoffs and clean-tree replay pass.
 A possible Paper X is reserved for interaction and quantum stability after the
 applicable classical export and QME gates pass.
 
