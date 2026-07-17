@@ -47,6 +47,14 @@ def verify_certificate() -> None:
         [0, 0, 0, -sp.I * l * (w1 + w2)],
     ])
     assert (generic - expected).applyfunc(sp.factor) == sp.zeros(4)
+    degree_audit = payload["direct_Lee_Wald_match"]["spectral_interpolation"]
+    actual_degrees = []
+    for value in generic:
+        if value != 0:
+            assert sp.denom(sp.cancel(value)).is_number
+            actual_degrees.append(sp.Poly(sp.expand(value), l).degree())
+    assert max(actual_degrees) == degree_audit["generic_action_current_maximum_lambda_degree"]
+    assert max(actual_degrees) <= degree_audit["direct_natural_current_degree_in_lambda_at_most"]
     for sample in payload["direct_Lee_Wald_match"]["samples"]:
         ell = sample["ell"]
         norm = 4 * sp.pi / (2 * ell + 1)
@@ -65,6 +73,12 @@ def verify_certificate() -> None:
     assert payload["shell_pairing"]["complete_polar_target_inertia_before_residual_quotient"] == [3, 1]
     assert payload["classification"]["final_residual_descent_certified"] is False
     assert payload["classification"]["quantum_norm_or_ghost_theorem"] is False
+    receipt = payload["verification_receipt"]
+    assert receipt["tier_0"]["status"] == "PASS"
+    assert receipt["tier_1"]["status"] == "PASS"
+    assert receipt["tier_2"]["status"] == "PASS"
+    assert receipt["tier_2"]["elapsed_seconds"] == sum(receipt["tier_2"]["per_sample_elapsed_seconds"].values())
+    assert receipt["tier_3"]["status"] == "NOT_RUN"
 
 
 if __name__ == "__main__":

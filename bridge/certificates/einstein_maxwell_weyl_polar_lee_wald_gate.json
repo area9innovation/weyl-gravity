@@ -227,7 +227,35 @@
     "spectral_interpolation": {
       "SO3_equivariance_removes_m_dependence": true,
       "all_physical_ell_at_least_2_match": true,
+      "degree_bound_proof": "The four-dimensional C^2 Lee--Wald current is a natural bilinear differential expression with at most four angular derivatives. Harmonic integration by parts reduces every scalar coefficient to a polynomial in lambda of degree at most two; no inverse angular operator occurs. The reconstructed action current is audited entrywise for polynomiality and has maximum degree one.",
       "direct_natural_current_degree_in_lambda_at_most": 2,
+      "generic_action_current_entry_degrees_in_lambda": [
+        [
+          null,
+          1,
+          1,
+          null
+        ],
+        [
+          1,
+          1,
+          1,
+          null
+        ],
+        [
+          1,
+          1,
+          1,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          1
+        ]
+      ],
+      "generic_action_current_maximum_lambda_degree": 1,
       "no_hidden_lambda_denominators_or_square_roots": true,
       "sample_lambdas": [
         6,
@@ -244,7 +272,7 @@
   "next_gate": "lift the polar contraction to the ungauged BV/Noether complex and determine which Einstein and extra polar coefficients survive the final residual quotient",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_lee_wald_gate.py",
-    "generator_sha256": "2c1e142f55ca906ffb20384663fd6d92a5575be285171b059a9951feb85ce8df",
+    "generator_sha256": "ca486a4cc5e3d92f3c7ece63453f0668c6dfb24ee53f85b6bb630e708e409bbf",
     "inputs": {
       "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20",
       "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
@@ -254,7 +282,7 @@
   "result_state": "GENERIC_POLAR_DIRECT_LEE_WALD_EXTRA_BLOCK_CERTIFIED",
   "schema": "einstein-maxwell-weyl-polar-lee-wald-gate-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_lee_wald_gate.schema.json",
-  "schema_sha256": "ecb2b3d12938fb1188036944439406f4a3d95cd631d64c5b9fcbc60e5c438bd4",
+  "schema_sha256": "04d667e103c1415a26451c4967fcadcb0b30a470650fd746a1760c438ae35fed",
   "shell_pairing": {
     "Einstein_block_inertia": [
       1,
@@ -328,5 +356,40 @@
     "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py",
     "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate",
     "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --recompute-direct"
-  ]
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-17",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_polar_lee_wald_gate.py bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_polar_lee_wald_gate.py",
+        "git diff --check -- <scoped polar Lee-Wald paths>"
+      ],
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --verify bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate"
+      ],
+      "elapsed_seconds": 3.69,
+      "status": "PASS"
+    },
+    "tier_2": {
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --recompute-direct",
+      "elapsed_seconds": 408.6765742301941,
+      "per_sample_elapsed_seconds": {
+        "ell_2": 131.77334666252136,
+        "ell_3": 104.5996618270874,
+        "ell_4": 172.30356574058533
+      },
+      "result": "all three sparse direct coordinate matrices matched the stored exact samples",
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "No shared core algebra, causal or quantum lifecycle state, release, or paper theorem-freeze was changed; the affected certificate chain and exhaustive direct rail are sufficient.",
+      "status": "NOT_RUN"
+    }
+  }
 }

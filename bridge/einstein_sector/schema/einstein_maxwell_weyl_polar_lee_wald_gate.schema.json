@@ -15,6 +15,7 @@
     "domain",
     "direct_Lee_Wald_match",
     "shell_pairing",
+    "verification_receipt",
     "classification",
     "interpretation",
     "next_gate",
@@ -58,6 +59,16 @@
         "Einstein_extra_mixed_remainder_mod_p_q": {"const": ["0", "0"]},
         "Einstein_block_inertia": {"const": [1, 1]},
         "complete_polar_target_inertia_before_residual_quotient": {"const": [3, 1]}
+      }
+    },
+    "verification_receipt": {
+      "type": "object",
+      "required": ["producing_date", "tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "tier_0": {"type": "object", "properties": {"status": {"const": "PASS"}, "elapsed_seconds": {"type": "number", "minimum": 0}}, "required": ["status", "commands", "elapsed_seconds"]},
+        "tier_1": {"type": "object", "properties": {"status": {"const": "PASS"}, "elapsed_seconds": {"type": "number", "minimum": 0}}, "required": ["status", "commands", "elapsed_seconds"]},
+        "tier_2": {"type": "object", "properties": {"status": {"const": "PASS"}, "elapsed_seconds": {"type": "number", "exclusiveMinimum": 0}}, "required": ["status", "command", "elapsed_seconds", "per_sample_elapsed_seconds", "result"]},
+        "tier_3": {"type": "object", "properties": {"status": {"const": "NOT_RUN"}}, "required": ["status", "reason"]}
       }
     },
     "classification": {

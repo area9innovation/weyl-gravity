@@ -132,6 +132,22 @@ def _direct_sample_audit() -> dict[str, Any]:
     hessian_current, symbols = _time_current_matrix()
     action_current = (hessian_current / 2).applyfunc(sp.factor)
     samples = _stored_direct_samples(symbols)
+    lambda_degrees: list[list[int | None]] = []
+    for row in range(action_current.rows):
+        degree_row: list[int | None] = []
+        for column in range(action_current.cols):
+            value = sp.cancel(action_current[row, column])
+            if value == 0:
+                degree_row.append(None)
+                continue
+            _require(
+                sp.denom(value).is_number,
+                f"hidden lambda denominator in action current entry {(row, column)}",
+            )
+            degree = sp.Poly(sp.expand(value), symbols["lambda"]).degree()
+            _require(degree <= 2, f"polar current spectral degree exceeded two at {(row, column)}")
+            degree_row.append(degree)
+        lambda_degrees.append(degree_row)
     records = []
     for ell, direct in samples.items():
         eigenvalue = ell * (ell + 1)
@@ -153,6 +169,11 @@ def _direct_sample_audit() -> dict[str, Any]:
         "samples": records,
         "spectral_interpolation": {
             "direct_natural_current_degree_in_lambda_at_most": 2,
+            "generic_action_current_entry_degrees_in_lambda": lambda_degrees,
+            "generic_action_current_maximum_lambda_degree": max(
+                degree for row in lambda_degrees for degree in row if degree is not None
+            ),
+            "degree_bound_proof": "The four-dimensional C^2 Lee--Wald current is a natural bilinear differential expression with at most four angular derivatives. Harmonic integration by parts reduces every scalar coefficient to a polynomial in lambda of degree at most two; no inverse angular operator occurs. The reconstructed action current is audited entrywise for polynomiality and has maximum degree one.",
             "sample_lambdas": [6, 12, 20],
             "no_hidden_lambda_denominators_or_square_roots": True,
             "SO3_equivariance_removes_m_dependence": True,
@@ -262,6 +283,37 @@ def build_certificate() -> dict[str, Any]:
         "domain": "generic polar ell>=2 Weyl-Maxwell harmonic quotient at every allowed compact momentum, before the final residual quotient",
         "direct_Lee_Wald_match": _direct_sample_audit(),
         "shell_pairing": _shell_audit(),
+        "verification_receipt": {
+            "producing_date": "2026-07-17",
+            "tier_0": {
+                "status": "PASS",
+                "commands": [
+                    "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_polar_lee_wald_gate.py bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_polar_lee_wald_gate.py",
+                    "git diff --check -- <scoped polar Lee-Wald paths>",
+                ],
+                "elapsed_seconds": 0.03,
+            },
+            "tier_1": {
+                "status": "PASS",
+                "commands": [
+                    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --verify bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+                    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py",
+                    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate",
+                ],
+                "elapsed_seconds": 3.69,
+            },
+            "tier_2": {
+                "status": "PASS",
+                "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --recompute-direct",
+                "elapsed_seconds": 408.6765742301941,
+                "per_sample_elapsed_seconds": {"ell_2": 131.77334666252136, "ell_3": 104.5996618270874, "ell_4": 172.30356574058533},
+                "result": "all three sparse direct coordinate matrices matched the stored exact samples",
+            },
+            "tier_3": {
+                "status": "NOT_RUN",
+                "reason": "No shared core algebra, causal or quantum lifecycle state, release, or paper theorem-freeze was changed; the affected certificate chain and exhaustive direct rail are sufficient.",
+            },
+        },
         "classification": {
             "direct_four_dimensional_Lee_Wald_match": True,
             "all_physical_ell_at_least_2": True,

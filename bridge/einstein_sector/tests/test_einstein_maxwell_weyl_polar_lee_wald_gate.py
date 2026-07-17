@@ -21,6 +21,7 @@ class PolarLeeWaldGateTests(unittest.TestCase):
     def test_direct_samples_and_interpolation(self) -> None:
         audit = _direct_sample_audit()
         self.assertTrue(audit["spectral_interpolation"]["all_physical_ell_at_least_2_match"])
+        self.assertLessEqual(audit["spectral_interpolation"]["generic_action_current_maximum_lambda_degree"], 2)
         self.assertEqual([sample["lambda"] for sample in audit["samples"]], [6, 12, 20])
         for sample in audit["samples"]:
             self.assertEqual(sample["direct_minus_action_Green_remainder"], [["0"] * 4 for _ in range(4)])
@@ -37,6 +38,8 @@ class PolarLeeWaldGateTests(unittest.TestCase):
         jsonschema.Draft202012Validator(schema).validate(payload)
         verify_certificate()
         verify_independently()
+        self.assertEqual(payload["verification_receipt"]["tier_2"]["status"], "PASS")
+        self.assertEqual(payload["verification_receipt"]["tier_3"]["status"], "NOT_RUN")
 
 
 if __name__ == "__main__":
