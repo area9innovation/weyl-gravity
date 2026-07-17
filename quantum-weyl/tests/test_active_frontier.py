@@ -43,12 +43,17 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED"])
         self.assertTrue(flags["RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_ACCEPTED"])
         self.assertTrue(flags["RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY"])
+        self.assertTrue(
+            flags["RETAINED_36_CANONICAL_LOCAL_PROJECTOR_OBSTRUCTION_IMPORTED"]
+        )
+        self.assertTrue(flags["RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED"])
+        self.assertFalse(flags["RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED"])
         row = self.payload["active_rows"]["classical_interacting_input"]
         self.assertIn("FULL_BV_CYCLICITY_ACCEPTED", row["status"])
-        self.assertIn("BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT", row["status"])
+        self.assertIn("RETAINED_36_CANONICAL_BRANCH_PROJECTOR_OBSTRUCTED", row["status"])
         self.assertEqual(
             row["next_gate"],
-            "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2_MANIFEST",
+            "CONSTRUCT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
         )
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:

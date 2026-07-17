@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-berger-retained-36-branch-projector-obstruction-import-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "classical_source", "exact_import_checks", "obstruction_scope", "frontier_disposition", "carrier_enlargement", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-36-branch-projector-obstruction-import-v1"},
+    "result_id": {"const": "BERGER_RETAINED_36_BRANCH_PROJECTOR_OBSTRUCTION_IMPORT"},
+    "result_state": {"const": "RETAINED_36_CANONICAL_SAME_BUNDLE_ROUTE_OBSTRUCTED_ENLARGED_CARRIER_REQUIRED"},
+    "lifecycle_layer": {"const": "CLASSICAL_RESIDUAL_INTERACTION_IMPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_source": {"type": "object"},
+    "exact_import_checks": {"type": "object", "minProperties": 11, "additionalProperties": {"const": true}},
+    "obstruction_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ambient_retained_rank", "operator_identity", "declared_Einstein_branch", "same_bundle_support_local_projector_exists", "ell3_branch_projection_authorized", "normalized_remainder", "normalized_functional_evaluation"],
+      "properties": {
+        "ambient_retained_rank": {"const": 36},
+        "operator_identity": {"const": "A10=Box_2^2+V_2"},
+        "declared_Einstein_branch": {"type": "string", "minLength": 1},
+        "same_bundle_support_local_projector_exists": {"const": false},
+        "ell3_branch_projection_authorized": {"const": false},
+        "normalized_remainder": {"type": "string", "minLength": 1},
+        "normalized_functional_evaluation": {"const": "1"}
+      }
+    },
+    "frontier_disposition": {"type": "object"},
+    "carrier_enlargement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exact_minimum_additional_BV_rows", "natural_candidate_additional_bundle", "natural_candidate_additional_BV_rows", "natural_candidate_retained_rank", "candidate_projector_certified"],
+      "properties": {
+        "exact_minimum_additional_BV_rows": {"const": 4},
+        "natural_candidate_additional_bundle": {"const": "spatial STF2 prolongation variable plus its cyclic dual"},
+        "natural_candidate_additional_BV_rows": {"const": 10},
+        "natural_candidate_retained_rank": {"const": 46},
+        "candidate_projector_certified": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["CLASSICAL_OBSTRUCTION_INDEPENDENTLY_IMPORTED", "RETAINED_36_CANONICAL_LOCAL_PROJECTOR_OBSTRUCTED", "RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_UNAFFECTED", "RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED", "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED", "RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED", "RESIDUAL_ELL3_MIXING_TABLE_COMPUTED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "CLASSICAL_OBSTRUCTION_INDEPENDENTLY_IMPORTED": {"const": true},
+        "RETAINED_36_CANONICAL_LOCAL_PROJECTOR_OBSTRUCTED": {"const": true},
+        "RETAINED_MIXED_ELL3_FULL_BV_CYCLICITY_UNAFFECTED": {"const": true},
+        "RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED": {"const": true},
+        "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED": {"const": false},
+        "RESIDUAL_ELL3_BRANCH_PROJECTION_COMPUTED": {"const": false},
+        "RESIDUAL_ELL3_MIXING_TABLE_COMPUTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "CONSTRUCT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "consumer_provenance": {"type": "object"},
+    "verification_receipts": {"type": "array", "minItems": 4},
+    "higher_tiers_not_run": {"type": "object"}
+  }
+}

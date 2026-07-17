@@ -394,6 +394,30 @@ Use the adjacent-work portfolio in
 [`adjacency-bridge-note-template.md`](adjacency-bridge-note-template.md) for
 the outward-facing note.
 
+## Retained-36 projector obstruction update
+
+The classical binary handoff has resolved on its obstruction branch. The
+quantum-side pinned consumer independently replays the normalized polynomial
+remainder and accepts that no canonical finite-order support-local same-bundle
+Einstein-like/extra-Weyl complementary projector exists on the retained
+36-row carrier when the Einstein image is fixed by the certified rough tensor
+wave `Box_2`. The V2 receiving contract remains a valid historical contract,
+but its 36-row success manifest and branch-space `ell3` mixing table are not
+authorized.
+
+The retained full-BV `ell3` cyclicity theorem is unaffected. The exact lower
+bound is four added BV rows; the smallest natural support-local candidate adds
+a spatial STF2 prolongation and its cyclic dual, giving retained rank 46. That
+candidate is not yet a projector certificate. Filtered or mapping-cylinder
+carriers remain allowed, while nonlocal spectral splitting must be tagged
+`REDUCED-MODE`.
+
+The active quantum gate is:
+
+```text
+CONSTRUCT_BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1
+```
+
 ## Common background matrix
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
@@ -402,7 +426,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | classical target; quantum status to compute | classical target; compute defect | proved only classically | zero classically in stated complex; quantum open | \(I_2\) classically; \(G(\hbar)\) open | proper classical solution sector |
-| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish; branch-projection consumer ready, gravity-plus-Maxwell basis manifest absent | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; interaction mixing table open |
+| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish; the canonical same-bundle 36-row branch projector is obstructed and the support-local rank-46 candidate is open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; no 36-row interaction mixing table is authorized |
 | Cylinder + scalar clock | open | primary quantum test | open | open | open | open |
 | Cylinder + Yang--Mills | open | open after scalar | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |

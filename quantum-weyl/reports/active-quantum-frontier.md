@@ -41,17 +41,31 @@ accepted for the pinned classical tensor. Projection onto the
 Einstein-like and extra-Weyl dynamical residual branches remains open, as does
 the separate action on the even/odd deformation-vertex basis. The topological
 odd direction is not treated as a third dynamical or particle branch.
-The strict V2 receiving consumer for that projection is now ready. It keeps
+The strict V2 receiving consumer for that projection remains a valid
+historical contract. It keeps
 exact gravity and Maxwell branch carriers, inclusion/projection maps, pairing,
 parity, real structure and `K_Berger` weights over `Q(sqrt(10))`. The
 normalized deformation basis, rank-one Euler--Lagrange map and topological
 transgression witness instead use the exact extension
 `Q(sqrt(2),sqrt(10))`, because `1/sqrt(2)` is not in `Q(sqrt(10))`. V1 remains
-an immutable historical receipt. No branch-basis manifest has yet been
-supplied.
+an immutable historical receipt. The classical team has now supplied the
+obstruction branch of that binary handoff. The quantum consumer independently
+recomputes its normalized polynomial remainder witness: on the retained
+36-row carrier, the canonical rough-tensor-wave Einstein image is not an
+exact finite-order support-local same-bundle factor. All 92 nonzero
+degree-two remainder entries are nondivisible. The requested V2 success
+manifest and a 36-row branch-space `ell3` mixing table are therefore no longer
+authorized. This leaves the retained full-BV `ell3` theorem intact.
 
-The frontier imports this status through the content-addressed quantum repair
-acceptance certificate. The earlier 1,234/953 defect atlas remains an exact
+The exact symbol argument requires at least four additional BV rows. The
+smallest natural support-local candidate adds a spatial STF2 prolongation and
+its cyclic dual, yielding a retained rank of 46. It is the next construction
+gate, not a certified projector. Filtered or mapping-cylinder carriers remain
+open; nonlocal spectral splitting must remain explicitly `REDUCED-MODE`.
+
+The frontier imports the obstruction through its pinned quantum-side consumer
+and imports the earlier interaction repair through the content-addressed
+quantum acceptance certificate. The 1,234/953 defect atlas remains an exact
 negative control and historical diagnosis, not the current status source.
 
 The companion is certified null-cone decomposable, but the Hadamard existence
@@ -78,22 +92,22 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. supply the committed retained 36-row gravity-plus-Maxwell residual branch-basis manifest, then compute the accepted mixed (ell_3) projection and mixing table;
-2. independently replay cyclicity of the 288 ghost/antifield completion coefficients;
-3. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
-4. retained 26-row zero-frequency spectral carrier;
-5. typed companion microlocal transport and global covariance;
-6. minimal BV cohomology with Koszul--Tate rows;
-7. regulated repository Slavnov breaking;
-8. QME restoration or obstruction;
-9. residual quantum transfer.
+1. construct and certify the candidate retained 46-row STF2-plus-dual support-local branch carrier, or supply an explicitly filtered/mapping-cylinder alternative;
+2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
+3. retained 26-row zero-frequency spectral carrier;
+4. typed companion microlocal transport and global covariance;
+5. minimal BV cohomology with Koszul--Tate rows;
+6. regulated repository Slavnov breaking;
+7. QME restoration or obstruction;
+8. residual quantum transfer.
 
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.
 
-Tier-1 rerun on 2026-07-17: frontier generation, reproduction, and independent
-verification passed; eight frontier tests ran in 0.05 seconds, and strict
-Draft 2020-12 validation passed in 4.26 seconds. The coupled repair's affected
+Tier-1 rerun on 2026-07-17: frontier generation/reproduction took 0.04 s,
+independent verification took 0.11 s, eight frontier tests took 0.16 s
+(0.05 s inside the test runner), and strict Draft 2020-12 validation took
+1.07 s. The coupled repair's affected
 exact chain was run separately at Tier 2 and is recorded in its acceptance
 report. Tier 3 was not run because no quantum lifecycle or paper theorem is
 promoted.
