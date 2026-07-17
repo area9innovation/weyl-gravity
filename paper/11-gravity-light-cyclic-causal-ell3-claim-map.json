@@ -1,7 +1,7 @@
 {
   "schema": "paper-11-gravity-light-cyclic-causal-ell3-claim-map-v1",
   "result_id": "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT",
-  "result_state": "WRITING_STARTED_RANK46_GRAPH_CARRIER_CERTIFIED_PROJECTOR_OPEN",
+  "result_state": "WRITING_STARTED_RANK46_SOLVER_CONTRACT_READY_PROJECTOR_OPEN",
   "lifecycle_state": "WRITING_STARTED",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -65,7 +65,10 @@
     "retained_46_degree_ranks": [4, 19, 19, 4],
     "retained_46_cyclic_SDR_to_36": true,
     "retained_46_contractible_complement": true,
-    "retained_46_Schur_complement_equals_A10": true
+    "retained_46_Schur_complement_equals_A10": true,
+    "retained_46_exact_graph_shear_exported": true,
+    "retained_46_projector_solver_contract_frozen": true,
+    "retained_46_projector_independent_graph_coefficient_count": 225
   },
   "explicit_nonzero_witnesses": {
     "gravity_equation_output": {
@@ -114,6 +117,7 @@
     "status": "RANK46_GRAPH_CARRIER_ACCEPTED_PROJECTOR_OPEN",
     "obstruction": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
     "carrier": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+    "solver_contract": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1",
     "required_input": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
     "required_output": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
     "dynamical_branch_ids": [
@@ -132,7 +136,8 @@
     "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88",
     "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a",
     "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json": "2a06fb31f888cab2d0c3e3481a559623098b3efba42cc0cd7b9b2759552e980c",
-    "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json": "9c202dd4628b5fe55510550e4e2dafa157d63b79094c39549dab85859193da92",
+    "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json": "13d164e952e35b96b5f755786dc86f069d3451f6e0a33eefe27f845e9866e1c7",
+    "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1.json": "25f89b9da2a3381315e9f973200483b8981b743545e9352471a2f8bc11b15c7d",
     "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e",
     "d_quotient_classical/certificates/PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF.json": "c4d89da3e3b68ae73b41eefc39132d124ae526cd3238b4c0a31636894a92b02a",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json": "2c4592665084dd47958aa2c63f10a7f54d3bd9ff8d52f661d1a2fa78da877027",
@@ -141,12 +146,14 @@
     "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json": "a9927fa7d4d0a267ca188c6ea1e746c60f7f27ca880393e936c65807c75d6088",
     "paper/generate_11_witness_inclusion_columns.py": "2658a9081dba389f0405d82be9f5528a9f85e87170177cfc6e1e37ef9beaa4a7",
     "paper/11-gravity-light-ell3-witness-inclusion-columns.tex": "31c0aca8e69ff9180517298e2ce6890bd20d9ac9746d0d14662e4136fa681ffe",
-    "paper/verify_11_gravity_light_claim_map.py": "39afc69ab867369d159a65d5078b0a74d183841eff415c578e99f482f4ce490a"
+    "paper/verify_11_gravity_light_claim_map.py": "df2ee83374747d418ab7e83bc0d8c0d67b267a4342f7d2c073eee0fa8dbe82b8"
   },
   "verification_commands": [
     "python3 paper/generate_11_witness_inclusion_columns.py --check",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_prolongation_branch_carrier.py --check --guards",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_prolongation_branch_carrier.py",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_branch_projector_solver_contract.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_branch_projector_solver_contract.py",
     "python3 paper/verify_11_gravity_light_claim_map.py",
     "pdflatex -interaction=nonstopmode -halt-on-error -output-directory paper paper/11-gravity-light-cyclic-causal-ell3.tex"
   ],
@@ -156,5 +163,5 @@
     "tier_2": "affected rank-46 exact certificate chain replayed; content-addressed retained ell3 inputs were unchanged and were checked by hash rather than rebuilt",
     "tier_3": "not run because this is WRITING_STARTED, not a theorem freeze or lifecycle promotion"
   },
-  "claim_boundary": "For one explicitly specified cyclic 64-to-36 SDR, this working draft proves that the retained mixed gravity-Maxwell ell3 representative is nonzero by two exact zero-derivative witnesses, that every mixed exchange channel contributing to the declared ell3 vanishes by projection support on the contractible Theta_star row, and that the exact sparse implementation realizes the formal cyclic homotopy-transfer identities. The convention-specific cyclic adjoint matrix identities are displayed, and all 106 exact inclusion-column coefficients for the dressed gravity coordinates used by the witnesses and their pairing are printed in a generated appendix. The separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan theorem is connected by explicit full-to-retained formulas but is not the propagator used in the algebraic ell3 transfer. A LOCAL-ALGEBRAIC certificate obstructs the declared canonical finite-order support-local same-bundle Einstein-like/extra-Weyl projector on rank 36. Its natural rank-46 spatial-STF2 graph prolongation and cyclic dual are now constructed as an exact finite-order cyclic SDR with contractible complement and unchanged Schur endpoint. This carrier does not yet provide an Einstein-like/extra-Weyl projector, nonlinear q2/q3 lift, K_Berger equivariance, causal support, or branch mixing table. The paper does not prove nonvanishing on ell1 cohomology, a nontrivial cyclic deformation class, invariance under changing SDR, nonremovability by cyclic Linfinity field redefinitions, survival under further minimal transfer, residual Einstein-like/extra-Weyl/Maxwell mixing, a particle amplitude, QME restoration, or any quantum theorem. It remains WRITING_STARTED rather than THEOREM_FROZEN."
+  "claim_boundary": "For one explicitly specified cyclic 64-to-36 SDR, this working draft proves that the retained mixed gravity-Maxwell ell3 representative is nonzero by two exact zero-derivative witnesses, that every mixed exchange channel contributing to the declared ell3 vanishes by projection support on the contractible Theta_star row, and that the exact sparse implementation realizes the formal cyclic homotopy-transfer identities. The convention-specific cyclic adjoint matrix identities are displayed, and all 106 exact inclusion-column coefficients for the dressed gravity coordinates used by the witnesses and their pairing are printed in a generated appendix. The separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan theorem is connected by explicit full-to-retained formulas but is not the propagator used in the algebraic ell3 transfer. A LOCAL-ALGEBRAIC certificate obstructs the declared canonical finite-order support-local same-bundle Einstein-like/extra-Weyl projector on rank 36. Its natural rank-46 spatial-STF2 graph prolongation and cyclic dual are now constructed as an exact finite-order cyclic SDR with contractible complement and unchanged Schur endpoint. The exact cyclic graph shear and inverse are exported, and a scoped 225-coefficient graph-coordinate projector solver contract is frozen. Neither object yet provides an Einstein-like/extra-Weyl projector, nonlinear q2/q3 lift, K_Berger equivariance, causal support, or branch mixing table. The paper does not prove nonvanishing on ell1 cohomology, a nontrivial cyclic deformation class, invariance under changing SDR, nonremovability by cyclic Linfinity field redefinitions, survival under further minimal transfer, residual Einstein-like/extra-Weyl/Maxwell mixing, a particle amplitude, QME restoration, or any quantum theorem. It remains WRITING_STARTED rather than THEOREM_FROZEN."
 }

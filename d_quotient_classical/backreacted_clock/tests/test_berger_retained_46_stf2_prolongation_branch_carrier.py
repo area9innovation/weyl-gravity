@@ -16,6 +16,9 @@ class Retained46STF2CarrierTest(unittest.TestCase):
         verify(self.payload)
         self.assertEqual(self.payload["carrier"]["degree_ranks"], {"-1": 4, "0": 19, "1": 19, "2": 4})
         self.assertTrue(all(self.payload["exact_checks"].values()))
+        self.assertTrue(self.payload["exact_checks"]["graph_shear_inverse"])
+        self.assertTrue(self.payload["exact_checks"]["graph_shear_typed_cyclic"])
+        self.assertEqual(self.payload["artifacts"]["graph_shear_U_46"]["shape"], [46, 46])
 
     def test_projector_promotion_is_rejected(self):
         mutant = copy.deepcopy(self.payload)

@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-46-stf2-branch-projector-solver-contract-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "dependency_refs",
+    "exact_import_checks",
+    "row_partition",
+    "declared_graph_ansatz",
+    "principal_symbol_anchor",
+    "exact_acceptance_equations",
+    "ordered_solver_stages",
+    "required_success_payload",
+    "required_obstruction_payload",
+    "mutation_contract",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-46-stf2-branch-projector-solver-contract-v1"},
+    "result_id": {"const": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1"},
+    "result_state": {"const": "SOLVER_CONTRACT_FROZEN_PROJECTOR_VERDICT_NOT_RUN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["rank_36_projector_obstruction", "rank_46_STF2_graph_carrier"],
+      "properties": {
+        "rank_36_projector_obstruction": {"$ref": "#/$defs/dependency"},
+        "rank_46_STF2_graph_carrier": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "exact_import_checks": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"const": true}
+    },
+    "row_partition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gravity_ghost_rows", "gravity_configuration_rows", "gravity_equation_rows", "gravity_ghost_dual_rows", "fixed_Maxwell_spectator_rows"],
+      "properties": {
+        "gravity_ghost_rows": {"const": [0, 1, 2]},
+        "gravity_configuration_rows": {"const": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]},
+        "gravity_equation_rows": {"const": [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]},
+        "gravity_ghost_dual_rows": {"const": [33, 34, 35]},
+        "fixed_Maxwell_spectator_rows": {"const": [36, 37, 38, 39, 40, 41, 42, 43, 44, 45]}
+      }
+    },
+    "declared_graph_ansatz": {
+      "type": "object",
+      "required": ["independent_unknown", "independent_coefficient_count_over_Q_sqrt10", "PBW_order_in_graph_coordinates", "export_formula", "maximum_exported_PBW_order", "derived_blocks", "forbidden_shortcuts", "scope"],
+      "properties": {
+        "independent_unknown": {"type": "string", "minLength": 1},
+        "independent_coefficient_count_over_Q_sqrt10": {"const": 225},
+        "PBW_order_in_graph_coordinates": {"const": 0},
+        "export_formula": {"type": "string", "minLength": 1},
+        "maximum_exported_PBW_order": {"const": 2},
+        "derived_blocks": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+        "forbidden_shortcuts": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+        "scope": {"type": "string", "minLength": 100}
+      },
+      "additionalProperties": false
+    },
+    "principal_symbol_anchor": {"type": "object"},
+    "exact_acceptance_equations": {"type": "array", "minItems": 11, "items": {"type": "string"}},
+    "ordered_solver_stages": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["stage", "name", "failure_output"],
+        "additionalProperties": false,
+        "properties": {
+          "stage": {"type": "integer", "minimum": 0, "maximum": 4},
+          "name": {"type": "string"},
+          "failure_output": {"type": "string"}
+        }
+      }
+    },
+    "required_success_payload": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "required_obstruction_payload": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "mutation_contract": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["SOLVER_CONTRACT_FROZEN", "RANK_46_CARRIER_IMPORTED", "GRAPH_SHEAR_EXPORTED", "PROJECTOR_SOLVE_RUN", "BRANCH_PROJECTOR_ACCEPTED", "NORMALIZED_PROJECTOR_OBSTRUCTION_FOUND", "Q2_Q3_LIFT_MATERIALIZED", "ELL3_BRANCH_MIXING_AUTHORIZED", "QUANTUM_CLAIM"],
+      "properties": {
+        "SOLVER_CONTRACT_FROZEN": {"const": true},
+        "RANK_46_CARRIER_IMPORTED": {"const": true},
+        "GRAPH_SHEAR_EXPORTED": {"const": true},
+        "PROJECTOR_SOLVE_RUN": {"const": false},
+        "BRANCH_PROJECTOR_ACCEPTED": {"const": false},
+        "NORMALIZED_PROJECTOR_OBSTRUCTION_FOUND": {"const": false},
+        "Q2_Q3_LIFT_MATERIALIZED": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

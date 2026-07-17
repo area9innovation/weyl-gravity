@@ -58,6 +58,8 @@ ARTIFACT_PATHS = {
     "stf2_extractor_T": GENERATED_DIR / "stf2_extractor_T.json",
     "stf2_right_inverse_J": GENERATED_DIR / "stf2_right_inverse_J.json",
     "stf2_wave_F": GENERATED_DIR / "stf2_wave_F.json",
+    "graph_shear_U_46": GENERATED_DIR / "graph_shear_U_46.json",
+    "graph_shear_U_46_inverse": GENERATED_DIR / "graph_shear_U_46_inverse.json",
 }
 
 AUX_FIELD_IDS = (
@@ -189,6 +191,8 @@ def exact_matrices() -> dict:
 
     P = _permutation()
     P_inv = _adjoint(P)
+    U_ordered = _multiply(_multiply(P, U), P_inv)
+    U_inv_ordered = _multiply(_multiply(P, U_inv), P_inv)
     return {
         "q1_46": _multiply(_multiply(P, q_internal), P_inv),
         "omega_46": _multiply(_multiply(P, omega_direct), P_inv),
@@ -198,6 +202,8 @@ def exact_matrices() -> dict:
         "stf2_extractor_T": T,
         "stf2_right_inverse_J": J,
         "stf2_wave_F": F,
+        "graph_shear_U_46": U_ordered,
+        "graph_shear_U_46_inverse": U_inv_ordered,
         "q1_36": q36,
         "omega_36": omega36,
     }
@@ -225,6 +231,21 @@ def exact_checks(m: dict) -> dict[str, bool]:
         "pairing_induced_by_iota": _is_zero(_subtract(_multiply(_multiply(_adjoint(iota), omega), iota), m["omega_36"])),
         "stf2_right_inverse": _is_zero(_subtract(_multiply(m["stf2_extractor_T"], m["stf2_right_inverse_J"]), _identity(5))),
         "stf2_wave_order_two": _maximum_order(m["stf2_wave_F"]) == 2,
+        "graph_shear_inverse": _is_zero(
+            _subtract(
+                _multiply(m["graph_shear_U_46"], m["graph_shear_U_46_inverse"]),
+                _identity(46),
+            )
+        ),
+        "graph_shear_typed_cyclic": _is_zero(
+            _subtract(
+                _multiply(
+                    _multiply(_adjoint(m["graph_shear_U_46"]), omega),
+                    m["graph_shear_U_46"],
+                ),
+                omega,
+            )
+        ),
     }
     if not all(checks.values()):
         raise AssertionError(f"rank-46 graph carrier checks failed: {checks}")
@@ -315,6 +336,8 @@ def build() -> tuple[dict, dict[Path, bytes]]:
             "pi_nonzero_row_pair_blocks": _nonzero_blocks(matrices["pi_46_to_36"]),
             "S_nonzero_row_pair_blocks": _nonzero_blocks(matrices["S_46"]),
             "STF2_wave_nonzero_row_pair_blocks": _nonzero_blocks(matrices["stf2_wave_F"]),
+            "graph_shear_nonzero_row_pair_blocks": _nonzero_blocks(matrices["graph_shear_U_46"]),
+            "graph_shear_maximum_differential_order": _maximum_order(matrices["graph_shear_U_46"]),
         },
         "flags": {
             "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1": True,
@@ -388,7 +411,10 @@ The exact 46-to-36 graph SDR passes nilpotency, unary cyclicity, both chain
 maps, contraction, all three side conditions, homotopy cyclicity and induced
 pairing checks.  The exported q1 has {d['q1_46_nonzero_row_pair_blocks']}
 nonzero row-pair blocks and maximum differential order
-{d['q1_46_maximum_differential_order']}.
+{d['q1_46_maximum_differential_order']}.  The exact cyclic graph shear and
+its inverse are exported explicitly; the shear has
+{d['graph_shear_nonzero_row_pair_blocks']} nonzero row-pair blocks and order
+{d['graph_shear_maximum_differential_order']}.
 
 ## Boundary
 

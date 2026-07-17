@@ -10,6 +10,26 @@
         46
       ]
     },
+    "graph_shear_U_46": {
+      "maximum_differential_order": 2,
+      "nonzero_row_pair_blocks": 96,
+      "path": "d_quotient_classical/generated/berger_retained_46_stf2_prolongation_branch_carrier/graph_shear_U_46.json",
+      "sha256": "50478a6d3cb27e34467c37bcc84020717022f053ebcdb83add93c8ccd01c70c4",
+      "shape": [
+        46,
+        46
+      ]
+    },
+    "graph_shear_U_46_inverse": {
+      "maximum_differential_order": 2,
+      "nonzero_row_pair_blocks": 96,
+      "path": "d_quotient_classical/generated/berger_retained_46_stf2_prolongation_branch_carrier/graph_shear_U_46_inverse.json",
+      "sha256": "0ca7cb269fc1653eb3ef4b3dea9c16874839f83ec955b73b6f7eb1d40356e22e",
+      "shape": [
+        46,
+        46
+      ]
+    },
     "iota_36_to_46": {
       "maximum_differential_order": 2,
       "nonzero_row_pair_blocks": 61,
@@ -397,6 +417,8 @@
   "diagnostics": {
     "STF2_wave_nonzero_row_pair_blocks": 25,
     "S_nonzero_row_pair_blocks": 5,
+    "graph_shear_maximum_differential_order": 2,
+    "graph_shear_nonzero_row_pair_blocks": 96,
     "iota_nonzero_row_pair_blocks": 61,
     "pi_nonzero_row_pair_blocks": 61,
     "q1_46_maximum_differential_order": 4,
@@ -404,6 +426,8 @@
   },
   "exact_checks": {
     "contraction_identity": true,
+    "graph_shear_inverse": true,
+    "graph_shear_typed_cyclic": true,
     "homotopy_iota_zero": true,
     "homotopy_square_zero": true,
     "homotopy_typed_cyclic": true,
@@ -446,13 +470,13 @@
   "next_gate": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
   "provenance": {
     "producer": "d_quotient_classical/backreacted_clock/berger_retained_46_stf2_prolongation_branch_carrier.py",
-    "producer_sha256": "8f2b0f4745f7b4254eade7b5b7d8fd80b342b06caf2c019ccf86346cc4f0e25b",
+    "producer_sha256": "48672abd7aad8a51eaa37345a0c34494e8056e5d3d2fc0c29860be4059bd2ad4",
     "schema": "d_quotient_classical/schema/berger-retained-46-stf2-prolongation-branch-carrier-v1.schema.json",
-    "schema_sha256": "ab55964fd52a866bf7079af32792429a3039a081396dc6588ab358abb3c42328",
+    "schema_sha256": "5b2f9d8941bd6e9b6137710ea34b635153b9e7b5b0e0b555d73a3b3184acd393",
     "tests": "d_quotient_classical/backreacted_clock/tests/test_berger_retained_46_stf2_prolongation_branch_carrier.py",
-    "tests_sha256": "5f42f604716817ed8ff9431a7026729e81d30624c32f5e943805977c72b77b8b",
+    "tests_sha256": "b2fd0732f24633ba8596699167021b1cf1894383d307cfd200eab14e4901bcc8",
     "verifier": "d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_prolongation_branch_carrier.py",
-    "verifier_sha256": "423356fc652e73e536ba3c7f73bc5097c7ce727f82014caf8fd82085e72faa3e"
+    "verifier_sha256": "b14828d2737b5236aa46bb6798c6ef970bb41560164c31ff6472ac4130d7e3ca"
   },
   "result_id": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
   "result_state": "CERTIFIED_CYCLIC_GRAPH_CARRIER_PROJECTOR_OPEN",

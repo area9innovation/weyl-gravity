@@ -44,7 +44,7 @@
     "graph_construction": {"type": "object"},
     "artifacts": {
       "type": "object",
-      "required": ["q1_46", "omega_46", "iota_36_to_46", "pi_46_to_36", "S_46", "stf2_extractor_T", "stf2_right_inverse_J", "stf2_wave_F"],
+      "required": ["q1_46", "omega_46", "iota_36_to_46", "pi_46_to_36", "S_46", "stf2_extractor_T", "stf2_right_inverse_J", "stf2_wave_F", "graph_shear_U_46", "graph_shear_U_46_inverse"],
       "properties": {
         "q1_46": {"$ref": "#/$defs/artifact"},
         "omega_46": {"$ref": "#/$defs/artifact"},
@@ -53,13 +53,15 @@
         "S_46": {"$ref": "#/$defs/artifact"},
         "stf2_extractor_T": {"$ref": "#/$defs/artifact"},
         "stf2_right_inverse_J": {"$ref": "#/$defs/artifact"},
-        "stf2_wave_F": {"$ref": "#/$defs/artifact"}
+        "stf2_wave_F": {"$ref": "#/$defs/artifact"},
+        "graph_shear_U_46": {"$ref": "#/$defs/artifact"},
+        "graph_shear_U_46_inverse": {"$ref": "#/$defs/artifact"}
       },
       "additionalProperties": false
     },
     "exact_checks": {
       "type": "object",
-      "minProperties": 14,
+      "minProperties": 16,
       "additionalProperties": {"const": true}
     },
     "diagnostics": {"type": "object"},

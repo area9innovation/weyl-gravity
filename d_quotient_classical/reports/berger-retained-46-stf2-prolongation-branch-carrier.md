@@ -29,7 +29,10 @@ The exact 46-to-36 graph SDR passes nilpotency, unary cyclicity, both chain
 maps, contraction, all three side conditions, homotopy cyclicity and induced
 pairing checks.  The exported q1 has 237
 nonzero row-pair blocks and maximum differential order
-4.
+4.  The exact cyclic graph shear and
+its inverse are exported explicitly; the shear has
+96 nonzero row-pair blocks and order
+2.
 
 ## Boundary
 

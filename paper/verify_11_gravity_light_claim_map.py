@@ -25,7 +25,7 @@ def main() -> None:
     assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT"
     assert (
         payload["result_state"]
-        == "WRITING_STARTED_RANK46_GRAPH_CARRIER_CERTIFIED_PROJECTOR_OPEN"
+        == "WRITING_STARTED_RANK46_SOLVER_CONTRACT_READY_PROJECTOR_OPEN"
     )
     assert payload["lifecycle_state"] == "WRITING_STARTED"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
@@ -60,6 +60,8 @@ def main() -> None:
         "retained_46_cyclic_SDR_to_36",
         "retained_46_contractible_complement",
         "retained_46_Schur_complement_equals_A10",
+        "retained_46_exact_graph_shear_exported",
+        "retained_46_projector_solver_contract_frozen",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -80,6 +82,7 @@ def main() -> None:
     assert claims["smallest_natural_support_local_candidate_rank"] == 46
     assert claims["retained_46_total_rows"] == 46
     assert claims["retained_46_degree_ranks"] == [4, 19, 19, 4]
+    assert claims["retained_46_projector_independent_graph_coefficient_count"] == 225
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -111,6 +114,10 @@ def main() -> None:
     assert (
         payload["next_gate"]["carrier"]
         == "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
+    )
+    assert (
+        payload["next_gate"]["solver_contract"]
+        == "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1"
     )
     assert (
         payload["next_gate"]["required_input"]
@@ -261,6 +268,29 @@ def main() -> None:
     assert (
         rank46["next_gate"]
         == "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"
+    )
+    for artifact in ("graph_shear_U_46", "graph_shear_U_46_inverse"):
+        assert rank46["artifacts"][artifact]["shape"] == [46, 46]
+    assert rank46["exact_checks"]["graph_shear_inverse"] is True
+    assert rank46["exact_checks"]["graph_shear_typed_cyclic"] is True
+
+    solver_contract = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert (
+        solver_contract["result_state"]
+        == "SOLVER_CONTRACT_FROZEN_PROJECTOR_VERDICT_NOT_RUN"
+    )
+    assert solver_contract["claim_flags"]["SOLVER_CONTRACT_FROZEN"] is True
+    assert solver_contract["claim_flags"]["BRANCH_PROJECTOR_ACCEPTED"] is False
+    assert (
+        solver_contract["declared_graph_ansatz"][
+            "independent_coefficient_count_over_Q_sqrt10"
+        ]
+        == 225
     )
 
     from generate_11_witness_inclusion_columns import (

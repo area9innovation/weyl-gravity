@@ -77,6 +77,8 @@ def main() -> None:
     T = _artifact(payload, "stf2_extractor_T")
     J = _artifact(payload, "stf2_right_inverse_J")
     F = _artifact(payload, "stf2_wave_F")
+    U = _artifact(payload, "graph_shear_U_46")
+    U_inverse = _artifact(payload, "graph_shear_U_46_inverse")
     typed = json.loads(TYPED_36.read_text())
     q36 = _fixture(typed["retained_complex"]["classical_unary_q1"])
     omega36 = _fixture(typed["retained_complex"]["typed_cyclic_pairing"])
@@ -97,6 +99,12 @@ def main() -> None:
         "pairing_induced_by_iota": _is_zero(_subtract(_multiply(_multiply(_adjoint(iota), omega), iota), omega36)),
         "stf2_right_inverse": _is_zero(_subtract(_multiply(T, J), _identity(5))),
         "stf2_wave_order_two": max(entry.maximum_order for row in F for entry in row if entry.terms) == 2,
+        "graph_shear_inverse": _is_zero(
+            _subtract(_multiply(U, U_inverse), _identity(46))
+        ),
+        "graph_shear_typed_cyclic": _is_zero(
+            _subtract(_multiply(_multiply(_adjoint(U), omega), U), omega)
+        ),
     }
     if checks != payload["exact_checks"] or not all(checks.values()):
         raise AssertionError(f"independent carrier replay failed: {checks}")
