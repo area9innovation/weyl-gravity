@@ -1082,6 +1082,19 @@ a failed task.
 
 ## Required handoff
 
+### Current eight-hour assignment (2026-07-17)
+
+The rank-46 support-local projector rail is closed by its certified
+subprincipal obstruction.  The active independent task is now **C-G2**:
+prove or obstruct cyclic causal transfer on an open class of globally
+hyperbolic conformally flat backgrounds.  State the complete conformal-factor class,
+derive every weighted chain/SDR/Green/pairing intertwiner, and independently
+verify one nonconstant conformal factor.  If the causal-support layer cannot
+close, return the exact algebraic intertwining theorem and first support or
+cyclic obstruction without claiming `LORENTZIAN-CAUSAL`.  The full queue and
+morning handoff are authoritative in
+[`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

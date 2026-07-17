@@ -1742,6 +1742,19 @@ successful counterexample results.
 
 ## Required handoff
 
+### Current eight-hour assignment (2026-07-17)
+
+The active task is **E-G1 beyond the `ell=2` fixture**: lift the combined
+axial--polar quadratic source and adjoint-cokernel test to symbolic allowed
+harmonic triples, retain magnetic phases and opposite momenta, and classify
+the first exceptional fourth-order target.  Reproduce the certified
+`ell=2` cone and add at least one exact `ell>=3` fixture.  Extract the
+structural conditions, if any, under which the pure-extra energy form is
+definite and the Einstein image supplies the compensating sign.  If an
+all-`ell` theorem fails, the first exact counterexample plus its selection
+rule is the result.  See the authoritative queue in
+[`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

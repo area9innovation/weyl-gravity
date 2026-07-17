@@ -493,6 +493,19 @@ obstruction is a successful result.
 
 ## Required handoff
 
+### Current eight-hour assignment (2026-07-17)
+
+First close the **scope-correct V2 classical antifield import** against the
+unchanged minimal-BV foundation, with an explicit finite grading/jet window
+and all acceptance flags intact.  Then execute **Q-G1 beyond AFN0** in both
+parities: generate the minimal antifield/Koszul--Tate candidates and compute
+exact `H^{0,4}` and `H^{1,4}` contributions, including Diff, mixed and
+descent carriers with primitives or dual witnesses.  Start one anomaly-
+coefficient presentation only if Q-G1 closes.  If no honest finite receiver
+window exists, certify that obstruction and the minimal quotient/relation
+needed; do not alter the classical producer to force acceptance.  See
+[`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;

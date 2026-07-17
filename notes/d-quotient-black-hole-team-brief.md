@@ -349,6 +349,21 @@ Do not start quasinormal numerics tonight unless all six items pass.
 
 ## Interface with the existing teams
 
+### Current eight-hour assignment (2026-07-17; supersedes the BH-0 preflight queue)
+
+BH-0 and the bare BH-1 preflight are certified.  Do **BH-1A normalized
+generator and boundary ensemble**, not BH-2 ringdown.  Audit whether the
+residual `c`-map and dilation are globally admissible proper gauge on the
+selected exterior; replace chart-fixed `partial_t` by the boundary-
+normalized field-dependent generator and include its covariant charge
+correction; require both horizontality and invariance before descending a
+charge form.  Close one Einstein control ensemble and one physically defined
+extra-Weyl ensemble, then compute integrability, entropy and first law in the
+same normalization.  A surviving obstruction must be interpreted as boundary
+source--response/symplectic-flux data.  The exact fallback verdicts and
+morning handoff are in
+[`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
+
 - **Einstein team:** owns the asymptotic Bach/BMS phase space and the compact
   Einstein--extra branch dictionary.  Import its conventions; do not build a
   competing Bondi complex.  The black-hole team owns the horizon and exterior

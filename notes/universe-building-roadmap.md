@@ -43,31 +43,238 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Laboratory | What is currently established | What it does not yet establish |
 |---|---|---|
 | Vacuum conformal cylinder | complete free causal gauge complex and the stated residual reduction | matter clocks, interactions, particles, or scattering |
-| Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), and full retained BV cyclicity; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier; 72-row memory causal subcomplex and separate-axis 84-row rod--gravity unary theorem | rank-46 branch projector, invariant/nonremovable meaning of \(\ell_3\), localized mixed-axis apparatus observable, all-orders closure, or genericity |
+| Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), and full retained BV cyclicity; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; 72-row memory causal subcomplex and separate-axis 84-row rod--gravity unary theorem | invariant/nonremovable meaning of \(\ell_3\), a different noncontractible filtered or mixed-bundle branch split, localized mixed-axis apparatus observable, all-orders closure, or genericity |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; generic extra branches and their Lee--Wald pairing; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | quadratic-source disposition on every mixed-cone stratum, exceptional fourth-order targets, nonlinear causal closure, or asymptotic radiation |
-| Quantum local algebra | complete even/odd AFN0 candidate quotients, classical causal imports, local Hadamard parametrices, and exact consumers for the repaired mixed interaction, 36-row projector obstruction, and rank-46 cyclic graph carrier | full antifield anomaly cohomology, coefficient-bearing Slavnov breaking, restored QME, global BRST Hadamard state, particles, or scattering |
+| Quantum local algebra | complete even/odd AFN0 candidate quotients, classical causal imports, local Hadamard parametrices, and exact consumers for the repaired mixed interaction, 36-row projector obstruction, and rank-46 cyclic graph carrier; exact classical minimal-BV foundation and a receiver-side finite-closure obstruction | a scope-correct V2 import, full antifield anomaly cohomology, coefficient-bearing Slavnov breaking, restored QME, global BRST Hadamard state, particles, or scattering |
+| Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; independently verified bare Lee--Wald static surface form and nonintegrability on the chart-normalized parameter family | a normalized field-dependent generator, globally admissible residual quotient, differentiable horizon/outer-boundary phase space, first law, exterior causal perturbations, or stability |
 
 No row may be used as evidence for another row merely because both use the
 word cylinder, wave, or Einstein.
 
-## The present four-way junction
+## The present six-way junction
 
 The shortest independent paths are now:
 
 ```text
-Einstein:   extend the quadratic-source test across the classified mixed cones
-Nonlinear:  decide whether the landed retained ell3 is invariant or removable
-Classical:  decide the rank-46 projector and export a background-indexed branch manifest
-Quantum:    complete antifield anomaly cohomology, coefficients, and local QME disposition
-Observer:   close the mixed-axis 84-row apparatus and construct the observer morphism
+Einstein:    extend the quadratic-source test across the classified mixed cones
+Nonlinear:   decide whether the landed retained ell3 is invariant or removable
+Classical:   prove or obstruct causal transfer on an open conformally flat class
+Quantum:     accept a scope-correct antifield import, then compute beyond AFN0
+Observer:    freeze the normalized mixed unary, then build apparatus q2/q3 and its morphism
+Black hole:  resolve generator normalization and the first physical boundary ensemble
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
-than moving whole teams now.  The rank-46 cyclic graph carrier is now exact,
-but it adds only a contractible complement; its projector is still the gate
-for a branch-resolved mixing table and later residual quantum transfer.  It
-does not block the unsplit cyclic-deformation test or the local anomaly/QME
-calculation.
+than moving whole teams now.  The rank-46 cyclic graph carrier is exact and
+its physical-helicity quotient is identified, but the requested support-local
+branch projector has an exact subprincipal obstruction.  A later branch split
+therefore requires a noncontractible filtered or mixed-bundle enlargement.
+This no-go does not block the unsplit cyclic-deformation test or the local
+anomaly/QME calculation.
+
+## Coordinated eight-hour work queue — 2026-07-17
+
+This is an ordering and work-budget envelope, not a scientific lifecycle.
+A theorem advances only when its certificate, independent verifier, scope and
+claim ledger pass.  Each team should complete the earliest reachable item,
+commit it coherently, and continue without waiting for another team.  If the
+main construction fails, the exact first obstruction is the deliverable.  Do
+not spend the run polishing prose around an unclosed gate.
+
+### Shared cadence and integration rules
+
+1. **Opening audit:** start from the latest committed `master`, record all
+   pre-existing edits, pin every imported object by result ID, hash and source
+   commit, and run the smallest existing regression that can falsify the
+   proposed consumer.
+2. **Primary construction:** pursue the team gate below.  Never wait on an
+   uncommitted producer: work on the declared fallback and import only after
+   the producer has committed a verified artifact.
+3. **Adversarial pass:** mutate one decisive sign, coefficient, boundary
+   condition or grading convention; the verifier must reject it.  Recompute
+   the claimed rank, cohomology, charge or identity independently rather than
+   comparing two serializations of one calculation.
+4. **Handoff pass:** leave a strict certificate/schema, verifier, focused
+   tests, human report, assumptions and missing-object ledger, exact commands,
+   elapsed times and dependency tags.  Update a paper or public claims ledger
+   only if a lifecycle, dependency, verdict or manuscript gate changes.
+5. **Commit discipline:** commit and push each coherent passed or obstructed
+   gate separately.  Do not bundle another team's dirty files, generated
+   scratch output or unrelated prose cleanup.
+
+### Classical team — C-G2 open-background causal transfer
+
+**Primary question:** does the certified cyclic causal-transfer mechanism
+extend from isolated fixtures to an open class of globally hyperbolic
+conformally flat backgrounds?
+
+1. State a complete candidate class `g=Omega^2 g0`: regularity and strict
+   positivity of `Omega`, global-hyperbolicity assumptions, bundle weights,
+   support conditions, operator domains and pairing density.  Distinguish a
+   true open class from a finite list of backgrounds.
+2. Derive the weighted conjugation/intertwining maps for the parent complex,
+   SDR data and endpoint Green homotopies.  Check chain, contraction,
+   cyclicity, retarded/advanced support and current-pairing transport
+   separately; do not infer all of them from covariance of one operator.
+3. Verify one nonconstant conformal factor independently, with the vacuum
+   cylinder/Minkowski cases as regressions.  Include a mutation that breaks a
+   required weight or derivative term.
+4. Return either an exact uniform theorem with its maximal declared class, or
+   the first precise obstruction and the smallest additional hypothesis that
+   removes it.  Do not reopen the certified rank-46 projector no-go.
+
+**Fallback:** if the full Green/support theorem is analytically out of reach,
+certify the complete algebraic conformal-intertwining layer and one exact
+failure of support-local/cyclic transfer.  This advances C-G2 without a false
+`LORENTZIAN-CAUSAL` promotion.
+
+### Einstein team — E-G1 harmonic obstruction beyond the fixture
+
+**Primary question:** which parts of the compact Taub obstruction are
+structural in harmonic number and branch, rather than accidents of the
+`ell=2,m=0,k=0` fixture?
+
+1. Lift the axial--polar quadratic source and adjoint-cokernel pairing to
+   symbolic allowed harmonic triples, retaining magnetic phases and
+   opposite-momentum data.  State the Clebsch--Gordan/parity selection rules
+   before reducing a matrix.
+2. Compute the exact source rank, resonance conditions and common-zero cone on
+   every tractable stratum.  Reproduce the full certified `ell=2` result
+   and add at least one genuinely new exact `ell>=3` fixture as an
+   independent falsification target.
+3. Isolate structural conditions under which the pure-extra quadratic energy
+   form is definite while the Einstein image supplies the compensating sign.
+   Relate that statement explicitly to fixed versus variable charge fibres.
+4. Classify the first exceptional fourth-order target mode encountered; do
+   not silently discard a resonance or divide by `k`, `omega`, `p`, or `q`.
+
+**Fallback:** if a symbolic-all-`ell` theorem does not close, return an
+exact selection-rule theorem plus the first counterexample to naive
+generalization, with a certified `ell=3` or `ell=4` source/cokernel block.
+
+### Nonlinear team — N-G4 invariant meaning of the retained \(\ell_3\)
+
+**Primary question:** is the landed mixed retained `ell3` a genuine cyclic
+deformation, or can it be removed by an admissible cyclic `L_infinity`
+redefinition?
+
+1. Define the exact cyclic deformation complex and the admissible
+   `F2,F3` ansatz on the **unsplit** retained carrier.  Preserve degrees,
+   `D/K_Berger` weights, support locality, pairing and the frozen SDR.
+2. Assemble the coboundary map induced by the certified
+   `ell1,ell2`, then solve the exact linear system for a trivialization.
+   If no solution exists, construct a normalized dual witness pairing
+   nontrivially with the mixed `ell3`.
+3. Report whether the operation survives on the relevant cohomology or only
+   on the chosen representative.  Keep the Einstein/extra/Maxwell mixing table
+   false: the requested local branch projector is obstructed.
+4. Only after this disposition closes, use remaining capacity on the hybrid
+   retained causal-chain homotopy that first contracts the acyclic
+   clock/graph incidence.  Do not begin `q4` merely to fill time.
+
+**Fallback:** certify the smallest invariant subcomplex on which
+trivialization is possible or impossible, and identify the exact missing
+carrier needed for the global decision.
+
+### Quantum team — scope-correct antifield import and Q-G1
+
+**Primary question:** what replaces the AFN0 anomaly-candidate quotient after
+the minimal Koszul--Tate/antifield sector is included?
+
+1. Finish the scope-aware V2 receiver contract against the unchanged
+   classical minimal-BV foundation.  The finite grading/jet window must be
+   explicit; do not demand literal closure of the infinite
+   `g (Lie_omega)^n` tower and do not weaken nilpotency or covariance
+   checks to make the import pass.
+2. Once all classical acceptance flags pass, generate the minimal antifield
+   candidate space in both parities and compute exact `H^{0,4}` and
+   `H^{1,4}` contributions, including pure-Diff, mixed and descent carriers.
+   Every surviving class needs a representative and every removed class an
+   exact primitive or normalized dual witness.
+3. Regress the even/odd AFN0 quotients and keep local integrated, residual and
+   Lorentzian state cohomologies distinct.
+4. Only if Q-G1 closes, begin one coefficient presentation for
+   `[omega C^2]` and `[omega E4]`; the second independent presentation
+   and QME disposition remain separate gates.
+
+**Fallback:** if the V2 adapter still cannot accept any mathematically honest
+finite window, certify the receiver obstruction and the minimal quotient or
+generalized-connection relation required to remove it.  Do not modify the
+classical producer merely to satisfy the consumer.
+
+### Observer team — normalized apparatus interaction and record map
+
+**Primary question:** does the rank-two clock-labelled detector response
+survive the first backreacted, normalized apparatus interaction?
+
+1. First freeze the in-progress normalized-profile mixed-unary result with its
+   all-84-row nilpotency/cyclicity, bivariate Green coefficient, independent
+   verifier and honest formal-first-jet boundary.  Until committed, downstream
+   work must treat it as unavailable.
+2. Construct the apparatus `q2,q3` rows from the frozen two-jet profile,
+   including clock, rod and metric variations.  Import the nonlinear tensors
+   by hash and test the required `L_infinity`, cyclicity and
+   `K_Berger`-equivariance identities.
+3. Define the first observer morphism from global observables to the two
+   detector records and recompute response rank after backreaction.  Import
+   C-G4 as the signal/redshift object rather than defining a new coordinate
+   redshift.
+4. Separate a failure of the record map from a failure of the underlying
+   causal signal, and keep finite-parameter Green hyperbolicity, emitter recoil
+   and quantum observer claims false unless independently reached.
+
+**Fallback:** return the first exact morphism defect, classified as gauge,
+cyclic, `K_Berger`, compact-solvability or missing-emitter data, plus
+the maximal subcarrier on which the two records remain distinguishable.
+
+### Black-hole team — BH-1A normalized generator and boundary ensemble
+
+**Primary question:** does the exact bare Lee--Wald nonintegrability survive
+after the time generator, residual transformations and physical boundary
+ensemble are defined consistently?
+
+1. Audit the global admissibility of the residual `c`-map and dilation on
+   the selected exterior: horizon regularity, zeros of the conformal factor,
+   preservation of the outer boundary and its conformal representative.  A
+   local coordinate/conformal relation is not automatically proper gauge on
+   the exterior phase space.
+2. Replace the chart-fixed `chi=partial_t` by a declared normalized
+   field-dependent `chi=N(beta,gamma,k) partial_t` where the boundary
+   problem determines `N`.  Include the field-dependent-generator
+   correction in the covariant surface-charge variation and test full
+   basicness under every allowed proper gauge: both contraction and Lie
+   derivative must vanish.
+3. Close an Einstein control ensemble first (prefer a boundary-normalized
+   Schwarzschild--AdS or another explicitly justified one-boundary control),
+   then one extra-Weyl ensemble defined by actual fixed sources/falloffs rather
+   than an arbitrary parameter slice.  Compute charge integrability,
+   Iyer--Wald entropy and the first law in one normalization.
+4. Interpret a surviving `dF` as boundary symplectic flux/source--response
+   data and decide whether differentiability requires a Lagrangian boundary
+   condition, an allowed counterterm or additional boundary degrees of
+   freedom.  Do not start BH-2 ringdown until this disposition closes.
+
+**Fallback:** if no physical normalization/ensemble can be completed, certify
+the exact incompatibility among boundary preservation, residual quotient and
+integrability.  Acceptable scoped outcomes are
+`BH1_NONINTEGRABILITY_SURVIVES_NORMALIZED_QUOTIENT`,
+`BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR`, or
+`BH1_BOUNDARY_ENSEMBLE_REQUIRED`; none by itself is the full BH-1 phase-space
+theorem.
+
+### Morning integration order
+
+Read results in dependency order, not commit-count order:
+
+1. freeze the observer normalized unary and quantum V2 import dispositions;
+2. accept the classical C-G2 and Einstein E-G1 independent theorems/no-gos;
+3. decide the nonlinear invariant `ell3` result using only frozen imports;
+4. decide the black-hole normalized boundary result separately from the
+   compact-cylinder quotient;
+5. regenerate programme ledgers and public graphs only for changed lifecycle
+   or dependency edges; and
+6. update manuscripts only where a theorem, obstruction or claim boundary has
+   actually changed.
 
 ## The relative Einstein--Weyl spine
 
