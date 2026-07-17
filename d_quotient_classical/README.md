@@ -190,6 +190,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   completion is the next gate:
   [`certificates/NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1.json`](certificates/NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1.json),
   [`reports/nariai-curvature-incidence-first-square.md`](reports/nariai-curvature-incidence-first-square.md)
+- Shifted-chain continuation and saddle preflight: the incidence extends
+  exactly as `Phi=(I_Omega,M^D L1_corrected)`, with
+  `M^D I_Omega + Phi1 K=0`.  The factorized relative saddle
+  `S=A^sharp M^D A` annihilates `(K,I_Omega)^T` in both blocks.  Full cyclic
+  mapping-cylinder promotion remains fail-closed because the generic PBW
+  adjoint replay, when applied after normal ordering, does not yet encode the
+  Hom-bundle covariance of two cross-form coefficient blocks; it leaves a
+  scoped rank-60 algebraic verifier defect.  This is not a formal-adjointness
+  no-go for the factorized Yang--Mills operator:
+  [`certificates/NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1.json`](certificates/NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1.json),
+  [`reports/nariai-curvature-incidence-shifted-chain.md`](reports/nariai-curvature-incidence-shifted-chain.md)
 - Weaker Yang--Mills translation gate: the corrected component parent now
   satisfies `M^D d^D=0` exactly.  Its naive BGG compression has only a
   24-entry first-order gauge defect.  The unique algebraic endpoint term that

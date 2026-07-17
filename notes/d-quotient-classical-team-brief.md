@@ -989,6 +989,36 @@ promotion.  The next gate is its cyclic mapping-cone completion on the dual
 equation and identity rows, followed by recompression of the Yang--Mills
 middle.
 
+`NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1` continues the incidence through
+the parent middle.  With
+\[
+\Phi_0=I_\Omega,
+\qquad
+\Phi_1=M^D L_1^{\rm corr},
+\]
+the exact PBW relation is
+\[
+M^D\Phi_0+\Phi_1K=0.
+\]
+Each nonzero term contains 154 coefficients through order two; their sum is
+zero.  Moreover the factorized relative saddle
+\(S=A^\sharp M^D A\), \(A=(L_1^{\rm corr},1)\), annihilates
+\((K,I_\Omega)^T\) in both displayed equation blocks.  This supplies the
+complete local algebra for the incidence saddle.
+
+The post-delivery cyclic audit found a verifier boundary rather than a parent
+no-go.  Applying the generic PBW adjoint routine to the already normal-ordered
+component middle leaves a rank-60 algebraic replay defect with 60 diagonal
+entries and normalized witness one.  The factorized operator
+\(M^D=(d^D)^\sharp d^D-F\!\cdot\) remains formally self-adjoint by
+construction, and its factor-ordered saddle identities pass.  The failing
+path has discarded the Hom-bundle covariance carried by the `(01)` and `(23)`
+cross-form coefficient tensors during normal ordering.  Therefore
+`PARENT_FORMAL_SELF_ADJOINTNESS_NO_GO` remains false.  The next gate is a
+Hom-bundle-covariance-aware PBW adjoint/associativity replay (or an independent
+variational coefficient-table checker), followed by the odd cotangent cone
+and mapping-cylinder SDR.
+
 `NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1` now applies the
 weaker and authoritative detour-translation criterion.  Correcting the
 temporal Schouten component makes the Nariai component parent satisfy
@@ -1149,8 +1179,10 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    transported gauge fermion.  The same zero-order conjugation is now exactly
    obstructed on unit Nariai by nonzero tractor curvature.  The differential
    translation residue has now been identified exactly as the canonical
-   curvature incidence.  Its next gate is the cyclic curvature-incidence
-   mapping-cone Nariai BGG completion, or conformally flat local patching/new
+   curvature incidence, and the shifted chain plus factorized saddle now
+   close exactly.  Its next gate is the Hom-bundle PBW covariance repair and
+   cyclic curvature-incidence mapping-cone Nariai BGG completion, or
+   conformally flat local patching/new
    topology.  The necessary
    Yang--Mills parent correction is certified; raw pointwise compression and
    the complete zeroth-order strictification ansatz, and every algebraic
@@ -1174,11 +1206,12 @@ The physical activation sequence and reassignment triggers are recorded in
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
 have fired.  The classical team's current primary ownership is the rank-46
 subprincipal projector obstruction handoff; its next independent generality
-task is the cyclic curvature-incidence Nariai mapping-cone/HPL completion or
-patching gate beyond the certified global conformal-orbit class.  The
-normalized zero-order obstruction, its exact curvature-incidence
-identification, corrected Yang--Mills parent complex and pointwise compression
-defect are certified.
+task is the Hom-bundle PBW covariance repair followed by the cyclic
+curvature-incidence Nariai mapping-cone/HPL completion, or patching beyond the
+certified global conformal-orbit class.  The normalized zero-order
+obstruction, exact curvature-incidence identification, shifted-chain saddle,
+corrected Yang--Mills parent complex and pointwise compression defect are
+certified.
 The certified C-G1
 theorem may seed one bounded G3/second-consumer task, while the observer team
 owns localized apparatus completion.
@@ -1199,8 +1232,9 @@ chain/Green/pairing transport and a nonconstant consumer.  Unit Nariai then
 gives a normalized nonzero-tractor-curvature obstruction to extending that
 same zero-order conjugation.  The active next gate is either a curved
 Nariai differential-BGG/HPL compression of the corrected Yang--Mills parent
-starting with the now-identified curvature-incidence mapping cone and its
-cyclic dual completion beyond the certified pointwise, zeroth-order
+starting with the Hom-bundle PBW covariance replay and the now-identified
+curvature-incidence mapping cone with its cyclic dual completion beyond the
+certified pointwise, zeroth-order
 strictification and algebraic endpoint defects, or support-local patching to
 new conformally flat topology.  Fixed
 untransported gauges, timelike boundaries and Hadamard claims remain false.

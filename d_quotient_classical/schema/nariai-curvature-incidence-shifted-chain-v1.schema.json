@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-curvature-incidence-shifted-chain-v1.schema.json",
+  "title": "Nariai curvature-incidence shifted-chain gate",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "conventions", "exact_data", "exact_checks", "theorem", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-curvature-incidence-shifted-chain-v1"},
+    "result_id": {"const": "NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1"},
+    "result_state": {"const": "SHIFTED_CHAIN_AND_FACTORIZED_SADDLE_EXACT_PBW_ADJOINT_GATE_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["curvature_incidence", "yang_mills_middle"],
+      "properties": {
+        "curvature_incidence": {"$ref": "#/$defs/dependency"},
+        "yang_mills_middle": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "conventions": {
+      "type": "object",
+      "required": ["shifted_map", "shifted_chain_equation", "factorized_saddle", "factorized_gauge", "factorized_gauge_equation", "adjoint_policy"],
+      "properties": {
+        "shifted_map": {"type": "string"},
+        "shifted_chain_equation": {"const": "M^D I_Omega + Phi_1 K = 0"},
+        "factorized_saddle": {"type": "string"},
+        "factorized_gauge": {"const": "G=(K,I_Omega)^T"},
+        "factorized_gauge_equation": {"type": "string"},
+        "adjoint_policy": {"type": "string", "minLength": 120}
+      },
+      "additionalProperties": false
+    },
+    "exact_data": {
+      "type": "object",
+      "required": ["corrected_L1", "curvature_incidence", "shifted_equation_map", "M_on_incidence", "Phi1_on_K", "shifted_chain_defect", "factorized_endpoint_saddle", "factorized_saddle_lower_defect", "factorized_saddle_upper_defect", "pbw_parent_adjoint_replay_defect"],
+      "properties": {
+        "corrected_L1": {"$ref": "#/$defs/table"},
+        "curvature_incidence": {"$ref": "#/$defs/table"},
+        "shifted_equation_map": {"$ref": "#/$defs/table"},
+        "M_on_incidence": {"$ref": "#/$defs/table"},
+        "Phi1_on_K": {"$ref": "#/$defs/table"},
+        "shifted_chain_defect": {"$ref": "#/$defs/table"},
+        "factorized_endpoint_saddle": {"$ref": "#/$defs/table"},
+        "factorized_saddle_lower_defect": {"$ref": "#/$defs/table"},
+        "factorized_saddle_upper_defect": {"$ref": "#/$defs/table"},
+        "pbw_parent_adjoint_replay_defect": {"$ref": "#/$defs/table"}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["corrected_L1_orders", "corrected_L1_nonzero_entries", "Phi1_orders", "Phi1_nonzero_entries", "M_I_orders", "M_I_nonzero_entries", "Phi1_K_orders", "Phi1_K_nonzero_entries", "M_I_equals_minus_Phi1_K", "shifted_chain_defect_nonzero_entries", "factorized_endpoint_saddle_orders", "factorized_endpoint_saddle_nonzero_entries", "factorized_saddle_lower_defect_nonzero_entries", "factorized_saddle_upper_defect_nonzero_entries", "pbw_parent_adjoint_replay_defect_orders", "pbw_parent_adjoint_replay_defect_rank", "pbw_parent_adjoint_replay_defect_nonzero_entries", "pbw_parent_adjoint_replay_normalized_witness", "pbw_parent_adjoint_replay_normalized_witness_value", "pbw_parent_adjoint_replay_ranks"],
+      "properties": {
+        "corrected_L1_orders": {"const": [0, 1, 2]},
+        "corrected_L1_nonzero_entries": {"const": 323},
+        "Phi1_orders": {"const": [0, 1, 2, 4]},
+        "Phi1_nonzero_entries": {"const": 886},
+        "M_I_orders": {"const": [0, 1, 2]},
+        "M_I_nonzero_entries": {"const": 154},
+        "Phi1_K_orders": {"const": [0, 1, 2]},
+        "Phi1_K_nonzero_entries": {"const": 154},
+        "M_I_equals_minus_Phi1_K": {"const": true},
+        "shifted_chain_defect_nonzero_entries": {"const": 0},
+        "factorized_endpoint_saddle_orders": {"const": [0, 2, 4]},
+        "factorized_endpoint_saddle_nonzero_entries": {"const": 472},
+        "factorized_saddle_lower_defect_nonzero_entries": {"const": 0},
+        "factorized_saddle_upper_defect_nonzero_entries": {"const": 0},
+        "pbw_parent_adjoint_replay_defect_orders": {"const": [0]},
+        "pbw_parent_adjoint_replay_defect_rank": {"const": 60},
+        "pbw_parent_adjoint_replay_defect_nonzero_entries": {"const": 60},
+        "pbw_parent_adjoint_replay_normalized_witness": {"const": "defect[(),0,0]"},
+        "pbw_parent_adjoint_replay_normalized_witness_value": {"const": "1"},
+        "pbw_parent_adjoint_replay_ranks": {"const": {"()": 60}}
+      },
+      "additionalProperties": false
+    },
+    "theorem": {
+      "type": "object",
+      "required": ["shifted_chain", "factorized_saddle", "remaining_verifier_gate"],
+      "properties": {
+        "shifted_chain": {"type": "string", "minLength": 170},
+        "factorized_saddle": {"type": "string", "minLength": 150},
+        "remaining_verifier_gate": {"type": "string", "minLength": 300}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1", "CURVATURE_INCIDENCE_SHIFTED_CHAIN_EXACT", "FACTORIZED_RELATIVE_SADDLE_GAUGE_IDENTITY_EXACT", "FACTORIZED_VARIATIONAL_CYCLICITY_AVAILABLE", "COEFFICIENTWISE_PBW_ADJOINT_REPLAY", "CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE", "MAPPING_CYLINDER_SDR", "NARIAI_GREEN_HOMOTOPY", "PARENT_FORMAL_SELF_ADJOINTNESS_NO_GO", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1": {"const": true},
+        "CURVATURE_INCIDENCE_SHIFTED_CHAIN_EXACT": {"const": true},
+        "FACTORIZED_RELATIVE_SADDLE_GAUGE_IDENTITY_EXACT": {"const": true},
+        "FACTORIZED_VARIATIONAL_CYCLICITY_AVAILABLE": {"const": true},
+        "COEFFICIENTWISE_PBW_ADJOINT_REPLAY": {"const": false},
+        "CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE": {"const": false},
+        "MAPPING_CYLINDER_SDR": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "PARENT_FORMAL_SELF_ADJOINTNESS_NO_GO": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_HOM_BUNDLE_PBW_COVARIANCE_AND_CYCLIC_CONE"},
+    "claim_boundary": {"type": "string", "minLength": 750},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+      "additionalProperties": false
+    },
+    "sparse": {
+      "type": "object",
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "required": ["entries", "sha256"],
+      "properties": {
+        "entries": {"type": "array", "items": {"type": "object", "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/sparse"}}, "additionalProperties": false}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

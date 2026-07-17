@@ -136,10 +136,18 @@ entire surviving first-square residue is now identified coefficientwise as
 the canonical curvature incidence
 `(I_Omega xi)_a=Omega_ab xi^b`; its adjoint action equals the PBW normal
 tractor square.  The next gate is therefore
-`C_G2_NARIAI_CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE`: add the incidence and
-its cyclic dual equation/identity rows, prove the enlarged differential
-squares, and recompress the Yang--Mills middle.  Do not reopen algebraic
-endpoint fitting or claim a Nariai Green homotopy before this gate closes.
+the Hom-bundle PBW covariance repair followed by
+`C_G2_NARIAI_CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE`.  The incidence already
+extends one row further as
+`M^D I_Omega+(M^D L1_corrected)K=0`, and the factorized relative saddle closes
+in both blocks.  Before adding the odd cotangent cone, repair the generic PBW
+adjoint replay for the cross-form Hom-bundle coefficients (or supply an
+independent variational-table checker); its current rank-60 replay defect is
+a verifier limitation, not a formal-self-adjointness no-go.  Then add the
+incidence and cyclic dual equation/identity rows, prove the enlarged
+differential squares, and recompress the Yang--Mills middle.  Do not reopen
+algebraic endpoint fitting or claim a Nariai Green homotopy before this gate
+closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 
