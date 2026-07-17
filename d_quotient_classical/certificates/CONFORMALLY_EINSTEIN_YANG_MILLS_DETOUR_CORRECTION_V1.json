@@ -1,0 +1,223 @@
+{
+  "claim_boundary": "This certificate identifies and sign-checks the universal curvature correction required after the zero-order flat-tractor conjugation fails. On the Bach-flat Nariai control, the normal tractor connection is Yang-Mills, so the corrected parent detour sequence is a formally self-adjoint differential complex. This is not yet the differential BGG/HPL compression to the metric Bach complex, a retarded or advanced Green construction, a support theorem, an open Bach-flat family, or a quantum statement. The exact matrix fixture independently rejects the naive flat middle but is a universal sign-and-composition replay, not a component expansion of the Nariai tractor bundle.",
+  "dependency_ref": {
+    "artifact_id": "CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1",
+    "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1.json",
+    "sha256": "f8c511d3e594d5610ee2ff5fe7654a2950ec8fbb0760067757d09d9e3abd0b70"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "Nariai_curved_parent_complex_exists": true,
+    "Nariai_normal_tractor_is_Yang_Mills": true,
+    "curvature_correction_sign_replayed": true,
+    "left_composition_identity_exact": true,
+    "naive_flat_middle_rejected": true,
+    "right_composition_identity_exact": true
+  },
+  "exact_matrix_fixture": {
+    "connection_matrices": [
+      [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ]
+    ],
+    "corrected_left_defect_rank": 0,
+    "corrected_middle_matrix": [
+      [
+        "0",
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2"
+      ],
+      [
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ]
+    ],
+    "corrected_right_defect_rank": 0,
+    "curvature_matrices": [
+      [
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ]
+      ]
+    ],
+    "d_matrix": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "delta_matrix": [
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "0"
+      ]
+    ],
+    "naive_left_defect_rank": 2,
+    "naive_right_defect_rank": 2,
+    "yang_mills_current": [
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "0"
+        ]
+      ],
+      [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ]
+    ]
+  },
+  "flags": {
+    "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1": true,
+    "G3_BACH_FLAT_OPEN_CLASS": false,
+    "NARIAI_CURVED_BGG_HPL_COMPRESSION": false,
+    "NARIAI_CURVED_PARENT_DETOUR_COMPLEX": true,
+    "NARIAI_METRIC_GREEN_HOMOTOPY": false,
+    "NARIAI_PARENT_GREEN_HOMOTOPY": false,
+    "QUANTUM_CLAIM": false
+  },
+  "nariai_application": {
+    "bach_tensor": "0",
+    "corrected_middle_is_valid": true,
+    "curvature_action_nonzero": true,
+    "flat_middle_is_invalid": true,
+    "normal_tractor_current": "in conformal dimension four the normal-tractor Yang-Mills current is the Bach tensor in the tractor slot",
+    "parent_complex": true
+  },
+  "next_gate": "C_G2_NARIAI_CURVED_BGG_HPL_COMPRESSION",
+  "primary_source": {
+    "arxiv": "math/0606401",
+    "authors": "A. Rod Gover, Petr Somberg, Vladimir Soucek",
+    "formula_scope": "Lemma 3.1 and the formally self-adjoint Yang-Mills detour complex",
+    "title": "Yang-Mills detour complexes and conformal geometry",
+    "url": "https://arxiv.org/abs/math/0606401"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/conformally_einstein_yang_mills_detour.py": "5f9b4b53dcf0d7e0806444a27fd92d2859ae280c0d34ebf0c4a3cf3c76cf43a8",
+      "d_quotient_classical/causal_transfer/tests/test_conformally_einstein_yang_mills_detour.py": "f0e4c7329ef7cd51664d64e29725cff48fbb6fbf33b5876b32ef228638b5622d",
+      "d_quotient_classical/causal_transfer/verify_conformally_einstein_yang_mills_detour.py": "efc2af6827f2b020657a1c1c890ffd52af26a6dde3e7a0f21bf4fbb8d90f856c",
+      "d_quotient_classical/schema/conformally-einstein-yang-mills-detour-correction-v1.schema.json": "179366a347cab53428b9a7a3dd4b74df9a0ba392d21c9ed743eb3471a6622643"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/conformally_einstein_yang_mills_detour.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_conformally_einstein_yang_mills_detour.py",
+      "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_conformally_einstein_yang_mills_detour",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/conformally-einstein-yang-mills-detour-correction-v1.schema.json -d d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json"
+    ]
+  },
+  "result_id": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1",
+  "result_state": "CURVED_PARENT_DETOUR_CORRECTION_CERTIFIED",
+  "schema": "pure-weyl-conformally-einstein-yang-mills-detour-correction-v1",
+  "universal_parent": {
+    "complex_condition": "delta^D F=0",
+    "formal_self_adjointness": "if D preserves the fibre metric, the Yang-Mills detour complex is formally self-adjoint",
+    "left_composition": "M^D d^D=epsilon(delta^D F)",
+    "middle": "(M^D Psi)_b=-D^a D_a Psi_b+D^a D_b Psi_a-F_b^a Psi_a",
+    "right_composition": "delta^D M^D=-iota(delta^D F)",
+    "sequence": "Omega^0(V) --d^D--> Omega^1(V) --M^D--> Omega^1(V) --delta^D--> Omega^0(V)"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/conformally-einstein-yang-mills-detour-correction-v1.schema.json",
+  "title": "Conformally Einstein Yang-Mills detour correction",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_ref", "primary_source", "universal_parent", "nariai_application", "exact_matrix_fixture", "exact_checks", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-conformally-einstein-yang-mills-detour-correction-v1"},
+    "result_id": {"const": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1"},
+    "result_state": {"const": "CURVED_PARENT_DETOUR_CORRECTION_CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_ref": {"$ref": "#/$defs/dependency"},
+    "primary_source": {
+      "type": "object",
+      "required": ["title", "authors", "arxiv", "url", "formula_scope"],
+      "properties": {
+        "title": {"const": "Yang-Mills detour complexes and conformal geometry"},
+        "authors": {"type": "string"},
+        "arxiv": {"const": "math/0606401"},
+        "url": {"const": "https://arxiv.org/abs/math/0606401"},
+        "formula_scope": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "universal_parent": {
+      "type": "object",
+      "required": ["sequence", "middle", "left_composition", "right_composition", "complex_condition", "formal_self_adjointness"],
+      "properties": {
+        "sequence": {"type": "string"},
+        "middle": {"const": "(M^D Psi)_b=-D^a D_a Psi_b+D^a D_b Psi_a-F_b^a Psi_a"},
+        "left_composition": {"const": "M^D d^D=epsilon(delta^D F)"},
+        "right_composition": {"const": "delta^D M^D=-iota(delta^D F)"},
+        "complex_condition": {"const": "delta^D F=0"},
+        "formal_self_adjointness": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "nariai_application": {
+      "type": "object",
+      "required": ["normal_tractor_current", "bach_tensor", "parent_complex", "curvature_action_nonzero", "flat_middle_is_invalid", "corrected_middle_is_valid"],
+      "properties": {
+        "normal_tractor_current": {"type": "string", "minLength": 40},
+        "bach_tensor": {"const": "0"},
+        "parent_complex": {"const": true},
+        "curvature_action_nonzero": {"const": true},
+        "flat_middle_is_invalid": {"const": true},
+        "corrected_middle_is_valid": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "exact_matrix_fixture": {
+      "type": "object",
+      "required": ["connection_matrices", "curvature_matrices", "yang_mills_current", "d_matrix", "delta_matrix", "corrected_middle_matrix", "corrected_left_defect_rank", "corrected_right_defect_rank", "naive_left_defect_rank", "naive_right_defect_rank"],
+      "properties": {
+        "connection_matrices": {"$ref": "#/$defs/matrix_list"},
+        "curvature_matrices": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/matrix_list"}},
+        "yang_mills_current": {"$ref": "#/$defs/matrix_list"},
+        "d_matrix": {"$ref": "#/$defs/matrix"},
+        "delta_matrix": {"$ref": "#/$defs/matrix"},
+        "corrected_middle_matrix": {"$ref": "#/$defs/matrix"},
+        "corrected_left_defect_rank": {"const": 0},
+        "corrected_right_defect_rank": {"const": 0},
+        "naive_left_defect_rank": {"const": 2},
+        "naive_right_defect_rank": {"const": 2}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["curvature_correction_sign_replayed", "left_composition_identity_exact", "right_composition_identity_exact", "naive_flat_middle_rejected", "Nariai_normal_tractor_is_Yang_Mills", "Nariai_curved_parent_complex_exists"],
+      "properties": {
+        "curvature_correction_sign_replayed": {"const": true},
+        "left_composition_identity_exact": {"const": true},
+        "right_composition_identity_exact": {"const": true},
+        "naive_flat_middle_rejected": {"const": true},
+        "Nariai_normal_tractor_is_Yang_Mills": {"const": true},
+        "Nariai_curved_parent_complex_exists": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1", "NARIAI_CURVED_PARENT_DETOUR_COMPLEX", "NARIAI_CURVED_BGG_HPL_COMPRESSION", "NARIAI_PARENT_GREEN_HOMOTOPY", "NARIAI_METRIC_GREEN_HOMOTOPY", "G3_BACH_FLAT_OPEN_CLASS", "QUANTUM_CLAIM"],
+      "properties": {
+        "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1": {"const": true},
+        "NARIAI_CURVED_PARENT_DETOUR_COMPLEX": {"const": true},
+        "NARIAI_CURVED_BGG_HPL_COMPRESSION": {"const": false},
+        "NARIAI_PARENT_GREEN_HOMOTOPY": {"const": false},
+        "NARIAI_METRIC_GREEN_HOMOTOPY": {"const": false},
+        "G3_BACH_FLAT_OPEN_CLASS": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_CURVED_BGG_HPL_COMPRESSION"},
+    "claim_boundary": {"type": "string", "minLength": 300},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object", "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"const": "CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+      "additionalProperties": false
+    },
+    "matrix": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}},
+    "matrix_list": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/matrix"}}
+  }
+}

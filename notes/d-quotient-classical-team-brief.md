@@ -928,6 +928,17 @@ The remaining C-G2 alternatives are therefore a curved Bach-flat HPL
 correction/obstruction or a local-patching theorem within the conformally
 flat category.
 
+`CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1` resolves the first
+half of the curved repair.  The flat parent middle must be replaced by
+\(M^D=\delta^Dd^D-F\!\cdot\); exact rational matrix replay verifies
+\(M^Dd^D=\varepsilon(\delta^DF)\) and
+\(\delta^DM^D=-\iota(\delta^DF)\), while omitting the curvature action leaves
+rank-two defects on both sides.  Bach-flatness makes the Nariai normal tractor
+connection Yang--Mills, so the corrected formally self-adjoint parent complex
+exists.  The next unresolved gate is its actual curved differential BGG/HPL
+compression to the metric Bach complex; no Nariai Green claim has yet been
+made.
+
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
 nonzero stability radius, or an exact no-go witness.
@@ -1072,8 +1083,9 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    C-G2 has reached G3 on the global conformal orbit of the cylinder with a
    transported gauge fermion.  The same zero-order conjugation is now exactly
    obstructed on unit Nariai by nonzero tractor curvature.  Its next gate is a
-   curved Bach-flat differential-HPL correction/obstruction or conformally
-   flat local patching/new topology.
+   curved Nariai differential-BGG/HPL compression or conformally flat local
+   patching/new topology.  The necessary Yang--Mills parent correction is now
+   certified, but no endpoint or Green result follows from it alone.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -1092,8 +1104,9 @@ The physical activation sequence and reassignment triggers are recorded in
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
 have fired.  The classical team's current primary ownership is the rank-46
 subprincipal projector obstruction handoff; its next independent generality
-task is the curved-HPL or patching gate beyond the certified global
-conformal-orbit class and normalized Nariai zero-order obstruction.
+task is the Nariai curved differential-BGG/HPL compression or patching gate
+beyond the certified global conformal-orbit class.  The normalized zero-order
+obstruction and corrected Yang--Mills parent complex are both certified.
 The certified C-G1
 theorem may seed one bounded G3/second-consumer task, while the observer team
 owns localized apparatus completion.
@@ -1113,8 +1126,8 @@ conformal orbit of the cylinder, including exact weighted
 chain/Green/pairing transport and a nonconstant consumer.  Unit Nariai then
 gives a normalized nonzero-tractor-curvature obstruction to extending that
 same zero-order conjugation.  The active next gate is either a curved
-Bach-flat differential-HPL correction/obstruction or support-local patching
-to new conformally flat topology.  Fixed
+Nariai differential-BGG/HPL compression of the corrected Yang--Mills parent
+or support-local patching to new conformally flat topology.  Fixed
 untransported gauges, timelike boundaries and Hadamard claims remain false.
 The full queue and
 morning handoff are authoritative in

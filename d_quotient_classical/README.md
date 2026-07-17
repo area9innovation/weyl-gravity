@@ -159,6 +159,11 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   remain open:
   [`certificates/CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1.json`](certificates/CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1.json),
   [`reports/conformally-einstein-tractor-curvature-obstruction.md`](reports/conformally-einstein-tractor-curvature-obstruction.md)
+- Curved-parent repair: the exact \(-F\!\cdot\) Yang--Mills detour correction,
+  its two composition identities, and the resulting formally self-adjoint
+  Nariai parent complex (without yet claiming BGG compression or Green data):
+  [`certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json`](certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json),
+  [`reports/conformally-einstein-yang-mills-detour-correction.md`](reports/conformally-einstein-yang-mills-detour-correction.md)
 - Strict portable consumer gate and accepted Berger adapter:
   [`schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json`](schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
   [`certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json`](certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json)
