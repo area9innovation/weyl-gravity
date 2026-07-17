@@ -33,6 +33,7 @@ change the verdict or lifecycle rules in this dossier.
 - [`schema/programme-status-v1.schema.json`](schema/programme-status-v1.schema.json)
 - [`schema/team-contribution-v1.schema.json`](schema/team-contribution-v1.schema.json)
 - [`contributions/`](contributions/)
+- [`contributions/quantum-relative-einstein-weyl-readiness.json`](contributions/quantum-relative-einstein-weyl-readiness.json)
 - [`reports/classical-scalar-clock-registration-receipt.md`](reports/classical-scalar-clock-registration-receipt.md)
 - [`reports/classical-neutral-clock-registration-receipt.md`](reports/classical-neutral-clock-registration-receipt.md)
 - [`reports/classical-neutral-clock-health-registration-receipt.md`](reports/classical-neutral-clock-health-registration-receipt.md)

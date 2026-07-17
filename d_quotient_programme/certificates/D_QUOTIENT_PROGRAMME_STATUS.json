@@ -29,7 +29,7 @@
     ],
     "rule": "The exact retained q2_26 transfer is complete, the bare local unary D-Cartan ansatz is ruled out, and the conditional causal transfer, rank-one wave extension, and cyclic 36-row analytic realization are imported. Construct advanced/retarded Green operators with causal support and transport them to the retained endpoint without weakening the separate residual/BFV, QME, Einstein-incidence, or Einstein--Maxwell tangent gates."
   },
-  "programme_base_commit": "0b2600b823a32e5d82c630f72d74636eb464de43",
+  "programme_base_commit": "41ae4e41c74f4c8aa4b4bf07589943a01e4c5250",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -499,6 +499,15 @@
       "lifecycle_layer": "QUANTUM",
       "phase_space_id": "compact_quantum",
       "setting_id": "compact_quantum",
+      "status": "BLOCKED",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "boundary_conditions": "R_t x S1_L x S2; fixed N=2 compact bundle; standard harmonic tangent before final residual quotient; off-shell BV triangle and renormalized observable algebra absent",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "QUANTUM",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+      "setting_id": "compact_einstein_maxwell_weyl_relative_quantum_readiness",
       "status": "BLOCKED",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     },
@@ -2620,6 +2629,53 @@
         ]
       },
       "sha256": "726414ca83667f2e54d84663c1ab7ba6d9fdeb60db2b421e5df251884f1bdc29"
+    },
+    {
+      "path": "d_quotient_programme/contributions/quantum-relative-einstein-weyl-readiness.json",
+      "payload": {
+        "boundary_conditions": "R_t x S1_L x S2; fixed N=2 compact U(1) bundle; smooth periodic identity-component gauge transformations; generalized polynomial global solutions retained; before final residual SO(4,2) quotient; complementary fourth-order target solutions excluded",
+        "claim_status": "BLOCKED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE",
+          "LORENTZIAN-CAUSAL"
+        ],
+        "established": [
+          "G0 relative quantum dependency ledger with a complete shared-spine row",
+          "content-hash import of the certified on-shell standard-harmonic inclusion and classical reduced-mode pullback pairing",
+          "content-hash import of a partial quadratic relative preflight without promotion to a complete O2 or arity-three theorem",
+          "formal relative anomaly subtraction target with bulk, antifield, boundary, zero-mode, measure, central and D-Cartan ledgers separated",
+          "explicit three-result classical import gate and fail-closed local QME, state, pairing and residual-transfer statuses"
+        ],
+        "evidence": {
+          "commit": "58f6ad0ca4ed948b4db326ea9dc10b0bc3a2872d",
+          "path": "quantum-weyl/relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json",
+          "sha256": "bf12cce652bd3c1407f4cf8a3fd974710bc9bd56b531057838fc0780a8df1726"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "QUANTUM",
+        "next_gate": "import EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 by content hash, while retaining ANALYTIC_FRAMEWORK_MISSING until the applicable local QME and renormalized observable algebra are constructed",
+        "not_established": [
+          "an off-shell Einstein-Weyl BV chain map or mapping cofiber",
+          "the complete relative arity-two or arity-three Linfinity disposition",
+          "relative residual equivariance or observable pullback",
+          "Einstein or Weyl QME restoration and a defined relative anomaly class",
+          "a renormalized relative pairing, BRST-compatible state restriction or quantum D-Cartan verdict",
+          "a particle, Hilbert-space, unitarity or Lorentzian quantum theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_relative_quantum_readiness",
+        "team_id": "quantum",
+        "verdict": "ANALYTIC_FRAMEWORK_MISSING",
+        "verification_commands": [
+          "PYTHONPATH=quantum-weyl python3 -m relative.einstein_weyl_qme_readiness_certificate --check",
+          "PYTHONPATH=quantum-weyl python3 -m relative.verify_einstein_weyl_qme_readiness",
+          "PYTHONPATH=quantum-weyl python3 -m relative.contribution --check",
+          "PYTHONPATH=quantum-weyl python3 -m unittest discover -s quantum-weyl/relative/tests -v"
+        ]
+      },
+      "sha256": "540237d3e3f0ce6d6ba1abd307e25dab612afdc58bb651135c3ca5b024794877"
     }
   ],
   "team_inputs": {
@@ -2667,9 +2723,9 @@
       "verdict": "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
     },
     {
-      "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered",
-      "next_gate": "complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion",
-      "result_state": "ALGEBRAIC_ENGINE_READY_ANALYTIC_FRAMEWORK_MISSING",
+      "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, and a G0 Einstein--Weyl relative dependency ledger are registered",
+      "next_gate": "import EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 by content hash while completing the local anomaly/QME disposition; retain ANALYTIC_FRAMEWORK_MISSING before any relative anomaly or residual-transfer promotion",
+      "result_state": "ALGEBRAIC_ENGINE_AND_RELATIVE_G0_LEDGER_READY_ANALYTIC_FRAMEWORK_MISSING",
       "team_id": "quantum",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     }

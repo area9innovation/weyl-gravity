@@ -69,6 +69,7 @@ EINSTEIN_MAXWELL_WEYL_AXIAL_QUADRATIC_CHANNEL_PREFLIGHT_CONTRIBUTION = PACKAGE /
 EINSTEIN_MAXWELL_WEYL_AXIAL_EE_ELL2_SOURCE_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-ee-ell2-source.json"
 EINSTEIN_MAXWELL_WEYL_HERMITIAN_AXIAL_POLAR_ELL2_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-hermitian-axial-polar-ell2-taub.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
+QUANTUM_RELATIVE_CONTRIBUTION = PACKAGE / "contributions" / "quantum-relative-einstein-weyl-readiness.json"
 
 TEAM_PATHS = {
     "classical": "d_quotient_classical/certificates/CLASSICAL_D_QUOTIENT_STATUS.json",
@@ -340,6 +341,32 @@ def _quantum_cartan_contribution() -> dict[str, Any]:
         raise AssertionError("quantum Cartan contribution evidence is incomplete")
     if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
         raise AssertionError("quantum Cartan contribution evidence hash drifted")
+    return contribution
+
+
+def _quantum_relative_contribution() -> dict[str, Any]:
+    contribution = _load(QUANTUM_RELATIVE_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "quantum"
+        and contribution.get("setting_id")
+        == "compact_einstein_maxwell_weyl_relative_quantum_readiness"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id")
+        == "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent"
+        and contribution.get("lifecycle_layer") == "QUANTUM"
+        and contribution.get("claim_status") == "BLOCKED"
+        and contribution.get("verdict") == "ANALYTIC_FRAMEWORK_MISSING"
+        and contribution.get("dependency_tags")
+        == ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+    ):
+        raise AssertionError("relative quantum contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path, commit = evidence.get("path"), evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("relative quantum contribution evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("relative quantum contribution evidence hash drifted")
     return contribution
 
 
@@ -994,6 +1021,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     nd1_contribution = _nonlinear_nd1_contribution()
     berger_retained_q2_contribution = _nonlinear_berger_retained_q2_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
+    quantum_relative_contribution = _quantum_relative_contribution()
     return {
         "schema": "pure-weyl-d-quotient-programme-status-v1",
         "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
@@ -1245,6 +1273,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(QUANTUM_CARTAN_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(QUANTUM_CARTAN_CONTRIBUTION),
                 "payload": quantum_cartan_contribution,
+            },
+            {
+                "path": str(QUANTUM_RELATIVE_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(QUANTUM_RELATIVE_CONTRIBUTION),
+                "payload": quantum_relative_contribution,
             }
         ],
         "team_status": [
@@ -1271,10 +1304,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "quantum",
-                "result_state": "ALGEBRAIC_ENGINE_READY_ANALYTIC_FRAMEWORK_MISSING",
+                "result_state": "ALGEBRAIC_ENGINE_AND_RELATIVE_G0_LEDGER_READY_ANALYTIC_FRAMEWORK_MISSING",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, and hash-bound AFN0 closure witnesses are registered",
-                "next_gate": "complete the AFN0 lower-form total complex, then instantiate the admissible bulk Cartan-obstruction basis before any QME or residual-transfer promotion",
+                "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, and a G0 Einstein--Weyl relative dependency ledger are registered",
+                "next_gate": "import EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 by content hash while completing the local anomaly/QME disposition; retain ANALYTIC_FRAMEWORK_MISSING before any relative anomaly or residual-transfer promotion",
             },
         ],
         "setting_ledger": [
@@ -1729,6 +1762,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_relative_quantum_readiness",
+                "generator_id": "D_compact",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
+                "boundary_conditions": "R_t x S1_L x S2; fixed N=2 compact bundle; standard harmonic tangent before final residual quotient; off-shell BV triangle and renormalized observable algebra absent",
+                "lifecycle_layer": "QUANTUM",
+                "status": "BLOCKED",
+                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
+            },
+            {
                 "setting_id": "asymptotic_real_cylinder_time",
                 "generator_id": "H_ESU",
                 "phase_space_id": "asymptotically_flat_full_Bach",
@@ -1824,16 +1866,27 @@ def validate(data: dict[str, Any]) -> list[str]:
         "quantum",
     ]:
         errors.append("four-team inventory drifted")
-    quantum_contributions = [
-        record.get("payload", {})
+    quantum_contributions = {
+        record.get("payload", {}).get("setting_id"): record.get("payload", {})
         for record in data.get("team_contributions", [])
         if record.get("payload", {}).get("team_id") == "quantum"
-    ]
+    }
     if not (
-        len(quantum_contributions) == 1
-        and quantum_contributions[0].get("setting_id") == "vacuum_cylinder"
-        and quantum_contributions[0].get("claim_status") == "BLOCKED"
-        and quantum_contributions[0].get("verdict") is None
+        set(quantum_contributions)
+        == {
+            "vacuum_cylinder",
+            "compact_einstein_maxwell_weyl_relative_quantum_readiness",
+        }
+        and quantum_contributions["vacuum_cylinder"].get("claim_status") == "BLOCKED"
+        and quantum_contributions["vacuum_cylinder"].get("verdict") is None
+        and quantum_contributions[
+            "compact_einstein_maxwell_weyl_relative_quantum_readiness"
+        ].get("claim_status")
+        == "BLOCKED"
+        and quantum_contributions[
+            "compact_einstein_maxwell_weyl_relative_quantum_readiness"
+        ].get("verdict")
+        == "ANALYTIC_FRAMEWORK_MISSING"
     ):
         errors.append("quantum blocked contribution inventory drifted")
     nonlinear_contributions = {
@@ -1949,6 +2002,16 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("neutral-clock verdict escaped its homogeneous phase space")
     if ledger.get("compact_quantum", {}).get("verdict") != "ANALYTIC_FRAMEWORK_MISSING":
         errors.append("quantum verdict promoted before QME")
+    relative_quantum = ledger.get(
+        "compact_einstein_maxwell_weyl_relative_quantum_readiness", {}
+    )
+    if (
+        relative_quantum.get("status") != "BLOCKED"
+        or relative_quantum.get("verdict") != "ANALYTIC_FRAMEWORK_MISSING"
+        or relative_quantum.get("phase_space_id")
+        != "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent"
+    ):
+        errors.append("relative quantum readiness was dropped or promoted")
     if ledger.get("compact_interacting", {}).get("verdict") != (
         "CONDITIONAL_CAUSAL_AND_CYCLIC_ANALYTIC_REALIZATION_IMPORTED_GREEN_OPERATORS_PENDING"
     ):
@@ -2243,9 +2306,29 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
     next(
         record["payload"]
         for record in mutant["team_contributions"]
-        if record["payload"]["team_id"] == "quantum"
+        if record["payload"]["setting_id"] == "vacuum_cylinder"
     )["claim_status"] = "CERTIFIED"
     reject("promote_quantum_contribution_before_QME", mutant)
+
+    mutant = deepcopy(data)
+    relative_quantum = next(
+        row
+        for row in mutant["setting_ledger"]
+        if row["setting_id"]
+        == "compact_einstein_maxwell_weyl_relative_quantum_readiness"
+    )
+    relative_quantum["status"] = "CERTIFIED"
+    relative_quantum["verdict"] = "CARTAN_QUANTUM_EXACT"
+    reject("promote_relative_quantum_before_triangle_and_QME", mutant)
+
+    mutant = deepcopy(data)
+    mutant["team_contributions"] = [
+        record
+        for record in mutant["team_contributions"]
+        if record["payload"]["setting_id"]
+        != "compact_einstein_maxwell_weyl_relative_quantum_readiness"
+    ]
+    reject("drop_relative_quantum_readiness_contribution", mutant)
 
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_selected_residual_HT1_q2")["verdict"] = "INTERACTING_CARTAN_EXISTS"
