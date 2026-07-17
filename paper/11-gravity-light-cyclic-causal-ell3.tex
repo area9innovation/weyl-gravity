@@ -739,14 +739,25 @@ $\mathbb Q(\sqrt{10})[\epsilon]/(\epsilon^2)$ gives a rank-four generalized
 wave module.  No global two-column helicity frame is chosen: the invariant
 object is the projective module defined by the idempotent.
 
-The next exact input is therefore the filtered order-two extension class
-defined by $V_2$ in $A_{10}=\Box_2^2+V_2$.  It must be obtained by solving the
-symbol-complex descent equations.  Neither diagonalizing the raw
-$10\times10$ matrix nor merely compressing it as
-$\Pi_{\rm TT}V_2\Pi_{\rm TT}$ is an invariant branch verdict.
+The filtered order-two extension class defined by $V_2$ has now been tested
+by the full symbol-complex descent equation.  At
+$\zeta=(1,1,0,0)$, arbitrary principal gauge changes of the field
+representative, all principal Hessian boundaries, and both physical equation
+representatives are included.  A normalized left-null witness evaluates on
+the two physical columns as
+\begin{equation}
+ \left(1,0\right).
+\end{equation}
+Thus the plus representative $\widehat h_{22}-\widehat h_{33}$ has a
+nonzero quotient class for every allowed correction.  The cross
+representative $\widehat h_{23}$ does lift, with physical equation coefficient
+$71/40$.  This is an invariant filtered obstruction, not a diagonalization of
+the raw $10\times10$ matrix or the bare compression
+$\Pi_{\rm TT}V_2\Pi_{\rm TT}$.
 
-This is the honest enlarged carrier, not yet the branch theorem.  It does not
-supply an Einstein-like/extra-Weyl projector, a $q_2,q_3$ lift,
+The declared rank-$46$ contractible graph carrier therefore does not supply a
+closed physical filtered subcomplex or an Einstein-like/extra-Weyl projector
+with this principal anchor.  It also does not supply a $q_2,q_3$ lift,
 $K_{\rm Berger}$ equivariance, or causal support on $\cR_{46}$.
 Equation~\eqref{eq:mixing} therefore remains a target formula rather than an
 authorized rank-$46$ calculation.
@@ -759,11 +770,13 @@ introduced as a second theorem here.  In particular, no deformation class is
 relabelled as a third dynamical particle branch.
 
 The obstruction neither invalidates Theorem~\ref{thm:survival} nor computes a
-branch mixing table.  Together with the graph-carrier construction it
-sharpens the next gate to a binary subprincipal verdict: construct a nontrivial
-lower-order branch anchor reproducing the exact $V_2$ extension class, or
-return its normalized obstruction, before solving the complete projector or
-lifting the nonlinear brackets.
+branch mixing table.  It is scoped to the declared physical principal anchor
+on the exact contractible rank-$46$ graph carrier.  It does not rule out a
+different leading cohomology carrier, a noncontractible or mixed-bundle
+curvature mapping cylinder, or a separately tagged nonlocal reduced-mode
+splitting.  The next exact choice is therefore to retain the unsplit complex
+or construct the smallest noncontractible filtered enlargement before lifting
+the nonlinear brackets.
 
 \section{Interpretation and nonclaims}\label{sec:interpretation}
 
@@ -772,8 +785,9 @@ gravity-equation response to one gravity and two Maxwell inputs and a
 Maxwell-equation response to two gravity and one Maxwell input.  After
 lowering, both are $g,g,A,A$ quartic coefficients.  They remain visible under
 the frozen exact cyclic transfer and satisfy the ternary homotopy identity.
-Once the rank-$46$ graph carrier receives an admissible branch projector and
-nonlinear lift---or another branch carrier supplies them---
+If a noncontractible enlargement receives an admissible branch projector and
+nonlinear lift---or an explicitly declared unsplit observable replaces the
+branch table---
 Equation~\eqref{eq:mixing} will decide whether this representative closes on
 the Einstein-like branch, couples it to the extra-Weyl branch, or vanishes on
 residual cohomology.
@@ -827,11 +841,13 @@ Artifact & Role\\
 \cert{BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1}
  & normalized obstruction to the canonical local $36$-row projector\\
 \cert{BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1}
- & exact local cyclic graph carrier; rank-$46$ branch projector still open\\
+ & exact local cyclic graph carrier; physical-anchor projector tested below\\
 \cert{BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1}
- & normalized nonsplitting witness; subprincipal branch anchor required\\
+ & normalized principal nonsplitting witness\\
 \cert{BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1}
  & exact rank-two projective helicity module inside the six-class null quotient\\
+\cert{BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1}
+ & normalized $V_2$ filtered-lift obstruction for the plus polarization\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -883,6 +899,13 @@ PYTHONPATH=. python3 \
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
   verify_berger_retained_46_stf2_physical_helicity_filtered_quotient.py
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_retained_46_stf2_subprincipal_branch_anchor_or_obstruction.py \
+  --check --guards
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_retained_46_stf2_subprincipal_branch_anchor_or_obstruction.py
 \end{verbatim}
 \endgroup
 
@@ -892,10 +915,11 @@ working draft rather than a theorem freeze.
 
 \section{Outlook}\label{sec:outlook}
 
-Paper~11 now has two mathematical continuations.  The first is to decide the
-rank-$46$ STF2 subprincipal branch-anchor gate, solve the complete projector
-if that gate is positive, materialize the cyclic $q_2,q_3$ lift, and compute
-Equation~\eqref{eq:mixing}.  A nonzero
+Paper~11 now has two mathematical continuations.  The first is to decide
+between the unsplit retained complex and a noncontractible filtered or
+mixed-bundle enlargement, then materialize the relevant cyclic $q_2,q_3$
+lift and compute the corresponding version of Equation~\eqref{eq:mixing}.
+A nonzero
 Einstein/extra-Weyl entry would turn the additional Weyl physics into an
 explicit interaction channel; a block-diagonal table would establish
 nonlinear closure of the Einstein-like direction through this order; and a

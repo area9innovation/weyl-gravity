@@ -559,10 +559,18 @@ six-dimensional degree-zero Berger null-symbol cohomology.  Its canonical
 transpose supplies the paired degree-one module and the retained BV pairing
 is nondegenerate.  Tensoring with the repeated-wave dual-number algebra gives
 the rank-four generalized-wave module.  This closes the former unproved
-helicity-rank assertion, but it does not descend `V_2`: the next branch gate
-must solve the filtered symbol-complex equations.  Raw `10 x 10`
-diagonalization or bare `Pi_TT V_2 Pi_TT` compression is not an invariant
-branch verdict.
+helicity-rank assertion.
+
+The filtered `V_2` gate has now also returned an exact obstruction.  After
+allowing every principal gauge change, Hessian boundary, and physical-equation
+representative at `zeta=(1,1,0,0)`, the normalized left-null witness evaluates
+on the plus/cross columns as `(1,0)`.  The cross polarization lifts with
+coefficient `71/40`, but the plus polarization does not.  Hence the declared
+rank-46 contractible graph carrier admits no support-local branch projector
+with that principal physical anchor.  This is not a global all-carrier no-go:
+the live alternatives are the unsplit retained complex, a noncontractible or
+mixed-bundle filtered enlargement, or an explicitly `REDUCED-MODE` nonlocal
+split.
 
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
@@ -575,11 +583,11 @@ branch verdict.
    clock/graph incidence before constructing
    `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`; do not demand a
    metric-causal inverse of the obstructed complete `L13` architecture.
-4. Import the exact rank-46 cyclic graph carrier now, but produce an
-   Einstein-like/extra-Weyl/Maxwell mixing table only after its projector or
-   another exact filtered/mapping-cylinder splitting passes.  When that gate
-   fires, the sparse branch mixing table becomes the primary physical output;
-   a nonlocal split must remain explicitly `REDUCED-MODE`.
+4. Do not continue the obstructed rank-46 contractible-projector ansatz.
+   Choose between an unsplit retained observable and the smallest
+   noncontractible/mixed-bundle filtered enlargement.  Produce an
+   Einstein-like/extra-Weyl/Maxwell mixing table only after that new carrier
+   passes; a nonlocal split must remain explicitly `REDUCED-MODE`.
 5. Add apparatus \(q_2,q_3\), \(K_{\rm Berger}\)-equivariance, and observer
    morphism stability only after the observer team closes the mixed
    \(\epsilon_R^2\kappa\) unary gate.

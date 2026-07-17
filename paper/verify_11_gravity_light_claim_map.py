@@ -25,7 +25,7 @@ def main() -> None:
     assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT"
     assert (
         payload["result_state"]
-        == "WRITING_STARTED_RANK46_PRINCIPAL_ANCHOR_OBSTRUCTED_SUBPRINCIPAL_OPEN"
+        == "WRITING_STARTED_RANK46_SUBPRINCIPAL_PHYSICAL_LIFT_OBSTRUCTED"
     )
     assert payload["lifecycle_state"] == "WRITING_STARTED"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
@@ -64,7 +64,9 @@ def main() -> None:
         "retained_46_projector_solver_contract_frozen",
         "retained_46_principal_filtered_module_certified",
         "retained_46_principal_direct_sum_anchor_obstructed",
-        "retained_46_subprincipal_anchor_required",
+        "retained_46_V2_filtered_descent_computed",
+        "retained_46_physical_filtered_lift_obstructed",
+        "retained_46_subprincipal_verdict_landed",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -91,6 +93,8 @@ def main() -> None:
     assert claims["retained_46_physical_helicity_projective_rank"] == 2
     assert claims["retained_46_generalized_wave_module_rank"] == 4
     assert claims["retained_46_physical_pairing_nondegenerate"] is True
+    assert claims["retained_46_subprincipal_normalized_evaluation"] == ["1", "0"]
+    assert claims["retained_46_cross_polarization_lift_coefficient"] == "71/40"
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -117,7 +121,7 @@ def main() -> None:
     assert all(value is False for value in nonclaims.values())
     assert (
         payload["next_gate"]["status"]
-        == "RANK46_PRINCIPAL_ANCHOR_OBSTRUCTED_SUBPRINCIPAL_OPEN"
+        == "RANK46_SUBPRINCIPAL_PHYSICAL_LIFT_OBSTRUCTED_ENLARGEMENT_OR_UNSPLIT_REQUIRED"
     )
     assert (
         payload["next_gate"]["carrier"]
@@ -136,8 +140,12 @@ def main() -> None:
         == "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1"
     )
     assert (
-        payload["next_gate"]["required_input"]
+        payload["next_gate"]["subprincipal_obstruction"]
         == "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1"
+    )
+    assert (
+        payload["next_gate"]["required_input"]
+        == "UNSPLIT_RETAINED_COMPLEX_OR_NONCONTRACTIBLE_FILTERED_ENLARGEMENT"
     )
 
     for relative, expected in payload["inputs"].items():
@@ -347,6 +355,21 @@ def main() -> None:
     assert physical_quotient["claim_flags"]["V2_FILTERED_DESCENT_COMPUTED"] is False
     assert physical_quotient["claim_flags"]["ELL3_BRANCH_MIXING_AUTHORIZED"] is False
 
+    subprincipal = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert subprincipal["result_state"] == "SUBPRINCIPAL_PHYSICAL_MODULE_LIFT_OBSTRUCTED_AT_STANDARD_NULL_FIBRE"
+    assert subprincipal["normalized_obstruction"]["normalized_evaluation_on_physical_columns"] == [["1", "0"]]
+    assert subprincipal["normalized_obstruction"]["cross_polarization_lifts"] is True
+    assert subprincipal["normalized_obstruction"]["cross_physical_equation_coefficient"] == "71/40"
+    assert subprincipal["claim_flags"]["V2_FILTERED_DESCENT_COMPUTED"] is True
+    assert subprincipal["claim_flags"]["RANK46_PHYSICAL_FILTERED_LIFT_OBSTRUCTED"] is True
+    assert subprincipal["claim_flags"]["GLOBAL_ALL_CARRIER_PROJECTOR_NO_GO"] is False
+    assert subprincipal["claim_flags"]["ELL3_BRANCH_MIXING_AUTHORIZED"] is False
+
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,
         build as build_witness_columns,
@@ -410,7 +433,8 @@ def main() -> None:
         r"\begin{proposition}[Normalized principal branch-anchor obstruction]",
         r"A=\Q(\sqrt{10})[\epsilon]/(\epsilon^2)",
         r"\epsilon s(1)=\epsilon",
-        r"binary subprincipal verdict",
+        r"\left(1,0\right)",
+        r"$71/40$",
     ]
     for marker in required_markers:
         assert marker in normalized, marker

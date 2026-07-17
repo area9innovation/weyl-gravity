@@ -1,7 +1,7 @@
 {
   "schema": "paper-11-gravity-light-cyclic-causal-ell3-claim-map-v1",
   "result_id": "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT",
-  "result_state": "WRITING_STARTED_RANK46_PRINCIPAL_ANCHOR_OBSTRUCTED_SUBPRINCIPAL_OPEN",
+  "result_state": "WRITING_STARTED_RANK46_SUBPRINCIPAL_PHYSICAL_LIFT_OBSTRUCTED",
   "lifecycle_state": "WRITING_STARTED",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -9,7 +9,7 @@
   ],
   "headline": "The retained mixed gravity-Maxwell bracket survives this cyclic homological reduction through ell3.",
   "manuscript": "paper/11-gravity-light-cyclic-causal-ell3.tex",
-  "manuscript_sha256": "c15180ac679750f243b2a50702bf53517e6bece847f384f252c24aa7119b6951",
+  "manuscript_sha256": "101d19ac91db425bfae55bcdc6a90994fd891a0d9d98c7fb8e535797b014ace1",
   "paper_scope": {
     "background": "frozen positive rational Berger-clock gravity-clock-Maxwell fixture",
     "full_carrier_rows": 64,
@@ -19,7 +19,7 @@
     "deformation_coefficient_field": "Q(sqrt(2),sqrt(10))",
     "factorial_convention": "suspended-graded-symmetric-factorial-v1",
     "causal_scope": "advanced and retarded unary Green homotopies and two-sided-causal-hull cyclic K_Berger Cartan primitives through arity three",
-    "residual_scope": "retained carrier before Einstein-like/extra-Weyl/Maxwell branch projection; canonical same-bundle projector obstructed at rank 36; exact cyclic rank-46 STF2 graph carrier constructed; its principal direct-sum anchor is nonsplit; the rank-two physical helicity projective module is derived inside the six-class null quotient; exact V2 filtered descent and the subprincipal anchor remain open",
+    "residual_scope": "retained carrier before Einstein-like/extra-Weyl/Maxwell branch projection; canonical same-bundle projector obstructed at rank 36; the exact cyclic rank-46 STF2 graph carrier has a nonsplit principal module and a normalized V2 filtered-lift obstruction for the plus polarization; an unsplit observable or noncontractible/mixed-bundle enlargement is now required",
     "contraction_scope": "one frozen explicitly specified cyclic 64-to-36 SDR; no change-of-SDR invariance"
   },
   "certified_claims": {
@@ -76,7 +76,11 @@
     "retained_46_physical_helicity_projective_rank": 2,
     "retained_46_generalized_wave_module_rank": 4,
     "retained_46_physical_pairing_nondegenerate": true,
-    "retained_46_subprincipal_anchor_required": true
+    "retained_46_V2_filtered_descent_computed": true,
+    "retained_46_physical_filtered_lift_obstructed": true,
+    "retained_46_subprincipal_normalized_evaluation": ["1", "0"],
+    "retained_46_cross_polarization_lift_coefficient": "71/40",
+    "retained_46_subprincipal_verdict_landed": true
   },
   "explicit_nonzero_witnesses": {
     "gravity_equation_output": {
@@ -102,7 +106,7 @@
     "residual_branch_basis_input_available": false,
     "retained_46_branch_projector_available": false,
     "retained_46_global_two_column_helicity_frame_available": false,
-    "retained_46_V2_filtered_descent_computed": false,
+    "retained_46_global_all_carrier_projector_no_go": false,
     "retained_46_full_lower_order_projector_obstructed": false,
     "retained_46_subprincipal_branch_anchor_available": false,
     "retained_46_q2_q3_lift_materialized": false,
@@ -126,13 +130,14 @@
     "theorem_frozen": false
   },
   "next_gate": {
-    "status": "RANK46_PRINCIPAL_ANCHOR_OBSTRUCTED_SUBPRINCIPAL_OPEN",
+    "status": "RANK46_SUBPRINCIPAL_PHYSICAL_LIFT_OBSTRUCTED_ENLARGEMENT_OR_UNSPLIT_REQUIRED",
     "obstruction": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
     "carrier": "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
     "solver_contract": "BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1",
     "principal_anchor": "BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1",
     "physical_helicity_filtered_quotient": "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1",
-    "required_input": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1",
+    "subprincipal_obstruction": "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1",
+    "required_input": "UNSPLIT_RETAINED_COMPLEX_OR_NONCONTRACTIBLE_FILTERED_ENLARGEMENT",
     "required_output": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
     "dynamical_branch_ids": [
       "Einstein_like",
@@ -154,6 +159,7 @@
     "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1.json": "1d518d27996135ea0004c3a9119dbad543ba2fb2a47003198eb0fb6a0d3a45d2",
     "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1.json": "bcf66acbc2b91e23d7eefd7824125228e1e922d2ec9f2656d3886cb8f13065aa",
     "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json": "b9c290a19270f423d98e998699dd68f86523eeb849d5816cca81215a7ba3236f",
+    "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json": "541645dd93039ccba3f3282aa5c76beebde1d07668289530f6524afe309d53ba",
     "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e",
     "d_quotient_classical/certificates/PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF.json": "c4d89da3e3b68ae73b41eefc39132d124ae526cd3238b4c0a31636894a92b02a",
     "quantum-weyl/transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json": "2c4592665084dd47958aa2c63f10a7f54d3bd9ff8d52f661d1a2fa78da877027",
@@ -162,7 +168,7 @@
     "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json": "a9927fa7d4d0a267ca188c6ea1e746c60f7f27ca880393e936c65807c75d6088",
     "paper/generate_11_witness_inclusion_columns.py": "2658a9081dba389f0405d82be9f5528a9f85e87170177cfc6e1e37ef9beaa4a7",
     "paper/11-gravity-light-ell3-witness-inclusion-columns.tex": "31c0aca8e69ff9180517298e2ce6890bd20d9ac9746d0d14662e4136fa681ffe",
-    "paper/verify_11_gravity_light_claim_map.py": "3e03ed50d1fa0d3d0800bd6d4a4c40ed306828d2be6b7fa108f0799e16be8956"
+    "paper/verify_11_gravity_light_claim_map.py": "5d83887e8a95a2f2800bb72932634b13273aad75ab6f02d3ecade18d803697e8"
   },
   "verification_commands": [
     "python3 paper/generate_11_witness_inclusion_columns.py --check",
@@ -173,6 +179,9 @@
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_physical_helicity_filtered_quotient.py --check --guards",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_physical_helicity_filtered_quotient.py",
     "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_46_stf2_physical_helicity_filtered_quotient",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_subprincipal_branch_anchor_or_obstruction.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_subprincipal_branch_anchor_or_obstruction.py",
+    "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_46_stf2_subprincipal_branch_anchor_or_obstruction",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_46_stf2_principal_branch_anchor.py --check --guards",
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_46_stf2_principal_branch_anchor.py",
     "python3 paper/verify_11_gravity_light_claim_map.py",
@@ -180,9 +189,9 @@
   ],
   "test_tier_receipt": {
     "tier_0": "JSON and Python parse, Draft 2020-12 schema validation, three-pass TeX compilation with resolved references, scoped diff check and exact dependency hashes",
-    "tier_1": "physical-helicity producer with mutation guards, independent verifier and five tests in 14.615 seconds; solver-contract producer, verifier and five tests in 0.439 seconds; principal-anchor producer, verifier and four tests in 0.144 seconds; witness-column and fail-closed Paper 11 claim-map checks",
-    "tier_2": "affected physical-quotient and principal-anchor certificate chain replayed; content-addressed retained ell3 inputs were unchanged and checked by hash rather than rebuilt",
+    "tier_1": "physical-helicity producer with mutation guards, independent verifier and five tests in 14.615 seconds; solver-contract producer, verifier and five tests in 0.439 seconds; principal-anchor producer, verifier and four tests in 0.144 seconds; subprincipal-obstruction producer, verifier and five tests in 4.157 seconds; witness-column and fail-closed Paper 11 claim-map checks",
+    "tier_2": "affected physical-quotient, solver, principal-anchor and subprincipal-obstruction certificate chain replayed; content-addressed retained ell3 inputs were unchanged and checked by hash rather than rebuilt",
     "tier_3": "not run because this is WRITING_STARTED, not a theorem freeze or lifecycle promotion"
   },
-  "claim_boundary": "For one explicitly specified cyclic 64-to-36 SDR, this working draft proves that the retained mixed gravity-Maxwell ell3 representative is nonzero by two exact zero-derivative witnesses, that every mixed exchange channel contributing to the declared ell3 vanishes by projection support on the contractible Theta_star row, and that the exact sparse implementation realizes the formal cyclic homotopy-transfer identities. The convention-specific cyclic adjoint matrix identities are displayed, and all 106 exact inclusion-column coefficients for the dressed gravity coordinates used by the witnesses and their pairing are printed in a generated appendix. The separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan theorem is connected by explicit full-to-retained formulas but is not the propagator used in the algebraic ell3 transfer. A LOCAL-ALGEBRAIC certificate obstructs the declared canonical same-bundle Einstein-like/extra-Weyl projector on rank 36. Its natural rank-46 spatial-STF2 graph prolongation and cyclic dual are exact, with exported cyclic shear and a scoped 225-coefficient solver contract. The principal wave module is certified as a nonsplit dual-number extension: the coefficient-of-epsilon witness evaluates the section defect to one, so no nonzero principal direct-sum Einstein/extra-Weyl anchor exists. The physical polarization input is now independently derived as a rank-two transverse-traceless projective module inside the full six-dimensional Berger null-symbol cohomology, with nondegenerate cyclic pairing; tensoring with the repeated-wave algebra gives a rank-four generalized-wave module. No global two-column helicity frame is asserted. This does not obstruct a lower-order Berger projector; invariant filtered descent of the exact V2 extension, rather than raw 10-by-10 diagonalization or bare TT compression, is the next gate. No nonlinear q2/q3 lift, K_Berger-compatible branch projector, causal branch support, or mixing table is available. The paper does not prove nonvanishing on ell1 cohomology, a nontrivial cyclic deformation class, invariance under changing SDR, nonremovability by cyclic Linfinity field redefinitions, survival under further minimal transfer, residual Einstein-like/extra-Weyl/Maxwell mixing, a particle amplitude, QME restoration, or any quantum theorem. It remains WRITING_STARTED rather than THEOREM_FROZEN."
+  "claim_boundary": "For one explicitly specified cyclic 64-to-36 SDR, this working draft proves that the retained mixed gravity-Maxwell ell3 representative is nonzero by two exact zero-derivative witnesses, that every mixed exchange channel contributing to the declared ell3 vanishes by projection support on the contractible Theta_star row, and that the exact sparse implementation realizes the formal cyclic homotopy-transfer identities. The convention-specific cyclic adjoint matrix identities are displayed, and all 106 exact inclusion-column coefficients for the dressed gravity coordinates used by the witnesses and their pairing are printed in a generated appendix. The separately certified LORENTZIAN-CAUSAL unary Green and K_Berger Cartan theorem is connected by explicit full-to-retained formulas but is not the propagator used in the algebraic ell3 transfer. A LOCAL-ALGEBRAIC certificate obstructs the declared canonical same-bundle Einstein-like/extra-Weyl projector on rank 36. Its natural rank-46 spatial-STF2 graph prolongation and cyclic dual are exact, with exported cyclic shear and a scoped 225-coefficient solver contract. The principal wave module is a nonsplit dual-number extension, and the physical polarization input is independently derived as a rank-two transverse-traceless projective module inside the full six-dimensional Berger null-symbol cohomology, with nondegenerate cyclic pairing; tensoring with the repeated-wave algebra gives a rank-four generalized-wave module. The exact filtered V2 descent equation is now decided: the plus polarization has a normalized obstruction evaluation one for every allowed gauge and boundary correction, while the cross polarization lifts with coefficient 71/40. Consequently the requested support-local branch projector with this principal anchor is obstructed on the contractible rank-46 graph carrier. This is not a global no-go for every carrier; an unsplit observable, noncontractible or mixed-bundle enlargement, or explicitly REDUCED-MODE nonlocal split remains open. No nonlinear q2/q3 lift on an accepted branch carrier, K_Berger-compatible branch projector, causal branch support, or mixing table is available. The paper does not prove nonvanishing on ell1 cohomology, a nontrivial cyclic deformation class, invariance under changing SDR, nonremovability by cyclic Linfinity field redefinitions, survival under further minimal transfer, residual Einstein-like/extra-Weyl/Maxwell mixing, a particle amplitude, QME restoration, or any quantum theorem. It remains WRITING_STARTED rather than THEOREM_FROZEN."
 }
