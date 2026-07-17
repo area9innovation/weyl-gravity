@@ -31,7 +31,7 @@ H^0_lin x H^0_lin  ---------------------------->  coker L
 | Item | Linearization-stability language | This project | Conversion or caveat |
 |---|---|---|---|
 | Background | Einstein or Einstein--matter solution | compact $\mathbb R\times S^1\times S^2$ Einstein--Maxwell product | It is simultaneously a tuned Weyl--Maxwell background. |
-| Linear tangent | kernel of the linearized equations modulo gauge | standard photon/graviton harmonics and extra Weyl classes | The present bilinear is before the final residual quotient. |
+| Linear tangent | kernel of the linearized equations modulo gauge | standard photon/graviton harmonics and extra Weyl classes | The actual product-background stabilizers are retained as global symmetries; no absolute quotient is authorized. |
 | Quadratic constraint | Taub charge paired with a Killing initial datum | constant-lapse component of $D^2E[\Phi_1,\Phi_1]$ | Other adjoint-cokernel classes remain to be classified. |
 | Global sector | fixed conserved charges | fixed Chern class $P_N$, with electric variation tracked separately | A continuous magnetic variation changes the bundle family. |
 | Extension | solution of $L\Phi_2=-\tfrac12D^2E[\Phi_1,\Phi_1]$ | explicit correction or normalized adjoint witness | A removable output block is not proof that the real tangent extends. |
@@ -42,19 +42,19 @@ H^0_lin x H^0_lin  ---------------------------->  coker L
 The compact topology fixes the magnetic sector. On the rational fixture the
 bundle number expands as
 
-\[
+$$
 N(\epsilon)=2+2\epsilon^2p.
-\]
+$$
 
 A smooth family on the same $N=2$ bundle therefore has $p=0$. The
 constant-lapse Taub component cannot be removed by silently varying magnetic
 flux. On the declared four-dimensional fixture span—radion, duality,
 $\ell=1$ photon, and plus-branch $\ell=2$ graviton—the symmetric form is
 
-\[
+$$
 \operatorname{diag}\!\left(-2,-\frac12,-\frac{16}{3},
 -\frac{72}{5}-12\sqrt3\right).
-\]
+$$
 
 Gauge descent and Cauchy-slice conservation follow from the coupled action
 Noether identities. The benchmark is independently replayed by:
@@ -82,6 +82,31 @@ correction; it does not remove the zero-frequency constraint arising from
 conjugate self-products. Thus source solvability must be checked in every
 selection channel before declaring extension.
 
+There is now also an all-generic extra-sector theorem.  On the closed slice,
+the covariant Hamiltonian identity gives
+
+$$
+\left\langle\zeta_X,\frac12D^2E_{\rm WM}[u,u]\right\rangle
+=\mu_X(u)
+=\frac12\Omega_{\rm WM}(u,\mathcal L_Xu).
+$$
+
+Its normalization is fixed by exact agreement with three direct tensor Taub
+calculations: the axial extra block and the axial and polar Einstein-minus
+fixtures at $\ell=2,k=0$.  In the real-mode convention
+$\Phi=\operatorname{Re}(c e^{-i\omega t})$,
+
+$$
+\mu_H=-\frac{L N_{\ell m}}4\omega^2 c^\dagger Gc.
+$$
+
+Both axial and polar extra-Weyl Gram matrices are positive definite for every
+$\ell\ge2$ and every compact momentum, and
+$\omega_e^2=k^2+\ell(\ell+1)-2/3>0$.  Hence the fixed-bundle Taub form is
+definite on the complete real pure-extra generic sector.  No nonzero tangent
+in that sector extends to second order.  This includes finite and rapidly
+decreasing finite-energy harmonic superpositions.
+
 ## 5. Consequence in their language
 
 The result promotes “hold the charge fixed” from an informal side condition
@@ -94,11 +119,12 @@ families without contradiction.
 ## 6. Scope boundary
 
 This is `LOCAL-ALGEBRAIC/REDUCED-MODE`, not a causal nonlinear evolution
-theorem. The complete harmonic obstruction bilinear, all equal-quantum-number
-polarization blocks, the full adjoint cokernel, charge-relaxed corrections,
-and final residual quotient remain open. No asymptotic, scattering, or quantum
-claim follows. The result is a family of exact obstructions, not yet a theorem
-that the entire Einstein sector fails nonlinearly.
+theorem. The pure-extra generic block is now complete, but mixed
+Einstein--extra cancellations, exceptional/Jordan modes, the full common
+$H,P_x,J_i$ zero locus, charge-relaxed corrections, and any justified
+stabilizer quotient remain open. No asymptotic, scattering, or quantum claim
+follows. The result does not say that the entire Einstein sector fails
+nonlinearly.
 
 ## 7. One useful question for adjacent experts
 
@@ -114,11 +140,12 @@ that the entire Einstein sector fails nonlinearly.
 source paper: arXiv:1609.07703v1 and its cited classical framework
 project certificates: COMPACT_HARMONIC_DOMAIN_AND_TAUB_DESCENT;
   EINSTEIN_MAXWELL_OBSTRUCTION_BILINEAR_G1;
-  EINSTEIN_MAXWELL_WEYL_HERMITIAN_AXIAL_POLAR_ELL2_TAUB
+  EINSTEIN_MAXWELL_WEYL_HERMITIAN_AXIAL_POLAR_ELL2_TAUB;
+  EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE
 verification: section 3 plus certificate-local commands
 dependency tags: LOCAL-ALGEBRAIC; REDUCED-MODE
-generality level: G1_DECLARED_COMPACT_HARMONIC_DOMAIN
+generality level: G2_GENERIC_AXIAL_POLAR_ALL_PHYSICAL_ELL_K_MOMENT_MAP_TAUB
 lifecycle state: DRAFT_ALLOWED
-claim flag: CHARGE_FIBRE_DEPENDENT_TAUB_OBSTRUCTIONS_CERTIFIED
-open fields: all-harmonic bilinear; full cokernel; charge-relaxed extensions
+claim flag: GENERIC_PURE_EXTRA_FIXED_BUNDLE_TAUB_NO_GO_CERTIFIED
+open fields: mixed q/p zero locus; exceptional/global blocks; charge-relaxed extensions
 ```

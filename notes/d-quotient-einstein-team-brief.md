@@ -1379,6 +1379,56 @@ The vacuum-cylinder absolute `SO(4,2)` theorem is unchanged in its own phase
 space.  No absolute residual CE cohomology is presently authorized for the
 Plebański--Hacyan wave modules.
 
+`EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE` now identifies the missing
+covariant bridge.  For every background automorphism `X` and generic on-shell
+tangent `u`, twice differentiating the action Noether current and integrating
+over the closed slice gives, in the repository convention,
+
+```text
+<zeta_X,(1/2)D^2 E_WM[u,u]>
+ = mu_X(u)
+ = (1/2) Omega_WM(u,L_X u).
+```
+
+The sign and real-mode factor are not left formal.  The prediction from the
+direct four-dimensional Lee--Wald current matches three independent exact
+tensor Taub coefficients at `ell=2,k=0`: the complete two-dimensional axial
+extra block and the axial and polar Einstein-minus fixtures.  For
+`Phi=Re(c exp(-i omega t))`,
+
+```text
+mu_H=-(L N_ell_m/4) omega^2 c^dagger G c.
+```
+
+The same complex-to-real calculation gives
+
+```text
+mu_Px=(L/4) k omega c^dagger (G tensor W_ell)c,
+mu_Ja=(L/4) omega c^dagger (G tensor W_ell T_a)c.
+```
+
+This also sharpens the angular selection rule: after the complete covariant
+Noether sum, rotations preserve `ell` because they commute with the sphere
+Laplacian.  `J_1,J_2` connect only `m` to `m+/-1` inside the same irrep; raw
+adjacent-`ell` source terms cancel in the integrated charge.
+
+The immediate nonlinear consequence is stronger than the earlier fixtures.
+Both axial and polar generic extra `p`-primary Gram matrices are positive
+definite for every physical `ell>=2` and compact `k`, while
+`omega_e^2=k^2+lambda-2/3>0`.  Therefore the fixed-bundle constant-lapse Taub
+form is negative definite on every nonzero real pure-extra generic tangent,
+including finite or rapidly decreasing finite-energy superpositions.  No such
+tangent extends to second order within the declared fixed-`P_N` Weyl--Maxwell
+phase space.  Electric variation cannot absorb this component at the purely
+magnetic background, and continuous magnetic variation belongs to a different
+bundle family.
+
+This is linearization instability of the pure-extra generic sector, not
+absence of its certified linear solutions.  Mixed Einstein--extra amplitudes
+remain open because the Einstein `q`-primary contribution is indefinite and
+can cancel the scalar `H` component.  Exceptional/Jordan blocks and the full
+common `H,P_x,J_i` zero locus also remain open.
+
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.
 
@@ -1395,15 +1445,16 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Complete the `H`, `P_x`, and `J_i` moment maps on exceptional/global blocks,
-   classify their common Taub-zero locus, and only then test a quotient by any
-   certified null subalgebra; in parallel, prove or obstruct a polynomial
-   cyclic BV enhancement of the polar equation/Noether chain map without
-   inverting `k`, `omega`, `p`, or `q`.
-2. Extend the certified axial detector and negative-definite `ell=2,k=0`
-   extra Taub test to nonzero momentum, higher harmonics, and parity-compatible
-   `EE`, `EX`, and `XX` source channels; then construct a relational or
-   geodesic-deviation realization of the reduced detector.
+1. Solve the indefinite common `H`, `P_x`, and `J_i` zero locus for mixed
+   Einstein--extra amplitudes, then complete the exceptional/global real
+   symplectic blocks and only afterward test a quotient by any certified null
+   subalgebra; in parallel, prove or obstruct a polynomial cyclic BV
+   enhancement of the polar equation/Noether chain map without inverting `k`,
+   `omega`, `p`, or `q`.
+2. On any mixed `q/p` amplitudes that survive all five stabilizer moment maps,
+   compute the remaining adjoint-cokernel pairings and the parity-compatible
+   `EE`, `EX`, and `XX` quadratic source channels; then construct a relational
+   or geodesic-deviation realization of the reduced detector.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

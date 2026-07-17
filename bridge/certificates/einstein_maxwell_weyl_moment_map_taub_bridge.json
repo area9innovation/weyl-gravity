@@ -1,0 +1,254 @@
+{
+  "charge_fibre_disposition": {
+    "electric_variation": "allowed on fixed P_N but has zero linear energy pairing at the purely magnetic background and cannot remove mu_H",
+    "enlarged_continuous_flux_family": "can absorb the constant-lapse component but is a different phase space and is excluded from the no-go",
+    "fixed_magnetic_bundle": "the second-order harmonic magnetic row is forbidden because c_1(P_N) is locally constant"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem identifies the covariant stabilizer moment maps with compact Taub pairings on the generic ell>=2 axial/polar solution space and proves a fixed-bundle second-order no-go for every nonzero pure-extra real tangent. It does not classify mixed q/p cancellation, exceptional or generalized global modes, charge-varying families, an absolute residual quotient, cyclic BV enhancement, causal scattering, particles, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_claim": false,
+    "absolute_stabilizer_quotient_certified": false,
+    "all_nonzero_generic_pure_extra_fixed_bundle_tangents_second_order_obstructed": true,
+    "cyclic_BV_enhancement_certified": false,
+    "exceptional_global_moment_maps_classified": false,
+    "generic_H_Px_J_selection_rules_certified": true,
+    "generic_covariant_moment_map_Taub_equality_certified": true,
+    "generic_extra_H_Taub_negative_definite": true,
+    "mixed_Einstein_extra_zero_locus_classified": false,
+    "quantum_claim": false,
+    "three_direct_tensor_normalization_matches": true
+  },
+  "covariant_bridge": {
+    "action_identity": "delta H_X[delta Phi]=Omega_Sigma(delta Phi,L_X Phi) plus the boundary charge variation",
+    "ambiguity_control": "Lee-Wald exact-current improvements integrate to zero on the closed slice; the magnetic connection is handled by bundle-covariant lifts",
+    "background_hypotheses": [
+      "E(Phi_bar)=0",
+      "X is a bundle-covariant infinitesimal automorphism of (g_bar,F_bar)",
+      "Sigma=S1 x S2 is closed",
+      "the first-order tangent u satisfies L u=0"
+    ],
+    "normalization_control": "the direct four-dimensional Lee-Wald matches fix Omega_WM, and three independent direct tensor Taub coefficients fix the sign and real-mode factor",
+    "polarization": "<zeta_X,D^2E_WM[u,v]/2> is the symmetric polarization of mu_X",
+    "result": "<zeta_X,(1/2)D^2E_WM[u,u]>=mu_X(u)=1/2 Omega_WM(u,L_X u)",
+    "scope": "action-derived Weyl-Maxwell equations on the declared compact product; no boundary or causal extension",
+    "second_variation_steps": [
+      "differentiate the covariant Noether current identity twice at Phi_bar",
+      "use L_X Phi_bar=0 and L u=0",
+      "integrate over the closed Cauchy slice so every exact corner improvement vanishes",
+      "identify the constraint-adjoint projection of (1/2)D^2E[u,u] with the quadratic Hamiltonian"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "generic axial and polar ell>=2 Weyl-Maxwell q/p-primary real solution space on R_t x S1_L x S2 at fixed compact magnetic bundle P_N, every allowed momentum, after local gauge reduction and with the five background stabilizers retained",
+  "extension_verdict": {
+    "exceptional_and_global": "OPEN_NO_POSITIVE_FREQUENCY_PROMOTION_USED",
+    "mixed_Einstein_extra": "OPEN_BECAUSE_THE_Q_PRIMARY_CONTRIBUTION_IS_INDEFINITE_AND_CAN_CANCEL_THE_SCALAR_H_COMPONENT",
+    "pure_Einstein": "SECTOR_DEPENDENT_LINEARIZATION_STABILITY_PROBLEM_NOT_CLASSIFIED_HERE",
+    "pure_generic_extra_fixed_bundle": "NO_NONZERO_REAL_TANGENT_EXTENDS_TO_SECOND_ORDER",
+    "reason": "mu_H is a necessary adjoint-cokernel condition and is negative definite on the complete generic axial-plus-polar p-primary space"
+  },
+  "generality_level": "G2_GENERIC_AXIAL_POLAR_ALL_PHYSICAL_ELL_K_MOMENT_MAP_TAUB",
+  "generic_moment_maps": {
+    "Hermitian_current_form": "h=c^dagger (G_branch tensor W_ell) c, with W_ell the positive invariant angular form",
+    "coefficient_space": "for each (k,ell,parity,shell), positive-frequency amplitudes c lie in the branch/polarization space tensor the spin-ell multiplicity V_ell",
+    "complete_target_H_Taub": {
+      "axial_inertia_before_the_minus_sign": [
+        3,
+        1
+      ],
+      "mixed_Einstein_extra_cancellations": "possible in the scalar H constraint and not classified by the pure-extra theorem",
+      "polar_inertia_before_the_minus_sign": [
+        3,
+        1
+      ],
+      "verdict": "INDEFINITE_BECAUSE_THE_EINSTEIN_Q_PRIMARY_HAS_ONE_NEGATIVE_BRANCH_PER_PARITY"
+    },
+    "complex_to_real_algebra": {
+      "Omega_matrix_per_unit_Gram": [
+        [
+          "0",
+          "I*omega"
+        ],
+        [
+          "-I*omega",
+          "0"
+        ]
+      ],
+      "basis": [
+        "positive-frequency z",
+        "conjugate zbar"
+      ],
+      "exact": true,
+      "one_half_Omega_Phi_rhoPhi_factors": {
+        "H": "-omega**2/4",
+        "J_a": "omega*tau/4",
+        "P_x": "k*omega/4"
+      },
+      "real_part_vector": [
+        "1/2",
+        "1/2"
+      ]
+    },
+    "generic_extra_H_Taub": {
+      "axial_p_primary_Gram_inertia": [
+        2,
+        0
+      ],
+      "omega_squared": "k^2+lambda-2/3>0 for every physical lambda=ell(ell+1)>=6",
+      "polar_p_primary_Gram_inertia": [
+        2,
+        0
+      ],
+      "superposition_scope": "finite or rapidly decreasing finite-energy harmonic superpositions; orthogonality makes mu_H the convergent sum of negative block contributions",
+      "verdict": "NEGATIVE_DEFINITE_ON_EVERY_NONZERO_REAL_GENERIC_EXTRA_TANGENT"
+    },
+    "polarized_rules": {
+      "H_and_Px": "nonzero only for equal k, ell, m, parity, and frequency shell, with the full two-polarization p-primary Gram retained",
+      "axial_polar_mixed": "zero by orientation-preserving parity and the direct-current harmonic decomposition",
+      "different_ell": "zero after the complete covariant Noether sum: [Delta_S2,J_a]=0 implies (lambda_1-lambda_2)<u,J_a v>=0, so rotations cannot mix inequivalent V_ell modules",
+      "q_p_mixed": "zero by the certified Einstein/extra Lee-Wald orthogonality",
+      "reality": "negative-frequency and negative-momentum coefficients are fixed by conjugation; the displayed positive-frequency sums already represent real fields",
+      "rotations": "equal k, ell, parity, and frequency shell; T_3 keeps m while T_1,T_2 connect only m to m+/-1"
+    },
+    "real_mode_moment_maps": {
+      "H": "mu_H=-(L/4) sum omega^2 c^dagger(G_branch tensor W_ell)c",
+      "J_a": "mu_Ja=(L/4) sum omega c^dagger(G_branch tensor W_ell*T_a)c, where rho(J_a)=i*T_a",
+      "P_x": "mu_Px=(L/4) sum k*omega c^dagger(G_branch tensor W_ell)c"
+    }
+  },
+  "interpretation": "The compact generic extra Weyl-Maxwell modes are genuine nonnull linear solutions but are linearization-unstable on the fixed magnetic bundle: the covariant time-translation moment map equals their constant-lapse Taub obstruction and is definite on the complete axial-plus-polar p-primary space. Thus no nonzero real pure-extra generic tangent is the first derivative of a fixed-bundle Weyl-Maxwell family. This does not erase the linear waves, classify mixed Einstein-extra cancellations, authorize a stabilizer quotient, or imply a particle/ghost/quantum theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "solve the indefinite common H, P_x, and J_i zero locus for mixed Einstein-extra amplitudes, then compute the homogeneous, ell=1, twist, Wilson-line, and charge blocks using the real symplectic form; independently solve or obstruct the polynomial cyclic BV enhancement",
+  "normalization_calibration": {
+    "Einstein_minus_axial": {
+      "direct_tensor_Taub_coefficient": "48*(-6 + 5*sqrt(3))/5",
+      "exact_match": true,
+      "fixture_Gram": "-48*(-1 + 3*sqrt(3))",
+      "omega_squared": "6 - 2*sqrt(3)",
+      "predicted_Taub_coefficient": "48*(-6 + 5*sqrt(3))/5",
+      "representative_scaling": "direct-current representative = omega times the declared tensor fixture"
+    },
+    "Einstein_minus_polar": {
+      "direct_tensor_Taub_coefficient": "24*(-11 + 7*sqrt(3))/5",
+      "exact_match": true,
+      "fixture_Gram": "-16*(-6 + 5*sqrt(3))",
+      "omega_squared": "6 - 2*sqrt(3)",
+      "predicted_Taub_coefficient": "24*(-11 + 7*sqrt(3))/5",
+      "representative_scaling": "generic invariant representative = 6 times the declared tensor fixture"
+    },
+    "extra_axial": {
+      "Lee_Wald_Gram": [
+        [
+          "1296",
+          "0"
+        ],
+        [
+          "0",
+          "208/3"
+        ]
+      ],
+      "direct_tensor_Taub_matrix": [
+        [
+          "-1728/5",
+          "0"
+        ],
+        [
+          "0",
+          "-832/45"
+        ]
+      ],
+      "exact_match": true,
+      "omega_squared": "16/3",
+      "predicted_Taub_matrix": [
+        [
+          "-1728/5",
+          "0"
+        ],
+        [
+          "0",
+          "-832/45"
+        ]
+      ]
+    },
+    "fixture": "ell=2, k=0, axisymmetric P_2 harmonic with normalized sphere average 1/5",
+    "per_unit_complex_Gram_formula": "mu_H=-(L*N_ell_m/4)*omega^2*c^dagger*G*c; for normalized spatial average replace L*N_ell_m by average(|Y_ell_m|^2)",
+    "real_mode_convention": "Phi=Re(c*e^{-i*omega*t}) gives the factor 1/4 relative to the complex-mode current",
+    "repository_identity": "Taub_H(Phi,Phi)=mu_H(Phi)=1/2 Omega_WM(Phi,L_H Phi)"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_moment_map_taub_bridge.py",
+    "generator_sha256": "87e57ae09173564a20f1f36444e5ee535ae67928e4e51c443b2d51db648a72cc",
+    "inputs": {
+      "axial_extra_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+        "sha256": "9a99c658f34334386d56d6a569e81d73c31251bcd4592324553b7417b74d8f20"
+      },
+      "axial_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "domain": {
+        "path": "bridge/certificates/compact_harmonic_domain_taub_descent.json",
+        "sha256": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09"
+      },
+      "einstein_taub_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json",
+        "sha256": "9e91cd4b9b501fdfe0fe4f09b52c9b059e16380e49564875d83487ed77f57d02"
+      },
+      "extra_taub_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_ell2_taub.json",
+        "sha256": "6a326de926f0d59d5300794665d0058af43841ee261dff92c6a2b9a68c3edf12"
+      },
+      "polar_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+  "result_state": "COVARIANT_MOMENT_MAP_TAUB_BRIDGE_AND_GENERIC_EXTRA_FIXED_BUNDLE_NO_GO_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-moment-map-taub-bridge-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_moment_map_taub_bridge.schema.json",
+  "schema_sha256": "a0c06e9d59b328739e30258f6b6addb511fa942111c665ce69f5d32c8ad8f63d",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_moment_map_taub_bridge --verify bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_moment_map_taub_bridge",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_moment_map_taub_bridge"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-17",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/einstein_maxwell_weyl_moment_map_taub_bridge.py bridge/einstein_sector/verify_einstein_maxwell_weyl_moment_map_taub_bridge.py bridge/einstein_sector/tests/test_einstein_maxwell_weyl_moment_map_taub_bridge.py",
+        "python3 -m json.tool bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.09,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_moment_map_taub_bridge --verify bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_moment_map_taub_bridge",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_moment_map_taub_bridge"
+      ],
+      "elapsed_seconds": 2.9,
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "all action, current, direct tensor, stabilizer, and charge-fibre inputs are unchanged content-addressed certificates",
+      "status": "NOT_RUN_NOT_REQUIRED"
+    },
+    "tier_3": {
+      "reason": "no release, shared core, causal, or quantum lifecycle state is promoted; paper-B theorem freeze remains pending mixed and exceptional/global completion",
+      "status": "NOT_RUN"
+    }
+  }
+}

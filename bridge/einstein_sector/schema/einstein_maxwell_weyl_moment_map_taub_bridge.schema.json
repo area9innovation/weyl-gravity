@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-moment-map-taub-bridge-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "generality_level", "provenance", "domain", "covariant_bridge", "normalization_calibration", "generic_moment_maps", "charge_fibre_disposition", "extension_verdict", "classification", "interpretation", "next_gate", "claim_boundary", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-moment-map-taub-bridge-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_moment_map_taub_bridge.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE"},
+    "result_state": {"const": "COVARIANT_MOMENT_MAP_TAUB_BRIDGE_AND_GENERIC_EXTRA_FIXED_BUNDLE_NO_GO_CERTIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "generality_level": {"const": "G2_GENERIC_AXIAL_POLAR_ALL_PHYSICAL_ELL_K_MOMENT_MAP_TAUB"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "covariant_bridge": {"type": "object"},
+    "normalization_calibration": {
+      "type": "object",
+      "required": ["fixture", "real_mode_convention", "repository_identity", "per_unit_complex_Gram_formula", "extra_axial", "Einstein_minus_axial", "Einstein_minus_polar"],
+      "properties": {
+        "extra_axial": {"type": "object", "properties": {"exact_match": {"const": true}}, "required": ["exact_match"]},
+        "Einstein_minus_axial": {"type": "object", "properties": {"exact_match": {"const": true}}, "required": ["exact_match"]},
+        "Einstein_minus_polar": {"type": "object", "properties": {"exact_match": {"const": true}}, "required": ["exact_match"]}
+      }
+    },
+    "generic_moment_maps": {"type": "object"},
+    "charge_fibre_disposition": {"type": "object"},
+    "extension_verdict": {
+      "type": "object",
+      "required": ["pure_generic_extra_fixed_bundle", "reason", "mixed_Einstein_extra", "pure_Einstein", "exceptional_and_global"],
+      "properties": {
+        "pure_generic_extra_fixed_bundle": {"const": "NO_NONZERO_REAL_TANGENT_EXTENDS_TO_SECOND_ORDER"},
+        "mixed_Einstein_extra": {"const": "OPEN_BECAUSE_THE_Q_PRIMARY_CONTRIBUTION_IS_INDEFINITE_AND_CAN_CANCEL_THE_SCALAR_H_COMPONENT"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["generic_covariant_moment_map_Taub_equality_certified", "three_direct_tensor_normalization_matches", "generic_H_Px_J_selection_rules_certified", "generic_extra_H_Taub_negative_definite", "all_nonzero_generic_pure_extra_fixed_bundle_tangents_second_order_obstructed", "mixed_Einstein_extra_zero_locus_classified", "exceptional_global_moment_maps_classified", "absolute_stabilizer_quotient_certified", "cyclic_BV_enhancement_certified", "Lorentzian_causal_claim", "quantum_claim"],
+      "properties": {
+        "generic_covariant_moment_map_Taub_equality_certified": {"const": true},
+        "three_direct_tensor_normalization_matches": {"const": true},
+        "generic_H_Px_J_selection_rules_certified": {"const": true},
+        "generic_extra_H_Taub_negative_definite": {"const": true},
+        "all_nonzero_generic_pure_extra_fixed_bundle_tangents_second_order_obstructed": {"const": true},
+        "mixed_Einstein_extra_zero_locus_classified": {"const": false},
+        "exceptional_global_moment_maps_classified": {"const": false},
+        "absolute_stabilizer_quotient_certified": {"const": false},
+        "cyclic_BV_enhancement_certified": {"const": false},
+        "Lorentzian_causal_claim": {"const": false},
+        "quantum_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}
