@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-localized-emitter-rank-two-transfer-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "topological_localization", "emitter_currents", "causal_support", "transfer_matrix", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-localized-emitter-rank-two-transfer-v1"},
+    "result_id": {"const": "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_TWO_LOCALIZED_CONSERVED_EMITTERS_AND_RANK_TWO_CAUSAL_RECORDS"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "topological_localization": {"type": "object", "required": ["H1_dimension", "H2_dimension", "constraint_check", "finite_propagation"], "properties": {"H1_dimension": {"const": 0}, "H2_dimension": {"const": 0}, "constraint_check": {"type": "string"}, "finite_propagation": {"type": "string"}}},
+    "emitter_currents": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "required": ["id", "placement", "time_order", "formula", "conservation", "retarded_field"], "properties": {"id": {"enum": ["J_0", "J_1"]}, "placement": {"type": "string"}, "time_order": {"type": "string"}, "formula": {"type": "string"}, "conservation": {"type": "string"}, "retarded_field": {"type": "string"}}}},
+    "causal_support": {"type": "object", "required": ["detector_windows", "inter_window_gap", "late_source_to_early_detector", "source_selection_rule"], "properties": {"detector_windows": {"type": "array"}, "inter_window_gap": {"const": "5/24"}, "late_source_to_early_detector": {"type": "string"}, "source_selection_rule": {"type": "string"}}},
+    "transfer_matrix": {"type": "object", "required": ["definition", "matrix", "determinant", "rank", "memory_response"], "properties": {"definition": {"type": "string"}, "matrix": {"type": "array"}, "rank": {"const": 2}, "determinant": {"const": "-40*C_1*S_0/9"}, "memory_response": {"type": "string"}}},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TWO_PREDECLARED_SPATIALLY_LOCALIZED_CONSERVED_EMITTER_CURRENTS", "CONSTRAINT_PRESERVING_MAXWELL_CAUCHY_LOCALIZATION", "LOCALIZED_EMITTER_TRANSFER_MATRIX_RANK_TWO", "TWO_LOCALIZED_SOURCE_RECORDS_CAUSALLY_DISTINGUISHABLE", "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED", "DYNAMICAL_EMITTER_RECOIL_INCLUDED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "TWO_PREDECLARED_SPATIALLY_LOCALIZED_CONSERVED_EMITTER_CURRENTS": {"const": true},
+        "CONSTRAINT_PRESERVING_MAXWELL_CAUCHY_LOCALIZATION": {"const": true},
+        "LOCALIZED_EMITTER_TRANSFER_MATRIX_RANK_TWO": {"const": true},
+        "TWO_LOCALIZED_SOURCE_RECORDS_CAUSALLY_DISTINGUISHABLE": {"const": true},
+        "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": {"const": false},
+        "DYNAMICAL_EMITTER_RECOIL_INCLUDED": {"const": false},
+        "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false},
+        "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

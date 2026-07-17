@@ -59,8 +59,11 @@ The current classical observer assets include:
 - six exact global detector-indexed Berger rods with a conserved finite-mode
   compact stress-source export.
 
-The detector records use homogeneous compact emitters rather than spatially
-localized emitter currents.  The global rods correct the prospective
+The original detector transfer uses homogeneous compact emitters.  A later
+constraint-preserving Cauchy localization now supplies two receiver-adjacent
+spatially localized conserved emitter currents with an exact triangular
+rank-two record matrix; a common Hopf emitter at clock zero remains open.  The
+global rods correct the prospective
 apparatus carrier from 78 to 84 rows and close the missing-global-source input
 to the compact solvability gate.  Exact retained-mode primitives now show
 that the complete global rod stress has zero compact Taub projection and
@@ -138,11 +141,21 @@ quadratures are linear and its relational Hamiltonian/redshift energy is
 quadratic in the persistent memories.  Their localized polynomial algebra is
 closed under multiplication and the transported nonzero Poisson bracket.
 
-### Immediate priority after the C-G4 record Poisson algebra
+`BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER` closes the immediate localization
+gate without requiring an explicit Berger Green kernel.  Since
+`H1(S3)=H2(S3)=0`, the C-G4 cosine-mode constraint data admit spatial
+potentials.  Bumping those potentials and differentiating again preserves the
+constraints, while finite propagation preserves the mode on each detector
+window.  Staggering `J_1` after `D0` gives
+`M=[[-beta S0,0],[mu,beta C1]]`, so
+`det M=-beta^2 S0 C1 != 0` independently of the unknown tail `mu`.
 
-1. Replace the two spatially global compact-`S3` preparation currents by two
-   spatially localized conserved emitter worldtubes and recompute the exact
-   two-by-two record matrix, or return the first compact causal obstruction.
+### Immediate priority after localized-emitter rank two
+
+1. Add dynamical emitter degrees of freedom and compute recoil/backreaction,
+   or return the first exact obstruction in the repaired interaction complex.
+   Treat realization of both preparations at the original common Hopf event
+   as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,
    full `q4`, fixed-background linear-`K` descent, finite-parameter
    Green hyperbolicity, and the optional 88-row co-rotating replacement as

@@ -1,0 +1,159 @@
+{
+  "causal_support": {
+    "detector_windows": [
+      [
+        "11/48",
+        "13/48"
+      ],
+      [
+        "23/48",
+        "25/48"
+      ]
+    ],
+    "inter_window_gap": "5/24",
+    "late_source_to_early_detector": "supp J_1 is disjoint from J^-(supp Q_0), hence Q_0[d G_ret J_1]=0",
+    "source_selection_rule": "the C-G4 cosine mode, detector supports, localization bumps, and time ordering are fixed before response evaluation; no response-dependent normalization is used"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL theorem constructs two predeclared, spatially localized, compact-time, conserved Maxwell currents. Constraint-preserving localization of the C-G4 cosine-mode Cauchy data uses H1(S3)=H2(S3)=0, spatial potentials multiplied by bumps equal to one on the relevant detector domains of dependence, and finite propagation. A time cutoff turns each localized homogeneous solution into a retarded emitter current J_a=delta d(chi_a A_a). The second source is supported strictly after the D0 window and before D1, so M_01=0 by causal support, while exact agreement with the C-G4 mode gives M_00=-beta S0 and M_11=beta C1 with S0,C1>0. Hence det M=-beta^2 S0 C1 is nonzero for any unknown M_10. This certifies two distinguishable causally acquired localized-source records at probe order. The emitters are receiver-adjacent local worldtubes, not the original common Hopf emitter at clock zero. Recoil, source dynamics, full apparatus Dirac closure, finite-r Green hyperbolicity, fixed-background linear-K descent, and quantum claims remain open.",
+  "claim_status": "CERTIFIED_TWO_LOCALIZED_CONSERVED_EMITTERS_AND_RANK_TWO_CAUSAL_RECORDS",
+  "dependency_refs": {
+    "causal_green": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "cg4_records": {
+      "path": "closed_universe_observers/certificates/BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA.json",
+      "result_id": "BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA",
+      "sha256": "62469c93203920fbab4b97883db37c1b86fe093286ec509bd1e2d83eb30970d0"
+    },
+    "detectors": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    },
+    "normalized_profile": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json",
+      "result_id": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY",
+      "sha256": "1dc8720b2e8a208094a40ab736d3e6459c8c5afb5308baca6c1e82c8b9e2f6f2"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "emitter_currents": [
+    {
+      "conservation": "delta J_0=delta^2 d(chi_0 A_0)=0",
+      "formula": "J_0=delta d(chi_0 A_0), with chi_0=0 before the switch and chi_0=1 before D0",
+      "id": "J_0",
+      "placement": "proper precompact worldtube immediately to the past of D0",
+      "retarded_field": "d G_ret J_0=d(chi_0 A_0)",
+      "time_order": "supp J_0 is strictly earlier than physical detector window [11/48,13/48]"
+    },
+    {
+      "conservation": "delta J_1=delta^2 d(chi_1 A_1)=0",
+      "formula": "J_1=delta d(chi_1 A_1), with chi_1=0 through D0 and chi_1=1 before D1",
+      "id": "J_1",
+      "placement": "proper precompact worldtube immediately to the past of D1",
+      "retarded_field": "d G_ret J_1=d(chi_1 A_1)",
+      "time_order": "supp J_1 lies inside the nonempty gap (13/48,23/48), after D0 and before D1"
+    }
+  ],
+  "flags": {
+    "CONSTRAINT_PRESERVING_MAXWELL_CAUCHY_LOCALIZATION": true,
+    "DYNAMICAL_EMITTER_RECOIL_INCLUDED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "LOCALIZED_EMITTER_TRANSFER_MATRIX_RANK_TWO": true,
+    "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "TWO_LOCALIZED_SOURCE_RECORDS_CAUSALLY_DISTINGUISHABLE": true,
+    "TWO_PREDECLARED_SPATIALLY_LOCALIZED_CONSERVED_EMITTER_CURRENTS": true
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "expected_rank": 1,
+      "name": "clone_second_source_column",
+      "observed_rank": 1
+    },
+    {
+      "causal_zero_present": false,
+      "detected": true,
+      "expected": false,
+      "name": "move_second_source_before_D0"
+    }
+  ],
+  "next_gate": "ADD_DYNAMICAL_EMITTER_DEGREES_OF_FREEDOM_AND_RECOIL_OR_CERTIFY_THE_FIRST_BACKREACTION_OBSTRUCTION",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_localized_emitter_rank_two_transfer.py",
+        "sha256": "6cdeb19524742c62b51d9c0e237e5dc45cc9af776362fdcac1939beefc9a1ef6"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_localized_emitter_rank_two_transfer.py",
+        "sha256": "23b410302cdebcda6b64660034ed0dd5f75b3728f35b077f6bfc0c764bb02a4f"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_localized_emitter_rank_two_transfer.py",
+        "sha256": "b1f7a40463dcac7d4c7b42ade445e3de30bf7b4510fe9545a364a4525c894720"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-localized-emitter-rank-two-transfer-v1.schema.json",
+        "sha256": "a5030939a985958d216cca704f33f0869e04166914d55900e744ee170d92f2dc"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-localized-emitter-rank-two-transfer.md",
+        "sha256": "2af6134ebdddc66672c5b61adb2acf12d6ecb82b16a208578503c185947ebebd"
+      }
+    ]
+  },
+  "result_id": "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER",
+  "schema": "closed-universe-berger-localized-emitter-rank-two-transfer-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "topological_localization": {
+    "H1_dimension": 0,
+    "H2_dimension": 0,
+    "agreement_region": "eta_a=1 on a neighborhood of K_a=J^-(supp Q_a) intersect Sigma_a",
+    "cellular_chain_dimensions_C0_to_C3": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "constraint_check": "d_Sigma^2=0 preserves both Maxwell constraints exactly",
+    "constraint_potentials": "B_c=d_Sigma a_c and star_Sigma E_c=d_Sigma e_c; replace them by d_Sigma(eta_a a_c) and d_Sigma(eta_a e_c)",
+    "finite_propagation": "the localized homogeneous field H_a equals the C-G4 cosine field F_c on supp Q_a by domain-of-dependence uniqueness"
+  },
+  "transfer_matrix": {
+    "basis": "rows (D0,D1), columns (J0,J1)",
+    "definition": "M_ab=Q_a[d G_ret J_b]",
+    "determinant": "-40*C_1*S_0/9",
+    "diagonal_moments": {
+      "C_1": "integral rho_1 cos(beta t)>0",
+      "S_0": "integral rho_0 sin(beta t)>0",
+      "density_input": "the pinned normalized-profile theorem fixes nonnegative smooth compact bumps with unit spatial integral"
+    },
+    "matrix": [
+      [
+        "-2*sqrt(10)*S_0/3",
+        "0"
+      ],
+      [
+        "mu",
+        "2*sqrt(10)*C_1/3"
+      ]
+    ],
+    "memory_response": "(Delta m_0,Delta m_1)^T=M(c_0,c_1)^T for zero initial memories",
+    "phase_bounds": [
+      "0<beta t<=13*sqrt(10)/72<3/2<pi/2 on D0",
+      "0<beta t<=25*sqrt(10)/72<3/2<pi/2 on D1"
+    ],
+    "rank": 2,
+    "unknown_cross_response": "mu=Q_1[d G_ret J_0] is unrestricted and does not enter the determinant"
+  }
+}

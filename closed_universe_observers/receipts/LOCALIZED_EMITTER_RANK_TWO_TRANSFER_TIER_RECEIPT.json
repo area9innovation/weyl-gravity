@@ -1,0 +1,47 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "LOCALIZED_EMITTER_RANK_TWO_TRANSFER_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Two predeclared compact-time conserved Maxwell currents are supported in proper receiver-adjacent worldtubes. Constraint-preserving localization and finite propagation preserve selected C-G4 detector responses, while temporal staggering forces M_01=0. The exact matrix [[-beta S0,0],[mu,beta C1]] has determinant -beta^2 S0 C1 nonzero, so two localized signals produce distinguishable causal records. A common source at the original Hopf emitter, dynamical emitter recoil/backreaction, full apparatus Dirac closure, finite-r Green hyperbolicity, and quantum claims remain open.",
+  "tier_0": [
+    {"command": "py_compile, json.tool, git diff --check, and explicit SHA-256 replay on the localized-emitter and observer planning paths", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "producer, verifier, tests, schema, certificate, report, receipt, comparison ledger, README, brief, roadmap, and comparison report"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_localized_emitter_rank_two_transfer --check", "elapsed_seconds": "under 1", "status": "PASS", "scope": "S3 topology, constraint localization, causal ordering, triangular response, diagonal positivity, mutations, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_localized_emitter_rank_two_transfer", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent determinant, topology and gap replay, dependency/source hashes, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_localized_emitter_rank_two_transfer.py", "elapsed_seconds": "0.41", "status": "PASS", "scope": "all 3 localized transfer, constraint, mutation, and fail-closed tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-localized-emitter-rank-two-transfer-v1.schema.json -d closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json", "elapsed_seconds": "included in 5.0-second focused chain", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "historical imports, bridge hashes, localized response status, and quantum fail-closed boundary"}
+  ],
+  "tier_2": [
+    {"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "197.19", "status": "PASS", "scope": "all 79 closed-universe observer tests"}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "This promotes a scoped probe-order localized-source theorem without changing shared core algebra, freezing a complete apparatus/finite-parameter/all-orders theorem, or making a release or quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json", "sha256": "2dc293d4edad9d7e687b5080b05ec9a40b16a83a55ecc2dd655e935295cb6148"},
+    {"path": "closed_universe_observers/schema/berger-localized-emitter-rank-two-transfer-v1.schema.json", "sha256": "a5030939a985958d216cca704f33f0869e04166914d55900e744ee170d92f2dc"},
+    {"path": "closed_universe_observers/generate_berger_localized_emitter_rank_two_transfer.py", "sha256": "6cdeb19524742c62b51d9c0e237e5dc45cc9af776362fdcac1939beefc9a1ef6"},
+    {"path": "closed_universe_observers/verify_berger_localized_emitter_rank_two_transfer.py", "sha256": "23b410302cdebcda6b64660034ed0dd5f75b3728f35b077f6bfc0c764bb02a4f"},
+    {"path": "closed_universe_observers/tests/test_berger_localized_emitter_rank_two_transfer.py", "sha256": "b1f7a40463dcac7d4c7b42ade445e3de30bf7b4510fe9545a364a4525c894720"},
+    {"path": "closed_universe_observers/reports/berger-localized-emitter-rank-two-transfer.md", "sha256": "2af6134ebdddc66672c5b61adb2acf12d6ecb82b16a208578503c185947ebebd"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "4656ae17f4c3ab3e940133f9d1bf969f3105d49bd31d5c79195e02f5d1564b84"},
+    {"path": "closed_universe_observers/README.md", "sha256": "3e059d1fa410526b210e584cd58e61bf93a3e397e38df4f1479f3a5f6a74d158"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "e6b3b6ef5bef30dd63074411ec05378a708e56e8c7d648d2ca8f3c6001b83708"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "ea69c5446f7886d77deb34bfe55bc390bed7acb0b78e9e416d7abd70302a01f2"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "27aa01ca038006c9fa3ebefb222854efdf10e01fba3cff412aa6f12a08577586"}
+  ],
+  "claim_flags": {
+    "TWO_PREDECLARED_SPATIALLY_LOCALIZED_CONSERVED_EMITTER_CURRENTS": true,
+    "CONSTRAINT_PRESERVING_MAXWELL_CAUCHY_LOCALIZATION": true,
+    "LOCALIZED_EMITTER_TRANSFER_MATRIX_RANK_TWO": true,
+    "TWO_LOCALIZED_SOURCE_RECORDS_CAUSALLY_DISTINGUISHABLE": true,
+    "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": false,
+    "DYNAMICAL_EMITTER_RECOIL_INCLUDED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -264,8 +264,16 @@ M_{ab}=Q_a[dG_{\rm ret}J_b]
 \]
 
 Thus the two emitted polarization signals produce distinguishable persistent
-record vectors.  The currents occupy the full compact Berger `S3`; this is not
-yet a spatially localized emitter-worldtube theorem.
+record vectors.  A successor now localizes constraint-satisfying C-G4 Cauchy
+data near each receiver and staggers the second source after `D0`.  It gives
+
+\[
+M=\begin{pmatrix}-\beta S_0&0\\ \mu&\beta C_1\end{pmatrix},
+\qquad \det M=-\beta^2S_0C_1\ne0.
+\]
+
+This certifies two receiver-adjacent localized conserved emitter currents.
+It does not yet place both preparations at the original common Hopf emitter.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -308,7 +316,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | exact phase-to-record determinant and bracket; spatially localized emitters and finite-parameter Green hyperbolicity open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | receiver-adjacent localized emitters give a triangular rank-two response; common Hopf emitter and finite-parameter Green hyperbolicity open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -325,12 +333,14 @@ The metric-dependent normalization of `chi_a`, mixed
 `epsilon_R^2*kappa` profile and adjoint, all-row mixed unary identities,
 formal Green coefficient, and apparatus `q2,q3` action jets with cyclic
 cotangent partners, the Ward-determined `q4(K0,-,-,-)` contraction, and the
-scoped C-G4 record Poisson algebra are no longer missing.  The primary missing
-object is a rank-two transfer from two spatially localized emitter worldtubes.
+scoped C-G4 record Poisson algebra are no longer missing.  Two receiver-adjacent
+localized conserved emitters and their rank-two transfer are also exact.  The
+primary missing object is now a dynamical emitter with recoil/backreaction;
+placing both preparations at the original common Hopf event is a separate
+stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
 fixed-background linear descent remain separate.
-Further missing objects are a rank-two transfer from two
-spatially localized emitter worldtubes, emitter recoil and higher-order receiver backreaction,
+Further missing objects are emitter recoil and higher-order receiver backreaction,
 observer-map compatibility with raw \(D\) and higher brackets, a quantum
 BRST state space, a positive observer state with induced inner product, and a
 QME-restored Lorentzian observer theory.
@@ -390,3 +400,7 @@ strictly positive on the actual windows, transports the reduced symplectic
 bracket, and embeds the quadratures and relational Hamiltonian into the
 two-memory polynomial Poisson algebra.  Its receipt is
 `closed_universe_observers/receipts/CG4_TWO_RECORD_POISSON_ALGEBRA_TIER_RECEIPT.json`.
+The localized-emitter successor constructs constraint-preserving local Cauchy
+data, uses causal time ordering to force one matrix entry to zero, and proves
+the remaining triangular determinant is nonzero.  Its receipt is
+`closed_universe_observers/receipts/LOCALIZED_EMITTER_RANK_TWO_TRANSFER_TIER_RECEIPT.json`.

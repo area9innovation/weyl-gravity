@@ -38,6 +38,8 @@ python3 -m closed_universe_observers.generate_berger_affine_k_observer_morphism 
 python3 -m closed_universe_observers.verify_berger_affine_k_observer_morphism
 python3 -m closed_universe_observers.generate_berger_cg4_record_poisson_algebra --check
 python3 -m closed_universe_observers.verify_berger_cg4_record_poisson_algebra
+python3 -m closed_universe_observers.generate_berger_localized_emitter_rank_two_transfer --check
+python3 -m closed_universe_observers.verify_berger_localized_emitter_rank_two_transfer
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -52,8 +54,9 @@ independent clock-labelled spacetime field-strength smearings, exact central no-
 rays, and persistent probe memories.  Two predeclared conserved polarization
 currents then give the physical matrix `diag(C_00,C_11)` with both entries
 positive, hence two distinguishable causal records.  Those currents are
-homogeneous over the compact `S3`; spatially localized emitters and the
-source-rod-memory quotient descent remain open.  The interaction import gate
+homogeneous over the compact `S3`; at that transfer gate spatially localized
+emitters and the source-rod-memory quotient descent remain open.  The
+interaction import gate
 then imports the repaired cyclic 64-row gravity-clock-Maxwell `q2` and retains
 rank two only as a probe-limit baseline.  Its corrected apparatus interface
 uses composite polarization, keeps the present currents external, and records
@@ -119,9 +122,12 @@ The C-G4 successor evaluates the circular two-phase mode directly in the two
 detector windows.  Its exact moment matrix has strictly positive determinant,
 so the C-G4 phase plane and persistent records are isomorphic.  Transporting
 the reduced bracket makes the record polynomial algebra closed under both
-products and a nonzero constant Poisson bracket.  The next operational gate
-is two spatially localized conserved emitter worldtubes; the current sources
-remain spatially global on compact `S3`.
+products and a nonzero constant Poisson bracket.  The localization successor
+uses `H1(S3)=H2(S3)=0`, constraint-potential bumps, finite propagation, and
+staggered source times to construct two compact conserved receiver-adjacent
+emitters.  Their response is triangular with determinant
+`-beta^2 S0 C1 != 0`.  A common emitter at the original Hopf event and
+dynamical emitter recoil remain open.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.
