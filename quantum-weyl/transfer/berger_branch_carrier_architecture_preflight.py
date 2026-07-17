@@ -226,6 +226,7 @@ def build() -> dict[str, Any]:
         },
         "quantum_critical_path": {
             "ordered_gates": [
+                "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
                 "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
                 "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
                 "QME_RESTORATION_OR_OBSTRUCTION",

@@ -21,7 +21,7 @@ DEPENDENCIES = {
     "H04_AFN0": HERE / "local_bv/certificates/AFN0_H04_CANONICAL_QUOTIENT.json",
     "H14_AFN0_even": HERE / "local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
     "H14_AFN0_odd": HERE / "local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
-    "antifield_contract": HERE / "classical_import/certificates/ANTIFIELD_EXPORT_CONTRACT.json",
+    "antifield_contract": HERE / "classical_import/certificates/ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT.json",
     "background_coefficients": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -59,7 +59,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "H04_AFN0": "COMPLETE_AFN0_COVARIANT_COUNTERTERM_CANDIDATE_QUOTIENT",
         "H14_AFN0_even": "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT",
         "H14_AFN0_odd": "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT",
-        "antifield_contract": "CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
+        "antifield_contract": "EXECUTABLE_V2_CONTRACT_READY_AWAITING_CLASSICAL_EXPORT",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
@@ -85,6 +85,18 @@ def _load() -> dict[str, dict[str, Any]]:
     for name, state in states.items():
         if values[name].get("result_state") != state:
             raise ValueError(f"active frontier dependency state drifted: {name}")
+    antifield = values["antifield_contract"]
+    antifield_flags = antifield.get("claim_flags", {})
+    if (
+        antifield_flags.get("ANTIFIELD_EXPORT_V2_RECEIVER_READY") is not True
+        or antifield_flags.get("INDEPENDENT_FILTRATION_REPLAY_READY") is not True
+        or antifield_flags.get("FILTERED_COMPLEX_ADAPTER_READY") is not True
+        or antifield_flags.get("CLASSICAL_ANTIFIELD_EXPORT_IMPORTED") is not False
+        or antifield_flags.get("FULL_BV_G2_COMPLETE") is not False
+        or antifield.get("next_gate")
+        != "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"
+    ):
+        raise ValueError("antifield v2 receiving frontier drifted")
     coefficient_flags = values["background_coefficients"].get("claim_flags", {})
     if (
         values["background_coefficients"].get("result_stage") != "COEFFICIENT_COMPUTED"
@@ -348,7 +360,7 @@ def _load() -> dict[str, dict[str, Any]]:
         or architecture_selection.get("rank_46_is_quantum_prerequisite")
         is not False
         or architecture_quantum_path.get("ordered_gates", [None])[0]
-        != "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS"
+        != "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"
         or architecture.get("next_gate")
         != "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1"
     ):
@@ -449,8 +461,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
             },
             "local_obstruction_space": {
-                "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_FULL_BV_OPEN",
-                "next_gate": "IMPORT_KOSZUL_TATE_ROWS_AND_COMPUTE_MINIMAL_BV_H04_H14",
+                "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_EXECUTABLE_V2_RECEIVER_READY_CLASSICAL_EXPORT_OPEN",
+                "next_gate": "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
             },
             "coefficient_and_QME": {
                 "status": "STANDARD_BACKGROUND_A_C_ONLY_REPOSITORY_SLAVNOV_BREAKING_OPEN",
@@ -539,6 +551,7 @@ def build() -> dict[str, Any]:
         "claim_flags": {
             "ACTIVE_FRONTIER_LEDGER": True,
             "AFN0_G1_COMPLETE": True,
+            "ANTIFIELD_EXPORT_V2_RECEIVER_READY": True,
             "CLASSICAL_MAXWELL_TRANSFER_LANDED": True,
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
@@ -569,6 +582,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
+            "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
             "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -581,6 +595,8 @@ def build() -> dict[str, Any]:
         "claim_boundary": (
             "This machine-generated frontier selects current status artifacts without "
             "invalidating historical receipts. It establishes G1 AFN0 local quotients, "
+            "an executable v2 antifield receiver with independent delta/gamma/Q replay and a "
+            "FilteredLocalComplex dry run, while the real classical export remains absent, "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
@@ -655,6 +671,7 @@ def validate(result: dict[str, Any]) -> None:
     if (
         flags.get("ACTIVE_FRONTIER_LEDGER") is not True
         or flags.get("AFN0_G1_COMPLETE") is not True
+        or flags.get("ANTIFIELD_EXPORT_V2_RECEIVER_READY") is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
@@ -683,6 +700,7 @@ def validate(result: dict[str, Any]) -> None:
         not in {
             "ACTIVE_FRONTIER_LEDGER",
             "AFN0_G1_COMPLETE",
+            "ANTIFIELD_EXPORT_V2_RECEIVER_READY",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",

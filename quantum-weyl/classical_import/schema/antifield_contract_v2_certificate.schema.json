@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-antifield-contract-v2-certificate.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "dependency_refs", "receiving_contract", "synthetic_exact_replay", "checks", "resource_policy", "claim_flags", "next_gate", "claim_boundary", "provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-antifield-contract-v2-certificate"},
+    "result_id": {"const": "ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT"},
+    "result_state": {"const": "EXECUTABLE_V2_CONTRACT_READY_AWAITING_CLASSICAL_EXPORT"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 1},
+    "receiving_contract": {"type": "object"},
+    "synthetic_exact_replay": {
+      "type": "object",
+      "required": ["status", "classical_commit", "generator_count", "atom_count", "component_shifts", "independent_checks", "producer_proofs_used_as_authority", "proof_artifact_integrity", "filtered_complex_adapter", "canonical_hashes"],
+      "properties": {
+        "status": {"const": "EXECUTABLE_V2_EXPORT_INDEPENDENTLY_REPLAYED"},
+        "producer_proofs_used_as_authority": {"const": false},
+        "filtered_complex_adapter": {
+          "type": "object",
+          "properties": {"status": {"const": "FILTERED_LOCAL_COMPLEX_DRY_RUN_VERIFIED"}},
+          "required": ["status"]
+        }
+      }
+    },
+    "checks": {"type": "object", "minProperties": 16},
+    "resource_policy": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ANTIFIELD_EXPORT_V2_RECEIVER_READY", "INDEPENDENT_FILTRATION_REPLAY_READY", "FILTERED_COMPLEX_ADAPTER_READY", "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED", "FULL_BV_G2_COMPLETE", "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ANTIFIELD_EXPORT_V2_RECEIVER_READY": {"const": true},
+        "INDEPENDENT_FILTRATION_REPLAY_READY": {"const": true},
+        "FILTERED_COMPLEX_ADAPTER_READY": {"const": true},
+        "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": {"const": false},
+        "FULL_BV_G2_COMPLETE": {"const": false},
+        "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {"type": "object"},
+    "verification_receipts": {"type": "array", "minItems": 3},
+    "higher_tiers_not_run": {"type": "object"}
+  }
+}

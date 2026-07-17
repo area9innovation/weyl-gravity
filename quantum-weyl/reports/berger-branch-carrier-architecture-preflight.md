@@ -36,11 +36,11 @@ list.
 
 ## Programme ordering
 
-The quantum algebraic critical path is minimal BV cohomology with the
-Koszul--Tate rows, regulated repository Slavnov breaking, QME disposition and
-only then residual quantum transfer. Stationary/Hadamard work remains a
-parallel analytic rail. Rank-46 branch resolution is an optional classical
-interpretation follow-up.
+The quantum algebraic critical path is first the executable covariant
+antifield export v2, then minimal BV cohomology with the Koszul--Tate rows,
+regulated repository Slavnov breaking, QME disposition and only then residual
+quantum transfer. Stationary/Hadamard work remains a parallel analytic rail.
+Rank-46 branch resolution is an optional classical interpretation follow-up.
 
 ## Claim boundary
 

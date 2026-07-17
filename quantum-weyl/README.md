@@ -102,8 +102,11 @@ or quantum-master-equation result.
 ## Bootstrap receipts
 
 - [`classical_import/REPORT.md`](classical_import/REPORT.md) inventories the
-  pinned classical handoff, the executable antifield/Koszul--Tate export
-  contract, and the exact missing exports keeping Gate A closed.
+  pinned classical handoff, the historical v1 metadata preflight, the active
+  executable v2 antifield/Koszul--Tate receiving contract, and the exact
+  missing export keeping Gate A closed. The v2 consumer independently replays
+  `delta`, `gamma`, and `Q` and dry-runs the filtered-complex adapter before
+  any production quotient is authorized.
 - [`reports/branch-a-local-bv-bootstrap.md`](reports/branch-a-local-bv-bootstrap.md)
   records the exact minimal jet/BRST substrate and its uncomputed quotients.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)

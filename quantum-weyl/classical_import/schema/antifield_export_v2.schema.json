@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-antifield-export-v2.json",
+  "title": "Executable covariant minimal-BV antifield export",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "expression_schema_version", "scope", "dependency_refs", "generators", "atoms", "differential", "producer_checks", "canonical_hashes"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-antifield-export-v2"},
+    "result_id": {"const": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"},
+    "result_state": {"const": "EXPORTED_EXECUTABLE_MINIMAL_BV_FILTRATION"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "expression_schema_version": {"const": "canonical-superpolynomial-atoms-v1"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spacetime_dimension", "maximum_form_degree", "ghost_number_range", "antifield_number_maximum", "engineering_dimension_bound", "derivative_order_bound", "coefficient_field", "locality", "parity_sectors", "identity_convention_hashes"],
+      "properties": {
+        "spacetime_dimension": {"const": 4},
+        "maximum_form_degree": {"const": 4},
+        "ghost_number_range": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false},
+        "antifield_number_maximum": {"type": "integer", "minimum": 2},
+        "engineering_dimension_bound": {"$ref": "#/$defs/exactNumber"},
+        "derivative_order_bound": {"type": "integer", "minimum": 0},
+        "coefficient_field": {"const": "Q"},
+        "locality": {"const": "SUPPORT_LOCAL_POLYNOMIAL_JETS"},
+        "parity_sectors": {"const": ["even", "odd"]},
+        "identity_convention_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["graded_commutativity", "integration_by_parts", "bianchi", "four_dimensional_antisymmetrization", "hodge_duality"],
+          "properties": {
+            "graded_commutativity": {"$ref": "#/$defs/hash"},
+            "integration_by_parts": {"$ref": "#/$defs/hash"},
+            "bianchi": {"$ref": "#/$defs/hash"},
+            "four_dimensional_antisymmetrization": {"$ref": "#/$defs/hash"},
+            "hodge_duality": {"$ref": "#/$defs/hash"}
+          }
+        }
+      }
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atom_basis_manifest", "field_dictionary", "action_normalization", "euler_lagrange_rows", "noether_identity_rows", "canonicalization_conventions"],
+      "properties": {
+        "atom_basis_manifest": {"$ref": "#/$defs/reference"},
+        "field_dictionary": {"$ref": "#/$defs/reference"},
+        "action_normalization": {"$ref": "#/$defs/reference"},
+        "euler_lagrange_rows": {"$ref": "#/$defs/reference"},
+        "noether_identity_rows": {"$ref": "#/$defs/reference"},
+        "canonicalization_conventions": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "generators": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/generator"}},
+    "atoms": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/atom"}},
+    "differential": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["delta", "gamma", "Q_gt0", "Q"],
+      "properties": {
+        "delta": {"$ref": "#/$defs/component"},
+        "gamma": {"$ref": "#/$defs/component"},
+        "Q_gt0": {"type": "array", "items": {"$ref": "#/$defs/component"}},
+        "Q": {"$ref": "#/$defs/component"}
+      }
+    },
+    "producer_checks": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/producerCheck"}
+    },
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope_hash", "generator_hash", "atom_hash", "differential_hash", "dependency_hash"],
+      "properties": {
+        "scope_hash": {"$ref": "#/$defs/hash"},
+        "generator_hash": {"$ref": "#/$defs/hash"},
+        "atom_hash": {"$ref": "#/$defs/hash"},
+        "differential_hash": {"$ref": "#/$defs/hash"},
+        "dependency_hash": {"$ref": "#/$defs/hash"}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "exactNumber": {
+      "oneOf": [
+        {"type": "integer"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["numerator", "denominator"],
+          "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "not": {"const": 0}}}
+        }
+      ]
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "tensorType": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["covariant_rank", "contravariant_rank", "symmetry"],
+      "properties": {
+        "covariant_rank": {"type": "integer", "minimum": 0},
+        "contravariant_rank": {"type": "integer", "minimum": 0},
+        "symmetry": {"type": "string", "minLength": 1}
+      }
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["symbol", "role", "sector", "tensor_type", "ghost_number", "antifield_number", "form_degree", "Grassmann_parity", "mass_dimension", "Weyl_weight"],
+      "properties": {
+        "symbol": {"type": "string", "minLength": 1},
+        "role": {"enum": ["metric", "diffeomorphism_ghost", "weyl_ghost", "metric_antifield", "diffeomorphism_ghost_antifield", "weyl_ghost_antifield", "other_minimal", "nonminimal", "auxiliary"]},
+        "sector": {"enum": ["minimal", "nonminimal", "auxiliary"]},
+        "tensor_type": {"$ref": "#/$defs/tensorType"},
+        "ghost_number": {"type": "integer"},
+        "antifield_number": {"type": "integer", "minimum": 0},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "Grassmann_parity": {"enum": [0, 1]},
+        "mass_dimension": {"$ref": "#/$defs/exactNumber"},
+        "Weyl_weight": {"$ref": "#/$defs/exactNumber"}
+      }
+    },
+    "atom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["atom_id", "origin", "tensor_signature", "covariant_derivative_order", "ghost_number", "antifield_number", "form_degree", "Grassmann_parity", "mass_dimension", "Weyl_weight", "canonical_order"],
+      "properties": {
+        "atom_id": {"type": "string", "minLength": 1},
+        "origin": {
+          "type": "object", "additionalProperties": false, "required": ["kind", "id"],
+          "properties": {"kind": {"enum": ["generator", "derived"]}, "id": {"type": "string", "minLength": 1}}
+        },
+        "tensor_signature": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["covariant_rank", "contravariant_rank", "symmetry", "spacetime_parity"],
+          "properties": {
+            "covariant_rank": {"type": "integer", "minimum": 0},
+            "contravariant_rank": {"type": "integer", "minimum": 0},
+            "symmetry": {"type": "string", "minLength": 1},
+            "spacetime_parity": {"enum": ["even", "odd"]}
+          }
+        },
+        "covariant_derivative_order": {"type": "integer", "minimum": 0},
+        "ghost_number": {"type": "integer"},
+        "antifield_number": {"type": "integer", "minimum": 0},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "Grassmann_parity": {"enum": [0, 1]},
+        "mass_dimension": {"$ref": "#/$defs/exactNumber"},
+        "Weyl_weight": {"$ref": "#/$defs/exactNumber"},
+        "canonical_order": {"type": "integer", "minimum": 0}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient", "factors"],
+      "properties": {"coefficient": {"$ref": "#/$defs/exactNumber"}, "factors": {"type": "array", "items": {"type": "string", "minLength": 1}}}
+    },
+    "polynomial": {
+      "type": "object", "additionalProperties": false, "required": ["terms"],
+      "properties": {"terms": {"type": "array", "items": {"$ref": "#/$defs/term"}}}
+    },
+    "row": {
+      "type": "object", "additionalProperties": false, "required": ["source_atom", "image"],
+      "properties": {"source_atom": {"type": "string", "minLength": 1}, "image": {"$ref": "#/$defs/polynomial"}}
+    },
+    "component": {
+      "type": "object", "additionalProperties": false, "required": ["antifield_number_shift", "rows"],
+      "properties": {"antifield_number_shift": {"type": ["integer", "null"]}, "rows": {"type": "array", "items": {"$ref": "#/$defs/row"}}}
+    },
+    "producerCheck": {
+      "type": "object", "additionalProperties": false, "required": ["check_id", "status", "proof_artifact"],
+      "properties": {
+        "check_id": {"enum": ["delta_squared_zero", "delta_gamma_anticommutator_zero", "Q_decomposition_sums_to_Q", "Q_squared_zero"]},
+        "status": {"const": "VERIFIED"},
+        "proof_artifact": {"$ref": "#/$defs/reference"}
+      }
+    }
+  }
+}

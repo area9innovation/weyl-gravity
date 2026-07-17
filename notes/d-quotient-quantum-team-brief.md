@@ -317,11 +317,18 @@ anomaly or (D)-anomaly theorem.
 
 ### Work package Q-G1: complete the local anomaly complex
 
-Extend beyond even AFN0 to antifield/Koszul--Tate sectors, odd parity,
-pure-Diff and mixed rows, generalized connections, and all required
-lower-form carriers.  Quotient exact tensor graphs by Bianchi, Grassmann,
-integration-by-parts, and four-dimensional identities.  Construct the map
-from local anomaly densities to admissible degree-zero Cartan defects.
+The even and odd AFN0 quotients are complete. The active receiving gate is now
+`ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT`: it accepts a strict exact
+superpolynomial atom algebra, independently replays `delta`, `gamma`, and
+`Q`, and dry-runs the result through the filtered-complex and AFN0 APIs. The
+actual covariant classical export remains absent.
+
+After `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` lands, extend the AFN0 result
+to the minimal antifield/Koszul--Tate sectors in both parities, pure-Diff and
+mixed rows, generalized connections, and all required lower-form carriers.
+Quotient exact tensor graphs by Bianchi, Grassmann, integration-by-parts, and
+four-dimensional identities. Construct the map from local anomaly densities
+to admissible degree-zero Cartan defects.
 
 Keep relative forms, integrated local functionals, and residual-state
 cohomology as distinct result kinds.  Return an explicit primitive or dual

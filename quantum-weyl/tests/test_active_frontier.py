@@ -25,6 +25,7 @@ class ActiveFrontierTests(unittest.TestCase):
     def test_g1_is_the_only_completed_quantum_promotion_level(self) -> None:
         ladder = self.payload["promotion_ladder"]
         self.assertEqual(ladder["G1"], "PASSED_AFN0_LOCAL_QUOTIENT")
+        self.assertTrue(self.payload["claim_flags"]["ANTIFIELD_EXPORT_V2_RECEIVER_READY"])
         self.assertTrue(ladder["G2"].startswith("BLOCKED"))
         self.assertTrue(ladder["G5"].startswith("BLOCKED"))
 
@@ -61,6 +62,10 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
+            "SUPPLY_CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        )
+        self.assertEqual(
+            self.payload["ordered_next_gates"][1],
             "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
         )
         self.assertEqual(

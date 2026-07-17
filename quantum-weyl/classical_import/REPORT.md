@@ -125,6 +125,24 @@ is deliberately `CONTRACT_READY_AWAITING_CLASSICAL_EXPORT`.  It certifies the
 handoff format and preflight behavior, not the absent classical rows and not
 their independent quantum-side verification.
 
+### Executable v2 receiving gate
+
+The v1 receipt remains historical metadata preflight. The active receiving
+gate is now
+[`ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT.json`](certificates/ANTIFIELD_EXPORT_V2_EXECUTABLE_CONTRACT.json).
+Version 2 replaces opaque expression objects with exact rational canonical
+superpolynomials over a finite, grading-bounded atom dictionary. It requires
+the complete minimal field/ghost/antifield dictionary and content-addressed
+field, action, Euler--Lagrange, Noether, atom-basis, and canonicalization
+manifests.
+
+The consumer reconstructs `Q` from `delta`, `gamma`, and all positive
+filtration components, independently evaluates the filtration identities on
+every atom, closes the admitted monomials, and dry-runs exact sparse blocks
+through `FilteredLocalComplex` and its AFN0 view. Producer proof booleans are
+retained only as pinned provenance. The real classical v2 export remains the
+next gate; the passing synthetic fixture is not Weyl-gravity data.
+
 ## Cylinder branch
 
 [`../cylinder/bootstrap.json`](../cylinder/bootstrap.json) imports only this
