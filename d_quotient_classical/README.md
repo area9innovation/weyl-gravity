@@ -268,6 +268,9 @@ python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_sup
 python3 d_quotient_classical/backreacted_clock/berger_54_row_causal_homotopy_reduction.py --check --guards
 python3 d_quotient_classical/backreacted_clock/verify_berger_54_row_causal_homotopy_reduction.py
 python3 -m pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_54_row_causal_homotopy_reduction.py
+python3 -m d_quotient_classical.backreacted_clock.berger_extended_rod_memory_maxwell_unary_gate --check
+python3 -m d_quotient_classical.backreacted_clock.verify_berger_extended_rod_memory_maxwell_unary_gate
+python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_extended_rod_memory_maxwell_unary_gate -v
 ```
 
 The first command checks evidence hashes, dependency tags, exact setting and

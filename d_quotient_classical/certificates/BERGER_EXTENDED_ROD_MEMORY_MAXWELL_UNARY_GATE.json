@@ -1,0 +1,238 @@
+{
+  "base_complex": {
+    "cyclic_pairing_nondegenerate": true,
+    "q1_nilpotent": true,
+    "retarded_green_homotopy": true,
+    "rows": 64
+  },
+  "claim_boundary": "This certificate is an exact LOCAL-ALGEBRAIC and LORENTZIAN-CAUSAL readiness/obstruction result. It imports the certified 64-row gravity-clock-Maxwell q1, odd pairing, and causal homotopy; proves the universal finite triangular retarded inverse for a cyclic memory-Maxwell Hessian; and computes the nonzero standard-sign rod stress on the declared unit-Jacobian detector chart. It therefore proves that the unchanged Berger background cannot support an uncurved action-derived 78-row apparatus q1 at nonzero rod coupling. It does not reject a backreacted apparatus solution, does not promote the probe-limit rods to a BV complex, and does not establish extended q1, cyclicity, a Green homotopy, q2/q3, K_Berger descent, backreaction, a classical observer morphism, a QME, or any quantum claim.",
+  "claim_flags": {
+    "BACKREACTED_APPARATUS_BACKGROUND_AVAILABLE": false,
+    "BASE_64_Q1_PAIRING_GREEN_AVAILABLE": true,
+    "EXTENDED_APPARATUS_Q1_CERTIFIED": false,
+    "EXTENDED_CYCLIC_PAIRING_CERTIFIED": false,
+    "EXTENDED_RETARDED_GREEN_CERTIFIED": false,
+    "K_BERGER_APPARATUS_EQUIVARIANCE_CERTIFIED": false,
+    "MEMORY_MAXWELL_RETARDED_BLOCK_FORMULA_PROVED": true,
+    "QUANTUM_CLAIM": false,
+    "ROD_TADPOLE_EXACT_NONZERO": true
+  },
+  "dependency_refs": {
+    "base_64_carrier": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    },
+    "base_64_causal_homotopy": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "detector_input": {
+      "path": "closed_universe_observers/fixtures/berger_localized_detector_records_input.json",
+      "sha256": "0290db56fef702ab77eb7154d85b850618e94d68caa3006aa48ac1ead2c88fbf"
+    },
+    "detector_preflight": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    },
+    "observer_interaction_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json",
+      "sha256": "17cc190abb57658382da790118343bc85549d6ee889e1d10a55c5046b3252028"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fixed_background_obstruction": {
+    "consequence": "The unchanged Berger gravity-clock background is off shell for every nonzero standard-sign rod coupling. Its action-derived BV Taylor expansion is curved (q0 is nonzero), so an uncurved nilpotent extended q1 cannot be promoted there.",
+    "metric_euler_tadpole": "epsilon_R^2*diag(3/2,-1/2,-1/2,-1/2)",
+    "probe_limit_declaration": "rod stress is order epsilon_R^2 and is excluded from the fixed background",
+    "rod_action": "S_R=-1/2 sum_I integral sqrt(-gHat) gHat^ab partial_a R^I partial_b R^I",
+    "witness": {
+      "energy_density_T00": "3/2",
+      "nonzero": true,
+      "nonzero_component_count": 4,
+      "orthonormal_signature": [
+        "-1",
+        "1",
+        "1",
+        "1"
+      ],
+      "rod_derivatives": [
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "stress_tensor": [
+        [
+          "3/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/2"
+        ]
+      ]
+    }
+  },
+  "higher_tiers_not_run": {
+    "tier_3": "No classical or quantum freeze, shared algebra-engine change, lifecycle promotion, Lorentzian quantum construction, QME result, release boundary, or paper theorem."
+  },
+  "memory_maxwell_universal_template": {
+    "causal_support_statement": "If G,H,J are retarded Green operators and B,B* are local compactly supported coefficient operators, every displayed finite composition is retarded.",
+    "field_order": [
+      "A",
+      "m",
+      "p"
+    ],
+    "formal_self_adjoint": true,
+    "hessian": [
+      [
+        "M",
+        "0",
+        "-B*"
+      ],
+      [
+        "0",
+        "0",
+        "T*"
+      ],
+      [
+        "-B",
+        "T",
+        "0"
+      ]
+    ],
+    "inverse_relations": [
+      "M G=G M=1",
+      "T H=H T=1",
+      "T* J=J T*=1"
+    ],
+    "left_inverse_defect_count": 0,
+    "retarded_inverse": [
+      [
+        "G",
+        "G B* J",
+        "0"
+      ],
+      [
+        "H B G",
+        "H B G B* J",
+        "H"
+      ],
+      [
+        "0",
+        "J",
+        "0"
+      ]
+    ],
+    "right_inverse_defect_count": 0
+  },
+  "next_gate": "SUPPLY_BACKREACTED_ROD_BACKGROUND_AND_EXPLICIT_PROFILE_OPERATOR_B",
+  "proposed_extension": {
+    "internal_gauge_rows_added": 0,
+    "new_degree_one_rows": [
+      "R1_plus",
+      "R2_plus",
+      "R3_plus",
+      "m0_plus",
+      "m1_plus",
+      "p0_plus",
+      "p1_plus"
+    ],
+    "new_degree_zero_rows": [
+      "R1",
+      "R2",
+      "R3",
+      "m0",
+      "m1",
+      "p0",
+      "p1"
+    ],
+    "pairing": "canonical odd cotangent pairing between every new field and its plus row",
+    "total_rows": 78
+  },
+  "provenance": {
+    "source_commit": "78ae87fa376b734dbeb0f06db30d89db61cf6d1f",
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_extended_rod_memory_maxwell_unary_gate.py": "4821d443a10df061565cd7b039186b0c84de3898320f39ae6a6ffac784872264",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_extended_rod_memory_maxwell_unary_gate.py": "5bcafa7b659e3fca10ca0e57a6085bb9989b3618d71954ee7b7de25a13fc4576",
+      "d_quotient_classical/backreacted_clock/verify_berger_extended_rod_memory_maxwell_unary_gate.py": "0e1154a22b7f15d0ff2c5b4fa15d5b2682637226af17bd4365cad3dc75f25081",
+      "d_quotient_classical/reports/berger-extended-rod-memory-maxwell-unary-gate.md": "49f1bb7d0c74955a6b7301b6354d982be0d86de3e76633a79852cb1cfaee8be2",
+      "d_quotient_classical/schema/berger-extended-rod-memory-maxwell-unary-gate-v1.schema.json": "fe833a9ac130478c42f535232032c90fb8ffb53036d9f93b449b0d4eb4e7065a"
+    }
+  },
+  "required_input_contract": {
+    "acceptance_checks": [
+      "extended q1 squared zero on all 78 rows",
+      "nondegenerate odd pairing and unary cyclicity",
+      "advanced and retarded Green-homotopy identities",
+      "Maxwell gauge compatibility B d=0 and delta B*=0",
+      "K_Berger unary equivariance on every apparatus row"
+    ],
+    "backreacted_background": "extended gravity-clock-rod background with every Euler row zero",
+    "memory_transport": "explicit T,T* and retarded inverses H,J with support theorem",
+    "profile_operator": "explicit local compactly supported B_a and formal adjoint B_a* for both detector channels",
+    "rod_unary_blocks": "content-addressed rod Hessian, diffeomorphism action, and BV adjoint blocks"
+  },
+  "result_id": "BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE",
+  "result_state": "INPUT_BLOCKED_NONZERO_ROD_TADPOLE_AND_PROFILE_OPERATOR_NOT_EXPORTED",
+  "schema": "pure-weyl-berger-extended-rod-memory-maxwell-unary-gate-v1",
+  "verification_receipts": [
+    {
+      "command": "python3 -m d_quotient_classical.backreacted_clock.berger_extended_rod_memory_maxwell_unary_gate --check",
+      "elapsed_seconds": 0.32,
+      "status": "PASS",
+      "test_tier": 2
+    },
+    {
+      "command": "python3 -m d_quotient_classical.backreacted_clock.verify_berger_extended_rod_memory_maxwell_unary_gate",
+      "elapsed_seconds": 0.33,
+      "status": "PASS",
+      "test_tier": 2
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_extended_rod_memory_maxwell_unary_gate -v",
+      "elapsed_seconds": 0.37,
+      "status": "PASS",
+      "test_tier": 2
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-extended-rod-memory-maxwell-unary-gate-v1.schema.json -d d_quotient_classical/certificates/BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE.json",
+      "elapsed_seconds": 2.44,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

@@ -111,6 +111,17 @@ rail now pins the committed hashes and returns
 `ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR`, so mixed \(q_3\) is unblocked; the
 nonlinear observer vertex remains a separate construction.
 
+The separate extended apparatus unary audit is now exact. On the detector
+chart the three declared standard-sign rods have
+\(T^R_{\hat a\hat b}=\operatorname{diag}(3/2,-1/2,-1/2,-1/2)\). Because the
+probe preflight excluded this stress, the unchanged Berger background is off
+shell at nonzero rod coupling and cannot support an uncurved nilpotent 78-row
+apparatus \(q_1\). `BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE` also proves
+the universal finite triangular retarded inverse for the memory--Maxwell
+Hessian. Completion now requires a backreacted rod background and explicit
+content-addressed detector profile operators; it is not blocked by the
+abstract memory Green algebra.
+
 The authoritative 54-row support-local classical Taylor data are now complete
 through arity three at the frozen rational Berger fixture.  The certificate
 `BERGER_SUPPORT_LOCAL_Q3` contains 5,812,130 exact
@@ -854,11 +865,12 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    pinned input for the mixed \(q_3\) identity and cyclicity calculation. Keep
    the historical 1,234/953 defect atlas as the negative control and do not
    promote residual or quantum transfer from this classical acceptance.
-3. Extend the compact neutral retarded Maxwell pulse to a
-   localized clock-referenced emitter/receiver observable by supplying healthy
-   local rod fields, detector windows, and a unique no-wrap causal intersection.  Keep
-   gravitational dressing, backreaction, and apparatus recoil as separately
-   promoted gates.
+3. Resolve the exact apparatus unary obstruction by supplying a backreacted
+   gravity--clock--rod background with vanishing Euler rows and explicit local
+   detector operators \(B_a,B_a^*\). The current unit-Jacobian probe rods have
+   nonzero stress and cannot be adjoined to the unchanged Berger background as
+   an uncurved BV complex. Then import the already-prepared finite triangular
+   memory--Maxwell retarded formula and verify all 78 unary rows.
 4. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
    acceptance flags pass; until then the relative observable functor remains
    a preflight and must not reconstruct the Einstein map independently.

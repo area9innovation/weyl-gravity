@@ -64,6 +64,31 @@ not itself compute mixed \(q_3\), promote residual or quantum transfer, or
 reopen the already-certified pure gravity--clock \(q_2,q_3\) and arity-three
 Cartan calculation.
 
+### Extended rod–memory–Maxwell unary gate
+
+The first apparatus gate is now sharply classified by
+`BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE`. The existing 64-row
+gravity--clock--Maxwell \(q_1\), odd pairing, and causal homotopy remain valid.
+Moreover, the cyclic memory--Maxwell Hessian has a universal finite retarded
+inverse, so no infinite Neumann construction is needed once the physical
+profile operator is supplied.
+
+The declared rods do not yet define an uncurved extension on the unchanged
+Berger background. Their unit orthonormal spatial Jacobian and standard-sign
+action give the exact stress
+
+\[
+T^R_{\hat a\hat b}=\operatorname{diag}(3/2,-1/2,-1/2,-1/2).
+\]
+
+The detector preflight discarded this as order-
+\(\epsilon_R^2\) probe stress. At nonzero coupling it is therefore a metric
+tadpole, so the action-derived BV Taylor expansion has \(q_0\ne0\) and cannot
+be promoted as a nilpotent uncurved 78-row \(q_1\). The next admissible input
+is a backreacted gravity--clock--rod background plus explicit local detector
+operators \(B_a,B_a^*\) and memory transports. Treating the rods as external
+probes does not satisfy the dynamical apparatus commission.
+
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove
 `D_GAUGE` on `positive_berger_fixed_coupling_linearized_solutions`.  This

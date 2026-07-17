@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-extended-rod-memory-maxwell-unary-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "base_complex", "proposed_extension", "fixed_background_obstruction", "memory_maxwell_universal_template", "required_input_contract", "claim_flags", "next_gate", "verification_receipts", "higher_tiers_not_run", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-extended-rod-memory-maxwell-unary-gate-v1"},
+    "result_id": {"const": "BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE"},
+    "result_state": {"const": "INPUT_BLOCKED_NONZERO_ROD_TADPOLE_AND_PROFILE_OPERATOR_NOT_EXPORTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["detector_input", "detector_preflight", "observer_interaction_gate", "base_64_carrier", "base_64_causal_homotopy"],
+      "properties": {
+        "detector_input": {"$ref": "#/$defs/dependency"}, "detector_preflight": {"$ref": "#/$defs/dependency"},
+        "observer_interaction_gate": {"$ref": "#/$defs/dependency"}, "base_64_carrier": {"$ref": "#/$defs/dependency"},
+        "base_64_causal_homotopy": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "base_complex": {
+      "type": "object", "additionalProperties": false, "required": ["rows", "q1_nilpotent", "cyclic_pairing_nondegenerate", "retarded_green_homotopy"],
+      "properties": {"rows": {"const": 64}, "q1_nilpotent": {"const": true}, "cyclic_pairing_nondegenerate": {"const": true}, "retarded_green_homotopy": {"const": true}}
+    },
+    "proposed_extension": {
+      "type": "object", "additionalProperties": false, "required": ["total_rows", "new_degree_zero_rows", "new_degree_one_rows", "pairing", "internal_gauge_rows_added"],
+      "properties": {
+        "total_rows": {"const": 78},
+        "new_degree_zero_rows": {"const": ["R1", "R2", "R3", "m0", "m1", "p0", "p1"]},
+        "new_degree_one_rows": {"const": ["R1_plus", "R2_plus", "R3_plus", "m0_plus", "m1_plus", "p0_plus", "p1_plus"]},
+        "pairing": {"$ref": "#/$defs/text"}, "internal_gauge_rows_added": {"const": 0}
+      }
+    },
+    "fixed_background_obstruction": {
+      "type": "object", "additionalProperties": false, "required": ["rod_action", "probe_limit_declaration", "witness", "metric_euler_tadpole", "consequence"],
+      "properties": {
+        "rod_action": {"$ref": "#/$defs/text"}, "probe_limit_declaration": {"$ref": "#/$defs/text"},
+        "metric_euler_tadpole": {"const": "epsilon_R^2*diag(3/2,-1/2,-1/2,-1/2)"}, "consequence": {"$ref": "#/$defs/text"},
+        "witness": {
+          "type": "object", "additionalProperties": false, "required": ["orthonormal_signature", "rod_derivatives", "stress_tensor", "energy_density_T00", "nonzero_component_count", "nonzero"],
+          "properties": {
+            "orthonormal_signature": {"const": ["-1", "1", "1", "1"]},
+            "rod_derivatives": {"const": [["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]]},
+            "stress_tensor": {"const": [["3/2", "0", "0", "0"], ["0", "-1/2", "0", "0"], ["0", "0", "-1/2", "0"], ["0", "0", "0", "-1/2"]]},
+            "energy_density_T00": {"const": "3/2"}, "nonzero_component_count": {"const": 4}, "nonzero": {"const": true}
+          }
+        }
+      }
+    },
+    "memory_maxwell_universal_template": {
+      "type": "object", "additionalProperties": false,
+      "required": ["field_order", "hessian", "retarded_inverse", "inverse_relations", "formal_self_adjoint", "left_inverse_defect_count", "right_inverse_defect_count", "causal_support_statement"],
+      "properties": {
+        "field_order": {"const": ["A", "m", "p"]},
+        "hessian": {"const": [["M", "0", "-B*"], ["0", "0", "T*"], ["-B", "T", "0"]]},
+        "retarded_inverse": {"const": [["G", "G B* J", "0"], ["H B G", "H B G B* J", "H"], ["0", "J", "0"]]},
+        "inverse_relations": {"const": ["M G=G M=1", "T H=H T=1", "T* J=J T*=1"]},
+        "formal_self_adjoint": {"const": true}, "left_inverse_defect_count": {"const": 0}, "right_inverse_defect_count": {"const": 0},
+        "causal_support_statement": {"$ref": "#/$defs/text"}
+      }
+    },
+    "required_input_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["backreacted_background", "rod_unary_blocks", "profile_operator", "memory_transport", "acceptance_checks"],
+      "properties": {
+        "backreacted_background": {"$ref": "#/$defs/text"}, "rod_unary_blocks": {"$ref": "#/$defs/text"},
+        "profile_operator": {"$ref": "#/$defs/text"}, "memory_transport": {"$ref": "#/$defs/text"},
+        "acceptance_checks": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BASE_64_Q1_PAIRING_GREEN_AVAILABLE", "ROD_TADPOLE_EXACT_NONZERO", "MEMORY_MAXWELL_RETARDED_BLOCK_FORMULA_PROVED", "EXTENDED_APPARATUS_Q1_CERTIFIED", "EXTENDED_CYCLIC_PAIRING_CERTIFIED", "EXTENDED_RETARDED_GREEN_CERTIFIED", "K_BERGER_APPARATUS_EQUIVARIANCE_CERTIFIED", "BACKREACTED_APPARATUS_BACKGROUND_AVAILABLE", "QUANTUM_CLAIM"],
+      "properties": {
+        "BASE_64_Q1_PAIRING_GREEN_AVAILABLE": {"const": true}, "ROD_TADPOLE_EXACT_NONZERO": {"const": true},
+        "MEMORY_MAXWELL_RETARDED_BLOCK_FORMULA_PROVED": {"const": true}, "EXTENDED_APPARATUS_Q1_CERTIFIED": {"const": false},
+        "EXTENDED_CYCLIC_PAIRING_CERTIFIED": {"const": false}, "EXTENDED_RETARDED_GREEN_CERTIFIED": {"const": false},
+        "K_BERGER_APPARATUS_EQUIVARIANCE_CERTIFIED": {"const": false}, "BACKREACTED_APPARATUS_BACKGROUND_AVAILABLE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SUPPLY_BACKREACTED_ROD_BACKGROUND_AND_EXPLICIT_PROFILE_OPERATOR_B"},
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_3"],
+      "properties": {"tier_3": {"type": "string", "minLength": 120}}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_commit", "source_manifest"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "source_manifest": {"type": "object", "minProperties": 5, "maxProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 700}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "text": {"type": "string", "minLength": 3},
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 3}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false, "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {"test_tier": {"enum": [1, 2]}, "command": {"type": "string", "minLength": 80}, "elapsed_seconds": {"type": "number", "minimum": 0}, "status": {"const": "PASS"}}
+    }
+  }
+}
