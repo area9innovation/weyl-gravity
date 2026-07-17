@@ -1,0 +1,85 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "APPARATUS_84_ROD_GRAVITY_UNARY_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The six clock-dressed rod gauge blocks, their cotangent adjoints, the action-derived gravity--rod Hessian, shifted base Hessian, and a two-sided Schur--Laurent causal inverse are certified on the separate (0,0), (epsilon_R^2,0), and (0,kappa) axial first jets. The mixed epsilon_R^2*kappa coefficient, unqualified/all-orders 84-row q1 and Green theorem, apparatus q2/q3, K_Berger observer equivariance, observer morphism, quantum theory, and quantum claims remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile on the producer, verifier, and focused test; python3 -m json.tool on the schema, certificate, and comparison ledger; git diff --check on all scoped paths",
+      "elapsed_seconds": "0.12",
+      "status": "PASS",
+      "scope": "Python syntax, structured data, reports, briefs, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --check",
+      "elapsed_seconds": "2.94",
+      "status": "PASS",
+      "scope": "dependency compatibility, exact Gamma_R export, Hessian fixtures, principal-order audit, Laurent inverse, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_rod_gravity_unary",
+      "elapsed_seconds": "5.31",
+      "status": "PASS",
+      "scope": "independent frame/Gamma reconstruction, cotangent sign and indices, Hessian replay, second noncommuting Laurent fixture, source/dependency hashes, and fail-closed mutations"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_84_row_rod_gravity_unary.py",
+      "elapsed_seconds": "22.48",
+      "status": "PASS",
+      "scope": "all 8 focused rod--gravity unary and causal tests"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.13",
+      "status": "PASS",
+      "scope": "historical snapshot replay plus live axial first-jet 84-row bridge import"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-84-row-rod-gravity-unary-v1.schema.json -d closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json",
+      "elapsed_seconds": "2.37",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "132.06",
+      "status": "PASS",
+      "scope": "all 54 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No classical freeze, unqualified/all-orders 84-row theorem, shared core-algebra change, QME lifecycle promotion, release, or explicit full-repository request occurred."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json", "sha256": "0761ae8677f6bcd6db85ce9f94ec0f0ef56a3bdb2bf4f3777cacb716824942f4"},
+    {"path": "closed_universe_observers/schema/berger-84-row-rod-gravity-unary-v1.schema.json", "sha256": "f2c03f7ed6abc80b59393deb2797bc313d7b08fd2f55acec015a864d6337469a"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "f76f2bbb45fa5946c992807f5bdca1cbca8da7447cf9efb63655a38dc9cb2b3d"},
+    {"path": "closed_universe_observers/reports/berger-84-row-rod-gravity-unary.md", "sha256": "af2f9d9453502e701ad21fa13bf3216f11114286d3d8b242815c5f3c57bbfa11"}
+  ],
+  "claim_flags": {
+    "CLOCK_DRESSED_ROD_COORDINATES_CANONICAL": true,
+    "GAMMA_R_EXPLICIT": true,
+    "GAMMA_R_SHARP_EXPLICIT": true,
+    "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED": true,
+    "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED": true,
+    "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": true,
+    "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": true,
+    "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": true,
+    "84_ROW_Q1_CERTIFIED": false,
+    "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": false,
+    "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "bv_noether_audit": {
+    "adjoint_noether": "the antifield-to-ghost-antifield identities are the formal adjoints of the two displayed field identities",
+    "derivation": "differentiate the diffeomorphism master identity twice at the axis-on-shell shifted background and transport by the canonical clock dressing",
+    "metric_noether": "K_gravity Gamma_g+K_hR Gamma_R=0 at order r",
+    "q1_square_defect_count": 0,
+    "rod_noether": "K_Rh Gamma_g+K_RR Gamma_R=0 at order r",
+    "scalar_naturality": "delta_g(Box_g Rbar)[Lie_xi gHat]+Box_gHat(Lie_xi Rbar)=Lie_xi(Box_gHat Rbar)=0",
+    "stress_identity": "nabla_mu delta T^{mu nu}=Box(deltaR) nabla^nu Rbar on Box Rbar=0, with the metric-variation terms completing the linearized identity",
+    "unary_cyclicity_defect_count": 0
+  },
+  "canonical_clock_dressing": {
+    "cotangent_lift": [
+      "rhat_aI_plus=delta R_aI_plus",
+      "Theta_dressed_plus=Theta_raw_plus+sum_aI e0(Rbar_aI) rhat_aI_plus together with the existing metric-clock lift"
+    ],
+    "pairing_preserved": true,
+    "raw_to_dressed": [
+      "h=hHat+Lie_(Theta n) gHat-2 R_clock gHat",
+      "delta R_aI=rhat_aI+Theta e0(Rbar_aI)"
+    ],
+    "support_local": true,
+    "temporal_rod_gauge_column_removed_without_quotienting": true
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL certificate exports the six clock-dressed rod spatial-diffeomorphism blocks and their odd-pairing adjoints, the covariant action-derived rod--gravity Hessian, the q2(Phi2,-) shifted base block, and a coupled principal causal witness. It proves nilpotency, unary cyclicity, and advanced/retarded chain identities on the separate (0,0), (epsilon_R^2,0), and (0,kappa) axial first-jet sectors, using nonzero epsilon_R^2 Laurent Green asymptotics on the canonically paired rod rows. It does not certify the mixed epsilon_R^2*kappa shift of the detector profile and clock transport, a nonperturbative or all-orders 84-row q1/Green complex, apparatus q2/q3, K_Berger equivariance, the observer morphism, deformed rank two, emitter recoil, a Lorentzian quantum theory, or a quantum claim.",
+  "claim_status": "ROD_GRAVITY_BV_BLOCKS_AND_AXIAL_FIRST_JET_CAUSAL_COMPLEX_CERTIFIED_MIXED_JET_OPEN",
+  "coefficient_scope": {
+    "background_expansion": "g_epsilon=gHat+r Phi2+O(r^2)",
+    "excluded": [
+      "r^2",
+      "r*kappa",
+      "shifted B_a and T at r*kappa",
+      "nonperturbative convergence"
+    ],
+    "green_asymptotics": "Laurent leading order r^-1 on rod equation rows; coefficients replay through q1 order r",
+    "q1_certified_bidegrees_r_kappa": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "rod_weight": "r=epsilon_R^2 is fixed nonzero",
+    "singular_probe_limit_explicit": true
+  },
+  "coupled_causal_witness": {
+    "W84": "W72 direct_sum W_rod, with W_rod(R_aI_plus)=R_aI and zero on rod fields; cotangent and gauge partners are fixed by cyclic adjunction",
+    "advanced_chain_defect_count": 0,
+    "advanced_support": true,
+    "chain_homotopy": "Lambda84,+/-=W84 G_P84,+/-",
+    "chain_identity": "q84 Lambda84,+/-+Lambda84,+/- q84=P84 G_P84,+/-=I84 through the certified axial first jet",
+    "cross_order": "Gamma_R is order zero; K_Rh and K_hR are at most order one; Delta_K_hh_rod is order zero, hence none changes the diagonal characteristic set",
+    "green_hyperbolic_reduction": "reduce the biwave blocks to two normally-hyperbolic stages and adjoin the six normally-hyperbolic rod waves; lower-order coupled terms preserve the same-sided advanced/retarded Cauchy problem",
+    "green_operator": "G_P84,+/- is the unique same-sided Green operator of P84 on compactly supported tests in the nonzero-r Laurent domain",
+    "laurent_inverse_audit": {
+      "G11": "S^-1",
+      "G12": "-S^-1 B D^-1",
+      "G21": "-D^-1 C S^-1",
+      "G22": "r^-1 D^-1+D^-1 C S^-1 B D^-1",
+      "S_inverse_through_r": "A0^-1-r A0^-1 E A0^-1",
+      "checked_laurent_powers": [
+        -1,
+        0,
+        1
+      ],
+      "coefficient_field": "Q((r))",
+      "effective_schur_block": "E=A1-B D^-1 C",
+      "first_omitted_order": "r^2",
+      "left_inverse_defect_count_through_r": 0,
+      "right_inverse_defect_count_through_r": 0,
+      "specialization_block_size": 2
+    },
+    "operator_order_audit": {
+      "cross_block_orders": [
+        {
+          "block": "Gamma_R",
+          "comparison_order": 2,
+          "order": 0
+        },
+        {
+          "block": "Gamma_R_sharp",
+          "comparison_order": 2,
+          "order": 0
+        },
+        {
+          "block": "K_Rh",
+          "comparison_order": 2,
+          "order": 1
+        },
+        {
+          "block": "K_hR",
+          "comparison_order": 2,
+          "order": 1
+        },
+        {
+          "block": "Delta_K_hh_rod",
+          "comparison_order": 4,
+          "order": 0
+        },
+        {
+          "block": "Delta_K_hh_base",
+          "comparison_order": 4,
+          "order": 2
+        }
+      ],
+      "diagonal_orders": {
+        "gravity_clock": 4,
+        "maxwell": 2,
+        "memory": 1,
+        "rod": 2
+      },
+      "principal_part_defect_count": 0
+    },
+    "principal_diagonal": [
+      "the pinned gravity-clock sector has scalar biwave principal symbol (zeta_g^2)^2",
+      "the pinned Maxwell sector has scalar wave principal symbol zeta_g^2",
+      "each of six rod sectors has r zeta_g^2",
+      "each memory sector has the already-certified clock-transport principal symbol"
+    ],
+    "retarded_chain_defect_count": 0,
+    "retarded_support": true,
+    "schur_feedback_deletion_defect_count": 13,
+    "wave_operator": "P84=q84 W84+W84 q84"
+  },
+  "dependency_refs": {
+    "authoritative_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "base_64_carrier": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    },
+    "base_64_causal": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "base_64_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
+      "sha256": "f518eb8a13ee34021edfd8f1809bf7a0ee139a9a1863d837d83858e34bf461f5"
+    },
+    "base_64_q2_payload": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD",
+      "sha256": "953c70661220cc1de27ab25cdb80d9ae479f85ff0cd52483fa00a3b93e4c7501"
+    },
+    "clock_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_MINIMAL_BV_CLOCK_SDR.json",
+      "result_id": "BERGER_MINIMAL_BV_CLOCK_SDR",
+      "sha256": "9e7503ed7fd6082b4164ae7b03d350c753f941cc45d639ffb02598ba8f262422"
+    },
+    "global_rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "rod_q1_solvability": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY.json",
+      "result_id": "BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY",
+      "sha256": "36153ad6c0cdcdcc9ab18c3feb0ea22915e4ec7215889e3d3de9687c6c7971f9"
+    },
+    "unary_completion_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE.json",
+      "result_id": "BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE",
+      "sha256": "1c51f49ae867c5792bf4ece12f58d03e55079a9baa1c8a0209adeb74913e093f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": true,
+    "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": false,
+    "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": true,
+    "84_ROW_Q1_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "CLOCK_DRESSED_ROD_COORDINATES_CANONICAL": true,
+    "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": true,
+    "GAMMA_R_EXPLICIT": true,
+    "GAMMA_R_SHARP_EXPLICIT": true,
+    "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED": true,
+    "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED": true
+  },
+  "mutation_results": [
+    {
+      "defect": "nonzero temporal rod gauge coefficients remain",
+      "defect_count": 6,
+      "detected": true,
+      "name": "omit_clock_dressing"
+    },
+    {
+      "defect": "Gamma_R unary cyclicity",
+      "defect_count": 18,
+      "detected": true,
+      "name": "flip_gamma_sharp_sign"
+    },
+    {
+      "defect": "mixed Hessian adjointness and metric Noether identity at order r",
+      "defect_count": 1,
+      "detected": true,
+      "name": "drop_K_hR"
+    },
+    {
+      "defect": "rod Green inverse does not exist with the canonical pairing",
+      "defect_count": 1,
+      "detected": true,
+      "name": "treat_r_as_zero_in_rod_green"
+    },
+    {
+      "defect": "shifted profile and transport coefficients are explicitly excluded",
+      "defect_count": 1,
+      "detected": true,
+      "name": "promote_mixed_r_kappa"
+    }
+  ],
+  "next_gate": "COMPUTE_MIXED_EPSILON_R2_KAPPA_SHIFT_OF_PROFILE_TRANSPORT_AND_REPLAY_FULL_84_ROW_UNARY",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_84_row_rod_gravity_unary.py",
+        "sha256": "6c298e96c05b9655b3ba642306067221c478c2bcdcfb684dcaa604b2b63b6f08"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_84_row_rod_gravity_unary.py",
+        "sha256": "cb3c6671f4cf5deeafdff0f73c41cce1171fd607563675351ea5a49c6525a4e9"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_84_row_rod_gravity_unary.py",
+        "sha256": "1049ddd554dde22d19cc920721d08b962d4ddb9d5037e40fb1569a285b890c69"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-84-row-rod-gravity-unary.md",
+        "sha256": "af2f9d9453502e701ad21fa13bf3216f11114286d3d8b242815c5f3c57bbfa11"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-84-row-rod-gravity-unary-v1.schema.json",
+        "sha256": "f2c03f7ed6abc80b59393deb2797bc313d7b08fd2f55acec015a864d6337469a"
+      }
+    ]
+  },
+  "raw_covariant_rod_hessian": {
+    "Delta_K_hh_base": "r q2_64(Phi2,-) using the pinned support-local 64x64x64 payload",
+    "Delta_K_hh_rod": "r/2 delta_g[sqrt(-g) T_rod^{mu nu}] evaluated at gHat,Rbar",
+    "K_RR": "r Box_gHat delta R_aI",
+    "K_Rh": "r[-h^{mu nu} nabla_mu nabla_nu Rbar_aI-(nabla_mu h^{mu nu}-1/2 nabla^nu tr(h)) nabla_nu Rbar_aI]",
+    "K_hR": "r/2 sqrt(-gHat)[nabla^mu deltaR nabla^nu Rbar+nabla^mu Rbar nabla^nu deltaR-gHat^{mu nu} nabla_rho Rbar nabla^rho deltaR]",
+    "action": "S_rod=-r/2 sum_aI integral dvol_g g^{mu nu} partial_mu R_aI partial_n R_aI",
+    "dressed_transport": "K_rod,dressed=C_rod^sharp K_rod,raw C_rod for the displayed canonical clock dressing",
+    "exact_specialization_audit": {
+      "coefficient_field": "Q",
+      "fixture_values": [
+        {
+          "metric_h_k": "-13/4",
+          "mixed_h_rod": "0"
+        },
+        {
+          "metric_h_k": "-37/2",
+          "mixed_h_rod": "-13"
+        }
+      ],
+      "method": "differentiate -1/2 sqrt(-det g) g^{-1}(dR,dR) in exact rational two-parameter metric and one-parameter rod fixtures",
+      "metric_hessian_symmetry_defect_count": 0,
+      "mixed_partial_defect_count": 0,
+      "nonzero_mixed_fixture_count": 1,
+      "specialization_count": 2
+    },
+    "maximum_cross_differential_order": 1,
+    "metric_metric_symmetry": true,
+    "metric_rod_mixed_adjointness": true
+  },
+  "result_id": "BERGER_84_ROW_ROD_GRAVITY_UNARY",
+  "rod_gauge_blocks": {
+    "clock_dressed_definition": "rhat_aI=delta R_aI-Theta e0(Rbar_aI)",
+    "event_blocks": [
+      {
+        "detector_id": "D0",
+        "determinant": "1",
+        "matrix_base_ghost_order_e1_e2_e3": [
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ]
+        ],
+        "rank": 3
+      },
+      {
+        "detector_id": "D1",
+        "determinant": "1",
+        "matrix_base_ghost_order_e1_e2_e3": [
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ]
+        ],
+        "rank": 3
+      }
+    ],
+    "gamma_canonical_sha256": "b854f0ecfc7ed67f31eefaae9ca45f8d07a65060c63af38bf812c59332288c0a",
+    "gamma_entries": [
+      {
+        "coefficient": "3*sqrt(10)*(x1*sin(sqrt(10)/12) - x2*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/20",
+        "input_index": 0,
+        "input_row": "c_spatial_1",
+        "output_index": 64,
+        "output_row": "R0_1"
+      },
+      {
+        "coefficient": "3*sqrt(10)*(x1*cos(sqrt(10)/12) + x2*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/20",
+        "input_index": 1,
+        "input_row": "c_spatial_2",
+        "output_index": 64,
+        "output_row": "R0_1"
+      },
+      {
+        "coefficient": "(x0*cos(sqrt(10)/12) + x3*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 2,
+        "input_row": "c_spatial_3",
+        "output_index": 64,
+        "output_row": "R0_1"
+      },
+      {
+        "coefficient": "(x0*cos(sqrt(10)/12) + x3*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 0,
+        "input_row": "c_spatial_1",
+        "output_index": 65,
+        "output_row": "R0_2"
+      },
+      {
+        "coefficient": "(x0*sin(sqrt(10)/12) - x3*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 1,
+        "input_row": "c_spatial_2",
+        "output_index": 65,
+        "output_row": "R0_2"
+      },
+      {
+        "coefficient": "2*sqrt(10)*(-x1*sin(sqrt(10)/12) + x2*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/3",
+        "input_index": 2,
+        "input_row": "c_spatial_3",
+        "output_index": 65,
+        "output_row": "R0_2"
+      },
+      {
+        "coefficient": "(-x0*sin(sqrt(10)/12) + x3*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 0,
+        "input_row": "c_spatial_1",
+        "output_index": 66,
+        "output_row": "R0_3"
+      },
+      {
+        "coefficient": "(x0*cos(sqrt(10)/12) + x3*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 1,
+        "input_row": "c_spatial_2",
+        "output_index": 66,
+        "output_row": "R0_3"
+      },
+      {
+        "coefficient": "-2*sqrt(10)*(x1*cos(sqrt(10)/12) + x2*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/3",
+        "input_index": 2,
+        "input_row": "c_spatial_3",
+        "output_index": 66,
+        "output_row": "R0_3"
+      },
+      {
+        "coefficient": "3*sqrt(10)*(x1*sin(sqrt(10)/6) - x2*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/20",
+        "input_index": 0,
+        "input_row": "c_spatial_1",
+        "output_index": 67,
+        "output_row": "R1_1"
+      },
+      {
+        "coefficient": "3*sqrt(10)*(x1*cos(sqrt(10)/6) + x2*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/20",
+        "input_index": 1,
+        "input_row": "c_spatial_2",
+        "output_index": 67,
+        "output_row": "R1_1"
+      },
+      {
+        "coefficient": "(x0*cos(sqrt(10)/6) + x3*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 2,
+        "input_row": "c_spatial_3",
+        "output_index": 67,
+        "output_row": "R1_1"
+      },
+      {
+        "coefficient": "(x0*cos(sqrt(10)/6) + x3*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 0,
+        "input_row": "c_spatial_1",
+        "output_index": 68,
+        "output_row": "R1_2"
+      },
+      {
+        "coefficient": "(x0*sin(sqrt(10)/6) - x3*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 1,
+        "input_row": "c_spatial_2",
+        "output_index": 68,
+        "output_row": "R1_2"
+      },
+      {
+        "coefficient": "2*sqrt(10)*(-x1*sin(sqrt(10)/6) + x2*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/3",
+        "input_index": 2,
+        "input_row": "c_spatial_3",
+        "output_index": 68,
+        "output_row": "R1_2"
+      },
+      {
+        "coefficient": "(-x0*sin(sqrt(10)/6) + x3*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 0,
+        "input_row": "c_spatial_1",
+        "output_index": 69,
+        "output_row": "R1_3"
+      },
+      {
+        "coefficient": "(x0*cos(sqrt(10)/6) + x3*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 1,
+        "input_row": "c_spatial_2",
+        "output_index": 69,
+        "output_row": "R1_3"
+      },
+      {
+        "coefficient": "-2*sqrt(10)*(x1*cos(sqrt(10)/6) + x2*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/3",
+        "input_index": 2,
+        "input_row": "c_spatial_3",
+        "output_index": 69,
+        "output_row": "R1_3"
+      }
+    ],
+    "gamma_entry_count": 18,
+    "gamma_sharp_canonical_sha256": "b398a1aee502880b430041839777a75964268bdcc4a001b862f67d7a141245d6",
+    "gamma_sharp_q1_entries": [
+      {
+        "coefficient": "-3*sqrt(10)*(x1*sin(sqrt(10)/12) - x2*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/20",
+        "input_index": 74,
+        "input_row": "R0_1_plus",
+        "output_index": 49,
+        "output_row": "c_spatial_star_1"
+      },
+      {
+        "coefficient": "-3*sqrt(10)*(x1*cos(sqrt(10)/12) + x2*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/20",
+        "input_index": 74,
+        "input_row": "R0_1_plus",
+        "output_index": 50,
+        "output_row": "c_spatial_star_2"
+      },
+      {
+        "coefficient": "-(x0*cos(sqrt(10)/12) + x3*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 74,
+        "input_row": "R0_1_plus",
+        "output_index": 51,
+        "output_row": "c_spatial_star_3"
+      },
+      {
+        "coefficient": "-(x0*cos(sqrt(10)/12) + x3*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 75,
+        "input_row": "R0_2_plus",
+        "output_index": 49,
+        "output_row": "c_spatial_star_1"
+      },
+      {
+        "coefficient": "-(x0*sin(sqrt(10)/12) - x3*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 75,
+        "input_row": "R0_2_plus",
+        "output_index": 50,
+        "output_row": "c_spatial_star_2"
+      },
+      {
+        "coefficient": "-2*sqrt(10)*(-x1*sin(sqrt(10)/12) + x2*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/3",
+        "input_index": 75,
+        "input_row": "R0_2_plus",
+        "output_index": 51,
+        "output_row": "c_spatial_star_3"
+      },
+      {
+        "coefficient": "-(-x0*sin(sqrt(10)/12) + x3*cos(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 76,
+        "input_row": "R0_3_plus",
+        "output_index": 49,
+        "output_row": "c_spatial_star_1"
+      },
+      {
+        "coefficient": "-(x0*cos(sqrt(10)/12) + x3*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)",
+        "input_index": 76,
+        "input_row": "R0_3_plus",
+        "output_index": 50,
+        "output_row": "c_spatial_star_2"
+      },
+      {
+        "coefficient": "2*sqrt(10)*(x1*cos(sqrt(10)/12) + x2*sin(sqrt(10)/12))*cos(sqrt(58)*(4*t - 1)/24)/3",
+        "input_index": 76,
+        "input_row": "R0_3_plus",
+        "output_index": 51,
+        "output_row": "c_spatial_star_3"
+      },
+      {
+        "coefficient": "-3*sqrt(10)*(x1*sin(sqrt(10)/6) - x2*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/20",
+        "input_index": 77,
+        "input_row": "R1_1_plus",
+        "output_index": 49,
+        "output_row": "c_spatial_star_1"
+      },
+      {
+        "coefficient": "-3*sqrt(10)*(x1*cos(sqrt(10)/6) + x2*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/20",
+        "input_index": 77,
+        "input_row": "R1_1_plus",
+        "output_index": 50,
+        "output_row": "c_spatial_star_2"
+      },
+      {
+        "coefficient": "-(x0*cos(sqrt(10)/6) + x3*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 77,
+        "input_row": "R1_1_plus",
+        "output_index": 51,
+        "output_row": "c_spatial_star_3"
+      },
+      {
+        "coefficient": "-(x0*cos(sqrt(10)/6) + x3*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 78,
+        "input_row": "R1_2_plus",
+        "output_index": 49,
+        "output_row": "c_spatial_star_1"
+      },
+      {
+        "coefficient": "-(x0*sin(sqrt(10)/6) - x3*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 78,
+        "input_row": "R1_2_plus",
+        "output_index": 50,
+        "output_row": "c_spatial_star_2"
+      },
+      {
+        "coefficient": "-2*sqrt(10)*(-x1*sin(sqrt(10)/6) + x2*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/3",
+        "input_index": 78,
+        "input_row": "R1_2_plus",
+        "output_index": 51,
+        "output_row": "c_spatial_star_3"
+      },
+      {
+        "coefficient": "-(-x0*sin(sqrt(10)/6) + x3*cos(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 79,
+        "input_row": "R1_3_plus",
+        "output_index": 49,
+        "output_row": "c_spatial_star_1"
+      },
+      {
+        "coefficient": "-(x0*cos(sqrt(10)/6) + x3*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)",
+        "input_index": 79,
+        "input_row": "R1_3_plus",
+        "output_index": 50,
+        "output_row": "c_spatial_star_2"
+      },
+      {
+        "coefficient": "2*sqrt(10)*(x1*cos(sqrt(10)/6) + x2*sin(sqrt(10)/6))*cos(sqrt(58)*(2*t - 1)/12)/3",
+        "input_index": 79,
+        "input_row": "R1_3_plus",
+        "output_index": 51,
+        "output_row": "c_spatial_star_3"
+      }
+    ],
+    "gamma_sharp_rule": "q1(c_spatial_star_i,R_aI_plus)=-Gamma_R^sharp; the minus sign is forced by Omega(c,c*)=Omega(r,r+)=+1",
+    "raw_temporal_coefficients": [
+      {
+        "coefficient": "-sqrt(145)*(-x0*sin(sqrt(10)/12) + x3*cos(sqrt(10)/12))*sin(sqrt(58)*(t - 1/4)/6)/10",
+        "rod": "R0_1"
+      },
+      {
+        "coefficient": "-sqrt(58)*(x1*cos(sqrt(10)/12) + x2*sin(sqrt(10)/12))*sin(sqrt(58)*(t - 1/4)/6)/3",
+        "rod": "R0_2"
+      },
+      {
+        "coefficient": "-sqrt(58)*(-x1*sin(sqrt(10)/12) + x2*cos(sqrt(10)/12))*sin(sqrt(58)*(t - 1/4)/6)/3",
+        "rod": "R0_3"
+      },
+      {
+        "coefficient": "-sqrt(145)*(-x0*sin(sqrt(10)/6) + x3*cos(sqrt(10)/6))*sin(sqrt(58)*(t - 1/2)/6)/10",
+        "rod": "R1_1"
+      },
+      {
+        "coefficient": "-sqrt(58)*(x1*cos(sqrt(10)/6) + x2*sin(sqrt(10)/6))*sin(sqrt(58)*(t - 1/2)/6)/3",
+        "rod": "R1_2"
+      },
+      {
+        "coefficient": "-sqrt(58)*(-x1*sin(sqrt(10)/6) + x2*cos(sqrt(10)/6))*sin(sqrt(58)*(t - 1/2)/6)/3",
+        "rod": "R1_3"
+      }
+    ],
+    "raw_temporal_nonzero_count": 6,
+    "remaining_gauge_action": "Gamma_R(xi_perp)_aI=sum_i xi^i e_i(Rbar_aI)",
+    "unary_cyclicity_defect_count": 0,
+    "weyl_column": "0"
+  },
+  "schema": "closed-universe-berger-84-row-rod-gravity-unary-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

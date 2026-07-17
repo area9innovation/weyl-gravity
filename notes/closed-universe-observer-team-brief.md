@@ -75,9 +75,17 @@ complex, and a quantum observer state remain open.  The subsequent
 memory--Maxwell unary and finite advanced/retarded inverse, giving a certified
 72-row causal subcomplex on the non-rod indices.  It also closes the shifted
 Euler equations on the separate \((0,0)\), \((\epsilon_R^2,0)\), and
-\((0,\kappa)\) axes.  Full 84-row promotion is correctly blocked on the
+\((0,\kappa)\) axes.  At that stage, full 84-row promotion was correctly blocked on the
 nonzero rod diffeomorphism action and the missing gravity--rod Hessian,
 cotangent-adjoint, shifted-metric-Hessian, and causal-witness payloads.
+`BERGER_84_ROW_ROD_GRAVITY_UNARY` now supplies those six clock-dressed gauge
+blocks, their exact odd-pairing adjoints, the covariant action Hessian, the
+`q2(Phi2,-)` base shift, and a coupled principal causal witness.  Its explicit
+Schur--Laurent inverse certifies nilpotency, unary cyclicity, and causal chain
+identities on those same three separate axes.  The result is deliberately not
+promoted to an unqualified 84-row theorem: the mixed
+`epsilon_R^2*kappa` profile/transport shift, apparatus interactions,
+`K_Berger` equivariance, and observer morphism remain open.
 
 ### The adjacent closed-universe programme
 

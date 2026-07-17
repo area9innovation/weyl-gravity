@@ -21,10 +21,12 @@ The first exact result is asymmetric.
 
 The lifecycle is therefore `EXTERNAL_FIXTURE_REPRODUCED`, not
 `CLASSICAL_OBSERVER_MAP_CERTIFIED`.  The overall verdict is
-`QUANTUM_COMPARISON_NOT_YET_DEFINED`.  The recommendation is to construct two
-localized clock-labelled detector records and then wait for the quantum state,
-inner-product, and QME gates.  There is not yet a bridge theorem or a scoped
-no-go suitable for a new paper.
+`QUANTUM_COMPARISON_NOT_YET_DEFINED`.  The current classical recommendation is
+to compute the mixed `epsilon_R^2*kappa` apparatus jet, then construct the
+apparatus interactions and test the observer morphism.  The separate-axis
+84-row unary and causal complex is now certified; this does not change the
+quantum lifecycle.  There is not yet a bridge theorem or a scoped no-go
+suitable for a new paper.
 
 Dependency boundary: the fixture is `LOCAL-ALGEBRAIC` and
 `EUCLIDEAN-SPECTRAL`; the imported classical response also uses
@@ -263,8 +265,12 @@ exact retained-mode primitives compensate that stress through
 84-row carrier, bulk memories, detector locality, profile two-jet, and actual
 two-detector `Phi2`.  The exact memory--Maxwell unary and finite two-channel
 advanced/retarded inverse now extend the base to a certified 72-row causal
-subcomplex.  The full 84-row differential is blocked specifically on the
-coupled diffeomorphism and gravity--rod BV blocks, not on the memory sector.
+subcomplex.  The clock-dressed rod gauge blocks, their cotangent adjoints, the
+action-derived gravity--rod Hessian, and an explicit Schur--Laurent inverse
+now extend this to a certified 84-row unary and causal complex on the separate
+`(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes.  The mixed
+`epsilon_R^2*kappa` profile and transport shift remains open, so the
+unqualified full-84 flags remain false.
 Raw \(D\) is null on the declared tangent sector and the averaged observable is
 relationally \(D\)-invariant, but raw \(D\) changes the clock field.
 \(K_{\rm Berger}=D-\omega R\) is the background-preserving nonlinear generator;
@@ -280,7 +286,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with prospective 84-row apparatus | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, exact stress compensation, and a 72-row memory causal subcomplex; coupled rod quotient descent open | exact positive-diagonal retarded transfer and two-channel memory Green operator; spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, exact stress compensation, and an 84-row axial first-jet causal complex; interacting quotient descent open | exact positive-diagonal retarded transfer and Schur--Laurent separate-axis Green operator; spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -293,10 +299,9 @@ pins the clock, redshift, Maxwell causal, retarded-signal, fixed-coupling
 raw-\(D\), and nonlinear \(K_{\rm Berger}\) certificates by path, result
 identifier, SHA-256 hash, and declared claim boundary.
 
-The primary missing object is now the coupled rod--gravity completion of the
-shifted-background 84-row unary and Green complex: `Gamma_R`, its pairing
-adjoint, both Hessian directions, the shifted metric Hessian, and the coupled
-causal witness.  Further missing objects are a rank-two transfer from two
+The primary missing object is now the mixed `epsilon_R^2*kappa` shift of the
+detector profiles, memory transport, adjoints, and resulting 84-row unary and
+Green coefficients.  Further missing objects are a rank-two transfer from two
 spatially localized emitter worldtubes, emitter recoil and higher-order receiver backreaction,
 observer-map compatibility with raw \(D\), \(K_{\rm Berger}\), apparatus
 \(q_2,q_3\), and higher brackets, a quantum
@@ -305,8 +310,9 @@ QME-restored Lorentzian observer theory.
 
 The first exact defect is consequently not “internal observers are
 impossible.”  It is: **the external and internal constructions currently live
-on different carriers, and the internal side still lacks a quotient-descended
-84-row source-rod-memory complex needed to type a common functor.**
+on different carriers, and the internal side still lacks an interacting,
+quotient-descended 84-row source-rod-memory morphism needed to type a common
+functor.**
 
 ## Verification receipt
 
@@ -321,3 +327,8 @@ commands, elapsed times, hashes, flags, and skip criteria are stored in
 `closed_universe_observers/receipts/APPARATUS_84_HANDOFF_TIER_RECEIPT.json`
 and
 `closed_universe_observers/receipts/APPARATUS_84_UNARY_PAIRING_GREEN_GATE_TIER_RECEIPT.json`.
+The rod--gravity continuation independently reconstructs all 18 nonzero gauge
+coefficients, both rank-three detector blocks, the negative cotangent
+transpose, exact Hessian fixtures, and the two-sided Schur--Laurent inverse;
+its receipt is
+`closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_UNARY_TIER_RECEIPT.json`.

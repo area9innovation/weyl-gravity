@@ -26,6 +26,8 @@ python3 -m closed_universe_observers.generate_berger_84_row_apparatus_handoff --
 python3 -m closed_universe_observers.verify_berger_84_row_apparatus_handoff
 python3 -m closed_universe_observers.generate_berger_84_row_unary_pairing_green_gate --check
 python3 -m closed_universe_observers.verify_berger_84_row_unary_pairing_green_gate
+python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --check
+python3 -m closed_universe_observers.verify_berger_84_row_rod_gravity_unary
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -47,10 +49,14 @@ rank two only as a probe-limit baseline.  Its corrected apparatus interface
 uses composite polarization, keeps the present currents external, and records
 `p*A`, `p*A*deltaR`, and `p*A*deltaR^2` as `q1`, `q2`, and `q3` contributions,
 respectively.  The exact two-channel memory--Maxwell unary and its finite
-advanced/retarded inverse are now certified; together with the base rows they
-form a 72-row causal subcomplex.  The full 84-row unary remains open because
-the nonconstant rod backgrounds require coupled diffeomorphism,
-gravity--rod-Hessian, BV-adjoint, and causal-witness blocks.  The
+advanced/retarded inverse are certified; together with the base rows they
+form a 72-row causal subcomplex.  The six clock-dressed rod diffeomorphism
+blocks, their cotangent adjoints, the action-derived gravity--rod Hessian, and
+the coupled causal witness are now also exported.  An exact Schur--Laurent
+inverse certifies the full 84-row differential, unary cyclicity, and causal
+chain contraction on the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)`
+axes.  The unqualified full-84 theorem remains open because the mixed
+`epsilon_R^2*kappa` profile/transport shift has not been computed.  The
 observer team now also exports six exact global detector-indexed rod fields
 on the compact Berger cylinder.  They reproduce both detector-event identity
 charts and determine a conserved global rod source in the finite spatial
@@ -66,8 +72,9 @@ clock-transported memories, detector-block-local composite polarizations,
 independent `epsilon_R`/`kappa` grading, the exact profile two-jet through
 `q3`, external-source boundary, and the physical real two-detector `Phi2`.
 The historical 78-row gate remains scoped history and is not a forward
-construction input.  The shifted Euler equations now close on the separate
-`(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes, while the mixed axis and
-full rod BV completion remain open.  The comparison ledger replays its
+construction input.  The shifted Euler equations and unary/causal complex now
+close on the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes, while
+the mixed axis, apparatus interactions, and observer morphism remain open.
+The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.
