@@ -1,0 +1,720 @@
+{
+  "claim_boundary": "This exact coefficient calculation identifies the complete rank-four, twelve-entry algebraic residue of the corrected first Nariai BGG square with the canonical contraction of the normal tractor curvature, (I_Omega xi)_a=Omega_ab xi^b. The identity is local, tensorial and checked in the certified homogeneous Nariai frame; homogeneity globalizes that natural operator identity on unit Nariai. It proves the correct homotopy-coherent first-square incidence and reclassifies the previous residual as geometric curvature rather than an unexplained algebraic obstruction. It does not construct the cyclic mapping cone, the dual equation and identity incidence rows, the compressed Bach middle, any support or Green operator, an open background class, a nonlinear theorem, or a quantum result. The strict square remains false on non-flat Nariai curvature.",
+  "conventions": {
+    "adjoint_basis": [
+      "P0",
+      "P1",
+      "P2",
+      "P3",
+      "M01",
+      "M02",
+      "M03",
+      "M12",
+      "M13",
+      "M23",
+      "D",
+      "K0",
+      "K1",
+      "K2",
+      "K3"
+    ],
+    "background": "unit Nariai dS2 x S2 in the certified orthonormal frame",
+    "curvature_coordinates": "Omega_ab is the normal standard-tractor curvature represented in the ordered adjoint basis",
+    "first_square": "d^D(L0+DeltaL0)-(L1+DeltaL1)K=I_Omega",
+    "incidence_map": "(I_Omega xi)_a=Omega_ab xi^b",
+    "sign_anchor": "the output one-form index is the first curvature index; Omega_ab=-Omega_ba"
+  },
+  "dependency_refs": {
+    "pointwise_curvature_gate": {
+      "artifact_id": "NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json",
+      "sha256": "162bfab1fd70de9e05451d37df487a678ef692890732e34f774b1ccd1f635d82"
+    },
+    "strictification_screen": {
+      "artifact_id": "NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1.json",
+      "sha256": "f28040f4376bb1bf6b26a55f297285e71cc1dcdfec9568b5b74cf79cfb4bbe20"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "adjoint_curvature_equals_normal_tractor_square": true,
+    "adjoint_support_indices": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "adjoint_support_names": [
+      "M01",
+      "M02",
+      "M03",
+      "M12",
+      "M13",
+      "M23"
+    ],
+    "incidence_nonzero_entries": 12,
+    "incidence_rank": 4,
+    "incidence_shape": [
+      60,
+      4
+    ],
+    "normal_tractor_square_defect_nonzero_entries": 0,
+    "normal_tractor_square_defect_rank": 0,
+    "normalized_coefficient": "(3/2)*I_Omega[4,1]",
+    "normalized_coefficient_value": "1",
+    "relative_defect_nonzero_entries": 0,
+    "relative_defect_rank": 0,
+    "residual_equals_incidence": true,
+    "residual_nonzero_entries": 12,
+    "residual_rank": 4,
+    "wrong_sign_defect_nonzero_entries": 12,
+    "wrong_sign_defect_rank": 4
+  },
+  "exact_data": {
+    "corrected_first_square_residual": {
+      "entries": [
+        {
+          "matrix": {
+            "entries": [
+              [
+                4,
+                1,
+                "2/3"
+              ],
+              [
+                5,
+                2,
+                "-1/3"
+              ],
+              [
+                6,
+                3,
+                "-1/3"
+              ],
+              [
+                19,
+                0,
+                "-2/3"
+              ],
+              [
+                22,
+                2,
+                "-1/3"
+              ],
+              [
+                23,
+                3,
+                "-1/3"
+              ],
+              [
+                35,
+                0,
+                "1/3"
+              ],
+              [
+                37,
+                1,
+                "1/3"
+              ],
+              [
+                39,
+                3,
+                "2/3"
+              ],
+              [
+                51,
+                0,
+                "1/3"
+              ],
+              [
+                53,
+                1,
+                "1/3"
+              ],
+              [
+                54,
+                2,
+                "-2/3"
+              ]
+            ],
+            "sha256": "a6e1c9d5e466f569f2be03bf4ec73669bd0b2a82872dcca57bafc97a15422017",
+            "shape": [
+              60,
+              4
+            ]
+          },
+          "word": []
+        }
+      ],
+      "sha256": "6d6519a7a42d59feb2a7d5e2810521dd6f88bbbef20a4f0fdc59643a02a950df"
+    },
+    "curvature_incidence": {
+      "entries": [
+        [
+          4,
+          1,
+          "2/3"
+        ],
+        [
+          5,
+          2,
+          "-1/3"
+        ],
+        [
+          6,
+          3,
+          "-1/3"
+        ],
+        [
+          19,
+          0,
+          "-2/3"
+        ],
+        [
+          22,
+          2,
+          "-1/3"
+        ],
+        [
+          23,
+          3,
+          "-1/3"
+        ],
+        [
+          35,
+          0,
+          "1/3"
+        ],
+        [
+          37,
+          1,
+          "1/3"
+        ],
+        [
+          39,
+          3,
+          "2/3"
+        ],
+        [
+          51,
+          0,
+          "1/3"
+        ],
+        [
+          53,
+          1,
+          "1/3"
+        ],
+        [
+          54,
+          2,
+          "-2/3"
+        ]
+      ],
+      "sha256": "a6e1c9d5e466f569f2be03bf4ec73669bd0b2a82872dcca57bafc97a15422017",
+      "shape": [
+        60,
+        4
+      ]
+    },
+    "normal_tractor_curvature_coordinates": {
+      "entries": [
+        {
+          "matrix": {
+            "entries": [
+              [
+                4,
+                0,
+                "2/3"
+              ]
+            ],
+            "sha256": "3101dba1eb9ef77e720d77fbfeaf36ff860bca14fbddb024f874ef0299b75fe2",
+            "shape": [
+              15,
+              1
+            ]
+          },
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                5,
+                0,
+                "-1/3"
+              ]
+            ],
+            "sha256": "e3be6f2ef495e3b2b2bd9e6e063e49ceaa72bc84fd6bfd22f83d9088e8945440",
+            "shape": [
+              15,
+              1
+            ]
+          },
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                6,
+                0,
+                "-1/3"
+              ]
+            ],
+            "sha256": "22c463559f3585f63cdff51aaa2863aaaabaa954e3f9922c71b476e12465be44",
+            "shape": [
+              15,
+              1
+            ]
+          },
+          "word": [
+            0,
+            3
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                7,
+                0,
+                "-1/3"
+              ]
+            ],
+            "sha256": "7959fc44376c90d1c3b325a39373b6bde5a869eba5e04ba99917dbdacfbdebe8",
+            "shape": [
+              15,
+              1
+            ]
+          },
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                8,
+                0,
+                "-1/3"
+              ]
+            ],
+            "sha256": "4e728fe25436730cbae0f98dd295ee3c9094cdbb7ed6516bbca5315fe54e803d",
+            "shape": [
+              15,
+              1
+            ]
+          },
+          "word": [
+            1,
+            3
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                9,
+                0,
+                "2/3"
+              ]
+            ],
+            "sha256": "375a6c8c7af96bc775353b5c878c331024418f1af2eeec7c768a723044635154",
+            "shape": [
+              15,
+              1
+            ]
+          },
+          "word": [
+            2,
+            3
+          ]
+        }
+      ],
+      "sha256": "98f5c8cb6932f7bc9a40fb7f0f8f0f6d236f58b182a1db4680407ccd4d423c20"
+    },
+    "normal_tractor_square_defect": {
+      "entries": [],
+      "sha256": "06aefe8f4c0ba6360700d19c84f0417e2c024e62d472351930ad3ab77ae8f77d",
+      "shape": [
+        90,
+        15
+      ]
+    },
+    "reconstructed_adjoint_curvature_square": {
+      "entries": [
+        [
+          0,
+          1,
+          "2/3"
+        ],
+        [
+          1,
+          0,
+          "2/3"
+        ],
+        [
+          5,
+          7,
+          "2/3"
+        ],
+        [
+          6,
+          8,
+          "2/3"
+        ],
+        [
+          7,
+          5,
+          "2/3"
+        ],
+        [
+          8,
+          6,
+          "2/3"
+        ],
+        [
+          11,
+          12,
+          "-2/3"
+        ],
+        [
+          12,
+          11,
+          "-2/3"
+        ],
+        [
+          15,
+          2,
+          "-1/3"
+        ],
+        [
+          17,
+          0,
+          "-1/3"
+        ],
+        [
+          19,
+          7,
+          "1/3"
+        ],
+        [
+          21,
+          9,
+          "-1/3"
+        ],
+        [
+          22,
+          4,
+          "1/3"
+        ],
+        [
+          24,
+          6,
+          "-1/3"
+        ],
+        [
+          26,
+          13,
+          "1/3"
+        ],
+        [
+          28,
+          11,
+          "1/3"
+        ],
+        [
+          30,
+          3,
+          "-1/3"
+        ],
+        [
+          33,
+          0,
+          "-1/3"
+        ],
+        [
+          34,
+          8,
+          "1/3"
+        ],
+        [
+          35,
+          9,
+          "1/3"
+        ],
+        [
+          38,
+          4,
+          "1/3"
+        ],
+        [
+          39,
+          5,
+          "1/3"
+        ],
+        [
+          41,
+          14,
+          "1/3"
+        ],
+        [
+          44,
+          11,
+          "1/3"
+        ],
+        [
+          46,
+          2,
+          "-1/3"
+        ],
+        [
+          47,
+          1,
+          "1/3"
+        ],
+        [
+          49,
+          5,
+          "-1/3"
+        ],
+        [
+          50,
+          4,
+          "1/3"
+        ],
+        [
+          53,
+          9,
+          "-1/3"
+        ],
+        [
+          54,
+          8,
+          "1/3"
+        ],
+        [
+          57,
+          13,
+          "-1/3"
+        ],
+        [
+          58,
+          12,
+          "1/3"
+        ],
+        [
+          61,
+          3,
+          "-1/3"
+        ],
+        [
+          63,
+          1,
+          "1/3"
+        ],
+        [
+          64,
+          6,
+          "-1/3"
+        ],
+        [
+          66,
+          4,
+          "1/3"
+        ],
+        [
+          67,
+          9,
+          "1/3"
+        ],
+        [
+          69,
+          7,
+          "-1/3"
+        ],
+        [
+          72,
+          14,
+          "-1/3"
+        ],
+        [
+          74,
+          12,
+          "1/3"
+        ],
+        [
+          77,
+          3,
+          "2/3"
+        ],
+        [
+          78,
+          2,
+          "-2/3"
+        ],
+        [
+          80,
+          6,
+          "2/3"
+        ],
+        [
+          81,
+          5,
+          "-2/3"
+        ],
+        [
+          82,
+          8,
+          "2/3"
+        ],
+        [
+          83,
+          7,
+          "-2/3"
+        ],
+        [
+          88,
+          14,
+          "2/3"
+        ],
+        [
+          89,
+          13,
+          "-2/3"
+        ]
+      ],
+      "sha256": "ab1e752d3c1bd5e8b1057f44f8b4e5d4827b6651b99dafeb186bd3354122f2b9",
+      "shape": [
+        90,
+        15
+      ]
+    },
+    "relative_chain_defect": {
+      "entries": [],
+      "sha256": "5ef0a81c29e16704002920dfb37a28dd7872ede1f5b5bfc4088ed051820b096d",
+      "shape": [
+        60,
+        4
+      ]
+    },
+    "wrong_sign_defect": {
+      "entries": [
+        [
+          4,
+          1,
+          "4/3"
+        ],
+        [
+          5,
+          2,
+          "-2/3"
+        ],
+        [
+          6,
+          3,
+          "-2/3"
+        ],
+        [
+          19,
+          0,
+          "-4/3"
+        ],
+        [
+          22,
+          2,
+          "-2/3"
+        ],
+        [
+          23,
+          3,
+          "-2/3"
+        ],
+        [
+          35,
+          0,
+          "2/3"
+        ],
+        [
+          37,
+          1,
+          "2/3"
+        ],
+        [
+          39,
+          3,
+          "4/3"
+        ],
+        [
+          51,
+          0,
+          "2/3"
+        ],
+        [
+          53,
+          1,
+          "2/3"
+        ],
+        [
+          54,
+          2,
+          "-4/3"
+        ]
+      ],
+      "sha256": "ca625c0f4e49f7d9302cd557783936ab8d76bf29a164e2bb539525743bd8829c",
+      "shape": [
+        60,
+        4
+      ]
+    }
+  },
+  "flags": {
+    "CURVATURE_INCIDENCE_IDENTITY_EXACT": true,
+    "CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE": false,
+    "NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1": true,
+    "NARIAI_CURVED_BGG_HPL_COMPRESSION": false,
+    "NARIAI_GREEN_HOMOTOPY": false,
+    "QUANTUM_CLAIM": false,
+    "RESIDUAL_IS_UNEXPLAINED_OBSTRUCTION": false,
+    "STRICT_FIRST_BGG_SQUARE": false
+  },
+  "next_gate": "C_G2_NARIAI_CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE",
+  "provenance": {
+    "source_manifest": {
+      "covariant_completion/curved_operator/adjoint_tractor_kostant_compression.py": "57c46c94701f57912612ad0e9100746a7acf533e44a35c3a712c40afd64efbb7",
+      "d_quotient_classical/causal_transfer/nariai_curvature_incidence_first_square.py": "a0c92449e0df0d32b3fad1698b8669aea748819858ae9a6db43f872735092901",
+      "d_quotient_classical/causal_transfer/nariai_first_differential_bgg_correction.py": "fe62c501111634a740b6e6af731e4318c06675ed6086b05a06727005818c97e9",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_curvature_incidence_first_square.py": "ac71359e8e72773d965d68d50f3d6ce8d61f2f83539f3f90092ae3ae7b1cd66b",
+      "d_quotient_classical/causal_transfer/verify_nariai_curvature_incidence_first_square.py": "c0e8ac1b1eb84e14ca44c6ad66cd227fcc3ddc81d02eaff1fd13c1c26b6c04a8",
+      "d_quotient_classical/schema/nariai-curvature-incidence-first-square-v1.schema.json": "fac87b86541ae852d358f712e0a75059e11dbd2e77a97d818f670e6bb3edb3a3"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_curvature_incidence_first_square.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_curvature_incidence_first_square.py",
+      "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_curvature_incidence_first_square",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-curvature-incidence-first-square-v1.schema.json -d d_quotient_classical/certificates/NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1",
+  "result_state": "CANONICAL_CURVATURE_INCIDENCE_IDENTITY_EXACT",
+  "schema": "pure-weyl-nariai-curvature-incidence-first-square-v1",
+  "theorem": {
+    "interpretation": "The twelve-term residue is not unexplained cone cohomology and is not evidence for a missing algebraic endpoint potential. It is the curved-connection Lie-derivative incidence term. A strict square is therefore the wrong curved target; the next construction must retain this term in a homotopy-coherent or mapping-cone square and add its cyclic dual rows.",
+    "statement": "After the unique normalized zeroth-order correction of the first differential BGG lift, the complete remaining Nariai square defect is exactly the canonical curvature-incidence map I_Omega, coefficient by coefficient.",
+    "strict_square_still_false": true
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-curvature-incidence-first-square-v1.schema.json",
+  "title": "Nariai curvature-incidence first-square identity",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "conventions", "exact_data", "exact_checks", "theorem", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-curvature-incidence-first-square-v1"},
+    "result_id": {"const": "NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1"},
+    "result_state": {"const": "CANONICAL_CURVATURE_INCIDENCE_IDENTITY_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["strictification_screen", "pointwise_curvature_gate"],
+      "properties": {
+        "strictification_screen": {"$ref": "#/$defs/dependency"},
+        "pointwise_curvature_gate": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "conventions": {
+      "type": "object",
+      "required": ["background", "adjoint_basis", "curvature_coordinates", "incidence_map", "first_square", "sign_anchor"],
+      "properties": {
+        "background": {"type": "string"},
+        "adjoint_basis": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"type": "string"}},
+        "curvature_coordinates": {"type": "string"},
+        "incidence_map": {"const": "(I_Omega xi)_a=Omega_ab xi^b"},
+        "first_square": {"const": "d^D(L0+DeltaL0)-(L1+DeltaL1)K=I_Omega"},
+        "sign_anchor": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "exact_data": {
+      "type": "object",
+      "required": ["normal_tractor_curvature_coordinates", "curvature_incidence", "reconstructed_adjoint_curvature_square", "normal_tractor_square_defect", "corrected_first_square_residual", "relative_chain_defect", "wrong_sign_defect"],
+      "properties": {
+        "normal_tractor_curvature_coordinates": {"$ref": "#/$defs/table"},
+        "curvature_incidence": {"$ref": "#/$defs/sparse"},
+        "reconstructed_adjoint_curvature_square": {"$ref": "#/$defs/sparse"},
+        "normal_tractor_square_defect": {"$ref": "#/$defs/sparse"},
+        "corrected_first_square_residual": {"$ref": "#/$defs/table"},
+        "relative_chain_defect": {"$ref": "#/$defs/sparse"},
+        "wrong_sign_defect": {"$ref": "#/$defs/sparse"}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["incidence_shape", "incidence_rank", "incidence_nonzero_entries", "residual_rank", "residual_nonzero_entries", "residual_equals_incidence", "adjoint_curvature_equals_normal_tractor_square", "normal_tractor_square_defect_rank", "normal_tractor_square_defect_nonzero_entries", "relative_defect_rank", "relative_defect_nonzero_entries", "wrong_sign_defect_rank", "wrong_sign_defect_nonzero_entries", "adjoint_support_indices", "adjoint_support_names", "normalized_coefficient", "normalized_coefficient_value"],
+      "properties": {
+        "incidence_shape": {"const": [60, 4]},
+        "incidence_rank": {"const": 4},
+        "incidence_nonzero_entries": {"const": 12},
+        "residual_rank": {"const": 4},
+        "residual_nonzero_entries": {"const": 12},
+        "residual_equals_incidence": {"const": true},
+        "adjoint_curvature_equals_normal_tractor_square": {"const": true},
+        "normal_tractor_square_defect_rank": {"const": 0},
+        "normal_tractor_square_defect_nonzero_entries": {"const": 0},
+        "relative_defect_rank": {"const": 0},
+        "relative_defect_nonzero_entries": {"const": 0},
+        "wrong_sign_defect_rank": {"const": 4},
+        "wrong_sign_defect_nonzero_entries": {"const": 12},
+        "adjoint_support_indices": {"const": [4, 5, 6, 7, 8, 9]},
+        "adjoint_support_names": {"const": ["M01", "M02", "M03", "M12", "M13", "M23"]},
+        "normalized_coefficient": {"const": "(3/2)*I_Omega[4,1]"},
+        "normalized_coefficient_value": {"const": "1"}
+      },
+      "additionalProperties": false
+    },
+    "theorem": {
+      "type": "object",
+      "required": ["statement", "interpretation", "strict_square_still_false"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 150},
+        "interpretation": {"type": "string", "minLength": 200},
+        "strict_square_still_false": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1", "CURVATURE_INCIDENCE_IDENTITY_EXACT", "RESIDUAL_IS_UNEXPLAINED_OBSTRUCTION", "STRICT_FIRST_BGG_SQUARE", "CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE", "NARIAI_CURVED_BGG_HPL_COMPRESSION", "NARIAI_GREEN_HOMOTOPY", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1": {"const": true},
+        "CURVATURE_INCIDENCE_IDENTITY_EXACT": {"const": true},
+        "RESIDUAL_IS_UNEXPLAINED_OBSTRUCTION": {"const": false},
+        "STRICT_FIRST_BGG_SQUARE": {"const": false},
+        "CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE": {"const": false},
+        "NARIAI_CURVED_BGG_HPL_COMPRESSION": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE"},
+    "claim_boundary": {"type": "string", "minLength": 600},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "sparse": {
+      "type": "object",
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "required": ["entries", "sha256"],
+      "properties": {
+        "entries": {"type": "array", "items": {"type": "object", "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/sparse"}}, "additionalProperties": false}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

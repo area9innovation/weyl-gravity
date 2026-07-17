@@ -180,12 +180,23 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   open:
   [`certificates/NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1.json`](certificates/NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1.json),
   [`reports/nariai-first-bgg-zeroth-order-strictification-obstruction.md`](reports/nariai-first-bgg-zeroth-order-strictification-obstruction.md)
+- Curvature-incidence resolution of that residue: coefficient by coefficient,
+  the rank-four twelve-entry term is exactly
+  `d^D L0 - L1_corrected K = I_Omega`, with
+  `(I_Omega xi)_a = Omega_ab xi^b`.  The independently reconstructed
+  `ad(Omega)` also agrees exactly with the PBW normal-tractor square.  Thus
+  the residue is the canonical curved-connection incidence, not unexplained
+  cone cohomology.  The strict square remains false; its cyclic mapping-cone
+  completion is the next gate:
+  [`certificates/NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1.json`](certificates/NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1.json),
+  [`reports/nariai-curvature-incidence-first-square.md`](reports/nariai-curvature-incidence-first-square.md)
 - Weaker Yang--Mills translation gate: the corrected component parent now
   satisfies `M^D d^D=0` exactly.  Its naive BGG compression has only a
   24-entry first-order gauge defect.  The unique algebraic endpoint term that
   cancels this defect is noncyclic: its pairing defect has rank two and
   normalized witness one.  Thus the next repair must be a differential lift
-  or a curvature-incidence mapping cone, not another algebraic endpoint term:
+  or the now-identified curvature-incidence mapping cone, not another
+  algebraic endpoint term:
   [`certificates/NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1.json`](certificates/NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1.json),
   [`reports/nariai-algebraic-endpoint-curvature-repair-obstruction.md`](reports/nariai-algebraic-endpoint-curvature-repair-obstruction.md)
 - Strict portable consumer gate and accepted Berger adapter:
