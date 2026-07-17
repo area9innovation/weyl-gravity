@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-maxwell-bv-semidirect-preflight-v1.schema.json",
+  "title": "Berger Maxwell BV semidirect and relational apparatus preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "generality_level",
+    "dependency_tags", "dependency_refs", "maxwell_bv_complex",
+    "semidirect_q2_gauge_sector", "dynamical_mixed_q2_ledger",
+    "relational_apparatus_contract", "flags", "next_gate", "provenance",
+    "verification_receipts", "higher_tiers_not_run", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-maxwell-bv-semidirect-preflight-v1"},
+    "result_id": {"const": "BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_MAXWELL_BV_GAUGE_SEMIDIRECT_AND_APPARATUS_CONTRACT_FULL_DRESSING_INPUT_BLOCKED"},
+    "generality_level": {"const": "G0_TO_G1_PREFLIGHT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gravity_clock_q2", "dynamical_maxwell_mode"],
+      "properties": {
+        "gravity_clock_q2": {"$ref": "#/$defs/dependency"},
+        "dynamical_maxwell_mode": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "maxwell_bv_complex": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimal_rows", "combined_gravity_clock_maxwell_rows", "row_layout", "unary_chain", "odd_pairing", "action", "weyl_weights", "background_maxwell_field"],
+      "properties": {
+        "minimal_rows": {"const": 10},
+        "combined_gravity_clock_maxwell_rows": {"const": 64},
+        "row_layout": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "prefixItems": [
+            {"$ref": "#/$defs/ghost_row"},
+            {"$ref": "#/$defs/potential_row"},
+            {"$ref": "#/$defs/antifield_row"},
+            {"$ref": "#/$defs/ghost_antifield_row"}
+          ],
+          "items": false
+        },
+        "unary_chain": {"type": "string", "minLength": 20},
+        "odd_pairing": {"type": "string", "minLength": 20},
+        "action": {"type": "string", "minLength": 50},
+        "weyl_weights": {
+          "type": "object", "additionalProperties": false,
+          "required": ["A", "c_M", "F"],
+          "properties": {"A": {"const": 0}, "c_M": {"const": 0}, "F": {"const": 0}}
+        },
+        "background_maxwell_field": {"type": "string", "minLength": 30}
+      }
+    },
+    "semidirect_q2_gauge_sector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ghost_bracket", "potential_action", "field_strength_action", "weyl_action", "certified_blocks", "exact_checks"],
+      "properties": {
+        "ghost_bracket": {"type": "string", "minLength": 30},
+        "potential_action": {"type": "string", "minLength": 20},
+        "field_strength_action": {"type": "string", "minLength": 15},
+        "weyl_action": {"type": "string", "minLength": 20},
+        "certified_blocks": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 10}},
+        "exact_checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["coefficient_domain", "action_commutator_residual", "semidirect_jacobi_vector_residual", "semidirect_jacobi_u1_residual", "d_squared_residual", "field_strength_gauge_residual", "field_strength_covariance_residual", "four_dimensional_hodge_weyl_exponent_on_two_forms"],
+          "properties": {
+            "coefficient_domain": {"const": "arbitrary smooth four-dimensional local component functions"},
+            "action_commutator_residual": {"const": ["0", "0", "0", "0"]},
+            "semidirect_jacobi_vector_residual": {"const": ["0", "0", "0", "0"]},
+            "semidirect_jacobi_u1_residual": {"const": "0"},
+            "d_squared_residual": {
+              "const": {"01": "0", "02": "0", "03": "0", "12": "0", "13": "0", "23": "0"}
+            },
+            "field_strength_gauge_residual": {"type": "object", "maxProperties": 0},
+            "field_strength_covariance_residual": {"type": "object", "maxProperties": 0},
+            "four_dimensional_hodge_weyl_exponent_on_two_forms": {"const": "4-2*2=0"}
+          }
+        }
+      }
+    },
+    "dynamical_mixed_q2_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "required_blocks", "not_present_in_authoritative_gravity_payload_reason", "first_transfer_consumer", "negative_direction_verdict"],
+      "properties": {
+        "status": {"const": "INPUT_BLOCKED"},
+        "required_blocks": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 25}},
+        "not_present_in_authoritative_gravity_payload_reason": {"type": "string", "minLength": 60},
+        "first_transfer_consumer": {"type": "string", "minLength": 40},
+        "negative_direction_verdict": {"type": "string", "minLength": 60}
+      }
+    },
+    "relational_apparatus_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "homogeneity_defect", "reference_data", "nondegeneracy_condition", "emitter_worldtube", "receiver_worldtube", "source_requirement", "retarded_requirement", "detector_reading", "frequency_ratio", "missing_exact_inputs"],
+      "properties": {
+        "status": {"const": "CONTRACT_COMPLETE_EXACT_FIXTURE_INPUT_BLOCKED"},
+        "homogeneity_defect": {"type": "string", "minLength": 40},
+        "reference_data": {"type": "string", "minLength": 40},
+        "nondegeneracy_condition": {"type": "string", "minLength": 40},
+        "emitter_worldtube": {"type": "string", "minLength": 25},
+        "receiver_worldtube": {"type": "string", "minLength": 25},
+        "source_requirement": {"type": "string", "minLength": 40},
+        "retarded_requirement": {"type": "string", "minLength": 35},
+        "detector_reading": {"type": "string", "minLength": 50},
+        "frequency_ratio": {"type": "string", "minLength": 50},
+        "missing_exact_inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 25}}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_MAXWELL_MINIMAL_BV_LAYOUT", "BERGER_MAXWELL_SEMIDIRECT_GAUGE_Q2", "BERGER_RELATIONAL_APPARATUS_CONTRACT", "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2", "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING", "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE", "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL", "BERGER_MAXWELL_BACKREACTION", "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_MAXWELL_MINIMAL_BV_LAYOUT": {"const": true},
+        "BERGER_MAXWELL_SEMIDIRECT_GAUGE_Q2": {"const": true},
+        "BERGER_RELATIONAL_APPARATUS_CONTRACT": {"const": true},
+        "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": {"const": false},
+        "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": {"const": false},
+        "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
+        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": {"const": false},
+        "BERGER_MAXWELL_BACKREACTION": {"const": false},
+        "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_FIRST_MIXED_MAXWELL_Q2_TAYLOR_BLOCK_AND_LOCAL_APPARATUS_FIXTURE"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 40}, "tier_3": {"type": "string", "minLength": 40}}
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 5},
+        "result_id": {"type": "string", "minLength": 5},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "ghost_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_id", "degree", "multiplicity", "role"],
+      "properties": {"row_id": {"const": "c_M"}, "degree": {"const": -1}, "multiplicity": {"const": 1}, "role": {"const": "Maxwell ghost"}}
+    },
+    "potential_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_id", "degree", "multiplicity", "role"],
+      "properties": {"row_id": {"const": "A_mu"}, "degree": {"const": 0}, "multiplicity": {"const": 4}, "role": {"const": "Maxwell potential"}}
+    },
+    "antifield_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_id", "degree", "multiplicity", "role"],
+      "properties": {"row_id": {"const": "A_plus_mu"}, "degree": {"const": 1}, "multiplicity": {"const": 4}, "role": {"const": "Maxwell antifield density"}}
+    },
+    "ghost_antifield_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row_id", "degree", "multiplicity", "role"],
+      "properties": {"row_id": {"const": "c_M_plus"}, "degree": {"const": 2}, "multiplicity": {"const": 1}, "role": {"const": "Maxwell ghost antifield density"}}
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {
+        "test_tier": {"const": 1},
+        "command": {"type": "string", "minLength": 20},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "status": {"const": "PASS"}
+      }
+    }
+  }
+}

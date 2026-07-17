@@ -1,0 +1,182 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC preflight fixes the ten-row minimal Maxwell BV layout, proves the arbitrary-function Diff-semidirect-U(1) gauge identities and four-dimensional Weyl inertness, binds the resulting 64-row consumer layout to the authoritative 54-row gravity-clock q2, and specifies the relational apparatus contract. It does not export the h-A-to-A-plus or A-A-to-h-plus dynamical q2 blocks, transfer a gravity-Maxwell interaction, construct rods, a compact source, a retarded Green operator, localized endpoints, backreaction, a Lorentzian quantum theory, or a quantum claim.",
+  "claim_status": "CERTIFIED_MAXWELL_BV_GAUGE_SEMIDIRECT_AND_APPARATUS_CONTRACT_FULL_DRESSING_INPUT_BLOCKED",
+  "dependency_refs": {
+    "dynamical_maxwell_mode": {
+      "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+      "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996"
+    },
+    "gravity_clock_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "dynamical_mixed_q2_ledger": {
+    "first_transfer_consumer": "ell2_res(x,y)=pi_cl q2(iota x,iota y), with homotopy correction data retained for the next arity",
+    "negative_direction_verdict": "not introduced by the gauge-sector extension; the full mixed dynamical block remains unevaluated",
+    "not_present_in_authoritative_gravity_payload_reason": "BERGER_SUPPORT_LOCAL_Q2 exports the pure Weyl-plus-clock action on 54 rows and contains no Maxwell rows",
+    "required_blocks": [
+      "q2(h_hat,A)->A_plus: first metric variation of d star_g d",
+      "q2(A,A)->h_hat_plus: Maxwell stress-energy source in the gravity equation",
+      "canonical antifield partners required by BV cyclicity"
+    ],
+    "status": "INPUT_BLOCKED"
+  },
+  "flags": {
+    "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": false,
+    "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": false,
+    "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": false,
+    "BERGER_MAXWELL_BACKREACTION": false,
+    "BERGER_MAXWELL_MINIMAL_BV_LAYOUT": true,
+    "BERGER_MAXWELL_SEMIDIRECT_GAUGE_Q2": true,
+    "BERGER_RELATIONAL_APPARATUS_CONTRACT": true,
+    "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "generality_level": "G0_TO_G1_PREFLIGHT",
+  "higher_tiers_not_run": {
+    "tier_2": "The two authoritative inputs are unchanged and content-addressed; this preflight adds no mixed dynamical Taylor coefficient.",
+    "tier_3": "No freeze, shared-core algebra change, lifecycle promotion, or Lorentzian certification is made."
+  },
+  "maxwell_bv_complex": {
+    "action": "S_M=-1/2 integral(F wedge star_g F)+integral(A_plus wedge(L_c A+d c_M))+integral(c_M_plus L_c c_M)",
+    "background_maxwell_field": "zero for the unary direct-sum complex; the certified traveling mode is a fluctuation",
+    "combined_gravity_clock_maxwell_rows": 64,
+    "minimal_rows": 10,
+    "odd_pairing": "integral(delta A wedge delta A_plus + delta c_M delta c_M_plus)",
+    "row_layout": [
+      {
+        "degree": -1,
+        "multiplicity": 1,
+        "role": "Maxwell ghost",
+        "row_id": "c_M"
+      },
+      {
+        "degree": 0,
+        "multiplicity": 4,
+        "role": "Maxwell potential",
+        "row_id": "A_mu"
+      },
+      {
+        "degree": 1,
+        "multiplicity": 4,
+        "role": "Maxwell antifield density",
+        "row_id": "A_plus_mu"
+      },
+      {
+        "degree": 2,
+        "multiplicity": 1,
+        "role": "Maxwell ghost antifield density",
+        "row_id": "c_M_plus"
+      }
+    ],
+    "unary_chain": "c_M --d--> A --d star d--> A_plus --d--> c_M_plus",
+    "weyl_weights": {
+      "A": 0,
+      "F": 0,
+      "c_M": 0
+    }
+  },
+  "next_gate": "BERGER_FIRST_MIXED_MAXWELL_Q2_TAYLOR_BLOCK_AND_LOCAL_APPARATUS_FIXTURE",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_maxwell_bv_semidirect_preflight.py": "3646d4e00df705dfff1d6f181c4c0dc14c3e574fd5e51cfab43b7f3df345101b",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_maxwell_bv_semidirect_preflight.py": "81378c2b0deedc66b38c9f6d709ac11a68c61b635507c7c528f07d7fcc6086d6",
+      "d_quotient_classical/backreacted_clock/verify_berger_maxwell_bv_semidirect_preflight.py": "5501d9550836ca5581827e0487694fc25b79c655cb929efedcc175e4628cd5e9",
+      "d_quotient_classical/schema/berger-maxwell-bv-semidirect-preflight-v1.schema.json": "d7d4b436a1d45ce200449d2a57193b1de3cb72c44c4a2f55442ca5eb2a0f2e79"
+    }
+  },
+  "relational_apparatus_contract": {
+    "detector_reading": "E_r=F_{mu alpha}F_nu^alpha u_r^mu u_r^nu evaluated at Theta=tau_r,R=r_r",
+    "emitter_worldtube": "W_e={R^I=r_e^I} inside a declared compact apparatus chart",
+    "frequency_ratio": "1+z=sqrt(E_e/E_r) after a common calibrated polarization/amplitude normalization",
+    "homogeneity_defect": "the Berger clock and anisotropy axis do not select a spatial base point",
+    "missing_exact_inputs": [
+      "an explicit local rod/reference-field solution and its standard-sign health check",
+      "compact conserved emitter current coefficients",
+      "a retarded Maxwell Green operator on the selected Berger clock domain",
+      "a detector response/window and a unique no-wrap causal intersection"
+    ],
+    "nondegeneracy_condition": "dTheta wedge dR1 wedge dR2 wedge dR3 is nonzero on each apparatus tube",
+    "receiver_worldtube": "W_r={R^I=r_r^I} inside a declared compact apparatus chart",
+    "reference_data": "Theta plus three local rod scalars R^I on neighborhoods of two compact timelike worldtubes",
+    "retarded_requirement": "F_ret=d G_ret J_e with support in J_plus(supp J_e)",
+    "source_requirement": "a compact conserved current J_e supported in W_e with d star J_e=0",
+    "status": "CONTRACT_COMPLETE_EXACT_FIXTURE_INPUT_BLOCKED"
+  },
+  "result_id": "BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT",
+  "schema": "pure-weyl-berger-maxwell-bv-semidirect-preflight-v1",
+  "semidirect_q2_gauge_sector": {
+    "certified_blocks": [
+      "q2(c_diff,c_M)->c_M",
+      "q2(c_diff,A)->A",
+      "their canonical antifield-density actions fixed by the displayed BV master term",
+      "zero Weyl-Maxwell gauge action"
+    ],
+    "exact_checks": {
+      "action_commutator_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "coefficient_domain": "arbitrary smooth four-dimensional local component functions",
+      "d_squared_residual": {
+        "01": "0",
+        "02": "0",
+        "03": "0",
+        "12": "0",
+        "13": "0",
+        "23": "0"
+      },
+      "field_strength_covariance_residual": {},
+      "field_strength_gauge_residual": {},
+      "four_dimensional_hodge_weyl_exponent_on_two_forms": "4-2*2=0",
+      "semidirect_jacobi_u1_residual": "0",
+      "semidirect_jacobi_vector_residual": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "field_strength_action": "delta_(xi,lambda) F=L_xi F",
+    "ghost_bracket": "[(xi,lambda),(eta,mu)]=([xi,eta],L_xi mu-L_eta lambda)",
+    "potential_action": "delta_(xi,lambda) A=L_xi A+d lambda",
+    "weyl_action": "delta_sigma A=delta_sigma c_M=delta_sigma F=0"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "verification_receipts": [
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_maxwell_bv_semidirect_preflight.py --check --guards",
+      "elapsed_seconds": 3.82,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_maxwell_bv_semidirect_preflight.py",
+      "elapsed_seconds": 2.56,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_maxwell_bv_semidirect_preflight",
+      "elapsed_seconds": 4.99,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-maxwell-bv-semidirect-preflight-v1.schema.json -d d_quotient_classical/certificates/BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT.json",
+      "elapsed_seconds": 3.8,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}
