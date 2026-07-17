@@ -1,0 +1,94 @@
+{
+  "approved_scope": {
+    "generator": "K_Berger=D-omega R",
+    "maximum_arity": 3,
+    "paper_lifecycle": "THEOREM_FROZEN",
+    "rows": 54,
+    "theorem": "gravity-clock q2 q3 causal cyclic K-Cartan through arity three"
+  },
+  "claim_boundary": "The nonlinear team re-signs the theorem-frozen Paper IX snapshot only for the 54-row gravity-clock K_Berger=D-omega R causal cyclic Cartan result through arity three. Raw affine D, arity four and all orders, Maxwell and observer extensions, Hadamard, QME, anomaly and quantum claims remain excluded.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Hadamard_and_quantum_remain_false": true,
+    "Maxwell_excluded_from_main_theorem": true,
+    "all_required_signoffs_present": true,
+    "arity_four_and_all_orders_remain_open": true,
+    "claims_C6_through_C10_are_K_scoped": true,
+    "frozen_claim_table_hash_pinned": true,
+    "observer_84_row_excluded_from_main_theorem": true,
+    "paper_source_hash_pinned": true,
+    "paper_state_theorem_frozen": true,
+    "paper_supplement_hash_pinned": true,
+    "prefreeze_nonlinear_signoff_hash_pinned": true,
+    "raw_D_remains_affine": true,
+    "ten_claim_ledger_unchanged": true
+  },
+  "excluded_scope": [
+    "affine raw-D Cartan",
+    "arity-four or convergent all-orders Cartan",
+    "Maxwell signal redshift or coupled 64-row theorem",
+    "observer-apparatus or 84-row theorem",
+    "Hadamard QME anomaly or quantum theorem"
+  ],
+  "flags": {
+    "ALL_ORDERS_CARTAN_CERTIFIED": false,
+    "ARITY_FOUR_CARTAN_CERTIFIED": false,
+    "HADAMARD_CERTIFIED": false,
+    "K_BERGER_CARTAN_THROUGH_ARITY_THREE": true,
+    "MAXWELL_MAIN_THEOREM_INCLUDED": false,
+    "OBSERVER_84_ROW_MAIN_THEOREM_INCLUDED": false,
+    "PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF": true,
+    "PAPER_09_THEOREM_FROZEN_ACCEPTED": true,
+    "QUANTUM_CLAIM": false,
+    "RAW_D_CARTAN_CERTIFIED": false
+  },
+  "next_gate": "POST_FREEZE_OBSERVER_AND_MAXWELL_RESULTS_REMAIN_SEPARATE",
+  "result_id": "PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF",
+  "review_status": "REISSUED_AND_SIGNED_FROZEN_SCOPED_K_THEOREM",
+  "reviewer_role": "NONLINEAR_TEAM_INTERNAL_REVIEWER",
+  "schema": "pure-weyl-paper-09-nonlinear-frozen-k-generator-signoff-v1",
+  "setting_id": "compact_positive_berger_clock_q_9_over_40",
+  "source_manifest": {
+    "frozen_claim_table": {
+      "commit": "408824d58392be368831ccf1cdc4ad0000cf823a",
+      "path": "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
+      "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
+      "sha256": "90d53b7fa16ec71b7ab9c970d514bc3017511f7ac9f9848adf44a6a7f60b8c90"
+    },
+    "generator_audit": {
+      "commit": "d4e6645f94afe95e4821912d20e0b14656e360ea",
+      "path": "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
+      "result_id": "BERGER_GENERATOR_CONJUGATION_AUDIT",
+      "sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149"
+    },
+    "paper_source": {
+      "commit": "408824d58392be368831ccf1cdc4ad0000cf823a",
+      "path": "paper/09-relational-clocks-berger-d-cartan.tex",
+      "sha256": "817771965e1f32120743214a87124cc3e70ea2f46cc136a6caeada21e333f919"
+    },
+    "paper_supplement": {
+      "commit": "408824d58392be368831ccf1cdc4ad0000cf823a",
+      "path": "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex",
+      "sha256": "c18235ff2e41372949e2d63a7f3ec30a7ae0df497b92e4eb9a540656e7b997ce"
+    },
+    "prefreeze_nonlinear_signoff": {
+      "commit": "78b0d7c2e47a9817a9098b617369df2685cf2c30",
+      "path": "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
+      "result_id": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+      "sha256": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8"
+    }
+  },
+  "verification": {
+    "commands": [
+      "python3 d_quotient_classical/backreacted_clock/paper_09_nonlinear_frozen_k_generator_signoff.py --check",
+      "python3 d_quotient_classical/backreacted_clock/verify_paper_09_nonlinear_frozen_k_generator_signoff.py --check --mutations",
+      "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_paper_09_nonlinear_frozen_k_generator_signoff"
+    ],
+    "higher_tiers": "not rerun; this reissue audits the committed frozen lifecycle snapshot without changing mathematical inputs",
+    "tier_0": "strict JSON schema and Python parse plus scoped diff check",
+    "tier_1": "deterministic producer, independent semantic verifier, mutation rail and unit tests"
+  }
+}

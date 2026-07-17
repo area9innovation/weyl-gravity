@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-paper-09-nonlinear-frozen-k-generator-signoff-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "reviewer_role", "review_status", "setting_id",
+    "dependency_tags", "source_manifest", "approved_scope", "excluded_scope",
+    "exact_checks", "flags", "verification", "claim_boundary", "next_gate"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-paper-09-nonlinear-frozen-k-generator-signoff-v1"},
+    "result_id": {"const": "PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF"},
+    "reviewer_role": {"const": "NONLINEAR_TEAM_INTERNAL_REVIEWER"},
+    "review_status": {"const": "REISSUED_AND_SIGNED_FROZEN_SCOPED_K_THEOREM"},
+    "setting_id": {"const": "compact_positive_berger_clock_q_9_over_40"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "source_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frozen_claim_table", "prefreeze_nonlinear_signoff", "generator_audit", "paper_source", "paper_supplement"],
+      "properties": {
+        "frozen_claim_table": {"$ref": "#/$defs/evidence"},
+        "prefreeze_nonlinear_signoff": {"$ref": "#/$defs/evidence"},
+        "generator_audit": {"$ref": "#/$defs/evidence"},
+        "paper_source": {"$ref": "#/$defs/source"},
+        "paper_supplement": {"$ref": "#/$defs/source"}
+      }
+    },
+    "approved_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator", "maximum_arity", "rows", "paper_lifecycle", "theorem"],
+      "properties": {
+        "generator": {"const": "K_Berger=D-omega R"},
+        "maximum_arity": {"const": 3},
+        "rows": {"const": 54},
+        "paper_lifecycle": {"const": "THEOREM_FROZEN"},
+        "theorem": {"const": "gravity-clock q2 q3 causal cyclic K-Cartan through arity three"}
+      }
+    },
+    "excluded_scope": {
+      "const": [
+        "affine raw-D Cartan",
+        "arity-four or convergent all-orders Cartan",
+        "Maxwell signal redshift or coupled 64-row theorem",
+        "observer-apparatus or 84-row theorem",
+        "Hadamard QME anomaly or quantum theorem"
+      ]
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frozen_claim_table_hash_pinned", "paper_source_hash_pinned",
+        "paper_supplement_hash_pinned", "prefreeze_nonlinear_signoff_hash_pinned",
+        "paper_state_theorem_frozen", "all_required_signoffs_present",
+        "ten_claim_ledger_unchanged", "claims_C6_through_C10_are_K_scoped",
+        "raw_D_remains_affine", "arity_four_and_all_orders_remain_open",
+        "Maxwell_excluded_from_main_theorem", "observer_84_row_excluded_from_main_theorem",
+        "Hadamard_and_quantum_remain_false"
+      ],
+      "properties": {
+        "frozen_claim_table_hash_pinned": {"const": true},
+        "paper_source_hash_pinned": {"const": true},
+        "paper_supplement_hash_pinned": {"const": true},
+        "prefreeze_nonlinear_signoff_hash_pinned": {"const": true},
+        "paper_state_theorem_frozen": {"const": true},
+        "all_required_signoffs_present": {"const": true},
+        "ten_claim_ledger_unchanged": {"const": true},
+        "claims_C6_through_C10_are_K_scoped": {"const": true},
+        "raw_D_remains_affine": {"const": true},
+        "arity_four_and_all_orders_remain_open": {"const": true},
+        "Maxwell_excluded_from_main_theorem": {"const": true},
+        "observer_84_row_excluded_from_main_theorem": {"const": true},
+        "Hadamard_and_quantum_remain_false": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF", "PAPER_09_THEOREM_FROZEN_ACCEPTED",
+        "K_BERGER_CARTAN_THROUGH_ARITY_THREE", "RAW_D_CARTAN_CERTIFIED",
+        "ARITY_FOUR_CARTAN_CERTIFIED", "ALL_ORDERS_CARTAN_CERTIFIED",
+        "MAXWELL_MAIN_THEOREM_INCLUDED", "OBSERVER_84_ROW_MAIN_THEOREM_INCLUDED",
+        "HADAMARD_CERTIFIED", "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "PAPER_09_NONLINEAR_FROZEN_K_GENERATOR_SIGNOFF": {"const": true},
+        "PAPER_09_THEOREM_FROZEN_ACCEPTED": {"const": true},
+        "K_BERGER_CARTAN_THROUGH_ARITY_THREE": {"const": true},
+        "RAW_D_CARTAN_CERTIFIED": {"const": false},
+        "ARITY_FOUR_CARTAN_CERTIFIED": {"const": false},
+        "ALL_ORDERS_CARTAN_CERTIFIED": {"const": false},
+        "MAXWELL_MAIN_THEOREM_INCLUDED": {"const": false},
+        "OBSERVER_84_ROW_MAIN_THEOREM_INCLUDED": {"const": false},
+        "HADAMARD_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commands", "tier_0", "tier_1", "higher_tiers"],
+      "properties": {
+        "commands": {"const": [
+          "python3 d_quotient_classical/backreacted_clock/paper_09_nonlinear_frozen_k_generator_signoff.py --check",
+          "python3 d_quotient_classical/backreacted_clock/verify_paper_09_nonlinear_frozen_k_generator_signoff.py --check --mutations",
+          "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_paper_09_nonlinear_frozen_k_generator_signoff"
+        ]},
+        "tier_0": {"const": "strict JSON schema and Python parse plus scoped diff check"},
+        "tier_1": {"const": "deterministic producer, independent semantic verifier, mutation rail and unit tests"},
+        "higher_tiers": {"const": "not rerun; this reissue audits the committed frozen lifecycle snapshot without changing mathematical inputs"}
+      }
+    },
+    "claim_boundary": {"const": "The nonlinear team re-signs the theorem-frozen Paper IX snapshot only for the 54-row gravity-clock K_Berger=D-omega R causal cyclic Cartan result through arity three. Raw affine D, arity four and all orders, Maxwell and observer extensions, Hadamard, QME, anomaly and quantum claims remain excluded."},
+    "next_gate": {"const": "POST_FREEZE_OBSERVER_AND_MAXWELL_RESULTS_REMAIN_SEPARATE"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "commit": {"$ref": "#/$defs/commit"}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "commit", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "commit": {"$ref": "#/$defs/commit"}, "sha256": {"$ref": "#/$defs/hash"}}
+    }
+  }
+}
