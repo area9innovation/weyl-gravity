@@ -40,6 +40,8 @@ python3 -m closed_universe_observers.generate_berger_cg4_record_poisson_algebra 
 python3 -m closed_universe_observers.verify_berger_cg4_record_poisson_algebra
 python3 -m closed_universe_observers.generate_berger_localized_emitter_rank_two_transfer --check
 python3 -m closed_universe_observers.verify_berger_localized_emitter_rank_two_transfer
+python3 -m closed_universe_observers.generate_berger_dynamical_emitter_recoil_gate --check
+python3 -m closed_universe_observers.verify_berger_dynamical_emitter_recoil_gate
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -128,6 +130,12 @@ staggered source times to construct two compact conserved receiver-adjacent
 emitters.  Their response is triangular with determinant
 `-beta^2 S0 C1 != 0`.  A common emitter at the original Hopf event and
 dynamical emitter recoil remain open.
+The recoil input successor proves why that next coefficient cannot yet be
+computed: two local cyclic polarization-field completions reproduce the same
+external current but give exact recoil coefficients `1/2` and `1/5` on a
+shared mode.  The emitter carrier and action are therefore new physical
+input.  Rank two nevertheless survives every compatible formal completion
+because `-40 S0 C1/9` is the determinant's nonzero constant term.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

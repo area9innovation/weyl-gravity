@@ -1,0 +1,162 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL input gate proves that the current 84-row apparatus and localized-source certificates do not determine dynamical emitter recoil. They fix conserved external currents but no emitter carrier, pairing, kinetic operator, background equation, drive, or K_Berger action. Two local cyclic polarization-two-form completions with L_m=P_2+m^2 and the same background current J=delta Kbar are compatible after choosing f_m=L_m Kbar-g dAbar, yet their exact retarded recoil coefficients on a lambda=1 mode are 1/2 and 1/5. Thus the recoil kernel and first response correction are not inferable. Independently, the certified nonzero localized determinant is the constant term of every gauge-compatible formal recoil deformation M(epsilon)=M_0+epsilon M_1+..., so rank two survives over the formal coefficient ring. No specific emitter theory, recoil coefficient, enlarged BV complex, finite-parameter Green theorem, common-Hopf emitter, or quantum claim is certified.",
+  "claim_status": "DYNAMICAL_EMITTER_RECOIL_INPUT_UNDERDETERMINED_FORMAL_RANK_TWO_STABLE",
+  "dependency_refs": {
+    "apparatus_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "localized_transfer": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json",
+      "result_id": "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER",
+      "sha256": "2dc293d4edad9d7e687b5080b05ec9a40b16a83a55ecc2dd655e935295cb6148"
+    },
+    "observer_morphism": {
+      "path": "closed_universe_observers/certificates/BERGER_AFFINE_K_OBSERVER_MORPHISM.json",
+      "result_id": "BERGER_AFFINE_K_OBSERVER_MORPHISM",
+      "sha256": "b3dd4ec429fffab7a6a49d5495ce2ac1e8496cca16d83fbe9c8d41e0a75c07cc"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "DYNAMICAL_EMITTER_INPUT_UNDERDETERMINATION_CERTIFIED": true,
+    "EMITTER_BV_COMPLEX_CONSTRUCTED": false,
+    "FINITE_PARAMETER_COUPLED_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FORMAL_RECOIL_RANK_TWO_STABILITY_CERTIFIED": true,
+    "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "RECOIL_COEFFICIENT_COMPUTED": false,
+    "SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED": false,
+    "TWO_COMPATIBLE_RECOIL_COMPLETIONS_DIFFER": true
+  },
+  "formal_rank_stability": {
+    "base_matrix": [
+      [
+        "-beta*S_0",
+        "0"
+      ],
+      [
+        "mu",
+        "beta*C_1"
+      ]
+    ],
+    "coefficient_ring": "R[[epsilon]] localized at beta^2 S_0 C_1",
+    "deformation": "M(epsilon)=M_0+epsilon M_1+epsilon^2 M_2+...",
+    "determinant_constant": "-40*C_1*S_0/9",
+    "rank": 2,
+    "scope": "conditional on a local cyclic gauge-compatible emitter completion admitting the displayed formal response expansion"
+  },
+  "frozen_external_source_data": {
+    "current": "J_b=delta Kbar_b, equivalently star J_b=d kappa_b",
+    "handoff_rule": "do not describe the 84-row gate as full apparatus recoil; the two J_b remain external until a separate dynamical-emitter extension is supplied",
+    "not_supplied": [
+      "emitter field carrier",
+      "odd pairing and antifields",
+      "kinetic operator",
+      "background emitter equation or drive",
+      "retarded emitter Green operator",
+      "Diff/Weyl/K_Berger transformation",
+      "initial emitter state"
+    ],
+    "properties": [
+      "compact-time",
+      "spatially localized",
+      "conserved",
+      "q-closed external input"
+    ]
+  },
+  "mutation_results": [
+    {
+      "coefficient_difference": "0",
+      "detected": true,
+      "expected": "0",
+      "name": "collapse_two_mass_completions"
+    },
+    {
+      "constant_is_nonzero": false,
+      "detected": true,
+      "expected": false,
+      "name": "erase_localized_base_determinant"
+    }
+  ],
+  "next_gate": "RECEIVE_A_DYNAMICAL_EMITTER_HANDOFF_OR_SELECT_AND_JUSTIFY_A_SPECIFIC_EMITTER_MATTER_MODEL_BEFORE_COMPUTING_RECOIL",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_dynamical_emitter_recoil_gate.py",
+        "sha256": "f053673d2fb9900e9f48aa7f86ae25a5c7ad632214d4c2ad4323c4f7471cbdc6"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_dynamical_emitter_recoil_gate.py",
+        "sha256": "347debc506bd3fe594e967caa03fc732a2a029b9b7921984ee3dafc74437a231"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_dynamical_emitter_recoil_gate.py",
+        "sha256": "0fcca1148da14c5afa6609e20f4f7c14e34009ae07a9117a7fe88e2478b1aacf"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-dynamical-emitter-recoil-input-gate-v1.schema.json",
+        "sha256": "819d5343259435697e08ed52f5359bcc7c965f340a9f1bafcbd8fe8561dab7ef"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-dynamical-emitter-recoil-input-gate.md",
+        "sha256": "9ee144f130233fdc11960d58449485f628f370fe9cc8b5500de422733bcc8233"
+      }
+    ]
+  },
+  "required_emitter_handoff": {
+    "fields": [
+      "carrier and form degree/statistics",
+      "BV antifields and odd pairing",
+      "local emitter action",
+      "Maxwell current map",
+      "background solution or physical preparation data",
+      "advanced/retarded emitter Green operator",
+      "Diff/Weyl/Maxwell/K_Berger action"
+    ],
+    "identities": [
+      "q1^2=0",
+      "unary cyclicity",
+      "conservation of the Maxwell source",
+      "same-sided causal support",
+      "q1/q2 and q2/q2+q1/q3 identities at the requested order"
+    ],
+    "rank_replay": "compute the first nonzero recoil correction only after the carrier and preparation are fixed; formal rank two itself is already protected by the constant determinant"
+  },
+  "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE",
+  "schema": "closed-universe-berger-dynamical-emitter-recoil-input-gate-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "two_completion_witness": {
+    "candidate_carrier": "for each b, a real polarization two-form K_b with canonical BV cotangent partner",
+    "compatible_background_drive": "f_m=L_m Kbar_b-g dAbar; the external certificates do not constrain f_m",
+    "conclusion": "the same certified external current admits different exact recoil kernels",
+    "cyclicity": "the two cross blocks are formal adjoints because they are Hessian derivatives of the same local action",
+    "exact_specialization": {
+      "coefficient_difference": "3/10",
+      "constant_is_nonzero": true,
+      "different_recoil": true,
+      "formal_determinant": "(-40*C_1*S_0 + 6*sqrt(10)*C_1*a*epsilon - 6*sqrt(10)*S_0*d*epsilon + 9*a*d*epsilon**2 - 9*b*c*epsilon**2 - 9*b*epsilon*mu)/9",
+      "formal_determinant_constant": "-40*C_1*S_0/9",
+      "mass_squared_values": [
+        "1",
+        "4"
+      ],
+      "resolvent_identity_rhs": "3/10",
+      "retarded_recoil_coefficients": [
+        "1/2",
+        "1/5"
+      ],
+      "spectral_value_lambda": "1"
+    },
+    "interaction": "S_int=-g sum_b <K_b,dA>; Maxwell current is g delta K_b and emitter recoil is g dA",
+    "linearized_elimination": "Sigma_m=g^2 delta G_m,ret d",
+    "quadratic_operator_family": "L_m=P_2+m^2 on Omega^2, with P_2=d delta+delta d",
+    "same_background_current": "fix Kbar_b with delta Kbar_b=J_b for both masses"
+  }
+}

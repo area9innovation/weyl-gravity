@@ -1,0 +1,40 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "DYNAMICAL_EMITTER_RECOIL_INPUT_GATE_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The external-current and 84-row apparatus data do not select a dynamical emitter. Two local cyclic polarization-two-form completions reproduce the same frozen current but have exact recoil coefficients 1/2 and 1/5 on a shared mode, proving recoil underdetermination. The nonzero localized determinant remains the constant term of every compatible formal recoil deformation, so rank two is formally stable. No emitter model, enlarged BV complex, recoil coefficient, finite-parameter coupled Green theorem, common-Hopf emitter, or quantum claim is certified.",
+  "tier_0": [{"command": "py_compile, json.tool, git diff --check, and explicit SHA-256 replay on recoil-gate and observer planning paths", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "producer, verifier, tests, schema, certificate, report, receipt, comparison ledger, README, brief, roadmap, and comparison report"}],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_dynamical_emitter_recoil_gate --check", "elapsed_seconds": "under 1", "status": "PASS", "scope": "two-completion resolvent witness, formal determinant, mutations, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_dynamical_emitter_recoil_gate", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent 3/10 recoil difference, triangular determinant, dependency/source hashes, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_dynamical_emitter_recoil_gate.py", "elapsed_seconds": "0.34", "status": "PASS", "scope": "all 3 underdetermination, formal-rank, mutation, and fail-closed tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-dynamical-emitter-recoil-input-gate-v1.schema.json -d closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE.json", "elapsed_seconds": "included in focused checks", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "historical imports, bridge hashes, recoil obstruction, formal rank status, and quantum boundary"}
+  ],
+  "tier_2": [{"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "202.45", "status": "PASS", "scope": "all 82 closed-universe observer tests"}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "This is a fail-closed input obstruction and formal stability lemma; it does not select or construct a new shared emitter theory, freeze a complete apparatus/finite-parameter theorem, or make a release or quantum claim."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE.json", "sha256": "6fb1e2a55945fb70d48649dde21d5334ac82bdedbde2397ea0188203a2fa9cf8"},
+    {"path": "closed_universe_observers/schema/berger-dynamical-emitter-recoil-input-gate-v1.schema.json", "sha256": "819d5343259435697e08ed52f5359bcc7c965f340a9f1bafcbd8fe8561dab7ef"},
+    {"path": "closed_universe_observers/generate_berger_dynamical_emitter_recoil_gate.py", "sha256": "f053673d2fb9900e9f48aa7f86ae25a5c7ad632214d4c2ad4323c4f7471cbdc6"},
+    {"path": "closed_universe_observers/verify_berger_dynamical_emitter_recoil_gate.py", "sha256": "347debc506bd3fe594e967caa03fc732a2a029b9b7921984ee3dafc74437a231"},
+    {"path": "closed_universe_observers/tests/test_berger_dynamical_emitter_recoil_gate.py", "sha256": "0fcca1148da14c5afa6609e20f4f7c14e34009ae07a9117a7fe88e2478b1aacf"},
+    {"path": "closed_universe_observers/reports/berger-dynamical-emitter-recoil-input-gate.md", "sha256": "9ee144f130233fdc11960d58449485f628f370fe9cc8b5500de422733bcc8233"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "65ac20d6ab58d1452c0ad7d8c6a4f910338e639a9376b4c28a7ddcea87efffb7"},
+    {"path": "closed_universe_observers/README.md", "sha256": "3d8311e6352517b677eb23a25b273492144bf490091dc0c0425d3c480fdb6c15"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "09d0aa6d9ff8f7776cc24e776eedc064308177267a02fad32687ee66ce6e236c"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "3d1044054226b939c7eeb27736e856c1ec8748be173a02611dcfaecf01056493"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "2957d0c75733c0c048d26d37ae15a7eeed5922c4d36399c681ce770883573dad"}
+  ],
+  "claim_flags": {
+    "DYNAMICAL_EMITTER_INPUT_UNDERDETERMINATION_CERTIFIED": true,
+    "TWO_COMPATIBLE_RECOIL_COMPLETIONS_DIFFER": true,
+    "FORMAL_RECOIL_RANK_TWO_STABILITY_CERTIFIED": true,
+    "SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED": false,
+    "EMITTER_BV_COMPLEX_CONSTRUCTED": false,
+    "RECOIL_COEFFICIENT_COMPUTED": false,
+    "FINITE_PARAMETER_COUPLED_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

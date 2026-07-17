@@ -335,7 +335,12 @@ formal Green coefficient, and apparatus `q2,q3` action jets with cyclic
 cotangent partners, the Ward-determined `q4(K0,-,-,-)` contraction, and the
 scoped C-G4 record Poisson algebra are no longer missing.  Two receiver-adjacent
 localized conserved emitters and their rank-two transfer are also exact.  The
-primary missing object is now a dynamical emitter with recoil/backreaction;
+primary missing object is now a typed dynamical-emitter theory.  An exact
+input gate shows that two cyclic local completions reproduce the same frozen
+current but give recoil coefficients `1/2` and `1/5`; the coefficient is
+therefore not inferable.  The localized determinant remains a nonzero formal
+constant term, so rank two survives any compatible recoil deformation.
+Emitter recoil/backreaction becomes computable only after that handoff;
 placing both preparations at the original common Hopf event is a separate
 stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
@@ -404,3 +409,7 @@ The localized-emitter successor constructs constraint-preserving local Cauchy
 data, uses causal time ordering to force one matrix entry to zero, and proves
 the remaining triangular determinant is nonzero.  Its receipt is
 `closed_universe_observers/receipts/LOCALIZED_EMITTER_RANK_TWO_TRANSFER_TIER_RECEIPT.json`.
+The recoil input successor independently exhibits two compatible emitter
+completions with unequal resolvents and proves formal rank-two stability.  Its
+receipt is
+`closed_universe_observers/receipts/DYNAMICAL_EMITTER_RECOIL_INPUT_GATE_TIER_RECEIPT.json`.

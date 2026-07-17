@@ -150,10 +150,18 @@ window.  Staggering `J_1` after `D0` gives
 `M=[[-beta S0,0],[mu,beta C1]]`, so
 `det M=-beta^2 S0 C1 != 0` independently of the unknown tail `mu`.
 
-### Immediate priority after localized-emitter rank two
+`BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE` now shows that recoil is not a
+coefficient waiting inside the external-current data.  Two cyclic local
+two-form emitter completions with the same `J=delta Kbar` give exact recoil
+coefficients `1/2` and `1/5` on the same test mode.  A typed emitter carrier,
+action, preparation, pairing, causal Green operator, and symmetry action are
+therefore mandatory new inputs.  The nonzero localized determinant still
+proves formal rank-two stability for every compatible completion.
 
-1. Add dynamical emitter degrees of freedom and compute recoil/backreaction,
-   or return the first exact obstruction in the repaired interaction complex.
+### Immediate priority after the recoil input gate
+
+1. Obtain a dynamical-emitter handoff or explicitly select and justify a
+   physical emitter matter model before computing recoil/backreaction.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-dynamical-emitter-recoil-input-gate-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "frozen_external_source_data", "two_completion_witness", "formal_rank_stability", "required_emitter_handoff", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-dynamical-emitter-recoil-input-gate-v1"},
+    "result_id": {"const": "BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "DYNAMICAL_EMITTER_RECOIL_INPUT_UNDERDETERMINED_FORMAL_RANK_TWO_STABLE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "frozen_external_source_data": {"type": "object"},
+    "two_completion_witness": {"type": "object", "required": ["exact_specialization", "conclusion"], "properties": {"exact_specialization": {"type": "object", "required": ["retarded_recoil_coefficients", "coefficient_difference", "different_recoil"], "properties": {"retarded_recoil_coefficients": {"const": ["1/2", "1/5"]}, "coefficient_difference": {"const": "3/10"}, "different_recoil": {"const": true}}}, "conclusion": {"type": "string"}}},
+    "formal_rank_stability": {"type": "object", "required": ["determinant_constant", "rank", "scope"], "properties": {"determinant_constant": {"const": "-40*C_1*S_0/9"}, "rank": {"const": 2}, "scope": {"type": "string"}}},
+    "required_emitter_handoff": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["DYNAMICAL_EMITTER_INPUT_UNDERDETERMINATION_CERTIFIED", "TWO_COMPATIBLE_RECOIL_COMPLETIONS_DIFFER", "FORMAL_RECOIL_RANK_TWO_STABILITY_CERTIFIED", "SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED", "EMITTER_BV_COMPLEX_CONSTRUCTED", "RECOIL_COEFFICIENT_COMPUTED", "FINITE_PARAMETER_COUPLED_GREEN_HYPERBOLICITY_CERTIFIED", "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"DYNAMICAL_EMITTER_INPUT_UNDERDETERMINATION_CERTIFIED": {"const": true}, "TWO_COMPATIBLE_RECOIL_COMPLETIONS_DIFFER": {"const": true}, "FORMAL_RECOIL_RANK_TWO_STABILITY_CERTIFIED": {"const": true}, "SPECIFIC_DYNAMICAL_EMITTER_MODEL_SELECTED": {"const": false}, "EMITTER_BV_COMPLEX_CONSTRUCTED": {"const": false}, "RECOIL_COEFFICIENT_COMPUTED": {"const": false}, "FINITE_PARAMETER_COUPLED_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false}, "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"}, "claim_boundary": {"type": "string"}, "provenance": {"type": "object"}
+  }
+}
