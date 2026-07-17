@@ -1,10 +1,9 @@
 {
   "claim_boundary": "This exact finite specialization reproduces a rank-one global Gram matrix and a rank-two cloned-observer encoding from one declared fixed orthogonal map. It certifies the algebraic compatibility of global collapse with a nontrivial observer-effective carrier. It is not a gravitational path-integral derivation, a generic-Haar error bound, a causal model, or evidence about the Berger quantum Hilbert space.",
   "claim_status": "EXTERNAL_FIXTURE_REPRODUCED",
-  "declared_input_sha256": "670e042f26480734986ab1e96beca778d7a04020833ed318dd035c3fdc0535aa",
+  "declared_input_sha256": "c00928d7c7a2e325be30ca089c2b373f3559cb7ba4a26ad51104b4ca3636ae90",
   "dependency_tags": [
-    "LOCAL-ALGEBRAIC",
-    "EUCLIDEAN-SPECTRAL"
+    "LOCAL-ALGEBRAIC"
   ],
   "dimensions": {
     "effective_input": 4,
@@ -441,6 +440,7 @@
     "GLOBAL_HILBERT_DIMENSION_ONE_IN_FIXTURE": true,
     "LORENTZIAN_CAUSAL_CLAIM": false,
     "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE": true,
+    "POINTER_BASIS_ALIGNED": true,
     "POINTER_REFERENCE_INJECTIVE": true
   },
   "generated_matrices": {
@@ -519,10 +519,19 @@
       "observed_requirement_value": false
     },
     {
-      "breaks": "pointer_basis_or_reference_system",
+      "breaks": "pointer_basis",
+      "expected_failed_requirement": "pointer_basis_aligned",
+      "expected_failure_passed": true,
+      "name": "rotate_away_from_pointer_basis",
+      "observed_global_rank": 1,
+      "observed_observer_rank": 2,
+      "observed_requirement_value": false
+    },
+    {
+      "breaks": "reference_system",
       "expected_failed_requirement": "pointer_reference_injective",
       "expected_failure_passed": true,
-      "name": "collapse_pointer_reference",
+      "name": "collapse_reference_system",
       "observed_global_rank": 1,
       "observed_observer_rank": 1,
       "observed_requirement_value": false
@@ -554,23 +563,27 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_rank_one_fixture.py",
-        "sha256": "260d18046110f3d7d5b05d7f638f18762e31d9dfa20184c4f5754e656d4b126c"
+        "sha256": "2adac2f7d4ca152643e390391ab5e77ff5397fa1f5fe1aad738130c2b340b829"
       },
       {
         "path": "closed_universe_observers/verify_rank_one_fixture.py",
-        "sha256": "b3a8eda13b33494a619c9051522afeac570e0790403ffad8ef069a6c61053fdc"
+        "sha256": "deec85bb7ae6d98ac0e9b4f08fec79d284b8d1c2aa37934d5017d4ed70fc3612"
       },
       {
         "path": "closed_universe_observers/tests/test_rank_one_fixture.py",
-        "sha256": "0c7b5b129a2fbd41c0e92a83f3da15399c6bf0761e2bbb479d042388fe4d6d54"
+        "sha256": "da8ce2de34857ed16fa695343d6338a1f5dea6153c994f22a2af2a1495170394"
       },
       {
         "path": "closed_universe_observers/fixtures/rank_one_cloned_observer_input.json",
-        "sha256": "670e042f26480734986ab1e96beca778d7a04020833ed318dd035c3fdc0535aa"
+        "sha256": "c00928d7c7a2e325be30ca089c2b373f3559cb7ba4a26ad51104b4ca3636ae90"
+      },
+      {
+        "path": "closed_universe_observers/schema/rank-one-cloned-observer-input-v1.schema.json",
+        "sha256": "e662237f6262218688a81cd42e54a1bb3665459e6830d28176372b5947de0b21"
       },
       {
         "path": "closed_universe_observers/schema/rank-one-cloned-observer-fixture-v1.schema.json",
-        "sha256": "a587b3ac2c1cdac06903d659f9767afc55ab19a69525ebd74a5852f7f4dd5a20"
+        "sha256": "ff521ea4bc2a8e7efe7af1742b5ae9b81016dff33d420d9f412674bd7956bf0f"
       }
     ]
   },

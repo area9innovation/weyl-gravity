@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 
 import sympy as sp
+import jsonschema
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,11 +25,13 @@ PACKAGE = ROOT / "closed_universe_observers"
 INPUT = PACKAGE / "fixtures/rank_one_cloned_observer_input.json"
 CERTIFICATE = PACKAGE / "certificates/RANK_ONE_CLONED_OBSERVER_FIXTURE.json"
 SCHEMA = PACKAGE / "schema/rank-one-cloned-observer-fixture-v1.schema.json"
+INPUT_SCHEMA = PACKAGE / "schema/rank-one-cloned-observer-input-v1.schema.json"
 SOURCE_PATHS = (
     PACKAGE / "generate_rank_one_fixture.py",
     PACKAGE / "verify_rank_one_fixture.py",
     PACKAGE / "tests/test_rank_one_fixture.py",
     INPUT,
+    INPUT_SCHEMA,
     SCHEMA,
 )
 
@@ -81,15 +84,17 @@ def evaluate(data: dict[str, Any]) -> dict[str, Any]:
         projection[output_row, source_row] = 1
     global_encoding = sp.sqrt(dimension) * projection * orthogonal
     global_gram = sp.Matrix(sp.simplify(global_encoding.T * global_encoding))
-    defect = data.get("factorization_defect")
-    if defect is not None:
-        global_gram[defect["row"], defect["column"]] += _q(defect["value"])
+    for source_row in data["factorization_amplitude_rows"]:
+        amplitude = sp.sqrt(dimension) * orthogonal.row(source_row)
+        global_gram += amplitude.T * amplitude
 
     probabilities = [_q(value) for value in data["pointer_probabilities"]]
     if sum(probabilities, sp.S(0)) != 1 or any(value <= 0 for value in probabilities):
         raise AssertionError("pointer probabilities must be positive and normalized")
     clone_map = data["clone_map"]
     clone_injective = len(set(clone_map)) == observer_dimension
+    pointer_overlap = sp.Matrix([[_q(value) for value in row] for row in data["pointer_basis_overlap_squared"]])
+    pointer_basis_aligned = pointer_overlap == sp.eye(observer_dimension)
     output_clone_dimension = observer_dimension if data["observer_channel_enabled"] else 1
     observer_encoding = sp.zeros(output_clone_dimension * len(projection_rows), matter_dimension)
     for observer_index in range(observer_dimension):
@@ -110,6 +115,7 @@ def evaluate(data: dict[str, Any]) -> dict[str, Any]:
         "global_gram_rank_one": global_rank == 1,
         "global_fundamental_dimension_one": len(projection_rows) == 1,
         "observer_encoding_rank_gt_one": observer_rank > 1,
+        "pointer_basis_aligned": pointer_basis_aligned,
         "pointer_reference_injective": data["observer_channel_enabled"] and clone_injective,
     }
     return {
@@ -128,6 +134,9 @@ def evaluate(data: dict[str, Any]) -> dict[str, Any]:
 
 def build_certificate() -> dict[str, Any]:
     data = json.loads(INPUT.read_text())
+    input_schema = json.loads(INPUT_SCHEMA.read_text())
+    jsonschema.Draft202012Validator.check_schema(input_schema)
+    jsonschema.Draft202012Validator(input_schema).validate(data)
     result = evaluate(data)
     global_gram = result["global_gram"]
     observer_encoding = result["observer_encoding"]
@@ -168,7 +177,7 @@ def build_certificate() -> dict[str, Any]:
         "schema": "closed-universe-rank-one-cloned-observer-fixture-v1",
         "result_id": "RANK_ONE_CLONED_OBSERVER_FIXTURE",
         "claim_status": "EXTERNAL_FIXTURE_REPRODUCED",
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+        "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "source_equations": data["source_model"],
         "declared_input_sha256": _sha256(INPUT),
         "dimensions": {
@@ -200,6 +209,7 @@ def build_certificate() -> dict[str, Any]:
             "GLOBAL_GRAM_RANK_ONE": result["requirements"]["global_gram_rank_one"],
             "GLOBAL_HILBERT_DIMENSION_ONE_IN_FIXTURE": result["requirements"]["global_fundamental_dimension_one"],
             "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE": result["requirements"]["observer_encoding_rank_gt_one"],
+            "POINTER_BASIS_ALIGNED": result["requirements"]["pointer_basis_aligned"],
             "POINTER_REFERENCE_INJECTIVE": result["requirements"]["pointer_reference_injective"],
             "BERGER_QUANTUM_COMPARISON": False,
             "LORENTZIAN_CAUSAL_CLAIM": False,

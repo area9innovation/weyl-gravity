@@ -3,7 +3,7 @@
   "$id": "https://example.invalid/closed-universe/comparison-ledger-v1.schema.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "current_lifecycle", "overall_verdict", "recommendation", "dependency_tags", "source_versions", "object_dictionary", "no_conflation", "internal_imports", "classical_observer_map", "comparison_matrix", "common_fixture_status", "assumptions", "missing_objects", "provenance"],
+  "required": ["schema", "result_id", "current_lifecycle", "overall_verdict", "recommendation", "dependency_tags", "source_versions", "object_dictionary", "no_conflation", "internal_imports", "bridge_artifacts", "classical_observer_map", "comparison_matrix", "common_fixture_status", "assumptions", "missing_objects", "provenance"],
   "properties": {
     "schema": {"const": "closed-universe-observer-comparison-ledger-v1"},
     "result_id": {"const": "CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON"},
@@ -15,6 +15,7 @@
     "object_dictionary": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/dictionary_row"}},
     "no_conflation": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
     "internal_imports": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/import"}},
+    "bridge_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/bridge_artifact"}},
     "classical_observer_map": {"$ref": "#/$defs/observer_map"},
     "comparison_matrix": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/comparison_row"}},
     "common_fixture_status": {
@@ -65,8 +66,22 @@
       "properties": {"object": {"$ref": "#/$defs/text"}, "question": {"$ref": "#/$defs/text"}, "programme_status": {"$ref": "#/$defs/text"}}
     },
     "import": {
-      "type": "object", "additionalProperties": false, "required": ["role", "path", "result_id", "sha256"],
-      "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "result_id": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}
+      "type": "object", "additionalProperties": false, "required": ["role", "path", "result_id", "sha256", "claim_boundary", "live_required_flags"],
+      "properties": {
+        "role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"},
+        "result_id": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"},
+        "claim_boundary": {"$ref": "#/$defs/text"},
+        "live_required_flags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "bridge_artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["role", "path", "result_id", "sha256", "claim_boundary"],
+      "properties": {
+        "role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"},
+        "result_id": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"},
+        "claim_boundary": {"$ref": "#/$defs/text"}
+      }
     },
     "claim_index": {
       "type": "object", "additionalProperties": false,
@@ -75,7 +90,7 @@
     },
     "component": {
       "type": "object", "additionalProperties": false, "required": ["requirement", "status", "evidence"],
-      "properties": {"requirement": {"$ref": "#/$defs/text"}, "status": {"enum": ["CERTIFIED", "OPEN", "CERTIFIED_SCOPED_SYNTHESIS"]}, "evidence": {"$ref": "#/$defs/text"}}
+      "properties": {"requirement": {"$ref": "#/$defs/text"}, "status": {"enum": ["CERTIFIED", "OPEN", "CERTIFIED_SCOPED_SYNTHESIS", "CERTIFIED_FUNCTIONALS_RESPONSE_OPEN"]}, "evidence": {"$ref": "#/$defs/text"}}
     },
     "gauge_test": {
       "type": "object", "additionalProperties": false, "required": ["symmetry", "status", "preserved_structure", "open_defect"],

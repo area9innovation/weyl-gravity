@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-localized-detector-records-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "relational_probe_apparatus", "detector_records", "record_algebra", "source_to_record_chain", "gauge_and_quotient_tests", "mutation_results", "flags", "next_gate", "assumptions", "not_established", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-localized-detector-records-v1"},
+    "result_id": {"const": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"},
+    "claim_status": {"const": "CERTIFIED_TWO_LOCALIZED_RECORD_FUNCTIONALS_POINTWISE_RETARDED_RESPONSE_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "relational_probe_apparatus": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coordinates", "jacobian", "jacobian_determinant", "rod_health", "gauge_scope"],
+      "properties": {
+        "coordinates": {"const": ["Theta", "R1", "R2", "R3"]},
+        "jacobian": {"$ref": "#/$defs/matrix"},
+        "jacobian_determinant": {"const": "1"},
+        "rod_health": {"$ref": "#/$defs/text"}, "gauge_scope": {"$ref": "#/$defs/text"}
+      }
+    },
+    "detector_records": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/detector"}},
+    "record_algebra": {
+      "type": "object", "additionalProperties": false,
+      "required": ["definition", "probe_evaluation_matrix", "rank", "support_separation", "clock_ordered_after_emitter"],
+      "properties": {
+        "definition": {"$ref": "#/$defs/text"}, "probe_evaluation_matrix": {"const": [["1", "0"], ["0", "1"]]},
+        "rank": {"const": 2}, "support_separation": {"$ref": "#/$defs/text"}, "clock_ordered_after_emitter": {"const": true}
+      }
+    },
+    "source_to_record_chain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "retarded_field", "record_map", "well_defined", "strict_future_nonzero_values_certified", "obstruction"],
+      "properties": {
+        "source": {"$ref": "#/$defs/text"}, "retarded_field": {"$ref": "#/$defs/text"},
+        "record_map": {"$ref": "#/$defs/text"}, "well_defined": {"const": true},
+        "strict_future_nonzero_values_certified": {"const": false}, "obstruction": {"$ref": "#/$defs/text"}
+      }
+    },
+    "gauge_and_quotient_tests": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Diff", "Weyl", "Maxwell_gauge", "raw_D", "K_Berger"],
+      "properties": {
+        "Diff": {"const": "PASS_FOR_PROBE_RELATIONAL_FUNCTIONALS"},
+        "Weyl": {"const": "PASS_FOR_PROBE_RELATIONAL_FUNCTIONALS"},
+        "Maxwell_gauge": {"const": "PASS"},
+        "raw_D": {"const": "OPEN_WITH_ROD_SECTOR_NOT_IN_IMPORTED_PHASE_SPACE"},
+        "K_Berger": {"const": "OPEN_WITH_ROD_SECTOR_NOT_IN_IMPORTED_INTERACTING_COMPLEX"}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/mutation"}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TWO_LOCALIZED_CLOCK_LABELLED_RECORD_FUNCTIONALS", "LOCAL_ROD_PROBE_CHART_NONDEGENERATE", "RECORD_ALGEBRA_TWO_GENERATORS", "SOURCE_TO_RETARDED_FIELD_TO_RECORD_MAP_DEFINED", "TWO_NONZERO_RETARDED_RECORD_VALUES", "STRICT_FUTURE_DETECTOR_INTERSECTION_CERTIFIED", "ROD_BACKREACTION_AND_APPARATUS_RECOIL_INCLUDED", "D_DESCENT_WITH_RODS_CERTIFIED", "CLASSICAL_OBSERVER_MAP_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "TWO_LOCALIZED_CLOCK_LABELLED_RECORD_FUNCTIONALS": {"const": true},
+        "LOCAL_ROD_PROBE_CHART_NONDEGENERATE": {"const": true},
+        "RECORD_ALGEBRA_TWO_GENERATORS": {"const": true},
+        "SOURCE_TO_RETARDED_FIELD_TO_RECORD_MAP_DEFINED": {"const": true},
+        "TWO_NONZERO_RETARDED_RECORD_VALUES": {"const": false},
+        "STRICT_FUTURE_DETECTOR_INTERSECTION_CERTIFIED": {"const": false},
+        "ROD_BACKREACTION_AND_APPARATUS_RECOIL_INCLUDED": {"const": false},
+        "D_DESCENT_WITH_RODS_CERTIFIED": {"const": false},
+        "CLASSICAL_OBSERVER_MAP_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_POINTWISE_RETARDED_GREEN_KERNEL_TWO_WINDOW_WITNESS"},
+    "assumptions": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "not_established": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["declared_input_sha256", "source_manifest"],
+      "properties": {
+        "declared_input_sha256": {"$ref": "#/$defs/sha256"},
+        "source_manifest": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/source"}}
+      }
+    },
+    "claim_boundary": {"$ref": "#/$defs/text"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrix": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}},
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256", "claim_boundary"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "result_id": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}, "claim_boundary": {"$ref": "#/$defs/text"}}
+    },
+    "detector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "clock_label", "clock_window", "rod_center", "rod_half_width", "record_functional"],
+      "properties": {
+        "id": {"enum": ["D0", "D1"]}, "clock_label": {"type": "string"},
+        "clock_window": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "rod_center": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "rod_half_width": {"type": "string"}, "record_functional": {"$ref": "#/$defs/text"}
+      }
+    },
+    "mutation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "expected_failed_requirement", "observed_requirement_value", "observed_record_rank", "expected_failure_passed"],
+      "properties": {
+        "name": {"$ref": "#/$defs/text"},
+        "expected_failed_requirement": {"enum": ["relational_chart_nondegenerate", "clock_labels_distinct", "detector_supports_disjoint", "record_functionals_independent"]},
+        "observed_requirement_value": {"const": false}, "observed_record_rank": {"type": "integer", "minimum": 1, "maximum": 2},
+        "expected_failure_passed": {"const": true}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"],
+      "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}
+    }
+  }
+}

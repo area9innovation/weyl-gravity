@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/rank-one-cloned-observer-input-v1.schema.json",
+  "title": "Declared fixed-O cloned-observer fixture input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "source_model", "orthogonal_numerator", "orthogonal_denominator",
+    "effective_basis", "projection_rows", "factorization_amplitude_rows",
+    "pointer_probabilities", "pointer_basis_overlap_squared", "clone_map",
+    "observer_channel_enabled", "mutations"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-rank-one-cloned-observer-input-v1"},
+    "source_model": {
+      "type": "object", "additionalProperties": false,
+      "required": ["paper", "equations", "interpretation"],
+      "properties": {
+        "paper": {"const": "arXiv:2501.02359v2"},
+        "equations": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "orthogonal_numerator": {"$ref": "#/$defs/integer_matrix"},
+    "orthogonal_denominator": {"type": "integer", "minimum": 1},
+    "effective_basis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observer_labels", "matter_labels", "ordering"],
+      "properties": {
+        "observer_labels": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "matter_labels": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "ordering": {"const": "observer-major"}
+      }
+    },
+    "projection_rows": {"$ref": "#/$defs/index_array"},
+    "factorization_amplitude_rows": {"type": "array", "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+    "pointer_probabilities": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/rational"}},
+    "pointer_basis_overlap_squared": {"$ref": "#/$defs/rational_matrix"},
+    "clone_map": {"$ref": "#/$defs/index_array"},
+    "observer_channel_enabled": {"type": "boolean"},
+    "mutations": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "breaks", "patch", "expected_failed_requirement"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "breaks": {"enum": ["factorization", "observer_channel", "pointer_basis", "reference_system", "rank_one_conclusion"]},
+          "patch": {"type": "object", "minProperties": 1},
+          "expected_failed_requirement": {"enum": ["global_gram_rank_one", "observer_encoding_rank_gt_one", "pointer_basis_aligned", "pointer_reference_injective"]}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rational": {"type": ["string", "integer"], "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"},
+    "index_array": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
+    "integer_matrix": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 1, "items": {"type": "integer"}}},
+    "rational_matrix": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rational"}}}
+  }
+}

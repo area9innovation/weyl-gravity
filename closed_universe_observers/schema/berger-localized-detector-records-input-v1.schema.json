@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-localized-detector-records-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "setting_id", "relational_coordinates", "relational_jacobian", "emitter_clock_support", "detectors", "probe_supports", "mutations"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-localized-detector-records-input-v1"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"},
+    "relational_coordinates": {"const": ["Theta", "R1", "R2", "R3"]},
+    "relational_jacobian": {"$ref": "#/$defs/matrix4"},
+    "emitter_clock_support": {"$ref": "#/$defs/interval"},
+    "detectors": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/detector"}},
+    "probe_supports": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["D0", "D1"]}},
+    "mutations": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "patch", "expected_failed_requirement"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "patch": {"type": "object", "minProperties": 1},
+          "expected_failed_requirement": {"enum": ["relational_chart_nondegenerate", "clock_labels_distinct", "detector_supports_disjoint", "record_functionals_independent"]}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rational": {"type": ["string", "integer"], "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"},
+    "interval": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}},
+    "vector3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
+    "matrix4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}},
+    "detector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "clock_label", "clock_window", "rod_center", "rod_half_width", "polarization"],
+      "properties": {
+        "id": {"enum": ["D0", "D1"]},
+        "clock_label": {"$ref": "#/$defs/rational"},
+        "clock_window": {"$ref": "#/$defs/interval"},
+        "rod_center": {"$ref": "#/$defs/vector3"},
+        "rod_half_width": {"$ref": "#/$defs/rational"},
+        "polarization": {"const": "dTheta_wedge_dR1"}
+      }
+    }
+  }
+}

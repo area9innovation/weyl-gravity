@@ -1,0 +1,48 @@
+{
+  "schema": "closed-universe-berger-localized-detector-records-input-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "relational_coordinates": ["Theta", "R1", "R2", "R3"],
+  "relational_jacobian": [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]],
+  "emitter_clock_support": ["-1", "-1/2"],
+  "detectors": [
+    {
+      "id": "D0",
+      "clock_label": "1",
+      "clock_window": ["3/4", "5/4"],
+      "rod_center": ["1/4", "0", "0"],
+      "rod_half_width": "1/16",
+      "polarization": "dTheta_wedge_dR1"
+    },
+    {
+      "id": "D1",
+      "clock_label": "2",
+      "clock_window": ["7/4", "9/4"],
+      "rod_center": ["1/2", "0", "0"],
+      "rod_half_width": "1/16",
+      "polarization": "dTheta_wedge_dR1"
+    }
+  ],
+  "probe_supports": ["D0", "D1"],
+  "mutations": [
+    {
+      "name": "singular_rod_chart",
+      "patch": {"relational_jacobian": [["1", "0", "0", "0"], ["0", "1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "0"]]},
+      "expected_failed_requirement": "relational_chart_nondegenerate"
+    },
+    {
+      "name": "merge_clock_labels",
+      "patch": {"detector_clock_labels": ["1", "1"]},
+      "expected_failed_requirement": "clock_labels_distinct"
+    },
+    {
+      "name": "overlap_detector_windows",
+      "patch": {"detector_rod_centers": [["1/4", "0", "0"], ["1/4", "0", "0"]], "detector_clock_windows": [["3/4", "5/4"], ["3/4", "5/4"]]},
+      "expected_failed_requirement": "detector_supports_disjoint"
+    },
+    {
+      "name": "collapse_record_probe_support",
+      "patch": {"probe_supports": ["D0", "D0"]},
+      "expected_failed_requirement": "record_functionals_independent"
+    }
+  ]
+}

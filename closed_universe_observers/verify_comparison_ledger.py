@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 
 import jsonschema
 
@@ -30,13 +31,34 @@ def main() -> int:
         raise AssertionError("the five-source literature ledger is incomplete")
     if sum(step["interpretive_inference"] for source in ledger["source_versions"] for step in source["logical_chain"]) < 1:
         raise AssertionError("interpretive inferences are not marked")
+    snapshot = ledger["provenance"]["internal_source_snapshot_commit"]
+    prefix = subprocess.check_output(["git", "rev-parse", "--show-prefix"], cwd=ROOT, text=True).strip()
+    live_drift = []
     for imported in ledger["internal_imports"]:
         path = ROOT / imported["path"]
-        if _sha256(path) != imported["sha256"]:
-            raise AssertionError(f"import drift: {imported['path']}")
-        data = json.loads(path.read_text())
-        if data["result_id"] != imported["result_id"]:
+        pinned_bytes = subprocess.check_output(
+            ["git", "show", f"{snapshot}:{prefix}{imported['path']}"], cwd=ROOT
+        )
+        if hashlib.sha256(pinned_bytes).hexdigest() != imported["sha256"]:
+            raise AssertionError(f"pinned import is not reproducible: {imported['path']}")
+        pinned = json.loads(pinned_bytes)
+        if pinned["result_id"] != imported["result_id"] or pinned["claim_boundary"] != imported["claim_boundary"]:
+            raise AssertionError(f"pinned import metadata mismatch: {imported['path']}")
+        live = json.loads(path.read_text())
+        if live["result_id"] != imported["result_id"]:
             raise AssertionError(f"import result mismatch: {imported['path']}")
+        for flag in imported["live_required_flags"]:
+            if live.get("flags", {}).get(flag) is not True:
+                raise AssertionError(f"live compatibility flag dropped ({flag}): {imported['path']}")
+        if _sha256(path) != imported["sha256"]:
+            live_drift.append(imported["path"])
+    for artifact in ledger["bridge_artifacts"]:
+        path = ROOT / artifact["path"]
+        payload = json.loads(path.read_text())
+        if _sha256(path) != artifact["sha256"]:
+            raise AssertionError(f"bridge artifact drift: {artifact['path']}")
+        if payload["result_id"] != artifact["result_id"] or payload["claim_boundary"] != artifact["claim_boundary"]:
+            raise AssertionError(f"bridge artifact metadata mismatch: {artifact['path']}")
 
     dictionary_names = {row["object"] for row in ledger["object_dictionary"]}
     mandatory = {
@@ -50,8 +72,8 @@ def main() -> int:
     if set(claim_index) != {"theory", "background", "state_object", "quotient", "observer", "boundaries", "lifecycle"}:
         raise AssertionError("seven-field claim index is incomplete")
     component_status = {item["requirement"]: item["status"] for item in ledger["classical_observer_map"]["components"]}
-    if component_status["two_distinguishable_clock_labelled_records"] != "OPEN":
-        raise AssertionError("record gate was silently promoted")
+    if component_status["two_distinguishable_clock_labelled_records"] != "CERTIFIED_FUNCTIONALS_RESPONSE_OPEN":
+        raise AssertionError("localized record-functional gate drifted")
     if ledger["classical_observer_map"]["map_certified"] is not False:
         raise AssertionError("partial observer map was promoted")
     matrix = {row["setting"]: row for row in ledger["comparison_matrix"]}
@@ -62,7 +84,10 @@ def main() -> int:
         raise AssertionError("common-fixture lifecycle is not fail closed")
     if ledger["current_lifecycle"] != "EXTERNAL_FIXTURE_REPRODUCED":
         raise AssertionError("lifecycle is inconsistent with the open classical map")
-    print("CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON ledger verification: PASS")
+    print(
+        "CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON ledger verification: PASS "
+        f"(historical snapshot exact; {len(live_drift)} compatible live import(s) changed)"
+    )
     return 0
 
 

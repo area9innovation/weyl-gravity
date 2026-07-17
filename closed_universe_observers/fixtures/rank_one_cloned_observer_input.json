@@ -13,20 +13,21 @@
   ],
   "orthogonal_denominator": 2,
   "effective_basis": {
-    "observer_labels": ["record_0", "record_1"],
+    "observer_labels": ["pointer_0", "pointer_1"],
     "matter_labels": ["outcome_0", "outcome_1"],
     "ordering": "observer-major"
   },
   "projection_rows": [0],
+  "factorization_amplitude_rows": [],
   "pointer_probabilities": ["1/2", "1/2"],
+  "pointer_basis_overlap_squared": [["1", "0"], ["0", "1"]],
   "clone_map": [0, 1],
   "observer_channel_enabled": true,
-  "factorization_defect": null,
   "mutations": [
     {
       "name": "break_factorization",
       "breaks": "factorization",
-      "patch": {"factorization_defect": {"row": 1, "column": 1, "value": "1"}},
+      "patch": {"factorization_amplitude_rows": [1]},
       "expected_failed_requirement": "global_gram_rank_one"
     },
     {
@@ -36,8 +37,14 @@
       "expected_failed_requirement": "observer_encoding_rank_gt_one"
     },
     {
-      "name": "collapse_pointer_reference",
-      "breaks": "pointer_basis_or_reference_system",
+      "name": "rotate_away_from_pointer_basis",
+      "breaks": "pointer_basis",
+      "patch": {"pointer_basis_overlap_squared": [["1/2", "1/2"], ["1/2", "1/2"]]},
+      "expected_failed_requirement": "pointer_basis_aligned"
+    },
+    {
+      "name": "collapse_reference_system",
+      "breaks": "reference_system",
       "patch": {"clone_map": [0, 0]},
       "expected_failed_requirement": "pointer_reference_injective"
     },

@@ -1,0 +1,54 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "DETECTOR_RECORD_HARDENING_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "tier_0": [
+    {
+      "command": "python3 -m compileall -q closed_universe_observers && parse every namespace JSON file with python3 -m json.tool && git diff --check -- closed_universe_observers",
+      "elapsed_seconds": "0.39",
+      "status": "PASS",
+      "scope": "all closed-universe observer Python, structured data, and scoped whitespace checks"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 closed_universe_observers/generate_rank_one_fixture.py --check && python3 closed_universe_observers/verify_rank_one_fixture.py && python3 closed_universe_observers/generate_berger_detector_records.py --check && python3 closed_universe_observers/verify_berger_detector_records.py && python3 closed_universe_observers/verify_comparison_ledger.py && python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "2.96",
+      "status": "PASS",
+      "scope": "two certificate freshness checks, two independent exact replays, historical/live import verification, and 12 scoped tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "criterion": "No authoritative classical mathematical input or shared operator was modified; the new detector layer is an isolated bridge consumer and all dependencies are content-addressed."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, paper theorem promotion, shared core algebra change, or release was requested."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/fixtures/rank_one_cloned_observer_input.json", "sha256": "c00928d7c7a2e325be30ca089c2b373f3559cb7ba4a26ad51104b4ca3636ae90"},
+    {"path": "closed_universe_observers/schema/rank-one-cloned-observer-input-v1.schema.json", "sha256": "e662237f6262218688a81cd42e54a1bb3665459e6830d28176372b5947de0b21"},
+    {"path": "closed_universe_observers/certificates/RANK_ONE_CLONED_OBSERVER_FIXTURE.json", "sha256": "07d9368cd27db376e9c74208fe9c45fe3e6dd90151f536e9c65002c3d0a42434"},
+    {"path": "closed_universe_observers/fixtures/berger_localized_detector_records_input.json", "sha256": "e3bf4f2c5b4073e356dc0eb66915276f300db7c7c8b92e8944d5d8eb3552c10c"},
+    {"path": "closed_universe_observers/schema/berger-localized-detector-records-input-v1.schema.json", "sha256": "82b4bca186e112d2d41fabdb238d760ece18491687f5c7f73caa7e6aa405b0d9"},
+    {"path": "closed_universe_observers/schema/berger-localized-detector-records-v1.schema.json", "sha256": "c8120f2bd62f3a89e98b6f342edee235a113f459c021fc30e357f77e8e0656b2"},
+    {"path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json", "sha256": "f18427cb14a8e377484a5b1e39d4481a1107a29a42923a5b78fc95ece9f8a429"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "170198288f992eeb9b0616f25751c9cd6bb255ad714bb69081546bb9bff51603"},
+    {"path": "closed_universe_observers/schema/comparison-ledger-v1.schema.json", "sha256": "2f6b38ac0054492fed02d7da4b2d1e357f5f6dd08d3c9338a0332aa348c0c0ee"}
+  ],
+  "claim_flags": {
+    "EXTERNAL_FIXTURE_REPRODUCED": true,
+    "TWO_LOCALIZED_CLOCK_LABELLED_RECORD_FUNCTIONALS": true,
+    "SOURCE_TO_RETARDED_FIELD_TO_RECORD_MAP_DEFINED": true,
+    "TWO_NONZERO_RETARDED_RECORD_VALUES": false,
+    "D_DESCENT_WITH_RODS_CERTIFIED": false,
+    "CLASSICAL_OBSERVER_MAP_CERTIFIED": false,
+    "QUANTUM_COMPARISON_LEGAL": false
+  }
+}

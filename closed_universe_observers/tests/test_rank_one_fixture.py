@@ -39,8 +39,14 @@ def test_observer_channel_mutation_collapses_observer_rank() -> None:
     assert result["observer_rank"] == 1
 
 
-def test_pointer_reference_mutation_is_fail_closed() -> None:
-    mutation, result = _mutate("collapse_pointer_reference")
+def test_pointer_basis_mutation_is_fail_closed_without_collapsing_rank() -> None:
+    mutation, result = _mutate("rotate_away_from_pointer_basis")
+    assert result["requirements"][mutation["expected_failed_requirement"]] is False
+    assert result["observer_rank"] == 2
+
+
+def test_reference_mutation_is_fail_closed() -> None:
+    mutation, result = _mutate("collapse_reference_system")
     assert result["requirements"][mutation["expected_failed_requirement"]] is False
     assert result["observer_rank"] == 1
 

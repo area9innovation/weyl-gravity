@@ -9,7 +9,7 @@
     "schema": {"const": "closed-universe-rank-one-cloned-observer-fixture-v1"},
     "result_id": {"const": "RANK_ONE_CLONED_OBSERVER_FIXTURE"},
     "claim_status": {"const": "EXTERNAL_FIXTURE_REPRODUCED"},
-    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}], "items": false},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "items": false},
     "source_equations": {
       "type": "object", "additionalProperties": false, "required": ["paper", "equations", "interpretation"],
       "properties": {
@@ -46,14 +46,14 @@
       }
     },
     "mutation_results": {
-      "type": "array", "minItems": 4, "maxItems": 4,
+      "type": "array", "minItems": 5, "maxItems": 5,
       "items": {
         "type": "object", "additionalProperties": false,
         "required": ["name", "breaks", "expected_failed_requirement", "observed_requirement_value", "observed_global_rank", "observed_observer_rank", "expected_failure_passed"],
         "properties": {
           "name": {"type": "string"},
-          "breaks": {"enum": ["factorization", "observer_channel", "pointer_basis_or_reference_system", "rank_one_conclusion"]},
-          "expected_failed_requirement": {"enum": ["global_gram_rank_one", "observer_encoding_rank_gt_one", "pointer_reference_injective"]},
+          "breaks": {"enum": ["factorization", "observer_channel", "pointer_basis", "reference_system", "rank_one_conclusion"]},
+          "expected_failed_requirement": {"enum": ["global_gram_rank_one", "observer_encoding_rank_gt_one", "pointer_basis_aligned", "pointer_reference_injective"]},
           "observed_requirement_value": {"const": false},
           "observed_global_rank": {"type": "integer", "minimum": 1},
           "observed_observer_rank": {"type": "integer", "minimum": 1},
@@ -63,10 +63,10 @@
     },
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["GLOBAL_GRAM_RANK_ONE", "GLOBAL_HILBERT_DIMENSION_ONE_IN_FIXTURE", "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE", "POINTER_REFERENCE_INJECTIVE", "BERGER_QUANTUM_COMPARISON", "LORENTZIAN_CAUSAL_CLAIM"],
+      "required": ["GLOBAL_GRAM_RANK_ONE", "GLOBAL_HILBERT_DIMENSION_ONE_IN_FIXTURE", "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE", "POINTER_BASIS_ALIGNED", "POINTER_REFERENCE_INJECTIVE", "BERGER_QUANTUM_COMPARISON", "LORENTZIAN_CAUSAL_CLAIM"],
       "properties": {
         "GLOBAL_GRAM_RANK_ONE": {"const": true}, "GLOBAL_HILBERT_DIMENSION_ONE_IN_FIXTURE": {"const": true},
-        "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE": {"const": true}, "POINTER_REFERENCE_INJECTIVE": {"const": true},
+        "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE": {"const": true}, "POINTER_BASIS_ALIGNED": {"const": true}, "POINTER_REFERENCE_INJECTIVE": {"const": true},
         "BERGER_QUANTUM_COMPARISON": {"const": false}, "LORENTZIAN_CAUSAL_CLAIM": {"const": false}
       }
     },
@@ -79,7 +79,7 @@
           "type": "object", "additionalProperties": false, "required": ["arxiv_id", "pdf_sha256", "url"],
           "properties": {"arxiv_id": {"const": "2501.02359v2"}, "pdf_sha256": {"$ref": "#/$defs/sha256"}, "url": {"type": "string", "format": "uri"}}
         },
-        "source_manifest": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/source"}}
+        "source_manifest": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/source"}}
       }
     }
   },
