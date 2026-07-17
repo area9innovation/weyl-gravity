@@ -292,8 +292,21 @@ constructs six covariant adapted-coordinate pairs and verifies
 supermonomial regressions. On the imported regular Bach-locus chart the
 positive-antifield columns are acyclic, all positive-antifield atoms saturate
 form degree four, and the H04 plus even/odd Weyl-ghost H14 AFN0 classes lift
-unchanged. Pure-Diff and mixed Diff--Weyl AFN0 ambient top/lower-form
-quotients remain open, so this is not the full minimal-BV H14 theorem.
+unchanged. That receipt deliberately left the pure-Diff and mixed Diff--Weyl
+AFN0 ambient top/lower-form quotients open.
+
+That remaining total-complex gate is now closed by
+[`AFN0_DIFF_MIXED_MINIMAL_BV_H14.json`](certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json).
+The Stora total-form comparison reduces the covariant 720-signature ambient
+inventory to the already certified Weyl top representatives and their
+generated Diff completions. The only possible non-covariant pure-gravity
+escape sector is a degree-three invariant polynomial of the metric structure
+algebra. An independent exact rational solve gives symmetric invariant
+dimensions `0,2,0,3` in degrees one through four, so the degree-three sector
+vanishes with nonzero neighboring controls. There are consequently no
+independent pure-Diff or mixed Diff--Weyl classes, and the minimal-BV H14
+quotient has even/odd dimensions `2/1` on the regular Bach locus. The general
+local nonminimal/gauge-fixed doublet contraction remains the G2 gate.
 
 The tensor-graph realization layer is now certified by
 [`certificates/AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE.json`](certificates/AFN0_AMBIENT_TENSOR_GRAPH_REALIZATION_CERTIFICATE.json).

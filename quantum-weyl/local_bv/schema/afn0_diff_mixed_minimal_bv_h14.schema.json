@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-diff-mixed-minimal-bv-h14-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "classical_commit", "dependency_tags", "scope", "dependency_hashes", "ambient_accounting", "comparison_theorem_application", "primary_sources", "small_algebra", "AFN0_H14", "minimal_BV_H14", "checks", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-afn0-diff-mixed-minimal-bv-h14-v1"},
+    "result_id": {"const": "AFN0_DIFF_MIXED_MINIMAL_BV_H14"},
+    "result_state": {"const": "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spacetime_dimension", "ghost_number", "form_degree", "engineering_dimension", "minimal_antifield_number_range", "locality", "regularity"],
+      "properties": {
+        "spacetime_dimension": {"const": 4},
+        "ghost_number": {"const": 1},
+        "form_degree": {"const": 4},
+        "engineering_dimension": {"const": 4},
+        "minimal_antifield_number_range": {"const": [0, 2]},
+        "locality": {"const": "POLYNOMIAL_FINITE_JETS_ON_CONTRACTIBLE_PATCH"},
+        "regularity": {"const": "REGULAR_BACH_LOCUS_FOR_KOSZUL_TATE_ADAPTED_COORDINATES"}
+      }
+    },
+    "dependency_hashes": {"type": "object", "minProperties": 9, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "ambient_accounting": {
+      "type": "object", "additionalProperties": false,
+      "required": ["refined_signature_count", "raw_graph_count_not_materialized", "refined_signatures_by_total_degree", "pure_Diff_top_form_refined_signatures", "reduction_mode"],
+      "properties": {
+        "refined_signature_count": {"const": 720},
+        "raw_graph_count_not_materialized": {"const": 2860932903},
+        "refined_signatures_by_total_degree": {"const": {"3": 42, "4": 102, "5": 210, "6": 366}},
+        "pure_Diff_top_form_refined_signatures": {"const": {"even": 7, "odd": 7}},
+        "reduction_mode": {"const": "THEOREM_ASSISTED_TOTAL_FORM_COMPARISON_PLUS_EXACT_SMALL_ALGEBRA"}
+      }
+    },
+    "comparison_theorem_application": {
+      "type": "object", "additionalProperties": false,
+      "required": ["locality_domain", "total_form_comparison", "covariant_tensor_sector", "weyl_ghost_reduction", "mixed_sector", "noncovariant_sector", "metric_structure_algebra", "degree_three_invariant_dimension", "conclusion"],
+      "properties": {
+        "locality_domain": {"const": "CONTRACTIBLE_COORDINATE_PATCH_POLYNOMIAL_FINITE_JETS"},
+        "total_form_comparison": {"type": "string", "minLength": 20},
+        "covariant_tensor_sector": {"type": "string", "minLength": 30},
+        "weyl_ghost_reduction": {"type": "string", "minLength": 30},
+        "mixed_sector": {"type": "string", "minLength": 30},
+        "noncovariant_sector": {"const": "CHERN_WEIL_DEGREE_THREE_INVARIANTS"},
+        "metric_structure_algebra": {"const": "so(3,1)_C_ISOMORPHIC_TO_so(4,C)"},
+        "degree_three_invariant_dimension": {"const": 0},
+        "conclusion": {"const": "NO_PURE_DIFF_CLASS_AND_NO_ADDITIONAL_MIXED_CLASS_IN_D4"}
+      }
+    },
+    "primary_sources": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["arxiv", "title", "application"],
+        "properties": {
+          "arxiv": {"enum": ["0704.2472", "hep-th/9505173"]},
+          "title": {"type": "string", "minLength": 20},
+          "application": {"type": "string", "minLength": 40}
+        }
+      }
+    },
+    "small_algebra": {
+      "type": "object", "additionalProperties": false,
+      "required": ["structure_algebra", "basis", "structure_sha256", "symmetric_invariant_spaces", "controls"],
+      "properties": {
+        "structure_algebra": {"const": "so(4)_Q_VECTOR_REALIZATION"},
+        "basis": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "string"}},
+        "structure_sha256": {"$ref": "#/$defs/hash"},
+        "symmetric_invariant_spaces": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "prefixItems": [
+            {"$ref": "#/$defs/invariantDegreeOne"},
+            {"$ref": "#/$defs/invariantDegreeTwo"},
+            {"$ref": "#/$defs/invariantDegreeThree"},
+            {"$ref": "#/$defs/invariantDegreeFour"}
+          ],
+          "items": false
+        },
+        "controls": {"const": {"degree_one_zero": "VERIFIED", "degree_two_dimension_two": "VERIFIED", "degree_three_zero": "VERIFIED", "degree_four_dimension_three": "VERIFIED"}}
+      }
+    },
+    "AFN0_H14": {"$ref": "#/$defs/quotient"},
+    "minimal_BV_H14": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positive_antifield_columns", "even_classes", "odd_classes", "exact_rows", "even_dimension", "odd_dimension", "regularity_scope"],
+      "properties": {
+        "positive_antifield_columns": {"const": "ZERO_BY_EXPLICIT_KOSZUL_TATE_CONTRACTION"},
+        "even_classes": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4"]},
+        "odd_classes": {"const": ["ANOM_OMEGA_C_DUAL_C"]},
+        "exact_rows": {"const": ["ANOM_OMEGA_BOX_R"]},
+        "even_dimension": {"const": 2},
+        "odd_dimension": {"const": 1},
+        "regularity_scope": {"const": "REGULAR_BACH_LOCUS"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ambient_signature_inventory_bound", "universal_Diff_totalization", "Euler_intrinsic_and_Diff_completion", "Weyl_ghost_derivative_reduction", "pure_Diff_non_covariant_small_algebra", "degree_three_metric_invariant_polynomial_space", "pure_Diff_H14", "independent_mixed_Diff_Weyl_H14", "AFN0_H14_even_odd_dimensions", "positive_antifield_columns", "minimal_BV_H14_even_odd_dimensions", "general_nonminimal_gauge_fixed_sector"],
+      "properties": {
+        "ambient_signature_inventory_bound": {"const": "VERIFIED"},
+        "universal_Diff_totalization": {"type": "string", "pattern": "^VERIFIED_"},
+        "Euler_intrinsic_and_Diff_completion": {"const": "VERIFIED"},
+        "Weyl_ghost_derivative_reduction": {"const": "THEOREM_HYPOTHESES_VERIFIED"},
+        "pure_Diff_non_covariant_small_algebra": {"const": "EXACT_RATIONAL_RANK_COMPUTED"},
+        "degree_three_metric_invariant_polynomial_space": {"const": "ZERO"},
+        "pure_Diff_H14": {"const": "ZERO"},
+        "independent_mixed_Diff_Weyl_H14": {"const": "ZERO"},
+        "AFN0_H14_even_odd_dimensions": {"const": "2_1"},
+        "positive_antifield_columns": {"const": "ZERO_BY_EXPLICIT_CONTRACTION"},
+        "minimal_BV_H14_even_odd_dimensions": {"const": "2_1"},
+        "general_nonminimal_gauge_fixed_sector": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["AFN0_DIFF_MIXED_TOTAL_COMPLEX_COMPLETE", "PURE_DIFF_H14_ZERO", "INDEPENDENT_MIXED_DIFF_WEYL_H14_ZERO", "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS", "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE", "FULL_G2_PROMOTED", "ANOMALY_COEFFICIENTS_COMPUTED_HERE", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"],
+      "properties": {
+        "AFN0_DIFF_MIXED_TOTAL_COMPLEX_COMPLETE": {"const": true},
+        "PURE_DIFF_H14_ZERO": {"const": true},
+        "INDEPENDENT_MIXED_DIFF_WEYL_H14_ZERO": {"const": true},
+        "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS": {"const": true},
+        "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE": {"const": false},
+        "FULL_G2_PROMOTED": {"const": false},
+        "ANOMALY_COEFFICIENTS_COMPUTED_HERE": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "GENERAL_LOCAL_NONMINIMAL_DOUBLETS_AND_GAUGE_FIXED_CONTRACTION"},
+    "claim_boundary": {"type": "string", "minLength": 1000},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_sha256"],
+      "properties": {"source_sha256": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "invariantSpace": {
+      "type": "object", "additionalProperties": false,
+      "required": ["degree", "symmetric_coordinate_count", "nonzero_invariance_equation_count", "matrix_rank", "independent_modular_ranks", "invariant_dimension", "coordinate_manifest_sha256", "matrix_sha256", "proof_sha256"],
+      "properties": {
+        "degree": {"type": "integer"},
+        "symmetric_coordinate_count": {"type": "integer", "minimum": 1},
+        "nonzero_invariance_equation_count": {"type": "integer", "minimum": 1},
+        "matrix_rank": {"type": "integer", "minimum": 1},
+        "independent_modular_ranks": {
+          "type": "object", "additionalProperties": false, "required": ["101", "103", "107"],
+          "properties": {"101": {"type": "integer"}, "103": {"type": "integer"}, "107": {"type": "integer"}}
+        },
+        "invariant_dimension": {"type": "integer", "minimum": 0},
+        "coordinate_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "matrix_sha256": {"$ref": "#/$defs/hash"},
+        "proof_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "invariantDegreeOne": {"allOf": [{"$ref": "#/$defs/invariantSpace"}, {"type": "object", "properties": {"degree": {"const": 1}, "symmetric_coordinate_count": {"const": 6}, "matrix_rank": {"const": 6}, "independent_modular_ranks": {"const": {"101": 6, "103": 6, "107": 6}}, "invariant_dimension": {"const": 0}}}]},
+    "invariantDegreeTwo": {"allOf": [{"$ref": "#/$defs/invariantSpace"}, {"type": "object", "properties": {"degree": {"const": 2}, "symmetric_coordinate_count": {"const": 21}, "matrix_rank": {"const": 19}, "independent_modular_ranks": {"const": {"101": 19, "103": 19, "107": 19}}, "invariant_dimension": {"const": 2}}}]},
+    "invariantDegreeThree": {"allOf": [{"$ref": "#/$defs/invariantSpace"}, {"type": "object", "properties": {"degree": {"const": 3}, "symmetric_coordinate_count": {"const": 56}, "matrix_rank": {"const": 56}, "independent_modular_ranks": {"const": {"101": 56, "103": 56, "107": 56}}, "invariant_dimension": {"const": 0}}}]},
+    "invariantDegreeFour": {"allOf": [{"$ref": "#/$defs/invariantSpace"}, {"type": "object", "properties": {"degree": {"const": 4}, "symmetric_coordinate_count": {"const": 126}, "matrix_rank": {"const": 123}, "independent_modular_ranks": {"const": {"101": 123, "103": 123, "107": 123}}, "invariant_dimension": {"const": 3}}}]},
+    "quotient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pure_Diff", "mixed_independent", "Weyl_even_classes", "Weyl_odd_classes", "exact_rows", "even_dimension", "odd_dimension"],
+      "properties": {
+        "pure_Diff": {"const": {"even_dimension": 0, "odd_dimension": 0}},
+        "mixed_independent": {"const": {"even_dimension": 0, "odd_dimension": 0}},
+        "Weyl_even_classes": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4"]},
+        "Weyl_odd_classes": {"const": ["ANOM_OMEGA_C_DUAL_C"]},
+        "exact_rows": {"const": ["ANOM_OMEGA_BOX_R"]},
+        "even_dimension": {"const": 2},
+        "odd_dimension": {"const": 1}
+      }
+    }
+  }
+}

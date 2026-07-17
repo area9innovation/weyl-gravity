@@ -118,6 +118,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-moment-map-taub-bridge-registration-receipt.md`](reports/einstein-maxwell-weyl-moment-map-taub-bridge-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-balanced-mixed-second-order-extension.json`](contributions/einstein-maxwell-weyl-balanced-mixed-second-order-extension.json)
 - [`reports/einstein-maxwell-weyl-balanced-mixed-second-order-extension-registration-receipt.md`](reports/einstein-maxwell-weyl-balanced-mixed-second-order-extension-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-all-ell-k0-output-resonance.json`](contributions/einstein-maxwell-weyl-all-ell-k0-output-resonance.json)
+- [`reports/einstein-maxwell-weyl-all-ell-k0-output-resonance-submission-receipt.md`](reports/einstein-maxwell-weyl-all-ell-k0-output-resonance-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)

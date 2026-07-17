@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle, every generic integer ell>=2 at k=0, after local gauge reduction and before any stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the nine quadratic sum/difference frequency types are classified by four exact minimal-polynomial families",
+    "shell ordering reduces every possible angularly allowed target collision to L=2ell, L=2ell-1, and one finite L=2ell-1 family with 2<=ell<=7",
+    "exact p- and q-resultants are nonzero on the complete candidate set for every integer ell>=2",
+    "the exceptional L=1 roots are covered by the same root set {0,4/3,4}",
+    "every actual nonzero-frequency L=0 source is solved by the exact homogeneous Noether completion",
+    "a failure of the all-ell k=0 second-order cone cannot be caused by a nonzero sum/difference target resonance"
+  ],
+  "evidence": {
+    "commit": "cfdd4a11f1d38ccad26e0160899ed1a1207d9e2a",
+    "path": "bridge/certificates/einstein_maxwell_weyl_all_ell_k0_output_resonance.json",
+    "sha256": "d7062bbe69bffd7e29d294b6ca781093563dce9f68e85688f9a533a44eae0692"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "derive the zero-frequency homogeneous source from the arbitrary-lambda reduced quadratic action and certify its complete adjoint-cokernel factorization before promoting the all-ell cone",
+  "not_established": [
+    "the symbolic-ell zero-frequency source rank or complete adjoint-cokernel projection",
+    "the complete all-ell k=0 common-zero cone",
+    "opposite-momentum relative-phase sources or exceptional/global input tangents",
+    "all-orders integration, final residual descent, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_all_ell_k0_output_resonance",
+  "team_id": "einstein_boundary",
+  "verdict": "G3_ALL_GENERIC_ELL_K0_NONZERO_OUTPUT_RESONANCE_EXCLUDED",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_all_ell_k0_output_resonance --verify bridge/certificates/einstein_maxwell_weyl_all_ell_k0_output_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_all_ell_k0_output_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_all_ell_k0_output_resonance"
+  ]
+}
