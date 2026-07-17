@@ -1,0 +1,197 @@
+{
+  "Cartan_recurrence": {
+    "arity_three": {
+      "closure": "-1/2[[q2,q2],iota_K^(1)]+1/2[[q2,q2],iota_K^(1)]-[q3,K]=0",
+      "identity": "[q1,iota_K^(3)]=-[q3,iota_K^(1)]-[q2,iota_K^(2)]+L_K^(3)",
+      "normalized_Jacobi_channel": "0",
+      "primitive": "iota_K^(3)=-Cyc_4(Lambda_64 A_K^(3))",
+      "source": "A_K^(3)=[q3,iota_K^(1)]+[q2,iota_K^(2)]-L_K^(3)"
+    },
+    "arity_two": {
+      "closure": "[q1,A_K^(2)]=-[q2,K]=0",
+      "identity": "[q1,iota_K^(2)]=-[q2,iota_K^(1)]+L_K^(2)",
+      "primitive": "iota_K^(2)=-Cyc_3(Lambda_64 A_K^(2))",
+      "source": "A_K^(2)=[q2,iota_K^(1)]-L_K^(2)"
+    },
+    "unary": {
+      "identity": "[q1,iota_K^(1)]=K",
+      "primitive": "iota_K^(1)=Cyc_2(Lambda_64 K)"
+    }
+  },
+  "claim_boundary": "This theorem extends the certified gravity-clock K_Berger Cartan contraction to the complete 64-row gravity-clock-Maxwell BV complex and its typed retained 36-row carrier through arity three. It uses the exact action-derived coupled q2/q3, the coefficientwise retained mixed ell3 transfer, the combined causal unary homotopy, and the typed cyclic pairing. Higher cyclic primitives have two-sided causal-hull support. It does not construct an affine raw-D Cartan homotopy, an arity-four or all-orders theorem, Hadamard products, a QME solution, anomaly cancellation, or any quantum result.",
+  "claim_status": "CERTIFIED_COUPLED_CAUSAL_CYCLIC_K_CARTAN_THROUGH_ARITY_THREE",
+  "complexes": {
+    "full_rows": 64,
+    "retained_exchange_term_count": 0,
+    "retained_mixed_ell2_term_count": 1474,
+    "retained_mixed_ell3_term_count": 25950,
+    "retained_rows": 36
+  },
+  "cyclic_group_audits": {
+    "full64_C3": {
+      "admissible_degree_zero_row_tuples": 42560,
+      "group_law_defects": 0,
+      "order": 3,
+      "projector": "Cyc_3=(1+tau+...+tau^2)/3",
+      "projector_idempotent": true
+    },
+    "full64_C4": {
+      "admissible_degree_zero_row_tuples": 1935856,
+      "group_law_defects": 0,
+      "order": 4,
+      "projector": "Cyc_4=(1+tau+...+tau^3)/4",
+      "projector_idempotent": true
+    },
+    "retained36_C3": {
+      "admissible_degree_zero_row_tuples": 7640,
+      "group_law_defects": 0,
+      "order": 3,
+      "projector": "Cyc_3=(1+tau+...+tau^2)/3",
+      "projector_idempotent": true
+    },
+    "retained36_C4": {
+      "admissible_degree_zero_row_tuples": 199696,
+      "group_law_defects": 0,
+      "order": 4,
+      "projector": "Cyc_4=(1+tau+...+tau^3)/4",
+      "projector_idempotent": true
+    }
+  },
+  "dependency_refs": {
+    "combined_causal_homotopy": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "coupled_q2_q3": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+    },
+    "generator_audit": {
+      "path": "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
+      "result_id": "BERGER_GENERATOR_CONJUGATION_AUDIT",
+      "sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149"
+    },
+    "gravity_K_Cartan": {
+      "path": "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
+      "result_id": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+      "sha256": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8"
+    },
+    "legacy_row_layout": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    },
+    "retained_mixed_ell3": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_TRANSFER.json",
+      "result_id": "BERGER_RETAINED_MIXED_ELL3_TRANSFER",
+      "sha256": "9095aa1bcbf591360d333f9f14747bdd4ddf4a50cf2e0929dd6cd41876489719"
+    },
+    "typed_carrier": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR",
+      "sha256": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "arity_three_Cartan_source_closed": true,
+    "arity_two_Cartan_source_closed": true,
+    "combined_64_row_causal_homotopy_imported": true,
+    "coupled_Cartan_identity_through_arity_three": true,
+    "coupled_mixed_q3_identity_and_K_derivation_all_64_rows": true,
+    "coupled_q2_identity_and_K_derivation_all_64_rows": true,
+    "cyclic_HPL_transfers_full_Cartan_to_retained36": true,
+    "explicit_mixed_ell3_matches_HPL_contact_with_zero_exchange": true,
+    "frozen_generator_is_K_not_raw_D": true,
+    "no_spatial_inverse_or_mode_projector": true,
+    "retained_mixed_ell3_identity_all_36_rows": true,
+    "two_sided_causal_hull_support": true,
+    "typed_cyclic_64_to_36_SDR_imported": true,
+    "typed_full64_C3_C4_cyclicity_audited": true,
+    "typed_retained36_C3_C4_cyclicity_audited": true
+  },
+  "flags": {
+    "BERGER_ARITY_FOUR_K_CARTAN": false,
+    "BERGER_COUPLED_K_CARTAN_ARITY_THREE": true,
+    "BERGER_COUPLED_K_CARTAN_ARITY_TWO": true,
+    "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_RAW_D_AFFINE_CARTAN": false,
+    "QME_RESTORED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "generator": {
+    "Taylor_components": {
+      "L_K0": "ZERO",
+      "L_K1": "e0 I",
+      "L_K2": "ZERO",
+      "L_K3": "ZERO"
+    },
+    "background_fixed": true,
+    "raw_D_affine_zero_arity_nonzero": true,
+    "symbol": "K_Berger=D-omega R"
+  },
+  "pairing_audits": {
+    "full64": {
+      "Maxwell_absolute_pairing_weight": "2",
+      "degree_multiplicities": {
+        "-1": 6,
+        "0": 26,
+        "1": 26,
+        "2": 6
+      },
+      "pairing_degree_sum_one": true,
+      "pairing_odd_skew": true,
+      "pairing_partner_involution": true,
+      "rows": 64
+    },
+    "retained36": {
+      "Maxwell_absolute_pairing_weight": "2",
+      "degree_multiplicities": {
+        "-1": 4,
+        "0": 14,
+        "1": 14,
+        "2": 4
+      },
+      "pairing_degree_sum_one": true,
+      "pairing_odd_skew": true,
+      "pairing_partner_involution": true,
+      "rows": 36
+    }
+  },
+  "result_id": "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE",
+  "retained_transfer": {
+    "K_intertwining": "K iota=iota K; pi K=K pi; K S=S K",
+    "conclusion": "The complete full64 K-Cartan theorem descends to retained36; the new Maxwell-mixed ell2/ell3 coefficients agree with the explicit retained artifacts.",
+    "ell2_formula": "ell2=pi q2(iota,iota)",
+    "ell3_formula": "ell3=pi q3(iota,iota,iota)+pi q2(I2,iota) over graded (2,1)-unshuffles; I2=-S q2(iota,iota)",
+    "mixed_contact_term_count": 25950,
+    "mixed_exchange": "ZERO",
+    "theorem": "A cyclic SDR intertwining K transfers the full64 cyclic L-infinity operations and Cartan homotopy to retained36 by the finite rooted-tree HPL formulas."
+  },
+  "schema": "pure-weyl-berger-coupled-k-cartan-through-arity-three-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_coupled_k_cartan_through_arity_three.py": "8d95a23a70bff051ae987160359b5ed3e60af8d88ad3200cca4dda83b1b327f7",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_coupled_k_cartan_through_arity_three.py": "08199e6cf70ec0c1e92db204bc5a4fabec42f52593e8f4d48e7032ebb3f351a3",
+    "d_quotient_classical/backreacted_clock/verify_berger_coupled_k_cartan_through_arity_three.py": "cce8bbed8e9ac8da39958f2da6fb39f4118bd55bb06de599a24934f3efd0d33e",
+    "d_quotient_classical/schema/berger-coupled-k-cartan-through-arity-three-v1.schema.json": "7515ca4708b37b9e7577280755f3e398cd8ccddcafadb3dd28507c9bf16900a1"
+  },
+  "support_scope": {
+    "bound": "supp iota_K^(n)(f_1,...,f_n) subset J(union_i supp f_i), n<=3",
+    "cyclic_higher_primitives_two_sided_causal": true,
+    "local_Taylor_operations": true,
+    "same_sided_unary_Green_homotopies": true,
+    "separately_retarded_or_advanced_higher_cyclic_primitive_claimed": false
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_coupled_k_cartan_through_arity_three.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_coupled_k_cartan_through_arity_three.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_coupled_k_cartan_through_arity_three -v"
+  ]
+}

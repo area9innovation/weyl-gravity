@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-coupled-k-cartan-through-arity-three-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "source_manifest", "generator", "complexes", "Cartan_recurrence", "retained_transfer", "pairing_audits", "cyclic_group_audits", "support_scope", "exact_checks", "flags", "verification_commands", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-coupled-k-cartan-through-arity-three-v1"},
+    "result_id": {"const": "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_COUPLED_CAUSAL_CYCLIC_K_CARTAN_THROUGH_ARITY_THREE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "source_manifest": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "generator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["symbol", "background_fixed", "Taylor_components", "raw_D_affine_zero_arity_nonzero"],
+      "properties": {
+        "symbol": {"const": "K_Berger=D-omega R"},
+        "background_fixed": {"const": true},
+        "Taylor_components": {"const": {"L_K0": "ZERO", "L_K1": "e0 I", "L_K2": "ZERO", "L_K3": "ZERO"}},
+        "raw_D_affine_zero_arity_nonzero": {"const": true}
+      }
+    },
+    "complexes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_rows", "retained_rows", "retained_mixed_ell2_term_count", "retained_mixed_ell3_term_count", "retained_exchange_term_count"],
+      "properties": {
+        "full_rows": {"const": 64}, "retained_rows": {"const": 36},
+        "retained_mixed_ell2_term_count": {"const": 1474},
+        "retained_mixed_ell3_term_count": {"const": 25950},
+        "retained_exchange_term_count": {"const": 0}
+      }
+    },
+    "Cartan_recurrence": {"type": "object", "additionalProperties": false, "required": ["unary", "arity_two", "arity_three"], "properties": {"unary": {"$ref": "#/$defs/recurrence"}, "arity_two": {"$ref": "#/$defs/recurrence"}, "arity_three": {"$ref": "#/$defs/recurrence3"}}},
+    "retained_transfer": {"type": "object", "additionalProperties": false, "required": ["theorem", "K_intertwining", "ell2_formula", "ell3_formula", "mixed_exchange", "mixed_contact_term_count", "conclusion"], "properties": {"theorem": {"type": "string", "minLength": 80}, "K_intertwining": {"const": "K iota=iota K; pi K=K pi; K S=S K"}, "ell2_formula": {"const": "ell2=pi q2(iota,iota)"}, "ell3_formula": {"type": "string", "minLength": 80}, "mixed_exchange": {"const": "ZERO"}, "mixed_contact_term_count": {"const": 25950}, "conclusion": {"type": "string", "minLength": 80}}},
+    "pairing_audits": {"type": "object", "additionalProperties": false, "required": ["full64", "retained36"], "properties": {"full64": {"$ref": "#/$defs/pairing"}, "retained36": {"$ref": "#/$defs/pairing"}}},
+    "cyclic_group_audits": {"type": "object", "additionalProperties": false, "required": ["full64_C3", "full64_C4", "retained36_C3", "retained36_C4"], "properties": {"full64_C3": {"$ref": "#/$defs/cyclic"}, "full64_C4": {"$ref": "#/$defs/cyclic"}, "retained36_C3": {"$ref": "#/$defs/cyclic"}, "retained36_C4": {"$ref": "#/$defs/cyclic"}}},
+    "support_scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_Taylor_operations", "same_sided_unary_Green_homotopies", "cyclic_higher_primitives_two_sided_causal", "bound", "separately_retarded_or_advanced_higher_cyclic_primitive_claimed"],
+      "properties": {
+        "local_Taylor_operations": {"const": true}, "same_sided_unary_Green_homotopies": {"const": true}, "cyclic_higher_primitives_two_sided_causal": {"const": true},
+        "bound": {"type": "string", "minLength": 40}, "separately_retarded_or_advanced_higher_cyclic_primitive_claimed": {"const": false}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 12, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_COUPLED_K_CARTAN_ARITY_TWO", "BERGER_COUPLED_K_CARTAN_ARITY_THREE", "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE", "BERGER_RAW_D_AFFINE_CARTAN", "BERGER_ARITY_FOUR_K_CARTAN", "BERGER_HADAMARD_DATA", "QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_COUPLED_K_CARTAN_ARITY_TWO": {"const": true}, "BERGER_COUPLED_K_CARTAN_ARITY_THREE": {"const": true}, "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE": {"const": true},
+        "BERGER_RAW_D_AFFINE_CARTAN": {"const": false}, "BERGER_ARITY_FOUR_K_CARTAN": {"const": false}, "BERGER_HADAMARD_DATA": {"const": false}, "QME_RESTORED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 30}},
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 20}, "result_id": {"type": "string", "minLength": 10}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "recurrence": {"type": "object", "minProperties": 2, "additionalProperties": {"type": "string", "minLength": 5}},
+    "recurrence3": {"type": "object", "additionalProperties": false, "required": ["source", "closure", "normalized_Jacobi_channel", "primitive", "identity"], "properties": {"source": {"type": "string", "minLength": 10}, "closure": {"type": "string", "minLength": 20}, "normalized_Jacobi_channel": {"const": "0"}, "primitive": {"type": "string", "minLength": 10}, "identity": {"type": "string", "minLength": 10}}},
+    "pairing": {"type": "object", "additionalProperties": false, "required": ["rows", "degree_multiplicities", "pairing_partner_involution", "pairing_degree_sum_one", "pairing_odd_skew", "Maxwell_absolute_pairing_weight"], "properties": {"rows": {"type": "integer", "enum": [36, 64]}, "degree_multiplicities": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "integer", "minimum": 1}}, "pairing_partner_involution": {"const": true}, "pairing_degree_sum_one": {"const": true}, "pairing_odd_skew": {"const": true}, "Maxwell_absolute_pairing_weight": {"const": "2"}}},
+    "cyclic": {"type": "object", "additionalProperties": false, "required": ["order", "projector", "projector_idempotent", "admissible_degree_zero_row_tuples", "group_law_defects"], "properties": {"order": {"type": "integer", "enum": [3, 4]}, "projector": {"type": "string", "minLength": 15}, "projector_idempotent": {"const": true}, "admissible_degree_zero_row_tuples": {"type": "integer", "minimum": 1}, "group_law_defects": {"const": 0}}}
+  }
+}

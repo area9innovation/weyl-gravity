@@ -159,6 +159,20 @@ pullback, evaluates every graded exchange unshuffle, and replays all 36
 identity rows.  Independent quantum-side acceptance, QME restoration, and
 every quantum claim remain separate fail-closed gates.
 
+The coupled Cartan gate is now also closed through arity three.
+BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE combines the certified 64-row
+gravity--clock--Maxwell causal homotopy, the typed cyclic \(64\to36\) SDR,
+the action-derived coupled \(q_2,q_3\), and the explicit retained mixed
+\(\ell_2,\ell_3\).  For \(K_{\rm Berger}=D-\omega R\), the arity-two source
+closes by \([K,q_2]=0\); at arity three the two Jacobi channels cancel with
+normalized coefficients \(-\tfrac12+\tfrac12=0\), while \([K,q_3]=0\).
+Cyclic Reynolds completion therefore constructs the coupled primitives
+through arity three with two-sided causal-hull support.  Finite cyclic HPL
+transfers the theorem to the retained 36-row carrier, where the explicit
+Maxwell-mixed operation agrees with the 1,474-term \(\ell_2\) and
+25,950-term contact \(\ell_3\) exports.  Raw affine \(D\), arity four,
+Hadamard products, QME restoration, and every quantum claim remain false.
+
 The separate extended apparatus unary audit is now exact. On the detector
 chart the three declared standard-sign rods have
 \(T^R_{\hat a\hat b}=\operatorname{diag}(3/2,-1/2,-1/2,-1/2)\). Because the
