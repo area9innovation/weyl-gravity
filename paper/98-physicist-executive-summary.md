@@ -377,9 +377,9 @@ percentages.
 
 | Bridge project | Current readiness | Exact next gate |
 |---|---|---|
-| Cyclic causal Green transfer | **Theorem extraction** from a complete cylinder consumer | State abstract hypotheses, prove the transfer independently, and add a toy or second detour consumer. |
-| Charge-fibre linearization stability | **Draft allowed** on the compact Einstein--Maxwell domain | Complete the all-harmonic obstruction bilinear, selection rules, and fixed-versus-variable charge disposition. |
-| Extra axial branch and physical current | **Direct Lee--Wald match certified** on the generic compact axial block | Classify the polar extra branch, perform final residual descent, and test causal boundary admissibility. |
+| [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | **Theorem extraction** from a complete cylinder consumer | State abstract hypotheses, prove the transfer independently, and add a toy or second detour consumer. |
+| [Charge-fibre linearization stability](91-charge-fibre-taub-bridge.md) | **Draft allowed** on the compact Einstein--Maxwell domain | Complete the all-harmonic obstruction bilinear, selection rules, and fixed-versus-variable charge disposition. |
+| [Extra axial branch and physical current](92-extra-axial-lee-wald-bridge.md) | **Direct Lee--Wald match certified** on the generic compact axial block | Classify the polar extra branch, perform final residual descent, and test causal boundary admissibility. |
 | Relational clock and light | **Certified G0 redshift fixture; first interaction obstruction certified** | Balance the Hopf momentum flux or construct the full nonhomogeneous primitive, then localize emitter and receiver. |
 | Quantum anomaly bridge | **Candidate classes classified** in the stated antifield-zero sector | Compute coefficients by two methods, complete antifields, and restore or obstruct the QME and \(D\) identity. |
 | Asymptotic Bach/BMS | **Programme stage** | Construct a closed Lorentzian boundary phase space with differentiable charges, flux, and extra-branch signs. |
@@ -465,6 +465,9 @@ precise obstruction, not to protect a preferred interpretation.
 - [Berger arity-three Cartan report](../d_quotient_classical/reports/berger-causal-D-Cartan-arity-three.md)
 - [Berger Maxwell interaction-obstruction report](../d_quotient_classical/reports/berger-maxwell-stress-residual-projection.md)
 - [Berger typed Møller and microlocal-gate report](../quantum-weyl/reports/berger-typed-companion-moller-preflight.md)
+- [Bridge note: cyclic causal Green transfer](90-cyclic-green-transfer-bridge.pdf)
+- [Bridge note: charge-fibre Taub obstructions](91-charge-fibre-taub-bridge.pdf)
+- [Bridge note: extra axial Lee--Wald audit](92-extra-axial-lee-wald-bridge.pdf)
 - [Long-term programme and publication gates](../notes/universe-building-roadmap.md)
 - [General-audience introduction](99-how-to-build-a-universe.md)
 
