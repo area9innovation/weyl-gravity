@@ -1,0 +1,384 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE preflight certifies the exact principal mapping cone and a strict polynomial off-shell chain map with solution cofiber and direct pairing in the generic axial block. It does not certify EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1, a full curved all-sector cone, polar/exceptional/global relative cohomology, boundary closure, residual observables, a complete quadratic obstruction map, causal propagation, particles, or a quantum lift.",
+  "classification": {
+    "full_curved_all_sector_chain_map_certified": false,
+    "full_curved_chain_map_obstructed": false,
+    "generic_axial_offshell_chain_map_certified": true,
+    "generic_axial_solution_cofiber_and_pairing_certified": true,
+    "global_mapping_cofiber_complex_certified": false,
+    "principal_BV_chain_map_and_cone_certified": true,
+    "quantum_import_gate_satisfied": false,
+    "relative_O2_complete": false,
+    "relative_linear_triangle_V1_certified": false
+  },
+  "degree_inventory": {
+    "Einstein_Maxwell": {
+      "degrees": [
+        "Diff+U1 ghosts",
+        "metric+connection fields",
+        "metric+Maxwell equations",
+        "Diff+U1 identities"
+      ],
+      "dimensions": [
+        5,
+        14,
+        14,
+        5
+      ]
+    },
+    "Weyl_Maxwell": {
+      "degrees": [
+        "Diff+U1+Weyl ghosts",
+        "metric+connection fields",
+        "metric+Maxwell equations",
+        "Diff+U1+trace identities"
+      ],
+      "dimensions": [
+        6,
+        14,
+        14,
+        6
+      ]
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generic_axial_offshell_triangle": {
+    "chain_squares": {
+      "equation_identity": "PASS",
+      "field_equation": "PASS",
+      "ghost_field": "PASS",
+      "source_and_target_nilpotency": "PASS"
+    },
+    "complex_dimensions": {
+      "source": [
+        2,
+        6,
+        6,
+        2
+      ],
+      "target": [
+        2,
+        6,
+        6,
+        2
+      ]
+    },
+    "degreewise_injective": false,
+    "degreewise_map_ranks": [
+      2,
+      6,
+      4,
+      0
+    ],
+    "denominators": [
+      "1",
+      "2",
+      "4"
+    ],
+    "does_not_invert": [
+      "k",
+      "omega",
+      "lambda",
+      "lambda-2",
+      "Einstein dispersion q",
+      "extra dispersion p"
+    ],
+    "domain": "generic axial ell>=2 Fourier-polynomial block before the final residual quotient",
+    "field_map": "identity on (h_t,h_x,h_2,q_t,q_x,b)",
+    "ghost_map": "identity on the axial Diff and U(1) parameters",
+    "identity_map": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "injectivity_boundary": "the ghost and field maps are injective; the equation and identity lifts are not, so no strict short exact sequence of axial complexes is claimed",
+    "reduced_equation_map": [
+      [
+        "-lambda*(3*k**2 + 3*lambda - 3*omega**2 - 2)/4",
+        "0",
+        "3*(lambda - omega**2)/2",
+        "3*k*omega/2"
+      ],
+      [
+        "0",
+        "-lambda*(3*k**2 + 3*lambda - 3*omega**2 - 2)/4",
+        "-3*k*omega/2",
+        "3*(k**2 + lambda)/2"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "reduced_equation_map_order": [
+      "metric_t",
+      "metric_x",
+      "Maxwell_t",
+      "Maxwell_x"
+    ],
+    "ungauged_equation_map": [
+      [
+        "-lambda*(3*k**2 + 3*lambda - 3*omega**2 - 2)/4",
+        "0",
+        "0",
+        "3*(lambda - omega**2)/2",
+        "3*k*omega/2",
+        "0"
+      ],
+      [
+        "0",
+        "-lambda*(3*k**2 + 3*lambda - 3*omega**2 - 2)/4",
+        "0",
+        "-3*k*omega/2",
+        "3*(k**2 + lambda)/2",
+        "0"
+      ],
+      [
+        "I*lambda*omega*(3*k**2 + 3*lambda - 3*omega**2 - 2)/8",
+        "-I*k*lambda*(3*k**2 + 3*lambda - 3*omega**2 - 2)/8",
+        "0",
+        "-I*omega*(3*k**2 + 3*lambda - 3*omega**2 - 2)/4",
+        "I*k*(3*k**2 + 3*lambda - 3*omega**2 - 2)/4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-I*omega",
+        "I*k",
+        "0"
+      ]
+    ],
+    "ungauged_equation_map_order": [
+      "h_t",
+      "h_x",
+      "h_2",
+      "q_t",
+      "q_x",
+      "b"
+    ],
+    "verdict": "STRICT_OFFSHELL_POLYNOMIAL_CHAIN_MAP_IN_GENERIC_AXIAL_BLOCK"
+  },
+  "generic_axial_solution_cofiber": {
+    "cofiber": "(R_phys[omega]/(p))^2 with p=omega^2-k^2-lambda+2/3",
+    "full_target_current_inertia": "(3,1)",
+    "pairing": "direct four-dimensional Lee-Wald extra block is nonradical with positive-frequency current inertia (2,0)",
+    "physical_ring_result": "Einstein image is the complete q-primary target summand for every ell>=2 and every allowed compact momentum, including k=0",
+    "scope": "generic axial reduced modes only; no causal, particle, or quantum claim"
+  },
+  "global_curved_cofiber_gate": {
+    "ordinary_mapping_cone_status": "NOT_YET_A_CERTIFIED_COMPLEX",
+    "permitted_object": "a defect-marked cone precomplex whose square records Delta; do not compute or quote its cohomology",
+    "reason": "outside the principal and generic axial sectors the lower-order equation and identity maps have not been constructed, so the cone square is the unresolved normalized chain defect",
+    "strict_short_exact_sequence": false
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "map_disposition": {
+    "common_background": "compactified magnetically supported Plebanski-Hacyan electrovacuum on the fixed U(1) bundle",
+    "full_curved_offshell_chain_map": "OPEN_NOT_CONSTRUCTED_AND_NOT_OBSTRUCTED",
+    "full_curved_solution_map": "ALL_FORMAL_JACOBI_FIELDS_INCLUDED",
+    "generic_axial_ell_ge_2": "STRICT_OFFSHELL_POLYNOMIAL_CHAIN_MAP",
+    "principal_symbol": "STRICT_CHAIN_MAP",
+    "requested_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1": "NOT_YET_CERTIFIED"
+  },
+  "next_gate": "derive or obstruct the lower-order curved equation and identity row maps in the polar, exceptional, and global blocks; only then assemble the global cone and compare its action-derived form",
+  "normalized_full_curved_defect": {
+    "certified_on_shell_property": "Delta_1 Phi=0 whenever H_EM Phi=0",
+    "certified_principal_symbol": "sigma(Delta_1)=0",
+    "field_equation_defect": "Delta_1=H_WM*iota_field-iota_equation*H_EM",
+    "ghost_field_defect": "0 exactly for the common Diff x U(1) action and sigma_Weyl=0, including i_xi Fbar",
+    "identity_defect": "Delta_2=N_WM*iota_equation-iota_identity*N_EM remains open with the same lower-order completion",
+    "obstruction_witness": null,
+    "principal_normalization": "sigma(iota_equation)=diag(alpha_B*kappa*Q_p,identity_Maxwell)",
+    "unresolved_question": "whether lower-order differential rows complete iota_equation so Delta_1 vanishes identically"
+  },
+  "principal_mapping_cofiber": {
+    "convention": "Cone(iota)^n=W^n direct_sum E^(n+1), d_Cone=[[d_W,iota],[0,-d_E]]",
+    "general_square_formula": "d_Cone^2 has upper-right block d_W*iota-iota*d_E and all other blocks zero",
+    "interpretation": "the noncharacteristic principal cone is exact; at a null covector the relative BV symbol carries four field-side and four equation-side classes, not merely the two extra target field polarizations",
+    "nonnull_fixture": {
+      "all_three_cone_squares_zero": true,
+      "cohomology_dimensions": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "degree_labels": [
+        "-1",
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "differential_ranks": [
+        5,
+        15,
+        13,
+        6
+      ],
+      "dimensions": [
+        5,
+        20,
+        28,
+        19,
+        6
+      ]
+    },
+    "null_fixture": {
+      "all_three_cone_squares_zero": true,
+      "cohomology_dimensions": [
+        0,
+        0,
+        4,
+        4,
+        0
+      ],
+      "degree_labels": [
+        "-1",
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "differential_ranks": [
+        5,
+        15,
+        9,
+        6
+      ],
+      "dimensions": [
+        5,
+        20,
+        28,
+        19,
+        6
+      ]
+    }
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_weyl_relative_linear_triangle_preflight.py",
+    "generator_sha256": "87c7bfad1c4e52fe352896b840083adf5d8adc78a48b39019fae79d80987c10e",
+    "inputs": {
+      "formal_solution_inclusion": {
+        "path": "bridge/certificates/einstein_maxwell_chevreton_formal_linearization.json",
+        "sha256": "a2421ca7160a93f4c0154118a6362cf03b1c2d7058ad99e2993961beeaf86433"
+      },
+      "generic_axial_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+        "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+      },
+      "generic_axial_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "generic_axial_physical_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "principal_complex": {
+        "path": "bridge/certificates/einstein_maxwell_product_tangent_preflight.json",
+        "sha256": "cbae5417348975b9ceee8b04be7b6214c7ca8bf5f2c3778b4527de461569512b"
+      },
+      "quadratic_axial_channel": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_quadratic_channel_preflight.json",
+        "sha256": "04f024d751ec907bf399a7e0edd8bb6596b31d2123a00d386a2b805ba09bbe4f"
+      },
+      "quadratic_charge_fixtures": {
+        "path": "bridge/certificates/einstein_maxwell_second_order_inclusion.json",
+        "sha256": "493059b1bf77c2a94e68d69fe23593dcb4d8be41e93ff22ae8ee18f674f79c8b"
+      },
+      "standard_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      }
+    }
+  },
+  "quadratic_export": {
+    "fixed_charge": "certified radion and Maxwell-duality obstructions plus selected extra-mode Taub fixtures",
+    "generic_axial_mixed_channel": "one selected nonresonant source block is explicitly removable",
+    "status": "PARTIAL_FIXTURES_NOT_A_BILINEAR_ON_COMPLETE_RELATIVE_COHOMOLOGY",
+    "variable_charge": "explicit radion and duality extensions"
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+  "result_state": "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_CHAIN_MAPS_CERTIFIED_FULL_CURVED_ALL_SECTOR_TRIANGLE_OPEN",
+  "schema": "einstein-weyl-relative-linear-triangle-preflight-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_linear_triangle_preflight.schema.json",
+  "schema_sha256": "09c466a7096a518ba45d3ff6eefdbfd1dcc0530e9aa2a1d1a7f7b694d2710d15",
+  "sector_ledger": [
+    {
+      "O2": "selected channels only",
+      "cofiber": "two p-primary cyclic summands",
+      "map": "strict off-shell polynomial",
+      "pairing": "direct Lee-Wald nonradical",
+      "sector": "generic axial ell>=2, all allowed k"
+    },
+    {
+      "O2": "selected axial-polar channel removable",
+      "cofiber": "extra target branch open",
+      "map": "on-shell complete",
+      "pairing": "Einstein-image pullback complete",
+      "sector": "polar standard Einstein image"
+    },
+    {
+      "O2": "open",
+      "cofiber": "target complement not classified",
+      "map": "on-shell complete",
+      "pairing": "Einstein-image pullback complete",
+      "sector": "ell=1 exceptional"
+    },
+    {
+      "O2": "fixed-charge radion and duality fixtures obstructed; charge-relaxed extensions exist",
+      "cofiber": "target complement not classified",
+      "map": "on-shell complete",
+      "pairing": "Einstein-image pullback complete",
+      "sector": "ell=0 and global twists"
+    },
+    {
+      "O2": "open",
+      "cofiber": "open",
+      "map": "open",
+      "pairing": "boundary terms open",
+      "sector": "boundaries or asymptotic domains"
+    }
+  ],
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_relative_linear_triangle_preflight --verify bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_relative_linear_triangle_preflight.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_linear_triangle_preflight"
+  ]
+}

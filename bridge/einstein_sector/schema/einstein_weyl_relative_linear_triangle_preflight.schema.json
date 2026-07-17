@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-weyl-relative-linear-triangle-preflight-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "provenance", "degree_inventory", "map_disposition", "normalized_full_curved_defect", "principal_mapping_cofiber", "generic_axial_offshell_triangle", "generic_axial_solution_cofiber", "global_curved_cofiber_gate", "sector_ledger", "quadratic_export", "classification", "next_gate", "claim_boundary", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-weyl-relative-linear-triangle-preflight-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_weyl_relative_linear_triangle_preflight.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT"},
+    "result_state": {"const": "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_CHAIN_MAPS_CERTIFIED_FULL_CURVED_ALL_SECTOR_TRIANGLE_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "provenance": {"type": "object"},
+    "degree_inventory": {"type": "object"},
+    "map_disposition": {"type": "object", "properties": {"requested_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1": {"const": "NOT_YET_CERTIFIED"}}, "required": ["requested_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"]},
+    "normalized_full_curved_defect": {"type": "object"},
+    "principal_mapping_cofiber": {"type": "object"},
+    "generic_axial_offshell_triangle": {"type": "object", "properties": {"verdict": {"const": "STRICT_OFFSHELL_POLYNOMIAL_CHAIN_MAP_IN_GENERIC_AXIAL_BLOCK"}}, "required": ["verdict"]},
+    "generic_axial_solution_cofiber": {"type": "object"},
+    "global_curved_cofiber_gate": {"type": "object", "properties": {"ordinary_mapping_cone_status": {"const": "NOT_YET_A_CERTIFIED_COMPLEX"}, "strict_short_exact_sequence": {"const": false}}, "required": ["ordinary_mapping_cone_status", "strict_short_exact_sequence"]},
+    "sector_ledger": {"type": "array", "minItems": 5},
+    "quadratic_export": {"type": "object"},
+    "classification": {"type": "object", "properties": {"generic_axial_offshell_chain_map_certified": {"const": true}, "full_curved_all_sector_chain_map_certified": {"const": false}, "relative_linear_triangle_V1_certified": {"const": false}, "quantum_import_gate_satisfied": {"const": false}}, "required": ["generic_axial_offshell_chain_map_certified", "full_curved_all_sector_chain_map_certified", "relative_linear_triangle_V1_certified", "quantum_import_gate_satisfied"]},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}

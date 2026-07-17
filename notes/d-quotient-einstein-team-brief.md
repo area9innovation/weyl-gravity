@@ -64,6 +64,25 @@ Use the shared row format:
 |---|---|---|---|---|---|---|---|
 | Explicit background/sector/boundaries | computed disposition | computed status | direct-current verdict | computed status | exported dependency | exported dependency | exported dependency |
 
+### Relative linear triangle preflight
+
+`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT` now gives an exact partial
+answer. The covariant principal-symbol map has a nilpotent mapping cone, and
+the complete generic axial `ell>=2` Fourier-polynomial block admits a strict
+off-shell chain map on ghosts, all six ungauged fields, equations, and Noether
+identities. Its equation-row lift uses only constant denominators and does not
+invert `k`, `omega`, or either dispersion factor. The already classified
+two-copy axial solution cofiber and its direct nonradical Lee--Wald block
+therefore belong to a genuine sectoral relative triangle, not merely to an
+on-shell quotient.
+
+This does not freeze the requested V1 theorem. The lower-order curved row
+maps remain open in polar, exceptional, and global sectors. Until they are
+constructed or obstructed, the global cone is a defect-marked precomplex
+whose square is the normalized chain-map defect; it has no certified global
+cohomology and does not satisfy the quantum import gate. See
+`notes/einstein-weyl-relative-linear-triangle-preflight.md`.
+
 ## E-D1a status: generator identification completed
 
 The exact seed certificate
