@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Axial ell=3 zero-frequency Weyl-Maxwell source fixture",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "case", "mode_table_Ht_Hx_Qt_Qx_and_frequency",
+    "real_channel_factor", "homogeneous_source_rows_E00_E11_E22_Maxwell1",
+    "classification", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-axial-ell3-zero-source-fixture-v1"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "case": {"enum": ["plus", "minus", "extra_e1", "extra_e2", "extra_cross"]},
+    "homogeneous_source_rows_E00_E11_E22_Maxwell1": {"type": "array", "minItems": 4, "maxItems": 4}
+  },
+  "additionalProperties": true
+}

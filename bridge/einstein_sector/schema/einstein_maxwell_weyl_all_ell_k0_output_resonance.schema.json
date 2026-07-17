@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "All-ell k=0 Weyl-Maxwell quadratic output resonance audit",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "target_shells", "frequency_minimal_polynomials",
+    "shell_localization", "candidate_resultants", "classification",
+    "interpretation", "next_gate", "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-all-ell-k0-output-resonance-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ALL_ELL_K0_OUTPUT_RESONANCE"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "classification": {
+      "type": "object",
+      "required": [
+        "all_nine_frequency_types_covered", "all_ell_at_least_2_covered",
+        "all_nonzero_output_channels_off_physical_target_shells",
+        "homogeneous_nonzero_channels_solvable_by_Noether_completion",
+        "zero_frequency_source_cokernel_classified",
+        "complete_all_ell_second_order_cone_proved"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

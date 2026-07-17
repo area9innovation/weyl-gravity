@@ -1633,6 +1633,28 @@ second-order tangent cone is exactly as large as the stabilizer moment-map
 test permits.  General `ell`, opposite momentum, exceptional/global tangents,
 and all-orders integration remain open.
 
+The nonzero-frequency part is now promoted exactly to every generic input
+`ell>=2` at `k=0`.  Shell ordering reduces the nine sum/difference frequency
+types to candidates at `L=2ell`, `L=2ell-1`, and one finite
+`L=2ell-1`, `2<=ell<=7` mixed family.  Exact `p`/`q` resultants are nonzero
+on the complete candidate set.  The three differences lie below the first
+generic shell, while the two largest sums lie above the angularly allowed
+top shell.  Exceptional `L=1` roots are included in the same `{0,4/3,4}`
+audit, and actual nonzero `L=0` sources are solved by the exact homogeneous
+Noether completion.  Thus any failure of the all-`ell` second-order cone must
+occur in the zero-frequency source/cokernel map, not through a nonzero target
+resonance.  The complete all-`ell` cone remains fail-closed pending that
+source theorem.
+
+The first raw four-dimensional `ell=3` extra-self source replay was stopped
+after approximately 30 minutes and 6.5 GB resident memory without emitting a
+coefficient.  It also exposed and removed a type error in the proposed
+fixture: the `Omega!=0` homogeneous left-null relation cannot be imposed on
+the zero-frequency block.  No mathematical counterexample follows.  The
+next source calculation should differentiate the arbitrary-`lambda` reduced
+quadratic action with respect to homogeneous background parameters and use a
+cached direct tensor replay only as an audit.
+
 Verification receipt (2026-07-17): scoped compilation passed in `0.03 s`;
 six deterministic certificate replays passed in `2.32 s`; six independent
 verifiers and 18 scoped tests passed in `2.17 s`; and the complete
