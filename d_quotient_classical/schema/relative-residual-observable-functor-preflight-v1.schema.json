@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-residual-observable-functor-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "setting", "dependency_tags",
+    "dependency_refs", "shared_relative_row", "required_import",
+    "background_scope", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-residual-observable-functor-preflight-v1"},
+    "result_id": {"const": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"},
+    "result_state": {"const": "DEPENDENCY_CONTRACT_READY_OFFSHELL_TRIANGLE_MISSING"},
+    "setting": {"type": "object", "additionalProperties": false, "required": ["theory_pair", "background", "generator", "phase_space"], "properties": {"theory_pair": {"const": "Einstein-Maxwell_to_Weyl-Maxwell"}, "background": {"const": "compact_Einstein-Maxwell_product"}, "generator": {"const": "H_product"}, "phase_space": {"type": "string", "minLength": 1}}},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "additionalProperties": {"$ref": "#/$defs/ref"}, "minProperties": 3},
+    "shared_relative_row": {"type": "object", "additionalProperties": false, "required": ["map_iota", "cofiber", "relative_pairing", "O2", "residual_action", "observable_map", "quantum_lift"], "properties": {"map_iota": {"const": "ONSHELL_MAP_ONLY"}, "cofiber": {"const": "BLOCKED_OFFSHELL_TRIANGLE_MISSING"}, "relative_pairing": {"const": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY"}, "O2": {"const": "PARTIAL_FIXTURES_ONLY"}, "residual_action": {"const": "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING"}, "observable_map": {"const": "BLOCKED_OFFSHELL_PULLBACK_MISSING"}, "quantum_lift": {"const": "NOT_APPLICABLE_TO_CLASSICAL_PREFLIGHT"}}},
+    "required_import": {"type": "object", "additionalProperties": false, "required": ["result_id", "required_components", "status"], "properties": {"result_id": {"const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"}, "required_components": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}}, "status": {"const": "MISSING"}}},
+    "background_scope": {"type": "object", "additionalProperties": false, "required": ["common_product_background", "berger_clock_background"], "properties": {"common_product_background": {"const": "APPLICABLE"}, "berger_clock_background": {"const": "NOT_APPLICABLE_NO_SAME_BASE_EINSTEIN_TANGENT"}}},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1", "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1", "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED", "OBSERVABLE_PULLBACK_CONSTRUCTED", "RESIDUAL_EQUIVARIANCE_CERTIFIED", "COFIBER_COMPATIBILITY_CERTIFIED", "BERGER_SAME_BASE_RELATIVE_MAP_APPLICABLE"], "properties": {"RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1": {"const": true}, "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1": {"const": false}, "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED": {"const": false}, "OBSERVABLE_PULLBACK_CONSTRUCTED": {"const": false}, "RESIDUAL_EQUIVARIANCE_CERTIFIED": {"const": false}, "COFIBER_COMPATIBILITY_CERTIFIED": {"const": false}, "BERGER_SAME_BASE_RELATIVE_MAP_APPLICABLE": {"const": false}}},
+    "next_gate": {"const": "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {"ref": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}
+}
