@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "result_stage", "dependency_tags", "regularity_scope", "dependency_hashes", "accepted_export_schema", "receiver_mechanics", "cohomology_reduction", "standard_background_input", "complete_dual_witness_binding", "conditional_obstruction_theorem", "analytic_matching_ledger", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1"},
+    "result_id": {"const": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"},
+    "result_state": {"const": "FULL_BV_QUOTIENT_BOUND_TO_STANDARD_BACKGROUND_VECTOR_REPOSITORY_MATCHING_OPEN"},
+    "result_stage": {"const": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "regularity_scope": {"const": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY"},
+    "dependency_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "Ward_insertion_contract"],
+      "properties": {
+        "full_local_BV_G2": {"$ref": "#/$defs/hash"},
+        "gauge_fixed_H14": {"$ref": "#/$defs/hash"},
+        "BoxR_triviality": {"$ref": "#/$defs/hash"},
+        "standard_background_coefficients": {"$ref": "#/$defs/hash"},
+        "Ward_insertion_contract": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "accepted_export_schema": {"const": "quantum-weyl-regulated-slavnov-breaking-export-v1"},
+    "receiver_mechanics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "nontrivial_branch", "trivial_branch"],
+      "properties": {
+        "scope": {"const": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY"},
+        "nontrivial_branch": {"$ref": "#/$defs/receiverResult"},
+        "trivial_branch": {"$ref": "#/$defs/receiverResult"}
+      }
+    },
+    "cohomology_reduction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_candidate_basis", "quotient_basis", "matrix_shape", "matrix_entries", "kernel", "kernel_primitive", "pure_Diff_dimension", "independent_mixed_Diff_Weyl_dimension", "positive_antifield_extra_dimension", "nonminimal_extra_dimension"],
+      "properties": {
+        "raw_candidate_basis": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C", "ANOM_OMEGA_BOX_R"]},
+        "quotient_basis": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"]},
+        "matrix_shape": {"const": [3, 4]},
+        "matrix_entries": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/matrixEntry"}
+        },
+        "kernel": {"const": ["ANOM_OMEGA_BOX_R"]},
+        "kernel_primitive": {"const": "-(1/12) R^2 modulo d_h current"},
+        "pure_Diff_dimension": {"const": 0},
+        "independent_mixed_Diff_Weyl_dimension": {"const": 0},
+        "positive_antifield_extra_dimension": {"const": 0},
+        "nonminimal_extra_dimension": {"const": 0}
+      }
+    },
+    "standard_background_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "convention", "known_even_coordinates", "partial_quotient_coordinates", "parity_odd_status", "BoxR_status", "repository_matching_status"],
+      "properties": {
+        "scope": {"const": "STANDARD_ISOLATED_FOUR_DIMENSIONAL_CONFORMAL_SPIN_TWO_BACKGROUND_ANOMALY"},
+        "convention": {"type": "string", "minLength": 30},
+        "known_even_coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {"const": {"numerator": 199, "denominator": 30}},
+            {"const": {"numerator": -87, "denominator": 20}}
+          ],
+          "items": false
+        },
+        "partial_quotient_coordinates": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "prefixItems": [
+            {"const": {"numerator": 199, "denominator": 30}},
+            {"const": {"numerator": -87, "denominator": 20}},
+            {"const": "PARITY_ODD_COEFFICIENT_NOT_COMPUTED"}
+          ],
+          "items": false
+        },
+        "parity_odd_status": {"const": "NOT_COMPUTED_NOT_ASSUMED_ZERO"},
+        "BoxR_status": {"const": "SCHEME_DEPENDENT_EXACT_REMOVABLE"},
+        "repository_matching_status": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "complete_dual_witness_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis_status", "witnesses", "known_even_vector_nonzero", "proof_source"],
+      "properties": {
+        "basis_status": {"const": "COMPLETE_GAUGE_FIXED_BV_QUOTIENT_ON_REGULAR_BACH_LOCUS"},
+        "witnesses": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/witness"}},
+        "known_even_vector_nonzero": {"const": true},
+        "proof_source": {"const": "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION"}
+      }
+    },
+    "conditional_obstruction_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "antecedents", "conclusion", "reason", "activated"],
+      "properties": {
+        "status": {"const": "PROVED_CONDITIONAL_NOT_ACTIVATED"},
+        "antecedents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 20}},
+        "conclusion": {"type": "string", "minLength": 50},
+        "reason": {"const": "both certified even quotient coordinates 199/30 and -87/20 are nonzero"},
+        "activated": {"const": false}
+      }
+    },
+    "analytic_matching_ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["discharged", "missing"],
+      "properties": {
+        "discharged": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 10}},
+        "missing": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["carrier_id", "required_output"],
+            "properties": {
+              "carrier_id": {"enum": ["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "AUXILIARY_FOURTH_ORDER_MEASURE_MATCH", "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION", "PARITY_ODD_REGULATOR_WARD_IDENTITY_OR_COEFFICIENT"]},
+              "required_output": {"type": "string", "minLength": 20}
+            }
+          }
+        }
+      }
+    },
+    "minimal_missing_carrier_theorem": {
+      "const": {
+        "status": "EXACT_ANALYTIC_MATCHING_GAP",
+        "algebraic_basis_gap": false,
+        "coefficient_arithmetic_gap": false,
+        "remaining_decision_gap": "the map from the standard background determinant to the repository regulated BV Slavnov functional",
+        "no_further_local_graph_expansion_required": true
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "FULL_GAUGE_FIXED_BV_H14_BOUND": true,
+        "STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED": true,
+        "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,
+        "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": true,
+        "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,
+        "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+        "QME_OBSTRUCTED": false,
+        "QME_RESTORED": false,
+        "D_CARTAN_CLASSIFIED": false,
+        "LORENTZIAN_QUANTUM_THEORY": false
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_sha256"],
+      "properties": {
+        "source_sha256": {
+          "type": "object",
+          "minProperties": 6,
+          "maxProperties": 6,
+          "additionalProperties": {"$ref": "#/$defs/hash"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "matrixEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row", "column", "coefficient"],
+      "properties": {
+        "row": {"type": "integer", "minimum": 0, "maximum": 2},
+        "column": {"type": "integer", "minimum": 0, "maximum": 2},
+        "coefficient": {"const": {"numerator": 1, "denominator": 1}}
+      }
+    },
+    "witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["witness_id", "coordinates_on_quotient_basis", "standard_background_evaluation", "status"],
+      "properties": {
+        "witness_id": {"type": "string", "pattern": "^lambda_ANOM_"},
+        "coordinates_on_quotient_basis": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
+        "standard_background_evaluation": {"oneOf": [{"$ref": "#/$defs/rational"}, {"const": "NOT_COMPUTED"}]},
+        "status": {"const": "TRANSPORTED_COMPLETE_QUOTIENT_COORDINATE_DUAL"}
+      }
+    },
+    "receiverResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cohomology_coordinates", "exact_coordinate", "classification", "qme_disposition"],
+      "properties": {
+        "cohomology_coordinates": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
+        "exact_coordinate": {"$ref": "#/$defs/rational"},
+        "classification": {"enum": ["NONTRIVIAL", "TRIVIAL_OR_ZERO"]},
+        "qme_disposition": {"enum": ["OBSTRUCTED_STRICT_FIELD_CONTENT", "RESTORABLE_BY_LOCAL_COUNTERTERM"]}
+      }
+    }
+  }
+}

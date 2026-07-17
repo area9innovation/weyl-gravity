@@ -1,0 +1,289 @@
+{
+  "accepted_export_schema": "quantum-weyl-regulated-slavnov-breaking-export-v1",
+  "analytic_matching_ledger": {
+    "discharged": [
+      "complete minimal/nonminimal/gauge-fixed local H14 quotient",
+      "pure-Diff and independent mixed Diff-Weyl exclusion",
+      "explicit omega BoxR primitive",
+      "exact standard background even coefficient reconstruction",
+      "portable renormalized Ward-insertion input contract"
+    ],
+    "missing": [
+      {
+        "carrier_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+        "required_output": "ellipticity, exact field/ghost/auxiliary multiplicities and action normalization"
+      },
+      {
+        "carrier_id": "AUXILIARY_FOURTH_ORDER_MEASURE_MATCH",
+        "required_output": "local Jacobian and equality of nontrivial anomaly coordinates"
+      },
+      {
+        "carrier_id": "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER",
+        "required_output": "conformal-Killing removal, remaining zero modes, contour and determinant measure"
+      },
+      {
+        "carrier_id": "REGULATED_BV_SLAVNOV_ACTION",
+        "required_output": "regularized antibracket/Slavnov breaking and Wess-Zumino consistency proof"
+      },
+      {
+        "carrier_id": "PARITY_ODD_REGULATOR_WARD_IDENTITY_OR_COEFFICIENT",
+        "required_output": "derived odd coefficient or a verified parity Ward identity"
+      }
+    ]
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector. It proves the quotient reduction, removes omega BoxR with its explicit primitive, and proves the conditional implication that an identity match of the two nonzero even coordinates would obstruct the strict fixed-field-content QME. The antecedent is not established: no repository elliptic complex, auxiliary/fourth-order measure Jacobian, zero-mode/contour ledger, regulated BV Slavnov action, or parity-odd regulator verdict is supplied. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory.",
+  "claim_flags": {
+    "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": true,
+    "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,
+    "D_CARTAN_CLASSIFIED": false,
+    "FULL_GAUGE_FIXED_BV_H14_BOUND": true,
+    "LORENTZIAN_QUANTUM_THEORY": false,
+    "QME_OBSTRUCTED": false,
+    "QME_RESTORED": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,
+    "STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED": true
+  },
+  "cohomology_reduction": {
+    "independent_mixed_Diff_Weyl_dimension": 0,
+    "kernel": [
+      "ANOM_OMEGA_BOX_R"
+    ],
+    "kernel_primitive": "-(1/12) R^2 modulo d_h current",
+    "matrix_entries": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "column": 0,
+        "row": 0
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "column": 1,
+        "row": 1
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "column": 2,
+        "row": 2
+      }
+    ],
+    "matrix_shape": [
+      3,
+      4
+    ],
+    "nonminimal_extra_dimension": 0,
+    "positive_antifield_extra_dimension": 0,
+    "pure_Diff_dimension": 0,
+    "quotient_basis": [
+      "ANOM_OMEGA_C2",
+      "ANOM_OMEGA_E4",
+      "ANOM_OMEGA_C_DUAL_C"
+    ],
+    "raw_candidate_basis": [
+      "ANOM_OMEGA_C2",
+      "ANOM_OMEGA_E4",
+      "ANOM_OMEGA_C_DUAL_C",
+      "ANOM_OMEGA_BOX_R"
+    ]
+  },
+  "complete_dual_witness_binding": {
+    "basis_status": "COMPLETE_GAUGE_FIXED_BV_QUOTIENT_ON_REGULAR_BACH_LOCUS",
+    "known_even_vector_nonzero": true,
+    "proof_source": "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
+    "witnesses": [
+      {
+        "coordinates_on_quotient_basis": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "standard_background_evaluation": {
+          "denominator": 30,
+          "numerator": 199
+        },
+        "status": "TRANSPORTED_COMPLETE_QUOTIENT_COORDINATE_DUAL",
+        "witness_id": "lambda_ANOM_OMEGA_C2"
+      },
+      {
+        "coordinates_on_quotient_basis": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        "standard_background_evaluation": {
+          "denominator": 20,
+          "numerator": -87
+        },
+        "status": "TRANSPORTED_COMPLETE_QUOTIENT_COORDINATE_DUAL",
+        "witness_id": "lambda_ANOM_OMEGA_E4"
+      },
+      {
+        "coordinates_on_quotient_basis": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        "standard_background_evaluation": "NOT_COMPUTED",
+        "status": "TRANSPORTED_COMPLETE_QUOTIENT_COORDINATE_DUAL",
+        "witness_id": "lambda_ANOM_OMEGA_C_DUAL_C"
+      }
+    ]
+  },
+  "conditional_obstruction_theorem": {
+    "activated": false,
+    "antecedents": [
+      "repository regulator and measure match the standard spin-two nontrivial even coordinates",
+      "regulated Slavnov breaking satisfies the Wess-Zumino consistency equation in the certified local BV complex",
+      "field content is strict pure Weyl gravity with no compensating Wess-Zumino sector"
+    ],
+    "conclusion": "the one-loop breaking has a nonzero H14 class and the strict fixed-field-content QME is obstructed",
+    "reason": "both certified even quotient coordinates 199/30 and -87/20 are nonzero",
+    "status": "PROVED_CONDITIONAL_NOT_ACTIVATED"
+  },
+  "dependency_hashes": {
+    "BoxR_triviality": "b712a4745e7424baf1fa4a52fb1efc192196a95bdea939619052a6c9f7031685",
+    "Ward_insertion_contract": "0d7ac0bfb866341bd5b61f8c92f112de76b67261bd2378b954fd58e8aa70c191",
+    "full_local_BV_G2": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a",
+    "gauge_fixed_H14": "a7730a34b21d2068cc73e46c563ce929195a3d9a7c7626d3843788b54e0592b3",
+    "standard_background_coefficients": "ad6a9036c90b98d0f2f6e0b6bb5238efe6d008bf21ef0e38bb3ce97a03173e55"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "minimal_missing_carrier_theorem": {
+    "algebraic_basis_gap": false,
+    "coefficient_arithmetic_gap": false,
+    "no_further_local_graph_expansion_required": true,
+    "remaining_decision_gap": "the map from the standard background determinant to the repository regulated BV Slavnov functional",
+    "status": "EXACT_ANALYTIC_MATCHING_GAP"
+  },
+  "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
+  "proof_sha256": "7186b3c0e02e222b0dcd36c419db336ea0fea8d5b06d72b506fdecddfb624172",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/anomalies/regulated_slavnov_breaking_preflight.py": "6081aea942deeeb1947d6239c7005275143e9694ed2f149b183409bcdec30cf8",
+      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json": "8383ab80630e829e44ad73fb6cc2587f71d7eb363594453fba9b5c2bee9344d9",
+      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-export-v1.schema.json": "addcdc4116574b2666c7f6a40d88b4f01c13e047b06883574cfbe08d2ef02401",
+      "quantum-weyl/anomalies/tests/test_regulated_slavnov_breaking_preflight.py": "2aa125ea8ee0d3cadac0a05dc97e4f50a845808a671235df1ae9ef2e9785a87b",
+      "quantum-weyl/anomalies/verify_regulated_slavnov_breaking_preflight.py": "757b40f69d1ed130f0d2fa2e21d6c16bf7dd585aea16f59161a181b75847d2cd",
+      "quantum-weyl/reports/regulated-slavnov-breaking-assembly-preflight.md": "0a0da0742944ba1f0eb4ea5c12fea06361b2fafe9297ac4808e904729eaaca7f"
+    }
+  },
+  "receiver_mechanics": {
+    "nontrivial_branch": {
+      "classification": "NONTRIVIAL",
+      "cohomology_coordinates": [
+        {
+          "denominator": 30,
+          "numerator": 199
+        },
+        {
+          "denominator": 20,
+          "numerator": -87
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "exact_coordinate": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "qme_disposition": "OBSTRUCTED_STRICT_FIELD_CONTENT"
+    },
+    "scope": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY",
+    "trivial_branch": {
+      "classification": "TRIVIAL_OR_ZERO",
+      "cohomology_coordinates": [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "exact_coordinate": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "qme_disposition": "RESTORABLE_BY_LOCAL_COUNTERTERM"
+    }
+  },
+  "regularity_scope": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY",
+  "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+  "result_stage": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND",
+  "result_state": "FULL_BV_QUOTIENT_BOUND_TO_STANDARD_BACKGROUND_VECTOR_REPOSITORY_MATCHING_OPEN",
+  "schema": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1",
+  "standard_background_input": {
+    "BoxR_status": "SCHEME_DEPENDENT_EXACT_REMOVABLE",
+    "convention": "(4 pi)^(-2) [c omega C2-a omega E4] modulo exact omega BoxR",
+    "known_even_coordinates": [
+      {
+        "denominator": 30,
+        "numerator": 199
+      },
+      {
+        "denominator": 20,
+        "numerator": -87
+      }
+    ],
+    "parity_odd_status": "NOT_COMPUTED_NOT_ASSUMED_ZERO",
+    "partial_quotient_coordinates": [
+      {
+        "denominator": 30,
+        "numerator": 199
+      },
+      {
+        "denominator": 20,
+        "numerator": -87
+      },
+      "PARITY_ODD_COEFFICIENT_NOT_COMPUTED"
+    ],
+    "repository_matching_status": "NOT_COMPUTED",
+    "scope": "STANDARD_ISOLATED_FOUR_DIMENSIONAL_CONFORMAL_SPIN_TWO_BACKGROUND_ANOMALY"
+  }
+}

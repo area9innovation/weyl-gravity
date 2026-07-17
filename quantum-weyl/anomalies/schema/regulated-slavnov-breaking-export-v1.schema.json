@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-regulated-slavnov-breaking-export-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "classical_commit", "analytic_route", "normalization", "operator_and_measure", "coefficient_basis", "coefficients", "consistency", "classification", "qme_disposition", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-regulated-slavnov-breaking-export-v1"},
+    "result_id": {"const": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "contains": {"const": "LOCAL-ALGEBRAIC"},
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]}
+    },
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "analytic_route": {"enum": ["EUCLIDEAN_ELLIPTIC", "LORENTZIAN_CAUSAL"]},
+    "normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "alpha_C", "signature", "gauge", "regularization", "scheme", "boundary_conditions"],
+      "properties": {
+        "action": {"type": "string", "minLength": 1},
+        "alpha_C": {"type": "string", "minLength": 1},
+        "signature": {"type": "string", "minLength": 1},
+        "gauge": {"type": "string", "minLength": 1},
+        "regularization": {"type": "string", "minLength": 1},
+        "scheme": {"type": "string", "minLength": 1},
+        "boundary_conditions": {"type": "string", "minLength": 1}
+      }
+    },
+    "operator_and_measure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["complete_complex_artifact", "multiplicity_artifact", "auxiliary_fourth_order_match_artifact", "zero_mode_ledger_artifact", "measure_contour_artifact"],
+      "properties": {
+        "complete_complex_artifact": {"$ref": "#/$defs/artifact"},
+        "multiplicity_artifact": {"$ref": "#/$defs/artifact"},
+        "auxiliary_fourth_order_match_artifact": {"$ref": "#/$defs/artifact"},
+        "zero_mode_ledger_artifact": {"$ref": "#/$defs/artifact"},
+        "measure_contour_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "coefficient_basis": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C", "ANOM_OMEGA_BOX_R"]},
+    "coefficients": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C", "ANOM_OMEGA_BOX_R"],
+      "properties": {
+        "ANOM_OMEGA_C2": {"$ref": "#/$defs/rational"},
+        "ANOM_OMEGA_E4": {"$ref": "#/$defs/rational"},
+        "ANOM_OMEGA_C_DUAL_C": {"$ref": "#/$defs/rational"},
+        "ANOM_OMEGA_BOX_R": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "consistency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["wess_zumino_status", "wess_zumino_proof", "parity_status", "parity_proof"],
+      "properties": {
+        "wess_zumino_status": {"const": "VERIFIED"},
+        "wess_zumino_proof": {"$ref": "#/$defs/artifact"},
+        "parity_status": {"enum": ["COEFFICIENT_COMPUTED", "WARD_VERIFIED_ZERO"]},
+        "parity_proof": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "exact_counterterm"],
+      "properties": {
+        "status": {"enum": ["NONTRIVIAL", "TRIVIAL_OR_ZERO"]},
+        "exact_counterterm": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/artifact"}]}
+      }
+    },
+    "qme_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "proof_artifact"],
+      "properties": {
+        "status": {"enum": ["OBSTRUCTED_STRICT_FIELD_CONTENT", "RESTORABLE_BY_LOCAL_COUNTERTERM"]},
+        "proof_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"enum": ["JSON_DATA", "JSON_PROOF", "TEXT_PROOF"]},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

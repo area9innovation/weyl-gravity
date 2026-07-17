@@ -19,12 +19,12 @@ OUTPUT_PATH = PACKAGE_ROOT / "certificates" / "LOCAL_ANOMALY_TO_D_CARTAN_COMPARI
 SCHEMA_PATH = PACKAGE_ROOT / "schema" / "local_anomaly_to_d_cartan_comparison.schema.json"
 
 DEPENDENCIES = (
-    "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
-    "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
+    "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
+    "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json",
     "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "quantum-weyl/cartan/certificates/CARTAN_DEFECT_COMPLEX_PRECERTIFICATE.json",
     "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
-    "quantum-weyl/lorentzian/certificates/BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT.json",
+    "quantum-weyl/lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "quantum-weyl/transfer/certificates/BERGER_54_ROW_D_CAUSAL_INPUT_IMPORT.json",
     "d_quotient_programme/registry/generators.json",
     "d_quotient_programme/registry/phase_spaces.json",
@@ -59,19 +59,27 @@ def _load(path: str, *, commit: str | None = None) -> dict[str, object]:
 
 def _semantic_input_checks() -> tuple[dict[str, str], str]:
     registry_commit = _registry_commit()
-    even = _load(DEPENDENCIES[0])
-    odd = _load(DEPENDENCIES[1])
+    g2 = _load(DEPENDENCIES[0])
+    h14 = _load(DEPENDENCIES[1])
     coefficients = _load(DEPENDENCIES[2])
     cartan = _load(DEPENDENCIES[3])
     ward_contract = _load(DEPENDENCIES[4])
-    green_contract = _load(DEPENDENCIES[5])
+    causal_chain = _load(DEPENDENCIES[5])
     berger = _load(DEPENDENCIES[6])
     generators = _load(DEPENDENCIES[7], commit=registry_commit)["generators"]
     phase_spaces = _load(DEPENDENCIES[8], commit=registry_commit)["phase_spaces"]
-    if even["result_state"] != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT":
-        raise ValueError("even AFN0 quotient input is not complete")
-    if odd["result_state"] != "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT":
-        raise ValueError("odd AFN0 quotient input is not complete")
+    if (
+        g2["result_state"]
+        != "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN"
+        or g2["claim_flags"]["FULL_BV_G2_COMPLETE"] is not True
+    ):
+        raise ValueError("full local BV G2 input is not complete")
+    if (
+        h14["result_state"] != "GAUGE_FIXED_BV_LOCAL_COHOMOLOGY_COMPLETE"
+        or h14["parity_dimensions"] != {"even": 2, "odd": 1}
+        or h14["claim_flags"]["COHOMOLOGY_COMPLETE"] is not True
+    ):
+        raise ValueError("gauge-fixed H14 quotient input is not complete")
     if not coefficients["claim_flags"]["CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO"]:
         raise ValueError("coefficient input does not certify the cylinder pullback")
     if cartan["result_state"] != "ALGEBRAIC_ENGINE_READY_PHYSICAL_CANDIDATES_INPUT_BLOCKED":
@@ -83,14 +91,18 @@ def _semantic_input_checks() -> tuple[dict[str, str], str]:
         or ward_contract.get("quantum_cartan_status") != "NO_VERDICT"
     ):
         raise ValueError("Ward insertion contract crossed its input boundary")
+    causal_flags = causal_chain.get("claim_flags", {})
     if (
-        green_contract.get("result_state")
-        != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
-        or green_contract.get("green_endpoint_status") != "NOT_CONSTRUCTED"
-        or green_contract.get("hadamard_status") != "NOT_CONSTRUCTED"
-        or green_contract.get("quantum_execution_authorized") is not False
+        causal_chain.get("result_state")
+        != "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN"
+        or causal_flags.get("BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED")
+        is not True
+        or causal_flags.get("BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED")
+        is not True
+        or causal_flags.get("BERGER_HADAMARD_DATA") is not False
+        or causal_flags.get("QUANTUM_CLAIM") is not False
     ):
-        raise ValueError("Green endpoint contract crossed its input boundary")
+        raise ValueError("causal-chain/Hadamard boundary drifted")
     if (
         berger.get("result_state")
         != "CLASSICAL_D_ACTION_IMPORTED_CAUSAL_ENDPOINT_REDUCED"

@@ -26,7 +26,7 @@
         "odd_basis": {"const": ["ANOM_OMEGA_C_DUAL_C"]},
         "even_standard_background_coefficient_coordinates": {"type": "array", "minItems": 2, "maxItems": 2},
         "odd_coefficient_status": {"const": "NOT_COMPUTED"},
-        "full_BV_lift_status": {"const": "NOT_COMPUTED"}
+        "full_BV_lift_status": {"const": "COMPLETE_ON_REGULAR_BACH_LOCUS"}
       }
     },
     "setting_specific_classical_inputs": {
@@ -42,7 +42,7 @@
           "contraction_D_equivariance": {"const": "VERIFIED"},
           "cyclic_D_action": {"const": "VERIFIED"},
           "causal_54_to_26_reduction": {"const": "VERIFIED_CONDITIONAL"},
-          "retained_26_row_green_homotopy": {"const": "NOT_CONSTRUCTED"},
+          "retained_26_row_green_homotopy": {"const": "CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED"},
           "renormalized_local_Ward_insertion": {"const": "NOT_CONSTRUCTED"},
           "cartan_classification_status": {"const": "NO_VERDICT"}
         }
@@ -56,8 +56,8 @@
           "type": "object", "additionalProperties": false,
           "required": ["status", "physical_green_status", "hadamard_status"],
           "properties": {
-            "status": {"const": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"},
-            "physical_green_status": {"const": "NOT_CONSTRUCTED"},
+            "status": {"const": "CAUSAL_GREEN_IMPORTED_HADAMARD_OPEN"},
+            "physical_green_status": {"const": "CONSTRUCTED_CLASSICAL_CAUSAL"},
             "hadamard_status": {"const": "NOT_CONSTRUCTED"}
           }
         },
@@ -86,7 +86,7 @@
       "type": "object", "additionalProperties": false,
       "required": ["source_complex", "source_degree", "intermediate_complex", "intermediate_degree", "target_complex", "target_degree", "canonical_map_from_grading_alone", "missing_arrow"],
       "properties": {
-        "source_complex": {"const": "H^{1,4}_AFN0(s|d)"}, "source_degree": {"type": "object"},
+        "source_complex": {"const": "H^{1,4}_gauge-fixed BV(s|d)"}, "source_degree": {"type": "object"},
         "intermediate_complex": {"type": "string"}, "intermediate_degree": {"type": "object"},
         "target_complex": {"const": "H^0(Der_adm(C),[Q,-])"}, "target_degree": {"type": "object"},
         "canonical_map_from_grading_alone": {"const": false},

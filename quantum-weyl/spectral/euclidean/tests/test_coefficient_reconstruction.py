@@ -86,6 +86,7 @@ class WeylGravitonCoefficientTests(unittest.TestCase):
     def test_claim_boundary_is_fail_closed(self) -> None:
         flags = CERT.build_certificate()["claim_flags"]
         self.assertTrue(flags["STANDARD_BACKGROUND_A_AND_C_COMPUTED"])
+        self.assertTrue(flags["FULL_GAUGE_FIXED_BV_ANOMALY_BASIS_AVAILABLE"])
         self.assertTrue(flags["CYLINDER_D_LOCAL_ANOMALY_PULLBACK_ZERO"])
         for key in (
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",

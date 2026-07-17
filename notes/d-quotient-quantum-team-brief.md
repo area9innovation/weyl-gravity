@@ -371,6 +371,15 @@ disagreement. The acceptance target is presentation-independent coefficients
 and an exact account of every normalization or scheme transformation, not
 numerical agreement on a single background.
 
+The exact standard conformal-spin-two background vector has now been
+reconstructed as `(199/30,-87/20)` in the even quotient and bound to the
+complete gauge-fixed BV basis. This is not yet the repository coefficient:
+the active gate is an exact match of the repository elliptic or causal
+operator, action normalization, auxiliary/fourth-order Jacobian,
+field/ghost multiplicities, zero modes, contour, measure, and regulated
+Slavnov functional. The parity-odd coordinate remains uncomputed rather than
+assumed zero.
+
 ### Work package Q-G3: isolate the actual (D)-anomaly
 
 Construct the explicit coefficient-bearing map to
@@ -515,13 +524,18 @@ obstruction is a successful result.
 
 ## Required handoff
 
-### Current eight-hour assignment (2026-07-17)
+### Current eight-hour assignment (2026-07-18)
 
 The scope-correct V2 classical antifield import and **G2 local BV cohomology**
 are now closed on the regular Bach locus, including minimal Koszul--Tate,
 pure-Diff, mixed, descent, nonminimal, and canonically gauge-fixed sectors.
-The next local task is the regulated repository Slavnov breaking. Do not alter
-the classical producer to force acceptance. See
+The exact `3 x 4` Slavnov-breaking assembly preflight and strict analytic
+export receiver are now ready. The next task is to supply a
+content-addressed repository regulator/operator/measure match and compute the
+regulated Slavnov breaking through that receiver. A nonzero quotient branch
+obstructs strict fixed field content; a purely `omega BoxR` branch is restored
+by its explicit counterterm. Neither branch has yet been activated. Do not
+alter the classical producer to force acceptance. See
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
 Deliver one human-readable report and machine-readable certificates containing:

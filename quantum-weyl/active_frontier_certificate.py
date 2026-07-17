@@ -52,7 +52,7 @@ def main() -> int:
         OUTPUT.write_text(content)
     if args.check and (not OUTPUT.exists() or OUTPUT.read_text() != content):
         raise SystemExit(f"stale active quantum frontier: {OUTPUT}")
-    print("QUANTUM WEYL ACTIVE FRONTIER: G2 LOCAL BV COMPLETE; HADAMARD/QME OPEN")
+    print("QUANTUM WEYL ACTIVE FRONTIER: SLAVNOV ASSEMBLY READY; ANALYTIC MATCH/QME OPEN")
     return 0
 
 

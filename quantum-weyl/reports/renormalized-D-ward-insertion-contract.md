@@ -24,3 +24,10 @@ witness.
 The checked-in receipt is `INTERFACE_READY_PHYSICAL_INPUT_BLOCKED`.  Its exact
 finite fixtures do not supply a physical `Q1`, restored QME, coefficient, or
 quantum D verdict.
+
+The upstream density quotient is now complete and the separate regulated
+Slavnov-breaking receiver can accept a content-addressed analytic result.
+The imported classical 26/54-row causal Green homotopy does not fill this
+Ward contract: a BRST-compatible global Hadamard state, renormalized product,
+regulated breaking, restored `Q1`, and the order-one D operators are still
+required.

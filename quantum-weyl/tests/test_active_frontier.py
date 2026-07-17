@@ -36,6 +36,12 @@ class ActiveFrontierTests(unittest.TestCase):
             self.payload["claim_flags"]["GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE"]
         )
         self.assertTrue(self.payload["claim_flags"]["FULL_BV_G2_COMPLETE"])
+        self.assertEqual(
+            ladder["G3"], "PARTIAL_STANDARD_VECTOR_BOUND_ANALYTIC_MATCHING_OPEN"
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
+        )
         self.assertTrue(ladder["G5"].startswith("BLOCKED"))
 
     def test_supersession_does_not_delete_history(self) -> None:
@@ -71,7 +77,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+            "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

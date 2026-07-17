@@ -15,9 +15,12 @@ from constant-curvature and Ricci-flat heat-kernel data, with an independent
 conical-sphere check of \(c_2\).  Its combined coefficient and local
 one-generator \(D\)-descent receipt is
 [`WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json`](certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json).
-This is a standard background-anomaly result, not a computation of the
-repository BV Slavnov breaking; its certificate keeps that distinction
-fail-closed.
+The complete local gauge-fixed BV anomaly basis is now available on the
+regular Bach locus, so these numbers define candidate coordinates along
+`omega C2` and `omega E4`. This remains a standard background-anomaly result,
+not a computation of the repository BV Slavnov breaking: the elliptic
+operator, auxiliary/fourth-order Jacobian, measure, zero modes, and regulated
+Slavnov action still require a matched certificate.
 
 The generic schema in this directory remains a promotion gate: a coefficient record is valid
 only when it supplies an exact coefficient together with the action

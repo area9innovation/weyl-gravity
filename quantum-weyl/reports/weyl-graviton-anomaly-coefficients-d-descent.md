@@ -100,9 +100,12 @@ a second copy, so \(c_D^2=0\).
 
 This is an exact reconstruction of the standard Euclidean background anomaly
 from the factorized conformal-spin-two determinant and heat-kernel formulae.
-It is not yet the coefficient of the repository's BV Slavnov breaking because
-the full classical field/antifield import, measure matching, and QME
-calculation remain open.
+The complete local gauge-fixed BV anomaly basis is now available on the
+regular Bach locus, so the two even numbers have unambiguous candidate
+coordinates in that quotient. They are not yet coefficients of the
+repository's BV Slavnov breaking because the repository elliptic operator,
+auxiliary/fourth-order Jacobian, determinant measure, zero-mode policy, and
+regularized Slavnov action have not been matched.
 
 Likewise, the zero cylinder pullback is not a proof that the quantum
 degree-zero Cartan defect

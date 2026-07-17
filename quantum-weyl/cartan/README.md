@@ -67,17 +67,19 @@ A sourced QME-open payload cannot emit a Cartan class or local-to-Cartan map.
 ## Claim boundary
 
 The physical sector ledger separates algebraic classification, analytic
-operator construction, and coefficient computation.  The bulk algebraic
-basis is `IN_PROGRESS`; every analytic operator is
-`UNDEFINED_ANALYTICALLY`; every coefficient is `NOT_COMPUTED`.
-There is no renormalized `Q_1`, `iota_1`, or `L_D^(1)`, the classical import
-is unfrozen, and the AFN0 lower-form basis is incomplete.  The completed
-intrinsic Euler tower is included in the truncated even-anomaly closure slice,
-but its relative class remains undecided and the local QME has not been
-restored.  Boundary/corner, scalar-clock, measure, and
-Lorentzian observable algebras are also absent.  Consequently this package
-does not establish anomaly freedom, an anomaly coefficient, residual quantum
-transfer, or a quantum pairing correction.
+operator construction, and coefficient computation. The full minimal,
+nonminimal, pure-Diff, mixed Diff--Weyl, and canonically gauge-fixed local BV
+anomaly quotient is complete on the regular Bach locus, with even/odd
+dimensions `2/1`. The exact Slavnov assembly preflight binds the standard
+background even vector to that quotient and exposes a strict analytic input
+schema, but does not identify it with the repository breaking. The classical
+26/54-row causal Green homotopy is imported; global BRST Hadamard covariance,
+renormalized products, and all order-one Ward operators remain absent.
+There is no renormalized `Q_1`, `iota_1`, or `L_D^(1)`, and the local QME has
+not been restored or declared obstructed. Boundary/corner, scalar-clock,
+measure, and Lorentzian observable algebras are also absent. Consequently
+this package does not establish anomaly freedom, a repository anomaly
+coefficient, residual quantum transfer, or a quantum pairing correction.
 
 The required classical D-quotient handoff settings are parsed, semantically
 verified, and imported by content hash.  Additive settings, including the
@@ -95,7 +97,8 @@ H^0(\operatorname{Der}_{\rm adm}(\mathcal C),[Q,-]).
 \]
 
 Its realization as a support-local relative BV group remains gated on a
-declared renormalized observable algebra and complete local BV basis.  In
+declared renormalized observable algebra; the local BV anomaly-density basis
+is now complete. In
 particular, this degree-zero operator obstruction must not be silently
 identified with the ordinary ghost-number-one anomaly-density catalogue.
 

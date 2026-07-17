@@ -23,9 +23,17 @@ covariant jet prolongations commute with the horizontal differential, and a
 free-word normal-form calculation transports every SDR identity through
 arbitrary invertible local BV-canonical gauge fixing. The gauge-fixed H04 and
 H14 quotients consequently have the same `2/1` dimensions.
-These analytic inputs do not promote the lifecycle because the global BRST
-Hadamard covariance, repository Slavnov breaking,
-renormalized products, and QME remain open.
+The exact Slavnov-breaking assembly preflight now reduces the four raw density
+coordinates to this three-class quotient, removes `omega BoxR` with its
+stored primitive, and binds the standard background vector
+`(199/30, -87/20, p_odd)` to complete quotient duals. The parity-odd entry is
+not computed. This proves only the inactive conditional implication that an
+exact repository match of either nonzero even coordinate would obstruct the
+strict fixed-field-content QME. An executable, content-addressed analytic
+handoff receiver now distinguishes the obstructed and counterterm-restorable
+branches. These results do not promote the lifecycle because the repository
+operator/measure match, global BRST Hadamard covariance, regulated Slavnov
+breaking, renormalized products, and QME remain open.
 
 The portable 64/36 carrier and the repaired coupled (q_2) are committed.
 The quantum-side consumer independently replays all 1,890 full and 1,474
@@ -117,7 +125,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. compute the regulated repository Slavnov breaking against the completed H14 basis;
+1. match a repository regulator, operator, measure, auxiliary/fourth-order
+   Jacobian, and zero-mode ledger through the accepted analytic export, then
+   compute the regulated Slavnov breaking against the completed H14 basis;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;
@@ -128,10 +138,9 @@ The ordered critical path is:
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.
 
-Tier-1 rerun on 2026-07-17: frontier generation/reproduction took 0.04 s,
-independent verification took 0.12 s, eight frontier tests took 0.15 s
-(0.05 s inside the test runner), and strict Draft 2020-12 validation took
-1.20 s. The coupled repair's affected
+Tier-1 rerun on 2026-07-18 covers frontier reproduction, independent
+verification, the scoped frontier tests, and strict Draft 2020-12 schema
+validation. The coupled repair's affected
 exact chain was run separately at Tier 2 and is recorded in its acceptance
 report. Tier 3 was not run because no quantum lifecycle or paper theorem is
 promoted.

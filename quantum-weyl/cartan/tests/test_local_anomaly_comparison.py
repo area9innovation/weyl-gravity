@@ -23,6 +23,10 @@ class LocalAnomalyComparisonTests(unittest.TestCase):
 
     def test_comparison_fails_closed_at_named_missing_arrow(self) -> None:
         payload = comparison_payload()
+        self.assertEqual(
+            payload["source_local_cohomology"]["full_BV_lift_status"],
+            "COMPLETE_ON_REGULAR_BACH_LOCUS",
+        )
         self.assertEqual(payload["cartan_defect_comparison"]["classification_status"], "NO_VERDICT")
         self.assertFalse(payload["cartan_defect_comparison"]["zero_local_pullback_implies_zero_cartan_defect"])
         self.assertEqual(payload["source_target_degree_audit"]["missing_arrow"], "RENORMALIZED_LOCAL_WARD_INSERTION")
@@ -47,15 +51,18 @@ class LocalAnomalyComparisonTests(unittest.TestCase):
             "AVAILABLE_SETTING_SPECIFIC_BERGER_54_ROWS",
         )
         self.assertEqual(berger["causal_54_to_26_reduction"], "VERIFIED_CONDITIONAL")
-        self.assertEqual(berger["retained_26_row_green_homotopy"], "NOT_CONSTRUCTED")
+        self.assertEqual(
+            berger["retained_26_row_green_homotopy"],
+            "CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED",
+        )
         self.assertEqual(berger["cartan_classification_status"], "NO_VERDICT")
 
     def test_analytic_interfaces_are_ready_without_physical_promotion(self) -> None:
         contracts = comparison_payload()["prepared_input_contracts"]
         green = contracts["berger_26_row_green_hadamard_endpoint"]
         ward = contracts["renormalized_D_Ward_insertion"]
-        self.assertEqual(green["status"], "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED")
-        self.assertEqual(green["physical_green_status"], "NOT_CONSTRUCTED")
+        self.assertEqual(green["status"], "CAUSAL_GREEN_IMPORTED_HADAMARD_OPEN")
+        self.assertEqual(green["physical_green_status"], "CONSTRUCTED_CLASSICAL_CAUSAL")
         self.assertEqual(ward["status"], "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED")
         self.assertEqual(ward["quantum_cartan_status"], "NO_VERDICT")
 

@@ -57,7 +57,7 @@ def comparison_analysis() -> dict[str, object]:
         {
             "carrier_id": "FROZEN_CLASSICAL_D_ACTION",
             "required_for": "source and target chain-complex identification",
-            "status": "MISSING_FULL_CLASSICAL_FREEZE",
+            "status": "AVAILABLE_SETTING_SPECIFIC_BERGER_GLOBAL_COMPACT_OBSERVABLE_ACTION_OPEN",
         },
         {
             "carrier_id": "RENORMALIZED_Q1",
@@ -86,7 +86,7 @@ def comparison_analysis() -> dict[str, object]:
         },
     )
     source_target_audit = {
-        "source_complex": "H^{1,4}_AFN0(s|d)",
+        "source_complex": "H^{1,4}_gauge-fixed BV(s|d)",
         "source_degree": {"ghost_number": 1, "form_degree": 4},
         "intermediate_complex": "one-generator local D pullback",
         "intermediate_degree": {"D_ghost_number": 1, "form_degree": 4},
@@ -139,7 +139,7 @@ def comparison_payload() -> dict[str, object]:
                 _fraction(value) for value in analysis["coefficient_vector"]
             ],
             "odd_coefficient_status": "NOT_COMPUTED",
-            "full_BV_lift_status": "NOT_COMPUTED",
+            "full_BV_lift_status": "COMPLETE_ON_REGULAR_BACH_LOCUS",
         },
         "setting_specific_classical_inputs": [
             {
@@ -150,15 +150,15 @@ def comparison_payload() -> dict[str, object]:
                 "contraction_D_equivariance": "VERIFIED",
                 "cyclic_D_action": "VERIFIED",
                 "causal_54_to_26_reduction": "VERIFIED_CONDITIONAL",
-                "retained_26_row_green_homotopy": "NOT_CONSTRUCTED",
+                "retained_26_row_green_homotopy": "CAUSAL_GREEN_HOMOTOPY_V2_IMPORTED",
                 "renormalized_local_Ward_insertion": "NOT_CONSTRUCTED",
                 "cartan_classification_status": "NO_VERDICT",
             }
         ],
         "prepared_input_contracts": {
             "berger_26_row_green_hadamard_endpoint": {
-                "status": "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED",
-                "physical_green_status": "NOT_CONSTRUCTED",
+                "status": "CAUSAL_GREEN_IMPORTED_HADAMARD_OPEN",
+                "physical_green_status": "CONSTRUCTED_CLASSICAL_CAUSAL",
                 "hadamard_status": "NOT_CONSTRUCTED",
             },
             "renormalized_D_Ward_insertion": {
@@ -204,15 +204,15 @@ def comparison_payload() -> dict[str, object]:
             "zero_local_pullback_implies_zero_cartan_defect": False,
         },
         "checks": {
-            "local_even_source_basis_complete_at_AFN0": "VERIFIED",
-            "local_odd_source_basis_complete_at_AFN0": "VERIFIED",
+            "local_even_source_basis_complete_full_BV": "VERIFIED",
+            "local_odd_source_basis_complete_full_BV": "VERIFIED",
             "cylinder_sigma_D_zero": "VERIFIED",
             "cylinder_pullback_matrix_zero": "VERIFIED",
             "minkowski_sigma_D_minus_one": "VERIFIED",
             "source_target_degree_mismatch_recorded": "VERIFIED",
             "missing_arrow_fail_closed": "VERIFIED",
             "berger_classical_D_input_setting_specific": "VERIFIED",
-            "green_endpoint_contract_fail_closed": "VERIFIED",
+            "causal_green_imported_Hadamard_fail_closed": "VERIFIED",
             "ward_insertion_contract_fail_closed": "VERIFIED",
         },
         "claim_boundary": [
