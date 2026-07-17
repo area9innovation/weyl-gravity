@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-ambient-intrinsic-orbit-v1.json",
+  "title": "AFN0 ambient intrinsic signed-orbit certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "result_state", "classical_commit", "dependency_tags", "scope_label", "ambient_signature_source", "predecessor_factor_orbit_source", "intrinsic_orbit_bundle", "algorithm", "totals", "counts_by_sector", "signature_summaries", "checks", "next_gates", "claim_boundary", "analysis_sha256", "canonical_hashes", "certificate_sha256"],
+  "properties": {
+    "result_id": {"const": "AFN0_AMBIENT_INTRINSIC_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR"},
+    "result_state": {"const": "INTRINSIC_SIGNED_ORBITS_COMPLETE_LINEAR_RELATIONS_OPEN"},
+    "classical_commit": {"const": "UNFROZEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope_label": {"const": "AFN0_ONLY_TOTAL_DEGREES_THREE_FOUR"},
+    "ambient_signature_source": {"$ref": "#/$defs/ambientSource"},
+    "predecessor_factor_orbit_source": {"$ref": "#/$defs/predecessorSource"},
+    "intrinsic_orbit_bundle": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bundle_sha256", "profile_reduction_count", "path"],
+      "properties": {
+        "bundle_sha256": {"$ref": "#/$defs/hash"},
+        "profile_reduction_count": {"const": 192},
+        "path": {"type": "string", "pattern": "^ambient_intrinsic_orbit_manifests/[0-9a-f]{64}\\.json$"}
+      }
+    },
+    "algorithm": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode", "implemented_generators", "raw_graph_materialization_scope"],
+      "properties": {
+        "mode": {"const": "SIGNED_DISJOINT_SET_ON_SYMMETRY_GENERATORS"},
+        "implemented_generators": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "raw_graph_materialization_scope": {"const": "TOTAL_DEGREES_THREE_FOUR_ONLY"}
+      }
+    },
+    "totals": {"$ref": "#/$defs/counts"},
+    "counts_by_sector": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {"$ref": "#/$defs/sectorCounts"}
+    },
+    "signature_summaries": {
+      "type": "array", "minItems": 144, "maxItems": 144,
+      "items": {"$ref": "#/$defs/summary"}
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_refined_degree_three_four_signatures_accounted_for", "all_factor_profiles_accounted_for", "every_generator_preserves_raw_graph_space", "every_raw_graph_assigned_to_exactly_one_signed_orbit", "orbit_histograms_reconstruct_raw_counts", "odd_stabilizer_zero_components_detected", "ambient_degree_five_six_graphs_not_materialized", "predecessor_certificate_hash_and_scope"],
+      "properties": {
+        "all_refined_degree_three_four_signatures_accounted_for": {"const": "VERIFIED"},
+        "all_factor_profiles_accounted_for": {"const": "VERIFIED"},
+        "every_generator_preserves_raw_graph_space": {"const": "VERIFIED"},
+        "every_raw_graph_assigned_to_exactly_one_signed_orbit": {"const": "VERIFIED"},
+        "orbit_histograms_reconstruct_raw_counts": {"const": "VERIFIED"},
+        "odd_stabilizer_zero_components_detected": {"const": "VERIFIED"},
+        "ambient_degree_five_six_graphs_not_materialized": {"const": "VERIFIED"},
+        "predecessor_certificate_hash_and_scope": {"const": "VERIFIED"}
+      }
+    },
+    "next_gates": {
+      "type": "object", "additionalProperties": false,
+      "required": ["algebraic_and_differential_Bianchi", "covariant_jet_commutators", "integration_by_parts_quotient", "dimension_specific_antisymmetrization", "production_Q_dh_matrices", "total_degrees_five_six_intrinsic_orbits"],
+      "properties": {
+        "algebraic_and_differential_Bianchi": {"const": "NOT_COMPUTED"},
+        "covariant_jet_commutators": {"const": "NOT_COMPUTED"},
+        "integration_by_parts_quotient": {"const": "NOT_COMPUTED"},
+        "dimension_specific_antisymmetrization": {"const": "NOT_COMPUTED"},
+        "production_Q_dh_matrices": {"const": "NOT_COMPUTED"},
+        "total_degrees_five_six_intrinsic_orbits": {"const": "NOT_COMPUTED_FACTORED_ONLY"}
+      }
+    },
+    "claim_boundary": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "analysis_sha256": {"$ref": "#/$defs/hash"},
+    "canonical_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest_sha256", "analysis_sha256", "bundle_sha256", "predecessor_source_sha256"],
+      "properties": {
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "analysis_sha256": {"$ref": "#/$defs/hash"},
+        "bundle_sha256": {"$ref": "#/$defs/hash"},
+        "predecessor_source_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "certificate_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ambientSource": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "analysis_sha256"],
+      "properties": {
+        "result_id": {"const": "AFN0_AMBIENT_LOWER_FORM_SIGNATURE_CERTIFICATE"},
+        "analysis_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "predecessorSource": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "analysis_sha256", "certificate_sha256", "bundle_sha256"],
+      "properties": {
+        "result_id": {"const": "AFN0_AMBIENT_FACTOR_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR"},
+        "analysis_sha256": {"$ref": "#/$defs/hash"},
+        "certificate_sha256": {"$ref": "#/$defs/hash"},
+        "bundle_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["refined_signature_count", "factor_profile_count", "raw_graph_count", "generator_edge_count", "signed_orbit_count", "surviving_orbit_count", "odd_stabilizer_zero_orbit_count"],
+      "properties": {
+        "refined_signature_count": {"type": "integer", "minimum": 1},
+        "factor_profile_count": {"type": "integer", "minimum": 1},
+        "raw_graph_count": {"type": "integer", "minimum": 1},
+        "generator_edge_count": {"type": "integer", "minimum": 1},
+        "signed_orbit_count": {"type": "integer", "minimum": 1},
+        "surviving_orbit_count": {"type": "integer", "minimum": 1},
+        "odd_stabilizer_zero_orbit_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "sectorCounts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parity", "total_degree", "refined_signature_count", "factor_profile_count", "raw_graph_count", "generator_edge_count", "signed_orbit_count", "surviving_orbit_count", "odd_stabilizer_zero_orbit_count"],
+      "properties": {
+        "parity": {"enum": ["even", "odd"]},
+        "total_degree": {"enum": [3, 4]},
+        "refined_signature_count": {"type": "integer", "minimum": 1},
+        "factor_profile_count": {"type": "integer", "minimum": 1},
+        "raw_graph_count": {"type": "integer", "minimum": 1},
+        "generator_edge_count": {"type": "integer", "minimum": 1},
+        "signed_orbit_count": {"type": "integer", "minimum": 1},
+        "surviving_orbit_count": {"type": "integer", "minimum": 1},
+        "odd_stabilizer_zero_orbit_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["signature_sha256", "parity", "total_degree", "ghost_number", "form_degree", "factor_profile_count", "raw_graph_count", "signed_orbit_count", "surviving_orbit_count", "odd_stabilizer_zero_orbit_count", "profile_reduction_manifest_sha256"],
+      "properties": {
+        "signature_sha256": {"$ref": "#/$defs/hash"},
+        "parity": {"enum": ["even", "odd"]},
+        "total_degree": {"enum": [3, 4]},
+        "ghost_number": {"type": "integer", "minimum": 0},
+        "form_degree": {"type": "integer", "minimum": 0, "maximum": 4},
+        "factor_profile_count": {"type": "integer", "minimum": 1},
+        "raw_graph_count": {"type": "integer", "minimum": 1},
+        "signed_orbit_count": {"type": "integer", "minimum": 1},
+        "surviving_orbit_count": {"type": "integer", "minimum": 0},
+        "odd_stabilizer_zero_orbit_count": {"type": "integer", "minimum": 0},
+        "profile_reduction_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

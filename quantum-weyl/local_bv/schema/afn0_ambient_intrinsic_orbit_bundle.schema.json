@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-afn0-ambient-intrinsic-orbit-bundle-v1.json",
+  "title": "AFN0 ambient intrinsic signed-orbit bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result_id", "dependency_tags", "ambient_analysis_sha256", "profile_reduction_count", "profile_reductions", "bundle_sha256"],
+  "properties": {
+    "result_id": {"const": "AFN0_AMBIENT_INTRINSIC_ORBIT_BUNDLE_DEGREES_THREE_FOUR"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "ambient_analysis_sha256": {"$ref": "#/$defs/hash"},
+    "profile_reduction_count": {"const": 192},
+    "profile_reductions": {"type": "array", "minItems": 192, "maxItems": 192, "items": {"$ref": "#/$defs/reduction"}},
+    "bundle_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reduction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["profile_sha256", "signature_sha256", "raw_graph_count", "generator_count", "generator_edge_count", "generator_type_counts", "generator_manifest_sha256", "signed_orbit_count", "surviving_orbit_count", "odd_stabilizer_zero_orbit_count", "odd_stabilizer_zero_raw_graph_count", "orbit_size_histogram", "surviving_representative_manifest_sha256", "zero_representative_manifest_sha256", "coverage_status", "implemented_quotients", "open_linear_relations", "reduction_sha256"],
+      "properties": {
+        "profile_sha256": {"$ref": "#/$defs/hash"},
+        "signature_sha256": {"$ref": "#/$defs/hash"},
+        "raw_graph_count": {"type": "integer", "minimum": 1},
+        "generator_count": {"type": "integer", "minimum": 0},
+        "generator_edge_count": {"type": "integer", "minimum": 0},
+        "generator_type_counts": {"type": "array", "items": {"$ref": "#/$defs/generatorCount"}},
+        "generator_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "signed_orbit_count": {"type": "integer", "minimum": 1},
+        "surviving_orbit_count": {"type": "integer", "minimum": 0},
+        "odd_stabilizer_zero_orbit_count": {"type": "integer", "minimum": 0},
+        "odd_stabilizer_zero_raw_graph_count": {"type": "integer", "minimum": 0},
+        "orbit_size_histogram": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/orbitCount"}},
+        "surviving_representative_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "zero_representative_manifest_sha256": {"$ref": "#/$defs/hash"},
+        "coverage_status": {"const": "EXACT_SIGNED_GENERATOR_ORBIT_PARTITION_VERIFIED"},
+        "implemented_quotients": {"$ref": "#/$defs/implemented"},
+        "open_linear_relations": {"$ref": "#/$defs/openRelations"},
+        "reduction_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "generatorCount": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generator_type", "count"],
+      "properties": {
+        "generator_type": {"type": "string"},
+        "count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "orbitCount": {
+      "type": "object", "additionalProperties": false,
+      "required": ["orbit_size", "orbit_count"],
+      "properties": {
+        "orbit_size": {"type": "integer", "minimum": 1},
+        "orbit_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "implemented": {
+      "type": "object", "additionalProperties": false,
+      "required": ["identical_factor_permutations", "Grassmann_exchange_signs", "Riemann_pair_antisymmetry", "Riemann_pair_exchange", "horizontal_form_antisymmetry"],
+      "properties": {
+        "identical_factor_permutations": {"const": "COMPLETE_BY_ADJACENT_GENERATORS"},
+        "Grassmann_exchange_signs": {"const": "COMPLETE"},
+        "Riemann_pair_antisymmetry": {"const": "COMPLETE_BY_GENERATORS"},
+        "Riemann_pair_exchange": {"const": "COMPLETE_BY_GENERATOR"},
+        "horizontal_form_antisymmetry": {"const": "COMPLETE_BY_ADJACENT_GENERATORS"}
+      }
+    },
+    "openRelations": {
+      "type": "object", "additionalProperties": false,
+      "required": ["algebraic_and_differential_Bianchi", "covariant_jet_commutators", "integration_by_parts", "four_dimensional_antisymmetrization"],
+      "properties": {
+        "algebraic_and_differential_Bianchi": {"const": "NOT_COMPUTED"},
+        "covariant_jet_commutators": {"const": "NOT_COMPUTED"},
+        "integration_by_parts": {"const": "NOT_COMPUTED"},
+        "four_dimensional_antisymmetrization": {"const": "NOT_COMPUTED"}
+      }
+    }
+  }
+}

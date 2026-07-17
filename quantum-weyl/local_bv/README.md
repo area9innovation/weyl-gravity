@@ -305,6 +305,15 @@ horizontal-form antisymmetry, Bianchi/jet relations, integration by parts,
 the four-dimensional quotient, and production `Q`/`d_h` matrices remain
 fail-closed.
 
+The successor intrinsic-orbit certificate is
+[`certificates/AFN0_AMBIENT_INTRINSIC_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR.json`](certificates/AFN0_AMBIENT_INTRINSIC_ORBIT_CERTIFICATE_DEGREES_THREE_FOUR.json).
+A signed generator/union-find calculation adds Riemann pair symmetries and
+horizontal-form antisymmetry without expanding the full symmetry groups.  Its
+3,277,285 generator edges reduce the 388,011 raw graphs to 9,534 signed
+orbits, of which 5,637 survive.  Bianchi, jet-commutator,
+integration-by-parts, and four-dimensional relations remain open, so this is
+still not a canonical local-form basis or relative-cohomology theorem.
+
 The first completed candidate quotient is the even Weyl-ghost AFN0 slice,
 certified by
 [`certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json`](certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json).
