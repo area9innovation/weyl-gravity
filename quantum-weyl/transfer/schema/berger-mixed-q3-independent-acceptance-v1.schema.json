@@ -30,7 +30,7 @@
         "input_hashes": {"$ref": "#/$defs/inputHashes"},
         "diagnostics": {"$ref": "#/$defs/diagnostics"},
         "verdict": {"const": "ACCEPTED_TYPED_MIXED_Q3_LOCAL_ALGEBRAIC"},
-        "elapsed_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "elapsed_seconds": {"anyOf": [{"type": "number", "exclusiveMinimum": 0}]},
         "producer_claim_status": {"const": "CERTIFIED_TYPED_SUPPORT_LOCAL_MIXED_GRAVITY_MAXWELL_Q3"}
       }
     },
@@ -115,7 +115,7 @@
         "test_tier": {"enum": [1, 2]},
         "command": {"type": "string", "minLength": 70},
         "status": {"const": "PASS"},
-        "elapsed_seconds": {"type": "number", "minimum": 0}
+        "elapsed_seconds": {"anyOf": [{"type": "number", "minimum": 0}]}
       }
     }
   }

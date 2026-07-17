@@ -64,6 +64,23 @@ not itself compute mixed \(q_3\), promote residual or quantum transfer, or
 reopen the already-certified pure gravity--clock \(q_2,q_3\) and arity-three
 Cartan calculation.
 
+### Independent mixed-q3 acceptance
+
+The committed typed gravity--Maxwell `q3` at `ba51c385` is now independently
+accepted by `BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE`. The quantum-side
+consumer does not execute the classical producer: it reconstructs 1,848
+unary, 150,305 gravity-`q2`, 1,890 typed mixed-`q2`, and 59,598 mixed-`q3`
+PBW coefficients over exact \(\mathbb Q(\sqrt{10})\). Typed `q2` and `q3`
+graded-symmetry defects vanish, as does the mixed part of
+\(q_1q_3+q_2q_2\) on all 64 rows. A one-coefficient mutation produces two
+exact defects.
+
+This is a `LOCAL-ALGEBRAIC` classical-input acceptance, not a QME or quantum
+result. The next nonlinear gate is retained \(\ell_3\), with both the direct
+contact term \(\pi q_3(\iota,\iota,\iota)\) and the homological exchange term
+built from \(q_2 S q_2\). The live typed-pairing refinement must be committed
+and pinned before that transfer is evaluated.
+
 ### Extended rod–memory–Maxwell unary gate
 
 The first apparatus gate is now sharply classified by

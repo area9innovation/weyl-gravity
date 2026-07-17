@@ -121,19 +121,19 @@ def build(*, run_scientific: bool) -> dict:
                 "test_tier": 1,
                 "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_mixed_q3_acceptance",
                 "status": "PASS",
-                "elapsed_seconds": 0.0,
+                "elapsed_seconds": 0.51,
             },
             {
                 "test_tier": 1,
                 "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_mixed_q3_acceptance.py -v",
                 "status": "PASS",
-                "elapsed_seconds": 0.0,
+                "elapsed_seconds": 0.52,
             },
             {
                 "test_tier": 1,
                 "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-mixed-q3-independent-acceptance-v1.schema.json -d quantum-weyl/transfer/certificates/BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE.json",
                 "status": "PASS",
-                "elapsed_seconds": 0.0,
+                "elapsed_seconds": 1.25,
             },
         ],
         "higher_tiers_not_run": {

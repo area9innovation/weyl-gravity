@@ -21,14 +21,14 @@
   "classical_commit": "ba51c3853cbb51ef38083b40ceb7e9dda023efa7",
   "consumer_provenance": {
     "source_manifest": {
-      "quantum-weyl/reports/berger-mixed-q3-independent-acceptance.md": "7cb0567e6455fc4c19c6d65981c944351c97e52987f0226cf841d0ac167dee3d",
+      "quantum-weyl/reports/berger-mixed-q3-independent-acceptance.md": "9861af30378361707bc9d45a2e3c662d12145705263225ff9642fb86d1613f3c",
       "quantum-weyl/transfer/berger_mixed_q3_acceptance.py": "7d037ad01b2a079c9fbc4e5f2434cbc4f6b722253a2225e15f56537e78b93afd",
-      "quantum-weyl/transfer/berger_mixed_q3_acceptance_certificate.py": "a4506c77ee8acf0f2f55ff3b4049441696e57003d18c46f2c2967dcc03393de4",
-      "quantum-weyl/transfer/schema/berger-mixed-q3-independent-acceptance-v1.schema.json": "3cb03aed5e53994df414077a7dae520d3f219330b4b2df58e9227298462dd266",
-      "quantum-weyl/transfer/tests/test_berger_mixed_q3_acceptance.py": "20775e4c9375f751926f18734f48cc0ba984940aa7476ff6a0248e552e0d5ca8",
+      "quantum-weyl/transfer/berger_mixed_q3_acceptance_certificate.py": "fa7a16680047479738b5af45286e0b539e9754831a995d19cffefd044be4e15a",
+      "quantum-weyl/transfer/schema/berger-mixed-q3-independent-acceptance-v1.schema.json": "b8ed4c97019af8d0e095a9d1da61038882da2863f5824844725688280e3c74de",
+      "quantum-weyl/transfer/tests/test_berger_mixed_q3_acceptance.py": "177e6e95c145c821fd93ea26c415ee30596e5281416c95b96220401080df73a7",
       "quantum-weyl/transfer/verify_berger_mixed_q3_acceptance.py": "c3fc085a8d4a4f7d6a5e1b1b98dc696d91cc57b22c5a9c4e2fccd2b006c9546f"
     },
-    "source_manifest_sha256": "831469baaee6e4d4d8644ed56ae37cbe7aec21a583245da5940224cafa723426"
+    "source_manifest_sha256": "978436e4207c718a21d1a8405341845d404194baaba5ec4b82645152cd66e992"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -90,11 +90,19 @@
     },
     {
       "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_mixed_q3_acceptance",
+      "elapsed_seconds": 0.51,
       "status": "PASS",
       "test_tier": 1
     },
     {
       "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_mixed_q3_acceptance.py -v",
+      "elapsed_seconds": 0.52,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-mixed-q3-independent-acceptance-v1.schema.json -d quantum-weyl/transfer/certificates/BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE.json",
+      "elapsed_seconds": 1.25,
       "status": "PASS",
       "test_tier": 1
     }

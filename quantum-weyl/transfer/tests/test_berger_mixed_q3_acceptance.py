@@ -4,6 +4,8 @@ from copy import deepcopy
 import json
 import unittest
 
+from jsonschema import Draft202012Validator
+
 from local_bv.schema_validation import validate_instance
 from transfer.berger_mixed_q3_acceptance_certificate import OUTPUT, SCHEMA, build
 from transfer.verify_berger_mixed_q3_acceptance import verify
@@ -30,13 +32,14 @@ class BergerMixedQ3AcceptanceTests(unittest.TestCase):
     def test_claim_promotions_and_defect_mutations_are_rejected(self) -> None:
         value = json.loads(OUTPUT.read_text())
         schema = json.loads(SCHEMA.read_text())
+        validator = Draft202012Validator(schema)
         for flag in ("RETAINED_MIXED_ELL3_TRANSFER", "REPOSITORY_BV_QME_RESTORED", "QUANTUM_CLAIM"):
             mutant = deepcopy(value)
             mutant["claim_flags"][flag] = True
-            self.assertTrue(validate_instance(mutant, schema), flag)
+            self.assertTrue(list(validator.iter_errors(mutant)), flag)
         mutant = deepcopy(value)
         mutant["exact_replay"]["diagnostics"]["mixed_arity_three_defect_count"] = 1
-        self.assertTrue(validate_instance(mutant, schema))
+        self.assertTrue(list(validator.iter_errors(mutant)))
 
 
 if __name__ == "__main__":
