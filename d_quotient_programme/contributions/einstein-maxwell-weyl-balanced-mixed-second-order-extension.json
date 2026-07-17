@@ -1,0 +1,41 @@
+{
+  "boundary_conditions": "the real axial ell=2,m=0,k=0 Einstein-minus plus second-extra balanced tangent on the compactified Plebanski-Hacyan background at fixed magnetic bundle P_N, after local gauge reduction and before stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "within one fixed nonzero-k travelling block, simultaneous H and P_x moment-map cancellation forces every Einstein-plus, Einstein-minus, and extra occupation to vanish",
+    "at k=0 the declared Einstein-minus and extra amplitudes with squared ratio (27/52)(5 sqrt(3)-6) give a nonzero real tangent on which H, P_x, and all three rotation moment maps vanish",
+    "the balanced tangent has quadratic polar outputs only at ell=0,2,4 and the five exact frequency channels declared by the certificate",
+    "the two homogeneous zero-frequency sources cancel in every independent row",
+    "every nonzero homogeneous channel and every ell=2,4 channel has an explicit exact correction with zero operator remainder",
+    "the finite channel sum and its conjugate therefore define a complete second-order correction for the declared tangent"
+  ],
+  "evidence": {
+    "commit": "6e271cd3d8ebdaaa64bc761d22439dcb52743ab1",
+    "path": "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+    "sha256": "bd036062558db94db7f352215e35d07606c40e82e9368fdf98492b80506d15d8"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify the full k=0 common H,P_x,J_i zero cone around the certified extension, then treat opposite-momentum standing-wave balances and exceptional/global blocks",
+  "not_established": [
+    "general second-order closure of the mixed Einstein-extra common-zero locus",
+    "integration of the formal second-order jet to an exact or all-orders nonlinear family",
+    "distinct-momentum standing-wave balances or exceptional and generalized global modes",
+    "an absolute stabilizer quotient, residual CE cohomology, or relational observable",
+    "causal propagation, asymptotic scattering, particles, quantum ghosts, or unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_ell2_k0_balanced_mixed_second_order_jet",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_balanced_mixed_second_order_extension",
+  "team_id": "einstein_boundary",
+  "verdict": "G1_BALANCED_MIXED_TANGENT_COMPLETE_SECOND_ORDER_EXTENSION",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_mixed_moment_map_zero_locus --verify bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_mixed_moment_map_zero_locus",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_order --verify bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_balanced_ell0_second_order",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_mixed_moment_map_zero_locus bridge.einstein_sector.tests.test_einstein_maxwell_weyl_balanced_ell0_second_order",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}
