@@ -130,12 +130,21 @@ coefficientwise affine-`K` family morphism through arity three.  This is not a
 linear quotient at one fixed apparatus background or a finite-parameter
 theorem.
 
-### Immediate priority after the affine-K observer morphism
+`BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA` now imports C-G4 without redefining
+its signal.  The two detector polarizations evaluate its circular phase plane
+through a moment matrix whose determinant is a strictly positive double
+average of `cos(beta(t-s))` over the actual windows.  Thus the C-G4
+quadratures are linear and its relational Hamiltonian/redshift energy is
+quadratic in the persistent memories.  Their localized polynomial algebra is
+closed under multiplication and the transported nonzero Poisson bracket.
 
-1. Import C-G4 as the signal object and test product closure of the two-record
-   coefficientwise classical observer algebra.  The observer team owns its
-   detector realization and record map, not a competing redshift definition.
-2. Keep full `q4`, fixed-background linear-`K` descent, finite-parameter
+### Immediate priority after the C-G4 record Poisson algebra
+
+1. Replace the two spatially global compact-`S3` preparation currents by two
+   spatially localized conserved emitter worldtubes and recompute the exact
+   two-by-two record matrix, or return the first compact causal obstruction.
+2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,
+   full `q4`, fixed-background linear-`K` descent, finite-parameter
    Green hyperbolicity, and the optional 88-row co-rotating replacement as
    distinct later gates.
 

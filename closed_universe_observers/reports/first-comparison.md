@@ -28,8 +28,10 @@ The apparatus `q2,q3` action jets and cyclic completion are exact.  Their
 ordinary `K_Berger` test exposes a non-background-preserving rod/metric
 component.  The Ward successor closes that precise defect without exporting
 full `q4`: the required contraction and the rank-two
-family morphism close through arity three.  The next classical task is C-G4
-import and product closure.  The
+family morphism close through arity three.  C-G4 is now imported through an
+exact positive-determinant phase-to-record map, and the two memories form a
+closed polynomial Poisson algebra on that scoped phase plane.  The next
+classical task is spatial localization of both emitters.  The
 resulting 84-row unary statement is coefficientwise through the mixed first
 jet; finite-parameter Green
 hyperbolicity is not.  This does not change
@@ -306,7 +308,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism through arity three; product closure and fixed-background linear descent open | exact positive-diagonal probe transfer and formal same-sided bivariate first-jet coefficients; finite-parameter Green hyperbolicity and spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | exact phase-to-record determinant and bracket; spatially localized emitters and finite-parameter Green hyperbolicity open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -322,10 +324,11 @@ identifier, SHA-256 hash, and declared claim boundary.
 The metric-dependent normalization of `chi_a`, mixed
 `epsilon_R^2*kappa` profile and adjoint, all-row mixed unary identities,
 formal Green coefficient, and apparatus `q2,q3` action jets with cyclic
-cotangent partners and the Ward-determined `q4(K0,-,-,-)` contraction are no
-longer missing.  The primary missing object is product closure with the C-G4
-signal object.  Full `q4`, higher brackets, and fixed-background linear descent
-remain separate.
+cotangent partners, the Ward-determined `q4(K0,-,-,-)` contraction, and the
+scoped C-G4 record Poisson algebra are no longer missing.  The primary missing
+object is a rank-two transfer from two spatially localized emitter worldtubes.
+Full apparatus/harmonic brackets, full `q4`, higher brackets, and
+fixed-background linear descent remain separate.
 Further missing objects are a rank-two transfer from two
 spatially localized emitter worldtubes, emitter recoil and higher-order receiver backreaction,
 observer-map compatibility with raw \(D\) and higher brackets, a quantum
@@ -382,3 +385,8 @@ verifies a genuine fifth-derivative identity and translated detector
 integrals, and promotes the rank-two coefficientwise family observer
 morphism through arity three.  Its receipt is
 `closed_universe_observers/receipts/AFFINE_K_OBSERVER_MORPHISM_TIER_RECEIPT.json`.
+The C-G4 algebra successor proves the detector phase-plane determinant is
+strictly positive on the actual windows, transports the reduced symplectic
+bracket, and embeds the quadratures and relational Hamiltonian into the
+two-memory polynomial Poisson algebra.  Its receipt is
+`closed_universe_observers/receipts/CG4_TWO_RECORD_POISSON_ALGEBRA_TIER_RECEIPT.json`.

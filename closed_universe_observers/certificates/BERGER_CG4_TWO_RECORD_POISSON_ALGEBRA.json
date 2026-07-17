@@ -1,0 +1,128 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL result imports the scoped C-G4 retarded two-phase Maxwell observable and evaluates its circular phase basis with the two certified clock-labelled detector polarizations. The resulting moment matrix N has determinant beta^2(S0 S1+C0 C1), a strictly positive double average of cos(beta(t0-t1)) on the actual detector windows. It therefore identifies the C-G4 (x,y) plane with the two persistent memories. Transporting {x,y}=-1/(32 pi^2) gives a nonzero constant record bracket and makes every C-G4 quadrature and the quadratic relational Hamiltonian an element of the localized polynomial record algebra. This certifies multiplicative and Poisson closure for the scoped two-phase, coefficientwise affine-K family. It does not construct the full apparatus Dirac bracket outside that plane, a complete harmonic signal algebra, full q4 or higher brackets, fixed-background linear-K descent, finite-r Green hyperbolicity, localized emitter worldtubes, recoil, a quantum state, or any quantum claim.",
+  "claim_status": "CERTIFIED_SCOPED_TWO_RECORD_CLASSICAL_POISSON_ALGEBRA",
+  "dependency_refs": {
+    "cg4": {
+      "path": "d_quotient_classical/certificates/BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE.json",
+      "result_id": "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE",
+      "sha256": "fbba7090b1ce579d55f19deb906f95b3ffd11d5930e885edf4af31f92e143cd6"
+    },
+    "detector_transfer": {
+      "path": "closed_universe_observers/certificates/BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER.json",
+      "result_id": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+      "sha256": "09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23"
+    },
+    "observer_morphism": {
+      "path": "closed_universe_observers/certificates/BERGER_AFFINE_K_OBSERVER_MORPHISM.json",
+      "result_id": "BERGER_AFFINE_K_OBSERVER_MORPHISM",
+      "sha256": "b3dd4ec429fffab7a6a49d5495ce2ac1e8496cca16d83fbe9c8d41e0a75c07cc"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "detector_window_positivity": {
+    "determinant_integral": "det N=beta^2 double_integral rho_0(t)rho_1(s) cos(beta(t-s)) dt ds > 0",
+    "exact_bound_chain": "beta*7/24=7*sqrt(10)/36 < 7/9 < 3/2 < pi/2",
+    "maximum_pairwise_time_difference": "7/24",
+    "maximum_phase_difference": "7*sqrt(10)/36",
+    "physical_time_windows": [
+      [
+        "11/48",
+        "13/48"
+      ],
+      [
+        "23/48",
+        "25/48"
+      ]
+    ],
+    "strictly_positive": true
+  },
+  "flags": {
+    "CG4_PHASE_PLANE_TO_TWO_RECORDS_ISOMORPHISM_CERTIFIED": true,
+    "CG4_QUADRATURES_AND_REDSHIFT_EMBEDDED": true,
+    "COMPLETE_HARMONIC_SIGNAL_ALGEBRA_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_CERTIFIED": false,
+    "TWO_RECORD_MULTIPLICATIVE_ALGEBRA_CERTIFIED": true,
+    "TWO_RECORD_POISSON_ALGEBRA_CERTIFIED": true
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "expected_rank": 1,
+      "name": "clone_detector_polarization",
+      "observed_rank": 1
+    }
+  ],
+  "next_gate": "CONSTRUCT_TWO_SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_AND_RECOMPUTE_THE_RANK_TWO_RECORD_MATRIX_OR_RETURN_THE_EXACT_COMPACT_CAUSAL_OBSTRUCTION",
+  "phase_plane_to_records": {
+    "basis_map_N": [
+      [
+        "-2*sqrt(10)*S_0/3",
+        "-2*sqrt(10)*C_0/3"
+      ],
+      [
+        "2*sqrt(10)*C_1/3",
+        "-2*sqrt(10)*S_1/3"
+      ]
+    ],
+    "beta": "2*sqrt(10)/3",
+    "determinant": "40*(C_0*C_1 + S_0*S_1)/9",
+    "inverse_coordinates_x_y": [
+      "3*sqrt(10)*C_0*m_1/(20*(C_0*C_1 + S_0*S_1)) - 3*sqrt(10)*S_1*m_0/(20*C_0*C_1 + 20*S_0*S_1)",
+      "-3*sqrt(10)*C_1*m_0/(20*C_0*C_1 + 20*S_0*S_1) - 3*sqrt(10)*S_0*m_1/(20*C_0*C_1 + 20*S_0*S_1)"
+    ],
+    "moment_definitions": {
+      "C_a": "integral rho_a(t,R) cos(beta t) dvol_gHat",
+      "S_a": "integral rho_a(t,R) sin(beta t) dvol_gHat"
+    },
+    "point_specialization_determinant": "40*cos(sqrt(10)/6)/9",
+    "rank": 2,
+    "record_bracket": "-5*(C_0*C_1 + S_0*S_1)/(36*pi**2)",
+    "relational_hamiltonian_in_records": "16*sqrt(10)*pi**2*(C_0**2*m_1**2 - 2*C_0*S_1*m_0*m_1 + C_1**2*m_0**2 + 2*C_1*S_0*m_0*m_1 + S_0**2*m_1**2 + S_1**2*m_0**2)/(5*(C_0*C_1 + S_0*S_1)**2)"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_cg4_record_poisson_algebra.py",
+        "sha256": "2eb07f0863cd89c16fa63d57da71c36788508fa2f982029930efcd2366b51437"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_cg4_record_poisson_algebra.py",
+        "sha256": "40be98262af08e3039c7f6bda8946e6fe8b1a4dec27b27bd67f51121cea207af"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_cg4_record_poisson_algebra.py",
+        "sha256": "c8795233a7c10991f314e1dbe590314a730e41ce0babc96c1315c55a317357dc"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-cg4-two-record-poisson-algebra-v1.schema.json",
+        "sha256": "abb7fc62971fe2dd5e9c5c69cb7db26a3aefed8ab1bbccfb336816e0e8aed5c6"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-cg4-two-record-poisson-algebra.md",
+        "sha256": "4a1b1a081459010a936373f3baeb25f49be2d11fb9563296f26c240deb92e4ee"
+      }
+    ]
+  },
+  "record_algebra": {
+    "algebra": "A_Ob,C-G4=coefficient_ring[m_0,m_1]",
+    "coefficient_ring": "Q(sqrt(10),pi,S0,C0,S1,C1,Delta^-1)[[r,kappa]] with Delta=det N",
+    "multiplication": "ordinary commutative product of persistent gauge-invariant memory functionals",
+    "poisson_closed": true,
+    "poisson_rule": "{f,g}_Ob={m0,m1}(partial_m0 f partial_m1 g-partial_m1 f partial_m0 g)",
+    "product_closed": true,
+    "quadrature_embedding": "Q(tau),P(tau) are linear polynomials after substituting the certified inverse x(m),y(m)",
+    "record_bracket_nonzero": true,
+    "redshift_embedding": "the C-G4 energy/redshift reading is quadratic in x,y and hence quadratic in m0,m1 after the same inverse"
+  },
+  "result_id": "BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA",
+  "schema": "closed-universe-berger-cg4-two-record-poisson-algebra-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

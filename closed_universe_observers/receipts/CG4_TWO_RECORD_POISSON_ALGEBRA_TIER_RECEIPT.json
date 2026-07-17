@@ -1,0 +1,31 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "CG4_TWO_RECORD_POISSON_ALGEBRA_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The scoped C-G4 circular phase plane is identified exactly with the two persistent detector memories by a strictly positive window-moment determinant. Transporting the reduced bracket certifies a localized polynomial record algebra closed under products and a nonzero constant Poisson bracket. The full apparatus Dirac bracket, complete harmonic signal algebra, localized emitters, finite-r Green theory, recoil, and quantum claims remain open.",
+  "tier_0": [{"command": "py_compile, json.tool, git diff --check, and hash replay on explicit observer/planning paths", "elapsed_seconds": "less than 1 plus final checks", "status": "PASS", "scope": "producer, verifier, tests, schema, certificate, reports, ledger, brief, and roadmap"}],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_cg4_record_poisson_algebra --check", "elapsed_seconds": "under 1", "status": "PASS", "scope": "window positivity, phase-to-record matrix, inverse, bracket transport, Hamiltonian embedding, mutation, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_cg4_record_poisson_algebra", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent determinant and symplectic transport, dependency/source hashes, mutation, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_cg4_record_poisson_algebra.py", "elapsed_seconds": "0.74", "status": "PASS", "scope": "all 3 phase-map, algebra-closure, and fail-closed scope tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-cg4-two-record-poisson-algebra-v1.schema.json -d closed_universe_observers/certificates/BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA.json", "elapsed_seconds": "included in 11.16-second focused chain", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "historical imports, current bridge hashes, classical algebra status, and quantum fail-closed boundary"}
+  ],
+  "tier_2": [{"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "202.98", "status": "PASS", "scope": "all 76 closed-universe observer tests"}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "This promotes a scoped reduced-mode classical algebra without freezing a complete harmonic/apparatus, finite-parameter, all-orders, release, or quantum theorem and without changing shared core algebra."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA.json", "sha256": "62469c93203920fbab4b97883db37c1b86fe093286ec509bd1e2d83eb30970d0"},
+    {"path": "closed_universe_observers/schema/berger-cg4-two-record-poisson-algebra-v1.schema.json", "sha256": "abb7fc62971fe2dd5e9c5c69cb7db26a3aefed8ab1bbccfb336816e0e8aed5c6"},
+    {"path": "closed_universe_observers/generate_berger_cg4_record_poisson_algebra.py", "sha256": "2eb07f0863cd89c16fa63d57da71c36788508fa2f982029930efcd2366b51437"},
+    {"path": "closed_universe_observers/verify_berger_cg4_record_poisson_algebra.py", "sha256": "40be98262af08e3039c7f6bda8946e6fe8b1a4dec27b27bd67f51121cea207af"},
+    {"path": "closed_universe_observers/tests/test_berger_cg4_record_poisson_algebra.py", "sha256": "c8795233a7c10991f314e1dbe590314a730e41ce0babc96c1315c55a317357dc"},
+    {"path": "closed_universe_observers/reports/berger-cg4-two-record-poisson-algebra.md", "sha256": "4a1b1a081459010a936373f3baeb25f49be2d11fb9563296f26c240deb92e4ee"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "22a18b9cd1a0726c56b40e6258911291c0de6f26fee36f3d31b761296f56dcd4"},
+    {"path": "closed_universe_observers/README.md", "sha256": "e34c9eb24f2371603fe2fe67caad2d87bbe9e3f3de8592deebea32fd2749ea08"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "11235279e12f406d32ce80f373835aabfcfff42dbc17af8af4c23d02af100d47"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "b8e847cf4d397cca4460251aebc1d2e6f69b5e61d9d5326d543fa2f4ce436515"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "b636bd09ed66f5097111f44b188b1f5d012695403518afcecf939caeaeebbdb1"}
+  ],
+  "claim_flags": {"CG4_PHASE_PLANE_TO_TWO_RECORDS_ISOMORPHISM_CERTIFIED": true, "TWO_RECORD_MULTIPLICATIVE_ALGEBRA_CERTIFIED": true, "TWO_RECORD_POISSON_ALGEBRA_CERTIFIED": true, "CG4_QUADRATURES_AND_REDSHIFT_EMBEDDED": true, "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false, "COMPLETE_HARMONIC_SIGNAL_ALGEBRA_CERTIFIED": false, "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false, "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_CERTIFIED": false, "QUANTUM_CLAIM": false}
+}

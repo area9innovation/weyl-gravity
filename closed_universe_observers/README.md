@@ -36,6 +36,8 @@ python3 -m closed_universe_observers.generate_berger_84_row_apparatus_q2_q3_k_ga
 python3 -m closed_universe_observers.verify_berger_84_row_apparatus_q2_q3_k_gate
 python3 -m closed_universe_observers.generate_berger_affine_k_observer_morphism --check
 python3 -m closed_universe_observers.verify_berger_affine_k_observer_morphism
+python3 -m closed_universe_observers.generate_berger_cg4_record_poisson_algebra --check
+python3 -m closed_universe_observers.verify_berger_cg4_record_poisson_algebra
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -113,6 +115,13 @@ it differentiates simultaneous `K` invariance to fix only
 derivative, and certifies the rank-two coefficientwise family observer
 morphism through arity three.  Full `q4`, fixed-background linear-`K`
 descent, finite-parameter Green theory, and quantum claims remain open.
+The C-G4 successor evaluates the circular two-phase mode directly in the two
+detector windows.  Its exact moment matrix has strictly positive determinant,
+so the C-G4 phase plane and persistent records are isomorphic.  Transporting
+the reduced bracket makes the record polynomial algebra closed under both
+products and a nonzero constant Poisson bracket.  The next operational gate
+is two spatially localized conserved emitter worldtubes; the current sources
+remain spatially global on compact `S3`.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

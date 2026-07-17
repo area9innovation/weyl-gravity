@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-cg4-two-record-poisson-algebra-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "detector_window_positivity", "phase_plane_to_records", "record_algebra", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-cg4-two-record-poisson-algebra-v1"},
+    "result_id": {"const": "BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA"},
+    "setting_id": {"type": "string"}, "claim_status": {"const": "CERTIFIED_SCOPED_TWO_RECORD_CLASSICAL_POISSON_ALGEBRA"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "detector_window_positivity": {"type": "object", "required": ["strictly_positive"], "properties": {"strictly_positive": {"const": true}}},
+    "phase_plane_to_records": {"type": "object", "required": ["determinant", "rank", "record_bracket", "inverse_coordinates_x_y", "relational_hamiltonian_in_records"], "properties": {"determinant": {"type": "string"}, "rank": {"const": 2}, "record_bracket": {"type": "string"}, "inverse_coordinates_x_y": {"type": "array", "minItems": 2, "maxItems": 2}, "relational_hamiltonian_in_records": {"type": "string"}}},
+    "record_algebra": {"type": "object", "required": ["product_closed", "poisson_closed", "record_bracket_nonzero"], "properties": {"product_closed": {"const": true}, "poisson_closed": {"const": true}, "record_bracket_nonzero": {"const": true}}},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["CG4_PHASE_PLANE_TO_TWO_RECORDS_ISOMORPHISM_CERTIFIED", "TWO_RECORD_MULTIPLICATIVE_ALGEBRA_CERTIFIED", "TWO_RECORD_POISSON_ALGEBRA_CERTIFIED", "CG4_QUADRATURES_AND_REDSHIFT_EMBEDDED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "COMPLETE_HARMONIC_SIGNAL_ALGEBRA_CERTIFIED", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"CG4_PHASE_PLANE_TO_TWO_RECORDS_ISOMORPHISM_CERTIFIED": {"const": true}, "TWO_RECORD_MULTIPLICATIVE_ALGEBRA_CERTIFIED": {"const": true}, "TWO_RECORD_POISSON_ALGEBRA_CERTIFIED": {"const": true}, "CG4_QUADRATURES_AND_REDSHIFT_EMBEDDED": {"const": true}, "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false}, "COMPLETE_HARMONIC_SIGNAL_ALGEBRA_CERTIFIED": {"const": false}, "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false}, "SPATIALLY_LOCALIZED_EMITTER_WORLDTUBES_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"}, "claim_boundary": {"type": "string"}, "provenance": {"type": "object"}
+  }
+}
