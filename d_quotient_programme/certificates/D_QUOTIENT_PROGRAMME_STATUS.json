@@ -29,7 +29,7 @@
     ],
     "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "f0ab7b833168c21349cfefe54f838ffe65571d99",
+  "programme_base_commit": "607be99928ca94515af4b8d96e0faff2229329d7",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -52,7 +52,7 @@
   },
   "registry_hashes": {
     "generator_registry": "bd46ba02eaa31d9b63ada4e6d592b123ebd41dfdef1b642a1bf47daf105d24fa",
-    "phase_space_registry": "2685d1fc680a983a96301df52186c4cc084c5afbf21e16295b4523daaf9a9ba8"
+    "phase_space_registry": "f7c020858119feee34cb01b5be13823747f6e2ffc405c13b5c982bec23b8cb8a"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -489,6 +489,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_polar_ungauged_noether_lift",
       "status": "CERTIFIED",
       "verdict": "G2_GENERIC_POLAR_UNGAUGED_EQUATION_NOETHER_CHAIN_MAP"
+    },
+    {
+      "boundary_conditions": "generic axial and polar ell>=2 q/p-primary modules at every allowed compact momentum on the fixed magnetic product; after local gauge reduction with the five background stabilizers retained as global symmetries; before a common moment-map/Taub-zero derived sector",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+      "setting_id": "compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent",
+      "status": "CERTIFIED",
+      "verdict": "G2_PH_STABILIZER_PRIMARY_EQUIVARIANT_ABSOLUTE_QUOTIENT_NOT_AUTHORIZED"
     },
     {
       "boundary_conditions": "generic axial extra module with exact reduced-Hessian local Green current; physical ell>=2; before direct Lee-Wald match and final residual quotient",
@@ -2624,10 +2633,10 @@
         },
         "generator_id": "H_product",
         "lifecycle_layer": "CLASSICAL_BV",
-        "next_gate": "compute final residual survival on the Einstein q-primary and extra p-primary coefficients and separately prove or obstruct a cyclic BV enhancement",
+        "next_gate": "apply the actual Plebanski-Hacyan background-stabilizer authority gate to the Einstein q-primary and extra p-primary coefficients and separately prove or obstruct a cyclic BV enhancement",
         "not_established": [
           "a degreewise-injective or cyclic BV chain map and strict short exact sequence",
-          "the final residual SO(4,2) quotient or a residual/Peierls observable",
+          "any separately authorized background-stabilizer moment-map quotient or a residual/Peierls observable",
           "the complete curved all-sector classical import gate required by the quantum programme",
           "causal propagation, asymptotic scattering, particles, nonlinear closure, quantum ghosts, or unitarity"
         ],
@@ -2643,7 +2652,53 @@
           "python3 d_quotient_programme/verify_programme_status.py --check --guards"
         ]
       },
-      "sha256": "fa8deb606c7d8393c0143d5f02f6d0ec527e2fa14ff5a5b196051b1da1fff774"
+      "sha256": "7665074cd7e287164020faf715f2abff94b41e504477ac0091517379036a2df2"
+    },
+    {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-plebanski-hacyan-stabilizer.json",
+      "payload": {
+        "boundary_conditions": "generic axial and polar ell>=2 Weyl-Maxwell q/p-primary solution modules on R_t x S1_L x S2 at fixed P_N, every allowed compact momentum, after local gauge reduction and before any optional moment-map-zero stabilizer quotient",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "the connected fixed-flux Plebanski-Hacyan background automorphism algebra is R H direct-sum R P_x direct-sum so(3), with no nonzero Weyl compensator",
+          "the full SO(4,2) algebra of the conformally flat vacuum cylinder is not a stabilizer of the magnetic product fixture",
+          "the five-generator action preserves the generic axial and polar Einstein q-primary images and extra two-copy p-primary quotients",
+          "the action preserves the direct Lee-Wald forms and the axial and polar pre-reduction inertia decompositions",
+          "explicit H, nonzero-k P_x, and nonzero-m rotation matrix elements refute universal presymplectic nullity on the full generic phase space",
+          "an absolute residual gauge/CE quotient is therefore not authorized before a separately declared common moment-map or Taub-zero derived sector"
+        ],
+        "evidence": {
+          "commit": "607be99928ca94515af4b8d96e0faff2229329d7",
+          "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+          "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "complete the H, P_x, and J_i moment maps across exceptional and global blocks, classify their common Taub-zero locus, and separately solve or obstruct the polynomial cyclic BV chain-homotopy enhancement",
+        "not_established": [
+          "complete stabilizer moment maps on exceptional and generalized global blocks",
+          "the common moment-map/Taub-zero derived sector or a null stabilizer subalgebra",
+          "an absolute residual CE cohomology or residual/Peierls observable",
+          "a cyclic BV enhancement or strict relative short exact sequence",
+          "causal propagation, asymptotic scattering, particles, nonlinear closure, quantum ghosts, or unitarity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_PH_STABILIZER_PRIMARY_EQUIVARIANT_ABSOLUTE_QUOTIENT_NOT_AUTHORIZED",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_plebanski_hacyan_stabilizer --verify bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+          "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_plebanski_hacyan_stabilizer",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_plebanski_hacyan_stabilizer",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "18d9ff5157cc31d135aa07e089b3c2029f8580ab3df0a10fb5f3a8790b7f8514"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json",

@@ -1,0 +1,39 @@
+{
+  "boundary_conditions": "generic axial and polar ell>=2 Weyl-Maxwell q/p-primary solution modules on R_t x S1_L x S2 at fixed P_N, every allowed compact momentum, after local gauge reduction and before any optional moment-map-zero stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the connected fixed-flux Plebanski-Hacyan background automorphism algebra is R H direct-sum R P_x direct-sum so(3), with no nonzero Weyl compensator",
+    "the full SO(4,2) algebra of the conformally flat vacuum cylinder is not a stabilizer of the magnetic product fixture",
+    "the five-generator action preserves the generic axial and polar Einstein q-primary images and extra two-copy p-primary quotients",
+    "the action preserves the direct Lee-Wald forms and the axial and polar pre-reduction inertia decompositions",
+    "explicit H, nonzero-k P_x, and nonzero-m rotation matrix elements refute universal presymplectic nullity on the full generic phase space",
+    "an absolute residual gauge/CE quotient is therefore not authorized before a separately declared common moment-map or Taub-zero derived sector"
+  ],
+  "evidence": {
+    "commit": "607be99928ca94515af4b8d96e0faff2229329d7",
+    "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+    "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "complete the H, P_x, and J_i moment maps across exceptional and global blocks, classify their common Taub-zero locus, and separately solve or obstruct the polynomial cyclic BV chain-homotopy enhancement",
+  "not_established": [
+    "complete stabilizer moment maps on exceptional and generalized global blocks",
+    "the common moment-map/Taub-zero derived sector or a null stabilizer subalgebra",
+    "an absolute residual CE cohomology or residual/Peierls observable",
+    "a cyclic BV enhancement or strict relative short exact sequence",
+    "causal propagation, asymptotic scattering, particles, nonlinear closure, quantum ghosts, or unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_plebanski_hacyan_stabilizer_descent",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_PH_STABILIZER_PRIMARY_EQUIVARIANT_ABSOLUTE_QUOTIENT_NOT_AUTHORIZED",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_plebanski_hacyan_stabilizer --verify bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_plebanski_hacyan_stabilizer",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_plebanski_hacyan_stabilizer",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}
