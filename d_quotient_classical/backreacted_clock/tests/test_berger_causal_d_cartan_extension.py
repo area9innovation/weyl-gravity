@@ -8,7 +8,8 @@ class BergerCausalDCartanExtensionTest(unittest.TestCase):
     def test_cyclic_causal_arity_two(self):
         payload = theorem.build()
         theorem.verify(payload)
-        self.assertTrue(payload["flags"]["BERGER_CAUSAL_D_CARTAN_EXTENSION"])
+        self.assertTrue(payload["flags"]["BERGER_CAUSAL_D_CARTAN_V2"])
+        self.assertTrue(payload["flags"]["BERGER_CAUSAL_ARITY_TWO_CYCLIC_COMPLETION"])
         self.assertTrue(payload["support_scope"]["cyclic_Cartan_primitives_are_two_sided_causal"])
         self.assertFalse(payload["flags"]["QUANTUM_CLAIM"])
 
