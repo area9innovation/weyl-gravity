@@ -122,10 +122,17 @@ All five background-stabilizer moment maps vanish on this real tangent.  Its
 complete quadratic source has only polar $\ell=0,2,4$ outputs.  Direct tensor
 expansion shows that the homogeneous zero-frequency sources cancel exactly;
 the remaining homogeneous channels have explicit corrections, while every
-$\ell=2,4$ channel is removed by an exact off-shell polar inverse.  Thus this
-declared mixed tangent has a complete second-order correction.  This is a
-single formal second-order extension, not an all-orders family or general
-closure theorem.
+$\ell=2,4$ channel is removed by an exact off-shell polar inverse.  Completeness
+of the discarded polar equations is not assumed: in ungauged equation order
+the four solved-row selectors stacked with the four target Noether identities
+have determinant $-4$ at $k=0$, independently of $\omega$ and $\lambda$.
+The second variation of the Noether identity therefore supplies every
+dependent tensor row, including at zero frequency.  The exact real-mode
+factors are $1/8$ for self-sums and $1/4$ for zero and mixed channels, and the
+resulting correction changes neither the magnetic bundle nor the stationary
+electric-charge or Wilson-line fibre.  Thus this declared mixed tangent has a
+complete second-order correction.  This is a single formal second-order
+extension, not an all-orders family or general closure theorem.
 
 ## 5. Consequence in their language
 

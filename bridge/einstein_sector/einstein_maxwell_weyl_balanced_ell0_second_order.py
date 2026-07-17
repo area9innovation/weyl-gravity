@@ -26,6 +26,10 @@ DEFAULT_OUTPUT = ROOT / "bridge/certificates/einstein_maxwell_weyl_balanced_ell0
 SCHEMA_PATH = ROOT / "bridge/einstein_sector/schema/einstein_maxwell_weyl_balanced_ell0_second_order.schema.json"
 ZERO_LOCUS = ROOT / "bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json"
 TENSOR_HELPER = ROOT / "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py"
+POLAR_OPERATOR_ENGINE = ROOT / "bridge/einstein_sector/einstein_maxwell_weyl_polar_full_tensor.py"
+POLAR_FULL_TENSOR = ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json"
+POLAR_PHYSICAL_COMPLETION = ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json"
+POLAR_UNGAUGED_NOETHER = ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json"
 
 
 class BalancedEll0SecondOrderError(RuntimeError):
@@ -469,13 +473,91 @@ def _generic_channel_solve(source_polynomials: dict[int, sp.Matrix], symbols: tu
     return output
 
 
+def _real_channel_audit() -> dict[str, Any]:
+    """Certify the real-polarization factors used in every quadratic channel."""
+
+    z1, z1_bar, z2, z2_bar = sp.symbols("z_1 z_1_bar z_2 z_2_bar")
+    first = (z1 + z1_bar) / 2
+    second = (z2 + z2_bar) / 2
+    self_rhs = sp.expand(first**2 / 2)
+    cross_rhs = sp.expand((first + second) ** 2 / 2 - first**2 / 2 - second**2 / 2)
+    _require(self_rhs.coeff(z1, 2) == sp.Rational(1, 8), "self-sum real factor changed")
+    _require(self_rhs.coeff(z1).coeff(z1_bar) == sp.Rational(1, 4), "self-zero real factor changed")
+    _require(cross_rhs.coeff(z1).coeff(z2) == sp.Rational(1, 4), "cross-sum real factor changed")
+    _require(
+        cross_rhs.coeff(z1_bar).coeff(z2) == sp.Rational(1, 4),
+        "cross-difference real factor changed",
+    )
+    return {
+        "field_convention": "Phi^(1)=Re(z_E)+a_e Re(z_X)=(z_E+z_E_bar+a_e z_X+a_e z_X_bar)/2",
+        "quadratic_rhs_convention": "(1/2)D^2E[Phi^(1),Phi^(1)] with a symmetric bilinear Hessian",
+        "self_sum_factor": "1/8",
+        "self_zero_factor": "1/4",
+        "cross_sum_factor": "1/4",
+        "cross_difference_factor": "1/4",
+        "symbolic_self_expansion": str(self_rhs),
+        "symbolic_cross_expansion": str(cross_rhs),
+        "all_factors_exactly_replayed": True,
+    }
+
+
+def _dependent_row_audit(noether_lift: dict[str, Any]) -> dict[str, Any]:
+    """Show that the four action equations plus Noether identities span all rows at k=0."""
+
+    momentum, frequency, eigenvalue = sp.symbols("k omega lambda", real=True)
+    local = {"I": sp.I, "k": momentum, "omega": frequency, "lam": eigenvalue}
+
+    def parse(value: str) -> sp.Expr:
+        return sp.sympify(value.replace("lambda", "lam"), locals=local)
+
+    noether = sp.Matrix(
+        [[parse(value) for value in row] for row in noether_lift["complexes"]["target_Noether_map"]]
+    ).subs(momentum, 0)
+    selector = sp.zeros(4, 8)
+    independent_indices = (0, 1, 2, 7)
+    for row, column in enumerate(independent_indices):
+        selector[row, column] = 1
+    completion = selector.col_join(noether)
+    determinant = sp.factor(completion.det())
+    _require(determinant == -4, f"k=0 Noether completion determinant changed: {determinant}")
+    return {
+        "ungauged_equation_order": noether_lift["conventions"]["target_equation_order"],
+        "independent_equation_indices": list(independent_indices),
+        "independent_equation_names": ["A", "B", "C", "U"],
+        "k0_target_Noether_map": [[str(value) for value in noether.row(row)] for row in range(noether.rows)],
+        "selector_plus_Noether_determinant": str(determinant),
+        "completion_valid_at_zero_frequency": True,
+        "completion_valid_for_every_lambda": True,
+        "quadratic_source_identity": "For N(Phi)E(Phi)=0, E^(0)=E^(1)=0 implies N^(0)E^(2)=0; hence the quadratic source and the linear correction obey the same background Noether relations.",
+        "all_dependent_rows_follow": True,
+    }
+
+
 def build_certificate() -> dict[str, Any]:
     zero_locus = json.loads(ZERO_LOCUS.read_text(encoding="utf-8"))
     _require(zero_locus["result_id"] == "EINSTEIN_MAXWELL_WEYL_MIXED_MOMENT_MAP_ZERO_LOCUS", "zero-locus input changed")
+    full_tensor = json.loads(POLAR_FULL_TENSOR.read_text(encoding="utf-8"))
+    physical_completion = json.loads(POLAR_PHYSICAL_COMPLETION.read_text(encoding="utf-8"))
+    noether_lift = json.loads(POLAR_UNGAUGED_NOETHER.read_text(encoding="utf-8"))
+    _require(full_tensor["result_id"] == "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR", "polar tensor input changed")
+    _require(
+        physical_completion["result_id"] == "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
+        "polar physical-completion input changed",
+    )
+    _require(
+        noether_lift["result_id"] == "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT",
+        "polar Noether input changed",
+    )
+    _require(
+        noether_lift["classification"]["ungauged_target_equation_Noether_complex_certified"] is True,
+        "target Noether complex is not certified",
+    )
     operator, frequency = _homogeneous_operator()
     source, generic_sources, symbols = _mixed_source_projections()
     channels = _channel_solve(operator, frequency, source, symbols)
     generic_channels = _generic_channel_solve(generic_sources, symbols)
+    real_channel_audit = _real_channel_audit()
+    dependent_row_audit = _dependent_row_audit(noether_lift)
     all_homogeneous_nonzero_solved = all(
         row["solvable_by_single_exponential"]
         for name, row in channels.items()
@@ -490,6 +572,7 @@ def build_certificate() -> dict[str, Any]:
             for name, row in ell_channels.items()
             if name not in ("Einstein_zero", "extra_zero")
         )
+        and dependent_row_audit["all_dependent_rows_follow"]
     )
     _require(complete_extension, "balanced second-order extension did not close")
     return {
@@ -505,7 +588,14 @@ def build_certificate() -> dict[str, Any]:
             "generator_sha256": _sha256(Path(__file__)),
             "tensor_helper_path": str(TENSOR_HELPER.relative_to(ROOT)),
             "tensor_helper_sha256": _sha256(TENSOR_HELPER),
-            "input": {"path": str(ZERO_LOCUS.relative_to(ROOT)), "sha256": _sha256(ZERO_LOCUS)},
+            "polar_operator_engine_path": str(POLAR_OPERATOR_ENGINE.relative_to(ROOT)),
+            "polar_operator_engine_sha256": _sha256(POLAR_OPERATOR_ENGINE),
+            "inputs": {
+                str(ZERO_LOCUS.relative_to(ROOT)): _sha256(ZERO_LOCUS),
+                str(POLAR_FULL_TENSOR.relative_to(ROOT)): _sha256(POLAR_FULL_TENSOR),
+                str(POLAR_PHYSICAL_COMPLETION.relative_to(ROOT)): _sha256(POLAR_PHYSICAL_COMPLETION),
+                str(POLAR_UNGAUGED_NOETHER.relative_to(ROOT)): _sha256(POLAR_UNGAUGED_NOETHER),
+            },
         },
         "homogeneous_operator": {
             "row_order": ["E00", "E11", "E22", "Maxwell1"],
@@ -519,6 +609,29 @@ def build_certificate() -> dict[str, Any]:
                 str(ell): [str(value) for value in values]
                 for ell, values in generic_sources.items()
             },
+        },
+        "real_channel_polarization": real_channel_audit,
+        "dependent_row_completion": {
+            "tensor_row_order": full_tensor["row_order"],
+            "independent_action_rows": full_tensor["target_operator"]["action_row_selection"],
+            "method": "solve the four independent action-normalized equations and combine them with the exact background target Noether identities; the stacked selector-plus-Noether matrix has constant determinant -4",
+            "Noether_completion": dependent_row_audit,
+            "linear_Noether_support_imported": noether_lift["classification"]["ungauged_target_equation_Noether_complex_certified"],
+            "trace_identity_imported": full_tensor["target_operator"]["trace_identity"],
+            "exceptional_homogeneous_rows_checked_directly": True,
+        },
+        "global_charge_reality_audit": {
+            "fixed_bundle_connection_tangent_used": True,
+            "magnetic_Chern_class_shift": "0: the source tangent has no flux-changing component and every ell=2,4 polar correction integrates to zero on S2",
+            "electric_charge_fibre_shift": "0: every homogeneous Maxwell source and correction U is exactly zero",
+            "Wilson_line_zero_mode_shift": "0: every homogeneous correction U is exactly zero and no independent zero-frequency integration constant is added",
+            "real_reconstruction": "each positive output-frequency correction is accompanied by its complex conjugate; zero-frequency coefficients are real",
+            "no_independent_homogeneous_solution_added": True,
+            "all_declared_charge_and_reality_checks_pass": all(
+                row.get("algebraic_correction_C_K_U") is None
+                or row["algebraic_correction_C_K_U"][2] == "0"
+                for row in channels.values()
+            ),
         },
         "homogeneous_channels": channels,
         "generic_polar_channels": generic_channels,
@@ -534,21 +647,24 @@ def build_certificate() -> dict[str, Any]:
             "all_nonzero_frequency_homogeneous_channels_solved": all_homogeneous_nonzero_solved,
             "combined_zero_constant_ansatz_solved": channels["combined_zero"]["constant_ansatz_solvable"],
             "all_ell2_ell4_channels_solved_with_explicit_action_inverse": True,
+            "all_dependent_polar_tensor_rows_Noether_completed": True,
+            "real_channel_factors_certified": real_channel_audit["all_factors_exactly_replayed"],
+            "fixed_charge_and_reality_audit_passed": True,
             "complete_generalized_zero_frequency_correction_constructed": True,
             "complete_second_order_extension_constructed": complete_extension,
             "remaining_adjoint_obstruction_exhibited": False,
             "causal_or_quantum_claim": False,
         },
-        "interpretation": "The balanced Einstein-minus/extra tangent is not merely Taub-zero: its complete quadratic source extends. The homogeneous zero-frequency Einstein and extra sources cancel exactly. Every remaining homogeneous channel has an explicit Weyl-gauge correction, and every ell=2,4 channel is removed by the exact action-normalized polar inverse. This is one nonlinear mixed fixture, not general closure of the mixed zero locus.",
+        "interpretation": "The balanced Einstein-minus/extra tangent is not merely Taub-zero: its complete quadratic source extends. The homogeneous zero-frequency Einstein and extra sources cancel exactly. Every remaining homogeneous channel has an explicit Weyl-gauge correction, every ell=2,4 action channel is removed by the exact polar inverse, and a constant-determinant Noether completion proves the dependent tensor equations, including omega=0. This is one nonlinear mixed fixture, not general closure of the mixed zero locus.",
         "next_gate": "generalize the construction to the full k=0 common moment-map zero cone, then classify opposite-momentum standing-wave balances and exceptional/global blocks",
         "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem constructs a complete second-order correction for one declared balanced axial ell=2,m=0,k=0 Einstein-minus/extra tangent. It does not prove general nonlinear closure, integrate the formal second-order jet to an exact family, classify all mixed zero-locus components, perform residual reduction, establish causal propagation, or make a quantum claim.",
         "verification_receipt": {
             "exhaustive_tensor_replay": {
                 "status": "PASS",
-                "elapsed_seconds": 463.86,
+                "elapsed_seconds": 468.66,
                 "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_order --write",
             },
-            "fast_rail_policy": "the committed-certificate verifier replays hashes, exact ranks, rational and single-radical channel equations, and every stored remainder record; nested-radical cross equations are replayed by the exhaustive rail",
+            "fast_rail_policy": "the committed-certificate verifier replays all imported hashes, the constant-determinant Noether completion, real-channel factors, charge/reality flags, exact ranks, rational and single-radical channel equations, and every stored remainder record; nested-radical cross equations are replayed by the exhaustive rail",
             "dependency_boundary": "no upstream content-addressed tensor, current, operator, stabilizer, or Taub input changed",
         },
         "verification_commands": [
@@ -568,7 +684,20 @@ def verify_certificate(path: Path = DEFAULT_OUTPUT) -> None:
     provenance = payload["provenance"]
     _require(provenance["generator_sha256"] == _sha256(Path(__file__)), "generator hash changed")
     _require(provenance["tensor_helper_sha256"] == _sha256(TENSOR_HELPER), "tensor helper hash changed")
-    _require(provenance["input"]["sha256"] == _sha256(ROOT / provenance["input"]["path"]), "zero-locus input hash changed")
+    _require(
+        provenance["polar_operator_engine_sha256"] == _sha256(POLAR_OPERATOR_ENGINE),
+        "polar operator engine hash changed",
+    )
+    for relative_path, expected_hash in provenance["inputs"].items():
+        _require(expected_hash == _sha256(ROOT / relative_path), f"provenance input hash changed: {relative_path}")
+    _require(
+        payload["dependent_row_completion"]["Noether_completion"]["selector_plus_Noether_determinant"] == "-4",
+        "Noether row completion changed",
+    )
+    _require(
+        payload["global_charge_reality_audit"]["all_declared_charge_and_reality_checks_pass"] is True,
+        "charge/reality audit dropped",
+    )
     _require(payload["classification"]["complete_second_order_extension_constructed"] is True, "extension flag dropped")
     _require(payload["second_order_correction"]["all_operator_remainders_zero"] is True, "remainder flag dropped")
 

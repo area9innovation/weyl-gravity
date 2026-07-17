@@ -13,6 +13,9 @@
     "provenance",
     "homogeneous_operator",
     "bilinear_source_polynomial",
+    "real_channel_polarization",
+    "dependent_row_completion",
+    "global_charge_reality_audit",
     "homogeneous_channels",
     "generic_polar_channels",
     "second_order_correction",
@@ -39,11 +42,70 @@
         "all_nonzero_frequency_homogeneous_channels_solved",
         "combined_zero_constant_ansatz_solved",
         "all_ell2_ell4_channels_solved_with_explicit_action_inverse",
+        "all_dependent_polar_tensor_rows_Noether_completed",
+        "real_channel_factors_certified",
+        "fixed_charge_and_reality_audit_passed",
         "complete_generalized_zero_frequency_correction_constructed",
         "complete_second_order_extension_constructed",
         "remaining_adjoint_obstruction_exhibited",
         "causal_or_quantum_claim"
-      ]
+      ],
+      "properties": {
+        "all_dependent_polar_tensor_rows_Noether_completed": {"const": true},
+        "real_channel_factors_certified": {"const": true},
+        "fixed_charge_and_reality_audit_passed": {"const": true}
+      }
+    },
+    "real_channel_polarization": {
+      "type": "object",
+      "required": [
+        "self_sum_factor",
+        "self_zero_factor",
+        "cross_sum_factor",
+        "cross_difference_factor",
+        "all_factors_exactly_replayed"
+      ],
+      "properties": {
+        "self_sum_factor": {"const": "1/8"},
+        "self_zero_factor": {"const": "1/4"},
+        "cross_sum_factor": {"const": "1/4"},
+        "cross_difference_factor": {"const": "1/4"},
+        "all_factors_exactly_replayed": {"const": true}
+      }
+    },
+    "dependent_row_completion": {
+      "type": "object",
+      "required": ["Noether_completion"],
+      "properties": {
+        "Noether_completion": {
+          "type": "object",
+          "required": [
+            "selector_plus_Noether_determinant",
+            "completion_valid_at_zero_frequency",
+            "completion_valid_for_every_lambda",
+            "all_dependent_rows_follow"
+          ],
+          "properties": {
+            "selector_plus_Noether_determinant": {"const": "-4"},
+            "completion_valid_at_zero_frequency": {"const": true},
+            "completion_valid_for_every_lambda": {"const": true},
+            "all_dependent_rows_follow": {"const": true}
+          }
+        }
+      }
+    },
+    "global_charge_reality_audit": {
+      "type": "object",
+      "required": [
+        "fixed_bundle_connection_tangent_used",
+        "no_independent_homogeneous_solution_added",
+        "all_declared_charge_and_reality_checks_pass"
+      ],
+      "properties": {
+        "fixed_bundle_connection_tangent_used": {"const": true},
+        "no_independent_homogeneous_solution_added": {"const": true},
+        "all_declared_charge_and_reality_checks_pass": {"const": true}
+      }
     }
   },
   "additionalProperties": true

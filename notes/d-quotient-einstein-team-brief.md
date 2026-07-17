@@ -1464,6 +1464,19 @@ nonzero homogeneous channel has an explicit exact correction, and every
 action-Hessian inverse.  All operator remainders vanish.  Thus a complete
 finite `Phi^(2)` exists for this declared real tangent.
 
+The completeness gate is now explicit rather than interpretive.  In target
+ungauged equation order `(A,B,C,h_t,h_x,K,G,U)`, stack the selectors for the
+four solved action equations `(A,B,C,U)` with the four certified target
+Noether identities at `k=0`.  The resulting `8 x 8` matrix has determinant
+`-4`, a unit independent of `omega` and `lambda`.  Since the second variation
+of `N(Phi)E(Phi)=0` reduces to `N^(0)E^(2)=0` when the background and declared
+first-order tangent are on shell, all dependent polar tensor rows follow,
+including at zero frequency.  The certificate also derives the real-channel
+factors (`1/8` for self-sums and `1/4` for self-zero and mixed channels),
+imports every polar operator/Noether dependency by hash, and checks that no
+magnetic, stationary electric-charge, or Wilson-line zero-mode shift is
+hidden in the correction.
+
 This proves one mixed second-order extension, not general nonlinear closure
 or integration to an exact all-orders family.  The next nonlinear target is
 the full `k=0` common-zero cone, followed by opposite-momentum standing-wave

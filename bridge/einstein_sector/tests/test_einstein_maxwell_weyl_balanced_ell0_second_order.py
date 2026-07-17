@@ -38,6 +38,25 @@ class BalancedEll0SecondOrderTests(unittest.TestCase):
         self.assertFalse(classification["remaining_adjoint_obstruction_exhibited"])
         self.assertFalse(classification["causal_or_quantum_claim"])
 
+    def test_noether_real_and_charge_hardening(self) -> None:
+        completion = self.payload["dependent_row_completion"]["Noether_completion"]
+        self.assertEqual(completion["selector_plus_Noether_determinant"], "-4")
+        self.assertTrue(completion["completion_valid_at_zero_frequency"])
+        self.assertTrue(completion["all_dependent_rows_follow"])
+        polarization = self.payload["real_channel_polarization"]
+        self.assertEqual(
+            [
+                polarization["self_sum_factor"],
+                polarization["self_zero_factor"],
+                polarization["cross_sum_factor"],
+                polarization["cross_difference_factor"],
+            ],
+            ["1/8", "1/4", "1/4", "1/4"],
+        )
+        self.assertTrue(
+            self.payload["global_charge_reality_audit"]["all_declared_charge_and_reality_checks_pass"]
+        )
+
     def test_schema_and_fast_verifiers(self) -> None:
         schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
         jsonschema.Draft202012Validator(schema).validate(self.payload)

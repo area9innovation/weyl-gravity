@@ -39,7 +39,32 @@ def verify_certificate() -> None:
     provenance = payload["provenance"]
     assert provenance["generator_sha256"] == _sha256(ROOT / provenance["generator_path"])
     assert provenance["tensor_helper_sha256"] == _sha256(ROOT / provenance["tensor_helper_path"])
-    assert provenance["input"]["sha256"] == _sha256(ROOT / provenance["input"]["path"])
+    assert provenance["polar_operator_engine_sha256"] == _sha256(ROOT / provenance["polar_operator_engine_path"])
+    for relative_path, expected_hash in provenance["inputs"].items():
+        assert expected_hash == _sha256(ROOT / relative_path)
+
+    noether_audit = payload["dependent_row_completion"]["Noether_completion"]
+    lam, frequency = sp.symbols("lambda omega", real=True)
+    local = {"I": sp.I, "lam": lam, "omega": frequency}
+    noether = sp.Matrix(
+        [
+            [sp.sympify(value.replace("lambda", "lam"), locals=local) for value in row]
+            for row in noether_audit["k0_target_Noether_map"]
+        ]
+    )
+    selector = sp.zeros(4, 8)
+    for row, column in enumerate(noether_audit["independent_equation_indices"]):
+        selector[row, column] = 1
+    assert sp.factor(selector.col_join(noether).det()) == -4
+    assert noether_audit["selector_plus_Noether_determinant"] == "-4"
+
+    polarization = payload["real_channel_polarization"]
+    assert (
+        polarization["self_sum_factor"],
+        polarization["self_zero_factor"],
+        polarization["cross_sum_factor"],
+        polarization["cross_difference_factor"],
+    ) == ("1/8", "1/4", "1/4", "1/4")
 
     omega = sp.symbols("Omega", real=True)
     homogeneous = sp.Matrix(
@@ -81,6 +106,14 @@ def verify_certificate() -> None:
                 assert row["correction_At_B_Ct_U"]
 
     classification = payload["classification"]
+    assert classification["all_dependent_polar_tensor_rows_Noether_completed"] is True
+    assert classification["real_channel_factors_certified"] is True
+    assert classification["fixed_charge_and_reality_audit_passed"] is True
+    assert payload["global_charge_reality_audit"]["all_declared_charge_and_reality_checks_pass"] is True
+    for row in payload["homogeneous_channels"].values():
+        correction = row.get("algebraic_correction_C_K_U")
+        if correction is not None:
+            assert correction[2] == "0"
     assert classification["complete_second_order_extension_constructed"] is True
     assert classification["remaining_adjoint_obstruction_exhibited"] is False
     assert payload["second_order_correction"]["complete_for_declared_tangent"] is True

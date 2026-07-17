@@ -31,6 +31,7 @@
   },
   "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem constructs a complete second-order correction for one declared balanced axial ell=2,m=0,k=0 Einstein-minus/extra tangent. It does not prove general nonlinear closure, integrate the formal second-order jet to an exact family, classify all mixed zero-locus components, perform residual reduction, establish causal propagation, or make a quantum claim.",
   "classification": {
+    "all_dependent_polar_tensor_rows_Noether_completed": true,
     "all_ell2_ell4_channels_solved_with_explicit_action_inverse": true,
     "all_nonzero_frequency_homogeneous_channels_solved": true,
     "causal_or_quantum_claim": false,
@@ -39,12 +40,107 @@
     "complete_second_order_extension_constructed": true,
     "direct_bilinear_homogeneous_source_computed": true,
     "direct_homogeneous_operator_computed": true,
+    "fixed_charge_and_reality_audit_passed": true,
+    "real_channel_factors_certified": true,
     "remaining_adjoint_obstruction_exhibited": false
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
+  "dependent_row_completion": {
+    "Noether_completion": {
+      "all_dependent_rows_follow": true,
+      "completion_valid_at_zero_frequency": true,
+      "completion_valid_for_every_lambda": true,
+      "independent_equation_indices": [
+        0,
+        1,
+        2,
+        7
+      ],
+      "independent_equation_names": [
+        "A",
+        "B",
+        "C",
+        "U"
+      ],
+      "k0_target_Noether_map": [
+        [
+          "2*I*omega",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "I*omega",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "I*omega",
+          "0",
+          "-lambda",
+          "2",
+          "-1"
+        ],
+        [
+          "-2",
+          "0",
+          "2",
+          "0",
+          "0",
+          "2",
+          "0",
+          "0"
+        ]
+      ],
+      "quadratic_source_identity": "For N(Phi)E(Phi)=0, E^(0)=E^(1)=0 implies N^(0)E^(2)=0; hence the quadratic source and the linear correction obey the same background Noether relations.",
+      "selector_plus_Noether_determinant": "-4",
+      "ungauged_equation_order": [
+        "A",
+        "B",
+        "C",
+        "h_t",
+        "h_x",
+        "K",
+        "G",
+        "U"
+      ]
+    },
+    "exceptional_homogeneous_rows_checked_directly": true,
+    "independent_action_rows": [
+      "-metric_00",
+      "2*metric_01",
+      "-metric_11",
+      "2*lambda*maxwell_axial_density"
+    ],
+    "linear_Noether_support_imported": true,
+    "method": "solve the four independent action-normalized equations and combine them with the exact background target Noether identities; the stacked selector-plus-Noether matrix has constant determinant -4",
+    "tensor_row_order": [
+      "metric_00",
+      "metric_01",
+      "metric_11",
+      "metric_0a",
+      "metric_1a",
+      "sphere_trace",
+      "sphere_tracefree",
+      "maxwell_axial_density"
+    ],
+    "trace_identity_imported": "-metric_00+metric_11+2*sphere_trace=0"
+  },
   "generic_polar_channels": {
     "2": {
       "Einstein_self_sum": {
@@ -297,6 +393,15 @@
       }
     }
   },
+  "global_charge_reality_audit": {
+    "Wilson_line_zero_mode_shift": "0: every homogeneous correction U is exactly zero and no independent zero-frequency integration constant is added",
+    "all_declared_charge_and_reality_checks_pass": true,
+    "electric_charge_fibre_shift": "0: every homogeneous Maxwell source and correction U is exactly zero",
+    "fixed_bundle_connection_tangent_used": true,
+    "magnetic_Chern_class_shift": "0: the source tangent has no flux-changing component and every ell=2,4 polar correction integrates to zero on S2",
+    "no_independent_homogeneous_solution_added": true,
+    "real_reconstruction": "each positive output-frequency correction is accompanied by its complex conjugate; zero-frequency coefficients are real"
+  },
   "homogeneous_channels": {
     "Einstein_self_sum": {
       "algebraic_correction_C_K_U": [
@@ -466,24 +571,39 @@
       "Maxwell1"
     ]
   },
-  "interpretation": "The balanced Einstein-minus/extra tangent is not merely Taub-zero: its complete quadratic source extends. The homogeneous zero-frequency Einstein and extra sources cancel exactly. Every remaining homogeneous channel has an explicit Weyl-gauge correction, and every ell=2,4 channel is removed by the exact action-normalized polar inverse. This is one nonlinear mixed fixture, not general closure of the mixed zero locus.",
+  "interpretation": "The balanced Einstein-minus/extra tangent is not merely Taub-zero: its complete quadratic source extends. The homogeneous zero-frequency Einstein and extra sources cancel exactly. Every remaining homogeneous channel has an explicit Weyl-gauge correction, every ell=2,4 action channel is removed by the exact polar inverse, and a constant-determinant Noether completion proves the dependent tensor equations, including omega=0. This is one nonlinear mixed fixture, not general closure of the mixed zero locus.",
   "lifecycle_state": "CLASSIFIED",
   "next_gate": "generalize the construction to the full k=0 common moment-map zero cone, then classify opposite-momentum standing-wave balances and exceptional/global blocks",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_balanced_ell0_second_order.py",
-    "generator_sha256": "13ea631b6d9ab28cdd5e8bdacdeee36a7350f27f207294c2d3d54a410cd829f8",
-    "input": {
-      "path": "bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json",
-      "sha256": "554c34d1e52bb3d458fe5380e8929de8bfafb60566b1a6717a2f1d2de8aaaffa"
+    "generator_sha256": "144dc9ea6173b8980e859b4d98ab41d3730631ae2292198701451f675fbb8ff0",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json": "554c34d1e52bb3d458fe5380e8929de8bfafb60566b1a6717a2f1d2de8aaaffa",
+      "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20",
+      "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d",
+      "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
     },
+    "polar_operator_engine_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_full_tensor.py",
+    "polar_operator_engine_sha256": "1230f1ea1ffdb81b5209ff410e7b3e4b6cd16ac11c9ce0de481f0474b1cc7f11",
     "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py",
     "tensor_helper_sha256": "801bd2ea66675d8b8db075c3499f28ef83909749efc4f2b3240da681f3fea8d9"
+  },
+  "real_channel_polarization": {
+    "all_factors_exactly_replayed": true,
+    "cross_difference_factor": "1/4",
+    "cross_sum_factor": "1/4",
+    "field_convention": "Phi^(1)=Re(z_E)+a_e Re(z_X)=(z_E+z_E_bar+a_e z_X+a_e z_X_bar)/2",
+    "quadratic_rhs_convention": "(1/2)D^2E[Phi^(1),Phi^(1)] with a symmetric bilinear Hessian",
+    "self_sum_factor": "1/8",
+    "self_zero_factor": "1/4",
+    "symbolic_cross_expansion": "z_1*z_2/4 + z_1*z_2_bar/4 + z_1_bar*z_2/4 + z_1_bar*z_2_bar/4",
+    "symbolic_self_expansion": "z_1**2/8 + z_1*z_1_bar/4 + z_1_bar**2/8"
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_BALANCED_ELL0_SECOND_ORDER",
   "result_state": "MINIMAL_BALANCED_MIXED_TANGENT_COMPLETE_SECOND_ORDER_CORRECTION_CERTIFIED",
   "schema": "einstein-maxwell-weyl-balanced-ell0-second-order-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_balanced_ell0_second_order.schema.json",
-  "schema_sha256": "7ce0108d0af244890aa01923ce01509e519b9ac6a52276ef77c8ac0a56966005",
+  "schema_sha256": "4727f5e756bb5d66bf7c1beba676984278aca4dcf5b13802251dedadc2745072",
   "second_order_correction": {
     "all_operator_remainders_zero": true,
     "complete_for_declared_tangent": true,
@@ -504,9 +624,9 @@
     "dependency_boundary": "no upstream content-addressed tensor, current, operator, stabilizer, or Taub input changed",
     "exhaustive_tensor_replay": {
       "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_order --write",
-      "elapsed_seconds": 463.86,
+      "elapsed_seconds": 468.66,
       "status": "PASS"
     },
-    "fast_rail_policy": "the committed-certificate verifier replays hashes, exact ranks, rational and single-radical channel equations, and every stored remainder record; nested-radical cross equations are replayed by the exhaustive rail"
+    "fast_rail_policy": "the committed-certificate verifier replays all imported hashes, the constant-determinant Noether completion, real-channel factors, charge/reality flags, exact ranks, rational and single-radical channel equations, and every stored remainder record; nested-radical cross equations are replayed by the exhaustive rail"
   }
 }

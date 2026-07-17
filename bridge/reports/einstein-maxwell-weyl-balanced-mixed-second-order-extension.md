@@ -38,6 +38,23 @@ The direct Bach--Maxwell calculation establishes:
   action-Hessian inverse gives a four-component correction;
 - every operator remainder is identically zero.
 
+The completeness statement is now hardened in three additional ways.
+
+- The certificate content-addresses the full polar tensor, physical-ring
+  completion, ungauged Noether lift, and the imported polar operator engine.
+- In ungauged equation order `(A,B,C,h_t,h_x,K,G,U)`, the selector for the
+  four solved equations `(A,B,C,U)` stacked with the four target Noether
+  identities at `k=0` has determinant `-4`.  It is therefore invertible for
+  every frequency and every `lambda`, including the zero-frequency channel.
+  Expanding `N(Phi)E(Phi)=0` about an on-shell background with an on-shell
+  first-order tangent gives `N^(0)E^(2)=0`, so the dependent quadratic tensor
+  rows follow from the four solved action rows without an integrability
+  assumption.
+- The real-field expansion certifies the `1/8` self-sum and `1/4` self-zero,
+  cross-sum, and cross-difference factors.  Complex-conjugate reconstruction
+  is explicit, and no magnetic Chern-class, electric-charge-fibre, or
+  zero-frequency Wilson-line shift is introduced.
+
 Thus the finite real sum of the stored channel corrections and their complex
 conjugates is a complete `Phi^(2)` for the declared tangent.  This proves one
 mixed Einstein--extra second-order extension.  It does not prove closure of
@@ -59,7 +76,14 @@ The exhaustive unreduced tensor replay is deliberately separate:
 python3 -m bridge.einstein_sector.einstein_maxwell_weyl_balanced_ell0_second_order --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json
 ```
 
-It passed during production in `463.86` seconds.  The fast rail checks hashes,
-schema, exact ranks, the rational and single-radical channel equations, and
-every stored zero remainder.  The nested-radical cross-channel equations are
-replayed only on the exhaustive rail.
+It passed during production in `468.66` seconds.  The fast rail checks all
+imported hashes, schema, the determinant-`-4` Noether completion, real-channel
+factors, the charge/reality audit, exact ranks, the rational and single-radical
+channel equations, and every stored zero remainder.  The nested-radical
+cross-channel equations are replayed only on the exhaustive rail.
+
+A trial brute-force projection of the additional vector and sphere
+trace-free quadratic rows was stopped because SymPy's exact trigonometric
+integration did not complete in a maintainable certificate time.  No claim
+depends on that trial; dependent-row completeness is instead certified by the
+exact unit-determinant Noether completion above.
