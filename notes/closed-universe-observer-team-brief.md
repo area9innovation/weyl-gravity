@@ -54,11 +54,19 @@ The current classical observer assets include:
 - a compact spatially averaged relational Maxwell redshift fixture;
 - a complete local gravity--clock--Maxwell \(q_2\);
 - a certified Maxwell causal contraction and transferred mixed vertex; and
-- a compact neutral source with a nonzero retarded Maxwell signal.
+- a compact neutral source with a nonzero retarded Maxwell signal;
+- two rank-two clock-labelled detector memories at probe order; and
+- six exact global detector-indexed Berger rods with a conserved finite-mode
+  compact stress-source export.
 
-The last item is not yet a localized emitter/receiver measurement.  Rod
-fields, detector records, apparatus recoil, gravity backreaction, mixed
-\(q_3\), and a quantum observer state remain open.
+The detector records use homogeneous compact emitters rather than spatially
+localized emitter currents.  The global rods correct the prospective
+apparatus carrier from 78 to 84 rows and close the missing-global-source input
+to the compact solvability gate.  Exact retained-mode primitives now show
+that the complete global rod stress has zero compact Taub projection and
+admits gravitational compensation through order \(\epsilon_R^2\).  An
+all-orders backreacted branch, apparatus recoil, the 84-row interacting/causal
+complex, and a quantum observer state remain open.
 
 ### The adjacent closed-universe programme
 

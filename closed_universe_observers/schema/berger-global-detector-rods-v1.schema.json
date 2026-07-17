@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-global-detector-rods-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "allocation_correction", "berger_geometry", "global_rods", "exact_checks", "global_source_export", "nonlinear_import_contract", "flags", "not_established", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-global-detector-rods-v1"},
+    "result_id": {"const": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"},
+    "claim_status": {"const": "GLOBAL_ROD_FIELDS_AND_Q0_FORMULA_EXPORTED_COMPACT_TAUB_PROJECTOR_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "maxProperties": 2, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "allocation_correction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["reason", "old_shared_rod_count", "new_detector_indexed_rod_count", "old_proposed_total_rows", "corrected_proposed_total_rows", "new_degree_zero_rows", "new_degree_one_rows", "mutation_rejected"],
+      "properties": {
+        "reason": {"$ref": "#/$defs/text"}, "old_shared_rod_count": {"const": 3}, "new_detector_indexed_rod_count": {"const": 6},
+        "old_proposed_total_rows": {"const": 78}, "corrected_proposed_total_rows": {"const": 84},
+        "new_degree_zero_rows": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "new_degree_one_rows": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "mutation_rejected": {"const": true}
+      }
+    },
+    "berger_geometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["squashing_c", "rod_frequency", "spatial_model", "frame"],
+      "properties": {
+        "squashing_c": {"const": "3*sqrt(10)/20"},
+        "rod_frequency": {"const": "sqrt(58)/6"},
+        "spatial_model": {"$ref": "#/$defs/text"},
+        "frame": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "global_rods": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/detectorRods"}},
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frame_commutators", "linear_spatial_eigenvalue", "wave_residuals", "event_relational_jacobians", "event_normal_derivatives", "all_pass"],
+      "properties": {
+        "frame_commutators": {"const": ["0", "0", "0"]}, "linear_spatial_eigenvalue": {"const": "29/18"},
+        "wave_residuals": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"const": "0"}},
+        "event_relational_jacobians": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/matrix"}},
+        "event_normal_derivatives": {"const": [["0", "0", "0"], ["0", "0", "0"]]}, "all_pass": {"const": true}
+      }
+    },
+    "global_source_export": {"type": "object", "additionalProperties": false, "required": ["rod_action", "stress_tensor", "retained_metric_source", "conservation_identity", "spatial_harmonic_support", "temporal_frequency_support", "source_is_global_smooth", "source_is_fully_determined_by_displayed_rods"], "properties": {
+      "rod_action": {"$ref": "#/$defs/text"}, "stress_tensor": {"$ref": "#/$defs/text"}, "retained_metric_source": {"$ref": "#/$defs/text"}, "conservation_identity": {"$ref": "#/$defs/text"},
+      "spatial_harmonic_support": {"const": ["j=0", "j=1"]}, "temporal_frequency_support": {"const": ["0", "+sqrt(58)/3", "-sqrt(58)/3"]},
+      "source_is_global_smooth": {"const": true}, "source_is_fully_determined_by_displayed_rods": {"const": true}
+    }},
+    "nonlinear_import_contract": {"type": "object", "additionalProperties": false, "required": ["required_carrier_rows", "source_sector", "required_next_calculation", "status"], "properties": {
+      "required_carrier_rows": {"const": 84}, "source_sector": {"const": "temporal {0,+sqrt(58)/3,-sqrt(58)/3} tensor spatial {j=0,j=1}"},
+      "required_next_calculation": {"$ref": "#/$defs/text"}, "status": {"const": "OPEN"}
+    }},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["GLOBAL_COMPACT_ROD_CONFIGURATION_EXPORTED", "GLOBAL_COMPACT_ROD_Q0_FORMULA_EXPORTED", "EXACT_ROD_HARMONIC_SUPPORT_EXPORTED", "DETECTOR_INDEXED_ROD_ALLOCATION", "FULL_COMPACT_ADJOINT_KERNEL_EXPORTED", "COMPACT_TAUB_PROJECTION_COMPUTED", "PERTURBATIVE_BACKREACTED_ROD_BRANCH_CERTIFIED", "LORENTZIAN_GREEN_HOMOTOPY_FOR_84_ROWS", "QUANTUM_CLAIM"], "properties": {
+      "GLOBAL_COMPACT_ROD_CONFIGURATION_EXPORTED": {"const": true}, "GLOBAL_COMPACT_ROD_Q0_FORMULA_EXPORTED": {"const": true}, "EXACT_ROD_HARMONIC_SUPPORT_EXPORTED": {"const": true}, "DETECTOR_INDEXED_ROD_ALLOCATION": {"const": true},
+      "FULL_COMPACT_ADJOINT_KERNEL_EXPORTED": {"const": false}, "COMPACT_TAUB_PROJECTION_COMPUTED": {"const": false}, "PERTURBATIVE_BACKREACTED_ROD_BRANCH_CERTIFIED": {"const": false}, "LORENTZIAN_GREEN_HOMOTOPY_FOR_84_ROWS": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+    }},
+    "not_established": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["declared_input_sha256", "source_manifest"], "properties": {"declared_input_sha256": {"$ref": "#/$defs/sha256"}, "source_manifest": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/source"}}}},
+    "claim_boundary": {"$ref": "#/$defs/text"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrix": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "result_id"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}, "result_id": {"$ref": "#/$defs/text"}}},
+    "detectorRods": {"type": "object", "additionalProperties": false, "required": ["detector_id", "physical_event_time", "clock_label", "hopf_arclength", "hopf_phase", "event_point", "spatial_profiles", "rod_fields"], "properties": {
+      "detector_id": {"enum": ["D0", "D1"]}, "physical_event_time": {"type": "string"}, "clock_label": {"type": "string"}, "hopf_arclength": {"type": "string"}, "hopf_phase": {"type": "string"},
+      "event_point": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}, "spatial_profiles": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}}, "rod_fields": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}}
+    }},
+    "source": {"type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"], "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}}
+  }
+}

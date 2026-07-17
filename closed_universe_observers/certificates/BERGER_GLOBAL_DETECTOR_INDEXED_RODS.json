@@ -1,0 +1,270 @@
+{
+  "allocation_correction": {
+    "corrected_proposed_total_rows": 84,
+    "mutation_rejected": true,
+    "new_degree_one_rows": [
+      "R0_1_plus",
+      "R0_2_plus",
+      "R0_3_plus",
+      "R1_1_plus",
+      "R1_2_plus",
+      "R1_3_plus",
+      "m0_plus",
+      "m1_plus",
+      "p0_plus",
+      "p1_plus"
+    ],
+    "new_degree_zero_rows": [
+      "R0_1",
+      "R0_2",
+      "R0_3",
+      "R1_1",
+      "R1_2",
+      "R1_3",
+      "m0",
+      "m1",
+      "p0",
+      "p1"
+    ],
+    "new_detector_indexed_rod_count": 6,
+    "old_proposed_total_rows": 78,
+    "old_shared_rod_count": 3,
+    "reason": "the two identity rod Jacobians are Cauchy data at distinct times; assigning a separate scalar triplet to each detector avoids an unproved two-time interpolation constraint on one shared triplet"
+  },
+  "berger_geometry": {
+    "frame": [
+      "e0=partial_t",
+      "e1=xi1",
+      "e2=xi2",
+      "e3=xi3/c",
+      "[e1,e2]=c e3, [e2,e3]=c^{-1} e1, [e3,e1]=c^{-1} e2",
+      "local relational direction order=((4/3)e0,e3,e1,e2)"
+    ],
+    "rod_frequency": "sqrt(58)/6",
+    "spatial_model": "S3={(x0,x1,x2,x3) in R4: sum_mu x_mu^2=1}",
+    "squashing_c": "3*sqrt(10)/20"
+  },
+  "claim_boundary": "This exact fixed-Berger classical export supplies six globally smooth detector-indexed massless scalar rods, reproduces both prescribed detector-event rod charts, and determines their global conserved order-epsilon_R^2 metric source and finite harmonic support. It corrects the prospective apparatus carrier from 78 to 84 rows. It does not compute the full compact Taub projection, certify a backreacted branch, construct the 84-row interacting or causal complex, include apparatus recoil, or make a quantum claim.",
+  "claim_status": "GLOBAL_ROD_FIELDS_AND_Q0_FORMULA_EXPORTED_COMPACT_TAUB_PROJECTOR_OPEN",
+  "dependency_refs": {
+    "detector_input": {
+      "path": "closed_universe_observers/fixtures/berger_localized_detector_records_input.json",
+      "result_id": "DECLARED_DETECTOR_INPUT",
+      "sha256": "0290db56fef702ab77eb7154d85b850618e94d68caa3006aa48ac1ead2c88fbf"
+    },
+    "detector_preflight": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "all_pass": true,
+    "event_normal_derivatives": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "event_relational_jacobians": [
+      [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      [
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ]
+    ],
+    "frame_commutators": [
+      "0",
+      "0",
+      "0"
+    ],
+    "linear_spatial_eigenvalue": "29/18",
+    "wave_residuals": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "flags": {
+    "COMPACT_TAUB_PROJECTION_COMPUTED": false,
+    "DETECTOR_INDEXED_ROD_ALLOCATION": true,
+    "EXACT_ROD_HARMONIC_SUPPORT_EXPORTED": true,
+    "FULL_COMPACT_ADJOINT_KERNEL_EXPORTED": false,
+    "GLOBAL_COMPACT_ROD_CONFIGURATION_EXPORTED": true,
+    "GLOBAL_COMPACT_ROD_Q0_FORMULA_EXPORTED": true,
+    "LORENTZIAN_GREEN_HOMOTOPY_FOR_84_ROWS": false,
+    "PERTURBATIVE_BACKREACTED_ROD_BRANCH_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "global_rods": [
+    {
+      "clock_label": "3/16",
+      "detector_id": "D0",
+      "event_point": [
+        "cos(sqrt(10)/12)",
+        "0",
+        "0",
+        "sin(sqrt(10)/12)"
+      ],
+      "hopf_arclength": "1/4",
+      "hopf_phase": "sqrt(10)/12",
+      "physical_event_time": "1/4",
+      "rod_fields": [
+        "3*sqrt(10)*(-x0*sin(sqrt(10)/12) + x3*cos(sqrt(10)/12))*cos(sqrt(58)*(t - 1/4)/6)/10 + 1/4",
+        "(2*x1*cos(sqrt(10)/12) + 2*x2*sin(sqrt(10)/12))*cos(sqrt(58)*(t - 1/4)/6)",
+        "(-2*x1*sin(sqrt(10)/12) + 2*x2*cos(sqrt(10)/12))*cos(sqrt(58)*(t - 1/4)/6)"
+      ],
+      "spatial_profiles": [
+        "3*sqrt(10)*(-x0*sin(sqrt(10)/12) + x3*cos(sqrt(10)/12))/10",
+        "2*x1*cos(sqrt(10)/12) + 2*x2*sin(sqrt(10)/12)",
+        "-2*x1*sin(sqrt(10)/12) + 2*x2*cos(sqrt(10)/12)"
+      ]
+    },
+    {
+      "clock_label": "3/8",
+      "detector_id": "D1",
+      "event_point": [
+        "cos(sqrt(10)/6)",
+        "0",
+        "0",
+        "sin(sqrt(10)/6)"
+      ],
+      "hopf_arclength": "1/2",
+      "hopf_phase": "sqrt(10)/6",
+      "physical_event_time": "1/2",
+      "rod_fields": [
+        "3*sqrt(10)*(-x0*sin(sqrt(10)/6) + x3*cos(sqrt(10)/6))*cos(sqrt(58)*(t - 1/2)/6)/10 + 1/2",
+        "(2*x1*cos(sqrt(10)/6) + 2*x2*sin(sqrt(10)/6))*cos(sqrt(58)*(t - 1/2)/6)",
+        "(-2*x1*sin(sqrt(10)/6) + 2*x2*cos(sqrt(10)/6))*cos(sqrt(58)*(t - 1/2)/6)"
+      ],
+      "spatial_profiles": [
+        "3*sqrt(10)*(-x0*sin(sqrt(10)/6) + x3*cos(sqrt(10)/6))/10",
+        "2*x1*cos(sqrt(10)/6) + 2*x2*sin(sqrt(10)/6)",
+        "-2*x1*sin(sqrt(10)/6) + 2*x2*cos(sqrt(10)/6)"
+      ]
+    }
+  ],
+  "global_source_export": {
+    "conservation_identity": "nabla^m T_rod_mn=sum_{a,I}(Box_gHat R_{aI}) partial_n R_{aI}=0",
+    "retained_metric_source": "q0_(h_plus_ab)=(2-delta_ab) T_rod^{ab} in field order (00,01,02,03,11,12,13,22,23,33)",
+    "rod_action": "S_R=-1/2 sum_{a=0}^1 sum_{I=1}^3 integral sqrt(-gHat) gHat^mn partial_m R_{aI} partial_n R_{aI}",
+    "source_is_fully_determined_by_displayed_rods": true,
+    "source_is_global_smooth": true,
+    "spatial_harmonic_support": [
+      "j=0",
+      "j=1"
+    ],
+    "stress_tensor": "T_rod_mn=sum_{a,I}(partial_m R_{aI} partial_n R_{aI}-1/2 gHat_mn gHat^rs partial_r R_{aI} partial_s R_{aI})",
+    "temporal_frequency_support": [
+      "0",
+      "+sqrt(58)/3",
+      "-sqrt(58)/3"
+    ]
+  },
+  "nonlinear_import_contract": {
+    "required_carrier_rows": 84,
+    "required_next_calculation": "evaluate the exact retained Berger q1 and its compact adjoint-kernel pairing on the displayed finite source sector, then solve q1 Phi2=-q0^rod or exhibit a nonzero Taub pairing",
+    "source_sector": "temporal {0,+sqrt(58)/3,-sqrt(58)/3} tensor spatial {j=0,j=1}",
+    "status": "OPEN"
+  },
+  "not_established": [
+    "the compact adjoint-kernel projector on the finite rod-source sector",
+    "vanishing or nonvanishing of every compact Taub pairing",
+    "an exact second-order gravitational primitive Phi2",
+    "the 84-row interacting BV complex or its causal Green homotopy",
+    "apparatus recoil, nonlinear observer consistency, or a quantum observer algebra"
+  ],
+  "provenance": {
+    "declared_input_sha256": "001cce4b1f4e63e6074fec2b2978465811eb3deefd8bf005261203bed008d710",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_global_detector_rods.py",
+        "role": "producer",
+        "sha256": "dd0a7199719a2e7b64fcd008f979283a12dd6173653857ac3885d42f2fd6c846"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_global_detector_rods.py",
+        "role": "independent_verifier",
+        "sha256": "0e07379f4238bfc78392024e3a9c6e0179e4db6efc3861ac57d8515c7fac8fdd"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_global_detector_rods.py",
+        "role": "tests",
+        "sha256": "f571e101432fc01fc07d63055a962013e5dcb588507b80eee97812cc97d0d843"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-global-detector-rods.md",
+        "role": "report",
+        "sha256": "f5b87bde59ccd6ea64844af636c54ae4aa0f12808e7d85971f9425725f9d554b"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-global-detector-rods-v1.schema.json",
+        "role": "certificate_schema",
+        "sha256": "f80de306ffae70f8fe68e5fa0f84416e496a3debbf71e398119d232ffd147afb"
+      }
+    ]
+  },
+  "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+  "schema": "closed-universe-berger-global-detector-rods-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

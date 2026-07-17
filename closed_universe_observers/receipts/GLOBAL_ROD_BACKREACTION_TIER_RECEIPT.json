@@ -1,0 +1,76 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "GLOBAL_ROD_BACKREACTION_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_global_detector_rods.py closed_universe_observers/verify_berger_global_detector_rods.py closed_universe_observers/generate_berger_global_rod_q1_solvability.py closed_universe_observers/verify_berger_global_rod_q1_solvability.py && parse changed JSON and schemas && git diff --check",
+      "elapsed_seconds": "1.30",
+      "status": "PASS",
+      "scope": "changed observer Python, strict JSON schemas, generated certificates, reports, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_global_detector_rods --check && python3 -m closed_universe_observers.verify_berger_global_detector_rods",
+      "elapsed_seconds": "2.20",
+      "status": "PASS",
+      "scope": "six global wave rods, event Jacobians, normal data, harmonic support, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_global_rod_q1_solvability --check",
+      "elapsed_seconds": "70.91",
+      "status": "PASS",
+      "scope": "exact algebraic-field reduction, Noether closure, ranks, and six sparse second-order primitives"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_global_rod_q1_solvability",
+      "elapsed_seconds": "5.90",
+      "status": "PASS",
+      "scope": "independent replay of every persisted sparse primitive with zero residual"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on both new schemas and certificates",
+      "elapsed_seconds": "5.90",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 schema validation"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "110.25",
+      "status": "PASS",
+      "scope": "all 29 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "criterion": "The imported retained q1 is unchanged and content-addressed; the complete affected observer suite and direct exact primitive replay were run. The 84-row interacting chain does not yet exist."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No classical freeze, all-orders branch theorem, shared core-algebra change, Lorentzian certification, QME result, release, or full-suite request occurred."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/fixtures/berger_global_detector_rods_input.json", "sha256": "001cce4b1f4e63e6074fec2b2978465811eb3deefd8bf005261203bed008d710"},
+    {"path": "closed_universe_observers/schema/berger-global-detector-rods-v1.schema.json", "sha256": "f80de306ffae70f8fe68e5fa0f84416e496a3debbf71e398119d232ffd147afb"},
+    {"path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json", "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"},
+    {"path": "closed_universe_observers/schema/berger-global-rod-q1-solvability-v1.schema.json", "sha256": "df873d5aa69e977049490423728c2fbf26993797de255173c74be231128e448d"},
+    {"path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY.json", "sha256": "6d64026d39a6ce951b8a61dbbb77e1e0824b11c23a7319257facc2ad37cd6e1d"}
+  ],
+  "claim_flags": {
+    "GLOBAL_COMPACT_ROD_CONFIGURATION_EXPORTED": true,
+    "GLOBAL_COMPACT_ROD_Q0_FORMULA_EXPORTED": true,
+    "GLOBAL_ROD_SOURCE_COKERNEL_PROJECTION_ZERO": true,
+    "GLOBAL_ROD_SECOND_ORDER_PRIMITIVES_EXPORTED": true,
+    "GLOBAL_ROD_BACKREACTION_SOLVABLE_THROUGH_ORDER_EPSILON_R_SQUARED": true,
+    "FULL_NONLINEAR_BACKREACTED_ROD_BRANCH_CERTIFIED": false,
+    "84_ROW_INTERACTING_COMPLEX_CERTIFIED": false,
+    "84_ROW_CAUSAL_GREEN_HOMOTOPY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

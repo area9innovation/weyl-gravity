@@ -18,6 +18,10 @@ python3 closed_universe_observers/generate_berger_smeared_retarded_transfer.py -
 python3 closed_universe_observers/verify_berger_smeared_retarded_transfer.py
 python3 closed_universe_observers/generate_berger_observer_interaction_import_gate.py --check
 python3 closed_universe_observers/verify_berger_observer_interaction_import_gate.py
+python3 -m closed_universe_observers.generate_berger_global_detector_rods --check
+python3 -m closed_universe_observers.verify_berger_global_detector_rods
+python3 -m closed_universe_observers.generate_berger_global_rod_q1_solvability --check
+python3 -m closed_universe_observers.verify_berger_global_rod_q1_solvability
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -39,6 +43,15 @@ rank two only as a probe-limit baseline.  Its corrected apparatus interface
 uses composite polarization, keeps the present currents external, and records
 `p*A`, `p*A*deltaR`, and `p*A*deltaR^2` as `q1`, `q2`, and `q3` contributions,
 respectively.  An extended unary/Green complex is still absent. The
-comparison ledger replays its historical imports exactly, checks current
-compatibility separately, and remains fail-closed on the classical-map and
-quantum gates.
+observer team now also exports six exact global detector-indexed rod fields
+on the compact Berger cylinder.  They reproduce both detector-event identity
+charts and determine a conserved global rod source in the finite spatial
+`j=0,1` and temporal `0,+-sqrt(58)/3` sector.  Detector indexing corrects the
+prospective apparatus carrier from 78 to 84 rows.  The complete compact rod
+source sector then evaluates exactly against the retained Berger metric
+Hessian.  Sparse primitives prove `H_retained Phi2=-q0^rod` on every
+`j=0,1` and temporal `0,+-sqrt(58)/3` block, so there is no compact Taub
+obstruction through order `epsilon_R^2`.  An all-orders backreacted branch
+and the 84-row causal interacting complex remain open.  The comparison ledger replays its
+historical imports exactly, checks current compatibility separately, and
+remains fail-closed on the classical-map and quantum gates.
