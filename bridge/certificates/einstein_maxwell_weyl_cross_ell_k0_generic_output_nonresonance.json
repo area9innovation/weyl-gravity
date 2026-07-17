@@ -1,0 +1,240 @@
+{
+  "schema": "einstein-maxwell-weyl-cross-ell-k0-generic-output-nonresonance-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.schema.json",
+  "schema_sha256": "377defba1640990a084531be85a1ed003307e44a17e5fee883b815231b2c2d64",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CROSS_ELL_K0_GENERIC_OUTPUT_NONRESONANCE",
+  "result_state": "UNBOUNDED_CROSS_ELL_GENERIC_OUTPUT_NONRESONANCE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "generality_level": "G3_ALL_DISTINCT_GENERIC_INPUT_ELLS_K0_GENERIC_OUTPUT",
+  "domain": "every pair of distinct generic input harmonics ell_1,ell_2>=2 at k=0, all p/q primary branches, both temporal sum/difference channels, and every angularly allowed generic output L>=2 in either parity",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.py",
+    "generator_sha256": "3e51bf313ee555c0a410f690e84c0de8188e8acadfb9f6087b4b9c515b6fd060",
+    "bounded_exact_audit": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_resonance_census.json",
+      "sha256": "cf6d90d14bf08ea6afd4afbbde92bf79ffd8fe6e4d7257f947c525ae494d0e3e"
+    }
+  },
+  "frequency_bounds": {
+    "minus_above_ell_minus_half": {
+      "polynomial": "(32*ell**2 - 48*ell + 1)/16",
+      "valid_from_ell": 2,
+      "shifted_positive_coefficients": [
+        "2",
+        "5",
+        "33/16"
+      ]
+    },
+    "minus_below_ell_minus_fifth": {
+      "polynomial": "(25*ell**2 + 1320*ell - 1)/625",
+      "valid_from_ell": 2,
+      "shifted_positive_coefficients": [
+        "1/25",
+        "284/125",
+        "2739/625"
+      ]
+    },
+    "minus_above_ell_minus_two_fifths_for_ell_at_least_4": {
+      "polynomial": "(775*ell**2 - 1610*ell + 16)/625",
+      "valid_from_ell": 4,
+      "shifted_positive_coefficients": [
+        "31/25",
+        "918/125",
+        "5976/625"
+      ]
+    },
+    "minus_above_ell_minus_41_over_100": {
+      "polynomial": "(131240000*ell**2 - 261188400*ell + 2825761)/100000000",
+      "valid_from_ell": 2,
+      "shifted_positive_coefficients": [
+        "3281/2500",
+        "659429/250000",
+        "5408961/100000000"
+      ]
+    },
+    "minus_above_ell_minus_17_over_50_for_ell_at_least_3": {
+      "polynomial": "(5140000*ell**2 - 14927600*ell + 83521)/6250000",
+      "valid_from_ell": 3,
+      "shifted_positive_coefficients": [
+        "514/625",
+        "39781/15625",
+        "1560721/6250000"
+      ]
+    },
+    "plus_below_ell_plus_5_over_4": {
+      "polynomial": "(64*ell**2 + 688*ell + 625)/256",
+      "valid_from_ell": 2,
+      "shifted_positive_coefficients": [
+        "1/4",
+        "59/16",
+        "2257/256"
+      ]
+    },
+    "plus_above_ell_plus_11_over_10_for_ell_at_least_4": {
+      "polynomial": "(5600*ell**2 - 9040*ell - 14641)/10000",
+      "valid_from_ell": 4,
+      "shifted_positive_coefficients": [
+        "14/25",
+        "447/125",
+        "38799/10000"
+      ]
+    },
+    "extra_bounds": {
+      "lower_difference": "2*ell/5-227/300>0 for ell>=2",
+      "upper_difference": "(ell+1/2)^2-(ell(ell+1)-2/3)=11/12>0"
+    },
+    "plus_above_ell_plus_one": {
+      "squared_remainder": "2*ell*(ell+1)-(ell+1)^2=(ell+1)(ell-1)>0"
+    }
+  },
+  "family_reduction": {
+    "frequency_offset_definition": "omega_branch(ell)=ell+u_branch(ell)",
+    "exact_open_bounds": {
+      "Einstein_minus": [
+        "-1/2",
+        "-1/5"
+      ],
+      "extra": [
+        "3/10",
+        "1/2"
+      ],
+      "Einstein_plus": [
+        "1",
+        "5/4"
+      ]
+    },
+    "angular_defect": "D=ell_1+ell_2-ell_3 is a nonnegative integer",
+    "ordered_families": [
+      {
+        "input_1": "Einstein_minus",
+        "input_2": "Einstein_minus",
+        "target": "Einstein_minus",
+        "D": 0
+      },
+      {
+        "input_1": "Einstein_minus",
+        "input_2": "Einstein_minus",
+        "target": "extra",
+        "D": 1
+      },
+      {
+        "input_1": "Einstein_minus",
+        "input_2": "Einstein_minus",
+        "target": "Einstein_plus",
+        "D": 2
+      },
+      {
+        "input_1": "Einstein_minus",
+        "input_2": "extra",
+        "target": "Einstein_plus",
+        "D": 1
+      },
+      {
+        "input_1": "Einstein_minus",
+        "input_2": "Einstein_plus",
+        "target": "Einstein_plus",
+        "D": 0
+      },
+      {
+        "input_1": "extra",
+        "input_2": "Einstein_minus",
+        "target": "Einstein_plus",
+        "D": 1
+      },
+      {
+        "input_1": "Einstein_plus",
+        "input_2": "Einstein_minus",
+        "target": "Einstein_plus",
+        "D": 0
+      }
+    ],
+    "unordered_families": [
+      "minus+minus -> minus at ell_3=ell_1+ell_2",
+      "minus+minus -> extra at ell_3=ell_1+ell_2-1",
+      "minus+minus -> plus at ell_3=ell_1+ell_2-2",
+      "minus+extra -> plus at ell_3=ell_1+ell_2-1",
+      "minus+plus -> plus at ell_3=ell_1+ell_2"
+    ]
+  },
+  "family_exclusions": {
+    "easy_sign_separated_families": {
+      "minus_minus_to_minus_D0": "u_-(a)+u_-(b)<-2/5<u_-(a+b)",
+      "minus_plus_to_plus_D0": "u_-(a)+u_+(b)<21/20<11/10<u_+(a+b)",
+      "minus_minus_to_plus_D2": "if max(a,b)>=3 then u_-(a)+u_-(b)>-3/4>u_+(a+b-2)-2; (a,b)=(2,2) has 18-10*sqrt(3)>0 after squaring"
+    },
+    "minus_minus_to_extra_D1": {
+      "delta_rational": "(2*a - 2)*(b - 1) - 8/3",
+      "resonance_polynomial_expansion": "R0 + alpha_a*x_a + alpha_b*x_b - 2*x_a*x_b, x_j=sqrt(2*lambda_j)",
+      "alpha_a": "4*(3*a*b - 3*a + 3*b**2 - 1)/3",
+      "alpha_b": "4*(3*a**2 + 3*a*b - 3*b - 1)/3",
+      "positivity": "delta>=-2/3 and lambda>=6 make alpha_a, alpha_b, alpha_a-2*x_b, and alpha_b-2*x_a strictly positive",
+      "squarefree_cases": {
+        "distinct_nonrational_parts": "the x_a*x_b squarefree basis element is unique and has coefficient -2",
+        "equal_nonrational_parts": "the remaining irrational coefficient alpha_a*m_a+alpha_b*m_b is positive",
+        "exactly_one_rational_inner_root": "the coefficient of the other irrational root is alpha-2*x_rational and is positive",
+        "both_rational_inner_roots": "input squared frequencies are integers while the extra target squared frequency is integer-2/3, contradicting the squared resonance equation"
+      }
+    },
+    "minus_extra_to_plus_D1": {
+      "delta_rational": "(2*a - 2)*(b - 1) - 4/3",
+      "resonance_polynomial_expansion": "R1 + beta_a*x_a + beta_c*x_c + 2*x_a*x_c",
+      "beta_a": "4*(3*a*b - 3*a + 3*b**2 - 1)/3",
+      "beta_c": "4*(3*a*b - 3*a - 3*b + 1)/3",
+      "positivity": "delta>=2/3, so beta_a, beta_c, and the product coefficient are strictly positive",
+      "squarefree_cases": {
+        "at_least_one_nonrational_inner_root": "the unique or merged irrational coefficient is a sum of strictly positive terms",
+        "both_rational_inner_roots": "the two q squared frequencies are integers but the extra squared frequency has reduced denominator 1 or 3; rational-square denominator parity contradicts the squared resonance equation"
+      }
+    },
+    "all_five_families_excluded": true
+  },
+  "classification": {
+    "all_distinct_generic_input_ells_covered": true,
+    "all_generic_output_ells_at_least_2_covered": true,
+    "all_input_and_target_primary_branches_covered": true,
+    "all_nonzero_generic_output_channels_off_target_shells": true,
+    "exceptional_output_L1_classified": false,
+    "cross_ell_quadratic_source_solved": false
+  },
+  "interpretation": "A distinct-ell k=0 quadratic product cannot fail at a nonzero-frequency generic target determinant. The only remaining spectral gate is the exceptional L=1 output; after that, any failure of the cross-ell cone must be a source/cokernel effect.",
+  "next_gate": "classify adjacent-input exceptional L=1 output frequencies exactly, then compute the cross-ell mixed source projections on the common stabilizer-moment-map cone",
+  "claim_boundary": "This is an unbounded generic-output nonresonance theorem, not a cross-ell second-order extension theorem. Exceptional L=1 output, mixed source coefficients, opposite momenta and phases, exceptional/global inputs, all-orders integration, causal propagation, and quantum claims remain open.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.06,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.1,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance --verify bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance"
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "reason": "the theorem depends only on unchanged content-addressed shell data and the already verified bounded audit"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "exceptional L=1 and the cross-ell quadratic source remain open, so no full cone or programme freeze is promoted"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance --verify bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance"
+  ]
+}

@@ -1759,6 +1759,16 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    a `G2` finite-window result, not the unbounded theorem.  The next step is
    the uniform six-offset Diophantine proof followed by the cross-`ell`
    source/cokernel calculation.
+
+   The generic-output part is now unbounded.  Exact branch-offset bounds
+   reduce every possible resonance with all three angular degrees at least
+   two to five saturated families.  Three are sign-separated.  The two
+   remaining radical families stay nonzero even when their squarefree parts
+   coincide or become rational; the extra shell's `2/3` offset excludes the
+   fully rational Pell cases.  Hence every distinct generic input pair at
+   `k=0` misses every generic target shell `L>=2`.  The only remaining
+   spectral gate is adjacent-input coupling to exceptional `L=1`; after
+   that, the cross-`ell` source/cokernel projection is load-bearing.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be

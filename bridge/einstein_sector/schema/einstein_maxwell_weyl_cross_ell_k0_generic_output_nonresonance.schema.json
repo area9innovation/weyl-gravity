@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Unbounded cross-ell k=0 generic-output nonresonance theorem",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "domain",
+    "provenance", "frequency_bounds", "family_reduction", "family_exclusions",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-cross-ell-k0-generic-output-nonresonance-v1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]}},
+    "frequency_bounds": {"type": "object"},
+    "family_reduction": {"type": "object"},
+    "family_exclusions": {"type": "object"},
+    "classification": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}
