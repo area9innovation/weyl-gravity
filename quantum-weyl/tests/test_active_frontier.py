@@ -54,6 +54,19 @@ class ActiveFrontierTests(unittest.TestCase):
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
         )
 
+    def test_relative_frontier_imports_polar_but_not_global_triangle(self) -> None:
+        flags = self.payload["claim_flags"]
+        self.assertTrue(flags["POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED"])
+        self.assertTrue(flags["PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED"])
+        row = self.payload["active_rows"]["relative_Einstein_Weyl"]
+        self.assertEqual(
+            row["status"],
+            "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_PREFLIGHTS_GLOBAL_V1_OPEN",
+        )
+        self.assertEqual(
+            row["next_gate"], "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
+        )
+
     def test_quantum_overclaim_is_rejected(self) -> None:
         mutant = json.loads(json.dumps(self.payload))
         mutant["claim_flags"]["QME_RESTORED"] = True

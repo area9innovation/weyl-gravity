@@ -9,16 +9,25 @@ import json
 import subprocess
 
 from local_bv.schema_validation import validate_instance
+from bridge.einstein_sector.verify_einstein_maxwell_weyl_polar_ungauged_noether_lift import (
+    verify_certificate as verify_polar_lift_independently,
+)
+from bridge.einstein_sector.verify_einstein_maxwell_weyl_plebanski_hacyan_stabilizer import (
+    verify_certificate as verify_stabilizer_independently,
+)
 
 from .einstein_weyl_qme_readiness import (
     GLOBAL_A104,
     LOCAL_CARTAN,
     PLANNING_BRIEF,
+    POLAR_LIFT,
+    PH_STABILIZER,
     QUADRATIC_PREFLIGHT,
     RELATIVE_FUNCTOR_PREFLIGHT,
     ROADMAP,
     STANDARD_INCLUSION,
     TRIANGLE_PREFLIGHT,
+    _polar_exact_replay,
     validate,
 )
 from .einstein_weyl_qme_readiness_certificate import HERE, OUTPUT
@@ -44,6 +53,8 @@ def verify() -> dict:
         "universe_building_roadmap": ROADMAP,
         "relative_linear_triangle_preflight": TRIANGLE_PREFLIGHT,
         "relative_functor_preflight": RELATIVE_FUNCTOR_PREFLIGHT,
+        "polar_ungauged_noether_lift": POLAR_LIFT,
+        "Plebanski_Hacyan_stabilizer_authority": PH_STABILIZER,
     }
     for name, path in dependencies.items():
         reference = certificate["dependency_refs"][name]
@@ -61,6 +72,8 @@ def verify() -> dict:
     evidence_dependencies = {
         "relative_linear_triangle_preflight": "relative_linear_triangle_preflight",
         "relative_functor_preflight": "relative_functor_preflight",
+        "polar_ungauged_noether_lift": "polar_ungauged_noether_lift",
+        "Plebanski_Hacyan_stabilizer_authority": "Plebanski_Hacyan_stabilizer_authority",
     }
     for evidence_name, dependency_name in evidence_dependencies.items():
         evidence = certificate["pinned_classical_evidence"][evidence_name]
@@ -70,6 +83,16 @@ def verify() -> dict:
             or evidence["sha256"] != dependency["sha256"]
         ):
             raise ValueError(f"working/pinned seam mismatch: {evidence_name}")
+    polar = json.loads(POLAR_LIFT.read_text())
+    polar_replay = _polar_exact_replay(polar)
+    if (
+        polar_replay["exact_check_count"] != 14
+        or not all(polar_replay["checks"].values())
+        or certificate["polar_exact_replay"]["checks"] != polar_replay["checks"]
+    ):
+        raise ValueError("polar exact polynomial replay drifted")
+    verify_polar_lift_independently()
+    verify_stabilizer_independently()
     triangle = json.loads(TRIANGLE_PREFLIGHT.read_text())
     classification = triangle.get("classification", {})
     if (
@@ -93,6 +116,8 @@ def verify() -> dict:
         ("qme_and_transfer_gate", "residual_quantum_transfer_authorized", True),
         ("claim_flags", "RELATIVE_ANOMALY_CLASS_DEFINED", True),
         ("claim_flags", "RELATIVE_HADAMARD_STATE", True),
+        ("claim_flags", "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED", False),
+        ("claim_flags", "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED", False),
     )
     for section, key, value in mutations:
         mutant = deepcopy(certificate)
@@ -103,6 +128,17 @@ def verify() -> dict:
             pass
         else:
             raise ValueError(f"overclaim mutation accepted: {section}.{key}")
+    polar_mutant = deepcopy(polar)
+    original = polar_mutant["chain_map"]["field_map_source_to_target"][0][0]
+    polar_mutant["chain_map"]["field_map_source_to_target"][0][0] = (
+        f"({original})+1"
+    )
+    try:
+        _polar_exact_replay(polar_mutant)
+    except ValueError:
+        pass
+    else:
+        raise ValueError("polar chain-map coefficient mutation escaped exact replay")
     return certificate
 
 
