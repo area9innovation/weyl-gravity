@@ -411,7 +411,7 @@ for the outward-facing two-page note.
 
 | Tier | Bridge and owner | First independently useful result | Start gate |
 |---|---|---|---|
-| A1 | Green-hyperbolic/BGG transfer — classical with the current nonlinear causal specialist | abstract cyclic Green-homotopy transfer theorem, toy example, `15/60/60/15 -> 4/9/9/4`, and Weyl application | extract now from the completed cylinder theorem; add Berger only after its 26-row Green gate |
+| A1 | Green-hyperbolic/BGG transfer — classical with the current nonlinear causal specialist | abstract cyclic Green-homotopy transfer theorem certified with complete Berger consumers | add one non-cylinder detour or higher-spin consumer and formulate the uniform `G3` background hypotheses |
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |

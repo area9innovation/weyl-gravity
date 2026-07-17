@@ -6,15 +6,18 @@ digraph UniverseBuilding {
   labelloc=t; fontsize=22;
   legend [shape=plaintext, label="Arrows show what each result enables\nGreen = certified | amber = partial | red = obstruction | gray = open", fontsize=10];
   "gauge_complex" [shape=box, label="Spacetime and gauge\ncomplex\nexact classical equations", fillcolor="#d9f2df", color="#287a3d", tooltip="Spacetime and gauge\ncomplex\nexact classical equations"];
-  "causality" [shape=box, label="Classical causality\nfuture sources do not alter\nthe past", fillcolor="#d9f2df", color="#287a3d", tooltip="Classical causality\nfuture sources do not alter\nthe past"];
+  "causality" [shape=box, label="Classical causality\nfuture sources do not alter\nthe past; cyclic transfer\ntheorem exact", fillcolor="#d9f2df", color="#287a3d", tooltip="Classical causality\nfuture sources do not alter\nthe past; cyclic transfer\ntheorem exact"];
   "residual" [shape=box, label="Gauge reduction and\npairing\nphysical descriptions\ncounted once", fillcolor="#d9f2df", color="#287a3d", tooltip="Gauge reduction and\npairing\nphysical descriptions\ncounted once"];
   "clock" [shape=box, label="Healthy matter clock\nrelational change; raw D\nnull in the tested linear\nsector", fillcolor="#d9f2df", color="#287a3d", tooltip="Healthy matter clock\nrelational change; raw D\nnull in the tested linear\nsector"];
-  "interactions" [shape=box, label="First interaction layer\ngravity q2/q3; preserving-\ngenerator Cartan through\narity three", fillcolor="#d9f2df", color="#287a3d", tooltip="First interaction layer\ngravity q2/q3; preserving-\ngenerator Cartan through\narity three"];
+  "interactions" [shape=box, label="First interaction layer\nmixed q2/q3 and retained\nell3 exact; invariant\nmeaning open", fillcolor="#d9f2df", color="#287a3d", tooltip="First interaction layer\nmixed q2/q3 and retained\nell3 exact; invariant\nmeaning open"];
+  "berger_branch_carrier" [shape=box, label="Berger branch carrier\nrank 46 cyclic carrier\nexact; physical projector\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Berger branch carrier\nrank 46 cyclic carrier\nexact; physical projector\nopen"];
+  "branch_mixing" [shape=box, label="Residual branch mixing\nretained ell3 exact;\nEinstein/extra/Maxwell table\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Residual branch mixing\nretained ell3 exact;\nEinstein/extra/Maxwell table\nopen"];
+  "taub_selection" [shape=box, label="Nonlinear branch\nselection\npure extra obstructed;\nselected mixed faces extend", fillcolor="#fff0bf", color="#9a6a00", tooltip="Nonlinear branch\nselection\npure extra obstructed;\nselected mixed faces extend"];
   "einstein_weyl_relative" [shape=box, label="Einstein gravity inside\nWeyl gravity\naxial triangle and polar\nphysical module; global\ntriangle open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Einstein gravity inside\nWeyl gravity\naxial triangle and polar\nphysical module; global\ntriangle open"];
-  "light" [shape=box, label="Classical light\ncausal Maxwell contraction,\nrepaired q2 and retarded\nsignals; mixed q3 open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Classical light\ncausal Maxwell contraction,\nrepaired q2 and retarded\nsignals; mixed q3 open"];
+  "light" [shape=box, label="Classical light\ncausal Maxwell response and\nmixed q2/q3; localization\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Classical light\ncausal Maxwell response and\nmixed q2/q3; localization\nopen"];
   "gravity_waves" [shape=box, label="Gravitational waves\nstandard waves; extra axial\nand polar equation modules", fillcolor="#fff0bf", color="#9a6a00", tooltip="Gravitational waves\nstandard waves; extra axial\nand polar equation modules"];
-  "redshift" [shape=box, label="Relational redshift\ndynamical Maxwell frequency\nratio; localization open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational redshift\ndynamical Maxwell frequency\nratio; localization open"];
-  "detector" [shape=box, label="Relational detector\nresponse\nrank-two linear retarded\nrecords; apparatus BV\nextension and backreaction\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational detector\nresponse\nrank-two linear retarded\nrecords; apparatus BV\nextension and backreaction\nopen"];
+  "redshift" [shape=box, label="Relational redshift\nactual retarded clock\nobservable, 1+z=2;\nlocalization open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational redshift\nactual retarded clock\nobservable, 1+z=2;\nlocalization open"];
+  "detector" [shape=box, label="Relational detector\nresponse\nlinear records and separate-\naxis rod gravity; mixed\napparatus open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational detector\nresponse\nlinear records and separate-\naxis rod gravity; mixed\napparatus open"];
   "hadamard" [shape=box, label="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen"];
   "anomalies" [shape=box, label="Quantum anomaly and QME\ncandidate classes known;\nrestoration open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Quantum anomaly and QME\ncandidate classes known;\nrestoration open"];
   "lensing" [shape=box, label="Gravitational lensing\nlocalized observable not yet\nbuilt", fillcolor="#eceff3", color="#667085", tooltip="Gravitational lensing\nlocalized observable not yet\nbuilt"];
@@ -25,7 +28,8 @@ digraph UniverseBuilding {
   "gut" [shape=box, label="Unified gauge--matter\nsector\nGUT candidate: group,\nanomalies, breaking and\nrecovery open", fillcolor="#eceff3", color="#667085", tooltip="Unified gauge--matter\nsector\nGUT candidate: group,\nanomalies, breaking and\nrecovery open"];
   "cosmology" [shape=box, label="Cosmology and dark\nsector\nstable observable model not\nyet built", fillcolor="#eceff3", color="#667085", tooltip="Cosmology and dark\nsector\nstable observable model not\nyet built"];
   { rank=same; "causality"; "residual"; "clock"; }
-  { rank=same; "interactions"; "einstein_weyl_relative"; "light"; "gravity_waves"; }
+  { rank=same; "interactions"; "berger_branch_carrier"; "einstein_weyl_relative"; "light"; "gravity_waves"; }
+  { rank=same; "branch_mixing"; "taub_selection"; }
   { rank=same; "redshift"; "detector"; "lensing"; }
   { rank=same; "hadamard"; "anomalies"; }
   { rank=same; "mass"; "nonabelian_matter"; "particles"; "black_holes"; }
@@ -35,10 +39,16 @@ digraph UniverseBuilding {
   "gauge_complex" -> "light" [tooltip="supports fields"];
   "gauge_complex" -> "gravity_waves" [tooltip="linearizes"];
   "gauge_complex" -> "einstein_weyl_relative" [tooltip="defines both complexes"];
+  "gauge_complex" -> "berger_branch_carrier" [tooltip="defines the retained carrier"];
   "einstein_weyl_relative" -> "gravity_waves" [tooltip="separates familiar and extra modes"];
   "einstein_weyl_relative" -> "interactions" [tooltip="tests nonlinear closure"];
   "residual" -> "interactions" [tooltip="defines physical transfer"];
+  "residual" -> "berger_branch_carrier" [tooltip="defines the retained rows"];
   "causality" -> "interactions" [tooltip="limits influence"];
+  "interactions" -> "branch_mixing" [tooltip="supplies retained ell3"];
+  "berger_branch_carrier" -> "branch_mixing" [tooltip="must supply the projector"];
+  "gravity_waves" -> "taub_selection" [tooltip="supplies branch tangents"];
+  "interactions" -> "taub_selection" [tooltip="tests second-order extension"];
   "clock" -> "redshift" [tooltip="supplies readings"];
   "light" -> "redshift" [tooltip="carries frequency"];
   "interactions" -> "redshift" [tooltip="preserves observable"];
@@ -51,8 +61,10 @@ digraph UniverseBuilding {
   "causality" -> "hadamard" [tooltip="fixes commutator"];
   "residual" -> "hadamard" [tooltip="selects observables"];
   "interactions" -> "anomalies" [tooltip="feeds quantum identities"];
+  "branch_mixing" -> "anomalies" [tooltip="labels residual quantum channels"];
   "hadamard" -> "particles" [tooltip="supplies short-distance state"];
   "anomalies" -> "particles" [tooltip="restores quantum gauge identity"];
+  "taub_selection" -> "particles" [tooltip="restricts nonlinear candidates"];
   "clock" -> "mass" [tooltip="can supply a scale"];
   "interactions" -> "mass" [tooltip="stabilizes matter"];
   "mass" -> "particles" [tooltip="creates rest excitations"];

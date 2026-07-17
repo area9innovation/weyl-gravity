@@ -163,12 +163,13 @@ their status.
 | What is the selected residual cohomology of free pure-Weyl gravity on \(\mathbb R\times S^3\)? | Vacuum and one-particle sectors are acyclic; \(H^4\cong\mathbb C^2\), represented by \([W_+^2]\) and \([W_-^2]\), with normalized Gram matrix \(I_2\). | **Certified; Paper 7 artifact-ready** | All fifteen residual generators, including \(D\), are constrained in a zero-charge closed sector. The classes are deformations, not particles. |
 | Is that residual calculation connected to the covariant field theory? | The complete free metric BV--BFV complex has causal retarded/advanced chain homotopies, compact-to-spacelike-compact transport, residual endpoint recovery, and matching Green/current/residual pairings. | **Certified; Paper 8 artifact-ready** | Conformal cylinder, free classical theory, selected polarization; no Hadamard or quantum construction. |
 | Must \(D\) be gauge? | No. It is charged on the unrestricted compact phase space and gauge on the Taub-zero derived sector. | **Certified** | The answer is sector- and boundary-dependent. |
-| Can a healthy clock coexist with total \(D\)-gauge? | On one positive Berger-cylinder background, fixed-coupling linearized constraints force \(\delta Q_D=0\) although the matter clock has nonzero internal momentum. | **Certified in the stated linear sector** | Relational observables, nearby backgrounds, nonlinear closure, and quantum stability are not all complete. |
-| Is there a clock-defined redshift observable? | A positive-energy source-free Maxwell mode gives a Diff-, Weyl-, Maxwell-gauge-, and total-\(D\)-invariant compact spatially averaged relational frequency ratio; the exact fixture has \(1+z=2\). A lone travelling mode has a homogeneous Hopf-flux obstruction, while a coherent counter-propagating standing wave cancels it and admits an exact second-order homogeneous gravity correction with positive Maxwell energy. | **Certified G0 fixture plus scoped second-order interaction pass** | Localized endpoints and apparatus recoil, a compact retarded source, the support-local single-beam response, all-orders backreaction, phenomenology, and quantum interpretation remain open. |
-| Does the Berger nonlinear Cartan mechanism survive first contact with interactions? | The complete support-local gravitational \(q_2\) and \(q_3\) are exact and cyclic; a causal cyclic Cartan contraction for the background-preserving generator \(K_{\rm Berger}=D-\omega R\) has been constructed through arity three on all 54 rows. The complete 64-row gravity--clock--Maxwell \(q_2\) is also exact and cyclic. | **Certified algebraically and at the stated classical causal level** | This is not an affine raw-\(D\), all-orders, or complete mixed-\(q_3\) theorem. Maxwell causal transfer, localized apparatus, QME restoration, and quantum claims remain open. |
+| Can a healthy clock coexist with total \(D\)-gauge? | On one positive Berger-cylinder background, fixed-coupling linearized constraints force \(\delta Q_D=0\) although the matter clock has nonzero internal momentum. An exact clock-slice Maxwell observable now evolves nontrivially on that same scoped background. | **Certified in the stated linear/probe sector** | Nearby backgrounds, localized backreacting apparatus, all-orders closure, and quantum stability remain open. |
+| Is there a clock-defined redshift observable? | An actual retarded Maxwell signal with compact spacetime source support gives a Diff-, Weyl-, Maxwell-gauge-, and raw-\(D\)-invariant clock-slice field-strength observable; its exact spatially global fixture has \(1+z=2\), a nonzero reduced probe-mode Poisson bracket, and nontrivial clock-time evolution. The clock-dressed source is an equivariant source family rather than an invariant source at fixed schedule. A separate standing-wave fixture cancels the homogeneous Hopf-flux obstruction and admits an exact second-order gravity correction with positive Maxwell energy. | **Certified scoped retarded observable plus second-order homogeneous pass** | The source and readout are spatially global on compact \(S^3\). Localized emitter/receiver apparatus, the full apparatus Dirac bracket, recoil, all-orders backreaction, phenomenology, and quantum interpretation remain open. |
+| Does the Berger nonlinear Cartan mechanism survive first contact with interactions? | The complete support-local gravitational \(q_2,q_3\), the 64-row gravity--clock--Maxwell \(q_2\), the typed 59,598-term mixed \(q_3\), and the 25,950-term retained \(\ell_3\) representative are exact and cyclic. The background-preserving \(K_{\rm Berger}=D-\omega R\) Cartan identities close through arity three on the declared classical carrier. | **Certified algebraically and at the stated classical causal level** | This is not an affine raw-\(D\), all-orders, cohomological-nontriviality, or physical branch-mixing theorem. Localized apparatus, QME restoration, and quantum claims remain open. |
+| Does the retained interaction yet distinguish Einstein-like and extra-Weyl branches? | A support-local rank-46 STF2 graph prolongation is an exact cyclic carrier over the retained 36-row complex, with exact SDR and contractible complement. It supplies the enlarged architecture needed to attempt branch resolution. | **Carrier certified; physical split open** | No support-local branch projector or invariant branch manifest has passed. Therefore no Einstein/extra-Weyl/Maxwell \(\ell_3\) mixing table or physical closure claim is authorized. |
 | Is ordinary Einstein--Maxwell radiation present inside the Weyl--Maxwell system? | The complete standard fixed-bundle harmonic Einstein--Maxwell tangent injects on shell before the final residual quotient, and its Weyl--Maxwell pullback is nondegenerate. | **Certified, reduced-mode/local-algebraic** | The pullback is not generally the Einstein symplectic form; radiative blocks are relatively indefinite, and the all-sector off-shell relative triangle is incomplete. |
 | Is the complementary fourth-order branch real at the classical level? | For generic compact axial \(\ell\geq2\), the quotient by the Einstein--Maxwell image consists of two exact extra polarizations. Direct four-dimensional Lee--Wald matching makes their block nonradical with signature \((2,0)\); the full generic axial target has signature \((3,1)\), with the negative direction on an Einstein-image branch. On every declared physical polar fibre, the independently reconstructed module contains the complete Einstein primary summand plus two extra summands, with action normalization derived from the four-dimensional variation. | **Axial current certified; polar physical module certified** | The polar extra current, ungauged BV/Noether lift, final residual quotient, causal boundaries, positive-frequency state, and particle interpretation remain open. |
-| Is the Einstein sector nonlinearly closed? | Explicit compact fixed-charge photon and gravitational tangents have second-order Taub obstructions; the extra axial \(\ell=2\) block and a real degenerate axial--polar Einstein tangent also have definite Taub forms, while a nonzero null tangent on the universal cover extends in its tested channel. | **Certified examples / harmonic classification in progress** | Charge-relaxed extensions and the complete all-harmonic obstruction bilinear are not yet classified; there is no universal nonlinear closure or no-go theorem. |
+| Is the Einstein sector nonlinearly closed? | Every nonzero pure-extra generic Weyl--Maxwell tangent is Taub-obstructed on the tested fixed compact bundle. Mixed Einstein--extra moment-map cones have been classified in the declared generic and exceptional blocks, and one two-parameter axial \(\ell=2\) face has explicit second-order extensions. | **Pure-extra no-go and scoped mixed extensions certified** | The quadratic source is not disposed on every mixed-cone stratum; exceptional fourth-order targets, a structural all-background theorem, and all-orders closure remain open. |
 | Can the Berger system support the short-distance structure needed for quantum fields? | The base tensor and ghost wave factors have a certified local Hadamard parametrix, and exact typed Møller intertwiners give the unique formal companion-kernel candidate. | **Partial; microlocal promotion fail-closed** | The order-two transport has no certified Hörmander composition or uniform wavefront control. No companion Hadamard parametrix, global state, QME, or quantum theory is claimed. |
 | Is the quantum theory anomaly-free and unitary? | The even antifield-zero, local dimension-four anomaly candidates reduce to \([\omega C^2]\) and \([\omega E_4]\), with \(\omega\Box R\) exact. | **Partial, local-algebraic** | Coefficients, antifield-dependent sectors, QME restoration, Lorentzian time-ordered products, Hadamard state, and asymptotic unitarity are open. |
 
@@ -244,10 +245,14 @@ whole complex. Curvature prolongation, a symmetric-hyperbolic Weyl--Cotton
 system, adjoint-tractor transfer, and support-local retracts produce
 retarded/advanced degree-minus-one homotopies on all 386 prolonged rows.
 
-The externally reusable question is whether this construction can be
-abstracted into a cyclic transfer theorem for Green-hyperbolic complexes:
-when a hyperbolic parent complex contracts onto a detour complex, under what
-hypotheses do causal homotopies and current pairings descend?
+This construction has now been extracted into a conditional cyclic
+causal-transfer theorem.  A finite-order support-local cyclic strong
+deformation retract transfers same-sided advanced/retarded chain homotopies
+by \(\Lambda_C=h+i\Lambda_Ep\), preserves their causal support and cyclic
+adjoint relation, and is stable under finite direct sums and finite-order
+cyclic shears.  The complete Berger 54- and 64-row complexes replay as exact
+consumers.  Endpoint Green hyperbolicity remains a hypothesis rather than a
+conclusion of the theorem.
 
 **Possible novelty, pending literature audit:** constructive cyclic transfer
 of retarded/advanced Green homotopies and current pairings from a hyperbolic
@@ -359,13 +364,15 @@ vanishes. The Berger construction adds a healthy rotating scalar reference
 system and shows, at fixed couplings and linear order, that nontrivial matter
 clock momentum need not make the total \(D\) transformation physical.
 
-The first explicit observable now uses a positive-energy source-free Maxwell
-mode and clock-defined compact spatial averages. Its frequency ratio is
-Diff-, Weyl-, Maxwell-gauge-, and total-\(D\)-invariant, with \(1+z=2\) on the
-exact fixture. This is a G0 dynamical redshift theorem, not yet localized
-signal physics: emitter/receiver endpoints, a compact retarded source,
-localized apparatus recoil or a support-local lone-beam response, all-orders
-backreaction, and phenomenology remain open.
+The first explicit observable now uses an actual retarded Maxwell response to
+a source compact in spacetime.  The clock-slice field-strength observable is
+Diff-, Weyl-, Maxwell-gauge-, and raw-\(D\)-invariant, has a nonzero reduced
+probe-mode Poisson bracket and evolves nontrivially; its exact spatially global
+fixture has \(1+z=2\).  The clock-dressed source schedule is correctly an
+equivariant family, not an invariant source at fixed schedule.  This is a G0
+retarded relational-observable theorem, not yet localized apparatus physics:
+emitter/receiver endpoints, the full apparatus Dirac bracket, recoil,
+all-orders backreaction, and phenomenology remain open.
 
 The first gravity-coupled stress projection now sharpens that gate. The
 diagonal energy-pressure source is exact, but a single travelling Hopf mode
@@ -434,10 +441,11 @@ Readiness is reported by lifecycle and missing gate.
 
 | Bridge project | Current readiness | Exact next gate |
 |---|---|---|
-| [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | **Theorem extraction** from a complete cylinder consumer | State abstract hypotheses, prove the transfer independently, and add a toy or second detour consumer. |
-| [Pure-extra obstruction and balanced extension](91-charge-fibre-taub-bridge.md) | **Theorem frozen** on the declared compact fixed-bundle domain | External specialist review; classify the full mixed moment-map zero cone as the next theorem. |
+| [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | **Abstract conditional theorem certified** with complete 54- and 64-row Berger consumers | Add one non-cylinder detour/higher-spin consumer and formulate a uniform open-background (`G3`) version. |
+| [Pure-extra obstruction and balanced extension](91-charge-fibre-taub-bridge.md) | **Theorem frozen** on the declared compact fixed-bundle domain; post-freeze mixed moment-map cones classified | Dispose the phase-sensitive quadratic source on the remaining cone strata and extract the structural definite/indefinite Taub theorem. |
 | [Extra axial branch and physical current](92-extra-axial-lee-wald-bridge.md) | **Axial direct current and polar physical module certified** | Compute the polar extra Lee--Wald current and ungauged lift, perform final residual descent, and test causal boundary admissibility. |
-| Relational clock and light | **Complete local 64-row Maxwell \(q_2\); certified G0 redshift fixture and balanced homogeneous response** | Construct the Maxwell unary contraction and transferred mixed vertex, then a localized emitter/receiver or support-local signal. |
+| Relational clock and light | **Mixed \(q_2,q_3\), retained \(\ell_3\), and a spatially global retarded redshift observable certified** | Construct localized emitter/receiver apparatus and its full Dirac bracket after the mixed-axis observer gate. |
+| Residual branch mixing | **Rank-46 cyclic carrier certified; retained \(\ell_3\) representative certified** | Construct or obstruct a support-local branch projector, then compute the background-indexed Einstein-like/extra-Weyl/Maxwell mixing table and its invariant meaning. |
 | Quantum anomaly bridge | **Candidate classes classified** in the stated antifield-zero sector | Compute coefficients by two methods, complete antifields, and restore or obstruct the QME and \(D\) identity. |
 | Asymptotic Bach/BMS | **Programme stage** | Construct a closed Lorentzian boundary phase space with differentiable charges, flux, and extra-branch signs. |
 
@@ -476,9 +484,10 @@ actually claims to apply:
 - a healthy clock counterexample shows that matter does not automatically
   turn total \(D\) into a charge;
 - the nonlinear Berger \(K_{\rm Berger}\)-Cartan recurrence closes through
-  arity three, and the complete local gravity--clock--Maxwell \(q_2\) is now
-  certified; mixed Maxwell \(q_3\), causal transfer, and the localized
-  lone-beam problem remain open.
+  arity three; mixed gravity--clock--Maxwell \(q_2,q_3\) and the retained
+  \(\ell_3\) representative are certified; and an actual retarded relational
+  signal exists.  The branch projector, invariant interaction meaning, and
+  localized apparatus remain open.
 
 Thus the sector is neither an arbitrary patch nor a model of the whole
 universe. It is a mathematically consistent physical choice whose range of
@@ -488,8 +497,11 @@ stability is now the subject of the programme.
 
 A strong positive change would be any of:
 
-- a localized retarded Berger redshift signal whose gravity--Maxwell
-  interaction dressing and backreaction preserve the relational observable;
+- a localized Berger emitter/receiver whose interaction dressing,
+  backreaction, and full apparatus Dirac bracket preserve the certified
+  retarded relational observable;
+- a support-local rank-46 branch projector followed by a nonremovable
+  Einstein-like/extra-Weyl/Maxwell interaction coefficient;
 - localized apparatus recoil or a support-local single-beam response
   compatible with the arity-three Cartan contraction;
 - a polar extra Lee--Wald current, ungauged lift, and final residual descent
@@ -531,6 +543,9 @@ precise obstruction, not to protect a preferred interpretation.
 - [Berger arity-three Cartan report](../d_quotient_classical/reports/berger-causal-D-Cartan-arity-three.md)
 - [Berger Maxwell interaction-obstruction report](../d_quotient_classical/reports/berger-maxwell-stress-residual-projection.md)
 - [Berger momentum-balanced second-order fixture](../d_quotient_classical/reports/berger-maxwell-momentum-balanced-fixture.md)
+- [Retarded Berger relational Maxwell observable](../d_quotient_classical/reports/berger-retarded-relational-maxwell-observable.md)
+- [Rank-46 cyclic Berger branch carrier](../d_quotient_classical/reports/berger-retained-46-stf2-prolongation-branch-carrier.md)
+- [Paper 11: retained mixed gravity--Maxwell bracket](11-gravity-light-cyclic-causal-ell3.pdf)
 - [Berger typed Møller and microlocal-gate report](../quantum-weyl/reports/berger-typed-companion-moller-preflight.md)
 - [Bridge note: cyclic causal Green transfer](90-cyclic-green-transfer-bridge.pdf)
 - [Paper 91: pure-extra obstruction and balanced extension](91-charge-fibre-taub-bridge.pdf)
@@ -539,14 +554,14 @@ precise obstruction, not to protect a preferred interpretation.
 - [General-audience introduction](99-how-to-build-a-universe.md)
 
 Papers 7--8 are `ARTIFACT_READY`: the manuscripts, supplements, hashes, and
-clean reproduction audit pass. They are not `SUBMISSION_READY` until human
-authorship, literature, venue, and prose review and a public archival release
-are complete.
+clean reproduction audit pass.  Their next lifecycle gate is a public
+repository release audit, including link integrity, provenance, readable
+scope boundaries, and a clean tagged replay.
 
-Paper 10's scoped compact mathematical claims are `THEOREM_FROZEN` and await
-external specialist and final human submission review. Paper 9 remains
-`WRITING_STARTED`: its scoped team signoffs are complete, and the declared
-remaining freeze gate is a clean committed-tree replay.
+Papers 9--10 have frozen scoped theorems.  Paper 11 is a working open-repository
+paper with a certified retained representative; its narrower theorem can be
+frozen independently of the still-open physical branch and deformation-class
+questions.
 
 ## Update policy
 
@@ -557,7 +572,7 @@ new calculation changes it only when at least one of the following happens:
 2. a theorem gains or loses a dependency needed for its physical reading;
 3. a new background or boundary condition changes a verdict;
 4. an open decisive test becomes a certified pass, obstruction, or no-go;
-5. a manuscript becomes artifact- or submission-ready.
+5. a manuscript becomes artifact-ready or repository-released.
 
 Raw term counts, implementation milestones, and unverified candidate results
 belong in team reports, not in this front door. Every update should preserve
@@ -565,6 +580,11 @@ the strongest limitation immediately beside the headline result.
 
 ## Changelog
 
+- **17 July 2026, observable and branch-carrier update:** promoted the Berger
+  redshift fixture to an actual retarded spatially global relational
+  observable; recorded the landed mixed \(q_3\), retained \(\ell_3\), and exact
+  rank-46 cyclic carrier; kept localization, branch projection, invariant
+  interaction meaning, and apparatus backreaction explicitly open.
 - **17 July 2026, relative-spine update:** corrected the Berger nonlinear
   generator from affine raw \(D\) to \(K_{\rm Berger}=D-\omega R\); added the
   complete 64-row gravity--clock--Maxwell \(q_2\), the all-physical-fibre polar

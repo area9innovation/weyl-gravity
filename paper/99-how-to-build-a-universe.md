@@ -103,12 +103,14 @@ symmetry with a nonzero charge.
   its exact gauge and consistency checks. This establishes classical fields
   and an interaction layer, not quantum photons, quantum gravitons or a
   detector prediction.
-- **A dynamical redshift fixture now works.** A positive-energy, source-free
-  Maxwell wave is read by relational observers on the Berger clock
-  background. The compact spatially averaged frequency ratio is invariant
-  under coordinate, conformal, Maxwell-gauge and total-time relabelings; one
-  exact fixture gives \(1+z=2\). Localized emitter and receiver endpoints, a
-  retarded pulse, backreaction and phenomenology remain open.
+- **A retarded relational redshift signal now works.** A Maxwell signal is
+  produced by a source acting during a bounded interval and is read using the
+  Berger matter clock. The response obeys the expected causal rule, its
+  clock-defined frequency is unchanged by coordinate, local-scale,
+  electromagnetic-gauge and overall-time relabelings, and one exact fixture
+  gives \(1+z=2\). The present source and readout are spread over the compact
+  spherical space; localized emitter and receiver apparatus, recoil,
+  backreaction and phenomenology remain open.
 - **The larger theory also has extra classical wave directions.** Two extra
   directions occur in each of the tested axial and polar wave families at the
   equation level. In the axial family, the direct spacetime current between
@@ -212,6 +214,14 @@ clock-coupled Berger universe has a separate causal result across all 54 parts
 of its gauge-fixed system. In both cases the retarded response is confined to
 the causal future and the constraints propagate with it.
 
+We have also extracted the reusable mathematical rule behind these examples:
+if a larger causal system is reduced by local operations that preserve its
+constraints and comparison rule, its retarded and advanced responses transfer
+to the reduced system.  This is now an exact conditional theorem, not only a
+pattern observed in the cylinder calculation.  It still assumes that the
+starting system has a valid causal response, and it has not yet been proved on
+every curved spacetime or in the quantum theory.
+
 These are classical causality results. A global quantum state with the
 required short-distance and causality properties is a separate rung.
 
@@ -297,9 +307,11 @@ gravity. Time dilation requires comparing two such physical clocks.
 Gravitational redshift requires an emitter, a light signal and a receiver; the
 observable is the ratio of the frequencies measured by the two clocks, stated
 without relying on arbitrary coordinate labels. The present Berger fixture
-passes this test for a dynamical Maxwell wave and compact spatially averaged
-relational observers, with an exact ratio \(1+z=2\). Turning that global
-fixture into localized endpoints and a retarded signal is the next rung.
+passes this test for an actual retarded Maxwell signal and clock-defined,
+spatially global observers, with an exact ratio \(1+z=2\). The source acts
+only during a bounded time interval, so the signal is causal, but it is spread
+across the compact spherical space. Turning it into localized emitter and
+receiver apparatus, including recoil and backreaction, is the next rung.
 
 ### Gravitational lensing
 
@@ -357,7 +369,7 @@ quantum theory.
 | **Spacetime and curvature** | **Scoped pass.** Exact boundary-free spherical and Berger backgrounds solve their declared classical equations. | Extend causal control to broader globally hyperbolic backgrounds. |
 | **Causality** | **Scoped pass.** Retarded responses in the complete 386-part gravity system and 54-part clock system do not let future sources alter the past. | Construct the corresponding global quantum state and quantum causality theorem. |
 | **Clocks and time dilation** | **Partial.** A healthy matter clock changes internally while total time shift can remain gauge in the fixed-coupling, linear, zero-charge sector. | Compare two physical clocks and calculate an observable time-dilation law. |
-| **Gravitational redshift** | **Scoped partial pass.** A positive-energy dynamical Maxwell mode and invariant compact spatially averaged relational frequency ratio are certified; one exact fixture gives \(1+z=2\). | Localize emitter and receiver, construct a compact retarded pulse, include gravity--Maxwell interaction dressing and backreaction, then test phenomenology. |
+| **Gravitational redshift** | **Scoped partial pass.** An actual retarded Maxwell response with a source bounded in time and a gauge-independent clock-defined frequency ratio is certified; one exact spatially global fixture gives \(1+z=2\). | Localize emitter and receiver, construct their full physical comparison rule, include recoil and backreaction, then test phenomenology. |
 | **Classical light** | **Partial.** Standard electromagnetic waves occur, and the complete first local gravity--clock--Maxwell interaction passes its exact gauge identities. | Transfer that interaction through the causal reduction and build localized sources, detectors, energy flux and boundary conditions. |
 | **Physical mass scale and massive matter** | **Open.** The conformal theory has no certified mass-generation mechanism or stable massive excitation. \(E=mc^2\) is a later relativistic consistency check, not the missing mechanism. | Generate a physical scale, construct a stable massive mode, and verify its causal dynamics and relativistic mass shell. |
 | **Electrons and charged matter** | **Open.** No certified charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
@@ -366,7 +378,7 @@ quantum theory.
 | **Gravitational waves** | **Partial.** Standard linear gravitational waves have a nonzero pairing, and the pure-gravity complex propagates causally. Separate compact axial and polar families each contain two additional equation directions; the axial extra pair has passed a direct spacetime-current test. | Complete the polar current and final physical quotient, impose causal boundaries, and produce measurable waveforms, flux and detector response. |
 | **Gravitational lensing** | **Open, with geometric ingredients present.** Curved spacetime and light cones exist, but no certified lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
 | **Quantum particles** | **Open.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature classes are not particles. | Construct a global quantum state, physical positive pairing and incoming/outgoing particle interpretation. |
-| **Interactions** | **Partial.** The gravity--clock system passes through the third tested order for the background-preserving combined generator, and the complete first gravity--clock--Maxwell coupling passes its declared identities. | Compute the mixed Maxwell third-order terms, causal transferred vertex, resonant channels and global nonlinear evolution. |
+| **Interactions** | **Partial.** The gravity--clock system and mixed gravity--clock--light operations pass their declared identities through the third tested order. A nonzero interaction survives one exact reduction, and an enlarged 46-part cyclic bookkeeping system has been built for the branch test. | Decide whether that interaction is an invariant physical effect, separate its Einstein-like and extra fourth-order outputs, then test higher orders and global evolution. |
 | **Black holes** | **Open in this certified pipeline.** No horizon phase space, boundary charge or stability theorem has been imported into the universe. | Select a black-hole background and certify its horizons, causal perturbations, charges, entropy and stability. |
 | **Quantum gravity** | **Early groundwork only.** Candidate anomaly types and the basic local short-distance wave structure are partly classified. Exact formal transport through the clock system is known, but its distributional wavefront safety is not; there is no coupled Hadamard state or restored quantum master equation. | Prove or obstruct the microlocal transport, then compute anomaly coefficients, restore the quantum gauge identity and construct the global quantum theory. |
 | **Cosmology, dark matter and dark energy** | **Open.** The current work establishes consistency machinery, not a fitted cosmological model. | Build stable cosmological and galaxy backgrounds, derive observables, then compare them with data. |
@@ -428,9 +440,13 @@ coefficient, and compute ranks, constraints, pairings, signs and obstructions
 using exact rational or algebraic arithmetic.
 
 The scale is substantial. The free causal gravity model links 386 rows of
-fields, equations and gauge data. The clock-coupled interaction uses a
-54-part system and contains 54,236 canonical nonzero coefficients after exact
-simplification.
+fields, equations and gauge data. The clock-coupled gravity interaction uses
+a 54-part system with 54,236 canonical nonzero coefficients. After light is
+added, the exact quadratic interaction contains 150,305 terms, the mixed
+third operation contains 59,598, and its first reduced representative contains
+25,950. The point of reporting these counts is not that large algebra is
+automatically important; it is that every term is generated from declared
+actions and conventions and then checked by independent identities.
 
 Every material claim carries an accountability trail:
 

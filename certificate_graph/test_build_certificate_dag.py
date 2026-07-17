@@ -178,6 +178,75 @@ class CertificateDagTests(unittest.TestCase):
             )
         )
 
+    def test_theorem_consumer_registration_is_nonordering(self) -> None:
+        theorem = certificate(
+            "certificates/ABSTRACT_THEOREM.json",
+            "ABSTRACT_THEOREM",
+            {
+                "consumer_contract": {
+                    "adapter_path": "certificates/CONCRETE_CONSUMER.json"
+                }
+            },
+        )
+        consumer = certificate(
+            "certificates/CONCRETE_CONSUMER.json",
+            "CONCRETE_CONSUMER",
+            {
+                "dependency_refs": {
+                    "abstract_theorem": "certificates/ABSTRACT_THEOREM.json"
+                }
+            },
+        )
+        files = {
+            theorem.path: b'{"result_id":"ABSTRACT_THEOREM"}',
+            consumer.path: b'{"result_id":"CONCRETE_CONSUMER"}',
+        }
+        edges, issues = derive_edges([theorem, consumer], files)
+        self.assertEqual(
+            edges,
+            [
+                Edge(
+                    theorem.key,
+                    consumer.key,
+                    "DEPENDS_ON",
+                    "dependency_refs.abstract_theorem",
+                )
+            ],
+        )
+        self.assertEqual(
+            issues["nonordering_provenance_cross_links"][0]["relation"],
+            "REGISTERS_CONSUMER",
+        )
+
+    def test_verification_command_reference_is_nonordering(self) -> None:
+        theorem = certificate(
+            "certificates/THEOREM.json",
+            "THEOREM",
+            {
+                "verification_commands": [
+                    "verify --consumer certificates/CONSUMER.json"
+                ]
+            },
+        )
+        consumer = certificate(
+            "certificates/CONSUMER.json",
+            "CONSUMER",
+            {"theorem_ref": "certificates/THEOREM.json"},
+        )
+        files = {
+            theorem.path: b'{"result_id":"THEOREM"}',
+            consumer.path: b'{"result_id":"CONSUMER"}',
+        }
+        edges, issues = derive_edges([theorem, consumer], files)
+        self.assertEqual(
+            edges,
+            [Edge(theorem.key, consumer.key, "DEPENDS_ON", "theorem_ref")],
+        )
+        self.assertEqual(
+            issues["nonordering_provenance_cross_links"][0]["relation"],
+            "VERIFIES_WITH",
+        )
+
     def test_layout_topic_ignores_programme_root_name(self) -> None:
         q2 = certificate(
             "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",

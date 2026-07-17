@@ -16,11 +16,12 @@
       "id": "causality",
       "tier": "core",
       "label": "Classical causality",
-      "detail": "future sources do not alter the past",
+      "detail": "future sources do not alter the past; cyclic transfer theorem exact",
       "status": "certified",
       "evidence": [
         "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
-        "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2"
+        "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+        "ABSTRACT_CYCLIC_CAUSAL_TRANSFER"
       ]
     },
     {
@@ -49,11 +50,46 @@
       "id": "interactions",
       "tier": "classical_physics",
       "label": "First interaction layer",
-      "detail": "gravity q2/q3; preserving-generator Cartan through arity three",
+      "detail": "mixed q2/q3 and retained ell3 exact; invariant meaning open",
       "status": "certified",
       "evidence": [
         "BERGER_SUPPORT_LOCAL_Q3",
-        "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF"
+        "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+        "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+        "BERGER_RETAINED_MIXED_ELL3_TRANSFER"
+      ]
+    },
+    {
+      "id": "berger_branch_carrier",
+      "tier": "classical_physics",
+      "label": "Berger branch carrier",
+      "detail": "rank 46 cyclic carrier exact; physical projector open",
+      "status": "partial",
+      "evidence": [
+        "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
+      ]
+    },
+    {
+      "id": "branch_mixing",
+      "tier": "nonlinear_selection",
+      "label": "Residual branch mixing",
+      "detail": "retained ell3 exact; Einstein/extra/Maxwell table open",
+      "status": "partial",
+      "evidence": [
+        "BERGER_RETAINED_MIXED_ELL3_TRANSFER",
+        "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
+      ]
+    },
+    {
+      "id": "taub_selection",
+      "tier": "nonlinear_selection",
+      "label": "Nonlinear branch selection",
+      "detail": "pure extra obstructed; selected mixed faces extend",
+      "status": "partial",
+      "evidence": [
+        "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+        "EINSTEIN_MAXWELL_WEYL_FULL_GENERIC_K0_MOMENT_MAP_CONE",
+        "EINSTEIN_MAXWELL_WEYL_ELL2_AXIAL_NEUTRAL_FACE_SECOND_ORDER"
       ]
     },
     {
@@ -72,13 +108,15 @@
       "id": "light",
       "tier": "classical_physics",
       "label": "Classical light",
-      "detail": "causal Maxwell contraction, repaired q2 and retarded signals; mixed q3 open",
+      "detail": "causal Maxwell response and mixed q2/q3; localization open",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_CHEVRETON_TANGENT",
         "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
         "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
-        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL"
+        "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
+        "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+        "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE"
       ]
     },
     {
@@ -97,24 +135,26 @@
       "id": "redshift",
       "tier": "observers",
       "label": "Relational redshift",
-      "detail": "dynamical Maxwell frequency ratio; localization open",
+      "detail": "actual retarded clock observable, 1+z=2; localization open",
       "status": "partial",
       "evidence": [
         "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT",
-        "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE"
+        "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+        "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE"
       ]
     },
     {
       "id": "detector",
       "tier": "observers",
       "label": "Relational detector response",
-      "detail": "rank-two linear retarded records; apparatus BV extension and backreaction open",
+      "detail": "linear records and separate-axis rod gravity; mixed apparatus open",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
         "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
         "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
-        "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE"
+        "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE",
+        "BERGER_84_ROW_ROD_GRAVITY_UNARY"
       ]
     },
     {
@@ -203,10 +243,16 @@
     {"from": "gauge_complex", "to": "light", "label": "supports fields"},
     {"from": "gauge_complex", "to": "gravity_waves", "label": "linearizes"},
     {"from": "gauge_complex", "to": "einstein_weyl_relative", "label": "defines both complexes"},
+    {"from": "gauge_complex", "to": "berger_branch_carrier", "label": "defines the retained carrier"},
     {"from": "einstein_weyl_relative", "to": "gravity_waves", "label": "separates familiar and extra modes"},
     {"from": "einstein_weyl_relative", "to": "interactions", "label": "tests nonlinear closure"},
     {"from": "residual", "to": "interactions", "label": "defines physical transfer"},
+    {"from": "residual", "to": "berger_branch_carrier", "label": "defines the retained rows"},
     {"from": "causality", "to": "interactions", "label": "limits influence"},
+    {"from": "interactions", "to": "branch_mixing", "label": "supplies retained ell3"},
+    {"from": "berger_branch_carrier", "to": "branch_mixing", "label": "must supply the projector"},
+    {"from": "gravity_waves", "to": "taub_selection", "label": "supplies branch tangents"},
+    {"from": "interactions", "to": "taub_selection", "label": "tests second-order extension"},
     {"from": "clock", "to": "redshift", "label": "supplies readings"},
     {"from": "light", "to": "redshift", "label": "carries frequency"},
     {"from": "interactions", "to": "redshift", "label": "preserves observable"},
@@ -219,8 +265,10 @@
     {"from": "causality", "to": "hadamard", "label": "fixes commutator"},
     {"from": "residual", "to": "hadamard", "label": "selects observables"},
     {"from": "interactions", "to": "anomalies", "label": "feeds quantum identities"},
+    {"from": "branch_mixing", "to": "anomalies", "label": "labels residual quantum channels"},
     {"from": "hadamard", "to": "particles", "label": "supplies short-distance state"},
     {"from": "anomalies", "to": "particles", "label": "restores quantum gauge identity"},
+    {"from": "taub_selection", "to": "particles", "label": "restricts nonlinear candidates"},
     {"from": "clock", "to": "mass", "label": "can supply a scale"},
     {"from": "interactions", "to": "mass", "label": "stabilizes matter"},
     {"from": "mass", "to": "particles", "label": "creates rest excitations"},

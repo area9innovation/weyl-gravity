@@ -406,6 +406,10 @@ def _nonordering_relation(
 
     joined = ".".join(context).lower()
     pair = source_path + " " + target_path
+    if "consumer_contract" in joined:
+        return "REGISTERS_CONSUMER"
+    if "verification_commands" in joined:
+        return "VERIFIES_WITH"
     if "D_QUOTIENT_PROGRAMME_STATUS.json" in pair and any(
         token in joined
         for token in (

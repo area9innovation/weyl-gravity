@@ -869,7 +869,7 @@ A covariant formula is not automatically a `G3` theorem.  Promotion requires
 uniform operator domains, support conditions, charges, and verification
 hypotheses.
 
-### Work package C-G1: extract the causal-transfer theorem
+### Work package C-G1: extract the causal-transfer theorem — certified
 
 Separate the cylinder construction into an abstract theorem whose declared
 inputs are a cyclic local gauge/detour complex, Green-hyperbolic endpoints or
@@ -877,8 +877,13 @@ companions, a support-preserving SDR, and finite-order cyclic shears.  Prove
 the transport formulas for retarded/advanced homotopies, support, and cyclic
 adjoints.  Re-run the cylinder as a consumer of this theorem.
 
-Return either `ABSTRACT_CAUSAL_TRANSFER_CERTIFIED` or the minimal exact list
-of cylinder-specific identities preventing abstraction.
+`ABSTRACT_CYCLIC_CAUSAL_TRANSFER` now certifies this conditional theorem,
+including endpoint-companion construction, finite direct sums,
+support-local cyclic shears, and complete 54- and 64-row Berger replays.  The
+result is `G2`: endpoint Green hyperbolicity is a hypothesis, and timelike
+boundaries, pseudodifferential projectors, Hadamard products, interactions,
+and quantum claims are not included.  Its next generality gate is C-G5 or the
+uniform background class C-G2, not another cylinder replay.
 
 ### Work package C-G2: conformally flat background class
 
@@ -1011,26 +1016,33 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    bracket and nontrivial \(\widetilde\tau\)-evolution are exact.  Keep the
    localized apparatus observable false until the observer team supplies the
    mixed \(\epsilon_R^2\kappa\) coefficients.
-6. **Next classical work package: C-G1.**  Extract the abstract cyclic causal
-   transfer theorem from the completed 54/64-row constructions and re-run the
-   Berger complex as its first consumer.  Return either
-   `ABSTRACT_CAUSAL_TRANSFER_CERTIFIED` or the first exact cylinder-specific
-   obstruction.
+6. The rank-46 STF2 graph prolongation is now an exact cyclic carrier with a
+   contractible complement.  **Next classical branch task:** construct the
+   support-local Einstein-like/extra-Weyl projector on that carrier or return
+   its normalized obstruction.  If it passes, export the background-indexed
+   branch manifest, inclusions, projections, pairing, parity, real structure,
+   and `K_Berger` weights required by the nonlinear mixing consumer.  Do not
+   identify these Berger labels automatically with the actual
+   Einstein--Maxwell image on the Pleba\'nski--Hacyan background.
 7. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
    acceptance flags pass; until then the relative observable functor remains
    a preflight and must not reconstruct the Einstein map independently.
-8. Open the rank-46 STF2 mapping-cylinder/projector investigation only as a
-   separate follow-up if branch-resolved mixing remains scientifically
-   necessary.  It is not a prerequisite for Paper XI or C-G4.
+8. C-G1 is certified as `ABSTRACT_CYCLIC_CAUSAL_TRANSFER`.  Preserve it as a
+   regression input.  A bounded causal parallel rail may now begin C-G5 (one
+   non-cylinder detour consumer) or state the C-G2 uniform background
+   hypotheses; neither displaces the branch projector required for the
+   connected physical story.
 9. Continue the deformation, Yang--Mills and boundary rails as independent
    generality tests, not prerequisites for the Berger relational-observable
    or causal-transfer gates.
 
 The physical activation sequence and reassignment triggers are recorded in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).  The
-`BERGER_Q2_EXPORTED` and the scoped C-G4 trigger have fired; the classical
-team's current primary ownership is therefore C-G1 causal-transfer
-abstraction while the observer team owns localized apparatus completion.
+`BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
+have fired.  The classical team's current primary ownership is the rank-46
+projector/branch-manifest decision.  The certified C-G1 theorem may seed one
+bounded G3/second-consumer task, while the observer team owns localized
+apparatus completion.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

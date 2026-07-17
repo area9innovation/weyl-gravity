@@ -451,8 +451,10 @@ admissible cyclic, support-local, jet-bounded redefinition complex for
 Return an explicit trivializing redefinition or a normalized dual witness
 annihilating every admissible redefinition while detecting \(\ell_3\).  This
 test does not require inventing Einstein-like and extra-Weyl labels on the
-unsplit carrier.  A branch-resolved mixing table begins only after an exact
-rank-46, filtered, or mapping-cylinder branch carrier is imported and
+unsplit carrier.  The exact cyclic rank-46 STF2 graph carrier is now available,
+but its added complement is contractible and no branch projector has yet been
+certified.  A branch-resolved mixing table begins only after a support-local
+projector or another exact filtered/mapping-cylinder splitting is imported and
 accepted.
 
 ### Work package N-G5: Einstein projection and one amplitude fixture
@@ -561,9 +563,11 @@ causal chain homotopy.
    clock/graph incidence before constructing
    `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`; do not demand a
    metric-causal inverse of the obstructed complete `L13` architecture.
-4. Produce an Einstein-like/extra-Weyl/Maxwell mixing table only after an
-   exact rank-46, filtered, or mapping-cylinder carrier is imported.  A
-   nonlocal split must remain explicitly `REDUCED-MODE`.
+4. Import the exact rank-46 cyclic graph carrier now, but produce an
+   Einstein-like/extra-Weyl/Maxwell mixing table only after its projector or
+   another exact filtered/mapping-cylinder splitting passes.  When that gate
+   fires, the sparse branch mixing table becomes the primary physical output;
+   a nonlocal split must remain explicitly `REDUCED-MODE`.
 5. Add apparatus \(q_2,q_3\), \(K_{\rm Berger}\)-equivariance, and observer
    morphism stability only after the observer team closes the mixed
    \(\epsilon_R^2\kappa\) unary gate.
