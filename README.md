@@ -8,6 +8,25 @@ primary papers—one expository introduction and eight technical papers
 conformal-cylinder result)—a Lean
 formalization, and a machine-checked verification pipeline.
 
+## Research context
+
+This programme is led by **Asger Alstrup Palm, Honorary Professor at DTU
+Compute**, as an investigation into whether agentic AI can make auditable
+contributions to scientific research. Palm is a computer scientist rather
+than a physicist and retains programme direction and editorial responsibility.
+AI agents contribute mathematical proposals, symbolic derivations, software,
+verification paths, literature mapping, and manuscript drafts. Claims are
+offered for independent expert scrutiny through explicit scope boundaries,
+machine-readable certificates, and independent verifiers—not on the authority
+of either the human director or the AI systems. The DTU affiliation is
+descriptive and does not imply institutional endorsement.
+
+The [general-audience introduction](paper/99-how-to-build-a-universe.md)
+explains why the project exists and how the candidate universe is built. The
+[physicist front door](paper/98-physicist-executive-summary.md) gives the
+authoritative public claims table, comparison protocol, strongest limitations,
+and direct routes into the evidence.
+
 ## Overview
 
 The series does not propose a new free-theory cure for the

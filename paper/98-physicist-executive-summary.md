@@ -7,6 +7,16 @@ physicist deciding whether the work intersects their own. It summarizes
 results; it does not replace the technical manuscripts, certificate ledgers,
 or the [universe-building roadmap](../notes/universe-building-roadmap.md).
 
+> **Research context.** This programme is led by Asger Alstrup Palm, Honorary
+> Professor at DTU Compute, as an investigation into whether agentic AI can
+> make auditable contributions to scientific research. Palm is a computer
+> scientist, not a physicist. The physics is therefore offered for expert
+> scrutiny through typed claims, exact symbolic artifacts, independent
+> verifiers, and explicit limitations—not on the authority of either the
+> human director or the AI systems. The DTU affiliation identifies Palm's
+> academic role and does not imply institutional endorsement of the project or
+> its conclusions.
+
 ## The sixty-second version
 
 Fourth-order gravity has more local solutions than Einstein gravity, and its

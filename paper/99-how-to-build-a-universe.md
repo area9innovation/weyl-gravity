@@ -27,6 +27,38 @@ The basic rule is:
 > constraints, carry a measurable physical effect, propagate causally, and
 > remain consistent when interactions and quantum physics are included.
 
+## Why this project exists
+
+This is also an experiment in how scientific research can be done with AI. It
+is directed by Asger Alstrup Palm, Honorary Professor at DTU Compute, whose
+field is computer science rather than physics. The aim is not to use AI merely
+to explain established science or polish a manuscript. It is to test whether
+AI agents can help formulate sharp questions, construct counterexamples,
+derive large symbolic calculations, write verification programs, discover
+mistakes, and turn successful results into research that other people can
+audit.
+
+Palm chooses the overall direction, decides which questions the teams pursue,
+and retains editorial responsibility for the public claims. AI agents propose
+and execute much of the detailed mathematical, computational, verification,
+literature-mapping, and drafting work. Neither human credentials nor fluent AI
+output count as evidence. A result enters the project only with a declared
+scope and a reproducible chain connecting the claim to symbolic artifacts and
+independent checks.
+
+This is why the repository preserves failed constructions, convention errors,
+counterexamples, missing assumptions, exact hashes, and tests designed to
+break proposed conclusions. If the candidate theory eventually fails a
+physical requirement, locating that failure precisely is still useful physics
+and still answers part of the AI-research question.
+
+The intended form of collaboration is open scrutiny. The repository is being
+prepared as a public research object so physicists, mathematicians, and AI
+researchers can reproduce the calculations, challenge their interpretation,
+or continue from a certified boundary without first joining a conventional
+collaboration. Palm's DTU affiliation identifies his academic role; it does
+not imply that DTU endorses the project or its conclusions.
+
 ## The universe in ordinary language
 
 The project has a mathematically complete classical starting universe for
