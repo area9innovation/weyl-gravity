@@ -111,6 +111,31 @@ rail now pins the committed hashes and returns
 `ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR`, so mixed \(q_3\) is unblocked; the
 nonlinear observer vertex remains a separate construction.
 
+The mixed \(q_3\) gate is now complete in the nonlinear typed presentation.
+The arity-two factor two belongs to the Maxwell Darboux block, not to a bare
+output rescaling: with
+
+\[
+S=\operatorname{diag}(I_{54},2I_{10}),\qquad
+\Omega_{\rm typed}=\Omega_{\rm legacy}S,\qquad
+q_{2,{\rm typed}}=S^{-1}q_{2,{\rm legacy}},
+\]
+
+the lowered cubic tensor is unchanged, while coderivation composition is
+well typed.  The action-derived and finitely BV-canonically transformed
+mixed operation has 59,598 exact PBW coefficients on 21 nonzero output rows.
+The certificate `BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3` proves raw quartic
+action cyclicity with the Maxwell weight two, graded symmetry, frozen
+\(K_{\rm Berger}\)-equivariance, and the mixed part of
+
+\[
+q_1q_3+q_2(q_2,\cdot)+\text{graded unshuffles}=0
+\]
+
+on all 64 rows.  It is a full four-dimensional `LOCAL-ALGEBRAIC` export, not
+a reduced-mode fit.  Retained \(\ell_3\) transfer, exchange terms, and
+independent quantum-side acceptance remain separate fail-closed gates.
+
 The separate extended apparatus unary audit is now exact. On the detector
 chart the three declared standard-sign rods have
 \(T^R_{\hat a\hat b}=\operatorname{diag}(3/2,-1/2,-1/2,-1/2)\). Because the

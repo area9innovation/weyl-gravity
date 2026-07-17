@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-support-local-coupled-maxwell-q3-v1.schema.json",
+  "title": "Typed support-local mixed gravity-Maxwell q3 certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "source_manifest", "typed_cyclic_presentation", "derivation", "classical_binary_q2_typed", "classical_ternary_q3_mixed", "exact_checks", "cache_receipts", "flags", "verification_commands", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-support-local-coupled-maxwell-q3-v1"},
+    "result_id": {"const": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_TYPED_SUPPORT_LOCAL_MIXED_GRAVITY_MAXWELL_Q3"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "additionalProperties": {"$ref": "#/$defs/source"}},
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"$ref": "#/$defs/hash"}
+    },
+    "typed_cyclic_presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scale_operator", "pairing", "binary_operation", "lowered_tensor_identity", "canonical_shear", "reason", "unary_pairing_source"],
+      "properties": {
+        "scale_operator": {"const": "S=diag(I_54,2 I_10)"},
+        "pairing": {"const": "Omega_typed=Omega_legacy S"},
+        "binary_operation": {"const": "q2_typed=S^{-1} q2_legacy"},
+        "lowered_tensor_identity": {"const": "Omega_typed q2_typed=Omega_legacy q2_legacy"},
+        "canonical_shear": {"const": "F2_typed=S^{-1} F2_legacy"},
+        "reason": {"type": "string", "minLength": 20},
+        "unary_pairing_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "legacy_pairing_canonical_sha256"],
+          "properties": {
+            "path": {"const": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json"},
+            "legacy_pairing_canonical_sha256": {"$ref": "#/$defs/hash"}
+          }
+        }
+      }
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "formula", "not_fitted_to_residual_or_defect_data", "raw_action_term_count", "linearly_transported_action_term_count"],
+      "properties": {
+        "source": {"type": "string", "minLength": 20},
+        "formula": {"const": "q3_mixed=A3_Maxwell+[B2_full,F2_typed]+1/2[[q1,F2_typed],F2_typed]"},
+        "not_fitted_to_residual_or_defect_data": {"const": true},
+        "raw_action_term_count": {"const": 25662},
+        "linearly_transported_action_term_count": {"const": 59094}
+      }
+    },
+    "classical_binary_q2_typed": {"$ref": "#/$defs/payload"},
+    "classical_ternary_q3_mixed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["payload_path", "payload_file_sha256", "payload_canonical_sha256", "term_count", "nonzero_rows", "maximum_total_jet_order", "support_local"],
+      "properties": {
+        "payload_path": {"const": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3_PAYLOAD.json"},
+        "payload_file_sha256": {"$ref": "#/$defs/hash"},
+        "payload_canonical_sha256": {"$ref": "#/$defs/hash"},
+        "term_count": {"const": 59598},
+        "nonzero_rows": {"const": 21},
+        "maximum_total_jet_order": {"const": 4},
+        "support_local": {"const": true}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["typed_q2_graded_symmetry", "typed_q3_graded_symmetry", "old_and_typed_q2_lowered_cubic_tensors_equal", "raw_mixed_fourth_action_derivative_cyclic", "typed_canonical_shear_preserves_lowered_cyclic_tensors", "typed_q1_q2_identity_all_64_rows", "mixed_q1_q3_plus_q2_q2_identity_all_64_rows", "K_Berger_q3_derivation_termwise"],
+      "properties": {
+        "typed_q2_graded_symmetry": {"const": true},
+        "typed_q3_graded_symmetry": {"const": true},
+        "old_and_typed_q2_lowered_cubic_tensors_equal": {"const": true},
+        "raw_mixed_fourth_action_derivative_cyclic": {"const": true},
+        "typed_canonical_shear_preserves_lowered_cyclic_tensors": {"const": true},
+        "typed_q1_q2_identity_all_64_rows": {"const": true},
+        "mixed_q1_q3_plus_q2_q2_identity_all_64_rows": {"const": true},
+        "K_Berger_q3_derivation_termwise": {"const": true}
+      }
+    },
+    "cache_receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cache_key", "build", "verify"],
+      "properties": {
+        "cache_key": {"$ref": "#/$defs/hash"},
+        "build": {"$ref": "#/$defs/cacheBuild"},
+        "verify": {"$ref": "#/$defs/cacheVerify"}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BERGER_TYPED_MAXWELL_DARBOUX_NORMALIZATION", "BERGER_TYPED_COUPLED_Q2", "BERGER_ACTION_DERIVED_MIXED_Q3", "BERGER_MIXED_ARITY_THREE_IDENTITY", "BERGER_MIXED_Q3_K_EQUIVARIANT", "BERGER_RETAINED_MIXED_ELL3_TRANSFER", "BERGER_MIXED_Q3_INDEPENDENT_QUANTUM_ACCEPTANCE", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_TYPED_MAXWELL_DARBOUX_NORMALIZATION": {"const": true},
+        "BERGER_TYPED_COUPLED_Q2": {"const": true},
+        "BERGER_ACTION_DERIVED_MIXED_Q3": {"const": true},
+        "BERGER_MIXED_ARITY_THREE_IDENTITY": {"const": true},
+        "BERGER_MIXED_Q3_K_EQUIVARIANT": {"const": true},
+        "BERGER_RETAINED_MIXED_ELL3_TRANSFER": {"const": false},
+        "BERGER_MIXED_Q3_INDEPENDENT_QUANTUM_ACCEPTANCE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 5}},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["payload_path", "payload_file_sha256", "payload_canonical_sha256", "term_count", "support_local"],
+      "properties": {
+        "payload_path": {"const": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json"},
+        "payload_file_sha256": {"$ref": "#/$defs/hash"},
+        "payload_canonical_sha256": {"$ref": "#/$defs/hash"},
+        "term_count": {"const": 1890},
+        "support_local": {"const": true}
+      }
+    },
+    "cacheBuild": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["elapsed_seconds", "peak_rss_mb", "q2_sha256", "q3_sha256"],
+      "properties": {
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "peak_rss_mb": {"type": "number", "minimum": 0},
+        "q2_sha256": {"$ref": "#/$defs/hash"},
+        "q3_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "cacheVerify": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["elapsed_seconds", "peak_rss_mb"],
+      "properties": {
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "peak_rss_mb": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}

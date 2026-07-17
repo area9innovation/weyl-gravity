@@ -1,0 +1,131 @@
+{
+  "cache_receipts": {
+    "build": {
+      "elapsed_seconds": 116.176127,
+      "peak_rss_mb": 466.738,
+      "q2_sha256": "9ed41d3f076eace8bc4e817ad510ef4c7927afeb28550bf78b3d3e52f06b45a5",
+      "q3_sha256": "6af6c2b557e171fbec05e2bc18c6d02ad53f568048e68fcf333bab5f5c625cb9"
+    },
+    "cache_key": "4f930b0fb932651eebe6bd6f31fbccadf41511128a9a1aeeb155c6a41b92539e",
+    "verify": {
+      "elapsed_seconds": 317.240537,
+      "peak_rss_mb": 466.738
+    }
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the exact typed 64-row gravity-clock-Maxwell q2 presentation and the 59,598-term mixed q3 overlay derived from the Maxwell action and a finite BV-canonical shear. It proves the all-row mixed arity-three L-infinity identity and K_Berger equivariance. It supersedes the output-only arity-two normalization only for nonlinear coderivation composition; both presentations have the identical lowered cubic action tensor. It does not yet transfer ell3 through the 64-to-36 SDR, construct the exchange contribution, perform independent quantum-side acceptance, restore a QME, or make a quantum claim.",
+  "claim_status": "CERTIFIED_TYPED_SUPPORT_LOCAL_MIXED_GRAVITY_MAXWELL_Q3",
+  "classical_binary_q2_typed": {
+    "payload_canonical_sha256": "7442833332456d559a99653865300911e9d301b223e451062cc39eb922a8fe31",
+    "payload_file_sha256": "789c0a8fa75903a2f0a3c8e11138b64531185d08124c0d6b82dc46138b91a731",
+    "payload_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json",
+    "support_local": true,
+    "term_count": 1890
+  },
+  "classical_ternary_q3_mixed": {
+    "maximum_total_jet_order": 4,
+    "nonzero_rows": 21,
+    "payload_canonical_sha256": "8a6a8889171e1b549ba4081a04af3e8aee0ccccc7674cfa0f7d46ba6a9f42d29",
+    "payload_file_sha256": "cebf388d1bc83b8f3b3b892e52efb6784511124505c3517c02f4125952b78bf1",
+    "payload_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3_PAYLOAD.json",
+    "support_local": true,
+    "term_count": 59598
+  },
+  "dependency_refs": {
+    "generator_signoff": {
+      "path": "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
+      "result_id": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+      "sha256": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8"
+    },
+    "gravity_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
+    "gravity_q2_payload": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json",
+      "result_id": "gravity_q2_payload",
+      "sha256": "c6c4891d384add5e1afbf6e0cfe3ec920fff0496e02d5514833f3e0adeab07cf"
+    },
+    "gravity_q3": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_Q3",
+      "sha256": "f55c145700cd30273e0f16d585bfd0815e5a8451606b0998bc706a8b61798cad"
+    },
+    "legacy_arity_two_payload": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
+      "result_id": "legacy_arity_two_payload",
+      "sha256": "953c70661220cc1de27ab25cdb80d9ae479f85ff0cd52483fa00a3b93e4c7501"
+    },
+    "legacy_arity_two_presentation": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
+      "sha256": "f518eb8a13ee34021edfd8f1809bf7a0ee139a9a1863d837d83858e34bf461f5"
+    },
+    "portable_unary_pairing_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "derivation": {
+    "formula": "q3_mixed=A3_Maxwell+[B2_full,F2_typed]+1/2[[q1,F2_typed],F2_typed]",
+    "linearly_transported_action_term_count": 59094,
+    "not_fitted_to_residual_or_defect_data": true,
+    "raw_action_term_count": 25662,
+    "source": "fourth derivative of -1/4 sqrt(-g) F_ab F^ab plus the finite BV-canonical covariant-ghost shear"
+  },
+  "exact_checks": {
+    "K_Berger_q3_derivation_termwise": true,
+    "mixed_q1_q3_plus_q2_q2_identity_all_64_rows": true,
+    "old_and_typed_q2_lowered_cubic_tensors_equal": true,
+    "raw_mixed_fourth_action_derivative_cyclic": true,
+    "typed_canonical_shear_preserves_lowered_cyclic_tensors": true,
+    "typed_q1_q2_identity_all_64_rows": true,
+    "typed_q2_graded_symmetry": true,
+    "typed_q3_graded_symmetry": true
+  },
+  "flags": {
+    "BERGER_ACTION_DERIVED_MIXED_Q3": true,
+    "BERGER_MIXED_ARITY_THREE_IDENTITY": true,
+    "BERGER_MIXED_Q3_INDEPENDENT_QUANTUM_ACCEPTANCE": false,
+    "BERGER_MIXED_Q3_K_EQUIVARIANT": true,
+    "BERGER_RETAINED_MIXED_ELL3_TRANSFER": false,
+    "BERGER_TYPED_COUPLED_Q2": true,
+    "BERGER_TYPED_MAXWELL_DARBOUX_NORMALIZATION": true,
+    "QUANTUM_CLAIM": false
+  },
+  "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+  "schema": "pure-weyl-berger-support-local-coupled-maxwell-q3-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q3.py": "4c5a8a8da954c73b79c06b42f04b47ade4f71f8118b3b0cee7c6327d1cb0e062",
+    "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q3_cache.py": "5adafcb68f77356da1b2c88d70f221cd6fc09a816c9bfe44f6fdc12a8b32b2c0",
+    "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q3_export.py": "18aec26ed65239113da7dd5c4784b77c1e1667f2b5dd36dabc2bc28ca9ea4d9e",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_support_local_coupled_maxwell_q3.py": "f96b8913c2b832ae45c73df75dfb4364334c0f945ae8eaa8306e58d8501fb759",
+    "d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q3.py": "cac15e61a0012b8e975532764f75b443d150371266ea301f9c4b15118bf6f871",
+    "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-typed-payload-v1.schema.json": "0405e10e464a6c0ac558e0cd90bb159a396b635877b160ff80842f23942eb110",
+    "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q3-payload-v1.schema.json": "fc23acd7762222991e2a0303af85a2aa716d6dcc2d7a96fa8abfbd3054a20edd",
+    "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q3-row-v1.schema.json": "0dcf94ee8ef516e7cc6ba0a0ccdcdfe81dab823734c50e45b9b98ca8e3fe5213",
+    "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q3-v1.schema.json": "a1efb4d9fc0cba40f855308eb719ff0aead8e1a125e44cf656052ae3bb00195e"
+  },
+  "typed_cyclic_presentation": {
+    "binary_operation": "q2_typed=S^{-1} q2_legacy",
+    "canonical_shear": "F2_typed=S^{-1} F2_legacy",
+    "lowered_tensor_identity": "Omega_typed q2_typed=Omega_legacy q2_legacy",
+    "pairing": "Omega_typed=Omega_legacy S",
+    "reason": "output-only normalization is not functorial under coderivation composition; the factor two belongs to the Maxwell fibre pairing",
+    "scale_operator": "S=diag(I_54,2 I_10)",
+    "unary_pairing_source": {
+      "legacy_pairing_canonical_sha256": "e72ce48d9fc81cd08c9eb6c86874d0d3ed3ad304ce3ec48259ef117924a44ee6",
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json"
+    }
+  },
+  "verification_commands": [
+    "BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q3_cache.py all",
+    "BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q3_export.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q3.py"
+  ]
+}

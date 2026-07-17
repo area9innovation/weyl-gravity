@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-support-local-coupled-maxwell-q2-typed-payload-v1.schema.json",
+  "title": "Typed nonlinear coupled Maxwell q2 overlay payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "coefficient_field", "pbw_basis", "shape", "factorial_convention", "composition", "rows"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-support-local-coupled-maxwell-q2-typed-payload-v1"},
+    "coefficient_field": {"const": "Q(sqrt(10))"},
+    "pbw_basis": {"const": "left-invariant Berger frame; words e0^n0 e1^n1 e2^n2 e3^n3"},
+    "shape": {"const": [64, 64, 64]},
+    "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "composition": {"const": "zero-extend the pinned 54-row gravity q2 and add this typed Maxwell overlay; pair with Omega_typed=Omega_legacy diag(I54,2 I10)"},
+    "rows": {
+      "type": "array",
+      "minItems": 64,
+      "maxItems": 64,
+      "items": {"$ref": "#/$defs/row"}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "oneOf": [
+        {"type": "integer"},
+        {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 2}}}
+      ]
+    },
+    "coefficient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rational", "sqrt10"],
+      "properties": {"rational": {"$ref": "#/$defs/rational"}, "sqrt10": {"$ref": "#/$defs/rational"}}
+    },
+    "multiindex": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+    "term": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0, "maximum": 63}, {"$ref": "#/$defs/multiindex"},
+        {"type": "integer", "minimum": 0, "maximum": 63}, {"$ref": "#/$defs/multiindex"},
+        {"$ref": "#/$defs/coefficient"}
+      ],
+      "items": false
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output", "terms", "canonical_sha256"],
+      "properties": {
+        "output": {"type": "integer", "minimum": 0, "maximum": 63},
+        "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+        "canonical_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}
