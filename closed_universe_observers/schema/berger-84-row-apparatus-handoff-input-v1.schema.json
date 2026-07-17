@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-84-row-apparatus-handoff-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "setting_id", "base_rows", "detector_indexed_rods", "memory_realization", "memory_pairing_measure", "rod_action_weight", "readout_coupling_weight", "profile_scope", "source_role", "detector_channel_dependencies", "mutations"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-84-row-apparatus-handoff-input-v1"},
+    "setting_id": {"const": "compact_positive_berger_clock_observer_apparatus_extension"},
+    "base_rows": {"type": "integer", "minimum": 1},
+    "detector_indexed_rods": {"type": "integer", "minimum": 1},
+    "memory_realization": {"type": "string"},
+    "memory_pairing_measure": {"type": "string"},
+    "rod_action_weight": {"type": "string"},
+    "readout_coupling_weight": {"type": "string"},
+    "profile_scope": {"type": "string"},
+    "source_role": {"type": "string"},
+    "detector_channel_dependencies": {"type": "object", "additionalProperties": false, "required": ["D0", "D1"], "properties": {"D0": {"$ref": "#/$defs/rows"}, "D1": {"$ref": "#/$defs/rows"}}},
+    "mutations": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/mutation"}}
+  },
+  "$defs": {
+    "rows": {"type": "array", "minItems": 2, "maxItems": 3, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "mutation": {"type": "object", "additionalProperties": false, "required": ["name", "patch", "expected_failed_requirement"], "properties": {
+      "name": {"type": "string", "minLength": 1}, "patch": {"type": "object", "minProperties": 1, "maxProperties": 1},
+      "expected_failed_requirement": {"enum": ["carrier_is_84_rows", "bulk_memory_category_fixed", "memory_pairing_measure_fixed", "profile_two_jet_fixed", "multigrading_separated", "external_source_boundary_fixed", "detector_channels_block_local"]}
+    }}
+  }
+}

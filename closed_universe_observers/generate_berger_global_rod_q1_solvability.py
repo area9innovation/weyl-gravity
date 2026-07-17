@@ -148,7 +148,10 @@ def _source_at_phase(phase: sp.Expr, harmonic: str) -> sp.Matrix:
 def _source_basis(harmonic: str) -> sp.Matrix:
     c2 = _source_at_phase(sp.S.Zero, harmonic)
     s2 = _source_at_phase(sp.pi / 2, harmonic)
-    cs = _source_at_phase(sp.pi / 4, harmonic) - (c2 + s2) / 2
+    # If S(z)=cos(z)^2 A+sin(z)^2 B+cos(z)sin(z) C, then
+    # C=2*(S(pi/4)-(A+B)/2).  Retain the normalized coefficient column so
+    # physical detector phases synthesize without a hidden factor of two.
+    cs = 2 * (_source_at_phase(sp.pi / 4, harmonic) - (c2 + s2) / 2)
     return sp.Matrix.hstack(c2, s2, cs).applyfunc(sp.simplify)
 
 

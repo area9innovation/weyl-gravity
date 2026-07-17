@@ -153,6 +153,18 @@ coupling, or apparatus stress. Explicit local detector operators
 the rods as external probes does not satisfy the dynamical apparatus
 commission.
 
+The later observer-owned
+`BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF` is now the authoritative forward
+interface and supersedes the three-shared-rod/78-row assumptions for new
+construction without invalidating the historical obstruction above.  It
+imports six global detector-indexed rods and exact second-order metric
+primitives, fixes the ordered 84-row carrier and odd pairing, realizes
+`m_a,p_a` as bulk clock-transported scalars, separates `epsilon_R^2` from the
+readout coupling `kappa`, and freezes the profile only through its exact
+two-jet (`q1,q2,q3`).  The emitter currents remain external.  The next
+apparatus gate is therefore the shifted-background 84-row unary, pairing, and
+advanced/retarded Green complex; do not reconstruct a 78-row extension.
+
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove
 `D_GAUGE` on `positive_berger_fixed_coupling_linearized_solutions`.  This

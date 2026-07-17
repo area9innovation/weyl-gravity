@@ -1,0 +1,967 @@
+{
+  "bulk_memory_contract": {
+    "action": "S_mem=sum_a integral dvol_gHat p_a (T m_a-kappa B_a[A;Theta,R_a,gHat])",
+    "category": "BULK_CLOCK_TRANSPORTED_SCALARS",
+    "fields": [
+      "m0",
+      "m1",
+      "p0",
+      "p1"
+    ],
+    "formal_adjoint": "T*=-T-div_gHat(n_Theta) with respect to dvol_gHat",
+    "pairing_measure": "dvol_gHat",
+    "persistence": "T m_a=0 after the detector profile support",
+    "retarded_boundary_condition": "zero memory in the causal past of the detector profile; H_ret f is the clock-line Volterra integral",
+    "spacetime_domain": "smooth scalar fields on R_t x S3 with detector-profile coefficients; retarded inverses act on compact-time-supported tests and their retarded images",
+    "transport": "T=n_Theta^a nabla_a with n_Theta^a=nabla^a Theta/(nabla Theta)^2, so T(Theta)=1 and T=(4/3)e0 on the Berger background",
+    "worldline_or_defect_interpretation_excluded": true
+  },
+  "carrier": {
+    "base_rows": 64,
+    "component_rows": [
+      {
+        "degree": -1,
+        "index": 0,
+        "row_id": "c_spatial_1",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 1,
+        "row_id": "c_spatial_2",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 2,
+        "row_id": "c_spatial_3",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 3,
+        "row_id": "tau",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 4,
+        "row_id": "sigma",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 5,
+        "row_id": "h_hat_00",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 6,
+        "row_id": "h_hat_01",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 7,
+        "row_id": "h_hat_02",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 8,
+        "row_id": "h_hat_03",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 9,
+        "row_id": "h_hat_11",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 10,
+        "row_id": "h_hat_12",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 11,
+        "row_id": "h_hat_13",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 12,
+        "row_id": "h_hat_22",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 13,
+        "row_id": "h_hat_23",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 14,
+        "row_id": "h_hat_33",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 15,
+        "row_id": "R",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 16,
+        "row_id": "Theta",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 0,
+        "index": 17,
+        "row_id": "b_diff_1",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 18,
+        "row_id": "b_diff_2",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 19,
+        "row_id": "b_diff_3",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 20,
+        "row_id": "b_tau",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 21,
+        "row_id": "b_sigma",
+        "sector": "gravity_clock:nonminimal_multiplier"
+      },
+      {
+        "degree": 0,
+        "index": 22,
+        "row_id": "bar_c_star_diff_1",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 23,
+        "row_id": "bar_c_star_diff_2",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 24,
+        "row_id": "bar_c_star_diff_3",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 25,
+        "row_id": "bar_c_star_tau",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 0,
+        "index": 26,
+        "row_id": "bar_c_star_sigma",
+        "sector": "gravity_clock:nonminimal_antighost_dual"
+      },
+      {
+        "degree": 1,
+        "index": 27,
+        "row_id": "h_hat_star_00",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 28,
+        "row_id": "h_hat_star_01",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 29,
+        "row_id": "h_hat_star_02",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 30,
+        "row_id": "h_hat_star_03",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 31,
+        "row_id": "h_hat_star_11",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 32,
+        "row_id": "h_hat_star_12",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 33,
+        "row_id": "h_hat_star_13",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 34,
+        "row_id": "h_hat_star_22",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 35,
+        "row_id": "h_hat_star_23",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 36,
+        "row_id": "h_hat_star_33",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 37,
+        "row_id": "R_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 38,
+        "row_id": "Theta_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 1,
+        "index": 39,
+        "row_id": "b_star_diff_1",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 40,
+        "row_id": "b_star_diff_2",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 41,
+        "row_id": "b_star_diff_3",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 42,
+        "row_id": "b_star_tau",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 43,
+        "row_id": "b_star_sigma",
+        "sector": "gravity_clock:nonminimal_multiplier_dual"
+      },
+      {
+        "degree": 1,
+        "index": 44,
+        "row_id": "bar_c_diff_1",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 45,
+        "row_id": "bar_c_diff_2",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 46,
+        "row_id": "bar_c_diff_3",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 47,
+        "row_id": "bar_c_tau",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 1,
+        "index": 48,
+        "row_id": "bar_c_sigma",
+        "sector": "gravity_clock:nonminimal_antighost"
+      },
+      {
+        "degree": 2,
+        "index": 49,
+        "row_id": "c_spatial_star_1",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 50,
+        "row_id": "c_spatial_star_2",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 51,
+        "row_id": "c_spatial_star_3",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 52,
+        "row_id": "tau_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": 2,
+        "index": 53,
+        "row_id": "sigma_star",
+        "sector": "gravity_clock:minimal"
+      },
+      {
+        "degree": -1,
+        "index": 54,
+        "row_id": "c_M",
+        "sector": "maxwell:ghost"
+      },
+      {
+        "degree": 0,
+        "index": 55,
+        "row_id": "A_0",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 0,
+        "index": 56,
+        "row_id": "A_1",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 0,
+        "index": 57,
+        "row_id": "A_2",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 0,
+        "index": 58,
+        "row_id": "A_3",
+        "sector": "maxwell:potential"
+      },
+      {
+        "degree": 1,
+        "index": 59,
+        "row_id": "A_plus_0",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 60,
+        "row_id": "A_plus_1",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 61,
+        "row_id": "A_plus_2",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 62,
+        "row_id": "A_plus_3",
+        "sector": "maxwell:antifield_density"
+      },
+      {
+        "degree": 2,
+        "index": 63,
+        "row_id": "c_M_plus",
+        "sector": "maxwell:ghost_antifield_density"
+      },
+      {
+        "degree": 0,
+        "index": 64,
+        "row_id": "R0_1",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 65,
+        "row_id": "R0_2",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 66,
+        "row_id": "R0_3",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 67,
+        "row_id": "R1_1",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 68,
+        "row_id": "R1_2",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 69,
+        "row_id": "R1_3",
+        "sector": "apparatus:rod"
+      },
+      {
+        "degree": 0,
+        "index": 70,
+        "row_id": "m0",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 0,
+        "index": 71,
+        "row_id": "m1",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 0,
+        "index": 72,
+        "row_id": "p0",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 0,
+        "index": 73,
+        "row_id": "p1",
+        "sector": "apparatus:memory"
+      },
+      {
+        "degree": 1,
+        "index": 74,
+        "row_id": "R0_1_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 75,
+        "row_id": "R0_2_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 76,
+        "row_id": "R0_3_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 77,
+        "row_id": "R1_1_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 78,
+        "row_id": "R1_2_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 79,
+        "row_id": "R1_3_plus",
+        "sector": "apparatus:rod_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 80,
+        "row_id": "m0_plus",
+        "sector": "apparatus:memory_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 81,
+        "row_id": "m1_plus",
+        "sector": "apparatus:memory_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 82,
+        "row_id": "p0_plus",
+        "sector": "apparatus:memory_antifield_density"
+      },
+      {
+        "degree": 1,
+        "index": 83,
+        "row_id": "p1_plus",
+        "sector": "apparatus:memory_antifield_density"
+      }
+    ],
+    "degree_ranks_minus1_0_1_2": [
+      6,
+      36,
+      36,
+      6
+    ],
+    "internal_apparatus_gauge_rows_added": 0,
+    "new_pairing_entries": [
+      {
+        "coefficient": "1",
+        "left": 64,
+        "right": 74
+      },
+      {
+        "coefficient": "-1",
+        "left": 74,
+        "right": 64
+      },
+      {
+        "coefficient": "1",
+        "left": 65,
+        "right": 75
+      },
+      {
+        "coefficient": "-1",
+        "left": 75,
+        "right": 65
+      },
+      {
+        "coefficient": "1",
+        "left": 66,
+        "right": 76
+      },
+      {
+        "coefficient": "-1",
+        "left": 76,
+        "right": 66
+      },
+      {
+        "coefficient": "1",
+        "left": 67,
+        "right": 77
+      },
+      {
+        "coefficient": "-1",
+        "left": 77,
+        "right": 67
+      },
+      {
+        "coefficient": "1",
+        "left": 68,
+        "right": 78
+      },
+      {
+        "coefficient": "-1",
+        "left": 78,
+        "right": 68
+      },
+      {
+        "coefficient": "1",
+        "left": 69,
+        "right": 79
+      },
+      {
+        "coefficient": "-1",
+        "left": 79,
+        "right": 69
+      },
+      {
+        "coefficient": "1",
+        "left": 70,
+        "right": 80
+      },
+      {
+        "coefficient": "-1",
+        "left": 80,
+        "right": 70
+      },
+      {
+        "coefficient": "1",
+        "left": 71,
+        "right": 81
+      },
+      {
+        "coefficient": "-1",
+        "left": 81,
+        "right": 71
+      },
+      {
+        "coefficient": "1",
+        "left": 72,
+        "right": 82
+      },
+      {
+        "coefficient": "-1",
+        "left": 82,
+        "right": 72
+      },
+      {
+        "coefficient": "1",
+        "left": 73,
+        "right": 83
+      },
+      {
+        "coefficient": "-1",
+        "left": 83,
+        "right": 73
+      }
+    ],
+    "new_rows": 20,
+    "pairing_measure": "dvol_gHat",
+    "pairing_rule": "<field,field_plus>=+1 and <field_plus,field>=-1 for every new degree-zero/degree-one pair",
+    "total_rows": 84
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL handoff freezes the authoritative forward interface for a prospective 84-row Berger observer apparatus: six detector-indexed rods, four bulk clock-transported memory fields, canonical new pairings, independent epsilon_R and kappa bookkeeping, a two-jet profile scope through q3, external q-closed emitters, and an exact synthesis of the physical two-detector Phi2 from certified primitives. It resolves conflicting 78-row/three-rod forward assumptions but does not construct the shifted 84-row q1, prove nilpotency or cyclicity, export a Green homotopy, derive apparatus q2/q3, certify K_Berger equivariance, construct the deformed response, include emitter recoil, certify the classical observer map, or make a quantum claim.",
+  "claim_status": "AUTHORITATIVE_FORWARD_INTERFACE_FROZEN_CONSTRUCTION_OPEN",
+  "dependency_refs": {
+    "base_64_carrier": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    },
+    "base_64_causal": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "base_64_k_cartan": {
+      "path": "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
+      "result_id": "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE",
+      "sha256": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e"
+    },
+    "base_64_q3": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+    },
+    "global_rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "legacy_observer_interface": {
+      "path": "closed_universe_observers/certificates/BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE.json",
+      "result_id": "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE",
+      "sha256": "17cc190abb57658382da790118343bc85549d6ee889e1d10a55c5046b3252028"
+    },
+    "retained_observer_k_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_RETAINED_OBSERVER_K_DESCENT_GATE.json",
+      "result_id": "BERGER_RETAINED_OBSERVER_K_DESCENT_GATE",
+      "sha256": "06ef154e317901e16b571c2ab121ccbcf4437105d63196158cc67d79a9a9ac31"
+    },
+    "rod_q1_solvability": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY.json",
+      "result_id": "BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY",
+      "sha256": "36153ad6c0cdcdcc9ab18c3feb0ea22915e4ec7215889e3d3de9687c6c7971f9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "detector_channels": [
+    {
+      "cross_channel_rod_dependence": false,
+      "detector_id": "D0",
+      "memory_rows": [
+        "m0",
+        "p0"
+      ],
+      "polarization": "dTheta_wedge_dR0_1",
+      "rod_rows": [
+        "R0_1",
+        "R0_2",
+        "R0_3"
+      ]
+    },
+    {
+      "cross_channel_rod_dependence": false,
+      "detector_id": "D1",
+      "memory_rows": [
+        "m1",
+        "p1"
+      ],
+      "polarization": "dTheta_wedge_dR1_2",
+      "rod_rows": [
+        "R1_1",
+        "R1_2",
+        "R1_3"
+      ]
+    }
+  ],
+  "flags": {
+    "84_ROW_Q1_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "84_ROW_RETARDED_GREEN_CERTIFIED": false,
+    "AUTHORITATIVE_84_ROW_FORWARD_INTERFACE": true,
+    "BULK_MEMORY_CATEGORY_FIXED": true,
+    "DEFORMED_RANK_TWO_RESPONSE_CERTIFIED": false,
+    "EXTERNAL_SOURCE_BOUNDARY_FIXED": true,
+    "FULL_APPARATUS_RECOIL_CERTIFIED": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "PHYSICAL_TWO_DETECTOR_PHI2_SYNTHESIZED": true,
+    "PROFILE_TWO_JET_THROUGH_Q3_FIXED": true,
+    "QUANTUM_CLAIM": false,
+    "SIX_DETECTOR_INDEXED_RODS_REQUIRED": true
+  },
+  "multigrading": {
+    "background": "gHat_epsilon=gHat_Berger+epsilon_R^2 Phi2+O(epsilon_R^4), with the displayed O(1) global rods and zero background A,m,p",
+    "metric_euler_order_epsilon_R2": "cancelled by H_retained Phi2=-q0^rod",
+    "mixed_orders_beyond_declared_gate": "epsilon_R^2*kappa corrections are construction inputs, not silently absorbed into either parameter",
+    "readout_arity": "p*A is q1 at order kappa; p*A*deltaPhi is q2; p*A*deltaPhi^2 is q3",
+    "readout_coupling_weight": "kappa",
+    "rod_action_weight": "epsilon_R^2",
+    "rod_euler_bookkeeping": "epsilon_R^2 Box_gHat R=0 at order epsilon_R^2 because Box_Berger R_bar=0; the Phi2-induced rod correction first enters the un-divided Euler row at order epsilon_R^4",
+    "weights_independent": true
+  },
+  "mutation_results": [
+    {
+      "expected_failed_requirement": "carrier_is_84_rows",
+      "expected_failure_passed": true,
+      "name": "reuse_shared_rods",
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "bulk_memory_category_fixed",
+      "expected_failure_passed": true,
+      "name": "worldline_memory_category",
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "memory_pairing_measure_fixed",
+      "expected_failure_passed": true,
+      "name": "drop_memory_measure",
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "profile_two_jet_fixed",
+      "expected_failure_passed": true,
+      "name": "unbounded_profile_at_q3_gate",
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "multigrading_separated",
+      "expected_failure_passed": true,
+      "name": "collapse_expansion_weights",
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "external_source_boundary_fixed",
+      "expected_failure_passed": true,
+      "name": "promote_emitter_without_rows",
+      "observed_requirement_value": false
+    },
+    {
+      "expected_failed_requirement": "detector_channels_block_local",
+      "expected_failure_passed": true,
+      "name": "cross_detector_rod_leakage",
+      "observed_requirement_value": false
+    }
+  ],
+  "next_gate": "CONSTRUCT_SHIFTED_BACKGROUND_AND_84_ROW_UNARY_PAIRING_GREEN_COMPLEX",
+  "ordered_acceptance_gates": [
+    {
+      "id": "shifted_background_euler",
+      "order": 1,
+      "requirement": "all 84 Euler rows vanish through the declared epsilon_R and kappa orders",
+      "status": "OPEN"
+    },
+    {
+      "id": "unary_complex",
+      "order": 2,
+      "requirement": "q1^2=0 on 84 rows, nondegenerate odd pairing, unary cyclicity, and both advanced/retarded Green identities",
+      "status": "OPEN"
+    },
+    {
+      "id": "maxwell_profile_compatibility",
+      "order": 3,
+      "requirement": "B_a d=0, delta B_a*=0, support theorem, and detector block locality",
+      "status": "OPEN"
+    },
+    {
+      "id": "arity_two",
+      "order": 4,
+      "requirement": "q1 q2 identity, cyclicity, and K_Berger equivariance on every apparatus row",
+      "status": "OPEN"
+    },
+    {
+      "id": "arity_three",
+      "order": 5,
+      "requirement": "arity-three L_infinity identity, cyclicity, K_Berger equivariance, and explicit higher-remainder boundary",
+      "status": "OPEN"
+    },
+    {
+      "id": "observer_morphism",
+      "order": 6,
+      "requirement": "observer evaluation intertwines imported q1,q2,q3 on the declared record domain",
+      "status": "OPEN"
+    },
+    {
+      "id": "deformed_response",
+      "order": 7,
+      "requirement": "construct M_ab(epsilon_R,kappa), replay causal acquisition, and only then apply the determinant-unit rank-two lemma",
+      "status": "OPEN"
+    }
+  ],
+  "physical_backreaction_synthesis": {
+    "actual_combined_source_primitive_certified": true,
+    "detectors": [
+      {
+        "hopf_phase": "sqrt(10)/12",
+        "id": "D0",
+        "physical_time": "1/4"
+      },
+      {
+        "hopf_phase": "sqrt(10)/6",
+        "id": "D1",
+        "physical_time": "1/2"
+      }
+    ],
+    "negative_frequency_coefficients": [
+      "exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2",
+      "exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2",
+      "exp(sqrt(58)*I/12)*sin(sqrt(10)/6)/2 + exp(sqrt(58)*I/6)*sin(sqrt(10)/3)/2"
+    ],
+    "phase_basis": [
+      "cos(z)^2",
+      "sin(z)^2",
+      "cos(z)*sin(z)"
+    ],
+    "positive_frequency_coefficients": [
+      "exp(-sqrt(58)*I/6)*cos(sqrt(10)/6)**2 + exp(-sqrt(58)*I/12)*cos(sqrt(10)/12)**2",
+      "exp(-sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + exp(-sqrt(58)*I/12)*sin(sqrt(10)/12)**2",
+      "exp(-sqrt(58)*I/6)*sin(sqrt(10)/3)/2 + exp(-sqrt(58)*I/12)*sin(sqrt(10)/6)/2"
+    ],
+    "positive_frequency_residual_nonzero_count": 0,
+    "primitive_reference": {
+      "negative_block_rule": "complex_conjugate_of_positive",
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY.json",
+      "positive_block_columns": [
+        0,
+        1,
+        2
+      ],
+      "zero_block_columns": [
+        0,
+        1,
+        2
+      ]
+    },
+    "real_background_formula": "Phi2(t,x)=Phi2_0(x)+2*Re(exp(i*sqrt(58)*t/3)*Phi2_plus(x))",
+    "zero_frequency_coefficients": [
+      "cos(sqrt(10)/6)**2 + cos(sqrt(10)/12)**2",
+      "sin(sqrt(10)/12)**2 + sin(sqrt(10)/6)**2",
+      "sin(sqrt(10)/6)/2 + sin(sqrt(10)/3)/2"
+    ],
+    "zero_frequency_residual_nonzero_count": 0
+  },
+  "profile_operator_contract": {
+    "detector_block_locality": "B_a depends only on the three rods R_aI assigned to detector a",
+    "maxwell_compatibility_required": [
+      "B_a d=0",
+      "delta B_a*=0"
+    ],
+    "operation_assignment": [
+      "kappa B^(0) contributes q1",
+      "kappa B^(1) contributes q2",
+      "kappa B^(2) contributes q3"
+    ],
+    "operator": "B_a A=chi_a(Theta,R_a) <dA,dTheta wedge dR_aI(a)>_gHat with normalized transverse detector density included in chi_a",
+    "q4_and_higher_status": "OPEN_FROM_THE_CUBIC_AND_HIGHER_PROFILE_REMAINDER",
+    "taylor_scope": "EXACT_TWO_JET_THROUGH_Q3_WITH_HIGHER_REMAINDER_OPEN",
+    "two_jet_formula": "B_a[barPhi+deltaPhi]=B_a^(0)+B_a^(1)[deltaPhi]+1/2 B_a^(2)[deltaPhi,deltaPhi]+O(deltaPhi^3), deltaPhi=(deltaTheta,deltaR_a,deltagHat)"
+  },
+  "provenance": {
+    "declared_input_sha256": "1b78f3953effedeb923f7dfafcd953d959e54ffbcca68e19decc920408e1516f",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_84_row_apparatus_handoff.py",
+        "role": "producer",
+        "sha256": "85fbcb1781753e245b9295fc23924cfe5db66cec319fe24ce9e2195a5f07f0cf"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_84_row_apparatus_handoff.py",
+        "role": "independent_verifier",
+        "sha256": "089d5c3a000bc0f7437da34e444157b07be57ea580bd40a8077aab836b824236"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_84_row_apparatus_handoff.py",
+        "role": "tests",
+        "sha256": "6169cc7faec9fa02097eacd767f20a446f008f103b4f3a674755a645c60d5fd3"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-84-row-observer-apparatus-handoff.md",
+        "role": "report",
+        "sha256": "b494183b0194eb9f07b918164d016ada5fdad028df5aaf1354e2139ab43e7ee9"
+      },
+      {
+        "path": "closed_universe_observers/fixtures/berger_84_row_apparatus_handoff_input.json",
+        "role": "declared_input",
+        "sha256": "1b78f3953effedeb923f7dfafcd953d959e54ffbcca68e19decc920408e1516f"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-84-row-apparatus-handoff-input-v1.schema.json",
+        "role": "input_schema",
+        "sha256": "da9b643e36443cfea8161116c78726df952ed2c3fade1a47809164070bd83112"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-84-row-apparatus-handoff-v1.schema.json",
+        "role": "certificate_schema",
+        "sha256": "5e997c45f445e1e0f44bc066add93942b4748c9f0d4471d3d8398f032e24fa0a"
+      }
+    ]
+  },
+  "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+  "schema": "closed-universe-berger-84-row-apparatus-handoff-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "source_boundary": {
+    "current_rows_added": 0,
+    "emitter_recoil_included": false,
+    "receiver_rod_and_memory_backreaction_targeted": true,
+    "role": "EXTERNAL_Q_CLOSED_CONSERVED_SOURCE",
+    "rule": "do not describe the 84-row gate as full apparatus recoil; the two J_b remain external until a separate dynamical-emitter extension is supplied",
+    "spatially_local_emitter_worldtubes_certified": false
+  },
+  "supersession": {
+    "forward_authority": true,
+    "historical_results_preserved": [
+      "BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE",
+      "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE"
+    ],
+    "rule": "all new apparatus construction must import this 84-row handoff; the historical gates remain valid only for the obstructions and conditional lemmas they actually certified",
+    "superseded_forward_assumptions": [
+      "three shared rod fields",
+      "78-row proposed carrier",
+      "global compact rod source unavailable",
+      "compact rod Taub disposition input-blocked"
+    ]
+  }
+}

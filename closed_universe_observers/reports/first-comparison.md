@@ -256,8 +256,12 @@ record vectors.  The currents occupy the full compact Berger `S3`; this is not
 yet a spatially localized emitter-worldtube theorem.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
-and Maxwell gauge invariance pass for the localized probe functionals.
-The probe rods are not part of the imported fixed-coupling phase space.
+and Maxwell gauge invariance pass for the localized probe functionals.  Six
+global detector-indexed rods and their complete stress are now explicit, and
+exact retained-mode primitives compensate that stress through
+`epsilon_R^2`.  The authoritative forward handoff fixes the prospective
+84-row carrier, bulk memories, detector locality, profile two-jet, and actual
+two-detector `Phi2`; the 84-row differential itself is not yet constructed.
 Raw \(D\) is null on the declared tangent sector and the averaged observable is
 relationally \(D\)-invariant, but raw \(D\) changes the clock field.
 \(K_{\rm Berger}=D-\omega R\) is the background-preserving nonlinear generator;
@@ -273,7 +277,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | localized persistent memories with rank-two response in the homogeneous source sector; quotient descent open | exact positive-diagonal retarded transfer; spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with prospective 84-row apparatus | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, and exact stress compensation through `epsilon_R^2`; 84-row quotient descent open | exact positive-diagonal retarded transfer; spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -286,26 +290,26 @@ pins the clock, redshift, Maxwell causal, retarded-signal, fixed-coupling
 raw-\(D\), and nonlinear \(K_{\rm Berger}\) certificates by path, result
 identifier, SHA-256 hash, and declared claim boundary.
 
-The primary missing objects are a rank-two transfer from two spatially
-localized emitter worldtubes, full localized support-to-window no-wrap
-witnesses, apparatus recoil, rod and gravity backreaction, observer-map compatibility
-with raw \(D\), \(K_{\rm Berger}\), mixed \(q_3\), and higher brackets, a quantum
+The primary missing objects are the shifted-background 84-row unary, pairing,
+and Green complex, a rank-two transfer from two spatially localized emitter
+worldtubes, emitter recoil and higher-order receiver backreaction,
+observer-map compatibility with raw \(D\), \(K_{\rm Berger}\), apparatus
+\(q_2,q_3\), and higher brackets, a quantum
 BRST state space, a positive observer state with induced inner product, and a
 QME-restored Lorentzian observer theory.
 
 The first exact defect is consequently not “internal observers are
 impossible.”  It is: **the external and internal constructions currently live
-on different carriers, and the internal side still lacks a quotient-descended,
-backreacting localized source-rod-memory sector needed to type a common functor.**
+on different carriers, and the internal side still lacks a quotient-descended
+84-row source-rod-memory complex needed to type a common functor.**
 
 ## Verification receipt
 
-The current affected chain passed Tier 0 compilation, JSON parsing, and scoped
-diff checks in 0.59 seconds.  Tier 1 passed three freshness checks, three
-independent replays, the import/claim-ledger verifier, six transfer mutations,
-and 16 scoped tests in 4.72 seconds.  Tier 2 was not run because no imported
-operator changed and the full affected observer chain was replayed.  Tier 3
-was not run because no freeze, paper-theorem promotion, shared-core change, or
-release was requested.  Exact commands, hashes, lifecycle flags, and skip
-criteria are stored in
-`closed_universe_observers/receipts/SMEARED_RETARDED_TRANSFER_TIER_RECEIPT.json`.
+The current affected chain passed exact phase-basis freshness, the physical
+two-detector `Phi2` synthesis, independent 84-row carrier/pairing replay, the
+comparison-ledger consumer, strict schemas, seven handoff mutations, and all
+38 observer tests.  Tier 2 was not run because the imported 64-row operators
+are unchanged and content-addressed; Tier 3 was not run because no 84-row
+differential, freeze, theorem promotion, or release was produced.  Exact
+commands, elapsed times, hashes, flags, and skip criteria are stored in
+`closed_universe_observers/receipts/APPARATUS_84_HANDOFF_TIER_RECEIPT.json`.

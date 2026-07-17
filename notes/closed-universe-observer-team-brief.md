@@ -64,9 +64,13 @@ localized emitter currents.  The global rods correct the prospective
 apparatus carrier from 78 to 84 rows and close the missing-global-source input
 to the compact solvability gate.  Exact retained-mode primitives now show
 that the complete global rod stress has zero compact Taub projection and
-admits gravitational compensation through order \(\epsilon_R^2\).  An
-all-orders backreacted branch, apparatus recoil, the 84-row interacting/causal
-complex, and a quantum observer state remain open.
+admits gravitational compensation through order \(\epsilon_R^2\).  The
+authoritative 84-row forward handoff fixes the complete row order and pairing,
+bulk clock-transported memory category, detector-channel locality, independent
+rod/readout gradings, exact profile two-jet through \(q_3\), external-emitter
+boundary, and physical two-detector \(\Phi_2\) synthesis.  An all-orders
+backreacted branch, emitter recoil, the 84-row interacting/causal complex, and
+a quantum observer state remain open.
 
 ### The adjacent closed-universe programme
 

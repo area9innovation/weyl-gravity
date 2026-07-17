@@ -1,0 +1,25 @@
+{
+  "schema": "closed-universe-berger-84-row-apparatus-handoff-input-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "base_rows": 64,
+  "detector_indexed_rods": 6,
+  "memory_realization": "BULK_CLOCK_TRANSPORTED_SCALARS",
+  "memory_pairing_measure": "dvol_gHat",
+  "rod_action_weight": "epsilon_R^2",
+  "readout_coupling_weight": "kappa",
+  "profile_scope": "EXACT_TWO_JET_THROUGH_Q3_WITH_HIGHER_REMAINDER_OPEN",
+  "source_role": "EXTERNAL_Q_CLOSED_CONSERVED_SOURCE",
+  "detector_channel_dependencies": {
+    "D0": ["R0_1", "R0_2", "R0_3"],
+    "D1": ["R1_1", "R1_2", "R1_3"]
+  },
+  "mutations": [
+    {"name": "reuse_shared_rods", "patch": {"detector_indexed_rods": 3}, "expected_failed_requirement": "carrier_is_84_rows"},
+    {"name": "worldline_memory_category", "patch": {"memory_realization": "ONE_DIMENSIONAL_WORLDLINE_VARIABLES"}, "expected_failed_requirement": "bulk_memory_category_fixed"},
+    {"name": "drop_memory_measure", "patch": {"memory_pairing_measure": "UNDECLARED"}, "expected_failed_requirement": "memory_pairing_measure_fixed"},
+    {"name": "unbounded_profile_at_q3_gate", "patch": {"profile_scope": "GENERIC_SMOOTH_UNBOUNDED"}, "expected_failed_requirement": "profile_two_jet_fixed"},
+    {"name": "collapse_expansion_weights", "patch": {"readout_coupling_weight": "epsilon_R^2"}, "expected_failed_requirement": "multigrading_separated"},
+    {"name": "promote_emitter_without_rows", "patch": {"source_role": "DYNAMICAL_EMITTER"}, "expected_failed_requirement": "external_source_boundary_fixed"},
+    {"name": "cross_detector_rod_leakage", "patch": {"detector_channel_dependencies": {"D0": ["R0_1", "R1_2"], "D1": ["R1_1", "R1_2", "R1_3"]}}, "expected_failed_requirement": "detector_channels_block_local"}
+  ]
+}

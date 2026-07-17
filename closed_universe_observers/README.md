@@ -22,6 +22,8 @@ python3 -m closed_universe_observers.generate_berger_global_detector_rods --chec
 python3 -m closed_universe_observers.verify_berger_global_detector_rods
 python3 -m closed_universe_observers.generate_berger_global_rod_q1_solvability --check
 python3 -m closed_universe_observers.verify_berger_global_rod_q1_solvability
+python3 -m closed_universe_observers.generate_berger_84_row_apparatus_handoff --check
+python3 -m closed_universe_observers.verify_berger_84_row_apparatus_handoff
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -52,6 +54,12 @@ source sector then evaluates exactly against the retained Berger metric
 Hessian.  Sparse primitives prove `H_retained Phi2=-q0^rod` on every
 `j=0,1` and temporal `0,+-sqrt(58)/3` block, so there is no compact Taub
 obstruction through order `epsilon_R^2`.  An all-orders backreacted branch
-and the 84-row causal interacting complex remain open.  The comparison ledger replays its
+and the 84-row causal interacting complex remain open.  The authoritative
+forward handoff now freezes the ordered 84-row carrier and pairing, bulk
+clock-transported memories, detector-block-local composite polarizations,
+independent `epsilon_R`/`kappa` grading, the exact profile two-jet through
+`q3`, external-source boundary, and the physical real two-detector `Phi2`.
+The historical 78-row gate remains scoped history and is not a forward
+construction input.  The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

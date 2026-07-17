@@ -1,0 +1,109 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "APPARATUS_84_HANDOFF_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "supersedes_scientific_claims_in": "GLOBAL_ROD_BACKREACTION_TIER_RECEIPT",
+  "corrections": [
+    "the third exact rod-source phase column is normalized to the coefficient of cos(z)*sin(z), removing a hidden factor of two from physical detector synthesis without changing ranks or solvability",
+    "six detector-indexed rods and four bulk memory fields replace the historical three-shared-rod 78-row forward assumption",
+    "the historical 78-row certificates remain valid only within their declared obstruction and conditional-interface boundaries",
+    "the physical two-detector Phi2 now includes both exact Hopf phases and both retarded clock-time phase factors",
+    "the handoff pins the certified base-64 K_Berger Cartan theorem through arity three and the retained observer typing obstruction requiring the 84-row apparatus",
+    "generic smooth detector profiles are scoped to their exact two-jet through q3; q4 and higher remain open",
+    "the emitter currents remain external q-closed sources, so full apparatus recoil is not claimed"
+  ],
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_global_rod_q1_solvability.py closed_universe_observers/generate_berger_84_row_apparatus_handoff.py closed_universe_observers/verify_berger_84_row_apparatus_handoff.py closed_universe_observers/tests/test_berger_84_row_apparatus_handoff.py && python3 -m json.tool on the handoff input, schemas, certificate, and receipt && git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/d-quotient-nonlinear-team-brief.md",
+      "elapsed_seconds": "0.20",
+      "status": "PASS",
+      "scope": "Python syntax, strict structured data, reports, briefs, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_global_rod_q1_solvability --check",
+      "elapsed_seconds": "58.43",
+      "status": "PASS",
+      "scope": "normalized exact phase basis, algebraic-field ranks, Noether closure, and sparse primitive freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_apparatus_handoff --check",
+      "elapsed_seconds": "3.50",
+      "status": "PASS",
+      "scope": "84-row carrier, memory/profile categories, physical Phi2 synthesis, mutations, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_global_rod_q1_solvability",
+      "elapsed_seconds": "3.41",
+      "status": "PASS",
+      "scope": "independent sparse primitive replay with normalized cross-phase column"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_apparatus_handoff",
+      "elapsed_seconds": "0.80",
+      "status": "PASS",
+      "scope": "dependency hashes, exact row order, pairing rank/signs, physical phase coefficients, mutations, and fail-closed flags"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.14",
+      "status": "PASS",
+      "scope": "historical snapshot replay and current 84-row forward bridge imports"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "126.10",
+      "status": "FAIL",
+      "scope": "32 tests passed; six verifier tests completed their assertions but failed while printing PASS because the shared /tmp user quota was exhausted"
+    },
+    {
+      "command": "TMPDIR=/var/tmp/codex-observer-84-test python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "98.84",
+      "status": "PASS",
+      "scope": "all 38 closed-universe observer tests"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-global-rod-q1-solvability-v1.schema.json -d closed_universe_observers/certificates/BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-84-row-apparatus-handoff-input-v1.schema.json -d closed_universe_observers/fixtures/berger_84_row_apparatus_handoff_input.json && npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-84-row-apparatus-handoff-v1.schema.json -d closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "elapsed_seconds": "4.78",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 2,
+      "status": "NOT_RUN",
+      "criterion": "All imported 64-row operators are unchanged and content-addressed. The complete affected observer chain, exact source-sector primitive replay, handoff synthesis, and ledger consumer were run."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No classical freeze, 84-row differential, all-orders branch theorem, Lorentzian certification, QME result, release, or explicit full-suite request occurred."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY.json", "sha256": "36153ad6c0cdcdcc9ab18c3feb0ea22915e4ec7215889e3d3de9687c6c7971f9"},
+    {"path": "closed_universe_observers/fixtures/berger_84_row_apparatus_handoff_input.json", "sha256": "1b78f3953effedeb923f7dfafcd953d959e54ffbcca68e19decc920408e1516f"},
+    {"path": "closed_universe_observers/schema/berger-84-row-apparatus-handoff-input-v1.schema.json", "sha256": "da9b643e36443cfea8161116c78726df952ed2c3fade1a47809164070bd83112"},
+    {"path": "closed_universe_observers/schema/berger-84-row-apparatus-handoff-v1.schema.json", "sha256": "5e997c45f445e1e0f44bc066add93942b4748c9f0d4471d3d8398f032e24fa0a"},
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json", "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "5eb550ee1fa1e99b31d97a632df05fb147e8f285234f8d020c6c6f67ef5e8ad9"}
+  ],
+  "claim_flags": {
+    "AUTHORITATIVE_84_ROW_FORWARD_INTERFACE": true,
+    "SIX_DETECTOR_INDEXED_RODS_REQUIRED": true,
+    "BULK_MEMORY_CATEGORY_FIXED": true,
+    "PROFILE_TWO_JET_THROUGH_Q3_FIXED": true,
+    "PHYSICAL_TWO_DETECTOR_PHI2_SYNTHESIZED": true,
+    "EXTERNAL_SOURCE_BOUNDARY_FIXED": true,
+    "84_ROW_Q1_CERTIFIED": false,
+    "84_ROW_RETARDED_GREEN_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "DEFORMED_RANK_TWO_RESPONSE_CERTIFIED": false,
+    "FULL_APPARATUS_RECOIL_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

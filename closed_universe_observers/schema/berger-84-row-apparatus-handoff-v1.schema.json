@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-84-row-apparatus-handoff-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "supersession", "carrier", "detector_channels", "bulk_memory_contract", "profile_operator_contract", "multigrading", "physical_backreaction_synthesis", "source_boundary", "ordered_acceptance_gates", "mutation_results", "flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-84-row-apparatus-handoff-v1"},
+    "result_id": {"const": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF"},
+    "setting_id": {"const": "compact_positive_berger_clock_observer_apparatus_extension"},
+    "claim_status": {"const": "AUTHORITATIVE_FORWARD_INTERFACE_FROZEN_CONSTRUCTION_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "additionalProperties": false, "required": ["global_rods", "rod_q1_solvability", "legacy_observer_interface", "base_64_carrier", "base_64_causal", "base_64_q3", "base_64_k_cartan", "retained_observer_k_gate"], "properties": {
+      "global_rods": {"$ref": "#/$defs/dependency"}, "rod_q1_solvability": {"$ref": "#/$defs/dependency"}, "legacy_observer_interface": {"$ref": "#/$defs/dependency"}, "base_64_carrier": {"$ref": "#/$defs/dependency"}, "base_64_causal": {"$ref": "#/$defs/dependency"}, "base_64_q3": {"$ref": "#/$defs/dependency"}, "base_64_k_cartan": {"$ref": "#/$defs/dependency"}, "retained_observer_k_gate": {"$ref": "#/$defs/dependency"}
+    }},
+    "supersession": {"type": "object", "additionalProperties": false, "required": ["forward_authority", "historical_results_preserved", "superseded_forward_assumptions", "rule"], "properties": {
+      "forward_authority": {"const": true}, "historical_results_preserved": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}}, "superseded_forward_assumptions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}}, "rule": {"$ref": "#/$defs/text"}
+    }},
+    "carrier": {"type": "object", "additionalProperties": false, "required": ["base_rows", "new_rows", "total_rows", "degree_ranks_minus1_0_1_2", "component_rows", "new_pairing_entries", "pairing_measure", "pairing_rule", "internal_apparatus_gauge_rows_added"], "properties": {
+      "base_rows": {"const": 64}, "new_rows": {"const": 20}, "total_rows": {"const": 84}, "degree_ranks_minus1_0_1_2": {"const": [6, 36, 36, 6]},
+      "component_rows": {"type": "array", "minItems": 84, "maxItems": 84, "items": {"$ref": "#/$defs/row"}}, "new_pairing_entries": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"$ref": "#/$defs/pairing"}},
+      "pairing_measure": {"const": "dvol_gHat"}, "pairing_rule": {"$ref": "#/$defs/text"}, "internal_apparatus_gauge_rows_added": {"const": 0}
+    }},
+    "detector_channels": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/detector"}},
+    "bulk_memory_contract": {"type": "object", "additionalProperties": false, "required": ["category", "fields", "spacetime_domain", "transport", "formal_adjoint", "pairing_measure", "action", "retarded_boundary_condition", "persistence", "worldline_or_defect_interpretation_excluded"], "properties": {
+      "category": {"const": "BULK_CLOCK_TRANSPORTED_SCALARS"}, "fields": {"const": ["m0", "m1", "p0", "p1"]}, "spacetime_domain": {"$ref": "#/$defs/text"}, "transport": {"$ref": "#/$defs/text"}, "formal_adjoint": {"$ref": "#/$defs/text"}, "pairing_measure": {"const": "dvol_gHat"}, "action": {"$ref": "#/$defs/text"}, "retarded_boundary_condition": {"$ref": "#/$defs/text"}, "persistence": {"$ref": "#/$defs/text"}, "worldline_or_defect_interpretation_excluded": {"const": true}
+    }},
+    "profile_operator_contract": {"type": "object", "additionalProperties": false, "required": ["operator", "maxwell_compatibility_required", "detector_block_locality", "taylor_scope", "two_jet_formula", "operation_assignment", "q4_and_higher_status"], "properties": {
+      "operator": {"$ref": "#/$defs/text"}, "maxwell_compatibility_required": {"const": ["B_a d=0", "delta B_a*=0"]}, "detector_block_locality": {"$ref": "#/$defs/text"}, "taylor_scope": {"const": "EXACT_TWO_JET_THROUGH_Q3_WITH_HIGHER_REMAINDER_OPEN"}, "two_jet_formula": {"$ref": "#/$defs/text"}, "operation_assignment": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}}, "q4_and_higher_status": {"const": "OPEN_FROM_THE_CUBIC_AND_HIGHER_PROFILE_REMAINDER"}
+    }},
+    "multigrading": {"type": "object", "additionalProperties": false, "required": ["rod_action_weight", "readout_coupling_weight", "weights_independent", "background", "metric_euler_order_epsilon_R2", "rod_euler_bookkeeping", "readout_arity", "mixed_orders_beyond_declared_gate"], "properties": {
+      "rod_action_weight": {"const": "epsilon_R^2"}, "readout_coupling_weight": {"const": "kappa"}, "weights_independent": {"const": true}, "background": {"$ref": "#/$defs/text"}, "metric_euler_order_epsilon_R2": {"$ref": "#/$defs/text"}, "rod_euler_bookkeeping": {"$ref": "#/$defs/text"}, "readout_arity": {"$ref": "#/$defs/text"}, "mixed_orders_beyond_declared_gate": {"$ref": "#/$defs/text"}
+    }},
+    "physical_backreaction_synthesis": {"type": "object", "additionalProperties": false, "required": ["phase_basis", "detectors", "zero_frequency_coefficients", "positive_frequency_coefficients", "negative_frequency_coefficients", "primitive_reference", "real_background_formula", "zero_frequency_residual_nonzero_count", "positive_frequency_residual_nonzero_count", "actual_combined_source_primitive_certified"], "properties": {
+      "phase_basis": {"const": ["cos(z)^2", "sin(z)^2", "cos(z)*sin(z)"]}, "detectors": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/physicalDetector"}},
+      "zero_frequency_coefficients": {"$ref": "#/$defs/triple"}, "positive_frequency_coefficients": {"$ref": "#/$defs/triple"}, "negative_frequency_coefficients": {"$ref": "#/$defs/triple"}, "primitive_reference": {"$ref": "#/$defs/primitiveReference"}, "real_background_formula": {"$ref": "#/$defs/text"},
+      "zero_frequency_residual_nonzero_count": {"const": 0}, "positive_frequency_residual_nonzero_count": {"const": 0}, "actual_combined_source_primitive_certified": {"const": true}
+    }},
+    "source_boundary": {"type": "object", "additionalProperties": false, "required": ["role", "current_rows_added", "emitter_recoil_included", "receiver_rod_and_memory_backreaction_targeted", "spatially_local_emitter_worldtubes_certified", "rule"], "properties": {
+      "role": {"const": "EXTERNAL_Q_CLOSED_CONSERVED_SOURCE"}, "current_rows_added": {"const": 0}, "emitter_recoil_included": {"const": false}, "receiver_rod_and_memory_backreaction_targeted": {"const": true}, "spatially_local_emitter_worldtubes_certified": {"const": false}, "rule": {"$ref": "#/$defs/text"}
+    }},
+    "ordered_acceptance_gates": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/gate"}},
+    "mutation_results": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/mutationResult"}},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["AUTHORITATIVE_84_ROW_FORWARD_INTERFACE", "SIX_DETECTOR_INDEXED_RODS_REQUIRED", "BULK_MEMORY_CATEGORY_FIXED", "PROFILE_TWO_JET_THROUGH_Q3_FIXED", "PHYSICAL_TWO_DETECTOR_PHI2_SYNTHESIZED", "EXTERNAL_SOURCE_BOUNDARY_FIXED", "84_ROW_Q1_CERTIFIED", "84_ROW_RETARDED_GREEN_CERTIFIED", "84_ROW_Q2_Q3_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "DEFORMED_RANK_TWO_RESPONSE_CERTIFIED", "FULL_APPARATUS_RECOIL_CERTIFIED", "QUANTUM_CLAIM"], "properties": {
+      "AUTHORITATIVE_84_ROW_FORWARD_INTERFACE": {"const": true}, "SIX_DETECTOR_INDEXED_RODS_REQUIRED": {"const": true}, "BULK_MEMORY_CATEGORY_FIXED": {"const": true}, "PROFILE_TWO_JET_THROUGH_Q3_FIXED": {"const": true}, "PHYSICAL_TWO_DETECTOR_PHI2_SYNTHESIZED": {"const": true}, "EXTERNAL_SOURCE_BOUNDARY_FIXED": {"const": true},
+      "84_ROW_Q1_CERTIFIED": {"const": false}, "84_ROW_RETARDED_GREEN_CERTIFIED": {"const": false}, "84_ROW_Q2_Q3_CERTIFIED": {"const": false}, "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": {"const": false}, "DEFORMED_RANK_TWO_RESPONSE_CERTIFIED": {"const": false}, "FULL_APPARATUS_RECOIL_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+    }},
+    "next_gate": {"const": "CONSTRUCT_SHIFTED_BACKGROUND_AND_84_ROW_UNARY_PAIRING_GREEN_COMPLEX"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["declared_input_sha256", "source_manifest"], "properties": {"declared_input_sha256": {"$ref": "#/$defs/sha256"}, "source_manifest": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/source"}}}},
+    "claim_boundary": {"$ref": "#/$defs/text"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "triple": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "result_id"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}, "result_id": {"$ref": "#/$defs/text"}}},
+    "source": {"type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"], "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "row": {"type": "object", "additionalProperties": false, "required": ["index", "row_id", "degree", "sector"], "properties": {"index": {"type": "integer", "minimum": 0, "maximum": 83}, "row_id": {"$ref": "#/$defs/text"}, "degree": {"type": "integer", "minimum": -1, "maximum": 2}, "sector": {"$ref": "#/$defs/text"}}},
+    "pairing": {"type": "object", "additionalProperties": false, "required": ["left", "right", "coefficient"], "properties": {"left": {"type": "integer", "minimum": 64, "maximum": 83}, "right": {"type": "integer", "minimum": 64, "maximum": 83}, "coefficient": {"enum": ["1", "-1"]}}},
+    "detector": {"type": "object", "additionalProperties": false, "required": ["detector_id", "rod_rows", "polarization", "memory_rows", "cross_channel_rod_dependence"], "properties": {"detector_id": {"enum": ["D0", "D1"]}, "rod_rows": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}, "polarization": {"enum": ["dTheta_wedge_dR0_1", "dTheta_wedge_dR1_2"]}, "memory_rows": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}}, "cross_channel_rod_dependence": {"const": false}}},
+    "physicalDetector": {"type": "object", "additionalProperties": false, "required": ["id", "hopf_phase", "physical_time"], "properties": {"id": {"enum": ["D0", "D1"]}, "hopf_phase": {"type": "string"}, "physical_time": {"type": "string"}}},
+    "primitiveReference": {"type": "object", "additionalProperties": false, "required": ["path", "zero_block_columns", "positive_block_columns", "negative_block_rule"], "properties": {"path": {"$ref": "#/$defs/text"}, "zero_block_columns": {"const": [0, 1, 2]}, "positive_block_columns": {"const": [0, 1, 2]}, "negative_block_rule": {"const": "complex_conjugate_of_positive"}}},
+    "gate": {"type": "object", "additionalProperties": false, "required": ["order", "id", "requirement", "status"], "properties": {"order": {"type": "integer", "minimum": 1, "maximum": 7}, "id": {"$ref": "#/$defs/text"}, "requirement": {"$ref": "#/$defs/text"}, "status": {"const": "OPEN"}}},
+    "mutationResult": {"type": "object", "additionalProperties": false, "required": ["name", "expected_failed_requirement", "observed_requirement_value", "expected_failure_passed"], "properties": {"name": {"$ref": "#/$defs/text"}, "expected_failed_requirement": {"$ref": "#/$defs/text"}, "observed_requirement_value": {"const": false}, "expected_failure_passed": {"const": true}}}
+  }
+}
