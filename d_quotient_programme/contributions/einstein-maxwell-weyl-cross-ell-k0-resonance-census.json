@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; distinct generic input harmonics 2<=ell_1<ell_2<=96 at k=0, after local gauge reduction and before stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "all 40,185 distinct-input-ell primary-frequency collision checks are nonzero",
+    "all 723,330 squared target-shell resonance checks are nonzero",
+    "all three input primaries, all three target primaries, both temporal sum/difference channels, and an angular superset covering both input parity choices are included",
+    "uniform branch bounds reduce the complete angular window to three sum and three difference output offsets",
+    "the closest numerical channel, (ell_1,ell_2;L)=(5,34;30), has an explicit exact nonzero radical witness"
+  ],
+  "evidence": {
+    "commit": "23214c98ab52f79209d22aee9cd17c06ed41a8f4",
+    "path": "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_resonance_census.json",
+    "sha256": "cf6d90d14bf08ea6afd4afbbde92bf79ffd8fe6e4d7257f947c525ae494d0e3e"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "prove unbounded nonresonance for the six boundary-offset families, then compute the cross-ell mixed source and adjoint-cokernel projections",
+  "not_established": [
+    "unbounded cross-ell nonresonance",
+    "second-order extension of the cross-ell common moment-map-zero cone",
+    "opposite-momentum relative-phase source solvability",
+    "exceptional/global input cones, all-orders integration, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_cross_ell_k0_resonance_census",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_EXACT_NO_CROSS_ELL_K0_RESONANCE_THROUGH_ELL_96",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_cross_ell_k0_resonance_census --verify bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_resonance_census.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_cross_ell_k0_resonance_census.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_cross_ell_k0_resonance_census"
+  ]
+}
