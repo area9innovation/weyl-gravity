@@ -177,14 +177,22 @@ def candidate() -> dict[str, object]:
 
     _, basis = _adjoint_basis()
     k_actions = _adjoint_actions(basis[11:15], basis)
-    # Einstein Nariai has Schouten P_ab=(1/6)g_ab, hence P_a^b=(1/6)delta_a^b.
-    rho0 = sp.Matrix.vstack(*(action / 6 for action in k_actions))
+    # Einstein Nariai has P_ab=(1/6)g_ab.  The tractor-connection matrix in
+    # this implementation consumes the two-lowered orthonormal components,
+    # hence the temporal coefficient is -1/6 rather than +1/6.
+    schouten_components = tuple(
+        NariaiBackground.metric[axis, axis] / 6 for axis in range(4)
+    )
+    rho_actions = tuple(
+        schouten_components[axis] * k_actions[axis] for axis in range(4)
+    )
+    rho0 = sp.Matrix.vstack(*rho_actions)
     rho1_rows = []
     for left in range(4):
         for right in range(left + 1, 4):
             block = sp.zeros(15, 60)
-            block[:, 15 * right : 15 * (right + 1)] = k_actions[left] / 6
-            block[:, 15 * left : 15 * (left + 1)] = -k_actions[right] / 6
+            block[:, 15 * right : 15 * (right + 1)] = rho_actions[left]
+            block[:, 15 * left : 15 * (left + 1)] = -rho_actions[right]
             rho1_rows.append(block)
     rho1 = sp.Matrix.vstack(*rho1_rows)
     derivative0, derivative1 = _derivative_rows()
@@ -318,6 +326,12 @@ def build() -> dict[str, object]:
         "result_id": "NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1",
         "result_state": "ZEROTH_ORDER_STRICT_CHAIN_CORRECTION_OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
+        "repair": {
+            "superseded_certificate_sha256": "c4738c825fd1814962d4970e62341f0399fafb08331fe9b57bc25958b1fadbcc",
+            "defect": "the superseded producer used +1/6 instead of -1/6 in the temporal orthonormal Schouten slot",
+            "corrected_convention": "P_ab=(1/6)g_ab gives (-1/6,+1/6,+1/6,+1/6)",
+            "recomputed_from_exact_sources": True,
+        },
         "dependency_refs": {
             "curved_parent": {
                 "artifact_id": parent["result_id"],
@@ -343,6 +357,7 @@ def build() -> dict[str, object]:
         "conventions": {
             "background": "unit Nariai dS2 x S2 in an orthonormal normal frame",
             "schouten": "P_ab=(1/6)g_ab",
+            "schouten_orthonormal_components": ["-1/6", "1/6", "1/6", "1/6"],
             "form_slot_curvature": "covector action C_ab",
             "standard_tractor_middle_curvature": "dual vector action -C_ab^T",
             "fixed_first_bgg_operator": "the trace-free conformal-Killing operator K:H0(4)->H1(9)",
@@ -371,7 +386,11 @@ def build() -> dict[str, object]:
             "DeltaL1_nonzero_entries": sum(v != 0 for v in value["correction1"]),
             "cross_form_defect_count": len(value["cross_form_defects"]),
             "cross_form_defects": value["cross_form_defects"],
-            "normalized_witness": "3*(Y_from_form1-Y_from_form0)[K0,input0]",
+            "algebraic_residual_rank": value["algebraic_defect"].rank(),
+            "algebraic_residual_nonzero_entries": sum(
+                entry != 0 for entry in value["algebraic_defect"]
+            ),
+            "normalized_witness": "(3/2)*residual_chain_defect[(),4,1]",
             "normalized_witness_value": "1",
             "harmonic_projection_defect_ranks": [
                 value["projection0_defect"].rank(),
@@ -391,8 +410,8 @@ def build() -> dict[str, object]:
             ),
         },
         "obstruction": {
-            "reason": "the three transverse derivative coefficients uniquely determine each DeltaL1 row, but the four form slots demand mutually inconsistent DeltaL0 rows",
-            "smallest_exact_witness": "the K0/input0 correction inferred from form slot 1 differs from form slot 0 by 1/3",
+            "reason": "the derivative coefficients uniquely determine DeltaL1 and a common DeltaL0=0 across all form slots, after which a rank-four algebraic residual with twelve entries remains",
+            "smallest_exact_witness": "the residual chain coefficient at parent row 4 and H0 input 1 is 2/3",
             "conclusion": "zeroth-order corrections to L0 and L1 cannot strictify the first Nariai BGG square with K fixed",
             "not_a_full_curved_bgg_no_go": True,
         },
@@ -408,7 +427,7 @@ def build() -> dict[str, object]:
         },
         "next_gate": "C_G2_NARIAI_GENUINELY_DERIVATIVE_OR_HOMOTOPY_COHERENT_BGG_CORRECTION",
         "claim_boundary": (
-            "This exact screen uses the correct distinct covector form-slot and dual-vector standard-tractor curvature actions on unit Nariai. It proves that no pair of arbitrary zeroth-order bundle maps DeltaL0:H0->C0 and DeltaL1:H1->C1 can turn the certified PBW first BGG candidate into a strict chain square while the trace-free conformal-Killing operator K is fixed. The obstruction is the exact cross-form mismatch 1/3, normalized to one, after every transverse equation has uniquely fixed DeltaL1; harmonic normalization itself remains exact. This is not a no-go for genuinely derivative-dependent splitting corrections, a homotopy-coherent curved BGG transfer, compression of the Yang--Mills detour middle, an independently constructed Nariai Green homotopy, an open background class, or any quantum claim."
+            "This corrected exact screen uses the Nariai Schouten components (-1/6,+1/6,+1/6,+1/6) together with the distinct covector form-slot and dual-vector standard-tractor curvature actions. It proves that no pair of arbitrary zeroth-order bundle maps DeltaL0:H0->C0 and DeltaL1:H1->C1 can turn the certified PBW first BGG candidate into a strict chain square while the trace-free conformal-Killing operator K is fixed. All derivative equations are mutually consistent and uniquely fix DeltaL1 and DeltaL0=0; the obstruction is instead a rank-four algebraic residual with twelve entries and normalized witness one. Harmonic normalization remains exact. This is not a no-go for genuinely derivative-dependent splitting corrections, a homotopy-coherent curved BGG transfer, compression of the Yang--Mills detour middle, an independently constructed Nariai Green homotopy, an open background class, or any quantum claim."
         ),
         "provenance": {
             "source_manifest": sources,
@@ -426,10 +445,15 @@ def _report(value: dict[str, object]) -> str:
     checks = value["exact_checks"]
     return rf"""# Nariai first-BGG zeroth-order strictification obstruction
 
-On unit Nariai, the form indices carry the covector curvature action while the
-middle standard-tractor slot carries its dual vector action.  With that
-distinction enforced, the normal tractor exterior square is nonzero, as it
-must be on this non-conformally-flat Einstein background.
+This report supersedes certificate hash
+`c4738c825fd1814962d4970e62341f0399fafb08331fe9b57bc25958b1fadbcc`,
+whose producer assigned the wrong sign to the temporal Schouten component.
+
+On unit Nariai, the Schouten tensor has orthonormal components
+\((-1/6,+1/6,+1/6,+1/6)\).  The form indices carry the covector curvature
+action while the middle standard-tractor slot carries its dual vector action.
+With all three conventions enforced, the normal tractor exterior square is
+nonzero, as it must be on this non-conformally-flat Einstein background.
 
 We tested the complete zeroth-order correction ansatz
 
@@ -444,12 +468,15 @@ rank `{checks['transverse_rank_set'][0]}` and uniquely determine that row of
 \(\Delta L_1\).  The remaining axis then determines a candidate row of
 \(\Delta L_0\).
 
-The four form slots are incompatible.  There are exactly
-`{checks['cross_form_defect_count']}` cross-form defects, all equal to
-\(1/3\).  A normalized witness is
+The derivative equations are mutually compatible across all four form slots:
+they fix \(\Delta L_0=0\) and a rank-`{checks['DeltaL1_rank']}` correction
+\(\Delta L_1\).  But the remaining algebraic coefficient has rank
+`{checks['algebraic_residual_rank']}` and
+`{checks['algebraic_residual_nonzero_entries']}` nonzero entries.  A normalized
+witness is
 
 \[
-3\bigl(Y_{{\mathrm{{form}},1}}-Y_{{\mathrm{{form}},0}}\bigr)_{{K_0,0}}=1.
+\frac32\bigl(d^D(L_0+\Delta L_0)-(L_1+\Delta L_1)K\bigr)_{{4,1}}=1.
 \]
 
 Both harmonic projection defects remain rank zero, so the failure is not a
@@ -500,8 +527,10 @@ def main() -> int:
     value = build()
     if args.guards:
         checks = value["exact_checks"]
-        if checks["transverse_rank_set"] != [9] or checks["cross_form_defect_count"] != 12:
+        if checks["transverse_rank_set"] != [9] or checks["cross_form_defect_count"] != 0:
             raise AssertionError("zeroth-order obstruction rank guard failed")
+        if checks["algebraic_residual_rank"] != 4 or checks["algebraic_residual_nonzero_entries"] != 12:
+            raise AssertionError("algebraic residual guard failed")
         if checks["normalized_witness_value"] != "1":
             raise AssertionError("normalized witness guard failed")
         if checks["harmonic_projection_defect_ranks"] != [0, 0]:

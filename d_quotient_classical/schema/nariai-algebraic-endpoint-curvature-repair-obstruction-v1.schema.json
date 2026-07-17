@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-algebraic-endpoint-curvature-repair-obstruction-v1.schema.json",
+  "title": "Nariai algebraic endpoint-curvature repair obstruction",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "primary_source", "construction", "exact_data", "exact_checks", "obstruction", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-algebraic-endpoint-curvature-repair-obstruction-v1"},
+    "result_id": {"const": "NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1"},
+    "result_state": {"const": "UNIQUE_GAUGE_REPAIR_IS_NONCYCLIC"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["yang_mills_parent", "strictification_screen", "pointwise_screen", "kostant_matrices", "differential_screen_matrices"],
+      "properties": {
+        "yang_mills_parent": {"$ref": "#/$defs/dependency"},
+        "strictification_screen": {"$ref": "#/$defs/dependency"},
+        "pointwise_screen": {"$ref": "#/$defs/dependency"},
+        "kostant_matrices": {"$ref": "#/$defs/dependency"},
+        "differential_screen_matrices": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "primary_source": {
+      "type": "object",
+      "required": ["title", "authors", "arxiv", "url", "translation_criterion"],
+      "properties": {
+        "title": {"const": "Yang-Mills detour complexes and conformal geometry"},
+        "authors": {"type": "string"},
+        "arxiv": {"const": "math/0606401"},
+        "url": {"const": "https://arxiv.org/abs/math/0606401"},
+        "translation_criterion": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "construction": {
+      "type": "object",
+      "required": ["background", "schouten_orthonormal_components", "parent_middle", "naive_compression", "tested_repair", "required_equations"],
+      "properties": {
+        "background": {"const": "unit Nariai dS2 x S2"},
+        "schouten_orthonormal_components": {"const": ["-1/6", "1/6", "1/6", "1/6"]},
+        "parent_middle": {"const": "M^D=delta^D d^D-F dot"},
+        "naive_compression": {"const": "B0=L1^sharp M^D L1"},
+        "tested_repair": {"const": "B0+Q with arbitrary algebraic Q:H1->H1dual"},
+        "required_equations": {"const": ["(B0+Q)K=0", "JQ=Q^T J"]}
+      },
+      "additionalProperties": false
+    },
+    "exact_data": {
+      "type": "object",
+      "required": ["normal_tractor_square", "parent_curvature_action", "parent_yang_mills_middle", "first_bgg_operator", "naive_compressed_middle", "naive_gauge_defect", "unique_endpoint_correction", "endpoint_pairing", "endpoint_cyclic_defect", "repaired_gauge_defect"],
+      "properties": {
+        "normal_tractor_square": {"$ref": "#/$defs/table"},
+        "parent_curvature_action": {"$ref": "#/$defs/sparse"},
+        "parent_yang_mills_middle": {"$ref": "#/$defs/table"},
+        "first_bgg_operator": {"$ref": "#/$defs/table"},
+        "naive_compressed_middle": {"$ref": "#/$defs/table"},
+        "naive_gauge_defect": {"$ref": "#/$defs/table"},
+        "unique_endpoint_correction": {"$ref": "#/$defs/sparse"},
+        "endpoint_pairing": {"$ref": "#/$defs/sparse"},
+        "endpoint_cyclic_defect": {"$ref": "#/$defs/sparse"},
+        "repaired_gauge_defect": {"$ref": "#/$defs/table"}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["normal_tractor_square_rank", "normal_tractor_square_nonzero_entries", "parent_curvature_action_rank", "parent_curvature_action_nonzero_entries", "corrected_parent_left_defect_entries", "wrong_sign_parent_left_defect_entries", "compressed_orders", "compressed_nonzero_entries", "naive_gauge_defect_orders", "naive_gauge_defect_nonzero_entries", "translation_factor_defect_nonzero_entries", "K_symbol_stack_rank", "correction_parameter_counts", "unique_endpoint_correction_rank", "unique_endpoint_correction_nonzero_entries", "repaired_gauge_defect_nonzero_entries", "endpoint_cyclic_defect_rank", "endpoint_cyclic_defect_nonzero_entries", "normalized_cyclic_witness", "normalized_cyclic_witness_value"],
+      "properties": {
+        "normal_tractor_square_rank": {"const": 14},
+        "normal_tractor_square_nonzero_entries": {"const": 48},
+        "parent_curvature_action_rank": {"const": 54},
+        "parent_curvature_action_nonzero_entries": {"const": 96},
+        "corrected_parent_left_defect_entries": {"const": 0},
+        "wrong_sign_parent_left_defect_entries": {"const": 144},
+        "compressed_orders": {"const": [0, 2, 4]},
+        "compressed_nonzero_entries": {"const": 472},
+        "naive_gauge_defect_orders": {"const": [1]},
+        "naive_gauge_defect_nonzero_entries": {"const": 24},
+        "translation_factor_defect_nonzero_entries": {"const": 24},
+        "K_symbol_stack_rank": {"const": 9},
+        "correction_parameter_counts": {"const": [0, 0, 0, 0, 0, 0, 0, 0, 0]},
+        "unique_endpoint_correction_rank": {"const": 9},
+        "unique_endpoint_correction_nonzero_entries": {"const": 15},
+        "repaired_gauge_defect_nonzero_entries": {"const": 0},
+        "endpoint_cyclic_defect_rank": {"const": 2},
+        "endpoint_cyclic_defect_nonzero_entries": {"const": 6},
+        "normalized_cyclic_witness": {"const": "-(1/3)*(JQ-Q^T J)[1,4]"},
+        "normalized_cyclic_witness_value": {"const": "1"}
+      },
+      "additionalProperties": false
+    },
+    "obstruction": {
+      "type": "object",
+      "required": ["reason", "conclusion", "not_a_differential_or_mapping_cone_no_go"],
+      "properties": {
+        "reason": {"type": "string"},
+        "conclusion": {"const": "no algebraic endpoint curvature correction can simultaneously restore the Nariai gauge identity and preserve the certified cyclic pairing"},
+        "not_a_differential_or_mapping_cone_no_go": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1", "NARIAI_PARENT_YANG_MILLS_COMPONENT_IDENTITY", "NAIVE_COMPRESSED_GAUGE_IDENTITY", "UNIQUE_ALGEBRAIC_GAUGE_REPAIR_EXISTS", "UNIQUE_ALGEBRAIC_GAUGE_REPAIR_CYCLIC", "ALGEBRAIC_ENDPOINT_REPAIR_OBSTRUCTED", "DIFFERENTIAL_TRANSLATION_LIFT_STILL_OPEN", "MAPPING_CONE_TRANSLATION_STILL_OPEN", "NARIAI_CURVED_BGG_HPL_COMPRESSION", "NARIAI_GREEN_HOMOTOPY", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1": {"const": true},
+        "NARIAI_PARENT_YANG_MILLS_COMPONENT_IDENTITY": {"const": true},
+        "NAIVE_COMPRESSED_GAUGE_IDENTITY": {"const": false},
+        "UNIQUE_ALGEBRAIC_GAUGE_REPAIR_EXISTS": {"const": true},
+        "UNIQUE_ALGEBRAIC_GAUGE_REPAIR_CYCLIC": {"const": false},
+        "ALGEBRAIC_ENDPOINT_REPAIR_OBSTRUCTED": {"const": true},
+        "DIFFERENTIAL_TRANSLATION_LIFT_STILL_OPEN": {"const": true},
+        "MAPPING_CONE_TRANSLATION_STILL_OPEN": {"const": true},
+        "NARIAI_CURVED_BGG_HPL_COMPRESSION": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_DIFFERENTIAL_TRANSLATION_LIFT_OR_MAPPING_CONE"},
+    "claim_boundary": {"type": "string", "minLength": 650},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {"type": "object", "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false},
+    "sparse": {"type": "object", "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}, "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false},
+    "table": {"type": "object", "required": ["entries", "sha256"], "properties": {"entries": {"type": "array", "items": {"type": "object", "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/sparse"}}, "additionalProperties": false}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}
+  }
+}

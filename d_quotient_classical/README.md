@@ -169,15 +169,25 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   derivative splitting/HPL corrections are mandatory:
   [`certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json`](certificates/NARIAI_POINTWISE_BGG_CURVATURE_COMPRESSION_OBSTRUCTION_V1.json),
   [`reports/nariai-pointwise-bgg-curvature-compression-obstruction.md`](reports/nariai-pointwise-bgg-curvature-compression-obstruction.md)
-- First strictification screen beyond that gate: with the Nariai covector and
-  dual-vector curvature actions kept distinct, arbitrary zeroth-order
-  corrections to both BGG splitting maps cannot make the first square strict.
-  The transverse equations uniquely fix the one-form correction, but the four
-  form slots leave twelve exact (1/3) mismatches (normalized witness one).
+- First strictification screen beyond that gate: with the Nariai Schouten
+  components `(-1/6,+1/6,+1/6,+1/6)` and the distinct covector/dual-vector
+  curvature actions enforced, arbitrary zeroth-order corrections to both BGG
+  splitting maps cannot make the first square strict.  All derivative
+  equations consistently and uniquely fix the correction, after which a
+  rank-four algebraic residual with twelve entries remains (normalized
+  witness one).
   Genuinely derivative-dependent and homotopy-coherent curved transfer remain
   open:
   [`certificates/NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1.json`](certificates/NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1.json),
   [`reports/nariai-first-bgg-zeroth-order-strictification-obstruction.md`](reports/nariai-first-bgg-zeroth-order-strictification-obstruction.md)
+- Weaker Yang--Mills translation gate: the corrected component parent now
+  satisfies `M^D d^D=0` exactly.  Its naive BGG compression has only a
+  24-entry first-order gauge defect.  The unique algebraic endpoint term that
+  cancels this defect is noncyclic: its pairing defect has rank two and
+  normalized witness one.  Thus the next repair must be a differential lift
+  or a curvature-incidence mapping cone, not another algebraic endpoint term:
+  [`certificates/NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1.json`](certificates/NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1.json),
+  [`reports/nariai-algebraic-endpoint-curvature-repair-obstruction.md`](reports/nariai-algebraic-endpoint-curvature-repair-obstruction.md)
 - Strict portable consumer gate and accepted Berger adapter:
   [`schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json`](schema/abstract-cyclic-causal-transfer-consumer-v1.schema.json),
   [`certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json`](certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json)

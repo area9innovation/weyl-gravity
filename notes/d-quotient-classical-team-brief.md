@@ -951,20 +951,40 @@ splitting correction.  This is not a no-go for the full Bach-flat detour
 compression.
 
 `NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1` now screens
-the complete zeroth-order strict-chain repair.  The corrected convention is
-essential away from the conformally flat cylinder: form slots carry the
-covector curvature action, while the standard-tractor middle slot carries
-the dual vector action.  For arbitrary bundle maps
+the complete zeroth-order strict-chain repair.  The current certificate
+explicitly supersedes hash
+`c4738c825fd1814962d4970e62341f0399fafb08331fe9b57bc25958b1fadbcc`,
+which used the wrong temporal Schouten sign.  The corrected convention is
+essential away from the conformally flat cylinder: the Nariai Schouten
+components are \((-1/6,+1/6,+1/6,+1/6)\), form slots carry the covector
+curvature action, and the standard-tractor middle slot carries the dual vector
+action.  For arbitrary bundle maps
 \(\Delta L_0:H_0\to C_0\) and \(\Delta L_1:H_1\to C_1\), the three
 transverse derivative axes have rank nine and uniquely fix each row of
-\(\Delta L_1\).  The remaining axis gives incompatible \(\Delta L_0\)
-values across the four form slots: twelve defects survive, all \(1/3\), with
-normalized earliest witness one.  The harmonic normalization defects remain
-zero.  Hence no zeroth-order correction can strictify the first Nariai BGG
-square with the conformal-Killing operator fixed.  This is not a full curved
-BGG no-go: genuinely derivative-dependent splitting corrections,
+\(\Delta L_1\).  The remaining axes consistently give \(\Delta L_0=0\),
+but a rank-four algebraic residual with twelve entries survives; its
+coefficient \((4,1)=2/3\) gives normalized witness one.  The harmonic
+normalization defects remain zero.  Hence no zeroth-order correction can
+strictify the first Nariai BGG square with the conformal-Killing operator
+fixed.  This is not a full curved BGG no-go: genuinely derivative-dependent
+splitting corrections,
 homotopy-coherent transfer of the Yang--Mills detour middle, and an
 independent Nariai Green construction remain open.
+
+`NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1` now applies the
+weaker and authoritative detour-translation criterion.  Correcting the
+temporal Schouten component makes the Nariai component parent satisfy
+\(M^Dd^D=0\) exactly; reversing the sign of \(-F\!\cdot\) leaves 144
+entries.  The naive compressed middle \(B_0=L_1^\sharp M^D L_1\) has orders
+zero, two and four, while \(B_0K\) has only 24 first-order coefficients.
+The complete algebraic endpoint equation \((B_0+Q)K=0\) has a unique
+solution because the stacked conformal-Killing symbol has rank nine.  That
+solution cancels the gauge defect exactly, but \(JQ-Q^TJ\) has rank two and
+normalized witness \(-\tfrac13(JQ-Q^TJ)_{1,4}=1\).  Hence no algebraic
+endpoint curvature correction can restore both gauge annihilation and
+cyclicity.  A differential translation lift or a curvature-incidence mapping
+cone remains open; this does not obstruct either route or a later Green
+construction.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
@@ -1110,11 +1130,12 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    C-G2 has reached G3 on the global conformal orbit of the cylinder with a
    transported gauge fermion.  The same zero-order conjugation is now exactly
    obstructed on unit Nariai by nonzero tractor curvature.  Its next gate is a
-   genuinely derivative-dependent or homotopy-coherent Nariai BGG correction,
-   or conformally flat local patching/new topology.  The necessary
+   differential translation lift or curvature-incidence mapping-cone Nariai
+   BGG correction, or conformally flat local patching/new topology.  The necessary
    Yang--Mills parent correction is certified; raw pointwise compression and
-   the complete zeroth-order strictification ansatz are exactly ruled out,
-   but no endpoint or Green result follows yet.
+   the complete zeroth-order strictification ansatz, and every algebraic
+   endpoint curvature repair are exactly ruled out, but no endpoint or Green
+   result follows yet.
 9. The classical `CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2` is now official:
    all six minimal roles, the Bach Euler coordinate, both Noether rows,
    Lie/Weyl covariance, and the four filtration identities replay. Quantum
@@ -1157,9 +1178,10 @@ chain/Green/pairing transport and a nonconstant consumer.  Unit Nariai then
 gives a normalized nonzero-tractor-curvature obstruction to extending that
 same zero-order conjugation.  The active next gate is either a curved
 Nariai differential-BGG/HPL compression of the corrected Yang--Mills parent
-starting with a genuinely derivative-dependent or homotopy-coherent
-correction beyond the certified pointwise and zeroth-order strictification
-defects, or support-local patching to new conformally flat topology.  Fixed
+starting with a differential translation lift or curvature-incidence mapping
+cone beyond the certified pointwise, zeroth-order strictification and
+algebraic endpoint defects, or support-local patching to new conformally flat
+topology.  Fixed
 untransported gauges, timelike boundaries and Hadamard claims remain false.
 The full queue and
 morning handoff are authoritative in

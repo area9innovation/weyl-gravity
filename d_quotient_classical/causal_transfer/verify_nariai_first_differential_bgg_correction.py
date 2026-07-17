@@ -87,16 +87,21 @@ def verify() -> dict[str, object]:
     if y != exported_y:
         raise ValueError("exported DeltaL0 representative drifted")
 
-    witnesses = []
+    cross_form_defects = []
     for adjoint, rows in y_candidates.items():
         for form, row in enumerate(rows[1:], start=1):
             for column, entry in enumerate(row - rows[0]):
                 if entry:
-                    witnesses.append([adjoint, form, column, str(entry)])
-    if len(witnesses) != 12 or {item[3] for item in witnesses} != {"1/3"}:
-        raise ValueError(f"cross-form witness drifted: {witnesses}")
-    if witnesses[0] != [11, 1, 0, "1/3"]:
-        raise ValueError("normalized earliest witness drifted")
+                    cross_form_defects.append([adjoint, form, column, str(entry)])
+    if cross_form_defects:
+        raise ValueError(f"corrected cross-form equations drifted: {cross_form_defects}")
+    residual = _table(data["residual_chain_defect"])
+    if set(residual) != {()} or residual[()].rank() != 4:
+        raise ValueError("algebraic residual rank/order drifted")
+    if sum(entry != 0 for entry in residual[()]) != 12:
+        raise ValueError("algebraic residual support drifted")
+    if residual[()][4, 1] != sp.Rational(2, 3):
+        raise ValueError("normalized algebraic witness drifted")
     if value["exact_checks"]["harmonic_projection_defect_ranks"] != [0, 0]:
         raise ValueError("harmonic normalization receipt drifted")
     if value["flags"]["NARIAI_CURVED_BGG_HPL_COMPRESSION"] is not False:

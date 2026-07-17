@@ -3,12 +3,23 @@
   "$id": "https://area9.dk/schemas/nariai-first-bgg-zeroth-order-strictification-obstruction-v1.schema.json",
   "title": "Nariai first-BGG zeroth-order strictification obstruction",
   "type": "object",
-  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "conventions", "ansatz", "exact_data", "exact_checks", "obstruction", "flags", "next_gate", "claim_boundary", "provenance"],
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "repair", "dependency_refs", "conventions", "ansatz", "exact_data", "exact_checks", "obstruction", "flags", "next_gate", "claim_boundary", "provenance"],
   "properties": {
     "schema": {"const": "pure-weyl-nariai-first-bgg-zeroth-order-strictification-obstruction-v1"},
     "result_id": {"const": "NARIAI_FIRST_BGG_ZEROTH_ORDER_STRICTIFICATION_OBSTRUCTION_V1"},
     "result_state": {"const": "ZEROTH_ORDER_STRICT_CHAIN_CORRECTION_OBSTRUCTED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "repair": {
+      "type": "object",
+      "required": ["superseded_certificate_sha256", "defect", "corrected_convention", "recomputed_from_exact_sources"],
+      "properties": {
+        "superseded_certificate_sha256": {"const": "c4738c825fd1814962d4970e62341f0399fafb08331fe9b57bc25958b1fadbcc"},
+        "defect": {"type": "string", "minLength": 70},
+        "corrected_convention": {"const": "P_ab=(1/6)g_ab gives (-1/6,+1/6,+1/6,+1/6)"},
+        "recomputed_from_exact_sources": {"const": true}
+      },
+      "additionalProperties": false
+    },
     "dependency_refs": {
       "type": "object",
       "required": ["curved_parent", "pointwise_gate", "kostant_matrices", "differential_screen_matrices"],
@@ -22,10 +33,11 @@
     },
     "conventions": {
       "type": "object",
-      "required": ["background", "schouten", "form_slot_curvature", "standard_tractor_middle_curvature", "fixed_first_bgg_operator"],
+      "required": ["background", "schouten", "schouten_orthonormal_components", "form_slot_curvature", "standard_tractor_middle_curvature", "fixed_first_bgg_operator"],
       "properties": {
         "background": {"type": "string"},
         "schouten": {"const": "P_ab=(1/6)g_ab"},
+        "schouten_orthonormal_components": {"const": ["-1/6", "1/6", "1/6", "1/6"]},
         "form_slot_curvature": {"type": "string"},
         "standard_tractor_middle_curvature": {"const": "dual vector action -C_ab^T"},
         "fixed_first_bgg_operator": {"type": "string"}
@@ -59,23 +71,25 @@
     },
     "exact_checks": {
       "type": "object",
-      "required": ["transverse_rank_set", "transverse_rows_inconsistent", "DeltaL0_rank", "DeltaL0_nonzero_entries", "DeltaL1_rank", "DeltaL1_nonzero_entries", "cross_form_defect_count", "cross_form_defects", "normalized_witness", "normalized_witness_value", "harmonic_projection_defect_ranks", "residual_orders", "residual_nonzero_entries", "normal_tractor_square_rank", "normal_tractor_square_nonzero_entries"],
+      "required": ["transverse_rank_set", "transverse_rows_inconsistent", "DeltaL0_rank", "DeltaL0_nonzero_entries", "DeltaL1_rank", "DeltaL1_nonzero_entries", "cross_form_defect_count", "cross_form_defects", "algebraic_residual_rank", "algebraic_residual_nonzero_entries", "normalized_witness", "normalized_witness_value", "harmonic_projection_defect_ranks", "residual_orders", "residual_nonzero_entries", "normal_tractor_square_rank", "normal_tractor_square_nonzero_entries"],
       "properties": {
         "transverse_rank_set": {"const": [9]},
         "transverse_rows_inconsistent": {"const": []},
-        "DeltaL0_rank": {"const": 4},
-        "DeltaL0_nonzero_entries": {"const": 4},
+        "DeltaL0_rank": {"const": 0},
+        "DeltaL0_nonzero_entries": {"const": 0},
         "DeltaL1_rank": {"const": 9},
-        "DeltaL1_nonzero_entries": {"const": 24},
-        "cross_form_defect_count": {"const": 12},
-        "cross_form_defects": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "array", "minItems": 4, "maxItems": 4}},
-        "normalized_witness": {"const": "3*(Y_from_form1-Y_from_form0)[K0,input0]"},
+        "DeltaL1_nonzero_entries": {"const": 22},
+        "cross_form_defect_count": {"const": 0},
+        "cross_form_defects": {"const": []},
+        "algebraic_residual_rank": {"const": 4},
+        "algebraic_residual_nonzero_entries": {"const": 12},
+        "normalized_witness": {"const": "(3/2)*residual_chain_defect[(),4,1]"},
         "normalized_witness_value": {"const": "1"},
         "harmonic_projection_defect_ranks": {"const": [0, 0]},
-        "residual_orders": {"type": "array", "items": {"type": "integer", "minimum": 0}},
-        "residual_nonzero_entries": {"type": "integer", "minimum": 1},
+        "residual_orders": {"const": [0]},
+        "residual_nonzero_entries": {"const": 12},
         "normal_tractor_square_rank": {"const": 14},
-        "normal_tractor_square_nonzero_entries": {"const": 32}
+        "normal_tractor_square_nonzero_entries": {"const": 48}
       },
       "additionalProperties": false
     },

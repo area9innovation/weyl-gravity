@@ -23,7 +23,9 @@ class NariaiFirstDifferentialBGGCorrectionTests(unittest.TestCase):
     def test_exact_obstruction(self) -> None:
         checks = self.value["exact_checks"]
         self.assertEqual(checks["transverse_rank_set"], [9])
-        self.assertEqual(checks["cross_form_defect_count"], 12)
+        self.assertEqual(checks["cross_form_defect_count"], 0)
+        self.assertEqual(checks["algebraic_residual_rank"], 4)
+        self.assertEqual(checks["algebraic_residual_nonzero_entries"], 12)
         self.assertEqual(checks["normalized_witness_value"], "1")
 
     def test_scope(self) -> None:

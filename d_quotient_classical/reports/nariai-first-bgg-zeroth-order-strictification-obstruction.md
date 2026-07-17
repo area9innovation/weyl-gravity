@@ -1,9 +1,14 @@
 # Nariai first-BGG zeroth-order strictification obstruction
 
-On unit Nariai, the form indices carry the covector curvature action while the
-middle standard-tractor slot carries its dual vector action.  With that
-distinction enforced, the normal tractor exterior square is nonzero, as it
-must be on this non-conformally-flat Einstein background.
+This report supersedes certificate hash
+`c4738c825fd1814962d4970e62341f0399fafb08331fe9b57bc25958b1fadbcc`,
+whose producer assigned the wrong sign to the temporal Schouten component.
+
+On unit Nariai, the Schouten tensor has orthonormal components
+\((-1/6,+1/6,+1/6,+1/6)\).  The form indices carry the covector curvature
+action while the middle standard-tractor slot carries its dual vector action.
+With all three conventions enforced, the normal tractor exterior square is
+nonzero, as it must be on this non-conformally-flat Einstein background.
 
 We tested the complete zeroth-order correction ansatz
 
@@ -18,12 +23,15 @@ rank `9` and uniquely determine that row of
 \(\Delta L_1\).  The remaining axis then determines a candidate row of
 \(\Delta L_0\).
 
-The four form slots are incompatible.  There are exactly
-`12` cross-form defects, all equal to
-\(1/3\).  A normalized witness is
+The derivative equations are mutually compatible across all four form slots:
+they fix \(\Delta L_0=0\) and a rank-`9` correction
+\(\Delta L_1\).  But the remaining algebraic coefficient has rank
+`4` and
+`12` nonzero entries.  A normalized
+witness is
 
 \[
-3\bigl(Y_{\mathrm{form},1}-Y_{\mathrm{form},0}\bigr)_{K_0,0}=1.
+\frac32\bigl(d^D(L_0+\Delta L_0)-(L_1+\Delta L_1)K\bigr)_{4,1}=1.
 \]
 
 Both harmonic projection defects remain rank zero, so the failure is not a
