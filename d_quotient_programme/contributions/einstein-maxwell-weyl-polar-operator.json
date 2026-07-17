@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "generic polar ell>=2 coefficient complex on R_t x S1_L x S2 at fixed P_N; symbolic k and lambda; target Weyl gauge slice (A+K,B,C-K,U); before polar Lee-Wald completion and final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "independent four-dimensional Bach-Maxwell linearizations at ell=2,3,4 reconstruct the complete generic polar target tensor operator by the natural degree-two spectral bound",
+    "the action-normalized four-by-four polar Hessian is formally self-adjoint under (omega,k)->(-omega,-k)",
+    "the Einstein field map S_P:(A,B,C,K,U)->(A+K,B,C-K,U) obeys the exact polynomial equation square H_P*S_P=J_P*E_P without dividing by k, omega, lambda-2, p, or q",
+    "the determinant is (9/16)lambda^3(lambda-2)p^2q with p=omega^2-k^2-lambda+2/3 and q the Einstein polar characteristic",
+    "over Frac(Q(lambda,k))[omega] the invariant factors are 1,1,p,p*q and the primary decomposition contains two extra p summands plus the Einstein q summand",
+    "the shell resultant 4(9lambda-2)^2/81 excludes a p-q collision on the physical ell>=2 locus"
+  ],
+  "evidence": {
+    "commit": "e344a69fb6c143b92738366bd095f06746096fd3",
+    "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+    "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "promote the polar module to the physical coefficient ring, construct its direct four-dimensional Lee-Wald current and coefficient extractors, and perform the ungauged Noether/BV lift and final residual descent",
+  "not_established": [
+    "an integral physical-ring invariant-factor theorem at every allowed compact momentum",
+    "the direct polar extra Lee-Wald pairing, radical, inertia, or coefficient extractors",
+    "the ungauged Diff x Weyl x U(1) BV/Noether lift",
+    "final residual survival, boundary selection, causal scattering, particles, ghosts, or quantum unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_polar_target_solution_module",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_polar_operator",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_GENERIC_POLAR_TARGET_OPERATOR_AND_OFFSHELL_EINSTEIN_SQUARE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_full_tensor --verify bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_full_tensor.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_full_tensor",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}
