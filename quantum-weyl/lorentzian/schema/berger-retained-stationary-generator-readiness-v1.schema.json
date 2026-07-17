@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-stationary-generator-readiness-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "dependency_tags", "dependency_refs", "input_contract", "exact_acceptance_conditions", "analytic_separation", "synthetic_consumer_receipt", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-stationary-generator-readiness-v1"},
+    "result_id": {"const": "BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS"},
+    "result_state": {"const": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_IMPORT_ACCEPTANCE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["zero_frequency_readiness", "partial_A104", "Hadamard_existence_audit"],
+      "properties": {
+        "zero_frequency_readiness": {"$ref": "#/$defs/dependency"},
+        "partial_A104": {"$ref": "#/$defs/dependency"},
+        "Hadamard_existence_audit": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "input_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required_result_id", "manifest_schema", "matrix_schema", "required_artifact_ids", "required_shape", "content_addressing"],
+      "properties": {
+        "required_result_id": {"const": "BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"},
+        "manifest_schema": {"$ref": "#/$defs/schemaRef"},
+        "matrix_schema": {"$ref": "#/$defs/schemaRef"},
+        "required_artifact_ids": {"const": ["A104", "q_Cauchy_104", "G_Cauchy_104", "real_structure_104"]},
+        "required_shape": {"const": [104, 104]},
+        "content_addressing": {"const": "git_commit_plus_blob_sha256_plus_internal_matrix_sha256"}
+      }
+    },
+    "exact_acceptance_conditions": {
+      "const": ["all_104_rows_and_columns_match_frozen_Cauchy_ordering", "A104_has_no_unknown_coordinates", "q_Cauchy_squared_zero", "A104_supercommutes_with_q_Cauchy", "G_Cauchy_nondegenerate_and_BRST_compatible", "A104_Krein_skew_adjoint", "real_structure_involutive_and_intertwines_A104_q_Cauchy_G_Cauchy"]
+    },
+    "analytic_separation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["finite_PBW_import_can_decide_zero_is_isolated", "reason", "required_followup", "accepted_import_verdict"],
+      "properties": {
+        "finite_PBW_import_can_decide_zero_is_isolated": {"const": false},
+        "reason": {"type": "string", "minLength": 100},
+        "required_followup": {"const": "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER"},
+        "accepted_import_verdict": {"const": "ACCEPTED_EXACT_STATIONARY_CARRIER"}
+      }
+    },
+    "synthetic_consumer_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rank", "accepted_exact_checks", "nonnilpotent_q_mutation_rejected", "receipt_sha256"],
+      "properties": {
+        "rank": {"const": 2},
+        "accepted_exact_checks": {"$ref": "#/$defs/checks"},
+        "nonnilpotent_q_mutation_rejected": {"const": true},
+        "receipt_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY", "EXACT_PBW_MUTATION_WITNESS", "STATIONARY_GENERATOR_INPUT_AVAILABLE", "STATIONARY_GENERATOR_ACCEPTED", "ZERO_FREQUENCY_LEDGER_COMPUTED", "GLOBAL_BRST_HADAMARD_STATE", "QUANTUM_CLAIM"],
+      "properties": {
+        "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": {"const": true},
+        "EXACT_PBW_MUTATION_WITNESS": {"const": true},
+        "STATIONARY_GENERATOR_INPUT_AVAILABLE": {"const": false},
+        "STATIONARY_GENERATOR_ACCEPTED": {"const": false},
+        "ZERO_FREQUENCY_LEDGER_COMPUTED": {"const": false},
+        "GLOBAL_BRST_HADAMARD_STATE": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST"},
+    "claim_boundary": {"type": "string", "minLength": 600},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 180}, "tier_3": {"type": "string", "minLength": 150}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["artifact_id", "sha256"],
+      "properties": {"artifact_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "schemaRef": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 60}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q_Cauchy_squared_zero", "A104_supercommutes_with_q_Cauchy", "G_Cauchy_nondegenerate", "G_Cauchy_BRST_compatible", "A104_Krein_skew_adjoint", "real_structure_is_involution", "real_structure_intertwines_A104", "real_structure_intertwines_q_Cauchy", "real_structure_preserves_G_Cauchy"],
+      "properties": {
+        "q_Cauchy_squared_zero": {"const": true}, "A104_supercommutes_with_q_Cauchy": {"const": true},
+        "G_Cauchy_nondegenerate": {"const": true}, "G_Cauchy_BRST_compatible": {"const": true},
+        "A104_Krein_skew_adjoint": {"const": true}, "real_structure_is_involution": {"const": true},
+        "real_structure_intertwines_A104": {"const": true}, "real_structure_intertwines_q_Cauchy": {"const": true},
+        "real_structure_preserves_G_Cauchy": {"const": true}
+      }
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false, "required": ["test_tier", "command", "status"],
+      "properties": {"test_tier": {"const": 1}, "command": {"type": "string", "minLength": 90}, "status": {"const": "PASS"}}
+    }
+  }
+}

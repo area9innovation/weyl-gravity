@@ -26,13 +26,16 @@ companion already fails the normally-hyperbolic hypothesis through its
 nonzero nilpotent order-two principal block.  Separately, any full graded BV
 lift must satisfy BRST/Krein compatibility and positivity on physical
 cohomology.  These analytic and graded-physical gates are not conflated.
+The exact stationary-carrier import consumer is now ready and mutation-tested,
+but no committed classical manifest has been supplied.  It deliberately does
+not infer spectral isolation of zero from finite PBW coefficient tables.
 
 The zero-frequency readiness audit proves that the partial `A104` does not
 determine the zero eigenspace and freezes a complete stationary-carrier
 receiving contract. The ordered critical path is:
 
 1. repair the remaining 15 ghost-density cyclicity defects while preserving `q1/q2`;
-2. complete `A104`, Cauchy BRST, pairing, and real-structure export;
+2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;
 5. minimal BV cohomology with Koszul--Tate rows;

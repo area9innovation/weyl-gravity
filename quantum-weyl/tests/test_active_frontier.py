@@ -42,15 +42,16 @@ class ActiveFrontierTests(unittest.TestCase):
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:
         flags = self.payload["claim_flags"]
         self.assertTrue(flags["COMPANION_DECOMPOSABILITY_CERTIFIED"])
+        self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
         self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
         row = self.payload["active_rows"]["free_Lorentzian_state"]
         self.assertIn(
-            "BOSONIC_ANALYTIC_AND_FULL_BV_POSITIVITY_GATES_SEPARATED",
+            "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT",
             row["status"],
         )
         self.assertEqual(
             row["next_gate"],
-            "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+            "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
         )
 
     def test_quantum_overclaim_is_rejected(self) -> None:

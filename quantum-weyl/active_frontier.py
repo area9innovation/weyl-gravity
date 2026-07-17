@@ -35,6 +35,7 @@ DEPENDENCIES = {
     "zero_frequency_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS.json",
     "A104_partial": HERE / "lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
     "Hadamard_existence_audit": HERE / "lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
+    "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "relative_readiness": HERE / "relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json",
     "Paper09_boundary": HERE / "cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF.json",
 }
@@ -61,6 +62,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "zero_frequency_readiness": "EXACT_MASK_NONIDENTIFIABILITY_CERTIFIED_FULL_STATIONARY_CARRIER_REQUIRED",
         "A104_partial": "GLOBAL_A104_104_BY_104_KNOWN_MASK_EXACT_TWO_A12_SLOTS_OPEN",
         "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
+        "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
     for name, state in states.items():
@@ -128,6 +130,16 @@ def _load() -> dict[str, dict[str, Any]]:
         != "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"
     ):
         raise ValueError("Hadamard existence criterion frontier drifted")
+    stationary = values["stationary_generator_import_readiness"]
+    stationary_flags = stationary.get("claim_flags", {})
+    if (
+        stationary_flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
+        or stationary_flags.get("STATIONARY_GENERATOR_INPUT_AVAILABLE") is not False
+        or stationary_flags.get("STATIONARY_GENERATOR_ACCEPTED") is not False
+        or stationary.get("next_gate")
+        != "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST"
+    ):
+        raise ValueError("stationary-generator import readiness frontier drifted")
     return values
 
 
@@ -175,8 +187,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
             },
             "free_Lorentzian_state": {
-                "status": "COMPANION_DECOMPOSABLE_EXISTENCE_NOT_IMPLIED_BOSONIC_ANALYTIC_AND_FULL_BV_POSITIVITY_GATES_SEPARATED",
-                "next_gate": "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+                "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
+                "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             },
             "relative_Einstein_Weyl": {
                 "status": "PRINCIPAL_AND_GENERIC_AXIAL_PREFLIGHT_GLOBAL_V1_OPEN",
@@ -231,6 +243,7 @@ def build() -> dict[str, Any]:
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": False,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
+            "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "HADAMARD_EXISTENCE_THEOREM_APPLIES": False,
             "FULL_BV_G2_COMPLETE": False,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -242,7 +255,7 @@ def build() -> dict[str, Any]:
         },
         "ordered_next_gates": [
             "REPAIR_REMAINING_15_GHOST_DENSITY_DEFECTS_WITH_Q1Q2_PRESERVED",
-            "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1",
+            "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
             "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS",
@@ -261,6 +274,8 @@ def build() -> dict[str, Any]:
             "The companion is null-cone decomposable, but this does not imply existence of a "
             "Hadamard state: the bosonic analytic hypothesis failure and the later full-BV "
             "BRST/Krein and physical-positivity gate are recorded separately. "
+            "The exact stationary-carrier import consumer is ready, but no classical manifest "
+            "has been supplied and finite PBW data do not decide spectral isolation of zero. "
             "It does not establish full antifield BV cohomology, repository Slavnov coefficients, "
             "a global BRST Hadamard state, renormalized products, QME restoration, "
             "residual quantum transfer or a Lorentzian quantum theory."
@@ -290,6 +305,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
+        or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
     ):
         raise ValueError("active frontier positive flags dropped")
     if any(
@@ -302,6 +318,7 @@ def validate(result: dict[str, Any]) -> None:
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
+            "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")

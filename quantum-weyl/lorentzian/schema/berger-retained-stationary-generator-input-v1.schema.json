@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-stationary-generator-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "classical_commit", "artifacts", "declared_scope", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-stationary-generator-input-v1"},
+    "result_id": {"const": "BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["A104", "q_Cauchy_104", "G_Cauchy_104", "real_structure_104"],
+      "properties": {
+        "A104": {"$ref": "#/$defs/artifact"},
+        "q_Cauchy_104": {"$ref": "#/$defs/artifact"},
+        "G_Cauchy_104": {"$ref": "#/$defs/artifact"},
+        "real_structure_104": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "declared_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["setting_id", "coefficient_ring", "PBW_axis_order", "Cauchy_rank", "dependency_tags", "analytic_zero_spectrum_claim"],
+      "properties": {
+        "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_linearized"},
+        "coefficient_ring": {"const": "Q[alpha_B,u,v]"},
+        "PBW_axis_order": {"const": ["t", "berger_frame_1", "berger_frame_2", "berger_frame_3"]},
+        "Cauchy_rank": {"const": 104},
+        "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+        "analytic_zero_spectrum_claim": {"const": "NOT_PART_OF_ALGEBRAIC_IMPORT"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 180}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^d_quotient_classical/.+\\.json$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

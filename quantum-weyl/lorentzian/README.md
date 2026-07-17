@@ -161,6 +161,16 @@ Consequently the next constructive route runs through the complete stationary
 positive or declared Krein covariance.  The machine receipt is
 `BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT`.
 
+The receiving side of that route is now executable.  The stationary-generator
+import readiness result requires content-addressed exact PBW records for
+`A104`, `q_Cauchy_104`, `G_Cauchy_104` and `real_structure_104`, all in the
+frozen 104-row ordering, and independently replays their nilpotency,
+commutation, pairing, Krein-adjoint and reality identities.  It remains
+fail-closed because no classical manifest has landed.  It also separates the
+finite algebraic import from spectral isolation of zero, which requires a
+closed mixed-Sobolev/Krein realization.  The machine receipt is
+`BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS`.
+
 Before constructing that two-point function, the graded state-space contract
 is now frozen on the complete 54-row BV complex.  An exact replay gives
 degree ranks `5,22,22,5`, 27 even and 27 odd rows, 27 odd Darboux pairs, and
