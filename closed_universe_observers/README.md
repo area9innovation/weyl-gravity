@@ -32,6 +32,8 @@ python3 -m closed_universe_observers.generate_berger_84_row_mixed_r_kappa_unary_
 python3 -m closed_universe_observers.verify_berger_84_row_mixed_r_kappa_unary_gate
 python3 -m closed_universe_observers.generate_berger_84_row_normalized_profile_mixed_unary --check
 python3 -m closed_universe_observers.verify_berger_84_row_normalized_profile_mixed_unary
+python3 -m closed_universe_observers.generate_berger_84_row_apparatus_q2_q3_k_gate --check
+python3 -m closed_universe_observers.verify_berger_84_row_apparatus_q2_q3_k_gate
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -93,8 +95,16 @@ The historical 78-row gate remains scoped history and is not a forward
 construction input.  The shifted Euler equations and unary complex close on
 the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)` axes, with a formal
 coefficientwise causal contraction.  The mixed first jet is now also closed;
-finite-parameter Green theory, apparatus interactions, and the observer
-morphism remain open.
+finite-parameter Green theory and the observer morphism remain open.  The
+action-derived apparatus gate now exports the normalized cubic and quartic
+tensors (`q2,q3`) as exact derivative families with cyclic cotangent
+completion.  Their unshifted identities and first shifted arity-two identity
+close, while shifted arity three requires the unavailable
+`q4(K0,-,-,-)`.  The six existing rods have rank-eight time-translation
+closure, so no constant six-by-six internal rotation repairs the 84-row
+carrier.  Formal unary response rank remains two before quotient descent.
+The next gate is therefore the exact `q4` contraction or a recomputed
+co-rotating rod completion with at least 88 rows, followed by morphism replay.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

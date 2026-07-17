@@ -1,0 +1,415 @@
+{
+  "K_Berger_gate": {
+    "affine_identity_hierarchy": [
+      "arity 0: q1(K0)=0",
+      "arity 1: [K1,q1]+q2(K0,-)=0",
+      "arity 2: [K1,q2]+q3(K0,-,-)=0",
+      "arity 3: [K1,q3]+q4(K0,-,-,-)=0"
+    ],
+    "alternative_repair": "replace the six-rod background by an e0-closed eight-real-rod co-rotating doublet system, recompute its stress/Phi2 and 88-row unary/interactions, then test ordinary extended-K descent",
+    "available_from_q1_q2_q3": [
+      "arity 0",
+      "arity 1",
+      "arity 2"
+    ],
+    "background_components": {
+      "K0_Theta": "0",
+      "K0_metric": "r e0 Phi2",
+      "K0_rods": "e0 Rbar_aI",
+      "rod_witnesses": [
+        {
+          "K0_value": "-sqrt(145)*sin(sqrt(58)/576)*cos(sqrt(10)/12)/10",
+          "detector_id": "D0",
+          "evaluation_time": "25/96",
+          "nonzero": true,
+          "rod_row": "R0_1"
+        },
+        {
+          "K0_value": "-sqrt(145)*sin(sqrt(58)/576)*cos(sqrt(10)/6)/10",
+          "detector_id": "D1",
+          "evaluation_time": "49/96",
+          "nonzero": true,
+          "rod_row": "R1_1"
+        }
+      ],
+      "time_dependent_Phi2_nonzero_coefficient_count": 70
+    },
+    "existing_rod_linear_symmetry_completion": {
+      "coefficient_space": "span_R{cos(nu t),sin(nu t)} tensor span_R{x0,x1,x2,x3}",
+      "consequence": "the present 84-row carrier cannot make Rbar fixed by adding a constant linear internal rotation on its six rod rows",
+      "constant_internal_6_by_6_completion_exists": false,
+      "current_real_rod_span_rank": 6,
+      "minimal_additional_real_rod_directions": 2,
+      "minimal_pairing_preserving_carrier_if_completed": "88 rows (two added degree-zero rods and two cyclic cotangent partners)",
+      "time_translation_closure_rank": 8
+    },
+    "first_unavailable_identity": "arity 3",
+    "generator": "K_Berger=D-omega R_internal on the base fields",
+    "minimal_honest_action": "affine K=K0+K1 on the formal backreacted apparatus family",
+    "missing_inputs": [
+      "base 64-row q4 evaluated on e0 Phi2",
+      "third normalized profile jet B_a^(3) evaluated on e0 Rbar/e0 Phi2",
+      "third memory-transport jet T^(3)",
+      "fifth action derivative of the rod metric coupling"
+    ],
+    "ordinary_linear_action_background_preserving": false,
+    "q4_underdetermination_witness": {
+      "arity_three_commutator_coefficient_difference": "91/6",
+      "completion_0": "q4=0",
+      "completion_1": "q4=13",
+      "expected_k0_q4_over_6": "91/6",
+      "nonzero": true,
+      "same_q1_q2_q3": true
+    }
+  },
+  "apparatus_action_jets": {
+    "base_imports": {
+      "q2_k_equivariant": true,
+      "q2_total_rows": 64,
+      "q3_k_equivariant": true,
+      "q3_nonzero_rows": 21,
+      "q3_term_count": 59598
+    },
+    "canonical_sha256": "96c94b38c36f1c1ff4064bdc93cc96e0c5d7093e80b9eefb93ada5a7c39ba494",
+    "carrier_support": {
+      "base_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "memory_cotangent_rows": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "memory_rows": [
+        70,
+        71,
+        72,
+        73
+      ],
+      "new_ghost_rows": 0,
+      "rod_cotangent_rows": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "rod_rows": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    "cyclic_completion": "q2=Omega84^-1 C3 and q3=Omega84^-1 C4; all output/cotangent partners are generated from the same symmetric lowered tensors",
+    "densitized_geometry": {
+      "A_g": "mathcal A_g^{mu nu}=sqrt(|g|) g^{mu nu}",
+      "V_gTheta": "mathcal V^mu=sqrt(|g|) g^{mu nu}Theta_nu/g^{-1}(dTheta,dTheta)",
+      "W_a": "mathcal W_a[A]=sqrt(|g|) f_a(Theta)rho_a(R_a)sqrt(det G_a) C_g(dA,dTheta wedge dR_aI(a))"
+    },
+    "exact_scope": {
+      "higher_profile_remainder_preserved": true,
+      "q2_at_r0_and_q3_at_r0": true,
+      "q2_r_first_variation": "delta_r q2=q3(Phi2,-,-), including the normalized B_a^(2) and T^(2) insertions",
+      "q3_r_first_variation": "delta_r q3=q4(Phi2,-,-,-), not determined by the frozen two-jet/imported q3 data"
+    },
+    "field_slot": "x=(h_hat,deltaTheta,deltaR_a,A,m_a,p_a,c_spatial and cyclic partners)",
+    "identity_disposition": {
+      "arity_three_at_r0": "PASS_FROM_COMMON_BV_MASTER_ACTION",
+      "arity_three_at_r1": "INPUT_BLOCKED_Q4_PHI2",
+      "arity_two_at_r0": "PASS_FROM_COMMON_BV_MASTER_ACTION",
+      "arity_two_at_r1": "PASS_USING_DELTA_R_Q2_EQUALS_Q3_PHI2",
+      "q2_cyclicity_defect_count": 0,
+      "q3_cyclicity_defect_count": 0
+    },
+    "lowered_cubic_tensor_C3_equals_Omega_q2": {
+      "base_64": "imported typed BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
+      "memory_transport": "Sym sum_a integral p_a D mathcal V[h,deltaTheta]^mu d_mu m_a",
+      "readout": "-kappa Sym sum_a integral p_a D mathcal W_a[h,deltaTheta,deltaR_a] A",
+      "rods": "D3[-r/2 sum_aI integral mathcal A_g^{mu nu} d_mu R_aI d_nu R_aI]",
+      "scalar_BV": "D3 integral sum_aI R_aI_plus L_c R_aI + sum_a(m_a_plus L_c m_a+p_a_plus L_c p_a)"
+    },
+    "lowered_quartic_tensor_C4_equals_Omega_q3": {
+      "base_64": "imported typed BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "memory_transport": "Sym sum_a integral p_a D2 mathcal V[x,y]^mu d_mu m_a",
+      "readout": "-kappa Sym sum_a integral p_a D2 mathcal W_a[x,y] A",
+      "rods": "D4[-r/2 sum_aI integral mathcal A_g^{mu nu} d_mu R_aI d_nu R_aI]",
+      "scalar_BV": "0 beyond q2 because the scalar semidirect BV term is cubic"
+    },
+    "readout_factor_jets": {
+      "clock_bump": [
+        "f_a' deltaTheta",
+        "f_a'' deltaTheta_1 deltaTheta_2"
+      ],
+      "metric_contraction": [
+        "D C_g",
+        "D2 C_g"
+      ],
+      "normalized_Jacobian": [
+        "D J_a",
+        "D2 J_a"
+      ],
+      "polarization": [
+        "D(dTheta wedge dR_aI)",
+        "D2(dTheta wedge dR_aI)"
+      ],
+      "rod_bump": [
+        "partial_I rho_a deltaR^I",
+        "partial_I partial_J rho_a deltaR_1^I deltaR_2^J"
+      ],
+      "volume": [
+        "D sqrt(|g|)",
+        "D2 sqrt(|g|)"
+      ]
+    },
+    "rod_derivative_expansion_rule": "In DN S_R only 0,1,2 rod-fluctuation slots occur; the remaining N,N-1,N-2 slots differentiate mathcal A_g. This fixes every D3 and D4 rod block without an omitted channel."
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL gate imports the pinned 64-row q2/q3 and constructs the normalized 84-row apparatus cubic and quartic action tensors. It exports every rod, memory-transport, readout, scalar-BV, and cyclic cotangent block as exact Frechet-derivative families, certifies q2/q3 cyclicity, the r=0 arity-two/three identities, and the r-first-variation arity-two identity. The backreacted metric and rods have nonzero K_Berger affine component K0. Consequently the arity-three K/L-infinity identity requires q4(K0,-,-,-), including the unexported third normalized profile jet and base q4; two q4 completions with identical q1/q2/q3 give different defects. Full backreacted q3 and K_Berger observer descent are therefore input-blocked, not certified. On the maximal Maxwell-gauge/cyclic formal unary response, the nonzero determinant constant term certifies rank two over the coefficient ring. This does not prove a K-descended observer morphism, finite-r Green hyperbolicity, localized emitter recoil, a Lorentzian quantum theory, or any quantum claim.",
+  "claim_status": "APPARATUS_Q2_Q3_JET_EXPORTED_AFFINE_K_ARITY_THREE_INPUT_BLOCKED_Q4",
+  "dependency_refs": {
+    "apparatus_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "base_64_k_cartan": {
+      "path": "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
+      "result_id": "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE",
+      "sha256": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e"
+    },
+    "base_64_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
+      "sha256": "f518eb8a13ee34021edfd8f1809bf7a0ee139a9a1863d837d83858e34bf461f5"
+    },
+    "base_64_q3": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+    },
+    "global_rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "normalized_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json",
+      "result_id": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY",
+      "sha256": "1dc8720b2e8a208094a40ab736d3e6459c8c5afb5308baca6c1e82c8b9e2f6f2"
+    },
+    "probe_transfer": {
+      "path": "closed_universe_observers/certificates/BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER.json",
+      "result_id": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
+      "sha256": "09f723df60cd4e1bee3efa86f0c9319baee5f539ae2008d9d03230eb42398f23"
+    },
+    "rod_gravity_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json",
+      "result_id": "BERGER_84_ROW_ROD_GRAVITY_UNARY",
+      "sha256": "a1ed18041d015779d9f5347a63016000fdd8648e507eee391628071edcd75394"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "AFFINE_K_BERGER_THROUGH_ARITY_THREE_CERTIFIED": false,
+    "AFFINE_K_BERGER_THROUGH_ARITY_TWO_CERTIFIED": true,
+    "APPARATUS_ARITY_THREE_IDENTITY_AT_R0": true,
+    "APPARATUS_ARITY_THREE_IDENTITY_THROUGH_R_FIRST_JET": false,
+    "APPARATUS_ARITY_TWO_IDENTITY_THROUGH_R_FIRST_JET": true,
+    "APPARATUS_NORMALIZED_PROFILE_TWO_JET_EXACT": true,
+    "APPARATUS_Q2_ACTION_JET_EXPORTED": true,
+    "APPARATUS_Q2_Q3_CYCLIC_AT_R0": true,
+    "APPARATUS_Q3_ACTION_JET_EXPORTED": true,
+    "EMITTER_RECOIL_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FORMAL_BACKREACTED_UNARY_RANK_TWO_CERTIFIED": true,
+    "FULL_BACKREACTED_APPARATUS_Q3_CERTIFIED": false,
+    "K_BERGER_BACKGROUND_PRESERVING_ON_APPARATUS": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "Q4_INPUT_REQUIRED": true,
+    "QUANTUM_CLAIM": false
+  },
+  "mutation_results": [
+    {
+      "defect": "normalized transverse Jacobian second jet",
+      "defect_count": 2,
+      "detected": true,
+      "name": "delete_quadratic_trace_product_in_D2_J"
+    },
+    {
+      "defect": "normalized readout product second jet",
+      "defect_count": 1,
+      "detected": true,
+      "name": "delete_pair_partitions_in_D2_W"
+    },
+    {
+      "defect": "two nonzero rod witnesses and time-dependent Phi2 coefficients are discarded",
+      "defect_count": 72,
+      "detected": true,
+      "name": "drop_affine_K0"
+    },
+    {
+      "defect": "two q4 completions with the same q1/q2/q3 change the arity-three commutator coefficient",
+      "defect_count": 1,
+      "detected": true,
+      "name": "promote_arity_three_K_without_q4"
+    }
+  ],
+  "next_gate": "EXPORT_BASE_AND_APPARATUS_Q4_CONTRACTION_ON_K0_OR_DECLARE_A_K_INVARIANT_APPARATUS_BACKGROUND_THEN_REPLAY_OBSERVER_MORPHISM",
+  "normalized_profile_two_jet": {
+    "Gram_Jacobian": {
+      "definition": "J_a=sqrt(det G_a)",
+      "first_variation": "D J[X]=J/2 tr(G^-1 D G[X])",
+      "first_variation_defect_count": 0,
+      "fixture_count": 2,
+      "mutation_defect_count": 0,
+      "second_variation": "D2 J[X,Y]=J[1/2 tr(G^-1 D2G[X,Y])+1/4 tr(G^-1 DG[X])tr(G^-1 DG[Y])-1/2 tr(G^-1 DG[X]G^-1 DG[Y])]",
+      "second_variation_defect_count": 0
+    },
+    "profile_third_and_higher_status": "OPEN_FROM_THE_CUBIC_AND_HIGHER_PROFILE_REMAINDER",
+    "readout_product": {
+      "factor_order": [
+        "dvol_g",
+        "f_a(Theta)",
+        "rho_a(R_a)J_a",
+        "inverse_metric_contraction",
+        "P_a=dTheta_wedge_dR_aI"
+      ],
+      "first_jet_defect_count": 0,
+      "first_jet_rule": "D product[X]=sum_i (D factor_i[X]) product_{j!=i} factor_j",
+      "pair_partition_nonzero": true,
+      "second_jet_defect_count": 0,
+      "second_jet_rule": "D2 product[X,Y]=sum_i D2factor_i[X,Y] product_{j!=i}factor_j + sum_{i!=j} Dfactor_i[X] Dfactor_j[Y] product_{k!=i,j}factor_k"
+    }
+  },
+  "observer_morphism_disposition": {
+    "Maxwell_gauge_chain_compatibility": true,
+    "affine_K_through_arity_three": false,
+    "affine_K_through_arity_two": true,
+    "cyclic_pairing_compatibility_through_q3_at_r0": true,
+    "failure_category": "K_BERGER_AFFINE_ARITY_THREE_INPUT_OBSTRUCTION_NOT_SIGNAL_OR_RANK_FAILURE",
+    "first_exact_defect": "q4(K0,-,-,-) is required because e0 Rbar and e0 Phi2 are nonzero; q1/q2/q3 and a profile two-jet do not determine it",
+    "formal_backreacted_unary_rank_two": true,
+    "full_observer_morphism_certified": false,
+    "maximal_certified_subcarrier": "Maxwell-gauge/cyclic coefficientwise unary source-to-two-memory response before K_Berger quotient descent",
+    "ordinary_linear_K_background_preserving": false
+  },
+  "observer_response": {
+    "base_matrix": [
+      [
+        "C_00",
+        "0"
+      ],
+      [
+        "0",
+        "C_11"
+      ]
+    ],
+    "base_rank": 2,
+    "coefficient_ring": "K((r))[[kappa]] on the certified coefficientwise same-sided unary Green window",
+    "constant_term_nonzero": true,
+    "determinant_constant_term": "C_00*C_11",
+    "determinant_is_unit": true,
+    "formal_rank": 2,
+    "formal_response": "M(r,kappa)=M00+r M10+kappa M01+r*kappa M11+...",
+    "scope": "maximal Maxwell-gauge/cyclic coefficientwise unary response; no K_Berger quotient descent or finite-r analytic statement"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_84_row_apparatus_q2_q3_k_gate.py",
+        "sha256": "23b6378f81159604d0db5593a239a79ffb17f6bf78486a83daa4b940551edfdb"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_84_row_apparatus_q2_q3_k_gate.py",
+        "sha256": "77f7e4e7d538b83b3ef63ed54782f04c751387cd9805e2dae66e32bf60e5b1d2"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_84_row_apparatus_q2_q3_k_gate.py",
+        "sha256": "01c7502a6d09e981612621c933273817c39bcdf301773751f6857b3c72238774"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-84-row-apparatus-q2-q3-k-gate.md",
+        "sha256": "2a3dc7c73f96d8eb3459fd77fde2f753280d01f812c2829e26e805caea61b3e6"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-84-row-apparatus-q2-q3-k-gate-v1.schema.json",
+        "sha256": "b2e3b1a4c4afd6b491b5ffcf5a2152ccec999b1066cb8c05a6b35dd8f89ac1e9"
+      }
+    ]
+  },
+  "result_id": "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
+  "schema": "closed-universe-berger-84-row-apparatus-q2-q3-k-gate-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

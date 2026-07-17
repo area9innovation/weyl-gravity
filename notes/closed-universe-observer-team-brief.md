@@ -107,14 +107,30 @@ over the formal Schur--Laurent coefficient field.  This closes the
 coefficientwise mixed unary first jet, not finite-`r` Green hyperbolicity or an
 all-orders apparatus theorem.
 
-### Immediate priority after the normalized mixed unary certificate
+`BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE` now constructs the apparatus cubic and
+quartic action tensors as exact Frechet-derivative families, including every
+rod, memory-transport, normalized readout, scalar-BV, and cyclic cotangent
+block.  Cyclicity and the declared arity-two/three identities close at the
+unshifted background, and the arity-two identity closes through the first
+backreacted coefficient.  The formal unary detector matrix remains rank two.
+The ordinary `K_Berger` action, however, does not fix the rod/metric
+background: `e0 Rbar` and `e0 Phi2` are nonzero.  Its honest affine
+arity-three identity needs `q4(K0,-,-,-)`, which is not determined by the
+imported `q1,q2,q3` or the profile two-jet.  An exact span audit also rules out
+repair by a constant internal rotation of the existing six rods: their rank-6
+span has rank-8 time-translation closure.  Thus the first observer morphism is
+input-blocked on `q4`, not on signal distinguishability.
 
-1. Construct the apparatus \(q_2,q_3\) rows from the frozen two-jet profile,
-   including the new normalization's clock, rod, and metric variations, and
-   test \(K_{\rm Berger}\)-equivariance and cyclicity.  Import the nonlinear
-   team's certified tensors; do not fork them.
-2. Construct the first observer morphism on the certified apparatus complex
-   and test whether the rank-two detector record survives backreaction.
+### Immediate priority after the apparatus q2/q3 and K gate
+
+1. Choose and certify one exact symmetry repair: either import/construct the
+   base and apparatus contraction `q4(K0,-,-,-)`, or replace the rods by a
+   time-translation-closed co-rotating system.  The latter needs at least two
+   additional real rod directions and an 88-row pairing-preserving carrier,
+   followed by a fresh stress, `Phi2`, unary, and interaction calculation.
+2. Replay the first observer morphism only after that symmetry input closes.
+   The rank-two formal unary response is already certified on the maximal
+   Maxwell-gauge/cyclic subcarrier; do not call it quotient descent.
 3. Import the classical team's C-G4 relational redshift observable as the
    clock/signal object.  The observer team owns its detector realization and
    record map, not a competing redshift definition.

@@ -1,0 +1,90 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "APPARATUS_84_Q2_Q3_K_GATE_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The normalized 84-row apparatus cubic and quartic action tensors are exported as exact Frechet-derivative families with cyclic cotangent completion. Their cyclicity, unshifted arity-two/three identities, and first shifted arity-two identity are certified. The current rod/metric background has nonzero affine K0, so shifted arity three requires the unavailable q4(K0,-,-,-). Two q4 completions with the same q1/q2/q3 give different exact defects, and the six existing real rods have rank-eight time-translation closure, ruling out a constant internal six-by-six repair. The maximal Maxwell-gauge/cyclic formal unary response remains rank two, but no K-descended observer morphism, finite-r Green theorem, emitter recoil, Lorentzian quantum theory, or quantum claim is certified.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile on the producer, independent verifier, and focused tests; python3 -m json.tool on the certificate, schema, ledger, and receipt; git diff --check on explicit observer and planning paths",
+      "elapsed_seconds": "less than 1 plus final diff checks",
+      "status": "PASS",
+      "scope": "Python syntax, structured data, reports, briefs, roadmap, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_apparatus_q2_q3_k_gate --check",
+      "elapsed_seconds": "1.25",
+      "status": "PASS",
+      "scope": "normalized profile/product two-jets, apparatus q2/q3 action families, affine-K and q4 underdetermination audits, six-rod closure rank, formal response rank, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_apparatus_q2_q3_k_gate",
+      "elapsed_seconds": "1.38",
+      "status": "PASS",
+      "scope": "independent Gram/product variations, rod and Phi2 affine witnesses, rank-6 to rank-8 rod closure, q4 coefficient 91/6, hashes, and overclaim mutations"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_84_row_apparatus_q2_q3_k_gate.py",
+      "elapsed_seconds": "1.81",
+      "status": "PASS",
+      "scope": "all 4 apparatus-jet, affine-K, rod-closure, response-rank, mutation, and claim-boundary tests"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-84-row-apparatus-q2-q3-k-gate-v1.schema.json -d closed_universe_observers/certificates/BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE.json",
+      "elapsed_seconds": "23.04",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.17",
+      "status": "PASS",
+      "scope": "historical snapshot replay plus current apparatus q2/q3 K-gate hash and boundary"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "210.65",
+      "status": "PASS",
+      "scope": "all 70 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This exports a scoped coefficientwise interaction jet and exact obstruction without freezing or releasing a finite-parameter/all-orders apparatus theorem, changing shared core algebra, promoting a QME lifecycle, or satisfying another Tier-3 trigger."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE.json", "sha256": "d94854ea0980d22b8a7e8b44a52dd50afa7afd8a0916aff52d3700d1eeb2d0b9"},
+    {"path": "closed_universe_observers/schema/berger-84-row-apparatus-q2-q3-k-gate-v1.schema.json", "sha256": "b2e3b1a4c4afd6b491b5ffcf5a2152ccec999b1066cb8c05a6b35dd8f89ac1e9"},
+    {"path": "closed_universe_observers/generate_berger_84_row_apparatus_q2_q3_k_gate.py", "sha256": "23b6378f81159604d0db5593a239a79ffb17f6bf78486a83daa4b940551edfdb"},
+    {"path": "closed_universe_observers/verify_berger_84_row_apparatus_q2_q3_k_gate.py", "sha256": "77f7e4e7d538b83b3ef63ed54782f04c751387cd9805e2dae66e32bf60e5b1d2"},
+    {"path": "closed_universe_observers/tests/test_berger_84_row_apparatus_q2_q3_k_gate.py", "sha256": "01c7502a6d09e981612621c933273817c39bcdf301773751f6857b3c72238774"},
+    {"path": "closed_universe_observers/reports/berger-84-row-apparatus-q2-q3-k-gate.md", "sha256": "2a3dc7c73f96d8eb3459fd77fde2f753280d01f812c2829e26e805caea61b3e6"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "cd0eefbbc0d4d9319d795419d10001d8f6516393d03aef7042f86dadf34e6378"},
+    {"path": "closed_universe_observers/README.md", "sha256": "a697fcd000dd90b5edf706f2dc054fe89f31e549022a5a49906704ff5012bcf7"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "fc56fa97de63eef7a9df5ec35d57891ebdb4ea9d71cca583f366119c36891bf7"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "1b7b6e2f23c93d89303c9b1d71363040ed5579340e8e387e03525828cf43f612"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "b0770a15b2450a7be389256b932076707582e24bb7e26aa69f638dd597ee714c"}
+  ],
+  "claim_flags": {
+    "APPARATUS_NORMALIZED_PROFILE_TWO_JET_EXACT": true,
+    "APPARATUS_Q2_ACTION_JET_EXPORTED": true,
+    "APPARATUS_Q3_ACTION_JET_EXPORTED": true,
+    "APPARATUS_Q2_Q3_CYCLIC_AT_R0": true,
+    "APPARATUS_ARITY_TWO_IDENTITY_THROUGH_R_FIRST_JET": true,
+    "APPARATUS_ARITY_THREE_IDENTITY_THROUGH_R_FIRST_JET": false,
+    "K_BERGER_BACKGROUND_PRESERVING_ON_APPARATUS": false,
+    "AFFINE_K_BERGER_THROUGH_ARITY_TWO_CERTIFIED": true,
+    "AFFINE_K_BERGER_THROUGH_ARITY_THREE_CERTIFIED": false,
+    "FORMAL_BACKREACTED_UNARY_RANK_TWO_CERTIFIED": true,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

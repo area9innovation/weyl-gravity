@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-84-row-apparatus-q2-q3-k-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "normalized_profile_two_jet", "apparatus_action_jets", "K_Berger_gate", "observer_response", "observer_morphism_disposition", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-84-row-apparatus-q2-q3-k-gate-v1"},
+    "result_id": {"const": "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE"},
+    "setting_id": {"$ref": "#/$defs/text"},
+    "claim_status": {"const": "APPARATUS_Q2_Q3_JET_EXPORTED_AFFINE_K_ARITY_THREE_INPUT_BLOCKED_Q4"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 8, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "normalized_profile_two_jet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Gram_Jacobian", "readout_product", "profile_third_and_higher_status"],
+      "properties": {
+        "Gram_Jacobian": {
+          "type": "object", "additionalProperties": true,
+          "required": ["first_variation_defect_count", "second_variation_defect_count"],
+          "properties": {
+            "first_variation_defect_count": {"const": 0},
+            "second_variation_defect_count": {"const": 0}
+          }
+        },
+        "readout_product": {
+          "type": "object", "additionalProperties": true,
+          "required": ["first_jet_defect_count", "second_jet_defect_count", "pair_partition_nonzero"],
+          "properties": {
+            "first_jet_defect_count": {"const": 0},
+            "second_jet_defect_count": {"const": 0},
+            "pair_partition_nonzero": {"const": true}
+          }
+        },
+        "profile_third_and_higher_status": {"const": "OPEN_FROM_THE_CUBIC_AND_HIGHER_PROFILE_REMAINDER"}
+      }
+    },
+    "apparatus_action_jets": {
+      "type": "object", "additionalProperties": true,
+      "required": ["lowered_cubic_tensor_C3_equals_Omega_q2", "lowered_quartic_tensor_C4_equals_Omega_q3", "cyclic_completion", "exact_scope", "identity_disposition", "canonical_sha256"],
+      "properties": {
+        "lowered_cubic_tensor_C3_equals_Omega_q2": {"type": "object"},
+        "lowered_quartic_tensor_C4_equals_Omega_q3": {"type": "object"},
+        "cyclic_completion": {"$ref": "#/$defs/text"},
+        "exact_scope": {"type": "object"},
+        "identity_disposition": {
+          "type": "object", "additionalProperties": true,
+          "required": ["q2_cyclicity_defect_count", "q3_cyclicity_defect_count", "arity_three_at_r1"],
+          "properties": {
+            "q2_cyclicity_defect_count": {"const": 0},
+            "q3_cyclicity_defect_count": {"const": 0},
+            "arity_three_at_r1": {"const": "INPUT_BLOCKED_Q4_PHI2"}
+          }
+        },
+        "canonical_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "K_Berger_gate": {
+      "type": "object", "additionalProperties": true,
+      "required": ["background_components", "ordinary_linear_action_background_preserving", "existing_rod_linear_symmetry_completion", "minimal_honest_action", "affine_identity_hierarchy", "first_unavailable_identity", "missing_inputs", "alternative_repair", "q4_underdetermination_witness"],
+      "properties": {
+        "background_components": {"type": "object"},
+        "ordinary_linear_action_background_preserving": {"const": false},
+        "existing_rod_linear_symmetry_completion": {
+          "type": "object", "additionalProperties": true,
+          "required": ["current_real_rod_span_rank", "time_translation_closure_rank", "constant_internal_6_by_6_completion_exists", "minimal_additional_real_rod_directions"],
+          "properties": {
+            "current_real_rod_span_rank": {"const": 6},
+            "time_translation_closure_rank": {"const": 8},
+            "constant_internal_6_by_6_completion_exists": {"const": false},
+            "minimal_additional_real_rod_directions": {"const": 2}
+          }
+        },
+        "minimal_honest_action": {"$ref": "#/$defs/text"},
+        "affine_identity_hierarchy": {"type": "array", "minItems": 4, "maxItems": 4},
+        "first_unavailable_identity": {"const": "arity 3"},
+        "missing_inputs": {"type": "array", "minItems": 4},
+        "alternative_repair": {"$ref": "#/$defs/text"},
+        "q4_underdetermination_witness": {
+          "type": "object", "additionalProperties": true,
+          "required": ["same_q1_q2_q3", "nonzero"],
+          "properties": {"same_q1_q2_q3": {"const": true}, "nonzero": {"const": true}}
+        }
+      }
+    },
+    "observer_response": {
+      "type": "object", "additionalProperties": true,
+      "required": ["base_rank", "constant_term_nonzero", "determinant_is_unit", "formal_rank", "scope"],
+      "properties": {
+        "base_rank": {"const": 2},
+        "constant_term_nonzero": {"const": true},
+        "determinant_is_unit": {"const": true},
+        "formal_rank": {"const": 2},
+        "scope": {"$ref": "#/$defs/text"}
+      }
+    },
+    "observer_morphism_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Maxwell_gauge_chain_compatibility", "cyclic_pairing_compatibility_through_q3_at_r0", "formal_backreacted_unary_rank_two", "ordinary_linear_K_background_preserving", "affine_K_through_arity_two", "affine_K_through_arity_three", "full_observer_morphism_certified", "first_exact_defect", "failure_category", "maximal_certified_subcarrier"],
+      "properties": {
+        "Maxwell_gauge_chain_compatibility": {"const": true},
+        "cyclic_pairing_compatibility_through_q3_at_r0": {"const": true},
+        "formal_backreacted_unary_rank_two": {"const": true},
+        "ordinary_linear_K_background_preserving": {"const": false},
+        "affine_K_through_arity_two": {"const": true},
+        "affine_K_through_arity_three": {"const": false},
+        "full_observer_morphism_certified": {"const": false},
+        "first_exact_defect": {"$ref": "#/$defs/text"},
+        "failure_category": {"const": "K_BERGER_AFFINE_ARITY_THREE_INPUT_OBSTRUCTION_NOT_SIGNAL_OR_RANK_FAILURE"},
+        "maximal_certified_subcarrier": {"$ref": "#/$defs/text"}
+      }
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "defect", "defect_count", "detected"],
+        "properties": {
+          "name": {"$ref": "#/$defs/text"}, "defect": {"$ref": "#/$defs/text"},
+          "defect_count": {"type": "integer", "minimum": 1}, "detected": {"const": true}
+        }
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["APPARATUS_NORMALIZED_PROFILE_TWO_JET_EXACT", "APPARATUS_Q2_ACTION_JET_EXPORTED", "APPARATUS_Q3_ACTION_JET_EXPORTED", "APPARATUS_Q2_Q3_CYCLIC_AT_R0", "APPARATUS_ARITY_TWO_IDENTITY_THROUGH_R_FIRST_JET", "APPARATUS_ARITY_THREE_IDENTITY_AT_R0", "APPARATUS_ARITY_THREE_IDENTITY_THROUGH_R_FIRST_JET", "FULL_BACKREACTED_APPARATUS_Q3_CERTIFIED", "K_BERGER_BACKGROUND_PRESERVING_ON_APPARATUS", "AFFINE_K_BERGER_THROUGH_ARITY_TWO_CERTIFIED", "AFFINE_K_BERGER_THROUGH_ARITY_THREE_CERTIFIED", "Q4_INPUT_REQUIRED", "FORMAL_BACKREACTED_UNARY_RANK_TWO_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "EMITTER_RECOIL_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "APPARATUS_NORMALIZED_PROFILE_TWO_JET_EXACT": {"const": true},
+        "APPARATUS_Q2_ACTION_JET_EXPORTED": {"const": true},
+        "APPARATUS_Q3_ACTION_JET_EXPORTED": {"const": true},
+        "APPARATUS_Q2_Q3_CYCLIC_AT_R0": {"const": true},
+        "APPARATUS_ARITY_TWO_IDENTITY_THROUGH_R_FIRST_JET": {"const": true},
+        "APPARATUS_ARITY_THREE_IDENTITY_AT_R0": {"const": true},
+        "APPARATUS_ARITY_THREE_IDENTITY_THROUGH_R_FIRST_JET": {"const": false},
+        "FULL_BACKREACTED_APPARATUS_Q3_CERTIFIED": {"const": false},
+        "K_BERGER_BACKGROUND_PRESERVING_ON_APPARATUS": {"const": false},
+        "AFFINE_K_BERGER_THROUGH_ARITY_TWO_CERTIFIED": {"const": true},
+        "AFFINE_K_BERGER_THROUGH_ARITY_THREE_CERTIFIED": {"const": false},
+        "Q4_INPUT_REQUIRED": {"const": true},
+        "FORMAL_BACKREACTED_UNARY_RANK_TWO_CERTIFIED": {"const": true},
+        "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": {"const": false},
+        "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "EMITTER_RECOIL_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXPORT_BASE_AND_APPARATUS_Q4_CONTRACTION_ON_K0_OR_DECLARE_A_K_INVARIANT_APPARATUS_BACKGROUND_THEN_REPLAY_OBSERVER_MORPHISM"},
+    "claim_boundary": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "result_id"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}, "result_id": {"$ref": "#/$defs/text"}}
+    }
+  }
+}
