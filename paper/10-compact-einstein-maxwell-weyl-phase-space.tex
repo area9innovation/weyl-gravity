@@ -80,11 +80,13 @@ question from the existence of local gravitational radiation.
 OpenAI GPT-5 was used substantively for mathematical synthesis, symbolic-code
 generation and debugging, literature organization, claim auditing, and
 manuscript drafting. The human author posed and refined the scientific
-questions, directed the repository workflow, selected the claims, and is
-responsible for reviewing the derivations and final text before submission.
-Every algebraic result used below is reproduced by deterministic exact
-scripts and independently checked by a second verifier; Section~\ref{sec:repro}
-gives content hashes and commands. No floating-point calculation is used in a
+questions, directed the repository workflow, and selected and reviewed the
+claims and derivations in this draft. The human author retains responsibility
+for the final text, and submission remains conditional on a documented final
+human review. Every algebraic result used below is reproduced by deterministic
+exact scripts and checked by a separately implemented deterministic verifier
+that does not import the generator code; Section~\ref{sec:repro} gives content
+hashes and commands. No floating-point calculation is used in a
 rank, inertia, quotient, or on-shell identity. This disclosure follows the
 current APS requirement that substantive AI use be disclosed while the AI
 program is not listed as an author \cite{APSAI}.
@@ -287,8 +289,53 @@ obeys the exact on-shell identity
 \end{equation}
 This is Eq.~(66) of Bergqvist and Eriksson translated to
 \eqref{eq:bach-variation}, with the nonzero cosmological term retained
-\cite{BergqvistEriksson,BergqvistErikssonSenovilla}. Consequently, on the
-Einstein--Maxwell shell,
+\cite{BergqvistEriksson,BergqvistErikssonSenovilla}.
+
+An on-shell identity cannot be differentiated only along actual nonlinear
+solution families if one wishes to cover arbitrary Jacobi fields. The
+following formal bridge supplies the missing step.
+
+\begin{proposition}[Dual-number formal linearization]
+\label{prop:dual-number-bridge}
+Let $(h,f)$ be any smooth fixed-bundle solution of the complete linearized
+Einstein, Maxwell, and Bianchi equations at $(\bar g,\bar F)$. Then
+\begin{equation}\label{eq:formal-chevreton-linearization}
+ D\!\left(B_{ab}-\frac{2\kappa\Lambda}{3}T_{ab}
+ -C^{\rm Ch}_{ab}\right)_{(\bar g,\bar F)}[h,f]=0.
+\end{equation}
+No assumption that $(h,f)$ integrates to a real one-parameter family is
+required.
+\end{proposition}
+
+\begin{proof}
+Work in the dual-number algebra
+$\mathbb D=\mathbb R[\varepsilon]/(\varepsilon^2)$ and set
+$(g_\varepsilon,F_\varepsilon)=(\bar g+\varepsilon h,
+\bar F+\varepsilon f)$. The metric is invertible over $\mathbb D$, with
+\begin{equation}
+ g_\varepsilon^{-1}=\bar g^{-1}
+ -\varepsilon\bar g^{-1}h\bar g^{-1}.
+\end{equation}
+Because the zeroth-order fields solve the nonlinear equations and $(h,f)$
+solves their linearizations, the full Einstein, Maxwell, and Bianchi
+residuals of $(g_\varepsilon,F_\varepsilon)$ vanish in $\mathbb D$.
+
+Now repeat the derivation of \eqref{eq:chevreton-identity} over
+$\mathbb D$. Its first step is the Leibniz expansion of $H_{ab}$; the Maxwell
+wave identity then follows by differentiating $dF=0$ and
+$\nabla^aF_{ab}=0$ and commuting covariant derivatives. The Ricci terms are
+replaced using the Einstein equation, and the remaining curvature derivatives
+are converted by the differential Bianchi identity and the geometric
+definition of $B_{ab}$. These operations are natural tensor algebra,
+covariant differentiation, and curvature commutation, so they remain valid
+over $\mathbb D$. Hence \eqref{eq:chevreton-identity} holds modulo
+$\varepsilon^2$ for $(g_\varepsilon,F_\varepsilon)$; its
+$\varepsilon$ coefficient is \eqref{eq:formal-chevreton-linearization}.
+This repeats the on-shell derivation at first formal order rather than
+assuming nonlinear integrability.
+\end{proof}
+
+Consequently, on the formal Einstein--Maxwell shell,
 \begin{equation}\label{eq:wm-defect}
  \alpha_BB_{ab}-T_{ab}
  =\alpha_B C^{\rm Ch}_{ab}
@@ -307,10 +354,10 @@ $\alpha_B\delta B_{ab}-\delta T_{ab}=0$. The Maxwell equation is identical
 in the two theories, so the same pair $(h,a)$ solves the complete linearized
 Weyl--Maxwell equations.
 
-This use of \eqref{eq:chevreton-identity} is an on-shell tangent statement,
-not an off-shell tensor identity modulo displayed Euler--Lagrange operators.
-It is stronger than principal-symbol inclusion and weaker than an off-shell
-BV chain map. It also predicts its own
+Proposition~\ref{prop:dual-number-bridge} covers all formal linearized
+solutions, including non-integrable ones. It is nevertheless weaker than an
+explicit off-shell factorization by global Euler--Lagrange row operators or
+an off-shell BV chain map. The Chevreton structure also predicts its own
 limitation: the first possible Chevreton failure is quadratic, so no
 nonlinear closure follows from the linear theorem.
 
@@ -578,10 +625,11 @@ orthogonal by $S^1$ Fourier invariance, $SO(3)$ invariance, and spatial
 parity. Distinct radiative branches are orthogonal because $M$ is
 $\Omega_{\rm EM}$-self-adjoint and has distinct eigenvalues. The only shared
 label not settled by these arguments is the physical axial
-$\ell=1,n=0$ oscillator against the twist. Its literal mixed target current
-is proportional to
+$\ell=1,n=0$ oscillator against the twist. Writing $p_{\rm osc}$ for the
+arbitrary physical-oscillator amplitude, its literal mixed target current is
+proportional to
 \begin{equation}
- -2i\pi\omega p(\omega^2-4)
+ -2i\pi\omega p_{\rm osc}(\omega^2-4)
  [\omega(A+Bt)-iB]e^{-i\omega t},
 \end{equation}
 and therefore vanishes on the physical shell $\omega^2=4$ for both Jordan
@@ -679,8 +727,22 @@ $K_{\ell,n}[\omega]$ has Smith factors
 \end{equation}
 Moreover
 $\operatorname{Res}_{\omega}(p,q)=4(9\lambda-2)^2/81$ is nonzero on every
-physical fibre. The Chinese remainder theorem therefore gives the canonical
-extra quotient
+physical fibre. The target module and its primary decomposition are therefore
+\begin{equation}\label{eq:target-primary-decomposition}
+ \frac{K_{\ell,n}[\omega]}{(p)}\oplus
+ \frac{K_{\ell,n}[\omega]}{(pq)}
+ \cong
+ \left(\frac{K_{\ell,n}[\omega]}{(p)}\right)^2
+ \oplus\frac{K_{\ell,n}[\omega]}{(q)}.
+\end{equation}
+The axial Einstein master module is $K_{\ell,n}[\omega]/(q)$. Its inclusion
+is a module map, so its image is annihilated by $q$. Since $q$ is a unit on
+each $p$-primary summand, that image lies entirely in the $q$-primary target
+summand. The quotient inclusion is injective by
+Theorem~\ref{prop:inclusion}; both source and target $q$-primary summands have
+$K_{\ell,n}$-dimension $\deg_\omega q=4$. The Einstein image therefore equals
+the complete $q$-primary summand. Taking the quotient in
+\eqref{eq:target-primary-decomposition} gives
 \begin{equation}\label{eq:extra-fibre-module}
  \cQ_{{\rm ax},\ell,n}^{\rm extra}
  :=\left(\cT_{\rm WM}^{\rm ax}/
@@ -720,7 +782,15 @@ $e^{-i\omega t}$, $\omega>0$, define the normalized Hermitian current form
 \end{equation}
 with the time orientation and overall action convention fixed by
 \eqref{eq:WM-action}. A different positive normalization of the circle
-integral does not change its inertia. In the basis
+integral does not change its inertia. Reality and antisymmetry of the real
+Lee--Wald form give
+\begin{equation}
+ \overline{h_+(u,v)}
+ =\frac{\Omega_{\rm WM}(u,\bar v)}{i\omega L N_{\ell m}}
+ =\frac{\Omega_{\rm WM}(\bar v,u)}{-i\omega L N_{\ell m}}
+ =h_+(v,u),
+\end{equation}
+so $h_+$ is Hermitian on a common positive-frequency shell. In the basis
 \eqref{eq:extra-reps} its Gram matrix $G_X$ has entries
 \begin{align}
  (G_X)_{11}
@@ -747,7 +817,8 @@ coefficient in the same direct-current convention. Therefore:
 
 \begin{theorem}[Axial target decomposition and current inertia]
 \label{thm:axial-target}
-For every $\ell\geq2$, every real compact momentum $k$, and before the final
+For every $\ell\geq2$, every allowed compact momentum
+$k=2\pi n/L$, $n\in\mathbb Z$, and before the final
 residual quotient, the complete generic axial Weyl--Maxwell solution fibre
 is the Lee--Wald orthogonal direct sum of the two Einstein master branches and
 the two cyclic extra summands \eqref{eq:extra-fibre-module}. It is
@@ -778,7 +849,7 @@ solution block. For an on-shell axial solution $\Phi$, define
 \begin{equation}\label{eq:detector}
  \cO_X(\Phi)
  =G_X^{-1}\frac{\Omega_{\rm WM}(\overline e,\Phi)}
- {-i\omega_eN_{\ell m}}\in\C^2,
+ {-i\omega_eL N_{\ell m}}\in\C^2,
 \end{equation}
 where $e=(e_1,e_2)^T$. The local Green identity gives slice independence, and
 direct substitution gives
@@ -953,6 +1024,9 @@ Result & Certificate role\\
 & Common exact product background and fixed-flux rational fixture.\\
 \cert{EINSTEIN_MAXWELL_CHEVRETON_TANGENT}
 & Complete linear on-shell solution inclusion.\\
+\cert{EINSTEIN_MAXWELL_CHEVRETON_FORMAL_LINEARIZATION}
+& Dual-number bridge from the on-shell derivation to every formal Jacobi
+field, without an integrability assumption.\\
 \cert{COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING}
 & Positive source radiative pairing and direct Lee--Wald match.\\
 \cert{EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION}
@@ -979,6 +1053,7 @@ formatting is typographical and each line is one shell command.
 \begingroup\footnotesize
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_product_incidence.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_chevreton_tangent.py}
+\par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_chevreton_formal_linearization.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_radiative_symplectic_matching.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.py}
 \par\noindent\path{python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_axial_operator.py}
@@ -1039,7 +1114,7 @@ Nuovo Cimento \textbf{34} (1964) 901--913.
 G.~Bergqvist and I.~Eriksson,
 \emph{The Chevreton tensor and Einstein--Maxwell spacetimes conformal to
 Einstein spaces},
-Class. Quantum Grav. \textbf{24} (2007),
+Class. Quantum Grav. \textbf{24} (2007) 3437--3456,
 \href{https://arxiv.org/abs/gr-qc/0703073}{arXiv:gr-qc/0703073}.
 
 \bibitem{BergqvistErikssonSenovilla}
@@ -1070,7 +1145,8 @@ Eur. Phys. J. C \textbf{82} (2022) 1056,
 P.~Jizba and T.~Lehe\v{c}kov\'a,
 \emph{Generalized Birkhoff theorems and $2+2$ direct product spacetimes in
 Weyl conformal gravity},
-Phys. Rev. D (2026),
+Phys. Rev. D \textbf{113} (2026) 044060,
+\href{https://doi.org/10.1103/9g8r-lrjk}{doi:10.1103/9g8r-lrjk},
 \href{https://arxiv.org/abs/2512.18482}{arXiv:2512.18482}.
 
 \bibitem{LeeWald}

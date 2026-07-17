@@ -1139,6 +1139,22 @@ therefore has fibrewise Smith factors `1,1,p,p*q` and canonical extra quotient
 independence minor `lambda^2`.  Explicit global unimodular Smith
 transformations over the multivariate ring remain unclaimed.
 
+The module bridge is now explicit: the source axial module is
+`K[omega]/(q)`, its injective image is `q`-annihilated and hence cannot have a
+component in either `p`-primary summand, and its dimension `deg(q)=4` equals
+the full target `q`-primary dimension.  The Einstein image is therefore the
+complete `q`-primary summand, so the quotient is exactly the two remaining
+`p`-summands.
+
+`EINSTEIN_MAXWELL_CHEVRETON_FORMAL_LINEARIZATION` closes the linearization-
+instability loophole in the inclusion theorem.  An arbitrary Jacobi field is
+an exact Einstein--Maxwell solution over the dual numbers
+`R[epsilon]/(epsilon^2)`.  Repeating the natural Bergqvist--Eriksson tensor
+derivation over that algebra proves the linear Bach--Chevreton identity for
+all formal linearized solutions, not only tangents to actual nonlinear
+families.  This does not construct the stronger explicit off-shell BV row
+factorization and makes no nonlinear closure claim.
+
 Paper A has also been revised to name the compactified Plebański--Hacyan
 fixture, display the Bach/action and on-shell Chevreton normalizations, give a
 complete exceptional-stratum table, make the relative endomorphism `R` the

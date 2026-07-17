@@ -43,6 +43,9 @@ def verify_certificate() -> dict[str, object]:
     assert specialization["fiberwise_Smith_invariants"] == ["1", "1", "p", "p*q"]
     assert specialization["p_q_coprime_on_every_physical_specialization"] is True
     assert payload["audit"]["zero_momentum_audit"]["same_fiberwise_invariant_factors"] is True
+    primary = payload["audit"]["Einstein_image_primary_identification"]
+    assert primary["Einstein_image_equals_complete_q_primary_summand"] is True
+    assert primary["source_K_dimension"] == primary["target_q_primary_K_dimension"]
     assert payload["classification"]["global_unimodular_Smith_transformations_over_multivariate_ring_claimed"] is False
     return payload
 

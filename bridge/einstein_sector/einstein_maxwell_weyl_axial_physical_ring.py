@@ -132,6 +132,18 @@ def _audit() -> dict[str, Any]:
             "CRT_target_fiber_module": "(K[omega]/(p))^2 direct_sum K[omega]/(q)",
             "extra_quotient_fiber_module": "(K[omega]/(p))^2",
         },
+        "Einstein_image_primary_identification": {
+            "source_axial_module": "K[omega]/(q)",
+            "target_primary_decomposition": "(K[omega]/(p))^2 direct_sum K[omega]/(q)",
+            "q_annihilates_source_image": True,
+            "q_is_a_unit_on_p_primary_summands": True,
+            "source_image_lies_in_q_primary_summand": True,
+            "source_quotient_inclusion_injective": True,
+            "source_K_dimension": "deg_omega(q)=4",
+            "target_q_primary_K_dimension": "deg_omega(q)=4",
+            "Einstein_image_equals_complete_q_primary_summand": True,
+            "extra_quotient_follows": "(K[omega]/(p))^2",
+        },
         "zero_momentum_audit": {
             "T_at_k_zero": _matrix_strings(zero_momentum_reduced),
             "extra_representatives_order_Ht_Hx_Qt_Qx": _matrix_strings(extra_representatives_zero),
@@ -145,6 +157,11 @@ def _audit() -> dict[str, Any]:
 def build_certificate() -> dict[str, Any]:
     source = json.loads(OPERATOR_CERTIFICATE.read_text(encoding="utf-8"))
     _require(source["result_id"] == "EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR", "operator input changed")
+    _require(source["rails"]["source_image_annihilation_replayed"] is True, "source image rail changed")
+    _require(
+        source["source_and_extra_modules"]["source_image_annihilation_verified"] is True,
+        "source module inclusion changed",
+    )
     return {
         "schema": "einstein-maxwell-weyl-axial-physical-ring-v1",
         "schema_path": str(SCHEMA_PATH.relative_to(ROOT)),
@@ -167,6 +184,7 @@ def build_certificate() -> dict[str, Any]:
             "all_physical_lambda_specializations_certified": True,
             "all_compact_momenta_including_zero_certified": True,
             "extra_quotient_two_cyclic_summands_on_every_physical_fiber": True,
+            "Einstein_image_equals_complete_q_primary_summand_on_every_physical_fiber": True,
             "global_unimodular_Smith_transformations_over_multivariate_ring_claimed": False,
             "quantum_or_causal_claim": False,
         },

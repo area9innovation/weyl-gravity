@@ -1,0 +1,70 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate closes the formal-linearization gap for arbitrary Jacobi fields. It does not construct explicit global off-shell P,Q,R row operators, an off-shell BV chain map, nonlinear solution families, causal propagation, scattering, or quantum theory.",
+  "classification": {
+    "all_formal_linearized_Einstein_Maxwell_solutions_included": true,
+    "causal_or_quantum_claim": false,
+    "nonlinear_closure_claimed": false,
+    "nonlinear_linearization_stability_assumed": false,
+    "off_shell_BV_chain_map_constructed": false,
+    "only_integrable_tangents": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "domain": "all smooth fixed-bundle Einstein-Maxwell Jacobi fields at the parallel-flux compactified Plebanski-Hacyan fixture; no nonlinear integrability assumption",
+  "formal_audit": {
+    "Jacobi_residual_rule": "E(barPhi+epsilon*phi)=E(barPhi)+epsilon*DE_barPhi[phi]=0 in D",
+    "coefficient_algebra": "D=R[epsilon]/(epsilon^2)",
+    "metric_inverse": "(g+epsilon*h)^(-1)=g^(-1)-epsilon*g^(-1)*h*g^(-1)",
+    "metric_inverse_denominator": "a*d - b*c",
+    "metric_inverse_identity_mod_epsilon_squared": true,
+    "quadratic_parallel_flux_rule": "nabla(Fbar)=0 implies C_Ch(barPhi+epsilon*phi)=0 in D",
+    "symbolic_dual_remainder_checks": {
+      "epsilon_squared_residual": "0",
+      "quadratic_first_jet": "0"
+    }
+  },
+  "generality_level": "G3_COMPLETE_FORMAL_LINEAR_TANGENT_BRIDGE",
+  "interpretation": "The inclusion theorem does not differentiate an identity only along an actual nonlinear solution family. Every Jacobi field is an exact solution over the dual numbers, and the natural Bach-Chevreton derivation remains valid there. Hence non-integrable linearized solutions are covered, while nonlinear extension remains a separate Taub problem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "use this formal bridge in the compact linear paper; retain the full off-shell BV row-map factorization as a stronger open result",
+  "proof": {
+    "Jacobi_equivalence": "DE_EM_barPhi[phi]=0, DM_barPhi[phi]=0, d(delta F)=0 iff the nonlinear Einstein-Maxwell residuals of Phi_epsilon vanish in D",
+    "dual_number_field": "Phi_epsilon=barPhi+epsilon*phi in D, epsilon^2=0",
+    "formal_identity": "D(B-(2*kappa*Lambda/3)T-C_Ch)_barPhi[phi]=0 for every Einstein-Maxwell Jacobi field phi",
+    "integrable_family_required": false,
+    "naturality_step": "The published Bach-Chevreton derivation uses only tensor algebra, covariant differentiation, curvature commutators, Leibniz rules, and the Einstein-Maxwell equations; all operations extend to D because gbar+epsilon*h is invertible in D.",
+    "parallel_flux_consequence": "DC_Ch_barPhi[phi]=0 for every phi because C_Ch is homogeneous quadratic in nabla F and nabla Fbar=0",
+    "tuned_target_consequence": "alpha_B*DB_barPhi[phi]-DT_barPhi[phi]=0 when 2*alpha_B*kappa*Lambda/3=1"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_chevreton_formal_linearization.py",
+    "generator_sha256": "38e433eac0dc34a14821f98399ba646ba8be8e20cc74d8809a96c850ed42e0eb",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_chevreton_tangent.json": "b8cf3781a88bfa08407be252093a1689296250589bfd7d92488b87f2de85fead",
+      "bridge/certificates/einstein_maxwell_product_incidence.json": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+    },
+    "primary_derivation": {
+      "arxiv": "gr-qc/0703073v2",
+      "authors": "G. Bergqvist and I. Eriksson",
+      "doi": "10.1088/0264-9381/24/13/018",
+      "steps_replayed_formally": [
+        "Leibniz expansion of the Chevreton trace",
+        "Maxwell wave identity derived from dF=0 and div(F)=0 by covariant differentiation and curvature commutation",
+        "Einstein equation substitution for the Ricci tensor",
+        "differential Bianchi identity and the geometric definition of the Bach tensor"
+      ],
+      "title": "The Chevreton Tensor and Einstein-Maxwell Spacetimes Conformal to Einstein Spaces"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_CHEVRETON_FORMAL_LINEARIZATION",
+  "result_state": "DUAL_NUMBER_BRIDGE_FOR_ALL_FORMAL_JACOBI_FIELDS_CERTIFIED",
+  "schema": "einstein-maxwell-chevreton-formal-linearization-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_chevreton_formal_linearization.schema.json",
+  "schema_sha256": "d45596b2bf96513e9771e3e24d140861458e5e621f7c6eedf6ed56b594f4f4b4",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_chevreton_formal_linearization --verify bridge/certificates/einstein_maxwell_chevreton_formal_linearization.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_chevreton_formal_linearization.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_chevreton_formal_linearization"
+  ]
+}

@@ -24,6 +24,7 @@ def main() -> None:
 
     claims = payload["certified_claims"]
     assert claims["linear_solution_quotient_inclusion_injective"] is True
+    assert claims["formal_linear_inclusion_covers_nonintegrable_jacobi_fields"] is True
     assert claims["target_pullback_nondegenerate_on_complete_standard_image"] is True
     assert claims["identity_inclusion_symplectic"] is False
     assert claims["regular_radiative_relative_inertia_per_real_spatial_harmonic"] == [2, 2]
@@ -45,11 +46,15 @@ def main() -> None:
     normalized = " ".join(text.split())
     required = [
         r"\begin{theorem}[Fixed-bundle tangent inclusion]",
+        r"\begin{proposition}[Dual-number formal linearization]",
         r"\begin{theorem}[Relative phase-space endomorphism]",
         r"\begin{theorem}[Axial target decomposition and current inertia]",
         r"\operatorname{inertia}\bigl(h_+|_{\mathcal H^{\rm ax}_+}\bigr)=(3,1)",
         r"R_{\rm phys}=\mathbb Q[\lambda,k",
         r"n\in\mathbb Z$, including $n=0$",
+        "The Einstein image therefore equals the complete $q$-primary summand",
+        r"{-i\omega_eL N_{\ell m}}",
+        "so $h_+$ is Hermitian on a common positive-frequency shell",
         "before the final residual quotient",
         "not, by itself, a quantum ghost or unitarity theorem",
         "The polar extra branch and the final residual descent remain open",
@@ -61,6 +66,8 @@ def main() -> None:
         "LORENTZIAN_CERTIFIED",
         "THEOREM_FROZEN",
         r"\operatorname{sig}\cT_{\rm WM}^{\rm ax}",
+        "every real compact momentum",
+        r"{-i\omega_eN_{\ell m}}",
         "the polar extra branch is complete",
         "proves asymptotically flat scattering",
     ]

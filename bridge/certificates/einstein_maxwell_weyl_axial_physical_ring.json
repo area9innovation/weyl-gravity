@@ -15,6 +15,18 @@
       "identity": "A*a+B*b+D*d=lambda^2*(lambda-2)^2",
       "right_hand_side_is_a_unit_in_R_phys": true
     },
+    "Einstein_image_primary_identification": {
+      "Einstein_image_equals_complete_q_primary_summand": true,
+      "extra_quotient_follows": "(K[omega]/(p))^2",
+      "q_annihilates_source_image": true,
+      "q_is_a_unit_on_p_primary_summands": true,
+      "source_K_dimension": "deg_omega(q)=4",
+      "source_axial_module": "K[omega]/(q)",
+      "source_image_lies_in_q_primary_summand": true,
+      "source_quotient_inclusion_injective": true,
+      "target_primary_decomposition": "(K[omega]/(p))^2 direct_sum K[omega]/(q)",
+      "target_q_primary_K_dimension": "deg_omega(q)=4"
+    },
     "block_reduction": {
       "Schur_complement": [
         [
@@ -119,6 +131,7 @@
   },
   "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate proves the physical-ring determinantal ideals and every physical momentum specialization. It does not claim a global Smith normal form over the multivariate ring, final residual descent, nonlinear closure, causal scattering, or quantum interpretation.",
   "classification": {
+    "Einstein_image_equals_complete_q_primary_summand_on_every_physical_fiber": true,
     "all_compact_momenta_including_zero_certified": true,
     "all_physical_lambda_specializations_certified": true,
     "extra_quotient_two_cyclic_summands_on_every_physical_fiber": true,
@@ -138,7 +151,7 @@
   "next_gate": "use the physical-ring theorem in the compact linear manuscript and keep the stronger claim of explicit global unimodular Smith transformations over R_phys[omega] fail-closed unless those transformations are constructed",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_axial_physical_ring.py",
-    "generator_sha256": "2f37af5ae78d9fd65c5e0486e2aafb5dfd0928dd0637904a91d189a58d35521a",
+    "generator_sha256": "95692c5c232db0369ccce6da3f42450bd6b394484294aa86f703ce68f57acbb0",
     "inputs": {
       "bridge/certificates/einstein_maxwell_weyl_axial_operator.json": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
     }

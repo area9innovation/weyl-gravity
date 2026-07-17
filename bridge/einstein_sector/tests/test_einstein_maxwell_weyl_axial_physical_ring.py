@@ -42,6 +42,12 @@ class AxialPhysicalRingTests(unittest.TestCase):
             self.payload["classification"]["global_unimodular_Smith_transformations_over_multivariate_ring_claimed"]
         )
 
+    def test_Einstein_image_is_full_q_primary_summand(self) -> None:
+        primary = self.payload["audit"]["Einstein_image_primary_identification"]
+        self.assertTrue(primary["source_image_lies_in_q_primary_summand"])
+        self.assertTrue(primary["Einstein_image_equals_complete_q_primary_summand"])
+        self.assertEqual(primary["source_K_dimension"], primary["target_q_primary_K_dimension"])
+
     def test_independent_verifier(self) -> None:
         self.assertEqual(verify_independently()["result_id"], self.payload["result_id"])
 
