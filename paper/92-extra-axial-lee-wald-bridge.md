@@ -1,4 +1,4 @@
-# Extra fourth-order axial modes under a direct Lee--Wald audit
+# Extra fourth-order modes: axial current and polar module audits
 
 *Bridge note for conformal-gravity, higher-derivative quantization, and
 Einstein-from-conformal researchers. Status: compact classical theorem,
@@ -21,12 +21,15 @@ Our narrower classical question is prior to all three quantum conclusions:
 on one compact common Einstein--Maxwell/Weyl--Maxwell background, are the
 extra fourth-order roots actual gauge-quotient solution directions, are they
 radical under the action-derived current, and where does the negative
-classical current direction lie?
+classical current direction lie? The axial block now answers the full current
+question; the polar block supplies an independent off-shell equation-module
+comparison whose direct current remains the next gate.
 
 ```text
 H^0(Einstein--Maxwell)  --injects-->  H^0(Weyl--Maxwell)
           |                                |
           | standard image                 +--> Q_extra = two axial directions
+          |                                +--> two polar equation directions
           |                                |
           +---------- direct Lee--Wald matrix ---------+
                     image signs (1,1), extra signs (2,0)
@@ -62,6 +65,12 @@ python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_lee_wald_completio
   --verify bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json
 python3 -m bridge.einstein_sector.weyl_maxwell_axial_general_lee_wald_fixture \
   --verify bridge/certificates/weyl_maxwell_axial_general_lee_wald_fixture.json
+python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_full_tensor \
+  --verify bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json
+python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_full_tensor.py
+python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_physical_completion \
+  --verify bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json
+python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_completion.py
 ```
 
 ## 4. Added result
@@ -87,15 +96,33 @@ charges, so the linearly measurable extra directions are linearization
 unstable in that declared sector. This is selection by nonlinear constraint,
 not disappearance from the linear current.
 
+The independent polar calculation now establishes the corresponding
+equation-level decomposition. A formally self-adjoint four-by-four target
+Hessian obeys the exact polynomial Einstein square
+
+\[
+H_P S_P=J_P E_P,
+\]
+
+without dividing by momentum or either characteristic factor. On every
+declared physical $\ell\geq2$ compact-momentum fibre, including $k=0$, its
+invariant factors are $1,1,p,pq$. The Einstein image is the complete
+$q$-primary summand, the canonical extra quotient is
+$(K[\omega]/(p))^2$, and the action row weights
+$(-1,2,-1,2\lambda)$ are derived from the four-dimensional variation and
+harmonic norms. This is not yet a polar current theorem: the direct polar
+Lee--Wald form, ungauged BV/Noether lift, and residual descent remain open.
+
 ## 5. Consequence in their language
 
 The result does not choose between $PT$, Fock--BRST, or boundary-selected
 quantization. It says that any comparison must account for an explicit
-classical carrier space on which “extra branch” and “negative direction” are
-not synonymous. A successful boundary or quantum prescription must explain
-which of the standard and extra compact directions survive its own quotient
-and why its inner product is the transported form appropriate to that state
-space.
+classical carrier space in both parities. In the axial block, “extra branch”
+and “negative direction” are demonstrably not synonymous; the polar current
+will test whether that separation persists. A successful boundary or quantum
+prescription must explain which standard and extra compact directions survive
+its own quotient and why its inner product is the transported form appropriate
+to that state space.
 
 For Einstein-from-conformal work, this is a Lorentzian/nonlinear complement:
 linear Einstein inclusion holds, but the identity inclusion is not symplectic
@@ -105,13 +132,13 @@ causally preserved and symplectically appropriate in real time.
 
 ## 6. Scope boundary
 
-The theorem is `LOCAL-ALGEBRAIC/REDUCED-MODE` on a compact product background.
-It is not a positive-frequency Hilbert norm, a BRST/Fock theorem, a $PT$
-metric comparison, a quantum ghost result, or an S-matrix statement. The
-polar extra branch, final residual quotient, literal second expansion of the
-four-dimensional action density, and causal/asymptotic boundary phase spaces
-remain open. The compact negative direction may be removed, retained, or
-reinterpreted by those later gates.
+The results are `LOCAL-ALGEBRAIC/REDUCED-MODE` on a compact product
+background. They are not a positive-frequency Hilbert norm, a BRST/Fock
+theorem, a $PT$ metric comparison, a quantum ghost result, or an S-matrix
+statement. The polar extra current and ungauged lift, final residual quotient,
+literal second expansion of the four-dimensional action density, and
+causal/asymptotic boundary phase spaces remain open. The compact negative
+direction may be removed, retained, or reinterpreted by those later gates.
 
 ## 7. One useful question for adjacent experts
 
@@ -121,15 +148,8 @@ reinterpreted by those later gates.
 > as a causal symplectic subquotient rather than a condition imposed at both
 > temporal ends?
 
-## Reproducibility receipt
-
-```text
-source papers: arXiv:1105.5632v2; arXiv:2109.12743v1; arXiv:2202.08298v2
-project certificate: EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION
-verification: commands in section 3
-dependency tags: LOCAL-ALGEBRAIC; REDUCED-MODE
-generality level: G2_GENERIC_AXIAL_DIRECT_LEE_WALD_COMPLETION
-lifecycle state: CERTIFIED_COMPACT_CLASSICAL_CURRENT
-claim flag: EXTRA_AXIAL_NONRADICAL_DIRECT_LEE_WALD
-open fields: polar extra; residual descent; causal boundaries; quantum state
-```
+**Reproducibility receipt.** Sources: arXiv:1105.5632v2,
+arXiv:2109.12743v1, arXiv:2202.08298v2. Certificates:
+`AXIAL_LEE_WALD_COMPLETION`, `POLAR_PHYSICAL_COMPLETION`; verification commands
+are in section 3. Tags: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`. Open: polar
+current/lift, residual descent, causal boundaries, and quantum state.

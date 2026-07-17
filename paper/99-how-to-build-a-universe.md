@@ -98,31 +98,37 @@ symmetry with a nonzero charge.
 - **There are classical light and gravitational-wave directions.** In a
   coupled gravity-and-electromagnetism universe, familiar electromagnetic and
   gravitational wave patterns solve the linear equations and carry a nonzero
-  physical comparison rule. This establishes classical waves, not quantum
-  photons, quantum gravitons or a detector prediction.
+  physical comparison rule. The complete first local nonlinear coupling
+  between the Berger clock universe and electromagnetism has now also passed
+  its exact gauge and consistency checks. This establishes classical fields
+  and an interaction layer, not quantum photons, quantum gravitons or a
+  detector prediction.
 - **A dynamical redshift fixture now works.** A positive-energy, source-free
   Maxwell wave is read by relational observers on the Berger clock
   background. The compact spatially averaged frequency ratio is invariant
   under coordinate, conformal, Maxwell-gauge and total-time relabelings; one
   exact fixture gives \(1+z=2\). Localized emitter and receiver endpoints, a
   retarded pulse, backreaction and phenomenology remain open.
-- **The larger theory also has two extra classical wave directions in one
-  tested family.** They are not disguised Einstein waves, and an exact local
-  comparison between them is nonzero and positive at the current reduced
-  equation level. This means they do not vanish as mere algebraic
-  bookkeeping there. It does **not** yet mean that nature contains two new
-  particles: the full spacetime energy rule, causal boundary conditions and
-  final physical quotient still have to be checked.
+- **The larger theory also has extra classical wave directions.** Two extra
+  directions occur in each of the tested axial and polar wave families at the
+  equation level. In the axial family, the direct spacetime current between
+  them is nonzero and positive; the corresponding polar current is still
+  open. This means the extra solutions do not vanish as mere algebraic
+  bookkeeping. It does **not** yet mean that nature contains new particles:
+  the final physical quotient, causal boundaries and quantum state still have
+  to be checked.
 - **The apparent ghost is not automatically a particle.** In the selected
   boundary-free, zero-charge universe, no isolated one-particle conformal
   graviton survives after redundant descriptions are removed. Two collective
   curvature patterns remain with a positive comparison rule. They describe
   possible interactions or changes to the theory, not particles flying
   through space.
-- **The first interaction test works in the clock universe.** The quadratic
-  interaction satisfies the required gauge and consistency identities. This
-  is the first nonlinear rung, not a proof that every higher interaction is
-  stable.
+- **The first interaction tests work in the clock universe.** The pure
+  gravity--clock calculation passes through the third tested interaction
+  order for the combined time-and-clock rotation that preserves the
+  background. The complete first nonlinear electromagnetic coupling also
+  passes. This is not yet a theorem for an unmodified global time shift, every
+  higher interaction, or a localized light experiment.
 - **Every statement has a computational receipt.** Exact symbolic programs
   derive and check the large identities. Separate verifiers, broken-input
   tests, content hashes and clean rebuilds record what was proved and prevent
@@ -131,9 +137,9 @@ symmetry with a nonzero charge.
 
 This is a real but incomplete mathematical universe. It has spacetime,
 classical causal propagation, clocks, classical electromagnetic and
-gravitational wave directions, two classified extra fourth-order directions
-in a separate compact gravity-and-electromagnetism setting, and a first
-controlled interaction layer. It does not yet have a certified relational
+gravitational wave directions, extra fourth-order axial and polar equation
+directions in a separate compact gravity-and-electromagnetism setting, and a
+first controlled interaction layer. It does not yet have a certified relational
 redshift with localized endpoints, a physical mass-generation mechanism,
 electrons, non-Abelian gauge fields, quantum particles, a unified
 gauge--matter sector, gravitational lensing, black-hole boundaries, a
@@ -352,15 +358,15 @@ quantum theory.
 | **Causality** | **Scoped pass.** Retarded responses in the complete 386-part gravity system and 54-part clock system do not let future sources alter the past. | Construct the corresponding global quantum state and quantum causality theorem. |
 | **Clocks and time dilation** | **Partial.** A healthy matter clock changes internally while total time shift can remain gauge in the fixed-coupling, linear, zero-charge sector. | Compare two physical clocks and calculate an observable time-dilation law. |
 | **Gravitational redshift** | **Scoped partial pass.** A positive-energy dynamical Maxwell mode and invariant compact spatially averaged relational frequency ratio are certified; one exact fixture gives \(1+z=2\). | Localize emitter and receiver, construct a compact retarded pulse, include gravity--Maxwell interaction dressing and backreaction, then test phenomenology. |
-| **Classical light** | **Partial.** Standard electromagnetic wave directions occur in the compact Einstein--Maxwell inclusion. | Build physical sources, detectors, energy flux and boundary conditions. |
+| **Classical light** | **Partial.** Standard electromagnetic waves occur, and the complete first local gravity--clock--Maxwell interaction passes its exact gauge identities. | Transfer that interaction through the causal reduction and build localized sources, detectors, energy flux and boundary conditions. |
 | **Physical mass scale and massive matter** | **Open.** The conformal theory has no certified mass-generation mechanism or stable massive excitation. \(E=mc^2\) is a later relativistic consistency check, not the missing mechanism. | Generate a physical scale, construct a stable massive mode, and verify its causal dynamics and relativistic mass shell. |
 | **Electrons and charged matter** | **Open.** No certified charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
 | **Non-Abelian gauge fields and chiral matter** | **Open.** The certified matter content does not yet contain a Yang--Mills gauge group or chiral fermion spectrum resembling the strong and weak interactions. | Build the causal BV complex, physical pairing and stable interactions for a non-Abelian gauge group and chiral representations. |
 | **Unified gauge--matter sector (GUT candidate)** | **Open, long-range target.** No unified group, anomaly-free matter representation, breaking mechanism or low-energy recovery theorem has been selected. This would initially be a GUT coupled to Weyl gravity, not a theory unifying gravity itself. | Find a viable group and chiral matter sector, cancel all relevant anomalies, generate and break the physical scale, and recover Standard Model particles and interactions. |
-| **Gravitational waves** | **Partial.** Standard linear gravitational wave directions occur with a nonzero physical pairing, and the pure-gravity complex propagates causally. In a separate compact axial family, two extra fourth-order directions survive the reduced equation and local-pairing tests. | Match the extra directions to the direct four-dimensional physical current, impose causal boundary conditions, and produce measurable waveforms, flux and detector response. |
+| **Gravitational waves** | **Partial.** Standard linear gravitational waves have a nonzero pairing, and the pure-gravity complex propagates causally. Separate compact axial and polar families each contain two additional equation directions; the axial extra pair has passed a direct spacetime-current test. | Complete the polar current and final physical quotient, impose causal boundaries, and produce measurable waveforms, flux and detector response. |
 | **Gravitational lensing** | **Open, with geometric ingredients present.** Curved spacetime and light cones exist, but no certified lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
 | **Quantum particles** | **Open.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature classes are not particles. | Construct a global quantum state, physical positive pairing and incoming/outgoing particle interpretation. |
-| **Interactions** | **Partial.** The complete quadratic clock-coupled interaction passes its declared cyclic and gauge tests. | Pass cubic and higher identities, resonant channels and global nonlinear evolution. |
+| **Interactions** | **Partial.** The gravity--clock system passes through the third tested order for the background-preserving combined generator, and the complete first gravity--clock--Maxwell coupling passes its declared identities. | Compute the mixed Maxwell third-order terms, causal transferred vertex, resonant channels and global nonlinear evolution. |
 | **Black holes** | **Open in this certified pipeline.** No horizon phase space, boundary charge or stability theorem has been imported into the universe. | Select a black-hole background and certify its horizons, causal perturbations, charges, entropy and stability. |
 | **Quantum gravity** | **Early groundwork only.** Candidate anomaly types and the basic local short-distance wave structure are partly classified. Exact formal transport through the clock system is known, but its distributional wavefront safety is not; there is no coupled Hadamard state or restored quantum master equation. | Prove or obstruct the microlocal transport, then compute anomaly coefficients, restore the quantum gauge identity and construct the global quantum theory. |
 | **Cosmology, dark matter and dark energy** | **Open.** The current work establishes consistency machinery, not a fitted cosmological model. | Build stable cosmological and galaxy backgrounds, derive observables, then compare them with data. |

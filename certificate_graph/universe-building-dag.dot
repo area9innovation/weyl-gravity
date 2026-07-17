@@ -8,10 +8,11 @@ digraph UniverseBuilding {
   "gauge_complex" [shape=box, label="Spacetime and gauge\ncomplex\nexact classical equations", fillcolor="#d9f2df", color="#287a3d", tooltip="Spacetime and gauge\ncomplex\nexact classical equations"];
   "causality" [shape=box, label="Classical causality\nfuture sources do not alter\nthe past", fillcolor="#d9f2df", color="#287a3d", tooltip="Classical causality\nfuture sources do not alter\nthe past"];
   "residual" [shape=box, label="Gauge reduction and\npairing\nphysical descriptions\ncounted once", fillcolor="#d9f2df", color="#287a3d", tooltip="Gauge reduction and\npairing\nphysical descriptions\ncounted once"];
-  "clock" [shape=box, label="Healthy matter clock\nrelational change with total\nD gauge", fillcolor="#d9f2df", color="#287a3d", tooltip="Healthy matter clock\nrelational change with total\nD gauge"];
-  "interactions" [shape=box, label="First interaction layer\ncomplete q2 and Cartan\nthrough arity two", fillcolor="#d9f2df", color="#287a3d", tooltip="First interaction layer\ncomplete q2 and Cartan\nthrough arity two"];
-  "light" [shape=box, label="Classical light\nEinstein--Maxwell wave\ndirections", fillcolor="#fff0bf", color="#9a6a00", tooltip="Classical light\nEinstein--Maxwell wave\ndirections"];
-  "gravity_waves" [shape=box, label="Gravitational waves\nstandard and extra axial\ndirections classified", fillcolor="#fff0bf", color="#9a6a00", tooltip="Gravitational waves\nstandard and extra axial\ndirections classified"];
+  "clock" [shape=box, label="Healthy matter clock\nrelational change; raw D\nnull in the tested linear\nsector", fillcolor="#d9f2df", color="#287a3d", tooltip="Healthy matter clock\nrelational change; raw D\nnull in the tested linear\nsector"];
+  "interactions" [shape=box, label="First interaction layer\ngravity q2/q3; preserving-\ngenerator Cartan through\narity three", fillcolor="#d9f2df", color="#287a3d", tooltip="First interaction layer\ngravity q2/q3; preserving-\ngenerator Cartan through\narity three"];
+  "einstein_weyl_relative" [shape=box, label="Einstein gravity inside\nWeyl gravity\naxial triangle and polar\nphysical module; global\ntriangle open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Einstein gravity inside\nWeyl gravity\naxial triangle and polar\nphysical module; global\ntriangle open"];
+  "light" [shape=box, label="Classical light\ncomplete local Maxwell q2;\ncausal transfer open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Classical light\ncomplete local Maxwell q2;\ncausal transfer open"];
+  "gravity_waves" [shape=box, label="Gravitational waves\nstandard waves; extra axial\nand polar equation modules", fillcolor="#fff0bf", color="#9a6a00", tooltip="Gravitational waves\nstandard waves; extra axial\nand polar equation modules"];
   "redshift" [shape=box, label="Relational redshift\ndynamical Maxwell frequency\nratio; localization open", fillcolor="#fff0bf", color="#9a6a00", tooltip="Relational redshift\ndynamical Maxwell frequency\nratio; localization open"];
   "detector" [shape=box, label="Wave detector response\nnext observer-level wave\ntest", fillcolor="#eceff3", color="#667085", tooltip="Wave detector response\nnext observer-level wave\ntest"];
   "hadamard" [shape=box, label="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen", fillcolor="#fff0bf", color="#9a6a00", tooltip="Hadamard quantum state\nlocal singularity\ncontrolled; global state\nopen"];
@@ -24,7 +25,7 @@ digraph UniverseBuilding {
   "gut" [shape=box, label="Unified gauge--matter\nsector\nGUT candidate: group,\nanomalies, breaking and\nrecovery open", fillcolor="#eceff3", color="#667085", tooltip="Unified gauge--matter\nsector\nGUT candidate: group,\nanomalies, breaking and\nrecovery open"];
   "cosmology" [shape=box, label="Cosmology and dark\nsector\nstable observable model not\nyet built", fillcolor="#eceff3", color="#667085", tooltip="Cosmology and dark\nsector\nstable observable model not\nyet built"];
   { rank=same; "causality"; "residual"; "clock"; }
-  { rank=same; "interactions"; "light"; "gravity_waves"; }
+  { rank=same; "interactions"; "einstein_weyl_relative"; "light"; "gravity_waves"; }
   { rank=same; "redshift"; "detector"; "lensing"; }
   { rank=same; "hadamard"; "anomalies"; }
   { rank=same; "mass"; "nonabelian_matter"; "particles"; "black_holes"; }
@@ -33,6 +34,9 @@ digraph UniverseBuilding {
   "gauge_complex" -> "clock" [tooltip="couples matter"];
   "gauge_complex" -> "light" [tooltip="supports fields"];
   "gauge_complex" -> "gravity_waves" [tooltip="linearizes"];
+  "gauge_complex" -> "einstein_weyl_relative" [tooltip="defines both complexes"];
+  "einstein_weyl_relative" -> "gravity_waves" [tooltip="separates familiar and extra modes"];
+  "einstein_weyl_relative" -> "interactions" [tooltip="tests nonlinear closure"];
   "residual" -> "interactions" [tooltip="defines physical transfer"];
   "causality" -> "interactions" [tooltip="limits influence"];
   "clock" -> "redshift" [tooltip="supplies readings"];

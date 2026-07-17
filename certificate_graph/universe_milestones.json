@@ -38,7 +38,7 @@
       "id": "clock",
       "tier": "core",
       "label": "Healthy matter clock",
-      "detail": "relational change with total D gauge",
+      "detail": "relational change; raw D null in the tested linear sector",
       "status": "certified",
       "evidence": [
         "POSITIVE_BERGER_CLOCK_BACKGROUND",
@@ -49,32 +49,46 @@
       "id": "interactions",
       "tier": "classical_physics",
       "label": "First interaction layer",
-      "detail": "complete q2 and Cartan through arity two",
+      "detail": "gravity q2/q3; preserving-generator Cartan through arity three",
       "status": "certified",
       "evidence": [
-        "BERGER_SUPPORT_LOCAL_Q2",
-        "BERGER_CAUSAL_D_CARTAN_V2"
+        "BERGER_SUPPORT_LOCAL_Q3",
+        "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF"
+      ]
+    },
+    {
+      "id": "einstein_weyl_relative",
+      "tier": "classical_physics",
+      "label": "Einstein gravity inside Weyl gravity",
+      "detail": "axial triangle and polar physical module; global triangle open",
+      "status": "partial",
+      "evidence": [
+        "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+        "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR",
+        "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"
       ]
     },
     {
       "id": "light",
       "tier": "classical_physics",
       "label": "Classical light",
-      "detail": "Einstein--Maxwell wave directions",
+      "detail": "complete local Maxwell q2; causal transfer open",
       "status": "partial",
       "evidence": [
-        "EINSTEIN_MAXWELL_CHEVRETON_TANGENT"
+        "EINSTEIN_MAXWELL_CHEVRETON_TANGENT",
+        "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2"
       ]
     },
     {
       "id": "gravity_waves",
       "tier": "classical_physics",
       "label": "Gravitational waves",
-      "detail": "standard and extra axial directions classified",
+      "detail": "standard waves; extra axial and polar equation modules",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
-        "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION"
+        "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+        "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"
       ]
     },
     {
@@ -183,6 +197,9 @@
     {"from": "gauge_complex", "to": "clock", "label": "couples matter"},
     {"from": "gauge_complex", "to": "light", "label": "supports fields"},
     {"from": "gauge_complex", "to": "gravity_waves", "label": "linearizes"},
+    {"from": "gauge_complex", "to": "einstein_weyl_relative", "label": "defines both complexes"},
+    {"from": "einstein_weyl_relative", "to": "gravity_waves", "label": "separates familiar and extra modes"},
+    {"from": "einstein_weyl_relative", "to": "interactions", "label": "tests nonlinear closure"},
     {"from": "residual", "to": "interactions", "label": "defines physical transfer"},
     {"from": "causality", "to": "interactions", "label": "limits influence"},
     {"from": "clock", "to": "redshift", "label": "supplies readings"},

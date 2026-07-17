@@ -156,10 +156,15 @@ diagram rather than compared only at the level of solutions.
 ### Current lifecycle boundary
 
 The standard compact Einstein--Maxwell solution inclusion is certified
-on-shell, including the declared curvature and background-flux mixing.  This
-does not yet provide an off-shell BV chain map.  Generic axial relative modes
-and a direct current calculation provide substantial cofiber and pairing data,
-but the polar, exceptional, global, and boundary domains are not complete.
+on-shell, including the declared curvature and background-flux mixing.  The
+generic axial block now has a strict polynomial off-shell chain map, mapping
+cofiber, and direct current, while the generic polar block has an exact
+formally self-adjoint target Hessian, polynomial Einstein equation square,
+physical coefficient-ring primary decomposition, and independently derived
+action normalization.  The polar ungauged BV/Noether lift and direct extra
+current remain open, as do the exceptional, global, and boundary domains.
+Therefore these sectoral results do not yet provide the all-sector off-shell
+BV triangle.
 Quadratic extension/obstruction fixtures exist, but not yet a complete
 relative obstruction theorem.  Residual equivariance, the observable map, the
 relative \(L_\infty\) morphism, and the quantum lift remain open until their
@@ -514,6 +519,7 @@ can be excluded cleanly.
 Use these states:
 
 ```text
+OUTLINE_ALLOWED     a stable question and theorem target justify organizing the paper
 DRAFT_ALLOWED       theorem spine and scope are stable enough to write
 THEOREM_FROZEN      authoritative certificate and independent verifier pass
 ARTIFACT_READY      manuscript, supplement, hashes, and clean release audit pass
@@ -526,9 +532,11 @@ SUBMISSION_READY    human authorship, literature, venue, and prose review pass
 | Paper 6, Einstein--Weyl interaction obstructions | major-review draft | finish its declared capstone/review ledger; do not wait for Berger or quantum work |
 | Paper 7, residual cohomology and pairing | `ARTIFACT_READY` | human authorship, literature, venue, and prose review; then public archival release |
 | Paper 8, covariant causal transport | `ARTIFACT_READY` | same human submission review and public archival release as Paper 7 |
-| Compact Einstein--Maxwell radiative phase space | `DRAFT_ALLOWED` | close global `ell=0`/twist pairs for a complete compact phase-space claim; a narrower radiative paper may freeze earlier |
+| Paper 9, Berger clock and background-preserving Cartan contraction | `WRITING_STARTED`; scoped classical/nonlinear/quantum signoffs complete | clean committed-tree replay, then `THEOREM_FROZEN`; the theorem is for $K_{\mathrm{Berger}}=D-\omega R$, not affine raw $D$ |
+| Paper 10, compact Einstein--Maxwell/Weyl--Maxwell phase space | `THEOREM_FROZEN` | external specialist review and final human authorship, literature, venue, and prose review |
 | Linearization stability with charge fibres | `DRAFT_ALLOWED` | promote the fixture-span obstruction to the full harmonic obstruction bilinear and selection rules |
-| Berger clock and the `D` quotient | `DRAFT_ALLOWED` for the classical charge/no-go spine | `q2`, Green, and arity-two Cartan disposition; on a pass add relational redshift, on a failure publish the exact obstruction |
+| Relative Einstein--Weyl complex | `OUTLINE_ALLOWED` | complete `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`, the polar direct current and ungauged lift, exceptional/global sectors, and one axial-plus-polar cofiber theorem |
+| Berger light and relational redshift | not yet `DRAFT_ALLOWED` | Maxwell unary contraction, first transferred mixed vertex, causal/localized signal, and the required mixed $q_3$ disposition |
 | Abstract Green/BGG transfer | outline allowed | abstract hypotheses, toy example, complete detour example, and independent verifier; avoid duplicating Paper 8 without a new abstraction or application |
 | Nonlinear quotient stability | not yet draftable as a positive theorem | authoritative `q2`, arity-two Cartan decision, and first resonant physical channel |
 | Quantum anomaly/QME | local technical note only after the total complex closes | coefficient computation by two paths and QME/`D`-defect disposition for the physical headline |

@@ -423,6 +423,23 @@ def _nonordering_relation(
         and ("receipt" in joined or "source_manifest" in joined)
     ):
         return "MUTUALLY_AUDITS"
+    upper_pair = pair.upper()
+    if "VERIFICATION_RECEIPT" in upper_pair and (
+        "receipt" in joined or "certificate_path" in joined
+    ):
+        return "MUTUALLY_AUDITS"
+    if (
+        "CLAIM_TABLE" in upper_pair
+        and "SIGNOFF" in upper_pair
+        and ("signoff" in joined or "claim_table" in joined)
+    ):
+        return "MUTUALLY_AUDITS"
+    if (
+        "PREFLIGHT" in upper_pair
+        and "READINESS" in upper_pair
+        and ("dependency_refs" in joined or "pinned_classical_evidence" in joined)
+    ):
+        return "COORDINATES_READINESS"
     return None
 
 
@@ -496,14 +513,16 @@ def derive_edges(
                 if value in by_id and value != consumer.result_id:
                     targets = by_id[value]
                     if len(targets) == 1 and _context_is_dependency(context):
-                        edges.add(
-                            Edge(
-                                source=targets[0].key,
-                                target=consumer.key,
-                                relation=_relation(context),
-                                evidence=".".join(context),
-                            )
+                        cross_relation = _nonordering_relation(
+                            targets[0].path, consumer.path, context
                         )
+                        edge = Edge(
+                            source=targets[0].key,
+                            target=consumer.key,
+                            relation=cross_relation or _relation(context),
+                            evidence=".".join(context),
+                        )
+                        (cross_links if cross_relation else edges).add(edge)
             if isinstance(value, dict):
                 for reference, expected_hash in value.items():
                     if not isinstance(reference, str) or not reference.endswith(".json"):

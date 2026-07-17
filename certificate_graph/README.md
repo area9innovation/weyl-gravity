@@ -24,6 +24,11 @@ if any declared evidence certificate is missing. Neither graph changes a
 certificate's lifecycle or promotes local/reduced evidence to a causal or
 quantum claim.
 
+Reciprocal certificate/verification-receipt, claim-table/team-signoff, and
+preflight/readiness-ledger references are recorded as visible nonordering
+cross-links. They are not scientific prerequisite arrows and therefore do not
+manufacture dependency cycles in the DAG.
+
 The nested topic is stored as `layout_group` in every generated node. It is
 inferred only from the certificate path and identifier and is
 presentation-only: it creates no dependency, changes no status color, and

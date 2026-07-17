@@ -1,26 +1,26 @@
 {
   "artifacts": {
-    "certificate-dag.dot": "5e768857f26d1189d9bc7b3b968a42b406261101b34372b495ba1de8391e6fb2",
-    "certificate-dag.json": "32d8dc4d8acde95a4846a801efe61fd070421ac8b647bd928401058450d841e7",
-    "universe-building-dag.dot": "7635a1aca1555d3acf3a2c76c3a689f214459ec1af0071da96363373aecc0865",
-    "unresolved-dependencies.json": "a70e218ee34f2f8780f42d4fe914f203a589208eecba6826d80acd448d6c9be9"
+    "certificate-dag.dot": "5eded6c85c5dc741355430ada6cf1686429bd79fdd7a61c225712ecc21c48bac",
+    "certificate-dag.json": "14fbe0bf40e75131e1e8b8112834976fde97602cab624598fcdbf3f1910c4f82",
+    "universe-building-dag.dot": "2b217401db758b602a8103ee5034afdee6c6043bb8f33449394f9fbd7b7f16cc",
+    "unresolved-dependencies.json": "bb318bae0147c7dbcf9a4eff3bfa7ea140906f0f615806051477bc4bad4d1c48"
   },
-  "certificate_count": 453,
+  "certificate_count": 487,
   "claim_boundary": "The full graph records syntactically declared certificate dependencies and imports. The public graph is a curated evidence-backed milestone view. Neither graph promotes a certificate beyond its own lifecycle and dependency tags.",
-  "dependency_edge_count": 949,
-  "input_json_bundle_sha256": "dc47f2dd4b54d40502b1f1f3c9ba955816d28008bc0e77b94fa0500690a841a0",
+  "dependency_edge_count": 1096,
+  "input_json_bundle_sha256": "3b778a0fe6550e0e038a883aad66b402278f42c5e15b86ca1088a9c8e2347662",
   "issue_counts": {
     "dependency_cycles": 0,
     "duplicate_result_ids": 2,
-    "hash_mismatches": 3,
-    "nonordering_provenance_cross_links": 98,
+    "hash_mismatches": 4,
+    "nonordering_provenance_cross_links": 134,
     "public_missing_evidence": 0,
-    "unresolved_declared_json_dependencies": 2
+    "unresolved_declared_json_dependencies": 4
   },
   "legacy_path_id_count": 214,
-  "milestone_manifest_sha256": "9dbb57962344b2f8feb77807cb24d96f97dfb7c4e53d4b876bdd107631649d29",
-  "modern_result_id_count": 239,
-  "navigation_group_count": 47,
+  "milestone_manifest_sha256": "22518ed565c39c34f8e9ac88747ebc9381cd7c4bb579ed1771300942b0131415",
+  "modern_result_id_count": 273,
+  "navigation_group_count": 48,
   "public_evidence": {
     "anomalies": [
       {
@@ -67,6 +67,23 @@
         "reference": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION"
       }
     ],
+    "einstein_weyl_relative": [
+      {
+        "certificate_path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+        "certificate_status": "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_CHAIN_MAPS_CERTIFIED_FULL_CURVED_ALL_SECTOR_TRIANGLE_OPEN",
+        "reference": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT"
+      },
+      {
+        "certificate_path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "certificate_status": "GENERIC_POLAR_OFFSHELL_OPERATOR_AND_EINSTEIN_CHAIN_SQUARE_CERTIFIED",
+        "reference": "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR"
+      },
+      {
+        "certificate_path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "certificate_status": "POLAR_PHYSICAL_RING_EINSTEIN_PRIMARY_IMAGE_AND_ACTION_NORMALIZATION_CERTIFIED",
+        "reference": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"
+      }
+    ],
     "gauge_complex": [
       {
         "certificate_path": "field_bv_identification/certificates/minimal_bv_chain.json",
@@ -89,6 +106,11 @@
         "certificate_path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
         "certificate_status": "GENERIC_AXIAL_DIRECT_4D_LEE_WALD_MATCH_EXTRA_NONRADICAL_AND_FULL_BLOCK_SIGNATURE_CERTIFIED",
         "reference": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION"
+      },
+      {
+        "certificate_path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "certificate_status": "POLAR_PHYSICAL_RING_EINSTEIN_PRIMARY_IMAGE_AND_ACTION_NORMALIZATION_CERTIFIED",
+        "reference": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"
       }
     ],
     "gut": [],
@@ -106,14 +128,14 @@
     ],
     "interactions": [
       {
-        "certificate_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
-        "certificate_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_CLASSICAL_Q2",
-        "reference": "BERGER_SUPPORT_LOCAL_Q2"
+        "certificate_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3.json",
+        "certificate_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_CLASSICAL_Q3",
+        "reference": "BERGER_SUPPORT_LOCAL_Q3"
       },
       {
-        "certificate_path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
-        "certificate_status": "CERTIFIED_CAUSAL_UNARY_AND_CYCLIC_ARITY_TWO_D_CARTAN",
-        "reference": "BERGER_CAUSAL_D_CARTAN_V2"
+        "certificate_path": "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF"
       }
     ],
     "lensing": [],
@@ -122,6 +144,11 @@
         "certificate_path": "bridge/certificates/einstein_maxwell_chevreton_tangent.json",
         "certificate_status": "FULL_ON_SHELL_LINEAR_TANGENT_INCLUSION_CERTIFIED_OFF_SHELL_BV_AND_NONLINEAR_OPEN",
         "reference": "EINSTEIN_MAXWELL_CHEVRETON_TANGENT"
+      },
+      {
+        "certificate_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
+        "certificate_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2_K_EQUIVARIANT",
+        "reference": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2"
       }
     ],
     "mass": [],
@@ -153,13 +180,13 @@
     ]
   },
   "schema": "pure-weyl-certificate-graph-receipt-v1",
-  "source_commit": "19efb084ee55125ef195fc71253e3136f451b8a2",
+  "source_commit": "a4f91ab3905fe3cac2b1ce3d71e6e4243a1f9870",
   "source_treeish": "HEAD",
   "status_counts": {
-    "certified": 51,
-    "obstruction": 108,
+    "certified": 64,
+    "obstruction": 114,
     "open": 0,
-    "partial": 262,
-    "unclassified": 32
+    "partial": 276,
+    "unclassified": 33
   }
 }

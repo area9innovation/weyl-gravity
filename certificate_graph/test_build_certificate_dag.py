@@ -88,6 +88,96 @@ class CertificateDagTests(unittest.TestCase):
             "MUTUALLY_AUDITS",
         )
 
+    def test_named_verification_receipt_is_nonordering(self) -> None:
+        theorem = certificate(
+            "certificates/THEOREM.json",
+            "THEOREM",
+            {
+                "publication": {
+                    "verification_receipt_path": (
+                        "certificates/THEOREM_VERIFICATION_RECEIPT.json"
+                    )
+                }
+            },
+        )
+        receipt = certificate(
+            "certificates/THEOREM_VERIFICATION_RECEIPT.json",
+            "THEOREM_VERIFICATION_RECEIPT",
+            {"certificate_path": "certificates/THEOREM.json"},
+        )
+        files = {
+            theorem.path: b'{"result_id":"THEOREM"}',
+            receipt.path: b'{"result_id":"THEOREM_VERIFICATION_RECEIPT"}',
+        }
+        edges, issues = derive_edges([theorem, receipt], files)
+        self.assertEqual(edges, [])
+        self.assertEqual(len(issues["nonordering_provenance_cross_links"]), 2)
+
+    def test_claim_table_and_signoff_are_nonordering(self) -> None:
+        claim_table = certificate(
+            "certificates/PAPER_CLAIM_TABLE.json",
+            "PAPER_CLAIM_TABLE",
+            {
+                "signoff_evidence": [
+                    {
+                        "certificate_path": "certificates/PAPER_TEAM_SIGNOFF.json",
+                        "certificate_result_id": "PAPER_TEAM_SIGNOFF",
+                    }
+                ]
+            },
+        )
+        signoff = certificate(
+            "certificates/PAPER_TEAM_SIGNOFF.json",
+            "PAPER_TEAM_SIGNOFF",
+            {
+                "source_manifest": {
+                    "claim_table": {
+                        "path": "certificates/PAPER_CLAIM_TABLE.json",
+                        "result_id": "PAPER_CLAIM_TABLE",
+                    }
+                }
+            },
+        )
+        files = {
+            claim_table.path: b'{"result_id":"PAPER_CLAIM_TABLE"}',
+            signoff.path: b'{"result_id":"PAPER_TEAM_SIGNOFF"}',
+        }
+        edges, issues = derive_edges([claim_table, signoff], files)
+        self.assertEqual(edges, [])
+        self.assertEqual(len(issues["nonordering_provenance_cross_links"]), 4)
+
+    def test_preflight_and_readiness_coordination_is_nonordering(self) -> None:
+        preflight = certificate(
+            "certificates/RELATIVE_FUNCTOR_PREFLIGHT.json",
+            "RELATIVE_FUNCTOR_PREFLIGHT",
+            {
+                "dependency_refs": {
+                    "quantum_readiness": "certificates/QUANTUM_READINESS.json"
+                }
+            },
+        )
+        readiness = certificate(
+            "certificates/QUANTUM_READINESS.json",
+            "QUANTUM_READINESS",
+            {
+                "dependency_refs": {
+                    "relative_preflight": "certificates/RELATIVE_FUNCTOR_PREFLIGHT.json"
+                }
+            },
+        )
+        files = {
+            preflight.path: b'{"result_id":"RELATIVE_FUNCTOR_PREFLIGHT"}',
+            readiness.path: b'{"result_id":"QUANTUM_READINESS"}',
+        }
+        edges, issues = derive_edges([preflight, readiness], files)
+        self.assertEqual(edges, [])
+        self.assertTrue(
+            all(
+                item["relation"] == "COORDINATES_READINESS"
+                for item in issues["nonordering_provenance_cross_links"]
+            )
+        )
+
     def test_layout_topic_ignores_programme_root_name(self) -> None:
         q2 = certificate(
             "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
