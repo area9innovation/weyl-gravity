@@ -1,0 +1,177 @@
+{
+  "category_guards": {
+    "Einstein_like_is_dynamical": true,
+    "Maxwell_is_dynamical": true,
+    "extra_Weyl_is_dynamical": true,
+    "topological_odd_direction_is_particle_branch": false,
+    "topological_odd_direction_location": "separate deformation/vertex basis with Euler-Lagrange and transgression witnesses"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC certificate is the obstruction branch of the requested binary handoff. It proves that the retained 36-row carrier does not admit the declared canonical same-bundle Einstein-like/extra-Weyl projector whose Einstein image is the certified rough-tensor-wave branch: the exact Berger endpoint A10=Box_2^2+V_2 has 92 nondivisible degree-two remainder entries, with the displayed normalized first witness. It does not prove global nonexistence of every mixed-bundle, higher-rank, differently defined, reduced-mode, or nonlocal branch decomposition. It does not relabel the topological odd deformation as a particle, invalidate the retained ell3 theorem, compute a branch mixing table, or make a quantum claim.",
+  "declared_projector_scope": {
+    "Einstein_like_definition": "the support-local same-bundle branch carried by the certified canonical covariant rough tensor wave Box_2",
+    "Maxwell_carrier_status": "retained exactly but irrelevant to the gravity factor obstruction",
+    "ambient_carrier_rank": 36,
+    "extra_Weyl_definition": "a complementary same-bundle scalar-wave-leading branch on the retained metric endpoint",
+    "gravity_metric_dual_rank": 10,
+    "gravity_metric_field_rank": 10,
+    "required_properties": [
+      "finite-order support-local inclusion and projection",
+      "retained-q1 intertwining",
+      "complementary idempotence on the declared gravity carrier",
+      "no TT, helicity, inverse-Laplacian, Green, or reduced-mode projector"
+    ]
+  },
+  "dependency_refs": {
+    "lower_by_two_remainder": {
+      "path": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json",
+      "sha256": "2286d276d86d432d6329cbe125bd3e1303183aaeb2bebb11a159cdedfdd2120a"
+    },
+    "metric_lower_by_two_biwave": {
+      "path": "d_quotient_classical/certificates/BERGER_METRIC_LOWER_BY_TWO_BIWAVE.json",
+      "result_id": "BERGER_METRIC_LOWER_BY_TWO_BIWAVE",
+      "sha256": "0add3e518b7384cd653161b1f9db44d13c71f5c8349cd013027057e0d2ff7c8b"
+    },
+    "quantum_v2_readiness": {
+      "path": "quantum-weyl/transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2.json",
+      "result_id": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2",
+      "sha256": "a9927fa7d4d0a267ca188c6ea1e746c60f7f27ca880393e936c65807c75d6088"
+    },
+    "retained_typed_36_sdr": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR",
+      "sha256": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_endpoint_normal_form": {
+    "degree_two_nondivisible_entries": 92,
+    "degree_two_nonzero_entries": 92,
+    "identity": "A10=Box_2^2+V_2",
+    "maximum_order_V2": 2,
+    "necessary_factor_condition": "the declared canonical Einstein-like realization requires the exact endpoint to factor through/preserve the Box_2 equation module; the certified left and right Box_2 factor tests both fail",
+    "order_four_defect": 0,
+    "order_three_defect": 0
+  },
+  "flags": {
+    "BERGER_RETAINED_36_CANONICAL_LOCAL_BRANCH_PROJECTOR": false,
+    "BERGER_RETAINED_36_CANONICAL_LOCAL_BRANCH_PROJECTOR_OBSTRUCTION": true,
+    "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2": false,
+    "ELL3_BRANCH_PROJECTION_AUTHORIZED": false,
+    "PAPER_11_ALGEBRAIC_THEOREM_REMAINS_VALID": true,
+    "QUANTUM_CLAIM": false
+  },
+  "normalized_obstruction_witness": {
+    "degree_two_defect": "(71*p1**2 + 71*p2**2 + 9*p3**2)/80",
+    "division_remainder": "(71*p1**2 + 71*p2**2 + 9*p3**2)/80",
+    "division_variable": "p0",
+    "fixture": {
+      "alpha_B": "5",
+      "u": "3*sqrt(10)/20",
+      "v": "2*sqrt(10)/3"
+    },
+    "matrix_entry": [
+      0,
+      0
+    ],
+    "normalized_evaluation": "1",
+    "normalized_left_functional": "(80/71) coefficient_of(p1^2)",
+    "scalar_wave_polynomial": "-p0**2 + p1**2 + p2**2 + p3**2"
+  },
+  "not_ruled_out": [
+    "a mixed-bundle local projector after an explicit carrier enlargement",
+    "a different exact Einstein-defect complex not fixing Box_2",
+    "a reduced-mode or spectral branch splitting with an explicit nonlocality label",
+    "the retained-complex ell3 theorem of Paper 11"
+  ],
+  "principal_filtered_module_audit": {
+    "algebra": "Q(sqrt(10))[epsilon]/(epsilon^2)",
+    "equations": [
+      "a^2=a",
+      "(2a-1)b=0"
+    ],
+    "interpretation": "the repeated physical wave layer is a filtered/Jordan carrier, not a direct sum of Einstein-like and generalized layers at principal order",
+    "only_trivial_idempotents": true,
+    "scope_guard": "lower-order separated factors can split a repeated leading symbol; the exact coefficient obstruction below, rather than this principal observation alone, rules out the declared canonical rough-wave realization",
+    "solutions_a_b": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ]
+  },
+  "provenance": {
+    "source_manifest": [
+      {
+        "path": "d_quotient_classical/backreacted_clock/berger_retained_36_residual_branch_local_projector_obstruction.py",
+        "role": "producer",
+        "sha256": "ca71be55f27dc4ed70d145c7c81f63dc1fdea4f0366c45bb5c0afbfb6e57fa2e"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/verify_berger_retained_36_residual_branch_local_projector_obstruction.py",
+        "role": "independent_verifier",
+        "sha256": "5d5116adbf576fa9276d1e6cb6cf922ffb4729532fe8aac34e277457a49ff3ad"
+      },
+      {
+        "path": "d_quotient_classical/backreacted_clock/tests/test_berger_retained_36_residual_branch_local_projector_obstruction.py",
+        "role": "tests",
+        "sha256": "540ddc7f23130515a9cb3f049d9aebcb6556cda29b75813cb91806f23dc48a85"
+      },
+      {
+        "path": "d_quotient_classical/schema/berger-retained-36-residual-branch-local-projector-obstruction-v1.schema.json",
+        "role": "strict_schema",
+        "sha256": "27850a05685e4a11ed2df9e2345a4570fff08df2f73b150288b59ce626f05561"
+      }
+    ],
+    "verification_commands": [
+      "python3 -m d_quotient_classical.backreacted_clock.berger_retained_36_residual_branch_local_projector_obstruction --check --guards",
+      "python3 d_quotient_classical/backreacted_clock/verify_berger_retained_36_residual_branch_local_projector_obstruction.py",
+      "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_36_residual_branch_local_projector_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-retained-36-residual-branch-local-projector-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json"
+    ]
+  },
+  "requested_binary_handoff": {
+    "ell3_branch_projection_authorized": false,
+    "normalized_obstruction_issued": true,
+    "paper_11_algebraic_theorem_affected": false,
+    "requested_success_result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2",
+    "successful_basis_artifact_issued": false
+  },
+  "result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
+  "result_state": "NORMALIZED_LOCAL_PROJECTOR_OBSTRUCTION_CANONICAL_SAME_BUNDLE_SCOPE",
+  "schema": "pure-weyl-berger-retained-36-residual-branch-local-projector-obstruction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "smallest_carrier_enlargement_required": {
+    "allowed_alternatives": [
+      "mixed-bundle Einstein-defect or curvature mapping cylinder",
+      "filtered branch carrier rather than a direct-sum projector",
+      "nonlocal spectral decomposition explicitly labeled REDUCED-MODE, not imported into the local theorem"
+    ],
+    "exact_symbol_lower_bound": {
+      "additional_configuration_directions": 2,
+      "additional_cyclic_dual_directions": 2,
+      "minimum_additional_BV_rows": 4,
+      "physical_helicity_rank": 2,
+      "reason": "a separate generalized wave layer must be represented independently for both real helicity-two directions and cyclicity requires its dual layer"
+    },
+    "smallest_natural_support_local_candidate": {
+      "additional_BV_rows": 10,
+      "additional_bundle": "spatial STF2 prolongation variable plus its cyclic dual",
+      "candidate_retained_rank": 46,
+      "rank_each": 5,
+      "status": "REQUIRED_NEXT_CONSTRUCTION_NOT_CERTIFIED_AS_A_PROJECTOR"
+    }
+  },
+  "verdict": {
+    "first_failed_object": "dynamical_branch_inclusion/projection for Einstein_like on the retained gravity endpoint",
+    "local_projector_exists_in_declared_scope": false,
+    "paper_11_interpretation": "the interaction survives on the retained cyclic causal complex, while an exact local canonical Einstein/extra-Weyl decomposition is obstructed on the 36-row carrier",
+    "quantum_consequence": "do not compute or promote an Einstein_like/extra_Weyl branch-space ell3 mixing table from the 36-row carrier",
+    "reason": "the exact Berger lower-order remainder is not divisible by the canonical tensor-wave polynomial; hence the canonical rough-wave equation module is not an exact same-bundle factor of A10 and cannot be the image of the requested q1-intertwining complementary projector"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-36-residual-branch-local-projector-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "setting_id", "dependency_tags",
+    "dependency_refs", "requested_binary_handoff", "declared_projector_scope",
+    "exact_endpoint_normal_form", "normalized_obstruction_witness",
+    "principal_filtered_module_audit", "verdict", "smallest_carrier_enlargement_required",
+    "category_guards", "not_ruled_out", "flags", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-36-residual-branch-local-projector-obstruction-v1"},
+    "result_id": {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1"},
+    "result_state": {"const": "NORMALIZED_LOCAL_PROJECTOR_OBSTRUCTION_CANONICAL_SAME_BUNDLE_SCOPE"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "requested_binary_handoff": {
+      "type": "object", "additionalProperties": false,
+      "required": ["successful_basis_artifact_issued", "normalized_obstruction_issued", "requested_success_result_id", "ell3_branch_projection_authorized", "paper_11_algebraic_theorem_affected"],
+      "properties": {
+        "successful_basis_artifact_issued": {"const": false},
+        "normalized_obstruction_issued": {"const": true},
+        "requested_success_result_id": {"const": "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2"},
+        "ell3_branch_projection_authorized": {"const": false},
+        "paper_11_algebraic_theorem_affected": {"const": false}
+      }
+    },
+    "declared_projector_scope": {"type": "object"},
+    "exact_endpoint_normal_form": {"type": "object"},
+    "normalized_obstruction_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["matrix_entry", "fixture", "degree_two_defect", "scalar_wave_polynomial", "division_variable", "division_remainder", "normalized_left_functional", "normalized_evaluation"],
+      "properties": {
+        "matrix_entry": {"const": [0, 0]},
+        "fixture": {"type": "object"},
+        "degree_two_defect": {"type": "string", "minLength": 1},
+        "scalar_wave_polynomial": {"type": "string", "minLength": 1},
+        "division_variable": {"const": "p0"},
+        "division_remainder": {"type": "string", "not": {"const": "0"}},
+        "normalized_left_functional": {"type": "string", "minLength": 1},
+        "normalized_evaluation": {"const": "1"}
+      }
+    },
+    "principal_filtered_module_audit": {"type": "object"},
+    "verdict": {"type": "object"},
+    "smallest_carrier_enlargement_required": {"type": "object"},
+    "category_guards": {"type": "object"},
+    "not_ruled_out": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2", "BERGER_RETAINED_36_CANONICAL_LOCAL_BRANCH_PROJECTOR", "BERGER_RETAINED_36_CANONICAL_LOCAL_BRANCH_PROJECTOR_OBSTRUCTION", "ELL3_BRANCH_PROJECTION_AUTHORIZED", "PAPER_11_ALGEBRAIC_THEOREM_REMAINS_VALID", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2": {"const": false},
+        "BERGER_RETAINED_36_CANONICAL_LOCAL_BRANCH_PROJECTOR": {"const": false},
+        "BERGER_RETAINED_36_CANONICAL_LOCAL_BRANCH_PROJECTOR_OBSTRUCTION": {"const": true},
+        "ELL3_BRANCH_PROJECTION_AUTHORIZED": {"const": false},
+        "PAPER_11_ALGEBRAIC_THEOREM_REMAINS_VALID": {"const": true},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {
+          "type": "array", "minItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["role", "path", "sha256"],
+            "properties": {
+              "role": {"type": "string", "minLength": 1},
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 500}
+  }
+}
