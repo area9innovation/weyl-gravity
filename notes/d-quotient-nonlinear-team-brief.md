@@ -572,12 +572,27 @@ the live alternatives are the unsplit retained complex, a noncontractible or
 mixed-bundle filtered enlargement, or an explicitly `REDUCED-MODE` nonlocal
 split.
 
+The first N-G4 filtration page has now closed exactly.  The certificate
+`BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1` lowers the
+unsplit physical action with the typed pairing and sets every PBW derivative
+word to zero.  On the complete 550-dimensional
+`Sym^2(G*) tensor Sym^2(A*)` sector, the 2,690-column matter-parity-preserving
+cyclic cotangent-lift coboundary map has exact rank 550 and zero cokernel.  A
+51-coefficient `F3` primitive reconstructs all 63 nonzero constant-field
+coordinates of the landed mixed `ell3`.  Consequently the two zero-derivative
+Paper 11 evaluations remain valid representative witnesses but cannot be
+nonremovability witnesses.  This is a `G0`, `LOCAL-ALGEBRAIC` result: the
+positive-jet `F2,F3` complex, its higher-order cancellation conditions, and
+the operation on `ell1` cohomology remain open.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
-2. Make the N-G4 cyclic-deformation test above the primary nonlinear task.
-   Return either an admissible trivializing \((F_2,F_3)\) or an exact
-   nonremovability witness for the mixed \(\ell_3\).
+2. Continue the N-G4 cyclic-deformation test at positive PBW jet order.  Do
+   not reuse a zero-derivative coefficient as an obstruction: that complete
+   page is now certified exact.  Return either a jet-bounded admissible
+   trivializing \((F_2,F_3)\) or the first normalized positive-jet dual
+   witness for the mixed \(\ell_3\).
 3. Keep the Green/BGG assignment as a bounded parallel theorem-extraction
    rail.  If continuing the Berger PDE construction, contract the acyclic
    clock/graph incidence before constructing

@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-retained-mixed-ell3-constant-field-redefinition-v1.schema.json",
+  "title": "Berger retained mixed ell3 constant-field cyclic redefinition",
+  "type": "object",
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "generality_level",
+    "dependency_refs",
+    "constant_field_quotient",
+    "admissible_redefinition_ansatz",
+    "exact_verdict",
+    "interpretation",
+    "exact_checks",
+    "claim_flags",
+    "next_gate",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-mixed-ell3-constant-field-redefinition-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1"},
+    "result_state": {"const": "CONSTANT_FIELD_PHYSICAL_MIXED_QUARTIC_TRIVIALIZED_FULL_BV_AND_POSITIVE_JET_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality_level": {"const": "G0"},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["legacy_retained_carrier", "typed_retained_carrier", "retained_gravity_ell2", "retained_mixed_ell2", "retained_mixed_ell3", "retained_mixed_ell3_transfer"],
+      "properties": {
+        "legacy_retained_carrier": {"$ref": "#/$defs/dependency"},
+        "typed_retained_carrier": {"$ref": "#/$defs/dependency"},
+        "retained_gravity_ell2": {"$ref": "#/$defs/dependency"},
+        "retained_mixed_ell2": {"$ref": "#/$defs/dependency"},
+        "retained_mixed_ell3": {"$ref": "#/$defs/dependency"},
+        "retained_mixed_ell3_transfer": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "constant_field_quotient": {
+      "type": "object",
+      "required": ["operation", "gravity_field_rows", "Maxwell_field_rows", "mixed_quartic_space", "mixed_quartic_dimension", "quadratic_action_monomials", "cubic_action_monomials", "landed_mixed_quartic_monomials", "landed_nonzero_target_coordinates"],
+      "properties": {
+        "operation": {"type": "string", "minLength": 1},
+        "gravity_field_rows": {"const": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]},
+        "Maxwell_field_rows": {"const": [27, 28, 29, 30]},
+        "mixed_quartic_space": {"const": "Sym^2(G^*) tensor Sym^2(A^*)"},
+        "mixed_quartic_dimension": {"const": 550},
+        "quadratic_action_monomials": {"const": 16},
+        "cubic_action_monomials": {"const": 63},
+        "landed_mixed_quartic_monomials": {"const": 63},
+        "landed_nonzero_target_coordinates": {"const": 63}
+      },
+      "additionalProperties": false
+    },
+    "admissible_redefinition_ansatz": {
+      "type": "object",
+      "required": ["formula", "coefficient_field", "support_local", "maximum_jet_order", "K_Berger_equivariant_reason", "BV_cyclicity_reason", "matter_parity", "F2_unknown_count", "F3_unknown_count", "total_unknown_count"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 1},
+        "coefficient_field": {"const": "Q(sqrt(10))"},
+        "support_local": {"const": true},
+        "maximum_jet_order": {"const": 0},
+        "K_Berger_equivariant_reason": {"type": "string", "minLength": 1},
+        "BV_cyclicity_reason": {"type": "string", "minLength": 1},
+        "matter_parity": {"type": "string", "minLength": 1},
+        "F2_unknown_count": {"const": 810},
+        "F3_unknown_count": {"const": 1880},
+        "total_unknown_count": {"const": 2690}
+      },
+      "additionalProperties": false
+    },
+    "exact_verdict": {
+      "type": "object",
+      "required": ["coboundary_matrix_shape", "coboundary_matrix_nonzero_entries", "coboundary_rank", "augmented_rank", "cokernel_dimension", "rank_basis_columns", "target_in_image", "primitive_nonzero_count", "primitive_arity_counts", "primitive", "reconstruction_exact"],
+      "properties": {
+        "coboundary_matrix_shape": {"const": [550, 2690]},
+        "coboundary_matrix_nonzero_entries": {"const": 5105},
+        "coboundary_rank": {"const": 550},
+        "augmented_rank": {"const": 550},
+        "cokernel_dimension": {"const": 0},
+        "rank_basis_columns": {"type": "array", "minItems": 550, "maxItems": 550, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 2689}},
+        "target_in_image": {"const": true},
+        "primitive_nonzero_count": {"const": 51},
+        "primitive_arity_counts": {
+          "type": "object",
+          "required": ["F2", "F3"],
+          "properties": {"F2": {"const": 0}, "F3": {"const": 51}},
+          "additionalProperties": false
+        },
+        "primitive": {"type": "array", "minItems": 51, "maxItems": 51, "items": {"$ref": "#/$defs/primitive"}},
+        "reconstruction_exact": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "interpretation": {
+      "type": "object",
+      "required": ["displayed_zero_derivative_witnesses_define_invariant_class", "reason", "full_landed_ell3_trivialized", "constant_field_ghost_antifield_completion_matched", "derivative_dependent_redefinition_complex_computed", "operation_on_ell1_cohomology_computed", "branch_mixing_table_authorized"],
+      "properties": {
+        "displayed_zero_derivative_witnesses_define_invariant_class": {"const": false},
+        "reason": {"type": "string", "minLength": 1},
+        "full_landed_ell3_trivialized": {"const": false},
+        "constant_field_ghost_antifield_completion_matched": {"const": false},
+        "derivative_dependent_redefinition_complex_computed": {"const": false},
+        "operation_on_ell1_cohomology_computed": {"const": false},
+        "branch_mixing_table_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["typed_pairing_lowering_used", "complete_constant_field_matter_parity_ansatz_enumerated", "constant_field_coboundary_map_surjective", "explicit_primitive_reconstructs_target", "no_floating_point"],
+      "properties": {
+        "typed_pairing_lowering_used": {"const": true},
+        "complete_constant_field_matter_parity_ansatz_enumerated": {"const": true},
+        "constant_field_coboundary_map_surjective": {"const": true},
+        "explicit_primitive_reconstructs_target": {"const": true},
+        "no_floating_point": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["CONSTANT_FIELD_PHYSICAL_QUARTIC_TRIVIALIZATION_COMPUTED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "FULL_JET_BOUNDED_REDEFINITION_COMPUTED", "ELL3_NONREMOVABLE", "ELL3_BRANCH_MIXING_AUTHORIZED", "QUANTUM_CLAIM"],
+      "properties": {
+        "CONSTANT_FIELD_PHYSICAL_QUARTIC_TRIVIALIZATION_COMPUTED": {"const": true},
+        "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false},
+        "FULL_JET_BOUNDED_REDEFINITION_COMPUTED": {"const": false},
+        "ELL3_NONREMOVABLE": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_CYCLIC_REDEFINITION"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "primitive": {
+      "type": "object",
+      "required": ["arity", "output_local", "output_row", "input_locals", "input_rows", "coefficient"],
+      "properties": {
+        "arity": {"enum": ["F2", "F3"]},
+        "output_local": {"type": "integer", "minimum": 0, "maximum": 13},
+        "output_row": {"type": "integer", "enum": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 27, 28, 29, 30]},
+        "input_locals": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 13}},
+        "input_rows": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "integer", "enum": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 27, 28, 29, 30]}},
+        "coefficient": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  }
+}

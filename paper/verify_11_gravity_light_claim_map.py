@@ -25,7 +25,7 @@ def main() -> None:
     assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT"
     assert (
         payload["result_state"]
-        == "WRITING_STARTED_RANK46_SUBPRINCIPAL_PHYSICAL_LIFT_OBSTRUCTED"
+        == "WRITING_STARTED_CONSTANT_FIELD_PHYSICAL_REDEFINITION_TRIVIALIZATION_FULL_BV_POSITIVE_JET_OPEN"
     )
     assert payload["lifecycle_state"] == "WRITING_STARTED"
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
@@ -67,6 +67,7 @@ def main() -> None:
         "retained_46_V2_filtered_descent_computed",
         "retained_46_physical_filtered_lift_obstructed",
         "retained_46_subprincipal_verdict_landed",
+        "constant_field_physical_cyclic_redefinition_screen_computed",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -95,6 +96,11 @@ def main() -> None:
     assert claims["retained_46_physical_pairing_nondegenerate"] is True
     assert claims["retained_46_subprincipal_normalized_evaluation"] == ["1", "0"]
     assert claims["retained_46_cross_polarization_lift_coefficient"] == "71/40"
+    assert claims["constant_field_mixed_quartic_dimension"] == 550
+    assert claims["constant_field_coboundary_rank"] == 550
+    assert claims["constant_field_coboundary_cokernel_dimension"] == 0
+    assert claims["constant_field_target_nonzero_coordinate_count"] == 63
+    assert claims["constant_field_explicit_F3_primitive_coefficient_count"] == 51
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -142,6 +148,14 @@ def main() -> None:
     assert (
         payload["next_gate"]["subprincipal_obstruction"]
         == "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1"
+    )
+    assert (
+        payload["next_gate"]["constant_field_redefinition"]
+        == "BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1"
+    )
+    assert (
+        payload["next_gate"]["deformation_required_input"]
+        == "POSITIVE_JET_CYCLIC_REDEFINITION_COMPLEX"
     )
     assert (
         payload["next_gate"]["required_input"]
@@ -370,6 +384,25 @@ def main() -> None:
     assert subprincipal["claim_flags"]["GLOBAL_ALL_CARRIER_PROJECTOR_NO_GO"] is False
     assert subprincipal["claim_flags"]["ELL3_BRANCH_MIXING_AUTHORIZED"] is False
 
+    constant_redefinition = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert (
+        constant_redefinition["result_state"]
+        == "CONSTANT_FIELD_PHYSICAL_MIXED_QUARTIC_TRIVIALIZED_FULL_BV_AND_POSITIVE_JET_OPEN"
+    )
+    constant_verdict = constant_redefinition["exact_verdict"]
+    assert constant_verdict["coboundary_matrix_shape"] == [550, 2690]
+    assert constant_verdict["coboundary_rank"] == 550
+    assert constant_verdict["cokernel_dimension"] == 0
+    assert constant_verdict["primitive_nonzero_count"] == 51
+    assert constant_verdict["primitive_arity_counts"] == {"F2": 0, "F3": 51}
+    assert constant_redefinition["claim_flags"]["CYCLIC_DEFORMATION_CLASS_DECIDED"] is False
+    assert constant_redefinition["claim_flags"]["FULL_JET_BOUNDED_REDEFINITION_COMPUTED"] is False
+
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,
         build as build_witness_columns,
@@ -407,6 +440,7 @@ def main() -> None:
         r"\boxed{\begin{gathered} \text{The retained mixed gravity--Maxwell bracket survives this}\\ \text{cyclic homological reduction through }\ell_3. \end{gathered}}",
         r"\begin{proposition}[Formal cyclic transfer through arity three]",
         r"\begin{theorem}[Nonzero retained mixed bracket for the frozen cyclic SDR]",
+        r"\begin{proposition}[Constant-field cyclic-redefinition screen]",
         r"\begin{proposition}[Independent degree-zero lowered cyclicity]",
         r"\begin{proposition}[Independent full-BV quartic cyclicity]",
         r"\begin{theorem}[Cyclic causal Cartan compatibility]",
@@ -422,7 +456,8 @@ def main() -> None:
         r"25{,}662",
         r"17{,}108",
         r"not yet a photon or graviton scattering amplitude",
-        r"No obstruction to a cyclic $L_\infty$ field redefinition has been computed",
+        r"The complete constant-field page is in fact removable by the exact",
+        r"BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1",
         r"\input{paper/11-gravity-light-ell3-witness-inclusion-columns.tex}",
         r"\frac{71p_1^2+71p_2^2+9p_3^2}{80}",
         r"the smallest natural support-local candidate adds a spatial STF2 prolongation",
