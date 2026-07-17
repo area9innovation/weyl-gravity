@@ -73,6 +73,20 @@ def main() -> None:
         path = ROOT / dependency["path"]
         if _sha256(path) != dependency["sha256"]:
             raise AssertionError(f"dependency hash mismatch: {path}")
+    generator_audit = json.loads(
+        (ROOT / certificate["dependency_refs"]["generator_audit"]["path"]).read_text()
+    )
+    if generator_audit["flags"]["EXPORTED_UNARY_GENERATOR_IS_K"] is not True:
+        raise AssertionError("generator audit does not identify the frozen action as K_Berger")
+    if generator_audit["flags"]["EXPORTED_UNARY_GENERATOR_IS_ORIGINAL_D"] is not False:
+        raise AssertionError("generator audit promotes the frozen action to raw D")
+    nonlinear_signoff = json.loads(
+        (ROOT / certificate["dependency_refs"]["nonlinear_K_signoff"]["path"]).read_text()
+    )
+    if nonlinear_signoff["flags"]["K_BERGER_CARTAN_THROUGH_ARITY_THREE"] is not True:
+        raise AssertionError("nonlinear K_Berger signoff is absent")
+    if nonlinear_signoff["flags"]["RAW_D_CARTAN_CERTIFIED"] is not False:
+        raise AssertionError("nonlinear signoff promotes raw D")
     for relative, digest in certificate["provenance"]["source_manifest"].items():
         path = ROOT / relative
         if _sha256(path) != digest:
@@ -136,6 +150,17 @@ def main() -> None:
         raise AssertionError("independent mixed Maxwell Euler regression failed")
     if certificate["exact_diagnostics"]["arity_two_defect_term_counts"] != [0] * 64:
         raise AssertionError("persisted arity-two zero ledger drifted")
+    frozen_action = certificate["frozen_K_action_Maxwell_rows"]
+    if frozen_action["generator"] != "K_Berger=D-omega R":
+        raise AssertionError("persisted generator is not K_Berger")
+    if frozen_action["PBW_representation"] != "e0 on the frozen dressed Maxwell rows":
+        raise AssertionError("persisted frozen K_Berger representation drifted")
+    if certificate["flags"]["BERGER_LOCAL_K_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO"] is not True:
+        raise AssertionError("K_Berger equivariance is absent")
+    if certificate["flags"]["BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO"] is not False:
+        raise AssertionError("raw-D equivariance was promoted")
+    if certificate["flags"]["RAW_D_CARTAN_CERTIFIED"] is not False:
+        raise AssertionError("raw-D Cartan was promoted")
     if certificate["flags"]["BERGER_MAXWELL_UNARY_CONTRACTION"] is not False:
         raise AssertionError("q2 export was promoted to a Maxwell contraction")
     print("BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2 independent replay: PASS")

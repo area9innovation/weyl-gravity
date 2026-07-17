@@ -18,8 +18,8 @@
       "q2(Theta,A)->A_plus"
     ]
   },
-  "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the complete arbitrary-support classical gravity-clock-Maxwell q2 on the declared 64-row Berger BV complex. It zero-extends the independently certified 54-row gravity operation and adds an exact 64-row Maxwell overlay generated from the Maxwell action and Diff-semidirect-U(1) BV master terms. It includes the metric stress, Maxwell Euler, clock-dressed Theta, gauge, antifield-density, and gravity ghost-antifield partners; proves combined unary nilpotency, Koszul symmetry, the arity-two q1-q2 identity, cyclic action generation, and local D derivation coefficientwise; and recovers all certified physical fixtures without fitting to them. It does not construct a Maxwell unary contraction or propagator, transfer the mixed vertex to an endpoint or residual model, identify the compact Berger sector with the distinct generic axial background, supply localized retarded apparatus, establish higher mixed q3 brackets or all-orders continuation, certify Lorentzian causal perturbation theory, restore a quantum master equation, or make a quantum claim.",
-  "claim_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2",
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the complete arbitrary-support classical gravity-clock-Maxwell q2 on the declared 64-row Berger BV complex. It zero-extends the independently certified 54-row gravity operation and adds an exact 64-row Maxwell overlay generated from the Maxwell action and Diff-semidirect-U(1) BV master terms. It includes the metric stress, Maxwell Euler, clock-dressed Theta, gauge, antifield-density, and gravity ghost-antifield partners; proves combined unary nilpotency, Koszul symmetry, the arity-two q1-q2 identity, cyclic action generation, and coefficientwise derivation by the frozen K_Berger=D-omega R action. On the Maxwell rows K_Berger is represented by e0 because the clock rotation R acts trivially there. The legacy local-D dependency name is content-addressed historical vocabulary only: the generator-conjugation audit proves that the frozen dressed-complex operator is K_Berger, while original cylinder D is affine with a nonzero arity-zero component. Accordingly this certificate explicitly does not assert raw-D equivariance or a raw-D Cartan theorem. It recovers all certified physical fixtures without fitting to them. It does not construct a Maxwell unary contraction or propagator, transfer the mixed vertex to an endpoint or residual model, identify the compact Berger sector with the distinct generic axial background, supply localized retarded apparatus, establish higher mixed q3 brackets or all-orders continuation, certify Lorentzian causal perturbation theory, restore a quantum master equation, or make a quantum claim.",
+  "claim_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2_K_EQUIVARIANT",
   "classical_binary_q2": {
     "Taylor_convention": "suspended-graded-symmetric-factorial-v1",
     "base_term_count": 150305,
@@ -37,6 +37,11 @@
     "total_rows": 64
   },
   "dependency_refs": {
+    "generator_audit": {
+      "path": "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
+      "result_id": "BERGER_GENERATOR_CONJUGATION_AUDIT",
+      "sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149"
+    },
     "gravity_q1": {
       "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
       "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
@@ -57,10 +62,15 @@
       "result_id": "BERGER_COUPLED_MAXWELL_Q2_INTERFACE_CONTRACT",
       "sha256": "a1927f46bc55bf36c73bd09ee61aa2c16cbdbdcfeadc719d6da0198ef94de42d"
     },
-    "local_D_action": {
+    "legacy_local_D_action": {
       "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
       "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
       "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "nonlinear_K_signoff": {
+      "path": "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
+      "result_id": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+      "sha256": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8"
     }
   },
   "dependency_tags": [
@@ -68,6 +78,7 @@
   ],
   "derivation": {
     "coefficient_field": "Q(sqrt(10))",
+    "generator_semantics_imported_not_reconstructed": true,
     "gravity_base_reused_not_reconstructed": true,
     "method": "exact arbitrary-jet Maxwell field strength, stress polarization, formal-adjoint cyclic completion, clock canonical transport, and gauge coadjoint completion",
     "not_fitted_to_modes": true,
@@ -76,7 +87,7 @@
   },
   "exact_checks": {
     "BV_cyclicity_from_common_Maxwell_master_action": true,
-    "D_q2_derivation_termwise": true,
+    "K_Berger_q2_derivation_termwise_in_frozen_PBW_representation": true,
     "Maxwell_d_squared_and_Noether_complex_exact": true,
     "all_64_overlay_output_rows_ledgered_and_hashed": true,
     "clock_dressed_Theta_canonical_partner_nonzero": true,
@@ -186,21 +197,24 @@
     "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": true,
     "BERGER_FULL_SUPPORT_LOCAL_AA_TO_HPLUS": true,
     "BERGER_FULL_SUPPORT_LOCAL_HA_TO_APLUS": true,
-    "BERGER_LOCAL_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": true,
+    "BERGER_LOCAL_K_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": true,
     "BERGER_MAXWELL_CANONICAL_ANTIFIELD_COMPLETION": true,
     "BERGER_MAXWELL_CLOCK_DRESSED_THETA_PARTNERS": true,
     "BERGER_MAXWELL_UNARY_CONTRACTION": false,
+    "BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": false,
     "CLASSICAL_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2": true,
+    "K_BERGER_GENERATOR_SEMANTICS_IMPORTED": true,
     "LORENTZIAN_CERTIFIED": false,
-    "QUANTUM_CLAIM": false
+    "QUANTUM_CLAIM": false,
+    "RAW_D_CARTAN_CERTIFIED": false
   },
-  "higher_tiers_not_run": {
-    "tier_2": "The complete affected 64-row unary/binary coefficient chain is replayed directly in Tier 1, while the unchanged 150305-term gravity base is pinned by both file and canonical content hashes.",
-    "tier_3": "This promotes one new classical support-local q2 theorem but does not alter shared core algebra, freeze a release, construct the Maxwell contraction, certify Lorentzian causality, or make a quantum lifecycle promotion."
-  },
-  "local_D_action_Maxwell_rows": {
-    "derivation_reason": "all coefficients are constant and [e0,ea]=0 in the stationary Berger frame",
-    "generator": "D=e0",
+  "frozen_K_action_Maxwell_rows": {
+    "Maxwell_R_action": "trivial",
+    "PBW_representation": "e0 on the frozen dressed Maxwell rows",
+    "derivation_reason": "K_Berger is represented by e0 on these frozen dressed rows; all coefficients are constant and [e0,ea]=0 in the stationary Berger frame",
+    "generator": "K_Berger=D-omega R",
+    "legacy_dependency_interpretation": "the D label in BERGER_54_ROW_LOCAL_D_ACTION is retained only for content-addressed compatibility and denotes the frozen K_Berger row action after generator conjugation",
+    "raw_D_status": "affine with a nonzero arity-zero component; no raw-D Cartan or equivariance theorem is asserted",
     "rows": [
       {
         "action": "e0",
@@ -254,15 +268,19 @@
       }
     ]
   },
+  "higher_tiers_not_run": {
+    "tier_2": "The semantic repair replays the complete 64-row coefficient chain in Tier 1, independently checks both generator dependencies, and confirms the exact Maxwell payload file hash is unchanged.",
+    "tier_3": "This is a fail-closed generator-interpretation repair: it changes no mathematical operator or payload, shared core algebra, release freeze, Lorentzian certificate, or quantum lifecycle state."
+  },
   "next_gate": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
   "provenance": {
     "source_manifest": {
       "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2.py": "404786bba62f7b44935d3e66680b6c90a880cc1fef4839d78765d56eba547aa2",
-      "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2_export.py": "fd8a72e6a8b71010faccbe2ca7577199e4eca3db0045d1cbd6be712091de7fb9",
-      "d_quotient_classical/backreacted_clock/tests/test_berger_support_local_coupled_maxwell_q2.py": "0cd5139e901a2c82a9e219d05afc0cab2fd6bbad2ec0398bfda69617795851f8",
-      "d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q2.py": "749c8bc7f138c4470068fc5a22ef08b6c958c232832d53c4e69ab9c9633cd7e8",
+      "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2_export.py": "2628a817deddeda5f29b88e39319674b023b78ca0bf5f795c97fcf360c71785d",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_support_local_coupled_maxwell_q2.py": "eed70239c69142f4396e5e67a665ebf993a5a86a602b2d9b8737ae522e9aec8d",
+      "d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q2.py": "661a59674483d87d44348fa522d6e69fdc63fba290f0d5fc175118c1e20872ab",
       "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-payload-v1.schema.json": "81e51cce98d5675b229914d8285e36ead2a9f2e610c74ea1c82bb3901ae290e4",
-      "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-v1.schema.json": "49d9f2b0fd25a0e447696abe7cd6daa1a2d3641cb7bff79972fa2892bb02d949"
+      "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-v1.schema.json": "31649368dfd1df91b8879e4896e19f0b4a2b545b7e539630da812a909aafba2d"
     }
   },
   "reduced_mode_regression_scope": "The traveling, balanced-standing, and frequency-shift fixtures are regressions of this arbitrary-support export, not the basis from which its coefficients were fitted.",
@@ -728,31 +746,31 @@
   "verification_receipts": [
     {
       "command": "python3 d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2_export.py --check --guards",
-      "elapsed_seconds": 50.07,
+      "elapsed_seconds": 45.61,
       "status": "PASS",
       "test_tier": 1
     },
     {
       "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q2.py",
-      "elapsed_seconds": 0.91,
+      "elapsed_seconds": 0.85,
       "status": "PASS",
       "test_tier": 1
     },
     {
       "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_support_local_coupled_maxwell_q2",
-      "elapsed_seconds": 50.86,
+      "elapsed_seconds": 48.26,
       "status": "PASS",
       "test_tier": 1
     },
     {
       "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-v1.schema.json -d d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
-      "elapsed_seconds": 2.22,
+      "elapsed_seconds": 2.39,
       "status": "PASS",
       "test_tier": 1
     },
     {
       "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-payload-v1.schema.json -d d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
-      "elapsed_seconds": 1.83,
+      "elapsed_seconds": 1.29,
       "status": "PASS",
       "test_tier": 1
     }

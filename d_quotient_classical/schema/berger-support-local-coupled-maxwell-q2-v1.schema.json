@@ -4,24 +4,25 @@
   "title": "Complete support-local Berger gravity-Maxwell q2 certificate",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "derivation", "row_layout", "classical_binary_q2", "canonical_completion", "local_D_action_Maxwell_rows", "exact_checks", "exact_diagnostics", "flags", "reduced_mode_regression_scope", "next_gate", "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"],
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "derivation", "row_layout", "classical_binary_q2", "canonical_completion", "frozen_K_action_Maxwell_rows", "exact_checks", "exact_diagnostics", "flags", "reduced_mode_regression_scope", "next_gate", "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"],
   "properties": {
     "schema": {"const": "pure-weyl-berger-support-local-coupled-maxwell-q2-v1"},
     "result_id": {"const": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2"},
     "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
-    "claim_status": {"const": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2"},
+    "claim_status": {"const": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2_K_EQUIVARIANT"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
-    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/dependency"}},
     "derivation": {
       "type": "object", "additionalProperties": false,
-      "required": ["source", "method", "support_category", "coefficient_field", "not_fitted_to_modes", "gravity_base_reused_not_reconstructed"],
+      "required": ["source", "method", "support_category", "coefficient_field", "not_fitted_to_modes", "gravity_base_reused_not_reconstructed", "generator_semantics_imported_not_reconstructed"],
       "properties": {
         "source": {"type": "string", "minLength": 100},
         "method": {"type": "string", "minLength": 100},
         "support_category": {"const": "arbitrary compactly supported smooth four-dimensional jets in the left-invariant Berger PBW frame"},
         "coefficient_field": {"const": "Q(sqrt(10))"},
         "not_fitted_to_modes": {"const": true},
-        "gravity_base_reused_not_reconstructed": {"const": true}
+        "gravity_base_reused_not_reconstructed": {"const": true},
+        "generator_semantics_imported_not_reconstructed": {"const": true}
       }
     },
     "row_layout": {
@@ -65,11 +66,15 @@
         "Maxwell_Euler_three_form_sign": {"const": "E_A=-d star_g_hat dA"}
       }
     },
-    "local_D_action_Maxwell_rows": {
+    "frozen_K_action_Maxwell_rows": {
       "type": "object", "additionalProperties": false,
-      "required": ["generator", "rows", "derivation_reason"],
+      "required": ["generator", "PBW_representation", "Maxwell_R_action", "raw_D_status", "legacy_dependency_interpretation", "rows", "derivation_reason"],
       "properties": {
-        "generator": {"const": "D=e0"},
+        "generator": {"const": "K_Berger=D-omega R"},
+        "PBW_representation": {"const": "e0 on the frozen dressed Maxwell rows"},
+        "Maxwell_R_action": {"const": "trivial"},
+        "raw_D_status": {"const": "affine with a nonzero arity-zero component; no raw-D Cartan or equivariance theorem is asserted"},
+        "legacy_dependency_interpretation": {"type": "string", "minLength": 140},
         "rows": {
           "type": "array",
           "minItems": 10,
@@ -101,7 +106,7 @@
     },
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["CLASSICAL_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2", "BERGER_FULL_SUPPORT_LOCAL_AA_TO_HPLUS", "BERGER_FULL_SUPPORT_LOCAL_HA_TO_APLUS", "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2", "BERGER_MAXWELL_CANONICAL_ANTIFIELD_COMPLETION", "BERGER_MAXWELL_CLOCK_DRESSED_THETA_PARTNERS", "BERGER_LOCAL_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO", "BERGER_MAXWELL_UNARY_CONTRACTION", "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING", "BERGER_AXIAL_BACKGROUND_ADAPTER", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
+      "required": ["CLASSICAL_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2", "BERGER_FULL_SUPPORT_LOCAL_AA_TO_HPLUS", "BERGER_FULL_SUPPORT_LOCAL_HA_TO_APLUS", "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2", "BERGER_MAXWELL_CANONICAL_ANTIFIELD_COMPLETION", "BERGER_MAXWELL_CLOCK_DRESSED_THETA_PARTNERS", "K_BERGER_GENERATOR_SEMANTICS_IMPORTED", "BERGER_LOCAL_K_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO", "BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO", "RAW_D_CARTAN_CERTIFIED", "BERGER_MAXWELL_UNARY_CONTRACTION", "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING", "BERGER_AXIAL_BACKGROUND_ADAPTER", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
       "properties": {
         "CLASSICAL_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2": {"const": true},
         "BERGER_FULL_SUPPORT_LOCAL_AA_TO_HPLUS": {"const": true},
@@ -109,7 +114,10 @@
         "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": {"const": true},
         "BERGER_MAXWELL_CANONICAL_ANTIFIELD_COMPLETION": {"const": true},
         "BERGER_MAXWELL_CLOCK_DRESSED_THETA_PARTNERS": {"const": true},
-        "BERGER_LOCAL_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": {"const": true},
+        "K_BERGER_GENERATOR_SEMANTICS_IMPORTED": {"const": true},
+        "BERGER_LOCAL_K_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": {"const": true},
+        "BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": {"const": false},
+        "RAW_D_CARTAN_CERTIFIED": {"const": false},
         "BERGER_MAXWELL_UNARY_CONTRACTION": {"const": false},
         "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": {"const": false},
         "BERGER_AXIAL_BACKGROUND_ADAPTER": {"const": false},

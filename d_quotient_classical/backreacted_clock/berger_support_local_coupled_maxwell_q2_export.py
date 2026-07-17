@@ -43,7 +43,9 @@ DEPENDENCIES = {
     "gravity_q1": ROOT / "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
     "gravity_q2": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
     "gravity_q2_payload": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json",
-    "local_D_action": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+    "legacy_local_D_action": ROOT / "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+    "generator_audit": ROOT / "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
+    "nonlinear_K_signoff": ROOT / "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
 }
 SOURCE_PATHS = (
     ROOT / "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2.py",
@@ -75,8 +77,18 @@ def _load_dependencies() -> dict[str, dict[str, Any]]:
         raise AssertionError("gravity support-local q2 base is unavailable")
     if _sha256(DEPENDENCIES["gravity_q2_payload"]) != data["gravity_q2"]["classical_binary_q2"]["payload_file_sha256"]:
         raise AssertionError("gravity support-local q2 payload hash drifted")
-    if data["local_D_action"]["flags"]["BERGER_LOCAL_D_ACTION_COMPLETE_54_ROWS"] is not True:
-        raise AssertionError("gravity local D action is unavailable")
+    if data["legacy_local_D_action"]["flags"]["BERGER_LOCAL_D_ACTION_COMPLETE_54_ROWS"] is not True:
+        raise AssertionError("legacy-named frozen row action is unavailable")
+    audit_flags = data["generator_audit"]["flags"]
+    if audit_flags["EXPORTED_UNARY_GENERATOR_IS_K"] is not True:
+        raise AssertionError("frozen unary generator is not certified as K_Berger")
+    if audit_flags["EXPORTED_UNARY_GENERATOR_IS_ORIGINAL_D"] is not False:
+        raise AssertionError("frozen unary generator was incorrectly promoted to raw D")
+    signoff_flags = data["nonlinear_K_signoff"]["flags"]
+    if signoff_flags["K_BERGER_CARTAN_THROUGH_ARITY_THREE"] is not True:
+        raise AssertionError("nonlinear K_Berger signoff is unavailable")
+    if signoff_flags["RAW_D_CARTAN_CERTIFIED"] is not False:
+        raise AssertionError("nonlinear signoff incorrectly certifies raw D")
     return data
 
 
@@ -168,7 +180,7 @@ def _exact_checks() -> tuple[dict[str, Any], dict[str, Any]]:
         "repository_gravity_ghost_antifield_factor_two_applied": True,
         "clock_dressed_Theta_canonical_partner_nonzero": True,
         "four_dimensional_Weyl_R_partner_zero": True,
-        "D_q2_derivation_termwise": True,
+        "K_Berger_q2_derivation_termwise_in_frozen_PBW_representation": True,
         "all_64_overlay_output_rows_ledgered_and_hashed": True,
         "physical_regressions_exact": True,
     }
@@ -193,7 +205,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
         "schema": "pure-weyl-berger-support-local-coupled-maxwell-q2-v1",
         "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
         "setting_id": "compact_positive_berger_clock_fixed_coupling",
-        "claim_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2",
+        "claim_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2_K_EQUIVARIANT",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "dependency_refs": {
             name: {
@@ -210,6 +222,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "coefficient_field": "Q(sqrt(10))",
             "not_fitted_to_modes": True,
             "gravity_base_reused_not_reconstructed": True,
+            "generator_semantics_imported_not_reconstructed": True,
         },
         "row_layout": {
             "total_rows": 64,
@@ -244,13 +257,17 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "gravity_ghost_antifield_repository_multiplier": 2,
             "Maxwell_Euler_three_form_sign": "E_A=-d star_g_hat dA",
         },
-        "local_D_action_Maxwell_rows": {
-            "generator": "D=e0",
+        "frozen_K_action_Maxwell_rows": {
+            "generator": "K_Berger=D-omega R",
+            "PBW_representation": "e0 on the frozen dressed Maxwell rows",
+            "Maxwell_R_action": "trivial",
+            "raw_D_status": "affine with a nonzero arity-zero component; no raw-D Cartan or equivariance theorem is asserted",
+            "legacy_dependency_interpretation": "the D label in BERGER_54_ROW_LOCAL_D_ACTION is retained only for content-addressed compatibility and denotes the frozen K_Berger row action after generator conjugation",
             "rows": [
                 {"row": row, "row_id": rows[row]["row_id"], "action": "e0"}
                 for row in range(54, 64)
             ],
-            "derivation_reason": "all coefficients are constant and [e0,ea]=0 in the stationary Berger frame",
+            "derivation_reason": "K_Berger is represented by e0 on these frozen dressed rows; all coefficients are constant and [e0,ea]=0 in the stationary Berger frame",
         },
         "exact_checks": checks,
         "exact_diagnostics": diagnostics,
@@ -261,7 +278,10 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2": True,
             "BERGER_MAXWELL_CANONICAL_ANTIFIELD_COMPLETION": True,
             "BERGER_MAXWELL_CLOCK_DRESSED_THETA_PARTNERS": True,
-            "BERGER_LOCAL_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": True,
+            "K_BERGER_GENERATOR_SEMANTICS_IMPORTED": True,
+            "BERGER_LOCAL_K_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": True,
+            "BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO": False,
+            "RAW_D_CARTAN_CERTIFIED": False,
             "BERGER_MAXWELL_UNARY_CONTRACTION": False,
             "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": False,
             "BERGER_AXIAL_BACKGROUND_ADAPTER": False,
@@ -276,17 +296,17 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             }
         },
         "verification_receipts": [
-            {"test_tier": 1, "command": "python3 d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2_export.py --check --guards", "elapsed_seconds": 50.07, "status": "PASS"},
-            {"test_tier": 1, "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q2.py", "elapsed_seconds": 0.91, "status": "PASS"},
-            {"test_tier": 1, "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_support_local_coupled_maxwell_q2", "elapsed_seconds": 50.86, "status": "PASS"},
-            {"test_tier": 1, "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-v1.schema.json -d d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json", "elapsed_seconds": 2.22, "status": "PASS"},
-            {"test_tier": 1, "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-payload-v1.schema.json -d d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json", "elapsed_seconds": 1.83, "status": "PASS"},
+            {"test_tier": 1, "command": "python3 d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2_export.py --check --guards", "elapsed_seconds": 45.61, "status": "PASS"},
+            {"test_tier": 1, "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q2.py", "elapsed_seconds": 0.85, "status": "PASS"},
+            {"test_tier": 1, "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_support_local_coupled_maxwell_q2", "elapsed_seconds": 48.26, "status": "PASS"},
+            {"test_tier": 1, "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-v1.schema.json -d d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json", "elapsed_seconds": 2.39, "status": "PASS"},
+            {"test_tier": 1, "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-payload-v1.schema.json -d d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json", "elapsed_seconds": 1.29, "status": "PASS"},
         ],
         "higher_tiers_not_run": {
-            "tier_2": "The complete affected 64-row unary/binary coefficient chain is replayed directly in Tier 1, while the unchanged 150305-term gravity base is pinned by both file and canonical content hashes.",
-            "tier_3": "This promotes one new classical support-local q2 theorem but does not alter shared core algebra, freeze a release, construct the Maxwell contraction, certify Lorentzian causality, or make a quantum lifecycle promotion.",
+            "tier_2": "The semantic repair replays the complete 64-row coefficient chain in Tier 1, independently checks both generator dependencies, and confirms the exact Maxwell payload file hash is unchanged.",
+            "tier_3": "This is a fail-closed generator-interpretation repair: it changes no mathematical operator or payload, shared core algebra, release freeze, Lorentzian certificate, or quantum lifecycle state.",
         },
-        "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the complete arbitrary-support classical gravity-clock-Maxwell q2 on the declared 64-row Berger BV complex. It zero-extends the independently certified 54-row gravity operation and adds an exact 64-row Maxwell overlay generated from the Maxwell action and Diff-semidirect-U(1) BV master terms. It includes the metric stress, Maxwell Euler, clock-dressed Theta, gauge, antifield-density, and gravity ghost-antifield partners; proves combined unary nilpotency, Koszul symmetry, the arity-two q1-q2 identity, cyclic action generation, and local D derivation coefficientwise; and recovers all certified physical fixtures without fitting to them. It does not construct a Maxwell unary contraction or propagator, transfer the mixed vertex to an endpoint or residual model, identify the compact Berger sector with the distinct generic axial background, supply localized retarded apparatus, establish higher mixed q3 brackets or all-orders continuation, certify Lorentzian causal perturbation theory, restore a quantum master equation, or make a quantum claim.",
+        "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the complete arbitrary-support classical gravity-clock-Maxwell q2 on the declared 64-row Berger BV complex. It zero-extends the independently certified 54-row gravity operation and adds an exact 64-row Maxwell overlay generated from the Maxwell action and Diff-semidirect-U(1) BV master terms. It includes the metric stress, Maxwell Euler, clock-dressed Theta, gauge, antifield-density, and gravity ghost-antifield partners; proves combined unary nilpotency, Koszul symmetry, the arity-two q1-q2 identity, cyclic action generation, and coefficientwise derivation by the frozen K_Berger=D-omega R action. On the Maxwell rows K_Berger is represented by e0 because the clock rotation R acts trivially there. The legacy local-D dependency name is content-addressed historical vocabulary only: the generator-conjugation audit proves that the frozen dressed-complex operator is K_Berger, while original cylinder D is affine with a nonzero arity-zero component. Accordingly this certificate explicitly does not assert raw-D equivariance or a raw-D Cartan theorem. It recovers all certified physical fixtures without fitting to them. It does not construct a Maxwell unary contraction or propagator, transfer the mixed vertex to an endpoint or residual model, identify the compact Berger sector with the distinct generic axial background, supply localized retarded apparatus, establish higher mixed q3 brackets or all-orders continuation, certify Lorentzian causal perturbation theory, restore a quantum master equation, or make a quantum claim.",
     }
     verify(certificate, payload)
     return certificate, payload
@@ -313,11 +333,14 @@ def verify(certificate: dict[str, Any], payload: dict[str, Any]) -> None:
         "BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2",
         "BERGER_MAXWELL_CANONICAL_ANTIFIELD_COMPLETION",
         "BERGER_MAXWELL_CLOCK_DRESSED_THETA_PARTNERS",
-        "BERGER_LOCAL_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO",
+        "K_BERGER_GENERATOR_SEMANTICS_IMPORTED",
+        "BERGER_LOCAL_K_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO",
     ):
         if certificate["flags"][required] is not True:
             raise AssertionError(f"required flag missing: {required}")
     for forbidden in (
+        "BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO",
+        "RAW_D_CARTAN_CERTIFIED",
         "BERGER_MAXWELL_UNARY_CONTRACTION",
         "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING",
         "BERGER_AXIAL_BACKGROUND_ADAPTER",
@@ -326,6 +349,11 @@ def verify(certificate: dict[str, Any], payload: dict[str, Any]) -> None:
     ):
         if certificate["flags"][forbidden] is not False:
             raise AssertionError(f"forbidden promotion: {forbidden}")
+    frozen_action = certificate["frozen_K_action_Maxwell_rows"]
+    if frozen_action["generator"] != "K_Berger=D-omega R":
+        raise AssertionError("Maxwell q2 generator semantics drifted away from K_Berger")
+    if frozen_action["PBW_representation"] != "e0 on the frozen dressed Maxwell rows":
+        raise AssertionError("frozen K_Berger PBW representation drifted")
     for name, path in DEPENDENCIES.items():
         if certificate["dependency_refs"][name]["sha256"] != _sha256(path):
             raise AssertionError(f"dependency hash drift: {name}")
@@ -366,9 +394,11 @@ repository's factor-two gravity Euler normalization.
 
 Every one of the 64 coefficientwise `q1 q2` defect ledgers is zero.  The
 combined unary differential squares to zero, the overlay is Koszul symmetric,
-the cyclic partners arise from the common action, and `D=e0` is a termwise
-derivation because its frame commutators vanish.  Every overlay row has its
-own canonical content hash.
+the cyclic partners arise from the common action, and the frozen
+`K_Berger=D-omega R` action is represented by `e0` on the Maxwell rows and is
+a termwise derivation because its frame commutators vanish.  Raw cylinder `D`
+is affine and is not certified here.  Every overlay row has its own canonical
+content hash.
 
 The arbitrary-support tensor recovers the balanced standing stress and
 nonlinear frequency fixture exactly.  Those modes are regressions, not fitting
@@ -426,6 +456,14 @@ def main() -> None:
             pass
         else:
             raise AssertionError("downstream contraction promotion was accepted")
+        mutant = deepcopy(certificate)
+        mutant["flags"]["BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO"] = True
+        try:
+            verify(mutant, payload)
+        except AssertionError:
+            pass
+        else:
+            raise AssertionError("raw-D equivariance promotion was accepted")
         mutant_payload = deepcopy(payload)
         mutant_payload["rows"][60]["canonical_sha256"] = "0" * 64
         try:

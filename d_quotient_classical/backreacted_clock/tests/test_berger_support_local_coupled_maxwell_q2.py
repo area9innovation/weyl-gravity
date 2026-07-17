@@ -31,6 +31,19 @@ class BergerSupportLocalCoupledMaxwellQ2Test(unittest.TestCase):
         self.assertEqual(physical["standing_metric_source"], ["160/9", "0", "0", "0", "-160/9", "0", "0", "160/9", "0", "160/9"])
         self.assertTrue(physical["canonical_Maxwell_Euler_sign_recovered"])
 
+    def test_frozen_generator_is_K_not_raw_D(self):
+        action = self.certificate["frozen_K_action_Maxwell_rows"]
+        self.assertEqual(action["generator"], "K_Berger=D-omega R")
+        self.assertEqual(action["PBW_representation"], "e0 on the frozen dressed Maxwell rows")
+        self.assertTrue(self.certificate["flags"]["K_BERGER_GENERATOR_SEMANTICS_IMPORTED"])
+        self.assertTrue(
+            self.certificate["flags"]["BERGER_LOCAL_K_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO"]
+        )
+        self.assertFalse(
+            self.certificate["flags"]["BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO"]
+        )
+        self.assertFalse(self.certificate["flags"]["RAW_D_CARTAN_CERTIFIED"])
+
     def test_schemas_and_mutations(self):
         schema = json.loads(result.SCHEMA_PATH.read_text())
         payload_schema = json.loads(result.PAYLOAD_SCHEMA_PATH.read_text())
@@ -42,6 +55,10 @@ class BergerSupportLocalCoupledMaxwellQ2Test(unittest.TestCase):
         mutant["flags"]["BERGER_FULL_COUPLED_GRAVITY_MAXWELL_Q2"] = False
         with self.assertRaises(ValidationError):
             Draft202012Validator(schema).validate(mutant)
+        mutant = deepcopy(self.certificate)
+        mutant["frozen_K_action_Maxwell_rows"]["generator"] = "D=e0"
+        with self.assertRaises(ValidationError):
+            Draft202012Validator(schema).validate(mutant)
         mutant = deepcopy(self.payload)
         mutant["rows"][38]["terms"] = []
         with self.assertRaises(ValidationError):
@@ -49,6 +66,8 @@ class BergerSupportLocalCoupledMaxwellQ2Test(unittest.TestCase):
 
     def test_downstream_promotions_rejected(self):
         for flag in (
+            "BERGER_RAW_D_ACTION_EQUIVARIANT_COUPLED_MAXWELL_ARITY_TWO",
+            "RAW_D_CARTAN_CERTIFIED",
             "BERGER_MAXWELL_UNARY_CONTRACTION",
             "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING",
             "BERGER_AXIAL_BACKGROUND_ADAPTER",

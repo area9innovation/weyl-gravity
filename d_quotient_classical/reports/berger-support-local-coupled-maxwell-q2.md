@@ -24,9 +24,11 @@ repository's factor-two gravity Euler normalization.
 
 Every one of the 64 coefficientwise `q1 q2` defect ledgers is zero.  The
 combined unary differential squares to zero, the overlay is Koszul symmetric,
-the cyclic partners arise from the common action, and `D=e0` is a termwise
-derivation because its frame commutators vanish.  Every overlay row has its
-own canonical content hash.
+the cyclic partners arise from the common action, and the frozen
+`K_Berger=D-omega R` action is represented by `e0` on the Maxwell rows and is
+a termwise derivation because its frame commutators vanish.  Raw cylinder `D`
+is affine and is not certified here.  Every overlay row has its own canonical
+content hash.
 
 The arbitrary-support tensor recovers the balanced standing stress and
 nonlinear frequency fixture exactly.  Those modes are regressions, not fitting
