@@ -76,10 +76,20 @@ retained cyclicity, and all transfer missing/extra/changed counts vanish
 exactly; causal unary flags remain true.  The machine verdict is
 `ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR`.
 
-This closes the classical binary cyclicity seam and opens construction of the
-classical mixed \(q_3\).  It does not construct \(q_3\), perform residual
+The typed classical mixed \(q_3\) and its retained \(\ell_3\) transfer have
+since landed and passed independent quantum-side import acceptance. The
+consumer parses 59,598 full coefficients, reproduces 25,950 retained contact
+coefficients, verifies all 36 retained arity-three identities, and rejects a
+localized mutation. Its exact exchange replay also corrects the producer's
+support-only explanation: the gravity-outer/mixed-inner channel has 144 raw
+pairs and 342 canonical full-complex PBW coefficients, but none survives the
+retained output projection. The other two exchange channels have no raw
+pairs, so all three retained exchange sectors vanish exactly.
+
+This closes the classical retained arity-three import gate and opens the
+residual branch projection and mixing table. It does not perform residual
 quantum transfer, calculate a repository anomaly coefficient, restore the
-QME, or establish a Lorentzian or particle claim.  The pure gravity--clock
+QME, or establish a Lorentzian or particle claim. The pure gravity--clock
 Paper IX arity-three result is unaffected.
 
 ## Shared relative-complex assignment
@@ -364,7 +374,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | classical target; quantum status to compute | classical target; compute defect | proved only classically | zero classically in stated complex; quantum open | \(I_2\) classically; \(G(\hbar)\) open | proper classical solution sector |
-| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\) and typed 59,598-term mixed \(q_3\) independently accepted as classical input, with retained \(\ell_3\) transfer and \(q_2S q_2\) exchange open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only |
+| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish, while residual branch projection is open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; interaction mixing table open |
 | Cylinder + scalar clock | open | primary quantum test | open | open | open | open |
 | Cylinder + Yang--Mills | open | open after scalar | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |

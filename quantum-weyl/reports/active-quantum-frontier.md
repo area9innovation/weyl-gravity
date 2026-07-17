@@ -21,7 +21,14 @@ mixed vertex is accepted. The newly landed typed mixed (q_3) is independently
 replayed by the quantum consumer: all 59,598 coefficients are imported, its
 graded-symmetry defect count is zero, and the mixed arity-three identity
 vanishes on all 64 rows. A one-coefficient mutation produces two defects.
-The retained (ell_3) transfer and its (q_2 S q_2) exchange term remain open.
+The retained (ell_3) is now independently accepted: all 25,950 contact
+coefficients match, all 36 retained arity-three rows close, and a localized
+mutation is rejected. The exact exchange replay corrects the producer's
+support-only explanation. There are 144 raw gravity-outer/mixed-inner pairs
+and 342 canonical full-complex PBW coefficients, but none survives retained
+output projection; the other two exchange sectors have no raw pairs. Thus all
+three retained exchange sectors vanish exactly. Projection onto the
+Einstein-like, extra-Weyl, and topological residual branches remains open.
 
 The frontier imports this status through the content-addressed quantum repair
 acceptance certificate. The earlier 1,234/953 defect atlas remains an exact
@@ -51,7 +58,7 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. transfer mixed (ell_3) through the 64-to-36 SDR, including the (q_2 S q_2) exchange term;
+1. project the accepted retained mixed (ell_3) onto the residual branch basis and compute its mixing table;
 2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;

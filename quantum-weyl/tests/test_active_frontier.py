@@ -32,17 +32,19 @@ class ActiveFrontierTests(unittest.TestCase):
         for row in self.payload["supersession_ledger"]:
             self.assertIn("HISTORY_RETAINED", row["disposition"])
 
-    def test_mixed_q3_is_independently_accepted_and_transfer_is_next(self) -> None:
+    def test_retained_mixed_ell3_is_independently_accepted(self) -> None:
         flags = self.payload["claim_flags"]
         self.assertTrue(flags["MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
         self.assertTrue(flags["MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
         self.assertTrue(flags["COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED"])
         self.assertTrue(flags["MIXED_Q3_INPUT_UNBLOCKED"])
         self.assertTrue(flags["MIXED_Q3_INDEPENDENTLY_ACCEPTED"])
+        self.assertTrue(flags["RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED"])
         row = self.payload["active_rows"]["classical_interacting_input"]
-        self.assertIn("MIXED_Q3_INDEPENDENTLY_ACCEPTED", row["status"])
+        self.assertIn("RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED", row["status"])
         self.assertEqual(
-            row["next_gate"], "BERGER_RETAINED_MIXED_ELL3_TRANSFER_AND_EXCHANGE"
+            row["next_gate"],
+            "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE",
         )
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:

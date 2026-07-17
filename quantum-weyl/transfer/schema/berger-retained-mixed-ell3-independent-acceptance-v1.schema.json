@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/quantum-berger-retained-mixed-ell3-independent-acceptance-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "classical_commit", "dependency_tags", "producer_import", "exact_replay", "interaction_classification", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-retained-mixed-ell3-independent-acceptance-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE"},
+    "result_state": {"const": "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED_RESIDUAL_BRANCH_PROJECTION_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT_ACCEPTANCE"},
+    "classical_commit": {"const": "41c58d2086d77158ab442841d00588d7b560cbd8"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "producer_import": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "claim_status", "input_hashes"],
+      "properties": {
+        "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_TRANSFER"},
+        "claim_status": {"const": "CERTIFIED_RETAINED_MIXED_ELL3_CONTACT_WITH_ZERO_EXCHANGE"},
+        "input_hashes": {"$ref": "#/$defs/inputHashes"}
+      }
+    },
+    "exact_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["backend", "classical_commit", "input_hashes", "diagnostics", "verdict", "elapsed_seconds", "producer_claim_status"],
+      "properties": {
+        "backend": {"const": "independent-Q(sqrt(10))-PBW-retained-ell3-v1"},
+        "classical_commit": {"const": "41c58d2086d77158ab442841d00588d7b560cbd8"},
+        "input_hashes": {"$ref": "#/$defs/inputHashes"},
+        "diagnostics": {"$ref": "#/$defs/diagnostics"},
+        "verdict": {"const": "ACCEPTED_RETAINED_MIXED_ELL3_ZERO_EXCHANGE_LOCAL_ALGEBRAIC"},
+        "elapsed_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "producer_claim_status": {"const": "CERTIFIED_RETAINED_MIXED_ELL3_CONTACT_WITH_ZERO_EXCHANGE"}
+      }
+    },
+    "interaction_classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["retained_gravity_output_with_two_Maxwell_inputs", "retained_Maxwell_output_with_one_Maxwell_input", "other_Maxwell_input_multiplicities", "exchange_contribution", "Einstein_like_extra_Weyl_branch_mixing", "topological_direction", "negative_physical_direction_introduced", "health_reason"],
+      "properties": {
+        "retained_gravity_output_with_two_Maxwell_inputs": {"const": 7614},
+        "retained_Maxwell_output_with_one_Maxwell_input": {"const": 18336},
+        "other_Maxwell_input_multiplicities": {"const": 0},
+        "exchange_contribution": {"const": "ZERO_AFTER_EXACT_PBW_CONSTRUCTION_AND_RETAINED_OUTPUT_PROJECTION"},
+        "Einstein_like_extra_Weyl_branch_mixing": {"const": "NOT_COMPUTED_REQUIRES_RESIDUAL_BRANCH_PROJECTION"},
+        "topological_direction": {"const": "NOT_CLASSIFIED_ON_RETAINED_36_ROW_COMPLEX"},
+        "negative_physical_direction_introduced": {"const": false},
+        "health_reason": {"type": "string", "minLength": 100}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["RETAINED_MIXED_ELL3_PORTABLE_IMPORT_ACCEPTED", "RETAINED_MIXED_ELL3_CONTACT_INDEPENDENTLY_REPLAYED", "RETAINED_MIXED_ELL3_ALL_EXCHANGE_SECTORS_ZERO", "RETAINED_MIXED_ARITY_THREE_IDENTITY_INDEPENDENTLY_REPLAYED", "LOCALIZED_RETAINED_ELL3_MUTATION_REJECTED", "RETAINED_MIXED_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED", "EINSTEIN_EXTRA_WEYL_BRANCH_MIXING_COMPUTED", "TOPOLOGICAL_DIRECTION_CLASSIFIED", "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED", "REPOSITORY_BV_QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "RETAINED_MIXED_ELL3_PORTABLE_IMPORT_ACCEPTED": {"const": true},
+        "RETAINED_MIXED_ELL3_CONTACT_INDEPENDENTLY_REPLAYED": {"const": true},
+        "RETAINED_MIXED_ELL3_ALL_EXCHANGE_SECTORS_ZERO": {"const": true},
+        "RETAINED_MIXED_ARITY_THREE_IDENTITY_INDEPENDENTLY_REPLAYED": {"const": true},
+        "LOCALIZED_RETAINED_ELL3_MUTATION_REJECTED": {"const": true},
+        "RETAINED_MIXED_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED": {"const": false},
+        "EINSTEIN_EXTRA_WEYL_BRANCH_MIXING_COMPUTED": {"const": false},
+        "TOPOLOGICAL_DIRECTION_CLASSIFIED": {"const": false},
+        "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": {"const": false},
+        "REPOSITORY_BV_QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE"},
+    "claim_boundary": {"type": "string", "minLength": 1200},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_3"],
+      "properties": {"tier_3": {"type": "string", "minLength": 120}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "inputHashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["transfer_certificate", "typed_carrier", "legacy_layout_carrier", "full_typed_mixed_q2", "full_mixed_q3_manifest", "retained_mixed_q2", "retained_mixed_q3_manifest"],
+      "properties": {
+        "transfer_certificate": {"$ref": "#/$defs/hash"},
+        "typed_carrier": {"$ref": "#/$defs/hash"},
+        "legacy_layout_carrier": {"$ref": "#/$defs/hash"},
+        "full_typed_mixed_q2": {"$ref": "#/$defs/hash"},
+        "full_mixed_q3_manifest": {"$ref": "#/$defs/hash"},
+        "retained_mixed_q2": {"$ref": "#/$defs/hash"},
+        "retained_mixed_q3_manifest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "diagnostics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_mixed_q3_coefficient_count", "full_mixed_q3_nonzero_rows", "retained_ell2_coefficient_count", "retained_ell3_coefficient_count", "retained_ell3_nonzero_rows", "contact_missing_count", "contact_extra_count", "contact_changed_count", "contact_intermediate_coefficient_count", "contact_outer_Leibniz_contribution_count", "gravity_inclusion2_coefficient_count", "mixed_inclusion2_coefficient_count", "gravity_inclusion2_support", "mixed_inclusion2_support", "raw_exchange_candidate_counts", "exchange_unshuffle_contribution_counts", "exchange_full_coefficient_counts", "exchange_projection_contribution_counts", "exchange_final_coefficient_counts", "retained_arity_three_defect_count", "retained_arity_three_defect_rows", "mutation_row", "mutation_term_index", "mutation_defect_count", "gravity_output_term_count", "Maxwell_output_term_count", "input_Maxwell_leg_counts"],
+      "properties": {
+        "full_mixed_q3_coefficient_count": {"const": 59598},
+        "full_mixed_q3_nonzero_rows": {"const": 21},
+        "retained_ell2_coefficient_count": {"const": 1474},
+        "retained_ell3_coefficient_count": {"const": 25950},
+        "retained_ell3_nonzero_rows": {"const": 18},
+        "contact_missing_count": {"const": 0},
+        "contact_extra_count": {"const": 0},
+        "contact_changed_count": {"const": 0},
+        "contact_intermediate_coefficient_count": {"const": 32829},
+        "contact_outer_Leibniz_contribution_count": {"const": 25950},
+        "gravity_inclusion2_coefficient_count": {"const": 96},
+        "mixed_inclusion2_coefficient_count": {"const": 12},
+        "gravity_inclusion2_support": {"const": [37, 38]},
+        "mixed_inclusion2_support": {"const": [38]},
+        "raw_exchange_candidate_counts": {"const": {"gravity_outer_mixed_inner": 144, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}},
+        "exchange_unshuffle_contribution_counts": {"const": {"gravity_outer_mixed_inner": 324, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}},
+        "exchange_full_coefficient_counts": {"const": {"gravity_outer_mixed_inner": 342, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}},
+        "exchange_projection_contribution_counts": {"const": {"gravity_outer_mixed_inner": 0, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}},
+        "exchange_final_coefficient_counts": {"const": {"gravity_outer_mixed_inner": 0, "mixed_outer_gravity_inner": 0, "mixed_outer_mixed_inner": 0}},
+        "retained_arity_three_defect_count": {"const": 0},
+        "retained_arity_three_defect_rows": {"const": 0},
+        "mutation_row": {"const": 13},
+        "mutation_term_index": {"const": 0},
+        "mutation_defect_count": {"const": 2},
+        "gravity_output_term_count": {"const": 7614},
+        "Maxwell_output_term_count": {"const": 18336},
+        "input_Maxwell_leg_counts": {"const": {"0": 0, "1": 18336, "2": 7614, "3": 0}}
+      }
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["test_tier", "command", "status", "elapsed_seconds"],
+      "properties": {
+        "test_tier": {"enum": [1, 2]},
+        "command": {"type": "string", "minLength": 80},
+        "status": {"const": "PASS"},
+        "elapsed_seconds": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}

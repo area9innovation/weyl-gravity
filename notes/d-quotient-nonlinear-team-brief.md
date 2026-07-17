@@ -76,10 +76,36 @@ graded-symmetry defects vanish, as does the mixed part of
 exact defects.
 
 This is a `LOCAL-ALGEBRAIC` classical-input acceptance, not a QME or quantum
-result. The next nonlinear gate is retained \(\ell_3\), with both the direct
-contact term \(\pi q_3(\iota,\iota,\iota)\) and the homological exchange term
-built from \(q_2 S q_2\). The live typed-pairing refinement must be committed
-and pinned before that transfer is evaluated.
+result.
+
+### Independent retained mixed-ell3 acceptance
+
+The retained typed gravity--Maxwell `ell3` is now independently accepted by
+`BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE`, pinned to classical
+commit `41c58d20`. The quantum-side exact \(\mathbb Q(\sqrt{10})\) consumer
+matches all 25,950 direct contact coefficients, with 18 nonzero retained
+output rows. It also reconstructs the 96 gravity and 12 mixed second-inclusion
+coefficients and evaluates the homological \(q_2 S q_2\) exchange rather than
+inferring it from a support summary.
+
+The gravity-outer/mixed-inner exchange channel has 144 raw coefficient pairs,
+324 signed unshuffle contributions and 342 canonical full-complex PBW
+coefficients. None survives the retained output projection. The other two
+exchange channels have no raw pairs, so all three retained exchange sectors
+vanish exactly. This sharpens the producer explanation: the first channel is
+not absent in the full complex; it is killed by retained projection. All 36
+relative arity-three rows close, and a localized one-coefficient mutation
+produces two exact defects.
+
+The resulting bracket is nontrivial: it contains 7,614 gravity-output terms
+with two Maxwell inputs and 18,336 Maxwell-output terms with one Maxwell
+input. Thus a genuine retained gravity--light interaction has been established.
+The next nonlinear gate is
+`BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE`: project this
+bracket onto the Einstein-like, extra-Weyl and topological residual branches
+and decide their mixing. Cyclicity is still imported from the classical typed
+transfer theorem rather than independently replayed. No unary kinetic
+operator, QME lifecycle state or quantum claim is promoted.
 
 ### Extended rod–memory–Maxwell unary gate
 
