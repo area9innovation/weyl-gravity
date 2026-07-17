@@ -1,0 +1,103 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "APPARATUS_84_MIXED_R_KAPPA_UNARY_GATE_TIER_RECEIPT",
+  "run_date": "2026-07-17",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The Phi2-induced memory transport is corrected from Q11 to Q10 and computed exactly, including its raw physical-volume adjoint, frozen-pairing adjoint, physical reality check, and two-sided formal clock-line Green correction. The true r*kappa profile variation is exported universally in terms of sigma_a=delta_r log chi_a. The authoritative handoff supplies no normalized-density definition, normalization measure, or sigma_a, and two compatible choices change the two Q11 channel blocks. Mixed Q11 nilpotency/cyclicity and its formal Green coefficient are therefore input-blocked, not certified. Finite-r Green hyperbolicity, apparatus q2/q3, K_Berger equivariance, observer morphism, recoil, and every quantum claim remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile on both corrected/new producers, verifiers, and focused tests; python3 -m json.tool on both schemas, both certificates, and the ledger; git diff --check on observer paths",
+      "elapsed_seconds": "0.19",
+      "status": "PASS",
+      "scope": "Python syntax, structured data, reports, brief, and whitespace"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --check",
+      "elapsed_seconds": "23.61",
+      "status": "PASS",
+      "scope": "corrected predecessor scope, principal audit, exact Phi2, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_84_row_mixed_r_kappa_unary_gate --check",
+      "elapsed_seconds": "10.48",
+      "status": "PASS",
+      "scope": "bidegree audit, exact transport/adjoint export, Green first variation, normalized profile obstruction, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_rod_gravity_unary",
+      "elapsed_seconds": "47.14",
+      "status": "PASS",
+      "scope": "independent corrected rod--gravity replay and fail-closed boundary"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_84_row_mixed_r_kappa_unary_gate",
+      "elapsed_seconds": "13.48",
+      "status": "PASS",
+      "scope": "independent Phi2 transport, divergence, frozen adjoint, hashes, and overclaim mutations"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_84_row_rod_gravity_unary.py closed_universe_observers/tests/test_berger_84_row_mixed_r_kappa_unary_gate.py",
+      "elapsed_seconds": "146.50",
+      "status": "PASS",
+      "scope": "all 16 focused predecessor-correction and initial mixed-gate tests before the final independent Green-fixture hardening"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_84_row_mixed_r_kappa_unary_gate.py",
+      "elapsed_seconds": "59.54",
+      "status": "PASS",
+      "scope": "all 5 final mixed-gate tests after independent H/J Green-fixture hardening"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true on both rod-gravity and mixed-gate schemas/certificates",
+      "elapsed_seconds": "3.17",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_comparison_ledger",
+      "elapsed_seconds": "0.14",
+      "status": "PASS",
+      "scope": "historical snapshot replay plus corrected current observer imports"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "217.14",
+      "status": "PASS",
+      "scope": "all 62 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This result repairs a first-jet coefficient and returns an input obstruction; it does not create a freeze, mixed or finite-r 84-row theorem, shared core-algebra change, QME lifecycle promotion, release, or explicit full-repository request."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json", "sha256": "a1ed18041d015779d9f5347a63016000fdd8648e507eee391628071edcd75394"},
+    {"path": "closed_universe_observers/certificates/BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE.json", "sha256": "b355e03d72560526997829c6fe381ea7695a19e15a0b3adb4131bf03b96caf60"},
+    {"path": "closed_universe_observers/schema/berger-84-row-mixed-r-kappa-unary-gate-v1.schema.json", "sha256": "b579789c943c7cd97e2e63b51487a355edb0ef45fd222198237c8035a4a082c4"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "a4d0b1638283e87c7311c730a2bac67a88c18ce3c91274068edf545270e8d2d2"},
+    {"path": "closed_universe_observers/reports/berger-84-row-mixed-r-kappa-unary-gate.md", "sha256": "774c8d679c1eb680b3b02b04a1c22c3fa2385f0af4118ffe37b4ab6207148d5c"},
+    {"path": "closed_universe_observers/generate_berger_84_row_mixed_r_kappa_unary_gate.py", "sha256": "e9023794d58a7a5cad6edb9c5f3e4c2b2ddb208953bb96eafa3ccdb0de43ff22"},
+    {"path": "closed_universe_observers/verify_berger_84_row_mixed_r_kappa_unary_gate.py", "sha256": "ab5c3c91c277ed261a7fde9c3db1b0a76b65b95c3092a2f7c3845750c5ca3989"}
+  ],
+  "claim_flags": {
+    "MEMORY_TRANSPORT_BIDEGREE_CORRECTED": true,
+    "PHI2_INDUCED_DELTA_T_EXACT": true,
+    "FROZEN_PAIRING_DELTA_T_ADJOINT_EXACT": true,
+    "Q10_CLOCK_GREEN_FIRST_VARIATION_EXACT": true,
+    "SEPARATE_R_AXIS_MEMORY_TRANSPORT_REPAIRED": true,
+    "MIXED_PROFILE_UNDERDETERMINED_BY_HANDOFF": true,
+    "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": false,
+    "MIXED_GREEN_COEFFICIENT_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

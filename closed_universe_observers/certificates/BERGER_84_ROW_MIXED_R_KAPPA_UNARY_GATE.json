@@ -1,0 +1,949 @@
+{
+  "bidegree_audit": {
+    "delta_B_bidegree": [
+      1,
+      1
+    ],
+    "delta_T_bidegree": [
+      1,
+      0
+    ],
+    "memory_kinetic_action": "sum_a integral dvol_g p_a T(g) m_a",
+    "prior_assignment_delta_T_to_Q11_rejected": true,
+    "readout_action": "-kappa sum_a integral dvol_g p_a B_a(g) A",
+    "unary_decomposition": "Q=Q00+r Q10+kappa Q01+r*kappa Q11+O(r^2,kappa^2)"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL gate corrects the bidegree bookkeeping: the Phi2 variation of the memory transport belongs to Q10, not Q11. It computes delta n, delta T, the raw physical-volume adjoint, the density-conjugated frozen-pairing adjoint, and the first formal same-sided clock-line Green correction exactly, thereby completing the previously omitted memory part of the r axis. The remaining r*kappa block is the metric variation of the detector profile. Its universal inverse-metric, volume, and adjoint formulas are exported, but the authoritative handoff does not define the metric dependence of the normalized detector density chi_a. Two compatible density variations give different Q11 blocks, so mixed nilpotency/cyclicity and the mixed Green coefficient are input-blocked and not certified. This gate does not prove finite-r Green hyperbolicity, apparatus q2/q3, K_Berger equivariance, the observer morphism, deformed rank two, emitter recoil, a Lorentzian quantum theory, or a quantum claim.",
+  "claim_status": "Q10_MEMORY_TRANSPORT_REPAIRED_MIXED_Q11_INPUT_BLOCKED_PROFILE_DENSITY_UNEXPORTED",
+  "dependency_refs": {
+    "authoritative_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
+      "result_id": "BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF",
+      "sha256": "4e3202b7397b9b9fa0a5ce2ccfc243d3e9bda5f69d6339d329caaa3bfe9324ab"
+    },
+    "rod_gravity_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_ROD_GRAVITY_UNARY.json",
+      "result_id": "BERGER_84_ROW_ROD_GRAVITY_UNARY",
+      "sha256": "a1ed18041d015779d9f5347a63016000fdd8648e507eee391628071edcd75394"
+    },
+    "unary_completion_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE.json",
+      "result_id": "BERGER_84_ROW_UNARY_PAIRING_GREEN_GATE",
+      "sha256": "1c51f49ae867c5792bf4ece12f58d03e55079a9baa1c8a0209adeb74913e093f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": false,
+    "84_ROW_Q2_Q3_CERTIFIED": false,
+    "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FROZEN_PAIRING_DELTA_T_ADJOINT_EXACT": true,
+    "MEMORY_TRANSPORT_BIDEGREE_CORRECTED": true,
+    "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": false,
+    "MIXED_GREEN_COEFFICIENT_CERTIFIED": false,
+    "MIXED_PROFILE_UNDERDETERMINED_BY_HANDOFF": true,
+    "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": false,
+    "PHI2_INDUCED_DELTA_T_EXACT": true,
+    "Q10_CLOCK_GREEN_FIRST_VARIATION_EXACT": true,
+    "QUANTUM_CLAIM": false,
+    "SEPARATE_R_AXIS_MEMORY_TRANSPORT_REPAIRED": true
+  },
+  "mutation_results": [
+    {
+      "defect": "nonzero positive/negative-frequency deltaT coefficients are deleted",
+      "defect_count": 11,
+      "detected": true,
+      "name": "retain_T0_on_backreacted_metric"
+    },
+    {
+      "defect": "n0(d1) is left in the frozen-pairing adjoint",
+      "defect_count": 6,
+      "detected": true,
+      "name": "reuse_raw_adjoint_without_density_transport"
+    },
+    {
+      "defect": "left/right inverse coefficient at r",
+      "defect_count": 16,
+      "detected": true,
+      "name": "delete_clock_green_first_variation"
+    },
+    {
+      "defect": "two handoff-compatible normalized-density variations produce different Q11 blocks",
+      "defect_count": 2,
+      "detected": true,
+      "name": "choose_sigma_a_without_profile_definition"
+    }
+  ],
+  "next_gate": "EXPORT_METRIC_DEPENDENCE_OF_NORMALIZED_DETECTOR_DENSITIES_CHI0_CHI1_THEN_COMPUTE_Q11",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_84_row_mixed_r_kappa_unary_gate.py",
+        "sha256": "e9023794d58a7a5cad6edb9c5f3e4c2b2ddb208953bb96eafa3ccdb0de43ff22"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_84_row_mixed_r_kappa_unary_gate.py",
+        "sha256": "ab5c3c91c277ed261a7fde9c3db1b0a76b65b95c3092a2f7c3845750c5ca3989"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_84_row_mixed_r_kappa_unary_gate.py",
+        "sha256": "9b04d07ed1e4d24f239b60636b77ff5937c926f065110dbacadef0576425ac96"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-84-row-mixed-r-kappa-unary-gate.md",
+        "sha256": "774c8d679c1eb680b3b02b04a1c22c3fa2385f0af4118ffe37b4ab6207148d5c"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-84-row-mixed-r-kappa-unary-gate-v1.schema.json",
+        "sha256": "b579789c943c7cd97e2e63b51487a355edb0ef45fd222198237c8035a4a082c4"
+      }
+    ]
+  },
+  "q10_formal_green_correction": {
+    "fixture_count": 2,
+    "formula": "H10=-H00 deltaT H00 and J10=-J00 deltaT_sharp J00",
+    "left_inverse_defect_count_at_r": 0,
+    "right_inverse_defect_count_at_r": 0,
+    "same_sided_support": "formal coefficientwise: each correction is a local deltaT insertion between same-sided clock-line Green operators"
+  },
+  "q10_memory_transport": {
+    "background_clock_data": {
+      "X": "-9/16",
+      "dTheta_components_e0_e1_e2_e3": [
+        "3/4",
+        "0",
+        "0",
+        "0"
+      ],
+      "n0": "(4/3)e0",
+      "orthonormal_signature": [
+        "-1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    "bidegree": [
+      1,
+      0
+    ],
+    "bidegree_correction": "delta_r T is Q10 because p*T(g_r)*m is independent of kappa; it is not a Q11 block",
+    "canonical_sha256": "a06926afd86c363a59aef90040fe10653358f1d03e150b53b333cbd86737c1c7",
+    "exact_variation": {
+      "delta_T": "-(4/3) sum_i Phi2_0i e_i",
+      "delta_n0": "0",
+      "delta_ni": "-(4/3) Phi2_0i for i=1,2,3",
+      "density_ratio": "D_r=1+r d1+O(r^2), d1=1/2 tr_gHat(Phi2)",
+      "frozen_pairing_adjoint": "delta(T_sharp)=-delta_T-div_gHat(delta_n)",
+      "raw_physical_adjoint": "delta(T_raw*)=-delta_T-div_gHat(delta_n)-n0(d1)"
+    },
+    "frequency_sectors": {
+      "negative": {
+        "delta_T_derivative_coefficients_e1_e2_e3": [
+          [
+            [
+              4,
+              "-sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/17627983065"
+            ],
+            [
+              5,
+              "-114533*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              8,
+              "34019*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              9,
+              "-sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "9604*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2501685"
+            ],
+            [
+              5,
+              "-sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              8,
+              "sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              9,
+              "1793*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "11*sqrt(145)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2250"
+            ],
+            [
+              6,
+              "-sqrt(145)*I*(-60177713*exp(sqrt(58)*I/6) - 60177713*exp(sqrt(58)*I/12) + 2738956*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/140060250"
+            ],
+            [
+              7,
+              "-3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/9337350"
+            ]
+          ]
+        ],
+        "delta_n_spatial_components_e1_e2_e3": [
+          [
+            [
+              4,
+              "-sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/17627983065"
+            ],
+            [
+              5,
+              "-114533*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              8,
+              "34019*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              9,
+              "-sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "9604*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2501685"
+            ],
+            [
+              5,
+              "-sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              8,
+              "sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              9,
+              "1793*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "11*sqrt(145)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2250"
+            ],
+            [
+              6,
+              "-sqrt(145)*I*(-60177713*exp(sqrt(58)*I/6) - 60177713*exp(sqrt(58)*I/12) + 2738956*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/140060250"
+            ],
+            [
+              7,
+              "-3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/9337350"
+            ]
+          ]
+        ],
+        "density_ratio_coefficient_half_trace": [
+          [
+            0,
+            "133275453*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/45855490"
+          ],
+          [
+            1,
+            "-(30384795133*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 30384795133*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 1264718245981*exp(sqrt(58)*I/12) + 1264718245981*exp(sqrt(58)*I/6))/235039774200"
+          ],
+          [
+            2,
+            "(261010057*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2 + 403883712823*exp(sqrt(58)*I/12) + 403883712823*exp(sqrt(58)*I/6))/47007954840"
+          ],
+          [
+            3,
+            "(261010057*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 255851623681*exp(sqrt(58)*I/12) + 255851623681*exp(sqrt(58)*I/6))/47007954840"
+          ],
+          [
+            6,
+            "69731*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/539400"
+          ],
+          [
+            7,
+            "599*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/107880"
+          ]
+        ],
+        "density_transport_defect_count": 0,
+        "divergence_with_frozen_volume": [
+          [
+            1,
+            "-sqrt(58)*I*(-44226107138*exp(sqrt(58)*I/6) - 44226107138*exp(sqrt(58)*I/12) + 565950931*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 565950931*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/16025439150"
+          ],
+          [
+            2,
+            "sqrt(58)*I*(-142136592958*exp(sqrt(58)*I/6) - 142136592958*exp(sqrt(58)*I/12) + 13508033*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 13508033*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 274518090*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 274518090*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/105767898390"
+          ],
+          [
+            3,
+            "sqrt(58)*I*(-26378971100*exp(sqrt(58)*I/6) - 26378971100*exp(sqrt(58)*I/12) + 1228003*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 1228003*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2 + 24956190*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 24956190*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/9615263490"
+          ],
+          [
+            6,
+            "-14287*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/404550"
+          ],
+          [
+            7,
+            "599*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/242730"
+          ]
+        ],
+        "divergence_with_physical_volume": [
+          [
+            0,
+            "-88850302*sqrt(58)*I*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/68783235"
+          ],
+          [
+            1,
+            "-sqrt(58)*I*(-2724179781535*exp(sqrt(58)*I/6) - 2724179781535*exp(sqrt(58)*I/12) - 30384795133*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 - 30384795133*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 18676380723*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 18676380723*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/528839491950"
+          ],
+          [
+            2,
+            "sqrt(58)*I*(-17613558251*exp(sqrt(58)*I/6) - 17613558251*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/3411867690"
+          ],
+          [
+            3,
+            "sqrt(58)*I*(-17613558251*exp(sqrt(58)*I/6) - 17613558251*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/3411867690"
+          ],
+          [
+            6,
+            "-1816*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/19575"
+          ]
+        ],
+        "frozen_pairing_adjoint_derivative_coefficients_e1_e2_e3": [
+          [
+            [
+              4,
+              "sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/17627983065"
+            ],
+            [
+              5,
+              "114533*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              8,
+              "-34019*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              9,
+              "sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "-9604*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2501685"
+            ],
+            [
+              5,
+              "sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              8,
+              "-sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              9,
+              "-1793*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "-11*sqrt(145)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2250"
+            ],
+            [
+              6,
+              "sqrt(145)*I*(-60177713*exp(sqrt(58)*I/6) - 60177713*exp(sqrt(58)*I/12) + 2738956*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/140060250"
+            ],
+            [
+              7,
+              "3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/9337350"
+            ]
+          ]
+        ],
+        "frozen_pairing_adjoint_multiplier": [
+          [
+            1,
+            "sqrt(58)*I*(-44226107138*exp(sqrt(58)*I/6) - 44226107138*exp(sqrt(58)*I/12) + 565950931*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 565950931*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/16025439150"
+          ],
+          [
+            2,
+            "-sqrt(58)*I*(-142136592958*exp(sqrt(58)*I/6) - 142136592958*exp(sqrt(58)*I/12) + 13508033*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 13508033*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 274518090*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 274518090*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/105767898390"
+          ],
+          [
+            3,
+            "-sqrt(58)*I*(-26378971100*exp(sqrt(58)*I/6) - 26378971100*exp(sqrt(58)*I/12) + 1228003*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 1228003*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2 + 24956190*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 24956190*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/9615263490"
+          ],
+          [
+            6,
+            "14287*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/404550"
+          ],
+          [
+            7,
+            "-599*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/242730"
+          ]
+        ],
+        "n0_on_density_ratio": [
+          [
+            0,
+            "-88850302*sqrt(58)*I*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/68783235"
+          ],
+          [
+            1,
+            "sqrt(58)*I*(30384795133*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 30384795133*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 1264718245981*exp(sqrt(58)*I/12) + 1264718245981*exp(sqrt(58)*I/6))/528839491950"
+          ],
+          [
+            2,
+            "-sqrt(58)*I*(261010057*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2 + 403883712823*exp(sqrt(58)*I/12) + 403883712823*exp(sqrt(58)*I/6))/105767898390"
+          ],
+          [
+            3,
+            "-sqrt(58)*I*(261010057*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 255851623681*exp(sqrt(58)*I/12) + 255851623681*exp(sqrt(58)*I/6))/105767898390"
+          ],
+          [
+            6,
+            "-69731*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/1213650"
+          ],
+          [
+            7,
+            "-599*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/242730"
+          ]
+        ],
+        "raw_physical_adjoint_derivative_coefficients_e1_e2_e3": [
+          [
+            [
+              4,
+              "sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/17627983065"
+            ],
+            [
+              5,
+              "114533*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              8,
+              "-34019*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/15510447"
+            ],
+            [
+              9,
+              "sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "-9604*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2501685"
+            ],
+            [
+              5,
+              "sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              8,
+              "-sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2)/1705933845"
+            ],
+            [
+              9,
+              "-1793*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "-11*sqrt(145)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/2250"
+            ],
+            [
+              6,
+              "sqrt(145)*I*(-60177713*exp(sqrt(58)*I/6) - 60177713*exp(sqrt(58)*I/12) + 2738956*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/140060250"
+            ],
+            [
+              7,
+              "3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/9337350"
+            ]
+          ]
+        ],
+        "raw_physical_adjoint_multiplier": [
+          [
+            0,
+            "88850302*sqrt(58)*I*(1 + exp(sqrt(58)*I/12))*exp(sqrt(58)*I/12)/68783235"
+          ],
+          [
+            1,
+            "sqrt(58)*I*(-2724179781535*exp(sqrt(58)*I/6) - 2724179781535*exp(sqrt(58)*I/12) - 30384795133*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 - 30384795133*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 18676380723*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 18676380723*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/528839491950"
+          ],
+          [
+            2,
+            "-sqrt(58)*I*(-17613558251*exp(sqrt(58)*I/6) - 17613558251*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/3411867690"
+          ],
+          [
+            3,
+            "-sqrt(58)*I*(-17613558251*exp(sqrt(58)*I/6) - 17613558251*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/6)**2 + 435743*exp(sqrt(58)*I/12)*cos(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/6)*cos(sqrt(10)/6)**2)/3411867690"
+          ],
+          [
+            6,
+            "1816*sqrt(58)*I*(exp(sqrt(58)*I/12)*sin(sqrt(10)/6) + exp(sqrt(58)*I/6)*sin(sqrt(10)/3))/19575"
+          ]
+        ]
+      },
+      "positive": {
+        "delta_T_derivative_coefficients_e1_e2_e3": [
+          [
+            [
+              4,
+              "-sqrt(58)*I*(91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 38792562757*exp(sqrt(58)*I/12) + 38792562757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/17627983065"
+            ],
+            [
+              5,
+              "114533*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              8,
+              "-34019*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              9,
+              "sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "-9604*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2501685"
+            ],
+            [
+              5,
+              "-sqrt(58)*I*(435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 3209255585*exp(sqrt(58)*I/12) + 3209255585*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              8,
+              "-sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              9,
+              "-1793*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "-11*sqrt(145)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2250"
+            ],
+            [
+              6,
+              "-sqrt(145)*I*(2738956*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 57438757*exp(sqrt(58)*I/12) + 57438757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/140060250"
+            ],
+            [
+              7,
+              "3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(-sqrt(58)*I/6)/9337350"
+            ]
+          ]
+        ],
+        "delta_n_spatial_components_e1_e2_e3": [
+          [
+            [
+              4,
+              "-sqrt(58)*I*(91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 38792562757*exp(sqrt(58)*I/12) + 38792562757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/17627983065"
+            ],
+            [
+              5,
+              "114533*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              8,
+              "-34019*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              9,
+              "sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "-9604*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2501685"
+            ],
+            [
+              5,
+              "-sqrt(58)*I*(435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 3209255585*exp(sqrt(58)*I/12) + 3209255585*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              8,
+              "-sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              9,
+              "-1793*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "-11*sqrt(145)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2250"
+            ],
+            [
+              6,
+              "-sqrt(145)*I*(2738956*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 57438757*exp(sqrt(58)*I/12) + 57438757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/140060250"
+            ],
+            [
+              7,
+              "3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(-sqrt(58)*I/6)/9337350"
+            ]
+          ]
+        ],
+        "density_ratio_coefficient_half_trace": [
+          [
+            0,
+            "133275453*(exp(sqrt(58)*I/12) + exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/45855490"
+          ],
+          [
+            1,
+            "(-2559821287095*exp(sqrt(58)*I/6) - 2559821287095*exp(sqrt(58)*I/12) + 30384795133*exp(sqrt(58)*I/12)*cos(sqrt(10)/3) + 30384795133*exp(sqrt(58)*I/6)*cos(sqrt(10)/6))*exp(-sqrt(58)*I/4)/470079548400"
+          ],
+          [
+            2,
+            "(261010057*exp(sqrt(58)*I/12)*cos(sqrt(10)/3) + 261010057*exp(sqrt(58)*I/6)*cos(sqrt(10)/6) + 808028435703*exp(sqrt(58)*I/12) + 808028435703*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/94015909680"
+          ],
+          [
+            3,
+            "(261010057*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 255851623681*exp(sqrt(58)*I/12) + 255851623681*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/47007954840"
+          ],
+          [
+            6,
+            "69731*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/539400"
+          ],
+          [
+            7,
+            "599*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/107880"
+          ]
+        ],
+        "density_transport_defect_count": 0,
+        "divergence_with_frozen_volume": [
+          [
+            1,
+            "-sqrt(58)*I*(565950931*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 565950931*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 43660156207*exp(sqrt(58)*I/12) + 43660156207*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/16025439150"
+          ],
+          [
+            2,
+            "sqrt(58)*I*(261010057*exp(sqrt(58)*I/3)*sin(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/4)*sin(sqrt(10)/6)**2 + 141862074868*exp(sqrt(58)*I/3) + 141862074868*exp(sqrt(58)*I/4))*exp(-5*sqrt(58)*I/12)/105767898390"
+          ],
+          [
+            3,
+            "-sqrt(58)*I*(-26377743097*exp(sqrt(58)*I/4) - 26377743097*exp(sqrt(58)*I/3) + 23728187*exp(sqrt(58)*I/3)*sin(sqrt(10)/12)**2 + 23728187*exp(sqrt(58)*I/4)*sin(sqrt(10)/6)**2)*exp(-5*sqrt(58)*I/12)/9615263490"
+          ],
+          [
+            6,
+            "14287*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/404550"
+          ],
+          [
+            7,
+            "-599*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/242730"
+          ]
+        ],
+        "divergence_with_physical_volume": [
+          [
+            0,
+            "88850302*sqrt(58)*I*(exp(sqrt(58)*I/12) + exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/68783235"
+          ],
+          [
+            1,
+            "sqrt(58)*I*(-5441391596757*exp(sqrt(58)*I/6) - 5441391596757*exp(sqrt(58)*I/12) - 37352761446*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 - 37352761446*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 30384795133*exp(sqrt(58)*I/12)*cos(sqrt(10)/3) + 30384795133*exp(sqrt(58)*I/6)*cos(sqrt(10)/6))*exp(-sqrt(58)*I/4)/1057678983900"
+          ],
+          [
+            2,
+            "sqrt(58)*I*(1091752585439*exp(7*sqrt(58)*I/12) + 1091752585439*exp(sqrt(58)*I/2) + 261010057*exp(7*sqrt(58)*I/12)*cos(sqrt(10)/6) + 522020114*exp(sqrt(58)*I/2)*sin(sqrt(10)/6)**2 + 261010057*exp(sqrt(58)*I/2)*cos(sqrt(10)/3) + 522020114*exp(7*sqrt(58)*I/12)*sin(sqrt(10)/12)**2)*exp(-2*sqrt(58)*I/3)/211535796780"
+          ],
+          [
+            3,
+            "33741614*sqrt(58)*I*(exp(7*sqrt(58)*I/12) + exp(sqrt(58)*I/2))*exp(-2*sqrt(58)*I/3)/6536145"
+          ],
+          [
+            6,
+            "1816*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/19575"
+          ]
+        ],
+        "frozen_pairing_adjoint_derivative_coefficients_e1_e2_e3": [
+          [
+            [
+              4,
+              "sqrt(58)*I*(91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 38792562757*exp(sqrt(58)*I/12) + 38792562757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/17627983065"
+            ],
+            [
+              5,
+              "-114533*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              8,
+              "34019*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              9,
+              "-sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "9604*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2501685"
+            ],
+            [
+              5,
+              "sqrt(58)*I*(435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 3209255585*exp(sqrt(58)*I/12) + 3209255585*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              8,
+              "sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              9,
+              "1793*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "11*sqrt(145)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2250"
+            ],
+            [
+              6,
+              "sqrt(145)*I*(2738956*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 57438757*exp(sqrt(58)*I/12) + 57438757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/140060250"
+            ],
+            [
+              7,
+              "-3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(-sqrt(58)*I/6)/9337350"
+            ]
+          ]
+        ],
+        "frozen_pairing_adjoint_multiplier": [
+          [
+            1,
+            "sqrt(58)*I*(565950931*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 565950931*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 43660156207*exp(sqrt(58)*I/12) + 43660156207*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/16025439150"
+          ],
+          [
+            2,
+            "-sqrt(58)*I*(261010057*exp(sqrt(58)*I/3)*sin(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/4)*sin(sqrt(10)/6)**2 + 141862074868*exp(sqrt(58)*I/3) + 141862074868*exp(sqrt(58)*I/4))*exp(-5*sqrt(58)*I/12)/105767898390"
+          ],
+          [
+            3,
+            "sqrt(58)*I*(-26377743097*exp(sqrt(58)*I/4) - 26377743097*exp(sqrt(58)*I/3) + 23728187*exp(sqrt(58)*I/3)*sin(sqrt(10)/12)**2 + 23728187*exp(sqrt(58)*I/4)*sin(sqrt(10)/6)**2)*exp(-5*sqrt(58)*I/12)/9615263490"
+          ],
+          [
+            6,
+            "-14287*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/404550"
+          ],
+          [
+            7,
+            "599*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/242730"
+          ]
+        ],
+        "n0_on_density_ratio": [
+          [
+            0,
+            "88850302*sqrt(58)*I*(exp(sqrt(58)*I/12) + exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/68783235"
+          ],
+          [
+            1,
+            "sqrt(58)*I*(-2559821287095*exp(sqrt(58)*I/6) - 2559821287095*exp(sqrt(58)*I/12) + 30384795133*exp(sqrt(58)*I/12)*cos(sqrt(10)/3) + 30384795133*exp(sqrt(58)*I/6)*cos(sqrt(10)/6))*exp(-sqrt(58)*I/4)/1057678983900"
+          ],
+          [
+            2,
+            "sqrt(58)*I*(261010057*exp(sqrt(58)*I/12)*cos(sqrt(10)/3) + 261010057*exp(sqrt(58)*I/6)*cos(sqrt(10)/6) + 808028435703*exp(sqrt(58)*I/12) + 808028435703*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/211535796780"
+          ],
+          [
+            3,
+            "sqrt(58)*I*(261010057*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 261010057*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 255851623681*exp(sqrt(58)*I/12) + 255851623681*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/105767898390"
+          ],
+          [
+            6,
+            "69731*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/1213650"
+          ],
+          [
+            7,
+            "599*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/242730"
+          ]
+        ],
+        "raw_physical_adjoint_derivative_coefficients_e1_e2_e3": [
+          [
+            [
+              4,
+              "sqrt(58)*I*(91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 38792562757*exp(sqrt(58)*I/12) + 38792562757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/17627983065"
+            ],
+            [
+              5,
+              "-114533*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              8,
+              "34019*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/15510447"
+            ],
+            [
+              9,
+              "-sqrt(58)*I*(-38884068787*exp(sqrt(58)*I/6) - 38884068787*exp(sqrt(58)*I/12) + 91506030*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 91506030*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/17627983065"
+            ]
+          ],
+          [
+            [
+              4,
+              "9604*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2501685"
+            ],
+            [
+              5,
+              "sqrt(58)*I*(435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 3209255585*exp(sqrt(58)*I/12) + 3209255585*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              8,
+              "sqrt(58)*I*(-3209691328*exp(sqrt(58)*I/6) - 3209691328*exp(sqrt(58)*I/12) + 435743*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 435743*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2)*exp(-sqrt(58)*I/4)/1705933845"
+            ],
+            [
+              9,
+              "1793*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/500337"
+            ]
+          ],
+          [
+            [
+              1,
+              "11*sqrt(145)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/2250"
+            ],
+            [
+              6,
+              "sqrt(145)*I*(2738956*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 2738956*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 + 57438757*exp(sqrt(58)*I/12) + 57438757*exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/140060250"
+            ],
+            [
+              7,
+              "-3920549*sqrt(145)*I*(1 + exp(sqrt(58)*I/12))*exp(-sqrt(58)*I/6)/9337350"
+            ]
+          ]
+        ],
+        "raw_physical_adjoint_multiplier": [
+          [
+            0,
+            "-88850302*sqrt(58)*I*(exp(sqrt(58)*I/12) + exp(sqrt(58)*I/6))*exp(-sqrt(58)*I/4)/68783235"
+          ],
+          [
+            1,
+            "-sqrt(58)*I*(-5441391596757*exp(sqrt(58)*I/6) - 5441391596757*exp(sqrt(58)*I/12) - 37352761446*exp(sqrt(58)*I/12)*sin(sqrt(10)/6)**2 - 37352761446*exp(sqrt(58)*I/6)*sin(sqrt(10)/12)**2 + 30384795133*exp(sqrt(58)*I/12)*cos(sqrt(10)/3) + 30384795133*exp(sqrt(58)*I/6)*cos(sqrt(10)/6))*exp(-sqrt(58)*I/4)/1057678983900"
+          ],
+          [
+            2,
+            "-sqrt(58)*I*(1091752585439*exp(7*sqrt(58)*I/12) + 1091752585439*exp(sqrt(58)*I/2) + 261010057*exp(7*sqrt(58)*I/12)*cos(sqrt(10)/6) + 522020114*exp(sqrt(58)*I/2)*sin(sqrt(10)/6)**2 + 261010057*exp(sqrt(58)*I/2)*cos(sqrt(10)/3) + 522020114*exp(7*sqrt(58)*I/12)*sin(sqrt(10)/12)**2)*exp(-2*sqrt(58)*I/3)/211535796780"
+          ],
+          [
+            3,
+            "-33741614*sqrt(58)*I*(exp(7*sqrt(58)*I/12) + exp(sqrt(58)*I/2))*exp(-2*sqrt(58)*I/3)/6536145"
+          ],
+          [
+            6,
+            "-1816*sqrt(58)*I*(exp(sqrt(58)*I/6)*sin(sqrt(10)/6) + exp(sqrt(58)*I/12)*sin(sqrt(10)/3))*exp(-sqrt(58)*I/4)/19575"
+          ]
+        ]
+      },
+      "zero": {
+        "delta_T_derivative_coefficients_e1_e2_e3": [
+          [],
+          [],
+          []
+        ],
+        "delta_n_spatial_components_e1_e2_e3": [
+          [],
+          [],
+          []
+        ],
+        "density_ratio_coefficient_half_trace": [
+          [
+            0,
+            "-5518/567"
+          ],
+          [
+            1,
+            "-(9371932226808192*cos(sqrt(10)/3) + 9371932226808192*cos(sqrt(10)/6) + 41000293210717865)/29296891226810880"
+          ],
+          [
+            2,
+            "(434851282097280*cos(sqrt(10)/3) + 434851282097280*cos(sqrt(10)/6) + 41120668168883581)/29296891226810880"
+          ],
+          [
+            3,
+            "-(-8200058642143573 + 86970256419456*cos(sqrt(10)/3) + 86970256419456*cos(sqrt(10)/6))/5859378245362176"
+          ],
+          [
+            6,
+            "-2711785945257*(sin(sqrt(10)/6) + sin(sqrt(10)/3))/4238554864990"
+          ],
+          [
+            7,
+            "25165004751*(sin(sqrt(10)/6) + sin(sqrt(10)/3))/847710972998"
+          ]
+        ],
+        "density_transport_defect_count": 0,
+        "divergence_with_frozen_volume": [],
+        "divergence_with_physical_volume": [],
+        "frozen_pairing_adjoint_derivative_coefficients_e1_e2_e3": [
+          [],
+          [],
+          []
+        ],
+        "frozen_pairing_adjoint_multiplier": [],
+        "n0_on_density_ratio": [],
+        "raw_physical_adjoint_derivative_coefficients_e1_e2_e3": [
+          [],
+          [],
+          []
+        ],
+        "raw_physical_adjoint_multiplier": []
+      }
+    },
+    "reality_defect_count": 0
+  },
+  "q11_profile_gate": {
+    "bidegree": [
+      1,
+      1
+    ],
+    "fixed_polarizations": [
+      "dTheta_wedge_dR0_1",
+      "dTheta_wedge_dR1_2"
+    ],
+    "frozen_pairing_action_variation": "delta Btilde_a A=chi_a[delta C(F,P_a)+(d1+sigma_a) C_gHat(F,P_a)]",
+    "imported_operator": "B_a A=chi_a(Theta,R_a) <dA,dTheta wedge dR_aI(a)>_gHat with normalized transverse detector density included in chi_a",
+    "maxwell_relations_conditional": [
+      "delta Btilde_a d=0 because d^2=0",
+      "delta (delta Btilde_a^sharp)=0 by formal adjunction"
+    ],
+    "metric_pairing_variation": "delta C=-1/2 F_mn P_ab(Phi2^{ma} gHat^{nb}+gHat^{ma} Phi2^{nb})",
+    "missing_input_fields": [
+      "metric_normalization_measure",
+      "metric_variation_of_log_density",
+      "normalized_density_definition"
+    ],
+    "mixed_Q11_computed": false,
+    "profile_metric_variation_computed": false,
+    "raw_pairing": "C_g(F,P)=1/2 F_mn P_ab g^{ma} g^{nb}",
+    "raw_profile_variation": "delta B_a A=chi_a[delta C(F,P_a)+sigma_a C_gHat(F,P_a)]",
+    "required_Q11_blocks": [
+      "q11(p_a_plus,A)=-delta Btilde_a",
+      "q11(A_plus,p_a)=+(delta Btilde_a)^sharp in the frozen pairing"
+    ],
+    "status": "INPUT_BLOCKED_NORMALIZED_PROFILE_METRIC_VARIATION_UNEXPORTED",
+    "underdetermination_witness": {
+      "completion_0": "sigma_a=0",
+      "completion_1": "sigma_a=s_a with nonzero support-local s_a",
+      "difference": "chi_a s_a C_gHat(F,P_a)",
+      "independent_channel_defect_count": 2
+    },
+    "unknowns": [
+      "sigma_0=delta_r log chi_0",
+      "sigma_1=delta_r log chi_1"
+    ]
+  },
+  "result_id": "BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE",
+  "schema": "closed-universe-berger-84-row-mixed-r-kappa-unary-gate-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

@@ -88,14 +88,12 @@ preserved term by term.  It does not establish existence, uniqueness, or
 Green hyperbolicity for a finite nonzero `r` operator.
 
 The canonical rod pairing makes the Green operator Laurent-singular as
-`r -> 0`; this is recorded rather than hidden.  The mixed
-`epsilon_R^2*kappa` corrections to `B_a`, `T`, and their adjoints are not yet
-present, so the unqualified full-84 flags remain false.
-
-Accordingly, the result certifies the 84-row differential and unary cyclicity
-on the three separate axial bidegrees `(0,0)`, `(epsilon_R^2,0)`, and
-`(0,kappa)`, together with a formal coefficientwise causal chain contraction.
-It is not a finite-parameter or all-orders 84-row Green theorem.
+`r -> 0`; this is recorded rather than hidden.  This certificate computes the
+rod--gravity part of the `r` axis, but it originally assigned the backreacted
+memory transport to the mixed coefficient.  That assignment is corrected
+here: because `p*T(g_r)*m` has no `kappa`, `delta_r T` belongs to `Q10`.
+It is not computed in this artifact, so the full 84-row `r` axis is not claimed
+here.  The later mixed-axis gate computes that missing transport coefficient.
 
 ## Mixed-order preflight
 
@@ -111,7 +109,7 @@ coefficient window in `K((r))[[kappa]]`, retaining Laurent powers
 `r^-1,r^0,r^1` and memory powers through `kappa^2`; this is not represented by
 the inconsistent quotient `r^2=0` after adjoining `r^-1`.
 
-The shifted transport adjoint must be recomputed:
+The `Q10` shifted transport adjoint must be recomputed:
 
 ```text
 T_r* = -T_r - div_g_r(n_Theta(g_r)).
@@ -119,8 +117,9 @@ T_r* = -T_r - div_g_r(n_Theta(g_r)).
 
 The stationary identity `T0*=-T0` cannot be reused.  The physical density
 ratio and every `B_a`/`T` cotangent block must first be expanded and then
-transported to the frozen 84-row pairing.  This gate includes only shifted
-background `B_a^(0)` and `T`; `B_a^(1)` and `B_a^(2)` remain the later
-apparatus `q2` and `q3` calculation.  The mixed coefficient itself,
+transported to the frozen 84-row pairing.  The transport variation belongs to
+`Q10`; only the shifted background `B_a^(0)` and its adjoint belong to `Q11`.
+`B_a^(1)` and `B_a^(2)` remain the later apparatus `q2` and `q3` calculation.
+The mixed profile coefficient itself,
 `K_Berger` equivariance, observer morphism, deformed rank two, and every
 quantum claim remain open.

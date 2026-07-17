@@ -258,8 +258,8 @@ def _semantic_boundary(value: dict) -> None:
         "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED",
         "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED",
         "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED",
-        "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED",
-        "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED",
+        "ROD_GRAVITY_R_AXIS_FIRST_JET_CERTIFIED",
+        "ROD_GRAVITY_R_AXIS_FORMAL_CAUSAL_COEFFICIENT_CERTIFIED",
         "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED",
         "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED",
         "MIXED_R_KAPPA_PREFLIGHT_COMPLETE",
@@ -267,6 +267,9 @@ def _semantic_boundary(value: dict) -> None:
     required_false = (
         "84_ROW_Q1_CERTIFIED",
         "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED",
+        "MEMORY_TRANSPORT_R_SHIFT_CERTIFIED",
+        "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED",
+        "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED",
         "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED",
         "84_ROW_Q2_Q3_CERTIFIED",
         "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED",
@@ -279,8 +282,10 @@ def _semantic_boundary(value: dict) -> None:
     if not all(flags[key] is False for key in required_false):
         raise ValueError("unqualified or mixed result was over-promoted")
     scope = value["coefficient_scope"]
-    if scope["q1_certified_bidegrees_r_kappa"] != [[0, 0], [1, 0], [0, 1]]:
-        raise ValueError("axial coefficient scope drifted")
+    if scope["rod_gravity_certified_bidegrees_r_kappa"] != [[1, 0]]:
+        raise ValueError("rod--gravity coefficient scope drifted")
+    if scope["full_84_q1_certified_bidegrees_r_kappa"] != [[0, 0], [0, 1]]:
+        raise ValueError("full 84-row coefficient scope drifted")
     if "r*kappa" not in scope["excluded"] or not scope["singular_probe_limit_explicit"]:
         raise ValueError("mixed-jet or Laurent boundary was hidden")
     orders = value["coupled_causal_witness"]["operator_order_audit"]
@@ -306,6 +311,8 @@ def _semantic_boundary(value: dict) -> None:
         raise ValueError("varied transport divergence is missing")
     if preflight["causal_coefficient_window"]["ring"] != "K((r))[[kappa]]":
         raise ValueError("mixed Laurent coefficient ring drifted")
+    if "Q10" not in preflight["bidegree_correction_required"]:
+        raise ValueError("memory transport bidegree correction was hidden")
     mutations = value["mutation_results"]
     if len(mutations) != 6 or not all(row["detected"] and row["defect_count"] > 0 for row in mutations):
         raise ValueError("a required mutation was not detected computationally")
@@ -335,6 +342,9 @@ def verify() -> dict:
     for key in (
         "84_ROW_Q1_CERTIFIED",
         "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED",
+        "MEMORY_TRANSPORT_R_SHIFT_CERTIFIED",
+        "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED",
+        "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED",
         "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED",
         "84_ROW_Q2_Q3_CERTIFIED",
         "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED",

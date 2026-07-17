@@ -85,21 +85,24 @@ audit finds that `q2(Phi2,-)` is a fourth-order diagonal principal deformation,
 not the previously stated order-two subprincipal term; the exact physical
 contraction witness is `623/81` on an `e3^4 h_hat_00` coefficient.  The Schur--Laurent
 formula therefore certifies only a formal coefficientwise same-sided inverse,
-not finite-parameter Green hyperbolicity.  Nilpotency and unary cyclicity
-remain certified on those same three separate axes.  The physical `Phi2` now
-has one canonical machine-readable tensor export, and the mixed coefficient,
-density-adjoint, and identity conventions are frozen.  The result is
-deliberately not promoted to an unqualified 84-row theorem: the mixed
-`epsilon_R^2*kappa` profile/transport shift, apparatus interactions,
+not finite-parameter Green hyperbolicity.  A further bidegree audit corrects
+`delta_r T`: since the memory kinetic term has no `kappa`, it belongs to `Q10`,
+not `Q11`.  `BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE` computes this transport,
+its frozen-pairing adjoint, and the first formal Green correction exactly.  It
+then returns the first normalized mixed obstruction: the handoff never defines
+the metric dependence of the normalized detector densities `chi_0,chi_1`, so
+`delta_r B_a` and hence `Q11` are underdetermined.  The result is deliberately
+not promoted to an unqualified 84-row theorem: the normalized profile metric
+variation, apparatus interactions,
 `K_Berger` equivariance, and observer morphism remain open.
 
 ### Immediate priority after the axial unary certificate
 
-1. Use the corrected fourth-order principal classification and canonical
-   `Phi2` export to close the mixed \(\epsilon_R^2\kappa\) profile/transport shift, including
-   the rod and memory adjoints and the shifted gravity Hessian.  Return the
-   unqualified 84-row unary/cyclicity/causal theorem or its first normalized
-   obstruction.
+1. Export an explicit metric-dependent normalization rule for both detector
+   densities `chi_0,chi_1` (normalization measure and
+   `sigma_a=delta_r log chi_a`).  Then substitute it into the certified
+   universal `delta Btilde_a` formula and replay mixed nilpotency, cyclicity,
+   and the bivariate formal Green coefficient.
 2. Only after that unary gate, construct the apparatus \(q_2,q_3\) rows and
    test \(K_{\rm Berger}\)-equivariance and cyclicity.  Import the nonlinear
    team's certified tensors; do not fork them.
@@ -109,7 +112,7 @@ deliberately not promoted to an unqualified 84-row theorem: the mixed
    clock/signal object.  The observer team owns its detector realization and
    record map, not a competing redshift definition.
 
-The separate-axis 84-row unary theorem and formal causal coefficient are
+The repaired separate-axis coefficient and formal causal correction are
 sufficient input for scoped first-jet tests, but they must not be advertised
 as a finite-parameter Green theorem, mixed-axis theorem, or fully interacting
 apparatus theorem.

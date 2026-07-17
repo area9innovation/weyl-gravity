@@ -28,6 +28,8 @@ python3 -m closed_universe_observers.generate_berger_84_row_unary_pairing_green_
 python3 -m closed_universe_observers.verify_berger_84_row_unary_pairing_green_gate
 python3 -m closed_universe_observers.generate_berger_84_row_rod_gravity_unary --check
 python3 -m closed_universe_observers.verify_berger_84_row_rod_gravity_unary
+python3 -m closed_universe_observers.generate_berger_84_row_mixed_r_kappa_unary_gate --check
+python3 -m closed_universe_observers.verify_berger_84_row_mixed_r_kappa_unary_gate
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -53,16 +55,18 @@ advanced/retarded inverse are certified; together with the base rows they
 form a 72-row causal subcomplex.  The six clock-dressed rod diffeomorphism
 blocks, their cotangent adjoints, the action-derived gravity--rod Hessian, and
 the coupled causal witness are now also exported.  An exact Schur--Laurent
-inverse certifies the 84-row differential and unary cyclicity, together with
-a formal coefficientwise causal chain contraction, on the separate `(0,0)`,
-`(epsilon_R^2,0)`, and `(0,kappa)` axes.  A corrected payload audit treats
+inverse certifies the rod--gravity `epsilon_R^2` coefficient formally.  A
+subsequent bidegree audit corrects `delta_r T` from `Q11` to `Q10`, computes it
+and its frozen-pairing adjoint exactly, and repairs the memory portion of the
+separate `r` axis.  A corrected payload audit treats
 `q2(Phi2,-)` as a fourth-order diagonal principal deformation and explicitly
 exhibits the nonzero contracted principal coefficient `623/81`; it explicitly
 does not claim finite-parameter Green hyperbolicity.  The physical `Phi2` is
 now exported in one canonical tensor/harmonic/frequency order, and the mixed
-coefficient ring and varied-adjoint requirements are frozen.  The unqualified
-full-84 theorem remains open because the mixed
-`epsilon_R^2*kappa` profile/transport shift has not been computed.  The
+coefficient ring and varied-adjoint requirements are frozen.  The actual
+`epsilon_R^2*kappa` profile block remains input-blocked because the handoff
+does not export the metric variation of its normalized detector density.  The
+unqualified full-84 theorem therefore remains open.  The
 observer team now also exports six exact global detector-indexed rod fields
 on the compact Berger cylinder.  They reproduce both detector-event identity
 charts and determine a conserved global rod source in the finite spatial

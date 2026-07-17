@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-84-row-mixed-r-kappa-unary-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "bidegree_audit", "q10_memory_transport", "q10_formal_green_correction", "q11_profile_gate", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-84-row-mixed-r-kappa-unary-gate-v1"},
+    "result_id": {"const": "BERGER_84_ROW_MIXED_R_KAPPA_UNARY_GATE"},
+    "setting_id": {"$ref": "#/$defs/text"},
+    "claim_status": {"const": "Q10_MEMORY_TRANSPORT_REPAIRED_MIXED_Q11_INPUT_BLOCKED_PROFILE_DENSITY_UNEXPORTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "bidegree_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unary_decomposition", "memory_kinetic_action", "readout_action", "delta_T_bidegree", "delta_B_bidegree", "prior_assignment_delta_T_to_Q11_rejected"],
+      "properties": {
+        "unary_decomposition": {"$ref": "#/$defs/text"},
+        "memory_kinetic_action": {"$ref": "#/$defs/text"},
+        "readout_action": {"$ref": "#/$defs/text"},
+        "delta_T_bidegree": {"const": [1, 0]},
+        "delta_B_bidegree": {"const": [1, 1]},
+        "prior_assignment_delta_T_to_Q11_rejected": {"const": true}
+      }
+    },
+    "q10_memory_transport": {
+      "type": "object",
+      "required": ["bidegree", "bidegree_correction", "background_clock_data", "exact_variation", "frequency_sectors", "reality_defect_count", "canonical_sha256"],
+      "properties": {
+        "bidegree": {"const": [1, 0]},
+        "bidegree_correction": {"$ref": "#/$defs/text"},
+        "background_clock_data": {"type": "object"},
+        "exact_variation": {"type": "object"},
+        "frequency_sectors": {
+          "type": "object", "required": ["zero", "positive", "negative"],
+          "properties": {"zero": {"type": "object"}, "positive": {"type": "object"}, "negative": {"type": "object"}}
+        },
+        "reality_defect_count": {"const": 0},
+        "canonical_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": true
+    },
+    "q10_formal_green_correction": {
+      "type": "object",
+      "required": ["formula", "left_inverse_defect_count_at_r", "right_inverse_defect_count_at_r", "same_sided_support"],
+      "properties": {
+        "formula": {"$ref": "#/$defs/text"},
+        "left_inverse_defect_count_at_r": {"const": 0},
+        "right_inverse_defect_count_at_r": {"const": 0},
+        "same_sided_support": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": true
+    },
+    "q11_profile_gate": {
+      "type": "object",
+      "required": ["bidegree", "status", "raw_pairing", "metric_pairing_variation", "unknowns", "raw_profile_variation", "frozen_pairing_action_variation", "required_Q11_blocks", "missing_input_fields", "underdetermination_witness", "profile_metric_variation_computed", "mixed_Q11_computed"],
+      "properties": {
+        "bidegree": {"const": [1, 1]},
+        "status": {"const": "INPUT_BLOCKED_NORMALIZED_PROFILE_METRIC_VARIATION_UNEXPORTED"},
+        "raw_pairing": {"$ref": "#/$defs/text"},
+        "metric_pairing_variation": {"$ref": "#/$defs/text"},
+        "unknowns": {"type": "array", "minItems": 2, "maxItems": 2},
+        "raw_profile_variation": {"$ref": "#/$defs/text"},
+        "frozen_pairing_action_variation": {"$ref": "#/$defs/text"},
+        "required_Q11_blocks": {"type": "array", "minItems": 2},
+        "missing_input_fields": {"const": ["metric_normalization_measure", "metric_variation_of_log_density", "normalized_density_definition"]},
+        "underdetermination_witness": {"type": "object"},
+        "profile_metric_variation_computed": {"const": false},
+        "mixed_Q11_computed": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "defect", "defect_count", "detected"],
+        "properties": {
+          "name": {"$ref": "#/$defs/text"}, "defect": {"$ref": "#/$defs/text"},
+          "defect_count": {"type": "integer", "minimum": 1}, "detected": {"const": true}
+        }
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["MEMORY_TRANSPORT_BIDEGREE_CORRECTED", "PHI2_INDUCED_DELTA_T_EXACT", "FROZEN_PAIRING_DELTA_T_ADJOINT_EXACT", "Q10_CLOCK_GREEN_FIRST_VARIATION_EXACT", "SEPARATE_R_AXIS_MEMORY_TRANSPORT_REPAIRED", "MIXED_PROFILE_UNDERDETERMINED_BY_HANDOFF", "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED", "MIXED_GREEN_COEFFICIENT_CERTIFIED", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "84_ROW_Q2_Q3_CERTIFIED", "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "MEMORY_TRANSPORT_BIDEGREE_CORRECTED": {"const": true},
+        "PHI2_INDUCED_DELTA_T_EXACT": {"const": true},
+        "FROZEN_PAIRING_DELTA_T_ADJOINT_EXACT": {"const": true},
+        "Q10_CLOCK_GREEN_FIRST_VARIATION_EXACT": {"const": true},
+        "SEPARATE_R_AXIS_MEMORY_TRANSPORT_REPAIRED": {"const": true},
+        "MIXED_PROFILE_UNDERDETERMINED_BY_HANDOFF": {"const": true},
+        "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": {"const": false},
+        "MIXED_GREEN_COEFFICIENT_CERTIFIED": {"const": false},
+        "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "84_ROW_Q2_Q3_CERTIFIED": {"const": false},
+        "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": {"const": false},
+        "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXPORT_METRIC_DEPENDENCE_OF_NORMALIZED_DETECTOR_DENSITIES_CHI0_CHI1_THEN_COMPUTE_Q11"},
+    "claim_boundary": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "result_id"],
+      "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}, "result_id": {"$ref": "#/$defs/text"}}
+    }
+  }
+}

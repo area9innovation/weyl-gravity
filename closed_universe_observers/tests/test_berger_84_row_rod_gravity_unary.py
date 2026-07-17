@@ -98,7 +98,9 @@ def test_mutations_are_computed_and_scope_is_fail_closed() -> None:
     value = build()
     _semantic_boundary(value)
     assert all(row["detected"] and row["defect_count"] > 0 for row in value["mutation_results"])
-    assert value["coefficient_scope"]["q1_certified_bidegrees_r_kappa"] == [[0, 0], [1, 0], [0, 1]]
+    assert value["coefficient_scope"]["rod_gravity_certified_bidegrees_r_kappa"] == [[1, 0]]
+    assert value["coefficient_scope"]["full_84_q1_certified_bidegrees_r_kappa"] == [[0, 0], [0, 1]]
+    assert not value["flags"]["MEMORY_TRANSPORT_R_SHIFT_CERTIFIED"]
     assert not value["flags"]["84_ROW_Q1_CERTIFIED"]
     mutant = deepcopy(value)
     mutant["flags"]["MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED"] = True

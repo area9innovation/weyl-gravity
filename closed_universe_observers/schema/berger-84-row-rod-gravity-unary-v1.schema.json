@@ -8,7 +8,7 @@
     "schema": {"const": "closed-universe-berger-84-row-rod-gravity-unary-v1"},
     "result_id": {"const": "BERGER_84_ROW_ROD_GRAVITY_UNARY"},
     "setting_id": {"$ref": "#/$defs/text"},
-    "claim_status": {"const": "ROD_GRAVITY_BV_BLOCKS_AND_FORMAL_AXIAL_FIRST_JET_CAUSAL_COMPLEX_CERTIFIED_PRINCIPAL_ORDER_CORRECTED_MIXED_JET_OPEN"},
+    "claim_status": {"const": "ROD_GRAVITY_R_AXIS_CERTIFIED_MEMORY_R_SHIFT_AND_MIXED_PROFILE_OPEN_PRINCIPAL_ORDER_CORRECTED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
     "dependency_refs": {"type": "object", "minProperties": 10, "additionalProperties": {"$ref": "#/$defs/dependency"}},
     "coefficient_scope": {"type": "object"},
@@ -82,15 +82,17 @@
     },
     "mixed_r_kappa_preflight": {
       "type": "object",
-      "required": ["status", "unary_coefficient_ring", "causal_coefficient_window", "unary_decomposition", "mixed_nilpotency_identity", "mixed_cyclicity_identity", "physical_phi2_reference_sha256", "required_Q11_blocks", "transport_variation", "pairing_transport", "arity_boundary", "mixed_green_coefficient", "acceptance", "mixed_Q11_computed", "mixed_green_computed"],
+      "required": ["status", "unary_coefficient_ring", "causal_coefficient_window", "unary_decomposition", "bidegree_correction_required", "mixed_nilpotency_identity", "mixed_cyclicity_identity", "physical_phi2_reference_sha256", "required_Q10_memory_blocks", "required_Q11_blocks", "transport_variation", "pairing_transport", "arity_boundary", "mixed_green_coefficient", "acceptance", "mixed_Q11_computed", "mixed_green_computed"],
       "properties": {
         "status": {"const": "PREFLIGHT_COMPLETE_COEFFICIENTS_NOT_COMPUTED"},
         "unary_coefficient_ring": {"$ref": "#/$defs/text"},
         "causal_coefficient_window": {"type": "object"},
         "unary_decomposition": {"$ref": "#/$defs/text"},
+        "bidegree_correction_required": {"$ref": "#/$defs/text"},
         "mixed_nilpotency_identity": {"$ref": "#/$defs/text"},
         "mixed_cyclicity_identity": {"$ref": "#/$defs/text"},
         "physical_phi2_reference_sha256": {"$ref": "#/$defs/sha256"},
+        "required_Q10_memory_blocks": {"type": "array"},
         "required_Q11_blocks": {"type": "array"},
         "transport_variation": {"type": "object"},
         "pairing_transport": {"type": "object"},
@@ -105,13 +107,13 @@
     "mutation_results": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["name", "defect", "defect_count", "detected"], "properties": {"name": {"$ref": "#/$defs/text"}, "defect": {"$ref": "#/$defs/text"}, "defect_count": {"type": "integer", "minimum": 1}, "detected": {"const": true}}, "additionalProperties": true}},
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["CLOCK_DRESSED_ROD_COORDINATES_CANONICAL", "GAMMA_R_EXPLICIT", "GAMMA_R_SHARP_EXPLICIT", "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED", "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED", "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED", "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED", "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED", "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED", "MIXED_R_KAPPA_PREFLIGHT_COMPLETE", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "84_ROW_Q1_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED", "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED", "84_ROW_Q2_Q3_CERTIFIED", "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "QUANTUM_CLAIM"],
+      "required": ["CLOCK_DRESSED_ROD_COORDINATES_CANONICAL", "GAMMA_R_EXPLICIT", "GAMMA_R_SHARP_EXPLICIT", "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED", "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED", "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED", "ROD_GRAVITY_R_AXIS_FIRST_JET_CERTIFIED", "ROD_GRAVITY_R_AXIS_FORMAL_CAUSAL_COEFFICIENT_CERTIFIED", "MEMORY_TRANSPORT_R_SHIFT_CERTIFIED", "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED", "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED", "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED", "MIXED_R_KAPPA_PREFLIGHT_COMPLETE", "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "84_ROW_Q1_CERTIFIED", "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED", "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED", "84_ROW_Q2_Q3_CERTIFIED", "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED", "OBSERVER_EVALUATION_MORPHISM_CERTIFIED", "QUANTUM_CLAIM"],
       "properties": {
-        "CLOCK_DRESSED_ROD_COORDINATES_CANONICAL": {"const": true}, "GAMMA_R_EXPLICIT": {"const": true}, "GAMMA_R_SHARP_EXPLICIT": {"const": true}, "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED": {"const": true}, "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED": {"const": true}, "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": {"const": true}, "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": {"const": true}, "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": {"const": true}, "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED": {"const": true}, "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED": {"const": true}, "MIXED_R_KAPPA_PREFLIGHT_COMPLETE": {"const": true}, "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "CLOCK_DRESSED_ROD_COORDINATES_CANONICAL": {"const": true}, "GAMMA_R_EXPLICIT": {"const": true}, "GAMMA_R_SHARP_EXPLICIT": {"const": true}, "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED": {"const": true}, "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED": {"const": true}, "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": {"const": true}, "ROD_GRAVITY_R_AXIS_FIRST_JET_CERTIFIED": {"const": true}, "ROD_GRAVITY_R_AXIS_FORMAL_CAUSAL_COEFFICIENT_CERTIFIED": {"const": true}, "MEMORY_TRANSPORT_R_SHIFT_CERTIFIED": {"const": false}, "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": {"const": false}, "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": {"const": false}, "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED": {"const": true}, "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED": {"const": true}, "MIXED_R_KAPPA_PREFLIGHT_COMPLETE": {"const": true}, "FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
         "84_ROW_Q1_CERTIFIED": {"const": false}, "84_ROW_ADVANCED_RETARDED_GREEN_CERTIFIED": {"const": false}, "MIXED_EPSILON_R2_KAPPA_UNARY_CERTIFIED": {"const": false}, "84_ROW_Q2_Q3_CERTIFIED": {"const": false}, "84_ROW_K_BERGER_EQUIVARIANCE_CERTIFIED": {"const": false}, "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}
       }
     },
-    "next_gate": {"const": "COMPUTE_MIXED_EPSILON_R2_KAPPA_SHIFT_OF_PROFILE_TRANSPORT_AND_REPLAY_FULL_84_ROW_UNARY"},
+    "next_gate": {"const": "COMPUTE_MEMORY_Q10_TRANSPORT_SHIFT_THEN_MIXED_Q11_PROFILE_SHIFT"},
     "claim_boundary": {"$ref": "#/$defs/text"},
     "provenance": {"type": "object"}
   },

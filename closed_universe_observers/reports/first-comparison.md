@@ -22,10 +22,11 @@ The first exact result is asymmetric.
 The lifecycle is therefore `EXTERNAL_FIXTURE_REPRODUCED`, not
 `CLASSICAL_OBSERVER_MAP_CERTIFIED`.  The overall verdict is
 `QUANTUM_COMPARISON_NOT_YET_DEFINED`.  The current classical recommendation is
-to compute the mixed `epsilon_R^2*kappa` apparatus jet, then construct the
-apparatus interactions and test the observer morphism.  The separate-axis
-84-row unary complex and formal coefficientwise causal contraction are now
-certified; finite-parameter Green hyperbolicity is not.  This does not change
+to export the metric-dependent normalization of both detector densities,
+then compute mixed `Q11`, apparatus interactions, and the observer morphism.
+The rod--gravity and repaired memory `Q10` coefficients are exact, with a
+formal coefficientwise causal correction; finite-parameter Green
+hyperbolicity is not.  This does not change
 the quantum lifecycle.  There is not yet a bridge theorem or a scoped no-go
 suitable for a new paper.
 
@@ -268,13 +269,15 @@ two-detector `Phi2`.  The exact memory--Maxwell unary and finite two-channel
 advanced/retarded inverse now extend the base to a certified 72-row causal
 subcomplex.  The clock-dressed rod gauge blocks, their cotangent adjoints, the
 action-derived gravity--rod Hessian, and an explicit Schur--Laurent inverse
-now extend this to a certified 84-row unary complex and formal coefficientwise
-causal contraction on the separate `(0,0)`, `(epsilon_R^2,0)`, and `(0,kappa)`
-axes.  The corrected payload audit classifies `q2(Phi2,-)` as a fourth-order
+now extend this to an exact rod--gravity `r` coefficient.  The subsequent
+bidegree audit moves `delta_r T` from `Q11` to `Q10` and computes its exact
+frozen-pairing adjoint and formal Green correction.  The corrected payload
+audit classifies `q2(Phi2,-)` as a fourth-order
 principal deformation and exhibits the nonzero contracted coefficient
 `623/81`, so no finite-parameter Green theorem is claimed.  The mixed
-`epsilon_R^2*kappa` profile and transport shift remains open, so the
-unqualified full-84 flags remain false.
+`epsilon_R^2*kappa` profile remains input-blocked by the missing metric
+variation of the normalized detector densities, so the unqualified full-84
+flags remain false.
 Raw \(D\) is null on the declared tangent sector and the averaged observable is
 relationally \(D\)-invariant, but raw \(D\) changes the clock field.
 \(K_{\rm Berger}=D-\omega R\) is the background-preserving nonlinear generator;
@@ -290,7 +293,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, exact stress compensation, and an 84-row axial unary complex; interacting quotient descent open | exact positive-diagonal probe transfer and a formal Schur--Laurent separate-axis causal coefficient; finite-parameter Green hyperbolicity and spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two probe memories, six global rods, exact stress compensation, and repaired rod--gravity/memory `Q10` coefficients; mixed profile and quotient descent open | exact positive-diagonal probe transfer and formal same-sided first-jet coefficients; finite-parameter Green hyperbolicity and spatially localized emitters open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -303,9 +306,11 @@ pins the clock, redshift, Maxwell causal, retarded-signal, fixed-coupling
 raw-\(D\), and nonlinear \(K_{\rm Berger}\) certificates by path, result
 identifier, SHA-256 hash, and declared claim boundary.
 
-The primary missing object is now the mixed `epsilon_R^2*kappa` shift of the
-detector profiles, memory transport, adjoints, and resulting 84-row unary and
-Green coefficients.  Further missing objects are a rank-two transfer from two
+The primary missing object is now the metric-dependent normalization rule for
+the two detector densities `chi_a`, which determines the mixed
+`epsilon_R^2*kappa` profile, adjoint, unary, and Green coefficients.  The
+memory transport and its adjoint are no longer missing.  Further missing
+objects are a rank-two transfer from two
 spatially localized emitter worldtubes, emitter recoil and higher-order receiver backreaction,
 observer-map compatibility with raw \(D\), \(K_{\rm Berger}\), apparatus
 \(q_2,q_3\), and higher brackets, a quantum
@@ -341,3 +346,8 @@ physical `Phi2`, recounts all 7,488 raw fourth-order terms, verifies the exact
 nonzero contracted coefficient `623/81`, and records the mixed-jet preflight;
 its receipt is
 `closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_PRINCIPAL_CORRECTION_TIER_RECEIPT.json`.
+The mixed-axis continuation corrects `delta_r T` to `Q10`, reconstructs its
+exact physical and frozen-pairing adjoints, verifies the two-sided formal
+Green correction, and returns the missing normalized-density metric variation
+as the first exact `Q11` obstruction; its receipt is
+`closed_universe_observers/receipts/APPARATUS_84_MIXED_R_KAPPA_UNARY_GATE_TIER_RECEIPT.json`.

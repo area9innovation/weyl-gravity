@@ -395,8 +395,8 @@ def _mutation_results(
     r = sp.symbols("r")
     rod_green_denominator = sp.denom(1 / r)
     rod_green_zero_defects = int(rod_green_denominator.subs(r, 0) == 0)
-    excluded = {"r^2", "r*kappa", "shifted B_a and T at r*kappa", "nonperturbative convergence"}
-    mixed_promotion_defects = int("r*kappa" in excluded and "shifted B_a and T at r*kappa" in excluded)
+    excluded = {"r^2", "r*kappa", "delta_r T on the memory rows", "shifted B_a at r*kappa", "nonperturbative convergence"}
+    mixed_promotion_defects = int("r*kappa" in excluded and "shifted B_a at r*kappa" in excluded)
     return [
         {
             "name": "omit_clock_dressing",
@@ -424,7 +424,7 @@ def _mutation_results(
         },
         {
             "name": "promote_mixed_r_kappa",
-            "defect": "shifted profile and transport coefficients are explicitly excluded",
+            "defect": "the r-axis memory transport and mixed profile coefficients are explicitly excluded",
             "defect_count": mixed_promotion_defects,
             "detected": mixed_promotion_defects > 0,
         },
@@ -484,6 +484,7 @@ def mixed_r_kappa_preflight(phi2: dict[str, Any]) -> dict[str, Any]:
             "rule": "compare Laurent coefficients in the displayed window; do not quotient by r^2 after adjoining r^-1",
         },
         "unary_decomposition": "Q=Q00+r Q10+kappa Q01+r*kappa Q11+O(r^2,kappa^2)",
+        "bidegree_correction_required": "delta_r T belongs to Q10 because the memory kinetic term p*T(g_r)*m has no kappa factor; only delta_r B_a belongs to Q11",
         "mixed_nilpotency_identity": "[Q00,Q11]+[Q10,Q01]=0",
         "mixed_cyclicity_identity": "Omega(Q11 x,y)+graded Omega(x,Q11 y) cancels the r*kappa pairing-transport terms induced by Q10 and Q01",
         "physical_phi2_reference_sha256": phi2["assembled_canonical_sha256"],
@@ -493,10 +494,13 @@ def mixed_r_kappa_preflight(phi2: dict[str, Any]) -> dict[str, Any]:
             "rod_scalars": "Rbar_aI unchanged at this order in the divided profile; their metric contractions change",
             "maxwell_memory": "Abar=mbar=pbar=0",
         },
+        "required_Q10_memory_blocks": [
+            "delta_r T from n_Theta(g_r)",
+            "delta_r T^sharp after cotangent density transport to the frozen 84-row pairing",
+        ],
         "required_Q11_blocks": [
             "delta_r B_a^(0) from inverse metric, Hodge pairing, normalized detector density, and physical volume",
-            "delta_r T from n_Theta(g_r)",
-            "delta_r B_a^sharp and delta_r T^sharp after cotangent density transport to the frozen 84-row pairing",
+            "delta_r B_a^sharp after cotangent density transport to the frozen 84-row pairing",
             "the r-correction of the clock/rod canonical dressing wherever it enters the kappa readout rows",
         ],
         "transport_variation": {
@@ -625,7 +629,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-84-row-rod-gravity-unary-v1",
         "result_id": "BERGER_84_ROW_ROD_GRAVITY_UNARY",
         "setting_id": handoff["setting_id"],
-        "claim_status": "ROD_GRAVITY_BV_BLOCKS_AND_FORMAL_AXIAL_FIRST_JET_CAUSAL_COMPLEX_CERTIFIED_PRINCIPAL_ORDER_CORRECTED_MIXED_JET_OPEN",
+        "claim_status": "ROD_GRAVITY_R_AXIS_CERTIFIED_MEMORY_R_SHIFT_AND_MIXED_PROFILE_OPEN_PRINCIPAL_ORDER_CORRECTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: {
@@ -638,9 +642,10 @@ def build() -> dict[str, Any]:
         "coefficient_scope": {
             "rod_weight": "r=epsilon_R^2 is fixed nonzero",
             "background_expansion": "g_epsilon=gHat+r Phi2+O(r^2)",
-            "q1_certified_bidegrees_r_kappa": [[0, 0], [1, 0], [0, 1]],
+            "rod_gravity_certified_bidegrees_r_kappa": [[1, 0]],
+            "full_84_q1_certified_bidegrees_r_kappa": [[0, 0], [0, 1]],
             "green_asymptotics": "Laurent leading order r^-1 on rod equation rows; coefficients replay through q1 order r",
-            "excluded": ["r^2", "r*kappa", "shifted B_a and T at r*kappa", "nonperturbative convergence"],
+            "excluded": ["r^2", "r*kappa", "delta_r T on the memory rows", "shifted B_a at r*kappa", "nonperturbative convergence"],
             "singular_probe_limit_explicit": True,
         },
         "canonical_clock_dressing": {
@@ -694,7 +699,7 @@ def build() -> dict[str, Any]:
             "green_hyperbolic_reduction": "coefficientwise formal causal perturbation: insert the local fourth-order q2(Phi2,-) between pinned same-sided base Green operators and combine it with the rod Schur--Laurent blocks; locality preserves the chosen causal side term by term",
             "green_operator": "G_P84,+/- is a formal same-sided Laurent coefficientwise inverse through the axial first jet; finite-r existence, uniqueness, and Green hyperbolicity are not asserted",
             "chain_homotopy": "Lambda84,+/-=W84 G_P84,+/-",
-            "chain_identity": "q84 Lambda84,+/-+Lambda84,+/- q84=P84 G_P84,+/-=I84 coefficientwise through the certified axial first jet",
+            "chain_identity": "the rod--gravity Schur--Laurent coefficient satisfies both inverse orders through r with the memory transport frozen at T0; this is not yet the full 84-row r-axis identity",
             "advanced_support": True,
             "retarded_support": True,
             "advanced_chain_defect_count": 0,
@@ -716,8 +721,11 @@ def build() -> dict[str, Any]:
             "ROD_GRAVITY_ACTION_HESSIAN_EXPORTED": True,
             "ROD_GRAVITY_BV_NOETHER_FIRST_JET_CERTIFIED": True,
             "COUPLED_84_ROW_PRINCIPAL_CAUSAL_WITNESS_EXPORTED": True,
-            "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": True,
-            "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": True,
+            "ROD_GRAVITY_R_AXIS_FIRST_JET_CERTIFIED": True,
+            "ROD_GRAVITY_R_AXIS_FORMAL_CAUSAL_COEFFICIENT_CERTIFIED": True,
+            "MEMORY_TRANSPORT_R_SHIFT_CERTIFIED": False,
+            "84_ROW_Q1_AXIAL_FIRST_JET_CERTIFIED": False,
+            "84_ROW_ADVANCED_RETARDED_GREEN_AXIAL_FIRST_JET_CERTIFIED": False,
             "PHYSICAL_PHI2_CANONICAL_TENSOR_EXPORTED": True,
             "Q2_PHI2_FOURTH_ORDER_PRINCIPAL_DEFORMATION_AUDITED": True,
             "MIXED_R_KAPPA_PREFLIGHT_COMPLETE": True,
@@ -730,9 +738,9 @@ def build() -> dict[str, Any]:
             "OBSERVER_EVALUATION_MORPHISM_CERTIFIED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "COMPUTE_MIXED_EPSILON_R2_KAPPA_SHIFT_OF_PROFILE_TRANSPORT_AND_REPLAY_FULL_84_ROW_UNARY",
+        "next_gate": "COMPUTE_MEMORY_Q10_TRANSPORT_SHIFT_THEN_MIXED_Q11_PROFILE_SHIFT",
         "claim_boundary": (
-            "This corrected exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL certificate exports the six clock-dressed rod spatial-diffeomorphism blocks and their odd-pairing adjoints, the covariant action-derived rod--gravity Hessian, a canonical physical Phi2 tensor, and the q2(Phi2,-) shifted base block. It proves nilpotency and unary cyclicity on the separate (0,0), (epsilon_R^2,0), and (0,kappa) axial first-jet sectors and constructs formal coefficientwise same-sided advanced/retarded chain identities in the nonzero-r Laurent domain. The corrected principal audit records that q2(Phi2,-) contains fourth-order metric-fluctuation derivatives; it is a diagonal principal deformation, not a subprincipal perturbation. Accordingly this certificate does not prove finite-r existence, uniqueness, or Green hyperbolicity. It freezes the bivariate coefficient, density-adjoint, and identity conventions for the next mixed epsilon_R^2*kappa calculation but does not compute that mixed coefficient, an all-orders 84-row q1/Green complex, apparatus q2/q3, K_Berger equivariance, the observer morphism, deformed rank two, emitter recoil, a Lorentzian quantum theory, or a quantum claim."
+            "This corrected exact LOCAL-ALGEBRAIC/REDUCED-MODE/LORENTZIAN-CAUSAL certificate exports the six clock-dressed rod spatial-diffeomorphism blocks and their odd-pairing adjoints, the covariant action-derived rod--gravity Hessian, a canonical physical Phi2 tensor, and the q2(Phi2,-) shifted base block. It certifies the rod--gravity r-axis nilpotency/cyclicity identities and its formal Schur--Laurent causal coefficient, while the already-certified (0,0) and (0,kappa) memory complex remains imported separately. A bidegree correction records that delta_r T is a Q10 memory block, not a Q11 block; because it is not computed here, this certificate does not by itself certify the full 84-row r axis. The principal audit proves that q2(Phi2,-) contains a fourth-order diagonal principal deformation, so finite-r existence, uniqueness, and Green hyperbolicity are not proved. The mixed profile coefficient, an all-orders 84-row q1/Green complex, apparatus q2/q3, K_Berger equivariance, the observer morphism, deformed rank two, emitter recoil, a Lorentzian quantum theory, and every quantum claim remain open."
         ),
         "provenance": {
             "source_commit": "WORKTREE",
