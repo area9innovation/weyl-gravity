@@ -32,16 +32,17 @@ class ActiveFrontierTests(unittest.TestCase):
         for row in self.payload["supersession_ledger"]:
             self.assertIn("HISTORY_RETAINED", row["disposition"])
 
-    def test_Maxwell_transfer_repair_is_exact_and_mixed_q3_is_unblocked(self) -> None:
+    def test_mixed_q3_is_independently_accepted_and_transfer_is_next(self) -> None:
         flags = self.payload["claim_flags"]
         self.assertTrue(flags["MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
         self.assertTrue(flags["MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM"])
         self.assertTrue(flags["COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED"])
         self.assertTrue(flags["MIXED_Q3_INPUT_UNBLOCKED"])
+        self.assertTrue(flags["MIXED_Q3_INDEPENDENTLY_ACCEPTED"])
         row = self.payload["active_rows"]["classical_interacting_input"]
-        self.assertIn("Q1Q2_AND_CYCLICITY_EXACT", row["status"])
+        self.assertIn("MIXED_Q3_INDEPENDENTLY_ACCEPTED", row["status"])
         self.assertEqual(
-            row["next_gate"], "IMPORT_OR_COMPUTE_MIXED_Q3_WITH_REPAIRED_Q2"
+            row["next_gate"], "BERGER_RETAINED_MIXED_ELL3_TRANSFER_AND_EXCHANGE"
         )
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:

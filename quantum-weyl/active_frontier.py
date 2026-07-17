@@ -28,6 +28,7 @@ DEPENDENCIES = {
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
     "coupled_cyclicity_atlas": HERE / "transfer/certificates/BERGER_COUPLED_CYCLICITY_DEFECT_ATLAS.json",
     "coupled_cyclicity_repair": HERE / "transfer/certificates/BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS.json",
+    "mixed_q3_acceptance": HERE / "transfer/certificates/BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "base_Hadamard_parametrix": HERE / "lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
     "typed_companion": HERE / "lorentzian/certificates/BERGER_TYPED_COMPANION_MOLLER_PREFLIGHT.json",
@@ -56,6 +57,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
         "coupled_cyclicity_repair": "CORRECTED_CLASSICAL_REPAIR_ACCEPTED_MIXED_Q3_INPUT_UNBLOCKED",
+        "mixed_q3_acceptance": "TYPED_MIXED_Q3_INDEPENDENTLY_ACCEPTED_RETAINED_ELL3_TRANSFER_OPEN",
         "causal_chain": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
         "base_Hadamard_parametrix": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
         "typed_companion": "TYPED_MOLLER_ALGEBRA_CERTIFIED_MICROLOCAL_KERNEL_ACTION_OPEN",
@@ -138,6 +140,22 @@ def _load() -> dict[str, dict[str, Any]]:
         )
     ):
         raise ValueError("coupled cyclicity repair frontier drifted")
+    mixed_q3 = values["mixed_q3_acceptance"]
+    mixed_q3_flags = mixed_q3.get("claim_flags", {})
+    mixed_q3_diagnostics = mixed_q3.get("exact_replay", {}).get("diagnostics", {})
+    if (
+        mixed_q3_flags.get("TYPED_MIXED_Q3_PORTABLE_IMPORT_ACCEPTED") is not True
+        or mixed_q3_flags.get("MIXED_ARITY_THREE_IDENTITY_INDEPENDENTLY_REPLAYED") is not True
+        or mixed_q3_flags.get("RETAINED_MIXED_ELL3_TRANSFER") is not False
+        or mixed_q3_flags.get("QUANTUM_CLAIM") is not False
+        or mixed_q3.get("next_gate") != "BERGER_RETAINED_MIXED_ELL3_TRANSFER_AND_EXCHANGE"
+        or mixed_q3_diagnostics.get("mixed_q3_coefficient_count") != 59598
+        or mixed_q3_diagnostics.get("mixed_q3_nonzero_rows") != 21
+        or mixed_q3_diagnostics.get("mixed_arity_three_defect_count") != 0
+        or mixed_q3_diagnostics.get("typed_q3_graded_symmetry_defect_count") != 0
+        or mixed_q3_diagnostics.get("localized_mutation_defect_count", 0) <= 0
+    ):
+        raise ValueError("mixed q3 acceptance frontier drifted")
     hadamard_flags = values["Hadamard_lift"].get("claim_flags", {})
     if (
         hadamard_flags.get("BERGER_COVARIANCE_LIFT_26_TO_54") is not True
@@ -216,8 +234,8 @@ def build() -> dict[str, Any]:
         },
         "active_rows": {
             "classical_interacting_input": {
-                "status": "REPAIRED_64_36_COUPLED_Q2_TRANSFER_Q1Q2_AND_CYCLICITY_EXACT_MIXED_Q3_INPUT_UNBLOCKED",
-                "next_gate": "IMPORT_OR_COMPUTE_MIXED_Q3_WITH_REPAIRED_Q2",
+                "status": "TYPED_64_ROW_MIXED_Q3_INDEPENDENTLY_ACCEPTED_RETAINED_ELL3_TRANSFER_OPEN",
+                "next_gate": "BERGER_RETAINED_MIXED_ELL3_TRANSFER_AND_EXCHANGE",
             },
             "local_obstruction_space": {
                 "status": "AFN0_H04_H14_EVEN_ODD_COMPLETE_FULL_BV_OPEN",
@@ -281,6 +299,11 @@ def build() -> dict[str, Any]:
                 "active_result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS",
                 "disposition": "SUPERSEDED_AS_INTERACTION_STATUS_SOURCE_HISTORY_RETAINED_VALID_NEGATIVE_CONTROL",
             },
+            {
+                "historical_result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS",
+                "active_result_id": "BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE",
+                "disposition": "SUPERSEDED_AS_INTERACTION_STATUS_SOURCE_HISTORY_RETAINED_VALID_Q2_ACCEPTANCE",
+            },
         ],
         "claim_flags": {
             "ACTIVE_FRONTIER_LEDGER": True,
@@ -290,6 +313,7 @@ def build() -> dict[str, Any]:
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": True,
             "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED": True,
             "MIXED_Q3_INPUT_UNBLOCKED": True,
+            "MIXED_Q3_INDEPENDENTLY_ACCEPTED": True,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
@@ -304,7 +328,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "IMPORT_OR_COMPUTE_MIXED_Q3_WITH_REPAIRED_Q2",
+            "BERGER_RETAINED_MIXED_ELL3_TRANSFER_AND_EXCHANGE",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -320,8 +344,11 @@ def build() -> dict[str, Any]:
             "lift. The repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
             "and retained cyclicity defects, and preserved causal unary flags. The historical "
-            "953-term obstruction remains a valid negative control, while mixed q3 input is "
-            "now unblocked. This is a classical LOCAL-ALGEBRAIC acceptance, not a quantum result. "
+            "953-term obstruction remains a valid negative control. The typed 59,598-term mixed "
+            "q3 is independently replayed with zero graded-symmetry and all-row arity-three "
+            "defects, while a localized coefficient mutation is rejected. Retained ell3 transfer "
+            "and its q2 S q2 exchange term remain open. This is a classical LOCAL-ALGEBRAIC "
+            "acceptance, not a quantum result. "
             "The companion is null-cone decomposable, but this does not imply existence of a "
             "Hadamard state: the bosonic analytic hypothesis failure and the later full-BV "
             "BRST/Krein and physical-positivity gate are recorded separately. "
@@ -362,6 +389,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED") is not True
         or flags.get("MIXED_Q3_INPUT_UNBLOCKED") is not True
+        or flags.get("MIXED_Q3_INDEPENDENTLY_ACCEPTED") is not True
         or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
         or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
@@ -380,6 +408,7 @@ def validate(result: dict[str, Any]) -> None:
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED",
             "MIXED_Q3_INPUT_UNBLOCKED",
+            "MIXED_Q3_INDEPENDENTLY_ACCEPTED",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
@@ -387,5 +416,5 @@ def validate(result: dict[str, Any]) -> None:
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")
-    if len(result.get("supersession_ledger", [])) != 8:
+    if len(result.get("supersession_ledger", [])) != 9:
         raise ValueError("active frontier supersession ledger drifted")

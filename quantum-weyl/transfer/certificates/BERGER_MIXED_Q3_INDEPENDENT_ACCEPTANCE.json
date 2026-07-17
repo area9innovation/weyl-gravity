@@ -1,0 +1,102 @@
+{
+  "acceptance_conditions": {
+    "localized_mutation_must_be_rejected": true,
+    "mixed_arity_three_defect_count": 0,
+    "mixed_arity_three_defect_rows": 0,
+    "typed_q2_graded_symmetry_defect_count": 0,
+    "typed_q3_graded_symmetry_defect_count": 0,
+    "verdict": "ACCEPTED_TYPED_MIXED_Q3_LOCAL_ALGEBRAIC"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC classical-import acceptance pins the typed mixed gravity-Maxwell q3 at classical commit ba51c3853cbb51ef38083b40ceb7e9dda023efa7. Without importing the producer, an independent two-rational-component Q(sqrt(10)) backend parses 1,848 unary, 150,305 gravity-q2, 1,890 typed mixed-q2 and 59,598 mixed-q3 PBW coefficients; verifies zero typed q2 and q3 graded-symmetry defects; and recomputes the mixed part of q1 q3 + q2 q2 with zero coefficients on all 64 rows. A one-coefficient q3 mutation produces a nonzero exact defect. Frozen K_Berger equivariance follows coefficientwise from its e0 representation, stationary coefficients and [e0,e_a]=0. This accepts classical interacting input only. Retained ell3 transfer and the q2 S q2 exchange contribution remain open. It does not compute a quantum correction, a Slavnov breaking, restore a QME, construct renormalized Lorentzian products or establish a quantum theory.",
+  "claim_flags": {
+    "K_BERGER_Q3_DERIVATION_INDEPENDENTLY_REPLAYED": true,
+    "LOCALIZED_Q3_MUTATION_REJECTED": true,
+    "MIXED_ARITY_THREE_IDENTITY_INDEPENDENTLY_REPLAYED": true,
+    "QUANTUM_CLAIM": false,
+    "REPOSITORY_BV_QME_RESTORED": false,
+    "RETAINED_MIXED_ELL3_TRANSFER": false,
+    "TYPED_MIXED_Q3_GRADED_SYMMETRY_INDEPENDENTLY_REPLAYED": true,
+    "TYPED_MIXED_Q3_PORTABLE_IMPORT_ACCEPTED": true
+  },
+  "classical_commit": "ba51c3853cbb51ef38083b40ceb7e9dda023efa7",
+  "consumer_provenance": {
+    "source_manifest": {
+      "quantum-weyl/reports/berger-mixed-q3-independent-acceptance.md": "7cb0567e6455fc4c19c6d65981c944351c97e52987f0226cf841d0ac167dee3d",
+      "quantum-weyl/transfer/berger_mixed_q3_acceptance.py": "7d037ad01b2a079c9fbc4e5f2434cbc4f6b722253a2225e15f56537e78b93afd",
+      "quantum-weyl/transfer/berger_mixed_q3_acceptance_certificate.py": "a4506c77ee8acf0f2f55ff3b4049441696e57003d18c46f2c2967dcc03393de4",
+      "quantum-weyl/transfer/schema/berger-mixed-q3-independent-acceptance-v1.schema.json": "3cb03aed5e53994df414077a7dae520d3f219330b4b2df58e9227298462dd266",
+      "quantum-weyl/transfer/tests/test_berger_mixed_q3_acceptance.py": "20775e4c9375f751926f18734f48cc0ba984940aa7476ff6a0248e552e0d5ca8",
+      "quantum-weyl/transfer/verify_berger_mixed_q3_acceptance.py": "c3fc085a8d4a4f7d6a5e1b1b98dc696d91cc57b22c5a9c4e2fccd2b006c9546f"
+    },
+    "source_manifest_sha256": "831469baaee6e4d4d8644ed56ae37cbe7aec21a583245da5940224cafa723426"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_replay": {
+    "backend": "independent-two-rational-component-Q(sqrt(10))-mixed-q3-v1",
+    "classical_commit": "ba51c3853cbb51ef38083b40ceb7e9dda023efa7",
+    "diagnostics": {
+      "K_Berger_derivation_reason": "K_Berger is e0 on the frozen stationary rows; coefficients are constant and [e0,e_a]=0",
+      "K_Berger_derivation_term_count": 59598,
+      "gravity_q2_coefficient_count": 150305,
+      "localized_mutation_defect_count": 2,
+      "localized_mutation_row": 27,
+      "mixed_arity_three_defect_count": 0,
+      "mixed_arity_three_defect_rows": 0,
+      "mixed_q3_coefficient_count": 59598,
+      "mixed_q3_nonzero_rows": 21,
+      "q1_PBW_coefficient_count": 1848,
+      "typed_mixed_q2_coefficient_count": 1890,
+      "typed_q2_graded_symmetry_defect_count": 0,
+      "typed_q3_graded_symmetry_defect_count": 0
+    },
+    "elapsed_seconds": 37.295571,
+    "input_hashes": {
+      "gravity_q2_payload": "c6c4891d384add5e1afbf6e0cfe3ec920fff0496e02d5514833f3e0adeab07cf",
+      "mixed_q3_manifest": "cebf388d1bc83b8f3b3b892e52efb6784511124505c3517c02f4125952b78bf1",
+      "portable_unary_carrier": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4",
+      "producer_certificate": "cdf873f19469bf88b373c9297104119d7ad3d59ba91127e2d96dfd502b12c81a",
+      "typed_q2_payload": "789c0a8fa75903a2f0a3c8e11138b64531185d08124c0d6b82dc46138b91a731"
+    },
+    "producer_claim_status": "CERTIFIED_TYPED_SUPPORT_LOCAL_MIXED_GRAVITY_MAXWELL_Q3",
+    "verdict": "ACCEPTED_TYPED_MIXED_Q3_LOCAL_ALGEBRAIC"
+  },
+  "higher_tiers_not_run": {
+    "tier_3": "No theorem freeze, quantum lifecycle promotion, retained transfer, causal construction or release boundary changed."
+  },
+  "lifecycle_layer": "CLASSICAL_BV_IMPORT_ACCEPTANCE",
+  "next_gate": "BERGER_RETAINED_MIXED_ELL3_TRANSFER_AND_EXCHANGE",
+  "producer_import": {
+    "claim_status": "CERTIFIED_TYPED_SUPPORT_LOCAL_MIXED_GRAVITY_MAXWELL_Q3",
+    "input_hashes": {
+      "gravity_q2_payload": "c6c4891d384add5e1afbf6e0cfe3ec920fff0496e02d5514833f3e0adeab07cf",
+      "mixed_q3_manifest": "cebf388d1bc83b8f3b3b892e52efb6784511124505c3517c02f4125952b78bf1",
+      "portable_unary_carrier": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4",
+      "producer_certificate": "cdf873f19469bf88b373c9297104119d7ad3d59ba91127e2d96dfd502b12c81a",
+      "typed_q2_payload": "789c0a8fa75903a2f0a3c8e11138b64531185d08124c0d6b82dc46138b91a731"
+    },
+    "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3"
+  },
+  "result_id": "BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE",
+  "result_state": "TYPED_MIXED_Q3_INDEPENDENTLY_ACCEPTED_RETAINED_ELL3_TRANSFER_OPEN",
+  "schema": "quantum-weyl-berger-mixed-q3-independent-acceptance-v1",
+  "verification_receipts": [
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_mixed_q3_acceptance_certificate --scientific",
+      "elapsed_seconds": 37.295571,
+      "status": "PASS",
+      "test_tier": 2
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_mixed_q3_acceptance",
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_mixed_q3_acceptance.py -v",
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

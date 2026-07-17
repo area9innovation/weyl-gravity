@@ -17,7 +17,11 @@ The quantum-side consumer independently replays all 1,890 full and 1,474
 retained coefficients, with zero full and retained `q1/q2` defects, zero full
 and retained cyclicity defects, and no missing, extra, or changed transfer
 coefficient. The causal unary flags are preserved. The repaired classical
-mixed vertex is accepted and mixed (q_3) input is now unblocked.
+mixed vertex is accepted. The newly landed typed mixed (q_3) is independently
+replayed by the quantum consumer: all 59,598 coefficients are imported, its
+graded-symmetry defect count is zero, and the mixed arity-three identity
+vanishes on all 64 rows. A one-coefficient mutation produces two defects.
+The retained (ell_3) transfer and its (q_2 S q_2) exchange term remain open.
 
 The frontier imports this status through the content-addressed quantum repair
 acceptance certificate. The earlier 1,234/953 defect atlas remains an exact
@@ -47,7 +51,7 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. import or compute mixed (q_3) using the accepted repaired (q_2);
+1. transfer mixed (ell_3) through the 64-to-36 SDR, including the (q_2 S q_2) exchange term;
 2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;

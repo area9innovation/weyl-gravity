@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/quantum-berger-mixed-q3-independent-acceptance-v1.schema.json",
+  "title": "Independent quantum-side classical mixed q3 acceptance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_layer", "classical_commit", "dependency_tags", "producer_import", "exact_replay", "acceptance_conditions", "claim_flags", "next_gate", "claim_boundary", "consumer_provenance", "verification_receipts", "higher_tiers_not_run"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-berger-mixed-q3-independent-acceptance-v1"},
+    "result_id": {"const": "BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE"},
+    "result_state": {"const": "TYPED_MIXED_Q3_INDEPENDENTLY_ACCEPTED_RETAINED_ELL3_TRANSFER_OPEN"},
+    "lifecycle_layer": {"const": "CLASSICAL_BV_IMPORT_ACCEPTANCE"},
+    "classical_commit": {"const": "ba51c3853cbb51ef38083b40ceb7e9dda023efa7"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "producer_import": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result_id", "claim_status", "input_hashes"],
+      "properties": {
+        "result_id": {"const": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3"},
+        "claim_status": {"const": "CERTIFIED_TYPED_SUPPORT_LOCAL_MIXED_GRAVITY_MAXWELL_Q3"},
+        "input_hashes": {"$ref": "#/$defs/inputHashes"}
+      }
+    },
+    "exact_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["backend", "classical_commit", "input_hashes", "diagnostics", "verdict", "elapsed_seconds", "producer_claim_status"],
+      "properties": {
+        "backend": {"const": "independent-two-rational-component-Q(sqrt(10))-mixed-q3-v1"},
+        "classical_commit": {"const": "ba51c3853cbb51ef38083b40ceb7e9dda023efa7"},
+        "input_hashes": {"$ref": "#/$defs/inputHashes"},
+        "diagnostics": {"$ref": "#/$defs/diagnostics"},
+        "verdict": {"const": "ACCEPTED_TYPED_MIXED_Q3_LOCAL_ALGEBRAIC"},
+        "elapsed_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "producer_claim_status": {"const": "CERTIFIED_TYPED_SUPPORT_LOCAL_MIXED_GRAVITY_MAXWELL_Q3"}
+      }
+    },
+    "acceptance_conditions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["typed_q2_graded_symmetry_defect_count", "typed_q3_graded_symmetry_defect_count", "mixed_arity_three_defect_count", "mixed_arity_three_defect_rows", "localized_mutation_must_be_rejected", "verdict"],
+      "properties": {
+        "typed_q2_graded_symmetry_defect_count": {"const": 0},
+        "typed_q3_graded_symmetry_defect_count": {"const": 0},
+        "mixed_arity_three_defect_count": {"const": 0},
+        "mixed_arity_three_defect_rows": {"const": 0},
+        "localized_mutation_must_be_rejected": {"const": true},
+        "verdict": {"const": "ACCEPTED_TYPED_MIXED_Q3_LOCAL_ALGEBRAIC"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TYPED_MIXED_Q3_PORTABLE_IMPORT_ACCEPTED", "TYPED_MIXED_Q3_GRADED_SYMMETRY_INDEPENDENTLY_REPLAYED", "MIXED_ARITY_THREE_IDENTITY_INDEPENDENTLY_REPLAYED", "K_BERGER_Q3_DERIVATION_INDEPENDENTLY_REPLAYED", "LOCALIZED_Q3_MUTATION_REJECTED", "RETAINED_MIXED_ELL3_TRANSFER", "REPOSITORY_BV_QME_RESTORED", "QUANTUM_CLAIM"],
+      "properties": {
+        "TYPED_MIXED_Q3_PORTABLE_IMPORT_ACCEPTED": {"const": true},
+        "TYPED_MIXED_Q3_GRADED_SYMMETRY_INDEPENDENTLY_REPLAYED": {"const": true},
+        "MIXED_ARITY_THREE_IDENTITY_INDEPENDENTLY_REPLAYED": {"const": true},
+        "K_BERGER_Q3_DERIVATION_INDEPENDENTLY_REPLAYED": {"const": true},
+        "LOCALIZED_Q3_MUTATION_REJECTED": {"const": true},
+        "RETAINED_MIXED_ELL3_TRANSFER": {"const": false},
+        "REPOSITORY_BV_QME_RESTORED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BERGER_RETAINED_MIXED_ELL3_TRANSFER_AND_EXCHANGE"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "consumer_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_3"],
+      "properties": {"tier_3": {"type": "string", "minLength": 100}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "inputHashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["producer_certificate", "typed_q2_payload", "mixed_q3_manifest", "gravity_q2_payload", "portable_unary_carrier"],
+      "properties": {
+        "producer_certificate": {"$ref": "#/$defs/hash"},
+        "typed_q2_payload": {"$ref": "#/$defs/hash"},
+        "mixed_q3_manifest": {"$ref": "#/$defs/hash"},
+        "gravity_q2_payload": {"$ref": "#/$defs/hash"},
+        "portable_unary_carrier": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "diagnostics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q1_PBW_coefficient_count", "gravity_q2_coefficient_count", "typed_mixed_q2_coefficient_count", "mixed_q3_coefficient_count", "mixed_q3_nonzero_rows", "typed_q2_graded_symmetry_defect_count", "typed_q3_graded_symmetry_defect_count", "mixed_arity_three_defect_count", "mixed_arity_three_defect_rows", "localized_mutation_row", "localized_mutation_defect_count", "K_Berger_derivation_term_count", "K_Berger_derivation_reason"],
+      "properties": {
+        "q1_PBW_coefficient_count": {"const": 1848},
+        "gravity_q2_coefficient_count": {"const": 150305},
+        "typed_mixed_q2_coefficient_count": {"const": 1890},
+        "mixed_q3_coefficient_count": {"const": 59598},
+        "mixed_q3_nonzero_rows": {"const": 21},
+        "typed_q2_graded_symmetry_defect_count": {"const": 0},
+        "typed_q3_graded_symmetry_defect_count": {"const": 0},
+        "mixed_arity_three_defect_count": {"const": 0},
+        "mixed_arity_three_defect_rows": {"const": 0},
+        "localized_mutation_row": {"const": 27},
+        "localized_mutation_defect_count": {"const": 2},
+        "K_Berger_derivation_term_count": {"const": 59598},
+        "K_Berger_derivation_reason": {"const": "K_Berger is e0 on the frozen stationary rows; coefficients are constant and [e0,e_a]=0"}
+      }
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["test_tier", "command", "status", "elapsed_seconds"],
+      "properties": {
+        "test_tier": {"enum": [1, 2]},
+        "command": {"type": "string", "minLength": 70},
+        "status": {"const": "PASS"},
+        "elapsed_seconds": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}
