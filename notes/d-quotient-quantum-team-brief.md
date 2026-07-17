@@ -115,6 +115,17 @@ Use the shared row format:
 |---|---|---|---|---|---|---|---|
 | Explicit background/sector/boundaries | imported status + hash | imported status | renormalized verdict | imported dependency | Ward/Cartan verdict | algebra restriction | lifecycle + dependency tag |
 
+Current compact-product import boundary: the principal and generic-axial
+off-shell preflights are joined by a pinned generic-polar ungauged
+ghost--field--equation--identity chain map. The quantum consumer replays its
+exact polynomial identities and local Green current, but the polar map is not
+yet cyclic BV. On this fixed-flux Plebański--Hacyan background the connected
+stabilizer is \(\mathbb R H\oplus\mathbb R P_x\oplus\mathfrak{so}(3)\), not
+the vacuum-cylinder \(SO(4,2)\); universal stabilizer nullity is refuted. No
+absolute quotient is authorized before the common moment-map/Taub-zero locus
+and a null subalgebra are certified. Exceptional/global relative rows and the
+all-sector triangle remain open, so no relative quantum class is defined.
+
 ## Work package Q-D1: classify the obstruction
 
 Define the defect

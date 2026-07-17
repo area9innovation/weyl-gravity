@@ -118,6 +118,16 @@ Use the shared row format:
 |---|---|---|---|---|---|---|---|
 | Explicit background/sector/boundaries | imported status + hash | imported/constructed | cyclicity verdict | computed verdict | derivation defect | dependency only | `NOT_APPLICABLE` |
 
+The current compact-product linear input now covers the principal,
+generic-axial, and generic-polar ungauged equation/Noether squares. It still
+does not provide a cyclic polar BV morphism or the all-sector relative
+triangle. Use the certified Plebański--Hacyan stabilizer
+\(\mathbb R H\oplus\mathbb R P_x\oplus\mathfrak{so}(3)\); do not import the
+vacuum-cylinder \(SO(4,2)\) quotient. Stabilizer reduction is permitted only
+after constructing the common moment-map/Taub-zero sector and proving a null
+subalgebra. Keep that derived-sector gate separate from nonlinear
+\(q_2,q_3\) transfer.
+
 ## Work package N-D1: transfer the full low-arity structure
 
 Write the interacting cohomological vector field and transferred operations as

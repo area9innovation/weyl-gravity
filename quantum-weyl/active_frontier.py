@@ -140,6 +140,20 @@ def _load() -> dict[str, dict[str, Any]]:
         != "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST"
     ):
         raise ValueError("stationary-generator import readiness frontier drifted")
+    relative = values["relative_readiness"]
+    relative_flags = relative.get("claim_flags", {})
+    relative_gate = relative.get("classical_import_gate", {})
+    if (
+        relative_flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
+        or relative_flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED")
+        is not True
+        or relative_flags.get("CLASSICAL_RELATIVE_TRIANGLE_IMPORTED") is not False
+        or relative_flags.get("QUANTUM_RELATIVE_LIFT") is not False
+        or relative_gate.get("status") != "NOT_SATISFIED"
+        or relative_gate.get("current_map_disposition")
+        != "PARTIAL_GENERIC_AXIAL_AND_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT"
+    ):
+        raise ValueError("relative Einstein-Weyl frontier drifted")
     return values
 
 
@@ -191,7 +205,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             },
             "relative_Einstein_Weyl": {
-                "status": "PRINCIPAL_AND_GENERIC_AXIAL_PREFLIGHT_GLOBAL_V1_OPEN",
+                "status": "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_PREFLIGHTS_GLOBAL_V1_OPEN",
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
@@ -244,6 +258,8 @@ def build() -> dict[str, Any]:
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM": False,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
+            "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
+            "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED": True,
             "HADAMARD_EXISTENCE_THEOREM_APPLIES": False,
             "FULL_BV_G2_COMPLETE": False,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -276,6 +292,10 @@ def build() -> dict[str, Any]:
             "BRST/Krein and physical-positivity gate are recorded separately. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
+            "The relative Einstein-Weyl rail imports exact generic axial and generic polar "
+            "ungauged off-shell preflights plus the correct five-generator stabilizer "
+            "authority, but polar cyclic/stabilizer descent and exceptional/global rows "
+            "still block the all-sector classical triangle. "
             "It does not establish full antifield BV cohomology, repository Slavnov coefficients, "
             "a global BRST Hadamard state, renormalized products, QME restoration, "
             "residual quantum transfer or a Lorentzian quantum theory."
@@ -306,6 +326,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
+        or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
+        or flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED") is not True
     ):
         raise ValueError("active frontier positive flags dropped")
     if any(
@@ -319,6 +341,8 @@ def validate(result: dict[str, Any]) -> None:
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
+            "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
+            "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")

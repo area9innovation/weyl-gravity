@@ -32,7 +32,17 @@ not infer spectral isolation of zero from finite PBW coefficient tables.
 
 The zero-frequency readiness audit proves that the partial `A104` does not
 determine the zero eigenspace and freezes a complete stationary-carrier
-receiving contract. The ordered critical path is:
+receiving contract.
+
+The relative Einstein--Weyl rail now imports both generic axial and generic
+polar ungauged off-shell preflights. The polar consumer replays the exact
+ghost--field--equation--identity chain map and its 184+184-term local Green
+identity. It also imports the correct five-generator Plebański--Hacyan
+stabilizer and rejects an automatic `SO(4,2)` quotient. This remains preflight:
+polar cyclic BV enhancement, moment-map/Taub-zero descent,
+exceptional/global rows, and the global mapping cone are still open.
+
+The ordered critical path is:
 
 1. repair the remaining 15 ghost-density cyclicity defects while preserving `q1/q2`;
 2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
@@ -46,9 +56,10 @@ receiving contract. The ordered critical path is:
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.
 
-Tier-1 rerun on 2026-07-17: certificate reproduction, independent
-verification, seven focused frontier tests, and strict Draft
-2020-12 validation all `PASS`.  The coupled replay certificate carries its
-own timed receipts. Tier 2 was unnecessary because the full affected
-coefficient chain is replayed in Tier 1. Tier 3 was not run because no
-quantum lifecycle or paper theorem is promoted.
+Tier-1 rerun on 2026-07-17: frontier reproduction passed in 0.04 seconds,
+independent verification in 0.10 seconds, the combined relative/frontier rail
+ran 19 tests in 3.14 seconds, and strict Draft 2020-12 validation passed in
+1.08 seconds for this certificate. The relative report records the complete
+paired command receipt. Tier 2 was unnecessary because unchanged,
+content-addressed classical inputs are replayed in Tier 1. Tier 3 was not run
+because no quantum lifecycle or paper theorem is promoted.

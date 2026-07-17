@@ -7,30 +7,31 @@
   "boundary_conditions": "R x Berger S3 with no spatial boundary; fixed-coupling linearized background plus nonbackreacting local probe rods and two compact relational detector windows",
   "lifecycle_layer": "LORENTZIAN_CAUSAL",
   "claim_status": "PARTIAL",
-  "verdict": "LOCALIZED_RECORD_FUNCTIONALS_CERTIFIED_POINTWISE_RESPONSE_AND_D_DESCENT_OPEN",
+  "verdict": "LOCAL_ROD_SMEARING_MEMORY_PREFLIGHT_CERTIFIED_RETARDED_TRANSFER_AND_D_DESCENT_OPEN",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
   "established": [
-    "two compact clock-labelled Maxwell field-strength record functionals are localized by a nondegenerate probe clock-and-rod chart",
-    "the two record generators are linearly independent, with exact probe evaluation matrix I_2",
-    "the imported compact current, retarded field, and record functionals compose to a well-defined source-to-record map",
+    "standard-sign probe-rod Cauchy solutions give nondegenerate relational Jacobians on some local neighborhoods of both detector centers",
+    "two compact clock-labelled spacetime Maxwell field-strength smearings are support-distinguished, with exact normalized dual-probe matrix I_2",
+    "both central Hopf rays satisfy exact null incidence and lie below the certified half-fibre cut-locus bound",
+    "first-order probe memory registers retain the integrated detector readings after their compact supports",
     "Diff, Weyl, and Maxwell-gauge covariance hold for the declared probe functionals"
   ],
   "not_established": [
-    "nonzero response of the imported retarded pulse in both predeclared detector windows",
-    "a unique no-wrap causal intersection from the compact source to both receivers",
-    "raw-D descent after adjoining the probe rod and detector sector",
+    "rank two or even entrywise nonvanishing of the physical transfer matrix M_ab=Q_a[d G_ret J_b]",
+    "full compact-source-support to detector-window causal incidence and no-wrap margins",
+    "raw-D descent after adjoining the probe rod and memory sector",
     "K_Berger compatibility in the interacting complex",
     "rod backreaction, detector recoil, gravity backreaction, or a quantum observer algebra"
   ],
   "evidence": {
     "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
-    "commit": "99e12bbb41f3dd83096c03889a6dfcaa653a237b",
-    "sha256": "f18427cb14a8e377484a5b1e39d4481a1107a29a42923a5b78fc95ece9f8a429"
+    "commit": "9118807f69d8cfd8960abd2fece52e1bbd993b5a",
+    "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
   },
   "verification_commands": [
     "python3 closed_universe_observers/generate_berger_detector_records.py --check",
     "python3 closed_universe_observers/verify_berger_detector_records.py",
     "python3 -m pytest -q closed_universe_observers/tests/test_berger_detector_records.py"
   ],
-  "next_gate": "BERGER_POINTWISE_RETARDED_GREEN_KERNEL_TWO_WINDOW_WITNESS_THEN_D_AND_K_BERGER_DESCENT"
+  "next_gate": "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER_THEN_D_AND_K_BERGER_DESCENT"
 }
