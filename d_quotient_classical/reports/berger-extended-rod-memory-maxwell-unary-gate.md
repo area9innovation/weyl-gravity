@@ -36,7 +36,7 @@ Neumann series or small-coupling assumption is required. If the factors are
 retarded and \(B,B^*\) are local compactly supported coefficient operators,
 every displayed composition has retarded support.
 
-## Exact fixed-background obstruction
+## Exact fixed-background off-shell witness
 
 The declared detector rods have standard-sign action
 
@@ -65,19 +65,33 @@ background is off shell for every nonzero rod coupling. The BV Taylor
 expansion there is curved, with a nonzero metric \(q_0\); it cannot be
 promoted as an uncurved nilpotent extended \(q_1\).
 
+This does **not** by itself obstruct a nearby backreacted branch. The next
+calculation must test
+
+\[
+q_1\Phi_2=-q_0^{\rm rod},\qquad
+\pi_{\operatorname{coker}q_1}q_0^{\rm rod}=0
+\]
+
+with the global compact rod source. Only a nonzero adjoint-kernel/Taub
+pairing would obstruct that perturbative branch absent compensating stress.
+
 Treating the rods as external probes would avoid the tadpole but would not
 satisfy the requested dynamical rod–memory BV extension. Likewise, simply
 dropping the stress would destroy action-derived cyclicity.
 
 ## Required handoff
 
-The next admissible input is:
+The admissible order is:
 
-1. a backreacted gravity–clock–rod background satisfying every Euler row;
-2. its rod Hessian, diffeomorphism action, and BV-adjoint blocks;
-3. explicit content-addressed detector operators \(B_a,B_a^*\);
-4. explicit memory transport \(T,T^*\) and retarded inverses \(H,J\);
-5. exact 78-row checks of \(q_1^2=0\), pairing nondegeneracy, unary
+1. export the global compact rod source and the full adjoint-kernel/Taub
+   projector, then decide the perturbative solvability condition;
+2. only after that condition passes, construct a backreacted
+   gravity–clock–rod background satisfying every Euler row;
+3. export its rod Hessian, diffeomorphism action, and BV-adjoint blocks;
+4. supply explicit content-addressed detector operators \(B_a,B_a^*\) and
+   memory transport \(T,T^*\) with retarded inverses \(H,J\);
+5. run exact 78-row checks of \(q_1^2=0\), pairing nondegeneracy, unary
    cyclicity, Green homotopy, Maxwell-gauge compatibility, and
    \(K_{\mathrm{Berger}}\) equivariance.
 
@@ -85,9 +99,9 @@ This result is `LOCAL-ALGEBRAIC` and `LORENTZIAN-CAUSAL`. It is an exact
 readiness/obstruction certificate, not an extended apparatus complex, a
 backreacted observer model, or a quantum result.
 
-Tier-2 replay on 2026-07-17: certificate reproduction passed in 0.32 seconds,
-independent verification in 0.33 seconds, and five mutation/unit tests in
-0.37 seconds. Strict Draft 2020-12 validation passed in 2.44 seconds. Tier 3
+Tier-2 replay on 2026-07-17: certificate reproduction passed in 0.43 seconds,
+independent verification in 0.45 seconds, and five mutation/unit tests in
+0.47 seconds. Strict Draft 2020-12 validation passed in 1.38 seconds. Tier 3
 was not run because no freeze, shared algebra engine, lifecycle promotion,
 QME result, release boundary, or paper theorem changed.
 

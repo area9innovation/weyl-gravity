@@ -267,7 +267,7 @@ def build() -> dict:
         },
         "memory_maxwell_universal_template": template,
         "required_input_contract": {
-            "backreacted_background": "extended gravity-clock-rod background with every Euler row zero",
+            "backreacted_background": "construct only after the compact q1 Phi2=-q0^rod solvability condition passes; then require every extended gravity-clock-rod Euler row to vanish",
             "rod_unary_blocks": "content-addressed rod Hessian, diffeomorphism action, and BV adjoint blocks",
             "profile_operator": "explicit local compactly supported B_a and formal adjoint B_a* for both detector channels",
             "memory_transport": "explicit T,T* and retarded inverses H,J with support theorem",
@@ -290,30 +290,30 @@ def build() -> dict:
             "BACKREACTED_APPARATUS_BACKGROUND_AVAILABLE": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "SUPPLY_BACKREACTED_ROD_BACKGROUND_AND_EXPLICIT_PROFILE_OPERATOR_B",
+        "next_gate": "EXPORT_GLOBAL_ROD_Q0_AND_COMPACT_ADJOINT_KERNEL_BEFORE_BACKREACTED_BACKGROUND",
         "verification_receipts": [
             {
                 "test_tier": 2,
                 "command": "python3 -m d_quotient_classical.backreacted_clock.berger_extended_rod_memory_maxwell_unary_gate --check",
-                "elapsed_seconds": 0.32,
+                "elapsed_seconds": 0.43,
                 "status": "PASS",
             },
             {
                 "test_tier": 2,
                 "command": "python3 -m d_quotient_classical.backreacted_clock.verify_berger_extended_rod_memory_maxwell_unary_gate",
-                "elapsed_seconds": 0.33,
+                "elapsed_seconds": 0.45,
                 "status": "PASS",
             },
             {
                 "test_tier": 2,
                 "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_extended_rod_memory_maxwell_unary_gate -v",
-                "elapsed_seconds": 0.37,
+                "elapsed_seconds": 0.47,
                 "status": "PASS",
             },
             {
                 "test_tier": 1,
                 "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-extended-rod-memory-maxwell-unary-gate-v1.schema.json -d d_quotient_classical/certificates/BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE.json",
-                "elapsed_seconds": 2.44,
+                "elapsed_seconds": 1.38,
                 "status": "PASS",
             },
         ],
@@ -336,7 +336,9 @@ def build() -> dict:
             "for a cyclic memory-Maxwell Hessian; and computes the nonzero standard-sign rod stress "
             "on the declared unit-Jacobian detector chart. It therefore proves that the unchanged "
             "Berger background cannot support an uncurved action-derived 78-row apparatus q1 at "
-            "nonzero rod coupling. It does not reject a backreacted apparatus solution, does not "
+            "nonzero rod coupling. This fixed-point off-shell statement neither proves nor obstructs "
+            "a nearby perturbative backreacted branch: that requires the exact compact cokernel/Taub "
+            "projection of the global rod source. It does not reject a backreacted apparatus solution, does not "
             "promote the probe-limit rods to a BV complex, and does not establish extended q1, "
             "cyclicity, a Green homotopy, q2/q3, K_Berger descent, backreaction, a classical observer "
             "morphism, a QME, or any quantum claim."

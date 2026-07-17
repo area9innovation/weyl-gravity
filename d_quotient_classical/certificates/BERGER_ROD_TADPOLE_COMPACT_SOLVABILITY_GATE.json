@@ -1,0 +1,254 @@
+{
+  "binary_scientific_verdict": {
+    "compact_rod_branch_exists": null,
+    "compact_rod_branch_obstructed": null,
+    "constant_mode_obstructed": false,
+    "reason": "the local detector Jacobian fixes a pointwise stress shape but not the global compact source whose Taub projection decides branch existence",
+    "verdict": "INPUT_BLOCKED"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result distinguishes the nonzero local rod stress from a compact Taub obstruction. In the certified stationary homogeneous constant-component retained metric block, the conditional diagonal rod source is q1 closed, has zero pairing with all three displayed adjoint-kernel generators, and admits the displayed exact Phi2 solving q1 Phi2=-q0^rod. Thus the constant mode is not obstructed. The exported rod inputs, however, are only local detector-chart Cauchy germs; they do not define the global compact rod source or the full compact adjoint-kernel projector. Consequently this result neither proves nor obstructs a perturbative backreacted rod branch. It does not substitute the local stress matrix for a global source, construct the 78-row unary extension, certify causal propagation, compute q2/q3, establish K_Berger equivariance, restore a QME, or make a quantum claim.",
+  "claim_status": "REDUCED_MODE_SOLVABLE_GLOBAL_COMPACT_INPUT_BLOCKED",
+  "compact_input_audit": {
+    "available_rod_data": "two local detector-chart Cauchy germs and a local normally-hyperbolic existence statement",
+    "full_compact_adjoint_kernel_or_projector_exported": false,
+    "global_q0_rod_source_exported": false,
+    "global_rod_configuration_exported": false,
+    "missing_cokernel_data": "the full compact q1 adjoint kernel or an exact Taub projector with pairing, measure, domain, and boundary conditions",
+    "missing_source_data": "global smooth rod fields or global Cauchy data, the resulting order-epsilon_R^2 source on every Euler row, and its exact harmonic/support decomposition"
+  },
+  "compensation_contract": {
+    "acceptance": "every normalized compact adjoint-kernel pairing with the combined source vanishes exactly",
+    "combined_equation": "q1 Phi2=-(q0^rod+q0^clock_shift+q0^apparatus+q0^coupling_shift)",
+    "interpretation": "a nonzero rod projection would require compensating clock, coupling, or apparatus stress; the constant homogeneous rod shape itself needs no such compensation"
+  },
+  "constant_mode_screen": {
+    "cokernel_projection": "ZERO_ON_ALL_THREE_DISPLAYED_ADJOINT_KERNEL_GENERATORS",
+    "exact_data": {
+      "adjoint_kernel_basis": [
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ],
+      "adjoint_kernel_pairings": [
+        "0",
+        "0",
+        "0"
+      ],
+      "augmented_rank": 7,
+      "canonical_Phi2": [
+        "496/63",
+        "0",
+        "0",
+        "0",
+        "-32/7",
+        "0",
+        "0",
+        "-32/7",
+        "0",
+        "-256/63"
+      ],
+      "conditional_homogeneous_q0_source": [
+        "3/2",
+        "0",
+        "0",
+        "0",
+        "-1/2",
+        "0",
+        "0",
+        "-1/2",
+        "0",
+        "-1/2"
+      ],
+      "constant_hessian_rank": 7,
+      "equation_residual_H_Phi2_plus_q0": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "field_order": [
+        "h_hat_star_00",
+        "h_hat_star_01",
+        "h_hat_star_02",
+        "h_hat_star_03",
+        "h_hat_star_11",
+        "h_hat_star_12",
+        "h_hat_star_13",
+        "h_hat_star_22",
+        "h_hat_star_23",
+        "h_hat_star_33"
+      ],
+      "local_orthonormal_stress": [
+        [
+          "3/2",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1/2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/2"
+        ]
+      ],
+      "q1_closure_residual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "retained_q0_source": [
+        "3/2",
+        "0",
+        "0",
+        "0",
+        "-1/2",
+        "0",
+        "0",
+        "-1/2",
+        "0",
+        "-1/2"
+      ]
+    },
+    "scope": "stationary SU(2)_L x U(1)_R homogeneous constant-component retained metric block",
+    "verdict": "EXACT_WITH_DISPLAYED_PRIMITIVE"
+  },
+  "dependency_refs": {
+    "detector_input": {
+      "path": "closed_universe_observers/fixtures/berger_localized_detector_records_input.json",
+      "sha256": "0290db56fef702ab77eb7154d85b850618e94d68caa3006aa48ac1ead2c88fbf"
+    },
+    "detector_preflight": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    },
+    "gravity_contraction": {
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "retained_unary": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    },
+    "unary_gate": {
+      "path": "d_quotient_classical/certificates/BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE.json",
+      "sha256": "8bf0bb63d123f9f91c62b939582db06db2e4647e4048c958da72a4767a3bb195"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "COMPACT_TAUB_PROJECTION_COMPUTED": false,
+    "FULL_COMPACT_ADJOINT_KERNEL_EXPORTED": false,
+    "GLOBAL_COMPACT_ROD_SOURCE_EXPORTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "PERTURBATIVE_BACKREACTED_ROD_BRANCH_CERTIFIED": false,
+    "PERTURBATIVE_BACKREACTED_ROD_BRANCH_OBSTRUCTED": false,
+    "QUANTUM_CLAIM": false,
+    "ROD_CONSTANT_MODE_COKERNEL_PROJECTION_ZERO": true,
+    "ROD_CONSTANT_MODE_PHI2_EXACT": true,
+    "ROD_CONSTANT_MODE_Q1_CLOSED": true,
+    "ROD_LOCAL_STRESS_EXACT_NONZERO": true
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "Imported operators are unchanged and content-addressed; this adds one isolated exact reduced-mode source-solvability screen.",
+    "tier_3": "No freeze, shared algebra change, full compact branch theorem, Lorentzian certification, QME result, release boundary, or paper theorem is promoted."
+  },
+  "next_gate": "EXPORT_GLOBAL_ROD_Q0_AND_COMPACT_ADJOINT_KERNEL_THEN_EVALUATE_TAUB_PAIRINGS",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_rod_tadpole_compact_solvability_gate.py": "5e5db836a3ab4bc3df24f7d715eb55df1f2c0a7362320a61e13da1bc9e12d5d7",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_rod_tadpole_compact_solvability_gate.py": "5b7e9efbd18bf4d831821c8f2f4457cff5b3f1de9cb568d04bc9bae487e45f65",
+      "d_quotient_classical/backreacted_clock/verify_berger_rod_tadpole_compact_solvability_gate.py": "7d5a33ebf2bc8ea80e380092409fb9ca3410583ee45d13cfdff47d2239493211",
+      "d_quotient_classical/schema/berger-rod-tadpole-compact-solvability-gate-v1.schema.json": "e6dfddbb17d1106090874e22ca81e1516c1dac602c8bc34253512c8d597e401e"
+    }
+  },
+  "result_id": "BERGER_ROD_TADPOLE_COMPACT_SOLVABILITY_GATE",
+  "schema": "pure-weyl-berger-rod-tadpole-compact-solvability-gate-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "solvability_problem": {
+    "canonical_row_convention": "q0_(h_plus_ab)=(2-delta_ab)T_rod^ab",
+    "compact_condition": "pi_coker(q1) q0^rod=0",
+    "equation": "q1 Phi2=-q0^rod",
+    "source_order": "epsilon_R^2"
+  },
+  "verification_receipts": [
+    {
+      "command": "python3 -m d_quotient_classical.backreacted_clock.berger_rod_tadpole_compact_solvability_gate --check",
+      "elapsed_seconds": 0.75,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m d_quotient_classical.backreacted_clock.verify_berger_rod_tadpole_compact_solvability_gate",
+      "elapsed_seconds": 0.6,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_rod_tadpole_compact_solvability_gate -v",
+      "elapsed_seconds": 0.78,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-rod-tadpole-compact-solvability-gate-v1.schema.json -d d_quotient_classical/certificates/BERGER_ROD_TADPOLE_COMPACT_SOLVABILITY_GATE.json",
+      "elapsed_seconds": 2.74,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

@@ -44,7 +44,7 @@ class BergerExtendedRodMemoryMaxwellUnaryGateTests(unittest.TestCase):
         self.assertFalse(flags["EXTENDED_RETARDED_GREEN_CERTIFIED"])
         self.assertEqual(
             self.value["next_gate"],
-            "SUPPLY_BACKREACTED_ROD_BACKGROUND_AND_EXPLICIT_PROFILE_OPERATOR_B",
+            "EXPORT_GLOBAL_ROD_Q0_AND_COMPACT_ADJOINT_KERNEL_BEFORE_BACKREACTED_BACKGROUND",
         )
 
     def test_strict_schema_and_persisted_certificate(self) -> None:

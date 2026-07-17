@@ -84,10 +84,22 @@ T^R_{\hat a\hat b}=\operatorname{diag}(3/2,-1/2,-1/2,-1/2).
 The detector preflight discarded this as order-
 \(\epsilon_R^2\) probe stress. At nonzero coupling it is therefore a metric
 tadpole, so the action-derived BV Taylor expansion has \(q_0\ne0\) and cannot
-be promoted as a nilpotent uncurved 78-row \(q_1\). The next admissible input
-is a backreacted gravity--clock--rod background plus explicit local detector
-operators \(B_a,B_a^*\) and memory transports. Treating the rods as external
-probes does not satisfy the dynamical apparatus commission.
+be promoted as a nilpotent uncurved 78-row \(q_1\) at that fixed point. This
+does not yet obstruct a nearby backreacted rod branch.
+
+`BERGER_ROD_TADPOLE_COMPACT_SOLVABILITY_GATE` now performs the first exact
+screen. In the stationary homogeneous retained metric block, the conditional
+diagonal rod source is closed, has zero pairing with all three constant-mode
+adjoint-kernel generators, and admits a displayed exact \(\Phi_2\). Thus
+there is no constant-mode Taub obstruction. The global compact verdict
+remains `INPUT_BLOCKED`: the detector input exports only local chart Cauchy
+germs, not a global \(q_0^{\rm rod}\) or the full compact adjoint-kernel
+projector. Those objects must be supplied before constructing a complete
+background. A nonzero global pairing would require compensating clock,
+coupling, or apparatus stress. Explicit local detector operators
+\(B_a,B_a^*\) and memory transports remain separate later inputs. Treating
+the rods as external probes does not satisfy the dynamical apparatus
+commission.
 
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-rod-tadpole-compact-solvability-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "solvability_problem", "constant_mode_screen", "compact_input_audit", "binary_scientific_verdict", "compensation_contract", "flags", "next_gate", "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-rod-tadpole-compact-solvability-gate-v1"},
+    "result_id": {"const": "BERGER_ROD_TADPOLE_COMPACT_SOLVABILITY_GATE"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"},
+    "claim_status": {"const": "REDUCED_MODE_SOLVABLE_GLOBAL_COMPACT_INPUT_BLOCKED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["detector_input", "detector_preflight", "unary_gate", "gravity_contraction", "retained_unary"],
+      "properties": {
+        "detector_input": {"$ref": "#/$defs/dependency"},
+        "detector_preflight": {"$ref": "#/$defs/dependency"},
+        "unary_gate": {"$ref": "#/$defs/dependency"},
+        "gravity_contraction": {"$ref": "#/$defs/dependency"},
+        "retained_unary": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "solvability_problem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["equation", "compact_condition", "source_order", "canonical_row_convention"],
+      "properties": {
+        "equation": {"const": "q1 Phi2=-q0^rod"},
+        "compact_condition": {"const": "pi_coker(q1) q0^rod=0"},
+        "source_order": {"const": "epsilon_R^2"},
+        "canonical_row_convention": {"const": "q0_(h_plus_ab)=(2-delta_ab)T_rod^ab"}
+      }
+    },
+    "constant_mode_screen": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "verdict", "cokernel_projection", "exact_data"],
+      "properties": {
+        "scope": {"type": "string", "minLength": 70},
+        "verdict": {"const": "EXACT_WITH_DISPLAYED_PRIMITIVE"},
+        "cokernel_projection": {"const": "ZERO_ON_ALL_THREE_DISPLAYED_ADJOINT_KERNEL_GENERATORS"},
+        "exact_data": {
+          "type": "object", "additionalProperties": false,
+          "required": ["field_order", "local_orthonormal_stress", "conditional_homogeneous_q0_source", "retained_q0_source", "q1_closure_residual", "constant_hessian_rank", "augmented_rank", "adjoint_kernel_basis", "adjoint_kernel_pairings", "canonical_Phi2", "equation_residual_H_Phi2_plus_q0"],
+          "properties": {
+            "field_order": {"const": ["h_hat_star_00", "h_hat_star_01", "h_hat_star_02", "h_hat_star_03", "h_hat_star_11", "h_hat_star_12", "h_hat_star_13", "h_hat_star_22", "h_hat_star_23", "h_hat_star_33"]},
+            "local_orthonormal_stress": {"const": [["3/2", "0", "0", "0"], ["0", "-1/2", "0", "0"], ["0", "0", "-1/2", "0"], ["0", "0", "0", "-1/2"]]},
+            "conditional_homogeneous_q0_source": {"const": ["3/2", "0", "0", "0", "-1/2", "0", "0", "-1/2", "0", "-1/2"]},
+            "retained_q0_source": {"const": ["3/2", "0", "0", "0", "-1/2", "0", "0", "-1/2", "0", "-1/2"]},
+            "q1_closure_residual": {"const": ["0", "0", "0"]},
+            "constant_hessian_rank": {"const": 7},
+            "augmented_rank": {"const": 7},
+            "adjoint_kernel_basis": {"const": [["0", "0", "0", "1", "0", "0", "0", "0", "0", "0"], ["0", "0", "0", "0", "0", "0", "1", "0", "0", "0"], ["0", "0", "0", "0", "0", "0", "0", "0", "1", "0"]]},
+            "adjoint_kernel_pairings": {"const": ["0", "0", "0"]},
+            "canonical_Phi2": {"const": ["496/63", "0", "0", "0", "-32/7", "0", "0", "-32/7", "0", "-256/63"]},
+            "equation_residual_H_Phi2_plus_q0": {"const": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]}
+          }
+        }
+      }
+    },
+    "compact_input_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["global_rod_configuration_exported", "global_q0_rod_source_exported", "full_compact_adjoint_kernel_or_projector_exported", "available_rod_data", "missing_source_data", "missing_cokernel_data"],
+      "properties": {
+        "global_rod_configuration_exported": {"const": false},
+        "global_q0_rod_source_exported": {"const": false},
+        "full_compact_adjoint_kernel_or_projector_exported": {"const": false},
+        "available_rod_data": {"type": "string", "minLength": 70},
+        "missing_source_data": {"type": "string", "minLength": 120},
+        "missing_cokernel_data": {"type": "string", "minLength": 100}
+      }
+    },
+    "binary_scientific_verdict": {
+      "type": "object", "additionalProperties": false,
+      "required": ["constant_mode_obstructed", "compact_rod_branch_exists", "compact_rod_branch_obstructed", "verdict", "reason"],
+      "properties": {
+        "constant_mode_obstructed": {"const": false},
+        "compact_rod_branch_exists": {"const": null},
+        "compact_rod_branch_obstructed": {"const": null},
+        "verdict": {"const": "INPUT_BLOCKED"},
+        "reason": {"type": "string", "minLength": 120}
+      }
+    },
+    "compensation_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["combined_equation", "acceptance", "interpretation"],
+      "properties": {
+        "combined_equation": {"type": "string", "minLength": 60},
+        "acceptance": {"type": "string", "minLength": 80},
+        "interpretation": {"type": "string", "minLength": 120}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ROD_LOCAL_STRESS_EXACT_NONZERO", "ROD_CONSTANT_MODE_Q1_CLOSED", "ROD_CONSTANT_MODE_COKERNEL_PROJECTION_ZERO", "ROD_CONSTANT_MODE_PHI2_EXACT", "GLOBAL_COMPACT_ROD_SOURCE_EXPORTED", "FULL_COMPACT_ADJOINT_KERNEL_EXPORTED", "COMPACT_TAUB_PROJECTION_COMPUTED", "PERTURBATIVE_BACKREACTED_ROD_BRANCH_CERTIFIED", "PERTURBATIVE_BACKREACTED_ROD_BRANCH_OBSTRUCTED", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ROD_LOCAL_STRESS_EXACT_NONZERO": {"const": true},
+        "ROD_CONSTANT_MODE_Q1_CLOSED": {"const": true},
+        "ROD_CONSTANT_MODE_COKERNEL_PROJECTION_ZERO": {"const": true},
+        "ROD_CONSTANT_MODE_PHI2_EXACT": {"const": true},
+        "GLOBAL_COMPACT_ROD_SOURCE_EXPORTED": {"const": false},
+        "FULL_COMPACT_ADJOINT_KERNEL_EXPORTED": {"const": false},
+        "COMPACT_TAUB_PROJECTION_COMPUTED": {"const": false},
+        "PERTURBATIVE_BACKREACTED_ROD_BRANCH_CERTIFIED": {"const": false},
+        "PERTURBATIVE_BACKREACTED_ROD_BRANCH_OBSTRUCTED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXPORT_GLOBAL_ROD_Q0_AND_COMPACT_ADJOINT_KERNEL_THEN_EVALUATE_TAUB_PAIRINGS"},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest"],
+      "properties": {"source_manifest": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}}}
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 80}, "tier_3": {"type": "string", "minLength": 100}}
+    },
+    "claim_boundary": {"type": "string", "minLength": 700}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 5}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false, "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {"test_tier": {"const": 1}, "command": {"type": "string", "minLength": 80}, "elapsed_seconds": {"type": "number", "minimum": 0}, "status": {"const": "PASS"}}
+    }
+  }
+}
