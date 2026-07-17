@@ -5,8 +5,8 @@
 The complete classical gravity-clock-Maxwell binary operation is now exported
 on all 64 BV rows.  The immutable 54-row gravity payload is reused by content
 hash and the Maxwell extension is a sparse overlay with
-`1954` exact PBW terms.  The composed operation has
-`152259` terms on `49` nonzero
+`1890` exact PBW terms.  The composed operation has
+`152195` terms on `49` nonzero
 output rows and maximum total jet order `6`.
 
 The physical action supplies `q2(A,A)->h_hat_plus` and

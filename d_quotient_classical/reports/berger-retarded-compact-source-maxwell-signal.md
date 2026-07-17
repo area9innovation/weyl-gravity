@@ -34,9 +34,9 @@ not yet choose rod fields, emitter and receiver worldtubes, detector windows,
 or a unique clock-labelled intersection.  Apparatus recoil, gravitational
 backreaction, mixed `q3`, Hadamard data, and quantum claims remain open.
 
-The subsequently discovered mixed-`q2` odd-pairing cyclicity obstruction does
-not enter this result: source compatibility and propagation use only `q1` and
-the unary retarded Maxwell Green homotopy.
+The repaired mixed-`q2` tensor does not enter this result: source
+compatibility and propagation use only `q1` and the unary retarded Maxwell
+Green homotopy.
 
 The separate portable 64-row export visible in the shared worktree was not
 used because it was not committed and authoritative when this result was

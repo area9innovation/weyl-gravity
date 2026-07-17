@@ -25,12 +25,11 @@ The first endpoint interaction is transferred without fitting:
 ell2_mixed = pi64 q2_Maxwell-overlay(iota36,iota36).
 ```
 
-It contains 1,522 exact PBW terms on 23 nonzero output rows and satisfies the
-arity-two identity on all 36 rows.  An independent coefficientwise consumer
-subsequently found 1,234 full and 953 retained odd-pairing cyclicity defects;
-the first normalized retained witness is `(0,26,35; [],[e1]) -> 3`.
-Accordingly the coefficient transfer remains exact, but cyclic mixed-vertex
-and gravitational-dressing promotion are blocked.  The unary causal theorem
-is unaffected.  Compact retarded propagation is certified separately;
-localized apparatus, backreaction, mixed q3, Hadamard data, and quantum claims
-remain open.
+It contains 1,474 exact PBW terms on 23 nonzero output rows and satisfies the
+arity-two identity on all 36 rows.  The earlier cyclicity atlas is repaired by
+the common factor-two Maxwell-output normalization and the `q1` coboundary of
+the BV-canonical covariant-ghost shear `c_M -> c_M-2 i_c A`.  The repair is
+support-local and action/convention derived, not fitted to a mode.  Full and
+retained cyclicity defects vanish.  External quantum acceptance must still
+pin the committed hashes before quantum use; localized apparatus,
+backreaction, mixed q3, Hadamard data, and quantum claims remain open.

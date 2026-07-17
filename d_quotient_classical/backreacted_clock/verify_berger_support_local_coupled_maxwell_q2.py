@@ -145,7 +145,7 @@ def main() -> None:
     if observed_metric != expected_metric:
         raise AssertionError("independent standing stress regression failed")
     observed_mixed = _evaluate_row(rows[60], metric, standing, t)
-    expected_mixed = sp.Rational(564428800, 35920017) * sp.cos(beta * t)
+    expected_mixed = sp.Rational(1128857600, 35920017) * sp.cos(beta * t)
     if sp.trigsimp(observed_mixed - expected_mixed) != 0:
         raise AssertionError("independent mixed Maxwell Euler regression failed")
     if certificate["exact_diagnostics"]["arity_two_defect_term_counts"] != [0] * 64:

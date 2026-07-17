@@ -22,6 +22,8 @@ from d_quotient_classical.backreacted_clock.berger_support_local_coupled_maxwell
     build_maxwell_q2_overlay,
     maxwell_dressed_physical_source_rows,
     maxwell_equation_mixed_rows,
+    maxwell_covariant_ghost_shear,
+    _degree_zero_shear_coboundary_row,
     maxwell_unary_blocks,
     physical_regressions,
 )
@@ -217,7 +219,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
         },
         "derivation": {
             "source": "S_gravity_clock plus S_Maxwell=-1/2 integral(F wedge star_g_hat F) and its Diff-semidirect-U(1) BV master terms",
-            "method": "exact arbitrary-jet Maxwell field strength, stress polarization, formal-adjoint cyclic completion, clock canonical transport, and gauge coadjoint completion",
+            "method": "exact arbitrary-jet Maxwell field strength, stress polarization, clock canonical transport, common factor-two Maxwell-output normalization, and the BV-canonical cotangent lift of the local covariant-ghost shear c_M -> c_M-2 i_c A",
             "support_category": "arbitrary compactly supported smooth four-dimensional jets in the left-invariant Berger PBW frame",
             "coefficient_field": "Q(sqrt(10))",
             "not_fitted_to_modes": True,
@@ -256,6 +258,15 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "Weyl_Maxwell_blocks": "zero identically in four dimensions",
             "gravity_ghost_antifield_repository_multiplier": 2,
             "Maxwell_Euler_three_form_sign": "E_A=-d star_g_hat dA",
+            "normalization_repair": "multiply every Maxwell-output q2 component by two",
+            "covariant_ghost_shear": "c_M -> c_M-2 i_c A with BV-canonical cotangent lift",
+            "shear_generator_term_count": sum(
+                len(operator.terms) for operator in maxwell_covariant_ghost_shear()
+            ),
+            "shear_coboundary_term_count": sum(
+                len(_degree_zero_shear_coboundary_row(row).terms)
+                for row in range(TOTAL_ROWS)
+            ),
         },
         "frozen_K_action_Maxwell_rows": {
             "generator": "K_Berger=D-omega R",

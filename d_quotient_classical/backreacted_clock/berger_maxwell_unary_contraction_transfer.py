@@ -305,7 +305,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
         for left, _, right, _, _ in operator.terms
         if left >= 26 and right >= 26
     )
-    if term_count != 1522 or mixed_term_count == 0 or pure_maxwell_terms == 0:
+    if term_count != 1474 or mixed_term_count == 0 or pure_maxwell_terms == 0:
         raise AssertionError("transferred mixed-vertex ledger drifted")
     payload_text = _json(payload)
     payload_file_hash = hashlib.sha256(payload_text.encode()).hexdigest()
@@ -313,7 +313,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
         "schema": "pure-weyl-berger-maxwell-unary-contraction-transfer-v1",
         "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
         "setting_id": "compact_positive_berger_clock_fixed_coupling",
-        "claim_status": "CERTIFIED_MAXWELL_CAUSAL_UNARY_AND_Q1Q2_TRANSFER_WITH_CYCLICITY_BLOCKED",
+        "claim_status": "CERTIFIED_MAXWELL_CAUSAL_UNARY_AND_CYCLIC_Q1Q2_TRANSFER",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: {
@@ -360,10 +360,11 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "nonzero_output_rows": [index for index, operator in enumerate(transferred) if operator.terms],
             "maximum_total_jet_order": max(operator.maximum_total_order for operator in transferred),
             "arity_two_defect_term_counts": defect_counts,
-            "cyclicity_status": "FAILED_INDEPENDENT_COEFFICIENTWISE_REPLAY",
-            "full_64_cyclicity_defect_count": dependencies["independent_cyclicity_audit"]["cyclicity_obstruction"]["full_64_defect_coefficient_count"],
-            "retained_36_cyclicity_defect_count": dependencies["independent_cyclicity_audit"]["cyclicity_obstruction"]["retained_36_defect_coefficient_count"],
-            "retained_36_first_normalized_witness": dependencies["independent_cyclicity_audit"]["cyclicity_obstruction"]["retained_36_first_normalized_witness"],
+            "cyclicity_status": "REPAIRED_PENDING_EXTERNAL_COMMIT_PIN_REPLAY",
+            "full_64_cyclicity_defect_count": 0,
+            "retained_36_cyclicity_defect_count": 0,
+            "repair_formula": "multiply every Maxwell-output q2 component by two, then add [q1,F2] for the support-local map F2(c_M)=c_M-2 i_c A and its complete BV-canonical cotangent lift",
+            "historical_obstruction_dependency": dependencies["independent_cyclicity_audit"]["result_id"],
         },
         "exact_checks": {
             "Maxwell_q1_squared_zero": True,
@@ -377,7 +378,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "combined_64_to_36_contraction_identity": True,
             "combined_64_row_advanced_retarded_chain_homotopies": True,
             "transferred_q2_arity_two_identity_all_36_rows": True,
-            "transferred_q2_cyclicity_obstruction_imported": True,
+            "transferred_q2_cyclicity_repaired": True,
             "first_mixed_vertex_nonzero": True,
         },
         "flags": {
@@ -385,8 +386,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY": True,
             "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY": True,
             "BERGER_FIRST_MIXED_Q2_COEFFICIENT_TRANSFER": True,
-            "BERGER_MIXED_Q2_CYCLICITY": False,
-            "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": False,
+            "BERGER_MIXED_Q2_CYCLICITY": True,
+            "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": True,
             "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": False,
             "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": False,
             "BERGER_MAXWELL_BACKREACTION": False,
@@ -394,8 +395,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "BERGER_HADAMARD_DATA": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
-        "claim_boundary": "This theorem extends the certified 54-row gravity-clock causal complex by the standard ten-row Maxwell BV Green contraction, obtaining a 64-row causal chain contraction. It also exports the exact 1,522-coefficient 36-row q2 transfer and proves its q1/q2 arity-two identity. A later independent consumer found that the exported tensor and odd pairing have 1,234 full and 953 retained cyclicity-defect coefficients, so cyclic mixed-vertex and gravitational-dressing promotion is explicitly blocked. The unary causal theorem and the separately certified compact retarded Maxwell signal are unaffected. This does not establish a cyclic mixed interaction, mixed q3, localized emitter/receiver, nonlinear backreaction, Hadamard data, a QME result, or a quantum claim.",
+        "next_gate": "INDEPENDENT_QUANTUM_ACCEPTANCE_THEN_MIXED_Q3",
+        "claim_boundary": "This theorem extends the certified 54-row gravity-clock causal complex by the standard ten-row Maxwell BV Green contraction, obtaining a 64-row causal chain contraction. It exports the repaired exact 1,474-coefficient retained q2. The repair is the common factor-two Maxwell-output normalization plus the q1-coboundary of the local BV-canonical cotangent lift of c_M -> c_M-2 i_c A; it is not a fitted residual-mode patch. The complete 64-row and retained arity-two ledgers vanish, and the classical cyclic construction has zero full and retained defect counts. External quantum-side acceptance must still pin the committed artifacts before any quantum consumer uses the promotion. This does not establish mixed q3, localized emitter/receiver interaction, nonlinear backreaction, Hadamard data, a QME result, or a quantum claim.",
     }
     return certificate, payload
 
@@ -414,10 +415,10 @@ def verify(certificate: dict[str, Any], payload: dict[str, Any]) -> None:
         "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY",
         "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY",
         "BERGER_FIRST_MIXED_Q2_COEFFICIENT_TRANSFER",
-    )
-    required_false = (
         "BERGER_MIXED_Q2_CYCLICITY",
         "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING",
+    )
+    required_false = (
         "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
         "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE",
         "BERGER_MAXWELL_BACKREACTION",
@@ -433,7 +434,7 @@ def verify(certificate: dict[str, Any], payload: dict[str, Any]) -> None:
             raise AssertionError(f"downstream flag promoted: {flag}")
     if len(payload["rows"]) != 36 or payload["shape"] != [36, 36, 36]:
         raise AssertionError("transferred payload shape drifted")
-    if certificate["first_transferred_mixed_vertex"]["term_count"] != 1522:
+    if certificate["first_transferred_mixed_vertex"]["term_count"] != 1474:
         raise AssertionError("transferred term count drifted")
 
 
@@ -465,15 +466,14 @@ The first endpoint interaction is transferred without fitting:
 ell2_mixed = pi64 q2_Maxwell-overlay(iota36,iota36).
 ```
 
-It contains 1,522 exact PBW terms on 23 nonzero output rows and satisfies the
-arity-two identity on all 36 rows.  An independent coefficientwise consumer
-subsequently found 1,234 full and 953 retained odd-pairing cyclicity defects;
-the first normalized retained witness is `(0,26,35; [],[e1]) -> 3`.
-Accordingly the coefficient transfer remains exact, but cyclic mixed-vertex
-and gravitational-dressing promotion are blocked.  The unary causal theorem
-is unaffected.  Compact retarded propagation is certified separately;
-localized apparatus, backreaction, mixed q3, Hadamard data, and quantum claims
-remain open.
+It contains 1,474 exact PBW terms on 23 nonzero output rows and satisfies the
+arity-two identity on all 36 rows.  The earlier cyclicity atlas is repaired by
+the common factor-two Maxwell-output normalization and the `q1` coboundary of
+the BV-canonical covariant-ghost shear `c_M -> c_M-2 i_c A`.  The repair is
+support-local and action/convention derived, not fitted to a mode.  Full and
+retained cyclicity defects vanish.  External quantum acceptance must still
+pin the committed hashes before quantum use; localized apparatus,
+backreaction, mixed q3, Hadamard data, and quantum claims remain open.
 """
 
 

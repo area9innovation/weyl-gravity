@@ -114,8 +114,8 @@ def _load_dependencies() -> dict[str, dict[str, Any]]:
         raise AssertionError("combined causal contraction is unavailable")
     if causal["flags"]["BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY"] is not True:
         raise AssertionError("Maxwell causal contraction is unavailable")
-    if causal["flags"]["BERGER_MIXED_Q2_CYCLICITY"] is not False:
-        raise AssertionError("retarded theorem must not import a promoted mixed interaction")
+    if causal["flags"]["BERGER_MIXED_Q2_CYCLICITY"] is not True:
+        raise AssertionError("repaired mixed interaction dependency is unavailable")
     if data["maxwell_layout"]["maxwell_bv_complex"]["minimal_rows"] != 10:
         raise AssertionError("Maxwell row layout drifted")
     if data["g0_fixture"]["flags"]["BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE"] is not True:
@@ -212,7 +212,7 @@ def build() -> dict[str, Any]:
         },
         "next_gate": "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE",
         "provenance": {"source_manifest": _source_manifest()},
-        "claim_boundary": "This classical theorem constructs a nonzero compact neutral Maxwell source as the exact current three-form j=d kappa, injects it as a q-closed source in the certified Maxwell BV equation row, and uses only the certified unary retarded chain homotopy to obtain a unique Lorenz representative with nonzero field strength supported in the causal future of the source. The later mixed-q2 cyclicity obstruction is explicitly imported as false and is not used here. This proves a retarded signal, not a cyclic interacting dressing or a spatially localized emitter/receiver measurement. It does not provide rod fields, detector response, unique endpoint intersection, apparatus recoil, gravitational backreaction, mixed q3, Hadamard data, a QME result, or a quantum claim.",
+        "claim_boundary": "This classical theorem constructs a nonzero compact neutral Maxwell source as the exact current three-form j=d kappa, injects it as a q-closed source in the certified Maxwell BV equation row, and uses only the certified unary retarded chain homotopy to obtain a unique Lorenz representative with nonzero field strength supported in the causal future of the source. The repaired mixed-q2 cyclicity flag is imported but is not used in the unary propagation proof. This proves a retarded signal, not a spatially localized emitter/receiver measurement or nonlinear response. It does not provide rod fields, detector response, unique endpoint intersection, apparatus recoil, gravitational backreaction, mixed q3, Hadamard data, a QME result, or a quantum claim.",
     }
 
 
@@ -276,9 +276,9 @@ not yet choose rod fields, emitter and receiver worldtubes, detector windows,
 or a unique clock-labelled intersection.  Apparatus recoil, gravitational
 backreaction, mixed `q3`, Hadamard data, and quantum claims remain open.
 
-The subsequently discovered mixed-`q2` odd-pairing cyclicity obstruction does
-not enter this result: source compatibility and propagation use only `q1` and
-the unary retarded Maxwell Green homotopy.
+The repaired mixed-`q2` tensor does not enter this result: source
+compatibility and propagation use only `q1` and the unary retarded Maxwell
+Green homotopy.
 
 The separate portable 64-row export visible in the shared worktree was not
 used because it was not committed and authoritative when this result was

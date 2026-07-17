@@ -2,6 +2,7 @@
   "canonical_completion": {
     "Maxwell_Euler_three_form_sign": "E_A=-d star_g_hat dA",
     "Weyl_Maxwell_blocks": "zero identically in four dimensions",
+    "covariant_ghost_shear": "c_M -> c_M-2 i_c A with BV-canonical cotangent lift",
     "gauge_blocks": [
       "q2(c_diff,c_M)->c_M",
       "q2(c_diff,A)->A",
@@ -11,12 +12,15 @@
       "q2(c_M,c_M_plus)->c_diff_plus"
     ],
     "gravity_ghost_antifield_repository_multiplier": 2,
+    "normalization_repair": "multiply every Maxwell-output q2 component by two",
     "physical_blocks": [
       "q2(A,A)->h_hat_plus",
       "q2(A,A)->Theta_plus from clock dressing",
       "q2(h_hat,A)->A_plus",
       "q2(Theta,A)->A_plus"
-    ]
+    ],
+    "shear_coboundary_term_count": 160,
+    "shear_generator_term_count": 24
   },
   "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the complete arbitrary-support classical gravity-clock-Maxwell q2 on the declared 64-row Berger BV complex. It zero-extends the independently certified 54-row gravity operation and adds an exact 64-row Maxwell overlay generated from the Maxwell action and Diff-semidirect-U(1) BV master terms. It includes the metric stress, Maxwell Euler, clock-dressed Theta, gauge, antifield-density, and gravity ghost-antifield partners; proves combined unary nilpotency, Koszul symmetry, the arity-two q1-q2 identity, cyclic action generation, and coefficientwise derivation by the frozen K_Berger=D-omega R action. On the Maxwell rows K_Berger is represented by e0 because the clock rotation R acts trivially there. The legacy local-D dependency name is content-addressed historical vocabulary only: the generator-conjugation audit proves that the frozen dressed-complex operator is K_Berger, while original cylinder D is affine with a nonzero arity-zero component. Accordingly this certificate explicitly does not assert raw-D equivariance or a raw-D Cartan theorem. It recovers all certified physical fixtures without fitting to them. It does not construct a Maxwell unary contraction or propagator, transfer the mixed vertex to an endpoint or residual model, identify the compact Berger sector with the distinct generic axial background, supply localized retarded apparatus, establish higher mixed q3 brackets or all-orders continuation, certify Lorentzian causal perturbation theory, restore a quantum master equation, or make a quantum claim.",
   "claim_status": "CERTIFIED_COMPLETE_SUPPORT_LOCAL_64_ROW_CLASSICAL_GRAVITY_MAXWELL_Q2_K_EQUIVARIANT",
@@ -24,14 +28,14 @@
     "Taylor_convention": "suspended-graded-symmetric-factorial-v1",
     "base_term_count": 150305,
     "combined_nonzero_rows": 49,
-    "combined_term_count": 152259,
+    "combined_term_count": 152195,
     "maximum_total_jet_order": 6,
     "overlay_composition_fail_closed": true,
     "overlay_maximum_total_jet_order": 3,
-    "overlay_nonzero_rows": 25,
-    "overlay_term_count": 1954,
-    "payload_canonical_sha256": "566945f137c0e94b1a460084b4b09af227616dfa44948ac61db361ab52b4e65e",
-    "payload_file_sha256": "e9bc32b4bdc59f11292164b0754950b17e4f6f5cdaff196a8a29fdd65bf995f5",
+    "overlay_nonzero_rows": 23,
+    "overlay_term_count": 1890,
+    "payload_canonical_sha256": "a70324a1b1f2847f9b26cdfc73fe976268fa7bcdd4b23b57fbb7540a8dff46c8",
+    "payload_file_sha256": "953c70661220cc1de27ab25cdb80d9ae479f85ff0cd52483fa00a3b93e4c7501",
     "payload_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
     "support_local": true,
     "total_rows": 64
@@ -80,7 +84,7 @@
     "coefficient_field": "Q(sqrt(10))",
     "generator_semantics_imported_not_reconstructed": true,
     "gravity_base_reused_not_reconstructed": true,
-    "method": "exact arbitrary-jet Maxwell field strength, stress polarization, formal-adjoint cyclic completion, clock canonical transport, and gauge coadjoint completion",
+    "method": "exact arbitrary-jet Maxwell field strength, stress polarization, clock canonical transport, common factor-two Maxwell-output normalization, and the BV-canonical cotangent lift of the local covariant-ghost shear c_M -> c_M-2 i_c A",
     "not_fitted_to_modes": true,
     "source": "S_gravity_clock plus S_Maxwell=-1/2 integral(F wedge star_g_hat F) and its Diff-semidirect-U(1) BV master terms",
     "support_category": "arbitrary compactly supported smooth four-dimensional jets in the left-invariant Berger PBW frame"
@@ -169,7 +173,7 @@
     "mixed_Maxwell_equation_term_count": 1248,
     "physical_regressions": {
       "canonical_Maxwell_Euler_sign_recovered": true,
-      "canonical_three_form_e023_source": "-564428800*cos(2*sqrt(10)*t/3)/35920017",
+      "canonical_three_form_e023_source": "-1128857600*cos(2*sqrt(10)*t/3)/35920017",
       "metric_factor_two_recovered": true,
       "standing_metric_source": [
         "160/9",
@@ -185,7 +189,7 @@
       ],
       "standing_mixed_Aplus_component_source": [
         "0",
-        "564428800*cos(2*sqrt(10)*t/3)/35920017",
+        "1128857600*cos(2*sqrt(10)*t/3)/35920017",
         "0",
         "0"
       ]
@@ -275,12 +279,12 @@
   "next_gate": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
   "provenance": {
     "source_manifest": {
-      "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2.py": "404786bba62f7b44935d3e66680b6c90a880cc1fef4839d78765d56eba547aa2",
-      "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2_export.py": "2628a817deddeda5f29b88e39319674b023b78ca0bf5f795c97fcf360c71785d",
-      "d_quotient_classical/backreacted_clock/tests/test_berger_support_local_coupled_maxwell_q2.py": "eed70239c69142f4396e5e67a665ebf993a5a86a602b2d9b8737ae522e9aec8d",
-      "d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q2.py": "661a59674483d87d44348fa522d6e69fdc63fba290f0d5fc175118c1e20872ab",
+      "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2.py": "14df496364cb8c2124b82403bce274dda389878cd27e76f7e298f7a9c759e9e3",
+      "d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q2_export.py": "51a27e7ce603cf411733156c82d241559fab0e9eca8a4ef6d9961b0bc5d0a43c",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_support_local_coupled_maxwell_q2.py": "9c6b15cd26dcc5867a101ec0ab354013f4f1f265411dbf2a4250369e0bb325a6",
+      "d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q2.py": "6dea4081a4053369874e911c1e46fed4dfbe011733b85c75629d9ea7f2afdcdb",
       "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-payload-v1.schema.json": "81e51cce98d5675b229914d8285e36ead2a9f2e610c74ea1c82bb3901ae290e4",
-      "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-v1.schema.json": "31649368dfd1df91b8879e4896e19f0b4a2b545b7e539630da812a909aafba2d"
+      "d_quotient_classical/schema/berger-support-local-coupled-maxwell-q2-v1.schema.json": "efb98a22c581dd73f04d5ff7f22c1bf341e9edd07e237fe060f77782e04ae6e9"
     }
   },
   "reduced_mode_regression_scope": "The traveling, balanced-standing, and frequency-shift fixtures are regressions of this arbitrary-support export, not the basis from which its coefficients were fitted.",

@@ -288,8 +288,13 @@ def _maxwell_covector_gauge_action(component: int) -> BilinearOperator:
 
 
 @lru_cache(maxsize=1)
-def build_maxwell_q2_overlay() -> tuple[BilinearOperator, ...]:
-    """Return all Maxwell additions as a sparse 64-row q2 overlay."""
+def _baseline_maxwell_q2_overlay() -> tuple[BilinearOperator, ...]:
+    """Return the pre-audit Maxwell overlay.
+
+    This is retained as the action-expansion input to the canonical repair.
+    It obeys the arity-two identity, but its old output normalization is not
+    cyclic for the exported odd pairing.
+    """
 
     outputs = [BZERO for _ in range(TOTAL_ROWS)]
     for equation, operator in enumerate(maxwell_dressed_physical_source_rows()):
@@ -338,6 +343,87 @@ def build_maxwell_q2_overlay() -> tuple[BilinearOperator, ...]:
         if operator != operator.koszul_swapped(COMBINED_PARITIES):
             raise AssertionError(f"Maxwell q2 overlay lost Koszul symmetry on row {output}")
     return result
+
+
+@lru_cache(maxsize=1)
+def maxwell_covariant_ghost_shear() -> tuple[BilinearOperator, ...]:
+    """Quadratic BV-canonical cotangent lift of ``c_M-2 i_c A``.
+
+    The three displayed components are the field map and its two cotangent
+    partners.  Their relative signs are fixed by the odd Darboux pairing;
+    no cyclicity coefficient is fitted independently.
+    """
+
+    outputs = [BZERO for _ in range(TOTAL_ROWS)]
+    for component in range(4):
+        ghost = FRAME_TO_GHOST[component]
+        outputs[CM] = outputs[CM] + _graded_complete(
+            BilinearOperator.from_terms(
+                ((ghost, (), A_ROWS[component], (), -sp.Integer(2)),)
+            )
+        )
+        outputs[APLUS_ROWS[component]] = outputs[APLUS_ROWS[component]] + _graded_complete(
+            BilinearOperator.from_terms(
+                ((ghost, (), CMPLUS, (), sp.Integer(2)),)
+            )
+        )
+        outputs[GHOST_DUAL_ROWS[ghost]] = outputs[GHOST_DUAL_ROWS[ghost]] + _graded_complete(
+            BilinearOperator.from_terms(
+                ((A_ROWS[component], (), CMPLUS, (), -sp.Integer(2)),)
+            )
+        )
+    result = tuple(_fixture_bilinear(operator) for operator in outputs)
+    for output, operator in enumerate(result):
+        if operator != operator.koszul_swapped(COMBINED_PARITIES):
+            raise AssertionError(f"Maxwell ghost shear lost Koszul symmetry on row {output}")
+    return result
+
+
+def _degree_zero_shear_coboundary_row(target: int) -> BilinearOperator:
+    """Return ``[q1,F2]`` for the degree-zero covariant-ghost shear."""
+
+    q1 = build_coupled_q1_fixture()
+    shear = maxwell_covariant_ghost_shear()
+    defect = BZERO
+    for middle, outer in enumerate(q1[target]):
+        if outer.terms and shear[middle].terms:
+            defect = defect + _apply_output_linear(outer, shear[middle])
+    if shear[target].terms:
+        defect = defect - _precompose_bilinear_slot(
+            shear[target], q1, slot=0, parities=COMBINED_PARITIES
+        )
+        defect = defect - _precompose_bilinear_slot(
+            shear[target],
+            q1,
+            slot=1,
+            parities=COMBINED_PARITIES,
+            second_slot_q1_sign=True,
+        )
+    return _fixture_bilinear(defect)
+
+
+@lru_cache(maxsize=1)
+def build_maxwell_q2_overlay() -> tuple[BilinearOperator, ...]:
+    """Return the cyclic, chain-compatible 64-row Maxwell overlay.
+
+    First put every Maxwell-output Taylor component in the common factor-two
+    normalization.  Then apply the degree-zero BV-canonical covariant-ghost
+    shear.  Its coboundary preserves ``[q1,q2]=0`` identically and supplies
+    the ghost-density completion missed by the pre-audit presentation.
+    """
+
+    baseline = _baseline_maxwell_q2_overlay()
+    repaired = tuple(
+        _fixture_bilinear(
+            operator.scale(2 if output >= CM else 1)
+            + _degree_zero_shear_coboundary_row(output)
+        )
+        for output, operator in enumerate(baseline)
+    )
+    for output, operator in enumerate(repaired):
+        if operator != operator.koszul_swapped(COMBINED_PARITIES):
+            raise AssertionError(f"repaired Maxwell q2 lost Koszul symmetry on row {output}")
+    return repaired
 
 
 def arity_two_overlay_defect_row(target: int) -> BilinearOperator:
@@ -395,13 +481,14 @@ def physical_regressions() -> dict[str, object]:
         12: -sp.Rational(76705280, 4582389),
         14: -sp.Rational(14080, 1953),
     }
+    repaired = build_maxwell_q2_overlay()
     metric_source = [
-        sp.factor(evaluate_bilinear(operator, standing, standing, time))
-        for operator in maxwell_metric_source_rows()
+        sp.factor(evaluate_bilinear(repaired[27 + index], standing, standing, time))
+        for index in range(10)
     ]
     mixed_source = [
-        sp.factor(evaluate_bilinear(operator, metric_values, standing, time))
-        for operator in maxwell_equation_mixed_rows()
+        sp.factor(evaluate_bilinear(repaired[APLUS_ROWS[index]], metric_values, standing, time))
+        for index in range(4)
     ]
     expected_metric = [
         sp.Rational(160, 9), 0, 0, 0, -sp.Rational(160, 9),
@@ -409,7 +496,7 @@ def physical_regressions() -> dict[str, object]:
     ]
     expected_mixed = [
         0,
-        sp.Rational(564428800, 35920017) * sp.cos(beta * time),
+        sp.Rational(1128857600, 35920017) * sp.cos(beta * time),
         0,
         0,
     ]
@@ -420,7 +507,7 @@ def physical_regressions() -> dict[str, object]:
     return {
         "standing_metric_source": [str(value) for value in metric_source],
         "standing_mixed_Aplus_component_source": [str(value) for value in mixed_source],
-        "canonical_three_form_e023_source": "-564428800*cos(2*sqrt(10)*t/3)/35920017",
+        "canonical_three_form_e023_source": "-1128857600*cos(2*sqrt(10)*t/3)/35920017",
         "metric_factor_two_recovered": True,
         "canonical_Maxwell_Euler_sign_recovered": True,
     }

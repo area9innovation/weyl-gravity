@@ -95,10 +95,20 @@ transferred (q_2) by two preserves ([q_1,q_2]=0) and removes the first 938
 defects.  Pairing-sign changes do not help, while the tested scaling that also
 removes the last 15 creates 108 chain defects and is rejected.
 
-The only authorized next interaction calculation is therefore a
-support-local completion of those 15 ghost-density coefficients that keeps
-([q_1,q_2]=0).  Mixed (q_3), gravitational dressing, and the nonlinear
-observer vertex remain blocked until both identities replay coefficientwise.
+That completion is now constructed.  It is the common factor-two
+Maxwell-output normalization followed by the \(q_1\)-coboundary of the local
+BV-canonical cotangent lift of
+
+\[
+c_M\longmapsto c_M-2\,\iota_cA.
+\]
+
+The shear has 24 generator coefficients and a 160-coefficient full
+coboundary (120 after retention).  The repaired tensors contain 1,890 full
+and 1,474 retained PBW coefficients, with both \([q_1,q_2]=0\) and cyclicity
+replaying exactly in the independent exact backend.  Mixed \(q_3\) and the
+nonlinear observer vertex remain blocked only until the quantum acceptance
+rail pins the committed repair hashes.
 
 The authoritative 54-row support-local classical Taylor data are now complete
 through arity three at the frozen rational Berger fixture.  The certificate

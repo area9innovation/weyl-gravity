@@ -14,7 +14,7 @@
     "schema": {"const": "pure-weyl-berger-maxwell-unary-contraction-transfer-v1"},
     "result_id": {"const": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX"},
     "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
-    "claim_status": {"const": "CERTIFIED_MAXWELL_CAUSAL_UNARY_AND_Q1Q2_TRANSFER_WITH_CYCLICITY_BLOCKED"},
+    "claim_status": {"const": "CERTIFIED_MAXWELL_CAUSAL_UNARY_AND_CYCLIC_Q1Q2_TRANSFER"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
     "dependency_refs": {
       "type": "object", "additionalProperties": false,
@@ -60,26 +60,27 @@
     },
     "first_transferred_mixed_vertex": {
       "type": "object", "additionalProperties": false,
-      "required": ["payload_path", "payload_file_sha256", "payload_canonical_sha256", "formula", "term_count", "mixed_gravity_Maxwell_input_term_count", "pure_Maxwell_input_term_count", "nonzero_output_rows", "maximum_total_jet_order", "arity_two_defect_term_counts", "cyclicity_status", "full_64_cyclicity_defect_count", "retained_36_cyclicity_defect_count", "retained_36_first_normalized_witness"],
+      "required": ["payload_path", "payload_file_sha256", "payload_canonical_sha256", "formula", "term_count", "mixed_gravity_Maxwell_input_term_count", "pure_Maxwell_input_term_count", "nonzero_output_rows", "maximum_total_jet_order", "arity_two_defect_term_counts", "cyclicity_status", "full_64_cyclicity_defect_count", "retained_36_cyclicity_defect_count", "repair_formula", "historical_obstruction_dependency"],
       "properties": {
         "payload_path": {"const": "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json"},
         "payload_file_sha256": {"$ref": "#/$defs/sha256"}, "payload_canonical_sha256": {"$ref": "#/$defs/sha256"},
         "formula": {"const": "ell2_mixed=pi64 q2_Maxwell-overlay(iota36,iota36)"},
-        "term_count": {"const": 1522},
+        "term_count": {"const": 1474},
         "mixed_gravity_Maxwell_input_term_count": {"type": "integer", "minimum": 1},
         "pure_Maxwell_input_term_count": {"type": "integer", "minimum": 1},
         "nonzero_output_rows": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0, "maximum": 35}},
         "maximum_total_jet_order": {"const": 2},
         "arity_two_defect_term_counts": {"type": "array", "minItems": 36, "maxItems": 36, "items": {"const": 0}},
-        "cyclicity_status": {"const": "FAILED_INDEPENDENT_COEFFICIENTWISE_REPLAY"},
-        "full_64_cyclicity_defect_count": {"const": 1234},
-        "retained_36_cyclicity_defect_count": {"const": 953},
-        "retained_36_first_normalized_witness": {"const": [0, 26, 35, [], [1], {"rational": 3, "sqrt10": 0}]}
+        "cyclicity_status": {"const": "REPAIRED_PENDING_EXTERNAL_COMMIT_PIN_REPLAY"},
+        "full_64_cyclicity_defect_count": {"const": 0},
+        "retained_36_cyclicity_defect_count": {"const": 0},
+        "repair_formula": {"type": "string", "minLength": 100},
+        "historical_obstruction_dependency": {"const": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY"}
       }
     },
     "exact_checks": {"$ref": "#/$defs/exact_checks"},
     "flags": {"$ref": "#/$defs/flags"},
-    "next_gate": {"const": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS"},
+    "next_gate": {"const": "INDEPENDENT_QUANTUM_ACCEPTANCE_THEN_MIXED_Q3"},
     "claim_boundary": {"type": "string", "minLength": 1}
   },
   "$defs": {
@@ -110,14 +111,14 @@
     },
     "exact_checks": {
       "type": "object", "additionalProperties": false,
-      "required": ["Maxwell_q1_squared_zero", "Maxwell_witness_identity_exact", "Maxwell_wave_scalar_principal_symbol_all_10_rows", "Maxwell_q_commutes_with_wave", "Maxwell_complementary_degree_formal_adjointness", "Maxwell_advanced_retarded_Green_homotopies", "combined_pi_iota_identity", "combined_iota_and_pi_chain_maps", "combined_64_to_36_contraction_identity", "combined_64_row_advanced_retarded_chain_homotopies", "transferred_q2_arity_two_identity_all_36_rows", "transferred_q2_cyclicity_obstruction_imported", "first_mixed_vertex_nonzero"],
+      "required": ["Maxwell_q1_squared_zero", "Maxwell_witness_identity_exact", "Maxwell_wave_scalar_principal_symbol_all_10_rows", "Maxwell_q_commutes_with_wave", "Maxwell_complementary_degree_formal_adjointness", "Maxwell_advanced_retarded_Green_homotopies", "combined_pi_iota_identity", "combined_iota_and_pi_chain_maps", "combined_64_to_36_contraction_identity", "combined_64_row_advanced_retarded_chain_homotopies", "transferred_q2_arity_two_identity_all_36_rows", "transferred_q2_cyclicity_repaired", "first_mixed_vertex_nonzero"],
       "properties": {
         "Maxwell_q1_squared_zero": {"const": true}, "Maxwell_witness_identity_exact": {"const": true},
         "Maxwell_wave_scalar_principal_symbol_all_10_rows": {"const": true}, "Maxwell_q_commutes_with_wave": {"const": true},
         "Maxwell_complementary_degree_formal_adjointness": {"const": true}, "Maxwell_advanced_retarded_Green_homotopies": {"const": true},
         "combined_pi_iota_identity": {"const": true}, "combined_iota_and_pi_chain_maps": {"const": true},
         "combined_64_to_36_contraction_identity": {"const": true}, "combined_64_row_advanced_retarded_chain_homotopies": {"const": true},
-        "transferred_q2_arity_two_identity_all_36_rows": {"const": true}, "transferred_q2_cyclicity_obstruction_imported": {"const": true},
+        "transferred_q2_arity_two_identity_all_36_rows": {"const": true}, "transferred_q2_cyclicity_repaired": {"const": true},
         "first_mixed_vertex_nonzero": {"const": true}
       }
     },
@@ -127,7 +128,7 @@
       "properties": {
         "BERGER_MAXWELL_UNARY_CONTRACTION": {"const": true}, "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY": {"const": true},
         "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY": {"const": true}, "BERGER_FIRST_MIXED_Q2_COEFFICIENT_TRANSFER": {"const": true},
-        "BERGER_MIXED_Q2_CYCLICITY": {"const": false}, "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": {"const": false},
+        "BERGER_MIXED_Q2_CYCLICITY": {"const": true}, "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": {"const": true},
         "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": {"const": false}, "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": {"const": false},
         "BERGER_MAXWELL_BACKREACTION": {"const": false}, "BERGER_G1_COMPLETE_SIGNAL_SECTOR": {"const": false},
         "BERGER_HADAMARD_DATA": {"const": false}, "QUANTUM_CLAIM": {"const": false}

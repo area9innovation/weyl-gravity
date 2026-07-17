@@ -43,10 +43,10 @@
         "payload_file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "total_rows": {"const": 64},
         "base_term_count": {"const": 150305},
-        "overlay_term_count": {"const": 1954},
-        "combined_term_count": {"const": 152259},
+        "overlay_term_count": {"const": 1890},
+        "combined_term_count": {"const": 152195},
         "combined_nonzero_rows": {"const": 49},
-        "overlay_nonzero_rows": {"const": 25},
+        "overlay_nonzero_rows": {"const": 23},
         "maximum_total_jet_order": {"const": 6},
         "overlay_maximum_total_jet_order": {"const": 3},
         "payload_canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
@@ -57,13 +57,17 @@
     },
     "canonical_completion": {
       "type": "object", "additionalProperties": false,
-      "required": ["physical_blocks", "gauge_blocks", "Weyl_Maxwell_blocks", "gravity_ghost_antifield_repository_multiplier", "Maxwell_Euler_three_form_sign"],
+      "required": ["physical_blocks", "gauge_blocks", "Weyl_Maxwell_blocks", "gravity_ghost_antifield_repository_multiplier", "Maxwell_Euler_three_form_sign", "normalization_repair", "covariant_ghost_shear", "shear_generator_term_count", "shear_coboundary_term_count"],
       "properties": {
         "physical_blocks": {"type": "array", "minItems": 4, "maxItems": 4},
         "gauge_blocks": {"type": "array", "minItems": 6, "maxItems": 6},
         "Weyl_Maxwell_blocks": {"const": "zero identically in four dimensions"},
         "gravity_ghost_antifield_repository_multiplier": {"const": 2},
-        "Maxwell_Euler_three_form_sign": {"const": "E_A=-d star_g_hat dA"}
+        "Maxwell_Euler_three_form_sign": {"const": "E_A=-d star_g_hat dA"},
+        "normalization_repair": {"const": "multiply every Maxwell-output q2 component by two"},
+        "covariant_ghost_shear": {"const": "c_M -> c_M-2 i_c A with BV-canonical cotangent lift"},
+        "shear_generator_term_count": {"const": 24},
+        "shear_coboundary_term_count": {"const": 160}
       }
     },
     "frozen_K_action_Maxwell_rows": {

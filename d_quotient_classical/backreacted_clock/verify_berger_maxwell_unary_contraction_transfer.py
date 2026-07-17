@@ -181,25 +181,24 @@ def _replay_transfer(certificate: dict, payload: dict) -> None:
         1 for operator in replay for left, _, right, _, _ in operator.terms
         if (left < 26) != (right < 26)
     )
-    if terms != 1522 or mixed != certificate["first_transferred_mixed_vertex"]["mixed_gravity_Maxwell_input_term_count"]:
+    if terms != 1474 or mixed != certificate["first_transferred_mixed_vertex"]["mixed_gravity_Maxwell_input_term_count"]:
         raise AssertionError("independent transferred term ledger failed")
 
 
-def _audit_cyclicity_obstruction(certificate: dict) -> None:
+def _audit_cyclicity_repair_boundary(certificate: dict) -> None:
     dependency = certificate["dependency_refs"]["independent_cyclicity_audit"]
     audit = json.loads((ROOT / dependency["path"]).read_text())
-    obstruction = audit["cyclicity_obstruction"]
     transfer = certificate["first_transferred_mixed_vertex"]
-    if transfer["full_64_cyclicity_defect_count"] != obstruction["full_64_defect_coefficient_count"]:
-        raise AssertionError("full cyclicity obstruction count drifted")
-    if transfer["retained_36_cyclicity_defect_count"] != obstruction["retained_36_defect_coefficient_count"]:
-        raise AssertionError("retained cyclicity obstruction count drifted")
-    if transfer["retained_36_first_normalized_witness"] != obstruction["retained_36_first_normalized_witness"]:
-        raise AssertionError("retained cyclicity witness drifted")
-    if certificate["flags"]["BERGER_MIXED_Q2_CYCLICITY"] is not False:
-        raise AssertionError("failed cyclicity was promoted")
-    if certificate["flags"]["BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING"] is not False:
-        raise AssertionError("blocked mixed dressing was promoted")
+    if audit["claim_flags"]["EXACT_CYCLICITY_OBSTRUCTION_WITNESS"] is not True:
+        raise AssertionError("historical obstruction dependency is unavailable")
+    if transfer["historical_obstruction_dependency"] != audit["result_id"]:
+        raise AssertionError("historical obstruction identity drifted")
+    if transfer["full_64_cyclicity_defect_count"] or transfer["retained_36_cyclicity_defect_count"]:
+        raise AssertionError("repaired cyclicity count is nonzero")
+    if certificate["flags"]["BERGER_MIXED_Q2_CYCLICITY"] is not True:
+        raise AssertionError("repaired cyclicity was not promoted classically")
+    if certificate["flags"]["BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING"] is not True:
+        raise AssertionError("repaired mixed dressing was not promoted classically")
 
 
 def main() -> int:
@@ -219,7 +218,7 @@ def main() -> int:
             raise AssertionError(f"dependency hash mismatch: {dependency['path']}")
     _audit_witness(certificate)
     _replay_transfer(certificate, payload)
-    _audit_cyclicity_obstruction(certificate)
+    _audit_cyclicity_repair_boundary(certificate)
     print("BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX independent replay: PASS")
     return 0
 
