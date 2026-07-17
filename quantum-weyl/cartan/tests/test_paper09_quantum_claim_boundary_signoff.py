@@ -54,6 +54,15 @@ class Paper09QuantumClaimBoundarySignoffTests(unittest.TestCase):
             tuple(VERIFY.COMMISSION_FALSE_PATHS),
         )
 
+    def test_semantic_guard_rejects_promotions_without_schema_assistance(self) -> None:
+        cert = json.loads(VERIFY.CERT.read_text())
+        loaded = VERIFY._load_sources(cert)
+        for path in VERIFY.COMMISSION_FALSE_PATHS.values():
+            mutant = json.loads(json.dumps(cert))
+            VERIFY._set_at(mutant, path, True)
+            with self.subTest(path=path), self.assertRaises(AssertionError):
+                VERIFY._assert_semantics(mutant, loaded)
+
 
 if __name__ == "__main__":
     unittest.main()

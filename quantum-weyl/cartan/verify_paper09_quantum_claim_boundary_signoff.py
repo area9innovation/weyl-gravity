@@ -166,21 +166,37 @@ def _verify_source_hashes(cert: dict[str, object]) -> None:
 def run_mutation_guards(
     cert: dict[str, object], schema: dict[str, object], loaded: dict[str, object]
 ) -> tuple[str, ...]:
-    """Prove that every commissioned forbidden promotion is rejected."""
+    """Prove each forbidden promotion fails schema and semantics separately."""
 
     rejected: list[str] = []
     for name, path in COMMISSION_FALSE_PATHS.items():
         mutant = deepcopy(cert)
         _set_at(mutant, path, True)
+
+        schema_rejected = False
         try:
             jsonschema.validate(
                 mutant, schema, cls=jsonschema.Draft202012Validator
             )
+        except jsonschema.ValidationError:
+            schema_rejected = True
+
+        semantics_rejected = False
+        try:
             _assert_semantics(mutant, loaded)
-        except (AssertionError, jsonschema.ValidationError):
-            rejected.append(name)
-        else:
-            raise AssertionError(f"forbidden promotion mutation survived: {name}")
+        except AssertionError:
+            semantics_rejected = True
+
+        if not schema_rejected or not semantics_rejected:
+            missing = []
+            if not schema_rejected:
+                missing.append("schema")
+            if not semantics_rejected:
+                missing.append("semantics")
+            raise AssertionError(
+                f"forbidden promotion mutation survived {missing}: {name}"
+            )
+        rejected.append(name)
     return tuple(rejected)
 
 
