@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-paper09-quantum-claim-boundary-signoff-v1.schema.json",
+  "title": "Paper IX quantum claim-boundary signoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "claim_status",
+    "dependency_tags",
+    "review_role",
+    "claim_boundary",
+    "generator_resolution",
+    "approved_classical_scope",
+    "forbidden_promotions",
+    "quantum_lifecycle",
+    "independent_exact_checks",
+    "source_manifest",
+    "theorem_flags",
+    "next_gate",
+    "verification_receipt"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-paper09-quantum-claim-boundary-signoff-v1"},
+    "result_id": {"const": "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF"},
+    "claim_status": {"const": "SIGNED_OFF_CLASSICAL_K_ONLY_QUANTUM_BLOCKED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "LORENTZIAN-CAUSAL"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "review_role": {"const": "INDEPENDENT_QUANTUM_TEAM_INTERNAL_CLAIM_BOUNDARY_REVIEW"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "generator_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approved_generator", "raw_D_role", "raw_D_affine_zero_arity", "legacy_D_certificate_names"],
+      "properties": {
+        "approved_generator": {"const": "K_Berger=D-omega R"},
+        "raw_D_role": {"const": "fixed-coupling momentum rigidity and linear presymplectic nullity only"},
+        "raw_D_affine_zero_arity": {"const": "NONZERO"},
+        "legacy_D_certificate_names": {"const": "INTERPRETED_AS_K_BERGER_BY_GENERATOR_AUDIT"}
+      }
+    },
+    "approved_classical_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_rows", "maximum_arity", "theorem", "support", "quantum_status"],
+      "properties": {
+        "all_rows": {"const": 54},
+        "maximum_arity": {"const": 3},
+        "theorem": {"const": "classical causal cyclic K_Berger-Cartan contraction"},
+        "support": {"type": "string", "minLength": 40},
+        "quantum_status": {"const": "NOT_PROMOTED"}
+      }
+    },
+    "forbidden_promotions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "affine_raw_D_Cartan",
+        "all_orders_K_Cartan",
+        "Hadamard_state",
+        "Lorentzian_QME",
+        "quantum_master_equation",
+        "anomaly_cancellation",
+        "residual_quantum_transfer",
+        "quantum_theorem"
+      ],
+      "properties": {
+        "affine_raw_D_Cartan": {"const": false},
+        "all_orders_K_Cartan": {"const": false},
+        "Hadamard_state": {"const": false},
+        "Lorentzian_QME": {"const": false},
+        "quantum_master_equation": {"const": false},
+        "anomaly_cancellation": {"const": false},
+        "residual_quantum_transfer": {"const": false},
+        "quantum_theorem": {"const": false}
+      }
+    },
+    "quantum_lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["CLASSIFIED", "COEFFICIENT_COMPUTED", "QME_RESTORED", "RESIDUAL_TRANSFERRED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "CLASSIFIED": {"const": "PARTIAL_INPUT_CLASSIFIED"},
+        "COEFFICIENT_COMPUTED": {"const": "NOT_REACHED_FOR_QUANTUM_CARTAN"},
+        "QME_RESTORED": {"const": "NOT_REACHED"},
+        "RESIDUAL_TRANSFERRED": {"const": "BLOCKED_PENDING_QME_RESTORED"},
+        "LORENTZIAN_CERTIFIED": {"const": "CLASSICAL_CAUSAL_INPUT_ONLY"}
+      }
+    },
+    "independent_exact_checks": {
+      "type": "object",
+      "minProperties": 20,
+      "additionalProperties": {"const": true}
+    },
+    "source_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_table",
+        "generator_audit",
+        "causal_green_54",
+        "causal_k_cartan_arity_two",
+        "causal_k_cartan_arity_three",
+        "quantum_cartan_boundary",
+        "quantum_causal_import",
+        "paper"
+      ],
+      "properties": {
+        "claim_table": {"$ref": "#/$defs/source"},
+        "generator_audit": {"$ref": "#/$defs/source"},
+        "causal_green_54": {"$ref": "#/$defs/source"},
+        "causal_k_cartan_arity_two": {"$ref": "#/$defs/source"},
+        "causal_k_cartan_arity_three": {"$ref": "#/$defs/source"},
+        "quantum_cartan_boundary": {"$ref": "#/$defs/source"},
+        "quantum_causal_import": {"$ref": "#/$defs/source"},
+        "paper": {"$ref": "#/$defs/source"}
+      }
+    },
+    "theorem_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PAPER09_CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_ACCEPTED",
+        "PAPER09_AFFINE_D_CARTAN_ACCEPTED",
+        "PAPER09_HADAMARD_ACCEPTED",
+        "PAPER09_QME_ACCEPTED",
+        "PAPER09_ANOMALY_CANCELLATION_ACCEPTED",
+        "PAPER09_QUANTUM_PROMOTION_ACCEPTED",
+        "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF"
+      ],
+      "properties": {
+        "PAPER09_CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_ACCEPTED": {"const": true},
+        "PAPER09_AFFINE_D_CARTAN_ACCEPTED": {"const": false},
+        "PAPER09_HADAMARD_ACCEPTED": {"const": false},
+        "PAPER09_QME_ACCEPTED": {"const": false},
+        "PAPER09_ANOMALY_CANCELLATION_ACCEPTED": {"const": false},
+        "PAPER09_QUANTUM_PROMOTION_ACCEPTED": {"const": false},
+        "PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF": {"const": true}
+      }
+    },
+    "next_gate": {"const": "NONLINEAR_TEAM_K_GENERATOR_SIGNOFF_THEN_CLEAN_TREE_REPLAY_BEFORE_THEOREM_FREEZE"},
+    "verification_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "commands"],
+      "properties": {
+        "tier_0": {"const": "PASS_PARSE_SCHEMA_AND_DIFF_CHECK"},
+        "tier_1": {"const": "PASS_PRODUCER_INDEPENDENT_VERIFIER_AND_UNIT_TEST"},
+        "tier_2": {"const": "NOT_REQUIRED_CONTENT_ADDRESSED_INPUTS_UNCHANGED"},
+        "tier_3": {"const": "DEFERRED_NO_THEOREM_OR_QUANTUM_LIFECYCLE_PROMOTION"},
+        "commands": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string", "minLength": 10}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
