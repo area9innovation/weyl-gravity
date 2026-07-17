@@ -1290,9 +1290,37 @@ the inverse-metric variations give `(-1,2,-1)` for `(00,01,11)`, while
 common `2 delta S` normalization.  Thus the four-dimensional harmonic
 variation derives the action weights `(-1,2,-1,2lambda)` independently.
 
-The remaining polar gates are the direct extra Lee--Wald current and
-extractors, the ungauged BV/Noether lift, and final residual survival.  The
-theorem-frozen axial Paper A does not depend on those extensions.
+`EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE` now closes the direct polar
+pairing gate.  The action-normalized Green current was matched entry by entry
+to independent four-dimensional Lee--Wald coordinate currents at
+`ell=2,3,4`; the proved degree-two spectral bound promotes the zero remainder
+to every physical `ell>=2`.  The direct rail deliberately isolates each
+left/right amplitude before sphere integration.  Applying the symbolic
+spherical normalizer to one unsplit amplitude polynomial is not a certified
+linear operation and produced a false intermediate mismatch, so that route is
+now explicitly excluded.
+
+Two polynomial `p`-shell representatives remain independent at every allowed
+compact momentum, including `k=0`.  Their direct positive-frequency
+Hermitian-current Gram determinant is
+
+```text
+9 lambda^2 (lambda-2) (9 lambda-2)
+  (3 k^2+3 lambda-2) (6 k^2+3 lambda-2)^2,
+```
+
+so the extra polar block is nonradical with inertia `(2,0)`.  Its mixed block
+with the complete Einstein `q`-primary image vanishes modulo `p` and `q`.
+Together with the Einstein inertia `(1,1)`, the complete generic polar target
+has pre-residual stationary-current inertia `(3,1)`, exactly matching the
+generic axial pattern.  The resulting coefficient extractors are conserved
+spectral functionals on the local-gauge-reduced shell, not yet residual or
+Peierls observables.
+
+The remaining polar gates are the ungauged BV/Noether lift and final residual
+survival.  The theorem-frozen axial Paper A does not depend on those
+extensions, and the new polar result makes no causal, particle, quantum-ghost,
+or nonlinear-closure claim.
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 `NOT APPLICABLE` rather than extrapolating.

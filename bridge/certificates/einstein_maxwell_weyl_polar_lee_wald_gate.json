@@ -1,0 +1,332 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE certificate matches the reduced polar action Green current to sparse direct four-dimensional Lee--Wald currents and classifies the local-gauge-reduced stationary shell pairing. It does not certify causal propagation, asymptotic scattering, a positive-frequency Hilbert space, quantum ghosts, nonlinear closure, or final residual observables.",
+  "classification": {
+    "Einstein_extra_orthogonality": true,
+    "Lorentzian_causal_claim": false,
+    "all_allowed_compact_momenta_including_zero": true,
+    "all_physical_ell_at_least_2": true,
+    "coefficient_extractors_constructed": true,
+    "complete_polar_target_inertia_3_1": true,
+    "direct_four_dimensional_Lee_Wald_match": true,
+    "extra_block_nonradical": true,
+    "extra_block_positive_frequency_inertia_2_0": true,
+    "final_residual_descent_certified": false,
+    "quantum_norm_or_ghost_theorem": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_Lee_Wald_match": {
+    "field_order": [
+      "A_t",
+      "B",
+      "C_t",
+      "U"
+    ],
+    "generic_action_current_per_scalar_harmonic_norm": [
+      [
+        "0",
+        "-I*k*(k**2 + lambda)/2",
+        "-I*(2*k**2 - lambda)*(omega_1 + omega_2)/8",
+        "0"
+      ],
+      [
+        "-I*k*(k**2 + lambda)/2",
+        "-I*(4*k**2 + 3*lambda)*(omega_1 + omega_2)/4",
+        "I*k*(lambda - omega_1**2 - omega_1*omega_2 - omega_2**2)/2",
+        "0"
+      ],
+      [
+        "-I*(2*k**2 - lambda)*(omega_1 + omega_2)/8",
+        "I*k*(lambda - omega_1**2 - omega_1*omega_2 - omega_2**2)/2",
+        "I*(omega_1 + omega_2)*(2*lambda - omega_1**2 - omega_2**2)/4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-I*lambda*(omega_1 + omega_2)"
+      ]
+    ],
+    "independent_frequency_convention": "first exp(i(k*x-omega_1*t)); second exp(-i(k*x-omega_2*t))",
+    "samples": [
+      {
+        "direct_minus_action_Green_remainder": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "ell": 2,
+        "entrywise_sparse_direct_matrix": [
+          [
+            "0",
+            "-2*I*pi*k*(k**2 + 6)/5",
+            "-I*pi*(k**2 - 3)*(omega_1 + omega_2)/5",
+            "0"
+          ],
+          [
+            "-2*I*pi*k*(k**2 + 6)/5",
+            "-2*I*pi*(2*k**2 + 9)*(omega_1 + omega_2)/5",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 6)/5",
+            "0"
+          ],
+          [
+            "-I*pi*(k**2 - 3)*(omega_1 + omega_2)/5",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 6)/5",
+            "-I*pi*(omega_1 + omega_2)*(omega_1**2 + omega_2**2 - 12)/5",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-24*I*pi*(omega_1 + omega_2)/5"
+          ]
+        ],
+        "lambda": 6,
+        "scalar_harmonic_norm": "4*pi/5"
+      },
+      {
+        "direct_minus_action_Green_remainder": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "ell": 3,
+        "entrywise_sparse_direct_matrix": [
+          [
+            "0",
+            "-2*I*pi*k*(k**2 + 12)/7",
+            "-I*pi*(k**2 - 6)*(omega_1 + omega_2)/7",
+            "0"
+          ],
+          [
+            "-2*I*pi*k*(k**2 + 12)/7",
+            "-4*I*pi*(k**2 + 9)*(omega_1 + omega_2)/7",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 12)/7",
+            "0"
+          ],
+          [
+            "-I*pi*(k**2 - 6)*(omega_1 + omega_2)/7",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 12)/7",
+            "-I*pi*(omega_1 + omega_2)*(omega_1**2 + omega_2**2 - 24)/7",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-48*I*pi*(omega_1 + omega_2)/7"
+          ]
+        ],
+        "lambda": 12,
+        "scalar_harmonic_norm": "4*pi/7"
+      },
+      {
+        "direct_minus_action_Green_remainder": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "ell": 4,
+        "entrywise_sparse_direct_matrix": [
+          [
+            "0",
+            "-2*I*pi*k*(k**2 + 20)/9",
+            "-I*pi*(k**2 - 10)*(omega_1 + omega_2)/9",
+            "0"
+          ],
+          [
+            "-2*I*pi*k*(k**2 + 20)/9",
+            "-4*I*pi*(k**2 + 15)*(omega_1 + omega_2)/9",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 20)/9",
+            "0"
+          ],
+          [
+            "-I*pi*(k**2 - 10)*(omega_1 + omega_2)/9",
+            "-2*I*pi*k*(omega_1**2 + omega_1*omega_2 + omega_2**2 - 20)/9",
+            "-I*pi*(omega_1 + omega_2)*(omega_1**2 + omega_2**2 - 40)/9",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-80*I*pi*(omega_1 + omega_2)/9"
+          ]
+        ],
+        "lambda": 20,
+        "scalar_harmonic_norm": "4*pi/9"
+      }
+    ],
+    "spectral_interpolation": {
+      "SO3_equivariance_removes_m_dependence": true,
+      "all_physical_ell_at_least_2_match": true,
+      "direct_natural_current_degree_in_lambda_at_most": 2,
+      "no_hidden_lambda_denominators_or_square_roots": true,
+      "sample_lambdas": [
+        6,
+        12,
+        20
+      ]
+    },
+    "unsafe_route_excluded": "Do not sphere-integrate one unsplit amplitude polynomial before bilinear coefficient extraction; every stored direct entry was computed as a separate sparse bilinear current."
+  },
+  "domain": "generic polar ell>=2 Weyl-Maxwell harmonic quotient at every allowed compact momentum, before the final residual quotient",
+  "generality_level": "G2_POLAR_ALL_PHYSICAL_ELL_K_DIRECT_CURRENT",
+  "interpretation": "The canonical polar p-primary quotient has a genuine nondegenerate direct Lee--Wald current before the final residual quotient. Its two positive-frequency extra directions are positive in the declared stationary current convention, are orthogonal to the Einstein q-primary image, and raise the complete polar inertia to (3,1). This is a classical compact mode statement, not a residual-survival, particle, norm, or ghost theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "lift the polar contraction to the ungauged BV/Noether complex and determine which Einstein and extra polar coefficients survive the final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_lee_wald_gate.py",
+    "generator_sha256": "2c1e142f55ca906ffb20384663fd6d92a5575be285171b059a9951feb85ce8df",
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20",
+      "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+  "result_state": "GENERIC_POLAR_DIRECT_LEE_WALD_EXTRA_BLOCK_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-polar-lee-wald-gate-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_lee_wald_gate.schema.json",
+  "schema_sha256": "ecb2b3d12938fb1188036944439406f4a3d95cd631d64c5b9fcbc60e5c438bd4",
+  "shell_pairing": {
+    "Einstein_block_inertia": [
+      1,
+      1
+    ],
+    "Einstein_extra_mixed_remainder_mod_p_q": [
+      "0",
+      "0"
+    ],
+    "Einstein_representative_order_At_B_Ct_U": [
+      "-2*(k**2*lambda - k**2*mu - lambda)",
+      "2*k*omega_E*(lambda - mu)",
+      "-2*(k**2*lambda - k**2*mu + lambda**2 - lambda*mu - lambda)",
+      "lambda"
+    ],
+    "basis_independence_minor_rows_B_U": "-3*omega_e*(6*k**2 + 3*lambda - 2)**2",
+    "coefficient_extractor": "a=G_X^{-1} Omega_WM(conjugate(e),Phi)/(-i*omega_e*L*N_ell_m)",
+    "complete_polar_target_inertia_before_residual_quotient": [
+      3,
+      1
+    ],
+    "extra_Gram_determinant": "9*lambda**2*(lambda - 2)*(9*lambda - 2)*(3*k**2 + 3*lambda - 2)*(6*k**2 + 3*lambda - 2)**2",
+    "extra_Hermitian_current_Gram": [
+      [
+        "18*lambda*(4*k**2 + lambda - 2)*(12*k**2 + 9*lambda - 2)",
+        "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)",
+        "lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/2"
+      ]
+    ],
+    "extra_basis_order_At_B_Ct_U": [
+      [
+        "4*(3*k**2 - 2)",
+        "-2*k*(3*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "0",
+        "omega_e*(6*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "-12*(k**2 + lambda)",
+        "-2*k*(3*k**2 + 3*lambda - 2)"
+      ],
+      [
+        "3*(6*k**2 + 3*lambda - 2)",
+        "0"
+      ]
+    ],
+    "extra_positive_frequency_inertia": [
+      2,
+      0
+    ],
+    "extractor_scope": "conserved stationary spectral coefficient on the local-gauge-reduced p-shell block; not yet a residual or Peierls observable",
+    "physical_positivity_factors": [
+      "lambda",
+      "lambda-2",
+      "9*lambda-2",
+      "3*k**2+3*lambda-2",
+      "6*k**2+3*lambda-2"
+    ],
+    "shells": {
+      "mu_definition": "mu=omega_E^2-k^2",
+      "p": "-k**2 - lambda + omega_e**2 + 2/3",
+      "q_in_mu": "-2*lambda*mu + lambda*(lambda - 2) + mu**2"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --verify bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --recompute-direct"
+  ]
+}

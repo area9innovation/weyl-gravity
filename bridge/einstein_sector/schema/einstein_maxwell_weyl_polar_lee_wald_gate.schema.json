@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-polar-lee-wald-gate-v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "generality_level",
+    "provenance",
+    "domain",
+    "direct_Lee_Wald_match",
+    "shell_pairing",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-polar-lee-wald-gate-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_lee_wald_gate.schema.json"},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE"},
+    "result_state": {"const": "GENERIC_POLAR_DIRECT_LEE_WALD_EXTRA_BLOCK_CERTIFIED"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "allOf": [
+        {"contains": {"const": "LOCAL-ALGEBRAIC"}},
+        {"contains": {"const": "REDUCED-MODE"}}
+      ]
+    },
+    "generality_level": {"const": "G2_POLAR_ALL_PHYSICAL_ELL_K_DIRECT_CURRENT"},
+    "provenance": {"type": "object"},
+    "domain": {"type": "string"},
+    "direct_Lee_Wald_match": {
+      "type": "object",
+      "required": ["field_order", "independent_frequency_convention", "generic_action_current_per_scalar_harmonic_norm", "samples", "spectral_interpolation", "unsafe_route_excluded"],
+      "properties": {
+        "samples": {"type": "array", "minItems": 3, "maxItems": 3},
+        "spectral_interpolation": {
+          "type": "object",
+          "required": ["all_physical_ell_at_least_2_match"],
+          "properties": {"all_physical_ell_at_least_2_match": {"const": true}}
+        }
+      }
+    },
+    "shell_pairing": {
+      "type": "object",
+      "required": ["shells", "extra_basis_order_At_B_Ct_U", "basis_independence_minor_rows_B_U", "extra_Hermitian_current_Gram", "extra_Gram_determinant", "physical_positivity_factors", "extra_positive_frequency_inertia", "Einstein_representative_order_At_B_Ct_U", "Einstein_extra_mixed_remainder_mod_p_q", "Einstein_block_inertia", "complete_polar_target_inertia_before_residual_quotient", "coefficient_extractor", "extractor_scope"],
+      "properties": {
+        "extra_positive_frequency_inertia": {"const": [2, 0]},
+        "Einstein_extra_mixed_remainder_mod_p_q": {"const": ["0", "0"]},
+        "Einstein_block_inertia": {"const": [1, 1]},
+        "complete_polar_target_inertia_before_residual_quotient": {"const": [3, 1]}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["direct_four_dimensional_Lee_Wald_match", "all_physical_ell_at_least_2", "all_allowed_compact_momenta_including_zero", "Einstein_extra_orthogonality", "extra_block_nonradical", "extra_block_positive_frequency_inertia_2_0", "complete_polar_target_inertia_3_1", "coefficient_extractors_constructed", "final_residual_descent_certified", "quantum_norm_or_ghost_theorem", "Lorentzian_causal_claim"],
+      "properties": {
+        "direct_four_dimensional_Lee_Wald_match": {"const": true},
+        "all_physical_ell_at_least_2": {"const": true},
+        "all_allowed_compact_momenta_including_zero": {"const": true},
+        "Einstein_extra_orthogonality": {"const": true},
+        "extra_block_nonradical": {"const": true},
+        "extra_block_positive_frequency_inertia_2_0": {"const": true},
+        "complete_polar_target_inertia_3_1": {"const": true},
+        "coefficient_extractors_constructed": {"const": true},
+        "final_residual_descent_certified": {"const": false},
+        "quantum_norm_or_ghost_theorem": {"const": false},
+        "Lorentzian_causal_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "verification_commands": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": false
+}
