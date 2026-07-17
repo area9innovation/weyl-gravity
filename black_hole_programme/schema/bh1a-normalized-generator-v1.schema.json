@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh1a-normalized-generator-v1",
+  "title": "BH-1A normalized generator, ensembles, entropy and first law",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "normalization",
+    "hamiltonian",
+    "wald_entropy",
+    "first_law",
+    "ensemble_audit",
+    "horizon_fixture",
+    "claim_flags",
+    "missing_objects",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh1a-normalized-generator-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh1a-normalized-generator-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH1A_NORMALIZED_GENERATOR" },
+    "result_token": {
+      "const": "BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR"
+    },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "PREFLIGHT" } }
+    },
+    "normalization": {
+      "type": "object",
+      "required": [
+        "N",
+        "why",
+        "frobenius",
+        "field_dependent_correction",
+        "closure",
+        "basicness",
+        "bare_control",
+        "orientation_caveat"
+      ],
+      "properties": {
+        "N": { "const": "u = beta*(2 - 3*beta*gamma)" },
+        "frobenius": { "const": "F ^ dF = 0 exactly" },
+        "closure": { "const": "d(u F) = 0 exactly on the full static family" }
+      }
+    },
+    "hamiltonian": {
+      "type": "object",
+      "required": [
+        "H",
+        "H_factored",
+        "D1",
+        "D2",
+        "discriminant_relation",
+        "basic_on_quotient",
+        "einstein_control_ensemble"
+      ],
+      "properties": {
+        "H_factored": { "const": "-16*pi*alpha*beta**2*D2" },
+        "D2": {
+          "const": "9*beta**2*gamma**2*k - beta*gamma**3 - 12*beta*gamma*k + gamma**2 + 4*k"
+        }
+      }
+    },
+    "wald_entropy": {
+      "type": "object",
+      "required": ["S", "construction", "schwarzschild_value"],
+      "properties": {
+        "S": {
+          "const": "64*pi**2*alpha*beta*(2 - 3*beta*gamma + gamma*r_h)/r_h"
+        }
+      }
+    },
+    "first_law": {
+      "type": "object",
+      "required": ["temperature", "statement", "multi_horizon_identity", "no_extra_terms"],
+      "properties": {
+        "temperature": { "const": "T = kappa_N/(2*pi) = u*B'(r_h)/(4*pi)" }
+      }
+    },
+    "ensemble_audit": {
+      "type": "object",
+      "required": [
+        "c_preservation",
+        "nonzero_c_locus",
+        "dilation_preservation",
+        "global_admissibility"
+      ]
+    },
+    "horizon_fixture": {
+      "type": "object",
+      "required": ["parameters", "u", "H", "horizons", "first_law_directional_test"],
+      "properties": {
+        "parameters": { "const": { "beta": "3/2", "gamma": "12/19", "k": "1/19" } },
+        "u": { "const": "-24/19" },
+        "horizons": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["r", "S", "T"]
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "frobenius_certified",
+        "normalized_form_closed_certified",
+        "normalized_form_basic_certified",
+        "hamiltonian_potential_certified",
+        "wald_entropy_certified",
+        "static_first_law_certified",
+        "ensemble_audit_certified",
+        "full_bh1_phase_space_certified",
+        "dynamical_perturbation_flux_certified",
+        "generator_unique_among_nonstatic_certified",
+        "stability_certified",
+        "quantum_or_hawking_certified"
+      ],
+      "properties": {
+        "frobenius_certified": { "const": true },
+        "normalized_form_closed_certified": { "const": true },
+        "normalized_form_basic_certified": { "const": true },
+        "hamiltonian_potential_certified": { "const": true },
+        "wald_entropy_certified": { "const": true },
+        "static_first_law_certified": { "const": true },
+        "ensemble_audit_certified": { "const": true },
+        "full_bh1_phase_space_certified": { "const": false },
+        "dynamical_perturbation_flux_certified": { "const": false },
+        "generator_unique_among_nonstatic_certified": { "const": false },
+        "stability_certified": { "const": false },
+        "quantum_or_hawking_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "bh0_certificate",
+        "bh0_certificate_sha256",
+        "bh1_certificate",
+        "bh1_certificate_sha256"
+      ],
+      "properties": {
+        "generator_path": {
+          "const": "black_hole_programme/bh1a_normalized_generator.py"
+        },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh0_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh1_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh1a_normalized_generator.py"
+    }
+  }
+}

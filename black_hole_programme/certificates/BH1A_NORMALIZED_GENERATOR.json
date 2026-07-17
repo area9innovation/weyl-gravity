@@ -1,0 +1,115 @@
+{
+  "claim_flags": {
+    "dynamical_perturbation_flux_certified": false,
+    "ensemble_audit_certified": true,
+    "frobenius_certified": true,
+    "full_bh1_phase_space_certified": false,
+    "generator_unique_among_nonstatic_certified": false,
+    "hamiltonian_potential_certified": true,
+    "normalized_form_basic_certified": true,
+    "normalized_form_closed_certified": true,
+    "quantum_or_hawking_certified": false,
+    "stability_certified": false,
+    "static_first_law_certified": true,
+    "wald_entropy_certified": true
+  },
+  "declaration": {
+    "background_family": "MK static spherical Bach vacuum (BH-0)",
+    "conformal_frame": "working gauge b = 1/a; no physical frame declared",
+    "generator": "normalized field-dependent chi = N d_t with N = u = beta*(2 - 3*beta*gamma), unique up to component sign (future-directedness) and f(J) reparametrization",
+    "horizon_condition": "any simple root of B; first law certified modulo B(r_h) = 0 at every root",
+    "infinity_condition": "fixed-falloff ensembles {gamma, k fixed} audited against the residual group",
+    "lifecycle": "PREFLIGHT",
+    "phase_space": "static parameter slice; variations d_beta, d_gamma, d_k only",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "ensemble_audit": {
+    "c_preservation": "the only residual c preserving a fixed-falloff ensemble {gamma, k fixed} is c = 0",
+    "dilation_preservation": "lambda = 1 unless gamma = k = 0; on the Schwarzschild sub-ensemble the dilation acts freely and consistently (H = 0, S constant)",
+    "global_admissibility": "the c-map factor Omega = 1/(1 + c*r) is smooth and positive on an exterior [r_h, r_out] iff 1 + c*r > 0 there, i.e. c > -1/r_out; on any fixed-falloff ensemble the residual directions are frozen anyway",
+    "nonzero_c_locus": "u*(w**2 - 3) = 0 with w = 1 - 3*beta*gamma; w**2 = 3 is never satisfied at rational parameters, u = 0 degenerates the normalization"
+  },
+  "first_law": {
+    "multi_horizon_identity": "T_i dS_i = dH for every horizon r_i simultaneously; verified exactly at the fixture roots 1, 3, 8",
+    "no_extra_terms": "no boundary source or pressure-volume term is needed on the static family in this normalization",
+    "statement": "dH - T dS = 0 identically modulo B(r_h) = 0, in all three parameter directions, at every simple root",
+    "temperature": "T = kappa_N/(2*pi) = u*B'(r_h)/(4*pi)"
+  },
+  "hamiltonian": {
+    "D1": "27*beta**2*k - 3*beta*gamma - 1",
+    "D2": "9*beta**2*gamma**2*k - beta*gamma**3 - 12*beta*gamma*k + gamma**2 + 4*k",
+    "H": "-144*pi*alpha*beta**4*gamma**2*k + 16*pi*alpha*beta**3*gamma**3 + 192*pi*alpha*beta**3*gamma*k - 16*pi*alpha*beta**2*gamma**2 - 64*pi*alpha*beta**2*k",
+    "H_factored": "-16*pi*alpha*beta**2*D2",
+    "basic_on_quotient": "dH ^ dJ = 0: H is functionally dependent on the single residual invariant J",
+    "discriminant_relation": "J = -u**2*D1*D2, so H vanishes exactly on the D2-branch of the degenerate-horizon locus",
+    "einstein_control_ensemble": "Schwarzschild-(A)dS slice gamma = 0: H = -64*pi*alpha*beta**2*k; one-boundary AdS control has k < 0"
+  },
+  "horizon_fixture": {
+    "H": "-14400*pi*alpha/6859",
+    "first_law_directional_test": "dH = T dS verified exactly at r = 1, 3, 8 in all three parameter directions",
+    "horizons": [
+      {
+        "S": "-384*pi**2*alpha/19",
+        "T": "84/(361*pi)",
+        "r": "1"
+      },
+      {
+        "S": "640*pi**2*alpha/19",
+        "T": "-20/(361*pi)",
+        "r": "3"
+      },
+      {
+        "S": "960*pi**2*alpha/19",
+        "T": "105/(1444*pi)",
+        "r": "8"
+      }
+    ],
+    "parameters": {
+      "beta": "3/2",
+      "gamma": "12/19",
+      "k": "1/19"
+    },
+    "u": "-24/19"
+  },
+  "missing_objects": [
+    "presymplectic form and charges for time-dependent perturbations (full BH-1)",
+    "uniqueness of the normalized generator among non-static candidates",
+    "physical matter/clock frame and its horizon regularity",
+    "Lorentzian causal exterior theorem (BH-2 gate)",
+    "any stability, ringdown, or quantum statement"
+  ],
+  "normalization": {
+    "N": "u = beta*(2 - 3*beta*gamma)",
+    "bare_control": "d F != 0 for N = 1 (bare form remains nonintegrable)",
+    "basicness": "iota and Lie derivative of u F vanish for both residual generators",
+    "closure": "d(u F) = 0 exactly on the full static family",
+    "field_dependent_correction": "for spacetime-constant N the Q_{delta chi} correction cancels the dN terms exactly, so the corrected charge form is N*F",
+    "frobenius": "F ^ dF = 0 exactly",
+    "orientation_caveat": "sign(u) = sign(2 - 3*beta*gamma); use N = -u on components with u < 0 for a future-directed generator (all charges flip sign)",
+    "why": "basicness: N must be c-invariant with dilation weight -1; the invariant ring forces N = u*f(J)"
+  },
+  "provenance": {
+    "bh0_certificate": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+    "bh0_certificate_sha256": "d08a76dd21b1c32270f6b8082c382e23561e7865c4454139fffc890ac14911e4",
+    "bh1_certificate": "black_hole_programme/certificates/BH1_LEE_WALD_PREFLIGHT.json",
+    "bh1_certificate_sha256": "74ff9ba44a51272472dcb2eaf50aab9759383af44ea115c6c5d11d11a08ec1f6",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh1a_normalized_generator.py"
+  },
+  "result_id": "PURE_WEYL_BH1A_NORMALIZED_GENERATOR",
+  "result_token": "BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR",
+  "schema": "pure-weyl-bh1a-normalized-generator-v1",
+  "schema_path": "black_hole_programme/schema/bh1a-normalized-generator-v1.schema.json",
+  "schema_sha256": "6cb3b51e5adfebb64e7f922cac6a1bfb8d49e0b086c5e8ecf961d42f7123aa4f",
+  "verification_command": "python3 black_hole_programme/verify_bh1a_normalized_generator.py",
+  "wald_entropy": {
+    "S": "64*pi**2*alpha*beta*(2 - 3*beta*gamma + gamma*r_h)/r_h",
+    "construction": "S = -2*pi Int E^{abcd} eps_ab eps_cd dA with E = 2*alpha*C^{abcd}, eps_tr = 1",
+    "schwarzschild_value": "64*pi**2*alpha, mass-independent, consistent with H = 0 on that ensemble"
+  }
+}
