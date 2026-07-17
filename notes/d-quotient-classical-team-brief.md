@@ -177,12 +177,14 @@ The separate extended apparatus unary audit is now exact. On the detector
 chart the three declared standard-sign rods have
 \(T^R_{\hat a\hat b}=\operatorname{diag}(3/2,-1/2,-1/2,-1/2)\). Because the
 probe preflight excluded this stress, the unchanged Berger background is off
-shell at nonzero rod coupling and cannot support an uncurved nilpotent 78-row
+shell at nonzero rod coupling and cannot support an uncurved nilpotent
 apparatus \(q_1\). `BERGER_EXTENDED_ROD_MEMORY_MAXWELL_UNARY_GATE` also proves
 the universal finite triangular retarded inverse for the memory--Maxwell
 Hessian. Completion now requires a backreacted rod background and explicit
 content-addressed detector profile operators; it is not blocked by the
-abstract memory Green algebra.
+abstract memory Green algebra.  The superseding implementation target is the
+observer team's independent 84-row unary/pairing/Green construction.  The
+classical team must not reconstruct or silently replace that 84-row export.
 
 The authoritative 54-row support-local classical Taylor data are now complete
 through arity three at the frozen rational Berger fixture.  The certificate
@@ -211,12 +213,55 @@ constructs a cyclic arity-three Cartan primitive and proves
 \]
 
 The primitive has two-sided causal-hull support; it is not claimed to be
-separately retarded or advanced.  The result closes the classical
-\(D\)-Cartan recurrence through arity three, not to all orders, and does not
+separately retarded or advanced.  Under the authoritative generator audit this
+closes the classical \(K_{\rm Berger}=D-\omega R\) Cartan recurrence through
+arity three, not raw affine \(D\) and not to all orders.  It does not
 promote a quantum, QME, anomaly-cancellation, or Hadamard claim.  Before a
 paper theorem is frozen, the current certificate, manifest, schemas, receipt,
 and independent verifier must be committed together and replayed from the
 recorded hashes.
+
+## Residual branch-projector handoff (2026-07-17; authoritative)
+
+The requested
+`BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V2` has been decided by the
+obstruction branch of its binary handoff.  The retained metric endpoint has
+the exact form
+
+\[
+A_{10}=\Box_2^2+V_2,\qquad \operatorname{ord}V_2\leq2,
+\]
+
+and all 92 nonzero entries of \(\sigma_2(V_2)\) fail divisibility by the
+canonical scalar-wave polynomial.  At the frozen Berger fixture the first
+normalized witness is
+
+\[
+\frac{71p_1^2+71p_2^2+9p_3^2}{80},
+\]
+
+with \((80/71)\) times its \(p_1^2\) coefficient equal to one.  Therefore the
+canonical rough-tensor-wave equation module is not an exact same-bundle factor
+of the Berger endpoint and cannot be the image of the requested support-local,
+\(q_1\)-intertwining complementary Einstein-like projector on the retained
+36-row carrier.  The exact certificate is
+`BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1`.
+
+This is scoped: it does not rule out a mixed-bundle Einstein-defect or
+curvature mapping cylinder, a higher-rank filtered carrier, or an explicitly
+nonlocal `REDUCED-MODE` splitting.  The exact symbol lower bound for a local
+enlargement is four BV rows (two real helicity-two directions and their cyclic
+duals); the smallest natural covariant candidate is an STF2 variable and its
+dual, adding ten rows to form a rank-46 carrier.  That candidate is not yet a
+certified projector.
+
+The category boundary is fixed.  Einstein-like and extra-Weyl are dynamical
+gravity branches; the odd topological direction remains in the separate
+deformation/vertex basis with its Euler--Lagrange and transgression witnesses.
+The quantum team must absorb the obstruction and must not compute a branch
+mixing table from a reduced-mode substitute.  Paper XI remains valid on the
+unsplit retained cyclic causal complex; its theorem does not depend on this
+projector verdict.
 
 ## Paper IX writing commission
 
@@ -911,7 +956,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | known target; re-audit charge | known target | proved baseline | zero in stated absolute residual complex | \(I_2\) on centered degree-four classes | proper solution sector |
-| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | complete 54-row causal cyclic \(K_{\rm Berger}\)-Cartan contraction through arity three; repaired coupled Maxwell \(q_2\) accepted and mixed \(q_3\) open | complete advanced/retarded 54-row chain contractions plus a compact neutral retarded Maxwell signal | no Paper-IX one-particle claim; the Maxwell signal is a classical sourced solution, not a cohomology class | pure gravity--clock pairing complete; repaired coupled Maxwell \(q_2\) is cyclic on full 64 and retained 36 rows | certified non-Einstein Weyl--matter control branch |
+| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | complete 54-row causal cyclic \(K_{\rm Berger}\)-Cartan contraction through arity three; repaired coupled Maxwell \(q_2\), mixed \(q_3\), retained transfer and coupled Cartan are exact | complete advanced/retarded 54-row chain contractions plus a compact neutral retarded Maxwell signal; independent 84-row observer construction open | no Paper-IX one-particle claim; the Maxwell signal is a classical sourced solution, not a cohomology class | gravity--clock and typed gravity--clock--Maxwell cyclic pairings complete on their declared carriers | certified non-Einstein Weyl--matter control branch; canonical support-local Einstein-like/extra-Weyl projector obstructed on retained 36 rows |
 | Cylinder + scalar clock | open | open | open | open | open | open |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |
@@ -920,29 +965,42 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 ## Priority and stop/go decisions
 
-1. Keep the Paper IX clean-tree replay as the sole deferred freeze gate; do
-   not reopen the already-certified \(q_2,q_3\), Green, or arity-three Cartan
-   calculations.
-2. Use the independently accepted repaired coupled Maxwell \(q_2\) as the
-   pinned input for the mixed \(q_3\) identity and cyclicity calculation. Keep
-   the historical 1,234/953 defect atlas as the negative control and do not
-   promote residual or quantum transfer from this classical acceptance.
-3. Resolve the exact apparatus unary obstruction by supplying a backreacted
-   gravity--clock--rod background with vanishing Euler rows and explicit local
-   detector operators \(B_a,B_a^*\). The current unit-Jacobian probe rods have
-   nonzero stress and cannot be adjoined to the unchanged Berger background as
-   an uncurved BV complex. Then import the already-prepared finite triangular
-   memory--Maxwell retarded formula and verify all 78 unary rows.
-4. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
+1. Treat the Paper IX clean-tree freeze and its classical/nonlinear/quantum
+   scoped signoffs as complete.  Do not reopen the certified \(q_2,q_3\),
+   Green, or arity-three \(K_{\rm Berger}\)-Cartan calculations.  Raw affine
+   \(D\), arity four, Hadamard and quantum gates remain outside that theorem.
+2. Treat the repaired coupled Maxwell \(q_2\), mixed \(q_3\), retained
+   \(\ell_3\), and coupled arity-three Cartan calculation as complete on their
+   declared full and retained carriers.  Preserve the historical 1,234/953
+   defect atlas as a negative control.
+3. The observer team owns the independent backreacted 84-row
+   unary/pairing/Green construction.  It must supply the on-shell rod
+   background and explicit local detector operators \(B_a,B_a^*\); the
+   classical team must not substitute the obsolete 78-row target or import
+   the memory--Maxwell inverse before the observer unary complex closes.
+4. The retained-36 branch-basis gate is closed by the normalized canonical
+   local-projector obstruction.  The quantum team must import that verdict and
+   keep the branch-space \(\ell_3\) mixing table false.  Paper XI proceeds on
+   the unsplit retained cyclic causal complex.
+5. **Next classical work package: C-G4.**  Construct one complete Berger
+   relational observable \(\mathcal O_A(\tau)\) and prove gauge invariance,
+   causal dependence, clock-chart domain, treatment of periodic crossings,
+   reduced brackets and nontrivial \(\tau\)-evolution.  Reconcile that
+   evolution explicitly with the fixed-coupling raw-\(D\) nullity theorem.
+6. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
    acceptance flags pass; until then the relative observable functor remains
    a preflight and must not reconstruct the Einstein map independently.
-5. Continue the deformation, Yang--Mills, and boundary-condition rails as
-   independent generality tests rather than prerequisites for the Berger gate.
+7. Open the rank-46 STF2 mapping-cylinder/projector investigation only as a
+   separate follow-up if branch-resolved mixing remains scientifically
+   necessary.  It is not a prerequisite for Paper XI or C-G4.
+8. Continue C-G1 abstraction and the deformation, Yang--Mills and boundary
+   rails as independent generality tests, not prerequisites for the Berger
+   relational-observable gate.
 
 The physical activation sequence and reassignment triggers are recorded in
-[`universe-building-roadmap.md`](universe-building-roadmap.md).  The classical
-team remains the authoritative \(q_2\) producer until `BERGER_Q2_EXPORTED`;
-after that trigger its next primary ownership is the clock/redshift rail.
+[`universe-building-roadmap.md`](universe-building-roadmap.md).  The
+`BERGER_Q2_EXPORTED` trigger has fired; the classical team's current primary
+ownership is therefore the C-G4 clock/relational-observable rail.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
