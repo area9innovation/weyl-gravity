@@ -1,0 +1,311 @@
+{
+  "branch_and_health": {
+    "Einstein_like_radiative_branch_coupled": false,
+    "Maxwell_energy_signature": [
+      2,
+      0,
+      0
+    ],
+    "extra_Weyl_radiative_branch_coupled": false,
+    "health_boundary": "an obstruction source is not a new propagating kinetic direction; no backreacted solution or response energy has been constructed",
+    "negative_physical_direction_introduced": false,
+    "reason": "the only nontrivial class in this weight-zero block is the homogeneous time-Hopf momentum/shift source, not a transverse radiative tensor; the diagonal metric response is q1 exact"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE result derives the normalized q2(A,A)-to-metric-antifield Maxwell stress source for the certified two-phase Berger light mode, applies the authoritative pi_cl projection, proves q1 closure, displays an exact primitive for the diagonal energy-pressure part, and gives a normalized dual witness for the nontrivial time-Hopf flux obstruction. It does not prove a full support-local obstruction, construct every coupled Maxwell BV row, establish Einstein/extra-Weyl radiative mixing, produce a backreacted solution, introduce a negative kinetic direction, certify Lorentzian causal perturbation theory, or make a quantum claim.",
+  "claim_status": "CERTIFIED_REDUCED_MODE_MAXWELL_STRESS_BRACKET_OBSTRUCTED_IN_HOPF_FLUX_CHANNEL",
+  "dependency_refs": {
+    "gravity_contraction": {
+      "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "maxwell_bv_preflight": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT.json",
+      "result_id": "BERGER_MAXWELL_BV_SEMIDIRECT_PREFLIGHT",
+      "sha256": "899fcd28329389c68c452921ed8cf7c447486ceb588ba13ac747627e30191ca8"
+    },
+    "maxwell_mode": {
+      "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+      "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+      "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996"
+    },
+    "retained_unary": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MINIMAL_OPERATOR.json",
+      "result_id": "BERGER_RETAINED_MINIMAL_OPERATOR",
+      "sha256": "296bd46e4d94320a6a5b227167d722da1793d1f81891dcf2e494f9b631dcdd77"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "BERGER_EINSTEIN_EXTRA_WEYL_BRANCH_MIXING": false,
+    "BERGER_FULL_RESIDUAL_GRAVITY_MAXWELL_BRACKET": false,
+    "BERGER_FULL_SUPPORT_LOCAL_MAXWELL_Q2": false,
+    "BERGER_HOPF_FLUX_OBSTRUCTION_WITNESS": true,
+    "BERGER_MAXWELL_BACKREACTED_SOLUTION": false,
+    "BERGER_MAXWELL_STRESS_PI_CL_PROJECTED": true,
+    "BERGER_MAXWELL_STRESS_Q2_PHYSICAL_BLOCK": true,
+    "BERGER_REDUCED_MODE_MAXWELL_BRACKET_OBSTRUCTED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "higher_tiers_not_run": {
+    "tier_2": "All imported operators are unchanged and content-addressed; this result adds one isolated physical-shape Maxwell source block.",
+    "tier_3": "This REDUCED-MODE obstruction does not freeze shared algebra, promote a full support-local theorem, or certify a Lorentzian theory."
+  },
+  "next_gate": "BERGER_MAXWELL_HOPF_FLUX_BALANCING_OR_FULL_SUPPORT_LOCAL_PRIMITIVE_VERDICT",
+  "normalization": {
+    "alpha_B_fixture": "5",
+    "canonical_symmetric_row_weight": "-(2-delta_ab) eta_aa eta_bb",
+    "gravity_metric_equation_before_extension": "alpha_B B_ab-T_clock_ab=0",
+    "maxwell_action": "S_M=-1/4 int sqrt(-g_hat) F_ab F^ab",
+    "mixed_extension": "alpha_B B_ab-T_clock_ab-T_Maxwell_ab=0",
+    "same_input_q2_formula": "q2(A,A)_(h_plus_ab)=2(2-delta_ab)T_Maxwell^ab[A]"
+  },
+  "physical_mode_block": {
+    "D_weight": "0",
+    "amplitude_formula": "q2(x A_c+y A_s,x A_c+y A_s)=(x^2+y^2) S_Maxwell",
+    "exact_data": {
+      "augmented_rank": 8,
+      "beta": "2*sqrt(10)/3",
+      "constant_hessian_rank": 7,
+      "diagonal_exact_primitive": [
+        "-5120/567",
+        "0",
+        "0",
+        "0",
+        "10880/651",
+        "0",
+        "0",
+        "10880/651",
+        "0",
+        "14080/1953"
+      ],
+      "diagonal_primitive_residual": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "dual_witness_image_residual": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "dual_witness_source_pairing": "1",
+      "full_metric_source": [
+        "80/9",
+        "0",
+        "0",
+        "-160/9",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "80/9"
+      ],
+      "nonzero_retained_rows": [
+        {
+          "coefficient": "80/9",
+          "row_id": "h_hat_star_00"
+        },
+        {
+          "coefficient": "-160/9",
+          "row_id": "h_hat_star_03"
+        },
+        {
+          "coefficient": "80/9",
+          "row_id": "h_hat_star_33"
+        }
+      ],
+      "normalized_dual_witness": [
+        "0",
+        "0",
+        "0",
+        "-9/160",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "phase_cross_stress": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "q1_closure_residual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "retained_metric_source": [
+        "80/9",
+        "0",
+        "0",
+        "-160/9",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "80/9"
+      ],
+      "stress_contravariant": [
+        [
+          "40/9",
+          "0",
+          "0",
+          "-40/9"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-40/9",
+          "0",
+          "0",
+          "40/9"
+        ]
+      ],
+      "stress_covariant": [
+        [
+          "40/9",
+          "0",
+          "0",
+          "40/9"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "40/9",
+          "0",
+          "0",
+          "40/9"
+        ]
+      ],
+      "stress_covariant_divergence": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "stress_trace": "0"
+    },
+    "field_content": [
+      "h_hat_star_00",
+      "h_hat_star_03",
+      "h_hat_star_33"
+    ],
+    "input_basis": [
+      "A_c",
+      "A_s"
+    ],
+    "stress_geometry": "stationary homogeneous tracefree null stress with future energy and Hopf flux along s=-e3"
+  },
+  "projection_and_verdict": {
+    "Hopf_flux_sector": "NONTRIVIAL_NORMALIZED_DUAL_WITNESS",
+    "binary_verdict": "OBSTRUCTION",
+    "diagonal_energy_pressure_sector": "EXACT_WITH_DISPLAYED_PRIMITIVE",
+    "obstruction_interpretation": "the stationary homogeneous gravity block cannot absorb the null Maxwell momentum flux without an additional momentum-balancing or nonhomogeneous sector",
+    "obstruction_row": "h_hat_star_03",
+    "projection": "pi_cl is the exact identity from full metric-antifield rows 27:37 to retained rows 13:23",
+    "q1_closed": true
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/backreacted_clock/berger_maxwell_stress_residual_projection.py": "1a5a1844d0de9baeed5d7089c1f8e3917e7be3dbd456365bce015eb281471428",
+      "d_quotient_classical/backreacted_clock/tests/test_berger_maxwell_stress_residual_projection.py": "e491325732452ce9e1946e51202f03d428f811049ca59fdf49d9e90d2830d3a7",
+      "d_quotient_classical/backreacted_clock/verify_berger_maxwell_stress_residual_projection.py": "a6755d82bdf0bd8c3aa055bd63de3333c104818089c724ec262ccd12e55926fc",
+      "d_quotient_classical/schema/berger-maxwell-stress-residual-projection-v1.schema.json": "1275df0dffa12bb4c79eacfefac2b8b28ff9d3b0caf05d712e1466d75d76851c"
+    }
+  },
+  "reduced_mode_limitation": "The verdict is exact only in the stationary SU(2)_L x U(1)_R homogeneous constant-component, D-weight-zero metric source block at a=1, c^2=9/40, rho=1, omega=3/4, alpha_B=5. It proves non-exactness against the constant retained Hessian, but does not exclude a nonhomogeneous or support-local primitive, does not supply q2(h,A)->A_plus or the remaining Maxwell antifield rows, and does not classify radiative Einstein/extra-Weyl scattering channels.",
+  "result_id": "BERGER_MAXWELL_STRESS_RESIDUAL_PROJECTION",
+  "schema": "pure-weyl-berger-maxwell-stress-residual-projection-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "verification_receipts": [
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/berger_maxwell_stress_residual_projection.py --check --guards",
+      "elapsed_seconds": 1.49,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 d_quotient_classical/backreacted_clock/verify_berger_maxwell_stress_residual_projection.py",
+      "elapsed_seconds": 0.61,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_maxwell_stress_residual_projection",
+      "elapsed_seconds": 2.53,
+      "status": "PASS",
+      "test_tier": 1
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-maxwell-stress-residual-projection-v1.schema.json -d d_quotient_classical/certificates/BERGER_MAXWELL_STRESS_RESIDUAL_PROJECTION.json",
+      "elapsed_seconds": 1.09,
+      "status": "PASS",
+      "test_tier": 1
+    }
+  ]
+}

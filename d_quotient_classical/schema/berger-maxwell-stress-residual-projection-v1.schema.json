@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pure-weyl.example/schema/berger-maxwell-stress-residual-projection-v1.schema.json",
+  "title": "Berger Maxwell stress residual projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "normalization", "physical_mode_block", "projection_and_verdict", "branch_and_health", "flags", "reduced_mode_limitation", "next_gate", "provenance", "verification_receipts", "higher_tiers_not_run", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-maxwell-stress-residual-projection-v1"},
+    "result_id": {"const": "BERGER_MAXWELL_STRESS_RESIDUAL_PROJECTION"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_REDUCED_MODE_MAXWELL_STRESS_BRACKET_OBSTRUCTED_IN_HOPF_FLUX_CHANNEL"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["maxwell_mode", "maxwell_bv_preflight", "gravity_contraction", "retained_unary"],
+      "properties": {
+        "maxwell_mode": {"$ref": "#/$defs/dependency"},
+        "maxwell_bv_preflight": {"$ref": "#/$defs/dependency"},
+        "gravity_contraction": {"$ref": "#/$defs/dependency"},
+        "retained_unary": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "normalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["maxwell_action", "gravity_metric_equation_before_extension", "mixed_extension", "alpha_B_fixture", "canonical_symmetric_row_weight", "same_input_q2_formula"],
+      "properties": {
+        "maxwell_action": {"const": "S_M=-1/4 int sqrt(-g_hat) F_ab F^ab"},
+        "gravity_metric_equation_before_extension": {"const": "alpha_B B_ab-T_clock_ab=0"},
+        "mixed_extension": {"const": "alpha_B B_ab-T_clock_ab-T_Maxwell_ab=0"},
+        "alpha_B_fixture": {"const": "5"},
+        "canonical_symmetric_row_weight": {"const": "-(2-delta_ab) eta_aa eta_bb"},
+        "same_input_q2_formula": {"const": "q2(A,A)_(h_plus_ab)=2(2-delta_ab)T_Maxwell^ab[A]"}
+      }
+    },
+    "physical_mode_block": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_basis", "amplitude_formula", "D_weight", "field_content", "stress_geometry", "exact_data"],
+      "properties": {
+        "input_basis": {"const": ["A_c", "A_s"]},
+        "amplitude_formula": {"const": "q2(x A_c+y A_s,x A_c+y A_s)=(x^2+y^2) S_Maxwell"},
+        "D_weight": {"const": "0"},
+        "field_content": {"const": ["h_hat_star_00", "h_hat_star_03", "h_hat_star_33"]},
+        "stress_geometry": {"type": "string", "minLength": 70},
+        "exact_data": {
+          "type": "object", "additionalProperties": false,
+          "required": ["beta", "stress_covariant", "stress_contravariant", "stress_trace", "stress_covariant_divergence", "phase_cross_stress", "full_metric_source", "retained_metric_source", "nonzero_retained_rows", "q1_closure_residual", "constant_hessian_rank", "augmented_rank", "diagonal_exact_primitive", "diagonal_primitive_residual", "normalized_dual_witness", "dual_witness_image_residual", "dual_witness_source_pairing"],
+          "properties": {
+            "beta": {"const": "2*sqrt(10)/3"},
+            "stress_covariant": {"$ref": "#/$defs/matrix4"},
+            "stress_contravariant": {"$ref": "#/$defs/matrix4"},
+            "stress_trace": {"const": "0"},
+            "stress_covariant_divergence": {"const": ["0", "0", "0", "0"]},
+            "phase_cross_stress": {"const": [["0", "0", "0", "0"], ["0", "0", "0", "0"], ["0", "0", "0", "0"], ["0", "0", "0", "0"]]},
+            "full_metric_source": {"const": ["80/9", "0", "0", "-160/9", "0", "0", "0", "0", "0", "80/9"]},
+            "retained_metric_source": {"const": ["80/9", "0", "0", "-160/9", "0", "0", "0", "0", "0", "80/9"]},
+            "nonzero_retained_rows": {
+              "const": [
+                {"row_id": "h_hat_star_00", "coefficient": "80/9"},
+                {"row_id": "h_hat_star_03", "coefficient": "-160/9"},
+                {"row_id": "h_hat_star_33", "coefficient": "80/9"}
+              ]
+            },
+            "q1_closure_residual": {"const": ["0", "0", "0"]},
+            "constant_hessian_rank": {"const": 7},
+            "augmented_rank": {"const": 8},
+            "diagonal_exact_primitive": {"const": ["-5120/567", "0", "0", "0", "10880/651", "0", "0", "10880/651", "0", "14080/1953"]},
+            "diagonal_primitive_residual": {"const": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]},
+            "normalized_dual_witness": {"const": ["0", "0", "0", "-9/160", "0", "0", "0", "0", "0", "0"]},
+            "dual_witness_image_residual": {"const": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]},
+            "dual_witness_source_pairing": {"const": "1"}
+          }
+        }
+      }
+    },
+    "projection_and_verdict": {
+      "type": "object", "additionalProperties": false,
+      "required": ["projection", "q1_closed", "diagonal_energy_pressure_sector", "Hopf_flux_sector", "binary_verdict", "obstruction_row", "obstruction_interpretation"],
+      "properties": {
+        "projection": {"type": "string", "minLength": 60},
+        "q1_closed": {"const": true},
+        "diagonal_energy_pressure_sector": {"const": "EXACT_WITH_DISPLAYED_PRIMITIVE"},
+        "Hopf_flux_sector": {"const": "NONTRIVIAL_NORMALIZED_DUAL_WITNESS"},
+        "binary_verdict": {"const": "OBSTRUCTION"},
+        "obstruction_row": {"const": "h_hat_star_03"},
+        "obstruction_interpretation": {"type": "string", "minLength": 100}
+      }
+    },
+    "branch_and_health": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Einstein_like_radiative_branch_coupled", "extra_Weyl_radiative_branch_coupled", "reason", "Maxwell_energy_signature", "negative_physical_direction_introduced", "health_boundary"],
+      "properties": {
+        "Einstein_like_radiative_branch_coupled": {"const": false},
+        "extra_Weyl_radiative_branch_coupled": {"const": false},
+        "reason": {"type": "string", "minLength": 120},
+        "Maxwell_energy_signature": {"const": [2, 0, 0]},
+        "negative_physical_direction_introduced": {"const": false},
+        "health_boundary": {"type": "string", "minLength": 100}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_MAXWELL_STRESS_Q2_PHYSICAL_BLOCK", "BERGER_MAXWELL_STRESS_PI_CL_PROJECTED", "BERGER_REDUCED_MODE_MAXWELL_BRACKET_OBSTRUCTED", "BERGER_HOPF_FLUX_OBSTRUCTION_WITNESS", "BERGER_FULL_SUPPORT_LOCAL_MAXWELL_Q2", "BERGER_FULL_RESIDUAL_GRAVITY_MAXWELL_BRACKET", "BERGER_EINSTEIN_EXTRA_WEYL_BRANCH_MIXING", "BERGER_MAXWELL_BACKREACTED_SOLUTION", "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED", "LORENTZIAN_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_MAXWELL_STRESS_Q2_PHYSICAL_BLOCK": {"const": true},
+        "BERGER_MAXWELL_STRESS_PI_CL_PROJECTED": {"const": true},
+        "BERGER_REDUCED_MODE_MAXWELL_BRACKET_OBSTRUCTED": {"const": true},
+        "BERGER_HOPF_FLUX_OBSTRUCTION_WITNESS": {"const": true},
+        "BERGER_FULL_SUPPORT_LOCAL_MAXWELL_Q2": {"const": false},
+        "BERGER_FULL_RESIDUAL_GRAVITY_MAXWELL_BRACKET": {"const": false},
+        "BERGER_EINSTEIN_EXTRA_WEYL_BRANCH_MIXING": {"const": false},
+        "BERGER_MAXWELL_BACKREACTED_SOLUTION": {"const": false},
+        "NEGATIVE_PHYSICAL_DIRECTION_INTRODUCED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "reduced_mode_limitation": {"type": "string", "minLength": 300},
+    "next_gate": {"const": "BERGER_MAXWELL_HOPF_FLUX_BALANCING_OR_FULL_SUPPORT_LOCAL_PRIMITIVE_VERDICT"},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_manifest"],
+      "properties": {"source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+    },
+    "verification_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/receipt"}},
+    "higher_tiers_not_run": {
+      "type": "object", "additionalProperties": false, "required": ["tier_2", "tier_3"],
+      "properties": {"tier_2": {"type": "string", "minLength": 50}, "tier_3": {"type": "string", "minLength": 50}}
+    },
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 5},
+        "result_id": {"type": "string", "minLength": 5},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix4": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false, "required": ["test_tier", "command", "elapsed_seconds", "status"],
+      "properties": {
+        "test_tier": {"const": 1},
+        "command": {"type": "string", "minLength": 20},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "status": {"const": "PASS"}
+      }
+    }
+  }
+}
