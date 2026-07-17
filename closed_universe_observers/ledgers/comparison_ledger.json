@@ -1,0 +1,199 @@
+{
+  "schema": "closed-universe-observer-comparison-ledger-v1",
+  "result_id": "CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON",
+  "current_lifecycle": "EXTERNAL_FIXTURE_REPRODUCED",
+  "overall_verdict": "QUANTUM_COMPARISON_NOT_YET_DEFINED",
+  "recommendation": "Continue only to the localized classical record gate, and wait for the quantum team before attempting a common theorem or scoped no-go.",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "source_versions": [
+    {
+      "arxiv_id": "1908.10996v2",
+      "title": "The Page curve of Hawking radiation from semiclassical geometry",
+      "url": "https://arxiv.org/abs/1908.10996v2",
+      "pdf_sha256": "f68be764aa6e21b79d3095401a9434c8e02047d5e6bc327a3c7b370afca9a905",
+      "theory_dimension": "two-dimensional gravity coupled to matter, with a higher-dimensional holographic realization used for the black-hole calculation",
+      "topology_and_boundaries": "a nongravitating quantum system may be entangled with fields in a gravitational region; the closed-universe case is the whole boundary-free gravitational component used as an island",
+      "theory_status": "semiclassical effective-gravity prescription, not a fixed-theory closed-universe Hilbert-space construction",
+      "state_object_and_inner_product": "entropy of a nongravitating subsystem computed from a semiclassical density matrix and generalized entropy",
+      "observer_or_reference_role": "external nongravitating subsystem A; no internal observer model",
+      "perturbative_status": "semiclassical QES/island rule",
+      "logical_chain": [
+        {"location": "section 4, equation (15)", "claim": "minimize the generalized entropy over gravitational islands", "interpretive_inference": false},
+        {"location": "section 4, figure 12(b) and text after equation (15)", "claim": "the whole closed universe has no island-boundary area cost", "interpretive_inference": false},
+        {"location": "section 4, text after figure 12", "claim": "the rule concerns a semiclassical gravity state and is distinguished from applying the ordinary von Neumann formula to an exact state", "interpretive_inference": false},
+        {"location": "comparison with arXiv:2501.02359v2 section 2.1, equation (2.1)", "claim": "rank-one encoding follows only after applying the whole-universe island option to every effective entangled input", "interpretive_inference": true}
+      ],
+      "assumptions_without_current_analogue": ["quantum extremal surfaces", "a nongravitating reference system", "a semiclassical generalized-entropy minimization", "a quantum encoding map"]
+    },
+    {
+      "arxiv_id": "2402.00098v3",
+      "title": "Closed universes in two dimensional gravity",
+      "url": "https://arxiv.org/abs/2402.00098v3",
+      "pdf_sha256": "7baa9c2022929b69f7912ee5ebbc871ab1a2d12fc28093c854ead143b7486400",
+      "theory_dimension": "two-dimensional JT gravity with matter and a zero-dimensional topological model",
+      "topology_and_boundaries": "compact Cauchy circles for closed universes; Euclidean path-integral preparation may use asymptotic circles",
+      "theory_status": "ensemble-averaged gravity path integral resolved into fixed alpha sectors; the topological model is exact, while the general higher-dimensional argument is formal",
+      "state_object_and_inner_product": "closed-universe states on compact Cauchy slices with inner product defined by the Euclidean gravitational path integral",
+      "observer_or_reference_role": "a massive-particle observer supports rich semiclassical wave functionals, but no observer-effective Hilbert space is recovered",
+      "perturbative_status": "many semiclassical states perturbatively; rank one after nonperturbative wormhole effects in each alpha sector",
+      "logical_chain": [
+        {"location": "section 1, equations (1.5)-(1.6)", "claim": "the gravitational inner product includes cross-connected manifolds, producing order-one corrections to apparently orthogonal states", "interpretive_inference": false},
+        {"location": "section 1, equations (1.7)-(1.8)", "claim": "permutation symmetry gives Tr(M^n)=(Tr M)^n and the replica rank prescription gives dimension one", "interpretive_inference": false},
+        {"location": "section 2.2 and equation (2.23)", "claim": "JT with a massive-particle observer retains rich semiclassical wave functionals but the same nonperturbative rank collapse", "interpretive_inference": false},
+        {"location": "section 3.2, equation (3.16)", "claim": "in a fixed alpha sector M_ij=A_i A_j, so the topological-model Gram matrix has rank one", "interpretive_inference": false}
+      ],
+      "assumptions_without_current_analogue": ["a nonperturbative gravitational path integral", "spacetime-wormhole sums", "alpha-sector or ensemble resolution", "replica analytic continuation to n=0"]
+    },
+    {
+      "arxiv_id": "2403.13047v2",
+      "title": "Closed universes, factorization, and ensemble averaging",
+      "url": "https://arxiv.org/abs/2403.13047v2",
+      "pdf_sha256": "1d16daf74f38e8e7a2656d0eae8a5ab06e6994d5a90d93f8789d3e198537fb7d",
+      "theory_dimension": "general holographic setup plus an explicit two-dimensional deformed-JT model",
+      "topology_and_boundaries": "compact Cauchy slices without asymptotic boundaries; path-integral state preparation can add asymptotic boundary conditions",
+      "theory_status": "fixed holographic theory for the factorization claim; ensemble average is explicitly contrasted",
+      "state_object_and_inner_product": "Hartle-Hawking wave functions and the Gram matrix of finite-slice field-configuration states",
+      "observer_or_reference_role": "none",
+      "perturbative_status": "fixed-theory factorization claim, explicit order-by-order factorizing deformation in JT, and an exact rank statement conditional on finite-boundary factorization",
+      "logical_chain": [
+        {"location": "section 2.1, equation (2.4)", "claim": "fixed-theory factorization makes every path-integral-prepared wave function proportional to the Hartle-Hawking wave function", "interpretive_inference": false},
+        {"location": "section 2.2, equations (2.5)-(2.6)", "claim": "factorization of finite-slice inner products makes the Gram matrix an outer product and hence rank one", "interpretive_inference": false},
+        {"location": "section 2.3", "claim": "ensemble averaging breaks factorization and permits higher-rank state spaces", "interpretive_inference": false},
+        {"location": "section 4, factorization for finite boundary conditions", "claim": "finite-boundary factorization is a stronger assumption whose general higher-dimensional justification remains open", "interpretive_inference": false}
+      ],
+      "assumptions_without_current_analogue": ["a fixed holographic boundary dual", "factorization of quantum partition functions", "factorization for finite Cauchy-slice boundary conditions", "an exact Hartle-Hawking path integral"]
+    },
+    {
+      "arxiv_id": "2412.14014v3",
+      "title": "Real observers solving some imaginary problems",
+      "url": "https://arxiv.org/abs/2412.14014v3",
+      "pdf_sha256": "677085ad3677971dc3f4180e883c390135ad3c221fe53b6424db08484dfd3f9d",
+      "theory_dimension": "D-dimensional Euclidean de Sitter gravity",
+      "topology_and_boundaries": "Euclidean sphere with an observer worldline; this is not merely a closed spatial slice",
+      "theory_status": "Euclidean one-loop saddle calculation with a particle observer and clock",
+      "state_object_and_inner_product": "sphere partition function and a proposed observer-accessible state count, not a ranked closed-universe Hilbert space",
+      "observer_or_reference_role": "massive particle trajectory plus a clock Hilbert space; the observer position removes gauge-related phases",
+      "perturbative_status": "one loop and saddle point; version 3 retains a minus sign in its main derivation and records a later alternative resolution in a note",
+      "logical_chain": [
+        {"location": "equation (1)", "claim": "the pure-gravity sphere partition function carries the phase i^(D+2)", "interpretive_inference": false},
+        {"location": "section 4, equations (22)-(26)", "claim": "including the observer particle cancels the D-dependent part of the phase, leaving -i before imposing the Hamiltonian constraint", "interpretive_inference": false},
+        {"location": "section 4.1, equation (25), and section 4.2, equation (27)", "claim": "the clock density and observer-local Hamiltonian constraint define the refined quantity", "interpretive_inference": false},
+        {"location": "equations (33)-(37) and the note added after equation (38)", "claim": "the version-3 main prescription leaves a negative proposed count; the note reports that a later order-of-integration prescription gives a positive sign", "interpretive_inference": false},
+        {"location": "section 5", "claim": "no explicit Hilbert-space realization of the proposed count is constructed", "interpretive_inference": false}
+      ],
+      "assumptions_without_current_analogue": ["Euclidean de Sitter sphere saddle", "one-loop contour rotations", "particle worldline observer", "clock entropy regularization", "observer-local Hamiltonian constraint in a quantum path integral"]
+    },
+    {
+      "arxiv_id": "2501.02359v2",
+      "title": "Quantum mechanics and observers for gravity in a closed universe",
+      "url": "https://arxiv.org/abs/2501.02359v2",
+      "pdf_sha256": "3627126670d3ddf97f8facc8bed261386ec9adc51281b964cc7815912e0f6cfc",
+      "theory_dimension": "finite-dimensional code model, 1+1-dimensional topological gravity and JT gravity, plus a fixed holographic-CFT argument",
+      "topology_and_boundaries": "closed spatial slice; the cloned observer Ob' is a nongravitating auxiliary reference copied from the internal observer pointer basis",
+      "theory_status": "fixed O for the code interpretation, Haar averaging as a diagnostic, ensemble-averaged path integrals in the toy/JT examples, and a fixed-CFT argument",
+      "state_object_and_inner_product": "one-dimensional fundamental Hilbert space versus an approximately inner-product-preserving observer encoding from matter to the cloned-observer carrier",
+      "observer_or_reference_role": "an internal observer entangled in a pointer basis is copied to Ob' by basis cloning; Ob' carries the effective description",
+      "perturbative_status": "observer accuracy is approximate with errors exponentially small in observer Renyi entropy; the finite fixture in this package is an exact special fixed-O realization",
+      "logical_chain": [
+        {"location": "section 2.1, equations (2.1)-(2.5)", "claim": "QES, Gram/path-integral, and fixed-CFT arguments separately motivate a one-dimensional fundamental closed-universe Hilbert space", "interpretive_inference": false},
+        {"location": "equations (1.1)-(1.3)", "claim": "a fixed orthogonal encoding projects the effective carrier to one dimension and cannot preserve all inner products", "interpretive_inference": false},
+        {"location": "section 3 and equation (3.7)", "claim": "decoherence selects a pointer basis and basis cloning introduces Ob' without cloning arbitrary quantum states", "interpretive_inference": false},
+        {"location": "section 4.1, equations (4.1)-(4.3)", "claim": "the observer map preserves inner products on average and typical fluctuations are suppressed by exp(-S_2(observer))", "interpretive_inference": false},
+        {"location": "section 4.1, equations (4.4)-(4.6)", "claim": "the observer-effective entanglement capacity is bounded by the observer Renyi entropy", "interpretive_inference": false}
+      ],
+      "assumptions_without_current_analogue": ["a fundamental quantum encoding map", "a quantum observer Hilbert space", "decoherence and a stable pointer basis", "an auxiliary cloned-observer reference", "a positive quantum inner product"]
+    }
+  ],
+  "object_dictionary": [
+    {"object": "Fundamental Hilbert space", "question": "How many exact quantum states exist?", "programme_status": "Not constructed; no dimension claim is legal."},
+    {"object": "BRST/BV state cohomology", "question": "Which quantum states survive gauge reduction?", "programme_status": "Classical inputs only; quantum construction open."},
+    {"object": "One-particle complex", "question": "Which isolated linear excitations survive?", "programme_status": "Zero on one selected compact free sector after its declared quotient."},
+    {"object": "Residual degree-four cohomology", "question": "Which centered deformation classes survive?", "programme_status": "Complex dimension two with pairing I_2 on the declared sector; these are not particles."},
+    {"object": "Covariant phase space", "question": "Which classical solutions and charges survive?", "programme_status": "Background- and charge-sector dependent; raw D is null on the fixed-coupling Berger tangent sector."},
+    {"object": "Observable algebra", "question": "What can an internal observer measure?", "programme_status": "Clock slicing, averaged redshift, and a retarded signal are certified classically; a full record algebra is open."},
+    {"object": "Observer-effective Hilbert space", "question": "What approximate quantum mechanics describes an observer?", "programme_status": "Not constructed for Berger; reproduced only in the isolated external code fixture."}
+  ],
+  "no_conflation": [
+    "factorization != Taub-zero charge restriction",
+    "gravitational path integral != classical BV quotient",
+    "one-dimensional Hilbert space != zero one-particle cohomology",
+    "closed spatial slice != fully closed Euclidean spacetime",
+    "internal observer algebra != adding an external boundary",
+    "relational clock != gauge fixing alone"
+  ],
+  "internal_imports": [
+    {"role": "Berger clock", "path": "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json", "result_id": "POSITIVE_BERGER_CLOCK_BACKGROUND", "sha256": "35e1bb8a56b0591b3dd00aa8f22c328ad826ecd341c290564cfd1a68fcc3e687"},
+    {"role": "relational Maxwell redshift", "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json", "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE", "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996"},
+    {"role": "Maxwell causal contraction", "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json", "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX", "sha256": "4363bc0365012173b793e6d09f4154eaa41712f5f5ba736c8255b3294cdf67b7"},
+    {"role": "retarded compact signal", "path": "d_quotient_classical/certificates/BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL.json", "result_id": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL", "sha256": "c2e3a44bd5be9cbbacc1a9bd5a2db810bd3f0eed8bf74b1030c58ffa9608bb19"},
+    {"role": "fixed-coupling raw-D nullity", "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json", "result_id": "BERGER_FIXED_COUPLING_DELTA_CHARGE", "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786"},
+    {"role": "nonlinear K_Berger boundary", "path": "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json", "result_id": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF", "sha256": "1065c80d6c73ca63c49d7c55368fe9aa7e6284903639ae0a87f4d589d819e3e8"}
+  ],
+  "classical_observer_map": {
+    "map_id": "R_OB_BERGER_PARTIAL_V1",
+    "claim_index": {
+      "theory": "classical pure-Weyl gravity plus positive conformal clock and Maxwell field",
+      "background": "compact positive Berger clock, fixed-coupling linearized sector",
+      "state_object": "gauge-invariant classical observables on the covariant solution space",
+      "quotient": "raw-D presymplectic nullity on the tested tangent sector; nonlinear claims use K_Berger=D-omega R",
+      "observer": "clock-defined spatially averaged congruence; no localized apparatus",
+      "boundaries": "Lorentzian cylinder with compact S3 Cauchy slices and no spatial boundary",
+      "lifecycle": "PARTIAL_CLASSICAL_MAP_ONLY"
+    },
+    "domain": "A_global^cl: imported gauge-invariant classical functionals admitting clock slicing or retarded Maxwell evaluation",
+    "codomain": "A_Ob^partial: the algebra generated by clock-labelled averaged frequency/redshift values and retarded field-strength functionals",
+    "definition": "R_Ob^partial evaluates invariant functionals on Sigma_tau={theta=tau}, normalizes spatial integrals by Vol(Sigma_tau), and sends a compact conserved Maxwell source j to the retarded gauge-invariant field strength d G_ret J.",
+    "components": [
+      {"requirement": "clock_phase_condition", "status": "CERTIFIED", "evidence": "theta=atan2(T_2,T_1) has timelike gradient and defines Sigma_tau on the lifted chart"},
+      {"requirement": "relational_frequency_or_redshift", "status": "CERTIFIED", "evidence": "the compact spatially averaged F- and stress-based frequency/redshift fixture is Diff, Weyl, Maxwell-gauge, and relational-D invariant"},
+      {"requirement": "retarded_source_to_field", "status": "CERTIFIED", "evidence": "a compact neutral exact current yields a nonzero retarded field strength with future support"},
+      {"requirement": "two_distinguishable_clock_labelled_records", "status": "OPEN", "evidence": "no detector memory, pointer basis, or pair of localized record functionals has been constructed"},
+      {"requirement": "nontrivial_causal_response_with_raw_D_null", "status": "CERTIFIED_SCOPED_SYNTHESIS", "evidence": "the retarded signal and fixed-coupling raw-D nullity certificates share the same compact Berger branch, but do not yet define a detector record"}
+    ],
+    "gauge_tests": [
+      {"symmetry": "Diff", "status": "PARTIAL_PASS", "preserved_structure": "clock scalar slicing and normalized compact integral", "open_defect": "the compact source is not dressed to localized rods or detector worldlines"},
+      {"symmetry": "Weyl", "status": "PASS_ON_IMPORTED_COMPONENTS", "preserved_structure": "theta, g_hat, four-dimensional Maxwell F, stress, and normalized redshift integral", "open_defect": "no full interacting record algebra"},
+      {"symmetry": "Maxwell gauge", "status": "PASS_ON_IMPORTED_COMPONENTS", "preserved_structure": "observables use F=dA and the retarded field strength", "open_defect": "no apparatus coupling"},
+      {"symmetry": "raw D", "status": "PARTIAL_PASS", "preserved_structure": "presymplectic nullity and relationally evaluated averaged redshift", "open_defect": "raw D changes the clock field and no localized record covariance is certified"},
+      {"symmetry": "K_Berger=D-omega R", "status": "OPEN_FOR_FULL_MAP", "preserved_structure": "Cartan identity through arity three on the separately certified interaction sector", "open_defect": "the observer map has not been shown to be a K_Berger morphism with detector records and mixed higher brackets"}
+    ],
+    "map_certified": false,
+    "primary_obstruction": "The available causal field is not yet paired with two localized clock-labelled detector records, so the partial evaluation map cannot be promoted to a full observer algebra or observer-effective state space."
+  },
+  "comparison_matrix": [
+    {"setting": "selected vacuum cylinder", "global_carrier": "classical one-particle complex and residual deformation cohomology kept separate", "reduction_mechanism": "Taub-zero restriction plus declared residual quotient", "surviving_state_object": "zero isolated one-particle sector; degree-four complex dimension two", "observer_algebra": "none", "causal_response": "classical causal complex only", "pairing_or_probability": "residual I_2 pairing, not a quantum norm", "verdict": "ANALOGY_ONLY_OBJECT_MISMATCH"},
+    {"setting": "Berger clock", "global_carrier": "fixed-coupling classical covariant phase space", "reduction_mechanism": "raw-D presymplectic nullity; nonlinear background-preserving generator K_Berger", "surviving_state_object": "partial classical relational observable sector", "observer_algebra": "clock/redshift/retarded signal, without localized records", "causal_response": "nonzero certified classical retarded Maxwell signal", "pairing_or_probability": "classical symplectic pairing only", "verdict": "OBSERVER_RECOVERY_OBSTRUCTED"},
+    {"setting": "external fixed-O cloned-observer fixture", "global_carrier": "four-dimensional real effective code input", "reduction_mechanism": "one-row orthogonal projection with pointer-basis clone channel", "surviving_state_object": "rank-one global Gram carrier and rank-two observer encoding", "observer_algebra": "two-dimensional observer-effective carrier", "causal_response": "not modeled", "pairing_or_probability": "exact observer Gram I_2 in the fixture; generic probability estimate belongs to the source paper", "verdict": "STRUCTURAL_BRIDGE_CERTIFIED"},
+    {"setting": "full quantum Berger theory", "global_carrier": "not constructed", "reduction_mechanism": "not defined", "surviving_state_object": "open", "observer_algebra": "open", "causal_response": "open", "pairing_or_probability": "open", "verdict": "QUANTUM_COMPARISON_NOT_YET_DEFINED"},
+    {"setting": "asymptotic-boundary comparison", "global_carrier": "boundary phase space would be required", "reduction_mechanism": "charged boundary symmetries may replace compact quotient", "surviving_state_object": "not tested", "observer_algebra": "external and internal observers are different typed objects", "causal_response": "not tested", "pairing_or_probability": "not tested", "verdict": "ANALOGY_ONLY_OBJECT_MISMATCH"}
+  ],
+  "common_fixture_status": {
+    "common_category_found": false,
+    "external_fixture_passed": true,
+    "classical_observer_map_passed": false,
+    "quantum_comparison_legal": false,
+    "first_surviving_parallel": "Both constructions permit a reduced global carrier to coexist with a richer relational or observer-effective carrier.",
+    "first_exact_defect": "The external construction compares quantum Hilbert carriers through a pointer-clone encoding, while the Berger construction currently compares classical observable functionals after presymplectic reduction; no typed functor preserves product, pairing, and probability across them."
+  },
+  "assumptions": [
+    "The five cited arXiv versions are the comparison baseline.",
+    "The fixed-O fixture is a specialization of the external code, not a claim of Haar typicality.",
+    "The imported classical certificates are authoritative and are not recomputed here.",
+    "A localized observer record requires detector and reference fields beyond a compact spatial average."
+  ],
+  "missing_objects": [
+    "localized emitter and receiver worldlines or rod fields",
+    "two clock-labelled detector records and pointer basis",
+    "apparatus recoil and gravity backreaction",
+    "observer-map compatibility with mixed q3 and higher brackets",
+    "quantum BRST state space and complete zero-frequency carrier",
+    "positive observer state and induced quantum inner product",
+    "QME-restored Lorentzian observer theory"
+  ],
+  "provenance": {
+    "internal_source_snapshot_commit": "5a9bf16b16a2613675a826ab1dc336b57c9517a3",
+    "external_retrieval_date": "2026-07-17",
+    "external_hash_command": "sha256sum /tmp/closed-universe-observer-papers/*.pdf",
+    "external_text_command": "pdftotext -layout PAPER.pdf PAPER.txt"
+  }
+}

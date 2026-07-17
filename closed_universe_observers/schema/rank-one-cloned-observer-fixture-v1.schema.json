@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/rank-one-cloned-observer-fixture-v1.schema.json",
+  "title": "Exact rank-one global and cloned-observer fixture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "claim_status", "dependency_tags", "source_equations", "declared_input_sha256", "dimensions", "generated_matrices", "exact_witnesses", "mutation_results", "flags", "claim_boundary", "not_established", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-rank-one-cloned-observer-fixture-v1"},
+    "result_id": {"const": "RANK_ONE_CLONED_OBSERVER_FIXTURE"},
+    "claim_status": {"const": "EXTERNAL_FIXTURE_REPRODUCED"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}], "items": false},
+    "source_equations": {
+      "type": "object", "additionalProperties": false, "required": ["paper", "equations", "interpretation"],
+      "properties": {
+        "paper": {"const": "arXiv:2501.02359v2"},
+        "equations": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "declared_input_sha256": {"$ref": "#/$defs/sha256"},
+    "dimensions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["effective_input", "global_fundamental", "observer_effective_input", "observer_effective_output"],
+      "properties": {
+        "effective_input": {"const": 4}, "global_fundamental": {"const": 1},
+        "observer_effective_input": {"const": 2}, "observer_effective_output": {"const": 2}
+      }
+    },
+    "generated_matrices": {
+      "type": "object", "additionalProperties": false,
+      "required": ["global_encoding", "global_gram", "observer_encoding", "observer_gram"],
+      "properties": {
+        "global_encoding": {"$ref": "#/$defs/matrix"}, "global_gram": {"$ref": "#/$defs/matrix"},
+        "observer_encoding": {"$ref": "#/$defs/matrix"}, "observer_gram": {"$ref": "#/$defs/matrix"}
+      }
+    },
+    "exact_witnesses": {
+      "type": "object", "additionalProperties": false,
+      "required": ["orthogonality_residual_zero", "global_rank", "global_nonzero_minor", "global_all_2x2_minors", "observer_rank", "observer_full_rank_minor"],
+      "properties": {
+        "orthogonality_residual_zero": {"const": true}, "global_rank": {"const": 1}, "observer_rank": {"const": 2},
+        "global_nonzero_minor": {"$ref": "#/$defs/minor"},
+        "global_all_2x2_minors": {"type": "array", "minItems": 36, "maxItems": 36, "items": {"$ref": "#/$defs/minor"}},
+        "observer_full_rank_minor": {"$ref": "#/$defs/minor"}
+      }
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "breaks", "expected_failed_requirement", "observed_requirement_value", "observed_global_rank", "observed_observer_rank", "expected_failure_passed"],
+        "properties": {
+          "name": {"type": "string"},
+          "breaks": {"enum": ["factorization", "observer_channel", "pointer_basis_or_reference_system", "rank_one_conclusion"]},
+          "expected_failed_requirement": {"enum": ["global_gram_rank_one", "observer_encoding_rank_gt_one", "pointer_reference_injective"]},
+          "observed_requirement_value": {"const": false},
+          "observed_global_rank": {"type": "integer", "minimum": 1},
+          "observed_observer_rank": {"type": "integer", "minimum": 1},
+          "expected_failure_passed": {"const": true}
+        }
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["GLOBAL_GRAM_RANK_ONE", "GLOBAL_HILBERT_DIMENSION_ONE_IN_FIXTURE", "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE", "POINTER_REFERENCE_INJECTIVE", "BERGER_QUANTUM_COMPARISON", "LORENTZIAN_CAUSAL_CLAIM"],
+      "properties": {
+        "GLOBAL_GRAM_RANK_ONE": {"const": true}, "GLOBAL_HILBERT_DIMENSION_ONE_IN_FIXTURE": {"const": true},
+        "OBSERVER_EFFECTIVE_DIMENSION_GT_ONE": {"const": true}, "POINTER_REFERENCE_INJECTIVE": {"const": true},
+        "BERGER_QUANTUM_COMPARISON": {"const": false}, "LORENTZIAN_CAUSAL_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "not_established": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["external_source", "source_manifest"],
+      "properties": {
+        "external_source": {
+          "type": "object", "additionalProperties": false, "required": ["arxiv_id", "pdf_sha256", "url"],
+          "properties": {"arxiv_id": {"const": "2501.02359v2"}, "pdf_sha256": {"$ref": "#/$defs/sha256"}, "url": {"type": "string", "format": "uri"}}
+        },
+        "source_manifest": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/source"}}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrix": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}},
+    "minor": {
+      "type": "object", "additionalProperties": false, "required": ["rows", "columns", "value"],
+      "properties": {"rows": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}}, "columns": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}}, "value": {"type": "string"}}
+    },
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    }
+  }
+}

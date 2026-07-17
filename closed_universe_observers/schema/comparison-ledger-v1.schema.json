@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/comparison-ledger-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "current_lifecycle", "overall_verdict", "recommendation", "dependency_tags", "source_versions", "object_dictionary", "no_conflation", "internal_imports", "classical_observer_map", "comparison_matrix", "common_fixture_status", "assumptions", "missing_objects", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-observer-comparison-ledger-v1"},
+    "result_id": {"const": "CLOSED_UNIVERSE_OBSERVER_FIRST_COMPARISON"},
+    "current_lifecycle": {"enum": ["DICTIONARY_COMPLETE", "EXTERNAL_FIXTURE_REPRODUCED", "CLASSICAL_OBSERVER_MAP_CERTIFIED", "COMMON_FIXTURE_CERTIFIED", "QUANTUM_COMPARISON_LEGAL", "BRIDGE_THEOREM_FROZEN"]},
+    "overall_verdict": {"$ref": "#/$defs/verdict"},
+    "recommendation": {"$ref": "#/$defs/text"},
+    "dependency_tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "source_versions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/source_version"}},
+    "object_dictionary": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/dictionary_row"}},
+    "no_conflation": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "internal_imports": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/import"}},
+    "classical_observer_map": {"$ref": "#/$defs/observer_map"},
+    "comparison_matrix": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/comparison_row"}},
+    "common_fixture_status": {
+      "type": "object", "additionalProperties": false,
+      "required": ["common_category_found", "external_fixture_passed", "classical_observer_map_passed", "quantum_comparison_legal", "first_surviving_parallel", "first_exact_defect"],
+      "properties": {
+        "common_category_found": {"type": "boolean"}, "external_fixture_passed": {"type": "boolean"},
+        "classical_observer_map_passed": {"type": "boolean"}, "quantum_comparison_legal": {"type": "boolean"},
+        "first_surviving_parallel": {"$ref": "#/$defs/text"}, "first_exact_defect": {"$ref": "#/$defs/text"}
+      }
+    },
+    "assumptions": {"$ref": "#/$defs/text_array"},
+    "missing_objects": {"$ref": "#/$defs/text_array"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["internal_source_snapshot_commit", "external_retrieval_date", "external_hash_command", "external_text_command"],
+      "properties": {
+        "internal_source_snapshot_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "external_retrieval_date": {"type": "string", "format": "date"},
+        "external_hash_command": {"$ref": "#/$defs/text"}, "external_text_command": {"$ref": "#/$defs/text"}
+      }
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "text_array": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "verdict": {"enum": ["STRUCTURAL_BRIDGE_CERTIFIED", "ANALOGY_ONLY_OBJECT_MISMATCH", "OBSERVER_RECOVERY_OBSTRUCTED", "QUANTUM_COMPARISON_NOT_YET_DEFINED", "INSUFFICIENT_EXTERNAL_REPRODUCTION"]},
+    "logical_step": {
+      "type": "object", "additionalProperties": false, "required": ["location", "claim", "interpretive_inference"],
+      "properties": {"location": {"$ref": "#/$defs/text"}, "claim": {"$ref": "#/$defs/text"}, "interpretive_inference": {"type": "boolean"}}
+    },
+    "source_version": {
+      "type": "object", "additionalProperties": false,
+      "required": ["arxiv_id", "title", "url", "pdf_sha256", "theory_dimension", "topology_and_boundaries", "theory_status", "state_object_and_inner_product", "observer_or_reference_role", "perturbative_status", "logical_chain", "assumptions_without_current_analogue"],
+      "properties": {
+        "arxiv_id": {"enum": ["1908.10996v2", "2402.00098v3", "2403.13047v2", "2412.14014v3", "2501.02359v2"]},
+        "title": {"$ref": "#/$defs/text"}, "url": {"type": "string", "format": "uri"}, "pdf_sha256": {"$ref": "#/$defs/sha256"},
+        "theory_dimension": {"$ref": "#/$defs/text"}, "topology_and_boundaries": {"$ref": "#/$defs/text"},
+        "theory_status": {"$ref": "#/$defs/text"}, "state_object_and_inner_product": {"$ref": "#/$defs/text"},
+        "observer_or_reference_role": {"$ref": "#/$defs/text"}, "perturbative_status": {"$ref": "#/$defs/text"},
+        "logical_chain": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/logical_step"}},
+        "assumptions_without_current_analogue": {"$ref": "#/$defs/text_array"}
+      }
+    },
+    "dictionary_row": {
+      "type": "object", "additionalProperties": false, "required": ["object", "question", "programme_status"],
+      "properties": {"object": {"$ref": "#/$defs/text"}, "question": {"$ref": "#/$defs/text"}, "programme_status": {"$ref": "#/$defs/text"}}
+    },
+    "import": {
+      "type": "object", "additionalProperties": false, "required": ["role", "path", "result_id", "sha256"],
+      "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "result_id": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "claim_index": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "state_object", "quotient", "observer", "boundaries", "lifecycle"],
+      "properties": {"theory": {"$ref": "#/$defs/text"}, "background": {"$ref": "#/$defs/text"}, "state_object": {"$ref": "#/$defs/text"}, "quotient": {"$ref": "#/$defs/text"}, "observer": {"$ref": "#/$defs/text"}, "boundaries": {"$ref": "#/$defs/text"}, "lifecycle": {"$ref": "#/$defs/text"}}
+    },
+    "component": {
+      "type": "object", "additionalProperties": false, "required": ["requirement", "status", "evidence"],
+      "properties": {"requirement": {"$ref": "#/$defs/text"}, "status": {"enum": ["CERTIFIED", "OPEN", "CERTIFIED_SCOPED_SYNTHESIS"]}, "evidence": {"$ref": "#/$defs/text"}}
+    },
+    "gauge_test": {
+      "type": "object", "additionalProperties": false, "required": ["symmetry", "status", "preserved_structure", "open_defect"],
+      "properties": {"symmetry": {"enum": ["Diff", "Weyl", "Maxwell gauge", "raw D", "K_Berger=D-omega R"]}, "status": {"enum": ["PASS_ON_IMPORTED_COMPONENTS", "PARTIAL_PASS", "OPEN_FOR_FULL_MAP"]}, "preserved_structure": {"$ref": "#/$defs/text"}, "open_defect": {"$ref": "#/$defs/text"}}
+    },
+    "observer_map": {
+      "type": "object", "additionalProperties": false,
+      "required": ["map_id", "claim_index", "domain", "codomain", "definition", "components", "gauge_tests", "map_certified", "primary_obstruction"],
+      "properties": {
+        "map_id": {"const": "R_OB_BERGER_PARTIAL_V1"}, "claim_index": {"$ref": "#/$defs/claim_index"},
+        "domain": {"$ref": "#/$defs/text"}, "codomain": {"$ref": "#/$defs/text"}, "definition": {"$ref": "#/$defs/text"},
+        "components": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/component"}},
+        "gauge_tests": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/gauge_test"}},
+        "map_certified": {"type": "boolean"}, "primary_obstruction": {"$ref": "#/$defs/text"}
+      }
+    },
+    "comparison_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["setting", "global_carrier", "reduction_mechanism", "surviving_state_object", "observer_algebra", "causal_response", "pairing_or_probability", "verdict"],
+      "properties": {"setting": {"$ref": "#/$defs/text"}, "global_carrier": {"$ref": "#/$defs/text"}, "reduction_mechanism": {"$ref": "#/$defs/text"}, "surviving_state_object": {"$ref": "#/$defs/text"}, "observer_algebra": {"$ref": "#/$defs/text"}, "causal_response": {"$ref": "#/$defs/text"}, "pairing_or_probability": {"$ref": "#/$defs/text"}, "verdict": {"$ref": "#/$defs/verdict"}}
+    }
+  }
+}
