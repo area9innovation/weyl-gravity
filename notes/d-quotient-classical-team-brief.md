@@ -84,6 +84,22 @@ Use the shared row format:
 
 ## Live Berger nonlinear handoff (2026-07-17)
 
+### Coupled Maxwell cyclicity repair gate
+
+The independent retained-​36 replay has replaced the earlier broad cyclicity
+failure by a sharply localized repair problem.  All 953 exact defects contain
+two Maxwell legs: 800 lie in the physical `hAA` orbit, 138 in its
+diffeomorphism-ghost/potential-antifield completion, and 15 in the Maxwell
+ghost-density orbit.  Multiplying every Maxwell-output component of the
+transferred (q_2) by two preserves ([q_1,q_2]=0) and removes the first 938
+defects.  Pairing-sign changes do not help, while the tested scaling that also
+removes the last 15 creates 108 chain defects and is rejected.
+
+The only authorized next interaction calculation is therefore a
+support-local completion of those 15 ghost-density coefficients that keeps
+([q_1,q_2]=0).  Mixed (q_3), gravitational dressing, and the nonlinear
+observer vertex remain blocked until both identities replay coefficientwise.
+
 The authoritative 54-row support-local classical Taylor data are now complete
 through arity three at the frozen rational Berger fixture.  The certificate
 `BERGER_SUPPORT_LOCAL_Q3` contains 5,812,130 exact

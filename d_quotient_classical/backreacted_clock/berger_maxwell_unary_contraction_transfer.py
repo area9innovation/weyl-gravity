@@ -81,6 +81,7 @@ DEPENDENCIES = {
     "coupled_q2": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
     "coupled_q2_payload": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
     "redshift_fixture": ROOT / "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+    "independent_cyclicity_audit": ROOT / "quantum-weyl/transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
 }
 
 
@@ -113,6 +114,11 @@ def _load_dependencies() -> dict[str, dict[str, Any]]:
         raise AssertionError("64-row q2 payload hash drifted")
     if data["redshift_fixture"]["flags"]["BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE"] is not True:
         raise AssertionError("dynamical Maxwell fixture is unavailable")
+    audit = data["independent_cyclicity_audit"]
+    if audit["claim_flags"]["EXACT_CYCLICITY_OBSTRUCTION_WITNESS"] is not True:
+        raise AssertionError("independent cyclicity audit is unavailable")
+    if audit["claim_flags"]["RETAINED_BV_CYCLICITY_INDEPENDENTLY_REPLAYED"] is not False:
+        raise AssertionError("independent cyclicity audit unexpectedly passed")
     return data
 
 
@@ -307,7 +313,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
         "schema": "pure-weyl-berger-maxwell-unary-contraction-transfer-v1",
         "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
         "setting_id": "compact_positive_berger_clock_fixed_coupling",
-        "claim_status": "CERTIFIED_MAXWELL_CAUSAL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_Q2",
+        "claim_status": "CERTIFIED_MAXWELL_CAUSAL_UNARY_AND_Q1Q2_TRANSFER_WITH_CYCLICITY_BLOCKED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: {
@@ -354,6 +360,10 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "nonzero_output_rows": [index for index, operator in enumerate(transferred) if operator.terms],
             "maximum_total_jet_order": max(operator.maximum_total_order for operator in transferred),
             "arity_two_defect_term_counts": defect_counts,
+            "cyclicity_status": "FAILED_INDEPENDENT_COEFFICIENTWISE_REPLAY",
+            "full_64_cyclicity_defect_count": dependencies["independent_cyclicity_audit"]["cyclicity_obstruction"]["full_64_defect_coefficient_count"],
+            "retained_36_cyclicity_defect_count": dependencies["independent_cyclicity_audit"]["cyclicity_obstruction"]["retained_36_defect_coefficient_count"],
+            "retained_36_first_normalized_witness": dependencies["independent_cyclicity_audit"]["cyclicity_obstruction"]["retained_36_first_normalized_witness"],
         },
         "exact_checks": {
             "Maxwell_q1_squared_zero": True,
@@ -367,14 +377,16 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "combined_64_to_36_contraction_identity": True,
             "combined_64_row_advanced_retarded_chain_homotopies": True,
             "transferred_q2_arity_two_identity_all_36_rows": True,
-            "transferred_q2_cyclicity_by_cyclic_SDR": True,
+            "transferred_q2_cyclicity_obstruction_imported": True,
             "first_mixed_vertex_nonzero": True,
         },
         "flags": {
             "BERGER_MAXWELL_UNARY_CONTRACTION": True,
             "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY": True,
             "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY": True,
-            "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": True,
+            "BERGER_FIRST_MIXED_Q2_COEFFICIENT_TRANSFER": True,
+            "BERGER_MIXED_Q2_CYCLICITY": False,
+            "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": False,
             "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": False,
             "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": False,
             "BERGER_MAXWELL_BACKREACTION": False,
@@ -382,8 +394,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any]]:
             "BERGER_HADAMARD_DATA": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
-        "claim_boundary": "This theorem extends the certified 54-row gravity-clock causal complex by the standard ten-row Maxwell BV Green contraction, obtaining a 64-row causal chain contraction, and exports the exact first 36-row transferred Maxwell q2 overlay through the cyclic gravity SDR. It does not construct a compact retarded source or localized emitter/receiver, solve nonlinear backreaction, include the mixed q3 required for a complete interacting signal sector, construct Hadamard data, restore a quantum master equation, or make a quantum claim.",
+        "next_gate": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
+        "claim_boundary": "This theorem extends the certified 54-row gravity-clock causal complex by the standard ten-row Maxwell BV Green contraction, obtaining a 64-row causal chain contraction. It also exports the exact 1,522-coefficient 36-row q2 transfer and proves its q1/q2 arity-two identity. A later independent consumer found that the exported tensor and odd pairing have 1,234 full and 953 retained cyclicity-defect coefficients, so cyclic mixed-vertex and gravitational-dressing promotion is explicitly blocked. The unary causal theorem and the separately certified compact retarded Maxwell signal are unaffected. This does not establish a cyclic mixed interaction, mixed q3, localized emitter/receiver, nonlinear backreaction, Hadamard data, a QME result, or a quantum claim.",
     }
     return certificate, payload
 
@@ -401,9 +413,11 @@ def verify(certificate: dict[str, Any], payload: dict[str, Any]) -> None:
         "BERGER_MAXWELL_UNARY_CONTRACTION",
         "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY",
         "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY",
-        "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING",
+        "BERGER_FIRST_MIXED_Q2_COEFFICIENT_TRANSFER",
     )
     required_false = (
+        "BERGER_MIXED_Q2_CYCLICITY",
+        "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING",
         "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
         "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE",
         "BERGER_MAXWELL_BACKREACTION",
@@ -445,17 +459,21 @@ The frozen gravity SDR extends by the identity on Maxwell:
 Lambda64,+/- = S64 + iota64 (Lambda26,+/- direct-sum LambdaM,+/-) pi64.
 ```
 
-The first endpoint interaction is exported without fitting:
+The first endpoint interaction is transferred without fitting:
 
 ```text
 ell2_mixed = pi64 q2_Maxwell-overlay(iota36,iota36).
 ```
 
 It contains 1,522 exact PBW terms on 23 nonzero output rows and satisfies the
-arity-two identity on all 36 rows.  Cyclicity follows from the action-derived
-64-row q2 and the exact cyclic SDR.  This closes the unary/first-transfer gate,
-not the localized signal gate: compact sources, endpoint apparatus,
-backreaction, mixed q3, Hadamard data, and quantum claims remain open.
+arity-two identity on all 36 rows.  An independent coefficientwise consumer
+subsequently found 1,234 full and 953 retained odd-pairing cyclicity defects;
+the first normalized retained witness is `(0,26,35; [],[e1]) -> 3`.
+Accordingly the coefficient transfer remains exact, but cyclic mixed-vertex
+and gravitational-dressing promotion are blocked.  The unary causal theorem
+is unaffected.  Compact retarded propagation is certified separately;
+localized apparatus, backreaction, mixed q3, Hadamard data, and quantum claims
+remain open.
 """
 
 

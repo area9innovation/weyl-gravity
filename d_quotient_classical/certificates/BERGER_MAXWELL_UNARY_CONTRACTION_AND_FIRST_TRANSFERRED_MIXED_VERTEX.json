@@ -1,6 +1,6 @@
 {
-  "claim_boundary": "This theorem extends the certified 54-row gravity-clock causal complex by the standard ten-row Maxwell BV Green contraction, obtaining a 64-row causal chain contraction, and exports the exact first 36-row transferred Maxwell q2 overlay through the cyclic gravity SDR. It does not construct a compact retarded source or localized emitter/receiver, solve nonlinear backreaction, include the mixed q3 required for a complete interacting signal sector, construct Hadamard data, restore a quantum master equation, or make a quantum claim.",
-  "claim_status": "CERTIFIED_MAXWELL_CAUSAL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_Q2",
+  "claim_boundary": "This theorem extends the certified 54-row gravity-clock causal complex by the standard ten-row Maxwell BV Green contraction, obtaining a 64-row causal chain contraction. It also exports the exact 1,522-coefficient 36-row q2 transfer and proves its q1/q2 arity-two identity. A later independent consumer found that the exported tensor and odd pairing have 1,234 full and 953 retained cyclicity-defect coefficients, so cyclic mixed-vertex and gravitational-dressing promotion is explicitly blocked. The unary causal theorem and the separately certified compact retarded Maxwell signal are unaffected. This does not establish a cyclic mixed interaction, mixed q3, localized emitter/receiver, nonlinear backreaction, Hadamard data, a QME result, or a quantum claim.",
+  "claim_status": "CERTIFIED_MAXWELL_CAUSAL_UNARY_AND_Q1Q2_TRANSFER_WITH_CYCLICITY_BLOCKED",
   "combined_causal_contraction": {
     "endpoint": "C36=C26_gravity-clock direct-sum C10_Maxwell",
     "formula": "Lambda64,+/-=S64+iota64 (Lambda26,+/- direct-sum LambdaM,+/-) pi64",
@@ -27,6 +27,11 @@
       "path": "d_quotient_classical/certificates/BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json",
       "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
       "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "independent_cyclicity_audit": {
+      "path": "quantum-weyl/transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
+      "result_id": "BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY",
+      "sha256": "a9ce3aea922acc27d69e0ea9d72c42212b32acb6f47f693b8286fb9dafcd7227"
     },
     "redshift_fixture": {
       "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
@@ -73,7 +78,7 @@
     "combined_pi_iota_identity": true,
     "first_mixed_vertex_nonzero": true,
     "transferred_q2_arity_two_identity_all_36_rows": true,
-    "transferred_q2_cyclicity_by_cyclic_SDR": true
+    "transferred_q2_cyclicity_obstruction_imported": true
   },
   "first_transferred_mixed_vertex": {
     "arity_two_defect_term_counts": [
@@ -114,7 +119,9 @@
       0,
       0
     ],
+    "cyclicity_status": "FAILED_INDEPENDENT_COEFFICIENTWISE_REPLAY",
     "formula": "ell2_mixed=pi64 q2_Maxwell-overlay(iota36,iota36)",
+    "full_64_cyclicity_defect_count": 1234,
     "maximum_total_jet_order": 2,
     "mixed_gravity_Maxwell_input_term_count": 1138,
     "nonzero_output_rows": [
@@ -146,17 +153,33 @@
     "payload_file_sha256": "2eecbf9de98c3c23bd71d8b64b64e51a49f3f1f90ea9d79e7f36bccaa0904e6e",
     "payload_path": "d_quotient_classical/certificates/BERGER_FIRST_TRANSFERRED_MIXED_Q2_PAYLOAD.json",
     "pure_Maxwell_input_term_count": 384,
+    "retained_36_cyclicity_defect_count": 953,
+    "retained_36_first_normalized_witness": [
+      0,
+      26,
+      35,
+      [],
+      [
+        1
+      ],
+      {
+        "rational": 3,
+        "sqrt10": 0
+      }
+    ],
     "term_count": 1522
   },
   "flags": {
     "BERGER_COMBINED_64_ROW_CAUSAL_GREEN_HOMOTOPY": true,
-    "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": true,
+    "BERGER_FIRST_GRAVITY_MAXWELL_TRANSFERRED_DRESSING": false,
+    "BERGER_FIRST_MIXED_Q2_COEFFICIENT_TRANSFER": true,
     "BERGER_G1_COMPLETE_SIGNAL_SECTOR": false,
     "BERGER_HADAMARD_DATA": false,
     "BERGER_LOCALIZED_EMITTER_RECEIVER_OBSERVABLE": false,
     "BERGER_MAXWELL_BACKREACTION": false,
     "BERGER_MAXWELL_CAUSAL_GREEN_HOMOTOPY": true,
     "BERGER_MAXWELL_UNARY_CONTRACTION": true,
+    "BERGER_MIXED_Q2_CYCLICITY": false,
     "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL": false,
     "QUANTUM_CLAIM": false
   },
@@ -1020,7 +1043,7 @@
       ]
     }
   },
-  "next_gate": "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
+  "next_gate": "REPAIR_CLASSICAL_COUPLED_Q2_OR_PAIRING_UNTIL_CYCLICITY_REPLAYS",
   "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
   "schema": "pure-weyl-berger-maxwell-unary-contraction-transfer-v1",
   "setting_id": "compact_positive_berger_clock_fixed_coupling"
