@@ -46,24 +46,23 @@ a signoff.
 ### Coupled Maxwell cyclicity-repair gate
 
 Keep the certified 54-row pure gravity--clock result separate from the later
-64/36-row gravity--Maxwell overlay.  On the latter, the independent consumer
-replays all 1,522 transferred coefficients and both full and retained
-arity-two \(q_1q_2\) identities exactly, but finds 1,234 full and 953 retained
-odd-pairing cyclicity defects.  The retained atlas contains 800 physical
-metric--potential--potential terms, 138 ghost/potential-antifield terms, and
-15 Maxwell ghost-density terms.  A uniform factor two on Maxwell-output
-\(q_2\) removes the first 938 while preserving \(q_1q_2\), but the final 15
-remain; it is a partial diagnosis, not a repaired vertex.
+64/36-row gravity--Maxwell overlay. The landed repair uses a common factor two
+on Maxwell-output \(q_2\) together with the BV-canonical coboundary
+\([q_1,F_2]\), where \(F_2(c_M)=c_M-2\iota_cA\). The independent consumer
+reconstructs 1,890 full and 1,474 retained coefficients and finds zero full
+and retained \(q_1q_2\) defects, zero full and retained cyclicity defects, and
+zero missing, extra, or changed transfer coefficients. Causal unary flags are
+preserved. The machine verdict is
+`ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR`.
 
 The fail-closed receiving contract is
 `quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json`.
-Its readiness certificate rejects the real obstructed baseline.  A committed
-candidate must independently pass strict hashes and schemas, full and retained
-\(q_1q_2\), full and retained cyclicity, coefficientwise transfer equality,
-and causal-unary preservation. Until then the coupled cyclic vertex,
-gravitational dressing, and mixed \(q_3\) remain blocked. This does not reopen
-the already-certified pure gravity--clock \(q_2,q_3\), or arity-three Cartan
-calculation.
+Its certificate retains the real obstructed baseline as a negative control
+and pins the accepted repair by commit and content hash. The repaired
+classical cyclic vertex is accepted and mixed \(q_3\) is unblocked. This does
+not itself compute mixed \(q_3\), promote residual or quantum transfer, or
+reopen the already-certified pure gravity--clock \(q_2,q_3\) and arity-three
+Cartan calculation.
 
 The healthy Berger-clock branch now carries a certified scoped classical
 verdict: the fixed-coupling lapse equation and compact averaging prove
@@ -290,7 +289,7 @@ The finite nonzero-weight closure no-go forbids a finite cyclic truncation as
 a substitute.  Use the infinite all-weight completion or the full
 support-local polydifferential complex.
 
-### Work package N-G2: complete support-local Berger arity two
+### Work package N-G2: complete support-local Berger arity two — completed
 
 Export and consume the complete gauge-fixed 54-row `q2/D` package.  Require
 all output rows, derivative orders, cyclicity, local (D)-equivariance, the
@@ -298,12 +297,15 @@ arity-two (Q^2=0) identity, support-local admissibility, and an ND2 primitive
 or normalized obstruction.  This is the first result allowed to support a
 full interacting Berger Cartan verdict.
 
-The prepared receiving contract is
+The receiving contract is
 `quantum-weyl/transfer/schema/berger-54-row-support-local-q2-portable-v1.schema.json`.
 It binds the sparse bilinear PBW tensor to the certified 54-row layout and the
 existing `q1`, `D54`, `iota_cl`, `pi_cl`, `S_cl`, and cyclic-pairing hashes.
-The readiness receipt remains `INPUT_BLOCKED`; its nonzero test fixture is not
-scientific input and cannot substitute for the committed classical export.
+The authoritative support-local export subsequently landed and was consumed;
+the old readiness receipt remains only as a historical interface receipt. The
+pure gravity--clock arity-two and arity-three results are certified, while the
+separate repaired 64/36 gravity--Maxwell (q_2) now supplies the input for the
+next mixed (q_3) calculation.
 
 ### Work package N-G3: uniform background-interaction obstruction
 
@@ -365,7 +367,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | known classical target; import only after verification | free target; interacting identity open | proved free baseline | zero in stated free absolute residual complex | \(I_2\) on centered free classes; interacting open | proper free solution sector |
-| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | pure gravity--clock cyclic \(K_{\rm Berger}\)-Cartan contraction certified through arity three; coupled Maxwell \(q_2\) cyclicity blocked | classical advanced/retarded 54-row chain contractions certified; compact neutral Maxwell signal is sourced and unary | no Paper-IX one-particle claim | pure gravity--clock pairing complete; coupled Maxwell overlay has 1,234 full and 953 retained exact cyclicity defects | certified non-Einstein Weyl--matter control branch |
+| Positive Berger clock | zero on the declared smooth fixed-coupling linearized phase space | pure gravity--clock cyclic \(K_{\rm Berger}\)-Cartan contraction certified through arity three; repaired coupled Maxwell \(q_2\) accepted and mixed \(q_3\) open | classical advanced/retarded 54-row chain contractions certified; compact neutral Maxwell signal is sourced and unary | no Paper-IX one-particle claim | pure gravity--clock pairing complete; repaired coupled Maxwell overlay is cyclic on full 64 and retained 36 rows | certified non-Einstein Weyl--matter control branch |
 | Cylinder + scalar clock | open | first matter test | open | open | open | open |
 | Cylinder + Yang--Mills | open | second matter test | open | open | open | open |
 | Weakly deformed background | open | mixed obstruction open | open | open | open | open |

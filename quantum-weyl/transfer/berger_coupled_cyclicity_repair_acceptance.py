@@ -25,6 +25,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 INPUT_SCHEMA = HERE / "schema/berger-coupled-cyclicity-repair-input-v1.schema.json"
 BASELINE_COMMIT = "744383f2a21a05a1464f3a25b6569e2b001b4f20"
+ACCEPTED_COMMIT = "e4f5c46fd7a04088e78e0374853b1f122ea223b1"
 
 ARTIFACT_PATHS = {
     "carrier": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
@@ -100,6 +101,33 @@ def baseline_manifest() -> dict[str, Any]:
         "claim_boundary": (
             "Pinned obstructed baseline used only to prove that the acceptance rail rejects "
             "noncyclic coupled q2 data. It is not a corrected candidate or scientific repair."
+        ),
+    }
+
+
+def accepted_manifest() -> dict[str, Any]:
+    """Content-address the landed classical repair without reading the worktree."""
+
+    return {
+        "schema": "quantum-weyl-berger-coupled-cyclicity-repair-input-v1",
+        "result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_INPUT",
+        "classical_commit": ACCEPTED_COMMIT,
+        "artifacts": {
+            name: {"path": path, "sha256": _sha256(_git_blob(ACCEPTED_COMMIT, path))}
+            for name, path in ARTIFACT_PATHS.items()
+        },
+        "declared_scope": {
+            "setting_id": "compact_positive_berger_clock_fixed_coupling",
+            "coefficient_field": "Q(sqrt(10))",
+            "full_rows": 64,
+            "retained_rows": 36,
+            "required_dependency_tags": ["LOCAL-ALGEBRAIC"],
+        },
+        "claim_boundary": (
+            "Committed corrected classical repair candidate for independent exact "
+            "acceptance. Acceptance is limited to the LOCAL-ALGEBRAIC coupled q2 and "
+            "does not establish a quantum master equation, Lorentzian construction, "
+            "residual quantum transfer, or particle interpretation."
         ),
     }
 

@@ -9,6 +9,7 @@ from pathlib import Path
 from .berger_coupled_cyclicity_repair_acceptance import (
     HERE,
     INPUT_SCHEMA,
+    accepted_manifest,
     baseline_manifest,
     evaluate,
 )
@@ -16,6 +17,7 @@ from .berger_coupled_cyclicity_repair_acceptance import (
 
 ROOT = HERE.parents[1]
 FIXTURE = HERE / "fixtures/berger-coupled-cyclicity-repair-obstructed-baseline.json"
+ACCEPTED_FIXTURE = HERE / "fixtures/berger-coupled-cyclicity-repair-accepted-input.json"
 
 
 def _sha256(path: Path) -> str:
@@ -28,7 +30,7 @@ def _canonical_hash(value: object) -> str:
     ).hexdigest()
 
 
-def build() -> tuple[dict, dict]:
+def build() -> tuple[dict, dict, dict]:
     fixture = baseline_manifest()
     baseline = evaluate(fixture)
     if baseline["verdict"] != "REJECTED_EXACT_ALGEBRAIC_DEFECT":
@@ -41,6 +43,31 @@ def build() -> tuple[dict, dict]:
         or diagnostics["retained_cyclicity_defect_count"] != 953
     ):
         raise ValueError("obstructed baseline diagnostics drifted")
+
+    accepted_fixture = accepted_manifest()
+    accepted = evaluate(accepted_fixture)
+    if accepted["verdict"] != "ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR":
+        raise ValueError("landed corrected candidate was not accepted")
+    accepted_diagnostics = accepted["diagnostics"]
+    if (
+        any(
+            accepted_diagnostics[key]
+            for key in (
+                "full_q1_q2_defect_count",
+                "full_cyclicity_defect_count",
+                "transfer_missing_coefficient_count",
+                "transfer_extra_coefficient_count",
+                "transfer_changed_coefficient_count",
+                "retained_q1_q2_defect_count",
+                "retained_cyclicity_defect_count",
+            )
+        )
+        or accepted_diagnostics["full_overlay_coefficient_count"] != 1890
+        or accepted_diagnostics["retained_transfer_coefficient_count"] != 1474
+        or accepted_diagnostics["causal_unary_flags_preserved"] is not True
+        or accepted_diagnostics["producer_cyclicity_claim_consistent"] is not True
+    ):
+        raise ValueError("landed corrected candidate diagnostics drifted")
 
     source_paths = (
         "quantum-weyl/transfer/berger_coupled_cyclicity_repair_acceptance.py",
@@ -56,7 +83,7 @@ def build() -> tuple[dict, dict]:
     certificate = {
         "schema": "quantum-weyl-berger-coupled-cyclicity-repair-readiness-v1",
         "result_id": "BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS",
-        "result_state": "INPUT_BLOCKED_CORRECTED_CLASSICAL_COMMIT_NOT_SUPPLIED",
+        "result_state": "CORRECTED_CLASSICAL_REPAIR_ACCEPTED_MIXED_Q3_INPUT_UNBLOCKED",
         "lifecycle_layer": "CLASSICAL_BV_IMPORT_ACCEPTANCE",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "input_contract": {
@@ -74,6 +101,16 @@ def build() -> tuple[dict, dict]:
             "verdict": baseline["verdict"],
             "diagnostics": diagnostics,
         },
+        "accepted_candidate": {
+            "path": "quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-accepted-input.json",
+            "file_sha256": hashlib.sha256(
+                (json.dumps(accepted_fixture, indent=2, sort_keys=True) + "\n").encode()
+            ).hexdigest(),
+            "canonical_sha256": _canonical_hash(accepted_fixture),
+            "classical_commit": accepted_fixture["classical_commit"],
+            "verdict": accepted["verdict"],
+            "diagnostics": accepted_diagnostics,
+        },
         "acceptance_conditions": {
             "full_q1_q2_defect_count": 0,
             "full_cyclicity_defect_count": 0,
@@ -89,22 +126,24 @@ def build() -> tuple[dict, dict]:
         "claim_flags": {
             "REPAIR_ACCEPTANCE_CONSUMER_READY": True,
             "OBSTRUCTED_BASELINE_REJECTED": True,
-            "CORRECTED_CLASSICAL_INPUT_AVAILABLE": False,
-            "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED": False,
-            "MIXED_Q3_UNBLOCKED": False,
+            "CORRECTED_CLASSICAL_INPUT_AVAILABLE": True,
+            "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED": True,
+            "MIXED_Q3_UNBLOCKED": True,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "SUPPLY_COMMITTED_CORRECTED_CLASSICAL_REPAIR_MANIFEST",
+        "next_gate": "IMPORT_OR_COMPUTE_MIXED_Q3_WITH_REPAIRED_Q2",
         "claim_boundary": (
-            "This readiness result installs an exact LOCAL-ALGEBRAIC consumer and proves "
-            "that the committed obstructed 64/36 Berger gravity-Maxwell baseline is rejected. "
-            "It does not contain or anticipate a corrected classical tensor. Acceptance requires "
-            "a committed, content-addressed carrier, q2 payload, transfer certificate, transferred "
-            "payload, and their strict Draft 2020-12 schemas. The consumer independently recomputes "
-            "the full and retained q1/q2 identities, full and retained cyclicity, and every transfer "
-            "coefficient, while preserving the previously certified causal unary flags. Until all "
-            "conditions pass simultaneously, the mixed cyclic vertex, gravitational dressing, mixed "
-            "q3, residual transfer, QME, Lorentzian, particle, and quantum claims remain inactive."
+            "This LOCAL-ALGEBRAIC classical-import result independently accepts the committed "
+            "64/36 Berger gravity-Maxwell q2 repair at classical commit "
+            "e4f5c46fd7a04088e78e0374853b1f122ea223b1. Strict Draft 2020-12 schemas and "
+            "content hashes pin the carrier, full q2 payload, transfer certificate, and retained "
+            "payload. The consumer recomputes zero full and retained q1/q2 defects, zero full and "
+            "retained cyclicity defects, exact coefficientwise transfer with 1,890 full and 1,474 "
+            "retained coefficients, preserved causal unary flags, and consistent producer flags. "
+            "The obstructed baseline remains as a negative control. This accepts the repaired "
+            "classical cyclic mixed vertex and unblocks mixed q3 work only; it does not compute q3, "
+            "restore a QME, transfer a quantum correction, construct Lorentzian time-ordered "
+            "products, establish a particle sector, or make any quantum claim."
         ),
         "consumer_provenance": {
             "source_manifest": source_manifest,
@@ -112,46 +151,47 @@ def build() -> tuple[dict, dict]:
         },
         "verification_receipts": [
             {
-                "test_tier": 1,
+                "test_tier": 2,
                 "command": "PYTHONPATH=quantum-weyl python3 -m transfer.berger_coupled_cyclicity_repair_readiness_certificate --check",
-                "elapsed_seconds": 2.85,
+                "elapsed_seconds": 4.64,
                 "status": "PASS",
             },
             {
-                "test_tier": 1,
+                "test_tier": 2,
                 "command": "PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_coupled_cyclicity_repair_readiness",
-                "elapsed_seconds": 5.02,
+                "elapsed_seconds": 13.54,
                 "status": "PASS",
             },
             {
-                "test_tier": 1,
+                "test_tier": 2,
                 "command": "PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_coupled_cyclicity_repair_readiness.py -v",
-                "elapsed_seconds": 13.49,
+                "elapsed_seconds": 27.38,
                 "status": "PASS",
             },
             {
                 "test_tier": 1,
                 "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json -d quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-obstructed-baseline.json",
-                "elapsed_seconds": 1.60,
+                "elapsed_seconds": 1.20,
+                "status": "PASS",
+            },
+            {
+                "test_tier": 1,
+                "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-input-v1.schema.json -d quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-accepted-input.json",
+                "elapsed_seconds": 2.63,
                 "status": "PASS",
             },
             {
                 "test_tier": 1,
                 "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s quantum-weyl/transfer/schema/berger-coupled-cyclicity-repair-readiness-v1.schema.json -d quantum-weyl/transfer/certificates/BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS.json",
-                "elapsed_seconds": 1.02,
+                "elapsed_seconds": 2.14,
                 "status": "PASS",
             },
         ],
         "higher_tiers_not_run": {
-            "tier_2": (
-                "No corrected classical mathematical input exists in this change. Tier 1 replays "
-                "the complete obstructed baseline and all exact acceptance predicates; the affected "
-                "certificate chain becomes mandatory when a candidate repair manifest is supplied."
-            ),
             "tier_3": (
                 "No shared algebra engine, theorem freeze, lifecycle promotion, causal construction, "
                 "QME state, Lorentzian certification, release boundary, or classical source artifact changes."
             ),
         },
     }
-    return certificate, fixture
+    return certificate, fixture, accepted_fixture

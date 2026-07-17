@@ -66,23 +66,21 @@ classical Green or cyclicity certificates.
 
 ### Coupled Maxwell import boundary
 
-The current gravity--Maxwell \(q_2\) is a classical import diagnostic, not a
-quantum vertex.  Its 64-to-36 transfer and the full and retained \(q_1q_2\)
-identities replay exactly, while odd-pairing cyclicity fails in 1,234 full and
-953 retained coefficients. The exact retained atlas splits these into 800
-physical metric--potential--potential terms, 138 ghost/potential-antifield
-terms, and 15 Maxwell ghost-density terms. The known uniform factor-two
-Maxwell-output normalization removes 938 without breaking \(q_1q_2\), but it
-does not repair the final 15.
+The gravity--Maxwell \(q_2\) remains a classical input, not a quantum vertex.
+The committed repair doubles all Maxwell-output components and adds the
+BV-canonical coboundary \([q_1,F_2]\) for
+\(F_2(c_M)=c_M-2\iota_cA\), including its complete cotangent lift.  The
+quantum-side content-addressed consumer independently reconstructs 1,890 full
+and 1,474 retained coefficients.  Full and retained \(q_1q_2\), full and
+retained cyclicity, and all transfer missing/extra/changed counts vanish
+exactly; causal unary flags remain true.  The machine verdict is
+`ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR`.
 
-The quantum side now has a content-addressed, fail-closed acceptance consumer
-at `quantum-weyl/transfer/berger_coupled_cyclicity_repair_acceptance.py` and a
-readiness result
-`BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS`. It remains
-`INPUT_BLOCKED_CORRECTED_CLASSICAL_COMMIT_NOT_SUPPLIED`. No mixed \(q_3\),
-residual quantum transfer, anomaly coefficient, QME restoration, Lorentzian
-claim, or particle statement follows from this classical repair rail. The
-pure gravity--clock Paper IX arity-three result is unaffected.
+This closes the classical binary cyclicity seam and opens construction of the
+classical mixed \(q_3\).  It does not construct \(q_3\), perform residual
+quantum transfer, calculate a repository anomaly coefficient, restore the
+QME, or establish a Lorentzian or particle claim.  The pure gravity--clock
+Paper IX arity-three result is unaffected.
 
 ## Shared relative-complex assignment
 
@@ -366,7 +364,7 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
 | Vacuum cylinder | classical target; quantum status to compute | classical target; compute defect | proved only classically | zero classically in stated complex; quantum open | \(I_2\) classically; \(G(\hbar)\) open | proper classical solution sector |
-| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; coupled Maxwell \(q_2\) cyclicity blocked | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | pure gravity--clock pairing classical; coupled Maxwell cyclicity defective; quantum pairing open | classical non-Einstein Weyl--matter control branch only |
+| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\) accepted and mixed \(q_3\) open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only |
 | Cylinder + scalar clock | open | primary quantum test | open | open | open | open |
 | Cylinder + Yang--Mills | open | open after scalar | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |

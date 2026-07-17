@@ -251,21 +251,28 @@ PYTHONPATH=quantum-weyl python3 -m transfer.berger_retained_26_q2_transfer_certi
 ```
 
 The classical gravity--clock--Maxwell extension has now landed as a sparse
-64-row overlay. A pinned quantum consumer independently verifies the exact
-artifact and row hashes, gravity composition seam, 1,954 overlay terms,
-grading, PBW order, Koszul symmetry, and coefficientwise frozen
-`K_Berger=e0` derivation. A later pinned audit establishes that the legacy
-`D=e0` label denotes `K_Berger=D-omega R`; raw cylinder `D` is affine and no
-raw-`D` equivariance or Cartan theorem is promoted. The consumer also does
-not promote the producer's
-`q1/q2` or cyclicity booleans: portable 64-row unary and pairing carriers are
-not exported. The Maxwell unary contraction is likewise absent, so mixed
-vertex transfer remains blocked.
+64-row overlay.  Its first export exposed an exact cyclicity obstruction.
+The committed convention-derived repair doubles every Maxwell-output term
+and adds `[q1,F2]` for `F2(c_M)=c_M-2 i_c A`, including the complete
+BV-canonical cotangent lift.  The pinned quantum acceptance consumer now
+reconstructs 1,890 full coefficients and 1,474 retained coefficients.  Full
+and retained `q1/q2`, full and retained odd-pairing cyclicity, and every
+64-to-36 transfer comparison vanish exactly; the causal unary flags are
+preserved.  The verdict is `ACCEPTED_COUPLED_Q2_CYCLIC_REPAIR`.
+
+This accepts the classical binary vertex and opens the classical mixed-`q3`
+gate.  It does not construct `q3`, compute a quantum anomaly coefficient,
+restore the QME, perform residual quantum transfer, or promote a Lorentzian
+or particle claim.  The legacy `D=e0` label still denotes
+`K_Berger=D-omega R`; raw cylinder `D` remains affine.
 
 ```bash
 PYTHONPATH=quantum-weyl python3 -m transfer.berger_coupled_64_q2_import_certificate --check
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_coupled_64_q2_import
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_coupled_64_q2_import.py -v
+PYTHONPATH=quantum-weyl python3 -m transfer.berger_coupled_cyclicity_repair_readiness_certificate --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_berger_coupled_cyclicity_repair_readiness
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_berger_coupled_cyclicity_repair_readiness.py -v
 ```
 
 ```bash
