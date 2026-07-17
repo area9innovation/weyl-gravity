@@ -136,6 +136,10 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_CAUSAL_D_CARTAN_V2.json`](certificates/BERGER_CAUSAL_D_CARTAN_V2.json)
 - Causal-hull and cyclic-Reynolds V2 proof:
   [`reports/berger-causal-D-Cartan-v2.md`](reports/berger-causal-D-Cartan-v2.md)
+- Complete arbitrary-input four-dimensional causal D-Cartan contraction through arity three:
+  [`certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json`](certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json)
+- Exact source-closure, odd-Darboux C4 and causal-Reynolds proof:
+  [`reports/berger-causal-D-Cartan-arity-three.md`](reports/berger-causal-D-Cartan-arity-three.md)
 - Portable all-row 34-component minimal contraction:
   [`certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json`](certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json)
 - Portable minimal-contraction report:

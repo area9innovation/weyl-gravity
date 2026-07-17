@@ -1,0 +1,151 @@
+{
+  "arity_three_source": {
+    "D_q3_derivation": "[D,q3]=0",
+    "L_D3": "ZERO",
+    "delta_A_D3": "ZERO",
+    "delta_iota_D1_substitution": "delta iota_D,cyc^(1)=D",
+    "delta_iota_D2_substitution": "delta iota_D,cyc^(2)=-[q2,iota_D,cyc^(1)]",
+    "delta_q3_substitution": "delta q3=-1/2[q2,q2]",
+    "graded_Jacobi": "[q2,[q2,iota_D^(1)]]=1/2[[q2,q2],iota_D^(1)]",
+    "normalized_channel_coefficients": {
+      "[[q2,q2],iota_D1]": "0",
+      "[q3,D]": "0"
+    },
+    "source": "A_D^(3)=[q3,iota_D,cyc^(1)]+[q2,iota_D,cyc^(2)]-L_D^(3)"
+  },
+  "claim_boundary": "This theorem closes the classical D-Cartan recurrence through arity three on the complete arbitrary-input 54-row four-dimensional Berger BV complex. The q2, q3, D and pairing data are support-local; the cyclic primitives have two-sided causal-hull support. It does not claim a separately retarded cyclic ternary primitive, arity-four closure, Hadamard data, anomaly cancellation, a QME solution, or a quantum theorem.",
+  "claim_status": "CERTIFIED_CAUSAL_CYCLIC_D_CARTAN_THROUGH_ARITY_THREE",
+  "convention": {
+    "Taylor": "suspended-graded-symmetric-factorial-v1",
+    "cyclic_tensorization": "pair the output with the frozen degree-one odd Darboux form before applying C4",
+    "recurrence": "[q1,iota_D^(3)]=-[q3,iota_D^(1)]-[q2,iota_D^(2)]+L_D^(3)",
+    "source_degree": 0
+  },
+  "cyclic_completion": {
+    "Reynolds_audit": {
+      "Cyc4_commutes_with_delta": true,
+      "Cyc4_fixes_cyclic_source": true,
+      "Cyc4_squared_equals_Cyc4": true,
+      "cyclic_primitive_identity": true,
+      "delta_Cyc4_raw_primitive_coefficient": "-1",
+      "group_algebra": "Q[C4]/(tau^4-1)",
+      "projector_coefficients": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ]
+    },
+    "identity": "delta iota_D,cyc^(3)=-A_D^(3)",
+    "pairing_and_sign_audit": {
+      "C4_group_law_defects": 0,
+      "admissible_degree_zero_row_quartets": 978736,
+      "audit_method": "exhaustive over actual degree classes with exact row multiplicities",
+      "degree_multiplicities": {
+        "-1": 5,
+        "0": 22,
+        "1": 22,
+        "2": 5
+      },
+      "odd_Darboux_negative_orientations": 27,
+      "pairing_degree_sum_one": true,
+      "pairing_odd_skew_orientation": true,
+      "pairing_partner_involution": true,
+      "tensor_rotation_sign": "(-1)^(parity(first)*sum(parity(remaining_three)))",
+      "total_rows": 54
+    },
+    "primitive": "iota_D,cyc^(3)=Cyc_4 R^(3)",
+    "projector": "Cyc_4=(I+tau+tau^2+tau^3)/4",
+    "raw_identity": "delta R^(3)=-A_D^(3)",
+    "raw_primitive": "R^(3)=-Lambda54,+ A_D^(3)"
+  },
+  "dependency_refs": {
+    "complete_causal_contraction": {
+      "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b"
+    },
+    "local_D_action": {
+      "result_id": "BERGER_54_ROW_LOCAL_D_ACTION",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    },
+    "lower_causal_Cartan": {
+      "result_id": "BERGER_CAUSAL_D_CARTAN_V2",
+      "sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444"
+    },
+    "odd_Darboux_pairing": {
+      "result_id": "BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION",
+      "sha256": "6e3baf6ecfab2c2854ccfbfb5c69122fe0bbe621ddcf8ab2a5651e3decf113e0"
+    },
+    "support_local_q2": {
+      "result_id": "BERGER_SUPPORT_LOCAL_Q2",
+      "sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874"
+    },
+    "support_local_q3": {
+      "result_id": "BERGER_SUPPORT_LOCAL_Q3",
+      "sha256": "f55c145700cd30273e0f16d585bfd0815e5a8451606b0998bc706a8b61798cad"
+    },
+    "support_local_q3_payload": {
+      "result_id": "BERGER_SUPPORT_LOCAL_Q3_PAYLOAD",
+      "sha256": "a0ae9ba202b1f6b35c48c3506417c2251df012324cadbdbea3aa389a4c2d8bfb"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Cyc4_projector_exact": true,
+    "D_q3_derivation_imported": true,
+    "Hom_cochain_contraction_imported": true,
+    "L_D3_explicitly_zero": true,
+    "actual_54_row_odd_pairing_audited": true,
+    "actual_54_row_tensorized_C4_group_law": true,
+    "all_54_rows_included": true,
+    "arity_three_Cartan_identity": true,
+    "arity_three_cyclic_primitive": true,
+    "arity_three_source_closed": true,
+    "arity_three_source_cyclic": true,
+    "complete_arbitrary_input_q3_imported": true,
+    "lower_causal_Cartan_through_arity_two": true,
+    "no_nonlocal_spatial_projector": true,
+    "q2_cyclicity_imported": true,
+    "q3_arity_identity_imported": true,
+    "q3_cyclicity_transport_imported": true,
+    "q3_quartic_cyclicity_imported": true,
+    "two_sided_causal_support": true
+  },
+  "flags": {
+    "BERGER_ARITY_THREE_D_CARTAN_CYCLIC_COMPLETION": true,
+    "BERGER_ARITY_THREE_D_CARTAN_FULL_4D": true,
+    "BERGER_ARITY_THREE_D_CARTAN_SOURCE_CLOSED": true,
+    "BERGER_CAUSAL_D_CARTAN_THROUGH_ARITY_THREE": true,
+    "BERGER_CAUSAL_D_CARTAN_V2": true,
+    "BERGER_HADAMARD_DATA": false,
+    "QUANTUM_CLAIM": false
+  },
+  "next_gates": [
+    "QUANTUM_ND3_CLASSICAL_IMPORT",
+    "BERGER_ARITY_FOUR_D_CARTAN_IF_REQUIRED",
+    "BERGER_HADAMARD_DATA"
+  ],
+  "publication": {
+    "report_path": "d_quotient_classical/reports/berger-causal-D-Cartan-arity-three.md",
+    "schema_path": "d_quotient_classical/schema/berger-causal-D-Cartan-arity-three-v1.schema.json",
+    "source_manifest_path": "d_quotient_classical/manifests/BERGER_ARITY_THREE_D_CARTAN_FULL_4D_SOURCE_MANIFEST.json",
+    "source_manifest_schema_path": "d_quotient_classical/schema/berger-causal-D-Cartan-arity-three-manifest-v1.schema.json",
+    "verification_receipt_path": "d_quotient_classical/certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D_VERIFICATION_RECEIPT.json",
+    "verification_receipt_schema_path": "d_quotient_classical/schema/berger-causal-D-Cartan-arity-three-receipt-v1.schema.json"
+  },
+  "result_id": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D",
+  "schema": "pure-weyl-berger-causal-D-Cartan-arity-three-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "support_scope": {
+    "advanced_retarded_chain_homotopies_remain_one_sided": true,
+    "cyclic_arity_three_primitive_is_two_sided_causal": true,
+    "inverse_spatial_laplacian": false,
+    "mode_or_helicity_projector": false,
+    "q2_q3_D_and_pairing_are_support_local": true,
+    "separately_retarded_or_advanced_cyclic_primitive_claimed": false,
+    "support_bound": "supp iota_D,cyc^(3)(f,g,h) subset J(supp f union supp g union supp h)"
+  }
+}

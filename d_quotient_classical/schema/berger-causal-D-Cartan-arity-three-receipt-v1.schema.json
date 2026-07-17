@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-causal-D-Cartan-arity-three-receipt-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "dependency_tags", "certificate_path",
+    "certificate_sha256", "source_manifest_path", "source_manifest_sha256",
+    "schema_sha256", "verification_command", "test_command", "elapsed_seconds",
+    "test_tier", "tier_2_dependency", "status", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-causal-D-Cartan-arity-three-receipt-v1"},
+    "result_id": {"const": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D_VERIFICATION_RECEIPT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "certificate_path": {"type": "string", "minLength": 1},
+    "certificate_sha256": {"$ref": "#/$defs/sha256"},
+    "source_manifest_path": {"type": "string", "minLength": 1},
+    "source_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "schema_sha256": {"$ref": "#/$defs/sha256"},
+    "verification_command": {"type": "string", "minLength": 1},
+    "test_command": {"type": "string", "minLength": 1},
+    "elapsed_seconds": {"type": "number", "minimum": 0},
+    "test_tier": {"const": 1},
+    "tier_2_dependency": {"type": "string", "minLength": 1},
+    "status": {"const": "PASS"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

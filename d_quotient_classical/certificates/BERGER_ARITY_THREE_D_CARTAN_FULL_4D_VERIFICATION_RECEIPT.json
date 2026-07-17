@@ -1,0 +1,20 @@
+{
+  "certificate_path": "d_quotient_classical/certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json",
+  "certificate_sha256": "0c304ca0dced538c4514dd8efbf8bf9e33a415772944818f7dadec1e88b7a829",
+  "claim_boundary": "This receipt covers the arity-three Cartan source, exact closure reduction, odd-pairing/C4 audit, causal primitive formula, schema and mutation guards. It does not rerun the multi-hour q3 action expansion.",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "elapsed_seconds": 0.008578,
+  "result_id": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D_VERIFICATION_RECEIPT",
+  "schema": "pure-weyl-berger-causal-D-Cartan-arity-three-receipt-v1",
+  "schema_sha256": "90bf3914dfcc6bffa2b5a171f015cee5de4b95ec3e03cc8f504970602c816d95",
+  "source_manifest_path": "d_quotient_classical/manifests/BERGER_ARITY_THREE_D_CARTAN_FULL_4D_SOURCE_MANIFEST.json",
+  "source_manifest_sha256": "28609014b2bd6150a24446f3add08337560cbbc482bf5bded21d1aba2d036407",
+  "status": "PASS",
+  "test_command": "PYTHONPATH=. pytest -q d_quotient_classical/backreacted_clock/tests/test_berger_causal_d_cartan_arity_three.py",
+  "test_tier": 1,
+  "tier_2_dependency": "The complete q3 payload and its identities are imported from the frozen BERGER_SUPPORT_LOCAL_Q3 Tier-2 certificate; they are not recomputed by this structural causal recurrence theorem.",
+  "verification_command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_causal_d_cartan_arity_three.py"
+}

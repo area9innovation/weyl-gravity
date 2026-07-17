@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-causal-D-Cartan-arity-three-manifest-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "files", "certificate_canonical_sha256", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-causal-D-Cartan-arity-three-manifest-v1"},
+    "result_id": {"const": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D_SOURCE_MANIFEST"},
+    "files": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "certificate_canonical_sha256": {"$ref": "#/$defs/sha256"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
