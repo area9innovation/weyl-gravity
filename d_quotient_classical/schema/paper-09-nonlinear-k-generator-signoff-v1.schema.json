@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-paper-09-nonlinear-k-generator-signoff-v1.json",
+  "title": "Paper IX nonlinear-team K-generator signoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "reviewer_role",
+    "review_status",
+    "setting_id",
+    "dependency_tags",
+    "source_manifest",
+    "review_scope",
+    "exact_checks",
+    "signoff",
+    "legacy_artifact_interpretation",
+    "forbidden_promotions",
+    "flags",
+    "verification",
+    "claim_boundary",
+    "next_gate"
+  ],
+  "properties": {
+    "schema": {
+      "const": "pure-weyl-paper-09-nonlinear-k-generator-signoff-v1"
+    },
+    "result_id": {
+      "const": "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF"
+    },
+    "reviewer_role": {
+      "const": "NONLINEAR_TEAM_INTERNAL_REVIEWER"
+    },
+    "review_status": {
+      "const": "SIGNED_SCOPED_K_THEOREM"
+    },
+    "setting_id": {
+      "const": "compact_positive_berger_clock_q_9_over_40"
+    },
+    "dependency_tags": {
+      "const": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ]
+    },
+    "source_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_table",
+        "generator_audit",
+        "support_local_q2",
+        "support_local_q3",
+        "causal_green_homotopy",
+        "causal_cartan_arity_two",
+        "causal_cartan_arity_three",
+        "paper_source"
+      ],
+      "properties": {
+        "claim_table": {"$ref": "#/$defs/evidence"},
+        "generator_audit": {"$ref": "#/$defs/evidence"},
+        "support_local_q2": {"$ref": "#/$defs/evidence"},
+        "support_local_q3": {"$ref": "#/$defs/evidence"},
+        "causal_green_homotopy": {"$ref": "#/$defs/evidence"},
+        "causal_cartan_arity_two": {"$ref": "#/$defs/evidence"},
+        "causal_cartan_arity_three": {"$ref": "#/$defs/evidence"},
+        "paper_source": {"$ref": "#/$defs/evidenceWithoutResultId"}
+      }
+    },
+    "review_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "certified_generator",
+        "raw_cylinder_generator",
+        "certified_taylor_arities",
+        "maximum_certified_arity",
+        "gauge_fixed_rows",
+        "input_scope",
+        "support_scope"
+      ],
+      "properties": {
+        "certified_generator": {"const": "K_Berger=D-omega R"},
+        "raw_cylinder_generator": {"const": "D=partial_t is affine about the rotating background"},
+        "certified_taylor_arities": {"const": [1, 2, 3]},
+        "maximum_certified_arity": {"const": 3},
+        "gauge_fixed_rows": {"const": 54},
+        "input_scope": {"const": "arbitrary four-dimensional jets at the frozen rational Berger fixture"},
+        "support_scope": {"const": "q2 q3 and pairing support-local; cyclic Cartan primitives supported in the two-sided causal hull"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_hashes_pinned",
+        "claim_table_is_writing_started",
+        "claim_table_not_theorem_frozen",
+        "paper_states_K_theorem",
+        "paper_separates_raw_D_from_K",
+        "paper_rejects_affine_D_Cartan_promotion",
+        "paper_rejects_all_orders_promotion",
+        "generator_audit_identifies_frozen_action_as_K",
+        "generator_audit_identifies_raw_D_as_affine",
+        "q2_action_derived_support_local_and_K_equivariant",
+        "q3_action_derived_support_local_and_K_equivariant",
+        "causal_chain_contractions_cover_all_54_rows",
+        "cyclic_K_Cartan_identity_through_arity_two",
+        "cyclic_K_Cartan_identity_through_arity_three",
+        "legacy_D_labels_reinterpreted_only_via_generator_audit",
+        "no_affine_D_Cartan_certificate",
+        "no_arity_four_certificate",
+        "no_all_orders_certificate",
+        "no_quantum_promotion"
+      ],
+      "properties": {
+        "source_hashes_pinned": {"const": true},
+        "claim_table_is_writing_started": {"const": true},
+        "claim_table_not_theorem_frozen": {"const": true},
+        "paper_states_K_theorem": {"const": true},
+        "paper_separates_raw_D_from_K": {"const": true},
+        "paper_rejects_affine_D_Cartan_promotion": {"const": true},
+        "paper_rejects_all_orders_promotion": {"const": true},
+        "generator_audit_identifies_frozen_action_as_K": {"const": true},
+        "generator_audit_identifies_raw_D_as_affine": {"const": true},
+        "q2_action_derived_support_local_and_K_equivariant": {"const": true},
+        "q3_action_derived_support_local_and_K_equivariant": {"const": true},
+        "causal_chain_contractions_cover_all_54_rows": {"const": true},
+        "cyclic_K_Cartan_identity_through_arity_two": {"const": true},
+        "cyclic_K_Cartan_identity_through_arity_three": {"const": true},
+        "legacy_D_labels_reinterpreted_only_via_generator_audit": {"const": true},
+        "no_affine_D_Cartan_certificate": {"const": true},
+        "no_arity_four_certificate": {"const": true},
+        "no_all_orders_certificate": {"const": true},
+        "no_quantum_promotion": {"const": true}
+      }
+    },
+    "signoff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nonlinear_team",
+        "accepted_theorem",
+        "rejected_interpretations"
+      ],
+      "properties": {
+        "nonlinear_team": {"const": "SIGNED_K_GENERATOR_INTERPRETATION"},
+        "accepted_theorem": {
+          "const": "The action-derived Taylor operations and causal cyclic Cartan primitive are certified for K_Berger=D-omega R on all 54 gauge-fixed rows through arity three."
+        },
+        "rejected_interpretations": {
+          "const": [
+            "affine raw-D Cartan theorem",
+            "arity-four Cartan theorem",
+            "convergent all-orders Cartan theorem",
+            "integrated nonlinear quotient",
+            "Hadamard or quantum theorem"
+          ]
+        }
+      }
+    },
+    "legacy_artifact_interpretation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "legacy_symbol",
+        "authoritative_symbol",
+        "rule"
+      ],
+      "properties": {
+        "legacy_symbol": {"const": "D in frozen dressed-complex artifact names"},
+        "authoritative_symbol": {"const": "K_Berger=D-omega R"},
+        "rule": {"const": "Legacy names are retained for content-addressed compatibility and acquire no raw-D theorem semantics."}
+      }
+    },
+    "forbidden_promotions": {
+      "const": [
+        "AFFINE_D_CARTAN_CONSTRUCTED",
+        "BERGER_ARITY_FOUR_CARTAN",
+        "BERGER_ALL_ORDERS_CARTAN",
+        "BERGER_INTEGRATED_NONLINEAR_QUOTIENT",
+        "BERGER_HADAMARD_DATA",
+        "QUANTUM_CLAIM",
+        "THEOREM_FROZEN"
+      ]
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
+        "K_BERGER_CARTAN_THROUGH_ARITY_THREE",
+        "RAW_D_CARTAN_CERTIFIED",
+        "ARITY_FOUR_CARTAN_CERTIFIED",
+        "ALL_ORDERS_CARTAN_CERTIFIED",
+        "QUANTUM_CLAIM",
+        "THEOREM_FROZEN"
+      ],
+      "properties": {
+        "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF": {"const": true},
+        "K_BERGER_CARTAN_THROUGH_ARITY_THREE": {"const": true},
+        "RAW_D_CARTAN_CERTIFIED": {"const": false},
+        "ARITY_FOUR_CARTAN_CERTIFIED": {"const": false},
+        "ALL_ORDERS_CARTAN_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false},
+        "THEOREM_FROZEN": {"const": false}
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commands",
+        "tier_0",
+        "tier_1",
+        "higher_tiers",
+        "recorded_run"
+      ],
+      "properties": {
+        "commands": {
+          "const": [
+            "python3 d_quotient_classical/backreacted_clock/paper_09_nonlinear_k_generator_signoff.py --check",
+            "python3 d_quotient_classical/backreacted_clock/verify_paper_09_nonlinear_k_generator_signoff.py --check --mutations",
+            "python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_paper_09_nonlinear_k_generator_signoff"
+          ]
+        },
+        "tier_0": {"const": "schema, JSON and Python parse plus scoped diff check"},
+        "tier_1": {"const": "independent semantic verifier and mutation tests"},
+        "higher_tiers": {"const": "not run; no mathematical input or freeze state changed"},
+        "recorded_run": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["command", "status", "elapsed_seconds"],
+            "properties": {
+              "command": {"type": "string", "minLength": 1},
+              "status": {"const": "PASS"},
+              "elapsed_seconds": {"type": "number", "minimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "claim_boundary": {
+      "const": "The nonlinear-team review signs the K_Berger=D-omega R interpretation of the existing 54-row action-derived q2/q3 and causal cyclic Cartan certificates through arity three. Raw D remains affine with a nonzero zeroth-arity component; no affine-D, arity-four, convergent all-orders, integrated quotient, Hadamard, quantum, or theorem-freeze claim is signed."
+    },
+    "next_gate": {
+      "const": "QUANTUM_K_GENERATOR_CLAIM_BOUNDARY_SIGNOFF_AND_DEFERRED_CLEAN_TREE_REPLAY"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "commit": {"$ref": "#/$defs/commit"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "evidenceWithoutResultId": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "commit", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "commit": {"$ref": "#/$defs/commit"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}
