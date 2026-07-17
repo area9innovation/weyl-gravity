@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "complete generic polar ell>=2 Weyl-Maxwell harmonic solution module on R_t x S1_L x S2 at fixed P_N, equipped with the directly varied four-dimensional Lee-Wald current for every allowed compact momentum including k=0; before ungauged BV/Noether lift, final residual quotient, or causal boundary selection",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "sparse independent-frequency coordinate Lee-Wald matrices at lambda=6,12,20 agree entrywise with the action-normalized Green current, and the degree-two spectral bound promotes the equality to every physical ell>=2",
+    "two polynomial p-shell representatives remain independent for every allowed compact momentum including k=0",
+    "the polar extra block is nonradical and has positive-frequency Hermitian-current inertia (2,0) in the declared stationary action convention",
+    "both Einstein/extra mixed current blocks vanish modulo the exact p and q primary shells",
+    "the Einstein q-primary block has inertia (1,1), so the complete generic polar target has pre-residual inertia (3,1)",
+    "conserved stationary coefficient extractors are constructed on the local-gauge-reduced p-shell block"
+  ],
+  "evidence": {
+    "commit": "cb7295275a2ff3eeb0729dcc9d6246a93bfb6e71",
+    "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+    "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "lift the polar contraction to the ungauged Diff x Weyl x U(1) BV/Noether complex and determine which Einstein and extra polar coefficients survive the final residual quotient",
+  "not_established": [
+    "the ungauged polar BV/Noether lift or final residual SO(4,2) quotient",
+    "a residual or Peierls observable associated with the stationary coefficient extractors",
+    "a causal compact or asymptotic phase space admitting the extra primary factor",
+    "a positive-frequency Hilbert space, particle interpretation, quantum ghost, unitarity, scattering, or nonlinear-closure theorem"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_polar_direct_lee_wald_block",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_polar_lee_wald_completion",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_GENERIC_POLAR_DIRECT_LEE_WALD_BLOCK_INERTIA_THREE_ONE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --verify bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

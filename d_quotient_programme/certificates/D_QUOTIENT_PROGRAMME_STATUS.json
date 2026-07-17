@@ -29,7 +29,7 @@
     ],
     "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "c5098cc1cda5f5085763e2029bbe3d6f8134692e",
+  "programme_base_commit": "cb7295275a2ff3eeb0729dcc9d6246a93bfb6e71",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -52,7 +52,7 @@
   },
   "registry_hashes": {
     "generator_registry": "bd46ba02eaa31d9b63ada4e6d592b123ebd41dfdef1b642a1bf47daf105d24fa",
-    "phase_space_registry": "d8ecbaafa1547df4beb188e30641cddf1608d3fa7b5862c6c0d47cfe20b61221"
+    "phase_space_registry": "1f04196cc5df9b560e4212e605568265efb38a70224fbe2f739a0b54f023bd10"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -471,6 +471,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_polar_physical_completion",
       "status": "CERTIFIED",
       "verdict": "G2_PHYSICAL_POLAR_EXTRA_QUOTIENT_AND_EINSTEIN_PRIMARY_IMAGE"
+    },
+    {
+      "boundary_conditions": "complete physical polar ell>=2 direct Lee-Wald solution block at every allowed compact momentum including k=0; before ungauged lift, final residual quotient, and causal boundary selection",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_polar_direct_lee_wald_block",
+      "setting_id": "compact_einstein_maxwell_weyl_polar_lee_wald_completion",
+      "status": "CERTIFIED",
+      "verdict": "G2_GENERIC_POLAR_DIRECT_LEE_WALD_BLOCK_INERTIA_THREE_ONE"
     },
     {
       "boundary_conditions": "generic axial extra module with exact reduced-Hessian local Green current; physical ell>=2; before direct Lee-Wald match and final residual quotient",
@@ -2536,6 +2545,51 @@
         ]
       },
       "sha256": "1e017d4fe63e908120d22a5b44278c235f5bf3a8be5c1d59173cf209b112017d"
+    },
+    {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-polar-lee-wald-completion.json",
+      "payload": {
+        "boundary_conditions": "complete generic polar ell>=2 Weyl-Maxwell harmonic solution module on R_t x S1_L x S2 at fixed P_N, equipped with the directly varied four-dimensional Lee-Wald current for every allowed compact momentum including k=0; before ungauged BV/Noether lift, final residual quotient, or causal boundary selection",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "sparse independent-frequency coordinate Lee-Wald matrices at lambda=6,12,20 agree entrywise with the action-normalized Green current, and the degree-two spectral bound promotes the equality to every physical ell>=2",
+          "two polynomial p-shell representatives remain independent for every allowed compact momentum including k=0",
+          "the polar extra block is nonradical and has positive-frequency Hermitian-current inertia (2,0) in the declared stationary action convention",
+          "both Einstein/extra mixed current blocks vanish modulo the exact p and q primary shells",
+          "the Einstein q-primary block has inertia (1,1), so the complete generic polar target has pre-residual inertia (3,1)",
+          "conserved stationary coefficient extractors are constructed on the local-gauge-reduced p-shell block"
+        ],
+        "evidence": {
+          "commit": "cb7295275a2ff3eeb0729dcc9d6246a93bfb6e71",
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "lift the polar contraction to the ungauged Diff x Weyl x U(1) BV/Noether complex and determine which Einstein and extra polar coefficients survive the final residual quotient",
+        "not_established": [
+          "the ungauged polar BV/Noether lift or final residual SO(4,2) quotient",
+          "a residual or Peierls observable associated with the stationary coefficient extractors",
+          "a causal compact or asymptotic phase space admitting the extra primary factor",
+          "a positive-frequency Hilbert space, particle interpretation, quantum ghost, unitarity, scattering, or nonlinear-closure theorem"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_polar_direct_lee_wald_block",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_polar_lee_wald_completion",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_GENERIC_POLAR_DIRECT_LEE_WALD_BLOCK_INERTIA_THREE_ONE",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_lee_wald_gate --verify bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_lee_wald_gate.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_lee_wald_gate",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "345413d1e4c51c3741ad89814d133f9fc973231a87f1f995daf8d11053c50714"
     },
     {
       "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json",
