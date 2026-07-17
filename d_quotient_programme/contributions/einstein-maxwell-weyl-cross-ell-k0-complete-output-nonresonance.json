@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; every distinct pair of generic input harmonics ell_1,ell_2>=2 at k=0, after local gauge reduction and before stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "every nonzero sum/difference frequency from distinct generic input ells misses every angularly allowed generic target shell L>=2",
+    "exact offset bounds reduce the unbounded generic-output problem to five saturated families, all excluded by sign or squarefree-radical witnesses",
+    "the Pell-type equal-squarefree and rational-inner-root cases do not create generic-output resonances",
+    "the only exceptional output L=1 comes from adjacent inputs and its complete root set {0,4/3,4} is nonresonant for all nine branch pairs",
+    "therefore the complete unbounded distinct-ell k=0 nonzero-output resonance gate is closed"
+  ],
+  "evidence": {
+    "commit": "fe6a5ecf57f9b21308ba330d030d26fc3c0701bd",
+    "path": "bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_exceptional_L1_nonresonance.json",
+    "sha256": "4f936ceb99a73e3f9b32f3faabd90320feee4e076dc0fd359abb8592ff15dbdc"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the distinct-ell mixed quadratic source and adjoint-cokernel projections on common stabilizer-moment-map-zero data",
+  "not_established": [
+    "second-order extension of the cross-ell common moment-map-zero cone",
+    "the cross-ell mixed quadratic source coefficients",
+    "opposite-momentum relative-phase source solvability",
+    "exceptional/global input cones, all-orders integration, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_cross_ell_k0_complete_output_nonresonance",
+  "team_id": "einstein_boundary",
+  "verdict": "G3_COMPLETE_UNBOUNDED_CROSS_ELL_K0_OUTPUT_NONRESONANCE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance --verify bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_generic_output_nonresonance.json",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_cross_ell_k0_exceptional_L1_nonresonance --verify bridge/certificates/einstein_maxwell_weyl_cross_ell_k0_exceptional_L1_nonresonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_cross_ell_k0_exceptional_L1_nonresonance.py"
+  ]
+}

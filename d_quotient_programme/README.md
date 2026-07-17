@@ -124,6 +124,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-fixed-ell-k0-combined-cone-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-fixed-ell-k0-combined-cone-second-order-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-cross-ell-k0-resonance-census.json`](contributions/einstein-maxwell-weyl-cross-ell-k0-resonance-census.json)
 - [`reports/einstein-maxwell-weyl-cross-ell-k0-resonance-census-submission-receipt.md`](reports/einstein-maxwell-weyl-cross-ell-k0-resonance-census-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-cross-ell-k0-complete-output-nonresonance.json`](contributions/einstein-maxwell-weyl-cross-ell-k0-complete-output-nonresonance.json)
+- [`reports/einstein-maxwell-weyl-cross-ell-k0-complete-output-nonresonance-submission-receipt.md`](reports/einstein-maxwell-weyl-cross-ell-k0-complete-output-nonresonance-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)
