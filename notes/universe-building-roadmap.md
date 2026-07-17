@@ -339,6 +339,12 @@ vertex classes; they must not be renamed one-particle gravitons.
 Black holes and scattering require a new phase-space theorem, not merely a new
 background substituted into cylinder formulas.
 
+The dedicated fifth-team programme is specified in
+[`d-quotient-black-hole-team-brief.md`](d-quotient-black-hole-team-brief.md).
+Its first bounded target is the exact static spherical background and horizon
+charge audit; ringdown is gated behind a closed horizon-plus-infinity phase
+space and linear causal exterior complex.
+
 Activation gates:
 
 1. a Lorentzian exterior or asymptotic Bach complex with operator domains;
