@@ -24,8 +24,8 @@
 \newcommand{\Cyc}{\operatorname{Cyc}}
 \newcommand{\claimid}[1]{\texttt{#1}}
 
-\title{Relational Clocks and Causal Cartan Contraction through Arity Three\\
-in Pure-Weyl Gravity on a Berger Universe}
+\title{A Backreacting Phase Clock with Fixed Momentum in Pure-Weyl Gravity\\
+Fixed-Coupling Rigidity and Causal BV Cartan Analysis of the Helical Stabilizer}
 \author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
 programme, mathematical direction, derivations, machine verification,
 referee analyses, and manuscript.  The project was commissioned and directed
@@ -38,11 +38,10 @@ claims no technical contribution.}}
 \maketitle
 
 \begin{abstract}
-We study whether cylinder-time translation can remain presymplectically null
-after a healthy
-matter clock and the first nonlinear vertices are included in pure-Weyl
-gravity.  On $\R\times S^3$ with a Berger spatial metric we exhibit an open
-family of exact, smooth, non-conformally-flat solutions sourced by two
+We study a backreacting phase clock whose internal momentum is nonzero but
+first-order rigid within each fixed theory.  On $\R\times S^3$ with a Berger
+spatial metric we exhibit a one-parameter incidence family across the scalar
+coupling, consisting of exact, smooth, non-conformally-flat solutions sourced by two
 standard-sign conformal scalars.  Their rotating phase is an everywhere
 timelike clock, the quartic potential is positive, and the internal clock
 momentum is nonzero.  Nevertheless, at fixed couplings the linearized lapse
@@ -53,23 +52,28 @@ cylinder generator $D$ a presymplectic degeneracy on this declared linearized
 phase space.  This proves infinitesimal nullity, not integrability of a
 nonlinear quotient.
 
-At one exact rational member we then formulate the same conclusion
-homologically.  The complete
+At one exact rational member we analyze the associated stationary helical
+stabilizer homologically.  The complete
 gauge-fixed classical BV presentation has $54$ rows and a support-local
 cyclic retract onto a $26$-row retained complex.  Advanced and retarded chain
 contractions lift to all rows.  Differentiating the covariant master action
 gives complete arbitrary-input four-dimensional operations $q_2$ and $q_3$,
-with the required $L_\infty$ identities, cyclicity and local $D$-equivariance.
+with the required $L_\infty$ identities, cyclicity and local $K$-equivariance.
 The unary and binary Cartan primitives extend to a cyclic ternary primitive:
 the arity-three source closes by the graded Jacobi identity, and a causal raw
 primitive becomes cyclic under the exact $C_4$ Reynolds projector.  Thus the
-$D$ action is causally null-homotopic through arity three.  An independent
+$K=D-\omega R$ action is causally null-homotopic through arity three.  The
+co-rotating conjugation is essential: the exported unary operator $e_0$ is
+the action of $K$, whereas the original cylinder translation $D$ is affine
+about the rotating background and has a nonzero zeroth Taylor component.  No
+affine $D$-Cartan theorem is claimed.  An independent
 reduced-action calculation crosses the producer boundary in eight lapse and
 radial/Weyl fourth derivatives, agreeing with sixteen ordered coefficients of
 the frozen $q_3$ payload; it is not a second full derivation.
 
-The result is classical: its linear nullity statement holds on the displayed
-open fixed-coupling Berger branch, while its all-row BV Taylor statement is
+The result is classical: its momentum-rigidity and linear-nullity statement
+holds pointwise along the displayed incidence branch after fixing the
+couplings, while its all-row BV Taylor statement is
 proved at one exact rational representative.  It is not an all-orders
 nonlinear theorem, a Hadamard construction, a quantum-master-equation result,
 an anomaly calculation, or a claim that a nonzero clock momentum is a freely
@@ -134,49 +138,97 @@ background,
 \end{equation}
 Thus the solution is stationary in stress energy but not pointwise fixed by
 $D$ on the scalar fields.  The orbit of $D$ is helical in spacetime times the
-internal target.  The paper tests the diffeomorphism generator $D$, not the
-stabilizer $K$ and not the global rotation $R$.
+internal target.  The geometric theorem below tests the diffeomorphism
+generator $D$.  The based Taylor BV theorem instead concerns the stabilizer
+$K$, the generator that actually fixes the expansion point; this is the
+standard twisting distinction for a symmetry at a non-fixed background
+\cite{LInfinityIntro}.  The global
+rotation $R$ remains ungauged.
 
-\begin{theorem}[Invariant scoped Berger theorem]\label{thm:main}
-Fix $\alpha_B>0$.  For every point of the positive Berger branch described in
-Section~\ref{sec:background}, assertions (i)--(ii) below hold.  At the exact
-rational representative \eqref{eq:rational-fixture}, assertions (iii)--(iv)
-also hold:
-\begin{enumerate}
-\item the background carries a smooth standard-sign conformal-scalar phase
-clock with positive quartic potential, timelike phase gradient and nonzero
-internal momentum;
-\item on the smooth fixed-coupling linearized solution tangent
-$\mathcal Z_{\bar\Phi}^{\alpha_B,\lambda}$,
+\begin{proposition}[Generator conjugation]\label{prop:generator-conjugation}
+Let $U(t)=\exp(\omega tR)$ and write the scalar in co-rotating variables as
+$T=U(t)((\rho,0)+\psi)$.  Then
+\begin{align}
+ U^{-1}\cL_DT
+ &=\partial_t\psi+\omega R\psi+\omega R(\rho,0),
+ \label{eq:D-affine}\\
+ U^{-1}\cL_KT&=\partial_t\psi.\label{eq:K-linear}
+\end{align}
+Thus raw $D$ has a nonzero zeroth Taylor component
+$L_D^{(0)}=\omega R(\rho,0)$ and unary component
+$L_D^{(1)}=e_0+\omega R$ in dressed coordinates.  By contrast,
+$L_K^{(0)}=0$ and $L_K^{(1)}=e_0$.  The frozen all-row operation previously
+labelled ``helical $D$'' is therefore the $K$ action.
+\end{proposition}
+
+\begin{proof}
+The convention $R(T_1,T_2)=(-T_2,T_1)$ gives
+$\partial_tU=\omega RU$.  Substitution into $D(U((\rho,0)+\psi))$ gives
+\eqref{eq:D-affine}; subtracting $\omega R$ gives \eqref{eq:K-linear}.
+The coefficientwise $54$-row rule is $e_0I_{54}$, so it realizes the second
+identity.  The strict certificate is the generator-conjugation audit in the
+computational supplement.
+\end{proof}
+
+\begin{theorem}[Fixed-coupling rigidity of the Berger clock momentum]
+\label{thm:rigidity}
+Fix $\alpha_B>0$.  Every point of the positive Berger incidence branch in
+Section~\ref{sec:background} carries a smooth standard-sign conformal-scalar
+phase clock with positive quartic potential, timelike phase gradient and
+nonzero internal momentum $Q_R>0$.  After fixing $(\alpha_B,\lambda)$,
+however,
+\begin{equation}\label{eq:main-rigidity}
+ dQ_R\big|_{\mathcal Z_{\bar\Phi}^{\alpha_B,\lambda}}=0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The exact background equations and pointwise matter inequalities are derived
+in Section~\ref{sec:background}.  The nonzero charge is \eqref{eq:QR}; the
+fixed-coupling lapse identity and the compact-averaging extension to every
+smooth tangent are proved in Proposition~\ref{prop:charge}.
+\end{proof}
+
+\begin{corollary}[Linear presymplectic nullity of $D$]\label{cor:D-nullity}
+On the declared smooth fixed-coupling linearized solution tangent,
 \begin{equation}\label{eq:main-degeneracy}
  \Omega_{\rm total}(\delta,\cL_D)=0
 \end{equation}
-for every allowed tangent $\delta$;
-\item the complete $54$-row gauge-fixed classical BV complex admits
-advanced and retarded chain contractions with causal support;
-\item if $q_1,q_2,q_3$ are the first three action-derived Taylor operations,
-then there are cyclic causal Cartan components
-$\iota_D^{(1)},\iota_D^{(2)},\iota_D^{(3)}$ satisfying the Cartan equation
-through arity three; equivalently,
+for every allowed tangent $\delta$.
+\end{corollary}
+
+\begin{proof}
+Combine Theorem~\ref{thm:rigidity} with the covariant identity
+\eqref{eq:omega-charge}; the closed $S^3$ leaves no boundary contribution.
+\end{proof}
+
+\begin{theorem}[Causal BV Cartan theorem for the helical stabilizer]
+\label{thm:K-cartan}
+At the exact rational representative \eqref{eq:rational-fixture}, the complete
+$54$-row gauge-fixed classical BV complex admits advanced and retarded chain
+contractions with causal support.  If $q_1,q_2,q_3$ are its first three
+action-derived Taylor operations, there are cyclic causal components
+$\iota_K^{(1)},\iota_K^{(2)},\iota_K^{(3)}$ such that
 \begin{equation}\label{eq:invariant-cartan}
- \bigl([Q,\iota_D]-L_D\bigr)^{(n)}=0,
- \qquad n=1,2,3,
+ \bigl([Q,\iota_K]-L_K\bigr)^{(n)}=0,
+ \qquad n=1,2,3.
 \end{equation}
-with an uncomputed arity-four-and-higher remainder.
-\end{enumerate}
-Consequently $D$ is presymplectically null at the linearized covariant level
-and is causally null-homotopic through the first ternary BV interaction test.
-No constant-rank neighbourhood, integrated null foliation, finite nonlinear
-quotient or all-orders moment-map theorem is asserted.
+The theorem neither constructs the affine zeroth-arity $D$-Cartan equation
+nor asserts convergence or an integrated nonlinear quotient.
 \end{theorem}
 
-The four assertions are certified respectively by
-\claimid{P09-C1}--\claimid{P09-C2},
-\claimid{P09-C3}--\claimid{P09-C4},
-\claimid{P09-C5}--\claimid{P09-C6}, and
-\claimid{P09-C7}--\claimid{P09-C10} in the companion computational
-supplement.  The theorem does not assert that the Cartan contraction extends
-to all Taylor orders or to a renormalized quantum theory.
+\begin{proof}[Proof roadmap]
+Section~\ref{sec:BV} constructs the typed Green contractions and their
+support-local all-row lift.  Section~\ref{sec:interactions} derives and audits
+$q_2,q_3$ and $K$-equivariance.  Section~\ref{sec:Cartan} proves the Hom-space
+recursion, ternary closure, cyclicity and causal-hull support.
+\end{proof}
+
+Theorem~\ref{thm:rigidity} and Corollary~\ref{cor:D-nullity} are certified by
+\claimid{P09-C1}--\claimid{P09-C4}.  Theorem~\ref{thm:K-cartan} is certified
+by \claimid{P09-C5}--\claimid{P09-C10} together with the independent
+generator-conjugation audit.  Neither theorem extends to a renormalized
+quantum theory.
 The manuscript status is therefore \texttt{WRITING\_STARTED}, not
 \texttt{THEOREM\_FROZEN}.
 
@@ -196,9 +248,9 @@ transfer, Cartan homotopies and Green homotopies are established frameworks
 \cite{Rovelli,Dittrich,DynamicalFrames,Khavkine,AMM,CMR,Kajiura,
 HomotopyTransfer,FiorenzaManetti,GreenComplexes}.  The contribution claimed
 here is their explicit conjunction in one action-derived example: a positive
-fully backreacting Berger clock, a fixed-coupling presymplectic-nullity
-theorem, a complete gauge-fixed classical BV presentation, and a cyclic
-causally supported Cartan primitive through $q_3$.  To our knowledge the
+fully backreacting Berger clock, a fixed-coupling momentum-rigidity theorem,
+a complete gauge-fixed classical BV presentation, and a cyclic causally
+supported Cartan primitive for its helical stabilizer through $q_3$.  To our knowledge the
 specific Berger/Weyl/scalar construction is new; no priority claim is made
 for any of the general frameworks.
 
@@ -342,7 +394,9 @@ The action-derived covariant presymplectic form then gives the exact identity
  \Omega_{\rm total}(\delta,\cL_D)=\omega\,\delta Q_R.
 \end{equation}
 The pure-Weyl cross term vanishes because $\cL_Dg=0$; the matter term is the
-variation of the Noether charge \eqref{eq:QR}.  This establishes
+variation of the Noether charge \eqref{eq:QR}.  The Iyer--Wald improvement is
+an exact spatial divergence, whose integral vanishes because the Cauchy
+surface $S^3$ is closed.  This establishes
 \claimid{P09-C3}, but by itself it does not decide whether $D$ is gauge.  The
 decision depends on the allowed tangent space.
 
@@ -398,15 +452,15 @@ Thus $\delta N,\delta c,\delta\rho,\delta\theta$ are varied in deriving the
 equations, but an allowed tangent has $\delta\alpha_B=\delta\lambda=0$ and
 must satisfy every linearized equation, including $\delta E_N=0$.
 
-\begin{proposition}[Fixed-coupling charge theorem;
+\begin{proposition}[Fixed-coupling rigidity of the Berger clock momentum;
 \claimid{P09-C4}]\label{prop:charge}
 On the smooth fixed-$\alpha_B$, fixed-$\lambda$ linearized solution space
 about the positive Berger clock background,
 \begin{equation}\label{eq:deltaQzero}
  \delta Q_R=0.
 \end{equation}
-Hence \eqref{eq:main-degeneracy} holds and $D$ is presymplectically null on
-this linearized phase space.
+Hence \eqref{eq:main-degeneracy} holds as its covariant-phase-space
+corollary.
 \end{proposition}
 
 \begin{proof}
@@ -490,14 +544,15 @@ infinitesimal cylinder motion is presymplectically null in the compact
 fixed-coupling tangent space.
 
 This paper proves that $\theta$ is a regular, backreacting clock candidate and
-that $D$ is null in the specified linearized and truncated homological senses.
+that $D$ is null in the specified linearized presymplectic sense.  Its
+homological theorem concerns the distinct background stabilizer $K$.
 It does \emph{not} construct a complete observable in the sense of
 Rovelli--Dittrich \cite{Rovelli,Dittrich}: no global gauge-invariant map
 $X\mapsto X|_{\theta=\theta_0}$, uniqueness domain, or complete-observable
 Poisson algebra is asserted.  The periodicity in Remark~\ref{rem:S1-clock}
 is one reason to keep that distinction explicit.  Relational Maxwell
 redshift fixtures in the repository are follow-up applications and are not
-dependencies of Theorem~\ref{thm:main}.
+dependencies of Theorems~\ref{thm:rigidity} or~\ref{thm:K-cartan}.
 
 This result is sector dependent.  A boundary Hamiltonian, nonzero flux, or a
 phase space allowing $\delta Q_R\ne0$ would change the classification of
@@ -554,6 +609,53 @@ nonminimal rows form the $28$-component contractible extension.  Thus the
 number $54$ is an all-row completeness audit, whereas the statement
 $\cC_{54}\simeq\cC_{26}$ is independent of the chosen component ordering.
 
+The analytic core can be stated without row data.  The retained ten-component
+metric Hessian is
+\begin{equation}\label{eq:retained-biwave}
+ A_{10}=\Box_2^2+V_2,
+ \qquad \operatorname{ord}V_2\leq2,
+\end{equation}
+where $\Box_2$ is the normally hyperbolic rough tensor wave operator and
+$V_2$ has stationary smooth coefficients.  It is the Schur compression of
+the companion system
+\begin{equation}\label{eq:companion20}
+ C_{20}=\begin{pmatrix}\Box_2&-I_{10}\\V_2&\Box_2\end{pmatrix}.
+\end{equation}
+On a finite time slab $I$, let
+\begin{align}
+ X_s(I)&=\bigl(C^0(I;H^{s+1})\cap C^1(I;H^s)\bigr)
+ \oplus\bigl(C^0(I;H^s)\cap C^1(I;H^{s-1})\bigr),\\
+ Y_s(I)&=L^1(I;H^s)\oplus L^1(I;H^{s-1}),
+\end{align}
+with Sobolev spaces on $S^3$ valued in symmetric tensors.  Writing the free
+wave companion as $C_0$ and its local coupling as $N$, Volterra ordering gives
+distinct solution- and source-space resolvents
+\begin{equation}\label{eq:typed-resolvents}
+ R_{{\rm sol},\pm}=(I+G_{0,\pm}N)^{-1},\qquad
+ R_{{\rm src},\pm}=(I+NG_{0,\pm})^{-1},
+\end{equation}
+and
+\begin{equation}
+ G_{C,\pm}=R_{{\rm sol},\pm}G_{0,\pm}
+ =G_{0,\pm}R_{{\rm src},\pm}.
+\end{equation}
+The finite-slab estimates
+\begin{equation}\label{eq:factorial-estimate}
+ \|(G_{0,\pm}N)^n\|_{X_s\to X_s},\quad
+ \|(NG_{0,\pm})^n\|_{Y_s\to Y_s}
+ \leq\frac{C_{s,I}^n}{n!}
+\end{equation}
+give absolute convergence, both inverse identities and causal support.
+Compression through the local companion graph yields $G_{A,\pm}$ for
+\eqref{eq:retained-biwave}; uniqueness globalizes the finite-slab
+construction.  The typed adjoint statement is
+\begin{equation}\label{eq:green-adjoint}
+ (G_{A,+})^\sharp=G_{A^\sharp,-},
+\end{equation}
+without assuming $A=A^\sharp$.  The spatial gauge and identity rows use the
+corresponding wave companions and complementary-degree adjoints.  These
+blocks assemble the retained chain homotopies below.
+
 A gauge-fermion canonical shear preserves the frozen odd Darboux pairing and
 gives a support-local cyclic contraction
 \begin{equation}\label{eq:SDR}
@@ -591,8 +693,9 @@ Indeed,
 \end{align}
 All maps in the retract are differential or pointwise algebraic.  No inverse
 Laplacian, inverse curl, transverse--traceless projector, or mode projector
-is used.  The complementary-degree adjoint relation and $D$-equivariance
-also lift.  These statements comprise \claimid{P09-C6}.
+is used.  The complementary-degree adjoint relation and stationary-generator
+equivariance also lift.  By Proposition~\ref{prop:generator-conjugation}, that
+generator is $K$.  These statements comprise \claimid{P09-C6}.
 
 The cyclic higher primitives below instead map compactly supported inputs to
 sections supported in the two-sided causal hull $J=J^+\cup J^-$.  They are
@@ -627,9 +730,9 @@ as BV-canonical transformations to every input, output and dual row.
 The proof pipeline is therefore
 \begin{equation}\label{eq:proof-pipeline}
  S_{\rm BV}\xrightarrow{\text{mixed variations}}(q_1,q_2,q_3)
- \xrightarrow{\text{Cartan sources}} A_D^{(1)},A_D^{(2)},A_D^{(3)}
- \xrightarrow{\text{Green/Hom contraction}}\iota_D^{(1)},
- \iota_D^{(2)},\iota_D^{(3)}.
+ \xrightarrow{\text{Cartan sources}} A_K^{(1)},A_K^{(2)},A_K^{(3)}
+ \xrightarrow{\text{Green/Hom contraction}}\iota_K^{(1)},
+ \iota_K^{(2)},\iota_K^{(3)}.
 \end{equation}
 The operations $q_2$ and $q_3$ are obtained by differentiating the covariant
 Weyl--clock master action on arbitrary four-dimensional jets and transporting
@@ -642,17 +745,18 @@ The arity-two and arity-three parts of $Q^2=0$ are
  [q_1,q_3]+\frac12[q_2,q_2]&=0.\label{eq:Linf3}
 \end{align}
 The common action origin supplies cyclicity with respect to the odd Darboux
-pairing.  The stationary invariant-frame generator $D=e_0$ acts linearly,
+pairing.  The stationary invariant-frame generator $K=e_0$ acts linearly,
 so its higher Taylor components vanish through this order,
 \begin{equation}\label{eq:LDhigher}
- L_D^{(2)}=L_D^{(3)}=0,
+ L_K^{(2)}=L_K^{(3)}=0,
 \end{equation}
 and exact coefficientwise verification gives
 \begin{equation}\label{eq:Dderivation}
- [D,q_2]=[D,q_3]=0.
+ [K,q_2]=[K,q_3]=0.
 \end{equation}
 Claims \claimid{P09-C7} and \claimid{P09-C8} bind these statements to the
-portable all-row coefficient exports.
+portable all-row coefficient exports, with the legacy $D$ label interpreted
+by Proposition~\ref{prop:generator-conjugation}.
 
 The abstract $L_\infty$ relations follow from the classical master equation;
 the large PBW calculation verifies that the concrete curved coefficients,
@@ -670,15 +774,16 @@ $[q_2,q_2]$ channel.  It is not the end of the classical expansion: inverse
 metrics, curvature and canonical field redefinitions generally generate
 nonzero $q_n$ for $n\ge4$ even though the bare scalar potential is quartic.
 
-\section{Causal Cartan contraction through arity three}\label{sec:Cartan}
+\section{Causal \texorpdfstring{$K$}{K}-Cartan contraction through arity
+three}\label{sec:Cartan}
 
 Write
 \begin{equation}\label{eq:iota-expansion}
- \iota_D=\iota_D^{(1)}+\iota_D^{(2)}+\iota_D^{(3)}+\cdots
+ \iota_K=\iota_K^{(1)}+\iota_K^{(2)}+\iota_K^{(3)}+\cdots
 \end{equation}
 for a degree-$(-1)$ Cartan homotopy.  At unary order,
 \begin{equation}\label{eq:Cartan1}
- [q_1,\iota_D^{(1)}]=D.
+ [q_1,\iota_K^{(1)}]=K.
 \end{equation}
 A one-sided raw solution follows from \eqref{eq:causal-contraction}; averaging
 it with its convention-correct cyclic adjoint yields a cyclic unary
@@ -698,54 +803,82 @@ This identity includes the $q_1$ action on every input slot; no input term is
 discarded.  It is the step that turns a $q_1$-closed Cartan source into a raw
 causal primitive.
 
+\begin{proposition}[Conditional finite-arity Cartan recursion]
+\label{prop:formal-recursion}
+Let $(\cC,Q,\langle-,-\rangle)$ be a cyclic formal $L_\infty$ algebra, let a
+background-fixing unary generator $K$ satisfy $[Q,K]=0$, and suppose $q_1$
+admits cyclically compatible causal chain contractions.  If the Taylor
+operations and $K$-equivariance are defined through arity $n$, then the Cartan
+equation can be solved cyclically through arity $n$, with each component
+supported in the two-sided causal hull of its inputs.
+\end{proposition}
+
+\begin{proof}
+Assume the equation has been solved below arity $m\leq n$ and denote by
+$A_K^{(m)}$ the known arity-$m$ source.  The truncated identity
+$[Q,[Q,\iota_K]-L_K]=0$, using $Q^2=0$ and $[Q,L_K]=0$, implies
+$[q_1,A_K^{(m)}]=0$.  Equation \eqref{eq:Hom-contraction} gives a raw causal
+primitive $-\mathfrak H_+(A_K^{(m)})$.  Pairing its output and applying the
+finite cyclic Reynolds projector preserves the homotopy equation because
+$q_1$ and the source are cyclic.  Induction proves the statement.  This is a
+formal finite-arity result; it asserts neither convergence of the Taylor
+series nor the existence of operations not supplied by the theory.
+\end{proof}
+
+Thus the conceptual obstruction vanishes conditionally at every finite
+arity.  The model-specific computation through arity three is still needed
+to certify the curved coefficients, canonical transports, $K$-equivariance
+and all-row cyclic signs.  Operations and equivariance beyond $q_3$ have not
+been exported, so they are not promoted here.
+
 At binary order define
 \begin{equation}\label{eq:A2}
- A_D^{(2)}=[q_2,\iota_D^{(1)}].
+ A_K^{(2)}=[q_2,\iota_K^{(1)}].
 \end{equation}
-Equations \eqref{eq:Linf2} and \eqref{eq:Dderivation} make $A_D^{(2)}$
+Equations \eqref{eq:Linf2} and \eqref{eq:Dderivation} make $A_K^{(2)}$
 $q_1$-closed.  A raw causal primitive is cyclicized with
 $\Cyc_3=(1+\tau+\tau^2)/3$, giving
 \begin{equation}\label{eq:Cartan2}
- [q_1,\iota_D^{(2)}]=-[q_2,\iota_D^{(1)}].
+ [q_1,\iota_K^{(2)}]=-[q_2,\iota_K^{(1)}].
 \end{equation}
 This is \claimid{P09-C9}.
 
 The ternary source is
 \begin{equation}\label{eq:A3}
- A_D^{(3)}=[q_3,\iota_D^{(1)}]+[q_2,\iota_D^{(2)}]-L_D^{(3)}.
+ A_K^{(3)}=[q_3,\iota_K^{(1)}]+[q_2,\iota_K^{(2)}]-L_K^{(3)}.
 \end{equation}
 
 \begin{lemma}[Closure of the ternary source]\label{lem:A3closed}
 The complete arbitrary-input source \eqref{eq:A3} obeys
 \begin{equation}
- [q_1,A_D^{(3)}]=0.
+ [q_1,A_K^{(3)}]=0.
 \end{equation}
 \end{lemma}
 
 \begin{proof}
 Let $\delta=[q_1,\,\cdot\,]$.  Using \eqref{eq:Linf3},
 \eqref{eq:Cartan1} and \eqref{eq:Cartan2}, the only nonzero formal channels
-in $\delta A_D^{(3)}$ are
+in $\delta A_K^{(3)}$ are
 \begin{equation}\label{eq:closure-channels}
- -\frac12[[q_2,q_2],\iota_D^{(1)}]
- +[q_2,[q_2,\iota_D^{(1)}]]-[q_3,D].
+ -\frac12[[q_2,q_2],\iota_K^{(1)}]
+ +[q_2,[q_2,\iota_K^{(1)}]]-[q_3,K].
 \end{equation}
 Graded Jacobi gives
 \begin{equation}
- [q_2,[q_2,\iota_D^{(1)}]]
- =\frac12[[q_2,q_2],\iota_D^{(1)}],
+ [q_2,[q_2,\iota_K^{(1)}]]
+ =\frac12[[q_2,q_2],\iota_K^{(1)}],
 \end{equation}
-and $[D,q_3]=0$ annihilates the last term.  Thus the normalized coefficients
+and $[K,q_3]=0$ annihilates the last term.  Thus the normalized coefficients
 are $-1/2+1/2=0$ and $0$ in the two independent channels.
 \end{proof}
 
 Because cyclic coderivations are closed under their graded bracket,
-$A_D^{(3)}$ is cyclic.  The causal chain contraction supplies a raw
+$A_K^{(3)}$ is cyclic.  The causal chain contraction supplies a raw
 primitive
 \begin{equation}\label{eq:raw3}
- R^{(3)}=-\mathfrak H_+(A_D^{(3)})
- =-\Lambda_{54,+}\circ A_D^{(3)},
- \qquad \delta R^{(3)}=-A_D^{(3)}.
+ R^{(3)}=-\mathfrak H_+(A_K^{(3)})
+ =-\Lambda_{54,+}\circ A_K^{(3)},
+ \qquad \delta R^{(3)}=-A_K^{(3)}.
 \end{equation}
 Pair the output with the odd Darboux form before cyclicizing.  The resulting
 four-linear tensor carries the standard Koszul $C_4$ action and the exact
@@ -755,13 +888,13 @@ Reynolds projector
 \end{equation}
 Since $\tau^4=1$, $\Cyc_4^2=\Cyc_4$.  Cyclicity of $q_1$ makes $\Cyc_4$
 commute with $\delta$, while cyclicity of the source gives
-$\Cyc_4A_D^{(3)}=A_D^{(3)}$.  Therefore
+$\Cyc_4A_K^{(3)}=A_K^{(3)}$.  Therefore
 \begin{equation}\label{eq:Cartan3}
- \iota_{D,\mathrm{cyc}}^{(3)}=\Cyc_4R^{(3)},
+ \iota_{K,\mathrm{cyc}}^{(3)}=\Cyc_4R^{(3)},
  \qquad
- [q_1,\iota_{D,\mathrm{cyc}}^{(3)}]=-A_D^{(3)}.
+ [q_1,\iota_{K,\mathrm{cyc}}^{(3)}]=-A_K^{(3)}.
 \end{equation}
-This proves the ternary part of Theorem~\ref{thm:main} and
+This proves the ternary part of Theorem~\ref{thm:K-cartan} and
 \claimid{P09-C10}.
 
 The tensorized $C_4$ convention matters.  The actual $54$-row pairing has
@@ -775,7 +908,7 @@ admissible degree-zero row quartets with no defect.
 The Taylor operations and pairing are support-local.  Green contractions and
 their cyclic adjoints are causal.  Consequently
 \begin{equation}\label{eq:support3}
- \supp\bigl(\iota_{D,\mathrm{cyc}}^{(3)}(f,g,h)\bigr)
+ \supp\bigl(\iota_{K,\mathrm{cyc}}^{(3)}(f,g,h)\bigr)
  \subseteq J\bigl(\supp f\cup\supp g\cup\supp h\bigr).
 \end{equation}
 The cyclic primitive is not asserted to be separately retarded or advanced.
@@ -784,19 +917,24 @@ stronger property; cyclic averaging generally does not.
 
 \section{Interpretation, failures and open directions}\label{sec:limits}
 
-The result resolves one narrow version of the clock question.  A healthy
-matter clock can have $Q_R>0$ while the cylinder generator remains
-presymplectically null,
-because the constraint fixes $Q_R$ within one theory and annihilates its
-pullback differential.  The all-row BV calculation shows that this is not
-only a homogeneous minisuperspace coincidence: the linearized covariant
-phase space, causal complex and first interaction recurrences give compatible
-answers.
+The primary geometric result is the rigidity statement
+$Q_R>0$ but $dQ_R|_{\mathcal Z_{\bar\Phi}^{\alpha_B,\lambda}}=0$.
+Presymplectic nullity of $D$ is its covariant-phase-space corollary.  The
+all-row BV calculation is an adjacent theorem about the background-fixing
+helical generator $K$.  Proposition~\ref{prop:generator-conjugation} is the
+precise bridge: it proves both that the two generators are related and that
+they must not be identified in the based Taylor complex.  No derived
+symplectic equivalence between an affine $D$-Cartan complex and the certified
+$K$-Cartan complex is asserted.
 
 The following conclusions are not drawn.
 \begin{enumerate}
-\item No all-orders nonlinear Cartan contraction is claimed.  Arity four and
-higher remain separate gates if the complete master action requires them.
+\item Proposition~\ref{prop:formal-recursion} gives a conditional formal
+finite-arity recursion, but operations and $K$-equivariance from arity four
+onward have not been exported.  No convergent all-orders contraction is
+claimed.
+\item No affine $D$-Cartan homotopy, including its zeroth-arity equation, is
+constructed.
 \item No constant-rank nonlinear null foliation, integrated gauge quotient,
 global deparametrization or complete relational observable is constructed.
 \item No Hadamard two-point function, microlocal spectrum condition,
@@ -811,8 +949,9 @@ theorem unless their independent propagation and backreaction gates close.
 \end{enumerate}
 
 The correct continuation is therefore not to advertise an unrestricted
-solution of the problem of time.  It is to test whether the same Cartan
-structure survives higher Taylor order, whether the $S^1$ clock supports
+solution of the problem of time.  It is to test whether the $K$-Cartan
+structure survives higher Taylor order, whether an affine $D$-Cartan
+extension exists, whether the $S^1$ clock supports
 well-defined complete observables on controlled domains, and whether the
 conclusion persists under renormalized Ward identities and physical
 boundaries.
@@ -911,6 +1050,11 @@ arXiv:2007.07942.
 D.~Fiorenza and M.~Manetti,
 \emph{$L_\infty$ algebras, Cartan homotopies and period maps},
 arXiv:math/0605297.
+
+\bibitem{LInfinityIntro}
+A.~Kraft and J.~Schnitzer,
+\emph{An introduction to $L_\infty$-algebras and their homotopy theory},
+arXiv:2207.01861.
 
 \bibitem{CCJ}
 C.~G. Callan, S.~Coleman, and R.~Jackiw,

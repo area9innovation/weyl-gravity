@@ -24,6 +24,32 @@ presymplectic degeneracy and the renormalized covariant phase-space charge.
 The centered classes \([W_+^2]\) and \([W_-^2]\) are deformation/vertex
 classes.  They are not one-particle graviton states.
 
+## Generator correction (2026-07-17; authoritative)
+
+The exact co-rotating audit `BERGER_GENERATOR_CONJUGATION_AUDIT` supersedes
+the geometric interpretation of every legacy artifact named `D_CARTAN` or
+`LOCAL_D_ACTION` in the Berger branch.  With
+
+\[
+R(T_1,T_2)=(-T_2,T_1),\qquad K=D-\omega R,
+\]
+
+the frozen all-row rule \(e_0I_{54}\) represents \(K\), not raw \(D\).  In
+co-rotating variables,
+
+\[
+U^{-1}DT=\partial_t\psi+\omega R\psi+\omega R(\rho,0),
+\qquad U^{-1}KT=\partial_t\psi.
+\]
+
+Therefore the existing unary-through-ternary coefficients prove a
+\(K\)-Cartan theorem.  Raw \(D\) has a nonzero zeroth Taylor component, and
+an affine \(D\)-Cartan homotopy remains open.  The fixed-coupling charge
+theorem is unchanged: it is still the raw-cylinder statement
+\(Q_R>0\) but \(dQ_R|_{\mathcal Z}=0\), with linear presymplectic nullity of
+\(D\) as its corollary.  Read every older `D-Cartan` sentence below under
+this correction until the legacy artifact family is migrated.
+
 ## Shared relative-complex assignment
 
 Use the canonical Einstein--Weyl spine in
@@ -103,18 +129,21 @@ final interpretation.
 
 Use the conservative working title
 
-> **Relational clocks and causal Cartan contraction through arity three in
-> pure-Weyl gravity on a Berger universe**
+> **A backreacting phase clock with fixed momentum in pure-Weyl gravity:
+> fixed-coupling rigidity and causal BV Cartan analysis of the helical
+> stabilizer**
 
 and organize the paper around one question:
 
 \[
-\boxed{\text{Can a healthy clock evolve while total }D\text{ remains gauge
-through the first nontrivial interactions?}}
+\boxed{\text{Can a healthy clock have nonzero but fixed momentum, and what
+Cartan theorem holds for its background stabilizer?}}
 \]
 
-The paper should answer **yes, on the declared fixed-coupling Berger sector
-through arity three**.  It must not turn that scoped theorem into a claim about
+The paper should answer: **raw \(D\) is linearly presymplectically null on the
+declared fixed-coupling sector, while \(K=D-\omega R\) has the certified
+Cartan contraction through arity three**.  It must not turn those scoped
+theorems into a claim about
 generic spacetimes or the complete nonlinear or quantum theory.
 
 ### The theorem spine

@@ -81,8 +81,14 @@ def main() -> int:
         for dotted in entry["required_false"]:
             if _lookup(certificate, dotted) is not False:
                 raise AssertionError(f"cross-check required false field failed: {dotted}")
+    crosscheck_ids = [entry["certificate_result_id"] for entry in table["independent_cross_checks"]]
+    if crosscheck_ids != [
+        "BERGER_Q3_ACTION_SECTOR_CROSSCHECK",
+        "BERGER_GENERATOR_CONJUGATION_AUDIT",
+    ]:
+        raise AssertionError("independent cross-check sequence drifted")
     print("PAPER_09_BERGER_CLAIM_TABLE independent audit: PASS")
-    print("claims=10 cross_checks=1 theorem_frozen=false hashes_and_boundaries=exact")
+    print("claims=10 cross_checks=2 theorem_frozen=false hashes_and_boundaries=exact")
     return 0
 
 

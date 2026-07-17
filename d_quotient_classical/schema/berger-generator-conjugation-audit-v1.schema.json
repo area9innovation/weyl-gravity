@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-generator-conjugation-audit-v1.json",
+  "title": "Berger generator conjugation audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "source_manifest", "conventions", "exact_conjugation", "interpretation",
+    "exact_checks", "flags", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-generator-conjugation-audit-v1"},
+    "result_id": {"const": "BERGER_GENERATOR_CONJUGATION_AUDIT"},
+    "setting_id": {"const": "compact_positive_berger_clock_q_9_over_40"},
+    "claim_status": {"const": "CERTIFIED_GENERATOR_CORRECTION"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "source_manifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_54_row_action", "clock_charge_seed"],
+      "properties": {
+        "local_54_row_action": {"$ref": "#/$defs/source"},
+        "clock_charge_seed": {"$ref": "#/$defs/source"}
+      }
+    },
+    "conventions": {"type": "object", "minProperties": 4},
+    "exact_conjugation": {"type": "object", "minProperties": 8},
+    "interpretation": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "frozen_e0_generator", "raw_D_in_dressed_coordinates",
+        "legacy_artifact_name", "legacy_D_label_is_geometrically_K"
+      ],
+      "properties": {
+        "frozen_e0_generator": {"const": "K=D-omega R"},
+        "raw_D_in_dressed_coordinates": {"type": "string", "minLength": 1},
+        "legacy_artifact_name": {"const": "BERGER_54_ROW_LOCAL_D_ACTION"},
+        "legacy_D_label_is_geometrically_K": {"const": true}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "minProperties": 6,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "EXPORTED_UNARY_GENERATOR_IS_K", "EXPORTED_UNARY_GENERATOR_IS_ORIGINAL_D",
+        "AFFINE_D_ZERO_ARITY_NONZERO", "PAPER09_K_CARTAN_INTERPRETATION",
+        "PAPER09_D_CARTAN_AS_PREVIOUSLY_WRITTEN", "AFFINE_D_CARTAN_CONSTRUCTED",
+        "THEOREM_FROZEN"
+      ],
+      "properties": {
+        "EXPORTED_UNARY_GENERATOR_IS_K": {"const": true},
+        "EXPORTED_UNARY_GENERATOR_IS_ORIGINAL_D": {"const": false},
+        "AFFINE_D_ZERO_ARITY_NONZERO": {"const": true},
+        "PAPER09_K_CARTAN_INTERPRETATION": {"const": true},
+        "PAPER09_D_CARTAN_AS_PREVIOUSLY_WRITTEN": {"const": false},
+        "AFFINE_D_CARTAN_CONSTRUCTED": {"const": false},
+        "THEOREM_FROZEN": {"const": false}
+      }
+    },
+    "next_gate": {"const": "PAPER09_RESTATE_BV_CARTAN_FOR_K_OR_CONSTRUCT_AFFINE_D_CARTAN"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

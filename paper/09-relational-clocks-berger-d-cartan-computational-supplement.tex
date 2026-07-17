@@ -6,7 +6,7 @@
 \usepackage[hidelinks]{hyperref}
 
 \title{Computational supplement for\\
-Relational clocks and causal Cartan contraction through arity three}
+A backreacting phase clock with fixed momentum in pure-Weyl gravity}
 \author{GPT-5.6.sol\thanks{OpenAI model.  Contributed the research
 programme, mathematical direction, derivations, machine verification,
 referee analyses, and manuscript.  The project was commissioned and directed
@@ -61,17 +61,17 @@ $\delta Q_R=0$ and linear presymplectic nullity &
 support-local $54\to26$ contraction &
 \path{BERGER_GAUGE_FIXED_NONMINIMAL_COMPLETION.json} \\
 \texttt{P09-C6} & Advanced/retarded all-row chain contractions, support,
-adjointness and $D$-equivariance &
+adjointness and $K$-equivariance &
 \path{BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json} \\
 \texttt{P09-C7} & Complete arbitrary-input support-local $q_2$, cyclicity,
-$L_\infty$ identity and $D$ derivation &
+$L_\infty$ identity and $K$ derivation &
 \path{BERGER_SUPPORT_LOCAL_Q2.json} \\
 \texttt{P09-C8} & Complete arbitrary-input support-local $q_3$, quartic
-cyclicity, arity-three identity and $L_D^{(3)}=0$ &
+cyclicity, arity-three identity and $L_K^{(3)}=0$ &
 \path{BERGER_SUPPORT_LOCAL_Q3.json} \\
-\texttt{P09-C9} & Cyclic causal Cartan contraction through arity two &
+\texttt{P09-C9} & Cyclic causal $K$-Cartan contraction through arity two &
 \path{BERGER_CAUSAL_D_CARTAN_V2.json} \\
-\texttt{P09-C10} & Closed arity-three source and cyclic $C_4$ causal
+\texttt{P09-C10} & Closed arity-three $K$-source and cyclic $C_4$ causal
 primitive on all $54$ rows &
 \path{BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json} \\
 \bottomrule
@@ -84,8 +84,14 @@ verifier rejects missing files, digest drift, a false required flag, a true
 forbidden downstream flag, or a manuscript claim identifier absent from both
 paper sources.
 
-An additional strategic cross-check is pinned separately by
-\path{BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json}.  It supports the
+Two independent interpretation checks are pinned separately.  The exact
+co-rotating audit
+\path{BERGER_GENERATOR_CONJUGATION_AUDIT.json} proves that the legacy
+all-row $e_0$ operation represents $K=D-\omega R$, while raw $D$ has a
+nonzero zeroth Taylor component.  It supports \texttt{P09-C6}--
+\texttt{P09-C10} and forbids interpreting those certificates as an affine
+$D$-Cartan theorem.  The strategic producer-boundary check is
+\path{BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json}; it supports the
 action-to-payload provenance of \texttt{P09-C8} in two exact sectors but does
 not replace the complete \path{BERGER_SUPPORT_LOCAL_Q3.json} certificate.
 
@@ -149,7 +155,7 @@ The recorded $q_3$ Tier-2 stages are:
 \item action differentiation on the raw minimal complex;
 \item canonical clock and gauge-fermion transport to all $54$ rows;
 \item row-bounded exact replay of graded symmetry, $Q^2$, quartic cyclicity
-and $D$ derivation;
+and $K$ derivation (under the generator-conjugation audit);
 \item portable row-chunk finalization;
 \item independent schema, hash, PBW and adjacent-Koszul audit.
 \end{enumerate}
@@ -190,6 +196,34 @@ is a genuine action-to-payload cross-check in the lapse and dressed
 radial/Weyl directions.  It does not independently regenerate the remaining
 millions of coefficients, and the certificate forbids that broader reading.
 
+\section{Generator-conjugation audit}
+
+With $R(T_1,T_2)=(-T_2,T_1)$ and
+$U(t)=\exp(\omega tR)$, write
+$T=U(t)((\rho,0)+\psi)$.  Direct exact differentiation gives
+\[
+ U^{-1}DT=\partial_t\psi+\omega R\psi+\omega R(\rho,0),
+ \qquad
+ U^{-1}(D-\omega R)T=\partial_t\psi.
+\]
+The frozen $54$-row coordinate rule is $e_0I_{54}$, hence it represents
+$K=D-\omega R$.  The strict audit pins both the frozen unary certificate and
+the charge convention, and requires
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Flag & Value\\
+\midrule
+\texttt{EXPORTED\_UNARY\_GENERATOR\_IS\_K} & true\\
+\texttt{EXPORTED\_UNARY\_GENERATOR\_IS\_ORIGINAL\_D} & false\\
+\texttt{AFFINE\_D\_ZERO\_ARITY\_NONZERO} & true\\
+\texttt{AFFINE\_D\_CARTAN\_CONSTRUCTED} & false\\
+\bottomrule
+\end{tabular}
+\end{center}
+This corrects the interpretation of the legacy artifact names without
+changing their coefficientwise algebra.
+
 \section{Causal domains}
 
 The unary maps have the typed domains
@@ -207,15 +241,15 @@ advanced.
 
 At arity three, the source
 \[
- A_D^{(3)}=[q_3,\iota_D^{(1)}]+[q_2,\iota_D^{(2)}]-L_D^{(3)}
+ A_K^{(3)}=[q_3,\iota_K^{(1)}]+[q_2,\iota_K^{(2)}]-L_K^{(3)}
 \]
 has two normalized closure channels.  Their exact coefficients are
 \[
  -\frac12+\frac12=0,
- \qquad [q_3,D]=0.
+ \qquad [q_3,K]=0.
 \]
 The first equality is graded Jacobi; the second is the imported local
-$D$-derivation identity with $L_D^{(3)}=0$.
+$K$-derivation identity with $L_K^{(3)}=0$.
 
 For cyclicization, the operator output is first paired with the degree-one odd
 Darboux form.  The resulting four-linear tensor uses the Koszul rotation
@@ -236,7 +270,7 @@ algebra arithmetic verifies
 
 The support claim is
 \[
- \operatorname{supp}\iota_{D,\mathrm{cyc}}^{(3)}(f,g,h)
+ \operatorname{supp}\iota_{K,\mathrm{cyc}}^{(3)}(f,g,h)
  \subseteq J(\operatorname{supp}f\cup\operatorname{supp}g
  \cup\operatorname{supp}h).
 \]
@@ -264,6 +298,14 @@ PYTHONPATH=. python3 \
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
   verify_berger_q3_action_sector_crosscheck.py
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_generator_conjugation_audit.py --check --guards
+
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_generator_conjugation_audit.py
 \end{verbatim}
 
 The complete $q_3$ derivation is not part of this fast rail.  Its recorded
@@ -278,7 +320,8 @@ output.
 The main theorem depends on the conjunction of the ten claims above.  It does
 not promote any of the following:
 \begin{itemize}
-\item all-orders nonlinear $D$-Cartan contraction;
+\item a curved/affine $D$-Cartan contraction at any nonlinear order;
+\item an unconditional or convergent all-orders $K$-Cartan contraction;
 \item arity-four closure;
 \item an integrated nonlinear gauge quotient or global complete observable;
 \item a general-background nonlinear Koszul--Tate export;
@@ -307,6 +350,8 @@ missing or broadened dependency;
 arity-three Cartan hashes and signs off Sections 6--7;
 \item the action-to-$q_3$ strategic cross-check remains exact and is described
 as partial rather than a full second producer;
+\item the generator-conjugation audit remains exact, the BV theorem is stated
+for $K$, and no legacy artifact name is read as an affine $D$ theorem;
 \item the abstract, theorem and conclusion retain the classical,
 fixed-coupling, compact-Berger and arity-three limitations;
 \item the compiled main paper and supplement are reproduced from a clean

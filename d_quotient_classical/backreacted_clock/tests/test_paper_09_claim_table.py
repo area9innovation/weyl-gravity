@@ -15,6 +15,7 @@ def test_paper_09_claim_table_is_complete_and_fail_closed() -> None:
     assert payload["theorem_frozen"] is False
     assert payload["required_signoffs"]["nonlinear_team"].startswith("PENDING")
     assert payload["independent_cross_checks"][0]["supports_claim"] == "P09-C8"
+    assert payload["independent_cross_checks"][1]["certificate_result_id"] == "BERGER_GENERATOR_CONJUGATION_AUDIT"
 
 
 def test_paper_09_claim_table_schema_and_persisted_output() -> None:

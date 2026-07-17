@@ -1,0 +1,86 @@
+{
+  "claim_boundary": "The exact co-rotating conjugation proves that the frozen e_0 action on the 54-row dressed complex represents K=D-omega R. The original cylinder translation D is affine about the rotating background and has a nonzero zero-arity component. Existing unary-through-ternary Cartan certificates therefore prove a K-Cartan theorem, not an affine D-Cartan theorem. No affine D Cartan primitive or all-orders theorem is constructed here.",
+  "claim_status": "CERTIFIED_GENERATOR_CORRECTION",
+  "conventions": {
+    "D": "partial_t on the original fields",
+    "K": "D-omega R",
+    "R": "R(T_1,T_2)=(-T_2,T_1)",
+    "clock_dressing": "T=exp(omega*t*R)((rho,0)+psi)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "K_fixes_background": true,
+    "frozen_e0_action_equals_K_unary_action": true,
+    "raw_D_does_not_fix_background": true,
+    "raw_D_has_nonzero_zero_arity_in_dressed_coordinates": true,
+    "rotation_derivative_exact": true,
+    "source_hashes_pinned": true
+  },
+  "exact_conjugation": {
+    "K_unary": "partial_t I_2",
+    "K_zero_arity": [
+      "0",
+      "0"
+    ],
+    "dressed_D_action": "partial_t psi + omega R psi + omega R (rho,0)",
+    "dressed_K_action": "partial_t psi",
+    "raw_D_background": [
+      "-omega*rho*sin(omega*t)",
+      "omega*rho*cos(omega*t)"
+    ],
+    "raw_D_unary": "partial_t I_2 + omega R",
+    "raw_D_zero_arity": [
+      "0",
+      "omega*rho"
+    ],
+    "raw_K_background": [
+      "0",
+      "0"
+    ],
+    "raw_background": [
+      "rho*cos(omega*t)",
+      "rho*sin(omega*t)"
+    ],
+    "rotation_generator": [
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "flags": {
+    "AFFINE_D_CARTAN_CONSTRUCTED": false,
+    "AFFINE_D_ZERO_ARITY_NONZERO": true,
+    "EXPORTED_UNARY_GENERATOR_IS_K": true,
+    "EXPORTED_UNARY_GENERATOR_IS_ORIGINAL_D": false,
+    "PAPER09_D_CARTAN_AS_PREVIOUSLY_WRITTEN": false,
+    "PAPER09_K_CARTAN_INTERPRETATION": true,
+    "THEOREM_FROZEN": false
+  },
+  "interpretation": {
+    "frozen_e0_generator": "K=D-omega R",
+    "legacy_D_label_is_geometrically_K": true,
+    "legacy_artifact_name": "BERGER_54_ROW_LOCAL_D_ACTION",
+    "raw_D_in_dressed_coordinates": "affine: zero-arity omega R(rho,0), unary e0+omega R"
+  },
+  "next_gate": "PAPER09_RESTATE_BV_CARTAN_FOR_K_OR_CONSTRUCT_AFFINE_D_CARTAN",
+  "result_id": "BERGER_GENERATOR_CONJUGATION_AUDIT",
+  "schema": "pure-weyl-berger-generator-conjugation-audit-v1",
+  "setting_id": "compact_positive_berger_clock_q_9_over_40",
+  "source_manifest": {
+    "clock_charge_seed": {
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9"
+    },
+    "local_54_row_action": {
+      "path": "d_quotient_classical/certificates/BERGER_54_ROW_LOCAL_D_ACTION.json",
+      "sha256": "8b5f1277c1969507e58b4389984338f2a063b99f9d7cf8a929abcffa298b3e49"
+    }
+  }
+}

@@ -17,6 +17,7 @@ SCHEMA = ROOT / "d_quotient_classical/schema/paper-09-berger-claim-table-v1.sche
 MAIN_PAPER = ROOT / "paper/09-relational-clocks-berger-d-cartan.tex"
 SUPPLEMENT = ROOT / "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex"
 Q3_CROSSCHECK = CERTIFICATE_DIR / "BERGER_Q3_ACTION_SECTOR_CROSSCHECK.json"
+GENERATOR_AUDIT = CERTIFICATE_DIR / "BERGER_GENERATOR_CONJUGATION_AUDIT.json"
 
 
 CLAIMS = (
@@ -80,7 +81,7 @@ CLAIMS = (
     {
         "claim_id": "P09-C6",
         "paper_sections": ["5"],
-        "claim": "The complete 54-row complex has D-equivariant advanced and retarded chain contractions with causal support and adjointness.",
+        "claim": "The complete 54-row complex has K-equivariant advanced and retarded chain contractions with causal support and adjointness.",
         "certificate": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
         "required_true": [
             "flags.BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
@@ -95,7 +96,7 @@ CLAIMS = (
     {
         "claim_id": "P09-C7",
         "paper_sections": ["6"],
-        "claim": "The complete arbitrary-input support-local q2 satisfies the arity-two L-infinity identity, cyclicity and D derivation.",
+        "claim": "The complete arbitrary-input support-local q2 satisfies the arity-two L-infinity identity, cyclicity and K derivation.",
         "certificate": "BERGER_SUPPORT_LOCAL_Q2.json",
         "required_true": [
             "flags.CLASSICAL_SUPPORT_LOCAL_Q2",
@@ -108,7 +109,7 @@ CLAIMS = (
     {
         "claim_id": "P09-C8",
         "paper_sections": ["6"],
-        "claim": "The complete arbitrary-input support-local q3 satisfies the arity-three L-infinity identity, quartic cyclicity and D derivation with L_D3=0.",
+        "claim": "The complete arbitrary-input support-local q3 satisfies the arity-three L-infinity identity, quartic cyclicity and K derivation with L_K3=0.",
         "certificate": "BERGER_SUPPORT_LOCAL_Q3.json",
         "required_true": [
             "flags.CLASSICAL_SUPPORT_LOCAL_Q3",
@@ -122,7 +123,7 @@ CLAIMS = (
     {
         "claim_id": "P09-C9",
         "paper_sections": ["7"],
-        "claim": "The complete 54-row classical complex has a cyclic causal D-Cartan contraction through arity two.",
+        "claim": "The complete 54-row classical complex has a cyclic causal K-Cartan contraction through arity two.",
         "certificate": "BERGER_CAUSAL_D_CARTAN_V2.json",
         "required_true": [
             "flags.BERGER_CAUSAL_D_CARTAN_V2",
@@ -134,7 +135,7 @@ CLAIMS = (
     {
         "claim_id": "P09-C10",
         "paper_sections": ["7"],
-        "claim": "The complete 54-row arbitrary-input arity-three Cartan source is closed and has a cyclic two-sided-causal primitive.",
+        "claim": "The complete 54-row arbitrary-input arity-three K-Cartan source is closed and has a cyclic two-sided-causal primitive.",
         "certificate": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json",
         "required_true": [
             "flags.BERGER_ARITY_THREE_D_CARTAN_SOURCE_CLOSED",
@@ -205,6 +206,25 @@ def build() -> dict[str, object]:
     for dotted in crosscheck_required_false:
         if _lookup(crosscheck, dotted) is not False:
             raise AssertionError(f"q3 cross-check required false field failed: {dotted}")
+    generator_audit = _read(GENERATOR_AUDIT)
+    generator_required_true = [
+        "flags.EXPORTED_UNARY_GENERATOR_IS_K",
+        "flags.AFFINE_D_ZERO_ARITY_NONZERO",
+        "flags.PAPER09_K_CARTAN_INTERPRETATION",
+        "exact_checks.frozen_e0_action_equals_K_unary_action",
+    ]
+    generator_required_false = [
+        "flags.EXPORTED_UNARY_GENERATOR_IS_ORIGINAL_D",
+        "flags.PAPER09_D_CARTAN_AS_PREVIOUSLY_WRITTEN",
+        "flags.AFFINE_D_CARTAN_CONSTRUCTED",
+        "flags.THEOREM_FROZEN",
+    ]
+    for dotted in generator_required_true:
+        if _lookup(generator_audit, dotted) is not True:
+            raise AssertionError(f"generator audit required true field failed: {dotted}")
+    for dotted in generator_required_false:
+        if _lookup(generator_audit, dotted) is not False:
+            raise AssertionError(f"generator audit required false field failed: {dotted}")
     return {
         "schema": "pure-weyl-paper-09-berger-claim-table-v1",
         "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
@@ -214,7 +234,7 @@ def build() -> dict[str, object]:
             str(MAIN_PAPER.relative_to(ROOT)): _sha256(MAIN_PAPER),
             str(SUPPLEMENT.relative_to(ROOT)): _sha256(SUPPLEMENT),
         },
-        "setting": "open compact positive Berger S1 clock family for the background and fixed-coupling linear nullity; exact rational q=9/40 representative for the 54-row classical BV Taylor and Cartan results through arity three",
+        "setting": "one-parameter compact positive Berger S1 clock incidence family across the scalar coupling for fixed-coupling momentum rigidity and linear D nullity; exact rational q=9/40 representative for the 54-row classical K-Cartan result through arity three",
         "claims": claims,
         "claim_ids_complete": [spec["claim_id"] for spec in CLAIMS],
         "independent_cross_checks": [
@@ -226,16 +246,26 @@ def build() -> dict[str, object]:
                 "certificate_claim_boundary": crosscheck["claim_boundary"],
                 "required_true": crosscheck_required_true,
                 "required_false": crosscheck_required_false,
+            },
+            {
+                "supports_claim": "P09-C6--P09-C10",
+                "certificate_path": str(GENERATOR_AUDIT.relative_to(ROOT)),
+                "certificate_result_id": generator_audit["result_id"],
+                "certificate_sha256": _sha256(GENERATOR_AUDIT),
+                "certificate_claim_boundary": generator_audit["claim_boundary"],
+                "required_true": generator_required_true,
+                "required_false": generator_required_false,
             }
         ],
         "required_signoffs": {
             "classical_team": "DRAFTED",
-            "nonlinear_team": "PENDING_ARITY_THREE_INTERPRETATION_REVIEW",
-            "quantum_team": "PENDING_CLAIM_BOUNDARY_REVIEW",
+            "nonlinear_team": "PENDING_K_GENERATOR_INTERPRETATION_REVIEW",
+            "quantum_team": "PENDING_K_GENERATOR_CLAIM_BOUNDARY_REVIEW",
             "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
         },
         "forbidden_promotions": [
-            "all-orders nonlinear D-Cartan",
+            "affine D-Cartan at any nonlinear order",
+            "unconditional or convergent all-orders K-Cartan",
             "Hadamard state",
             "quantum master equation",
             "anomaly cancellation",
@@ -244,8 +274,8 @@ def build() -> dict[str, object]:
             "integrated nonlinear D quotient",
             "global complete relational observable",
         ],
-        "next_gate": "PAPER_09_NONLINEAR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
-        "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates and one strategic independent action-to-q3 sector cross-check. It proves linear presymplectic nullity and a classical Cartan identity through arity three; it does not freeze the theorem or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, all-orders, Hadamard, boundary, scattering, or unitarity claim.",
+        "next_gate": "PAPER_09_K_GENERATOR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
+        "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates, an exact generator-conjugation audit and one strategic independent action-to-q3 sector cross-check. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. It does not construct affine D-Cartan data, freeze the theorem, or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, convergent all-orders, Hadamard, boundary, scattering, or unitarity claim.",
     }
 
 
@@ -262,7 +292,7 @@ def verify(payload: dict[str, object]) -> None:
     for claim_id in expected:
         if claim_id not in main or claim_id not in supplement:
             raise AssertionError(f"claim id is absent from a paper source: {claim_id}")
-    if payload["required_signoffs"]["nonlinear_team"] != "PENDING_ARITY_THREE_INTERPRETATION_REVIEW":
+    if payload["required_signoffs"]["nonlinear_team"] != "PENDING_K_GENERATOR_INTERPRETATION_REVIEW":
         raise AssertionError("nonlinear sign-off was promoted")
     for entry in payload["claims"]:
         path = ROOT / entry["certificate_path"]

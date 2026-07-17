@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates and one strategic independent action-to-q3 sector cross-check. It proves linear presymplectic nullity and a classical Cartan identity through arity three; it does not freeze the theorem or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, all-orders, Hadamard, boundary, scattering, or unitarity claim.",
+  "claim_boundary": "This table binds the working Paper IX draft to ten scoped classical Berger certificates, an exact generator-conjugation audit and one strategic independent action-to-q3 sector cross-check. It proves fixed-coupling momentum rigidity and linear presymplectic nullity for raw D, while the based classical Cartan identity through arity three is for K=D-omega R. It does not construct affine D-Cartan data, freeze the theorem, or promote an integrated nonlinear quotient, global complete observable, full second q3 derivation, quantum, convergent all-orders, Hadamard, boundary, scattering, or unitarity claim.",
   "claim_ids_complete": [
     "P09-C1",
     "P09-C2",
@@ -116,7 +116,7 @@
       "certificate_path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
       "certificate_result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
       "certificate_sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
-      "claim": "The complete 54-row complex has D-equivariant advanced and retarded chain contractions with causal support and adjointness.",
+      "claim": "The complete 54-row complex has K-equivariant advanced and retarded chain contractions with causal support and adjointness.",
       "claim_id": "P09-C6",
       "paper_sections": [
         "5"
@@ -139,7 +139,7 @@
       "certificate_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2.json",
       "certificate_result_id": "BERGER_SUPPORT_LOCAL_Q2",
       "certificate_sha256": "aae2fe3d6902765dd9cd7281d6c704b001ecaf4590d29c507cd469d37a4b5874",
-      "claim": "The complete arbitrary-input support-local q2 satisfies the arity-two L-infinity identity, cyclicity and D derivation.",
+      "claim": "The complete arbitrary-input support-local q2 satisfies the arity-two L-infinity identity, cyclicity and K derivation.",
       "claim_id": "P09-C7",
       "paper_sections": [
         "6"
@@ -160,7 +160,7 @@
       "certificate_path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q3.json",
       "certificate_result_id": "BERGER_SUPPORT_LOCAL_Q3",
       "certificate_sha256": "f55c145700cd30273e0f16d585bfd0815e5a8451606b0998bc706a8b61798cad",
-      "claim": "The complete arbitrary-input support-local q3 satisfies the arity-three L-infinity identity, quartic cyclicity and D derivation with L_D3=0.",
+      "claim": "The complete arbitrary-input support-local q3 satisfies the arity-three L-infinity identity, quartic cyclicity and K derivation with L_K3=0.",
       "claim_id": "P09-C8",
       "paper_sections": [
         "6"
@@ -182,7 +182,7 @@
       "certificate_path": "d_quotient_classical/certificates/BERGER_CAUSAL_D_CARTAN_V2.json",
       "certificate_result_id": "BERGER_CAUSAL_D_CARTAN_V2",
       "certificate_sha256": "87c1b4d897d56bcfea51f79c71f6f0b387157fc8a76fb83eb909c8ef00d3f444",
-      "claim": "The complete 54-row classical complex has a cyclic causal D-Cartan contraction through arity two.",
+      "claim": "The complete 54-row classical complex has a cyclic causal K-Cartan contraction through arity two.",
       "claim_id": "P09-C9",
       "paper_sections": [
         "7"
@@ -203,7 +203,7 @@
       "certificate_path": "d_quotient_classical/certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json",
       "certificate_result_id": "BERGER_ARITY_THREE_D_CARTAN_FULL_4D",
       "certificate_sha256": "0c304ca0dced538c4514dd8efbf8bf9e33a415772944818f7dadec1e88b7a829",
-      "claim": "The complete 54-row arbitrary-input arity-three Cartan source is closed and has a cyclic two-sided-causal primitive.",
+      "claim": "The complete 54-row arbitrary-input arity-three K-Cartan source is closed and has a cyclic two-sided-causal primitive.",
       "claim_id": "P09-C10",
       "paper_sections": [
         "7"
@@ -221,7 +221,8 @@
     }
   ],
   "forbidden_promotions": [
-    "all-orders nonlinear D-Cartan",
+    "affine D-Cartan at any nonlinear order",
+    "unconditional or convergent all-orders K-Cartan",
     "Hadamard state",
     "quantum master equation",
     "anomaly cancellation",
@@ -247,22 +248,41 @@
         "exact_checks.q3_producer_not_imported"
       ],
       "supports_claim": "P09-C8"
+    },
+    {
+      "certificate_claim_boundary": "The exact co-rotating conjugation proves that the frozen e_0 action on the 54-row dressed complex represents K=D-omega R. The original cylinder translation D is affine about the rotating background and has a nonzero zero-arity component. Existing unary-through-ternary Cartan certificates therefore prove a K-Cartan theorem, not an affine D-Cartan theorem. No affine D Cartan primitive or all-orders theorem is constructed here.",
+      "certificate_path": "d_quotient_classical/certificates/BERGER_GENERATOR_CONJUGATION_AUDIT.json",
+      "certificate_result_id": "BERGER_GENERATOR_CONJUGATION_AUDIT",
+      "certificate_sha256": "afc14ea90b10a9a59f0e7d240fcb2231eada9097d1d0e051f8f058d86de3d149",
+      "required_false": [
+        "flags.EXPORTED_UNARY_GENERATOR_IS_ORIGINAL_D",
+        "flags.PAPER09_D_CARTAN_AS_PREVIOUSLY_WRITTEN",
+        "flags.AFFINE_D_CARTAN_CONSTRUCTED",
+        "flags.THEOREM_FROZEN"
+      ],
+      "required_true": [
+        "flags.EXPORTED_UNARY_GENERATOR_IS_K",
+        "flags.AFFINE_D_ZERO_ARITY_NONZERO",
+        "flags.PAPER09_K_CARTAN_INTERPRETATION",
+        "exact_checks.frozen_e0_action_equals_K_unary_action"
+      ],
+      "supports_claim": "P09-C6--P09-C10"
     }
   ],
-  "next_gate": "PAPER_09_NONLINEAR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
+  "next_gate": "PAPER_09_K_GENERATOR_SIGNOFF_AND_CLEAN_TREE_REPLAY",
   "paper_sources": {
-    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "bc9645c7bd75b347a3b1acc2b7dd41e303b685a14da3f11a6c52482217683892",
-    "paper/09-relational-clocks-berger-d-cartan.tex": "a75401a321561c720407f30733d11ab593657ef04fcca4fd36bccf20f1e91e97"
+    "paper/09-relational-clocks-berger-d-cartan-computational-supplement.tex": "5ab17bdb53a8e2e23b9c2ecf20a541481a93952941e5c0935264b8e8d1e84194",
+    "paper/09-relational-clocks-berger-d-cartan.tex": "fc9ef234ce6ccf1aea2426af88d3f9bb9497001761661d27cbccb95a673c9c01"
   },
   "paper_state": "WRITING_STARTED",
   "required_signoffs": {
     "classical_team": "DRAFTED",
     "einstein_team": "OPTIONAL_INTERNAL_REFEREE",
-    "nonlinear_team": "PENDING_ARITY_THREE_INTERPRETATION_REVIEW",
-    "quantum_team": "PENDING_CLAIM_BOUNDARY_REVIEW"
+    "nonlinear_team": "PENDING_K_GENERATOR_INTERPRETATION_REVIEW",
+    "quantum_team": "PENDING_K_GENERATOR_CLAIM_BOUNDARY_REVIEW"
   },
   "result_id": "PAPER_09_BERGER_CLAIM_TABLE",
   "schema": "pure-weyl-paper-09-berger-claim-table-v1",
-  "setting": "open compact positive Berger S1 clock family for the background and fixed-coupling linear nullity; exact rational q=9/40 representative for the 54-row classical BV Taylor and Cartan results through arity three",
+  "setting": "one-parameter compact positive Berger S1 clock incidence family across the scalar coupling for fixed-coupling momentum rigidity and linear D nullity; exact rational q=9/40 representative for the 54-row classical K-Cartan result through arity three",
   "theorem_frozen": false
 }
