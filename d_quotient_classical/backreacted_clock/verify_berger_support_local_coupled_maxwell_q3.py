@@ -151,4 +151,4 @@ if __name__ == "__main__":
     verify()
     print("BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3 portable replay: PASS")
     print("1,890 typed q2 coefficients; 59,598 mixed q3 coefficients; 64 rows hash-checked")
-    print("retained ell3 and independent quantum acceptance remain false")
+    print("retained ell3 and quantum acceptance are not asserted by this upstream artifact")

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-portable-coupled-64-typed-pairing-36-sdr-v1.schema.json",
+  "title": "Explicit typed coupled 64/36 cyclic carrier",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "source_manifest", "normalization", "full_complex", "retained_complex", "contraction", "exact_checks", "flags", "verification_commands", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-portable-coupled-64-typed-pairing-36-sdr-v1"},
+    "result_id": {"const": "BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling"},
+    "claim_status": {"const": "CERTIFIED_EXPLICIT_TYPED_64_36_CYCLIC_CARRIER"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 1, "maxProperties": 1, "additionalProperties": {"$ref": "#/$defs/source"}},
+    "source_manifest": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "normalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "Maxwell_pairing_weight", "gravity_pairing_weight", "lowered_q2_tensor_preserved"],
+      "properties": {
+        "formula": {"const": "S64=diag(I54,2 I10); S36=diag(I26,2 I10); Omega_typed=Omega_legacy S"},
+        "Maxwell_pairing_weight": {"const": 2}, "gravity_pairing_weight": {"const": 1}, "lowered_q2_tensor_preserved": {"const": true}
+      }
+    },
+    "full_complex": {"$ref": "#/$defs/full"},
+    "retained_complex": {"$ref": "#/$defs/retained"},
+    "contraction": {"$ref": "#/$defs/contraction"},
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["typed_pairing64_antisymmetric", "typed_pairing36_antisymmetric", "q64_typed_pairing_cyclic", "q36_typed_pairing_cyclic", "typed_pairing_induced_by_iota", "pi_iota_identity", "contraction_identity", "homotopy_typed_cyclic", "scale_intertwines_iota", "scale_intertwines_projection"],
+      "properties": {
+        "typed_pairing64_antisymmetric": {"const": true}, "typed_pairing36_antisymmetric": {"const": true},
+        "q64_typed_pairing_cyclic": {"const": true}, "q36_typed_pairing_cyclic": {"const": true},
+        "typed_pairing_induced_by_iota": {"const": true}, "pi_iota_identity": {"const": true},
+        "contraction_identity": {"const": true}, "homotopy_typed_cyclic": {"const": true},
+        "scale_intertwines_iota": {"const": true}, "scale_intertwines_projection": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BERGER_EXPLICIT_TYPED_PAIRING_64", "BERGER_EXPLICIT_TYPED_PAIRING_36", "BERGER_TYPED_64_TO_36_CYCLIC_SDR", "BERGER_RETAINED_MIXED_ELL3_TRANSFER", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_EXPLICIT_TYPED_PAIRING_64": {"const": true}, "BERGER_EXPLICIT_TYPED_PAIRING_36": {"const": true},
+        "BERGER_TYPED_64_TO_36_CYCLIC_SDR": {"const": true}, "BERGER_RETAINED_MIXED_ELL3_TRANSFER": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 20}},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "result_id"], "properties": {"path": {"type": "string", "minLength": 10}, "sha256": {"$ref": "#/$defs/hash"}, "result_id": {"type": "string", "minLength": 10}}},
+    "record": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}, "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "full": {"type": "object", "additionalProperties": false, "required": ["total_rows", "classical_unary_q1", "typed_cyclic_pairing", "typing_scale"], "properties": {"total_rows": {"const": 64}, "classical_unary_q1": {"$ref": "#/$defs/record"}, "typed_cyclic_pairing": {"$ref": "#/$defs/record"}, "typing_scale": {"$ref": "#/$defs/record"}}},
+    "retained": {"type": "object", "additionalProperties": false, "required": ["total_rows", "classical_unary_q1", "typed_cyclic_pairing", "typing_scale"], "properties": {"total_rows": {"const": 36}, "classical_unary_q1": {"$ref": "#/$defs/record"}, "typed_cyclic_pairing": {"$ref": "#/$defs/record"}, "typing_scale": {"$ref": "#/$defs/record"}}},
+    "contraction": {"type": "object", "additionalProperties": false, "required": ["iota_36_to_64", "pi_64_to_36", "S_64", "support_local", "cyclic_for_typed_pairing"], "properties": {"iota_36_to_64": {"$ref": "#/$defs/record"}, "pi_64_to_36": {"$ref": "#/$defs/record"}, "S_64": {"$ref": "#/$defs/record"}, "support_local": {"const": true}, "cyclic_for_typed_pairing": {"const": true}}}
+  }
+}

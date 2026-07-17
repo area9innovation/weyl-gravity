@@ -31,10 +31,10 @@
         "unary_pairing_source": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["path", "legacy_pairing_canonical_sha256"],
+          "required": ["path", "typed_pairing_canonical_sha256"],
           "properties": {
-            "path": {"const": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json"},
-            "legacy_pairing_canonical_sha256": {"$ref": "#/$defs/hash"}
+            "path": {"const": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json"},
+            "typed_pairing_canonical_sha256": {"$ref": "#/$defs/hash"}
           }
         }
       }

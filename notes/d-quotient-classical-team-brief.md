@@ -133,8 +133,27 @@ q_1q_3+q_2(q_2,\cdot)+\text{graded unshuffles}=0
 \]
 
 on all 64 rows.  It is a full four-dimensional `LOCAL-ALGEBRAIC` export, not
-a reduced-mode fit.  Retained \(\ell_3\) transfer, exchange terms, and
-independent quantum-side acceptance remain separate fail-closed gates.
+a reduced-mode fit.
+
+The retained transfer is now exact on an explicit typed carrier.
+BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR exports both odd pairings,
+both unary differentials, the typing scales, and the complete cyclic
+support-local \(64\to36\) contraction.  In this carrier,
+BERGER_RETAINED_MIXED_ELL3_TRANSFER proves
+
+\[
+\ell_{3,\mathrm{mixed}}
+=\pi q_{3,\mathrm{mixed}}(\iota,\iota,\iota)
+\]
+
+coefficientwise.  The retained mixed contact contains 25,950 exact PBW
+coefficients in 18 nonzero rows, while each of the three possible relative
+homotopy-exchange sectors vanishes exactly.  The retained mixed arity-three
+identity then closes on all 36 rows, with 1,474 retained mixed
+\(\ell_2\)-coefficients.  A separate verifier reconstructs the contact
+pullback, evaluates every graded exchange unshuffle, and replays all 36
+identity rows.  Independent quantum-side acceptance, QME restoration, and
+every quantum claim remain separate fail-closed gates.
 
 The separate extended apparatus unary audit is now exact. On the detector
 chart the three declared standard-sign rods have

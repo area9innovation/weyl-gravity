@@ -1,0 +1,6 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://area9.dk/pure-weyl/berger-retained-mixed-ell3-row-v1.schema.json",
+  "type":"object","additionalProperties":false,"required":["output","terms","canonical_sha256"],
+  "properties":{"output":{"type":"integer","minimum":0,"maximum":35},"terms":{"type":"array","items":{"$ref":"#/$defs/term"}},"canonical_sha256":{"$ref":"#/$defs/hash"}},
+  "$defs":{"hash":{"type":"string","pattern":"^[0-9a-f]{64}$"},"rational":{"oneOf":[{"type":"integer"},{"type":"object","additionalProperties":false,"required":["numerator","denominator"],"properties":{"numerator":{"type":"integer"},"denominator":{"type":"integer","minimum":2}}}]},"coefficient":{"type":"object","additionalProperties":false,"required":["rational","sqrt10"],"properties":{"rational":{"$ref":"#/$defs/rational"},"sqrt10":{"$ref":"#/$defs/rational"}}},"multiindex":{"type":"array","minItems":4,"maxItems":4,"items":{"type":"integer","minimum":0}},"term":{"type":"array","minItems":7,"maxItems":7,"prefixItems":[{"type":"integer","minimum":0,"maximum":35},{"$ref":"#/$defs/multiindex"},{"type":"integer","minimum":0,"maximum":35},{"$ref":"#/$defs/multiindex"},{"type":"integer","minimum":0,"maximum":35},{"$ref":"#/$defs/multiindex"},{"$ref":"#/$defs/coefficient"}],"items":false}}
+}

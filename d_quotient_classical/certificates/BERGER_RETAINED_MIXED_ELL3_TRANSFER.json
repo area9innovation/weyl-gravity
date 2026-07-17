@@ -1,0 +1,97 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem transfers the typed mixed gravity-Maxwell q3 through the explicit cyclic 64-to-36 SDR. It exports the 25,950-coefficient retained contact term and proves that all three relative homotopy-exchange contributions vanish coefficientwise. The retained mixed arity-three identity holds on all 36 rows. Cyclicity follows from the explicitly typed cyclic carrier and the cyclic full action tensor. Independent quantum acceptance, a residual finite-mode mixing table, QME restoration, Hadamard products, and every quantum claim remain open.",
+  "claim_status": "CERTIFIED_RETAINED_MIXED_ELL3_CONTACT_WITH_ZERO_EXCHANGE",
+  "dependency_refs": {
+    "mixed_q3": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
+      "sha256": "90a7a7703e30fc9fe2e97e1b4e3327bb1dc9b078c16b51c1cc2afd163b0842a6"
+    },
+    "mixed_q3_payload": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3_PAYLOAD.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3_PAYLOAD",
+      "sha256": "cebf388d1bc83b8f3b3b892e52efb6784511124505c3517c02f4125952b78bf1"
+    },
+    "typed_carrier": {
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json",
+      "result_id": "BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR",
+      "sha256": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88"
+    },
+    "typed_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_TYPED_PAYLOAD",
+      "sha256": "789c0a8fa75903a2f0a3c8e11138b64531185d08124c0d6b82dc46138b91a731"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "K_Berger_equivariant": true,
+    "all_three_exchange_parts_zero": true,
+    "contact_transferred_coefficientwise": true,
+    "retained_mixed_arity_three_identity_all_36_rows": true,
+    "retained_mixed_ell3_cyclic_by_typed_cyclic_transfer": true
+  },
+  "exchange_ledger": {
+    "gravity_inclusion2_term_count": 96,
+    "mixed_inclusion2_term_count": 12,
+    "part_term_counts": {
+      "gravity_outer_mixed_inner": 0,
+      "mixed_outer_gravity_inner": 0,
+      "mixed_outer_mixed_inner": 0
+    },
+    "reason_zero": "the algebraic homotopy images lie in rows 37 and 38, while every relevant outer gravity or mixed q2 coefficient on those inner rows vanishes"
+  },
+  "flags": {
+    "BERGER_RETAINED_MIXED_ELL3_CONTACT": true,
+    "BERGER_RETAINED_MIXED_ELL3_EXCHANGE_ZERO": true,
+    "BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_QUANTUM_ACCEPTANCE": false,
+    "BERGER_RETAINED_MIXED_ELL3_TRANSFER": true,
+    "QME_RESTORED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "result_id": "BERGER_RETAINED_MIXED_ELL3_TRANSFER",
+  "retained_ell2": {
+    "payload_canonical_sha256": "5371e5d0adcc4a00b44ff7efbb3f03bf82cc9651ec7318bb5c32be51b3dbc303",
+    "payload_file_sha256": "a79fd40dbded3d116a33e1c7289af595a7e125faa1c6c47568dc6fd7b57bebb4",
+    "payload_path": "d_quotient_classical/certificates/BERGER_RETAINED_TYPED_MIXED_ELL2_PAYLOAD.json",
+    "term_count": 1474
+  },
+  "retained_ell3": {
+    "contact_term_count": 25950,
+    "exchange_term_count": 0,
+    "maximum_total_jet_order": 2,
+    "nonzero_rows": 18,
+    "payload_canonical_sha256": "5c97d0c20899380bc76b9f2f800fd58601ab3fc264c8ca58b8194c67d42db3ee",
+    "payload_file_sha256": "c3dc93cbbfed36fbd800aba4bfee197d9b04fcb64420c03883fea5b1d360c948",
+    "payload_path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_PAYLOAD.json",
+    "total_term_count": 25950
+  },
+  "schema": "pure-weyl-berger-retained-mixed-ell3-transfer-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling",
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_transfer.py": "7da61389c3e0d1af80bb04f85b447b31fb40c7b2cd246a27713ee8a911331b6f",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_transfer.py": "deae0a99b5eba7c212b1d91a5e8d858360bd4225bf434e48a276e45c1a14ebbe",
+    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_transfer.py": "8c6963b28eb189e0c75780700ebabbbd00beeb361185b0899bd246d471999da4",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-payload-v1.schema.json": "426acb967c7093c153371117c5112be33478731b019e45a84b233dd5f127f13a",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-row-v1.schema.json": "eb8245e94234eac2b22b4f8288452af1d9e2453a2f63aacc6acecb85eba59002",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-transfer-v1.schema.json": "fea2db35366f56f1e48deb2d4f31f9688d738128353dd0d6804962387ac8c0b8",
+    "d_quotient_classical/schema/berger-retained-typed-mixed-ell2-payload-v1.schema.json": "e37e1a2847d96b07352ba76aac67da41c2fa222053046cec82bae7951f9587a5"
+  },
+  "transfer_formula": {
+    "contact": "pi q3_mixed(iota,iota,iota)",
+    "exchange": "pi q2(I2,iota) summed over the three graded (2,1)-unshuffles",
+    "inclusion2": "I2=-S64 q2(iota,iota)",
+    "relative_decomposition": [
+      "gravity_outer_mixed_inner",
+      "mixed_outer_gravity_inner",
+      "mixed_outer_mixed_inner"
+    ]
+  },
+  "verification_commands": [
+    "BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_transfer.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_transfer.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_transfer -v"
+  ]
+}

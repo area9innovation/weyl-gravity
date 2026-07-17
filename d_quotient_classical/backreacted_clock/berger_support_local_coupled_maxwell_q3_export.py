@@ -58,6 +58,7 @@ DEPENDENCIES = {
     "legacy_arity_two_presentation": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
     "legacy_arity_two_payload": ROOT / "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2_PAYLOAD.json",
     "portable_unary_pairing_sdr": ROOT / "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+    "portable_typed_pairing_sdr": ROOT / "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json",
     "generator_signoff": ROOT / "d_quotient_classical/certificates/PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF.json",
 }
 
@@ -186,7 +187,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     }
 
     dependencies = {name: json.loads(path.read_text()) for name, path in DEPENDENCIES.items()}
-    carrier = dependencies["portable_unary_pairing_sdr"]
+    carrier = dependencies["portable_typed_pairing_sdr"]
     certificate = {
         "schema": "pure-weyl-berger-support-local-coupled-maxwell-q3-v1",
         "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
@@ -212,8 +213,8 @@ def build() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
             "canonical_shear": "F2_typed=S^{-1} F2_legacy",
             "reason": "output-only normalization is not functorial under coderivation composition; the factor two belongs to the Maxwell fibre pairing",
             "unary_pairing_source": {
-                "path": str(DEPENDENCIES["portable_unary_pairing_sdr"].relative_to(ROOT)),
-                "legacy_pairing_canonical_sha256": carrier["full_complex"]["cyclic_pairing"]["sha256"],
+                "path": str(DEPENDENCIES["portable_typed_pairing_sdr"].relative_to(ROOT)),
+                "typed_pairing_canonical_sha256": carrier["full_complex"]["typed_cyclic_pairing"]["sha256"],
             },
         },
         "derivation": {
@@ -268,7 +269,7 @@ def build() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
             "BERGER_TAYLOR_ORDER=3 PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_support_local_coupled_maxwell_q3_export.py --check --guards",
             "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_support_local_coupled_maxwell_q3.py",
         ],
-        "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the exact typed 64-row gravity-clock-Maxwell q2 presentation and the 59,598-term mixed q3 overlay derived from the Maxwell action and a finite BV-canonical shear. It proves the all-row mixed arity-three L-infinity identity and K_Berger equivariance. It supersedes the output-only arity-two normalization only for nonlinear coderivation composition; both presentations have the identical lowered cubic action tensor. It does not yet transfer ell3 through the 64-to-36 SDR, construct the exchange contribution, perform independent quantum-side acceptance, restore a QME, or make a quantum claim.",
+        "claim_boundary": "This LOCAL-ALGEBRAIC theorem exports the exact typed 64-row gravity-clock-Maxwell q2 presentation and the 59,598-term mixed q3 overlay derived from the Maxwell action and a finite BV-canonical shear. It proves the all-row mixed arity-three L-infinity identity and K_Berger equivariance. It supersedes the output-only arity-two normalization only for nonlinear coderivation composition; both presentations have the identical lowered cubic action tensor. This artifact does not itself transfer ell3 through the 64-to-36 SDR, construct the exchange contribution, perform independent quantum-side acceptance, restore a QME, or make a quantum claim; those are separately versioned downstream gates.",
     }
     return certificate, q2_payload, q3_payload
 
@@ -290,8 +291,9 @@ does not commute with coderivation composition.
 
 The mixed operation is derived from the fourth Maxwell action derivative and
 the finite BV-canonical ghost shear.  Exact row-bounded replay proves the
-mixed part of `q1 q3+q2 q2=0` on every row.  The retained ell3 transfer and
-independent quantum consumer remain fail-closed.
+mixed part of `q1 q3+q2 q2=0` on every row.  Retained transfer and independent
+quantum acceptance are separately versioned downstream gates and are not
+promoted by this artifact.
 """
 
 

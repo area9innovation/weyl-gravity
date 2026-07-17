@@ -13,5 +13,6 @@ does not commute with coderivation composition.
 
 The mixed operation is derived from the fourth Maxwell action derivative and
 the finite BV-canonical ghost shear.  Exact row-bounded replay proves the
-mixed part of `q1 q3+q2 q2=0` on every row.  The retained ell3 transfer and
-independent quantum consumer remain fail-closed.
+mixed part of `q1 q3+q2 q2=0` on every row.  Retained transfer and independent
+quantum acceptance are separately versioned downstream gates and are not
+promoted by this artifact.
