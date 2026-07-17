@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; arbitrary real finite sums of generic ell>=2 harmonics at k=0, after local gauge reduction and before stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "every finite generic-harmonic k=0 superposition on the common mu_H=mu_J1=mu_J2=mu_J3 zero cone is second-order extendible",
+    "same-ell zero-frequency sources are exactly controlled by the already certified total stabilizer moment maps",
+    "distinct-ell products have no frequency collision, cannot output L=0, and miss every generic and exceptional nonzero target shell",
+    "cross-ell source coefficients affect the explicit correction but cannot obstruct existence",
+    "the finitely many blockwise inverses assemble a real smooth spatially periodic finite-quasiperiodic second-order correction"
+  ],
+  "evidence": {
+    "commit": "040a2ddd2fcd8129d1a1821a41b663d3534b023e",
+    "path": "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
+    "sha256": "45f91e2c9342f81dda1624c3ae347816a11ce25c5bf1a28508a7213e984d0d52"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "retain relative phases in opposite-momentum standing waves, then test exceptional/global homogeneous and twist-velocity mixed cones",
+  "not_established": [
+    "infinite-harmonic Sobolev/PDE completion",
+    "opposite-momentum relative-phase source closure",
+    "exceptional/global input cones",
+    "all-orders integration, final residual descent, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "G4_COMPLETE_FINITE_HARMONIC_K0_COMMON_ZERO_CONE_SECOND_ORDER_EXTENDIBLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order --verify bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order"
+  ]
+}
