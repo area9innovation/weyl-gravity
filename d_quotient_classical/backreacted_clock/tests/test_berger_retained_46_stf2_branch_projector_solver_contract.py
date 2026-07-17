@@ -31,6 +31,16 @@ class Retained46STF2BranchProjectorSolverContractTests(unittest.TestCase):
         self.assertEqual(len(partition["gravity_configuration_rows"]), 15)
         self.assertEqual(len(partition["gravity_equation_rows"]), 15)
 
+    def test_physical_anchor_is_derived(self) -> None:
+        anchor = build()["principal_symbol_anchor"]
+        self.assertEqual(
+            anchor["physical_helicity_authority"],
+            "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1",
+        )
+        self.assertEqual(anchor["full_null_symbol_cohomology_dimensions"], [0, 6, 6, 0])
+        self.assertEqual(anchor["real_physical_helicity_rank_each"], 2)
+        self.assertEqual(anchor["generalized_wave_module_rank"], 4)
+
     def test_overclaim_mutations_fail(self) -> None:
         for flag in (
             "BRANCH_PROJECTOR_ACCEPTED",

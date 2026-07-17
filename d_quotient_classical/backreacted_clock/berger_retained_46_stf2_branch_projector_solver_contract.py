@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 HERE = ROOT / "d_quotient_classical/backreacted_clock"
 CARRIER = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json"
 OBSTRUCTION = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json"
+PHYSICAL_QUOTIENT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json"
 OUTPUT = ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_SOLVER_CONTRACT_V1.json"
 REPORT = ROOT / "d_quotient_classical/reports/berger-retained-46-stf2-branch-projector-solver-contract.md"
 SCHEMA = ROOT / "d_quotient_classical/schema/berger-retained-46-stf2-branch-projector-solver-contract-v1.schema.json"
@@ -42,7 +43,7 @@ def _dependency(path: Path, value: dict) -> dict[str, str]:
     }
 
 
-def _validate_inputs(carrier: dict, obstruction: dict) -> dict[str, bool]:
+def _validate_inputs(carrier: dict, obstruction: dict, physical: dict) -> dict[str, bool]:
     if (
         carrier.get("result_state")
         != "CERTIFIED_CYCLIC_GRAPH_CARRIER_PROJECTOR_OPEN"
@@ -72,6 +73,16 @@ def _validate_inputs(carrier: dict, obstruction: dict) -> dict[str, bool]:
         != 46
     ):
         raise ValueError("rank-36 obstruction authority drifted")
+    if (
+        physical.get("result_state")
+        != "PHYSICAL_HELICITY_PROJECTIVE_MODULE_CERTIFIED_V2_FILTERED_DESCENT_OPEN"
+        or physical.get("null_cone_chart", {}).get("projective_rank") != 2
+        or physical.get("full_Berger_null_symbol_cohomology", {}).get("cohomology_dimensions")
+        != [0, 6, 6, 0]
+        or physical.get("filtered_principal_module", {}).get("generalized_wave_rank_over_Q_sqrt10")
+        != 4
+    ):
+        raise ValueError("physical-helicity quotient authority drifted")
     return {
         "rank_36_obstruction_imported": True,
         "rank_46_carrier_imported": True,
@@ -82,13 +93,17 @@ def _validate_inputs(carrier: dict, obstruction: dict) -> dict[str, bool]:
         "graph_shear_inverse_exact": True,
         "graph_shear_cyclic": True,
         "branch_projector_still_open": True,
+        "physical_helicity_projective_rank_two_derived": True,
+        "full_null_symbol_cohomology_rank_six_retained": True,
+        "generalized_wave_module_rank_four_derived": True,
     }
 
 
 def build() -> dict:
     carrier = _load(CARRIER)
     obstruction = _load(OBSTRUCTION)
-    checks = _validate_inputs(carrier, obstruction)
+    physical = _load(PHYSICAL_QUOTIENT)
+    checks = _validate_inputs(carrier, obstruction, physical)
     sources = {
         str(path.relative_to(ROOT)): _sha256(path)
         for path in (Path(__file__).resolve(), VERIFIER, TESTS, SCHEMA)
@@ -101,6 +116,7 @@ def build() -> dict:
         "dependency_refs": {
             "rank_36_projector_obstruction": _dependency(OBSTRUCTION, obstruction),
             "rank_46_STF2_graph_carrier": _dependency(CARRIER, carrier),
+            "physical_helicity_filtered_quotient": _dependency(PHYSICAL_QUOTIENT, physical),
         },
         "exact_import_checks": checks,
         "row_partition": {
@@ -135,6 +151,9 @@ def build() -> dict:
             "Einstein_image": "rough tensor-wave layer with Y_STF=0 at principal symbol",
             "extra_Weyl_image": "complementary generalized-wave layer carried by Y_STF",
             "real_physical_helicity_rank_each": 2,
+            "physical_helicity_authority": "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1",
+            "full_null_symbol_cohomology_dimensions": [0, 6, 6, 0],
+            "generalized_wave_module_rank": 4,
             "topological_odd_direction": "excluded deformation/vertex class, not a dynamical branch",
         },
         "exact_acceptance_equations": [
@@ -276,6 +295,12 @@ The exported projector is obtained with the exact cyclic graph shear and has
 PBW order at most two.  Degree-one, ghost and ghost-dual entries are forced by
 the typed cyclic-adjoint and `q1`-intertwining equations rather than fitted as
 independent `46 x 46` operator blocks.
+
+The two-helicity anchor is no longer a declaration of this contract.  It is
+imported from the exact transverse-traceless projective-module certificate,
+which keeps the full six-dimensional null-symbol cohomology visible and
+distinguishes the rank-two polarization module from the rank-four generalized
+repeated-wave module.
 
 The solve is ordered: principal symbol/idempotence, lower-order chain and
 cyclic completion, then real and `K_Berger` equivariance.  The result must be

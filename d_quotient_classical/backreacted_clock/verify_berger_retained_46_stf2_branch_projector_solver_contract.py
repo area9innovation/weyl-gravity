@@ -76,6 +76,17 @@ def verify() -> dict:
         raise ValueError("solver-contract row partition is not exhaustive")
     if len(partition["gravity_configuration_rows"]) ** 2 != 225:
         raise ValueError("solver-contract independent coefficient count failed")
+    physical_path = ROOT / value["dependency_refs"]["physical_helicity_filtered_quotient"]["path"]
+    physical = json.loads(physical_path.read_text())
+    anchor = value["principal_symbol_anchor"]
+    if anchor["physical_helicity_authority"] != physical["result_id"]:
+        raise ValueError("solver-contract physical-helicity authority failed")
+    if anchor["real_physical_helicity_rank_each"] != physical["null_cone_chart"]["projective_rank"]:
+        raise ValueError("solver-contract physical rank failed")
+    if anchor["full_null_symbol_cohomology_dimensions"] != [0, 6, 6, 0]:
+        raise ValueError("solver-contract collapsed full null cohomology")
+    if anchor["generalized_wave_module_rank"] != 4:
+        raise ValueError("solver-contract generalized-wave rank failed")
     equations = value["exact_acceptance_equations"]
     for marker in ("P_E^2=P_E", "[q1_46,P_E]=[q1_46,P_X]=0", "[K_Berger_46,P_E]=[K_Berger_46,P_X]=0"):
         if marker not in equations:

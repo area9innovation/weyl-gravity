@@ -724,8 +724,26 @@ This obstruction excludes a nonzero principal direct-sum anchor and prevents
 the zero, identity, or contractible-auxiliary projector from being promoted
 as the physical branch split.  It is not a no-go for the full rank-$46$
 projector: lower-order Berger terms may deform the repeated leading factor and
-split it.  The next exact input is therefore the order-two extension class
-$V_2$ in $A_{10}=\Box_2^2+V_2$ on the physical helicity quotient.
+split it.
+
+The physical quotient needed for that next calculation is now exact.  On the
+normalized projective null cone, the tensorial transverse--traceless
+idempotent defines a rank-two projective polarization module inside the full
+six-dimensional degree-zero Berger null-symbol cohomology.  Its canonical
+transpose defines the paired degree-one module, and the odd BV pairing
+descends nondegenerately.  At $\zeta=(1,1,0,0)$ its normalized basis is
+$\widehat h_{22}-\widehat h_{33},\widehat h_{23}$ and agrees with the
+independently certified linearized-Weyl quotient.  Thus the polarization rank
+is two, while tensoring with
+$\mathbb Q(\sqrt{10})[\epsilon]/(\epsilon^2)$ gives a rank-four generalized
+wave module.  No global two-column helicity frame is chosen: the invariant
+object is the projective module defined by the idempotent.
+
+The next exact input is therefore the filtered order-two extension class
+defined by $V_2$ in $A_{10}=\Box_2^2+V_2$.  It must be obtained by solving the
+symbol-complex descent equations.  Neither diagonalizing the raw
+$10\times10$ matrix nor merely compressing it as
+$\Pi_{\rm TT}V_2\Pi_{\rm TT}$ is an invariant branch verdict.
 
 This is the honest enlarged carrier, not yet the branch theorem.  It does not
 supply an Einstein-like/extra-Weyl projector, a $q_2,q_3$ lift,
@@ -812,6 +830,8 @@ Artifact & Role\\
  & exact local cyclic graph carrier; rank-$46$ branch projector still open\\
 \cert{BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1}
  & normalized nonsplitting witness; subprincipal branch anchor required\\
+\cert{BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1}
+ & exact rank-two projective helicity module inside the six-class null quotient\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -856,6 +876,13 @@ PYTHONPATH=. python3 \
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
   verify_berger_retained_46_stf2_principal_branch_anchor.py
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  berger_retained_46_stf2_physical_helicity_filtered_quotient.py \
+  --check --guards
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_retained_46_stf2_physical_helicity_filtered_quotient.py
 \end{verbatim}
 \endgroup
 

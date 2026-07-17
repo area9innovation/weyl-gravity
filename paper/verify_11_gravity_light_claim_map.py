@@ -87,6 +87,10 @@ def main() -> None:
     assert claims["retained_46_degree_ranks"] == [4, 19, 19, 4]
     assert claims["retained_46_projector_independent_graph_coefficient_count"] == 225
     assert claims["retained_46_principal_anchor_normalized_evaluation"] == "1"
+    assert claims["retained_46_full_null_symbol_cohomology_dimensions"] == [0, 6, 6, 0]
+    assert claims["retained_46_physical_helicity_projective_rank"] == 2
+    assert claims["retained_46_generalized_wave_module_rank"] == 4
+    assert claims["retained_46_physical_pairing_nondegenerate"] is True
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -126,6 +130,10 @@ def main() -> None:
     assert (
         payload["next_gate"]["principal_anchor"]
         == "BERGER_RETAINED_46_STF2_PRINCIPAL_BRANCH_ANCHOR_V1"
+    )
+    assert (
+        payload["next_gate"]["physical_helicity_filtered_quotient"]
+        == "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1"
     )
     assert (
         payload["next_gate"]["required_input"]
@@ -321,6 +329,23 @@ def main() -> None:
     )
     assert principal_anchor["claim_flags"]["FULL_RANK_46_PROJECTOR_OBSTRUCTED"] is False
     assert principal_anchor["claim_flags"]["SUBPRINCIPAL_ANCHOR_REQUIRED"] is True
+
+    physical_quotient = json.loads(
+        (
+            ROOT
+            / "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert (
+        physical_quotient["result_state"]
+        == "PHYSICAL_HELICITY_PROJECTIVE_MODULE_CERTIFIED_V2_FILTERED_DESCENT_OPEN"
+    )
+    assert physical_quotient["null_cone_chart"]["projective_rank"] == 2
+    assert physical_quotient["null_cone_chart"]["global_two_column_frame_asserted"] is False
+    assert physical_quotient["full_Berger_null_symbol_cohomology"]["cohomology_dimensions"] == [0, 6, 6, 0]
+    assert physical_quotient["filtered_principal_module"]["generalized_wave_rank_over_Q_sqrt10"] == 4
+    assert physical_quotient["claim_flags"]["V2_FILTERED_DESCENT_COMPUTED"] is False
+    assert physical_quotient["claim_flags"]["ELL3_BRANCH_MIXING_AUTHORIZED"] is False
 
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,

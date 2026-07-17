@@ -552,6 +552,18 @@ The active PDE gate is now `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`:
 contract that incidence support-locally first, then construct the retained
 causal chain homotopy.
 
+The rank-46 branch input has also advanced.  The exact certificate
+`BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1` derives the
+rank-two transverse-traceless projective polarization module inside the full
+six-dimensional degree-zero Berger null-symbol cohomology.  Its canonical
+transpose supplies the paired degree-one module and the retained BV pairing
+is nondegenerate.  Tensoring with the repeated-wave dual-number algebra gives
+the rank-four generalized-wave module.  This closes the former unproved
+helicity-rank assertion, but it does not descend `V_2`: the next branch gate
+must solve the filtered symbol-complex equations.  Raw `10 x 10`
+diagonalization or bare `Pi_TT V_2 Pi_TT` compression is not an invariant
+branch verdict.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
