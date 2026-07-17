@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-retained-observer-k-descent-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "imported_positive_results", "required_apparatus_extension", "observer_vertex", "exact_k_rod_witnesses", "descent_verdict", "flags", "not_established", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-retained-observer-k-descent-gate-v1"},
+    "result_id": {"const": "BERGER_RETAINED_OBSERVER_K_DESCENT_GATE"},
+    "setting_id": {"const": "berger_retained36_observer_vertex_typed_k_descent_audit"},
+    "claim_status": {"const": "EXACT_TYPED_OBSTRUCTION_MISSING_84_ROW_APPARATUS_COMPLEX"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "additionalProperties": {"$ref": "#/$defs/dependency"}, "minProperties": 6, "maxProperties": 6},
+    "imported_positive_results": {
+      "type": "object", "additionalProperties": false,
+      "required": ["retained_row_count", "coupled_k_cartan_through_arity_three", "probe_transfer_rank", "full_maxwell_retarded_solutions_exact", "six_global_detector_indexed_rods_exported"],
+      "properties": {"retained_row_count": {"const": 36}, "coupled_k_cartan_through_arity_three": {"const": true}, "probe_transfer_rank": {"const": 2}, "full_maxwell_retarded_solutions_exact": {"const": true}, "six_global_detector_indexed_rods_exported": {"const": true}}
+    },
+    "required_apparatus_extension": {
+      "type": "object", "additionalProperties": false,
+      "required": ["current_full_row_count_before_algebraic_retract", "new_degree_zero_rows", "new_degree_one_rows", "new_cyclic_row_pairs", "required_total_row_count", "retained36_overlap", "missing_carrier"],
+      "properties": {"current_full_row_count_before_algebraic_retract": {"const": 64}, "new_degree_zero_rows": {"$ref": "#/$defs/tenRows"}, "new_degree_one_rows": {"$ref": "#/$defs/tenRows"}, "new_cyclic_row_pairs": {"const": 10}, "required_total_row_count": {"const": 84}, "retained36_overlap": {"const": []}, "missing_carrier": {"$ref": "#/$defs/text"}}
+    },
+    "observer_vertex": {
+      "type": "object", "additionalProperties": false,
+      "required": ["functional", "memory_action", "first_failed_typed_map", "failure_is_coefficient_defect", "failure_is_missing_domain_and_codomain_rows"],
+      "properties": {"functional": {"$ref": "#/$defs/text"}, "memory_action": {"$ref": "#/$defs/text"}, "first_failed_typed_map": {"$ref": "#/$defs/text"}, "failure_is_coefficient_defect": {"const": false}, "failure_is_missing_domain_and_codomain_rows": {"const": true}}
+    },
+    "exact_k_rod_witnesses": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generator", "rod_internal_charge", "therefore", "rod_frequency", "physical_detector_half_width", "witnesses", "all_nonzero_inside_detector_windows"],
+      "properties": {"generator": {"const": "K=D-omega R_internal"}, "rod_internal_charge": {"const": "zero"}, "therefore": {"const": "K R_{aI}=D R_{aI}"}, "rod_frequency": {"const": "sqrt(58)/6"}, "physical_detector_half_width": {"const": "1/48"}, "witnesses": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/witness"}}, "all_nonzero_inside_detector_windows": {"const": true}}
+    },
+    "descent_verdict": {
+      "type": "object", "additionalProperties": false,
+      "required": ["retained36_observer_vertex_is_typed", "retained36_k_cocycle_can_be_asserted", "reason", "minimal_next_gate", "global_no_go_for_observer_programme"],
+      "properties": {"retained36_observer_vertex_is_typed": {"const": false}, "retained36_k_cocycle_can_be_asserted": {"const": false}, "reason": {"$ref": "#/$defs/text"}, "minimal_next_gate": {"$ref": "#/$defs/text"}, "global_no_go_for_observer_programme": {"const": false}}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["PROBE_RANK_TWO_BASELINE", "K_ROD_VARIATION_NONZERO_ON_DETECTOR_WINDOWS", "RETAINED36_APPARATUS_ROWS_ABSENT", "RETAINED36_OBSERVER_VERTEX_TYPED", "RETAINED36_K_DESCENT_CERTIFIED", "APPARATUS_84_ROW_COMPLEX_REQUIRED", "APPARATUS_84_ROW_COMPLEX_CERTIFIED", "APPARATUS_84_ROW_CAUSAL_GREEN_HOMOTOPY_CERTIFIED", "CLASSICAL_OBSERVER_MAP_CERTIFIED", "GLOBAL_OBSERVER_PROGRAMME_NO_GO", "QUANTUM_CLAIM"],
+      "properties": {"PROBE_RANK_TWO_BASELINE": {"const": true}, "K_ROD_VARIATION_NONZERO_ON_DETECTOR_WINDOWS": {"const": true}, "RETAINED36_APPARATUS_ROWS_ABSENT": {"const": true}, "RETAINED36_OBSERVER_VERTEX_TYPED": {"const": false}, "RETAINED36_K_DESCENT_CERTIFIED": {"const": false}, "APPARATUS_84_ROW_COMPLEX_REQUIRED": {"const": true}, "APPARATUS_84_ROW_COMPLEX_CERTIFIED": {"const": false}, "APPARATUS_84_ROW_CAUSAL_GREEN_HOMOTOPY_CERTIFIED": {"const": false}, "CLASSICAL_OBSERVER_MAP_CERTIFIED": {"const": false}, "GLOBAL_OBSERVER_PROGRAMME_NO_GO": {"const": false}, "QUANTUM_CLAIM": {"const": false}}
+    },
+    "not_established": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest"], "properties": {"source_manifest": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/source"}}}},
+    "claim_boundary": {"$ref": "#/$defs/text"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tenRows": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "snapshot_commit", "sha256", "required_flags"], "properties": {"path": {"$ref": "#/$defs/text"}, "result_id": {"$ref": "#/$defs/text"}, "snapshot_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "sha256": {"$ref": "#/$defs/sha256"}, "required_flags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}}}},
+    "witness": {"type": "object", "additionalProperties": false, "required": ["detector_id", "rod_row", "evaluation_time", "event_time", "time_offset", "spatial_point", "spatial_profile_value", "k_variation_value", "sign", "nonzero_proof", "inside_detector_window"], "properties": {"detector_id": {"enum": ["D0", "D1"]}, "rod_row": {"enum": ["R0_1", "R1_1"]}, "evaluation_time": {"$ref": "#/$defs/text"}, "event_time": {"$ref": "#/$defs/text"}, "time_offset": {"const": "1/96"}, "spatial_point": {"const": {"x0": "0", "x1": "0", "x2": "0", "x3": "1"}}, "spatial_profile_value": {"$ref": "#/$defs/text"}, "k_variation_value": {"$ref": "#/$defs/text"}, "sign": {"const": "strictly_negative"}, "nonzero_proof": {"$ref": "#/$defs/text"}, "inside_detector_window": {"const": true}}},
+    "source": {"type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"], "properties": {"role": {"$ref": "#/$defs/text"}, "path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/sha256"}}}
+  }
+}
