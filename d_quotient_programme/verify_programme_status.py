@@ -67,6 +67,7 @@ EINSTEIN_MAXWELL_WEYL_EXTRA_BRANCH_PREFLIGHT_CONTRIBUTION = PACKAGE / "contribut
 EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_MODULE_PREFLIGHT_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator-module-preflight.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_OPERATOR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-operator.json"
 EINSTEIN_MAXWELL_WEYL_POLAR_OPERATOR_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-polar-operator.json"
+EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-polar-physical-completion.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-extra-green-pairing.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-lee-wald-completion.json"
 EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_DETECTOR_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-axial-extra-detector-taub.json"
@@ -1067,6 +1068,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
         "einstein_maxwell_product_compact_weyl_generic_polar_target_solution_module",
         "G2_GENERIC_POLAR_TARGET_OPERATOR_AND_OFFSHELL_EINSTEIN_SQUARE",
     )
+    maxwell_weyl_polar_physical_completion_contribution = _einstein_maxwell_second_order_contribution(
+        EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION_CONTRIBUTION,
+        "compact_einstein_maxwell_weyl_polar_physical_completion",
+        "einstein_maxwell_product_compact_weyl_physical_polar_target_solution_module",
+        "G2_PHYSICAL_POLAR_EXTRA_QUOTIENT_AND_EINSTEIN_PRIMARY_IMAGE",
+    )
     maxwell_weyl_axial_extra_green_pairing_contribution = _einstein_maxwell_second_order_contribution(
         EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION,
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
@@ -1340,6 +1347,11 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "payload": maxwell_weyl_polar_operator_contribution,
             },
             {
+                "path": str(EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION_CONTRIBUTION),
+                "payload": maxwell_weyl_polar_physical_completion_contribution,
+            },
+            {
                 "path": str(EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(EINSTEIN_MAXWELL_WEYL_AXIAL_EXTRA_GREEN_PAIRING_CONTRIBUTION),
                 "payload": maxwell_weyl_axial_extra_green_pairing_contribution,
@@ -1400,10 +1412,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "einstein_boundary",
-                "result_state": "G2_AXIAL_AND_POLAR_EXTRA_EQUATION_MODULES_STANDARD_PULLBACK_FROZEN_CURRENTS_AND_RESIDUAL_DESCENT_PARTIAL",
+                "result_state": "G2_PHYSICAL_AXIAL_AND_POLAR_EXTRA_MODULES_STANDARD_PULLBACK_FROZEN_POLAR_CURRENT_AND_RESIDUAL_DESCENT_OPEN",
                 "verdict": "PHASE_SPACE_NOT_CLOSED",
-                "established": "The complete fixed-bundle standard Einstein--Maxwell harmonic quotient embeds nondegenerately into Weyl--Maxwell before final residual quotient, with the full relative endomorphism classified. The generic axial target has a direct Lee--Wald completion and the generic polar target now has an exact formally self-adjoint Hessian, polynomial Einstein equation square, and two extra p-primary equation summands.",
-                "next_gate": "promote the polar extra module to the physical coefficient ring, compute its direct Lee--Wald current and extractors, lift the polar square to the ungauged BV/Noether complex, and perform final residual descent for both extra parities; independently complete the asymptotic Bach phase space and charge audit",
+                "established": "The complete fixed-bundle standard Einstein--Maxwell harmonic quotient embeds nondegenerately into Weyl--Maxwell before final residual quotient, with the full relative endomorphism classified. The axial target has a direct Lee--Wald completion. On every physical polar ell>=2 compact-momentum fiber, the target splits into the complete Einstein q-primary image plus two extra p-primary summands, with action normalization derived from the four-dimensional variation.",
+                "next_gate": "compute the direct polar extra Lee--Wald current and extractors, lift the polar square to the ungauged BV/Noether complex, and perform final residual descent for both extra parities; independently complete the asymptotic Bach phase space and charge audit",
             },
             {
                 "team_id": "nonlinear",
@@ -1827,6 +1839,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "G2_GENERIC_POLAR_TARGET_OPERATOR_AND_OFFSHELL_EINSTEIN_SQUARE",
             },
             {
+                "setting_id": "compact_einstein_maxwell_weyl_polar_physical_completion",
+                "generator_id": "H_product",
+                "phase_space_id": "einstein_maxwell_product_compact_weyl_physical_polar_target_solution_module",
+                "boundary_conditions": "every physical polar ell>=2 and compact momentum including k=0; fixed P_N; before polar Lee-Wald, ungauged, and final residual completion",
+                "lifecycle_layer": "CLASSICAL_BV",
+                "status": "CERTIFIED",
+                "verdict": "G2_PHYSICAL_POLAR_EXTRA_QUOTIENT_AND_EINSTEIN_PRIMARY_IMAGE",
+            },
+            {
                 "setting_id": "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
                 "generator_id": "H_product",
                 "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_axial_extra_reduced_green_pairing",
@@ -2103,6 +2124,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_axial_operator_module_preflight",
         "compact_einstein_maxwell_weyl_axial_operator",
         "compact_einstein_maxwell_weyl_polar_operator",
+        "compact_einstein_maxwell_weyl_polar_physical_completion",
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing",
         "compact_einstein_maxwell_weyl_axial_lee_wald_completion",
         "compact_einstein_maxwell_weyl_axial_extra_detector_taub",
@@ -2158,6 +2180,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         "compact_einstein_maxwell_weyl_axial_operator_module_preflight": "G2_EXACT_AXIAL_GAUGE_MODULE_AND_OPERATOR_RAILS",
         "compact_einstein_maxwell_weyl_axial_operator": "G2_GENERIC_AXIAL_TARGET_OPERATOR_AND_EXTRA_SOLUTION_MODULE",
         "compact_einstein_maxwell_weyl_polar_operator": "G2_GENERIC_POLAR_TARGET_OPERATOR_AND_OFFSHELL_EINSTEIN_SQUARE",
+        "compact_einstein_maxwell_weyl_polar_physical_completion": "G2_PHYSICAL_POLAR_EXTRA_QUOTIENT_AND_EINSTEIN_PRIMARY_IMAGE",
         "compact_einstein_maxwell_weyl_axial_extra_green_pairing": "G2_GENERIC_AXIAL_EXTRA_NONRADICAL_REDUCED_GREEN_SIGNATURE_POSITIVE_TWO",
         "compact_einstein_maxwell_weyl_axial_lee_wald_completion": "G2_GENERIC_AXIAL_DIRECT_LEE_WALD_BLOCK_SIGNATURE_THREE_ONE",
         "compact_einstein_maxwell_weyl_axial_extra_detector_taub": "G2_AXIAL_EXTRA_DETECTOR_AND_ELL2_K0_NEGATIVE_DEFINITE_TAUB_OBSTRUCTION",
@@ -2269,6 +2292,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         errors.append("Weyl--Maxwell generic axial operator theorem was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_polar_operator", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell generic polar operator theorem was dropped")
+    if ledger.get("compact_einstein_maxwell_weyl_polar_physical_completion", {}).get("status") != "CERTIFIED":
+        errors.append("Weyl--Maxwell physical polar completion was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_axial_extra_green_pairing", {}).get("status") != "CERTIFIED":
         errors.append("Weyl--Maxwell axial extra reduced-Green pairing was dropped")
     if ledger.get("compact_einstein_maxwell_weyl_axial_lee_wald_completion", {}).get("status") != "CERTIFIED":
@@ -2730,6 +2755,10 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         (
             "compact_einstein_maxwell_weyl_polar_operator",
             "drop_Einstein_Maxwell_Weyl_polar_operator_contribution",
+        ),
+        (
+            "compact_einstein_maxwell_weyl_polar_physical_completion",
+            "drop_Einstein_Maxwell_Weyl_polar_physical_completion_contribution",
         ),
         (
             "compact_einstein_maxwell_weyl_axial_extra_green_pairing",

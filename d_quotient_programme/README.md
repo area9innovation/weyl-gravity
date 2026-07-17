@@ -106,6 +106,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-axial-operator-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-operator-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-polar-operator.json`](contributions/einstein-maxwell-weyl-polar-operator.json)
 - [`reports/einstein-maxwell-weyl-polar-operator-registration-receipt.md`](reports/einstein-maxwell-weyl-polar-operator-registration-receipt.md)
+- [`contributions/einstein-maxwell-weyl-polar-physical-completion.json`](contributions/einstein-maxwell-weyl-polar-physical-completion.json)
+- [`reports/einstein-maxwell-weyl-polar-physical-completion-registration-receipt.md`](reports/einstein-maxwell-weyl-polar-physical-completion-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)

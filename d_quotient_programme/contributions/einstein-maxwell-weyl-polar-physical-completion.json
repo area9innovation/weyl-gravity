@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "polar ell>=2 coefficient complex on R_t x S1_L x S2 at fixed P_N; every physical lambda=ell(ell+1) and every allowed compact momentum including k=0; before polar Lee-Wald and final residual completion",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "explicit physical-ring Bezout witnesses give Fitting ideals (1),(1),(p),(p^2*q) without inverting k, omega, p, or q",
+    "every physical ell>=2 and compact momentum fiber, including k=0, has invariant factors 1,1,p,p*q",
+    "two explicit k=0 extra representatives remain independent with minor 3(3lambda-2)",
+    "the source polar module is K[omega]/(q), its target field map is injective on solutions, and its image equals the complete q-primary target summand by annihilator and dimension",
+    "the canonical extra polar quotient on every physical fiber is two copies of K[omega]/(p)",
+    "the action-row weights (-1,2,-1,2lambda) are derived from the four-dimensional first variation and scalar/axial harmonic norms independently of formal self-adjointness"
+  ],
+  "evidence": {
+    "commit": "c5098cc1cda5f5085763e2029bbe3d6f8134692e",
+    "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+    "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct the direct four-dimensional polar extra Lee-Wald current and coefficient extractors, then lift the polynomial square to the ungauged Noether/BV complex and perform final residual descent",
+  "not_established": [
+    "the polar extra Lee-Wald pairing, radical, inertia, or coefficient extractors",
+    "the ungauged Diff x Weyl x U(1) BV/Noether lift",
+    "final residual survival, boundary selection, causal scattering, particles, ghosts, or quantum unitarity"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_physical_polar_target_solution_module",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_polar_physical_completion",
+  "team_id": "einstein_boundary",
+  "verdict": "G2_PHYSICAL_POLAR_EXTRA_QUOTIENT_AND_EINSTEIN_PRIMARY_IMAGE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_physical_completion --verify bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_completion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_physical_completion",
+    "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+  ]
+}

@@ -29,7 +29,7 @@
     ],
     "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "e344a69fb6c143b92738366bd095f06746096fd3",
+  "programme_base_commit": "c5098cc1cda5f5085763e2029bbe3d6f8134692e",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
@@ -52,7 +52,7 @@
   },
   "registry_hashes": {
     "generator_registry": "bd46ba02eaa31d9b63ada4e6d592b123ebd41dfdef1b642a1bf47daf105d24fa",
-    "phase_space_registry": "fe6f001f1de5f5a2fb5e4bf9e4f94ea38fe29f4e7e02a0d0c7a9bb43cc807e6b"
+    "phase_space_registry": "d8ecbaafa1547df4beb188e30641cddf1608d3fa7b5862c6c0d47cfe20b61221"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -462,6 +462,15 @@
       "setting_id": "compact_einstein_maxwell_weyl_polar_operator",
       "status": "CERTIFIED",
       "verdict": "G2_GENERIC_POLAR_TARGET_OPERATOR_AND_OFFSHELL_EINSTEIN_SQUARE"
+    },
+    {
+      "boundary_conditions": "every physical polar ell>=2 and compact momentum including k=0; fixed P_N; before polar Lee-Wald, ungauged, and final residual completion",
+      "generator_id": "H_product",
+      "lifecycle_layer": "CLASSICAL_BV",
+      "phase_space_id": "einstein_maxwell_product_compact_weyl_physical_polar_target_solution_module",
+      "setting_id": "compact_einstein_maxwell_weyl_polar_physical_completion",
+      "status": "CERTIFIED",
+      "verdict": "G2_PHYSICAL_POLAR_EXTRA_QUOTIENT_AND_EINSTEIN_PRIMARY_IMAGE"
     },
     {
       "boundary_conditions": "generic axial extra module with exact reduced-Hessian local Green current; physical ell>=2; before direct Lee-Wald match and final residual quotient",
@@ -2485,6 +2494,50 @@
       "sha256": "a9f526a511ef97210dbc1e70990de6ddfca216e2a08b710c61a0fccd99fdd7c8"
     },
     {
+      "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-polar-physical-completion.json",
+      "payload": {
+        "boundary_conditions": "polar ell>=2 coefficient complex on R_t x S1_L x S2 at fixed P_N; every physical lambda=ell(ell+1) and every allowed compact momentum including k=0; before polar Lee-Wald and final residual completion",
+        "claim_status": "CERTIFIED",
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "REDUCED-MODE"
+        ],
+        "established": [
+          "explicit physical-ring Bezout witnesses give Fitting ideals (1),(1),(p),(p^2*q) without inverting k, omega, p, or q",
+          "every physical ell>=2 and compact momentum fiber, including k=0, has invariant factors 1,1,p,p*q",
+          "two explicit k=0 extra representatives remain independent with minor 3(3lambda-2)",
+          "the source polar module is K[omega]/(q), its target field map is injective on solutions, and its image equals the complete q-primary target summand by annihilator and dimension",
+          "the canonical extra polar quotient on every physical fiber is two copies of K[omega]/(p)",
+          "the action-row weights (-1,2,-1,2lambda) are derived from the four-dimensional first variation and scalar/axial harmonic norms independently of formal self-adjointness"
+        ],
+        "evidence": {
+          "commit": "c5098cc1cda5f5085763e2029bbe3d6f8134692e",
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+          "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+        },
+        "generator_id": "H_product",
+        "lifecycle_layer": "CLASSICAL_BV",
+        "next_gate": "construct the direct four-dimensional polar extra Lee-Wald current and coefficient extractors, then lift the polynomial square to the ungauged Noether/BV complex and perform final residual descent",
+        "not_established": [
+          "the polar extra Lee-Wald pairing, radical, inertia, or coefficient extractors",
+          "the ungauged Diff x Weyl x U(1) BV/Noether lift",
+          "final residual survival, boundary selection, causal scattering, particles, ghosts, or quantum unitarity"
+        ],
+        "phase_space_id": "einstein_maxwell_product_compact_weyl_physical_polar_target_solution_module",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "compact_einstein_maxwell_weyl_polar_physical_completion",
+        "team_id": "einstein_boundary",
+        "verdict": "G2_PHYSICAL_POLAR_EXTRA_QUOTIENT_AND_EINSTEIN_PRIMARY_IMAGE",
+        "verification_commands": [
+          "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_physical_completion --verify bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+          "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_physical_completion.py",
+          "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_physical_completion",
+          "python3 d_quotient_programme/verify_programme_status.py --check --guards"
+        ]
+      },
+      "sha256": "1e017d4fe63e908120d22a5b44278c235f5bf3a8be5c1d59173cf209b112017d"
+    },
+    {
       "path": "d_quotient_programme/contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json",
       "payload": {
         "boundary_conditions": "generic axial ell>=2 extra solution module on R_t x S1_L x S2 at fixed P_N, paired by the exact reduced-Hessian local Green current; before direct Lee-Wald matching and final residual quotient",
@@ -2974,9 +3027,9 @@
       "verdict": "RAW_D_LINEAR_NULLITY_K_CARTAN_THROUGH_ARITY_THREE_AFFINE_D_OPEN"
     },
     {
-      "established": "The complete fixed-bundle standard Einstein--Maxwell harmonic quotient embeds nondegenerately into Weyl--Maxwell before final residual quotient, with the full relative endomorphism classified. The generic axial target has a direct Lee--Wald completion and the generic polar target now has an exact formally self-adjoint Hessian, polynomial Einstein equation square, and two extra p-primary equation summands.",
-      "next_gate": "promote the polar extra module to the physical coefficient ring, compute its direct Lee--Wald current and extractors, lift the polar square to the ungauged BV/Noether complex, and perform final residual descent for both extra parities; independently complete the asymptotic Bach phase space and charge audit",
-      "result_state": "G2_AXIAL_AND_POLAR_EXTRA_EQUATION_MODULES_STANDARD_PULLBACK_FROZEN_CURRENTS_AND_RESIDUAL_DESCENT_PARTIAL",
+      "established": "The complete fixed-bundle standard Einstein--Maxwell harmonic quotient embeds nondegenerately into Weyl--Maxwell before final residual quotient, with the full relative endomorphism classified. The axial target has a direct Lee--Wald completion. On every physical polar ell>=2 compact-momentum fiber, the target splits into the complete Einstein q-primary image plus two extra p-primary summands, with action normalization derived from the four-dimensional variation.",
+      "next_gate": "compute the direct polar extra Lee--Wald current and extractors, lift the polar square to the ungauged BV/Noether complex, and perform final residual descent for both extra parities; independently complete the asymptotic Bach phase space and charge audit",
+      "result_state": "G2_PHYSICAL_AXIAL_AND_POLAR_EXTRA_MODULES_STANDARD_PULLBACK_FROZEN_POLAR_CURRENT_AND_RESIDUAL_DESCENT_OPEN",
       "team_id": "einstein_boundary",
       "verdict": "PHASE_SPACE_NOT_CLOSED"
     },
