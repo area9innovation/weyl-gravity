@@ -1655,6 +1655,30 @@ next source calculation should differentiate the arbitrary-`lambda` reduced
 quadratic action with respect to homogeneous background parameters and use a
 cached direct tensor replay only as an audit.
 
+That reduced-action route now closes the fixed-`ell` theorem.  For every one
+fixed generic `ell>=2` at `k=0`, with all `m`, both parities, both Einstein
+branches, and both extra polarizations, the complete common
+`H=J_1=J_2=J_3=0` cone is second-order extendible.  Each `p`/`q` primary is a
+regular `1+1` Lorentz-scalar action polynomial.  A constant circle-metric
+variation gives only an on-shell polynomial term and a term proportional to
+`k^2`, so the rest-frame zero-frequency `E11` source vanishes.  Weyl
+tracelessness and the integrated Maxwell total-derivative identity then force
+the full scalar source row to `(1,0,1/2,0)`, whose coefficient is exactly the
+constant-lapse moment map.  The `L=1` axial cokernel is exactly the rotation
+triplet and every remaining zero or nonzero block is invertible.  An exact
+`ell=3` axial-extra fixture gives
+
+```text
+S_E00=diag(-73440/7,-7208/63),
+S_E11=0,
+S_sphere=S_E00/2,
+S_Maxwell1=0.
+```
+
+The generic formula reproduces both the direct full-row `ell=2` `e1` source
+and the complete direct `ell=2` Taub matrix.  Cross-`ell` superpositions are
+not covered because they introduce new mixed frequency arithmetic.
+
 Verification receipt (2026-07-17): scoped compilation passed in `0.03 s`;
 six deterministic certificate replays passed in `2.32 s`; six independent
 verifiers and 18 scoped tests passed in `2.17 s`; and the complete
@@ -1712,17 +1736,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 | Positive Berger clock | `D_GAUGE` on fixed-coupling linearized phase space | minimal clock SDR and retained `q1` complete; arity two open | principal endpoint factors only; curved/Green gates open | open | minimal cyclic pairing exact | `NOT_APPLICABLE` at this base point: certified non-Einstein Weyl--matter branch |
 | Cylinder + Yang--Mills | open | open | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | stability open |
-| Compact Einstein--Maxwell product | sector-indexed; generic `k=0`, fixed `(ell,|k|)` opposite-momentum, and standard exceptional/global common-zero cones classified; no absolute quotient authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; the complete generic `ell=2,k=0`, all-`m`, both-parity common-zero cone is second-order extendible, including axial--polar cancellation; general `ell` and exceptional/global source cones remain open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
+| Compact Einstein--Maxwell product | sector-indexed; generic `k=0`, fixed `(ell,|k|)` opposite-momentum, and standard exceptional/global common-zero cones classified; no absolute quotient authorized | five-generator stabilizer action preserves generic axial/polar `q` and `p` primaries; for every fixed generic `ell>=2` at `k=0`, the all-`m`, both-parity common-zero cone is second-order extendible; cross-`ell`, opposite-momentum phase sources, and exceptional/global source cones remain open | `NOT TESTED` | no positive-frequency Hilbert space constructed | complete standard-harmonic pullback is nondegenerate: relative radiative inertia `(2,2)`, physical `ell=1` factor `4`, homogeneous unipotent shear, twist factor `-2` | every certified standard harmonic Einstein--Maxwell tangent survives before any optional stabilizer reduction; identity inclusion is not symplectic |
 | Lorentzian dS/AdS | boundary-dependent; compute | open | open | open | open | selected sector to certify |
 | Asymptotically flat | `PHASE_SPACE_NOT_CLOSED`; `H_ESU` crosses fixed \(\mathscr I\), `D_M` charge open | `NOT APPLICABLE` until a boundary-preserving generator and phase space are chosen | formal triangular seed only; causal complex open | `OPEN` | `OPEN` | `EINSTEIN_OPEN`; reduced `chi=0` seed only |
 
 ## Priority and stop/go decisions
 
-1. Lift the now complete axial-plus-polar `ell=2` source-rank and resonance
-   theorem to symbolic `ell`; separately retain relative phases in
-   opposite-momentum standing waves.  A rank increase, resonance, or new
+1. Extend the now complete fixed-`ell`, `k=0` theorem to products between
+   distinct input `ell` values; separately retain relative phases in
+   opposite-momentum standing waves.  A mixed-frequency resonance or new
    adjoint component is the expected mechanism cutting the full Taub-zero
-   density cone beyond the certified `ell=2,k=0` fixture.
+   density cone beyond the certified blockwise theorem.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be
@@ -1766,15 +1790,13 @@ successful counterexample results.
 
 ### Current eight-hour assignment (2026-07-17)
 
-The active task is **E-G1 beyond the `ell=2` fixture**: lift the combined
-axial--polar quadratic source and adjoint-cokernel test to symbolic allowed
-harmonic triples, retain magnetic phases and opposite momenta, and classify
-the first exceptional fourth-order target.  Reproduce the certified
-`ell=2` cone and add at least one exact `ell>=3` fixture.  Extract the
-structural conditions, if any, under which the pure-extra energy form is
-definite and the Einstein image supplies the compensating sign.  If an
-all-`ell` theorem fails, the first exact counterexample plus its selection
-rule is the result.  See the authoritative queue in
+The active task is **E-G1 beyond the fixed-`ell` theorem**: classify distinct
+input-`ell` harmonic triples, retain magnetic phases and opposite momenta,
+and classify the first exceptional fourth-order target.  The blockwise
+source-rank theorem and an exact `ell=3` coefficient fixture are complete.
+The next result is either the cross-`ell` extension theorem or the first exact
+mixed-frequency resonance/cokernel counterexample with its selection rule.
+See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
 Deliver one human-readable report and machine-readable certificates containing:

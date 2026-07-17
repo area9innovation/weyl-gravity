@@ -1,0 +1,272 @@
+{
+  "claim_boundary": "This theorem is blockwise in one fixed generic ell at k=0. It does not cover cross-ell superpositions, opposite momenta, exceptional/global input modes, all-orders integration, final residual states, causal propagation, particles, or quantum theory.",
+  "classification": {
+    "Lorentzian_causal_or_quantum_claim": false,
+    "all_m_both_parities_and_all_generic_primaries_included": true,
+    "all_orders_integrability": false,
+    "cross_ell_superpositions_classified": false,
+    "every_fixed_ell_at_least_2_combined_common_zero_cone_second_order_extendible": true,
+    "exact_ell3_coefficient_fixture_included": true,
+    "exceptional_global_inputs_classified": false,
+    "final_residual_descent_certified": false,
+    "opposite_momentum_relative_phases_classified": false,
+    "zero_frequency_scalar_source_rank_one_and_moment_map_factored": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "for any one fixed integer ell>=2: finite real k=0 Weyl-Maxwell tangents with all m, both axial and polar parities, Einstein plus/minus and both extra polarizations, satisfying total H=J_1=J_2=J_3=0",
+  "exact_ell3_fixture": {
+    "E00_source_matrix": [
+      [
+        "-73440/7",
+        "0"
+      ],
+      [
+        "0",
+        "-7208/63"
+      ]
+    ],
+    "E11_source_matrix": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "Maxwell1_source_matrix": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "basis": [
+      "extra_e1=(-lambda,0,lambda,0)",
+      "extra_e2=(0,-2/3,0,lambda)"
+    ],
+    "ell2_direct_calibration_remainder": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "ell2_direct_full_row_remainder": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "ell2_direct_interference_rows": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "exact_ell3_fixture": true,
+    "extra_interference_zero": true,
+    "frequency_squared": "34/3",
+    "harmonic": "P_3(cos theta), normalized sphere average 1/(2ell+1)=1/7",
+    "sphere_trace_source_matrix": [
+      [
+        "-36720/7",
+        "0"
+      ],
+      [
+        "0",
+        "-3604/63"
+      ]
+    ]
+  },
+  "generality_level": "G4_EVERY_FIXED_GENERIC_ELL_K0_ALL_M_BOTH_PARITIES_ALL_PRIMARIES",
+  "interpretation": "At k=0, the ell=2 result is not accidental: for every fixed generic angular momentum, the second-order tangent cone is exactly the common H,J_i zero cone. The new structural reason is that each p/q primary is a 1+1 Lorentz-scalar action polynomial, so its rest-frame on-shell circle pressure vanishes; Weyl tracelessness and the integrated Maxwell identity then force the entire scalar source into the constant-lapse row.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify products between distinct input ell values and retain opposite-momentum relative phases; these introduce new frequency arithmetic not covered by the fixed-ell theorem",
+  "nonzero_frequency_output_blocks": {
+    "all_nine_types_off_every_physical_target_shell": true,
+    "imported_result": "EINSTEIN_MAXWELL_WEYL_ALL_ELL_K0_OUTPUT_RESONANCE",
+    "nonzero_L0_sources_solved_by_homogeneous_Noether_completion": true
+  },
+  "primary_action_and_scalar_source_theorem": {
+    "Weyl_trace_identity": {
+      "nonlinear_identity": "g^{mu nu}E_{mu nu}=0",
+      "second_order_on_shell_reduction": "-metric_00+metric_11+2*sphere_trace=0",
+      "with_S_E11_zero": "S_sphere_trace=S_E00/2"
+    },
+    "cancellation": "total H=0 makes the complete L=0 source vanish, not merely orthogonal to one adjoint vector",
+    "circle_pressure": {
+      "consequence": "the homogeneous zero-frequency metric-x pressure source S_E11 vanishes on every simple p or q primary",
+      "feynman_hellmann_reason": "terms from the volume, coefficient basis, and primary normalization multiply P and vanish on shell; the remaining P' term is proportional to k^2 and vanishes at k=0",
+      "geometric_scope": "c is a constant circle-metric variation; locally it is removed by x' = sqrt(1+c)x, so the flat local curvature and magnetic sphere data do not change, while the compact volume and physical k^2 do",
+      "on_shell_k0_values": {
+        "p": "0",
+        "q_minus": "0",
+        "q_plus": "0"
+      },
+      "p_circle_derivative_at_c0": "(3*g0*k**2 - 3*g0*lambda + 3*g0*omega**2 + 2*g0 - 6*g1*k**2 - 6*g1*lambda + 6*g1*omega**2 + 4*g1)/6",
+      "primary_action_form": "sqrt(1+c)*G(c)*P(omega^2-k^2/(1+c)); G(c) is an arbitrary regular primary normalization",
+      "q_circle_derivative_at_c0": "-(3*g0*k**4 + 2*g0*k**2*lambda - 2*g0*k**2*omega**2 - g0*lambda**2 + 2*g0*lambda*omega**2 + 2*g0*lambda - g0*omega**4 - 2*g1*k**4 - 4*g1*k**2*lambda + 4*g1*k**2*omega**2 - 2*g1*lambda**2 + 4*g1*lambda*omega**2 + 4*g1*lambda - 2*g1*omega**4)/2"
+    },
+    "coefficient": "the E00 coefficient is the constant-lapse Taub pairing mu_H in the calibrated normalization",
+    "homogeneous_Maxwell_identity": {
+      "conjugate_pair_value": "0 when omega_2=-omega_1",
+      "consequence": "S_Maxwell1=0 for every zero-frequency quadratic coefficient",
+      "integrated_equation": "Pi_(k=0,L=0) E_Maxwell^x = partial_t Pi_(k=0,L=0)(sqrt(-g) F^{tx})",
+      "zero_frequency_factor": "-I*(omega_1+omega_2)"
+    },
+    "row_order": [
+      "E00",
+      "E11",
+      "sphere_trace",
+      "Maxwell1"
+    ],
+    "universal_scalar_source_row": [
+      "1",
+      "0",
+      "1/2",
+      "0"
+    ]
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.py",
+    "generator_sha256": "882042b5a6fde993083e41aef1cefab321d3f6ecf5ed38f79583e0f0ed87a3e0",
+    "inputs": {
+      "all_ell_resonance": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_all_ell_k0_output_resonance.json",
+        "sha256": "d7062bbe69bffd7e29d294b6ca781093563dce9f68e85688f9a533a44eae0692"
+      },
+      "axial_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "axial_ell2_e1_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_e1_zero_source_fixture.json",
+        "sha256": "8b9e4941105ffc90f4b197dafc0486fa50371f1e6ef8efa2279364db12c1b800"
+      },
+      "axial_ell2_e1e2_source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_e1_e2_zero_source_fixture.json",
+        "sha256": "f71de36585989dd309c910749ed9aa12f54ca1f923bc3e5139d1138d04e368a0"
+      },
+      "axial_extra_ell2_taub": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_ell2_taub.json",
+        "sha256": "6a326de926f0d59d5300794665d0058af43841ee261dff92c6a2b9a68c3edf12"
+      },
+      "axial_extra_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json",
+        "sha256": "9a99c658f34334386d56d6a569e81d73c31251bcd4592324553b7417b74d8f20"
+      },
+      "axial_physical_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "axial_reduced_action": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_reduced_action_hessian.json",
+        "sha256": "62e49ec4e690c91de973acac50862d8f39ce934bb1030b41ca1e474db94b85f7"
+      },
+      "ell2_combined": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_combined_cone_second_order.json",
+        "sha256": "697399a0b286a14dcbce292330e3057dc0980a88c0c00a124108b04fa6fe31e4"
+      },
+      "k0_cone": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_k0_moment_map_cone.json",
+        "sha256": "cf0cbbe2f8b99924c9045c99689481da882ff330e8007a18178488db8ca6a17b"
+      },
+      "moment_map_bridge": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "polar_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "polar_full_tensor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+      },
+      "polar_physical_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_K0_COMBINED_CONE_SECOND_ORDER",
+  "result_state": "EVERY_FIXED_GENERIC_ELL_K0_COMMON_ZERO_CONE_SECOND_ORDER_EXTENDIBLE",
+  "schema": "einstein-maxwell-weyl-fixed-ell-k0-combined-cone-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.schema.json",
+  "schema_sha256": "91ba3d44c4f70dd516460c1b4ee48731fa4c1930f4eacb2ea71faecbb6d23fd7",
+  "second_order_solution": {
+    "complete_for_declared_fixed_ell_cone": true,
+    "construction": "decompose the exact quadratic source by output L, parity, and frequency; set the canceled L0 source to zero, use total J cancellation in the axial L1 cokernel, invert every other zero and nonzero quotient block, and lift through the target Noether identities",
+    "finite_for_finite_first_order_data": true,
+    "real_spatially_periodic": true,
+    "temporal_class": "finite quasiperiodic with zero-frequency corrections chosen in the locally gauge-reduced quotient"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order --verify bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <new producer, independent verifier, and test>",
+        "python3 -m json.tool <new schema and certificate>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.06,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order --verify bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order"
+      ],
+      "elapsed_seconds": 1.7,
+      "status": "PASS"
+    },
+    "tier_2": {
+      "commands": [
+        "seven affected producer replays covering nonresonance, moment maps, k0 cone, both L1 blocks, ell2 calibration, and the new theorem",
+        "seven independent verifiers and 23 affected regression tests"
+      ],
+      "content_addressed_exhaustive_inputs": "the unchanged direct four-dimensional ell2 source and Lee-Wald fixtures were checked by stored hashes rather than recomputed",
+      "elapsed_seconds": 7.8,
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "the theorem promotes one fixed-ell block family but does not freeze the cross-ell, opposite-momentum, exceptional/global, or programme-wide result",
+      "status": "NOT_RUN_NOT_REQUIRED"
+    }
+  },
+  "zero_frequency_output_blocks": {
+    "L0": "same-parity scalar source vanishes in all four rows when total H=0; axial-polar cross parity has no L=0 harmonic",
+    "L1_axial": "the only physical adjoint cokernel is the rotation triplet, killed by total J_1=J_2=J_3=0",
+    "L1_polar": "no physical zero-frequency cokernel",
+    "L_at_least_2": {
+      "invertible_after_local_gauge_reduction": true,
+      "p_at_zero": "-(3*L**2 + 3*L - 2)/3",
+      "p_nonzero": "negative for every L>=2",
+      "q_at_zero": "L*(L - 1)*(L + 1)*(L + 2)",
+      "q_shift_L_minus_2_coefficients": [
+        "1",
+        "10",
+        "35",
+        "50",
+        "24"
+      ]
+    }
+  }
+}

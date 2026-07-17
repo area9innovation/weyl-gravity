@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Every fixed generic ell k=0 combined second-order cone",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "generality_level", "provenance",
+    "domain", "primary_action_and_scalar_source_theorem", "exact_ell3_fixture",
+    "zero_frequency_output_blocks", "nonzero_frequency_output_blocks",
+    "second_order_solution", "classification", "interpretation", "next_gate",
+    "claim_boundary", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-fixed-ell-k0-combined-cone-second-order-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_K0_COMBINED_CONE_SECOND_ORDER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "classification": {
+      "type": "object",
+      "required": [
+        "every_fixed_ell_at_least_2_combined_common_zero_cone_second_order_extendible",
+        "all_m_both_parities_and_all_generic_primaries_included",
+        "zero_frequency_scalar_source_rank_one_and_moment_map_factored",
+        "exact_ell3_coefficient_fixture_included", "cross_ell_superpositions_classified",
+        "opposite_momentum_relative_phases_classified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
