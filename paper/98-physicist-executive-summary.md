@@ -435,17 +435,16 @@ Readiness is reported by lifecycle and missing gate.
 | Bridge project | Current readiness | Exact next gate |
 |---|---|---|
 | [Cyclic causal Green transfer](90-cyclic-green-transfer-bridge.md) | **Theorem extraction** from a complete cylinder consumer | State abstract hypotheses, prove the transfer independently, and add a toy or second detour consumer. |
-| [Charge-fibre linearization stability](91-charge-fibre-taub-bridge.md) | **Draft allowed** on the compact Einstein--Maxwell domain | Complete the all-harmonic obstruction bilinear, selection rules, and fixed-versus-variable charge disposition. |
+| [Pure-extra obstruction and balanced extension](91-charge-fibre-taub-bridge.md) | **Theorem frozen** on the declared compact fixed-bundle domain | External specialist review; classify the full mixed moment-map zero cone as the next theorem. |
 | [Extra axial branch and physical current](92-extra-axial-lee-wald-bridge.md) | **Axial direct current and polar physical module certified** | Compute the polar extra Lee--Wald current and ungauged lift, perform final residual descent, and test causal boundary admissibility. |
 | Relational clock and light | **Complete local 64-row Maxwell \(q_2\); certified G0 redshift fixture and balanced homogeneous response** | Construct the Maxwell unary contraction and transferred mixed vertex, then a localized emitter/receiver or support-local signal. |
 | Quantum anomaly bridge | **Candidate classes classified** in the stated antifield-zero sector | Compute coefficients by two methods, complete antifields, and restore or obstruct the QME and \(D\) identity. |
 | Asymptotic Bach/BMS | **Programme stage** | Construct a closed Lorentzian boundary phase space with differentiable charges, flux, and extra-branch signs. |
 
-The first three external bridge notes will address cyclic causal transfer,
-charge-fibre linearization stability, and the extra-branch Lee--Wald result.
-Each should be two pages, contain one dependency diagram, reproduce one
-benchmark in the target community's conventions, and end with one concrete
-question that an external specialist can independently test.
+The charge-fibre project has been promoted from a bridge note to a standalone
+scoped manuscript: it proves the complete pure-extra generic obstruction and
+one explicit balanced Einstein--extra second-order extension.  The cyclic and
+extra-current bridge notes retain their shorter adapter format.
 
 ## Where the strongest criticism currently lands
 
@@ -534,7 +533,7 @@ precise obstruction, not to protect a preferred interpretation.
 - [Berger momentum-balanced second-order fixture](../d_quotient_classical/reports/berger-maxwell-momentum-balanced-fixture.md)
 - [Berger typed Møller and microlocal-gate report](../quantum-weyl/reports/berger-typed-companion-moller-preflight.md)
 - [Bridge note: cyclic causal Green transfer](90-cyclic-green-transfer-bridge.pdf)
-- [Bridge note: charge-fibre Taub obstructions](91-charge-fibre-taub-bridge.pdf)
+- [Paper 91: pure-extra obstruction and balanced extension](91-charge-fibre-taub-bridge.pdf)
 - [Bridge note: axial current and polar module audits](92-extra-axial-lee-wald-bridge.pdf)
 - [Long-term programme and publication gates](../notes/universe-building-roadmap.md)
 - [General-audience introduction](99-how-to-build-a-universe.md)

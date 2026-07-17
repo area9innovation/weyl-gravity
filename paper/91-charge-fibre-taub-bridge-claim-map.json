@@ -1,0 +1,63 @@
+{
+  "schema": "charge-fibre-taub-paper-claim-map-v1",
+  "result_id": "COMPACT_WEYL_MAXWELL_PURE_EXTRA_OBSTRUCTION_AND_BALANCED_EXTENSION_PAPER",
+  "result_state": "SCOPED_MATHEMATICAL_CLAIMS_THEOREM_FROZEN",
+  "lifecycle_state": "THEOREM_FROZEN",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "manuscript": "paper/91-charge-fibre-taub-bridge.md",
+  "authorship": {
+    "author": "GPT-5.6.sol",
+    "model_provider": "OpenAI",
+    "commissioner_and_corresponding_human_contact": "Asger Alstrup Palm",
+    "commissioner_claims_technical_contribution": false
+  },
+  "scope": {
+    "background": "R_t x S1_L x S2 compactified magnetically supported Plebanski-Hacyan fixture",
+    "bundle": "fixed compact U(1) bundle P_N with Chern number N=2",
+    "pure_extra": "complete real generic axial-plus-polar p-primary sector for every physical ell>=2 and allowed compact momentum",
+    "balanced_fixture": "real axial ell=2,m=0,k=0 Einstein-minus plus second-extra two-mode span",
+    "quotient_stage": "after local gauge reduction, before any background-stabilizer quotient"
+  },
+  "central_contrast": {
+    "pure_extra_generic": "EVERY_NONZERO_REAL_TANGENT_SECOND_ORDER_OBSTRUCTED_ON_FIXED_BUNDLE",
+    "balanced_Einstein_extra_fixture": "EXPLICIT_COMPLETE_SECOND_ORDER_CORRECTION_CONSTRUCTED"
+  },
+  "certified_claims": {
+    "covariant_moment_map_equals_Taub_pairing": true,
+    "pure_extra_generic_H_Taub_negative_definite": true,
+    "pure_extra_generic_fixed_bundle_second_order_no_go": true,
+    "same_nonzero_k_travelling_H_Px_zero_locus_trivial": true,
+    "minimal_k0_all_five_moment_maps_zero_fixture": true,
+    "balanced_fixture_all_quadratic_output_channels_solved": true,
+    "dependent_polar_rows_Noether_completed_with_constant_determinant_minus_four": true,
+    "balanced_fixture_fixed_charge_and_reality_audit_passed": true,
+    "balanced_fixture_complete_second_order_extension": true
+  },
+  "explicit_nonclaims": {
+    "full_mixed_moment_map_zero_cone_classified": false,
+    "general_mixed_second_order_closure": false,
+    "exact_or_all_orders_family_constructed": false,
+    "exceptional_and_global_blocks_classified": false,
+    "final_stabilizer_quotient_constructed": false,
+    "Lorentzian_causal_theorem": false,
+    "asymptotic_scattering_constructed": false,
+    "quantum_ghost_or_unitarity_theorem": false
+  },
+  "inputs": {
+    "bridge/certificates/compact_harmonic_domain_taub_descent.json": "4607543c23acdf5df0110aa6df4a01d7e397e6a73afd2d416f3bdd8482048e09",
+    "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567",
+    "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6",
+    "bridge/certificates/einstein_maxwell_weyl_hermitian_axial_polar_ell2_taub.json": "9e91cd4b9b501fdfe0fe4f09b52c9b059e16380e49564875d83487ed77f57d02",
+    "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26",
+    "bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json": "554c34d1e52bb3d458fe5380e8929de8bfafb60566b1a6717a2f1d2de8aaaffa",
+    "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json": "236c308cec85b4edde24f0acd4fe4c2133c58516426041eab2d9ffb01be28d59"
+  },
+  "verification_commands": [
+    "python3 bridge/einstein_sector/verify_charge_fibre_paper_claim_map.py",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_moment_map_taub_bridge",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_mixed_moment_map_zero_locus",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_balanced_ell0_second_order"
+  ],
+  "next_theorem": "classify the full k=0 common H,P_x,J_i zero cone, then opposite-momentum and exceptional/global strata",
+  "claim_boundary": "This theorem-frozen LOCAL-ALGEBRAIC/REDUCED-MODE paper proves a complete fixed-bundle pure-extra generic second-order no-go and one explicit balanced Einstein-extra second-order extension. It does not classify the full mixed cone, prove all-orders integrability, perform final stabilizer reduction, establish causal scattering, or make a quantum claim."
+}
