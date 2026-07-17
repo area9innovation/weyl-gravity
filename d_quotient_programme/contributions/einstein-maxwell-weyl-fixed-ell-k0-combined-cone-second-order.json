@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; one arbitrary but fixed generic ell>=2 at k=0, all m and both parities, after local gauge reduction and before stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "for every one fixed generic ell>=2, the complete all-m axial-plus-polar H=J_1=J_2=J_3 zero cone is second-order extendible",
+    "the reduced p/q primary action and constant-circle Feynman-Hellmann identity force the k=0 zero-frequency E11 source to vanish",
+    "Weyl tracelessness and the integrated homogeneous Maxwell identity force every scalar source into the row (1,0,1/2,0)",
+    "the scalar-row coefficient is the calibrated constant-lapse moment map, so total H=0 cancels the complete L=0 source",
+    "the only physical zero-frequency L=1 cokernel is the axial rotation triplet and is canceled by total J_i=0",
+    "all other zero blocks are invertible and every nonzero-frequency block is covered by the exact all-ell nonresonance theorem",
+    "an exact ell=3 axial-extra source fixture and the direct full-row ell=2 calibration are included"
+  ],
+  "evidence": {
+    "commit": "775433c2e43a7e3d3d733f1860519ab4f564a731",
+    "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+    "sha256": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify products between distinct input ell values and opposite-momentum relative phases, where new mixed-frequency resonance arithmetic can occur",
+  "not_established": [
+    "second-order closure for superpositions containing distinct input ell values",
+    "opposite-momentum relative-phase source solvability",
+    "exceptional or generalized global input modes",
+    "all-orders integration, final residual descent, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "G4_EVERY_FIXED_GENERIC_ELL_K0_COMMON_ZERO_CONE_SECOND_ORDER_EXTENDIBLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order --verify bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order"
+  ]
+}
