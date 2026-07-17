@@ -30,6 +30,7 @@ DEPENDENCIES = {
     "coupled_cyclicity_repair": HERE / "transfer/certificates/BERGER_COUPLED_CYCLICITY_REPAIR_ACCEPTANCE_READINESS.json",
     "mixed_q3_acceptance": HERE / "transfer/certificates/BERGER_MIXED_Q3_INDEPENDENT_ACCEPTANCE.json",
     "retained_mixed_ell3_acceptance": HERE / "transfer/certificates/BERGER_RETAINED_MIXED_ELL3_INDEPENDENT_ACCEPTANCE.json",
+    "retained_mixed_ell3_physical_cyclicity": HERE / "transfer/certificates/BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY.json",
     "residual_ell3_projection_readiness": HERE / "transfer/certificates/BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS.json",
     "causal_chain": HERE / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "base_Hadamard_parametrix": HERE / "lorentzian/certificates/BERGER_BASE_WAVE_HADAMARD_PARAMETRIX.json",
@@ -61,6 +62,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "coupled_cyclicity_repair": "CORRECTED_CLASSICAL_REPAIR_ACCEPTED_MIXED_Q3_INPUT_UNBLOCKED",
         "mixed_q3_acceptance": "TYPED_MIXED_Q3_INDEPENDENTLY_ACCEPTED_RETAINED_ELL3_TRANSFER_OPEN",
         "retained_mixed_ell3_acceptance": "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED_RESIDUAL_BRANCH_PROJECTION_OPEN",
+        "retained_mixed_ell3_physical_cyclicity": "PHYSICAL_QUARTIC_CYCLICITY_INDEPENDENTLY_ACCEPTED_FULL_BV_CYCLICITY_OPEN",
         "residual_ell3_projection_readiness": "CONSUMER_READY_RESIDUAL_BRANCH_BASIS_INPUT_NOT_SUPPLIED",
         "causal_chain": "CAUSAL_CHAIN_V2_IMPORTED_THROUGH_ARITY_TWO_HADAMARD_OPEN",
         "base_Hadamard_parametrix": "LOCAL_STATIONARY_HADAMARD_PARAMETRICES_CERTIFIED_GLOBAL_BISOLUTION_OPEN",
@@ -179,6 +181,38 @@ def _load() -> dict[str, dict[str, Any]]:
         or retained_ell3_diagnostics.get("mutation_defect_count", 0) <= 0
     ):
         raise ValueError("retained mixed ell3 acceptance frontier drifted")
+    physical_cyclicity = values["retained_mixed_ell3_physical_cyclicity"]
+    physical_cyclicity_flags = physical_cyclicity.get("claim_flags", {})
+    physical_cyclicity_diagnostics = physical_cyclicity.get("exact_replay", {}).get(
+        "diagnostics", {}
+    )
+    if (
+        physical_cyclicity_flags.get(
+            "PHYSICAL_QUARTIC_CYCLICITY_INDEPENDENTLY_REPLAYED"
+        )
+        is not True
+        or physical_cyclicity_flags.get(
+            "FULL_RETAINED_BV_ELL3_CYCLICITY_INDEPENDENTLY_REPLAYED"
+        )
+        is not False
+        or physical_cyclicity_flags.get("QME_RESTORED") is not False
+        or physical_cyclicity_flags.get("QUANTUM_CLAIM") is not False
+        or physical_cyclicity_diagnostics.get("physical_quartic_coefficient_count")
+        != 25_662
+        or physical_cyclicity_diagnostics.get(
+            "physical_quartic_cyclicity_defect_count"
+        )
+        != 0
+        or physical_cyclicity_diagnostics.get(
+            "Maxwell_pairing_weight_mutation_defect_count"
+        )
+        != 17_108
+        or physical_cyclicity_diagnostics.get(
+            "nonphysical_ghost_antifield_completion_coefficient_count"
+        )
+        != 288
+    ):
+        raise ValueError("retained mixed ell3 physical cyclicity frontier drifted")
     projection_readiness = values["residual_ell3_projection_readiness"]
     projection_flags = projection_readiness.get("claim_flags", {})
     if (
@@ -282,7 +316,7 @@ def build() -> dict[str, Any]:
         },
         "active_rows": {
             "classical_interacting_input": {
-                "status": "RETAINED_MIXED_ELL3_ACCEPTED_BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT",
+                "status": "RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED_BRANCH_PROJECTION_CONSUMER_READY_INPUT_ABSENT",
                 "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
             },
             "local_obstruction_space": {
@@ -373,6 +407,7 @@ def build() -> dict[str, Any]:
             "MIXED_Q3_INPUT_UNBLOCKED": True,
             "MIXED_Q3_INDEPENDENTLY_ACCEPTED": True,
             "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED": True,
+            "RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED": True,
             "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY": True,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
@@ -389,6 +424,7 @@ def build() -> dict[str, Any]:
         },
         "ordered_next_gates": [
             "SUPPLY_COMMITTED_BERGER_RETAINED_36_RESIDUAL_BRANCH_BASIS_V1_MANIFEST",
+            "BERGER_RETAINED_MIXED_ELL3_GHOST_ANTIFIELD_CYCLICITY_REPLAY",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -411,7 +447,11 @@ def build() -> dict[str, Any]:
             "construction finds 144 gravity-outer/mixed-inner coefficient pairs and 342 full-complex "
             "exchange coefficients, but none survives retained output projection; the other two "
             "exchange sectors have no outer/inner pairs. All three retained exchange sectors therefore "
-            "vanish, all 36 retained arity-three rows close, and a mutation is rejected. Residual "
+            "vanish, all 36 retained arity-three rows close, and a mutation is rejected. Exact "
+            "cyclic transposition independently reproduces all 25,662 physical quartic coefficients "
+            "with zero defects; changing the Maxwell pairing weight produces 17,108 defects. The "
+            "remaining 288 ghost/antifield completion coefficients are not independently replayed, "
+            "so full retained BV cyclicity remains open. Residual "
             "Einstein-like/extra-Weyl dynamical branch projection and separate e/o deformation-vertex "
             "action remain open. The fail-closed consumer contract is ready and requires exact "
             "gravity plus Maxwell carriers and keeps the topological o direction out of the "
@@ -460,6 +500,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("MIXED_Q3_INPUT_UNBLOCKED") is not True
         or flags.get("MIXED_Q3_INDEPENDENTLY_ACCEPTED") is not True
         or flags.get("RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED") is not True
+        or flags.get("RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED") is not True
         or flags.get("RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY") is not True
         or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
@@ -481,6 +522,7 @@ def validate(result: dict[str, Any]) -> None:
             "MIXED_Q3_INPUT_UNBLOCKED",
             "MIXED_Q3_INDEPENDENTLY_ACCEPTED",
             "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED",
+            "RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED",
             "RESIDUAL_ELL3_BRANCH_PROJECTION_CONSUMER_READY",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",

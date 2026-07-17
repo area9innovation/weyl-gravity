@@ -27,7 +27,12 @@ mutation is rejected. The exact exchange replay agrees with the hardened
 producer ledger. There are 144 gravity-outer/mixed-inner coefficient pairs
 and 342 canonical full-complex PBW coefficients, but none survives retained
 output projection; the other two exchange sectors have no outer/inner pairs. Thus all
-three retained exchange sectors vanish exactly. Projection onto the
+three retained exchange sectors vanish exactly. The physical quartic
+cyclicity is also independently replayed: all 25,662 physical coefficients
+reproduce under exact PBW transposition, while a Maxwell pairing-weight
+mutation creates 17,108 defects. The 288 ghost/antifield completion
+coefficients remain outside this replay, so full retained BV cyclicity is
+still open. Projection onto the
 Einstein-like and extra-Weyl dynamical residual branches remains open, as does
 the separate action on the even/odd deformation-vertex basis. The topological
 odd direction is not treated as a third dynamical or particle branch.
@@ -66,13 +71,14 @@ exceptional/global rows, and the global mapping cone are still open.
 The ordered critical path is:
 
 1. supply the committed retained 36-row gravity-plus-Maxwell residual branch-basis manifest, then compute the accepted mixed (ell_3) projection and mixing table;
-2. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
-3. retained 26-row zero-frequency spectral carrier;
-4. typed companion microlocal transport and global covariance;
-5. minimal BV cohomology with Koszul--Tate rows;
-6. regulated repository Slavnov breaking;
-7. QME restoration or obstruction;
-8. residual quantum transfer.
+2. independently replay cyclicity of the 288 ghost/antifield completion coefficients;
+3. supply and accept the committed `A104`, Cauchy BRST, pairing, and real-structure manifest;
+4. retained 26-row zero-frequency spectral carrier;
+5. typed companion microlocal transport and global covariance;
+6. minimal BV cohomology with Koszul--Tate rows;
+7. regulated repository Slavnov breaking;
+8. QME restoration or obstruction;
+9. residual quantum transfer.
 
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.

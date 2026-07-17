@@ -86,6 +86,15 @@ coefficient pairs and 342 canonical full-complex PBW coefficients, but none
 survives the retained output projection. The other two exchange channels have
 no outer/inner pairs, so all three retained exchange sectors vanish exactly.
 
+The physical quartic cyclicity of this retained bracket is now independently
+replayed rather than inherited only from the producer. Exact PBW formal
+adjunction over \(\mathbb Q(\sqrt{10})\) reproduces all 25,662 physical
+coefficients with zero defects (7,506 gravity-output and 18,156
+Maxwell-output coefficients). Changing the Maxwell pairing weight from two to
+one creates 17,108 defects on 14 rows. The remaining 288 coefficients are the
+ghost/antifield BV completion and have not yet received an independent cyclic
+transpose replay, so full retained BV cyclicity remains open.
+
 This closes the classical retained arity-three import gate. The quantum-side
 receiving contract for the residual branch projection is ready and requires
 content-addressed gravity and Maxwell carriers, exact inclusion/projection,

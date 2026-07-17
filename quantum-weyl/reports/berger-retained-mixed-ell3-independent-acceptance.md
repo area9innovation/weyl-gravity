@@ -31,9 +31,13 @@ contains 7,614 gravity-output coefficients with two Maxwell inputs and
 genuine retained gravity--light interaction.
 
 This is `LOCAL-ALGEBRAIC` classical-input acceptance. The retained 36-row
-complex has not yet been projected onto the Einstein-like, extra-Weyl and
-topological residual branches, so it does not yet give their mixing table.
+complex has not yet been projected onto the Einstein-like and extra-Weyl
+dynamical residual branches, so it does not yet give their mixing table. The
+even dynamical and odd topological deformation/vertex classes are a separate
+basis; the topological class is not a third particle branch.
 The bracket does not modify the unary kinetic operator and therefore does not
 introduce a negative physical direction, but this is not a unitarity theorem.
-Cyclicity is imported from the typed cyclic transfer theorem rather than
-independently replayed here. No QME or quantum claim is made.
+The companion `BERGER_RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY` certificate now
+independently replays all 25,662 physical quartic coefficients. The 288-term
+ghost/antifield completion still imports cyclicity from the typed transfer
+theorem. No QME or quantum claim is made.

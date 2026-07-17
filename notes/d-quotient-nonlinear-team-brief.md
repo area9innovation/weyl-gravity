@@ -100,12 +100,21 @@ produces two exact defects.
 The resulting bracket is nontrivial: it contains 7,614 gravity-output terms
 with two Maxwell inputs and 18,336 Maxwell-output terms with one Maxwell
 input. Thus a genuine retained gravity--light interaction has been established.
-The next nonlinear gate is
-`BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_AND_MIXING_TABLE`: project this
-bracket onto the Einstein-like, extra-Weyl and topological residual branches
-and decide their mixing. Cyclicity is still imported from the classical typed
-transfer theorem rather than independently replayed. No unary kinetic
-operator, QME lifecycle state or quantum claim is promoted.
+
+Its physical quartic cyclicity is now independently replayed over exact
+\(\mathbb Q(\sqrt{10})\): all 25,662 physical coefficients close with zero
+defects, while a Maxwell pairing-weight mutation produces 17,108 defects on
+14 rows. The remaining 288 coefficients are the ghost/antifield completion;
+their cyclic transpose is still imported from the classical typed-transfer
+theorem, so full retained BV cyclicity remains open.
+
+The next nonlinear gate is the residual projection and mixing table. Project
+the dynamical carrier onto the Einstein-like and extra-Weyl gravity branches
+plus the Maxwell branch. Separately compute the action on the even dynamical
+and odd topological deformation/vertex basis, its rank-one Euler--Lagrange
+map, and the topological transgression witness. The odd topological class is
+not a third particle branch. No unary kinetic operator, QME lifecycle state or
+quantum claim is promoted.
 
 ### Extended rod–memory–Maxwell unary gate
 
