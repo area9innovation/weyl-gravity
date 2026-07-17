@@ -24,7 +24,7 @@ presymplectic degeneracy and the renormalized covariant phase-space charge.
 The centered classes \([W_+^2]\) and \([W_-^2]\) are deformation/vertex
 classes.  They are not one-particle graviton states.
 
-## Live Berger nonlinear handoff (2026-07-16)
+## Live Berger nonlinear handoff (2026-07-17)
 
 The authoritative 54-row support-local classical Taylor data are now complete
 through arity three at the frozen rational Berger fixture.  The certificate
@@ -42,12 +42,123 @@ strict-JSON manifest plus deterministic gzip-compressed strict-JSON row
 chunks; it is a full four-dimensional `LOCAL-ALGEBRAIC` result, not a
 reduced-mode fit.
 
-The next nonlinear gate is therefore
-`BERGER_ARITY_THREE_D_CARTAN_FULL_4D`.  It must consume the frozen
-\((q_1,q_2,q_3,D)\) hashes and either construct the cyclic support-local/causal
-arity-three Cartan primitive or emit the first normalized obstruction.  This
-new gate does not reopen the already certified unary, binary, or causal
-26/54-row work, and it does not promote a quantum or Hadamard claim.
+That gate is now passed by `BERGER_ARITY_THREE_D_CARTAN_FULL_4D`.  On the
+complete arbitrary-input 54-row four-dimensional Berger BV complex it
+constructs a cyclic arity-three Cartan primitive and proves
+
+\[
+[q_1,\iota_D^{(3)}]
+=-[q_3,\iota_D^{(1)}]-[q_2,\iota_D^{(2)}]+L_D^{(3)},
+\qquad L_D^{(3)}=0.
+\]
+
+The primitive has two-sided causal-hull support; it is not claimed to be
+separately retarded or advanced.  The result closes the classical
+\(D\)-Cartan recurrence through arity three, not to all orders, and does not
+promote a quantum, QME, anomaly-cancellation, or Hadamard claim.  Before a
+paper theorem is frozen, the current certificate, manifest, schemas, receipt,
+and independent verifier must be committed together and replayed from the
+recorded hashes.
+
+## Paper IX writing commission
+
+**Primary owner:** classical team.  **Scientific co-lead:** nonlinear team.
+The classical team owns the manuscript and its single editorial source; the
+nonlinear team supplies and signs off the interaction/Cartan sections and the
+final interpretation.
+
+### Working title and question
+
+Use the conservative working title
+
+> **Relational clocks and causal Cartan contraction through arity three in
+> pure-Weyl gravity on a Berger universe**
+
+and organize the paper around one question:
+
+\[
+\boxed{\text{Can a healthy clock evolve while total }D\text{ remains gauge
+through the first nontrivial interactions?}}
+\]
+
+The paper should answer **yes, on the declared fixed-coupling Berger sector
+through arity three**.  It must not turn that scoped theorem into a claim about
+generic spacetimes or the complete nonlinear or quantum theory.
+
+### The theorem spine
+
+Build the readable argument around five linked results:
+
+1. the exact non-conformally-flat Berger family with two standard-sign
+   rotating conformal scalars, positive potential, timelike clock phase, and
+   the declared energy inequalities;
+2. the covariant phase-space identity
+   \(\Omega_{\rm total}(\delta,\mathcal L_D)=\omega\delta Q_R\), followed by
+   the fixed-coupling lapse constraint and compact-averaging proof that
+   \(\delta Q_R=0\) for every smooth linearized tangent;
+3. the complete cyclic 54-row gauge-fixed BV complex and its causal Green
+   homotopy, with the distinction between support-local operations and
+   two-sided causal cyclic completion stated explicitly;
+4. the action-derived support-local \(q_2\) and \(q_3\), including the exact
+   \(L_\infty\) identities and cubic/quartic cyclicity;
+5. the cyclic causal Cartan contraction through arity three, showing that the
+   interacting classical quotient has no obstruction through this order.
+
+Relational redshift may appear as a clearly labelled certified fixture or
+application.  Do not make localized emitter/receiver propagation,
+backreaction, or a general observational redshift theorem part of the main
+claim unless those additional gates close before theorem freeze.
+
+### Required paper structure
+
+Write a short main paper with this order:
+
+1. physical question and exact claim boundary;
+2. Berger universe, matter clock, and admissible parameter interval;
+3. charge theorem: nonzero clock momentum versus vanishing tangent charge;
+4. gauge explanation and relational evolution;
+5. 54-row causal BV construction;
+6. interaction tensors \(q_2,q_3\) and their exact identities;
+7. Cartan recurrence through arity three;
+8. what survives, what fails, and what remains open;
+9. reproducibility and certificate map.
+
+Put row tables, PBW payload details, hashes, resource measurements, exhaustive
+sign tables, and replay commands in a computational supplement.  The main
+paper should explain why each calculation matters rather than narrating the
+software pipeline.
+
+### Division of work
+
+- **Classical team:** sections 1--5 and 8--9; charge conventions, clock health,
+  phase-space scope, relational interpretation, evidence table, and final TeX
+  integration.
+- **Nonlinear team:** sections 6--7; independently import the frozen classical
+  hashes, explain the arity-two and arity-three recurrences, and verify every
+  interaction claim in the abstract and conclusion.
+- **Quantum team:** one claim-boundary review only.  Confirm that no classical
+  result is described as a QME, Hadamard, anomaly, or quantum-unitarity
+  theorem.
+- **Einstein team:** optional internal referee.  Check that the paper does not
+  identify the Berger quotient with an asymptotically flat Einstein radiative
+  phase space or claim black-hole/scattering consequences.
+
+### Freeze and stopping rule
+
+Writing starts now.  Promote the paper to `THEOREM_FROZEN` only when:
+
+- all theorem certificates and their independent verifiers pass from a clean
+  committed tree;
+- the paper-to-certificate claim table has no missing or broadened dependency;
+- the nonlinear team signs off the arity-three Cartan interpretation;
+- every limitation below appears in the abstract, theorem statement, and
+  conclusion where relevant.
+
+The paper stops at: one compact Berger family, fixed couplings, classical
+theory, the declared smooth phase space, and interaction order three.  It does
+not wait for arity four, a Hadamard state, the QME, anomaly coefficients,
+particles, asymptotic scattering, black holes, or a GUT.  Those are later
+papers and must not be imported as motivation-shaped conclusions.
 
 ## Binary charge test
 
