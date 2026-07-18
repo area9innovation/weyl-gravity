@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/pure-weyl/nariai-action-derived-bach-endpoint-v1.schema.json",
+  "title": "Action-derived Nariai Bach endpoint",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "construction", "exact_operator", "exact_checks", "product_scaling_regression", "compression_identity", "repair", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-action-derived-bach-endpoint-v1"},
+    "result_id": {"const": "NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1"},
+    "result_state": {"const": "ACTION_DERIVED_BACH_AND_CORRECTED_PARENT_COMPRESSION_EXACT"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "items": false, "minItems": 1, "maxItems": 1},
+    "dependency_refs": {"$ref": "#/$defs/dependencies"},
+    "construction": {"$ref": "#/$defs/stringObject"},
+    "exact_operator": {"$ref": "#/$defs/exactOperator"},
+    "exact_checks": {"$ref": "#/$defs/exactChecks"},
+    "product_scaling_regression": {"$ref": "#/$defs/product"},
+    "compression_identity": {"$ref": "#/$defs/compression"},
+    "repair": {"$ref": "#/$defs/stringObject"},
+    "flags": {"$ref": "#/$defs/flags"},
+    "next_gate": {"const": "C_G2_NARIAI_RELATIVE_CYCLIC_PAIRING_AND_EQUATION_CONE"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stringObject": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}},
+    "dependency": {
+      "type": "object", "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}},
+      "additionalProperties": false
+    },
+    "dependencies": {
+      "type": "object", "required": ["prior_algebraic_screen", "action_normalization"],
+      "properties": {"prior_algebraic_screen": {"$ref": "#/$defs/dependency"}, "action_normalization": {"$ref": "#/$defs/dependency"}},
+      "additionalProperties": false
+    },
+    "sparseMatrix": {
+      "type": "object", "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"const": 9}, {"const": 9}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "sparseTable": {
+      "type": "object", "required": ["entries", "sha256"],
+      "properties": {
+        "entries": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}, "maxItems": 4}, "matrix": {"$ref": "#/$defs/sparseMatrix"}}, "additionalProperties": false}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "exactOperator": {
+      "type": "object", "required": ["shape", "orders", "coefficient_words", "nonzero_coefficients", "sha256", "coefficients"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"const": 9}, {"const": 9}], "items": false, "minItems": 2, "maxItems": 2},
+        "orders": {"type": "array", "prefixItems": [{"const": 0}, {"const": 2}, {"const": 4}], "items": false, "minItems": 3, "maxItems": 3},
+        "coefficient_words": {"const": 46},
+        "nonzero_coefficients": {"type": "integer", "minimum": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "coefficients": {"$ref": "#/$defs/sparseTable"}
+      },
+      "additionalProperties": false
+    },
+    "exactChecks": {
+      "type": "object", "required": ["tensor_symmetry_defects", "tensor_trace_defect_entries", "tensor_divergence_defect_entries", "B_action_K_defect_entries", "corrected_parent_plus_2_B_action_defect_entries", "raw_parent_plus_2_B_action_defect_orders", "raw_parent_plus_2_B_action_defect_entries", "raw_defect_equals_minus_unique_Q", "product_scaling_exact", "formal_self_adjointness", "generic_post_normal_order_adjoint_used_as_authority"],
+      "properties": {
+        "tensor_symmetry_defects": {"const": 0}, "tensor_trace_defect_entries": {"const": 0}, "tensor_divergence_defect_entries": {"const": 0}, "B_action_K_defect_entries": {"const": 0}, "corrected_parent_plus_2_B_action_defect_entries": {"const": 0},
+        "raw_parent_plus_2_B_action_defect_orders": {"type": "array", "prefixItems": [{"const": 0}], "items": false, "minItems": 1, "maxItems": 1},
+        "raw_parent_plus_2_B_action_defect_entries": {"const": 15},
+        "raw_defect_equals_minus_unique_Q": {"const": true}, "product_scaling_exact": {"const": true},
+        "formal_self_adjointness": {"type": "string"}, "generic_post_normal_order_adjoint_used_as_authority": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "product": {
+      "type": "object", "required": ["family", "variation", "standard_Bach_variation", "action_normalized_variation", "normalization", "exact_match"],
+      "properties": {"family": {"type": "string"}, "variation": {"type": "string"}, "standard_Bach_variation": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "string"}}, "action_normalized_variation": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "string"}}, "normalization": {"const": "B_action=-2 B_standard"}, "exact_match": {"const": true}},
+      "additionalProperties": false
+    },
+    "compression": {
+      "type": "object", "required": ["formula", "orders_checked", "coefficientwise_defect", "interpretation"],
+      "properties": {"formula": {"const": "B_parent_compressed + Q_unique = -2 B_action"}, "orders_checked": {"type": "array", "prefixItems": [{"const": 0}, {"const": 2}, {"const": 4}], "items": false, "minItems": 3, "maxItems": 3}, "coefficientwise_defect": {"const": 0}, "interpretation": {"type": "string"}},
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object", "required": ["NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1", "NARIAI_METRIC_BACH_ENDPOINT_EXACT", "CORRECTED_PARENT_COMPRESSION_EQUALS_MINUS_TWO_BACH", "PRIOR_ALGEBRAIC_ENDPOINT_NO_GO_INTERPRETATION_SUPERSEDED", "RELATIVE_CYCLIC_PAIRING_RECONCILED", "METRIC_BACH_ENDPOINT_CHAIN_EQUIVALENCE", "NARIAI_GREEN_HOMOTOPY", "OPEN_BACKGROUND_CLASS", "QUANTUM_CLAIM"],
+      "properties": {"NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1": {"const": true}, "NARIAI_METRIC_BACH_ENDPOINT_EXACT": {"const": true}, "CORRECTED_PARENT_COMPRESSION_EQUALS_MINUS_TWO_BACH": {"const": true}, "PRIOR_ALGEBRAIC_ENDPOINT_NO_GO_INTERPRETATION_SUPERSEDED": {"const": true}, "RELATIVE_CYCLIC_PAIRING_RECONCILED": {"const": false}, "METRIC_BACH_ENDPOINT_CHAIN_EQUIVALENCE": {"const": false}, "NARIAI_GREEN_HOMOTOPY": {"const": false}, "OPEN_BACKGROUND_CLASS": {"const": false}, "QUANTUM_CLAIM": {"const": false}},
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object", "required": ["source_manifest", "verification_commands"],
+      "properties": {"source_manifest": {"type": "object", "minProperties": 8, "additionalProperties": {"$ref": "#/$defs/sha256"}}, "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}},
+      "additionalProperties": false
+    }
+  }
+}

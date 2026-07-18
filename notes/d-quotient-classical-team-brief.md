@@ -1076,24 +1076,37 @@ all-order kernel witness, not a bounded ansatz: exact curved-PBW screens at
 orders zero through four merely reproduce its rank-four signature.  It rules
 out only the canonical ghost map plus identity metric component and a
 field-only graph.  Relative equation-level, homotopy-coherent and enlarged
-mapping-cylinder comparisons remain open.  The active gate is now
-`C_G2_NARIAI_RELATIVE_EQUATION_LEVEL_METRIC_BACH_ENDPOINT_CONE`; only after
-that cone closes may a Nariai Green transfer be promoted.
+mapping-cylinder comparisons remain open.  With the action-derived Bach
+endpoint below now available, the active gate is
+`C_G2_NARIAI_RELATIVE_CYCLIC_PAIRING_AND_EQUATION_CONE`; only after that cone
+closes may a Nariai Green transfer be promoted.
 
-`NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1` now applies the
-weaker and authoritative detour-translation criterion.  Correcting the
-temporal Schouten component makes the Nariai component parent satisfy
-\(M^Dd^D=0\) exactly; reversing the sign of \(-F\!\cdot\) leaves 144
-entries.  The naive compressed middle \(B_0=L_1^\sharp M^D L_1\) has orders
-zero, two and four, while \(B_0K\) has only 24 first-order coefficients.
-The complete algebraic endpoint equation \((B_0+Q)K=0\) has a unique
-solution because the stacked conformal-Killing symbol has rank nine.  That
-solution cancels the gauge defect exactly, but \(JQ-Q^TJ\) has rank two and
-normalized witness \(-\tfrac13(JQ-Q^TJ)_{1,4}=1\).  Hence no algebraic
-endpoint curvature correction can restore both gauge annihilation and
-cyclicity.  A differential translation lift or a curvature-incidence mapping
-cone remains open; this does not obstruct either route or a later Green
-construction.
+`NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1` replaces that provisional endpoint
+interpretation with the actual Hessian.  Directly varying
+
+\[
+B_{ab}=\nabla^c\nabla^dC_{acbd}+\frac12R^{cd}C_{acbd}
+\]
+
+on unit Nariai, including all four connection variations against the nonzero
+parallel background Weyl tensor, yields the complete trace-free operator at
+orders zero, two and four.  Its tensor symmetry, trace, divergence and gauge
+defects vanish exactly.  In the repository action normalization,
+
+\[
+B_{\rm parent,comp}+Q_{\rm unique}=-2B_{\rm action}
+\]
+
+coefficientwise, with zero defect, and an independent product-scaling family
+checks the algebraic coefficient.  Thus the old certificate showing that
+\(Q_{\rm unique}\) alone is noncyclic remains only a diagnostic of the
+provisional coefficientwise Hom-bundle adjoint; it is not an endpoint no-go.
+The strict field graph is still excluded by the Killing-field theorem.  The
+active gate is now
+`C_G2_NARIAI_RELATIVE_CYCLIC_PAIRING_AND_EQUATION_CONE`: derive the true
+action metric/antifield pairing in the parent coordinates, complete the
+relative equation and identity rows, and only then attempt an SDR or Green
+transfer.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and

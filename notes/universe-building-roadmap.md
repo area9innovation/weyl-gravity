@@ -131,8 +131,8 @@ failure of support-local/cyclic transfer.  This advances C-G2 without a false
 **Current state (2026-07-18):** the conformal-orbit G3 theorem is certified,
 and unit Nariai supplies the non-conformally-flat test.  The corrected
 Yang--Mills parent is exact.  Complete zeroth-order first-square
-strictification and every algebraic endpoint repair are obstructed, but the
-entire surviving first-square residue is now identified coefficientwise as
+strictification is obstructed, but the entire surviving first-square residue
+is now identified coefficientwise as
 the canonical curvature incidence
 `(I_Omega xi)_a=Omega_ab xi^b`; its adjoint action equals the PBW normal
 tractor square.  The incidence extends as
@@ -142,15 +142,19 @@ canonical finite-order shear, and SDR to the parent.  The first strict metric
 comparison is also closed: any graph `h -> (h,Rh)` would require
 `R K=I_Omega`, but the global Killing field `partial_chi` lies in `ker K`
 while `(I_Omega partial_chi)[4]=2/3`.  Therefore no finite-order field-only
-graph of this canonical type exists at any differential order.  The next gate
-is
-`C_G2_NARIAI_RELATIVE_EQUATION_LEVEL_METRIC_BACH_ENDPOINT_CONE`.  This closes
-the Hom-bundle replay issue without modifying the generic PBW normalizer.  The
-remaining task is the relative equation/identity-row cone,
-its dual completion and only then transferred or independently built
-retarded/advanced Green homotopies.  Do not reopen algebraic or higher-order
-field-graph fitting, or claim endpoint equivalence or a Nariai Green homotopy
-before this gate closes.
+graph of this canonical type exists at any differential order.  The complete
+action-derived trace-free Bach endpoint is now also exact: after retaining
+every connection variation against the parallel background Weyl tensor, it
+has zero tensor, Noether and divergence defects and satisfies
+`B_parent,comp+Q_unique=-2 B_action` coefficientwise.  This supersedes the
+old interpretation of `Q_unique` as an algebraic endpoint no-go; that receipt
+now diagnoses only the provisional Hom-bundle adjoint convention.  The next
+gate is `C_G2_NARIAI_RELATIVE_CYCLIC_PAIRING_AND_EQUATION_CONE`: reconcile the
+action metric/antifield pairing, construct the relative equation/identity-row
+cone and its dual completion, and only then build or transfer retarded and
+advanced Green homotopies.  Do not reopen endpoint coefficient fitting or
+higher-order field-graph fitting, or claim endpoint equivalence or a Nariai
+Green homotopy before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

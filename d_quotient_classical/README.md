@@ -223,13 +223,24 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   relative equation-level or homotopy-coherent metric--Bach cone:
   [`certificates/NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1.json`](certificates/NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1.json),
   [`reports/nariai-strict-metric-graph-chain-map-obstruction.md`](reports/nariai-strict-metric-graph-chain-map-obstruction.md)
-- Weaker Yang--Mills translation gate: the corrected component parent now
-  satisfies `M^D d^D=0` exactly.  Its naive BGG compression has only a
-  24-entry first-order gauge defect.  The unique algebraic endpoint term that
-  cancels this defect is noncyclic: its pairing defect has rank two and
-  normalized witness one.  Thus the next repair must be a differential lift
-  or the now-identified curvature-incidence mapping cone, not another
-  algebraic endpoint term:
+- Action-derived metric endpoint: direct variation of
+  `B_ab=nabla^c nabla^d C_acbd+(1/2)R^cd C_acbd`, including all four
+  connection variations against the nonzero parallel Nariai Weyl tensor,
+  gives the complete trace-free Bach Hessian at orders zero, two and four.
+  Its symmetry, trace, divergence and gauge defects vanish exactly.  In the
+  repository normalization the corrected parent compression obeys
+  `B_parent,comp+Q_unique=-2 B_action` coefficientwise; an independent
+  product-scaling family fixes the algebraic normalization.  The active gate
+  is therefore the Hom-bundle/action-pairing reconciliation and relative
+  equation/identity-row cone, not another endpoint coefficient search:
+  [`certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json`](certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json),
+  [`reports/nariai-action-derived-bach-endpoint.md`](reports/nariai-action-derived-bach-endpoint.md)
+- Historical algebraic screen: before the action Hessian was available, the
+  unique endpoint term `Q_unique` was found to be noncyclic when tested alone
+  with the provisional coefficientwise Hom-bundle adjoint.  The action-derived
+  result above supersedes its endpoint no-go interpretation: the old receipt
+  remains useful only as a scoped diagnostic of that provisional adjoint
+  convention:
   [`certificates/NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1.json`](certificates/NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1.json),
   [`reports/nariai-algebraic-endpoint-curvature-repair-obstruction.md`](reports/nariai-algebraic-endpoint-curvature-repair-obstruction.md)
 - Strict portable consumer gate and accepted Berger adapter:
