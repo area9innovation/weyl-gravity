@@ -1789,6 +1789,25 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    source changes the correction but not existence.  Infinite-mode
    completion, opposite-momentum phases, and exceptional/global inputs remain
    open.
+
+   Opposite momentum has a genuine correction-space split.  For shell
+   offsets `A,B,C`, every sum/difference channel has an exact linear divisor
+   formula for `k^2`.  The divisor is nonempty for every `ell`: two
+   Einstein-minus waves at `+k,-k` drive the polar extra shell at `L=2ell`
+   when
+
+   ```text
+   k^2=sqrt(2ell(ell+1))-ell/2-1/6.
+   ```
+
+   The top Gaunt coefficient is nonzero, so angular selection does not remove
+   the channel; any nonzero bilinear projection retains the relative
+   standing-wave phase.  Therefore the moment-map cone alone cannot imply a
+   bounded or finite-quasiperiodic correction.  In the smooth-global class,
+   generic nonzero resonances are removable by exponential-polynomial
+   secular inverses using the certified Smith factors.  The remaining
+   smooth-global phase gate is the exceptional static `L=0,K=2k` target
+   block; do not infer it from the generic polar operator.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be
