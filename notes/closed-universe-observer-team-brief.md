@@ -219,6 +219,16 @@ the detector-selected compact massive-two-form Cauchy profiles and their
 massive Green images open.  An arbitrary explicit bump is not sufficient,
 because it could lie in the kernel of the advanced detector covector.
 
+`BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS` now fixes the
+previously arbitrary detector functions as unit-integral flat clock bumps and
+unit-integral radial flat bumps in each local rod chart.  It retains
+`0<epsilon_a<r_chart,a<=1/64`, rather than inventing a numerical injectivity
+radius absent from the local inverse-function certificate.  Formal Green
+adjunction exports the exact chain
+`chi_a P_a -> G_A,adv -> h_a d G_A,adv -> G_Ea,adv -> ell_a`.
+Neither Green image nor a coordinate-level positive-energy Cauchy dual is yet
+evaluated.
+
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
 integral.  Direct variation of the selected action gives the free emitter
@@ -243,9 +253,10 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Using the certified exact normalized `h_0,h_1`, construct explicit compact
-   `u_0,u_1` selected against the actual advanced detector covectors, evaluate
-   their massive Green images, and then compute the absolute-`g^3`
+1. Using the certified exact `h_a`, `chi_a`, and advanced covector operator,
+   evaluate the advanced Maxwell and massive-two-form Green images, take the
+   positive-energy Cauchy dual to construct compact `u_0,u_1`, and then
+   compute the absolute-`g^3`
    (relative-`g^2`) detector recoil coefficient.  In parallel, use the
    exported emitter stress
    and clock-switch source to refine the certified covariant 108-row

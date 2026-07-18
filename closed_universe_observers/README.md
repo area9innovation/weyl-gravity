@@ -54,6 +54,8 @@ python3 -m closed_universe_observers.generate_berger_dynamical_emitter_recoil_pr
 python3 -m closed_universe_observers.verify_berger_dynamical_emitter_recoil_preflight
 python3 -m closed_universe_observers.generate_berger_emitter_switch_profiles --check
 python3 -m closed_universe_observers.verify_berger_emitter_switch_profiles
+python3 -m closed_universe_observers.generate_berger_exact_detector_smearings --check
+python3 -m closed_universe_observers.verify_berger_exact_detector_smearings
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -187,6 +189,12 @@ and clock-phase margins `1/32`.  The remaining Cauchy profiles cannot be
 chosen as arbitrary explicit bumps: they must be selected against the actual
 advanced detector covectors so that the leading detector functionals do not
 annihilate them.
+The detector-smearing successor removes another hidden arbitrariness: it fixes
+unit-integral flat clock bumps, unit-integral radial rod-chart bumps, and the
+advanced Maxwell-to-emitter adjoint chain defining each Cauchy covector.  The
+spatial radii remain exact parameters `0<epsilon_a<r_chart,a<=1/64`, because
+the local inverse-function theorem exports no numerical chart radius.  The
+advanced Green images and coordinate-level Cauchy data are still open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

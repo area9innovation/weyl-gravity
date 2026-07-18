@@ -1,0 +1,48 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "EXACT_DETECTOR_SMEARINGS_ADVANCED_COVECTORS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Exact unit-integral flat detector clock bumps, an exact normalized radial rod-chart profile family, and the formal advanced Maxwell-to-massive-emitter Cauchy-covector chain are exported. The local radius remains a declared positive parameter below the unquantified chart radius. Neither Green image, a coordinate-level emitter preparation, the absolute-g^3 coefficient, PBW payload, backreaction, finite-parameter Green theory, full Dirac algebra, nor a quantum claim is established.",
+  "tier_0": [
+    {"command": "python3 -m py_compile on producer, verifier, and test; git diff --check; SHA-256 replay; exact staged-diff inspection", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "observer-owned fixture, schemas, producer, verifier, tests, certificate, reports, receipt, comparison ledger, README, and observer brief; shared roadmap and unrelated team work excluded"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_exact_detector_smearings --check", "elapsed_seconds": "0.39", "status": "PASS", "scope": "dependency hashes, exact time conversion, clock/radial normalization, profile separation, mutations, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_exact_detector_smearings", "elapsed_seconds": "0.40", "status": "PASS", "scope": "independent dependency, normalization, support, polarization, adjoint-chain, and mutation replay"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_exact_detector_smearings.py", "elapsed_seconds": "0.32 pytest / 0.64 wall", "status": "PASS", "scope": "all 5 exact profile, adjoint, mutation, and fail-closed tests"},
+    {"command": "strict Draft 2020-12 AJV validation of input and certificate", "elapsed_seconds": "3.63 input / final certificate pass", "status": "PASS", "scope": "both schemas and generated artifacts"},
+    {"command": "python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": "under 1", "status": "PASS", "scope": "artifact import and fail-closed Green/profile/coefficient gates"}
+  ],
+  "tier_2": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "205.59 pytest / 206.93 wall", "status": "PASS", "scope": "all 118 closed-universe observer tests; required because the central comparison ledger changed"}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "This is an exact observer input/profile and formal-adjoint certificate; it does not change shared algebra, evaluate a Green kernel, promote a finite-parameter theorem, freeze a release, or make a quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json", "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"},
+    {"path": "closed_universe_observers/fixtures/berger_exact_detector_smearings_input.json", "sha256": "2b050d0fca426ba874eca1d1a22531b2ef6c32416280a1cb87050eb3d2aa7f65"},
+    {"path": "closed_universe_observers/schema/berger-exact-detector-smearings-input-v1.schema.json", "sha256": "193114f6666ee6e4baf29035d6122ba09249513e422af70dbe83953262de89d7"},
+    {"path": "closed_universe_observers/schema/berger-exact-detector-smearings-and-advanced-covectors-v1.schema.json", "sha256": "71689c1a46d7ab7ad16a43566bc6206cd423df081d1b9751586ed272b9155c8e"},
+    {"path": "closed_universe_observers/generate_berger_exact_detector_smearings.py", "sha256": "791938b62a01abd48d2b3d5cbe3a33c3d82473fed6c056e4c563d3d5f7e316dc"},
+    {"path": "closed_universe_observers/verify_berger_exact_detector_smearings.py", "sha256": "c08dc7bdf000bc82a7d9d2d1941e1c900a83f226215be6b7005fdc29e423eb03"},
+    {"path": "closed_universe_observers/tests/test_berger_exact_detector_smearings.py", "sha256": "a09ad38964e9c0d2d2375687fb2c8617e6cab3a10d63629a7400a62da78db7de"},
+    {"path": "closed_universe_observers/reports/berger-exact-detector-smearings-and-advanced-covectors.md", "sha256": "0efe8a827da9efef5ef094a56cd45cc94e263ce558c7e6a48030da32b39ae051"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "25eaa0d488f40db772a26f40a9f2bc4d1d818beb7b6e3e59a4e5b6b7116fb0b7"},
+    {"path": "closed_universe_observers/README.md", "sha256": "dfd6a02c31aca29c707082d51616ea3a33d1736c30e2007536d32fb3a8ee263f"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "9cb3f066fcab76bb38b320bb8b668c5880c4caef151d07f47e9ce56e4ee99709"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "51c9deddf9dcd09f4a2024124fbd42341694eef1e7c9044caa28b02740a3c8fa"}
+  ],
+  "claim_flags": {
+    "EXACT_DETECTOR_CLOCK_PROFILES_SERIALIZED": true,
+    "EXACT_DETECTOR_RADIAL_PROFILE_FAMILY_SERIALIZED": true,
+    "ADVANCED_DETECTOR_TO_EMITTER_COVECTOR_OPERATOR_EXPORTED": true,
+    "NUMERICAL_LOCAL_ROD_CHART_RADIUS_EXPORTED": false,
+    "ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": false,
+    "COORDINATE_LEVEL_EMITTER_CAUCHY_PROFILES_SERIALIZED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

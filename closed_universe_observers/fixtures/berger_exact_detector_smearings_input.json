@@ -1,0 +1,29 @@
+{
+  "schema": "closed-universe-berger-exact-detector-smearings-input-v1",
+  "clock_rate_dTheta_dt": "3/4",
+  "detectors": [
+    {
+      "id": "D0",
+      "clock_center": "3/16",
+      "clock_radius": "1/64",
+      "rod_center": ["1/4", "0", "0"],
+      "rod_radius_parameter": "epsilon_0",
+      "rod_chart_radius_upper_bound": "r_chart_0",
+      "declared_radius_inequality": "0<epsilon_0<r_chart_0",
+      "polarization": "dTheta_wedge_dR0_1"
+    },
+    {
+      "id": "D1",
+      "clock_center": "3/8",
+      "clock_radius": "1/64",
+      "rod_center": ["1/2", "0", "0"],
+      "rod_radius_parameter": "epsilon_1",
+      "rod_chart_radius_upper_bound": "r_chart_1",
+      "declared_radius_inequality": "0<epsilon_1<r_chart_1",
+      "polarization": "dTheta_wedge_dR1_2"
+    }
+  ],
+  "clock_bump": "B(s)=exp(1-1/(1-s^2)) for |s|<1 and 0 otherwise",
+  "radial_bump": "B3(y)=exp(1-1/(1-|y|^2)) for |y|<1 and 0 otherwise",
+  "normalization": "UNIT_CLOCK_AND_ROD_INTEGRALS"
+}

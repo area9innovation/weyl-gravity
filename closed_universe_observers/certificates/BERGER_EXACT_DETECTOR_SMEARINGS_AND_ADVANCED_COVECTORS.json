@@ -1,0 +1,175 @@
+{
+  "advanced_detector_to_emitter_covector": {
+    "all_sources_compact": true,
+    "cauchy_covector": "ell_a(u)=omega_Ea(Cauchy(V_a^adv),u)",
+    "detector_functional": "Q_a[F]=integral chi_a <P_a,F>_gHat dvol_gHat",
+    "emitter_advanced_field": "V_a^adv=G_Ea,adv[g_a h_a d G_A,adv delta_gHat(chi_a P_a)]",
+    "emitter_advanced_source": "w_a=g_a h_a d A_a^adv",
+    "formal_adjoint_identity": "Q_a[d G_A,ret g_a delta(h_a U_Ea u)]=omega_Ea(Cauchy(V_a^adv),u)",
+    "green_images_evaluated": false,
+    "maxwell_advanced_field": "A_a^adv=G_A,adv delta_gHat(chi_a P_a)",
+    "maxwell_advanced_source": "delta_gHat(chi_a P_a)",
+    "maxwell_gauge_adjoint_well_typed": true,
+    "normalized_density": "chi_a=f_a(Theta) rho_a(R_a) J_a(gHat,Theta,R_a)"
+  },
+  "authoritative_input": {
+    "path": "closed_universe_observers/fixtures/berger_exact_detector_smearings_input.json",
+    "sha256": "2b050d0fca426ba874eca1d1a22531b2ef6c32416280a1cb87050eb3d2aa7f65"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL input certificate replaces the previously arbitrary detector bumps by two fixed flat clock profiles and fixed radial flat-bump shapes in the certified local rod charts. The clock profiles have exact supports [11/64,13/64] and [23/64,25/64] and unit clock integrals. Each spatial profile has unit rod-coordinate integral for every declared 0<epsilon_a<r_chart,a<=1/64; retaining epsilon_a is necessary because the imported inverse-function theorem did not export a numerical chart radius. The certificate also derives the exact advanced adjoint chain from chi_a P_a through the Maxwell and massive-emitter advanced Green operators to the emitter Cauchy covector ell_a. It does not evaluate either Green image, choose a coordinate-level compact Cauchy profile u_a, compute the absolute-g^3 recoil coefficient, construct the PBW q2 payload, solve backreaction, establish finite-parameter Green theory or the full Dirac algebra, or make a quantum claim.",
+  "claim_status": "EXACT_DETECTOR_PROFILES_AND_ADVANCED_COVECTOR_OPERATOR_EXPORTED_GREEN_EVALUATION_OPEN",
+  "dependency_refs": {
+    "detectors": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    },
+    "normalized_profile": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json",
+      "result_id": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY",
+      "sha256": "1dc8720b2e8a208094a40ab736d3e6459c8c5afb5308baca6c1e82c8b9e2f6f2"
+    },
+    "switches": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+      "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"
+    },
+    "unary_recoil": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL",
+      "sha256": "19666c947d0ea45cd62e516bc24310ca005074544f6ab56e292366c1db8d69db"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_detector_profiles": {
+    "clock_core_integral": "C_B=integral_-1^1 B(s) ds>0",
+    "clock_normalization_after_substitution": "1",
+    "clock_rate_dTheta_dt": "3/4",
+    "clock_supports_disjoint": true,
+    "detectors": [
+      {
+        "clock_center": "3/16",
+        "clock_profile": "f_0(Theta)=B((Theta-(3/16))/(1/64))/((1/64) C_B)",
+        "clock_radius": "1/64",
+        "clock_support": [
+          "11/64",
+          "13/64"
+        ],
+        "id": "D0",
+        "physical_time_support": [
+          "11/48",
+          "13/48"
+        ],
+        "polarization": "dTheta_wedge_dR0_1",
+        "rod_center": [
+          "1/4",
+          "0",
+          "0"
+        ],
+        "rod_chart_radius_bound": "0<epsilon_0<r_chart_0<=1/64",
+        "rod_radius_parameter": "epsilon_0",
+        "spatial_profile": "rho_0(R)=B3((R-c_0)/epsilon_0)/(epsilon_0^3 C_B3)"
+      },
+      {
+        "clock_center": "3/8",
+        "clock_profile": "f_1(Theta)=B((Theta-(3/8))/(1/64))/((1/64) C_B)",
+        "clock_radius": "1/64",
+        "clock_support": [
+          "23/64",
+          "25/64"
+        ],
+        "id": "D1",
+        "physical_time_support": [
+          "23/48",
+          "25/48"
+        ],
+        "polarization": "dTheta_wedge_dR1_2",
+        "rod_center": [
+          "1/2",
+          "0",
+          "0"
+        ],
+        "rod_chart_radius_bound": "0<epsilon_1<r_chart_1<=1/64",
+        "rod_radius_parameter": "epsilon_1",
+        "spatial_profile": "rho_1(R)=B3((R-c_1)/epsilon_1)/(epsilon_1^3 C_B3)"
+      }
+    ],
+    "polarizations_distinct": true,
+    "radial_core_integral": "C_B3=integral_|y|<1 B3(y) d^3y>0",
+    "spatial_normalization_after_substitution": "1",
+    "spatial_normalization_scale": "1/(C_B3*epsilon**3)",
+    "spatial_supports_inside_declared_local_chart_families": true,
+    "unit_clock_integrals": true,
+    "unit_spatial_rod_integrals": true
+  },
+  "flags": {
+    "ADVANCED_DETECTOR_TO_EMITTER_COVECTOR_OPERATOR_EXPORTED": true,
+    "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": false,
+    "ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "COORDINATE_LEVEL_EMITTER_CAUCHY_PROFILES_SERIALIZED": false,
+    "DETECTOR_PROFILE_CLOCK_AND_ROD_NORMALIZATION_EXACT": true,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "EXACT_DETECTOR_CLOCK_PROFILES_SERIALIZED": true,
+    "EXACT_DETECTOR_RADIAL_PROFILE_FAMILY_SERIALIZED": true,
+    "NUMERICAL_LOCAL_ROD_CHART_RADIUS_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "omit_epsilon_cubed_spatial_scale"
+    },
+    {
+      "detected": true,
+      "name": "duplicate_detector_clock_profile"
+    },
+    {
+      "detected": true,
+      "name": "clone_detector_polarization"
+    },
+    {
+      "detected": true,
+      "name": "delete_outer_coderivative"
+    }
+  ],
+  "next_gate": "EVALUATE_THE_ADVANCED_MAXWELL_AND_MASSIVE_TWO_FORM_GREEN_IMAGES_THEN_TAKE_THE_POSITIVE_ENERGY_CAUCHY_DUAL",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_exact_detector_smearings.py",
+        "sha256": "791938b62a01abd48d2b3d5cbe3a33c3d82473fed6c056e4c563d3d5f7e316dc"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_exact_detector_smearings.py",
+        "sha256": "c08dc7bdf000bc82a7d9d2d1941e1c900a83f226215be6b7005fdc29e423eb03"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_exact_detector_smearings.py",
+        "sha256": "a09ad38964e9c0d2d2375687fb2c8617e6cab3a10d63629a7400a62da78db7de"
+      },
+      {
+        "path": "closed_universe_observers/fixtures/berger_exact_detector_smearings_input.json",
+        "sha256": "2b050d0fca426ba874eca1d1a22531b2ef6c32416280a1cb87050eb3d2aa7f65"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-exact-detector-smearings-input-v1.schema.json",
+        "sha256": "193114f6666ee6e4baf29035d6122ba09249513e422af70dbe83953262de89d7"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-exact-detector-smearings-and-advanced-covectors-v1.schema.json",
+        "sha256": "71689c1a46d7ab7ad16a43566bc6206cd423df081d1b9751586ed272b9155c8e"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-exact-detector-smearings-and-advanced-covectors.md",
+        "sha256": "0efe8a827da9efef5ef094a56cd45cc94e263ce558c7e6a48030da32b39ae051"
+      }
+    ]
+  },
+  "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+  "schema": "closed-universe-berger-exact-detector-smearings-and-advanced-covectors-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

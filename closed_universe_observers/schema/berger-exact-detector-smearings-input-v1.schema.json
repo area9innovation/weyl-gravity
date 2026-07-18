@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-exact-detector-smearings-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "clock_rate_dTheta_dt", "detectors", "clock_bump", "radial_bump", "normalization"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-exact-detector-smearings-input-v1"},
+    "clock_rate_dTheta_dt": {"const": "3/4"},
+    "detectors": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/D0"},
+        {"$ref": "#/$defs/D1"}
+      ],
+      "items": false
+    },
+    "clock_bump": {"const": "B(s)=exp(1-1/(1-s^2)) for |s|<1 and 0 otherwise"},
+    "radial_bump": {"const": "B3(y)=exp(1-1/(1-|y|^2)) for |y|<1 and 0 otherwise"},
+    "normalization": {"const": "UNIT_CLOCK_AND_ROD_INTEGRALS"}
+  },
+  "$defs": {
+    "D0": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "clock_center", "clock_radius", "rod_center", "rod_radius_parameter", "rod_chart_radius_upper_bound", "declared_radius_inequality", "polarization"],
+      "properties": {
+        "id": {"const": "D0"}, "clock_center": {"const": "3/16"}, "clock_radius": {"const": "1/64"},
+        "rod_center": {"const": ["1/4", "0", "0"]}, "rod_radius_parameter": {"const": "epsilon_0"},
+        "rod_chart_radius_upper_bound": {"const": "r_chart_0"}, "declared_radius_inequality": {"const": "0<epsilon_0<r_chart_0"},
+        "polarization": {"const": "dTheta_wedge_dR0_1"}
+      }
+    },
+    "D1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "clock_center", "clock_radius", "rod_center", "rod_radius_parameter", "rod_chart_radius_upper_bound", "declared_radius_inequality", "polarization"],
+      "properties": {
+        "id": {"const": "D1"}, "clock_center": {"const": "3/8"}, "clock_radius": {"const": "1/64"},
+        "rod_center": {"const": ["1/2", "0", "0"]}, "rod_radius_parameter": {"const": "epsilon_1"},
+        "rod_chart_radius_upper_bound": {"const": "r_chart_1"}, "declared_radius_inequality": {"const": "0<epsilon_1<r_chart_1"},
+        "polarization": {"const": "dTheta_wedge_dR1_2"}
+      }
+    }
+  }
+}

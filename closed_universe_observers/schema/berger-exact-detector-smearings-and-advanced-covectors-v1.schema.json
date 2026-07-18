@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-exact-detector-smearings-and-advanced-covectors-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "authoritative_input", "exact_detector_profiles", "advanced_detector_to_emitter_covector", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-exact-detector-smearings-and-advanced-covectors-v1"},
+    "result_id": {"const": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_DETECTOR_PROFILES_AND_ADVANCED_COVECTOR_OPERATOR_EXPORTED_GREEN_EVALUATION_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "authoritative_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "exact_detector_profiles": {
+      "type": "object",
+      "required": ["unit_clock_integrals", "unit_spatial_rod_integrals", "clock_supports_disjoint", "polarizations_distinct", "detectors"],
+      "properties": {
+        "unit_clock_integrals": {"const": true},
+        "unit_spatial_rod_integrals": {"const": true},
+        "clock_supports_disjoint": {"const": true},
+        "polarizations_distinct": {"const": true},
+        "detectors": {"type": "array", "minItems": 2, "maxItems": 2}
+      }
+    },
+    "advanced_detector_to_emitter_covector": {
+      "type": "object",
+      "required": ["formal_adjoint_identity", "maxwell_gauge_adjoint_well_typed", "all_sources_compact", "green_images_evaluated"],
+      "properties": {
+        "maxwell_gauge_adjoint_well_typed": {"const": true},
+        "all_sources_compact": {"const": true},
+        "green_images_evaluated": {"const": false},
+        "formal_adjoint_identity": {"type": "string"}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 4, "maxItems": 4},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["EXACT_DETECTOR_CLOCK_PROFILES_SERIALIZED", "EXACT_DETECTOR_RADIAL_PROFILE_FAMILY_SERIALIZED", "DETECTOR_PROFILE_CLOCK_AND_ROD_NORMALIZATION_EXACT", "ADVANCED_DETECTOR_TO_EMITTER_COVECTOR_OPERATOR_EXPORTED", "NUMERICAL_LOCAL_ROD_CHART_RADIUS_EXPORTED", "ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED", "COORDINATE_LEVEL_EMITTER_CAUCHY_PROFILES_SERIALIZED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "EXACT_DETECTOR_CLOCK_PROFILES_SERIALIZED": {"const": true},
+        "EXACT_DETECTOR_RADIAL_PROFILE_FAMILY_SERIALIZED": {"const": true},
+        "DETECTOR_PROFILE_CLOCK_AND_ROD_NORMALIZATION_EXACT": {"const": true},
+        "ADVANCED_DETECTOR_TO_EMITTER_COVECTOR_OPERATOR_EXPORTED": {"const": true},
+        "NUMERICAL_LOCAL_ROD_CHART_RADIUS_EXPORTED": {"const": false},
+        "ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": {"const": false},
+        "COORDINATE_LEVEL_EMITTER_CAUCHY_PROFILES_SERIALIZED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

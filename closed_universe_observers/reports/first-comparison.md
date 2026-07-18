@@ -296,6 +296,11 @@ and evaluated massive Green images.  The switch-profile successor now
 serializes exact unit-clock-integral `C-infinity` bumps with the required
 strict causal order, so only detector-selected compact Cauchy profiles and
 their Green images remain on that input side.
+The detector-profile successor also fixes the exact detector clock/radial
+bumps and derives the advanced Maxwell-to-emitter Cauchy-covector operator.
+Its local spatial radius is an exact admissible parameter because no numerical
+chart injectivity radius is certified.  The two advanced Green images and
+coordinate-level Cauchy dual remain unevaluated.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -491,3 +496,7 @@ The switch-profile successor fixes two exact flat compact clock bumps, proves
 their unit clock-integral normalization and strict detector ordering, and
 keeps the Cauchy-profile/Green-image gate fail-closed.  Its receipt is
 `closed_universe_observers/receipts/EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES_TIER_RECEIPT.json`.
+The detector-profile successor freezes exact normalized detector bumps and
+the formal advanced adjoint chain while leaving both Green images and the
+coordinate Cauchy dual open.  Its receipt is
+`closed_universe_observers/receipts/EXACT_DETECTOR_SMEARINGS_ADVANCED_COVECTORS_TIER_RECEIPT.json`.
