@@ -250,6 +250,14 @@ exact sum & $199/30$ & $-87/20$ & $0$ & $0$\\
 \bottomrule
 \end{tabular}
 \end{center}
+The first two columns are reconstructed factor by factor from two independent
+carriers: the Ricci-flat coefficient gives $c_i-a_i$, while the round-$S^4$
+calculation gives $a_i$.  Thus $c_i=(c_i-a_i)+a_i$ for every row, not merely
+after summation.  The parity-odd zero is factorwise because every operator is
+a real parity-even tensor Laplacian.  By contrast, the displayed $\Box R$
+zero is a convention for the \emph{total} local functional: the single
+allowed $R^2$ counterterm sets the summed type-D coordinate to zero.  It is
+not four independently scheme-invariant factorwise $\Box R$ calculations.
 This is still a bosonic-Weyl-parameter Ward carrier, not yet a BV cohomology
 class.  The next step performs the regulated Ward insertion and ghost
 replacement.
@@ -277,6 +285,18 @@ gives
  =\frac1{(4\pi)^2}\int\!\sqrt g\,\omega
  (cC^2-aE_4+b\Box R)+s\mathcal B+\dd\mathcal C.
 \]
+More explicitly, for the continued integrated carriers $I_i(d)$ used by the
+regulator, the cohomological residue identity has the form
+\[
+ s_d I_i(d)=(d-4)A_i^4+s_d B_i(d)+\dd C_i(d)
+             +O\bigl((d-4)^2\bigr),
+\]
+where $A_i^4$ is the Diff-completed ghost insertion represented at top form
+by $\omega C^2$, $\omega E_4$, or $\omega\Box R$.  Multiplication by the pole
+and passage to the quotient therefore sends each heat-kernel coordinate to
+the corresponding normalized dual coordinate in $H^{1,4}(s\mid\dd)$.  This
+residue map, rather than equality of familiar coefficient names, is the
+determinant-to-Slavnov bridge.
 This is the coefficient-bearing map from the Euclidean integration slice to a
 ghost-number-one Slavnov class; it is why a logarithmic divergence, trace
 anomaly, and BV anomaly are not silently conflated.
@@ -400,6 +420,29 @@ $N_{\rm quartet}^{-1}h$, extended to covariant jets as a graded derivation.
 The Diff and horizontal pieces preserve quartet number, so the filtered
 total-complex contraction follows by homological perturbation in the declared
 formal completion.
+
+For clarity, the total-complex contraction can be read without replaying the
+boundary matrix.  Write $\mathcal D=Q_W+\delta$, with $\delta$ the remaining
+Diff, Koszul--Tate, and horizontal rows in dressed variables.  The four
+quartet members occur in matched covariant Diff modules, and $h$ is extended
+to their jets as a covariant graded derivation.  Hence
+\(
+ [N_{\rm quartet},\delta]=0
+\)
+and the graded anticommutator $[\delta,h]_+$ vanishes.  Therefore
+\[
+ \mathcal D h+h\mathcal D=N_{\rm quartet}.
+\]
+If $\mathcal D\mathbf a=0$ and $\mathbf a_n$ has positive quartet number
+$n$, then
+\(
+ \mathbf a_n=\mathcal D(n^{-1}h\mathbf a_n)
+\).
+The total cohomology is consequently represented at quartet number zero,
+where $\mathcal D$ is the pure-Diff BV total differential of $\widehat g$.
+Thus $H^{1,4}_{\rm ext}=0$ imports the independently certified pure-Diff
+ghost-one result; it is not inferred only from the four displayed
+Wess--Zumino primitives.
 
 The exponential change is an automorphism only after declaring the formal
 $\tau$-adic local analytic completion.  Its two inverse series are replayed with

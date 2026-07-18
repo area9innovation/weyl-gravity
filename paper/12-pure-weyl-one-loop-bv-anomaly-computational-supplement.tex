@@ -170,6 +170,14 @@ with priming dimensions $(0,5,0,10)$.
 The generated determinant table prints each operator, rank, statistics,
 exponent, and zero-mode subtraction separately.
 
+For each factor, the two invariant coordinates are reconstructed from
+independent carriers: the Ricci-flat row supplies $c_i-a_i$ and the
+round-$S^4$ row supplies $a_i$, so the generated table forms
+$c_i=(c_i-a_i)+a_i$ before summing factors.  The parity-odd zero is factorwise
+for the declared real parity-even operator family.  The $\Box R=0$ column is
+instead the chosen scheme for the total functional, implemented by one local
+$R^2$ counterterm; no factorwise scheme-invariant type-D claim is made.
+
 The local $C^2$ coordinate is exposed on a non-conformally-flat Ricci-flat
 carrier.  The Euler coordinate is independently fixed on round $S^4$.  The
 measure ledger includes York and ghost super-Jacobians, all nonminimal
@@ -212,6 +220,16 @@ universal Diff descent, and reducing exact, parameter-dependent, and total
 derivative rows produces the ghost-one insertion.  Thus the determinant
 ledger supplies coefficients to an independently assembled Slavnov carrier;
 it is not itself called a BV anomaly.
+
+In certificate notation the residue map is
+\[
+ s_d I_i(d)=(d-4)A_i^4+s_dB_i(d)+\dd_hC_i(d)
+             +O((d-4)^2),
+\]
+with $A_i^4$ the complete ghost-one carrier.  The pole residue is paired with
+the normalized quotient duals only after the exact and horizontal rows are
+removed.  This is the machine-readable distinction among determinant
+coefficients, a bosonic Weyl Ward variation, and the BV Slavnov class.
 
 \subsection{Matter cone}
 
@@ -270,6 +288,20 @@ dividing by positive quartet number gives the contraction
 $Q_Wh+hQ_W=N_{\rm quartet}$.  Diff transport and $\dd_h$ preserve the
 filtration, so homological perturbation lifts this contraction to the total
 formal complex.
+
+More directly, write the total differential as
+$\mathcal D=Q_W+\delta$.  In dressed covariant jets the quartet members occur
+in matched Diff modules, so the covariant graded derivation $h$ obeys
+$[\delta,h]_+=0$ and $[N_{\rm quartet},\delta]=0$.  Thus
+\[
+ \mathcal D h+h\mathcal D=N_{\rm quartet}.
+\]
+Every closed component of positive quartet number $n$ is explicitly the
+boundary $\mathcal D(n^{-1}h\mathbf a_n)$.  At quartet number zero the total
+differential is the pure-Diff BV differential of $\widehat g$.  The
+independently certified pure-Diff ghost-one zero, rather than the four
+primitive matrix alone, therefore completes the proof of
+$H^{1,4}_{\rm ext}=0$.
 
 The coordinate change is interpreted in the formal $\tau$-adic local analytic
 completion.  Exact inverse series are checked through order eight, and the
