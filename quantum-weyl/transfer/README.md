@@ -410,9 +410,17 @@ question.  Interactions need not preserve particle number, so the relevant
 HT3 receipt is the associated spectral sequence and its obstruction maps,
 not an assertion that the free direct-summand decomposition remains literal.
 
-Quantum `Q_1` or higher corrections are a later input.  They may be
-transferred only after a separate `QME_RESTORED` certificate.  Nothing in
-this package is a quantum or `LORENTZIAN-CAUSAL` result.
+The compensator theory now has a scoped one-loop local Euclidean
+`QME_RESTORED` certificate, and the coefficient-bearing local Wess--Zumino
+Hamiltonian contribution to `Q_1` is fixed.  This is not a complete
+renormalized operator.  `ONE_LOOP_SLAVNOV_Q1_DISPOSITION` gives an exact
+rank-two bulk ambiguity from the allowed `C(g_hat)^2` and `R(g_hat)^2` finite
+counterterms and records the absent finite nonlocal effective action,
+renormalized BV Laplacian or time-ordered product, and normalization
+conditions.  Residual transfer remains forbidden until those data and a
+compensator-inclusive classical contraction are supplied.  None of the
+classical transfer results in this package is thereby promoted to a quantum
+or `LORENTZIAN-CAUSAL` result.
 
 ## Commands
 
@@ -433,6 +441,8 @@ python3 quantum-weyl/transfer/berger_54_row_local_d_import_certificate.py --chec
 python3 quantum-weyl/transfer/arity_three_cartan_certificate.py --check
 python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --check
 python3 quantum-weyl/transfer/einstein_projection_amplitude_fixture_certificate.py --check
+PYTHONPATH=quantum-weyl python3 -m transfer.one_loop_slavnov_q1_disposition --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_one_loop_slavnov_q1_disposition
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

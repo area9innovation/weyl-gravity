@@ -52,6 +52,7 @@ def main() -> None:
     assert claims["extended_H04_odd_dimension"] == 1
     assert claims["extended_H14_even_dimension"] == 0
     assert claims["extended_H14_odd_dimension"] == 0
+    assert claims["finite_counterterm_bulk_Q1_ambiguity_rank"] == 2
     boolean_claims = {
         key: value for key, value in claims.items() if isinstance(value, bool)
     }
@@ -60,11 +61,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1"
+        == "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 7
+    assert len(payload["inputs"]) == 8
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -75,6 +76,7 @@ def main() -> None:
 
     strict = dependencies["REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"]
     extended = dependencies["WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY"]
+    q1 = dependencies["ONE_LOOP_SLAVNOV_Q1_DISPOSITION"]
     assert strict["qme_disposition"]["status"] == "OBSTRUCTED_STRICT_FIELD_CONTENT"
     assert strict["coefficients"]["ANOM_OMEGA_C2"] == claims["C2_coefficient"]
     assert strict["coefficients"]["ANOM_OMEGA_E4"] == claims["E4_coefficient"]
@@ -85,6 +87,9 @@ def main() -> None:
         == extended["one_loop_QME"]["boundary_image_coordinates"]
     )
     assert extended["lifecycle"]["residual_transfer"].startswith("FORBIDDEN_")
+    assert q1["finite_counterterm_ambiguity"]["bulk_response_rank"] == 2
+    assert q1["decision"]["complete_Q1"] == "NO_CERTIFIED_OPERATOR"
+    assert q1["decision"]["residual_transfer"] == "FORBIDDEN"
     print("Paper 12 pure-Weyl one-loop BV anomaly claim map: PASS")
 
 

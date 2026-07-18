@@ -27,6 +27,7 @@ INPUTS = {
     "matter_no_go": ROOT / "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "cotangent_lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "extended_cohomology": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+    "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
 }
 
 
@@ -47,6 +48,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     matter = values["matter_no_go"]
     lift = values["cotangent_lift"]
     extended = values["extended_cohomology"]
+    q1 = values["Q1_disposition"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -73,6 +75,9 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or extended.get("H14", {}).get("odd_quotient_dimension") != 0
         or extended.get("one_loop_QME", {}).get("status")
         != "QME_RESTORED_AT_ONE_LOOP_LOCAL_EUCLIDEAN_TAU_ADIC_EXTENDED_THEORY"
+        or q1.get("finite_counterterm_ambiguity", {}).get("bulk_response_rank") != 2
+        or q1.get("decision", {}).get("complete_Q1") != "NO_CERTIFIED_OPERATOR"
+        or q1.get("decision", {}).get("residual_transfer") != "FORBIDDEN"
     ):
         raise ValueError("Paper 12 theorem dependency drifted")
     return values
@@ -125,6 +130,8 @@ def build() -> dict[str, Any]:
             "extended_H14_even_dimension": extended["H14"]["even_quotient_dimension"],
             "extended_H14_odd_dimension": extended["H14"]["odd_quotient_dimension"],
             "extended_one_loop_local_Euclidean_QME_restored": True,
+            "WZ_local_counterterm_Q1_contribution_fixed": True,
+            "finite_counterterm_bulk_Q1_ambiguity_rank": 2,
         },
         "explicit_nonclaims": {
             "finite_polynomial_in_tau_theorem": False,
@@ -135,16 +142,18 @@ def build() -> dict[str, Any]:
             "positive_particle_Hilbert_space": False,
             "unitarity_theorem": False,
             "residual_quantum_transfer": False,
+            "complete_renormalized_Q1_supplied": False,
             "quantum_Cartan_identity": False,
             "Bridge_4_particle_crosswalk": False,
             "Bridge_5_interacting_BRST_map": False,
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
+            "status": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             "required_inputs": [
                 "compensator-inclusive classical contraction",
-                "coefficient-bearing restored one-loop Slavnov operator Q1",
+                "finite C2 and R2 normalization conditions",
+                "finite nonlocal Gamma1 and renormalized BV operator data fixing complete Q1",
             ],
             "required_outputs": [
                 "q1=pi_ext Q1 iota_ext",

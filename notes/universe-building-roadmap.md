@@ -45,7 +45,7 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Vacuum conformal cylinder | complete free causal gauge complex and the stated residual reduction | matter clocks, interactions, particles, or scattering |
 | Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), full retained BV cyclicity, and an exact first-page obstruction to removing the mixed \(\ell_3\) by the declared filtered cyclic `F2/F3` class; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, first formal coupled Euler recoil Green term, coefficientwise causal chain homotopy through \(g^2\), rank-two leading transfer from actual localized massive-emitter Cauchy data, the exact absolute-\(g^3\)/relative-\(g^2\) recoil operator, exact normalized compact emitter switches, the emitter stress/clock-switch \(q_2\) backreaction jet, and the covariant all-row \(q_1q_2\) master identity | a residual-cohomology or SDR-independent deformation-class theorem beyond the declared filtered equivalence relation, a different noncontractible filtered or mixed-bundle branch split, a branch-resolved mode-pair source table, original common-Hopf emitter, detector-selected emitter Cauchy profiles/Green images and evaluated recoil coefficient, support-local 108-row PBW payload and solved backreacted branch, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter/all-orders Green hyperbolicity, all-orders closure, or genericity |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; generic extra branches and their Lee--Wald pairing; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | quadratic-source disposition on every mixed-cone stratum, exceptional fourth-order targets, nonlinear causal closure, or asymptotic radiation |
-| Quantum local algebra | complete full-BV even/odd strict local quotient on the regular Bach locus; exact repository Euclidean elliptic complex; Ricci-flat `C2` and round-`S4` Euler coefficient carriers giving `(199/30,-87/20,0,0)`; nontrivial regulated Slavnov insertion and `OBSTRUCTED_STRICT_FIELD_CONTENT` local Euclidean QME; standard-unitary-matter cancellation no-go; exact compensator cotangent lift; complete formal tau-adic extended `H04=(3 even,1 odd)`, `H14=0`; coefficient-bearing one-loop extended local Euclidean QME restoration; generated fail-closed quantum residual-atlas fragment | all-loop or Lorentzian extended QME, extended classical contraction and transferred `Q1`, residual quantum transfer, global BRST Hadamard state, certified same-background particle crosswalk, or scattering |
+| Quantum local algebra | complete full-BV even/odd strict local quotient on the regular Bach locus; exact repository Euclidean elliptic complex; Ricci-flat `C2` and round-`S4` Euler coefficient carriers giving `(199/30,-87/20,0,0)`; nontrivial regulated Slavnov insertion and `OBSTRUCTED_STRICT_FIELD_CONTENT` local Euclidean QME; standard-unitary-matter cancellation no-go; exact compensator cotangent lift; complete formal tau-adic extended `H04=(3 even,1 odd)`, `H14=0`; coefficient-bearing one-loop extended local Euclidean QME restoration; fixed local Wess--Zumino `Q1` contribution with exact rank-two finite-counterterm bulk ambiguity; generated fail-closed quantum residual-atlas fragment | complete normalized renormalized `Q1`, all-loop or Lorentzian extended QME, extended classical contraction and residual transfer, global BRST Hadamard state, certified same-background particle crosswalk, or scattering |
 | Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; bare nonintegrability removed by the basicness-forced normalized generator `chi = u d_t` with exact Hamiltonian `H = -16 pi alpha beta^2 D2`, Wald entropy, and first law at every simple horizon; linear-level frame independence: arbitrary time-dependent conformal and `l=0` diffeo perturbations carry exactly zero charge and flux, entropy conformally invariant on the symbolic family, unique linear generator extension | radiative `l>=2` bilinear flux matrix and exterior causal complex (BH-2A), second-order/physical-process first law, nonlinear horizon dynamics, stability, or any ringdown statement |
 
 No row may be used as evidence for another row merely because both use the
@@ -59,7 +59,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     import an extended classical contraction and construct the coefficient-bearing one-loop Slavnov operator Q1
+Quantum:     fix finite Gamma1 normalization and import an extended classical contraction before residual Q1 transfer
 Observer:    resolve the profile-bandwidth obstruction, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  build the odd-parity exterior complex and bilinear flux matrix (BH-2A)
 ```
@@ -324,8 +324,13 @@ fixed-field-content quantum lifecycle `OBSTRUCTED`, while the formal tau-adic
 compensator theory has a separately certified one-loop local Euclidean
 `QME_RESTORED` disposition. Neither result alters the classical mode imports
 or manufactures a particle interpretation. The extended result cannot enter
-residual transfer until a compensator-inclusive classical contraction and
-`Q1` are certified.
+residual transfer until a compensator-inclusive classical contraction and a
+complete renormalized `Q1` are certified. The local Wess--Zumino Hamiltonian
+piece of `Q1` is now coefficient-bearing, but the allowed `C(g_hat)^2` and
+`R(g_hat)^2` finite counterterms give an exact rank-two bulk ambiguity. The
+finite nonlocal effective action, renormalized BV Laplacian or time-ordered
+product, and finite normalization conditions remain absent, so complete `Q1`
+is `NO_CERTIFIED_OPERATOR`.
 
 The fragment imports the abstract correction-class-sensitive tangent-cone
 theorem by content hash. Its bounded/quasiperiodic, smooth-secular, and
@@ -1115,7 +1120,10 @@ Euclidean QME is certified obstructed. The formal tau-adic compensator
 extension now has an exact cotangent lift, complete dimension-four `H04/H14`,
 and a restored one-loop local Euclidean QME. T4's local one-loop disposition
 is complete; residual transfer remains disabled pending an extended classical
-contraction and coefficient-bearing Slavnov operator `Q1`.
+contraction and a complete renormalized Slavnov operator `Q1`. The local
+Wess--Zumino Hamiltonian piece is fixed, but an exact rank-two `C(g_hat)^2`/
+`R(g_hat)^2` bulk ambiguity refutes uniqueness until finite normalization and
+the finite nonlocal/renormalized-product data are supplied.
 
 The matter-cancellation T4 branch is closed: a separating dual-cone certificate proves
 that nonnegative standard-sign free conformal scalars, Weyl/Dirac fermions,
@@ -1157,7 +1165,7 @@ REPOSITORY_RELEASED artifact is committed, linked to its receipts, and public in
 | Berger light and relational redshift beyond Paper 11 | first scoped C-G4 theorem certified: actual retarded, spatially global probe signal with crossings, reduced probe bracket, and nontrivial evolution | localize emitter and receiver after the mixed \(\epsilon_R^2\kappa\) apparatus gate; do not promote the probe bracket to a full apparatus Dirac bracket |
 | Abstract Green/BGG transfer | outline allowed | abstract hypotheses, toy example, complete detour example, and independent verifier; avoid duplicating Paper 8 without a new abstraction or application |
 | Nonlinear quotient stability | `DRAFT_ALLOWED` for the scoped G0 filtered-cyclic obstruction theorem | keep transformation-class and frozen-carrier qualifiers explicit; branch-resolved or cohomological claims additionally require an accepted branch projector and residual descent |
-| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction and tau-adic extended one-loop local Euclidean restoration | complete specialist prose/citation and clean release review; the next theorem requires an extended classical contraction, coefficient-bearing `Q1`, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
+| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction, tau-adic extended one-loop local Euclidean restoration, and exact rank-two `Q1` underdetermination | complete specialist prose/citation and clean release review; the next theorem requires finite `Gamma1` normalization/data, an extended classical contraction, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
 | Asymptotic radiation and black holes | programme stage | boundary phase space, charges, flux, and extra-branch classification |
 | Galaxy/dark-matter and cosmology/dark-energy phenomenology | later programme stage | physical weak-field/cosmological observables and stability before data comparison |
 

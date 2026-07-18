@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-one-loop-slavnov-q1-disposition-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "classical_commit",
+    "operator_convention",
+    "fixed_local_contribution",
+    "finite_counterterm_ambiguity",
+    "missing_operator_data",
+    "decision",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-one-loop-slavnov-q1-disposition-v1"},
+    "result_id": {"const": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION"},
+    "result_state": {"const": "LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED_COMPLETE_Q1_UNDERDETERMINED_RESIDUAL_TRANSFER_FORBIDDEN"},
+    "dependency_tags": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "classical_commit": {"type": "string", "minLength": 40, "maxLength": 40},
+    "operator_convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["effective_action", "first_slavnov_operator", "counterterm_hamiltonian", "counterterm"],
+      "properties": {
+        "effective_action": {"type": "string"},
+        "first_slavnov_operator": {"type": "string"},
+        "counterterm_hamiltonian": {"const": "Q_1^WZ=(C_1^WZ,.)"},
+        "counterterm": {"const": "C_1^WZ=-(4 pi)^(-2)[(199/30)B_C-(87/20)B_E]"}
+      }
+    },
+    "fixed_local_contribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_basis", "coefficient_vector", "field_and_ghost_rows", "cotangent_rows", "status"],
+      "properties": {
+        "coefficient_basis": {"const": ["B_C", "B_E"]},
+        "coefficient_vector": {"$ref": "#/$defs/rationalVector"},
+        "field_and_ghost_rows": {"const": "ZERO_BECAUSE_C_1_WZ_HAS_ANTIFIELD_NUMBER_ZERO"},
+        "cotangent_rows": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["g_hat_star", "tau_hat_star"],
+          "properties": {
+            "g_hat_star": {"const": "Euler_g_hat(C_1^WZ)"},
+            "tau_hat_star": {"const": "Euler_tau(C_1^WZ)"}
+          }
+        },
+        "status": {"const": "COEFFICIENT_BEARING_LOCAL_HAMILTONIAN_CONTRIBUTION_FIXED"}
+      }
+    },
+    "finite_counterterm_ambiguity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["H04_basis", "parameters", "family", "flat_fixture", "bulk_quadratic_response_rows", "bulk_quadratic_response_matrix", "bulk_response_rank", "bulk_kernel", "kernel_reason", "conclusion"],
+      "properties": {
+        "H04_basis": {"const": ["C(g_hat)^2", "E4(g_hat)", "R(g_hat)^2", "C(g_hat) dual C(g_hat)"]},
+        "parameters": {"const": ["z_C", "z_E", "z_R", "z_P"]},
+        "family": {"type": "string"},
+        "flat_fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["signature", "momentum", "TT_polarization", "conformal_polarization"],
+          "properties": {
+            "signature": {"const": "Euclidean"},
+            "momentum": {"const": [1, 0, 0, 0]},
+            "TT_polarization": {"$ref": "#/$defs/integerMatrix4"},
+            "conformal_polarization": {"$ref": "#/$defs/integerMatrix4"}
+          }
+        },
+        "bulk_quadratic_response_rows": {"const": ["TT", "CONFORMAL"]},
+        "bulk_quadratic_response_matrix": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/rationalVector4"}
+        },
+        "bulk_response_rank": {"const": 2},
+        "bulk_kernel": {"const": ["E4(g_hat)", "C(g_hat) dual C(g_hat)"]},
+        "kernel_reason": {"type": "string"},
+        "conclusion": {"const": "AT_LEAST_TWO_INDEPENDENT_LOCAL_BULK_SCHEME_DIRECTIONS_CHANGE_Q1"}
+      }
+    },
+    "missing_operator_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["renormalized_finite_nonlocal_Gamma1", "renormalized_BV_laplacian_or_time_ordered_product", "finite_normalization_conditions_for_C2_and_R2", "extended_classical_residual_contraction"],
+      "properties": {
+        "renormalized_finite_nonlocal_Gamma1": {"const": "NOT_SUPPLIED"},
+        "renormalized_BV_laplacian_or_time_ordered_product": {"const": "NOT_SUPPLIED"},
+        "finite_normalization_conditions_for_C2_and_R2": {"const": "NOT_SUPPLIED"},
+        "extended_classical_residual_contraction": {"const": "NOT_SUPPLIED"}
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local_QME_disposition", "coefficient_bearing_WZ_Q1_piece", "complete_Q1", "Q1_uniqueness", "residual_transfer", "quantum_D_Cartan_defect", "Bridge_4", "Bridge_5"],
+      "properties": {
+        "local_QME_disposition": {"const": "RESTORED_IN_DECLARED_TAU_ADIC_ONE_LOOP_LOCAL_EUCLIDEAN_THEORY"},
+        "coefficient_bearing_WZ_Q1_piece": {"const": "CERTIFIED"},
+        "complete_Q1": {"const": "NO_CERTIFIED_OPERATOR"},
+        "Q1_uniqueness": {"const": "REFUTED_WITH_EXACT_RANK_TWO_BULK_WITNESS"},
+        "residual_transfer": {"const": "FORBIDDEN"},
+        "quantum_D_Cartan_defect": {"const": "NOT_COMPUTABLE_FROM_CURRENT_INPUTS"},
+        "Bridge_4": {"const": "NO_CERTIFIED_MAP"},
+        "Bridge_5": {"const": "NO_CERTIFIED_MAP_BRIDGE_2_ABSENT"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["WZ_LOCAL_COUNTERTERM_HAMILTONIAN_CONTRIBUTION_FIXED", "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "EXTENDED_CLASSICAL_CONTRACTION_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED"],
+      "properties": {
+        "WZ_LOCAL_COUNTERTERM_HAMILTONIAN_CONTRIBUTION_FIXED": {"const": true},
+        "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO": {"const": true},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "EXTENDED_CLASSICAL_CONTRACTION_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["extended_QME", "WZ_primitive", "cotangent_lift", "regulated_breaking"],
+      "properties": {
+        "extended_QME": {"$ref": "#/$defs/artifact"},
+        "WZ_primitive": {"$ref": "#/$defs/artifact"},
+        "cotangent_lift": {"$ref": "#/$defs/artifact"},
+        "regulated_breaking": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "next_gate": {"const": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "rationalVector": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}},
+    "rationalVector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+    "integerMatrix4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}}
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

@@ -148,6 +148,15 @@ class ActiveFrontierTests(unittest.TestCase):
                 "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"]["WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["COMPLETE_RENORMALIZED_Q1_SUPPLIED"]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["FULL_EXTENDED_BV_QME_RESTORED"]
         )
@@ -216,7 +225,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
+            "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

@@ -55,6 +55,7 @@ DEPENDENCIES = {
     "WZ_compensator_preflight": HERE / "anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "WZ_minimal_BV_cotangent_lift": HERE / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "WZ_extended_local_BV": HERE / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+    "one_loop_Slavnov_Q1_disposition": HERE / "transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
@@ -151,6 +152,7 @@ def _load() -> dict[str, dict[str, Any]]:
     wz_preflight = values["WZ_compensator_preflight"]
     wz_lift = values["WZ_minimal_BV_cotangent_lift"]
     wz_extended = values["WZ_extended_local_BV"]
+    q1_disposition = values["one_loop_Slavnov_Q1_disposition"]
     if (
         physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
         or physical_elliptic.get("result_state")
@@ -238,6 +240,19 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED"
     ):
         raise ValueError("Wess-Zumino extended local-BV frontier drifted")
+    if (
+        q1_disposition.get("result_state")
+        != "LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED_COMPLETE_Q1_UNDERDETERMINED_RESIDUAL_TRANSFER_FORBIDDEN"
+        or q1_disposition.get("finite_counterterm_ambiguity", {}).get(
+            "bulk_response_rank"
+        )
+        != 2
+        or q1_disposition.get("decision", {}).get("complete_Q1")
+        != "NO_CERTIFIED_OPERATOR"
+        or q1_disposition.get("decision", {}).get("residual_transfer")
+        != "FORBIDDEN"
+    ):
+        raise ValueError("one-loop Slavnov Q1 frontier drifted")
     antifield = values["antifield_import"]
     antifield_flags = antifield.get("claim_flags", {})
     if (
@@ -1042,11 +1057,11 @@ def build() -> dict[str, Any]:
             },
             "local_obstruction_space": {
                 "status": "STRICT_G2_COMPLETE_TAU_ADIC_EXTENDED_H04_DIMENSIONS_3_1_AND_H14_ZERO",
-                "next_gate": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
+                "next_gate": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED",
-                "next_gate": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_WZ_Q1_PIECE_FIXED_COMPLETE_Q1_UNDERDETERMINED",
+                "next_gate": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -1061,8 +1076,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
+                "status": "FORBIDDEN_COMPLETE_Q1_UNDERDETERMINED_AND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
         "supersession_ledger": [
@@ -1206,6 +1221,9 @@ def build() -> dict[str, Any]:
             "WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED": True,
             "WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE": True,
             "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED": True,
+            "WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED": True,
+            "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO": True,
+            "COMPLETE_RENORMALIZED_Q1_SUPPLIED": False,
             "FULL_EXTENDED_BV_QME_RESTORED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -1214,7 +1232,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
+            "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -1254,9 +1272,13 @@ def build() -> dict[str, Any]:
             "Weyl quartet contracts. The remaining pure-Diff quotient has H04 dimensions "
             "three even and one odd, including R(g_hat)^2, while H14 vanishes. The displayed "
             "counterterm therefore restores the compensator-extended local Euclidean QME at "
-            "one loop. This does not establish an all-loop or Lorentzian QME. The frozen "
-            "classical residual contraction has no compensator rows, so residual transfer "
-            "remains forbidden. "
+            "one loop. The coefficient-bearing local Hamiltonian contribution Q1^WZ is fixed, "
+            "but an exact flat-momentum response matrix has rank two on the allowed C(g_hat)^2 "
+            "and R(g_hat)^2 finite-counterterm directions. The finite nonlocal Gamma1, "
+            "renormalized BV Laplacian or time-ordered product, and finite normalization "
+            "conditions are absent, so no unique complete Q1 is supplied. This does not "
+            "establish an all-loop or Lorentzian QME. The frozen classical residual contraction "
+            "has no compensator rows, so residual transfer remains forbidden. "
             "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
             "operator export and frozen local-BV import come from distinct commits, it "
             "requires exact equality of the generator, atom, differential, dependency and "
@@ -1424,6 +1446,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED") is not True
         or flags.get("WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE") is not True
         or flags.get("TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED") is not True
+        or flags.get("WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED") is not True
+        or flags.get("FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO") is not True
+        or flags.get("COMPLETE_RENORMALIZED_Q1_SUPPLIED") is not False
         or flags.get("FULL_EXTENDED_BV_QME_RESTORED") is not False
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
         or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
@@ -1500,6 +1525,9 @@ def validate(result: dict[str, Any]) -> None:
             "WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED",
             "WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE",
             "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
+            "WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED",
+            "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO",
+            "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY",
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY",
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY",

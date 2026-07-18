@@ -313,6 +313,26 @@ Hence the compensator-extended local Euclidean QME is restored at one loop in
 the declared formal tau-adic algebra.
 \end{corollary}
 
+\begin{proposition}[The restored QME does not determine a unique $Q_1$]
+The local Wess--Zumino Hamiltonian contribution
+\[
+ Q_1^{\rm WZ}=(C_1^{\rm WZ},\,cdot)
+\]
+is coefficient-bearing and fixed by the counterterm above.  The complete
+renormalized first Slavnov operator is nevertheless underdetermined.  On the
+flat Euclidean fixtures $p=(1,0,0,0)$ with one transverse-traceless and one
+conformal polarization, the bulk quadratic response of the allowed basis
+$(C(\widehat g)^2,E_4(\widehat g),R(\widehat g)^2,
+C(\widehat g)\widetilde C(\widehat g))$ is
+\[
+ \begin{pmatrix}1&0&0&0\\0&0&9&0\end{pmatrix}.
+\]
+Thus the $C^2$ and $R^2$ finite-counterterm directions change the bulk
+Hamiltonian vector field independently.  The finite nonlocal part of
+$\Gamma_1^{\rm ren}$, the renormalized BV Laplacian or time-ordered product,
+and finite normalization conditions have not been supplied.
+\end{proposition}
+
 \section{What does not follow}
 
 The strict obstruction and extended restoration are local one-loop results.
@@ -328,8 +348,11 @@ They do not establish:
 
 Residual transfer is specifically forbidden at present.  The frozen classical
 contraction belongs to the strict theory and has no compensator rows.  The
-next gate is a compensator-inclusive classical contraction and the
-coefficient-bearing one-loop Slavnov operator $Q_1$.  Bridge~4 also remains
+local Wess--Zumino contribution to $Q_1$ is fixed, but the proposition proves
+that it is not a unique complete renormalized operator.  The next gate is a
+compensator-inclusive classical contraction together with the missing finite
+normalization, nonlocal effective-action, and renormalized-product data.
+Bridge~4 also remains
 inactive until a normalized same-background classical mode, causal Green
 carrier, and pairing coexist.  Bridge~5 has a QME disposition but lacks the
 independent interaction-to-physical-branch map.  No classical tangent
@@ -341,6 +364,7 @@ The two theorem receipts are
 \begin{itemize}
 \item \cert{quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json};
 \item \cert{quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json}.
+\item \cert{quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
 companion computational supplement prints the exact quotient ranks, orbit
@@ -356,6 +380,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   anomalies.verify_wess_zumino_minimal_bv_cotangent_lift
 PYTHONPATH=quantum-weyl python3 -m \
   anomalies.verify_wess_zumino_extended_local_bv_cohomology
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_one_loop_slavnov_q1_disposition
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
 PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment
 python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
@@ -364,9 +390,10 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 \section{Outlook}
 
-The immediate local-to-residual question is now sharp.  Given an extended
-contraction $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$ and the restored
-one-loop Slavnov operator $Q_1$, compute
+The immediate local-to-residual question is now sharp.  Supply finite
+normalization conditions, the finite nonlocal effective action and
+renormalized BV operator data to fix a complete $Q_1$; then, given an extended
+contraction $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$, compute
 \[
  q_1=\pi_{\rm ext}Q_1\iota_{\rm ext}
 \]

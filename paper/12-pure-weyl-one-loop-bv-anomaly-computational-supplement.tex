@@ -272,6 +272,42 @@ and exact coordinate replay gives
 This is the one-loop local Euclidean QME restoration theorem in the declared
 formal tau-adic theory.
 
+\section{First Slavnov operator: fixed part and exact ambiguity}
+
+The counterterm fixes the local Hamiltonian contribution
+\[
+ Q_1^{\rm WZ}=(C_1^{\rm WZ},\,\cdot).
+\]
+Since $C_1^{\rm WZ}$ has antifield number zero, its field and ghost rows
+vanish and its cotangent rows are the Euler derivatives with respect to
+$\widehat g$ and $\tau$.  This is an actual coefficient-bearing part of
+$Q_1$, but not the complete renormalized operator.
+
+The exact non-uniqueness witness uses flat Euclidean momentum
+$p=(1,0,0,0)$, a TT polarization $h_{11}=1,h_{22}=-1$, and the conformal
+polarization $h_{\mu\nu}=\delta_{\mu\nu}$.  Direct contraction of the
+linearized Riemann tensor gives
+\[
+ \begin{array}{c|cc}
+ & C^{(1)2}&R^{(1)2}\\ \hline
+ \mathrm{TT}&1&0\\
+ \mathrm{conformal}&0&9
+ \end{array}.
+\]
+Including the topological Euler and Pontryagin columns, the allowed extended
+$H^{0,4}$ response matrix is
+\[
+ \begin{pmatrix}1&0&0&0\\0&0&9&0\end{pmatrix},
+ \qquad \operatorname{rank}=2.
+\]
+The topological columns have zero compactly supported bulk Euler derivative;
+their boundary and global content is retained separately.  Therefore finite
+$C(\widehat g)^2$ and $R(\widehat g)^2$ counterterms change the bulk
+Hamiltonian vector field independently.  The current inputs do not supply
+the finite nonlocal $\Gamma_1^{\rm ren}$, the renormalized BV Laplacian or
+time-ordered product, or finite normalization conditions.  Complete $Q_1$
+is consequently fail-closed as \texttt{NO\_CERTIFIED\_OPERATOR}.
+
 \section{Independent verifiers and mutation tests}
 
 The producer and verifier paths are distinct.  The verifiers independently:
@@ -281,6 +317,8 @@ The producer and verifier paths are distinct.  The verifiers independently:
 \item compare generated certificates with fresh deterministic builds;
 \item reject deletion of the dressed $R^2$ class;
 \item reject authorization of residual transfer;
+\item reject promotion of the fixed Wess--Zumino contribution to a complete
+renormalized $Q_1$;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
@@ -303,6 +341,10 @@ PYTHONPATH=quantum-weyl python3 -m \
   anomalies.wess_zumino_extended_local_bv_cohomology --check
 PYTHONPATH=quantum-weyl python3 -m \
   anomalies.verify_wess_zumino_extended_local_bv_cohomology
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.one_loop_slavnov_q1_disposition --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_one_loop_slavnov_q1_disposition
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
 python3 paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py --check
@@ -320,7 +362,9 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the restored coefficient-bearing local Slavnov operator $Q_1$;
+\item finite normalization conditions, the finite nonlocal effective action,
+and renormalized BV operator data fixing a complete $Q_1$ beyond its certified
+local Wess--Zumino contribution;
 \item the induced residual operator
 $q_1=\pi_{\rm ext}Q_1\iota_{\rm ext}$;
 \item nilpotency, adjacent-cohomology, Cartan, mixing, and pairing checks.

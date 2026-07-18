@@ -34,6 +34,7 @@ def verify() -> dict:
         "RANK_46_IS_QUANTUM_PREREQUISITE",
         "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED",
         "FULL_EXTENDED_BV_QME_RESTORED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
         "QME_RESTORED",
         "LORENTZIAN_QUANTUM_THEORY",
     ):
@@ -56,6 +57,8 @@ def verify() -> dict:
         "WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED",
         "WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE",
         "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
+        "WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED",
+        "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO",
     ):
         mutant = deepcopy(certificate)
         mutant["claim_flags"][key] = False

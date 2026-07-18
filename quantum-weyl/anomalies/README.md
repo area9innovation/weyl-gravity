@@ -16,8 +16,13 @@ are now computed. The regulated insertion certificate
 `(199/30,-87/20,0,0)` on
 `(omega C2, omega E4, omega CdualC, omega BoxR)`. Its nonzero `C2` and `E4`
 coordinates prove `OBSTRUCTED_STRICT_FIELD_CONTENT`. Matter cancellation and
-a certified compensator extension remain open, as do all Lorentzian QME and
-Hadamard claims.
+a certified compensator extension were subsequently disposed: standard
+unitary free matter cannot cancel the vector, while the formal tau-adic
+compensator theory has complete extended `H04/H14` and a restored one-loop
+local Euclidean QME. The local Wess--Zumino Hamiltonian contribution to `Q1`
+is fixed, but complete `Q1` remains underdetermined by a rank-two finite-
+counterterm bulk ambiguity and absent finite nonlocal/renormalized-product
+data. All Lorentzian QME and Hadamard claims remain open.
 The exact cone certificate
 `certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json` further proves
 that no nonnegative collection of standard-sign free conformal scalars,

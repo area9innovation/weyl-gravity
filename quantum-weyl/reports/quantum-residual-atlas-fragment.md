@@ -75,13 +75,23 @@ An exact separating witness also rules out cancellation by nonnegative
 collections of standard-sign free conformal scalars, Weyl/Dirac fermions and
 gauge vectors. This strengthens the declared strict/ordinary-matter lifecycle
 without changing any mode-to-particle crosswalk. Compensator and nonstandard
-matter extensions remain separate open theories.
+matter extensions remain separate theories. In the formal tau-adic
+compensator theory the one-loop local Euclidean QME is restored and the local
+Wess--Zumino Hamiltonian contribution to `Q1` is fixed. The complete
+renormalized `Q1` is nevertheless absent: an exact flat-momentum response
+matrix has rank two on the allowed `C(g_hat)^2` and `R(g_hat)^2` finite
+counterterms, while the finite nonlocal effective action, renormalized BV
+Laplacian or time-ordered product, and finite normalization conditions have
+not been supplied. The extended classical residual contraction is absent as
+well. Residual transfer therefore remains forbidden.
 
 None of these classical statements implies disappearance from interacting
 BRST cohomology, a nonzero loop interaction, a quantum constraint, or a
 BRST-exact Taub insertion. Those conclusions require an explicit
 classical-to-quantum insertion, an exactness or nonmembership certificate,
 and a restored QME—or a normalized QME obstruction.
+The restored local QME is a necessary gate, not a substitute for the missing
+complete `Q1` and same-background classical carrier map.
 
 ## Verification
 

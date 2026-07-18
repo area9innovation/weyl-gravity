@@ -20,14 +20,20 @@ analytic algebra. The Weyl quartet contracts, the extended quotient has
 counterterm restores the extended local Euclidean QME at one loop. This is
 not an all-loop or Lorentzian QME theorem. The frozen strict residual
 contraction does not contain the compensator, so residual transfer remains
-forbidden until an extended classical contraction and one-loop Slavnov
-operator `Q1` are certified. The stationary/Hadamard rail remains
+forbidden until an extended classical contraction and complete one-loop
+Slavnov operator `Q1` are certified. The local Wess--Zumino Hamiltonian
+contribution to `Q1` is fixed, but an exact flat-fixture response matrix has
+rank two on the allowed `C(g_hat)^2` and `R(g_hat)^2` finite counterterms.
+The finite nonlocal effective action, renormalized BV Laplacian or
+time-ordered product, and finite normalization conditions are absent, so
+complete `Q1` is `NO_CERTIFIED_OPERATOR`. The stationary/Hadamard rail remains
 independently open. The older readiness discussion below is retained as
 historical gate provenance.
 
 See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md),
 [`wess-zumino-minimal-bv-cotangent-lift.md`](wess-zumino-minimal-bv-cotangent-lift.md),
-and [`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md).
+[`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md),
+and [`one-loop-slavnov-q1-disposition.md`](one-loop-slavnov-q1-disposition.md).
 
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical
 certificates remain immutable receipts, but they are no longer all valid
