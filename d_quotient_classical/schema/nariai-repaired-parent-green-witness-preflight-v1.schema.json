@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-repaired-parent-green-witness-preflight-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "typed_coordinates", "principal_witness", "rejected_candidate", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-repaired-parent-green-witness-preflight-v1"},
+    "result_id": {"const": "NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1"},
+    "result_state": {"const": "METRIC_AND_GHOST_SCALAR_BIWAVE_PRINCIPAL_SYMBOL_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rank_310_repair", "parent_green_homotopy"],
+      "properties": {"rank_310_repair": {"$ref": "#/$defs/dependency"}, "parent_green_homotopy": {"$ref": "#/$defs/dependency"}}
+    },
+    "typed_coordinates": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metric_coordinate_map", "ghost_to_covector_map", "metric_fibre_pairing", "metric_pairing_determinant"],
+      "properties": {
+        "metric_coordinate_map": {"$ref": "#/$defs/sparseMatrix"},
+        "ghost_to_covector_map": {"$ref": "#/$defs/sparseMatrix"},
+        "metric_fibre_pairing": {"$ref": "#/$defs/sparseMatrix"},
+        "metric_pairing_determinant": {"type": "string", "minLength": 1}
+      }
+    },
+    "principal_witness": {"$ref": "#/$defs/stringMap"},
+    "rejected_candidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator", "nominal_order", "cubic_symbol_sha256", "cubic_symbol_rank", "reason", "scope"],
+      "properties": {
+        "operator": {"type": "string", "minLength": 1}, "nominal_order": {"const": 3},
+        "cubic_symbol_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "cubic_symbol_rank": {"const": 0},
+        "reason": {"type": "string", "minLength": 1}, "scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coordinate_map_invertible", "field_pairing_nondegenerate", "actual_K_matches_universal_K", "action_Bach_is_evaluation_dual_operator", "ghost_symbol_is_scalar_biwave", "field_symbol_is_scalar_biwave_after_fibre_identification", "parent_divergence_cubic_symbol_zero", "ghost_completed_symbol_rank", "field_completed_symbol_rank"],
+      "properties": {
+        "coordinate_map_invertible": {"const": true}, "field_pairing_nondegenerate": {"const": true},
+        "actual_K_matches_universal_K": {"const": true}, "action_Bach_is_evaluation_dual_operator": {"const": true},
+        "ghost_symbol_is_scalar_biwave": {"const": true}, "field_symbol_is_scalar_biwave_after_fibre_identification": {"const": true},
+        "parent_divergence_cubic_symbol_zero": {"const": true}, "ghost_completed_symbol_rank": {"const": 0}, "field_completed_symbol_rank": {"const": 0}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1", "NARIAI_METRIC_SCALAR_BIWAVE_PRINCIPAL_SYMBOL", "NARIAI_GHOST_SCALAR_BIWAVE_PRINCIPAL_SYMBOL", "NARIAI_PARENT_DIVERGENCE_COMPANION_REJECTED", "NARIAI_REPAIRED_310_GREEN_HOMOTOPY", "NARIAI_METRIC_GREEN_HOMOTOPY", "NARIAI_LOWER_ORDER_FACTOR_COMPLETION"],
+      "properties": {
+        "NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1": {"const": true},
+        "NARIAI_METRIC_SCALAR_BIWAVE_PRINCIPAL_SYMBOL": {"const": true}, "NARIAI_GHOST_SCALAR_BIWAVE_PRINCIPAL_SYMBOL": {"const": true},
+        "NARIAI_PARENT_DIVERGENCE_COMPANION_REJECTED": {"const": true}, "NARIAI_REPAIRED_310_GREEN_HOMOTOPY": {"const": false},
+        "NARIAI_METRIC_GREEN_HOMOTOPY": {"const": false}, "NARIAI_LOWER_ORDER_FACTOR_COMPLETION": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"],
+      "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}
+    },
+    "next_gate": {"const": "C_G2_NARIAI_LOWER_ORDER_BIWAVE_FACTOR_COMPLETION"},
+    "source_manifest": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "sparseMatrix": {
+      "type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string", "minLength": 1}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

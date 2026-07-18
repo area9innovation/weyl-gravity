@@ -1,0 +1,265 @@
+{
+  "claim_boundary": {
+    "not_claimed": [
+      "a coefficient-complete lower-order companion on Nariai",
+      "factorization into normally hyperbolic operators",
+      "advanced or retarded Green operators for the metric block",
+      "the repaired rank-310 all-row Green homotopy",
+      "an open background class"
+    ],
+    "statement": "The correctly typed universal third-order companion gives scalar metric and ghost biwave principal symbols for the Nariai Bach complex after the action fibre identification."
+  },
+  "dependency_refs": {
+    "parent_green_homotopy": {
+      "artifact_id": "NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1.json",
+      "sha256": "88c6c6a132ee5e6a61c1fb3e3585095bc26b63525ed01bfb824a6d19e56393a8"
+    },
+    "rank_310_repair": {
+      "artifact_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "sha256": "e6efd40a284439cb76b7786fd6ec981aac947e62596eedc891995b8d50b9578e"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "action_Bach_is_evaluation_dual_operator": true,
+    "actual_K_matches_universal_K": true,
+    "coordinate_map_invertible": true,
+    "field_completed_symbol_rank": 0,
+    "field_pairing_nondegenerate": true,
+    "field_symbol_is_scalar_biwave_after_fibre_identification": true,
+    "ghost_completed_symbol_rank": 0,
+    "ghost_symbol_is_scalar_biwave": true,
+    "parent_divergence_cubic_symbol_zero": true
+  },
+  "flags": {
+    "NARIAI_GHOST_SCALAR_BIWAVE_PRINCIPAL_SYMBOL": true,
+    "NARIAI_LOWER_ORDER_FACTOR_COMPLETION": false,
+    "NARIAI_METRIC_GREEN_HOMOTOPY": false,
+    "NARIAI_METRIC_SCALAR_BIWAVE_PRINCIPAL_SYMBOL": true,
+    "NARIAI_PARENT_DIVERGENCE_COMPANION_REJECTED": true,
+    "NARIAI_REPAIRED_310_GREEN_HOMOTOPY": false,
+    "NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1": true
+  },
+  "next_gate": "C_G2_NARIAI_LOWER_ORDER_BIWAVE_FACTOR_COMPLETION",
+  "principal_witness": {
+    "B_action_covector_sha256": "15174e9b590f17e768e8bd36d240189102a082c65f351d7ffc92c34f9fc10e61",
+    "B_operator_sha256": "9ac86028b5889ebcd58eec4d263aa176124d771a046fa3537540c82c11bf0d1b",
+    "K_sha256": "7dc0b39653b5273783a24d0bb7dbacbd64de1e76968a0a00e1d342bdc101ae8b",
+    "T_pr": "Box div-(1/3)d div div in Nariai H0/H1 coordinates",
+    "T_pr_sha256": "7923daaa2eb62488debc28b4feaa6b7788e8a808dfab42ba51a373281f7b501f",
+    "fibre_identified_field_identity": "G_H^{-1}D_M=(1/2)(zeta^2)^2 I_9",
+    "field_identity": "B_action+(1/2)G_H K T_pr=(1/2)(zeta^2)^2 G_H",
+    "ghost_identity": "T_pr K=(zeta^2)^2 I_4"
+  },
+  "rejected_candidate": {
+    "cubic_symbol_rank": 0,
+    "cubic_symbol_sha256": "2e9900444cfddf5843400f62532c4b98223cc79d257fde7f21406b22c45cccbe",
+    "nominal_order": 3,
+    "operator": "p0 delta^D L1_corrected",
+    "reason": "the parent divergence is a Bianchi operator and has no cubic gauge-companion symbol",
+    "scope": "rejection of this canonical candidate only; not a no-go for lower-order completions of T_pr"
+  },
+  "result_id": "NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1",
+  "result_state": "METRIC_AND_GHOST_SCALAR_BIWAVE_PRINCIPAL_SYMBOL_EXACT",
+  "schema": "pure-weyl-nariai-repaired-parent-green-witness-preflight-v1",
+  "source_manifest": {
+    "covariant_completion/curved_operator/adjoint_tractor_bgg_curved_pbw.py": "933245bd789b307ea1a3fb17af390ecde9f15b5b966afba5655b797f0930a81d",
+    "covariant_completion/minimal_witness/principal_symbols.py": "bc6643fef299088ae3f8176e2f9bbc152158da70d45845a0b48d2938cb0928f2",
+    "d_quotient_classical/causal_transfer/nariai_parent_detour_mapping_cone_repair.py": "dd4a616f8fbb1044b6654055e9f0e7fea8511d3205d1e13c87520cfc0e40c975",
+    "d_quotient_classical/causal_transfer/nariai_repaired_parent_green_witness_preflight.py": "c87df0ade8804cceab068862babe1a81cae8117917672c0f677ba5b384a3b450",
+    "d_quotient_classical/causal_transfer/nariai_yang_mills_parent_green_homotopy.py": "e005b1290a1ffc624002aec225bc147c3e2f0b9689ab88221acfba88a48b034b",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_repaired_parent_green_witness_preflight.py": "87b6a7fb866af5eabaab7e74d2796591c57a28b8f7db1f8e50a1da3bdb029326",
+    "d_quotient_classical/causal_transfer/verify_nariai_repaired_parent_green_witness_preflight.py": "39a5576095ae0a85f4be74736c0ced6eae51dfb7e486cbc463ce9e155360378c",
+    "d_quotient_classical/schema/nariai-repaired-parent-green-witness-preflight-v1.schema.json": "9370891962eb143a89a9e0718fcbc7464021c654a8b2fda68374b6ad09e65c44"
+  },
+  "typed_coordinates": {
+    "ghost_to_covector_map": {
+      "entries": [
+        [
+          0,
+          0,
+          "-1/2"
+        ],
+        [
+          1,
+          1,
+          "1/2"
+        ],
+        [
+          2,
+          2,
+          "1/2"
+        ],
+        [
+          3,
+          3,
+          "1/2"
+        ]
+      ],
+      "sha256": "886ae71c8a54660913fcea5020a4fb3641c4dddaa8c96a080cf701c29e36da80",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "metric_coordinate_map": {
+      "entries": [
+        [
+          0,
+          1,
+          "1"
+        ],
+        [
+          0,
+          4,
+          "1"
+        ],
+        [
+          0,
+          8,
+          "1"
+        ],
+        [
+          1,
+          0,
+          "-1"
+        ],
+        [
+          2,
+          2,
+          "-1"
+        ],
+        [
+          3,
+          5,
+          "-1"
+        ],
+        [
+          4,
+          1,
+          "1"
+        ],
+        [
+          5,
+          3,
+          "1"
+        ],
+        [
+          6,
+          6,
+          "1"
+        ],
+        [
+          7,
+          4,
+          "1"
+        ],
+        [
+          8,
+          7,
+          "1"
+        ]
+      ],
+      "sha256": "fd17e57fe2ae9ce5472bfdf940f75e02132240eef177d563b2a90a995ab75577",
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "metric_fibre_pairing": {
+      "entries": [
+        [
+          0,
+          0,
+          "-2"
+        ],
+        [
+          1,
+          1,
+          "2"
+        ],
+        [
+          1,
+          4,
+          "1"
+        ],
+        [
+          1,
+          8,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "-2"
+        ],
+        [
+          3,
+          3,
+          "2"
+        ],
+        [
+          4,
+          1,
+          "1"
+        ],
+        [
+          4,
+          4,
+          "2"
+        ],
+        [
+          4,
+          8,
+          "1"
+        ],
+        [
+          5,
+          5,
+          "-2"
+        ],
+        [
+          6,
+          6,
+          "2"
+        ],
+        [
+          7,
+          7,
+          "2"
+        ],
+        [
+          8,
+          1,
+          "1"
+        ],
+        [
+          8,
+          4,
+          "1"
+        ],
+        [
+          8,
+          8,
+          "2"
+        ]
+      ],
+      "sha256": "e79e97d993f811a249df1ed3229c8eca7d4b2e8c60ba945b76dd2a81a5e631cb",
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "metric_pairing_determinant": "-256"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_repaired_parent_green_witness_preflight.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_repaired_parent_green_witness_preflight.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_repaired_parent_green_witness_preflight",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-repaired-parent-green-witness-preflight-v1.schema.json -d d_quotient_classical/certificates/NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1.json"
+  ]
+}

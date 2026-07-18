@@ -174,10 +174,14 @@ operator.  The active gate is now
 `C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`.  Its causal input is now exact:
 the Yang--Mills adjoint-tractor parent has the twisted-Hodge backward witness
 and unique retarded/advanced Green homotopies on global Nariai.  What remains
-is to insert that parent homotopy into the repaired rank-310 cone and verify
-the all-row identity and metric descent.  Do not reopen endpoint coefficient
-or field-graph fitting, or promote the rank-310/metric Green flags before that
-integration closes.
+is not a formal reversal of the SDR, because that SDR retracts onto the metric
+complex.  The repaired-parent witness preflight now proves the correctly typed
+metric and ghost scalar-biwave principal identities and rejects the parent
+divergence as a gauge companion because its cubic symbol vanishes.  The active
+subgate is the coefficient-complete lower-order Nariai biwave factorization or
+equivalent Green system, followed by the all-row rank-310 identity and metric
+descent.  Do not promote the rank-310/metric Green flags before that integration
+closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

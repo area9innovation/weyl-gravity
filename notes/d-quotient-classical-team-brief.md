@@ -1277,8 +1277,10 @@ as its finite-order local inverse.  Exact coefficient replay gives
 The ten-block inclusion, projection and cyclic homotopy obey
 (PI=1) and (1-IP=QH+HQ), both before and after the certified BV-canonical
 triangular transform.  No rank-minimality claim is made.  The next gate is
-`C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`: construct the parent Green
-witness and transport its retarded/advanced homotopies through this local SDR.
+`C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`: combine the parent causal input
+with a coefficient-complete metric endpoint witness.  The SDR retracts onto
+the metric complex, not the bare parent, so its direction must not be silently
+reversed.
 
 The first analytic half is now frozen in
 `NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1`.  Flatness is not required.  On
@@ -1311,6 +1313,31 @@ same-sided causal homotopy identity.  Adjoint reversal uses the
 pairing-derived degree-sign involution, not a uniform scalar sign.  The active
 gate remains the second half: insert this causal input into the repaired
 rank-310 cone and verify the all-row homotopy and metric descent.
+
+`NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1` now fixes the leading
+metric normalization.  If (G_H) is the trace-free tensor Gram and
+
+\[
+T_{\rm pr}=\Box\operatorname{div}
+-\frac13d\operatorname{div}^2,
+\]
+
+then, in the certified H0/H1 coordinates,
+
+\[
+T_{\rm pr}K=(\zeta^2)^2I_4,
+\qquad
+B_{\rm action}+\frac12G_HKT_{\rm pr}
+=\frac12(\zeta^2)^2G_H.
+\]
+
+Thus both ghost and fibre-identified field blocks have scalar biwave leading
+symbols.  The candidate (p_0\delta^DL_1) is not the missing companion: its
+cubic symbol vanishes exactly by the Bianchi identity.  The active subgate is
+now `C_G2_NARIAI_LOWER_ORDER_BIWAVE_FACTOR_COMPLETION`: derive the curved
+lower-order companion and an exact normally-hyperbolic factorization or
+equivalent Green system before promoting either the metric or rank-310 causal
+flag.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and

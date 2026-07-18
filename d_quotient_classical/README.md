@@ -305,6 +305,18 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   The rank-310 and metric transfers remain fail-closed:
   [`certificates/NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1.json`](certificates/NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1.json),
   [`reports/nariai-yang-mills-parent-green-homotopy.md`](reports/nariai-yang-mills-parent-green-homotopy.md)
+- Repaired-parent witness preflight: the rank-310 SDR retracts to the metric
+  complex, so the parent homotopy cannot be transported by reversing the SDR.
+  The correctly typed universal third-order companion nevertheless closes the
+  exact leading symbols:
+  `T_pr K=(zeta^2)^2 I_4` and
+  `B_action+(G_H K T_pr)/2=(zeta^2)^2 G_H/2`.
+  The action Bach row is evaluation-dual, so the fibre Gram `G_H` is essential.
+  The tempting parent-divergence candidate `p0 delta^D L1` has zero cubic
+  symbol and is rejected.  Lower-order factorization and all Green flags stay
+  open:
+  [`certificates/NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1.json`](certificates/NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1.json),
+  [`reports/nariai-repaired-parent-green-witness-preflight.md`](reports/nariai-repaired-parent-green-witness-preflight.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived
