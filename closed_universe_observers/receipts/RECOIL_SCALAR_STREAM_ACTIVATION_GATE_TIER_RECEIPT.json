@@ -11,27 +11,28 @@
   "tier_1": [
     {"command": "python3 -m closed_universe_observers.verify_berger_recoil_scalar_stream_activation_gate", "status": "PASS", "summary": "Readiness rows distinguish certified analytic inputs, open harmonic preparation data and later external parameters."},
     {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "status": "PASS", "summary": "The stream remains OPEN and Bridge 3 remains NO_CERTIFIED_MAP in generated lifecycle data."},
-    {"command": "pytest -q closed_universe_observers/tests/test_berger_coupling_stripped_detector_preparations.py closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 4.78, "status": "PASS", "summary": "23 preparation, activation-gate, atlas and ledger tests passed."}
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_spacetime_form_block_sign_bridge.py closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 8.94, "status": "PASS", "summary": "24 sign-bridge, activation-gate, atlas and ledger tests passed."}
   ],
   "tier_2": [
     {"command": "python3 -m closed_universe_observers.generate_berger_recoil_scalar_stream_activation_gate --check", "status": "PASS", "summary": "The fail-closed readiness matrix regenerates byte-for-byte."},
-    {"command": "Combined scoped certificate chain", "elapsed_seconds": 6.48, "status": "PASS", "summary": "Compile, preparation/activation generators and verifiers, atlas, ledger and 23 tests passed."}
+    {"command": "Combined scoped certificate chain", "elapsed_seconds": 26.33, "status": "PASS", "summary": "Compile, sign/activation generators and verifiers, atlas, ledger and 24 tests passed."}
   ],
   "higher_tiers": [
     {"tier": 3, "status": "NOT_RUN", "criterion": "No evaluated recoil, shared core algebra, lifecycle freeze or release was promoted."}
   ],
   "artifact_hashes": [
-    {"path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py", "sha256": "22023f4ffb074110baf3ba6a85f5bddaaed552d11b0d6051b79a0a0f83ca1986"},
+    {"path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py", "sha256": "0f809db339d7cb09e4b7369e58e1dd308504a2c223b14a16cb5c0875105e7243"},
     {"path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "sha256": "976064df779a06a6da53ae1006905fae2ec83f4d058156e6b24561e0ecbd5427"},
     {"path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py", "sha256": "5238a1b95c29e11b306417234ccc2fe8211ee10c3f5b7be221bf36e670ac7326"},
-    {"path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json", "sha256": "2f0c4fe83ff3c345b6e015d7d68e06ba78c32bf9a36df396859c3b8aeeb6991f"},
+    {"path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json", "sha256": "1dd4dacb27137582806f375b7873eec9f10fb3a0aa26b81a2b81254c5aff877f"},
     {"path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md", "sha256": "3dcc89efe8dd686830c08b59a0e01232c139103f41830eb31d35b29b2e0cd3a7"},
-    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json", "sha256": "8fcb2c5fedbcbd02f4f0dff377c915561bafeb68120bce3faf8b14e0e8bce003"},
-    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "d0bfcce743cf27ffd923dd07dbaec5588082ab1f4904352611d646ef4484756a"},
-    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "b1897e941944e8a31636df03d40f7fb172899a2969c6e6f49bfd5c8d83dce33d"},
-    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "6f993da765f3ece8233de3a4a5cb7d6ea613c9b6d9843610a4a0a63315f2f120"},
-    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "d7bb3e7d70f3b794b6c686102013a5e53d43a811c88b833afd89a3a1fec40aa2"},
-    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "db27bab29309a7fa1f5a81a12ab9e5581d0e32e01ca040d88ade393ddbeca26f"}
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json", "sha256": "332c9666c44536618bd49f231515eea2f85cfadcedc9f139281ca3403fae9664"},
+    {"path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json", "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "de42b66ecb92d1f77eb7b50ff3458cd74103a0800d7dc26b7061def76276cd74"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "c8508eac651b8ecb4e3daff5d947ba0c6cefcca617f03b38ba16c5bbc1ce55f7"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "a488d0cbb990206e753731483d377bc634c116916d04a081c173a1a849c272e9"},
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "f6930966c2ac3bda0176affcc5750d43cf5a02046ce6b965eece9c45b3d2af18"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "5bedd2526b767a17226f35ceca2d5abae6a6b14376c33fc3245ae5bfa01401b1"}
   ],
   "claim_flags": {
     "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": true,

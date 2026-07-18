@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "form_split", "matrix_formulas", "audited_blocks", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-spacetime-form-block-sign-bridge-v1"},
+    "result_id": {"const": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"type": "string"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "form_split": {"type": "object", "required": ["spacetime_k_form", "lorentzian_pairing", "d", "delta", "wave", "switch_product_rule"]},
+    "matrix_formulas": {"type": "object"},
+    "audited_blocks": {"type": "array", "minItems": 5, "maxItems": 5},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "SERIALIZE_THE_FIXED_TILDE_U_B_PER_SHELL_RECOIL_OPERATOR_WORD_USING_THE_EXACT_SPACETIME_BLOCKS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

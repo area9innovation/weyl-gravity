@@ -1,0 +1,44 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "SPACETIME_FORM_BLOCK_SIGN_BRIDGE_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact Lorentzian spacetime-form split fixes the d and coderivative component signs, the switch product rule, and the diagonal wave blocks for Maxwell one-forms and massive-emitter two-forms. Exact Peter-Weyl audits through two_j=4 certify nilpotency and wave diagonalization and detect a flipped temporal coderivative sign. No profile coefficient, time convolution, massive Green image, per-shell recoil scalar, numerical interval, tangent-cone restriction, Bridge 3, nonlinear all-orders stability or quantum claim is promoted.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_spacetime_form_block_sign_bridge.py closed_universe_observers/verify_berger_spacetime_form_block_sign_bridge.py closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "status": "PASS"},
+    {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_spacetime_form_block_sign_bridge", "status": "PASS", "summary": "Exact spacetime d/delta blocks, switch product rule, nilpotency, wave diagonalization and the temporal-sign mutation audit pass."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "status": "PASS", "summary": "The generated atlas certifies only the sign bridge; the recoil stream stays OPEN and Bridge 3 stays NO_CERTIFIED_MAP."},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_spacetime_form_block_sign_bridge.py closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 8.94, "status": "PASS", "summary": "24 sign-bridge, activation-gate, atlas and comparison-ledger tests passed."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_spacetime_form_block_sign_bridge --check && python3 -m closed_universe_observers.generate_berger_recoil_scalar_stream_activation_gate --check", "status": "PASS", "summary": "Both certificates regenerate byte-for-byte against their hashed dependencies."},
+    {"command": "Combined scoped certificate chain", "elapsed_seconds": 26.33, "status": "PASS", "summary": "Compile, sign/activation generators and verifiers, atlas, ledger and 24 tests passed."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No evaluated recoil, shared core algebra, lifecycle freeze or release was promoted."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_spacetime_form_block_sign_bridge.py", "sha256": "e38deb7d4918d7b6be3f15dc3dae3eac43462be0f553d609d4d0348851bb6cff"},
+    {"path": "closed_universe_observers/verify_berger_spacetime_form_block_sign_bridge.py", "sha256": "59f4aa3cc6b596a915022387a3cb14caf1a21e7b7386fc9d728dee1b6bf56bfa"},
+    {"path": "closed_universe_observers/tests/test_berger_spacetime_form_block_sign_bridge.py", "sha256": "2d232eb8fa9d3e3636fa0c82fdcf209e58c37659927b6b1538c8eb34c5e1cf69"},
+    {"path": "closed_universe_observers/schema/berger-spacetime-form-block-sign-bridge-v1.schema.json", "sha256": "a947889becabc62506642648c1df965104ad8aa3c91014c99b17f1369f0e20b3"},
+    {"path": "closed_universe_observers/reports/berger-spacetime-form-block-sign-bridge.md", "sha256": "82a1947e4794485ffbb4c678bd22ac09a0cbc651cdcca80aeb4c7e1de515cda2"},
+    {"path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json", "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"},
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json", "sha256": "332c9666c44536618bd49f231515eea2f85cfadcedc9f139281ca3403fae9664"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "c8508eac651b8ecb4e3daff5d947ba0c6cefcca617f03b38ba16c5bbc1ce55f7"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "a488d0cbb990206e753731483d377bc634c116916d04a081c173a1a849c272e9"},
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "f6930966c2ac3bda0176affcc5750d43cf5a02046ce6b965eece9c45b3d2af18"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "5bedd2526b767a17226f35ceca2d5abae6a6b14376c33fc3245ae5bfa01401b1"}
+  ],
+  "claim_flags": {
+    "EXACT_SPACETIME_D_AND_DELTA_BLOCK_SIGNS_EXPORTED": true,
+    "SPACETIME_NILPOTENCY_AND_WAVE_DIAGONALIZATION_AUDITED": true,
+    "SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED": true,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

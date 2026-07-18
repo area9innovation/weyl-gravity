@@ -805,6 +805,15 @@ couplings, and each absolute-`g3` channel has the explicit monomial
 `g_b g_c^2`.  This is not adaptive response normalization and does not fill
 the still-open harmonic coefficients or massive images.
 
+`BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE` closes the convention gate for the
+per-shell word.  With `dt wedge alpha+beta`, the exported matrices give
+`d(alpha,beta)=(partial_t beta-dSigma alpha,dSigma beta)` and
+`delta(alpha,beta)=(-deltaSigma alpha,partial_t alpha+deltaSigma beta)`.
+They have zero `d^2`, `delta^2` and Maxwell/emitter wave-diagonalization
+defects through `two_j=4`; a flipped temporal coderivative sign is detected.
+This certifies component typing, not the still-open profile coefficients,
+time convolutions or recoil scalars.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

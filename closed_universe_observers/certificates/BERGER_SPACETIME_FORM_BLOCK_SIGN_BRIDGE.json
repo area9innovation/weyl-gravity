@@ -1,0 +1,215 @@
+{
+  "atlas_status": "CERTIFIED",
+  "audited_blocks": [
+    {
+      "d_squared_defect_counts_degrees_0_to_2": [
+        0,
+        0,
+        0
+      ],
+      "delta_squared_defect_counts_degrees_2_to_4": [
+        0,
+        0,
+        0
+      ],
+      "spacetime_dimensions_by_degree": [
+        1,
+        4,
+        6,
+        4,
+        1
+      ],
+      "two_j": 0,
+      "wave_diagonalization_defect_counts_degrees_1_2": [
+        0,
+        0
+      ]
+    },
+    {
+      "d_squared_defect_counts_degrees_0_to_2": [
+        0,
+        0,
+        0
+      ],
+      "delta_squared_defect_counts_degrees_2_to_4": [
+        0,
+        0,
+        0
+      ],
+      "spacetime_dimensions_by_degree": [
+        2,
+        8,
+        12,
+        8,
+        2
+      ],
+      "two_j": 1,
+      "wave_diagonalization_defect_counts_degrees_1_2": [
+        0,
+        0
+      ]
+    },
+    {
+      "d_squared_defect_counts_degrees_0_to_2": [
+        0,
+        0,
+        0
+      ],
+      "delta_squared_defect_counts_degrees_2_to_4": [
+        0,
+        0,
+        0
+      ],
+      "spacetime_dimensions_by_degree": [
+        3,
+        12,
+        18,
+        12,
+        3
+      ],
+      "two_j": 2,
+      "wave_diagonalization_defect_counts_degrees_1_2": [
+        0,
+        0
+      ]
+    },
+    {
+      "d_squared_defect_counts_degrees_0_to_2": [
+        0,
+        0,
+        0
+      ],
+      "delta_squared_defect_counts_degrees_2_to_4": [
+        0,
+        0,
+        0
+      ],
+      "spacetime_dimensions_by_degree": [
+        4,
+        16,
+        24,
+        16,
+        4
+      ],
+      "two_j": 3,
+      "wave_diagonalization_defect_counts_degrees_1_2": [
+        0,
+        0
+      ]
+    },
+    {
+      "d_squared_defect_counts_degrees_0_to_2": [
+        0,
+        0,
+        0
+      ],
+      "delta_squared_defect_counts_degrees_2_to_4": [
+        0,
+        0,
+        0
+      ],
+      "spacetime_dimensions_by_degree": [
+        5,
+        20,
+        30,
+        20,
+        5
+      ],
+      "two_j": 4,
+      "wave_diagonalization_defect_counts_degrees_1_2": [
+        0,
+        0
+      ]
+    }
+  ],
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL sign bridge lifts the authoritative Berger spatial de Rham matrices to the ultrastatic clock-metric splitting of spacetime forms. For a k-form written as dt wedge alpha_(k-1)+beta_k, it certifies d(alpha,beta)=(partial_t beta-d_Sigma alpha,d_Sigma beta) and delta(alpha,beta)=(-delta_Sigma alpha,partial_t alpha+delta_Sigma beta). Exact mode audits through two_j=4 give d^2=delta^2=0 and (d delta+delta d)=diag(partial_t^2+Delta_(k-1),partial_t^2+Delta_k) for Maxwell one-forms and emitter two-forms; flipping the temporal coderivative sign is detected. This fixes the component signs and matches the existing sine-kernel wave convention. It does not evaluate profile coefficients, time convolutions, massive Green images, per-shell recoil contractions, four scalar intervals, tangent-cone restriction, Bridge 3, nonlinear all-orders stability or a quantum claim.",
+  "claim_status": "EXACT_LORENTZIAN_SPACETIME_D_DELTA_BLOCK_SIGNS_AND_WAVE_DIAGONALIZATION_EXPORTED",
+  "dependency_refs": {
+    "coupling_stripped": {
+      "path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+      "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+      "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"
+    },
+    "de_rham": {
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    },
+    "emitter": {
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json",
+      "result_id": "BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF",
+      "sha256": "2b39749d375ab50966bf286c0a8d6771418c93160457e8f16a65821e8c9d6258"
+    },
+    "kernels": {
+      "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+      "result_id": "BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS",
+      "sha256": "f39348c599ca4c69461bc1ebaf2d32c51a733865165b66e4815d26c53cb48ecc"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "EXACT_SPACETIME_CODERIVATIVE_BLOCKS_EXPORTED": true,
+    "EXACT_SPACETIME_D_BLOCKS_EXPORTED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "MAXWELL_AND_MASSIVE_WAVE_BLOCK_DIAGONALIZATION_EXPORTED": true,
+    "QUANTUM_CLAIM": false,
+    "RECOIL_SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED": true,
+    "SPACETIME_D_AND_DELTA_NILPOTENCY_AUDITED": true
+  },
+  "form_split": {
+    "d": "(alpha,beta)->(partial_t beta-d_(k-1) alpha,d_k beta)",
+    "delta": "(alpha,beta)->(-d_(k-2)^dagger alpha,partial_t alpha+d_(k-1)^dagger beta)",
+    "lorentzian_pairing": "-<alpha,alpha_prime>_Sigma+<beta,beta_prime>_Sigma",
+    "spacetime_k_form": "dt wedge alpha_(k-1)+beta_k",
+    "switch_product_rule": "delta(h(alpha,beta))=h delta(alpha,beta)+(0,partial_t h alpha)",
+    "wave": "d delta+delta d=diag(partial_t^2+Delta_(k-1),partial_t^2+Delta_k)"
+  },
+  "matrix_formulas": {
+    "Deltahat_k": "[[-d_(k-2)^dagger,0],[z I_(k-1),d_(k-1)^dagger]]",
+    "Dhat_k": "[[-d_(k-1), z I_k],[0,d_k]]",
+    "temporal_symbol": "z=partial_t commuting with stationary spatial blocks"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "flip_temporal_coderivative_sign",
+      "wave_defect_counts": [
+        8,
+        12
+      ]
+    }
+  ],
+  "next_gate": "SERIALIZE_THE_FIXED_TILDE_U_B_PER_SHELL_RECOIL_OPERATOR_WORD_USING_THE_EXACT_SPACETIME_BLOCKS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_spacetime_form_block_sign_bridge.py",
+        "sha256": "e38deb7d4918d7b6be3f15dc3dae3eac43462be0f553d609d4d0348851bb6cff"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_spacetime_form_block_sign_bridge.py",
+        "sha256": "59f4aa3cc6b596a915022387a3cb14caf1a21e7b7386fc9d728dee1b6bf56bfa"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_spacetime_form_block_sign_bridge.py",
+        "sha256": "2d232eb8fa9d3e3636fa0c82fdcf209e58c37659927b6b1538c8eb34c5e1cf69"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-spacetime-form-block-sign-bridge-v1.schema.json",
+        "sha256": "a947889becabc62506642648c1df965104ad8aa3c91014c99b17f1369f0e20b3"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-spacetime-form-block-sign-bridge.md",
+        "sha256": "82a1947e4794485ffbb4c678bd22ac09a0cbc651cdcca80aeb4c7e1de515cda2"
+      }
+    ]
+  },
+  "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+  "schema": "closed-universe-berger-spacetime-form-block-sign-bridge-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

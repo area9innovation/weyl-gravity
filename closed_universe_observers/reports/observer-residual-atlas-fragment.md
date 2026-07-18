@@ -101,6 +101,10 @@ The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
 coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy
 datum.  Leading columns carry `g_b`, while absolute-`g3` recoil channels carry
 `g_b g_c^2`.  Harmonic evaluation and the four scalar records remain `OPEN`.
+The spacetime sign-bridge row is also `CERTIFIED`: the exact finite-mode
+Lorentzian `d` and `delta` matrices are nilpotent and diagonalize the Maxwell
+and emitter wave operators to `partial_t^2+Delta`.  This removes an implicit
+component-sign choice from the future shell word without evaluating it.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

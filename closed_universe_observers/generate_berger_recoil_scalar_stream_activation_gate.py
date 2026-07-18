@@ -26,6 +26,7 @@ DEPENDENCIES = {
     "streaming_preflight": PACKAGE / "certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
     "dual_norms": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
     "coupling_stripped": PACKAGE / "certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+    "spacetime_signs": PACKAGE / "certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -72,6 +73,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, pretend_profiles_evalu
             "evidence_flag": "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED",
         },
         {
+            "id": "spacetime_form_block_signs",
+            "status": "CERTIFIED" if values["spacetime_signs"]["flags"]["RECOIL_SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED"] else "OPEN",
+            "evidence_flag": "RECOIL_SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED",
+        },
+        {
             "id": "complete_harmonic_preparation_coefficients",
             "status": "CERTIFIED" if preparation_flags["HARMONIC_COEFFICIENTS_EVALUATED"] else "OPEN",
             "evidence_flag": "HARMONIC_COEFFICIENTS_EVALUATED",
@@ -114,6 +120,7 @@ def build() -> dict[str, Any]:
         "streaming_preflight": "RESPONSE_SPECIFIC_STREAMING_STOPPING_RULE_EXPORTED",
         "dual_norms": "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED",
         "coupling_stripped": "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED",
+        "spacetime_signs": "RECOIL_SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -133,8 +140,9 @@ def build() -> dict[str, Any]:
         "separates the internal modewise recoil construction from later "
         "numerical specialization. The absolute-g3 operator, exact switches, "
         "finite Maxwell/massive kernels, selected exact-T clock transform, "
-        "the four symbolic detector tail radii, and the fixed coupling-stripped "
-        "preparations are all certified. The stream is "
+        "the four symbolic detector tail radii, the fixed coupling-stripped "
+        "preparations, and the Lorentzian spacetime form-block signs are all "
+        "certified. The stream is "
         "nevertheless inactive because the detector-selected preparations "
         "remain operator-defined: their harmonic coefficients and advanced "
         "massive Green images are explicitly unevaluated, so no complete "
