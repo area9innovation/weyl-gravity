@@ -171,6 +171,21 @@ class ActiveFrontierTests(unittest.TestCase):
             self.payload["claim_flags"]["FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE"]
         )
         self.assertTrue(
+            self.payload["claim_flags"]["RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["NONLOCAL_R2_FORM_FACTOR_COMPUTED"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED"]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED"]
         )
         self.assertTrue(
@@ -273,7 +288,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

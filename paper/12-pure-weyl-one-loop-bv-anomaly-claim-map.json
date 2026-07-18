@@ -54,15 +54,44 @@
     "formal_tau_adic_coordinate_change_invertible": true,
     "minimal_BV_compensator_cotangent_lift_exact": true,
     "pure_Diff_and_mixed_additional_classes": 0,
+    "raw_to_repository_R2_scheme_shift": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 24,
+        "numerator": 7
+      },
+      "rational": {
+        "denominator": 320,
+        "numerator": -53
+      }
+    },
+    "raw_zeta_BoxR_coefficient": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 2,
+        "numerator": 7
+      },
+      "rational": {
+        "denominator": 80,
+        "numerator": -159
+      }
+    },
     "reduced_vacuum_cylinder_Bridge_4": true,
     "reduced_vacuum_cylinder_state_space_sign": "PLUS_E_MINUS_A_MINUS_L",
+    "repository_29_over_120_local_R2_reproduced": true,
     "standard_unitary_free_matter_cancellation_excluded": true,
     "strict_full_gauge_fixed_H14_even_dimension": 2,
     "strict_full_gauge_fixed_H14_odd_dimension": 1,
     "strict_one_loop_local_Euclidean_QME_obstructed": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "eb32d595b1b05af842bd8216e48111e81907c62677d630827c863eb7d7409090",
+  "compiled_pdf_sha256": "23c12fe0fcf1b4911f57b5da43fe21d7f36adc4ba98634a3fbd262de7b7d639c",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL",
@@ -73,6 +102,7 @@
     "Berger_Bridge_4_particle_crosswalk": false,
     "Bridge_5_interacting_BRST_map": false,
     "Lorentzian_QME": false,
+    "absolute_dressed_Rhat2_normalization": false,
     "all_loop_extended_QME": false,
     "complete_renormalized_Gamma1_supplied": false,
     "complete_renormalized_Q1_supplied": false,
@@ -80,6 +110,7 @@
     "finite_polynomial_in_tau_theorem": false,
     "full_BV_Bridge_4_particle_crosswalk": false,
     "global_BRST_Hadamard_state": false,
+    "nonlocal_R2_form_factor": false,
     "positive_particle_Hilbert_space": false,
     "quantum_Cartan_identity": false,
     "renormalized_Lorentzian_products": false,
@@ -88,7 +119,7 @@
     "theorem_frozen": false,
     "unitarity_theorem": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact covariant C2 logarithm through curvature order two.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, an exact covariant C2 logarithm through curvature order two, and an exact raw-to-BoxR-zero local R2 scheme conversion.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -122,6 +153,10 @@
       "result_id": "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD",
       "sha256": "f49edce04b39d1e600d0072bfabc784b8ef6edf0d5a1fc39c8ad89f7fe031d48"
     },
+    "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json": {
+      "result_id": "WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION",
+      "sha256": "21fc06bb31a35f8aa8f1d8f35f6fe1e746a8ab881332e16072ee257b3a437b2c"
+    },
     "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json": {
       "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
       "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
@@ -141,12 +176,12 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "d05aa0abf179bfeb535fbe79c82b16e57564b6af5d4e2a7205ad075ab96220bb",
+  "manuscript_sha256": "025999aee044e1dff65a242639ac299d51838c15ca391d37b77f36cb470a8073",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
-      "finite C2 and R2 normalization conditions",
-      "C2 cubic-and-higher nonlocal completion, the independent R2 form factor, and global Paneitz Green data",
+      "finite C2 and absolute dressed Rhat2 normalization conditions",
+      "C2 cubic-and-higher nonlocal completion, the independent nonlocal R2 form factor, and global Paneitz Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
     "required_outputs": [
@@ -156,11 +191,11 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
+    "status": "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "4c4d829d943fc87538f5617c68633e38c9e615fa0cd40dd4a7943e7b9d26c2a6",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "5e1486cac981bcf27437b76acce6a3f3f0bbd6654c0968edf851103537ed8c49",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "d70d47b4a668d2b753622929a9fa5b2801eebd7aabd5dd6bdab4dd96424b9d7a",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "66393d731c950f0652fc8f12f9c8cf58352df394ccf4041cfd96a163b1c89eb0",
     "paper/generate_12_quantum_anomaly_tables.py": "e5c0522901329f7f553ceb86d462fca426ac9de36305c0918385dcf8c1776abc",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "1c19f061a0eeab0e60c5a759d76563eeb0a290d7602a403d038d0fc8e1e9bb33",
     "paper/verify_12_quantum_anomaly_tables.py": "93005b9b34cb39e3a1dfaec9efe663c2c1e02f3cded0b9192544481a0dcd284c"

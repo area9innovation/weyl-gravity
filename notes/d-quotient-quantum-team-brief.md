@@ -834,9 +834,9 @@ rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. Its remaining local gate is the
-cubic-and-higher `C2` completion, the independent `R2` form factor, finite
-`C2/R2` normalization and complete `Q1`; its independent carrier gate is
-Bridge 2. The generated
+cubic-and-higher `C2` completion, the independent nonlocal `R2` form factor,
+finite `C2` and absolute dressed `R(g_hat)^2` normalization, and complete
+`Q1`; its independent carrier gate is Bridge 2. The generated
 fail-closed row is
 `quantum.crosswalk.classical_tangent_cone_to_interacting_brst`, with
 `lifecycle_state.status=NO_CERTIFIED_MAP`. The row records Bridge 2 absence in
@@ -858,8 +858,12 @@ be inferred by matching mode names across backgrounds.
 
 Bridge 5 activates only after both Bridge 2 and a coefficient-bearing QME
 disposition are present. Its strict-versus-tau-adic one-loop QME-disposition
-part is certified, while the Weyl-invariant finite remainder and complete
-`Q1` remain open; Bridge 2 has not supplied the required
+part is certified. The raw local `BoxR` coefficient
+`(7/2)log(3/2)-159/80` and the exact strict-metric raw-to-`BoxR=0` scheme
+shift `(7/24)log(3/2)-53/320` are also certified, reproducing the local
+anomaly-induced `R2` coefficient `29/120`. This does not fix the independent
+nonlocal `R2` form factor or the dressed `R(g_hat)^2` normalization. Complete
+`Q1` remains open, and Bridge 2 has not supplied the required
 interaction-to-physical-branch map. No classical tangent-cone or resonance
 obstruction is therefore advertised as BRST exactness, ghost removal, or a
 quantum constraint.
@@ -880,11 +884,13 @@ boundary are certified in
 Its curvature-squared covariantization and exact first-missing-order theorem
 are certified in
 [`curvature-squared-covariant-log-gamma1.md`](../quantum-weyl/reports/curvature-squared-covariant-log-gamma1.md).
+The raw `BoxR` coefficient and exact local scheme conversion are certified in
+[`weyl-graviton-box-r-scheme-conversion.md`](../quantum-weyl/reports/weyl-graviton-box-r-scheme-conversion.md).
 The theorem spine is assembled in
 [`12-pure-weyl-one-loop-bv-anomaly.tex`](../paper/12-pure-weyl-one-loop-bv-anomaly.tex),
 with a generated claim map and compiled draft PDF. Its
 [`computational supplement`](../paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex)
 is also assembled and warning-free; exact quotient, coefficient, quartet, and
-boundary tables are generated directly from ten hashed receipts and pass an
+boundary tables are generated directly from thirteen hashed claim-map receipts and pass an
 independent stale/tamper check. Specialist prose, citation, and release review
 remain before theorem freeze.

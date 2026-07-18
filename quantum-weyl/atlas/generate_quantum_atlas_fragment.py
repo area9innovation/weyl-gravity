@@ -43,6 +43,7 @@ DEPENDENCIES = {
     "anomaly_induced_Gamma1": QROOT / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_log_Gamma1": QROOT / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_log_Gamma1": QROOT / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "BoxR_scheme_conversion": QROOT / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": QROOT / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "general_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "finite_k0_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
@@ -160,6 +161,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     anomaly_induced = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_log_Gamma1"]
     curvature_squared_log = values["curvature_squared_log_Gamma1"]
+    box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     general = values["general_tangent_cone"]
     k0 = values["finite_k0_cone"]
@@ -270,6 +272,26 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
         or curvature_squared_log.get("decision", {}).get("residual_transfer")
         != "FORBIDDEN"
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "NONLOCAL_R2_FORM_FACTOR_COMPUTED"
+        )
+        is not False
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED"
+        )
+        is not False
     ):
         raise ValueError("coefficient-bearing QME disposition drifted")
     if (
@@ -527,13 +549,13 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; one conditional anomaly-induced Euclidean Gamma1 representative and the covariant curvature-squared C2 logarithm are fixed, but the independent R2 form factor, C2 cubic completion, finite constants and complete Q1 are underdetermined"),
-            lifecycle=("NO_CERTIFIED_MAP", "QME disposition, an anomaly-induced Euclidean Gamma1 representative and the covariant curvature-squared C2 logarithm are complete in scope, but the independent R2 form factor, C2 cubic completion, finite constants, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
+            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and exact strict-metric raw-to-BoxR-zero R2 scheme conversion are fixed, but the independent nonlocal R2 form factor, absolute dressed Rhat2 normalization, C2 cubic completion and complete Q1 are underdetermined"),
+            lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition and relative strict R2 scheme conversion are complete in scope, but the independent nonlocal R2 form factor, absolute dressed Rhat2 normalization, C2 cubic completion, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. The C2 logarithm is now covariant and operator-choice independent through curvature order two; the independent R2 form factor, C2 cubic completion, finite C2/R2 normalization, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "BoxR_scheme_conversion"),
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. The C2 logarithm is covariant and operator-choice independent through curvature order two. The raw BoxR coefficient and exact one-loop strict-metric raw-to-BoxR-zero R2 conversion are fixed, but the independent nonlocal R2 form factor, absolute dressed Rhat2 normalization, C2 cubic completion, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 

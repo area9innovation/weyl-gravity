@@ -37,8 +37,8 @@ declared Euclidean fixture. The spectral covariantization
 the resolvent filtration proves that admissible Laplace-type representatives
 first differ at curvature order three. The additive `C^2` constant,
 cubic-and-higher Weyl-invariant remainder, renormalized BV Laplacian or
-time-ordered product, the independent `R^2` form factor and finite `R^2`
-normalization, and global Green data remain
+time-ordered product, the independent nonlocal `R^2` form factor, absolute
+dressed `R(g_hat)^2` normalization, and global Green data remain
 absent, so complete `Gamma1` and `Q1` are fail-closed. Independently, Bridge 4
 is certified on the free reduced E/A/L vacuum-cylinder carrier: the
 same-background normalized modes, causal Green carrier and pairing determine
@@ -49,12 +49,23 @@ Berger-space result, or an interacting quantum theory. Those stationary/full-
 BV gates remain open. The older readiness discussion below is retained as
 historical gate provenance.
 
+The local `BoxR` ambiguity is now sharper than that broader finite remainder.
+The published raw zeta/proper-time coefficient is imported and independently
+replayed as `(7/2)log(3/2)-159/80`. Composing it with the certified primitive
+`omega BoxR=-(1/12)s(R2) mod d_h` fixes the exact strict-metric counterterm
+`(7/24)log(3/2)-53/320`, sends the raw coordinate to `BoxR=0`, and reproduces
+the stored anomaly-induced local `R2` coefficient `29/120`. This does not fix
+the momentum-dependent nonlocal `R2` form factor or the independent dressed
+`R(g_hat)^2` class, and it is not an all-loop equivalence of strict theories.
+
 See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md),
 [`wess-zumino-minimal-bv-cotangent-lift.md`](wess-zumino-minimal-bv-cotangent-lift.md),
 [`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md),
 [`one-loop-slavnov-q1-disposition.md`](one-loop-slavnov-q1-disposition.md), and
 [`anomaly-induced-nonlocal-gamma1.md`](anomaly-induced-nonlocal-gamma1.md), and
 [`flat-tt-logarithmic-gamma1.md`](flat-tt-logarithmic-gamma1.md), and
+[`curvature-squared-covariant-log-gamma1.md`](curvature-squared-covariant-log-gamma1.md),
+[`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical

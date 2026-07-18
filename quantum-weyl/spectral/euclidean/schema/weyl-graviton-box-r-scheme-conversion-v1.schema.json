@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-graviton-box-r-scheme-conversion-v1.schema.json",
+  "title": "Weyl-graviton BoxR scheme conversion",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "scope", "external_analytic_input", "heat_kernel_row_reconstruction", "exact_nonzero_sign_witness", "repository_scheme_conversion", "anomaly_induced_local_R2_cross_check", "distinct_R2_directions", "minimal_missing_form_factor_theorem", "decision", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-graviton-box-r-scheme-conversion-v1"},
+    "result_id": {"const": "WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"},
+    "result_state": {"const": "RAW_ZETA_BOX_R_COEFFICIENT_AND_REPOSITORY_BOXR_ZERO_R2_CONVERSION_CERTIFIED_NONLOCAL_R2_FORM_FACTOR_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"type": "object"},
+    "external_analytic_input": {"type": "object"},
+    "heat_kernel_row_reconstruction": {"type": "object"},
+    "exact_nonzero_sign_witness": {"type": "object"},
+    "repository_scheme_conversion": {"type": "object"},
+    "anomaly_induced_local_R2_cross_check": {"type": "object"},
+    "distinct_R2_directions": {"type": "object"},
+    "minimal_missing_form_factor_theorem": {"type": "object"},
+    "decision": {
+      "type": "object",
+      "required": ["raw_zeta_BoxR_coefficient", "repository_BoxR_zero_scheme_conversion", "relative_strict_R2_normalization", "absolute_dressed_Rhat2_normalization", "nonlocal_R2_form_factor", "complete_Gamma1", "complete_Q1", "residual_transfer"],
+      "properties": {
+        "raw_zeta_BoxR_coefficient": {"const": "COEFFICIENT_COMPUTED"},
+        "repository_BoxR_zero_scheme_conversion": {"const": "CERTIFIED"},
+        "relative_strict_R2_normalization": {"const": "FIXED_BETWEEN_RAW_ZETA_AND_REPOSITORY_BOXR_ZERO_SCHEMES"},
+        "absolute_dressed_Rhat2_normalization": {"const": "NOT_FIXED"},
+        "nonlocal_R2_form_factor": {"const": "NOT_COMPUTED"},
+        "complete_Gamma1": {"const": "NO_CERTIFIED_FUNCTIONAL"},
+        "complete_Q1": {"const": "NO_CERTIFIED_OPERATOR"},
+        "residual_transfer": {"const": "FORBIDDEN"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["RAW_ZETA_BOXR_COEFFICIENT_COMPUTED", "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED", "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED", "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED", "NONLOCAL_R2_FORM_FACTOR_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED"],
+      "properties": {
+        "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED": {"const": true},
+        "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED": {"const": true},
+        "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED": {"const": true},
+        "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED": {"const": false},
+        "NONLOCAL_R2_FORM_FACTOR_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false}
+      }
+    },
+    "dependencies": {"type": "object", "minProperties": 5},
+    "next_gate": {"const": "COVARIANT_NONLOCAL_R2_FORM_FACTOR_AND_C2_CUBIC_COMPLETION"},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  }
+}

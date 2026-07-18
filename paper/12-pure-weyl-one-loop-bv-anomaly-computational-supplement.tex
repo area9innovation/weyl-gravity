@@ -350,9 +350,9 @@ is invertible, or $G_4$ is a self-adjoint generalized inverse and every
 displayed source lies in the complement of $\ker\Delta_4$.  A compact
 Paneitz zero mode is not silently discarded: its global anomaly, homogeneous
 solutions, and boundary transgressions remain separate data.  The
-Weyl-invariant finite functional, finite $C^2/R^2$ normalization, and
-renormalized BV product are still absent, so this result does not promote
-complete $\Gamma_1$ or $Q_1$.
+Weyl-invariant finite functional, finite $C^2$ and absolute dressed
+$R(\widehat g)^2$ normalization, and renormalized BV product are still absent,
+so this result does not promote complete $\Gamma_1$ or $Q_1$.
 
 \subsection{Universal nonzero-momentum flat-TT logarithm}
 
@@ -402,8 +402,29 @@ $\Delta_C'=\Delta_C+V_1+O(\mathcal R^2)$,
 \]
 so the sandwiched change has exact order $1+1+1=3$.  Operator-choice
 dependence for this $C^2$ carrier therefore starts with the missing cubic form
-factors.  The independent $R^2$ form factor, kernel and boundary data,
-local-Weyl completion and finite $C^2/R^2$ constants remain fail-closed.
+factors.  The independent nonlocal $R^2$ form factor, kernel and boundary
+data, local-Weyl completion, finite $C^2$ constant and absolute dressed
+$R(\widehat g)^2$ normalization remain fail-closed.
+
+\subsection{Exact local BoxR scheme conversion}
+
+The zeta/proper-time calculation imports the published local heat-kernel rows
+for the traceless tensor, gauge-weight and diffeomorphism-ghost operators.  An
+independent exact replay of their $(2,-1,-2)$ determinant combination gives
+\[
+ b_{\Box}^{\rm raw}=\frac72\log\frac32-\frac{159}{80}<0.
+\]
+The repository primitive $\omega\Box R=-(1/12)s(R^2)$ modulo $\dd$ then fixes
+\[
+ z_R^{\rm raw\to0}=\frac7{24}\log\frac32-\frac{53}{320}.
+\]
+The verifier checks that $b_{\Box}^{\rm raw}-12z_R^{\rm raw\to0}=0$ and that
+adding the same shift to $391/960-(7/24)\log(3/2)$ gives the stored local
+coefficient $29/120$.  Alternating-series rational bounds certify the strict
+sign without floating-point arithmetic.  The receipt keeps three objects
+separate: this strict-metric local scheme counterterm, the independent dressed
+$R(\widehat g)^2$ class in the compensator theory, and the momentum-dependent
+nonlocal $R^2$ form factor.  Only the first is fixed.
 
 The same certificate binds the contraction non-merge: the Berger `tau` row
 is the temporal diffeomorphism ghost in the positive-Berger clock complex,
@@ -429,6 +450,9 @@ completion;
 \item replay the curvature-order filtration for the covariant logarithm and
 reject promotion of the cubic remainder, finite constants or Berger/WZ
 contraction merge;
+\item replay the raw $\Box R$ heat-kernel arithmetic, its exact strict-metric
+$R^2$ scheme shift and the $29/120$ cross-check, while rejecting promotion to
+the nonlocal $R^2$ form factor or an absolute dressed normalization;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
@@ -463,6 +487,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.curvature_squared_covariant_log_gamma1 --check
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_curvature_squared_covariant_log_gamma1
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_box_r_scheme_conversion
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
 python3 paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py --check
@@ -480,8 +506,8 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the cubic-and-higher $C^2$ completion, independent $R^2$ form factor,
-finite $C^2/R^2$ normalization,
+\item the cubic-and-higher $C^2$ completion, independent nonlocal $R^2$ form
+factor, finite $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete
 $Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT
 logarithmic contributions;
@@ -494,7 +520,7 @@ quantum bridge is certified only on the reduced vacuum-cylinder E/A/L Krein
 carrier: normalized modes, the causal Green carrier and pairing give a
 compatible complex structure and microlocal Hadamard two-point distribution,
 with positive E and negative-Krein A/L sectors.  The full-BV and Berger
-Hadamard/particle rows remain 	exttt{NO\_CERTIFIED\_MAP}.  The classical-
+Hadamard/particle rows remain \texttt{NO\_CERTIFIED\_MAP}.  The classical-
 obstruction-to-interacting-BRST bridge also remains independently fail-closed.
 
 \end{document}

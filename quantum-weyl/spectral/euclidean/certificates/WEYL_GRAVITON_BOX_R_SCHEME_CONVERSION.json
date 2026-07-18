@@ -1,0 +1,277 @@
+{
+  "anomaly_induced_local_R2_cross_check": {
+    "Euler_coordinate": {
+      "denominator": 20,
+      "numerator": -87
+    },
+    "general_law": "z_R,induced=-(3 b_Box+2 b_E4)/36",
+    "plus_scheme_conversion": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 24,
+        "numerator": 7
+      },
+      "rational": {
+        "denominator": 320,
+        "numerator": -53
+      }
+    },
+    "raw_scheme_formula": "391/960-(7/24)log(3/2)",
+    "raw_scheme_local_R2_coefficient": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 24,
+        "numerator": -7
+      },
+      "rational": {
+        "denominator": 960,
+        "numerator": 391
+      }
+    },
+    "repository_BoxR_zero_coefficient": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "rational": {
+        "denominator": 120,
+        "numerator": 29
+      }
+    },
+    "repository_target": {
+      "denominator": 120,
+      "numerator": 29
+    },
+    "status": "EXACT_MATCH"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate imports the published zeta/proper-time universal-functional-trace result for the raw BoxR coefficient and independently replays its exact H/Y/M arithmetic. It composes that coefficient with the repository primitive omega BoxR=-(1/12)s(R2) modulo d_h, fixes the relative strict-metric R2 counterterm between the raw and BoxR=0 schemes, and exactly reproduces the stored 29/120 anomaly-induced local R2 coefficient. It does not rederive the source functional traces, fix the independent dressed R(g_hat)^2 finite counterterm, compute a finite momentum-dependent R2 form factor or the cubic C2 completion, supply complete Gamma1 or Q1, authorize residual transfer, identify the two schemes as all-loop-equivalent strict theories, or establish a Lorentzian result.",
+  "claim_flags": {
+    "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED": false,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "NONLOCAL_R2_FORM_FACTOR_COMPUTED": false,
+    "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED": true,
+    "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED": true,
+    "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED": true,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "decision": {
+    "absolute_dressed_Rhat2_normalization": "NOT_FIXED",
+    "complete_Gamma1": "NO_CERTIFIED_FUNCTIONAL",
+    "complete_Q1": "NO_CERTIFIED_OPERATOR",
+    "nonlocal_R2_form_factor": "NOT_COMPUTED",
+    "raw_zeta_BoxR_coefficient": "COEFFICIENT_COMPUTED",
+    "relative_strict_R2_normalization": "FIXED_BETWEEN_RAW_ZETA_AND_REPOSITORY_BOXR_ZERO_SCHEMES",
+    "repository_BoxR_zero_scheme_conversion": "CERTIFIED",
+    "residual_transfer": "FORBIDDEN"
+  },
+  "dependencies": {
+    "Q1_disposition": {
+      "path": "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+      "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
+      "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
+    },
+    "anomaly_induced_Gamma1": {
+      "path": "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+      "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
+      "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
+    },
+    "even_local_quotient": {
+      "path": "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
+      "result_id": "AFN0_H14_EVEN_CANONICAL_QUOTIENT",
+      "sha256": "6bf8b7ef099ce40bef3e65bd78ba06d8ec138c8228b3991bf49a00fd5eef8d67"
+    },
+    "regularization_dependence": {
+      "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_REGULARIZATION_DEPENDENCE.json",
+      "result_id": "REGULATED_SLAVNOV_REGULARIZATION_DEPENDENCE",
+      "sha256": "325c51c50e2c929d663e5adea20f5cbcc9a0e476d1f5dc9be853c8a6c8e7c4d0"
+    },
+    "regulated_breaking": {
+      "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+      "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+      "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "distinct_R2_directions": {
+    "conflation_forbidden": true,
+    "dressed_Rhat2": "BRST-invariant H04 class in the tau-adic compensator theory changing Q1 without changing the strict BoxR coordinate",
+    "nonlocal_R2_form_factor": "finite momentum-dependent Weyl-invariant remainder requiring the full off-shell determinant expansion",
+    "strict_metric_R2": "conformally noninvariant counterterm changing the exact omega BoxR coordinate"
+  },
+  "exact_nonzero_sign_witness": {
+    "coarse_bounds": "2/5 < log(3/2) < 41/100",
+    "even_truncation_terms": 4,
+    "lower_bound": {
+      "denominator": 192,
+      "numerator": 77
+    },
+    "raw_coefficient_sign": "STRICTLY_NEGATIVE",
+    "series": "log(3/2)=sum_(n>=1)(-1)^(n+1)/(n 2^n)",
+    "upper_bound": {
+      "denominator": 960,
+      "numerator": 391
+    }
+  },
+  "external_analytic_input": {
+    "BoxR_convention_map": "the source and repository both use -2 g_(mu nu) delta/delta g_(mu nu) integral R2=12 BoxR",
+    "C2_convention_guard": "the source 199/15 coefficient is repository beta2=2c; it is not imported as a replacement for the certified c=199/30 anomaly coordinate",
+    "E4_convention_check": "the source -87/20 coordinate agrees with the repository E4 coordinate",
+    "arxiv": "2308.05251v2",
+    "authors": [
+      "A. O. Barvinsky",
+      "G. H. S. Camargo",
+      "A. E. Kalugin",
+      "N. Ohta",
+      "I. L. Shapiro"
+    ],
+    "imported_equations": [
+      "tr a2^H",
+      "tr a2^Y",
+      "tr a2^M",
+      "2H-Y-2M",
+      "raw BoxR coefficient"
+    ],
+    "reason": "the universal functional-trace derivation is imported; its exact final-row arithmetic and repository convention map are independently replayed here",
+    "source_calculation_replayed": false,
+    "title": "On the local term in the anomaly-induced action of Weyl quantum gravity",
+    "url": "https://arxiv.org/abs/2308.05251"
+  },
+  "heat_kernel_row_reconstruction": {
+    "basis": [
+      "1",
+      "log(3/2)"
+    ],
+    "determinant_weights": {
+      "H": 2,
+      "M": -2,
+      "Y": -1
+    },
+    "diffeomorphism_ghost_M": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 12,
+        "numerator": -5
+      },
+      "rational": {
+        "denominator": 540,
+        "numerator": 247
+      }
+    },
+    "gauge_weight_Y": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 3,
+        "numerator": -8
+      },
+      "rational": {
+        "denominator": 720,
+        "numerator": 911
+      }
+    },
+    "raw_BoxR_coefficient": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 2,
+        "numerator": 7
+      },
+      "rational": {
+        "denominator": 80,
+        "numerator": -159
+      }
+    },
+    "raw_anomaly": "(4 pi)^(-2)[(7/2)log(3/2)-159/80] BoxR",
+    "sum_rule": "2 tr(a2^H)-tr(a2^Y)-2 tr(a2^M)",
+    "tensor_H": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "rational": {
+        "denominator": 135,
+        "numerator": 13
+      }
+    }
+  },
+  "minimal_missing_form_factor_theorem": {
+    "current_repository_carrier": "local heat-kernel coefficient and Einstein-background factor ledger only",
+    "reason": "the local a2 rows fix the BoxR anomaly and its local R2 integration term but not the finite momentum-dependent form factor",
+    "required_calculation": "covariant nonlocal curvature expansion for the minimal fourth-order traceless-tensor operator together with both nonminimal second-order vector determinants in the matched gauge and measure",
+    "result": "NONLOCAL_R2_FORM_FACTOR_NOT_DETERMINED_BY_LOCAL_A2_OR_ANOMALY_DATA"
+  },
+  "next_gate": "COVARIANT_NONLOCAL_R2_FORM_FACTOR_AND_C2_CUBIC_COMPLETION",
+  "repository_scheme_conversion": {
+    "BRST_primitive": "omega BoxR=-(1/12) s(R2) modulo d_h",
+    "C2_E4_and_parity_odd_coordinates_unchanged": true,
+    "all_loop_boundary": "adding strict-metric R2 changes the scalar dynamics beyond the one-loop scheme conversion and is not an equivalence theorem for fixed-field-content Weyl gravity",
+    "all_loop_theory_equivalence": false,
+    "coordinate_law": "b_Box -> b_Box-12 z_R under Gamma1 -> Gamma1+z_R integral R2",
+    "counterterm_formula": "z_R=(7/24)log(3/2)-53/320",
+    "raw_to_BoxR_zero_counterterm": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 24,
+        "numerator": 7
+      },
+      "rational": {
+        "denominator": 320,
+        "numerator": -53
+      }
+    },
+    "reconstructed_BoxR_coordinate": {
+      "basis": [
+        "1",
+        "log(3/2)"
+      ],
+      "log_3_over_2": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "rational": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    }
+  },
+  "result_id": "WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION",
+  "result_state": "RAW_ZETA_BOX_R_COEFFICIENT_AND_REPOSITORY_BOXR_ZERO_R2_CONVERSION_CERTIFIED_NONLOCAL_R2_FORM_FACTOR_OPEN",
+  "schema": "quantum-weyl-graviton-box-r-scheme-conversion-v1",
+  "scope": {
+    "boundary": "local bulk density; integrated BoxR boundary contribution kept separate",
+    "gauge": "minimal conformal-transverse background gauge with traceless metric fluctuation",
+    "normalization": "overall (4 pi)^(-2); project Weyl convention delta_sigma g=2 sigma g",
+    "regularization": "zeta-functional or covariant proper-time local heat-kernel prescription",
+    "signature": "Euclidean",
+    "theory": "strict four-dimensional Weyl-squared quantum gravity"
+  }
+}

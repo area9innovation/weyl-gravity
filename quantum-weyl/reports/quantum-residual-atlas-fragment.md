@@ -94,11 +94,18 @@ universal logarithmic form factor is now fixed with coefficient `-199/60`,
 scale response `199/30`, and scheme-independent momentum difference. Its
 spectral covariantization is universal through curvature order two, with
 operator-choice dependence beginning at curvature order three. The additive
-finite `C2` normalization, independent `R2` form factor and normalization,
-cubic-and-higher `C2` completion, global Green/kernel data, and renormalized BV
+finite `C2` normalization, independent nonlocal `R2` form factor, absolute
+dressed `R(g_hat)^2` normalization, cubic-and-higher `C2` completion, global
+Green/kernel data, and renormalized BV
 Laplacian or time-ordered product have not been supplied. The extended
 classical residual contraction is absent as well. Residual transfer therefore
 remains forbidden.
+
+The local `BoxR` rail is narrower and now closed: exact replay gives the raw
+coefficient `(7/2)log(3/2)-159/80`, and the strict-metric shift
+`(7/24)log(3/2)-53/320` converts it to `BoxR=0` and reproduces `R2=29/120`.
+The atlas keeps this local scheme conversion separate from the two open `R2`
+objects above and does not create a particle row from it.
 
 The active Bridge 4 row is therefore the six all-energy vacuum-cylinder E/A/L
 mode-family entries, each `CERTIFIED` only in the declared reduced carrier.

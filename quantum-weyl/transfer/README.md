@@ -427,9 +427,14 @@ scheme-independent difference
 `CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1` promotes this to the spectral
 functional `-(199/60)<C,log(Delta_C/mu^2)C>` through curvature order two.
 The resolvent Fréchet formula proves that admissible Laplace-type operator
-choices first change it at curvature order three. The additive `C^2`
-constant, independent `R^2` form factor and normalization, cubic-and-higher
-`C^2` completion, global
+choices first change it at curvature order three.
+`WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION` independently replays the published
+raw local coefficient `(7/2)log(3/2)-159/80` and proves that the strict-metric
+counterterm `(7/24)log(3/2)-53/320` converts it exactly to the repository
+`BoxR=0` convention while reproducing the anomaly-induced local `R2`
+coefficient `29/120`. This fixes a relative one-loop scheme conversion only.
+The additive `C^2` constant, independent nonlocal `R^2` form factor, absolute
+dressed `R(g_hat)^2` normalization, cubic-and-higher `C^2` completion, global
 Green/kernel data, and renormalized BV Laplacian or time-ordered product
 remain absent.
 Residual transfer

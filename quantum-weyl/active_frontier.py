@@ -59,6 +59,7 @@ DEPENDENCIES = {
     "anomaly_induced_nonlocal_Gamma1": HERE / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": HERE / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": HERE / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -144,6 +145,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
         "curvature_observable_propagator": "GAUGE_INVARIANT_CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED_AUTONOMOUS_GREEN_AND_HADAMARD_OPEN",
+        "BoxR_scheme_conversion": "RAW_ZETA_BOX_R_COEFFICIENT_AND_REPOSITORY_BOXR_ZERO_R2_CONVERSION_CERTIFIED_NONLOCAL_R2_FORM_FACTOR_OPEN",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
@@ -161,6 +163,7 @@ def _load() -> dict[str, dict[str, Any]]:
     anomaly_induced_gamma1 = values["anomaly_induced_nonlocal_Gamma1"]
     flat_tt_logarithmic_gamma1 = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log_gamma1 = values["curvature_squared_covariant_log_Gamma1"]
+    box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
         physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
@@ -320,6 +323,45 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN"
     ):
         raise ValueError("curvature-squared covariant-log Gamma1 frontier drifted")
+    if (
+        box_r_scheme_conversion.get("decision", {}).get(
+            "raw_zeta_BoxR_coefficient"
+        )
+        != "COEFFICIENT_COMPUTED"
+        or box_r_scheme_conversion.get("decision", {}).get(
+            "repository_BoxR_zero_scheme_conversion"
+        )
+        != "CERTIFIED"
+        or box_r_scheme_conversion.get("decision", {}).get(
+            "nonlocal_R2_form_factor"
+        )
+        != "NOT_COMPUTED"
+        or box_r_scheme_conversion.get("decision", {}).get(
+            "absolute_dressed_Rhat2_normalization"
+        )
+        != "NOT_FIXED"
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "NONLOCAL_R2_FORM_FACTOR_COMPUTED"
+        )
+        is not False
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED"
+        )
+        is not False
+    ):
+        raise ValueError("BoxR scheme-conversion frontier drifted")
     if (
         reduced_bridge4.get("decision", {}).get(
             "Bridge_4_reduced_vacuum_cylinder"
@@ -1146,8 +1188,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_ANOMALY_INDUCED_GAMMA1_AND_COVARIANT_CURVATURE_SQUARED_C2_LOG_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
-                "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_RAW_BOXR_AND_EXACT_REPOSITORY_R2_SCHEME_CONVERSION_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
+                "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1162,8 +1204,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_ANOMALY_INDUCED_GAMMA1_AND_COVARIANT_CURVATURE_SQUARED_C2_LOG_ONLY_R2_FORM_FACTOR_C2_CUBIC_REMAINDER_FINITE_NORMALIZATIONS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "FORBIDDEN_RELATIVE_STRICT_R2_RAW_TO_BOXR_ZERO_SCHEME_NORMALIZATION_FIXED_NONLOCAL_R2_FORM_FACTOR_C2_CUBIC_REMAINDER_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
         "supersession_ledger": [
@@ -1313,6 +1355,11 @@ def build() -> dict[str, Any]:
             "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED": True,
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED": True,
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE": True,
+            "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED": True,
+            "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED": True,
+            "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED": True,
+            "NONLOCAL_R2_FORM_FACTOR_COMPUTED": False,
+            "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED": False,
             "VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED": True,
             "REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED": True,
             "REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED": True,
@@ -1333,7 +1380,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1365,7 +1412,13 @@ def build() -> dict[str, Any]:
             "difference. A spectral covariantization now fixes <C,log(Delta_C/mu^2)C> "
             "through curvature order two; the resolvent filtration proves that admissible "
             "Laplace-type operator choices first differ at curvature order three. The cubic "
-            "completion and additive C2/R2 normalizations remain open. "
+            "completion and additive C2 normalization remain open. The imported raw "
+            "zeta/proper-time BoxR coefficient is independently replayed as "
+            "(7/2)log(3/2)-159/80. The exact strict-metric R2 counterterm "
+            "(7/24)log(3/2)-53/320 converts it to the repository BoxR=0 convention "
+            "and reproduces the anomaly-induced local R2 coefficient 29/120. This fixes "
+            "only a relative one-loop strict-metric scheme conversion; the independent "
+            "nonlocal R2 form factor and absolute dressed R(g_hat)^2 normalization remain open. "
             "An exact dual-cone witness further proves that no nonnegative collection of "
             "standard-sign free conformal scalars, Weyl or Dirac fermions, and gauge vectors "
             "cancels the C2/E4 vector. "
@@ -1577,6 +1630,11 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED") is not True
         or flags.get("CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED") is not True
         or flags.get("FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE") is not True
+        or flags.get("RAW_ZETA_BOXR_COEFFICIENT_COMPUTED") is not True
+        or flags.get("RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED") is not True
+        or flags.get("REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED") is not True
+        or flags.get("NONLOCAL_R2_FORM_FACTOR_COMPUTED") is not False
+        or flags.get("ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED") is not False
         or flags.get("VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED") is not True
         or flags.get("REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED") is not True
         or flags.get("REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED") is not True
@@ -1671,6 +1729,11 @@ def validate(result: dict[str, Any]) -> None:
             "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED",
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED",
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE",
+            "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED",
+            "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED",
+            "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED",
+            "NONLOCAL_R2_FORM_FACTOR_COMPUTED",
+            "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED",
             "VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED",
             "REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED",
             "REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED",

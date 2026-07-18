@@ -75,6 +75,17 @@ def main() -> None:
     }
     assert claims["covariant_C2_log_through_curvature_order_two"] is True
     assert claims["first_unresolved_C2_log_completion_order"] == 3
+    assert claims["raw_zeta_BoxR_coefficient"] == {
+        "basis": ["1", "log(3/2)"],
+        "rational": {"numerator": -159, "denominator": 80},
+        "log_3_over_2": {"numerator": 7, "denominator": 2},
+    }
+    assert claims["raw_to_repository_R2_scheme_shift"] == {
+        "basis": ["1", "log(3/2)"],
+        "rational": {"numerator": -53, "denominator": 320},
+        "log_3_over_2": {"numerator": 7, "denominator": 24},
+    }
+    assert claims["repository_29_over_120_local_R2_reproduced"] is True
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     assert claims["reduced_vacuum_cylinder_Bridge_4"] is True
     assert claims["reduced_vacuum_cylinder_state_space_sign"] == "PLUS_E_MINUS_A_MINUS_L"
@@ -86,11 +97,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
+        == "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 12
+    assert len(payload["inputs"]) == 13
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -105,6 +116,7 @@ def main() -> None:
     gamma1 = dependencies["ANOMALY_INDUCED_NONLOCAL_GAMMA1"]
     flat_tt_log = dependencies["FLAT_TT_LOGARITHMIC_GAMMA1"]
     curvature_squared_log = dependencies["CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1"]
+    box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     reduced_bridge4 = dependencies["VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"]
     assert strict["qme_disposition"]["status"] == "OBSTRUCTED_STRICT_FIELD_CONTENT"
     assert strict["coefficients"]["ANOM_OMEGA_C2"] == claims["C2_coefficient"]
@@ -125,6 +137,8 @@ def main() -> None:
     assert flat_tt_log["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
     assert curvature_squared_log["operator_choice_independence"]["first_difference_order"] == 3
     assert curvature_squared_log["decision"]["residual_transfer"] == "FORBIDDEN"
+    assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
+    assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert reduced_bridge4["decision"]["Bridge_4_reduced_vacuum_cylinder"] == "CERTIFIED"
     assert reduced_bridge4["decision"]["Bridge_4_full_BV"] == "NO_CERTIFIED_MAP"
     print("Paper 12 pure-Weyl one-loop BV anomaly claim map: PASS")

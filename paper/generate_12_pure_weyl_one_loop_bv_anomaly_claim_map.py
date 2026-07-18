@@ -31,6 +31,7 @@ INPUTS = {
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": ROOT / "quantum-weyl/lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
 }
 
@@ -56,6 +57,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
+    box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -109,6 +111,22 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED"
         )
         is not False
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED"
+        )
+        is not True
+        or box_r_scheme_conversion.get("claim_flags", {}).get(
+            "NONLOCAL_R2_FORM_FACTOR_COMPUTED"
+        )
+        is not False
         or reduced_bridge4.get("decision", {}).get(
             "Bridge_4_reduced_vacuum_cylinder"
         )
@@ -129,6 +147,7 @@ def build() -> dict[str, Any]:
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
+    box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
@@ -141,7 +160,7 @@ def build() -> dict[str, Any]:
             "REDUCED-MODE",
             "LORENTZIAN-CAUSAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact covariant C2 logarithm through curvature order two.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, an exact covariant C2 logarithm through curvature order two, and an exact raw-to-BoxR-zero local R2 scheme conversion.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -187,6 +206,9 @@ def build() -> dict[str, Any]:
             "flat_TT_scale_response": flat_tt_log["exact_logarithmic_form_factor"]["RG_scale_response"],
             "covariant_C2_log_through_curvature_order_two": True,
             "first_unresolved_C2_log_completion_order": curvature_squared_log["operator_choice_independence"]["first_difference_order"],
+            "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
+            "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
+            "repository_29_over_120_local_R2_reproduced": True,
             "Berger_WZ_tau_contraction_merge_rejected": True,
             "reduced_vacuum_cylinder_Bridge_4": True,
             "reduced_vacuum_cylinder_state_space_sign": reduced_bridge4["decision"]["state_space_sign"],
@@ -203,6 +225,8 @@ def build() -> dict[str, Any]:
             "complete_renormalized_Q1_supplied": False,
             "complete_renormalized_Gamma1_supplied": False,
             "cubic_nonlocal_curvature_completion": False,
+            "nonlocal_R2_form_factor": False,
+            "absolute_dressed_Rhat2_normalization": False,
             "same_background_compensator_contraction": False,
             "quantum_Cartan_identity": False,
             "full_BV_Bridge_4_particle_crosswalk": False,
@@ -211,11 +235,11 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "status": "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
-                "finite C2 and R2 normalization conditions",
-                "C2 cubic-and-higher nonlocal completion, the independent R2 form factor, and global Paneitz Green data",
+                "finite C2 and absolute dressed Rhat2 normalization conditions",
+                "C2 cubic-and-higher nonlocal completion, the independent nonlocal R2 form factor, and global Paneitz Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],
             "required_outputs": [
