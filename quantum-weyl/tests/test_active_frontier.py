@@ -212,6 +212,16 @@ class ActiveFrontierTests(unittest.TestCase):
                 "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED"
@@ -343,7 +353,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "COMPUTE_GHOST_N3_NONZERO_MOMENTUM_TRIANGLE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

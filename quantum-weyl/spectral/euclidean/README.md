@@ -63,8 +63,15 @@ The Endo base has the exact finite-interval heat kernel
 `K_H0(t)=K_F(t)-grad grad' integral_t^(3t/2) K_Delta0(s) ds`, and its
 nonzero-mode determinant differs from `det F` only by the local scalar
 zeta-scaling term. Through cubic curvature order the remaining ghost work is
-therefore the finite set of one-, two- and three-Ricci insertion traces. Those
-traces—and hence the generic ghost form-factor coefficients—remain open.
+therefore the finite set of one-, two- and three-Ricci insertion traces. The
+zero-external-momentum angular numerator of the three-insertion row is now
+computed exactly in
+[`GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json):
+its scalar-flat `tr(Ric^3)` coefficient is `503/648` before the `W` and
+Tr-log factors and `-503/243` afterwards. Its radial integral is scaleless and
+IR singular, so the nonzero-momentum triangle, the curved-Endo one- and
+two-insertion traces, and hence the generic ghost form-factor coefficients
+remain open.
 
 Replay with:
 
@@ -75,6 +82,9 @@ PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generi
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_endo_duhamel_reduction --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_endo_duhamel_reduction
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_endo_duhamel_reduction
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_adiabatic_carrier --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
 ```
 
 The generic schema in this directory remains a promotion gate: a coefficient record is valid

@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/quantum-weyl/generic-background-ghost-n3-adiabatic-carrier-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state", "dependency_tags",
+    "classical_commit", "scope", "flat_Endo_inverse", "cyclic_tensor_numerator",
+    "isotropic_moments", "angular_average", "polarized_S3_carrier", "three_insertion_log_term",
+    "radial_and_momentum_status", "carrier_crosswalk", "claim_flags", "dependency",
+    "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n3-adiabatic-carrier-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER"},
+    "result_state": {"const": "N3_ZERO_EXTERNAL_MOMENTUM_ANGULAR_NUMERATOR_EXACT_RADIAL_TRIANGLE_OPEN"},
+    "lifecycle_state": {"const": "COEFFICIENT_BEARING_CARRIER_MOMENT_COMPUTED_FULL_FORM_FACTOR_NOT_COMPUTED"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "signature", "background_carrier", "curvature_order", "insertion_count", "mode_scope"],
+      "properties": {
+        "dimension": {"const": 4}, "signature": {"const": "Euclidean"},
+        "background_carrier": {"type": "string", "minLength": 20},
+        "curvature_order": {"const": 3}, "insertion_count": {"const": 3},
+        "mode_scope": {"type": "string", "minLength": 10}
+      }
+    },
+    "flat_Endo_inverse": {"$ref": "#/$defs/stringMapWithRational"},
+    "cyclic_tensor_numerator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "ordered_invariant_basis"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 20},
+        "ordered_invariant_basis": {"const": ["tr_R3", "tr_R_tr_R2", "tr_R_cubed"]}
+      }
+    },
+    "isotropic_moments": {
+      "type": "object", "additionalProperties": false,
+      "required": ["n_R3_n", "n_R_n_times_n_R2_n", "n_R_n_cubed", "sphere_dimension"],
+      "properties": {
+        "n_R3_n": {"type": "string"}, "n_R_n_times_n_R2_n": {"type": "string"},
+        "n_R_n_cubed": {"type": "string"}, "sphere_dimension": {"const": 3}
+      }
+    },
+    "angular_average": {"$ref": "#/$defs/coefficientBlock"},
+    "polarized_S3_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ordered_basis", "basis_definitions", "angular_coefficients", "Tr_log_coefficients", "stabilizer", "diagonal_restriction"],
+      "properties": {
+        "ordered_basis": {"const": ["sym_tr_R1_R2_R3", "sum_tr_R1_tr_R2_R3", "tr_R1_tr_R2_tr_R3"]},
+        "basis_definitions": {"$ref": "#/$defs/polarizedStrings"},
+        "angular_coefficients": {"$ref": "#/$defs/polarizedCoefficients"},
+        "Tr_log_coefficients": {"$ref": "#/$defs/polarizedCoefficients"},
+        "stabilizer": {"const": "S3"},
+        "diagonal_restriction": {"type": "string", "minLength": 30}
+      }
+    },
+    "three_insertion_log_term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parent_series_coefficient", "W_cubic_multiplier", "combined_multiplier", "formula", "coefficients", "scalar_flat_specialization"],
+      "properties": {
+        "parent_series_coefficient": {"$ref": "#/$defs/rational"},
+        "W_cubic_multiplier": {"$ref": "#/$defs/rational"},
+        "combined_multiplier": {"$ref": "#/$defs/rational"},
+        "formula": {"type": "string"},
+        "coefficients": {"$ref": "#/$defs/invariantCoefficients"},
+        "scalar_flat_specialization": {"type": "string"}
+      }
+    },
+    "radial_and_momentum_status": {"$ref": "#/$defs/stringMap"},
+    "carrier_crosswalk": {"$ref": "#/$defs/stringMap"},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED",
+        "GENERIC_GHOST_N3_SCALAR_FLAT_RICCI_CUBIC_COEFFICIENT_COMPUTED",
+        "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED",
+        "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED",
+        "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED",
+        "REPOSITORY_I10_NORMALIZATION_MAP_CERTIFIED",
+        "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED",
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED": {"type": "boolean"},
+        "GENERIC_GHOST_N3_SCALAR_FLAT_RICCI_CUBIC_COEFFICIENT_COMPUTED": {"type": "boolean"},
+        "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": {"type": "boolean"},
+        "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED": {"type": "boolean"},
+        "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED": {"type": "boolean"},
+        "REPOSITORY_I10_NORMALIZATION_MAP_CERTIFIED": {"type": "boolean"},
+        "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": {"type": "boolean"},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"type": "boolean"},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"type": "boolean"},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"type": "boolean"},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"type": "boolean"},
+        "LORENTZIAN_CERTIFIED": {"type": "boolean"}
+      }
+    },
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"const": "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "next_gate": {"const": "COMPUTE_N3_NONZERO_MOMENTUM_TRIANGLE_AND_N1_N2_CURVED_ENDO_INSERTION_TRACES"},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "invariantCoefficients": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tr_R3", "tr_R_tr_R2", "tr_R_cubed"],
+      "properties": {
+        "tr_R3": {"$ref": "#/$defs/rational"},
+        "tr_R_tr_R2": {"$ref": "#/$defs/rational"},
+        "tr_R_cubed": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "coefficientBlock": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "coefficients", "scalar_flat_specialization"],
+      "properties": {
+        "formula": {"type": "string"},
+        "coefficients": {"$ref": "#/$defs/invariantCoefficients"},
+        "scalar_flat_specialization": {"type": "string"}
+      }
+    },
+    "polarizedStrings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sym_tr_R1_R2_R3", "sum_tr_R1_tr_R2_R3", "tr_R1_tr_R2_tr_R3"],
+      "properties": {
+        "sym_tr_R1_R2_R3": {"type": "string"},
+        "sum_tr_R1_tr_R2_R3": {"type": "string"},
+        "tr_R1_tr_R2_tr_R3": {"type": "string"}
+      }
+    },
+    "polarizedCoefficients": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sym_tr_R1_R2_R3", "sum_tr_R1_tr_R2_R3", "tr_R1_tr_R2_tr_R3"],
+      "properties": {
+        "sym_tr_R1_R2_R3": {"$ref": "#/$defs/rational"},
+        "sum_tr_R1_tr_R2_R3": {"$ref": "#/$defs/rational"},
+        "tr_R1_tr_R2_tr_R3": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "stringMap": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 3},
+    "stringMapWithRational": {
+      "type": "object", "additionalProperties": {"oneOf": [{"type": "string"}, {"$ref": "#/$defs/rational"}]},
+      "required": ["formula", "unit_direction", "longitudinal_subtraction", "projector_symbol"]
+    }
+  }
+}

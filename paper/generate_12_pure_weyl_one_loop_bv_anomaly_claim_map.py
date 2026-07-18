@@ -44,6 +44,7 @@ INPUTS = {
     "CPT_universal_third_curvature_kernels": ROOT / "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
     "generic_background_ghost_CPT_obstruction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
+    "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
 
@@ -81,6 +82,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     cpt_kernels = values["CPT_universal_third_curvature_kernels"]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
+    generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -235,6 +237,18 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED"
         )
         is not False
+        or generic_ghost_n3.get("angular_average", {}).get("coefficients", {}).get(
+            "tr_R3"
+        )
+        != {"numerator": 503, "denominator": 648}
+        or generic_ghost_n3.get("three_insertion_log_term", {}).get(
+            "coefficients", {}
+        ).get("tr_R3")
+        != {"numerator": -503, "denominator": 243}
+        or generic_ghost_n3.get("carrier_crosswalk", {}).get(
+            "repository_I10_normalization_map"
+        )
+        != "NO_CERTIFIED_MAP"
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -270,6 +284,7 @@ def build() -> dict[str, Any]:
     cpt_kernels = values["CPT_universal_third_curvature_kernels"]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
+    generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
@@ -280,7 +295,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, five universal CPT source kernels are exact, and the generic ghost determinant has an exact Endo-Duhamel reduction, while its Ricci-insertion traces, the generic physical fourth-order kernel, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, five universal CPT source kernels are exact, the generic ghost determinant has an exact Endo-Duhamel reduction, and its n=3 adiabatic angular carrier is exact, while the nonzero-momentum triangle, n=1/n=2 traces, generic physical fourth-order kernel, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -360,6 +375,10 @@ def build() -> dict[str, Any]:
             "generic_ghost_Endo_alpha": generic_ghost_endo["exact_Endo_split"]["alpha"],
             "generic_ghost_local_perturbation": generic_ghost_endo["exact_Endo_split"]["local_perturbation"],
             "generic_ghost_maximum_cubic_Ricci_insertions": generic_ghost_endo["Duhamel_expansion"]["maximum_W_insertions_through_cubic_order"],
+            "generic_ghost_n3_adiabatic_angular_carrier": True,
+            "generic_ghost_n3_angular_tr_R3_coefficient": generic_ghost_n3["angular_average"]["coefficients"]["tr_R3"],
+            "generic_ghost_n3_Tr_log_tr_R3_coefficient": generic_ghost_n3["three_insertion_log_term"]["coefficients"]["tr_R3"],
+            "generic_ghost_n3_zero_momentum_stabilizer": generic_ghost_n3["polarized_S3_carrier"]["stabilizer"],
             "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
             "repository_29_over_120_local_R2_reproduced": True,
@@ -381,6 +400,8 @@ def build() -> dict[str, Any]:
             "repository_generic_background_CPT_trace_substitution": False,
             "generic_nonminimal_ghost_CPT_determinant": False,
             "generic_nonminimal_ghost_insertion_traces_evaluated": False,
+            "generic_ghost_n3_full_momentum_triangle": False,
+            "repository_I10_normalization_map": False,
             "absolute_dressed_Rhat2_normalization": False,
             "same_background_compensator_contraction": False,
             "quantum_Cartan_identity": False,
@@ -390,11 +411,11 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "status": "COMPUTE_GHOST_N3_NONZERO_MOMENTUM_TRIANGLE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
-                "evaluated generic Diff-Weyl ghost one-, two- and three-Ricci insertion traces",
+                "generic Diff-Weyl ghost nonzero-momentum three-Ricci triangle and curved-Endo one-/two-insertion traces",
                 "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

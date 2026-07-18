@@ -5,8 +5,8 @@ Dependency tags: `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`.
 ## Result
 
 The generic Diff×Weyl ghost obstruction does not force a completely new heat
-kernel calculus. With the positive Euclidean convention (H=-M_{m eff}),
-the operator splits exactly as
+kernel calculus. With the positive Euclidean convention
+\(H=-M_{\mathrm{eff}}\), the operator splits exactly as
 
 \[
 H=H_0+W,
@@ -18,9 +18,9 @@ F=-\Box\mathbf1+\operatorname{Ric},
 W=-2\operatorname{Ric}.
 \]
 
-The base (H_0) is the nondegenerate Endo vector operator with
-(alpha=-1/2). Its transverse and longitudinal principal eigenvalues are
-(1) and (3/2), and its heat kernel is exactly
+The base \(H_0\) is the nondegenerate Endo vector operator with
+\(\alpha=-1/2\). Its transverse and longitudinal principal eigenvalues are
+\(1\) and \(3/2\), and its heat kernel is exactly
 
 \[
 K_{H_0}(t)=K_F(t)-\nabla\nabla'\int_t^{3t/2}ds\,K_{\Delta_0}(s).
@@ -37,13 +37,14 @@ IR integral is introduced. On nonzero modes,
 
 so the difference between the Endo base and the minimal vector determinant is
 the local zeta-scaling term
-(zeta_{\Delta_0}(0)\log(3/2)). Generic nonlocal ghost corrections are
-therefore localized to insertions of the endomorphism (W=-2\mathrm{Ric}).
+\(\zeta_{\Delta_0}(0)\log(3/2)\). Generic nonlocal ghost corrections are
+therefore localized to insertions of the endomorphism
+\(W=-2\operatorname{Ric}\).
 
 ## Cubic-curvature work table
 
-Because (W=O(\mathcal R)), the determinant through
-(O(\mathcal R^3)) contains only:
+Because \(W=O(\mathcal R)\), the determinant through
+\(O(\mathcal R^3)\) contains only:
 
 | Ricci insertions | maximum remaining Endo-kernel order |
 |---:|---:|

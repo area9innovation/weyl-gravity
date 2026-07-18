@@ -50,6 +50,7 @@ DEPENDENCIES = {
     "CPT_universal_third_curvature_kernels": QROOT / "transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
     "generic_background_ghost_CPT_obstruction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
+    "generic_ghost_n3_adiabatic_carrier": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "BoxR_scheme_conversion": QROOT / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": QROOT / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "general_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -175,6 +176,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     cpt_kernels = values["CPT_universal_third_curvature_kernels"]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
+    generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     general = values["general_tangent_cone"]
@@ -379,6 +381,18 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not True
         or generic_ghost_endo.get("claim_flags", {}).get(
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED"
+        )
+        is not False
+        or generic_ghost_n3.get("angular_average", {}).get("coefficients", {}).get(
+            "tr_R3"
+        )
+        != {"numerator": 503, "denominator": 648}
+        or generic_ghost_n3.get("three_insertion_log_term", {}).get(
+            "coefficients", {}
+        ).get("tr_R3")
+        != {"numerator": -503, "denominator": 243}
+        or generic_ghost_n3.get("claim_flags", {}).get(
+            "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED"
         )
         is not False
         or box_r_scheme_conversion.get("claim_flags", {}).get(
@@ -658,13 +672,13 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis and parity-even five-carrier manifest are complete, five exact universal CPT source kernels are imported, and the generic ghost determinant has an exact Endo-Duhamel reduction, while its Ricci-insertion traces, repository functions and coefficients, finite normalizations and complete Q1 are underdetermined"),
-            lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels and generic-ghost Endo-Duhamel reduction are complete in scope, but the one-, two- and three-Ricci insertion traces, generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
+            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis and parity-even five-carrier manifest are complete, five exact universal CPT source kernels are imported, the generic ghost determinant has an exact Endo-Duhamel reduction, and its n=3 adiabatic angular carrier is exact, while the nonzero-momentum triangle, n=1/n=2 traces, repository functions and coefficients, finite normalizations and complete Q1 are underdetermined"),
+            lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels, generic-ghost Endo-Duhamel reduction and n=3 adiabatic angular carrier are complete in scope, but the n=3 nonzero-momentum triangle, n=1/n=2 curved-Endo traces, generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "FV_anomaly_action_Ricci_sector", "algebraic_cubic_Weyl_carriers", "third_curvature_Weyl_manifest", "CPT_universal_third_curvature_kernels", "generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "BoxR_scheme_conversion"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The zero-derivative algebraic C3 basis and parity-even third-curvature carrier manifest are complete, five exact universal CPT source kernels are imported, and the generic ghost operator has an exact Endo-Duhamel reduction to minimal vector/scalar kernels plus at most three Ricci insertions. Those insertion traces, the generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "FV_anomaly_action_Ricci_sector", "algebraic_cubic_Weyl_carriers", "third_curvature_Weyl_manifest", "CPT_universal_third_curvature_kernels", "generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n3_adiabatic_carrier", "BoxR_scheme_conversion"),
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The zero-derivative algebraic C3 basis and parity-even third-curvature carrier manifest are complete, five exact universal CPT source kernels are imported, and the generic ghost operator has an exact Endo-Duhamel reduction. Its n=3 adiabatic angular numerator is now exact, but the nonzero-momentum triangle, n=1/n=2 curved-Endo traces, generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 
@@ -678,7 +692,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         ("algebraic_cubic_weyl_carrier", "four-dimensional zero-derivative algebraic C3 carrier in its exact even/odd parity basis", ["LOCAL-ALGEBRAIC"], ("algebraic_cubic_Weyl_carriers",)),
         ("third_curvature_weyl_carrier_manifest", "five parity-even third-curvature conformal carrier labels modulo the exact four-dimensional symmetric functional relation", ["EUCLIDEAN-SPECTRAL"], ("third_curvature_Weyl_manifest",)),
         ("cpt_universal_third_curvature_kernel", "five exact universal CPT source kernels on the rank-one minimal scalar-Laplacian fixture; repository generic-background full-BV trace substitution open", ["EUCLIDEAN-SPECTRAL"], ("CPT_universal_third_curvature_kernels",)),
-        ("generic_background_diff_weyl_ghost_cpt_obstruction", "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; one-, two- and three-Ricci insertion traces open", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction")),
+        ("generic_background_diff_weyl_ghost_cpt_obstruction", "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; n=3 adiabatic angular carrier exact; nonzero-momentum triangle and n=1/n=2 traces open", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n3_adiabatic_carrier")),
         ("curvature_observable_generator", "support-local curvature-graph CCR generator", ["LORENTZIAN-CAUSAL"], ("curvature_CCR",)),
     ]
     rows = []

@@ -56,6 +56,11 @@ five exact universal CPT source kernels on the rank-one minimal scalar-
 Laplacian fixture. It does not promote them to Weyl-graviton coefficients or
 particles because the repository generic-background full-BV trace
 substitution is absent.
+A tenth guard follows the generic Diff--Weyl ghost determinant. It records
+the exact Endo--Duhamel reduction and the exact three-insertion adiabatic
+angular carrier without turning either into a particle or a complete form
+factor. The nonzero-momentum triangle and the curved-Endo one-/two-insertion
+traces remain open.
 
 ## Tangent-cone boundary
 
@@ -127,8 +132,9 @@ Diff--Weyl ghost Schur complement is elliptic but nonminimal, has principal
 spectrum `(3/2,1,1,1)`, and is generically Hodge-mixed. It reproduces the
 accepted Einstein scalar factor but obstructs direct minimal-CPT
 substitution. Its constructive successor exactly reduces the operator to a
-finite-proper-time Endo base plus `W=-2 Ric`; through cubic order only the
-one-, two- and three-Ricci insertion traces remain. The guard remains
+finite-proper-time Endo base plus `W=-2 Ric`. The n=3 adiabatic angular
+carrier is exact, but its nonzero-momentum triangle and the curved-Endo n=1/n=2
+traces remain. The guard remains
 `NO_CERTIFIED_MAP` to any particle row and
 does not alter the strict/extended QME disposition.
 The additive

@@ -113,6 +113,16 @@ def main() -> None:
     assert claims["generic_ghost_Endo_alpha"] == {"numerator": -1, "denominator": 2}
     assert claims["generic_ghost_local_perturbation"] == "W=-2 Ric"
     assert claims["generic_ghost_maximum_cubic_Ricci_insertions"] == 3
+    assert claims["generic_ghost_n3_adiabatic_angular_carrier"] is True
+    assert claims["generic_ghost_n3_angular_tr_R3_coefficient"] == {
+        "numerator": 503,
+        "denominator": 648,
+    }
+    assert claims["generic_ghost_n3_Tr_log_tr_R3_coefficient"] == {
+        "numerator": -503,
+        "denominator": 243,
+    }
+    assert claims["generic_ghost_n3_zero_momentum_stabilizer"] == "S3"
     assert claims["raw_zeta_BoxR_coefficient"] == {
         "basis": ["1", "log(3/2)"],
         "rational": {"numerator": -159, "denominator": 80},
@@ -134,11 +144,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
+        == "COMPUTE_GHOST_N3_NONZERO_MOMENTUM_TRIANGLE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 24
+    assert len(payload["inputs"]) == 25
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -160,6 +170,7 @@ def main() -> None:
     cpt_kernels = dependencies["CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS"]
     generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
+    generic_ghost_n3 = dependencies["GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -213,6 +224,13 @@ def main() -> None:
     assert generic_ghost_endo["Duhamel_expansion"]["maximum_W_insertions_through_cubic_order"] == 3
     assert generic_ghost_endo["claim_flags"]["GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED"] is True
     assert generic_ghost_endo["claim_flags"]["GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED"] is False
+    assert generic_ghost_n3["angular_average"]["coefficients"]["tr_R3"] == {
+        "numerator": 503, "denominator": 648
+    }
+    assert generic_ghost_n3["three_insertion_log_term"]["coefficients"]["tr_R3"] == {
+        "numerator": -503, "denominator": 243
+    }
+    assert generic_ghost_n3["claim_flags"]["GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED"] is False
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"

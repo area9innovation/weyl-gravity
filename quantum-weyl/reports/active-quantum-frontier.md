@@ -68,8 +68,12 @@ architecture-obstructed. The positive operator is nevertheless reduced
 exactly to the nondegenerate Endo base with `alpha=-1/2` plus `W=-2 Ric`.
 The base heat kernel uses only a finite proper-time transform of minimal
 vector/scalar kernels, and through cubic order the remaining ghost work is
-exactly the one-, two- and three-Ricci insertion traces. Those traces and the
-generic physical fourth-order Hessian kernel are the next coefficient-bearing input.
+exactly the one-, two- and three-Ricci insertion traces. The three-insertion
+row now has an exact adiabatic angular numerator: on the scalar-flat carrier
+the coefficient is `503/648` before the `W`/Tr-log factors and `-503/243`
+afterwards. The zero-momentum radial integral is scaleless and IR singular;
+the nonzero-momentum triangle, curved-Endo one-/two-insertion rows, and the
+generic physical fourth-order Hessian kernel are the next coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute

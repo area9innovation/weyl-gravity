@@ -147,7 +147,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             == "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle"
         )
         self.assertIn(
-            "one-, two- and three-Ricci insertion traces open",
+            "n=3 adiabatic angular carrier exact",
             ghost["scope"]["carrier"],
         )
         self.assertEqual(
@@ -158,6 +158,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             {
                 "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
                 "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
+                "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
             },
         )
         self.assertTrue(all(

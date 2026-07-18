@@ -1,0 +1,165 @@
+{
+  "angular_average": {
+    "coefficients": {
+      "tr_R3": {
+        "denominator": 648,
+        "numerator": 503
+      },
+      "tr_R_cubed": {
+        "denominator": 5184,
+        "numerator": -1
+      },
+      "tr_R_tr_R2": {
+        "denominator": 864,
+        "numerator": 11
+      }
+    },
+    "formula": "<tr(P R P R P R)>_S3=sum_i coefficient_i invariant_i",
+    "scalar_flat_specialization": "(503/648) tr(R^3)"
+  },
+  "carrier_crosswalk": {
+    "candidate_source_carrier": "I10",
+    "reason": "the repository K_munu carrier and the Ricci endomorphism have not yet been related with frozen normalization at nonzero external momentum",
+    "repository_I10_normalization_map": "NO_CERTIFIED_MAP",
+    "scalar_flat_algebraic_lineage": "tr(R^3)"
+  },
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL result evaluates the exact isotropic tensor numerator of the three-Ricci insertion in the flat Endo kernel at zero external momentum. It fixes the rational coefficients 503/648, 11/864 and -1/5184 before W and logarithm factors, and -503/243, -11/324 and 1/1944 in the n=3 Tr-log row. The adiabatic radial integral is scaleless and IR singular in four dimensions, so no nonlocal triangle form factor, local counterterm coefficient, repository I10 normalization, complete ghost determinant, Gamma1/Q1, residual, Lorentzian, Hadamard, particle, positivity or unitarity result is inferred.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED": false,
+    "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED": false,
+    "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED": true,
+    "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": false,
+    "GENERIC_GHOST_N3_SCALAR_FLAT_RICCI_CUBIC_COEFFICIENT_COMPUTED": true,
+    "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": false,
+    "REPOSITORY_I10_NORMALIZATION_MAP_CERTIFIED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "cyclic_tensor_numerator": {
+    "formula": "tr(P R P R P R)=tr(R^3)-3c(n R^3 n)+3c^2(n R n)(n R^2 n)-c^3(n R n)^3",
+    "ordered_invariant_basis": [
+      "tr_R3",
+      "tr_R_tr_R2",
+      "tr_R_cubed"
+    ]
+  },
+  "dependency": {
+    "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
+    "result_id": "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
+    "sha256": "dca064e883904d146962d797dddd954f27a346f11302092f75760e2997770c58"
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "flat_Endo_inverse": {
+    "formula": "G0(p)=p^-2(Pi_T+(2/3)Pi_L)=p^-2(I-(1/3)n n^T)",
+    "longitudinal_subtraction": {
+      "denominator": 3,
+      "numerator": 1
+    },
+    "projector_symbol": "P=I-c n n^T",
+    "unit_direction": "n=p/|p|"
+  },
+  "isotropic_moments": {
+    "n_R3_n": "tr(R^3)/d",
+    "n_R_n_cubed": "((tr R)^3+6tr(R)tr(R^2)+8tr(R^3))/(d(d+2)(d+4))",
+    "n_R_n_times_n_R2_n": "(tr(R)tr(R^2)+2tr(R^3))/(d(d+2))",
+    "sphere_dimension": 3
+  },
+  "lifecycle_state": "COEFFICIENT_BEARING_CARRIER_MOMENT_COMPUTED_FULL_FORM_FACTOR_NOT_COMPUTED",
+  "next_gate": "COMPUTE_N3_NONZERO_MOMENTUM_TRIANGLE_AND_N1_N2_CURVED_ENDO_INSERTION_TRACES",
+  "polarized_S3_carrier": {
+    "Tr_log_coefficients": {
+      "sum_tr_R1_tr_R2_R3": {
+        "denominator": 324,
+        "numerator": -11
+      },
+      "sym_tr_R1_R2_R3": {
+        "denominator": 243,
+        "numerator": -503
+      },
+      "tr_R1_tr_R2_tr_R3": {
+        "denominator": 1944,
+        "numerator": 1
+      }
+    },
+    "angular_coefficients": {
+      "sum_tr_R1_tr_R2_R3": {
+        "denominator": 864,
+        "numerator": 11
+      },
+      "sym_tr_R1_R2_R3": {
+        "denominator": 648,
+        "numerator": 503
+      },
+      "tr_R1_tr_R2_tr_R3": {
+        "denominator": 5184,
+        "numerator": -1
+      }
+    },
+    "basis_definitions": {
+      "sum_tr_R1_tr_R2_R3": "sum_cyclic tr(R1)tr(R2 R3)/3",
+      "sym_tr_R1_R2_R3": "(tr(R1 R2 R3)+tr(R1 R3 R2))/2",
+      "tr_R1_tr_R2_tr_R3": "tr(R1)tr(R2)tr(R3)"
+    },
+    "diagonal_restriction": "R1=R2=R3=R reproduces the stored cubic invariant coefficients",
+    "ordered_basis": [
+      "sym_tr_R1_R2_R3",
+      "sum_tr_R1_tr_R2_R3",
+      "tr_R1_tr_R2_tr_R3"
+    ],
+    "stabilizer": "S3"
+  },
+  "radial_and_momentum_status": {
+    "adiabatic_integral_status": "SCALARLESS_AND_IR_SINGULAR_IN_DIMENSIONAL_REGULARIZATION",
+    "adiabatic_radial_kernel": "J3=int d^4p/(2pi)^4 (p^2)^-3",
+    "full_nonzero_external_momentum_triangle": "NOT_COMPUTED",
+    "local_counterterm_coefficient": "NOT_INFERRED",
+    "reason": "the exact angular numerator does not specify the nonlocal three-point form factor or an IR prescription"
+  },
+  "result_id": "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
+  "result_state": "N3_ZERO_EXTERNAL_MOMENTUM_ANGULAR_NUMERATOR_EXACT_RADIAL_TRIANGLE_OPEN",
+  "schema": "quantum-weyl-generic-background-ghost-n3-adiabatic-carrier-v1",
+  "scope": {
+    "background_carrier": "one-point algebraic symmetric Ricci endomorphism with zero external momentum",
+    "curvature_order": 3,
+    "dimension": 4,
+    "insertion_count": 3,
+    "mode_scope": "flat Endo principal kernel on nonzero loop momentum",
+    "signature": "Euclidean"
+  },
+  "three_insertion_log_term": {
+    "W_cubic_multiplier": {
+      "denominator": 1,
+      "numerator": -8
+    },
+    "coefficients": {
+      "tr_R3": {
+        "denominator": 243,
+        "numerator": -503
+      },
+      "tr_R_cubed": {
+        "denominator": 1944,
+        "numerator": 1
+      },
+      "tr_R_tr_R2": {
+        "denominator": 324,
+        "numerator": -11
+      }
+    },
+    "combined_multiplier": {
+      "denominator": 3,
+      "numerator": -8
+    },
+    "formula": "(1/3)Tr((G0 W)^3)=J3 sum_i coefficient_i invariant_i",
+    "parent_series_coefficient": {
+      "denominator": 3,
+      "numerator": 1
+    },
+    "scalar_flat_specialization": "J3*(-503/243) tr(R^3)"
+  }
+}

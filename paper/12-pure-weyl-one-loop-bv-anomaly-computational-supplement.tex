@@ -727,6 +727,53 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   spectral.euclidean.tests.test_generic_background_ghost_endo_duhamel_reduction
 \end{verbatim}
 
+\subsection{Exact three-insertion adiabatic angular carrier}
+
+At cubic curvature order the three-insertion row uses only the flat Endo
+inverse
+\[
+ G_0(p)=\frac1{p^2}P(n),\qquad
+ P(n)=I-\frac13nn^T,\qquad n=\frac p{|p|}.
+\]
+For a symmetric Ricci endomorphism $R$, the independent verifier enumerates
+all pairings in the second, fourth, and sixth isotropic sphere moments and
+obtains
+\[
+ \left\langle\operatorname{tr}(PRPRPR)\right\rangle_{S^3}
+ =\frac{503}{648}\operatorname{tr}R^3
+ +\frac{11}{864}(\operatorname{tr}R)(\operatorname{tr}R^2)
+ -\frac1{5184}(\operatorname{tr}R)^3.
+\]
+Multiplication by $W^3=(-2R)^3$ and by the $1/3$ coefficient in
+$\operatorname{Tr}\log(1+G_0W)$ gives
+\[
+ J_3\left[-\frac{503}{243}\operatorname{tr}R^3
+ -\frac{11}{324}(\operatorname{tr}R)(\operatorname{tr}R^2)
+ +\frac1{1944}(\operatorname{tr}R)^3\right],
+ \qquad
+ J_3=\int\frac{d^4p}{(2\pi)^4}\frac1{(p^2)^3}.
+\]
+On the scalar-flat carrier only the first term remains.  This is an exact
+tensor numerator, not the full triangle form factor: at zero external
+momentum $J_3$ is scaleless and infrared singular.  The nonzero-momentum
+triangle and the normalization map to the repository $I_{10}$ carrier remain
+open, as do the curved-Endo one- and two-insertion rows.
+Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
+carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
+cyclic trace, the cyclic sum of one trace times one pair trace, and the product
+of three traces, with the same three coefficients shown above.  The verifier
+checks all six permutations on noncommuting symmetric matrices and recovers
+the diagonal polynomial.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_n3_adiabatic_carrier --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
+\end{verbatim}
+
 \subsection{Exact local BoxR scheme conversion}
 
 The zeta/proper-time calculation imports the published local heat-kernel rows
@@ -790,6 +837,9 @@ minimal-CPT substitution and any promotion to a completed ghost determinant;
 \item replay the exact Endo split, finite-proper-time heat kernel,
 nonzero-mode determinant identity and cubic Duhamel insertion bound, while
 rejecting promotion of the unevaluated insertion traces;
+\item enumerate the second, fourth, and sixth isotropic sphere moments for the
+three-insertion adiabatic angular carrier, while rejecting promotion of its
+IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
