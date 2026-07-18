@@ -29,6 +29,11 @@ upper bounds above `two_j=1024`, approximately `4.98e4` and `5.05e4` for the
 two polarizations.  These coarse values do not certify a small tail or fill
 the incomplete retained projection, so response, massive continuation and
 recoil remain fail-closed.
+The correlated squared-norm successor retains the full component squares and
+reduces each polarization to 21 radial terms.  Its 4096-cell directed
+enclosure improves both tail uppers to below `1.95e3`.  This remains non-small
+and is not an obstruction to the true tail, so the atlas still leaves full
+images, response, recoil and cone restriction open.
 The adaptive-preflight row remains `OPEN` for the response.  It records the selected streamed Peter--Weyl route
 without promoting a full image.  Its structural support is now exact:
 polarization matrices use only diagonals/first off-diagonals and the Green

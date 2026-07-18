@@ -165,3 +165,19 @@ def test_clock_uniform_sobolev_n1_exports_finite_tail_without_full_image():
     assert "BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_correlated_sobolev_n1_improves_bound_without_small_tail_promotion():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.correlated_sobolev_n1"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OPEN"
+    statement = row["observer_data"]["profile_green_boundary_dependencies"]["statement"]
+    assert "below 1.95e3" in statement
+    assert "nor obstructs the true tail" in statement
+    assert "BERGER_CORRELATED_PROFILE_SOBOLEV_N1" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

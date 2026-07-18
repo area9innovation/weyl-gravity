@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "method", "normalization_and_spectral_inputs", "polarization_bounds", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-correlated-profile-sobolev-n1-v1"},
+    "result_id": {"const": "BERGER_CORRELATED_PROFILE_SOBOLEV_N1"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"type": "string", "minLength": 1},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "method": {"type": "object"},
+    "normalization_and_spectral_inputs": {"type": "object"},
+    "polarization_bounds": {"type": "array", "minItems": 2, "maxItems": 2},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "WIDEN_A_COMPLETE_RETAINED_RAIL_OR_BUILD_A_DIRECT_CORRELATED_GREEN_TAIL_ESTIMATOR_BEFORE_FULL_IMAGE_PROMOTION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

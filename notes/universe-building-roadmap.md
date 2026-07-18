@@ -313,8 +313,11 @@ necessary nor converged.  Observer work will certify the clock-uniform
 polarized Sobolev norm before composing the massive image.  The first such
 physical-space bound is now certified at `N=1`: after the `two_j=1024` factor
 it gives finite tail uppers of about `4.98e4` and `5.05e4`, which are too
-coarse to certify smallness.  A correlated squared-norm quadrature or a wider
-complete retained rail is therefore required.  Bridge 3 remains
+coarse to certify smallness.  Its correlated squared-norm successor now
+reduces each polarization to 21 radial terms and improves both tail uppers to
+below `1.95e3`; this remains non-small and is not an obstruction to the true
+tail.  A direct correlated Green-tail estimator or a wider complete retained
+rail is therefore required.  Bridge 3 remains
 inactive until a same-background Berger physical-branch dictionary lands;
 the unsplit apparatus calculation does not activate that interpretation.
 The exact U(1) selection-rule gate now reduces every one-form Green block to
@@ -382,10 +385,11 @@ mutation remains about `0.14099`.  The declared-fraction successor now
 certifies `r/512=1/8,1/4,3/8` and their adjacent odd `two_j=513` companions;
 all six `64 x 64` widths lie between approximately `0.0707` and `0.0812`.
 This is not a complete diagonal stream.  The later Haar repair, operator
-reduction and `N=1` physical-space certificate now supply a finite Sobolev
-tail upper bound, but its coarse value does not certify smallness or replace a
-complete diagonal rail.  The active gate is to optimize and widen the declared
-fractions while the Sobolev route is sharpened by correlated squared norms.
+reduction and correlated `N=1` physical-space certificate now supply a finite
+Sobolev tail upper bound below `1.95e3`, but that value does not certify
+smallness or replace a complete diagonal rail.  The active gate is to optimize
+and widen the declared fractions while a direct correlated Green-tail route
+is developed.
 The adaptive scale successor now certifies the same fractions in adjacent
 `two_j=1024,1025`: `1/8` and `1/4` pass on `64 x 64`, while `3/8` passes
 with `128` radial by `64` angular cells.  An angular-only `64 x 128` mutation
@@ -445,11 +449,11 @@ The Green-weighted reduction now closes the operator half of that tail gate:
 all omitted Maxwell form blocks satisfy
 `Lambda(j)=j^2+13j/40-1017/2480`, with
 `Lambda(1025/2)=325899779/1240` above retained `two_j=1024`, and both exact-T
-Maxwell tail multipliers are `L2` contractions.  The first numerical `N=1`
-tail upper bound is now certified but remains too coarse (`4.98e4`/`5.05e4`)
-to promote a small tail or full image.  The active input is a correlated
-squared-norm enclosure or wider complete retained rail before massive-two-form
-continuation.
+Maxwell tail multipliers are `L2` contractions.  The correlated numerical
+`N=1` tail uppers are now certified below `1.95e3`, improving the earlier
+`4.98e4`/`5.05e4` triangle rail but remaining too large for a small-tail or
+full-image promotion.  The active input is a direct correlated Green-tail
+estimator or wider complete retained rail before massive-two-form continuation.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`; only that completion activates declared `K_Berger` equivariance and
@@ -1521,7 +1525,8 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE` (fired) | certify the infinite spatial-harmonic tail, then compose `h_a dA_a^adv` with the massive-two-form kernel and evaluate the positive-energy Cauchy data |
 | `BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` (fired) | replace the inadequate `two_j<=4` tail target by an adaptive cutoff near the radius-`1/128` profile bandwidth or a physical-space Green-chain evaluation |
 | `BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR` (fired) | use `J=a^3 y0` and `dSigma=(8c/y0)d^3y`; treat `two_j>=97` as the corrected necessary capacity lower bound and `two_j=138` only as a valid larger working rail; do not reuse the superseded `2.809e8` constant or necessity label |
-| `BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1` (fired; finite bound, small-tail promotion open) | replace the coarse termwise `N=1` enclosure by correlated squared-norm quadrature or widen a complete retained rail; do not infer a full image from the finite `4.98e4`/`5.05e4` tail uppers |
+| `BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1` (fired; finite bound, small-tail promotion open) | use its correlated squared-norm successor; do not infer a full image from the finite `4.98e4`/`5.05e4` triangle bounds |
+| `BERGER_CORRELATED_PROFILE_SOBOLEV_N1` (fired; improved finite bound, small-tail promotion open) | build a direct correlated Green-tail estimator or widen a complete retained rail; do not treat the `1.95e3` upper bound as small or as an obstruction to the true tail |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |
@@ -1539,7 +1544,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT` (fired with evaluator obstruction) | construct a correlated axial oscillatory evaluator from the exact Jacobi factorization; do not reuse termwise independent moment intervals or infer a noncentral tail |
 | `BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR` (fired) | stream the selected `r=0`, `p=0` evaluator and extend the same directed correlated integration across intermediate Jacobi diagonals; do not infer a complete axial rail or tail from two high sentinels |
 | `BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR` (fired) | stream declared diagonal fractions and add further odd intermediate sentinels at validated resolution; do not infer a complete scalar or polarized rail from the adjacent `two_j=512,513` pair |
-| `BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM` (fired) | optimize and widen the declared fractions, then construct polarized rows while the certified coarse `N=1` Sobolev bound is sharpened; do not infer a complete rail or small tail from six sentinels |
+| `BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM` (fired) | optimize and widen the declared fractions, then construct polarized rows while the certified correlated `N=1` tail is replaced by a direct Green-tail estimator; do not infer a complete rail or small tail from six sentinels |
 | `BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL` (fired) | apply the certified polarization recurrence and external clock powers to the declared two-scale rows; preserve radial-only refinement at the `3/8` sentinel and do not infer complete or infinite rails |
 | `BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE` (fired) | combine the 12 recurrence-closed scalar rows into the 18 selected detector-polarized form entries, then add external clock powers; do not drop the six `r-1/r+1` neighbors or infer a complete form rail |
 | `BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS` (fired) | evaluate the same recurrence-closed scalar and selected polarized rows for external clock powers `p=2,...,28`; do not infer complete form coverage, an infinite tail or a Green image from the 18 `p=0` entries |
@@ -1549,7 +1554,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_SELECTED_CHARGE_BLOCK_FORM_COMPANION_CLOCK_RAIL` (fired) | apply the exact temporal functional calculus to the 18 completed three-component helicity-block inputs and derive a controlled spatial tail; do not promote completed source inputs to a Green image, detector response, recoil or cone restriction |
 | `BERGER_SELECTED_CHARGE_BLOCK_TEMPORAL_BANDWIDTH_PREFLIGHT` (fired with order-14/p28 obstruction) | certify a correlated direct normalized clock-microphase transform in the exact selected-block spectral projectors with lower-band overlap; do not widen the `two_j<=138` theorem by carrier-name matching or append independent monomials as a cancellation repair |
 | `BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM` (fired) | derive a controlled spatial harmonic tail around the selected finite-block exact-`T` image representation, then compose the full Maxwell/massive Green chain; do not promote finite selected blocks to detector response or recoil |
-| `BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION` (fired) | combine with the certified `N=1` profile norm, then sharpen the coarse finite tail by correlated squared-norm quadrature or a wider complete rail before massive continuation; do not promote a finite but non-small upper bound to a response |
+| `BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION` (fired) | combine with the correlated `N=1` profile norm, then build a direct correlated Green-tail estimator or wider complete rail before massive continuation; do not promote the non-small `1.95e3` bound to a response |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

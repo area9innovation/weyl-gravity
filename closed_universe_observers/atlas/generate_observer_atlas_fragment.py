@@ -68,6 +68,7 @@ CERTIFICATES = {
     "selected_correlated_clock_transform": PACKAGE / "certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
     "green_weighted_tail_reduction": PACKAGE / "certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
     "profile_sobolev_n1": PACKAGE / "certificates/BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1.json",
+    "correlated_profile_sobolev_n1": PACKAGE / "certificates/BERGER_CORRELATED_PROFILE_SOBOLEV_N1.json",
     "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
@@ -326,6 +327,14 @@ def entries() -> list[dict]:
             "evidence": _evidence("haar_normalization_repair", "green_weighted_tail_reduction", "profile_sobolev_n1"),
         },
         {
+            "id": "observer.berger.detector_profile.correlated_sobolev_n1",
+            "scope": _scope(carrier="correlated squared physical-space N=1 norm for the normalized Berger detector one-forms and all omitted Maxwell modes", degree=1, parity="D0 axial and D1 transverse polarizations", ell="tail form two_j>1024; complete retained projection OPEN", m="all omitted representation rows", k="all omitted representation columns", omega="clock-uniform rod amplitude, unit clock bump and exact-T Maxwell contractions"),
+            "descriptions": {"causal": "CERTIFIED", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "OPEN: the correlated N=1 tail uppers are below 1.95e3 but remain non-small and do not define a full detector record", "response_rank": "OPEN", "emitter_preparation": "build a direct correlated Green-tail estimator or widen a complete retained harmonic rail before massive-image composition", "clock_and_rod_dependence": "full component squares retain the common a(t), repaired y0 and B,B',B'' correlations; exact angular parity reduces each polarization to 21 radial terms", "relational_redshift_contribution": "NOT_APPLICABLE", "recoil_backreaction_order": "sharpened Maxwell-tail input only; absolute-g3 recoil remains OPEN", "survives_gauge_reduction": "the Maxwell multipliers are contractive, but the non-small tail bound, incomplete retained projection and massive continuation remain OPEN", "profile_green_boundary_dependencies": "4096 directed radial cells give ||Delta1 F_a|| below 5.11e8 and tail uppers below 1.95e3 above two_j=1024; this improves the triangle rail but neither certifies a small tail nor obstructs the true tail"},
+            "tangent_cone": {"restriction_status": "NOT_APPLICABLE", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
+            "evidence": _evidence("haar_normalization_repair", "green_weighted_tail_reduction", "profile_sobolev_n1", "correlated_profile_sobolev_n1"),
+        },
+        {
             "id": "observer.crosswalk.berger_physical_branch_to_detector",
             "scope": _scope(carrier="same-background Berger physical-branch dictionary to relational detector, redshift, memory and recoil records", degree="crosswalk", parity="all", ell="all", m="all", k="all", omega="all"),
             "descriptions": {name: "NO_CERTIFIED_MAP" for name in DESCRIPTIONS},
@@ -373,6 +382,7 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_profile.selected_charge_block_correlated_clock_transform": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "NOT_APPLICABLE", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.green_weighted_spatial_tail_reduction": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.clock_uniform_sobolev_n1": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.detector_profile.correlated_sobolev_n1": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }

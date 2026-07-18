@@ -1,0 +1,155 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result replaces the coarse termwise N=1 detector-profile estimate by a correlated squared-norm enclosure. Exact sign parity removes angularly odd monomials and the Berger-sphere moment formula reduces each polarization to 21 radial interval terms. A 4096-cell directed-rounding Darboux sum retains the full component squares, the shared rod amplitude, the repaired y0 Gram factor, and correlated B,B',B'' values away from the boundary-flat final cell. The resulting clock-uniform Delta1 profile norms are below approximately 5.11e8, and the certified first-omitted factor above two_j=1024 gives Maxwell spatial/coderivative tail upper bounds below approximately 1.95e3. This strictly improves the earlier 4.98e4/5.05e4 triangle bounds, but it does not certify a small tail or obstruct the true tail: it only shows that this validated N=1 enclosure is insufficient for full-image promotion. It does not fill the incomplete retained projection, construct full Maxwell or massive-two-form images, evaluate detector response or rank, recoil, tangent-cone restriction, activate Bridge 3, promote nonlinear observer-morphism stability, or make a quantum claim.",
+  "claim_status": "VALIDATED_CORRELATED_N1_PROFILE_NORM_AND_FINITE_TAIL_UPPER_BOUND_SMALL_TAIL_OPEN",
+  "dependency_refs": {
+    "chart": {
+      "path": "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "result_id": "BERGER_QUANTITATIVE_DETECTOR_ROD_CHART",
+      "sha256": "9332f4dde9e9f0ad9f677ed92c2438ed0819aeeed6e286338d0d85561faf73d4"
+    },
+    "coarse_n1": {
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1.json",
+      "result_id": "BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1",
+      "sha256": "ed9dedffaf67ba22995bbd9c4972970af554bb5db80575949f0b02f065249076"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "normalization": {
+      "path": "closed_universe_observers/certificates/BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR.json",
+      "result_id": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR",
+      "sha256": "9c8b22a0794c20579a3aaf69e82f498d43013035f15fc3f8c3434adfc8587328"
+    },
+    "tail_reduction": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION",
+      "sha256": "4e6c2ac1685221704ef42f7cd4d2a31d14daede5f9f048ec1d05e5dfe53cce83"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "COMPLETE_LOW_MODE_PROJECTION_EXPORTED": false,
+    "CORRELATED_COMPONENT_SQUARES_RETAINED": true,
+    "CURRENT_CORRELATED_N1_BOUND_CERTIFIES_SMALL_TAIL": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "EXACT_ANGULAR_PARITY_REDUCTION_EXPORTED": true,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "MASSIVE_TWO_FORM_TAIL_BOUND_EXPORTED": false,
+    "QUANTUM_CLAIM": false,
+    "TRUE_TAIL_OBSTRUCTED": false,
+    "VALIDATED_CORRELATED_CLOCK_UNIFORM_DELTA1_NORM_EXPORTED": true,
+    "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_UPPER_BOUND_EXPORTED": true
+  },
+  "method": {
+    "algebraic_intervals": [
+      "3<sqrt(10)<4",
+      "3<pi<4"
+    ],
+    "angular_moment": "integral_S2 n1^(2a)n2^(2b)n3^(2c)=4pi (2a-1)!!(2b-1)!!(2c-1)!!/(2a+2b+2c+1)!!",
+    "boundary_cell": "use global |B|<=1, |B'|<=3/2, |B''|<=675/32 on the final cell touching r=1",
+    "odd_parity_rule": "all monomials odd in any n_i integrate to zero because y0 depends only on n_i^2",
+    "radial_quadrature": "uniform dyadic Darboux cells with mpmath iv directed rounding",
+    "rod_ball_coordinates": "R-c=epsilon r n with q=r^2",
+    "squared_density": "sum_i |Delta1(rho J dR_I)_i|^2/(a^3 y0) before rod-coordinate integration",
+    "y0_interval": "1-epsilon^2 r_hi^2(10/9)/a_min^2 <= y0 <= 1"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "mutated_raw_upper": "60520237031534592522195350781523781467234896304927/340282366920938463463374607431768211456",
+      "name": "halve_radial_subdivisions"
+    }
+  ],
+  "next_gate": "WIDEN_A_COMPLETE_RETAINED_RAIL_OR_BUILD_A_DIRECT_CORRELATED_GREEN_TAIL_ESTIMATOR_BEFORE_FULL_IMAGE_PROMOTION",
+  "normalization_and_spectral_inputs": {
+    "cb3_rational_lower": "418314285448007024896795819035843949479975999795/365375409332725729550921208179070754913983135744",
+    "first_omitted_delta1_lower": "325899779/1240",
+    "radial_integral_lower": "139438095149335674965598606345281316493325333265/1461501637330902918203684832716283019655932542976"
+  },
+  "polarization_bounds": [
+    {
+      "angular_reduction": {
+        "parity_zero_term_count": 0,
+        "preangular_expanded_term_count": 104,
+        "radial_interval_term_count": 21
+      },
+      "canonical_angular_term_ledger_sha256": "f549f57eaa1a70702ded7007fe2b9ac7bd84681a85150c8c08f7655a7622bd8c",
+      "detector_id": "D0",
+      "normalized_Delta1_profile_L2_norm_squared_upper": "45678262624237956932768618197976168534333903013266537561474604158879237421846392310691310647474517174835092652032/174986841409876701790070978018815131044609299652842102730629310547324785956128941289209840042025",
+      "normalized_Delta1_profile_L2_norm_upper": "173856742270043818578031483506253497639858006539/340282366920938463463374607431768211456",
+      "normalized_Delta1_profile_L2_norm_upper_decimal": "5.109190459770e+08",
+      "polarization": "axial",
+      "prior_triangle_tail_upper": "273305423408764177627026356287417278254952668211308290008741598156801663828521648128/5495241001222267247596173017225692605491716502598534059802748507180892206937625",
+      "quadrature": {
+        "interval_decimal_precision": 50,
+        "last_cell_used_global_derivative_bounds": true,
+        "output_dyadic_bits": 128,
+        "raw_radial_angular_integral_upper": "55518852768903588580370770008348362389748607450211/340282366920938463463374607431768211456",
+        "subdivisions": 4096
+      },
+      "small_tail_certified": false,
+      "strictly_improves_prior_triangle_bound": true,
+      "tail_L2_upper_after_two_j1024": "26947795051856791879594879943469292134177991013545/13862243522141344464414169894528127211591958528",
+      "tail_L2_upper_after_two_j1024_decimal": "1.943970686189e+03"
+    },
+    {
+      "angular_reduction": {
+        "parity_zero_term_count": 19,
+        "preangular_expanded_term_count": 125,
+        "radial_interval_term_count": 21
+      },
+      "canonical_angular_term_ledger_sha256": "17e6c2a78be72e7856561a1ce92d648303a7862ae2af9da29635d47c77f008a0",
+      "detector_id": "D1",
+      "normalized_Delta1_profile_L2_norm_squared_upper": "3045300802477128867864315483577646190122623189572710027479014323443546154191596504568200534058460855209943891968/11665789427325113452671398534587675402973953310189473515375287369821652397075262752613989336135",
+      "normalized_Delta1_profile_L2_norm_upper": "173859119958708149666234182353267254966146766027/340282366920938463463374607431768211456",
+      "normalized_Delta1_profile_L2_norm_upper_decimal": "5.109260333760e+08",
+      "polarization": "transverse",
+      "prior_triangle_tail_upper": "55446807220059274434815218690198153524852709464481288275707633003878647361435598848/1099048200244453449519234603445138521098343300519706811960549701436178441387525",
+      "quadrature": {
+        "interval_decimal_precision": 50,
+        "last_cell_used_global_derivative_bounds": true,
+        "output_dyadic_bits": 128,
+        "raw_radial_angular_integral_upper": "27760185673092726444770057486964418267320858018105/170141183460469231731687303715884105728",
+        "subdivisions": 4096
+      },
+      "small_tail_certified": false,
+      "strictly_improves_prior_triangle_bound": true,
+      "tail_L2_upper_after_two_j1024": "26948163593599763198266298264756424519752748734185/13862243522141344464414169894528127211591958528",
+      "tail_L2_upper_after_two_j1024_decimal": "1.943997272199e+03"
+    }
+  ],
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_correlated_profile_sobolev_n1.py",
+        "sha256": "909d511685d4c40809b3e3a116eb5a631f96235d3bbc3b99b8ed9fe2030aac54"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_correlated_profile_sobolev_n1.py",
+        "sha256": "3abddd4905e9624c0493e9ecb46410b066d9f8dd72c10123e2361a6dde6e3a87"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_correlated_profile_sobolev_n1.py",
+        "sha256": "c881d48a07824bb7dc598e73c04935e2626bc7b5784ccb45e3bf0705380e1821"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-correlated-profile-sobolev-n1-v1.schema.json",
+        "sha256": "029519ff720822c30fc59d57526a7a45a0a73cbe2ee4d649a590663dac8709dc"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-correlated-profile-sobolev-n1.md",
+        "sha256": "2abe4e0b2366172c987242f6946f05f1f6befbcd7d17ab96969e427340e0cb13"
+      }
+    ]
+  },
+  "result_id": "BERGER_CORRELATED_PROFILE_SOBOLEV_N1",
+  "schema": "closed-universe-berger-correlated-profile-sobolev-n1-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

@@ -693,6 +693,17 @@ tail, and the complete retained projection is still absent.  The next gate is
 a correlated squared-norm quadrature (or a wider complete retained rail), not
 full Maxwell/massive-image or recoil promotion.
 
+`BERGER_CORRELATED_PROFILE_SOBOLEV_N1` now completes that squared-norm
+refinement.  Exact angular parity and `S2` moments reduce each full component
+square to 21 radial interval terms; 4096 directed cells retain the shared
+clock amplitude, repaired `y0`, and correlated `B,B',B''` factors.  Both
+clock-uniform `Delta1` norms are below `5.11e8`, and both tail upper bounds
+above `two_j=1024` are below `1.95e3`.  This is a strict improvement but still
+not a small-tail theorem, and an upper bound above one does not obstruct the
+true tail.  The active gate is therefore a direct correlated Green-tail
+estimator or a wider complete retained rail; full-image, recoil and cone
+promotion remain open.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared
