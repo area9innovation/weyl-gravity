@@ -303,15 +303,14 @@ gives the cosine-kernel spatial block, the spatial coderivative gives the
 sine-kernel temporal block, and both finite-mode advanced Maxwell images are
 certified through `two_j=4` with uniform time-kernel remainders.  The infinite
 spatial tail and subsequent massive-two-form image remain open.
-The `two_j<=4` tail is now quantitatively `OBSTRUCTED`, not merely open:
-more than `0.9999975` of the clock-center normalized detector one-form energy
-lies above that cutoff.  Observer work must use an adaptive cutoff near the
-profile bandwidth or evaluate the Green chain in physical space before
-claiming a full advanced image.
-The exact adaptive-route preflight now fixes `two_j>=138` as a necessary
-capacity rail, not a sufficient convergence cutoff.  Observer work will
-stream symmetry-reduced Peter--Weyl contractions and certify a Green-weighted
-operator-norm tail before composing the massive image.  Bridge 3 remains
+The `two_j<=4` tail remains quantitatively `OBSTRUCTED`, not merely open,
+after the exact Gram/Haar normalization repair.  The corrected total Fourier-
+energy lower bound exceeds `7.02e7`, so more than `0.99999` lies above that
+cutoff.  The historical `2.809e8` constant is superseded.  The same repair
+sets the certified necessary capacity lower bound at `two_j>=97`; the already
+evaluated `two_j=138` rail remains a valid larger working rail but is neither
+necessary nor converged.  Observer work will certify the clock-uniform
+polarized Sobolev norm before composing the massive image.  Bridge 3 remains
 inactive until a same-background Berger physical-branch dictionary lands;
 the unsplit apparatus calculation does not activate that interpretation.
 The exact U(1) selection-rule gate now reduces every one-form Green block to
@@ -663,10 +662,11 @@ survive the first backreacted, normalized apparatus interaction?
    flat integration by parts now supplies the Green-weighted temporal block,
    and the finite-mode advanced Maxwell image is interval-enclosed through
    `two_j=4` uniformly over the emitter switches.  Parseval now proves that
-   cutoff omits more than `0.9999975` of the clock-center profile energy, so
+   cutoff omits more than `0.99999` of the clock-center profile energy, so
    uniform small-tail promotion is obstructed.  Exact axial-charge sectors
    and Clebsch--Gordan polarization recurrences now make the adaptive route
-   streamable through its necessary `two_j=138` capacity rail.  Validated
+   streamable through its published `two_j=138` working rail, which exceeds
+   the corrected necessary capacity lower bound `two_j>=97`.  Validated
    radial and clock-secant moments now extend through `k=50`, and the complete
    diagonal scalar stream is validated through `two_j=139`.  Detector-
    prefactored polarization coefficients and their complete order-14 formal
@@ -1507,9 +1507,10 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE` (fired) | interval-enclose the compact bump coefficients, certify superalgebraic spectral tails, apply the exact mode Green kernels, and evaluate recoil |
 | `BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE` (fired) | certify the infinite spatial-harmonic tail, then compose `h_a dA_a^adv` with the massive-two-form kernel and evaluate the positive-energy Cauchy data |
 | `BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` (fired) | replace the inadequate `two_j<=4` tail target by an adaptive cutoff near the radius-`1/128` profile bandwidth or a physical-space Green-chain evaluation |
-| `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired) | derive a streamable polarization coefficient recurrence and Green-weighted operator-norm tail beginning from the necessary `two_j>=138` capacity rail; do not treat that rail as a convergence cutoff |
+| `BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR` (fired) | use `J=a^3 y0` and `dSigma=(8c/y0)d^3y`; treat `two_j>=97` as the corrected necessary capacity lower bound and `two_j=138` only as a valid larger working rail; do not reuse the superseded `2.809e8` constant or necessity label |
+| `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
-| `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that necessary capacity rail |
+| `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |
 | `BERGER_TEMPORAL_GREEN_ORDER_FIVE_HIGH_MODE_PREFLIGHT` (fired with fixed-order obstruction) | extend the external-clock scalar and polarization streams through even `p=28`, then apply a common order-14 charge-block polynomial with a contractive remainder before addressing the spatial tail |
 | `BERGER_HIGH_CLOCK_POWER_MOMENT_RAIL_P28` plus adaptive scalar shards (fired) | compose the nine `p=12,...,28` scalar shards with the detector polarization recurrence through form `two_j=138`, preserving the earlier content-addressed rails |
 | `BERGER_ADAPTIVE_CLOCK_WEIGHTED_POLARIZATION_STREAM_P12_TO_P28_TWO_J138` (fired) | apply the common order-14 cosine and codifferential/sine polynomials in exact charge blocks and export a contractive remainder before addressing the spatial tail |

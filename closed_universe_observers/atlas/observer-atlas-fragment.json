@@ -580,7 +580,7 @@
       }
     },
     {
-      "claim_boundary": "finite two_j<=4 Green image remains certified, but uniform promotion to the full compact profile is OBSTRUCTED at that cutoff absolute-g^3 coefficient remains blocked by the unresolved full profile NOT_APPLICABLE",
+      "claim_boundary": "finite two_j<=4 Green image remains certified and the corrected Fourier-energy lower bound exceeds 7.02e7; uniform promotion to the full compact profile is OBSTRUCTED at that cutoff; the historical 2.809e8 constant is superseded. absolute-g^3 coefficient remains blocked by the unresolved full profile NOT_APPLICABLE",
       "descriptions": {
         "causal": "OBSTRUCTED",
         "nonlinear": "NOT_APPLICABLE",
@@ -593,12 +593,17 @@
           "path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
           "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
           "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR.json",
+          "result_id": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR",
+          "sha256": "9c8b22a0794c20579a3aaf69e82f498d43013035f15fc3f8c3434adfc8587328"
         }
       ],
       "id": "observer.berger.detector_profile_tail.two_j4_cutoff",
       "mode_data": {
         "dispersion": {
-          "statement": "carrier=clock-center normalized detector one-form profile and its Peter-Weyl energy split; omega=fixed clock-center spatial slice; no full response: the two_j<=4 window omits more than 0.9999975 of the clock-center profile Fourier energy",
+          "statement": "carrier=clock-center normalized detector one-form profile and its Peter-Weyl energy split; omega=fixed clock-center spatial slice; no full response: after the Gram/Haar normalization repair, the two_j<=4 window still omits more than 0.99999 of the clock-center profile Fourier energy",
           "status": "OBSTRUCTED"
         },
         "lee_wald": {
@@ -635,11 +640,11 @@
           "status": "NOT_APPLICABLE"
         },
         "clock_and_rod_dependence": {
-          "statement": "exact radius 1/128 and either clock-center detector polarization",
+          "statement": "exact radius 1/128, J=a^3 y0, Berger Haar density (8c/y0)d^3y, and either clock-center detector polarization",
           "status": "CERTIFIED"
         },
         "detector_response": {
-          "statement": "no full response: the two_j<=4 window omits more than 0.9999975 of the clock-center profile Fourier energy",
+          "statement": "no full response: after the Gram/Haar normalization repair, the two_j<=4 window still omits more than 0.99999 of the clock-center profile Fourier energy",
           "status": "OBSTRUCTED"
         },
         "detector_restriction_to_second_order_cone": {
@@ -663,7 +668,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "finite two_j<=4 Green image remains certified, but uniform promotion to the full compact profile is OBSTRUCTED at that cutoff",
+          "statement": "finite two_j<=4 Green image remains certified and the corrected Fourier-energy lower bound exceeds 7.02e7; uniform promotion to the full compact profile is OBSTRUCTED at that cutoff; the historical 2.809e8 constant is superseded.",
           "status": "OBSTRUCTED"
         },
         "recoil_backreaction_order": {
@@ -698,7 +703,125 @@
       }
     },
     {
-      "claim_boundary": "the exact order-14 output stream contains 2,147,700 spatial and 717,255 temporal coefficient intervals; both geometric ratios contract, but the uniform bounds exceed one and exact extreme-block error lower bounds obstruct temporal Green promotion absolute g^3 operator exact; coefficient remains OPEN NOT_APPLICABLE at the bandwidth-route preflight",
+      "claim_boundary": "the corrected two_j<=4 omitted-energy fraction remains above 0.99999; necessary unit-entry capacity first closes at two_j=97, while the computed two_j=138 rail remains a valid larger working rail but is not necessary or converged normalization input only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR.json",
+          "result_id": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR",
+          "sha256": "9c8b22a0794c20579a3aaf69e82f498d43013035f15fc3f8c3434adfc8587328"
+        }
+      ],
+      "id": "observer.berger.detector_profile.haar_normalization_repair",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=detector-profile change of variables between rod coordinates and Berger Haar one-form density; omega=clock-uniform rod amplitude a(t); exact clock-center audit; OPEN: this repairs the profile measure and capacity labels, not a detector record",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE at the measure-normalization gate",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "normalization input only; absolute-g3 recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "d^3R/d^3y=8ca^3, J=sqrt(det G)=a^3y0, and J dSigma=d^3R; at either clock center J=1",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: this repairs the profile measure and capacity labels, not a detector record",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "use J=a^3 y0 and dSigma=(8c/y0)d^3y in the clock-uniform repeated-Laplacian norm",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "the corrected two_j<=4 omitted-energy fraction remains above 0.99999; necessary unit-entry capacity first closes at two_j=97, while the computed two_j=138 rail remains a valid larger working rail but is not necessary or converged",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "normalization input only; absolute-g3 recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE at the measure-normalization gate",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "detector-profile change of variables between rod coordinates and Berger Haar one-form density",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "all Peter-Weyl representations; normalization theorem",
+        "k": "all",
+        "m": "all",
+        "omega": "clock-uniform rod amplitude a(t); exact clock-center audit",
+        "parity": "either selected detector polarization",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "the exact order-14 output stream contains 2,147,700 spatial and 717,255 temporal coefficient intervals; two_j=138 is a valid working rail, not a necessary or converged cutoff; both geometric ratios contract, but the uniform bounds exceed one and exact extreme-block error lower bounds obstruct temporal Green promotion absolute g^3 operator exact; coefficient remains OPEN NOT_APPLICABLE at the bandwidth-route preflight",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "NOT_APPLICABLE",
@@ -711,6 +834,11 @@
           "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json",
           "result_id": "BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT",
           "sha256": "40d7ebd4a9a629c70556421e98a4cdc4fa196b488d0e45f7be6bcc23cab9bb84"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR.json",
+          "result_id": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR",
+          "sha256": "9c8b22a0794c20579a3aaf69e82f498d43013035f15fc3f8c3434adfc8587328"
         },
         {
           "path": "closed_universe_observers/certificates/BERGER_STREAMABLE_POLARIZATION_SECTORS.json",
@@ -878,7 +1006,7 @@
           "status": "NOT_APPLICABLE"
         },
         "clock_and_rod_dependence": {
-          "statement": "radius-1/128 rod profile fixes the necessary two_j>=138 capacity rail; all 15 rails retain a(t)=cos(lambda s) without assuming clock/profile independence",
+          "statement": "the repaired radius-1/128 capacity lower bound requires two_j>=97; the existing two_j=138 working rail exceeds it and all 15 rails retain a(t)=cos(lambda s) without assuming clock/profile independence",
           "status": "CERTIFIED"
         },
         "detector_response": {
@@ -906,7 +1034,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "the exact order-14 output stream contains 2,147,700 spatial and 717,255 temporal coefficient intervals; both geometric ratios contract, but the uniform bounds exceed one and exact extreme-block error lower bounds obstruct temporal Green promotion",
+          "statement": "the exact order-14 output stream contains 2,147,700 spatial and 717,255 temporal coefficient intervals; two_j=138 is a valid working rail, not a necessary or converged cutoff; both geometric ratios contract, but the uniform bounds exceed one and exact extreme-block error lower bounds obstruct temporal Green promotion",
           "status": "OBSTRUCTED"
         },
         "recoil_backreaction_order": {
@@ -932,7 +1060,7 @@
         "carrier": "streamed symmetry-reduced Peter-Weyl detector contractions after the two_j<=4 obstruction",
         "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
         "degree": 1,
-        "ell": "necessary capacity rail through at least two_j=138; convergence cutoff OPEN",
+        "ell": "corrected necessary capacity lower bound two_j>=97; published working rail through two_j=138; convergence cutoff OPEN",
         "k": "all representation columns",
         "m": "all representation rows",
         "omega": "modewise advanced Maxwell kernels; full tail OPEN",
@@ -3752,7 +3880,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "d1db385ef06de14c31e1f2f8d7304e024320d4b30b4f6af1d409bd2095c18e0b",
+  "generated_by_sha256": "37049978bfda6e84ff4f520314fef7463edd209f3fd162dd2062b317e0239bb1",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

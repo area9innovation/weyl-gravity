@@ -358,27 +358,25 @@ emitter-switch intervals, with explicit entire-series remainders.  The
 infinite spatial-harmonic tail, massive-two-form image, and recoil coefficient
 remain open.
 
-`BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` now decides whether that finite
-window can close the profile gate: it cannot.  Parseval, the certified Berger
-volume, the exact rod chart and validated `B^2` quadrature give total
-clock-center form-profile Fourier energy above `2.809e8`; all retained
-coefficients through `two_j=4` contribute at most `675`.  Thus more than
-`0.9999975` is necessarily omitted.  The atlas marks this cutoff
-`OBSTRUCTED`; the next profile gate is an adaptive cutoff near the detector
-bandwidth or a physical-space Green-chain evaluation, not a nominal tail
-bound at the current cutoff.
+`BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR` supersedes the numerical constant
+in the earlier `BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` without changing its
+qualitative disposition.  The rod-coordinate Jacobian is `8 c a^3`, whereas
+the apparatus Gram Jacobian is `J=sqrt(det G)=a^3 y0`; with
+`dSigma=(8c/y0)d^3y`, one has `J dSigma=d^3R` and `J=1` at a clock center.
+The corrected Parseval lower bound is above `7.02e7`, while the retained
+`two_j<=4` energy is still at most `675`.  More than `0.99999` is therefore
+omitted, so the atlas keeps this cutoff `OBSTRUCTED`.  The historical
+`2.809e8` constant is `NO_CERTIFIED_MAP` and must not be reused.
 
-`BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` now fixes the necessary scale
-of that adaptive route.  With the certified unit entry bound, three coframe
-components have capacity
-`3 sum_{d=1}^D d^3=3[D(D+1)/2]^2`.  Capacity for even 99 percent of the
-certified energy lower bound fails at `D=138` and first passes at `D=139`,
-so `two_j>=138` is necessary but not certified sufficient.  The active
-profile/recoil calculation will stream symmetry-reduced per-mode detector
-contractions and tail witnesses; it will not serialize the roughly 8.1
-million dense one-form operator entries below that rail.  The next analytic
-gate is the polarization coefficient recurrence and a Green-weighted
-operator-norm tail.
+The normalization repair also corrects the capacity label attached to
+`BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT`.  With the same unit entry bound,
+`3 sum_{d=1}^D d^3=3[D(D+1)/2]^2` first covers the corrected full energy lower
+bound at `D=98`, hence `two_j>=97` is the certified necessary capacity lower
+bound.  The already evaluated `two_j=138` rail remains a valid larger working
+rail, but it is neither necessary nor converged.  The active profile/recoil
+calculation continues to use streamed symmetry-reduced per-mode contractions
+and tail witnesses; the next analytic gate is the clock-uniform polarized
+Sobolev norm, not another capacity argument.
 
 `BERGER_STREAMABLE_POLARIZATION_SECTORS` closes the structural part of that
 gate for every finite `two_j`.  Axial invariance makes `y0,y3` coefficients
@@ -397,7 +395,7 @@ by any detector coordinate uses only `j+1/2` and `j-1/2`; axial averaging
 retains diagonal scalar coefficients, with at most four terms per supported
 entry.  Exact polynomial identities modulo the unit-sphere relation pass
 through `two_j=4`, and deletion of the lower-spin channel is detected.
-Through the necessary `two_j=138` rail this gives 57,824 supported coordinate
+Through the published `two_j=138` working rail this gives 57,824 supported coordinate
 entries and 154,012 scalar terms, without high-degree form-polynomial
 expansion.  The next live gate is evaluation of the neighboring scalar stream
 with the external clock factor, followed by temporal Green integration and a

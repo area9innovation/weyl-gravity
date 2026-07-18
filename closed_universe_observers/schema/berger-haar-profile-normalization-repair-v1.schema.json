@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-haar-profile-normalization-repair-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "jacobian_audit", "corrected_tail_audit", "corrected_necessary_capacity", "superseded_claims", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-haar-profile-normalization-repair-v1"},
+    "result_id": {"const": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_GRAM_HAAR_NORMALIZATION_REPAIRED_TWO_J4_OBSTRUCTION_PRESERVED_CAPACITY_LABEL_CORRECTED"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 8, "maxProperties": 8},
+    "jacobian_audit": {"type": "object"},
+    "corrected_tail_audit": {"type": "object", "properties": {"uniform_small_tail_through_two_j4": {"const": false}}, "additionalProperties": true},
+    "corrected_necessary_capacity": {"type": "object", "properties": {"certified_necessary_max_dimension": {"const": 98}, "certified_necessary_two_j_max": {"const": 97}, "published_working_rail_max_two_j": {"const": 138}}, "required": ["certified_necessary_max_dimension", "certified_necessary_two_j_max", "published_working_rail_max_two_j"], "additionalProperties": true},
+    "superseded_claims": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "properties": {"status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["result_id", "field", "old_value", "replacement", "status"]}},
+    "mutation_results": {"type": "array", "minItems": 2, "maxItems": 2},
+    "flags": {"type": "object", "properties": {"EXACT_BERGER_HAAR_DENSITY_EXPORTED": {"const": true}, "EXACT_BACKGROUND_GRAM_JACOBIAN_EXPORTED": {"const": true}, "PROFILE_CHANGE_OF_VARIABLES_NORMALIZATION_REPAIRED": {"const": true}, "TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS_OBSTRUCTED": {"const": true}, "CORRECTED_NECESSARY_TWO_J97_CAPACITY_LOWER_BOUND_EXPORTED": {"const": true}, "HISTORICAL_TWO_J138_WORKING_RAIL_REMAINS_VALID": {"const": true}, "HISTORICAL_TWO_J138_NECESSITY_LABEL_SUPERSEDED": {"const": true}, "STREAMED_COEFFICIENT_VALUES_CHANGED": {"const": false}, "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false}, "DETECTOR_RESPONSE_EVALUATED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}, "required": ["EXACT_BERGER_HAAR_DENSITY_EXPORTED", "EXACT_BACKGROUND_GRAM_JACOBIAN_EXPORTED", "PROFILE_CHANGE_OF_VARIABLES_NORMALIZATION_REPAIRED", "TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS_OBSTRUCTED", "CORRECTED_NECESSARY_TWO_J97_CAPACITY_LOWER_BOUND_EXPORTED", "HISTORICAL_TWO_J138_WORKING_RAIL_REMAINS_VALID", "HISTORICAL_TWO_J138_NECESSITY_LABEL_SUPERSEDED", "STREAMED_COEFFICIENT_VALUES_CHANGED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"], "additionalProperties": false},
+    "next_gate": {"const": "EVALUATE_THE_CLOCK_UNIFORM_POLARIZED_REPEATED_LAPLACIAN_NORM_USING_J_A3Y0_AND_THE_BERGER_HAAR_DENSITY"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -351,14 +351,14 @@ uniformly on the corresponding emitter-switch interval; the worst displayed
 entire-series entry remainder is below `6.2e-8`.  The infinite spatial tail
 and massive-two-form image are not inferred from this finite block.
 The following Parseval audit obstructs a uniform tail promotion at this
-cutoff.  At either clock center the normalized detector one-form has total
-Fourier energy above `2.809e8`, whereas all `two_j<=4` entries contribute at
-most `675`.  More than `0.9999975` of the slice-profile energy is necessarily
-outside the retained window.  A larger adaptive cutoff or physical-space
-Green chain is required before the recoil coefficient can be evaluated.
-The adaptive route preflight proves that the necessary capacity condition for
-99 percent of the certified lower bound first passes at `two_j=138`.  It
-selects streamed, symmetry-reduced mode contractions because the exact
+cutoff.  After the Gram/Haar normalization repair, the normalized detector
+one-form has total Fourier energy above `7.02e7`, whereas all `two_j<=4`
+entries contribute at most `675`.  More than `0.99999` of the slice-profile
+energy is necessarily outside the retained window.  A larger adaptive cutoff
+or physical-space Green chain is required before the recoil coefficient can
+be evaluated.  The corrected necessary capacity lower bound first passes at
+`two_j=97`; the computed `two_j=138` stream remains a larger working rail.
+The route selects streamed, symmetry-reduced mode contractions because the exact
 finite-block engine already exists, while no validated physical-space Berger
 solver is available.  This rail is not a convergence certificate at
 `two_j=138` and leaves the Green-weighted tail open.

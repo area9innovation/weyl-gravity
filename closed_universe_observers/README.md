@@ -79,6 +79,8 @@ python3 -m closed_universe_observers.generate_berger_green_weighted_detector_cod
 python3 -m closed_universe_observers.verify_berger_green_weighted_detector_coderivative
 python3 -m closed_universe_observers.generate_berger_two_j4_profile_tail_obstruction --check
 python3 -m closed_universe_observers.verify_berger_two_j4_profile_tail_obstruction
+python3 -m closed_universe_observers.generate_berger_haar_profile_normalization_repair --check
+python3 -m closed_universe_observers.verify_berger_haar_profile_normalization_repair
 python3 -m closed_universe_observers.generate_berger_adaptive_peter_weyl_route_preflight --check
 python3 -m closed_universe_observers.verify_berger_adaptive_peter_weyl_route_preflight
 python3 -m closed_universe_observers.generate_berger_streamable_polarization_sectors --check
@@ -304,18 +306,15 @@ kernel.  It exports the resulting cosine-kernel spatial block and sine-kernel
 spatial-coderivative block through `two_j=4`, uniformly over each emitter
 switch, with an explicit entire-series remainder.  The infinite spatial-mode
 tail and subsequent massive-two-form image remain open.
-The tail audit then proves that this cutoff cannot be promoted uniformly:
-the clock-center normalized one-form profile has Fourier energy above
-`2.809e8`, while every retained coefficient through `two_j=4` together can
-carry at most `675`.  More than `0.9999975` of the slice-profile energy is
-necessarily omitted.  The next honest profile gate is therefore an adaptive
-cutoff near the detector bandwidth or a physical-space Green evaluation.
-The route preflight makes that scale exact: even the necessary capacity
-condition for 99 percent of the certified energy lower bound first passes at
-representation dimension `139`, or `two_j=138`.  It selects streamed,
-symmetry-reduced Peter--Weyl detector contractions over dense intermediate
-serialization.  This is not a convergence theorem at that cutoff; the
-coefficient recurrence and Green-weighted operator-norm tail remain open.
+The tail audit proves that this cutoff cannot be promoted uniformly.  Its
+Gram/Haar normalization repair distinguishes the rod-coordinate Jacobian
+`8 c a^3` from `J=sqrt(det G)=a^3 y0`.  The corrected clock-center one-form
+Fourier-energy lower bound exceeds `7.02e7`, while every retained coefficient
+through `two_j=4` together can carry at most `675`; more than `0.99999` is
+necessarily omitted.  The corrected necessary capacity lower bound first
+passes at representation dimension `98`, or `two_j=97`.  The computed
+`two_j=138` stream remains a valid larger working rail, not a necessary or
+converged cutoff.  The next gate is the clock-uniform polarized Sobolev norm.
 The structural recurrence gate is now exact.  Axial symmetry restricts the
 polarization coefficients to diagonals and first off-diagonals, while the
 one-form Laplacian preserves `q=m+s` in the helicity coframe.  Green functions

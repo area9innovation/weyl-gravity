@@ -136,3 +136,17 @@ def test_green_weighted_tail_reduction_is_certified_without_tail_promotion():
     assert "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_haar_normalization_repair_supersedes_capacity_label_fail_closed():
+    rows = {row["id"]: row for row in build()["entries"]}
+    repair = rows["observer.berger.detector_profile.haar_normalization_repair"]
+    adaptive = rows["observer.berger.detector_profile.adaptive_cutoff_preflight"]
+    assert repair["descriptions"]["causal"] == "CERTIFIED"
+    assert repair["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert "two_j=97" in repair["observer_data"]["profile_green_boundary_dependencies"]["statement"]
+    assert "two_j=138" in adaptive["scope"]["ell"]
+    assert "working rail" in adaptive["scope"]["ell"]
+    assert "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR" in {
+        evidence["result_id"] for evidence in repair["evidence"]
+    }

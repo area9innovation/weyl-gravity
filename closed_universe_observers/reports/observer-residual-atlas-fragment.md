@@ -19,12 +19,12 @@ have rank two.  Their nonlinear survival on
 The cone row cites the general finite-harmonic image/cokernel theorem, but
 does not promote its still-unevaluated Berger observer restriction.
 The profile-tail row is `OBSTRUCTED`: the finite `two_j<=4` Green image is
-valid, but that cutoff omits more than `0.9999975` of the clock-center
-one-form profile energy and cannot be promoted to a uniform full-profile
-image.
-The adaptive-preflight row remains `OPEN` for the response: `two_j>=138` is
-only a necessary capacity rail, and convergence plus the Green-weighted tail
-are not certified.  It records the selected streamed Peter--Weyl route
+valid, but the Gram/Haar normalization repair proves that cutoff omits more
+than `0.99999` of the clock-center one-form profile energy and cannot be
+promoted to a uniform full-profile image.  The corrected necessary capacity
+lower bound is `two_j>=97`; the computed `two_j=138` rail is a valid larger
+working rail, not a necessary or converged cutoff.
+The adaptive-preflight row remains `OPEN` for the response.  It records the selected streamed Peter--Weyl route
 without promoting a full image.  Its structural support is now exact:
 polarization matrices use only diagonals/first off-diagonals and the Green
 operator decomposes into axial-charge blocks of dimension at most three.
