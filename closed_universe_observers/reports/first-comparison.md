@@ -356,6 +356,12 @@ Fourier energy above `2.809e8`, whereas all `two_j<=4` entries contribute at
 most `675`.  More than `0.9999975` of the slice-profile energy is necessarily
 outside the retained window.  A larger adaptive cutoff or physical-space
 Green chain is required before the recoil coefficient can be evaluated.
+The adaptive route preflight proves that the necessary capacity condition for
+99 percent of the certified lower bound first passes at `two_j=138`.  It
+selects streamed, symmetry-reduced mode contractions because the exact
+finite-block engine already exists, while no validated physical-space Berger
+solver is available.  This rail is not a convergence certificate at
+`two_j=138` and leaves the Green-weighted tail open.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -577,3 +583,5 @@ The Green-weighted coderivative receipt is
 `closed_universe_observers/receipts/GREEN_WEIGHTED_DETECTOR_CODERIVATIVE_TIER_RECEIPT.json`.
 The cutoff-tail obstruction receipt is
 `closed_universe_observers/receipts/TWO_J4_PROFILE_TAIL_OBSTRUCTION_TIER_RECEIPT.json`.
+The adaptive-route preflight receipt is
+`closed_universe_observers/receipts/ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT_TIER_RECEIPT.json`.

@@ -22,7 +22,14 @@ The profile-tail row is `OBSTRUCTED`: the finite `two_j<=4` Green image is
 valid, but that cutoff omits more than `0.9999975` of the clock-center
 one-form profile energy and cannot be promoted to a uniform full-profile
 image.
+The adaptive-preflight row remains `OPEN` for the response: `two_j>=138` is
+only a necessary capacity rail, and convergence plus the Green-weighted tail
+are not certified.  It records the selected streamed Peter--Weyl route
+without promoting a full image.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
 no certified operational signature in the Berger apparatus.
+The same-background Berger physical-branch-to-detector crosswalk is a
+separate `NO_CERTIFIED_MAP` row: Bridge 3 remains inactive until a Berger
+branch dictionary satisfies its activation gate.

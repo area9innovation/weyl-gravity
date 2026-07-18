@@ -26,6 +26,8 @@ CERTIFICATES = {
     "form": PACKAGE / "certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json",
     "green_weighted": PACKAGE / "certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
     "tail_obstruction": PACKAGE / "certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
+    "adaptive_route": PACKAGE / "certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json",
+    "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
 }
@@ -99,6 +101,22 @@ def entries() -> list[dict]:
             "evidence": _evidence("tail_obstruction"),
         },
         {
+            "id": "observer.berger.detector_profile.adaptive_cutoff_preflight",
+            "scope": _scope(carrier="streamed symmetry-reduced Peter-Weyl detector contractions after the two_j<=4 obstruction", degree=1, parity="either selected detector polarization", ell="necessary capacity rail through at least two_j=138; convergence cutoff OPEN", m="all representation rows", k="all representation columns", omega="modewise advanced Maxwell kernels; full tail OPEN"),
+            "descriptions": {"causal": "OPEN", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "streamed adaptive route selected; no full detector response evaluated", "response_rank": "OPEN for the recoil-corrected response", "emitter_preparation": "existing detector-selected massive Cauchy pair; mode coefficients above two_j=4 OPEN", "clock_and_rod_dependence": "radius-1/128 rod profile fixes the necessary two_j>=138 capacity rail", "relational_redshift_contribution": "OPEN until the full same-background response is evaluated", "recoil_backreaction_order": "absolute g^3 operator exact; coefficient remains OPEN", "survives_gauge_reduction": "OPEN for the completed mode sum", "profile_green_boundary_dependencies": "exact finite-block form engine exists; streamed coefficient recurrence, Green-weighted operator-norm tail, full Maxwell image and massive image remain OPEN"},
+            "tangent_cone": {"restriction_status": "NOT_APPLICABLE at the bandwidth-route preflight", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
+            "evidence": _evidence("adaptive_route"),
+        },
+        {
+            "id": "observer.crosswalk.berger_physical_branch_to_detector",
+            "scope": _scope(carrier="same-background Berger physical-branch dictionary to relational detector, redshift, memory and recoil records", degree="crosswalk", parity="all", ell="all", m="all", k="all", omega="all"),
+            "descriptions": {name: "NO_CERTIFIED_MAP" for name in DESCRIPTIONS},
+            "operational_observable": {"detector_response": "NO_CERTIFIED_MAP", "response_rank": "NO_CERTIFIED_MAP", "emitter_preparation": "NO_CERTIFIED_MAP", "clock_and_rod_dependence": "Berger apparatus exists, but no physical-branch-labelled Berger mode dictionary exists", "relational_redshift_contribution": "NO_CERTIFIED_MAP", "recoil_backreaction_order": "NO_CERTIFIED_MAP", "survives_gauge_reduction": "NO_CERTIFIED_MAP", "profile_green_boundary_dependencies": "Bridge 3 is inactive until a same-background Berger branch dictionary lands"},
+            "tangent_cone": {"restriction_status": "NO_CERTIFIED_MAP", "linearly_detectable_but_nonlinearly_obstructed": "NO_CERTIFIED_MAP", "balanced_detectable_combinations": "NO_CERTIFIED_MAP", "exceptional_resonant_operational_signature": "NO_CERTIFIED_MAP", "observer_source_channel": "NO_CERTIFIED_MAP", "correction_classes": {"bounded_or_quasiperiodic": "NO_CERTIFIED_MAP", "smooth_secular": "NO_CERTIFIED_MAP", "causal_or_retarded": "NO_CERTIFIED_MAP"}},
+            "evidence": _evidence("branch_obstruction"),
+        },
+        {
             "id": "observer.crosswalk.compact_product_exceptional_resonance_to_berger",
             "scope": _scope(background="crosswalk: compact Einstein-Maxwell product exceptional resonance <-> positive Berger observer apparatus", carrier="background/carrier mode identification map", degree="crosswalk", parity="n/a", ell="n/a", m="n/a", k="n/a", omega="n/a"),
             "descriptions": {name: "NO_CERTIFIED_MAP" for name in DESCRIPTIONS},
@@ -115,6 +133,8 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_form_modes.two_j_0_to_4": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "OPEN", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.second_order_cone_restriction": ["OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "NOT_APPLICABLE", "OPEN"],
     "observer.berger.detector_profile_tail.two_j4_cutoff": ["OBSTRUCTED", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "NOT_APPLICABLE", "OBSTRUCTED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.detector_profile.adaptive_cutoff_preflight": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "OPEN", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }
 OBSERVER_FIELDS = [

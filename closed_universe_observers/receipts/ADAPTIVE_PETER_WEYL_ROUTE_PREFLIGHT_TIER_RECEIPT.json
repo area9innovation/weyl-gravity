@@ -1,0 +1,55 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The preflight proves that representation dimension D=139, equivalently two_j=138, is the first cutoff with enough coefficient capacity even in principle to reach 99 percent of the certified clock-center profile-energy lower bound. It selects streamed, symmetry-reduced adaptive Peter-Weyl contractions as the next repository-supported route. This is not a convergence theorem at that cutoff, an infinite tail upper bound, a full Green image, recoil, tangent-cone restriction, physical-branch map, or quantum claim. Bridge 3 remains inactive and its same-background Berger branch-to-detector atlas row is NO_CERTIFIED_MAP.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_adaptive_peter_weyl_route_preflight.py closed_universe_observers/verify_berger_adaptive_peter_weyl_route_preflight.py closed_universe_observers/tests/test_berger_adaptive_peter_weyl_route_preflight.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "route preflight, observer atlas/ledger, bridge handoff and programme links"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_adaptive_peter_weyl_route_preflight --emit", "elapsed_seconds": "under 1", "status": "PASS", "scope": "exact necessary-cutoff and route generation"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_adaptive_peter_weyl_route_preflight", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent freshness, minimality, evidence and fail-closed checks"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_adaptive_peter_weyl_route_preflight.py", "elapsed_seconds": "0.14", "status": "PASS", "scope": "four focused tests including missing-multiplicity mutation", "summary": "4 passed"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-adaptive-peter-weyl-route-preflight-v1.schema.json -d closed_universe_observers/certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json", "elapsed_seconds": "under 3", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "elapsed_seconds": "under 1", "status": "PASS", "scope": "shared schema, evidence hashes and fail-closed bridge rows"},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "under 1", "status": "PASS", "scope": "generated atlas, two distinct NO_CERTIFIED_MAP crosswalks and evidence"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "central observer evidence and lifecycle ledger"}
+  ],
+  "tier_2": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "442.54", "status": "PASS", "scope": "full observer regression after central-ledger and generated-atlas changes", "summary": "172 passed"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-adaptive-peter-weyl-route-preflight-v1.schema.json -d closed_universe_observers/certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json", "status": "FAIL", "reason": "initial schema omitted explicit properties for objects with required keys; strictRequired rejected it, the properties were added, the certificate regenerated, and strict validation then passed"}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, convergence theorem, full Green image, recoil coefficient, tangent-cone promotion, physical-branch bridge, or quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_adaptive_peter_weyl_route_preflight.py", "sha256": "4861340c98bb6e0cf2ff857e4ab99844a6d9211c763d3e184e4d44c2abc412aa"},
+    {"path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json", "sha256": "40d7ebd4a9a629c70556421e98a4cdc4fa196b488d0e45f7be6bcc23cab9bb84"},
+    {"path": "closed_universe_observers/schema/berger-adaptive-peter-weyl-route-preflight-v1.schema.json", "sha256": "92ef852d1b45552295722450ff2e57bcc340a05775d4fcb6548c0998eff550a4"},
+    {"path": "closed_universe_observers/verify_berger_adaptive_peter_weyl_route_preflight.py", "sha256": "72fec9c2248ed645de5a450f4e96536a61751c74c37760924a94b05560910911"},
+    {"path": "closed_universe_observers/tests/test_berger_adaptive_peter_weyl_route_preflight.py", "sha256": "875179d11002eba25029d2053da93fb1f74b4a56f502162c7c6bca8c2a4eaf14"},
+    {"path": "closed_universe_observers/reports/berger-adaptive-peter-weyl-route-preflight.md", "sha256": "a2e959eca52fced9d70492f8c103775e28e579e5ce847a3311fd6284f4538c75"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "afbed4f8880467987ced8cbca9aa326769c787ca61006900d89f30d760d256f1"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "165dc5bf0937b8205fbee1acf90b16f3bd0cc47a8cd9820d753e1781b593057d"},
+    {"path": "closed_universe_observers/atlas/verify_observer_atlas_fragment.py", "sha256": "5aca45246dcf38fa0ff1cecf235f349388fc5a8bafe573670289ec79ccedefd4"},
+    {"path": "closed_universe_observers/tests/test_observer_atlas_fragment.py", "sha256": "06ff9e1e09db401d88ba3bc3ce822cb8c7edc41dcc1e134609039173d7005e74"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "7277c4123ee33ca9fc114ffdd6e1879466f91003986af4781922e56e1e617505"},
+    {"path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json", "sha256": "2a06fb31f888cab2d0c3e3481a559623098b3efba42cc0cd7b9b2759552e980c"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "75346bedf64e55fc42542118ff75195384b54751dbd4a0dc0ee33b636ed6f23e"}
+  ],
+  "claim_flags": {
+    "NECESSARY_TWO_J138_CAPACITY_RAIL_EXPORTED": true,
+    "STREAMED_ADAPTIVE_PETER_WEYL_ROUTE_SELECTED": true,
+    "TWO_J138_CONVERGENCE_CERTIFIED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

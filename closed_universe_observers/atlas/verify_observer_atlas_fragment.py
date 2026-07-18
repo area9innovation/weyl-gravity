@@ -11,9 +11,14 @@ def main() -> int:
     assert value["status_vocabulary"] == STATUSES
     ids = {row["id"] for row in value["entries"]}
     assert "observer.berger.second_order_cone_restriction" in ids
-    crosswalk = next(row for row in value["entries"] if row["id"].startswith("observer.crosswalk"))
-    assert set(crosswalk["descriptions"].values()) == {"NO_CERTIFIED_MAP"}
-    assert set(crosswalk["observer_data"][name]["status"] for name in crosswalk["observer_data"]) == {"NO_CERTIFIED_MAP"}
+    crosswalks = [row for row in value["entries"] if row["id"].startswith("observer.crosswalk")]
+    assert {row["id"] for row in crosswalks} == {
+        "observer.crosswalk.berger_physical_branch_to_detector",
+        "observer.crosswalk.compact_product_exceptional_resonance_to_berger",
+    }
+    for crosswalk in crosswalks:
+        assert set(crosswalk["descriptions"].values()) == {"NO_CERTIFIED_MAP"}
+        assert set(crosswalk["observer_data"][name]["status"] for name in crosswalk["observer_data"]) == {"NO_CERTIFIED_MAP"}
     for entry in value["entries"]:
         for evidence in entry["evidence"]:
             path = ROOT / evidence["path"]

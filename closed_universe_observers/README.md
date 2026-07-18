@@ -79,6 +79,8 @@ python3 -m closed_universe_observers.generate_berger_green_weighted_detector_cod
 python3 -m closed_universe_observers.verify_berger_green_weighted_detector_coderivative
 python3 -m closed_universe_observers.generate_berger_two_j4_profile_tail_obstruction --check
 python3 -m closed_universe_observers.verify_berger_two_j4_profile_tail_obstruction
+python3 -m closed_universe_observers.generate_berger_adaptive_peter_weyl_route_preflight --check
+python3 -m closed_universe_observers.verify_berger_adaptive_peter_weyl_route_preflight
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -270,6 +272,12 @@ the clock-center normalized one-form profile has Fourier energy above
 carry at most `675`.  More than `0.9999975` of the slice-profile energy is
 necessarily omitted.  The next honest profile gate is therefore an adaptive
 cutoff near the detector bandwidth or a physical-space Green evaluation.
+The route preflight makes that scale exact: even the necessary capacity
+condition for 99 percent of the certified energy lower bound first passes at
+representation dimension `139`, or `two_j=138`.  It selects streamed,
+symmetry-reduced Peter--Weyl detector contractions over dense intermediate
+serialization.  This is not a convergence theorem at that cutoff; the
+coefficient recurrence and Green-weighted operator-norm tail remain open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

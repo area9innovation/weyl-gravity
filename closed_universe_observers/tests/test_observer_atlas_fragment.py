@@ -9,8 +9,15 @@ def test_generated_fragment_is_current():
 def test_operational_fields_and_fail_closed_crosswalk():
     value = build()
     assert all(set(row["observer_data"]) == set(OBSERVER_FIELDS) for row in value["entries"])
-    crosswalk = next(row for row in value["entries"] if "crosswalk" in row["id"])
-    assert set(crosswalk["descriptions"].values()) == {"NO_CERTIFIED_MAP"}
+    crosswalks = [row for row in value["entries"] if "crosswalk" in row["id"]]
+    assert len(crosswalks) == 2
+    assert all(set(row["descriptions"].values()) == {"NO_CERTIFIED_MAP"} for row in crosswalks)
+
+
+def test_berger_physical_branch_bridge_is_inactive():
+    row = next(row for row in build()["entries"] if row["id"] == "observer.crosswalk.berger_physical_branch_to_detector")
+    assert row["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert row["mode_data"]["second_order"]["causal_retarded"]["status"] == "NO_CERTIFIED_MAP"
 
 def test_tangent_cone_is_not_promoted():
     row = next(row for row in build()["entries"] if row["id"] == "observer.berger.second_order_cone_restriction")

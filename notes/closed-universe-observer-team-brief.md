@@ -359,6 +359,28 @@ coefficients through `two_j=4` contribute at most `675`.  Thus more than
 bandwidth or a physical-space Green-chain evaluation, not a nominal tail
 bound at the current cutoff.
 
+`BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` now fixes the necessary scale
+of that adaptive route.  With the certified unit entry bound, three coframe
+components have capacity
+`3 sum_{d=1}^D d^3=3[D(D+1)/2]^2`.  Capacity for even 99 percent of the
+certified energy lower bound fails at `D=138` and first passes at `D=139`,
+so `two_j>=138` is necessary but not certified sufficient.  The active
+profile/recoil calculation will stream symmetry-reduced per-mode detector
+contractions and tail witnesses; it will not serialize the roughly 8.1
+million dense one-form operator entries below that rail.  The next analytic
+gate is the polarization coefficient recurrence and a Green-weighted
+operator-norm tail.
+
+The currently relevant programme bridge is Bridge 3, from a branch-labelled
+mode to relational detector/redshift/memory/recoil data on one background.
+It is **inactive**: activation requires Bridge 1 and a same-background Berger
+physical-branch dictionary.  The atlas row
+`observer.crosswalk.berger_physical_branch_to_detector` is therefore
+`NO_CERTIFIED_MAP`.  The active unsplit Berger apparatus calculation above
+may continue, but it does not activate a physical-branch interpretation.
+The separate compact-product exceptional-resonance crosswalk remains
+`NO_CERTIFIED_MAP` and is not a substitute.
+
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to
 `Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` are still `OPEN` for bounded/quasiperiodic,

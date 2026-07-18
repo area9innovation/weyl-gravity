@@ -1,0 +1,138 @@
+{
+  "capacity_convention": {
+    "capacity_formula": "3 sum_{d=1}^D d^3 = 3[D(D+1)/2]^2",
+    "entry_bound": "|hat F^alpha_mn(j)|<=1 for alpha=1,2,3",
+    "parseval_weight": "d=2j+1",
+    "profile_energy_lower": "69600083091072098149785306856386673313522227021385314850960022574339792805874412891435115005868816924206432256/247725264374978506133702673907517456275409726390514286841204872197091097935831172232337358616730110015"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL preflight converts the certified clock-center profile-energy lower bound into necessary Peter--Weyl capacity cutoffs. Under the certified unit bound on each of three coframe coefficient entries, capacity through representation dimension D is 3(sum_{d=1}^D d)^2. Reaching even 99 percent of the certified lower bound requires D>=139, equivalently two_j>=138; D=138 is insufficient. The existing exact finite-block form engine therefore selects a streamed, symmetry-reduced adaptive Peter--Weyl contraction as the next repository-supported route. A dense full-matrix JSON export is not selected, and physical-space propagation remains open because no validated Berger hyperbolic PDE solver is present. These are necessary capacity and implementation-route results only: they do not certify convergence at two_j=138, an infinite tail upper bound, a full Maxwell or massive-two-form image, recoil, tangent-cone restriction, a physical-branch map, or a quantum claim.",
+  "claim_status": "ADAPTIVE_PETER_WEYL_STREAMING_ROUTE_SELECTED_FULL_IMAGE_OPEN",
+  "dependency_refs": {
+    "form_engine": {
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    },
+    "green_weighted": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+      "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+    },
+    "tail_obstruction": {
+      "path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
+      "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
+      "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": false,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "NECESSARY_TWO_J138_CAPACITY_RAIL_EXPORTED": true,
+    "QUANTUM_CLAIM": false,
+    "STREAMED_ADAPTIVE_PETER_WEYL_ROUTE_SELECTED": true,
+    "TWO_J138_CONVERGENCE_CERTIFIED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "mutated_minimum_max_dimension": 655,
+      "name": "omit_Peter_Weyl_dimension_weight"
+    }
+  ],
+  "necessary_cutoffs": [
+    {
+      "fraction_of_certified_energy_lower": "9/10",
+      "interpretation": "necessary capacity condition only; it neither bounds the actual tail nor proves that the retained coefficients attain this capacity",
+      "minimum_max_dimension_for_capacity": 136,
+      "minimum_two_j_max_for_capacity": 135,
+      "previous_capacity": "252817200",
+      "selected_capacity": "260363568"
+    },
+    {
+      "fraction_of_certified_energy_lower": "99/100",
+      "interpretation": "necessary capacity condition only; it neither bounds the actual tail nor proves that the retained coefficients attain this capacity",
+      "minimum_max_dimension_for_capacity": 139,
+      "minimum_two_j_max_for_capacity": 138,
+      "previous_capacity": "275961843",
+      "selected_capacity": "284018700"
+    },
+    {
+      "fraction_of_certified_energy_lower": "999/1000",
+      "interpretation": "necessary capacity condition only; it neither bounds the actual tail nor proves that the retained coefficients attain this capacity",
+      "minimum_max_dimension_for_capacity": 139,
+      "minimum_two_j_max_for_capacity": 138,
+      "previous_capacity": "275961843",
+      "selected_capacity": "284018700"
+    },
+    {
+      "fraction_of_certified_energy_lower": "1",
+      "interpretation": "necessary capacity condition only; it neither bounds the actual tail nor proves that the retained coefficients attain this capacity",
+      "minimum_max_dimension_for_capacity": 139,
+      "minimum_two_j_max_for_capacity": 138,
+      "previous_capacity": "275961843",
+      "selected_capacity": "284018700"
+    }
+  ],
+  "next_gate": "DERIVE_STREAMABLE_POLARIZATION_COEFFICIENT_RECURRENCE_AND_GREEN_WEIGHTED_OPERATOR_NORM_TAIL",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_adaptive_peter_weyl_route_preflight.py",
+        "sha256": "4861340c98bb6e0cf2ff857e4ab99844a6d9211c763d3e184e4d44c2abc412aa"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_adaptive_peter_weyl_route_preflight.py",
+        "sha256": "72fec9c2248ed645de5a450f4e96536a61751c74c37760924a94b05560910911"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_adaptive_peter_weyl_route_preflight.py",
+        "sha256": "875179d11002eba25029d2053da93fb1f74b4a56f502162c7c6bca8c2a4eaf14"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-adaptive-peter-weyl-route-preflight-v1.schema.json",
+        "sha256": "92ef852d1b45552295722450ff2e57bcc340a05775d4fcb6548c0998eff550a4"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-adaptive-peter-weyl-route-preflight.md",
+        "sha256": "a2e959eca52fced9d70492f8c103775e28e579e5ce847a3311fd6284f4538c75"
+      }
+    ]
+  },
+  "result_id": "BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT",
+  "route_dispositions": [
+    {
+      "reason": "unnecessary artifact expansion; use streamed contractions",
+      "route": "dense full-matrix symbolic JSON through two_j=138",
+      "status": "NOT_SELECTED"
+    },
+    {
+      "reason": "no certified Berger hyperbolic PDE solver or error estimator exists in the repository",
+      "route": "validated physical-space Green chain",
+      "status": "OPEN_NO_VALIDATED_SOLVER"
+    }
+  ],
+  "scale_audit": {
+    "dense_apply_scalar_multiplication_upper_count": 852056100,
+    "dense_one_form_operator_entries_through_cutoff": 8144010,
+    "three_component_coefficient_entries_through_cutoff": 2714670,
+    "top_one_form_block_dimension": 417,
+    "top_scalar_representation_dimension": 139
+  },
+  "schema": "closed-universe-berger-adaptive-peter-weyl-route-preflight-v1",
+  "selected_route": {
+    "next_calculation": "derive the polarization coefficient recurrence and operator-norm Green tail, then increase the cutoff until the declared response tolerance closes",
+    "route": "STREAMED_SYMMETRY_REDUCED_ADAPTIVE_PETER_WEYL_CONTRACTION",
+    "serialization": "stream per-representation detector contractions and tail witnesses; do not export every dense Green-image matrix entry",
+    "starting_capacity_rail": "two_j_max=138 is necessary but not certified sufficient",
+    "status": "SELECTED_FOR_NEXT_GATE"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}
