@@ -24,16 +24,22 @@ forbidden until an extended classical contraction and complete one-loop
 Slavnov operator `Q1` are certified. The local Wess--Zumino Hamiltonian
 contribution to `Q1` is fixed, but an exact flat-fixture response matrix has
 rank two on the allowed `C(g_hat)^2` and `R(g_hat)^2` finite counterterms.
-The finite nonlocal effective action, renormalized BV Laplacian or
-time-ordered product, and finite normalization conditions are absent, so
-complete `Q1` is `NO_CERTIFIED_OPERATOR`. The stationary/Hadamard rail remains
+An exact Paneitz/Riegert solve now supplies one anomaly-induced Euclidean
+effective-action representative, with functional coefficients
+`(199/120,-87/160,29/120)` and the last `R^2` term restoring the certified
+`BoxR=0` scheme. This is conditional on an invertible boundary problem or
+compatible source sector; Paneitz kernel/global data are not discarded. The
+Weyl-invariant finite remainder, renormalized BV Laplacian or time-ordered
+product, finite normalization conditions, and global Green data remain
+absent, so complete `Gamma1` and `Q1` are fail-closed. The stationary/Hadamard rail remains
 independently open. The older readiness discussion below is retained as
 historical gate provenance.
 
 See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md),
 [`wess-zumino-minimal-bv-cotangent-lift.md`](wess-zumino-minimal-bv-cotangent-lift.md),
 [`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md),
-and [`one-loop-slavnov-q1-disposition.md`](one-loop-slavnov-q1-disposition.md).
+[`one-loop-slavnov-q1-disposition.md`](one-loop-slavnov-q1-disposition.md), and
+[`anomaly-induced-nonlocal-gamma1.md`](anomaly-induced-nonlocal-gamma1.md).
 
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical
 certificates remain immutable receipts, but they are no longer all valid

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-anomaly-induced-nonlocal-gamma1-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "conventions", "exact_coefficient_solve", "anomaly_induced_representative", "green_operator_contract", "wess_zumino_crosscheck", "undetermined_remainder", "decision", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-anomaly-induced-nonlocal-gamma1-v1"},
+    "result_id": {"const": "ANOMALY_INDUCED_NONLOCAL_GAMMA1"},
+    "result_state": {"const": "ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_REPRESENTATIVE_CERTIFIED_WEYL_INVARIANT_REMAINDER_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "conventions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["weyl_variation", "modified_euler_density", "paneitz_operator", "density_law", "operator_density_law", "local_R2_law", "pairing"],
+      "properties": {
+        "weyl_variation": {"type": "string"}, "modified_euler_density": {"const": "Ecal4=E4-(2/3) Box R"},
+        "paneitz_operator": {"type": "string"}, "density_law": {"type": "string"},
+        "operator_density_law": {"type": "string"}, "local_R2_law": {"type": "string"}, "pairing": {"type": "string"}
+      }
+    },
+    "exact_coefficient_solve": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_basis", "source_vector", "modified_basis", "modified_target_vector", "functional_basis", "weyl_response_matrix", "solution_vector", "reconstructed_modified_vector", "reconstructed_source_vector", "rank"],
+      "properties": {
+        "source_basis": {"const": ["C2", "E4", "BoxR"]}, "source_vector": {"$ref": "#/$defs/vector3"},
+        "modified_basis": {"const": ["C2", "Ecal4", "BoxR"]}, "modified_target_vector": {"$ref": "#/$defs/vector3"},
+        "functional_basis": {"const": ["<Ecal4,G4 C2>", "<Ecal4,G4 Ecal4>", "integral R2"]},
+        "weyl_response_matrix": {"$ref": "#/$defs/matrix3"}, "solution_vector": {"$ref": "#/$defs/vector3"},
+        "reconstructed_modified_vector": {"$ref": "#/$defs/vector3"}, "reconstructed_source_vector": {"$ref": "#/$defs/vector3"},
+        "rank": {"const": 3}
+      }
+    },
+    "anomaly_induced_representative": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kappa", "compact_formula", "c", "a", "expanded_coefficients", "weyl_variation", "BoxR_coordinate", "R2_role", "parity_odd_coordinate", "status"],
+      "properties": {
+        "kappa": {"const": "(4 pi)^(-2)"}, "compact_formula": {"type": "string"}, "c": {"$ref": "#/$defs/rational"}, "a": {"$ref": "#/$defs/rational"},
+        "expanded_coefficients": {"type": "object", "additionalProperties": false, "required": ["<Ecal4,G4 C2>", "<Ecal4,G4 Ecal4>", "integral_R2"], "properties": {"<Ecal4,G4 C2>": {"$ref": "#/$defs/rational"}, "<Ecal4,G4 Ecal4>": {"$ref": "#/$defs/rational"}, "integral_R2": {"$ref": "#/$defs/rational"}}},
+        "weyl_variation": {"type": "string"}, "BoxR_coordinate": {"$ref": "#/$defs/rational"}, "R2_role": {"type": "string"},
+        "parity_odd_coordinate": {"$ref": "#/$defs/rational"}, "status": {"const": "COEFFICIENT_BEARING_ANOMALY_INDUCED_REPRESENTATIVE"}
+      }
+    },
+    "green_operator_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["signature", "operator", "inverse_identity", "exact_variation_scope", "zero_mode_policy", "boundary_policy", "conformal_transport", "existence_status"],
+      "properties": {"signature": {"const": "Euclidean"}, "operator": {"type": "string"}, "inverse_identity": {"type": "string"}, "exact_variation_scope": {"type": "string", "minLength": 80}, "zero_mode_policy": {"type": "string"}, "boundary_policy": {"type": "string"}, "conformal_transport": {"type": "string"}, "existence_status": {"const": "CONDITIONAL_ON_DECLARED_EUCLIDEAN_GENERALIZED_INVERSE"}}
+    },
+    "wess_zumino_crosscheck": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dressed_metric", "finite_difference", "BRST_image", "relation_to_stored_primitive", "equality_claim"],
+      "properties": {"dressed_metric": {"const": "g_hat=exp(-2 tau) g"}, "finite_difference": {"type": "string"}, "BRST_image": {"type": "string"}, "relation_to_stored_primitive": {"type": "string"}, "equality_claim": {"const": "NO_TERM_BY_TERM_EQUALITY_CLAIM_BEYOND_BRST_IMAGE_AND_DECLARED_BOUNDARY_CONDITIONS"}}
+    },
+    "undetermined_remainder": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decomposition", "Weyl_invariant_nonlocal_functional", "finite_C2_and_R2_normalizations", "green_kernel_boundary_and_global_data", "renormalized_BV_laplacian_or_time_ordered_product", "extended_classical_residual_contraction"],
+      "properties": {"decomposition": {"type": "string"}, "Weyl_invariant_nonlocal_functional": {"const": "NOT_COMPUTED"}, "finite_C2_and_R2_normalizations": {"const": "NOT_FIXED"}, "green_kernel_boundary_and_global_data": {"const": "NOT_FIXED_GLOBALLY"}, "renormalized_BV_laplacian_or_time_ordered_product": {"const": "NOT_SUPPLIED"}, "extended_classical_residual_contraction": {"const": "NOT_SUPPLIED"}}
+    },
+    "decision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["anomaly_induced_nonlocal_Gamma1", "complete_finite_nonlocal_Gamma1", "complete_Q1", "residual_transfer", "Bridge_4", "Bridge_5"],
+      "properties": {"anomaly_induced_nonlocal_Gamma1": {"const": "CERTIFIED_CONDITIONAL_EUCLIDEAN_REPRESENTATIVE"}, "complete_finite_nonlocal_Gamma1": {"const": "NO_CERTIFIED_FUNCTIONAL"}, "complete_Q1": {"const": "NO_CERTIFIED_OPERATOR"}, "residual_transfer": {"const": "FORBIDDEN"}, "Bridge_4": {"const": "NO_CERTIFIED_MAP"}, "Bridge_5": {"const": "NO_CERTIFIED_MAP_BRIDGE_2_ABSENT"}}
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ANOMALY_VECTOR_REPRODUCED", "BOX_R_ZERO_SCHEME_REPRODUCED", "ANOMALY_INDUCED_REPRESENTATIVE_SUPPLIED", "WEYL_INVARIANT_REMAINDER_SUPPLIED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED"],
+      "properties": {"ANOMALY_VECTOR_REPRODUCED": {"const": true}, "BOX_R_ZERO_SCHEME_REPRODUCED": {"const": true}, "ANOMALY_INDUCED_REPRESENTATIVE_SUPPLIED": {"const": true}, "WEYL_INVARIANT_REMAINDER_SUPPLIED": {"const": false}, "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false}, "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false}, "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false}}
+    },
+    "dependencies": {"type": "object", "additionalProperties": false, "required": ["regulated_breaking", "WZ_primitive", "Q1_disposition"], "properties": {"regulated_breaking": {"$ref": "#/$defs/artifact"}, "WZ_primitive": {"$ref": "#/$defs/artifact"}, "Q1_disposition": {"$ref": "#/$defs/artifact"}}},
+    "next_gate": {"const": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"},
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "vector3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
+    "matrix3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/vector3"}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

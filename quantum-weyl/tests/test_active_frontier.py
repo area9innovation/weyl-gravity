@@ -154,6 +154,14 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             self.payload["claim_flags"]["FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO"]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED"]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["COMPLETE_RENORMALIZED_Q1_SUPPLIED"]
         )
@@ -225,7 +233,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+            "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

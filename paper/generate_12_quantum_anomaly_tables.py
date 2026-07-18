@@ -20,6 +20,7 @@ INPUTS = {
     "matter": ROOT / "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "extended": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+    "gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
 }
 
 
@@ -46,6 +47,7 @@ def _load() -> dict[str, dict[str, Any]]:
     matter = values["matter"]
     lift = values["lift"]
     extended = values["extended"]
+    gamma1 = values["gamma1"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -68,6 +70,9 @@ def _load() -> dict[str, dict[str, Any]]:
         or extended.get("H14", {}).get("boundary_rank") != 4
         or extended.get("H14", {}).get("even_quotient_dimension") != 0
         or extended.get("H14", {}).get("odd_quotient_dimension") != 0
+        or gamma1.get("result_state")
+        != "ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_REPRESENTATIVE_CERTIFIED_WEYL_INVARIANT_REMAINDER_OPEN"
+        or gamma1.get("exact_coefficient_solve", {}).get("rank") != 3
     ):
         raise ValueError("Paper 12 generated-table dependency drifted")
     return values
@@ -81,6 +86,7 @@ def build() -> str:
     breaking = values["breaking"]
     lift = values["lift"]
     extended = values["extended"]
+    gamma1 = values["gamma1"]
     even_orbits = json.loads(
         next(
             item["payload_json"]
@@ -105,6 +111,14 @@ def build() -> str:
     ]
     coefficient_rows = "\n".join(
         rf"{name} & ${_q(value)}$ \\" for name, value in rows
+    )
+    gamma_solution = gamma1["exact_coefficient_solve"]["solution_vector"]
+    gamma_rows = "\n".join(
+        rf"{name} & ${_q(value)}$ \\"
+        for name, value in zip(
+            (r"$\langle\mathcal E_4,G_4C^2\rangle$", r"$\langle\mathcal E_4,G_4\mathcal E_4\rangle$", r"$\int\sqrt g R^2$"),
+            gamma_solution,
+        )
     )
     hashes = "\n".join(
         rf"\nolinkurl{{{path.relative_to(ROOT)}}} & \texttt{{{_sha256(path)[:16]}}} \\"
@@ -151,6 +165,19 @@ Density coordinate & repository one-loop coefficient \\
 \end{{tabular}}
 \caption{{Coefficient vector in the convention $(4\pi)^{{-2}}[cC^2-aE_4+pC\widetilde C+b\Box R]$.}}
 \label{{tab:generated-coefficients}}
+\end{{table}}
+
+\begin{{table}}[ht]
+\centering
+\begin{{tabular}}{{@{{}}lr@{{}}}}
+\toprule
+Anomaly-induced functional carrier & exact coefficient \\
+\midrule
+{gamma_rows}
+\bottomrule
+\end{{tabular}}
+\caption{{Exact Paneitz/Riegert solve.  The Weyl-response matrix is $\operatorname{{diag}}(4,8,-12)$; re-expansion returns $(199/30,-87/20,0)$ in $(C^2,E_4,\Box R)$.}}
+\label{{tab:generated-anomaly-induced-gamma1}}
 \end{{table}}
 
 \begin{{equation}}

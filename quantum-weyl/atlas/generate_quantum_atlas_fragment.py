@@ -40,6 +40,7 @@ DEPENDENCIES = {
     "WZ_cotangent_lift": QROOT / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "WZ_extended_local_BV": QROOT / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "one_loop_Q1_disposition": QROOT / "transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+    "anomaly_induced_Gamma1": QROOT / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "general_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "finite_k0_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
     "smooth_secular_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
@@ -465,19 +466,19 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the local WZ Q1 piece is fixed but complete Q1 is underdetermined"),
-            lifecycle=("NO_CERTIFIED_MAP", "QME disposition is complete, but complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
+            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; one conditional anomaly-induced Euclidean Gamma1 representative is fixed but its Weyl-invariant remainder and complete Q1 are underdetermined"),
+            lifecycle=("NO_CERTIFIED_MAP", "QME disposition and an anomaly-induced Euclidean Gamma1 representative are complete in scope, but the Weyl-invariant remainder, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the local WZ Hamiltonian Q1 contribution is fixed. A rank-two finite-counterterm ambiguity and absent finite nonlocal effective action leave complete Q1 uncertified. Bridge 2 and a same-background extended classical carrier map are also absent, so no interacting-BRST insertion crosswalk is certified.",
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1"),
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. Its Weyl-invariant finite remainder, normalization and global Green data remain open; complete Q1 is uncertified. Bridge 2 and a same-background extended classical carrier map are also absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
-        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition")),
+        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("curvature_observable_generator", "support-local curvature-graph CCR generator", ["LORENTZIAN-CAUSAL"], ("curvature_CCR",)),
     ]

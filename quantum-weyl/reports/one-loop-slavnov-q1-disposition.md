@@ -1,5 +1,13 @@
 # One-loop Slavnov (Q_1) disposition
 
+> **Active refinement.** This receipt remains authoritative for the exact
+> rank-two local-counterterm ambiguity and the non-uniqueness of complete
+> `Q1`. The later
+> [`ANOMALY_INDUCED_NONLOCAL_GAMMA1`](anomaly-induced-nonlocal-gamma1.md)
+> receipt supplies one conditional Paneitz/Riegert representative for the
+> anomaly-induced Euclidean part of `Gamma1`. Its Weyl-invariant finite
+> remainder, normalization, global Green data, and complete `Q1` remain open.
+
 Dependency tags: `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`.
 
 The compensator-extended one-loop local Euclidean QME is restored, and the

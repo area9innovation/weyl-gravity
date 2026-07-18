@@ -1199,7 +1199,7 @@
       }
     },
     {
-      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the local WZ Hamiltonian Q1 contribution is fixed. A rank-two finite-counterterm ambiguity and absent finite nonlocal effective action leave complete Q1 uncertified. Bridge 2 and a same-background extended classical carrier map are also absent, so no interacting-BRST insertion crosswalk is certified.",
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. Its Weyl-invariant finite remainder, normalization and global Green data remain open; complete Q1 is uncertified. Bridge 2 and a same-background extended classical carrier map are also absent, so no interacting-BRST insertion crosswalk is certified.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -1257,6 +1257,11 @@
           "path": "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
           "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
           "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
+        },
+        {
+          "path": "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+          "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
+          "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
         }
       ],
       "id": "quantum.crosswalk.classical_tangent_cone_to_interacting_brst",
@@ -1307,7 +1312,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "anomaly_QME_dependency": {
-          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the local WZ Q1 piece is fixed but complete Q1 is underdetermined",
+          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; one conditional anomaly-induced Euclidean Gamma1 representative is fixed but its Weyl-invariant remainder and complete Q1 are underdetermined",
           "status": "CERTIFIED"
         },
         "carrier_crosswalk": {
@@ -1328,7 +1333,7 @@
         ],
         "entry_kind": "CLASSICAL_TO_QUANTUM_CROSSWALK",
         "lifecycle_state": {
-          "statement": "QME disposition is complete, but complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
+          "statement": "QME disposition and an anomaly-induced Euclidean Gamma1 representative are complete in scope, but the Weyl-invariant remainder, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
           "status": "NO_CERTIFIED_MAP"
         },
         "pairing_status": {
@@ -1402,6 +1407,11 @@
           "path": "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
           "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
           "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
+        },
+        {
+          "path": "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+          "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
+          "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
         }
       ],
       "id": "quantum.crosswalk.local_anomaly_class_to_particle",
@@ -1743,7 +1753,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "7245fe30bfb7507371136daf28d0c5d3675a19ca2fc26a1b52120ef0d5997ce8",
+  "generated_by_sha256": "f67cc405a934b41aceb3ef1a5c7e7ee142a2ca8e0b23455effc1017bde10c080",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

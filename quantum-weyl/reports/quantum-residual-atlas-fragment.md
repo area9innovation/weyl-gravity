@@ -78,12 +78,16 @@ without changing any mode-to-particle crosswalk. Compensator and nonstandard
 matter extensions remain separate theories. In the formal tau-adic
 compensator theory the one-loop local Euclidean QME is restored and the local
 Wess--Zumino Hamiltonian contribution to `Q1` is fixed. The complete
-renormalized `Q1` is nevertheless absent: an exact flat-momentum response
-matrix has rank two on the allowed `C(g_hat)^2` and `R(g_hat)^2` finite
-counterterms, while the finite nonlocal effective action, renormalized BV
-Laplacian or time-ordered product, and finite normalization conditions have
-not been supplied. The extended classical residual contraction is absent as
-well. Residual transfer therefore remains forbidden.
+renormalized `Q1` is nevertheless absent. One conditional anomaly-induced
+Euclidean `Gamma1` representative is now exact, with Paneitz/Riegert
+coefficients `(199/120,-87/160,29/120)` and the local `R^2` term required by
+the repository `BoxR=0` convention. An exact flat-momentum response matrix
+still has rank two on the allowed `C(g_hat)^2` and `R(g_hat)^2` finite
+counterterms, while the Weyl-invariant remainder, global Green/kernel data,
+renormalized BV Laplacian or time-ordered product, and finite normalization
+conditions have not been supplied. The extended classical residual
+contraction is absent as well. Residual transfer therefore remains
+forbidden.
 
 None of these classical statements implies disappearance from interacting
 BRST cohomology, a nonzero loop interaction, a quantum constraint, or a

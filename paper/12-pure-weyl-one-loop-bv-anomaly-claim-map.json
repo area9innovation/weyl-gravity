@@ -18,6 +18,21 @@
     },
     "WZ_local_counterterm_Q1_contribution_fixed": true,
     "Weyl_quartet_contractible": true,
+    "anomaly_induced_functional_coefficients": [
+      {
+        "denominator": 120,
+        "numerator": 199
+      },
+      {
+        "denominator": 160,
+        "numerator": -87
+      },
+      {
+        "denominator": 120,
+        "numerator": 29
+      }
+    ],
+    "anomaly_induced_nonlocal_Gamma1_representative": true,
     "extended_H04_even_dimension": 3,
     "extended_H04_odd_dimension": 1,
     "extended_H14_even_dimension": 0,
@@ -33,7 +48,7 @@
     "strict_one_loop_local_Euclidean_QME_obstructed": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "5d7c116ac922bf788308144ba01e45eaa55f6abe2943bcbdd4428e9d8e6bfa2e",
+  "compiled_pdf_sha256": "fb85655185c44c9ac0f3b884f5e5c36bb88194281c010b583fdcbed39af308f7",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -43,6 +58,7 @@
     "Bridge_5_interacting_BRST_map": false,
     "Lorentzian_QME": false,
     "all_loop_extended_QME": false,
+    "complete_renormalized_Gamma1_supplied": false,
     "complete_renormalized_Q1_supplied": false,
     "finite_polynomial_in_tau_theorem": false,
     "global_BRST_Hadamard_state": false,
@@ -53,7 +69,7 @@
     "theorem_frozen": false,
     "unitarity_theorem": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME and one exact conditional anomaly-induced Gamma1 representative.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -83,6 +99,10 @@
       "result_id": "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
       "sha256": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a"
     },
+    "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json": {
+      "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
+      "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
+    },
     "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json": {
       "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
       "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
@@ -90,12 +110,13 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "2238c223a84493d9dc0932dcc934df9eab444204efa28432282ff351650a6188",
+  "manuscript_sha256": "b30b3393e52b7a96edad71093984796a78ef729a6a22bf93635147bb24b02413",
   "next_gate": {
     "required_inputs": [
       "compensator-inclusive classical contraction",
       "finite C2 and R2 normalization conditions",
-      "finite nonlocal Gamma1 and renormalized BV operator data fixing complete Q1"
+      "Weyl-invariant finite Gamma1 remainder and global Paneitz Green data",
+      "renormalized BV operator data fixing complete Q1"
     ],
     "required_outputs": [
       "q1=pi_ext Q1 iota_ext",
@@ -104,17 +125,17 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"
+    "status": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "de678fe66632ab27923b3e836c95b7d9c813e6c070cada792ffbbfe4907c15a9",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "30a598d75e3b2e91cbad70debc40a25dbf7729f3ef4b44bb9323a9483d543f9a",
-    "paper/generate_12_quantum_anomaly_tables.py": "0f7e3f8ad6905aa253e0f958244a25d13aee82990c090872d546f272bafe644e",
-    "paper/generated/12-quantum-anomaly-certificate-tables.tex": "5d5484be9b2201894bedcd5e67aeab2f3d96a6a99b936bb0ee54f2deb8768d93",
-    "paper/verify_12_quantum_anomaly_tables.py": "3c676156cd50872c11c8acd6232b7a64043d7cd8d45ad2d91c36709168552858"
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "83df05c2464fa07eff027cf1dfcafda74d6789829097e9dd122aeff008d41260",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "d5497c6981d69a2272b4804e1078c246fc8fd003d18753ddc9c696eff5644d15",
+    "paper/generate_12_quantum_anomaly_tables.py": "e3d4be707a41a1bc48fd92efc4e0e41f83c5bebcf5289dd6f4b95436755433ef",
+    "paper/generated/12-quantum-anomaly-certificate-tables.tex": "14694214b32415ba1a58048f8460c33ca8c03f4363c4e85300d8f1748e32dc73",
+    "paper/verify_12_quantum_anomaly_tables.py": "2f0c0c9b132c3661881c8fa9f3070b1d26fffd1c998e8f49e2443f32366e305d"
   },
   "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
-  "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_AND_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORATION",
+  "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_AND_ANOMALY_INDUCED_GAMMA1_REPRESENTATIVE",
   "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
   "theory_dispositions": {
     "strict_fixed_field_content": "OBSTRUCTED",

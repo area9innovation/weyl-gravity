@@ -17,6 +17,8 @@ def main() -> None:
     assert "Q_Wh+hQ_W=I_4" in rendered
     assert "\\operatorname{rank}B_{\\rm ext}=4" in rendered
     assert "\\frac{199}{30},-\\frac{87}{20},0,0" in rendered
+    assert "\\frac{199}{120}" in rendered
+    assert "\\frac{29}{120}" in rendered
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
     assert values["gauge_fixed"]["gauge_fixed_cohomology"]["H14_classes"] == [
         "ANOM_OMEGA_C2",
@@ -34,6 +36,11 @@ def main() -> None:
         values["extended"]["one_loop_QME"]["strict_breaking_coordinates"]
         == values["extended"]["one_loop_QME"]["boundary_image_coordinates"]
     )
+    assert values["gamma1"]["exact_coefficient_solve"]["solution_vector"] == [
+        {"numerator": 199, "denominator": 120},
+        {"numerator": -87, "denominator": 160},
+        {"numerator": 29, "denominator": 120},
+    ]
     print("Paper 12 generated quantum-anomaly tables: PASS")
 
 

@@ -56,6 +56,7 @@ DEPENDENCIES = {
     "WZ_minimal_BV_cotangent_lift": HERE / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "WZ_extended_local_BV": HERE / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "one_loop_Slavnov_Q1_disposition": HERE / "transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+    "anomaly_induced_nonlocal_Gamma1": HERE / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
@@ -153,6 +154,7 @@ def _load() -> dict[str, dict[str, Any]]:
     wz_lift = values["WZ_minimal_BV_cotangent_lift"]
     wz_extended = values["WZ_extended_local_BV"]
     q1_disposition = values["one_loop_Slavnov_Q1_disposition"]
+    anomaly_induced_gamma1 = values["anomaly_induced_nonlocal_Gamma1"]
     if (
         physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
         or physical_elliptic.get("result_state")
@@ -253,6 +255,24 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN"
     ):
         raise ValueError("one-loop Slavnov Q1 frontier drifted")
+    if (
+        anomaly_induced_gamma1.get("result_state")
+        != "ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_REPRESENTATIVE_CERTIFIED_WEYL_INVARIANT_REMAINDER_OPEN"
+        or anomaly_induced_gamma1.get("exact_coefficient_solve", {}).get("rank") != 3
+        or anomaly_induced_gamma1.get("decision", {}).get(
+            "anomaly_induced_nonlocal_Gamma1"
+        )
+        != "CERTIFIED_CONDITIONAL_EUCLIDEAN_REPRESENTATIVE"
+        or anomaly_induced_gamma1.get("decision", {}).get(
+            "complete_finite_nonlocal_Gamma1"
+        )
+        != "NO_CERTIFIED_FUNCTIONAL"
+        or anomaly_induced_gamma1.get("decision", {}).get("complete_Q1")
+        != "NO_CERTIFIED_OPERATOR"
+        or anomaly_induced_gamma1.get("decision", {}).get("residual_transfer")
+        != "FORBIDDEN"
+    ):
+        raise ValueError("anomaly-induced nonlocal Gamma1 frontier drifted")
     antifield = values["antifield_import"]
     antifield_flags = antifield.get("claim_flags", {})
     if (
@@ -1057,11 +1077,11 @@ def build() -> dict[str, Any]:
             },
             "local_obstruction_space": {
                 "status": "STRICT_G2_COMPLETE_TAU_ADIC_EXTENDED_H04_DIMENSIONS_3_1_AND_H14_ZERO",
-                "next_gate": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+                "next_gate": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_WZ_Q1_PIECE_FIXED_COMPLETE_Q1_UNDERDETERMINED",
-                "next_gate": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_REPRESENTATIVE_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
+                "next_gate": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -1076,8 +1096,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_COMPLETE_Q1_UNDERDETERMINED_AND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "FORBIDDEN_ANOMALY_INDUCED_GAMMA1_REPRESENTATIVE_ONLY_WEYL_INVARIANT_REMAINDER_AND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
         "supersession_ledger": [
@@ -1223,6 +1243,8 @@ def build() -> dict[str, Any]:
             "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED": True,
             "WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED": True,
             "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO": True,
+            "ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED": True,
+            "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": False,
             "COMPLETE_RENORMALIZED_Q1_SUPPLIED": False,
             "FULL_EXTENDED_BV_QME_RESTORED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
@@ -1232,7 +1254,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "RENORMALIZED_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+            "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -1273,10 +1295,15 @@ def build() -> dict[str, Any]:
             "three even and one odd, including R(g_hat)^2, while H14 vanishes. The displayed "
             "counterterm therefore restores the compensator-extended local Euclidean QME at "
             "one loop. The coefficient-bearing local Hamiltonian contribution Q1^WZ is fixed, "
-            "but an exact flat-momentum response matrix has rank two on the allowed C(g_hat)^2 "
-            "and R(g_hat)^2 finite-counterterm directions. The finite nonlocal Gamma1, "
-            "renormalized BV Laplacian or time-ordered product, and finite normalization "
-            "conditions are absent, so no unique complete Q1 is supplied. This does not "
+            "and an exact Paneitz/Riegert solve now supplies one anomaly-induced Euclidean "
+            "Gamma1 representative with coefficients (199/120,-87/160,29/120). Its local "
+            "R^2 term exactly restores the certified BoxR=0 convention. The result is "
+            "conditional on an invertible boundary problem or compatible source sector and "
+            "does not discard Paneitz kernel/global data. An exact flat-momentum response "
+            "matrix still has rank two on the allowed C(g_hat)^2 and R(g_hat)^2 finite-counterterm "
+            "directions. The Weyl-invariant finite nonlocal remainder, renormalized BV Laplacian "
+            "or time-ordered product, finite normalization conditions, and global Green data "
+            "are absent, so no unique complete Gamma1 or Q1 is supplied. This does not "
             "establish an all-loop or Lorentzian QME. The frozen classical residual contraction "
             "has no compensator rows, so residual transfer remains forbidden. "
             "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
@@ -1448,6 +1475,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED") is not True
         or flags.get("WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED") is not True
         or flags.get("FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO") is not True
+        or flags.get("ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED")
+        is not True
+        or flags.get("COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED") is not False
         or flags.get("COMPLETE_RENORMALIZED_Q1_SUPPLIED") is not False
         or flags.get("FULL_EXTENDED_BV_QME_RESTORED") is not False
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
@@ -1527,6 +1557,8 @@ def validate(result: dict[str, Any]) -> None:
             "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
             "WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED",
             "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO",
+            "ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED",
+            "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
             "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY",
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY",

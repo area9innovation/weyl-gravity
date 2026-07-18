@@ -303,10 +303,56 @@ $H^{0,4}$ response matrix is
 The topological columns have zero compactly supported bulk Euler derivative;
 their boundary and global content is retained separately.  Therefore finite
 $C(\widehat g)^2$ and $R(\widehat g)^2$ counterterms change the bulk
-Hamiltonian vector field independently.  The current inputs do not supply
-the finite nonlocal $\Gamma_1^{\rm ren}$, the renormalized BV Laplacian or
-time-ordered product, or finite normalization conditions.  Complete $Q_1$
-is consequently fail-closed as \texttt{NO\_CERTIFIED\_OPERATOR}.
+Hamiltonian vector field independently.  This receipt alone does not supply
+a nonlocal $\Gamma_1$ representative, the renormalized BV Laplacian or
+time-ordered product, or finite normalization conditions.  The follow-up
+below supplies the anomaly-induced component but not the Weyl-invariant
+finite remainder.  Complete $Q_1$ remains fail-closed as
+\texttt{NO\_CERTIFIED\_OPERATOR}.
+
+\subsection{Anomaly-induced nonlocal representative}
+
+The follow-up receipt solves the exact Weyl-response system rather than
+declaring the whole finite effective action absent.  With
+\[
+ \mathcal E_4=E_4-\frac23\Box R,
+ \qquad
+ \Delta_4=\Box^2+2R^{\mu\nu}\nabla_\mu\nabla_\nu
+ -\frac23R\Box+\frac13(\nabla^\mu R)\nabla_\mu,
+\]
+the carrier basis
+\[
+ \left(
+ \langle\mathcal E_4,G_4C^2\rangle,
+ \langle\mathcal E_4,G_4\mathcal E_4\rangle,
+ \int\sqrt g R^2
+ \right)
+\]
+has Weyl-response matrix $\operatorname{diag}(4,8,-12)$.  Exact rational
+elimination against the modified-basis target
+$(199/30,-87/20,-29/10)$ gives
+\[
+ \left(\frac{199}{120},-\frac{87}{160},\frac{29}{120}\right).
+\]
+Re-expansion in $(C^2,E_4,\Box R)$ returns
+$(199/30,-87/20,0)$ exactly.  Thus
+\[
+ \Gamma_{1,\mathrm{anom}}
+ =\frac1{(4\pi)^2}\left\{
+ \frac18\langle\mathcal E_4,G_4(2cC^2-a\mathcal E_4)\rangle
+ +\frac{a}{18}\int\sqrt g R^2
+ \right\}
+\]
+is one anomaly-induced Euclidean representative.
+
+The inverse contract is fail-closed.  Either the Euclidean boundary problem
+is invertible, or $G_4$ is a self-adjoint generalized inverse and every
+displayed source lies in the complement of $\ker\Delta_4$.  A compact
+Paneitz zero mode is not silently discarded: its global anomaly, homogeneous
+solutions, and boundary transgressions remain separate data.  The
+Weyl-invariant finite functional, finite $C^2/R^2$ normalization, and
+renormalized BV product are still absent, so this result does not promote
+complete $\Gamma_1$ or $Q_1$.
 
 \section{Independent verifiers and mutation tests}
 
@@ -319,12 +365,14 @@ The producer and verifier paths are distinct.  The verifiers independently:
 \item reject authorization of residual transfer;
 \item reject promotion of the fixed Wess--Zumino contribution to a complete
 renormalized $Q_1$;
+\item replay the diagonal Paneitz/Riegert response solve and reject promotion
+of a generalized inverse to an unconditional global inverse;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
 
 The generated tables add a publication-layer drift guard.  Their verifier
-loads the seven authoritative inputs, checks the exact extended boundary
+loads the eight authoritative table inputs, checks the exact extended boundary
 matrix and coefficient image, rebuilds the TeX byte-for-byte, and rejects a
 stale include.
 
@@ -362,9 +410,10 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item finite normalization conditions, the finite nonlocal effective action,
-and renormalized BV operator data fixing a complete $Q_1$ beyond its certified
-local Wess--Zumino contribution;
+\item finite normalization conditions, the Weyl-invariant finite nonlocal
+remainder, global Paneitz Green data, and renormalized BV operator data fixing
+a complete $Q_1$ beyond its certified local Wess--Zumino and anomaly-induced
+contributions;
 \item the induced residual operator
 $q_1=\pi_{\rm ext}Q_1\iota_{\rm ext}$;
 \item nilpotency, adjacent-cohomology, Cartan, mixing, and pairing checks.

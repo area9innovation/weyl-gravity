@@ -415,9 +415,13 @@ The compensator theory now has a scoped one-loop local Euclidean
 Hamiltonian contribution to `Q_1` is fixed.  This is not a complete
 renormalized operator.  `ONE_LOOP_SLAVNOV_Q1_DISPOSITION` gives an exact
 rank-two bulk ambiguity from the allowed `C(g_hat)^2` and `R(g_hat)^2` finite
-counterterms and records the absent finite nonlocal effective action,
-renormalized BV Laplacian or time-ordered product, and normalization
-conditions.  Residual transfer remains forbidden until those data and a
+counterterms. `ANOMALY_INDUCED_NONLOCAL_GAMMA1` now solves the exact
+Paneitz/Riegert Weyl-response system and supplies one conditional Euclidean
+representative with coefficients `(199/120,-87/160,29/120)`. The local `R^2`
+coordinate restores the repository `BoxR=0` scheme. The Weyl-invariant finite
+remainder, global Green/kernel data, renormalized BV Laplacian or time-ordered
+product, and normalization conditions remain absent. Residual transfer
+remains forbidden until those data and a
 compensator-inclusive classical contraction are supplied.  None of the
 classical transfer results in this package is thereby promoted to a quantum
 or `LORENTZIAN-CAUSAL` result.
@@ -443,6 +447,8 @@ python3 quantum-weyl/transfer/ppwave_branch_transfer_import_certificate.py --che
 python3 quantum-weyl/transfer/einstein_projection_amplitude_fixture_certificate.py --check
 PYTHONPATH=quantum-weyl python3 -m transfer.one_loop_slavnov_q1_disposition --check
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_one_loop_slavnov_q1_disposition
+PYTHONPATH=quantum-weyl python3 -m transfer.anomaly_induced_nonlocal_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_anomaly_induced_nonlocal_gamma1
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v
