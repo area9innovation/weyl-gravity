@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "same compact Plebanski-Hacyan R_t x S1_L x S2 background on the fixed N=2 magnetic bundle; exceptional ell=1,k=0 local-gauge-reduced solution modules before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the complete axial and polar ell=1,k=0 target solution shells are decomposed into standard, twist and extra branches",
+    "explicit CRT polynomials project onto every exceptional spectral branch",
+    "the Einstein image contains the standard axial and polar shells and the axial twist",
+    "the solution cofiber contains exactly one omega^2=4/3 extra mode in each parity for every real m",
+    "the action-derived extra cofiber Gram matrix is diag(16,3) and the standard-extra mixed pairing vanishes"
+  ],
+  "evidence": {
+    "commit": "5b5676e20a45126bae1d6c650295abe98966c0d1",
+    "path": "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+    "sha256": "b56faf37e92d12f37b54c2c5c0224251a73669171a067adb5082f7d71956960d"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct or obstruct the exceptional ghost-field-equation-identity chain map and classify nonzero compact momentum before promoting the exceptional sector to a derived cofiber triangle",
+  "not_established": [
+    "an exceptional off-shell chain map",
+    "the nonzero compact-momentum exceptional target cofiber",
+    "final residual descent",
+    "a changed-boundary or cross-background map",
+    "causal propagation, particles, observations, or quantum states"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_exceptional_ell1_k0_solution_cofiber",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_weyl_exceptional_ell1_k0_solution_cofiber",
+  "team_id": "einstein_boundary",
+  "verdict": "EXCEPTIONAL_K0_SOLUTION_COFIBER_CERTIFIED_OFFSHELL_BRIDGE_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_exceptional_ell1_solution_cofiber --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_exceptional_ell1_solution_cofiber.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_exceptional_ell1_solution_cofiber"
+  ]
+}

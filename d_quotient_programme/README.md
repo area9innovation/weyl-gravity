@@ -168,6 +168,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-abd-ell2-extra-resonance-matrix-submission-receipt.md`](reports/einstein-maxwell-weyl-abd-ell2-extra-resonance-matrix-submission-receipt.md)
 - [`contributions/einstein-weyl-relative-branch-dictionary.json`](contributions/einstein-weyl-relative-branch-dictionary.json)
 - [`reports/einstein-weyl-relative-branch-dictionary-submission-receipt.md`](reports/einstein-weyl-relative-branch-dictionary-submission-receipt.md)
+- [`contributions/einstein-weyl-exceptional-ell1-solution-cofiber.json`](contributions/einstein-weyl-exceptional-ell1-solution-cofiber.json)
+- [`reports/einstein-weyl-exceptional-ell1-solution-cofiber-submission-receipt.md`](reports/einstein-weyl-exceptional-ell1-solution-cofiber-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)
