@@ -182,7 +182,7 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("same-background", entry["claim_boundary"])
         self.assertIn("all Berger tensors remain ineligible", entry["claim_boundary"])
         self.assertIn("NONCYCLIC_THREE_FORM", entry["claim_boundary"])
-        self.assertIn("q2/q3 payloads", entry["claim_boundary"])
+        self.assertIn("Weyl-Maxwell payload", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
 
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):

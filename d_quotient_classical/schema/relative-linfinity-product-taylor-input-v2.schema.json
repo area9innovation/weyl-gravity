@@ -32,7 +32,7 @@
       "required": ["operator_encoding", "derivative_algebra", "row_count", "row_layout_sha256", "action_sha256", "q1_arity", "q2_arity", "q3_arity", "pairing_arity"],
       "properties": {
         "operator_encoding": {"const": "sparse-multilinear-pbw-v1"},
-        "derivative_algebra": {"const": "parallel-product-covariant-pbw-v1"},
+        "derivative_algebra": {"const": "coordinate-product-coefficient-jet-pbw-v1"},
         "row_count": {"type": "integer", "minimum": 1},
         "row_layout_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "action_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

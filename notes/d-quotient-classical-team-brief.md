@@ -210,9 +210,17 @@ has its fail-closed disposition and the second is active:
    at `omega^2-k^2=4` and one nonradical extra class at
    `omega^2-k^2=4/3`, represented polynomially without a differential
    inverse.
-3. **Active.** Export complete same-background \(q_1,q_2,q_3\) payloads
-   separately for
-   Einstein--Maxwell and Weyl--Maxwell so the nonlinear team can compute
+3. **Einstein delivered; Weyl active.**
+   `EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1` now exports the
+   complete same-background 38-row minimal Einstein--Maxwell
+   \(q_1,q_2,q_3\), action, row layout and cyclic pairing. Its executable
+   coordinate-PBW tables include sparse rational coefficient jets through
+   order two, so an independent consumer replays \(q_1^2\), the arity-two
+   identity and the complete arity-three identity instead of trusting opaque
+   hashes. The consumer independently verifies unary pairing adjointness and
+   higher input Koszul symmetry; it explicitly does not claim a second
+   derivation of the master-action cotangent lift. Export the corresponding
+   Weyl--Maxwell payload next so the nonlinear team can compute
    \(\Delta_2\), the arity-three morphism defect, and the induced deformation
    verdict.  Neither payload may be inferred from the other theory by matching
    branch labels.  The nonlinear comparison must retain all three action forms
@@ -223,9 +231,9 @@ has its fail-closed disposition and the second is active:
    cyclic pairing, and rational sparse multilinear PBW tables for
    \(q_1,q_2,q_3\).  The receiver checks artifact scope and hashes, row and dual
    bounds, arities, term counts, derivative orders, duplicate support and
-   pairing rank before import.  The two action-derived tables remain the next
-   scientific construction; the stricter contract is not itself either
-   payload or a relative \(L_\infty\) theorem.
+   pairing rank before import. The Weyl action-derived table is now the sole
+   missing scientific input; neither the Einstein delivery nor the stricter
+   contract is itself a relative \(L_\infty\) theorem.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

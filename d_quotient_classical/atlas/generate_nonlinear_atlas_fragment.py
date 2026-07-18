@@ -37,6 +37,7 @@ CERTS = {
     "exceptional_global_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+    "einstein_product_taylor": ROOT / "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -222,6 +223,7 @@ def entries() -> list[dict[str, Any]]:
     branch_importer = json.loads(CERTS["branch_importer"].read_text())
     relative_linfinity = json.loads(CERTS["relative_linfinity_preflight"].read_text())
     linear_triangle_imported = relative_linfinity["input_status"]["relative_linear_triangle"] == "IMPORTED"
+    einstein_taylor_imported = relative_linfinity["input_status"]["einstein_product_q2_q3"] == "IMPORTED"
     smooth_extension_ready = smooth_extension_import_ready()
     berger = {
         "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell",
@@ -548,7 +550,11 @@ def entries() -> list[dict[str, Any]]:
                 _second(
                     (
                         "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
-                        "The noncyclic all-row linear triangle and endpoints are imported; both same-background product q2/q3 payloads are still missing."
+                        (
+                            "The noncyclic all-row linear triangle, endpoints and complete Einstein-Maxwell q1/q2/q3 payload are imported; the same-background Weyl-Maxwell payload is still missing."
+                            if einstein_taylor_imported
+                            else "The noncyclic all-row linear triangle and endpoints are imported; both same-background product q2/q3 payloads are still missing."
+                        )
                         if linear_triangle_imported
                         else "The support-local minimal q1 chain map is certified, but the noncyclic three-form triangle, finite endpoints and both same-background product q2/q3 payloads are missing.",
                     ),
@@ -565,9 +571,9 @@ def entries() -> list[dict[str, Any]]:
                 taub=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map."),
                 resonance=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
             ),
-            "evidence": _evidence("relative_linfinity_preflight", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
+            "evidence": _evidence("relative_linfinity_preflight", "einstein_product_taylor", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
             "claim_boundary": (
-                "Compact-product linear Bridge 1 is imported as the certified NONCYCLIC_THREE_FORM triangle with finite endpoints. Bridge 2 remains INPUT_BLOCKED only on the complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads. The standard-pairing cyclic route is obstructed; all Berger tensors remain ineligible substitutes. Delta2, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP, and q4 is not authorized."
+                "Compact-product NONCYCLIC_THREE_FORM linear Bridge 1 and the complete executable same-background Einstein-Maxwell q1/q2/q3 payload are imported. Bridge 2 remains INPUT_BLOCKED only on the Weyl-Maxwell payload. The standard-pairing cyclic route is obstructed; all Berger tensors remain ineligible substitutes. Delta2, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP, and q4 is not authorized."
                 if linear_triangle_imported
                 else "Compact-product Bridge 2 remains INPUT_BLOCKED after certification of the natural support-local minimal q1 map: Bridge 1 must still supply the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 with finite endpoints, and complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads remain absent. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized."
             ),

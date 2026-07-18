@@ -31,9 +31,9 @@ def _write_executable_taylor_fixture(directory: Path, result_id: str, theory_id:
     values = {
         "row_layout": payload("row_layout", {"row_count": 1, "rows": [{"index": 0, "row_id": "x", "degree": 0, "parity": "even", "bundle_id": "scalar", "dual_row": 0}]}),
         "action": payload("action", {"density": "x^2/2+x^3/6+x^4/24", "couplings": {}, "background_substitution": {"x": "0"}, "master_terms": ["S_cl"], "derivation_convention": "q_n is the n-th polarized Taylor coefficient of the BV Hamiltonian vector field at the declared background, with no factorial absorbed"}),
-        "q1": payload("operation", {"arity": 1, "row_count": 1, "derivative_algebra": "parallel-product-covariant-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}], "coefficient": "1"}]}),
-        "q2": payload("operation", {"arity": 2, "row_count": 1, "derivative_algebra": "parallel-product-covariant-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}, {"row": 0, "word": []}], "coefficient": "1"}]}),
-        "q3": payload("operation", {"arity": 3, "row_count": 1, "derivative_algebra": "parallel-product-covariant-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}, {"row": 0, "word": []}, {"row": 0, "word": []}], "coefficient": "1"}]}),
+        "q1": payload("operation", {"arity": 1, "row_count": 1, "derivative_algebra": "coordinate-product-coefficient-jet-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}], "coefficient": "1", "coefficient_jets": [{"word": [], "coefficient": "1"}]}]}),
+        "q2": payload("operation", {"arity": 2, "row_count": 1, "derivative_algebra": "coordinate-product-coefficient-jet-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}, {"row": 0, "word": []}], "coefficient": "1", "coefficient_jets": [{"word": [], "coefficient": "1"}]}]}),
+        "q3": payload("operation", {"arity": 3, "row_count": 1, "derivative_algebra": "coordinate-product-coefficient-jet-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}, {"row": 0, "word": []}, {"row": 0, "word": []}], "coefficient": "1", "coefficient_jets": [{"word": [], "coefficient": "1"}]}]}),
         "pairing": payload("pairing", {"row_count": 1, "term_count": 1, "terms": [{"left_row": 0, "right_row": 0, "coefficient": "1"}]}),
     }
     artifacts = {}
@@ -55,10 +55,10 @@ def _write_executable_taylor_fixture(directory: Path, result_id: str, theory_id:
 
 
 class RelativeLinfinityPreflightTests(unittest.TestCase):
-    def test_current_gate_is_input_blocked(self):
+    def test_current_gate_imports_einstein_and_waits_for_weyl(self):
         value = result.build()
         self.assertEqual(value["input_status"]["relative_linear_triangle"], "IMPORTED")
-        self.assertEqual(value["input_status"]["einstein_product_q2_q3"], "MISSING")
+        self.assertEqual(value["input_status"]["einstein_product_q2_q3"], "IMPORTED")
         self.assertEqual(value["input_status"]["weyl_product_q2_q3"], "MISSING")
         self.assertFalse(value["claim_flags"]["ALL_SCIENTIFIC_INPUTS_IMPORTED"])
         self.assertNotIn("relative_branch_dictionary", value["dependency_refs"])

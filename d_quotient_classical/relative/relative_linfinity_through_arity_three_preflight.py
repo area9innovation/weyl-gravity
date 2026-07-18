@@ -191,8 +191,15 @@ def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, exp
                 if any(item["row"] >= row_count for item in term["inputs"]):
                     raise ValueError(f"{name} input escaped the carrier")
                 coefficient = _rational(term["coefficient"])
-                if coefficient == 0:
-                    raise ValueError(f"{name} contains an explicit zero coefficient")
+                jets = term["coefficient_jets"]
+                jet_keys = [tuple(item["word"]) for item in jets]
+                if len(jet_keys) != len(set(jet_keys)) or any(tuple(sorted(key)) != key for key in jet_keys):
+                    raise ValueError(f"{name} contains duplicate or nonnormal coefficient jets")
+                jet_values = {tuple(item["word"]): _rational(item["coefficient"]) for item in jets}
+                if any(value == 0 for value in jet_values.values()):
+                    raise ValueError(f"{name} contains an explicit zero coefficient jet")
+                if coefficient != jet_values.get((), sp.S.Zero):
+                    raise ValueError(f"{name} base coefficient disagrees with its empty coefficient jet")
                 key = (term["output_row"], tuple((item["row"], tuple(item["word"])) for item in term["inputs"]))
                 if key in term_keys:
                     raise ValueError(f"{name} contains duplicate PBW support")
@@ -377,7 +384,7 @@ def synthetic_taylor(result_id: str, theory_id: str) -> dict:
         "coefficient_field": "Q",
         "executable_contract": {
             "operator_encoding": "sparse-multilinear-pbw-v1",
-            "derivative_algebra": "parallel-product-covariant-pbw-v1",
+            "derivative_algebra": "coordinate-product-coefficient-jet-pbw-v1",
             "row_count": 1,
             "row_layout_sha256": schema_hash,
             "action_sha256": schema_hash,

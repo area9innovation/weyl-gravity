@@ -1,0 +1,223 @@
+{
+  "checks": {
+    "arity_three_defect_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "arity_two_defect_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cyclic_cotangent_lift_constructed_from_master_vertices": true,
+    "physical_summary": {
+      "maximum_orders": {
+        "q1": 2,
+        "q2": 2,
+        "q3": 2
+      },
+      "q1_term_counts": [
+        13,
+        8,
+        10,
+        10,
+        13,
+        10,
+        10,
+        13,
+        8,
+        13,
+        8,
+        8,
+        12,
+        12
+      ],
+      "q2_term_counts": [
+        281,
+        244,
+        252,
+        252,
+        281,
+        252,
+        252,
+        283,
+        228,
+        283,
+        234,
+        234,
+        270,
+        270
+      ],
+      "q3_term_counts": [
+        4664,
+        4179,
+        4207,
+        4207,
+        4664,
+        4207,
+        4207,
+        4682,
+        3991,
+        4682,
+        4128,
+        4128,
+        4464,
+        4464
+      ],
+      "row_count": 14
+    },
+    "q2_koszul_symmetric": true,
+    "q3_koszul_symmetric": true,
+    "unary_checks": {
+      "base_point": {
+        "phi": "0",
+        "t": "0",
+        "theta": "pi/2",
+        "x": "0"
+      },
+      "formal_adjoint_defects": [],
+      "gauge_generator_row_count": 14,
+      "hessian_ward_defect_term_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "independent_verifier": {
+    "elapsed_seconds": "32.10",
+    "higher_cyclicity_boundary": "producer action/cotangent-lift derivation; independent consumer replays unary adjointness, higher Koszul symmetry, and Q^2",
+    "maximum_resident_set_kb": 418424,
+    "status": "PASS"
+  },
+  "overall_producer_seconds": 139.781541,
+  "producer_timings_seconds": {
+    "arity_three_replay_seconds": 57.9805,
+    "arity_two_replay_seconds": 1.652384,
+    "build_q1_seconds": 55.112531,
+    "build_q2_seconds": 0.245259,
+    "build_q3_seconds": 2.039328,
+    "total_build_and_replay_seconds": 117.030004
+  },
+  "producing_date": "2026-07-18",
+  "result_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_TIER_RECEIPT",
+  "source_manifest": {
+    "bridge/einstein_sector/einstein_maxwell_product_taylor.py": "c4edd0ce0b51f6a97e2977deefe07d8506a809f782a7602361dddbc202a3cf49",
+    "bridge/einstein_sector/export_einstein_maxwell_product_linfinity.py": "6096683478463b274d693b109bf8ccf1b5656971533a96b2da462a3c05cef74b",
+    "bridge/einstein_sector/product_taylor_engine.py": "e36ef3d4a1ea8d5b2ff550988b07022364ce6d3afca165518a0a4c854990d06b",
+    "bridge/einstein_sector/reports/einstein-maxwell-product-linfinity-through-arity-three.md": "0e2e3c978b11bc6a69c7a4398475b902cfdd70ce518a5e3007941211eebdbbca",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_product_linfinity.py": "c11c5e680f3c3dfa05d4b36e8413ed9bd435ae84e3adec865e513f805f5e89eb",
+    "bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py": "57062303efefb2a213625806a805d1982bc9c722995a2654e81651cd65582301",
+    "d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json": "2d3d424079456b132abe17b4b7cc52635ff131eafdb5381f58b9783207130d5d",
+    "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json": "718202b37e80fdbbd725efcf503533aa786c513b51b8fe68bcce11a2ea8401c4"
+  },
+  "tier_0": {
+    "commands": [
+      "python3 -m py_compile bridge/einstein_sector/product_taylor_engine.py bridge/einstein_sector/einstein_maxwell_product_taylor.py bridge/einstein_sector/export_einstein_maxwell_product_linfinity.py bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py",
+      "python3 -m json.tool <generated payloads and certificate>"
+    ],
+    "status": "PASS"
+  },
+  "tier_1": {
+    "commands": [
+      "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py"
+    ],
+    "status": "PASS"
+  },
+  "tier_2": {
+    "commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards"
+    ],
+    "status": "PASS"
+  },
+  "tier_3": {
+    "reason": "not a release or shared-core freeze",
+    "status": "NOT_RUN"
+  }
+}
