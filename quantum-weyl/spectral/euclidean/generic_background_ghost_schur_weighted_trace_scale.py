@@ -171,7 +171,7 @@ def build() -> dict[str, Any]:
                 "role": "zeta determinants, canonical traces and local multiplicative anomalies",
             },
         ],
-        "next_gate": "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+        "next_gate": "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_MULTIPLICATIVE_TERM",
         "claim_boundary": (
             "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate chooses the explicit primed scalar weight Q=Delta_0+Pi_0 of order two and converts the already certified Schur Wodzicki residues into exact weighted-trace pole and renormalization-scale rows. With Q_mu=Q/mu^2, the scale response of the renormalized Schur split is Wres(log S_L)=(4 pi)^-2 integral[(5 R^2+22 Ric^2)/54]. This fixes scale transport, not the reference-scale finite constants R_mu0(K) and FP R_mu0(K^2), and it does not compute a separately factorized zeta multiplicative anomaly, the full Schur determinant, the physical fourth-order Hessian, complete Gamma1/Q1, residual transfer, Lorentzian QME, state, particle, positivity, scattering or unitarity theorem."
         ),

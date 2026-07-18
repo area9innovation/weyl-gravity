@@ -54,6 +54,8 @@ def main() -> None:
         "\\operatorname{Wres}\\log S_L",
         "Order-two weighted-trace pole and scale row",
         "\\frac{\\dd}{\\dd\\log\\mu}",
+        "Exact round-$S^4$ finite Schur benchmark",
+        "full primed Green kernel or equivalent spectral measure",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -226,6 +228,14 @@ def main() -> None:
         "R2": {"numerator": 5, "denominator": 108},
         "Ric2": {"numerator": 11, "denominator": 54},
     }
+    assert claims["round_S4_ghost_Schur_R_Delta_K"]["exact"].startswith("-20/9")
+    assert claims["round_S4_ghost_Schur_FP_R_Delta_K2"]["exact"].startswith("-(2/3)")
+    assert claims["round_S4_ghost_Schur_low_order_split"]["decimal"].startswith(
+        "-4.4763090510350407"
+    )
+    assert claims["generic_Schur_finite_rows_minimal_missing_input"] == (
+        "the full primed Green/resolvent kernel or equivalent complete spectral measure on the selected background"
+    )
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     assert claims["Euler_Wess_Zumino_primitive_displayed"] is True
     boolean_claims = {
@@ -244,11 +254,11 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_MULTIPLICATIVE_TERM"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 36
+    assert len(payload["inputs"]) == 37
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -285,6 +295,9 @@ def main() -> None:
     generic_ghost_schur_wodzicki = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"]
     generic_ghost_schur_scale = dependencies[
         "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE"
+    ]
+    round_s4_ghost_schur_finite = dependencies[
+        "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES"
     ]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
@@ -465,6 +478,15 @@ def main() -> None:
     ] == claims["generic_ghost_order_two_weighted_trace_pole_coefficients"]
     assert generic_ghost_schur_scale["claim_flags"][
         "REFERENCE_FINITE_R_K_COMPUTED"
+    ] is False
+    assert round_s4_ghost_schur_finite["exact_finite_rows"][
+        "Delta_weighted_finite_rows"
+    ]["R_Delta_K"] == claims["round_S4_ghost_Schur_R_Delta_K"]
+    assert round_s4_ghost_schur_finite["exact_finite_rows"][
+        "Delta_weighted_finite_rows"
+    ]["FP_R_Delta_K2"] == claims["round_S4_ghost_Schur_FP_R_Delta_K2"]
+    assert round_s4_ghost_schur_finite["claim_flags"][
+        "GENERIC_BACKGROUND_R_K_COMPUTED"
     ] is False
     assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
         generic_ghost_n1_n2_vector["formula_digest"]

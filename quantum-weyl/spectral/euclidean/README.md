@@ -193,4 +193,12 @@ finite part of `R(K^2)`, and any zeta multiplicative anomaly remain open.
 The successor
 [`generic-background-ghost-schur-wodzicki-residue.md`](../../reports/generic-background-ghost-schur-wodzicki-residue.md)
 computes `Wres(K)` and `Wres(log S_L)` and keeps the finite and
-reference-specific scale rows fail-closed.
+reference-specific scale rows fail-closed. The successor
+[`generic-background-ghost-schur-weighted-trace-scale.md`](../../reports/generic-background-ghost-schur-weighted-trace-scale.md)
+fixes the pole and scale response for the declared order-two weight. The
+round-sphere benchmark
+[`round-s4-ghost-schur-finite-weighted-traces.md`](../../reports/round-s4-ghost-schur-finite-weighted-traces.md)
+then computes both reference finite rows exactly in digamma/trigamma form.
+Its finite-rank smoothing witness proves that generic values require a full
+primed Green kernel or spectral measure; local symbol data cannot determine
+them.

@@ -906,8 +906,15 @@ canonical `det_3(I+K)` tail is therefore defined. The exact local residues are
 `Wres(log S_L)=(4 pi)^-2 integral (5 R^2+22 Ric^2)/54`. With the declared
 order-two scalar weight `(Delta_0+Pi_0)/mu^2`, the weighted-trace pole and
 scale row are exact: `d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L)`. The
-reference-scale finite `R(K)` and `R(K^2)` rows and any local multiplicative
-anomaly remain open, as does the generic
+round unit-`S4` spectrum now fixes the two reference finite rows exactly,
+after deleting the absent constant-gradient row and five degree-one
+conformal-Killing ghost zero modes:
+`R_Delta(K)=-3.0967576144286354...` and
+`FP R_Delta(K^2)=2.7591028732128106...`, with exact digamma/trigamma
+expressions. A finite-rank smoothing witness proves that the generic rows
+cannot follow from local symbols or residues: they require the full primed
+Green kernel or spectral measure. Any local multiplicative anomaly remains
+open, as does the generic
 physical fourth-order Hessian. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
@@ -923,9 +930,9 @@ rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient. Its three
 longitudinal `D_W` towers are now one normalized scalar Schur series, with the
 canonical `det_3` tail and all three Schur residue rows fixed. The remaining
-local gate begins with computing the reference-scale finite `R(K)` and
-`R(K^2)` rows and any local zeta term,
-together with the physical fourth-order
+local gate begins with supplying the generic primed Green/spectral carrier
+needed to lift the exact round-`S4` finite benchmark, together with any local
+zeta term and the physical fourth-order
 Hessian kernel, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
@@ -1035,7 +1042,7 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds thirty-six direct certificate dependencies, including the formerly indirect
+binds thirty-seven direct certificate dependencies, including the formerly indirect
 pure-Diff/mixed quotient and factorwise coefficient ledger. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).

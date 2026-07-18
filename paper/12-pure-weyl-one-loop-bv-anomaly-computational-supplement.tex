@@ -1029,8 +1029,40 @@ Thus the exact Schur pole and scale rows are
 \]
 The independent verifier reconstructs the factor
 `scale power / weight order = 2/2` and rejects the mutated choice $Q/\mu$.
-The reference-scale finite $\mathcal R_{\mu_0}(K)$ row, the finite part of
-$\mathcal R_{\mu_0}(K^2)$, and any multiplicative anomaly remain open.
+The generic-background reference-scale finite $\mathcal R_{\mu_0}(K)$ row,
+the finite part of $\mathcal R_{\mu_0}(K^2)$, and any multiplicative anomaly
+remain open.  They are not determined by the local residue data.
+
+On the round unit $S^4$, however, the complete scalar spectrum supplies an
+exact benchmark.  After deleting the absent $\ell=0$ gradient and the five
+$\ell=1$ proper-conformal-Killing ghost zero modes,
+\[
+ \lambda_\ell=\ell(\ell+3),\qquad
+ d_\ell=\frac{(2\ell+3)(\ell+2)(\ell+1)}6,
+ \qquad K_\ell=\frac2{\lambda_\ell-6},\qquad \ell\geq2.
+\]
+Write $u_\pm=(7\pm\sqrt{33})/2$,
+$\Psi=\psi(u_-)+\psi(u_+)$ and
+$\Psi_1=\psi^{(1)}(u_-)-\psi^{(1)}(u_+)$.  At $\mu_0=1$ in inverse-radius
+units, exact Hurwitz-zeta continuation and the $B=\Delta_0-6$ to
+$Q=\Delta_0$ weight change give
+\[
+ \mathcal R_{\Delta_0}(K)=-\frac{20}{9}-\frac83\Psi,
+ \qquad
+ \operatorname{FP}\mathcal R_{\Delta_0}(K^2)
+ =-\frac23\Psi+\frac{16}{3\sqrt{33}}\Psi_1.
+\]
+The independent verifier reconstructs the finite parts from a convergent
+Hurwitz-zeta binomial series and obtains
+\[
+ -3.0967576144286354\ldots,qquad
+ 2.7591028732128106\ldots.
+\]
+It also checks the exact weight shift $(-2,0)$ and the five-dimensional
+$\ell=1$ kernel.  A rank-one smoothing mutation changes the two finite rows
+by $7/11$ and $126/121$ without changing any homogeneous symbol or residue.
+This proves that the generic gate needs a full primed Green kernel or
+spectral measure rather than another local heat coefficient.
 
 \begin{verbatim}
 P=spectral.euclidean
@@ -1047,6 +1079,12 @@ PYTHONPATH=quantum-weyl pytest -q \
  quantum-weyl/spectral/euclidean/tests/test_$M.py
 
 M=generic_background_ghost_schur_weighted_trace_scale
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=round_s4_ghost_schur_finite_weighted_traces
 PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
 PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
 PYTHONPATH=quantum-weyl pytest -q \
@@ -1086,8 +1124,8 @@ triangle and its repository projection are certified separately; the three
 longitudinal $D_W$ one-/two-insertion towers are resummed by the preceding
 Schur factor.  Its canonical $\det_3$ tail and the $K$, $K^2$, and logarithmic
 residues and the declared order-two weighted-trace pole/scale row are exact;
-the reference-scale finite $\mathcal R(K)$ and $\mathcal R(K^2)$ rows and
-local zeta term remain open.
+the round-$S^4$ finite rows are exact, while their generic versions require a
+full primed Green/spectral carrier and the local zeta term remains open.
 Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
 carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
 cyclic trace, the cyclic sum of one trace times one pair trace, and the product
@@ -1145,8 +1183,8 @@ feed $I_{24},I_{25},I_{28},I_{29}$.  The three longitudinal $D_W$
 one-/two-insertion towers are resummed by the preceding Schur factor; its
 canonical $\det_3$ tail and the $K$, $K^2$, and logarithmic residues are
 exact, and the declared order-two weighted-trace pole/scale row is fixed,
-while the two reference-scale finite trace rows and possible local zeta term
-remain unevaluated.
+while the two finite trace rows are evaluated only on round $S^4$; their
+generic versions and the possible local zeta term remain unevaluated.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \

@@ -1,0 +1,123 @@
+{
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate computes the two reference finite weighted traces of the longitudinal ghost Schur correction on the round unit four-sphere, after deleting the absent constant-gradient row and the five ell=1 conformal-Killing ghost zero modes. The answers are exact digamma/trigamma values for the declared Delta_0 weight. A finite-rank smoothing witness proves that no generic-background finite value follows from the existing complete-symbol and residue receipts: the full primed Green kernel or spectral measure is required. The result is a special-background benchmark, not a generic Schur determinant, multiplicative-anomaly coefficient, physical-Hessian result, complete Gamma1/Q1, Lorentzian QME, state, particle, positivity, scattering or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "FULL_GENERIC_SCHUR_DETERMINANT_COMPUTED": false,
+    "FULL_ROUND_S4_DET3_TAIL_COMPUTED": false,
+    "GENERIC_BACKGROUND_FINITE_R_K2_COMPUTED": false,
+    "GENERIC_BACKGROUND_R_K_COMPUTED": false,
+    "GENERIC_MULTIPLICATIVE_ANOMALY_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": false,
+    "ROUND_S4_FINITE_R_DELTA_K2_COMPUTED": true,
+    "ROUND_S4_LOW_ORDER_SCHUR_SPLIT_COMPUTED": true,
+    "ROUND_S4_R_DELTA_K_COMPUTED": true,
+    "ROUND_S4_ZERO_MODE_POLICY_APPLIED": true
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "Schur_resummation": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
+      "sha256": "b40ec3a8bd3a21d8e0ece7c98f98e1776e8c47d557b8c8b5427e422b60c65a78"
+    },
+    "round_S4_zero_modes": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_STANDARD_FACTOR_ZERO_MODE_LEDGER.json",
+      "result_id": "ROUND_S4_STANDARD_FACTOR_ZERO_MODE_LEDGER",
+      "sha256": "1e1d75b2a199c8fcb58455da0753c62e88a885c892f163650b0b13c966ea765b"
+    },
+    "weighted_trace_scale": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE",
+      "sha256": "8073ad3800d4ad9662232769efeb45971e49b5eaf1f4b933714245d85771bd1d"
+    }
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_finite_rows": {
+    "Delta_weighted_finite_rows": {
+      "FP_R_Delta_K2": {
+        "decimal": "2.7591028732128106201438728901244732806633523883361",
+        "exact": "-(2/3)[psi((7-sqrt(33))/2)+psi((7+sqrt(33))/2)]+(16/(3sqrt(33)))[psi1((7-sqrt(33))/2)-psi1((7+sqrt(33))/2)]"
+      },
+      "R_Delta_K": {
+        "decimal": "-3.0967576144286354158347124096852321526366092925404",
+        "exact": "-20/9-(8/3)[psi((7-sqrt(33))/2)+psi((7+sqrt(33))/2)]"
+      },
+      "low_order_renormalized_split": {
+        "decimal": "-4.4763090510350407259066488547474687929682854867085",
+        "definition": "R_Delta(K)-(1/2)FP R_Delta(K^2)",
+        "exact": "-20/9-(7/3)[psi((7-sqrt(33))/2)+psi((7+sqrt(33))/2)]-(8/(3sqrt(33)))[psi1((7-sqrt(33))/2)-psi1((7+sqrt(33))/2)]"
+      }
+    },
+    "parameters": {
+      "a": "sqrt(33)/2",
+      "q": "7/2",
+      "q_minus_a_positive": true
+    },
+    "shifted_zeta_finite_parts": {
+      "FP_Z_B_at_1": {
+        "decimal": "-0.54837880721431770791735620484261607631830464627021",
+        "exact": "-1/9-(4/3)[psi((7-sqrt(33))/2)+psi((7+sqrt(33))/2)]"
+      },
+      "FP_Z_B_at_2": {
+        "decimal": "0.68977571830320265503596822253111832016583809708402",
+        "exact": "-(1/6)[psi((7-sqrt(33))/2)+psi((7+sqrt(33))/2)]+(4/(3sqrt(33)))[psi1((7-sqrt(33))/2)-psi1((7+sqrt(33))/2)]"
+      }
+    },
+    "weight_change": {
+      "R_Delta_K2_minus_R_B_K2": "0",
+      "R_Delta_K_minus_R_B_K": "-2",
+      "Wres_K_log_weight_ratio": "4",
+      "formula": "R_Delta(A)-R_B(A)=-(1/2)Wres[A(log Delta-log B)]"
+    }
+  },
+  "generic_missing_input_theorem": {
+    "quadratic_witness": "R_Q((K+T)^2)-R_Q(K^2)=Tr(KT+TK+T^2)",
+    "rank_one_fixture": "K e=(1/2)e, T=(7/11)|e><e| gives Delta R_Q(K)=7/11 and Delta R_Q(K^2)=126/121",
+    "required_generic_input": "the full primed Green/resolvent kernel or equivalent complete spectral measure on the selected background",
+    "smoothing_witness": "K -> K+T with arbitrary finite-rank smoothing T preserves every homogeneous symbol and Wodzicki residue but changes R_Q(K) by Tr(T)",
+    "statement": "finite weighted traces are not determined by the complete classical symbol or Wodzicki residues",
+    "status": "MINIMAL_MISSING_GLOBAL_CARRIER_THEOREM"
+  },
+  "lifecycle_state": "SPECIAL_BACKGROUND_BENCHMARK_COMPLETE_GENERIC_FINITE_ROWS_OPEN",
+  "next_gate": "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_MULTIPLICATIVE_TERM",
+  "references": [
+    {
+      "arxiv": "math-ph/0503033",
+      "authors": "S. Paycha",
+      "role": "same-order weight-change formula in terms of the Wodzicki residue",
+      "title": "Weighted trace cochains; a geometric setup for anomalies"
+    },
+    {
+      "arxiv": "math-ph/0610046",
+      "authors": "M. Spreafico and S. Zerbini",
+      "role": "sphere Laplacian spectral-zeta and analytic-continuation framework",
+      "title": "Spectral analysis and zeta determinant on the deformed spheres"
+    }
+  ],
+  "result_id": "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES",
+  "result_state": "ROUND_S4_SCHUR_REFERENCE_FINITE_WEIGHTED_TRACES_COMPUTED",
+  "schema": "quantum-weyl-round-s4-ghost-schur-finite-weighted-traces-v1",
+  "scope": {
+    "background": "round unit S4",
+    "comparison_weight": "B=Delta_0-6, positive on ell>=2",
+    "curvature": "R=12, Ric=(R/4)g",
+    "excluded_modes": [
+      "ell=0: absent from the longitudinal gradient carrier",
+      "ell=1: five proper-conformal-Killing scalar ghost zero modes"
+    ],
+    "mode_domain": "scalar harmonics ell>=2",
+    "reference_scale": "mu_0=1 in inverse unit-sphere-radius units",
+    "reference_weight": "Q=Delta_0 on ell>=2, equivalently Delta_0+Pi_0 before restriction"
+  },
+  "spectral_diagonalization": {
+    "K_eigenvalue": "2/[lambda_ell-6]",
+    "S_L_eigenvalue": "[lambda_ell-4]/[lambda_ell-6]",
+    "degeneracy": "(2ell+3)(ell+2)(ell+1)/6",
+    "lambda_ell": "ell(ell+3)",
+    "shifted_zeta": "Z_B(s)=sum_(ell>=2) d_ell[lambda_ell-6]^-s"
+  }
+}

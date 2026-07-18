@@ -257,6 +257,13 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertFalse(self.payload["claim_flags"]["RENORMALIZED_R_K_COMPUTED"])
         self.assertFalse(self.payload["claim_flags"]["FINITE_PART_R_K2_COMPUTED"])
         self.assertTrue(self.payload["claim_flags"]["ZETA_SCALE_COEFFICIENT_COMPUTED"])
+        self.assertTrue(self.payload["claim_flags"]["ROUND_S4_SCHUR_R_K_COMPUTED"])
+        self.assertTrue(
+            self.payload["claim_flags"]["ROUND_S4_SCHUR_FINITE_R_K2_COMPUTED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER"]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"]
         )
@@ -421,7 +428,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+            "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_MULTIPLICATIVE_TERM",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/quantum-weyl/round-s4-ghost-schur-finite-weighted-traces-v1.schema.json",
+  "title": "Round S4 ghost Schur finite weighted traces",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "spectral_diagonalization",
+    "exact_finite_rows",
+    "generic_missing_input_theorem",
+    "claim_flags",
+    "dependencies",
+    "references",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-round-s4-ghost-schur-finite-weighted-traces-v1"
+    },
+    "result_id": {
+      "const": "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES"
+    },
+    "result_state": {
+      "const": "ROUND_S4_SCHUR_REFERENCE_FINITE_WEIGHTED_TRACES_COMPUTED"
+    },
+    "lifecycle_state": {
+      "const": "SPECIAL_BACKGROUND_BENCHMARK_COMPLETE_GENERIC_FINITE_ROWS_OPEN"
+    },
+    "dependency_tags": {
+      "const": ["EUCLIDEAN-SPECTRAL"]
+    },
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"$ref": "#/$defs/stringMap"},
+    "spectral_diagonalization": {"$ref": "#/$defs/stringMap"},
+    "exact_finite_rows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameters",
+        "shifted_zeta_finite_parts",
+        "weight_change",
+        "Delta_weighted_finite_rows"
+      ],
+      "properties": {
+        "parameters": {"type": "object"},
+        "shifted_zeta_finite_parts": {"type": "object"},
+        "weight_change": {"type": "object"},
+        "Delta_weighted_finite_rows": {"type": "object"}
+      }
+    },
+    "generic_missing_input_theorem": {"$ref": "#/$defs/stringMap"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": {"type": "boolean"},
+      "required": [
+        "ROUND_S4_R_DELTA_K_COMPUTED",
+        "ROUND_S4_FINITE_R_DELTA_K2_COMPUTED",
+        "ROUND_S4_LOW_ORDER_SCHUR_SPLIT_COMPUTED",
+        "ROUND_S4_ZERO_MODE_POLICY_APPLIED",
+        "GENERIC_BACKGROUND_R_K_COMPUTED",
+        "GENERIC_BACKGROUND_FINITE_R_K2_COMPUTED",
+        "GENERIC_MULTIPLICATIVE_ANOMALY_COMPUTED",
+        "FULL_ROUND_S4_DET3_TAIL_COMPUTED",
+        "FULL_GENERIC_SCHUR_DETERMINANT_COMPUTED",
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "LORENTZIAN_CERTIFIED"
+      ]
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/reference"},
+      "minProperties": 3
+    },
+    "references": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "object"}
+    },
+    "next_gate": {"type": "string", "minLength": 10},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "stringMap": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {"type": "string"},
+          {"type": "array", "items": {"type": "string"}}
+        ]
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
