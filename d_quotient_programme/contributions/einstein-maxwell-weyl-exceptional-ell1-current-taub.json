@@ -1,0 +1,34 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; axial and polar exceptional ell=1,k=0 fourth-order modes, all real m, before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the exceptional axial and polar ell=1 shell omega^2=4/3 has normalized Hermitian current Gram diag(16,3)",
+    "the current is nonradical and positive definite, with exact normalization cross-checked against the direct physical ell=1 fixture",
+    "the constant-lapse Taub form is strictly negative on every nonzero real pure exceptional ell=1 tangent",
+    "standard physical ell=1 oscillators are orthogonal and have the same sign, so the isolated physical-plus-extra common-zero locus is only the origin"
+  ],
+  "evidence": {
+    "commit": "4de919095b0eed57cc5915980a1c79d761d990fe",
+    "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+    "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct an exceptional ell=1 plus Einstein-minus common-zero fixture and solve or obstruct its complete quadratic source",
+  "not_established": [
+    "mixed balance with an Einstein-minus or other opposite-sign sector",
+    "all-orders or final residual integration",
+    "causal, scattering, particle, ghost, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_exceptional_ell1",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_exceptional_ell1_current_taub",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_EXCEPTIONAL_ELL1_PURE_BLOCK_OBSTRUCTED",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_current_taub --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_current_taub.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_current_taub"
+  ]
+}
