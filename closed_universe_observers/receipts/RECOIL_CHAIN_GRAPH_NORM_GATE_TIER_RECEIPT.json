@@ -1,0 +1,44 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "RECOIL_CHAIN_GRAPH_NORM_GATE_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact switch commutator and massive constraint prove that each nonvanishing causally ordered factorwise recoil chain needs Maxwell graph/energy control of dA. The longitudinal massive inverse is 1/m_b^2 and supplies no high-mode smoothing, so the current Maxwell L2 tail has NO_CERTIFIED_MAP to a recoil scalar. A correlated Maxwell energy tail and finite-time massive constant, or direct exact block cancellation, remain open. No full-operator unboundedness, numerical recoil, cone, Bridge 3, nonlinear stability or quantum claim is promoted.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_recoil_chain_graph_norm_gate.py closed_universe_observers/verify_berger_recoil_chain_graph_norm_gate.py closed_universe_observers/tests/test_berger_recoil_chain_graph_norm_gate.py", "elapsed_seconds": 0.04, "status": "PASS"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_recoil_chain_graph_norm_gate", "elapsed_seconds": 0.14, "status": "PASS", "summary": "Regeneration equality, longitudinal-sector typing, causal-scope mutations and fail-closed recoil lifecycle passed."},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_recoil_chain_graph_norm_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 5.21, "status": "PASS", "summary": "20 graph-norm, atlas and comparison-ledger tests passed."},
+    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": 7.9, "status": "PASS", "summary": "Generated observer claims and evidence links remain fail closed; historical comparison snapshot remained exact."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_recoil_chain_graph_norm_gate --check", "elapsed_seconds": 0.13, "status": "PASS", "summary": "The certificate and strict schema regenerate byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No numerical recoil coefficient, full Green image, shared core algebra, lifecycle freeze or release was promoted."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_recoil_chain_graph_norm_gate.py", "sha256": "6002f8686e9f9b5203dd137e2f3ca3c914dfe5456b812f85341f79341753a05d"},
+    {"path": "closed_universe_observers/verify_berger_recoil_chain_graph_norm_gate.py", "sha256": "c9a0f822c42b921543eabc83d4adf19c8878e3e605445d8fff5c034e62086eeb"},
+    {"path": "closed_universe_observers/tests/test_berger_recoil_chain_graph_norm_gate.py", "sha256": "ddacd3c82f904d12ff6add5facc9c6cde73ac01458f12f2cdfefcc2cf3e5011c"},
+    {"path": "closed_universe_observers/schema/berger-recoil-chain-graph-norm-gate-v1.schema.json", "sha256": "58eed457b5ded7f2bdad43f8e3290878a19aad2afd0f6466f4bbc2ea3ad9a21c"},
+    {"path": "closed_universe_observers/reports/berger-recoil-chain-graph-norm-gate.md", "sha256": "c05ab2fd365bc185429a8b08bd38b15d8da41e96be581c7b18936143107aa001"},
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE.json", "sha256": "5461a3cee4534e91322486d70b3b4a1189ab1dcfd093922c81e6fe612ae19452"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "ba9d974f0779849771dcc82277bf708276a45bb1b998a6664ad492282845ff72"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "ca6ee73e829e329b58fc9e8afe47a60e39e682f6ce157d98d1c57603e84dda5d"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "80b7d33fcf29089ab7bb1fee930c8aac619839d0881526b94ef615b3ed4a0c8d"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "23c76891c7ccadc824b62d54d9c7ba42c1e8b738e59840e888f8dbef5cf0cec5"}
+  ],
+  "claim_flags": {
+    "EXACT_RECOIL_SWITCH_COMMUTATOR_EXPORTED": true,
+    "CURRENT_MAXWELL_L2_TAIL_SUFFICIENT_FOR_FACTORWISE_RECOIL_BOUND": false,
+    "MAXWELL_GRAPH_NORM_TAIL_REQUIRED_OR_CANCELLATION": true,
+    "MAXWELL_ENERGY_TAIL_EXPORTED": false,
+    "MASSIVE_FINITE_TIME_ENERGY_CONSTANT_EXPORTED": false,
+    "FIXED_MASSIVE_CHAIN_DUAL_NORMS_EXPORTED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

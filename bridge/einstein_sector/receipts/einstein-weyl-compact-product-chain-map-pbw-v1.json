@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_CHAIN_MAP_PBW_V1_VERIFICATION_RECEIPT",
+  "producing_date": "2026-07-18",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "claim_status": "EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING",
+  "source_manifest": {
+    "bridge/einstein_sector/product_taylor_engine.py": "c9f960047a36687436b9cd37eea88e066148accf1f433eb62e72d4f2d6e43649",
+    "bridge/einstein_sector/export_einstein_weyl_compact_product_chain_map_pbw.py": "115043a7541d36c0e08a96e3fd7ae49ad70b03567f82a7ca1e0935f84ada1f58",
+    "bridge/einstein_sector/schema/einstein-weyl-compact-product-chain-map-pbw-v1.schema.json": "8b756f334860a08f74e9531c21cb5bc36b84a0e5fb46a961600e4a7c11db8031",
+    "bridge/einstein_sector/generated/einstein_weyl_compact_product_chain_map_pbw_v1/inclusion.json": "d6c36cb59462105c11d04561e9f3bdb885129f7a002547e7e2dbeb1a1f1054ea",
+    "bridge/einstein_sector/verify_einstein_weyl_compact_product_chain_map_pbw.py": "64d684044f8cba268338f291e0bfeba3adcacf2d97fa03d0c50869bd496dc2be",
+    "bridge/einstein_sector/tests/test_einstein_weyl_compact_product_chain_map_pbw.py": "2e33dc9bd225cebfec03259703de4854266c08ae63840481b567e09b14f5093f",
+    "bridge/einstein_sector/reports/einstein-weyl-compact-product-chain-map-pbw-v1.md": "ddffe411a53801be7a9dbda0cf1e20ee7d049d5ee900bc1494cdd347164873a6"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.10,
+      "command": "python3 -m py_compile <producer, verifier, test> && python3 -m json.tool <schema, payload> && git diff --check -- <scoped paths>"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 17.58,
+      "commands": [
+        "python3 bridge/einstein_sector/export_einstein_weyl_compact_product_chain_map_pbw.py --check",
+        "python3 bridge/einstein_sector/verify_einstein_weyl_compact_product_chain_map_pbw.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_compact_product_chain_map_pbw",
+        "python3 bridge/einstein_sector/verify_einstein_weyl_compact_product_covariant_chain_map.py"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The exact invariant chain-map theorem and proof object are imported by SHA-256 and replayed by their independent verifier. The new delivery changes only its portable PBW serialization and does not recompute the 329-second invariant coefficient solve."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped linear handoff with target-q1 replay explicitly pending, not a theorem freeze, shared-core change or release."
+    }
+  },
+  "failed_attempts": [
+    {
+      "failure": "The first direct file-path producer invocation failed with ModuleNotFoundError because module-based tests had masked the missing repository-root bootstrap.",
+      "disposition": "Added an explicit repository-root sys.path bootstrap before importing the shared PBW engine and reran the full scoped rail."
+    }
+  ],
+  "claim_boundary": "The receipt covers the exact support-local order-two PBW representative of the certified 38-to-40-row linear inclusion. Serialized target-q1 chain replay, cyclicity, q2/q3 relative compatibility, causal propagation, Berger transport, observables and quantum claims remain unpromoted."
+}

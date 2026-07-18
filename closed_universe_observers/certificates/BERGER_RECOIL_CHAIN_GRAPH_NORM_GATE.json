@@ -1,0 +1,136 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL gate types the norm needed by the response-specific recoil stream. For K=G_E,ret(h dA), the massive constraint and coderivative product rule give m^2 delta K=delta(h dA) and delta(hK)=h delta K-i_grad(h)K. For each nonvanishing causally ordered detector/emitter chain, the relevant switch slab precedes the detector source and the advanced Maxwell field is homogeneous there; thus delta dA=0, delta(h dA)=-i_grad(h)dA, and the displayed recoil current contains the derivative term -m^-2 h i_grad(h)dA together with -i_grad(h)K. Causally incompatible cross-chains vanish by support and are not assigned this local identity. The exact massive inverse independently confirms that its longitudinal sector is 1/m^2 rather than high-mode smoothing. Therefore the certified Maxwell L2 tail E_N alone does not yield a factorwise finite chain constant B_ab: the current Cauchy--Schwarz route requires a Maxwell graph/energy tail controlling dA, plus a finite-time massive retarded energy estimate, unless a direct blockwise cancellation is proved. This is a norm-typing result, not a theorem that the full recoil operator is unbounded; cancellation remains OPEN. No numerical recoil, full Green image, tangent-cone restriction, Bridge 3, nonlinear observer-morphism stability or quantum claim is promoted.",
+  "claim_status": "EXACT_RECOIL_SWITCH_COMMUTATOR_REQUIRES_MAXWELL_GRAPH_NORM_OR_DIRECT_CANCELLATION",
+  "dependency_refs": {
+    "massive_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL",
+      "sha256": "19666c947d0ea45cd62e516bc24310ca005074544f6ab56e292366c1db8d69db"
+    },
+    "moving_tail": {
+      "path": "closed_universe_observers/certificates/BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL.json",
+      "result_id": "BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL",
+      "sha256": "83f9df58ad7c0542eba15da54da7739f49a2f483d3308eb8b9074b0f2721eadb"
+    },
+    "streaming": {
+      "path": "closed_universe_observers/certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
+      "result_id": "BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT",
+      "sha256": "235afae162f5373b623504d5d4c83feaf929ce8ae9190bd9dd62ef6a8b7076cd"
+    },
+    "switches": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+      "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_chain_identities": {
+    "causal_scope": "each nonvanishing detector/emitter chain on its causally prior switch slab; incompatible cross-chains vanish by support",
+    "coderivative_product_rule": "delta(h_b K)=h_b delta K-i_grad(h_b)K",
+    "constraint": "m_b^2 delta K=delta(h_b dA)",
+    "homogeneous_Maxwell_on_that_switch_slab": "delta dA=0",
+    "massive_equation": "(delta d+m_b^2)K=h_b dA",
+    "recoil_current_decomposition": "delta(h_b K)=-m_b^-2 h_b i_grad(h_b)dA-i_grad(h_b)K",
+    "switched_constraint": "delta(h_b dA)=-i_grad(h_b)dA"
+  },
+  "flags": {
+    "CURRENT_MAXWELL_L2_TAIL_SUFFICIENT_FOR_FACTORWISE_RECOIL_BOUND": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "EXACT_RECOIL_SWITCH_COMMUTATOR_EXPORTED": true,
+    "FIXED_MASSIVE_CHAIN_DUAL_NORMS_EXPORTED": false,
+    "MASSIVE_FINITE_TIME_ENERGY_CONSTANT_EXPORTED": false,
+    "MAXWELL_ENERGY_TAIL_EXPORTED": false,
+    "MAXWELL_GRAPH_NORM_TAIL_REQUIRED_OR_CANCELLATION": true,
+    "QUANTUM_CLAIM": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "drop_switch_derivative_term_in_delta_hK"
+    },
+    {
+      "detected": true,
+      "name": "replace_longitudinal_inverse_1_over_m2_by_false_1_over_lambda_plus_m2"
+    },
+    {
+      "detected": true,
+      "name": "broaden_homogeneous_identity_to_causally_incompatible_cross_chains",
+      "reason": "the identity is exported only on nonvanishing causally ordered chains; incompatible cross-chains vanish by support"
+    }
+  ],
+  "next_gate": "CERTIFY_THE_CORRELATED_MAXWELL_ENERGY_GRAPH_NORM_TAIL_THEN_THE_FINITE_TIME_MASSIVE_CHAIN_CONSTANT",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_chain_graph_norm_gate.py",
+        "sha256": "6002f8686e9f9b5203dd137e2f3ca3c914dfe5456b812f85341f79341753a05d"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_chain_graph_norm_gate.py",
+        "sha256": "c9a0f822c42b921543eabc83d4adf19c8878e3e605445d8fff5c034e62086eeb"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_chain_graph_norm_gate.py",
+        "sha256": "ddacd3c82f904d12ff6add5facc9c6cde73ac01458f12f2cdfefcc2cf3e5011c"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-chain-graph-norm-gate-v1.schema.json",
+        "sha256": "58eed457b5ded7f2bdad43f8e3290878a19aad2afd0f6466f4bbc2ea3ad9a21c"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-chain-graph-norm-gate.md",
+        "sha256": "c05ab2fd365bc185429a8b08bd38b15d8da41e96be581c7b18936143107aa001"
+      }
+    ]
+  },
+  "required_next_inputs": [
+    {
+      "id": "Maxwell_energy_tail",
+      "need": "bound ||d Pi_tail A_adv|| (and the temporal energy component) after the correlated clock transform",
+      "status": "OPEN"
+    },
+    {
+      "id": "massive_finite_time_energy_constant",
+      "need": "bound K=G_E,ret(h dA) on each exact switch slab in the compatible graph norm, with symbolic positive m_b",
+      "status": "OPEN"
+    },
+    {
+      "id": "scalar_chain_constant",
+      "need": "combine switch sup/derivative bounds, mass and causal slab lengths into B_ab",
+      "status": "OPEN"
+    }
+  ],
+  "result_id": "BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE",
+  "route_disposition": {
+    "direct_blockwise_cancellation_route": "OPEN",
+    "factorwise_L2_dual_bound_from_current_tail": "NO_CERTIFIED_MAP",
+    "factorwise_graph_norm_route": "ACTIVE",
+    "full_recoil_operator_unbounded_theorem": "NOT_CLAIMED"
+  },
+  "schema": "closed-universe-berger-recoil-chain-graph-norm-gate-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "spectral_typing": {
+    "current_Maxwell_tail_norm": "L2 one-form output",
+    "derivative_required_by_factorwise_bound": "dA in Maxwell energy/graph norm",
+    "longitudinal_high_mode_smoothing": "NONE: exact inverse multiplier 1/m_b^2",
+    "massive_inverse_candidate": [
+      [
+        "1/(lambda + m2)",
+        "0"
+      ],
+      [
+        "0",
+        "1/m2"
+      ]
+    ],
+    "massive_inverse_sector_order": [
+      "co-closed/transverse",
+      "exact/longitudinal"
+    ]
+  }
+}

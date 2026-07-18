@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-weyl-compact-product-chain-map-pbw-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "claim_status", "dependency_tags", "background_id", "source_carrier_id", "target_carrier_id", "operator_encoding", "coefficient_field", "coefficient_jet_order", "maximum_operator_order", "support_local", "uses_inverse_laplacian_curl_frequency_or_momentum", "dependencies", "map", "checks", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-weyl-compact-product-chain-map-pbw-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_COMPACT_PRODUCT_CHAIN_MAP_PBW_V1"},
+    "claim_status": {"const": "EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
+    "source_carrier_id": {"const": "einstein_maxwell_minimal_bv_38_product_coordinate_jet"},
+    "target_carrier_id": {"const": "weyl_maxwell_minimal_bv_40_product_coordinate_jet"},
+    "operator_encoding": {"const": "row-id-keyed-coordinate-product-coefficient-jet-pbw-v1"},
+    "coefficient_field": {"const": "Q"},
+    "coefficient_jet_order": {"const": 4},
+    "maximum_operator_order": {"const": 2},
+    "support_local": {"const": true},
+    "uses_inverse_laplacian_curl_frequency_or_momentum": {"const": false},
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_taylor_certificate", "source_row_layout", "certified_chain_map", "certified_chain_map_proof"],
+      "properties": {
+        "source_taylor_certificate": {"$ref": "#/$defs/artifact"},
+        "source_row_layout": {"$ref": "#/$defs/artifact"},
+        "certified_chain_map": {"$ref": "#/$defs/artifact"},
+        "certified_chain_map_proof": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_rows", "target_rows", "entries", "canonical_sha256"],
+      "properties": {
+        "source_rows": {"type": "array", "minItems": 38, "maxItems": 38, "items": {"$ref": "#/$defs/row"}},
+        "target_rows": {"type": "array", "minItems": 40, "maxItems": 40, "items": {"$ref": "#/$defs/row"}},
+        "entries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/entry"}},
+        "canonical_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_row_count", "target_row_count", "stable_row_ids_unique", "common_ghost_field_rows_identity", "new_weyl_ghost_image_zero", "new_weyl_identity_image_zero", "metric_equation_order", "maxwell_equation_identity", "diff_identity_order", "u1_identity", "target_q1_composition_replayed"],
+      "properties": {
+        "source_row_count": {"const": 38},
+        "target_row_count": {"const": 40},
+        "stable_row_ids_unique": {"const": true},
+        "common_ghost_field_rows_identity": {"const": true},
+        "new_weyl_ghost_image_zero": {"const": true},
+        "new_weyl_identity_image_zero": {"const": true},
+        "metric_equation_order": {"const": 2},
+        "maxwell_equation_identity": {"const": true},
+        "diff_identity_order": {"const": 2},
+        "u1_identity": {"const": true},
+        "target_q1_composition_replayed": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "row_id", "degree", "parity", "bundle_id", "dual_row"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0},
+        "row_id": {"type": "string", "minLength": 1},
+        "degree": {"type": "integer", "minimum": -1, "maximum": 2},
+        "parity": {"enum": ["even", "odd"]},
+        "bundle_id": {"type": "string", "minLength": 1},
+        "dual_row": {"type": "integer", "minimum": 0}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output_row_id", "output_index", "input_row_id", "input_index", "maximum_order", "terms"],
+      "properties": {
+        "output_row_id": {"type": "string", "minLength": 1},
+        "output_index": {"type": "integer", "minimum": 0, "maximum": 39},
+        "input_row_id": {"type": "string", "minLength": 1},
+        "input_index": {"type": "integer", "minimum": 0, "maximum": 37},
+        "maximum_order": {"type": "integer", "minimum": 0, "maximum": 2},
+        "terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["word", "coefficient_jets"],
+      "properties": {
+        "word": {"type": "array", "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+        "coefficient_jets": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/jet"}}
+      }
+    },
+    "jet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["word", "coefficient"],
+      "properties": {
+        "word": {"type": "array", "maxItems": 4, "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+        "coefficient": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      }
+    }
+  }
+}

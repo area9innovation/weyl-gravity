@@ -209,7 +209,11 @@ has its fail-closed disposition and the second is active:
    action pairing are now exact: each parity has the standard Einstein image
    at `omega^2-k^2=4` and one nonradical extra class at
    `omega^2-k^2=4/3`, represented polynomially without a differential
-   inverse.
+   inverse.  `EINSTEIN_WEYL_COMPACT_PRODUCT_CHAIN_MAP_PBW_V1` now serializes
+   this same support-local map as a strict row-ID-keyed 38-to-40-row PBW
+   operator with coefficient jets through order four.  Its lifecycle remains
+   `EXACT_PBW_REPRESENTATIVE_TARGET_Q1_REPLAY_PENDING`: coefficientwise target
+   chain replay waits for the frozen Weyl--Maxwell `q1` payload.
 3. **Einstein delivered; Weyl active.**
    `EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1` now exports the
    complete same-background 38-row minimal Einstein--Maxwell

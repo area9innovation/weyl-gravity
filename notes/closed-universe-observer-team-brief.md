@@ -742,6 +742,19 @@ modewise scalar integrands are still `OPEN`; without them the Maxwell tail to
 recoil-scalar map is `NO_CERTIFIED_MAP`.  The arbitrary `L2<1` threshold is
 therefore no longer treated as the completion criterion.
 
+`BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE` now resolves the norm type hidden in
+that open dual-bound input.  For every nonvanishing causally ordered response
+chain, the massive constraint and switch product rule give
+`delta(h_b K_b)=-m_b^-2 h_b i_grad(h_b)dA-i_grad(h_b)K_b` on the prior
+source-free switch slab; incompatible cross-chains vanish by support.  The
+exact longitudinal massive inverse is `1/m_b^2`, not a high-mode smoothing
+factor.  Consequently the current Maxwell `L2` tail has
+`NO_CERTIFIED_MAP` to a factorwise recoil constant.  The active route is a
+correlated Maxwell energy/graph-norm tail followed by a finite-time massive
+energy constant, unless the exact streamed block contraction proves a direct
+cancellation.  This is not an unboundedness theorem and does not evaluate
+recoil.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

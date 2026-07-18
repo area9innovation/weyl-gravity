@@ -72,6 +72,7 @@ CERTIFICATES = {
     "clock_microphase_tail_envelope": PACKAGE / "certificates/BERGER_CLOCK_MICROPHASE_TAIL_ENVELOPE.json",
     "moving_profile_clock_derivative_tail": PACKAGE / "certificates/BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL.json",
     "response_streaming_preflight": PACKAGE / "certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
+    "recoil_chain_graph_norm_gate": PACKAGE / "certificates/BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE.json",
     "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
@@ -362,6 +363,14 @@ def entries() -> list[dict]:
             "evidence": _evidence("moving_profile_clock_derivative_tail", "polarization_recurrence", "selected_correlated_clock_transform", "recoil", "rank", "response_streaming_preflight"),
         },
         {
+            "id": "observer.berger.detector_profile.recoil_chain_graph_norm_gate",
+            "scope": _scope(carrier="factorwise Maxwell-to-massive-two-form recoil chain on the fixed detector-selected preparations", degree=1, parity="D0 axial and D1 transverse response chains", ell="all finite Berger shells with a future graph-norm tail", m="all supported representation rows", k="transverse and longitudinal massive sectors", omega="retarded Maxwell and massive propagation on the exact causally ordered switch slabs"),
+            "descriptions": {"causal": "CERTIFIED", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "OPEN: the exact switch commutator types the required norm but does not evaluate a recoil scalar", "response_rank": "the independent leading formal rank-two theorem remains CERTIFIED; no numerical recoil determinant is inferred", "emitter_preparation": "the two detector-selected massive preparations and exact switches are fixed", "clock_and_rod_dependence": "on each nonvanishing causally ordered chain the prior switch derivative produces i_grad(h_b)dA; incompatible cross-chains vanish by support", "relational_redshift_contribution": "NOT_APPLICABLE", "recoil_backreaction_order": "absolute-g3 operator is fixed; numerical coefficient remains OPEN", "survives_gauge_reduction": "the chain is gauge typed, but no numerical full-image or nonlinear quotient statement follows", "profile_green_boundary_dependencies": "the longitudinal massive inverse is 1/m_b^2, so the current Maxwell L2 tail has NO_CERTIFIED_MAP to a factorwise recoil bound; certify a correlated Maxwell energy/graph-norm tail and finite-time massive energy constant, or prove exact block cancellation"},
+            "tangent_cone": {"restriction_status": "NOT_APPLICABLE", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
+            "evidence": _evidence("response_streaming_preflight", "recoil_chain_graph_norm_gate"),
+        },
+        {
             "id": "observer.crosswalk.berger_physical_branch_to_detector",
             "scope": _scope(carrier="same-background Berger physical-branch dictionary to relational detector, redshift, memory and recoil records", degree="crosswalk", parity="all", ell="all", m="all", k="all", omega="all"),
             "descriptions": {name: "NO_CERTIFIED_MAP" for name in DESCRIPTIONS},
@@ -413,6 +422,7 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_profile.clock_microphase_tail_envelope": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.moving_profile_clock_derivative_tail": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.response_specific_streaming_preflight": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.detector_profile.recoil_chain_graph_norm_gate": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }
