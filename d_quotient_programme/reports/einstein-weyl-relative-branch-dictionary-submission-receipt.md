@@ -13,12 +13,13 @@ The generic axial and polar fixed identity maps now also carry a certified
 nonradical cyclic defect.  Its quadratic handoff now imports the complete
 declared homogeneous/twist times `ell=2` extra-primary bounded-resonance
 matrix; the simultaneous stabilizer-plus-resonance zero locus and corrected
-cyclic morphisms remain open.  A nonzero shared-axis common-zero face is now
-imported with `B_z^2=(2/3)X`; this is compatibility data, not a complete
-second-order correction.
+cyclic morphisms remain open.  The full declared necessary common-zero locus
+is now imported: every point is an `SO(3)` rotation of the aligned face with
+`B^2=Q_e^2/2+(2/3)X`, and no off-axis branch survives.  This remains
+compatibility data, not a complete second-order correction.
 
-Evidence is content-addressed at commit `c321b56f` with certificate SHA-256
-`bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d`.
+Evidence is content-addressed at commit `5591d6ce` with certificate SHA-256
+`96d93cd1bfd87eb431b69a6d6225a69a4688b333c0353af9f45139497178362e`.
 No cross-background mode identity is made; exceptional nonzero-`k`/off-shell,
 homogeneous and twist off-shell, global and boundary carriers remain
 fail-closed.
