@@ -1,0 +1,172 @@
+{
+  "claim_boundary": "This theorem compares ghost-degree cohomology and proves that the current corrected Yang-Mills normal-tractor parent, together with its contractible curvature-incidence mapping cylinder, cannot be quasi-isomorphic to the exact metric Bach complex on unit Nariai. Six explicit global product Killing fields give metric ghost cohomology dimension at least six, while the stacked normal-tractor curvature has rank fourteen and bounds parallel adjoint-tractor ghosts by one dimension. Hence an equation/identity-only contractible completion cannot repair the comparison; at least five noncontractible reducibility directions, or equivalently the curvature-corrected infinitesimal-automorphism prolongation, are required. This does not rule out that corrected prolongation, a different parent complex, an independently constructed metric Green homotopy, an open-background theorem, nonlinear interactions, or a quantum theory.",
+  "dependency_refs": {
+    "incidence_cylinder": {
+      "artifact_id": "NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1.json",
+      "sha256": "f46e7a087007448093e3cd2a40b22fdb4f4c9fcca31bd12bcecbd6a2ed4e0c2c"
+    },
+    "metric_bach_complex": {
+      "artifact_id": "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json",
+      "sha256": "3333074f4a7b94b9d36ce9d20927155fa61b1541f02b152cfd179e8e50f76dcc"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "GLOBAL-SMOOTH"
+  ],
+  "flags": {
+    "CURRENT_NORMAL_TRACTOR_PARENT_METRIC_QUASI_ISOMORPHISM": false,
+    "CURRENT_RELATIVE_EQUATION_CONE_ACYCLIC": false,
+    "CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION_REQUIRED": true,
+    "NARIAI_GREEN_HOMOTOPY": false,
+    "NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1": true,
+    "OPEN_BACKGROUND_CLASS": false,
+    "QUANTUM_CLAIM": false
+  },
+  "metric_reducibilities": {
+    "Lie_derivative_defect_entries": 0,
+    "basepoint": [
+      "0",
+      "0",
+      "pi/2",
+      "0"
+    ],
+    "coordinates": [
+      "t",
+      "chi",
+      "theta",
+      "phi"
+    ],
+    "generators": [
+      {
+        "components": [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        "name": "dS_rotation"
+      },
+      {
+        "components": [
+          "cos(chi)",
+          "-sin(chi)*tanh(t)",
+          "0",
+          "0"
+        ],
+        "name": "dS_boost_cos"
+      },
+      {
+        "components": [
+          "sin(chi)",
+          "cos(chi)*tanh(t)",
+          "0",
+          "0"
+        ],
+        "name": "dS_boost_sin"
+      },
+      {
+        "components": [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        "name": "S2_rotation"
+      },
+      {
+        "components": [
+          "0",
+          "0",
+          "cos(phi)",
+          "-sin(phi)*cot(theta)"
+        ],
+        "name": "S2_rotation_cos"
+      },
+      {
+        "components": [
+          "0",
+          "0",
+          "sin(phi)",
+          "cos(phi)*cot(theta)"
+        ],
+        "name": "S2_rotation_sin"
+      }
+    ],
+    "global_Killing_dimension_lower_bound": 6,
+    "jet_sha256": "08d77298ce8aba17e81a71e8f2520905dc63a0e91d15d6b075c32cbb542615f7",
+    "metric_H_minus_1_dimension_lower_bound": 6,
+    "metric_diagonal": [
+      "-1",
+      "cosh(t)**2",
+      "1",
+      "sin(theta)**2"
+    ],
+    "value_and_first_partial_jet_rank": 6
+  },
+  "next_gate": "C_G2_NARIAI_CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION",
+  "obstruction": {
+    "contractible_equation_identity_rows_sufficient": false,
+    "direct_parent_metric_quasi_isomorphism_possible": false,
+    "incidence_cylinder_H_minus_1_equals_parent": true,
+    "interpretation": "metric conformal reducibilities are infinitesimal Cartan automorphisms; the unmodified normal-tractor differential tests parallel adjoint tractors instead",
+    "metric_H_minus_1_lower_bound": 6,
+    "missing_reducibility_dimension_lower_bound": 5,
+    "normalized_witness": "6-1=5",
+    "parent_H_minus_1_upper_bound": 1
+  },
+  "parent_reducibilities": {
+    "common_curvature_kernel": {
+      "entries": [
+        [
+          10,
+          0,
+          "1"
+        ]
+      ],
+      "sha256": "0015d99efdb333bcc4bcb72f0afa8162e0bdbd486c631614ae0d82bc7c3c130b",
+      "shape": [
+        15,
+        1
+      ]
+    },
+    "common_curvature_kernel_dimension": 1,
+    "common_curvature_kernel_sha256": "0015d99efdb333bcc4bcb72f0afa8162e0bdbd486c631614ae0d82bc7c3c130b",
+    "normal_tractor_curvature_rank": 14,
+    "normal_tractor_curvature_shape": [
+      90,
+      15
+    ],
+    "parallel_section_evaluation_is_injective": true,
+    "parent_H_minus_1_dimension_upper_bound": 1,
+    "reason": "a normal-tractor parallel section is determined by its value, and its value is annihilated by every curvature block"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/nariai_curvature_incidence_cyclic_mapping_cylinder.py": "6e9bfe028254c123e43b9431e0d0e906822136c4a63489e33213a9fcdb0dce1a",
+      "d_quotient_classical/causal_transfer/nariai_metric_bach_cyclic_bv_complex.py": "bf83a03bfe99b2210003f68e8654ba6e2f5597c902f6efc468fc82b91c2ddc9c",
+      "d_quotient_classical/causal_transfer/nariai_parent_reducibility_mismatch.py": "8528e0602d5fdfcc714fea374b8157578c0da362dc170b157ed4136ea4231bcf",
+      "d_quotient_classical/causal_transfer/nariai_yang_mills_middle_compression.py": "d8a3420d79708092556b0412dba7aba9d81b3a27715d70fd3775cc460707e868",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_parent_reducibility_mismatch.py": "afb2a7b5c0d84bd9379d6b105c02a28a188e3006a2953bd965ee39be898213b0",
+      "d_quotient_classical/causal_transfer/verify_nariai_parent_reducibility_mismatch.py": "7720fc985a0eeffba7b36d9c2aea89b3623caeea445a3d418e95090faae4c921",
+      "d_quotient_classical/schema/nariai-parent-reducibility-mismatch-v1.schema.json": "7519e53fadbcdaf67968f8878faecce6217867b6f2ddfb64076d702f0803dd92"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_parent_reducibility_mismatch.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_parent_reducibility_mismatch.py",
+      "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_parent_reducibility_mismatch",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-parent-reducibility-mismatch-v1.schema.json -d d_quotient_classical/certificates/NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1.json"
+    ]
+  },
+  "required_repair": {
+    "equation_only_contractible_extension_rejected": true,
+    "minimum_new_noncontractible_reducibility_directions": 5,
+    "next_object": "curvature-corrected infinitesimal-automorphism prolongation",
+    "schematic_equation": "nabla^D s + i_{p(s)} Omega = 0"
+  },
+  "result_id": "NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1",
+  "result_state": "CURRENT_NORMAL_TRACTOR_PARENT_NOT_QUASI_ISOMORPHIC_TO_METRIC_COMPLEX",
+  "schema": "pure-weyl-nariai-parent-reducibility-mismatch-v1"
+}

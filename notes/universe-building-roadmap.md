@@ -151,12 +151,17 @@ old interpretation of `Q_unique` as an algebraic endpoint no-go.  The action
 pairing is now reconciled as well: the tensor Gram is used once to produce
 evaluation-dual Bach coordinates, and the resulting exact four-row metric
 complex is nilpotent and odd cyclic with both Noether identities independently
-replayed.  The next gate is `C_G2_NARIAI_RELATIVE_EQUATION_IDENTITY_CONE`:
-construct the parent--metric comparison on every equation and identity row
-and its dual completion, and only then build or transfer retarded and advanced
-Green homotopies.  Do not reopen endpoint coefficient fitting or higher-order
-field-graph fitting, or claim endpoint equivalence or a Nariai Green homotopy
-before this gate closes.
+replayed.  A global reducibility audit now rules out the proposed
+equation-only cone: six independent metric Killing ghosts contrast with an
+upper bound of one parallel normal-adjoint-tractor ghost from the rank-fourteen
+stacked curvature matrix.  Because the incidence cylinder retracts to that
+parent, contractible equation/identity rows cannot remove the deficit of at
+least five.  The next gate is
+`C_G2_NARIAI_CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION`, starting from
+`nabla^D s+i_{p(s)} Omega=0`; only after its ghost cohomology matches should
+the equation/identity cone and Green transfer resume.  Do not reopen endpoint
+coefficient or field-graph fitting, or claim endpoint equivalence or a Nariai
+Green homotopy before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

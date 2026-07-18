@@ -1122,10 +1122,39 @@ consumer reconstructs both Noether identities from the serialized Bach and
 BGG tables, including the tensor divergence.  Formal self-adjointness of the
 middle row is the second-variation theorem for the Weyl-squared action at the
 Bach-flat solution; the deficient generic normal-order adjoint is not used as
-authority.  The active gate is now
-`C_G2_NARIAI_RELATIVE_EQUATION_IDENTITY_CONE`: compare this exact metric
-complex to the certified curvature-incidence cylinder on every equation and
-identity row, and only then attempt an SDR or Green transfer.
+authority.
+
+`NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1` then rejects the proposed
+equation-only comparison before another cone search.  Unit Nariai has six
+explicit independent global product Killing fields, hence
+
+\[
+\dim H^{-1}_{\rm metric}\geq6.
+\]
+
+For the current Yang--Mills parent, a ghost cocycle is a parallel normal
+adjoint tractor.  Its value must lie in the common kernel of the six curvature
+blocks.  The stacked (90\times15) matrix has exact rank fourteen, so
+
+\[
+\dim H^{-1}_{\rm parent}\leq1.
+\]
+
+The certified incidence cylinder retracts to this parent and has the same
+ghost cohomology.  Thus its cone with the metric complex cannot be acyclic,
+and adding only contractible equation/identity rows cannot repair the gap.
+The normalized deficit is at least (6-1=5).  This is the geometric
+distinction between parallel adjoint tractors and infinitesimal Cartan
+automorphisms.  The active gate is now
+`C_G2_NARIAI_CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION`, beginning with
+the local equation
+
+\[
+\nabla^D s+i_{p(s)}\Omega=0.
+\]
+
+Only after that corrected ghost complex reproduces the metric reducibilities
+should equation/identity rows, an SDR or Green transfer be attempted.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and

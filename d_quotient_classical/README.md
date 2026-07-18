@@ -244,6 +244,18 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   relative parent--metric equation/identity-row cone:
   [`certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json`](certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json),
   [`reports/nariai-metric-bach-cyclic-bv-complex.md`](reports/nariai-metric-bach-cyclic-bv-complex.md)
+- Global reducibility mismatch: the exact metric complex has at least six
+  independent smooth ghost classes supplied by the product Killing algebra.
+  A parallel normal adjoint tractor must lie in the common kernel of the
+  stacked `90x15` tractor-curvature matrix, whose exact rank is fourteen, so
+  the current Yang--Mills parent has ghost cohomology dimension at most one.
+  The incidence cylinder retracts to that parent and cannot change the bound.
+  Therefore no equation/identity-only contractible cone can establish the
+  desired quasi-isomorphism; at least five noncontractible reducibility
+  directions, equivalently the curvature-corrected infinitesimal-automorphism
+  prolongation, must be supplied first:
+  [`certificates/NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1.json`](certificates/NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1.json),
+  [`reports/nariai-parent-reducibility-mismatch.md`](reports/nariai-parent-reducibility-mismatch.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

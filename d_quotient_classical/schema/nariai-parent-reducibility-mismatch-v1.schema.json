@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/pure-weyl/nariai-parent-reducibility-mismatch-v1.schema.json",
+  "title": "Nariai normal-tractor parent reducibility mismatch",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "metric_reducibilities", "parent_reducibilities", "obstruction", "required_repair", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-parent-reducibility-mismatch-v1"},
+    "result_id": {"const": "NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1"},
+    "result_state": {"const": "CURRENT_NORMAL_TRACTOR_PARENT_NOT_QUASI_ISOMORPHIC_TO_METRIC_COMPLEX"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "GLOBAL-SMOOTH"}], "items": false, "minItems": 2, "maxItems": 2},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["metric_bach_complex", "incidence_cylinder"],
+      "properties": {"metric_bach_complex": {"$ref": "#/$defs/dependency"}, "incidence_cylinder": {"$ref": "#/$defs/dependency"}},
+      "additionalProperties": false
+    },
+    "metric_reducibilities": {
+      "type": "object",
+      "required": ["coordinates", "metric_diagonal", "generators", "Lie_derivative_defect_entries", "basepoint", "value_and_first_partial_jet_rank", "jet_sha256", "global_Killing_dimension_lower_bound", "metric_H_minus_1_dimension_lower_bound"],
+      "properties": {
+        "coordinates": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "metric_diagonal": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "generators": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["name", "components"], "properties": {"name": {"type": "string"}, "components": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}}, "additionalProperties": false}},
+        "Lie_derivative_defect_entries": {"const": 0},
+        "basepoint": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "value_and_first_partial_jet_rank": {"const": 6},
+        "jet_sha256": {"$ref": "#/$defs/sha256"},
+        "global_Killing_dimension_lower_bound": {"const": 6},
+        "metric_H_minus_1_dimension_lower_bound": {"const": 6}
+      },
+      "additionalProperties": false
+    },
+    "parent_reducibilities": {
+      "type": "object",
+      "required": ["normal_tractor_curvature_shape", "normal_tractor_curvature_rank", "common_curvature_kernel_dimension", "common_curvature_kernel", "common_curvature_kernel_sha256", "parallel_section_evaluation_is_injective", "parent_H_minus_1_dimension_upper_bound", "reason"],
+      "properties": {
+        "normal_tractor_curvature_shape": {"type": "array", "prefixItems": [{"const": 90}, {"const": 15}], "items": false, "minItems": 2, "maxItems": 2},
+        "normal_tractor_curvature_rank": {"const": 14},
+        "common_curvature_kernel_dimension": {"const": 1},
+        "common_curvature_kernel": {"$ref": "#/$defs/sparseMatrix"},
+        "common_curvature_kernel_sha256": {"$ref": "#/$defs/sha256"},
+        "parallel_section_evaluation_is_injective": {"const": true},
+        "parent_H_minus_1_dimension_upper_bound": {"const": 1},
+        "reason": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "obstruction": {
+      "type": "object",
+      "required": ["metric_H_minus_1_lower_bound", "parent_H_minus_1_upper_bound", "missing_reducibility_dimension_lower_bound", "incidence_cylinder_H_minus_1_equals_parent", "direct_parent_metric_quasi_isomorphism_possible", "contractible_equation_identity_rows_sufficient", "normalized_witness", "interpretation"],
+      "properties": {
+        "metric_H_minus_1_lower_bound": {"const": 6},
+        "parent_H_minus_1_upper_bound": {"const": 1},
+        "missing_reducibility_dimension_lower_bound": {"const": 5},
+        "incidence_cylinder_H_minus_1_equals_parent": {"const": true},
+        "direct_parent_metric_quasi_isomorphism_possible": {"const": false},
+        "contractible_equation_identity_rows_sufficient": {"const": false},
+        "normalized_witness": {"const": "6-1=5"},
+        "interpretation": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "required_repair": {
+      "type": "object",
+      "required": ["next_object", "schematic_equation", "minimum_new_noncontractible_reducibility_directions", "equation_only_contractible_extension_rejected"],
+      "properties": {
+        "next_object": {"const": "curvature-corrected infinitesimal-automorphism prolongation"},
+        "schematic_equation": {"const": "nabla^D s + i_{p(s)} Omega = 0"},
+        "minimum_new_noncontractible_reducibility_directions": {"const": 5},
+        "equation_only_contractible_extension_rejected": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1", "CURRENT_NORMAL_TRACTOR_PARENT_METRIC_QUASI_ISOMORPHISM", "CURRENT_RELATIVE_EQUATION_CONE_ACYCLIC", "CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION_REQUIRED", "NARIAI_GREEN_HOMOTOPY", "OPEN_BACKGROUND_CLASS", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1": {"const": true},
+        "CURRENT_NORMAL_TRACTOR_PARENT_METRIC_QUASI_ISOMORPHISM": {"const": false},
+        "CURRENT_RELATIVE_EQUATION_CONE_ACYCLIC": {"const": false},
+        "CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION_REQUIRED": {"const": true},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "OPEN_BACKGROUND_CLASS": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION"},
+    "claim_boundary": {"type": "string", "minLength": 300},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {"type": "object", "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}}, "additionalProperties": false},
+    "sparseMatrix": {
+      "type": "object",
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {"source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"$ref": "#/$defs/sha256"}}, "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}},
+      "additionalProperties": false
+    }
+  }
+}
