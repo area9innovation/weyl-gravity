@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Homogeneous common-zero quadric second-order extension",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "domain", "provenance", "first_order_tangent", "quadratic_source", "second_order_correction", "classification", "interpretation", "next_gate", "claim_boundary", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-homogeneous-quadric-second-order-v1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "quadratic_source": {"type": "object"},
+    "second_order_correction": {"type": "object"},
+    "classification": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

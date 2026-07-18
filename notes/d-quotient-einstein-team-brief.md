@@ -1834,6 +1834,16 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    modes.  Only after these gates should any null-subalgebra quotient be
    attempted.  In parallel, prove or obstruct a polynomial cyclic BV
    enhancement without inverting `k`, `omega`, `p`, or `q`.
+
+   The complete standard homogeneous quadric is now closed at second order.
+   For `(a,b,c,d,Q_e,W_x)`, the direct constraint source is exactly
+   `-(a^2+b^2-b*d+Q_e^2)/2`; the dependent sphere row carries the same factor,
+   and `c,W_x` are absent.  On the common-zero quadric, explicit polynomial
+   `K^(2)` and `A_x^(2)` corrections remove every remaining row.  This
+   includes the nontrivial face `a=Q_e=0,b=d`, but not the isolated constant
+   radion, which remains off-cone and obstructed at fixed bundle topology.
+   The next exceptional/global gate is therefore twist velocity (and then
+   physical `ell=1` input), not the homogeneous sector.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

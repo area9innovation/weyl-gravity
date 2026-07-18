@@ -1,0 +1,117 @@
+{
+  "schema": "einstein-maxwell-weyl-homogeneous-quadric-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_homogeneous_quadric_second_order.schema.json",
+  "schema_sha256": "156941822073ecd1079949a234e781c74c09079f4a9075562c77c86d4e931f72",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_QUADRIC_SECOND_ORDER",
+  "result_state": "COMPLETE_STANDARD_HOMOGENEOUS_COMMON_ZERO_QUADRIC_SECOND_ORDER_EXTENDIBLE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "complete standard homogeneous fixed-bundle tangent (a,b,c,d,Q_e,W_x) on R_t x S1_L x S2 before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_homogeneous_quadric_second_order.py",
+    "generator_sha256": "bb2fd3823ac4af0642734deffd7c00a2f6abe434b1fcc31a378361374f27be63",
+    "engine": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_balanced_ell0_second_order.py",
+      "sha256": "144dc9ea6173b8980e859b4d98ab41d3730631ae2292198701451f675fbb8ff0"
+    },
+    "input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+      "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+    }
+  },
+  "first_order_tangent": {
+    "K": "a+b*t",
+    "C": "a*t^2+(b/3)*t^3+c+d*t",
+    "A_x": "W_x+Q_e*t",
+    "common_zero_equation": "Q_e**2 + a**2 + b**2 - b*d=0"
+  },
+  "quadratic_source": {
+    "row_order": [
+      "E00",
+      "E01",
+      "E11",
+      "sphere_trace",
+      "Maxwell0",
+      "Maxwell1"
+    ],
+    "rows": [
+      "-(Q_e**2 + a**2 + b**2 - b*d)/2",
+      "0",
+      "(Q_e**2 + 9*a**2 + 30*a*b*t + 15*b**2*t**2 - 4*b**2 + 6*b*d)/2",
+      "-(2*Q_e**2 + 10*a**2 + 30*a*b*t + 15*b**2*t**2 - 3*b**2 + 5*b*d)/4",
+      "0",
+      "Q_e*(2*a*t + b*t**2 - 2*b + d)/2"
+    ],
+    "constraint_pairing": "S_E00=-(1/2)*(a^2+b^2-b*d+Q_e^2)",
+    "Noether_relation": "S_E11+2*S_sphere=-(1/2)*(a^2+b^2-b*d+Q_e^2)",
+    "c_and_Wx_absent": true
+  },
+  "second_order_correction": {
+    "C2": "0",
+    "K2": "-t**4*(Q_e**2 + 9*a**2 + 6*a*b*t + b**2*t**2 - 4*b**2 + 6*b*d)/24",
+    "A_x2": "Q_e*t**2*(4*a*t + b*t**2 - 12*b + 6*d)/24",
+    "other_components": "0 in the declared homogeneous gauge",
+    "off_cone_remainder": [
+      "-(Q_e**2 + a**2 + b**2 - b*d)/2",
+      "0",
+      "0",
+      "-(Q_e**2 + a**2 + b**2 - b*d)/4",
+      "0",
+      "0"
+    ],
+    "remainder_vanishes_modulo_common_zero_equation": true
+  },
+  "classification": {
+    "direct_complete_homogeneous_quadratic_source_computed": true,
+    "homogeneous_Taub_pairing_equals_moment_map_quadric": true,
+    "complete_standard_homogeneous_common_zero_quadric_second_order_extendible": true,
+    "circumference_and_Wilson_spectators_retained": true,
+    "magnetic_Chern_class_fixed": true,
+    "twist_velocity_mixed_cone_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The nontrivial homogeneous moment-map cone is the exact second-order tangent cone for the complete standard homogeneous block: its defining quadric is precisely the sole constraint source, and every remaining polynomial source is removed by the displayed correction. Constant circumference and Wilson holonomy remain spectators. This does not make the isolated constant radion extendible; that direction lies off the quadric at fixed bundle topology.",
+  "next_gate": "add axial twist velocities and physical ell=1 inputs to the exceptional/global common-zero cone, beginning with a collinear twist-velocity/homogeneous balance",
+  "claim_boundary": "This proves a standard homogeneous second-order jet only. It does not include twist or physical ell=1 inputs, exceptional fourth-order target modes, all-orders integration, the final residual quotient, causal scattering, or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 21.8,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_quadric_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_quadric_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_quadric_second_order"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "exceptional/global moment maps",
+        "homogeneous Weyl-Maxwell equation engine"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "twist velocity, physical ell=1 inputs, and all-orders exceptional/global closure remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_quadric_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_quadric_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_quadric_second_order"
+  ]
+}
