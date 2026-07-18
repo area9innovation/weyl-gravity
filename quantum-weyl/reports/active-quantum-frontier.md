@@ -100,6 +100,16 @@ The round-sphere factor sum now promotes one repository coefficient:
 standard value remains a cross-check until a non-conformally-flat or
 Ricci-flat repository full-BV operator/measure match is certified.
 
+That remaining coefficient carrier now has an executable semantic receiver.
+It requires nonzero local `C2`, a repository Euclidean elliptic full-BV
+complex, complete multiplicity and measure ledgers, a local `b4` regulator,
+exact factor sums, parity, the round-`S4` Euler cross-check, and snapshot
+compatibility in one content-addressed handoff. The current-candidate audit
+shows that Nariai supplies the curvature leg but remains a Lorentzian
+classical complex, whereas round `S4` supplies the repository determinant leg
+but has `C2=0`. Berger and the standard coefficient vector likewise fail
+different legs. No current artifact is silently promoted.
+
 The Slavnov assembly gate now records the sharper post-composer boundary.
 The accepted physical TT dictionary and full-BV ledger now permit the
 repository local heat-kernel vector to be bound into the analytic handoff,

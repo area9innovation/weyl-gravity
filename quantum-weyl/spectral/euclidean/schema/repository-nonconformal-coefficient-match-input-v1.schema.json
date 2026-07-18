@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-nonconformal-coefficient-match-input-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "analytic_route", "background", "operator_and_measure", "coefficient_result", "consistency", "classical_snapshot_compatibility_artifact", "claim_flags", "proof_sha256", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-nonconformal-coefficient-match-input-v1"},
+    "result_id": {"const": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"},
+    "result_state": {"const": "C2_VISIBLE_FULL_BV_LOCAL_COEFFICIENT_MATCHED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "analytic_route": {"const": "EUCLIDEAN_ELLIPTIC"},
+    "background": {
+      "type": "object", "additionalProperties": false,
+      "required": ["geometry", "dimension", "signature", "C2_visibility", "boundary_policy", "eligibility_artifact"],
+      "properties": {
+        "geometry": {"type": "string", "minLength": 10},
+        "dimension": {"const": 4},
+        "signature": {"const": "EUCLIDEAN"},
+        "C2_visibility": {"const": "NONZERO_LOCAL_DENSITY"},
+        "boundary_policy": {"enum": ["CLOSED_NO_BOUNDARY", "LOCAL_CLOSED_OR_COMPACT_SUPPORT"]},
+        "eligibility_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "operator_and_measure": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formulation", "complete_elliptic_complex_artifact", "full_BV_multiplicity_artifact", "local_measure_artifact", "local_b4_regulator_artifact", "zero_mode_ledger_artifact", "auxiliary_fourth_order_match_artifact"],
+      "properties": {
+        "formulation": {"enum": ["FOURTH_ORDER_METRIC", "SECOND_ORDER_AUXILIARY"]},
+        "complete_elliptic_complex_artifact": {"$ref": "#/$defs/artifact"},
+        "full_BV_multiplicity_artifact": {"$ref": "#/$defs/artifact"},
+        "local_measure_artifact": {"$ref": "#/$defs/artifact"},
+        "local_b4_regulator_artifact": {"$ref": "#/$defs/artifact"},
+        "zero_mode_ledger_artifact": {"$ref": "#/$defs/artifact"},
+        "auxiliary_fourth_order_match_artifact": {"oneOf": [{"$ref": "#/$defs/artifact"}, {"type": "null"}]}
+      }
+    },
+    "coefficient_result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["convention", "basis", "coefficients", "factor_contributions", "factor_sum_verified"],
+      "properties": {
+        "convention": {"const": "(4 pi)^(-2) [c C2-a E4+p CdualC+b BoxR]"},
+        "basis": {"const": ["C2", "E4", "CdualC", "BoxR"]},
+        "coefficients": {"$ref": "#/$defs/coordinates"},
+        "factor_contributions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/factorContribution"}},
+        "factor_sum_verified": {"const": true}
+      }
+    },
+    "consistency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parity_status", "parity_artifact", "round_S4_Euler_cross_check", "round_S4_cross_check_artifact"],
+      "properties": {
+        "parity_status": {"enum": ["WARD_VERIFIED", "PARITY_ODD_COEFFICIENT_COMPUTED"]},
+        "parity_artifact": {"$ref": "#/$defs/artifact"},
+        "round_S4_Euler_cross_check": {"const": {"numerator": -87, "denominator": 20}},
+        "round_S4_cross_check_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "classical_snapshot_compatibility_artifact": {"$ref": "#/$defs/artifact"},
+    "claim_flags": {"const": {"REPOSITORY_C2_COEFFICIENT_COMPUTED": true, "REPOSITORY_LOCAL_EFFECTIVE_ACTION_VECTOR_COMPUTED": true, "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false, "REGULATED_SLAVNOV_BREAKING_COMPUTED": false, "QME_DISPOSITION": false, "LORENTZIAN_CERTIFIED": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "claim_boundary": {"type": "string", "minLength": 120}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["format", "path", "sha256"], "properties": {"format": {"enum": ["JSON_PROOF", "JSON_DATA"]}, "path": {"type": "string", "minLength": 10}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "coordinates": {"type": "object", "additionalProperties": false, "required": ["C2", "E4", "CdualC", "BoxR"], "properties": {"C2": {"$ref": "#/$defs/rational"}, "E4": {"$ref": "#/$defs/rational"}, "CdualC": {"$ref": "#/$defs/rational"}, "BoxR": {"$ref": "#/$defs/rational"}}},
+    "factorContribution": {"type": "object", "additionalProperties": false, "required": ["factor_id", "coordinates"], "properties": {"factor_id": {"type": "string", "minLength": 3}, "coordinates": {"$ref": "#/$defs/coordinates"}}}
+  }
+}

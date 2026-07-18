@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-nonconformal-coefficient-match-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_hashes", "accepted_contract", "receiver_mechanics", "current_candidate_audit", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-nonconformal-coefficient-match-readiness-v1"},
+    "result_id": {"const": "REPOSITORY_NONCONFORMAL_COEFFICIENT_MATCH_READINESS"},
+    "result_state": {"const": "RECEIVER_READY_CURRENT_CANDIDATES_FAIL_COMPLEMENTARY_GATES"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "dependency_hashes": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "accepted_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required_result_id", "input_schema_path", "required_analytic_route", "required_basis", "required_proof_result_ids", "physical_input_status"],
+      "properties": {
+        "required_result_id": {"const": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"},
+        "input_schema_path": {"const": "quantum-weyl/spectral/euclidean/schema/repository-nonconformal-coefficient-match-input-v1.schema.json"},
+        "required_analytic_route": {"const": "EUCLIDEAN_ELLIPTIC"},
+        "required_basis": {"const": ["C2", "E4", "CdualC", "BoxR"]},
+        "required_proof_result_ids": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"type": "string", "minLength": 10}},
+        "physical_input_status": {"const": "NOT_SUPPLIED"}
+      }
+    },
+    "receiver_mechanics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "synthetic_receipt", "mutation_receipts"],
+      "properties": {
+        "scope": {"const": "SYNTHETIC_EXACT_ARITHMETIC_AND_ROLE_MECHANICS_ONLY"},
+        "synthetic_receipt": {"type": "object", "required": ["status", "factor_count"], "properties": {"status": {"const": "SEMANTIC_RECEIVER_ACCEPTED"}, "factor_count": {"const": 2}}},
+        "mutation_receipts": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["mutation", "rejected"], "properties": {"mutation": {"enum": ["factor_sum", "C2_visibility", "spurious_auxiliary_proof", "proof_digest"]}, "rejected": {"const": true}}}}
+      }
+    },
+    "current_candidate_audit": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/candidate"}},
+    "minimal_missing_carrier_theorem": {"const": {"status": "NO_CURRENT_CANDIDATE_SATISFIES_INTERSECTION", "required_intersection": ["C2_VISIBLE", "REPOSITORY_OPERATOR", "EUCLIDEAN_ELLIPTIC_FULL_BV", "MEASURE_AND_REGULATOR", "EXACT_COEFFICIENT_VECTOR"], "minimal_next_artifact": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH", "Nariai_is_not_silently_promotable": true, "Berger_is_not_silently_promotable": true, "round_S4_is_not_C2_visible": true}},
+    "claim_flags": {"const": {"NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY": true, "CURRENT_CANDIDATES_AUDITED": true, "PHYSICAL_C2_CARRIER_SUPPLIED": false, "REPOSITORY_C2_COEFFICIENT_COMPUTED": false, "REGULATED_SLAVNOV_BREAKING_COMPUTED": false, "QME_DISPOSITION": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "candidate": {"type": "object", "additionalProperties": false, "required": ["candidate_id", "C2_visible", "repository_operator", "Euclidean_elliptic_full_BV", "measure_and_regulator", "coefficient_vector", "disposition", "proof_sha256"], "properties": {"candidate_id": {"type": "string", "minLength": 10}, "C2_visible": {"type": "boolean"}, "repository_operator": {"type": "boolean"}, "Euclidean_elliptic_full_BV": {"type": "boolean"}, "measure_and_regulator": {"type": "boolean"}, "coefficient_vector": {"type": "boolean"}, "disposition": {"enum": ["INELIGIBLE_LORENTZIAN_CLASSICAL_COMPLEX_ONLY", "INELIGIBLE_COUPLED_REDUCED_MODE_CLASSICAL_BACKGROUND", "INELIGIBLE_STANDARD_VECTOR_NOT_REPOSITORY_MATCHED", "INELIGIBLE_C2_INVISIBLE_ON_CONFORMALLY_FLAT_BACKGROUND"]}, "proof_sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

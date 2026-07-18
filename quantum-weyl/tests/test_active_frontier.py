@@ -93,6 +93,11 @@ class ActiveFrontierTests(unittest.TestCase):
                 "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"]
         )

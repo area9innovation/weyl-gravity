@@ -85,6 +85,14 @@ established, so the theorem is deliberately inactive.
 No further local tensor-graph or multiplicity expansion is needed for this
 decision. The remaining inputs are analytic:
 
+The `C2`-visible coefficient carrier now has a strict executable receiver.
+It requires one artifact to combine nonzero local `C2`, the repository
+Euclidean elliptic BV complex, complete multiplicity and measure ledgers, a
+local `b4` regulator, exact factor contributions, parity, the round-`S4`
+Euler cross-check, and the accepted snapshot bridge. The current-candidate
+audit proves that Nariai, Berger, the standard vector, and round `S4` each
+miss a different required leg; none can be silently promoted.
+
 - a non-conformally-flat or Ricci-flat physical full-BV operator/measure
   carrier on which the `C2` coefficient is visible;
 - a complete Euclidean elliptic-complex receipt with action normalization and

@@ -96,6 +96,9 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            value["claim_flags"]["NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY"]
+        )
+        self.assertTrue(
             value["claim_flags"]["REGULATED_BV_INSERTION_V2_RECEIVER_READY"]
         )
         self.assertEqual(

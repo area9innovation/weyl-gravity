@@ -589,7 +589,10 @@ are now bound into the Slavnov assembly preflight. The remaining physical
 inputs are a non-conformally-flat or Ricci-flat `C2` coefficient carrier, the
 complete regulator/measure receipts, and the regulated Slavnov insertion
 through the V2 receiver. The cross-snapshot bridge is now closed by exact
-Git-tree attribution and equality of all five classical content hashes. A nonzero quotient branch
+Git-tree attribution and equality of all five classical content hashes. The
+`C2` carrier now has a strict executable receiver and a current-candidate
+audit: Nariai, Berger, the standard vector, and round `S4` each miss a distinct
+required leg. A nonzero quotient branch
 obstructs strict fixed field content; a purely `omega BoxR` branch is restored
 by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See

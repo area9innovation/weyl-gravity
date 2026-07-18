@@ -47,6 +47,7 @@ DEPENDENCIES = {
     "physical_TT_dictionary": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
     "physical_full_BV_multiplicity_ledger": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
     "repository_round_S4_Euler_coefficient": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
+    "nonconformal_coefficient_match_receiver": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_NONCONFORMAL_COEFFICIENT_MATCH_READINESS.json",
     "classical_snapshot_compatibility_receiver": ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS.json",
     "physical_classical_snapshot_compatibility": ROOT / "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
@@ -702,6 +703,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     physical_tt = values["physical_TT_dictionary"]
     physical_ledger = values["physical_full_BV_multiplicity_ledger"]
     repository_euler = values["repository_round_S4_Euler_coefficient"]
+    nonconformal_receiver = values["nonconformal_coefficient_match_receiver"]
     compatibility = values["classical_snapshot_compatibility_receiver"]
     physical_compatibility = values["physical_classical_snapshot_compatibility"]
     ward = values["Ward_insertion_contract"]
@@ -861,6 +863,22 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
     ):
         raise ValueError("repository round-S4 Euler coefficient dependency drifted")
+    nonconformal_flags = nonconformal_receiver.get("claim_flags", {})
+    if (
+        nonconformal_receiver.get("result_state")
+        != "RECEIVER_READY_CURRENT_CANDIDATES_FAIL_COMPLEMENTARY_GATES"
+        or nonconformal_flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY")
+        is not True
+        or nonconformal_flags.get("CURRENT_CANDIDATES_AUDITED") is not True
+        or nonconformal_flags.get("PHYSICAL_C2_CARRIER_SUPPLIED") is not False
+        or nonconformal_flags.get("REPOSITORY_C2_COEFFICIENT_COMPUTED")
+        is not False
+        or nonconformal_receiver.get("accepted_contract", {}).get(
+            "required_result_id"
+        )
+        != "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"
+    ):
+        raise ValueError("nonconformal coefficient receiver dependency drifted")
     compatibility_flags = compatibility.get("claim_flags", {})
     if (
         compatibility.get("result_state")
@@ -1034,6 +1052,7 @@ def build() -> dict[str, Any]:
                 "semantically replayed physical round-S4 TT Hessian dictionary",
                 "semantically replayed physical round-S4 full-BV multiplicity ledger",
                 "repository round-S4 Euler coefficient a=87/20 (E4 coordinate -87/20)",
+                "mutation-tested C2-visible full-BV coefficient-match receiver and current-candidate audit",
                 "semantic cross-commit classical snapshot compatibility receiver",
                 "physical cross-commit classical snapshot compatibility bridge",
                 "versioned regulated BV insertion-decomposition output contract",
@@ -1042,7 +1061,7 @@ def build() -> dict[str, Any]:
             "missing": [
                 {
                     "carrier_id": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH",
-                    "required_output": "supply an eligible physical background on which C2 is visible and match the full repository BV operator and measure coefficient c",
+                    "required_output": "supply the executable receiver input on an eligible C2-visible Euclidean background, including the repository elliptic BV complex, measure, regulator and exact factor coefficient sum",
                 },
                 {
                     "carrier_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
@@ -1071,6 +1090,7 @@ def build() -> dict[str, Any]:
             "physical_full_BV_multiplicity_ledger_accepted": True,
             "repository_round_S4_Euler_coefficient_computed": True,
             "repository_C2_coefficient_gap": True,
+            "nonconformal_coefficient_match_receiver_ready": True,
             "classical_snapshot_compatibility_bridge_gap": False,
             "physical_classical_snapshot_compatibility_accepted": True,
             "regulated_BV_insertion_v2_receiver_ready": True,
@@ -1089,6 +1109,7 @@ def build() -> dict[str, Any]:
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": True,
             "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": True,
             "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED": True,
+            "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
             "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
@@ -1131,6 +1152,7 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         is not True
         or flags.get("REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED")
         is not True
+        or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
         is not True
         or flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY") is not True
