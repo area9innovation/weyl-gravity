@@ -1,0 +1,89 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact-T blockwise functional-calculus stream is exported through form two_j=138. It contains 48,372 populated detector-column/charge blocks, 143,180 spatial microphase-dressed amplitude intervals and 47,817 temporal intervals. The canonical full-stream hash is 3a1d1026dbf7c4fc3e507cde4e723c2817eb1fdb64fcca0fe8dd02073104042e; the propagated exact-T temporal remainder is below 4.23e-17. This certifies the finite temporal rail only. The spatial tail beyond two_j=138, infinite-mode Maxwell and massive-two-form Green images, recoil, tangent-cone restriction, Bridge 3 and quantum claims remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile, JSON/schema parse and scoped git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_blockwise_temporal_functional_calculus_stream.py",
+      "elapsed_seconds": 0.90,
+      "status": "PASS",
+      "summary": "5 tests passed, including fail-closed mutation rejection for all three aggregate counts."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_blockwise_temporal_functional_calculus_stream",
+      "status": "PASS",
+      "summary": "Schema, source and dependency hashes, aggregate counts, error budgets and claim flags passed."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "status": "PASS",
+      "summary": "The generated observer atlas and shared fail-closed atlas schema passed."
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 closed_universe_observers/generate_berger_blockwise_temporal_functional_calculus_stream.py --emit",
+      "elapsed_seconds": 1357.88,
+      "status": "FAIL_CLOSED_NO_ARTIFACT_EMITTED",
+      "summary": "The first exhaustive calculation reached the terminal assembly and rejected emission because the explicit order-14 obstruction dependency key was absent. The dependency was then made explicit and prevalidated."
+    },
+    {
+      "command": "python3 closed_universe_observers/generate_berger_blockwise_temporal_functional_calculus_stream.py --emit",
+      "elapsed_seconds": 1338.08,
+      "status": "PASS",
+      "summary": "The corrected exhaustive stream emitted 48,372 populated blocks with canonical full-stream hash 3a1d1026dbf7c4fc3e507cde4e723c2817eb1fdb64fcca0fe8dd02073104042e."
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No infinite-mode Green-image theorem, shared core-algebra change, freeze, release or lifecycle promotion was claimed."
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/generate_berger_blockwise_temporal_functional_calculus_stream.py",
+      "sha256": "8cf9891f71456c087386b020dde11b762fc42c38680f22234af71f97d8924c25"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_blockwise_temporal_functional_calculus_stream.py",
+      "sha256": "b699e4aed0cfe4d5c694e34a81c8d5c6b10ccac54d02288365c97cf63146ba57"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_blockwise_temporal_functional_calculus_stream.py",
+      "sha256": "0c432959509a9ca908b426bdc98c16b8f3e35961176099f60ef7b0e638330ac7"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-blockwise-temporal-functional-calculus-stream-v1.schema.json",
+      "sha256": "2505803a07243a13b5f9693bbfe7b5c2b8035d39ca13b8349b77c0bb1b95e716"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-blockwise-temporal-functional-calculus-stream.md",
+      "sha256": "e66b6b01fc0821f92b6633660ff6dba4549876768eb037b3f77623ed49519782"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138.json",
+      "sha256": "15680860e864803f11af94aaf0a287425d8774df4bd7ecc446c4e5f1027d1ea6"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "5927a65edc56ce9ddd99d2d431b042bc75585fec8e1d0279b8f576191b080f20"
+    }
+  ],
+  "claim_flags": {
+    "FINITE_RAIL_EXACT_T_TEMPORAL_FUNCTIONAL_CALCULUS_IMAGE_EXPORTED": true,
+    "LARGE_T_TAYLOR_TRUNCATION_REMOVED": true,
+    "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

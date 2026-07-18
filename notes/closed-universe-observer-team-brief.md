@@ -510,6 +510,19 @@ is now the microphase-dressed block stream with exact `T` dependence.  This
 preflight does not yet export that image or alter the open spatial-tail,
 massive-image, recoil, tangent-cone or Bridge-3 gates.
 
+`BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138` now exports
+the finite-rail exact-`T` image representation itself.  The canonical stream
+covers the same 48,372 populated detector-column/charge blocks with 143,180
+spatial and 47,817 temporal microphase-dressed amplitude intervals; its full
+hash is `3a1d1026dbf7c4fc3e507cde4e723c2817eb1fdb64fcca0fe8dd02073104042e`.
+The large separation remains in exact spectral functions, and the propagated
+uniform remainder is at most `1.64e-18` for the spatial image and `4.23e-17`
+for the temporal image.  The finite temporal rail is therefore certified.
+The active detector-profile gate is now the spatial harmonic tail beyond
+`two_j=138`, followed by the infinite-mode Maxwell and massive-two-form
+images, recoil coefficient and second-order-cone restriction.  Bridge 3
+remains inactive.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

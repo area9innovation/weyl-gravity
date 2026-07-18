@@ -375,8 +375,15 @@ addition leaves the large separation `T` inside `cos(T sqrt(B))` and
 `sin(T sqrt(B))/sqrt(B)` and expands only the internal clock offset `s/48`.
 All microphase ratios are below `1/100`; the worst order-14 remainder is below
 `1.64e-18`.  Clock parity kills the odd transform, so the published even
-`p=0,...,28` rails suffice.  Streaming the microphase-dressed block inputs is
-the active gate; the exact-`T` image itself is not yet exported.
+`p=0,...,28` rails suffice.  At the preflight stage, streaming the
+microphase-dressed block inputs was the remaining finite-rail gate.
+The blockwise stream now closes that finite-rail temporal gate.  It hashes
+143,180 spatial and 47,817 temporal dressed amplitudes across the same 48,372
+populated blocks, with the large `T` dependence retained as exact spectral
+functions.  Propagated microphase errors stay below `1.64e-18` spatially and
+`4.23e-17` temporally.  The active gate is now the spatial harmonic tail
+beyond `two_j=138`; no infinite-mode Maxwell image or recoil coefficient is
+claimed yet.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

@@ -1064,9 +1064,9 @@
       }
     },
     {
-      "claim_boundary": "all microphase geometric ratios are below 1/100 and the worst operator remainder is below 1.64e-18; no large-T Taylor truncation remains input to the absolute-g3 coefficient; recoil remains OPEN NOT_APPLICABLE at the temporal functional-calculus preflight",
+      "claim_boundary": "48,372 populated blocks yield 143,180 spatial and 47,817 temporal dressed amplitudes; propagated errors are below 1.64e-18 spatially and 4.23e-17 temporally; the tail beyond two_j=138 is OPEN input to the absolute-g3 coefficient; recoil remains OPEN NOT_APPLICABLE at the temporal functional-calculus preflight",
       "descriptions": {
-        "causal": "OPEN",
+        "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
         "observational": "OPEN",
         "quantum": "NOT_APPLICABLE",
@@ -1077,16 +1077,21 @@
           "path": "closed_universe_observers/certificates/BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT.json",
           "result_id": "BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT",
           "sha256": "9ab85e81d1d3d9869c2cd71a02ff1cfc65af9c7abe6b18b6610530881c96db5f"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138.json",
+          "result_id": "BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138",
+          "sha256": "15680860e864803f11af94aaf0a287425d8774df4bd7ecc446c4e5f1027d1ea6"
         }
       ],
       "id": "observer.berger.temporal_green.blockwise_functional_calculus",
       "mode_data": {
         "dispersion": {
-          "statement": "carrier=angle-addition temporal Maxwell functional calculus in exact helicity charge blocks; omega=exact cos(T sqrt(B)) and sin(T sqrt(B))/sqrt(B) with order-14 internal s/48 microphase; OPEN: angle addition and the microphase error budget are certified, but the dressed block stream is not yet exported",
-          "status": "OPEN"
+          "statement": "carrier=angle-addition temporal Maxwell functional calculus in exact helicity charge blocks; omega=exact cos(T sqrt(B)) and sin(T sqrt(B))/sqrt(B) with order-14 internal s/48 microphase; finite-rail exact-T temporal Maxwell image representation CERTIFIED; full infinite-mode detector response remains OPEN on the spatial tail",
+          "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "OPEN until the blockwise image and spatial tail are certified",
+          "statement": "OPEN until the spatial tail and full image are certified",
           "status": "NOT_APPLICABLE"
         },
         "resonance": {
@@ -1123,8 +1128,8 @@
           "status": "CERTIFIED"
         },
         "detector_response": {
-          "statement": "OPEN: angle addition and the microphase error budget are certified, but the dressed block stream is not yet exported",
-          "status": "OPEN"
+          "statement": "finite-rail exact-T temporal Maxwell image representation CERTIFIED; full infinite-mode detector response remains OPEN on the spatial tail",
+          "status": "CERTIFIED"
         },
         "detector_restriction_to_second_order_cone": {
           "statement": "NOT_APPLICABLE at the temporal functional-calculus preflight",
@@ -1147,7 +1152,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "all microphase geometric ratios are below 1/100 and the worst operator remainder is below 1.64e-18; no large-T Taylor truncation remains",
+          "statement": "48,372 populated blocks yield 143,180 spatial and 47,817 temporal dressed amplitudes; propagated errors are below 1.64e-18 spatially and 4.23e-17 temporally; the tail beyond two_j=138 is OPEN",
           "status": "CERTIFIED"
         },
         "recoil_backreaction_order": {
@@ -1159,11 +1164,11 @@
           "status": "NOT_APPLICABLE"
         },
         "response_rank": {
-          "statement": "OPEN until the exact-T temporal image and spatial tail are composed",
+          "statement": "OPEN until the spatial tail and massive image are composed",
           "status": "OPEN"
         },
         "survives_gauge_reduction": {
-          "statement": "OPEN until the blockwise image and spatial tail are certified",
+          "statement": "OPEN until the spatial tail and full image are certified",
           "status": "OPEN"
         }
       },
@@ -1413,7 +1418,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "9820cb09aaea3a23d4047adcc307de72ec1e61303ef02b48f609c215ba7dd8c9",
+  "generated_by_sha256": "e986d05bdf25a3e269c9f4b372edb2eb086a3767718d2d3e5a938d6a64cb6362",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

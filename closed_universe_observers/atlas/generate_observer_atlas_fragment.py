@@ -47,6 +47,7 @@ CERTIFICATES = {
     "exact_charge_blocks": PACKAGE / "certificates/BERGER_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS.json",
     "order14_temporal": PACKAGE / "certificates/BERGER_ORDER14_TEMPORAL_GREEN_CHARGE_STREAM_TWO_J138.json",
     "blockwise_temporal_preflight": PACKAGE / "certificates/BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT.json",
+    "blockwise_temporal_stream": PACKAGE / "certificates/BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138.json",
     "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
@@ -139,10 +140,10 @@ def entries() -> list[dict]:
         {
             "id": "observer.berger.temporal_green.blockwise_functional_calculus",
             "scope": _scope(carrier="angle-addition temporal Maxwell functional calculus in exact helicity charge blocks", degree=1, parity="either selected detector polarization; odd normalized clock transform vanishes", ell="SU(2) form two_j=0,...,138", m="all representation rows grouped by q=m+s", k="all representation columns", omega="exact cos(T sqrt(B)) and sin(T sqrt(B))/sqrt(B) with order-14 internal s/48 microphase"),
-            "descriptions": {"causal": "OPEN", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
-            "operational_observable": {"detector_response": "OPEN: angle addition and the microphase error budget are certified, but the dressed block stream is not yet exported", "response_rank": "OPEN until the exact-T temporal image and spatial tail are composed", "emitter_preparation": "detector-selected massive Cauchy pair supplies the downstream target", "clock_and_rod_dependence": "large T is retained exactly; only |s|/48<=1/48 is expanded, using the existing even p=0,...,28 rails", "relational_redshift_contribution": "NOT_APPLICABLE at this temporal Green-input gate", "recoil_backreaction_order": "input to the absolute-g3 coefficient; recoil remains OPEN", "survives_gauge_reduction": "OPEN until the blockwise image and spatial tail are certified", "profile_green_boundary_dependencies": "all microphase geometric ratios are below 1/100 and the worst operator remainder is below 1.64e-18; no large-T Taylor truncation remains"},
+            "descriptions": {"causal": "CERTIFIED", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "finite-rail exact-T temporal Maxwell image representation CERTIFIED; full infinite-mode detector response remains OPEN on the spatial tail", "response_rank": "OPEN until the spatial tail and massive image are composed", "emitter_preparation": "detector-selected massive Cauchy pair supplies the downstream target", "clock_and_rod_dependence": "large T is retained exactly; only |s|/48<=1/48 is expanded, using the existing even p=0,...,28 rails", "relational_redshift_contribution": "NOT_APPLICABLE at this temporal Green-input gate", "recoil_backreaction_order": "input to the absolute-g3 coefficient; recoil remains OPEN", "survives_gauge_reduction": "OPEN until the spatial tail and full image are certified", "profile_green_boundary_dependencies": "48,372 populated blocks yield 143,180 spatial and 47,817 temporal dressed amplitudes; propagated errors are below 1.64e-18 spatially and 4.23e-17 temporally; the tail beyond two_j=138 is OPEN"},
             "tangent_cone": {"restriction_status": "NOT_APPLICABLE at the temporal functional-calculus preflight", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
-            "evidence": _evidence("blockwise_temporal_preflight"),
+            "evidence": _evidence("blockwise_temporal_preflight", "blockwise_temporal_stream"),
         },
         {
             "id": "observer.crosswalk.berger_physical_branch_to_detector",
@@ -171,7 +172,7 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_profile_tail.two_j4_cutoff": ["OBSTRUCTED", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "NOT_APPLICABLE", "OBSTRUCTED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.adaptive_cutoff_preflight": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "OBSTRUCTED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.temporal_green.order14_two_j138": ["OBSTRUCTED", "OPEN", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "OBSTRUCTED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
-    "observer.berger.temporal_green.blockwise_functional_calculus": ["OPEN", "OPEN", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.temporal_green.blockwise_functional_calculus": ["CERTIFIED", "OPEN", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }
