@@ -168,6 +168,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-abd-ell2-extra-resonance-matrix-submission-receipt.md`](reports/einstein-maxwell-weyl-abd-ell2-extra-resonance-matrix-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-homogeneous-twist-ell2-extra-resonance-matrix.json`](contributions/einstein-maxwell-weyl-homogeneous-twist-ell2-extra-resonance-matrix.json)
 - [`reports/einstein-maxwell-weyl-homogeneous-twist-ell2-extra-resonance-matrix-submission-receipt.md`](reports/einstein-maxwell-weyl-homogeneous-twist-ell2-extra-resonance-matrix-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-aligned-twist-ell2-extra-compatibility-face.json`](contributions/einstein-maxwell-weyl-aligned-twist-ell2-extra-compatibility-face.json)
+- [`reports/einstein-maxwell-weyl-aligned-twist-ell2-extra-compatibility-face-submission-receipt.md`](reports/einstein-maxwell-weyl-aligned-twist-ell2-extra-compatibility-face-submission-receipt.md)
 - [`contributions/einstein-weyl-relative-branch-dictionary.json`](contributions/einstein-weyl-relative-branch-dictionary.json)
 - [`reports/einstein-weyl-relative-branch-dictionary-submission-receipt.md`](reports/einstein-weyl-relative-branch-dictionary-submission-receipt.md)
 - [`contributions/einstein-weyl-exceptional-ell1-solution-cofiber.json`](contributions/einstein-weyl-exceptional-ell1-solution-cofiber.json)

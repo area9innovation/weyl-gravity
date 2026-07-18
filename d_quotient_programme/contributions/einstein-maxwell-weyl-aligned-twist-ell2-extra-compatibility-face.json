@@ -1,0 +1,39 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; shared-axis ell=2,m=0,k=0 generic extra-primary amplitudes and collinear standard twist position/velocity before final residual descent",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the exact aligned Clebsch-Gordan coefficient <1,0;2,0|2,0> vanishes, so the complete twist-extra p-shell resonance map annihilates the shared-axis m=0 face",
+    "the branchwise rank-three a,b,d chains force a=b=d=0 whenever the extra multiplicity vector is nonzero",
+    "the direct ell=2,k=0 extra-current occupation is X=1296|x_a1|^2+(208/3)|x_a2|^2+22464|x_p1|^2+12288|x_p2|^2",
+    "the exact balance B_z^2=(2/3)X makes all five compact stabilizer moment maps vanish",
+    "x_a1=1 and B_z=12*sqrt(6) is an explicit nonzero simultaneous stabilizer and completed bounded-resonance common-zero witness",
+    "the generated atlas retains OPEN nonlinear correction statuses"
+  ],
+  "evidence": {
+    "commit": "c321b56f6cca81ac22069033d36250ab7a8117b4",
+    "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
+    "sha256": "f7be0c5571327d5ecb14194e3a6f485ae22547979f66b4ec45d614a3fbc28e9c"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify the off-axis factored polynomial zero locus and assemble correction-class-specific right inverses for every nonresonant mixed output block",
+  "not_established": [
+    "the complete simultaneous stabilizer and resonance zero locus",
+    "a bounded or finite-quasiperiodic second-order correction",
+    "a complete smooth exponential-polynomial second-order correction",
+    "a compact-product causal or retarded theorem",
+    "opposite momenta, relative phases, multiple |k| fibres or arbitrary finite harmonic sums",
+    "all-orders integration, final residual descent, observation, particle or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_aligned_twist_ell2_extra_compatibility_face",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face",
+  "team_id": "einstein_boundary",
+  "verdict": "NONZERO_SIMULTANEOUS_COMPATIBILITY_FACE_CERTIFIED_FULL_CORRECTION_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face"
+  ]
+}
