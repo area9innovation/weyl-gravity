@@ -222,23 +222,20 @@ Levi--Civita variation is nonzero and
 frozen-parallel PBW shortcut is `OBSTRUCTED`.  Its diagnostic response agrees
 with the independent varied tractor-curvature action, but its middle/Schur
 coefficients are not authoritative because derivatives may hit the varying
-curvature.  The complete jet-aware gate now derives every coordinate
-covariant curvature jet requested through order three, independently
-reproduces the moving-frame first jet, and closes the corrected BGG first
-square and Yang--Mills identity.  Endpoint compression is now exact: the
-shifted-chain variation retains 207 coefficients and its gauge defect has
-zeroth- and second-order words that cannot be removed by an algebraic Schur
-correction.  Its complete first-order local gauge equation is now solved:
-the `60 x 45` coefficient map has full column rank on all nine output rows
-and yields a unique 59-coefficient correction with zero gauge residual.
-Action provenance and cyclicity are not inferred from uniqueness and remain
-part of the active gate.  The first continuation is now ruled out exactly:
-an arbitrary order-at-most-one correction of the Φ row alone has a
-`225 x 45` rank-45 map, while 38 output rows have augmented rank 46 and a
-normalized two-term left-null witness.  The active gate is therefore the
-coupled incidence/splitting/constraint variation (or an explicitly
-higher-order Φ ansatz), followed by the rank-310 SDR variation.  Transverse
-causal transfer remains `OPEN`.
+curvature.  The complete coefficient-jet replay now supersedes the earlier
+point-only screens.  It derives the corrected covariant HPL splittings,
+closes the first square, parent Yang--Mills identity and shifted chain
+associatively, and constructs the Hom adjoint by reversing primitive factors
+before PBW normal ordering.  The cyclic compressed Schur operator exercises
+the certified curvature tower through order five.  The upper relative-saddle
+row also closes exactly:
+`Schur (K p0)+L1_corrected^sharp M_parent (I_Omega p0)=0` has zero base and
+first-variation defects.  The old 207-term shifted defect and downstream
+Φ/L0/K rank screens are retained only as backend regression data.  The
+active gate is now the independent third variation of the Weyl-squared action
+along the transverse tangent, its comparison with the corrected parent
+endpoint, and the differentiated all-row rank-310 SDR.  Transverse causal
+transfer remains `OPEN` until that action-derived endpoint gate passes.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves

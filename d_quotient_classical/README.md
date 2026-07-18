@@ -535,6 +535,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   open:
   [`certificates/NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1.json`](certificates/NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1.json),
   [`reports/nariai-transverse-factorized-hom-schur-replay.md`](reports/nariai-transverse-factorized-hom-schur-replay.md)
+- Upper relative-saddle chain closure: the typed identity
+  `Schur (K p0)+L1_corrected^sharp M_parent (I_Omega p0)=0` now has zero base
+  and transverse first-variation defects. It uses the factorized Hom adjoint,
+  incidence coefficient jets through order four, and parent-middle jets
+  through order two, all inside the fail-closed order-five curvature
+  envelope. No action-derived transverse Bach-Hessian variation is assumed.
+  That independent third-variation comparison and the differentiated all-row
+  rank-310 SDR are the remaining algebraic gate before causal transfer:
+  [`certificates/NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1.json`](certificates/NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1.json),
+  [`reports/nariai-transverse-relative-saddle-upper-chain.md`](reports/nariai-transverse-relative-saddle-upper-chain.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

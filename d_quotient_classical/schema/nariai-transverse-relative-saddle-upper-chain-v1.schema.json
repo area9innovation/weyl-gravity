@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nariai-transverse-relative-saddle-upper-chain-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-relative-saddle-upper-chain-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1"},
+    "result_state": {"const": "TRANSVERSE_UPPER_RELATIVE_SADDLE_CHAIN_EXACT"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["typed_identity", "coefficient_jet_coverage", "derivation", "disposition"],
+      "properties": {
+        "typed_identity": {
+          "type": "object", "additionalProperties": false,
+          "required": ["domain", "codomain", "formula", "incidence_definition", "base_defect", "first_variation_defect"],
+          "properties": {
+            "domain": {"const": "C0"}, "codomain": {"const": "H1dual"},
+            "formula": {"type": "string", "minLength": 1},
+            "incidence_definition": {"type": "string", "minLength": 1},
+            "base_defect": {"$ref": "#/$defs/table"},
+            "first_variation_defect": {"$ref": "#/$defs/table"}
+          }
+        },
+        "coefficient_jet_coverage": {
+          "type": "object", "additionalProperties": false,
+          "required": ["incidence_p0", "parent_middle", "L1_corrected_sharp", "certified_curvature_maximum_order", "above_maximum_fails_closed"],
+          "properties": {
+            "incidence_p0": {"$ref": "#/$defs/coverage"},
+            "parent_middle": {"$ref": "#/$defs/coverage"},
+            "L1_corrected_sharp": {"$ref": "#/$defs/coverage"},
+            "certified_curvature_maximum_order": {"const": 5},
+            "above_maximum_fails_closed": {"const": true}
+          }
+        },
+        "derivation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["method", "post_normal_order_adjoint_used", "interpolation_used", "action_Bach_variation_used"],
+          "properties": {
+            "method": {"type": "string", "minLength": 1},
+            "post_normal_order_adjoint_used": {"const": false},
+            "interpolation_used": {"const": false},
+            "action_Bach_variation_used": {"const": false}
+          }
+        },
+        "disposition": {
+          "type": "object", "additionalProperties": false,
+          "required": ["upper_relative_saddle_chain_exact", "outer_incidence_rows_exact", "complete_rank_310_first_variation_SDR", "transverse_action_Bach_Hessian_variation_available", "transverse_causal_transfer"],
+          "properties": {
+            "upper_relative_saddle_chain_exact": {"const": true},
+            "outer_incidence_rows_exact": {"const": true},
+            "complete_rank_310_first_variation_SDR": {"const": false},
+            "transverse_action_Bach_Hessian_variation_available": {"const": false},
+            "transverse_causal_transfer": {"const": false}
+          }
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "boolean"}},
+    "flags": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "boolean"}},
+    "next_gate": {"const": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_AND_RANK_310_SDR"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["word_count", "maximum_order"],
+      "properties": {
+        "word_count": {"type": "integer", "minimum": 0},
+        "maximum_order": {"type": "integer", "minimum": 0, "maximum": 5}
+      }
+    },
+    "table": {
+      "type": "object", "additionalProperties": false,
+      "required": ["orders", "nonzero_coefficients", "entries", "sha256"],
+      "properties": {
+        "orders": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "nonzero_coefficients": {"const": 0},
+        "entries": {"const": []},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

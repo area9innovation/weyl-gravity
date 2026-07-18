@@ -1621,8 +1621,13 @@ obstruction.  The Phi/L0/K screens remain exact regression calculations only
 relative to that superseded target.  The coefficient-jet-aware associative
 replay has since closed the parent identity, associator and shifted chain.  The
 factorized Hom-adjoint middle and cyclic compressed Schur have also closed with
-fifth-order curvature-jet coverage.  The next gate is the upper relative-saddle
-row and rank-310 SDR identity, then causal transfer.
+fifth-order curvature-jet coverage.  The upper relative-saddle identity
+`Schur (K p0)+L1_corrected^sharp M_parent (I_Omega p0)=0` now has zero base and
+first-variation defects as well.  The relative-incidence rows are therefore
+complete.  The remaining rank-310 gate is narrower: derive the transverse
+variation of the Weyl-squared action Hessian independently, compare it with
+the corrected parent endpoint, and only then replay the differentiated all-row
+SDR and causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

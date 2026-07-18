@@ -76,10 +76,12 @@ def verify() -> None:
         raise AssertionError("associative middle replay missing")
     if "NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1" not in transverse_ids:
         raise AssertionError("factorized Hom/Schur replay missing")
+    if "NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1" not in transverse_ids:
+        raise AssertionError("upper relative-saddle replay missing")
     if "factorized adjunction before PBW normal ordering" not in transverse["claim_boundary"]:
         raise AssertionError("factorized Hom-adjoint boundary missing")
-    if "upper relative-saddle row" not in transverse["claim_boundary"]:
-        raise AssertionError("next rank-310 boundary missing")
+    if "independent action-Hessian variation" not in transverse["claim_boundary"]:
+        raise AssertionError("next rank-310 action-Hessian boundary missing")
 
 
 if __name__ == "__main__":

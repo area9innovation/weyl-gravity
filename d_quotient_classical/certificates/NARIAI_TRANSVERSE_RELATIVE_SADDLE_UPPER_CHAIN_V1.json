@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "claim_boundary": "This exact coefficient-jet calculation closes the upper relative-saddle chain through first variation using the factorized Hom adjoint and the curvature incidence I_Omega p0. It uses no fitted Schur term and no action Bach-Hessian variation. The remaining rank-310 gate requires the independently action-derived transverse Hessian variation and the differentiated all-row SDR; no causal transfer is promoted.",
+  "dependency_refs": {
+    "factorized_Hom_schur": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1",
+      "sha256": "406d4f3f3288a55221a1f69a7d2d0d69eced747ddabf36b1d961ca09e37d6e98"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "base_upper_chain_zero": true,
+    "causal_transfer_not_overclaimed": true,
+    "factorized_adjoint_used": true,
+    "no_action_Bach_variation_smuggled_in": true,
+    "rank_310_not_overclaimed": true,
+    "varied_upper_chain_zero": true
+  },
+  "exact_data": {
+    "coefficient_jet_coverage": {
+      "L1_corrected_sharp": {
+        "maximum_order": 0,
+        "word_count": 1
+      },
+      "above_maximum_fails_closed": true,
+      "certified_curvature_maximum_order": 5,
+      "incidence_p0": {
+        "maximum_order": 4,
+        "word_count": 181
+      },
+      "parent_middle": {
+        "maximum_order": 2,
+        "word_count": 15
+      }
+    },
+    "derivation": {
+      "action_Bach_variation_used": false,
+      "interpolation_used": false,
+      "method": "factorized Hom adjoint followed by associative coefficient-jet PBW composition",
+      "post_normal_order_adjoint_used": false
+    },
+    "disposition": {
+      "complete_rank_310_first_variation_SDR": false,
+      "outer_incidence_rows_exact": true,
+      "transverse_action_Bach_Hessian_variation_available": false,
+      "transverse_causal_transfer": false,
+      "upper_relative_saddle_chain_exact": true
+    },
+    "typed_identity": {
+      "base_defect": {
+        "entries": [],
+        "nonzero_coefficients": 0,
+        "orders": [],
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "codomain": "H1dual",
+      "domain": "C0",
+      "first_variation_defect": {
+        "entries": [],
+        "nonzero_coefficients": 0,
+        "orders": [],
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "formula": "Schur (K p0)+L1_corrected^sharp M_parent (I_Omega p0)=0",
+      "incidence_definition": "I_Omega p0=d_parent-d_aut"
+    }
+  },
+  "flags": {
+    "NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN": true,
+    "TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION": false,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": false
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_AND_RANK_310_SDR",
+  "result_id": "NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1",
+  "result_state": "TRANSVERSE_UPPER_RELATIVE_SADDLE_CHAIN_EXACT",
+  "schema": "nariai-transverse-relative-saddle-upper-chain-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_factorized_hom_schur_replay.py": "184cc9a79312a1f314fe08c95b49fd0ebd631fa583dee8d96839fdc91aafb513",
+    "d_quotient_classical/causal_transfer/nariai_transverse_relative_saddle_upper_chain.py": "04919bb178fa235139bfba96843c1626dfc20817833917f49936e4e4eabe4b43",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_relative_saddle_upper_chain.py": "f39d50b21636b9dddc2faa78c4b52c778f8f137f6a10c8284244bff3f35af40b",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_relative_saddle_upper_chain.py": "e3c7cde40fb4f1362d524774fdb7333ff4465063a2cf287fe27ef75aed5c0912",
+    "d_quotient_classical/schema/nariai-transverse-relative-saddle-upper-chain-v1.schema.json": "74196968efeb1cdf99e2d4852d97881fe2811398800f3d930746d9ed5cd98893"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_relative_saddle_upper_chain --check",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_relative_saddle_upper_chain.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_relative_saddle_upper_chain",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-relative-saddle-upper-chain-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1.json"
+  ]
+}
