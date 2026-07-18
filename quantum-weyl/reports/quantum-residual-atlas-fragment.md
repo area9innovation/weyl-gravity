@@ -11,10 +11,10 @@ NOT_APPLICABLE
 NO_CERTIFIED_MAP
 ```
 
-The generator emits a strict common-envelope fragment with fourteen entries:
+The generator emits a strict common-envelope fragment with fifteen entries:
 six all-energy vacuum-cylinder E/A/L mode-family rows, two residual
 deformation-class rows, one Berger carrier-gap row, one classical-to-quantum
-tangent-cone crosswalk, and four non-mode particle guards. Every row carries
+tangent-cone crosswalk, and five non-mode particle guards. Every row carries
 the full declared mode scope and separately records classical
 import, BRST closure and exactness, pairing, compatible complex structure,
 Hadamard two-point function, state-space signature, anomaly/QME dependency,
@@ -40,8 +40,9 @@ The guards are first-class atlas crosswalk entries and assign
 interpretations of local anomaly classes, Euclidean determinant factors, and
 curvature-observable generators. These carriers remain available in their
 own local, spectral, or observable-algebra roles without being inserted into
-the physical mode atlas. The fourth guard excludes promotion of the flat-TT
-logarithmic effective-action form factor to a particle entry.
+the physical mode atlas. The third and fourth guards exclude promotion of the
+flat-TT logarithmic form factor or its curvature-squared covariantization to a
+particle entry.
 
 ## Tangent-cone boundary
 
@@ -87,8 +88,10 @@ still has rank two on the allowed `C(g_hat)^2` and `R(g_hat)^2` finite
 counterterms. On the positive nonzero-momentum flat Euclidean TT carrier the
 universal logarithmic form factor is now fixed with coefficient `-199/60`,
 scale response `199/30`, and scheme-independent momentum difference. Its
-additive finite `C2` normalization, the finite `R2` normalization, curved
-Weyl-invariant completion, global Green/kernel data, and renormalized BV
+spectral covariantization is universal through curvature order two, with
+operator-choice dependence beginning at curvature order three. The additive
+finite `C2` normalization, independent `R2` form factor and normalization,
+cubic-and-higher `C2` completion, global Green/kernel data, and renormalized BV
 Laplacian or time-ordered product have not been supplied. The extended
 classical residual contraction is absent as well. Residual transfer therefore
 remains forbidden.

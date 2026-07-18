@@ -68,6 +68,9 @@ def main() -> None:
         "numerator": 199,
         "denominator": 30,
     }
+    assert claims["covariant_C2_log_through_curvature_order_two"] is True
+    assert claims["first_unresolved_C2_log_completion_order"] == 3
+    assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     boolean_claims = {
         key: value for key, value in claims.items() if isinstance(value, bool)
     }
@@ -76,11 +79,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"
+        == "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 10
+    assert len(payload["inputs"]) == 11
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -94,6 +97,7 @@ def main() -> None:
     q1 = dependencies["ONE_LOOP_SLAVNOV_Q1_DISPOSITION"]
     gamma1 = dependencies["ANOMALY_INDUCED_NONLOCAL_GAMMA1"]
     flat_tt_log = dependencies["FLAT_TT_LOGARITHMIC_GAMMA1"]
+    curvature_squared_log = dependencies["CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1"]
     assert strict["qme_disposition"]["status"] == "OBSTRUCTED_STRICT_FIELD_CONTENT"
     assert strict["coefficients"]["ANOM_OMEGA_C2"] == claims["C2_coefficient"]
     assert strict["coefficients"]["ANOM_OMEGA_E4"] == claims["E4_coefficient"]
@@ -111,6 +115,8 @@ def main() -> None:
     assert gamma1["decision"]["complete_finite_nonlocal_Gamma1"] == "NO_CERTIFIED_FUNCTIONAL"
     assert flat_tt_log["decision"]["flat_TT_universal_logarithmic_form_factor"] == "CERTIFIED"
     assert flat_tt_log["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
+    assert curvature_squared_log["operator_choice_independence"]["first_difference_order"] == 3
+    assert curvature_squared_log["decision"]["residual_transfer"] == "FORBIDDEN"
     print("Paper 12 pure-Weyl one-loop BV anomaly claim map: PASS")
 
 

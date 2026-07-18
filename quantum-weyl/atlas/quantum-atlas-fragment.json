@@ -1199,7 +1199,7 @@
       }
     },
     {
-      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. The nonzero-momentum flat-TT logarithmic coefficient -199/60 and its scheme-independent momentum difference are also fixed. Curved completion, finite C2/R2 normalization, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. The C2 logarithm is now covariant and operator-choice independent through curvature order two; the independent R2 form factor, C2 cubic completion, finite C2/R2 normalization, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -1267,6 +1267,11 @@
           "path": "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
           "result_id": "FLAT_TT_LOGARITHMIC_GAMMA1",
           "sha256": "8d4bc8bdf702cf3c7ceb46ddfe1d16e2269fd33b3acc0ee4a033d6b9d2c9482e"
+        },
+        {
+          "path": "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+          "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
+          "sha256": "a67a475da6352ad163a907c2fc6ad0bcb1bf804662bc645eca1487685bccde87"
         }
       ],
       "id": "quantum.crosswalk.classical_tangent_cone_to_interacting_brst",
@@ -1317,7 +1322,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "anomaly_QME_dependency": {
-          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; one conditional anomaly-induced Euclidean Gamma1 representative and the flat-TT universal logarithmic coefficient -199/60 are fixed, but the curved remainder, finite constants and complete Q1 are underdetermined",
+          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; one conditional anomaly-induced Euclidean Gamma1 representative and the covariant curvature-squared C2 logarithm are fixed, but the independent R2 form factor, C2 cubic completion, finite constants and complete Q1 are underdetermined",
           "status": "CERTIFIED"
         },
         "carrier_crosswalk": {
@@ -1338,7 +1343,7 @@
         ],
         "entry_kind": "CLASSICAL_TO_QUANTUM_CROSSWALK",
         "lifecycle_state": {
-          "statement": "QME disposition, an anomaly-induced Euclidean Gamma1 representative and the flat-TT universal logarithmic momentum dependence are complete in scope, but curved completion, finite constants, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
+          "statement": "QME disposition, an anomaly-induced Euclidean Gamma1 representative and the covariant curvature-squared C2 logarithm are complete in scope, but the independent R2 form factor, C2 cubic completion, finite constants, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
           "status": "NO_CERTIFIED_MAP"
         },
         "pairing_status": {
@@ -1783,6 +1788,136 @@
       },
       "evidence": [
         {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+          "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+          "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+        },
+        {
+          "path": "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+          "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
+          "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
+        },
+        {
+          "path": "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
+          "result_id": "FLAT_TT_LOGARITHMIC_GAMMA1",
+          "sha256": "8d4bc8bdf702cf3c7ceb46ddfe1d16e2269fd33b3acc0ee4a033d6b9d2c9482e"
+        },
+        {
+          "path": "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+          "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
+          "sha256": "a67a475da6352ad163a907c2fc6ad0bcb1bf804662bc645eca1487685bccde87"
+        }
+      ],
+      "id": "quantum.crosswalk.curvature_squared_covariant_log_form_factor_to_particle",
+      "mode_data": {
+        "dispersion": {
+          "statement": "not a physical residual mode shell",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "no particle pairing crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "non-mode carrier guard",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "non-mode carrier guard",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "quantum_data": {
+        "BRST_cocycle": {
+          "statement": "carrier-specific; no physical residual mode imported",
+          "status": "NOT_APPLICABLE"
+        },
+        "BRST_exactness": {
+          "statement": "carrier-specific; no physical residual mode imported",
+          "status": "NOT_APPLICABLE"
+        },
+        "Hadamard_two_point_function": {
+          "statement": "no particle Hadamard crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "anomaly_QME_dependency": {
+          "statement": "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop, and this carrier's coefficient is bound to that disposition",
+          "status": "CERTIFIED"
+        },
+        "carrier_crosswalk": {
+          "statement": "non-mode carrier to particle",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "classical_mode_imported": {
+          "statement": "carrier imported only in its declared non-particle role",
+          "status": "CERTIFIED"
+        },
+        "compatible_complex_structure": {
+          "statement": "no particle complex structure crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL"
+        ],
+        "entry_kind": "NON_MODE_PARTICLE_GUARD",
+        "lifecycle_state": {
+          "statement": "not a particle lifecycle entry",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "pairing_status": {
+          "statement": "no particle pairing crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "particle_interpretation": {
+          "statement": "forbidden without an explicit physical residual-mode crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "state_space_status": {
+          "statement": "no particle state-space crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "carrier-specific; no cross-background identification",
+        "boundaries": "carrier-specific",
+        "carrier": "covariant C log(Delta_C/mu^2) C effective-action form factor through curvature order two",
+        "charge_sector": "not a certified physical one-particle sector",
+        "degree": "carrier-specific",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "carrier-specific",
+        "theory": "pure-Weyl quantum programme"
+      }
+    },
+    {
+      "claim_boundary": "This carrier remains valid in its local, spectral, or observable-algebra role, but no certified map turns it into a particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
           "path": "quantum-weyl/lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
           "result_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
           "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed"
@@ -1888,7 +2023,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "c744bbc9722780b22a8bf67c1f2b42a0d99f58e969620d4fcce2f1246ed6f351",
+  "generated_by_sha256": "e1db9121d75e795e94bebd15afdf06ad61e09007c29671ec33dac8f113639f88",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

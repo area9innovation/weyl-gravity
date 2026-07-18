@@ -423,9 +423,15 @@ remainder is now partially constrained on the nonzero-momentum flat-TT
 carrier: `FLAT_TT_LOGARITHMIC_GAMMA1` fixes the universal logarithmic
 coefficient `-199/60`, its scale response `199/30`, and the
 scheme-independent difference
-`F_C(p^2)-F_C(q^2)=-(199/60)log(p^2/q^2)`. The additive `C^2` constant,
-general curved completion, global Green/kernel data, renormalized BV
-Laplacian or time-ordered product, and `R^2` normalization remain absent.
+`F_C(p^2)-F_C(q^2)=-(199/60)log(p^2/q^2)`.
+`CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1` promotes this to the spectral
+functional `-(199/60)<C,log(Delta_C/mu^2)C>` through curvature order two.
+The resolvent Fréchet formula proves that admissible Laplace-type operator
+choices first change it at curvature order three. The additive `C^2`
+constant, independent `R^2` form factor and normalization, cubic-and-higher
+`C^2` completion, global
+Green/kernel data, and renormalized BV Laplacian or time-ordered product
+remain absent.
 Residual transfer
 remains forbidden until those data and a
 compensator-inclusive classical contraction are supplied.  None of the
@@ -457,6 +463,8 @@ PYTHONPATH=quantum-weyl python3 -m transfer.anomaly_induced_nonlocal_gamma1 --ch
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_anomaly_induced_nonlocal_gamma1
 PYTHONPATH=quantum-weyl python3 -m transfer.flat_tt_logarithmic_gamma1 --check
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_flat_tt_logarithmic_gamma1
+PYTHONPATH=quantum-weyl python3 -m transfer.curvature_squared_covariant_log_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_curvature_squared_covariant_log_gamma1
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

@@ -3,6 +3,11 @@
 Status:
 `FLAT_TT_UNIVERSAL_LOGARITHMIC_GAMMA1_FORM_FACTOR_CERTIFIED_FINITE_CONSTANT_AND_CURVED_COMPLETION_OPEN`
 
+> **Active refinement.** The later
+> [`CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1`](curvature-squared-covariant-log-gamma1.md)
+> receipt supplies the operator-independent spectral covariantization through
+> curvature order two. Cubic completion and finite normalization remain open.
+
 Dependency tags: `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`.
 
 ## Result

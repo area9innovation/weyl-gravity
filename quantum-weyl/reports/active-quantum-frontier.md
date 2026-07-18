@@ -32,10 +32,14 @@ compatible source sector; Paneitz kernel/global data are not discarded. The
 same exact `c=199/30` coordinate now fixes the nonzero-momentum flat-TT
 logarithmic form-factor coefficient `-199/60`. Consequently
 `F_C(p^2)-F_C(q^2)=-(199/60)log(p^2/q^2)` is scheme-independent in the
-declared Euclidean fixture. The additive `C^2` constant, general curved
-Weyl-invariant remainder, renormalized BV Laplacian or time-ordered product,
-finite `R^2` normalization, and global Green data remain absent, so complete
-`Gamma1` and `Q1` are fail-closed. The stationary/Hadamard rail remains
+declared Euclidean fixture. The spectral covariantization
+`-(199/60)<C,log(Delta_C/mu^2)C>` is now fixed through curvature order two;
+the resolvent filtration proves that admissible Laplace-type representatives
+first differ at curvature order three. The additive `C^2` constant,
+cubic-and-higher Weyl-invariant remainder, renormalized BV Laplacian or
+time-ordered product, the independent `R^2` form factor and finite `R^2`
+normalization, and global Green data remain
+absent, so complete `Gamma1` and `Q1` are fail-closed. The stationary/Hadamard rail remains
 independently open. The older readiness discussion below is retained as
 historical gate provenance.
 
@@ -295,10 +299,10 @@ consumers. It remains conditional on an exact physical normal form and its
 finite-slab energy hypotheses and supplies no Hadamard state.
 
 The quantum column of the programme residual atlas is now generated at
-`quantum-weyl/atlas/quantum-atlas-fragment.json`. Its fourteen common-envelope
+`quantum-weyl/atlas/quantum-atlas-fragment.json`. Its fifteen common-envelope
 entries contain six vacuum-cylinder E/A/L mode-family rows, the two
 `W_+^2,W_-^2` deformation classes guarded as non-particles, a Berger
-carrier-gap row, the tangent-cone crosswalk, and four non-mode particle
+carrier-gap row, the tangent-cone crosswalk, and five non-mode particle
 guards. The imported
 Berger causal complex is not promoted to stationary modes; that crosswalk is
 `NO_CERTIFIED_MAP`. The fragment also records the finite-harmonic

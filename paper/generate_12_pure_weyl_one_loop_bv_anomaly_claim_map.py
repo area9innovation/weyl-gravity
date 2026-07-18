@@ -30,6 +30,7 @@ INPUTS = {
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
+    "curvature_squared_covariant_log_Gamma1": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
 }
 
 
@@ -53,6 +54,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     q1 = values["Q1_disposition"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
+    curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -93,6 +95,18 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         != {"numerator": -199, "denominator": 60}
         or flat_tt_log.get("claim_flags", {}).get("FINITE_C2_NORMALIZATION_FIXED")
         is not False
+        or curvature_squared_log.get("decision", {}).get(
+            "covariant_C2_log_through_curvature_order_two"
+        )
+        != "CERTIFIED"
+        or curvature_squared_log.get("operator_choice_independence", {}).get(
+            "first_difference_order"
+        )
+        != 3
+        or curvature_squared_log.get("claim_flags", {}).get(
+            "COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED"
+        )
+        is not False
     ):
         raise ValueError("Paper 12 theorem dependency drifted")
     return values
@@ -104,13 +118,14 @@ def build() -> dict[str, Any]:
     extended = values["extended_cohomology"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
+    curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
         "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
-        "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_FLAT_TT_LOGARITHM",
+        "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_COVARIANT_CURVATURE_SQUARED_LOGARITHM",
         "lifecycle_state": "WRITING_STARTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact universal flat-TT logarithmic form factor.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact covariant C2 logarithm through curvature order two.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -154,6 +169,9 @@ def build() -> dict[str, Any]:
             "flat_TT_logarithmic_form_factor": True,
             "flat_TT_logarithmic_coefficient": flat_tt_log["exact_logarithmic_form_factor"]["logarithmic_coefficient"],
             "flat_TT_scale_response": flat_tt_log["exact_logarithmic_form_factor"]["RG_scale_response"],
+            "covariant_C2_log_through_curvature_order_two": True,
+            "first_unresolved_C2_log_completion_order": curvature_squared_log["operator_choice_independence"]["first_difference_order"],
+            "Berger_WZ_tau_contraction_merge_rejected": True,
         },
         "explicit_nonclaims": {
             "finite_polynomial_in_tau_theorem": False,
@@ -166,17 +184,19 @@ def build() -> dict[str, Any]:
             "residual_quantum_transfer": False,
             "complete_renormalized_Q1_supplied": False,
             "complete_renormalized_Gamma1_supplied": False,
+            "cubic_nonlocal_curvature_completion": False,
+            "same_background_compensator_contraction": False,
             "quantum_Cartan_identity": False,
             "Bridge_4_particle_crosswalk": False,
             "Bridge_5_interacting_BRST_map": False,
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+            "status": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             "required_inputs": [
-                "compensator-inclusive classical contraction",
+                "same-background compensator-inclusive classical contraction",
                 "finite C2 and R2 normalization conditions",
-                "curved Weyl-invariant Gamma1 completion and global Paneitz Green data",
+                "C2 cubic-and-higher nonlocal completion, the independent R2 form factor, and global Paneitz Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],
             "required_outputs": [

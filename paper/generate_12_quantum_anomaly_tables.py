@@ -22,6 +22,7 @@ INPUTS = {
     "extended": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_tt_log": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
+    "curvature_squared_log": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
 }
 
 
@@ -50,6 +51,7 @@ def _load() -> dict[str, dict[str, Any]]:
     extended = values["extended"]
     gamma1 = values["gamma1"]
     flat_tt_log = values["flat_tt_log"]
+    curvature_squared_log = values["curvature_squared_log"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -79,6 +81,14 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FLAT_TT_UNIVERSAL_LOGARITHMIC_GAMMA1_FORM_FACTOR_CERTIFIED_FINITE_CONSTANT_AND_CURVED_COMPLETION_OPEN"
         or flat_tt_log.get("exact_logarithmic_form_factor", {}).get("logarithmic_coefficient")
         != {"numerator": -199, "denominator": 60}
+        or curvature_squared_log.get("covariant_curvature_squared_form_factor", {}).get(
+            "curvature_order"
+        )
+        != 2
+        or curvature_squared_log.get("operator_choice_independence", {}).get(
+            "first_difference_order"
+        )
+        != 3
     ):
         raise ValueError("Paper 12 generated-table dependency drifted")
     return values
@@ -94,6 +104,7 @@ def build() -> str:
     extended = values["extended"]
     gamma1 = values["gamma1"]
     flat_tt_log = values["flat_tt_log"]
+    curvature_squared_log = values["curvature_squared_log"]
     even_orbits = json.loads(
         next(
             item["payload_json"]
@@ -128,6 +139,8 @@ def build() -> str:
         )
     )
     flat_log = flat_tt_log["exact_logarithmic_form_factor"]
+    curved_log = curvature_squared_log["covariant_curvature_squared_form_factor"]
+    operator_comparison = curvature_squared_log["operator_choice_independence"]
     hashes = "\n".join(
         rf"\nolinkurl{{{path.relative_to(ROOT)}}} & \texttt{{{_sha256(path)[:16]}}} \\"
         for path in INPUTS.values()
@@ -203,6 +216,23 @@ finite local $C^2$ constant & open \\
 \end{{tabular}}
 \caption{{Universal nonzero-momentum flat Euclidean TT logarithmic form factor.  The additive finite normalization and curved completion are not fixed.}}
 \label{{tab:generated-flat-tt-logarithm}}
+\end{{table}}
+
+\begin{{table}}[ht]
+\centering
+\begin{{tabular}}{{@{{}}lr@{{}}}}
+\toprule
+Covariant-log datum & exact value \\
+\midrule
+curvature order of $\langle C,\log(\Delta_C/\mu^2)C\rangle$ & {curved_log['curvature_order']} \\
+first admissible operator-choice difference & {operator_comparison['first_difference_order']} \\
+logarithmic coefficient & ${_q(curved_log['logarithmic_coefficient'])}$ \\
+cubic nonlocal completion & open \\
+finite $C^2/R^2$ normalization & open \\
+\bottomrule
+\end{{tabular}}
+\caption{{Covariant curvature-squared logarithm and the exact first-missing-order audit.}}
+\label{{tab:generated-curvature-squared-logarithm}}
 \end{{table}}
 
 \begin{{equation}}

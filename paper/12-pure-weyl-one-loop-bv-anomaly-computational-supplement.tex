@@ -382,6 +382,34 @@ therefore rejects promotion to a curved completion, a zero-momentum result,
 a Lorentzian branch prescription, complete $\Gamma_1/Q_1$, or a particle
 entry.
 
+\subsection{Curvature-squared covariantization}
+
+The next receipt replaces the flat momentum logarithm by the spectral
+logarithm of a positive self-adjoint Laplace-type operator $\Delta_C$ on the
+Weyl-tensor bundle.  On the complement of its kernel,
+\[
+ \Gamma_{1,C^2\log}^{(2)}
+ =-\frac1{(4\pi)^2}\frac{199}{60}
+ \langle C,\Pi_\perp\log(\Delta_C/\mu^2)\Pi_\perp C\rangle.
+\]
+The verifier replays the coefficient and scale response and applies the
+curvature filtration to the resolvent Fréchet derivative.  For
+$\Delta_C'=\Delta_C+V_1+O(\mathcal R^2)$,
+\[
+ d\log(\Delta_C)[V_1]
+ =\int_0^\infty(\Delta_C+s)^{-1}V_1
+ (\Delta_C+s)^{-1}\,ds,
+\]
+so the sandwiched change has exact order $1+1+1=3$.  Operator-choice
+dependence for this $C^2$ carrier therefore starts with the missing cubic form
+factors.  The independent $R^2$ form factor, kernel and boundary data,
+local-Weyl completion and finite $C^2/R^2$ constants remain fail-closed.
+
+The same certificate binds the contraction non-merge: the Berger `tau` row
+is the temporal diffeomorphism ghost in the positive-Berger clock complex,
+whereas the Wess--Zumino `tau` row obeys $Q\tau=\mathcal L_\xi\tau+\omega$.
+The identical printed symbol is not a cross-background carrier map.
+
 \section{Independent verifiers and mutation tests}
 
 The producer and verifier paths are distinct.  The verifiers independently:
@@ -398,12 +426,15 @@ of a generalized inverse to an unconditional global inverse;
 \item replay the flat-TT logarithmic coefficient, scale response and momentum
 difference, and reject promotion of its additive constant or curved
 completion;
+\item replay the curvature-order filtration for the covariant logarithm and
+reject promotion of the cubic remainder, finite constants or Berger/WZ
+contraction merge;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
 
 The generated tables add a publication-layer drift guard.  Their verifier
-loads the nine authoritative table inputs, checks the exact extended boundary
+loads the ten authoritative table inputs, checks the exact extended boundary
 matrix and coefficient image, rebuilds the TeX byte-for-byte, and rejects a
 stale include.
 
@@ -428,6 +459,10 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.flat_tt_logarithmic_gamma1 --check
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_flat_tt_logarithmic_gamma1
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.curvature_squared_covariant_log_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_curvature_squared_covariant_log_gamma1
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
 python3 paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py --check
@@ -443,9 +478,10 @@ atlas validator, and two-pass LaTeX build form the declared publication tier.
 
 The next theorem requires actual new physical input:
 \begin{enumerate}
-\item a compensator-inclusive classical contraction
+\item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the curved Weyl-invariant completion, finite $C^2/R^2$ normalization,
+\item the cubic-and-higher $C^2$ completion, independent $R^2$ form factor,
+finite $C^2/R^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete
 $Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT
 logarithmic contributions;

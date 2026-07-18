@@ -1,5 +1,6 @@
 {
   "certified_claims": {
+    "Berger_WZ_tau_contraction_merge_rejected": true,
     "BoxR_coefficient": {
       "denominator": 1,
       "numerator": 0
@@ -33,12 +34,14 @@
       }
     ],
     "anomaly_induced_nonlocal_Gamma1_representative": true,
+    "covariant_C2_log_through_curvature_order_two": true,
     "extended_H04_even_dimension": 3,
     "extended_H04_odd_dimension": 1,
     "extended_H14_even_dimension": 0,
     "extended_H14_odd_dimension": 0,
     "extended_one_loop_local_Euclidean_QME_restored": true,
     "finite_counterterm_bulk_Q1_ambiguity_rank": 2,
+    "first_unresolved_C2_log_completion_order": 3,
     "flat_TT_logarithmic_coefficient": {
       "denominator": 60,
       "numerator": -199
@@ -57,7 +60,7 @@
     "strict_one_loop_local_Euclidean_QME_obstructed": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "854138f2428395b2533e4f79d4b895d2f78d5bed029470622a8ba1dc0811e138",
+  "compiled_pdf_sha256": "7768ab87bc416f75318f209f6476ed04103ef0fe9eb52960fcb9d98016cfb6e6",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -69,16 +72,18 @@
     "all_loop_extended_QME": false,
     "complete_renormalized_Gamma1_supplied": false,
     "complete_renormalized_Q1_supplied": false,
+    "cubic_nonlocal_curvature_completion": false,
     "finite_polynomial_in_tau_theorem": false,
     "global_BRST_Hadamard_state": false,
     "positive_particle_Hilbert_space": false,
     "quantum_Cartan_identity": false,
     "renormalized_Lorentzian_products": false,
     "residual_quantum_transfer": false,
+    "same_background_compensator_contraction": false,
     "theorem_frozen": false,
     "unitarity_theorem": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact universal flat-TT logarithmic form factor.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact covariant C2 logarithm through curvature order two.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -112,6 +117,10 @@
       "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
       "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
     },
+    "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json": {
+      "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
+      "sha256": "a67a475da6352ad163a907c2fc6ad0bcb1bf804662bc645eca1487685bccde87"
+    },
     "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json": {
       "result_id": "FLAT_TT_LOGARITHMIC_GAMMA1",
       "sha256": "8d4bc8bdf702cf3c7ceb46ddfe1d16e2269fd33b3acc0ee4a033d6b9d2c9482e"
@@ -123,12 +132,12 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "da300560c9930059f479528003caca5094a9e3aea90f4d4d3d4a784cf3bf6e78",
+  "manuscript_sha256": "aa01fc1b9e99aff48e3951770081bd016bfb59c2399bc8619acb2208db9660aa",
   "next_gate": {
     "required_inputs": [
-      "compensator-inclusive classical contraction",
+      "same-background compensator-inclusive classical contraction",
       "finite C2 and R2 normalization conditions",
-      "curved Weyl-invariant Gamma1 completion and global Paneitz Green data",
+      "C2 cubic-and-higher nonlocal completion, the independent R2 form factor, and global Paneitz Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
     "required_outputs": [
@@ -138,17 +147,17 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"
+    "status": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "29766c9d5e23d6a0f0c98e11381041d9a99019a709108c813e71c604a41dfc98",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "2e9355066b460fa59a278bf0aaaa07c9098988cfc91efe6d342cf2053d9696ed",
-    "paper/generate_12_quantum_anomaly_tables.py": "21043fe8aeb7c46dba63a765557b7641d236160efad7aacff1e8de0b1c5d4db4",
-    "paper/generated/12-quantum-anomaly-certificate-tables.tex": "41f00afe0b26c4e7f1953151ba98657df2111ef726b9031dc745b451ed7c128a",
-    "paper/verify_12_quantum_anomaly_tables.py": "1c1f6b97c0f4e38083a95cdf3c4d4fc2d081fbb18056f04359a0462facf5ece5"
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "666e7b9ca8abb07db73bcce893ddc58c57f27b83de2cc84013cc37c3a114f183",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "a84f3c830d81fbc5eba2fa44b2f15e6f0e5e264a98ff04b6797e215a7453979f",
+    "paper/generate_12_quantum_anomaly_tables.py": "e5c0522901329f7f553ceb86d462fca426ac9de36305c0918385dcf8c1776abc",
+    "paper/generated/12-quantum-anomaly-certificate-tables.tex": "1c19f061a0eeab0e60c5a759d76563eeb0a290d7602a403d038d0fc8e1e9bb33",
+    "paper/verify_12_quantum_anomaly_tables.py": "93005b9b34cb39e3a1dfaec9efe663c2c1e02f3cded0b9192544481a0dcd284c"
   },
   "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
-  "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_FLAT_TT_LOGARITHM",
+  "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_COVARIANT_CURVATURE_SQUARED_LOGARITHM",
   "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
   "theory_dispositions": {
     "strict_fixed_field_content": "OBSTRUCTED",

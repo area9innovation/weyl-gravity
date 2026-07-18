@@ -164,8 +164,17 @@ class ActiveFrontierTests(unittest.TestCase):
                 "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"]["CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE"]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["FINITE_R2_NORMALIZATION_FIXED"]
         )
         self.assertFalse(
             self.payload["claim_flags"]["COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED"]
@@ -241,7 +250,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+            "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

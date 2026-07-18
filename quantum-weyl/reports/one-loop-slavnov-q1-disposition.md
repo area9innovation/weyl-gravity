@@ -8,8 +8,12 @@
 > anomaly-induced Euclidean part of `Gamma1`. The later
 > [`FLAT_TT_LOGARITHMIC_GAMMA1`](flat-tt-logarithmic-gamma1.md) receipt fixes
 > the universal nonzero-momentum flat-TT logarithmic coefficient and scale
-> response. The additive finite `C2/R2` normalization, curved Weyl-invariant
-> completion, global Green data, and complete `Q1` remain open.
+> response. The subsequent
+> [`CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1`](curvature-squared-covariant-log-gamma1.md)
+> receipt makes that term covariant through curvature order two and places the
+> first operator-choice ambiguity at order three. The additive finite `C2/R2`
+> normalization, cubic completion, global Green data, and complete `Q1` remain
+> open.
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`.
 

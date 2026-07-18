@@ -21,6 +21,7 @@ def main() -> None:
     assert "\\frac{29}{120}" in rendered
     assert "A_{\\log}" in rendered
     assert "-\\frac{199}{60}" in rendered
+    assert "first admissible operator-choice difference & 3" in rendered
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
     assert values["gauge_fixed"]["gauge_fixed_cohomology"]["H14_classes"] == [
         "ANOM_OMEGA_C2",
@@ -48,6 +49,8 @@ def main() -> None:
         "denominator": 30,
     }
     assert values["flat_tt_log"]["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
+    assert values["curvature_squared_log"]["operator_choice_independence"]["first_difference_order"] == 3
+    assert values["curvature_squared_log"]["claim_flags"]["COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED"] is False
     print("Paper 12 generated quantum-anomaly tables: PASS")
 
 

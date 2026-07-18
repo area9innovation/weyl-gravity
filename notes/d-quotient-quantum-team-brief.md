@@ -486,10 +486,10 @@ with its evidence and claim-boundary report at
 The fragment uses only `CERTIFIED`, `OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE`,
 and `NO_CERTIFIED_MAP`.
 
-It currently emits fourteen common-envelope entries: six all-energy
+It currently emits fifteen common-envelope entries: six all-energy
 vacuum-cylinder E/A/L mode-family rows, two non-particle residual deformation
 rows for `W_+^2` and `W_-^2`, one Berger carrier-gap row, one tangent-cone
-crosswalk, and four non-mode particle guards. Each row separately records classical import, BRST
+crosswalk, and five non-mode particle guards. Each row separately records classical import, BRST
 closure and exactness, pairing, compatible complex structure, Hadamard
 two-point function, state-space signature, anomaly/QME dependency, and
 lifecycle state. The E/A/L positive-frequency and infinite-index Krein
@@ -784,7 +784,7 @@ activation gate was the exact `(199/30,-87/20)` Slavnov vector. The strict
 theory is `OBSTRUCTED`; the compensator cotangent lift and extended `H04/H14`
 are `CERTIFIED`; and the extended one-loop local Euclidean QME is
 `QME_RESTORED`. The active local-to-residual gate is now
-`CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION`.
+`C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION`.
 The coefficient-bearing local Wess--Zumino Hamiltonian contribution
 
 \[
@@ -809,18 +809,34 @@ universal nonzero-momentum flat-TT logarithmic form factor is now also exact:
 \]
 
 Consequently `F_C(p^2)-F_C(q^2)=-(199/60)log(p^2/q^2)` is scheme
-independent on the declared positive Euclidean momentum carrier. The
-additive finite `C2` normalization, finite `R2` normalization, curved
-Weyl-invariant completion, renormalized BV Laplacian or time-ordered product,
-and global Green data remain absent. Complete `Gamma1` and `Q1` therefore
-remain fail-closed,
+independent on the declared positive Euclidean momentum carrier. The spectral
+covariantization
+
+\[
+ -\frac{199}{60}\left\langle C,
+ \log(\Delta_C/\mu^2)C\right\rangle
+\]
+
+is now universal through curvature order two. The resolvent Fréchet formula
+shows that changing the admissible Laplace-type representative first affects
+the sandwiched functional at curvature order three. The independent `R2`
+form factor, additive finite `C2/R2` normalization, cubic-and-higher `C2`
+completion, renormalized BV Laplacian or time-ordered product, and global
+Green data remain absent. Complete `Gamma1` and `Q1` therefore remain fail-closed,
 independently of the still-missing compensator-inclusive classical
 contraction.
 
+The available positive-Berger `34 -> 26` SDR does not supply that contraction.
+Its row named `tau` is the temporal diffeomorphism ghost in the Berger
+gravity--clock complex; Wess--Zumino `tau` is a scalar Weyl compensator in a
+different local-BV carrier. The content-addressed merge audit therefore
+rejects a direct sum or name-based identification.
+
 The currently active ladder work is the QME-dependency rail for Bridge 5, not
 an activated classical-to-quantum mode map. Its remaining local gate is the
-curved Weyl-invariant `Gamma1` completion, finite `C2/R2` normalization and
-complete `Q1`; its independent carrier gate is Bridge 2. The generated
+cubic-and-higher `C2` completion, the independent `R2` form factor, finite
+`C2/R2` normalization and complete `Q1`; its independent carrier gate is
+Bridge 2. The generated
 fail-closed row is
 `quantum.crosswalk.classical_tangent_cone_to_interacting_brst`, with
 `lifecycle_state.status=NO_CERTIFIED_MAP`. The row records Bridge 2 absence in
@@ -855,11 +871,14 @@ certified in
 The universal flat-TT logarithmic coefficient and its finite-normalization
 boundary are certified in
 [`flat-tt-logarithmic-gamma1.md`](../quantum-weyl/reports/flat-tt-logarithmic-gamma1.md).
+Its curvature-squared covariantization and exact first-missing-order theorem
+are certified in
+[`curvature-squared-covariant-log-gamma1.md`](../quantum-weyl/reports/curvature-squared-covariant-log-gamma1.md).
 The theorem spine is assembled in
 [`12-pure-weyl-one-loop-bv-anomaly.tex`](../paper/12-pure-weyl-one-loop-bv-anomaly.tex),
 with a generated claim map and compiled draft PDF. Its
 [`computational supplement`](../paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex)
 is also assembled and warning-free; exact quotient, coefficient, quartet, and
-boundary tables are generated directly from nine hashed receipts and pass an
+boundary tables are generated directly from ten hashed receipts and pass an
 independent stale/tamper check. Specialist prose, citation, and release review
 remain before theorem freeze.

@@ -56,8 +56,11 @@ Every result uses one or more exact tags:
 themselves for a `LORENTZIAN-CAUSAL` claim.
 
 The Euclidean coefficient rail additionally fixes the nonzero-momentum
-flat-TT logarithmic one-loop form-factor coefficient `-199/60`; its additive
-finite constant and curved completion remain open. At bootstrap time there is no certified complete Lorentzian off-shell BV
+flat-TT logarithmic one-loop form-factor coefficient `-199/60`. Its spectral
+covariantization is universal through curvature order two, while its cubic
+completion, the independent `R2` form factor and additive finite `C2/R2`
+constants remain open. At
+bootstrap time there is no certified complete Lorentzian off-shell BV
 propagator, BRST-compatible full-metric Hadamard state, renormalized
 Lorentzian time-ordered product, causal perturbative AQFT construction, or
 Lorentzian QME theorem.

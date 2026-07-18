@@ -1,0 +1,159 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate promotes the flat-TT logarithm to a covariant spectral functional only through total curvature order two. On the source complement of a positive self-adjoint Laplace-type Weyl-bundle operator, its exact coefficient is -199/60 and its scale response is 199/30. The resolvent Frechet formula proves that changing the Laplace-type representative by a curvature-order-one self-adjoint endomorphism changes the sandwiched functional first at curvature order three. It therefore names the next missing data for this C2 carrier precisely: cubic and higher nonlocal curvature form factors. The independent R2 form factor, finite local C2 and R2 normalizations, kernel and boundary global data, local-Weyl completion, complete Gamma1 and Q1, and residual transfer remain open. The available Berger 34-to-26 contraction cannot be used as the compensator extension because its tau is a temporal diffeomorphism ghost on a different background, not the Wess-Zumino scalar compensator. This result is not Lorentzian, a restored renormalized-product theorem, a Hadamard state, Bridge 4, Bridge 5, or a particle statement.",
+  "claim_flags": {
+    "COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED": true,
+    "EXTENDED_CLASSICAL_CONTRACTION_SUPPLIED": false,
+    "FINITE_C2_NORMALIZATION_FIXED": false,
+    "FINITE_R2_NORMALIZATION_FIXED": false,
+    "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE": true,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "contraction_merge_audit": {
+    "WZ_Q_tau": "L_xi tau + omega",
+    "WZ_tau": "scalar Weyl compensator",
+    "available_classical_contraction": "positive-Berger gravity-clock 34-to-26 SDR",
+    "berger_ghost_clock_order": [
+      "tau",
+      "sigma"
+    ],
+    "berger_setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+    "classical_tau": "temporal diffeomorphism ghost",
+    "conclusion": "no compensator-inclusive residual contraction follows by matching the symbol tau or by direct-summing the two certificates",
+    "status": "REJECTED_BACKGROUND_AND_GENERATOR_COLLISION"
+  },
+  "covariant_curvature_squared_form_factor": {
+    "RG_scale_response": {
+      "denominator": 30,
+      "numerator": 199
+    },
+    "coefficient_identity": "A_log=-c/2=-199/60",
+    "curvature_order": 2,
+    "flat_TT_reduction": "F_C(p^2;mu)=-(199/60)log(p^2/mu^2)+z_C(mu)",
+    "functional": "Gamma1_C2_log=(4 pi)^(-2) A_log <C,Pi_perp log(Delta_C/mu^2) Pi_perp C>",
+    "logarithmic_coefficient": {
+      "denominator": 60,
+      "numerator": -199
+    },
+    "mu_log_derivative_on_source_complement": {
+      "denominator": 1,
+      "numerator": -2
+    },
+    "status": "COVARIANT_AND_UNIVERSAL_THROUGH_CURVATURE_ORDER_TWO"
+  },
+  "decision": {
+    "Bridge_4": "NO_CERTIFIED_MAP",
+    "Bridge_5": "NO_CERTIFIED_MAP_BRIDGE_2_ABSENT",
+    "complete_Gamma1": "NO_CERTIFIED_FUNCTIONAL",
+    "complete_Q1": "NO_CERTIFIED_OPERATOR",
+    "complete_curved_Weyl_invariant_remainder": "NO_CERTIFIED_FUNCTIONAL",
+    "covariant_C2_log_through_curvature_order_two": "CERTIFIED",
+    "extended_classical_residual_contraction": "NO_CERTIFIED_MAP",
+    "finite_C2_R2_normalization": "NOT_FIXED",
+    "operator_choice_independence_through_curvature_order_two": "CERTIFIED",
+    "residual_transfer": "FORBIDDEN"
+  },
+  "dependencies": {
+    "Q1_disposition": {
+      "path": "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+      "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
+      "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
+    },
+    "WZ_cotangent_lift": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+      "result_id": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT",
+      "sha256": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1"
+    },
+    "anomaly_induced_Gamma1": {
+      "path": "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+      "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
+      "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
+    },
+    "berger_classical_contraction": {
+      "path": "d_quotient_classical/certificates/BERGER_MINIMAL_34_PORTABLE_CONTRACTION.json",
+      "result_id": "BERGER_MINIMAL_34_PORTABLE_CONTRACTION",
+      "sha256": "f69d8664fb139860fb3bcb89bdf82ee1659e158f6f925535b17e2de364060db4"
+    },
+    "flat_TT_logarithm": {
+      "path": "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
+      "result_id": "FLAT_TT_LOGARITHMIC_GAMMA1",
+      "sha256": "8d4bc8bdf702cf3c7ceb46ddfe1d16e2269fd33b3acc0ee4a033d6b9d2c9482e"
+    },
+    "regulated_breaking": {
+      "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+      "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+      "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "kernel_and_boundary_contract": {
+    "boundary_sector": "FIXED_COMMON_SELF_ADJOINT_ELLIPTIC_DOMAIN_REQUIRED",
+    "kernel_sector": "OPEN_GLOBAL_DATA",
+    "projector": "Pi_perp=1-Pi_ker",
+    "scale_identity": "mu partial_mu log(Delta_C/mu^2)=-2 Pi_perp",
+    "spectral_logarithm": "Pi_perp log(Delta_C/mu^2) Pi_perp",
+    "zero_eigenvalue_logarithm": "UNDEFINED_AND_NOT_SILENTLY_INCLUDED"
+  },
+  "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+  "normalization_and_remainder": {
+    "R2_logarithmic_coefficient": "NOT_DETERMINED_BY_THE_CERTIFIED_ANOMALY_VECTOR",
+    "cubic_nonlocal_completion": "NOT_COMPUTED",
+    "finite_C2_constant": "NOT_FIXED",
+    "finite_R2_constant": "NOT_FIXED",
+    "first_unresolved_C2_log_completion_order": 3,
+    "higher_curvature_completion": "NOT_COMPUTED",
+    "local_Weyl_completion": "NOT_COMPUTED"
+  },
+  "operator_choice_independence": {
+    "comparison": "Delta_C_prime=Delta_C+V_1+O(curvature^2)",
+    "conclusion": "the curvature-squared logarithmic functional is independent of the admissible Laplace-type representative modulo O(curvature^3)",
+    "first_difference_order": 3,
+    "frechet_formula": "d log(Delta_C)[V_1]=integral_0^infinity (Delta_C+s)^(-1) V_1 (Delta_C+s)^(-1) ds",
+    "hypothesis": "V_1 is a self-adjoint curvature-order-one bundle endomorphism on the same domain and both logarithms use the same source-complement prescription",
+    "left_C_order": 1,
+    "operator_variation_order": 1,
+    "right_C_order": 1,
+    "status": "EXACT_CURVATURE_FILTRATION_CERTIFICATE"
+  },
+  "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
+  "result_state": "COVARIANT_CURVATURE_SQUARED_C2_LOG_CERTIFIED_CUBIC_COMPLETION_AND_FINITE_NORMALIZATIONS_OPEN",
+  "schema": "quantum-weyl-curvature-squared-covariant-log-gamma1-v1",
+  "scope": {
+    "carrier": "algebraic Weyl-tensor bundle on the source complement of ker(Delta_C)",
+    "dimension": 4,
+    "expansion": "covariant perturbation theory through total curvature order two",
+    "geometry": "compact Riemannian manifold without boundary or a fixed common self-adjoint elliptic boundary domain",
+    "operator": "positive self-adjoint Laplace-type Delta_C with rough principal symbol and spectral logarithm on Pi_perp",
+    "signature": "Euclidean"
+  },
+  "source_provenance": {
+    "covariant_perturbation_theory": {
+      "arxiv": "0911.1168",
+      "authors": [
+        "A. O. Barvinsky",
+        "Yu. V. Gusev",
+        "V. V. Zhytnikov",
+        "G. A. Vilkovisky"
+      ],
+      "title": "Covariant perturbation theory (IV). Third order in the curvature",
+      "url": "https://arxiv.org/abs/0911.1168",
+      "use": "curvature-ordered nonlocal form factors and the separation of quadratic from cubic completion data"
+    },
+    "nonlinear_completion_example": {
+      "arxiv": "1507.06321",
+      "authors": [
+        "J. F. Donoghue",
+        "B. K. El-Menoufi"
+      ],
+      "title": "Covariant non-local action for massless QED and the curvature expansion",
+      "url": "https://arxiv.org/abs/1507.06321",
+      "use": "explicit demonstration that covariantizing the flat logarithm supplies the curvature-squared term while matching corrections begin at cubic curvature order"
+    }
+  }
+}
