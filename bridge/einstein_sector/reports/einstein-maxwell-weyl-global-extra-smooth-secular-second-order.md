@@ -25,15 +25,29 @@ moment maps already proved to vanish on the complete orbit.  The finite block
 right inverses consequently assemble a real smooth spatially periodic
 second-order correction.
 
-The aligned twist--extra mixed block is now also coefficient-explicit.  A
-separate direct four-dimensional fixture supplies all sixteen `L=1,3`
-channels; thirteen have printed exact polynomial corrections, three vanish,
-and all four action rows have zero remainder.  This does not yet print the
-remaining global/global and extra/extra self corrections for an arbitrary
-orbit point, so the complete correction retains its blockwise-constructive
-rather than fully coefficient-printed status.
+The complete declared orbit is now coefficient-explicit.  The aligned
+twist--extra mixed block supplies all sixteen `L=1,3` channels; thirteen have
+printed exact polynomial corrections and three vanish.  The global/global
+self-source has a printed exceptional polar `L=1` correction and generic
+polar `L=2` correction.  The extra/extra ledger contains all twenty
+independent complex bilinear generators for the canonical `C^4` extra
+multiplicity vector, including arbitrary relative phases.  Every
+nonstabilizer `L=2,4` block has a printed correction with zero remainder.
 
-This is a blockwise constructive existence theorem.  It does not print every
-correction coefficient, certify boundedness, produce a compact-product
-retarded solution, prove all-orders integration, or descend to residual,
+After converting the direct `P_2` and `Y_10=cos(theta)` fixtures to the
+cone's common `2*pi`-factored harmonic convention, the sole remaining
+homogeneous source is
+
+```text
+beta^2 - Q_e^2/2 - (2/3) X,
+```
+
+which vanishes exactly by the certified cone equation.  Thus the direct
+source calculation and the moment-map classification agree with all
+normalization factors restored.
+
+This is a coefficient-explicit second-order theorem on the declared
+single-fibre shared-axis `SO(3)` orbit.  It does not certify boundedness,
+produce a compact-product retarded solution, classify distinct momenta or
+multiple fibres, prove all-orders integration, or descend to residual,
 observational, particle, or quantum claims.

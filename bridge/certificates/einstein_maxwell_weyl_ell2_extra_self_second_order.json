@@ -1,0 +1,1408 @@
+{
+  "assembly_formula": {
+    "negative_frequencies": "take the complex conjugate of every positive-frequency correction",
+    "sum_diagonal": "multiply the stored raw correction for sum:i:i by (5/16)*x_i**2",
+    "sum_offdiagonal": "multiply the stored raw correction for sum:i:j by (5/8)*x_i*x_j",
+    "zero_diagonal": "multiply the stored raw correction for zero:i:i by (5/8)*|x_i|**2",
+    "zero_offdiagonal": "add (5/8)*(x_i*conjugate(x_j)*K_ij+conjugate(x_i)*x_j*conjugate(K_ij))"
+  },
+  "bilinear_correction_ledger": {
+    "sum:a1:a1": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-869832/1757",
+            "0",
+            "-183384/1757",
+            "25920/1757"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "30456/7",
+            "0",
+            "8712/7",
+            "-2592/7"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-180576/1505",
+            "0",
+            "49248/1505",
+            "2592/1505"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "155520/7",
+            "0",
+            "10368/35",
+            "20736/7"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "correction_C_K_U": [
+          "81/40",
+          "0",
+          "0"
+        ],
+        "remainder": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "2304/5",
+          "-1152/5",
+          "0"
+        ]
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "polar"
+    },
+    "sum:a1:a2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "correction_C_K_U": [
+          "0",
+          "0",
+          "0"
+        ],
+        "remainder": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "polar"
+    },
+    "sum:a1:p1": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "312/7",
+            "0",
+            "1416/7",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-100224/7",
+            "0",
+            "-10368/7",
+            "0"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "288/35",
+            "0",
+            "15264/35",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-93312/7",
+            "0",
+            "-62208/7",
+            "0"
+          ]
+        }
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "axial"
+    },
+    "sum:a1:p2": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "39744*sqrt(3)/1757",
+            "0",
+            "15552*sqrt(3)/1757"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-165888*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "-6912*sqrt(3)/1505",
+            "0",
+            "-20736*sqrt(3)/301"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-27648*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "axial"
+    },
+    "sum:a2:a2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "121928/15813",
+            "0",
+            "8776/5271",
+            "-7456/5271"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-1256/21",
+            "0",
+            "-5848/189",
+            "224"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "7456/4515",
+            "0",
+            "7328/1505",
+            "-5408/1505"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-4736/21",
+            "0",
+            "-128/315",
+            "256"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "correction_C_K_U": [
+          "13/120",
+          "0",
+          "0"
+        ],
+        "remainder": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "3328/135",
+          "-1664/135",
+          "0"
+        ]
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "polar"
+    },
+    "sum:a2:p1": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "40904/5271",
+            "0",
+            "-93144/1757"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-59264/7",
+            "0",
+            "6016/7"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "6816/1505",
+            "0",
+            "-170208/1505"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "1920/7",
+            "0",
+            "8448/35"
+          ]
+        }
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "axial"
+    },
+    "sum:a2:p2": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "64*sqrt(3)/63",
+            "0",
+            "320*sqrt(3)/21",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-8192*sqrt(3)/21",
+            "0",
+            "-2048*sqrt(3)/21",
+            "0"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "-256*sqrt(3)/105",
+            "0",
+            "3328*sqrt(3)/105",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "5120*sqrt(3)/7",
+            "0",
+            "-4096*sqrt(3)/7",
+            "0"
+          ]
+        }
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "axial"
+    },
+    "sum:p1:p1": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "131712/251",
+            "0",
+            "3525120/1757",
+            "99552/1757"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "35712",
+            "0",
+            "-1506432/7",
+            "-1536"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-79872/215",
+            "0",
+            "73728/301",
+            "607968/1505"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "61056",
+            "0",
+            "76416/7",
+            "-9216"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "correction_C_K_U": [
+          "2493/2",
+          "0",
+          "0"
+        ],
+        "remainder": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "283648",
+          "-141824",
+          "0"
+        ]
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "polar"
+    },
+    "sum:p1:p2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "-4096*sqrt(3)/21",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "196608*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "-12288*sqrt(3)/35",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "147456*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "correction_C_K_U": [
+          "0",
+          "0",
+          "0"
+        ],
+        "remainder": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "polar"
+    },
+    "sum:p2:p2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-4808704/5271",
+            "0",
+            "-1277952/1757",
+            "55296/1757"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-24576/7",
+            "0",
+            "188416/3",
+            "-32768/7"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "720896/1505",
+            "0",
+            "-196608/1505",
+            "448512/1505"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-663552/7",
+            "0",
+            "24576/5",
+            "-196608/7"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "correction_C_K_U": [
+          "-1632/5",
+          "0",
+          "0"
+        ],
+        "remainder": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "-1114112/15",
+          "557056/15",
+          "0"
+        ]
+      },
+      "output_frequency": "8*sqrt(3)/3",
+      "output_parity": "polar"
+    },
+    "zero:a1:a1": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-3384/7",
+            "0",
+            "3096/7",
+            "-576/7"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "2376",
+            "0",
+            "-9720/7",
+            "-2592/7"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-550944/5075",
+            "0",
+            "-133344/5075",
+            "288/175"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "114048/5",
+            "0",
+            "114048/7",
+            "20736/7"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "disposition": "stabilizer component; assembled with the global source on the Taub cone",
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "-6912/5",
+          "0",
+          "-3456/5",
+          "0"
+        ]
+      },
+      "output_frequency": "0",
+      "output_parity": "polar"
+    },
+    "zero:a1:a2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "-1152/145",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-4608",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "disposition": "stabilizer component; assembled with the global source on the Taub cone",
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "output_frequency": "0",
+      "output_parity": "polar"
+    },
+    "zero:a1:p1": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "216/7",
+            "0",
+            "216",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "10368/7",
+            "0",
+            "-10368/7",
+            "0"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "-14688/1015",
+            "0",
+            "66528/145",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-590976/7",
+            "0",
+            "-62208/7",
+            "0"
+          ]
+        }
+      },
+      "output_frequency": "0",
+      "output_parity": "axial"
+    },
+    "zero:a1:p2": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "-576*sqrt(3)/7",
+            "0",
+            "576*sqrt(3)/7"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "55296*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "6912*sqrt(3)/1015",
+            "0",
+            "-6912*sqrt(3)/1015"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-248832*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "output_frequency": "0",
+      "output_parity": "axial"
+    },
+    "zero:a2:a2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-2392/189",
+            "0",
+            "1976/189",
+            "-160/189"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "4168/63",
+            "0",
+            "-40/3",
+            "544/7"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-318368/137025",
+            "0",
+            "136352/137025",
+            "-4064/4725"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "35968/105",
+            "0",
+            "128/3",
+            "-4352/7"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "disposition": "stabilizer component; assembled with the global source on the Taub cone",
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "-3328/45",
+          "0",
+          "-1664/45",
+          "0"
+        ]
+      },
+      "output_frequency": "0",
+      "output_parity": "polar"
+    },
+    "zero:a2:p1": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "440/21",
+            "0",
+            "-24"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-14208/7",
+            "0",
+            "-128/7"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "0",
+            "8544/1015",
+            "0",
+            "-2016/145"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-308352/7",
+            "0",
+            "-768/7"
+          ]
+        }
+      },
+      "output_frequency": "0",
+      "output_parity": "axial"
+    },
+    "zero:a2:p2": {
+      "blocks": {
+        "axial_L2": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "64*sqrt(3)/63",
+            "0",
+            "320*sqrt(3)/21",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "0",
+            "-2048*sqrt(3)/21",
+            "0"
+          ]
+        },
+        "axial_L4": {
+          "coefficient_order": [
+            "H_t",
+            "H_x",
+            "Q_t",
+            "Q_x"
+          ],
+          "correction": [
+            "-256*sqrt(3)/105",
+            "0",
+            "3328*sqrt(3)/105",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-13312*sqrt(3)",
+            "0",
+            "-4096*sqrt(3)/7",
+            "0"
+          ]
+        }
+      },
+      "output_frequency": "0",
+      "output_parity": "axial"
+    },
+    "zero:p1:p1": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-25600/7",
+            "0",
+            "37248/7",
+            "1440/7"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-54144/7",
+            "0",
+            "-225408/7",
+            "480768/7"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-270336/5075",
+            "0",
+            "16656384/5075",
+            "75552/175"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-12018816/35",
+            "0",
+            "-4150656/7",
+            "2884608/7"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "disposition": "stabilizer component; assembled with the global source on the Taub cone",
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "-119808/5",
+          "0",
+          "-59904/5",
+          "0"
+        ]
+      },
+      "output_frequency": "0",
+      "output_parity": "polar"
+    },
+    "zero:p1:p2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "-3072*sqrt(3)/7",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-147456*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "0",
+            "-479232*sqrt(3)/1015",
+            "0",
+            "0"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "0",
+            "-1916928*sqrt(3)/7",
+            "0",
+            "0"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "disposition": "stabilizer component; assembled with the global source on the Taub cone",
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      },
+      "output_frequency": "0",
+      "output_parity": "polar"
+    },
+    "zero:p2:p2": {
+      "blocks": {
+        "polar_L2": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "-16384/7",
+            "0",
+            "8192/3",
+            "-10240/21"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "40960/7",
+            "0",
+            "-106496/7",
+            "-32768/7"
+          ]
+        },
+        "polar_L4": {
+          "coefficient_order": [
+            "A_t",
+            "B",
+            "C_t",
+            "U"
+          ],
+          "correction": [
+            "13041664/15225",
+            "0",
+            "-851968/2175",
+            "-2048/525"
+          ],
+          "remainder": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_action_rows": [
+            "-4104192/35",
+            "0",
+            "-122880/7",
+            "-196608/7"
+          ]
+        }
+      },
+      "homogeneous_L0": {
+        "disposition": "stabilizer component; assembled with the global source on the Taub cone",
+        "source_rows_E00_E11_E22_Maxwell1": [
+          "-65536/5",
+          "0",
+          "-32768/5",
+          "0"
+        ]
+      },
+      "output_frequency": "0",
+      "output_parity": "polar"
+    }
+  },
+  "claim_boundary": "This coefficient-explicit theorem covers the extra/extra self-source on the aligned representative and its SO(3) orbit. Global/global and global-extra mixed corrections are separate inputs to the aggregate smooth-secular theorem. Bounded, causal, all-orders, final residual, observable and quantum claims remain excluded.",
+  "classification": {
+    "all_sum_blocks_solved": true,
+    "all_zero_nonstabilizer_blocks_solved": true,
+    "arbitrary_relative_phases_covered": true,
+    "causal_retarded_or_all_orders_claim": false,
+    "complete_C4_extra_self_source_coefficient_explicit": true,
+    "only_zero_homogeneous_stabilizer_component_remains": true,
+    "zero_homogeneous_component_cancels_with_global_source_on_cone": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "normalization_bridge": {
+    "combined_E00": "beta**2-Q_e**2/2-(2/3)*X",
+    "combined_remainder_on_cone": "0",
+    "cone_Gram_diagonal": [
+      "1296",
+      "208/3",
+      "22464",
+      "12288"
+    ],
+    "cone_basis_order": [
+      "a1",
+      "a2",
+      "p1",
+      "p2"
+    ],
+    "cone_equation": "beta**2=Q_e**2/2+(2/3)*X",
+    "direct_fixture_to_cone_extra_amplitude": "x_raw=sqrt(5/2)*x because the direct P_2 fixture and the cone current use a common 2*pi-factored angular convention",
+    "direct_fixture_to_cone_twist_amplitude": "B_raw=sqrt(3/2)*beta",
+    "extra_homogeneous_E00_after_reality_and_normalization": "-(2/3)*X",
+    "global_homogeneous_E00_after_normalization": "beta**2-Q_e**2/2"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_extra_self_second_order.py",
+    "generator_sha256": "7cbdcef40e7b263b695e049374610c6fb5164b74f06e33a02a3eb00698739c2c",
+    "inputs": {
+      "cone": {
+        "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
+        "sha256": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+      },
+      "global_self": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
+        "sha256": "5035c84c0cbc7a35c8ea32dfc27e489be93bad919b77110d43e5c8f24909af30"
+      },
+      "polar_noether": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+        "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+      },
+      "source": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell2_extra_pair_source_fixture.json",
+        "sha256": "458a5d6f53edd5beaa088699f29e5253552a06cf473af838fb067a737c856f93"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_EXTRA_SELF_SECOND_ORDER",
+  "result_state": "CANONICAL_C4_EXTRA_SELF_SOURCE_COEFFICIENT_EXPLICIT_OUTSIDE_THE_SINGLE_TAUB_COMPONENT",
+  "schema": "einstein-maxwell-weyl-ell2-extra-self-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_extra_self_second_order.schema.json",
+  "schema_sha256": "92b5ebbbc485c050ff0295bfc86dc1dd7de2bf75dd5a05248a01a297ca5697d9",
+  "scope": "arbitrary complex C4 axial/polar ell=2,m=0,k=0 extra-primary amplitude on the shared-axis representative of the complete global-extra orbit",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_extra_self_second_order --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_extra_self_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_extra_self_second_order"
+  ]
+}

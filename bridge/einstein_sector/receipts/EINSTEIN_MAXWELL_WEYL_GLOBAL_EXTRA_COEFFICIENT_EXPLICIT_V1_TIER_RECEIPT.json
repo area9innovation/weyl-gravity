@@ -1,0 +1,42 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_COEFFICIENT_EXPLICIT_V1",
+  "producing_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.97,
+      "commands": [
+        "python3 -m py_compile <scoped coefficient-chain Python paths>",
+        "python3 -m json.tool <scoped certificates, schemas, atlas and 20 generated fragments>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 32.46,
+      "maxrss_kb": 73216,
+      "commands": [
+        "global source fixture check and global correction generator/verifier/tests",
+        "extra-pair manifest check and extra-self correction generator/verifier/tests",
+        "aggregate smooth-secular theorem generator/verifier/tests",
+        "relative branch dictionary generator/verifier/tests",
+        "atlas generator, schema validator, independent verifier and tests"
+      ],
+      "unit_tests_passed": 23
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 622.77,
+      "maxrss_kb": 98120,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_extra_pair_source_fixture --replay --workers 4"
+      ],
+      "criterion": "theorem promotion to a complete coefficient-explicit one-fibre orbit required replay of all twenty direct four-dimensional bilinear generators"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the promoted theorem is scoped to one compact-product k=0 shared-axis orbit; causal, multi-fibre, residual, all-orders and quantum claims remain excluded"
+    }
+  }
+}

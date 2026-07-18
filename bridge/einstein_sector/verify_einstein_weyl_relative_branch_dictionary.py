@@ -58,6 +58,8 @@ def main() -> None:
         raise AssertionError("global--extra bounded obstruction handoff was lost")
     if not value["classification"]["complete_global_extra_smooth_secular_extension_imported"]:
         raise AssertionError("global--extra smooth extension handoff was lost")
+    if not value["classification"]["complete_global_extra_coefficient_ledger_imported"]:
+        raise AssertionError("complete global--extra coefficient ledger handoff was lost")
     if not value["classification"]["aligned_twist_extra_L1_L3_coefficient_correction_imported"]:
         raise AssertionError("aligned twist--extra coefficient correction handoff was lost")
     boundary = rows["ph.boundary.relative"]

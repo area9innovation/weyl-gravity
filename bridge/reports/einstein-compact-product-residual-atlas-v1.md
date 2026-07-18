@@ -35,6 +35,11 @@ smooth-secular and causal/retarded correction classes.  In particular:
 - the completed `d`-cross axial-plus-polar matrix has certified cancellable
   resonant projections in both parities but remains `OPEN` as a full
   nonlinear extension;
+- the complete declared one-fibre shared-axis global--extra orbit is
+  `OBSTRUCTED` for bounded/finite-quasiperiodic corrections but `CERTIFIED`
+  for smooth exponential-polynomial corrections, with coefficient-explicit
+  global/global, all sixteen twist--extra, and all twenty `C^4` extra/extra
+  bilinear generators;
 - every compact-product causal/retarded verdict remains `OPEN`;
 - the crosswalk to asymptotic or vacuum-cylinder modes is
   `NO_CERTIFIED_MAP`.

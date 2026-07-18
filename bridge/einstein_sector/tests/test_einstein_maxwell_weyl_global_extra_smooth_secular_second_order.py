@@ -31,7 +31,7 @@ class GlobalExtraSmoothSecularSecondOrderTests(unittest.TestCase):
     def test_no_later_lifecycle_promotion(self) -> None:
         flags = self.value["classification"]
         self.assertTrue(flags["aligned_twist_extra_L1_L3_correction_coefficient_explicit"])
-        self.assertFalse(flags["coefficient_explicit_correction_printed"])
+        self.assertTrue(flags["coefficient_explicit_correction_printed"])
         self.assertFalse(flags["causal_retarded_map_certified"])
         self.assertFalse(flags["all_orders_integrability"])
 

@@ -1,0 +1,95 @@
+{
+  "claim_boundary": "This theorem closes the aligned global/global self-source only. It does not add extra-primary self-products or global-extra cross-products and therefore does not yet make the complete certified global-extra orbit coefficient-explicit.",
+  "classification": {
+    "complete_aligned_global_self_source_classified": true,
+    "electric_twist_exceptional_polar_L1_source_removable": true,
+    "full_global_extra_orbit_coefficient_explicit": false,
+    "global_self_second_order_extendible_iff_taub_condition": true,
+    "twist_self_polar_L2_source_removable": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "first_order_taub_condition": {
+    "constant_twist_position": "A is unconstrained because it has zero time-translation moment map when A and B are aligned",
+    "equation": "4*B**2-3*Q_e**2=0",
+    "normalization_audit": "the twist harmonic is Y_10=cos(theta), with integral Y_10^2=4*pi/3; restoring the omitted current factors gives 2*L*(4*pi/3)*B^2-2*pi*L*Q_e^2=0"
+  },
+  "homogeneous_L0": {
+    "source_factor": "4*B**2 - 3*Q_e**2",
+    "source_rows": {
+      "maxwell_0": "0",
+      "maxwell_1": "0",
+      "metric_00": "2*B**2/3 - Q_e**2/2",
+      "metric_01": "0",
+      "metric_11": "-2*B**2/3 + Q_e**2/2",
+      "sphere_trace": "2*B**2/3 - Q_e**2/2"
+    },
+    "verdict": "OBSTRUCTED off 4*B**2=3*Q_e**2; identically zero on that cone",
+    "zero_frequency_linear_operator": "zero on the homogeneous (C,K,U) coefficient block"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_orbit_self_second_order.py",
+    "generator_sha256": "2c1117402442d1a59aa2c0aafa9873a5f9ef142d24a9e52bdc6a29d59134677f",
+    "input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_source_fixture.json",
+      "sha256": "0ef2e9b2fe058e2e5cc0e13a708559ad867cfe2b63ada094203876d50459fe27"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ORBIT_SELF_SECOND_ORDER",
+  "result_state": "ALIGNED_TWIST_ELECTRIC_GLOBAL_SELF_SOURCE_EXACTLY_SOLVED_ON_ITS_TAUB_CONE",
+  "schema": "einstein-maxwell-weyl-global-orbit-self-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_orbit_self_second_order.schema.json",
+  "schema_sha256": "0ca1cd8c1ab828c1610cafec4afab2dbb9957a464974be9f91a37d8c665cd1a1",
+  "scope": "real aligned ell=1 twist position A, twist velocity B and homogeneous electric tangent Q_e at k=0 on the fixed N=2 magnetic bundle, before final residual quotient",
+  "second_order_correction": {
+    "axial_L1": {
+      "correction": "zero",
+      "source": "identically zero"
+    },
+    "homogeneous_L0": {
+      "C2": "0",
+      "K2": "0",
+      "U2": "0"
+    },
+    "polar_L1": {
+      "A_t2": "-B*Q_e",
+      "B2": "0",
+      "C_t2": "B*Q_e",
+      "U2": "0",
+      "all_eight_row_remainders": {
+        "maxwell_axial_density": "0",
+        "metric_00": "0",
+        "metric_01": "0",
+        "metric_0a": "0",
+        "metric_11": "0",
+        "metric_1a": "0",
+        "sphere_trace": "0",
+        "sphere_tracefree": "0"
+      }
+    },
+    "polar_L2": {
+      "A_t2": "-5*B**2/6",
+      "B2": "0",
+      "C_t2": "5*B**2/6 - 2*(A + B*t)**2/3",
+      "U2": "-7*B**2/36",
+      "all_eight_row_remainders": {
+        "maxwell_axial_density": "0",
+        "metric_00": "0",
+        "metric_01": "0",
+        "metric_0a": "0",
+        "metric_11": "0",
+        "metric_1a": "0",
+        "sphere_trace": "0",
+        "sphere_tracefree": "0"
+      }
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_orbit_self_second_order --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_orbit_self_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_orbit_self_second_order"
+  ]
+}

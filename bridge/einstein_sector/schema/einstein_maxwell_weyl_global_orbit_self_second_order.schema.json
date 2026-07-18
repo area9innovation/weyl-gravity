@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "first_order_taub_condition",
+    "homogeneous_L0",
+    "second_order_correction",
+    "classification",
+    "provenance",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-global-orbit-self-second-order-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ORBIT_SELF_SECOND_ORDER"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_aligned_global_self_source_classified",
+        "electric_twist_exceptional_polar_L1_source_removable",
+        "twist_self_polar_L2_source_removable",
+        "global_self_second_order_extendible_iff_taub_condition",
+        "full_global_extra_orbit_coefficient_explicit"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

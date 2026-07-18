@@ -27,8 +27,8 @@ def verify() -> None:
         raise AssertionError("smooth correction theorem lost")
     if not flags["aligned_twist_extra_L1_L3_correction_coefficient_explicit"]:
         raise AssertionError("printed aligned twist--extra mixed block was lost")
-    if flags["coefficient_explicit_correction_printed"]:
-        raise AssertionError("printed mixed block silently promoted the full orbit")
+    if not flags["coefficient_explicit_correction_printed"]:
+        raise AssertionError("complete coefficient-explicit orbit correction was lost")
     if flags["bounded_correction_exists"] or flags["causal_retarded_map_certified"] or flags["all_orders_integrability"]:
         raise AssertionError("a distinct lifecycle was over-promoted")
     s = sp.Rational(16, 3)

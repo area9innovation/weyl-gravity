@@ -62,7 +62,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["second_order"]["smooth_secular"]["status"], "CERTIFIED")
-        self.assertIn("13 exact corrections and 3 zero sources", entry["mode_data"]["second_order"]["smooth_secular"]["statement"])
+        self.assertIn("all 20 C4 extra/extra bilinear generators", entry["mode_data"]["second_order"]["smooth_secular"]["statement"])
         self.assertIn("no additional off-axis branch", entry["mode_data"]["resonance"]["statement"])
 
 

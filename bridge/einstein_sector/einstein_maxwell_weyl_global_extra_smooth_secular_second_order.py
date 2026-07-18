@@ -30,6 +30,8 @@ INPUTS = {
     "electric": ROOT / "bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json",
     "twist_polynomial_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
+    "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
+    "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
 }
 
 
@@ -131,6 +133,12 @@ def build() -> dict[str, Any]:
         raise AssertionError("aligned twist--extra coefficient block changed")
     if records["aligned_twist_extra_coefficients"]["classification"]["complete_arbitrary_orbit_correction_coefficient_explicit"]:
         raise AssertionError("scoped coefficient block over-promoted the complete orbit")
+    if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
+        raise AssertionError("global/global coefficient input changed")
+    if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:
+        raise AssertionError("extra/extra coefficient input changed")
+    if not records["extra_self_coefficients"]["classification"]["zero_homogeneous_component_cancels_with_global_source_on_cone"]:
+        raise AssertionError("normalized homogeneous cancellation changed")
 
     ledger = _channel_ledger()
     return {
@@ -138,7 +146,7 @@ def build() -> dict[str, Any]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER",
-        "result_state": "COMPLETE_NONZERO_GLOBAL_EXTRA_COMMON_ZERO_ORBIT_SECOND_ORDER_EXTENDIBLE_IN_SMOOTH_EXPONENTIAL_POLYNOMIAL_CLASS",
+        "result_state": "COMPLETE_NONZERO_GLOBAL_EXTRA_COMMON_ZERO_ORBIT_COEFFICIENT_EXPLICIT_SECOND_ORDER_EXTENSION_IN_SMOOTH_EXPONENTIAL_POLYNOMIAL_CLASS",
         "lifecycle_state": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "scope": {
@@ -167,6 +175,9 @@ def build() -> dict[str, Any]:
             "stabilizer_disposition": "all five moment maps vanish identically on the complete certified orbit",
             "assembly": "apply the finite block right inverse in every ledger channel and impose conjugate corrections on conjugate frequencies",
             "printed_mixed_block": "all 16 aligned twist-position/velocity times ell=2 extra L=1,3 channels are classified; 13 exact polynomial corrections are printed, 3 sources vanish, and every full action-row remainder is zero",
+            "printed_global_self_block": "the aligned twist-position/velocity plus electric global self-source is printed in L=0,1,2; its complete correction exists exactly on 4*B_raw^2=3*Q_e^2",
+            "printed_extra_self_block": "all 20 canonical C4 bilinear extra-self generators are printed; every L=2,4 block has an exact zero-remainder correction and the sole L=0 stabilizer row cancels the normalized global source on the complete cone",
+            "complete_orbit_assembly": "combine the printed global/global, global/extra and extra/extra corrections with the declared reality factors and rotate the shared-axis representative by SO(3)",
         },
         "channel_ledger": ledger,
         "correction_classes": {
@@ -180,24 +191,24 @@ def build() -> dict[str, Any]:
             "all_nonstabilizer_smooth_secular_cokernels_zero": True,
             "smooth_exponential_polynomial_second_order_correction_exists": True,
             "aligned_twist_extra_L1_L3_correction_coefficient_explicit": True,
-            "coefficient_explicit_correction_printed": False,
+            "coefficient_explicit_correction_printed": True,
             "bounded_correction_exists": False,
             "causal_retarded_map_certified": False,
             "all_orders_integrability": False,
         },
-        "interpretation": "The same nonzero global--extra tangent is excluded if its correction must remain bounded, yet extends at second order when finite secular growth is allowed. The distinction is entirely correction-class dependent: the twist velocity forces a quadratic zero-frequency source, while the smooth exponential-polynomial category supplies polynomial right inverses and removes every propagation resonance after the stabilizer moment maps vanish.",
-        "next_gate": "print the remaining zero-frequency global/global and extra/extra self coefficients if the complete orbit correction is needed explicitly, then classify opposite momenta, relative phases, multiple absolute-momentum fibres and the causal compact-source category separately",
-        "claim_boundary": "The aligned twist--extra mixed L=1,3 block is coefficient-explicit, but this remains a blockwise constructive existence theorem rather than a printed formula for every correction component on the complete orbit. It does not give a bounded correction, a causal/retarded solution, all-orders integration, final residual descent, an observable, particle state or quantum theorem.",
+        "interpretation": "The same nonzero global--extra tangent is excluded if its correction must remain bounded, yet has a fully coefficient-explicit second-order extension when finite secular growth is allowed. The direct global and extra homogeneous sources cancel exactly on the normalized Taub cone, and every remaining finite harmonic block has a printed exact right inverse.",
+        "next_gate": "classify opposite momenta, relative phases across distinct m or absolute-momentum fibres, and the causal compact-source category separately; do not reopen the completed one-fibre shared-axis coefficient ledger",
+        "claim_boundary": "The complete declared one-fibre shared-axis SO3 orbit is coefficient-explicit at second order in the smooth exponential-polynomial class. This does not give a bounded correction, a causal/retarded solution, all-orders integration, final residual descent, an observable, particle state or quantum theorem.",
         "source_manifest": {str(path.relative_to(ROOT)): _sha256(path) for path in (*INPUTS.values(), Path(__file__).resolve(), SCHEMA)},
         "verification_receipt": {
             "producing_date": "2026-07-18",
-            "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <certificate and schema>", "git diff --check -- <scoped paths>"]},
+            "tier_0": {"status": "PASS", "elapsed_seconds": 0.97, "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped certificate, fragment and schema paths>", "git diff --check -- <scoped paths>"]},
             "tier_1": {
                 "status": "PASS",
-                "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_extra_smooth_secular_second_order --check", "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_extra_smooth_secular_second_order.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_extra_smooth_secular_second_order"],
-                "elapsed_seconds": {"generator_check": 0.53, "independent_verifier": 0.60, "unit_tests": 0.09},
+                "commands": ["complete affected coefficient chain: global source/correction, extra source/correction, aggregate theorem, branch dictionary and atlas generators/verifiers/tests"],
+                "elapsed_seconds": 32.46,
             },
-            "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "inputs": list(INPUTS)},
+            "tier_2": {"status": "PASS", "elapsed_seconds": 622.77, "maxrss_kb": 98120, "commands": ["python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell2_extra_pair_source_fixture --replay --workers 4"], "reason": "all twenty direct four-dimensional bilinear generators replayed with complete-basis and unused-node angular audits"},
             "tier_3": {"status": "NOT_RUN", "reason": "bounded and smooth categories are separated; causal, multi-fibre and all-orders gates remain open"},
         },
         "verification_commands": [

@@ -2164,7 +2164,8 @@ bounded finite-quasiperiodic corrections to bounded sources, no such
 correction exists.  This does not obstruct the smooth exponential-polynomial
 class; its complete mixed right inverse is now the sole local nonlinear gate.
 
-That smooth gate is now closed at the blockwise constructive level.  The
+That smooth gate is now closed coefficientwise on the complete declared
+shared-axis orbit.  The
 quadratic source has finite closure in `L=0,...,4` and frequencies
 `0,+/-omega_e,+/-2*omega_e`.  The aligned twist--extra cross has only `L=1,3`
 and is off shell; the `ell=0`--extra `L=2` channel is p-resonant but admits a
@@ -2172,24 +2173,46 @@ finite secular inverse.  After gauge/Noether reduction every nonstabilizer
 Smith factor is surjective on finite exponential-polynomial coefficients,
 while the remaining five stabilizer pairings vanish on the certified orbit.
 Thus every orbit point has a smooth spatially periodic finite exponential-
-polynomial second-order correction.  This is existence by exact blockwise
-right inverses, not yet a complete printed coefficient list; bounded remains `OBSTRUCTED`
-and causal/retarded remains `NO_CERTIFIED_MAP`.
+polynomial second-order correction.  Bounded remains `OBSTRUCTED` and
+causal/retarded remains `NO_CERTIFIED_MAP`.
 
-The currently active bridge-1 nonlinear input has now advanced one scoped
-coefficient gate.  A separate direct four-dimensional aligned source fixture
-classifies all sixteen twist-position/velocity times `ell=2` extra-primary
-`L=1,3` channels.  Thirteen nonzero sources have printed exact polynomial
-right inverses and three vanish identically; every full action-row remainder,
-including the rows omitted in the exceptional `L=1` gauge slices, is zero.
+The coefficient gate is now complete in this carrier.  A direct
+four-dimensional global/global fixture exposes the electric--twist polar
+`L=1` source and removes it with
+`(A_t,C_t,U)=(-B Q_e,B Q_e,0)`; the polar `L=2` twist self-correction is also
+printed on all eight rows.  A second direct four-dimensional producer
+computes all twenty independent complex bilinear generators of the canonical
+`C^4` extra multiplicity vector: ten positive-frequency sums and ten
+Hermitian zero-frequency generators.  Same-parity products give polar
+`L=0,2,4`; mixed-parity products give axial `L=2,4`.  The complete allowed
+harmonic basis and an unused angular node are audited, arbitrary relative
+phases are retained, and every nonstabilizer block has a printed exact
+correction with zero remainder.
+
+The normalization bridge is explicit:
+
+```text
+B_raw^2=(3/2) beta^2,
+|x_raw|^2=(5/2)|x|^2,
+S_00^global+S_00^extra=beta^2-Q_e^2/2-(2/3)X=0.
+```
+
+Thus the direct homogeneous source cancels exactly by the certified cone
+equation `beta^2=Q_e^2/2+(2/3)X`.  Together with the already printed sixteen
+twist--extra channels (thirteen nonzero corrections and three zero sources),
+this makes the complete declared one-fibre shared-axis `SO(3)` orbit
+coefficient-explicit at second order in the smooth exponential-polynomial
+class.
+
 The fail-closed atlas row remains
 `einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face`: its
-smooth-secular status is `CERTIFIED`, now with coefficient-explicit mixed
-`L=1,3` evidence.  The complete arbitrary-orbit coefficient list is still
-`OPEN`, because the remaining zero-frequency global/global and extra/extra
-self coefficients have not been printed.  This result is bridge input only;
-bridge 1 stays `ONSHELL_MAP_ONLY` with activation gate `OPEN`, and the
-causal/retarded atlas cell stays `NO_CERTIFIED_MAP`.
+smooth-secular status is `CERTIFIED` with the complete coefficient ledger.
+Bridge 1 remains activated only at its separately certified compact-product
+noncyclic linear triangle lifecycle; this nonlinear result does not certify a
+relative `q2/q3` morphism.  Opposite momenta, distinct `m` superpositions not
+on the shared-axis orbit, multiple `|k|` fibres, causal/retarded transport,
+all-orders integration, final residual descent, observational maps and
+quantum transfer remain fail-closed.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
