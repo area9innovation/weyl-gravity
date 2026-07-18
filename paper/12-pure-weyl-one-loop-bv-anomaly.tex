@@ -1226,7 +1226,52 @@ These equations compute the canonical local residues, not the full Schur
 determinant.  The regulated finite value $\mathcal R(K)$, the finite part of
 $\mathcal R(K^2)$, and any zeta multiplicative anomaly remain open.
 Converting $\operatorname{Wres}\log S_L$ into a pole or scale coefficient
-also requires the order and normalization of the chosen reference operator.
+requires the order and normalization of a chosen reference operator; the next
+proposition makes that choice explicitly.
+\end{proposition}
+
+\begin{proposition}[Order-two weighted-trace pole and scale row]
+On the primed scalar space let
+\[
+ Q=\Delta_0+\Pi_0,\qquad \operatorname{ord}Q=2,
+ \qquad Q_\mu=Q/\mu^2,
+\]
+where the smoothing projector only restores invertibility.  Declare
+\[
+ \mathcal R_\mu(A)=\underset{z=0}{\operatorname{FP}}\,
+ \operatorname{TR}'\!\left[AQ_\mu^{-z}\right].
+\]
+The weighted-trace Laurent formula~\cite{PaychaWeightedTrace} gives
+\[
+ \operatorname{TR}'(AQ^{-z})
+ =\frac{\operatorname{Wres}(A)}{2z}+\mathcal R_Q(A)+O(z).
+\]
+Since $Q_\mu^{-z}=\mu^{2z}Q^{-z}$, multiplication of the Laurent series
+fixes both normalizations:
+\[
+ \mathcal R_{e^t\mu}(A)-\mathcal R_\mu(A)
+ =t\operatorname{Wres}(A).
+\]
+In particular,
+\[
+ \underset{z=0}{\operatorname{Res}}\,
+ \operatorname{TR}'\!\left[(\log S_L)Q^{-z}\right]
+ =\frac1{(4\pi)^2}\int_M
+ \frac{5R^2+22R_{\mu\nu}R^{\mu\nu}}{108},
+\]
+and
+\[
+ \boxed{
+ \frac{\dd}{\dd\log\mu}
+ \log\operatorname{Det}_{3,\mathcal R_\mu}(S_L)
+ =\operatorname{Wres}\log S_L
+ =\frac1{(4\pi)^2}\int_M
+ \frac{5R^2+22R_{\mu\nu}R^{\mu\nu}}{54}.}
+\]
+This closes the reference-specific pole and scale conversion.  It does not
+fix the reference-scale constants $\mathcal R_{\mu_0}(K)$ and
+$\operatorname{FP}\mathcal R_{\mu_0}(K^2)$, nor the local multiplicative
+anomaly of a separately factorized zeta prescription~\cite{KontsevichVishik}.
 \end{proposition}
 
 \begin{proposition}[Exact ghost $n=3$ scalar-flat five-carrier projection]
@@ -1332,8 +1377,8 @@ one normalized scalar Schur determinant.  Its order-$-2$ correction is proved
 to lie in $\mathcal S_3$, the canonical $\det_3$ tail exists, and
 $\operatorname{Wres}(K)$, $\operatorname{Wres}(K^2)$, and
 $\operatorname{Wres}\log S_L$ are exact.  The regulated finite
-$\mathcal R(K)$ and $\mathcal R(K^2)$ rows, the reference-specific scale
-conversion, possible local zeta term, and physical kernel, hence the
+$\mathcal R(K)$ and $\mathcal R(K^2)$ reference-scale finite rows, possible
+local zeta term, and physical kernel, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
@@ -1380,6 +1425,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json}.
 \item \cert{quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json}.
@@ -1437,6 +1483,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_schur_schatten_split
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_schur_wodzicki_residue
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_schur_weighted_trace_scale
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m \
@@ -1594,6 +1642,16 @@ D.~V. Vassilevich,
 \emph{Heat kernel expansion: user's manual},
 Phys. Rep. \textbf{388} (2003), 279--360,
 \href{https://arxiv.org/abs/hep-th/0306138}{arXiv:hep-th/0306138}.
+
+\bibitem{PaychaWeightedTrace}
+S.~Paycha,
+\emph{Weighted trace cochains; a geometric setup for anomalies},
+\href{https://arxiv.org/abs/math-ph/0503033}{arXiv:math-ph/0503033}.
+
+\bibitem{KontsevichVishik}
+M.~Kontsevich and S.~Vishik,
+\emph{Determinants of elliptic pseudo-differential operators},
+\href{https://arxiv.org/abs/hep-th/9404046}{arXiv:hep-th/9404046}.
 
 \end{thebibliography}
 

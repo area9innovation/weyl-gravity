@@ -1,0 +1,157 @@
+{
+  "Schur_determinant_scale_row": {
+    "Ricci_basis": "d/dlog(mu) log Det_(3,R_mu)(S_L)=(4 pi)^-2 integral[5 R^2+22 Ric_mn Ric^mn]/54",
+    "finite_scale_transport": "log Det_(3,R_mu1)-log Det_(3,R_mu0)=log(mu1/mu0) Wres(log S_L)",
+    "pole": "Res_[z=0] TR_prime[log(S_L) Q^(-z)]=(1/2)Wres(log S_L)",
+    "renormalized_split": "log Det_(3,R_mu)(I+K)=R_mu(K)-(1/2)R_mu(K^2)+log det_3(I+K)",
+    "scale_response": "d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L)"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate chooses the explicit primed scalar weight Q=Delta_0+Pi_0 of order two and converts the already certified Schur Wodzicki residues into exact weighted-trace pole and renormalization-scale rows. With Q_mu=Q/mu^2, the scale response of the renormalized Schur split is Wres(log S_L)=(4 pi)^-2 integral[(5 R^2+22 Ric^2)/54]. This fixes scale transport, not the reference-scale finite constants R_mu0(K) and FP R_mu0(K^2), and it does not compute a separately factorized zeta multiplicative anomaly, the full Schur determinant, the physical fourth-order Hessian, complete Gamma1/Q1, residual transfer, Lorentzian QME, state, particle, positivity, scattering or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED": false,
+    "K2_WEIGHTED_TRACE_POLE_COMPUTED": true,
+    "K_WEIGHTED_TRACE_POLE_COMPUTED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "ORDER_TWO_WEIGHTED_TRACE_DECLARED": true,
+    "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": false,
+    "REFERENCE_FINITE_R_K2_COMPUTED": false,
+    "REFERENCE_FINITE_R_K_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false,
+    "SCHUR_SCALE_COEFFICIENT_COMPUTED": true,
+    "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "Wodzicki_residue": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE",
+      "sha256": "536d2d44d2d60499c2167935b7e77fa80238a94cd9138bc2e462f7d33582cc10"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_conversion": {
+    "dimensionful_scale_power": 2,
+    "pole_coefficients_Ricci_basis": {
+      "K": {
+        "R2": {
+          "denominator": 18,
+          "numerator": 1
+        },
+        "Ric2": {
+          "denominator": 9,
+          "numerator": 2
+        }
+      },
+      "K2": {
+        "R2": {
+          "denominator": 54,
+          "numerator": 1
+        },
+        "Ric2": {
+          "denominator": 27,
+          "numerator": 1
+        }
+      },
+      "log_S": {
+        "R2": {
+          "denominator": 108,
+          "numerator": 5
+        },
+        "Ric2": {
+          "denominator": 54,
+          "numerator": 11
+        }
+      }
+    },
+    "scale_coefficients_Ricci_basis": {
+      "K": {
+        "R2": {
+          "denominator": 9,
+          "numerator": 1
+        },
+        "Ric2": {
+          "denominator": 9,
+          "numerator": 4
+        }
+      },
+      "K2": {
+        "R2": {
+          "denominator": 27,
+          "numerator": 1
+        },
+        "Ric2": {
+          "denominator": 27,
+          "numerator": 2
+        }
+      },
+      "log_S": {
+        "R2": {
+          "denominator": 54,
+          "numerator": 5
+        },
+        "Ric2": {
+          "denominator": 27,
+          "numerator": 11
+        }
+      }
+    },
+    "scale_to_weight_order_ratio": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "weight_order": 2
+  },
+  "lifecycle_state": "SCALE_ROW_COMPLETE_REFERENCE_FINITE_VALUES_OPEN",
+  "next_gate": "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+  "references": [
+    {
+      "arxiv": "math-ph/0503033",
+      "authors": "S. Paycha",
+      "role": "weighted trace finite part, weight-change formula and Wodzicki residue normalization",
+      "title": "Weighted trace cochains; a geometric setup for anomalies"
+    },
+    {
+      "arxiv": "hep-th/9404046",
+      "authors": "M. Kontsevich and S. Vishik",
+      "role": "zeta determinants, canonical traces and local multiplicative anomalies",
+      "title": "Determinants of elliptic pseudo-differential operators"
+    }
+  ],
+  "regularization_boundary": {
+    "computed": [
+      "order-two weighted-trace pole coefficients for K, K^2 and log S_L",
+      "mu-scale transport of R_mu(K), R_mu(K^2) and the renormalized Schur split"
+    ],
+    "full_Schur_determinant": "NOT_COMPUTED",
+    "still_required": [
+      "reference-scale finite constant R_mu0(K)",
+      "reference-scale finite part R_mu0(K^2)",
+      "local multiplicative anomaly for any separately factorized zeta prescription",
+      "same-gauge generic physical fourth-order Hessian kernel"
+    ]
+  },
+  "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE",
+  "result_state": "ORDER_TWO_WEIGHTED_TRACE_POLE_AND_SCALE_RESPONSE_COMPUTED",
+  "schema": "quantum-weyl-generic-background-ghost-schur-weighted-trace-scale-v1",
+  "scope": {
+    "dimension": 4,
+    "dimensionless_weight": "Q_mu=Q/mu^2",
+    "manifold": "closed compact smooth manifold without boundary",
+    "mode_domain": "primed nonzero scalar ghost modes with the zero-mode projector restored only to make the weight invertible",
+    "operator_scope": "normalized scalar Schur factor S_L=I+K",
+    "signature": "Euclidean",
+    "weight": "Q=Delta_0+Pi_0, positive elliptic scalar weight of order q=2"
+  },
+  "weighted_trace_definition": {
+    "Laurent_expansion": "TR_prime(A Q^(-z))=Wres(A)/(2z)+R_Q(A)+O(z)",
+    "constant_weight_change": "tr^(cQ)(A)-tr^Q(A)=-(log c/2) Wres(A)",
+    "scale_identity": "R_(exp(t)mu)(A)-R_mu(A)=t Wres(A)",
+    "trace": "R_mu(A)=FP_[z=0] TR_prime[A (Q/mu^2)^(-z)]",
+    "zero_mode_policy": "Pi_0 makes Q invertible and is smoothing, so it does not alter any Wodzicki residue"
+  }
+}

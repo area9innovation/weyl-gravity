@@ -903,9 +903,11 @@ pseudodifferential operator in every Schatten class `S_p`, `p>2`; the
 canonical `det_3(I+K)` tail is therefore defined. The exact local residues are
 `Wres(K)=(4 pi)^-2 integral (R^2+4 Ric^2)/9`,
 `Wres(K^2)=(4 pi)^-2 integral (R^2+2 Ric^2)/27`, and
-`Wres(log S_L)=(4 pi)^-2 integral (5 R^2+22 Ric^2)/54`. The finite regulated
-`R(K)` and `R(K^2)` rows, reference-specific zeta scale conversion, and any
-local multiplicative anomaly remain open, as does the generic
+`Wres(log S_L)=(4 pi)^-2 integral (5 R^2+22 Ric^2)/54`. With the declared
+order-two scalar weight `(Delta_0+Pi_0)/mu^2`, the weighted-trace pole and
+scale row are exact: `d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L)`. The
+reference-scale finite `R(K)` and `R(K^2)` rows and any local multiplicative
+anomaly remain open, as does the generic
 physical fourth-order Hessian. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
@@ -921,8 +923,8 @@ rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient. Its three
 longitudinal `D_W` towers are now one normalized scalar Schur series, with the
 canonical `det_3` tail and all three Schur residue rows fixed. The remaining
-local gate begins with computing the finite regulated `R(K)` and `R(K^2)`
-rows, the reference-specific scale conversion, and any local zeta term,
+local gate begins with computing the reference-scale finite `R(K)` and
+`R(K^2)` rows and any local zeta term,
 together with the physical fourth-order
 Hessian kernel, followed by the five
 parity-even third-curvature repository
@@ -1033,7 +1035,7 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds thirty-five direct certificate dependencies, including the formerly indirect
+binds thirty-six direct certificate dependencies, including the formerly indirect
 pure-Diff/mixed quotient and factorwise coefficient ledger. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).

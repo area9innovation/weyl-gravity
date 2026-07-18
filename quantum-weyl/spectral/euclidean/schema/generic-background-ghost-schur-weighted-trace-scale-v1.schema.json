@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-generic-background-ghost-schur-weighted-trace-scale-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "scope", "weighted_trace_definition",
+    "exact_conversion", "Schur_determinant_scale_row", "regularization_boundary",
+    "claim_flags", "dependencies", "references", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-schur-weighted-trace-scale-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE"},
+    "result_state": {"const": "ORDER_TWO_WEIGHTED_TRACE_POLE_AND_SCALE_RESPONSE_COMPUTED"},
+    "lifecycle_state": {"const": "SCALE_ROW_COMPLETE_REFERENCE_FINITE_VALUES_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {"$ref": "#/$defs/nonemptyObject"},
+    "weighted_trace_definition": {"$ref": "#/$defs/nonemptyObject"},
+    "exact_conversion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weight_order", "dimensionful_scale_power", "scale_to_weight_order_ratio", "pole_coefficients_Ricci_basis", "scale_coefficients_Ricci_basis"],
+      "properties": {
+        "weight_order": {"const": 2},
+        "dimensionful_scale_power": {"const": 2},
+        "scale_to_weight_order_ratio": {"$ref": "#/$defs/rational"},
+        "pole_coefficients_Ricci_basis": {"$ref": "#/$defs/nonemptyObject"},
+        "scale_coefficients_Ricci_basis": {"$ref": "#/$defs/nonemptyObject"}
+      }
+    },
+    "Schur_determinant_scale_row": {"$ref": "#/$defs/nonemptyObject"},
+    "regularization_boundary": {"$ref": "#/$defs/nonemptyObject"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ORDER_TWO_WEIGHTED_TRACE_DECLARED", "K_WEIGHTED_TRACE_POLE_COMPUTED",
+        "K2_WEIGHTED_TRACE_POLE_COMPUTED", "SCHUR_SCALE_COEFFICIENT_COMPUTED",
+        "REFERENCE_FINITE_R_K_COMPUTED", "REFERENCE_FINITE_R_K2_COMPUTED",
+        "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED", "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED",
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "ORDER_TWO_WEIGHTED_TRACE_DECLARED": {"const": true},
+        "K_WEIGHTED_TRACE_POLE_COMPUTED": {"const": true},
+        "K2_WEIGHTED_TRACE_POLE_COMPUTED": {"const": true},
+        "SCHUR_SCALE_COEFFICIENT_COMPUTED": {"const": true},
+        "REFERENCE_FINITE_R_K_COMPUTED": {"const": false},
+        "REFERENCE_FINITE_R_K2_COMPUTED": {"const": false},
+        "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED": {"const": false},
+        "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED": {"const": false},
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Wodzicki_residue"],
+      "properties": {"Wodzicki_residue": {"$ref": "#/$defs/dependency"}}
+    },
+    "references": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/reference"}},
+    "next_gate": {"const": "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN"},
+    "claim_boundary": {"type": "string", "minLength": 400}
+  },
+  "$defs": {
+    "nonemptyObject": {"type": "object", "minProperties": 1},
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "result_id": {"type": "string", "minLength": 10},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "authors", "arxiv", "role"],
+      "properties": {
+        "title": {"type": "string", "minLength": 10},
+        "authors": {"type": "string", "minLength": 3},
+        "arxiv": {"type": "string", "minLength": 7},
+        "role": {"type": "string", "minLength": 10}
+      }
+    }
+  }
+}

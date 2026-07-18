@@ -1003,10 +1003,34 @@ the mixed heat row and the sphere second moment.  It also replays the exact
 Einstein ratio and the isotropic test $W=w\mathbf1$, and rejects a mutated
 mixed-kernel Ricci coefficient.
 
-These residues are not silently called zeta-pole coefficients.  Their
-conversion requires a chosen reference operator, its order, and a normalized
-trace prescription.  The finite $\mathcal R(K)$ row, the finite part of
-$\mathcal R(K^2)$, and any multiplicative anomaly remain open.
+Choose the positive order-two scalar weight
+\[
+ Q=\Delta_0+\Pi_0,\qquad Q_\mu=Q/\mu^2,qquad
+ \mathcal R_\mu(A)=\underset{z=0}{\operatorname{FP}}
+ \operatorname{TR}'(AQ_\mu^{-z}).
+\]
+The smoothing projector changes no residue.  The weighted-trace Laurent row
+and the square on the dimensionful scale give
+\[
+ \operatorname{TR}'(AQ^{-z})
+ =\frac{\operatorname{Wres}(A)}{2z}+\mathcal R_Q(A)+O(z),qquad
+ \mathcal R_{e^t\mu}(A)-\mathcal R_\mu(A)=t\operatorname{Wres}(A).
+\]
+Thus the exact Schur pole and scale rows are
+\[
+ \underset{z=0}{\operatorname{Res}}\,
+ \operatorname{TR}'((\log S_L)Q^{-z})
+ =\frac1{(4\pi)^2}\int\frac{5R^2+22\operatorname{Ric}^2}{108},
+\]
+\[
+ \frac{\dd}{\dd\log\mu}
+ \log\operatorname{Det}_{3,\mathcal R_\mu}(S_L)
+ =\frac1{(4\pi)^2}\int\frac{5R^2+22\operatorname{Ric}^2}{54}.
+\]
+The independent verifier reconstructs the factor
+`scale power / weight order = 2/2` and rejects the mutated choice $Q/\mu$.
+The reference-scale finite $\mathcal R_{\mu_0}(K)$ row, the finite part of
+$\mathcal R_{\mu_0}(K^2)$, and any multiplicative anomaly remain open.
 
 \begin{verbatim}
 P=spectral.euclidean
@@ -1017,6 +1041,12 @@ PYTHONPATH=quantum-weyl pytest -q \
  quantum-weyl/spectral/euclidean/tests/test_$M.py
 
 M=generic_background_ghost_schur_wodzicki_residue
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=generic_background_ghost_schur_weighted_trace_scale
 PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
 PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
 PYTHONPATH=quantum-weyl pytest -q \
@@ -1055,9 +1085,9 @@ momentum $J_3$ is scaleless and infrared singular.  The nonzero-momentum
 triangle and its repository projection are certified separately; the three
 longitudinal $D_W$ one-/two-insertion towers are resummed by the preceding
 Schur factor.  Its canonical $\det_3$ tail and the $K$, $K^2$, and logarithmic
-residues are exact; the finite regulated $\mathcal R(K)$ and
-$\mathcal R(K^2)$ rows, reference-specific scale conversion, and local zeta
-term remain open.
+residues and the declared order-two weighted-trace pole/scale row are exact;
+the reference-scale finite $\mathcal R(K)$ and $\mathcal R(K^2)$ rows and
+local zeta term remain open.
 Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
 carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
 cyclic trace, the cyclic sum of one trace times one pair trace, and the product
@@ -1114,8 +1144,9 @@ longitudinal sectors carry two, four, and six external derivatives and can
 feed $I_{24},I_{25},I_{28},I_{29}$.  The three longitudinal $D_W$
 one-/two-insertion towers are resummed by the preceding Schur factor; its
 canonical $\det_3$ tail and the $K$, $K^2$, and logarithmic residues are
-exact, while the two finite regulated trace rows, reference-specific scale
-conversion, and possible local zeta term remain unevaluated.
+exact, and the declared order-two weighted-trace pole/scale row is fixed,
+while the two reference-scale finite trace rows and possible local zeta term
+remain unevaluated.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \

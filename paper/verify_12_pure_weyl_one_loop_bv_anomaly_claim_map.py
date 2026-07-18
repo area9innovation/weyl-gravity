@@ -52,6 +52,8 @@ def main() -> None:
         "\\operatorname{Wres}(K)=",
         "\\operatorname{Wres}(K^2)",
         "\\operatorname{Wres}\\log S_L",
+        "Order-two weighted-trace pole and scale row",
+        "\\frac{\\dd}{\\dd\\log\\mu}",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -215,6 +217,15 @@ def main() -> None:
     assert claims["generic_ghost_log_S_Wodzicki_residue"] == (
         "Wres(log S_L)=(4 pi)^-2 integral[5 R^2+22 Ric_mn Ric^mn]/54"
     )
+    assert claims["generic_ghost_order_two_weighted_trace_scale_coefficient"] == (
+        "d/dlog(mu) log Det_(3,R_mu)(S_L)=(4 pi)^-2 integral[5 R^2+22 Ric_mn Ric^mn]/54"
+    )
+    assert claims["generic_ghost_order_two_weighted_trace_pole_coefficients"][
+        "log_S"
+    ] == {
+        "R2": {"numerator": 5, "denominator": 108},
+        "Ric2": {"numerator": 11, "denominator": 54},
+    }
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     assert claims["Euler_Wess_Zumino_primitive_displayed"] is True
     boolean_claims = {
@@ -228,17 +239,16 @@ def main() -> None:
     ] is False
     assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
     assert payload["explicit_nonclaims"]["generic_ghost_finite_part_R_K2"] is False
-    assert payload["explicit_nonclaims"]["generic_ghost_zeta_scale_coefficient"] is False
     assert payload["explicit_nonclaims"][
         "generic_ghost_zeta_multiplicative_anomaly_computed"
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN"
+        == "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 35
+    assert len(payload["inputs"]) == 36
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -273,6 +283,9 @@ def main() -> None:
     generic_ghost_longitudinal_schur = dependencies["GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION"]
     generic_ghost_schur_schatten = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT"]
     generic_ghost_schur_wodzicki = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"]
+    generic_ghost_schur_scale = dependencies[
+        "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE"
+    ]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -440,6 +453,18 @@ def main() -> None:
     ] is True
     assert generic_ghost_schur_wodzicki["claim_flags"][
         "ZETA_SCALE_COEFFICIENT_COMPUTED"
+    ] is False
+    assert generic_ghost_schur_scale["claim_flags"][
+        "SCHUR_SCALE_COEFFICIENT_COMPUTED"
+    ] is True
+    assert generic_ghost_schur_scale["Schur_determinant_scale_row"][
+        "Ricci_basis"
+    ] == claims["generic_ghost_order_two_weighted_trace_scale_coefficient"]
+    assert generic_ghost_schur_scale["exact_conversion"][
+        "pole_coefficients_Ricci_basis"
+    ] == claims["generic_ghost_order_two_weighted_trace_pole_coefficients"]
+    assert generic_ghost_schur_scale["claim_flags"][
+        "REFERENCE_FINITE_R_K_COMPUTED"
     ] is False
     assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
         generic_ghost_n1_n2_vector["formula_digest"]

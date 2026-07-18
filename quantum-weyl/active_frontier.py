@@ -71,6 +71,7 @@ DEPENDENCIES = {
     "generic_ghost_longitudinal_Schur_resummation": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
     "generic_ghost_Schur_Schatten_split": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json",
     "generic_ghost_Schur_Wodzicki_residue": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json",
+    "generic_ghost_Schur_weighted_trace_scale": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
     "scalar_flat_K_Ricci_crosswalk": HERE / "transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
@@ -172,6 +173,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_ghost_longitudinal_Schur_resummation": "THREE_LONGITUDINAL_DW_CARRIERS_RESUMMED_TO_ONE_NORMALIZED_SCALAR_SCHUR_FACTOR_WITH_REGULATOR_BOUNDARY",
         "generic_ghost_Schur_Schatten_split": "SCHUR_CORRECTION_IN_S3_WITH_CANONICAL_DET3_TAIL_AND_EXACT_CRITICAL_K2_RESIDUE",
         "generic_ghost_Schur_Wodzicki_residue": "SCHUR_K_AND_LOGARITHM_WODZICKI_RESIDUES_COMPUTED",
+        "generic_ghost_Schur_weighted_trace_scale": "ORDER_TWO_WEIGHTED_TRACE_POLE_AND_SCALE_RESPONSE_COMPUTED",
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
@@ -203,6 +205,7 @@ def _load() -> dict[str, dict[str, Any]]:
     generic_ghost_longitudinal_schur = values["generic_ghost_longitudinal_Schur_resummation"]
     generic_ghost_schur_schatten = values["generic_ghost_Schur_Schatten_split"]
     generic_ghost_schur_wodzicki = values["generic_ghost_Schur_Wodzicki_residue"]
+    generic_ghost_schur_scale = values["generic_ghost_Schur_weighted_trace_scale"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
@@ -671,6 +674,33 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("generic ghost Schur Wodzicki frontier drifted")
+    if (
+        generic_ghost_schur_scale.get("Schur_determinant_scale_row", {}).get(
+            "Ricci_basis"
+        )
+        != "d/dlog(mu) log Det_(3,R_mu)(S_L)=(4 pi)^-2 integral[5 R^2+22 Ric_mn Ric^mn]/54"
+        or generic_ghost_schur_scale.get("exact_conversion", {}).get(
+            "scale_to_weight_order_ratio"
+        )
+        != {"numerator": 1, "denominator": 1}
+        or generic_ghost_schur_scale.get("claim_flags", {}).get(
+            "SCHUR_SCALE_COEFFICIENT_COMPUTED"
+        )
+        is not True
+        or generic_ghost_schur_scale.get("claim_flags", {}).get(
+            "REFERENCE_FINITE_R_K_COMPUTED"
+        )
+        is not False
+        or generic_ghost_schur_scale.get("claim_flags", {}).get(
+            "REFERENCE_FINITE_R_K2_COMPUTED"
+        )
+        is not False
+        or generic_ghost_schur_scale.get("claim_flags", {}).get(
+            "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost Schur weighted-trace scale frontier drifted")
     if (
         generic_ghost_n3.get("angular_average", {}).get("coefficients", {}).get(
             "tr_R3"
@@ -1641,8 +1671,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_AND_K_K2_LOG_RESIDUES_COMPUTED_RENORMALIZED_K_K2_ROWS_AND_Q1_UNDERDETERMINED",
-                "next_gate": "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_AND_WEIGHTED_TRACE_SCALE_ROW_COMPUTED_REFERENCE_FINITE_K_K2_ROWS_AND_Q1_UNDERDETERMINED",
+                "next_gate": "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1657,8 +1687,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_AND_K_K2_LOG_RESIDUES_COMPUTED_RENORMALIZED_K_K2_ROWS_PHYSICAL_FOURTH_ORDER_KERNEL_INTEGRATED_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_LONGITUDINAL_SCHUR_DET3_TAIL_K_K2_LOG_RESIDUES_AND_WEIGHTED_TRACE_SCALE_ROW_COMPUTED_REFERENCE_FINITE_K_K2_ROWS_PHYSICAL_FOURTH_ORDER_KERNEL_INTEGRATED_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
             },
         },
         "supersession_ledger": [
@@ -1796,7 +1826,7 @@ def build() -> dict[str, Any]:
             "WODZICKI_RESIDUE_K_COMPUTED": True,
             "RENORMALIZED_R_K_COMPUTED": False,
             "FINITE_PART_R_K2_COMPUTED": False,
-            "ZETA_SCALE_COEFFICIENT_COMPUTED": False,
+            "ZETA_SCALE_COEFFICIENT_COMPUTED": True,
             "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED": False,
             "ZETA_FACTORIZATION_WITHOUT_LOCAL_MULTIPLICATIVE_ANOMALY_PROVED": False,
             "ORDINARY_FREDHOLM_DETERMINANT_CLASS_PROVED": False,
@@ -1873,7 +1903,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+            "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1952,7 +1982,7 @@ def build() -> dict[str, Any]:
             "Wres(K)=(4 pi)^-2 integral(R^2+4 Ric^2)/9, "
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. "
-            "The regulated R(K), finite R(K^2), reference-specific scale conversion, and possible "
+            "For the declared order-two scalar weight Q_mu=(Delta_0+Pi_0)/mu^2, the weighted-trace pole and scale conversion are exact: d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L). The reference-scale finite R(K), finite R(K^2), and possible "
             "local zeta multiplicative term remain open. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
@@ -1997,8 +2027,7 @@ def build() -> dict[str, Any]:
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. Ordinary trace-class "
             "determinacy is not implied; the regulated R(K), finite R(K^2), and a possible local "
-            "multiplicative-anomaly term remain open. Conversion of the residues to a pole or scale coefficient "
-            "requires the selected reference-operator order and trace normalization. "
+            "multiplicative-anomaly term remain open. The selected order-two weight fixes the pole and scale normalization but not the finite constants. "
             "The five parity-even third-curvature repository functions and "
             "coefficients, the parity-odd derivative manifest, renormalized "
             "BV Laplacian or time-ordered product, finite normalization conditions, and global Green data "
@@ -2271,7 +2300,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("WODZICKI_RESIDUE_LOG_S_COMPUTED") is not True
         or flags.get("RENORMALIZED_R_K_COMPUTED") is not False
         or flags.get("FINITE_PART_R_K2_COMPUTED") is not False
-        or flags.get("ZETA_SCALE_COEFFICIENT_COMPUTED") is not False
+        or flags.get("ZETA_SCALE_COEFFICIENT_COMPUTED") is not True
         or flags.get("ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED") is not False
         or flags.get("GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED")
         is not True
@@ -2422,6 +2451,7 @@ def validate(result: dict[str, Any]) -> None:
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
             "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED",
+            "ZETA_SCALE_COEFFICIENT_COMPUTED",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")

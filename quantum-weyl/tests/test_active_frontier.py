@@ -256,7 +256,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertFalse(self.payload["claim_flags"]["RENORMALIZED_R_K_COMPUTED"])
         self.assertFalse(self.payload["claim_flags"]["FINITE_PART_R_K2_COMPUTED"])
-        self.assertFalse(self.payload["claim_flags"]["ZETA_SCALE_COEFFICIENT_COMPUTED"])
+        self.assertTrue(self.payload["claim_flags"]["ZETA_SCALE_COEFFICIENT_COMPUTED"])
         self.assertFalse(
             self.payload["claim_flags"]["ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"]
         )
@@ -421,7 +421,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+            "COMPUTE_REFERENCE_FINITE_R_K_AND_R_K2_AND_LOCAL_MULTIPLICATIVE_TERM_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],
