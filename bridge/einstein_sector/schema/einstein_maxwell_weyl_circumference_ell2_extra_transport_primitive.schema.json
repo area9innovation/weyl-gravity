@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "transport_primitive",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "source_manifest", "verification_commands", "verification_receipt"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-circumference-ell2-extra-transport-primitive-v1"},
+    "schema_path": {"type": "string", "minLength": 1},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CIRCUMFERENCE_ELL2_EXTRA_TRANSPORT_PRIMITIVE"},
+    "result_state": {"const": "COEFFICIENT_EXPLICIT_RESONANT_TRANSPORT_PRIMITIVE_ALL_FOUR_EXTRA_COLUMNS"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {"type": "object"},
+    "transport_primitive": {
+      "type": "object",
+      "required": ["frequency_convention", "specialization", "transport_rule", "axial", "polar", "negative_control", "disposition"],
+      "properties": {
+        "specialization": {
+          "type": "object",
+          "required": ["ell", "lambda", "k", "omega_squared", "p", "q"],
+          "properties": {"ell": {"const": 2}, "lambda": {"const": 6}, "k": {"const": 0}, "omega_squared": {"const": "16/3"}, "p": {"const": "0"}, "q": {"const": "-104/9"}}
+        },
+        "negative_control": {"type": "object", "required": ["detected"], "properties": {"detected": {"const": true}}},
+        "disposition": {
+          "type": "object",
+          "required": ["potential_p_primary_resonance", "actual_source_requires_secular_prefactor", "all_four_extra_columns_printed", "all_four_extra_columns_in_linear_image"],
+          "properties": {
+            "potential_p_primary_resonance": {"const": true},
+            "actual_source_requires_secular_prefactor": {"const": false},
+            "all_four_extra_columns_printed": {"const": true},
+            "all_four_extra_columns_in_linear_image": {"const": true}
+          }
+        },
+        "frequency_convention": {"type": "string"},
+        "transport_rule": {"type": "object"},
+        "axial": {"type": "object"},
+        "polar": {"type": "object"}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_four_extra_transport_columns_printed", "full_six_row_axial_remainder_zero",
+        "full_eight_row_polar_remainder_zero", "unique_nonzero_source_is_second_polar_column",
+        "ordinary_harmonic_primitive_suffices_at_p_resonance",
+        "secular_prefactor_required_for_actual_circumference_source",
+        "covariant_index_weight_mutation_rejected", "all_m_by_naturality",
+        "causal_retarded_map_certified", "residual_or_quantum_claim"
+      ],
+      "properties": {
+        "complete_four_extra_transport_columns_printed": {"const": true},
+        "full_six_row_axial_remainder_zero": {"const": true},
+        "full_eight_row_polar_remainder_zero": {"const": true},
+        "unique_nonzero_source_is_second_polar_column": {"const": true},
+        "ordinary_harmonic_primitive_suffices_at_p_resonance": {"const": true},
+        "secular_prefactor_required_for_actual_circumference_source": {"const": false},
+        "covariant_index_weight_mutation_rejected": {"const": true},
+        "all_m_by_naturality": {"const": true},
+        "causal_retarded_map_certified": {"const": false},
+        "residual_or_quantum_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "verification_receipt": {"type": "object"}
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "claim_boundary": "This is a coefficient-explicit REDUCED-MODE transport theorem for the circumference-times-ell2-extra channel only. It does not print the Q_e duality correction, alter the separate bounded global-extra obstruction, construct a causal/retarded correction, cover multiple momenta, descend to residual cohomology, or make a particle or quantum claim.",
+  "classification": {
+    "all_m_by_naturality": true,
+    "causal_retarded_map_certified": false,
+    "complete_four_extra_transport_columns_printed": true,
+    "covariant_index_weight_mutation_rejected": true,
+    "full_eight_row_polar_remainder_zero": true,
+    "full_six_row_axial_remainder_zero": true,
+    "ordinary_harmonic_primitive_suffices_at_p_resonance": true,
+    "residual_or_quantum_claim": false,
+    "secular_prefactor_required_for_actual_circumference_source": false,
+    "unique_nonzero_source_is_second_polar_column": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The p-shell resonance is only a potential propagation obstruction in this physical channel. The actual circumference-times-extra source is the derivative of an exact radius-family Jacobi equation. Three transport columns have zero source; the second polar column has the displayed nonzero eight-row source and an ordinary same-frequency primitive. No secular time prefactor is needed.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "print a coefficient-level fixed-bundle electric-duality primitive if needed, then leave the complete Berger branch mixing calculation blocked on its same-background branch map",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CIRCUMFERENCE_ELL2_EXTRA_TRANSPORT_PRIMITIVE",
+  "result_state": "COEFFICIENT_EXPLICIT_RESONANT_TRANSPORT_PRIMITIVE_ALL_FOUR_EXTRA_COLUMNS",
+  "schema": "einstein-maxwell-weyl-circumference-ell2-extra-transport-primitive-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.schema.json",
+  "schema_sha256": "646d6bbdcacaa749509b7356c883c1d375774e8c7ffe8cd807f5babb77bebd87",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; ordinary finite-frequency harmonic correction",
+    "carrier": "circumference ell=0 tangent crossed with the complete axial-plus-polar ell=2,k=0 extra p-primary block",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": 2,
+    "k": 0,
+    "m": "all by SO3 naturality",
+    "omega": "+/-4/sqrt(3)",
+    "parity": "two axial and two polar extra columns",
+    "theory": "Weyl-Maxwell"
+  },
+  "source_manifest": {
+    "bridge/certificates/einstein_maxwell_weyl_axial_operator.json": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6",
+    "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb",
+    "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json": "df2ef1bb26bb59e69bb228ad9e8ace8a7ea16d60702585ed408ce61e6f444add",
+    "bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json": "e3cb628273df1f7984559c4721d01b89d7fb1696b5dd5bb6f3e5aba8ebc94c13",
+    "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20",
+    "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d",
+    "bridge/einstein_sector/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.py": "a247340ee4644f2e394c58bb0441971a59c6929ebd466d1998f3e9a77015604b",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-circumference-ell2-extra-transport-primitive.md": "c2032a154199772aa88726c568ba56d890a0f82d5582065da0713de17f60d196",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.schema.json": "646d6bbdcacaa749509b7356c883c1d375774e8c7ffe8cd807f5babb77bebd87",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.py": "4c3d2e0edc2776240caea291d386661abd74ebe40961e74a49e9f8ec3c7c87a4",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.py": "43a7cd6febc7a4a60a77633b5278bc18afac0d5528bcf8fb9e83d718bf8cd9ad"
+  },
+  "transport_primitive": {
+    "axial": {
+      "correction_columns": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-c/3"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3*c"
+        ]
+      ],
+      "extra_representatives": [
+        [
+          "-6",
+          "0"
+        ],
+        [
+          "0",
+          "-2/3"
+        ],
+        [
+          "6",
+          "0"
+        ],
+        [
+          "0",
+          "6"
+        ]
+      ],
+      "field_order": [
+        "H_t",
+        "H_x",
+        "Q_t",
+        "Q_x"
+      ],
+      "remainder_columns": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "row_order": [
+        "metric_t",
+        "metric_x",
+        "metric_angular",
+        "maxwell_t",
+        "maxwell_x",
+        "maxwell_angular"
+      ],
+      "source_columns": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "transport_weight_diagonal": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    },
+    "disposition": {
+      "actual_source_requires_secular_prefactor": false,
+      "all_four_extra_columns_in_linear_image": true,
+      "all_four_extra_columns_printed": true,
+      "nonzero_source_location": "polar extra column 2 only",
+      "potential_p_primary_resonance": true,
+      "reason": "the source is the parameter derivative of an exact radius-family Jacobi equation and has the displayed ordinary harmonic transport primitive"
+    },
+    "frequency_convention": "exp(i*(k*x-omega*t))",
+    "negative_control": {
+      "detected": true,
+      "mutated_correction_columns": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "c/2",
+          "0"
+        ],
+        [
+          "0",
+          "-36*c"
+        ],
+        [
+          "0",
+          "24*c"
+        ]
+      ],
+      "mutation": "replace the two-covariant-x C_t weight 2 by weight 1 in polar column 2",
+      "remainder_columns": [
+        [
+          "0",
+          "-90*c"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "154*c"
+        ],
+        [
+          "0",
+          "-15*I*c*omega"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-122*c"
+        ],
+        [
+          "0",
+          "-12*c"
+        ],
+        [
+          "0",
+          "-18*c"
+        ]
+      ]
+    },
+    "polar": {
+      "correction_columns": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "c/2",
+          "0"
+        ],
+        [
+          "0",
+          "-72*c"
+        ],
+        [
+          "0",
+          "24*c"
+        ]
+      ],
+      "extra_representatives": [
+        [
+          "0",
+          "-8"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-72"
+        ],
+        [
+          "0",
+          "48"
+        ]
+      ],
+      "field_order": [
+        "A_t",
+        "B",
+        "C_t",
+        "U"
+      ],
+      "remainder_columns": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "row_order": [
+        "metric_00",
+        "metric_01",
+        "metric_11",
+        "metric_0a",
+        "metric_1a",
+        "sphere_trace",
+        "sphere_tracefree",
+        "maxwell_axial_density"
+      ],
+      "source_columns": [
+        [
+          "0",
+          "-36*c"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "164*c"
+        ],
+        [
+          "0",
+          "-6*I*c*omega"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-100*c"
+        ],
+        [
+          "0",
+          "-24*c"
+        ],
+        [
+          "0",
+          "-20*c"
+        ]
+      ],
+      "transport_weight_diagonal": [
+        "0",
+        "1",
+        "2",
+        "1"
+      ]
+    },
+    "specialization": {
+      "ell": 2,
+      "k": 0,
+      "lambda": 6,
+      "omega_squared": "16/3",
+      "p": "0",
+      "q": "-104/9"
+    },
+    "transport_rule": {
+      "d_log_R_d_eta_at_zero": "c/2",
+      "mixed_identity": "L_1*(partial_eta u_R)|_0+(partial_eta L_R)|_0*u_1=0",
+      "radius_family": "R^2=1+eta*c",
+      "weights": "one per covariant x index and one per A_x coefficient"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive --check",
+    "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate and schema>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive"
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "inputs": [
+        "transport_theorem",
+        "axial_extra",
+        "polar_extra",
+        "axial_operator",
+        "polar_operator",
+        "smooth_extension"
+      ],
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "no all-orders, causal, final-residual or release lifecycle is promoted",
+      "status": "NOT_RUN"
+    }
+  }
+}

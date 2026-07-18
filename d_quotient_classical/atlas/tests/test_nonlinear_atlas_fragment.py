@@ -107,6 +107,13 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         smooth = entry["mode_data"]["second_order"]["smooth_secular"]
         expected = "CERTIFIED" if atlas.smooth_extension_import_ready() else "OPEN"
         self.assertEqual(smooth["status"], expected)
+        if expected == "CERTIFIED":
+            self.assertIn("coefficient-explicit ordinary harmonic primitive", smooth["statement"])
+            paths = {evidence["path"] for evidence in entry["evidence"]}
+            self.assertIn(
+                "bridge/certificates/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.json",
+                paths,
+            )
         if expected == "OPEN":
             self.assertIn("full eight-row", smooth["statement"])
             self.assertIn("PASS Tier-1 receipt", smooth["statement"])

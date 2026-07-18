@@ -733,7 +733,11 @@ correction to that polynomially growing source.  In the smooth exponential-
 polynomial class the verdict reverses: the complete `L=0,...,4` channel ledger
 and physical Smith factors give finite secular right inverses after the five
 stabilizer maps vanish.  Every orbit point therefore extends at second order
-in that class.  Opposite momenta, phases, multiple absolute-momentum fibres
+in that class.  The potential `p=0` circumference-times-extra resonance is
+now coefficient-explicit on all four extra columns: exact radius-family
+transport cancels its only nonzero (second polar) source on all eight rows
+with an ordinary same-frequency primitive, so this actual source needs no
+secular prefactor.  Opposite momenta, phases, multiple absolute-momentum fibres
 and the causal/retarded class remain open.  Residual equivariance, the
 observable map, the relative \(L_\infty\) morphism, and the quantum lift remain
 open until their own certificates land.

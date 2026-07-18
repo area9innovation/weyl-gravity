@@ -820,6 +820,14 @@ activation-sensitive and fail-closed: it made this promotion only after the
 exact result and scope, correction-class separation, Draft 2020-12 schema,
 required content-addressed source manifest, independent-verifier command and
 Tier-1 `PASS` receipt all validated.
+The potential `p=0` circumference-times-extra resonance is now also
+coefficient-explicit.  Exact radius-family transport prints both axial and
+both polar correction columns: all six axial sources vanish, the first polar
+source vanishes, and the second polar source
+`(-36*c,0,164*c,-6*i*c*omega,0,-100*c,-24*c,-20*c)` is cancelled by
+`(A_t,B,C_t,U)=(0,0,-72*c,24*c)` on all eight rows.  Thus this actual resonant
+source needs no secular time prefactor; changing the two-covariant-`x`
+`C_t` transport weight from two to one gives a nonzero normalized control.
 Neither source handoff activates a cyclic Bridge 2 calculation.  The
 axial--polar source uses the polar leg whose
 fixed identity cyclic compatibility is obstructed and whose corrected

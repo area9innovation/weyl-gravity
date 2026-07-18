@@ -31,6 +31,7 @@ CERTS = {
     "homogeneous_twist_extra_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
     "homogeneous_twist_polynomial_correction": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
     "global_extra_smooth_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
+    "circumference_transport_primitive": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -463,7 +464,7 @@ def entries() -> list[dict[str, Any]]:
                     ("OBSTRUCTED", "Every nonzero point on the complete aligned orbit has B nonzero, and its zero-frequency polar L=2 metric_00 source contains the uncancellable coefficient -7*B^2*t^2; no bounded finite-quasiperiodic correction exists."),
                     (
                         "CERTIFIED" if smooth_extension_ready else "OPEN",
-                        "Every orbit point admits a real smooth spatially periodic finite exponential-polynomial second-order correction; the complete finite channel ledger has no nonstabilizer cokernel after the five moment maps vanish."
+                        "Every orbit point admits a real smooth spatially periodic finite exponential-polynomial second-order correction; the complete finite channel ledger has no nonstabilizer cokernel after the five moment maps vanish. The potential p-shell circumference cross resonance has a coefficient-explicit ordinary harmonic primitive on all six axial and eight polar rows, so that actual source needs no secular prefactor."
                         if smooth_extension_ready else
                         "The full eight-row zero-frequency polar L=2 twist-self source has an exact polynomial primitive with all remainders zero; the complete global-extra mixed-channel smooth correction awaits a schema-valid, content-addressed certificate with a PASS Tier-1 receipt.",
                     ),
@@ -474,7 +475,7 @@ def entries() -> list[dict[str, Any]]:
                 taub=("CERTIFIED", "The full declared nonzero-extra common zero locus of all five stabilizer maps and completed resonance functionals is the aligned SO(3) orbit; no off-axis branch remains."),
                 resonance=("CERTIFIED", "Exact coefficient elimination gives a=b=d=0 and rank stratification forces the extra tensor and twist position to align with the twist-velocity axis."),
             ),
-            "evidence": _evidence(*(("global_extra_smooth_extension",) if smooth_extension_ready else ()), "homogeneous_twist_extra_bounded_obstruction", "homogeneous_twist_polynomial_correction", "homogeneous_twist_extra_cone", "homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
+            "evidence": _evidence(*(("global_extra_smooth_extension", "circumference_transport_primitive") if smooth_extension_ready else ()), "homogeneous_twist_extra_bounded_obstruction", "homogeneous_twist_polynomial_correction", "homogeneous_twist_extra_cone", "homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
             "claim_boundary": (
                 "The correction-class split is certified on every nonzero point of the complete aligned orbit in the declared single-k=0 homogeneous/twist times ell=2 extra REDUCED-MODE carrier: bounded/finite-quasiperiodic corrections are obstructed, while smooth exponential-polynomial corrections exist. This correction-class-specific theorem does not cover causal corrections, opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish observational, particle or quantum claims."
                 if smooth_extension_ready else
