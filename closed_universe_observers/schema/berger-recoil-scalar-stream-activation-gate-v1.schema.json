@@ -10,12 +10,12 @@
     "claim_status": {"type": "string"},
     "atlas_status": {"const": "OPEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
-    "dependency_refs": {"type": "object", "minProperties": 9, "maxProperties": 9},
+    "dependency_refs": {"type": "object", "minProperties": 10, "maxProperties": 10},
     "readiness": {"type": "object", "required": ["internal_rows", "external_rows", "internal_modewise_stream_ready", "numerical_specialization_ready", "four_scalar_stream_active"]},
     "sequencing_decision": {"type": "object"},
     "mutation_results": {"type": "array", "minItems": 2},
     "flags": {"type": "object"},
-    "next_gate": {"const": "SERIALIZE_COMPLETE_PER_SHELL_PREPARATION_AND_RECOIL_CONTRACTION_WITH_SYMBOLIC_POSITIVE_MASSES_AND_FACTORED_COUPLINGS"},
+    "next_gate": {"const": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL"},
     "claim_boundary": {"type": "string"},
     "provenance": {"type": "object"}
   }

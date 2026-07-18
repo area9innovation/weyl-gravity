@@ -89,22 +89,23 @@ giving distinct rigorous energy-dual bounds for the axial D0 and transverse
 D1 profiles.  Composing those bounds with the Maxwell graph tail and both
 symbolic positive-mass finite-slab constants exports four symbolic recoil-tail
 radii.  The atlas keeps the actual recoil scalars `OPEN`: numerical masses and
-couplings, a stopping goal, and the complete streamed scalar integrand have
-not been supplied.
-The adjacent recoil-stream activation row is `OPEN` and separates two gates.
-Internally, the operator-defined preparations still lack complete harmonic
-coefficients and evaluated advanced massive images, so no per-shell scalar
-integrand exists.  Externally, numerical masses/couplings and a stopping goal
-remain undeclared.  The atlas makes the internal symbolic integrand the next
-gate and does not activate a scalar stream from its tail envelope alone.
+couplings and a stopping goal have not been supplied.
+The complete per-shell recoil-word row is `CERTIFIED`.  It types the advanced
+detector-selected preparation and the full retarded absolute-`g3` word in
+every Peter–Weyl shell, including both feedback switches, the physical
+massive correction, the exact dimension/volume weight, eight `(a,b,c)`
+channels and four aggregate streams.  The adjacent activation row therefore
+marks the internal modewise stream ready.  Its external parameters remain
+`OPEN`, so none of the four numerical streams is active.
 The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
 coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy
 datum.  Leading columns carry `g_b`, while absolute-`g3` recoil channels carry
-`g_b g_c^2`.  Harmonic evaluation and the four scalar records remain `OPEN`.
+`g_b g_c^2`.  Numerical harmonic evaluation and the four scalar records
+remain `OPEN`; the generic coefficient functional is serialized downstream.
 The spacetime sign-bridge row is also `CERTIFIED`: the exact finite-mode
 Lorentzian `d` and `delta` matrices are nilpotent and diagonalize the Maxwell
-and emitter wave operators to `partial_t^2+Delta`.  This removes an implicit
-component-sign choice from the future shell word without evaluating it.
+and emitter wave operators to `partial_t^2+Delta`.  This removes the implicit
+component-sign choice used by the now-certified shell word.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

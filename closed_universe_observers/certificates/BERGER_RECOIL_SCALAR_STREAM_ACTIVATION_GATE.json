@@ -1,7 +1,7 @@
 {
   "atlas_status": "OPEN",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, and the Lorentzian spacetime form-block signs are all certified. The stream is nevertheless inactive because the detector-selected preparations remain operator-defined: their harmonic coefficients and advanced massive Green images are explicitly unevaluated, so no complete per-shell scalar integrand exists. Numerical positive masses, nonzero couplings and an interval/nonzero/sign stopping goal are a separate later input gate. The next coherent calculation is to serialize the complete per-shell preparation and recoil contraction with masses symbolic and couplings factored; numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
-  "claim_status": "SYMBOLIC_TAIL_ENVELOPE_CERTIFIED_MODEWISE_SCALAR_STREAM_INPUTS_OPEN",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, the Lorentzian spacetime form-block signs, and the complete symbolic per-shell preparation/recoil word are all certified. The internal modewise stream is therefore ready. The four numerical streams remain inactive because numerical positive masses, nonzero couplings and an interval/nonzero/sign stopping goal are a separate external input gate and have not been declared. The exact generic coefficient functional is not itself a numerical Green-image evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_status": "INTERNAL_MODEWISE_RECOIL_STREAM_READY_NUMERICAL_SPECIALIZATION_OPEN",
   "dependency_refs": {
     "clock_transform": {
       "path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
@@ -22,6 +22,11 @@
       "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
       "result_id": "BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS",
       "sha256": "f39348c599ca4c69461bc1ebaf2d32c51a733865165b66e4815d26c53cb48ecc"
+    },
+    "per_shell_word": {
+      "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+      "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+      "sha256": "e946dded7a0d2a8d204e40baa337ed2a951d3cdbf71bbe9a76949b559ff37851"
     },
     "preparations": {
       "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
@@ -55,10 +60,11 @@
   ],
   "flags": {
     "ANALYTIC_SYMBOLIC_TAIL_ENVELOPE_COMPLETE": true,
-    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": true,
     "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
     "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
     "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
+    "INTERNAL_MODEWISE_RECOIL_STREAM_READY": true,
     "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": false,
     "QUANTUM_CLAIM": false,
     "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": true
@@ -67,39 +73,40 @@
     {
       "detected": true,
       "mutated_rows": [
-        "complete_harmonic_preparation_coefficients",
-        "advanced_massive_preparation_image"
+        "complete_symbolic_harmonic_preparation_functional",
+        "advanced_massive_preparation_operator_word",
+        "complete_modewise_recoil_scalar_integrand"
       ],
-      "name": "pretend_operator_defined_preparations_are_harmonically_evaluated"
+      "name": "delete_complete_per_shell_operator_word"
     },
     {
       "detected": true,
       "name": "activate_stream_from_symbolic_tail_radius_alone"
     }
   ],
-  "next_gate": "SERIALIZE_COMPLETE_PER_SHELL_PREPARATION_AND_RECOIL_CONTRACTION_WITH_SYMBOLIC_POSITIVE_MASSES_AND_FACTORED_COUPLINGS",
+  "next_gate": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL",
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "0f809db339d7cb09e4b7369e58e1dd308504a2c223b14a16cb5c0875105e7243"
+        "sha256": "f9ffd8e426c5f3c3590cb0c9af8b663ad18a9d4592a681eb7abfa6238f70dd91"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "976064df779a06a6da53ae1006905fae2ec83f4d058156e6b24561e0ecbd5427"
+        "sha256": "d10cb18d8c2b22337ba51742d8d48c86bb892a814ae5d13e2ea8015dbfc841eb"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "5238a1b95c29e11b306417234ccc2fe8211ee10c3f5b7be221bf36e670ac7326"
+        "sha256": "0753ba91e7dfc42bca05dfd132454d6baa5444fd5bc1d2e272ac47cec82132f5"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json",
-        "sha256": "1dd4dacb27137582806f375b7873eec9f10fb3a0aa26b81a2b81254c5aff877f"
+        "sha256": "4549dfb7147be22bb31f9e3c29ebe9959776227b09ce7da3c9cb3f11fc4cae52"
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md",
-        "sha256": "3dcc89efe8dd686830c08b59a0e01232c139103f41830eb31d35b29b2e0cd3a7"
+        "sha256": "a0f974cbfc7c11d3d228541c7144fcbec41adb0d1f5c923e62799949c2ebad81"
       }
     ]
   },
@@ -126,7 +133,7 @@
       }
     ],
     "four_scalar_stream_active": false,
-    "internal_modewise_stream_ready": false,
+    "internal_modewise_stream_ready": true,
     "internal_rows": [
       {
         "evidence_flag": "FIRST_DETECTOR_RECOIL_ABSOLUTE_G3_OPERATOR_COMPUTED",
@@ -159,19 +166,19 @@
         "status": "CERTIFIED"
       },
       {
-        "evidence_flag": "HARMONIC_COEFFICIENTS_EVALUATED",
-        "id": "complete_harmonic_preparation_coefficients",
-        "status": "OPEN"
+        "evidence_flag": "DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED",
+        "id": "complete_symbolic_harmonic_preparation_functional",
+        "status": "CERTIFIED"
       },
       {
-        "evidence_flag": "ADVANCED_GREEN_IMAGES_EVALUATED",
-        "id": "advanced_massive_preparation_image",
-        "status": "OPEN"
+        "evidence_flag": "DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED",
+        "id": "advanced_massive_preparation_operator_word",
+        "status": "CERTIFIED"
       },
       {
         "evidence_flag": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
         "id": "complete_modewise_recoil_scalar_integrand",
-        "status": "OPEN"
+        "status": "CERTIFIED"
       }
     ],
     "numerical_specialization_ready": false
@@ -179,9 +186,9 @@
   "result_id": "BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE",
   "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
   "sequencing_decision": {
-    "current_active_gate": "construct complete modewise preparation/recoil scalar integrand",
+    "completed_internal_gate": "complete modewise preparation/recoil scalar integrand with exact Peter-Weyl reconstruction",
+    "current_active_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
     "dense_profile_materialization": "NOT_SELECTED",
-    "later_external_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
     "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
     "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP"
   },

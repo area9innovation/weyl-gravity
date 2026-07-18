@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "operator_definitions", "preparation_word", "recoil_word", "peter_weyl_reconstruction", "channel_integrands", "aggregate_streams", "audited_blocks", "mutation_results", "external_specialization_gate", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-complete-per-shell-recoil-operator-word-v1"},
+    "result_id": {"const": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"type": "string"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 9, "maxProperties": 9},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "operator_definitions": {"type": "object"},
+    "preparation_word": {"type": "object", "required": ["input", "applied_order", "output", "formula", "coupling_convention"]},
+    "recoil_word": {"type": "object", "required": ["applied_order", "formula", "leading_formula", "same_shell_reason"]},
+    "peter_weyl_reconstruction": {"type": "object"},
+    "channel_integrands": {"type": "array", "minItems": 8, "maxItems": 8},
+    "aggregate_streams": {"type": "array", "minItems": 4, "maxItems": 4},
+    "audited_blocks": {"type": "array", "minItems": 5, "maxItems": 5},
+    "mutation_results": {"type": "array", "minItems": 4},
+    "external_specialization_gate": {"type": "object"},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

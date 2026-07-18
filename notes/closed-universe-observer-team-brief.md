@@ -787,14 +787,17 @@ massive constants certify the four symbolic tail radii
 complete streamed integrand, numerical masses/couplings and a declared
 interval, nonzero or sign stopping goal remain `OPEN`.
 
-`BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` corrects the sequence of those
-open inputs.  The next task is internal, not numerical: the positive-energy
-preparations remain operator-defined, while their complete harmonic
-coefficients and advanced massive images are still `OPEN`.  The per-shell
-preparation/recoil contraction must therefore be serialized first with
-`m_0,m_1>0` symbolic and the `g_0,g_1` monomials factored.  Numerical masses,
-nonzero couplings and an interval/nonzero/sign goal form a later independent
-activation gate.  No stream or scalar coefficient is currently promoted.
+`BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` now records completion of the
+internal symbolic gate.  `BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD`
+serializes the coupling-stripped advanced preparation and full retarded
+absolute-`g3` contraction in every Peter–Weyl shell.  Its eight `(a,b,c)`
+channels carry `g_b g_c^2`, use both feedback switches and the physical
+massive correction, and combine into four `(a,b)` streams with exact weight
+`(two_j+1)/Vol_Berger`.  The channel tail is correctly indexed by the feedback
+emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
+composition defects.  The internal stream is ready; numerical positive
+masses, nonzero couplings and an interval/nonzero/sign goal remain the active
+external gate, so no scalar interval is promoted.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as
@@ -811,8 +814,8 @@ per-shell word.  With `dt wedge alpha+beta`, the exported matrices give
 `delta(alpha,beta)=(-deltaSigma alpha,partial_t alpha+deltaSigma beta)`.
 They have zero `d^2`, `delta^2` and Maxwell/emitter wave-diagonalization
 defects through `two_j=4`; a flipped temporal coderivative sign is detected.
-This certifies component typing, not the still-open profile coefficients,
-time convolutions or recoil scalars.
+This certifies the component typing used by the complete symbolic shell word,
+not a numerical time convolution or recoil scalar.
 
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before

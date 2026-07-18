@@ -3,41 +3,43 @@
   "result_id": "RECOIL_SCALAR_STREAM_ACTIVATION_GATE_TIER_RECEIPT",
   "run_date": "2026-07-18",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
-  "result_boundary": "The activation audit certifies that the analytic symbolic tail envelope is complete while the four scalar streams remain inactive. Complete harmonic preparation coefficients, advanced massive images and the per-shell scalar integrand are internal open gates; numerical masses/couplings and a stopping goal are separate later inputs. No recoil interval, cone, Bridge 3, nonlinear all-orders stability or quantum claim is promoted.",
+  "result_boundary": "The activation audit certifies both the analytic symbolic tail envelope and the complete generic per-shell preparation/recoil coefficient functional. The internal modewise stream is ready; numerical positive masses, nonzero couplings and a stopping goal remain an external open gate, so the four numerical streams stay inactive. No recoil interval, cone, Bridge 3, nonlinear all-orders stability or quantum claim is promoted.",
   "tier_0": [
     {"command": "python3 -m py_compile closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "status": "PASS"},
     {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
   ],
   "tier_1": [
-    {"command": "python3 -m closed_universe_observers.verify_berger_recoil_scalar_stream_activation_gate", "status": "PASS", "summary": "Readiness rows distinguish certified analytic inputs, open harmonic preparation data and later external parameters."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_recoil_scalar_stream_activation_gate", "status": "PASS", "summary": "Readiness rows certify the internal symbolic word and keep the external numerical gate open."},
     {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "status": "PASS", "summary": "The stream remains OPEN and Bridge 3 remains NO_CERTIFIED_MAP in generated lifecycle data."},
-    {"command": "pytest -q closed_universe_observers/tests/test_berger_spacetime_form_block_sign_bridge.py closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 8.94, "status": "PASS", "summary": "24 sign-bridge, activation-gate, atlas and ledger tests passed."}
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_per_shell_recoil_operator_word.py closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 6.27, "status": "PASS", "summary": "24 per-shell-word, activation-gate, atlas and ledger tests passed."}
   ],
   "tier_2": [
     {"command": "python3 -m closed_universe_observers.generate_berger_recoil_scalar_stream_activation_gate --check", "status": "PASS", "summary": "The fail-closed readiness matrix regenerates byte-for-byte."},
-    {"command": "Combined scoped certificate chain", "elapsed_seconds": 26.33, "status": "PASS", "summary": "Compile, sign/activation generators and verifiers, atlas, ledger and 24 tests passed."}
+    {"command": "Combined scoped certificate chain", "elapsed_seconds": 11.08, "status": "PASS", "summary": "Compile, word/activation generators and verifiers, atlas, ledger and 24 tests passed."}
   ],
   "higher_tiers": [
     {"tier": 3, "status": "NOT_RUN", "criterion": "No evaluated recoil, shared core algebra, lifecycle freeze or release was promoted."}
   ],
   "artifact_hashes": [
-    {"path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py", "sha256": "0f809db339d7cb09e4b7369e58e1dd308504a2c223b14a16cb5c0875105e7243"},
-    {"path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "sha256": "976064df779a06a6da53ae1006905fae2ec83f4d058156e6b24561e0ecbd5427"},
-    {"path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py", "sha256": "5238a1b95c29e11b306417234ccc2fe8211ee10c3f5b7be221bf36e670ac7326"},
-    {"path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json", "sha256": "1dd4dacb27137582806f375b7873eec9f10fb3a0aa26b81a2b81254c5aff877f"},
-    {"path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md", "sha256": "3dcc89efe8dd686830c08b59a0e01232c139103f41830eb31d35b29b2e0cd3a7"},
-    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json", "sha256": "332c9666c44536618bd49f231515eea2f85cfadcedc9f139281ca3403fae9664"},
+    {"path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py", "sha256": "f9ffd8e426c5f3c3590cb0c9af8b663ad18a9d4592a681eb7abfa6238f70dd91"},
+    {"path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "sha256": "d10cb18d8c2b22337ba51742d8d48c86bb892a814ae5d13e2ea8015dbfc841eb"},
+    {"path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py", "sha256": "0753ba91e7dfc42bca05dfd132454d6baa5444fd5bc1d2e272ac47cec82132f5"},
+    {"path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json", "sha256": "4549dfb7147be22bb31f9e3c29ebe9959776227b09ce7da3c9cb3f11fc4cae52"},
+    {"path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md", "sha256": "a0f974cbfc7c11d3d228541c7144fcbec41adb0d1f5c923e62799949c2ebad81"},
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json", "sha256": "2d706ebb2a76fc7773449d070c3960a6f47f42059665ab53499ae523a7e7c20b"},
+    {"path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json", "sha256": "e946dded7a0d2a8d204e40baa337ed2a951d3cdbf71bbe9a76949b559ff37851"},
     {"path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json", "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"},
-    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "de42b66ecb92d1f77eb7b50ff3458cd74103a0800d7dc26b7061def76276cd74"},
-    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "c8508eac651b8ecb4e3daff5d947ba0c6cefcca617f03b38ba16c5bbc1ce55f7"},
-    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "a488d0cbb990206e753731483d377bc634c116916d04a081c173a1a849c272e9"},
-    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "f6930966c2ac3bda0176affcc5750d43cf5a02046ce6b965eece9c45b3d2af18"},
-    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "5bedd2526b767a17226f35ceca2d5abae6a6b14376c33fc3245ae5bfa01401b1"}
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "6f59c443e69fa97346dc8bee26fc5d4403d376f95f569e0ff25b2faccb5bf4d4"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "893dea1c1c4b271313082dcdd40a6f3603a462048c324c1acf8a90ef772bec87"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "3b45b874ca085e5cfa7273007011e8d1b0736d4714583b4512993905dfff047e"},
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "ac927e5ec7731d8f75c99f7e9a883ea7988c12ce89612286cb763525742546cd"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "127e0c8f0959999ea5be22d0a62d4b7d24e9cce5de09f123f0073754514a48b0"}
   ],
   "claim_flags": {
     "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": true,
     "ANALYTIC_SYMBOLIC_TAIL_ENVELOPE_COMPLETE": true,
-    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "INTERNAL_MODEWISE_RECOIL_STREAM_READY": true,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": true,
     "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": false,
     "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
     "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,

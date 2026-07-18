@@ -8,18 +8,17 @@ transform, and four symbolic detector-tail radii are certified.
 The coupling-stripped successor also fixes `tilde_u_b` as the Cauchy datum,
 so each recoil channel carries the explicit monomial `g_b g_c^2`.
 
-The four scalar streams are not active.  The detector-selected preparations
-are still operator-defined.  Their harmonic coefficients and advanced
-massive Green images are explicitly unevaluated, so the repository does not
-yet contain a complete per-shell scalar integrand.
+The complete symbolic preparation and recoil word is now also certified.
+All eight `(a,b,c)` channels and four `(a,b)` aggregates carry exact typed
+block compositions and the Peter–Weyl reconstruction weight.  The internal
+modewise stream is ready, although the generic operator word is not itself a
+numerical Green-image evaluation.
 
-The corrected sequence is:
+The remaining sequence is:
 
-1. Serialize the complete per-shell preparation and recoil contraction with
-   `m_0,m_1>0` symbolic and the coupling monomials factored.
-2. Separately declare numerical masses, nonzero couplings, and an interval,
+1. Declare numerical positive masses, nonzero couplings, and an interval,
    nonzero, or sign stopping goal.
-3. Run the four response-specific streams and close them with the certified
+2. Run the four response-specific streams and close them with the certified
    tail radii.
 
 No numerical mass or coupling is inferred, and symbolic tail bounds are not

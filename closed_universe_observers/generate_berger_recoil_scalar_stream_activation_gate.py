@@ -27,6 +27,7 @@ DEPENDENCIES = {
     "dual_norms": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
     "coupling_stripped": PACKAGE / "certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
     "spacetime_signs": PACKAGE / "certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+    "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -41,11 +42,11 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def readiness_audit(values: dict[str, dict[str, Any]], *, pretend_profiles_evaluated: bool = False) -> dict[str, Any]:
-    preparation_flags = dict(values["preparations"]["flags"])
-    if pretend_profiles_evaluated:
-        preparation_flags["HARMONIC_COEFFICIENTS_EVALUATED"] = True
-        preparation_flags["ADVANCED_GREEN_IMAGES_EVALUATED"] = True
+def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: bool = False) -> dict[str, Any]:
+    word_flags = dict(values["per_shell_word"]["flags"])
+    if drop_per_shell_word:
+        word_flags["DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED"] = False
+        word_flags["COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED"] = False
     internal = [
         {
             "id": "exact_absolute_g3_operator",
@@ -78,18 +79,18 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, pretend_profiles_evalu
             "evidence_flag": "RECOIL_SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED",
         },
         {
-            "id": "complete_harmonic_preparation_coefficients",
-            "status": "CERTIFIED" if preparation_flags["HARMONIC_COEFFICIENTS_EVALUATED"] else "OPEN",
-            "evidence_flag": "HARMONIC_COEFFICIENTS_EVALUATED",
+            "id": "complete_symbolic_harmonic_preparation_functional",
+            "status": "CERTIFIED" if word_flags["DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED"] else "OPEN",
+            "evidence_flag": "DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED",
         },
         {
-            "id": "advanced_massive_preparation_image",
-            "status": "CERTIFIED" if preparation_flags["ADVANCED_GREEN_IMAGES_EVALUATED"] else "OPEN",
-            "evidence_flag": "ADVANCED_GREEN_IMAGES_EVALUATED",
+            "id": "advanced_massive_preparation_operator_word",
+            "status": "CERTIFIED" if word_flags["DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED"] else "OPEN",
+            "evidence_flag": "DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED",
         },
         {
             "id": "complete_modewise_recoil_scalar_integrand",
-            "status": "CERTIFIED" if values["dual_norms"]["flags"]["COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED"] else "OPEN",
+            "status": "CERTIFIED" if word_flags["COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED"] else "OPEN",
             "evidence_flag": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
         },
     ]
@@ -121,19 +122,20 @@ def build() -> dict[str, Any]:
         "dual_norms": "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED",
         "coupling_stripped": "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED",
         "spacetime_signs": "RECOIL_SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED",
+        "per_shell_word": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
             raise AssertionError(f"dependency dropped: {name}.{flag}")
     readiness = readiness_audit(values)
-    if readiness["internal_modewise_stream_ready"] or readiness["four_scalar_stream_active"]:
-        raise AssertionError("recoil scalar stream was activated without complete inputs")
-    mutation = readiness_audit(values, pretend_profiles_evaluated=True)
-    harmonic_rows = {
+    if not readiness["internal_modewise_stream_ready"] or readiness["four_scalar_stream_active"]:
+        raise AssertionError("internal recoil readiness or external gate drifted")
+    mutation = readiness_audit(values, drop_per_shell_word=True)
+    word_rows = {
         row["id"]: row["status"] for row in mutation["internal_rows"]
     }
-    if harmonic_rows["complete_harmonic_preparation_coefficients"] != "CERTIFIED" or harmonic_rows["advanced_massive_preparation_image"] != "CERTIFIED":
-        raise AssertionError("profile-evaluation mutation was not detected")
+    if word_rows["complete_symbolic_harmonic_preparation_functional"] != "OPEN" or word_rows["complete_modewise_recoil_scalar_integrand"] != "OPEN":
+        raise AssertionError("per-shell-word deletion mutation was not detected")
 
     boundary = (
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate "
@@ -141,17 +143,14 @@ def build() -> dict[str, Any]:
         "numerical specialization. The absolute-g3 operator, exact switches, "
         "finite Maxwell/massive kernels, selected exact-T clock transform, "
         "the four symbolic detector tail radii, the fixed coupling-stripped "
-        "preparations, and the Lorentzian spacetime form-block signs are all "
-        "certified. The stream is "
-        "nevertheless inactive because the detector-selected preparations "
-        "remain operator-defined: their harmonic coefficients and advanced "
-        "massive Green images are explicitly unevaluated, so no complete "
-        "per-shell scalar integrand exists. Numerical positive masses, "
+        "preparations, the Lorentzian spacetime form-block signs, and the "
+        "complete symbolic per-shell preparation/recoil word are all "
+        "certified. The internal modewise stream is therefore ready. The "
+        "four numerical streams remain inactive because numerical positive masses, "
         "nonzero couplings and an interval/nonzero/sign stopping goal are a "
-        "separate later input gate. The next coherent calculation is to "
-        "serialize the complete per-shell preparation and recoil contraction "
-        "with masses symbolic and couplings factored; numerical values must "
-        "not be invented. This gate does not evaluate a recoil scalar, "
+        "separate external input gate and have not been declared. The exact "
+        "generic coefficient functional is not itself a numerical Green-image "
+        "evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, "
         "restrict to the tangent cone, activate Bridge 3, promote finite-r/"
         "all-orders observer-morphism stability or make a quantum claim."
     )
@@ -159,7 +158,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
         "result_id": "BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE",
         "setting_id": values["dual_norms"]["setting_id"],
-        "claim_status": "SYMBOLIC_TAIL_ENVELOPE_CERTIFIED_MODEWISE_SCALAR_STREAM_INPUTS_OPEN",
+        "claim_status": "INTERNAL_MODEWISE_RECOIL_STREAM_READY_NUMERICAL_SPECIALIZATION_OPEN",
         "atlas_status": "OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -172,19 +171,20 @@ def build() -> dict[str, Any]:
         },
         "readiness": readiness,
         "sequencing_decision": {
-            "current_active_gate": "construct complete modewise preparation/recoil scalar integrand",
+            "completed_internal_gate": "complete modewise preparation/recoil scalar integrand with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "later_external_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
+            "current_active_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
         },
         "mutation_results": [
             {
-                "name": "pretend_operator_defined_preparations_are_harmonically_evaluated",
+                "name": "delete_complete_per_shell_operator_word",
                 "detected": True,
                 "mutated_rows": [
-                    "complete_harmonic_preparation_coefficients",
-                    "advanced_massive_preparation_image",
+                    "complete_symbolic_harmonic_preparation_functional",
+                    "advanced_massive_preparation_operator_word",
+                    "complete_modewise_recoil_scalar_integrand",
                 ],
             },
             {
@@ -195,14 +195,15 @@ def build() -> dict[str, Any]:
         "flags": {
             "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": True,
             "ANALYTIC_SYMBOLIC_TAIL_ENVELOPE_COMPLETE": True,
-            "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": False,
+            "INTERNAL_MODEWISE_RECOIL_STREAM_READY": True,
+            "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "SERIALIZE_COMPLETE_PER_SHELL_PREPARATION_AND_RECOIL_CONTRACTION_WITH_SYMBOLIC_POSITIVE_MASSES_AND_FACTORED_COUPLINGS",
+        "next_gate": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",
