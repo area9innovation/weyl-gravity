@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "same compact Plebanski-Hacyan R_t x S1_L x S2 background and fixed N=2 magnetic bundle; no changed-boundary or cross-background identification",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "a fail-closed same-background Einstein-Maxwell/Weyl-Maxwell branch dictionary is generated",
+    "generic axial and polar polynomial chain maps, solution cofibers, branch representatives and action-derived pairings are exported",
+    "the exact global map lifecycle is ONSHELL_MAP_ONLY and bridge-priority-1 activation remains OPEN",
+    "exceptional and global cofiber gaps and every changed-boundary carrier are explicit NO_CERTIFIED_MAP fields",
+    "the a,b,d resonance matrix is exported only as a partial quadratic handoff"
+  ],
+  "evidence": {
+    "commit": "b6eee7ebcff66d0429e583f3527aafae017fb286",
+    "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+    "sha256": "bea1f3daff9a5306d464f5f8d0849342d487ff39176f4f184ff416cc77db70b9"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional and global endpoint cofibers before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+  "not_established": [
+    "a cyclic all-sector BV relative triangle",
+    "exceptional, homogeneous, twist or charge-endpoint mapping cofibers",
+    "a common causal Green carrier or boundary-preserving map",
+    "a cross-background mode dictionary",
+    "observational or quantum bridge activation"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_relative_branch_dictionary_v1",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_weyl_relative_branch_dictionary",
+  "team_id": "einstein_boundary",
+  "verdict": "SAME_BACKGROUND_BRANCH_DICTIONARY_CERTIFIED_BRIDGE_1_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_branch_dictionary"
+  ]
+}

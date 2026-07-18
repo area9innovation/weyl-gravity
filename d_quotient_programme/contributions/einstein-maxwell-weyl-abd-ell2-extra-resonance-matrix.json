@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; homogeneous generalized-zero a,b,d directions crossed with the complete axial-plus-polar ell=2,k=0 extra-primary multiplicity space",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "direct four-dimensional axial and polar a-times-extra and b-times-extra source rows are computed with their complete polynomial-in-time dependence",
+    "the existing parity-complete d columns are imported by content hash",
+    "every parity/polarization a,b,d adjoint polynomial chain has coefficient rank three",
+    "the bounded or finite-quasiperiodic compatibility functionals are explicit",
+    "the generated residual atlas records this source matrix as nonlinear OPEN rather than a complete obstruction theorem"
+  ],
+  "evidence": {
+    "commit": "27272d3c05e5881f2ade2a8c184ade32effa4e1b",
+    "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+    "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute twist position and velocity crossed with both ell=2 extra representatives, append their SO(3)-equivariant columns, and solve the simultaneous stabilizer plus complete bounded-resonance zero locus",
+  "not_established": [
+    "the twist position or velocity columns",
+    "the simultaneous stabilizer and complementary-resonance zero locus",
+    "necessity or sufficiency for smooth-secular corrections",
+    "a compact-product causal or retarded theorem",
+    "a full second-order correction, all-orders integration, residual descent, particles, observations, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_abd_ell2_extra_resonance_submatrix",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix",
+  "team_id": "einstein_boundary",
+  "verdict": "ABD_POLYNOMIAL_RESONANCE_SUBMATRIX_CERTIFIED_FULL_TANGENT_CONE_OPEN",
+  "verification_commands": [
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix"
+  ]
+}
