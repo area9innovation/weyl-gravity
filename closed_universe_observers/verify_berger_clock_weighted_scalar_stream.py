@@ -40,7 +40,7 @@ def main() -> int:
             assert Fraction(interval["lower"]) <= Fraction(interval["upper"])
     assert Fraction(value["truncation_remainder_audit"]["maximum_uniform_remainder_upper"]) < Fraction(1, 10**150)
     flags = value["flags"]
-    assert flags["EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED"] is True
+    assert flags["EXTERNAL_CLOCK_AND_EVEN_TIME_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED"] is True
     assert flags["JOINT_CLOCK_MOMENT_DEPENDENCE_BOUNDED_WITHOUT_FACTORIZATION"] is True
     assert flags["POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED"] is False
     for evidence in value["dependency_refs"].values():

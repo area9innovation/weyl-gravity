@@ -3,43 +3,47 @@
   "result_id": "CLOCK_WEIGHTED_SCALAR_STREAMS_TWO_J139_TIER_RECEIPT",
   "run_date": "2026-07-18",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
-  "result_boundary": "Five validated shards export the normalized even-clock-weighted diagonal scalar streams for powers 2,4,6,8,10 through two_j=139. Each reconstructs 9,870 values from 4,970 intervals. Joint clock-secant moments are bounded by positivity without an independence assumption, the worst top-mode width is below 7.7e-5, and the retained uniform binomial remainder is below 1.6e-159. Polarization/Green charge-block composition, the tail beyond form two_j=138, full Maxwell and massive images, recoil, tangent-cone restriction, the inactive physical-branch bridge and quantum claims remain open.",
+  "result_boundary": "Six validated shards export the normalized external-clock-and-even-time-weighted diagonal scalar streams a(t)s^p for p=0,2,4,6,8,10 through two_j=139. Each reconstructs 9,870 values from 4,970 intervals. The required joint factor s^p sec(lambda s)^(2k-1) is bounded by positivity without an independence assumption, every serialized width is below 4.9e-4, and the retained uniform binomial remainder is below 1.6e-159. Polarization/Green charge-block composition, the tail beyond form two_j=138, full Maxwell and massive images, recoil, tangent-cone restriction, the inactive physical-branch bridge and quantum claims remain open.",
   "tier_0": [
     {"command": "python3 -m py_compile closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
     {"command": "python3 -m json.tool closed_universe_observers/schema/berger-clock-weighted-scalar-stream-two-j139-v1.schema.json and Draft202012Validator.check_schema", "elapsed_seconds": "under 1", "status": "PASS", "scope": "new strict JSON schema"},
     {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "weighted rails, atlas, observer brief and canonical roadmap"}
   ],
   "tier_1": [
-    {"command": "for p in 2 4 6 8 10; do python3 -m closed_universe_observers.generate_berger_clock_weighted_scalar_stream --power $p --emit & done; wait", "elapsed_seconds": "about 50 wall-clock", "status": "PASS", "scope": "five parallel 140-mode weighted scalar shards"},
-    {"command": "for p in 2 4 6 8 10; do python3 -m closed_universe_observers.verify_berger_clock_weighted_scalar_stream --power $p & done; wait", "elapsed_seconds": "about 60 wall-clock", "status": "PASS", "scope": "five independent freshness, coverage, interval, evidence and fail-closed recomputations"},
-    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py", "elapsed_seconds": "42.59", "status": "PASS", "scope": "typed shard coverage, representative regeneration, joint bound, high-mode width and invalid-power tests", "summary": "5 passed"},
-    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-clock-weighted-scalar-stream-two-j139-v1.schema.json -d 'closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S*_TWO_J139.json'", "elapsed_seconds": "5.17", "status": "PASS", "scope": "strict Draft 2020-12 validation of all five generated shards"},
-    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json and python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment and focused atlas tests", "elapsed_seconds": "4.50", "status": "PASS", "scope": "generated atlas, shared schema, evidence hashes and fail-closed bridge rows", "summary": "4 passed plus two atlas verifiers"}
+    {"command": "for p in 0 2 4 6 8 10; do python3 -m closed_universe_observers.generate_berger_clock_weighted_scalar_stream --power $p --emit & done; wait", "elapsed_seconds": "about 30 wall-clock", "status": "PASS", "scope": "six parallel 140-mode external-clock-and-time-weighted scalar shards"},
+    {"command": "for p in 0 2 4 6 8 10; do python3 -m closed_universe_observers.verify_berger_clock_weighted_scalar_stream --power $p & done; wait", "elapsed_seconds": "31.71 wall-clock", "status": "PASS", "scope": "six independent freshness, coverage, interval, evidence and fail-closed recomputations"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py", "elapsed_seconds": "24.29", "status": "PASS", "scope": "typed shard coverage, representative regeneration, low-mode Green-chain convention match, joint bound, high-mode width and invalid-power tests", "summary": "6 passed"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-clock-weighted-scalar-stream-two-j139-v1.schema.json -d 'closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S*_TWO_J139.json'", "elapsed_seconds": "under 5", "status": "PASS", "scope": "strict Draft 2020-12 validation of all six generated shards"},
+    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json and python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment and focused atlas tests", "elapsed_seconds": "under 2", "status": "PASS", "scope": "generated atlas, shared schema, evidence hashes and fail-closed bridge rows", "summary": "4 passed plus two atlas verifiers"}
   ],
-  "attempts_not_counted_as_passes": [],
+  "attempts_not_counted_as_passes": [
+    {"command": "initial five-shard generation with joint factor s^p sec(lambda s)^(2k)", "status": "SUPERSEDED", "reason": "A pre-composition interface audit found that the polarization recurrence contributes the external detector factor a(t)=cos(lambda s), so the Green input requires exponent 2k-1. Standalone interval checks did not detect this semantic mismatch; all shards and claims were corrected before Green composition."},
+    {"command": "corrected five-shard generation for p=2,4,6,8,10", "status": "SUPERSEDED", "reason": "The same interface audit showed that p=0 also requires an explicit external-clock-weighted shard; the unweighted scalar recurrence stream is not a substitute. S0 was added and all six shards were regenerated."}
+  ],
   "higher_tiers": [
     {"tier": 2, "status": "NOT_RUN", "criterion": "These are successor input certificates. No existing mathematical input, shared schema, central comparison ledger or lifecycle status changed; direct atlas consumers passed."},
     {"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, Green-weighted tail theorem, full Green image, recoil coefficient, tangent-cone promotion, physical-branch bridge or quantum claim."}
   ],
   "artifact_hashes": [
-    {"path": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py", "sha256": "6c21c0129c97aa2c36201f6b8bcbafa6f53323a1eeb7f6306249aceba8e34f26"},
-    {"path": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py", "sha256": "1b1717bbad0198d5a2aca997820815ad917e8a6406e7646487dcc7414b1f110c"},
-    {"path": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py", "sha256": "41e28a60aea43733266382d1f07b029d77efb8779ae9b5545c5993e983fb87fc"},
-    {"path": "closed_universe_observers/schema/berger-clock-weighted-scalar-stream-two-j139-v1.schema.json", "sha256": "901b8ee583bf70357db57771e1bd31dd4fac232c340c3bad899382a27a98fc04"},
-    {"path": "closed_universe_observers/reports/berger-clock-weighted-scalar-stream-two-j139.md", "sha256": "53a899e57b9ebe38ec2788b04cc0f6c05c2bd8bc9b7fd86c22697895f1e5afcc"},
-    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S2_TWO_J139.json", "sha256": "7406ecbac461646da31563894e581bf0005eb6749517e501f8e911de799b2ff2"},
-    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S4_TWO_J139.json", "sha256": "f12e01021d067ccb8a536dd04a427f9d00357a088c3986455b07ced413189053"},
-    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S6_TWO_J139.json", "sha256": "54ddc74225c017ad36d0fe6f4d1db582be814f90c8a37f636dea19498606001a"},
-    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S8_TWO_J139.json", "sha256": "b0bfc30dac466da928702e2e37b602cf0eb5d53068b967344e14876395f9ecca"},
-    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139.json", "sha256": "f12ed5638f2ba9b075836c997b9ce4ec67f2282b67f865b92a342bd121b95761"},
-    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "1128b2b0b30cd352e62bfd243ffd888530c6c462e419ab17566638c0b3e62974"},
-    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "e7234518deb4741a766844744ae1280e99181c4b9dba1632bfd8fbff46d31395"},
-    {"path": "closed_universe_observers/README.md", "sha256": "5e4f52adc148964e4aaa9d880ed4d1a3baca682930db5f7b67b075f3712e051d"},
-    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "2be0b2ac0f9534b327c109573b7cb115d74bb1f88f5249512a91ba59ccff7b3f"},
-    {"path": "notes/universe-building-roadmap.md", "sha256": "0933df192e5fa45a44b220f5d24bd7d7e2c4b68aa1dd00c752e5499cabe0399a"}
+    {"path": "closed_universe_observers/generate_berger_clock_weighted_scalar_stream.py", "sha256": "d56108f3834131e7602de3e5d8ad76b14de8e80ab4fc1eae3e8dc633b4b8283c"},
+    {"path": "closed_universe_observers/verify_berger_clock_weighted_scalar_stream.py", "sha256": "a30944340592d0c028157bc93fbff59881d76ac183039a5b65ef12b7e5e84e52"},
+    {"path": "closed_universe_observers/tests/test_berger_clock_weighted_scalar_stream.py", "sha256": "f0b621653f41fd2ca54d5404e8adba5ce03a97136736b598bee4fc0d7bfd7514"},
+    {"path": "closed_universe_observers/schema/berger-clock-weighted-scalar-stream-two-j139-v1.schema.json", "sha256": "08899a4b056320e886b235611d5905949384a54d807834c758750e542c6cd931"},
+    {"path": "closed_universe_observers/reports/berger-clock-weighted-scalar-stream-two-j139.md", "sha256": "296732923b3c67d6bd13559a2a2f8cb5f00b2449c2aa3bea26f1f5f3f71de792"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S0_TWO_J139.json", "sha256": "5160cf123e6910db3d060ad2c856e5a159f0acdd3e67b9318ca6816b5c0e0cbe"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S2_TWO_J139.json", "sha256": "1a0ab419ac987ec5c4f147cd684c58e8dd76f5c11f0a2b1326f961f9000177a1"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S4_TWO_J139.json", "sha256": "e1219d48f0b3e345a25b6926be321bda8692f549aecd247a12d6610799db16cc"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S6_TWO_J139.json", "sha256": "38113f9d81c4d55d498679fa30e73c13bcea0c1ed62eb7f1c85fe0a2270e02ed"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S8_TWO_J139.json", "sha256": "2d87a8a4bccbf2000f274d3f96dc56ddb9927126d43a4ad86f1439930378b3de"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139.json", "sha256": "ff4035710abf62a081826fa81451d86ba3ebdd409969ccb8d9f0629496c595f8"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "b9db3545c5c45ff8e54052f3e0744e35372a49debb55faebe5ff42a081de30b4"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "53eabf01232426bc3ba526e5dbe60b911c71c2628408f535af7330b6b4cb6f73"},
+    {"path": "closed_universe_observers/README.md", "sha256": "408023ff501a948ffe5cdb2ebb40cb2fa51946198f5996fd1b9c8b18842c6ade"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "1209a48dd9d7a825a55151091e918c9d4886710c0f1f4e545bb71bb84fff3500"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "bd7c1cdc613b29ffc3a16cc4ab9ac27e70e5c1f7450b48f7ceafc9849121285a"}
   ],
   "claim_flags": {
-    "EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAMS_S2_TO_S10_EXPORTED": true,
+    "EXTERNAL_CLOCK_AND_EVEN_TIME_WEIGHTED_DIAGONAL_SCALAR_STREAMS_S0_TO_S10_EXPORTED": true,
     "JOINT_CLOCK_MOMENT_DEPENDENCE_BOUNDED_WITHOUT_FACTORIZATION": true,
     "POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED": false,
     "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,

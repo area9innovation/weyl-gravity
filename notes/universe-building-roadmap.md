@@ -306,10 +306,11 @@ detector coordinate factors require 57,824 supported entries and 154,012
 neighboring scalar terms, with at most four terms per entry.  The remaining
 scalar input is now evaluated through `two_j=139`: 4,970 validated intervals
 reconstruct all 9,870 diagonal values, with worst binomial remainder below
-`10^-150`.  Five companion streams now evaluate the even clock weights
-`s^2,s^4,s^6,s^8,s^10` required by the finite temporal Green polynomial,
-using positivity bounds on the joint clock-secant moments rather than an
-independence assumption.  The active gate is the polarization recurrence and
+`10^-150`.  Six companion streams now evaluate the
+external-clock-weighted rails `a(t)s^p`, `p=0,2,4,6,8,10`, required by the
+finite temporal Green polynomial.  Positivity bounds the joint factor
+`s^p sec(lambda s)^(2k-1)` without an independence assumption.  The active
+gate is the polarization recurrence and
 charge-block Green composition through form `two_j=138`, then the tail beyond
 that rail, rather than dense block construction.
 

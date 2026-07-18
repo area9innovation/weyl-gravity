@@ -6,15 +6,15 @@
   "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "clock_weight", "evaluation_convention", "joint_clock_moment_enclosures", "coverage", "modes", "truncation_remainder_audit", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
   "properties": {
     "schema": {"const": "closed-universe-berger-clock-weighted-scalar-stream-two-j139-v1"},
-    "result_id": {"enum": ["BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S2_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S4_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S6_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S8_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139"]},
+    "result_id": {"enum": ["BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S0_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S2_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S4_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S6_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S8_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139"]},
     "setting_id": {"type": "string", "minLength": 1},
-    "claim_status": {"const": "VALIDATED_EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED_GREEN_COMPOSITION_OPEN"},
+    "claim_status": {"const": "VALIDATED_EXTERNAL_CLOCK_AND_EVEN_TIME_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED_GREEN_COMPOSITION_OPEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
     "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
     "clock_weight": {
       "type": "object", "additionalProperties": false,
-      "required": ["power", "variable", "joint_bound", "maximum_secant_index"],
-      "properties": {"power": {"enum": [2, 4, 6, 8, 10]}, "variable": {"type": "string"}, "joint_bound": {"type": "string"}, "maximum_secant_index": {"const": 50}}
+      "required": ["power", "variable", "external_detector_factor", "joint_integrand", "joint_bound", "maximum_secant_index"],
+      "properties": {"power": {"enum": [0, 2, 4, 6, 8, 10]}, "variable": {"type": "string"}, "external_detector_factor": {"const": "a(t)=cos(lambda s)"}, "joint_integrand": {"const": "s^p sec(lambda s)^(2k-1)"}, "joint_bound": {"type": "string"}, "maximum_secant_index": {"const": 50}}
     },
     "evaluation_convention": {"type": "object"},
     "joint_clock_moment_enclosures": {
@@ -38,9 +38,9 @@
     "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1},
     "flags": {
       "type": "object", "additionalProperties": false,
-      "required": ["EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED", "JOINT_CLOCK_MOMENT_DEPENDENCE_BOUNDED_WITHOUT_FACTORIZATION", "POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED", "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED", "QUANTUM_CLAIM"],
+      "required": ["EXTERNAL_CLOCK_AND_EVEN_TIME_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED", "JOINT_CLOCK_MOMENT_DEPENDENCE_BOUNDED_WITHOUT_FACTORIZATION", "POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED", "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED", "QUANTUM_CLAIM"],
       "properties": {
-        "EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED": {"const": true},
+        "EXTERNAL_CLOCK_AND_EVEN_TIME_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED": {"const": true},
         "JOINT_CLOCK_MOMENT_DEPENDENCE_BOUNDED_WITHOUT_FACTORIZATION": {"const": true},
         "POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED": {"const": false},
         "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": {"const": false},
