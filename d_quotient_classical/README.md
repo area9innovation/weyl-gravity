@@ -433,6 +433,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`reports/nariai-transverse-jet-aware-middle-schur-variation.md`](reports/nariai-transverse-jet-aware-middle-schur-variation.md),
   [`certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json`](certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json),
   [`reports/nariai-transverse-first-order-schur-solve.md`](reports/nariai-transverse-first-order-schur-solve.md)
+- Transverse shifted-chain continuation: the endpoint correction does not by
+  itself repair the 207-coefficient parent/metric shifted chain.  The complete
+  order-at-most-one Φ-only map has shape `225 x 45` and rank 45, but 38 of
+  60 output rows have augmented rank 46.  A normalized two-term left-null
+  witness certifies the scoped obstruction.  Coupled incidence/splitting/
+  constraint variation, higher-order Φ, the SDR and causal transfer are not
+  ruled out:
+  [`certificates/NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1.json`](certificates/NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1.json),
+  [`reports/nariai-transverse-phi-only-shifted-chain-obstruction.md`](reports/nariai-transverse-phi-only-shifted-chain-obstruction.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

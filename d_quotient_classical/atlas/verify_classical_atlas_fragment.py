@@ -60,10 +60,14 @@ def verify() -> None:
         raise AssertionError("jet-aware parent-middle evidence missing")
     if "NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1" not in transverse_ids:
         raise AssertionError("first-order Schur evidence missing")
-    if "207 coefficients" not in transverse["claim_boundary"]:
+    if "NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1" not in transverse_ids:
+        raise AssertionError("Phi-only shifted-chain obstruction evidence missing")
+    if "207-coefficient" not in transverse["claim_boundary"]:
         raise AssertionError("exact shifted-chain boundary missing")
-    if "unique 59-coefficient local gauge repair" not in transverse["claim_boundary"]:
+    if "unique 59-coefficient endpoint gauge repair" not in transverse["claim_boundary"]:
         raise AssertionError("first-order Schur claim boundary missing")
+    if "38 output rows have augmented rank 46" not in transverse["claim_boundary"]:
+        raise AssertionError("Phi-only obstruction boundary missing")
 
 
 if __name__ == "__main__":

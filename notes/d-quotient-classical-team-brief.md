@@ -78,11 +78,19 @@ unique 59-coefficient local first-order Schur correction kills the complete
 endpoint gauge defect.  This is a gauge-repair theorem, not yet an action or
 cyclic theorem.
 
-The next coherent classical gate is therefore the action-derived and cyclic
-identification of that unique correction, followed by the complete rank-310
-SDR variation.  The atlas remains fail-closed: the parent identity and unique
-first-order gauge repair are `CERTIFIED`, the algebraic endpoint ansatz is
-`OBSTRUCTED`, and transverse causal transfer is `OPEN`.
+The post-delivery shifted-chain audit rules out the simplest continuation.
+If only the Φ row is corrected by an arbitrary local operator of order at
+most one, its coefficient map has shape `225 x 45` and rank 45, but 38 of the
+60 output rows have augmented rank 46.  A normalized two-term left-null
+witness in row zero annihilates the complete ansatz and evaluates to one on
+the target.  This obstructs a first-order Φ-only repair, not the coupled SDR.
+
+The next coherent classical gate is therefore the coupled variation of the
+incidence, splitting and constraint rows (or an explicitly higher-order Φ
+ansatz), with action-derived cyclic identification imposed simultaneously.
+The atlas remains fail-closed: the parent identity, unique endpoint repair,
+and scoped Φ-only obstruction are `CERTIFIED`; the complete rank-310 SDR
+and transverse causal transfer remain `OPEN`.
 
 ## Generator correction (2026-07-17; authoritative)
 

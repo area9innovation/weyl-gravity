@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nariai-transverse-phi-only-shifted-chain-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "nariai-transverse-phi-only-shifted-chain-obstruction-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "items": {"enum": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]}, "minItems": 1, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "additionalProperties": {"$ref": "#/$defs/dependency"}, "minProperties": 2},
+    "exact_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempted_repair", "linear_system", "normalized_left_null_witness", "consistent_row_solutions", "shifted_chain_defect", "interpretation"],
+      "properties": {
+        "attempted_repair": {
+          "type": "object", "additionalProperties": false,
+          "required": ["equation", "scope", "unknowns_per_output_row", "output_rows", "total_unknowns", "target_orders", "ansatz_orders"],
+          "properties": {
+            "equation": {"type": "string"}, "scope": {"type": "string"},
+            "unknowns_per_output_row": {"type": "integer"}, "output_rows": {"type": "integer"},
+            "total_unknowns": {"type": "integer"},
+            "target_orders": {"type": "array", "items": {"type": "integer"}},
+            "ansatz_orders": {"type": "array", "items": {"type": "integer"}}
+          }
+        },
+        "linear_system": {
+          "type": "object", "additionalProperties": false,
+          "required": ["shape", "rank", "augmented_ranks", "consistent_rows", "obstructed_rows", "coefficient_map", "equation_keys"],
+          "properties": {
+            "shape": {"type": "array", "items": {"type": "integer"}}, "rank": {"type": "integer"},
+            "augmented_ranks": {"type": "array", "items": {"type": "integer"}},
+            "consistent_rows": {"type": "array", "items": {"type": "integer"}},
+            "obstructed_rows": {"type": "array", "items": {"type": "integer"}},
+            "coefficient_map": {"$ref": "#/$defs/matrix"},
+            "equation_keys": {"type": "array", "items": {"$ref": "#/$defs/equationKey"}}
+          }
+        },
+        "normalized_left_null_witness": {
+          "type": "object", "additionalProperties": false,
+          "required": ["output_row", "support_size", "terms", "left_null_map_defect", "left_null_target_value"],
+          "properties": {
+            "output_row": {"type": "integer"}, "support_size": {"type": "integer"},
+            "terms": {"type": "array", "items": {"$ref": "#/$defs/witnessTerm"}},
+            "left_null_map_defect": {"$ref": "#/$defs/matrix"},
+            "left_null_target_value": {"type": "string"}
+          }
+        },
+        "consistent_row_solutions": {"type": "object", "patternProperties": {"^[0-9]+$": {"$ref": "#/$defs/operator"}}, "additionalProperties": false},
+        "shifted_chain_defect": {"$ref": "#/$defs/operator"},
+        "interpretation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["first_order_Phi_only_repair_exists", "full_coupled_SDR_repair_obstructed", "required_next_ansatz"],
+          "properties": {
+            "first_order_Phi_only_repair_exists": {"const": false},
+            "full_coupled_SDR_repair_obstructed": {"const": false},
+            "required_next_ansatz": {"type": "string"}
+          }
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "flags": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4},
+    "verification_commands": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 4}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "rank", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false, "minItems": 2, "maxItems": 2},
+        "rank": {"type": "integer", "minimum": 0},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["orders", "nonzero_coefficients", "entries", "sha256"],
+      "properties": {
+        "orders": {"type": "array", "items": {"type": "integer"}},
+        "nonzero_coefficients": {"type": "integer", "minimum": 0},
+        "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "matrix": {"$ref": "#/$defs/matrix"}}}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "equationKey": {
+      "type": "object", "additionalProperties": false,
+      "required": ["word", "input_column"],
+      "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "input_column": {"type": "integer"}}
+    },
+    "witnessTerm": {
+      "type": "object", "additionalProperties": false,
+      "required": ["equation_index", "word", "input_column", "coefficient"],
+      "properties": {
+        "equation_index": {"type": "integer"}, "word": {"type": "array", "items": {"type": "integer"}},
+        "input_column": {"type": "integer"}, "coefficient": {"type": "string"}
+      }
+    }
+  }
+}

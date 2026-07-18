@@ -33,8 +33,11 @@ coefficients, and the endpoint gauge defect contains zeroth- and second-order
 words, obstructing a purely algebraic Schur correction.  The complete
 first-order local Schur gauge map is now solved exactly: its `60 x 45` map has
 rank 45 on every output row and gives one unique 59-coefficient repair.  Its
-action-derived and cyclic identification, the rank-310 SDR variation, and
-causal transfer remain `OPEN`.
+post-delivery audit then rules out an order-at-most-one correction of the
+`Phi` row alone: 38 of 60 shifted-chain rows have augmented rank 46, with a
+normalized two-term left-null witness.  The coupled incidence/splitting/
+constraint variation, action-derived cyclic identification, rank-310 SDR,
+and causal transfer remain `OPEN`.
 
 All bounded/quasiperiodic, smooth-secular, and causal/retarded second-order
 statuses are separate fields.  No status is transported between backgrounds
