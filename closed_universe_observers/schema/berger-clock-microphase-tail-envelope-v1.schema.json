@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "method", "clock_envelope", "cutoff_analysis", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-clock-microphase-tail-envelope-v1"},
+    "result_id": {"const": "BERGER_CLOCK_MICROPHASE_TAIL_ENVELOPE"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "UNIFORM_FROZEN_PROFILE_CLOCK_MICROPHASE_ENVELOPE_CERTIFIED_MOVING_PROFILE_TAIL_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "method": {"type": "object"},
+    "clock_envelope": {"type": "object"},
+    "cutoff_analysis": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "BOUND_THE_CLOCK_DERIVATIVES_OF_THE_MOVING_BERGER_PROFILE_AND_COMBINE_THEM_WITH_THE_MICROPHASE_ENVELOPE"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

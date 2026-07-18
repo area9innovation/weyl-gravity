@@ -69,6 +69,7 @@ CERTIFICATES = {
     "green_weighted_tail_reduction": PACKAGE / "certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
     "profile_sobolev_n1": PACKAGE / "certificates/BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1.json",
     "correlated_profile_sobolev_n1": PACKAGE / "certificates/BERGER_CORRELATED_PROFILE_SOBOLEV_N1.json",
+    "clock_microphase_tail_envelope": PACKAGE / "certificates/BERGER_CLOCK_MICROPHASE_TAIL_ENVELOPE.json",
     "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
@@ -335,6 +336,14 @@ def entries() -> list[dict]:
             "evidence": _evidence("haar_normalization_repair", "green_weighted_tail_reduction", "profile_sobolev_n1", "correlated_profile_sobolev_n1"),
         },
         {
+            "id": "observer.berger.detector_profile.clock_microphase_tail_envelope",
+            "scope": _scope(carrier="normalized flat-clock microphase transform acting on a fixed Berger detector one-form, with the physical moving-profile comparison left explicit", degree=1, parity="D0 axial and D1 transverse frozen-profile bounds", ell="tail form two_j>1024; sufficient frozen-profile target two_j>3421", m="all omitted representation rows", k="all omitted representation columns", omega="sqrt(lambda)/48 internal microphase with external sqrt(58)/288 clock amplitude"),
+            "descriptions": {"causal": "CERTIFIED", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "OPEN: the uniform fixed-vector transform envelope is certified, but the actual clock-driven detector profile has no certified identification with a frozen vector", "response_rank": "OPEN", "emitter_preparation": "bound the clock derivatives of the moving radius-1/128 Berger profile before using the quantitative cutoff target", "clock_and_rod_dependence": "two integrations by parts use the normalized flat clock bump and exact external amplitude; moving rods and the Gram factor are deliberately excluded from the fixed-vector theorem and remain NO_CERTIFIED_MAP", "relational_redshift_contribution": "NOT_APPLICABLE", "recoil_backreaction_order": "Green-tail route input only; absolute-g3 recoil remains OPEN", "survives_gauge_reduction": "the Maxwell spectral reduction is certified, but physical moving-profile tail control and the complete low-mode projection remain OPEN", "profile_green_boundary_dependencies": "boundary flatness and exact total variation give |T(lambda)|<=2304 C/lambda; the frozen-profile bound is about 124 above two_j=1024 and first falls below one for both polarizations at retained two_j=3421, but this is not a physical full-tail or response theorem"},
+            "tangent_cone": {"restriction_status": "NOT_APPLICABLE", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
+            "evidence": _evidence("selected_correlated_clock_transform", "green_weighted_tail_reduction", "correlated_profile_sobolev_n1", "clock_microphase_tail_envelope"),
+        },
+        {
             "id": "observer.crosswalk.berger_physical_branch_to_detector",
             "scope": _scope(carrier="same-background Berger physical-branch dictionary to relational detector, redshift, memory and recoil records", degree="crosswalk", parity="all", ell="all", m="all", k="all", omega="all"),
             "descriptions": {name: "NO_CERTIFIED_MAP" for name in DESCRIPTIONS},
@@ -383,6 +392,7 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_profile.green_weighted_spatial_tail_reduction": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.clock_uniform_sobolev_n1": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.correlated_sobolev_n1": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.detector_profile.clock_microphase_tail_envelope": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }

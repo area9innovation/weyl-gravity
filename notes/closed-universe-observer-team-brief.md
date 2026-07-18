@@ -704,6 +704,19 @@ true tail.  The active gate is therefore a direct correlated Green-tail
 estimator or a wider complete retained rail; full-image, recoil and cone
 promotion remain open.
 
+`BERGER_CLOCK_MICROPHASE_TAIL_ENVELOPE` now resolves the first direct
+Green-tail subgate for a fixed spatial profile.  Two boundary-flat clock
+integrations by parts and the exact single-sign-change formula for `B_ss`
+give the uniform envelope `|T(lambda)| <= 2304 C/lambda`.  Combining it with
+the correlated `N=1` norm leaves a frozen-profile tail upper near `124` above
+retained `two_j=1024`; the first integer retained cutoff at which this bound
+is below one for both polarizations is `two_j=3421`.  This is a quantitative
+target, not the physical tail theorem.  The actual detector one-form moves
+with the clock-driven rods and Gram factor, so its clock-derivative/
+commutator bound is `NO_CERTIFIED_MAP`, and the complete low-mode projection
+is still open.  The active gate is that moving-profile derivative estimate,
+not immediate widening to `3421` or full-image promotion.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

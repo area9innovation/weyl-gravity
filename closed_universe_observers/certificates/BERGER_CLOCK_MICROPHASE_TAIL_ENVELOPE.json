@@ -1,0 +1,206 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result certifies a uniform second-integration-by-parts envelope for the normalized flat-clock transform of a fixed spatial Berger one-form: |T(lambda)|<=2304 C/lambda. The proof uses boundary flatness, the exact B_ss identity, its single sign change, and the total variation integral integral|B_ss|=2 max|B_s|. Combined with the correlated N=1 spatial norm, the frozen-profile tail above retained two_j=1024 is still non-small, while retained two_j=3421 is the first certified integer cutoff at which this particular bound is below one for both detector polarizations. This is a quantitative route certificate, not the physical moving-profile tail: the actual F_a(s) depends on the clock-driven rods and Gram factor, and no clock-derivative/commutator estimate identifying it with a frozen vector is certified. The complete low-mode projection is also absent. Therefore no full Maxwell or massive image, detector response or rank, recoil, tangent-cone restriction, active Bridge 3, nonlinear observer-morphism stability, or quantum claim is promoted.",
+  "claim_status": "UNIFORM_FROZEN_PROFILE_CLOCK_MICROPHASE_ENVELOPE_CERTIFIED_MOVING_PROFILE_TAIL_OPEN",
+  "clock_envelope": {
+    "clock_bump_denominator": {
+      "lower": "220480274480969204810823647005560476068131788413/365375409332725729550921208179070754913983135744",
+      "upper": "881965699414273880489577659458787200995539114485/1461501637330902918203684832716283019655932542976"
+    },
+    "external_clock_frequency_nu": {
+      "exact": "sqrt(58)/288",
+      "upper": "38647447443613742374373345408349084481612812825/1461501637330902918203684832716283019655932542976"
+    },
+    "flat_bump_derivative_audit": {
+      "B_ss_identity": "B_ss=2 t^2(2 t^2-6 t+3) exp(1-t), t=(1-s^2)^(-1)",
+      "critical_s_interval": "[720756420760916306314903497430569845219664453794897544633127740734006420490410725/948568795032094272909893509191171341133987714380927500611236528192824358010355712,720756420760916306314903497430569845219664453794897544633127740734006420490410727/948568795032094272909893509191171341133987714380927500611236528192824358010355712]",
+      "critical_t_interval": "[140271116642695579495805893661007486183739125139349601674339094051399674146251337/59285549689505892056868344324448208820874232148807968788202283012051522375647232,561084466570782317983223574644029944734956500557398406697356376205598696585005349/237142198758023568227473377297792835283496928595231875152809132048206089502588928]",
+      "integral_abs_B_s": "1",
+      "integral_abs_B_ss_upper": "3171980434358386802448741299307738426123571769639/730750818665451459101842416358141509827966271488",
+      "maximum_abs_slope_upper": "3171980434358386802448741299307738426123571769639/1461501637330902918203684832716283019655932542976",
+      "unique_sign_change_for_t_ge_1": "t=(3+sqrt(3))/2"
+    },
+    "normalized_envelope_constant_C_upper": "5321097990215468369347850281586844449778265375393/730750818665451459101842416358141509827966271488",
+    "uniform_transform_envelope": "|T(lambda)| <= 2304 C/lambda for lambda>0",
+    "weighted_second_derivative_L1_upper": "6421872493090956479850082437390419254158596176751/1461501637330902918203684832716283019655932542976"
+  },
+  "cutoff_analysis": {
+    "complete_low_mode_projection_status": "OPEN",
+    "current_cutoff_rows": [
+      {
+        "clock_transform_operator_norm_upper": {
+          "decimal_upper": "6.383399718037e-02",
+          "exact_dyadic_upper": "23323372849120564320008382608449622666418735201/365375409332725729550921208179070754913983135744"
+        },
+        "detector_id": "D0",
+        "first_omitted_delta1_lower": "325899779/1240",
+        "first_omitted_j": "1025/2",
+        "frozen_profile_N1_tail_upper": {
+          "decimal_upper": "1.240914193009e+02",
+          "exact_dyadic_upper": "90679906243495819313508413060740155286423505570741/730750818665451459101842416358141509827966271488"
+        },
+        "frozen_profile_tail_below_one": false,
+        "retained_max_two_j": 1024
+      },
+      {
+        "clock_transform_operator_norm_upper": {
+          "decimal_upper": "6.383399718037e-02",
+          "exact_dyadic_upper": "23323372849120564320008382608449622666418735201/365375409332725729550921208179070754913983135744"
+        },
+        "detector_id": "D1",
+        "first_omitted_delta1_lower": "325899779/1240",
+        "first_omitted_j": "1025/2",
+        "frozen_profile_N1_tail_upper": {
+          "decimal_upper": "1.240931163922e+02",
+          "exact_dyadic_upper": "45340573197168461569580652299031531949331615707059/365375409332725729550921208179070754913983135744"
+        },
+        "frozen_profile_tail_below_one": false,
+        "retained_max_two_j": 1024
+      }
+    ],
+    "first_sufficient_frozen_profile_retained_max_two_j": 3421,
+    "first_sufficient_rows": [
+      {
+        "clock_transform_operator_norm_upper": {
+          "decimal_upper": "5.729701239034e-03",
+          "exact_dyadic_upper": "4186983871132383452324974328221489376063624363/730750818665451459101842416358141509827966271488"
+        },
+        "detector_id": "D0",
+        "first_omitted_delta1_lower": "7261630129/2480",
+        "first_omitted_j": "1711",
+        "frozen_profile_N1_tail_upper": {
+          "decimal_upper": "9.997735120303e-01",
+          "exact_dyadic_upper": "182646328099045205353948518540054543367225436215/182687704666362864775460604089535377456991567872"
+        },
+        "frozen_profile_tail_below_one": true,
+        "retained_max_two_j": 3421
+      },
+      {
+        "clock_transform_operator_norm_upper": {
+          "decimal_upper": "5.729701239034e-03",
+          "exact_dyadic_upper": "4186983871132383452324974328221489376063624363/730750818665451459101842416358141509827966271488"
+        },
+        "detector_id": "D1",
+        "first_omitted_delta1_lower": "7261630129/2480",
+        "first_omitted_j": "1711",
+        "frozen_profile_N1_tail_upper": {
+          "decimal_upper": "9.997871850700e-01",
+          "exact_dyadic_upper": "730595303981165849032560125073710858591836630301/730750818665451459101842416358141509827966271488"
+        },
+        "frozen_profile_tail_below_one": true,
+        "retained_max_two_j": 3421
+      }
+    ],
+    "minimality_witness_at_previous_cutoff": [
+      {
+        "clock_transform_operator_norm_upper": {
+          "decimal_upper": "5.733051133852e-03",
+          "exact_dyadic_upper": "8378863619026922388759378506866234778961430165/1461501637330902918203684832716283019655932542976"
+        },
+        "first_omitted_delta1_lower": "3628693533/1240",
+        "first_omitted_j": "3421/2",
+        "frozen_profile_N1_tail_upper": {
+          "decimal_upper": "1.000942897662e+00",
+          "exact_dyadic_upper": "365719920951906361477376466635100314568110985679/365375409332725729550921208179070754913983135744"
+        },
+        "frozen_profile_tail_below_one": false,
+        "retained_max_two_j": 3420
+      },
+      {
+        "clock_transform_operator_norm_upper": {
+          "decimal_upper": "5.733051133852e-03",
+          "exact_dyadic_upper": "8378863619026922388759378506866234778961430165/1461501637330902918203684832716283019655932542976"
+        },
+        "first_omitted_delta1_lower": "3628693533/1240",
+        "first_omitted_j": "3421/2",
+        "frozen_profile_N1_tail_upper": {
+          "decimal_upper": "1.000956586694e+00",
+          "exact_dyadic_upper": "1462899690350921115134899865176349927654409944087/1461501637330902918203684832716283019655932542976"
+        },
+        "frozen_profile_tail_below_one": false,
+        "retained_max_two_j": 3420
+      }
+    ],
+    "moving_profile_status": "NO_CERTIFIED_MAP"
+  },
+  "dependency_refs": {
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "profile_n1": {
+      "path": "closed_universe_observers/certificates/BERGER_CORRELATED_PROFILE_SOBOLEV_N1.json",
+      "result_id": "BERGER_CORRELATED_PROFILE_SOBOLEV_N1",
+      "sha256": "6b3f1769b797ec0d8cba5ff684d8ee94ea3f05333151e6177ed819405dabc93b"
+    },
+    "selected_transform": {
+      "path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
+      "result_id": "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM",
+      "sha256": "09d51889e2396fa6388a769c9c37c69b1663f51581ed752ac26d1d9f7b776a42"
+    },
+    "tail_reduction": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION",
+      "sha256": "4e6c2ac1685221704ef42f7cd4d2a31d14daede5f9f048ec1d05e5dfe53cce83"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "COMPLETE_LOW_MODE_PROJECTION_EXPORTED": false,
+    "CURRENT_TWO_J1024_FROZEN_PROFILE_BOUND_CERTIFIES_SMALL_TAIL": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "FROZEN_PROFILE_SUFFICIENT_CUTOFF_EXPORTED": true,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "MASSIVE_TWO_FORM_TAIL_BOUND_EXPORTED": false,
+    "MOVING_DETECTOR_PROFILE_CLOCK_DERIVATIVE_BOUND_EXPORTED": false,
+    "QUANTUM_CLAIM": false,
+    "UNIFORM_FIXED_VECTOR_CLOCK_MICROPHASE_ENVELOPE_EXPORTED": true,
+    "VALIDATED_PHYSICAL_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": false
+  },
+  "method": {
+    "boundary_conditions": "B and every derivative vanish at s=1; h'(0)=0 and sin(0)=0",
+    "integration_by_parts_count": 2,
+    "normalized_transform": "T(lambda)=D^(-1) integral_0^1 B(s) cos(nu s) cos(s sqrt(lambda)/48) ds",
+    "spectral_combination": "||Pi_tail T(Delta1)F|| <= 2304 C Lambda^(-2)||Delta1 F|| for clock-independent F"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "mutated_weighted_second_derivative_L1_upper": "406236507341571209675167642260335103504378050889/182687704666362864775460604089535377456991567872",
+      "name": "replace_total_variation_2max_abs_Bs_by_one_sided_max_abs_Bs"
+    }
+  ],
+  "next_gate": "BOUND_THE_CLOCK_DERIVATIVES_OF_THE_MOVING_BERGER_PROFILE_AND_COMBINE_THEM_WITH_THE_MICROPHASE_ENVELOPE",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_clock_microphase_tail_envelope.py",
+        "sha256": "e4d39ca5a166447694e949d38463a7fe17d07347d3963085aa09a781ea09dd6a"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_clock_microphase_tail_envelope.py",
+        "sha256": "0d7c25c81ae0d06803d531c5d6624465d30fa020fd248f188609ec0adb60517a"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_clock_microphase_tail_envelope.py",
+        "sha256": "a38e8fa023eb89b9df35d62256330430523db524a36551e38af06cc7068cef32"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-clock-microphase-tail-envelope-v1.schema.json",
+        "sha256": "0a79ef9368440ad3cd3d30863b49c61eedae59196ecaa91c25cc6a9c2b510ac0"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-clock-microphase-tail-envelope.md",
+        "sha256": "2df152529072ec482ba9c12e5dacf9c26dc1427b770529801dc81c89f29e54cb"
+      }
+    ]
+  },
+  "result_id": "BERGER_CLOCK_MICROPHASE_TAIL_ENVELOPE",
+  "schema": "closed-universe-berger-clock-microphase-tail-envelope-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}
