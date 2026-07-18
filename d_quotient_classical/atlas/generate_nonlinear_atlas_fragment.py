@@ -68,7 +68,66 @@ def _mode_data(second: dict[str, Any], *, dispersion: tuple[str, str], pairing: 
     }
 
 
+def bridge2_entry(importer: dict[str, Any], fallback_scope: dict[str, Any]) -> dict[str, Any]:
+    activated = importer["claim_flags"]["BRIDGE_2_ACTIVATED"] is True
+    if not activated:
+        return {
+            "id": "nonlinear.berger.bridge2.invariant_interaction_to_physical_branches",
+            "scope": fallback_scope,
+            "descriptions": {axis: "NO_CERTIFIED_MAP" for axis in AXES},
+            "mode_data": _mode_data(
+                _second(
+                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the bounded obstruction problem."),
+                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the secular correction problem."),
+                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the retarded correction problem."),
+                ),
+                dispersion=("NO_CERTIFIED_MAP", "Branch-labelled Berger dispersion requires bridge 1."),
+                pairing=("NO_CERTIFIED_MAP", "Branch pairing transport is an acceptance condition of bridge 1."),
+                taub=("NO_CERTIFIED_MAP", "The landed D^2E-q2 dictionary cannot be evaluated branchwise before bridge 1."),
+                resonance=("NO_CERTIFIED_MAP", "The filtered-cyclic ell3 obstruction is certified only on the unsplit retained carrier."),
+            ),
+            "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
+            "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The importer requires the complete atlas mode scope and content-addressed crosswalk, chain, inclusion/projection/cofiber, pairing, gauge/nondynamical, K_Berger-equivariance, cohomology and independent-verifier evidence. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
+        }
+
+    summary = importer["imported_branch_map"]
+    if not isinstance(summary, dict):
+        raise ValueError("activated bridge 2 lacks imported branch-map summary")
+    causal_ready = "LORENTZIAN-CAUSAL" in summary["dependency_tags"]
+    causal_status = "OPEN" if causal_ready else "NO_CERTIFIED_MAP"
+    causal_statement = (
+        "The imported branch map is Lorentzian-causal tagged, but the projected retarded correction problem has not been computed."
+        if causal_ready else
+        "The imported branch map has no LORENTZIAN-CAUSAL certificate."
+    )
+    return {
+        "id": "nonlinear.berger.bridge2.invariant_interaction_to_physical_branches",
+        "scope": summary["mode_scope"],
+        "descriptions": {
+            "causal": causal_status,
+            "symplectic": "CERTIFIED",
+            "nonlinear": "OPEN",
+            "observational": "NO_CERTIFIED_MAP",
+            "quantum": "NO_CERTIFIED_MAP",
+        },
+        "mode_data": _mode_data(
+            _second(
+                ("OPEN", "Bridge 1 is imported; the branch-projected bounded obstruction map remains to be computed."),
+                ("OPEN", "Bridge 1 is imported; the branch-projected secular correction problem remains to be computed."),
+                (causal_status, causal_statement),
+            ),
+            dispersion=("OPEN", "The certified branch carrier is available, but branchwise nonlinear harmonic selection has not been computed."),
+            pairing=("CERTIFIED", "Pairing transport and the induced cohomology map passed the Bridge-1 importer."),
+            taub=("OPEN", "Apply the landed D^2E-q2 dictionary on the imported carrier to decide adjoint-cokernel reach."),
+            resonance=("OPEN", "The unsplit filtered-cyclic ell3 obstruction is preserved; its projected cohomology/deformation disposition remains open."),
+        ),
+        "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
+        "claim_boundary": "Bridge 1 has activated Bridge 2 on the explicitly imported same-background carrier. This certifies carrier, chain/cohomology and pairing readiness only. The projected ell2/ell3 operation, cohomology survival, cyclic deformation class and admissible-removal verdict remain OPEN; q4 is not authorized.",
+    }
+
+
 def entries() -> list[dict[str, Any]]:
+    branch_importer = json.loads(CERTS["branch_importer"].read_text())
     berger = {
         "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell",
         "background": "fixed rational positive Berger clock",
@@ -261,24 +320,7 @@ def entries() -> list[dict[str, Any]]:
             "evidence": _evidence("axial_ee_source", "relative_branch_dictionary", "dictionary"),
             "claim_boundary": "This is one REDUCED-MODE axial ell=2,m=0,k=0 sum-frequency source block on the compact product background. Its exact second-order correction is not a cyclic L_infinity field redefinition, and the polar input leg still lacks cyclic BV compatibility. Even outputs, conjugate/difference frequencies, the complete real tangent, final residual descent, causal propagation and the Berger retained carrier remain separate or NO_CERTIFIED_MAP.",
         },
-        {
-            "id": "nonlinear.berger.bridge2.invariant_interaction_to_physical_branches",
-            "scope": bridge2_scope,
-            "descriptions": {axis: "NO_CERTIFIED_MAP" for axis in AXES},
-            "mode_data": _mode_data(
-                _second(
-                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the bounded obstruction problem."),
-                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the secular correction problem."),
-                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the retarded correction problem."),
-                ),
-                dispersion=("NO_CERTIFIED_MAP", "Branch-labelled Berger dispersion requires bridge 1."),
-                pairing=("NO_CERTIFIED_MAP", "Branch pairing transport is an acceptance condition of bridge 1."),
-                taub=("NO_CERTIFIED_MAP", "The landed D^2E-q2 dictionary cannot be evaluated branchwise before bridge 1."),
-                resonance=("NO_CERTIFIED_MAP", "The filtered-cyclic ell3 obstruction is certified only on the unsplit retained carrier."),
-            ),
-            "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
-            "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The importer requires the complete atlas mode scope and content-addressed crosswalk, chain, inclusion/projection/cofiber, pairing, gauge/nondynamical, K_Berger-equivariance, cohomology and independent-verifier evidence. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
-        },
+        bridge2_entry(branch_importer, bridge2_scope),
         {
             "id": "nonlinear.product.bridge1.generic_axial_relative_branch_map",
             "scope": product_axial_scope,

@@ -3,7 +3,7 @@
   "$id": "https://area9.dk/schemas/pure-weyl-berger-mixed-ell3-branch-projection-importer-preflight-v1.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "active_bridge", "input_contract", "dependency_refs", "downstream_disposition", "claim_flags", "next_gate", "source_manifest", "verification_commands", "verification_receipt", "claim_boundary"],
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "active_bridge", "input_contract", "imported_branch_map", "dependency_refs", "downstream_disposition", "claim_flags", "next_gate", "source_manifest", "verification_commands", "verification_receipt", "claim_boundary"],
   "properties": {
     "schema": {"const": "pure-weyl-berger-mixed-ell3-branch-projection-importer-preflight-v1"},
     "result_id": {"const": "BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1"},
@@ -12,6 +12,23 @@
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
     "active_bridge": {"type": "object", "required": ["order", "name", "activation_gate", "status"], "properties": {"order": {"const": 2}, "name": {"const": "invariant interaction to physical branches"}, "activation_gate": {"type": "string", "minLength": 1}, "status": {"enum": ["INPUT_BLOCKED", "READY"]}}},
     "input_contract": {"type": "object", "required": ["required_result_id", "schema_path", "schema_sha256", "candidate_paths", "required_flags", "required_artifact_roles", "accepted_map_categories", "status"], "properties": {"required_result_id": {"const": "BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1"}, "schema_path": {"type": "string"}, "schema_sha256": {"$ref": "#/$defs/hash"}, "candidate_paths": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "required_flags": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"type": "string"}}, "required_artifact_roles": {"type": "array", "minItems": 8, "uniqueItems": true, "items": {"type": "string"}}, "accepted_map_categories": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "status": {"enum": ["MISSING", "IMPORTED"]}}},
+    "imported_branch_map": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["result_id", "map_category", "branch_ids", "dependency_tags", "mode_scope"],
+          "properties": {
+            "result_id": {"const": "BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1"},
+            "map_category": {"enum": ["SUPPORT_LOCAL_MIXED_BUNDLE", "NONCONTRACTIBLE_COFIBER", "REDUCED_MODE_NONLOCAL"]},
+            "branch_ids": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+            "dependency_tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+            "mode_scope": {"$ref": "#/$defs/mode_scope"}
+          }
+        }
+      ]
+    },
     "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/artifact"}},
     "downstream_disposition": {"type": "object", "required": ["projected_operation", "operation_on_cohomology", "cyclic_deformation_class", "admissible_redefinition", "q4"], "properties": {"projected_operation": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "operation_on_cohomology": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "cyclic_deformation_class": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "admissible_redefinition": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "q4": {"const": "NOT_AUTHORIZED"}}},
     "claim_flags": {"type": "object", "required": ["BRANCH_PROJECTION_IMPORTER_READY", "ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED", "BRIDGE_2_ACTIVATED", "PROJECTED_ELL3_COMPUTED", "COHOMOLOGY_OPERATION_DECIDED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "ADMISSIBLE_REDEFINITION_DISPLAYED", "Q4_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {"BRANCH_PROJECTION_IMPORTER_READY": {"const": true}, "ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": {"type": "boolean"}, "BRIDGE_2_ACTIVATED": {"type": "boolean"}, "PROJECTED_ELL3_COMPUTED": {"const": false}, "COHOMOLOGY_OPERATION_DECIDED": {"const": false}, "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false}, "ADMISSIBLE_REDEFINITION_DISPLAYED": {"const": false}, "Q4_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
@@ -28,6 +45,7 @@
         "properties": {
           "result_state": {"const": "INPUT_BLOCKED_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_MISSING"},
           "active_bridge": {"type": "object", "properties": {"status": {"const": "INPUT_BLOCKED"}}},
+          "imported_branch_map": {"type": "null"},
           "claim_flags": {"type": "object", "properties": {"ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": {"const": false}, "BRIDGE_2_ACTIVATED": {"const": false}}},
           "next_gate": {"const": "SUPPLY_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP"}
         }
@@ -39,6 +57,7 @@
         "properties": {
           "result_state": {"const": "BRIDGE_1_IMPORTED_BRIDGE_2_PROJECTION_READY"},
           "active_bridge": {"type": "object", "properties": {"status": {"const": "READY"}}},
+          "imported_branch_map": {"type": "object"},
           "claim_flags": {"type": "object", "properties": {"ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": {"const": true}, "BRIDGE_2_ACTIVATED": {"const": true}}},
           "next_gate": {"const": "COMPUTE_PROJECTED_ELL2_ELL3_AND_INVARIANT_DISPOSITION"}
         }
@@ -47,6 +66,24 @@
   ],
   "$defs": {
     "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "artifact": {"type": "object", "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}}
+    "artifact": {"type": "object", "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "mode_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"const": "fixed_rational_positive_Berger_clock"},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    }
   }
 }

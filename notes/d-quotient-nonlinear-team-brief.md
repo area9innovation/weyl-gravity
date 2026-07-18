@@ -770,6 +770,11 @@ corresponding atlas row
 `NO_CERTIFIED_MAP` on every axis.  Once activated, use the landed
 `D^2E`--`q2`--`ell_n` dictionary to decide cohomology survival, cyclic
 deformation nontriviality, or removal by a displayed admissible redefinition.
+The generated row is activation-sensitive: after a valid import it copies the
+certified mode scope, marks pairing/branch-carrier readiness `CERTIFIED`, and
+opens only the still-uncomputed nonlinear dispositions.  Causal status opens
+only for an explicitly `LORENTZIAN-CAUSAL` input; observational and quantum
+axes remain `NO_CERTIFIED_MAP`.
 The certified filtered-cyclic `ell3` obstruction is preserved and `q4` is not
 authorized.
 

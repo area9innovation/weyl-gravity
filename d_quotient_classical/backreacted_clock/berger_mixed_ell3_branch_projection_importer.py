@@ -150,6 +150,13 @@ def build() -> dict:
             "accepted_map_categories": ["SUPPORT_LOCAL_MIXED_BUNDLE", "NONCONTRACTIBLE_COFIBER", "REDUCED_MODE_NONLOCAL"],
             "status": "IMPORTED" if imported else "MISSING",
         },
+        "imported_branch_map": None if not imported else {
+            "result_id": candidate["result_id"],
+            "map_category": candidate["map_category"],
+            "branch_ids": candidate["branch_ids"],
+            "dependency_tags": candidate["dependency_tags"],
+            "mode_scope": candidate["mode_scope"],
+        },
         "dependency_refs": dependencies,
         "downstream_disposition": {
             "projected_operation": "OPEN" if imported else "NO_CERTIFIED_MAP",
@@ -184,7 +191,7 @@ def build() -> dict:
                 "commands_and_elapsed_seconds": [
                     {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards", "elapsed_seconds": 0.53},
                     {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py", "elapsed_seconds": 1.15},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 1.57},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 0.84},
                     {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true <two scoped schemas>", "elapsed_seconds": 3.10}
                 ]
             },
@@ -207,6 +214,8 @@ def verify(value: Mapping[str, object]) -> None:
         raise ValueError("bridge activation drifted")
     if any(flags[key] for key in ("PROJECTED_ELL3_COMPUTED", "COHOMOLOGY_OPERATION_DECIDED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "ADMISSIBLE_REDEFINITION_DISPLAYED", "Q4_AUTHORIZED", "QUANTUM_CLAIM")):
         raise ValueError("preflight promoted a downstream claim")
+    if (value["imported_branch_map"] is not None) is not imported:
+        raise ValueError("imported branch-map summary drifted from input status")
     for dependency in value["dependency_refs"].values():
         if _sha256(ROOT / dependency["path"]) != dependency["sha256"]:
             raise ValueError(f"dependency hash drifted: {dependency['path']}")

@@ -45,6 +45,7 @@
     "projected_operation": "NO_CERTIFIED_MAP",
     "q4": "NOT_AUTHORIZED"
   },
+  "imported_branch_map": null,
   "input_contract": {
     "accepted_map_categories": [
       "SUPPORT_LOCAL_MIXED_BUNDLE",
@@ -87,11 +88,11 @@
   "result_state": "INPUT_BLOCKED_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_MISSING",
   "schema": "pure-weyl-berger-mixed-ell3-branch-projection-importer-preflight-v1",
   "source_manifest": {
-    "d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py": "9402a538e7711b443077ea9a8d9d5517cb573c28e4d2ae8c0eb3f583ab2c65ca",
+    "d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py": "9de08d7eed5e1d9222ca0b4eab9ffb2b60154787d3de2a46a2159d80ee997101",
     "d_quotient_classical/backreacted_clock/tests/test_berger_mixed_ell3_branch_projection_importer.py": "b4d11ca93acd8a305c39a4c6201d07eeeb9b5d9538587249e4b1a161fd10957e",
     "d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py": "60bb55446ac91cabc5281d2a6d8b336d01587b8251fef5762a3e2de807261aba",
     "d_quotient_classical/schema/berger-admissible-same-background-branch-map-v1.schema.json": "90a8e62d6d9a6bc5e4d2ffe4c5f1f13875bb46314578200a5eb05b74603f75a7",
-    "d_quotient_classical/schema/berger-mixed-ell3-branch-projection-importer-preflight-v1.schema.json": "cc9216daf93a7c531981d52b9d4b99e55fb354cd7de0b0f53905c68206d95575"
+    "d_quotient_classical/schema/berger-mixed-ell3-branch-projection-importer-preflight-v1.schema.json": "ddb513352f75c34645dc3f067c35e99d0f0aa4c17aebbea5c1f2b6d21ccf43fe"
   },
   "verification_commands": [
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards",
@@ -120,7 +121,7 @@
         },
         {
           "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
-          "elapsed_seconds": 1.57
+          "elapsed_seconds": 0.84
         },
         {
           "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true <two scoped schemas>",

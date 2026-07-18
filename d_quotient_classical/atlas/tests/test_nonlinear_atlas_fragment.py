@@ -1,3 +1,4 @@
+import copy
 import json
 import unittest
 
@@ -34,6 +35,42 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("INPUT_BLOCKED", entry["claim_boundary"])
         self.assertIn("complete atlas mode scope", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
+
+    def test_bridge_two_activation_opens_only_the_projected_calculation(self):
+        importer = json.loads(atlas.CERTS["branch_importer"].read_text())
+        importer = copy.deepcopy(importer)
+        importer["claim_flags"]["BRIDGE_2_ACTIVATED"] = True
+        importer["imported_branch_map"] = {
+            "result_id": "BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1",
+            "map_category": "NONCONTRACTIBLE_COFIBER",
+            "branch_ids": ["Einstein_like", "extra_Weyl", "Maxwell", "gauge_nondynamical"],
+            "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+            "mode_scope": {
+                "theory": "pure-Weyl gravity with Berger clock and Maxwell apparatus",
+                "background": "fixed_rational_positive_Berger_clock",
+                "boundaries": "R_t x compact Berger S3; no spatial boundary",
+                "charge_sector": "fixed-coupling retained sector",
+                "carrier": "certified synthetic branch carrier",
+                "degree": "all declared BV degrees",
+                "parity": "all declared parities",
+                "ell": "all declared harmonics",
+                "m": "all declared harmonics",
+                "k": "NOT_APPLICABLE",
+                "omega": "all declared K_Berger frequencies",
+            },
+        }
+        entry = atlas.bridge2_entry(importer, {})
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("projected ell2/ell3 operation", entry["claim_boundary"])
+        self.assertIn("q4 is not authorized", entry["claim_boundary"])
+        importer["imported_branch_map"]["dependency_tags"].append("LORENTZIAN-CAUSAL")
+        causal_entry = atlas.bridge2_entry(importer, {})
+        self.assertEqual(causal_entry["descriptions"]["causal"], "OPEN")
+        self.assertEqual(causal_entry["mode_data"]["second_order"]["causal_retarded"]["status"], "OPEN")
 
     def test_product_branch_dictionary_is_sectoral_only(self):
         value = atlas.build()["entries"]
