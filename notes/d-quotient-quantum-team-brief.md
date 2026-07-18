@@ -1031,8 +1031,11 @@ the determinant-to-Slavnov bridge, regular-Bach spectral-sequence proof,
 quartet homotopy, Euler Wess--Zumino primitive, matter vectors, and narrowed
 effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
-matter, quartet, effective-action, and boundary tables are generated from twenty-one hashed
-claim-map receipts and pass an independent stale/tamper check. The disposition
+matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
+certificate inputs and pass an independent stale/tamper check. The claim map now
+binds thirty-five direct certificate dependencies, including the formerly indirect
+pure-Diff/mixed quotient and factorwise coefficient ledger. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).
-Final human and literature review remains before theorem freeze.
+The machine/literature traceability audit is complete; final human author signoff
+remains before theorem freeze.

@@ -61,6 +61,9 @@ def main() -> None:
     assert values["fv_conformized_log"]["decision"]["selected_C2_log_local_Weyl_completion"] == "CERTIFIED"
     assert values["fv_conformized_log"]["carrier_crosswalk"]["identity_status"] == "DISTINCT_CARRIERS_NO_IDENTIFICATION"
     assert values["minimal_kt"]["spectral_sequence"]["collapse_page"] == "E2"
+    assert values["diff_mixed"]["ambient_accounting"]["refined_signature_count"] == 720
+    assert values["diff_mixed"]["claim_flags"]["PURE_DIFF_H14_ZERO"] is True
+    assert values["diff_mixed"]["claim_flags"]["INDEPENDENT_MIXED_DIFF_WEYL_H14_ZERO"] is True
     assert len(values["elliptic"]["principal_symbol_exactness"]) == 4
     assert len(values["multiplicity"]["repository_factors"]) == 4
     assert len(values["factor_coefficients"]["coefficient_result"]["factor_contributions"]) == 4

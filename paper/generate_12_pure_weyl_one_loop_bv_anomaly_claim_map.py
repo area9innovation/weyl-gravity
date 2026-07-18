@@ -23,11 +23,13 @@ OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 INPUTS = {
     "strict_AFN0_even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
     "strict_AFN0_odd": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
+    "strict_diff_mixed_minimal_H14": ROOT / "quantum-weyl/local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
     "strict_gauge_fixed": ROOT / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
     "strict_minimal_KT": ROOT / "quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json",
     "euclidean_elliptic_complex": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
     "euclidean_multiplicity": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
     "euclidean_integration_slice": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json",
+    "euclidean_factor_coefficients": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
     "strict_breaking": ROOT / "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "matter_no_go": ROOT / "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "cotangent_lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
@@ -69,11 +71,13 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
     even = values["strict_AFN0_even"]
     odd = values["strict_AFN0_odd"]
+    diff_mixed = values["strict_diff_mixed_minimal_H14"]
     gauge = values["strict_gauge_fixed"]
     minimal_kt = values["strict_minimal_KT"]
     elliptic = values["euclidean_elliptic_complex"]
     multiplicity = values["euclidean_multiplicity"]
     integration_slice = values["euclidean_integration_slice"]
+    factor_coefficients = values["euclidean_factor_coefficients"]
     strict = values["strict_breaking"]
     matter = values["matter_no_go"]
     lift = values["cotangent_lift"]
@@ -106,6 +110,13 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or even.get("smallest_relative_sector", {}).get("boundary_rank") != 4
         or odd.get("result_state") != "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT"
         or odd.get("smallest_relative_sector", {}).get("quotient_dimension") != 1
+        or diff_mixed.get("result_state")
+        != "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN"
+        or diff_mixed.get("claim_flags", {}).get("AFN0_DIFF_MIXED_TOTAL_COMPLEX_COMPLETE")
+        is not True
+        or diff_mixed.get("claim_flags", {}).get("PURE_DIFF_H14_ZERO") is not True
+        or diff_mixed.get("claim_flags", {}).get("INDEPENDENT_MIXED_DIFF_WEYL_H14_ZERO")
+        is not True
         or gauge.get("gauge_fixed_cohomology", {}).get("H14_even_dimension") != 2
         or gauge.get("gauge_fixed_cohomology", {}).get("H14_odd_dimension") != 1
         or minimal_kt.get("spectral_sequence", {}).get("collapse_page") != "E2"
@@ -114,6 +125,10 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         != "COMPLETE_GAUGE_FIXED_BV_PRINCIPAL_SYMBOL_SEQUENCE_EXACT_AND_ELLIPTIC"
         or len(multiplicity.get("repository_factors", [])) != 4
         or len(integration_slice.get("factor_exponent_ledger", [])) != 4
+        or factor_coefficients.get("coefficient_result", {}).get("coefficients", {}).get("C2")
+        != {"numerator": 199, "denominator": 30}
+        or factor_coefficients.get("coefficient_result", {}).get("coefficients", {}).get("E4")
+        != {"numerator": -87, "denominator": 20}
         or strict.get("qme_disposition", {}).get("status")
         != "OBSTRUCTED_STRICT_FIELD_CONTENT"
         or strict.get("coefficients", {}).get("ANOM_OMEGA_C2")
@@ -448,6 +463,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
 def build() -> dict[str, Any]:
     values = _load_inputs()
     strict = values["strict_breaking"]
+    diff_mixed = values["strict_diff_mixed_minimal_H14"]
     extended = values["extended_cohomology"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
@@ -506,7 +522,11 @@ def build() -> dict[str, Any]:
             "determinant_to_Slavnov_bridge_displayed": True,
             "strict_full_gauge_fixed_H14_even_dimension": 2,
             "strict_full_gauge_fixed_H14_odd_dimension": 1,
-            "pure_Diff_and_mixed_additional_classes": 0,
+            "pure_Diff_and_mixed_additional_classes": sum(
+                diff_mixed["AFN0_H14"][sector][parity + "_dimension"]
+                for sector in ("pure_Diff", "mixed_independent")
+                for parity in ("even", "odd")
+            ),
             "C2_coefficient": strict["coefficients"]["ANOM_OMEGA_C2"],
             "E4_coefficient": strict["coefficients"]["ANOM_OMEGA_E4"],
             "CdualC_coefficient": strict["coefficients"]["ANOM_OMEGA_C_DUAL_C"],

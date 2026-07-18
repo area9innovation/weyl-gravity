@@ -15,6 +15,7 @@ OUTPUT = ROOT / "paper/generated/12-quantum-anomaly-certificate-tables.tex"
 INPUTS = {
     "even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
     "odd": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
+    "diff_mixed": ROOT / "quantum-weyl/local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
     "gauge_fixed": ROOT / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
     "minimal_kt": ROOT / "quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json",
     "elliptic": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
@@ -51,6 +52,7 @@ def _load() -> dict[str, dict[str, Any]]:
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
     even = values["even"]
     odd = values["odd"]
+    diff_mixed = values["diff_mixed"]
     gauge = values["gauge_fixed"]
     minimal_kt = values["minimal_kt"]
     elliptic = values["elliptic"]
@@ -72,6 +74,11 @@ def _load() -> dict[str, dict[str, Any]]:
         or even.get("smallest_relative_sector", {}).get("boundary_rank") != 4
         or odd.get("result_state") != "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT"
         or odd.get("smallest_relative_sector", {}).get("quotient_dimension") != 1
+        or diff_mixed.get("claim_flags", {}).get("AFN0_DIFF_MIXED_TOTAL_COMPLEX_COMPLETE")
+        is not True
+        or diff_mixed.get("claim_flags", {}).get("PURE_DIFF_H14_ZERO") is not True
+        or diff_mixed.get("claim_flags", {}).get("INDEPENDENT_MIXED_DIFF_WEYL_H14_ZERO")
+        is not True
         or gauge.get("result_state")
         != "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN"
         or gauge.get("gauge_fixed_cohomology", {}).get("H14_even_dimension") != 2
@@ -150,6 +157,7 @@ def build() -> str:
     odd = values["odd"]
     gauge = values["gauge_fixed"]
     minimal_kt = values["minimal_kt"]
+    diff_mixed = values["diff_mixed"]
     elliptic = values["elliptic"]
     multiplicity = values["multiplicity"]
     integration_slice = values["integration_slice"]
@@ -257,6 +265,7 @@ Spectral-sequence step & Exact input & Rank/count & Outcome \\
 \midrule
 Koszul--Tate $E_0$ & adapted regular-Bach pairs & {len(minimal_kt['contraction']['contractible_pairs'])} pairs & positive AFN columns vanish \\
 $E_1\Rightarrow E_2$ & AFN0 modulo Euler--Noether ideal & {minimal_kt['contraction']['regression_monomial_count']} monomials & collapse at $E_2$ \\
+pure-Diff/mixed total complex & refined ambient signatures & {diff_mixed['ambient_accounting']['refined_signature_count']} signatures & zero additional quotient \\
 nonminimal extension & pointwise Diff$\times$Weyl doublets & {gauge['direct_sum_contraction']['pair_count']} pairs & chain contraction \\
 gauge-fixing transport & local BV-canonical similarity & {gauge['direct_sum_contraction']['regression_monomial_count']} monomials & quotient preserved \\
 \bottomrule

@@ -238,7 +238,7 @@ def main() -> None:
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 33
+    assert len(payload["inputs"]) == 35
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -248,6 +248,10 @@ def main() -> None:
         dependencies[reference["result_id"]] = value
 
     strict = dependencies["REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"]
+    diff_mixed = dependencies["AFN0_DIFF_MIXED_MINIMAL_BV_H14"]
+    factor_coefficients = dependencies[
+        "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"
+    ]
     extended = dependencies["WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY"]
     q1 = dependencies["ONE_LOOP_SLAVNOV_Q1_DISPOSITION"]
     gamma1 = dependencies["ANOMALY_INDUCED_NONLOCAL_GAMMA1"]
@@ -275,6 +279,20 @@ def main() -> None:
     multiplicity = dependencies["REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER"]
     wz_preflight = dependencies["WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT"]
     assert strict["qme_disposition"]["status"] == "OBSTRUCTED_STRICT_FIELD_CONTENT"
+    assert diff_mixed["claim_flags"]["AFN0_DIFF_MIXED_TOTAL_COMPLEX_COMPLETE"] is True
+    assert diff_mixed["claim_flags"]["PURE_DIFF_H14_ZERO"] is True
+    assert diff_mixed["claim_flags"]["INDEPENDENT_MIXED_DIFF_WEYL_H14_ZERO"] is True
+    assert sum(
+        diff_mixed["AFN0_H14"][sector][parity + "_dimension"]
+        for sector in ("pure_Diff", "mixed_independent")
+        for parity in ("even", "odd")
+    ) == claims["pure_Diff_and_mixed_additional_classes"]
+    assert factor_coefficients["coefficient_result"]["coefficients"]["C2"] == claims[
+        "C2_coefficient"
+    ]
+    assert factor_coefficients["coefficient_result"]["coefficients"]["E4"] == claims[
+        "E4_coefficient"
+    ]
     assert strict["coefficients"]["ANOM_OMEGA_C2"] == claims["C2_coefficient"]
     assert strict["coefficients"]["ANOM_OMEGA_E4"] == claims["E4_coefficient"]
     assert extended["H04"]["even_quotient_dimension"] == 3
