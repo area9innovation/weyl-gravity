@@ -31,6 +31,7 @@ CERTIFICATES = {
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
     "abd_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+    "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "abstract_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -117,7 +118,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The same-background branch dictionary separates q-primary Einstein, p-primary extra and generalized-zero carriers in every declared certified sector."),
             ("CERTIFIED", "The complete standard pullback and the generic axial/polar direct extra Lee-Wald blocks are exported as three distinct forms."),
             ("OPEN", "Quadratic data are partial handoffs and do not activate the linear bridge or complete the relative obstruction map."),
-            ("OPEN", "Global map lifecycle is ONSHELL_MAP_ONLY: both generic parity chain cofibers and the exceptional k=0 solution cofiber are certified, while cyclic BV compatibility, nonzero-k exceptional and global cofibers remain absent."),
+            ("OPEN", "Global map lifecycle is ONSHELL_MAP_ONLY: both generic parity chain cofibers, the exceptional k=0 solution cofiber and the zero homogeneous solution cofiber are certified, while cyclic BV compatibility, nonzero-k exceptional and twist/global off-shell cofibers remain absent."),
             _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
             _evidence("branch_dictionary"),
             "Bridge 1 activation remains OPEN. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
@@ -253,6 +254,8 @@ def build() -> dict[str, object]:
         raise AssertionError("a,b,d resonance-matrix input changed")
     if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("relative branch dictionary over-promoted bridge 1")
+    if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:
+        raise AssertionError("homogeneous solution-cofiber input changed")
     if not records["abstract_cone"]["flags"]["FINITE_HARMONIC_TANGENT_CONE_FORMULA"]:
         raise AssertionError("abstract tangent-cone theorem changed")
     value = {

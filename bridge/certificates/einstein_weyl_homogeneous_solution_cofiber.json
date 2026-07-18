@@ -1,0 +1,198 @@
+{
+  "action_derived_pairing": {
+    "linear_symplectomorphism": "S=I+N/2, S^T*Omega_EM*S=Omega_WM",
+    "meaning": "zero solution cofiber does not make the identity inclusion symplectic",
+    "relative_endomorphism": "R=I+N, rank(N)=2, N^2=0",
+    "source_rank": 6,
+    "target_rank": 6
+  },
+  "claim_boundary": "This same-background solution-cofiber theorem uses smooth polynomial generalized-zero gauge parameters. It does not impose bounded time behavior, certify an off-shell homogeneous BV triangle, quotient large gauge transformations, perform final residual descent, or support causal, particle, observational, or quantum claims.",
+  "classification": {
+    "Einstein_image_equals_complete_homogeneous_target_quotient": true,
+    "Lorentzian_causal_or_quantum_claim": false,
+    "bounded_in_time_subspace_claim": false,
+    "complete_homogeneous_target_kernel_certified": true,
+    "homogeneous_offshell_chain_map_certified": false,
+    "homogeneous_pairing_transport_certified": true,
+    "homogeneous_solution_cofiber_zero": true,
+    "large_gauge_and_final_residual_descent_certified": false,
+    "polynomial_gauge_slice_complete": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "There is no additional homogeneous Weyl-Maxwell solution branch in the declared smooth polynomial generalized-zero class. The four metric kernel coefficients and the electric/holonomy pair are exhausted bijectively by the six Einstein-Maxwell global coordinates. Nevertheless the identity inclusion changes the symplectic form by the certified nilpotent shear, so equality of solution spaces is not equality of Hamiltonian structures.",
+  "lifecycle_state": "CLASSIFIED",
+  "map_lifecycle": "ONSHELL_MAP_ONLY",
+  "next_gate": "construct or obstruct the homogeneous ghost-field-equation-identity chain map and perform the large-gauge/final-residual descent",
+  "polynomial_gauge_and_kernel_theorem": {
+    "complete_target_kernel": [
+      "D=d0+d1*t+d2*t^2+d3*t^3",
+      "A_x=W_x+Q_e*t"
+    ],
+    "determinant": "1/3",
+    "gauge_action": {
+      "delta_A_x": "0",
+      "delta_C": "2*sigma",
+      "delta_K": "2*sigma",
+      "delta_a_t": "chi'",
+      "delta_h_tt": "-2*(T'+sigma)",
+      "delta_h_tx": "X'"
+    },
+    "global_polynomial_slice": {
+      "allowed_function_class": "smooth exponential-polynomial generalized-zero fields and gauge parameters",
+      "choice": [
+        "X'=-h_tx",
+        "chi'=-a_t",
+        "sigma=-K/2",
+        "T'=-h_tt/2-sigma"
+      ],
+      "complete_invariants": [
+        "D=C-K",
+        "A_x"
+      ],
+      "no_frequency_inversion": true
+    },
+    "invariant_operator": [
+      "D''''=0",
+      "A_x''=0"
+    ],
+    "inverse_dictionary": [
+      "a=d2",
+      "b=3*d3",
+      "c=d0+d2",
+      "d=d1+3*d3"
+    ],
+    "polynomial_gauge_parameters": [
+      "T(t)=xi^t",
+      "X(t)=xi^x",
+      "sigma(t)",
+      "chi(t)"
+    ],
+    "raw_fields": [
+      "h_tt(t)",
+      "h_tx(t)",
+      "C(t)=h_xx",
+      "K(t)=sphere trace",
+      "a_t(t)",
+      "A_x(t)"
+    ],
+    "source_coordinate_order": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "source_representative": [
+      "K=a+b*t",
+      "C=a*t^2+(b/3)*t^3+c+d*t",
+      "A_x=W_x+Q_e*t"
+    ],
+    "source_to_target_metric_kernel": [
+      [
+        "-1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/3",
+        "0",
+        "0"
+      ]
+    ],
+    "target_metric_kernel_order": [
+      "d0",
+      "d1",
+      "d2",
+      "d3"
+    ]
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_weyl_homogeneous_solution_cofiber.py",
+    "generator_sha256": "5fad878e0dd562b744422b3bf58519ee818425516d7f596662167c0067148af9",
+    "inputs": {
+      "operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+        "sha256": "880857b4bb004bf1006cf4f7254194753cfd2e065ce915128a781ddd2cd162fc"
+      },
+      "pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+        "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+      },
+      "standard": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_WEYL_HOMOGENEOUS_SOLUTION_COFIBER_V1",
+  "result_state": "HOMOGENEOUS_GENERALIZED_ZERO_TARGET_EXHAUSTED_BY_EINSTEIN_MAXWELL_IMAGE",
+  "schema": "einstein-weyl-homogeneous-solution-cofiber-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_weyl_homogeneous_solution_cofiber.schema.json",
+  "schema_sha256": "b9cfdcaca5935f72b72aefcc687c21cab197ddd24c5315370606ce0b3351f859",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+    "boundaries": "closed Cauchy slice S1_L x S2; smooth polynomial generalized-zero class before final residual quotient",
+    "carrier": "complete homogeneous ell=0,k=0 local-gauge-reduced solution module",
+    "charge_sector": "fixed magnetic bundle; Q_e and flat holonomy W_x retained",
+    "degree": 1,
+    "ell": 0,
+    "k": 0,
+    "m": 0,
+    "omega": "generalized zero; polynomial time degree at most three in D and one in A_x",
+    "parity": "homogeneous scalar/global",
+    "theory": "Einstein-Maxwell source included in Weyl-Maxwell target"
+  },
+  "solution_map": {
+    "inclusion": "the identity Einstein-Maxwell inclusion maps bijectively onto the complete six-dimensional Weyl-Maxwell homogeneous quotient",
+    "projection": "the inverse coefficient dictionary a=d2, b=3*d3, c=d0+d2, d=d1+3*d3, with Q_e and W_x unchanged",
+    "solution_cofiber": "0"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_homogeneous_solution_cofiber --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_homogeneous_solution_cofiber.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_homogeneous_solution_cofiber"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_weyl_homogeneous_solution_cofiber --check",
+        "python3 bridge/einstein_sector/verify_einstein_weyl_homogeneous_solution_cofiber.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_homogeneous_solution_cofiber"
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "the direct target operator, complete standard inclusion and action-derived pairing are unchanged content-addressed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the off-shell global chain map and bridge-1 activation remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

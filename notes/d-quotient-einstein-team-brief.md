@@ -2068,9 +2068,12 @@ The exact global map lifecycle is `ONSHELL_MAP_ONLY`, and its activation gate
 remains `OPEN`.  Both generic parities have certified polynomial derived
 cofiber triangles, solution quotients and direct action-derived pairings.
 The exceptional `ell=1,k=0` solution cofiber now has explicit CRT projectors
-and a nonradical direct current.  Polar cyclic BV compatibility, exceptional
-off-shell/nonzero-`k` maps, global chain cofibers, charge endpoints and the
-boundary carrier remain explicit `NO_CERTIFIED_MAP` fields.
+and a nonradical direct current.  The complete homogeneous target quotient is
+also exhausted by the Einstein--Maxwell image, so its solution cofiber is
+zero despite the nontrivial nilpotent relative symplectic shear.  Polar cyclic
+BV compatibility, exceptional off-shell/nonzero-`k` maps, twist/global
+off-shell endpoints, charge endpoints and the boundary carrier remain
+explicit `NO_CERTIFIED_MAP` fields.
 The fail-closed atlas row is
 `einstein.ph.bridge.relative_branch_dictionary_v1`.  It does not identify any
 similarly named mode on another background.

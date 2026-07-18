@@ -320,8 +320,8 @@
         "status": "CERTIFIED"
       },
       "branch_representatives": {
-        "extra": "NO_CERTIFIED_MAP",
-        "standard": [
+        "extra": "zero solution cofiber",
+        "standard_and_complete_target": [
           "a",
           "b",
           "c",
@@ -343,6 +343,11 @@
           "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
         },
         {
+          "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+          "result_id": "EINSTEIN_WEYL_HOMOGENEOUS_SOLUTION_COFIBER_V1",
+          "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+        },
+        {
           "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
           "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
@@ -355,13 +360,13 @@
       },
       "map_lifecycle": "ONSHELL_MAP_ONLY",
       "missing": [
-        "homogeneous target complement",
-        "global charge-endpoint chain map",
-        "large-gauge/global quotient"
+        "homogeneous off-shell chain map",
+        "large-gauge/global quotient",
+        "final residual descent"
       ],
       "projection_or_cofiber": {
-        "map": "no complete homogeneous target complement or chain cofiber is certified",
-        "status": "NO_CERTIFIED_MAP"
+        "map": "the coefficient inverse a=d2, b=3*d3, c=d0+d2, d=d1+3*d3 proves the complete homogeneous target quotient equals the Einstein image; solution cofiber zero",
+        "status": "CERTIFIED"
       },
       "scope": {
         "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
@@ -475,7 +480,7 @@
     "current_global_map_lifecycle": "ONSHELL_MAP_ONLY",
     "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
     "priority": 1,
-    "reason": "generic axial and polar derived chain cofibers and the exceptional k=0 solution cofiber are certified, but cyclic BV compatibility, exceptional off-shell/nonzero-k maps, global chain cofibers, global endpoints and the boundary domain are absent",
+    "reason": "generic axial and polar derived chain cofibers, the exceptional k=0 solution cofiber and the zero homogeneous solution cofiber are certified, but cyclic BV compatibility, exceptional off-shell/nonzero-k maps, twist/global off-shell endpoints and the boundary domain are absent",
     "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
     "requested_full_artifact_certified": false
   },
@@ -490,18 +495,19 @@
     "generic_axial_and_polar_solution_cofibers_certified": true,
     "generic_axial_derived_cofiber_certified": true,
     "generic_polar_derived_cofiber_certified": true,
+    "homogeneous_solution_cofiber_zero": true,
     "same_background_only": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "interpretation": "The compact Plebanski-Hacyan calculation already supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, and an explicit exceptional k=0 solution cofiber. It does not yet supply the cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+  "interpretation": "The compact Plebanski-Hacyan calculation already supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, an explicit exceptional k=0 solution cofiber, and a zero homogeneous solution cofiber. It does not yet supply the cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional off-shell/nonzero-k and global endpoint cofibers before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+  "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional off-shell/nonzero-k, twist/global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "5cf87199d8a898c10cf5aa4912af642a3b63a7cdcec279cea99b4a96738fd6f5",
+    "generator_sha256": "4e7e285841063cd8dec4865ef2b092974bf458070e4c9ccfbf59108f0134e65d",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
@@ -526,6 +532,10 @@
       "exceptional_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
         "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "homogeneous_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+        "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
       },
       "homogeneous_standard": {
         "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
@@ -573,7 +583,7 @@
   "result_state": "SAME_BACKGROUND_BRANCH_DICTIONARY_EXPORTED_FULL_RELATIVE_TRIANGLE_ACTIVATION_GATE_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "467c3f2812cfcddaf0513844c07872bc74e838155014ec2649c9a876661b1fce",
+  "schema_sha256": "cce155f9f47cfff8efafe19954568ba5cf9546ae71ab2c0e9f6999d5667f1e2c",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",

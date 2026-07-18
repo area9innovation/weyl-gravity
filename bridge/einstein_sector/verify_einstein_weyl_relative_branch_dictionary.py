@@ -35,7 +35,9 @@ def main() -> None:
         raise AssertionError("polar cyclic boundary was hidden")
     if rows["ph.exceptional.ell1.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("exceptional k0 solution cofiber was lost")
-    for identifier in ("ph.exceptional.ell1.nonzero_k.relative", "ph.global.homogeneous.relative", "ph.global.twist.relative"):
+    if rows["ph.global.homogeneous.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
+        raise AssertionError("zero homogeneous solution cofiber was lost")
+    for identifier in ("ph.exceptional.ell1.nonzero_k.relative", "ph.global.twist.relative"):
         if rows[identifier]["projection_or_cofiber"]["status"] != "NO_CERTIFIED_MAP":
             raise AssertionError(f"missing cofiber was hidden: {identifier}")
     boundary = rows["ph.boundary.relative"]

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "map_lifecycle",
+    "polynomial_gauge_and_kernel_theorem", "solution_map",
+    "action_derived_pairing", "classification", "interpretation", "next_gate",
+    "claim_boundary", "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-homogeneous-solution-cofiber-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_HOMOGENEOUS_SOLUTION_COFIBER_V1"},
+    "map_lifecycle": {"const": "ONSHELL_MAP_ONLY"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "polynomial_gauge_slice_complete", "complete_homogeneous_target_kernel_certified",
+        "Einstein_image_equals_complete_homogeneous_target_quotient",
+        "homogeneous_solution_cofiber_zero", "homogeneous_pairing_transport_certified",
+        "homogeneous_offshell_chain_map_certified",
+        "large_gauge_and_final_residual_descent_certified"
+      ]
+    }
+  }
+}
