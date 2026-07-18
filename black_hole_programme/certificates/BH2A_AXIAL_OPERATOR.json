@@ -1,0 +1,94 @@
+{
+  "axial_rows": {
+    "divergence_identity": "nabla^a dB_ab = 0 exactly (linearized Bianchi consistency)",
+    "nonzero_components": [
+      "(t,phi)",
+      "(r,phi)",
+      "(x,phi)"
+    ],
+    "order": "fourth order in (t, r) derivatives",
+    "trace_identity": "g^{ab} dB_ab = 0 exactly"
+  },
+  "branch_split": {
+    "constants": {
+      "p": "1/2",
+      "q": "1"
+    },
+    "einstein_branch": "delta Ric = 0 (Regge-Wheeler) injects exactly into the Bach kernel",
+    "extra_branch": "carrier psi_ab := delta Ric_ab satisfies the second-order Lichnerowicz-type wave equation (1/2) Box psi + C psi = 0; the fourth-order system is exactly the composition",
+    "fixture_obstruction": "on the non-Ricci-flat extra-branch fixture no constant (p, q) reproduces delta B: the naive two-term split is OBSTRUCTED and the branch decomposition around non-Einstein backgrounds is open",
+    "identity": "delta B_ab = (1/2) Box (delta Ric)_ab + C_acbd (delta Ric)^{cd} on the Ricci-flat background, componentwise"
+  },
+  "claim_flags": {
+    "axial_l2_rows_certified": true,
+    "branch_split_identity_certified": true,
+    "causal_well_posedness_certified": false,
+    "extra_branch_horizon_reach_certified": false,
+    "fixture_two_term_split_obstructed": true,
+    "flux_matrix_certified": false,
+    "general_l_certified": false,
+    "machinery_controls_certified": true,
+    "operator_domains_certified": false,
+    "polar_sector_certified": false,
+    "regge_wheeler_reproduced": true,
+    "stability_or_ringdown_certified": false,
+    "trace_and_divergence_identities_certified": true
+  },
+  "declaration": {
+    "background_family": "Schwarzschild (symbolic m) for the split theorem; three-horizon MK fixture for the obstruction",
+    "conformal_frame": "working gauge; rational chart x = cos(theta)",
+    "generator": "not used at this stage; operator-level statements only",
+    "horizon_condition": "none imposed; operator domains open",
+    "infinity_condition": "none imposed",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "none constructed; no flux or pairing claim",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "machinery": {
+    "controls": "conformal -> 0; family tangent -> 0; l=0 mutation direction matches the epsilon-derivative of the exact nonlinear Bach componentwise (nonzero)",
+    "module": "black_hole_programme/linearized_bach.py"
+  },
+  "missing_objects": [
+    "general-l axial operator and the polar sector",
+    "ingoing-horizon and outer-boundary operator domains",
+    "horizon reach of the extra Lichnerowicz-type branch (indicial analysis)",
+    "bilinear symplectic flux matrix and Lee-Wald pairing on both branches",
+    "causal exterior well-posedness and any stability/ringdown statement",
+    "branch decomposition around non-Einstein (extra-branch) backgrounds"
+  ],
+  "perturbation": {
+    "ansatz": "h_tphi = h0(t,r) S, h_rphi = h1(t,r) S, S = -3 x (1 - x**2) = sin(th) dP2/dth",
+    "gauge": "Regge-Wheeler gauge (h2 = 0); l=0 gauge sectors certified separately in BH-1B",
+    "sector": "axial (odd parity), l = 2, m = 0"
+  },
+  "provenance": {
+    "bh0_certificate": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+    "bh0_certificate_sha256": "d08a76dd21b1c32270f6b8082c382e23561e7865c4454139fffc890ac14911e4",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2a_axial_operator.py",
+    "machinery_path": "black_hole_programme/linearized_bach.py",
+    "machinery_sha256": "17af69d23396452fc1a60306787a38276b12ebcabec72dc397e69533486f120a"
+  },
+  "regge_wheeler_benchmark": {
+    "reference": "Regge-Wheeler axial master equation, l = 2",
+    "statement": "eliminating h0 via the constraint row, psi = B h1/r satisfies B (B psi')' + (omega^2 - V) psi = 0 with V = B (6/r^2 - 6 m/r^3), exactly (proportionality factor -r^6)"
+  },
+  "result_id": "PURE_WEYL_BH2A_AXIAL_OPERATOR",
+  "result_token": "BH2A_AXIAL_L2_OPERATOR_AND_BRANCH_SPLIT_CLASSIFIED",
+  "schema": "pure-weyl-bh2a-axial-operator-v1",
+  "schema_path": "black_hole_programme/schema/bh2a-axial-operator-v1.schema.json",
+  "schema_sha256": "bb1583420b6af6df7e8eeae31c7463e070f1556d6578fb7ea822e0960542c6ed",
+  "stage_seconds": {
+    "axial_rows_and_identities": 19.7,
+    "branch_split_identity": 6.8,
+    "fixture_obstruction": 96.2,
+    "machinery_controls": 16.4,
+    "regge_wheeler_reproduction": 0.5
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2a_axial_operator.py"
+}

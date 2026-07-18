@@ -39,6 +39,7 @@ CERTS = {
     "BH1": PKG / "certificates" / "BH1_LEE_WALD_PREFLIGHT.json",
     "BH1A": PKG / "certificates" / "BH1A_NORMALIZED_GENERATOR.json",
     "BH1B": PKG / "certificates" / "BH1B_DYNAMICAL_EXTENSION.json",
+    "BH2A": PKG / "certificates" / "BH2A_AXIAL_OPERATOR.json",
 }
 
 
@@ -223,14 +224,17 @@ def entries():
                         omega="dynamical"),
         "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
         "mode_data": {
-            "dispersion": _claim("OPEN", "no Regge-Wheeler-type operator exists in the repository"),
-            "lee_wald": _claim("OPEN", "bilinear flux matrix is BH-2A"),
+            "dispersion": _gated(
+                "CERTIFIED",
+                "axial l=2 Einstein rows derived exactly; Regge-Wheeler master equation with V = B(6/r^2 - 6m/r^3) reproduced; branch injects exactly into the Bach kernel (delta B = (1/2) Box dRic + C.dRic on the Ricci-flat background)",
+                "operator pending certificate", "BH2A"),
+            "lee_wald": _claim("OPEN", "bilinear flux matrix not yet constructed"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": [],
-        "claim_boundary": "no repository object exists; linear charges vanish by parity (analytic argument, not machine-checked)",
+        "evidence": _evidence("BH2A"),
+        "claim_boundary": "operator level only (Schwarzschild, l=2): no operator domains, flux, causal well-posedness, stability or ringdown claim; linear charges vanish by parity (analytic argument, not machine-checked)",
     })
 
     E.append({
@@ -239,14 +243,17 @@ def entries():
                         omega="dynamical"),
         "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
         "mode_data": {
-            "dispersion": _claim("OPEN", "no exterior fourth-order branch operator exists in the repository"),
-            "lee_wald": _claim("OPEN", "horizon/boundary reach of the extra branch is the central BH-2A question"),
+            "dispersion": _gated(
+                "CERTIFIED",
+                "extra branch identified exactly: carrier psi_ab = delta Ric_ab satisfies the second-order Lichnerowicz-type equation (1/2) Box psi + C.psi = 0 on the Ricci-flat background (axial l=2); the naive split is OBSTRUCTED on non-Einstein backgrounds",
+                "operator pending certificate", "BH2A"),
+            "lee_wald": _claim("OPEN", "horizon/boundary reach and flux of the extra branch remain the central BH-2A questions"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with the compact-cylinder extra branch without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": [],
-        "claim_boundary": "no repository object exists; whether the extra branch reaches the horizon or exterior boundary is OPEN",
+        "evidence": _evidence("BH2A"),
+        "claim_boundary": "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, causal disposition all OPEN",
     })
 
     E.append({

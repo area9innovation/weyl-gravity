@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2a-axial-operator-v1",
+  "title": "BH-2A axial l=2 operator and exact branch split",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "perturbation",
+    "machinery",
+    "axial_rows",
+    "regge_wheeler_benchmark",
+    "branch_split",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2a-axial-operator-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2a-axial-operator-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2A_AXIAL_OPERATOR" },
+    "result_token": { "const": "BH2A_AXIAL_L2_OPERATOR_AND_BRANCH_SPLIT_CLASSIFIED" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "perturbation": {
+      "type": "object",
+      "required": ["sector", "ansatz", "gauge"],
+      "properties": {
+        "sector": { "const": "axial (odd parity), l = 2, m = 0" }
+      }
+    },
+    "machinery": {
+      "type": "object",
+      "required": ["module", "controls"],
+      "properties": {
+        "module": { "const": "black_hole_programme/linearized_bach.py" }
+      }
+    },
+    "axial_rows": {
+      "type": "object",
+      "required": ["nonzero_components", "trace_identity", "divergence_identity", "order"],
+      "properties": {
+        "nonzero_components": { "const": ["(t,phi)", "(r,phi)", "(x,phi)"] }
+      }
+    },
+    "regge_wheeler_benchmark": {
+      "type": "object",
+      "required": ["statement", "reference"]
+    },
+    "branch_split": {
+      "type": "object",
+      "required": [
+        "identity",
+        "constants",
+        "einstein_branch",
+        "extra_branch",
+        "fixture_obstruction"
+      ],
+      "properties": {
+        "constants": { "const": { "p": "1/2", "q": "1" } }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "machinery_controls_certified",
+        "axial_l2_rows_certified",
+        "trace_and_divergence_identities_certified",
+        "regge_wheeler_reproduced",
+        "branch_split_identity_certified",
+        "fixture_two_term_split_obstructed",
+        "general_l_certified",
+        "polar_sector_certified",
+        "operator_domains_certified",
+        "extra_branch_horizon_reach_certified",
+        "flux_matrix_certified",
+        "causal_well_posedness_certified",
+        "stability_or_ringdown_certified"
+      ],
+      "properties": {
+        "machinery_controls_certified": { "const": true },
+        "axial_l2_rows_certified": { "const": true },
+        "trace_and_divergence_identities_certified": { "const": true },
+        "regge_wheeler_reproduced": { "const": true },
+        "branch_split_identity_certified": { "const": true },
+        "fixture_two_term_split_obstructed": { "const": true },
+        "general_l_certified": { "const": false },
+        "polar_sector_certified": { "const": false },
+        "operator_domains_certified": { "const": false },
+        "extra_branch_horizon_reach_certified": { "const": false },
+        "flux_matrix_certified": { "const": false },
+        "causal_well_posedness_certified": { "const": false },
+        "stability_or_ringdown_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 6 },
+    "stage_seconds": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "machinery_path",
+        "machinery_sha256",
+        "engine_path",
+        "engine_sha256",
+        "bh0_certificate",
+        "bh0_certificate_sha256"
+      ],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh2a_axial_operator.py" },
+        "machinery_path": { "const": "black_hole_programme/linearized_bach.py" },
+        "machinery_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh0_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2a_axial_operator.py"
+    }
+  }
+}

@@ -284,7 +284,7 @@
       }
     },
     {
-      "claim_boundary": "no repository object exists; linear charges vanish by parity (analytic argument, not machine-checked)",
+      "claim_boundary": "operator level only (Schwarzschild, l=2): no operator domains, flux, causal well-posedness, stability or ringdown claim; linear charges vanish by parity (analytic argument, not machine-checked)",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -292,15 +292,21 @@
         "quantum": "OPEN",
         "symplectic": "OPEN"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+          "result_id": "PURE_WEYL_BH2A_AXIAL_OPERATOR",
+          "sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a"
+        }
+      ],
       "id": "bh.mode.axial.einstein-branch",
       "mode_data": {
         "dispersion": {
-          "statement": "no Regge-Wheeler-type operator exists in the repository",
-          "status": "OPEN"
+          "statement": "axial l=2 Einstein rows derived exactly; Regge-Wheeler master equation with V = B(6/r^2 - 6m/r^3) reproduced; branch injects exactly into the Bach kernel (delta B = (1/2) Box dRic + C.dRic on the Ricci-flat background)",
+          "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "bilinear flux matrix is BH-2A",
+          "statement": "bilinear flux matrix not yet constructed",
           "status": "OPEN"
         },
         "resonance": {
@@ -342,7 +348,7 @@
       }
     },
     {
-      "claim_boundary": "no repository object exists; whether the extra branch reaches the horizon or exterior boundary is OPEN",
+      "claim_boundary": "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, causal disposition all OPEN",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -350,15 +356,21 @@
         "quantum": "OPEN",
         "symplectic": "OPEN"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+          "result_id": "PURE_WEYL_BH2A_AXIAL_OPERATOR",
+          "sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a"
+        }
+      ],
       "id": "bh.mode.axial.extra-fourth-order-branch",
       "mode_data": {
         "dispersion": {
-          "statement": "no exterior fourth-order branch operator exists in the repository",
-          "status": "OPEN"
+          "statement": "extra branch identified exactly: carrier psi_ab = delta Ric_ab satisfies the second-order Lichnerowicz-type equation (1/2) Box psi + C.psi = 0 on the Ricci-flat background (axial l=2); the naive split is OBSTRUCTED on non-Einstein backgrounds",
+          "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "horizon/boundary reach of the extra branch is the central BH-2A question",
+          "statement": "horizon/boundary reach and flux of the extra branch remain the central BH-2A questions",
           "status": "OPEN"
         },
         "resonance": {
@@ -575,7 +587,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "2a33fbaf050c130fe22a505031ac002173643baae76ac801a35603791b1b5634",
+  "generated_by_sha256": "d862df889f1c4eee7144dbac382f52d63f6ecff789fbcf5e768d4d51f3eab88c",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
