@@ -5,8 +5,11 @@
 > `Q1`. The later
 > [`ANOMALY_INDUCED_NONLOCAL_GAMMA1`](anomaly-induced-nonlocal-gamma1.md)
 > receipt supplies one conditional Paneitz/Riegert representative for the
-> anomaly-induced Euclidean part of `Gamma1`. Its Weyl-invariant finite
-> remainder, normalization, global Green data, and complete `Q1` remain open.
+> anomaly-induced Euclidean part of `Gamma1`. The later
+> [`FLAT_TT_LOGARITHMIC_GAMMA1`](flat-tt-logarithmic-gamma1.md) receipt fixes
+> the universal nonzero-momentum flat-TT logarithmic coefficient and scale
+> response. The additive finite `C2/R2` normalization, curved Weyl-invariant
+> completion, global Green data, and complete `Q1` remain open.
 
 Dependency tags: `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`.
 

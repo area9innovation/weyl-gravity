@@ -55,7 +55,9 @@ Every result uses one or more exact tags:
 `REDUCED-MODE` and `EUCLIDEAN-SPECTRAL` results are never evidence by
 themselves for a `LORENTZIAN-CAUSAL` claim.
 
-At bootstrap time there is no certified complete Lorentzian off-shell BV
+The Euclidean coefficient rail additionally fixes the nonzero-momentum
+flat-TT logarithmic one-loop form-factor coefficient `-199/60`; its additive
+finite constant and curved completion remain open. At bootstrap time there is no certified complete Lorentzian off-shell BV
 propagator, BRST-compatible full-metric Hadamard state, renormalized
 Lorentzian time-ordered product, causal perturbative AQFT construction, or
 Lorentzian QME theorem.

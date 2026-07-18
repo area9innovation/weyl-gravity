@@ -21,6 +21,7 @@ INPUTS = {
     "lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
     "extended": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+    "flat_tt_log": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
 }
 
 
@@ -48,6 +49,7 @@ def _load() -> dict[str, dict[str, Any]]:
     lift = values["lift"]
     extended = values["extended"]
     gamma1 = values["gamma1"]
+    flat_tt_log = values["flat_tt_log"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -73,6 +75,10 @@ def _load() -> dict[str, dict[str, Any]]:
         or gamma1.get("result_state")
         != "ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_REPRESENTATIVE_CERTIFIED_WEYL_INVARIANT_REMAINDER_OPEN"
         or gamma1.get("exact_coefficient_solve", {}).get("rank") != 3
+        or flat_tt_log.get("result_state")
+        != "FLAT_TT_UNIVERSAL_LOGARITHMIC_GAMMA1_FORM_FACTOR_CERTIFIED_FINITE_CONSTANT_AND_CURVED_COMPLETION_OPEN"
+        or flat_tt_log.get("exact_logarithmic_form_factor", {}).get("logarithmic_coefficient")
+        != {"numerator": -199, "denominator": 60}
     ):
         raise ValueError("Paper 12 generated-table dependency drifted")
     return values
@@ -87,6 +93,7 @@ def build() -> str:
     lift = values["lift"]
     extended = values["extended"]
     gamma1 = values["gamma1"]
+    flat_tt_log = values["flat_tt_log"]
     even_orbits = json.loads(
         next(
             item["payload_json"]
@@ -120,6 +127,7 @@ def build() -> str:
             gamma_solution,
         )
     )
+    flat_log = flat_tt_log["exact_logarithmic_form_factor"]
     hashes = "\n".join(
         rf"\nolinkurl{{{path.relative_to(ROOT)}}} & \texttt{{{_sha256(path)[:16]}}} \\"
         for path in INPUTS.values()
@@ -178,6 +186,23 @@ Anomaly-induced functional carrier & exact coefficient \\
 \end{{tabular}}
 \caption{{Exact Paneitz/Riegert solve.  The Weyl-response matrix is $\operatorname{{diag}}(4,8,-12)$; re-expansion returns $(199/30,-87/20,0)$ in $(C^2,E_4,\Box R)$.}}
 \label{{tab:generated-anomaly-induced-gamma1}}
+\end{{table}}
+
+\begin{{table}}[ht]
+\centering
+\begin{{tabular}}{{@{{}}lr@{{}}}}
+\toprule
+Flat-TT form-factor datum & exact value \\
+\midrule
+$c$ & ${_q(flat_log['anomaly_C2_coefficient_c'])}$ \\
+$\beta_2$ & ${_q(flat_log['heat_kernel_beta2'])}$ \\
+$A_{{\log}}$ & ${_q(flat_log['logarithmic_coefficient'])}$ \\
+$\mu\partial_\mu F_C$ & ${_q(flat_log['RG_scale_response'])}$ \\
+finite local $C^2$ constant & open \\
+\bottomrule
+\end{{tabular}}
+\caption{{Universal nonzero-momentum flat Euclidean TT logarithmic form factor.  The additive finite normalization and curved completion are not fixed.}}
+\label{{tab:generated-flat-tt-logarithm}}
 \end{{table}}
 
 \begin{{equation}}

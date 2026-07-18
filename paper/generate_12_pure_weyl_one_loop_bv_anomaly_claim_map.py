@@ -29,6 +29,7 @@ INPUTS = {
     "extended_cohomology": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+    "flat_TT_logarithmic_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
 }
 
 
@@ -51,6 +52,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     extended = values["extended_cohomology"]
     q1 = values["Q1_disposition"]
     gamma1 = values["anomaly_induced_Gamma1"]
+    flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -85,6 +87,12 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or gamma1.get("exact_coefficient_solve", {}).get("rank") != 3
         or gamma1.get("decision", {}).get("complete_finite_nonlocal_Gamma1")
         != "NO_CERTIFIED_FUNCTIONAL"
+        or flat_tt_log.get("decision", {}).get("flat_TT_universal_logarithmic_form_factor")
+        != "CERTIFIED"
+        or flat_tt_log.get("exact_logarithmic_form_factor", {}).get("logarithmic_coefficient")
+        != {"numerator": -199, "denominator": 60}
+        or flat_tt_log.get("claim_flags", {}).get("FINITE_C2_NORMALIZATION_FIXED")
+        is not False
     ):
         raise ValueError("Paper 12 theorem dependency drifted")
     return values
@@ -95,13 +103,14 @@ def build() -> dict[str, Any]:
     strict = values["strict_breaking"]
     extended = values["extended_cohomology"]
     gamma1 = values["anomaly_induced_Gamma1"]
+    flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
         "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
-        "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_AND_ANOMALY_INDUCED_GAMMA1_REPRESENTATIVE",
+        "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_FLAT_TT_LOGARITHM",
         "lifecycle_state": "WRITING_STARTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME and one exact conditional anomaly-induced Gamma1 representative.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact universal flat-TT logarithmic form factor.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -142,6 +151,9 @@ def build() -> dict[str, Any]:
             "finite_counterterm_bulk_Q1_ambiguity_rank": 2,
             "anomaly_induced_nonlocal_Gamma1_representative": True,
             "anomaly_induced_functional_coefficients": gamma1["exact_coefficient_solve"]["solution_vector"],
+            "flat_TT_logarithmic_form_factor": True,
+            "flat_TT_logarithmic_coefficient": flat_tt_log["exact_logarithmic_form_factor"]["logarithmic_coefficient"],
+            "flat_TT_scale_response": flat_tt_log["exact_logarithmic_form_factor"]["RG_scale_response"],
         },
         "explicit_nonclaims": {
             "finite_polynomial_in_tau_theorem": False,
@@ -160,11 +172,11 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+            "status": "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             "required_inputs": [
                 "compensator-inclusive classical contraction",
                 "finite C2 and R2 normalization conditions",
-                "Weyl-invariant finite Gamma1 remainder and global Paneitz Green data",
+                "curved Weyl-invariant Gamma1 completion and global Paneitz Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],
             "required_outputs": [

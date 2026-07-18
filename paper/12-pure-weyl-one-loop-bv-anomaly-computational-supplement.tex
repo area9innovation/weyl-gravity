@@ -354,6 +354,34 @@ Weyl-invariant finite functional, finite $C^2/R^2$ normalization, and
 renormalized BV product are still absent, so this result does not promote
 complete $\Gamma_1$ or $Q_1$.
 
+\subsection{Universal nonzero-momentum flat-TT logarithm}
+
+The conformal-sector receipt next fixes the part left invariant by the
+inhomogeneous anomaly solve at quadratic order on a declared flat Euclidean
+TT carrier.  With the fixture normalized by
+$\langle C^{(1)},C^{(1)}\rangle=1$, exact rational arithmetic gives
+\[
+ F_C(p^2;\mu)=-\frac{199}{60}\log\frac{p^2}{\mu^2}+z_C(\mu),
+ \qquad
+ -\frac{199}{60}=-\frac c2=-\frac{\beta_2}{4}.
+\]
+The independent checks replay
+\[
+ \mu\partial_\mu F_C=\frac{199}{30},
+ \qquad
+ F_C(p^2)-F_C(q^2)=-\frac{199}{60}\log\frac{p^2}{q^2},
+\]
+and verify that the prior Riegert representative begins at $O(h^4)$ on this
+pure-TT slice.  A finite reference condition only determines the family
+\[
+ z_C(\mu)=N_C+\frac{199}{60}
+ \log\frac{\kappa_{\rm ref}^2}{\mu^2};
+\]
+neither $N_C$ nor $\kappa_{\rm ref}$ is selected by the anomaly.  The receipt
+therefore rejects promotion to a curved completion, a zero-momentum result,
+a Lorentzian branch prescription, complete $\Gamma_1/Q_1$, or a particle
+entry.
+
 \section{Independent verifiers and mutation tests}
 
 The producer and verifier paths are distinct.  The verifiers independently:
@@ -367,12 +395,15 @@ The producer and verifier paths are distinct.  The verifiers independently:
 renormalized $Q_1$;
 \item replay the diagonal Paneitz/Riegert response solve and reject promotion
 of a generalized inverse to an unconditional global inverse;
+\item replay the flat-TT logarithmic coefficient, scale response and momentum
+difference, and reject promotion of its additive constant or curved
+completion;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
 
 The generated tables add a publication-layer drift guard.  Their verifier
-loads the eight authoritative table inputs, checks the exact extended boundary
+loads the nine authoritative table inputs, checks the exact extended boundary
 matrix and coefficient image, rebuilds the TeX byte-for-byte, and rejects a
 stale include.
 
@@ -393,6 +424,10 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.one_loop_slavnov_q1_disposition --check
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_one_loop_slavnov_q1_disposition
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.flat_tt_logarithmic_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_flat_tt_logarithmic_gamma1
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
 python3 paper/generate_12_pure_weyl_one_loop_bv_anomaly_claim_map.py --check
@@ -410,10 +445,10 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item finite normalization conditions, the Weyl-invariant finite nonlocal
-remainder, global Paneitz Green data, and renormalized BV operator data fixing
-a complete $Q_1$ beyond its certified local Wess--Zumino and anomaly-induced
-contributions;
+\item the curved Weyl-invariant completion, finite $C^2/R^2$ normalization,
+global Paneitz Green data, and renormalized BV operator data fixing a complete
+$Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT
+logarithmic contributions;
 \item the induced residual operator
 $q_1=\pi_{\rm ext}Q_1\iota_{\rm ext}$;
 \item nilpotency, adjacent-cohomology, Cartan, mixing, and pairing checks.

@@ -57,6 +57,7 @@ DEPENDENCIES = {
     "WZ_extended_local_BV": HERE / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "one_loop_Slavnov_Q1_disposition": HERE / "transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "anomaly_induced_nonlocal_Gamma1": HERE / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
+    "flat_TT_logarithmic_Gamma1": HERE / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
@@ -155,6 +156,7 @@ def _load() -> dict[str, dict[str, Any]]:
     wz_extended = values["WZ_extended_local_BV"]
     q1_disposition = values["one_loop_Slavnov_Q1_disposition"]
     anomaly_induced_gamma1 = values["anomaly_induced_nonlocal_Gamma1"]
+    flat_tt_logarithmic_gamma1 = values["flat_TT_logarithmic_Gamma1"]
     if (
         physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
         or physical_elliptic.get("result_state")
@@ -273,6 +275,27 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN"
     ):
         raise ValueError("anomaly-induced nonlocal Gamma1 frontier drifted")
+    if (
+        flat_tt_logarithmic_gamma1.get("result_state")
+        != "FLAT_TT_UNIVERSAL_LOGARITHMIC_GAMMA1_FORM_FACTOR_CERTIFIED_FINITE_CONSTANT_AND_CURVED_COMPLETION_OPEN"
+        or flat_tt_logarithmic_gamma1.get("exact_logarithmic_form_factor", {}).get(
+            "logarithmic_coefficient"
+        )
+        != {"numerator": -199, "denominator": 60}
+        or flat_tt_logarithmic_gamma1.get("exact_logarithmic_form_factor", {}).get(
+            "RG_scale_response"
+        )
+        != {"numerator": 199, "denominator": 30}
+        or flat_tt_logarithmic_gamma1.get("decision", {}).get(
+            "complete_Weyl_invariant_remainder"
+        )
+        != "NO_CERTIFIED_FUNCTIONAL"
+        or flat_tt_logarithmic_gamma1.get("decision", {}).get("complete_Q1")
+        != "NO_CERTIFIED_OPERATOR"
+        or flat_tt_logarithmic_gamma1.get("decision", {}).get("residual_transfer")
+        != "FORBIDDEN"
+    ):
+        raise ValueError("flat-TT logarithmic Gamma1 frontier drifted")
     antifield = values["antifield_import"]
     antifield_flags = antifield.get("claim_flags", {})
     if (
@@ -1077,11 +1100,11 @@ def build() -> dict[str, Any]:
             },
             "local_obstruction_space": {
                 "status": "STRICT_G2_COMPLETE_TAU_ADIC_EXTENDED_H04_DIMENSIONS_3_1_AND_H14_ZERO",
-                "next_gate": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+                "next_gate": "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_REPRESENTATIVE_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
-                "next_gate": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_ANOMALY_INDUCED_EUCLIDEAN_GAMMA1_AND_FLAT_TT_UNIVERSAL_LOG_FORM_FACTOR_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
+                "next_gate": "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -1096,8 +1119,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_ANOMALY_INDUCED_GAMMA1_REPRESENTATIVE_ONLY_WEYL_INVARIANT_REMAINDER_AND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "FORBIDDEN_ANOMALY_INDUCED_GAMMA1_AND_FLAT_TT_LOG_FORM_FACTOR_ONLY_CURVED_REMAINDER_FINITE_NORMALIZATIONS_AND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
         "supersession_ledger": [
@@ -1244,6 +1267,8 @@ def build() -> dict[str, Any]:
             "WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED": True,
             "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO": True,
             "ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED": True,
+            "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED": True,
+            "FINITE_C2_NORMALIZATION_FIXED": False,
             "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": False,
             "COMPLETE_RENORMALIZED_Q1_SUPPLIED": False,
             "FULL_EXTENDED_BV_QME_RESTORED": False,
@@ -1254,7 +1279,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+            "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -1280,6 +1305,9 @@ def build() -> dict[str, Any]:
             "carrier independently fixes a=87/20. Their regulated Slavnov insertion has "
             "nonzero coordinates in the complete H14 quotient, so the strict fixed-field-content "
             "local Euclidean QME is obstructed at one loop. "
+            "The same exact c coordinate fixes the nonzero-momentum flat-TT logarithmic "
+            "form-factor coefficient -199/60 and its scheme-independent momentum "
+            "difference, while its additive C2 normalization and curved completion remain open. "
             "An exact dual-cone witness further proves that no nonnegative collection of "
             "standard-sign free conformal scalars, Weyl or Dirac fermions, and gauge vectors "
             "cancels the C2/E4 vector. "
@@ -1477,6 +1505,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO") is not True
         or flags.get("ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED")
         is not True
+        or flags.get("FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED") is not True
+        or flags.get("FINITE_C2_NORMALIZATION_FIXED") is not False
         or flags.get("COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED") is not False
         or flags.get("COMPLETE_RENORMALIZED_Q1_SUPPLIED") is not False
         or flags.get("FULL_EXTENDED_BV_QME_RESTORED") is not False
@@ -1558,6 +1588,8 @@ def validate(result: dict[str, Any]) -> None:
             "WZ_LOCAL_COUNTERTERM_Q1_CONTRIBUTION_FIXED",
             "FINITE_COUNTERTERM_BULK_Q1_AMBIGUITY_RANK_TWO",
             "ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED",
+            "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED",
+            "FINITE_C2_NORMALIZATION_FIXED",
             "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
             "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY",

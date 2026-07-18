@@ -159,6 +159,14 @@ class ActiveFrontierTests(unittest.TestCase):
                 "ANOMALY_INDUCED_NONLOCAL_GAMMA1_REPRESENTATIVE_SUPPLIED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED"]
         )
@@ -233,7 +241,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
+            "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

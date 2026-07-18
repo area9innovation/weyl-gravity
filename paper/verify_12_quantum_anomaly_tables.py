@@ -19,6 +19,8 @@ def main() -> None:
     assert "\\frac{199}{30},-\\frac{87}{20},0,0" in rendered
     assert "\\frac{199}{120}" in rendered
     assert "\\frac{29}{120}" in rendered
+    assert "A_{\\log}" in rendered
+    assert "-\\frac{199}{60}" in rendered
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
     assert values["gauge_fixed"]["gauge_fixed_cohomology"]["H14_classes"] == [
         "ANOM_OMEGA_C2",
@@ -41,6 +43,11 @@ def main() -> None:
         {"numerator": -87, "denominator": 160},
         {"numerator": 29, "denominator": 120},
     ]
+    assert values["flat_tt_log"]["exact_logarithmic_form_factor"]["RG_scale_response"] == {
+        "numerator": 199,
+        "denominator": 30,
+    }
+    assert values["flat_tt_log"]["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
     print("Paper 12 generated quantum-anomaly tables: PASS")
 
 

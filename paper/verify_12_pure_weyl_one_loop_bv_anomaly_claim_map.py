@@ -59,6 +59,15 @@ def main() -> None:
         {"numerator": -87, "denominator": 160},
         {"numerator": 29, "denominator": 120},
     ]
+    assert claims["flat_TT_logarithmic_form_factor"] is True
+    assert claims["flat_TT_logarithmic_coefficient"] == {
+        "numerator": -199,
+        "denominator": 60,
+    }
+    assert claims["flat_TT_scale_response"] == {
+        "numerator": 199,
+        "denominator": 30,
+    }
     boolean_claims = {
         key: value for key, value in claims.items() if isinstance(value, bool)
     }
@@ -67,11 +76,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "WEYL_INVARIANT_FINITE_GAMMA1_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"
+        == "CURVED_WEYL_INVARIANT_GAMMA1_REMAINDER_FINITE_C2_R2_NORMALIZATION_AND_EXTENDED_CLASSICAL_CONTRACTION"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 9
+    assert len(payload["inputs"]) == 10
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -84,6 +93,7 @@ def main() -> None:
     extended = dependencies["WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY"]
     q1 = dependencies["ONE_LOOP_SLAVNOV_Q1_DISPOSITION"]
     gamma1 = dependencies["ANOMALY_INDUCED_NONLOCAL_GAMMA1"]
+    flat_tt_log = dependencies["FLAT_TT_LOGARITHMIC_GAMMA1"]
     assert strict["qme_disposition"]["status"] == "OBSTRUCTED_STRICT_FIELD_CONTENT"
     assert strict["coefficients"]["ANOM_OMEGA_C2"] == claims["C2_coefficient"]
     assert strict["coefficients"]["ANOM_OMEGA_E4"] == claims["E4_coefficient"]
@@ -99,6 +109,8 @@ def main() -> None:
     assert q1["decision"]["residual_transfer"] == "FORBIDDEN"
     assert gamma1["exact_coefficient_solve"]["rank"] == 3
     assert gamma1["decision"]["complete_finite_nonlocal_Gamma1"] == "NO_CERTIFIED_FUNCTIONAL"
+    assert flat_tt_log["decision"]["flat_TT_universal_logarithmic_form_factor"] == "CERTIFIED"
+    assert flat_tt_log["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
     print("Paper 12 pure-Weyl one-loop BV anomaly claim map: PASS")
 
 

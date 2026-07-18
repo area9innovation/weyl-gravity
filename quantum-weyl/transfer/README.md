@@ -419,8 +419,14 @@ counterterms. `ANOMALY_INDUCED_NONLOCAL_GAMMA1` now solves the exact
 Paneitz/Riegert Weyl-response system and supplies one conditional Euclidean
 representative with coefficients `(199/120,-87/160,29/120)`. The local `R^2`
 coordinate restores the repository `BoxR=0` scheme. The Weyl-invariant finite
-remainder, global Green/kernel data, renormalized BV Laplacian or time-ordered
-product, and normalization conditions remain absent. Residual transfer
+remainder is now partially constrained on the nonzero-momentum flat-TT
+carrier: `FLAT_TT_LOGARITHMIC_GAMMA1` fixes the universal logarithmic
+coefficient `-199/60`, its scale response `199/30`, and the
+scheme-independent difference
+`F_C(p^2)-F_C(q^2)=-(199/60)log(p^2/q^2)`. The additive `C^2` constant,
+general curved completion, global Green/kernel data, renormalized BV
+Laplacian or time-ordered product, and `R^2` normalization remain absent.
+Residual transfer
 remains forbidden until those data and a
 compensator-inclusive classical contraction are supplied.  None of the
 classical transfer results in this package is thereby promoted to a quantum
@@ -449,6 +455,8 @@ PYTHONPATH=quantum-weyl python3 -m transfer.one_loop_slavnov_q1_disposition --ch
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_one_loop_slavnov_q1_disposition
 PYTHONPATH=quantum-weyl python3 -m transfer.anomaly_induced_nonlocal_gamma1 --check
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_anomaly_induced_nonlocal_gamma1
+PYTHONPATH=quantum-weyl python3 -m transfer.flat_tt_logarithmic_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_flat_tt_logarithmic_gamma1
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

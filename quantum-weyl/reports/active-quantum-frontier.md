@@ -29,9 +29,13 @@ effective-action representative, with functional coefficients
 `(199/120,-87/160,29/120)` and the last `R^2` term restoring the certified
 `BoxR=0` scheme. This is conditional on an invertible boundary problem or
 compatible source sector; Paneitz kernel/global data are not discarded. The
-Weyl-invariant finite remainder, renormalized BV Laplacian or time-ordered
-product, finite normalization conditions, and global Green data remain
-absent, so complete `Gamma1` and `Q1` are fail-closed. The stationary/Hadamard rail remains
+same exact `c=199/30` coordinate now fixes the nonzero-momentum flat-TT
+logarithmic form-factor coefficient `-199/60`. Consequently
+`F_C(p^2)-F_C(q^2)=-(199/60)log(p^2/q^2)` is scheme-independent in the
+declared Euclidean fixture. The additive `C^2` constant, general curved
+Weyl-invariant remainder, renormalized BV Laplacian or time-ordered product,
+finite `R^2` normalization, and global Green data remain absent, so complete
+`Gamma1` and `Q1` are fail-closed. The stationary/Hadamard rail remains
 independently open. The older readiness discussion below is retained as
 historical gate provenance.
 
@@ -39,7 +43,8 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`wess-zumino-minimal-bv-cotangent-lift.md`](wess-zumino-minimal-bv-cotangent-lift.md),
 [`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md),
 [`one-loop-slavnov-q1-disposition.md`](one-loop-slavnov-q1-disposition.md), and
-[`anomaly-induced-nonlocal-gamma1.md`](anomaly-induced-nonlocal-gamma1.md).
+[`anomaly-induced-nonlocal-gamma1.md`](anomaly-induced-nonlocal-gamma1.md), and
+[`flat-tt-logarithmic-gamma1.md`](flat-tt-logarithmic-gamma1.md).
 
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical
 certificates remain immutable receipts, but they are no longer all valid
@@ -290,10 +295,10 @@ consumers. It remains conditional on an exact physical normal form and its
 finite-slab energy hypotheses and supplies no Hadamard state.
 
 The quantum column of the programme residual atlas is now generated at
-`quantum-weyl/atlas/quantum-atlas-fragment.json`. Its thirteen common-envelope
+`quantum-weyl/atlas/quantum-atlas-fragment.json`. Its fourteen common-envelope
 entries contain six vacuum-cylinder E/A/L mode-family rows, the two
 `W_+^2,W_-^2` deformation classes guarded as non-particles, a Berger
-carrier-gap row, the tangent-cone crosswalk, and three non-mode particle
+carrier-gap row, the tangent-cone crosswalk, and four non-mode particle
 guards. The imported
 Berger causal complex is not promoted to stationary modes; that crosswalk is
 `NO_CERTIFIED_MAP`. The fragment also records the finite-harmonic
