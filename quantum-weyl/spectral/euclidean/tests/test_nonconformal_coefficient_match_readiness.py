@@ -25,6 +25,14 @@ class NonconformalCoefficientMatchReadinessTests(unittest.TestCase):
                 "Euclidean_elliptic_full_BV"
             ]
         )
+        transverse = by_id["NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1"]
+        self.assertTrue(transverse["C2_visible"])
+        self.assertFalse(transverse["repository_operator"])
+        self.assertFalse(transverse["measure_and_regulator"])
+        self.assertEqual(
+            transverse["disposition"],
+            "INELIGIBLE_FORMAL_LORENTZIAN_TANGENT_NO_EUCLIDEAN_OPERATOR_MEASURE",
+        )
         self.assertFalse(by_id["REPOSITORY_ROUND_S4_EULER_COEFFICIENT"]["C2_visible"])
         self.assertFalse(value["claim_flags"]["REPOSITORY_C2_COEFFICIENT_COMPUTED"])
 

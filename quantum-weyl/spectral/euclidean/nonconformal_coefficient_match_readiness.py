@@ -25,6 +25,7 @@ OUTPUT = HERE / "certificates/REPOSITORY_NONCONFORMAL_COEFFICIENT_MATCH_READINES
 SCHEMA = HERE / "schema/repository-nonconformal-coefficient-match-readiness-v1.schema.json"
 DEPENDENCIES = {
     "Nariai_metric_Bach_complex": ROOT / "d_quotient_classical/certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json",
+    "Nariai_transverse_witness": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
     "positive_Berger_clock": ROOT / "d_quotient_classical/certificates/POSITIVE_BERGER_CLOCK_BACKGROUND.json",
     "standard_coefficient_vector": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "repository_round_S4_Euler": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
@@ -117,6 +118,7 @@ def mutation_receipts(payload: dict[str, Any]) -> list[dict[str, Any]]:
 
 def _candidate_audit(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     nariai = values["Nariai_metric_Bach_complex"]
+    transverse = values["Nariai_transverse_witness"]
     berger = values["positive_Berger_clock"]
     standard = values["standard_coefficient_vector"]
     sphere = values["repository_round_S4_Euler"]
@@ -124,6 +126,20 @@ def _candidate_audit(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         nariai.get("result_id") != "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1"
         or nariai.get("result_state")
         != "ACTION_PAIRED_FOUR_ROW_METRIC_BACH_COMPLEX_EXACT"
+        or transverse.get("result_id")
+        != "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1"
+        or transverse.get("result_state")
+        != "FORMAL_TRANSVERSE_LINEARIZED_BACH_FLAT_WITNESS_EXACT"
+        or transverse.get("dependency_tags") != ["LOCAL-ALGEBRAIC"]
+        or transverse.get("exact_witness", {}).get("background_C_squared") != "16/3"
+        or transverse.get("exact_witness", {}).get("delta_C_squared") != "-32"
+        or not transverse.get("exact_checks", {}).get(
+            "transverse_to_Diff_Weyl_orbit"
+        )
+        or not transverse.get("flags", {}).get(
+            "TRANSVERSE_FORMAL_BACH_FLAT_TANGENT"
+        )
+        or transverse.get("flags", {}).get("TRANSVERSE_CAUSAL_TRANSFER") is not False
         or berger.get("result_id") != "POSITIVE_BERGER_CLOCK_BACKGROUND"
         or standard.get("result_state")
         != "STANDARD_SPIN2_BACKGROUND_COEFFICIENTS_COMPUTED_D_PULLBACK_CERTIFIED"
@@ -141,6 +157,16 @@ def _candidate_audit(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
             "coefficient_vector": False,
             "disposition": "INELIGIBLE_LORENTZIAN_CLASSICAL_COMPLEX_ONLY",
             "proof_sha256": _sha256(DEPENDENCIES["Nariai_metric_Bach_complex"]),
+        },
+        {
+            "candidate_id": transverse["result_id"],
+            "C2_visible": True,
+            "repository_operator": False,
+            "Euclidean_elliptic_full_BV": False,
+            "measure_and_regulator": False,
+            "coefficient_vector": False,
+            "disposition": "INELIGIBLE_FORMAL_LORENTZIAN_TANGENT_NO_EUCLIDEAN_OPERATOR_MEASURE",
+            "proof_sha256": _sha256(DEPENDENCIES["Nariai_transverse_witness"]),
         },
         {
             "candidate_id": berger["result_id"],
@@ -235,6 +261,7 @@ def build() -> dict[str, Any]:
             ],
             "minimal_next_artifact": contract["required_result_id"],
             "Nariai_is_not_silently_promotable": True,
+            "transverse_Nariai_witness_not_silently_promotable": True,
             "Berger_is_not_silently_promotable": True,
             "round_S4_is_not_C2_visible": True,
         },
@@ -254,7 +281,10 @@ def build() -> dict[str, Any]:
             "coefficient match and audits every current nearby carrier. Nariai is "
             "non-conformally-flat and has an action-paired classical Bach complex, "
             "but no Euclidean elliptic determinant, BV measure, regulator, or local "
-            "coefficient vector. The Berger clock is a coupled reduced-mode classical "
+            "coefficient vector. Its new transverse formal Lorentzian Einstein tangent "
+            "independently proves exact C2 visibility through C2=16/3 and delta C2=-32, "
+            "but supplies no Euclidean operator, measure, or coefficient calculation. "
+            "The Berger clock is a coupled reduced-mode classical "
             "background. The standard vector is not repository matched, while round "
             "S4 is repository matched but C2-invisible. The synthetic fixture tests "
             "receiver mechanics only. No repository c coefficient, Slavnov breaking, "

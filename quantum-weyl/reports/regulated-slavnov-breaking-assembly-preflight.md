@@ -105,6 +105,11 @@ local `b4` regulator, exact factor contributions, parity, the round-`S4`
 Euler cross-check, and the accepted snapshot bridge. The current-candidate
 audit proves that Nariai, Berger, the standard vector, and round `S4` each
 miss a different required leg; none can be silently promoted.
+The new transverse Nariai tangent sharpens only the first leg: it certifies
+`C2=16/3` and normalized `delta C2=-32` exactly. Because it is a formal
+Lorentzian linearized-Einstein witness without a Euclidean full-BV operator,
+measure, regulator, or coefficient vector, it remains ineligible for this
+analytic carrier.
 
 The full Euclidean elliptic-complex carrier likewise has an executable
 receiver. It requires the complete covariant principal-symbol sequence and

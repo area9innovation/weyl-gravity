@@ -109,6 +109,11 @@ shows that Nariai supplies the curvature leg but remains a Lorentzian
 classical complex, whereas round `S4` supplies the repository determinant leg
 but has `C2=0`. Berger and the standard coefficient vector likewise fail
 different legs. No current artifact is silently promoted.
+The transverse linearized-Einstein Nariai witness now independently certifies
+the local curvature visibility with exact values `C2=16/3` and
+`delta C2=-32`. It is deliberately audited as a formal Lorentzian tangent,
+not as the missing Euclidean full-BV operator, measure, regulator, or
+coefficient computation.
 
 The Euclidean elliptic-complex prerequisite is now executable as a separate
 fail-closed receiver. It replays exact sparse principal-symbol compositions

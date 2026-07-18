@@ -604,6 +604,12 @@ by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
+The exact transverse Nariai linearized-Einstein witness is now included in
+that audit. It supplies strong `LOCAL-ALGEBRAIC` evidence for the visibility
+leg (`C2=16/3`, normalized `delta C2=-32`), but it is a formal Lorentzian
+tangent and supplies none of the Euclidean operator, measure, regulator, or
+coefficient legs. It therefore narrows the analytic gap without closing it.
+
 The combined regulator/zero-mode/measure carrier now also has an executable
 receiver. It requires exact determinant-rank arithmetic, factorwise priming,
 all Jacobian and nonminimal measure contributions, a covariant local

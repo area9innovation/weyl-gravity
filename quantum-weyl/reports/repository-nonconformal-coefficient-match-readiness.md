@@ -22,6 +22,10 @@ visibility, arithmetic, and digest mutations.
 - Unit Nariai is `C2`-visible and has an action-paired classical metric Bach
   complex, but it is Lorentzian and has no Euclidean elliptic determinant,
   BV measure/regulator ledger, or coefficient vector.
+- The exact transverse Nariai linearized-Einstein witness strengthens the local
+  visibility statement: `C2=16/3` and its normalized first variation is
+  `delta C2=-32`. It remains a formal Lorentzian tangent, not a Euclidean
+  full-BV operator, measure, regulator, or coefficient computation.
 - The positive Berger clock is a coupled `REDUCED-MODE` classical background,
   not a pure-Weyl Euclidean full-BV coefficient carrier.
 - The standard `(199/30,-87/20,0)` vector is not itself a repository match.
