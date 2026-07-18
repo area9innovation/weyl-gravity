@@ -311,6 +311,10 @@ Interval-enclosed bump coefficients and spectral-tail bounds remain open.
 The quantitative-chart successor fixes both detector radii to `1/128` and
 proves the supports lie on unique positive `S3` branches; no radius parameter
 remains in the quadrature problem.
+The finite-mode Green successor supplies the exact Maxwell and massive
+two-form time kernels, including zero modes, while keeping finite-truncation
+support locality false.  Only the interval profile expansion and infinite
+tail now block the full advanced images.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -518,3 +522,5 @@ keeps profile quadrature and tail control fail-closed.  Its receipt is
 `closed_universe_observers/receipts/PETER_WEYL_FORM_LAPLACIAN_TIER_RECEIPT.json`.
 The quantitative-chart receipt is
 `closed_universe_observers/receipts/QUANTITATIVE_DETECTOR_CHART_TIER_RECEIPT.json`.
+The finite-mode Green receipt is
+`closed_universe_observers/receipts/FINITE_MODE_GREEN_KERNELS_TIER_RECEIPT.json`.

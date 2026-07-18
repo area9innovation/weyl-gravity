@@ -62,6 +62,8 @@ python3 -m closed_universe_observers.generate_berger_peter_weyl_form_laplacian -
 python3 -m closed_universe_observers.verify_berger_peter_weyl_form_laplacian
 python3 -m closed_universe_observers.generate_berger_quantitative_detector_chart --check
 python3 -m closed_universe_observers.verify_berger_quantitative_detector_chart
+python3 -m closed_universe_observers.generate_berger_mode_green_kernels --check
+python3 -m closed_universe_observers.verify_berger_mode_green_kernels
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -213,6 +215,10 @@ spectral-tail bounds are the remaining analytic inputs to the Green images.
 The quantitative-chart successor uses the explicit global rods to fix both
 detector radii to `1/128`, with exact `|y|^2<1/10000` support on the unique
 positive `S3` branch.  No free detector-radius parameter remains.
+The finite-mode Green successor applies exact entire matrix spectral calculus
+to the Maxwell and massive two-form blocks, including the Maxwell zero-mode
+limit.  Finite truncations are explicitly not treated as support-local; the
+full profile expansion and tail bounds remain necessary.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

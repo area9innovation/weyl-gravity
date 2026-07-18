@@ -1,0 +1,127 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "FINITE_MODE_GREEN_KERNELS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "result_boundary": "Exact finite-mode Maxwell and massive-two-form retarded/advanced kernels are exported, including zero modes. Infinite profile sums, tails, full images and recoil remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_mode_green_kernels.py closed_universe_observers/verify_berger_mode_green_kernels.py closed_universe_observers/tests/test_berger_mode_green_kernels.py",
+      "elapsed_seconds": "0.02",
+      "status": "PASS",
+      "scope": "changed Python sources"
+    },
+    {
+      "command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md",
+      "elapsed_seconds": "0.00",
+      "status": "PASS",
+      "scope": "scoped observer diff"
+    },
+    {
+      "command": "jq receipt parse plus sha256sum comparison for every artifact_hashes entry",
+      "elapsed_seconds": "0.10",
+      "status": "PASS",
+      "scope": "receipt JSON and ten recorded artifacts"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_mode_green_kernels.py",
+      "elapsed_seconds": "11.18 pytest; 12.04 wall",
+      "status": "PASS",
+      "scope": "jumps, ODE, zero modes, symbolic masses, mutation"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_mode_green_kernels --check",
+      "elapsed_seconds": "28.86",
+      "status": "PASS",
+      "scope": "deterministic certificate regeneration"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_mode_green_kernels",
+      "elapsed_seconds": "28.60",
+      "status": "PASS",
+      "scope": "independent dependency hashes and exact kernel identities"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-finite-mode-maxwell-emitter-green-kernels-v1.schema.json -d closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+      "elapsed_seconds": "12.21",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 schema validation"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.23",
+      "status": "PASS",
+      "scope": "central observer comparison ledger"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "229.65 pytest; 231.35 wall",
+      "status": "PASS",
+      "scope": "full central-observer-ledger consumer suite: 137 tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No full causal or quantum promotion."
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+      "sha256": "f39348c599ca4c69461bc1ebaf2d32c51a733865165b66e4815d26c53cb48ecc"
+    },
+    {
+      "path": "closed_universe_observers/generate_berger_mode_green_kernels.py",
+      "sha256": "ba840d3305a785b654ec815596dc7fdb55b864774427ea4e4f4a77fab1990689"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_mode_green_kernels.py",
+      "sha256": "ebfcc55a97fabad4f22e5210dd9d8c68825cbf313d44d76a7e9d1929f9ae1c35"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_mode_green_kernels.py",
+      "sha256": "9acb0e97bc09a7d1ad0b1a0568f6babcf057f8552b3cc7fd12b0b2f8f7c6e9ac"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-finite-mode-maxwell-emitter-green-kernels-v1.schema.json",
+      "sha256": "9c1cb262fc152ec6d3dd1af7c0a6fc4ef0fc6442dacf2533aab972327cdb9212"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-finite-mode-maxwell-emitter-green-kernels.md",
+      "sha256": "25cf6987ab9a501347c60b1b634a5ba4a8dfc4759ffc85e3a28fea84bffe5602"
+    },
+    {
+      "path": "closed_universe_observers/ledgers/comparison_ledger.json",
+      "sha256": "57a8d39ff9981cb3ea8f1d6a90715fd99eee325eb826e80020592f9ea3422b43"
+    },
+    {
+      "path": "closed_universe_observers/README.md",
+      "sha256": "c276dd9dc2b706b21ed30e6743d3626e9e3bc8417715cfeb20fded91a3bff84d"
+    },
+    {
+      "path": "notes/closed-universe-observer-team-brief.md",
+      "sha256": "07a931f4e20d9cc573205baf261c04ba7a83949abcb09727ad7dab2f16c666ad"
+    },
+    {
+      "path": "closed_universe_observers/reports/first-comparison.md",
+      "sha256": "5de43921f0484edc003d64c7372cf94e0ba5da3a09f487dccd2629c9695688eb"
+    }
+  ],
+  "claim_flags": {
+    "EXACT_FINITE_MODE_MAXWELL_GREEN_KERNELS_EXPORTED": true,
+    "EXACT_FINITE_MODE_MASSIVE_TWO_FORM_GREEN_KERNELS_EXPORTED": true,
+    "FINITE_TRUNCATION_SUPPORT_LOCAL": false,
+    "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

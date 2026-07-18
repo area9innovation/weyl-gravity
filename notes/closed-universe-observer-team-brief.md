@@ -248,6 +248,12 @@ chart handoff: the explicit global rods prove a nonzero Jacobian throughout
 both windows and allow the exact choice `epsilon_0=epsilon_1=1/128`, with
 `|y|^2<1/10000` on the unique detector-connected branch.
 
+`BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS` now supplies the exact
+retarded/advanced time kernel `sin(tau sqrt(A))/sqrt(A)` in each form block,
+including the Maxwell zero-mode limit and symbolic positive emitter masses.
+The finite blocks are not advertised as support-local; interval profile
+coefficients and a validated infinite tail are the remaining Green inputs.
+
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
 integral.  Direct variation of the selected action gives the free emitter
