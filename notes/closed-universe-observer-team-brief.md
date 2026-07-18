@@ -548,6 +548,13 @@ nevertheless `OBSTRUCTED` in the high-axial channel: the selected `r=0`
 partial width exceeds `0.1` at `two_j=975` and `1,000` at `two_j=2047`,
 while unitary clipping supplies only `[-1,1]`.  The active gate is therefore
 a correlated axial oscillatory evaluator using this exact factorization.
+`BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR` now supplies its first
+validated seed: a directed tensor Darboux enclosure of the full bounded
+oscillation for `r=0`, external-clock `p=0`.  All five low audits overlap, and
+the selected `two_j=975` and `2047` widths fall to approximately `0.03288`
+and `0.05594` on the `256 x 256` rail; a `128 x 128` resolution mutation at
+`two_j=2047` remains above `0.1` and is rejected.  The active gate is to
+stream this evaluator and extend it across intermediate Jacobi diagonals.
 Only after that succeeds should the polarized rail be
 widened toward the infinite-mode Maxwell and massive-two-form images, recoil
 coefficient and second-order-cone restriction.  Bridge 3 remains inactive.

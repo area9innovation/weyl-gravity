@@ -415,6 +415,15 @@ not preserve: its selected `r=0` partial width exceeds `0.1` at
 narrow it, and the unitary fallback `[-1,1]` supplies no decay.  The active
 gate is therefore a correlated axial oscillatory evaluator built on the exact
 Jacobi factorization, not direct termwise widening.
+The correlated `r=0`, external-clock `p=0` successor now evaluates the
+bounded oscillation as a whole with a directed tensor Darboux enclosure.  Its
+`32 x 32` low audit overlaps all five published extreme-axial rows through
+`two_j=4`.  On the `256 x 256` rail, the selected `two_j=975` and
+`two_j=2047` widths are approximately `0.03288` and `0.05594`; the
+`128 x 128` high-mode mutation remains above `0.1` and is rejected.  This is
+still only a selected extreme-axial seed.  The active gate is to stream it and
+extend the correlated integration across intermediate Jacobi diagonals before
+any polarized-tail claim.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source
