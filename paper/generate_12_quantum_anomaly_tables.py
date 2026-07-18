@@ -16,9 +16,14 @@ INPUTS = {
     "even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
     "odd": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
     "gauge_fixed": ROOT / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
+    "minimal_kt": ROOT / "quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json",
+    "elliptic": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
+    "multiplicity": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+    "integration_slice": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json",
     "breaking": ROOT / "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "matter": ROOT / "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+    "wz_preflight": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "extended": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_tt_log": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
@@ -45,9 +50,14 @@ def _load() -> dict[str, dict[str, Any]]:
     even = values["even"]
     odd = values["odd"]
     gauge = values["gauge_fixed"]
+    minimal_kt = values["minimal_kt"]
+    elliptic = values["elliptic"]
+    multiplicity = values["multiplicity"]
+    integration_slice = values["integration_slice"]
     breaking = values["breaking"]
     matter = values["matter"]
     lift = values["lift"]
+    wz_preflight = values["wz_preflight"]
     extended = values["extended"]
     gamma1 = values["gamma1"]
     flat_tt_log = values["flat_tt_log"]
@@ -62,6 +72,13 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN"
         or gauge.get("gauge_fixed_cohomology", {}).get("H14_even_dimension") != 2
         or gauge.get("gauge_fixed_cohomology", {}).get("H14_odd_dimension") != 1
+        or minimal_kt.get("spectral_sequence", {}).get("collapse_page") != "E2"
+        or len(minimal_kt.get("contraction", {}).get("contractible_pairs", [])) != 6
+        or elliptic.get("result_state")
+        != "COMPLETE_GAUGE_FIXED_BV_PRINCIPAL_SYMBOL_SEQUENCE_EXACT_AND_ELLIPTIC"
+        or any(not row.get("exact_at_middle") for row in elliptic.get("principal_symbol_exactness", []))
+        or len(multiplicity.get("repository_factors", [])) != 4
+        or len(integration_slice.get("factor_exponent_ledger", [])) != 4
         or breaking.get("qme_disposition", {}).get("status")
         != "OBSTRUCTED_STRICT_FIELD_CONTENT"
         or matter.get("result_state")
@@ -69,6 +86,8 @@ def _load() -> dict[str, dict[str, Any]]:
         or lift.get("exact_checks", {}).get("Q_squared_zero_on_all_atoms") is not True
         or lift.get("contractible_quartet", {}).get("anticommutator")
         != [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        or wz_preflight.get("local_primitives", {}).get("variation_convention")
+        != "Q_W B_C=ANOM_OMEGA_C2; Q_W B_E=ANOM_OMEGA_E4 modulo d_h"
         or extended.get("H04", {}).get("even_quotient_dimension") != 3
         or extended.get("H04", {}).get("odd_quotient_dimension") != 1
         or extended.get("H14", {}).get("boundary_rank") != 4
@@ -94,13 +113,34 @@ def _load() -> dict[str, dict[str, Any]]:
     return values
 
 
+def _local_prescription(operator: str) -> str:
+    if operator == "Delta_0(-4)":
+        return "cut; negative-mode phase locally constant"
+    return "factorwise spectral cut"
+
+
+def _factor_label(factor_id: str) -> str:
+    return {
+        "repository_physical_upper": "metric TT, upper",
+        "repository_scalar_ghost": "Diff--Weyl scalar ghost",
+        "repository_physical_lower": "metric TT, lower",
+        "repository_vector_ghost": "transverse Diff ghost",
+    }[factor_id]
+
+
 def build() -> str:
     values = _load()
     even = values["even"]
     odd = values["odd"]
     gauge = values["gauge_fixed"]
+    minimal_kt = values["minimal_kt"]
+    elliptic = values["elliptic"]
+    multiplicity = values["multiplicity"]
+    integration_slice = values["integration_slice"]
     breaking = values["breaking"]
+    matter = values["matter"]
     lift = values["lift"]
+    wz_preflight = values["wz_preflight"]
     extended = values["extended"]
     gamma1 = values["gamma1"]
     flat_tt_log = values["flat_tt_log"]
@@ -141,6 +181,28 @@ def build() -> str:
     flat_log = flat_tt_log["exact_logarithmic_form_factor"]
     curved_log = curvature_squared_log["covariant_curvature_squared_form_factor"]
     operator_comparison = curvature_squared_log["operator_choice_independence"]
+    zero_modes = {
+        row["operator"]: row["zero_mode_dimension"]
+        for row in integration_slice["factor_exponent_ledger"]
+    }
+    determinant_rows = "\n".join(
+        rf"{_factor_label(factor['factor_id'])} & "
+        rf"\texttt{{{factor['operator'].replace('_', r'\_')}}} & {factor['component_rank']} & "
+        rf"{factor['statistics'].lower()} & ${_q(factor['determinant_exponent'])}$ & "
+        rf"{zero_modes[factor['operator']]} & {_local_prescription(factor['operator'])} \\"
+        for factor in multiplicity["repository_factors"]
+    )
+    matter_labels = {
+        "real_conformal_scalar": "real conformal scalar",
+        "Weyl_fermion": "Weyl fermion",
+        "Dirac_fermion": "Dirac fermion",
+        "gauge_vector": "gauge vector (with BRST ghosts)",
+    }
+    matter_rows = "\n".join(
+        rf"{matter_labels[name]} & ${_q(data['vector'][0])}$ & ${_q(data['vector'][1])}$ \\"
+        for name in ("real_conformal_scalar", "Weyl_fermion", "Dirac_fermion", "gauge_vector")
+        for data in (matter["matter_generators"][name],)
+    )
     hashes = "\n".join(
         rf"\nolinkurl{{{path.relative_to(ROOT)}}} & \texttt{{{_sha256(path)[:16]}}} \\"
         for path in INPUTS.values()
@@ -154,11 +216,27 @@ def build() -> str:
 Stage & $\dim H^{{0,4}}_{{\rm even}}$ & $\dim H^{{0,4}}_{{\rm odd}}$ & $\dim H^{{1,4}}_{{\rm even}}$ & $\dim H^{{1,4}}_{{\rm odd}}$ \\
 \midrule
 strict gauge-fixed BV & {gauge['gauge_fixed_cohomology']['H04_even_dimension']} & {gauge['gauge_fixed_cohomology']['H04_odd_dimension']} & {gauge['gauge_fixed_cohomology']['H14_even_dimension']} & {gauge['gauge_fixed_cohomology']['H14_odd_dimension']} \\
-tau-adic extended BV & {extended['H04']['even_quotient_dimension']} & {extended['H04']['odd_quotient_dimension']} & {extended['H14']['even_quotient_dimension']} & {extended['H14']['odd_quotient_dimension']} \\
+$\tau$-adic extended BV & {extended['H04']['even_quotient_dimension']} & {extended['H04']['odd_quotient_dimension']} & {extended['H14']['even_quotient_dimension']} & {extended['H14']['odd_quotient_dimension']} \\
 \bottomrule
 \end{{tabular}}
 \caption{{Exact dimension-four local BV quotient dimensions.}}
 \label{{tab:generated-quotient-dimensions}}
+\end{{table}}
+
+\begin{{table}}[ht]
+\centering\small
+\begin{{tabularx}}{{\textwidth}}{{@{{}}Y Y r Y@{{}}}}
+\toprule
+Spectral-sequence step & Exact input & Rank/count & Outcome \\
+\midrule
+Koszul--Tate $E_0$ & adapted regular-Bach pairs & {len(minimal_kt['contraction']['contractible_pairs'])} pairs & positive AFN columns vanish \\
+$E_1\Rightarrow E_2$ & AFN0 modulo Euler--Noether ideal & {minimal_kt['contraction']['regression_monomial_count']} monomials & collapse at $E_2$ \\
+nonminimal extension & pointwise Diff$\times$Weyl doublets & {gauge['direct_sum_contraction']['pair_count']} pairs & chain contraction \\
+gauge-fixing transport & local BV-canonical similarity & {gauge['direct_sum_contraction']['regression_monomial_count']} monomials & quotient preserved \\
+\bottomrule
+\end{{tabularx}}
+\caption{{Strict-quotient spectral-sequence and contraction ledger on the regular Bach locus.}}
+\label{{tab:generated-spectral-sequence}}
 \end{{table}}
 
 \begin{{table}}[ht]
@@ -176,6 +254,19 @@ odd AFN0 mixed carrier & {odd_orbits['mixed_raw_graphs_materialized']} & {odd['s
 \end{{table}}
 
 \begin{{table}}[ht]
+\centering\small
+\begin{{tabularx}}{{\textwidth}}{{@{{}}YlrlrrY@{{}}}}
+\toprule
+Sector & operator & rank & statistics & exponent in $Z$ & zero modes removed & local prescription \\
+\midrule
+{determinant_rows}
+\bottomrule
+\end{{tabularx}}
+\caption{{Human-readable determinant ledger for the accepted repository Euclidean integration slice.  Exponents are determinant powers in $Z$; the corresponding $\Gamma_1$ powers have the opposite sign.}}
+\label{{tab:generated-determinant-ledger}}
+\end{{table}}
+
+\begin{{table}}[ht]
 \centering
 \begin{{tabular}}{{@{{}}lr@{{}}}}
 \toprule
@@ -186,6 +277,20 @@ Density coordinate & repository one-loop coefficient \\
 \end{{tabular}}
 \caption{{Coefficient vector in the convention $(4\pi)^{{-2}}[cC^2-aE_4+pC\widetilde C+b\Box R]$.}}
 \label{{tab:generated-coefficients}}
+\end{{table}}
+
+\begin{{table}}[ht]
+\centering
+\begin{{tabular}}{{@{{}}lrr@{{}}}}
+\toprule
+Standard-sign field & $C^2$ coordinate & $E_4$ coordinate \\
+\midrule
+pure Weyl graviton & $\frac{{199}}{{30}}$ & $-\frac{{87}}{{20}}$ \\
+{matter_rows}
+\bottomrule
+\end{{tabular}}
+\caption{{Exact anomaly vectors in the convention $(c,-a)$.  The functional $(1,0)$ is strictly positive on the gravity vector and every allowed matter ray, already excluding cancellation in the nonnegative cone.}}
+\label{{tab:generated-matter-vectors}}
 \end{{table}}
 
 \begin{{table}}[ht]
@@ -259,6 +364,17 @@ The certificate checks {lift['exact_checks']['checked_atom_count']} atoms and
 {lift['extension_scope']['generator_count']} generators over
 ${lift['extension_scope']['coefficient_field']}$; all component gradings,
 $\delta^2$, $\delta\gamma+\gamma\delta$, and $Q^2$ pass exactly.
+
+The Euler primitive used by the boundary matrix is
+\begin{{equation}}
+B_E=\int\!\sqrt g\,\left[
+ \tau E_4+4G^{{\mu\nu}}\nabla_\mu\tau\nabla_\nu\tau
+ -4(\Box\tau)(\nabla\tau)^2+2(\nabla\tau)^4\right],
+\qquad Q_WB_E=\int\!\sqrt g\,\omega E_4\pmod{{\dd_h}},
+\label{{eq:generated-euler-wz}}
+\end{{equation}}
+with the sign convention $Q_WB_C=\int\sqrt g\,\omega C^2$ and
+$Q_WB_E=\int\sqrt g\,\omega E_4$ modulo $\dd_h$.
 
 \begin{{equation}}
 B_{{\rm ext}}=

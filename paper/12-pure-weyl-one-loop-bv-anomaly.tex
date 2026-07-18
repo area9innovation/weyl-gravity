@@ -23,7 +23,7 @@
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \title{A One-Loop BV Obstruction in Pure Weyl Gravity\\
-and Its Formal Tau-Adic Wess--Zumino Resolution}
+and Its Formal \texorpdfstring{$\tau$}{tau}-adic Wess--Zumino Resolution}
 \author{Asger Alstrup Palm\thanks{Corresponding author:
 \texttt{asger@area9.dk}.}}
 \date{Working draft, July 2026}
@@ -33,7 +33,8 @@ and Its Formal Tau-Adic Wess--Zumino Resolution}
 
 \begin{abstract}
 We compute the coefficient-bearing one-loop BV anomaly of strict four-
-dimensional pure Weyl gravity in a complete local gauge-fixed quotient.  The
+dimensional pure Weyl gravity in the complete local gauge-fixed quotient on
+the declared regular Bach-locus chart.  The
 repository Euclidean elliptic complex, measure, zero-mode, contour, parity,
 and local heat-kernel ledgers give
 \[
@@ -55,7 +56,7 @@ variables
  \widehat g^*=e^{2\tau}g^*,\qquad
  \widehat\tau^*=\tau^*+2g_{\mu\nu}g^{*\mu\nu},
 \]
-the Weyl sector is an exact contractible quartet.  In the formal tau-adic
+the Weyl sector is an exact contractible quartet.  In the formal $\tau$-adic
 local analytic jet algebra the complete dimension-four extended quotient is
 \[
  \dim H^{0,4}_{\rm ext}=(3\ \mathrm{even},1\ \mathrm{odd}),
@@ -65,14 +66,9 @@ The coefficient-bearing Wess--Zumino counterterm therefore restores the
 extended local Euclidean QME at one loop.
 
 The two dispositions refer to different theories and are not contradictory:
-strict field content is obstructed, while the formal tau-adic compensator
+strict field content is obstructed, while the formal $\tau$-adic compensator
 extension is locally restored at one loop.  Neither statement is an all-loop
-or Lorentzian QME theorem.  Independently, the free reduced E/A/L carrier on
-the vacuum conformal cylinder now has a certified same-background compatible
-complex structure and microlocal Hadamard two-point distribution, with
-state-space signs $+E-A-L$.  This is not a full-BV Hadamard kernel, a positive
-graviton Hilbert space, a Berger-space crosswalk, a unitarity theorem, or
-residual quantum transfer.
+or Lorentzian QME theorem.
 \end{abstract}
 
 \section*{AI-use disclosure and computational accountability}
@@ -105,7 +101,7 @@ The result has two theory labels which must not be suppressed:
 Theory & One-loop local Euclidean disposition\\
 \midrule
 strict pure Weyl gravity, fixed field content & obstructed\\
-formal tau-adic Wess--Zumino compensator extension & QME restored\\
+formal $\tau$-adic Wess--Zumino compensator extension & QME restored\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -129,8 +125,9 @@ arbitrary invertible local BV-canonical gauge-fixing transformation preserves
 the quotient.  The pure-diffeomorphism and mixed Diff--Weyl total complexes
 add no independent four-dimensional anomaly class.
 
-\begin{theorem}[Strict dimension-four anomaly quotient]
-In the declared complete gauge-fixed local BV complex,
+\begin{theorem}[Strict dimension-four anomaly quotient on the regular Bach locus]
+In the declared complete gauge-fixed local BV complex on a regular
+Bach-locus chart,
 \[
  \dim H^{1,4}_{\rm even}(s\mid\dd)=2,
  \qquad
@@ -144,6 +141,40 @@ Representatives may be chosen as
 The type-D carrier $\omega\Box R$ is exact with its stored $R^2$
 counterterm and horizontal current.
 \end{theorem}
+
+The qualifier is load-bearing.  In adapted jet coordinates the Bach Euler
+row and its differential consequences replace the transverse-tracefree
+highest metric jets.  Rank-changing strata with additional reducibility or
+Killing data are not covered by this chart theorem.
+
+The proof is an antifield-number spectral sequence rather than a list of
+familiar densities, following the local antifield-BRST architecture of
+Barnich, Brandt, and Henneaux~\cite{BarnichBrandtHenneauxI}.  Its exact steps
+are:
+\begin{enumerate}
+\item At $E_0$, the Koszul--Tate differential contracts the six adapted pairs
+$(g^*,E_g)$, $(\xi^*,N_\xi)$, $(\omega^*,N_\omega)$ and their Lie-prolonged
+partners.  Hence every positive-antifield column vanishes on the regular
+chart.
+\item At $E_1$, the longitudinal differential reduces the antifield-zero
+sector to Diff$\times$Weyl invariant jets.  The forward tensor-graph
+enumerator and reverse signature coverage agree under the dimension-four
+bound.
+\item Relative $\dd$-cohomology and the total descent complex leave two even
+Weyl-ghost classes and one odd class.  The pure-Diff and mixed total-complex
+blocks have zero quotient.
+\item Ten pointwise nonminimal pairs contract, and the contraction transports
+through any invertible local BV-canonical gauge-fixing map.  Therefore the
+minimal, nonminimal, and gauge-fixed quotients are chain-isomorphic.
+\end{enumerate}
+The spectral sequence collapses at $E_2$.  In the type-D row the stored
+primitive is normalized by the explicit identity
+\[
+ \int\!\sqrt g\,\omega\Box R
+ =-\frac1{12}s\!\int\!\sqrt g\,R^2\pmod{\dd}.
+\]
+The full ranks and pair counts appear in the generated spectral-sequence
+table of the computational supplement.
 
 Closure, exact primitives, complete basis manifests, and normalized dual
 nonmembership witnesses are stored independently.  The universal
@@ -164,11 +195,70 @@ equation.
 
 The coefficient route combines two independent curvature carriers.  A local
 Ricci-flat carrier exposes $C^2$, while round $S^4$ fixes the Euler coordinate.
-The complete Euclidean symbol sequence has bundle dimensions
-$5\to10\to5$, exact image--kernel equality, a formal adjoint, and the required
-Diff/Weyl nonminimal doublets.  Determinant multiplicities, the functional
-measure, conformal-Killing zero modes, the indefinite contour, and the parity
-Ward identity are included in the accepted integration slice.
+The first five-dimensional bundle in the Euclidean symbol sequence is the
+gauge-parameter bundle $T\oplus\mathbf 1$ (four Diff directions plus one Weyl
+direction), the ten-dimensional middle bundle is $S^2T^*$, and the final
+five-dimensional bundle is the transverse-tracefree symbol slice.  Thus
+\[
+ (T\oplus\mathbf1)_{5}\xrightarrow{\,\sigma(K)\,}
+ (S^2T^*)_{10}\xrightarrow{\,\sigma(P_{\rm TT})\,}
+ (S^2_{\rm TT}T^*)_{5},
+ \qquad \operatorname{im}\sigma(K)=\ker\sigma(P_{\rm TT}).
+\]
+The separate $5\leftarrow10\leftarrow5$ sequence is its cotangent formal
+adjoint; the endpoint is not being identified with the unreduced ten-component
+Bach equation.  Determinant multiplicities, the functional
+measure, conformal-Killing zero modes, the factorwise spectral cut, the
+locally constant negative-scalar phase, and the parity Ward identity are
+included in the accepted integration slice.
+
+The complete local determinant ledger is small enough to display:
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}YlrlrrY@{}}
+\toprule
+sector & operator & rank & statistics & $Z$ exponent & zero modes & local prescription\\
+\midrule
+metric TT, upper & $\Delta_{2,\perp}(4)$ & 5 & bosonic & $-1/2$ & 0 & factorwise cut\\
+Diff--Weyl scalar ghost & $\Delta_0(-4)'$ & 1 & fermionic & $+1/2$ & 5 & cut; negative-mode phase locally constant\\
+metric TT, lower & $\Delta_{2,\perp}(2)$ & 5 & bosonic & $-1/2$ & 0 & factorwise cut\\
+transverse Diff ghost & $\Delta_{1,\perp}(-3)'$ & 3 & fermionic & $+1/2$ & 10 & factorwise cut\\
+\bottomrule
+\end{tabularx}
+\end{center}
+All four factors use the same factorwise zeta/heat-kernel spectral cut.  The
+single negative scalar phase is locally constant on the fixed stabilizer
+stratum and therefore drops out of the local $b_4$ variation; its global phase
+is not claimed.  The primes remove precisely the fifteen conformal-Killing
+ghost modes.  York/Hodge Jacobians and the ten nonminimal doublets have already
+been included before the four displayed factors are formed.
+
+To make the determinant-to-BV bridge explicit, let $\sigma$ denote a bosonic
+Weyl parameter.  Dimensional regularization first gives the local supertrace
+\[
+ \Gamma^{(1)}_{\rm div}(d)
+ =\frac{\mu^{d-4}}{(4\pi)^2(d-4)}
+ \int\!\sqrt g\,[cC^2-aE_4+b\Box R+\text{BRST-exact rows}].
+\]
+The regulated Ward insertion is not inferred from this scalar functional by
+name matching.  It is computed as
+\[
+ \mathcal S_S\Gamma^{(1)}_{\rm reg}
+ =\lim_{d\to4}s_d\Gamma^{(1)}_{\rm div}(d),
+ \]
+where the $(d-4)$ Weyl variation of the dimensionally continued densities
+cancels the pole.  Replacing $\sigma$ by the Weyl ghost $\omega$, adding the
+certified universal Diff completion, and reducing the exact, gauge-dependent,
+and total-derivative rows against the complete gauge-fixed $H^{1,4}(s\mid\dd)$
+gives
+\[
+ \mathcal S_S\Gamma^{(1)}_{\rm reg}
+ =\frac1{(4\pi)^2}\int\!\sqrt g\,\omega
+ (cC^2-aE_4+b\Box R)+s\mathcal B+\dd\mathcal C.
+\]
+This is the coefficient-bearing map from the Euclidean integration slice to a
+ghost-number-one Slavnov class; it is why a logarithmic divergence, trace
+anomaly, and BV anomaly are not silently conflated.
 
 \begin{theorem}[Repository one-loop Slavnov breaking]
 In the normalization
@@ -213,9 +303,27 @@ scalars, Weyl or Dirac fermions, and standard gauge vectors.  No such
 combination cancels both even coordinates of the strict breaking.
 \end{proposition}
 
-The proof is an exact separating dual-cone witness.  Interacting fixed points,
-wrong-sign or nonunitary matter, conformal higher spins, and compensator
-extensions lie outside this no-go.
+These are free, massless spectator fields conformally coupled to the same
+metric; gauge vectors include their standard BRST ghosts.  In the convention
+$(c,-a)$ their exact vectors are
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+field & $c$ & $-a$\\
+\midrule
+pure Weyl graviton & $199/30$ & $-87/20$\\
+real conformal scalar & $1/120$ & $-1/360$\\
+Weyl fermion & $1/40$ & $-11/720$\\
+Dirac fermion & $1/20$ & $-11/360$\\
+gauge vector & $1/10$ & $-31/180$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The separating functional is simply $\ell(c,-a)=c$: it is strictly positive
+on the gravity vector and on every allowed matter ray.  Hence no nonnegative
+real combination, and a fortiori no nonnegative integer field content, can
+reach the origin.  Interacting fixed points, wrong-sign or nonunitary matter,
+conformal higher spins, and compensator extensions lie outside this no-go.
 
 \section{The compensator cotangent lift}
 
@@ -239,7 +347,7 @@ In addition to the field row this forces
 together with the opposite-adjoint Lie-prolonged rows.
 
 \begin{theorem}[Exact minimal-BV cotangent lift]
-On every strict-plus-compensator atom,
+On every strict-plus-compensator generator and covariant jet generator,
 \[
  \delta^2=0,
  \qquad \delta\gamma+\gamma\delta=0,
@@ -256,8 +364,24 @@ $\delta\omega^*=\widehat\tau^*$.  Thus
 $(\tau,\omega,\omega^*,\widehat\tau^*)$ is an exact contractible quartet.
 \end{theorem}
 
+In the ordered basis $(\tau,\omega,\omega^*,\widehat\tau^*)$, the Weyl part
+of the differential and its homotopy act by
+\[
+ Q_W\tau=\omega,\qquad Q_W\omega^*=\widehat\tau^*,
+ \qquad h\omega=\tau,\qquad h\widehat\tau^*=\omega^*,
+\]
+and vanish on the other two basis generators.  Consequently
+\[
+ Q_Wh+hQ_W=N_{\rm quartet}.
+\]
+On a monomial of positive quartet number the contracting homotopy is
+$N_{\rm quartet}^{-1}h$, extended to covariant jets as a graded derivation.
+The Diff and horizontal pieces preserve quartet number, so the filtered
+total-complex contraction follows by homological perturbation in the declared
+formal completion.
+
 The exponential change is an automorphism only after declaring the formal
-tau-adic local analytic completion.  Its two inverse series are replayed with
+$\tau$-adic local analytic completion.  Its two inverse series are replayed with
 exact rational coefficients and obey at every order
 \[
  \sum_{k=0}^{n}\frac{(-2)^k}{k!}\frac{2^{n-k}}{(n-k)!}
@@ -270,9 +394,21 @@ No finite-polynomial-in-$\tau$ theorem is inferred.
 Quartet contraction reduces the extended complex to pure Diff BV cohomology
 in the dressed metric $\ghat$.  The dimension-four counterterm inventory is
 therefore larger than in strict Weyl gravity: $R(\ghat)^2$ is now closed.
+The declared algebra is the formal $\tau$-adic local analytic jet completion
+generated by $\widehat g$, its cotangent variables, Diff ghosts, the quartet,
+curvatures and covariant derivatives, with the same dimension and form-degree
+bounds as the strict calculation.  The canonical dressed change is invertible
+in this completion.  After quartet contraction, forward invariant generation
+and reverse grading-signature coverage leave precisely the pure-Diff
+dimension-four metric invariants below; the independently completed pure-Diff
+ghost-one total complex has zero quotient.  Nonminimal and gauge-fixing
+transport then preserve that result.  Thus the vanishing assertion is a
+complete statement in this declared formal algebra, not an AFN0 primitive
+test alone.
 
-\begin{theorem}[Formal tau-adic extended quotient]
-In the declared formal tau-adic local analytic jet algebra,
+\begin{theorem}[Formal $\tau$-adic extended quotient]
+In the declared formal $\tau$-adic local analytic jet algebra on the regular
+Bach locus,
 \[
  H^{0,4}_{\rm ext,even}
  =\operatorname{span}\{C(\ghat)^2,E_4(\ghat),R(\ghat)^2\},
@@ -294,14 +430,32 @@ Explicit primitives for the strict four-candidate anomaly carrier are
  \qquad
  B_P=\int\sqrt g\,\tau C\widetilde C,
 \]
-together with the Euler Wess--Zumino functional $B_E$ and the stored $R^2$
-primitive $B_{\Box}$.  Their boundary matrix has exact rank four.
+and the Euler Wess--Zumino functional is
+\[
+ B_E=\int\!\sqrt g\,\bigl[
+ \tau E_4+4G^{\mu\nu}\nabla_\mu\tau\nabla_\nu\tau
+ -4(\Box\tau)(\nabla\tau)^2+2(\nabla\tau)^4\bigr].
+\]
+With the conventions above,
+\[
+ s_{\rm ext}B_E=\int\!\sqrt g\,\omega E_4\pmod{\dd}.
+\]
+The termwise intrinsic Euler descent and its universal Diff completion are
+stored separately.  Together with the $R^2$ primitive $B_{\Box}$, these four
+primitives have an exact rank-four boundary matrix.
 The curved-background Euler primitive agrees with the standard dilaton
 Wess--Zumino construction obtained from finite Weyl transformation of
 dimensionally regulated counterterms~\cite{BaumeKerenZur}.  The new
 certificate needed here is not the displayed AFN0 formula alone: it is the
 cotangent lift, quartet contraction, exhaustive extended $H^{0,4}/H^{1,4}$
 comparison, and coefficient-bearing BV boundary equation.
+
+This restoration has a physical price.  The compensator theory is not
+quantum-equivalent to strict Weyl gravity: gauge fixing $\tau=0$ does not turn
+the anomalous strict quotient into an anomaly-free theory, while the dressed
+Diff theory permits counterterms such as $R(\widehat g)^2$ and finite
+normalizations unavailable in the strict quotient.  Exactness is obtained by
+enlarging both the BV complex and its local counterterm algebra.
 
 \begin{corollary}[One-loop local Euclidean QME restoration]
 The counterterm
@@ -314,18 +468,25 @@ satisfies
  \cA^{(1)}+s_{\rm ext}S_{\rm ct}^{(1)}=0\pmod{\dd}.
 \]
 Hence the compensator-extended local Euclidean QME is restored at one loop in
-the declared formal tau-adic algebra.
+the declared formal $\tau$-adic algebra.
 \end{corollary}
 
 \begin{proposition}[The restored QME does not determine a unique $Q_1$]
+Define the coefficient-bearing one-loop Wess--Zumino functional by
+\[
+ C_1^{\rm WZ}=-\frac1{(4\pi)^2}
+ \left(\frac{199}{30}B_C-\frac{87}{20}B_E\right).
+\]
 The local Wess--Zumino Hamiltonian contribution
 \[
  Q_1^{\rm WZ}=(C_1^{\rm WZ},\,\cdot)
 \]
 is coefficient-bearing and fixed by the counterterm above.  The complete
 renormalized first Slavnov operator is nevertheless underdetermined.  On the
-flat Euclidean fixtures $p=(1,0,0,0)$ with one transverse-traceless and one
-conformal polarization, the bulk quadratic response of the allowed basis
+dimensionless flat Euclidean fixture $p=(1,0,0,0)$, in units of the chosen
+reference momentum, with $h_{11}=1$, $h_{22}=-1$ and all other TT components
+zero, together with one conformal polarization, the bulk quadratic response
+of the allowed basis
 $(C(\widehat g)^2,E_4(\widehat g),R(\widehat g)^2,
 C(\widehat g)\widetilde C(\widehat g))$ is
 \[
@@ -339,6 +500,8 @@ proposition supplies the anomaly-induced nonlocal component, but not the
 Weyl-invariant finite remainder.
 \end{proposition}
 
+\section{Consequences for one-loop effective-action representatives}
+
 \begin{proposition}[Anomaly-induced Euclidean representative]
 Set
 \[
@@ -347,6 +510,7 @@ Set
  \Delta_4=\Box^2+2R^{\mu\nu}\nabla_\mu\nabla_\nu
  -\frac23R\Box+\frac13(\nabla^\mu R)\nabla_\mu .
 \]
+This is the four-dimensional Paneitz operator~\cite{Paneitz}.
 On an invertible Euclidean boundary problem, or on the compatible source
 sector of a self-adjoint generalized inverse $G_4$ of $\Delta_4$, one
 anomaly-induced representative is
@@ -397,6 +561,10 @@ and therefore
  F_C(p^2;\mu)-F_C(q^2;\mu)
  =-\frac{199}{60}\log\frac{p^2}{q^2}.
 \]
+The factor of $1/2$ is fixed by the stated normalization:
+$\langle C^{(1)},C^{(1)}\rangle=1$ and
+$\mu\partial_\mu\log(p^2/\mu^2)=-2$, so matching the scale response $c$
+requires $-2A_{\log}=c$ and hence $A_{\log}=-c/2=-199/60$.
 This fixes the universal scale-dependent part and the scheme-independent
 momentum difference.  A reference condition
 $F_C(\kappa_{\rm ref}^2;\mu)=N_C$ instead fixes the still-free local constant
@@ -414,7 +582,7 @@ result supplies the cubic completion, zero-momentum definition, Lorentzian
 branch prescription, or a particle state.
 \end{proposition}
 
-\begin{proposition}[Covariant logarithm through curvature order two]
+\begin{proposition}[Endomorphism-class covariant logarithm through curvature order two]
 Let $\Delta_C$ be a positive self-adjoint Laplace-type operator on the
 algebraic Weyl-tensor bundle, with a fixed self-adjoint elliptic domain, and
 let $\Pi_\perp$ project off its kernel.  Covariant perturbation theory through
@@ -432,8 +600,10 @@ It obeys
 and hence has the certified scale response
 $(4\pi)^{-2}(199/30)\langle C,\Pi_\perp C\rangle$.
 
-This quadratic-curvature functional is independent of the admissible
-Laplace-type representative at the declared order.  Indeed, if
+This quadratic-curvature functional is independent, at the declared order,
+within the class of operators sharing the same principal symbol, connection,
+self-adjoint domain, and source-complement prescription and differing at first
+curvature order only by a bundle endomorphism.  Indeed, if
 $\Delta_C'=\Delta_C+V_1+O(\mathcal R^2)$ with $V_1$ a self-adjoint
 curvature-order-one bundle endomorphism on the same domain, then
 \[
@@ -444,6 +614,8 @@ curvature-order-one bundle endomorphism on the same domain, then
 Sandwiching this variation between two Weyl tensors has curvature order
 $1+1+1=3$.  Thus the first missing completion data for this $C^2$ logarithmic
 carrier are cubic in the curvature~\cite{BarvinskyCPT,DonoghueElMenoufi}.
+No independence under a change of bundle connection is claimed; such a change
+can introduce first-order differential terms not covered by $V_1$.
 The independent nonlocal $R^2$ form factor, finite $C^2$ and absolute dressed
 $R(\widehat g)^2$ normalizations, cubic $C^2$ completion, kernel data and
 local-Weyl completion remain open.
@@ -503,20 +675,22 @@ compensator-inclusive classical contraction together with those missing data.
 The exact positive-Berger contraction does not fill this gate: its row named
 $\tau$ is a temporal diffeomorphism ghost on a different background, not the
 Wess--Zumino scalar compensator.
-Bridge~4 is now certified only on the reduced vacuum-cylinder E/A/L Krein
-carrier, where a normalized same-background classical mode, causal Green
-carrier, pairing, complex structure, and Hadamard two-point distribution
-coexist.  It remains open for the full BV and Berger carriers and does not
-establish a positive graviton Hilbert space.  Bridge~5 has a QME disposition but lacks the
-independent interaction-to-physical-branch map.  No classical tangent
-obstruction is therefore called ghost removal or a quantum constraint.
+The separate same-background free-state and Bridge~4 programme is outside
+this paper.  Bridge~5 has a QME disposition but still lacks the independent
+interaction-to-physical-branch map.  No classical tangent obstruction is
+therefore called ghost removal or a quantum constraint.
 
 \section{Machine certification and reproduction}
 
 The coefficient-bearing theorem receipts are
 \begin{itemize}
-\item \cert{quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json};
+\item \cert{quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json}.
+\item \cert{quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json}.
+\item \cert{quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json}.
 \item \cert{quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json}.
+\item \cert{quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json}.
 \item \cert{quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json}.
 \item \cert{quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json}.
 \item \cert{quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json}.
@@ -583,6 +757,12 @@ M.~Henneaux and C.~Teitelboim,
 \emph{Quantization of Gauge Systems},
 Princeton University Press, 1992.
 
+\bibitem{BarnichBrandtHenneauxI}
+G.~Barnich, F.~Brandt, and M.~Henneaux,
+\emph{Local BRST cohomology in the antifield formalism. I. General theorems},
+Commun. Math. Phys. \textbf{174} (1995), 57--91,
+\href{https://doi.org/10.1007/BF02099464}{doi:10.1007/BF02099464}.
+
 \bibitem{Boulanger}
 N.~Boulanger,
 \emph{General solutions of the Wess--Zumino consistency condition for the
@@ -617,6 +797,14 @@ Phys. Rev. D \textbf{108} (2023), 086018,
 R.~J. Riegert,
 \emph{A nonlocal action for the trace anomaly},
 Phys. Lett. B \textbf{134} (1984), 56--60.
+
+\bibitem{Paneitz}
+S.~M. Paneitz,
+\emph{A quartic conformally covariant differential operator for arbitrary
+pseudo-Riemannian manifolds},
+SIGMA \textbf{4} (2008), 036,
+\href{https://doi.org/10.3842/SIGMA.2008.036}{doi:10.3842/SIGMA.2008.036}
+(1983 manuscript).
 
 \bibitem{BarvinskyWachowski}
 A.~O. Barvinsky and W.~Wachowski,

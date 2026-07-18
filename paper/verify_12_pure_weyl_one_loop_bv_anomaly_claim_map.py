@@ -24,8 +24,6 @@ def main() -> None:
     assert payload["dependency_tags"] == [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL",
-        "REDUCED-MODE",
-        "LORENTZIAN-CAUSAL",
     ]
     manuscript = ROOT / payload["manuscript"]
     assert manuscript.is_file()
@@ -34,7 +32,7 @@ def main() -> None:
     assert compiled_pdf.is_file()
     assert _sha256(compiled_pdf) == payload["compiled_pdf_sha256"]
     artifacts = payload["publication_artifacts"]
-    assert len(artifacts) == 5
+    assert len(artifacts) == 6
     for relative, expected in artifacts.items():
         artifact = ROOT / relative
         assert artifact.is_file(), relative
@@ -46,6 +44,11 @@ def main() -> None:
         "tau_adic_compensator_extended_local_Euclidean_one_loop": "QME_RESTORED",
     }
     claims = payload["certified_claims"]
+    assert claims["strict_quotient_scope"] == "REGULAR_BACH_LOCUS"
+    assert claims["minimal_Koszul_Tate_collapse_page"] == "E2"
+    assert claims["Euclidean_symbol_bundle_dimensions"] == [5, 10, 5]
+    assert claims["determinant_factor_count"] == 4
+    assert claims["determinant_to_Slavnov_bridge_displayed"] is True
     assert claims["strict_full_gauge_fixed_H14_even_dimension"] == 2
     assert claims["strict_full_gauge_fixed_H14_odd_dimension"] == 1
     assert claims["pure_Diff_and_mixed_additional_classes"] == 0
@@ -87,8 +90,7 @@ def main() -> None:
     }
     assert claims["repository_29_over_120_local_R2_reproduced"] is True
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
-    assert claims["reduced_vacuum_cylinder_Bridge_4"] is True
-    assert claims["reduced_vacuum_cylinder_state_space_sign"] == "PLUS_E_MINUS_A_MINUS_L"
+    assert claims["Euler_Wess_Zumino_primitive_displayed"] is True
     boolean_claims = {
         key: value for key, value in claims.items() if isinstance(value, bool)
     }
@@ -101,7 +103,7 @@ def main() -> None:
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 13
+    assert len(payload["inputs"]) == 17
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -117,7 +119,10 @@ def main() -> None:
     flat_tt_log = dependencies["FLAT_TT_LOGARITHMIC_GAMMA1"]
     curvature_squared_log = dependencies["CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
-    reduced_bridge4 = dependencies["VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"]
+    minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
+    elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
+    multiplicity = dependencies["REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER"]
+    wz_preflight = dependencies["WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT"]
     assert strict["qme_disposition"]["status"] == "OBSTRUCTED_STRICT_FIELD_CONTENT"
     assert strict["coefficients"]["ANOM_OMEGA_C2"] == claims["C2_coefficient"]
     assert strict["coefficients"]["ANOM_OMEGA_E4"] == claims["E4_coefficient"]
@@ -139,8 +144,10 @@ def main() -> None:
     assert curvature_squared_log["decision"]["residual_transfer"] == "FORBIDDEN"
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
-    assert reduced_bridge4["decision"]["Bridge_4_reduced_vacuum_cylinder"] == "CERTIFIED"
-    assert reduced_bridge4["decision"]["Bridge_4_full_BV"] == "NO_CERTIFIED_MAP"
+    assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"
+    assert len(elliptic["principal_symbol_exactness"]) == 4
+    assert len(multiplicity["repository_factors"]) == 4
+    assert "tau E4" in wz_preflight["local_primitives"]["B_E"]
     print("Paper 12 pure-Weyl one-loop BV anomaly claim map: PASS")
 
 

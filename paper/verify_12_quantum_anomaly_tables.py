@@ -22,6 +22,10 @@ def main() -> None:
     assert "A_{\\log}" in rendered
     assert "-\\frac{199}{60}" in rendered
     assert "first admissible operator-choice difference & 3" in rendered
+    assert "generated-spectral-sequence" in rendered
+    assert "generated-determinant-ledger" in rendered
+    assert "generated-matter-vectors" in rendered
+    assert "generated-euler-wz" in rendered
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
     assert values["gauge_fixed"]["gauge_fixed_cohomology"]["H14_classes"] == [
         "ANOM_OMEGA_C2",
@@ -51,6 +55,10 @@ def main() -> None:
     assert values["flat_tt_log"]["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
     assert values["curvature_squared_log"]["operator_choice_independence"]["first_difference_order"] == 3
     assert values["curvature_squared_log"]["claim_flags"]["COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED"] is False
+    assert values["minimal_kt"]["spectral_sequence"]["collapse_page"] == "E2"
+    assert len(values["elliptic"]["principal_symbol_exactness"]) == 4
+    assert len(values["multiplicity"]["repository_factors"]) == 4
+    assert values["matter"]["separating_witnesses"][0]["functional"] == [1, 0]
     print("Paper 12 generated quantum-anomaly tables: PASS")
 
 

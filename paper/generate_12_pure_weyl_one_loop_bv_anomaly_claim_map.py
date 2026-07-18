@@ -15,6 +15,7 @@ MANUSCRIPT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly.tex"
 PDF = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly.pdf"
 SUPPLEMENT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex"
 SUPPLEMENT_PDF = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf"
+REFEREE_RESPONSE = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md"
 GENERATED_TABLES = ROOT / "paper/generated/12-quantum-anomaly-certificate-tables.tex"
 TABLE_GENERATOR = ROOT / "paper/generate_12_quantum_anomaly_tables.py"
 TABLE_VERIFIER = ROOT / "paper/verify_12_quantum_anomaly_tables.py"
@@ -23,16 +24,20 @@ INPUTS = {
     "strict_AFN0_even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
     "strict_AFN0_odd": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
     "strict_gauge_fixed": ROOT / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
+    "strict_minimal_KT": ROOT / "quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json",
+    "euclidean_elliptic_complex": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
+    "euclidean_multiplicity": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+    "euclidean_integration_slice": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json",
     "strict_breaking": ROOT / "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "matter_no_go": ROOT / "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "cotangent_lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+    "wz_preflight": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "extended_cohomology": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "Q1_disposition": ROOT / "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
-    "vacuum_cylinder_reduced_Bridge4": ROOT / "quantum-weyl/lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
 }
 
 
@@ -49,16 +54,20 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     even = values["strict_AFN0_even"]
     odd = values["strict_AFN0_odd"]
     gauge = values["strict_gauge_fixed"]
+    minimal_kt = values["strict_minimal_KT"]
+    elliptic = values["euclidean_elliptic_complex"]
+    multiplicity = values["euclidean_multiplicity"]
+    integration_slice = values["euclidean_integration_slice"]
     strict = values["strict_breaking"]
     matter = values["matter_no_go"]
     lift = values["cotangent_lift"]
+    wz_preflight = values["wz_preflight"]
     extended = values["extended_cohomology"]
     q1 = values["Q1_disposition"]
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
-    reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -67,6 +76,12 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or odd.get("smallest_relative_sector", {}).get("quotient_dimension") != 1
         or gauge.get("gauge_fixed_cohomology", {}).get("H14_even_dimension") != 2
         or gauge.get("gauge_fixed_cohomology", {}).get("H14_odd_dimension") != 1
+        or minimal_kt.get("spectral_sequence", {}).get("collapse_page") != "E2"
+        or len(minimal_kt.get("contraction", {}).get("contractible_pairs", [])) != 6
+        or elliptic.get("result_state")
+        != "COMPLETE_GAUGE_FIXED_BV_PRINCIPAL_SYMBOL_SEQUENCE_EXACT_AND_ELLIPTIC"
+        or len(multiplicity.get("repository_factors", [])) != 4
+        or len(integration_slice.get("factor_exponent_ledger", [])) != 4
         or strict.get("qme_disposition", {}).get("status")
         != "OBSTRUCTED_STRICT_FIELD_CONTENT"
         or strict.get("coefficients", {}).get("ANOM_OMEGA_C2")
@@ -77,6 +92,8 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         != "NO_NONNEGATIVE_STANDARD_UNITARY_FREE_MATTER_CANCELLATION"
         or lift.get("contractible_quartet", {}).get("status")
         != "EXACT_CONTRACTIBLE_WEYL_QUARTET_IN_DRESSED_VARIABLES"
+        or wz_preflight.get("local_primitives", {}).get("B_E")
+        != "integral sqrt(g) [tau E4 + 4 G^{mu nu} d_mu tau d_nu tau - 4 (Box tau)(d tau)^2 + 2 (d tau)^4]"
         or extended.get("result_state")
         != "TAU_ADIC_EXTENDED_GAUGE_FIXED_H04_H14_COMPLETE_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED"
         or extended.get("H04", {}).get("even_quotient_dimension") != 3
@@ -127,14 +144,6 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "NONLOCAL_R2_FORM_FACTOR_COMPUTED"
         )
         is not False
-        or reduced_bridge4.get("decision", {}).get(
-            "Bridge_4_reduced_vacuum_cylinder"
-        )
-        != "CERTIFIED"
-        or reduced_bridge4.get("claim_flags", {}).get(
-            "FULL_BV_BRST_HADAMARD_STATE_CERTIFIED"
-        )
-        is not False
     ):
         raise ValueError("Paper 12 theorem dependency drifted")
     return values
@@ -148,7 +157,6 @@ def build() -> dict[str, Any]:
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
-    reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
         "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
@@ -157,8 +165,6 @@ def build() -> dict[str, Any]:
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
-            "REDUCED-MODE",
-            "LORENTZIAN-CAUSAL",
         ],
         "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, an exact covariant C2 logarithm through curvature order two, and an exact raw-to-BoxR-zero local R2 scheme conversion.",
         "manuscript": _relative(MANUSCRIPT),
@@ -170,6 +176,7 @@ def build() -> dict[str, Any]:
             for path in (
                 SUPPLEMENT,
                 SUPPLEMENT_PDF,
+                REFEREE_RESPONSE,
                 GENERATED_TABLES,
                 TABLE_GENERATOR,
                 TABLE_VERIFIER,
@@ -180,6 +187,11 @@ def build() -> dict[str, Any]:
             "tau_adic_compensator_extended_local_Euclidean_one_loop": "QME_RESTORED",
         },
         "certified_claims": {
+            "strict_quotient_scope": "REGULAR_BACH_LOCUS",
+            "minimal_Koszul_Tate_collapse_page": "E2",
+            "Euclidean_symbol_bundle_dimensions": [5, 10, 5],
+            "determinant_factor_count": 4,
+            "determinant_to_Slavnov_bridge_displayed": True,
             "strict_full_gauge_fixed_H14_even_dimension": 2,
             "strict_full_gauge_fixed_H14_odd_dimension": 1,
             "pure_Diff_and_mixed_additional_classes": 0,
@@ -191,6 +203,7 @@ def build() -> dict[str, Any]:
             "standard_unitary_free_matter_cancellation_excluded": True,
             "minimal_BV_compensator_cotangent_lift_exact": True,
             "Weyl_quartet_contractible": True,
+            "Euler_Wess_Zumino_primitive_displayed": True,
             "formal_tau_adic_coordinate_change_invertible": True,
             "extended_H04_even_dimension": extended["H04"]["even_quotient_dimension"],
             "extended_H04_odd_dimension": extended["H04"]["odd_quotient_dimension"],
@@ -210,8 +223,6 @@ def build() -> dict[str, Any]:
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
             "repository_29_over_120_local_R2_reproduced": True,
             "Berger_WZ_tau_contraction_merge_rejected": True,
-            "reduced_vacuum_cylinder_Bridge_4": True,
-            "reduced_vacuum_cylinder_state_space_sign": reduced_bridge4["decision"]["state_space_sign"],
         },
         "explicit_nonclaims": {
             "finite_polynomial_in_tau_theorem": False,

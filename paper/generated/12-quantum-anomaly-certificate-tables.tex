@@ -7,11 +7,27 @@
 Stage & $\dim H^{0,4}_{\rm even}$ & $\dim H^{0,4}_{\rm odd}$ & $\dim H^{1,4}_{\rm even}$ & $\dim H^{1,4}_{\rm odd}$ \\
 \midrule
 strict gauge-fixed BV & 2 & 1 & 2 & 1 \\
-tau-adic extended BV & 3 & 1 & 0 & 0 \\
+$\tau$-adic extended BV & 3 & 1 & 0 & 0 \\
 \bottomrule
 \end{tabular}
 \caption{Exact dimension-four local BV quotient dimensions.}
 \label{tab:generated-quotient-dimensions}
+\end{table}
+
+\begin{table}[ht]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}Y Y r Y@{}}
+\toprule
+Spectral-sequence step & Exact input & Rank/count & Outcome \\
+\midrule
+Koszul--Tate $E_0$ & adapted regular-Bach pairs & 6 pairs & positive AFN columns vanish \\
+$E_1\Rightarrow E_2$ & AFN0 modulo Euler--Noether ideal & 9016 monomials & collapse at $E_2$ \\
+nonminimal extension & pointwise Diff$\times$Weyl doublets & 10 pairs & chain contraction \\
+gauge-fixing transport & local BV-canonical similarity & 25080 monomials & quotient preserved \\
+\bottomrule
+\end{tabularx}
+\caption{Strict-quotient spectral-sequence and contraction ledger on the regular Bach locus.}
+\label{tab:generated-spectral-sequence}
 \end{table}
 
 \begin{table}[ht]
@@ -29,6 +45,22 @@ odd AFN0 mixed carrier & 45 & 1 & 0 \\
 \end{table}
 
 \begin{table}[ht]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}YlrlrrY@{}}
+\toprule
+Sector & operator & rank & statistics & exponent in $Z$ & zero modes removed & local prescription \\
+\midrule
+metric TT, upper & \texttt{Delta\_2\_perp(4)} & 5 & bosonic & $-\frac{1}{2}$ & 0 & factorwise spectral cut \\
+Diff--Weyl scalar ghost & \texttt{Delta\_0(-4)} & 1 & fermionic & $\frac{1}{2}$ & 5 & cut; negative-mode phase locally constant \\
+metric TT, lower & \texttt{Delta\_2\_perp(2)} & 5 & bosonic & $-\frac{1}{2}$ & 0 & factorwise spectral cut \\
+transverse Diff ghost & \texttt{Delta\_1\_perp(-3)} & 3 & fermionic & $\frac{1}{2}$ & 10 & factorwise spectral cut \\
+\bottomrule
+\end{tabularx}
+\caption{Human-readable determinant ledger for the accepted repository Euclidean integration slice.  Exponents are determinant powers in $Z$; the corresponding $\Gamma_1$ powers have the opposite sign.}
+\label{tab:generated-determinant-ledger}
+\end{table}
+
+\begin{table}[ht]
 \centering
 \begin{tabular}{@{}lr@{}}
 \toprule
@@ -42,6 +74,23 @@ $\Box R$ & $0$ \\
 \end{tabular}
 \caption{Coefficient vector in the convention $(4\pi)^{-2}[cC^2-aE_4+pC\widetilde C+b\Box R]$.}
 \label{tab:generated-coefficients}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Standard-sign field & $C^2$ coordinate & $E_4$ coordinate \\
+\midrule
+pure Weyl graviton & $\frac{199}{30}$ & $-\frac{87}{20}$ \\
+real conformal scalar & $\frac{1}{120}$ & $-\frac{1}{360}$ \\
+Weyl fermion & $\frac{1}{40}$ & $-\frac{11}{720}$ \\
+Dirac fermion & $\frac{1}{20}$ & $-\frac{11}{360}$ \\
+gauge vector (with BRST ghosts) & $\frac{1}{10}$ & $-\frac{31}{180}$ \\
+\bottomrule
+\end{tabular}
+\caption{Exact anomaly vectors in the convention $(c,-a)$.  The functional $(1,0)$ is strictly positive on the gravity vector and every allowed matter ray, already excluding cancellation in the nonnegative cone.}
+\label{tab:generated-matter-vectors}
 \end{table}
 
 \begin{table}[ht]
@@ -118,6 +167,17 @@ The certificate checks 24 atoms and
 $Q$; all component gradings,
 $\delta^2$, $\delta\gamma+\gamma\delta$, and $Q^2$ pass exactly.
 
+The Euler primitive used by the boundary matrix is
+\begin{equation}
+B_E=\int\!\sqrt g\,\left[
+ \tau E_4+4G^{\mu\nu}\nabla_\mu\tau\nabla_\nu\tau
+ -4(\Box\tau)(\nabla\tau)^2+2(\nabla\tau)^4\right],
+\qquad Q_WB_E=\int\!\sqrt g\,\omega E_4\pmod{\dd_h},
+\label{eq:generated-euler-wz}
+\end{equation}
+with the sign convention $Q_WB_C=\int\sqrt g\,\omega C^2$ and
+$Q_WB_E=\int\sqrt g\,\omega E_4$ modulo $\dd_h$.
+
 \begin{equation}
 B_{\rm ext}=
 \begin{pmatrix}
@@ -146,9 +206,14 @@ Certificate & SHA-256 prefix \\
 \nolinkurl{quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json} & \texttt{6bf8b7ef099ce40b} \\
 \nolinkurl{quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json} & \texttt{0134e28cf3fd0bf4} \\
 \nolinkurl{quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json} & \texttt{4513be4824760577} \\
+\nolinkurl{quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json} & \texttt{f2b04706724d79b5} \\
+\nolinkurl{quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json} & \texttt{a1eb7dd598ed3417} \\
+\nolinkurl{quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json} & \texttt{5bdc6ee4674e3a58} \\
+\nolinkurl{quantum-weyl/spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json} & \texttt{edde6206a9dc62d0} \\
 \nolinkurl{quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json} & \texttt{d11ebc782c6a388e} \\
 \nolinkurl{quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json} & \texttt{9c4b1218450e20f0} \\
 \nolinkurl{quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json} & \texttt{b265dc9d86938ed7} \\
+\nolinkurl{quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json} & \texttt{10dbd0b0a1e9190d} \\
 \nolinkurl{quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json} & \texttt{fa21fc6071ae5227} \\
 \nolinkurl{quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json} & \texttt{9531ef49d0d930fc} \\
 \nolinkurl{quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json} & \texttt{8d4bc8bdf702cf3c} \\

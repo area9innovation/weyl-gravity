@@ -21,7 +21,7 @@
 
 \title{Computational Supplement to\\
 ``A One-Loop BV Obstruction in Pure Weyl Gravity\\
-and Its Formal Tau-Adic Wess--Zumino Resolution''}
+and Its Formal \texorpdfstring{$\tau$}{tau}-adic Wess--Zumino Resolution''}
 \author{Asger Alstrup Palm}
 \date{Working supplement, July 2026}
 
@@ -30,7 +30,7 @@ and Its Formal Tau-Adic Wess--Zumino Resolution''}
 
 \begin{abstract}
 This supplement records the exact finite computations underlying the strict
-one-loop BV obstruction and its formal tau-adic compensator resolution.  It
+one-loop BV obstruction and its formal $\tau$-adic compensator resolution.  It
 separates basis exhaustiveness, relative-cohomology ranks, antifield and
 gauge-fixing transport, analytic coefficient provenance, the compensator
 cotangent lift, quartet contraction, the extended quotient, and QME
@@ -130,6 +130,15 @@ Consequently the AFN0 Weyl representatives lift through the minimal spectral
 sequence.  A separate total-complex computation proves that the pure-Diff and
 mixed Diff--Weyl sectors add no independent dimension-four class.
 
+Concretely, the six adapted pairs are $(g^*,E_g)$,
+$(\xi^*,N_\xi)$, $(\omega^*,N_\omega)$ and their Lie-prolonged partners.
+The $E_0$ positive-antifield columns vanish, $E_1$ is AFN0 modulo the
+Euler--Noether ideal, and the sequence collapses at $E_2$.  Since every
+positive-antifield generator in this slice has form degree four, no omitted
+lower-form positive-AFN carrier can alter the relative quotient.  This is a
+chart theorem: replacing highest TT metric jets by the Bach Euler row assumes
+the declared regular Bach locus.
+
 Ten general nonminimal pairs then contract on $25{,}080$ graded regression
 monomials.  Their covariant jet prolongations commute with $\dd_h$, and a
 free-word normal-form computation transports the SDR through an arbitrary
@@ -141,9 +150,16 @@ comparison is why the main theorem is not labeled AFN0-only.
 
 \subsection{Analytic input}
 
-The accepted Euclidean principal-symbol sequence has dimensions
-$5\to10\to5$, ranks $(5,5)$ at nonzero covector, zero composition, and exact
-image--kernel equality.  The formal adjoint sequence, Diff/Weyl nonminimal
+The accepted Euclidean principal-symbol sequence is
+\[
+ (T\oplus\mathbf1)_5\xrightarrow{\sigma(K)}(S^2T^*)_{10}
+ \xrightarrow{\sigma(P_{\rm TT})}(S^2_{\rm TT}T^*)_5.
+\]
+The first bundle contains four Diff plus one Weyl gauge parameter; the middle
+bundle is the metric perturbation; the last is the TT symbol slice, not a
+five-component claim about the unreduced Bach equation.  It has ranks $(5,5)$
+at nonzero covector, zero composition, and exact image--kernel equality.  The
+formal adjoint sequence, Diff/Weyl nonminimal
 doublets, and four kinetic blocks replay independently.  The determinant
 bundle ranks and exponents are
 \[
@@ -151,6 +167,8 @@ bundle ranks and exponents are
  \left(-\frac12,+\frac12,-\frac12,+\frac12\right),
 \]
 with priming dimensions $(0,5,0,10)$.
+The generated determinant table prints each operator, rank, statistics,
+exponent, and zero-mode subtraction separately.
 
 The local $C^2$ coordinate is exposed on a non-conformally-flat Ricci-flat
 carrier.  The Euler coordinate is independently fixed on round $S^4$.  The
@@ -180,6 +198,20 @@ evaluates to zero by the Ward identity.  Therefore
 The strict QME verdict is determined by this nonzero cohomology class.  The
 beta function, determinant logarithm, and background trace anomaly are not
 used as substitutes for the regulated Slavnov insertion.
+
+The bridge is the regulated identity
+\[
+ \mathcal S_S\Gamma_{\rm reg}^{(1)}
+ =\lim_{d\to4}s_d\left[
+ \frac{\mu^{d-4}}{(4\pi)^2(d-4)}
+ \int\sqrt g\,(cC^2-aE_4+b\Box R+\text{exact rows})\right].
+\]
+The $(d-4)$ Weyl variation of the continued densities cancels the pole.
+Replacing the bosonic Weyl parameter by $\omega$, adjoining the certified
+universal Diff descent, and reducing exact, parameter-dependent, and total
+derivative rows produces the ghost-one insertion.  Thus the determinant
+ledger supplies coefficients to an independently assembled Slavnov carrier;
+it is not itself called a BV anomaly.
 
 \subsection{Matter cone}
 
@@ -218,7 +250,7 @@ every ghost number, antifield number, parity, and tensor component type.
 
 The change
 \[
- \widehat g=e^{-2\tau}g,qquad
+ \widehat g=e^{-2\tau}g,\qquad
  \widehat g^*=e^{2\tau}g^*,qquad
  \widehat\tau^*=\tau^*+2g_{\mu\nu}g^{*\mu\nu}
 \]
@@ -232,7 +264,14 @@ It sends the Weyl Noether row to
 $\delta\omega^*=\widehat\tau^*$ and yields the quartet matrices in
 Equation~\ref{eq:generated-quartet-matrices}.
 
-The coordinate change is interpreted in the formal tau-adic local analytic
+Equivalently, $h\omega=\tau$, $h\widehat\tau^*=\omega^*$ and $h$ vanishes on
+$\tau,\omega^*$.  Extending $h$ to covariant jets as a graded derivation and
+dividing by positive quartet number gives the contraction
+$Q_Wh+hQ_W=N_{\rm quartet}$.  Diff transport and $\dd_h$ preserve the
+filtration, so homological perturbation lifts this contraction to the total
+formal complex.
+
+The coordinate change is interpreted in the formal $\tau$-adic local analytic
 completion.  Exact inverse series are checked through order eight, and the
 all-orders coefficient convolution is
 \[
@@ -270,13 +309,20 @@ and exact coordinate replay gives
  \cA^{(1)}+s_{\rm ext}S_{\rm ct}^{(1)}=0\pmod{\dd_h}.
 \]
 This is the one-loop local Euclidean QME restoration theorem in the declared
-formal tau-adic theory.
+formal $\tau$-adic theory.  It changes the theory: setting $\tau=0$ does not
+make the strict quotient anomaly-free, and the dressed algebra contains the
+new $R(\widehat g)^2$ counterterm direction.
 
 \section{First Slavnov operator: fixed part and exact ambiguity}
 
 The counterterm fixes the local Hamiltonian contribution
 \[
  Q_1^{\rm WZ}=(C_1^{\rm WZ},\,\cdot).
+\]
+Here
+\[
+ C_1^{\rm WZ}=-(4\pi)^{-2}
+ \left(\frac{199}{30}B_C-\frac{87}{20}B_E\right).
 \]
 Since $C_1^{\rm WZ}$ has antifield number zero, its field and ghost rows
 vanish and its cotangent rows are the Euler derivatives with respect to
@@ -402,7 +448,11 @@ $\Delta_C'=\Delta_C+V_1+O(\mathcal R^2)$,
 \]
 so the sandwiched change has exact order $1+1+1=3$.  Operator-choice
 dependence for this $C^2$ carrier therefore starts with the missing cubic form
-factors.  The independent nonlocal $R^2$ form factor, kernel and boundary
+factors within the class sharing principal symbol, connection, domain, and
+source complement and differing at first curvature order only by the
+self-adjoint endomorphism $V_1$.  Connection variations, which can introduce
+first-order differential terms, are not covered.  The independent nonlocal
+$R^2$ form factor, kernel and boundary
 data, local-Weyl completion, finite $C^2$ constant and absolute dressed
 $R(\widehat g)^2$ normalization remain fail-closed.
 
@@ -458,7 +508,7 @@ the nonlocal $R^2$ form factor or an absolute dressed normalization;
 \end{itemize}
 
 The generated tables add a publication-layer drift guard.  Their verifier
-loads the ten authoritative table inputs, checks the exact extended boundary
+loads all authoritative table inputs, checks the exact extended boundary
 matrix and coefficient image, rebuilds the TeX byte-for-byte, and rejects a
 stale include.
 
@@ -515,12 +565,9 @@ logarithmic contributions;
 $q_1=\pi_{\rm ext}Q_1\iota_{\rm ext}$;
 \item nilpotency, adjacent-cohomology, Cartan, mixing, and pairing checks.
 \end{enumerate}
-Until these land, residual transfer is forbidden.  The same-background free
-quantum bridge is certified only on the reduced vacuum-cylinder E/A/L Krein
-carrier: normalized modes, the causal Green carrier and pairing give a
-compatible complex structure and microlocal Hadamard two-point distribution,
-with positive E and negative-Krein A/L sectors.  The full-BV and Berger
-Hadamard/particle rows remain \texttt{NO\_CERTIFIED\_MAP}.  The classical-
-obstruction-to-interacting-BRST bridge also remains independently fail-closed.
+Until these land, residual transfer is forbidden.  Same-background free-state
+and Hadamard constructions belong to a separate companion programme and are
+not claims of this paper.  The classical-obstruction-to-interacting-BRST
+bridge also remains independently fail-closed.
 
 \end{document}
