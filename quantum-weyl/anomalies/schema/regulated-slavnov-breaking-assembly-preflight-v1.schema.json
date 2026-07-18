@@ -7,14 +7,14 @@
   "properties": {
     "schema": {"const": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1"},
     "result_id": {"const": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"},
-    "result_state": {"const": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN"},
+    "result_state": {"const": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_LEDGER_COMPOSER_BOUND_REGULATED_BV_INSERTION_OPEN"},
     "result_stage": {"const": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
     "regularity_scope": {"const": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY"},
     "dependency_hashes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "Ward_insertion_contract"],
+      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "full_BV_ledger_composer", "Ward_insertion_contract"],
       "properties": {
         "full_local_BV_G2": {"$ref": "#/$defs/hash"},
         "gauge_fixed_H14": {"$ref": "#/$defs/hash"},
@@ -22,6 +22,7 @@
         "standard_background_coefficients": {"$ref": "#/$defs/hash"},
         "standard_auxiliary_fourth_order_match": {"$ref": "#/$defs/hash"},
         "full_BV_multiplicity_preflight": {"$ref": "#/$defs/hash"},
+        "full_BV_ledger_composer": {"$ref": "#/$defs/hash"},
         "Ward_insertion_contract": {"$ref": "#/$defs/hash"}
       }
     },
@@ -38,7 +39,8 @@
         "parity_ward_zero": "REPOSITORY_PARITY_WARD_IDENTITY",
         "parity_coefficient": "REPOSITORY_PARITY_ODD_COEFFICIENT",
         "qme_disposition": "REGULATED_SLAVNOV_QME_DISPOSITION",
-        "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM"
+        "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM",
+        "snapshot_compatibility": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
       }
     },
     "receiver_mechanics": {
@@ -134,17 +136,17 @@
       "additionalProperties": false,
       "required": ["discharged", "missing"],
       "properties": {
-        "discharged": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "string", "minLength": 10}},
+        "discharged": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "string", "minLength": 10}},
         "missing": {
           "type": "array",
-          "minItems": 5,
-          "maxItems": 5,
+          "minItems": 4,
+          "maxItems": 4,
           "items": {
             "type": "object",
             "additionalProperties": false,
             "required": ["carrier_id", "required_output"],
             "properties": {
-              "carrier_id": {"enum": ["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER", "REPOSITORY_FULL_BV_OPERATOR_AUXILIARY_NORMALIZATION_AND_CONTOUR_MATCH", "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION"]},
+              "carrier_id": {"enum": ["REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1", "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION"]},
               "required_output": {"type": "string", "minLength": 20}
             }
           }
@@ -153,14 +155,15 @@
     },
     "minimal_missing_carrier_theorem": {
       "const": {
-        "status": "EXACT_ANALYTIC_MATCHING_GAP",
+        "status": "EXACT_REGULATED_BV_INSERTION_GAP",
         "algebraic_basis_gap": false,
         "coefficient_arithmetic_gap": false,
         "standard_parity_gap": false,
         "standard_physical_TT_auxiliary_identity_gap": false,
         "standard_factor_rank_gap": false,
-        "scalar_ghost_gap_rank": 1,
-        "remaining_decision_gap": "the analytic operator/Berezinian map resolving the rank-one scalar ghost gap and mapping the complete repository determinant to the regulated BV Slavnov functional",
+        "scalar_ghost_gap_rank": 0,
+        "full_BV_ledger_composer_ready": true,
+        "remaining_decision_gap": "after the physical TT dictionary composes the local determinant ledger, a regulated BV Slavnov insertion with Wess-Zumino and parity proofs is still required; determinant coefficients alone do not decide the QME",
         "no_further_local_graph_expansion_required": true
       }
     },
@@ -172,6 +175,7 @@
         "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": true,
         "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": true,
         "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND": true,
+        "FULL_BV_LEDGER_COMPOSER_READY": true,
         "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,
         "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": true,
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,

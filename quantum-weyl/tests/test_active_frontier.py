@@ -62,6 +62,9 @@ class ActiveFrontierTests(unittest.TestCase):
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
         )
         self.assertTrue(
+            self.payload["claim_flags"]["SLAVNOV_BV_INSERTION_GAP_ISOLATED"]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND"]
         )
         self.assertTrue(

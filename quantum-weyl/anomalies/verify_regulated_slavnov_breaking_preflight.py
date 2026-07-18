@@ -30,8 +30,13 @@ def verify() -> dict:
     entries = checked["cohomology_reduction"]["matrix_entries"]
     if [(row["row"], row["column"]) for row in entries] != [(0, 0), (1, 1), (2, 2)]:
         raise ValueError("relative-cohomology reduction is not the certified quotient map")
-    if checked["minimal_missing_carrier_theorem"].get("scalar_ghost_gap_rank") != 1:
-        raise ValueError("rank-one scalar ghost gap was not bound")
+    missing = checked["minimal_missing_carrier_theorem"]
+    if (
+        missing.get("scalar_ghost_gap_rank") != 0
+        or missing.get("full_BV_ledger_composer_ready") is not True
+        or missing.get("status") != "EXACT_REGULATED_BV_INSERTION_GAP"
+    ):
+        raise ValueError("regulated BV insertion gap was not isolated")
     for flag in (
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
         "REGULATED_SLAVNOV_BREAKING_COMPUTED",

@@ -3,7 +3,7 @@
   "$id": "https://area9.dk/schemas/quantum-weyl-regulated-slavnov-breaking-export-v1.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "dependency_tags", "classical_commit", "analytic_route", "normalization", "operator_and_measure", "coefficient_basis", "coefficients", "consistency", "classification", "qme_disposition", "claim_boundary"],
+  "required": ["schema", "result_id", "dependency_tags", "classical_commit", "analytic_route", "classical_snapshot_compatibility", "normalization", "operator_and_measure", "coefficient_basis", "coefficients", "consistency", "classification", "qme_disposition", "claim_boundary"],
   "properties": {
     "schema": {"const": "quantum-weyl-regulated-slavnov-breaking-export-v1"},
     "result_id": {"const": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"},
@@ -16,6 +16,24 @@
     },
     "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
     "analytic_route": {"enum": ["EUCLIDEAN_ELLIPTIC", "LORENTZIAN_CAUSAL"]},
+    "classical_snapshot_compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local_BV_commit", "analytic_operator_commit", "status", "proof_artifact"],
+      "properties": {
+        "local_BV_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "analytic_operator_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "status": {"enum": ["IDENTICAL_COMMIT", "CONTENT_HASH_COMPATIBLE"]},
+        "proof_artifact": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/artifact"}]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "IDENTICAL_COMMIT"}}, "required": ["status"]},
+          "then": {"properties": {"proof_artifact": {"type": "null"}}},
+          "else": {"properties": {"proof_artifact": {"$ref": "#/$defs/artifact"}}}
+        }
+      ]
+    },
     "normalization": {
       "type": "object",
       "additionalProperties": false,
@@ -33,19 +51,37 @@
     "operator_and_measure": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["complete_complex_status", "complete_complex_artifact", "multiplicity_status", "multiplicity_artifact", "auxiliary_fourth_order_match_status", "auxiliary_fourth_order_match_artifact", "zero_mode_ledger_status", "zero_mode_ledger_artifact", "measure_contour_status", "measure_contour_artifact"],
+      "required": ["formulation", "complete_complex_status", "complete_complex_artifact", "multiplicity_status", "multiplicity_artifact", "auxiliary_fourth_order_match_status", "auxiliary_fourth_order_match_artifact", "zero_mode_ledger_status", "zero_mode_ledger_artifact", "measure_contour_status", "measure_contour_artifact"],
       "properties": {
+        "formulation": {"enum": ["FOURTH_ORDER_METRIC", "SECOND_ORDER_AUXILIARY"]},
         "complete_complex_status": {"const": "VERIFIED"},
         "complete_complex_artifact": {"$ref": "#/$defs/artifact"},
         "multiplicity_status": {"const": "VERIFIED"},
         "multiplicity_artifact": {"$ref": "#/$defs/artifact"},
-        "auxiliary_fourth_order_match_status": {"const": "VERIFIED"},
-        "auxiliary_fourth_order_match_artifact": {"$ref": "#/$defs/artifact"},
+        "auxiliary_fourth_order_match_status": {"enum": ["VERIFIED", "NOT_APPLICABLE_FOURTH_ORDER_METRIC"]},
+        "auxiliary_fourth_order_match_artifact": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/artifact"}]},
         "zero_mode_ledger_status": {"const": "VERIFIED"},
         "zero_mode_ledger_artifact": {"$ref": "#/$defs/artifact"},
         "measure_contour_status": {"const": "VERIFIED"},
         "measure_contour_artifact": {"$ref": "#/$defs/artifact"}
-      }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"formulation": {"const": "FOURTH_ORDER_METRIC"}}, "required": ["formulation"]},
+          "then": {
+            "properties": {
+              "auxiliary_fourth_order_match_status": {"const": "NOT_APPLICABLE_FOURTH_ORDER_METRIC"},
+              "auxiliary_fourth_order_match_artifact": {"type": "null"}
+            }
+          },
+          "else": {
+            "properties": {
+              "auxiliary_fourth_order_match_status": {"const": "VERIFIED"},
+              "auxiliary_fourth_order_match_artifact": {"$ref": "#/$defs/artifact"}
+            }
+          }
+        }
+      ]
     },
     "coefficient_basis": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C", "ANOM_OMEGA_BOX_R"]},
     "coefficients": {

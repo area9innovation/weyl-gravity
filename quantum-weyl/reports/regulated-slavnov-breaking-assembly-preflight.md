@@ -46,14 +46,17 @@ background-dependent logarithmic coefficient under a normalized
 translation-invariant measure. Repository row identification, normalization,
 contour, and finite phase remain open.
 
-The multiplicity preflight now derives the standard bundle ranks
+The historical multiplicity preflight derives the standard bundle ranks
 `(5,1,5,3)` and their signed effective rank six. The imported covariant BV
 dictionary decomposes as `10=5+4+1` for the metric and `4=3+1` for the
 diffeomorphism ghost. Together with the Weyl ghost, the scalar ghost input
-has rank two whereas the standard scalar ghost factor has rank one. Thus the
-unknown multiplicity content is no longer an unspecified counting problem:
-it is exactly a rank-one scalar cancellation plus the analytic
-row/operator/Berezinian map proving that cancellation.
+has rank two whereas the standard scalar ghost factor has rank one. That gap
+is now closed: the exact coupled Diff--Weyl FP matrix reduces to the single
+`Delta_0(-4)` factor, the York/Hodge measure cancels the unwanted scalar
+Jacobian, and every nonminimal quartet has unit superdeterminant. The round-S4
+priming dimensions `(0,5,0,10)` and all non-TT local determinant exponents are
+bound by a mutation-tested full-BV ledger composer. Its sole physical input is
+the still-missing normalized TT dictionary.
 
 This proves a useful conditional theorem: if a repository regulator, measure,
 and regulated Slavnov functional match those two standard nontrivial
@@ -63,18 +66,21 @@ established, so the theorem is deliberately inactive.
 
 ## Exact remaining gap
 
-No further local tensor-graph expansion is needed for this decision. The
-remaining inputs are analytic:
+No further local tensor-graph or multiplicity expansion is needed for this
+decision. The remaining inputs are analytic:
 
-- a repository Euclidean elliptic complex with a gauge-fixed Lagrangian
-  integration slice and action normalization;
-- a full-BV multiplicity ledger resolving the rank-two longitudinal
-  Diff/Weyl scalar ghost sector to the rank-one standard scalar factor and
-  proving all nonminimal Berezinian cancellations;
-- the full repository BV-row/operator match and the auxiliary normalization,
-  contour, and finite phase;
-- zero-mode, contour, and determinant-measure policies;
-- the regulated BV Slavnov action with Wess--Zumino consistency proof.
+- the physical round-S4 TT Hessian dictionary, after which the ready composer
+  emits the local full-BV multiplicity ledger;
+- a complete Euclidean elliptic-complex receipt with action normalization and
+  an explicit `FOURTH_ORDER_METRIC` or `SECOND_ORDER_AUXILIARY` formulation;
+- content-addressed regulator, zero-mode, determinant-measure, and any
+  formulation-specific contour/global-phase policies;
+- the regulated BV antibracket/Slavnov insertion with Wess--Zumino consistency,
+  repository parity disposition, and cohomology coordinates.
+
+The last item is essential. Matching the determinant factors and recovering
+the familiar heat-kernel coefficients does not by itself compute the BV
+master-equation breaking.
 
 The preflight does not call the standard heat-kernel vector a repository BV
 coefficient, does not activate the conditional obstruction, and makes no QME,
@@ -86,6 +92,17 @@ content-addressed complex, multiplicity, auxiliary/fourth-order, zero-mode,
 measure/contour, Wess--Zumino, and parity proofs, with every analytic role
 explicitly marked `VERIFIED` and the classical commit equal to the frozen G2
 snapshot. The null commit is accepted only by the synthetic fixture path.
+The analytic operator snapshot may be newer than the frozen local-BV
+cohomology snapshot. Identical commits need no bridge; distinct commits must
+carry a content-addressed
+`REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY` proof showing that the imported
+field/differential/pairing data used by the quotient have not drifted. Thus a
+new TT producer commit is not rejected merely for being newer, but neither is
+commit compatibility assumed.
+The receiver now distinguishes formulations. A `FOURTH_ORDER_METRIC` export
+must mark the auxiliary-equivalence role `NOT_APPLICABLE` with a null artifact;
+a `SECOND_ORDER_AUXILIARY` export must supply and verify it. This prevents an
+auxiliary-only proof gate from being imposed on a genuine fourth-order route.
 On the physical path each JSON proof must also carry the role-specific
 `result_id` required by the receiver; an unrelated hashed artifact cannot be
 reused as an ellipticity, multiplicity, auxiliary, zero-mode, measure,

@@ -11,6 +11,13 @@ quotient to the standard background vector `(199/30,-87/20,0)`. The odd zero
 is a verified Ward identity for the declared standard parity-even determinant
 regulator, not an assumption about the unmatched repository regulator.
 Repository coefficient matching, cancellation, and QME status remain open.
+The scalar ghost, York/Hodge, nonminimal, and standard zero-mode multiplicity
+rows are no longer open; they are bound by the full-BV ledger composer. After
+the physical TT dictionary lands, the remaining scientific gate is a
+regulated BV Slavnov insertion with Wess--Zumino consistency, not another
+determinant-counting pass. The analytic export accepts both fourth-order
+metric and second-order auxiliary formulations and requires an auxiliary
+equivalence proof only for the latter.
 
 All candidates reference their generated four-step universal Diff tower in
 `../local_bv/descent/DESCENT_DATABASE_DIMENSION_FOUR.json`.  A separate

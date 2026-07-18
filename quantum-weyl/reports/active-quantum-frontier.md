@@ -85,6 +85,15 @@ not promote the lifecycle because the repository
 operator/measure match, global BRST Hadamard covariance, regulated Slavnov
 breaking, renormalized products, and QME remain open.
 
+The Slavnov assembly gate now records the sharper post-composer boundary.
+Once the physical TT dictionary lands, determinant matching may determine the
+repository local heat-kernel vector, but it still does not determine the BV
+master-equation breaking. A regulated antibracket insertion, Wess--Zumino
+consistency proof, and repository parity disposition remain mandatory. The
+analytic receiver accepts either a genuine fourth-order metric formulation or
+a second-order auxiliary formulation; only the latter requires an auxiliary
+equivalence artifact.
+
 The completed covariant dependency DAG does, however, close a distinct free
 algebraic milestone. The support-local 16-block curvature graph, the causal
 compact-to-global quasi-isomorphism and the transported Green/current pairing

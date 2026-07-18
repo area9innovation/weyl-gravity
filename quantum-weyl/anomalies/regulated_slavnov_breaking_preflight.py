@@ -36,6 +36,7 @@ DEPENDENCIES = {
     "standard_background_coefficients": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "standard_auxiliary_fourth_order_match": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json",
     "full_BV_multiplicity_preflight": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT.json",
+    "full_BV_ledger_composer": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_LEDGER_COMPOSER_READINESS.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
 }
 
@@ -67,6 +68,7 @@ PROOF_RESULT_IDS = {
     "parity_coefficient": "REPOSITORY_PARITY_ODD_COEFFICIENT",
     "qme_disposition": "REGULATED_SLAVNOV_QME_DISPOSITION",
     "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM",
+    "snapshot_compatibility": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
 }
 
 
@@ -143,6 +145,7 @@ def validate_regulated_breaking_export(
         "dependency_tags",
         "classical_commit",
         "analytic_route",
+        "classical_snapshot_compatibility",
         "normalization",
         "operator_and_measure",
         "coefficient_basis",
@@ -168,11 +171,49 @@ def validate_regulated_breaking_export(
             / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json"
         ).read_text()
     )
+    compatibility = payload["classical_snapshot_compatibility"]
+    if not isinstance(compatibility, dict) or set(compatibility) != {
+        "local_BV_commit",
+        "analytic_operator_commit",
+        "status",
+        "proof_artifact",
+    }:
+        raise ValueError("classical snapshot compatibility fields drifted")
+    local_commit = compatibility["local_BV_commit"]
+    analytic_commit = compatibility["analytic_operator_commit"]
+    if analytic_commit != payload["classical_commit"]:
+        raise ValueError("analytic operator commit does not match export commit")
     if allow_synthetic_fixture:
-        if payload["classical_commit"] != "0" * 40:
+        if (
+            payload["classical_commit"] != "0" * 40
+            or local_commit != "0" * 40
+            or compatibility["status"] != "IDENTICAL_COMMIT"
+            or compatibility["proof_artifact"] is not None
+        ):
             raise ValueError("synthetic receiver fixture must use the null commit")
-    elif payload["classical_commit"] != frozen_g2.get("classical_commit"):
-        raise ValueError("regulated-breaking classical commit does not match frozen G2")
+    else:
+        if local_commit != frozen_g2.get("classical_commit"):
+            raise ValueError("local BV commit does not match frozen G2")
+        if analytic_commit == local_commit:
+            if (
+                compatibility["status"] != "IDENTICAL_COMMIT"
+                or compatibility["proof_artifact"] is not None
+            ):
+                raise ValueError("identical classical commits have a spurious bridge")
+        else:
+            if compatibility["status"] != "CONTENT_HASH_COMPATIBLE":
+                raise ValueError("distinct classical commits lack compatibility status")
+            compatibility_artifact = _artifact(
+                compatibility["proof_artifact"],
+                repository_root=repository_root,
+                label="classical_snapshot_compatibility.proof_artifact",
+            )
+            _require_json_result_id(
+                compatibility_artifact,
+                repository_root=repository_root,
+                label="classical_snapshot_compatibility.proof_artifact",
+                expected_result_id=PROOF_RESULT_IDS["snapshot_compatibility"],
+            )
     tags = payload["dependency_tags"]
     expected_analytic_tag = (
         "EUCLIDEAN-SPECTRAL"
@@ -198,24 +239,48 @@ def validate_regulated_breaking_export(
     } or any(not isinstance(value, str) or not value for value in normalization.values()):
         raise ValueError("regulated-breaking normalization is incomplete")
     operator = payload["operator_and_measure"]
-    artifact_fields = {
+    always_artifact_fields = {
         "complete_complex_artifact",
         "multiplicity_artifact",
-        "auxiliary_fourth_order_match_artifact",
         "zero_mode_ledger_artifact",
         "measure_contour_artifact",
     }
-    status_fields = {
+    always_status_fields = {
         "complete_complex_status",
         "multiplicity_status",
-        "auxiliary_fourth_order_match_status",
         "zero_mode_ledger_status",
         "measure_contour_status",
     }
-    if not isinstance(operator, dict) or set(operator) != artifact_fields | status_fields:
+    required_operator_fields = (
+        always_artifact_fields
+        | always_status_fields
+        | {
+            "formulation",
+            "auxiliary_fourth_order_match_artifact",
+            "auxiliary_fourth_order_match_status",
+        }
+    )
+    if not isinstance(operator, dict) or set(operator) != required_operator_fields:
         raise ValueError("regulated-breaking operator/measure fields drifted")
-    if any(operator[key] != "VERIFIED" for key in status_fields):
+    if operator["formulation"] not in {
+        "FOURTH_ORDER_METRIC",
+        "SECOND_ORDER_AUXILIARY",
+    }:
+        raise ValueError("regulated-breaking formulation drifted")
+    if any(operator[key] != "VERIFIED" for key in always_status_fields):
         raise ValueError("regulated-breaking operator/measure proof status is incomplete")
+    if operator["formulation"] == "FOURTH_ORDER_METRIC":
+        if (
+            operator["auxiliary_fourth_order_match_status"]
+            != "NOT_APPLICABLE_FOURTH_ORDER_METRIC"
+            or operator["auxiliary_fourth_order_match_artifact"] is not None
+        ):
+            raise ValueError("fourth-order route imported an auxiliary-only proof gate")
+    elif (
+        operator["auxiliary_fourth_order_match_status"] != "VERIFIED"
+        or operator["auxiliary_fourth_order_match_artifact"] is None
+    ):
+        raise ValueError("auxiliary route is missing its formulation-equivalence proof")
     role_result_ids = {
         "complete_complex_artifact": (
             PROOF_RESULT_IDS["complete_complex_EUCLIDEAN_ELLIPTIC"]
@@ -229,7 +294,10 @@ def validate_regulated_breaking_export(
         "zero_mode_ledger_artifact": PROOF_RESULT_IDS["zero_mode_ledger"],
         "measure_contour_artifact": PROOF_RESULT_IDS["measure_contour"],
     }
-    for key in sorted(artifact_fields):
+    active_artifact_fields = set(always_artifact_fields)
+    if operator["formulation"] == "SECOND_ORDER_AUXILIARY":
+        active_artifact_fields.add("auxiliary_fourth_order_match_artifact")
+    for key in sorted(active_artifact_fields):
         artifact = _artifact(operator[key], repository_root=repository_root, label=key)
         if not allow_synthetic_fixture:
             _require_json_result_id(
@@ -350,7 +418,10 @@ def validate_regulated_breaking_export(
 
 
 def receiver_fixture_payload(
-    coefficients: tuple[Fraction, Fraction, Fraction, Fraction], *, nontrivial: bool
+    coefficients: tuple[Fraction, Fraction, Fraction, Fraction],
+    *,
+    nontrivial: bool,
+    formulation: str = "SECOND_ORDER_AUXILIARY",
 ) -> dict[str, Any]:
     """Build a content-addressed exact mechanics fixture for receiver tests."""
 
@@ -366,6 +437,12 @@ def receiver_fixture_payload(
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
         "classical_commit": "0" * 40,
         "analytic_route": "EUCLIDEAN_ELLIPTIC",
+        "classical_snapshot_compatibility": {
+            "local_BV_commit": "0" * 40,
+            "analytic_operator_commit": "0" * 40,
+            "status": "IDENTICAL_COMMIT",
+            "proof_artifact": None,
+        },
         "normalization": {
             "action": "S_W=alpha_C integral sqrt(g) C^2",
             "alpha_C": "1",
@@ -376,12 +453,12 @@ def receiver_fixture_payload(
             "boundary_conditions": "closed",
         },
         "operator_and_measure": {
+            "formulation": formulation,
             **{
                 key: artifact
                 for key in (
                     "complete_complex_artifact",
                     "multiplicity_artifact",
-                    "auxiliary_fourth_order_match_artifact",
                     "zero_mode_ledger_artifact",
                     "measure_contour_artifact",
                 )
@@ -391,11 +468,18 @@ def receiver_fixture_payload(
                 for key in (
                     "complete_complex_status",
                     "multiplicity_status",
-                    "auxiliary_fourth_order_match_status",
                     "zero_mode_ledger_status",
                     "measure_contour_status",
                 )
             },
+            "auxiliary_fourth_order_match_status": (
+                "VERIFIED"
+                if formulation == "SECOND_ORDER_AUXILIARY"
+                else "NOT_APPLICABLE_FOURTH_ORDER_METRIC"
+            ),
+            "auxiliary_fourth_order_match_artifact": (
+                artifact if formulation == "SECOND_ORDER_AUXILIARY" else None
+            ),
         },
         "coefficient_basis": list(RAW_BASIS),
         "coefficients": {
@@ -454,6 +538,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     coefficients = values["standard_background_coefficients"]
     auxiliary = values["standard_auxiliary_fourth_order_match"]
     multiplicity = values["full_BV_multiplicity_preflight"]
+    composer = values["full_BV_ledger_composer"]
     ward = values["Ward_insertion_contract"]
     if (
         g2.get("result_state")
@@ -523,6 +608,24 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
     ):
         raise ValueError("full-BV multiplicity preflight dependency drifted")
+    composer_flags = composer.get("claim_flags", {})
+    composer_contract = composer.get("accepted_contract", {})
+    if (
+        composer.get("result_state")
+        != "ALL_STANDARD_ROWS_BOUND_COMPOSER_READY_PHYSICAL_TT_INPUT_NOT_SUPPLIED"
+        or composer_flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
+        or composer_flags.get("ALL_NON_TT_STANDARD_ROWS_BOUND") is not True
+        or composer_flags.get(
+            "COMPOSER_EXACT_EXPONENT_AND_ZERO_MODE_POLICY_ENFORCED"
+        )
+        is not True
+        or composer_flags.get("PHYSICAL_TT_DICTIONARY_INPUT_SUPPLIED") is not False
+        or composer_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not False
+        or composer_contract.get("required_input_result_id")
+        != "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"
+    ):
+        raise ValueError("full-BV ledger composer dependency drifted")
     if (
         ward.get("result_state") != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
         or ward.get("physical_input_status") != "NOT_RECEIVED"
@@ -579,7 +682,7 @@ def build() -> dict[str, Any]:
     certificate = {
         "schema": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1",
         "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
-        "result_state": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
+        "result_state": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_LEDGER_COMPOSER_BOUND_REGULATED_BV_INSERTION_OPEN",
         "result_stage": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
         "regularity_scope": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY",
@@ -634,41 +737,41 @@ def build() -> dict[str, Any]:
                 "standard parity-even determinant Ward identity fixing the odd coordinate to zero",
                 "standard physical TT auxiliary/fourth-order Schur and local Jacobian identity",
                 "standard determinant bundle ranks and covariant BV component ranks",
-                "exact localization of the scalar ghost mismatch to one rank",
+                "exact rank-two-to-rank-one scalar Diff-Weyl ghost reduction",
+                "York/Hodge measure and nonminimal quartet Berezinian cancellation",
+                "round-S4 standard zero-mode and priming ledger",
+                "mutation-tested full-BV local multiplicity composer for all non-TT rows",
                 "portable renormalized Ward-insertion input contract",
             ],
             "missing": [
                 {
+                    "carrier_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+                    "required_output": "supply the physical normalized TT operator so the ready composer can emit the repository local multiplicity ledger",
+                },
+                {
                     "carrier_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
-                    "required_output": "ellipticity, gauge-fixed Lagrangian integration slice and action normalization",
+                    "required_output": "bind the composed factors to a complete gauge-fixed elliptic complex, action normalization and declared fourth-order or auxiliary formulation",
                 },
                 {
-                    "carrier_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
-                    "required_output": "resolve the rank-two xi-longitudinal/Weyl scalar sector to the rank-one standard ghost factor and prove every nonminimal Berezinian cancellation",
-                },
-                {
-                    "carrier_id": "REPOSITORY_FULL_BV_OPERATOR_AUXILIARY_NORMALIZATION_AND_CONTOUR_MATCH",
-                    "required_output": "identify all repository Hessian, ghost and nonminimal rows with the standard factorization and fix auxiliary normalization, measure and contour",
-                },
-                {
-                    "carrier_id": "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER",
-                    "required_output": "conformal-Killing removal, remaining zero modes, contour and determinant measure",
+                    "carrier_id": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER",
+                    "required_output": "content-address the regulator, priming, determinant measure and any formulation-specific contour or global phase policy",
                 },
                 {
                     "carrier_id": "REGULATED_BV_SLAVNOV_ACTION",
-                    "required_output": "regularized antibracket/Slavnov breaking and Wess-Zumino consistency proof",
+                    "required_output": "compute the regularized BV antibracket insertion, Wess-Zumino consistency, parity disposition and cohomology coordinates",
                 },
             ],
         },
         "minimal_missing_carrier_theorem": {
-            "status": "EXACT_ANALYTIC_MATCHING_GAP",
+            "status": "EXACT_REGULATED_BV_INSERTION_GAP",
             "algebraic_basis_gap": False,
             "coefficient_arithmetic_gap": False,
             "standard_parity_gap": False,
             "standard_physical_TT_auxiliary_identity_gap": False,
             "standard_factor_rank_gap": False,
-            "scalar_ghost_gap_rank": 1,
-            "remaining_decision_gap": "the analytic operator/Berezinian map resolving the rank-one scalar ghost gap and mapping the complete repository determinant to the regulated BV Slavnov functional",
+            "scalar_ghost_gap_rank": 0,
+            "full_BV_ledger_composer_ready": True,
+            "remaining_decision_gap": "after the physical TT dictionary composes the local determinant ledger, a regulated BV Slavnov insertion with Wess-Zumino and parity proofs is still required; determinant coefficients alone do not decide the QME",
             "no_further_local_graph_expansion_required": True,
         },
         "claim_flags": {
@@ -678,6 +781,7 @@ def build() -> dict[str, Any]:
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND": True,
+            "FULL_BV_LEDGER_COMPOSER_READY": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
             "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -690,7 +794,7 @@ def build() -> dict[str, Any]:
         "proof_sha256": result["proof_sha256"],
         "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. It also binds the standard determinant bundle ranks 5,1,5,3 to the covariant BV component ranks and localizes the still-unproved scalar ghost cancellation to exactly one rank. The multiplicity handoff is semantically mutation-tested for total row/factor coverage, target ranks/signs, scalar-map consistency, and nested proof hashes. It proves the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. The antecedent is not established: no repository elliptic complex, full multiplicity/operator/Berezinian ledger, zero-mode/contour ledger, or regulated BV Slavnov action is supplied. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
+            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all non-TT local multiplicity rows are now exact and bound by a mutation-tested composer. One physical round-S4 TT dictionary is the remaining input to the local determinant ledger. That still does not compute a BV Slavnov breaking: a complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The export receiver now permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. It proves only the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
         ),
         "provenance": {
             "source_sha256": {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -709,6 +813,7 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND") is not True
+        or flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
         or flags.get("CONDITIONAL_NONZERO_QME_CLASS_THEOREM") is not True
         or flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or any(

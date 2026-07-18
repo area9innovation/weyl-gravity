@@ -8,13 +8,14 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, ValidationError
 
 from anomalies.regulated_slavnov_breaking_preflight import (
     OUTPUT,
     PROOF_RESULT_IDS,
     ROOT,
     SCHEMA,
+    EXPORT_SCHEMA,
     analysis,
     build,
     receiver_fixture_payload,
@@ -72,8 +73,13 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         self.assertTrue(
             value["claim_flags"]["FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND"]
         )
+        self.assertTrue(value["claim_flags"]["FULL_BV_LEDGER_COMPOSER_READY"])
         self.assertEqual(
-            value["minimal_missing_carrier_theorem"]["scalar_ghost_gap_rank"], 1
+            value["minimal_missing_carrier_theorem"]["scalar_ghost_gap_rank"], 0
+        )
+        self.assertEqual(
+            value["minimal_missing_carrier_theorem"]["status"],
+            "EXACT_REGULATED_BV_INSERTION_GAP",
         )
 
     def test_receiver_mechanics_classifies_both_qme_branches(self) -> None:
@@ -111,19 +117,24 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         payload = receiver_fixture_payload(
             (Fraction(0), Fraction(0), Fraction(0), Fraction(0)), nontrivial=False
         )
-        with self.assertRaisesRegex(ValueError, "does not match frozen G2"):
+        with self.assertRaisesRegex(ValueError, "local BV commit does not match frozen G2"):
             validate_regulated_breaking_export(payload, repository_root=ROOT)
 
     def test_actual_receiver_rejects_wrong_artifact_roles(self) -> None:
         payload = receiver_fixture_payload(
             (Fraction(0), Fraction(0), Fraction(0), Fraction(0)), nontrivial=False
         )
-        payload["classical_commit"] = json.loads(
+        commit = json.loads(
             (
                 ROOT
                 / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json"
             ).read_text()
         )["classical_commit"]
+        payload["classical_commit"] = commit
+        payload["classical_snapshot_compatibility"].update(
+            local_BV_commit=commit,
+            analytic_operator_commit=commit,
+        )
         with self.assertRaisesRegex(ValueError, "expected 'REPOSITORY_AUXILIARY"):
             validate_regulated_breaking_export(payload, repository_root=ROOT)
 
@@ -136,6 +147,73 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             validate_regulated_breaking_export(
                 payload, repository_root=ROOT, allow_synthetic_fixture=True
             )
+
+    def test_fourth_order_route_does_not_invent_an_auxiliary_gate(self) -> None:
+        payload = receiver_fixture_payload(
+            (Fraction(0), Fraction(0), Fraction(0), Fraction(0)),
+            nontrivial=False,
+            formulation="FOURTH_ORDER_METRIC",
+        )
+        accepted = validate_regulated_breaking_export(
+            payload, repository_root=ROOT, allow_synthetic_fixture=True
+        )
+        self.assertEqual(accepted["classification"], "TRIVIAL_OR_ZERO")
+        self.assertIsNone(
+            payload["operator_and_measure"]["auxiliary_fourth_order_match_artifact"]
+        )
+        mutant = deepcopy(payload)
+        mutant["operator_and_measure"]["auxiliary_fourth_order_match_status"] = (
+            "VERIFIED"
+        )
+        export_schema = json.loads(EXPORT_SCHEMA.read_text())
+        with self.assertRaises(ValidationError):
+            Draft202012Validator(export_schema).validate(mutant)
+        with self.assertRaisesRegex(ValueError, "auxiliary-only proof gate"):
+            validate_regulated_breaking_export(
+                mutant, repository_root=ROOT, allow_synthetic_fixture=True
+            )
+
+    def test_distinct_classical_commits_require_a_compatibility_artifact(self) -> None:
+        g2 = json.loads(
+            (
+                ROOT
+                / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json"
+            ).read_text()
+        )
+        analytic_commit = "1" * 40
+        payload = receiver_fixture_payload(
+            (Fraction(0), Fraction(0), Fraction(0), Fraction(0)),
+            nontrivial=False,
+        )
+        payload["classical_commit"] = analytic_commit
+        payload["classical_snapshot_compatibility"].update(
+            local_BV_commit=g2["classical_commit"],
+            analytic_operator_commit=analytic_commit,
+            status="CONTENT_HASH_COMPATIBLE",
+        )
+        with tempfile.TemporaryDirectory(
+            dir=ROOT / "quantum-weyl/anomalies/tests"
+        ) as temporary:
+            path = Path(temporary) / "compatibility.json"
+            path.write_text(
+                json.dumps(
+                    {"result_id": PROOF_RESULT_IDS["snapshot_compatibility"]}
+                )
+                + "\n"
+            )
+            payload["classical_snapshot_compatibility"]["proof_artifact"] = {
+                "format": "JSON_PROOF",
+                "path": str(path.relative_to(ROOT)),
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+            with self.assertRaisesRegex(ValueError, "expected 'REPOSITORY_AUXILIARY"):
+                validate_regulated_breaking_export(payload, repository_root=ROOT)
+
+            payload["classical_snapshot_compatibility"]["proof_artifact"][
+                "sha256"
+            ] = "0" * 64
+            with self.assertRaisesRegex(ValueError, "artifact hash mismatch"):
+                validate_regulated_breaking_export(payload, repository_root=ROOT)
 
     def test_actual_receiver_executes_semantic_multiplicity_validation(self) -> None:
         def write_json(directory: Path, name: str, value: dict) -> dict[str, str]:
@@ -162,6 +240,10 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
                 nontrivial=False,
             )
             payload["classical_commit"] = g2["classical_commit"]
+            payload["classical_snapshot_compatibility"].update(
+                local_BV_commit=g2["classical_commit"],
+                analytic_operator_commit=g2["classical_commit"],
+            )
             payload["classification"]["exact_counterterm"] = None
 
             operator_roles = {

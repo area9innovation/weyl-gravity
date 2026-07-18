@@ -87,7 +87,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "standard_Euclidean_integration_slice": "STANDARD_LOCAL_B4_FACTOR_MEASURE_ZERO_MODE_AND_CONTOUR_SLICE_COMPLETE_REPOSITORY_TT_MAP_OPEN",
         "TT_hessian_dictionary_receiver": "SEMANTIC_RECEIVER_READY_PHYSICAL_TT_DICTIONARY_INPUT_NOT_SUPPLIED",
         "full_BV_ledger_composer": "ALL_STANDARD_ROWS_BOUND_COMPOSER_READY_PHYSICAL_TT_INPUT_NOT_SUPPLIED",
-        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
+        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_LEDGER_COMPOSER_BOUND_REGULATED_BV_INSERTION_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
@@ -352,6 +352,7 @@ def _load() -> dict[str, dict[str, Any]]:
         or assembly_flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or assembly_flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND")
         is not True
+        or assembly_flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
         or assembly_flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or assembly_flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not False
         or assembly_flags.get("QME_OBSTRUCTED") is not False
@@ -882,6 +883,7 @@ def build() -> dict[str, Any]:
             "RANK_46_IS_QUANTUM_PREREQUISITE": False,
             "FULL_BV_G2_COMPLETE": True,
             "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY": True,
+            "SLAVNOV_BV_INSERTION_GAP_ISOLATED": True,
             "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": True,
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
@@ -948,7 +950,7 @@ def build() -> dict[str, Any]:
             "round-S4 repository TT dictionary suffices to emit the local multiplicity ledger; "
             "matching an auxiliary row is optional for the auxiliary formulation rather than a "
             "gate on the fourth-order route. The repository TT dictionary, global "
-            "determinant phase, complete full-BV ledger and total row map remain open. A strict "
+            "determinant phase, physical full-BV ledger and regulated BV insertion remain open. A strict "
             "TT-dictionary receiver now enforces kappa=1/2, shifts 2 and 4, zero physical kernel, "
             "and content-addressed producer/verifier proofs; its physical input is absent. The strict "
             "semantic receiver checks complete row/factor coverage, exact target ranks and "
@@ -1048,6 +1050,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE") is not True
         or flags.get("FULL_BV_G2_COMPLETE") is not True
         or flags.get("SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY") is not True
+        or flags.get("SLAVNOV_BV_INSERTION_GAP_ISOLATED") is not True
         or flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
@@ -1102,6 +1105,7 @@ def validate(result: dict[str, Any]) -> None:
             "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE",
             "FULL_BV_G2_COMPLETE",
             "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY",
+            "SLAVNOV_BV_INSERTION_GAP_ISOLATED",
             "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED",
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND",
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND",
