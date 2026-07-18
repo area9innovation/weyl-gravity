@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh1b-dynamical-extension-v1",
+  "title": "BH-1B dynamical extension of the normalized charge and first law",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "scope",
+    "theta_audit",
+    "conformal_sector",
+    "diffeo_sector",
+    "machinery_controls",
+    "generator_extension",
+    "first_law_dynamical",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh1b-dynamical-extension-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh1b-dynamical-extension-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH1B_DYNAMICAL_EXTENSION" },
+    "result_token": { "const": "BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "PREFLIGHT" } }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["certified", "l_ge_1_linear_charges", "not_certified"]
+    },
+    "theta_audit": {
+      "type": "object",
+      "required": ["conformal", "parameter"]
+    },
+    "conformal_sector": {
+      "type": "object",
+      "required": ["charge_form", "entropy", "presymplectic", "conclusion"]
+    },
+    "diffeo_sector": {
+      "type": "object",
+      "required": ["noether_identity", "charge_form", "conclusion"]
+    },
+    "machinery_controls": {
+      "type": "object",
+      "required": [
+        "parameter_mode_dynamical_pipeline",
+        "corrected_current_static_pair",
+        "correction_note"
+      ]
+    },
+    "generator_extension": {
+      "type": "object",
+      "required": ["bare_aperture_fixture", "argument"]
+    },
+    "first_law_dynamical": {
+      "type": "object",
+      "required": ["statement", "second_order"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "theta_defining_identity_certified",
+        "noether_identity_certified",
+        "conformal_charge_annihilation_certified",
+        "conformal_entropy_invariance_certified",
+        "conformal_null_direction_certified",
+        "diffeo_charge_annihilation_certified",
+        "corrected_current_conservation_certified",
+        "unique_linear_generator_extension_certified",
+        "harmonic_orthogonality_machine_checked",
+        "radiative_bilinear_flux_matrix_certified",
+        "second_order_physical_process_certified",
+        "nonlinear_dynamics_certified",
+        "stability_certified"
+      ],
+      "properties": {
+        "theta_defining_identity_certified": { "const": true },
+        "noether_identity_certified": { "const": true },
+        "conformal_charge_annihilation_certified": { "const": true },
+        "conformal_entropy_invariance_certified": { "const": true },
+        "conformal_null_direction_certified": { "const": true },
+        "diffeo_charge_annihilation_certified": { "const": true },
+        "corrected_current_conservation_certified": { "const": true },
+        "unique_linear_generator_extension_certified": { "const": true },
+        "harmonic_orthogonality_machine_checked": { "const": false },
+        "radiative_bilinear_flux_matrix_certified": { "const": false },
+        "second_order_physical_process_certified": { "const": false },
+        "nonlinear_dynamics_certified": { "const": false },
+        "stability_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "stage_seconds": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "machinery_path",
+        "machinery_sha256",
+        "engine_path",
+        "engine_sha256",
+        "bh1a_certificate",
+        "bh1a_certificate_sha256"
+      ],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh1b_dynamical.py" },
+        "machinery_path": { "const": "black_hole_programme/dynamical_charges.py" },
+        "machinery_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh1a_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh1b_dynamical.py"
+    }
+  }
+}

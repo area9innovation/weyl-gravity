@@ -8,7 +8,7 @@
   ],
   "entries": [
     {
-      "claim_boundary": "exact Bach-flat three-parameter family, Laurent-class complete; residual gauge rank 2 with single invariant J = u^2 disc(Q); no causal exterior initial-boundary theorem, no physical matter/clock frame, no completeness beyond the Laurent class; symplectic status is the static and l=0-dynamical charge level only; frame-independence pending the BH-1B certificate",
+      "claim_boundary": "exact Bach-flat three-parameter family, Laurent-class complete; residual gauge rank 2 with single invariant J = u^2 disc(Q); no causal exterior initial-boundary theorem, no physical matter/clock frame, no completeness beyond the Laurent class; symplectic status is the static and l=0-dynamical charge level only; frame-independence of charge and entropy certified at the linear level",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -31,6 +31,11 @@
           "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
           "result_id": "PURE_WEYL_BH1A_NORMALIZED_GENERATOR",
           "sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json",
+          "result_id": "PURE_WEYL_BH1B_DYNAMICAL_EXTENSION",
+          "sha256": "8b7b0625e02dc171632de22d91734defd5e79d3ba9fee9a0772b1d12c1194b30"
         }
       ],
       "id": "bh.background.static-family",
@@ -157,9 +162,15 @@
         "nonlinear": "OPEN",
         "observational": "NOT_APPLICABLE",
         "quantum": "OPEN",
-        "symplectic": "OPEN"
+        "symplectic": "CERTIFIED"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json",
+          "result_id": "PURE_WEYL_BH1B_DYNAMICAL_EXTENSION",
+          "sha256": "8b7b0625e02dc171632de22d91734defd5e79d3ba9fee9a0772b1d12c1194b30"
+        }
+      ],
       "id": "bh.mode.l0.conformal-gauge",
       "mode_data": {
         "dispersion": {
@@ -167,8 +178,8 @@
           "status": "NOT_APPLICABLE"
         },
         "lee_wald": {
-          "statement": "pending the BH-1B certificate",
-          "status": "OPEN"
+          "statement": "zero charge componentwise, zero entropy shift on the symbolic family, exact null direction of the corrected presymplectic current",
+          "status": "CERTIFIED"
         },
         "resonance": {
           "statement": "gauge direction",
@@ -215,9 +226,15 @@
         "nonlinear": "OPEN",
         "observational": "NOT_APPLICABLE",
         "quantum": "OPEN",
-        "symplectic": "OPEN"
+        "symplectic": "CERTIFIED"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json",
+          "result_id": "PURE_WEYL_BH1B_DYNAMICAL_EXTENSION",
+          "sha256": "8b7b0625e02dc171632de22d91734defd5e79d3ba9fee9a0772b1d12c1194b30"
+        }
+      ],
       "id": "bh.mode.l0.diffeo-gauge",
       "mode_data": {
         "dispersion": {
@@ -225,8 +242,8 @@
           "status": "NOT_APPLICABLE"
         },
         "lee_wald": {
-          "statement": "pending the BH-1B certificate",
-          "status": "OPEN"
+          "statement": "exact Noether identity; identically vanishing charge form via the identity route with polynomial-witness cross-validation; zero flux",
+          "status": "CERTIFIED"
         },
         "resonance": {
           "statement": "gauge direction",

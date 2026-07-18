@@ -32,8 +32,8 @@ every certificate in this directory.
 | BH-0 | `PURE_WEYL_STATIC_SPHERICAL_BACKGROUND_CLASSIFIED` | certified (`LOCAL-ALGEBRAIC`) |
 | BH-1 preflight | `BH1_PREFLIGHT_COMPLETE_BARE_FORM_NONINTEGRABLE` | certified: bare static charges exact and r-independent; no parameter-local boundary term can restore differentiability; obstruction degenerate exactly along the residual gauge |
 | BH-1A | `BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR` | certified: normalized generator χ = u∂_t (forced by basicness) closes the charge form exactly; H = −16παβ²D₂; Wald entropy exact; first law dH = TdS at every horizon; ensemble audit closed |
-| BH-1 proper | dynamical phase space (time-dependent perturbations) | open — gate for BH-2 ringdown |
-| BH-2+ | exterior BV complex, stability, observables | not started |
+| BH-1B | `BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED` | certified (linear charge level, ℓ=0 dynamical sector complete): conformal and diffeo directions carry zero charge/flux exactly; entropy conformally invariant on the family; unique linear extension of the normalized generator; no boundary clock needed |
+| BH-2A | odd-parity horizon-regular complex + bilinear flux matrix | next gate — prerequisite for any ringdown/stability language |
 
 Run everything for a certificate:
 

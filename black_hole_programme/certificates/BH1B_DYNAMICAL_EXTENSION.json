@@ -1,0 +1,98 @@
+{
+  "claim_flags": {
+    "conformal_charge_annihilation_certified": true,
+    "conformal_entropy_invariance_certified": true,
+    "conformal_null_direction_certified": true,
+    "corrected_current_conservation_certified": true,
+    "diffeo_charge_annihilation_certified": true,
+    "harmonic_orthogonality_machine_checked": false,
+    "noether_identity_certified": true,
+    "nonlinear_dynamics_certified": false,
+    "radiative_bilinear_flux_matrix_certified": false,
+    "second_order_physical_process_certified": false,
+    "stability_certified": false,
+    "theta_defining_identity_certified": true,
+    "unique_linear_generator_extension_certified": true
+  },
+  "conformal_sector": {
+    "charge_form": "k(2 omega(t,r) g) = 0 identically, all six components, Schwarzschild (symbolic m) and fixture",
+    "conclusion": "no boundary clock or conformal representative is required at the linear charge level; the BH-1A result is not frame-selected",
+    "entropy": "delta_omega S = 0 exactly on the symbolic MK family, arbitrary omega(t,r)",
+    "presymplectic": "omega_symp(2 omega g, param mode) = 0 identically (corrected current); conformal directions are exact null directions"
+  },
+  "declaration": {
+    "background_family": "MK static spherical Bach vacuum; controls on Schwarzschild (symbolic m) and the three-horizon fixture",
+    "conformal_frame": "certified frame-independent at the linear charge level: conformal directions carry zero charge, zero entropy shift, and are null directions of the corrected presymplectic current",
+    "generator": "chi = u d_t from BH-1A; unique linear extension off the static family (delta N = du on parameter directions, 0 on gauge and l >= 1 directions)",
+    "horizon_condition": "identities hold componentwise in the chart, hence at every horizon and radius; no boundary restriction needed for the certified statements",
+    "infinity_condition": "fixed-falloff ensembles of BH-1A; no falloff enlargement was needed for the l = 0 sector",
+    "lifecycle": "PREFLIGHT",
+    "phase_space": "linear perturbations; spherical (l = 0) dynamical sector complete: conformal + diffeo + parameter directions",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "diffeo_sector": {
+    "charge_form": "k(L_xi g) = 0 identically via the identity route L_xi Q_chi + Q_{[chi,xi]} - L_chi Q_xi - i_chi i_xi(L eps) + d(i_chi Q_xi); cross-validated against a direct epsilon-geometry computation for xi = t r^2 d_r",
+    "conclusion": "time-dependent l = 0 diffeos are proper gauge with zero charge and zero flux",
+    "noether_identity": "Theta(L_xi g) - i_xi(L eps) = d Q_xi exactly, componentwise, both backgrounds, xi = a(t,r) d_t + b(t,r) d_r arbitrary"
+  },
+  "first_law_dynamical": {
+    "second_order": "the physical-process (quadratic flux) version is not claimed",
+    "statement": "in every certified sector the linearized law delta H = T delta S + radiative flux holds: gauge and conformal sectors contribute 0 = 0 + 0, the parameter sector is the exact BH-1A first law, and l >= 1 linear charges and entropy variations vanish by parity"
+  },
+  "generator_extension": {
+    "argument": "the bare aperture is nonzero, so delta N != 0 on any gauge direction would give it a nonzero charge, contradicting the certified annihilation; N is a spherical boundary scalar so delta N = 0 on l >= 1 modes; delta N = du on parameter directions is fixed by BH-1A; the linear extension is unique",
+    "bare_aperture_fixture": "4608*pi*alpha*(14*r**3 - 81*r**2 + 108*r - 48)/(6859*r**3)"
+  },
+  "machinery_controls": {
+    "corrected_current_static_pair": "omega^a(d_beta, d_gamma) = (0, 48*alpha/(19*r**2), 0, 0), exactly conserved",
+    "correction_note": "the presymplectic current is the variation of the density sqrt(-g) theta^a; the (1/2) tr(h) theta^a terms are essential for conservation and for the conformal null-direction result",
+    "parameter_mode_dynamical_pipeline": "reproduces the certified static charge u*F_beta exactly at the fixture"
+  },
+  "missing_objects": [
+    "odd-parity (l >= 2) linearized complex and bilinear flux matrix (BH-2A)",
+    "machine check of harmonic orthogonality for l >= 1 linear charges",
+    "second-order/physical-process first law with radiative flux",
+    "nonlinear horizon dynamics and stability",
+    "physical matter/clock frame beyond conformal-invariance of the charge"
+  ],
+  "provenance": {
+    "bh1a_certificate": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
+    "bh1a_certificate_sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh1b_dynamical.py",
+    "machinery_path": "black_hole_programme/dynamical_charges.py",
+    "machinery_sha256": "d4d1a0d8cf7b383675eb8e94c6b25024799fc85768364b3515f058bf95778f27"
+  },
+  "result_id": "PURE_WEYL_BH1B_DYNAMICAL_EXTENSION",
+  "result_token": "BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED",
+  "schema": "pure-weyl-bh1b-dynamical-extension-v1",
+  "schema_path": "black_hole_programme/schema/bh1b-dynamical-extension-v1.schema.json",
+  "schema_sha256": "cd16c15421c4b3dabd394d0f1c07c1d5fad5ec4e81271425c3efbcebe55178d5",
+  "scope": {
+    "certified": "linear charge level; l = 0 dynamical sector (arbitrary omega(t,r), a(t,r), b(t,r)); static parameter sector (BH-1A)",
+    "l_ge_1_linear_charges": "vanish by spherical-harmonic orthogonality of the aperture; analytic parity argument, not machine-checked",
+    "not_certified": "bilinear radiative symplectic flux matrix (BH-2A), second-order/physical-process first law, nonlinear dynamics"
+  },
+  "stage_seconds": {
+    "bare_aperture": 0.3,
+    "conformal_fixture": 44.8,
+    "conformal_schwarzschild": 9.4,
+    "entropy_conformal_invariance": 561.5,
+    "noether_and_diffeo": 2.1,
+    "null_direction_schwarzschild": 67.9,
+    "parameter_control": 79.7,
+    "route_cross_validation": 166.4,
+    "static_pair_current": 291.9,
+    "theta_audit": 17.8
+  },
+  "theta_audit": {
+    "conformal": "div theta[2 omega g] = 0 exactly (conformally invariant density)",
+    "parameter": "delta(sqrt(-g) alpha C^2) = div(sqrt(-g) theta) exactly on shell"
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh1b_dynamical.py"
+}
