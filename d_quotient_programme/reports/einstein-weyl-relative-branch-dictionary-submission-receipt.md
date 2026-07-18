@@ -16,10 +16,13 @@ matrix; the simultaneous stabilizer-plus-resonance zero locus and corrected
 cyclic morphisms remain open.  The full declared necessary common-zero locus
 is now imported: every point is an `SO(3)` rotation of the aligned face with
 `B^2=Q_e^2/2+(2/3)X`, and no off-axis branch survives.  This remains
-compatibility data, not a complete second-order correction.
+compatibility data rather than a complete second-order correction.  The
+bounded/finite-quasiperiodic class is now obstructed on every nonzero orbit
+point by the uncancellable zero-frequency polar `L=2` coefficient
+`-7*B^2*t^2`; the smooth and causal correction classes remain open.
 
-Evidence is content-addressed at commit `5591d6ce` with certificate SHA-256
-`96d93cd1bfd87eb431b69a6d6225a69a4688b333c0353af9f45139497178362e`.
+Evidence is content-addressed at commit `84de17ab` with certificate SHA-256
+`c3734f1f26d8b8148212fe9eb1a0128d427e84021e7bd4082d44deb9b303ee93`.
 No cross-background mode identity is made; exceptional nonzero-`k`/off-shell,
 homogeneous and twist off-shell, global and boundary carriers remain
 fail-closed.

@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "compact Plebanski-Hacyan R_t x S1_L x S2 background on the fixed N=2 magnetic bundle; complete certified nonzero-extra common-zero orbit in the homogeneous/twist times ell=2,k=0 carrier; bounded or finite-quasiperiodic second-order corrections with bounded derivatives",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "every nonzero point of the certified common-zero orbit obeys B^2=Q_e^2/2+(2/3)X with X>0, hence B is nonzero",
+    "the direct zero-frequency polar L=2 metric_00 twist self-source has quadratic-time coefficient -7*B^2",
+    "extra conjugate-self and electric terms are time independent in this channel, while extra sums and twist-extra cross terms have nonzero frequency, so the t^2 coefficient cannot cancel",
+    "the stationary linearized Weyl-Maxwell operator maps the declared bounded finite-quasiperiodic correction class to bounded sources",
+    "therefore every nonzero point of the complete certified orbit is obstructed in the bounded or finite-quasiperiodic correction class",
+    "the smooth exponential-polynomial and causal or retarded correction classes remain fail-closed and are not inferred from the bounded obstruction"
+  ],
+  "evidence": {
+    "commit": "84de17abdd9c42787d612cdeeded4f55aa231ff2",
+    "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+    "sha256": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct the complete smooth exponential-polynomial correction or an independent smooth-class cokernel witness on the aligned SO3 orbit, including twist-extra L=1,3 cross channels and the combined zero-frequency self-source",
+  "not_established": [
+    "a smooth exponential-polynomial second-order correction or obstruction",
+    "a causal or retarded compact-product correction theorem",
+    "opposite-momentum, relative-phase, multiple-|k| or arbitrary finite-harmonic completion",
+    "all-orders integration, residual descent, observable transport, particle interpretation or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_global_extra_bounded_correction_obstruction",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_global_extra_bounded_correction_obstruction",
+  "team_id": "einstein_boundary",
+  "verdict": "NONZERO_GLOBAL_EXTRA_COMMON_ZERO_ORBIT_OBSTRUCTED_FOR_BOUNDED_CORRECTIONS",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_extra_bounded_correction_obstruction --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_extra_bounded_correction_obstruction"
+  ]
+}
