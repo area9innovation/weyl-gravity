@@ -1,0 +1,29 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; arbitrary real axial ell=1 twist-velocity vector with zero twist position, balanced by homogeneous a data",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the Cartesian real ell=1 harmonic Gram matrix is exactly (4*pi/3)I",
+    "SO(3) covariance promotes the direct axisymmetric fixture to every A=0 twist-velocity vector satisfying 3a^2=4|B|^2",
+    "the rotated correction is well defined modulo the SO(2) stabilizer and solves every rotated target row"
+  ],
+  "evidence": {
+    "commit": "bc175b89224577cacd43a737068738e3f9cb61a1",
+    "path": "bridge/certificates/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.json",
+    "sha256": "283110363c7245b77e39910a3a58c9065107b05dcd823c68f417654a7bfdd8ee"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute nonzero collinear twist position A parallel B, then physical and exceptional fourth-order ell=1 inputs",
+  "not_established": ["A!=0 twist data", "physical or extra ell=1 input closure", "all-orders, causal, scattering, particle, or quantum claims"],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_twist_velocity_so3_orbit",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_TWIST_VELOCITY_ORBIT_EXTENDIBLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order --verify bridge/certificates/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order"
+  ]
+}
