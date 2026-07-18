@@ -40,6 +40,7 @@ CERTIFICATES = {
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "exceptional_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
+    "relative_linear_triangle": ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
     "generic_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -127,12 +128,12 @@ def entries() -> list[dict[str, object]]:
             _scope(carrier="same-background Einstein-Maxwell/Weyl-Maxwell inclusion, solution cofibers and branch dictionary", degree=1, parity="axial, polar, exceptional and global sectors kept separate", ell="generic >=2 plus explicitly listed exceptional/global gaps", m="all where certified", k="all compact momenta where certified", omega="q-primary, p-primary and generalized-zero branches without cross-background identification"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
             ("CERTIFIED", "The same-background branch dictionary separates q-primary Einstein, p-primary extra and generalized-zero carriers in every declared certified sector."),
-            ("CERTIFIED", "The complete standard pullback and generic axial/polar direct extra Lee-Wald blocks are exported as three distinct forms; their nonradical generic identity-pullback defect OBSTRUCTS strict cyclic compatibility of the fixed identity chain maps."),
-            ("OPEN", "Quadratic data are partial handoffs and do not activate the linear bridge or complete the relative obstruction map."),
-            ("OPEN", "One natural support-local minimal chain map globalizes every harmonic coefficient block, but the noncyclic three-form triangle, finite endpoints, complete relative resonance map and Bridge 1 activation are not certified."),
+            ("CERTIFIED", "The Einstein, pulled-back Weyl and direct relative action forms are exported separately on the complete declared carrier; their generic inertia defect OBSTRUCTS a standard-pairing cyclic map."),
+            ("OPEN", "Quadratic data are partial handoffs and do not complete the relative interaction obstruction map."),
+            ("CERTIFIED", "The noncyclic three-form all-row triangle, support-local mapping cofiber, connected residual endpoints and U1 winding lattice activate compact-product Bridge 1 at the linear algebraic/cofiber level."),
             _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
-            _evidence("covariant_chain_map", "branch_dictionary", "exceptional_offshell", "exceptional_nonzero_k_cofiber"),
-            "Global map lifecycle is NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN and Bridge 1 activation remains OPEN. One natural support-local minimal chain map now globalizes the complete harmonic coefficient algebra without harmonic selection. The separate Einstein, pulled-back Weyl and relative forms, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+            _evidence("relative_linear_triangle", "covariant_chain_map", "branch_dictionary", "exceptional_offshell", "exceptional_nonzero_k_cofiber"),
+            "Global map lifecycle is NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED and compact-product Bridge 1 is active only at the linear algebraic/cofiber level. One natural support-local minimal chain map globalizes the complete harmonic coefficient algebra without harmonic selection; the three action forms and declared fixed-N=2 residual endpoints are explicit. Every standard-pairing cyclic correction is obstructed. Compact-product causal Green data and q2/q3 relative compatibility remain open. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
         ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
@@ -323,8 +324,11 @@ def build() -> dict[str, object]:
         raise AssertionError("aligned twist--extra coefficient block changed")
     if records["aligned_twist_extra_coefficients"]["classification"]["complete_arbitrary_orbit_correction_coefficient_explicit"]:
         raise AssertionError("aligned mixed block over-promoted the complete orbit")
-    if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
-        raise AssertionError("relative branch dictionary over-promoted bridge 1")
+    if not records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
+        raise AssertionError("relative branch dictionary did not activate compact-product linear bridge 1")
+    triangle = records["relative_linear_triangle"]
+    if triangle["result_id"] != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1" or not all(triangle["acceptance_flags"].values()):
+        raise AssertionError("full relative linear triangle input changed")
     covariant_map = records["covariant_chain_map"]["classification"]
     if not (
         covariant_map["single_covariant_support_local_map_reconstructed"]

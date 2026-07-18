@@ -1,0 +1,69 @@
+{
+  "schema": "einstein-weyl-relative-linear-triangle-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_VERIFICATION_RECEIPT",
+  "date": "2026-07-18",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 1.28,
+      "commands": [
+        "python3 -m py_compile <scoped triangle, dictionary, atlas and receiver Python paths>",
+        "python3 -m json.tool <scoped certificate, component, schema, atlas and receiver JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.23,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_weyl_relative_linear_triangle_v1 --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_weyl_relative_linear_triangle_v1",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_linear_triangle_v1",
+        "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
+        "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_branch_dictionary",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
+        "python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight",
+        "python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "elapsed_seconds": 1.92,
+      "commands": [
+        "python3 -m bridge.einstein_sector.verify_einstein_weyl_relative_linear_triangle_v1",
+        "python3 -m bridge.einstein_sector.einstein_weyl_relative_linear_triangle_v1 --check",
+        "python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The change promotes one scoped compact-product linear bridge and its direct consumers; it is not a repository release, paper freeze or shared-core algebra change."
+    }
+  },
+  "source_manifest": {
+    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json": "d0ee5404fd8055e2b67525335142f7986a92516b047d80ded58ed2a3a731f3fa",
+    "bridge/einstein_sector/einstein_weyl_relative_linear_triangle_v1.py": "be022761cffa12fb00483f6a79bb4380c822912ddea98e89ef6216fc35bec7ab",
+    "bridge/einstein_sector/generated/einstein_weyl_relative_linear_triangle_v1/components.json": "d3f10bd90c85f72bdc71ea72178bdda435fc9d4b892ec90634ee86f9e5d7c84f",
+    "bridge/einstein_sector/reports/einstein-weyl-relative-linear-triangle-v1.md": "14828aaedef01fd86f588703458eeea5eae471595b57e6aa3633272abab02966",
+    "bridge/einstein_sector/schema/einstein-weyl-relative-linear-triangle-components-v1.schema.json": "57904c2875d55ae689c2eac9aaac41f0c6eaa67d4dc6d96b3958d5e9466e1192",
+    "bridge/einstein_sector/tests/test_einstein_weyl_relative_linear_triangle_v1.py": "45a3f20db4de86aff060fb8d5ed95967a15369b003ed167f5e2953595f58626f",
+    "bridge/einstein_sector/verify_einstein_weyl_relative_linear_triangle_v1.py": "6a30ade3b7f26d840af1c90269154fdc9c10010849c66c6cb51467657cad6668",
+    "d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json": "76d44b05a7ac0e63d6532aa3e0a0e595ccc3185fb27b33324501b28cfe482c27",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json": "bd9b22993c2aab4ab7651b6ad7ad418a12dd8dcdabbd02a01413ae7efc01c6b8"
+  },
+  "failed_attempts": [
+    {
+      "failure": "The first lifecycle propagation made the promoted branch dictionary an input of the triangle that promoted it, creating a certificate cycle detected by the Tier-1 producer replay.",
+      "disposition": "Removed the dictionary from triangle provenance and linked the mapping-cofiber statement directly to six underlying generic, exceptional, homogeneous, twist and nonzero-Fourier cofiber certificates."
+    }
+  ],
+  "claim_boundary": "This receipt covers the compact-product noncyclic linear BV triangle, its direct cofiber provenance, endpoint audit, branch-dictionary lifecycle and nonlinear receiver import. It does not certify a standard-pairing cyclic map, q2/q3 relative compatibility, causal propagation, Berger branch projection, observables, particles or quantum states."
+}

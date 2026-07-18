@@ -963,9 +963,14 @@ unsplit retained cyclic causal carrier as authoritative while leaving the
 crosswalk `NO_CERTIFIED_MAP`.  A future Berger activation requires a genuinely
 noncontractible mixed-bundle/cofiber carrier or an explicitly scoped all-mode
 `REDUCED-MODE` map; porting to another background answers a new same-background
-question, not the Berger one.  Row-name matching is not a bridge.  The active
-classical relative gate advances to the compact-product off-shell noncyclic
-three-form Einstein--Weyl triangle.
+question, not the Berger one.  Row-name matching is not a bridge.  The
+compact-product off-shell noncyclic three-form Einstein--Weyl triangle is now
+certified, including its support-local mapping cofiber, three distinct
+action-derived forms and the connected residual plus `U(1)` winding endpoints
+in the oriented fixed-`N=2` sector.  Compact-product Bridge 1 is active at the
+linear algebraic/cofiber level.  The active classical relative gate is now the
+separate same-background Einstein--Maxwell and Weyl--Maxwell `q1/q2/q3`
+exports; compact-product causal Green data remain an independent open rail.
 
 ### Classical ownership
 
@@ -1013,8 +1018,9 @@ complete theorem: polar, exceptional, global, charge-fibre, and boundary
 sectors must be declared explicitly.  It also exports the quadratic
 Taub/extension bilinear that the nonlinear team will refine.
 
-The current fail-closed artifact is
-`EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1`.  It exports the same-background
+The authoritative fail-closed artifacts are
+`EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` and
+`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.  The dictionary exports the same-background
 generic axial and polar chain cofibers, the exceptional `ell=1,k=0` solution
 cofiber, zero homogeneous and twist-primary solution cofibers, branch
 representatives and action-derived pairings.  It also records the obstruction
@@ -1023,12 +1029,14 @@ to strict cyclicity of the generic fixed identity maps. The stronger
 real-structure-preserving, product-equivariant corrected map, chain homotopy
 or exact current improvement can make the standard action-derived pairings
 cyclic: the Einstein source has inertia `(2,0)`, while the complete
-`q`-primary Weyl image has inertia `(1,1)` in both generic parities. The next
-gate is therefore a noncyclic off-shell triangle exporting the Einstein,
-pulled-back Weyl and relative forms separately; a pairing-changed theorem is
-a different open route. Its atlas row is
-`einstein.ph.bridge.relative_branch_dictionary_v1`; activation remains `OPEN`,
-and no cross-background identity is made.  The certified `a,b,d` polynomial
+`q`-primary Weyl image has inertia `(1,1)` in both generic parities.  The
+certified replacement is the noncyclic off-shell triangle exporting the
+Einstein, pulled-back Weyl and relative forms separately; a pairing-changed
+theorem is a different open route. Its atlas row is
+`einstein.ph.bridge.relative_branch_dictionary_v1`; compact-product linear
+activation is `CERTIFIED`, while causal, nonlinear, observational and quantum
+columns remain open or `NO_CERTIFIED_MAP`, and no cross-background identity is
+made.  The certified `a,b,d` polynomial
 resonance matrix has now been extended by the complete twist position/velocity
 columns.  In the declared nonzero-extra `k=0` carrier, its simultaneous
 stabilizer/resonance zero locus is exactly the aligned `SO(3)` orbit; bounded
@@ -1052,8 +1060,11 @@ H_PRODUCT_EQUIVARIANT = true
 INDEPENDENT_VERIFIER_PASS = true
 ```
 
-The current principal/generic-axial preflight is imported as partial evidence
-but cannot satisfy or rename this gate.
+The exact triangle now satisfies this importer.  The older
+principal/generic-axial preflight remains partial evidence and cannot satisfy
+or rename the gate.  The nonlinear receiver reports the relative linear
+triangle as `IMPORTED` and both same-background Einstein--Maxwell and
+Weyl--Maxwell `q2/q3` payloads as `MISSING`.
 
 Only after those compact gates are explicit should the same team promote an
 asymptotic, black-hole, or scattering claim.  It may build those programmes in

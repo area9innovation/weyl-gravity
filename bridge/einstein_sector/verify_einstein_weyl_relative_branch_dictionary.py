@@ -32,8 +32,8 @@ def main() -> None:
         if rows[identifier]["action_derived_pairing"].get("standard_pairing_cyclic_map") != "OBSTRUCTED by incompatible cohomology-form inertia (2,0) versus (1,1)":
             raise AssertionError(f"generic cyclic-map inertia obstruction was hidden: {identifier}")
         missing = rows[identifier]["missing"]
-        if "noncyclic off-shell triangle with three distinct forms" not in missing:
-            raise AssertionError(f"noncyclic replacement gate was hidden: {identifier}")
+        if "nonlinear relative morphism" not in missing:
+            raise AssertionError(f"nonlinear replacement gate was hidden: {identifier}")
     if rows["ph.exceptional.ell1.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("exceptional k0 solution cofiber was lost")
     if rows["ph.exceptional.ell1.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
@@ -72,10 +72,12 @@ def main() -> None:
         raise AssertionError("nonzero-k exceptional cofiber coverage was dropped")
     if not flags["single_covariant_support_local_map_reconstructed"]:
         raise AssertionError("certified covariant support-local glue was dropped")
-    if value["bridge"]["current_global_map_lifecycle"] != "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN":
-        raise AssertionError("covariant-map lifecycle is stale")
-    if flags["full_offshell_all_sector_triangle_certified"] or flags["bridge_1_activation_gate_satisfied"]:
-        raise AssertionError("bridge 1 was over-promoted")
+    if value["bridge"]["current_global_map_lifecycle"] != "NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED":
+        raise AssertionError("linear-triangle lifecycle is stale")
+    if not flags["full_offshell_all_sector_triangle_certified"] or not flags["bridge_1_activation_gate_satisfied"]:
+        raise AssertionError("compact-product linear bridge 1 was not promoted")
+    if value["relative_forms"]["identity_inclusion_symplectic"]:
+        raise AssertionError("standard-pairing cyclic obstruction was hidden")
     if flags["cross_background_mode_identification_made"]:
         raise AssertionError("a forbidden cross-background identification appeared")
     print("EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1 independent verification: PASS")

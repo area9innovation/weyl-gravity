@@ -13,6 +13,7 @@ OUTPUT = ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.js
 SCHEMA = ROOT / "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json"
 INPUTS = {
     "triangle": ROOT / "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+    "full_triangle": ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
     "standard": ROOT / "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
     "axial_ring": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
     "polar_ring": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
@@ -111,8 +112,8 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
                 "Einstein_extra_orthogonal": True,
                 "standard_pairing_cyclic_map": "OBSTRUCTED by incompatible cohomology-form inertia (2,0) versus (1,1)",
             },
-            "missing": ["noncyclic off-shell triangle with three distinct forms", "explicitly pairing-changed alternative", "final residual descent"],
-            "evidence": _evidence("triangle", "axial_ring", "axial_current", "generic_cyclic_obstruction", "generic_cyclic_inertia_obstruction"),
+            "missing": ["explicitly pairing-changed alternative", "causal Green carrier", "nonlinear relative morphism"],
+            "evidence": _evidence("triangle", "full_triangle", "axial_ring", "axial_current", "generic_cyclic_obstruction", "generic_cyclic_inertia_obstruction"),
         },
         {
             "id": "ph.generic.polar.relative",
@@ -142,8 +143,8 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
                 "Einstein_extra_orthogonal": True,
                 "standard_pairing_cyclic_map": "OBSTRUCTED by incompatible cohomology-form inertia (2,0) versus (1,1)",
             },
-            "missing": ["noncyclic off-shell triangle with three distinct forms", "explicitly pairing-changed alternative", "final residual descent"],
-            "evidence": _evidence("standard", "polar_ring", "polar_lift", "polar_current", "generic_cyclic_obstruction", "generic_cyclic_inertia_obstruction"),
+            "missing": ["explicitly pairing-changed alternative", "causal Green carrier", "nonlinear relative morphism"],
+            "evidence": _evidence("full_triangle", "standard", "polar_ring", "polar_lift", "polar_current", "generic_cyclic_obstruction", "generic_cyclic_inertia_obstruction"),
         },
         {
             "id": "ph.exceptional.ell1.relative",
@@ -160,8 +161,8 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
             "projection_or_cofiber": {"status": "CERTIFIED", "map": "explicit CRT projectors in x=omega^2 identify the source image and the axial-plus-polar omega^2=4/3 solution cofiber"},
             "branch_representatives": {"status": "CERTIFIED", "source": "axial twist plus the physical axial and polar omega^2=4 representatives", "extra": "one omega^2=4/3 representative in each parity, with all-m SO(3) promotion"},
             "action_derived_pairing": {"status": "CERTIFIED", "standard_relative_operator": "4*I", "twist_relative_operator": "-2*I", "extra_Gram": [["16", "0"], ["0", "3"]], "standard_extra_orthogonal": True},
-            "missing": ["finite large-gauge/global quotient", "final residual descent"],
-            "evidence": _evidence("standard", "ell1_standard", "exceptional_current", "exceptional_cofiber", "exceptional_global_offshell"),
+            "missing": ["causal Green carrier", "nonlinear relative morphism"],
+            "evidence": _evidence("full_triangle", "standard", "ell1_standard", "exceptional_current", "exceptional_cofiber", "exceptional_global_offshell"),
         },
         {
             "id": "ph.exceptional.ell1.nonzero_k.relative",
@@ -178,8 +179,8 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
             "projection_or_cofiber": {"status": "CERTIFIED", "map": "CRT projectors in s=omega^2-k^2 isolate the standard source image and the one-dimensional extra target quotient in each parity"},
             "branch_representatives": {"status": "CERTIFIED", "source": "one standard polynomial representative in each parity", "extra": "one polynomial representative in each parity without k or omega inversion"},
             "action_derived_pairing": {"status": "CERTIFIED", "standard_relative_operator": "4*I after normalized quotient coordinates", "extra_Gram_on_polynomial_representatives": {"axial": "4*(3*k^2+4)", "polar": "4*(3*k^2+4)"}, "standard_extra_orthogonal": True},
-            "missing": ["finite large-gauge/global quotient", "final residual descent"],
-            "evidence": _evidence("standard", "ell1_standard", "exceptional_global_offshell", "exceptional_nonzero_k_cofiber"),
+            "missing": ["causal Green carrier", "nonlinear relative morphism"],
+            "evidence": _evidence("full_triangle", "standard", "ell1_standard", "exceptional_global_offshell", "exceptional_nonzero_k_cofiber"),
         },
         {
             "id": "ph.global.homogeneous.relative",
@@ -196,8 +197,8 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
             "projection_or_cofiber": {"status": "CERTIFIED", "map": "the coefficient inverse a=d2, b=3*d3, c=d0+d2, d=d1+3*d3 proves the complete homogeneous target quotient equals the Einstein image; solution cofiber zero"},
             "branch_representatives": {"status": "CERTIFIED", "standard_and_complete_target": ["a", "b", "c", "d", "Q_e", "W_x"], "extra": "zero solution cofiber"},
             "action_derived_pairing": {"status": "CERTIFIED", "relative_operator": "I+N with N^2=0 and rank(N)=2"},
-            "missing": ["large-gauge/global quotient", "final residual descent"],
-            "evidence": _evidence("standard", "homogeneous_standard", "homogeneous_cofiber", "exceptional_global_offshell", "abd_quadratic"),
+            "missing": ["causal Green carrier", "nonlinear relative morphism"],
+            "evidence": _evidence("full_triangle", "standard", "homogeneous_standard", "homogeneous_cofiber", "exceptional_global_offshell", "abd_quadratic"),
         },
         {
             "id": "ph.global.twist.relative",
@@ -214,8 +215,8 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
             "projection_or_cofiber": {"status": "CERTIFIED", "map": "P_twist=3*(x-4/3)*(x-4)/16 isolates the complete target twist primary, which equals the Einstein image; solution cofiber zero"},
             "branch_representatives": {"status": "CERTIFIED", "standard_and_complete_target": ["A_m", "B_m"], "extra": "zero solution cofiber in the x=0 primary"},
             "action_derived_pairing": {"status": "CERTIFIED", "relative_operator": "-2*I on each twist pair"},
-            "missing": ["global moduli-orbifold quotient", "final residual descent"],
-            "evidence": _evidence("standard", "twist_standard", "exceptional_cofiber", "twist_cofiber", "exceptional_global_offshell", "homogeneous_twist_quadratic", "aligned_twist_extra_face", "complete_global_extra_cone", "global_extra_bounded_obstruction", "global_extra_smooth_extension"),
+            "missing": ["causal Green carrier", "nonlinear relative morphism"],
+            "evidence": _evidence("full_triangle", "standard", "twist_standard", "exceptional_cofiber", "twist_cofiber", "exceptional_global_offshell", "homogeneous_twist_quadratic", "aligned_twist_extra_face", "complete_global_extra_cone", "global_extra_bounded_obstruction", "global_extra_smooth_extension"),
         },
         {
             "id": "ph.boundary.relative",
@@ -249,6 +250,26 @@ def build() -> dict[str, object]:
         raise AssertionError("generic axial triangle input changed")
     if triangle_flags["relative_linear_triangle_V1_certified"]:
         raise AssertionError("preflight unexpectedly promoted the full triangle")
+    full_triangle = records["full_triangle"]
+    if full_triangle["result_id"] != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1":
+        raise AssertionError("full relative triangle result id changed")
+    required_triangle_flags = {
+        "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS",
+        "SUPPORT_LOCAL_MAPPING_COFIBER",
+        "GLOBAL_ENDPOINTS_INCLUDED",
+        "THREE_ACTION_DERIVED_FORMS_EXPORTED",
+        "GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED",
+        "H_PRODUCT_EQUIVARIANT",
+        "INDEPENDENT_VERIFIER_PASS",
+    }
+    if not all(full_triangle["acceptance_flags"].get(flag) is True for flag in required_triangle_flags):
+        raise AssertionError("full relative triangle lost an acceptance flag")
+    if full_triangle["pairing_disposition"] != {
+        "triangle_kind": "NONCYCLIC_THREE_FORM",
+        "standard_pairing_cyclic_map_exists": False,
+        "three_forms_kept_distinct": True,
+    }:
+        raise AssertionError("full relative triangle pairing disposition changed")
     if not records["axial_ring"]["classification"]["Einstein_image_equals_complete_q_primary_summand_on_every_physical_fiber"]:
         raise AssertionError("axial primary decomposition changed")
     if not records["polar_ring"]["classification"]["Einstein_image_equals_complete_q_primary_summand"]:
@@ -328,22 +349,22 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA),
         "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-        "result_state": "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_CERTIFIED_NONCYCLIC_FORMS_AND_ENDPOINTS_OPEN",
+        "result_state": "NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED_INTERACTIONS_AND_CAUSALITY_OPEN",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "bridge": {
             "priority": 1,
             "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
-            "current_global_map_lifecycle": "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN",
-            "activation_gate": "OPEN",
-            "reason": "one natural support-local minimal chain map now globalizes every harmonic coefficient block, while the all-standard-pairing cyclic-map route is obstructed; the three separate noncyclic forms, finite residual/large-gauge endpoints and boundary domain remain absent",
+            "current_global_map_lifecycle": "NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED",
+            "activation_gate": "CERTIFIED_FOR_COMPACT_PRODUCT_LINEAR_BV_COFIBER",
+            "reason": "one natural support-local all-row chain map, its mapping cofiber, the three distinct action-derived forms, and the finite residual and U1 winding endpoints are certified on the declared compact product; the standard-pairing cyclic route is obstructed and causal/nonlinear extensions remain open",
             "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
-            "requested_full_artifact_certified": False,
+            "requested_full_artifact_certified": True,
         },
         "relative_forms": {
             "Einstein": "Omega_EM",
             "pulled_back_Weyl": "iota^* Omega_WM = Omega_EM(.,R .) on the complete standard tangent",
-            "relative_extra": "direct action-derived extra Lee-Wald blocks are certified only in generic axial and polar sectors",
+            "relative_extra": "direct action-derived Weyl-Maxwell cofiber forms are exported in every nonzero cofiber; homogeneous, twist and nonzero-Fourier ell0 cofibers vanish",
             "identity_inclusion_symplectic": False,
             "identity_inclusion_nondegenerate": True,
             "standard_pairing_cyclic_correction_exists_generic": False,
@@ -377,13 +398,13 @@ def build() -> dict[str, object]:
             "complete_global_extra_smooth_secular_extension_imported": True,
             "aligned_twist_extra_L1_L3_coefficient_correction_imported": True,
             "exceptional_global_and_boundary_absences_explicit": True,
-            "full_offshell_all_sector_triangle_certified": False,
-            "bridge_1_activation_gate_satisfied": False,
+            "full_offshell_all_sector_triangle_certified": True,
+            "bridge_1_activation_gate_satisfied": True,
             "cross_background_mode_identification_made": False,
         },
-        "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, one natural support-local minimal chain map globalizing every harmonic coefficient block, solution cofibers in every generic, exceptional and homogeneous sector, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, and zero homogeneous and twist-primary solution cofibers. The honest all-sector target remains a noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately and including finite residual endpoints. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
-        "next_gate": "export the Einstein, pulled-back Weyl and relative forms separately and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
-        "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
+        "interpretation": "The compact Plebanski-Hacyan calculation supplies a same-background noncyclic three-form linear BV triangle: one natural support-local all-row chain map, its mapping cofiber, the Einstein, pulled-back Weyl and relative action forms, and the connected residual plus U1 winding endpoints. This activates compact-product Bridge 1 only at the linear algebraic/cofiber level. The standard-pairing cyclic route remains obstructed, and matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+        "next_gate": "export complete same-background Einstein-Maxwell and Weyl-Maxwell q1/q2/q3 payloads, then compute Delta2 and the arity-three relative morphism defect; construct compact-product causal Green data independently",
+        "claim_boundary": "This is a fail-closed same-background linear branch dictionary and map-lifecycle ledger. It certifies the compact-product noncyclic linear triangle, not a standard-pairing cyclic map, a causal Green carrier, q2/q3 compatibility, a cross-background identification, an observable, a particle theorem or a quantum state claim.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
@@ -397,7 +418,7 @@ def build() -> dict[str, object]:
             "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <scoped JSON paths>", "git diff --check -- <scoped paths>"]},
             "tier_1": {"status": "PASS", "commands": ["python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check", "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py", "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_branch_dictionary"]},
             "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "reason": "all imported map, cofiber, representative and pairing artifacts are content-addressed"},
-            "tier_3": {"status": "NOT_RUN", "reason": "the full all-sector relative triangle activation gate remains open"},
+            "tier_3": {"status": "NOT_RUN", "reason": "this is a scoped linear-triangle activation, not a release or shared-core freeze"},
         },
         "verification_commands": [
             "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-weyl-relative-linear-triangle-receipt-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "date", "tiers", "source_manifest", "failed_attempts", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-weyl-relative-linear-triangle-receipt-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_VERIFICATION_RECEIPT"},
+    "date": {"const": "2026-07-18"},
+    "tiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/passTier"},
+        "tier_1": {"$ref": "#/$defs/passTier"},
+        "tier_2": {"$ref": "#/$defs/passTier"},
+        "tier_3": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "reason"],
+          "properties": {
+            "status": {"const": "NOT_RUN"},
+            "reason": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "failed_attempts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["failure", "disposition"],
+        "properties": {
+          "failure": {"type": "string", "minLength": 1},
+          "disposition": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "passTier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "elapsed_seconds", "commands"],
+      "properties": {
+        "status": {"enum": ["PASS", "PASS_BY_CONTENT_ADDRESS"]},
+        "elapsed_seconds": {"type": "number", "minimum": 0},
+        "commands": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

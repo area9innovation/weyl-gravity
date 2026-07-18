@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-weyl-relative-linear-triangle-components-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "dependency_tags",
+    "scope",
+    "q1_complexes",
+    "mapping_cofiber",
+    "form_exports",
+    "global_endpoints",
+    "equivariance",
+    "classification",
+    "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "einstein-weyl-relative-linear-triangle-components-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_COMPONENTS_V1"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "scope": {"$ref": "#/$defs/scope"},
+    "q1_complexes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_dimensions", "target_dimensions", "source_rows", "target_rows", "inclusion", "all_chain_squares_zero", "evidence"],
+      "properties": {
+        "source_dimensions": {"const": [5, 14, 14, 5]},
+        "target_dimensions": {"const": [6, 14, 14, 6]},
+        "source_rows": {"type": "array", "items": {"type": "string"}, "minItems": 4, "maxItems": 4},
+        "target_rows": {"type": "array", "items": {"type": "string"}, "minItems": 4, "maxItems": 4},
+        "inclusion": {"type": "string", "minLength": 1},
+        "all_chain_squares_zero": {"const": true},
+        "evidence": {"type": "array", "items": {"$ref": "#/$defs/artifact"}, "minItems": 4}
+      }
+    },
+    "mapping_cofiber": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["convention", "degree_dimensions", "differential", "square_zero", "support_local", "uses_spectral_projector", "uses_differential_inverse", "strict_short_exact_sequence_claimed", "solution_cofiber_evidence"],
+      "properties": {
+        "convention": {"type": "string", "minLength": 1},
+        "degree_dimensions": {"const": [5, 20, 28, 19, 6]},
+        "differential": {"type": "string", "minLength": 1},
+        "square_zero": {"const": true},
+        "support_local": {"const": true},
+        "uses_spectral_projector": {"const": false},
+        "uses_differential_inverse": {"const": false},
+        "strict_short_exact_sequence_claimed": {"const": false},
+        "solution_cofiber_evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/artifact"},
+          "minItems": 6,
+          "maxItems": 6
+        }
+      }
+    },
+    "form_exports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["einstein_source", "pulled_back_weyl", "relative_cofiber", "standard_pairing_cyclic_map_exists", "three_forms_kept_distinct"],
+      "properties": {
+        "einstein_source": {"$ref": "#/$defs/form"},
+        "pulled_back_weyl": {"$ref": "#/$defs/form"},
+        "relative_cofiber": {"$ref": "#/$defs/form"},
+        "standard_pairing_cyclic_map_exists": {"const": false},
+        "three_forms_kept_distinct": {"const": true}
+      }
+    },
+    "global_endpoints": {"$ref": "#/$defs/endpoints"},
+    "equivariance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["group", "reason", "certified"],
+      "properties": {
+        "group": {"type": "string", "minLength": 1},
+        "reason": {"type": "string", "minLength": 1},
+        "certified": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["off_shell_all_row_chain_map", "support_local_mapping_cofiber", "global_endpoints_included", "three_action_derived_forms_exported", "standard_pairing_cyclic_map", "causal_nonlinear_observational_or_quantum_claim"],
+      "properties": {
+        "off_shell_all_row_chain_map": {"const": true},
+        "support_local_mapping_cofiber": {"const": true},
+        "global_endpoints_included": {"const": true},
+        "three_action_derived_forms_exported": {"const": true},
+        "standard_pairing_cyclic_map": {"const": false},
+        "causal_nonlinear_observational_or_quantum_claim": {"const": false}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["producer_path", "producer_sha256", "inputs"],
+      "properties": {
+        "producer_path": {"type": "string", "minLength": 1},
+        "producer_sha256": {"$ref": "#/$defs/sha256"},
+        "inputs": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/artifactNoPointer"},
+          "minProperties": 10
+        }
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier"],
+      "properties": {
+        "theory": {"type": "string"},
+        "background": {"type": "string"},
+        "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"},
+        "carrier": {"type": "string"}
+      }
+    },
+    "artifactNoPointer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "path", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "path", "sha256", "pointer"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "pointer": {"type": "string", "pattern": "^/"}
+      }
+    },
+    "form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "domain", "action_derived", "blocks"],
+      "properties": {
+        "role": {"type": "string", "minLength": 1},
+        "domain": {"type": "string", "minLength": 1},
+        "action_derived": {"const": true},
+        "blocks": {"type": "array", "items": {"$ref": "#/$defs/artifact"}, "minItems": 2}
+      }
+    },
+    "endpoints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weyl_squared", "conformal_reducibility_argument", "connected_product_isometry_dimension", "constant_u1_reducibility_dimension", "source_dimension", "target_dimension", "source_basis", "target_basis", "map_matrix", "cone_cohomology_dimension", "dual_map_matrix", "large_u1_lattice", "large_u1_map", "fixed_chern_class", "excluded_components"],
+      "properties": {
+        "weyl_squared": {"const": "4/3"},
+        "conformal_reducibility_argument": {"type": "string", "minLength": 1},
+        "connected_product_isometry_dimension": {"const": 5},
+        "constant_u1_reducibility_dimension": {"const": 1},
+        "source_dimension": {"const": 6},
+        "target_dimension": {"const": 6},
+        "source_basis": {"const": ["partial_t", "partial_x", "J_1", "J_2", "J_3", "u1_constant"]},
+        "target_basis": {"const": ["partial_t", "partial_x", "J_1", "J_2", "J_3", "u1_constant"]},
+        "map_matrix": {"$ref": "#/$defs/matrix6"},
+        "cone_cohomology_dimension": {"const": 0},
+        "dual_map_matrix": {"$ref": "#/$defs/matrix6"},
+        "large_u1_lattice": {"const": "H^1(S1 x S2;Z)=Z"},
+        "large_u1_map": {"const": "identity Z -> Z"},
+        "fixed_chern_class": {"const": "N=2"},
+        "excluded_components": {"type": "string", "minLength": 1}
+      }
+    },
+    "matrix6": {
+      "const": [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0],
+        [0, 0, 0, 0, 1, 0],
+        [0, 0, 0, 0, 0, 1]
+      ]
+    }
+  }
+}

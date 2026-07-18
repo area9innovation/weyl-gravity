@@ -69,12 +69,14 @@ def verify() -> None:
         raise AssertionError("d-cross compatibility boundary drifted")
 
     bridge = by_id["einstein.ph.bridge.relative_branch_dictionary_v1"]
-    if bridge["mode_data"]["resonance"]["status"] != "OPEN":
-        raise AssertionError("bridge 1 activation was over-promoted")
-    if "natural support-local minimal chain map" not in bridge["mode_data"]["resonance"]["statement"]:
+    if bridge["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("compact-product linear bridge 1 was not activated")
+    if "noncyclic three-form all-row triangle" not in bridge["mode_data"]["resonance"]["statement"]:
         raise AssertionError("exact bridge lifecycle is absent")
-    if "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN" not in bridge["claim_boundary"]:
+    if "NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED" not in bridge["claim_boundary"]:
         raise AssertionError("global covariant-map lifecycle is absent")
+    if "causal Green data and q2/q3 relative compatibility remain open" not in bridge["claim_boundary"]:
+        raise AssertionError("downstream compact-product gates were over-promoted")
     if bridge["descriptions"]["observational"] != "NO_CERTIFIED_MAP" or bridge["descriptions"]["quantum"] != "NO_CERTIFIED_MAP":
         raise AssertionError("downstream bridges borrowed the linear lifecycle")
 

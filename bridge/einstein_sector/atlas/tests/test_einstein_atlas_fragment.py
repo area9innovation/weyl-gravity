@@ -29,12 +29,12 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
             if "crosswalk" not in entry["id"]:
                 self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "OPEN")
 
-    def test_bridge_one_is_fail_closed(self) -> None:
+    def test_bridge_one_is_linear_and_fail_closed_downstream(self) -> None:
         entry = self.entries["einstein.ph.bridge.relative_branch_dictionary_v1"]
-        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
-        self.assertIn("NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN", entry["claim_boundary"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED", entry["claim_boundary"])
         self.assertIn("without harmonic selection", entry["claim_boundary"])
-        self.assertIn("finite residual endpoints", entry["claim_boundary"])
+        self.assertIn("causal Green data and q2/q3 relative compatibility remain open", entry["claim_boundary"])
         self.assertEqual(entry["descriptions"]["observational"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
 

@@ -184,32 +184,39 @@ has its fail-closed disposition and the second is active:
    and the exact normalized rank-36/rank-46 obstructions.  Reopen the local
    branch map only for a genuinely noncontractible mixed-bundle/cofiber
    construction; a row-name or contractible-graph split is forbidden.
-2. For the compact product background, complete the off-shell **noncyclic
-   three-form** Einstein--Weyl relative triangle. The stronger
+2. **Complete.** For the compact product background,
+   `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` certifies the off-shell
+   **noncyclic three-form** Einstein--Weyl relative triangle. The stronger
    `EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1` certificate shows
    that the Einstein form has inertia `(2,0)` while the Weyl form on the
    complete `q`-primary image has inertia `(1,1)` in both generic parities.
    Therefore no real-structure-preserving, product-equivariant corrected map,
    chain homotopy or exact current improvement can make the standard pairings
-   cyclic. Export the Einstein, pulled-back Weyl and relative forms separately.
+   cyclic. The Einstein, pulled-back Weyl and relative forms are exported
+   separately.
    An explicitly pairing-changed theorem is a different open route. This is
    Bridge 2 and must not import Berger or vacuum carriers without an explicit
    crosswalk.  `EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1` now
    reconstructs the generic, exceptional and homogeneous coefficient maps as
    one natural support-local minimal four-dimensional chain morphism, with no
-   harmonic projector or inverse differential operator.  The remaining
-   linear gate is to export the Einstein, pulled-back Weyl and relative forms
-   separately and include the finite residual/large-gauge endpoints.  The
+   harmonic projector or inverse differential operator.  In the oriented
+   fixed-Chern-class `N=2` sector, the source and target endpoint maps are the
+   identity on the five connected product Killing reducibilities plus constant
+   `U(1)`, the dual map is also the identity, and the disconnected
+   `H^1(S1 x S2;Z)=Z` winding lattice maps identically.  This activates
+   compact-product Bridge 1 only at the linear algebraic/cofiber level.  The
    nonzero-`k` exceptional solution cofiber and its
    action pairing are now exact: each parity has the standard Einstein image
    at `omega^2-k^2=4` and one nonradical extra class at
    `omega^2-k^2=4/3`, represented polynomially without a differential
    inverse.
-3. Export complete same-background \(q_1,q_2,q_3\) payloads separately for
+3. **Active.** Export complete same-background \(q_1,q_2,q_3\) payloads
+   separately for
    Einstein--Maxwell and Weyl--Maxwell so the nonlinear team can compute
    \(\Delta_2\), the arity-three morphism defect, and the induced deformation
    verdict.  Neither payload may be inferred from the other theory by matching
-   branch labels.
+   branch labels.  The nonlinear comparison must retain all three action forms
+   rather than silently replacing them by a standard-pairing cyclic map.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

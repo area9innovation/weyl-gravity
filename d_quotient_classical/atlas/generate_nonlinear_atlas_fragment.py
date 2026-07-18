@@ -220,6 +220,8 @@ def bridge2_entry(importer: dict[str, Any], fallback_scope: dict[str, Any]) -> d
 
 def entries() -> list[dict[str, Any]]:
     branch_importer = json.loads(CERTS["branch_importer"].read_text())
+    relative_linfinity = json.loads(CERTS["relative_linfinity_preflight"].read_text())
+    linear_triangle_imported = relative_linfinity["input_status"]["relative_linear_triangle"] == "IMPORTED"
     smooth_extension_ready = smooth_extension_import_ready()
     berger = {
         "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell",
@@ -535,20 +537,40 @@ def entries() -> list[dict[str, Any]]:
         {
             "id": "nonlinear.product.bridge2.relative_linfinity_through_arity_three_preflight",
             "scope": relative_linfinity_scope,
-            "descriptions": {axis: "NO_CERTIFIED_MAP" for axis in AXES},
+            "descriptions": {
+                "causal": "NO_CERTIFIED_MAP",
+                "symplectic": "OBSTRUCTED",
+                "nonlinear": "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
+                "observational": "NO_CERTIFIED_MAP",
+                "quantum": "NO_CERTIFIED_MAP",
+            },
             "mode_data": _mode_data(
                 _second(
-                    ("NO_CERTIFIED_MAP", "The support-local minimal q1 chain map is certified, but the noncyclic three-form triangle, finite endpoints and both same-background product q2/q3 payloads are missing."),
+                    (
+                        "OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP",
+                        "The noncyclic all-row linear triangle and endpoints are imported; both same-background product q2/q3 payloads are still missing."
+                        if linear_triangle_imported
+                        else "The support-local minimal q1 chain map is certified, but the noncyclic three-form triangle, finite endpoints and both same-background product q2/q3 payloads are missing.",
+                    ),
                     ("NO_CERTIFIED_MAP", "No full relative morphism exists on which to compare smooth-secular correction classes."),
                     ("NO_CERTIFIED_MAP", "No compact-product retarded relative morphism is certified."),
                 ),
-                dispersion=("NO_CERTIFIED_MAP", "Sectoral solution cofibers do not supply the full off-shell relative carrier."),
-                pairing=("OBSTRUCTED", "A standard-pairing cyclic relative triangle is impossible by the generic inertia theorem; the required V2 input is instead a noncyclic triangle exporting the Einstein, pulled-back Weyl and relative forms separately."),
-                taub=("NO_CERTIFIED_MAP", "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map."),
-                resonance=("NO_CERTIFIED_MAP", "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
+                dispersion=(
+                    "CERTIFIED" if linear_triangle_imported else "NO_CERTIFIED_MAP",
+                    "The complete support-local mapping cofiber and all declared solution cofibers are imported."
+                    if linear_triangle_imported
+                    else "Sectoral solution cofibers do not supply the full off-shell relative carrier.",
+                ),
+                pairing=("OBSTRUCTED", "A standard-pairing cyclic relative triangle is impossible by the generic inertia theorem; the certified replacement keeps the Einstein, pulled-back Weyl and relative forms distinct."),
+                taub=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map."),
+                resonance=("OPEN" if linear_triangle_imported else "NO_CERTIFIED_MAP", "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
             ),
             "evidence": _evidence("relative_linfinity_preflight", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
-            "claim_boundary": "Compact-product Bridge 2 remains INPUT_BLOCKED after certification of the natural support-local minimal q1 map: Bridge 1 must still supply the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 with finite endpoints, and complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads remain absent. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized.",
+            "claim_boundary": (
+                "Compact-product linear Bridge 1 is imported as the certified NONCYCLIC_THREE_FORM triangle with finite endpoints. Bridge 2 remains INPUT_BLOCKED only on the complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads. The standard-pairing cyclic route is obstructed; all Berger tensors remain ineligible substitutes. Delta2, the arity-three defect, cohomology survival and admissible removal remain OPEN or NO_CERTIFIED_MAP, and q4 is not authorized."
+                if linear_triangle_imported
+                else "Compact-product Bridge 2 remains INPUT_BLOCKED after certification of the natural support-local minimal q1 map: Bridge 1 must still supply the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 with finite endpoints, and complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads remain absent. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized."
+            ),
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

@@ -14,12 +14,13 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.value = json.loads(CERT.read_text(encoding="utf-8"))
 
-    def test_local_minimal_map_does_not_promote_full_bridge(self) -> None:
+    def test_full_noncyclic_triangle_promotes_only_linear_bridge(self) -> None:
         self.assertEqual(
             self.value["bridge"]["current_global_map_lifecycle"],
-            "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN",
+            "NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED",
         )
-        self.assertFalse(self.value["classification"]["bridge_1_activation_gate_satisfied"])
+        self.assertTrue(self.value["classification"]["bridge_1_activation_gate_satisfied"])
+        self.assertFalse(self.value["relative_forms"]["identity_inclusion_symplectic"])
 
     def test_every_row_has_full_scope(self) -> None:
         required = {"theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"}
@@ -35,7 +36,7 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
         for identifier in ("ph.generic.axial.relative", "ph.generic.polar.relative"):
             row = next(item for item in self.value["branch_rows"] if item["id"] == identifier)
             self.assertIn("incompatible cohomology-form inertia", row["action_derived_pairing"]["standard_pairing_cyclic_map"])
-            self.assertIn("noncyclic off-shell triangle with three distinct forms", row["missing"])
+            self.assertIn("nonlinear relative morphism", row["missing"])
 
     def test_exceptional_and_global_row_maps_are_no_longer_open(self) -> None:
         flags = self.value["classification"]
@@ -55,7 +56,7 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
         self.assertTrue(self.value["classification"]["complete_global_extra_smooth_secular_extension_imported"])
         self.assertTrue(self.value["classification"]["aligned_twist_extra_L1_L3_coefficient_correction_imported"])
         self.assertEqual(self.value["quadratic_handoff"]["status"], "PARTIAL_INPUT")
-        self.assertFalse(self.value["classification"]["bridge_1_activation_gate_satisfied"])
+        self.assertTrue(self.value["classification"]["bridge_1_activation_gate_satisfied"])
 
 
 if __name__ == "__main__":

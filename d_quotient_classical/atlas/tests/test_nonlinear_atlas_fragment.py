@@ -174,11 +174,15 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
 
     def test_product_relative_linfinity_receiver_is_fail_closed(self):
         entry = next(item for item in atlas.build()["entries"] if "relative_linfinity_through_arity_three_preflight" in item["id"])
-        self.assertTrue(all(status == "NO_CERTIFIED_MAP" for status in entry["descriptions"].values()))
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("INPUT_BLOCKED", entry["claim_boundary"])
         self.assertIn("same-background", entry["claim_boundary"])
-        self.assertIn("Berger tensors are ineligible", entry["claim_boundary"])
-        self.assertIn("natural support-local minimal q1 map", entry["claim_boundary"])
+        self.assertIn("all Berger tensors remain ineligible", entry["claim_boundary"])
+        self.assertIn("NONCYCLIC_THREE_FORM", entry["claim_boundary"])
+        self.assertIn("q2/q3 payloads", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
 
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):

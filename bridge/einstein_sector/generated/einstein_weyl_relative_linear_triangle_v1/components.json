@@ -1,0 +1,472 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "claim_boundary": "This certifies the off-shell support-local minimal linear triangle, its mapping cofiber, the connected residual and U1 winding endpoints in the declared fixed-N=2 sector, and three separately transported action-derived forms. It does not make the standard pairings cyclic, choose a support-local physical branch projection, construct causal Green data, compute q2/q3, change boundaries, or imply observational, particle or quantum equivalence.",
+  "classification": {
+    "causal_nonlinear_observational_or_quantum_claim": false,
+    "global_endpoints_included": true,
+    "off_shell_all_row_chain_map": true,
+    "standard_pairing_cyclic_map": false,
+    "support_local_mapping_cofiber": true,
+    "three_action_derived_forms_exported": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equivariance": {
+    "certified": true,
+    "group": "H_product=(R_t x U(1)_x x SO(3))_orientation-preserving x U(1)_gauge",
+    "reason": "The chain map uses only the parallel product tensors L,S,J_L,J_S and the fixed magnetic curvature J_S. These are natural under the connected orientation-preserving product automorphism group, and every U1 row is bundle-covariant."
+  },
+  "form_exports": {
+    "einstein_source": {
+      "action_derived": true,
+      "blocks": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+          "pointer": "/master_matching",
+          "result_id": "COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING",
+          "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+          "pointer": "/ell1_quotient",
+          "result_id": "COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING",
+          "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+          "pointer": "/ell0_global_theorem",
+          "result_id": "COMPACT_EM_EXCEPTIONAL_GLOBAL_SYMPLECTIC",
+          "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+          "pointer": "/axial_ell1_twist_theorem",
+          "result_id": "COMPACT_EM_EXCEPTIONAL_GLOBAL_SYMPLECTIC",
+          "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+        }
+      ],
+      "domain": "complete standard source tangent before the residual endpoint quotient",
+      "role": "independent action-derived Einstein-Maxwell Cauchy form"
+    },
+    "pulled_back_weyl": {
+      "action_derived": true,
+      "blocks": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "pointer": "/theorem/block_table",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+          "pointer": "/theorem/cauchy_forms_after_common_factor_2piL",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_GLOBAL_SYMPLECTIC_RESTRICTION",
+          "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+          "pointer": "/theorem/cauchy_forms_after_common_factor_L_N_1m",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_TWIST_SYMPLECTIC_RESTRICTION",
+          "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+        }
+      ],
+      "domain": "complete standard source tangent under the certified inclusion",
+      "role": "action-derived Weyl-Maxwell Cauchy form pulled back to the Einstein image"
+    },
+    "relative_cofiber": {
+      "action_derived": true,
+      "blocks": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "pointer": "/full_solution_pairing",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "pointer": "/shell_pairing",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+          "pointer": "/current_theorem",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_CURRENT_TAUB",
+          "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+        },
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+          "pointer": "/theorem/action_pairing",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1",
+          "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+          "pointer": "/classification/homogeneous_solution_cofiber_zero",
+          "result_id": "EINSTEIN_WEYL_HOMOGENEOUS_SOLUTION_COFIBER_V1",
+          "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+          "pointer": "/classification/twist_solution_cofiber_zero",
+          "result_id": "EINSTEIN_WEYL_TWIST_SOLUTION_COFIBER_V1",
+          "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+          "pointer": "/all_nonzero_fourier_pairs",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ELL0_NONZERO_FOURIER",
+          "sha256": "7ca78a48fd3159a8e636f0c6c14da45c87d7a3fd2f01addd63d579e51e8c886c"
+        }
+      ],
+      "domain": "generic and exceptional extra cofibers; homogeneous, twist and nonzero-Fourier ell0 cofibers are zero",
+      "role": "direct action-derived Weyl-Maxwell form on the solution cofiber; no support-local splitting is asserted"
+    },
+    "standard_pairing_cyclic_map_exists": false,
+    "three_forms_kept_distinct": true
+  },
+  "global_endpoints": {
+    "cone_cohomology_dimension": 0,
+    "conformal_reducibility_argument": "For L_xi g=2 psi g, naturality and conformal weight give L_xi(C_abcd C^abcd)=-4 psi C_abcd C^abcd. The product invariant is the nonzero constant 4/3, hence psi=0: every connected conformal reducibility is a product Killing field and the Weyl parameter vanishes.",
+    "connected_product_isometry_dimension": 5,
+    "constant_u1_reducibility_dimension": 1,
+    "dual_map_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "excluded_components": "Orientation-reversing base mapping classes are not automorphisms of the declared oriented fixed-N=2 magnetic sector and are outside this theorem; no quotient by a different boundary or charge sector is claimed.",
+    "fixed_chern_class": "N=2",
+    "large_u1_lattice": "H^1(S1 x S2;Z)=Z",
+    "large_u1_map": "identity Z -> Z",
+    "map_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "source_basis": [
+      "partial_t",
+      "partial_x",
+      "J_1",
+      "J_2",
+      "J_3",
+      "u1_constant"
+    ],
+    "source_dimension": 6,
+    "target_basis": [
+      "partial_t",
+      "partial_x",
+      "J_1",
+      "J_2",
+      "J_3",
+      "u1_constant"
+    ],
+    "target_dimension": 6,
+    "weyl_squared": "4/3"
+  },
+  "mapping_cofiber": {
+    "convention": "Cone(iota)^n=W^n direct_sum E^(n+1), with the source ghost row placed in the initial degree",
+    "degree_dimensions": [
+      5,
+      20,
+      28,
+      19,
+      6
+    ],
+    "differential": "d_Cone=[[d_W,iota],[0,-d_E]]; d_Cone^2 has only d_W iota-iota d_E off diagonal, which vanishes by the all-row chain-map theorem",
+    "solution_cofiber_evidence": [
+      {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "pointer": "/full_solution_pairing",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "pointer": "/shell_pairing",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+        "pointer": "/theorem",
+        "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1",
+        "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+      },
+      {
+        "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+        "pointer": "/classification/homogeneous_solution_cofiber_zero",
+        "result_id": "EINSTEIN_WEYL_HOMOGENEOUS_SOLUTION_COFIBER_V1",
+        "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+      },
+      {
+        "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+        "pointer": "/classification/twist_solution_cofiber_zero",
+        "result_id": "EINSTEIN_WEYL_TWIST_SOLUTION_COFIBER_V1",
+        "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+      },
+      {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+        "pointer": "/all_nonzero_fourier_pairs",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ELL0_NONZERO_FOURIER",
+        "sha256": "7ca78a48fd3159a8e636f0c6c14da45c87d7a3fd2f01addd63d579e51e8c886c"
+      }
+    ],
+    "square_zero": true,
+    "strict_short_exact_sequence_claimed": false,
+    "support_local": true,
+    "uses_differential_inverse": false,
+    "uses_spectral_projector": false
+  },
+  "provenance": {
+    "inputs": {
+      "axial_relative_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "result_id": "EINSTEIN_MAXWELL_PRODUCT_INCIDENCE",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "covariant_inclusion": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
+        "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1",
+        "sha256": "2b2d8e669509afa29680c0001352871d4187f12af679619ce8d9f69c41518155"
+      },
+      "cyclic_inertia_obstruction": {
+        "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
+        "result_id": "EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1",
+        "sha256": "affb12a8655671a06748a8fc6e2d38e8732478e4ef293b3cfea482597735bd9c"
+      },
+      "ell0_nonzero_fourier": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ELL0_NONZERO_FOURIER",
+        "sha256": "7ca78a48fd3159a8e636f0c6c14da45c87d7a3fd2f01addd63d579e51e8c886c"
+      },
+      "exceptional_global_q1": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+        "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1",
+        "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+      },
+      "exceptional_k0_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_CURRENT_TAUB",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "exceptional_nonzero_k_pairing": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+        "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1",
+        "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+      },
+      "homogeneous_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+        "result_id": "EINSTEIN_WEYL_HOMOGENEOUS_SOLUTION_COFIBER_V1",
+        "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+      },
+      "homogeneous_pullback_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_GLOBAL_SYMPLECTIC_RESTRICTION",
+        "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+      },
+      "polar_relative_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "source_axial_q1": {
+        "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+        "result_id": "COMPACT_EM_AXIAL_MASTER_COMPLEX",
+        "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+      },
+      "source_exceptional_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "result_id": "COMPACT_EM_EXCEPTIONAL_GLOBAL_SYMPLECTIC",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      },
+      "source_polar_q1": {
+        "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+        "result_id": "COMPACT_EM_POLAR_MASTER_COMPLEX",
+        "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+      },
+      "source_radiative_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_radiative_symplectic_matching.json",
+        "result_id": "COMPACT_EM_RADIATIVE_SYMPLECTIC_MATCHING",
+        "sha256": "dc02ac8feea4c6ce0b6bfb206c4615023f37c4e31eeb26210373c3604a27cf9c"
+      },
+      "standard_pullback_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      },
+      "twist_cofiber": {
+        "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+        "result_id": "EINSTEIN_WEYL_TWIST_SOLUTION_COFIBER_V1",
+        "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+      },
+      "twist_pullback_pairing": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+        "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_TWIST_SYMPLECTIC_RESTRICTION",
+        "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+      }
+    },
+    "producer_path": "bridge/einstein_sector/einstein_weyl_relative_linear_triangle_v1.py",
+    "producer_sha256": "be022761cffa12fb00483f6a79bb4380c822912ddea98e89ef6216fc35bec7ab"
+  },
+  "q1_complexes": {
+    "all_chain_squares_zero": true,
+    "evidence": [
+      {
+        "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+        "pointer": "/",
+        "result_id": "COMPACT_EM_AXIAL_MASTER_COMPLEX",
+        "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+      },
+      {
+        "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+        "pointer": "/",
+        "result_id": "COMPACT_EM_POLAR_MASTER_COMPLEX",
+        "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+      },
+      {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+        "pointer": "/blocks",
+        "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1",
+        "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+      },
+      {
+        "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
+        "pointer": "/exact_identities",
+        "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1",
+        "sha256": "2b2d8e669509afa29680c0001352871d4187f12af679619ce8d9f69c41518155"
+      }
+    ],
+    "inclusion": "identity on common ghosts and fields with sigma=0; the certified finite-order equation and identity maps are EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1",
+    "source_dimensions": [
+      5,
+      14,
+      14,
+      5
+    ],
+    "source_rows": [
+      "(xi,lambda) -> (L_xi gbar, i_xi Fbar+d lambda)",
+      "(h,a) -> delta(G+Lambda g-T, nabla F)",
+      "(E,M) -> (nabla^a E_ab+Fbar_bc M^c, nabla_a M^a)",
+      "source nilpotency and formal adjoint identities are imported exactly"
+    ],
+    "target_dimensions": [
+      6,
+      14,
+      14,
+      6
+    ],
+    "target_rows": [
+      "(xi,lambda,sigma) -> (L_xi gbar+2 sigma gbar, i_xi Fbar+d lambda)",
+      "(h,a) -> delta(alpha_B Bach-T, nabla F)",
+      "(W,M) -> (Diff identity, U1 identity, trace identity)",
+      "target nilpotency and formal adjoint identities are imported exactly"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_COMPONENTS_V1",
+  "schema": "einstein-weyl-relative-linear-triangle-components-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product R_t x S1_L x S2 at k1=0,k2=1,alpha_B=3,kappa=1,P=1",
+    "boundaries": "closed S1_L x S2; orientation-preserving product automorphisms, fixed Chern class N=2 and every U1 gauge component; before any changed-boundary quotient",
+    "carrier": "complete four-dimensional minimal Diff x U1 source complex, Diff x U1 x Weyl target complex and their mapping cofiber",
+    "charge_sector": "fixed magnetic bundle P_2; electric tangent and flat S1 holonomy retained",
+    "theory": "Einstein-Maxwell_to_Weyl-Maxwell"
+  }
+}

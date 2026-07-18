@@ -11,7 +11,10 @@ from d_quotient_classical.relative import relative_linfinity_through_arity_three
 class RelativeLinfinityPreflightTests(unittest.TestCase):
     def test_current_gate_is_input_blocked(self):
         value = result.build()
-        self.assertTrue(all(status == "MISSING" for status in value["input_status"].values()))
+        self.assertEqual(value["input_status"]["relative_linear_triangle"], "IMPORTED")
+        self.assertEqual(value["input_status"]["einstein_product_q2_q3"], "MISSING")
+        self.assertEqual(value["input_status"]["weyl_product_q2_q3"], "MISSING")
+        self.assertFalse(value["claim_flags"]["ALL_SCIENTIFIC_INPUTS_IMPORTED"])
         self.assertNotIn("relative_branch_dictionary", value["dependency_refs"])
         self.assertFalse(value["scope_guard"]["berger_tensors_eligible"])
         self.assertFalse(value["claim_flags"]["Q4_AUTHORIZED"])
