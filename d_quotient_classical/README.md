@@ -348,6 +348,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   remain fail-closed:
   [`certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json`](certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json),
   [`reports/bach-flat-parent-green-stability.md`](reports/bach-flat-parent-green-stability.md)
+- Conformal-Nariai metric/all-row class: finite Diff--Weyl BV covariance,
+  including the affine Weyl-ghost term and cotangent shear, transports the
+  metric complex, the rank-310 cyclic SDR, and both causal homotopies to
+  `g_phi=exp(2 phi)g_N` whenever `sup|exp(phi)-1|<1/9`.  This open class stays
+  inside the parent ADM radius and contains the exact nonconstant consumer.
+  The transformed maps satisfy the SDR identities, causal chain identity,
+  adjoint reversal, and exact metric descent.  Bach-flat directions transverse
+  to this conformal orbit remain open:
+  [`certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json`](certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json),
+  [`reports/conformal-nariai-310-causal-transfer.md`](reports/conformal-nariai-310-causal-transfer.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

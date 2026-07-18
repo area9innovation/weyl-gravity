@@ -1402,6 +1402,25 @@ is now sharply the support-local metric/parent SDR stability theorem or its
 first normalized obstruction on this class; the parent Green theorem itself
 is no longer the issue.
 
+`CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1` closes the metric half on the full
+bounded-smooth conformal orbit
+
+\[
+g_\varphi=e^{2\varphi}g_N,
+\qquad
+\sup|e^\varphi-1|<\frac19.
+\]
+
+This class stays inside the radius-`1/4` parent ball because its largest
+spatial ADM deviation is `19/81`.  The finite BV map includes
+`omega_phi=omega-xi(phi)`, its forced cotangent shear, the conformal tractor
+splitting, and the transported gauge fermion.  Conjugation transports the
+metric and rank-310 differentials, `I,P,H`, both causal homotopies, cyclic
+adjoints, support, and exact metric descent.  Thus the remaining class-wide
+problem is strictly transverse: deform inside the Bach-flat locus away from
+the global conformal orbit and compute the first SDR obstruction or a new
+support-local correction.
+
 ### Work package C-G3: clock-family stability
 
 Replace the single Berger fixture by an audit of the full squashing interval,

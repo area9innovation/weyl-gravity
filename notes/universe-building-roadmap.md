@@ -193,7 +193,12 @@ hyperbolic Bach-flat background, and an explicit relative ADM ball of radius
 `1/4` around Nariai contains a nonconstant non-conformally-flat consumer.  The
 remaining gate is the support-local metric/parent SDR on that class, or its
 first normalized obstruction; do not promote the class-wide metric theorem
-from the universal parent result alone.
+from the universal parent result alone.  The metric theorem now does transport
+throughout the bounded-smooth conformal Nariai orbit
+`sup|exp(phi)-1|<1/9`, including the full rank-310 SDR, causal homotopies and
+metric descent.  The unresolved direction is therefore transverse to the
+conformal orbit inside the Bach-flat locus; the next certificate must expose
+the first transverse SDR obstruction or construct its support-local repair.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

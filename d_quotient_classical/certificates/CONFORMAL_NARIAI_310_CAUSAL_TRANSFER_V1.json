@@ -1,0 +1,192 @@
+{
+  "background_class": {
+    "Bach_flat": "four-dimensional Bach-flatness is conformally invariant and Bach(g_N)=0",
+    "Omega_interval": [
+      "8/9",
+      "10/9"
+    ],
+    "causal_sets": "J_g_phi^+/-=J_g_N^+/-",
+    "conformal_radius": "1/9",
+    "global_hyperbolicity": "positive conformal rescaling preserves the Nariai causal relation and Cauchy slices exactly",
+    "inside_parent_ADM_radius_1_over_4": true,
+    "manifold": "M=R x (S1 x S2)",
+    "max_spatial_ADM_deviation": "19/81",
+    "metrics": "g_phi=exp(2 phi) g_N",
+    "not_conformally_flat": "the nonzero Nariai Weyl tensor stays nonzero under every positive conformal factor",
+    "parameter_space": "U={phi in C_b^infinity(M,R): sup |exp(phi)-1|<1/9}",
+    "reference": "unit Nariai g_N=-dt^2+cosh(t)^2 dchi^2+dOmega_2^2",
+    "topology": "bounded-smooth Frechet topology; U is open by the C0 seminorm of exp(phi)-1"
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "metric transfer for Bach-flat deformations transverse to the conformal orbit",
+      "the entire relative radius-1/4 Bach-flat ADM ball",
+      "the untransported Nariai coordinate gauge fermion",
+      "uniform higher-Sobolev or Hadamard estimates without derivative bounds",
+      "nonlinear or quantum stability"
+    ],
+    "statement": "The complete metric and repaired 310-component Nariai BV complexes, their cyclic support-local SDR, and their advanced/retarded Green homotopies transport to the declared bounded-smooth global conformal orbit of Nariai, including the displayed nonconstant non-conformally-flat consumer."
+  },
+  "dependency_refs": {
+    "bach_flat_parent_stability": {
+      "artifact_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+      "sha256": "2ee8be4633c180f178ceff900cda2e6cc6b6f6c51bf7018e59cea3f63d5c14bf"
+    },
+    "finite_conformal_BV_transport": {
+      "artifact_id": "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1",
+      "path": "d_quotient_classical/certificates/CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1.json",
+      "sha256": "6555e983ae42095fdef87b79f6530c4f3a2293fec3e54d43135116e04ef26a7a"
+    },
+    "nariai_all_row_causal_control": {
+      "artifact_id": "NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
+      "sha256": "0e7774b93f54d5cdc45385b5b119d7508173622fb0d4a7ca93618738971ac2ff"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "BV_pairing_preserved": true,
+    "SDR_identities_transport": true,
+    "SDR_side_conditions_transport": true,
+    "affine_Weyl_ghost_term_included": true,
+    "all_row_chain_identity_transports": true,
+    "causal_sets_preserved": true,
+    "causal_support_transports": true,
+    "class_is_Bach_flat": true,
+    "class_is_not_conformally_flat": true,
+    "conformal_radius_inside_parent_ADM_ball": true,
+    "cotangent_antifield_shear_included": true,
+    "cyclic_adjoint_transports": true,
+    "finite_group_law_exact": true,
+    "finite_map_invertible": true,
+    "metric_chain_identity_transports": true,
+    "metric_descent_transports": true,
+    "nonconstant_consumer_inside_class": true,
+    "transported_gauge_fermion_declared": true
+  },
+  "finite_BV_canonical_map": {
+    "finite_fixture_cotangent_matrix": [
+      [
+        "1/r",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "a"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "finite_fixture_defects": {
+      "finite_group_composition": 0,
+      "full_inverse_left": 0,
+      "full_inverse_right": 0,
+      "odd_pairing_preserved": 0,
+      "tangent_inverse_left": 0,
+      "tangent_inverse_right": 0
+    },
+    "finite_fixture_tangent_matrix": [
+      [
+        "r",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-a",
+        "1"
+      ]
+    ],
+    "gauge_fermion": "transport the Nariai gauge fermion; do not reuse its untransformed coordinate coefficients",
+    "group_law": "U_psi U_phi=U_(phi+psi)",
+    "inverse": "U_phi^-1=U_-phi with inverse affine ghost/cotangent shear",
+    "minimal_rows": {
+      "g_star": "g_star_phi=exp(-2 phi)g_star",
+      "h": "h_phi=exp(2 phi)h",
+      "omega": "omega_phi=omega-xi(phi)",
+      "omega_star": "omega_star_phi=omega_star",
+      "xi": "xi_phi=xi",
+      "xi_star": "xi_star_phi=xi_star+d(phi)omega_star"
+    },
+    "odd_pairing": "U_phi^sharp Omega_BV U_phi=Omega_BV",
+    "parent_and_cone_rows": "transport normal-tractor and mapping-cone tangent rows by conformal naturality and every cotangent row by the inverse formal adjoint"
+  },
+  "flags": {
+    "ALL_BACH_FLAT_ADM_BALL_METRIC_THEOREM": false,
+    "CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1": true,
+    "FIXED_UNTRANSFORMED_GAUGE_FERMION": false,
+    "G3_OPEN_CONFORMAL_NARIAI_CLASS": true,
+    "HADAMARD_STATE": false,
+    "METRIC_BACH_GREEN_HOMOTOPY_ON_CONFORMAL_CLASS": true,
+    "METRIC_DESCENT_ON_CONFORMAL_CLASS": true,
+    "NONLINEAR_EXTENSION": false,
+    "QUANTUM_CLAIM": false,
+    "RANK_310_GREEN_HOMOTOPY_ON_CONFORMAL_CLASS": true,
+    "RANK_310_SDR_ON_CONFORMAL_CLASS": true,
+    "TRANSVERSE_BACH_FLAT_DEFORMATIONS": false,
+    "UNIFORM_HIGHER_SOBOLEV_ESTIMATES": false
+  },
+  "next_gate": "C_G3_TRANSVERSE_BACH_FLAT_METRIC_SDR_OBSTRUCTION",
+  "nonconstant_consumer": {
+    "Omega": "1+1/(10(1+t^2))",
+    "complete_metric_and_310_complex_transported": true,
+    "inside_conformal_radius": true,
+    "inside_parent_ADM_radius": true,
+    "lapse_deviation_sup": "1/10",
+    "non_conformally_flat": true,
+    "nonconstant": true,
+    "phi": "log(1+1/(10(1+t^2)))",
+    "spatial_ADM_deviation_sup": "21/100"
+  },
+  "result_id": "CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1",
+  "result_state": "G3_CONFORMAL_NARIAI_METRIC_AND_310_CAUSAL_CLASS_CERTIFIED",
+  "schema": "pure-weyl-conformal-nariai-310-causal-transfer-v1",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/bach_flat_parent_green_stability.py": "30f6bf20725ccfc13427ca9daa5291d333cf7bd9c4bc5be1dc0ec0e7844ad56f",
+    "d_quotient_classical/causal_transfer/conformal_nariai_310_causal_transfer.py": "6b47dd4624916bd419d0ee22c3a1b36c93d0ca7c4afb987321db775199121311",
+    "d_quotient_classical/causal_transfer/conformally_related_cyclic_causal_transfer.py": "c5aae98bd0bac0086bf4a81938ba7b2ea25d750ff603e857133a072a15225c5a",
+    "d_quotient_classical/causal_transfer/nariai_repaired_310_all_row_green_transfer.py": "4ca676352fb9eccfde29eddd1159fe176c0894a656240e949a37962cd7dfa425",
+    "d_quotient_classical/causal_transfer/tests/test_conformal_nariai_310_causal_transfer.py": "0cfab47bae95b6a7f56fac2f3f320c4e3097cb8e444968cb41ee248ad18ec797",
+    "d_quotient_classical/causal_transfer/verify_conformal_nariai_310_causal_transfer.py": "fe3b656a06d21979ba3be860e558783242f1b0e2d9cea750f5b4c4d1484022b9",
+    "d_quotient_classical/schema/conformal-nariai-310-causal-transfer-v1.schema.json": "cac7484678b5b101cfed5f89fce6c545c5cb53aab405983e73124df14ac9d5ad"
+  },
+  "transported_SDR": {
+    "cyclicity": "I_phi^sharp=P_phi and H_phi has the transported odd-cyclic adjoint",
+    "differentials": "Q_310,phi=U_310,phi Q_310,N U_310,phi^-1 and Q_met,phi=U_met,phi Q_met,N U_met,phi^-1",
+    "homotopy": "H_phi=U_310,phi H_N U_310,phi^-1",
+    "identities": "P_phi I_phi=1 and 1-I_phi P_phi=Q_310,phi H_phi+H_phi Q_310,phi",
+    "inclusion": "I_phi=U_310,phi I_N U_met,phi^-1",
+    "projection": "P_phi=U_met,phi P_N U_310,phi^-1",
+    "side_conditions": "H_phi^2=0, H_phi I_phi=0, P_phi H_phi=0",
+    "support": "all conjugating and SDR maps are pointwise or finite-order and support-nonincreasing"
+  },
+  "transported_causal_theorem": {
+    "adjoint_reversal": "Lambda_310,phi,+^sharp=Sigma_phi Lambda_310,phi,- Sigma_phi^-1",
+    "all_row_homotopy": "Lambda_310,phi,+/-=U_310,phi Lambda_310,N,+/- U_310,phi^-1=H_phi+I_phi Lambda_met,phi,+/- P_phi",
+    "chain_identity": "Q_310,phi Lambda_310,phi,+/-+Lambda_310,phi,+/- Q_310,phi=1",
+    "metric_descent": "P_phi Lambda_310,phi,+/- I_phi=Lambda_met,phi,+/-",
+    "metric_homotopy": "Lambda_met,phi,+/-=U_met,phi Lambda_met,N,+/- U_met,phi^-1",
+    "no_refactorization_needed": "the Nariai factorization is transported by the finite BV-canonical chain isomorphism; no fresh coefficient fit is used",
+    "support": "supp Lambda_phi,+/- f subset J_g_phi^+/-(supp f)=J_g_N^+/-(supp f)"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/conformal_nariai_310_causal_transfer.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_conformal_nariai_310_causal_transfer.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_conformal_nariai_310_causal_transfer",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/conformal-nariai-310-causal-transfer-v1.schema.json -d d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json"
+  ]
+}
