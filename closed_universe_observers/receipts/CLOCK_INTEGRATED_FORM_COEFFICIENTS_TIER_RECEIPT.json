@@ -1,0 +1,44 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "CLOCK_INTEGRATED_FORM_COEFFICIENTS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Validated clock-zero-moment detector one-form and spatial-coderivative coefficients are exported through two_j=4. The Green-kernel-weighted temporal coderivative, higher modes, infinite tail, full Green images and recoil remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_clock_integrated_form_profile_coefficients.py closed_universe_observers/verify_berger_clock_integrated_form_profile_coefficients.py closed_universe_observers/tests/test_berger_clock_integrated_form_profile_coefficients.py", "elapsed_seconds": "0.05", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "scoped observer diff"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_clock_integrated_form_profile_coefficients --check", "elapsed_seconds": "about 24", "status": "PASS", "scope": "deterministic interval certificate regeneration"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_clock_integrated_form_profile_coefficients", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent schema, modes, interval order and fail-closed replay"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_clock_integrated_form_profile_coefficients.py", "elapsed_seconds": "about 24", "status": "PASS", "scope": "certificate freshness, polarization distinction, spatial coderivative and claim boundary"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-clock-integrated-form-profile-coefficients-v1.schema.json -d closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json", "elapsed_seconds": "under 3", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "central observer comparison ledger"}
+  ],
+  "tier_2": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "486.14 pytest / 488.54 wall", "status": "ENVIRONMENT_FAILURE_AFTER_ASSERTIONS", "scope": "154 tests passed; two independent verifier print calls raised EDQUOT while concurrent /tmp use was 11 GB"},
+    {"command": "python3 -m pytest -q -s closed_universe_observers/tests/test_berger_detector_records.py::test_independent_detector_record_replay closed_universe_observers/tests/test_berger_global_detector_rods.py::test_persisted_certificate_and_independent_verifier", "elapsed_seconds": "3.61", "status": "PASS", "scope": "the two EDQUOT-affected consumers rerun after filesystem pressure subsided; both passed"}
+  ],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, full causal theorem, lifecycle promotion, or quantum claim."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json", "sha256": "fd66add7974cff5628195123c2420245b833b5e8089aab97529f4c4c0500afb5"},
+    {"path": "closed_universe_observers/generate_berger_clock_integrated_form_profile_coefficients.py", "sha256": "a442b10a0e10a743f4e55d3d6910bc85bc97862b9736da77281871bed0d40d81"},
+    {"path": "closed_universe_observers/verify_berger_clock_integrated_form_profile_coefficients.py", "sha256": "ba62a532e0dda4d95fb2348c7d286715a83ba3f222856ac87c27b81d15cb143a"},
+    {"path": "closed_universe_observers/tests/test_berger_clock_integrated_form_profile_coefficients.py", "sha256": "b56e027cfc6dc4908675676086927372eb008f6c4be3ff09658066daba6a6081"},
+    {"path": "closed_universe_observers/schema/berger-clock-integrated-form-profile-coefficients-v1.schema.json", "sha256": "5aedfba055272fffe3691c6f766dfb5da32a93d24c97aaf1b25a20657ca42f25"},
+    {"path": "closed_universe_observers/reports/berger-clock-integrated-form-profile-coefficients.md", "sha256": "afe94b10e9b18991140d3df2a923aa6394d4d31f9cca2adb7596876d1de210ee"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "21f4f0dfcf571591274c6067a30314815d39a1530166e13bc1ee508c0b6544e3"},
+    {"path": "closed_universe_observers/README.md", "sha256": "732862b00f75073c7ad34a60c0d1cc6669aef405586a6e48d53a083109967078"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "f6dc1bb29560fb71b429ed057106cf73f845042243d121d0058e161f3f3d5099"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "46b746c78e3e243c0e9939c8f420c690ead26b5d18fe87626049cefed0e92844"}
+  ],
+  "claim_flags": {
+    "CLOCK_ZERO_MOMENT_FORM_COEFFICIENTS_TWO_J0_TO_4_EXPORTED": true,
+    "SPATIAL_CODERIVATIVE_COEFFICIENTS_TWO_J0_TO_4_EXPORTED": true,
+    "FULL_FOUR_DIMENSIONAL_TIME_KERNEL_WEIGHTED_SOURCE_COEFFICIENTS_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED": false,
+    "ADVANCED_GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -243,6 +243,12 @@ monotone, and interval-encloses all clock averages through degree twelve.
 This closes the normalized scalar spacetime-profile coefficients through
 `two_j=4`.  Form-valued operations, higher modes, and the evaluated tail
 remain open.
+The form-profile successor applies the actual `dR0_1` and `dR1_2`
+polarizations in the detector-centred coframe.  It interval-encloses all
+three one-form components and their exact spatial coderivatives through
+`two_j=4`.  This is a clock-zero-moment block: the temporal coderivative must
+still be integrated against each mode Green kernel, and the high-mode tail
+remains open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

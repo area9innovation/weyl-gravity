@@ -331,6 +331,11 @@ clock-to-time conversion gives `lambda=sqrt(58)/288`; monotone directed-
 rounding Darboux sums enclose every required secant moment and produce the
 normalized scalar spacetime-profile coefficients through `two_j=4`.
 Polarization/coderivative operations and the high-mode tail remain open.
+The form-profile successor applies the actual detector-centred gradients for
+`dR0_1` and `dR1_2`, interval-encloses their three one-form components through
+`two_j=4`, and applies the exact spatial coderivative matrices.  The temporal
+coderivative remains a Green-kernel-weighted calculation, so this is not yet
+a full four-dimensional source or advanced image.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -546,3 +551,5 @@ The local `SU(2)` coefficient receipt is
 `closed_universe_observers/receipts/LOCAL_SU2_PROFILE_COEFFICIENTS_TIER_RECEIPT.json`.
 The clock-integrated scalar coefficient receipt is
 `closed_universe_observers/receipts/CLOCK_INTEGRATED_SCALAR_COEFFICIENTS_TIER_RECEIPT.json`.
+The clock-integrated form coefficient receipt is
+`closed_universe_observers/receipts/CLOCK_INTEGRATED_FORM_COEFFICIENTS_TIER_RECEIPT.json`.

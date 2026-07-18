@@ -276,6 +276,15 @@ secant moments through `k=6` produce normalized scalar spacetime-profile
 coefficients through `two_j=4`.  The form-valued polarization/coderivative
 chain, higher modes, and the evaluated Sobolev tail remain open.
 
+`BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS` now applies the two
+distinct polarizations.  In detector-centred coordinates their exact spatial
+gradients are `a(-c y2,c y1,y0)` and `a(y0,-y3,c^-1 y2)`.  Validated odd
+secant-moment bounds give all three one-form coefficient matrices through
+`two_j=4`, and the exact de Rham blocks give their spatial coderivatives.  The
+four-dimensional temporal coderivative is deliberately still open because
+it must be integrated against the mode Green kernel, not removed by a
+clock-zero-moment integral; the high-mode tail also remains open.
+
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
 integral.  Direct variation of the selected action gives the free emitter

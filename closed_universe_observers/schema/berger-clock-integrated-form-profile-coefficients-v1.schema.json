@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-clock-integrated-form-profile-coefficients-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "coefficient_convention", "odd_secant_moment_enclosures", "detectors", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-clock-integrated-form-profile-coefficients-v1"},
+    "result_id": {"const": "BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_CLOCK_ZERO_MOMENT_FORM_COEFFICIENTS_THROUGH_TWO_J4_EXPORTED_TIME_KERNEL_AND_TAIL_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5},
+    "coefficient_convention": {"type": "object"},
+    "odd_secant_moment_enclosures": {"type": "array", "minItems": 7, "maxItems": 7},
+    "detectors": {"type": "array", "minItems": 2, "maxItems": 2},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}
