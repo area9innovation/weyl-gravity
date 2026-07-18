@@ -144,6 +144,10 @@ def _is_certificate(path: str, data: dict[str, Any]) -> bool:
 
 
 def _family(path: str) -> str:
+    if path.startswith("closed_universe_observers/"):
+        return "Observers and apparatus"
+    if path.startswith("black_hole_programme/"):
+        return "Black holes and horizons"
     if path.startswith("d_quotient_classical/"):
         return "Classical / clocks"
     if path.startswith("bridge/"):
@@ -164,6 +168,17 @@ def _family(path: str) -> str:
 
 
 LAYOUT_TOPICS: dict[str, tuple[tuple[str, tuple[str, ...]], ...]] = {
+    "Observers and apparatus": (
+        ("Clocks, rods, and localized records", ("clock", "rod", "record", "detector", "profile", "smearing")),
+        ("Emitters and causal signals", ("emitter", "maxwell", "green", "causal", "retarded", "recoil")),
+        ("Observer maps and interactions", ("observer", "morphism", "q2", "q3", "interaction", "poisson")),
+        ("External comparison fixtures", ("closed_universe", "factorization", "comparison", "gram", "pointer")),
+    ),
+    "Black holes and horizons": (
+        ("Static backgrounds and horizons", ("background", "horizon", "static", "spherical")),
+        ("Charges, entropy, and the first law", ("charge", "generator", "lee_wald", "entropy", "first_law", "thermodynamic")),
+        ("Exterior propagation and stability", ("causal", "green", "exterior", "ringdown", "stability", "flux")),
+    ),
     "Classical / clocks": (
         ("Nonlinear brackets and D--Cartan", ("q2", "cartan", "arity", "nonlinear")),
         ("Clocks, light, and redshift", ("clock", "redshift", "maxwell", "observer")),
@@ -795,17 +810,25 @@ def public_graph(
         "  edge [fontname=\"Helvetica\", fontsize=8, color=\"#667085\", arrowsize=0.7];",
         "  label=\"How the candidate universe is being built\";",
         "  labelloc=t; fontsize=22;",
-        "  legend [shape=plaintext, label=\"Arrows show what each result enables\\nGreen = certified | amber = partial | red = obstruction | gray = open\", fontsize=10];",
+        "  legend [shape=plaintext, label=\"Arrows show what each achievement makes possible\\nGreen = demonstrated | gold = working example | red = limit found | gray = next frontier\", fontsize=10];",
     ]
+    public_progress = {
+        "certified": "DEMONSTRATED",
+        "partial": "WORKING EXAMPLE",
+        "obstruction": "LIMIT FOUND",
+        "open": "NEXT FRONTIER",
+    }
     for node in manifest["nodes"]:
         state = node["status"]
         if state not in COLORS:
             raise ValueError(f"unknown milestone status {state!r}")
         fill, border = COLORS[state]
         shape = "diamond" if node.get("kind") == "gate" else "box"
-        label = _wrap(node["label"], 24)
+        label = public_progress[state] + "\n" + _wrap(node["label"], 24)
         if node.get("detail"):
             label += "\n" + _wrap(node["detail"], 28)
+        if node.get("next"):
+            label += "\nNext: " + _wrap(node["next"], 25)
         lines.append(
             f"  {_dot_quote(node['id'])} [shape={shape}, label={_dot_quote(label)}, "
             f"fillcolor=\"{fill}\", color=\"{border}\", tooltip={_dot_quote(node.get('tooltip', label))}];"

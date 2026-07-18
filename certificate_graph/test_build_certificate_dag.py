@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 from dataclasses import replace
+import json
+from pathlib import Path
 import unittest
 
 from certificate_graph.build_certificate_dag import (
     Certificate,
     Edge,
     _cycles,
+    _family,
     _layout_topic,
     derive_edges,
 )
@@ -27,6 +30,43 @@ def certificate(path: str, result_id: str, payload: dict) -> Certificate:
 
 
 class CertificateDagTests(unittest.TestCase):
+    def test_new_programmes_have_dedicated_navigation_families(self) -> None:
+        self.assertEqual(
+            _family("closed_universe_observers/certificates/example.json"),
+            "Observers and apparatus",
+        )
+        self.assertEqual(
+            _family("black_hole_programme/certificates/example.json"),
+            "Black holes and horizons",
+        )
+
+    def test_public_milestones_use_plain_language_and_state_the_next_step(self) -> None:
+        manifest_path = Path(__file__).with_name("universe_milestones.json")
+        manifest = json.loads(manifest_path.read_text())
+        technical_tokens = (
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "ell3",
+            "bv",
+            "qme",
+            "brst",
+            "afn",
+            "cartan",
+            "slavnov",
+            "hadamard",
+            "lee-wald",
+            "rank-46",
+        )
+        for node in manifest["nodes"]:
+            displayed = " ".join(
+                str(node.get(field, "")) for field in ("label", "detail", "next")
+            ).lower()
+            self.assertTrue(node.get("next"), node["id"])
+            for token in technical_tokens:
+                self.assertNotIn(token, displayed, (node["id"], token))
+
     def test_path_dependency_points_from_input_to_consumer(self) -> None:
         upstream = certificate("certificates/up.json", "UP", {})
         downstream = certificate(

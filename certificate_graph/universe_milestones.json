@@ -1,11 +1,12 @@
 {
-  "schema": "pure-weyl-public-universe-milestones-v1",
+  "schema": "pure-weyl-public-universe-milestones-v2",
   "nodes": [
     {
       "id": "gauge_complex",
       "tier": "foundation",
-      "label": "Spacetime and gauge complex",
-      "detail": "exact classical equations",
+      "label": "Consistent spacetime rules",
+      "detail": "the gravity equations and their built-in redundancies fit together exactly",
+      "next": "test the same rules on more backgrounds and boundaries",
       "status": "certified",
       "evidence": [
         "field_bv_identification/certificates/minimal_bv_chain.json",
@@ -15,20 +16,24 @@
     {
       "id": "causality",
       "tier": "core",
-      "label": "Classical causality",
-      "detail": "future sources do not alter the past; cyclic transfer theorem exact",
+      "label": "Cause comes before effect",
+      "detail": "signals propagate forward in time in the starting universe and broader curved examples",
+      "next": "extend the proof to more boundaries and less symmetric spacetimes",
       "status": "certified",
       "evidence": [
         "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
         "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
-        "ABSTRACT_CYCLIC_CAUSAL_TRANSFER"
+        "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+        "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1",
+        "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"
       ]
     },
     {
       "id": "residual",
       "tier": "core",
-      "label": "Gauge reduction and pairing",
-      "detail": "physical descriptions counted once",
+      "label": "Equivalent descriptions counted once",
+      "detail": "coordinate and scale choices are removed without losing the surviving information",
+      "next": "repeat the reduction after boundaries and quantum effects are added",
       "status": "certified",
       "evidence": [
         "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
@@ -38,8 +43,9 @@
     {
       "id": "clock",
       "tier": "core",
-      "label": "Healthy matter clock",
-      "detail": "relational change; raw D null in the tested linear sector",
+      "label": "A clock inside the universe",
+      "detail": "healthy matter records change while the total time shift remains redundant in the tested sector",
+      "next": "test broader clocks and fully backreacted measuring devices",
       "status": "certified",
       "evidence": [
         "POSITIVE_BERGER_CLOCK_BACKGROUND",
@@ -49,8 +55,9 @@
     {
       "id": "interactions",
       "tier": "classical_physics",
-      "label": "First interaction layer",
-      "detail": "mixed q2/q3 and retained ell3 exact; invariant meaning open",
+      "label": "Gravity and light interact",
+      "detail": "the first nonlinear interaction laws close exactly",
+      "next": "decide whether the remaining interaction survives the next derivative order",
       "status": "certified",
       "evidence": [
         "BERGER_SUPPORT_LOCAL_Q3",
@@ -62,41 +69,50 @@
     {
       "id": "berger_branch_carrier",
       "tier": "classical_physics",
-      "label": "Berger branch carrier",
-      "detail": "rank 46 cyclic carrier exact; physical projector open",
+      "label": "Familiar and extra gravity waves",
+      "detail": "both kinds are identified, but the attempted local separation has an exact obstruction",
+      "next": "find a larger or differently organized description",
       "status": "partial",
       "evidence": [
-        "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
+        "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1",
+        "BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1",
+        "BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1"
       ]
     },
     {
       "id": "branch_mixing",
       "tier": "nonlinear_selection",
-      "label": "Residual branch mixing",
-      "detail": "retained ell3 exact; Einstein/extra/Maxwell table open",
+      "label": "Can interactions switch wave types?",
+      "detail": "the interaction can be removed at the first tested derivative levels",
+      "next": "complete the decisive next-order calculation",
       "status": "partial",
       "evidence": [
         "BERGER_RETAINED_MIXED_ELL3_TRANSFER",
-        "BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1"
+        "BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1",
+        "BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1",
+        "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_SOURCE_V1.json"
       ]
     },
     {
       "id": "taub_selection",
       "tier": "nonlinear_selection",
-      "label": "Nonlinear branch selection",
-      "detail": "pure extra obstructed; selected mixed faces extend",
+      "label": "Which waves survive nonlinear consistency?",
+      "detail": "broad balanced families continue, while exceptional resonances fail",
+      "next": "classify the remaining exceptional and infinite-wave cases",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
-        "EINSTEIN_MAXWELL_WEYL_FULL_GENERIC_K0_MOMENT_MAP_CONE",
-        "EINSTEIN_MAXWELL_WEYL_ELL2_AXIAL_NEUTRAL_FACE_SECOND_ORDER"
+        "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_K0_COMBINED_CONE_SECOND_ORDER",
+        "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_SMOOTH_GLOBAL_SECOND_ORDER",
+        "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_TWIST_RESONANCE"
       ]
     },
     {
       "id": "einstein_weyl_relative",
       "tier": "classical_physics",
-      "label": "Einstein gravity inside Weyl gravity",
-      "detail": "axial triangle and polar physical module; global triangle open",
+      "label": "Ordinary relativity inside the model",
+      "detail": "Einstein-like solutions and their extra companions are separated at the linear level",
+      "next": "prove which sector remains closed under full evolution",
       "status": "partial",
       "evidence": [
         "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
@@ -107,23 +123,24 @@
     {
       "id": "light",
       "tier": "classical_physics",
-      "label": "Classical light",
-      "detail": "causal Maxwell response and mixed q2/q3; localization open",
+      "label": "Light signals",
+      "detail": "electromagnetic signals propagate causally from localized sources",
+      "next": "control the complete infinite set of spatial wave patterns",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_CHEVRETON_TANGENT",
-        "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
-        "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
         "BERGER_RETARDED_COMPACT_SOURCE_MAXWELL_SIGNAL",
-        "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
-        "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE"
+        "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE",
+        "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER",
+        "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY"
       ]
     },
     {
       "id": "gravity_waves",
       "tier": "classical_physics",
       "label": "Gravitational waves",
-      "detail": "standard waves; extra axial and polar equation modules",
+      "detail": "familiar waves and additional fourth-order waves both exist and carry measurable currents",
+      "next": "test radiation at infinity, stability and realistic detectors",
       "status": "partial",
       "evidence": [
         "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
@@ -134,34 +151,50 @@
     {
       "id": "redshift",
       "tier": "observers",
-      "label": "Relational redshift",
-      "detail": "actual retarded clock observable, 1+z=2; localization open",
+      "label": "Clocks measure redshift",
+      "detail": "an exact retarded example gives 1+z=2 and now feeds localized records",
+      "next": "complete a fully local frequency comparison including recoil",
       "status": "partial",
       "evidence": [
-        "BERGER_RELATIONAL_REDSHIFT_PREFLIGHT",
         "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
-        "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE"
+        "BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE",
+        "BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA",
+        "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER"
       ]
     },
     {
       "id": "detector",
       "tier": "observers",
-      "label": "Relational detector response",
-      "detail": "linear records and separate-axis rod gravity; mixed apparatus open",
-      "status": "partial",
+      "label": "Local emitters and detectors",
+      "detail": "two dynamical sources create two distinct persistent records",
+      "next": "complete detector recoil and infinite-wave control",
+      "status": "certified",
       "evidence": [
-        "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
-        "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
-        "BERGER_SMEARED_RETARDED_TWO_SOURCE_TWO_DETECTOR_TRANSFER",
-        "BERGER_OBSERVER_APPARATUS_INTERACTION_IMPORT_GATE",
-        "BERGER_84_ROW_ROD_GRAVITY_UNARY"
+        "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
+        "BERGER_AFFINE_K_OBSERVER_MORPHISM",
+        "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+        "BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY",
+        "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY"
+      ]
+    },
+    {
+      "id": "quantum_observables",
+      "tier": "quantum_algebra",
+      "label": "Quantum observables",
+      "detail": "causal commutators for free curvature measurements are defined exactly",
+      "next": "construct a physical quantum state and prove positivity",
+      "status": "certified",
+      "evidence": [
+        "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
+        "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR"
       ]
     },
     {
       "id": "hadamard",
       "tier": "quantum_inputs",
-      "label": "Hadamard quantum state",
-      "detail": "local singularity controlled; global state open",
+      "label": "A physical quantum vacuum",
+      "detail": "the required short-distance form is known locally, but no global state exists",
+      "next": "construct a global state compatible with all gauge rules",
       "status": "partial",
       "evidence": [
         "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
@@ -171,120 +204,145 @@
     {
       "id": "anomalies",
       "tier": "quantum_inputs",
-      "label": "Quantum anomaly and QME",
-      "detail": "candidate classes known; restoration open",
+      "label": "Do quantum effects break the rules?",
+      "detail": "all local failure types are classified and one gravitational coefficient is matched",
+      "next": "compute the actual breaking and decide whether it can be repaired",
       "status": "partial",
       "evidence": [
-        "ANOMALY_CANDIDATES_DIMENSION_FOUR",
-        "LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON"
+        "AFN0_DIFF_MIXED_MINIMAL_BV_H14",
+        "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
+        "REPOSITORY_ROUND_S4_EULER_COEFFICIENT",
+        "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"
       ]
     },
     {
       "id": "lensing",
       "tier": "observers",
       "label": "Gravitational lensing",
-      "detail": "localized observable not yet built",
+      "detail": "no complete local light-bending observable has been built yet",
+      "next": "trace localized light through dynamical curvature",
       "status": "open",
       "evidence": []
     },
     {
       "id": "mass",
       "tier": "future_physics",
-      "label": "Physical mass scale and massive matter",
-      "detail": "mass generation and stable massive excitations open",
+      "label": "Where particle masses come from",
+      "detail": "massive apparatus fields can be used, but the universe does not generate its own mass scale",
+      "next": "build a stable mechanism that creates physical masses",
       "status": "open",
       "evidence": []
     },
     {
       "id": "nonabelian_matter",
       "tier": "future_physics",
-      "label": "Non-Abelian gauge fields and chiral matter",
-      "detail": "Yang--Mills groups and fermion spectrum open",
+      "label": "The other forces and matter",
+      "detail": "electromagnetism is present; strong, weak and chiral matter sectors are not",
+      "next": "add strong-force, weak-force and fermion fields",
       "status": "open",
       "evidence": []
     },
     {
       "id": "particles",
       "tier": "future_physics",
-      "label": "Quantum particles",
-      "detail": "physical state and scattering interpretation open",
+      "label": "Quantum particles and scattering",
+      "detail": "a free observable algebra exists, but no physical particle state or scattering theory",
+      "next": "add a quantum state, positivity and interactions",
       "status": "open",
       "evidence": []
     },
     {
+      "id": "black_hole_static",
+      "tier": "strong_gravity",
+      "label": "Black holes at rest",
+      "detail": "a static family has regular horizons, energy, entropy and an exact first law",
+      "next": "allow time-dependent waves and horizon flux",
+      "status": "certified",
+      "evidence": [
+        "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND",
+        "PURE_WEYL_BH1A_NORMALIZED_GENERATOR"
+      ]
+    },
+    {
       "id": "black_holes",
       "tier": "future_physics",
-      "label": "Black holes",
-      "detail": "horizon phase space and stability open",
+      "label": "Black holes in motion",
+      "detail": "time-dependent horizon physics, ringdown and stability are not built yet",
+      "next": "construct the exterior phase space and perturbation equations",
       "status": "open",
       "evidence": []
     },
     {
       "id": "gut",
       "tier": "unification",
-      "label": "Unified gauge--matter sector",
-      "detail": "GUT candidate: group, anomalies, breaking and recovery open",
+      "label": "One theory for the matter forces",
+      "detail": "no unified group or matter family has been selected",
+      "next": "unify strong, weak and electromagnetic matter consistently",
       "status": "open",
       "evidence": []
     },
     {
       "id": "cosmology",
       "tier": "cosmology",
-      "label": "Cosmology and dark sector",
-      "detail": "stable observable model not yet built",
+      "label": "Galaxies and cosmic expansion",
+      "detail": "no stable observational cosmology or dark sector has been built yet",
+      "next": "build expanding solutions, lensing and matter phenomenology",
       "status": "open",
       "evidence": []
     }
   ],
   "edges": [
-    {"from": "gauge_complex", "to": "causality", "label": "constrains propagation"},
-    {"from": "gauge_complex", "to": "residual", "label": "identifies redundancy"},
-    {"from": "gauge_complex", "to": "clock", "label": "couples matter"},
-    {"from": "gauge_complex", "to": "light", "label": "supports fields"},
-    {"from": "gauge_complex", "to": "gravity_waves", "label": "linearizes"},
-    {"from": "gauge_complex", "to": "einstein_weyl_relative", "label": "defines both complexes"},
-    {"from": "gauge_complex", "to": "berger_branch_carrier", "label": "defines the retained carrier"},
-    {"from": "einstein_weyl_relative", "to": "gravity_waves", "label": "separates familiar and extra modes"},
-    {"from": "einstein_weyl_relative", "to": "interactions", "label": "tests nonlinear closure"},
-    {"from": "residual", "to": "interactions", "label": "defines physical transfer"},
-    {"from": "residual", "to": "berger_branch_carrier", "label": "defines the retained rows"},
-    {"from": "causality", "to": "interactions", "label": "limits influence"},
-    {"from": "interactions", "to": "branch_mixing", "label": "supplies retained ell3"},
-    {"from": "berger_branch_carrier", "to": "branch_mixing", "label": "must supply the projector"},
-    {"from": "gravity_waves", "to": "taub_selection", "label": "supplies branch tangents"},
-    {"from": "interactions", "to": "taub_selection", "label": "tests second-order extension"},
+    {"from": "gauge_complex", "to": "causality", "label": "makes propagation testable"},
+    {"from": "gauge_complex", "to": "residual", "label": "identifies equivalent descriptions"},
+    {"from": "gauge_complex", "to": "clock", "label": "allows matter clocks"},
+    {"from": "gauge_complex", "to": "light", "label": "supports electromagnetic fields"},
+    {"from": "gauge_complex", "to": "gravity_waves", "label": "supports gravitational waves"},
+    {"from": "gauge_complex", "to": "einstein_weyl_relative", "label": "allows comparison with ordinary relativity"},
+    {"from": "gauge_complex", "to": "berger_branch_carrier", "label": "reveals familiar and extra waves"},
+    {"from": "gauge_complex", "to": "black_hole_static", "label": "supports static strong-gravity solutions"},
+    {"from": "einstein_weyl_relative", "to": "gravity_waves", "label": "separates familiar and extra patterns"},
+    {"from": "einstein_weyl_relative", "to": "interactions", "label": "tests whether ordinary gravity stays closed"},
+    {"from": "residual", "to": "interactions", "label": "removes redundant interaction directions"},
+    {"from": "residual", "to": "berger_branch_carrier", "label": "defines the surviving wave information"},
+    {"from": "causality", "to": "interactions", "label": "limits influence to the causal future"},
+    {"from": "interactions", "to": "branch_mixing", "label": "tests whether wave types mix"},
+    {"from": "berger_branch_carrier", "to": "branch_mixing", "label": "requires a different exact separation"},
+    {"from": "gravity_waves", "to": "taub_selection", "label": "supplies candidate waves"},
+    {"from": "interactions", "to": "taub_selection", "label": "tests whether waves continue nonlinearly"},
     {"from": "clock", "to": "redshift", "label": "supplies readings"},
-    {"from": "light", "to": "redshift", "label": "carries frequency"},
-    {"from": "interactions", "to": "redshift", "label": "preserves observable"},
+    {"from": "light", "to": "redshift", "label": "carries timing information"},
+    {"from": "interactions", "to": "redshift", "label": "tests the measurement after backreaction"},
     {"from": "clock", "to": "detector", "label": "labels local records"},
-    {"from": "light", "to": "detector", "label": "drives Maxwell response"},
-    {"from": "gravity_waves", "to": "detector", "label": "drives tidal response"},
-    {"from": "causality", "to": "detector", "label": "retards response"},
-    {"from": "light", "to": "lensing", "label": "traces null paths"},
-    {"from": "gravity_waves", "to": "lensing", "label": "supplies curvature"},
-    {"from": "causality", "to": "hadamard", "label": "fixes commutator"},
-    {"from": "residual", "to": "hadamard", "label": "selects observables"},
-    {"from": "interactions", "to": "anomalies", "label": "feeds quantum identities"},
-    {"from": "branch_mixing", "to": "anomalies", "label": "labels residual quantum channels"},
-    {"from": "hadamard", "to": "particles", "label": "supplies short-distance state"},
-    {"from": "anomalies", "to": "particles", "label": "restores quantum gauge identity"},
+    {"from": "light", "to": "detector", "label": "drives detector response"},
+    {"from": "gravity_waves", "to": "detector", "label": "can drive future tidal detectors"},
+    {"from": "causality", "to": "detector", "label": "ensures records follow sources"},
+    {"from": "light", "to": "lensing", "label": "traces light paths"},
+    {"from": "gravity_waves", "to": "lensing", "label": "supplies curved spacetime"},
+    {"from": "causality", "to": "quantum_observables", "label": "fixes causal commutators"},
+    {"from": "residual", "to": "quantum_observables", "label": "removes redundant measurements"},
+    {"from": "quantum_observables", "to": "hadamard", "label": "provides the algebra that needs a state"},
+    {"from": "interactions", "to": "anomalies", "label": "tests quantum consistency"},
+    {"from": "branch_mixing", "to": "anomalies", "label": "tracks interacting quantum channels"},
+    {"from": "hadamard", "to": "particles", "label": "supplies a physical quantum state"},
+    {"from": "anomalies", "to": "particles", "label": "checks whether quantum rules survive"},
     {"from": "taub_selection", "to": "particles", "label": "restricts nonlinear candidates"},
-    {"from": "clock", "to": "mass", "label": "can supply a scale"},
-    {"from": "interactions", "to": "mass", "label": "stabilizes matter"},
+    {"from": "clock", "to": "mass", "label": "may supply a physical scale"},
+    {"from": "interactions", "to": "mass", "label": "must stabilize massive matter"},
     {"from": "mass", "to": "particles", "label": "creates rest excitations"},
-    {"from": "gauge_complex", "to": "nonabelian_matter", "label": "defines gauge structure"},
-    {"from": "interactions", "to": "nonabelian_matter", "label": "couples gauge and matter fields"},
+    {"from": "gauge_complex", "to": "nonabelian_matter", "label": "provides room for additional forces"},
+    {"from": "interactions", "to": "nonabelian_matter", "label": "couples forces and matter"},
     {"from": "nonabelian_matter", "to": "particles", "label": "supplies charged species"},
-    {"from": "nonabelian_matter", "to": "gut", "label": "supplies group and representations"},
-    {"from": "mass", "to": "gut", "label": "supplies symmetry-breaking scale"},
-    {"from": "anomalies", "to": "gut", "label": "tests quantum consistency"},
-    {"from": "particles", "to": "gut", "label": "tests physical spectrum"},
-    {"from": "gravity_waves", "to": "black_holes", "label": "tests perturbations"},
-    {"from": "causality", "to": "black_holes", "label": "defines horizons"},
+    {"from": "nonabelian_matter", "to": "gut", "label": "supplies forces and matter families"},
+    {"from": "mass", "to": "gut", "label": "supplies a symmetry-breaking scale"},
+    {"from": "anomalies", "to": "gut", "label": "tests consistency"},
+    {"from": "particles", "to": "gut", "label": "tests the physical spectrum"},
+    {"from": "black_hole_static", "to": "black_holes", "label": "adds motion, waves and flux"},
+    {"from": "gravity_waves", "to": "black_holes", "label": "drives ringdown"},
+    {"from": "causality", "to": "black_holes", "label": "defines horizon evolution"},
     {"from": "redshift", "to": "cosmology", "label": "builds observations"},
     {"from": "lensing", "to": "cosmology", "label": "maps matter"},
     {"from": "mass", "to": "cosmology", "label": "supplies matter"},
-    {"from": "gut", "to": "cosmology", "label": "supplies unified matter model"},
+    {"from": "gut", "to": "cosmology", "label": "supplies a unified matter model"},
     {"from": "black_holes", "to": "cosmology", "label": "tests strong gravity"}
   ]
 }

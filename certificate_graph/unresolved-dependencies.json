@@ -1,5 +1,33 @@
 {
-  "dependency_cycles": [],
+  "dependency_cycles": [
+    [
+      "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
+      "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE.json",
+      "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+      "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+      "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY.json",
+      "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+      "closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_UNARY_TIER_RECEIPT.json",
+      "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json",
+      "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY.json",
+      "closed_universe_observers/ledgers/comparison_ledger.json",
+      "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+      "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "d_quotient_classical/certificates/BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE.json",
+      "closed_universe_observers/certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
+      "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json",
+      "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "closed_universe_observers/certificates/BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA.json"
+    ],
+    [
+      "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json",
+      "quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json",
+      "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json"
+    ]
+  ],
   "duplicate_result_ids": {
     "BERGER_COUPLED_CYCLICITY_REPAIR_INPUT": [
       "quantum-weyl/transfer/fixtures/berger-coupled-cyclicity-repair-accepted-input.json",
@@ -12,26 +40,18 @@
     "REDUCED_MODE_SPECTRAL_BOOTSTRAP": [
       "quantum-weyl/certificates/REDUCED_MODE_SPECTRAL_BOOTSTRAP.json",
       "quantum-weyl/spectral/reduced_modes/certificates/eal_branch_ledger.json"
+    ],
+    "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1": [
+      "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
+      "quantum-weyl/spectral/euclidean/fixtures/SYNTHETIC_ROUND_S4_TT_HESSIAN_DICTIONARY.json"
     ]
   },
   "hash_mismatches": [
     {
-      "actual": "bd46ba02eaa31d9b63ada4e6d592b123ebd41dfdef1b642a1bf47daf105d24fa",
+      "actual": "2738611e3ec5a5651f9fe387cde05aca723894b1af0bfcf4bb99ecab543d97b4",
       "consumer": "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
-      "expected": "72424834ae76bc64fa06613149cbd07f58af7fb546229e1617c7a50f3c4de1b1",
-      "reference": "d_quotient_programme/registry/generators.json"
-    },
-    {
-      "actual": "f7c020858119feee34cb01b5be13823747f6e2ffc405c13b5c982bec23b8cb8a",
-      "consumer": "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
-      "expected": "3a5101be8eb1216afa77668024ed0876b320883895f3a769b0ef4a85a61786f9",
+      "expected": "f7c020858119feee34cb01b5be13823747f6e2ffc405c13b5c982bec23b8cb8a",
       "reference": "d_quotient_programme/registry/phase_spaces.json"
-    },
-    {
-      "actual": "cf18c6a5f64ecc8c12cee9bec651839a8f9920be45ae2190dd8065ffe5621f81",
-      "consumer": "quantum-weyl/cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
-      "expected": "055429d30de3cdd6965857f655236807cfdaa4283e7f381c155224d579c199eb",
-      "reference": "quantum-weyl/lorentzian/certificates/BERGER_26_ROW_GREEN_HADAMARD_ENDPOINT_CONTRACT.json"
     },
     {
       "actual": "35d75f22d9cb6703b2cd4283c5e1ccde296045dc42fcc3bf177308c9ce76f5b3",
@@ -528,6 +548,18 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
+      "evidence": "team_contributions.59.payload.evidence.path",
+      "relation": "REGISTERS",
+      "source": "cert:78fd72a076a924f2",
+      "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "verification_commands.1",
+      "relation": "VERIFIES_WITH",
+      "source": "cert:7e40c569412a2639",
+      "target": "cert:2b6e7cdf5b3bb78a"
+    },
+    {
       "evidence": "team_contributions.6.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:7f9943539a215057",
@@ -724,6 +756,12 @@
       "relation": "REGISTERS",
       "source": "cert:a7300202a1379bb7",
       "target": "cert:cfecf65372e59d7b"
+    },
+    {
+      "evidence": "verification_commands.0",
+      "relation": "VERIFIES_WITH",
+      "source": "cert:a83f87b30d3ae504",
+      "target": "cert:2b6e7cdf5b3bb78a"
     },
     {
       "evidence": "signoff_evidence.0.certificate_path",
@@ -1053,6 +1091,14 @@
       "support": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_Q2_PAYLOAD.json"
     },
     {
+      "consumer": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "support": "closed_universe_observers/fixtures/berger_exact_detector_smearings_input.json"
+    },
+    {
+      "consumer": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "support": "closed_universe_observers/fixtures/berger_emitter_switch_profiles_input.json"
+    },
+    {
       "consumer": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
       "support": "closed_universe_observers/fixtures/berger_localized_detector_records_input.json"
     },
@@ -1083,6 +1129,14 @@
     {
       "consumer": "closed_universe_observers/receipts/DETECTOR_RECORD_HARDENING_TIER_RECEIPT.json",
       "support": "closed_universe_observers/fixtures/rank_one_cloned_observer_input.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/EXACT_DETECTOR_SMEARINGS_ADVANCED_COVECTORS_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/fixtures/berger_exact_detector_smearings_input.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/fixtures/berger_emitter_switch_profiles_input.json"
     },
     {
       "consumer": "closed_universe_observers/receipts/FIRST_COMPARISON_TIER_RECEIPT.json",
@@ -1217,6 +1271,10 @@
       "support": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json"
     },
     {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json",
+      "support": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json"
+    },
+    {
       "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_PROLONGATION_BRANCH_CARRIER_V1.json",
       "support": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/rough_tensor_wave.json"
     },
@@ -1261,6 +1319,34 @@
       "support": "d_quotient_classical/generated/berger_retained_46_stf2_prolongation_branch_carrier/stf2_wave_F.json"
     },
     {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json",
+      "support": "d_quotient_classical/generated/berger_metric_lower_by_two_biwave/lower_by_two_remainder.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1.json",
+      "support": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1.json",
+      "support": "d_quotient_classical/certificates/BERGER_RETAINED_TYPED_MIXED_ELL2_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1.json",
+      "support": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1.json",
+      "support": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1.json",
+      "support": "d_quotient_classical/certificates/BERGER_RETAINED_TYPED_MIXED_ELL2_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1.json",
+      "support": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_PAYLOAD.json"
+    },
+    {
       "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_TRANSFER.json",
       "support": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_PAYLOAD.json"
     },
@@ -1275,6 +1361,18 @@
     {
       "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_TRANSFER.json",
       "support": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_FULL_BV_REDEFINITION_V1.json",
+      "support": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_FULL_BV_REDEFINITION_V1.json",
+      "support": "d_quotient_classical/certificates/BERGER_RETAINED_TYPED_MIXED_ELL2_PAYLOAD.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_FULL_BV_REDEFINITION_V1.json",
+      "support": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_PAYLOAD.json"
     },
     {
       "consumer": "d_quotient_classical/certificates/BERGER_ROD_TADPOLE_COMPACT_SOLVABILITY_GATE.json",
@@ -1559,6 +1657,10 @@
     {
       "consumer": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
       "support": "d_quotient_programme/contributions/quantum-relative-einstein-weyl-readiness.json"
+    },
+    {
+      "consumer": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
+      "support": "d_quotient_programme/contributions/quantum-vacuum-curvature-causal-algebra.json"
     },
     {
       "consumer": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
