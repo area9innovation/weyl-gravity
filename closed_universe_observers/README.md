@@ -52,6 +52,8 @@ python3 -m closed_universe_observers.generate_berger_dynamical_emitter_rank_two 
 python3 -m closed_universe_observers.verify_berger_dynamical_emitter_rank_two
 python3 -m closed_universe_observers.generate_berger_dynamical_emitter_recoil_preflight --check
 python3 -m closed_universe_observers.verify_berger_dynamical_emitter_recoil_preflight
+python3 -m closed_universe_observers.generate_berger_emitter_switch_profiles --check
+python3 -m closed_universe_observers.verify_berger_emitter_switch_profiles
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -176,8 +178,15 @@ emitter-data signal is absolute order `g`, the absolute `g^2` detector term
 vanishes by bipartite `A`--`K` parity, and the first feedback is absolute
 order `g^3` (relative order `g^2`).  Its operator and formal rank stability
 are exact.  A numerical detector coefficient is input-blocked until explicit
-compact preparation profiles, switch functions, and their massive Green
-images are exported.
+compact preparation profiles and their massive Green images are exported.
+The switch-profile successor closes the other half of that input gate with
+two exact nonnegative flat bumps normalized to unit clock integral.  After
+the exact conversion `dTheta/dt=3/4`, `h_0` lies strictly before `D0` and
+`h_1` lies strictly between `D0` and `D1`, with physical-time margins `1/24`
+and clock-phase margins `1/32`.  The remaining Cauchy profiles cannot be
+chosen as arbitrary explicit bumps: they must be selected against the actual
+advanced detector covectors so that the leading detector functionals do not
+annihilate them.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

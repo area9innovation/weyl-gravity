@@ -206,8 +206,18 @@ emitter-data record has only odd absolute coupling orders: the leading term is
 `K_b^(0)->A^(1)->K_c^(2)->A^(3)->Q_a`; the leading determinant remains the
 nonzero constant term in the relative-recoil formal ring.  A numerical
 coefficient is not yet defined by the artifacts because the rank theorem
-exports an existence-level basis rule rather than serialized compact data,
-exact switches, and evaluated massive Green images.
+exports an existence-level basis rule rather than serialized detector-selected
+compact Cauchy data and evaluated massive Green images.
+
+`BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES` now serializes the two
+previously open switches.  Each is a standard nonnegative flat bump divided
+by its exact clock radius and the positive core integral, hence has compact
+`C-infinity` support and unit clock integral.  Exact conversion with
+`dTheta/dt=3/4` puts `h_0` before `D0` and `h_1` strictly between `D0` and
+`D1`, with three physical margins `1/24` (clock margins `1/32`).  This leaves
+the detector-selected compact massive-two-form Cauchy profiles and their
+massive Green images open.  An arbitrary explicit bump is not sufficient,
+because it could lie in the kernel of the advanced detector covector.
 
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
@@ -233,9 +243,11 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Export explicit compact `u_0,u_1` and normalized `h_0,h_1`, evaluate their
-   massive Green images, and then compute the absolute-`g^3` (relative-`g^2`)
-   detector recoil coefficient.  In parallel, use the exported emitter stress
+1. Using the certified exact normalized `h_0,h_1`, construct explicit compact
+   `u_0,u_1` selected against the actual advanced detector covectors, evaluate
+   their massive Green images, and then compute the absolute-`g^3`
+   (relative-`g^2`) detector recoil coefficient.  In parallel, use the
+   exported emitter stress
    and clock-switch source to refine the certified covariant 108-row
    `q1 q2` identity into a support-local PBW payload before solving a
    backreacted gravity-clock branch.

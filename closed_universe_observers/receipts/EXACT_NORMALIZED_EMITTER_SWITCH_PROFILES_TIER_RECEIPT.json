@@ -1,0 +1,52 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Two exact nonnegative compact C-infinity relational switches h_0,h_1 are serialized with unit clock-integral normalization and exact causal ordering relative to D0,D1. Physical time and clock phase are converted using dTheta/dt=3/4, and mutation rails detect lost order, normalization, or flatness. Detector-selected compact massive-two-form Cauchy profiles, massive Green images, detector recoil integrals, the absolute-g^3 coefficient, the support-local PBW payload, backreaction, finite-parameter Green theory, the full Dirac algebra, and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_emitter_switch_profiles.py closed_universe_observers/verify_berger_emitter_switch_profiles.py closed_universe_observers/tests/test_berger_emitter_switch_profiles.py", "elapsed_seconds": "0.03", "status": "PASS", "scope": "producer, verifier, and focused tests"},
+    {"command": "git diff --check on explicit observer-owned paths; SHA-256 replay; exact staged-diff inspection", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "fixture, input/output schemas, producer, verifier, test, certificate, report, receipt, comparison ledger, README, observer brief, and comparison report; unrelated shared-tree work and the shared roadmap are excluded from staging"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_emitter_switch_profiles --check", "elapsed_seconds": "0.43", "status": "PASS", "scope": "input/dependency hashes, exact rational time conversion, bump normalization, causal margins, mutation results, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_emitter_switch_profiles", "elapsed_seconds": "0.43", "status": "PASS", "scope": "independent schema, dependency, causal-order, normalization, smoothness, and mutation replay"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_emitter_switch_profiles.py", "elapsed_seconds": "0.41 pytest / 0.75 wall", "status": "PASS", "scope": "all 6 switch support, conversion, normalization, schema-identity, mutation, and fail-closed tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-emitter-switch-profiles-input-v1.schema.json -d closed_universe_observers/fixtures/berger_emitter_switch_profiles_input.json", "elapsed_seconds": "11.02", "status": "PASS", "scope": "strict Draft 2020-12 authoritative-input validation with exact ordered h_0/h_1 identities"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-exact-normalized-emitter-switch-profiles-v1.schema.json -d closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json", "elapsed_seconds": "1.59", "status": "PASS", "scope": "strict Draft 2020-12 certificate validation"},
+    {"command": "python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": "0.13", "status": "PASS", "scope": "historical imports, bridge hashes, exact-switch artifact import, and fail-closed Cauchy-profile/Green/PBW gates"}
+  ],
+  "tier_2": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "200.56 pytest / 201.88 wall", "status": "PASS", "scope": "all 113 closed-universe observer tests on final content; required because the central comparison ledger changed"}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "This is an observer-owned exact input serialization and causal-order certificate. It does not change shared core algebra, evaluate a Green image or recoil coefficient, export the PBW payload, solve a backreacted branch, promote finite-parameter/all-orders propagation, freeze a release, or make a quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json", "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"},
+    {"path": "closed_universe_observers/fixtures/berger_emitter_switch_profiles_input.json", "sha256": "fea91c3b7ad1c5785c9f6df4594408e14167afb32d2c1156760dd078809488a1"},
+    {"path": "closed_universe_observers/schema/berger-emitter-switch-profiles-input-v1.schema.json", "sha256": "a6ac232ac14542498ec3a62179911fd7d6164f9bba7219a718c524c998d2f83e"},
+    {"path": "closed_universe_observers/schema/berger-exact-normalized-emitter-switch-profiles-v1.schema.json", "sha256": "29ae4920e0eee3e68a0cdc22d1a6d4a4e0eab1fc2ecd35605276ca03b28ed5ac"},
+    {"path": "closed_universe_observers/generate_berger_emitter_switch_profiles.py", "sha256": "9d787640834cc0973720e60c65f0cc3b31ac9d6e57e85442eaf20e0dad6ba76a"},
+    {"path": "closed_universe_observers/verify_berger_emitter_switch_profiles.py", "sha256": "8545bdcf62e87e1b4bf713819a9eb0bc621bdea3ea6b63e9aef044e8e35490e4"},
+    {"path": "closed_universe_observers/tests/test_berger_emitter_switch_profiles.py", "sha256": "7c1e46b9674bc808fa0ecc9df2ecf0dc3340354fdc73cf6a48fd23ce617a4e3f"},
+    {"path": "closed_universe_observers/reports/berger-exact-normalized-emitter-switch-profiles.md", "sha256": "989df8805102f3a762943c9ad9324d4a90e010e3861a24539251d42ae63f2e56"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "7ee2355d29f88486361656ad8a847598932dd8d7f8397e9deac5daed662ca1ac"},
+    {"path": "closed_universe_observers/README.md", "sha256": "84af01ef5216d1c03f17ee2636ddf9590dde001b755a02174d3d04f018bee203"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "51b1dd00c4f39d6ad8e7e5e982dd0066883a9c17b62216327512876e6587f55e"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "d47904cf95c5e9a87910a097cec8ff3423d075561a0bbdec93bacd97a0016a3f"}
+  ],
+  "claim_flags": {
+    "EXACT_H0_H1_SWITCH_PROFILES_SERIALIZED": true,
+    "SWITCHES_C_INFINITY_COMPACT_SUPPORTED": true,
+    "SWITCHES_UNIT_CLOCK_INTEGRAL_NORMALIZED": true,
+    "SWITCH_CAUSAL_ORDER_WITH_DETECTORS_CERTIFIED": true,
+    "COMPACT_EMITTER_CAUCHY_PROFILES_SERIALIZED": false,
+    "MASSIVE_TWO_FORM_GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": false,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

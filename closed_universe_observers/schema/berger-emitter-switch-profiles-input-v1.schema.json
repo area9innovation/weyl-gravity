@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-emitter-switch-profiles-input-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "clock_rate_dTheta_dt", "detector_windows_physical_time", "switches", "bump_core", "normalization"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-emitter-switch-profiles-input-v1"},
+    "clock_rate_dTheta_dt": {"const": "3/4"},
+    "detector_windows_physical_time": {
+      "const": [["11/48", "13/48"], ["23/48", "25/48"]]
+    },
+    "switches": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "support_physical_time", "center_physical_time", "radius_physical_time"],
+          "properties": {
+            "id": {"const": "h_0"},
+            "support_physical_time": {"const": ["7/48", "9/48"]},
+            "center_physical_time": {"const": "1/6"},
+            "radius_physical_time": {"const": "1/48"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "support_physical_time", "center_physical_time", "radius_physical_time"],
+          "properties": {
+            "id": {"const": "h_1"},
+            "support_physical_time": {"const": ["5/16", "7/16"]},
+            "center_physical_time": {"const": "3/8"},
+            "radius_physical_time": {"const": "1/16"}
+          }
+        }
+      ],
+      "items": false
+    },
+    "bump_core": {"const": "B(s)=exp(1-1/(1-s^2)) for |s|<1 and 0 for |s|>=1"},
+    "normalization": {"const": "UNIT_CLOCK_INTEGRAL"}
+  }
+}

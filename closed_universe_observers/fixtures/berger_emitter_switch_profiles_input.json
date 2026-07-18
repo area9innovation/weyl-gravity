@@ -1,0 +1,24 @@
+{
+  "schema": "closed-universe-berger-emitter-switch-profiles-input-v1",
+  "clock_rate_dTheta_dt": "3/4",
+  "detector_windows_physical_time": [
+    ["11/48", "13/48"],
+    ["23/48", "25/48"]
+  ],
+  "switches": [
+    {
+      "id": "h_0",
+      "support_physical_time": ["7/48", "9/48"],
+      "center_physical_time": "1/6",
+      "radius_physical_time": "1/48"
+    },
+    {
+      "id": "h_1",
+      "support_physical_time": ["5/16", "7/16"],
+      "center_physical_time": "3/8",
+      "radius_physical_time": "1/16"
+    }
+  ],
+  "bump_core": "B(s)=exp(1-1/(1-s^2)) for |s|<1 and 0 for |s|>=1",
+  "normalization": "UNIT_CLOCK_INTEGRAL"
+}

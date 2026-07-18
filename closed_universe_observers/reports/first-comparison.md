@@ -291,8 +291,11 @@ localized free-emitter data sets give
 dynamical-emitter rank two is therefore established at leading coupling order;
 the recoil preflight then proves the absolute `g^2` detector term is zero and
 the first feedback is absolute `g^3` (relative `g^2`).  Its operator is exact,
-but its coefficient remains input-blocked on explicit preparation/switch
-profiles and evaluated massive Green images.
+but its coefficient remains input-blocked on explicit preparation profiles
+and evaluated massive Green images.  The switch-profile successor now
+serializes exact unit-clock-integral `C-infinity` bumps with the required
+strict causal order, so only detector-selected compact Cauchy profiles and
+their Green images remain on that input side.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -351,7 +354,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; covariant 108-row `q1 q2` identity certified, PBW payload open | two localized massive-emitter Cauchy preparations give triangular rank two; the first recoil is absolute `g^3`, with its operator known and coefficient profile-blocked; emitter stress/clock `q2` outputs are exported | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; covariant 108-row `q1 q2` identity certified, PBW payload open | two localized massive-emitter Cauchy preparations give triangular rank two; the first recoil is absolute `g^3`, with its operator known, exact normalized switches serialized, and coefficient blocked on detector-selected Cauchy profiles/Green images; emitter stress/clock `q2` outputs are exported | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -378,8 +381,9 @@ formal constant term, so rank two survives any compatible recoil deformation.
 The handoff is now supplied by a standard massive polarization-two-form model
 with compact relational switching.  It fixes an off-shell conserved current,
 reciprocal recoil equation, and nondegenerately paired 108-row carrier.
-The first recoil operator is now known, while its detector coefficient awaits
-explicit localized preparation and switch profiles.  The emitter stress and
+The first recoil operator and exact normalized switches are now known, while
+its detector coefficient awaits explicit detector-selected localized Cauchy
+profiles and their massive Green images.  The emitter stress and
 clock-switch `q2` outputs are exported, while the complete 108-row `q1 q2`
 covariant master identity is certified and its support-local PBW refinement
 and a solved backreacted branch remain open;
@@ -483,3 +487,7 @@ The arity-two successor expands the common BV master equation, classifies all
 108 output rows, verifies the independent Noether/cyclicity rails and their
 mutations, and keeps the unexported PBW payload fail-closed.  Its receipt is
 `closed_universe_observers/receipts/EMITTER_108_ROW_Q1_Q2_MASTER_IDENTITY_TIER_RECEIPT.json`.
+The switch-profile successor fixes two exact flat compact clock bumps, proves
+their unit clock-integral normalization and strict detector ordering, and
+keeps the Cauchy-profile/Green-image gate fail-closed.  Its receipt is
+`closed_universe_observers/receipts/EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES_TIER_RECEIPT.json`.

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-exact-normalized-emitter-switch-profiles-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "authoritative_input", "bump_and_normalization", "causal_support_audit", "recoil_input_disposition", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-exact-normalized-emitter-switch-profiles-v1"},
+    "result_id": {"const": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_COMPACT_NORMALIZED_SWITCHES_SERIALIZED_CAUCHY_PROFILES_AND_GREEN_IMAGES_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "authoritative_input": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string"}}},
+    "bump_and_normalization": {
+      "type": "object",
+      "required": ["C_infinity_compact_support", "unit_clock_integral", "clock_integral_after_change_of_variable"],
+      "properties": {
+        "C_infinity_compact_support": {"const": true},
+        "unit_clock_integral": {"const": true},
+        "clock_integral_after_change_of_variable": {"const": "1"}
+      }
+    },
+    "causal_support_audit": {
+      "type": "object",
+      "required": ["clock_rate_dTheta_dt", "switches", "causal_margins_physical_time", "causal_margins_clock_phase", "strict_causal_order", "all_rational_conversion_defects_zero"],
+      "properties": {
+        "clock_rate_dTheta_dt": {"const": "3/4"},
+        "switches": {"type": "array", "minItems": 2, "maxItems": 2},
+        "causal_margins_physical_time": {"const": ["1/24", "1/24", "1/24"]},
+        "causal_margins_clock_phase": {"const": ["1/32", "1/32", "1/32"]},
+        "strict_causal_order": {"const": true},
+        "all_rational_conversion_defects_zero": {"const": true}
+      }
+    },
+    "recoil_input_disposition": {
+      "type": "object",
+      "required": ["exact_switches_serialized", "compact_Cauchy_profiles_u0_u1_serialized", "massive_Green_images_evaluated", "detector_recoil_integrals_evaluated", "remaining_first_input"],
+      "properties": {
+        "exact_switches_serialized": {"const": true},
+        "compact_Cauchy_profiles_u0_u1_serialized": {"const": false},
+        "massive_Green_images_evaluated": {"const": false},
+        "detector_recoil_integrals_evaluated": {"const": false},
+        "remaining_first_input": {"type": "string"}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 3},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["EXACT_H0_H1_SWITCH_PROFILES_SERIALIZED", "SWITCHES_C_INFINITY_COMPACT_SUPPORTED", "SWITCHES_UNIT_CLOCK_INTEGRAL_NORMALIZED", "SWITCH_CAUSAL_ORDER_WITH_DETECTORS_CERTIFIED", "COMPACT_EMITTER_CAUCHY_PROFILES_SERIALIZED", "MASSIVE_TWO_FORM_GREEN_IMAGES_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED", "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "EXACT_H0_H1_SWITCH_PROFILES_SERIALIZED": {"const": true},
+        "SWITCHES_C_INFINITY_COMPACT_SUPPORTED": {"const": true},
+        "SWITCHES_UNIT_CLOCK_INTEGRAL_NORMALIZED": {"const": true},
+        "SWITCH_CAUSAL_ORDER_WITH_DETECTORS_CERTIFIED": {"const": true},
+        "COMPACT_EMITTER_CAUCHY_PROFILES_SERIALIZED": {"const": false},
+        "MASSIVE_TWO_FORM_GREEN_IMAGES_EVALUATED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": {"const": false},
+        "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

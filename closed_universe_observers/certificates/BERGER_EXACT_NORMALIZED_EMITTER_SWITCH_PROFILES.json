@@ -1,0 +1,317 @@
+{
+  "authoritative_input": {
+    "path": "closed_universe_observers/fixtures/berger_emitter_switch_profiles_input.json",
+    "sha256": "fea91c3b7ad1c5785c9f6df4594408e14167afb32d2c1156760dd078809488a1"
+  },
+  "bump_and_normalization": {
+    "C_infinity_compact_support": true,
+    "all_order_flatness_argument": "D^n B=P_n(s)/(1-s^2)^(2n) B on |s|<1; exponential decay dominates every boundary pole",
+    "clock_integral_after_change_of_variable": "1",
+    "core": "B(s)=exp(1-1/(1-s^2)) on |s|<1, zero otherwise",
+    "core_integral": "C_B=integral_-1^1 B(s) ds > 0",
+    "derivative_quotients_first_four_orders": [
+      {
+        "derivative_over_B": "-2*s/((s - 1)**2*(s + 1)**2)",
+        "order": 1
+      },
+      {
+        "derivative_over_B": "2*(3*s**4 - 1)*exp(1/(1 - s**2))*exp(1/(s**2 - 1))/((s - 1)**4*(s + 1)**4)",
+        "order": 2
+      },
+      {
+        "derivative_over_B": "-4*s*(6*s**6 + 3*s**4 - 10*s**2 + 3)*exp(1/(1 - s**2))*exp(1/(s**2 - 1))/((s - 1)**6*(s + 1)**6)",
+        "order": 3
+      },
+      {
+        "derivative_over_B": "4*(30*s**10 + 45*s**8 - 132*s**6 + 58*s**4 + 6*s**2 - 3)*exp(1/(1 - s**2))*exp(1/(s**2 - 1))/((s - 1)**8*(s + 1)**8)",
+        "order": 4
+      }
+    ],
+    "normalization_scale": "1/(C_B*r)",
+    "unit_clock_integral": true
+  },
+  "causal_support_audit": {
+    "all_rational_conversion_defects_zero": true,
+    "causal_margins_clock_phase": [
+      "1/32",
+      "1/32",
+      "1/32"
+    ],
+    "causal_margins_physical_time": [
+      "1/24",
+      "1/24",
+      "1/24"
+    ],
+    "clock_rate_dTheta_dt": "3/4",
+    "detector_windows_clock_phase": [
+      [
+        "11/64",
+        "13/64"
+      ],
+      [
+        "23/64",
+        "25/64"
+      ]
+    ],
+    "detector_windows_physical_time": [
+      [
+        "11/48",
+        "13/48"
+      ],
+      [
+        "23/48",
+        "25/48"
+      ]
+    ],
+    "strict_causal_order": true,
+    "switches": [
+      {
+        "center_clock_phase": "1/8",
+        "center_physical_time": "1/6",
+        "center_radius_defect_count": 0,
+        "clock_conversion_defect_count": 0,
+        "definition": "h_0(Theta)=B(s_0(Theta))/((1/64) C_B) for |s|<1, and 0 otherwise",
+        "dimensionless_argument": "s_0(Theta)=(Theta-(1/8))/(1/64)",
+        "id": "h_0",
+        "normalization": "integral h_0(Theta) dTheta=1",
+        "radius_clock_phase": "1/64",
+        "radius_physical_time": "1/48",
+        "support_clock_phase": [
+          "7/64",
+          "9/64"
+        ],
+        "support_physical_time": [
+          "7/48",
+          "3/16"
+        ]
+      },
+      {
+        "center_clock_phase": "9/32",
+        "center_physical_time": "3/8",
+        "center_radius_defect_count": 0,
+        "clock_conversion_defect_count": 0,
+        "definition": "h_1(Theta)=B(s_1(Theta))/((3/64) C_B) for |s|<1, and 0 otherwise",
+        "dimensionless_argument": "s_1(Theta)=(Theta-(9/32))/(3/64)",
+        "id": "h_1",
+        "normalization": "integral h_1(Theta) dTheta=1",
+        "radius_clock_phase": "3/64",
+        "radius_physical_time": "1/16",
+        "support_clock_phase": [
+          "15/64",
+          "21/64"
+        ],
+        "support_physical_time": [
+          "5/16",
+          "7/16"
+        ]
+      }
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL input certificate serializes two nonnegative compact C-infinity relational switches h_0(Theta),h_1(Theta) for the selected massive emitters. It distinguishes physical time from clock phase using dTheta/dt=3/4, converts every rational endpoint exactly, and fixes unit clock-integral normalization with the standard flat bump B(s)=exp(1-1/(1-s^2)) and the declared positive constant C_B=integral_-1^1 B. The physical supports (7/48,9/48) and (5/16,7/16) lie respectively before D0 and strictly between D0 and D1, with exact physical margins 1/24 and clock margins 1/32. Mutation rails detect lost causal order, lost unit normalization, and loss of C-infinity boundary flatness. This closes the switch part of the recoil input gate. It does not serialize the detector-selected compact massive-two-form Cauchy profiles u_0,u_1, evaluate any Berger massive Green image or detector integral, compute the absolute-g^3 recoil coefficient, construct the PBW q2 payload, solve backreaction, establish finite-parameter Green theory or the full Dirac algebra, or make a quantum claim.",
+  "claim_status": "EXACT_COMPACT_NORMALIZED_SWITCHES_SERIALIZED_CAUCHY_PROFILES_AND_GREEN_IMAGES_OPEN",
+  "dependency_refs": {
+    "detectors": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    },
+    "dynamical_rank": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+      "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+    },
+    "localized_transfer": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json",
+      "result_id": "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER",
+      "sha256": "2dc293d4edad9d7e687b5080b05ec9a40b16a83a55ecc2dd655e935295cb6148"
+    },
+    "recoil_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+      "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "COMPACT_EMITTER_CAUCHY_PROFILES_SERIALIZED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "EXACT_H0_H1_SWITCH_PROFILES_SERIALIZED": true,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "MASSIVE_TWO_FORM_GREEN_IMAGES_EVALUATED": false,
+    "QUANTUM_CLAIM": false,
+    "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": false,
+    "SWITCHES_C_INFINITY_COMPACT_SUPPORTED": true,
+    "SWITCHES_UNIT_CLOCK_INTEGRAL_NORMALIZED": true,
+    "SWITCH_CAUSAL_ORDER_WITH_DETECTORS_CERTIFIED": true
+  },
+  "mutation_results": [
+    {
+      "audit": {
+        "all_rational_conversion_defects_zero": true,
+        "causal_margins_clock_phase": [
+          "1/32",
+          "-1/64",
+          "1/32"
+        ],
+        "causal_margins_physical_time": [
+          "1/24",
+          "-1/48",
+          "1/24"
+        ],
+        "clock_rate_dTheta_dt": "3/4",
+        "detector_windows_clock_phase": [
+          [
+            "11/64",
+            "13/64"
+          ],
+          [
+            "23/64",
+            "25/64"
+          ]
+        ],
+        "detector_windows_physical_time": [
+          [
+            "11/48",
+            "13/48"
+          ],
+          [
+            "23/48",
+            "25/48"
+          ]
+        ],
+        "strict_causal_order": false,
+        "switches": [
+          {
+            "center_clock_phase": "1/8",
+            "center_physical_time": "1/6",
+            "center_radius_defect_count": 0,
+            "clock_conversion_defect_count": 0,
+            "id": "h_0",
+            "radius_clock_phase": "1/64",
+            "radius_physical_time": "1/48",
+            "support_clock_phase": [
+              "7/64",
+              "9/64"
+            ],
+            "support_physical_time": [
+              "7/48",
+              "3/16"
+            ]
+          },
+          {
+            "center_clock_phase": "33/128",
+            "center_physical_time": "11/32",
+            "center_radius_defect_count": 0,
+            "clock_conversion_defect_count": 0,
+            "id": "h_1",
+            "radius_clock_phase": "9/128",
+            "radius_physical_time": "3/32",
+            "support_clock_phase": [
+              "3/16",
+              "21/64"
+            ],
+            "support_physical_time": [
+              "1/4",
+              "7/16"
+            ]
+          }
+        ]
+      },
+      "detected": true,
+      "name": "move_h1_before_D0"
+    },
+    {
+      "audit": {
+        "C_infinity_compact_support": true,
+        "all_order_flatness_argument": "D^n B=P_n(s)/(1-s^2)^(2n) B on |s|<1; exponential decay dominates every boundary pole",
+        "clock_integral_after_change_of_variable": "r",
+        "core": "B(s)=exp(1-1/(1-s^2)) on |s|<1, zero otherwise",
+        "core_integral": "C_B=integral_-1^1 B(s) ds > 0",
+        "derivative_quotients_first_four_orders": [
+          {
+            "derivative_over_B": "-2*s/((s - 1)**2*(s + 1)**2)",
+            "order": 1
+          },
+          {
+            "derivative_over_B": "2*(3*s**4 - 1)*exp(1/(1 - s**2))*exp(1/(s**2 - 1))/((s - 1)**4*(s + 1)**4)",
+            "order": 2
+          },
+          {
+            "derivative_over_B": "-4*s*(6*s**6 + 3*s**4 - 10*s**2 + 3)*exp(1/(1 - s**2))*exp(1/(s**2 - 1))/((s - 1)**6*(s + 1)**6)",
+            "order": 3
+          },
+          {
+            "derivative_over_B": "4*(30*s**10 + 45*s**8 - 132*s**6 + 58*s**4 + 6*s**2 - 3)*exp(1/(1 - s**2))*exp(1/(s**2 - 1))/((s - 1)**8*(s + 1)**8)",
+            "order": 4
+          }
+        ],
+        "normalization_scale": "1/C_B",
+        "unit_clock_integral": false
+      },
+      "detected": true,
+      "name": "omit_radius_from_unit_integral_scale"
+    },
+    {
+      "audit": {
+        "C_infinity_compact_support": false,
+        "all_order_flatness_argument": "FAILED",
+        "clock_integral_after_change_of_variable": "1",
+        "core": "1-s^2 on |s|<1, zero otherwise",
+        "core_integral": "C_B=integral_-1^1 B(s) ds > 0",
+        "derivative_quotients_first_four_orders": [],
+        "normalization_scale": "1/(C_B*r)",
+        "unit_clock_integral": true
+      },
+      "detected": true,
+      "name": "replace_flat_bump_by_truncated_polynomial"
+    }
+  ],
+  "next_gate": "CONSTRUCT_EXPLICIT_DETECTOR_SELECTED_COMPACT_CONSTRAINT_CAUCHY_PROFILES_U0_U1_THEN_EVALUATE_THEIR_MASSIVE_GREEN_IMAGES",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_emitter_switch_profiles.py",
+        "sha256": "9d787640834cc0973720e60c65f0cc3b31ac9d6e57e85442eaf20e0dad6ba76a"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_emitter_switch_profiles.py",
+        "sha256": "8545bdcf62e87e1b4bf713819a9eb0bc621bdea3ea6b63e9aef044e8e35490e4"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_emitter_switch_profiles.py",
+        "sha256": "7c1e46b9674bc808fa0ecc9df2ecf0dc3340354fdc73cf6a48fd23ce617a4e3f"
+      },
+      {
+        "path": "closed_universe_observers/fixtures/berger_emitter_switch_profiles_input.json",
+        "sha256": "fea91c3b7ad1c5785c9f6df4594408e14167afb32d2c1156760dd078809488a1"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-emitter-switch-profiles-input-v1.schema.json",
+        "sha256": "a6ac232ac14542498ec3a62179911fd7d6164f9bba7219a718c524c998d2f83e"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-exact-normalized-emitter-switch-profiles-v1.schema.json",
+        "sha256": "29ae4920e0eee3e68a0cdc22d1a6d4a4e0eab1fc2ecd35605276ca03b28ed5ac"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-exact-normalized-emitter-switch-profiles.md",
+        "sha256": "989df8805102f3a762943c9ad9324d4a90e010e3861a24539251d42ae63f2e56"
+      }
+    ]
+  },
+  "recoil_input_disposition": {
+    "compact_Cauchy_profiles_u0_u1_serialized": false,
+    "detector_recoil_integrals_evaluated": false,
+    "exact_switches_serialized": true,
+    "massive_Green_images_evaluated": false,
+    "remaining_first_input": "construct detector-selected compact constraint-compatible emitter Cauchy profiles rather than an arbitrary bump that may lie in the detector functional kernel"
+  },
+  "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+  "schema": "closed-universe-berger-exact-normalized-emitter-switch-profiles-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}
