@@ -46,6 +46,8 @@ python3 -m closed_universe_observers.generate_berger_polarization_emitter_handof
 python3 -m closed_universe_observers.verify_berger_polarization_emitter_handoff
 python3 -m closed_universe_observers.generate_berger_108_row_emitter_unary_recoil --check
 python3 -m closed_universe_observers.verify_berger_108_row_emitter_unary_recoil
+python3 -m closed_universe_observers.generate_berger_108_row_emitter_causal_chain --check
+python3 -m closed_universe_observers.verify_berger_108_row_emitter_causal_chain
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -152,7 +154,14 @@ cyclicity paths, and constructs the exact massive-two-form Green operator and
 the first formal Maxwell recoil self-energy through order `g^2`.  This is a
 coupled Euler inverse, not yet the full 108-row BV inclusion/projection/homotopy
 package.  Exporting those chain maps and realizing rank two with actual free
-emitter Cauchy data are the immediate next gates.
+emitter Cauchy data are the immediate next gates.  The causal-chain successor
+now appends the emitter witness `W_K(K_b_plus)=K_b`, constructs
+`Lambda_108,+/-=W_108 G_P108,+/-`, and proves
+`q Lambda+Lambda q=1` coefficientwise through `g^2` on a gauge-complete graded
+fixture.  The remaining operational gate is therefore the choice of two
+localized free-emitter Cauchy preparations and the rank of their actual
+detector matrix.  Finite-parameter/all-orders Green hyperbolicity remains
+separate.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

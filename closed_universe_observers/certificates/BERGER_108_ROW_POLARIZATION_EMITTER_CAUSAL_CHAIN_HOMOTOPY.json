@@ -1,0 +1,167 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL theorem completes the coefficientwise causal-chain step for the selected 108-row emitter unary. It appends the local degree-minus-one witness W_K(K_b_plus)=K_b to the imported apparatus witness, forms P_108=q_108 W_108+W_108 q_108, and constructs the same-sided formal Green inverse by the finite Neumann coefficients through g^2. The homotopy Lambda_108,+/-=W_108 G_P108,+/- then satisfies q_108 Lambda+Lambda q_108=1 coefficientwise through g^2. A gauge-complete ten-channel graded fixture independently has q^2=0, invertible unperturbed wave rank ten, zero left/right Green defects, and zero chain defects; deleting the quadratic Green term or one emitter witness is detected. The result is over the imported coefficientwise apparatus first-jet ring and formal emitter couplings. It is not an unqualified finite-parameter or all-orders 108-row theorem, does not choose actual emitter Cauchy preparations or prove their detector matrix has rank two, does not evaluate a detector recoil integral or include emitter stress/clock backreaction, does not construct the full apparatus Dirac bracket, and makes no quantum claim.",
+  "claim_status": "CERTIFIED_108_ROW_COEFFICIENTWISE_CAUSAL_CHAIN_HOMOTOPY_THROUGH_G2",
+  "dependency_refs": {
+    "apparatus_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY.json",
+      "result_id": "BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY",
+      "sha256": "1dc8720b2e8a208094a40ab736d3e6459c8c5afb5308baca6c1e82c8b9e2f6f2"
+    },
+    "base_causal": {
+      "path": "d_quotient_classical/certificates/BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX.json",
+      "result_id": "BERGER_MAXWELL_UNARY_CONTRACTION_AND_FIRST_TRANSFERRED_MIXED_VERTEX",
+      "sha256": "3403f12bb56f3e1fdf0e4aeef4c8f29859205085d4044311fa64ee0e763be63a"
+    },
+    "emitter_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL",
+      "sha256": "19666c947d0ea45cd62e516bc24310ca005074544f6ab56e292366c1db8d69db"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "108_ROW_ADVANCED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED": true,
+    "108_ROW_COEFFICIENTWISE_CAUSAL_CHAIN_HOMOTOPY_THROUGH_G2_CERTIFIED": true,
+    "108_ROW_RETARDED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED": true,
+    "DETECTOR_RECOIL_COEFFICIENT_EVALUATED": false,
+    "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": false,
+    "EMITTER_STRESS_BACKREACTION_INCLUDED": false,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "UNQUALIFIED_FULL_108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": false
+  },
+  "formal_causal_chain": {
+    "apparatus_scope": "the imported coefficientwise r,kappa first-jet ring; no finite-r promotion",
+    "green_formula": "G_Pg=G_P0-g G_P0 U G_P0+g^2 G_P0 U G_P0 U G_P0+O(g^3)",
+    "homotopy_formula": "Lambda_108,+/-=W_108 G_Pg,+/-",
+    "identity": "q_108 Lambda_108,+/-+Lambda_108,+/- q_108=1 through g^2",
+    "support": "W_108 and U are local; each finite composition of same-sided Green factors remains on the chosen causal side",
+    "unperturbed_green": "G_P0,+/-=G_P84,+/- direct_sum G_E0,+/- direct_sum G_E1,+/-"
+  },
+  "graded_exact_fixture": {
+    "Maxwell_green_g2_coefficient": "(e0*v1**2 + e1*v0**2)/(e0*e1*p**2)",
+    "chain_homotopy_defect_count_through_g2": 0,
+    "degrees": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "homotopy_degree_minus_one": true,
+    "left_green_defect_count_through_g2": 0,
+    "q_squared_defect_count": 0,
+    "right_green_defect_count_through_g2": 0,
+    "row_order": [
+      "c",
+      "A_gauge",
+      "A_physical",
+      "K0",
+      "K1",
+      "A_gauge_plus",
+      "A_physical_plus",
+      "K0_plus",
+      "K1_plus",
+      "c_plus"
+    ],
+    "unperturbed_wave_invertible": true,
+    "unperturbed_wave_rank": 10
+  },
+  "mutation_results": [
+    {
+      "audit": {
+        "Maxwell_green_g2_coefficient": "0",
+        "chain_homotopy_defect_count_through_g2": 10,
+        "degrees": [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "homotopy_degree_minus_one": true,
+        "left_green_defect_count_through_g2": 10,
+        "q_squared_defect_count": 0,
+        "right_green_defect_count_through_g2": 10,
+        "row_order": [
+          "c",
+          "A_gauge",
+          "A_physical",
+          "K0",
+          "K1",
+          "A_gauge_plus",
+          "A_physical_plus",
+          "K0_plus",
+          "K1_plus",
+          "c_plus"
+        ],
+        "unperturbed_wave_invertible": true,
+        "unperturbed_wave_rank": 10
+      },
+      "detected": true,
+      "name": "delete_g2_green_coefficient"
+    },
+    {
+      "audit": {
+        "chain_homotopy_defect_count_through_g2": null,
+        "left_green_defect_count_through_g2": null,
+        "q_squared_defect_count": 0,
+        "right_green_defect_count_through_g2": null,
+        "unperturbed_wave_invertible": false,
+        "unperturbed_wave_rank": 8
+      },
+      "detected": true,
+      "name": "delete_K1_witness"
+    }
+  ],
+  "next_gate": "CHOOSE_TWO_LOCALIZED_FREE_EMITTER_CAUCHY_PREPARATIONS_AND_COMPUTE_M_AB_K",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_108_row_emitter_causal_chain.py",
+        "sha256": "ca52d508a9dc075533f16bc137335f5f1dc746222b2fff760b1cdf7b73137d63"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_108_row_emitter_causal_chain.py",
+        "sha256": "42420a1748b909e42c25484d58ec3ceb6096e200910a52113961edb786e863b1"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_108_row_emitter_causal_chain.py",
+        "sha256": "7bb6e1d706c0251b959e12ca1c62ca6a6c1bd2809809c429fc517a19c88d2c18"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-108-row-polarization-emitter-causal-chain-homotopy-v1.schema.json",
+        "sha256": "27f573b1caf536e555e8c1525d1ae2ee084edf7ce6d538b64a1d7c89cb9a5b89"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-108-row-polarization-emitter-causal-chain-homotopy.md",
+        "sha256": "9e4fb9e1d65479e828bc0f3d41aa15562cdf79c3495cf2ae23ce88e0c79629bf"
+      }
+    ]
+  },
+  "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY",
+  "schema": "closed-universe-berger-108-row-polarization-emitter-causal-chain-homotopy-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "witness_and_wave_operator": {
+    "apparatus_witness": "the pinned coefficientwise W_84,+/- input",
+    "combined_witness": "W_108=W_84 direct_sum W_K0 direct_sum W_K1",
+    "emitter_diagonal": "delta d+m_b^2 with Green (I+m_b^-2 d delta)G_(P2+m_b^2),+/-",
+    "emitter_witness": "W_K(K_b_plus)=K_b and W_K=0 on K_b",
+    "off_diagonal": "the reciprocal A<->K_b blocks, local and first order",
+    "wave_operator": "P_108=q_108 W_108+W_108 q_108"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "POLARIZATION_TWO_FORM_EMITTER_CAUSAL_CHAIN_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The selected 108-row emitter unary now has a coefficientwise advanced/retarded chain homotopy through g^2. Appending W_K(K_b_plus)=K_b gives P_108=q_108 W_108+W_108 q_108 and Lambda_108,+/-=W_108 G_P108,+/-. A gauge-complete ten-channel graded fixture verifies q^2=0, both Green inverse orders, degree minus one, and q Lambda+Lambda q=1 through g^2. This is not a finite-parameter or all-orders theorem and does not prove actual emitter-preparation rank, evaluate detector recoil, include emitter stress, close the full Dirac algebra, or make a quantum claim.",
+  "tier_0": [{"command": "py_compile, json.tool, git diff --check, and explicit SHA-256 replay on causal-chain and observer planning paths", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "producer, verifier, tests, schema, certificate, report, receipt, comparison ledger, README, observer brief, and comparison report; the concurrently edited cross-team roadmap is excluded from this commit"}],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_108_row_emitter_causal_chain --check", "elapsed_seconds": "under 1", "status": "PASS", "scope": "graded q, witness, wave operator, Green coefficients, chain identity, mutations, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_108_row_emitter_causal_chain", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent degrees, exact defects, dependency/source hashes, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_108_row_emitter_causal_chain.py", "elapsed_seconds": "0.59", "status": "PASS", "scope": "all 3 graded chain, mutation, and fail-closed tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-108-row-polarization-emitter-causal-chain-homotopy-v1.schema.json -d closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY.json", "elapsed_seconds": "included in focused checks", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "historical imports, bridge hashes, coefficientwise causal-chain status, and fail-closed rank gate"}
+  ],
+  "tier_2": [{"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "204.88", "status": "PASS", "scope": "all 92 closed-universe observer tests"}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "This adds an observer-owned coefficientwise causal-chain certificate but does not alter shared core algebra, promote finite-parameter/all-orders Green hyperbolicity, freeze a release, or make a quantum claim."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY.json", "sha256": "8153e2638865caa30091d5010d9df9442b3395d5996bf503de3a5e7cf354ace0"},
+    {"path": "closed_universe_observers/schema/berger-108-row-polarization-emitter-causal-chain-homotopy-v1.schema.json", "sha256": "27f573b1caf536e555e8c1525d1ae2ee084edf7ce6d538b64a1d7c89cb9a5b89"},
+    {"path": "closed_universe_observers/generate_berger_108_row_emitter_causal_chain.py", "sha256": "ca52d508a9dc075533f16bc137335f5f1dc746222b2fff760b1cdf7b73137d63"},
+    {"path": "closed_universe_observers/verify_berger_108_row_emitter_causal_chain.py", "sha256": "42420a1748b909e42c25484d58ec3ceb6096e200910a52113961edb786e863b1"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_emitter_causal_chain.py", "sha256": "7bb6e1d706c0251b959e12ca1c62ca6a6c1bd2809809c429fc517a19c88d2c18"},
+    {"path": "closed_universe_observers/reports/berger-108-row-polarization-emitter-causal-chain-homotopy.md", "sha256": "9e4fb9e1d65479e828bc0f3d41aa15562cdf79c3495cf2ae23ce88e0c79629bf"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "fff67bd100cb1776775bc55b81423b96ae99b3f0968f10400d1ed13070acb60f"},
+    {"path": "closed_universe_observers/README.md", "sha256": "99b1d43145690ffa03ef9b54912b82b3c980c160126a6bd1e8e622c26da556c8"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "4cc11fba52593f699e401b4b2b46a2791f0092664d51d114663fc826a4d2bdfb"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "352c93f49449fa34457b2d73fe8acb56e66bcd6937ae1c44022ef878dd604aa7"}
+  ],
+  "claim_flags": {
+    "108_ROW_COEFFICIENTWISE_CAUSAL_CHAIN_HOMOTOPY_THROUGH_G2_CERTIFIED": true,
+    "108_ROW_ADVANCED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED": true,
+    "108_ROW_RETARDED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED": true,
+    "UNQUALIFIED_FULL_108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": false,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": false,
+    "DETECTOR_RECOIL_COEFFICIENT_EVALUATED": false,
+    "EMITTER_STRESS_BACKREACTION_INCLUDED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

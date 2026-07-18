@@ -172,15 +172,26 @@ rank 24, and exports all six new row-indexed unary blocks.  The new Maxwell
 gauge and Noether paths close by `d^2=delta^2=0`, and Hessian adjointness closes
 unary cyclicity.  The massive two-form Green formula is exact, while the
 coupled Neumann inverse gives the first formal Maxwell recoil self-energy
-through order `g^2`.  This is deliberately not called a full 108-row BV causal
-chain contraction: its deformed inclusion, projection, and homotopy maps have
-not yet been exported.
+through order `g^2`.  At that gate this was deliberately not called a full
+108-row BV causal chain contraction because the chain homotopy had not yet
+been exported.
+
+`BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY` now closes the
+needed coefficientwise causal-chain identity.  With
+`W_K(K_b_plus)=K_b`, the wave operator
+`P_108=q_108 W_108+W_108 q_108` has the coupled Euler blocks above, and
+`Lambda_108,+/-=W_108 G_P108,+/-` satisfies
+`q_108 Lambda+Lambda q_108=1` through `g^2`.  A gauge-complete graded fixture
+includes the Maxwell ghost and ghost antifield and detects deletion of either
+the quadratic Green coefficient or an emitter witness.  This closes the
+formal coefficientwise chain step, not finite-parameter or all-orders Green
+hyperbolicity.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Complete the 108-row BV causal chain maps from the now-certified unary and
-   Euler Green data, then choose localized emitter Cauchy preparations and
-   replay the leading record rank and first recoil correction.
+1. Choose localized emitter Cauchy preparations using the now-certified
+   coefficientwise 108-row causal homotopy, then replay the leading record
+   rank and first recoil correction.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,

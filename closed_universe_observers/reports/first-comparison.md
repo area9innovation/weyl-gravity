@@ -280,7 +280,11 @@ verifies their rank-24 odd pairing, closes the new unary identities, and
 constructs the exact emitter Green operator plus the first formal `g^2`
 Maxwell recoil term.  This is a coupled Euler inverse; the full 108-row BV
 inclusion, projection, and homotopy maps and the rank replay for actual free
-emitter Cauchy data remain open.
+emitter Cauchy data remain open.  The causal-chain successor now supplies the
+degree-minus-one emitter witness and proves `q Lambda+Lambda q=1`
+coefficientwise through `g^2` on a gauge-complete graded fixture.  Thus the
+actual free-emitter Cauchy preparation and rank replay, rather than the formal
+chain identity, is the next operational gap.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -323,7 +327,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | receiver-adjacent external currents give triangular rank two; the dynamical-emitter Euler Green operator is formal through first recoil, while actual Cauchy-preparation rank and full BV chain maps remain open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | receiver-adjacent external currents give triangular rank two; the dynamical-emitter causal chain is certified coefficientwise through first recoil, while actual Cauchy-preparation rank remains open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -350,8 +354,8 @@ formal constant term, so rank two survives any compatible recoil deformation.
 The handoff is now supplied by a standard massive polarization-two-form model
 with compact relational switching.  It fixes an off-shell conserved current,
 reciprocal recoil equation, and nondegenerately paired 108-row carrier.
-Emitter recoil/backreaction becomes computable after the complete 108-row
-causal chain maps and actual localized Cauchy preparations are constructed;
+Emitter recoil/backreaction becomes computable after actual localized Cauchy
+preparations are constructed and their detector response is evaluated;
 placing both preparations at the original common Hopf event is a separate
 stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
@@ -432,3 +436,6 @@ The unary/recoil successor explicitly certifies the appended row order and
 pairing, the six new unary blocks and their identities, the massive two-form
 Green formula, and the first formal coupled Euler recoil term.  Its receipt is
 `closed_universe_observers/receipts/POLARIZATION_TWO_FORM_EMITTER_UNARY_FIRST_RECOIL_TIER_RECEIPT.json`.
+The causal-chain successor appends the emitter witness and verifies the full
+graded chain identity coefficientwise through `g^2`; its receipt is
+`closed_universe_observers/receipts/POLARIZATION_TWO_FORM_EMITTER_CAUSAL_CHAIN_TIER_RECEIPT.json`.

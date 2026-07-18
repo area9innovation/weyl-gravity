@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-108-row-polarization-emitter-causal-chain-homotopy-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "witness_and_wave_operator", "formal_causal_chain", "graded_exact_fixture", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-polarization-emitter-causal-chain-homotopy-v1"},
+    "result_id": {"const": "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_108_ROW_COEFFICIENTWISE_CAUSAL_CHAIN_HOMOTOPY_THROUGH_G2"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "witness_and_wave_operator": {"type": "object"},
+    "formal_causal_chain": {"type": "object"},
+    "graded_exact_fixture": {"type": "object", "required": ["q_squared_defect_count", "unperturbed_wave_rank", "left_green_defect_count_through_g2", "right_green_defect_count_through_g2", "chain_homotopy_defect_count_through_g2", "homotopy_degree_minus_one"], "properties": {"q_squared_defect_count": {"const": 0}, "unperturbed_wave_rank": {"const": 10}, "left_green_defect_count_through_g2": {"const": 0}, "right_green_defect_count_through_g2": {"const": 0}, "chain_homotopy_defect_count_through_g2": {"const": 0}, "homotopy_degree_minus_one": {"const": true}}},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["108_ROW_COEFFICIENTWISE_CAUSAL_CHAIN_HOMOTOPY_THROUGH_G2_CERTIFIED", "108_ROW_ADVANCED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED", "108_ROW_RETARDED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED", "UNQUALIFIED_FULL_108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED", "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED", "DETECTOR_RECOIL_COEFFICIENT_EVALUATED", "EMITTER_STRESS_BACKREACTION_INCLUDED", "QUANTUM_CLAIM"], "properties": {"108_ROW_COEFFICIENTWISE_CAUSAL_CHAIN_HOMOTOPY_THROUGH_G2_CERTIFIED": {"const": true}, "108_ROW_ADVANCED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED": {"const": true}, "108_ROW_RETARDED_CHAIN_IDENTITY_THROUGH_G2_CERTIFIED": {"const": true}, "UNQUALIFIED_FULL_108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": {"const": false}, "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false}, "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": {"const": false}, "DETECTOR_RECOIL_COEFFICIENT_EVALUATED": {"const": false}, "EMITTER_STRESS_BACKREACTION_INCLUDED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}
