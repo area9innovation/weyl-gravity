@@ -1,0 +1,102 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC G0 prerequisite fixes the derivative-aware super-cotangent lift for retained Berger PBW Taylor maps. It replays all zero-word F2/F3 base labels against the certified algebraic convention, detects omission of the odd first-derivative formal-adjoint sign, and retains the commutator tail of a noncommuting second-order word. It does not assemble or solve the full-BV order-two coboundary system, decide a cyclic deformation class, descend to residual cohomology, or make a quantum claim.",
+  "claim_flags": {
+    "CYCLIC_DEFORMATION_CLASS_DECIDED": false,
+    "FULL_BV_ORDER_TWO_REPLAY_COMPUTED": false,
+    "PBW_POSITIVE_JET_SUPER_COTANGENT_CONVENTION_CERTIFIED": true,
+    "QUANTUM_CLAIM": false,
+    "ZERO_WORD_CONVENTION_REPRODUCED": true
+  },
+  "dependency_refs": {
+    "zero_word_convention": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1.json",
+      "sha256": "a2d4428b8ed9b37a761cfa96f1a63670ae63a4c677869dfff8664dc8d758eea3"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "generality_level": "G0",
+  "next_gate": "BERGER_RETAINED_MIXED_ELL3_PBW_ORDER_TWO_FULL_BV_REDEFINITION_V1",
+  "result_id": "BERGER_POSITIVE_JET_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1",
+  "result_state": "PBW_POSITIVE_JET_SUPER_COTANGENT_CONVENTION_CERTIFIED",
+  "schema": "pure-weyl-berger-positive-jet-super-cotangent-redefinition-convention-v1",
+  "scientific_replay": {
+    "formula": "F^(i*)=-(-1)^parity(i) w(B)/w(i) (D_word)^sharp(B*,remaining), followed by Berger PBW reduction",
+    "positive_jet_controls": {
+      "first_jet_fixture": {
+        "base_output": 3,
+        "dual_component_count": 1,
+        "formal_adjoint_sign_mutation_changed_dual": true,
+        "input_atoms": [
+          [
+            27,
+            []
+          ],
+          [
+            27,
+            [
+              0
+            ]
+          ]
+        ]
+      },
+      "noncommuting_second_jet_fixture": {
+        "PBW_total_order_histogram": {
+          "1": 1,
+          "2": 6
+        },
+        "base_output": 4,
+        "input_atoms": [
+          [
+            27,
+            []
+          ],
+          [
+            28,
+            [
+              2,
+              1
+            ]
+          ]
+        ],
+        "order_one_commutator_tail_present": true
+      },
+      "odd_input_fixture": {
+        "base_output": 26,
+        "input_atoms": [
+          [
+            0,
+            [
+              3
+            ]
+          ],
+          [
+            27,
+            []
+          ]
+        ],
+        "odd_input_partner_output": 23,
+        "odd_input_partner_present": true
+      }
+    },
+    "zero_word_restriction": {
+      "F2_labels_checked": 934,
+      "F3_labels_checked": 5050,
+      "defects": 0,
+      "lifted_zero_word_components_checked": 20982
+    }
+  },
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_positive_jet_super_cotangent_redefinition_convention.py": "8f4c6d6a7fbe196517c08f8bbbc8268ad4f5698841d6cc0342795507292f7b32",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_positive_jet_super_cotangent_redefinition_convention.py": "502138872783a57c61db62e2734a786fc25317d5df208b5486deb6f543b1d0f2",
+    "d_quotient_classical/backreacted_clock/verify_berger_positive_jet_super_cotangent_redefinition_convention.py": "e28553e8e86e5fb67cb52025244c95b66be55be289e3d8fd6daa7771657eb614",
+    "d_quotient_classical/schema/berger-positive-jet-super-cotangent-redefinition-convention-v1.schema.json": "4f086d1947624f187156af21ead15f59cfc7914c2c8d23161c482cb08b764c59"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_positive_jet_super_cotangent_redefinition_convention.py --check",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_positive_jet_super_cotangent_redefinition_convention.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_positive_jet_super_cotangent_redefinition_convention -v",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-positive-jet-super-cotangent-redefinition-convention-v1.schema.json -d d_quotient_classical/certificates/BERGER_POSITIVE_JET_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1.json"
+  ]
+}

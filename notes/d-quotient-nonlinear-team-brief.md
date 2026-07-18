@@ -659,6 +659,17 @@ action through summed differential order two is trivializable. This is not
 the final cyclic deformation verdict: the positive-jet ghost/antifield lift
 is now the only remaining N-G4 gate.
 
+The derivative-aware cotangent convention for that gate is now frozen.
+`BERGER_POSITIVE_JET_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1` transposes
+each differentiated input by its formal adjoint over the output-antifield and
+remaining-input product before exact Berger PBW reduction. Its zero-word
+restriction reproduces all 934 F2 and 5,050 F3 base labels of the certified
+algebraic convention with zero defects. An odd first-derivative sign mutation
+changes the dual carrier, and the noncommuting word `(2,1)` retains a genuine
+order-one commutator tail. This closes a convention prerequisite only: the
+order-two full-BV coboundary replay and its primitive/obstruction verdict are
+still the active N-G4 gate.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
