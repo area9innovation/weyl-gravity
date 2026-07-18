@@ -349,6 +349,16 @@ emitter-switch intervals, with explicit entire-series remainders.  The
 infinite spatial-harmonic tail, massive-two-form image, and recoil coefficient
 remain open.
 
+`BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` now decides whether that finite
+window can close the profile gate: it cannot.  Parseval, the certified Berger
+volume, the exact rod chart and validated `B^2` quadrature give total
+clock-center form-profile Fourier energy above `2.809e8`; all retained
+coefficients through `two_j=4` contribute at most `675`.  Thus more than
+`0.9999975` is necessarily omitted.  The atlas marks this cutoff
+`OBSTRUCTED`; the next profile gate is an adaptive cutoff near the detector
+bandwidth or a physical-space Green-chain evaluation, not a nominal tail
+bound at the current cutoff.
+
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to
 `Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` are still `OPEN` for bounded/quasiperiodic,

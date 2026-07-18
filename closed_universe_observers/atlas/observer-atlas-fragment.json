@@ -136,7 +136,7 @@
       }
     },
     {
-      "claim_boundary": "operator-defined compact Cauchy profiles; full coderivative and finite-mode advanced Maxwell image certified through two_j=4 with uniform temporal-kernel remainder; infinite spatial tail and massive image OPEN absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN OPEN",
+      "claim_boundary": "operator-defined compact Cauchy profiles; full coderivative and finite-mode advanced Maxwell image certified through two_j=4 with uniform temporal-kernel remainder; uniform small tail at that cutoff is OBSTRUCTED and the massive image is OPEN absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN OPEN",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -164,6 +164,11 @@
           "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
           "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
           "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
+          "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
+          "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"
         },
         {
           "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
@@ -244,7 +249,7 @@
           "status": "OPEN"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "operator-defined compact Cauchy profiles; full coderivative and finite-mode advanced Maxwell image certified through two_j=4 with uniform temporal-kernel remainder; infinite spatial tail and massive image OPEN",
+          "statement": "operator-defined compact Cauchy profiles; full coderivative and finite-mode advanced Maxwell image certified through two_j=4 with uniform temporal-kernel remainder; uniform small tail at that cutoff is OBSTRUCTED and the massive image is OPEN",
           "status": "OPEN"
         },
         "recoil_backreaction_order": {
@@ -279,7 +284,7 @@
       }
     },
     {
-      "claim_boundary": "temporal derivative is cosine-kernel weighted by boundary-flat integration by parts; sine spatial-coderivative block and entire-series remainder certified through two_j=4; infinite spatial tail OPEN input to absolute-g^3 coefficient; not an evaluated recoil NOT_APPLICABLE",
+      "claim_boundary": "temporal derivative is cosine-kernel weighted by boundary-flat integration by parts; sine spatial-coderivative block and entire-series remainder certified through two_j=4; uniform small profile tail is OBSTRUCTED at this cutoff input to absolute-g^3 coefficient; not an evaluated recoil NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
@@ -297,6 +302,11 @@
           "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
           "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
           "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
+          "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
+          "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"
         }
       ],
       "id": "observer.berger.detector_form_modes.two_j_0_to_4",
@@ -367,7 +377,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "temporal derivative is cosine-kernel weighted by boundary-flat integration by parts; sine spatial-coderivative block and entire-series remainder certified through two_j=4; infinite spatial tail OPEN",
+          "statement": "temporal derivative is cosine-kernel weighted by boundary-flat integration by parts; sine spatial-coderivative block and entire-series remainder certified through two_j=4; uniform small profile tail is OBSTRUCTED at this cutoff",
           "status": "OPEN"
         },
         "recoil_backreaction_order": {
@@ -540,6 +550,124 @@
       }
     },
     {
+      "claim_boundary": "finite two_j<=4 Green image remains certified, but uniform promotion to the full compact profile is OBSTRUCTED at that cutoff absolute-g^3 coefficient remains blocked by the unresolved full profile NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
+          "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
+          "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"
+        }
+      ],
+      "id": "observer.berger.detector_profile_tail.two_j4_cutoff",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=clock-center normalized detector one-form profile and its Peter-Weyl energy split; omega=fixed clock-center spatial slice; no full response: the two_j<=4 window omits more than 0.9999975 of the clock-center profile Fourier energy",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE at this profile-resolution obstruction",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "absolute-g^3 coefficient remains blocked by the unresolved full profile; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "exact radius 1/128 and either clock-center detector polarization",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "no full response: the two_j<=4 window omits more than 0.9999975 of the clock-center profile Fourier energy",
+          "status": "OBSTRUCTED"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "adaptive high-mode expansion or physical-space Green chain required",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "finite two_j<=4 Green image remains certified, but uniform promotion to the full compact profile is OBSTRUCTED at that cutoff",
+          "status": "OBSTRUCTED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "absolute-g^3 coefficient remains blocked by the unresolved full profile",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE at this profile-resolution obstruction",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "clock-center normalized detector one-form profile and its Peter-Weyl energy split",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "retained two_j=0,1,2,3,4 versus omitted two_j>=5",
+        "k": "all representation columns",
+        "m": "all representation rows",
+        "omega": "fixed clock-center spatial slice",
+        "parity": "either selected detector polarization",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
       "claim_boundary": "NO_CERTIFIED_MAP NO_CERTIFIED_MAP NO_CERTIFIED_MAP",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -653,7 +781,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "bddd5b5f8753e3c926f3c5f036d2ee6b2590a1da9c7ccf1731dc04708f18f9d2",
+  "generated_by_sha256": "7b12513665fea874d70d6037d427fb8fa3d4da71b54008ffbe2b02d270453ff7",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -77,6 +77,8 @@ python3 -m closed_universe_observers.generate_berger_clock_integrated_form_profi
 python3 -m closed_universe_observers.verify_berger_clock_integrated_form_profile_coefficients
 python3 -m closed_universe_observers.generate_berger_green_weighted_detector_coderivative --check
 python3 -m closed_universe_observers.verify_berger_green_weighted_detector_coderivative
+python3 -m closed_universe_observers.generate_berger_two_j4_profile_tail_obstruction --check
+python3 -m closed_universe_observers.verify_berger_two_j4_profile_tail_obstruction
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -262,6 +264,12 @@ kernel.  It exports the resulting cosine-kernel spatial block and sine-kernel
 spatial-coderivative block through `two_j=4`, uniformly over each emitter
 switch, with an explicit entire-series remainder.  The infinite spatial-mode
 tail and subsequent massive-two-form image remain open.
+The tail audit then proves that this cutoff cannot be promoted uniformly:
+the clock-center normalized one-form profile has Fourier energy above
+`2.809e8`, while every retained coefficient through `two_j=4` together can
+carry at most `675`.  More than `0.9999975` of the slice-profile energy is
+necessarily omitted.  The next honest profile gate is therefore an adaptive
+cutoff near the detector bandwidth or a physical-space Green evaluation.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

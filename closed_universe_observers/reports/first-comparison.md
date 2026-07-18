@@ -350,6 +350,12 @@ finite-mode advanced Maxwell blocks are interval-enclosed through `two_j=4`
 uniformly on the corresponding emitter-switch interval; the worst displayed
 entire-series entry remainder is below `6.2e-8`.  The infinite spatial tail
 and massive-two-form image are not inferred from this finite block.
+The following Parseval audit obstructs a uniform tail promotion at this
+cutoff.  At either clock center the normalized detector one-form has total
+Fourier energy above `2.809e8`, whereas all `two_j<=4` entries contribute at
+most `675`.  More than `0.9999975` of the slice-profile energy is necessarily
+outside the retained window.  A larger adaptive cutoff or physical-space
+Green chain is required before the recoil coefficient can be evaluated.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -569,3 +575,5 @@ The clock-integrated form coefficient receipt is
 `closed_universe_observers/receipts/CLOCK_INTEGRATED_FORM_COEFFICIENTS_TIER_RECEIPT.json`.
 The Green-weighted coderivative receipt is
 `closed_universe_observers/receipts/GREEN_WEIGHTED_DETECTOR_CODERIVATIVE_TIER_RECEIPT.json`.
+The cutoff-tail obstruction receipt is
+`closed_universe_observers/receipts/TWO_J4_PROFILE_TAIL_OBSTRUCTION_TIER_RECEIPT.json`.

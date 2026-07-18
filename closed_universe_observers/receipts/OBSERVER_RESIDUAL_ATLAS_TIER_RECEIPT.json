@@ -3,7 +3,7 @@
   "result_id": "OBSERVER_RESIDUAL_ATLAS_TIER_RECEIPT",
   "run_date": "2026-07-18",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
-  "result_boundary": "The generated fail-closed operational-observer fragment now validates against the shared residual-atlas schema and populates its optional observer_data column. It records the certified Berger rank-two maps and finite Green-weighted Maxwell image. The detector restriction to Z2^C is OPEN in all correction classes, and the compact-product exceptional-resonance crosswalk is NO_CERTIFIED_MAP.",
+  "result_boundary": "The generated fail-closed operational-observer fragment validates against the shared residual-atlas schema and populates its optional observer_data column. It records the certified Berger rank-two maps and finite Green-weighted Maxwell image, plus a separate OBSTRUCTED row proving that two_j<=4 cannot uniformly resolve the localized clock-center profile. The detector restriction to Z2^C is OPEN in all correction classes, and the compact-product exceptional-resonance crosswalk is NO_CERTIFIED_MAP.",
   "tier_0": [
     {"command": "python3 -m py_compile closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed atlas Python sources"},
     {"command": "git diff --check -- residual_atlas/schema/residual-atlas-fragment-v1.schema.json closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "shared optional observer column, observer fragment and programme additions"}
@@ -17,26 +17,30 @@
   ],
   "tier_2": [
     {"command": "individual atlas producer tests for Einstein, classical, quantum and observer fragments, followed by certificate_graph/test_build_residual_atlas.py", "elapsed_seconds": "under 4 total", "status": "PASS", "scope": "all shared-schema producers and visualization consumer"},
-    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "328.83", "status": "PASS", "scope": "full observer regression after schema and central-ledger changes", "summary": "163 passed"}
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "391.95", "status": "PASS", "scope": "full observer regression after generated-atlas and central-ledger changes", "summary": "167 passed"}
   ],
   "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, theorem promotion, full causal result, nonlinear-cone promotion, recoil coefficient, or quantum claim."}],
   "artifact_hashes": [
     {"path": "residual_atlas/schema/residual-atlas-fragment-v1.schema.json", "sha256": "c5aa922a1371187e60ff1e97ee092b45d35134d186e0c729f6a1f251a64bbf12"},
-    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "bddd5b5f8753e3c926f3c5f036d2ee6b2590a1da9c7ccf1731dc04708f18f9d2"},
-    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "326023dee68bf8126258a251f53167b4f5e7ec94c91986db964de9e160ef57da"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "7b12513665fea874d70d6037d427fb8fa3d4da71b54008ffbe2b02d270453ff7"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "dd0bec54ee9e811ee861da7dbdd17f04695cdf6e323e9608f7ecf6729a90155c"},
     {"path": "closed_universe_observers/atlas/verify_observer_atlas_fragment.py", "sha256": "5ee33e2fe1b29974f6ceef542fd9a343c23ad35488c19370fa68cd6cb14ef17d"},
     {"path": "closed_universe_observers/tests/test_observer_atlas_fragment.py", "sha256": "6c7eab5dd15e5507ae844316f096b54858ed1f9336a551d3c39bf73993039202"},
-    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "f4c1bd3debc985b320945a0b1e532400f6d1b72d3825c8111a18ebfe46ac6fc6"},
-    {"path": "closed_universe_observers/README.md", "sha256": "d1cc7145881ddd29a86faab9973172a02c63e81e7c6a038493b7e456948a4c43"},
-    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "dee93dd748bfafb2773e512769cd65a007eb506d781ae67612edf89f90206206"},
-    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "c75f7be6d95399f2e30bd785ccaeeac17189035b4c35aa977d4db9927be9d5de"},
-    {"path": "notes/universe-building-roadmap.md", "sha256": "de0ec6dcb788a0ff732bfaba60395c2246df1f3014bc779f62031dd46f2b1b8a"}
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "167963e678f1dc76d9ee2d73acaa793188883573f4be430b873b837e3bbbc24a"},
+    {"path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json", "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "f445a5bd62adf410b74f7feef52a3de97d20c749ff6c5c4a84905428d9d9bbed"},
+    {"path": "closed_universe_observers/README.md", "sha256": "5f4a31854d2940816695c6659ef146abd7c86c9584b7e80dc1b4f4060513c1f6"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "070a7f49989cf705952da6d663124a0a443e1053a5d0a9643beb0df3c6e876ea"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "db11c79c56813f5e9037be993318f3ea5b989b2dc618f6c1141e3575d6f7496d"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "0985449a8757c4bf4e08da27032ec6b379475f892a65eba9b4ddd03f17227b30"}
   ],
   "claim_flags": {
     "OBSERVER_ATLAS_FRAGMENT_SHARED_SCHEMA_VALIDATED": true,
     "OBSERVER_DATA_COLUMN_EXPORTED": true,
     "CG4_OPERATIONAL_RESPONSE_RANK_TWO": true,
     "MASSIVE_EMITTER_OPERATIONAL_RESPONSE_RANK_TWO": true,
+    "TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS_OBSTRUCTED": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
     "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
     "EXCEPTIONAL_RESONANCE_BERGER_CROSSWALK_CERTIFIED": false,
     "QUANTUM_CLAIM": false

@@ -18,6 +18,10 @@ have rank two.  Their nonlinear survival on
 `Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` is open in every declared correction class.
 The cone row cites the general finite-harmonic image/cokernel theorem, but
 does not promote its still-unevaluated Berger observer restriction.
+The profile-tail row is `OBSTRUCTED`: the finite `two_j<=4` Green image is
+valid, but that cutoff omits more than `0.9999975` of the clock-center
+one-form profile energy and cannot be promoted to a uniform full-profile
+image.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

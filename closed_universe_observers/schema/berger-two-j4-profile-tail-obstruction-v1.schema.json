@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-two-j4-profile-tail-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "quadrature", "tail_audit", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-two-j4-profile-tail-obstruction-v1"},
+    "result_id": {"const": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "OBSTRUCTED_TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS"},
+    "dependency_tags": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "minProperties": 5},
+    "quadrature": {"type": "object"},
+    "tail_audit": {"type": "object", "required": ["total_fourier_energy_lower", "retained_fourier_energy_upper", "omitted_fourier_energy_lower", "omitted_energy_fraction_lower", "uniform_small_tail_through_two_j4"], "properties": {"total_fourier_energy_lower": {"type": "string"}, "retained_fourier_energy_upper": {"const": "675"}, "omitted_fourier_energy_lower": {"type": "string"}, "omitted_energy_fraction_lower": {"type": "string"}, "uniform_small_tail_through_two_j4": {"const": false}}, "additionalProperties": true},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object", "required": ["TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS_OBSTRUCTED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "QUANTUM_CLAIM"], "properties": {"TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS_OBSTRUCTED": {"const": true}, "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false}, "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false}, "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": {"const": false}, "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}, "additionalProperties": false},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL obstruction applies Parseval to the actual normalized detector one-form profile at either clock center. Directed-rounding quadrature encloses the radial B^2 integral, the certified rod chart gives y0^2>=1-max|y|^2, and the certified Berger volume fixes the Fourier normalization. The total form-profile Fourier energy is greater than 2.809e8, while every coefficient through two_j=4 has absolute value at most one and their complete weighted energy is at most 675. Therefore more than 0.9999975 of the clock-center profile energy necessarily lies above two_j=4. The current finite window cannot support a uniform small-tail theorem; a substantially larger adaptive Peter-Weyl cutoff or a physical-space Green evaluation is required. This is a lower-bound obstruction, not an upper bound on the infinite tail and not a full advanced-image, recoil, interacting or quantum result.",
+  "claim_status": "OBSTRUCTED_TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS",
+  "dependency_refs": {
+    "chart": {
+      "path": "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "result_id": "BERGER_QUANTITATIVE_DETECTOR_ROD_CHART",
+      "sha256": "9332f4dde9e9f0ad9f677ed92c2438ed0819aeeed6e286338d0d85561faf73d4"
+    },
+    "form": {
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json",
+      "result_id": "BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS",
+      "sha256": "fd66add7974cff5628195123c2420245b833b5e8089aab97529f4c4c0500afb5"
+    },
+    "green_weighted": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+      "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "volume": {
+      "path": "d_quotient_classical/certificates/BERGER_CLOCK_REDUCED_CHARGE_SEED.json",
+      "result_id": "BERGER_CLOCK_REDUCED_CHARGE_SEED",
+      "sha256": "573381287998b6645b37fcbad0273c23c0e5cff58450cbcf7a2dc1152a8dfcd9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "QUANTUM_CLAIM": false,
+    "TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS_OBSTRUCTED": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "mutated_retained_energy_upper": "300",
+      "name": "omit_two_j4_representation_from_retained_dimension_count"
+    }
+  ],
+  "next_gate": "EXTEND_TO_AN_ADAPTIVE_PETER_WEYL_CUTOFF_NEAR_THE_PROFILE_BANDWIDTH_OR_EVALUATE_THE_GREEN_CHAIN_IN_PHYSICAL_SPACE",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_two_j4_profile_tail_obstruction.py",
+        "sha256": "26c5f1b4f82638fdb4243fb1a509d575eb2f94d5cbfe58bdf503025af7613944"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_two_j4_profile_tail_obstruction.py",
+        "sha256": "fd2995cccbff70d8bd11e1792f202ec2898d9b0c0000d3567612ea9589dbf907"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_two_j4_profile_tail_obstruction.py",
+        "sha256": "39337fc5e9b641431006d94eca59da178809d8a160b49f45ab532a7c3a808c09"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-two-j4-profile-tail-obstruction-v1.schema.json",
+        "sha256": "fb0b722166add465461e6ec606d6529d42c8603e69e04c63775d93d01cee03b6"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-two-j4-profile-tail-obstruction.md",
+        "sha256": "793959b1a254af0699ffe41eefcc54aec2497549a347404f6ef1be820f007d79"
+      }
+    ]
+  },
+  "quadrature": {
+    "cell_rule": "endpoint Darboux bounds; the unique peak cell uses r^2 B^2<=1",
+    "interval_precision": 50,
+    "output_dyadic_bits": 160,
+    "squared_bump_peak_identity": "sign d log(r^2 B(r)^2)=sign(2(1-r^2)^2-4r^2)",
+    "subdivisions": 32768
+  },
+  "result_id": "BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION",
+  "schema": "closed-universe-berger-two-j4-profile-tail-obstruction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "tail_audit": {
+    "maurer_cartan_volume": "Vol(S3_Berger)=16*pi^2*c",
+    "normalization": "chi_spatial=rho(R) J, dSigma=d^3R/J, J=8c at the clock center",
+    "omitted_energy_fraction_lower": "69599915876518645039293666607081785739239241119820001253816404761051059769383306205393858178151750631382172131/69600083091072098149785306856386673313522227021385314850960022574339792805874412891435115005868816924206432256",
+    "omitted_energy_fraction_lower_decimal": "0.999997597495",
+    "omitted_fourier_energy_lower": "69599915876518645039293666607081785739239241119820001253816404761051059769383306205393858178151750631382172131/247725264374978506133702673907517456275409726390514286841204872197091097935831172232337358616730110015",
+    "parseval_convention": "sum_j (2j+1)||hat F(j)||_HS^2 = Vol(S3_Berger)||F||_L2^2",
+    "pi_lower": "3",
+    "profile_slice": "clock center a=1 for either selected detector polarization",
+    "radial_integral_B": {
+      "lower": "139438095149335674965598606345281316493325333265/1461501637330902918203684832716283019655932542976",
+      "upper": "69745939616408616650925702016418248580468776473/730750818665451459101842416358141509827966271488",
+      "width": "53784083481558336252797687555180667612219681/1461501637330902918203684832716283019655932542976"
+    },
+    "radial_integral_B_squared": {
+      "lower": "41290849680789649063920554555947751564293462415/730750818665451459101842416358141509827966271488",
+      "upper": "82632048315153845263992888548867877580521763197/1461501637330902918203684832716283019655932542976",
+      "width": "50348953574547136151779436972374451934838367/1461501637330902918203684832716283019655932542976"
+    },
+    "retained_coefficient_absolute_upper": "1",
+    "retained_dimensions": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "retained_fourier_energy_upper": "675",
+    "selected_component_lower": "|dR0_1(theta3)|^2 and |dR1_2(theta1)|^2 are y0^2 >= 1-max|y|^2",
+    "total_fourier_energy_lower": "69600083091072098149785306856386673313522227021385314850960022574339792805874412891435115005868816924206432256/247725264374978506133702673907517456275409726390514286841204872197091097935831172232337358616730110015",
+    "uniform_small_tail_through_two_j4": false
+  }
+}

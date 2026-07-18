@@ -1,0 +1,50 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "TWO_J4_PROFILE_TAIL_OBSTRUCTION_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Parseval, the certified Berger volume and rod chart, and directed-rounding quadrature prove that more than 0.9999975 of the normalized detector one-form's clock-center Fourier energy lies above two_j=4. This obstructs uniform full-profile promotion from that cutoff. It is not an upper tail bound, a statement about the clock-integrated Green tail, a full advanced Maxwell or massive-two-form image, an evaluated recoil coefficient, an interacting theorem, or a quantum claim.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_two_j4_profile_tail_obstruction.py closed_universe_observers/verify_berger_two_j4_profile_tail_obstruction.py closed_universe_observers/tests/test_berger_two_j4_profile_tail_obstruction.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "observer obstruction, generated atlas, brief and programme links"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_two_j4_profile_tail_obstruction --emit", "elapsed_seconds": "4.12", "status": "PASS", "scope": "deterministic directed-rounding profile-energy obstruction generation"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_two_j4_profile_tail_obstruction", "elapsed_seconds": "4.05", "status": "PASS", "scope": "independent freshness, evidence, energy and fail-closed flag checks"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_two_j4_profile_tail_obstruction.py", "elapsed_seconds": "19.21", "status": "PASS", "scope": "four tests including cutoff-dimension and process-global interval-precision mutations", "summary": "4 passed"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-two-j4-profile-tail-obstruction-v1.schema.json -d closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json", "elapsed_seconds": "under 3", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "elapsed_seconds": "under 1", "status": "PASS", "scope": "shared residual-atlas schema and evidence validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "central observer evidence and lifecycle ledger"}
+  ],
+  "tier_2": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "391.95", "status": "PASS", "scope": "full observer regression after central-ledger and generated-atlas changes", "summary": "167 passed"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "338.49", "status": "FAIL", "reason": "the new generator inherited process-global mpmath interval precision from an earlier test; generation now resets to its declared IV_DPS=50 and a mutation regression enforces order independence"}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, full Green image, recoil coefficient, nonlinear-cone promotion, theorem promotion, or quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_two_j4_profile_tail_obstruction.py", "sha256": "26c5f1b4f82638fdb4243fb1a509d575eb2f94d5cbfe58bdf503025af7613944"},
+    {"path": "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json", "sha256": "266b15277a9b2e0cf8d4065b37e3d6dfdf711276d6497cb7ab667ebb9665fcdd"},
+    {"path": "closed_universe_observers/schema/berger-two-j4-profile-tail-obstruction-v1.schema.json", "sha256": "fb0b722166add465461e6ec606d6529d42c8603e69e04c63775d93d01cee03b6"},
+    {"path": "closed_universe_observers/verify_berger_two_j4_profile_tail_obstruction.py", "sha256": "fd2995cccbff70d8bd11e1792f202ec2898d9b0c0000d3567612ea9589dbf907"},
+    {"path": "closed_universe_observers/tests/test_berger_two_j4_profile_tail_obstruction.py", "sha256": "39337fc5e9b641431006d94eca59da178809d8a160b49f45ab532a7c3a808c09"},
+    {"path": "closed_universe_observers/reports/berger-two-j4-profile-tail-obstruction.md", "sha256": "793959b1a254af0699ffe41eefcc54aec2497549a347404f6ef1be820f007d79"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "7b12513665fea874d70d6037d427fb8fa3d4da71b54008ffbe2b02d270453ff7"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "dd0bec54ee9e811ee861da7dbdd17f04695cdf6e323e9608f7ecf6729a90155c"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "f445a5bd62adf410b74f7feef52a3de97d20c749ff6c5c4a84905428d9d9bbed"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "db11c79c56813f5e9037be993318f3ea5b989b2dc618f6c1141e3575d6f7496d"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "0985449a8757c4bf4e08da27032ec6b379475f892a65eba9b4ddd03f17227b30"}
+  ],
+  "claim_flags": {
+    "TWO_J4_UNIFORM_PROFILE_TAIL_SMALLNESS_OBSTRUCTED": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
