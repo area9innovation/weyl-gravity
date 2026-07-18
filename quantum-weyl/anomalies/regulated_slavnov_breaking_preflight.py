@@ -49,6 +49,7 @@ DEPENDENCIES = {
     "repository_round_S4_Euler_coefficient": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
     "nonconformal_coefficient_match_receiver": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_NONCONFORMAL_COEFFICIENT_MATCH_READINESS.json",
     "Euclidean_elliptic_complex_receiver": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_READINESS.json",
+    "regulator_measure_receiver": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_READINESS.json",
     "classical_snapshot_compatibility_receiver": ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS.json",
     "physical_classical_snapshot_compatibility": ROOT / "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
@@ -706,6 +707,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     repository_euler = values["repository_round_S4_Euler_coefficient"]
     nonconformal_receiver = values["nonconformal_coefficient_match_receiver"]
     elliptic_receiver = values["Euclidean_elliptic_complex_receiver"]
+    regulator_measure_receiver = values["regulator_measure_receiver"]
     compatibility = values["classical_snapshot_compatibility_receiver"]
     physical_compatibility = values["physical_classical_snapshot_compatibility"]
     ward = values["Ward_insertion_contract"]
@@ -894,6 +896,20 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
     ):
         raise ValueError("Euclidean elliptic-complex receiver dependency drifted")
+    regulator_flags = regulator_measure_receiver.get("claim_flags", {})
+    if (
+        regulator_measure_receiver.get("result_state")
+        != "COMPOSITIONAL_RECEIVER_READY_PHYSICAL_LEDGER_NOT_SUPPLIED"
+        or regulator_flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY")
+        is not True
+        or regulator_flags.get(
+            "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED"
+        )
+        is not False
+        or regulator_measure_receiver.get("next_gate")
+        != "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER"
+    ):
+        raise ValueError("regulator/zero-mode/measure receiver dependency drifted")
     compatibility_flags = compatibility.get("claim_flags", {})
     if (
         compatibility.get("result_state")
@@ -1069,6 +1085,7 @@ def build() -> dict[str, Any]:
                 "repository round-S4 Euler coefficient a=87/20 (E4 coordinate -87/20)",
                 "mutation-tested C2-visible full-BV coefficient-match receiver and current-candidate audit",
                 "mutation-tested exact sparse Euclidean elliptic-complex receiver and current-candidate audit",
+                "mutation-tested compositional regulator/zero-mode/measure receiver and current-candidate audit",
                 "semantic cross-commit classical snapshot compatibility receiver",
                 "physical cross-commit classical snapshot compatibility bridge",
                 "versioned regulated BV insertion-decomposition output contract",
@@ -1085,7 +1102,7 @@ def build() -> dict[str, Any]:
                 },
                 {
                     "carrier_id": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER",
-                    "required_output": "content-address the regulator, priming, determinant measure and any formulation-specific contour or global phase policy",
+                    "required_output": "supply the executable combined-ledger receiver input binding regulator, priming, determinant measure, contour, symmetry volume and global phase policy",
                 },
                 {
                     "carrier_id": "REGULATED_BV_SLAVNOV_ACTION",
@@ -1108,6 +1125,7 @@ def build() -> dict[str, Any]:
             "repository_C2_coefficient_gap": True,
             "nonconformal_coefficient_match_receiver_ready": True,
             "Euclidean_elliptic_complex_receiver_ready": True,
+            "regulator_zero_mode_measure_receiver_ready": True,
             "classical_snapshot_compatibility_bridge_gap": False,
             "physical_classical_snapshot_compatibility_accepted": True,
             "regulated_BV_insertion_v2_receiver_ready": True,
@@ -1128,6 +1146,7 @@ def build() -> dict[str, Any]:
             "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED": True,
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY": True,
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": True,
+            "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
             "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
@@ -1172,6 +1191,7 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         is not True
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
         or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
+        or flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY") is not True
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
         is not True
         or flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY") is not True

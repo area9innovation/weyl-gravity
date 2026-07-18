@@ -120,6 +120,14 @@ determinant presentation, not a full covariant symbol sequence; Nariai is
 Lorentzian and the TT auxiliary identity covers only one block. Receiver
 readiness therefore does not promote a physical elliptic complex.
 
+The regulator/zero-mode/measure carrier likewise has a strict compositional
+receiver. It checks exact determinant-rank arithmetic, priming against every
+kernel dimension, full measure and Jacobian coverage, covariant regulator and
+parity policies, indefinite contours, symmetry-volume normalization, and the
+global phase disposition. The standard round-`S4` slice and accepted physical
+multiplicity ledger supply complementary evidence but are not implicitly
+composed into this missing repository carrier.
+
 The Slavnov assembly gate now records the sharper post-composer boundary.
 The accepted physical TT dictionary and full-BV ledger now permit the
 repository local heat-kernel vector to be bound into the analytic handoff,

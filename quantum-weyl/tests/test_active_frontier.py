@@ -103,6 +103,11 @@ class ActiveFrontierTests(unittest.TestCase):
                 "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"]
         )

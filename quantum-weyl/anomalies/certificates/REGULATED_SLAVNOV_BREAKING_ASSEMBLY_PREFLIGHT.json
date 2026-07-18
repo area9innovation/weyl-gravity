@@ -37,6 +37,7 @@
       "repository round-S4 Euler coefficient a=87/20 (E4 coordinate -87/20)",
       "mutation-tested C2-visible full-BV coefficient-match receiver and current-candidate audit",
       "mutation-tested exact sparse Euclidean elliptic-complex receiver and current-candidate audit",
+      "mutation-tested compositional regulator/zero-mode/measure receiver and current-candidate audit",
       "semantic cross-commit classical snapshot compatibility receiver",
       "physical cross-commit classical snapshot compatibility bridge",
       "versioned regulated BV insertion-decomposition output contract",
@@ -53,7 +54,7 @@
       },
       {
         "carrier_id": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER",
-        "required_output": "content-address the regulator, priming, determinant measure and any formulation-specific contour or global phase policy"
+        "required_output": "supply the executable combined-ledger receiver input binding regulator, priming, determinant measure, contour, symmetry volume and global phase policy"
       },
       {
         "carrier_id": "REGULATED_BV_SLAVNOV_ACTION",
@@ -78,6 +79,7 @@
     "QME_RESTORED": false,
     "REGULATED_BV_INSERTION_V2_RECEIVER_READY": true,
     "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": true,
     "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,
     "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED": true,
     "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": true,
@@ -235,6 +237,7 @@
     "physical_TT_dictionary": "64b3d13ae34128530c2e71f3d3fb48faf543adaf544a89ee319fbe034d41ece3",
     "physical_classical_snapshot_compatibility": "03953fd210a94b332eddb5e2d98a1dbde67a4bf6a8a4534f98989dd7a1956bac",
     "physical_full_BV_multiplicity_ledger": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970",
+    "regulator_measure_receiver": "b58a4155158ae73aff521b973e240d7acfdf439af249e1768e46c4427c1884db",
     "repository_round_S4_Euler_coefficient": "0543a0eca3a31a07bae125b48367833909a96b5c224fca2a0e1ebe4a3e076070",
     "standard_auxiliary_fourth_order_match": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be",
     "standard_background_coefficients": "2c1eaa0a1bf85004b21bf84aa0722c0e9622e6038011b5b2b00c9e82f6fb36d8"
@@ -255,6 +258,7 @@
     "physical_classical_snapshot_compatibility_accepted": true,
     "physical_full_BV_multiplicity_ledger_accepted": true,
     "regulated_BV_insertion_v2_receiver_ready": true,
+    "regulator_zero_mode_measure_receiver_ready": true,
     "remaining_decision_gap": "the round-S4 physical ledger fixes a=87/20 but cannot see C2; a non-conformally-flat or Ricci-flat full-BV coefficient carrier, a cross-snapshot compatibility proof, and a regulated BV Slavnov insertion with Wess-Zumino and parity proofs remain required; determinant coefficients alone do not decide the QME",
     "repository_C2_coefficient_gap": true,
     "repository_round_S4_Euler_coefficient_computed": true,
@@ -265,15 +269,15 @@
     "status": "EXACT_REGULATED_BV_INSERTION_GAP"
   },
   "next_gate": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
-  "proof_sha256": "30a606bcf9bef509670aa9c09e578875093f03809f0427daa02ce243f22e8b01",
+  "proof_sha256": "9b48fa932bbf2340e03d35c6215b217d2a2d02e4ff5d77acf92cb65320deba1f",
   "provenance": {
     "source_sha256": {
-      "quantum-weyl/anomalies/regulated_slavnov_breaking_preflight.py": "20fe9031e1117934387918d03dd8b9dbbab1e99d3c55a1e2e6c6d68fc05c7265",
-      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json": "be1131ec5c769a7b50785f31b2d6485958232db0518dccf7ad9b79b1c30073ee",
+      "quantum-weyl/anomalies/regulated_slavnov_breaking_preflight.py": "bb52072f54513d7d7b39ddf0c90f99baeab3a10e9d0847a6c161f828bf9a20c8",
+      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json": "73b84a879d6c5046162c0c8ace3a16b6adddc2d501c32aecc8c775f6464124de",
       "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-export-v2.schema.json": "4cdbcd71e8f3e8e6b80511c675312593945474b180a21e446b7ce164efddd836",
-      "quantum-weyl/anomalies/tests/test_regulated_slavnov_breaking_preflight.py": "256ad1a9d9aab4585f3832059fa330a42ae8dd67eb89b02eeffeb83fb3ac06c4",
-      "quantum-weyl/anomalies/verify_regulated_slavnov_breaking_preflight.py": "51c7958c6d4430d33d49f1ee43acc855c2b627ef74ec6e11a9bc6efc6b254d28",
-      "quantum-weyl/reports/regulated-slavnov-breaking-assembly-preflight.md": "0c7dc827451b993f5e920f5495f218af72f0e3e2514a15ea5e893471659246eb"
+      "quantum-weyl/anomalies/tests/test_regulated_slavnov_breaking_preflight.py": "f6614b6d63c8673ef16444ccdf61dc8d81c5a5179661639f30cbede44ea50e2e",
+      "quantum-weyl/anomalies/verify_regulated_slavnov_breaking_preflight.py": "8bcd810c4014b5678c2a8e88d2d4ca4796890de4fbbf79e63a09138ca48c826c",
+      "quantum-weyl/reports/regulated-slavnov-breaking-assembly-preflight.md": "bdd771b8951d9078149283fa060b60a37e4f8eada565e8746d31e93b0394bc75"
     }
   },
   "receiver_mechanics": {

@@ -604,6 +604,15 @@ by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
+The combined regulator/zero-mode/measure carrier now also has an executable
+receiver. It requires exact determinant-rank arithmetic, factorwise priming,
+all Jacobian and nonminimal measure contributions, a covariant local
+regulator, parity disposition, indefinite contours, normalized continuous
+symmetry volume, and a fixed or locally irrelevant global phase policy. The
+standard round-`S4` slice and accepted repository multiplicity ledger provide
+complementary inputs but are deliberately not promoted to the combined
+physical carrier without a content-addressed composition artifact.
+
 The multiplicity receiver is executable rather than schema-only. It requires
 complete row/factor coverage, the exact four target ranks and determinant
 signs, a verified rank-two-to-rank-one scalar ghost map, and recursively

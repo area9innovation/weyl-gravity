@@ -80,6 +80,11 @@ coordinates, and no compensating Wess--Zumino field is added, the strict
 fixed-field-content QME is obstructed at one loop. The condition is not yet
 established, so the theorem is deliberately inactive.
 
+The regulator/zero-mode/measure carrier now has an executable compositional
+receiver. It keeps the accepted repository multiplicity ledger, the standard
+local regulator and priming slice, and the still-open global phase policy
+distinct until one content-addressed physical ledger binds them.
+
 ## Exact remaining gap
 
 No further local tensor-graph or multiplicity expansion is needed for this

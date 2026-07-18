@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-regulator-zero-mode-measure-input-v1.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "analytic_route", "background", "factor_ledger", "aggregate_checks", "measure_policy", "zero_mode_policy", "regulator_policy", "contour_and_phase_policy", "proof_artifacts", "claim_flags", "proof_sha256", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-regulator-zero-mode-measure-input-v1"},
+    "result_id": {"const": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER"},
+    "result_state": {"const": "FULL_BV_REGULATOR_ZERO_MODE_MEASURE_LEDGER_COMPLETE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "analytic_route": {"const": "EUCLIDEAN_ELLIPTIC"},
+    "background": {"type": "object", "additionalProperties": false, "required": ["geometry", "dimension", "boundary_policy"], "properties": {"geometry": {"type": "string", "minLength": 10}, "dimension": {"const": 4}, "boundary_policy": {"enum": ["CLOSED_NO_BOUNDARY", "LOCAL_COMPACT_SUPPORT"]}}},
+    "factor_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/factor"}},
+    "aggregate_checks": {"type": "object", "additionalProperties": false, "required": ["weighted_logdet_rank", "total_zero_mode_dimension", "all_full_BV_rows_accounted"], "properties": {"weighted_logdet_rank": {"$ref": "#/$defs/rational"}, "total_zero_mode_dimension": {"type": "integer", "minimum": 0}, "all_full_BV_rows_accounted": {"const": true}}},
+    "measure_policy": {"const": {"common_nonzero_mode_domain": true, "all_jacobians_and_nonminimal_superdeterminants_included": true, "normalization_content_addressed": true}},
+    "zero_mode_policy": {"type": "object", "additionalProperties": false, "required": ["all_kernels_enumerated", "finite_symmetry_volume_policy", "local_b4_effect"], "properties": {"all_kernels_enumerated": {"const": true}, "finite_symmetry_volume_policy": {"enum": ["DIVIDED_BY_DECLARED_NORMALIZED_VOLUME", "ABSENT_NO_CONTINUOUS_KERNEL"]}, "local_b4_effect": {"const": "FINITE_DIMENSIONAL_KERNELS_REMOVED_BEFORE_LOCAL_HEAT_TRACE"}}},
+    "regulator_policy": {"type": "object", "additionalProperties": false, "required": ["regularization", "local_covariance", "factorwise_scale_and_sign_conventions_fixed", "parity_disposition_certified"], "properties": {"regularization": {"enum": ["COVARIANT_HEAT_KERNEL", "COVARIANT_ZETA_FUNCTION"]}, "local_covariance": {"const": true}, "factorwise_scale_and_sign_conventions_fixed": {"const": true}, "parity_disposition_certified": {"const": true}}},
+    "contour_and_phase_policy": {"type": "object", "additionalProperties": false, "required": ["all_indefinite_directions_covered", "global_phase_status", "local_logarithmic_effect_separated"], "properties": {"all_indefinite_directions_covered": {"const": true}, "global_phase_status": {"enum": ["FIXED", "PROVED_IRRELEVANT_TO_LOCAL_SLAVNOV_BREAKING"]}, "local_logarithmic_effect_separated": {"const": true}}},
+    "proof_artifacts": {"type": "object", "additionalProperties": false, "required": ["elliptic_complex", "multiplicity", "measure", "zero_modes", "regulator", "contour_phase", "snapshot_compatibility"], "properties": {"elliptic_complex": {"$ref": "#/$defs/artifact"}, "multiplicity": {"$ref": "#/$defs/artifact"}, "measure": {"$ref": "#/$defs/artifact"}, "zero_modes": {"$ref": "#/$defs/artifact"}, "regulator": {"$ref": "#/$defs/artifact"}, "contour_phase": {"$ref": "#/$defs/artifact"}, "snapshot_compatibility": {"$ref": "#/$defs/artifact"}}},
+    "claim_flags": {"const": {"REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": true, "REGULATED_SLAVNOV_BREAKING_COMPUTED": false, "QME_DISPOSITION": false, "LORENTZIAN_CERTIFIED": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"}, "claim_boundary": {"type": "string", "minLength": 160}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["format", "path", "sha256"], "properties": {"format": {"const": "JSON_PROOF"}, "path": {"type": "string", "minLength": 10}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "factor": {"type": "object", "additionalProperties": false, "required": ["factor_id", "bundle_rank", "Gamma_logdet_exponent", "zero_mode_dimension", "primed"], "properties": {"factor_id": {"type": "string", "minLength": 3}, "bundle_rank": {"type": "integer", "minimum": 1}, "Gamma_logdet_exponent": {"$ref": "#/$defs/rational"}, "zero_mode_dimension": {"type": "integer", "minimum": 0}, "primed": {"type": "boolean"}}}
+  }
+}
