@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2a-cross-flux-v1",
+  "title": "BH-2A stage 4: nonzero Einstein x extra horizon flux (fixtures)",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "method",
+    "fixtures",
+    "conclusions",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2a-cross-flux-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2a-cross-flux-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2A_CROSS_FLUX" },
+    "result_token": { "const": "BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "method": {
+      "type": "object",
+      "required": ["pipeline", "series_order", "validation"],
+      "properties": {
+        "pipeline": { "const": "black_hole_programme/axial_flux_modes.py (composition route)" },
+        "series_order": { "const": 16 }
+      }
+    },
+    "fixtures": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "omega",
+          "radii",
+          "control_over_pi_alpha_float",
+          "cross_over_pi_alpha_float",
+          "ee_over_pi_alpha_float",
+          "ee_im_sign"
+        ],
+        "properties": {
+          "radii": { "const": ["65/32", "33/16"] },
+          "ee_im_sign": { "const": "negative (i*F^r positive for alpha > 0)" }
+        }
+      }
+    },
+    "conclusions": {
+      "type": "object",
+      "required": ["extra_norm", "cross", "structure"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "null_control_certified",
+        "extra_norm_nonzero_certified",
+        "extra_norm_sign_certified",
+        "cross_nonzero_certified",
+        "frequency_robustness_two_points",
+        "symbolic_omega_dependence_certified",
+        "general_l_or_m_certified",
+        "outer_boundary_counterpart_certified",
+        "causal_disposition_decided",
+        "stability_or_ringdown_certified"
+      ],
+      "properties": {
+        "null_control_certified": { "const": true },
+        "extra_norm_nonzero_certified": { "const": true },
+        "extra_norm_sign_certified": { "const": true },
+        "cross_nonzero_certified": { "const": true },
+        "frequency_robustness_two_points": { "const": true },
+        "symbolic_omega_dependence_certified": { "const": false },
+        "general_l_or_m_certified": { "const": false },
+        "outer_boundary_counterpart_certified": { "const": false },
+        "causal_disposition_decided": { "const": false },
+        "stability_or_ringdown_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "stage_seconds": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "pipeline_path",
+        "pipeline_sha256",
+        "flux_certificate",
+        "flux_certificate_sha256",
+        "reach_certificate",
+        "reach_certificate_sha256"
+      ],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh2a_cross_flux.py" },
+        "pipeline_path": { "const": "black_hole_programme/axial_flux_modes.py" },
+        "pipeline_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "flux_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "reach_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2a_cross_flux.py"
+    }
+  }
+}

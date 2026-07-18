@@ -36,7 +36,8 @@ every certificate in this directory.
 | BH-2A stage 1 | `BH2A_AXIAL_L2_OPERATOR_AND_BRANCH_SPLIT_CLASSIFIED` | certified: axial ℓ=2 operator; Regge–Wheeler master equation reproduced exactly; branch-split theorem δB = ½□δRic + C∘δRic (Einstein branch injects; extra branch = 2nd-order Lichnerowicz-type carrier ψ = δRic); split OBSTRUCTED off Einstein backgrounds |
 | BH-2A stage 2 | `BH2A_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL` | certified: in the ingoing EF chart the extra branch has a two-parameter ingoing-regular family at every frequency (regular singular point, residue spectrum {0,0,−4imω,−2−4imω}, kernel rank 2); horizon regularity cannot exclude the extra branch |
 | BH-2A stage 3 | `BH2A_FLUX_MATRIX_STAGE1_RW_BRANCH_SYMPLECTICALLY_NULL` | certified: general axial bilinear + off-shell 4α identity; RW-block flux vanishes for conjugate pairs — the Einstein branch is symplectically null; all pairing lives in the Einstein×extra cross-block |
-| BH-2A remainder | cross/extra flux blocks with horizon signs, outer-boundary domains, causal disposition, polar sector | open — prerequisite for any ringdown/stability language |
+| BH-2A stage 4 | `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES` | certified (fixtures ω∈{3/5,2/7}, verifier adds 1/2; RW-null control < 1e-12): extra-branch horizon flux norm nonzero with i·F^r > 0 for α>0; Einstein×extra cross pairing nonzero — all horizon flux lives in the mixed/extra sectors |
+| BH-2A remainder | causal disposition of the extra branch, outer-boundary domains, polar sector | open — prerequisite for any ringdown/stability language |
 
 Run everything for a certificate:
 

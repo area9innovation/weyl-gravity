@@ -1,0 +1,106 @@
+{
+  "claim_flags": {
+    "causal_disposition_decided": false,
+    "cross_nonzero_certified": true,
+    "extra_norm_nonzero_certified": true,
+    "extra_norm_sign_certified": true,
+    "frequency_robustness_two_points": true,
+    "general_l_or_m_certified": false,
+    "null_control_certified": true,
+    "outer_boundary_counterpart_certified": false,
+    "stability_or_ringdown_certified": false,
+    "symbolic_omega_dependence_certified": false
+  },
+  "conclusions": {
+    "cross": "the Einstein x extra cross pairing is nonzero at both frequencies: the branches exchange symplectic flux through the horizon",
+    "extra_norm": "the ingoing extra-branch family carries a nonzero Hermitian horizon-flux norm, i F^r(extra, conj extra) = +|v| pi alpha > 0 for alpha > 0, at both frequencies",
+    "structure": "with the certified null RW block, all horizon flux pairing lives in the mixed and extra sectors"
+  },
+  "declaration": {
+    "background_family": "Schwarzschild, m = 1 fixture",
+    "conformal_frame": "working gauge; t-chart bilinear with exact e^{i omega r*} mode factors",
+    "generator": "none; bilinear pairings of ingoing-analytic modes",
+    "horizon_condition": "ingoing analyticity (certified BH2A_HORIZON_REACH families)",
+    "infinity_condition": "none; interior-radius evaluation via on-shell r-independence",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "axial l = 2 ingoing modes at omega in {3/5, 2/7}; conjugate partners exact",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "fixtures": [
+    {
+      "control_over_pi_alpha_float": [
+        "-4.365964563897622e-23j",
+        "-1.3271916473017848e-18j"
+      ],
+      "cross_over_pi_alpha_float": [
+        "(-218.17162537574768+43.551295042037964j)",
+        "(-215.9739007949829+51.52572876214981j)"
+      ],
+      "ee_im_sign": "negative (i*F^r positive for alpha > 0)",
+      "ee_over_pi_alpha_float": [
+        "-330.58263397216797j",
+        "-329.9830093383789j"
+      ],
+      "omega": "3/5",
+      "radii": [
+        "65/32",
+        "33/16"
+      ]
+    },
+    {
+      "control_over_pi_alpha_float": [
+        "-4.5279827098780857e-23j",
+        "-1.1821881266921578e-18j"
+      ],
+      "cross_over_pi_alpha_float": [
+        "(-162.82078218460083+27.985608845949173j)",
+        "(-163.91841220855713+33.03200006484985j)"
+      ],
+      "ee_im_sign": "negative (i*F^r positive for alpha > 0)",
+      "ee_over_pi_alpha_float": [
+        "-71.91615974903107j",
+        "-71.95137059688568j"
+      ],
+      "omega": "2/7",
+      "radii": [
+        "65/32",
+        "33/16"
+      ]
+    }
+  ],
+  "method": {
+    "pipeline": "black_hole_programme/axial_flux_modes.py (composition route)",
+    "series_order": 16,
+    "validation": "in-run RW x RW null control (certified exact zero) bounds truncation at < 1e-12 relative; radius stability < 2 percent; conjugate-basis Hermitian pairing"
+  },
+  "missing_objects": [
+    "exact symbolic omega-dependence of the flux blocks",
+    "general l, general m, polar sector",
+    "outer-boundary flux counterpart and falloff domains",
+    "causal disposition of the extra branch (BH-2A closure)",
+    "any stability or ringdown statement"
+  ],
+  "provenance": {
+    "flux_certificate": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+    "flux_certificate_sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732",
+    "generator_path": "black_hole_programme/bh2a_cross_flux.py",
+    "pipeline_path": "black_hole_programme/axial_flux_modes.py",
+    "pipeline_sha256": "3d2913ae32625d56323c99e80b1923f11638f95fcec6327642f786437e9cb4b0",
+    "reach_certificate": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
+    "reach_certificate_sha256": "dcab47cf90e5a0120308b2031444539604d902c9cc5b788ce510f366f0d26d7f"
+  },
+  "result_id": "PURE_WEYL_BH2A_CROSS_FLUX",
+  "result_token": "BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES",
+  "schema": "pure-weyl-bh2a-cross-flux-v1",
+  "schema_path": "black_hole_programme/schema/bh2a-cross-flux-v1.schema.json",
+  "schema_sha256": "0c77a1ac7ff582726f0646de3a55168cb45f2140580040f21dbe27ab62313772",
+  "stage_seconds": {
+    "omega_2/7": 226.0,
+    "omega_3/5": 243.9
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2a_cross_flux.py"
+}

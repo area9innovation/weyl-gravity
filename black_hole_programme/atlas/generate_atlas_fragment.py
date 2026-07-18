@@ -42,6 +42,7 @@ CERTS = {
     "BH2A": PKG / "certificates" / "BH2A_AXIAL_OPERATOR.json",
     "BH2AR": PKG / "certificates" / "BH2A_HORIZON_REACH.json",
     "BH2AF": PKG / "certificates" / "BH2A_FLUX_MATRIX.json",
+    "BH2AC": PKG / "certificates" / "BH2A_CROSS_FLUX.json",
 }
 
 
@@ -258,7 +259,10 @@ def entries():
                 "CERTIFIED",
                 "extra branch identified exactly: carrier psi_ab = delta Ric_ab satisfies the second-order Lichnerowicz-type equation (1/2) Box psi + C.psi = 0 on the Ricci-flat background (axial l=2); the naive split is OBSTRUCTED on non-Einstein backgrounds",
                 "operator pending certificate", "BH2A"),
-            "lee_wald": _claim("OPEN", "extra-block and cross-block flux values and signs remain open; all symplectic pairing must live in the Einstein x extra cross-block (RW branch certified null)"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "fixture-level horizon flux closed: extra-branch Hermitian norm nonzero with i*F^r = +|v| pi alpha > 0 for alpha > 0 (omega in {3/5, 2/7}; verifier adds 1/2), Einstein x extra cross pairing nonzero; RW block certified null, so all pairing lives in the mixed and extra sectors; symbolic omega-dependence and outer boundary OPEN",
+                "extra-block and cross-block flux values and signs remain open", "BH2AC"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with the compact-cylinder extra branch without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
