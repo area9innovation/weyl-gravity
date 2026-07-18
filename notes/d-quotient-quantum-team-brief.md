@@ -555,8 +555,12 @@ dictionary. The required artifact is
 `REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1`, proving
 `H_TT^repository=kappa Delta_2_perp(2) Delta_2_perp(4)` with the exact sign,
 scalar, pairing, Laplacian convention, Euler-term policy, and zero-mode
-domain. Global zero modes, auxiliary contour/phase, regulator, and total
-row/factor map remain open; the classical
+domain. Independently, the four standard round-`S4` factors now have a complete
+zero-mode ledger: no physical TT zeros, ten Killing-vector ghost zeros, and
+five scalar proper-conformal ghost zeros with exact Diff--Weyl kernel vector
+`(1,1)`. These reproduce the classical fifteen conformal reducibilities. The
+repository-global zero-mode ledger, auxiliary contour/phase, regulator, and
+total row/factor map remain open; the classical
 54-row carrier is explicitly not a loop-multiplicity authority. The next
 task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
 content-addressed repository regulator/operator/measure match, and compute

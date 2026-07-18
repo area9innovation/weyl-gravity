@@ -51,8 +51,14 @@ def _canonical_hash(value: object) -> str:
     ).hexdigest()
 
 
-def _git_head() -> str:
-    return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+def _classical_commit() -> str:
+    """Commit that last changed the imported classical endpoint, not mutable HEAD."""
+
+    return subprocess.check_output(
+        ["git", "log", "-1", "--format=%H", "--", str(NARIAI.relative_to(ROOT))],
+        cwd=ROOT,
+        text=True,
+    ).strip()
 
 
 def curvature_identity(*, scalar_coefficient: tuple[int, int] = (1, 3)) -> dict[str, Any]:
@@ -148,7 +154,7 @@ def build() -> dict[str, Any]:
         "result_id": "REPOSITORY_TT_HESSIAN_NORMALIZATION_READINESS",
         "result_state": "ACTION_NORMALIZATION_AND_NEARBY_FACTORIZATIONS_VERIFIED_ROUND_S4_TT_DICTIONARY_NOT_SUPPLIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
-        "classical_commit": _git_head(),
+        "classical_commit": _classical_commit(),
         "dependency_hashes": {
             "standard_TT_auxiliary_match": _sha256(STANDARD),
             "cylinder_TT_factorization": _sha256(CYLINDER),

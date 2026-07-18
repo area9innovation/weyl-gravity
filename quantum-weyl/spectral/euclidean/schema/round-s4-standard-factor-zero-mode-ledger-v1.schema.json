@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-round-s4-standard-factor-zero-mode-ledger-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "background", "factor_zero_mode_ledger", "reducibility_match", "zero_mode_policy", "negative_control", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-round-s4-standard-factor-zero-mode-ledger-v1"},
+    "result_id": {"const": "ROUND_S4_STANDARD_FACTOR_ZERO_MODE_LEDGER"},
+    "result_state": {"const": "STANDARD_ROUND_S4_FOUR_FACTOR_ZERO_MODES_COMPLETE_REPOSITORY_GLOBAL_LEDGER_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_hashes": {"type": "object", "additionalProperties": false, "required": ["standard_coefficient_ledger", "repository_scalar_ghost_reduction"], "properties": {"standard_coefficient_ledger": {"$ref": "#/$defs/hash"}, "repository_scalar_ghost_reduction": {"$ref": "#/$defs/hash"}}},
+    "background": {"type": "object", "additionalProperties": false, "required": ["geometry", "scalar_curvature", "operator_family", "harmonic_eigenvalue"], "properties": {"geometry": {"const": "round unit S4"}, "scalar_curvature": {"const": 12}, "operator_family": {"const": "Delta_s(M_squared)=-nabla^2+M_squared on transverse spin-s harmonics"}, "harmonic_eigenvalue": {"const": "-nabla^2=n(n+3)-s"}}},
+    "factor_zero_mode_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/factor"}},
+    "reducibility_match": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Killing_vector_modes", "proper_conformal_scalar_modes", "total_conformal_Killing_modes", "scalar_FP_kernel_at_Delta0_eigenvalue_4", "matches_classical_conformal_zero_mode_count"],
+      "properties": {
+        "Killing_vector_modes": {"const": 10}, "proper_conformal_scalar_modes": {"const": 5}, "total_conformal_Killing_modes": {"const": 15},
+        "scalar_FP_kernel_at_Delta0_eigenvalue_4": {"type": "object", "additionalProperties": false, "required": ["matrix", "kernel_vector_in_c_omega_coordinates", "kernel_dimension_per_scalar_harmonic"], "properties": {"matrix": {"const": [[0, 0], [-8, 8]]}, "kernel_vector_in_c_omega_coordinates": {"const": [1, 1]}, "kernel_dimension_per_scalar_harmonic": {"const": 1}}},
+        "matches_classical_conformal_zero_mode_count": {"const": true}
+      }
+    },
+    "zero_mode_policy": {"type": "object", "additionalProperties": false, "required": ["standard_determinants", "physical_TT_determinants", "finite_group_volume", "negative_scalar_level_zero"], "properties": {"standard_determinants": {"type": "string"}, "physical_TT_determinants": {"type": "string"}, "finite_group_volume": {"const": "NOT_NORMALIZED"}, "negative_scalar_level_zero": {"type": "string"}}},
+    "negative_control": {"type": "object", "additionalProperties": false, "required": ["mutation", "mutated_total", "expected_total", "rejected"], "properties": {"mutation": {"type": "string"}, "mutated_total": {"const": 14}, "expected_total": {"const": 15}, "rejected": {"const": true}}},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE", "FIFTEEN_CONFORMAL_REDUCIBILITY_MODES_MATCHED", "REPOSITORY_SCALAR_FP_KERNEL_MATCHED", "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED", "REPOSITORY_GLOBAL_ZERO_MODE_LEDGER_COMPLETE", "FINITE_CONFORMAL_GROUP_VOLUME_NORMALIZED", "REGULATED_SLAVNOV_BREAKING_COMPUTED", "QME_DISPOSITION"],
+      "properties": {
+        "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE": {"const": true}, "FIFTEEN_CONFORMAL_REDUCIBILITY_MODES_MATCHED": {"const": true}, "REPOSITORY_SCALAR_FP_KERNEL_MATCHED": {"const": true},
+        "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": {"const": false}, "REPOSITORY_GLOBAL_ZERO_MODE_LEDGER_COMPLETE": {"const": false}, "FINITE_CONFORMAL_GROUP_VOLUME_NORMALIZED": {"const": false}, "REGULATED_SLAVNOV_BREAKING_COMPUTED": {"const": false}, "QME_DISPOSITION": {"const": false}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1_AND_COMPLETE_GLOBAL_LEDGER"},
+    "claim_boundary": {"type": "string", "minLength": 600},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "scanRow": {"type": "object", "additionalProperties": false, "required": ["level", "eigenvalue"], "properties": {"level": {"type": "integer", "minimum": 0}, "eigenvalue": {"type": "integer"}}},
+    "spectrum": {"type": "object", "additionalProperties": false, "required": ["spin", "M_squared", "minimum_level", "eigenvalue_formula", "zero_equation", "zero_levels", "scan_limit", "scanned_rows"], "properties": {"spin": {"type": "integer", "minimum": 0, "maximum": 2}, "M_squared": {"type": "integer"}, "minimum_level": {"type": "integer", "minimum": 0}, "eigenvalue_formula": {"type": "string"}, "zero_equation": {"type": "string"}, "zero_levels": {"type": "array", "items": {"type": "integer", "minimum": 0}}, "scan_limit": {"const": 12}, "scanned_rows": {"type": "array", "minItems": 11, "items": {"$ref": "#/$defs/scanRow"}}}},
+    "factor": {"type": "object", "additionalProperties": false, "required": ["factor_id", "spectrum", "zero_mode_dimension", "geometric_kernel"], "properties": {"factor_id": {"enum": ["physical_depth_0", "ghost_depth_0", "physical_depth_1", "ghost_depth_1"]}, "spectrum": {"$ref": "#/$defs/spectrum"}, "zero_mode_dimension": {"type": "integer", "minimum": 0}, "geometric_kernel": {"type": "string"}}}
+  }
+}
