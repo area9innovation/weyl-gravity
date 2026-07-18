@@ -28,6 +28,7 @@ INPUTS = {
     "twist_standard": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
     "abd_quadratic": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+    "homogeneous_twist_quadratic": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
 }
 
 STATUS = {"CERTIFIED", "OPEN", "NO_CERTIFIED_MAP", "NOT_APPLICABLE"}
@@ -204,8 +205,8 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
             "projection_or_cofiber": {"status": "CERTIFIED", "map": "P_twist=3*(x-4/3)*(x-4)/16 isolates the complete target twist primary, which equals the Einstein image; solution cofiber zero"},
             "branch_representatives": {"status": "CERTIFIED", "standard_and_complete_target": ["A_m", "B_m"], "extra": "zero solution cofiber in the x=0 primary"},
             "action_derived_pairing": {"status": "CERTIFIED", "relative_operator": "-2*I on each twist pair"},
-            "missing": ["twist off-shell chain map", "twist position/velocity times ell=2 extra source columns", "global moduli-orbifold quotient", "final residual descent"],
-            "evidence": _evidence("standard", "twist_standard", "exceptional_cofiber", "twist_cofiber"),
+            "missing": ["twist off-shell chain map", "global moduli-orbifold quotient", "final residual descent"],
+            "evidence": _evidence("standard", "twist_standard", "exceptional_cofiber", "twist_cofiber", "homogeneous_twist_quadratic"),
         },
         {
             "id": "ph.boundary.relative",
@@ -257,6 +258,8 @@ def build() -> dict[str, object]:
         raise AssertionError("homogeneous zero solution cofiber changed")
     if not records["twist_cofiber"]["classification"]["twist_solution_cofiber_zero"]:
         raise AssertionError("twist zero solution cofiber changed")
+    if not records["homogeneous_twist_quadratic"]["classification"]["complete_homogeneous_twist_bounded_resonance_matrix"]:
+        raise AssertionError("complete homogeneous/twist resonance input changed")
     rows = _branch_rows(records)
     identifiers = [row["id"] for row in rows]
     if len(identifiers) != len(set(identifiers)):
@@ -295,8 +298,8 @@ def build() -> dict[str, object]:
         "branch_rows": rows,
         "quadratic_handoff": {
             "status": "PARTIAL_INPUT",
-            "artifact": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
-            "meaning": "the a,b,d polynomial source matrix feeds the relative obstruction map but does not complete bridge 1 or the finite-harmonic tangent cone",
+            "artifact": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
+            "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra bounded-resonance source matrix feeds the relative obstruction map but does not solve the simultaneous stabilizer zero locus, complete bridge 1 or the finite-harmonic tangent cone",
         },
         "classification": {
             "same_background_only": True,
@@ -308,6 +311,7 @@ def build() -> dict[str, object]:
             "exceptional_k0_solution_cofiber_certified": True,
             "homogeneous_solution_cofiber_zero": True,
             "twist_solution_cofiber_zero": True,
+            "complete_homogeneous_twist_bounded_resonance_matrix_imported": True,
             "exceptional_global_and_boundary_absences_explicit": True,
             "full_offshell_all_sector_triangle_certified": False,
             "bridge_1_activation_gate_satisfied": False,

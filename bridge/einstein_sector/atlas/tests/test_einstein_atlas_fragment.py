@@ -40,6 +40,11 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
 
+    def test_complete_homogeneous_twist_matrix_remains_precone(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.homogeneous_twist_times_ell2_extra"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+
 
 if __name__ == "__main__":
     unittest.main()

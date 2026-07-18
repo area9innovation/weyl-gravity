@@ -1,0 +1,392 @@
+{
+  "claim_boundary": "This is a complete resonant-source matrix only in the declared k=0 homogeneous/twist times ell=2 extra carrier. It does not by itself prove obstruction or extension for a tangent, does not certify smooth-secular or retarded sufficiency, and does not support final residual, observational, particle, or quantum claims.",
+  "classification": {
+    "SO3_complete_twist_position_velocity_columns_certified": true,
+    "causal_retarded_sufficiency": false,
+    "complete_homogeneous_twist_bounded_resonance_matrix": true,
+    "full_second_order_equation_solved": false,
+    "nonaxisymmetric_direct_tensor_fixture_certified": true,
+    "simultaneous_stabilizer_and_resonance_zero_locus_solved": false,
+    "smooth_secular_necessity_and_sufficiency": false,
+    "twist_position_resonance_matrix_rank_two": true,
+    "twist_velocity_resonance_matrix_pointwise_rank_four_for_real_t": true
+  },
+  "complete_matrix_disposition": {
+    "Q_e_column": "REMOVABLE by electromagnetic-duality transport",
+    "W_x_column": "ZERO flat-connection spectator",
+    "a_b_d_columns": "CERTIFIED imported polynomial resonance chains",
+    "c_column": "REMOVABLE by exact radius-family transport",
+    "twist_position_columns": "CERTIFIED rank-two nonzero resonant block",
+    "twist_velocity_columns": "CERTIFIED rank-four block with determinant nonzero for every real t"
+  },
+  "correction_classes": {
+    "bounded_or_finite_quasiperiodic": "CERTIFIED resonance functionals; simultaneous vanishing with stabilizer maps remains unsolved",
+    "causal_or_retarded": "OPEN: no compact-product retarded complex is certified",
+    "smooth_exponential_polynomial": "OPEN: secular sufficiency requires the complete Noether-compatible operator, not only its resonant projection"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_source_rows": {
+    "position": {
+      "axial": {
+        "e1": {
+          "axial": [
+            "0",
+            "0",
+            "0",
+            "24*sqrt(3)"
+          ],
+          "polar": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "e2": {
+          "axial": [
+            "0",
+            "0",
+            "24*sqrt(3)",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "0",
+            "0",
+            "24/5"
+          ]
+        }
+      },
+      "polar": {
+        "e1": {
+          "axial": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "polar": [
+            "24*sqrt(3)",
+            "0",
+            "-8*sqrt(3)/3",
+            "0"
+          ]
+        },
+        "e2": {
+          "axial": [
+            "0",
+            "-864/5",
+            "0",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        }
+      }
+    },
+    "velocity": {
+      "axial": {
+        "e1": {
+          "axial": [
+            "0",
+            "0",
+            "0",
+            "12*(2*sqrt(3)*t + 3*I)"
+          ],
+          "polar": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        "e2": {
+          "axial": [
+            "0",
+            "0",
+            "2*(12*sqrt(3)*t - I)",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "0",
+            "0",
+            "8*(3*t - 4*sqrt(3)*I)/5"
+          ]
+        }
+      },
+      "polar": {
+        "e1": {
+          "axial": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "polar": [
+            "3*(16*sqrt(3)*t - 15*I)/2",
+            "0",
+            "-(16*sqrt(3)*t + 147*I)/6",
+            "0"
+          ]
+        },
+        "e2": {
+          "axial": [
+            "0",
+            "-96*(9*t - 14*sqrt(3)*I)/5",
+            "0",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "-4248*I",
+            "0",
+            "0"
+          ]
+        }
+      }
+    }
+  },
+  "homogeneous_abd_input": {
+    "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+    "result": "each parity/polarization a,b,d polynomial chain has coefficient rank three",
+    "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+  },
+  "interpretation": "The missing twist columns are not spectators. Twist position already supplies a rank-two resonant map, while twist velocity couples the four extra input amplitudes invertibly to the complete axial-plus-polar adjoint block at every real time. Together with the imported a,b,d chains this completes the declared homogeneous/twist bounded-resonance source matrix. It does not solve the nonlinear cone because the bilinear amplitudes obey common-factor relations and must also satisfy all five stabilizer moment maps.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "solve the simultaneous stabilizer plus complete bounded-resonance zero locus with the bilinear factorization constraints, then extend the classification to opposite momenta, phases and multiple absolute-momentum fibres",
+  "provenance": {
+    "direct_source_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_ell2_extra_source_explore.py",
+    "direct_source_sha256": "f646260a3c676aa5feef7b627417f95415d3a0bbe25fc82be98f62f5ae402ca3",
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.py",
+    "generator_sha256": "7ebde4d11acdbe9b11fd9d24d952d46b111887b83419a2cb842103ab04ffd01a"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
+  "result_state": "COMPLETE_HOMOGENEOUS_AND_TWIST_TIMES_ELL2_EXTRA_BOUNDED_RESONANCE_MATRIX_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-homogeneous-twist-ell2-extra-resonance-matrix-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.schema.json",
+  "schema_sha256": "d51f01c31ce2d28accc6d67be51c541f12aab907dec93752d73d4b7ad9bc476c",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed spatial S1_L times S2; bounded or finite-quasiperiodic resonance-function class",
+    "carrier": "complete homogeneous a,b,d and axial twist position/velocity block crossed with the axial-plus-polar ell=2 extra-primary multiplicity space; c,W_x,Q_e spectator columns imported as removable",
+    "charge_sector": "fixed magnetic bundle; electric variation allowed",
+    "degree": 2,
+    "ell": "(0 or 1) x 2 -> resonant L=2",
+    "k": 0,
+    "m": "one nonzero m Clebsch-Gordan fixture fixes every m by SO(3) equivariance",
+    "omega": "generalized-zero global/twist data crossed with omega_e=4/sqrt(3)",
+    "parity": "all axial/polar input and output blocks retained without merging",
+    "theory": "Weyl-Maxwell"
+  },
+  "twist_projection_theorem": {
+    "SO3_multiplicity": "dim Hom_SO3(V1 tensor V2,V2)=1, so the nonzero fixture fixes every m channel after the declared harmonic rescaling",
+    "fixture_channel": "m_twist=1, m_extra=0 -> M_output=1",
+    "input_column_order": [
+      "axial_e1",
+      "axial_e2",
+      "polar_e1",
+      "polar_e2"
+    ],
+    "normalized_Clebsch_Gordan": "<1,1;2,0|2,1>=sqrt(2)/2",
+    "output_row_order": [
+      "axial_w1",
+      "axial_w2",
+      "polar_w1",
+      "polar_w2"
+    ],
+    "position_matrix": [
+      [
+        "0",
+        "24*sqrt(3)",
+        "0",
+        "0"
+      ],
+      [
+        "24*sqrt(3)",
+        "0",
+        "0",
+        "96/5"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "24/5",
+        "0",
+        "0"
+      ]
+    ],
+    "position_rank": 2,
+    "projected_columns": {
+      "position": {
+        "axial_e1": {
+          "axial": [
+            "0",
+            "24*sqrt(3)"
+          ],
+          "polar": [
+            "0",
+            "0"
+          ]
+        },
+        "axial_e2": {
+          "axial": [
+            "24*sqrt(3)",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "24/5"
+          ]
+        },
+        "polar_e1": {
+          "axial": [
+            "0",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "0"
+          ]
+        },
+        "polar_e2": {
+          "axial": [
+            "0",
+            "96/5"
+          ],
+          "polar": [
+            "0",
+            "0"
+          ]
+        }
+      },
+      "velocity": {
+        "axial_e1": {
+          "axial": [
+            "0",
+            "12*(2*sqrt(3)*t + 3*I)"
+          ],
+          "polar": [
+            "0",
+            "0"
+          ]
+        },
+        "axial_e2": {
+          "axial": [
+            "2*(12*sqrt(3)*t - I)",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "24*(t - 4*sqrt(3)*I/3)/5"
+          ]
+        },
+        "polar_e1": {
+          "axial": [
+            "0",
+            "0"
+          ],
+          "polar": [
+            "0",
+            "81*I/2"
+          ]
+        },
+        "polar_e2": {
+          "axial": [
+            "0",
+            "96*(t - 14*sqrt(3)*I/9)/5"
+          ],
+          "polar": [
+            "-4248*I",
+            "0"
+          ]
+        }
+      }
+    },
+    "unnormalized_harmonics": [
+      "Y_11=sqrt(1-z^2)*exp(i*phi)",
+      "Y_20=P_2(z)",
+      "Y_21=z*sqrt(1-z^2)*exp(i*phi)"
+    ],
+    "velocity_determinant": "297292032*t**2 + 140387904*sqrt(3)*I*t + 12387168",
+    "velocity_determinant_nonzero_for_every_real_t": true,
+    "velocity_matrix": [
+      [
+        "0",
+        "2*(12*sqrt(3)*t - I)",
+        "0",
+        "0"
+      ],
+      [
+        "12*(2*sqrt(3)*t + 3*I)",
+        "0",
+        "0",
+        "96*(t - 14*sqrt(3)*I/9)/5"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-4248*I"
+      ],
+      [
+        "0",
+        "24*(t - 4*sqrt(3)*I/3)/5",
+        "81*I/2",
+        "0"
+      ]
+    ],
+    "velocity_rank_over_Q_sqrt3_i_t": 4
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix --replay"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.2,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix"
+      ],
+      "elapsed_seconds": 2.0,
+      "status": "PASS"
+    },
+    "tier_2": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix --replay"
+      ],
+      "elapsed_seconds": 213.49,
+      "reason": "eight direct non-axisymmetric four-dimensional tensor fixtures replayed in four worker processes",
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "the simultaneous tangent cone, all momentum fibres and causal class remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

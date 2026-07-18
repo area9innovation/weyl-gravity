@@ -430,6 +430,11 @@
           "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
           "result_id": "EINSTEIN_WEYL_TWIST_SOLUTION_COFIBER_V1",
           "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
+          "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
         }
       ],
       "id": "ph.global.twist.relative",
@@ -440,7 +445,6 @@
       "map_lifecycle": "ONSHELL_MAP_ONLY",
       "missing": [
         "twist off-shell chain map",
-        "twist position/velocity times ell=2 extra source columns",
         "global moduli-orbifold quotient",
         "final residual descent"
       ],
@@ -513,6 +517,7 @@
   "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
   "classification": {
     "bridge_1_activation_gate_satisfied": false,
+    "complete_homogeneous_twist_bounded_resonance_matrix_imported": true,
     "cross_background_mode_identification_made": false,
     "exceptional_global_and_boundary_absences_explicit": true,
     "exceptional_k0_solution_cofiber_certified": true,
@@ -535,7 +540,7 @@
   "next_gate": "classify corrected nonidentity or chain-homotopy cyclic morphisms, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "3366fcace9dab199b60259854317084f1bb20fa85d187f397cc13bf311df6877",
+    "generator_sha256": "842d93ef57dbb46ce8b1996bcd7572b44912400db359b46932ee2897a2cf1843",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
@@ -573,6 +578,10 @@
         "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
         "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
       },
+      "homogeneous_twist_quadratic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+        "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
+      },
       "polar_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
         "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
@@ -604,8 +613,8 @@
     }
   },
   "quadratic_handoff": {
-    "artifact": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
-    "meaning": "the a,b,d polynomial source matrix feeds the relative obstruction map but does not complete bridge 1 or the finite-harmonic tangent cone",
+    "artifact": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
+    "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra bounded-resonance source matrix feeds the relative obstruction map but does not solve the simultaneous stabilizer zero locus, complete bridge 1 or the finite-harmonic tangent cone",
     "status": "PARTIAL_INPUT"
   },
   "relative_forms": {
@@ -619,7 +628,7 @@
   "result_state": "SAME_BACKGROUND_BRANCH_DICTIONARY_EXPORTED_FULL_RELATIVE_TRIANGLE_ACTIVATION_GATE_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "0a20c5c73d2b9ceab0dd056198623d281bbd0a355848855ae24be53e4ffdd33b",
+  "schema_sha256": "30fa76dd1109c2e2332fc2a045d59213f54438e4cf55ec840c578d19f3e8e444",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",

@@ -30,6 +30,7 @@ CERTIFICATES = {
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
     "abd_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+    "homogeneous_twist_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
@@ -217,9 +218,21 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The projected rows use the certified nonradical axial and polar extra-shell Lee-Wald/adjoint bases."),
             ("OPEN", "The simultaneous stabilizer zero locus including twist position and velocity has not been solved."),
             ("CERTIFIED", "All four parity/polarization a,b,d polynomial resonance chains have coefficient rank three; the exact bounded compatibility functionals are generated."),
-            _second_order(("OPEN", "The a,b,d submatrix is complete, but twist columns can enter the same output and remain open."), ("OPEN", "Secular inversion must be proved through the complete operator."), open_causal),
+            _second_order(("OPEN", "This a,b,d submatrix remains a certified partial input; the completed homogeneous/twist matrix is a separate atlas entry."), ("OPEN", "Secular inversion must be proved through the complete operator."), open_causal),
             _evidence("abd_matrix", "d_completion", "axial_current", "polar_current", "abstract_cone"),
             "This is an exact source-matrix input to the tangent-cone theorem, not the complete bridge, a no-go theorem, or a full second-order correction.",
+        ),
+        _entry(
+            "einstein.ph.wm.interaction.homogeneous_twist_times_ell2_extra",
+            _scope(theory="Weyl-Maxwell target", carrier="complete homogeneous a,b,d and axial twist position/velocity block crossed with the axial-plus-polar ell=2 extra-primary multiplicity space; c,W_x,Q_e removed", degree=2, parity="all axial/polar inputs and outputs retained", ell="(0 or 1) x 2 -> resonant L=2", m="all by one nonzero Clebsch-Gordan fixture and SO(3) equivariance", k=0, omega="generalized-zero global/twist data crossed with omega_e=4/sqrt(3)"),
+            {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The output is the ell=2 p-primary shell; the non-axisymmetric channel <1,1;2,0|2,1>=sqrt(2)/2 fixes the unique SO(3)-equivariant V1 tensor V2 -> V2 map."),
+            ("CERTIFIED", "All four output adjoint rows are normalized against the certified nonradical axial and polar extra-shell blocks."),
+            ("OPEN", "The five stabilizer moment maps have not yet been solved simultaneously with the completed resonance matrix."),
+            ("CERTIFIED", "The twist-position matrix has rank two and the twist-velocity matrix has rank four with determinant 4129056*(72*t^2+34*sqrt(3)*I*t+3), nonzero for every real t; the a,b,d chains and removable spectators are also complete."),
+            _second_order(("OPEN", "The complete resonance functionals are known, but their simultaneous zero locus with the stabilizer maps and bilinear factorization constraints is not solved."), ("OPEN", "Smooth exponential-polynomial secular sufficiency is not inferred from the resonant projection alone."), open_causal),
+            _evidence("homogeneous_twist_matrix", "abd_matrix", "axial_current", "polar_current", "abstract_cone"),
+            "This completes the declared k=0 source matrix, not the finite-harmonic tangent cone, opposite momenta, multiple absolute-momentum fibres, a causal theorem, or Bridge 1.",
         ),
         _entry(
             "einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder",
@@ -254,6 +267,8 @@ def build() -> dict[str, object]:
         raise AssertionError("d-cross parity completion changed")
     if not records["abd_matrix"]["classification"]["every_parity_polarization_abd_polynomial_chain_rank_three"]:
         raise AssertionError("a,b,d resonance-matrix input changed")
+    if not records["homogeneous_twist_matrix"]["classification"]["complete_homogeneous_twist_bounded_resonance_matrix"]:
+        raise AssertionError("complete homogeneous/twist matrix input changed")
     if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("relative branch dictionary over-promoted bridge 1")
     if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:

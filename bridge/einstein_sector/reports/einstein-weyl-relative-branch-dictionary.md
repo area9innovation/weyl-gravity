@@ -23,9 +23,12 @@ remain `NO_CERTIFIED_MAP`.  The boundary and
 cross-background row is `NO_CERTIFIED_MAP` in every relevant field.  Hence the
 dictionary does not activate `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.
 
-The newly certified `a,b,d` resonance matrix is exported only as a partial
-quadratic handoff.  It does not substitute for the linear bridge or complete
-the finite-harmonic tangent cone.
+The quadratic handoff now imports the complete declared `k=0`
+homogeneous/twist-times-`ell=2` extra bounded-resonance source matrix.  The
+twist-position block has rank two and the twist-velocity block has pointwise
+rank four for real time.  This does not substitute for the linear bridge or
+complete the finite-harmonic tangent cone: the simultaneous stabilizer and
+resonance zero locus remains open.
 
 Evidence and verification:
 

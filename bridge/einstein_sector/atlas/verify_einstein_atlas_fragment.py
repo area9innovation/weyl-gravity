@@ -80,6 +80,12 @@ def verify() -> None:
     if abd["mode_data"]["resonance"]["status"] != "CERTIFIED" or abd["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("a,b,d matrix lifecycle drifted")
 
+    complete_matrix = by_id["einstein.ph.wm.interaction.homogeneous_twist_times_ell2_extra"]
+    if complete_matrix["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("complete homogeneous/twist resonance matrix was lost")
+    if complete_matrix["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("complete source matrix over-promoted the tangent cone")
+
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("cross-background fail-closed entry changed")

@@ -1991,6 +1991,25 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    parities for every `m`.  This is still a bounded/finite-quasiperiodic
    compatibility theorem, not a full extension: stabilizer moment maps,
    nonresonant rows, and the remaining `a,b` and twist columns are required.
+
+   The remaining twist columns are now complete.  An axisymmetric fixture
+   cannot see them because the `m_1=m_2=M=0` Clebsch--Gordan coefficient
+   vanishes, so the direct replay uses
+   `m_twist=1,m_extra=0 -> M=1`, whose normalized coefficient is
+   `sqrt(2)/2`.  This fixes the unique `V_1 tensor V_2 -> V_2` map by
+   `SO(3)` equivariance.  Projected onto the two axial and two polar p-shell
+   adjoint rows, the twist-position matrix has rank two.  The twist-velocity
+   matrix has
+
+   ```text
+   det M_B(t)=4129056(72 t^2+34 sqrt(3) i t+3),
+   ```
+
+   which is nonzero for every real `t`; its pointwise rank is four.  Together
+   with the `a,b,d` chains and the removable `c,W_x,Q_e` columns, this closes
+   the declared homogeneous/twist-times-`ell=2` bounded-resonance source
+   matrix.  It does not yet solve the bilinearly factorized common zero locus
+   with all five stabilizer moment maps.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately
@@ -2090,17 +2109,20 @@ similarly named mode on another background.
 ### Current assignment (2026-07-18)
 
 The active task is the background-specific completion of the finite-harmonic
-tangent cone.  Finish the homogeneous/twist-times-`ell=2` extra-primary source
-matrix, decompose every Noether-compatible adjoint cokernel into the five
+tangent cone.  The homogeneous/twist-times-`ell=2` extra-primary bounded-
+resonance source matrix is now complete.  Next decompose every
+Noether-compatible adjoint cokernel into the five
 stabilizer covectors plus complementary resonant functionals, and prove
 necessity and sufficiency separately in each correction class.  The current
 matrix has removed the circumference, Wilson-line and electric spectator
 columns and has certified the complete axial-plus-polar `a,b,d` polynomial
 source submatrix.  Every parity/polarization `a,b,d` chain has coefficient
-rank three.  This is input to bridge 1 and the tangent-cone theorem, not their
-completion.  The remaining twist position/velocity, opposite momenta and
-phases, and multiple `|k|` fibres remain open.  Update the generated atlas after each
-background-specific gate rather than promoting the abstract theorem.
+rank three; the twist-position block has rank two and the twist-velocity block
+has pointwise rank four for real time.  This is input to bridge 1 and the
+tangent-cone theorem, not their completion.  The simultaneous stabilizer plus
+resonance zero locus, opposite momenta and phases, and multiple `|k|` fibres
+remain open.  Update the generated atlas after each background-specific gate
+rather than promoting the abstract theorem.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

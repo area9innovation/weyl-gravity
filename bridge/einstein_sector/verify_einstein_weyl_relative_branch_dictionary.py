@@ -37,6 +37,8 @@ def main() -> None:
         raise AssertionError("zero homogeneous solution cofiber was lost")
     if rows["ph.global.twist.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("zero twist solution cofiber was lost")
+    if not value["classification"]["complete_homogeneous_twist_bounded_resonance_matrix_imported"]:
+        raise AssertionError("complete homogeneous/twist resonance handoff was lost")
     for identifier in ("ph.exceptional.ell1.nonzero_k.relative",):
         if rows[identifier]["projection_or_cofiber"]["status"] != "NO_CERTIFIED_MAP":
             raise AssertionError(f"missing cofiber was hidden: {identifier}")
