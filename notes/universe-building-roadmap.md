@@ -61,7 +61,7 @@ Nonlinear:   preserve the filtered ell3 obstruction and await an admissible bran
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; compute the C2 cubic completion, independent nonlocal R2 form factor and finite C2/absolute dressed R(g_hat)^2 normalization, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    resolve the profile-bandwidth obstruction, compose massive images, evaluate recoil, and restrict records to Z2^C
-Black hole:  extra-branch horizon reach and the bilinear flux matrix (BH-2A remainder)
+Black hole:  bilinear flux matrix and outer-boundary domains (extra branch certified to reach the horizon)
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful

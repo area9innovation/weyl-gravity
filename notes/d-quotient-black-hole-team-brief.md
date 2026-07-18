@@ -358,6 +358,7 @@ Do not start quasinormal numerics tonight unless all six items pass.
 | BH-1A | `BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR` | `black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json` |
 | BH-1B | `BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED` (linear charge level; `l=0` dynamical sector complete) | `black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json` |
 | BH-2A stage 1 | `BH2A_AXIAL_L2_OPERATOR_AND_BRANCH_SPLIT_CLASSIFIED`: axial `l=2` operator; Regge--Wheeler reproduced exactly; branch-split `delta B = (1/2) Box dRic + C.dRic` (extra branch = second-order Lichnerowicz-type carrier `psi = dRic`); split OBSTRUCTED off Einstein backgrounds | `black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json` |
+| BH-2A stage 2 | `BH2A_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL`: two-parameter ingoing-regular extra-branch family at every frequency (EF chart, regular singular point, kernel rank 2); horizon regularity cannot exclude the extra branch -- exclusion must be outer-boundary, causal, or flux/sign | `black_hole_programme/certificates/BH2A_HORIZON_REACH.json` |
 
 Headline exact facts now certified: normalized generator `chi = u d_t`
 forced by basicness (`u = beta(2-3 beta gamma)`, unique up to component
