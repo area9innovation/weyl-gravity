@@ -134,6 +134,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-opposite-momentum-phase-resonance-divisor-submission-receipt.md`](reports/einstein-maxwell-weyl-opposite-momentum-phase-resonance-divisor-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order.json`](contributions/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order.json)
 - [`reports/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-homogeneous-quadric-second-order.json`](contributions/einstein-maxwell-weyl-homogeneous-quadric-second-order.json)
+- [`reports/einstein-maxwell-weyl-homogeneous-quadric-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-homogeneous-quadric-second-order-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)

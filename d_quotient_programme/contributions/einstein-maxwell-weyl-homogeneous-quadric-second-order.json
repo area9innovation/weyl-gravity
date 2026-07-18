@@ -1,0 +1,35 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; complete standard homogeneous tangent before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the direct homogeneous quadratic constraint source is exactly minus one half of the moment-map quadric a^2+b^2-b*d+Q_e^2",
+    "the dependent sphere equation carries the same quadric through the Noether relation",
+    "constant circumference c and Wilson holonomy W_x are absent from the quadratic source",
+    "every point of the complete standard homogeneous common-zero quadric admits an explicit polynomial second-order correction at fixed magnetic bundle topology",
+    "the isolated constant radion remains obstructed because it lies off the common-zero quadric"
+  ],
+  "evidence": {
+    "commit": "9abf05a126172fc8fb26b6384e506ad973c88899",
+    "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+    "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "add collinear axial twist velocity to the homogeneous cone, then physical ell=1 and exceptional fourth-order input modes",
+  "not_established": [
+    "twist-velocity or physical ell=1 mixed-source closure",
+    "exceptional fourth-order input closure",
+    "all-orders integration, final residual quotient, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_standard_homogeneous_global_block",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_homogeneous_quadric_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_HOMOGENEOUS_QUADRIC_EXTENDIBLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_quadric_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_quadric_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_quadric_second_order"
+  ]
+}
