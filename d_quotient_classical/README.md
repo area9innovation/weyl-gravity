@@ -418,6 +418,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   open:
   [`certificates/NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1.json`](certificates/NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1.json),
   [`reports/nariai-transverse-pbw-curvature-jet-gate.md`](reports/nariai-transverse-pbw-curvature-jet-gate.md)
+- Jet-aware transverse parent-middle gate: differentiating PBW reordering with
+  the exact moving-frame first curvature jets closes the corrected BGG first
+  square and Yang--Mills parent identity coefficientwise.  The parent stage
+  requests no unsupported jet.  Endpoint compression, however, asks for
+  mixed spatial curvature jets of orders two and three; those are recorded
+  explicitly and not guessed.  Its diagnostic defect also proves that a
+  purely algebraic Schur correction cannot suffice.  The differential
+  action-derived Schur, rank-310 SDR variation and causal transfer stay open:
+  [`certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json),
+  [`reports/nariai-transverse-jet-aware-middle-schur-variation.md`](reports/nariai-transverse-jet-aware-middle-schur-variation.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

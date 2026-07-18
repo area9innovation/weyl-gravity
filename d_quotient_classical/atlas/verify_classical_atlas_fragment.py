@@ -50,6 +50,11 @@ def verify() -> None:
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
     if transverse["descriptions"]["causal"] != "OPEN":
         raise AssertionError("transverse causal theorem overpromoted")
+    transverse_ids = {item["result_id"] for item in transverse["evidence"]}
+    if "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1" not in transverse_ids:
+        raise AssertionError("jet-aware parent-middle evidence missing")
+    if "orders two and three" not in transverse["claim_boundary"]:
+        raise AssertionError("incomplete endpoint curvature-jet boundary missing")
 
 
 if __name__ == "__main__":

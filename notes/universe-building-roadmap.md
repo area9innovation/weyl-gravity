@@ -222,9 +222,15 @@ Levi--Civita variation is nonzero and
 frozen-parallel PBW shortcut is `OBSTRUCTED`.  Its diagnostic response agrees
 with the independent varied tractor-curvature action, but its middle/Schur
 coefficients are not authoritative because derivatives may hit the varying
-curvature.  The active gate is a jet-aware PBW Leibniz normal form, followed
-by the true middle/Schur and complete rank-310 SDR variations.  No transverse
-causal promotion follows from the outer/algebraic or frozen-parallel rows.
+curvature.  The jet-aware parent gate now closes the corrected BGG first
+square and Yang--Mills identity with complete coverage of every curvature jet
+requested at that stage.  Endpoint compression exposes the next precise
+boundary: it requests mixed spatial curvature jets of orders two and three,
+which are not yet derived, and its diagnostic gauge defect contains zeroth-
+and second-order words that cannot be removed by an algebraic Schur
+correction.  The active gate is therefore complete higher-jet evaluation and
+the differential action-derived Schur correction, followed by the rank-310
+SDR variation.  Transverse causal transfer remains `OPEN`.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves

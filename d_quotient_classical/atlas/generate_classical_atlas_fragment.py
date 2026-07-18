@@ -38,6 +38,7 @@ CERTS = {
     "Nariai_transverse": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
     "Nariai_incidence": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json",
     "Nariai_PBW_gate": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1.json",
+    "Nariai_jet_aware_parent": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
@@ -240,10 +241,10 @@ def entries() -> list[dict[str, Any]]:
         ("CERTIFIED", "The displayed tangent solves the complete linearized fixed-Lambda Einstein equations and is linearized Bach-flat."),
         ("OPEN", "No physical Lee-Wald norm or reduced pairing is assigned to this tangent."),
         ("OPEN", "No second-order Taub classification or exact nonlinear family is certified."),
-        ("OBSTRUCTED", "The locally symmetric frozen-parallel PBW shortcut is obstructed by the nonzero curvature time jet; a jet-aware middle/Schur variation remains open."),
+        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. The jet-aware BGG first square and parent Yang-Mills identity close with complete first-jet coverage, but endpoint compression still requires mixed spatial curvature jets of orders two and three."),
         _second(("OPEN", "No bounded correction theorem."), ("OPEN", "No smooth-secular correction theorem."), ("OPEN", "No transverse retarded SDR theorem.")),
-        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "cone"),
-        "The outer/algebraic rank-310 variation and nonparallel curvature-jet obstruction are exact, but the jet-aware middle/Schur variation, complete transverse SDR, and causal transfer are not.",
+        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "cone"),
+        "The jet-aware BGG first square and parent Yang-Mills identity are exact with complete requested first-jet coverage. The compressed endpoint requests unsupported mixed spatial curvature jets of orders two and three; its diagnostic Schur defect is not an authoritative action Hessian. The complete transverse SDR and causal transfer remain open.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",

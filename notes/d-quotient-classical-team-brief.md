@@ -63,10 +63,19 @@ frozen-parallel response is retained as a checked diagnostic, including exact
 normal-tractor-square agreement, but is marked `OBSTRUCTED` rather than
 promoted.
 
-The next coherent classical gate is
-`NARIAI_TRANSVERSE_JET_AWARE_PBW_LEIBNIZ_AND_MIDDLE_SCHUR_VARIATION`, followed
-by the complete rank-310 SDR variation.  No atlas lifecycle may be promoted
-from the outer incidence, algebraic pairing, or frozen-parallel PBW rows.
+The jet-aware parent gate is now certified.  The exact moving-frame first
+curvature jets close the corrected BGG first square and the parent
+Yang--Mills identity, and the audit confirms that these parent identities
+request no unsupported jets.  The later endpoint compression requests mixed
+spatial curvature jets of orders two and three; those values are not yet
+derived.  Its truncated diagnostic also contains zeroth- and second-order
+gauge defects, so a purely algebraic Schur correction cannot suffice.
+
+The next coherent classical gate is therefore
+`NARIAI_TRANSVERSE_COMPLETE_HIGHER_CURVATURE_JETS_AND_DIFFERENTIAL_SCHUR`,
+followed by the complete rank-310 SDR variation.  The atlas remains
+fail-closed: the parent identity is `CERTIFIED`, the algebraic endpoint ansatz
+is `OBSTRUCTED`, and transverse causal transfer is `OPEN`.
 
 ## Generator correction (2026-07-17; authoritative)
 
@@ -1503,9 +1512,13 @@ maps, harmonic projections, and four fibre pairings have zero variation; the
 fixed-Λ Einstein tangent also has zero moving-frame Schouten variation.  The
 remaining BGG variation is therefore not algebraic and not a pairing
 normalization: it is the Levi--Civita connection/PBW variation and its
-middle/Schur propagation.  The next gate is
-`NARIAI_TRANSVERSE_CONNECTION_PBW_AND_MIDDLE_SCHUR_VARIATION`, followed by
-the complete rank-310 SDR identity and only then causal transfer.
+middle/Schur propagation.  The jet-aware parent calculation now closes the
+BGG first square and Yang--Mills identity with complete first-jet coverage.
+Endpoint compression requests mixed spatial jets of orders two and three and
+exhibits a differential, rather than algebraic, Schur requirement.  The next
+gate is complete higher curvature-jet evaluation plus the action-derived
+differential Schur, then the rank-310 SDR identity and only then causal
+transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

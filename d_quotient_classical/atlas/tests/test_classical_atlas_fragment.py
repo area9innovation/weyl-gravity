@@ -34,6 +34,13 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
             self.assertIn("smooth_secular", second)
             self.assertIn("causal_retarded", second)
 
+    def test_transverse_nariai_parent_is_scoped(self) -> None:
+        entry = self.entries["classical.nariai.transverse_kantowski_sachs_tangent"]
+        ids = {item["result_id"] for item in entry["evidence"]}
+        self.assertIn("NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1", ids)
+        self.assertEqual(entry["descriptions"]["causal"], "OPEN")
+        self.assertIn("orders two and three", entry["claim_boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()
