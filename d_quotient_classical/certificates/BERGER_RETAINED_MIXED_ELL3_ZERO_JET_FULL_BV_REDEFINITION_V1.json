@@ -1,0 +1,120 @@
+{
+  "ansatz": {
+    "F2_physical_base_coefficients": 810,
+    "F3_physical_base_coefficients": 4160,
+    "PBW_positive_jet_redefinitions_included": false,
+    "nonlinear_ghost_coordinate_redefinitions_included": false,
+    "typed_super_cotangent_completion": true
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC G0 result proves that the two-Maxwell zero-PBW Taylor component of the complete retained BV ell3 is not in the image of zero-jet degree-zero physical base-field F2/F3 redefinitions with their certified typed super-cotangent completion. The normalized witness is a single ghost/antifield coefficient and the separately projected degree-zero physical action remains compatible. This is not a nontrivial cyclic deformation class: positive-jet redefinitions can feed this PBW page, nonlinear ghost-coordinate redefinitions were not admitted, total PBW order two remains open, and no quantum claim is made.",
+  "claim_flags": {
+    "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED": false,
+    "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED": false,
+    "POSITIVE_JET_REDEFINITIONS_EXCLUDED": false,
+    "QUANTUM_CLAIM": false,
+    "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED": true
+  },
+  "dependency_refs": {
+    "cotangent_convention": {
+      "artifact_id": "BERGER_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_SUPER_COTANGENT_REDEFINITION_CONVENTION_V1.json",
+      "sha256": "a2d4428b8ed9b37a761cfa96f1a63670ae63a4c677869dfff8664dc8d758eea3"
+    },
+    "gravity_ell2": {
+      "artifact_id": "BERGER_RETAINED_26_Q2_PAYLOAD",
+      "path": "quantum-weyl/transfer/certificates/BERGER_RETAINED_26_Q2_PAYLOAD.json",
+      "sha256": "02b7d175756298eb3704d1b853f8a30be1c2b7c7e93103c5acad2afe882ad880"
+    },
+    "legacy_layout": {
+      "artifact_id": "BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR",
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
+      "sha256": "e81823f3c8c1f0fdec31267bbb8785ed5096de305aa381253208201f2c8e96c4"
+    },
+    "mixed_ell2": {
+      "artifact_id": "BERGER_RETAINED_TYPED_MIXED_ELL2_PAYLOAD",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_TYPED_MIXED_ELL2_PAYLOAD.json",
+      "sha256": "a79fd40dbded3d116a33e1c7289af595a7e125faa1c6c47568dc6fd7b57bebb4"
+    },
+    "mixed_ell3": {
+      "artifact_id": "BERGER_RETAINED_MIXED_ELL3_PAYLOAD",
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_PAYLOAD.json",
+      "sha256": "c3dc93cbbfed36fbd800aba4bfee197d9b04fcb64420c03883fea5b1d360c948"
+    },
+    "typed_carrier": {
+      "artifact_id": "BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR",
+      "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_TYPED_PAIRING_36_SDR.json",
+      "sha256": "d347d89d138d53cec2822ceacd1abb5b9cd4d0199e454fc2b0cf63fe83918c88"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_matrix_audit": {
+    "augmented_rank": 130,
+    "elapsed_seconds": 79.12588,
+    "physical_projection_augmented_rank": 66,
+    "physical_projection_rank": 66,
+    "physical_projection_shape": [
+      186,
+      286
+    ],
+    "physical_projection_target_compatible": true,
+    "rank": 129,
+    "target_compatible": false,
+    "target_connected_nonzero_entries": 3334,
+    "target_connected_shape": [
+      477,
+      286
+    ],
+    "target_zero_jet_canonical_Taylor_coefficients": 186,
+    "two_Maxwell_matrix_nonzero_entries": 24543,
+    "two_Maxwell_matrix_shape": [
+      4814,
+      4970
+    ]
+  },
+  "generality_level": "G0",
+  "next_gate": "BERGER_RETAINED_MIXED_ELL3_PBW_ORDER_TWO_FULL_BV_REDEFINITION_V1",
+  "normalized_dual_witness": {
+    "annihilated_F2_columns": 810,
+    "annihilated_F3_columns": 4160,
+    "normalized_dual_weight": "sqrt(10)/3",
+    "normalized_target_evaluation": "1",
+    "target_coefficient": "3*sqrt(10)/10",
+    "target_key": {
+      "input_degrees": [
+        -1,
+        0,
+        2
+      ],
+      "inputs": [
+        1,
+        30,
+        35
+      ],
+      "lowered_Maxwell_count": 2,
+      "output": 23,
+      "output_degree": 2
+    },
+    "typed_half_weight_control": {
+      "base": "F2^3(27,27)=1",
+      "dual": "F2^31(13,27)=-1/2"
+    }
+  },
+  "result_id": "BERGER_RETAINED_MIXED_ELL3_ZERO_JET_FULL_BV_REDEFINITION_V1",
+  "result_state": "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED",
+  "schema": "pure-weyl-berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1",
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_full_bv_coderivation_redefinition.py": "d9b8b75ab3404c0df670ec20b2c866b02b52a700c4d4a222128a37c361acd7fe",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition.py": "9d1749cc25141ea9577a5d8094029a2cd9f58fcedd5006fad542773cada85d8a",
+    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition.py": "ed59e7946be16b1fb33acb14714e403256ce929bc5556589816489dde526c543",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1.schema.json": "aa020ae212581ead07a66116114351c3edf3e2ec852828dfdfb752c06067fe41"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_full_bv_coderivation_redefinition.py --check",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition -v",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_full_bv_coderivation_redefinition.py --write-exhaustive",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1.schema.json -d d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_FULL_BV_REDEFINITION_V1.json"
+  ]
+}

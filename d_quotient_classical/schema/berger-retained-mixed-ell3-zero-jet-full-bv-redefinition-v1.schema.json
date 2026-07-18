@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_state", "dependency_tags", "generality_level",
+    "dependency_refs", "ansatz", "exact_matrix_audit", "normalized_dual_witness",
+    "claim_flags", "next_gate", "source_manifest", "verification_commands", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_ZERO_JET_FULL_BV_REDEFINITION_V1"},
+    "result_state": {"const": "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality_level": {"const": "G0"},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"$ref": "#/$defs/dependency"}
+    },
+    "ansatz": {
+      "type": "object",
+      "required": ["F2_physical_base_coefficients", "F3_physical_base_coefficients", "typed_super_cotangent_completion", "nonlinear_ghost_coordinate_redefinitions_included", "PBW_positive_jet_redefinitions_included"],
+      "properties": {
+        "F2_physical_base_coefficients": {"const": 810},
+        "F3_physical_base_coefficients": {"const": 4160},
+        "typed_super_cotangent_completion": {"const": true},
+        "nonlinear_ghost_coordinate_redefinitions_included": {"const": false},
+        "PBW_positive_jet_redefinitions_included": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "exact_matrix_audit": {
+      "type": "object",
+      "required": ["two_Maxwell_matrix_shape", "two_Maxwell_matrix_nonzero_entries", "target_connected_shape", "target_connected_nonzero_entries", "rank", "augmented_rank", "target_compatible", "physical_projection_shape", "physical_projection_rank", "physical_projection_augmented_rank", "physical_projection_target_compatible", "target_zero_jet_canonical_Taylor_coefficients", "elapsed_seconds"],
+      "properties": {
+        "two_Maxwell_matrix_shape": {"const": [4814, 4970]},
+        "two_Maxwell_matrix_nonzero_entries": {"const": 24543},
+        "target_connected_shape": {"const": [477, 286]},
+        "target_connected_nonzero_entries": {"const": 3334},
+        "rank": {"const": 129},
+        "augmented_rank": {"const": 130},
+        "target_compatible": {"const": false},
+        "physical_projection_shape": {"const": [186, 286]},
+        "physical_projection_rank": {"const": 66},
+        "physical_projection_augmented_rank": {"const": 66},
+        "physical_projection_target_compatible": {"const": true},
+        "target_zero_jet_canonical_Taylor_coefficients": {"const": 186},
+        "elapsed_seconds": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "normalized_dual_witness": {
+      "type": "object",
+      "required": ["target_key", "target_coefficient", "normalized_dual_weight", "normalized_target_evaluation", "annihilated_F2_columns", "annihilated_F3_columns", "typed_half_weight_control"],
+      "properties": {
+        "target_key": {
+          "type": "object",
+          "required": ["output", "inputs", "output_degree", "input_degrees", "lowered_Maxwell_count"],
+          "properties": {
+            "output": {"const": 23},
+            "inputs": {"const": [1, 30, 35]},
+            "output_degree": {"const": 2},
+            "input_degrees": {"const": [-1, 0, 2]},
+            "lowered_Maxwell_count": {"const": 2}
+          },
+          "additionalProperties": false
+        },
+        "target_coefficient": {"const": "3*sqrt(10)/10"},
+        "normalized_dual_weight": {"const": "sqrt(10)/3"},
+        "normalized_target_evaluation": {"const": "1"},
+        "annihilated_F2_columns": {"const": 810},
+        "annihilated_F3_columns": {"const": 4160},
+        "typed_half_weight_control": {
+          "type": "object",
+          "required": ["base", "dual"],
+          "properties": {
+            "base": {"const": "F2^3(27,27)=1"},
+            "dual": {"const": "F2^31(13,27)=-1/2"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED", "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED", "POSITIVE_JET_REDEFINITIONS_EXCLUDED", "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED": {"const": true},
+        "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false},
+        "POSITIVE_JET_REDEFINITIONS_EXCLUDED": {"const": false},
+        "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "BERGER_RETAINED_MIXED_ELL3_PBW_ORDER_TWO_FULL_BV_REDEFINITION_V1"},
+    "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

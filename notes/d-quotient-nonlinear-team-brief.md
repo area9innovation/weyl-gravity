@@ -608,16 +608,31 @@ redefinition problem.  It exists to prevent the full-BV solver from extending
 the degree-zero physical absolute-weight shortcut into the suspended Darboux
 sectors, which is not an admissible convention.
 
+The next zero-PBW full-BV page has now returned a scoped obstruction.
+`BERGER_RETAINED_MIXED_ELL3_ZERO_JET_FULL_BV_REDEFINITION_V1` uses 810
+physical-base `F2` and 4,160 physical-base `F3` coefficients with their typed
+super-cotangent partners.  The two-Maxwell matrix is `4814 x 4970`; its
+target-connected `477 x 286` block has rank 129 and augmented rank 130.  A
+single normalized dual coordinate detects the defect: output 23 on inputs
+`(1,30,35)` has target coefficient `3 sqrt(10)/10`, every admitted column
+vanishes there, and dual weight `sqrt(10)/3` evaluates to one.  This is a
+ghost/antifield-completion obstruction: the physical projection remains
+compatible.  It is not yet the N-G4 verdict because positive-PBW-jet maps can
+feed this page and nonlinear ghost-coordinate redefinitions were not
+admitted.  The earlier provisional obstruction from an absolute-weight or
+untyped zero-jet matrix is superseded and must not be cited.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
-2. Continue N-G4 with the full-BV completion and total PBW jet order two.  Do
-   not reuse order-zero or order-one physical coefficients as obstructions:
-   both pages are certified exact.  Build the full-BV coderivation matrix from
-   the certified super-cotangent Taylor lift, not from a naively lowered
-   absolute-weight Hamiltonian.  Return either a complete jet-bounded
-   trivializing \((F_2,F_3)\) or the first normalized order-two/full-BV dual
-   witness for the mixed \(\ell_3\).
+2. Continue N-G4 by testing whether first/second-PBW-jet physical cotangent
+   maps kill the normalized zero-jet BV witness, then close total PBW order
+   two.  If they do not, extend the convention rail to nonlinear ghost
+   coordinate maps before promoting an obstruction.  Do not reuse the
+   order-zero or order-one physical-action coefficients as obstructions:
+   both physical pages are certified exact.  Return either a complete
+   jet-bounded trivializing \((F_2,F_3)\) or the first normalized order-two/full-BV
+   dual witness for the mixed \(\ell_3\).
 3. Keep the Green/BGG assignment as a bounded parallel theorem-extraction
    rail.  If continuing the Berger PDE construction, contract the acyclic
    clock/graph incidence before constructing
