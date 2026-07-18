@@ -13,14 +13,16 @@ eight `(a,b,c)` channels and four `(a,b)` aggregates carry exact typed block
 compositions and the Peter–Weyl reconstruction weight.  This closes the
 symbolic word, not an executable stream.
 
-The readiness audit finds four missing execution capabilities: the detector
-coefficient provider, nested time-convolution backend, shell interval
-evaluator, and tail-aware aggregate stop loop.  The remaining sequence is:
+The exact shell interval evaluator now closes one execution capability.  The
+readiness audit still finds three missing pieces: the detector coefficient
+provider, nested time-convolution backend, and tail-aware aggregate stop loop.
+The remaining sequence is:
 
-1. Implement and validate the callable finite-shell interval backend.
-2. Only then declare numerical positive masses, nonzero couplings, and an
+1. Implement the detector coefficient and nested causal-convolution backends.
+2. Implement the tail-aware four-stream stop loop.
+3. Only then declare numerical positive masses, nonzero couplings, and an
    interval, nonzero, or sign stopping goal.
-3. Run the four response-specific streams and close them with the certified
+4. Run the four response-specific streams and close them with the certified
    tail radii.
 
 No numerical mass or coupling is inferred, and symbolic tail bounds or

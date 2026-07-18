@@ -16,6 +16,9 @@ def main() -> int:
     assert value["readiness"]["internal_executable_stream_ready"] is False
     assert value["readiness"]["external_specialization_deferred"] is True
     assert value["readiness"]["four_scalar_stream_active"] is False
+    rows = {row["id"]: row["status"] for row in value["readiness"]["rows"]}
+    assert rows["shell_interval_evaluator"] == "CERTIFIED"
+    assert value["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] is True
     assert all(row["detected"] for row in value["mutation_results"])
     print("Berger recoil executable-readiness audit verification: PASS")
     return 0

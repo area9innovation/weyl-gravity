@@ -94,11 +94,12 @@ The complete per-shell recoil-word row is `CERTIFIED`.  It types the advanced
 detector-selected preparation and the full retarded absolute-`g3` word in
 every Peter–Weyl shell, including both feedback switches, the physical
 massive correction, the exact dimension/volume weight, eight `(a,b,c)`
-channels and four aggregate formulas.  The adjacent executable-readiness and
-activation rows are `OBSTRUCTED`: no callable detector-coefficient provider,
-nested causal time convolution, shell interval evaluator or tail-aware stop
-loop exists.  External parameters are deferred, so none of the four numerical
-streams is active.
+channels and four aggregate formulas.  Exact one-shell supplied-channel
+aggregation is now `CERTIFIED`, including couplings, passive columns and the
+Peter--Weyl weight.  The adjacent readiness and activation rows remain
+`OBSTRUCTED` on detector coefficients, nested causal convolution and the
+tail-aware stop loop.  External parameters are deferred, so none of the four
+numerical streams is active.
 The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
 coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy
 datum.  Leading columns carry `g_b`, while absolute-`g3` recoil channels carry

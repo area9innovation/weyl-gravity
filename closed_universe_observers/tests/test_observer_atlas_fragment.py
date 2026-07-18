@@ -38,6 +38,19 @@ def test_recoil_executable_readiness_is_fail_closed():
     }
 
 
+def test_recoil_shell_aggregation_is_certified_without_physical_response_promotion():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.recoil_finite_shell_interval_aggregator"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
+    assert "BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+
+
 def test_mixed_unary_precedes_apparatus_and_affine_k_morphism():
     value = build()
     row = next(row for row in value["entries"] if row["id"] == "observer.berger.massive_emitter.preparation_pair")

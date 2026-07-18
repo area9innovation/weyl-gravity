@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "callable_contract", "exact_fixture", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-finite-shell-interval-aggregator-v1"},
+    "result_id": {"const": "BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_CALLABLE_FINITE_SHELL_INTERVAL_AGGREGATION_CERTIFIED"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "maxProperties": 2},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "callable_contract": {"type": "object"},
+    "exact_fixture": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 3},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "IMPLEMENT_DETECTOR_COEFFICIENT_AND_NESTED_TIME_CONVOLUTION_BACKENDS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

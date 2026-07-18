@@ -24,6 +24,7 @@ DEPENDENCIES = {
     "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
     "tail_envelopes": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
     "mode_kernels": PACKAGE / "certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+    "finite_shell_aggregator": PACKAGE / "certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -38,6 +39,7 @@ SOURCE_FILES = [
     SCHEMA,
     INPUT_SCHEMA,
     REPORT,
+    BACKEND,
 ]
 
 
@@ -85,6 +87,7 @@ def build() -> dict[str, Any]:
         "per_shell_word": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
         "tail_envelopes": "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED",
         "mode_kernels": "EXACT_FINITE_MODE_MASSIVE_TWO_FORM_GREEN_KERNELS_EXPORTED",
+        "finite_shell_aggregator": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -103,14 +106,17 @@ def build() -> dict[str, Any]:
 
     symbolic_as_backend = readiness_rows(set(), treat_symbolic_word_as_backend=True)
     mutation_detected = all(row["status"] == "OBSTRUCTED" for row in symbolic_as_backend[1:])
+    row_status = {row["id"]: row["status"] for row in rows}
     boundary = (
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves "
         "the certified complete symbolic Peter-Weyl recoil word but rejects its "
-        "promotion to an executable interval stream. No callable backend currently "
+        "promotion to a complete executable interval stream. Exact callable per-shell "
+        "aggregation of supplied channel intervals is now certified, including the "
+        "couplings, passive-column sum and Peter-Weyl weight. No callable backend yet "
         "provides the detector coefficient intervals, nested advanced/retarded time "
-        "convolutions, per-shell interval evaluation, or tail-aware four-stream stop "
-        "loop. Supplying masses and couplings would therefore still not produce an "
-        "interval. The numerical input schema is certified only as a deferred exact "
+        "convolutions, or tail-aware four-stream stop loop. Supplying masses and "
+        "couplings would therefore still not produce a physical recoil interval. The "
+        "numerical input schema is certified only as a deferred exact "
         "contract in the gHat operator units; it contains no chosen physical values. "
         "This audit does not demote the symbolic operator theorem, evaluate recoil, "
         "restrict records to the second-order cone, activate Bridge 3, promote finite-r/"
@@ -120,7 +126,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "SYMBOLIC_WORD_CERTIFIED_EXECUTABLE_INTERVAL_STREAM_OBSTRUCTED",
+        "claim_status": "SYMBOLIC_WORD_AND_SHELL_AGGREGATOR_CERTIFIED_REMAINING_BACKENDS_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -164,7 +170,7 @@ def build() -> dict[str, Any]:
         ],
         "flags": {
             "COMPLETE_SYMBOLIC_OPERATOR_WORD_RETAINED": True,
-            "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": False,
+            "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": False,
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
             "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": False,
@@ -174,7 +180,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
+        "next_gate": "IMPLEMENT_DETECTOR_COEFFICIENT_AND_NESTED_TIME_CONVOLUTION_BACKENDS",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

@@ -798,13 +798,15 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  The symbolic word is not a callable interval stream: the package
-has no detector-coefficient provider, nested advanced/retarded time-
-convolution backend, one-shell interval evaluator, or tail-aware aggregate
-stop loop.  Supplying masses and couplings now would still produce no
-interval.  The active gate is the validated callable finite-shell backend.
-An exact-rational input schema in the certified `gHat` operator units is
-exported but its numerical values remain deferred.
+boundary.  `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` now closes the
+one-shell supplied-channel capability with exact rational arithmetic: it
+sums every passive column and both feedback channels and applies
+`g_b g_c^2 (two_j+1)/Vol_Berger`.  Its signed fixture gives exactly
+`[-16,-72/5]`, but is validation data rather than a physical recoil value.
+The detector-coefficient provider, nested advanced/retarded time-convolution
+backend and tail-aware aggregate stop loop remain `OBSTRUCTED`.  Supplying
+masses and couplings would still produce no physical interval.  The exact-
+rational input schema remains deferred.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

@@ -1,8 +1,13 @@
 {
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to an executable interval stream. No callable backend currently provides the detector coefficient intervals, nested advanced/retarded time convolutions, per-shell interval evaluation, or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce an interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
-  "claim_status": "SYMBOLIC_WORD_CERTIFIED_EXECUTABLE_INTERVAL_STREAM_OBSTRUCTED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to a complete executable interval stream. Exact callable per-shell aggregation of supplied channel intervals is now certified, including the couplings, passive-column sum and Peter-Weyl weight. No callable backend yet provides the detector coefficient intervals, nested advanced/retarded time convolutions, or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce a physical recoil interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
+  "claim_status": "SYMBOLIC_WORD_AND_SHELL_AGGREGATOR_CERTIFIED_REMAINING_BACKENDS_OBSTRUCTED",
   "dependency_refs": {
+    "finite_shell_aggregator": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
+      "result_id": "BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR",
+      "sha256": "b83a0da0a40a0f986656a89dac2c45bfc40adcc38bbd78a03eb2ebc48264f6cb"
+    },
     "mode_kernels": {
       "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
       "result_id": "BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS",
@@ -25,8 +30,11 @@
   ],
   "execution_protocol": {
     "backend_module": "closed_universe_observers/berger_recoil_interval_stream.py",
-    "backend_module_present": false,
-    "discovered_module_callables": [],
+    "backend_module_present": true,
+    "discovered_module_callables": [
+      "_sum_intervals",
+      "evaluate_recoil_shell_interval"
+    ],
     "interval_output_requirement": "directed-rounding lower/upper endpoints plus retained-shell and analytic-tail bounds",
     "required_callables": {
       "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -36,7 +44,7 @@
     }
   },
   "flags": {
-    "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": false,
+    "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": true,
     "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": false,
     "COMPLETE_SYMBOLIC_OPERATOR_WORD_RETAINED": true,
     "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
@@ -70,7 +78,7 @@
       "name": "request_external_values_before_internal_backend"
     }
   ],
-  "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
+  "next_gate": "IMPLEMENT_DETECTOR_COEFFICIENT_AND_NESTED_TIME_CONVOLUTION_BACKENDS",
   "numerical_input_contract": {
     "operator_units": "certified_gHat_clock_and_Berger_spatial_operator_units",
     "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -82,19 +90,19 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "c2ed55d747d5bef7cc62fc9d02957c45a84ffe2759b1f72c2db6fb848c5aa10d"
+        "sha256": "680f918903b51700239c760b4f4aeed6da48e6d88c82fc9e6840dad8daf25a24"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "37375d5b63a4d50a4c4528b985d4413d7a03d2a31ef94adc0676cc13b1a69a87"
+        "sha256": "e72103e4df38eabd8fc71e6b11dadfa72fcd949c58a340cf404fe02753c41a4b"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "7bc0264bb0682a1a615c80194185d638592e4ba47fdc1fa8d6dce0c7032968fd"
+        "sha256": "d04c5f8803171cd127e7929783b509e0fd99ce35c20a797243945dedb11c89eb"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-stream-executable-readiness-audit-v1.schema.json",
-        "sha256": "75a4960adc81f850d8bdcc05c3b30cea5f367ae95af4658b1fb7a32c59969fa4"
+        "sha256": "0317dae1adc5f99fa12de87bdc6940c08713b580b7d4eb27ed8bccd42b5c73ce"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -102,7 +110,11 @@
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-stream-executable-readiness-audit.md",
-        "sha256": "e8536ca2d802df10ac5800783021aafa597e31ba988977bb8212aa6a08afa7c7"
+        "sha256": "35ba8c59452a8fef8b2812ece70fa72c6fd3521e548da36a600e3ddde1e208cf"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_interval_stream.py",
+        "sha256": "0a72b995af8c4409d0c05da86fd6c50a52403309037c0e5a4981e96f1e2a3d0b"
       }
     ]
   },
@@ -129,10 +141,10 @@
         "status": "OBSTRUCTED"
       },
       {
-        "evidence": "NO_CALLABLE_IMPLEMENTATION",
+        "evidence": "closed_universe_observers/berger_recoil_interval_stream.py",
         "id": "shell_interval_evaluator",
         "required_callable": "evaluate_recoil_shell_interval",
-        "status": "OBSTRUCTED"
+        "status": "CERTIFIED"
       },
       {
         "evidence": "NO_CALLABLE_IMPLEMENTATION",

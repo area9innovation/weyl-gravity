@@ -169,9 +169,9 @@ def build() -> dict[str, Any]:
         "preparations, the Lorentzian spacetime form-block signs, and the "
         "complete symbolic per-shell preparation/recoil word are all "
         "certified. The symbolic word is ready, but the executable stream is "
-        "obstructed: no callable coefficient provider, nested time-convolution "
-        "backend, shell interval evaluator or tail-aware aggregate stop loop is "
-        "exported. Numerical masses, couplings and a stopping goal are therefore "
+        "still obstructed: exact shell aggregation is callable, but no coefficient "
+        "provider, nested time-convolution backend or tail-aware aggregate stop loop "
+        "is exported. Numerical masses, couplings and a stopping goal are therefore "
         "deferred; supplying them now would not produce an interval. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
         "evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, "
@@ -197,7 +197,7 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "implement validated callable finite-shell interval backend",
+            "current_active_gate": "implement detector coefficient and nested time-convolution backends",
             "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
@@ -230,7 +230,7 @@ def build() -> dict[str, Any]:
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
+        "next_gate": "IMPLEMENT_DETECTOR_COEFFICIENT_AND_NESTED_TIME_CONVOLUTION_BACKENDS",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

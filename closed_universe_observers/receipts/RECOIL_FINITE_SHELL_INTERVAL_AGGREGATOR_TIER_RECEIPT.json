@@ -1,0 +1,37 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR_TIER_RECEIPT",
+  "run_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Exact rational aggregation of already-enclosed I_abc[two_j,k] values is callable and certified for one shell. Detector coefficients, nested causal convolutions, multi-shell stopping, physical parameters, recoil, cone restriction, Bridge 3 and quantum claims remain open or obstructed.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/berger_recoil_interval_stream.py closed_universe_observers/generate_berger_recoil_finite_shell_interval_aggregator.py closed_universe_observers/verify_berger_recoil_finite_shell_interval_aggregator.py", "status": "PASS"},
+    {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_recoil_finite_shell_interval_aggregator", "status": "PASS", "summary": "The signed [-16,-72/5] fixture and three mutation checks pass."},
+    {"command": "pytest scoped aggregator/readiness/activation/atlas/ledger chain", "elapsed_seconds": 5.16, "status": "PASS", "summary": "30 tests passed."}
+  ],
+  "tier_2": [
+    {"command": "Three generator checks, three verifiers, atlas validation and comparison-ledger verification", "elapsed_seconds": 7.46, "status": "PASS", "summary": "The affected certificate chain passed byte-for-byte and semantically."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No physical recoil, shared core algebra, freeze, release or theorem lifecycle promotion occurred."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/berger_recoil_interval_stream.py", "sha256": "0a72b995af8c4409d0c05da86fd6c50a52403309037c0e5a4981e96f1e2a3d0b"},
+    {"path": "closed_universe_observers/generate_berger_recoil_finite_shell_interval_aggregator.py", "sha256": "922d20e0709f1bea6b3501cf1d30243ea8e872a3cef3b5b06b298c732d2b84ef"},
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json", "sha256": "b83a0da0a40a0f986656a89dac2c45bfc40adcc38bbd78a03eb2ebc48264f6cb"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "6af41405fec8df3857d91778afeceffb007c766c788e12365bad9943788e1d7c"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "82d76ad117a9bb11c9a648b264ab4999d477b9c3497bb8954d25ba5278ad45e1"}
+  ],
+  "claim_flags": {
+    "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": true,
+    "EXACT_RATIONAL_INTERVAL_ARITHMETIC": true,
+    "DETECTOR_PROFILE_COEFFICIENT_PROVIDER_EXPORTED": false,
+    "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": false,
+    "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

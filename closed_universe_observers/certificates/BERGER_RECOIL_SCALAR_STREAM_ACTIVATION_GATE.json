@@ -1,6 +1,6 @@
 {
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, the Lorentzian spacetime form-block signs, and the complete symbolic per-shell preparation/recoil word are all certified. The symbolic word is ready, but the executable stream is obstructed: no callable coefficient provider, nested time-convolution backend, shell interval evaluator or tail-aware aggregate stop loop is exported. Numerical masses, couplings and a stopping goal are therefore deferred; supplying them now would not produce an interval. The exact generic coefficient functional is not itself a numerical Green-image evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, the Lorentzian spacetime form-block signs, and the complete symbolic per-shell preparation/recoil word are all certified. The symbolic word is ready, but the executable stream is still obstructed: exact shell aggregation is callable, but no coefficient provider, nested time-convolution backend or tail-aware aggregate stop loop is exported. Numerical masses, couplings and a stopping goal are therefore deferred; supplying them now would not produce an interval. The exact generic coefficient functional is not itself a numerical Green-image evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
   "claim_status": "SYMBOLIC_WORD_READY_EXECUTABLE_RECOIL_STREAM_OBSTRUCTED",
   "dependency_refs": {
     "clock_transform": {
@@ -21,7 +21,7 @@
     "executable_readiness": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
       "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
-      "sha256": "7ddc624c40d024a9d82d965a6b1903062e2de56468cf179510084e5ce5f8c54a"
+      "sha256": "bbda3db40b7608006416cb5a42525562bfd18167e3b300d861fca2ab0666e316"
     },
     "mode_kernels": {
       "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
@@ -91,29 +91,29 @@
       "name": "activate_stream_from_symbolic_tail_radius_alone"
     }
   ],
-  "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
+  "next_gate": "IMPLEMENT_DETECTOR_COEFFICIENT_AND_NESTED_TIME_CONVOLUTION_BACKENDS",
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "369b7649e1dc5506db917b999c134108f9e2fb1cda7bc9473fdbb4b36dc3248e"
+        "sha256": "bf51d25b426e30479b3e1a59c06ddb2fae054f292fae252a53b215ede2a41bc1"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "7ef1c015983f24e2c9d6b7da5ba67a8dcd29beacf0dd9c4db448d490e02a9d29"
+        "sha256": "296ade3b2bb134e4a66844e619cf7533625813308666a7e546fb156ecfacb101"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "a90bdf36be5df6c4fa3c92c7db6947ba66c8fb740360ab55ccf9e4c0f5853a79"
+        "sha256": "24d3fb0f598ee0cb3f83a07ef349ffc5c951025a4df1c783cc5a79cc64b75a3a"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json",
-        "sha256": "0f8f837672af5ba57856fd84016ebd913ec861286014633745abf7c028c7b147"
+        "sha256": "ee3e80e386ee0425bc2f8b6e9da7aa96e828cccb402f4171afa6cd4941f98e12"
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md",
-        "sha256": "786d6d5b7dba2e880b8cb4c8d61f40373c586ebea0c5cc47ca85d4998b275ecd"
+        "sha256": "c9c8469bcc26d862e3fd7c7a457659cdc57edf86c62fb053543a22156f3dc45a"
       }
     ]
   },
@@ -193,7 +193,7 @@
       {
         "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
         "id": "callable_shell_interval_backend",
-        "status": "OBSTRUCTED"
+        "status": "CERTIFIED"
       },
       {
         "evidence_flag": "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED",
@@ -218,7 +218,7 @@
   "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
   "sequencing_decision": {
     "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
-    "current_active_gate": "implement validated callable finite-shell interval backend",
+    "current_active_gate": "implement detector coefficient and nested time-convolution backends",
     "dense_profile_materialization": "NOT_SELECTED",
     "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
     "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
