@@ -46,6 +46,7 @@ CERTS = {
     "Nariai_K_admissibility": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1.json",
     "Nariai_Phi2_obstruction": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1.json",
     "Nariai_PBW_associativity": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json",
+    "Nariai_coefficient_jets": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
@@ -248,10 +249,10 @@ def entries() -> list[dict[str, Any]]:
         ("CERTIFIED", "The displayed tangent solves the complete linearized fixed-Lambda Einstein equations and is linearized Bach-flat."),
         ("OPEN", "No physical Lee-Wald norm or reduced pairing is assigned to this tangent."),
         ("OPEN", "No second-order Taub classification or exact nonlinear family is certified."),
-        ("OPEN", "The frozen-parallel shortcut is obstructed. The later jet-aware shifted-chain target is now fail-closed because its linearized PBW backend is nonassociative; its Phi/L0/K rank screens are retained only as backend regression data, not operator no-go theorems."),
+        ("OPEN", "The frozen-parallel shortcut is obstructed. An associative coefficient-jet PBW backend now exists, but the corrected L0/L1 splittings are exported only at one point, not with the four and fourteen positive-order coefficient-jet tables required by the exact replay. The earlier Phi/L0/K rank screens remain backend regression data, not operator no-go theorems."),
         _second(("OPEN", "No bounded correction theorem."), ("OPEN", "No smooth-secular correction theorem."), ("OPEN", "No transverse retarded SDR theorem.")),
-        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "Nariai_first_order_schur", "Nariai_Phi_only_obstruction", "Nariai_incidence_L1_rigidity", "Nariai_normalized_L0_obstruction", "Nariai_K_admissibility", "Nariai_Phi2_obstruction", "Nariai_PBW_associativity", "cone"),
-        "The BGG first square and parent identity replay in the current jet-aware backend, but its typed M_parent/L1_corrected/Kp0 associator has 209 first-variation coefficients and normalized witness one. Therefore the reported 207-coefficient shifted-chain defect is not an authoritative operator obstruction. The Phi-only, normalized-L0, and formal-K rank screens remain exact linear algebra relative to that superseded target only. A coefficient-jet-aware associative PBW replay, action-derived cyclic Schur identification, complete SDR and causal transfer remain open.",
+        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "Nariai_first_order_schur", "Nariai_Phi_only_obstruction", "Nariai_incidence_L1_rigidity", "Nariai_normalized_L0_obstruction", "Nariai_K_admissibility", "Nariai_Phi2_obstruction", "Nariai_PBW_associativity", "Nariai_coefficient_jets", "cone"),
+        "The old typed M_parent/L1_corrected/Kp0 associator has 209 first-variation coefficients, so its 207-coefficient shifted-chain defect is not an authoritative operator obstruction. The replacement coefficient-jet algebra agrees with direct symbolic composition and is associative on its nonparallel proof fixture. Its Nariai curvature input is sufficient, but the corrected splittings still lack four L0 and fourteen L1 positive-order covariant coefficient-jet tables. These must come from a perturbed BGG/HPL derivation, not interpolation. The earlier Phi/L0/K rank screens remain exact linear algebra relative to that superseded target only; the associative Nariai replay, cyclic Schur identification, complete SDR and causal transfer remain open.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",

@@ -189,6 +189,16 @@ Three same-background handoffs are queued after the active transverse replay:
    verdict.  Neither payload may be inferred from the other theory by matching
    branch labels.
 
+The transverse replay now has an associative coefficient-jet PBW algebra,
+independently matched to direct symbolic differential-operator composition.
+It is not yet runnable on the Nariai corrected splitting: the authoritative
+export contains only the point values of `L0_corrected` and `L1_corrected`.
+The exact missing input is four positive-order covariant coefficient-jet
+tables for `L0_corrected` and fourteen for `L1_corrected`.  The curvature jet
+tower through order three is already sufficient.  Derive the splitting jets
+from the full perturbed covariant BGG/HPL construction; do not interpolate the
+point matrices or reuse the superseded shifted-chain target.
+
 For every declared background, charge fibre, boundary condition, and quotient:
 
 1. import the Einstein team's map/cofiber certificate by content hash;

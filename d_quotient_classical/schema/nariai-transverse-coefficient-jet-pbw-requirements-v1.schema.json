@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/nariai-transverse-coefficient-jet-pbw-requirements-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "schema_version",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "dependency_refs",
+    "exact_data",
+    "exact_checks",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "source_manifest",
+    "verification_commands"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-coefficient-jet-pbw-requirements-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1"},
+    "result_state": {"const": "ASSOCIATIVE_COEFFICIENT_JET_BACKEND_EXACT_NARIAI_SPLITTING_JETS_MISSING"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["old_associativity_gate", "point_and_curvature_jet_data"],
+      "properties": {
+        "old_associativity_gate": {"$ref": "#/$defs/reference"},
+        "point_and_curvature_jet_data": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "exact_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["backend_theorem", "nariai_replay_requirements", "disposition"],
+      "properties": {
+        "backend_theorem": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "base_coefficients",
+            "varied_coefficients",
+            "composition",
+            "point_value_only_missing_jets_raise",
+            "direct_polynomial_fixture_associator_zero",
+            "backend_associator_zero",
+            "direct_and_backend_coefficient_jets_agree",
+            "checked_output_coefficient_jet_orders"
+          ],
+          "properties": {
+            "base_coefficients": {"type": "string"},
+            "varied_coefficients": {"type": "string"},
+            "composition": {"type": "string"},
+            "point_value_only_missing_jets_raise": {"const": "MissingCoefficientJet"},
+            "direct_polynomial_fixture_associator_zero": {"const": true},
+            "backend_associator_zero": {"const": true},
+            "direct_and_backend_coefficient_jets_agree": {"const": true},
+            "checked_output_coefficient_jet_orders": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {"$ref": "#/$defs/jetCheck"}
+            }
+          }
+        },
+        "nariai_replay_requirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "typed_triple",
+            "available_curvature_jet_order",
+            "maximum_curvature_jet_order_for_typed_triple",
+            "curvature_jet_input_sufficient",
+            "corrected_L0_positive_coefficient_jet_words_required_for_first_square",
+            "corrected_L1_positive_coefficient_jet_words_required_for_associativity",
+            "each_requested_jet_is",
+            "available_corrected_L0_data",
+            "available_corrected_L1_data",
+            "positive_order_corrected_splitting_jets_available",
+            "point_values_determine_positive_jets",
+            "normalized_nonuniqueness_witness",
+            "authoritative_derivation_required"
+          ],
+          "properties": {
+            "typed_triple": {"const": "M_parent o L1_corrected o (K p0)"},
+            "available_curvature_jet_order": {"const": 3},
+            "maximum_curvature_jet_order_for_typed_triple": {"const": 3},
+            "curvature_jet_input_sufficient": {"const": true},
+            "corrected_L0_positive_coefficient_jet_words_required_for_first_square": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {"$ref": "#/$defs/word"}
+            },
+            "corrected_L1_positive_coefficient_jet_words_required_for_associativity": {
+              "type": "array",
+              "minItems": 14,
+              "maxItems": 14,
+              "items": {"$ref": "#/$defs/word"}
+            },
+            "each_requested_jet_is": {"type": "string"},
+            "available_corrected_L0_data": {"$ref": "#/$defs/available"},
+            "available_corrected_L1_data": {"$ref": "#/$defs/available"},
+            "positive_order_corrected_splitting_jets_available": {"const": false},
+            "point_values_determine_positive_jets": {"const": false},
+            "normalized_nonuniqueness_witness": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["functions", "same_value_at_x0", "first_derivative_difference_at_x0"],
+              "properties": {
+                "functions": {
+                  "type": "array",
+                  "prefixItems": [{"const": "a"}, {"const": "a+x"}],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "same_value_at_x0": {"const": "a"},
+                "first_derivative_difference_at_x0": {"const": "1"}
+              }
+            },
+            "authoritative_derivation_required": {"type": "string"}
+          }
+        },
+        "disposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "associative_coefficient_jet_backend_available",
+            "old_point_value_backend_superseded",
+            "nariai_associative_replay_runnable",
+            "rank_310_transverse_SDR_decided",
+            "next_gate"
+          ],
+          "properties": {
+            "associative_coefficient_jet_backend_available": {"const": true},
+            "old_point_value_backend_superseded": {"const": true},
+            "nariai_associative_replay_runnable": {"const": false},
+            "rank_310_transverse_SDR_decided": {"const": false},
+            "next_gate": {"type": "string"}
+          }
+        }
+      }
+    },
+    "exact_checks": {"$ref": "#/$defs/booleans"},
+    "flags": {"$ref": "#/$defs/booleans"},
+    "next_gate": {"const": "NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS"},
+    "claim_boundary": {"type": "string", "minLength": 80},
+    "source_manifest": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "minProperties": 6
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "word": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "integer", "minimum": 0, "maximum": 3}
+    },
+    "jetCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jet_word", "nonzero_coefficients", "sha256"],
+      "properties": {
+        "jet_word": {
+          "type": "array",
+          "items": {"type": "integer", "minimum": 0, "maximum": 3}
+        },
+        "nonzero_coefficients": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "available": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["jet_words", "nonzero_point_coefficients"],
+      "properties": {
+        "jet_words": {
+          "type": "array",
+          "prefixItems": [{"type": "array", "maxItems": 0}],
+          "items": false,
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "nonzero_point_coefficients": {"type": "integer", "minimum": 1}
+      }
+    },
+    "booleans": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    }
+  }
+}

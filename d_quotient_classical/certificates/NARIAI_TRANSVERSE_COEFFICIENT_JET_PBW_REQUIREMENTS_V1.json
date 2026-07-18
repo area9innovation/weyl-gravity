@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "claim_boundary": "This certificate supplies and directly checks an associative first-variation PBW composition for nonparallel operator coefficients, and proves that the existing Nariai curvature jets reach the order needed by the M-L1-K triple. It also proves that the repository exports only point values, not the required positive-order covariant coefficient jets, of the corrected L0/L1 splittings. Point values cannot determine those jets. Therefore no transverse first-square, shifted-chain, Schur, rank-310 SDR, or causal theorem is promoted. The missing jets must be derived from a full perturbed BGG/HPL or equivalent natural operator construction, not fitted.",
+  "dependency_refs": {
+    "old_associativity_gate": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1",
+      "sha256": "b9938aae7dab3cac00849dccfaa62f45af23e1134f8900d4d00677b7f0bd2ec5"
+    },
+    "point_and_curvature_jet_data": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1",
+      "sha256": "1c21b2be307cc8102303aacfc90062cd4a2934c57fac9c7379e5d3a23bda5d3b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "backend_fixture_associative": true,
+    "direct_backend_match": true,
+    "direct_fixture_associative": true,
+    "nariai_curvature_jets_sufficient": true,
+    "nariai_splitting_jets_missing": true,
+    "rank_310_not_overclaimed": true
+  },
+  "exact_data": {
+    "backend_theorem": {
+      "backend_associator_zero": true,
+      "base_coefficients": "parallel normal-form coefficients",
+      "checked_output_coefficient_jet_orders": [
+        {
+          "jet_word": [],
+          "nonzero_coefficients": 4,
+          "sha256": "199c2ee746b658bebf852bd4877a7bdf3a12ded41136be8b5d6fb9c2f9b17d9e"
+        },
+        {
+          "jet_word": [
+            0
+          ],
+          "nonzero_coefficients": 4,
+          "sha256": "199c2ee746b658bebf852bd4877a7bdf3a12ded41136be8b5d6fb9c2f9b17d9e"
+        },
+        {
+          "jet_word": [
+            0,
+            0
+          ],
+          "nonzero_coefficients": 4,
+          "sha256": "199c2ee746b658bebf852bd4877a7bdf3a12ded41136be8b5d6fb9c2f9b17d9e"
+        },
+        {
+          "jet_word": [
+            0,
+            0,
+            0
+          ],
+          "nonzero_coefficients": 4,
+          "sha256": "199c2ee746b658bebf852bd4877a7bdf3a12ded41136be8b5d6fb9c2f9b17d9e"
+        }
+      ],
+      "composition": "covariant Leibniz distribution followed by base PBW normal ordering plus varied-curvature PBW terms",
+      "direct_and_backend_coefficient_jets_agree": true,
+      "direct_polynomial_fixture_associator_zero": true,
+      "point_value_only_missing_jets_raise": "MissingCoefficientJet",
+      "varied_coefficients": "lazy ordered covariant coefficient jets"
+    },
+    "disposition": {
+      "associative_coefficient_jet_backend_available": true,
+      "nariai_associative_replay_runnable": false,
+      "next_gate": "derive corrected L0/L1 covariant coefficient jets from the perturbed BGG/HPL construction, then replay first square, parent identity, shifted chain, and compressed Schur",
+      "old_point_value_backend_superseded": true,
+      "rank_310_transverse_SDR_decided": false
+    },
+    "nariai_replay_requirements": {
+      "authoritative_derivation_required": "full perturbed covariant HPL/BGG splitting or an equivalent natural operator formula; scalar interpolation of the point matrices is forbidden",
+      "available_corrected_L0_data": {
+        "jet_words": [
+          []
+        ],
+        "nonzero_point_coefficients": 2
+      },
+      "available_corrected_L1_data": {
+        "jet_words": [
+          []
+        ],
+        "nonzero_point_coefficients": 22
+      },
+      "available_curvature_jet_order": 3,
+      "corrected_L0_positive_coefficient_jet_words_required_for_first_square": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "corrected_L1_positive_coefficient_jet_words_required_for_associativity": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "curvature_jet_input_sufficient": true,
+      "each_requested_jet_is": "the complete varied normal-form coefficient table, including coefficient slots whose value happens to vanish at the normalization point",
+      "maximum_curvature_jet_order_for_typed_triple": 3,
+      "normalized_nonuniqueness_witness": {
+        "first_derivative_difference_at_x0": "1",
+        "functions": [
+          "a",
+          "a+x"
+        ],
+        "same_value_at_x0": "a"
+      },
+      "point_values_determine_positive_jets": false,
+      "positive_order_corrected_splitting_jets_available": false,
+      "typed_triple": "M_parent o L1_corrected o (K p0)"
+    }
+  },
+  "flags": {
+    "COEFFICIENT_JET_PBW_BACKEND_ASSOCIATIVE_ON_DIRECT_FIXTURE": true,
+    "NARIAI_TRANSVERSE_ASSOCIATIVE_PBW_REPLAY": false,
+    "NARIAI_TRANSVERSE_CORRECTED_SPLITTING_COEFFICIENT_JETS": false,
+    "NARIAI_TRANSVERSE_CURVATURE_JETS_SUFFICIENT_FOR_TYPED_TRIPLE": true,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": false
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS",
+  "result_id": "NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1",
+  "result_state": "ASSOCIATIVE_COEFFICIENT_JET_BACKEND_EXACT_NARIAI_SPLITTING_JETS_MISSING",
+  "schema": "nariai-transverse-coefficient-jet-pbw-requirements-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/coefficient_jet_pbw.py": "7d053bcec04011613a9a3dad2bc9309f8c03108fedc184d43cda7f842db2d200",
+    "d_quotient_classical/causal_transfer/nariai_transverse_coefficient_jet_pbw_requirements.py": "c6f033835bbbe495f3f7f9bf8bbbfe4fee717e6ab4dd76c5c36c845a99d13caa",
+    "d_quotient_classical/causal_transfer/tests/test_coefficient_jet_pbw.py": "e0ba50f2b009a972d6ee65497fa66b4a60a3f6570ac5a2d28e12194c3909d20c",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_coefficient_jet_pbw_requirements.py": "a7e6e82fd9f9e3bfc94b00aad8b5f2c741fd9e2e98d024b094e7a6441955c502",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_coefficient_jet_pbw_requirements.py": "be4b5c9e8a63dc0c8eda2d90388351fe397a4e01a02d7e70509a7ae8aef86804",
+    "d_quotient_classical/schema/nariai-transverse-coefficient-jet-pbw-requirements-v1.schema.json": "05625a61e7d29cc1f4a529613d344bff7fcd169ffca02962d4fae1bce36d2e3a"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_coefficient_jet_pbw_requirements --check",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_coefficient_jet_pbw_requirements.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_coefficient_jet_pbw d_quotient_classical.causal_transfer.tests.test_nariai_transverse_coefficient_jet_pbw_requirements",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-coefficient-jet-pbw-requirements-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1.json"
+  ]
+}

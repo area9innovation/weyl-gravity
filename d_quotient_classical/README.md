@@ -490,6 +490,18 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   The next gate is a coefficient-jet-aware associative PBW replay:
   [`certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json`](certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json),
   [`reports/nariai-transverse-linearized-pbw-associativity-gate.md`](reports/nariai-transverse-linearized-pbw-associativity-gate.md)
+- Coefficient-jet PBW repair preflight: the replacement algebra keeps the
+  ordered covariant jet tower of every varied normal-form coefficient and is
+  associative through coefficient-jet order three on an independently
+  evaluated nonparallel differential-operator fixture.  For the transverse
+  Nariai replay the curvature tower is already deep enough.  The remaining
+  input is now exact: four positive-order coefficient-jet tables for
+  `L0_corrected` and fourteen for `L1_corrected`.  The repository currently
+  exports only their point values; these do not determine the missing jets.
+  The backend therefore fails closed until a full perturbed covariant
+  BGG/HPL splitting derives them:
+  [`certificates/NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1.json`](certificates/NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1.json),
+  [`reports/nariai-transverse-coefficient-jet-pbw-requirements.md`](reports/nariai-transverse-coefficient-jet-pbw-requirements.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer
