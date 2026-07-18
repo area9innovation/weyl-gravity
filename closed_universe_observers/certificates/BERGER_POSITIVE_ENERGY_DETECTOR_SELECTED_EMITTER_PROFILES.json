@@ -1,0 +1,147 @@
+{
+  "causal_support_and_constraint": {
+    "all_slice_gap_defects_zero": true,
+    "compact_and_constraint_compatible": true,
+    "constraint_statement": "delta_Sigma q_a=delta_Sigma p_a=0 and [delta_Sigma,L_a]=0 imply delta_Sigma u_a=0",
+    "profiles": [
+      {
+        "cauchy_slice_physical_time": "1/8",
+        "gap": "1/48",
+        "id": "u_0",
+        "switch_start": "7/48"
+      },
+      {
+        "cauchy_slice_physical_time": "7/24",
+        "gap": "1/48",
+        "id": "u_1",
+        "switch_start": "5/16"
+      }
+    ],
+    "receiver_adjacent_no_wrap_scope": "the slices are exactly 1/48 before their switches and remain in the previously certified receiver-adjacent causal patches",
+    "support_statement": "Cauchy(V_a^adv) is supported in the causal past shadow of compact w_a; applying p->-p and the differential spatial operator L_a does not enlarge support"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL certificate converts each already-fixed advanced detector covector with physical massive-two-form Cauchy data v_a=(q_a,p_a) into the detector-selected preparation u_a=(-p_a,L_a q_a), where L_a=Delta_(2,Sigma)^co-closed+m_a^2. The Cauchy symplectic pairing is ell_a(u_a)=||p_a||^2+<q_a,L_a q_a>>0 for every nonzero covector because m_a^2>0. The construction uses no response normalization, preserves the co-closed constraint, and does not enlarge the compact receiver-adjacent causal support. Exact slices lie 1/48 before each emitter switch. This exports an operator-defined compact Cauchy profile, not evaluated coordinate or harmonic coefficients. It does not evaluate the advanced Green images, compute the absolute-g^3 recoil coefficient, construct the PBW q2 payload, solve backreaction, establish finite-parameter Green theory or the full Dirac algebra, or make a quantum claim.",
+  "claim_status": "OPERATOR_DEFINED_DETECTOR_SELECTED_COMPACT_CAUCHY_PROFILES_EXPORTED_HARMONIC_EVALUATION_OPEN",
+  "dependency_refs": {
+    "covectors": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+      "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"
+    },
+    "emitter_model": {
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json",
+      "result_id": "BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF",
+      "sha256": "2b39749d375ab50966bf286c0a8d6771418c93160457e8f16a65821e8c9d6258"
+    },
+    "rank_two": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+      "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+    },
+    "switches": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+      "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ADVANCED_GREEN_IMAGES_EVALUATED": false,
+    "CAUSAL_SUPPORT_NOT_ENLARGED": true,
+    "CO_CLOSED_CONSTRAINT_PRESERVED": true,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "HARMONIC_COEFFICIENTS_EVALUATED": false,
+    "LEADING_DIAGONAL_RESPONSES_POSITIVE_ENERGY_WITNESSES": true,
+    "OPERATOR_DEFINED_DETECTOR_SELECTED_COMPACT_CAUCHY_PROFILES_EXPORTED": true,
+    "QUANTUM_CLAIM": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "flip_positive_energy_dual_sign"
+    },
+    {
+      "detected": true,
+      "name": "delete_Lq_configuration_term"
+    }
+  ],
+  "next_gate": "EXPAND_THE_FIXED_ADVANCED_COVECTORS_AND_POSITIVE_ENERGY_DUALS_IN_BERGER_PETER_WEYL_MODES_WITH_VALIDATED_TAIL_BOUNDS",
+  "positive_energy_dual": {
+    "cauchy_order": [
+      "q",
+      "p"
+    ],
+    "energy": "<p_a,p_a>+<q_a,L_a q_a>",
+    "mass_gap": "L_a>=m_a^2>0",
+    "omega_times_dual": [
+      [
+        "lambda + m2",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "positive_energy_dual_matrix": [
+      [
+        "0",
+        "-1"
+      ],
+      [
+        "lambda + m2",
+        "0"
+      ]
+    ],
+    "selected_profile": "u_a=(-p_a,L_a q_a)",
+    "spatial_operator": "L_a=Delta_(2,Sigma)^co-closed+m_a^2",
+    "strictly_positive_for_nonzero_covector_data": true,
+    "symplectic_matrix": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "0"
+      ]
+    ]
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_positive_energy_emitter_profiles.py",
+        "sha256": "94b346f116dc257856642f0d2f5f5427256ec58b4ff4bbd9434862e320fd10db"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_positive_energy_emitter_profiles.py",
+        "sha256": "e5cf2135ee78f981cb6d04135037fb970268deb5db5f01470c10ffe760290363"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_positive_energy_emitter_profiles.py",
+        "sha256": "a84a2a89472d2390677942a375556af9310451b0c80f3f1d09555c258aaac1c3"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-positive-energy-detector-selected-emitter-profiles-v1.schema.json",
+        "sha256": "83e09e9d53f2a379f5a2a956d8f737512f16827eedfd91b1c37f36b54f66ff44"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-positive-energy-detector-selected-emitter-profiles.md",
+        "sha256": "10a7f351dde92c9f94c2fdd1e673358de9cd681b22ab539f5e4718181597acc0"
+      }
+    ]
+  },
+  "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+  "schema": "closed-universe-berger-positive-energy-detector-selected-emitter-profiles-v1",
+  "selection_rule": {
+    "adaptive_response_normalization": false,
+    "advanced_data": "v_a=Cauchy(G_Ea,adv[g_a h_a d G_A,adv delta(chi_a P_a)])",
+    "profile": "u_a=(-p_a,L_a q_a)",
+    "response": "kappa_a=ell_a(u_a)=E_a[v_a]>0"
+  },
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

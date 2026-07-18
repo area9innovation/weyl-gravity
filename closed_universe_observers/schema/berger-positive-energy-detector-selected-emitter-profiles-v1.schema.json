@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://example.invalid/closed-universe/berger-positive-energy-detector-selected-emitter-profiles-v1.schema.json","type":"object","additionalProperties":false,
+  "required":["schema","result_id","setting_id","claim_status","dependency_tags","dependency_refs","positive_energy_dual","causal_support_and_constraint","selection_rule","mutation_results","flags","next_gate","claim_boundary","provenance"],
+  "properties":{
+    "schema":{"const":"closed-universe-berger-positive-energy-detector-selected-emitter-profiles-v1"},"result_id":{"const":"BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES"},"setting_id":{"type":"string"},"claim_status":{"const":"OPERATOR_DEFINED_DETECTOR_SELECTED_COMPACT_CAUCHY_PROFILES_EXPORTED_HARMONIC_EVALUATION_OPEN"},"dependency_tags":{"const":["LOCAL-ALGEBRAIC","LORENTZIAN-CAUSAL"]},"dependency_refs":{"type":"object","minProperties":4},
+    "positive_energy_dual":{"type":"object","required":["strictly_positive_for_nonzero_covector_data"],"properties":{"strictly_positive_for_nonzero_covector_data":{"const":true}}},
+    "causal_support_and_constraint":{"type":"object","required":["all_slice_gap_defects_zero","compact_and_constraint_compatible"],"properties":{"all_slice_gap_defects_zero":{"const":true},"compact_and_constraint_compatible":{"const":true}}},
+    "selection_rule":{"type":"object"},"mutation_results":{"type":"array","minItems":2,"maxItems":2},
+    "flags":{"type":"object","additionalProperties":false,"required":["OPERATOR_DEFINED_DETECTOR_SELECTED_COMPACT_CAUCHY_PROFILES_EXPORTED","LEADING_DIAGONAL_RESPONSES_POSITIVE_ENERGY_WITNESSES","CO_CLOSED_CONSTRAINT_PRESERVED","CAUSAL_SUPPORT_NOT_ENLARGED","HARMONIC_COEFFICIENTS_EVALUATED","ADVANCED_GREEN_IMAGES_EVALUATED","DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED","QUANTUM_CLAIM"],"properties":{"OPERATOR_DEFINED_DETECTOR_SELECTED_COMPACT_CAUCHY_PROFILES_EXPORTED":{"const":true},"LEADING_DIAGONAL_RESPONSES_POSITIVE_ENERGY_WITNESSES":{"const":true},"CO_CLOSED_CONSTRAINT_PRESERVED":{"const":true},"CAUSAL_SUPPORT_NOT_ENLARGED":{"const":true},"HARMONIC_COEFFICIENTS_EVALUATED":{"const":false},"ADVANCED_GREEN_IMAGES_EVALUATED":{"const":false},"DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED":{"const":false},"QUANTUM_CLAIM":{"const":false}}},
+    "next_gate":{"type":"string"},"claim_boundary":{"type":"string"},"provenance":{"type":"object"}
+  }
+}

@@ -301,6 +301,10 @@ bumps and derives the advanced Maxwell-to-emitter Cauchy-covector operator.
 Its local spatial radius is an exact admissible parameter because no numerical
 chart injectivity radius is certified.  The two advanced Green images and
 coordinate-level Cauchy dual remain unevaluated.
+The positive-energy successor nevertheless fixes the Cauchy preparation as
+`u_a=(-p_a,L_a q_a)` directly from the advanced covector data.  Its leading
+response is the strictly positive massive-two-form energy, so profile
+selection is no longer open; only validated harmonic evaluation is.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -500,3 +504,6 @@ The detector-profile successor freezes exact normalized detector bumps and
 the formal advanced adjoint chain while leaving both Green images and the
 coordinate Cauchy dual open.  Its receipt is
 `closed_universe_observers/receipts/EXACT_DETECTOR_SMEARINGS_ADVANCED_COVECTORS_TIER_RECEIPT.json`.
+The positive-energy successor fixes the compact constrained preparations and
+their positive diagonal witnesses without response normalization.  Its receipt
+is `closed_universe_observers/receipts/POSITIVE_ENERGY_EMITTER_PROFILES_TIER_RECEIPT.json`.

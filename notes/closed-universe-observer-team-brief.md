@@ -229,6 +229,13 @@ adjunction exports the exact chain
 Neither Green image nor a coordinate-level positive-energy Cauchy dual is yet
 evaluated.
 
+`BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES` now fixes that
+dual at operator level.  If `v_a=(q_a,p_a)` is the advanced covector data,
+then `u_a=(-p_a,L_a q_a)` has response
+`||p_a||^2+<q_a,L_a q_a>>0`.  The construction preserves the co-closed
+constraint and causal support and uses no response normalization.  Only the
+Berger harmonic coefficients and Green integrals remain unevaluated.
+
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
 integral.  Direct variation of the selected action gives the free emitter
@@ -253,10 +260,9 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Using the certified exact `h_a`, `chi_a`, and advanced covector operator,
-   evaluate the advanced Maxwell and massive-two-form Green images, take the
-   positive-energy Cauchy dual to construct compact `u_0,u_1`, and then
-   compute the absolute-`g^3`
+1. Expand the certified exact `h_a`, `chi_a`, advanced covectors, and
+   positive-energy-selected `u_0,u_1` in Berger Peter--Weyl modes with
+   validated quadrature and spectral-tail bounds, and then compute the absolute-`g^3`
    (relative-`g^2`) detector recoil coefficient.  In parallel, use the
    exported emitter stress
    and clock-switch source to refine the certified covariant 108-row
