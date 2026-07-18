@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-standard-euclidean-local-b4-integration-slice-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_hashes", "background", "factor_exponent_ledger", "aggregate_checks", "measure_and_contour", "local_regulator_policy", "standard_local_anomaly_coordinates", "repository_map", "negative_control", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-standard-euclidean-local-b4-integration-slice-v1"},
+    "result_id": {"const": "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE"},
+    "result_state": {"const": "STANDARD_LOCAL_B4_FACTOR_MEASURE_ZERO_MODE_AND_CONTOUR_SLICE_COMPLETE_REPOSITORY_TT_MAP_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL", "LOCAL-ALGEBRAIC"]},
+    "dependency_hashes": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "background": {"const": {"geometry": "round unit S4", "dimension": 4, "scalar_curvature": 12}},
+    "factor_exponent_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/factor"}},
+    "aggregate_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["signed_effective_bundle_rank", "expected_signed_rank", "zero_mode_dimension", "expected_conformal_reducibility_dimension", "all_four_factors_covered_once"],
+      "properties": {"signed_effective_bundle_rank": {"const": 6}, "expected_signed_rank": {"const": 6}, "zero_mode_dimension": {"const": 15}, "expected_conformal_reducibility_dimension": {"const": 15}, "all_four_factors_covered_once": {"const": true}}
+    },
+    "measure_and_contour": {
+      "type": "object", "additionalProperties": false,
+      "required": ["unwanted_scalar_Delta0_exponent", "nonminimal_quartet_superdeterminant", "algebraic_TT_auxiliary_contour", "algebraic_TT_auxiliary_modewise_phase"],
+      "properties": {"unwanted_scalar_Delta0_exponent": {"$ref": "#/$defs/rational"}, "nonminimal_quartet_superdeterminant": {"const": "ONE_ON_COMMON_NONZERO_MODE_DOMAIN"}, "algebraic_TT_auxiliary_contour": {"const": "+iR_ORIENTED_NORMALIZED"}, "algebraic_TT_auxiliary_modewise_phase": {"const": "+1"}}
+    },
+    "local_regulator_policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["effective_action", "regularization", "zero_mode_effect_on_local_b4", "auxiliary_identity_block_effect_on_local_b4", "parity_odd_coordinate", "global_determinant_phase"],
+      "properties": {"effective_action": {"type": "string"}, "regularization": {"type": "string"}, "zero_mode_effect_on_local_b4": {"const": "NONE_FINITE_DIMENSIONAL_KERNELS_REMOVED_BEFORE_LOCAL_HEAT_TRACE"}, "auxiliary_identity_block_effect_on_local_b4": {"const": "ZERO_BY_NORMALIZED_ALGEBRAIC_MEASURE"}, "parity_odd_coordinate": {"const": "ZERO_BY_VERIFIED_PARITY_WARD_IDENTITY"}, "global_determinant_phase": {"const": "NOT_FIXED_FOR_NEGATIVE_SCALAR_LEVEL_ZERO"}}
+    },
+    "standard_local_anomaly_coordinates": {"const": {"basis": ["C2", "E4", "CdualC"], "values": ["199/30", "-87/20", "0"], "status": "STANDARD_BACKGROUND_ONLY"}},
+    "repository_map": {
+      "type": "object", "additionalProperties": false,
+      "required": ["missing_artifact", "unmatched_rows", "already_matched_rows", "repository_full_BV_multiplicity_ledger_status"],
+      "properties": {"missing_artifact": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"}, "unmatched_rows": {"type": "array", "minItems": 2, "maxItems": 2}, "already_matched_rows": {"type": "array", "minItems": 3, "maxItems": 3}, "repository_full_BV_multiplicity_ledger_status": {"const": "NOT_ACCEPTED"}}
+    },
+    "negative_control": {"const": {"mutation": "replace the five scalar conformal ghost zero modes by four", "mutated_zero_mode_dimension": 14, "expected_zero_mode_dimension": 15, "rejected": true}},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE", "STANDARD_FACTOR_EXPONENTS_COMPLETE", "STANDARD_ZERO_MODE_PRIMING_COMPLETE", "STANDARD_AUXILIARY_CONTOUR_BOUND", "STANDARD_LOCAL_ANOMALY_VECTOR_REPRODUCED", "GLOBAL_DETERMINANT_PHASE_FIXED", "REPOSITORY_TT_HESSIAN_MATCHED", "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED", "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED", "REGULATED_SLAVNOV_BREAKING_COMPUTED", "QME_DISPOSITION"],
+      "properties": {
+        "STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": {"const": true}, "STANDARD_FACTOR_EXPONENTS_COMPLETE": {"const": true}, "STANDARD_ZERO_MODE_PRIMING_COMPLETE": {"const": true}, "STANDARD_AUXILIARY_CONTOUR_BOUND": {"const": true}, "STANDARD_LOCAL_ANOMALY_VECTOR_REPRODUCED": {"const": true},
+        "GLOBAL_DETERMINANT_PHASE_FIXED": {"const": false}, "REPOSITORY_TT_HESSIAN_MATCHED": {"const": false}, "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": {"const": false}, "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": {"const": false}, "REGULATED_SLAVNOV_BREAKING_COMPUTED": {"const": false}, "QME_DISPOSITION": {"const": false}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_AND_ACCEPT_FULL_BV_MULTIPLICITY_LEDGER"},
+    "claim_boundary": {"type": "string", "minLength": 800},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 5, "maxProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "factor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_id", "operator", "bundle_rank", "determinant_sign_in_Gamma", "Gamma_logdet_exponent", "Z_determinant_exponent", "zero_mode_dimension", "primed"],
+      "properties": {"factor_id": {"enum": ["physical_depth_0", "ghost_depth_0", "physical_depth_1", "ghost_depth_1"]}, "operator": {"type": "string"}, "bundle_rank": {"type": "integer", "minimum": 1, "maximum": 5}, "determinant_sign_in_Gamma": {"enum": [-1, 1]}, "Gamma_logdet_exponent": {"$ref": "#/$defs/rational"}, "Z_determinant_exponent": {"$ref": "#/$defs/rational"}, "zero_mode_dimension": {"type": "integer", "minimum": 0}, "primed": {"type": "boolean"}}
+    }
+  }
+}

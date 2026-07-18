@@ -1,0 +1,170 @@
+{
+  "aggregate_checks": {
+    "all_four_factors_covered_once": true,
+    "expected_conformal_reducibility_dimension": 15,
+    "expected_signed_rank": 6,
+    "signed_effective_bundle_rank": 6,
+    "zero_mode_dimension": 15
+  },
+  "background": {
+    "dimension": 4,
+    "geometry": "round unit S4",
+    "scalar_curvature": 12
+  },
+  "claim_boundary": "This exact EUCLIDEAN-SPECTRAL plus LOCAL-ALGEBRAIC certificate consolidates the standard four-factor conformal-spin-two integration slice on the round unit S4. It binds the physical and ghost determinant exponents in Gamma and Z, the nonzero-mode York-Hodge and nonminimal Berezinian, the fifteen primed conformal ghost zero modes, the normalized +iR algebraic TT auxiliary thimble, the parity-even local heat-kernel b4 prescription, and the standard local anomaly coordinates (199/30,-87/20,0). Finite-dimensional zero-mode deletion and the normalized algebraic identity block do not alter the local b4 coefficient. The global phase of the single negative scalar level-zero eigenvalue remains open. Most importantly, this is the standard background slice, not a repository determinant theorem: the repository round-S4 TT Hessian dictionary and algebraic auxiliary-row identification are absent, the full BV multiplicity receiver has not accepted a physical export, and no repository anomaly coefficient, regulated Slavnov breaking, QME disposition, D-Cartan class, residual transfer, or Lorentzian quantum theorem is claimed.",
+  "claim_flags": {
+    "GLOBAL_DETERMINANT_PHASE_FIXED": false,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
+    "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+    "REPOSITORY_TT_HESSIAN_MATCHED": false,
+    "STANDARD_AUXILIARY_CONTOUR_BOUND": true,
+    "STANDARD_FACTOR_EXPONENTS_COMPLETE": true,
+    "STANDARD_LOCAL_ANOMALY_VECTOR_REPRODUCED": true,
+    "STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": true,
+    "STANDARD_ZERO_MODE_PRIMING_COMPLETE": true
+  },
+  "dependency_hashes": {
+    "York_Hodge_measure": "f0385cc2a984d51f70c63e096e52d9f5d8801ce1b7a763b2c0d1012e9ec25cc3",
+    "auxiliary_Schur": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be",
+    "auxiliary_contour": "ffe909268ee2c04a78586612d17544ff928e8c935da13efaea878031fda48555",
+    "coefficient": "2c1eaa0a1bf85004b21bf84aa0722c0e9622e6038011b5b2b00c9e82f6fb36d8",
+    "repository_TT_readiness": "4f095dbeb8ae4975325c7f67fa0de37f69450c21e15c5f363e136587516fe537",
+    "scalar_ghost": "7858073c4c8394512f26faf7d884a12411bee6e3a59fe7d8d394d66d07b1b231",
+    "zero_modes": "1e1d75b2a199c8fcb58455da0753c62e88a885c892f163650b0b13c966ea765b"
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL",
+    "LOCAL-ALGEBRAIC"
+  ],
+  "factor_exponent_ledger": [
+    {
+      "Gamma_logdet_exponent": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "Z_determinant_exponent": {
+        "denominator": 2,
+        "numerator": -1
+      },
+      "bundle_rank": 5,
+      "determinant_sign_in_Gamma": 1,
+      "factor_id": "physical_depth_0",
+      "operator": "Delta_2_perp(4)",
+      "primed": false,
+      "zero_mode_dimension": 0
+    },
+    {
+      "Gamma_logdet_exponent": {
+        "denominator": 2,
+        "numerator": -1
+      },
+      "Z_determinant_exponent": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "bundle_rank": 1,
+      "determinant_sign_in_Gamma": -1,
+      "factor_id": "ghost_depth_0",
+      "operator": "Delta_0(-4)",
+      "primed": true,
+      "zero_mode_dimension": 5
+    },
+    {
+      "Gamma_logdet_exponent": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "Z_determinant_exponent": {
+        "denominator": 2,
+        "numerator": -1
+      },
+      "bundle_rank": 5,
+      "determinant_sign_in_Gamma": 1,
+      "factor_id": "physical_depth_1",
+      "operator": "Delta_2_perp(2)",
+      "primed": false,
+      "zero_mode_dimension": 0
+    },
+    {
+      "Gamma_logdet_exponent": {
+        "denominator": 2,
+        "numerator": -1
+      },
+      "Z_determinant_exponent": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "bundle_rank": 3,
+      "determinant_sign_in_Gamma": -1,
+      "factor_id": "ghost_depth_1",
+      "operator": "Delta_1_perp(-3)",
+      "primed": true,
+      "zero_mode_dimension": 10
+    }
+  ],
+  "local_regulator_policy": {
+    "auxiliary_identity_block_effect_on_local_b4": "ZERO_BY_NORMALIZED_ALGEBRAIC_MEASURE",
+    "effective_action": "Gamma_1=1/2 sum_i determinant_sign_i log det_prime P_i",
+    "global_determinant_phase": "NOT_FIXED_FOR_NEGATIVE_SCALAR_LEVEL_ZERO",
+    "parity_odd_coordinate": "ZERO_BY_VERIFIED_PARITY_WARD_IDENTITY",
+    "regularization": "parity-even second-order heat-kernel b4 / zeta-local coefficient",
+    "zero_mode_effect_on_local_b4": "NONE_FINITE_DIMENSIONAL_KERNELS_REMOVED_BEFORE_LOCAL_HEAT_TRACE"
+  },
+  "measure_and_contour": {
+    "algebraic_TT_auxiliary_contour": "+iR_ORIENTED_NORMALIZED",
+    "algebraic_TT_auxiliary_modewise_phase": "+1",
+    "nonminimal_quartet_superdeterminant": "ONE_ON_COMMON_NONZERO_MODE_DOMAIN",
+    "unwanted_scalar_Delta0_exponent": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "negative_control": {
+    "expected_zero_mode_dimension": 15,
+    "mutated_zero_mode_dimension": 14,
+    "mutation": "replace the five scalar conformal ghost zero modes by four",
+    "rejected": true
+  },
+  "next_gate": "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_AND_ACCEPT_FULL_BV_MULTIPLICITY_LEDGER",
+  "proof_sha256": "373462afa74ee296736c00c6c14e51f0efb332d542e6aaa028af926f8b1fe146",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/standard-euclidean-local-b4-integration-slice.md": "1dee8513783435536aad35321f7676398a212c34ee775a1849f2df75628fdf91",
+      "quantum-weyl/spectral/euclidean/schema/standard-euclidean-local-b4-integration-slice-v1.schema.json": "6140243b000828b365736d6840f13c8d6fbce95ba0446f4ff1f5f01c856f51fc",
+      "quantum-weyl/spectral/euclidean/standard_integration_slice.py": "1667a3fc08bc032bfb8eda87f8a3bb7232d4fe1a642c92eed5aa8e8d35992233",
+      "quantum-weyl/spectral/euclidean/tests/test_standard_integration_slice.py": "9d95d1c637f6b7901ec703355500089bfe9e61cfca56ee5b9cec65be6b4b8e71",
+      "quantum-weyl/spectral/euclidean/verify_standard_integration_slice.py": "f82a776f653fa3356fddc87291497366a5175594a3fd74879af2548953e0d123"
+    }
+  },
+  "repository_map": {
+    "already_matched_rows": [
+      "transverse Diff ghost",
+      "longitudinal Diff-Weyl scalar ghost",
+      "nonminimal quartet on nonzero modes"
+    ],
+    "missing_artifact": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+    "repository_full_BV_multiplicity_ledger_status": "NOT_ACCEPTED",
+    "unmatched_rows": [
+      "repository physical TT Hessian",
+      "repository algebraic TT auxiliary row"
+    ]
+  },
+  "result_id": "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE",
+  "result_state": "STANDARD_LOCAL_B4_FACTOR_MEASURE_ZERO_MODE_AND_CONTOUR_SLICE_COMPLETE_REPOSITORY_TT_MAP_OPEN",
+  "schema": "quantum-weyl-standard-euclidean-local-b4-integration-slice-v1",
+  "standard_local_anomaly_coordinates": {
+    "basis": [
+      "C2",
+      "E4",
+      "CdualC"
+    ],
+    "status": "STANDARD_BACKGROUND_ONLY",
+    "values": [
+      "199/30",
+      "-87/20",
+      "0"
+    ]
+  }
+}

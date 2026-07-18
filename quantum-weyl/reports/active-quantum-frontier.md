@@ -61,9 +61,12 @@ the exact scalar Diff--Weyl kernel vector `(1,1)`. The standard algebraic TT
 auxiliary also now has a convergent oriented `+iR` thimble. Exact square
 completion reproduces the fourth-order factor, while the normalized measure
 fixes phase `+1` per real mode and zero background-dependent logarithmic
-coefficient. Matching that policy to the repository auxiliary row, the
-repository-global ledger, regulator, and complete row/factor map remain open.
-A strict, content-addressed full-BV multiplicity receiver is ready. It rejects
+coefficient. These factor, exponent, measure, zero-mode, contour, parity, and
+local-`b4` regulator inputs are now consolidated in one standard integration
+slice reproducing `(199/30,-87/20,0)`. Matching the TT dictionary and auxiliary
+row to the repository, fixing the global determinant phase, and accepting the
+complete repository full-BV ledger remain open. A strict, content-addressed
+full-BV multiplicity receiver is ready. It rejects
 orphan rows or factors, duplicate standard maps, target-rank drift, scalar
 map drift, and nested proof-hash drift; the
 classical 54-row carrier is not treated as a loop operator. These results do

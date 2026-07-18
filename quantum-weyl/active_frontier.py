@@ -32,6 +32,7 @@ DEPENDENCIES = {
     "TT_hessian_normalization_readiness": HERE / "spectral/euclidean/certificates/REPOSITORY_TT_HESSIAN_NORMALIZATION_READINESS.json",
     "round_S4_standard_zero_modes": HERE / "spectral/euclidean/certificates/ROUND_S4_STANDARD_FACTOR_ZERO_MODE_LEDGER.json",
     "standard_TT_auxiliary_contour": HERE / "spectral/euclidean/certificates/STANDARD_TT_AUXILIARY_CONTOUR_PHASE.json",
+    "standard_Euclidean_integration_slice": HERE / "spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -81,6 +82,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "TT_hessian_normalization_readiness": "ACTION_NORMALIZATION_AND_NEARBY_FACTORIZATIONS_VERIFIED_ROUND_S4_TT_DICTIONARY_NOT_SUPPLIED",
         "round_S4_standard_zero_modes": "STANDARD_ROUND_S4_FOUR_FACTOR_ZERO_MODES_COMPLETE_REPOSITORY_GLOBAL_LEDGER_OPEN",
         "standard_TT_auxiliary_contour": "STANDARD_AUXILIARY_POSITIVE_IMAGINARY_THIMBLE_AND_MODEWISE_PHASE_FIXED_REPOSITORY_MATCH_OPEN",
+        "standard_Euclidean_integration_slice": "STANDARD_LOCAL_B4_FACTOR_MEASURE_ZERO_MODE_AND_CONTOUR_SLICE_COMPLETE_REPOSITORY_TT_MAP_OPEN",
         "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
@@ -280,6 +282,22 @@ def _load() -> dict[str, dict[str, Any]]:
         != "PLUS_ONE_BY_ORIENTED_NORMALIZED_MEASURE"
     ):
         raise ValueError("standard TT auxiliary contour frontier drifted")
+    slice_flags = values["standard_Euclidean_integration_slice"].get(
+        "claim_flags", {}
+    )
+    slice_checks = values["standard_Euclidean_integration_slice"].get(
+        "aggregate_checks", {}
+    )
+    if (
+        slice_flags.get("STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE") is not True
+        or slice_flags.get("STANDARD_LOCAL_ANOMALY_VECTOR_REPRODUCED") is not True
+        or slice_flags.get("REPOSITORY_TT_HESSIAN_MATCHED") is not False
+        or slice_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not False
+        or slice_checks.get("signed_effective_bundle_rank") != 6
+        or slice_checks.get("zero_mode_dimension") != 15
+    ):
+        raise ValueError("standard Euclidean integration-slice frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
@@ -681,7 +699,7 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_S4_ZERO_MODES_AND_CONTOUR_MATCHED_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_LEDGER_REGULATOR_OPEN",
+            "G3": "STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_PHASE_AND_FULL_LEDGER_OPEN",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
@@ -695,7 +713,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
-                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_VECTOR_GHOST_OPERATORS_NONZERO_MODE_MEASURE_S4_ZERO_MODES_AND_AUXILIARY_CONTOUR_MATCHED_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_LEDGER_REGULATOR_OPEN",
+                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_PHASE_AND_FULL_LEDGER_OPEN",
                 "next_gate": "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
             },
             "free_Lorentzian_state": {
@@ -827,6 +845,7 @@ def build() -> dict[str, Any]:
             "REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED": True,
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE": True,
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED": True,
+            "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -875,7 +894,10 @@ def build() -> dict[str, Any]:
             "The standard algebraic TT auxiliary now also has a convergent oriented +iR thimble, "
             "normalized +1 phase per real mode, and zero background-dependent logarithmic "
             "coefficient. Matching that standard contour to the repository auxiliary row, the "
-            "complete repository global ledger, regulator and total row map remain open. The strict "
+            "standard factor, exponent, measure, zero-mode, contour, and local-b4 regulator data "
+            "are now consolidated in one integration-slice manifest reproducing "
+            "(199/30,-87/20,0). The repository TT dictionary and auxiliary-row match, global "
+            "determinant phase, complete full-BV ledger and total row map remain open. The strict "
             "semantic receiver checks complete row/factor coverage, exact target ranks and "
             "signs, scalar-map consistency and nested proof hashes, while physical input "
             "remains absent; the frontier also contains "
@@ -955,7 +977,7 @@ def validate(result: dict[str, Any]) -> None:
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
-        != "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_S4_ZERO_MODES_AND_CONTOUR_MATCHED_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_LEDGER_REGULATOR_OPEN"
+        != "STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_PHASE_AND_FULL_LEDGER_OPEN"
         or any(
             not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
             for level in ("G4", "G5")
@@ -984,6 +1006,8 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE") is not True
         or flags.get("STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED") is not True
+        or flags.get("STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE")
+        is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -1032,6 +1056,7 @@ def validate(result: dict[str, Any]) -> None:
             "REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED",
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE",
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED",
+            "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",

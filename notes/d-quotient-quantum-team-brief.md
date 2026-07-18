@@ -561,9 +561,13 @@ five scalar proper-conformal ghost zeros with exact Diff--Weyl kernel vector
 `(1,1)`. These reproduce the classical fifteen conformal reducibilities. The
 standard algebraic TT auxiliary now also has a convergent oriented `+iR`
 thimble, exact square completion, normalized phase `+1` per real mode, and no
-background-dependent logarithmic coefficient. Matching this contour to the
-repository auxiliary row, the repository-global zero-mode ledger, regulator,
-and total row/factor map remain open; the classical
+background-dependent logarithmic coefficient. All standard factor,
+effective-action/partition-function exponent, nonzero-mode Berezinian,
+zero-mode priming, auxiliary contour, parity, and local-`b4` regulator data are
+now consolidated in `STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE`, which
+reproduces `(199/30,-87/20,0)`. Matching the TT dictionary and auxiliary row to
+the repository, fixing the global determinant phase, accepting the repository
+full-BV ledger, and completing the total row/factor map remain open; the classical
 54-row carrier is explicitly not a loop-multiplicity authority. The next
 task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
 content-addressed repository regulator/operator/measure match, and compute
