@@ -18,6 +18,19 @@ reproducible Graphviz views.
   references, support-artifact references, hash mismatches, and cycles
   visible rather than silently dropping them.
 
+It also renders the programme's mode-centred residual atlas:
+
+- `residual-atlas-overview.*` is the landscape universe census.  Its rows are
+  certified inhabitants and its columns are causal travel, classical pairing,
+  nonlinear survival, observer response and quantum status.
+- `residual-atlas-passports.html` is a searchable technical view containing
+  the full scope, claim boundary and evidence links for every row.
+- `residual-atlas-visualization-receipt.json` pins every team fragment and
+  rendered artifact by content hash.
+
+The atlas renderer copies statuses from team-owned machine-readable fragments.
+It never identifies modes across backgrounds or promotes an open lifecycle.
+
 The full graph is derived from JSON artifacts in a declared Git tree. The
 public graph is curated in `universe_milestones.json`, but the generator fails
 if any declared evidence certificate is missing. Neither graph changes a
@@ -87,3 +100,15 @@ certificate edge or lifecycle state.
 
 The graph reads from Git rather than the working tree so another team's
 uncommitted files cannot leak into a publication receipt.
+
+Build the atlas views from tracked team fragments:
+
+```bash
+python3 certificate_graph/build_residual_atlas.py --render
+python3 -m unittest certificate_graph.test_build_residual_atlas
+python3 certificate_graph/build_residual_atlas.py --render --check
+```
+
+For a deliberately non-publishable preview of fragments still being written,
+add `--include-working-tree`.  The resulting visualization and receipt carry a
+visible working-tree warning.
