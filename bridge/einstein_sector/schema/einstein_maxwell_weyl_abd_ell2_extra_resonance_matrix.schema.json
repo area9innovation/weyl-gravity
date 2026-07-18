@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "correction_classes", "scope",
+    "global_profiles", "action_row_orders", "adjoint_bases",
+    "direct_source_rows", "projected_resonance_polynomials",
+    "projected_matrix_column_order", "projected_resonance_matrices",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-abd-ell2-extra-resonance-matrix-v1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "every_parity_polarization_abd_polynomial_chain_rank_three",
+        "bounded_compatibility_functionals_explicit",
+        "twist_position_velocity_columns_computed",
+        "complete_homogeneous_twist_source_matrix",
+        "full_second_order_equation_solved"
+      ]
+    }
+  }
+}

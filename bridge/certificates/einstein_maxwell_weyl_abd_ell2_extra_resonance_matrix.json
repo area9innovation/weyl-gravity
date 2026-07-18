@@ -1,0 +1,279 @@
+{
+  "schema": "einstein-maxwell-weyl-abd-ell2-extra-resonance-matrix-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.schema.json",
+  "schema_sha256": "ac54e4ba59f2c1f3781b9fd694a56dc8ac0a23519697b76e0a7beae960aa0ad5",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
+  "result_state": "HOMOGENEOUS_A_B_D_TIMES_COMPLETE_ELL2_EXTRA_POLYNOMIAL_RESONANCE_MATRIX_CERTIFIED",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "correction_classes": {
+    "bounded_or_finite_quasiperiodic": "the coefficients of every displayed adjoint polynomial are compatibility functionals",
+    "smooth_exponential_polynomial": "OPEN: secular inversion must be stated through the complete operator, not inferred from the projected source alone",
+    "causal_or_retarded": "OPEN: no compact-product retarded complex is certified"
+  },
+  "scope": {
+    "theory": "Weyl-Maxwell",
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed spatial S1_L times S2; finite quasiperiodic correction class for the certified compatibility statement",
+    "charge_sector": "fixed magnetic bundle; electric variation allowed",
+    "carrier": "homogeneous generalized-zero Einstein block crossed with the generic ell=2 extra-primary block",
+    "degree": 2,
+    "parity": "axial and polar output sectors kept separate",
+    "ell": "0 x 2 -> 2",
+    "m": "m=0 direct tensor fixtures; every m by SO(3) equivariance",
+    "k": "0",
+    "omega": "generalized zero crossed with omega_e=4/sqrt(3)"
+  },
+  "global_profiles": {
+    "a": "delta g_xx=a*t^2 and delta g_S2=a*g_S2",
+    "b": "delta g_xx=(b/3)*t^3 and delta g_S2=b*t*g_S2",
+    "d": "delta g_xx=d*t"
+  },
+  "action_row_orders": {
+    "axial": [
+      "6*axial(metric_tA)",
+      "-6*axial(metric_xA)",
+      "axial(maxwell_t)",
+      "axial(maxwell_x)"
+    ],
+    "polar": [
+      "-polar(metric_00)",
+      "2*polar(metric_01)",
+      "-polar(metric_11)",
+      "2*lambda*polar(maxwell_phi)"
+    ]
+  },
+  "adjoint_bases": {
+    "axial": [
+      [
+        "-1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1/9",
+        "0",
+        "1"
+      ]
+    ],
+    "polar": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "-1/6",
+        "0",
+        "-3/2",
+        "1"
+      ]
+    ]
+  },
+  "direct_source_rows": {
+    "axial": {
+      "a": {
+        "e1": [
+          "-72*I*(2*sqrt(3)*t - 7*I)",
+          "0",
+          "36",
+          "0"
+        ],
+        "e2": [
+          "0",
+          "-4*I*(2*sqrt(3)*t - 69*I)/3",
+          "0",
+          "-4*I*(2*sqrt(3)*t + 7*I)"
+        ]
+      },
+      "b": {
+        "e1": [
+          "-72*I*(sqrt(3)*t**2 - 7*I*t - 2*sqrt(3))",
+          "0",
+          "36*t",
+          "0"
+        ],
+        "e2": [
+          "0",
+          "-4*I*(sqrt(3)*t**2 - 69*I*t + 45*sqrt(3))/3",
+          "0",
+          "-4*I*(sqrt(3)*t**2 + 7*I*t - 2*sqrt(3))"
+        ]
+      }
+    },
+    "polar": {
+      "a": {
+        "e1": [
+          "0",
+          "-3*I*(4*sqrt(3)*t + 9*I)",
+          "0",
+          "0"
+        ],
+        "e2": [
+          "4*(45*t**2 - 188*sqrt(3)*I*t + 156)",
+          "0",
+          "-4*(693*t**2 + 316*sqrt(3)*I*t + 2922)/9",
+          "-48*(9*t**2 - 16*sqrt(3)*I*t - 64)"
+        ]
+      },
+      "b": {
+        "e1": [
+          "0",
+          "-3*I*t*(2*sqrt(3)*t + 9*I)",
+          "0",
+          "0"
+        ],
+        "e2": [
+          "4*(15*t**3 - 94*sqrt(3)*I*t**2 + 156*t + 28*sqrt(3)*I)",
+          "0",
+          "-4*(231*t**3 + 158*sqrt(3)*I*t**2 + 2922*t + 1768*sqrt(3)*I)/9",
+          "-48*t*(3*t**2 - 8*sqrt(3)*I*t - 64)"
+        ]
+      }
+    }
+  },
+  "projected_resonance_polynomials": {
+    "axial": {
+      "a": [
+        "36*I*(4*sqrt(3)*t - 15*I)",
+        "-8*I*(26*sqrt(3)*t + 129*I)/27"
+      ],
+      "b": [
+        "36*I*(2*sqrt(3)*t**2 - 15*I*t - 4*sqrt(3))",
+        "-4*I*(26*sqrt(3)*t**2 + 258*I*t - 99*sqrt(3))/27"
+      ],
+      "d": [
+        "72*sqrt(3)*I",
+        "-104*sqrt(3)*I/27"
+      ]
+    },
+    "polar": {
+      "a": [
+        "-3*I*(4*sqrt(3)*t + 9*I)",
+        "4*I*(276*sqrt(3)*t - 1229*I)"
+      ],
+      "b": [
+        "-3*I*t*(2*sqrt(3)*t + 9*I)",
+        "4*I*(138*sqrt(3)*t**2 - 1229*I*t + 290*sqrt(3))"
+      ],
+      "d": [
+        "-6*sqrt(3)*I",
+        "552*sqrt(3)*I"
+      ]
+    }
+  },
+  "projected_matrix_column_order": [
+    "a*e1",
+    "a*e2",
+    "b*e1",
+    "b*e2",
+    "d*e1",
+    "d*e2"
+  ],
+  "projected_resonance_matrices": {
+    "axial": [
+      [
+        "36*I*(4*sqrt(3)*t - 15*I)",
+        "0",
+        "36*I*(2*sqrt(3)*t**2 - 15*I*t - 4*sqrt(3))",
+        "0",
+        "72*sqrt(3)*I",
+        "0"
+      ],
+      [
+        "0",
+        "-8*I*(26*sqrt(3)*t + 129*I)/27",
+        "0",
+        "-4*I*(26*sqrt(3)*t**2 + 258*I*t - 99*sqrt(3))/27",
+        "0",
+        "-104*sqrt(3)*I/27"
+      ]
+    ],
+    "polar": [
+      [
+        "-3*I*(4*sqrt(3)*t + 9*I)",
+        "0",
+        "-3*I*t*(2*sqrt(3)*t + 9*I)",
+        "0",
+        "-6*sqrt(3)*I",
+        "0"
+      ],
+      [
+        "0",
+        "4*I*(276*sqrt(3)*t - 1229*I)",
+        "0",
+        "4*I*(138*sqrt(3)*t**2 - 1229*I*t + 290*sqrt(3))",
+        "0",
+        "552*sqrt(3)*I"
+      ]
+    ]
+  },
+  "classification": {
+    "direct_axial_a_b_cross_sources_computed": true,
+    "direct_polar_a_b_cross_sources_computed": true,
+    "d_column_imported_by_content_hash": true,
+    "every_parity_polarization_abd_polynomial_chain_rank_three": true,
+    "bounded_compatibility_functionals_explicit": true,
+    "twist_position_velocity_columns_computed": false,
+    "complete_homogeneous_twist_source_matrix": false,
+    "simultaneous_stabilizer_and_resonance_zero_locus_solved": false,
+    "smooth_secular_sufficiency": false,
+    "causal_retarded_sufficiency": false,
+    "full_second_order_equation_solved": false
+  },
+  "interpretation": "Within each parity and extra polarization, the a-, b-, and d-cross adjoint projections are linearly independent polynomials in time. Hence these homogeneous columns are genuinely distinct bounded/quasiperiodic compatibility data. This is a source-matrix theorem, not yet a no-go: twist position and velocity can contribute to the same ell=2 extra-shell channel and remain to be computed.",
+  "next_gate": "compute twist position and velocity crossed with both ell=2 extra representatives, append their SO(3)-equivariant columns, and solve the simultaneous stabilizer plus complete bounded-resonance zero locus",
+  "claim_boundary": "No mode is declared obstructed solely from this submatrix. The result does not silently identify axial and polar carriers, does not prove smooth-secular or retarded solvability, and does not support final residual, particle, observational, or quantum claims.",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.py",
+    "generator_sha256": "8f6c00619808da07f3e13502d903cc49530247d17bf99dd7c9cc3ca4479fc09f",
+    "direct_axial_path": "bridge/einstein_sector/einstein_maxwell_weyl_ab_axial_ell2_extra_source_explore.py",
+    "direct_axial_sha256": "2123b7bdb6b26cc75d7a933b628e3843ba68f71165354210f0a06ca091b5e6c3",
+    "direct_polar_path": "bridge/einstein_sector/einstein_maxwell_weyl_ab_polar_ell2_extra_source_explore.py",
+    "direct_polar_sha256": "2df9ec843d84261230cdcd84e49972ffdedd11776afa4d7468afe4de145097dc",
+    "d_input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
+      "sha256": "35e07ee8b77d16314a5b306e0dcbedd3d9d6e852d1a0180196973142b5aa0a4e"
+    }
+  },
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix --write"
+      ],
+      "reason": "direct four-dimensional tensor replay for all axial and polar a,b fixtures"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the twist columns and complete tangent-cone gate remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix"
+  ]
+}
