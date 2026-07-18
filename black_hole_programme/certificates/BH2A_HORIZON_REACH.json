@@ -1,0 +1,75 @@
+{
+  "carrier": {
+    "constraint_regularity": "the EF-chart constraint solution is polynomial in r (the 1/(r-2m) of the Schwarzschild chart is a chart artifact)",
+    "definition": "axial l=2 trace-free divergence-free psi_ab with psi_vphi = p S, psi_rphi = q S; third component solved from the divergence constraint",
+    "equation": "(1/2) Box psi + C psi = 0 (certified extra-branch equation, BH-2A stage 1)"
+  },
+  "claim_flags": {
+    "carrier_constraint_regular_certified": true,
+    "causal_exclusion_decided": false,
+    "flux_or_sign_certified": false,
+    "general_l_or_polar_certified": false,
+    "growth_or_stability_certified": false,
+    "indicial_exponents_certified": true,
+    "ingoing_family_dimension_certified": true,
+    "non_einstein_background_certified": false,
+    "outer_boundary_domain_certified": false,
+    "regular_singular_point_certified": true,
+    "rw_benchmark_certified": true
+  },
+  "declaration": {
+    "background_family": "Schwarzschild (symbolic m)",
+    "conformal_frame": "working gauge; ingoing EF chart (v, r, x = cos theta, phi)",
+    "generator": "not used; mode-level statements only",
+    "horizon_condition": "analyticity at r = 2m in the ingoing EF chart (future-horizon regularity)",
+    "infinity_condition": "none imposed",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "none; no flux or pairing claim",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "horizon_analysis": {
+    "conclusion": "the extra fourth-order branch reaches the future horizon: a two-parameter ingoing-regular family exists at every frequency",
+    "indicial_exponents": [
+      "0 (multiplicity 2)",
+      "-4*I*m*omega",
+      "-2 - 4*I*m*omega"
+    ],
+    "singular_point": "r = 2m is a regular singular point of the Fourier-reduced first-order system (rho^2 A -> 0 componentwise)",
+    "zero_eigenspace": "geometric multiplicity 2: two analytic ingoing families, no leading logarithm"
+  },
+  "missing_objects": [
+    "bilinear symplectic flux matrix and Lee-Wald signs on both branches",
+    "outer-boundary operator domains and falloff classification",
+    "causal disposition of the extra branch (initial-boundary formulation)",
+    "growth/stability data; general l; polar sector",
+    "extra-branch horizon analysis on non-Einstein backgrounds"
+  ],
+  "provenance": {
+    "bh2a_certificate": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+    "bh2a_certificate_sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2a_horizon_reach.py"
+  },
+  "result_id": "PURE_WEYL_BH2A_HORIZON_REACH",
+  "result_token": "BH2A_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL",
+  "rw_benchmark": {
+    "consequence": "future-horizon regularity does not distinguish the extra branch from the Einstein branch; exclusion of the extra branch must come from outer-boundary, causal, or flux/sign conditions",
+    "statement": "the Einstein/Regge-Wheeler first-order system in the same chart has residue spectrum {0, -1 - 4*I*m*omega} (scalar solution exponents {0, -4*I*m*omega}): an ingoing-regular family also exists"
+  },
+  "schema": "pure-weyl-bh2a-horizon-reach-v1",
+  "schema_path": "black_hole_programme/schema/bh2a-horizon-reach-v1.schema.json",
+  "schema_sha256": "dc8b53e3936c8558c5950ff35be35568a082c7c10ecf54bfa08b1b35975bb7d2",
+  "stage_seconds": {
+    "carrier_constraint": 0.2,
+    "operator_rows": 0.7,
+    "residue_analysis": 0.3,
+    "rw_benchmark": 0.2,
+    "total": 1.7
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2a_horizon_reach.py"
+}

@@ -40,6 +40,7 @@ CERTS = {
     "BH1A": PKG / "certificates" / "BH1A_NORMALIZED_GENERATOR.json",
     "BH1B": PKG / "certificates" / "BH1B_DYNAMICAL_EXTENSION.json",
     "BH2A": PKG / "certificates" / "BH2A_AXIAL_OPERATOR.json",
+    "BH2AR": PKG / "certificates" / "BH2A_HORIZON_REACH.json",
 }
 
 
@@ -247,13 +248,14 @@ def entries():
                 "CERTIFIED",
                 "extra branch identified exactly: carrier psi_ab = delta Ric_ab satisfies the second-order Lichnerowicz-type equation (1/2) Box psi + C.psi = 0 on the Ricci-flat background (axial l=2); the naive split is OBSTRUCTED on non-Einstein backgrounds",
                 "operator pending certificate", "BH2A"),
-            "lee_wald": _claim("OPEN", "horizon/boundary reach and flux of the extra branch remain the central BH-2A questions"),
+            "lee_wald": _claim("OPEN", "flux matrix and Lee-Wald signs of the extra branch remain open"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with the compact-cylinder extra branch without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2A"),
-        "claim_boundary": "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, causal disposition all OPEN",
+        "evidence": _evidence("BH2A", "BH2AR"),
+        "claim_boundary": "operator-level identification (Schwarzschild, l=2) plus certified horizon reach: a two-parameter ingoing-regular extra-branch family exists at every frequency (EF-chart residue spectrum {0,0,-4*I*m*omega,-2-4*I*m*omega}, kernel rank 2), so exclusion can never be future-horizon regularity; outer-boundary domains, flux, and causal disposition remain OPEN"
+                          if CERTS["BH2AR"].exists() else "operator-level identification only (Schwarzschild, l=2): horizon reach, domains, flux, causal disposition all OPEN",
     })
 
     E.append({
