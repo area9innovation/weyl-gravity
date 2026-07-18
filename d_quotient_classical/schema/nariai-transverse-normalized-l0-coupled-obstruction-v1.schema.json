@@ -36,14 +36,15 @@
         },
         "shifted_chain_system": {
           "type": "object", "additionalProperties": false,
-          "required": ["equation", "shape", "rank", "augmented_rank", "kernel_dimension", "full_column_rank_minor_rows", "full_column_rank_minor_determinant", "nonzero_coefficients", "response_map", "equation_keys", "target"],
+          "required": ["equation", "shape", "rank", "augmented_rank", "kernel_dimension", "nonzero_coefficients", "response_map_receipt", "target_receipt", "equation_basis_receipt", "full_column_rank_minor"],
           "properties": {
             "equation": {"type": "string"}, "shape": {"type": "array", "items": {"type": "integer"}},
             "rank": {"type": "integer"}, "augmented_rank": {"type": "integer"}, "kernel_dimension": {"type": "integer"},
-            "full_column_rank_minor_rows": {"type": "array", "items": {"type": "integer"}},
-            "full_column_rank_minor_determinant": {"type": "string"},
-            "nonzero_coefficients": {"type": "integer"}, "response_map": {"$ref": "#/$defs/matrix"},
-            "equation_keys": {"type": "array", "items": {"$ref": "#/$defs/equationKey"}}, "target": {"$ref": "#/$defs/matrix"}
+            "nonzero_coefficients": {"type": "integer"},
+            "response_map_receipt": {"$ref": "#/$defs/matrixReceipt"},
+            "target_receipt": {"$ref": "#/$defs/matrixReceipt"},
+            "equation_basis_receipt": {"$ref": "#/$defs/basisReceipt"},
+            "full_column_rank_minor": {"$ref": "#/$defs/rankMinor"}
           }
         },
         "normalized_left_null_witness": {
@@ -83,9 +84,12 @@
     "matrix": {"type": "object", "additionalProperties": false, "required": ["shape", "rank", "entries", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false, "minItems": 2, "maxItems": 2}, "rank": {"type": "integer"}, "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
     "operator": {"type": "object", "additionalProperties": false, "required": ["orders", "nonzero_coefficients", "entries", "sha256"], "properties": {"orders": {"type": "array", "items": {"type": "integer"}}, "nonzero_coefficients": {"type": "integer"}, "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "matrix": {"$ref": "#/$defs/matrix"}}}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
     "label": {"type": "object", "additionalProperties": false, "required": ["pivot_column", "output_column"], "properties": {"pivot_column": {"type": "integer"}, "output_column": {"type": "integer"}}},
-    "correction": {"type": "object", "additionalProperties": false, "required": ["pivot_column", "output_column", "delta_L0", "delta_d_aut", "delta_L1", "shifted_chain_response"], "properties": {"pivot_column": {"type": "integer"}, "output_column": {"type": "integer"}, "delta_L0": {"$ref": "#/$defs/matrix"}, "delta_d_aut": {"$ref": "#/$defs/operator"}, "delta_L1": {"$ref": "#/$defs/operator"}, "shifted_chain_response": {"$ref": "#/$defs/operator"}}},
+    "correction": {"type": "object", "additionalProperties": false, "required": ["pivot_column", "output_column", "delta_L0", "delta_d_aut", "delta_L1"], "properties": {"pivot_column": {"type": "integer"}, "output_column": {"type": "integer"}, "delta_L0": {"$ref": "#/$defs/matrix"}, "delta_d_aut": {"$ref": "#/$defs/operator"}, "delta_L1": {"$ref": "#/$defs/operator"}}},
     "equationKey": {"type": "object", "additionalProperties": false, "required": ["word", "output_row", "input_column"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "output_row": {"type": "integer"}, "input_column": {"type": "integer"}}},
-    "witnessTerm": {"type": "object", "additionalProperties": false, "required": ["equation_index", "word", "output_row", "input_column", "coefficient"], "properties": {"equation_index": {"type": "integer"}, "word": {"type": "array", "items": {"type": "integer"}}, "output_row": {"type": "integer"}, "input_column": {"type": "integer"}, "coefficient": {"type": "string"}}},
+    "witnessTerm": {"type": "object", "additionalProperties": false, "required": ["word", "output_row", "input_column", "coefficient"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "output_row": {"type": "integer"}, "input_column": {"type": "integer"}, "coefficient": {"type": "string"}}},
+    "matrixReceipt": {"type": "object", "additionalProperties": false, "required": ["shape", "rank", "nonzero_coefficients", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false, "minItems": 2, "maxItems": 2}, "rank": {"type": "integer"}, "nonzero_coefficients": {"type": "integer"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "basisReceipt": {"type": "object", "additionalProperties": false, "required": ["count", "sha256"], "properties": {"count": {"type": "integer"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "rankMinor": {"type": "object", "additionalProperties": false, "required": ["rows", "determinant"], "properties": {"rows": {"type": "array", "items": {"$ref": "#/$defs/equationKey"}}, "determinant": {"type": "string"}}},
     "sensitivity": {"type": "object", "additionalProperties": false, "required": ["pivot_column", "output_column", "value"], "properties": {"pivot_column": {"type": "integer"}, "output_column": {"type": "integer"}, "value": {"type": "string"}}}
   }
 }

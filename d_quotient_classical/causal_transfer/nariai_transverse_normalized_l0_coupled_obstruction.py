@@ -35,6 +35,21 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _json_sha(value: Any) -> str:
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def _matrix_receipt(matrix: sp.Matrix, rank: int) -> dict[str, Any]:
+    entries = [[row, column, str(matrix[row, column])] for row in range(matrix.rows) for column in range(matrix.cols) if matrix[row, column] != 0]
+    canonical = json.dumps({"shape": [matrix.rows, matrix.cols], "entries": entries}, sort_keys=True, separators=(",", ":"))
+    return {
+        "shape": [matrix.rows, matrix.cols],
+        "rank": rank,
+        "nonzero_coefficients": len(entries),
+        "sha256": hashlib.sha256(canonical.encode()).hexdigest(),
+    }
+
+
 def _table(record: dict[str, Any]) -> dict[tuple[int, ...], sp.Matrix]:
     return {tuple(entry["word"]): _deserialize(entry["matrix"]) for entry in record["entries"]}
 
@@ -168,7 +183,6 @@ def exact_data() -> dict[str, Any]:
                 "delta_L0": _sparse(delta_l0),
                 "delta_d_aut": _serialize_table({(): delta_d}),
                 "delta_L1": _serialize_table(delta_l1),
-                "shifted_chain_response": _serialize_table(response),
             })
     if max_first_square_defect != 0 or len(responses) != 44:
         raise AssertionError("normalized L0 coupled family failed first-square closure")
@@ -208,7 +222,6 @@ def exact_data() -> dict[str, Any]:
     witness = (witness / (witness.T * selected_target)[0]).applyfunc(sp.expand)
     witness_terms = [
         {
-            "equation_index": selected[index],
             "word": list(equation_keys[selected[index]][0]),
             "output_row": equation_keys[selected[index]][1],
             "input_column": equation_keys[selected[index]][2],
@@ -221,6 +234,13 @@ def exact_data() -> dict[str, Any]:
     target_value = sp.expand((witness.T * selected_target)[0])
     if len(witness_terms) != 5 or left_defect != sp.zeros(1, 44) or target_value != 1:
         raise AssertionError("compact normalized obstruction witness drifted")
+
+    equation_basis_records = [
+        {"word": list(word), "output_row": row, "input_column": column}
+        for word, row, column in equation_keys
+    ]
+    response_record = _matrix_receipt(response_map, rank)
+    target_record = _matrix_receipt(target, 1)
 
     return {
         "normalized_L0_family": {
@@ -247,15 +267,17 @@ def exact_data() -> dict[str, Any]:
             "rank": rank,
             "augmented_rank": augmented_rank,
             "kernel_dimension": response_map.cols - rank,
-            "full_column_rank_minor_rows": rank_rows,
-            "full_column_rank_minor_determinant": str(rank_minor_determinant),
             "nonzero_coefficients": sum(value != 0 for value in response_map),
-            "response_map": _sparse(response_map),
-            "equation_keys": [
-                {"word": list(word), "output_row": row, "input_column": column}
-                for word, row, column in equation_keys
-            ],
-            "target": _sparse(target),
+            "response_map_receipt": response_record,
+            "target_receipt": target_record,
+            "equation_basis_receipt": {
+                "count": len(equation_basis_records),
+                "sha256": _json_sha(equation_basis_records),
+            },
+            "full_column_rank_minor": {
+                "rows": [equation_basis_records[index] for index in rank_rows],
+                "determinant": str(rank_minor_determinant),
+            },
         },
         "normalized_left_null_witness": {
             "support_size": len(witness_terms),

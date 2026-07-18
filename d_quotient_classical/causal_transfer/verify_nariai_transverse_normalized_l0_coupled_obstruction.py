@@ -25,6 +25,21 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _json_sha(value) -> str:
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def _sparse_receipt(matrix: sp.Matrix, rank: int) -> dict:
+    entries = [[row, column, str(matrix[row, column])] for row in range(matrix.rows) for column in range(matrix.cols) if matrix[row, column] != 0]
+    canonical = json.dumps({"shape": [matrix.rows, matrix.cols], "entries": entries}, sort_keys=True, separators=(",", ":"))
+    return {
+        "shape": [matrix.rows, matrix.cols],
+        "rank": rank,
+        "nonzero_coefficients": len(entries),
+        "sha256": hashlib.sha256(canonical.encode()).hexdigest(),
+    }
+
+
 def _table(record: dict) -> dict[tuple[int, ...], sp.Matrix]:
     return {tuple(entry["word"]): _deserialize(entry["matrix"]) for entry in record["entries"]}
 
@@ -89,36 +104,52 @@ def verify() -> None:
             c0.compose(base["middle"]["yang_mills_middle"], delta_d),
             _scale(c0.compose(h1.compose(base["middle"]["yang_mills_middle"], delta_l1), base["k_p0"]), -1),
         )
-        if response != _table(record["shifted_chain_response"]):
-            raise AssertionError("serialized response drifted")
         responses.append(response)
 
     jet_ref = payload["dependency_refs"]["jet_aware_shifted_chain"]
     jet = json.loads((ROOT / jet_ref["path"]).read_text())
     defect = _table(jet["exact_data"]["identity_defects"]["shifted_chain_variation"])
     system = payload["exact_data"]["shifted_chain_system"]
-    keys = [(tuple(item["word"]), item["output_row"], item["input_column"]) for item in system["equation_keys"]]
+    keys = sorted(
+        {
+            (word, row, column)
+            for operator in (defect, *responses)
+            for word, matrix in operator.items()
+            for row in range(matrix.rows)
+            for column in range(matrix.cols)
+            if matrix[row, column] != 0
+        },
+        key=lambda item: (len(item[0]), item[0], item[1], item[2]),
+    )
+    basis_records = [{"word": list(word), "output_row": row, "input_column": column} for word, row, column in keys]
+    if system["equation_basis_receipt"] != {"count": len(keys), "sha256": _json_sha(basis_records)}:
+        raise AssertionError("equation-basis receipt drifted")
     response_map = sp.Matrix([
         [operator.get(word, sp.zeros(60, 15))[row, column] for operator in responses]
         for word, row, column in keys
     ])
     target = sp.Matrix([-defect.get(word, sp.zeros(60, 15))[row, column] for word, row, column in keys])
-    if _deserialize(system["response_map"]) != response_map or _deserialize(system["target"]) != target:
-        raise AssertionError("serialized linear system drifted")
-    rank_rows = system["full_column_rank_minor_rows"]
+    response_receipt = _sparse_receipt(response_map, 44)
+    target_receipt = _sparse_receipt(target, 1)
+    if system["response_map_receipt"] != response_receipt:
+        raise AssertionError("response-map receipt drifted")
+    if system["target_receipt"] != target_receipt:
+        raise AssertionError("target receipt drifted")
+    index = {record_key: position for position, record_key in enumerate(keys)}
+    rank_rows = [index[(tuple(item["word"]), item["output_row"], item["input_column"])] for item in system["full_column_rank_minor"]["rows"]]
     if len(rank_rows) != 44:
         raise AssertionError("full-column-rank minor coverage failed")
     determinant = sp.factor(response_map[rank_rows, :].det())
-    if determinant == 0 or determinant != sp.sympify(system["full_column_rank_minor_determinant"]):
+    if determinant == 0 or determinant != sp.sympify(system["full_column_rank_minor"]["determinant"]):
         raise AssertionError("full-column-rank minor failed")
 
     witness_record = payload["exact_data"]["normalized_left_null_witness"]
     witness = sp.zeros(len(keys), 1)
     for term in witness_record["terms"]:
-        index = term["equation_index"]
-        if keys[index] != (tuple(term["word"]), term["output_row"], term["input_column"]):
+        coordinate = (tuple(term["word"]), term["output_row"], term["input_column"])
+        if coordinate not in index:
             raise AssertionError("witness coordinate drifted")
-        witness[index] = sp.sympify(term["coefficient"])
+        witness[index[coordinate]] = sp.sympify(term["coefficient"])
     if witness.T * response_map != sp.zeros(1, 44):
         raise AssertionError("witness is not left-null")
     if (witness.T * target)[0] != 1:

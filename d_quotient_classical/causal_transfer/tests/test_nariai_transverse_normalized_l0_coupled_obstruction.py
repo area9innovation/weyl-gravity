@@ -19,8 +19,8 @@ class TransverseNormalizedL0CoupledObstructionTests(unittest.TestCase):
         self.assertEqual(system["rank"], 44)
         self.assertEqual(system["augmented_rank"], 45)
         self.assertEqual(system["kernel_dimension"], 0)
-        self.assertEqual(len(system["full_column_rank_minor_rows"]), 44)
-        self.assertNotEqual(system["full_column_rank_minor_determinant"], "0")
+        self.assertEqual(len(system["full_column_rank_minor"]["rows"]), 44)
+        self.assertNotEqual(system["full_column_rank_minor"]["determinant"], "0")
 
     def test_witness_and_scope(self):
         witness = self.data["normalized_left_null_witness"]
