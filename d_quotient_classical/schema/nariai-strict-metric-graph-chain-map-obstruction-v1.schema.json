@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/pure-weyl/nariai-strict-metric-graph-chain-map-obstruction-v1.schema.json",
+  "title": "Nariai strict metric graph chain-map obstruction",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_state", "dependency_tags",
+    "dependency_refs", "typed_chain_condition", "all_order_witness",
+    "pbw_regression", "exact_checks", "theorem", "flags", "next_gate",
+    "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-strict-metric-graph-chain-map-obstruction-v1"},
+    "result_id": {"const": "NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1"},
+    "result_state": {"const": "STRICT_CANONICAL_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTED_AT_ALL_DIFFERENTIAL_ORDERS"},
+    "dependency_tags": {
+      "type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false, "minItems": 1, "maxItems": 1
+    },
+    "dependency_refs": {"$ref": "#/$defs/dependencyRefs"},
+    "typed_chain_condition": {"$ref": "#/$defs/stringObject"},
+    "all_order_witness": {"$ref": "#/$defs/witness"},
+    "pbw_regression": {"$ref": "#/$defs/pbwRegression"},
+    "exact_checks": {"$ref": "#/$defs/exactChecks"},
+    "theorem": {"$ref": "#/$defs/stringObject"},
+    "flags": {"$ref": "#/$defs/flags"},
+    "next_gate": {"const": "C_G2_NARIAI_RELATIVE_EQUATION_LEVEL_METRIC_BACH_ENDPOINT_CONE"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "dependencyRefs": {
+      "type": "object",
+      "required": ["curvature_incidence", "cyclic_mapping_cylinder"],
+      "properties": {
+        "curvature_incidence": {"$ref": "#/$defs/dependency"},
+        "cyclic_mapping_cylinder": {"$ref": "#/$defs/dependency"}
+      },
+      "additionalProperties": false
+    },
+    "stringObject": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"type": "string"}
+    },
+    "witness": {
+      "type": "object",
+      "required": [
+        "chart", "field", "basepoint", "lie_derivative_nonzero_entries",
+        "K_xi", "orthonormal_value", "incidence_image_nonzero_entries",
+        "incidence_image_entries", "normalized_witness",
+        "normalized_witness_value", "contradiction",
+        "independent_of_order_and_coefficients"
+      ],
+      "properties": {
+        "chart": {"type": "string"}, "field": {"type": "string"},
+        "basepoint": {"type": "string"},
+        "lie_derivative_nonzero_entries": {"const": 0},
+        "K_xi": {"const": "zero section"},
+        "orthonormal_value": {
+          "type": "array", "prefixItems": [{"const": 0}, {"const": 1}, {"const": 0}, {"const": 0}],
+          "items": false, "minItems": 4, "maxItems": 4
+        },
+        "incidence_image_nonzero_entries": {"type": "integer", "minimum": 1},
+        "incidence_image_entries": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "array", "prefixItems": [{"type": "integer"}, {"type": "string"}],
+            "items": false, "minItems": 2, "maxItems": 2
+          }
+        },
+        "normalized_witness": {"type": "string"},
+        "normalized_witness_value": {"const": "1"},
+        "contradiction": {"type": "string"},
+        "independent_of_order_and_coefficients": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "pbwScreen": {
+      "type": "object",
+      "required": ["maximum_order", "unknown_coefficients_per_output_row", "normal_form_equations_per_output_row", "coefficient_rank", "augmented_rank", "rank_gap"],
+      "properties": {
+        "maximum_order": {"type": "integer", "minimum": 0, "maximum": 4},
+        "unknown_coefficients_per_output_row": {"type": "integer", "minimum": 1},
+        "normal_form_equations_per_output_row": {"type": "integer", "minimum": 1},
+        "coefficient_rank": {"type": "integer", "minimum": 1},
+        "augmented_rank": {"type": "integer", "minimum": 1},
+        "rank_gap": {"const": 4}
+      },
+      "additionalProperties": false
+    },
+    "pbwRegression": {
+      "type": "object",
+      "required": ["role", "screens"],
+      "properties": {
+        "role": {"type": "string"},
+        "screens": {"type": "array", "items": {"$ref": "#/$defs/pbwScreen"}, "minItems": 5, "maxItems": 5}
+      },
+      "additionalProperties": false
+    },
+    "exactChecks": {
+      "type": "object",
+      "required": ["partial_chi_is_global_Killing", "K_partial_chi_is_zero_section", "I_Omega_partial_chi_is_nonzero", "normalized_witness_value", "all_order_contradiction", "pbw_orders_tested", "pbw_rank_gaps"],
+      "properties": {
+        "partial_chi_is_global_Killing": {"const": true},
+        "K_partial_chi_is_zero_section": {"const": true},
+        "I_Omega_partial_chi_is_nonzero": {"const": true},
+        "normalized_witness_value": {"const": "1"},
+        "all_order_contradiction": {"const": true},
+        "pbw_orders_tested": {
+          "type": "array", "prefixItems": [{"const": 0}, {"const": 1}, {"const": 2}, {"const": 3}, {"const": 4}],
+          "items": false, "minItems": 5, "maxItems": 5
+        },
+        "pbw_rank_gaps": {
+          "type": "array", "prefixItems": [{"const": 4}, {"const": 4}, {"const": 4}, {"const": 4}, {"const": 4}],
+          "items": false, "minItems": 5, "maxItems": 5
+        }
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1", "STRICT_CANONICAL_METRIC_GRAPH_CHAIN_MAP_EXISTS", "ALL_FINITE_DIFFERENTIAL_ORDERS_EXCLUDED", "RELATIVE_EQUATION_LEVEL_METRIC_CONE_STILL_OPEN", "METRIC_BACH_ENDPOINT_CHAIN_EQUIVALENCE", "NARIAI_GREEN_HOMOTOPY", "OPEN_BACKGROUND_CLASS", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1": {"const": true},
+        "STRICT_CANONICAL_METRIC_GRAPH_CHAIN_MAP_EXISTS": {"const": false},
+        "ALL_FINITE_DIFFERENTIAL_ORDERS_EXCLUDED": {"const": true},
+        "RELATIVE_EQUATION_LEVEL_METRIC_CONE_STILL_OPEN": {"const": true},
+        "METRIC_BACH_ENDPOINT_CHAIN_EQUIVALENCE": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "OPEN_BACKGROUND_CLASS": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1052,8 +1052,33 @@ This promotes the parent-relative cyclic incidence cone, while leaving the
 generic post-normal-order PBW adjoint routine unrepaired.  That routine is no
 longer a blocker because the independent factorized variational checker
 covers the theorem.  The remaining C-G2 problem is genuinely analytic and
-comparative again: construct the metric-Bach endpoint chain map into this
-cylinder and transfer or build its retarded/advanced Green homotopies.
+comparative again, but the first strict comparison is now closed by the
+following theorem.
+
+`NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1` proves that the
+canonical ghost embedding cannot extend to a field-only strict graph
+
+\[
+h\longmapsto(h,Rh)
+\]
+
+for any finite-order differential operator \(R:H_1\to C_1\).  The chain
+square would force \(RK=I_\Omega\).  In the global unit-Nariai chart,
+\(\partial_\chi\) is Killing, so \(K\partial_\chi=0\), while at the certified
+homogeneous basepoint
+
+\[
+(I_\Omega\partial_\chi)_4=\frac23.
+\]
+
+Thus \(RK\partial_\chi=0\) contradicts the nonzero incidence.  This is an
+all-order kernel witness, not a bounded ansatz: exact curved-PBW screens at
+orders zero through four merely reproduce its rank-four signature.  It rules
+out only the canonical ghost map plus identity metric component and a
+field-only graph.  Relative equation-level, homotopy-coherent and enlarged
+mapping-cylinder comparisons remain open.  The active gate is now
+`C_G2_NARIAI_RELATIVE_EQUATION_LEVEL_METRIC_BACH_ENDPOINT_CONE`; only after
+that cone closes may a Nariai Green transfer be promoted.
 
 `NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1` now applies the
 weaker and authoritative detour-translation criterion.  Correcting the
@@ -1218,7 +1243,9 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    curvature incidence, and the shifted chain plus factorized saddle now
    close exactly.  The cyclic parent-relative mapping cylinder and SDR are
    now certified through an independent factorized variational checker.  Its
-   next gate is the metric-Bach endpoint chain map and Green transfer, or
+   canonical strict metric graph is now excluded at every finite differential
+   order by the `partial_chi` Killing-kernel witness.  Its next gate is the
+   relative equation-level metric--Bach cone and later Green transfer, or
    conformally flat local patching/new
    topology.  The necessary
    Yang--Mills parent correction is certified; raw pointwise compression and
@@ -1243,12 +1270,13 @@ The physical activation sequence and reassignment triggers are recorded in
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
 have fired.  The classical team's current primary ownership is the rank-46
 subprincipal projector obstruction handoff; its next independent generality
-task is the metric-Bach endpoint chain map into the certified cyclic
-curvature-incidence Nariai cylinder followed by Green transfer, or patching
+task is the relative equation-level metric--Bach cone over the certified
+cyclic curvature-incidence Nariai cylinder followed by Green transfer, or
+patching
 beyond the certified global conformal-orbit class.  The normalized zero-order
 obstruction, exact curvature-incidence identification, shifted-chain saddle,
-cyclic parent-relative SDR, corrected Yang--Mills parent complex and pointwise
-compression defect are certified.
+cyclic parent-relative SDR, all-order strict metric-graph no-go, corrected
+Yang--Mills parent complex and pointwise compression defect are certified.
 The certified C-G1
 theorem may seed one bounded G3/second-consumer task, while the observer team
 owns localized apparatus completion.
@@ -1269,10 +1297,12 @@ chain/Green/pairing transport and a nonconstant consumer.  Unit Nariai then
 gives a normalized nonzero-tractor-curvature obstruction to extending that
 same zero-order conjugation.  The active next gate is either a curved
 Nariai differential-BGG/HPL compression of the corrected Yang--Mills parent
-starting with the metric-Bach endpoint chain map into the now-certified
-curvature-incidence mapping cylinder and its later Green transfer beyond the
+starting with a relative equation/identity-row metric--Bach cone over the
+now-certified curvature-incidence mapping cylinder and its later Green
+transfer beyond the
 certified pointwise, zeroth-order
-strictification and algebraic endpoint defects, or support-local patching to
+strictification, algebraic endpoint defects and all-order strict-graph
+obstruction, or support-local patching to
 new conformally flat topology.  Fixed
 untransported gauges, timelike boundaries and Hadamard claims remain false.
 The full queue and

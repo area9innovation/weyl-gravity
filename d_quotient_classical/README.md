@@ -212,6 +212,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   with the cylinder or construct Nariai Green homotopies:
   [`certificates/NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1.json`](certificates/NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1.json),
   [`reports/nariai-curvature-incidence-cyclic-mapping-cylinder.md`](reports/nariai-curvature-incidence-cyclic-mapping-cylinder.md)
+- All-order strict metric-graph obstruction: extending the canonical ghost
+  image by a field-only graph `h -> (h,R h)` would require
+  `R K=I_Omega`.  The global Nariai Killing field `partial_chi` has
+  `K partial_chi=0`, while the exact incidence table gives
+  `(I_Omega partial_chi)[4]=2/3`.  Hence no finite-order differential `R` of
+  any order can satisfy the required square.  Curved-PBW screens through
+  order four reproduce the same rank-four incompatibility but are not used
+  to infer the all-order result.  The next admissible comparison is a
+  relative equation-level or homotopy-coherent metric--Bach cone:
+  [`certificates/NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1.json`](certificates/NARIAI_STRICT_METRIC_GRAPH_CHAIN_MAP_OBSTRUCTION_V1.json),
+  [`reports/nariai-strict-metric-graph-chain-map-obstruction.md`](reports/nariai-strict-metric-graph-chain-map-obstruction.md)
 - Weaker Yang--Mills translation gate: the corrected component parent now
   satisfies `M^D d^D=0` exactly.  Its naive BGG compression has only a
   24-entry first-order gauge defect.  The unique algebraic endpoint term that

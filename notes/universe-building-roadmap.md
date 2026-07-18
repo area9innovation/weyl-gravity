@@ -135,17 +135,22 @@ strictification and every algebraic endpoint repair are obstructed, but the
 entire surviving first-square residue is now identified coefficientwise as
 the canonical curvature incidence
 `(I_Omega xi)_a=Omega_ab xi^b`; its adjoint action equals the PBW normal
-tractor square.  The next gate is therefore
-`C_G2_NARIAI_METRIC_BACH_ENDPOINT_CHAIN_MAP_AND_GREEN_TRANSFER`.  The
-incidence extends as `M^D I_Omega+(M^D L1_corrected)K=0`; an independent
-factorized variational checker now certifies the complete eight-block odd
-cyclic mapping cylinder, canonical finite-order shear, and SDR to the parent.
-This closes the Hom-bundle replay issue without modifying the generic PBW
-normalizer.  The remaining task is to construct the actual metric-Bach
-endpoint chain map into that cylinder, verify it on the dual rows, and then
-transfer or independently build retarded/advanced Green homotopies.  Do not
-reopen algebraic endpoint fitting or claim endpoint equivalence or a Nariai
-Green homotopy before this gate closes.
+tractor square.  The incidence extends as
+`M^D I_Omega+(M^D L1_corrected)K=0`; an independent factorized variational
+checker now certifies the complete eight-block odd cyclic mapping cylinder,
+canonical finite-order shear, and SDR to the parent.  The first strict metric
+comparison is also closed: any graph `h -> (h,Rh)` would require
+`R K=I_Omega`, but the global Killing field `partial_chi` lies in `ker K`
+while `(I_Omega partial_chi)[4]=2/3`.  Therefore no finite-order field-only
+graph of this canonical type exists at any differential order.  The next gate
+is
+`C_G2_NARIAI_RELATIVE_EQUATION_LEVEL_METRIC_BACH_ENDPOINT_CONE`.  This closes
+the Hom-bundle replay issue without modifying the generic PBW normalizer.  The
+remaining task is the relative equation/identity-row cone,
+its dual completion and only then transferred or independently built
+retarded/advanced Green homotopies.  Do not reopen algebraic or higher-order
+field-graph fitting, or claim endpoint equivalence or a Nariai Green homotopy
+before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 
