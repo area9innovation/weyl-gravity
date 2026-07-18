@@ -93,11 +93,14 @@ the normalized scalar Schur operator
 `S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d`. Its trace-log reproduces the three open
 `n=1/n=2` coefficients and fixes the complete longitudinal cubic weights
 `(-1/3,1/9,-1/81)`. This removes three separate kernel evaluations from the
-architecture, but does not evaluate the resulting scalar pseudodifferential
-relative determinant. The exact identity is finite-dimensional/Fredholm; a
-zeta-factorized implementation can carry an unevaluated local multiplicative
-anomaly. The normalized Schur relative kernel and the generic physical
-fourth-order Hessian are therefore the next coefficient-bearing inputs.
+architecture. The infinite-dimensional continuation is now sharp: writing
+`S_L=I+K`, the order-`-2` correction lies in every Schatten `S_p` for `p>2`,
+so the canonical `det_3(I+K)` tail exists. The critical local residue is
+computed exactly as
+`Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27`. Ordinary trace class is not
+implied. The regulated `R(K)`, finite part of `R(K^2)`, possible local zeta
+multiplicative anomaly, and generic physical fourth-order Hessian are the
+next coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -135,6 +138,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`cpt-universal-third-curvature-kernels.md`](cpt-universal-third-curvature-kernels.md),
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](generic-background-diff-weyl-ghost-cpt-obstruction.md),
 [`generic-background-ghost-endo-duhamel-reduction.md`](generic-background-ghost-endo-duhamel-reduction.md),
+[`generic-background-ghost-schur-schatten-split.md`](generic-background-ghost-schur-schatten-split.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 

@@ -911,6 +911,79 @@ PYTHONPATH=quantum-weyl pytest -q \
  quantum-weyl/spectral/euclidean/tests/test_$M.py
 \end{verbatim}
 
+\subsection{Sharp Schatten split and critical Schur residue}
+
+Write $S_L=\mathbf1+K$.  The exact resolvent identity gives
+\[
+ K=-\frac13\delta(F+W)^{-1}Wd\Delta_0^{-1},
+ \qquad
+ \sigma_{-2}(K)=-\frac13\frac{\langle\xi,W\xi\rangle}{|\xi|^4}.
+\]
+On a closed compact four-manifold, $K\in\mathcal S_p$ for every $p>2$.
+Thus $K\in\mathcal S_3$, $K^3$ is trace class, and
+\[
+ \det{}_3(\mathbf1+K)
+ =\det\!\left[(\mathbf1+K)e^{-K+K^2/2}\right]
+\]
+is a genuine modified Fredholm determinant.  Its small-norm series begins at
+cubic order:
+\[
+ \log\det{}_3(\mathbf1+K)
+ =\sum_{m\geq3}\frac{(-1)^{m+1}}m\operatorname{Tr}K^m.
+\]
+For one declared trace extension $\mathcal R$, the complete bookkeeping split
+is therefore
+\[
+ \log\operatorname{Det}_{3,\mathcal R}(\mathbf1+K)
+ =\mathcal R(K)-\frac12\mathcal R(K^2)+\log\det{}_3(\mathbf1+K).
+\]
+With $K_1=-B_1/3$, $K_2=B_2/3$, and $K_3=-B_3/3$, this reproduces
+\begin{align*}
+O(W)&:-\tfrac13\mathcal R(B_1),\\
+O(W^2)&:\tfrac13\mathcal R(B_2)-\tfrac1{18}\mathcal R(B_1^2),\\
+O(W^3)&:-\tfrac13\mathcal R(B_3)+\tfrac19\mathcal R(B_1B_2)
+        -\tfrac1{81}\operatorname{Tr}B_1^3.
+\end{align*}
+Only the last cubic term is already in the canonical $\det_3$ tail.
+
+The order-$-4$ symbol of $K^2$ is simply
+\[
+ \sigma_{-4}(K^2)=\frac19\frac{\langle\xi,W\xi\rangle^2}{|\xi|^8}.
+\]
+Using $\operatorname{vol}S^3=2\pi^2$ and
+\[
+ \left\langle n_i n_j n_k n_l\right\rangle_{S^3}
+ =\frac{\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}
+ +\delta_{il}\delta_{jk}}{24}
+\]
+gives
+\[
+ \operatorname{Wres}(K^2)
+ =\frac1{(4\pi)^2}\int
+ \frac{(\operatorname{tr}W)^2+2\operatorname{tr}(W^2)}{108}
+ =\frac1{(4\pi)^2}\int
+ \frac{R^2+2R_{\mu\nu}R^{\mu\nu}}{27}.
+\]
+The producer performs this contraction symbolically for a generic symmetric
+endomorphism.  The verifier uses a different fixed endomorphism, integrates
+its degree-four sphere polynomial monomial by monomial, and rejects
+$108\mapsto109$.  A separate noncommuting $4\times4$ fixture verifies the
+$\det_3$ series through sixth order.
+
+This residue is not silently called a zeta-pole coefficient.  Its conversion
+requires a chosen reference operator, its order, and a normalized trace
+prescription.  The full $\mathcal R(K)$ row, $\operatorname{Wres}(K)$, the
+finite part of $\mathcal R(K^2)$, and any multiplicative anomaly remain open.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_schur_schatten_split
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+\end{verbatim}
+
 \subsection{Exact three-insertion adiabatic angular carrier}
 
 At cubic curvature order the three-insertion row uses only the flat Endo
@@ -942,7 +1015,9 @@ tensor numerator, not the full triangle form factor: at zero external
 momentum $J_3$ is scaleless and infrared singular.  The nonzero-momentum
 triangle and its repository projection are certified separately; the three
 longitudinal $D_W$ one-/two-insertion towers are resummed by the preceding
-Schur factor, whose generic relative kernel and local zeta term remain open.
+Schur factor.  Its canonical $\det_3$ tail and critical $K^2$ residue are
+exact; the regulated $\mathcal R(K)$, finite $\mathcal R(K^2)$, and local zeta
+term remain open.
 Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
 carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
 cyclic trace, the cyclic sum of one trace times one pair trace, and the product
@@ -998,7 +1073,8 @@ projection.  The zero-derivative sector can feed $I_{10}$, while the
 longitudinal sectors carry two, four, and six external derivatives and can
 feed $I_{24},I_{25},I_{28},I_{29}$.  The three longitudinal $D_W$
 one-/two-insertion towers are resummed by the preceding Schur factor; its
-generic relative kernel and possible local zeta term remain unevaluated.
+canonical $\det_3$ tail and critical $K^2$ residue are exact, while the two
+regulated trace rows and possible local zeta term remain unevaluated.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \
@@ -1094,7 +1170,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 
 The result is the parametric $n=3$ ghost contribution in the declared
 scalar-flat quotient section. The simplex integrals, normalized longitudinal
-Schur relative kernel, possible local zeta multiplicative term, physical
+Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$ rows, possible local zeta multiplicative term, physical
 fourth-order Hessian kernel, and their complete sum into five repository
 functions and coefficients remain open.
 
@@ -1171,6 +1247,11 @@ longitudinal $D_W$ carriers;
 fixture through cubic order, detect a mixed-cubic mutation, and reject both
 evaluation of its generic relative kernel and omission of a possible local
 zeta multiplicative term;
+\item prove the sharp $\mathcal S_3$ trace-ideal disposition, replay the
+modified Fredholm series through sixth order, compute the critical
+$\operatorname{Wres}(K^2)$ coefficient by two independent sphere-moment
+calculations, and reject promotion to the regulated $\mathcal R(K)$ or finite
+$\mathcal R(K^2)$ rows;
 \item enumerate the second, fourth, and sixth isotropic sphere moments for the
 three-insertion adiabatic angular carrier, while rejecting promotion of its
 IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;

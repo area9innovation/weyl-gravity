@@ -1,0 +1,183 @@
+{
+  "analytic_disposition": {
+    "canonical_nonlocal_tail": "det_3(I+K)",
+    "computed_local_row": "Wres(K^2)",
+    "physical_kernel": "same-gauge generic fourth-order Hessian remains open",
+    "renormalized_rows_still_required": [
+      "R(K)",
+      "R(K^2) finite part"
+    ],
+    "uncomputed_local_rows": [
+      "Wres(K)",
+      "zeta multiplicative anomaly"
+    ]
+  },
+  "canonical_modified_determinant": {
+    "definition": "det_3(I+K)=det[(I+K) exp(-K+K^2/2)]",
+    "regulator_dependence": "confined to extensions R(K), R(K^2), and any local multiplicative anomaly of a separately factorized zeta prescription",
+    "renormalized_split": "log Det_(3,R)(I+K)=R(K)-(1/2)R(K^2)+log det_3(I+K)",
+    "small_norm_series": "log det_3(I+K)=sum_(m>=3)(-1)^(m+1)Tr(K^m)/m",
+    "trace_class_remainder": "(I+K) exp(-K+K^2/2)-I is trace class"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate upgrades the generic longitudinal ghost Schur factor from a merely formal order-zero determinant to its sharp four-dimensional trace-ideal disposition. On a closed compact manifold, K=S_L-I is a classical order-minus-two scalar pseudodifferential operator, hence lies in every Schatten S_p with p>2 and in S_3; K^3 is trace class. The canonical third modified Fredholm determinant det_3(I+K) is therefore defined and contains the trace-class tail beginning at cubic order. A regulator is still required for R(K) and the finite part of R(K^2). The exact order-minus-four symbol gives Wres(K^2)=(4 pi)^-2 integral[(R^2+2 Ric^2)/27], with the stated residue convention. This computes a critical local residue, not the full Schur determinant, Wres(K), the finite K/K^2 trace parts, a zeta multiplicative anomaly, covariant form factors, the physical fourth-order Hessian, complete Gamma1/Q1, residual transfer, Lorentzian QME, Hadamard state, particle, positivity, scattering or unitarity theorem. Conversion of the residue to a regulator pole or scale coefficient requires the declared reference-operator order and trace normalization.",
+  "claim_flags": {
+    "CANONICAL_DET3_TAIL_DEFINED": true,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "CRITICAL_K2_WODZICKI_RESIDUE_COMPUTED": true,
+    "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "ORDINARY_TRACE_CLASS_PROVED": false,
+    "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false,
+    "SCHUR_CORRECTION_S3_CLASS_PROVED": true,
+    "SCHUR_COVARIANT_FORM_FACTORS_COMPUTED": false,
+    "WODZICKI_RESIDUE_K_COMPUTED": false,
+    "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "critical_local_residue": {
+    "Ricci_basis": "Wres(K^2)=(4 pi)^-2 integral[R^2+2 Ric_mn Ric^mn]/27",
+    "W_basis": "Wres(K^2)=(4 pi)^-2 integral[(tr W)^2+2 tr(W^2)]/108",
+    "conversion_boundary": "conversion of this residue into a zeta-pole or scale coefficient depends on the declared reference operator order and trace normalization",
+    "definition": "Wres(P)=(2 pi)^-4 integral_M integral_|xi|=1 sigma_-4(P) dS dvol",
+    "scalar_flat_basis": "Wres(K^2)=(4 pi)^-2 integral[2 Ric_mn Ric^mn]/27 when R=0",
+    "sigma_minus_4_K2": "(1/9)<xi,W xi>^2/|xi|^8",
+    "sphere_moment_replay": {
+      "contraction": "[(tr W)^2+2 tr(W^2)]/24",
+      "dimension": 4,
+      "normalized_fourth_moment": "(delta_ij delta_kl+delta_ik delta_jl+delta_il delta_jk)/24",
+      "symbolic_residual": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "unit_sphere_volume": "2 pi^2"
+    }
+  },
+  "curvature_expansion_through_W3": {
+    "K_components": [
+      "K1=-B1/3",
+      "K2=B2/3",
+      "K3=-B3/3"
+    ],
+    "W1": [
+      "-(1/3)R(B1)"
+    ],
+    "W2": [
+      "+(1/3)R(B2)",
+      "-(1/18)R(B1^2)"
+    ],
+    "W3": [
+      "-(1/3)R(B3)",
+      "+(1/9)R(B1 B2)",
+      "-(1/81)Tr(B1^3)"
+    ],
+    "canonical_cubic_tail": "-(1/81)Tr(B1^3)",
+    "remaining_regularized_cubic_rows": [
+      "R(B3)",
+      "R(B1 B2)"
+    ]
+  },
+  "dependencies": {
+    "Schur_resummation": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
+      "sha256": "b40ec3a8bd3a21d8e0ece7c98f98e1776e8c47d557b8c8b5427e422b60c65a78"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_modified_determinant_fixture": {
+    "Tr_K": {
+      "denominator": 36,
+      "numerator": 7
+    },
+    "det3_exponential_counterterm": {
+      "denominator": 90720,
+      "numerator": -6613
+    },
+    "det3_representation": "det(I+K) exp[-Tr K+(1/2)Tr(K^2)]",
+    "det_I_plus_K": {
+      "denominator": 5040,
+      "numerator": 5461
+    },
+    "dimension": 3,
+    "log_det3_coefficients_power_3_to_6": [
+      {
+        "coefficient": {
+          "denominator": 4898880,
+          "numerator": 69281
+        },
+        "power": 3
+      },
+      {
+        "coefficient": {
+          "denominator": 8230118400,
+          "numerator": -65008057
+        },
+        "power": 4
+      },
+      {
+        "coefficient": {
+          "denominator": 74071065600,
+          "numerator": 125752847
+        },
+        "power": 5
+      },
+      {
+        "coefficient": {
+          "denominator": 559977255936000,
+          "numerator": -423989478467
+        },
+        "power": 6
+      }
+    ],
+    "one_half_Tr_K2": {
+      "denominator": 90720,
+      "numerator": 11027
+    }
+  },
+  "lifecycle_state": "REGULARIZATION_SPLIT_COMPUTED_FULL_SCHUR_DETERMINANT_UNEVALUATED",
+  "next_gate": "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
+  "operator_identity": {
+    "K": "S_L-I=-(1/3)delta(F+W)^-1 W d Delta0^-1",
+    "K_series": "K=sum_(n>=1)(-1)^n B_n/3",
+    "S_L": "(2/3)I+(1/3)delta(F+W)^-1 d",
+    "W_specialization": "W=-2 Ric",
+    "principal_symbol_K": "sigma_-2(K)=-(1/3)<xi,W xi>/|xi|^4"
+  },
+  "references": [
+    {
+      "arxiv": "0802.1665",
+      "authors": "F. Gesztesy, Y. Latushkin, K. Zumbrun",
+      "role": "modified Fredholm determinant perturbation expansion",
+      "title": "Derivatives of (Modified) Fredholm Determinants and Stability of Standing and Traveling Waves"
+    },
+    {
+      "arxiv": "1403.6158",
+      "authors": "J. Delgado, M. Ruzhansky",
+      "role": "compact-manifold Schatten criteria",
+      "title": "Schatten classes on compact manifolds: Kernel conditions"
+    }
+  ],
+  "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT",
+  "result_state": "SCHUR_CORRECTION_IN_S3_WITH_CANONICAL_DET3_TAIL_AND_EXACT_CRITICAL_K2_RESIDUE",
+  "schema": "quantum-weyl-generic-background-ghost-schur-schatten-split-v1",
+  "scope": {
+    "dimension": 4,
+    "manifold": "closed compact smooth manifold without boundary",
+    "mode_domain": "primed nonzero scalar ghost modes with elliptic inverses",
+    "operator_scope": "normalized scalar Schur factor S_L=I+K",
+    "signature": "Euclidean"
+  },
+  "sharp_ideal_classification": {
+    "K_cubed": "classical PsiDO of order -6; ordinary trace class",
+    "K_squared": "classical PsiDO of order -4; critical weak trace class in dimension four",
+    "Schatten_membership": "K in S_p for every p>2; in particular K in S_3",
+    "minimal_modified_determinant_order": 3,
+    "ordinary_trace_class": "NOT_PROVED_AND_NOT_GENERIC_FROM_ORDER_MINUS_TWO",
+    "singular_value_decay": "s_j(K)=O(j^-1/2)"
+  }
+}

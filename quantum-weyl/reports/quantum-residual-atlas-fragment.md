@@ -62,8 +62,10 @@ angular carrier without turning either into a particle or a complete form
 factor. The nonzero-momentum triangle is exact, while the curved `n=1/n=2`
 architecture is reduced to five minimal vector/scalar resolvent carriers.
 Its combined pure-vector CPT slice is exact; the three longitudinal `D_W`
-towers are resummed into one normalized scalar Schur kernel. That relative
-determinant and its possible local zeta multiplicative term remain
+towers are resummed into one normalized scalar Schur kernel. Its order-`-2`
+correction lies in `S_3`, so the canonical `det_3` tail exists, and
+`Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27` is exact. The regulated
+`R(K)`, finite `R(K^2)`, and possible local zeta multiplicative term remain
 unevaluated.
 
 ## Tangent-cone boundary
@@ -144,7 +146,8 @@ quotient as rational simplex integrands, with two unseen exact momentum
 fixtures replaying all 125 TT amplitudes. The five minimal n=1/n=2 resolvent
 carriers have an exact combined pure-vector CPT slice; three longitudinal
 `D_W` towers now form one normalized scalar Schur trace-log series. Its
-relative determinant and possible local zeta multiplicative term remain
+canonical `det_3` tail and critical `K^2` residue are exact. The regulated
+`R(K)`, finite `R(K^2)`, and possible local zeta multiplicative term remain
 unevaluated. Simplex-integrated repository functions and the
 physical fourth-order Hessian
 remain open. The guard remains

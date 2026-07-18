@@ -47,6 +47,9 @@ def main() -> None:
         "The separating functional is simply",
         "same principal symbol, connection, self-adjoint domain",
         "-\\frac{199}{60}=-\\frac c2",
+        "Sharp Schatten split and critical Schur residue",
+        "\\det{}_3(\\mathbf1+K)",
+        "\\operatorname{Wres}(K^2)",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -195,6 +198,15 @@ def main() -> None:
     assert claims["generic_ghost_4d_trace_class_status"] == (
         "ORDER_MINUS_TWO_DOES_NOT_PROVE_TRACE_CLASS_IN_DIMENSION_FOUR"
     )
+    assert claims["generic_ghost_Schur_S3_class"] is True
+    assert claims["generic_ghost_modified_Fredholm_order"] == 3
+    assert claims["generic_ghost_det3_tail_defined"] is True
+    assert claims["generic_ghost_K2_Wodzicki_residue"] == (
+        "Wres(K^2)=(4 pi)^-2 integral[R^2+2 Ric_mn Ric^mn]/27"
+    )
+    assert claims["generic_ghost_K2_scalar_flat_Wodzicki_residue"] == (
+        "Wres(K^2)=(4 pi)^-2 integral[2 Ric_mn Ric^mn]/27 when R=0"
+    )
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     assert claims["Euler_Wess_Zumino_primitive_displayed"] is True
     boolean_claims = {
@@ -203,13 +215,22 @@ def main() -> None:
     assert boolean_claims and all(boolean_claims.values())
     assert payload["explicit_nonclaims"]
     assert all(value is False for value in payload["explicit_nonclaims"].values())
+    assert payload["explicit_nonclaims"][
+        "generic_ghost_full_Schur_regularized_determinant"
+    ] is False
+    assert payload["explicit_nonclaims"][
+        "generic_ghost_Wodzicki_residue_K"
+    ] is False
+    assert payload["explicit_nonclaims"][
+        "generic_ghost_zeta_multiplicative_anomaly_computed"
+    ] is False
     assert (
         payload["next_gate"]["status"]
-        == "EVALUATE_NORMALIZED_LONGITUDINAL_SCHUR_RELATIVE_DETERMINANT_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
+        == "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 31
+    assert len(payload["inputs"]) == 32
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -238,6 +259,7 @@ def main() -> None:
     generic_ghost_n1_n2 = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION"]
     generic_ghost_n1_n2_vector = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION"]
     generic_ghost_longitudinal_schur = dependencies["GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION"]
+    generic_ghost_schur_schatten = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -356,6 +378,27 @@ def main() -> None:
     assert generic_ghost_longitudinal_schur["regularization_boundary"][
         "generic_4d_trace_class_status"
     ] == "ORDER_MINUS_TWO_DOES_NOT_PROVE_TRACE_CLASS_IN_DIMENSION_FOUR"
+    assert generic_ghost_schur_schatten["sharp_ideal_classification"][
+        "minimal_modified_determinant_order"
+    ] == 3
+    assert generic_ghost_schur_schatten["claim_flags"][
+        "SCHUR_CORRECTION_S3_CLASS_PROVED"
+    ] is True
+    assert generic_ghost_schur_schatten["claim_flags"][
+        "CANONICAL_DET3_TAIL_DEFINED"
+    ] is True
+    assert generic_ghost_schur_schatten["claim_flags"][
+        "CRITICAL_K2_WODZICKI_RESIDUE_COMPUTED"
+    ] is True
+    assert generic_ghost_schur_schatten["claim_flags"][
+        "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED"
+    ] is False
+    assert generic_ghost_schur_schatten["claim_flags"][
+        "WODZICKI_RESIDUE_K_COMPUTED"
+    ] is False
+    assert generic_ghost_schur_schatten["claim_flags"][
+        "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"
+    ] is False
     assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
         generic_ghost_n1_n2_vector["formula_digest"]
     )

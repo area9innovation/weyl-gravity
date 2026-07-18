@@ -106,6 +106,16 @@ normalized scalar Schur operator
 possible local zeta multiplicative term, the physical fourth-order kernel,
 and the integrated repository functions and coefficients remain open.
 
+The infinite-dimensional regularization gate is now sharpened in
+[`GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json`](certificates/GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json).
+Writing `S_L=I+K`, the order-`-2` correction lies in every Schatten `S_p`
+with `p>2`, so `det_3(I+K)` is canonical and contains the trace-class tail.
+Only `R(K)` and the finite part of `R(K^2)` require the common regulator.
+The critical local coefficient is exact:
+`Wres(K^2)=(4 pi)^-2 integral (R^2+2 Ric^2)/27`. Conversion to a zeta pole
+or scale coefficient still requires a declared reference-operator order and
+trace normalization.
+
 Replay with:
 
 ```bash
@@ -121,6 +131,9 @@ PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generi
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_longitudinal_schur_resummation --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_longitudinal_schur_resummation
 PYTHONPATH=quantum-weyl pytest -q quantum-weyl/spectral/euclidean/tests/test_generic_background_ghost_longitudinal_schur_resummation.py
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_schur_schatten_split --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_schur_schatten_split
+PYTHONPATH=quantum-weyl pytest -q quantum-weyl/spectral/euclidean/tests/test_generic_background_ghost_schur_schatten_split.py
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_adiabatic_carrier --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
@@ -170,3 +183,7 @@ three towers to `S_L(W)`, with cubic weights `(-1/3,1/9,-1/81)`. The
 finite/Fredholm relative identity is exact; a local zeta multiplicative term
 is explicitly unevaluated. See
 [`generic-background-ghost-longitudinal-schur-resummation.md`](../../reports/generic-background-ghost-longitudinal-schur-resummation.md).
+The sharp trace-ideal continuation is recorded in
+[`generic-background-ghost-schur-schatten-split.md`](../../reports/generic-background-ghost-schur-schatten-split.md):
+the canonical `det_3` tail and `Wres(K^2)` are computed, while `R(K)`, the
+finite part of `R(K^2)`, and any zeta multiplicative anomaly remain open.

@@ -51,6 +51,7 @@ INPUTS = {
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
     "generic_ghost_n1_n2_vector_CPT_projection": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json",
     "generic_ghost_longitudinal_Schur_resummation": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION.json",
+    "generic_ghost_Schur_Schatten_split": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
 
@@ -95,6 +96,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
     generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     generic_ghost_longitudinal_schur = values["generic_ghost_longitudinal_Schur_resummation"]
+    generic_ghost_schur_schatten = values["generic_ghost_Schur_Schatten_split"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -360,6 +362,38 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "regularization_boundary", {}
         ).get("zeta_multiplicative_anomaly")
         != "LOCAL_TERM_NOT_EVALUATED"
+        or generic_ghost_schur_schatten.get(
+            "sharp_ideal_classification", {}
+        ).get("minimal_modified_determinant_order")
+        != 3
+        or generic_ghost_schur_schatten.get(
+            "critical_local_residue", {}
+        ).get("Ricci_basis")
+        != "Wres(K^2)=(4 pi)^-2 integral[R^2+2 Ric_mn Ric^mn]/27"
+        or generic_ghost_schur_schatten.get("claim_flags", {}).get(
+            "SCHUR_CORRECTION_S3_CLASS_PROVED"
+        )
+        is not True
+        or generic_ghost_schur_schatten.get("claim_flags", {}).get(
+            "CANONICAL_DET3_TAIL_DEFINED"
+        )
+        is not True
+        or generic_ghost_schur_schatten.get("claim_flags", {}).get(
+            "CRITICAL_K2_WODZICKI_RESIDUE_COMPUTED"
+        )
+        is not True
+        or generic_ghost_schur_schatten.get("claim_flags", {}).get(
+            "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED"
+        )
+        is not False
+        or generic_ghost_schur_schatten.get("claim_flags", {}).get(
+            "WODZICKI_RESIDUE_K_COMPUTED"
+        )
+        is not False
+        or generic_ghost_schur_schatten.get("claim_flags", {}).get(
+            "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"
+        )
+        is not False
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -402,6 +436,7 @@ def build() -> dict[str, Any]:
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
     generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     generic_ghost_longitudinal_schur = values["generic_ghost_longitudinal_Schur_resummation"]
+    generic_ghost_schur_schatten = values["generic_ghost_Schur_Schatten_split"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
@@ -412,7 +447,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, the curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. That relative determinant, its possible local zeta multiplicative term, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, the curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3, its canonical det_3 tail is defined, and Wres(K^2) is exact; R(K), the finite part of R(K^2), Wres(K), any local zeta multiplicative anomaly, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -525,6 +560,11 @@ def build() -> dict[str, Any]:
             "generic_ghost_longitudinal_cubic_coefficients": generic_ghost_longitudinal_schur["resolvent_series"]["Hodge_carrier_match"]["completed_n3_longitudinal_coefficients"],
             "generic_ghost_zeta_multiplicative_anomaly_status": generic_ghost_longitudinal_schur["regularization_boundary"]["zeta_multiplicative_anomaly"],
             "generic_ghost_4d_trace_class_status": generic_ghost_longitudinal_schur["regularization_boundary"]["generic_4d_trace_class_status"],
+            "generic_ghost_Schur_S3_class": True,
+            "generic_ghost_modified_Fredholm_order": generic_ghost_schur_schatten["sharp_ideal_classification"]["minimal_modified_determinant_order"],
+            "generic_ghost_det3_tail_defined": True,
+            "generic_ghost_K2_Wodzicki_residue": generic_ghost_schur_schatten["critical_local_residue"]["Ricci_basis"],
+            "generic_ghost_K2_scalar_flat_Wodzicki_residue": generic_ghost_schur_schatten["critical_local_residue"]["scalar_flat_basis"],
             "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
             "repository_29_over_120_local_R2_reproduced": True,
@@ -551,6 +591,9 @@ def build() -> dict[str, Any]:
             "generic_ghost_longitudinal_Schur_form_factors_evaluated": False,
             "zeta_factorization_without_local_multiplicative_anomaly": False,
             "ordinary_Fredholm_determinant_class": False,
+            "generic_ghost_full_Schur_regularized_determinant": False,
+            "generic_ghost_Wodzicki_residue_K": False,
+            "generic_ghost_zeta_multiplicative_anomaly_computed": False,
             "generic_ghost_n3_integrated_five_carrier_form_factors": False,
             "absolute_dressed_Rhat2_normalization": False,
             "same_background_compensator_contraction": False,
@@ -561,11 +604,11 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "EVALUATE_NORMALIZED_LONGITUDINAL_SCHUR_RELATIVE_DETERMINANT_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "status": "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
-                "evaluation of the normalized longitudinal Schur relative determinant and its possible local zeta multiplicative term, plus simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
+                "renormalized R(K), the finite part of R(K^2), Wres(K), and any local zeta multiplicative term for the normalized longitudinal Schur determinant, plus simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
                 "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

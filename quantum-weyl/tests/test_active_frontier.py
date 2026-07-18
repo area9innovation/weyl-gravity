@@ -242,6 +242,18 @@ class ActiveFrontierTests(unittest.TestCase):
                 "THREE_DW_CARRIERS_RESUMMED_IN_COMMON_RELATIVE_DETERMINANT_EXPANSION"
             ]
         )
+        self.assertTrue(self.payload["claim_flags"]["SCHUR_CORRECTION_S3_CLASS_PROVED"])
+        self.assertTrue(self.payload["claim_flags"]["CANONICAL_DET3_TAIL_DEFINED"])
+        self.assertTrue(
+            self.payload["claim_flags"]["CRITICAL_K2_WODZICKI_RESIDUE_COMPUTED"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED"]
+        )
+        self.assertFalse(self.payload["claim_flags"]["WODZICKI_RESIDUE_K_COMPUTED"])
+        self.assertFalse(
+            self.payload["claim_flags"]["ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "ZETA_FACTORIZATION_WITHOUT_LOCAL_MULTIPLICATIVE_ANOMALY_PROVED"
@@ -403,7 +415,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "EVALUATE_NORMALIZED_LONGITUDINAL_SCHUR_RELATIVE_DETERMINANT_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],
