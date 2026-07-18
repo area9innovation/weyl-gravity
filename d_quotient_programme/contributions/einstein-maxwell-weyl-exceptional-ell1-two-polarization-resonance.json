@@ -1,0 +1,34 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; arbitrary axial and polar exceptional ell=1,m=0,k=0 amplitudes, optionally balanced by collinear twist velocity",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the polar exceptional self-source resonant pairings are (1/8,-1/4), exactly -3/16 times the axial self-source pairings",
+    "the even-parity self-pairings formally cancel only at |a_p|^2=(16/3)|a_x|^2",
+    "the required axial-polar cross-source has a nonzero axial L=2 adjoint pairing -8sqrt(3)/9",
+    "every nonzero axisymmetric two-polarization exceptional tangent is second-order obstructed, including twist-balanced common-zero fixtures"
+  ],
+  "evidence": {
+    "commit": "4fd78cdc1a5a2145f7a12fbf193a0d29dd731347",
+    "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json",
+    "sha256": "9886d51586623bc2dada33c1b9bfb6b3745129b89b649a2be0bad926dfb41dce"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "extend the resonant obstruction tensor over all m and test distinct-m interference",
+  "not_established": [
+    "the all-m exceptional ell=1 cone",
+    "same-frequency cancellation using sectors beyond the two exceptional dipole polarizations",
+    "all-orders, residual, causal, scattering, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_exceptional_ell1_axisymmetric_two_polarization",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_AXISYMMETRIC_EXCEPTIONAL_CONE_OBSTRUCTED",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance"
+  ]
+}
