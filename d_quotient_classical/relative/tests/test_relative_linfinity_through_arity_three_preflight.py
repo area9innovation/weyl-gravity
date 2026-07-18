@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -6,6 +7,51 @@ import unittest
 from unittest.mock import patch
 
 from d_quotient_classical.relative import relative_linfinity_through_arity_three_preflight as result
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _write_executable_taylor_fixture(directory: Path, result_id: str, theory_id: str) -> dict:
+    carrier_id = f"synthetic_{theory_id.lower().replace('-', '_')}_carrier"
+
+    def payload(kind: str, content: dict) -> dict:
+        return {
+            "schema": "pure-weyl-relative-linfinity-product-pbw-payload-v1",
+            "result_id": f"{result_id}_{kind.upper()}",
+            "kind": kind,
+            "theory_id": theory_id,
+            "background_id": result.BACKGROUND_ID,
+            "carrier_id": carrier_id,
+            "coefficient_field": "Q",
+            "content": content,
+        }
+
+    values = {
+        "row_layout": payload("row_layout", {"row_count": 1, "rows": [{"index": 0, "row_id": "x", "degree": 0, "parity": "even", "bundle_id": "scalar", "dual_row": 0}]}),
+        "action": payload("action", {"density": "x^2/2+x^3/6+x^4/24", "couplings": {}, "background_substitution": {"x": "0"}, "master_terms": ["S_cl"], "derivation_convention": "q_n is the n-th polarized Taylor coefficient of the BV Hamiltonian vector field at the declared background, with no factorial absorbed"}),
+        "q1": payload("operation", {"arity": 1, "row_count": 1, "derivative_algebra": "parallel-product-covariant-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}], "coefficient": "1"}]}),
+        "q2": payload("operation", {"arity": 2, "row_count": 1, "derivative_algebra": "parallel-product-covariant-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}, {"row": 0, "word": []}], "coefficient": "1"}]}),
+        "q3": payload("operation", {"arity": 3, "row_count": 1, "derivative_algebra": "parallel-product-covariant-pbw-v1", "maximum_total_order": 0, "term_count": 1, "terms": [{"output_row": 0, "inputs": [{"row": 0, "word": []}, {"row": 0, "word": []}, {"row": 0, "word": []}], "coefficient": "1"}]}),
+        "pairing": payload("pairing", {"row_count": 1, "term_count": 1, "terms": [{"left_row": 0, "right_row": 0, "coefficient": "1"}]}),
+    }
+    artifacts = {}
+    for name, value in values.items():
+        path = directory / f"{theory_id.lower().replace('-', '_')}_{name}.json"
+        path.write_text(json.dumps(value, sort_keys=True))
+        artifacts[name] = {"result_id": value["result_id"], "kind": value["kind"], "path": str(path.relative_to(result.ROOT)), "sha256": _sha256(path)}
+    for name, kind, body in (("independent_verifier", "independent_verifier", "# fixture\n"), ("verification_receipt", "verification_receipt", "{}\n")):
+        path = directory / f"{theory_id.lower().replace('-', '_')}_{name}.txt"
+        path.write_text(body)
+        artifacts[name] = {"result_id": f"{result_id}_{name.upper()}", "kind": kind, "path": str(path.relative_to(result.ROOT)), "sha256": _sha256(path)}
+    value = result.synthetic_taylor(result_id, theory_id)
+    value["carrier_id"] = carrier_id
+    value["coefficient_field"] = "Q"
+    value["taylor_artifacts"] = artifacts
+    value["executable_contract"]["row_layout_sha256"] = artifacts["row_layout"]["sha256"]
+    value["executable_contract"]["action_sha256"] = artifacts["action"]["sha256"]
+    return value
 
 
 class RelativeLinfinityPreflightTests(unittest.TestCase):
@@ -22,6 +68,11 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
     def test_synthetic_product_payload_validates(self):
         value = result.synthetic_taylor("WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1", "Weyl-Maxwell")
         result.validate_taylor(value, expected_result_id=value["result_id"], expected_theory="Weyl-Maxwell", verify_artifacts=False)
+
+    def test_executable_product_payload_validates_content(self):
+        with tempfile.TemporaryDirectory(dir=result.ROOT) as temporary:
+            value = _write_executable_taylor_fixture(Path(temporary), "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1", "Weyl-Maxwell")
+            result.validate_taylor(value, expected_result_id=value["result_id"], expected_theory="Weyl-Maxwell")
 
     def test_berger_payload_is_rejected(self):
         value = result.synthetic_taylor("WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1", "Weyl-Maxwell")
@@ -85,11 +136,11 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
             einstein_path = directory / "einstein.json"
             weyl_path = directory / "weyl.json"
             triangle_path.write_text(json.dumps(result.synthetic_triangle()))
-            einstein_path.write_text(json.dumps(result.synthetic_taylor(
+            einstein_path.write_text(json.dumps(_write_executable_taylor_fixture(directory,
                 "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
                 "Einstein-Maxwell",
             )))
-            weyl_path.write_text(json.dumps(result.synthetic_taylor(
+            weyl_path.write_text(json.dumps(_write_executable_taylor_fixture(directory,
                 "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
                 "Weyl-Maxwell",
             )))

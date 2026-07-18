@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-linfinity-product-pbw-payload-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "kind", "theory_id", "background_id", "carrier_id", "coefficient_field", "content"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-linfinity-product-pbw-payload-v1"},
+    "result_id": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["row_layout", "action", "operation", "pairing"]},
+    "theory_id": {"enum": ["Einstein-Maxwell", "Weyl-Maxwell"]},
+    "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
+    "carrier_id": {"type": "string", "minLength": 1},
+    "coefficient_field": {"const": "Q"},
+    "content": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "row_layout"}}},
+      "then": {"properties": {"content": {"$ref": "#/$defs/rowLayout"}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "action"}}},
+      "then": {"properties": {"content": {"$ref": "#/$defs/action"}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "operation"}}},
+      "then": {"properties": {"content": {"$ref": "#/$defs/operation"}}}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "pairing"}}},
+      "then": {"properties": {"content": {"$ref": "#/$defs/pairing"}}}
+    }
+  ],
+  "$defs": {
+    "rowLayout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_count", "rows"],
+      "properties": {
+        "row_count": {"type": "integer", "minimum": 1},
+        "rows": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/row"}}
+      }
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["index", "row_id", "degree", "parity", "bundle_id", "dual_row"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0},
+        "row_id": {"type": "string", "minLength": 1},
+        "degree": {"type": "integer"},
+        "parity": {"enum": ["even", "odd"]},
+        "bundle_id": {"type": "string", "minLength": 1},
+        "dual_row": {"type": "integer", "minimum": 0}
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["density", "couplings", "background_substitution", "master_terms", "derivation_convention"],
+      "properties": {
+        "density": {"type": "string", "minLength": 1},
+        "couplings": {"type": "object"},
+        "background_substitution": {"type": "object"},
+        "master_terms": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "derivation_convention": {"const": "q_n is the n-th polarized Taylor coefficient of the BV Hamiltonian vector field at the declared background, with no factorial absorbed"}
+      }
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["arity", "row_count", "derivative_algebra", "maximum_total_order", "term_count", "terms"],
+      "properties": {
+        "arity": {"enum": [1, 2, 3]},
+        "row_count": {"type": "integer", "minimum": 1},
+        "derivative_algebra": {"const": "parallel-product-covariant-pbw-v1"},
+        "maximum_total_order": {"type": "integer", "minimum": 0},
+        "term_count": {"type": "integer", "minimum": 1},
+        "terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/operationTerm"}}
+      }
+    },
+    "operationTerm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["output_row", "inputs", "coefficient"],
+      "properties": {
+        "output_row": {"type": "integer", "minimum": 0},
+        "inputs": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"$ref": "#/$defs/input"}},
+        "coefficient": {"type": "string", "minLength": 1}
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row", "word"],
+      "properties": {
+        "row": {"type": "integer", "minimum": 0},
+        "word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}
+      }
+    },
+    "pairing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_count", "term_count", "terms"],
+      "properties": {
+        "row_count": {"type": "integer", "minimum": 1},
+        "term_count": {"type": "integer", "minimum": 1},
+        "terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/pairingTerm"}}
+      }
+    },
+    "pairingTerm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left_row", "right_row", "coefficient"],
+      "properties": {
+        "left_row": {"type": "integer", "minimum": 0},
+        "right_row": {"type": "integer", "minimum": 0},
+        "coefficient": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

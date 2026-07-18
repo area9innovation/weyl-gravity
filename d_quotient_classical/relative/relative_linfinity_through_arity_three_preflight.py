@@ -11,13 +11,15 @@ from pathlib import Path
 from typing import Mapping
 
 from jsonschema import Draft202012Validator
+import sympy as sp
 
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json"
 REPORT = ROOT / "d_quotient_classical/reports/einstein-weyl-relative-linfinity-through-arity-three-preflight.md"
 TRIANGLE_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json"
-INPUT_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json"
+INPUT_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json"
+PAYLOAD_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json"
 SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json"
 VERIFIER = ROOT / "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py"
 TESTS = ROOT / "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py"
@@ -46,6 +48,8 @@ TRIANGLE_FLAGS = (
 TAYLOR_FLAGS = (
     "FULL_BV_ROWS",
     "SUPPORT_LOCAL",
+    "ACTION_DERIVED",
+    "EXECUTABLE_PBW_PAYLOAD",
     "CYCLIC_PAIRING_VERIFIED",
     "Q1_Q2_IDENTITY_VERIFIED",
     "ARITY_THREE_IDENTITY_VERIFIED",
@@ -70,6 +74,16 @@ def _load(path: Path) -> dict:
     if not isinstance(value, dict):
         raise ValueError(f"expected JSON object: {path}")
     return value
+
+
+def _rational(value: str) -> sp.Rational:
+    try:
+        parsed = sp.Rational(value)
+    except Exception as error:
+        raise ValueError(f"coefficient is not rational: {value}") from error
+    if not parsed.is_Rational:
+        raise ValueError(f"coefficient escaped Q: {value}")
+    return parsed
 
 
 def _artifact(path: Path, value: Mapping[str, object]) -> dict[str, str]:
@@ -115,11 +129,87 @@ def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, exp
     missing = [flag for flag in TAYLOR_FLAGS if value["acceptance_flags"].get(flag) is not True]
     if missing:
         raise ValueError("product Taylor payload misses acceptance flags: " + ", ".join(missing))
+    expected_kinds = {
+        "row_layout": "row_layout",
+        "action": "action",
+        "q1": "operation",
+        "q2": "operation",
+        "q3": "operation",
+        "pairing": "pairing",
+        "independent_verifier": "independent_verifier",
+        "verification_receipt": "verification_receipt",
+    }
+    for name, kind in expected_kinds.items():
+        if value["taylor_artifacts"][name]["kind"] != kind:
+            raise ValueError(f"Taylor artifact has wrong kind: {name}")
     if verify_artifacts:
-        for artifact in value["taylor_artifacts"].values():
+        payload_schema = _load(PAYLOAD_SCHEMA)
+        Draft202012Validator.check_schema(payload_schema)
+        payloads: dict[str, dict] = {}
+        for name, artifact in value["taylor_artifacts"].items():
             path = ROOT / artifact["path"]
             if not path.is_file() or _sha256(path) != artifact["sha256"]:
                 raise ValueError(f"Taylor artifact drifted: {artifact['path']}")
+            if name in {"row_layout", "action", "q1", "q2", "q3", "pairing"}:
+                payload = _load(path)
+                Draft202012Validator(payload_schema).validate(payload)
+                if payload["result_id"] != artifact["result_id"]:
+                    raise ValueError(f"Taylor artifact result id drifted: {name}")
+                if payload["theory_id"] != expected_theory or payload["background_id"] != BACKGROUND_ID:
+                    raise ValueError(f"Taylor artifact scope drifted: {name}")
+                if payload["carrier_id"] != value["carrier_id"]:
+                    raise ValueError(f"Taylor artifact carrier drifted: {name}")
+                payloads[name] = payload
+        contract = value["executable_contract"]
+        row_layout = payloads["row_layout"]["content"]
+        row_count = contract["row_count"]
+        if row_count != row_layout["row_count"] or len(row_layout["rows"]) != row_count:
+            raise ValueError("row-layout count drifted")
+        indices = [row["index"] for row in row_layout["rows"]]
+        if sorted(indices) != list(range(row_count)) or len({row["row_id"] for row in row_layout["rows"]}) != row_count:
+            raise ValueError("row layout is not a complete uniquely named index set")
+        if any(row["dual_row"] >= row_count for row in row_layout["rows"]):
+            raise ValueError("row-layout dual index escaped the carrier")
+        rows_by_index = {row["index"]: row for row in row_layout["rows"]}
+        if any(rows_by_index[row["dual_row"]]["dual_row"] != row["index"] for row in row_layout["rows"]):
+            raise ValueError("row-layout duality is not involutive")
+        if contract["row_layout_sha256"] != value["taylor_artifacts"]["row_layout"]["sha256"]:
+            raise ValueError("row-layout contract hash drifted")
+        if contract["action_sha256"] != value["taylor_artifacts"]["action"]["sha256"]:
+            raise ValueError("action contract hash drifted")
+        for name, arity in (("q1", 1), ("q2", 2), ("q3", 3)):
+            operation = payloads[name]["content"]
+            if operation["arity"] != arity or operation["row_count"] != row_count:
+                raise ValueError(f"{name} arity or carrier size drifted")
+            if operation["term_count"] != len(operation["terms"]):
+                raise ValueError(f"{name} term count drifted")
+            term_keys = set()
+            maximum_order = 0
+            for term in operation["terms"]:
+                if term["output_row"] >= row_count or len(term["inputs"]) != arity:
+                    raise ValueError(f"{name} has an ill-typed output or input arity")
+                if any(item["row"] >= row_count for item in term["inputs"]):
+                    raise ValueError(f"{name} input escaped the carrier")
+                coefficient = _rational(term["coefficient"])
+                if coefficient == 0:
+                    raise ValueError(f"{name} contains an explicit zero coefficient")
+                key = (term["output_row"], tuple((item["row"], tuple(item["word"])) for item in term["inputs"]))
+                if key in term_keys:
+                    raise ValueError(f"{name} contains duplicate PBW support")
+                term_keys.add(key)
+                maximum_order = max(maximum_order, sum(len(item["word"]) for item in term["inputs"]))
+            if maximum_order != operation["maximum_total_order"]:
+                raise ValueError(f"{name} maximum derivative order drifted")
+        pairing = payloads["pairing"]["content"]
+        if pairing["row_count"] != row_count or pairing["term_count"] != len(pairing["terms"]):
+            raise ValueError("pairing carrier size or term count drifted")
+        if any(term["left_row"] >= row_count or term["right_row"] >= row_count for term in pairing["terms"]):
+            raise ValueError("pairing row escaped the carrier")
+        pairing_matrix = sp.zeros(row_count)
+        for term in pairing["terms"]:
+            pairing_matrix[term["left_row"], term["right_row"]] += _rational(term["coefficient"])
+        if pairing_matrix.rank() != row_count:
+            raise ValueError("declared cyclic pairing is degenerate")
 
 
 def _select(candidates: tuple[Path, ...], validator) -> tuple[dict | None, Path | None]:
@@ -145,7 +235,7 @@ def build() -> dict:
     for name, path, value in (("relative_linear_triangle", triangle_path, triangle), ("einstein_product_taylor", einstein_path, einstein), ("weyl_product_taylor", weyl_path, weyl)):
         if value is not None:
             dependencies[name] = _artifact(path, value)
-    source_paths = (Path(__file__), VERIFIER, TESTS, TRIANGLE_SCHEMA, INPUT_SCHEMA, SCHEMA)
+    source_paths = (Path(__file__), VERIFIER, TESTS, TRIANGLE_SCHEMA, INPUT_SCHEMA, PAYLOAD_SCHEMA, SCHEMA)
     status = {"relative_linear_triangle": "IMPORTED" if triangle else "MISSING", "einstein_product_q2_q3": "IMPORTED" if einstein else "MISSING", "weyl_product_q2_q3": "IMPORTED" if weyl else "MISSING"}
     value = {
         "schema": "pure-weyl-relative-linfinity-through-arity-three-preflight-v1",
@@ -161,6 +251,7 @@ def build() -> dict:
             "weyl_taylor": {"required_result_id": weyl_id, "required_background_id": BACKGROUND_ID, "candidate_paths": [str(path.relative_to(ROOT)) for path in WEYL_CANDIDATES], "required_flags": list(TAYLOR_FLAGS)},
             "triangle_schema": {"path": str(TRIANGLE_SCHEMA.relative_to(ROOT)), "sha256": _sha256(TRIANGLE_SCHEMA)},
             "taylor_schema": {"path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": _sha256(INPUT_SCHEMA)},
+            "taylor_payload_schema": {"path": str(PAYLOAD_SCHEMA.relative_to(ROOT)), "sha256": _sha256(PAYLOAD_SCHEMA)},
         },
         "dependency_refs": dependencies,
         "required_computation": [
@@ -194,7 +285,8 @@ def build() -> dict:
             "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
             "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
             "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
-            "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
+            "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json",
+            "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json",
             "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json",
             "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
         ],
@@ -210,20 +302,21 @@ def build() -> dict:
             },
             "tier_1": {
                 "commands_and_elapsed_seconds": [
-                    {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards", "elapsed_seconds": 0.16},
-                    {"command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py", "elapsed_seconds": 0.14},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.50},
-                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json", "elapsed_seconds": 2.11},
-                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json", "elapsed_seconds": 3.34},
-                    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json", "elapsed_seconds": 2.02},
+                    {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards", "elapsed_seconds": 0.39},
+                    {"command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py", "elapsed_seconds": 0.35},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.62},
+                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json", "elapsed_seconds": 1.46},
+                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json", "elapsed_seconds": 1.22},
+                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json", "elapsed_seconds": 1.06},
+                    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json", "elapsed_seconds": 1.09},
                 ],
                 "status": "PASS",
             },
             "tier_2": {
                 "commands_and_elapsed_seconds": [
                     {"command": "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check", "elapsed_seconds": 0.18},
-                    {"command": "PYTHONPATH=. python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json", "elapsed_seconds": 0.16},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 0.50},
+                    {"command": "PYTHONPATH=. python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json", "elapsed_seconds": 0.12},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 0.56},
                 ],
                 "status": "PASS",
             },
@@ -262,16 +355,38 @@ def verify(value: Mapping[str, object]) -> None:
 
 
 def synthetic_taylor(result_id: str, theory_id: str) -> dict:
+    kinds = {
+        "row_layout": "row_layout",
+        "action": "action",
+        "q1": "operation",
+        "q2": "operation",
+        "q3": "operation",
+        "pairing": "pairing",
+        "independent_verifier": "independent_verifier",
+        "verification_receipt": "verification_receipt",
+    }
+    schema_hash = _sha256(INPUT_SCHEMA)
     return {
-        "schema": "pure-weyl-relative-linfinity-product-taylor-input-v1",
+        "schema": "pure-weyl-relative-linfinity-product-taylor-input-v2",
         "result_id": result_id,
         "claim_status": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "theory_id": theory_id,
         "background_id": BACKGROUND_ID,
         "carrier_id": "synthetic_test_carrier",
-        "coefficient_field": "Q(sqrt(3))",
-        "taylor_artifacts": {name: {"result_id": f"synthetic_{name}", "path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": _sha256(INPUT_SCHEMA)} for name in ("q1", "q2", "q3", "pairing")},
+        "coefficient_field": "Q",
+        "executable_contract": {
+            "operator_encoding": "sparse-multilinear-pbw-v1",
+            "derivative_algebra": "parallel-product-covariant-pbw-v1",
+            "row_count": 1,
+            "row_layout_sha256": schema_hash,
+            "action_sha256": schema_hash,
+            "q1_arity": 1,
+            "q2_arity": 2,
+            "q3_arity": 3,
+            "pairing_arity": 2,
+        },
+        "taylor_artifacts": {name: {"result_id": f"synthetic_{name}", "kind": kind, "path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": schema_hash} for name, kind in kinds.items()},
         "acceptance_flags": {flag: True for flag in TAYLOR_FLAGS},
         "claim_boundary": "Synthetic receiver fixture only; no scientific Taylor tensor.",
     }
@@ -329,10 +444,17 @@ def _report(value: Mapping[str, object]) -> str:
 Result: `{value['result_state']}`.
 
 The full noncyclic three-form relative triangle and both same-background
-product Taylor payloads are required. Sectoral cofibers and selected quadratic
-sources remain useful evidence but do not satisfy this input gate. The
-standard-pairing cyclic correction is obstructed, Berger tensors are rejected
-as cross-background inputs, and `q4` remains unauthorized.
+product Taylor payloads are required.  The Taylor handoff is now executable:
+each theory must provide a complete row layout, the declared BV action,
+sparse multilinear PBW tables for `q1`, `q2`, and `q3`, and the cyclic
+pairing.  The receiver validates row bounds, arities, term counts, carrier
+identity, background identity, action and layout hashes, and every artifact
+hash.  Opaque hashes plus self-declared booleans no longer satisfy the gate.
+
+Sectoral cofibers and selected quadratic sources remain useful evidence but
+do not satisfy this input gate. The standard-pairing cyclic correction is
+obstructed, Berger tensors are rejected as cross-background inputs, and `q4`
+remains unauthorized.
 """
 
 

@@ -217,6 +217,15 @@ has its fail-closed disposition and the second is active:
    verdict.  Neither payload may be inferred from the other theory by matching
    branch labels.  The nonlinear comparison must retain all three action forms
    rather than silently replacing them by a standard-pairing cyclic map.
+   The receiver contract is now V2 and executable: opaque artifact hashes plus
+   self-declared acceptance booleans are rejected.  Each theory must export a
+   complete indexed BV row layout, the action and master terms, nondegenerate
+   cyclic pairing, and rational sparse multilinear PBW tables for
+   \(q_1,q_2,q_3\).  The receiver checks artifact scope and hashes, row and dual
+   bounds, arities, term counts, derivative orders, duplicate support and
+   pairing rank before import.  The two action-derived tables remain the next
+   scientific construction; the stricter contract is not itself either
+   payload or a relative \(L_\infty\) theorem.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

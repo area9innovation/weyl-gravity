@@ -15,7 +15,7 @@
     "input_contracts": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["relative_triangle", "einstein_taylor", "weyl_taylor", "triangle_schema", "taylor_schema"],
+      "required": ["relative_triangle", "einstein_taylor", "weyl_taylor", "triangle_schema", "taylor_schema", "taylor_payload_schema"],
       "properties": {
         "relative_triangle": {"$ref": "#/$defs/contract"},
         "einstein_taylor": {"$ref": "#/$defs/contract"},
@@ -23,7 +23,8 @@
         "triangle_schema": {"$ref": "#/$defs/schema_ref"},
         "taylor_schema": {
           "$ref": "#/$defs/schema_ref"
-        }
+        },
+        "taylor_payload_schema": {"$ref": "#/$defs/schema_ref"}
       }
     },
     "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/artifact"}},

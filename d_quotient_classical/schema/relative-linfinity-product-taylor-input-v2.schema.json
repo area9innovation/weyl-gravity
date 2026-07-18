@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-linfinity-product-taylor-input-v2.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "claim_status",
+    "dependency_tags",
+    "theory_id",
+    "background_id",
+    "carrier_id",
+    "coefficient_field",
+    "executable_contract",
+    "taylor_artifacts",
+    "acceptance_flags",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-linfinity-product-taylor-input-v2"},
+    "result_id": {"enum": ["EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1", "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"]},
+    "claim_status": {"enum": ["CERTIFIED", "THEOREM_FROZEN", "CERTIFIED_THROUGH_ARITY_THREE"]},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "theory_id": {"enum": ["Einstein-Maxwell", "Weyl-Maxwell"]},
+    "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
+    "carrier_id": {"type": "string", "minLength": 1},
+    "coefficient_field": {"const": "Q"},
+    "executable_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operator_encoding", "derivative_algebra", "row_count", "row_layout_sha256", "action_sha256", "q1_arity", "q2_arity", "q3_arity", "pairing_arity"],
+      "properties": {
+        "operator_encoding": {"const": "sparse-multilinear-pbw-v1"},
+        "derivative_algebra": {"const": "parallel-product-covariant-pbw-v1"},
+        "row_count": {"type": "integer", "minimum": 1},
+        "row_layout_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "action_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "q1_arity": {"const": 1},
+        "q2_arity": {"const": 2},
+        "q3_arity": {"const": 3},
+        "pairing_arity": {"const": 2}
+      }
+    },
+    "taylor_artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_layout", "action", "q1", "q2", "q3", "pairing", "independent_verifier", "verification_receipt"],
+      "properties": {
+        "row_layout": {"$ref": "#/$defs/artifact"},
+        "action": {"$ref": "#/$defs/artifact"},
+        "q1": {"$ref": "#/$defs/artifact"},
+        "q2": {"$ref": "#/$defs/artifact"},
+        "q3": {"$ref": "#/$defs/artifact"},
+        "pairing": {"$ref": "#/$defs/artifact"},
+        "independent_verifier": {"$ref": "#/$defs/artifact"},
+        "verification_receipt": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "acceptance_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["FULL_BV_ROWS", "SUPPORT_LOCAL", "ACTION_DERIVED", "EXECUTABLE_PBW_PAYLOAD", "CYCLIC_PAIRING_VERIFIED", "Q1_Q2_IDENTITY_VERIFIED", "ARITY_THREE_IDENTITY_VERIFIED", "H_PRODUCT_EQUIVARIANT", "INDEPENDENT_VERIFIER_PASS"],
+      "properties": {
+        "FULL_BV_ROWS": {"const": true},
+        "SUPPORT_LOCAL": {"const": true},
+        "ACTION_DERIVED": {"const": true},
+        "EXECUTABLE_PBW_PAYLOAD": {"const": true},
+        "CYCLIC_PAIRING_VERIFIED": {"const": true},
+        "Q1_Q2_IDENTITY_VERIFIED": {"const": true},
+        "ARITY_THREE_IDENTITY_VERIFIED": {"const": true},
+        "H_PRODUCT_EQUIVARIANT": {"const": true},
+        "INDEPENDENT_VERIFIER_PASS": {"const": true}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {"if": {"properties": {"result_id": {"const": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"}}}, "then": {"properties": {"theory_id": {"const": "Einstein-Maxwell"}}}},
+    {"if": {"properties": {"result_id": {"const": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"}}}, "then": {"properties": {"theory_id": {"const": "Weyl-Maxwell"}}}}
+  ],
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "kind", "path", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["row_layout", "action", "operation", "pairing", "independent_verifier", "verification_receipt"]},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
