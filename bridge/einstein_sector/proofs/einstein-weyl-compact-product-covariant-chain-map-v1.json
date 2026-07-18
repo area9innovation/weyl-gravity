@@ -1,0 +1,193 @@
+{
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "formula": {
+    "field_map": "identity on the common metric and fixed-bundle Maxwell potential",
+    "ghost_map": "identity on Diff x U(1), followed by zero in the new Weyl-ghost component",
+    "identity_map": {
+      "diff": "I'_b=3 Box I_b/2+(L_b^c-S_b^c/2)I_c-3 (J_S)_b^c nabla_c J/2",
+      "u1": "J'=J",
+      "weyl_trace": "0"
+    },
+    "maxwell_equation_map": "M^a maps identically",
+    "metric_equation_map": "W_ab=3 P(E)_ab+TF[3 B(L,L;E)/2-B(L,S;E)-5 B(S,S;E)/2-B(J_L,J_L;E)/2+5 B(J_S,J_S;E)/2+3 B(I,J_S;nabla M)-3 B(J_S,I;nabla M)]_ab",
+    "operator_orders": {
+      "diff_identity": 2,
+      "maxwell": 0,
+      "metric_from_E": 2,
+      "metric_from_M": 1
+    },
+    "parallel_tensors": {
+      "J_L": "mixed-index oriented Lorentzian volume form",
+      "J_S": "mixed-index oriented spherical volume form, equal to the background magnetic F_a^b",
+      "L": "orthogonal projector onto the Lorentzian M2 factor",
+      "S": "orthogonal projector onto the spherical S2 factor; L+S=I"
+    },
+    "principal": "P(E)_ab=(Box E_ab)/2-(g_ab Box-nabla_a nabla_b)tr(E)/6",
+    "source_identities": {
+      "I_b": "nabla^a E_ab+F_bar_bc M^c",
+      "J": "nabla_a M^a"
+    },
+    "source_rows": {
+      "E_ab": "delta(G_ab+Lambda g_ab-T_ab)",
+      "M^a": "delta(nabla_b F^{ba})"
+    },
+    "support_local": true,
+    "symmetrized_action": "B(A,B;X)_ab=(A_a^c B_b^d+A_b^c B_a^d)X_cd/2",
+    "tracefree_projection": "TF(X)_ab=X_ab-g_ab tr(X)/4",
+    "uses_inverse_laplacian_curl_frequency_or_momentum": false
+  },
+  "identity_fit": {
+    "augmented_rank": 9,
+    "candidate_count": 9,
+    "coefficient_vector": [
+      "3/2",
+      "1",
+      "-1/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "-3/2"
+    ],
+    "rank": 9,
+    "unique": true
+  },
+  "inputs": {
+    "background": {
+      "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+      "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+    },
+    "exceptional_maps": {
+      "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+      "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+    },
+    "principal_preflight": {
+      "path": "bridge/certificates/einstein_maxwell_product_tangent_preflight.json",
+      "sha256": "cbae5417348975b9ceee8b04be7b6214c7ca8bf5f2c3778b4527de461569512b"
+    },
+    "source_axial": {
+      "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+      "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+    },
+    "source_polar": {
+      "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+      "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+    },
+    "target_axial_tensor": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_tensor.json",
+      "sha256": "e9a818aae8bdb79dd09253c72329f9fce4ca3bf7f3dbc5a2c2342fb0cdbfad98"
+    },
+    "target_polar_tensor": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+      "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+    }
+  },
+  "invariant_ansatz": {
+    "axial_augmented_rank": 21,
+    "axial_rank": 21,
+    "candidate_count": 41,
+    "chosen_representative_exact": true,
+    "coefficient_vector": [
+      "3",
+      "3/2",
+      "-1",
+      "0",
+      "0",
+      "0",
+      "-5/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "-1/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "5/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "3",
+      "0",
+      "0",
+      "0",
+      "3",
+      "0",
+      "0",
+      "0",
+      "0",
+      "-3",
+      "-3",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "combined_augmented_rank": 26,
+    "combined_rank": 26,
+    "endomorphism_basis": [
+      "L",
+      "S",
+      "J_L",
+      "J_S"
+    ],
+    "first_derivative_Maxwell_candidates": 20,
+    "parallel_algebraic_candidates": 20,
+    "polar_augmented_rank": 18,
+    "polar_rank": 18,
+    "principal_candidates": 1
+  },
+  "producer": {
+    "path": "bridge/einstein_sector/einstein_weyl_compact_product_covariant_chain_map.py",
+    "sha256": "0abc8fec1bbd659c606f44c7fdcced36fe4d02723731e70a25b8c6e9191574e3"
+  },
+  "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_PROOF_V1",
+  "schema": "einstein-weyl-compact-product-covariant-chain-map-proof-v1",
+  "spectral_globalization": {
+    "all_compact_k_and_off_shell_omega": true,
+    "all_m": "SO(3) equivariance",
+    "argument": "both sides are natural order-four product-equivariant tensor operators and hence each harmonic coefficient is polynomial of degree at most two in lambda; exact ell=2,3,4 equality globalizes to every spherical harmonic",
+    "degree_bound_in_lambda": 2,
+    "nodes": [
+      6,
+      12,
+      20
+    ]
+  },
+  "symbolic_action_replays": {
+    "axial_ell2": {
+      "all_ten_symmetric_tensor_components": "0",
+      "off_shell_frequency_momentum_retained": true
+    },
+    "axial_ell3": {
+      "all_ten_symmetric_tensor_components": "0",
+      "off_shell_frequency_momentum_retained": true
+    },
+    "axial_ell4": {
+      "all_ten_symmetric_tensor_components": "0",
+      "off_shell_frequency_momentum_retained": true
+    },
+    "polar_ell2": {
+      "all_ten_symmetric_tensor_components": "0",
+      "off_shell_frequency_momentum_retained": true
+    },
+    "polar_ell3": {
+      "all_ten_symmetric_tensor_components": "0",
+      "off_shell_frequency_momentum_retained": true
+    },
+    "polar_ell4": {
+      "all_ten_symmetric_tensor_components": "0",
+      "off_shell_frequency_momentum_retained": true
+    }
+  }
+}

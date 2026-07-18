@@ -160,7 +160,7 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
         self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
-        self.assertIn("polynomial ghost-field-equation-identity chain map", entry["claim_boundary"])
+        self.assertIn("natural support-local minimal chain map", entry["claim_boundary"])
         self.assertIn("does not activate Bridge 2", entry["claim_boundary"])
 
     def test_nonzero_k_exceptional_cofiber_is_a_linear_handoff_only(self):
@@ -178,6 +178,7 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("INPUT_BLOCKED", entry["claim_boundary"])
         self.assertIn("same-background", entry["claim_boundary"])
         self.assertIn("Berger tensors are ineligible", entry["claim_boundary"])
+        self.assertIn("natural support-local minimal q1 map", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
 
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):

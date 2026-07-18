@@ -848,16 +848,17 @@ Weyl form on the complete `q`-primary target has inertia `(1,1)`. The generic
 inertia obstruction therefore rules out every real-structure-preserving,
 product-equivariant standard-pairing cyclic correction, including nonidentity
 maps, chain homotopies and exact current improvements. The noncyclic
-three-form triangle and explicitly pairing-changed theories remain open. The generated
-`EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` records global lifecycle
-`HARMONIC_OFFSHELL_MAPS_ONLY`: polynomial all-row maps cover every generic,
-exceptional and homogeneous harmonic coefficient block, but harmonic
-selection is not support local.  The nonzero-momentum exceptional cofiber and
-action pairing are now certified in both parities by polynomial
-representatives.  A single natural covariant glue, finite charge endpoints, the
-noncyclic three-form triangle, and boundary domains remain open. Therefore
-these sectoral results still do not provide the all-sector support-local BV
-triangle or activate bridge 1.
+three-form triangle and explicitly pairing-changed theories remain open. The
+generated `EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` now records lifecycle
+`NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN`:
+`EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1` reconstructs all
+generic, exceptional and homogeneous coefficient maps as one natural
+support-local minimal four-dimensional chain morphism, without a harmonic
+projector or inverse differential operator.  The nonzero-momentum exceptional
+cofiber and action pairing remain certified in both parities by polynomial
+representatives.  The three separate noncyclic forms, finite charge endpoints,
+the completed triangle and boundary domains remain open.  Therefore this
+local minimal map still does not activate bridge 1.
 The declared `k=0` homogeneous/twist-times-`ell=2` extra bounded-resonance
 source matrix is now complete.  Its non-axisymmetric Clebsch--Gordan fixture
 fixes every `m`: the twist-position adjoint matrix has rank two, while the
@@ -887,8 +888,8 @@ secular prefactor.  The aligned twist-position/velocity times extra-primary
 dimensional fixture classifies all sixteen channels, thirteen have printed
 exact polynomial corrections, three vanish, and every full action-row
 remainder is zero.  This advances bridge-1 input but does not activate the
-bridge: the generated branch dictionary is `HARMONIC_OFFSHELL_MAPS_ONLY`, its
-gate is `OPEN`, and atlas row
+bridge: the generated branch dictionary is
+`NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN`, its gate is `OPEN`, and atlas row
 `einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face` retains
 `NO_CERTIFIED_MAP` for causal/retarded transport.  The remaining complete-
 orbit global/global and extra/extra self coefficient lists are still open.

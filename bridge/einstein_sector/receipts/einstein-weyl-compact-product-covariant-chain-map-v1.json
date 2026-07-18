@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1_VERIFICATION_RECEIPT",
+  "producing_date": "2026-07-18",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "artifacts": {
+    "certificate": {
+      "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
+      "sha256": "2b2d8e669509afa29680c0001352871d4187f12af679619ce8d9f69c41518155"
+    },
+    "heavy_proof": {
+      "path": "bridge/einstein_sector/proofs/einstein-weyl-compact-product-covariant-chain-map-v1.json",
+      "sha256": "b7d8c44f5145fa3dd78315c74b3b0843e9503270677e89fa1035ffc7d84e4099"
+    },
+    "producer": {
+      "path": "bridge/einstein_sector/einstein_weyl_compact_product_covariant_chain_map.py",
+      "sha256": "0abc8fec1bbd659c606f44c7fdcced36fe4d02723731e70a25b8c6e9191574e3"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_weyl_compact_product_covariant_chain_map.py",
+      "sha256": "d4f9e02e26485563d6798e7f12dd89627ac54f1601937426af2b9da1b187c365"
+    },
+    "test": {
+      "path": "bridge/einstein_sector/tests/test_einstein_weyl_compact_product_covariant_chain_map.py",
+      "sha256": "9ead93634fdafcf7a8b046362a85d83b2c5351b368a229f2a3f5840e8ab297e6"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein-weyl-compact-product-covariant-chain-map-v1.schema.json",
+      "sha256": "4708712bcdbc352774adc6ea833282c161939fbe88cdeca3ff7023772be48f51"
+    },
+    "report": {
+      "path": "bridge/einstein_sector/reports/einstein-weyl-compact-product-covariant-chain-map.md",
+      "sha256": "2726b745319f33b2923bc02ed0a7495b7968a940d709b299552c78abca26c60f"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.11,
+      "command": "python3 -m py_compile bridge/einstein_sector/einstein_weyl_compact_product_covariant_chain_map.py bridge/einstein_sector/verify_einstein_weyl_compact_product_covariant_chain_map.py bridge/einstein_sector/tests/test_einstein_weyl_compact_product_covariant_chain_map.py && python3 -m json.tool bridge/einstein_sector/schema/einstein-weyl-compact-product-covariant-chain-map-v1.schema.json >/dev/null && python3 -m json.tool bridge/einstein_sector/proofs/einstein-weyl-compact-product-covariant-chain-map-v1.json >/dev/null && python3 -m json.tool bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json >/dev/null"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.55,
+      "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_compact_product_covariant_chain_map --verify bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json && PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_compact_product_covariant_chain_map.py && PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_compact_product_covariant_chain_map -v"
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 329.92,
+      "command": "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_compact_product_covariant_chain_map --verify-proof",
+      "meaning": "Recomputed the invariant coefficient solve and all six exact action-row replays, then compared the complete proof object with the stored content-addressed proof."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This classifies one local compact-product chain map without freezing a paper theorem, shared core algebra or repository release."
+    }
+  },
+  "claim_boundary": "The receipt covers the natural support-local minimal chain map only. The noncyclic three-form triangle, finite residual and large-gauge endpoints, causal Green data, nonlinear morphism, observables and quantum transport remain unpromoted."
+}

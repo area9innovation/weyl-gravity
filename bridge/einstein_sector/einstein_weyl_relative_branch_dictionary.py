@@ -20,6 +20,7 @@ INPUTS = {
     "generic_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
     "exceptional_global_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+    "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
     "axial_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "exceptional_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
@@ -264,6 +265,18 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional/global all-row chain-map input changed")
     if exceptional_maps["single_covariant_support_local_map_reconstructed"]:
         raise AssertionError("harmonic exceptional maps were over-promoted to covariant glue")
+    covariant_map = records["covariant_chain_map"]["classification"]
+    if not (
+        covariant_map["single_covariant_support_local_map_reconstructed"]
+        and covariant_map["full_curved_minimal_local_chain_map_certified"]
+        and covariant_map["harmonic_row_selection_eliminated"]
+    ):
+        raise AssertionError("natural compact-product chain-map input changed")
+    if (
+        covariant_map["noncyclic_three_form_triangle_completed"]
+        or covariant_map["finite_large_gauge_and_residual_endpoints_included"]
+    ):
+        raise AssertionError("covariant map was over-promoted beyond its local minimal scope")
     if records["polar_lift"]["classification"]["cyclic_BV_chain_map_certified"]:
         raise AssertionError("polar cyclic BV lifecycle changed")
     if records["generic_cyclic_obstruction"]["classification"]["fixed_identity_cyclic_pairing_compatibility"] != "OBSTRUCTED":
@@ -315,15 +328,15 @@ def build() -> dict[str, object]:
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": _sha256(SCHEMA),
         "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-        "result_state": "ALL_HARMONIC_OFFSHELL_MAPS_EXPORTED_COVARIANT_GLUE_AND_ENDPOINT_GATE_OPEN",
+        "result_state": "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_CERTIFIED_NONCYCLIC_FORMS_AND_ENDPOINTS_OPEN",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "bridge": {
             "priority": 1,
             "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
-            "current_global_map_lifecycle": "HARMONIC_OFFSHELL_MAPS_ONLY",
+            "current_global_map_lifecycle": "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN",
             "activation_gate": "OPEN",
-            "reason": "polynomial all-row maps and solution cofibers now cover every generic, exceptional and homogeneous harmonic coefficient block, while the all-standard-pairing cyclic-map route is obstructed; a single natural covariant support-local map, finite residual endpoints and boundary domain remain absent",
+            "reason": "one natural support-local minimal chain map now globalizes every harmonic coefficient block, while the all-standard-pairing cyclic-map route is obstructed; the three separate noncyclic forms, finite residual/large-gauge endpoints and boundary domain remain absent",
             "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             "requested_full_artifact_certified": False,
         },
@@ -352,7 +365,7 @@ def build() -> dict[str, object]:
             "generic_standard_pairing_cyclic_maps_obstructed": True,
             "exceptional_and_global_harmonic_offshell_maps_certified": True,
             "all_harmonic_sector_coefficient_maps_available": True,
-            "single_covariant_support_local_map_reconstructed": False,
+            "single_covariant_support_local_map_reconstructed": True,
             "exceptional_k0_solution_cofiber_certified": True,
             "exceptional_nonzero_k_solution_cofiber_certified": True,
             "homogeneous_solution_cofiber_zero": True,
@@ -368,8 +381,8 @@ def build() -> dict[str, object]:
             "bridge_1_activation_gate_satisfied": False,
             "cross_background_mode_identification_made": False,
         },
-        "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, polynomial all-row chain maps and solution cofibers in every generic, exceptional and homogeneous harmonic coefficient block, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, and zero homogeneous and twist-primary solution cofibers. Harmonic selection is not support local, so the honest all-sector target remains a single natural covariant noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
-        "next_gate": "reconstruct the complete harmonic tables as one natural support-local four-dimensional chain morphism and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+        "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, one natural support-local minimal chain map globalizing every harmonic coefficient block, solution cofibers in every generic, exceptional and homogeneous sector, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, and zero homogeneous and twist-primary solution cofibers. The honest all-sector target remains a noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately and including finite residual endpoints. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+        "next_gate": "export the Einstein, pulled-back Weyl and relative forms separately and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),

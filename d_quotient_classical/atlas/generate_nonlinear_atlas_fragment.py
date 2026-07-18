@@ -35,6 +35,7 @@ CERTS = {
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "exceptional_ell1_nonzero_k_cofiber": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
     "exceptional_global_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+    "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
@@ -501,7 +502,7 @@ def entries() -> list[dict[str, Any]]:
             "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
             "mode_data": _mode_data(
                 _second(
-                    ("OPEN", "The exceptional all-row q1 chain map is exact, but the q2 relative morphism and one natural support-local covariant glue remain open."),
+                    ("OPEN", "The exceptional all-row q1 map and its natural support-local covariant globalization are exact, but the q2 relative morphism remains open."),
                     ("OPEN", "No exceptional smooth-secular relative obstruction map is certified."),
                     ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
                 ),
@@ -510,8 +511,8 @@ def entries() -> list[dict[str, Any]]:
                 taub=("OPEN", "The solution cofiber alone does not define the complete exceptional quadratic obstruction map."),
                 resonance=("OPEN", "No complete exceptional nonlinear resonance table is certified."),
             ),
-            "evidence": _evidence("exceptional_ell1_cofiber", "exceptional_global_offshell", "relative_branch_dictionary", "dictionary"),
-            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber at ell=1,k=0 together with a polynomial ghost-field-equation-identity chain map for every exceptional and homogeneous harmonic coefficient block. Harmonic selection is not support local; one natural covariant glue, q2, and final residual descent remain open, so this row does not activate Bridge 2.",
+            "evidence": _evidence("exceptional_ell1_cofiber", "exceptional_global_offshell", "covariant_chain_map", "relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber at ell=1,k=0. Its q1 coefficient map is now the harmonic reduction of one certified natural support-local minimal chain map, but the cofiber selection itself remains REDUCED-MODE; q2 and final residual descent remain open, so this row does not activate Bridge 2.",
         },
         {
             "id": "nonlinear.product.bridge1.exceptional_ell1_nonzero_k_solution_cofiber",
@@ -519,7 +520,7 @@ def entries() -> list[dict[str, Any]]:
             "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
             "mode_data": _mode_data(
                 _second(
-                    ("OPEN", "The all-row q1 map and solution cofiber are exact; the q2 relative morphism and one natural support-local covariant glue remain open."),
+                    ("OPEN", "The all-row q1 map, its natural support-local globalization and the solution cofiber are exact; the q2 relative morphism remains open."),
                     ("OPEN", "No nonzero-k smooth-secular relative obstruction map is certified."),
                     ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
                 ),
@@ -528,8 +529,8 @@ def entries() -> list[dict[str, Any]]:
                 taub=("OPEN", "The solution cofiber alone does not define the nonzero-k quadratic tangent cone."),
                 resonance=("OPEN", "No complete nonzero-k nonlinear resonance table is certified."),
             ),
-            "evidence": _evidence("exceptional_ell1_nonzero_k_cofiber", "exceptional_global_offshell", "relative_branch_dictionary", "dictionary"),
-            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber and polynomial all-row q1 coefficient map for ell=1 at nonzero compact momentum. It does not reconstruct the natural covariant glue, supply q2, perform final residual descent, or activate Bridge 2.",
+            "evidence": _evidence("exceptional_ell1_nonzero_k_cofiber", "exceptional_global_offshell", "covariant_chain_map", "relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber for ell=1 at nonzero compact momentum. Its q1 coefficient map is now the reduction of one natural support-local minimal chain map. It does not supply q2, perform final residual descent, or activate Bridge 2.",
         },
         {
             "id": "nonlinear.product.bridge2.relative_linfinity_through_arity_three_preflight",
@@ -537,7 +538,7 @@ def entries() -> list[dict[str, Any]]:
             "descriptions": {axis: "NO_CERTIFIED_MAP" for axis in AXES},
             "mode_data": _mode_data(
                 _second(
-                    ("NO_CERTIFIED_MAP", "The full off-shell relative triangle and both same-background product Taylor payloads are missing."),
+                    ("NO_CERTIFIED_MAP", "The support-local minimal q1 chain map is certified, but the noncyclic three-form triangle, finite endpoints and both same-background product q2/q3 payloads are missing."),
                     ("NO_CERTIFIED_MAP", "No full relative morphism exists on which to compare smooth-secular correction classes."),
                     ("NO_CERTIFIED_MAP", "No compact-product retarded relative morphism is certified."),
                 ),
@@ -546,8 +547,8 @@ def entries() -> list[dict[str, Any]]:
                 taub=("NO_CERTIFIED_MAP", "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map."),
                 resonance=("NO_CERTIFIED_MAP", "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
             ),
-            "evidence": _evidence("relative_linfinity_preflight", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
-            "claim_boundary": "Compact-product Bridge 2 is INPUT_BLOCKED until Bridge 1 supplies the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 and complete same-background Einstein-Maxwell and Weyl-Maxwell q1,q2,q3 payloads. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized.",
+            "evidence": _evidence("relative_linfinity_preflight", "covariant_chain_map", "relative_branch_dictionary", "generic_cyclic_map_inertia_obstruction", "dictionary", "mixed_obstruction"),
+            "claim_boundary": "Compact-product Bridge 2 remains INPUT_BLOCKED after certification of the natural support-local minimal q1 map: Bridge 1 must still supply the V2 noncyclic three-form EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 with finite endpoints, and complete same-background Einstein-Maxwell and Weyl-Maxwell q2/q3 payloads remain absent. A standard-pairing cyclic triangle is obstructed. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

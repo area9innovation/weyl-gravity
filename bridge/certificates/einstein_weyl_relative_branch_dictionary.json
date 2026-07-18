@@ -563,10 +563,10 @@
   ],
   "bridge": {
     "activation_gate": "OPEN",
-    "current_global_map_lifecycle": "HARMONIC_OFFSHELL_MAPS_ONLY",
+    "current_global_map_lifecycle": "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN",
     "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
     "priority": 1,
-    "reason": "polynomial all-row maps and solution cofibers now cover every generic, exceptional and homogeneous harmonic coefficient block, while the all-standard-pairing cyclic-map route is obstructed; a single natural covariant support-local map, finite residual endpoints and boundary domain remain absent",
+    "reason": "one natural support-local minimal chain map now globalizes every harmonic coefficient block, while the all-standard-pairing cyclic-map route is obstructed; the three separate noncyclic forms, finite residual/large-gauge endpoints and boundary domain remain absent",
     "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
     "requested_full_artifact_certified": false
   },
@@ -594,19 +594,19 @@
     "generic_standard_pairing_cyclic_maps_obstructed": true,
     "homogeneous_solution_cofiber_zero": true,
     "same_background_only": true,
-    "single_covariant_support_local_map_reconstructed": false,
+    "single_covariant_support_local_map_reconstructed": true,
     "twist_solution_cofiber_zero": true
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, polynomial all-row chain maps and solution cofibers in every generic, exceptional and homogeneous harmonic coefficient block, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, and zero homogeneous and twist-primary solution cofibers. Harmonic selection is not support local, so the honest all-sector target remains a single natural covariant noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+  "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, one natural support-local minimal chain map globalizing every harmonic coefficient block, solution cofibers in every generic, exceptional and homogeneous sector, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, and zero homogeneous and twist-primary solution cofibers. The honest all-sector target remains a noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately and including finite residual endpoints. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "reconstruct the complete harmonic tables as one natural support-local four-dimensional chain morphism and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+  "next_gate": "export the Einstein, pulled-back Weyl and relative forms separately and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "8bc3cf5b4bad2df10483aa425689ed31ccd047f6ef02723d5c21083cef1684a8",
+    "generator_sha256": "ac90b712d8a475040361bfe12f5948599ed166254a3161ce10d421c4ce579f3e",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
@@ -631,6 +631,10 @@
       "complete_global_extra_cone": {
         "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
         "sha256": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+      },
+      "covariant_chain_map": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
+        "sha256": "2b2d8e669509afa29680c0001352871d4187f12af679619ce8d9f69c41518155"
       },
       "ell1_standard": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
@@ -732,10 +736,10 @@
     "standard_pairing_cyclic_correction_exists_generic": false
   },
   "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-  "result_state": "ALL_HARMONIC_OFFSHELL_MAPS_EXPORTED_COVARIANT_GLUE_AND_ENDPOINT_GATE_OPEN",
+  "result_state": "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_CERTIFIED_NONCYCLIC_FORMS_AND_ENDPOINTS_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "86c4e1e69a3b8bbc001cc0e9a1eb9a4b973234dc53482fc8cfcba1804af19803",
+  "schema_sha256": "d2374fc0601d9883ec652c1cedfb712486b3fc000151bd1dc172791668ce7195",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",

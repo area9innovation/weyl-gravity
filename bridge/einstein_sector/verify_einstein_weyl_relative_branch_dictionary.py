@@ -70,8 +70,10 @@ def main() -> None:
         raise AssertionError("exceptional/global off-shell coefficient coverage was dropped")
     if not flags["exceptional_nonzero_k_solution_cofiber_certified"]:
         raise AssertionError("nonzero-k exceptional cofiber coverage was dropped")
-    if flags["single_covariant_support_local_map_reconstructed"]:
-        raise AssertionError("harmonic coefficient maps were misreported as covariant support-local glue")
+    if not flags["single_covariant_support_local_map_reconstructed"]:
+        raise AssertionError("certified covariant support-local glue was dropped")
+    if value["bridge"]["current_global_map_lifecycle"] != "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN":
+        raise AssertionError("covariant-map lifecycle is stale")
     if flags["full_offshell_all_sector_triangle_certified"] or flags["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("bridge 1 was over-promoted")
     if flags["cross_background_mode_identification_made"]:

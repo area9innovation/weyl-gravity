@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-weyl-compact-product-covariant-chain-map-v1.schema.json",
+  "title": "Compact-product covariant Einstein--Weyl chain map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "provenance",
+    "chain_map",
+    "exact_identities",
+    "coverage",
+    "classification",
+    "next_gate",
+    "claim_boundary",
+    "verification_commands"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "einstein-weyl-compact-product-covariant-chain-map-v1"},
+    "schema_path": {"const": "bridge/einstein_sector/schema/einstein-weyl-compact-product-covariant-chain-map-v1.schema.json"},
+    "schema_sha256": {"$ref": "#/$defs/sha256"},
+    "result_id": {"const": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "carrier", "harmonics"],
+      "properties": {
+        "theory": {"type": "string"},
+        "background": {"type": "string"},
+        "boundaries": {"type": "string"},
+        "carrier": {"type": "string"},
+        "harmonics": {"type": "string"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["producer_path", "producer_sha256", "heavy_proof", "inputs"],
+      "properties": {
+        "producer_path": {"type": "string"},
+        "producer_sha256": {"$ref": "#/$defs/sha256"},
+        "heavy_proof": {"$ref": "#/$defs/pathHash"},
+        "inputs": {
+          "type": "object",
+          "additionalProperties": {"$ref": "#/$defs/pathHash"},
+          "minProperties": 7,
+          "maxProperties": 7
+        }
+      }
+    },
+    "chain_map": {"$ref": "#/$defs/chainMap"},
+    "exact_identities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ghost_field", "field_equation", "equation_identity", "target_trace", "maxwell_row", "all_symbolic_defects"],
+      "properties": {
+        "ghost_field": {"type": "string"},
+        "field_equation": {"type": "string"},
+        "equation_identity": {"type": "string"},
+        "target_trace": {"type": "string"},
+        "maxwell_row": {"type": "string"},
+        "all_symbolic_defects": {"const": "0"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generic_axial_and_polar", "exceptional_ell1", "homogeneous_ell0", "spectral_projector_used", "support_local"],
+      "properties": {
+        "generic_axial_and_polar": {"type": "string"},
+        "exceptional_ell1": {"type": "string"},
+        "homogeneous_ell0": {"type": "string"},
+        "spectral_projector_used": {"const": false},
+        "support_local": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "single_covariant_support_local_map_reconstructed",
+        "full_curved_minimal_local_chain_map_certified",
+        "harmonic_row_selection_eliminated",
+        "noncyclic_three_form_triangle_completed",
+        "standard_pairing_cyclic_map_exists",
+        "standard_pairing_cyclic_map_obstructed_by_imported_inertia",
+        "finite_large_gauge_and_residual_endpoints_included",
+        "causal_nonlinear_observational_or_quantum_claim"
+      ],
+      "properties": {
+        "single_covariant_support_local_map_reconstructed": {"const": true},
+        "full_curved_minimal_local_chain_map_certified": {"const": true},
+        "harmonic_row_selection_eliminated": {"const": true},
+        "noncyclic_three_form_triangle_completed": {"const": false},
+        "standard_pairing_cyclic_map_exists": {"const": false},
+        "standard_pairing_cyclic_map_obstructed_by_imported_inertia": {"const": true},
+        "finite_large_gauge_and_residual_endpoints_included": {"const": false},
+        "causal_nonlinear_observational_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "verification_commands": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 4,
+      "maxItems": 4
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pathHash": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "chainMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parallel_tensors",
+        "symmetrized_action",
+        "tracefree_projection",
+        "source_rows",
+        "principal",
+        "metric_equation_map",
+        "maxwell_equation_map",
+        "source_identities",
+        "identity_map",
+        "ghost_map",
+        "field_map",
+        "operator_orders",
+        "support_local",
+        "uses_inverse_laplacian_curl_frequency_or_momentum"
+      ],
+      "properties": {
+        "parallel_tensors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["L", "S", "J_L", "J_S"],
+          "properties": {
+            "L": {"type": "string"},
+            "S": {"type": "string"},
+            "J_L": {"type": "string"},
+            "J_S": {"type": "string"}
+          }
+        },
+        "symmetrized_action": {"type": "string"},
+        "tracefree_projection": {"type": "string"},
+        "source_rows": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["E_ab", "M^a"],
+          "properties": {
+            "E_ab": {"type": "string"},
+            "M^a": {"type": "string"}
+          }
+        },
+        "principal": {"type": "string"},
+        "metric_equation_map": {"type": "string"},
+        "maxwell_equation_map": {"type": "string"},
+        "source_identities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["I_b", "J"],
+          "properties": {
+            "I_b": {"type": "string"},
+            "J": {"type": "string"}
+          }
+        },
+        "identity_map": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["diff", "u1", "weyl_trace"],
+          "properties": {
+            "diff": {"type": "string"},
+            "u1": {"type": "string"},
+            "weyl_trace": {"type": "string"}
+          }
+        },
+        "ghost_map": {"type": "string"},
+        "field_map": {"type": "string"},
+        "operator_orders": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["metric_from_E", "metric_from_M", "maxwell", "diff_identity"],
+          "properties": {
+            "metric_from_E": {"const": 2},
+            "metric_from_M": {"const": 1},
+            "maxwell": {"const": 0},
+            "diff_identity": {"const": 2}
+          }
+        },
+        "support_local": {"const": true},
+        "uses_inverse_laplacian_curl_frequency_or_momentum": {"const": false}
+      }
+    }
+  }
+}

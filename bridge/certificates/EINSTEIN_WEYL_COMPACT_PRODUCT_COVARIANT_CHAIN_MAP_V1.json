@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "chain_map": {
+    "field_map": "identity on the common metric and fixed-bundle Maxwell potential",
+    "ghost_map": "identity on Diff x U(1), followed by zero in the new Weyl-ghost component",
+    "identity_map": {
+      "diff": "I'_b=3 Box I_b/2+(L_b^c-S_b^c/2)I_c-3 (J_S)_b^c nabla_c J/2",
+      "u1": "J'=J",
+      "weyl_trace": "0"
+    },
+    "maxwell_equation_map": "M^a maps identically",
+    "metric_equation_map": "W_ab=3 P(E)_ab+TF[3 B(L,L;E)/2-B(L,S;E)-5 B(S,S;E)/2-B(J_L,J_L;E)/2+5 B(J_S,J_S;E)/2+3 B(I,J_S;nabla M)-3 B(J_S,I;nabla M)]_ab",
+    "operator_orders": {
+      "diff_identity": 2,
+      "maxwell": 0,
+      "metric_from_E": 2,
+      "metric_from_M": 1
+    },
+    "parallel_tensors": {
+      "J_L": "mixed-index oriented Lorentzian volume form",
+      "J_S": "mixed-index oriented spherical volume form, equal to the background magnetic F_a^b",
+      "L": "orthogonal projector onto the Lorentzian M2 factor",
+      "S": "orthogonal projector onto the spherical S2 factor; L+S=I"
+    },
+    "principal": "P(E)_ab=(Box E_ab)/2-(g_ab Box-nabla_a nabla_b)tr(E)/6",
+    "source_identities": {
+      "I_b": "nabla^a E_ab+F_bar_bc M^c",
+      "J": "nabla_a M^a"
+    },
+    "source_rows": {
+      "E_ab": "delta(G_ab+Lambda g_ab-T_ab)",
+      "M^a": "delta(nabla_b F^{ba})"
+    },
+    "support_local": true,
+    "symmetrized_action": "B(A,B;X)_ab=(A_a^c B_b^d+A_b^c B_a^d)X_cd/2",
+    "tracefree_projection": "TF(X)_ab=X_ab-g_ab tr(X)/4",
+    "uses_inverse_laplacian_curl_frequency_or_momentum": false
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem constructs one natural finite-order support-local chain morphism on the common compact-product tensor bundles and proves all local ghost, field, equation and identity squares. It does not make the map cyclic for the standard action pairings, include finite large-gauge/residual endpoint rows, construct a causal Green map, or imply nonlinear, observational, particle or quantum equivalence.",
+  "classification": {
+    "causal_nonlinear_observational_or_quantum_claim": false,
+    "finite_large_gauge_and_residual_endpoints_included": false,
+    "full_curved_minimal_local_chain_map_certified": true,
+    "harmonic_row_selection_eliminated": true,
+    "noncyclic_three_form_triangle_completed": false,
+    "single_covariant_support_local_map_reconstructed": true,
+    "standard_pairing_cyclic_map_exists": false,
+    "standard_pairing_cyclic_map_obstructed_by_imported_inertia": true
+  },
+  "coverage": {
+    "exceptional_ell1": "CERTIFIED_BY_POLYNOMIAL_GLOBALIZATION_AND_IMPORTED_DIRECT_TABLES",
+    "generic_axial_and_polar": "CERTIFIED_BY_NATURAL_TENSOR_FORMULA",
+    "homogeneous_ell0": "CERTIFIED_AT_LOCAL_TENSOR_LEVEL; finite residual/large-gauge endpoint rows remain separate",
+    "spectral_projector_used": false,
+    "support_local": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_identities": {
+    "all_symbolic_defects": "0",
+    "equation_identity": "N_WM Q_equation=Q_identity N_EM",
+    "field_equation": "H_WM i_field=Q_equation H_EM",
+    "ghost_field": "K_WM i_ghost=i_field K_EM",
+    "maxwell_row": "identity",
+    "target_trace": "tr(W)=0"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "add the finite residual/large-gauge endpoint rows and export the Einstein, pulled-back Weyl and relative forms separately as the noncyclic three-form triangle",
+  "provenance": {
+    "heavy_proof": {
+      "path": "bridge/einstein_sector/proofs/einstein-weyl-compact-product-covariant-chain-map-v1.json",
+      "sha256": "b7d8c44f5145fa3dd78315c74b3b0843e9503270677e89fa1035ffc7d84e4099"
+    },
+    "inputs": {
+      "background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "exceptional_maps": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+        "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+      },
+      "principal_preflight": {
+        "path": "bridge/certificates/einstein_maxwell_product_tangent_preflight.json",
+        "sha256": "cbae5417348975b9ceee8b04be7b6214c7ca8bf5f2c3778b4527de461569512b"
+      },
+      "source_axial": {
+        "path": "bridge/certificates/einstein_maxwell_axial_master_complex.json",
+        "sha256": "ba34e300dd2a89b07fdbb6a5233115594542f1c0aa6751bcae8084e7c882de02"
+      },
+      "source_polar": {
+        "path": "bridge/certificates/einstein_maxwell_polar_master_complex.json",
+        "sha256": "473d9c826b69220d2398cf4eb44b75e7c40bc23fd4d378a9eb2069a2d3f61ae5"
+      },
+      "target_axial_tensor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell2_full_tensor.json",
+        "sha256": "e9a818aae8bdb79dd09253c72329f9fce4ca3bf7f3dbc5a2c2342fb0cdbfad98"
+      },
+      "target_polar_tensor": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+      }
+    },
+    "producer_path": "bridge/einstein_sector/einstein_weyl_compact_product_covariant_chain_map.py",
+    "producer_sha256": "0abc8fec1bbd659c606f44c7fdcced36fe4d02723731e70a25b8c6e9191574e3"
+  },
+  "result_id": "EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1",
+  "result_state": "NATURAL_SUPPORT_LOCAL_ALL_ROW_MINIMAL_CHAIN_MAP_CERTIFIED_NONCYCLIC_TRIANGLE_ENDPOINTS_OPEN",
+  "schema": "einstein-weyl-compact-product-covariant-chain-map-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein-weyl-compact-product-covariant-chain-map-v1.schema.json",
+  "schema_sha256": "4708712bcdbc352774adc6ea833282c161939fbe88cdeca3ff7023772be48f51",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product R_t x S1 x S2 at the rational common fixture",
+    "boundaries": "smooth fixed magnetic bundle; identity-component local gauge complex",
+    "carrier": "four-dimensional minimal Diff x U(1) equation complex into minimal Diff x U(1) x Weyl equation complex",
+    "harmonics": "all ell,m and compact k by naturality and exact polynomial globalization",
+    "theory": "Einstein-Maxwell_to_Weyl-Maxwell"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_compact_product_covariant_chain_map --verify-proof",
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_compact_product_covariant_chain_map --verify bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_compact_product_covariant_chain_map.py",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_compact_product_covariant_chain_map -v"
+  ]
+}

@@ -194,11 +194,13 @@ has its fail-closed disposition and the second is active:
    cyclic. Export the Einstein, pulled-back Weyl and relative forms separately.
    An explicitly pairing-changed theorem is a different open route. This is
    Bridge 2 and must not import Berger or vacuum carriers without an explicit
-   crosswalk.  Polynomial all-row maps now exist in every generic,
-   exceptional, and homogeneous harmonic coefficient block.  The remaining
-   linear gate is their reconstruction as one natural support-local covariant
-   morphism and the finite residual endpoints; harmonic selection itself is
-   not a local map.  The nonzero-`k` exceptional solution cofiber and its
+   crosswalk.  `EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1` now
+   reconstructs the generic, exceptional and homogeneous coefficient maps as
+   one natural support-local minimal four-dimensional chain morphism, with no
+   harmonic projector or inverse differential operator.  The remaining
+   linear gate is to export the Einstein, pulled-back Weyl and relative forms
+   separately and include the finite residual/large-gauge endpoints.  The
+   nonzero-`k` exceptional solution cofiber and its
    action pairing are now exact: each parity has the standard Einstein image
    at `omega^2-k^2=4` and one nonradical extra class at
    `omega^2-k^2=4/3`, represented polynomially without a differential
