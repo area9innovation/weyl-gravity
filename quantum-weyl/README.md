@@ -183,8 +183,7 @@ or quantum-master-equation result.
 - [`reports/generic-background-ghost-longitudinal-schur-resummation.md`](reports/generic-background-ghost-longitudinal-schur-resummation.md)
   resums those three longitudinal towers into one normalized scalar Schur
   determinant, fixes the cubic weights `(-1/3,1/9,-1/81)`, reproduces the
-  Einstein scalar factor, and records the unevaluated generic kernel and
-  local zeta multiplicative-anomaly boundary.
+  Einstein scalar factor, and records the unevaluated generic finite kernel.
 - [`reports/generic-background-ghost-schur-schatten-split.md`](reports/generic-background-ghost-schur-schatten-split.md)
   proves the sharp `S_3` trace-ideal disposition, defines the canonical
   modified Fredholm tail, and computes `Wres(K)`, `Wres(K^2)`, and
@@ -193,7 +192,12 @@ or quantum-master-equation result.
 - [`reports/generic-background-ghost-schur-wodzicki-residue.md`](reports/generic-background-ghost-schur-wodzicki-residue.md)
   derives the linear and quadratic Schur residues from an exact mixed heat
   insertion, checks Einstein and isotropic specializations independently,
-  and keeps the finite determinant and zeta-anomaly claims open.
+  and keeps the finite determinant claim open.
+- [`reports/generic-background-ghost-schur-weight-raised-zeta-factorization.md`](reports/generic-background-ghost-schur-weight-raised-zeta-factorization.md)
+  freezes the generic convention `A=S_L Q`, `B=Q`, proves that the BCH
+  weighted trace vanishes through four-dimensional residue order, and obtains
+  the exact local defect `-(1/4)Wres(K^2)`. Its round-`S4` value `-1/3` is
+  crosswalked explicitly to the distinct Einstein-ratio defect `5/3`.
 - [`reports/generic-background-ghost-n3-adiabatic-carrier.md`](reports/generic-background-ghost-n3-adiabatic-carrier.md)
   computes the exact three-insertion isotropic tensor numerator and its
   scalar-flat coefficient while keeping the IR-singular adiabatic radial

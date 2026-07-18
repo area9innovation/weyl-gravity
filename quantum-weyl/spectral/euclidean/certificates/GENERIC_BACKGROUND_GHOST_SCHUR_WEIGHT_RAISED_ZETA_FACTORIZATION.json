@@ -1,0 +1,134 @@
+{
+  "BCH_reduction": {
+    "commutator_cancellation": "tr^Q([X,Y])=0 and tr^Q([Y,[Y,X]])=-tr^Q([[Y,X],Y])=0 because Y=log Q",
+    "orders": {
+      "[X,Y]": -3,
+      "[X,[X,Y]]": -6,
+      "[Y,[Y,X]]": -4,
+      "omitted_terms": "at most -5 or trace-class at four-dimensional local residue order"
+    },
+    "square_reduction": "Wres[(log S_L+L)^2]=Wres[(log S_L)^2]=Wres(K^2)",
+    "through_residue_order": "L(S_L,Q)=log(S_L Q)-log S_L-log Q=(1/2)[X,Y]+(1/12)[Y,[Y,X]] mod Psi^-5",
+    "variables": "X=log S_L in Psi^-2; Y=log Q",
+    "weighted_BCH_trace_through_residue_order": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "weighted_trace_defect": "tr^Q([U,V])=-(1/ord Q)Wres(U[V,log Q])"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate freezes the selected generic weight-raised scalar factorization A=S_L Q, B=Q with Q=Delta_0+Pi_0 and computes its complete four-dimensional local zeta-to-weighted defect. BCH order counting and the Q-weighted commutator defect make the noncommuting BCH trace vanish through residue order, leaving m_Q^wr(S_L)=-(1/4)Wres(K^2)=-(4 pi)^-2 integral[R^2+2 Ric^2]/108. On round unit S4 this prescription gives -1/3 and a zeta ratio -4.3114788189..., distinct from the separately certified Einstein numerator/denominator prescription with defect 5/3. The result is prescription- and cut-stratum-specific. It does not compute the global generic finite Schur rows, the full vector-block zeta determinant factorization, the physical fourth-order Hessian, complete Gamma1/Q1, residual transfer, Lorentzian QME, state, particle, positivity, scattering or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "FULL_GHOST_BLOCK_ZETA_FACTORIZATION_COMPUTED": false,
+    "GENERIC_BACKGROUND_FINITE_SCHUR_ROWS_COMPUTED": false,
+    "GENERIC_BCH_WEIGHTED_TRACE_VANISHES_AT_4D_LOCAL_RESIDUE_ORDER": true,
+    "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_DEFECT_COMPUTED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false,
+    "ROUND_S4_WEIGHT_RAISED_SPECIALIZATION_REPLAYED": true
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "Schur_Schatten_split": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT",
+      "sha256": "b9f047ca74ba8c335bdb53ecb8af684c2e9529d8d9be622efc8df8b43dcacb51"
+    },
+    "round_S4_Einstein_ratio_factorization": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
+      "result_id": "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION",
+      "sha256": "83a5a4583787b401330ede3b35fc48e5bd40335c5511ec2a97df54343c045ddd"
+    },
+    "round_S4_weighted_determinant": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json",
+      "result_id": "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES",
+      "sha256": "b16768333e62f624720130d1c922b42772f10bf7ad10ee1ac27832c847588591"
+    },
+    "weighted_trace_scale": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE",
+      "sha256": "8073ad3800d4ad9662232769efeb45971e49b5eaf1f4b933714245d85771bd1d"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "factorization_convention_crosswalk": {
+    "Einstein_ratio_convention": "A_E=Delta_0-4, B_E=Delta_0-6; round defect=5/3",
+    "difference_of_defects": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "explanation": "multiplicative defects depend on the chosen order-raising/factorization; the two exact round values are not the same prescription and are not contradictory",
+    "weight_raised_generic_convention": "A=S_L Delta_0, B=Delta_0; round defect=-1/3"
+  },
+  "factorization_definition": {
+    "admissibility_boundary": "the result is local on a connected stratum where Q, S_L Q and their logarithms share the declared cuts; no claim crosses a spectral-cut wall",
+    "defect": "m_Q^wr(S_L)=log det_zeta(S_L Q)-log det_zeta(Q)-tr^Q(log S_L)",
+    "reason_for_choice": "Q is already frozen by the weighted determinant; multiplying S_L by Q is the canonical order-raising available without inventing a generic numerator/denominator pair",
+    "zeta_weighted_identity": "log det_zeta(P)-tr^Q(log P)=-(1/(2 ord(P)))Wres[(log P-(ord(P)/ord(Q))log Q)^2]"
+  },
+  "generic_local_result": {
+    "Ricci_basis": "m_Q^wr(S_L)=-(4 pi)^-2 integral[R^2+2 Ric_mn Ric^mn]/108",
+    "coefficient_of_(4pi)^-2_integral_R2": {
+      "denominator": 108,
+      "numerator": -1
+    },
+    "coefficient_of_(4pi)^-2_integral_Ric2": {
+      "denominator": 54,
+      "numerator": -1
+    },
+    "locality": "COMPLETE_THROUGH_FOUR_DIMENSIONAL_RESIDUE_ORDER",
+    "operator_formula": "m_Q^wr(S_L)=-(1/4)Wres(K^2)"
+  },
+  "lifecycle_state": "SELECTED_GENERIC_LOCAL_FACTORIZATION_COMPLETE_GLOBAL_FINITE_ROWS_OPEN",
+  "next_gate": "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS",
+  "references": [
+    {
+      "arxiv": "math-ph/0503033",
+      "authors": "S. Paycha",
+      "role": "weighted-trace commutator defect and zeta/weighted comparison",
+      "title": "Weighted trace cochains; a geometric setup for anomalies"
+    },
+    {
+      "arxiv": "math-ph/0701076",
+      "authors": "M.-F. Ouedraogo and S. Paycha",
+      "role": "BCH locality and factorization-convention dependence",
+      "title": "The multiplicative anomaly for determinants revisited; locality"
+    }
+  ],
+  "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION",
+  "result_state": "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_LOCAL_DEFECT_COMPUTED",
+  "round_S4_crosscheck": {
+    "R": 12,
+    "Ricci_squared": 36,
+    "Wres_K2": {
+      "denominator": 3,
+      "numerator": 4
+    },
+    "direct_spectral_continuation_status": "INDEPENDENT_NUMERICAL_REPLAY",
+    "volume": "8 pi^2/3",
+    "weight_raised_defect": {
+      "denominator": 3,
+      "numerator": -1
+    },
+    "weighted_modified_determinant": "-3.978145485615411627475395554805986920582166193298890172",
+    "zeta_ratio_log_det_(S_L_Delta)_minus_log_det_Delta": "-4.311478818948744960808728888139320253915499526632223505333333333333333"
+  },
+  "schema": "quantum-weyl-generic-background-ghost-schur-weight-raised-zeta-factorization-v1",
+  "scope": {
+    "Schur_operator": "S_L=I+K, ord(S_L)=0, K in Psi^-2",
+    "dimension": 4,
+    "factor_ordering": "LEFT_SCHUR_TIMES_WEIGHT",
+    "manifold": "closed compact smooth manifold without boundary",
+    "mode_domain": "primed nonzero scalar ghost modes",
+    "reference_operator": "B=Q, ord(B)=2",
+    "signature": "Euclidean",
+    "spectral_cut_policy": "one frozen common Agmon sector on each connected admissible stratum",
+    "weight": "Q=Delta_0+Pi_0, ord(Q)=2",
+    "weight_raised_operator": "A=S_L Q, ord(A)=2"
+  }
+}

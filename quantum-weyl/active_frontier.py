@@ -74,6 +74,7 @@ DEPENDENCIES = {
     "generic_ghost_Schur_weighted_trace_scale": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
     "round_S4_ghost_Schur_finite_weighted_traces": HERE / "spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json",
     "round_S4_ghost_Schur_zeta_factorization": HERE / "spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
+    "generic_ghost_Schur_weight_raised_zeta_factorization": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json",
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
     "scalar_flat_K_Ricci_crosswalk": HERE / "transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
@@ -178,6 +179,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_ghost_Schur_weighted_trace_scale": "ORDER_TWO_WEIGHTED_TRACE_POLE_AND_SCALE_RESPONSE_COMPUTED",
         "round_S4_ghost_Schur_finite_weighted_traces": "ROUND_S4_SCHUR_REFERENCE_MODIFIED_DETERMINANT_COMPUTED",
         "round_S4_ghost_Schur_zeta_factorization": "ROUND_S4_ZETA_TO_WEIGHTED_SCHUR_FACTORIZATION_DEFECT_COMPUTED",
+        "generic_ghost_Schur_weight_raised_zeta_factorization": "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_LOCAL_DEFECT_COMPUTED",
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
@@ -212,6 +214,7 @@ def _load() -> dict[str, dict[str, Any]]:
     generic_ghost_schur_scale = values["generic_ghost_Schur_weighted_trace_scale"]
     round_s4_ghost_schur_finite = values["round_S4_ghost_Schur_finite_weighted_traces"]
     round_s4_ghost_schur_zeta = values["round_S4_ghost_Schur_zeta_factorization"]
+    generic_ghost_schur_weight_raised = values["generic_ghost_Schur_weight_raised_zeta_factorization"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
@@ -761,6 +764,29 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("round-S4 ghost Schur zeta-factorization frontier drifted")
+    if (
+        generic_ghost_schur_weight_raised.get("generic_local_result", {}).get(
+            "coefficient_of_(4pi)^-2_integral_R2"
+        )
+        != {"numerator": -1, "denominator": 108}
+        or generic_ghost_schur_weight_raised.get("generic_local_result", {}).get(
+            "coefficient_of_(4pi)^-2_integral_Ric2"
+        )
+        != {"numerator": -1, "denominator": 54}
+        or generic_ghost_schur_weight_raised.get("round_S4_crosscheck", {}).get(
+            "weight_raised_defect"
+        )
+        != {"numerator": -1, "denominator": 3}
+        or generic_ghost_schur_weight_raised.get("factorization_convention_crosswalk", {}).get(
+            "difference_of_defects"
+        )
+        != {"numerator": 2, "denominator": 1}
+        or generic_ghost_schur_weight_raised.get("claim_flags", {}).get(
+            "GENERIC_BACKGROUND_FINITE_SCHUR_ROWS_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost weight-raised zeta-factorization frontier drifted")
     if (
         generic_ghost_n3.get("angular_average", {}).get("coefficients", {}).get(
             "tr_R3"
@@ -1892,6 +1918,7 @@ def build() -> dict[str, Any]:
             "ROUND_S4_SCHUR_DET3_TAIL_COMPUTED": True,
             "ROUND_S4_SCHUR_MODIFIED_DETERMINANT_COMPUTED": True,
             "GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER": True,
+            "GENERIC_WEIGHT_RAISED_LOCAL_ZETA_FACTORIZATION_DEFECT_COMPUTED": True,
             "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED": False,
             "ZETA_FACTORIZATION_WITHOUT_LOCAL_MULTIPLICATIVE_ANOMALY_PROVED": False,
             "ORDINARY_FREDHOLM_DETERMINANT_CLASS_PROVED": False,
@@ -2049,7 +2076,7 @@ def build() -> dict[str, Any]:
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. "
             "For the declared order-two scalar weight Q_mu=(Delta_0+Pi_0)/mu^2, the weighted-trace pole and scale conversion are exact: d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L). The reference-scale finite R(K), finite R(K^2), and possible "
-            "local zeta multiplicative term remain open generically. On the round unit S4 fixture, after deleting the absent ell=0 gradient and five ell=1 conformal-Killing zero modes, both reference finite rows are exact digamma/trigamma values, the canonical det_3 tail has an exact rational enclosure of width below 5.8e-48, and their selected weighted modified determinant is -3.9781454856154116... . The exact zeta-to-weighted factorization defect is 5/3, giving the zeta-factorized ratio -2.3114788189487449608... . A finite-rank smoothing witness proves that the full primed Green kernel or spectral measure is necessary for the generic-background finite values, while the generic noncommuting local defect separately needs the order-minus-three/four BCH symbol carrier. "
+            "generic finite rows remain open. For the canonical weight-raised comparison A=S_L Q, B=Q, the order-minus-three/four BCH carrier is now exact: its weighted trace vanishes through four-dimensional residue order and the local defect is -(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108. On the round unit S4 fixture, after deleting the absent ell=0 gradient and five ell=1 conformal-Killing zero modes, both reference finite rows are exact digamma/trigamma values, the canonical det_3 tail has an exact rational enclosure of width below 5.8e-48, and their selected weighted modified determinant is -3.9781454856154116... . The Einstein numerator/denominator factorization defect is 5/3, while the distinct generic weight-raised convention specializes to -1/3; the exact difference 2 is a factorization-convention effect. The corresponding zeta ratios are -2.3114788189487449608... and -4.3114788189487449608... . A finite-rank smoothing witness proves that the full primed Green kernel or spectral measure is still necessary for the generic-background finite values. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
@@ -2092,7 +2119,7 @@ def build() -> dict[str, Any]:
             "Wres(K)=(4 pi)^-2 integral(R^2+4 Ric^2)/9, "
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. Ordinary trace-class "
-            "determinacy is not implied. The selected order-two weight fixes the pole and scale normalization, and the round-S4 spectrum fixes both reference finite constants after the certified zero-mode deletion. Exact rational alternating-series and Euler--Maclaurin bounds also fix the round-S4 det_3 tail and selected weighted modified determinant. The commuting round-S4 zeta-to-weighted factorization defect is exactly 5/3. A finite-rank smoothing witness proves that generic finite constants still require the full primed Green/spectral carrier; the generic noncommuting local BCH residue remains a separate open gate. "
+            "determinacy is not implied. The selected order-two weight fixes the pole and scale normalization, and the round-S4 spectrum fixes both reference finite constants after the certified zero-mode deletion. Exact rational alternating-series and Euler--Maclaurin bounds also fix the round-S4 det_3 tail and selected weighted modified determinant. The commuting Einstein-ratio round-S4 zeta-to-weighted factorization defect is exactly 5/3. For the separately frozen generic weight-raised convention A=S_L Q, B=Q, the noncommuting BCH trace is exact through residue order and gives -(1/4)Wres(K^2); it specializes to -1/3 on round S4. A finite-rank smoothing witness proves that generic finite constants still require the full primed Green/spectral carrier. "
             "The five parity-even third-curvature repository functions and "
             "coefficients, the parity-odd derivative manifest, renormalized "
             "BV Laplacian or time-ordered product, finite normalization conditions, and global Green data "
@@ -2371,6 +2398,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("ROUND_S4_SCHUR_DET3_TAIL_COMPUTED") is not True
         or flags.get("ROUND_S4_SCHUR_MODIFIED_DETERMINANT_COMPUTED") is not True
         or flags.get("GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER") is not True
+        or flags.get("GENERIC_WEIGHT_RAISED_LOCAL_ZETA_FACTORIZATION_DEFECT_COMPUTED")
+        is not True
         or flags.get("ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED") is not False
         or flags.get("GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED")
         is not True
@@ -2527,6 +2556,7 @@ def validate(result: dict[str, Any]) -> None:
             "ROUND_S4_SCHUR_DET3_TAIL_COMPUTED",
             "ROUND_S4_SCHUR_MODIFIED_DETERMINANT_COMPUTED",
             "GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER",
+            "GENERIC_WEIGHT_RAISED_LOCAL_ZETA_FACTORIZATION_DEFECT_COMPUTED",
         }
     ):
         raise ValueError("active frontier quantum claim was over-promoted")

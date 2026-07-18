@@ -921,10 +921,14 @@ The commuting round-`S4` zeta-to-weighted factorization defect is now exact:
 continuation replays the same result. A finite-rank smoothing witness proves
 that the generic finite rows
 cannot follow from local symbols or residues: they require the full primed
-Green kernel or spectral measure. The generic noncommuting local defect is a
-separate gate requiring the order-minus-three/four BCH symbols of
-`log(Q S_L)-log Q-log S_L`. It remains open, as does the generic
-physical fourth-order Hessian. The original
+Green kernel or spectral measure. For the distinct generic weight-raised
+convention `A=S_L Q`, `B=Q`, the order-minus-three/four BCH filtration is now
+exact: its weighted trace vanishes through four-dimensional residue order and
+the local defect is `-(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108`.
+It specializes to `-1/3` on round `S4`, with zeta ratio
+`-4.31147881894874496080872888813932...`; the exact difference `2` from the
+Einstein-ratio defect is a factorization-convention effect. The generic finite
+rows and physical fourth-order Hessian remain open. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -939,10 +943,10 @@ rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient. Its three
 longitudinal `D_W` towers are now one normalized scalar Schur series, with the
 all three Schur residue rows fixed and the round-`S4` canonical `det_3` tail
-and weighted modified determinant computed. The remaining
-local gate begins with supplying the generic primed Green/spectral carrier
-needed to lift the exact round-`S4` finite benchmark, together with any local
-zeta term and the physical fourth-order
+and weighted modified determinant computed. The selected weight-raised local
+zeta term is also exact. The remaining local gate begins with supplying the
+generic primed Green/spectral carrier needed to lift the exact round-`S4`
+finite benchmark, together with the physical fourth-order
 Hessian kernel, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
@@ -1026,6 +1030,10 @@ The exact round-`S4` finite rows, rigorously enclosed `det_3` tail, weighted
 modified determinant, and generic missing-global-carrier theorem are recorded
 in
 [`round-s4-ghost-schur-finite-weighted-traces.md`](../quantum-weyl/reports/round-s4-ghost-schur-finite-weighted-traces.md).
+The exact generic weight-raised local zeta factorization, BCH reduction,
+round-`S4` `-1/3` specialization, and convention crosswalk to the separate
+`5/3` Einstein ratio are recorded in
+[`generic-background-ghost-schur-weight-raised-zeta-factorization.md`](../quantum-weyl/reports/generic-background-ghost-schur-weight-raised-zeta-factorization.md).
 Its exact constructive reduction is recorded in
 [`generic-background-ghost-endo-duhamel-reduction.md`](../quantum-weyl/reports/generic-background-ghost-endo-duhamel-reduction.md).
 The exact Hodge-resolvent closure of the `n=1,n=2` nonminimal architecture is

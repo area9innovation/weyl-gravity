@@ -59,6 +59,8 @@ def main() -> None:
         "Exact round-$S^4$ finite Schur benchmark",
         "Exact round-$S^4$ zeta-to-weighted factorization defect",
         "m_Q(A,B)=\\frac53",
+        "Generic weight-raised Schur zeta factorization",
+        "m_Q^{\\rm wr}(S_L)=-\\frac14\\operatorname{Wres}(K^2)",
         "0.4981635654196290984312532999414818723861192934",
         "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
@@ -204,7 +206,7 @@ def main() -> None:
         {"numerator": 1, "denominator": 9},
         {"numerator": -1, "denominator": 81},
     ]
-    assert claims["generic_ghost_zeta_multiplicative_anomaly_status"] == (
+    assert claims["generic_ghost_unspecified_factorization_zeta_anomaly_status"] == (
         "LOCAL_TERM_NOT_EVALUATED"
     )
     assert claims["generic_ghost_4d_trace_class_status"] == (
@@ -252,6 +254,28 @@ def main() -> None:
     assert claims["round_S4_ghost_Schur_zeta_determinant_ratio"].startswith(
         "-2.311478818948744960808728888139320253"
     )
+    assert claims["generic_ghost_weight_raised_local_factorization_defect"] == (
+        "m_Q^wr(S_L)=-(1/4)Wres(K^2)"
+    )
+    assert claims["generic_ghost_weight_raised_R2_coefficient"] == {
+        "numerator": -1,
+        "denominator": 108,
+    }
+    assert claims["generic_ghost_weight_raised_Ric2_coefficient"] == {
+        "numerator": -1,
+        "denominator": 54,
+    }
+    assert claims["round_S4_weight_raised_factorization_defect"] == {
+        "numerator": -1,
+        "denominator": 3,
+    }
+    assert claims["round_S4_weight_raised_zeta_determinant_ratio"].startswith(
+        "-4.311478818948744960808728888139320253"
+    )
+    assert claims["factorization_convention_defect_difference"] == {
+        "numerator": 2,
+        "denominator": 1,
+    }
     assert claims["generic_Schur_finite_rows_minimal_missing_input"] == (
         "the full primed Green/resolvent kernel or equivalent complete spectral measure on the selected background"
     )
@@ -269,15 +293,15 @@ def main() -> None:
     assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
     assert payload["explicit_nonclaims"]["generic_ghost_finite_part_R_K2"] is False
     assert payload["explicit_nonclaims"][
-        "generic_ghost_zeta_multiplicative_anomaly_computed"
+        "generic_ghost_zeta_multiplicative_anomaly_computed_without_declared_factorization"
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "FREEZE_GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_AND_COMPUTE_ITS_BCH_RESIDUE_SEPARATELY_FROM_THE_GLOBAL_FINITE_ROWS"
+        == "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 38
+    assert len(payload["inputs"]) == 39
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -320,6 +344,9 @@ def main() -> None:
     ]
     round_s4_ghost_schur_zeta = dependencies[
         "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION"
+    ]
+    generic_ghost_schur_weight_raised = dependencies[
+        "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION"
     ]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
@@ -527,6 +554,18 @@ def main() -> None:
     ] == claims["round_S4_ghost_Schur_zeta_determinant_ratio"]
     assert round_s4_ghost_schur_zeta["claim_flags"][
         "GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_DEFECT_COMPUTED"
+    ] is False
+    assert generic_ghost_schur_weight_raised["generic_local_result"][
+        "operator_formula"
+    ] == claims["generic_ghost_weight_raised_local_factorization_defect"]
+    assert generic_ghost_schur_weight_raised["generic_local_result"][
+        "coefficient_of_(4pi)^-2_integral_R2"
+    ] == claims["generic_ghost_weight_raised_R2_coefficient"]
+    assert generic_ghost_schur_weight_raised["round_S4_crosscheck"][
+        "weight_raised_defect"
+    ] == claims["round_S4_weight_raised_factorization_defect"]
+    assert generic_ghost_schur_weight_raised["claim_flags"][
+        "GENERIC_BACKGROUND_FINITE_SCHUR_ROWS_COMPUTED"
     ] is False
     assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
         generic_ghost_n1_n2_vector["formula_digest"]

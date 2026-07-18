@@ -1143,13 +1143,15 @@ on an Einstein background the minimal-vector longitudinal factor times
 $S_L$ reproduces $(\Delta_0-R/3)/\Delta_0$.
 
 This is a resummation theorem, not a form-factor evaluation.  A separately
-zeta-regularized factorization can carry a local multiplicative anomaly.  Its
-generic noncommuting value is not evaluated here; a commuting round-$S^4$
-value is computed below.  Moreover $S_L-\mathbf1$ starts at
+zeta-regularized factorization can carry a local multiplicative anomaly.
+Both a commuting round-$S^4$ ratio convention and the canonical generic
+weight-raised convention $A=S_LQ$, $B=Q$ are computed below.  They must not be
+identified: a multiplicative defect depends on the chosen factorization.
+Moreover $S_L-\mathbf1$ starts at
 pseudodifferential order $-2$ in four dimensions, so ordinary trace-class
 Fredholm determinacy is not implied by order counting.  A regularized
-relative determinant or equivalent common trace regulator, together with the
-possible local term, is the remaining longitudinal coefficient input.
+relative determinant or equivalent common trace regulator is the remaining
+global longitudinal coefficient input.
 \end{proposition}
 
 \begin{proposition}[Sharp Schatten split and critical Schur residue]
@@ -1228,9 +1230,10 @@ isotropic test $W=w\mathbf1$ likewise reduces $B_1$ to $w\Delta_0^{-1}$.
 These checks fix the mixed-kernel sign and normalization.
 
 These equations compute the canonical local residues, not the full Schur
-determinant.  The generic regulated finite value $\mathcal R(K)$, the finite
-part of $\mathcal R(K^2)$, and the generic noncommuting zeta multiplicative
-term remain open.
+determinant.  The generic regulated finite value $\mathcal R(K)$ and the
+finite part of $\mathcal R(K^2)$ remain open.  The selected generic
+weight-raised zeta multiplicative term is computed below from these residues
+and the order-$-3/-4$ BCH filtration.
 Converting $\operatorname{Wres}\log S_L$ into a pole or scale coefficient
 requires the order and normalization of a chosen reference operator; the next
 proposition makes that choice explicitly.
@@ -1276,9 +1279,9 @@ and
 \]
 This closes the reference-specific pole and scale conversion.  It does not
 fix the generic reference-scale constants $\mathcal R_{\mu_0}(K)$ and
-$\operatorname{FP}\mathcal R_{\mu_0}(K^2)$, nor the generic noncommuting local
-multiplicative term of a separately factorized zeta
-prescription~\cite{KontsevichVishik,OuedraogoPaycha}.
+$\operatorname{FP}\mathcal R_{\mu_0}(K^2)$.  For the separately declared
+weight-raised zeta prescription, the local noncommuting term is computed
+below~\cite{KontsevichVishik,OuedraogoPaycha}.
 \end{proposition}
 
 \begin{proposition}[Exact round-$S^4$ finite Schur benchmark]
@@ -1335,8 +1338,8 @@ homogeneous symbol and Wodzicki residue but shifts the two finite rows by
 $\operatorname{Tr}T$ and
 $\operatorname{Tr}(KT+TK+T^2)$.  Thus the generic values require the full
 primed Green kernel or equivalent spectral measure.  The local comparison for
-this commuting round-sphere factorization is computed next; its generic
-noncommuting analogue remains open.
+this commuting round-sphere factorization is computed next, followed by a
+distinct generic weight-raised convention.
 \end{proposition}
 
 \begin{proposition}[Exact round-$S^4$ zeta-to-weighted factorization defect]
@@ -1373,9 +1376,69 @@ Adding it to the weighted modified determinant above gives
 \]
 An independent Hurwitz-zeta continuation on the complete primed spectrum
 reproduces the same number.  This is special-background and
-prescription-specific.  It does not compute the order-$-3/-4$ BCH symbols of
-$\log(QS_L)-\log Q-\log S_L$ needed for the generic noncommuting local term,
-and it does not supply the generic global finite rows.
+prescription-specific.  It does not by itself compute the generic
+noncommuting local term or supply the generic global finite rows.  The next
+proposition fixes a different, canonical weight-raised comparison and makes
+the factorization dependence explicit.
+\end{proposition}
+
+\begin{proposition}[Generic weight-raised Schur zeta factorization]
+On a closed compact four-manifold, keep the primed scalar carrier and the
+positive order-two weight
+\[
+ Q=\Delta_0+\Pi_0.
+\]
+There is no canonical generic numerator/denominator factorization analogous
+to the Einstein identity above.  Instead declare
+\[
+ A=S_LQ,\qquad B=Q,
+\]
+with this left-Schur ordering and one common Agmon sector on a connected
+admissible stratum.  Define
+\[
+ m_Q^{\rm wr}(S_L)=\log\det_\zeta(S_LQ)-\log\det_\zeta Q
+                   -\operatorname{tr}^Q\log S_L.
+\]
+Put $X=\log S_L\in\Psi^{-2}$ and $Y=\log Q$.  Through the
+four-dimensional residue order, the BCH series is
+\[
+ \log(S_LQ)-X-Y
+ =\frac12[X,Y]+\frac1{12}[Y,[Y,X]]\pmod{\Psi^{-5}}.
+\]
+The displayed commutators have orders $-3$ and $-4$; the next independent
+term $[X,[X,Y]]$ has order $-6$.  The weighted trace defect identity
+\[
+ \operatorname{tr}^Q[U,V]
+ =-\frac1{\operatorname{ord}Q}
+   \operatorname{Wres}\bigl(U[V,\log Q]\bigr)
+\]
+kills both surviving BCH commutators because one entry is $Y=\log Q$.
+Cross terms with $X$ begin below residue order, while
+$(\log(1+K))^2=K^2\pmod{\Psi^{-6}}$.  The zeta/weighted comparison therefore
+gives the exact local result
+\[
+ \boxed{
+ m_Q^{\rm wr}(S_L)=-\frac14\operatorname{Wres}(K^2)
+ =-\frac1{(4\pi)^2}\int_M
+ \frac{R^2+2R_{\mu\nu}R^{\mu\nu}}{108}\,\dd\mathrm{vol}.}
+\]
+
+On the round unit sphere this convention gives
+\[
+ \operatorname{Wres}(K^2)=\frac43,qquad
+ m_Q^{\rm wr}(S_L)=-\frac13,
+\]
+and hence
+\[
+ \log\det_\zeta(S_L\Delta_0)-\log\det_\zeta\Delta_0
+ =-4.3114788189487449608087288881393202539\ldots .
+\]
+An independent Hurwitz-zeta continuation of the primed scalar spectrum
+replays this value.  The difference between this defect and the preceding
+$5/3$ Einstein-ratio defect is exactly $2$; the values are not contradictory
+because the factorizations are different.  This closes the selected generic
+local BCH/residue term, not the global generic finite Schur rows or a full
+vector-block determinant factorization.
 \end{proposition}
 
 \begin{proposition}[Exact ghost $n=3$ scalar-flat five-carrier projection]
@@ -1482,11 +1545,12 @@ to lie in $\mathcal S_3$, and
 $\operatorname{Wres}(K)$, $\operatorname{Wres}(K^2)$, and
 $\operatorname{Wres}\log S_L$ are exact.  The round-$S^4$ reference finite
 rows, canonical $\det_3$ tail, selected weighted modified determinant, and
-zeta-to-weighted defect $5/3$ are complete as well.  The smoothing theorem
-shows that the generic finite counterparts require a full primed
-Green/spectral carrier; the generic noncommuting local defect separately
-requires its order-$-3/-4$ BCH symbols.  Those carriers and the physical
-kernel, hence the
+zeta-to-weighted defect $5/3$ are complete as well.  For the distinct generic
+weight-raised convention, the noncommuting BCH trace and local defect
+$-\tfrac14\operatorname{Wres}(K^2)$ are exact and specialize to $-1/3$ on
+round $S^4$.  The smoothing theorem shows that the generic finite counterparts
+still require a full primed Green/spectral carrier.  That carrier and the
+physical kernel, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
@@ -1535,6 +1599,8 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json}.
 \item \cert{quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json}.
@@ -1598,6 +1664,9 @@ PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_round_s4_ghost_schur_finite_weighted_traces
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_round_s4_ghost_schur_zeta_factorization
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_schur_weight_raised_\
+zeta_factorization
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m \

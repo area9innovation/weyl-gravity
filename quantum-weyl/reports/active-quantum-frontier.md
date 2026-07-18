@@ -105,11 +105,14 @@ On the round unit `S4` carrier, both reference finite rows, the canonical
 `det_3` tail and the selected weighted modified determinant are exact. The
 zeta-to-weighted factorization defect is also exact there:
 `m_Delta(Delta_0-4,Delta_0-6)=5/3`, giving the zeta-factorized ratio
-`-2.3114788189487449608...`. This does not close the generic problem. The
-generic noncommuting local defect requires the order-minus-three/four BCH
-symbols, while the generic finite rows separately require the full primed
-Green kernel or spectral measure. The generic physical fourth-order Hessian
-is also still absent.
+`-2.3114788189487449608...`. For the distinct generic weight-raised
+comparison `A=S_L Q`, `B=Q`, the order-minus-three/four BCH trace is exact
+through residue order and the local defect is
+`-(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108`. It specializes to
+`-1/3` on round `S4`, with zeta ratio `-4.3114788189487449608...`; the exact
+difference `2` is a factorization-convention effect. The generic finite rows
+still require the full primed Green kernel or spectral measure. The generic
+physical fourth-order Hessian is also still absent.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-generic-background-ghost-schur-weight-raised-zeta-factorization-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "scope",
+    "factorization_definition", "BCH_reduction", "generic_local_result",
+    "round_S4_crosscheck", "factorization_convention_crosswalk",
+    "claim_flags", "dependencies", "references", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-schur-weight-raised-zeta-factorization-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHT_RAISED_ZETA_FACTORIZATION"},
+    "result_state": {"const": "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_LOCAL_DEFECT_COMPUTED"},
+    "lifecycle_state": {"const": "SELECTED_GENERIC_LOCAL_FACTORIZATION_COMPLETE_GLOBAL_FINITE_ROWS_OPEN"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "signature", "manifold", "mode_domain", "weight", "Schur_operator", "weight_raised_operator", "reference_operator", "spectral_cut_policy", "factor_ordering"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "manifold": {"type": "string", "minLength": 1},
+        "mode_domain": {"type": "string", "minLength": 1},
+        "weight": {"const": "Q=Delta_0+Pi_0, ord(Q)=2"},
+        "Schur_operator": {"const": "S_L=I+K, ord(S_L)=0, K in Psi^-2"},
+        "weight_raised_operator": {"const": "A=S_L Q, ord(A)=2"},
+        "reference_operator": {"const": "B=Q, ord(B)=2"},
+        "spectral_cut_policy": {"type": "string", "minLength": 1},
+        "factor_ordering": {"const": "LEFT_SCHUR_TIMES_WEIGHT"}
+      }
+    },
+    "factorization_definition": {"$ref": "#/$defs/stringObject"},
+    "BCH_reduction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["variables", "through_residue_order", "orders", "weighted_trace_defect", "commutator_cancellation", "weighted_BCH_trace_through_residue_order", "square_reduction"],
+      "properties": {
+        "variables": {"type": "string", "minLength": 1},
+        "through_residue_order": {"type": "string", "minLength": 1},
+        "orders": {"$ref": "#/$defs/scalarObject"},
+        "weighted_trace_defect": {"type": "string", "minLength": 1},
+        "commutator_cancellation": {"type": "string", "minLength": 1},
+        "weighted_BCH_trace_through_residue_order": {"$ref": "#/$defs/rational"},
+        "square_reduction": {"type": "string", "minLength": 1}
+      }
+    },
+    "generic_local_result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator_formula", "Ricci_basis", "coefficient_of_(4pi)^-2_integral_R2", "coefficient_of_(4pi)^-2_integral_Ric2", "locality"],
+      "properties": {
+        "operator_formula": {"const": "m_Q^wr(S_L)=-(1/4)Wres(K^2)"},
+        "Ricci_basis": {"const": "m_Q^wr(S_L)=-(4 pi)^-2 integral[R^2+2 Ric_mn Ric^mn]/108"},
+        "coefficient_of_(4pi)^-2_integral_R2": {"$ref": "#/$defs/rational"},
+        "coefficient_of_(4pi)^-2_integral_Ric2": {"$ref": "#/$defs/rational"},
+        "locality": {"const": "COMPLETE_THROUGH_FOUR_DIMENSIONAL_RESIDUE_ORDER"}
+      }
+    },
+    "round_S4_crosscheck": {"$ref": "#/$defs/scalarObject"},
+    "factorization_convention_crosswalk": {"$ref": "#/$defs/scalarObject"},
+    "claim_flags": {
+      "type": "object", "additionalProperties": {"type": "boolean"},
+      "required": [
+        "GENERIC_WEIGHT_RAISED_SCHUR_ZETA_FACTORIZATION_DEFECT_COMPUTED",
+        "GENERIC_BCH_WEIGHTED_TRACE_VANISHES_AT_4D_LOCAL_RESIDUE_ORDER",
+        "ROUND_S4_WEIGHT_RAISED_SPECIALIZATION_REPLAYED",
+        "GENERIC_BACKGROUND_FINITE_SCHUR_ROWS_COMPUTED",
+        "FULL_GHOST_BLOCK_ZETA_FACTORIZATION_COMPUTED",
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"
+      ]
+    },
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Schur_Schatten_split", "weighted_trace_scale", "round_S4_weighted_determinant", "round_S4_Einstein_ratio_factorization"],
+      "properties": {
+        "Schur_Schatten_split": {"$ref": "#/$defs/dependency"},
+        "weighted_trace_scale": {"$ref": "#/$defs/dependency"},
+        "round_S4_weighted_determinant": {"$ref": "#/$defs/dependency"},
+        "round_S4_Einstein_ratio_factorization": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "references": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/reference"}},
+    "next_gate": {"const": "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_REPOSITORY_FORM_FACTORS"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "authors", "arxiv", "role"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "authors": {"type": "string", "minLength": 1},
+        "arxiv": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1}
+      }
+    },
+    "stringObject": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "scalarObject": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {
+        "anyOf": [
+          {"type": "string", "minLength": 1}, {"type": "integer"},
+          {"type": "number"}, {"type": "boolean"}, {"$ref": "#/$defs/rational"}
+        ]
+      }
+    }
+  }
+}

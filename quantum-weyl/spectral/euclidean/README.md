@@ -189,7 +189,7 @@ is explicitly unevaluated. See
 The sharp trace-ideal continuation is recorded in
 [`generic-background-ghost-schur-schatten-split.md`](../../reports/generic-background-ghost-schur-schatten-split.md):
 the canonical `det_3` tail is defined and `Wres(K^2)` is computed, while `R(K)`, the
-finite part of `R(K^2)`, and any zeta multiplicative anomaly remain open.
+finite part of `R(K^2)`, and an unspecified zeta factorization remain open.
 The successor
 [`generic-background-ghost-schur-wodzicki-residue.md`](../../reports/generic-background-ghost-schur-wodzicki-residue.md)
 computes `Wres(K)` and `Wres(log S_L)` and keeps the finite and
@@ -213,6 +213,13 @@ local defect is
 `Wres(Q^-2)=1/3`. Adding it to the selected weighted modified determinant
 gives the zeta-factorized ratio `-2.3114788189487449608...`, independently
 replayed from Hurwitz-zeta continuation. This is a special-background result.
-The generic noncommuting factorization defect still requires the order-minus-
-three/four BCH symbol of `log(Q S_L)-log Q-log S_L`; the generic finite rows
-remain a separate global Green/spectral problem.
+
+The distinct generic convention is frozen in
+[`generic-background-ghost-schur-weight-raised-zeta-factorization.md`](../../reports/generic-background-ghost-schur-weight-raised-zeta-factorization.md).
+With `A=S_L Q` and `B=Q=Delta_0+Pi_0`, the order-minus-three/four BCH
+weighted trace vanishes through four-dimensional residue order and
+`m_Q^wr(S_L)=-(1/4)Wres(K^2)=-(4 pi)^-2 integral(R^2+2 Ric^2)/108`.
+It specializes to `-1/3` on round `S4`, giving zeta ratio
+`-4.3114788189487449608...`. The exact difference `2` from the preceding
+`5/3` value records the change of factorization convention. The generic
+finite rows remain a separate global Green/spectral problem.
