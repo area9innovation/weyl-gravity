@@ -376,6 +376,25 @@ horizon/boundary flux constraints + resonant or stationary cokernel) is
 deferred until the BH-2A linear phase space and adjoint problem exist;
 the compact moment-map theorem is not imported as a horizon theorem.
 
+### Active bridge (ladder stage 6; see roadmap "Bridge priority ladder")
+
+**Bridge:** compact branch data to black-hole/asymptotic radiation
+(black hole + Einstein).  **Status: INACTIVE.**
+
+**Activation gate:** an independently closed exterior/asymptotic phase
+space with boundary-preserving generators, charges and fluxes — i.e. the
+BH-2A odd-parity (then polar) exterior complex, horizon-plus-outer-boundary
+phase space, charges, fluxes and pairings, built natively on the black-hole
+background.  Only after those native modes exist may invariant branch
+factors, Lee--Wald signs and limiting data be *compared* with compact
+results.  The compact Taub cone is never imported as a horizon theorem, and
+modes are never identified across backgrounds by matching names.
+
+**Fail-closed atlas row:** `bh.bridge.compact-branch-comparison` in
+`black_hole_programme/atlas/black-hole-atlas-fragment.json` — all
+description axes `NO_CERTIFIED_MAP` until the activation gate closes and an
+explicit crosswalk certificate exists.
+
 ### Current eight-hour assignment (2026-07-17; supersedes the BH-0 preflight queue)
 
 BH-0 and the bare BH-1 preflight are certified.  Do **BH-1A normalized

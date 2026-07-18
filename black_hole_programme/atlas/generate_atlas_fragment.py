@@ -282,6 +282,23 @@ def entries():
         "claim_boundary": "the compact moment-map/tangent-cone theorem is not a horizon theorem; the black-hole analogue (global charges + horizon/boundary flux constraints + resonant or stationary cokernel) is deferred until the BH-2A linear phase space and adjoint problem exist, and must decide which compact terms are replaced by ADM, horizon or quasilocal charges",
     })
 
+    E.append({
+        "id": "bh.bridge.compact-branch-comparison",
+        "scope": _scope(background="bridge stage 6: compact branch data <-> black-hole exterior radiation",
+                        carrier="invariant branch factors, Lee-Wald signs, limiting data", degree="bridge",
+                        parity="n/a", ell="n/a", m="n/a", k="n/a", omega="n/a"),
+        "descriptions": {desc: "NO_CERTIFIED_MAP" for desc in DESCRIPTIONS},
+        "mode_data": {
+            "dispersion": _claim("NO_CERTIFIED_MAP", "bridge inactive; no native exterior modes exist yet"),
+            "lee_wald": _claim("NO_CERTIFIED_MAP", "Lee-Wald sign comparison requires the BH-2A flux matrix"),
+            "taub_maps": _claim("NO_CERTIFIED_MAP", "the compact Taub cone is not imported as a horizon theorem"),
+            "resonance": _claim("NO_CERTIFIED_MAP", "bridge inactive"),
+            "second_order": SECOND_ORDER_NO_MAP,
+        },
+        "evidence": [],
+        "claim_boundary": "ladder stage 6 activation gate: an independently closed exterior/asymptotic phase space with boundary-preserving generators, charges and fluxes (BH-2A+); until then every comparison axis is NO_CERTIFIED_MAP and no mode is identified across backgrounds by name",
+    })
+
     return E
 
 
