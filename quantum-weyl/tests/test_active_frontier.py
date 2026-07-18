@@ -170,6 +170,26 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             self.payload["claim_flags"]["FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE"]
         )
+        self.assertTrue(
+            self.payload["claim_flags"]["VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["E_BRANCH_POSITIVE_HADAMARD_STATE_CERTIFIED"]
+        )
+        self.assertFalse(self.payload["claim_flags"]["A_L_BRANCHES_POSITIVE"])
+        self.assertFalse(
+            self.payload["claim_flags"]["FULL_BV_BRST_HADAMARD_STATE_CERTIFIED"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["POSITIVE_GRAVITON_HILBERT_SPACE_CERTIFIED"]
+        )
+        self.assertFalse(self.payload["claim_flags"]["BERGER_BRIDGE4_CERTIFIED"])
         self.assertFalse(
             self.payload["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"]
         )
@@ -215,7 +235,10 @@ class ActiveFrontierTests(unittest.TestCase):
             ladder["G4"],
             "DISPOSITION_COMPLETE_STRICT_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
         )
-        self.assertTrue(ladder["G5"].startswith("BLOCKED"))
+        self.assertEqual(
+            ladder["G5"],
+            "PARTIAL_REDUCED_VACUUM_CYLINDER_BRIDGE4_CERTIFIED_FULL_BV_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS_OPEN",
+        )
 
     def test_supersession_does_not_delete_history(self) -> None:
         for row in self.payload["supersession_ledger"]:
@@ -257,7 +280,7 @@ class ActiveFrontierTests(unittest.TestCase):
             "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
         )
 
-    def test_hadamard_existence_boundary_is_authoritative(self) -> None:
+    def test_reduced_bridge4_and_full_bv_hadamard_boundaries_are_authoritative(self) -> None:
         flags = self.payload["claim_flags"]
         self.assertTrue(flags["CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED"])
         self.assertTrue(flags["CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED"])
@@ -265,14 +288,17 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
         self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
+        self.assertTrue(flags["VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED"])
+        self.assertTrue(flags["REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED"])
+        self.assertFalse(flags["FULL_BV_BRST_HADAMARD_STATE_CERTIFIED"])
         row = self.payload["active_rows"]["free_Lorentzian_state"]
         self.assertIn(
-            "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT",
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED",
             row["status"],
         )
         self.assertEqual(
             row["next_gate"],
-            "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
+            "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])

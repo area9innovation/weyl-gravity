@@ -31,6 +31,7 @@ INPUTS = {
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "vacuum_cylinder_reduced_Bridge4": ROOT / "quantum-weyl/lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
 }
 
 
@@ -55,6 +56,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
+    reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -107,6 +109,14 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED"
         )
         is not False
+        or reduced_bridge4.get("decision", {}).get(
+            "Bridge_4_reduced_vacuum_cylinder"
+        )
+        != "CERTIFIED"
+        or reduced_bridge4.get("claim_flags", {}).get(
+            "FULL_BV_BRST_HADAMARD_STATE_CERTIFIED"
+        )
+        is not False
     ):
         raise ValueError("Paper 12 theorem dependency drifted")
     return values
@@ -119,12 +129,18 @@ def build() -> dict[str, Any]:
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
+    reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
         "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
         "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_COVARIANT_CURVATURE_SQUARED_LOGARITHM",
         "lifecycle_state": "WRITING_STARTED",
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+        "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "EUCLIDEAN-SPECTRAL",
+            "REDUCED-MODE",
+            "LORENTZIAN-CAUSAL",
+        ],
         "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, and an exact covariant C2 logarithm through curvature order two.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
@@ -172,6 +188,8 @@ def build() -> dict[str, Any]:
             "covariant_C2_log_through_curvature_order_two": True,
             "first_unresolved_C2_log_completion_order": curvature_squared_log["operator_choice_independence"]["first_difference_order"],
             "Berger_WZ_tau_contraction_merge_rejected": True,
+            "reduced_vacuum_cylinder_Bridge_4": True,
+            "reduced_vacuum_cylinder_state_space_sign": reduced_bridge4["decision"]["state_space_sign"],
         },
         "explicit_nonclaims": {
             "finite_polynomial_in_tau_theorem": False,
@@ -187,7 +205,8 @@ def build() -> dict[str, Any]:
             "cubic_nonlocal_curvature_completion": False,
             "same_background_compensator_contraction": False,
             "quantum_Cartan_identity": False,
-            "Bridge_4_particle_crosswalk": False,
+            "full_BV_Bridge_4_particle_crosswalk": False,
+            "Berger_Bridge_4_particle_crosswalk": False,
             "Bridge_5_interacting_BRST_map": False,
             "theorem_frozen": False,
         },

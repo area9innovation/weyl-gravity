@@ -20,10 +20,14 @@ import, BRST closure and exactness, pairing, compatible complex structure,
 Hadamard two-point function, state-space signature, anomaly/QME dependency,
 and lifecycle state.
 
-The E/A/L rows import the exact selected positive-frequency and infinite-index
-Krein ledgers as `REDUCED-MODE` evidence. They do not promote that evidence to
-a covariant distributional complex structure, a Hadamard state, physical
-positivity, or a Lorentzian particle interpretation. The Berger causal
+The E/A/L rows now import a same-background normalized mode ledger, causal
+Green carrier and pairing on the vacuum conformal cylinder. Their compatible
+complex structure and microlocal Hadamard two-point distribution are certified
+with both `REDUCED-MODE` and `LORENTZIAN-CAUSAL` provenance. E is positive;
+A and L have negative Krein sign. This is a compact-cylinder reduced
+one-particle/Krein carrier, not a full-BV kernel, a positive graviton Hilbert
+space, an asymptotic scattering particle, or an interacting quantum result.
+The Berger causal
 26-row carrier is imported, but no stationary mode basis exists; its per-mode
 modewise fields remain `NO_CERTIFIED_MAP` or `OPEN`. Their strict interacting
 quantum lifecycle is separately `OBSTRUCTED` by the local Euclidean QME
@@ -95,6 +99,12 @@ cubic-and-higher `C2` completion, global Green/kernel data, and renormalized BV
 Laplacian or time-ordered product have not been supplied. The extended
 classical residual contraction is absent as well. Residual transfer therefore
 remains forbidden.
+
+The active Bridge 4 row is therefore the six all-energy vacuum-cylinder E/A/L
+mode-family entries, each `CERTIFIED` only in the declared reduced carrier.
+The fail-closed rows are the Berger stationary carrier and the full off-shell
+BV Hadamard extension, both `NO_CERTIFIED_MAP`. Matching branch names across
+those backgrounds is not a crosswalk.
 
 None of these classical statements implies disappearance from interacting
 BRST cohomology, a nonzero loop interaction, a quantum constraint, or a

@@ -43,6 +43,7 @@ DEPENDENCIES = {
     "anomaly_induced_Gamma1": QROOT / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_log_Gamma1": QROOT / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_log_Gamma1": QROOT / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "vacuum_cylinder_reduced_Bridge4": QROOT / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "general_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "finite_k0_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
     "smooth_secular_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
@@ -159,6 +160,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     anomaly_induced = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_log_Gamma1"]
     curvature_squared_log = values["curvature_squared_log_Gamma1"]
+    reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     general = values["general_tangent_cone"]
     k0 = values["finite_k0_cone"]
     smooth = values["smooth_secular_cone"]
@@ -270,6 +272,29 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "FORBIDDEN"
     ):
         raise ValueError("coefficient-bearing QME disposition drifted")
+    if (
+        reduced_bridge4.get("decision", {}).get(
+            "Bridge_4_reduced_vacuum_cylinder"
+        )
+        != "CERTIFIED"
+        or reduced_bridge4.get("decision", {}).get("Bridge_4_full_BV")
+        != "NO_CERTIFIED_MAP"
+        or reduced_bridge4.get("decision", {}).get("Bridge_4_Berger")
+        != "NO_CERTIFIED_MAP"
+        or reduced_bridge4.get("claim_flags", {}).get(
+            "REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED"
+        )
+        is not True
+        or reduced_bridge4.get("claim_flags", {}).get(
+            "REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED"
+        )
+        is not True
+        or reduced_bridge4.get("claim_flags", {}).get(
+            "POSITIVE_GRAVITON_HILBERT_SPACE_CERTIFIED"
+        )
+        is not False
+    ):
+        raise ValueError("vacuum-cylinder reduced Bridge-4 input drifted")
 
     if (
         general.get("result_state")
@@ -304,6 +329,7 @@ def _mode_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         "polarized_state",
         "one_particle_krein",
         "positive_frequency_transform",
+        "vacuum_cylinder_reduced_Bridge4",
         "Slavnov_preflight",
     )
     for chirality in (1, -1):
@@ -326,12 +352,12 @@ def _mode_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                         "k": "NOT_APPLICABLE on S3",
                         "omega": f"positive cylinder energy n with n>={minimum}",
                     },
-                    {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OBSTRUCTED"},
+                    {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "CERTIFIED"},
                     {
                         "dispersion": _claim("CERTIFIED", f"positive cylinder energy n>={minimum}"),
                         "lee_wald": _claim("CERTIFIED", f"reduced Krein sign {sign:+d}"),
                         "taub_maps": _claim("NOT_APPLICABLE", "no second-order tangent-cone restriction is claimed for this all-energy family row"),
-                        "resonance": _claim("OPEN", "no same-background full-BV stationary/Hadamard spectral theorem"),
+                        "resonance": _claim("OPEN", "the free spectral carrier is certified; nonlinear resonance disposition remains separate"),
                         "second_order": _second_order(
                             ("OPEN", "not classified for this mode family"),
                             ("OPEN", "not classified for this mode family"),
@@ -340,21 +366,21 @@ def _mode_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                     },
                     _quantum_data(
                         "MODE_FAMILY",
-                        ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+                        ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
                         imported=("CERTIFIED", "YES: selected reduced E/A/L oscillator"),
                         cocycle=("CERTIFIED", "survives the selected polarized classical BRST retraction"),
                         exactness=("CERTIFIED", "nonexact in the selected reduced complex"),
                         pairing=("CERTIFIED", f"Krein sign {sign:+d}"),
-                        complex_structure=("OPEN", "reduced positive-frequency polarization only"),
-                        hadamard=("OPEN", "no same-background full-BV distributional kernel"),
-                        state_space=("CERTIFIED", "infinite-index Krein reduced mode; not physical positivity"),
+                        complex_structure=("CERTIFIED", "J(q,p)=(-A^-1 p,Aq) on the same-background reduced Cauchy-Sobolev carrier"),
+                        hadamard=("CERTIFIED", "global stationary reduced branch two-point distribution with C_plus wavefront; not a full-BV kernel"),
+                        state_space=("CERTIFIED", "positive E sector and negative-Krein A/L sectors; total infinite-index Krein functional"),
                         qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed at one loop"),
-                        lifecycle=("OBSTRUCTED", "classical reduced carrier remains; strict interacting quantum lifecycle is blocked"),
-                        particle=("NO_CERTIFIED_MAP", "no Lorentzian particle interpretation"),
+                        lifecycle=("CERTIFIED", "free reduced Bridge-4 carrier certified; strict interacting extension remains obstructed"),
+                        particle=("CERTIFIED", "compact-cylinder reduced one-particle Krein excitation; not a positive graviton or scattering particle"),
                         crosswalk=("CERTIFIED", "real phase-space mode to selected positive-frequency oscillator"),
                     ),
                     evidence + _evidence(values, "regulated_Slavnov_breaking"),
-                    "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
+                    "This REDUCED-MODE plus LORENTZIAN-CAUSAL row certifies the free vacuum-cylinder classical-to-quantum Bridge-4 carrier, compatible complex structure and Krein-Hadamard two-point distribution. It is not a full-BV BRST Hadamard state, positive graviton Hilbert space, interacting-QME theorem, or scattering-particle entry.",
                 )
             )
     return rows
@@ -599,6 +625,20 @@ def validate_fragment(value: dict[str, Any]) -> None:
     berger = by_id["quantum.berger.carrier_gap.retained_26_stationary_modes"]
     if berger["quantum_data"]["classical_mode_imported"]["status"] != "NO_CERTIFIED_MAP":
         raise ValueError("Berger carrier was promoted to a spectral mode ledger")
+    mode_rows = [
+        entry
+        for entry in value["entries"]
+        if entry["quantum_data"]["entry_kind"] == "MODE_FAMILY"
+    ]
+    if len(mode_rows) != 6 or any(
+        entry["quantum_data"]["compatible_complex_structure"]["status"]
+        != "CERTIFIED"
+        or entry["quantum_data"]["Hadamard_two_point_function"]["status"]
+        != "CERTIFIED"
+        or entry["quantum_data"]["lifecycle_state"]["status"] != "CERTIFIED"
+        for entry in mode_rows
+    ):
+        raise ValueError("reduced vacuum-cylinder Bridge-4 mode row was dropped")
     tangent = by_id["quantum.crosswalk.classical_tangent_cone_to_interacting_brst"]
     if (
         tangent["quantum_data"]["carrier_crosswalk"]["status"] != "NO_CERTIFIED_MAP"

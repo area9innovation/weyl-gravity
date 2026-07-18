@@ -48,8 +48,18 @@ def verify() -> dict:
         raise ValueError(f"quantum atlas dependencies absent from entries: {sorted(map(str, missing))}")
 
     quantum_rows = [entry["quantum_data"] for entry in value["entries"]]
-    if any(row["Hadamard_two_point_function"]["status"] == "CERTIFIED" for row in quantum_rows):
-        raise ValueError("uncertified Hadamard state was promoted")
+    certified_hadamard = [
+        row
+        for row in quantum_rows
+        if row["Hadamard_two_point_function"]["status"] == "CERTIFIED"
+    ]
+    if len(certified_hadamard) != 6 or any(
+        row["entry_kind"] != "MODE_FAMILY"
+        or "not a full-BV kernel"
+        not in row["Hadamard_two_point_function"]["statement"]
+        for row in certified_hadamard
+    ):
+        raise ValueError("reduced Hadamard carrier scope drifted")
     if any(row["particle_interpretation"]["statement"] == "PARTICLE" for row in quantum_rows):
         raise ValueError("non-particle carrier was promoted")
     tangent = next(

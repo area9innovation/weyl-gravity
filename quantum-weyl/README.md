@@ -63,7 +63,11 @@ constants remain open. At
 bootstrap time there is no certified complete Lorentzian off-shell BV
 propagator, BRST-compatible full-metric Hadamard state, renormalized
 Lorentzian time-ordered product, causal perturbative AQFT construction, or
-Lorentzian QME theorem.
+Lorentzian QME theorem. On the narrower free reduced vacuum-cylinder E/A/L
+carrier, however, the same-background normalized modes, causal Green operator
+and pairing now certify a compatible complex structure and microlocal
+Hadamard two-point distribution. E is positive and A/L have negative Krein
+sign; this is not a full-BV state or positive graviton Hilbert space.
 
 ## Layout
 
@@ -91,7 +95,7 @@ schema/             machine-readable result contracts
 | B | counterterm/anomaly bases and descent database | `FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN`; the ghost-zero and ghost-one quotients both have even/odd dimensions `2/1`; the exact small-algebra calculation eliminates independent pure-Diff and mixed Diff--Weyl classes, ten general nonminimal pairs contract, and exact BV-canonical transport proves gauge-fixed invariance |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, but normalized `pi_cl` projection and adjacent H3/H5 bases remain unavailable |
 | D | reduced and Euclidean coefficient ledgers | `REPOSITORY_C2_VISIBLE_FULL_BV_LOCAL_COEFFICIENT_MATCHED`; the exact factorwise local calculation gives `(C2,E4,CdualC,BoxR)=(199/30,-87/20,0,0)` with a Ricci-flat `C2` carrier, independent round-`S4` Euler carrier, parity Ward identity, measure, zero-mode, contour and regulator receipts |
-| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED`; the complete `5 -> 10 -> 5` physical symbol sequence, formal adjoint, Diff/Weyl nonminimal doublets and four kinetic blocks replay exactly. The curvature CCR/causal propagator remains certified separately; a global BRST Hadamard state and renormalized Lorentzian products remain open |
+| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED`; the complete `5 -> 10 -> 5` physical symbol sequence, formal adjoint, Diff/Weyl nonminimal doublets and four kinetic blocks replay exactly. Separately, reduced vacuum-cylinder Bridge 4 is certified on the E/A/L Krein carrier; a global full-BV BRST Hadamard state and renormalized Lorentzian products remain open |
 | F | one-loop Slavnov breaking and QME status | `STRICT_OBSTRUCTED; TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED`; the regulated insertion is `(199/30)[omega C2]-(87/20)[omega E4]`, nonzero in the complete strict gauge-fixed quotient. Standard unitary free matter cannot cancel it. In the formal tau-adic compensator extension the exact cotangent lift contracts the Weyl quartet, the extended quotient has `dim H04=(3 even,1 odd)` and `H14=0`, and the coefficient-bearing Wess--Zumino counterterm restores the local Euclidean QME at one loop. This is neither an all-loop nor Lorentzian theorem |
 | G | residual quantum transfer and pairing correction | `FORBIDDEN`; the frozen strict residual contraction does not include the compensator. One conditional anomaly-induced Euclidean `Gamma1` representative is now exact, including the `R^2` conversion to the certified `BoxR=0` scheme, but the Weyl-invariant finite remainder, global Green data, rank-two finite-counterterm ambiguity and renormalized-product data leave complete `Gamma1/Q1` uncertified. Transfer reopens only after finite normalization fixes complete `Q1` and an extended classical contraction is certified |
 | N | nonlinear classical transfer prerequisite | `REPAIRED_Q2_Q3_AND_RETAINED_FULL_BV_ELL3_ACCEPTED`; the support-local cyclic repair, typed mixed `q3`, retained contact/exchange replay, and all 26,238 retained BV `ell3` coefficients are independently accepted; this remains classical nonlinear input and does not bypass the local QME gate |

@@ -832,8 +832,8 @@ gravity--clock complex; Wess--Zumino `tau` is a scalar Weyl compensator in a
 different local-BV carrier. The content-addressed merge audit therefore
 rejects a direct sum or name-based identification.
 
-The currently active ladder work is the QME-dependency rail for Bridge 5, not
-an activated classical-to-quantum mode map. Its remaining local gate is the
+The currently active coefficient-bearing ladder work is the QME-dependency
+rail for Bridge 5. Its remaining local gate is the
 cubic-and-higher `C2` completion, the independent `R2` form factor, finite
 `C2/R2` normalization and complete `Q1`; its independent carrier gate is
 Bridge 2. The generated
@@ -844,11 +844,17 @@ its statement rather than inventing an out-of-schema lifecycle value.
 
 Bridge 4 has a distinct activation gate: one normalized classical mode, causal
 Green carrier, and pairing must all live on the same certified background.
-The current fail-closed row is
-`quantum.berger.carrier_gap.retained_26_stationary_modes`; it imports a causal
-carrier but no stationary mode ledger, compatible complex structure, Hadamard
-two-point function, or physical state-space sign. None of those data may be
-inferred by matching mode names across backgrounds.
+That gate is now closed for the free reduced E/A/L carrier on the vacuum
+conformal cylinder. The six all-energy mode-family atlas rows certify BRST
+cohomology status, a compatible complex structure, the microlocal Hadamard
+two-point distribution, and state-space sign `+E-A-L`, with
+`REDUCED-MODE` and `LORENTZIAN-CAUSAL` tags. This is a compact-cylinder
+reduced Krein carrier, not a full-BV kernel or positive graviton Hilbert
+space. The fail-closed rows remain
+`quantum.berger.carrier_gap.retained_26_stationary_modes` and the full off-
+shell BV extension: neither has a certified same-background stationary mode
+crosswalk and both remain `NO_CERTIFIED_MAP`. None of those missing data may
+be inferred by matching mode names across backgrounds.
 
 Bridge 5 activates only after both Bridge 2 and a coefficient-bearing QME
 disposition are present. Its strict-versus-tau-adic one-loop QME-disposition

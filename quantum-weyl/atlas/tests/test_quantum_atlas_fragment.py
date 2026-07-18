@@ -67,6 +67,24 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "NO_CERTIFIED_MAP",
         )
 
+    def test_reduced_vacuum_cylinder_bridge4_is_certified_without_full_bv_promotion(self) -> None:
+        modes = [
+            entry
+            for entry in build()["entries"]
+            if entry["quantum_data"]["entry_kind"] == "MODE_FAMILY"
+        ]
+        self.assertEqual(len(modes), 6)
+        self.assertTrue(all(
+            entry["quantum_data"]["compatible_complex_structure"]["status"]
+            == "CERTIFIED"
+            and entry["quantum_data"]["Hadamard_two_point_function"]["status"]
+            == "CERTIFIED"
+            and "not a full-BV kernel"
+            in entry["quantum_data"]["Hadamard_two_point_function"]["statement"]
+            and entry["quantum_data"]["lifecycle_state"]["status"] == "CERTIFIED"
+            for entry in modes
+        ))
+
     def test_non_mode_carriers_are_not_particles(self) -> None:
         guards = [
             entry for entry in build()["entries"]

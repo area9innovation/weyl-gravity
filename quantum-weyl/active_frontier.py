@@ -59,6 +59,7 @@ DEPENDENCIES = {
     "anomaly_induced_nonlocal_Gamma1": HERE / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": HERE / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": HERE / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
@@ -143,6 +144,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
         "curvature_observable_propagator": "GAUGE_INVARIANT_CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED_AUTONOMOUS_GREEN_AND_HADAMARD_OPEN",
+        "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
     for name, state in states.items():
@@ -159,6 +161,7 @@ def _load() -> dict[str, dict[str, Any]]:
     anomaly_induced_gamma1 = values["anomaly_induced_nonlocal_Gamma1"]
     flat_tt_logarithmic_gamma1 = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log_gamma1 = values["curvature_squared_covariant_log_Gamma1"]
+    reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
         physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
         or physical_elliptic.get("result_state")
@@ -317,6 +320,25 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN"
     ):
         raise ValueError("curvature-squared covariant-log Gamma1 frontier drifted")
+    if (
+        reduced_bridge4.get("decision", {}).get(
+            "Bridge_4_reduced_vacuum_cylinder"
+        )
+        != "CERTIFIED"
+        or reduced_bridge4.get("decision", {}).get("Bridge_4_full_BV")
+        != "NO_CERTIFIED_MAP"
+        or reduced_bridge4.get("decision", {}).get("Bridge_4_Berger")
+        != "NO_CERTIFIED_MAP"
+        or reduced_bridge4.get("claim_flags", {}).get(
+            "REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED"
+        )
+        is not True
+        or reduced_bridge4.get("claim_flags", {}).get(
+            "FULL_BV_BRST_HADAMARD_STATE_CERTIFIED"
+        )
+        is not False
+    ):
+        raise ValueError("vacuum-cylinder reduced Bridge-4 frontier drifted")
     antifield = values["antifield_import"]
     antifield_flags = antifield.get("claim_flags", {})
     if (
@@ -1100,8 +1122,8 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-active-frontier-v1",
         "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
-        "result_state": "STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_LORENTZIAN_OPEN",
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"],
+        "result_state": "STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_REDUCED_BRIDGE4_CERTIFIED_FULL_BV_LORENTZIAN_OPEN",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: _dependency(DEPENDENCIES[name], payload)
             for name, payload in values.items()
@@ -1112,7 +1134,7 @@ def build() -> dict[str, Any]:
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
             "G3": "PASSED_REPOSITORY_EUCLIDEAN_COEFFICIENT_AND_SLAVNOV_BREAKING",
             "G4": "DISPOSITION_COMPLETE_STRICT_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
-            "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
+            "G5": "PARTIAL_REDUCED_VACUUM_CYLINDER_BRIDGE4_CERTIFIED_FULL_BV_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS_OPEN",
         },
         "active_rows": {
             "classical_interacting_input": {
@@ -1128,8 +1150,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
-                "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
-                "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
+                "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
+                "next_gate": "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             },
             "free_Lorentzian_algebra": {
                 "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
@@ -1291,6 +1313,14 @@ def build() -> dict[str, Any]:
             "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED": True,
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED": True,
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE": True,
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED": True,
+            "REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED": True,
+            "REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED": True,
+            "E_BRANCH_POSITIVE_HADAMARD_STATE_CERTIFIED": True,
+            "A_L_BRANCHES_POSITIVE": False,
+            "FULL_BV_BRST_HADAMARD_STATE_CERTIFIED": False,
+            "POSITIVE_GRAVITON_HILBERT_SPACE_CERTIFIED": False,
+            "BERGER_BRIDGE4_CERTIFIED": False,
             "FINITE_C2_NORMALIZATION_FIXED": False,
             "FINITE_R2_NORMALIZATION_FIXED": False,
             "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": False,
@@ -1304,6 +1334,7 @@ def build() -> dict[str, Any]:
         },
         "ordered_next_gates": [
             "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -1406,7 +1437,13 @@ def build() -> dict[str, Any]:
             "curvature-image free BV observable classes. Exact transport through the curvature "
             "map and its formal adjoint also constructs the gauge-invariant curvature-observable "
             "Pauli-Jordan operator. This is not an autonomous curvature Green inverse, a "
-            "Hadamard state, positivity, or an interacting quantum theory. The "
+            "Hadamard state, positivity, or an interacting quantum theory. Independently, "
+            "the same-background normalized E/A/L modes, reduced causal Green carrier and "
+            "transported pairing on the vacuum conformal cylinder now define a compatible "
+            "complex structure and microlocal Hadamard two-point distribution. The E branch "
+            "is positive, while A and L have negative Krein sign. This closes Bridge 4 only "
+            "on that free reduced carrier; it is not a full-BV kernel, a positive graviton "
+            "Hilbert space, a Berger-space crosswalk, or an interacting quantum theory. The "
             "repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
             "and retained cyclicity defects, and preserved causal unary flags. The historical "
@@ -1444,10 +1481,11 @@ def build() -> dict[str, Any]:
             "mixing. Rank-46 resolution is an optional Paper 11 interpretation follow-up, not a "
             "quantum prerequisite: full local BV cohomology has reached G2 and the exact Slavnov "
             "assembly/receiver is ready; repository regulator, measure and Slavnov matching is now "
-            "the analytic critical path, while stationary/Hadamard construction is "
-            "parallel. This is a classical LOCAL-ALGEBRAIC acceptance, not a quantum result. "
-            "The companion is null-cone decomposable, but this does not imply existence of a "
-            "Hadamard state: the bosonic analytic hypothesis failure and the later full-BV "
+            "the analytic critical path, while the Berger/full-BV stationary-Hadamard "
+            "construction is parallel. This is a classical LOCAL-ALGEBRAIC acceptance, not "
+            "a quantum result. The Berger companion is null-cone decomposable, but this does "
+            "not imply existence of a Hadamard state there: the bosonic analytic hypothesis "
+            "failure and the later full-BV "
             "BRST/Krein and physical-positivity gate are recorded separately. "
             "The exact stationary-carrier import consumer is ready, but no classical manifest "
             "has been supplied and finite PBW data do not decide spectral isolation of zero. "
@@ -1468,7 +1506,7 @@ def validate(result: dict[str, Any]) -> None:
     if (
         result.get("result_id") != "QUANTUM_WEYL_ACTIVE_FRONTIER"
         or result.get("result_state")
-        != "STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_LORENTZIAN_OPEN"
+        != "STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_REDUCED_BRIDGE4_CERTIFIED_FULL_BV_LORENTZIAN_OPEN"
     ):
         raise ValueError("active frontier identity drifted")
     ladder = result.get("promotion_ladder", {})
@@ -1479,7 +1517,8 @@ def validate(result: dict[str, Any]) -> None:
         != "PASSED_REPOSITORY_EUCLIDEAN_COEFFICIENT_AND_SLAVNOV_BREAKING"
         or ladder.get("G4")
         != "DISPOSITION_COMPLETE_STRICT_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED"
-        or not str(ladder.get("G5", "")).startswith("BLOCKED")
+        or ladder.get("G5")
+        != "PARTIAL_REDUCED_VACUUM_CYLINDER_BRIDGE4_CERTIFIED_FULL_BV_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS_OPEN"
     ):
         raise ValueError("quantum promotion ladder was over-promoted")
     flags = result.get("claim_flags", {})
@@ -1538,6 +1577,14 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED") is not True
         or flags.get("CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED") is not True
         or flags.get("FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE") is not True
+        or flags.get("VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED") is not True
+        or flags.get("REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED") is not True
+        or flags.get("REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED") is not True
+        or flags.get("E_BRANCH_POSITIVE_HADAMARD_STATE_CERTIFIED") is not True
+        or flags.get("A_L_BRANCHES_POSITIVE") is not False
+        or flags.get("FULL_BV_BRST_HADAMARD_STATE_CERTIFIED") is not False
+        or flags.get("POSITIVE_GRAVITON_HILBERT_SPACE_CERTIFIED") is not False
+        or flags.get("BERGER_BRIDGE4_CERTIFIED") is not False
         or flags.get("FINITE_C2_NORMALIZATION_FIXED") is not False
         or flags.get("FINITE_R2_NORMALIZATION_FIXED") is not False
         or flags.get("COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED") is not False
@@ -1624,6 +1671,14 @@ def validate(result: dict[str, Any]) -> None:
             "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED",
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED",
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE",
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED",
+            "REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED",
+            "REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED",
+            "E_BRANCH_POSITIVE_HADAMARD_STATE_CERTIFIED",
+            "A_L_BRANCHES_POSITIVE",
+            "FULL_BV_BRST_HADAMARD_STATE_CERTIFIED",
+            "POSITIVE_GRAVITON_HILBERT_SPACE_CERTIFIED",
+            "BERGER_BRIDGE4_CERTIFIED",
             "FINITE_C2_NORMALIZATION_FIXED",
             "FINITE_R2_NORMALIZATION_FIXED",
             "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",

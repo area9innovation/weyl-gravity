@@ -39,6 +39,10 @@ def verify() -> dict:
         "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
         "QME_RESTORED",
         "LORENTZIAN_QUANTUM_THEORY",
+        "A_L_BRANCHES_POSITIVE",
+        "FULL_BV_BRST_HADAMARD_STATE_CERTIFIED",
+        "POSITIVE_GRAVITON_HILBERT_SPACE_CERTIFIED",
+        "BERGER_BRIDGE4_CERTIFIED",
     ):
         mutant = deepcopy(certificate)
         mutant["claim_flags"][key] = True
@@ -64,6 +68,10 @@ def verify() -> dict:
         "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED",
         "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED",
         "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE",
+        "VACUUM_CYLINDER_REDUCED_BRIDGE4_ACTIVATED",
+        "REDUCED_COMPATIBLE_COMPLEX_STRUCTURE_CERTIFIED",
+        "REDUCED_KREIN_HADAMARD_TWO_POINT_CERTIFIED",
+        "E_BRANCH_POSITIVE_HADAMARD_STATE_CERTIFIED",
     ):
         mutant = deepcopy(certificate)
         mutant["claim_flags"][key] = False

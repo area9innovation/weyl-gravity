@@ -3,7 +3,7 @@
 ## Superseding coefficient-bearing status
 
 The authoritative lifecycle is now
-`STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_LORENTZIAN_OPEN`. The
+`STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_REDUCED_BRIDGE4_CERTIFIED_FULL_BV_LORENTZIAN_OPEN`. The
 complete repository Euclidean symbol complex, Ricci-flat `C2` carrier,
 factorwise local `b4` ledger, and regulated Slavnov insertion replay with
 
@@ -39,8 +39,14 @@ first differ at curvature order three. The additive `C^2` constant,
 cubic-and-higher Weyl-invariant remainder, renormalized BV Laplacian or
 time-ordered product, the independent `R^2` form factor and finite `R^2`
 normalization, and global Green data remain
-absent, so complete `Gamma1` and `Q1` are fail-closed. The stationary/Hadamard rail remains
-independently open. The older readiness discussion below is retained as
+absent, so complete `Gamma1` and `Q1` are fail-closed. Independently, Bridge 4
+is certified on the free reduced E/A/L vacuum-cylinder carrier: the
+same-background normalized modes, causal Green carrier and pairing determine
+a compatible complex structure and a microlocal Hadamard two-point
+distribution. The E branch is positive; A and L have negative Krein sign.
+This is not a full-BV Hadamard kernel, a positive graviton Hilbert space, a
+Berger-space result, or an interacting quantum theory. Those stationary/full-
+BV gates remain open. The older readiness discussion below is retained as
 historical gate provenance.
 
 See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md),
@@ -48,7 +54,8 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md),
 [`one-loop-slavnov-q1-disposition.md`](one-loop-slavnov-q1-disposition.md), and
 [`anomaly-induced-nonlocal-gamma1.md`](anomaly-induced-nonlocal-gamma1.md), and
-[`flat-tt-logarithmic-gamma1.md`](flat-tt-logarithmic-gamma1.md).
+[`flat-tt-logarithmic-gamma1.md`](flat-tt-logarithmic-gamma1.md), and
+[`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical
 certificates remain immutable receipts, but they are no longer all valid

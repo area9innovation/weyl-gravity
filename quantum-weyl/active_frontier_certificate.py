@@ -52,7 +52,11 @@ def main() -> int:
         OUTPUT.write_text(content)
     if args.check and (not OUTPUT.exists() or OUTPUT.read_text() != content):
         raise SystemExit(f"stale active quantum frontier: {OUTPUT}")
-    print("QUANTUM WEYL ACTIVE FRONTIER: STRICT QME OBSTRUCTED; TAU-ADIC EXTENDED ONE-LOOP LOCAL EUCLIDEAN QME RESTORED")
+    print(
+        "QUANTUM WEYL ACTIVE FRONTIER: STRICT QME OBSTRUCTED; "
+        "TAU-ADIC EXTENDED ONE-LOOP LOCAL EUCLIDEAN QME RESTORED; "
+        "REDUCED VACUUM-CYLINDER BRIDGE 4 CERTIFIED; FULL-BV LORENTZIAN OPEN"
+    )
     return 0
 
 
