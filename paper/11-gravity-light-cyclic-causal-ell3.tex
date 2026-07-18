@@ -1048,6 +1048,10 @@ PYTHONPATH=. python3 \
   verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
+  verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction_exhaustive.py \
+  --workers 8
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
   verify_nonlinear_source_transfer_tangent_cone_dictionary.py
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.berger_residual_ell3_branch_projection_readiness_v2 --check

@@ -102,11 +102,13 @@
   "source_manifest": {
     "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py": "464ca351b277ba98fa3da1faf2cb40f43ee5f00ea486594e3eb579d16ba43e8a",
     "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py": "f860f388b40913813ea6ac34de8916f0a597372b06e7845f976a6237248550ba",
+    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction_exhaustive.py": "ccab059890b76532e1bdc8f9e354422430088b305324a7286445e2302e77b8ef",
     "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py": "4cf3740a3a63a7f6f9c0540d6f3e71a9842e830da6558618d27d2b6053583855",
     "d_quotient_classical/schema/berger-retained-mixed-ell3-positive-jet-full-bv-obstruction-v1.schema.json": "2344ac5bab72637d2dd760f82b650bd8aafca22de41cc041b68a0e584eeac148"
   },
   "verification_commands": [
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction_exhaustive.py --workers 8",
     "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction -v",
     "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-retained-mixed-ell3-positive-jet-full-bv-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json"
   ],
