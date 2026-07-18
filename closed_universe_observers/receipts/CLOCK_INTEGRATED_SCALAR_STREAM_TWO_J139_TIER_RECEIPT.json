@@ -1,0 +1,51 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Every symmetry-unique diagonal normalized scalar detector-profile coefficient is interval-evaluated through two_j=139 after exact clock integration. Reflection reconstructs all 9,870 values from 4,970 serialized intervals; the worst uniform binomial remainder is below 10^-150 and top-rail widths remain below 1.2e-4. Applying the polarization recurrence inside the temporal Green chain, the tail beyond form two_j=138, full Maxwell and massive images, recoil, tangent-cone restriction, the physical-branch bridge and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_clock_integrated_scalar_stream.py closed_universe_observers/verify_berger_clock_integrated_scalar_stream.py closed_universe_observers/tests/test_berger_clock_integrated_scalar_stream.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "scalar stream, generated atlas, observer brief and canonical roadmap"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_clock_integrated_scalar_stream --emit", "elapsed_seconds": "about 25", "status": "PASS", "scope": "all two_j=0,...,139 scalar intervals, reflection coverage and 1024-bit remainder audit"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_clock_integrated_scalar_stream", "elapsed_seconds": "34.64", "status": "PASS", "scope": "independent freshness, mode ordering, coverage, interval, remainder, evidence and fail-closed checks"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_clock_integrated_scalar_stream.py", "elapsed_seconds": "38.85", "status": "PASS", "scope": "six focused coverage, compatibility, high-mode, remainder and lifecycle tests", "summary": "6 passed"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-clock-integrated-scalar-stream-two-j139-v1.schema.json -d closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139.json", "elapsed_seconds": "under 3", "status": "PASS", "scope": "strict Draft 2020-12 validation of the 2.6 MB generated stream"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "under 2", "status": "PASS", "scope": "generated atlas, shared schema, evidence hashes and inactive bridge rows", "summary": "4 passed plus two atlas verifiers"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_clock_integrated_scalar_stream --emit", "status": "FAIL", "reason": "The first implementation required the new tighter odd-mode intervals to contain the older wider k=6 Taylor intervals and accumulated tiny exact Fraction remainders per row. Compatibility was corrected to rigorous interval overlap, and the remainder audit moved to a separate directed 1024-bit integer rail."},
+    {"command": "python3 -m closed_universe_observers.generate_berger_clock_integrated_scalar_stream --emit", "status": "FAIL", "reason": "A transitional compatibility assertion additionally required every outward-rounded new interval to be nested in the old interval. Six harmless rounding cases crossed an old endpoint while all intersections were nonempty; only the exact overlap criterion is now claimed."}
+  ],
+  "higher_tiers": [
+    {"tier": 2, "status": "NOT_RUN", "criterion": "This adds a successor stream without changing existing mathematical inputs, the shared schema, central comparison ledger or lifecycle status; direct atlas consumers passed."},
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, Green-weighted tail theorem, full Green image, recoil coefficient, tangent-cone promotion, physical-branch bridge, or quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_clock_integrated_scalar_stream.py", "sha256": "e5b08e6a40c204de5d1eb742dbc10db8f7aca3e0106610e53dae910096af8f48"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139.json", "sha256": "5fc879818a7a34a0d79a5f55a7acb266054e15dc886e7187682677ac856a7ca5"},
+    {"path": "closed_universe_observers/schema/berger-clock-integrated-scalar-stream-two-j139-v1.schema.json", "sha256": "8d040f68f4bbbb71cf27c6336bf57198a44e3aa08a408a7bb38544a9c4dbe2c4"},
+    {"path": "closed_universe_observers/verify_berger_clock_integrated_scalar_stream.py", "sha256": "e1e8396773c2976010f0d44d5a1efddb03f522f8e96f23b4fa8a7f210d2565cd"},
+    {"path": "closed_universe_observers/tests/test_berger_clock_integrated_scalar_stream.py", "sha256": "50145786504aca1fe94abc344358dd8fd577a504d09cfb03b79ff519c933b23f"},
+    {"path": "closed_universe_observers/reports/berger-clock-integrated-scalar-stream-two-j139.md", "sha256": "016b8d496b458a1a8eb0f488ad5f3942be9a77608893d52e794da68cd1e50117"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "addc72dc5e95b67ec3f77fbf275f164a704fdb8263fa3ffca822928b1f80b1b4"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "b139740ec8a88a06cabd5f0ec8676e987b0986536db8b747cb1c5cd0177d98ff"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "20d27570eca9016ca55cd2e49db666ea564bc475d763e0af75572ebc9c1fcd26"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "2096ced0d07b176923c9e33f13b4ec958c20a6bb4ed3375c6f60c0f708e47a35"},
+    {"path": "closed_universe_observers/README.md", "sha256": "bed392dfd851a4a069d8381b9035bed82fb531c8f042b74f51686984a9a3bfdb"}
+  ],
+  "claim_flags": {
+    "CLOCK_INTEGRATED_DIAGONAL_SCALAR_COEFFICIENTS_TWO_J0_TO_139_EXPORTED": true,
+    "FULL_SCALAR_DIAGONAL_RECONSTRUCTIBLE_BY_REFLECTION": true,
+    "LOW_MODE_CERTIFICATE_COMPATIBILITY_PASSED": true,
+    "POLARIZATION_RECURRENCE_CLOCK_GREEN_CHAIN_APPLIED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

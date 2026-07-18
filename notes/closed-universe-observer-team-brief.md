@@ -405,6 +405,18 @@ scalar coefficient.  The active gate is the diagonal scalar recurrence
 through `two_j=139`, including its binomial truncation remainder, before
 Green-weighted tail closure.
 
+`BERGER_CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139` now evaluates that full
+scalar input rail.  A specialized diagonal symmetric-power formula and
+isotropic angular reduction produce 4,970 symmetry-unique validated
+intervals, reconstructing all 9,870 diagonal coefficients for
+`two_j=0,...,139`.  Directed 256-bit fixed-point arithmetic, outward 160-bit
+serialization and a separate 1024-bit Taylor-remainder rail keep the worst
+binomial remainder below `10^-150`.  The stream overlaps all previously
+certified `two_j<=4` values, and the top-rail widths remain below `1.2e-4`.
+The active gate is now application of the polarization recurrence inside the
+temporal Green chain and a tail bound beyond form `two_j=138`; scalar-value
+evaluation itself is no longer open.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger
