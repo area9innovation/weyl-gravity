@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; complete homogeneous generalized-zero and twist position/velocity directions crossed with one SO(3)-complete nonaxisymmetric ell=2,k=0 extra-primary fixture in each parity and polarization",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the earlier a,b,d source matrix and the new twist position and velocity columns form the complete declared homogeneous/twist times ell=2 extra-primary bounded-resonance matrix",
+    "one nonaxisymmetric Clebsch-Gordan fixture determines each full SO(3)-equivariant V1 tensor V2 to V2 map because the intertwiner space has dimension one",
+    "the twist-position adjoint matrix has rank two",
+    "the twist-velocity adjoint matrix has determinant 4129056*(72*t^2 + 34*sqrt(3)*I*t + 3) and therefore rank four for every real t",
+    "all eight direct four-dimensional Weyl-Maxwell source fixtures replay exactly",
+    "the atlas keeps the nonlinear verdict OPEN because the source columns share bilinear amplitude factors and have not yet been intersected with the five stabilizer moment maps"
+  ],
+  "evidence": {
+    "commit": "8ecc7391d3924cef27f222899bff6f39bed32e5d",
+    "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+    "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "impose the shared bilinear factorization relations and solve the simultaneous five-stabilizer-moment-map plus complete bounded-resonance zero locus; keep smooth-secular and causal correction classes separate",
+  "not_established": [
+    "the simultaneous stabilizer and bounded-resonance zero locus",
+    "necessity or sufficiency for smooth exponential-polynomial corrections allowing secular terms",
+    "a compact-product causal or retarded theorem",
+    "opposite-momentum, relative-phase, multiple-|k| or arbitrary finite-harmonic completion",
+    "a full second-order correction, all-orders integration, residual descent, observational map or quantum claim"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_homogeneous_twist_ell2_extra_resonance_matrix",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix",
+  "team_id": "einstein_boundary",
+  "verdict": "HOMOGENEOUS_TWIST_RESONANCE_MATRIX_CERTIFIED_SIMULTANEOUS_ZERO_LOCUS_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix"
+  ]
+}
