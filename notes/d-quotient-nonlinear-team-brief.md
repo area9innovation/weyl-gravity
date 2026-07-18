@@ -801,9 +801,11 @@ publishes the triangle handoff contract at
 `d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json`;
 it requires content-addressed source/target `q1`, inclusion,
 projection-or-cofiber and pairing-or-current artifacts rather than accepting
-status flags alone.  It also requires the handoff to certify that the generic
-fixed-identity cyclic obstruction is respected, so the obstructed inclusion
-cannot be silently relabelled as the full cyclic triangle.  The receiver
+status flags alone.  It also requires hashed artifacts for both the generic
+fixed-identity cyclic obstruction and its corrected resolution, plus an
+explicit nonidentity, pairing-improvement or declared chain-homotopy
+resolution kind.  Thus the obstructed inclusion cannot be silently relabelled
+as the full cyclic triangle.  The receiver
 validates full-BV rows, support locality,
 cyclic pairing, the arity-two and
 arity-three identities, `H_product` equivariance, exact artifact hashes and

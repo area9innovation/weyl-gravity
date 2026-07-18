@@ -51,6 +51,18 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
         with self.assertRaises(Exception):
             result.validate_triangle(value)
 
+    def test_fixed_identity_cyclic_obstruction_requires_hashed_resolution(self):
+        value = result.synthetic_triangle()
+        del value["triangle_artifacts"]["cyclic_obstruction_resolution"]
+        with self.assertRaises(Exception):
+            result.validate_triangle(value)
+
+    def test_fixed_identity_field_inclusion_cannot_be_silently_reused(self):
+        value = result.synthetic_triangle()
+        value["cyclic_obstruction_disposition"]["fixed_identity_field_inclusion_reused"] = True
+        with self.assertRaises(Exception):
+            result.validate_triangle(value)
+
     def test_missing_inputs_cannot_claim_ready(self):
         value = result.build()
         value["result_state"] = "INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY"

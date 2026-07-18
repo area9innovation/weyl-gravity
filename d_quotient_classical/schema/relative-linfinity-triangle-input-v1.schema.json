@@ -3,7 +3,7 @@
   "$id": "https://area9.dk/schemas/pure-weyl-relative-linfinity-triangle-input-v1.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "claim_status", "dependency_tags", "theory_map", "background_id", "boundaries", "carrier_id", "coefficient_field", "triangle_artifacts", "acceptance_flags", "claim_boundary"],
+  "required": ["schema", "result_id", "claim_status", "dependency_tags", "theory_map", "background_id", "boundaries", "carrier_id", "coefficient_field", "triangle_artifacts", "cyclic_obstruction_disposition", "acceptance_flags", "claim_boundary"],
   "properties": {
     "schema": {"const": "pure-weyl-relative-linfinity-triangle-input-v1"},
     "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"},
@@ -17,13 +17,24 @@
     "triangle_artifacts": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source_q1", "target_q1", "inclusion", "projection_or_cofiber", "pairing_or_current"],
+      "required": ["source_q1", "target_q1", "inclusion", "projection_or_cofiber", "pairing_or_current", "fixed_identity_cyclic_obstruction", "cyclic_obstruction_resolution"],
       "properties": {
         "source_q1": {"$ref": "#/$defs/artifact"},
         "target_q1": {"$ref": "#/$defs/artifact"},
         "inclusion": {"$ref": "#/$defs/artifact"},
         "projection_or_cofiber": {"$ref": "#/$defs/artifact"},
-        "pairing_or_current": {"$ref": "#/$defs/artifact"}
+        "pairing_or_current": {"$ref": "#/$defs/artifact"},
+        "fixed_identity_cyclic_obstruction": {"$ref": "#/$defs/artifact"},
+        "cyclic_obstruction_resolution": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "cyclic_obstruction_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_identity_field_inclusion_reused", "resolution_kind"],
+      "properties": {
+        "fixed_identity_field_inclusion_reused": {"const": false},
+        "resolution_kind": {"enum": ["CORRECTED_NONIDENTITY_SYMPLECTIC_MAP", "PAIRING_IMPROVEMENT", "DECLARED_CHAIN_HOMOTOPY_CYCLIC_MORPHISM"]}
       }
     },
     "acceptance_flags": {

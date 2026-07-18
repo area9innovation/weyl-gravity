@@ -88,6 +88,9 @@ def validate_triangle(value: Mapping[str, object], *, verify_artifacts: bool = T
     missing = [flag for flag in TRIANGLE_FLAGS if value["acceptance_flags"].get(flag) is not True]
     if missing:
         raise ValueError("relative triangle misses acceptance flags: " + ", ".join(missing))
+    obstruction = value["triangle_artifacts"]["fixed_identity_cyclic_obstruction"]
+    if obstruction["result_id"] != "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1":
+        raise ValueError("relative triangle does not pin the certified fixed-identity cyclic obstruction")
     if verify_artifacts:
         for artifact in value["triangle_artifacts"].values():
             path = ROOT / artifact["path"]
@@ -201,7 +204,7 @@ def build() -> dict:
                 "commands_and_elapsed_seconds": [
                     {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards", "elapsed_seconds": 0.16},
                     {"command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py", "elapsed_seconds": 0.14},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.21},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.62},
                     {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json", "elapsed_seconds": 2.11},
                     {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json", "elapsed_seconds": 3.34},
                     {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json", "elapsed_seconds": 2.02},
@@ -279,11 +282,27 @@ def synthetic_triangle() -> dict:
         "coefficient_field": "Q(sqrt(3))",
         "triangle_artifacts": {
             name: {
-                "result_id": f"synthetic_{name}",
+                "result_id": (
+                    "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1"
+                    if name == "fixed_identity_cyclic_obstruction"
+                    else f"synthetic_{name}"
+                ),
                 "path": str(TRIANGLE_SCHEMA.relative_to(ROOT)),
                 "sha256": _sha256(TRIANGLE_SCHEMA),
             }
-            for name in ("source_q1", "target_q1", "inclusion", "projection_or_cofiber", "pairing_or_current")
+            for name in (
+                "source_q1",
+                "target_q1",
+                "inclusion",
+                "projection_or_cofiber",
+                "pairing_or_current",
+                "fixed_identity_cyclic_obstruction",
+                "cyclic_obstruction_resolution",
+            )
+        },
+        "cyclic_obstruction_disposition": {
+            "fixed_identity_field_inclusion_reused": False,
+            "resolution_kind": "CORRECTED_NONIDENTITY_SYMPLECTIC_MAP",
         },
         "acceptance_flags": {flag: True for flag in TRIANGLE_FLAGS},
         "claim_boundary": "Synthetic receiver fixture only; no scientific relative triangle.",
@@ -326,6 +345,7 @@ def guards(value: Mapping[str, object]) -> None:
         ("triangle background", lambda item: item.__setitem__("background_id", "fixed_rational_positive_Berger_clock")),
         ("triangle artifact hash", lambda item: item["triangle_artifacts"]["inclusion"].__setitem__("sha256", "0" * 64)),
         ("fixed identity obstruction ignored", lambda item: item["acceptance_flags"].__setitem__("FIXED_IDENTITY_CYCLIC_OBSTRUCTION_RESPECTED", False)),
+        ("fixed identity silently reused", lambda item: item["cyclic_obstruction_disposition"].__setitem__("fixed_identity_field_inclusion_reused", True)),
     ):
         mutant = deepcopy(triangle)
         mutate(mutant)
