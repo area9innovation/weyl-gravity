@@ -1,0 +1,44 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "MAXWELL_ENERGY_GRAPH_NORM_TAIL_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Each of the three four-dimensional Maxwell field-strength components has moving-profile tail at most 2304 S_a Lambda_N^(-3/2); the safe component sum first falls below one at retained two_j=68743. Dense materialization is not selected. The finite-time massive energy constant, scalar recoil tail, numerical recoil, cone, Bridge 3, nonlinear stability and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_maxwell_energy_graph_norm_tail.py closed_universe_observers/verify_berger_maxwell_energy_graph_norm_tail.py closed_universe_observers/tests/test_berger_maxwell_energy_graph_norm_tail.py", "elapsed_seconds": 0.03, "status": "PASS"},
+    {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_maxwell_energy_graph_norm_tail", "elapsed_seconds": 0.94, "status": "PASS", "summary": "Regeneration, exact cutoff, three-component field-strength typing and fail-closed massive continuation passed."},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_maxwell_energy_graph_norm_tail.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 7.08, "status": "PASS", "summary": "20 energy-tail, atlas and comparison-ledger tests passed."},
+    {"command": "residual-atlas validator, observer-atlas verifier and comparison-ledger verifier", "elapsed_seconds": 8.9, "status": "PASS", "summary": "The generated graph-tail row is certified while recoil, cone and crosswalk lifecycles remain fail closed."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_maxwell_energy_graph_norm_tail --check", "elapsed_seconds": 0.95, "status": "PASS", "summary": "The exact spectral reduction and cutoff certificate regenerate byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No recoil coefficient, full Green image, shared core algebra, lifecycle freeze or release was promoted."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_maxwell_energy_graph_norm_tail.py", "sha256": "242a1c3b1cb7caf130653f845961db1c2b9fc94e2ac5d0c51f8833cb4f4a95b1"},
+    {"path": "closed_universe_observers/verify_berger_maxwell_energy_graph_norm_tail.py", "sha256": "f649f74daf6a8d5a5154277553c88af3d4868867acd2b4da98650b655b2f2cc7"},
+    {"path": "closed_universe_observers/tests/test_berger_maxwell_energy_graph_norm_tail.py", "sha256": "19da7132411357b8103a16bb4e215d547df7d2fedc5bef9d0790fa02af8f965a"},
+    {"path": "closed_universe_observers/schema/berger-maxwell-energy-graph-norm-tail-v1.schema.json", "sha256": "b89f33a6376d2df45459d0786af0eec42756944f3a23cb9211ffda0bbbaa7e0d"},
+    {"path": "closed_universe_observers/reports/berger-maxwell-energy-graph-norm-tail.md", "sha256": "a5790cfafe4b76d789c9f748272b394f4233baba60d45914da0c3f9adc14c387"},
+    {"path": "closed_universe_observers/certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json", "sha256": "f3d7e04d7f3035f7435dc1da5d8e9f8ad846ee23092ea618c8dc9c321343aa55"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "80067d14da80a0fb656f3e777683e9ad20667990fb1856f883591e3ff8e0569a"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "c4d7e6c0075f01c0e1d1084e556828e41f5de1b6383b3cde6d3567b0fb011e43"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "5549ca94189e76ca7e60a72a37b91992a7851482ed7be8d7a63b1f246abd080b"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "2aef454b6fc44a6f64a1a20d32a5969760b67135cafb0455f76966692657a5d3"}
+  ],
+  "claim_flags": {
+    "MAXWELL_ENERGY_GRAPH_NORM_TAIL_EXPORTED": true,
+    "FOUR_DIMENSIONAL_FIELD_STRENGTH_TAIL_EXPORTED": true,
+    "CURRENT_TWO_J1024_GRAPH_TAIL_BOUND_CERTIFIES_SMALL_TAIL": false,
+    "COMPLETE_LOW_MODE_PROJECTION_EXPORTED": false,
+    "MASSIVE_FINITE_TIME_ENERGY_CONSTANT_EXPORTED": false,
+    "MAXWELL_TAIL_TO_RECOIL_SCALAR_MAP_CERTIFIED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -755,6 +755,16 @@ energy constant, unless the exact streamed block contraction proves a direct
 cancellation.  This is not an unboundedness theorem and does not evaluate
 recoil.
 
+`BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL` now closes the Maxwell half of that
+route.  After the same two boundary-flat clock integrations by parts, each of
+`d_Sigma A_Sigma`, `partial_t A_Sigma`, and `d_Sigma A_0` is bounded by
+`2304 S_a Lambda_N^(-3/2)`.  Their safe component-sum bound is about
+`3.01e5` above retained `two_j=1024` and first falls below one for both
+profiles at retained `two_j=68743`.  A dense rail there would require
+`14,177,143,864` supported entries, so response-specific shell streaming
+remains mandatory.  The next gate is the finite-time massive retarded energy
+constant on the exact switch slabs; no recoil scalar is yet certified.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

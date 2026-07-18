@@ -1,0 +1,142 @@
+{
+  "atlas_status": "CERTIFIED",
+  "calculation": {
+    "current_first_omitted_Delta1_lower": "325899779/1240",
+    "current_retained_max_two_j": 1024,
+    "first_sufficient_component_sum_graph_tail_retained_max_two_j": 68743,
+    "first_sufficient_cutoff_capacity": {
+      "legacy_p0_to_p28_clock_power_intervals": 212657157960,
+      "retained_max_two_j": 68743,
+      "scalar_recurrence_term_applications": 37805625312,
+      "supported_detector_coordinate_entries": 14177143864
+    },
+    "polarization_bounds": [
+      {
+        "component_sum_graph_tail_upper_after_two_j1024": "27528943911141565703455893605405077198924425507091821/91343852333181432387730302044767688728495783936",
+        "component_sum_graph_tail_upper_after_two_j1024_decimal": "3.013770845872e+05",
+        "component_sum_graph_tail_upper_at_first_subunit_cutoff": "1461445202889994982399380158629321452863798357291/1461501637330902918203684832716283019655932542976",
+        "component_sum_graph_tail_upper_at_previous_cutoff": "730754491082201872359405812360669776179045899001/730750818665451459101842416358141509827966271488",
+        "detector_id": "D0",
+        "normalized_Delta1_H_second_derivative_L1_upper": "1999122992193157977991766449080284762914305546987/340282366920938463463374607431768211456",
+        "polarization": "axial",
+        "single_field_strength_component_tail_squared_after_two_j1024": "1205477590946758954064511067084108748035595272370903911392691649474766830774392895549707647864440130874875/119448636388754421842170955346589858057075721733314799866406178718363875371879917679329067139072",
+        "single_field_strength_component_tail_upper_after_two_j1024": "9176314637047188567818631201801692399641475169030607/91343852333181432387730302044767688728495783936"
+      },
+      {
+        "component_sum_graph_tail_upper_after_two_j1024": "440470222200908687966236396770605942431864706222230221/1461501637330902918203684832716283019655932542976",
+        "component_sum_graph_tail_upper_after_two_j1024_decimal": "3.013819560307e+05",
+        "component_sum_graph_tail_upper_at_first_subunit_cutoff": "1461468825614118806191754378086450854991300430649/1461501637330902918203684832716283019655932542976",
+        "component_sum_graph_tail_upper_at_previous_cutoff": "1461532605919452437398831708274008673987470388109/1461501637330902918203684832716283019655932542976",
+        "detector_id": "D1",
+        "normalized_Delta1_H_second_derivative_L1_upper": "249894413239132143426017599686839106109962669317/42535295865117307932921825928971026432",
+        "polarization": "transverse",
+        "single_field_strength_component_tail_squared_after_two_j1024": "18836196278369946319897139219821929550681491266748841666534042719243165745348459233735257764524807214875/1866384943574287841283921177290466532141808152083043747912596542474435552685623713739516674048",
+        "single_field_strength_component_tail_upper_after_two_j1024": "146823407400302895988745465590201980810621568740743407/1461501637330902918203684832716283019655932542976"
+      }
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result upgrades the physical moving-profile Maxwell L2 tail to a four-dimensional field-strength graph-norm tail. After two boundary-flat clock integrations by parts, each of d_Sigma A_Sigma, partial_t A_Sigma and d_Sigma A_0 has tail at most 2304 S_a Lambda_N^(-3/2), where S_a is the certified L1 norm of Delta1 H_a''. The safe component-sum bound is three times this value and controls ||dA||. At retained two_j=1024 it is about 3.01e5; retained two_j=68743 is the first integer cutoff making this particular bound smaller than one for both detector profiles. Dense materialization at that cutoff is not selected: response-specific shell streaming remains authoritative. This certifies the required Maxwell energy-tail input only. It does not export a finite-time massive energy constant, a scalar recoil tail, numerical recoil, a full Green image, tangent-cone restriction, Bridge 3, nonlinear observer-morphism stability or a quantum claim.",
+  "claim_status": "FOUR_DIMENSIONAL_MAXWELL_FIELD_STRENGTH_TAIL_CERTIFIED_MASSIVE_CONSTANT_OPEN",
+  "dependency_refs": {
+    "graph_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE.json",
+      "result_id": "BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE",
+      "sha256": "53382edc9f355be47e9adaaaa1e1cd18097ee7bef39346aa48b227e60f3ab346"
+    },
+    "green_coderivative": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+      "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+    },
+    "moving_tail": {
+      "path": "closed_universe_observers/certificates/BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL.json",
+      "result_id": "BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL",
+      "sha256": "83f9df58ad7c0542eba15da54da7739f49a2f483d3308eb8b9074b0f2721eadb"
+    },
+    "streaming": {
+      "path": "closed_universe_observers/certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
+      "result_id": "BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT",
+      "sha256": "235afae162f5373b623504d5d4c83feaf929ce8ae9190bd9dd62ef6a8b7076cd"
+    },
+    "tail_reduction": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION",
+      "sha256": "4e6c2ac1685221704ef42f7cd4d2a31d14daede5f9f048ec1d05e5dfe53cce83"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "field_strength_tail_theorem": {
+    "advanced_potential_split": "A=A_0 dt+A_Sigma",
+    "boundary_flat_two_clock_ibp_factor": "2304",
+    "component_sum_bound": "||Pi_tail dA|| <= 3*2304*S_a*Lambda_N^(-3/2)",
+    "field_strength_components": [
+      "d_Sigma A_Sigma",
+      "partial_t A_Sigma",
+      "d_Sigma A_0"
+    ],
+    "single_component_bound": "2304 S_a Lambda_N^(-3/2)",
+    "source_control": "S_a=||Delta1 partial_s^2[B(s)F_a(s)]||_L1/B_normalization",
+    "spatial_exterior_derivative_reason": "||d_Sigma u||<=||Delta1^(1/2)u||",
+    "temporal_scalar_reason": "d_Sigma sin(T sqrt(Delta0))/sqrt(Delta0) delta is bounded by Delta1^(1/2) on one-form inputs",
+    "time_derivative_reason": "partial_t cos(T sqrt(Delta1))=-sqrt(Delta1) sin(T sqrt(Delta1))"
+  },
+  "flags": {
+    "COMPLETE_LOW_MODE_PROJECTION_EXPORTED": false,
+    "CURRENT_TWO_J1024_GRAPH_TAIL_BOUND_CERTIFIES_SMALL_TAIL": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "FOUR_DIMENSIONAL_FIELD_STRENGTH_TAIL_EXPORTED": true,
+    "MASSIVE_FINITE_TIME_ENERGY_CONSTANT_EXPORTED": false,
+    "MAXWELL_ENERGY_GRAPH_NORM_TAIL_EXPORTED": true,
+    "MAXWELL_TAIL_TO_RECOIL_SCALAR_MAP_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "reuse_L2_Lambda_minus_2_power_after_one_field_strength_derivative",
+      "reason": "each field-strength component costs one sqrt(Delta), leaving Lambda^(-3/2)"
+    },
+    {
+      "detected": true,
+      "name": "drop_temporal_scalar_gradient_component"
+    }
+  ],
+  "next_gate": "CERTIFY_THE_FINITE_TIME_MASSIVE_RETARDED_ENERGY_CONSTANT_ON_THE_EXACT_SWITCH_SLABS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_maxwell_energy_graph_norm_tail.py",
+        "sha256": "242a1c3b1cb7caf130653f845961db1c2b9fc94e2ac5d0c51f8833cb4f4a95b1"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_maxwell_energy_graph_norm_tail.py",
+        "sha256": "f649f74daf6a8d5a5154277553c88af3d4868867acd2b4da98650b655b2f2cc7"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_maxwell_energy_graph_norm_tail.py",
+        "sha256": "19da7132411357b8103a16bb4e215d547df7d2fedc5bef9d0790fa02af8f965a"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-maxwell-energy-graph-norm-tail-v1.schema.json",
+        "sha256": "b89f33a6376d2df45459d0786af0eec42756944f3a23cb9211ffda0bbbaa7e0d"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-maxwell-energy-graph-norm-tail.md",
+        "sha256": "a5790cfafe4b76d789c9f748272b394f4233baba60d45914da0c3f9adc14c387"
+      }
+    ]
+  },
+  "result_id": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL",
+  "route_disposition": {
+    "dense_complete_projection_to_graph_subunit_cutoff": "NOT_SELECTED",
+    "maxwell_L2_tail_to_field_strength_graph_tail": "CERTIFIED",
+    "maxwell_graph_tail_to_massive_recoil_scalar": "OPEN",
+    "response_specific_shell_stream": "ACTIVE"
+  },
+  "schema": "closed-universe-berger-maxwell-energy-graph-norm-tail-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

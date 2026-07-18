@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "field_strength_tail_theorem", "calculation", "route_disposition", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-maxwell-energy-graph-norm-tail-v1"},
+    "result_id": {"const": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"type": "string"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "field_strength_tail_theorem": {"type": "object", "required": ["field_strength_components", "single_component_bound", "component_sum_bound"]},
+    "calculation": {"type": "object", "required": ["polarization_bounds", "first_sufficient_component_sum_graph_tail_retained_max_two_j", "first_sufficient_cutoff_capacity"]},
+    "route_disposition": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "CERTIFY_THE_FINITE_TIME_MASSIVE_RETARDED_ENERGY_CONSTANT_ON_THE_EXACT_SWITCH_SLABS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; compute reference-scale finite R(K) and R(K^2), any local zeta multiplicative term, and the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    certify the correlated Maxwell energy/graph-norm tail and finite-time massive recoil-chain constant, stream exact Berger charge blocks into the four scalar contractions, then evaluate recoil and restrict records to Z2^C
+Observer:    certify the finite-time massive recoil-chain energy constant, combine it with the Maxwell graph tail, stream exact Berger charge blocks into the four scalar contractions, then evaluate recoil and restrict records to Z2^C
 Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
 
@@ -481,6 +481,14 @@ cannot by itself define `B_ab`.  The selected factorwise route must first
 certify a correlated Maxwell energy/graph-norm tail and a finite-time massive
 energy constant; a direct exact block cancellation remains an open
 alternative.  No unboundedness or numerical-recoil claim is inferred.
+The Maxwell energy successor now closes the first branch of that alternative:
+the three four-dimensional field-strength pieces each obey the exact tail
+`2304 S_a Lambda_N^(-3/2)`.  Their safe component sum is about `3.01e5`
+above retained `two_j=1024` and first falls below one at retained
+`two_j=68743`.  Dense completion there would require more than 14.17 billion
+supported entries and remains unselected.  The active analytic gate is now
+the finite-time massive retarded energy constant on the exact switch slabs,
+followed by direct scalar shell streaming.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`; only that completion activates declared `K_Berger` equivariance and
@@ -1559,6 +1567,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL` (fired; physical tail bound certified, projection open) | construct a complete retained projection through `two_j=3835`, then compose the massive-two-form image; do not treat selected rows or a sub-unit omitted-tail bound as a full Green image |
 | `BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT` (fired; dense legacy rail not selected) | certify the fixed massive/recoil-chain dual norms and stream exact charge blocks into the four scalar contractions; do not use `L2<1` as a numerical recoil tolerance or materialize 662,112,780 legacy clock intervals |
 | `BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE` (fired; current Maxwell `L2` transfer is `NO_CERTIFIED_MAP`) | certify the correlated Maxwell energy/graph-norm tail and finite-time massive energy constant, or prove exact block cancellation, before assigning a recoil-chain scalar tail; do not infer that the full recoil operator is unbounded |
+| `BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL` (fired; field-strength tail certified, dense rail unselected) | certify the finite-time massive retarded energy constant on the exact switch slabs and combine it with the graph tail inside the response-specific scalar stream; do not materialize the 14,177,143,864-entry sub-unit rail |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |
