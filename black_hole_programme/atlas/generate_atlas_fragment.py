@@ -1,0 +1,308 @@
+#!/usr/bin/env python3
+"""Generate the fail-closed black-hole residual-atlas fragment.
+
+Conforms to `residual_atlas/schema/residual-atlas-fragment-v1.schema.json`.
+Statuses are derived from the certificates in
+`black_hole_programme/certificates/` (pinned by result id and sha256).
+Fail-closed rules:
+
+- a status supported by a certificate that is absent on disk degrades to
+  OPEN and its evidence pin is omitted;
+- perturbative radiative fields stay OPEN until the dynamical complex
+  (BH-2A) exists;
+- relations to other backgrounds or carrier languages without an explicit
+  crosswalk are NO_CERTIFIED_MAP;
+- the compact second-order tangent-cone theorem is NOT imported as a
+  horizon theorem: every black-hole `second_order` claim is OPEN or
+  NO_CERTIFIED_MAP until a horizon/boundary-flux analogue is certified.
+
+Run:  python3 black_hole_programme/atlas/generate_atlas_fragment.py
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+PKG = HERE.parent
+ROOT = PKG.parent
+OUT = HERE / "black-hole-atlas-fragment.json"
+
+STATUSES = ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]
+DESCRIPTIONS = ["causal", "symplectic", "nonlinear", "observational", "quantum"]
+SECOND_ORDER_EQUATION = "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]"
+
+CERTS = {
+    "BH0": PKG / "certificates" / "BH0_STATIC_SPHERICAL_BACKGROUND.json",
+    "BH1": PKG / "certificates" / "BH1_LEE_WALD_PREFLIGHT.json",
+    "BH1A": PKG / "certificates" / "BH1A_NORMALIZED_GENERATOR.json",
+    "BH1B": PKG / "certificates" / "BH1B_DYNAMICAL_EXTENSION.json",
+}
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _evidence(*keys):
+    rows = []
+    for key in keys:
+        if not CERTS[key].exists():
+            continue
+        payload = json.loads(CERTS[key].read_text(encoding="utf-8"))
+        rows.append({
+            "path": str(CERTS[key].relative_to(ROOT)),
+            "result_id": payload["result_id"],
+            "sha256": _sha256(CERTS[key]),
+        })
+    return rows
+
+
+def _gated(status, statement_if_present, statement_if_absent, *required):
+    """Fail-closed claim: degrade to OPEN when evidence is missing."""
+    if all(CERTS[key].exists() for key in required):
+        return {"status": status, "statement": statement_if_present}
+    return {"status": "OPEN", "statement": statement_if_absent}
+
+
+def _claim(status, statement):
+    return {"status": status, "statement": statement}
+
+
+def _gstat(status, *required):
+    return status if all(CERTS[key].exists() for key in required) else "OPEN"
+
+
+SECOND_ORDER_OPEN = {
+    "equation": SECOND_ORDER_EQUATION,
+    "bounded_or_finite_quasiperiodic": _claim(
+        "OPEN", "no black-hole second-order tangent-cone object exists"),
+    "smooth_secular": _claim(
+        "OPEN", "no black-hole second-order tangent-cone object exists"),
+    "causal_retarded": _claim(
+        "OPEN", "no causal exterior second-order theory exists"),
+}
+
+SECOND_ORDER_NO_MAP = {
+    "equation": SECOND_ORDER_EQUATION,
+    "bounded_or_finite_quasiperiodic": _claim(
+        "NO_CERTIFIED_MAP",
+        "the compact tangent-cone theorem is not a horizon theorem; no crosswalk exists"),
+    "smooth_secular": _claim(
+        "NO_CERTIFIED_MAP",
+        "the compact tangent-cone theorem is not a horizon theorem; no crosswalk exists"),
+    "causal_retarded": _claim(
+        "NO_CERTIFIED_MAP",
+        "the compact tangent-cone theorem is not a horizon theorem; no crosswalk exists"),
+}
+
+BASE_SCOPE = {
+    "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd",
+    "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+    "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+    "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+    "carrier": "metric perturbations of the static spherical chart",
+}
+
+
+def _scope(**kw):
+    s = dict(BASE_SCOPE)
+    s.update(kw)
+    return s
+
+
+def entries():
+    E = []
+
+    E.append({
+        "id": "bh.background.static-family",
+        "scope": _scope(carrier="background metric B(r)", degree="background",
+                        parity="even", ell=0, m=0, k="n/a", omega=0),
+        "descriptions": {
+            "causal": "OPEN",
+            "symplectic": _gstat("CERTIFIED", "BH0", "BH1", "BH1A"),
+            "nonlinear": "OPEN",
+            "observational": "OPEN",
+            "quantum": "OPEN",
+        },
+        "mode_data": {
+            "dispersion": _claim("NOT_APPLICABLE", "static background, no dispersion relation"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "exact static charges, Wald entropy, and first law dH = T dS at every simple horizon in the normalized-generator frame",
+                "static Lee-Wald structure pending certificates",
+                "BH1", "BH1A"),
+            "taub_maps": _claim("NOT_APPLICABLE", "no Taub construction on this background"),
+            "resonance": _claim("NOT_APPLICABLE", "static background"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": _evidence("BH0", "BH1", "BH1A", "BH1B"),
+        "claim_boundary": "exact Bach-flat three-parameter family, Laurent-class complete; residual gauge rank 2 with single invariant J = u^2 disc(Q); no causal exterior initial-boundary theorem, no physical matter/clock frame, no completeness beyond the Laurent class; symplectic status is the static and l=0-dynamical charge level only"
+                          + ("; frame-independence of charge and entropy certified at the linear level" if CERTS["BH1B"].exists() else "; frame-independence pending the BH-1B certificate"),
+    })
+
+    E.append({
+        "id": "bh.mode.l0.parameter",
+        "scope": _scope(degree=1, parity="even", ell=0, m=0, k="n/a", omega=0),
+        "descriptions": {
+            "causal": "OPEN",
+            "symplectic": _gstat("CERTIFIED", "BH1", "BH1A"),
+            "nonlinear": "OPEN",
+            "observational": "OPEN",
+            "quantum": "OPEN",
+        },
+        "mode_data": {
+            "dispersion": _claim("CERTIFIED", "omega = 0 static tangent modes d_beta, d_gamma, d_k of the solution family"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "exact r-independent charges u*F_beta, u*F_gamma, u*F_k; first law at every simple horizon; static pair current omega^r = 48 alpha/(19 r^2) at the fixture",
+                "pending certificates", "BH1", "BH1A"),
+            "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact Taub structures exists"),
+            "resonance": _claim("OPEN", "no resonant/stationary cokernel object exists for the exterior"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": _evidence("BH1", "BH1A"),
+        "claim_boundary": "static slice only; no time-dependent excitation of the parameters is certified beyond the l=0 gauge sectors",
+    })
+
+    E.append({
+        "id": "bh.mode.l0.conformal-gauge",
+        "scope": _scope(degree=1, parity="even", ell=0, m=0, k="n/a",
+                        omega="arbitrary omega(t,r)"),
+        "descriptions": {
+            "causal": "NOT_APPLICABLE",
+            "symplectic": _gstat("CERTIFIED", "BH1B"),
+            "nonlinear": "OPEN",
+            "observational": "NOT_APPLICABLE",
+            "quantum": "OPEN",
+        },
+        "mode_data": {
+            "dispersion": _claim("NOT_APPLICABLE", "pure gauge: on-shell for every omega(t,r) by exact conformal covariance"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "zero charge componentwise, zero entropy shift on the symbolic family, exact null direction of the corrected presymplectic current",
+                "pending the BH-1B certificate", "BH1B"),
+            "taub_maps": _claim("NOT_APPLICABLE", "gauge direction"),
+            "resonance": _claim("NOT_APPLICABLE", "gauge direction"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": _evidence("BH1B"),
+        "claim_boundary": "linear level only; the nonlinear conformal orbit and any physical-frame selection are open",
+    })
+
+    E.append({
+        "id": "bh.mode.l0.diffeo-gauge",
+        "scope": _scope(degree=1, parity="even", ell=0, m=0, k="n/a",
+                        omega="arbitrary a(t,r), b(t,r)"),
+        "descriptions": {
+            "causal": "NOT_APPLICABLE",
+            "symplectic": _gstat("CERTIFIED", "BH1B"),
+            "nonlinear": "OPEN",
+            "observational": "NOT_APPLICABLE",
+            "quantum": "OPEN",
+        },
+        "mode_data": {
+            "dispersion": _claim("NOT_APPLICABLE", "pure gauge"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "exact Noether identity; identically vanishing charge form via the identity route with polynomial-witness cross-validation; zero flux",
+                "pending the BH-1B certificate", "BH1B"),
+            "taub_maps": _claim("NOT_APPLICABLE", "gauge direction"),
+            "resonance": _claim("NOT_APPLICABLE", "gauge direction"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": _evidence("BH1B"),
+        "claim_boundary": "linear level only; time-dependent l=0 diffeomorphisms are proper gauge on the certified sector",
+    })
+
+    E.append({
+        "id": "bh.mode.axial.einstein-branch",
+        "scope": _scope(degree=1, parity="odd", ell=">=2", m="all", k="n/a",
+                        omega="dynamical"),
+        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "mode_data": {
+            "dispersion": _claim("OPEN", "no Regge-Wheeler-type operator exists in the repository"),
+            "lee_wald": _claim("OPEN", "bilinear flux matrix is BH-2A"),
+            "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
+            "resonance": _claim("OPEN", "no exterior cokernel object"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": [],
+        "claim_boundary": "no repository object exists; linear charges vanish by parity (analytic argument, not machine-checked)",
+    })
+
+    E.append({
+        "id": "bh.mode.axial.extra-fourth-order-branch",
+        "scope": _scope(degree=1, parity="odd", ell=">=2", m="all", k="n/a",
+                        omega="dynamical"),
+        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "mode_data": {
+            "dispersion": _claim("OPEN", "no exterior fourth-order branch operator exists in the repository"),
+            "lee_wald": _claim("OPEN", "horizon/boundary reach of the extra branch is the central BH-2A question"),
+            "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with the compact-cylinder extra branch without an explicit crosswalk"),
+            "resonance": _claim("OPEN", "no exterior cokernel object"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": [],
+        "claim_boundary": "no repository object exists; whether the extra branch reaches the horizon or exterior boundary is OPEN",
+    })
+
+    E.append({
+        "id": "bh.mode.polar",
+        "scope": _scope(degree=1, parity="even", ell=">=1", m="all", k="n/a",
+                        omega="dynamical"),
+        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "mode_data": {
+            "dispersion": _claim("OPEN", "no even-parity exterior operator exists in the repository"),
+            "lee_wald": _claim("OPEN", "bilinear flux matrix is BH-2A/B"),
+            "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
+            "resonance": _claim("OPEN", "no exterior cokernel object"),
+            "second_order": SECOND_ORDER_OPEN,
+        },
+        "evidence": [],
+        "claim_boundary": "no repository object exists",
+    })
+
+    E.append({
+        "id": "bh.crosswalk.compact-cylinder",
+        "scope": _scope(background="crosswalk: MK exterior <-> compact cylinder/Berger backgrounds",
+                        carrier="mode identification map", degree="crosswalk",
+                        parity="n/a", ell="n/a", m="n/a", k="n/a", omega="n/a"),
+        "descriptions": {desc: "NO_CERTIFIED_MAP" for desc in DESCRIPTIONS},
+        "mode_data": {
+            "dispersion": _claim("NO_CERTIFIED_MAP", "no mode identification across backgrounds exists"),
+            "lee_wald": _claim("NO_CERTIFIED_MAP", "no pairing crosswalk exists"),
+            "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk exists"),
+            "resonance": _claim("NO_CERTIFIED_MAP", "no crosswalk exists"),
+            "second_order": SECOND_ORDER_NO_MAP,
+        },
+        "evidence": [],
+        "claim_boundary": "the compact moment-map/tangent-cone theorem is not a horizon theorem; the black-hole analogue (global charges + horizon/boundary flux constraints + resonant or stationary cokernel) is deferred until the BH-2A linear phase space and adjoint problem exist, and must decide which compact terms are replaced by ADM, horizon or quasilocal charges",
+    })
+
+    return E
+
+
+def main() -> None:
+    fragment = {
+        "schema": "pure-weyl-residual-atlas-fragment-v1",
+        "schema_version": "1.0.0",
+        "team": "black_hole",
+        "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
+        "generated_by_sha256": _sha256(Path(__file__).resolve()),
+        "status_vocabulary": STATUSES,
+        "description_axes": DESCRIPTIONS,
+        "entries": entries(),
+        "verification_commands": [
+            "python3 residual_atlas/validate_fragment.py black_hole_programme/atlas/black-hole-atlas-fragment.json",
+            "python3 black_hole_programme/atlas/generate_atlas_fragment.py",
+        ],
+    }
+    OUT.write_text(json.dumps(fragment, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"wrote {OUT}")
+
+
+if __name__ == "__main__":
+    main()

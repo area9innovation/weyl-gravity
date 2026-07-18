@@ -1,0 +1,518 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "exact Bach-flat three-parameter family, Laurent-class complete; residual gauge rank 2 with single invariant J = u^2 disc(Q); no causal exterior initial-boundary theorem, no physical matter/clock frame, no completeness beyond the Laurent class; symplectic status is the static and l=0-dynamical charge level only; frame-independence pending the BH-1B certificate",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json",
+          "result_id": "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND",
+          "sha256": "d08a76dd21b1c32270f6b8082c382e23561e7865c4454139fffc890ac14911e4"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH1_LEE_WALD_PREFLIGHT.json",
+          "result_id": "PURE_WEYL_BH1_LEE_WALD_PREFLIGHT",
+          "sha256": "74ff9ba44a51272472dcb2eaf50aab9759383af44ea115c6c5d11d11a08ec1f6"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
+          "result_id": "PURE_WEYL_BH1A_NORMALIZED_GENERATOR",
+          "sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b"
+        }
+      ],
+      "id": "bh.background.static-family",
+      "mode_data": {
+        "dispersion": {
+          "statement": "static background, no dispersion relation",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "exact static charges, Wald entropy, and first law dH = T dS at every simple horizon in the normalized-generator frame",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "static background",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "no Taub construction on this background",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "background metric B(r)",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": "background",
+        "ell": 0,
+        "k": "n/a",
+        "m": 0,
+        "omega": 0,
+        "parity": "even",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "static slice only; no time-dependent excitation of the parameters is certified beyond the l=0 gauge sectors",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH1_LEE_WALD_PREFLIGHT.json",
+          "result_id": "PURE_WEYL_BH1_LEE_WALD_PREFLIGHT",
+          "sha256": "74ff9ba44a51272472dcb2eaf50aab9759383af44ea115c6c5d11d11a08ec1f6"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json",
+          "result_id": "PURE_WEYL_BH1A_NORMALIZED_GENERATOR",
+          "sha256": "12cd1f0746645fffa4e2d9af35b638b7eda64fb10950884a4a0b3c703043ea0b"
+        }
+      ],
+      "id": "bh.mode.l0.parameter",
+      "mode_data": {
+        "dispersion": {
+          "statement": "omega = 0 static tangent modes d_beta, d_gamma, d_k of the solution family",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "exact r-independent charges u*F_beta, u*F_gamma, u*F_k; first law at every simple horizon; static pair current omega^r = 48 alpha/(19 r^2) at the fixture",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "no resonant/stationary cokernel object exists for the exterior",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "no crosswalk to compact Taub structures exists",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "metric perturbations of the static spherical chart",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": 1,
+        "ell": 0,
+        "k": "n/a",
+        "m": 0,
+        "omega": 0,
+        "parity": "even",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "linear level only; the nonlinear conformal orbit and any physical-frame selection are open",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [],
+      "id": "bh.mode.l0.conformal-gauge",
+      "mode_data": {
+        "dispersion": {
+          "statement": "pure gauge: on-shell for every omega(t,r) by exact conformal covariance",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "pending the BH-1B certificate",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "gauge direction",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "gauge direction",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "metric perturbations of the static spherical chart",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": 1,
+        "ell": 0,
+        "k": "n/a",
+        "m": 0,
+        "omega": "arbitrary omega(t,r)",
+        "parity": "even",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "linear level only; time-dependent l=0 diffeomorphisms are proper gauge on the certified sector",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [],
+      "id": "bh.mode.l0.diffeo-gauge",
+      "mode_data": {
+        "dispersion": {
+          "statement": "pure gauge",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "pending the BH-1B certificate",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "gauge direction",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "gauge direction",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "metric perturbations of the static spherical chart",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": 1,
+        "ell": 0,
+        "k": "n/a",
+        "m": 0,
+        "omega": "arbitrary a(t,r), b(t,r)",
+        "parity": "even",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "no repository object exists; linear charges vanish by parity (analytic argument, not machine-checked)",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [],
+      "id": "bh.mode.axial.einstein-branch",
+      "mode_data": {
+        "dispersion": {
+          "statement": "no Regge-Wheeler-type operator exists in the repository",
+          "status": "OPEN"
+        },
+        "lee_wald": {
+          "statement": "bilinear flux matrix is BH-2A",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "no exterior cokernel object",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "no crosswalk to compact structures",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "metric perturbations of the static spherical chart",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": 1,
+        "ell": ">=2",
+        "k": "n/a",
+        "m": "all",
+        "omega": "dynamical",
+        "parity": "odd",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "no repository object exists; whether the extra branch reaches the horizon or exterior boundary is OPEN",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [],
+      "id": "bh.mode.axial.extra-fourth-order-branch",
+      "mode_data": {
+        "dispersion": {
+          "statement": "no exterior fourth-order branch operator exists in the repository",
+          "status": "OPEN"
+        },
+        "lee_wald": {
+          "statement": "horizon/boundary reach of the extra branch is the central BH-2A question",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "no exterior cokernel object",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "must not be identified with the compact-cylinder extra branch without an explicit crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "metric perturbations of the static spherical chart",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": 1,
+        "ell": ">=2",
+        "k": "n/a",
+        "m": "all",
+        "omega": "dynamical",
+        "parity": "odd",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "no repository object exists",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "evidence": [],
+      "id": "bh.mode.polar",
+      "mode_data": {
+        "dispersion": {
+          "statement": "no even-parity exterior operator exists in the repository",
+          "status": "OPEN"
+        },
+        "lee_wald": {
+          "statement": "bilinear flux matrix is BH-2A/B",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "no exterior cokernel object",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "no causal exterior second-order theory exists",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "no black-hole second-order tangent-cone object exists",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "no crosswalk to compact structures",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "MK static spherical Bach vacuum, working gauge b = 1/a; Schwarzschild and three-horizon fixture controls",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "metric perturbations of the static spherical chart",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": 1,
+        "ell": ">=1",
+        "k": "n/a",
+        "m": "all",
+        "omega": "dynamical",
+        "parity": "even",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    },
+    {
+      "claim_boundary": "the compact moment-map/tangent-cone theorem is not a horizon theorem; the black-hole analogue (global charges + horizon/boundary flux constraints + resonant or stationary cokernel) is deferred until the BH-2A linear phase space and adjoint problem exist, and must decide which compact terms are replaced by ADM, horizon or quasilocal charges",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [],
+      "id": "bh.crosswalk.compact-cylinder",
+      "mode_data": {
+        "dispersion": {
+          "statement": "no mode identification across backgrounds exists",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "no pairing crosswalk exists",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "no crosswalk exists",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "the compact tangent-cone theorem is not a horizon theorem; no crosswalk exists",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "the compact tangent-cone theorem is not a horizon theorem; no crosswalk exists",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "the compact tangent-cone theorem is not a horizon theorem; no crosswalk exists",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "no crosswalk exists",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "crosswalk: MK exterior <-> compact cylinder/Berger backgrounds",
+        "boundaries": "exterior chart with fixed-falloff ensembles {gamma, k fixed}; horizons as simple roots of B; no asymptotic completion imposed",
+        "carrier": "mode identification map",
+        "charge_sector": "normalized generator chi = u d_t, u = beta(2 - 3 beta gamma); H = -16 pi alpha beta^2 D2",
+        "degree": "crosswalk",
+        "ell": "n/a",
+        "k": "n/a",
+        "m": "n/a",
+        "omega": "n/a",
+        "parity": "n/a",
+        "theory": "pure-Weyl gravity S = alpha Int sqrt(-g) C_abcd C^abcd"
+      }
+    }
+  ],
+  "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
+  "generated_by_sha256": "e4e7dd0c22c3cd4b819cdbd303f737a40c437243be9600f26f5c33bff5498bef",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "black_hole",
+  "verification_commands": [
+    "python3 residual_atlas/validate_fragment.py black_hole_programme/atlas/black-hole-atlas-fragment.json",
+    "python3 black_hole_programme/atlas/generate_atlas_fragment.py"
+  ]
+}
