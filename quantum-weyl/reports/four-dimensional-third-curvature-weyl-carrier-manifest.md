@@ -17,26 +17,36 @@ operators that also use the letter `K` elsewhere in the repository.
 
 The five carrier labels are:
 
-| carrier | schematic tensor structure | explicit derivatives | label stabilizer | generic label orbit |
-| --- | --- | ---: | --- | ---: |
-| `I10` | `tr(K1 K2 K3)` | 0 | `S3` | 1 |
-| `I24` | `K1 ∇K2 ∇K3` | 2 | `S2(23)` | 3 |
-| `I25` | `K1 ∇K2 ∇K3` with crossed derivative indices | 2 | `S2(23)` | 3 |
-| `I28` | `∇K1 ∇K2 ∇∇K3` | 4 | `S2(12)` | 3 |
-| `I29` | `∇∇K1 ∇∇K2 ∇∇K3` | 6 | `C3` | 2 |
+| carrier | schematic tensor structure | explicit derivatives | source-generic stabilizer | effective scalar-flat `K` stabilizer | effective orbit |
+| --- | --- | ---: | --- | --- | ---: |
+| `I10` | `tr(K1 K2 K3)` | 0 | `S3` | `S3` | 1 |
+| `I24` | `K1 ∇K2 ∇K3` | 2 | `S2(23)` | `S2(23)` | 3 |
+| `I25` | `K1 ∇K2 ∇K3` with crossed derivative indices | 2 | `S2(23)` | `S2(23)` | 3 |
+| `I28` | `∇K1 ∇K2 ∇∇K3` | 4 | `S2(12)` | `S2(12)` | 3 |
+| `I29` | `∇∇K1 ∇∇K2 ∇∇K3` | 6 | `C3` | `S3` | 1 |
 
-The generic labelled permutation module therefore has dimension
+The last row has an enhanced symmetry after passing from the generic Ricci
+source tensor to the scalar-flat transverse `K` carrier.  In Fourier space,
 
 \[
-1+3+3+3+2=12.
+I_{29}(1,2,3)=-(k_2K_1k_2)(k_3K_2k_3)(k_1K_3k_1).
 \]
 
-Its exact `S3` character is `(12,4,3)` on the identity, transposition and
+Momentum conservation and `k_i K_i=0` identify this with the reversed
+orientation `I29(1,3,2)`.  The source-generic stabilizer remains recorded as
+`C3`, while the effective scalar-flat stabilizer is `S3`.  The imported
+`Gamma29` alpha kernel is independently fully symmetric.  The operative
+labelled permutation module therefore has dimension
+
+\[
+1+3+3+3+1=11.
+\]
+
+Its exact `S3` character is `(11,5,2)` on the identity, transposition and
 three-cycle conjugacy classes, hence
 
 \[
-V_{\rm raw}\cong5\mathbf1\oplus\mathbf1_{\rm sign}
-\oplus3\mathbf2_{\rm std}.
+V_{\rm raw}\cong5\mathbf1\oplus3\mathbf2_{\rm std}.
 \]
 
 ## Four-dimensional identity
@@ -49,17 +59,17 @@ a section of the quotient by removing the fully symmetric component of
 `I28` gives
 
 \[
-\dim V_{4d}=11,
+\dim V_{4d}=10,
 \qquad
-V_{4d}\cong4\mathbf1\oplus\mathbf1_{\rm sign}
-\oplus3\mathbf2_{\rm std}.
+V_{4d}\cong4\mathbf1\oplus3\mathbf2_{\rm std}.
 \]
 
-This statement should not be paraphrased as “eleven form factors.”  There are
+This statement should not be paraphrased as “ten form factors.”  There are
 five carrier-labelled functions with different stabilizers and one arbitrary
-fully symmetric functional relation.  Eleven is the dimension of the generic
-label permutation module after that relation, before analytic functions of
-the labelled operators are selected.
+fully symmetric functional relation.  Ten is the dimension of the effective
+scalar-flat label permutation module after the `I29` symmetry enhancement and
+that relation, before analytic functions of the labelled operators are
+selected.
 
 `I29` is ineliminable under this identity and is the source row whose local
 limit has the unique parity-even algebraic `C³` lineage.  The normalization
@@ -98,3 +108,8 @@ PYTHONPATH=quantum-weyl python3 -m transfer.verify_third_curvature_weyl_manifest
 PYTHONPATH=quantum-weyl python3 -m unittest \
   transfer.tests.test_third_curvature_weyl_manifest
 ```
+
+The independent replay additionally evaluates all five carriers on a
+`125 x 11` exact rational TT fixture.  It verifies the `I29` reversal row,
+finds rank ten and nullity one, and checks that the sole null vector is the
+specialized CPT-IV (A.35) relation.

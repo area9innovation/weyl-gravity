@@ -410,13 +410,17 @@ def _load() -> dict[str, dict[str, Any]]:
         third_curvature_weyl.get("raw_module", {}).get(
             "generic_label_orbit_dimension"
         )
-        != 12
+        != 11
         or third_curvature_weyl.get("quotient_module", {}).get(
             "generic_label_orbit_dimension"
         )
-        != 11
+        != 10
         or third_curvature_weyl.get("claim_flags", {}).get(
             "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
+        )
+        is not True
+        or third_curvature_weyl.get("claim_flags", {}).get(
+            "SCALAR_FLAT_I29_REVERSAL_IDENTITY_REPLAYED"
         )
         is not True
         or third_curvature_weyl.get("claim_flags", {}).get(
@@ -428,6 +432,8 @@ def _load() -> dict[str, dict[str, Any]]:
     if (
         [row.get("carrier_id") for row in cpt_third_curvature.get("universal_kernels", [])]
         != ["I10", "I24", "I25", "I28", "I29"]
+        or cpt_third_curvature.get("universal_kernels", [])[-1].get("stabilizer")
+        != "S3"
         or cpt_third_curvature.get("claim_flags", {}).get(
             "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED"
         )
@@ -1691,8 +1697,9 @@ def build() -> dict[str, Any]:
             "The zero-derivative algebraic C3 carrier basis is complete with one even and "
             "one odd direction. The parity-even third-curvature conformal carrier manifest "
             "is also complete in the declared scalar-flat Euclidean scope: five carrier labels "
-            "with exact stabilizers span twelve generic label channels, and the single "
-            "four-dimensional symmetric functional relation leaves eleven. This is not eleven "
+            "retain their source stabilizers while scalar-flat transversality enhances I29 "
+            "to effective S3, leaving eleven raw effective label channels; the single "
+            "four-dimensional symmetric functional relation leaves ten. This is not ten "
             "computed form factors. The five exact universal CPT alpha kernels have now been "
             "imported and symmetrized; they are coefficient-bearing for the rank-one minimal "
             "scalar-Laplacian source fixture. The repository tensor/ghost endomorphism and "

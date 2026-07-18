@@ -16,7 +16,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 OUTPUT = HERE / "certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json"
 SCHEMA = HERE / "schema/cpt-universal-third-curvature-kernels-v1.schema.json"
-EXPECTED_FORMULA_DIGEST = "39ae359ce36b4b7083b72fccfc50d554285956695a224a6700b4ca1ed2e31621"
+EXPECTED_FORMULA_DIGEST = "5f7a1e4115fa25973933526d60863bb6ccd251d899eaf24131aae2de7216dbc9"
 
 
 def _sha256(path: Path) -> str:
@@ -31,8 +31,12 @@ def verify(value: dict[str, Any] | None = None) -> dict[str, Any]:
     rows = stored["universal_kernels"]
     if [row["carrier_id"] for row in rows] != ["I10", "I24", "I25", "I28", "I29"]:
         raise ValueError("CPT carrier order or coverage drifted")
-    if [row["stabilizer_order"] for row in rows] != [6, 2, 2, 2, 3]:
+    if [row["stabilizer_order"] for row in rows] != [6, 2, 2, 2, 6]:
         raise ValueError("CPT stabilizer orders drifted")
+    if [row["source_generic_stabilizer"] for row in rows] != [
+        "S3", "S2_23", "S2_23", "S2_12", "C3"
+    ]:
+        raise ValueError("CPT source-generic stabilizer provenance drifted")
     if [row["gamma_box_homogeneity"] for row in rows] != [-1, -2, -2, -3, -4]:
         raise ValueError("CPT kernel homogeneities drifted")
 
@@ -57,6 +61,16 @@ def verify(value: dict[str, Any] | None = None) -> dict[str, Any]:
     }
     if any(sp.simplify(residual) != 0 for residual in exact_controls.values()):
         raise ValueError("one or more independently reconstructed CPT terms drifted")
+    i29 = next(row for row in rows if row["carrier_id"] == "I29")
+    if (
+        i29["stabilizer"] != "S3"
+        or sp.simplify(
+            sp.sympify(i29["symmetrized_alpha_numerator_dff"], locals=symbols)
+            - parsed["I29"]["raw_alpha_numerator_dff"]
+        )
+        != 0
+    ):
+        raise ValueError("effective scalar-flat Gamma29 S3 symmetry drifted")
 
     rows_digest = hashlib.sha256(
         json.dumps(rows, sort_keys=True, separators=(",", ":")).encode()

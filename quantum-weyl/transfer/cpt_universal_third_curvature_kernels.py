@@ -90,6 +90,7 @@ def _raw_kernels() -> dict[str, dict[str, Any]]:
         "I10": {
             "source_structure": 10,
             "derivative_order": 0,
+            "source_generic_stabilizer": "S3",
             "stabilizer": "S3",
             "dff": a1 * a2 * a3 / 3,
             "tree": sp.Rational(1, 270) / d3 - d1 / (540 * d2 * d3),
@@ -98,6 +99,7 @@ def _raw_kernels() -> dict[str, dict[str, Any]]:
         "I24": {
             "source_structure": 24,
             "derivative_order": 2,
+            "source_generic_stabilizer": "S2_23",
             "stabilizer": "S2_23",
             "dff": (
                 -2 * a1 / 45 + a1 * a2 / 45 + a1 * a3 / 45
@@ -120,6 +122,7 @@ def _raw_kernels() -> dict[str, dict[str, Any]]:
         "I25": {
             "source_structure": 25,
             "derivative_order": 2,
+            "source_generic_stabilizer": "S2_23",
             "stabilizer": "S2_23",
             "dff": (
                 -13 * a1 / 135
@@ -151,6 +154,7 @@ def _raw_kernels() -> dict[str, dict[str, Any]]:
         "I28": {
             "source_structure": 28,
             "derivative_order": 4,
+            "source_generic_stabilizer": "S2_12",
             "stabilizer": "S2_12",
             "dff": 8 * a1**2 * a2**2 * a3 / (3 * d1 * d2),
             "tree": sp.Rational(1, 135) / (d1 * d2 * d3),
@@ -159,7 +163,8 @@ def _raw_kernels() -> dict[str, dict[str, Any]]:
         "I29": {
             "source_structure": 29,
             "derivative_order": 6,
-            "stabilizer": "C3",
+            "source_generic_stabilizer": "C3",
+            "stabilizer": "S3",
             "dff": 8 * a1**2 * a2**2 * a3**2 / (3 * d1 * d2 * d3),
             "tree": sp.S.Zero,
             "logs": sp.S.Zero,
@@ -230,6 +235,7 @@ def build() -> dict[str, Any]:
             {
                 "carrier_id": carrier_id,
                 "source_structure": row["source_structure"],
+                "source_generic_stabilizer": row["source_generic_stabilizer"],
                 "stabilizer": row["stabilizer"],
                 "stabilizer_order": len(group),
                 "explicit_derivative_order": derivative_order,
@@ -268,7 +274,7 @@ def build() -> dict[str, Any]:
             "log_kernel": "Lij=log(di/dj)/(di-dj)=Lji",
             "source_effective_action_normalization": "-W=[2(4*pi)^2]^(-1) int sqrt(g) tr sum_i Gamma_i Re_i",
             "boxes": "di=Box_i acts on the labelled curvature i",
-            "symmetrization": "each raw Gamma_i is averaged over the certified stabilizer of its carrier before it is used independently",
+            "symmetrization": "each raw Gamma_i is averaged over the effective scalar-flat stabilizer of its K carrier; I29 is source-generically C3 but its exact kernel and transverse K carrier are S3",
         },
         "universal_kernels": rows,
         "formula_digest": formula_digest,
@@ -318,7 +324,7 @@ def build() -> dict[str, Any]:
         "dependencies": {name: _reference(path) for name, path in DEPENDENCIES.items()},
         "next_gate": "GENERIC_BACKGROUND_FULL_BV_HESSIAN_TRACE_SUBSTITUTION_INTO_THE_FIVE_CPT_KERNELS_AND_PARITY_ODD_DERIVATIVE_MANIFEST",
         "claim_boundary": (
-            "This EUCLIDEAN-SPECTRAL certificate imports, in exact rational alpha form, the five universal pure-gravity third-curvature kernels Gamma_10, Gamma_24, Gamma_25, Gamma_28 and Gamma_29 from the primary CPT ancillary source. It independently checks their box homogeneity and the S3, S2_23, S2_23, S2_12 and C3 stabilizer projections. For the rank-one minimal scalar Laplacian with P and bundle curvature zero, these are coefficient-bearing form factors in the source normalization. They are not the repository conformal-graviton functions: tensor-bundle endomorphism and connection-curvature rows contribute after the generic-background full-BV Hessian is substituted, while the current repository determinant ledger is fixed only on special Einstein/Ricci-flat carriers plus a principal-symbol elliptic complex. The exact nonidentifiability audit therefore forbids a rank-only promotion. This result does not compute any of the five repository functions or coefficients, classify the parity-odd derivative sector, fix finite C2 or absolute dressed Rhat2 normalizations, supply complete Gamma1 or Q1, construct renormalized products, authorize residual transfer, or establish a Lorentzian, Hadamard, particle, scattering, positivity or unitarity theorem."
+            "This EUCLIDEAN-SPECTRAL certificate imports, in exact rational alpha form, the five universal pure-gravity third-curvature kernels Gamma_10, Gamma_24, Gamma_25, Gamma_28 and Gamma_29 from the primary CPT ancillary source. It independently checks their box homogeneity and effective scalar-flat S3, S2_23, S2_23, S2_12 and S3 stabilizer projections, while retaining the source-generic C3 stabilizer of I29 as provenance. For the rank-one minimal scalar Laplacian with P and bundle curvature zero, these are coefficient-bearing form factors in the source normalization. They are not the repository conformal-graviton functions: tensor-bundle endomorphism and connection-curvature rows contribute after the generic-background full-BV Hessian is substituted, while the current repository determinant ledger is fixed only on special Einstein/Ricci-flat carriers plus a principal-symbol elliptic complex. The exact nonidentifiability audit therefore forbids a rank-only promotion. This result does not compute any of the five repository functions or coefficients, classify the parity-odd derivative sector, fix finite C2 or absolute dressed Rhat2 normalizations, supply complete Gamma1 or Q1, construct renormalized products, authorize residual transfer, or establish a Lorentzian, Hadamard, particle, scattering, positivity or unitarity theorem."
         ),
     }
     validate(result)

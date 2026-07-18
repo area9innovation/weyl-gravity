@@ -13,6 +13,7 @@
     "scope",
     "derived_tensor",
     "carrier_manifest",
+    "scalar_flat_symmetry_enhancement",
     "permutation_modules",
     "raw_module",
     "four_dimensional_identity",
@@ -65,16 +66,32 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["carrier_id", "source_structure", "formula", "explicit_derivative_order", "stabilizer", "source_symmetry_equation", "coefficient_status"],
+        "required": ["carrier_id", "source_structure", "formula", "explicit_derivative_order", "source_generic_stabilizer", "stabilizer", "source_symmetry_equation", "coefficient_status"],
         "properties": {
           "carrier_id": {"enum": ["I10", "I24", "I25", "I28", "I29"]},
           "source_structure": {"enum": [10, 24, 25, 28, 29]},
           "formula": {"type": "string", "minLength": 20},
           "explicit_derivative_order": {"enum": [0, 2, 4, 6]},
+          "source_generic_stabilizer": {"enum": ["S3", "S2_23", "S2_12", "C3"]},
           "stabilizer": {"enum": ["S3", "S2_23", "S2_12", "C3"]},
           "source_symmetry_equation": {"type": "string", "pattern": "^CPT-IV \\(2\\.(55|69|70|73|74)\\)$"},
           "coefficient_status": {"const": "NOT_COMPUTED"}
         }
+      }
+    },
+    "scalar_flat_symmetry_enhancement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carrier_id", "source_generic_stabilizer", "effective_scalar_flat_K_stabilizer", "relation", "momentum_space_factorization", "proof_rows", "source_kernel_crosscheck", "scope"],
+      "properties": {
+        "carrier_id": {"const": "I29"},
+        "source_generic_stabilizer": {"const": "C3"},
+        "effective_scalar_flat_K_stabilizer": {"const": "S3"},
+        "relation": {"type": "string", "minLength": 70},
+        "momentum_space_factorization": {"type": "string", "minLength": 60},
+        "proof_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 45}},
+        "source_kernel_crosscheck": {"type": "string", "minLength": 50},
+        "scope": {"type": "string", "minLength": 100}
       }
     },
     "permutation_modules": {
@@ -103,9 +120,9 @@
       "required": ["carrier_labeled_function_count", "generic_label_orbit_dimension", "character_by_cycle_type", "irreducible_multiplicities"],
       "properties": {
         "carrier_labeled_function_count": {"const": 5},
-        "generic_label_orbit_dimension": {"const": 12},
-        "character_by_cycle_type": {"const": {"identity": 12, "transposition": 4, "three_cycle": 3}},
-        "irreducible_multiplicities": {"const": {"trivial": 5, "sign": 1, "standard": 3}}
+        "generic_label_orbit_dimension": {"const": 11},
+        "character_by_cycle_type": {"const": {"identity": 11, "transposition": 5, "three_cycle": 2}},
+        "irreducible_multiplicities": {"const": {"trivial": 5, "sign": 0, "standard": 3}}
       }
     },
     "four_dimensional_identity": {
@@ -137,9 +154,9 @@
       "additionalProperties": false,
       "required": ["generic_label_orbit_dimension", "character_by_cycle_type", "irreducible_multiplicities", "carrier_labeled_description"],
       "properties": {
-        "generic_label_orbit_dimension": {"const": 11},
-        "character_by_cycle_type": {"const": {"identity": 11, "transposition": 3, "three_cycle": 2}},
-        "irreducible_multiplicities": {"const": {"trivial": 4, "sign": 1, "standard": 3}},
+        "generic_label_orbit_dimension": {"const": 10},
+        "character_by_cycle_type": {"const": {"identity": 10, "transposition": 4, "three_cycle": 1}},
+        "irreducible_multiplicities": {"const": {"trivial": 4, "sign": 0, "standard": 3}},
         "carrier_labeled_description": {"type": "string", "minLength": 100}
       }
     },
@@ -188,6 +205,7 @@
         "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
         "FIVE_SOURCE_CARRIERS_IMPORTED",
         "PERMUTATION_MODULE_QUOTIENT_REPLAYED",
+        "SCALAR_FLAT_I29_REVERSAL_IDENTITY_REPLAYED",
         "FOUR_DIMENSIONAL_FUNCTIONAL_IDENTITY_REPLAYED",
         "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE",
         "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED",
@@ -201,6 +219,7 @@
         "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE": {"const": true},
         "FIVE_SOURCE_CARRIERS_IMPORTED": {"const": true},
         "PERMUTATION_MODULE_QUOTIENT_REPLAYED": {"const": true},
+        "SCALAR_FLAT_I29_REVERSAL_IDENTITY_REPLAYED": {"const": true},
         "FOUR_DIMENSIONAL_FUNCTIONAL_IDENTITY_REPLAYED": {"const": true},
         "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE": {"const": false},
         "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},

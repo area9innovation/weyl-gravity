@@ -848,11 +848,19 @@ label stabilizers are
  I_{24}&K_1\nabla K_2\nabla K_3&S_2(23)\\
  I_{25}&K_1\nabla K_2\nabla K_3\ \text{(crossed)}&S_2(23)\\
  I_{28}&\nabla K_1\nabla K_2\nabla\nabla K_3&S_2(12)\\
- I_{29}&\nabla\nabla K_1\nabla\nabla K_2\nabla\nabla K_3&C_3.
+ I_{29}&\nabla\nabla K_1\nabla\nabla K_2\nabla\nabla K_3&C_3\ {\rm(source)},\ S_3\ {\rm(scalar\!\!\!-flat)}.
 \end{array}
 \]
-Thus their generic label modules have dimensions $1,3,3,3,2$, with
-total dimension twelve and $S_3$-character $(12,4,3)$.
+The last enhancement is not assumed from the source notation.  In Fourier
+space the transverse scalar-flat carrier factorizes as
+\[
+ I_{29}(1,2,3)=-(k_2K_1k_2)(k_3K_2k_3)(k_1K_3k_1).
+\]
+Momentum conservation and $k_iK_i=0$ identify it with
+$I_{29}(1,3,2)$.  Thus the effective scalar-flat label modules have
+dimensions $1,3,3,3,1$, with total dimension eleven and $S_3$-character
+$(11,5,2)$, or $5\mathbf1\oplus3\mathbf2_{\rm std}$.  The source-generic
+$C_3$ stabilizer remains recorded separately.
 
 In four dimensions there is one integrated identity for every completely
 symmetric $F(\Box_1,\Box_2,\Box_3)$.  Writing $x_i=\Box_i$, its pure-$K$
@@ -864,18 +872,18 @@ part is proportional to
  -\frac12(x_2+x_3-x_1)I_{25}+I_{28},
 \]
 modulo total derivatives and $O(\mathcal R^4)$; $I_{29}$ is absent.
-Removing the fully symmetric component of $I_{28}$ therefore leaves an
-eleven-dimensional generic label module with character $(11,3,2)$, or
+Removing the fully symmetric component of $I_{28}$ therefore leaves a
+ten-dimensional effective scalar-flat label module with character $(10,4,1)$, or
 \[
- 4\mathbf1\oplus\mathbf1_{\rm sign}\oplus3\mathbf2_{\rm std}.
+ 4\mathbf1\oplus3\mathbf2_{\rm std}.
 \]
 The $I_{29}$ row is the ineliminable lineage of the local parity-even
 algebraic $C^3$ carrier, but its normalization in the two conventions is
 not inferred~\cite{BarvinskyCPT,BarvinskyConformalDecomposition}.
 
 This is a \textnormal{\textsc{euclidean-spectral}} carrier and permutation-
-quotient theorem.  It is five carrier-labelled functions modulo one
-functional relation, not eleven computed form factors.  The five repository
+quotient theorem.  It is five carrier-labelled functions, with the effective
+$I_{29}$ symmetry and one functional relation, not ten computed form factors.  The five repository
 functions, all their coefficients, and the parity-odd derivative-decorated
 carrier manifest remain open.
 \end{proposition}
@@ -898,7 +906,8 @@ Their stabilizers and box homogeneities are
 \[
 \begin{array}{c|ccccc}
 i&10&24&25&28&29\\ \hline
-\operatorname{Stab}(I_i)&S_3&S_2(23)&S_2(23)&S_2(12)&C_3\\
+\operatorname{Stab}_{\rm source}(I_i)&S_3&S_2(23)&S_2(23)&S_2(12)&C_3\\
+\operatorname{Stab}_{K,\rm sf}(I_i)&S_3&S_2(23)&S_2(23)&S_2(12)&S_3\\
 \deg_{\Box}\Gamma_i&-1&-2&-2&-3&-4.
 \end{array}
 \]

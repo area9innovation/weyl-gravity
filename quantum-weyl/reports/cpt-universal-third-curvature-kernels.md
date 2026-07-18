@@ -12,13 +12,19 @@ ancillary file for its third-curvature effective-action form factors.  The
 five rows relevant to the certified scalar-flat pure-gravity carrier quotient
 have now been imported exactly:
 
-| carrier | source row | stabilizer | explicit derivatives | box degree of \(\Gamma_i\) |
-|---|---:|---|---:|---:|
-| `I10` | 10 | \(S_3\) | 0 | -1 |
-| `I24` | 24 | \(S_2(23)\) | 2 | -2 |
-| `I25` | 25 | \(S_2(23)\) | 2 | -2 |
-| `I28` | 28 | \(S_2(12)\) | 4 | -3 |
-| `I29` | 29 | \(C_3\) | 6 | -4 |
+| carrier | source row | source-generic stabilizer | effective scalar-flat stabilizer | derivatives | box degree of \(\Gamma_i\) |
+|---|---:|---|---|---:|---:|
+| `I10` | 10 | \(S_3\) | \(S_3\) | 0 | -1 |
+| `I24` | 24 | \(S_2(23)\) | \(S_2(23)\) | 2 | -2 |
+| `I25` | 25 | \(S_2(23)\) | \(S_2(23)\) | 2 | -2 |
+| `I28` | 28 | \(S_2(12)\) | \(S_2(12)\) | 4 | -3 |
+| `I29` | 29 | \(C_3\) | \(S_3\) | 6 | -4 |
+
+The `I29` source row is written with cyclic generic-Ricci symmetry, but its
+imported alpha numerator is already fully `S3` symmetric.  This agrees with
+the independently certified reversal identity after restriction to the
+transverse scalar-flat `K` carrier.  Both symmetry levels are retained so the
+source convention is not silently rewritten.
 
 Each function is stored in the exact form
 

@@ -15,20 +15,32 @@ class ThirdCurvatureWeylManifestTests(unittest.TestCase):
     def test_five_carriers_and_stabilizers(self) -> None:
         rows = self.value["carrier_manifest"]
         self.assertEqual([row["carrier_id"] for row in rows], ["I10", "I24", "I25", "I28", "I29"])
-        self.assertEqual([row["stabilizer"] for row in rows], ["S3", "S2_23", "S2_23", "S2_12", "C3"])
+        self.assertEqual(
+            [row["source_generic_stabilizer"] for row in rows],
+            ["S3", "S2_23", "S2_23", "S2_12", "C3"],
+        )
+        self.assertEqual([row["stabilizer"] for row in rows], ["S3", "S2_23", "S2_23", "S2_12", "S3"])
 
-    def test_generic_label_modules_reduce_twelve_to_eleven(self) -> None:
-        self.assertEqual(self.value["raw_module"]["generic_label_orbit_dimension"], 12)
-        self.assertEqual(self.value["quotient_module"]["generic_label_orbit_dimension"], 11)
+    def test_effective_label_modules_reduce_eleven_to_ten(self) -> None:
+        self.assertEqual(self.value["raw_module"]["generic_label_orbit_dimension"], 11)
+        self.assertEqual(self.value["quotient_module"]["generic_label_orbit_dimension"], 10)
 
     def test_irreducible_multiplicities(self) -> None:
         self.assertEqual(
             self.value["raw_module"]["irreducible_multiplicities"],
-            {"trivial": 5, "sign": 1, "standard": 3},
+            {"trivial": 5, "sign": 0, "standard": 3},
         )
         self.assertEqual(
             self.value["quotient_module"]["irreducible_multiplicities"],
-            {"trivial": 4, "sign": 1, "standard": 3},
+            {"trivial": 4, "sign": 0, "standard": 3},
+        )
+
+    def test_scalar_flat_i29_symmetry_enhancement(self) -> None:
+        row = self.value["scalar_flat_symmetry_enhancement"]
+        self.assertEqual(row["source_generic_stabilizer"], "C3")
+        self.assertEqual(row["effective_scalar_flat_K_stabilizer"], "S3")
+        self.assertTrue(
+            self.value["claim_flags"]["SCALAR_FLAT_I29_REVERSAL_IDENTITY_REPLAYED"]
         )
 
     def test_four_dimensional_relation_has_one_symmetric_direction(self) -> None:

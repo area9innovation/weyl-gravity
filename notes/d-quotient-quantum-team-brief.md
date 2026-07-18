@@ -833,9 +833,10 @@ carrier. This is a `LOCAL-ALGEBRAIC` carrier theorem only. It does not supply
 derivative-decorated carriers, any `Gamma_m(Box1,Box2,Box3)`, or a cubic
 coefficient. The parity-even third-curvature carrier manifest is now complete
 in the declared scalar-flat Euclidean scope: five carrier-labelled functions
-with exact `S3/S2/C3` stabilizers span twelve generic label channels, and one
-four-dimensional symmetric functional relation leaves eleven. This is not a
-computation of eleven form factors. The five repository functions and their
+retain exact source-generic `S3/S2/C3` stabilizers, while scalar-flat
+transversality enhances `I29` to effective `S3`, leaving eleven raw effective
+label channels; one four-dimensional symmetric functional relation leaves
+ten. This is not a computation of ten form factors. The five repository functions and their
 coefficients, the parity-odd derivative manifest, additive finite
 `C2/R(g_hat)^2` normalization,
 renormalized BV Laplacian or time-ordered product, and global

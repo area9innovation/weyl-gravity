@@ -181,13 +181,17 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
         or third_curvature_weyl.get("raw_module", {}).get(
             "generic_label_orbit_dimension"
         )
-        != 12
+        != 11
         or third_curvature_weyl.get("quotient_module", {}).get(
             "generic_label_orbit_dimension"
         )
-        != 11
+        != 10
         or third_curvature_weyl.get("claim_flags", {}).get(
             "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
+        )
+        is not True
+        or third_curvature_weyl.get("claim_flags", {}).get(
+            "SCALAR_FLAT_I29_REVERSAL_IDENTITY_REPLAYED"
         )
         is not True
         or third_curvature_weyl.get("claim_flags", {}).get(
@@ -199,6 +203,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             for row in cpt_kernels.get("universal_kernels", [])
         ]
         != ["I10", "I24", "I25", "I28", "I29"]
+        or cpt_kernels.get("universal_kernels", [])[-1].get("stabilizer") != "S3"
         or cpt_kernels.get("source_fixture", {}).get("status")
         != "COEFFICIENT_COMPUTED"
         or cpt_kernels.get("claim_flags", {}).get(
@@ -327,7 +332,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, five universal CPT source kernels are exact, and the generic ghost n=3 nonzero-momentum triangle is reduced to an exact eight-sector parametric kernel. Its scalar-flat K-to-Ricci normalization is now exact through cubic order, while the repository five-carrier projection, n=1/n=2 traces, generic physical fourth-order kernel, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, and the generic ghost n=3 nonzero-momentum triangle is reduced to an exact eight-sector parametric kernel. Its scalar-flat K-to-Ricci normalization is now exact through cubic order, while the repository five-carrier projection, n=1/n=2 traces, generic physical fourth-order kernel, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),

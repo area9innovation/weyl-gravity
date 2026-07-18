@@ -50,8 +50,8 @@ particle entry. The algebraic-cubic guard likewise records that the exact
 one-even/one-odd zero-derivative (C^3) carrier basis is not a mode, state, or
 particle crosswalk. A separate third-curvature guard records the five
 parity-even conformal carrier labels and their one four-dimensional functional
-relation without turning the resulting eleven generic label channels into
-eleven computed form factors or particle entries. A ninth guard records the
+relation without turning the resulting ten effective label channels into
+ten computed form factors or particle entries. A ninth guard records the
 five exact universal CPT source kernels on the rank-one minimal scalar-
 Laplacian fixture. It does not promote them to Weyl-graviton coefficients or
 particles because the repository generic-background full-BV trace
@@ -116,8 +116,9 @@ direction; this does not supply any derivative-decorated
 `Gamma_m(Box1,Box2,Box3)` or a coefficient. The
 parity-even third-curvature carrier manifest is now complete in its declared
 scalar-flat Euclidean scope: the five source carriers have exact label
-stabilizers, span twelve generic label channels, and one symmetric functional
-identity leaves eleven. The five repository form-factor functions and their
+source-generic stabilizers, while scalar-flat transversality enhances `I29`
+to effective `S3`, leaving eleven raw effective label channels; one symmetric
+functional identity leaves ten. The five repository form-factor functions and their
 coefficients, and the parity-odd derivative-decorated manifest, remain open.
 The exact alpha-parameter kernels for the five corresponding universal CPT
 rows are imported with their source archive and ancillary-code hashes. Their

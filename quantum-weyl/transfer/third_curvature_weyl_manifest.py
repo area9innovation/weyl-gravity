@@ -138,6 +138,7 @@ def _carrier_rows() -> list[dict[str, Any]]:
             "source_structure": 10,
             "formula": "K1_mu^alpha K2_alpha^beta K3_beta^mu",
             "explicit_derivative_order": 0,
+            "source_generic_stabilizer": "S3",
             "stabilizer": "S3",
             "source_symmetry_equation": "CPT-IV (2.55)",
             "coefficient_status": "NOT_COMPUTED",
@@ -147,6 +148,7 @@ def _carrier_rows() -> list[dict[str, Any]]:
             "source_structure": 24,
             "formula": "K1_munu nabla^mu K2_alphabeta nabla^nu K3^alphabeta",
             "explicit_derivative_order": 2,
+            "source_generic_stabilizer": "S2_23",
             "stabilizer": "S2_23",
             "source_symmetry_equation": "CPT-IV (2.69)",
             "coefficient_status": "NOT_COMPUTED",
@@ -156,6 +158,7 @@ def _carrier_rows() -> list[dict[str, Any]]:
             "source_structure": 25,
             "formula": "K1_munu nabla_alpha K2_beta^mu nabla^beta K3^alpha_nu",
             "explicit_derivative_order": 2,
+            "source_generic_stabilizer": "S2_23",
             "stabilizer": "S2_23",
             "source_symmetry_equation": "CPT-IV (2.70)",
             "coefficient_status": "NOT_COMPUTED",
@@ -165,6 +168,7 @@ def _carrier_rows() -> list[dict[str, Any]]:
             "source_structure": 28,
             "formula": "nabla_mu K1_alphalambda nabla_nu K2_beta^lambda nabla^alpha nabla^beta K3^munu",
             "explicit_derivative_order": 4,
+            "source_generic_stabilizer": "S2_12",
             "stabilizer": "S2_12",
             "source_symmetry_equation": "CPT-IV (2.73)",
             "coefficient_status": "NOT_COMPUTED",
@@ -174,11 +178,29 @@ def _carrier_rows() -> list[dict[str, Any]]:
             "source_structure": 29,
             "formula": "nabla_lambda nabla_sigma K1_alphabeta nabla^alpha nabla^beta K2_munu nabla^mu nabla^nu K3^lambdasigma",
             "explicit_derivative_order": 6,
-            "stabilizer": "C3",
+            "source_generic_stabilizer": "C3",
+            "stabilizer": "S3",
             "source_symmetry_equation": "CPT-IV (2.74)",
             "coefficient_status": "NOT_COMPUTED",
         },
     ]
+
+
+def _scalar_flat_symmetry_enhancement() -> dict[str, Any]:
+    return {
+        "carrier_id": "I29",
+        "source_generic_stabilizer": "C3",
+        "effective_scalar_flat_K_stabilizer": "S3",
+        "relation": "I29(1,2,3)=I29(1,3,2) on the declared scalar-flat K carrier, modulo total derivatives and O(curvature^4)",
+        "momentum_space_factorization": "In Fourier convention I29(1,2,3)=-(k2.K1.k2)(k3.K2.k3)(k1.K3.k1)",
+        "proof_rows": [
+            "k3.K1.k3=k2.K1.k2 from k1.K1=0 and k1+k2+k3=0",
+            "k2.K3.k2=k1.K3.k1 from k3.K3=0 and k1+k2+k3=0",
+            "k1.K2.k1=k3.K2.k3 from k2.K2=0 and k1+k2+k3=0",
+        ],
+        "source_kernel_crosscheck": "the imported Gamma29 alpha kernel is fully S3 symmetric",
+        "scope": "scalar-flat K carrier with transversality through linear curvature order; equality is integrated modulo total derivatives and O(curvature^4)",
+    }
 
 
 def _permutation_modules(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, int]]:
@@ -290,13 +312,13 @@ def build() -> dict[str, Any]:
     modules, raw_character = _permutation_modules(rows)
     raw_multiplicities = _multiplicities(raw_character)
     raw_dimension = sum(row["generic_label_orbit_dimension"] for row in modules)
-    if raw_dimension != 12 or raw_multiplicities != {"trivial": 5, "sign": 1, "standard": 3}:
+    if raw_dimension != 11 or raw_multiplicities != {"trivial": 5, "sign": 0, "standard": 3}:
         raise ValueError("raw third-curvature S3 module drifted")
     quotient_character = dict(raw_character)
     for cycle in quotient_character:
         quotient_character[cycle] -= 1
     quotient_multiplicities = _multiplicities(quotient_character)
-    if quotient_multiplicities != {"trivial": 4, "sign": 1, "standard": 3}:
+    if quotient_multiplicities != {"trivial": 4, "sign": 0, "standard": 3}:
         raise ValueError("four-dimensional third-curvature quotient drifted")
 
     source_rows = {
@@ -338,6 +360,7 @@ def build() -> dict[str, Any]:
             "collision_warning": "K_munu is the nonlocal transverse-tracefree Ricci/Weyl contraction used by the source; it is not the four-index Weyl tensor C_munurhosigma",
         },
         "carrier_manifest": rows,
+        "scalar_flat_symmetry_enhancement": _scalar_flat_symmetry_enhancement(),
         "permutation_modules": modules,
         "raw_module": {
             "carrier_labeled_function_count": 5,
@@ -350,7 +373,7 @@ def build() -> dict[str, Any]:
             "generic_label_orbit_dimension": raw_dimension - 1,
             "character_by_cycle_type": quotient_character,
             "irreducible_multiplicities": quotient_multiplicities,
-            "carrier_labeled_description": "five carrier-labeled functions with one arbitrary completely symmetric functional relation; choose a section by deleting the trivial S3 component of I28",
+            "carrier_labeled_description": "five carrier-labeled functions; scalar-flat K transversality enhances I29 from source-generic C3 to effective S3, and one arbitrary completely symmetric functional relation then removes the trivial S3 component of I28",
         },
         "algebraic_anchor": {
             "carrier_id": "I29",
@@ -398,6 +421,7 @@ def build() -> dict[str, Any]:
             "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE": True,
             "FIVE_SOURCE_CARRIERS_IMPORTED": True,
             "PERMUTATION_MODULE_QUOTIENT_REPLAYED": True,
+            "SCALAR_FLAT_I29_REVERSAL_IDENTITY_REPLAYED": True,
             "FOUR_DIMENSIONAL_FUNCTIONAL_IDENTITY_REPLAYED": True,
             "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE": False,
             "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": False,
@@ -409,7 +433,7 @@ def build() -> dict[str, Any]:
         },
         "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FACTOR_FORM_FUNCTIONS_AND_COEFFICIENTS",
         "claim_boundary": (
-            "This EUCLIDEAN-SPECTRAL receipt imports the complete parity-even pure-gravity third-curvature conformal carrier list of covariant perturbation theory on the declared four-dimensional noncompact asymptotically flat scalar-flat representative. It distinguishes the source's nonlocal symmetric tensor K_munu=(2/Box)nabla nabla C from the four-index Weyl tensor. The five carrier labels are I10, I24, I25, I28 and I29, with exact S3, S2_23, S2_23, S2_12 and C3 stabilizers. Their generic labelled permutation modules have dimensions 1,3,3,3,2 and total dimension twelve. The four-dimensional integrated identity with arbitrary completely symmetric form factor removes one trivial S3 component, chosen here as the symmetric part of I28, leaving eleven generic labelled channels with irreducible multiplicities four trivial, one sign and three standard. I29 is absent from that identity and anchors the unique local algebraic even C3 lineage, but its normalization is not inferred. This is a source-derived carrier and permutation-quotient certificate, not a computation of the five repository form-factor functions or their coefficients. It does not classify the parity-odd derivative-decorated sector, fix finite C2 or absolute dressed Rhat2 normalizations, supply complete Gamma1 or Q1, define global inverse or kernel data, construct renormalized products, authorize residual transfer, or establish a Lorentzian QME, Hadamard state, positivity, particle, scattering, or unitarity theorem."
+            "This EUCLIDEAN-SPECTRAL receipt imports the complete parity-even pure-gravity third-curvature conformal carrier list of covariant perturbation theory on the declared four-dimensional noncompact asymptotically flat scalar-flat representative. It distinguishes the source's nonlocal symmetric tensor K_munu=(2/Box)nabla nabla C from the four-index Weyl tensor. The five carrier labels are I10, I24, I25, I28 and I29. Their source-generic stabilizers are S3, S2_23, S2_23, S2_12 and C3. On the scalar-flat K carrier, transversality and momentum conservation enhance I29 to effective S3, so the operative labelled modules have dimensions 1,3,3,3,1 and total dimension eleven. The four-dimensional integrated identity with arbitrary completely symmetric form factor removes one further trivial S3 component, chosen here as the symmetric part of I28, leaving ten generic labelled channels with irreducible multiplicities four trivial, zero sign and three standard. I29 is absent from that identity and anchors the unique local algebraic even C3 lineage, but its normalization is not inferred. This is a source-derived carrier and permutation-quotient certificate, not a computation of the five repository form-factor functions or their coefficients. It does not classify the parity-odd derivative-decorated sector, fix finite C2 or absolute dressed Rhat2 normalizations, supply complete Gamma1 or Q1, define global inverse or kernel data, construct renormalized products, authorize residual transfer, or establish a Lorentzian QME, Hadamard state, positivity, particle, scattering, or unitarity theorem."
         ),
     }
     validate(result)
@@ -422,8 +446,8 @@ def validate(value: dict[str, Any]) -> None:
     Draft202012Validator(schema).validate(value)
     flags = value["claim_flags"]
     if (
-        value["raw_module"]["generic_label_orbit_dimension"] != 12
-        or value["quotient_module"]["generic_label_orbit_dimension"] != 11
+        value["raw_module"]["generic_label_orbit_dimension"] != 11
+        or value["quotient_module"]["generic_label_orbit_dimension"] != 10
         or value["four_dimensional_identity"]["relation_rank"] != 1
         or flags["PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"] is not True
         or any(
@@ -452,7 +476,7 @@ def main() -> int:
         OUTPUT.write_text(rendered)
     if args.check and (not OUTPUT.exists() or OUTPUT.read_text() != rendered):
         raise SystemExit(f"stale third-curvature Weyl manifest: {OUTPUT}")
-    print("THIRD-CURVATURE WEYL MANIFEST: 5 EVEN CARRIERS; 12 -> 11 LABEL CHANNELS; COEFFICIENTS OPEN")
+    print("THIRD-CURVATURE WEYL MANIFEST: 5 EVEN CARRIERS; 11 -> 10 EFFECTIVE LABEL CHANNELS; COEFFICIENTS OPEN")
     return 0
 
 

@@ -91,8 +91,8 @@ def main() -> None:
     assert claims["algebraic_C3_carrier_dimensions"] == {"even": 1, "odd": 1}
     assert claims["algebraic_C3_chiral_parity_crosswalk_exact"] is True
     assert claims["parity_even_third_curvature_carrier_count"] == 5
-    assert claims["third_curvature_raw_label_dimension"] == 12
-    assert claims["third_curvature_4d_quotient_label_dimension"] == 11
+    assert claims["third_curvature_raw_label_dimension"] == 11
+    assert claims["third_curvature_4d_quotient_label_dimension"] == 10
     assert claims["third_curvature_functional_relation_rank"] == 1
     assert claims["universal_CPT_third_curvature_kernels_imported"] is True
     assert claims["universal_CPT_source_fixture_status"] == "COEFFICIENT_COMPUTED"
@@ -209,8 +209,8 @@ def main() -> None:
     assert cubic_weyl["tensor_carriers"]["parity_dimensions"] == {"even": 1, "odd": 1}
     assert cubic_weyl["decision"]["zero_derivative_algebraic_C3_carriers"] == "CERTIFIED_COMPLETE"
     assert cubic_weyl["claim_flags"]["INDEPENDENT_CUBIC_WEYL_FORM_FACTORS_COMPUTED"] is False
-    assert third_curvature_weyl["raw_module"]["generic_label_orbit_dimension"] == 12
-    assert third_curvature_weyl["quotient_module"]["generic_label_orbit_dimension"] == 11
+    assert third_curvature_weyl["raw_module"]["generic_label_orbit_dimension"] == 11
+    assert third_curvature_weyl["quotient_module"]["generic_label_orbit_dimension"] == 10
     assert third_curvature_weyl["claim_flags"]["REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"] is False
     assert cpt_kernels["source_fixture"]["status"] == "COEFFICIENT_COMPUTED"
     assert [row["carrier_id"] for row in cpt_kernels["universal_kernels"]] == [

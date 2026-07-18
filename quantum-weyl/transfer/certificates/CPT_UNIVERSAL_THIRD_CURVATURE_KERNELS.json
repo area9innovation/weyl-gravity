@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate imports, in exact rational alpha form, the five universal pure-gravity third-curvature kernels Gamma_10, Gamma_24, Gamma_25, Gamma_28 and Gamma_29 from the primary CPT ancillary source. It independently checks their box homogeneity and the S3, S2_23, S2_23, S2_12 and C3 stabilizer projections. For the rank-one minimal scalar Laplacian with P and bundle curvature zero, these are coefficient-bearing form factors in the source normalization. They are not the repository conformal-graviton functions: tensor-bundle endomorphism and connection-curvature rows contribute after the generic-background full-BV Hessian is substituted, while the current repository determinant ledger is fixed only on special Einstein/Ricci-flat carriers plus a principal-symbol elliptic complex. The exact nonidentifiability audit therefore forbids a rank-only promotion. This result does not compute any of the five repository functions or coefficients, classify the parity-odd derivative sector, fix finite C2 or absolute dressed Rhat2 normalizations, supply complete Gamma1 or Q1, construct renormalized products, authorize residual transfer, or establish a Lorentzian, Hadamard, particle, scattering, positivity or unitarity theorem.",
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate imports, in exact rational alpha form, the five universal pure-gravity third-curvature kernels Gamma_10, Gamma_24, Gamma_25, Gamma_28 and Gamma_29 from the primary CPT ancillary source. It independently checks their box homogeneity and effective scalar-flat S3, S2_23, S2_23, S2_12 and S3 stabilizer projections, while retaining the source-generic C3 stabilizer of I29 as provenance. For the rank-one minimal scalar Laplacian with P and bundle curvature zero, these are coefficient-bearing form factors in the source normalization. They are not the repository conformal-graviton functions: tensor-bundle endomorphism and connection-curvature rows contribute after the generic-background full-BV Hessian is substituted, while the current repository determinant ledger is fixed only on special Einstein/Ricci-flat carriers plus a principal-symbol elliptic complex. The exact nonidentifiability audit therefore forbids a rank-only promotion. This result does not compute any of the five repository functions or coefficients, classify the parity-odd derivative sector, fix finite C2 or absolute dressed Rhat2 normalizations, supply complete Gamma1 or Q1, construct renormalized products, authorize residual transfer, or establish a Lorentzian, Hadamard, particle, scattering, positivity or unitarity theorem.",
   "claim_flags": {
     "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
     "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
@@ -19,7 +19,7 @@
     "carrier_manifest": {
       "path": "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
       "result_id": "FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST",
-      "sha256": "48d00891ea5096cac56d084da2b1495f351ba4f62f7489aff363d30a9281dcf9"
+      "sha256": "203cc58ea7d2b1cfd468bc660c616e8319250ab522614bcbc16410b1c7006c4c"
     },
     "repository_elliptic_complex": {
       "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
@@ -40,14 +40,14 @@
   "dependency_tags": [
     "EUCLIDEAN-SPECTRAL"
   ],
-  "formula_digest": "39ae359ce36b4b7083b72fccfc50d554285956695a224a6700b4ca1ed2e31621",
+  "formula_digest": "5f7a1e4115fa25973933526d60863bb6ccd251d899eaf24131aae2de7216dbc9",
   "kernel_convention": {
     "boxes": "di=Box_i acts on the labelled curvature i",
     "log_kernel": "Lij=log(di/dj)/(di-dj)=Lji",
     "omega": "Omega=a2*a3*d1+a1*a3*d2+a1*a2*d3",
     "simplex_average": "<P/(-Omega)>_3=int_{a_i>=0} da1 da2 da3 delta(1-a1-a2-a3) P/(-Omega)",
     "source_effective_action_normalization": "-W=[2(4*pi)^2]^(-1) int sqrt(g) tr sum_i Gamma_i Re_i",
-    "symmetrization": "each raw Gamma_i is averaged over the certified stabilizer of its carrier before it is used independently"
+    "symmetrization": "each raw Gamma_i is averaged over the effective scalar-flat stabilizer of its K carrier; I29 is source-generically C3 but its exact kernel and transverse K carrier are S3"
   },
   "lifecycle_state": "COEFFICIENT_COMPUTED_SOURCE_FIXTURE_ONLY",
   "next_gate": "GENERIC_BACKGROUND_FULL_BV_HESSIAN_TRACE_SUBSTITUTION_INTO_THE_FIVE_CPT_KERNELS_AND_PARITY_ODD_DERIVATIVE_MANIFEST",
@@ -109,6 +109,7 @@
       "raw_tree_term": "(-d1 + 2*d2)/(540*d2*d3)",
       "repository_coefficient_status": "NOT_COMPUTED",
       "source_formula": "Gamma_i=<dff_i/(-Omega)>_3+tree_i+log_i",
+      "source_generic_stabilizer": "S3",
       "source_structure": 10,
       "stabilizer": "S3",
       "stabilizer_order": 6,
@@ -125,6 +126,7 @@
       "raw_tree_term": "1/(540*d2*d3)",
       "repository_coefficient_status": "NOT_COMPUTED",
       "source_formula": "Gamma_i=<dff_i/(-Omega)>_3+tree_i+log_i",
+      "source_generic_stabilizer": "S2_23",
       "source_structure": 24,
       "stabilizer": "S2_23",
       "stabilizer_order": 2,
@@ -141,6 +143,7 @@
       "raw_tree_term": "(d1 - 2*d2)/(270*d1*d2*d3)",
       "repository_coefficient_status": "NOT_COMPUTED",
       "source_formula": "Gamma_i=<dff_i/(-Omega)>_3+tree_i+log_i",
+      "source_generic_stabilizer": "S2_23",
       "source_structure": 25,
       "stabilizer": "S2_23",
       "stabilizer_order": 2,
@@ -157,6 +160,7 @@
       "raw_tree_term": "1/(135*d1*d2*d3)",
       "repository_coefficient_status": "NOT_COMPUTED",
       "source_formula": "Gamma_i=<dff_i/(-Omega)>_3+tree_i+log_i",
+      "source_generic_stabilizer": "S2_12",
       "source_structure": 28,
       "stabilizer": "S2_12",
       "stabilizer_order": 2,
@@ -173,9 +177,10 @@
       "raw_tree_term": "0",
       "repository_coefficient_status": "NOT_COMPUTED",
       "source_formula": "Gamma_i=<dff_i/(-Omega)>_3+tree_i+log_i",
+      "source_generic_stabilizer": "C3",
       "source_structure": 29,
-      "stabilizer": "C3",
-      "stabilizer_order": 3,
+      "stabilizer": "S3",
+      "stabilizer_order": 6,
       "symmetrized_alpha_numerator_dff": "8*a1**2*a2**2*a3**2/(3*d1*d2*d3)",
       "symmetrized_explicit_term": "0"
     }

@@ -19,7 +19,11 @@ class CptUniversalThirdCurvatureKernelTests(unittest.TestCase):
 
     def test_stabilizer_and_homogeneity_ledger(self) -> None:
         rows = self.value["universal_kernels"]
-        self.assertEqual([row["stabilizer_order"] for row in rows], [6, 2, 2, 2, 3])
+        self.assertEqual([row["stabilizer_order"] for row in rows], [6, 2, 2, 2, 6])
+        self.assertEqual(
+            [row["source_generic_stabilizer"] for row in rows],
+            ["S3", "S2_23", "S2_23", "S2_12", "C3"],
+        )
         self.assertEqual([row["gamma_box_homogeneity"] for row in rows], [-1, -2, -2, -3, -4])
 
     def test_rank_one_scalar_fixture_is_coefficient_bearing(self) -> None:

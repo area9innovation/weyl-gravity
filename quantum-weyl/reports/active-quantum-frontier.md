@@ -50,9 +50,10 @@ four Euclidean dimensions: the chiral basis has
 nonlocal form-factor or coefficient computation. The parity-even
 third-curvature conformal carrier manifest is now complete in the declared
 scalar-flat Euclidean scope: five carrier-labelled functions have exact
-`S3/S2/C3` stabilizers, span twelve generic label channels, and one exact
-four-dimensional symmetric functional relation leaves eleven. This is not a
-claim that eleven form factors—or any repository coefficient—have been
+source-generic `S3/S2/C3` stabilizers; scalar-flat transversality enhances
+`I29` to effective `S3`, leaving eleven raw effective label channels, and one
+exact four-dimensional symmetric functional relation leaves ten. This is not
+a claim that ten form factors—or any repository coefficient—have been
 computed. The five universal CPT kernels `Gamma_10, Gamma_24, Gamma_25,
 Gamma_28, Gamma_29` are now imported in exact alpha form and are
 coefficient-bearing for the rank-one minimal scalar-Laplacian source fixture.

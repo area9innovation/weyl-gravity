@@ -325,13 +325,17 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or third_curvature_weyl.get("raw_module", {}).get(
             "generic_label_orbit_dimension"
         )
-        != 12
+        != 11
         or third_curvature_weyl.get("quotient_module", {}).get(
             "generic_label_orbit_dimension"
         )
-        != 11
+        != 10
         or third_curvature_weyl.get("claim_flags", {}).get(
             "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
+        )
+        is not True
+        or third_curvature_weyl.get("claim_flags", {}).get(
+            "SCALAR_FLAT_I29_REVERSAL_IDENTITY_REPLAYED"
         )
         is not True
         or third_curvature_weyl.get("claim_flags", {}).get(
@@ -343,6 +347,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
             for row in cpt_kernels.get("universal_kernels", [])
         ]
         != ["I10", "I24", "I25", "I28", "I29"]
+        or cpt_kernels.get("universal_kernels", [])[-1].get("stabilizer") != "S3"
         or cpt_kernels.get("source_fixture", {}).get("status")
         != "COEFFICIENT_COMPUTED"
         or cpt_kernels.get("claim_flags", {}).get(
