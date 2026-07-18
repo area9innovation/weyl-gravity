@@ -32,6 +32,7 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         entry = next(item for item in atlas.build()["entries"] if ".bridge2." in item["id"])
         self.assertTrue(all(status == "NO_CERTIFIED_MAP" for status in entry["descriptions"].values()))
         self.assertIn("INPUT_BLOCKED", entry["claim_boundary"])
+        self.assertIn("complete atlas mode scope", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
 
     def test_product_branch_dictionary_is_sectoral_only(self):

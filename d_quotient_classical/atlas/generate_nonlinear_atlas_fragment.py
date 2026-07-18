@@ -277,7 +277,7 @@ def entries() -> list[dict[str, Any]]:
                 resonance=("NO_CERTIFIED_MAP", "The filtered-cyclic ell3 obstruction is certified only on the unsplit retained carrier."),
             ),
             "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
-            "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
+            "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The importer requires the complete atlas mode scope and content-addressed crosswalk, chain, inclusion/projection/cofiber, pairing, gauge/nondynamical, K_Berger-equivariance, cohomology and independent-verifier evidence. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_axial_relative_branch_map",

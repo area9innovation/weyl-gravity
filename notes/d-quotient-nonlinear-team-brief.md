@@ -757,8 +757,15 @@ chain/cohomology maps, pairing transport, gauge/nondynamical disposition and
 `K_Berger` equivariance.  The fail-closed importer is
 `BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1`; it accepts a
 support-local mixed-bundle map, noncontractible cofiber, or explicitly tagged
-`REDUCED-MODE` nonlocal map and rejects background-name matching.  No input is
-present, so the corresponding atlas row
+`REDUCED-MODE` nonlocal map and rejects background-name matching.  The input
+contract requires the complete atlas mode scope and content-addressed evidence
+roles for the carrier crosswalk, chain map, inclusion/projection/cofiber,
+pairing transport, gauge/nondynamical disposition, `K_Berger` equivariance,
+cohomology map and independent verifier.  Its independent verifier is
+activation-neutral: it accepts either the current fail-closed missing state or
+a future imported candidate after exact replay, rather than rejecting the
+scientific handoff merely because it arrived.  No input is present, so the
+corresponding atlas row
 `nonlinear.berger.bridge2.invariant_interaction_to_physical_branches` remains
 `NO_CERTIFIED_MAP` on every axis.  Once activated, use the landed
 `D^2E`--`q2`--`ell_n` dictionary to decide cohomology survival, cyclic

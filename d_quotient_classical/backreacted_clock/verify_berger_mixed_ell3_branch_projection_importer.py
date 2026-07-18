@@ -11,9 +11,10 @@ def main() -> int:
     result.verify(stored)
     if stored != result.build():
         raise ValueError("branch-projection importer certificate drifted")
-    if stored["input_contract"]["status"] != "MISSING":
-        raise ValueError("scientific input unexpectedly appeared during the blocked preflight")
-    print("BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1 verification: PASS")
+    status = stored["input_contract"]["status"]
+    if status not in {"MISSING", "IMPORTED"}:
+        raise ValueError("unknown branch-map import status")
+    print(f"BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1 verification: PASS ({status})")
     return 0
 
 

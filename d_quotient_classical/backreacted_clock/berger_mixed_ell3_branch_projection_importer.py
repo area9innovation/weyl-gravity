@@ -43,6 +43,16 @@ REQUIRED_FLAGS = (
     "COHOMOLOGY_MAP_VERIFIED",
     "INDEPENDENT_VERIFIER_PASS",
 )
+REQUIRED_ARTIFACT_ROLES = (
+    "carrier_crosswalk",
+    "chain_map",
+    "branch_inclusion_projection_or_cofiber",
+    "pairing_transport",
+    "gauge_nondynamical_disposition",
+    "k_berger_equivariance",
+    "cohomology_map",
+    "independent_verifier",
+)
 
 
 def _sha256(path: Path) -> str:
@@ -68,6 +78,12 @@ def validate_candidate(value: Mapping[str, object], *, verify_artifacts: bool = 
     missing = [flag for flag in REQUIRED_FLAGS if flags.get(flag) is not True]
     if missing:
         raise ValueError("branch map misses acceptance flags: " + ", ".join(missing))
+    roles = {artifact["role"] for artifact in value["map_artifacts"]}
+    missing_roles = [role for role in REQUIRED_ARTIFACT_ROLES if role not in roles]
+    if missing_roles:
+        raise ValueError("branch map misses evidence roles: " + ", ".join(missing_roles))
+    if value["map_category"] == "REDUCED_MODE_NONLOCAL" and "REDUCED-MODE" not in value["dependency_tags"]:
+        raise ValueError("nonlocal reduced-mode branch map lacks REDUCED-MODE dependency tag")
     interaction = value["interaction_dependency"]
     expected = DEPENDENCIES["mixed_ell3_filtered_obstruction"]
     if interaction["result_id"] != "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1":
@@ -130,6 +146,7 @@ def build() -> dict:
             "schema_sha256": _sha256(INPUT_SCHEMA),
             "candidate_paths": [str(path.relative_to(ROOT)) for path in CANDIDATES],
             "required_flags": list(REQUIRED_FLAGS),
+            "required_artifact_roles": list(REQUIRED_ARTIFACT_ROLES),
             "accepted_map_categories": ["SUPPORT_LOCAL_MIXED_BUNDLE", "NONCONTRACTIBLE_COFIBER", "REDUCED_MODE_NONLOCAL"],
             "status": "IMPORTED" if imported else "MISSING",
         },
@@ -165,10 +182,10 @@ def build() -> dict:
             "tier_1": {
                 "status": "PASS",
                 "commands_and_elapsed_seconds": [
-                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards", "elapsed_seconds": 0.145},
-                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py", "elapsed_seconds": 0.537},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 0.714},
-                    {"command": "npx --yes ajv-cli@5 compile/validate --spec=draft2020 --strict=true <two scoped schemas>", "elapsed_seconds": 10.006}
+                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards", "elapsed_seconds": 0.53},
+                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py", "elapsed_seconds": 1.15},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 1.57},
+                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true <two scoped schemas>", "elapsed_seconds": 3.10}
                 ]
             },
             "tier_2_dependency_replay": {"status": "PASS", "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ee_ell2_source --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json", "measured_elapsed_seconds_lower_bound": 300.01},
@@ -209,8 +226,24 @@ def synthetic_candidate() -> dict:
         "source_carrier_id": "synthetic_test_carrier",
         "map_category": "NONCONTRACTIBLE_COFIBER",
         "branch_ids": ["Einstein_like", "extra_Weyl", "Maxwell", "gauge_nondynamical"],
+        "mode_scope": {
+            "theory": "pure-Weyl gravity with Berger clock and Maxwell apparatus",
+            "background": "fixed_rational_positive_Berger_clock",
+            "boundaries": "R_t x compact Berger S3; no spatial boundary",
+            "charge_sector": "fixed-coupling retained sector with K_Berger=D-omega R",
+            "carrier": "synthetic test carrier only",
+            "degree": "all declared BV degrees",
+            "parity": "all declared parities",
+            "ell": "all declared harmonics",
+            "m": "all declared harmonics",
+            "k": "NOT_APPLICABLE on compact Berger S3",
+            "omega": "all declared K_Berger frequencies",
+        },
         "interaction_dependency": {"result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1", "path": str(interaction.relative_to(ROOT)), "sha256": _sha256(interaction)},
-        "map_artifacts": [{"role": "synthetic_only", "path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": _sha256(INPUT_SCHEMA)}],
+        "map_artifacts": [
+            {"role": role, "path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": _sha256(INPUT_SCHEMA)}
+            for role in REQUIRED_ARTIFACT_ROLES
+        ],
         "acceptance_flags": {flag: True for flag in REQUIRED_FLAGS},
         "claim_boundary": "Synthetic schema and mutation fixture only; never a scientific branch-map verdict.",
     }
@@ -227,7 +260,10 @@ Result: `{value['result_state']}`.
 
 The importer is ready, but bridge 2 remains fail-closed until bridge 1 supplies
 an admissible branch map on the exact Berger interaction background.  The
-compact-product source atlas row is not such a map.
+candidate must declare the full atlas mode scope and content-addressed evidence
+for its carrier crosswalk, chain map, inclusion/projection/cofiber, pairing,
+gauge/nondynamical disposition, `K_Berger` equivariance, cohomology map and
+independent verifier.  The compact-product source atlas row is not such a map.
 
 No projected operation, cohomology class, cyclic deformation verdict, or
 `q4` claim is promoted.
@@ -252,6 +288,7 @@ def main() -> int:
         for name, mutate in (
             ("wrong background", lambda item: item.__setitem__("background_id", "compact_product")),
             ("missing pairing", lambda item: item["acceptance_flags"].__setitem__("PAIRING_TRANSPORT_VERIFIED", False)),
+            ("missing cohomology artifact", lambda item: item["map_artifacts"].pop(6)),
         ):
             mutant = deepcopy(candidate)
             mutate(mutant)

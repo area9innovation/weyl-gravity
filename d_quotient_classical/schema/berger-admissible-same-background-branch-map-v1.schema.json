@@ -3,7 +3,7 @@
   "$id": "https://area9.dk/schemas/pure-weyl-berger-admissible-same-background-branch-map-v1.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "claim_status", "dependency_tags", "background_id", "source_carrier_id", "map_category", "branch_ids", "interaction_dependency", "map_artifacts", "acceptance_flags", "claim_boundary"],
+  "required": ["schema", "result_id", "claim_status", "dependency_tags", "background_id", "source_carrier_id", "map_category", "branch_ids", "mode_scope", "interaction_dependency", "map_artifacts", "acceptance_flags", "claim_boundary"],
   "properties": {
     "schema": {"const": "pure-weyl-berger-admissible-same-background-branch-map-v1"},
     "result_id": {"const": "BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1"},
@@ -13,8 +13,40 @@
     "source_carrier_id": {"type": "string", "minLength": 1},
     "map_category": {"enum": ["SUPPORT_LOCAL_MIXED_BUNDLE", "NONCONTRACTIBLE_COFIBER", "REDUCED_MODE_NONLOCAL"]},
     "branch_ids": {"type": "array", "minItems": 4, "uniqueItems": true, "allOf": [{"contains": {"const": "Einstein_like"}}, {"contains": {"const": "extra_Weyl"}}, {"contains": {"const": "Maxwell"}}, {"contains": {"const": "gauge_nondynamical"}}], "items": {"type": "string", "minLength": 1}},
+    "mode_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"const": "fixed_rational_positive_Berger_clock"},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    },
     "interaction_dependency": {"$ref": "#/$defs/artifact"},
-    "map_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/map_artifact"}},
+    "map_artifacts": {
+      "type": "array",
+      "minItems": 8,
+      "allOf": [
+        {"contains": {"type": "object", "properties": {"role": {"const": "carrier_crosswalk"}}, "required": ["role"]}},
+        {"contains": {"type": "object", "properties": {"role": {"const": "chain_map"}}, "required": ["role"]}},
+        {"contains": {"type": "object", "properties": {"role": {"const": "branch_inclusion_projection_or_cofiber"}}, "required": ["role"]}},
+        {"contains": {"type": "object", "properties": {"role": {"const": "pairing_transport"}}, "required": ["role"]}},
+        {"contains": {"type": "object", "properties": {"role": {"const": "gauge_nondynamical_disposition"}}, "required": ["role"]}},
+        {"contains": {"type": "object", "properties": {"role": {"const": "k_berger_equivariance"}}, "required": ["role"]}},
+        {"contains": {"type": "object", "properties": {"role": {"const": "cohomology_map"}}, "required": ["role"]}},
+        {"contains": {"type": "object", "properties": {"role": {"const": "independent_verifier"}}, "required": ["role"]}}
+      ],
+      "items": {"$ref": "#/$defs/map_artifact"}
+    },
     "acceptance_flags": {
       "type": "object",
       "additionalProperties": false,
@@ -35,6 +67,6 @@
   },
   "$defs": {
     "artifact": {"type": "object", "additionalProperties": false, "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
-    "map_artifact": {"type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"], "properties": {"role": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+    "map_artifact": {"type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"], "properties": {"role": {"enum": ["carrier_crosswalk", "chain_map", "branch_inclusion_projection_or_cofiber", "pairing_transport", "gauge_nondynamical_disposition", "k_berger_equivariance", "cohomology_map", "independent_verifier"]}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
   }
 }

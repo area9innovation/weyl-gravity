@@ -33,6 +33,28 @@ class BranchProjectionImporterTests(unittest.TestCase):
         with self.assertRaises(Exception):
             result.validate_candidate(value, verify_artifacts=False)
 
+    def test_incomplete_mode_scope_is_rejected(self):
+        value = copy.deepcopy(result.synthetic_candidate())
+        del value["mode_scope"]["omega"]
+        with self.assertRaises(Exception):
+            result.validate_candidate(value, verify_artifacts=False)
+
+    def test_missing_crosswalk_evidence_role_is_rejected(self):
+        value = copy.deepcopy(result.synthetic_candidate())
+        value["map_artifacts"] = [
+            artifact for artifact in value["map_artifacts"]
+            if artifact["role"] != "carrier_crosswalk"
+        ]
+        with self.assertRaises(Exception):
+            result.validate_candidate(value, verify_artifacts=False)
+
+    def test_reduced_mode_nonlocal_map_requires_dependency_tag(self):
+        value = copy.deepcopy(result.synthetic_candidate())
+        value["map_category"] = "REDUCED_MODE_NONLOCAL"
+        value["dependency_tags"] = ["LOCAL-ALGEBRAIC"]
+        with self.assertRaises(Exception):
+            result.validate_candidate(value, verify_artifacts=False)
+
 
 if __name__ == "__main__":
     unittest.main()
