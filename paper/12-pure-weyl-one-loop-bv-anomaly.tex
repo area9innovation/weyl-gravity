@@ -168,11 +168,15 @@ through any invertible local BV-canonical gauge-fixing map.  Therefore the
 minimal, nonminimal, and gauge-fixed quotients are chain-isomorphic.
 \end{enumerate}
 The spectral sequence collapses at $E_2$.  In the type-D row the stored
-primitive is normalized by the explicit identity
+primitive and horizontal current obey the local identity
 \[
- \int\!\sqrt g\,\omega\Box R
- =-\frac1{12}s\!\int\!\sqrt g\,R^2\pmod{\dd}.
+ \sqrt g\,\omega\Box R\,\dd^4x
+ =-\frac1{12}s\bigl(\sqrt g\,R^2\,\dd^4x\bigr)
+  -\dd\,\star\bigl(R\,\dd\omega-\omega\,\dd R\bigr).
 \]
+Its integral on a boundaryless carrier is therefore
+$\int\sqrt g\,\omega\Box R
+=-(1/12)s\int\sqrt g\,R^2$.
 The full ranks and pair counts appear in the generated spectral-sequence
 table of the computational supplement.
 
@@ -215,14 +219,14 @@ included in the accepted integration slice.
 The complete local determinant ledger is small enough to display:
 \begin{center}
 \small
-\begin{tabularx}{\textwidth}{@{}YlrlrrY@{}}
+\begin{tabularx}{\textwidth}{@{}YlrrlrrY@{}}
 \toprule
-sector & operator & rank & statistics & $Z$ exponent & zero modes & local prescription\\
+sector & operator & order & rank & statistics & $Z$ exponent & zero modes & local prescription\\
 \midrule
-metric TT, upper & $\Delta_{2,\perp}(4)$ & 5 & bosonic & $-1/2$ & 0 & factorwise cut\\
-Diff--Weyl scalar ghost & $\Delta_0(-4)'$ & 1 & fermionic & $+1/2$ & 5 & cut; negative-mode phase locally constant\\
-metric TT, lower & $\Delta_{2,\perp}(2)$ & 5 & bosonic & $-1/2$ & 0 & factorwise cut\\
-transverse Diff ghost & $\Delta_{1,\perp}(-3)'$ & 3 & fermionic & $+1/2$ & 10 & factorwise cut\\
+metric TT, upper & $\Delta_{2,\perp}(4)$ & 2 & 5 & bosonic & $-1/2$ & 0 & factorwise cut\\
+Diff--Weyl scalar ghost & $\Delta_0(-4)'$ & 2 & 1 & fermionic & $+1/2$ & 5 & cut; negative-mode phase locally constant\\
+metric TT, lower & $\Delta_{2,\perp}(2)$ & 2 & 5 & bosonic & $-1/2$ & 0 & factorwise cut\\
+transverse Diff ghost & $\Delta_{1,\perp}(-3)'$ & 2 & 3 & fermionic & $+1/2$ & 10 & factorwise cut\\
 \bottomrule
 \end{tabularx}
 \end{center}

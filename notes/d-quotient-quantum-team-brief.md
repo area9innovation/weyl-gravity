@@ -1046,7 +1046,9 @@ The theorem spine is assembled in
 with a generated claim map and compiled draft PDF. Its
 [`computational supplement`](../paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex)
 is also assembled and warning-free. The focused major revision now displays
-the determinant-to-Slavnov bridge, regular-Bach spectral-sequence proof,
+the determinant-to-Slavnov bridge with operator orders in the determinant
+ledger, the regular-Bach spectral-sequence proof and explicit local type-D
+horizontal current,
 quartet homotopy, Euler Wess--Zumino primitive, matter vectors, and narrowed
 effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,

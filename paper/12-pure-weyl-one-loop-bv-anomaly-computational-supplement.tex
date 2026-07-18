@@ -167,8 +167,10 @@ bundle ranks and exponents are
  \left(-\frac12,+\frac12,-\frac12,+\frac12\right),
 \]
 with priming dimensions $(0,5,0,10)$.
-The generated determinant table prints each operator, rank, statistics,
-exponent, and zero-mode subtraction separately.
+The generated determinant table prints each operator, differential order,
+rank, statistics, exponent, and zero-mode subtraction separately.  Every
+displayed factor is second order; the fourth-order TT determinant is the
+product of its two displayed second-order factors.
 
 For each factor, the two invariant coordinates are reconstructed from
 independent carriers: the Ricci-flat row supplies $c_i-a_i$ and the
@@ -193,7 +195,13 @@ Let the ordered strict basis be
 \]
 The raw analytic vector is the one displayed in
 Table~\ref{tab:generated-coefficients}.  The fourth coordinate is removed with
-the stored $R^2$ primitive and current.  The first two normalized dual
+the stored local identity
+\[
+ \sqrt g\,\omega\Box R\,\dd^4x
+ =-\frac1{12}s\bigl(\sqrt g\,R^2\,\dd^4x\bigr)
+  -\dd\,\star\bigl(R\,\dd\omega-\omega\,\dd R\bigr).
+\]
+The first two normalized dual
 functionals evaluate to $199/30$ and $-87/20$, while the odd functional
 evaluates to zero by the Ward identity.  Therefore
 \[
