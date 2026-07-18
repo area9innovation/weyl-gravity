@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "capacity_formulas", "tolerance_capacity_rows", "response_specific_streaming_theorem", "unresolved_streaming_inputs", "route_decision", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-response-specific-streaming-preflight-v1"},
+    "result_id": {"const": "BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"type": "string", "minLength": 1},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "capacity_formulas": {"type": "object"},
+    "tolerance_capacity_rows": {"type": "array", "minItems": 5, "maxItems": 5},
+    "response_specific_streaming_theorem": {"type": "object"},
+    "unresolved_streaming_inputs": {"type": "array", "minItems": 3},
+    "route_decision": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "CERTIFY_FIXED_MASSIVE_RECOIL_CHAIN_DUAL_NORMS_AND_STREAM_MODE_BLOCKS_DIRECTLY_INTO_THE_SCALAR_CONTRACTIONS"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

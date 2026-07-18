@@ -725,8 +725,22 @@ finite bounds for both `||Delta1 partial_a F||` and
 about `196` above retained `two_j=1024`, and its first sub-unit sufficient
 cutoff is `two_j=3835` for both detector polarizations.  Thus the physical
 tail route is certified, but not yet completed: no complete retained
-projection through `3835` exists.  That projection is now the active gate
-before the massive-two-form image, recoil coefficient and cone restriction.
+projection through `3835` exists.  A projection through that cutoff was the
+provisional gate before the response-specific capacity audit below.
+
+`BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT` improves that work item before
+materialization.  The all-finite support formulas show that a legacy complete
+rail through `two_j=3835` would contain `44,140,852` detector-coordinate
+entries, require `117,703,824` scalar recurrence applications and serialize
+`662,112,780` intervals across the fifteen even clock powers.  Tighter `L2`
+targets grow into billions of intervals.  Since the required outputs are four
+record/recoil scalars rather than a reusable dense image, the active route is
+now shell streaming: apply the exact clock transform in each charge block,
+contract immediately into the fixed scalar chain and stop using
+`|tail| <= B_ab E_N`.  The fixed massive-chain dual bounds `B_ab` and complete
+modewise scalar integrands are still `OPEN`; without them the Maxwell tail to
+recoil-scalar map is `NO_CERTIFIED_MAP`.  The arbitrary `L2<1` threshold is
+therefore no longer treated as the completion criterion.
 
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
