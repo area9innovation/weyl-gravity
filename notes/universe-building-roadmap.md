@@ -232,8 +232,13 @@ correction.  Its complete first-order local gauge equation is now solved:
 the `60 x 45` coefficient map has full column rank on all nine output rows
 and yields a unique 59-coefficient correction with zero gauge residual.
 Action provenance and cyclicity are not inferred from uniqueness and remain
-the active gate, followed by the rank-310 SDR variation.  Transverse causal
-transfer remains `OPEN`.
+part of the active gate.  The first continuation is now ruled out exactly:
+an arbitrary order-at-most-one correction of the Φ row alone has a
+`225 x 45` rank-45 map, while 38 output rows have augmented rank 46 and a
+normalized two-term left-null witness.  The active gate is therefore the
+coupled incidence/splitting/constraint variation (or an explicitly
+higher-order Φ ansatz), followed by the rank-310 SDR variation.  Transverse
+causal transfer remains `OPEN`.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves
@@ -638,13 +643,25 @@ diagram rather than compared only at the level of solutions.
 The standard compact Einstein--Maxwell solution inclusion is certified
 on-shell, including the declared curvature and background-flux mixing.  The
 generic axial block now has a strict polynomial off-shell chain map, mapping
-cofiber, and direct current, while the generic polar block has an exact
-formally self-adjoint target Hessian, polynomial Einstein equation square,
-physical coefficient-ring primary decomposition, and independently derived
-action normalization.  The polar ungauged BV/Noether lift and direct extra
-current remain open, as do the exceptional, global, and boundary domains.
-Therefore these sectoral results do not yet provide the all-sector off-shell
-BV triangle.
+cofiber, and direct current.  The generic polar block now also has a
+polynomial ghost--field--equation--identity chain map, physical coefficient-
+ring solution cofiber, and direct action-derived extra current.  At
+`ell=1,k=0`, explicit spectral CRT projectors identify the complete
+solution-level Einstein image and the axial-plus-polar extra cofiber, whose
+current Gram matrix is nonradical.  The homogeneous generalized-zero target
+and the isolated axial twist primary are each exhausted by the Einstein image,
+so both solution cofibers vanish even though their identity pullbacks carry,
+respectively, a nilpotent shear and relative factor `-2I`.  In the generic
+axial and polar blocks, strict cyclic compatibility of the fixed identity
+field maps with the standard action pairings is now obstructed by a
+nonradical solution-pairing defect; corrected nonidentity or chain-homotopy
+cyclic morphisms remain open.  The generated
+`EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` records global lifecycle
+`ONSHELL_MAP_ONLY`: exceptional nonzero-momentum/off-shell maps,
+homogeneous/twist/global off-shell and charge endpoints, corrected cyclic
+morphisms, and boundary domains remain open.  Therefore these sectoral
+results still do not provide the all-sector off-shell BV triangle or activate
+bridge 1.
 Quadratic extension/obstruction fixtures exist, but not yet a complete
 relative obstruction theorem.  Residual equivariance, the observable map, the
 relative \(L_\infty\) morphism, and the quantum lift remain open until their
@@ -752,6 +769,17 @@ relative action-derived forms.  Generic axial results are inputs, not the
 complete theorem: polar, exceptional, global, charge-fibre, and boundary
 sectors must be declared explicitly.  It also exports the quadratic
 Taub/extension bilinear that the nonlinear team will refine.
+
+The current fail-closed artifact is
+`EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1`.  It exports the same-background
+generic axial and polar chain cofibers, the exceptional `ell=1,k=0` solution
+cofiber, zero homogeneous and twist-primary solution cofibers, branch
+representatives and action-derived pairings.  It also records the obstruction
+to strict cyclicity of the generic fixed identity maps without promoting that
+obstruction to a no-go for corrected cyclic morphisms.  Its atlas row is
+`einstein.ph.bridge.relative_branch_dictionary_v1`; activation remains `OPEN`,
+and no cross-background identity is made.  The certified `a,b,d` polynomial
+resonance matrix is a quadratic input to this bridge, not its completion.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
