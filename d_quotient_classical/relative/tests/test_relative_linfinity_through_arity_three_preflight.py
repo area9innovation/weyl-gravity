@@ -45,31 +45,29 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
         with self.assertRaises(Exception):
             result.validate_triangle(value)
 
-    def test_fixed_identity_cyclic_obstruction_must_be_respected(self):
+    def test_generic_cyclic_map_inertia_obstruction_must_be_respected(self):
         value = result.synthetic_triangle()
-        value["acceptance_flags"]["FIXED_IDENTITY_CYCLIC_OBSTRUCTION_RESPECTED"] = False
+        value["acceptance_flags"]["GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED"] = False
         with self.assertRaises(Exception):
             result.validate_triangle(value)
 
-    def test_fixed_identity_cyclic_obstruction_requires_hashed_resolution(self):
+    def test_generic_cyclic_map_inertia_obstruction_requires_hashed_artifact(self):
         value = result.synthetic_triangle()
-        del value["triangle_artifacts"]["cyclic_obstruction_resolution"]
+        del value["triangle_artifacts"]["generic_cyclic_map_inertia_obstruction"]
         with self.assertRaises(Exception):
             result.validate_triangle(value)
 
-    def test_corrected_nonidentity_resolution_cannot_reuse_identity(self):
+    def test_standard_pairing_cyclic_map_cannot_be_restored(self):
         value = result.synthetic_triangle()
-        value["cyclic_obstruction_disposition"]["fixed_identity_field_inclusion_reused"] = True
+        value["pairing_disposition"]["standard_pairing_cyclic_map_exists"] = True
         with self.assertRaises(Exception):
             result.validate_triangle(value)
 
-    def test_declared_chain_homotopy_may_explicitly_reuse_identity(self):
+    def test_three_forms_must_remain_distinct(self):
         value = result.synthetic_triangle()
-        value["cyclic_obstruction_disposition"] = {
-            "fixed_identity_field_inclusion_reused": True,
-            "resolution_kind": "DECLARED_CHAIN_HOMOTOPY_CYCLIC_MORPHISM",
-        }
-        result.validate_triangle(value)
+        value["pairing_disposition"]["three_forms_kept_distinct"] = False
+        with self.assertRaises(Exception):
+            result.validate_triangle(value)
 
     def test_missing_inputs_cannot_claim_ready(self):
         value = result.build()

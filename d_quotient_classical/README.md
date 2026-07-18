@@ -100,6 +100,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   mixed-bundle/cofiber construction:
   [`certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json`](certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json),
   [`reports/berger-bridge1-admissible-carrier-disposition.md`](reports/berger-bridge1-admissible-carrier-disposition.md)
+- Generic compact-product cyclic-map inertia obstruction: on every physical
+  axial and polar fibre, the Einstein source form has inertia `(2,0)` while
+  the Weyl form restricted to the complete `q`-primary image has inertia
+  `(1,1)`. Hence no real-structure-preserving, product-equivariant corrected
+  map can make the standard action pairings cyclic. The remaining admissible
+  target is a noncyclic off-shell triangle exporting the Einstein,
+  pulled-back Weyl and relative forms separately:
+  [`certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json`](certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json),
+  [`reports/einstein-weyl-generic-cyclic-map-inertia-obstruction.md`](reports/einstein-weyl-generic-cyclic-map-inertia-obstruction.md)
 - Berger causal-witness endpoint preflight:
   [`certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json`](certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json)
 - Berger causal-witness preflight report:

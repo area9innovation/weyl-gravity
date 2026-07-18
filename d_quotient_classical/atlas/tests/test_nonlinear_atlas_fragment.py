@@ -76,13 +76,13 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         value = atlas.build()["entries"]
         axial = next(item for item in value if "generic_axial_relative_branch_map" in item["id"])
         polar = next(item for item in value if "generic_polar_relative_branch_map" in item["id"])
-        self.assertEqual(axial["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(axial["descriptions"]["symplectic"], "OBSTRUCTED")
         self.assertEqual(axial["descriptions"]["nonlinear"], "OPEN")
         self.assertIn("not the all-sector", axial["claim_boundary"])
-        self.assertIn("fixed identity", axial["claim_boundary"])
+        self.assertIn("inertia mismatch", axial["claim_boundary"])
         self.assertEqual(polar["descriptions"]["nonlinear"], "OPEN")
-        self.assertIn("fixed identity", polar["claim_boundary"])
-        self.assertIn("corrected nonidentity", polar["claim_boundary"])
+        self.assertIn("cyclic correction is obstructed", polar["claim_boundary"])
+        self.assertIn("incompatible inertia", polar["claim_boundary"])
 
     def test_complete_homogeneous_twist_matrix_still_leaves_zero_locus_open(self):
         entry = next(item for item in atlas.build()["entries"] if "homogeneous_twist_times" in item["id"])
@@ -170,13 +170,13 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("Berger tensors are ineligible", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
 
-    def test_fixed_identity_cyclic_obstruction_is_scoped(self):
-        entry = next(item for item in atlas.build()["entries"] if "generic_identity_cyclic_compatibility_obstruction" in item["id"])
+    def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):
+        entry = next(item for item in atlas.build()["entries"] if "generic_standard_pairing_cyclic_map_inertia_obstruction" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
         self.assertEqual(entry["descriptions"]["nonlinear"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "OBSTRUCTED")
-        self.assertIn("fixed identity", entry["claim_boundary"])
-        self.assertIn("Corrected nonidentity", entry["claim_boundary"])
+        self.assertIn("Every real-structure-preserving", entry["claim_boundary"])
+        self.assertIn("noncyclic off-shell triangle", entry["claim_boundary"])
         self.assertIn("remain OPEN", entry["claim_boundary"])
 
 

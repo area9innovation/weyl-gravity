@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-linfinity-triangle-input-v2.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "claim_status", "dependency_tags", "theory_map", "background_id", "boundaries", "carrier_id", "coefficient_field", "triangle_artifacts", "pairing_disposition", "acceptance_flags", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-linfinity-triangle-input-v2"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"},
+    "claim_status": {"enum": ["CERTIFIED", "THEOREM_FROZEN", "CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE"]},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "theory_map": {"const": "Einstein-Maxwell_to_Weyl-Maxwell"},
+    "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
+    "boundaries": {"type": "string", "minLength": 1},
+    "carrier_id": {"type": "string", "minLength": 1},
+    "coefficient_field": {"type": "string", "minLength": 1},
+    "triangle_artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_q1", "target_q1", "inclusion", "projection_or_cofiber", "source_pairing", "target_pairing", "relative_pairing", "generic_cyclic_map_inertia_obstruction"],
+      "properties": {
+        "source_q1": {"$ref": "#/$defs/artifact"},
+        "target_q1": {"$ref": "#/$defs/artifact"},
+        "inclusion": {"$ref": "#/$defs/artifact"},
+        "projection_or_cofiber": {"$ref": "#/$defs/artifact"},
+        "source_pairing": {"$ref": "#/$defs/artifact"},
+        "target_pairing": {"$ref": "#/$defs/artifact"},
+        "relative_pairing": {"$ref": "#/$defs/artifact"},
+        "generic_cyclic_map_inertia_obstruction": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "pairing_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["triangle_kind", "standard_pairing_cyclic_map_exists", "three_forms_kept_distinct"],
+      "properties": {
+        "triangle_kind": {"const": "NONCYCLIC_THREE_FORM"},
+        "standard_pairing_cyclic_map_exists": {"const": false},
+        "three_forms_kept_distinct": {"const": true}
+      }
+    },
+    "acceptance_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS", "SUPPORT_LOCAL_MAPPING_COFIBER", "GLOBAL_ENDPOINTS_INCLUDED", "THREE_ACTION_DERIVED_FORMS_EXPORTED", "GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED", "H_PRODUCT_EQUIVARIANT", "INDEPENDENT_VERIFIER_PASS"],
+      "properties": {
+        "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS": {"const": true},
+        "SUPPORT_LOCAL_MAPPING_COFIBER": {"const": true},
+        "GLOBAL_ENDPOINTS_INCLUDED": {"const": true},
+        "THREE_ACTION_DERIVED_FORMS_EXPORTED": {"const": true},
+        "GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED": {"const": true},
+        "H_PRODUCT_EQUIVARIANT": {"const": true},
+        "INDEPENDENT_VERIFIER_PASS": {"const": true}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "path", "sha256"],
+      "properties": {
+        "result_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

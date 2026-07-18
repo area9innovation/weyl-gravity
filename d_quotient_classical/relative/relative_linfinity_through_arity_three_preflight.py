@@ -16,7 +16,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json"
 REPORT = ROOT / "d_quotient_classical/reports/einstein-weyl-relative-linfinity-through-arity-three-preflight.md"
-TRIANGLE_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json"
+TRIANGLE_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json"
 INPUT_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json"
 SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json"
 VERIFIER = ROOT / "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py"
@@ -38,8 +38,8 @@ TRIANGLE_FLAGS = (
     "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS",
     "SUPPORT_LOCAL_MAPPING_COFIBER",
     "GLOBAL_ENDPOINTS_INCLUDED",
-    "PAIRING_OR_CURRENT_COMPATIBLE",
-    "FIXED_IDENTITY_CYCLIC_OBSTRUCTION_RESPECTED",
+    "THREE_ACTION_DERIVED_FORMS_EXPORTED",
+    "GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED",
     "H_PRODUCT_EQUIVARIANT",
     "INDEPENDENT_VERIFIER_PASS",
 )
@@ -56,6 +56,7 @@ DEPENDENCIES = {
     "source_transfer_dictionary": ROOT / "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
     "finite_harmonic_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "berger_filtered_ell3_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+    "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
 BACKGROUND_ID = "compact_magnetic_Plebanski_Hacyan_product"
 
@@ -88,9 +89,16 @@ def validate_triangle(value: Mapping[str, object], *, verify_artifacts: bool = T
     missing = [flag for flag in TRIANGLE_FLAGS if value["acceptance_flags"].get(flag) is not True]
     if missing:
         raise ValueError("relative triangle misses acceptance flags: " + ", ".join(missing))
-    obstruction = value["triangle_artifacts"]["fixed_identity_cyclic_obstruction"]
-    if obstruction["result_id"] != "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1":
-        raise ValueError("relative triangle does not pin the certified fixed-identity cyclic obstruction")
+    disposition = value["pairing_disposition"]
+    if disposition != {
+        "triangle_kind": "NONCYCLIC_THREE_FORM",
+        "standard_pairing_cyclic_map_exists": False,
+        "three_forms_kept_distinct": True,
+    }:
+        raise ValueError("relative triangle does not preserve the noncyclic three-form disposition")
+    obstruction = value["triangle_artifacts"]["generic_cyclic_map_inertia_obstruction"]
+    if obstruction["result_id"] != "EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1":
+        raise ValueError("relative triangle does not pin the generic cyclic-map inertia obstruction")
     if verify_artifacts:
         for artifact in value["triangle_artifacts"].values():
             path = ROOT / artifact["path"]
@@ -161,8 +169,8 @@ def build() -> dict:
             "complete arity-three defect including q3, q2*iota2 and iota2*q2 terms",
             "exact iota3 primitive or normalized obstruction witness",
             "EE_to_X, EX_to_E_plus_X and XX_to_E_plus_X channel table",
-            "cyclicity, H_product equivariance and action on cohomology",
-            "cyclic deformation nontriviality or displayed admissible removal",
+            "H_product equivariance and action on cohomology with the three forms tracked separately",
+            "deformation nontriviality or displayed admissible removal without asserting a cyclic quasi-equivalence",
         ],
         "scope_guard": {
             "berger_tensors_eligible": False,
@@ -187,7 +195,7 @@ def build() -> dict:
             "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
             "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
             "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
-            "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
+            "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json",
             "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
         ],
         "verification_receipt": {
@@ -206,7 +214,7 @@ def build() -> dict:
                     {"command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py", "elapsed_seconds": 0.14},
                     {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.50},
                     {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json", "elapsed_seconds": 2.11},
-                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json", "elapsed_seconds": 3.34},
+                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json", "elapsed_seconds": 3.34},
                     {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json", "elapsed_seconds": 2.02},
                 ],
                 "status": "PASS",
@@ -271,7 +279,7 @@ def synthetic_taylor(result_id: str, theory_id: str) -> dict:
 
 def synthetic_triangle() -> dict:
     return {
-        "schema": "pure-weyl-relative-linfinity-triangle-input-v1",
+        "schema": "pure-weyl-relative-linfinity-triangle-input-v2",
         "result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "claim_status": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
@@ -283,8 +291,8 @@ def synthetic_triangle() -> dict:
         "triangle_artifacts": {
             name: {
                 "result_id": (
-                    "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1"
-                    if name == "fixed_identity_cyclic_obstruction"
+                    "EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1"
+                    if name == "generic_cyclic_map_inertia_obstruction"
                     else f"synthetic_{name}"
                 ),
                 "path": str(TRIANGLE_SCHEMA.relative_to(ROOT)),
@@ -295,14 +303,16 @@ def synthetic_triangle() -> dict:
                 "target_q1",
                 "inclusion",
                 "projection_or_cofiber",
-                "pairing_or_current",
-                "fixed_identity_cyclic_obstruction",
-                "cyclic_obstruction_resolution",
+                "source_pairing",
+                "target_pairing",
+                "relative_pairing",
+                "generic_cyclic_map_inertia_obstruction",
             )
         },
-        "cyclic_obstruction_disposition": {
-            "fixed_identity_field_inclusion_reused": False,
-            "resolution_kind": "CORRECTED_NONIDENTITY_SYMPLECTIC_MAP",
+        "pairing_disposition": {
+            "triangle_kind": "NONCYCLIC_THREE_FORM",
+            "standard_pairing_cyclic_map_exists": False,
+            "three_forms_kept_distinct": True,
         },
         "acceptance_flags": {flag: True for flag in TRIANGLE_FLAGS},
         "claim_boundary": "Synthetic receiver fixture only; no scientific relative triangle.",
@@ -318,10 +328,11 @@ def _report(value: Mapping[str, object]) -> str:
 
 Result: `{value['result_state']}`.
 
-The full relative triangle and both same-background product Taylor payloads
-are required.  Sectoral cofibers and selected quadratic sources remain useful
-evidence but do not satisfy this input gate.  Berger tensors are rejected as
-cross-background inputs, and `q4` remains unauthorized.
+The full noncyclic three-form relative triangle and both same-background
+product Taylor payloads are required. Sectoral cofibers and selected quadratic
+sources remain useful evidence but do not satisfy this input gate. The
+standard-pairing cyclic correction is obstructed, Berger tensors are rejected
+as cross-background inputs, and `q4` remains unauthorized.
 """
 
 
@@ -344,8 +355,8 @@ def guards(value: Mapping[str, object]) -> None:
     for name, mutate in (
         ("triangle background", lambda item: item.__setitem__("background_id", "fixed_rational_positive_Berger_clock")),
         ("triangle artifact hash", lambda item: item["triangle_artifacts"]["inclusion"].__setitem__("sha256", "0" * 64)),
-        ("fixed identity obstruction ignored", lambda item: item["acceptance_flags"].__setitem__("FIXED_IDENTITY_CYCLIC_OBSTRUCTION_RESPECTED", False)),
-        ("fixed identity silently reused", lambda item: item["cyclic_obstruction_disposition"].__setitem__("fixed_identity_field_inclusion_reused", True)),
+        ("generic inertia obstruction ignored", lambda item: item["acceptance_flags"].__setitem__("GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED", False)),
+        ("cyclic triangle silently restored", lambda item: item["pairing_disposition"].__setitem__("standard_pairing_cyclic_map_exists", True)),
     ):
         mutant = deepcopy(triangle)
         mutate(mutant)

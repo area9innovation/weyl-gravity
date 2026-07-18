@@ -172,7 +172,8 @@ graph anchor are obstructed, while none of the remaining relative-cofiber,
 noncontractible mixed-bundle, all-mode `REDUCED-MODE`, or port alternatives
 currently supplies a Berger branch crosswalk.  No row-name or cross-background
 identification is allowed.  The active queue therefore advances to the
-compact-product off-shell cyclic Einstein--Weyl relative triangle, while a
+compact-product off-shell noncyclic three-form Einstein--Weyl relative
+triangle, while a
 genuinely noncontractible Berger carrier and the support-local Bach-flat
 parent-to-metric causal bridge remain independent open rails.
 
@@ -183,10 +184,17 @@ has its fail-closed disposition and the second is active:
    and the exact normalized rank-36/rank-46 obstructions.  Reopen the local
    branch map only for a genuinely noncontractible mixed-bundle/cofiber
    construction; a row-name or contractible-graph split is forbidden.
-2. For the compact product background, complete the off-shell cyclic
-   Einstein--Weyl relative triangle, including the corrected cyclic map needed
-   to resolve the fixed-identity pairing obstruction.  This is Bridge 2 and
-   must not import Berger or vacuum carriers without an explicit crosswalk.
+2. For the compact product background, complete the off-shell **noncyclic
+   three-form** Einstein--Weyl relative triangle. The stronger
+   `EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1` certificate shows
+   that the Einstein form has inertia `(2,0)` while the Weyl form on the
+   complete `q`-primary image has inertia `(1,1)` in both generic parities.
+   Therefore no real-structure-preserving, product-equivariant corrected map,
+   chain homotopy or exact current improvement can make the standard pairings
+   cyclic. Export the Einstein, pulled-back Weyl and relative forms separately.
+   An explicitly pairing-changed theorem is a different open route. This is
+   Bridge 2 and must not import Berger or vacuum carriers without an explicit
+   crosswalk.
 3. Export complete same-background \(q_1,q_2,q_3\) payloads separately for
    Einstein--Maxwell and Weyl--Maxwell so the nonlinear team can compute
    \(\Delta_2\), the arity-three morphism defect, and the induced deformation

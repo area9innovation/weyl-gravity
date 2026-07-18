@@ -21,6 +21,11 @@
       "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
       "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
     },
+    "generic_cyclic_map_inertia_obstruction": {
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
+      "result_id": "EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1",
+      "sha256": "c674bc95d9afd8bdb7c53a16077db5ff59bb9d7cc552f661efcd0bd1e6d79af0"
+    },
     "source_transfer_dictionary": {
       "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
       "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
@@ -59,8 +64,8 @@
         "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS",
         "SUPPORT_LOCAL_MAPPING_COFIBER",
         "GLOBAL_ENDPOINTS_INCLUDED",
-        "PAIRING_OR_CURRENT_COMPATIBLE",
-        "FIXED_IDENTITY_CYCLIC_OBSTRUCTION_RESPECTED",
+        "THREE_ACTION_DERIVED_FORMS_EXPORTED",
+        "GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED",
         "H_PRODUCT_EQUIVARIANT",
         "INDEPENDENT_VERIFIER_PASS"
       ],
@@ -71,8 +76,8 @@
       "sha256": "758ceaefc77f662e53fd3147dac18a5a74b2ed2643c40adc2a3b09d4963b469f"
     },
     "triangle_schema": {
-      "path": "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
-      "sha256": "4acf577b250cca60b7fcfed964a564e1ff9904da28a58be7ba2c8f3919dde083"
+      "path": "d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json",
+      "sha256": "76d44b05a7ac0e63d6532aa3e0a0e595ccc3185fb27b33324501b28cfe482c27"
     },
     "weyl_taylor": {
       "candidate_paths": [
@@ -105,8 +110,8 @@
     "complete arity-three defect including q3, q2*iota2 and iota2*q2 terms",
     "exact iota3 primitive or normalized obstruction witness",
     "EE_to_X, EX_to_E_plus_X and XX_to_E_plus_X channel table",
-    "cyclicity, H_product equivariance and action on cohomology",
-    "cyclic deformation nontriviality or displayed admissible removal"
+    "H_product equivariance and action on cohomology with the three forms tracked separately",
+    "deformation nontriviality or displayed admissible removal without asserting a cyclic quasi-equivalence"
   ],
   "result_id": "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1",
   "result_state": "INPUT_BLOCKED_FULL_TRIANGLE_AND_PRODUCT_TAYLOR_PAYLOADS_MISSING",
@@ -123,19 +128,19 @@
     "generator": "H_product"
   },
   "source_manifest": {
-    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "79002ff84f07871d5cf2386f53b7151a2d7d41187c09a3d6b067f2dba6f0e69c",
-    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "779ef75edf8247a67150fb37cc9e0d2614fc5a0104383a43f3d416f0a9d7dfc6",
+    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "6eb9965dea51bbf81ec64fffd40192e5f78d9c61b6a01f48b397ecc36c7cf2fe",
+    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "39a8c5db9b99a1ff8d1db8c807bf735fc113e1ec9a0748e7853951f000add9af",
     "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py": "25c5f9da4ed1a38087287f501459a14ea094dd35fd5fe884c88cf00d1c6ec716",
     "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json": "758ceaefc77f662e53fd3147dac18a5a74b2ed2643c40adc2a3b09d4963b469f",
     "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json": "01bc56d19caf58c117a662d328ff805ee0407199eaf60ec8b210c56474857750",
-    "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json": "4acf577b250cca60b7fcfed964a564e1ff9904da28a58be7ba2c8f3919dde083"
+    "d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json": "76d44b05a7ac0e63d6532aa3e0a0e595ccc3185fb27b33324501b28cfe482c27"
   },
   "verification_commands": [
     "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
     "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
     "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
     "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
-    "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
+    "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json",
     "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json"
   ],
   "verification_receipt": {
@@ -167,7 +172,7 @@
           "elapsed_seconds": 2.11
         },
         {
-          "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
+          "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json",
           "elapsed_seconds": 3.34
         },
         {

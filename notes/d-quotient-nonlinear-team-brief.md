@@ -849,20 +849,15 @@ off-shell `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`, the complete
 `WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1`.  All three are
 currently `MISSING`, so every atlas axis is `NO_CERTIFIED_MAP`.  The receiver
 publishes the triangle handoff contract at
-`d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json`;
+`d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json`;
 it requires content-addressed source/target `q1`, inclusion,
-projection-or-cofiber and pairing-or-current artifacts rather than accepting
-status flags alone.  It also requires hashed artifacts for both the generic
-fixed-identity cyclic obstruction and its corrected resolution, plus an
-explicit nonidentity, pairing-improvement or declared chain-homotopy
-resolution kind.  A corrected-nonidentity resolution must not reuse the
-identity map; a pairing improvement or declared chain homotopy may retain it
-only explicitly and with its resolution artifact pinned.  Thus the obstructed
-inclusion cannot be silently relabelled as the full cyclic triangle.  The receiver
-validates full-BV rows, support locality,
-cyclic pairing, the arity-two and
-arity-three identities, `H_product` equivariance, exact artifact hashes and
-an independent-verifier flag.  It rejects Berger-background payloads and
+projection-or-cofiber, Einstein pairing, pulled-back Weyl pairing and relative
+pairing artifacts rather than accepting status flags alone. It pins the
+generic inertia obstruction and requires the triangle to declare itself
+`NONCYCLIC_THREE_FORM`; a standard-pairing cyclic resolution is rejected.
+The receiver validates full-BV rows, support locality, separate form export,
+the arity-two and arity-three identities, `H_product` equivariance, exact
+artifact hashes and an independent-verifier flag. It rejects Berger-background payloads and
 does not accept sectoral/on-shell branch maps or selected source fixtures as
 scientific substitutes.  Once all inputs pass, compute `Delta2`, its exact
 primitive or normalized cofiber witness, the complete arity-three morphism
@@ -870,19 +865,22 @@ defect, and then the induced cohomology/deformation verdict.  The existing
 Berger filtered-cyclic `ell3` obstruction remains untouched and `q4` remains
 unauthorized.
 
-The generic Bridge-1 identity route has since closed negatively and is now a
+The generic standard-pairing cyclic route has since closed negatively and is now a
 separate fail-closed atlas row,
-`nonlinear.product.bridge1.generic_identity_cyclic_compatibility_obstruction`.
-`EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1` proves on every
-physical `ell>=2` fibre and allowed compact momentum that the induced
-solution-pairing defect `D=R-I` is nonzero and rank two in both axial and polar
-parities.  Hence the certified polynomial chain maps cannot be strict cyclic
-maps while their field inclusion is fixed to the physical identity.  This is
-not an obstruction to a corrected nonidentity symplectic identification, a
-pairing improvement, or a cyclic morphism up to a declared chain homotopy.
-Those alternatives, the exceptional/global off-shell maps and final residual
-descent remain open; Bridge 1 and the relative nonlinear receiver therefore
-remain inactive.
+`nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction`.
+`EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1` first proved that the
+fixed identity inclusion is not cyclic. The stronger
+`EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1` now closes every
+standard-pairing correction on the generic physical fibres: the Einstein
+source form has inertia `(2,0)`, whereas the Weyl form on the complete
+`q`-primary target has inertia `(1,1)` in both parities. Product symmetry and
+shell separation prevent borrowing the extra positive `p` block, and
+congruence invariance rules out corrected nonidentity maps, chain-homotopy
+repairs and cohomologically exact current improvements. The V2 receiver
+therefore asks for a noncyclic off-shell triangle carrying the Einstein,
+pulled-back Weyl and relative forms separately. An explicitly pairing-changed
+theorem, the exceptional/global off-shell maps and final residual descent
+remain open; Bridge 1 and the relative nonlinear receiver remain inactive.
 
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned

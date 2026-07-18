@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-weyl-generic-cyclic-map-inertia-obstruction-v1.schema.json",
+  "title": "Generic Einstein-Weyl cyclic-map inertia obstruction",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "dependency_refs", "scope", "exact_inertia_blocks", "shell_separation", "obstruction_theorem", "homotopy_and_improvement_consequence", "classification", "exact_checks", "flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-einstein-weyl-generic-cyclic-map-inertia-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1"},
+    "result_state": {"const": "ALL_STANDARD_PAIRING_PRODUCT_EQUIVARIANT_GENERIC_CYCLIC_CORRECTIONS_OBSTRUCTED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "scope": {"type": "object", "minProperties": 10, "additionalProperties": {"type": "string", "minLength": 1}},
+    "exact_inertia_blocks": {
+      "type": "object",
+      "required": ["axial", "polar"],
+      "properties": {"axial": {"$ref": "#/$defs/inertiaBlock"}, "polar": {"$ref": "#/$defs/inertiaBlock"}},
+      "additionalProperties": false
+    },
+    "shell_separation": {"type": "object", "minProperties": 6, "properties": {"same_label_frequency_collision": {"const": false}}},
+    "obstruction_theorem": {"type": "object", "minProperties": 7, "properties": {"source_inertia": {"const": [2, 0]}, "target_q_primary_inertia": {"const": [1, 1]}}, "additionalProperties": {"type": "string"}},
+    "homotopy_and_improvement_consequence": {
+      "type": "object",
+      "required": ["chain_homotopy_repairs_inertia", "cohomologically_exact_pairing_improvement_repairs_inertia", "reason", "allowed_reformulations"],
+      "properties": {
+        "chain_homotopy_repairs_inertia": {"const": false},
+        "cohomologically_exact_pairing_improvement_repairs_inertia": {"const": false},
+        "reason": {"type": "string", "minLength": 1},
+        "allowed_reformulations": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "classification": {
+      "type": "object",
+      "required": ["fixed_identity_obstruction_strengthened", "corrected_nonidentity_standard_pairing_map_exists_generic", "declared_chain_homotopy_cyclic_resolution_exists_generic", "standard_pairing_all_sector_cyclic_triangle_possible", "noncyclic_off_shell_relative_triangle_obstructed", "pairing_changed_relative_triangle_obstructed", "exceptional_or_global_off_shell_maps_classified", "Lorentzian_causal_or_quantum_claim"],
+      "properties": {
+        "fixed_identity_obstruction_strengthened": {"const": true},
+        "corrected_nonidentity_standard_pairing_map_exists_generic": {"const": false},
+        "declared_chain_homotopy_cyclic_resolution_exists_generic": {"const": false},
+        "standard_pairing_all_sector_cyclic_triangle_possible": {"const": false},
+        "noncyclic_off_shell_relative_triangle_obstructed": {"const": false},
+        "pairing_changed_relative_triangle_obstructed": {"const": false},
+        "exceptional_or_global_off_shell_maps_classified": {"const": false},
+        "Lorentzian_causal_or_quantum_claim": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object",
+      "required": ["GENERIC_STANDARD_PAIRING_CYCLIC_MAP_OBSTRUCTED", "FULL_STANDARD_PAIRING_CYCLIC_RELATIVE_TRIANGLE", "NONCYCLIC_RELATIVE_TRIANGLE", "PAIRING_CHANGED_RELATIVE_TRIANGLE", "RELATIVE_ARITY_TWO_DEFECT_COMPUTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "GENERIC_STANDARD_PAIRING_CYCLIC_MAP_OBSTRUCTED": {"const": true},
+        "FULL_STANDARD_PAIRING_CYCLIC_RELATIVE_TRIANGLE": {"const": false},
+        "NONCYCLIC_RELATIVE_TRIANGLE": {"const": false},
+        "PAIRING_CHANGED_RELATIVE_TRIANGLE": {"const": false},
+        "RELATIVE_ARITY_TWO_DEFECT_COMPUTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "ASSEMBLE_NONCYCLIC_OFF_SHELL_RELATIVE_TRIANGLE_WITH_THREE_DISTINCT_FORMS"},
+    "provenance": {"type": "object", "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}}, "additionalProperties": false},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {"type": "object", "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false},
+    "matrix2": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}},
+    "inertiaBlock": {
+      "type": "object",
+      "required": ["Einstein_form", "relative_operator", "restricted_Weyl_form", "Einstein_leading_minor", "Einstein_determinant", "restricted_Weyl_leading_minor", "restricted_Weyl_determinant", "Einstein_inertia_lambda_ge_6", "restricted_Weyl_inertia_lambda_ge_6"],
+      "properties": {
+        "Einstein_form": {"$ref": "#/$defs/matrix2"},
+        "relative_operator": {"$ref": "#/$defs/matrix2"},
+        "restricted_Weyl_form": {"$ref": "#/$defs/matrix2"},
+        "Einstein_leading_minor": {"type": "string"},
+        "Einstein_determinant": {"type": "string"},
+        "restricted_Weyl_leading_minor": {"type": "string"},
+        "restricted_Weyl_determinant": {"type": "string"},
+        "Einstein_inertia_lambda_ge_6": {"const": [2, 0]},
+        "restricted_Weyl_inertia_lambda_ge_6": {"const": [1, 1]}
+      },
+      "additionalProperties": false
+    }
+  }
+}

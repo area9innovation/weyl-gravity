@@ -766,14 +766,16 @@ current Gram matrix is nonradical.  The homogeneous generalized-zero target
 and the isolated axial twist primary are each exhausted by the Einstein image,
 so both solution cofibers vanish even though their identity pullbacks carry,
 respectively, a nilpotent shear and relative factor `-2I`.  In the generic
-axial and polar blocks, strict cyclic compatibility of the fixed identity
-field maps with the standard action pairings is now obstructed by a
-nonradical solution-pairing defect; corrected nonidentity or chain-homotopy
-cyclic morphisms remain open.  The generated
+axial and polar blocks, the Einstein source form has inertia `(2,0)` while the
+Weyl form on the complete `q`-primary target has inertia `(1,1)`. The generic
+inertia obstruction therefore rules out every real-structure-preserving,
+product-equivariant standard-pairing cyclic correction, including nonidentity
+maps, chain homotopies and exact current improvements. The noncyclic
+three-form triangle and explicitly pairing-changed theories remain open. The generated
 `EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` records global lifecycle
 `ONSHELL_MAP_ONLY`: exceptional nonzero-momentum/off-shell maps,
-homogeneous/twist/global off-shell and charge endpoints, corrected cyclic
-morphisms, and boundary domains remain open.  Therefore these sectoral
+homogeneous/twist/global off-shell and charge endpoints, the noncyclic
+three-form triangle, and boundary domains remain open. Therefore these sectoral
 results still do not provide the all-sector off-shell BV triangle or activate
 bridge 1.
 The declared `k=0` homogeneous/twist-times-`ell=2` extra bounded-resonance
@@ -927,8 +929,15 @@ The current fail-closed artifact is
 generic axial and polar chain cofibers, the exceptional `ell=1,k=0` solution
 cofiber, zero homogeneous and twist-primary solution cofibers, branch
 representatives and action-derived pairings.  It also records the obstruction
-to strict cyclicity of the generic fixed identity maps without promoting that
-obstruction to a no-go for corrected cyclic morphisms.  Its atlas row is
+to strict cyclicity of the generic fixed identity maps. The stronger
+`EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1` now proves that no
+real-structure-preserving, product-equivariant corrected map, chain homotopy
+or exact current improvement can make the standard action-derived pairings
+cyclic: the Einstein source has inertia `(2,0)`, while the complete
+`q`-primary Weyl image has inertia `(1,1)` in both generic parities. The next
+gate is therefore a noncyclic off-shell triangle exporting the Einstein,
+pulled-back Weyl and relative forms separately; a pairing-changed theorem is
+a different open route. Its atlas row is
 `einstein.ph.bridge.relative_branch_dictionary_v1`; activation remains `OPEN`,
 and no cross-background identity is made.  The certified `a,b,d` polynomial
 resonance matrix has now been extended by the complete twist position/velocity
@@ -948,7 +957,8 @@ certificate paths in the Einstein-team brief, with all of:
 OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS = true
 SUPPORT_LOCAL_MAPPING_COFIBER = true
 GLOBAL_ENDPOINTS_INCLUDED = true
-PAIRING_OR_CURRENT_COMPATIBLE = true
+THREE_ACTION_DERIVED_FORMS_EXPORTED = true
+GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED = true
 H_PRODUCT_EQUIVARIANT = true
 INDEPENDENT_VERIFIER_PASS = true
 ```
