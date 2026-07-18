@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-retained-mixed-ell3-second-jet-source-v1.schema.json",
+  "title": "Berger retained mixed ell3 second-jet source certificate",
+  "type": "object",
+  "required": [
+    "artifact_id", "schema_version", "dependency_tags", "generality",
+    "status", "dependency_refs", "quotient", "reproduction",
+    "order_two_source", "second_jet_ansatz", "claim_flags", "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "artifact_id": {"const": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_SOURCE_V1"},
+    "schema_version": {"const": "berger-retained-mixed-ell3-second-jet-source-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality": {"const": "G0"},
+    "status": {"const": "SOURCE_COMPUTED_SOLVE_PENDING"},
+    "dependency_refs": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "quotient": {
+      "type": "object",
+      "required": ["method", "summed_pre_reduction_order", "mixed_sector", "first_total_derivative_mutations_killed", "second_total_derivative_mutations_killed"],
+      "properties": {
+        "method": {"type": "string"},
+        "summed_pre_reduction_order": {"const": 2},
+        "mixed_sector": {"const": "two gravity and two Maxwell base fields"},
+        "first_total_derivative_mutations_killed": {"const": 4},
+        "second_total_derivative_mutations_killed": {"const": 16}
+      },
+      "additionalProperties": false
+    },
+    "reproduction": {
+      "type": "object",
+      "required": ["zero_page_euler_terms", "first_page_euler_terms"],
+      "properties": {
+        "zero_page_euler_terms": {"const": 0},
+        "first_page_euler_terms": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "order_two_source": {
+      "type": "object",
+      "required": ["S2_density_terms_through_order_two", "S3_density_terms_through_order_two", "S4_density_terms_through_order_two", "exported_lower_primitive_map_terms", "variation_terms_after_mixed_projection", "residual_density_terms_by_PBW_order", "Euler_terms_by_PBW_order", "Euler_records_sha256", "first_Euler_record"],
+      "properties": {
+        "S2_density_terms_through_order_two": {"type": "integer", "minimum": 1},
+        "S3_density_terms_through_order_two": {"type": "integer", "minimum": 1},
+        "S4_density_terms_through_order_two": {"type": "integer", "minimum": 1},
+        "exported_lower_primitive_map_terms": {"type": "integer", "minimum": 1},
+        "variation_terms_after_mixed_projection": {"type": "integer", "minimum": 1},
+        "residual_density_terms_by_PBW_order": {"$ref": "#/$defs/orderCounts"},
+        "Euler_terms_by_PBW_order": {"$ref": "#/$defs/orderCounts"},
+        "Euler_records_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "first_Euler_record": {"$ref": "#/$defs/eulerRecord"}
+      },
+      "additionalProperties": false
+    },
+    "second_jet_ansatz": {
+      "type": "object",
+      "required": ["symmetric_PBW_label_count", "first_jet_enumeration_control_count"],
+      "properties": {
+        "symmetric_PBW_label_count": {"const": 155640},
+        "first_jet_enumeration_control_count": {"const": 26240}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["LOWER_PAGES_REPRODUCED", "ORDER_TWO_SOURCE_COMPUTED", "ORDER_TWO_PRIMITIVE_COMPUTED", "ORDER_TWO_OBSTRUCTION_PROVED", "FULL_BV_REDEFINITION_MATCHED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "QUANTUM_CLAIM"],
+      "properties": {
+        "LOWER_PAGES_REPRODUCED": {"const": true},
+        "ORDER_TWO_SOURCE_COMPUTED": {"const": true},
+        "ORDER_TWO_PRIMITIVE_COMPUTED": {"const": false},
+        "ORDER_TWO_OBSTRUCTION_PROVED": {"const": false},
+        "FULL_BV_REDEFINITION_MATCHED": {"const": false},
+        "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "SOLVE_155640_COLUMN_SECOND_JET_AFFINE_SYSTEM_THEN_LIFT_TO_FULL_BV"},
+    "claim_boundary": {"type": "string", "minLength": 100}
+  },
+  "$defs": {
+    "orderCounts": {
+      "type": "object",
+      "required": ["1", "2"],
+      "properties": {
+        "1": {"type": "integer", "minimum": 0},
+        "2": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "eulerRecord": {
+      "type": "object",
+      "required": ["varied_field", "cubic", "coefficient"],
+      "properties": {
+        "varied_field": {"type": "integer", "minimum": 0, "maximum": 13},
+        "cubic": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "array", "prefixItems": [
+              {"type": "integer", "minimum": 0, "maximum": 13},
+              {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}
+            ], "minItems": 2, "maxItems": 2
+          }
+        },
+        "coefficient": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

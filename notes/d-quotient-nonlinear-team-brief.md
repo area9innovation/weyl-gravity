@@ -636,6 +636,18 @@ zero-PBW full-BV page is trivial in the extended certified ansatz; the
 physical-only witness was a useful smallest-missing-carrier diagnostic, not a
 deformation obstruction.
 
+The total-order-two consumer and source are now frozen separately from the
+pending solve. `BERGER_RETAINED_MIXED_ELL3_SECOND_JET_SOURCE_V1` represents
+mixed quartic densities by their exact variational Euler images after Berger
+PBW reduction. It reproduces the zero and first physical pages with zero
+residual and kills 4 first plus 16 second total-derivative mutations. The
+frozen lower primitive leaves 724 order-one and 5,212 order-two density terms,
+whose Euler image has 1,221 and 8,822 coordinates respectively. The complete
+symmetric physical second-input-jet ansatz has 155,640 labels (with the
+first-jet enumeration independently reproducing `4 x 6560 = 26240`). This is
+`SOURCE_COMPUTED_SOLVE_PENDING`, not an obstruction: the affine second-jet
+image solve and positive-jet full-BV lift remain required.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
