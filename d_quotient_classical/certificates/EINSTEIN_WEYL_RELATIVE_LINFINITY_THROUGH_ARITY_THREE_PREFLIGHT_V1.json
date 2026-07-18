@@ -146,7 +146,7 @@
     "generator": "H_product"
   },
   "source_manifest": {
-    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "263c0cb3e1956edee2ccfa944b3ef98daddb04ee2c3f1e0ddd0cf1b69b2e4556",
+    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "8eef63cf1d7635277a0ce87520263c6d0cf1f510dbbcf3541970c002631b5c6b",
     "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "5ae40e4e6ee15206152160e9c20d7759892a0fcd47105374477353a57a088f72",
     "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py": "25c5f9da4ed1a38087287f501459a14ea094dd35fd5fe884c88cf00d1c6ec716",
     "d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json": "35cd03ebfca2374125b1711c60e85d7cd5657285ec15ed9b6791373d2fa8b5c0",
@@ -161,7 +161,8 @@
     "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json",
     "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json",
     "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json",
-    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json"
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py"
   ],
   "verification_receipt": {
     "producing_date": "2026-07-18",
@@ -177,31 +178,31 @@
       "commands_and_elapsed_seconds": [
         {
           "command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
-          "elapsed_seconds": 0.39
+          "elapsed_seconds": 27.7
         },
         {
           "command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
-          "elapsed_seconds": 0.35
+          "elapsed_seconds": 27.85
         },
         {
           "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
-          "elapsed_seconds": 0.62
+          "elapsed_seconds": 55.93
         },
         {
           "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json",
-          "elapsed_seconds": 1.46
+          "elapsed_seconds": 2.95
         },
         {
           "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json",
-          "elapsed_seconds": 1.22
+          "elapsed_seconds": 1.85
         },
         {
           "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v2.schema.json",
-          "elapsed_seconds": 1.06
+          "elapsed_seconds": 1.91
         },
         {
           "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
-          "elapsed_seconds": 1.09
+          "elapsed_seconds": 1.76
         }
       ],
       "status": "PASS"
@@ -210,15 +211,19 @@
       "commands_and_elapsed_seconds": [
         {
           "command": "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check",
-          "elapsed_seconds": 0.18
+          "elapsed_seconds": 0.25
         },
         {
           "command": "PYTHONPATH=. python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
-          "elapsed_seconds": 0.12
+          "elapsed_seconds": 0.2
         },
         {
           "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
-          "elapsed_seconds": 0.56
+          "elapsed_seconds": 0.9
+        },
+        {
+          "command": "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py",
+          "elapsed_seconds": 62.12
         }
       ],
       "status": "PASS"
