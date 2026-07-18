@@ -232,6 +232,12 @@ companion already fails the normally-hyperbolic hypothesis through its
 nonzero nilpotent order-two principal block.  Separately, any full graded BV
 lift must satisfy BRST/Krein compatibility and positivity on physical
 cohomology.  These analytic and graded-physical gates are not conflated.
+The generic typed biwave Volterra theorem is now independently imported as
+reusable causal infrastructure. It distinguishes solution- and source-space
+resolvents, proves both factorial bounds and inverse identities, reverses the
+adjoint factor order correctly, and covers the committed Berger and Nariai
+consumers. It remains conditional on an exact physical normal form and its
+finite-slab energy hypotheses and supplies no Hadamard state.
 The exact stationary-carrier import consumer is now ready and mutation-tested,
 but no committed classical manifest has been supplied.  It deliberately does
 not infer spectral isolation of zero from finite PBW coefficient tables.

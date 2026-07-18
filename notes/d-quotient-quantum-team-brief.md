@@ -619,6 +619,14 @@ Hence it does not alter the support-local `b4` density or local Slavnov
 breaking, although the global determinant branch and symmetry-volume
 normalization remain open.
 
+The generic classical typed biwave Volterra theorem is now pinned and
+independently imported by quantum. The import checks distinct source and
+solution resolvents, both factorial energy bounds, causal globalization,
+adjoint factor reversal, proof hashes, source manifest, timed receipt, and
+the Berger and Nariai consumers. It is reusable `LORENTZIAN-CAUSAL`
+infrastructure, not a Hadamard-state or QME result; each new physical consumer
+must still certify its exact normal form and energy hypotheses.
+
 The multiplicity receiver is executable rather than schema-only. It requires
 complete row/factor coverage, the exact four target ranks and determinant
 signs, a verified rank-two-to-rank-one scalar ghost map, and recursively

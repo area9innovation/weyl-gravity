@@ -187,6 +187,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(flags["CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED"])
         self.assertTrue(flags["CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED"])
         self.assertTrue(flags["COMPANION_DECOMPOSABILITY_CERTIFIED"])
+        self.assertTrue(flags["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
         self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
         row = self.payload["active_rows"]["free_Lorentzian_state"]

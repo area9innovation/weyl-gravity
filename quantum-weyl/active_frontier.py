@@ -68,6 +68,7 @@ DEPENDENCIES = {
     "zero_frequency_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER_READINESS.json",
     "A104_partial": HERE / "lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
     "Hadamard_existence_audit": HERE / "lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
+    "typed_biwave_Volterra_theorem": HERE / "lorentzian/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
     "curvature_observable_propagator": HERE / "lorentzian/certificates/CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR.json",
@@ -127,6 +128,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "zero_frequency_readiness": "EXACT_MASK_NONIDENTIFIABILITY_CERTIFIED_FULL_STATIONARY_CARRIER_REQUIRED",
         "A104_partial": "GLOBAL_A104_104_BY_104_KNOWN_MASK_EXACT_TWO_A12_SLOTS_OPEN",
         "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
+        "typed_biwave_Volterra_theorem": "CONDITIONAL_TYPED_BIWAVE_GREEN_THEOREM_IMPORTED_HADAMARD_AND_PHYSICAL_NORMAL_FORM_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
         "curvature_observable_propagator": "GAUGE_INVARIANT_CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED_AUTONOMOUS_GREEN_AND_HADAMARD_OPEN",
@@ -822,6 +824,17 @@ def _load() -> dict[str, dict[str, Any]]:
         != "IMPORT_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1"
     ):
         raise ValueError("Hadamard existence criterion frontier drifted")
+    typed_biwave = values["typed_biwave_Volterra_theorem"]
+    typed_flags = typed_biwave.get("claim_flags", {})
+    if (
+        typed_flags.get("TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED")
+        is not True
+        or typed_flags.get("HADAMARD_STATE") is not False
+        or typed_flags.get("QUANTUM_THEORY") is not False
+        or typed_biwave.get("next_gate")
+        != "APPLY_THEOREM_ONLY_AFTER_EXACT_PHYSICAL_NORMAL_FORM_AND_ENERGY_HYPOTHESES_ARE_CERTIFIED"
+    ):
+        raise ValueError("typed biwave Volterra theorem frontier drifted")
     stationary = values["stationary_generator_import_readiness"]
     stationary_flags = stationary.get("claim_flags", {})
     if (
@@ -1047,6 +1060,7 @@ def build() -> dict[str, Any]:
             "RANK_46_SUPPORT_LOCAL_CANDIDATE_IDENTIFIED": True,
             "BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE": True,
             "COMPANION_DECOMPOSABILITY_CERTIFIED": True,
+            "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED": True,
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY": True,
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED": True,
             "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED": True,
@@ -1292,6 +1306,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE") is not True
         or flags.get("RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED") is not True
         or flags.get("COMPANION_DECOMPOSABILITY_CERTIFIED") is not True
+        or flags.get("TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED") is not True
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
         or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
         or flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED") is not True
@@ -1352,6 +1367,7 @@ def validate(result: dict[str, Any]) -> None:
             "BRANCH_CARRIER_ARCHITECTURE_PREFLIGHT_COMPLETE",
             "RANK_46_SUPPORT_LOCAL_CARRIER_IMPORTED",
             "COMPANION_DECOMPOSABILITY_CERTIFIED",
+            "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_IMPORTED",
             "STATIONARY_GENERATOR_IMPORT_CONSUMER_READY",
             "POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED",
             "PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED",
