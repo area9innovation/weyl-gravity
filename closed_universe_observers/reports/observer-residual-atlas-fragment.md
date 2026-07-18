@@ -59,6 +59,13 @@ the current independent-interval implementation is wider than `0.1` on all
 18 completed inputs.  A correlated direct clock-microphase transform in exact
 block spectral projectors is required; this does not obstruct the exact
 functional calculus itself.
+The correlated direct-transform successor is now `CERTIFIED`.  It evaluates
+27 exact-eigenvalue clock transforms, applies nine exact algebraic spectral-
+projector families to all 18 completed inputs, and certifies lower-band
+overlap.  Clock-transform widths are below `0.004`, selected spatial widths
+below `0.02`, and amplified temporal coderivative widths below `1.2`.  This is
+a finite selected exact-`T` image representation, not a controlled spatial
+tail, full Green image, detector response, recoil or cone restriction.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

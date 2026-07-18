@@ -652,6 +652,22 @@ spectral projectors, with certified lower-band overlap.  This is an
 `OBSTRUCTED` route, not an obstruction to the exact temporal functional
 calculus.
 
+`BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM` now supplies the
+certified successor route.  Directed interval quadrature evaluates the exact
+normalized clock microphase at all 27 eigenvalues of the nine selected blocks;
+exact algebraic spectral projectors then act on all 18 completed helicity
+inputs.  The 18 shared scalar-row variables remain affine through helicity
+conversion, spectral projection and coderivative contraction before interval
+hulls are taken.  All clock-transform widths are below `0.004` and all spatial
+transformed widths below `0.02`.  The high-mode coderivative still amplifies
+the certified scalar-profile uncertainty, but all temporal widths are enclosed
+below `1.2`; no narrower response-level statement is inferred.  The direct
+transform overlaps the certified `p=0` clock-factor enclosure and the earlier
+`two_j=138` order-14 interval.  The selected finite-block exact-`T` temporal
+image representation is therefore `CERTIFIED`.  The active gate is now a
+controlled spatial harmonic tail before full Maxwell/massive Green
+composition, detector response, recoil and cone restriction.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

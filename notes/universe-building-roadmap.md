@@ -430,7 +430,14 @@ current independent-interval outputs exceed width `0.1`; the geometric proof
 would require order 39 and `p=78` at the widest block, while merely appending
 independent monomials cannot narrow the existing sums.  The active route is a
 correlated direct normalized clock-microphase transform in exact block
-spectral projectors, checked against the certified lower band.
+spectral projectors, checked against the certified lower band.  That successor
+is now certified: 27 direct eigenvalue transforms and nine exact projector
+families act on all 18 completed inputs while preserving the 18 shared scalar
+variables through the contraction.  Clock-transform widths are below `0.004`,
+selected spatial widths below `0.02`, and amplified temporal coderivative
+widths below `1.2`; lower-band overlap passes.  This closes the selected
+finite-block exact-`T` temporal image representation.  The active gate is now
+the controlled spatial harmonic tail, not a detector-response promotion.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`; only that completion activates declared `K_Berger` equivariance and
@@ -1518,6 +1525,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION` (fired) | construct the 33 on-support real-form companions from the complete 18-row scalar union and propagate them through `p=0,2,...,28`; do not promote scalar input completion to charge-block closure or a Green image |
 | `BERGER_SELECTED_CHARGE_BLOCK_FORM_COMPANION_CLOCK_RAIL` (fired) | apply the exact temporal functional calculus to the 18 completed three-component helicity-block inputs and derive a controlled spatial tail; do not promote completed source inputs to a Green image, detector response, recoil or cone restriction |
 | `BERGER_SELECTED_CHARGE_BLOCK_TEMPORAL_BANDWIDTH_PREFLIGHT` (fired with order-14/p28 obstruction) | certify a correlated direct normalized clock-microphase transform in the exact selected-block spectral projectors with lower-band overlap; do not widen the `two_j<=138` theorem by carrier-name matching or append independent monomials as a cancellation repair |
+| `BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM` (fired) | derive a controlled spatial harmonic tail around the selected finite-block exact-`T` image representation, then compose the full Maxwell/massive Green chain; do not promote finite selected blocks to detector response or recoil |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

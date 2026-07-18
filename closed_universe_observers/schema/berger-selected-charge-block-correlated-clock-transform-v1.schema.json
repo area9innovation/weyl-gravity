@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-selected-charge-block-correlated-clock-transform-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "clock_transform_convention", "spectral_transform_audits", "selected_block_outputs", "lower_band_overlap", "coverage", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-selected-charge-block-correlated-clock-transform-v1"},
+    "result_id": {"const": "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_SELECTED_TWO_J1024_CORRELATED_CLOCK_TRANSFORM_AND_EXACT_T_BLOCK_IMAGE_REPRESENTATION_EXPORTED_SPATIAL_TAIL_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7},
+    "clock_transform_convention": {"type": "object", "properties": {"large_T_taylor_truncation": {"const": false}}, "additionalProperties": true},
+    "spectral_transform_audits": {"type": "array", "minItems": 9, "maxItems": 9},
+    "selected_block_outputs": {"type": "array", "minItems": 18, "maxItems": 18},
+    "lower_band_overlap": {"type": "object"},
+    "coverage": {
+      "type": "object",
+      "required": ["selected_block_count", "distinct_charge_count", "exact_eigenvalue_transform_count", "maximum_clock_transform_width", "maximum_selected_spatial_output_axis_width", "maximum_selected_temporal_output_axis_width", "maximum_selected_output_axis_width", "canonical_selected_correlated_transform_sha256"],
+      "properties": {
+        "selected_block_count": {"const": 18},
+        "distinct_charge_count": {"const": 9},
+        "exact_eigenvalue_transform_count": {"const": 27},
+        "maximum_clock_transform_width": {"type": "string"},
+        "maximum_selected_spatial_output_axis_width": {"type": "string"},
+        "maximum_selected_temporal_output_axis_width": {"type": "string"},
+        "maximum_selected_output_axis_width": {"type": "string"},
+        "canonical_selected_correlated_transform_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1},
+    "flags": {
+      "type": "object",
+      "required": ["ALL_27_EXACT_EIGENVALUE_CLOCK_TRANSFORMS_EXPORTED", "ALL_9_EXACT_BLOCK_SPECTRAL_PROJECTOR_FAMILIES_EXPORTED", "ALL_18_SELECTED_CORRELATED_MICROPHASE_INPUTS_EXPORTED", "ALL_CLOCK_TRANSFORM_WIDTHS_BELOW_FOUR_THOUSANDTHS", "ALL_SELECTED_SPATIAL_OUTPUT_WIDTHS_BELOW_TWO_HUNDREDTHS", "ALL_SELECTED_TEMPORAL_OUTPUT_WIDTHS_BELOW_SIX_FIFTHS", "LOWER_BAND_OVERLAP_CERTIFIED", "FINITE_SELECTED_EXACT_T_TEMPORAL_IMAGE_REPRESENTATION_EXPORTED", "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED", "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ALL_27_EXACT_EIGENVALUE_CLOCK_TRANSFORMS_EXPORTED": {"const": true},
+        "ALL_9_EXACT_BLOCK_SPECTRAL_PROJECTOR_FAMILIES_EXPORTED": {"const": true},
+        "ALL_18_SELECTED_CORRELATED_MICROPHASE_INPUTS_EXPORTED": {"const": true},
+        "ALL_CLOCK_TRANSFORM_WIDTHS_BELOW_FOUR_THOUSANDTHS": {"const": true},
+        "ALL_SELECTED_SPATIAL_OUTPUT_WIDTHS_BELOW_TWO_HUNDREDTHS": {"const": true},
+        "ALL_SELECTED_TEMPORAL_OUTPUT_WIDTHS_BELOW_SIX_FIFTHS": {"const": true},
+        "LOWER_BAND_OVERLAP_CERTIFIED": {"const": true},
+        "FINITE_SELECTED_EXACT_T_TEMPORAL_IMAGE_REPRESENTATION_EXPORTED": {"const": true},
+        "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED": {"const": true},
+        "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": {"const": false},
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "DERIVE_A_CONTROLLED_SPATIAL_HARMONIC_TAIL_AROUND_THE_SELECTED_EXACT_T_BLOCK_IMAGE_REPRESENTATION"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

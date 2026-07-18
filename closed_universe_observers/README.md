@@ -115,6 +115,8 @@ python3 -m closed_universe_observers.generate_berger_selected_charge_block_form_
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_form_companion_clock_rail
 python3 -m closed_universe_observers.generate_berger_selected_charge_block_temporal_bandwidth_preflight --check
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_temporal_bandwidth_preflight
+python3 -m closed_universe_observers.generate_berger_selected_charge_block_correlated_clock_transform --check
+python3 -m closed_universe_observers.verify_berger_selected_charge_block_correlated_clock_transform
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -504,6 +506,18 @@ through `p=78` at the widest block, but appending independent monomials cannot
 narrow the existing interval sums.  The active temporal gate is therefore a
 correlated direct normalized clock-microphase transform in the exact block
 spectral projectors, with overlap against the certified lower band.
+That correlated successor is now certified.  Directed interval quadrature
+evaluates the normalized clock transform at all 27 exact eigenvalues of the
+nine selected blocks, and exact algebraic spectral projectors apply it to all
+18 completed helicity inputs.  Shared scalar-row variables remain affine until
+after helicity conversion, projection and coderivative contraction.  Every
+clock-transform width is below `0.004` and every spatial transformed width is
+below `0.02`; the high-mode coderivative amplifies the remaining scalar-profile
+uncertainty, but its temporal widths remain enclosed below `1.2`.  The direct
+transform overlaps both the `p=0` clock-factor gate and the earlier
+`two_j=138` order-14 result.  This closes the selected finite-block exact-`T`
+temporal image representation.  The active gate is the controlled spatial
+harmonic tail, not detector response or recoil.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source
