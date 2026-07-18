@@ -224,7 +224,13 @@ def entries():
         "id": "bh.mode.axial.einstein-branch",
         "scope": _scope(degree=1, parity="odd", ell=">=2", m="all", k="n/a",
                         omega="dynamical"),
-        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "descriptions": {
+            "causal": "OPEN",
+            "symplectic": _gstat("CERTIFIED", "BH2AF"),
+            "nonlinear": "OPEN",
+            "observational": "OPEN",
+            "quantum": "OPEN",
+        },
         "mode_data": {
             "dispersion": _gated(
                 "CERTIFIED",
@@ -238,8 +244,8 @@ def entries():
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": _evidence("BH2A"),
-        "claim_boundary": "operator level only (Schwarzschild, l=2): no operator domains, flux, causal well-posedness, stability or ringdown claim; linear charges vanish by parity (analytic argument, not machine-checked)",
+        "evidence": _evidence("BH2A", "BH2AF"),
+        "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current and the conjugate-pair null theorem are certified, but the Einstein x extra and extra x extra flux blocks, operator domains, causal well-posedness, stability and ringdown remain open",
     })
 
     E.append({

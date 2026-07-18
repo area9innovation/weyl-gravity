@@ -284,19 +284,24 @@
       }
     },
     {
-      "claim_boundary": "operator level only (Schwarzschild, l=2): no operator domains, flux, causal well-posedness, stability or ringdown claim; linear charges vanish by parity (analytic argument, not machine-checked)",
+      "claim_boundary": "Schwarzschild axial l=2 only: the action-derived Lee-Wald current and the conjugate-pair null theorem are certified, but the Einstein x extra and extra x extra flux blocks, operator domains, causal well-posedness, stability and ringdown remain open",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
         "observational": "OPEN",
         "quantum": "OPEN",
-        "symplectic": "OPEN"
+        "symplectic": "CERTIFIED"
       },
       "evidence": [
         {
           "path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
           "result_id": "PURE_WEYL_BH2A_AXIAL_OPERATOR",
           "sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a"
+        },
+        {
+          "path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+          "result_id": "PURE_WEYL_BH2A_FLUX_MATRIX",
+          "sha256": "95ca6daeabb16bf93faa1bb721e3464fc5363899a344f0281d126f9a14204732"
         }
       ],
       "id": "bh.mode.axial.einstein-branch",
@@ -592,7 +597,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "57602f777c4e5a44e9b230247310127872a14541c61aa488eafca85d28b3d314",
+  "generated_by_sha256": "48ad76d61ffa5dbd80ddd23a5b01499ec7ff6eb797a108bce45c4565097e703f",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

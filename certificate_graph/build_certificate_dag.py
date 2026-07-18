@@ -425,6 +425,23 @@ def _nonordering_relation(
         return "REGISTERS_CONSUMER"
     if "verification_commands" in joined:
         return "VERIFIES_WITH"
+    if "closed_universe_observers/ledgers/comparison_ledger.json" in pair and any(
+        token in joined
+        for token in ("bridge_artifacts", "internal_imports", "artifact_hashes")
+    ):
+        # The comparison ledger is an aggregate index.  Team certificates and
+        # tier receipts point back to it for discoverability and hash audit;
+        # those reciprocal catalogue links are not theorem prerequisites.
+        return "REGISTERS"
+    if (
+        "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json" in pair
+        and any(name in pair for name in ("H04_GAUGE_FIXED_BV_RESULT.json", "H14_GAUGE_FIXED_BV_RESULT.json"))
+        and any(token in joined for token in ("result_artifacts", "proof_certificate"))
+    ):
+        # The contraction certificate authenticates the computed cohomology
+        # rows, while those rows cite the proof certificate.  This is a
+        # reciprocal proof/result audit, not a circular mathematical input.
+        return "MUTUALLY_AUDITS"
     if "D_QUOTIENT_PROGRAMME_STATUS.json" in pair and any(
         token in joined
         for token in (

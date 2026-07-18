@@ -218,6 +218,60 @@ class CertificateDagTests(unittest.TestCase):
             )
         )
 
+    def test_comparison_ledger_registration_is_nonordering(self) -> None:
+        theorem = certificate(
+            "closed_universe_observers/certificates/THEOREM.json",
+            "THEOREM",
+            {},
+        )
+        ledger = certificate(
+            "closed_universe_observers/ledgers/comparison_ledger.json",
+            "COMPARISON_LEDGER",
+            {"bridge_artifacts": [{"path": theorem.path}]},
+        )
+        receipt = certificate(
+            "closed_universe_observers/receipts/TIER_RECEIPT.json",
+            "TIER_RECEIPT",
+            {"artifact_hashes": [{"path": ledger.path}]},
+        )
+        files = {
+            theorem.path: b'{"result_id":"THEOREM"}',
+            ledger.path: b'{"result_id":"COMPARISON_LEDGER"}',
+            receipt.path: b'{"result_id":"TIER_RECEIPT"}',
+        }
+        edges, issues = derive_edges([theorem, ledger, receipt], files)
+        self.assertEqual(edges, [])
+        self.assertEqual(
+            {item["relation"] for item in issues["nonordering_provenance_cross_links"]},
+            {"REGISTERS"},
+        )
+
+    def test_proof_and_cohomology_result_reciprocal_audit_is_nonordering(self) -> None:
+        proof = certificate(
+            "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
+            "PROOF",
+            {
+                "result_artifacts": {
+                    "H04": "quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json"
+                }
+            },
+        )
+        result = certificate(
+            "quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json",
+            "H04",
+            {"proof_certificate": {"path": proof.path}},
+        )
+        files = {
+            proof.path: b'{"result_id":"PROOF"}',
+            result.path: b'{"result_id":"H04"}',
+        }
+        edges, issues = derive_edges([proof, result], files)
+        self.assertEqual(edges, [])
+        self.assertEqual(
+            {item["relation"] for item in issues["nonordering_provenance_cross_links"]},
+            {"MUTUALLY_AUDITS"},
+        )
+
     def test_theorem_consumer_registration_is_nonordering(self) -> None:
         theorem = certificate(
             "certificates/ABSTRACT_THEOREM.json",

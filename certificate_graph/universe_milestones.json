@@ -17,15 +17,16 @@
       "id": "causality",
       "tier": "core",
       "label": "Cause comes before effect",
-      "detail": "signals propagate forward in time in the starting universe and broader curved examples",
-      "next": "extend the proof to more boundaries and less symmetric spacetimes",
+      "detail": "signals propagate forward in time in the starting universe, a clock universe, and the first controlled change of a second curved universe",
+      "next": "turn the first-order curved change into a full family and add physical boundaries",
       "status": "certified",
       "evidence": [
         "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
         "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
         "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
         "CONFORMALLY_RELATED_CYCLIC_CAUSAL_TRANSFER_V1",
-        "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"
+        "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+        "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1"
       ]
     },
     {
@@ -56,14 +57,15 @@
       "id": "interactions",
       "tier": "classical_physics",
       "label": "Gravity and light interact",
-      "detail": "the first nonlinear interaction laws close exactly",
-      "next": "decide whether the remaining interaction survives the next derivative order",
+      "detail": "the first nonlinear laws close exactly for the clock universe and for Einstein gravity coupled to light through third order",
+      "next": "build the matching fourth-order-gravity interaction package and compare the two branches",
       "status": "certified",
       "evidence": [
         "BERGER_SUPPORT_LOCAL_Q3",
         "PAPER_09_NONLINEAR_K_GENERATOR_SIGNOFF",
         "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q3",
-        "BERGER_RETAINED_MIXED_ELL3_TRANSFER"
+        "BERGER_RETAINED_MIXED_ELL3_TRANSFER",
+        "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"
       ]
     },
     {
@@ -111,11 +113,11 @@
       "id": "einstein_weyl_relative",
       "tier": "classical_physics",
       "label": "Ordinary relativity inside the model",
-      "detail": "Einstein-like solutions and their extra companions are separated at the linear level",
-      "next": "prove which sector remains closed under full evolution",
-      "status": "partial",
+      "detail": "a complete linear dictionary separates Einstein-like solutions from their extra companions, while also exposing a mismatch in their standard physical pairings",
+      "next": "extend the dictionary to interactions and decide which sector remains closed",
+      "status": "certified",
       "evidence": [
-        "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+        "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "EINSTEIN_MAXWELL_WEYL_POLAR_FULL_TENSOR",
         "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION"
       ]
@@ -205,14 +207,15 @@
       "id": "anomalies",
       "tier": "quantum_inputs",
       "label": "Do quantum effects break the rules?",
-      "detail": "all local failure types are classified and one gravitational coefficient is matched",
-      "next": "compute the actual breaking and decide whether it can be repaired",
+      "detail": "local failure types are classified, one gravitational coefficient is matched, and a curved-background ghost residue is now exact",
+      "next": "finish the finite one-loop terms and decide whether the full quantum breaking can be repaired",
       "status": "partial",
       "evidence": [
         "AFN0_DIFF_MIXED_MINIMAL_BV_H14",
         "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
         "REPOSITORY_ROUND_S4_EULER_COEFFICIENT",
-        "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"
+        "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+        "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"
       ]
     },
     {
@@ -256,7 +259,7 @@
       "tier": "strong_gravity",
       "label": "Black holes at rest",
       "detail": "a static family has regular horizons, energy, entropy and an exact first law",
-      "next": "allow time-dependent waves and horizon flux",
+      "next": "complete the mixed and extra-wave horizon fluxes",
       "status": "certified",
       "evidence": [
         "PURE_WEYL_STATIC_SPHERICAL_BACKGROUND",
@@ -266,11 +269,15 @@
     {
       "id": "black_holes",
       "tier": "future_physics",
-      "label": "Black holes in motion",
-      "detail": "time-dependent horizon physics, ringdown and stability are not built yet",
-      "next": "construct the exterior phase space and perturbation equations",
-      "status": "open",
-      "evidence": []
+      "label": "Black holes with waves",
+      "detail": "ordinary and extra wave equations are identified; extra waves reach the horizon, while the ordinary branch alone gives zero in the theory's exact wave-flux test",
+      "next": "compute mixed and extra flux, then build causal evolution, ringdown and stability",
+      "status": "partial",
+      "evidence": [
+        "PURE_WEYL_BH2A_AXIAL_OPERATOR",
+        "PURE_WEYL_BH2A_HORIZON_REACH",
+        "PURE_WEYL_BH2A_FLUX_MATRIX"
+      ]
     },
     {
       "id": "gut",

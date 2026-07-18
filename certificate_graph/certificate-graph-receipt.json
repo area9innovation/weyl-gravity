@@ -1,26 +1,26 @@
 {
   "artifacts": {
-    "certificate-dag.dot": "5571f2339f344532a43626ea4926ea9cfc649f127d9f80a654f1f150a7d8c092",
-    "certificate-dag.json": "3a38fa2a165df71590f16932070dc21677e4f6955e260f587297083050e173d0",
-    "universe-building-dag.dot": "9bdf46f6df1ad4de2ff6c59fd39e0c845890d75cf6fda6b6096baead9a5341ce",
-    "unresolved-dependencies.json": "d6f7c04af58154408e6c799b6a48264fd80262b06134f48614ffe94130550df6"
+    "certificate-dag.dot": "2bbe53042c31e25f3e7424d12c86bdb9139bbcc8903c0f26b3055c4e9725f81a",
+    "certificate-dag.json": "5fa683fbc7d98fec240d0af2b7e028b9b65f30b8b78fc4d92dbbe2d2d4bc9e85",
+    "universe-building-dag.dot": "20a0c2e834276ea782a8f5bf8399e5e20c1223b2a0dd51874bcf44e5517968bf",
+    "unresolved-dependencies.json": "1b00ac39803a45bb9ccd4e7ead1ef3726cfc3b9e6233986c89a42b91091e25ae"
   },
-  "certificate_count": 812,
+  "certificate_count": 944,
   "claim_boundary": "The full graph records syntactically declared certificate dependencies and imports. The public graph is a curated evidence-backed milestone view. Neither graph promotes a certificate beyond its own lifecycle and dependency tags.",
-  "dependency_edge_count": 2606,
-  "input_json_bundle_sha256": "47277158bc6a857e367723055bbe0364f83f2e6b18ee43e94445e8a31e951afb",
+  "dependency_edge_count": 3558,
+  "input_json_bundle_sha256": "9e5d04e430227b0877d8e5f69dbe9f4ca650b0057b837cda5f9d77a142262b78",
   "issue_counts": {
-    "dependency_cycles": 2,
+    "dependency_cycles": 0,
     "duplicate_result_ids": 4,
-    "hash_mismatches": 2,
-    "nonordering_provenance_cross_links": 172,
+    "hash_mismatches": 6,
+    "nonordering_provenance_cross_links": 274,
     "public_missing_evidence": 0,
-    "unresolved_declared_json_dependencies": 12
+    "unresolved_declared_json_dependencies": 9
   },
   "legacy_path_id_count": 216,
-  "milestone_manifest_sha256": "e3dcd9093cc4fc5370f27f140507c9df0692d0a5c2d85843998df7042dca9db0",
-  "modern_result_id_count": 596,
-  "navigation_group_count": 60,
+  "milestone_manifest_sha256": "10ed42fb6094ea78609c02c227d1a40a2c446e5cba95eb7fd260b10282336ac4",
+  "modern_result_id_count": 728,
+  "navigation_group_count": 62,
   "public_evidence": {
     "anomalies": [
       {
@@ -42,6 +42,11 @@
         "certificate_path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
         "certificate_status": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_EULER_AND_SNAPSHOT_COMPATIBILITY_BOUND_REGULATED_BV_INSERTION_OPEN",
         "reference": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"
+      },
+      {
+        "certificate_path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json",
+        "certificate_status": "SCHUR_K_AND_LOGARITHM_WODZICKI_RESIDUES_COMPUTED",
+        "reference": "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"
       }
     ],
     "berger_branch_carrier": [
@@ -73,7 +78,23 @@
         "reference": "PURE_WEYL_BH1A_NORMALIZED_GENERATOR"
       }
     ],
-    "black_holes": [],
+    "black_holes": [
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2A_AXIAL_OPERATOR"
+      },
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2A_HORIZON_REACH.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2A_HORIZON_REACH"
+      },
+      {
+        "certificate_path": "black_hole_programme/certificates/BH2A_FLUX_MATRIX.json",
+        "certificate_status": "UNCLASSIFIED",
+        "reference": "PURE_WEYL_BH2A_FLUX_MATRIX"
+      }
+    ],
     "branch_mixing": [
       {
         "certificate_path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_TRANSFER.json",
@@ -121,6 +142,11 @@
         "certificate_path": "d_quotient_classical/certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
         "certificate_status": "FOUR_ROW_METRIC_CAUSAL_GREEN_HOMOTOPY_EXACT",
         "reference": "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"
+      },
+      {
+        "certificate_path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json",
+        "certificate_status": "GLOBAL_SUPPORT_LOCAL_CYCLIC_HPL_SDR_AND_FORMAL_RANK310_CAUSAL_VARIATION_EXACT",
+        "reference": "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1"
       }
     ],
     "clock": [
@@ -165,9 +191,9 @@
     ],
     "einstein_weyl_relative": [
       {
-        "certificate_path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
-        "certificate_status": "PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_CHAIN_MAPS_CERTIFIED_FULL_CURVED_ALL_SECTOR_TRIANGLE_OPEN",
-        "reference": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT"
+        "certificate_path": "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
+        "certificate_status": "CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE",
+        "reference": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
       },
       {
         "certificate_path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
@@ -242,6 +268,11 @@
         "certificate_path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_TRANSFER.json",
         "certificate_status": "CERTIFIED_RETAINED_MIXED_ELL3_CONTACT_WITH_ZERO_EXCHANGE",
         "reference": "BERGER_RETAINED_MIXED_ELL3_TRANSFER"
+      },
+      {
+        "certificate_path": "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+        "certificate_status": "CERTIFIED_THROUGH_ARITY_THREE",
+        "reference": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"
       }
     ],
     "lensing": [],
@@ -345,13 +376,13 @@
     ]
   },
   "schema": "pure-weyl-certificate-graph-receipt-v1",
-  "source_commit": "bfd2869b9087c2dad4b9e97a0494ff8f952504c1",
+  "source_commit": "167e46e03281b7845d2bea3f6b51f3a7c5856a85",
   "source_treeish": "HEAD",
   "status_counts": {
-    "certified": 125,
-    "obstruction": 152,
+    "certified": 134,
+    "obstruction": 164,
     "open": 0,
-    "partial": 440,
-    "unclassified": 95
+    "partial": 536,
+    "unclassified": 110
   }
 }
