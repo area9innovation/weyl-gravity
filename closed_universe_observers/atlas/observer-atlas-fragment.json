@@ -1817,7 +1817,7 @@
       }
     },
     {
-      "claim_boundary": "32x32 low audits overlap all published r=0 rows through two_j=4; 256x256 sentinels at two_j=975 and 2047 have widths below 0.1, while the 128x128 two_j=2047 mutation remains above 0.1; complete axial/intermediate-diagonal rails and all tails remain OPEN input evaluator only; recoil remains OPEN NOT_APPLICABLE",
+      "claim_boundary": "32x32 low audits overlap all published r=0 rows through two_j=4; 256x256 sentinels at two_j=975 and 2047 have widths below 0.1, while the 128x128 two_j=2047 mutation remains above 0.1; selected intermediate even/odd sentinels are separately certified but complete rails and all tails remain OPEN input evaluator only; recoil remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
@@ -1835,6 +1835,11 @@
           "path": "closed_universe_observers/certificates/BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR.json",
           "result_id": "BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR",
           "sha256": "a23cfd7a141a075eb82c7ee5162eeab19f3ed7d91c7fe8afbdcf0dcd88e50b27"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR.json",
+          "result_id": "BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR",
+          "sha256": "b44bf2a0131180260cbda339c6e3b7da9a6f200122310587e53028fe1c39d8e5"
         }
       ],
       "id": "observer.berger.detector_profile.correlated_extreme_axial",
@@ -1889,7 +1894,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "stream the correlated axial evaluator and extend it across intermediate Jacobi diagonals before polarized composition",
+          "statement": "selected adjacent even/odd intermediate Jacobi sentinels are now CERTIFIED; stream declared diagonal fractions before polarized composition",
           "status": "OPEN"
         },
         "exceptional_resonant_operational_signature": {
@@ -1905,7 +1910,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "32x32 low audits overlap all published r=0 rows through two_j=4; 256x256 sentinels at two_j=975 and 2047 have widths below 0.1, while the 128x128 two_j=2047 mutation remains above 0.1; complete axial/intermediate-diagonal rails and all tails remain OPEN",
+          "statement": "32x32 low audits overlap all published r=0 rows through two_j=4; 256x256 sentinels at two_j=975 and 2047 have widths below 0.1, while the 128x128 two_j=2047 mutation remains above 0.1; selected intermediate even/odd sentinels are separately certified but complete rails and all tails remain OPEN",
           "status": "CERTIFIED"
         },
         "recoil_backreaction_order": {
@@ -1936,6 +1941,134 @@
         "m": "extreme weight m=-two_j/2",
         "omega": "external clock power p=0; no Green kernel applied",
         "parity": "even and odd r=0 diagonal scalar sentinels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "the 16x16 two_j=4,r=1 audit overlaps the published rail; 64x64 sentinels two_j=512,r=128 and two_j=513,r=128 have widths below 0.1, while the 32x32 even sentinel mutation remains above 0.1; complete diagonal, clock-power, polarized and tail rails remain OPEN input evaluator only; recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT.json",
+          "result_id": "BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT",
+          "sha256": "629f2d6709c7f1083a7fe14af0e08287297e130d1c60b9101d7ac47d424361ec"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR.json",
+          "result_id": "BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR",
+          "sha256": "a23cfd7a141a075eb82c7ee5162eeab19f3ed7d91c7fe8afbdcf0dcd88e50b27"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR.json",
+          "result_id": "BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR",
+          "sha256": "b44bf2a0131180260cbda339c6e3b7da9a6f200122310587e53028fe1c39d8e5"
+        }
+      ],
+      "id": "observer.berger.detector_profile.correlated_intermediate_jacobi",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=correlated Darboux enclosure of selected intermediate diagonal Jacobi scalar profile coefficients; omega=external clock power p=0; no Green kernel applied; OPEN: two intermediate scalar input sentinels are CERTIFIED, but no complete polarized Green image or detector response has been composed",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "input evaluator only; recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "exact radius-1/128 radial bump, isotropic angular measure and one directed enclosure of the normalized p=0 clock support",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: two intermediate scalar input sentinels are CERTIFIED, but no complete polarized Green image or detector response has been composed",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "stream declared diagonal fractions and add further odd intermediate sentinels before polarization",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "the 16x16 two_j=4,r=1 audit overlaps the published rail; 64x64 sentinels two_j=512,r=128 and two_j=513,r=128 have widths below 0.1, while the 32x32 even sentinel mutation remains above 0.1; complete diagonal, clock-power, polarized and tail rails remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "input evaluator only; recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "correlated Darboux enclosure of selected intermediate diagonal Jacobi scalar profile coefficients",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 0,
+        "ell": "low audit scalar two_j=4; high sentinels two_j=512 and 513",
+        "k": "basis index and representation column r=128",
+        "m": "m=-128 at two_j=512 and m=-257/2 at two_j=513",
+        "omega": "external clock power p=0; no Green kernel applied",
+        "parity": "adjacent even and odd intermediate diagonal sentinels",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -2171,7 +2304,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "d9ad5069604a9b49a3f60fa0f54cb36d49e7dc4a8ffbe186fd82f75758006eb8",
+  "generated_by_sha256": "37502acba97f3f83cfa322c40038a0403f7c4040ee2459cdd30f5fdae4c35d37",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

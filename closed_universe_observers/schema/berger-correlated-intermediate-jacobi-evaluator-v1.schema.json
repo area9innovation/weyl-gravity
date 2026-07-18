@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-correlated-intermediate-jacobi-evaluator-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "quadrature", "low_rail_audit", "intermediate_sentinel_audits", "canonical_intermediate_sentinel_sha256", "resolution_mutation", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-correlated-intermediate-jacobi-evaluator-v1"},
+    "result_id": {"const": "BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_CORRELATED_INTERMEDIATE_P0_SENTINELS_EXPORTED_COMPLETE_DIAGONAL_STREAM_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "quadrature": {"type": "object"},
+    "low_rail_audit": {"type": "object"},
+    "intermediate_sentinel_audits": {"type": "array", "minItems": 2, "maxItems": 2},
+    "canonical_intermediate_sentinel_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "resolution_mutation": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["CORRELATED_INTERMEDIATE_JACOBI_P0_EVALUATOR_EXPORTED", "LOW_TWO_J4_R1_OVERLAP_PASSED", "TWO_SELECTED_INTERMEDIATE_WIDTHS_BELOW_ONE_TENTH", "COARSE_GRID_RESOLUTION_MUTATION_REJECTED", "COMPLETE_DIAGONAL_STREAM_EXPORTED", "ALL_ODD_REPRESENTATIONS_AND_CLOCK_POWERS_EVALUATED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "CORRELATED_INTERMEDIATE_JACOBI_P0_EVALUATOR_EXPORTED": {"const": true},
+        "LOW_TWO_J4_R1_OVERLAP_PASSED": {"const": true},
+        "TWO_SELECTED_INTERMEDIATE_WIDTHS_BELOW_ONE_TENTH": {"const": true},
+        "COARSE_GRID_RESOLUTION_MUTATION_REJECTED": {"const": true},
+        "COMPLETE_DIAGONAL_STREAM_EXPORTED": {"const": false},
+        "ALL_ODD_REPRESENTATIONS_AND_CLOCK_POWERS_EVALUATED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "STREAM_DECLARED_DIAGONAL_FRACTIONS_AND_ADD_ODD_INTERMEDIATE_SENTINELS_BEFORE_POLARIZATION"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

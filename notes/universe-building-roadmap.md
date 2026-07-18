@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; obtain the same-gauge generic-background full-BV Hessian and trace substitution that matches the five exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    stream the certified correlated extreme-axial evaluator and extend it across intermediate Jacobi diagonals, then widen the obstructed two_j=138 rail, compose massive images, evaluate recoil, and restrict records to Z2^C
+Observer:    stream declared diagonal fractions from the certified extreme-axial and adjacent even/odd intermediate correlated evaluators, then widen the obstructed two_j=138 rail, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
 
@@ -372,7 +372,11 @@ its selected `r=0` width exceeds `0.1` at `two_j=975` and `1,000` at
 `0.03288` and `0.05594` on a `256 x 256` rail, while the halved-resolution
 mutation remains above `0.1`.  The active gate is to stream this evaluator
 and extend it across intermediate Jacobi diagonals, not another termwise or
-temporal approximation.  The nonlinear apparatus
+temporal approximation.  The first intermediate extension is now certified:
+the adjacent even/odd `two_j=512,513`, `r=128` widths are approximately
+`0.07072` and `0.07075` on a `64 x 64` grid, while the halved-resolution even
+mutation remains about `0.14099`.  The active gate is a declared
+diagonal-fraction stream with further odd sentinels.  The nonlinear apparatus
 dependency is also explicit and ordered by content hash: the normalized
 mixed `epsilon_R^2 kappa` unary certificate precedes apparatus `q2,q3`, which
 precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
@@ -599,12 +603,14 @@ survive the first backreacted, normalized apparatus interaction?
    clock power `p=0,...,28`.  The exact Jacobi factorization preserves every
    low-rail diagonal, but its termwise high-axial moment evaluator is
    obstructed.  The correlated extreme-axial `p=0` seed is now validated at
-   `two_j=975` and `2047`; stream it and extend it across intermediate Jacobi
-   diagonals, then widen the polarized rail and compose the infinite-mode
-   Maxwell/massive Green images and recoil coefficient.  The independent
-   emitter stress and reciprocal clock-switch `q2` jet is exported; its
-   complete 108-row `q1 q2` identity is certified, while its support-local
-   PBW refinement and a solved backreacted branch remain open.  A common source
+   `two_j=975` and `2047`, and adjacent even/odd intermediate sentinels are
+   certified at `two_j=512,513`, `r=128`.  Stream declared diagonal fractions
+   with further odd sentinels, then widen the polarized rail and compose the
+   infinite-mode Maxwell/massive Green images and recoil coefficient.  The
+   independent emitter stress and reciprocal clock-switch `q2` jet is
+   exported; its complete 108-row `q1 q2` identity is certified, while its
+   support-local PBW refinement and a solved backreacted branch remain open.
+   A common source
    at the original Hopf event remains a stronger separate target.
 4. Separate a failure of the record map from a failure of the underlying
    causal signal, and keep finite-parameter Green hyperbolicity, emitter recoil
@@ -1421,6 +1427,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL` (fired) | generalize the stable Jacobi recurrence to noncentral diagonals and odd representations; do not infer a polarized tail, Green image or detector response from the central scalar channel |
 | `BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT` (fired with evaluator obstruction) | construct a correlated axial oscillatory evaluator from the exact Jacobi factorization; do not reuse termwise independent moment intervals or infer a noncentral tail |
 | `BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR` (fired) | stream the selected `r=0`, `p=0` evaluator and extend the same directed correlated integration across intermediate Jacobi diagonals; do not infer a complete axial rail or tail from two high sentinels |
+| `BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR` (fired) | stream declared diagonal fractions and add further odd intermediate sentinels at validated resolution; do not infer a complete scalar or polarized rail from the adjacent `two_j=512,513` pair |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

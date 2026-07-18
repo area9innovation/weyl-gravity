@@ -555,6 +555,13 @@ the selected `two_j=975` and `2047` widths fall to approximately `0.03288`
 and `0.05594` on the `256 x 256` rail; a `128 x 128` resolution mutation at
 `two_j=2047` remains above `0.1` and is rejected.  The active gate is to
 stream this evaluator and extend it across intermediate Jacobi diagonals.
+`BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR` now certifies the first
+such extension.  The terminating Jacobi factor stays inside the directed
+integrand; adjacent even/odd sentinels `two_j=512,r=128` and
+`two_j=513,r=128` have widths approximately `0.07072` and `0.07075` on a
+`64 x 64` grid, while the halved-resolution even mutation remains about
+`0.14099`.  The active gate is a declared diagonal-fraction stream with
+additional odd sentinels, not promotion from two rows to a full rail.
 Only after that succeeds should the polarized rail be
 widened toward the infinite-mode Maxwell and massive-two-form images, recoil
 coefficient and second-order-cone restriction.  Bridge 3 remains inactive.

@@ -424,6 +424,13 @@ bounded oscillation as a whole with a directed tensor Darboux enclosure.  Its
 still only a selected extreme-axial seed.  The active gate is to stream it and
 extend the correlated integration across intermediate Jacobi diagonals before
 any polarized-tail claim.
+The intermediate successor now keeps the terminating Jacobi factor and axial
+phase inside the same directed integrand.  Its `16 x 16` `two_j=4,r=1` audit
+overlaps the published rail.  On a `64 x 64` grid, the adjacent even/odd
+sentinels `two_j=512,r=128` and `two_j=513,r=128` have widths approximately
+`0.07072` and `0.07075`; the `32 x 32` even mutation remains about `0.14099`
+and is rejected.  The active gate is now a declared diagonal-fraction stream,
+not an inference from these two sentinels to the complete scalar rail.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

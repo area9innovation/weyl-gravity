@@ -1,0 +1,37 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The directed correlated p=0 Darboux evaluator is extended from r=0 to selected intermediate Jacobi diagonals while retaining the terminating Jacobi factor, axial amplitude/phase and full clock envelope inside one interval integrand. The two_j=4,r=1 low audit overlaps the published rail. Adjacent even/odd sentinels two_j=512,r=128 and two_j=513,r=128 have widths below 0.1 on a 64x64 grid, while the 32x32 even mutation remains above 0.1. This certifies two intermediate p=0 sentinels only. No complete diagonal stream, all odd representations, other clock powers, polarized/infinite tail, Green image, detector response, recoil, tangent-cone restriction, Bridge 3 or quantum claim is promoted. The nonlinear apparatus sequencing remains bounded by the coefficientwise mixed epsilon_R^2 kappa unary certificate and does not imply finite-r or all-orders observer-morphism stability.",
+  "tier_0": [{"command": "python3 -m py_compile, JSON/schema parse and scoped git diff --check", "status": "PASS"}],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_correlated_intermediate_jacobi_evaluator.py", "elapsed_seconds": 0.61, "status": "PASS", "summary": "3 tests passed, covering low-rail overlap, adjacent even/odd refined widths and fail-closed mutation rejection."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_correlated_intermediate_jacobi_evaluator", "status": "PASS", "summary": "Schema, source/dependency hashes, low/high coverage, resolution mutation and scoped-open flags passed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The generated observer atlas and shared fail-closed schema passed; detector_response and complete-stream claims remain OPEN."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_correlated_intermediate_jacobi_evaluator --check", "elapsed_seconds": 28.27, "status": "PASS", "summary": "The low audit, adjacent even/odd high sentinels and coarse resolution mutation were reevaluated with directed interval arithmetic; the certificate matched byte-for-byte."}
+  ],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "No complete diagonal/form rail, infinite-mode theorem, shared core-algebra change, freeze, release or detector-response lifecycle promotion was claimed."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_correlated_intermediate_jacobi_evaluator.py", "sha256": "d9606c202ca77786c687606c178567063ac79df449c948a7ba355fbe8a2619df"},
+    {"path": "closed_universe_observers/verify_berger_correlated_intermediate_jacobi_evaluator.py", "sha256": "baa61d978e46df45c0b7e4a0428c816355d9a773bbcdd66ad590cca1c66e05ae"},
+    {"path": "closed_universe_observers/tests/test_berger_correlated_intermediate_jacobi_evaluator.py", "sha256": "19a15e4e7f6b0dfd1b1a4d208a6e0e8eaee9b8c245bfcadc5e5c827e0b053781"},
+    {"path": "closed_universe_observers/schema/berger-correlated-intermediate-jacobi-evaluator-v1.schema.json", "sha256": "30810528981227d1842c4977f427a99ecb682f8ae6230870e551eac5db9712c7"},
+    {"path": "closed_universe_observers/reports/berger-correlated-intermediate-jacobi-evaluator.md", "sha256": "d755011ce20724a6c715d382d3f57a162c25fc78598e64b99eaf446637470bd5"},
+    {"path": "closed_universe_observers/certificates/BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR.json", "sha256": "b44bf2a0131180260cbda339c6e3b7da9a6f200122310587e53028fe1c39d8e5"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "7b4fad71d671728c9c56faef95b1afa3c23669ad8878696549e5bf6adeaf40d5"}
+  ],
+  "claim_flags": {
+    "CORRELATED_INTERMEDIATE_JACOBI_P0_EVALUATOR_EXPORTED": true,
+    "LOW_TWO_J4_R1_OVERLAP_PASSED": true,
+    "TWO_SELECTED_INTERMEDIATE_WIDTHS_BELOW_ONE_TENTH": true,
+    "COARSE_GRID_RESOLUTION_MUTATION_REJECTED": true,
+    "COMPLETE_DIAGONAL_STREAM_EXPORTED": false,
+    "ALL_ODD_REPRESENTATIONS_AND_CLOCK_POWERS_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
