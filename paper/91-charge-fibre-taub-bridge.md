@@ -1084,6 +1084,15 @@ quadratic-source disposition of their surviving strata. None of the
 post-freeze steps is needed to validate Theorems 5.1 and 8.1, and no scoped
 second-order extension is extrapolated into an all-orders closure theorem.
 
+A further exact spectrum census removes one possible loophole.  The complete
+homogeneous $\ell=0,k=0$ physical quotient is empty at every nonzero
+frequency, so there is no hidden homogeneous fourth-order oscillator.  In the
+full $k=0$ positive-sum spectrum, the only new resonance not already covered
+by the exceptional all-$m$ theorem is a generalized homogeneous/twist
+zero-mode multiplied by an $\ell=2$ extra-primary mode at
+$\omega^2=16/3$.  Its bilinear source coefficient is now the sharp next gate;
+frequency differences and opposite nonzero momenta remain separate.
+
 ## 11. Scope boundary
 
 The established statements are:
@@ -1137,6 +1146,8 @@ algebraic arithmetic. The principal certificates are:
 | complete finite-harmonic generic $k=0$ cone | `bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json` |
 | fixed-$|k|$ opposite-momentum cone | `bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json` |
 | exceptional $\ell=1$ all-$m$ pure no-go | `bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json` |
+| homogeneous nonzero-frequency quotient | `bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json` |
+| exceptional positive-sum resonance census | `bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_resonance_census.json` |
 
 Fast verification:
 
@@ -1229,6 +1240,7 @@ proof boundaries, source citations, and final text.
 **Frozen claim flag:**
 `PURE_EXTRA_GENERIC_NO_GO_AND_ONE_BALANCED_MIXED_SECOND_ORDER_EXTENSION_CERTIFIED`.
 
-**Next theorem:** dispose the remaining multi-$|k|$, infinite-mode, and
-homogeneous/twist/charge/Wilson-line mixed strata, then test higher-order
-integrability of the certified second-order cones.
+**Next theorem:** compute the unique surviving positive-sum bilinear between
+a homogeneous/twist global zero-mode and an $\ell=2$ extra primary; then
+dispose frequency-difference, multi-$|k|$, infinite-mode, charge/Wilson-line,
+and higher-order gates.
