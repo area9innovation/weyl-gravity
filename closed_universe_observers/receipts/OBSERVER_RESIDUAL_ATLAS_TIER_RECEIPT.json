@@ -1,0 +1,38 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "OBSERVER_RESIDUAL_ATLAS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "A generated fail-closed operational-observer atlas fragment records the certified Berger rank-two maps and finite form inputs. The detector restriction to Z2^C is OPEN in all correction classes, and the compact-product exceptional-resonance crosswalk is NO_CERTIFIED_MAP.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "observer fragment and shared-plan additions"}
+  ],
+  "tier_1": [
+    {"command": "python3 closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "deterministic generated claims ledger"},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "under 1", "status": "PASS", "scope": "evidence hashes, full scopes, lifecycle vocabulary and crosswalk"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": "0.23", "status": "PASS", "scope": "atlas tests and central comparison-ledger consumer"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "central observer lifecycle and evidence ledger"}
+  ],
+  "tier_2": [{"status": "NOT_RUN", "criterion": "No mathematical operator, shared schema, central comparison ledger, or lifecycle promotion changed; direct atlas consumers are complete."}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, theorem promotion, full causal result, or quantum claim."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "774502d8e11bb1fc73c4d8b720fa2b05aa8b40b2b71a4ccefe4fc07786d3be87"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "74078741f35d63681705c0f33c0b646f16a0d57d0d07238837aca58d5fd8aa44"},
+    {"path": "closed_universe_observers/atlas/verify_observer_atlas_fragment.py", "sha256": "0816748ac71b56846c76e44b8a8fd5889c4db78c7fcd61629598dfd56e22d1b5"},
+    {"path": "closed_universe_observers/tests/test_observer_atlas_fragment.py", "sha256": "f59d181c1da48bac134872f37eb6c5c6323d3133f1204a1adb91d5aabe83ddc2"},
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "bd6c000ad86db4894b11ec610a3f338831bee8e20879e1a90c5c9c74ba644d22"},
+    {"path": "closed_universe_observers/README.md", "sha256": "80263d0f2a3fe057c659141a4c69bbcfa461c3cda67aeddfa165ed06ec909fda"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "8f1ec87413748acb335f24ddb899dd6d64cf437be5fe9328f1a31f49af4538d9"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "1fcdaa1cb09692f7375fd100925de706bf6624d83b43f23b096dfe3dcdf65f66"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "8fc24fcfb482559f7992ed07dca035124cc5bcf631b41ab57cbbca3922a537bd"}
+  ],
+  "claim_flags": {
+    "OBSERVER_ATLAS_FRAGMENT_GENERATED": true,
+    "CG4_OPERATIONAL_RESPONSE_RANK_TWO": true,
+    "MASSIVE_EMITTER_OPERATIONAL_RESPONSE_RANK_TWO": true,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "EXCEPTIONAL_RESONANCE_BERGER_CROSSWALK_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

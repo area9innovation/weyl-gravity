@@ -43,6 +43,13 @@ Dependency boundary: the fixture is `LOCAL-ALGEBRAIC` and
 `REDUCED-MODE` and `LORENTZIAN-CAUSAL`.  None of this establishes a Lorentzian
 quantum observer theory.
 
+The operational residual-atlas evidence is generated at
+`closed_universe_observers/atlas/observer-atlas-fragment.json`.  Its C-G4
+and massive-emitter entries carry the certified rank-two maps.  The
+second-order-cone restriction remains `OPEN` in all three correction classes,
+and the compact-product exceptional-resonance crosswalk is
+`NO_CERTIFIED_MAP` rather than an inferred Berger detector signature.
+
 ## Strongest case against conflation
 
 The parallel fails before coefficients or dynamics are compared:

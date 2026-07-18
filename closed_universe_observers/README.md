@@ -3,13 +3,16 @@
 This namespace contains the isolated external reproduction and the first typed
 comparison requested by `notes/closed-universe-observer-team-brief.md`.
 
-Current lifecycle: `EXTERNAL_FIXTURE_REPRODUCED`.
+Current lifecycle: `CLASSICAL_OBSERVER_MAP_CERTIFIED` on the scoped
+coefficientwise affine-`K` family.
 
 Current overall verdict: `QUANTUM_COMPARISON_NOT_YET_DEFINED`.
 
 Run the exact fixture and the comparison ledger checks with:
 
 ```bash
+python3 closed_universe_observers/atlas/generate_observer_atlas_fragment.py
+python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment
 python3 closed_universe_observers/generate_rank_one_fixture.py --check
 python3 closed_universe_observers/verify_rank_one_fixture.py
 python3 closed_universe_observers/generate_berger_detector_records.py --check

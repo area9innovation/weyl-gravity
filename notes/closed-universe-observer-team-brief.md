@@ -328,6 +328,30 @@ The repaired bivariate first-jet coefficient and formal causal correction are
 sufficient input for scoped first-jet tests, but they must not be advertised
 as a finite-parameter Green theorem or fully interacting apparatus theorem.
 
+### Programme residual-atlas and tangent-cone handoff (2026-07-18)
+
+The generated operational fragment is
+`closed_universe_observers/atlas/observer-atlas-fragment.json`.  It records
+the full mode scope, detector response and rank, emitter preparation,
+clock/rod and redshift dependence, recoil order, gauge survival, and exact
+profile/Green/boundary dependencies for every observer carrier currently
+mapped by a certificate.  Lifecycle values are restricted to `CERTIFIED`,
+`OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE`, and `NO_CERTIFIED_MAP`.
+
+The C-G4 phase plane and the leading massive-emitter preparation map are
+operationally rank two.  Their restrictions to
+`Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` are still `OPEN` for bounded/quasiperiodic,
+smooth-secular, and causal/retarded corrections: no current certificate
+decides which detectable modes are obstructed or which balanced combinations
+survive.  The atlas cites
+`FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` for the general
+image/cokernel criterion without treating it as an evaluated observer cone.
+The emitter stress/clock source supplies a certified `q2` channel
+and detector feedback begins at absolute `g^3`, but their cone projections
+are open.  The compact-product exceptional resonance has
+`NO_CERTIFIED_MAP` to Berger rows and therefore no certified Berger detector
+signature.
+
 ### The adjacent closed-universe programme
 
 The comparison sources are:
