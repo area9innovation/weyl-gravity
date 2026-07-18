@@ -59,7 +59,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; compute regulated R(K), finite R(K^2), Wres(K), any local zeta term, and the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
+Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; compute finite regulated R(K) and R(K^2), the reference-specific scale conversion, any local zeta term, and the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    bound clock derivatives of the moving Berger detector profile against the certified fixed-vector microphase envelope, then choose the justified complete cutoff, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
@@ -1009,9 +1009,10 @@ compact-product off-shell noncyclic three-form Einstein--Weyl triangle is now
 certified, including its support-local mapping cofiber, three distinct
 action-derived forms and the connected residual plus `U(1)` winding endpoints
 in the oriented fixed-`N=2` sector.  Compact-product Bridge 1 is active at the
-linear algebraic/cofiber level.  The active classical relative gate is now the
-separate same-background Einstein--Maxwell and Weyl--Maxwell `q1/q2/q3`
-exports; compact-product causal Green data remain an independent open rail.
+linear algebraic/cofiber level. The complete executable 38-row
+Einstein--Maxwell `q1/q2/q3` payload is now imported, so the active classical
+relative gate is the same-background Weyl--Maxwell export. Compact-product
+causal Green data remain an independent open rail.
 
 ### Classical ownership
 
