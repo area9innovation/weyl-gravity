@@ -31,6 +31,7 @@ DEPENDENCIES = {
     "york_hodge_berezinian": HERE / "spectral/euclidean/certificates/YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCH.json",
     "TT_hessian_normalization_readiness": HERE / "spectral/euclidean/certificates/REPOSITORY_TT_HESSIAN_NORMALIZATION_READINESS.json",
     "round_S4_standard_zero_modes": HERE / "spectral/euclidean/certificates/ROUND_S4_STANDARD_FACTOR_ZERO_MODE_LEDGER.json",
+    "standard_TT_auxiliary_contour": HERE / "spectral/euclidean/certificates/STANDARD_TT_AUXILIARY_CONTOUR_PHASE.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -79,6 +80,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "york_hodge_berezinian": "NONZERO_MODE_YORK_HODGE_AND_BRST_QUARTET_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN",
         "TT_hessian_normalization_readiness": "ACTION_NORMALIZATION_AND_NEARBY_FACTORIZATIONS_VERIFIED_ROUND_S4_TT_DICTIONARY_NOT_SUPPLIED",
         "round_S4_standard_zero_modes": "STANDARD_ROUND_S4_FOUR_FACTOR_ZERO_MODES_COMPLETE_REPOSITORY_GLOBAL_LEDGER_OPEN",
+        "standard_TT_auxiliary_contour": "STANDARD_AUXILIARY_POSITIVE_IMAGINARY_THIMBLE_AND_MODEWISE_PHASE_FIXED_REPOSITORY_MATCH_OPEN",
         "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
@@ -263,6 +265,21 @@ def _load() -> dict[str, dict[str, Any]]:
         or zero_mode_match.get("total_conformal_Killing_modes") != 15
     ):
         raise ValueError("round-S4 standard zero-mode frontier drifted")
+    contour_flags = values["standard_TT_auxiliary_contour"].get("claim_flags", {})
+    contour_data = values["standard_TT_auxiliary_contour"].get(
+        "oriented_normalized_contour", {}
+    )
+    if (
+        contour_flags.get("STANDARD_AUXILIARY_CONTOUR_FIXED") is not True
+        or contour_flags.get("STANDARD_AUXILIARY_MODEWISE_PHASE_FIXED") is not True
+        or contour_flags.get("STANDARD_AUXILIARY_BACKGROUND_LOG_COEFFICIENT_ZERO")
+        is not True
+        or contour_flags.get("REPOSITORY_AUXILIARY_CONTOUR_MATCHED") is not False
+        or contour_flags.get("INFINITE_DIMENSIONAL_REGULATOR_FIXED") is not False
+        or contour_data.get("residual_modewise_phase")
+        != "PLUS_ONE_BY_ORIENTED_NORMALIZED_MEASURE"
+    ):
+        raise ValueError("standard TT auxiliary contour frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
@@ -664,7 +681,7 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_AND_S4_ZERO_MODES_MATCHED_REPOSITORY_TT_DICTIONARY_GLOBAL_LEDGER_CONTOUR_OPEN",
+            "G3": "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_S4_ZERO_MODES_AND_CONTOUR_MATCHED_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_LEDGER_REGULATOR_OPEN",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
@@ -678,7 +695,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
-                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_VECTOR_GHOST_OPERATORS_NONZERO_MODE_MEASURE_AND_S4_ZERO_MODES_MATCHED_REPOSITORY_TT_DICTIONARY_GLOBAL_LEDGER_CONTOUR_OPEN",
+                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_VECTOR_GHOST_OPERATORS_NONZERO_MODE_MEASURE_S4_ZERO_MODES_AND_AUXILIARY_CONTOUR_MATCHED_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_LEDGER_REGULATOR_OPEN",
                 "next_gate": "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
             },
             "free_Lorentzian_state": {
@@ -809,6 +826,7 @@ def build() -> dict[str, Any]:
             "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES": True,
             "REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED": True,
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE": True,
+            "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -854,8 +872,10 @@ def build() -> dict[str, Any]:
             "results do not silently substitute for it. The four standard round-S4 factors now "
             "have a complete zero-mode ledger: no physical TT zeros, ten Killing-vector ghost "
             "zeros, and five proper-conformal scalar ghost zeros matching the classical fifteen. "
-            "The complete repository global ledger, auxiliary contour/phase, regulator and total "
-            "row map remain open. The strict "
+            "The standard algebraic TT auxiliary now also has a convergent oriented +iR thimble, "
+            "normalized +1 phase per real mode, and zero background-dependent logarithmic "
+            "coefficient. Matching that standard contour to the repository auxiliary row, the "
+            "complete repository global ledger, regulator and total row map remain open. The strict "
             "semantic receiver checks complete row/factor coverage, exact target ranks and "
             "signs, scalar-map consistency and nested proof hashes, while physical input "
             "remains absent; the frontier also contains "
@@ -935,7 +955,7 @@ def validate(result: dict[str, Any]) -> None:
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
-        != "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_AND_S4_ZERO_MODES_MATCHED_REPOSITORY_TT_DICTIONARY_GLOBAL_LEDGER_CONTOUR_OPEN"
+        != "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_S4_ZERO_MODES_AND_CONTOUR_MATCHED_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_LEDGER_REGULATOR_OPEN"
         or any(
             not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
             for level in ("G4", "G5")
@@ -963,6 +983,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED")
         is not True
         or flags.get("STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE") is not True
+        or flags.get("STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED") is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -1010,6 +1031,7 @@ def validate(result: dict[str, Any]) -> None:
             "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES",
             "REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED",
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE",
+            "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",

@@ -559,8 +559,11 @@ domain. Independently, the four standard round-`S4` factors now have a complete
 zero-mode ledger: no physical TT zeros, ten Killing-vector ghost zeros, and
 five scalar proper-conformal ghost zeros with exact Diff--Weyl kernel vector
 `(1,1)`. These reproduce the classical fifteen conformal reducibilities. The
-repository-global zero-mode ledger, auxiliary contour/phase, regulator, and
-total row/factor map remain open; the classical
+standard algebraic TT auxiliary now also has a convergent oriented `+iR`
+thimble, exact square completion, normalized phase `+1` per real mode, and no
+background-dependent logarithmic coefficient. Matching this contour to the
+repository auxiliary row, the repository-global zero-mode ledger, regulator,
+and total row/factor map remain open; the classical
 54-row carrier is explicitly not a loop-multiplicity authority. The next
 task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
 content-addressed repository regulator/operator/measure match, and compute

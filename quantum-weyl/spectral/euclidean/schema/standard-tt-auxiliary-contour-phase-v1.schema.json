@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-standard-tt-auxiliary-contour-phase-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_hashes", "finite_mode_identity", "convergence_rays", "oriented_normalized_contour", "negative_controls", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-standard-tt-auxiliary-contour-phase-v1"},
+    "result_id": {"const": "STANDARD_TT_AUXILIARY_CONTOUR_PHASE"},
+    "result_state": {"const": "STANDARD_AUXILIARY_POSITIVE_IMAGINARY_THIMBLE_AND_MODEWISE_PHASE_FIXED_REPOSITORY_MATCH_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL", "LOCAL-ALGEBRAIC"]},
+    "dependency_hashes": {"type": "object", "additionalProperties": false, "required": ["standard_auxiliary_Schur_identity"], "properties": {"standard_auxiliary_Schur_identity": {"$ref": "#/$defs/hash"}}},
+    "finite_mode_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["starting_action", "rotation", "completion", "effective_action"],
+      "properties": {
+        "starting_action": {"const": "S_lambda=lambda h^2+lambda h f-f^2/2"},
+        "rotation": {"const": "f=i y"},
+        "completion": {"$ref": "#/$defs/completion"},
+        "effective_action": {"const": "S_eff=1/2 lambda(lambda+2) h^2"}
+      }
+    },
+    "convergence_rays": {
+      "type": "object", "additionalProperties": false,
+      "required": ["canonical", "real_axis_negative_control", "stokes_boundary_control", "open_convergence_wedge"],
+      "properties": {
+        "canonical": {"$ref": "#/$defs/ray"}, "real_axis_negative_control": {"$ref": "#/$defs/ray"}, "stokes_boundary_control": {"$ref": "#/$defs/ray"},
+        "open_convergence_wedge": {"const": "pi/4<arg(f)<3pi/4 modulo pi"}
+      }
+    },
+    "oriented_normalized_contour": {"$ref": "#/$defs/contour"},
+    "negative_controls": {
+      "type": "object", "additionalProperties": false,
+      "required": ["wrong_auxiliary_sign", "real_axis_diverges", "stokes_boundary_not_absolutely_convergent", "all_rejected"],
+      "properties": {"wrong_auxiliary_sign": {"$ref": "#/$defs/completion"}, "real_axis_diverges": {"const": true}, "stokes_boundary_not_absolutely_convergent": {"const": true}, "all_rejected": {"const": true}}
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["STANDARD_AUXILIARY_CONTOUR_FIXED", "STANDARD_AUXILIARY_MODEWISE_PHASE_FIXED", "STANDARD_AUXILIARY_BACKGROUND_LOG_COEFFICIENT_ZERO", "REPOSITORY_TT_HESSIAN_MATCHED", "REPOSITORY_AUXILIARY_CONTOUR_MATCHED", "INFINITE_DIMENSIONAL_REGULATOR_FIXED", "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED", "REGULATED_SLAVNOV_BREAKING_COMPUTED", "QME_DISPOSITION"],
+      "properties": {
+        "STANDARD_AUXILIARY_CONTOUR_FIXED": {"const": true}, "STANDARD_AUXILIARY_MODEWISE_PHASE_FIXED": {"const": true}, "STANDARD_AUXILIARY_BACKGROUND_LOG_COEFFICIENT_ZERO": {"const": true},
+        "REPOSITORY_TT_HESSIAN_MATCHED": {"const": false}, "REPOSITORY_AUXILIARY_CONTOUR_MATCHED": {"const": false}, "INFINITE_DIMENSIONAL_REGULATOR_FIXED": {"const": false}, "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": {"const": false}, "REGULATED_SLAVNOV_BREAKING_COMPUTED": {"const": false}, "QME_DISPOSITION": {"const": false}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "MATCH_REPOSITORY_TT_AUXILIARY_BLOCK_TO_STANDARD_NORMALIZED_THIMBLE"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "complex": {"type": "object", "additionalProperties": false, "required": ["real", "imaginary"], "properties": {"real": {"$ref": "#/$defs/rational"}, "imaginary": {"$ref": "#/$defs/rational"}}},
+    "completion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["auxiliary_diagonal_sign", "rotated_action_coefficients", "completed_square", "completion_residual", "completion_verified", "rotated_quadratic_real_part_positive"],
+      "properties": {
+        "auxiliary_diagonal_sign": {"enum": [-1, 1]},
+        "rotated_action_coefficients": {"type": "object", "additionalProperties": false, "required": ["h2_lambda", "hy_lambda", "y2"], "properties": {"h2_lambda": {"$ref": "#/$defs/complex"}, "hy_lambda": {"$ref": "#/$defs/complex"}, "y2": {"$ref": "#/$defs/complex"}}},
+        "completed_square": {"const": "1/2 (y+i lambda h)^2 + 1/2 lambda(lambda+2) h^2"},
+        "completion_residual": {"type": "object", "additionalProperties": false, "required": ["h2_lambda", "h2_lambda_squared", "hy_lambda", "y2"], "properties": {"h2_lambda": {"$ref": "#/$defs/complex"}, "h2_lambda_squared": {"$ref": "#/$defs/complex"}, "hy_lambda": {"$ref": "#/$defs/complex"}, "y2": {"$ref": "#/$defs/complex"}}},
+        "completion_verified": {"type": "boolean"}, "rotated_quadratic_real_part_positive": {"type": "boolean"}
+      }
+    },
+    "ray": {"type": "object", "additionalProperties": false, "required": ["theta_over_pi", "Re_exp_2i_theta_sign", "absolutely_convergent", "classification"], "properties": {"theta_over_pi": {"$ref": "#/$defs/rational"}, "Re_exp_2i_theta_sign": {"enum": [-1, 0, 1]}, "absolutely_convergent": {"type": "boolean"}, "classification": {"type": "string"}}},
+    "contour": {"type": "object", "additionalProperties": false, "required": ["field_rotation", "orientation", "measure_per_real_mode", "normalization", "completion_shift", "residual_modewise_phase", "background_dependent_log_coefficient"], "properties": {"field_rotation": {"const": "f=i y with y real"}, "orientation": {"type": "string"}, "measure_per_real_mode": {"const": "df/(i sqrt(2 pi))=dy/sqrt(2 pi)"}, "normalization": {"type": "string"}, "completion_shift": {"type": "string"}, "residual_modewise_phase": {"const": "PLUS_ONE_BY_ORIENTED_NORMALIZED_MEASURE"}, "background_dependent_log_coefficient": {"const": "ZERO_FOR_THE_NORMALIZED_ALGEBRAIC_IDENTITY_BLOCK"}}}
+  }
+}

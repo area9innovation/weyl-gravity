@@ -38,13 +38,16 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(self.payload["claim_flags"]["FULL_BV_G2_COMPLETE"])
         self.assertEqual(
             ladder["G3"],
-            "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_AND_S4_ZERO_MODES_MATCHED_REPOSITORY_TT_DICTIONARY_GLOBAL_LEDGER_CONTOUR_OPEN",
+            "STANDARD_VECTOR_TT_AUXILIARY_GHOST_MEASURE_S4_ZERO_MODES_AND_CONTOUR_MATCHED_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_LEDGER_REGULATOR_OPEN",
         )
         self.assertTrue(
             self.payload["claim_flags"]["REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED"]
         )
         self.assertTrue(
             self.payload["claim_flags"]["STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED"]
         )
         self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]

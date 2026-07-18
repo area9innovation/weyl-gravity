@@ -57,9 +57,13 @@ exact scalar and sign. The four standard round-`S4` factors now have a complete
 zero-mode ledger: neither physical TT factor has a kernel, while the two ghost
 factors contribute ten Killing-vector and five proper-conformal scalar modes.
 The latter reproduce the classical fifteen conformal reducibilities, including
-the exact scalar Diff--Weyl kernel vector `(1,1)`. The repository-global ledger,
-auxiliary contour/phase, regulator, and complete row/factor map remain open. A
-strict, content-addressed full-BV multiplicity receiver is ready. It rejects
+the exact scalar Diff--Weyl kernel vector `(1,1)`. The standard algebraic TT
+auxiliary also now has a convergent oriented `+iR` thimble. Exact square
+completion reproduces the fourth-order factor, while the normalized measure
+fixes phase `+1` per real mode and zero background-dependent logarithmic
+coefficient. Matching that policy to the repository auxiliary row, the
+repository-global ledger, regulator, and complete row/factor map remain open.
+A strict, content-addressed full-BV multiplicity receiver is ready. It rejects
 orphan rows or factors, duplicate standard maps, target-rank drift, scalar
 map drift, and nested proof-hash drift; the
 classical 54-row carrier is not treated as a loop operator. These results do

@@ -1,0 +1,244 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate fixes a convergent oriented contour and modewise phase for the standard algebraic transverse-traceless auxiliary block. Rotating f=i y converts the wrong-sign algebraic Gaussian into a positive real Gaussian; exact completion of the square reproduces one half lambda(lambda+2)h^2. The normalized measure df/(i sqrt(2 pi)) gives residual phase plus one per real auxiliary mode and no background-dependent logarithmic coefficient for the algebraic identity block. The real contour and Stokes-boundary rays fail convergence, and a sign mutation fails the completion identity. This is a declared standard-factor contour policy, not a repository match. It does not identify the repository TT Hessian or auxiliary row, fix an infinite-dimensional regulator or conformal-group volume, accept the full BV multiplicity ledger, compute anomaly coefficients or Slavnov breaking, decide the QME, classify the D-Cartan defect, transfer residual cohomology, or establish Lorentzian quantum theory.",
+  "claim_flags": {
+    "INFINITE_DIMENSIONAL_REGULATOR_FIXED": false,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_AUXILIARY_CONTOUR_MATCHED": false,
+    "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+    "REPOSITORY_TT_HESSIAN_MATCHED": false,
+    "STANDARD_AUXILIARY_BACKGROUND_LOG_COEFFICIENT_ZERO": true,
+    "STANDARD_AUXILIARY_CONTOUR_FIXED": true,
+    "STANDARD_AUXILIARY_MODEWISE_PHASE_FIXED": true
+  },
+  "convergence_rays": {
+    "canonical": {
+      "Re_exp_2i_theta_sign": -1,
+      "absolutely_convergent": true,
+      "classification": "CANONICAL_POSITIVE_IMAGINARY_THIMBLE",
+      "theta_over_pi": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    "open_convergence_wedge": "pi/4<arg(f)<3pi/4 modulo pi",
+    "real_axis_negative_control": {
+      "Re_exp_2i_theta_sign": 1,
+      "absolutely_convergent": false,
+      "classification": "DIVERGENT_REAL_AXIS",
+      "theta_over_pi": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    "stokes_boundary_control": {
+      "Re_exp_2i_theta_sign": 0,
+      "absolutely_convergent": false,
+      "classification": "STOKES_BOUNDARY_NOT_ABSOLUTELY_CONVERGENT",
+      "theta_over_pi": {
+        "denominator": 4,
+        "numerator": 1
+      }
+    }
+  },
+  "dependency_hashes": {
+    "standard_auxiliary_Schur_identity": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be"
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL",
+    "LOCAL-ALGEBRAIC"
+  ],
+  "finite_mode_identity": {
+    "completion": {
+      "auxiliary_diagonal_sign": -1,
+      "completed_square": "1/2 (y+i lambda h)^2 + 1/2 lambda(lambda+2) h^2",
+      "completion_residual": {
+        "h2_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "h2_lambda_squared": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "hy_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "y2": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      "completion_verified": true,
+      "rotated_action_coefficients": {
+        "h2_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "hy_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "y2": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": 1
+          }
+        }
+      },
+      "rotated_quadratic_real_part_positive": true
+    },
+    "effective_action": "S_eff=1/2 lambda(lambda+2) h^2",
+    "rotation": "f=i y",
+    "starting_action": "S_lambda=lambda h^2+lambda h f-f^2/2"
+  },
+  "negative_controls": {
+    "all_rejected": true,
+    "real_axis_diverges": true,
+    "stokes_boundary_not_absolutely_convergent": true,
+    "wrong_auxiliary_sign": {
+      "auxiliary_diagonal_sign": 1,
+      "completed_square": "1/2 (y+i lambda h)^2 + 1/2 lambda(lambda+2) h^2",
+      "completion_residual": {
+        "h2_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "h2_lambda_squared": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "hy_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "y2": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": -1
+          }
+        }
+      },
+      "completion_verified": false,
+      "rotated_action_coefficients": {
+        "h2_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "hy_lambda": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        },
+        "y2": {
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": -1
+          }
+        }
+      },
+      "rotated_quadratic_real_part_positive": false
+    }
+  },
+  "next_gate": "MATCH_REPOSITORY_TT_AUXILIARY_BLOCK_TO_STANDARD_NORMALIZED_THIMBLE",
+  "oriented_normalized_contour": {
+    "background_dependent_log_coefficient": "ZERO_FOR_THE_NORMALIZED_ALGEBRAIC_IDENTITY_BLOCK",
+    "completion_shift": "deform y in R to y+i lambda h; integrand is entire and Gaussian-decaying in the same Stokes wedge",
+    "field_rotation": "f=i y with y real",
+    "measure_per_real_mode": "df/(i sqrt(2 pi))=dy/sqrt(2 pi)",
+    "normalization": "integral_R dy/sqrt(2 pi) exp(-y^2/2)=1",
+    "orientation": "y runs from -infinity to +infinity, hence f runs from -i infinity to +i infinity",
+    "residual_modewise_phase": "PLUS_ONE_BY_ORIENTED_NORMALIZED_MEASURE"
+  },
+  "proof_sha256": "28f7b7e8f6bb11dbe9058f4a1ae911635dd3f972a63908c2fa322ecde8e37582",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/standard-tt-auxiliary-contour-phase.md": "aeaf7f99d55d2da82f9f8b49bbf5e776764cab9ac837742975386e247c828cc8",
+      "quantum-weyl/spectral/euclidean/auxiliary_contour_phase.py": "d7ce7d2f8cba4bb2d83c8a5233c93453482928d41c1237e5f3fbe2c7482bdc95",
+      "quantum-weyl/spectral/euclidean/schema/standard-tt-auxiliary-contour-phase-v1.schema.json": "175e91ce2f395648747fe0c8f342d5925d8c358393f94d1d64e32488e33e94ea",
+      "quantum-weyl/spectral/euclidean/tests/test_auxiliary_contour_phase.py": "84cc0d07f652a86f33b5b70aa9b644d66d20bb7c00e391fbb5e91c4fab700355",
+      "quantum-weyl/spectral/euclidean/verify_auxiliary_contour_phase.py": "eb177c33406c918cf00d20bc2b451da859ea204c3fdadb34ddda11a26e35a9b7"
+    }
+  },
+  "result_id": "STANDARD_TT_AUXILIARY_CONTOUR_PHASE",
+  "result_state": "STANDARD_AUXILIARY_POSITIVE_IMAGINARY_THIMBLE_AND_MODEWISE_PHASE_FIXED_REPOSITORY_MATCH_OPEN",
+  "schema": "quantum-weyl-standard-tt-auxiliary-contour-phase-v1"
+}
