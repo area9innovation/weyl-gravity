@@ -239,8 +239,12 @@ from the action-normalized `-1/2` table; its former ambiguous field stored the
 wrong normalization.  Coefficient derivatives omitted in the leading replay
 can affect only order at most one, where the complete `60 x 45` rank-45
 differentiated-Noether system gives the unique completion; cyclicity is checked
-separately.  The active gate is therefore the differentiated all-row rank-310
-SDR.  Transverse causal transfer remains `OPEN` until that retract passes.
+separately.  The differentiated all-row rank-310 SDR is now exact: all twenty-one
+dual-number matrix identities vanish on the complete ten-block carrier in
+split and original coordinates, including chain maps, retract, side
+conditions, cyclicity and BV-canonical conjugation.  The active gate is
+transverse metric biwave Green control, followed by causal transfer through
+this support-local SDR.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves

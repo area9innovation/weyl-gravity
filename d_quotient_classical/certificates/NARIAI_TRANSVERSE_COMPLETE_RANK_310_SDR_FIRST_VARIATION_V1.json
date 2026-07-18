@@ -1,0 +1,1308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "all_row_first_variation_checks": {
+    "canonical_transform_first_variation": true,
+    "homotopy_odd_cyclicity_first_variation": true,
+    "inclusion_chain_map_first_variation": true,
+    "inclusion_projection_adjoint_first_variation": true,
+    "metric_pairing_pullback_first_variation": true,
+    "original_HI_first_variation": true,
+    "original_H_squared_first_variation": true,
+    "original_PH_first_variation": true,
+    "original_Q_squared_first_variation": true,
+    "original_odd_cyclicity_first_variation": true,
+    "original_retract_first_variation": true,
+    "projection_chain_map_first_variation": true,
+    "projection_inclusion_first_variation": true,
+    "retract_first_variation": true,
+    "split_HI_first_variation": true,
+    "split_H_squared_first_variation": true,
+    "split_PH_first_variation": true,
+    "split_Q_squared_first_variation": true,
+    "split_odd_cyclicity_first_variation": true,
+    "transform_left_inverse_first_variation": true,
+    "transform_right_inverse_first_variation": true
+  },
+  "carrier": {
+    "background": "unit Nariai dS2 x S2",
+    "block_degrees": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "block_names": [
+      "epsilon_C0",
+      "s_ker_p0",
+      "x_C1",
+      "h_H1",
+      "y_C1",
+      "s_sharp_ker_p0_dual",
+      "x_sharp_C1dual",
+      "h_sharp_H1dual",
+      "y_sharp_C1dual",
+      "epsilon_sharp_C0dual"
+    ],
+    "block_ranks": [
+      15,
+      11,
+      60,
+      9,
+      60,
+      11,
+      60,
+      9,
+      60,
+      15
+    ],
+    "degree_ranks": [
+      15,
+      140,
+      140,
+      15
+    ],
+    "dropped_rows": [],
+    "tangent": "delta a=-(1/3)sinh(2t), delta b=sinh(t), fixed-Lambda linearized Einstein",
+    "total_rank": 310
+  },
+  "claim_boundary": "This certificate differentiates the complete ten-block, rank-310 support-local cyclic SDR along the certified transverse linearized Einstein tangent. It binds every varying abstract generator to the exact coefficient-jet, factorized-adjoint, upper-saddle and action-Hessian inputs, and verifies all chain, retract, side-condition, cyclicity and coordinate-conjugation identities through first order. It does not construct a metric or rank-310 advanced/retarded Green homotopy on the deformed background.",
+  "coefficient_bindings": {
+    "B_action_dot": {
+      "nonzero_coefficients": 174,
+      "orders": [
+        0,
+        1,
+        2
+      ],
+      "sha256": "53cacf6abec009b20f9e0a8d98bbf3ae5aed13eae244b56075e34a2815af5f2d",
+      "source": "action_Bach_variation"
+    },
+    "L0_dot": {
+      "nonzero_coefficients": 2,
+      "orders": [
+        0
+      ],
+      "sha256": "314283e2c58e12df03d8b6a695dec06d73246ec5686c3d61bce09b05139164a9",
+      "source": "splitting_coefficient_jets"
+    },
+    "L1_dot": {
+      "nonzero_coefficients": 22,
+      "orders": [
+        0
+      ],
+      "sha256": "eaa30fab6efbbe3694a34a1eeb03d32e6ee3f212fdd8bdcd9fdca1c1b4f67d17",
+      "source": "splitting_coefficient_jets"
+    },
+    "L1sharp_dot": {
+      "nonzero_coefficients": 21,
+      "orders": [
+        0
+      ],
+      "sha256": "fc044206b179df63a4dfa03ceadb7c3b09aa92c483f0cad21f2092e0150700e9",
+      "source": "factorized_Hom_schur"
+    },
+    "M_dot": {
+      "nonzero_coefficients": 126,
+      "orders": [
+        0
+      ],
+      "sha256": "c6c9d91c183f4966b49177862d0dcdbfe8c3deb44957de901479f5c8fcb9b86b",
+      "source": "factorized_Hom_schur"
+    },
+    "Phi_dot": {
+      "nonzero_coefficients": 415,
+      "orders": [
+        0,
+        1,
+        2
+      ],
+      "sha256": "5aaf5b116371fe9c066c530e2b09bad7867cfadfdbc796e9fa986d5f309b5d7d",
+      "source": "associative_middle_shifted_chain"
+    },
+    "Schur_dot": {
+      "nonzero_coefficients": 175,
+      "orders": [
+        0,
+        1,
+        2
+      ],
+      "sha256": "82cd257c066e9ac9881d9a477f444fcd3f0f632d2bea39d9f0a898493d7387c7",
+      "source": "factorized_Hom_schur"
+    },
+    "d_aut_dot": {
+      "nonzero_coefficients": 12,
+      "orders": [
+        0
+      ],
+      "sha256": "0380c99edc890d59304ea5dc705b8dc38fa17304feb538b77b38a19ef2324caf",
+      "source": "this_certificate"
+    },
+    "g_dot": {
+      "nonzero_coefficients": 2,
+      "orders": [
+        0
+      ],
+      "sha256": "bd2598dae71c7970b203f89e1337c167dc3177aefe2c0d1b1119bb4938ec76af",
+      "source": "this_certificate"
+    }
+  },
+  "coefficient_jet_requests": {
+    "B_action": [
+      []
+    ],
+    "L0": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "g": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  "coefficient_relation_defects": {
+    "B_K_base": 0,
+    "B_K_first_variation": 0,
+    "J0_g_dot_plus_L0_dot_p0": 0,
+    "g_L0_base": 0,
+    "g_L0_first_variation": 0,
+    "g_dot_J0": 0,
+    "gauge_reconstruction_base": 0,
+    "gauge_reconstruction_first_variation": 0,
+    "p0_L0_dot": 0
+  },
+  "dependency_refs": {
+    "action_Bach_variation": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1",
+      "sha256": "8d18f7b7817bc424a4bb39a98875086a0b2bd0e6534f3409fdaa1b5f7a571817"
+    },
+    "associative_middle_shifted_chain": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1",
+      "sha256": "fa563031f224f9c01df369e8ca6fd5ead1a675db28f3b9fee41f666943e402a1"
+    },
+    "base_rank_310_SDR": {
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "result_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    },
+    "factorized_Hom_schur": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1",
+      "sha256": "406d4f3f3288a55221a1f69a7d2d0d69eced747ddabf36b1d961ca09e37d6e98"
+    },
+    "metric_gauge_variation": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1",
+      "sha256": "463a0e6f426462e30e056efcc0962cfa9b3367d7d063dfe3c17c02fab6f79e6d"
+    },
+    "pairing_variation": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1",
+      "sha256": "1fd79f620942b5ff51a2b2b1f0f1174f97b9cdf8a45fb22a871f84ab498083dd"
+    },
+    "splitting_coefficient_jets": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_V1",
+      "sha256": "a23bf393fc44e7190ab80d26cf95ab8b5b740a33b83e9f904d23c5f9ffe0c266"
+    },
+    "upper_relative_saddle_chain": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1",
+      "sha256": "fc77bf152e481bd949dae8cfbf0108cd4eb4d8e653ca650be72d7d51750e4513"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "dotted_abstract_matrices": {
+    "homotopy_dot": {
+      "entries": [
+        [
+          4,
+          8,
+          [
+            [
+              [
+                "M_dot"
+              ],
+              1,
+              2
+            ]
+          ]
+        ]
+      ],
+      "sha256": "1675d1942f5c881fc62629be96e689c3876249fb6ff7dfb216a2a4927d9421c4",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "inclusion_dot": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [
+                "L0_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "c001b4881d7120e08094df653ff3751b099339fbe470802c301b899ffbb9e99d",
+      "shape": [
+        10,
+        4
+      ]
+    },
+    "metric_q_dot": {
+      "entries": [
+        [
+          2,
+          1,
+          [
+            [
+              [
+                "B_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "675cb7a935b630971b4b42506a729e76ee81762721c9d83c9ce4dc3a52fbd86b",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "original_homotopy_dot": {
+      "entries": [
+        [
+          4,
+          8,
+          [
+            [
+              [
+                "M_dot"
+              ],
+              1,
+              2
+            ]
+          ]
+        ]
+      ],
+      "sha256": "1675d1942f5c881fc62629be96e689c3876249fb6ff7dfb216a2a4927d9421c4",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "original_inclusion_dot": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [
+                "L0_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          1,
+          [
+            [
+              [
+                "L_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          1,
+          [
+            [
+              [
+                "Phi_dot"
+              ],
+              1,
+              2
+            ]
+          ]
+        ]
+      ],
+      "sha256": "54bce286f1de145ce43f37ffce7c0babe56ba4fc0dd97e30f79ffbe0e89b62e7",
+      "shape": [
+        10,
+        4
+      ]
+    },
+    "original_projection_dot": {
+      "entries": [
+        [
+          2,
+          6,
+          [
+            [
+              [
+                "Lsharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          8,
+          [
+            [
+              [
+                "Phisharp_dot"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          3,
+          9,
+          [
+            [
+              [
+                "L0sharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "bc705787457e7b51fa9500fae9b1f253e6e5e7204a45a2ebcb223e28801669a7",
+      "shape": [
+        4,
+        10
+      ]
+    },
+    "original_q_dot": {
+      "entries": [
+        [
+          1,
+          0,
+          [
+            [
+              [
+                "g_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          0,
+          [
+            [
+              [
+                "L_dot",
+                "k"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "d",
+                "J",
+                "g_dot"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "d_dot",
+                "J",
+                "g"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          0,
+          [
+            [
+              [
+                "Phi_dot",
+                "k"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          5,
+          1,
+          [
+            [
+              [
+                "Jsharp",
+                "dsharp",
+                "M",
+                "d_dot",
+                "J"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Jsharp",
+                "dsharp",
+                "M_dot",
+                "d",
+                "J"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Jsharp",
+                "dsharp_dot",
+                "M",
+                "d",
+                "J"
+              ],
+              -1,
+              2
+            ]
+          ]
+        ],
+        [
+          5,
+          2,
+          [
+            [
+              [
+                "Jsharp",
+                "dsharp",
+                "M_dot"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Jsharp",
+                "dsharp_dot",
+                "M"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          5,
+          3,
+          [
+            [
+              [
+                "Jsharp",
+                "dsharp",
+                "M",
+                "L_dot"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Jsharp",
+                "dsharp",
+                "M_dot",
+                "L"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Jsharp",
+                "dsharp",
+                "Phi_dot"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Jsharp",
+                "dsharp_dot",
+                "M",
+                "L"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Jsharp",
+                "dsharp_dot",
+                "Phi"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          5,
+          4,
+          [
+            [
+              [
+                "Jsharp",
+                "dsharp_dot"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          1,
+          [
+            [
+              [
+                "M",
+                "d_dot",
+                "J"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "M_dot",
+                "d",
+                "J"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          6,
+          2,
+          [
+            [
+              [
+                "M_dot"
+              ],
+              -1,
+              2
+            ]
+          ]
+        ],
+        [
+          6,
+          3,
+          [
+            [
+              [
+                "M",
+                "L_dot"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "M_dot",
+                "L"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Phi_dot"
+              ],
+              -1,
+              2
+            ]
+          ]
+        ],
+        [
+          7,
+          1,
+          [
+            [
+              [
+                "Lsharp",
+                "M",
+                "d_dot",
+                "J"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Lsharp",
+                "M_dot",
+                "d",
+                "J"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Lsharp_dot",
+                "M",
+                "d",
+                "J"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Phisharp",
+                "d_dot",
+                "J"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Phisharp_dot",
+                "d",
+                "J"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          7,
+          2,
+          [
+            [
+              [
+                "Lsharp",
+                "M_dot"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Lsharp_dot",
+                "M"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Phisharp_dot"
+              ],
+              -1,
+              2
+            ]
+          ]
+        ],
+        [
+          7,
+          3,
+          [
+            [
+              [
+                "B_dot"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "Lsharp",
+                "M",
+                "L_dot"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Lsharp",
+                "M_dot",
+                "L"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Lsharp",
+                "Phi_dot"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Lsharp_dot",
+                "M",
+                "L"
+              ],
+              -1,
+              2
+            ],
+            [
+              [
+                "Lsharp_dot",
+                "Phi"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Phisharp",
+                "L_dot"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Phisharp_dot",
+                "L"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          7,
+          4,
+          [
+            [
+              [
+                "Lsharp_dot"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          8,
+          1,
+          [
+            [
+              [
+                "d_dot",
+                "J"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          8,
+          3,
+          [
+            [
+              [
+                "L_dot"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          9,
+          5,
+          [
+            [
+              [
+                "gsharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          9,
+          6,
+          [
+            [
+              [
+                "gsharp",
+                "Jsharp",
+                "dsharp_dot"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "gsharp_dot",
+                "Jsharp",
+                "dsharp"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "ksharp",
+                "Lsharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          9,
+          8,
+          [
+            [
+              [
+                "ksharp",
+                "Phisharp_dot"
+              ],
+              1,
+              2
+            ]
+          ]
+        ]
+      ],
+      "sha256": "7670449ea12fdce2ec2587803d8a4a8ab8b8ef3872507f4fa3892bd69e731e03",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "projection_dot": {
+      "entries": [
+        [
+          3,
+          9,
+          [
+            [
+              [
+                "L0sharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "1dfc0574bab74cf8e5cc70658e190c1a75924dccabfafec99e3885b0009b30a5",
+      "shape": [
+        4,
+        10
+      ]
+    },
+    "q_dot": {
+      "entries": [
+        [
+          1,
+          0,
+          [
+            [
+              [
+                "g_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          2,
+          [
+            [
+              [
+                "M_dot"
+              ],
+              -1,
+              2
+            ]
+          ]
+        ],
+        [
+          7,
+          3,
+          [
+            [
+              [
+                "B_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          9,
+          5,
+          [
+            [
+              [
+                "gsharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "6d190365c5a45aeedfa19eb1c0c2ab753fdc012f2ea9c2426a6c6cb92fb4ad7c",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "transform_dot": {
+      "entries": [
+        [
+          2,
+          1,
+          [
+            [
+              [
+                "d_dot",
+                "J"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          3,
+          [
+            [
+              [
+                "L_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          3,
+          [
+            [
+              [
+                "Phi_dot"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          5,
+          6,
+          [
+            [
+              [
+                "Jsharp",
+                "dsharp_dot"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          6,
+          [
+            [
+              [
+                "Lsharp_dot"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          8,
+          [
+            [
+              [
+                "Phisharp_dot"
+              ],
+              -1,
+              2
+            ]
+          ]
+        ]
+      ],
+      "sha256": "84b1b7fb4387f3c715ba17eadc9c0fbe07f7d3a680de0278ca5d64ccdc7ae479",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "transform_inverse_dot": {
+      "entries": [
+        [
+          2,
+          1,
+          [
+            [
+              [
+                "d_dot",
+                "J"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          3,
+          [
+            [
+              [
+                "L_dot"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          3,
+          [
+            [
+              [
+                "Phi_dot"
+              ],
+              -1,
+              2
+            ]
+          ]
+        ],
+        [
+          5,
+          6,
+          [
+            [
+              [
+                "Jsharp",
+                "dsharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          6,
+          [
+            [
+              [
+                "Lsharp_dot"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          8,
+          [
+            [
+              [
+                "Phisharp_dot"
+              ],
+              1,
+              2
+            ]
+          ]
+        ]
+      ],
+      "sha256": "af4eb2dd040bf5f7bfbd002d096cf986303176a4b6c4f8f5e6262b01bfb6142e",
+      "shape": [
+        10,
+        10
+      ]
+    }
+  },
+  "exact_checks": {
+    "action_endpoint_bound": true,
+    "all_coefficient_relation_defects_zero": true,
+    "all_ten_blocks_enumerated": true,
+    "all_twenty_one_dual_number_matrix_identities_zero": true,
+    "causal_transfer_not_overclaimed": true,
+    "full_rank_is_310": true,
+    "metric_gauge_variation_zero": true,
+    "no_rows_dropped": true,
+    "pairing_variation_zero": true,
+    "support_local": true,
+    "upper_relative_saddle_bound": true
+  },
+  "flags": {
+    "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1": true,
+    "TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION": true,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": true,
+    "TRANSVERSE_METRIC_GREEN_HOMOTOPY": false,
+    "TRANSVERSE_RANK_310_GREEN_HOMOTOPY": false
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "NARIAI_TRANSVERSE_METRIC_BIWAVE_GREEN_CONTROL",
+  "result_id": "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1",
+  "result_state": "COMPLETE_TEN_BLOCK_RANK_310_CYCLIC_SDR_FIRST_VARIATION_EXACT",
+  "schema": "nariai-transverse-complete-rank-310-sdr-first-variation-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_complete_rank310_sdr_first_variation.py": "313e443ef2ffb45d843c2e8fb6c076bd14aea02b3526ba0ac3fb1639c03b59c4",
+    "d_quotient_classical/causal_transfer/nariai_transverse_rank310_dual_sdr.py": "83dcb9613185a38641f3cf8a957185ab4f274a6b9ac7e186cd7729034360943a",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_complete_rank310_sdr_first_variation.py": "7721bae1595714351b48fd9b730207725f0bd972b14266656acb2792eaf11025",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_complete_rank310_sdr_first_variation.py": "170b298b4269ef85cf054a48331312ab30786c4e30cc73acdea0de2ce4da118d",
+    "d_quotient_classical/schema/nariai-transverse-complete-rank-310-sdr-first-variation-v1.schema.json": "089b129c74569470e819280710f675e2df838591acf991f9c34ee0c5eeb850c5"
+  },
+  "support_and_cyclicity": {
+    "cyclicity": "the pairing variation vanishes; the differentiated inclusion/projection adjunction, odd homotopy adjunction and BV-canonical transform identities hold on all ten blocks",
+    "no_Green_operator_used": true,
+    "support": "every varied inclusion, projection, homotopy and triangular transform is finite-order differential and support-nonincreasing"
+  },
+  "variation_convention": {
+    "derived_map": "g_dot=-r0 L0_dot p0",
+    "fixed_pointwise_maps": [
+      "J0",
+      "p0",
+      "K",
+      "all four fibre pairings"
+    ],
+    "formal_adjoints": "differentiated with the certified zero pairing variation",
+    "no_free_SDR_ansatz": true
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_complete_rank310_sdr_first_variation --check",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_complete_rank310_sdr_first_variation.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_transverse_complete_rank310_sdr_first_variation",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-complete-rank-310-sdr-first-variation-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1.json"
+  ]
+}

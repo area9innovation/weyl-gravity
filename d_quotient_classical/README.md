@@ -566,10 +566,23 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   then fixes the lower action completion uniquely on every row, while action
   cyclicity follows from the third variation in the constant moving-frame
   pairing.  This closes the action endpoint gate without substituting an
-  external detour theorem.  The all-row rank-310 SDR and causal transfer remain
-  open:
+  external detour theorem.  The all-row rank-310 SDR is handled by the next
+  certificate; causal transfer remains open:
   [`certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json),
   [`reports/nariai-transverse-action-bach-hessian-variation.md`](reports/nariai-transverse-action-bach-hessian-variation.md)
+- Transverse complete rank-310 SDR first variation: differentiating the
+  universal ten-block mapping-cone SDR gives twenty-one exact dual-number matrix
+  identities in split and original coordinates, including both chain maps,
+  the retract, side conditions, cyclic adjoints and BV-canonical conjugation.
+  The dotted generators are bound to the coefficient-jet splittings,
+  factorized Hom adjoint, upper relative-saddle identity and action Bach
+  variation; the newly derived `d_aut_dot` and `g_dot=-r0 L0_dot p0` satisfy
+  every complement and gauge-reconstruction relation.  No row is dropped and
+  every varied map is finite-order and support-local.  This closes the
+  algebraic rank-310 gate, not the transverse metric or rank-310 Green
+  homotopies:
+  [`certificates/NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1.json),
+  [`reports/nariai-transverse-complete-rank-310-sdr-first-variation.md`](reports/nariai-transverse-complete-rank-310-sdr-first-variation.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

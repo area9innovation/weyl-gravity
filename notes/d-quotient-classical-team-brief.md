@@ -119,15 +119,15 @@ consistent, while 31 have augmented rank 131; the normalized row-zero
 two-term witness survives.  Thus neither a Phi-only continuation nor a change
 of the fixed metric gauge generator is the missing repair.
 
-The next coherent classical gate is therefore a genuinely coupled variation
-of neighbouring equation/constraint/cotangent rows, or a homotopy-coherent
-equation cone (or an explicitly higher-order Phi ansatz), with action-derived
-cyclic identification imposed simultaneously.  The action-derived metric
-gauge generator is held fixed.
-The atlas remains fail-closed: the parent identity, unique endpoint repair,
-scoped Phi-only obstruction, incidence/$L_1$ rigidity, normalized-$L_0$
-obstruction and $K$-admissibility screen are `CERTIFIED`; the complete
-rank-310 SDR and transverse causal transfer remain `OPEN`.
+That coupled gate is now closed by differentiating the universal ten-block
+mapping-cone SDR rather than fitting a larger local row ansatz.  All twenty-one
+split/original chain, retract, side-condition, cyclicity and conjugation
+identities vanish through first order, with the newly derived
+`g_dot=-r0 L0_dot p0` satisfying every complement and gauge-reconstruction
+relation.  The action-derived metric gauge generator remains fixed.  The
+atlas is fail-closed: the complete rank-310 algebraic SDR variation is now
+`CERTIFIED`, while transverse metric and rank-310 causal homotopies remain
+`OPEN`.
 
 ## Generator correction (2026-07-17; authoritative)
 
@@ -201,9 +201,10 @@ point-only intermediate, so the old 207-coefficient shifted defect is rejected
 as a backend artifact.  The Hom-adjoint and compressed-Schur gate is now exact
 as well: the adjoint is taken on the primitive covariant HPL factors before
 normal ordering, and the calculation exercises the nonzero curvature jet tower
-through order five.  No interpolation is used.  The active gate is now the
-upper relative-saddle row and complete rank-310 first-variation SDR, followed
-by causal transfer.
+through order five.  No interpolation is used.  The upper relative-saddle,
+action endpoint and complete ten-block rank-310 first-variation SDR gates now
+close exactly.  The active gate is transverse metric biwave Green control,
+followed by causal transfer through the certified SDR.
 
 For every declared background, charge fibre, boundary condition, and quotient:
 
@@ -1633,13 +1634,17 @@ stores both tables separately.  Missing derivatives of the explicit varied
 Weyl coefficient can affect only orders zero and one, so the frozen lower table
 is not used.  Instead the complete `60 x 45` rank-45 differentiated-Noether
 solve determines the unique lower action completion; action cyclicity is a
-separate consistency check rather than an input to uniqueness.  The remaining
-gate is the differentiated all-row rank-310 SDR,
-followed by causal transfer.
+separate consistency check rather than an input to uniqueness.  The complete
+rank-310 first variation now follows without a new ansatz: differentiating the
+universal ten-block SDR gives twenty-one zero matrix defects in both split and
+original coordinates, including all side conditions and cyclic adjoints.  No
+row is dropped, and all varied maps remain finite-order and support-local.
+The remaining gate is transverse metric biwave Green control, followed by
+rank-310 causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 
-After the current transverse-SDR gate, this lane must emit the classical
+After the current transverse-causal gate, this lane must emit the classical
 causal/gauge/carrier fragment of the shared generated residual atlas.  Use the
 Einstein team's authoritative schema when it lands; do not create a competing
 programme schema.  Seed vacuum cylinder, Berger clock, conformal Nariai, and

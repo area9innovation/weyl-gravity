@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nariai-transverse-complete-rank-310-sdr-first-variation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "carrier", "variation_convention", "coefficient_bindings", "coefficient_relation_defects", "coefficient_jet_requests", "dotted_abstract_matrices", "all_row_first_variation_checks", "support_and_cyclicity", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-complete-rank-310-sdr-first-variation-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1"},
+    "result_state": {"const": "COMPLETE_TEN_BLOCK_RANK_310_CYCLIC_SDR_FIRST_VARIATION_EXACT"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_rank_310_SDR", "splitting_coefficient_jets", "associative_middle_shifted_chain", "factorized_Hom_schur", "upper_relative_saddle_chain", "action_Bach_variation", "pairing_variation", "metric_gauge_variation"],
+      "properties": {
+        "base_rank_310_SDR": {"$ref": "#/$defs/dependency"},
+        "splitting_coefficient_jets": {"$ref": "#/$defs/dependency"},
+        "associative_middle_shifted_chain": {"$ref": "#/$defs/dependency"},
+        "factorized_Hom_schur": {"$ref": "#/$defs/dependency"},
+        "upper_relative_saddle_chain": {"$ref": "#/$defs/dependency"},
+        "action_Bach_variation": {"$ref": "#/$defs/dependency"},
+        "pairing_variation": {"$ref": "#/$defs/dependency"},
+        "metric_gauge_variation": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "tangent", "block_names", "block_degrees", "block_ranks", "total_rank", "degree_ranks", "dropped_rows"],
+      "properties": {
+        "background": {"type": "string", "minLength": 1},
+        "tangent": {"type": "string", "minLength": 1},
+        "block_names": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string"}},
+        "block_degrees": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "integer"}},
+        "block_ranks": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "integer", "minimum": 1}},
+        "total_rank": {"const": 310},
+        "degree_ranks": {"const": [15, 140, 140, 15]},
+        "dropped_rows": {"const": []}
+      }
+    },
+    "variation_convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixed_pointwise_maps", "derived_map", "formal_adjoints", "no_free_SDR_ansatz"],
+      "properties": {
+        "fixed_pointwise_maps": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "derived_map": {"type": "string", "minLength": 1},
+        "formal_adjoints": {"type": "string", "minLength": 1},
+        "no_free_SDR_ansatz": {"const": true}
+      }
+    },
+    "coefficient_bindings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["L0_dot", "L1_dot", "d_aut_dot", "g_dot", "M_dot", "L1sharp_dot", "Phi_dot", "Schur_dot", "B_action_dot"],
+      "properties": {
+        "L0_dot": {"$ref": "#/$defs/binding"},
+        "L1_dot": {"$ref": "#/$defs/binding"},
+        "d_aut_dot": {"$ref": "#/$defs/binding"},
+        "g_dot": {"$ref": "#/$defs/binding"},
+        "M_dot": {"$ref": "#/$defs/binding"},
+        "L1sharp_dot": {"$ref": "#/$defs/binding"},
+        "Phi_dot": {"$ref": "#/$defs/binding"},
+        "Schur_dot": {"$ref": "#/$defs/binding"},
+        "B_action_dot": {"$ref": "#/$defs/binding"}
+      }
+    },
+    "coefficient_relation_defects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["p0_L0_dot", "g_dot_J0", "J0_g_dot_plus_L0_dot_p0", "g_L0_base", "g_L0_first_variation", "gauge_reconstruction_base", "gauge_reconstruction_first_variation", "B_K_base", "B_K_first_variation"],
+      "properties": {
+        "p0_L0_dot": {"const": 0},
+        "g_dot_J0": {"const": 0},
+        "J0_g_dot_plus_L0_dot_p0": {"const": 0},
+        "g_L0_base": {"const": 0},
+        "g_L0_first_variation": {"const": 0},
+        "gauge_reconstruction_base": {"const": 0},
+        "gauge_reconstruction_first_variation": {"const": 0},
+        "B_K_base": {"const": 0},
+        "B_K_first_variation": {"const": 0}
+      }
+    },
+    "coefficient_jet_requests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["L0", "g", "B_action"],
+      "properties": {
+        "L0": {"$ref": "#/$defs/words"},
+        "g": {"$ref": "#/$defs/words"},
+        "B_action": {"$ref": "#/$defs/words"}
+      }
+    },
+    "dotted_abstract_matrices": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["q_dot", "metric_q_dot", "inclusion_dot", "projection_dot", "homotopy_dot", "transform_dot", "transform_inverse_dot", "original_q_dot", "original_inclusion_dot", "original_projection_dot", "original_homotopy_dot"],
+      "properties": {
+        "q_dot": {"$ref": "#/$defs/operator_matrix"},
+        "metric_q_dot": {"$ref": "#/$defs/operator_matrix"},
+        "inclusion_dot": {"$ref": "#/$defs/operator_matrix"},
+        "projection_dot": {"$ref": "#/$defs/operator_matrix"},
+        "homotopy_dot": {"$ref": "#/$defs/operator_matrix"},
+        "transform_dot": {"$ref": "#/$defs/operator_matrix"},
+        "transform_inverse_dot": {"$ref": "#/$defs/operator_matrix"},
+        "original_q_dot": {"$ref": "#/$defs/operator_matrix"},
+        "original_inclusion_dot": {"$ref": "#/$defs/operator_matrix"},
+        "original_projection_dot": {"$ref": "#/$defs/operator_matrix"},
+        "original_homotopy_dot": {"$ref": "#/$defs/operator_matrix"}
+      }
+    },
+    "all_row_first_variation_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["split_Q_squared_first_variation", "split_odd_cyclicity_first_variation", "projection_inclusion_first_variation", "inclusion_chain_map_first_variation", "projection_chain_map_first_variation", "retract_first_variation", "homotopy_odd_cyclicity_first_variation", "metric_pairing_pullback_first_variation", "inclusion_projection_adjoint_first_variation", "canonical_transform_first_variation", "transform_left_inverse_first_variation", "transform_right_inverse_first_variation", "original_Q_squared_first_variation", "original_odd_cyclicity_first_variation", "original_retract_first_variation", "split_H_squared_first_variation", "split_HI_first_variation", "split_PH_first_variation", "original_H_squared_first_variation", "original_HI_first_variation", "original_PH_first_variation"],
+      "properties": {
+        "split_Q_squared_first_variation": {"const": true},
+        "split_odd_cyclicity_first_variation": {"const": true},
+        "projection_inclusion_first_variation": {"const": true},
+        "inclusion_chain_map_first_variation": {"const": true},
+        "projection_chain_map_first_variation": {"const": true},
+        "retract_first_variation": {"const": true},
+        "homotopy_odd_cyclicity_first_variation": {"const": true},
+        "metric_pairing_pullback_first_variation": {"const": true},
+        "inclusion_projection_adjoint_first_variation": {"const": true},
+        "canonical_transform_first_variation": {"const": true},
+        "transform_left_inverse_first_variation": {"const": true},
+        "transform_right_inverse_first_variation": {"const": true},
+        "original_Q_squared_first_variation": {"const": true},
+        "original_odd_cyclicity_first_variation": {"const": true},
+        "original_retract_first_variation": {"const": true},
+        "split_H_squared_first_variation": {"const": true},
+        "split_HI_first_variation": {"const": true},
+        "split_PH_first_variation": {"const": true},
+        "original_H_squared_first_variation": {"const": true},
+        "original_HI_first_variation": {"const": true},
+        "original_PH_first_variation": {"const": true}
+      }
+    },
+    "support_and_cyclicity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["support", "cyclicity", "no_Green_operator_used"],
+      "properties": {
+        "support": {"type": "string", "minLength": 1},
+        "cyclicity": {"type": "string", "minLength": 1},
+        "no_Green_operator_used": {"const": true}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_twenty_one_dual_number_matrix_identities_zero", "all_coefficient_relation_defects_zero", "all_ten_blocks_enumerated", "full_rank_is_310", "no_rows_dropped", "pairing_variation_zero", "metric_gauge_variation_zero", "action_endpoint_bound", "upper_relative_saddle_bound", "support_local", "causal_transfer_not_overclaimed"],
+      "properties": {
+        "all_twenty_one_dual_number_matrix_identities_zero": {"const": true},
+        "all_coefficient_relation_defects_zero": {"const": true},
+        "all_ten_blocks_enumerated": {"const": true},
+        "full_rank_is_310": {"const": true},
+        "no_rows_dropped": {"const": true},
+        "pairing_variation_zero": {"const": true},
+        "metric_gauge_variation_zero": {"const": true},
+        "action_endpoint_bound": {"const": true},
+        "upper_relative_saddle_bound": {"const": true},
+        "support_local": {"const": true},
+        "causal_transfer_not_overclaimed": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1", "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION", "TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION", "TRANSVERSE_CAUSAL_TRANSFER", "TRANSVERSE_METRIC_GREEN_HOMOTOPY", "TRANSVERSE_RANK_310_GREEN_HOMOTOPY"],
+      "properties": {
+        "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1": {"const": true},
+        "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": {"const": true},
+        "TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION": {"const": true},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false},
+        "TRANSVERSE_METRIC_GREEN_HOMOTOPY": {"const": false},
+        "TRANSVERSE_RANK_310_GREEN_HOMOTOPY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_TRANSVERSE_METRIC_BIWAVE_GREEN_CONTROL"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "orders", "nonzero_coefficients", "sha256"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "orders": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "nonzero_coefficients": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "words": {
+      "type": "array",
+      "items": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}
+    },
+    "operator_matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/operator_matrix_entry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operator_matrix_entry": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0},
+        {"type": "array", "items": {"$ref": "#/$defs/operator_term"}}
+      ],
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "operator_term": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "array", "items": {"type": "string", "minLength": 1}},
+        {"type": "integer"},
+        {"type": "integer", "not": {"const": 0}}
+      ],
+      "minItems": 3,
+      "maxItems": 3
+    }
+  }
+}
