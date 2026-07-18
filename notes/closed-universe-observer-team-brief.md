@@ -518,10 +518,16 @@ hash is `3a1d1026dbf7c4fc3e507cde4e723c2817eb1fdb64fcca0fe8dd02073104042e`.
 The large separation remains in exact spectral functions, and the propagated
 uniform remainder is at most `1.64e-18` for the spatial image and `4.23e-17`
 for the temporal image.  The finite temporal rail is therefore certified.
-The active detector-profile gate is now the spatial harmonic tail beyond
-`two_j=138`, followed by the infinite-mode Maxwell and massive-two-form
-images, recoil coefficient and second-order-cone restriction.  Bridge 3
-remains inactive.
+The next first-omitted-shell audit now closes the cutoff decision negatively.
+`BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION` extends only the scalar
+neighbor required by form `two_j=139`.  For `D0`, column `69` and charge
+`q=-1/2`, one microphase-dressed spatial coefficient has absolute lower bound
+`0.8271`, and the dressed coderivative lower bound is `0.8629`.  Therefore
+the exact-`T` finite rail remains certified, but `two_j<=138` is
+`OBSTRUCTED` as a uniformly small detector-profile cutoff.  The active gate
+is a wider adaptive rail or a certified physical-space Green chain, followed
+by the infinite-mode Maxwell and massive-two-form images, recoil coefficient
+and second-order-cone restriction.  Bridge 3 remains inactive.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.

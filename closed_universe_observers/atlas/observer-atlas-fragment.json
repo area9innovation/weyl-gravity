@@ -1064,7 +1064,7 @@
       }
     },
     {
-      "claim_boundary": "48,372 populated blocks yield 143,180 spatial and 47,817 temporal dressed amplitudes; propagated errors are below 1.64e-18 spatially and 4.23e-17 temporally; the tail beyond two_j=138 is OPEN input to the absolute-g3 coefficient; recoil remains OPEN NOT_APPLICABLE at the temporal functional-calculus preflight",
+      "claim_boundary": "48,372 populated blocks yield 143,180 spatial and 47,817 temporal dressed amplitudes; propagated errors are below 1.64e-18 spatially and 4.23e-17 temporally; the first omitted shell obstructs small-tail promotion at two_j=138 input to the absolute-g3 coefficient; recoil remains OPEN NOT_APPLICABLE at the temporal functional-calculus preflight",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
@@ -1082,16 +1082,21 @@
           "path": "closed_universe_observers/certificates/BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138.json",
           "result_id": "BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138",
           "sha256": "15680860e864803f11af94aaf0a287425d8774df4bd7ecc446c4e5f1027d1ea6"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION.json",
+          "result_id": "BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION",
+          "sha256": "b00c9d972f671299329ac06e9ad2fcaf53f5b8ce0b3a2b7ca6fcc7109f167105"
         }
       ],
       "id": "observer.berger.temporal_green.blockwise_functional_calculus",
       "mode_data": {
         "dispersion": {
-          "statement": "carrier=angle-addition temporal Maxwell functional calculus in exact helicity charge blocks; omega=exact cos(T sqrt(B)) and sin(T sqrt(B))/sqrt(B) with order-14 internal s/48 microphase; finite-rail exact-T temporal Maxwell image representation CERTIFIED; full infinite-mode detector response remains OPEN on the spatial tail",
+          "statement": "carrier=angle-addition temporal Maxwell functional calculus in exact helicity charge blocks; omega=exact cos(T sqrt(B)) and sin(T sqrt(B))/sqrt(B) with order-14 internal s/48 microphase; finite-rail exact-T temporal Maxwell image representation CERTIFIED; full infinite-mode detector response remains OPEN because the two_j<=138 input-tail promotion is OBSTRUCTED",
           "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "OPEN until the spatial tail and full image are certified",
+          "statement": "OPEN until an adequate spatial tail and full image are certified",
           "status": "NOT_APPLICABLE"
         },
         "resonance": {
@@ -1128,7 +1133,7 @@
           "status": "CERTIFIED"
         },
         "detector_response": {
-          "statement": "finite-rail exact-T temporal Maxwell image representation CERTIFIED; full infinite-mode detector response remains OPEN on the spatial tail",
+          "statement": "finite-rail exact-T temporal Maxwell image representation CERTIFIED; full infinite-mode detector response remains OPEN because the two_j<=138 input-tail promotion is OBSTRUCTED",
           "status": "CERTIFIED"
         },
         "detector_restriction_to_second_order_cone": {
@@ -1152,7 +1157,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "48,372 populated blocks yield 143,180 spatial and 47,817 temporal dressed amplitudes; propagated errors are below 1.64e-18 spatially and 4.23e-17 temporally; the tail beyond two_j=138 is OPEN",
+          "statement": "48,372 populated blocks yield 143,180 spatial and 47,817 temporal dressed amplitudes; propagated errors are below 1.64e-18 spatially and 4.23e-17 temporally; the first omitted shell obstructs small-tail promotion at two_j=138",
           "status": "CERTIFIED"
         },
         "recoil_backreaction_order": {
@@ -1164,11 +1169,11 @@
           "status": "NOT_APPLICABLE"
         },
         "response_rank": {
-          "statement": "OPEN until the spatial tail and massive image are composed",
+          "statement": "OPEN until an adequate spatial rail and massive image are composed",
           "status": "OPEN"
         },
         "survives_gauge_reduction": {
-          "statement": "OPEN until the spatial tail and full image are certified",
+          "statement": "OPEN until an adequate spatial tail and full image are certified",
           "status": "OPEN"
         }
       },
@@ -1183,6 +1188,124 @@
         "m": "all representation rows grouped by q=m+s",
         "omega": "exact cos(T sqrt(B)) and sin(T sqrt(B))/sqrt(B) with order-14 internal s/48 microphase",
         "parity": "either selected detector polarization; odd normalized clock transform vanishes",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "the exact-T temporal rail through two_j=138 remains certified, but coefficientwise uniform small-tail promotion at that cutoff is OBSTRUCTED by form two_j=139, column 69, q=-1/2 absolute-g3 coefficient remains blocked by the unresolved infinite-mode image NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION.json",
+          "result_id": "BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION",
+          "sha256": "b00c9d972f671299329ac06e9ad2fcaf53f5b8ce0b3a2b7ca6fcc7109f167105"
+        }
+      ],
+      "id": "observer.berger.detector_profile_tail.two_j138_exact_t_input",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=microphase-dressed detector-form input to the exact-T Maxwell functional calculus; omega=exact large-T spectral functions not evaluated on the omitted shell; no full response: the first omitted form shell has a dressed spatial coefficient above 0.827 and dressed coderivative coefficient above 0.862",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE at this input-bandwidth obstruction",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "absolute-g3 coefficient remains blocked by the unresolved infinite-mode image; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "radius-1/128 D0 profile with all even normalized clock moments p=0,...,28",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "no full response: the first omitted form shell has a dressed spatial coefficient above 0.827 and dressed coderivative coefficient above 0.862",
+          "status": "OBSTRUCTED"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "widen the adaptive harmonic rail or certify a physical-space Green chain",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "the exact-T temporal rail through two_j=138 remains certified, but coefficientwise uniform small-tail promotion at that cutoff is OBSTRUCTED by form two_j=139, column 69, q=-1/2",
+          "status": "OBSTRUCTED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "absolute-g3 coefficient remains blocked by the unresolved infinite-mode image",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE at this input-bandwidth obstruction",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "microphase-dressed detector-form input to the exact-T Maxwell functional calculus",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "retained form two_j=0,...,138 versus first omitted form two_j=139",
+        "k": "representation column 69",
+        "m": "selected charge-block rows m=-3/2,-1/2,1/2",
+        "omega": "exact large-T spectral functions not evaluated on the omitted shell",
+        "parity": "D0 selected detector polarization",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -1418,7 +1541,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "e986d05bdf25a3e269c9f4b372edb2eb086a3767718d2d3e5a938d6a64cb6362",
+  "generated_by_sha256": "a9cea650ae1d92464efb743cbd89a9e4776a8223056e0e0c8f032b14f7a173cc",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

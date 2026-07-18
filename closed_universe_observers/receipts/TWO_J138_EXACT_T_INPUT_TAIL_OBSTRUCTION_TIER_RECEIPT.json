@@ -1,0 +1,84 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The first omitted detector-form shell is evaluated at two_j=139 using its certified scalar two_j=138 input and a validated scalar two_j=140 upper neighbor. For D0, column 69 and q=-1/2, a microphase-dressed spatial coefficient has exact absolute lower bound 0.8271... and the dressed coderivative has lower bound 0.8629.... This obstructs promotion of two_j<=138 as a uniformly small detector-profile input cutoff. It is not an infinite-tail upper bound, an evaluation of the omitted-shell exact-T cosine, a full Maxwell or massive image, recoil, tangent-cone restriction, Bridge 3 or quantum claim.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile, JSON/schema parse and scoped git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_two_j138_exact_t_input_tail_obstruction.py",
+      "elapsed_seconds": 0.59,
+      "status": "PASS",
+      "summary": "3 tests passed, including the mandatory scalar upper-neighbor channel and fail-closed spatial-lower mutation."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_two_j138_exact_t_input_tail_obstruction",
+      "status": "PASS",
+      "summary": "Schema, source/dependency hashes, first-omitted-shell adjacency, exact lower bounds and obstruction flags passed."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "status": "PASS",
+      "summary": "The generated observer atlas and shared fail-closed atlas schema passed."
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_two_j138_exact_t_input_tail_obstruction --emit",
+      "elapsed_seconds": 23.82,
+      "status": "PASS",
+      "summary": "All fifteen p=0,2,...,28 scalar upper-neighbor moments were evaluated once; the selected first-omitted-shell witness and upper-channel deletion mutation were exported."
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No infinite-mode image theorem, shared core-algebra change, freeze, release or lifecycle promotion was claimed."
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/generate_berger_two_j138_exact_t_input_tail_obstruction.py",
+      "sha256": "5b9253d322c25141172ba3cce29010bc94564f9f3c4560210b1b1e7f9e32ae59"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_two_j138_exact_t_input_tail_obstruction.py",
+      "sha256": "ecee7f5ebb08dfd69ab443bcd10f34505374f79a4902f96cb0e51074c7b59708"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_two_j138_exact_t_input_tail_obstruction.py",
+      "sha256": "6331330e23d553f553cdec59124db9ecfe30a1609ef53b4ae36d495cc36d22da"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-two-j138-exact-t-input-tail-obstruction-v1.schema.json",
+      "sha256": "32c5899ce496c3afc7f69d222346ad38f5636565dbeb7b871bfd5e14c69cd37f"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-two-j138-exact-t-input-tail-obstruction.md",
+      "sha256": "f6cce9cbda1f7aa404cd64784b83c06d96bdc05b7b87b72b6effca508e80f881"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION.json",
+      "sha256": "b00c9d972f671299329ac06e9ad2fcaf53f5b8ce0b3a2b7ca6fcc7109f167105"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "ab0acb871ea92955ec0475406233d5962d9950f6d564a1b4d9291887142d5ac0"
+    }
+  ],
+  "claim_flags": {
+    "FIRST_OMITTED_FORM_SHELL_TWO_J139_EVALUATED": true,
+    "COEFFICIENTWISE_SPATIAL_TAIL_LOWER_BOUND_ABOVE_FOUR_FIFTHS": true,
+    "TWO_J138_UNIFORM_SMALL_INPUT_TAIL_CERTIFIED": false,
+    "INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

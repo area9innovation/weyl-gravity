@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-two-j138-exact-t-input-tail-obstruction-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "cutoff_audit", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-two-j138-exact-t-input-tail-obstruction-v1"},
+    "result_id": {"const": "BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FIRST_OMITTED_SHELL_LOWER_BOUND_CERTIFIED_TWO_J138_INPUT_TAIL_PROMOTION_OBSTRUCTED"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 22},
+    "cutoff_audit": {"type": "object", "required": ["retained_form_two_j_maximum", "first_omitted_form_two_j", "required_scalar_upper_neighbor_two_j", "selected_recurrence", "small_tail_threshold", "witness"]},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {
+      "type": "object",
+      "required": ["FIRST_OMITTED_FORM_SHELL_TWO_J139_EVALUATED", "COEFFICIENTWISE_SPATIAL_TAIL_LOWER_BOUND_ABOVE_FOUR_FIFTHS", "COEFFICIENTWISE_TEMPORAL_CODERIVATIVE_LOWER_BOUND_ABOVE_FOUR_FIFTHS", "TWO_J138_UNIFORM_SMALL_INPUT_TAIL_CERTIFIED", "INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "FIRST_OMITTED_FORM_SHELL_TWO_J139_EVALUATED": {"const": true},
+        "COEFFICIENTWISE_SPATIAL_TAIL_LOWER_BOUND_ABOVE_FOUR_FIFTHS": {"const": true},
+        "COEFFICIENTWISE_TEMPORAL_CODERIVATIVE_LOWER_BOUND_ABOVE_FOUR_FIFTHS": {"const": true},
+        "TWO_J138_UNIFORM_SMALL_INPUT_TAIL_CERTIFIED": {"const": false},
+        "INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "WIDEN_THE_ADAPTIVE_HARMONIC_RAIL_OR_CERTIFY_A_PHYSICAL_SPACE_GREEN_CHAIN_BEFORE_RETESTING_THE_INFINITE_TAIL"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; obtain the same-gauge generic-background full-BV Hessian and trace substitution that matches the five exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    certify the spatial tail beyond the exact-T two_j=138 temporal rail, compose massive images, evaluate recoil, and restrict records to Z2^C
+Observer:    replace the first-omitted-shell-obstructed two_j=138 spatial cutoff by a wider adaptive rail or physical-space Green chain, then compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
 
@@ -243,13 +243,17 @@ separately.  The differentiated all-row rank-310 SDR is now exact: all twenty-on
 dual-number matrix identities vanish on the complete ten-block carrier in
 split and original coordinates, including chain maps, retract, side
 conditions, cyclicity and BV-canonical conjugation.  The active gate is
-now narrower.  The global four-row metric Green homotopy has the exact formal
+now closed at formal tangent order.  The global four-row metric Green homotopy has the exact formal
 variation `Gdot_+/-=-G0_+/- Pdot G0_+/-`, including both inverse identities,
-the differentiated chain homotopy and same-sided support.  The rank-310 SDR
-variation is presently only a fifth-order Taylor/PBW jet at one point; because
-the transverse tangent is time dependent, homogeneity does not globalize it.
-The next gate is a global covariant export of the varied inclusion,
-projection and homotopy, followed by formal causal transfer.
+the differentiated chain homotopy and same-sided support.  Instead of
+globalizing the one-point fifth-order Taylor table, the normalized cyclic
+basic perturbation lemma applied to the natural global `Qdot_310` gives
+`Idot=-H Qdot I`, `pdot=-p Qdot H`, `Hdot=-H Qdot H`, and
+`qdot=p Qdot I`.  These maps reproduce the pointwise geometric normalization
+and give the complete all-row same-sided formal causal contraction.  A smooth
+exact nonzero-`epsilon` family over the whole cylinder remains unclaimed.  The
+classical lane now advances to the queued same-background Bridge 1, Bridge 2,
+and interaction exports.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves
@@ -345,8 +349,12 @@ the truncation errors remain large, so temporal Green promotion is
 truncation: the order-14 internal `s/48` microphase remainder is below
 `1.64e-18`, and the complete finite-rail exact-`T` stream contains 143,180
 spatial plus 47,817 temporal dressed amplitudes.  The propagated temporal
-error stays below `4.23e-17`.  The active gate is therefore the spatial tail
-beyond `two_j=138`, not another temporal approximation.  The nonlinear apparatus
+error stays below `4.23e-17`.  The first omitted form shell then decides the
+spatial gate negatively: at `two_j=139`, column `69` and `q=-1/2`, a dressed
+spatial coefficient is above `0.827` and the dressed coderivative is above
+`0.862`.  Thus `two_j<=138` is `OBSTRUCTED` as a uniformly small input-tail
+cutoff.  The active route is a wider adaptive rail or a physical-space Green
+chain, not another temporal approximation.  The nonlinear apparatus
 dependency is also explicit and ordered by content hash: the normalized
 mixed `epsilon_R^2 kappa` unary certificate precedes apparatus `q2,q3`, which
 precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
@@ -391,7 +399,10 @@ ghost applicability audit now proves that the beta-independent Schur operator
 is elliptic but nonminimal and Hodge-mixed, so direct minimal-CPT substitution
 is architecture-obstructed even though the accepted Einstein scalar factor is
 reproduced exactly. A matched nonminimal ghost determinant and generic
-physical fourth-order Hessian kernel remain open; consequently the repository
+physical fourth-order Hessian kernel remain open; however, the ghost operator
+is now reduced exactly to a finite-proper-time Endo base plus `W=-2 Ric`.
+Through cubic order its remaining calculation is the finite set of one-, two-
+and three-Ricci insertion traces. Consequently the repository
 functions and coefficients and the parity-odd derivative manifest remain
 open. The raw local `BoxR` coefficient and exact strict-metric
 raw-to-`BoxR=0` scheme shift are fixed, reproducing the local `R2` coefficient
@@ -553,7 +564,9 @@ survive the first backreacted, normalized apparatus interaction?
    extreme-block witnesses obstruct promoting that Taylor stream directly.
    The angle-addition successor instead certifies the finite-rail exact-`T`
    temporal image through `two_j=138`, with propagated error below
-   `4.23e-17`.  The next gate is the spatial tail, then the infinite-mode
+   `4.23e-17`.  The first omitted form shell has a dressed coefficient above
+   `0.827`, so that rail is not a converged spatial cutoff.  The next gate is
+   a wider adaptive rail or physical-space Green chain, then the infinite-mode
    Maxwell/massive Green images and recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a
@@ -1246,11 +1259,11 @@ Wess--Zumino Hamiltonian piece is fixed, but an exact rank-two `C(g_hat)^2`/
 `R(g_hat)^2` bulk ambiguity refutes uniqueness until finite normalization and
 the finite nonlocal/renormalized-product data are supplied.
 
-The next coefficient-bearing analytic gate is no longer an unspecified trace
-substitution: it is a matched generic-background nonminimal Diff--Weyl ghost
-determinant (or an exactly determinant/Jacobian-equivalent local extension)
-plus the physical fourth-order Hessian kernel. This local Euclidean
-architecture obstruction is neither a new anomaly/QME disposition nor a
+The next coefficient-bearing analytic gate is the explicit evaluation of the
+generic ghost's one-, two- and three-Ricci insertion traces, plus the physical
+fourth-order Hessian kernel. The exact Endo--Duhamel reduction proves this
+list is complete through cubic curvature order. The preceding direct-minimal-
+CPT architecture obstruction is neither a new anomaly/QME disposition nor a
 Lorentzian no-go.
 
 The matter-cancellation T4 branch is closed: a separating dual-cone certificate proves
@@ -1293,7 +1306,7 @@ REPOSITORY_RELEASED artifact is committed, linked to its receipts, and public in
 | Berger light and relational redshift beyond Paper 11 | first scoped C-G4 theorem certified: actual retarded, spatially global probe signal with crossings, reduced probe bracket, and nontrivial evolution | localize emitter and receiver after the mixed \(\epsilon_R^2\kappa\) apparatus gate; do not promote the probe bracket to a full apparatus Dirac bracket |
 | Abstract Green/BGG transfer | outline allowed | abstract hypotheses, toy example, complete detour example, and independent verifier; avoid duplicating Paper 8 without a new abstraction or application |
 | Nonlinear quotient stability | `DRAFT_ALLOWED` for the scoped G0 filtered-cyclic obstruction theorem | keep transformation-class and frozen-carrier qualifiers explicit; branch-resolved or cohomological claims additionally require an accepted branch projector and residual descent |
-| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction, tau-adic extended one-loop local Euclidean restoration, exact rank-two `Q1` underdetermination, the conditional anomaly-induced Paneitz/Riegert `Gamma1` representative, the covariant curvature-squared `C2` logarithmic form factor and its exact FV scalar-flat Weyl-orbit completion, the exact FV anomaly action and Ricci-sector dependence theorem, the exact raw-to-`BoxR=0` strict-metric `R2` scheme conversion, the exhaustive one-even/one-odd zero-derivative algebraic `C3` basis, the parity-even five-carrier third-curvature manifest with exact `12 -> 11` label quotient, five exact universal CPT source kernels, and the generic ghost direct-minimal-CPT architecture obstruction; focused major revision completed with the determinant-to-Slavnov bridge, regular-Bach spectral sequence, explicit quartet homotopy and Euler primitive, matter vectors, narrowed effective-action claims, and a content-addressed referee-response ledger | final human and literature review before theorem freeze; the next theorem requires a matched nonminimal generic-background ghost determinant and physical fourth-order Hessian kernel before the repository third-curvature functions and coefficients, plus the parity-odd derivative manifest, finite `C2`/absolute dressed `R(g_hat)^2` normalization, renormalized products, a same-background compensator contraction, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
+| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction, tau-adic extended one-loop local Euclidean restoration, exact rank-two `Q1` underdetermination, the conditional anomaly-induced Paneitz/Riegert `Gamma1` representative, the covariant curvature-squared `C2` logarithmic form factor and its exact FV scalar-flat Weyl-orbit completion, the exact FV anomaly action and Ricci-sector dependence theorem, the exact raw-to-`BoxR=0` strict-metric `R2` scheme conversion, the exhaustive one-even/one-odd zero-derivative algebraic `C3` basis, the parity-even five-carrier third-curvature manifest with exact `12 -> 11` label quotient, five exact universal CPT source kernels, the generic ghost direct-minimal-CPT architecture obstruction, and its exact Endo–Duhamel reduction; focused major revision completed with the determinant-to-Slavnov bridge, regular-Bach spectral sequence, explicit quartet homotopy and Euler primitive, matter vectors, narrowed effective-action claims, and a content-addressed referee-response ledger | final human and literature review before theorem freeze; the next theorem requires evaluation of the ghost one-, two- and three-Ricci insertion traces and the physical fourth-order Hessian kernel before the repository third-curvature functions and coefficients, plus the parity-odd derivative manifest, finite `C2`/absolute dressed `R(g_hat)^2` normalization, renormalized products, a same-background compensator contraction, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
 | Asymptotic radiation and black holes | programme stage | boundary phase space, charges, flux, and extra-branch classification |
 | Galaxy/dark-matter and cosmology/dark-energy phenomenology | later programme stage | physical weak-field/cosmological observables and stability before data comparison |
 
@@ -1351,6 +1364,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_ORDER14_TEMPORAL_GREEN_CHARGE_STREAM_TWO_J138` (fired with Green-promotion obstruction) | replace the inaccurate global Taylor truncation by a validated blockwise functional calculus or oscillatory approximation; do not address the spatial tail or recoil until a temporal Green image is certified |
 | `BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT` (fired) | stream the microphase-dressed charge-block inputs while retaining exact `T` dependence; the existing even `p<=28` rails suffice |
 | `BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138` (fired) | certify the spatial harmonic tail beyond `two_j=138`, then compose the infinite-mode Maxwell and massive-two-form images before evaluating recoil |
+| `BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION` (fired with cutoff obstruction) | widen the adaptive harmonic rail or certify a physical-space Green chain; do not promote the exact-`T` finite rail to an infinite-mode detector response |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

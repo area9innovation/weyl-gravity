@@ -381,9 +381,13 @@ The blockwise stream now closes that finite-rail temporal gate.  It hashes
 143,180 spatial and 47,817 temporal dressed amplitudes across the same 48,372
 populated blocks, with the large `T` dependence retained as exact spectral
 functions.  Propagated microphase errors stay below `1.64e-18` spatially and
-`4.23e-17` temporally.  The active gate is now the spatial harmonic tail
-beyond `two_j=138`; no infinite-mode Maxwell image or recoil coefficient is
-claimed yet.
+`4.23e-17` temporally.  The first omitted-shell audit then evaluates exactly
+the scalar neighbor needed for form `two_j=139`.  At column `69` and
+`q=-1/2`, one dressed spatial coefficient is above `0.827` and the dressed
+coderivative is above `0.862`.  Thus the exact-`T` finite rail remains valid,
+but its promotion as a uniformly small spatial cutoff is `OBSTRUCTED`.  The
+active route is a wider adaptive rail or a certified physical-space Green
+chain; no infinite-mode Maxwell image or recoil coefficient is claimed yet.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source
