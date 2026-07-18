@@ -126,7 +126,10 @@ The tenth non-mode guard sharpens this boundary: the exact generic
 Diff--Weyl ghost Schur complement is elliptic but nonminimal, has principal
 spectrum `(3/2,1,1,1)`, and is generically Hodge-mixed. It reproduces the
 accepted Einstein scalar factor but obstructs direct minimal-CPT
-substitution. The guard remains `NO_CERTIFIED_MAP` to any particle row and
+substitution. Its constructive successor exactly reduces the operator to a
+finite-proper-time Endo base plus `W=-2 Ric`; through cubic order only the
+one-, two- and three-Ricci insertion traces remain. The guard remains
+`NO_CERTIFIED_MAP` to any particle row and
 does not alter the strict/extended QME disposition.
 The additive
 finite `C2` normalization, absolute dressed `R(g_hat)^2` normalization,

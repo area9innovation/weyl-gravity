@@ -141,6 +141,25 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             fv["quantum_data"]["particle_interpretation"]["status"],
             "NO_CERTIFIED_MAP",
         )
+        ghost = next(
+            entry for entry in guards
+            if entry["id"]
+            == "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle"
+        )
+        self.assertIn(
+            "one-, two- and three-Ricci insertion traces open",
+            ghost["scope"]["carrier"],
+        )
+        self.assertEqual(
+            {
+                evidence["result_id"]
+                for evidence in ghost["evidence"]
+            },
+            {
+                "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+                "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
+            },
+        )
         self.assertTrue(all(
             entry["quantum_data"]["particle_interpretation"]["status"] == "NO_CERTIFIED_MAP"
             for entry in guards

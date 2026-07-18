@@ -202,6 +202,26 @@ class ActiveFrontierTests(unittest.TestCase):
                 "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED"
+            ]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["FV_AND_WZ_DRESSED_METRICS_IDENTIFIED"]
         )
@@ -323,7 +343,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

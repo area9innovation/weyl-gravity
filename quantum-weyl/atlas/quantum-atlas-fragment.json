@@ -1235,7 +1235,7 @@
       }
     },
     {
-      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The zero-derivative algebraic C3 basis and parity-even third-curvature carrier manifest are complete, five exact universal CPT source kernels are imported, and the generic ghost operator is proved nonminimal and Hodge-mixed, obstructing direct minimal-CPT substitution. A matched nonminimal ghost determinant, the generic physical fourth-order Hessian kernel, the repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The zero-derivative algebraic C3 basis and parity-even third-curvature carrier manifest are complete, five exact universal CPT source kernels are imported, and the generic ghost operator has an exact Endo-Duhamel reduction to minimal vector/scalar kernels plus at most three Ricci insertions. Those insertion traces, the generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -1340,6 +1340,11 @@
           "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
         },
         {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
+          "sha256": "dca064e883904d146962d797dddd954f27a346f11302092f75760e2997770c58"
+        },
+        {
           "path": "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
           "result_id": "WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION",
           "sha256": "21fc06bb31a35f8aa8f1d8f35f6fe1e746a8ab881332e16072ee257b3a437b2c"
@@ -1393,7 +1398,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "anomaly_QME_dependency": {
-          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis and parity-even five-carrier manifest are complete, five exact universal CPT source kernels are imported, and direct minimal-CPT substitution for the generic ghost sector is obstructed, while the matched nonminimal ghost determinant, repository functions and coefficients, finite normalizations and complete Q1 are underdetermined",
+          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis and parity-even five-carrier manifest are complete, five exact universal CPT source kernels are imported, and the generic ghost determinant has an exact Endo-Duhamel reduction, while its Ricci-insertion traces, repository functions and coefficients, finite normalizations and complete Q1 are underdetermined",
           "status": "CERTIFIED"
         },
         "carrier_crosswalk": {
@@ -1414,7 +1419,7 @@
         ],
         "entry_kind": "CLASSICAL_TO_QUANTUM_CROSSWALK",
         "lifecycle_state": {
-          "statement": "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels and generic-ghost architecture obstruction are complete in scope, but the matched nonminimal ghost determinant, generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
+          "statement": "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels and generic-ghost Endo-Duhamel reduction are complete in scope, but the one-, two- and three-Ricci insertion traces, generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
           "status": "NO_CERTIFIED_MAP"
         },
         "pairing_status": {
@@ -2474,6 +2479,11 @@
           "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
           "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
           "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
+        },
+        {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
+          "result_id": "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
+          "sha256": "dca064e883904d146962d797dddd954f27a346f11302092f75760e2997770c58"
         }
       ],
       "id": "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle",
@@ -2564,7 +2574,7 @@
       "scope": {
         "background": "carrier-specific; no cross-background identification",
         "boundaries": "carrier-specific",
-        "carrier": "generic-background effective Diff-Weyl ghost determinant: elliptic nonminimal Hodge-mixed vector operator; direct minimal-CPT substitution obstructed",
+        "carrier": "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; one-, two- and three-Ricci insertion traces open",
         "charge_sector": "not a certified physical one-particle sector",
         "degree": "carrier-specific",
         "ell": "NO_CERTIFIED_MAP",
@@ -2691,7 +2701,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "43a06622a25c0cd7fb1d466292d923075a97358e4757da497536325d53b4e29a",
+  "generated_by_sha256": "398362d7ee17ec3c6bad5072bc474d0718068c2846902ab0cf22716dcc84d9bb",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -1,0 +1,219 @@
+{
+  "Duhamel_expansion": {
+    "cubic_work_table": [
+      {
+        "Duhamel_sign": 1,
+        "Ricci_insertion_count": 0,
+        "maximum_background_order_from_Endo_kernels": 3,
+        "simplex_dimension": 0,
+        "total_curvature_order": 3
+      },
+      {
+        "Duhamel_sign": -1,
+        "Ricci_insertion_count": 1,
+        "maximum_background_order_from_Endo_kernels": 2,
+        "simplex_dimension": 1,
+        "total_curvature_order": 3
+      },
+      {
+        "Duhamel_sign": 1,
+        "Ricci_insertion_count": 2,
+        "maximum_background_order_from_Endo_kernels": 1,
+        "simplex_dimension": 2,
+        "total_curvature_order": 3
+      },
+      {
+        "Duhamel_sign": -1,
+        "Ricci_insertion_count": 3,
+        "maximum_background_order_from_Endo_kernels": 0,
+        "simplex_dimension": 3,
+        "total_curvature_order": 3
+      }
+    ],
+    "curvature_degree_of_W": 1,
+    "finite_at_declared_order": true,
+    "heat_kernel_formula": "exp(-t(H0+W))=sum_n>=0 (-1)^n integral_ordered_simplex exp(-(t-s1)H0) W ... W exp(-sn H0)",
+    "log_determinant_formula": "Tr log H=Tr log H0+sum_n>=1 (-1)^(n+1) Tr((H0^{-1}W)^n)/n",
+    "maximum_W_insertions_through_cubic_order": 3
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL result exactly rewrites the positive generic Diff-Weyl ghost operator as the nondegenerate Endo vector base H0=F-(1/2)grad div plus the local endomorphism W=-2 Ric. The Endo base has an exact finite-proper-time heat-kernel formula and a nonzero-mode determinant reduction to one minimal vector and one scalar scaling term. Since W is curvature order one, the generic ghost determinant through third curvature order requires no more than three ordered Ricci insertions. The insertion traces and their carrier coefficients have not been evaluated, the generic physical fourth-order Hessian kernel is absent, and no repository cubic function or coefficient, complete Gamma1/Q1, residual transfer, Lorentzian, Hadamard, particle, positivity or unitarity theorem is claimed.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "CUBIC_DUHAMEL_INSERTION_BOUND_CERTIFIED": true,
+    "ENDO_HEAT_KERNEL_FORMULA_SPECIALIZED": true,
+    "GENERIC_GHOST_ENDO_BASE_IDENTIFIED": true,
+    "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": false,
+    "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": true,
+    "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "NONZERO_MODE_ENDO_DETERMINANT_REDUCED": true,
+    "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": false,
+    "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED": false,
+    "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "ghost_CPT_obstruction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
+      "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+      "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
+    },
+    "universal_CPT_kernels": {
+      "path": "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
+      "result_id": "CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS",
+      "sha256": "1c2d987f25042431ad079f976b5a421866d91cc8f720abaaa4ad2e9c9f543805"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_Endo_heat_kernel": {
+    "IR_infinite_range_introduced": false,
+    "finite_proper_time_interval": true,
+    "flat_projector_check": "K_H0_flat=Pi_T exp(-t p^2)+Pi_L exp(-(3/2)t p^2)",
+    "formula": "K_H0(t)=K_F(t)-grad grad_prime integral_t^(3t/2) ds K_Delta0(s)",
+    "proper_time_lower_multiplier": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "proper_time_upper_multiplier": {
+      "denominator": 2,
+      "numerator": 3
+    }
+  },
+  "exact_Endo_split": {
+    "Endo_base": "H0=F+alpha grad div",
+    "F_coefficients": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "H0_coefficients": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": -1
+      }
+    ],
+    "W_coefficients": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": -2
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "Ward_identities": [
+      "div F=Delta_0 div",
+      "F grad=grad Delta_0"
+    ],
+    "alpha": {
+      "denominator": 2,
+      "numerator": -1
+    },
+    "gradient_action": "H0 grad=(3/2) grad Delta_0; H grad=(3/2) grad Delta_0-2 Ric grad",
+    "identity": "H=H0+W",
+    "local_perturbation": "W=-2 Ric",
+    "minimal_vector_operator": "F=-Box I+Ric"
+  },
+  "lifecycle_state": "EXACT_REDUCTION_CERTIFIED_INSERTION_TRACES_NOT_EVALUATED",
+  "next_gate": "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+  "nonzero_mode_determinant_identity": {
+    "formula": "det_prime(H0)=det_prime(F)*det_prime((3/2)Delta_0)/det_prime(Delta_0)",
+    "nonlocal_form_factor_consequence": "the Endo-base difference from F is local; nonlocal corrections enter through W=-2 Ric insertions",
+    "zero_modes_excluded": true,
+    "zeta_scaled_formula": "log det_prime(H0)=log det_prime(F)+zeta_Delta0(0) log(3/2)"
+  },
+  "principal_projectors": {
+    "flat_inverse": "H0^{-1}=Delta_0^{-1}(Pi_T+(2/3)Pi_L)",
+    "inverse_longitudinal_coefficient": {
+      "denominator": 3,
+      "numerator": 2
+    },
+    "longitudinal_eigenvalue": {
+      "denominator": 2,
+      "numerator": 3
+    },
+    "nondegenerate": true,
+    "transverse_eigenvalue": {
+      "denominator": 1,
+      "numerator": 1
+    }
+  },
+  "repository_operator_convention": {
+    "H_coefficients": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": -1
+      }
+    ],
+    "Schur_operator": "M_eff=Box I+Ric+(1/2) grad div",
+    "coefficient_basis": [
+      "-Box I",
+      "Ric",
+      "grad div"
+    ],
+    "positive_Euclidean_operator": "H=-M_eff=-Box I-Ric-(1/2) grad div"
+  },
+  "result_id": "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
+  "result_state": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
+  "schema": "quantum-weyl-generic-background-ghost-endo-duhamel-reduction-v1",
+  "scope": {
+    "background": "generic local oriented metric; compact without boundary for determinant factorization",
+    "curvature_order": "exact operator split; determinant work table truncated through O(curvature^3)",
+    "dimension": 4,
+    "operator_domain": "nonzero ghost modes; global zero-mode volume and boundary conditions remain separately primed",
+    "signature": "Euclidean"
+  },
+  "source_provenance": {
+    "arxiv": "2508.06439v2",
+    "authors": [
+      "A. O. Barvinsky",
+      "A. E. Kalugin",
+      "W. Wachowski"
+    ],
+    "convention_specialization": "source H=-Box I+alpha grad div+Ric with alpha=-1/2 is H0; repository H differs by W=-2 Ric",
+    "formula_locations": [
+      "equations labelled minimal_vector and Ward",
+      "equations labelled nonminimal-vector, K11, fullKforvec"
+    ],
+    "source_archive_sha256": "485ad72c51304f25e289d3f6c72705a956c547c134e2f183bef3750e63e6757c",
+    "source_tex_file": "nonmin1rev.tex",
+    "source_tex_sha256": "4b5cdb2dbf08cc1a34dc268e1961c54f0a1eee096d2df63214a73e91d0d71fc2",
+    "title": "Schwinger--DeWitt expansion for the heat kernel of nonminimal operators in causal theories",
+    "url": "https://arxiv.org/abs/2508.06439v2"
+  }
+}

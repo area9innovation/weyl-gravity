@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.example/schemas/generic-background-ghost-endo-duhamel-reduction-v1.schema.json",
+  "title": "Generic-background ghost Endo-Duhamel reduction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "repository_operator_convention", "exact_Endo_split", "principal_projectors", "exact_Endo_heat_kernel", "nonzero_mode_determinant_identity", "Duhamel_expansion", "source_provenance", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-endo-duhamel-reduction-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"},
+    "result_state": {"const": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES"},
+    "lifecycle_state": {"const": "EXACT_REDUCTION_CERTIFIED_INSERTION_TRACES_NOT_EVALUATED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "signature", "background", "operator_domain", "curvature_order"],
+      "properties": {
+        "dimension": {"const": 4}, "signature": {"const": "Euclidean"},
+        "background": {"type": "string"}, "operator_domain": {"type": "string"}, "curvature_order": {"type": "string"}
+      }
+    },
+    "repository_operator_convention": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Schur_operator", "positive_Euclidean_operator", "coefficient_basis", "H_coefficients"],
+      "properties": {
+        "Schur_operator": {"const": "M_eff=Box I+Ric+(1/2) grad div"},
+        "positive_Euclidean_operator": {"const": "H=-M_eff=-Box I-Ric-(1/2) grad div"},
+        "coefficient_basis": {"const": ["-Box I", "Ric", "grad div"]},
+        "H_coefficients": {"$ref": "#/$defs/triple"}
+      }
+    },
+    "exact_Endo_split": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimal_vector_operator", "Endo_base", "alpha", "local_perturbation", "F_coefficients", "H0_coefficients", "W_coefficients", "identity", "Ward_identities", "gradient_action"],
+      "properties": {
+        "minimal_vector_operator": {"const": "F=-Box I+Ric"},
+        "Endo_base": {"const": "H0=F+alpha grad div"},
+        "alpha": {"$ref": "#/$defs/fraction"},
+        "local_perturbation": {"const": "W=-2 Ric"},
+        "F_coefficients": {"$ref": "#/$defs/triple"},
+        "H0_coefficients": {"$ref": "#/$defs/triple"},
+        "W_coefficients": {"$ref": "#/$defs/triple"},
+        "identity": {"const": "H=H0+W"},
+        "Ward_identities": {"const": ["div F=Delta_0 div", "F grad=grad Delta_0"]},
+        "gradient_action": {"type": "string"}
+      }
+    },
+    "principal_projectors": {
+      "type": "object", "additionalProperties": false,
+      "required": ["transverse_eigenvalue", "longitudinal_eigenvalue", "flat_inverse", "inverse_longitudinal_coefficient", "nondegenerate"],
+      "properties": {
+        "transverse_eigenvalue": {"$ref": "#/$defs/fraction"},
+        "longitudinal_eigenvalue": {"$ref": "#/$defs/fraction"},
+        "flat_inverse": {"type": "string"},
+        "inverse_longitudinal_coefficient": {"$ref": "#/$defs/fraction"},
+        "nondegenerate": {"const": true}
+      }
+    },
+    "exact_Endo_heat_kernel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "proper_time_lower_multiplier", "proper_time_upper_multiplier", "flat_projector_check", "finite_proper_time_interval", "IR_infinite_range_introduced"],
+      "properties": {
+        "formula": {"type": "string"},
+        "proper_time_lower_multiplier": {"$ref": "#/$defs/fraction"},
+        "proper_time_upper_multiplier": {"$ref": "#/$defs/fraction"},
+        "flat_projector_check": {"type": "string"},
+        "finite_proper_time_interval": {"const": true},
+        "IR_infinite_range_introduced": {"const": false}
+      }
+    },
+    "nonzero_mode_determinant_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "zeta_scaled_formula", "nonlocal_form_factor_consequence", "zero_modes_excluded"],
+      "properties": {
+        "formula": {"type": "string"}, "zeta_scaled_formula": {"type": "string"},
+        "nonlocal_form_factor_consequence": {"type": "string"}, "zero_modes_excluded": {"const": true}
+      }
+    },
+    "Duhamel_expansion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["heat_kernel_formula", "log_determinant_formula", "curvature_degree_of_W", "cubic_work_table", "maximum_W_insertions_through_cubic_order", "finite_at_declared_order"],
+      "properties": {
+        "heat_kernel_formula": {"type": "string"}, "log_determinant_formula": {"type": "string"},
+        "curvature_degree_of_W": {"const": 1},
+        "cubic_work_table": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/workRow"}},
+        "maximum_W_insertions_through_cubic_order": {"const": 3},
+        "finite_at_declared_order": {"const": true}
+      }
+    },
+    "source_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "authors", "arxiv", "url", "source_archive_sha256", "source_tex_file", "source_tex_sha256", "formula_locations", "convention_specialization"],
+      "properties": {
+        "title": {"type": "string"}, "authors": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "arxiv": {"const": "2508.06439v2"}, "url": {"const": "https://arxiv.org/abs/2508.06439v2"},
+        "source_archive_sha256": {"$ref": "#/$defs/hash"}, "source_tex_file": {"const": "nonmin1rev.tex"},
+        "source_tex_sha256": {"$ref": "#/$defs/hash"}, "formula_locations": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+        "convention_specialization": {"type": "string"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERIC_GHOST_ENDO_BASE_IDENTIFIED", "ENDO_HEAT_KERNEL_FORMULA_SPECIALIZED", "NONZERO_MODE_ENDO_DETERMINANT_REDUCED", "CUBIC_DUHAMEL_INSERTION_BOUND_CERTIFIED", "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED", "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED", "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED", "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED", "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED", "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_GHOST_ENDO_BASE_IDENTIFIED": {"const": true},
+        "ENDO_HEAT_KERNEL_FORMULA_SPECIALIZED": {"const": true},
+        "NONZERO_MODE_ENDO_DETERMINANT_REDUCED": {"const": true},
+        "CUBIC_DUHAMEL_INSERTION_BOUND_CERTIFIED": {"const": true},
+        "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": {"const": true},
+        "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": {"const": false},
+        "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": {"const": false},
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ghost_CPT_obstruction", "universal_CPT_kernels"],
+      "properties": {"ghost_CPT_obstruction": {"$ref": "#/$defs/reference"}, "universal_CPT_kernels": {"$ref": "#/$defs/reference"}}
+    },
+    "next_gate": {"const": "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "triple": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fraction"}},
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "workRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Ricci_insertion_count", "maximum_background_order_from_Endo_kernels", "total_curvature_order", "Duhamel_sign", "simplex_dimension"],
+      "properties": {
+        "Ricci_insertion_count": {"type": "integer", "minimum": 0, "maximum": 3},
+        "maximum_background_order_from_Endo_kernels": {"type": "integer", "minimum": 0, "maximum": 3},
+        "total_curvature_order": {"const": 3}, "Duhamel_sign": {"enum": [-1, 1]},
+        "simplex_dimension": {"type": "integer", "minimum": 0, "maximum": 3}
+      }
+    }
+  }
+}

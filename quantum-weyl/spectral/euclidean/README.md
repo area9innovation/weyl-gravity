@@ -55,12 +55,26 @@ rank or endomorphism substitution. The next analytic input is a matched
 nonminimal-vector determinant/CPT calculation or an exactly equivalent local
 extension with its Jacobian; this is not an anomaly or Lorentzian no-go.
 
+The obstruction now has a constructive exact reduction in
+[`GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json`](certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json).
+For the positive Euclidean operator,
+`H=H0+W` with `H0=(-Box I+Ric)-(1/2)grad div` and `W=-2 Ric`.
+The Endo base has the exact finite-interval heat kernel
+`K_H0(t)=K_F(t)-grad grad' integral_t^(3t/2) K_Delta0(s) ds`, and its
+nonzero-mode determinant differs from `det F` only by the local scalar
+zeta-scaling term. Through cubic curvature order the remaining ghost work is
+therefore the finite set of one-, two- and three-Ricci insertion traces. Those
+traces—and hence the generic ghost form-factor coefficients—remain open.
+
 Replay with:
 
 ```bash
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_cpt_obstruction --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_cpt_obstruction
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_cpt_obstruction
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_endo_duhamel_reduction --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_endo_duhamel_reduction
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_endo_duhamel_reduction
 ```
 
 The generic schema in this directory remains a promotion gate: a coefficient record is valid

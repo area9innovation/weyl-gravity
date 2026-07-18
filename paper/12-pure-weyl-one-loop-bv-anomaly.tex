@@ -948,6 +948,39 @@ current matching architecture, not a new anomaly, QME, or Lorentzian
 no-go theorem.
 \end{proposition}
 
+\begin{proposition}[Exact Endo--Duhamel reduction of the ghost determinant]
+With the positive Euclidean convention $H=-M_{\rm eff}$, set
+\[
+ F=-\Box\mathbf1+\operatorname{Ric},\qquad
+ H_0=F-\frac12\nabla\nabla\!\cdot,\qquad
+ W=-2\operatorname{Ric}.
+\]
+Then $H=H_0+W$ exactly.  The base $H_0$ is the nondegenerate Endo vector
+operator with parameter $\alpha=-1/2$, whose transverse and longitudinal
+principal eigenvalues are $1$ and $3/2$.  The Ward identities for $F$ give
+the exact heat kernel~\cite{BarvinskyNonminimal}
+\[
+ K_{H_0}(t)=K_F(t)-\nabla\nabla'
+ \int_t^{3t/2}ds\,K_{\Delta_0}(s).
+\]
+Thus, on nonzero modes of a compact background without boundary,
+\[
+ \det{}'H_0=\det{}'F\,
+ \frac{\det{}'((3/2)\Delta_0)}{\det{}'\Delta_0},
+\]
+and the last ratio contributes only the local zeta-scaling term
+$\zeta_{\Delta_0}(0)\log(3/2)$.
+
+Since $W=O(\mathcal R)$, the Duhamel expansion through
+$O(\mathcal R^3)$ terminates, at the declared order, after the one-, two- and
+three-$W$ insertion traces.  More precisely, the zero-, one-, two- and
+three-insertion rows require the Endo kernels only through curvature orders
+$3,2,1,0$, respectively.  This converts the missing generic ghost
+calculation into a finite coefficient problem.  The insertion traces and
+their carrier coordinates have not yet been evaluated, and the generic
+physical fourth-order Hessian kernel remains separate.
+\end{proposition}
+
 \begin{proposition}[Exact local $\Box R$ scheme conversion]
 In the zeta/proper-time prescription of Barvinsky et
 al.~\cite{BarvinskyLocal}, the imported fourth heat-kernel rows combine with
@@ -1003,7 +1036,9 @@ third-curvature five-carrier quotient and the five exact universal CPT source
 kernels are exact.  The generic ghost calculation now proves that direct
 minimal-CPT substitution is obstructed by a nonminimal, Hodge-mixed Schur
 operator.  A matched nonminimal-vector determinant and the generic physical
-fourth-order Hessian kernel, hence the five repository form-factor functions and
+fourth-order Hessian kernel were the missing route; the preceding proposition
+now reduces the ghost part to the finite one-, two- and three-Ricci insertion
+traces.  Those traces and the physical kernel, hence the five repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
@@ -1037,6 +1072,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json}.
 \item \cert{quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
@@ -1071,6 +1107,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_cpt_universal_third_curvature_kernels
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_cpt_obstruction
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_endo_duhamel_reduction
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
@@ -1176,6 +1214,12 @@ Phys. Rev. D \textbf{108} (2023), 045014,
 A.~O. Barvinsky, Yu.~V. Gusev, V.~V. Zhytnikov, and G.~A. Vilkovisky,
 \emph{Covariant perturbation theory (IV). Third order in the curvature},
 arXiv:0911.1168.
+
+\bibitem{BarvinskyNonminimal}
+A.~O. Barvinsky, A.~E. Kalugin, and W.~Wachowski,
+\emph{Schwinger--DeWitt expansion for the heat kernel of nonminimal
+operators in causal theories},
+arXiv:2508.06439v2.
 
 \bibitem{BarvinskyConformalDecomposition}
 A.~O. Barvinsky and G.~A. Vilkovisky,

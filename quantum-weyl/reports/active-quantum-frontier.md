@@ -64,8 +64,12 @@ Weyl-row elimination gives an elliptic but nonminimal beta-independent vector
 operator with principal spectrum `(3/2,1,1,1)`, and generic tracefree Ricci
 curvature mixes its Hodge sectors. It reduces to the accepted scalar ghost
 factor on Einstein backgrounds, but direct minimal-CPT substitution is
-architecture-obstructed. A matched nonminimal ghost determinant and generic
-physical fourth-order Hessian kernel are the next coefficient-bearing input.
+architecture-obstructed. The positive operator is nevertheless reduced
+exactly to the nondegenerate Endo base with `alpha=-1/2` plus `W=-2 Ric`.
+The base heat kernel uses only a finite proper-time transform of minimal
+vector/scalar kernels, and through cubic order the remaining ghost work is
+exactly the one-, two- and three-Ricci insertion traces. Those traces and the
+generic physical fourth-order Hessian kernel are the next coefficient-bearing input.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -102,6 +106,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`four-dimensional-third-curvature-weyl-carrier-manifest.md`](four-dimensional-third-curvature-weyl-carrier-manifest.md),
 [`cpt-universal-third-curvature-kernels.md`](cpt-universal-third-curvature-kernels.md),
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](generic-background-diff-weyl-ghost-cpt-obstruction.md),
+[`generic-background-ghost-endo-duhamel-reduction.md`](generic-background-ghost-endo-duhamel-reduction.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 

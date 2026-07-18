@@ -865,10 +865,14 @@ spectrum is `(3/2,1,1,1)`, and an explicit tracefree-Ricci jet sends a
 longitudinal input into a transverse component. Thus it is elliptic but
 nonminimal and generically Hodge-mixed. Its Einstein specialization exactly
 reproduces the accepted `Delta_0-R/3` scalar factor. The active coefficient
-gate is consequently a matched nonminimal-vector ghost determinant (or an
-exact determinant/Jacobian-equivalent local extension) together with the
-generic physical fourth-order Hessian kernel. This is an architecture
-obstruction, not an anomaly, QME, or Lorentzian no-go.
+route is now constructive: for `H=-M_eff`, the exact split is
+`H=H0-2 Ric`, where `H0=(-Box I+Ric)-(1/2)grad div` is the nondegenerate Endo
+operator with `alpha=-1/2`. Its heat kernel is a finite-proper-time transform
+of one minimal vector and one scalar heat kernel. Through cubic curvature
+order, the unresolved ghost work is therefore exactly the one-, two- and
+three-Ricci insertion traces. The generic physical fourth-order Hessian
+kernel remains independently open. The original direct-substitution failure
+is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
 The available positive-Berger `34 -> 26` SDR does not supply that contraction.
 Its row named `tau` is the temporal diffeomorphism ghost in the Berger
@@ -877,9 +881,9 @@ different local-BV carrier. The content-addressed merge audit therefore
 rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
-rail for Bridge 5. Its remaining local gate begins with the nonminimal
-generic-background ghost determinant and physical fourth-order Hessian
-kernel, followed by the five parity-even third-curvature repository
+rail for Bridge 5. Its remaining local gate begins with evaluation of the
+generic ghost's one-, two- and three-Ricci insertion traces and the physical
+fourth-order Hessian kernel, followed by the five parity-even third-curvature repository
 form-factor functions and coefficients,
 the parity-odd derivative manifest,
 finite `C2` and absolute dressed `R(g_hat)^2` normalization, and complete
@@ -952,6 +956,8 @@ are recorded in
 The exact generic Diff--Weyl ghost Schur operator and the direct minimal-CPT
 architecture obstruction are recorded in
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](../quantum-weyl/reports/generic-background-diff-weyl-ghost-cpt-obstruction.md).
+Its exact constructive reduction is recorded in
+[`generic-background-ghost-endo-duhamel-reduction.md`](../quantum-weyl/reports/generic-background-ghost-endo-duhamel-reduction.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as

@@ -65,6 +65,7 @@ DEPENDENCIES = {
     "third_curvature_Weyl_manifest": HERE / "transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
     "CPT_universal_third_curvature_kernels": HERE / "transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
+    "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -156,6 +157,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "third_curvature_Weyl_manifest": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN",
         "CPT_universal_third_curvature_kernels": "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_CONFORMAL_GRAVITON_TRACE_SUBSTITUTION_OPEN",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
+        "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
@@ -179,6 +181,7 @@ def _load() -> dict[str, dict[str, Any]]:
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
     cpt_third_curvature = values["CPT_universal_third_curvature_kernels"]
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
+    generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -465,6 +468,31 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("generic-background ghost CPT obstruction frontier drifted")
+    if (
+        generic_ghost_endo.get("exact_Endo_split", {}).get("local_perturbation")
+        != "W=-2 Ric"
+        or generic_ghost_endo.get("exact_Endo_heat_kernel", {}).get(
+            "proper_time_upper_multiplier"
+        )
+        != {"numerator": 3, "denominator": 2}
+        or generic_ghost_endo.get("Duhamel_expansion", {}).get(
+            "maximum_W_insertions_through_cubic_order"
+        )
+        != 3
+        or generic_ghost_endo.get("claim_flags", {}).get(
+            "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED"
+        )
+        is not True
+        or generic_ghost_endo.get("claim_flags", {}).get(
+            "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED"
+        )
+        is not False
+        or generic_ghost_endo.get("claim_flags", {}).get(
+            "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost Endo-Duhamel reduction frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1330,8 +1358,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_DIRECT_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED_Q1_UNDERDETERMINED",
-                "next_gate": "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_ENDO_DUHAMEL_REDUCTION_EXACT_INSERTION_TRACES_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1346,8 +1374,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_DIRECT_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED_NONMINIMAL_GHOST_DETERMINANT_PHYSICAL_FOURTH_ORDER_KERNEL_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_ENDO_DUHAMEL_REDUCTION_EXACT_INSERTION_TRACES_PHYSICAL_FOURTH_ORDER_KERNEL_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
         },
         "supersession_ledger": [
@@ -1471,6 +1499,8 @@ def build() -> dict[str, Any]:
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
             "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED": True,
             "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED": True,
+            "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": True,
+            "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": False,
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": False,
             "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED": False,
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": True,
@@ -1535,7 +1565,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "EVALUATE_GHOST_RICCI_INSERTION_TRACES_N1_N2_N3_AND_SUPPLY_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1588,6 +1618,14 @@ def build() -> dict[str, Any]:
             "minimal-Laplace CPT kernels is therefore obstructed; a matched nonminimal-vector "
             "ghost determinant or an exact determinant/Jacobian-equivalent local extension is "
             "required. This is an architecture obstruction, not an anomaly or Lorentzian no-go. "
+            "The positive ghost operator is now exactly split as H=H0-2Ric, where "
+            "H0 is the nondegenerate Endo vector operator with alpha=-1/2. Its heat "
+            "kernel reduces on a finite proper-time interval to one minimal vector and "
+            "one scalar heat kernel, and its nonzero-mode determinant differs from the "
+            "minimal vector determinant only by the local zeta scaling "
+            "zeta_Delta0(0)log(3/2). Through third curvature order the remaining "
+            "generic ghost contribution is a finite list of one-, two- and three-Ricci "
+            "insertions. Those traces have not yet been evaluated. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
@@ -1872,6 +1910,10 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED")
         is not True
+        or flags.get("GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED")
+        is not True
+        or flags.get("GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED")
+        is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED")
         is not False
         or flags.get("REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED")
@@ -1935,6 +1977,8 @@ def validate(result: dict[str, Any]) -> None:
             "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
             "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED",
             "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
+            "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED",
+            "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED",
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED",
             "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED",
             "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",

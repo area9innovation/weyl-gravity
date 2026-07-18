@@ -692,6 +692,41 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   spectral.euclidean.tests.test_generic_background_ghost_cpt_obstruction
 \end{verbatim}
 
+\subsection{Exact Endo--Duhamel ghost reduction}
+
+The architecture obstruction admits a constructive reduction.  With
+$H=-M_{\rm eff}$, the verifier reconstructs the coefficient triples in the
+basis $(-\Box\mathbf1,\operatorname{Ric},\nabla\nabla\!\cdot)$:
+\[
+ H=(1,-1,-\tfrac12),\quad
+ F=(1,1,0),\quad
+ H_0=(1,1,-\tfrac12),\quad
+ W=(0,-2,0),
+\]
+and checks $H=H_0+W$.  The version-pinned primary Endo formula specializes
+at $\alpha=-1/2$ to
+\[
+ K_{H_0}(t)=K_F(t)-\nabla\nabla'\int_t^{3t/2}ds\,K_{\Delta_0}(s).
+\]
+The independent replay verifies the flat projector exponents, the
+longitudinal inverse coefficient $2/3$, the finite proper-time interval, and
+the nonzero-mode determinant identity.  It then constructs the complete
+cubic work table
+\[
+ (n,\,\text{maximum Endo-kernel order})=(0,3),(1,2),(2,1),(3,0).
+\]
+The remaining ghost coefficient calculation is therefore finite, but the
+listed insertion traces are not silently marked evaluated.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_endo_duhamel_reduction --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_endo_duhamel_reduction
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_endo_duhamel_reduction
+\end{verbatim}
+
 \subsection{Exact local BoxR scheme conversion}
 
 The zeta/proper-time calculation imports the published local heat-kernel rows
@@ -752,6 +787,9 @@ to repository form-factor functions or coefficients;
 \item replay the generic Diff--Weyl ghost Schur complement, nonminimal
 principal spectrum and tracefree-Ricci Hodge mixing, while rejecting direct
 minimal-CPT substitution and any promotion to a completed ghost determinant;
+\item replay the exact Endo split, finite-proper-time heat kernel,
+nonzero-mode determinant identity and cubic Duhamel insertion bound, while
+rejecting promotion of the unevaluated insertion traces;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
@@ -819,8 +857,8 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item a matched nonminimal generic-background Diff--Weyl ghost determinant
-and the generic physical fourth-order Hessian kernel, followed by the five
+\item evaluation of the generic Diff--Weyl ghost one-, two- and three-Ricci
+insertion traces and the generic physical fourth-order Hessian kernel, followed by the five
 repository parity-even third-curvature form-factor functions and coefficients,
 the parity-odd derivative carrier manifest, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
