@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-round-s4-tt-hessian-dictionary-receiver-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "accepted_contract", "receiver_mechanics", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-round-s4-tt-hessian-dictionary-receiver-readiness-v1"},
+    "result_id": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_RECEIVER_READINESS"},
+    "result_state": {"const": "SEMANTIC_RECEIVER_READY_PHYSICAL_TT_DICTIONARY_INPUT_NOT_SUPPLIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_hashes": {"type": "object", "additionalProperties": false, "required": ["missing_carrier_certificate", "input_schema"], "properties": {"missing_carrier_certificate": {"$ref": "#/$defs/hash"}, "input_schema": {"$ref": "#/$defs/hash"}}},
+    "accepted_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required_result_id", "input_schema_path", "required_kappa", "required_operator", "required_proof_artifacts", "physical_input_status"],
+      "properties": {"required_result_id": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"}, "input_schema_path": {"const": "quantum-weyl/spectral/euclidean/schema/repository-round-s4-tt-hessian-dictionary-input-v1.schema.json"}, "required_kappa": {"const": {"numerator": 1, "denominator": 2}}, "required_operator": {"const": "(1/2) Delta_2_perp(2) Delta_2_perp(4)"}, "required_proof_artifacts": {"const": ["content-addressed producer", "content-addressed independent verifier"]}, "physical_input_status": {"const": "NOT_SUPPLIED"}}
+    },
+    "receiver_mechanics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "synthetic_receipt", "mutation_receipts"],
+      "properties": {
+        "scope": {"const": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY"},
+        "synthetic_receipt": {"$ref": "#/$defs/receipt"},
+        "mutation_receipts": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["mutation", "rejected"],
+            "properties": {
+              "mutation": {"enum": ["kappa_2_over_3", "upper_shift_5", "bad_nested_hash", "wrong_classical_commit"]},
+              "rejected": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "claim_flags": {"const": {"TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": true, "KAPPA_HALF_AND_FACTOR_SHIFTS_ENFORCED": true, "CONTENT_ADDRESSED_PROOF_ARTIFACTS_ENFORCED": true, "PHYSICAL_TT_DICTIONARY_INPUT_SUPPLIED": false, "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": false, "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false, "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false, "QME_DISPOSITION": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "SUPPLY_AND_ACCEPT_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"},
+    "claim_boundary": {"type": "string", "minLength": 700},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["result_id", "classical_commit", "bundle_rank", "kappa", "lower_factor", "upper_factor", "Hessian_kernel_dimension", "proof_artifact_count", "status"], "properties": {"result_id": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"}, "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "bundle_rank": {"const": 5}, "kappa": {"const": {"numerator": 1, "denominator": 2}}, "lower_factor": {"const": "Delta_2_perp(2)"}, "upper_factor": {"const": "Delta_2_perp(4)"}, "Hessian_kernel_dimension": {"const": 0}, "proof_artifact_count": {"const": 2}, "status": {"const": "SEMANTIC_RECEIVER_ACCEPTED"}}}
+  }
+}

@@ -65,8 +65,12 @@ coefficient. These factor, exponent, measure, zero-mode, contour, parity, and
 local-`b4` regulator inputs are now consolidated in one standard integration
 slice reproducing `(199/30,-87/20,0)`. Matching the TT dictionary and auxiliary
 row to the repository, fixing the global determinant phase, and accepting the
-complete repository full-BV ledger remain open. A strict, content-addressed
-full-BV multiplicity receiver is ready. It rejects
+complete repository full-BV ledger remain open. The missing TT dictionary now
+has its own executable receiver: it enforces `kappa=1/2`, shifts `2,4`, formal
+self-adjoint TT ellipticity, zero physical kernel, and content-addressed
+producer/verifier artifacts. Its accepted fixture tests mechanics only; no
+physical input has landed. A strict, content-addressed full-BV multiplicity
+receiver is also ready. It rejects
 orphan rows or factors, duplicate standard maps, target-rank drift, scalar
 map drift, and nested proof-hash drift; the
 classical 54-row carrier is not treated as a loop operator. These results do

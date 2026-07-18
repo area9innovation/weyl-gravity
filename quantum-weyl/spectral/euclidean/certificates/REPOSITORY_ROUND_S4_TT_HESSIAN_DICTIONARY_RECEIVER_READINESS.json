@@ -1,0 +1,87 @@
+{
+  "accepted_contract": {
+    "input_schema_path": "quantum-weyl/spectral/euclidean/schema/repository-round-s4-tt-hessian-dictionary-input-v1.schema.json",
+    "physical_input_status": "NOT_SUPPLIED",
+    "required_kappa": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "required_operator": "(1/2) Delta_2_perp(2) Delta_2_perp(4)",
+    "required_proof_artifacts": [
+      "content-addressed producer",
+      "content-addressed independent verifier"
+    ],
+    "required_result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL artifact supplies a strict semantic receiver for the missing repository round-S4 TT Hessian dictionary. The input contract enforces the fixed round-unit-S4 background, repository S_red normalization, flat-TT leading-symbol coefficient kappa=1/2, exact factors Delta_2_perp(2) and Delta_2_perp(4), formal self-adjointness, ellipticity on the real TT bundle, zero physical kernel, and content-addressed producer/verifier artifacts. A synthetic fixture exercises the complete receiver surface, while mutations of kappa, the upper factor shift, a nested hash, and the classical commit are rejected. The synthetic receipt is not scientific evidence for the operator identity. No physical producer input has been supplied or accepted, so the repository Hessian, full-BV multiplicity ledger, anomaly coefficients, Slavnov breaking, QME disposition, D-Cartan class, residual transfer, and Lorentzian quantum theory remain open.",
+  "claim_flags": {
+    "CONTENT_ADDRESSED_PROOF_ARTIFACTS_ENFORCED": true,
+    "KAPPA_HALF_AND_FACTOR_SHIFTS_ENFORCED": true,
+    "PHYSICAL_TT_DICTIONARY_INPUT_SUPPLIED": false,
+    "QME_DISPOSITION": false,
+    "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
+    "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+    "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": false,
+    "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "dependency_hashes": {
+    "input_schema": "d41ad46c963a15e3ee8620797a090c407794bce39e71eeb0b4e2a379459b6ee7",
+    "missing_carrier_certificate": "4f095dbeb8ae4975325c7f67fa0de37f69450c21e15c5f363e136587516fe537"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "next_gate": "SUPPLY_AND_ACCEPT_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+  "proof_sha256": "e4af1dc171578221b6b758b3021a59e1c99bb0c9ddfa2d89a029d2c62a9ae9bb",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/repository-round-s4-tt-hessian-dictionary-receiver-readiness.md": "2914541b092271f778cccad417ebcf5077a345f23e26f1eb29234a282f1abd09",
+      "quantum-weyl/spectral/euclidean/schema/repository-round-s4-tt-hessian-dictionary-input-v1.schema.json": "d41ad46c963a15e3ee8620797a090c407794bce39e71eeb0b4e2a379459b6ee7",
+      "quantum-weyl/spectral/euclidean/schema/repository-round-s4-tt-hessian-dictionary-receiver-readiness-v1.schema.json": "57e22d7fc6535e20cfafd43f719061fa46818fcf85fcdb4da0d3bc9ba72612b4",
+      "quantum-weyl/spectral/euclidean/tests/test_tt_hessian_dictionary_receiver.py": "5c2e7c36cb04e4376075e39d6422727d8e5b0bc7b53dbab4a9c07216957db9ea",
+      "quantum-weyl/spectral/euclidean/tt_hessian_dictionary_receiver.py": "a40a94cb5944c20242a7396b510d543e2a807263033507ee3650747bf55d02c8",
+      "quantum-weyl/spectral/euclidean/tt_hessian_dictionary_receiver_readiness.py": "ac6da343f2d3e7691902d9a47db499f6df4815968ae60adcc52f28d5c8fcc7e8",
+      "quantum-weyl/spectral/euclidean/verify_tt_hessian_dictionary_receiver_readiness.py": "6fe0e7d055e543ada5fead0a0237f8bd750f692385f0d9a6ba5e439e31e3f9c5"
+    }
+  },
+  "receiver_mechanics": {
+    "mutation_receipts": [
+      {
+        "mutation": "kappa_2_over_3",
+        "rejected": true
+      },
+      {
+        "mutation": "upper_shift_5",
+        "rejected": true
+      },
+      {
+        "mutation": "bad_nested_hash",
+        "rejected": true
+      },
+      {
+        "mutation": "wrong_classical_commit",
+        "rejected": true
+      }
+    ],
+    "scope": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY",
+    "synthetic_receipt": {
+      "Hessian_kernel_dimension": 0,
+      "bundle_rank": 5,
+      "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+      "kappa": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "lower_factor": "Delta_2_perp(2)",
+      "proof_artifact_count": 2,
+      "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+      "status": "SEMANTIC_RECEIVER_ACCEPTED",
+      "upper_factor": "Delta_2_perp(4)"
+    }
+  },
+  "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_RECEIVER_READINESS",
+  "result_state": "SEMANTIC_RECEIVER_READY_PHYSICAL_TT_DICTIONARY_INPUT_NOT_SUPPLIED",
+  "schema": "quantum-weyl-repository-round-s4-tt-hessian-dictionary-receiver-readiness-v1"
+}

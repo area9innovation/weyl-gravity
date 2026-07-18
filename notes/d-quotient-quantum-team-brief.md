@@ -567,7 +567,12 @@ zero-mode priming, auxiliary contour, parity, and local-`b4` regulator data are
 now consolidated in `STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE`, which
 reproduces `(199/30,-87/20,0)`. Matching the TT dictionary and auxiliary row to
 the repository, fixing the global determinant phase, accepting the repository
-full-BV ledger, and completing the total row/factor map remain open; the classical
+full-BV ledger, and completing the total row/factor map remain open. The TT
+dictionary handoff now has a strict executable input contract requiring
+`kappa=1/2`, factor shifts `2,4`, formal TT ellipticity/self-adjointness, zero
+physical kernel, and content-addressed producer plus independent-verifier
+artifacts. The synthetic accepted fixture is receiver mechanics only; no
+physical dictionary has landed. The classical
 54-row carrier is explicitly not a loop-multiplicity authority. The next
 task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
 content-addressed repository regulator/operator/measure match, and compute

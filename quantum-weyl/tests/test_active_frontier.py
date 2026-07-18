@@ -53,6 +53,9 @@ class ActiveFrontierTests(unittest.TestCase):
             self.payload["claim_flags"]["STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE"]
         )
         self.assertTrue(
+            self.payload["claim_flags"]["TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY"]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
         )
         self.assertTrue(
@@ -110,7 +113,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+            "SUPPLY_AND_ACCEPT_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

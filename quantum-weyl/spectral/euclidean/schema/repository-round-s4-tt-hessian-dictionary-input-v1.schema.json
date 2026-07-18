@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-round-s4-tt-hessian-dictionary-input-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "background", "action_normalization", "flat_tt_leading_symbol", "operator_dictionary", "constant_curvature_derivation", "formal_properties", "zero_modes", "proof_artifacts", "claim_flags", "proof_sha256"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-round-s4-tt-hessian-dictionary-input-v1"},
+    "result_id": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"},
+    "result_state": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "background": {"const": {"geometry": "round unit S4", "dimension": 4, "scalar_curvature": 12, "Ricci": "3 g", "Weyl": "0"}},
+    "action_normalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_action", "mixed_hessian", "kappa"],
+      "properties": {"repository_action": {"const": "S_red=int sqrt(g)(Ricci^2-R^2/3)=1/2 int sqrt(g)(C2-E4)"}, "mixed_hessian": {"const": "delta_h delta_k S_red=<C1 h,C1 k>"}, "kappa": {"$ref": "#/$defs/half"}}
+    },
+    "flat_tt_leading_symbol": {
+      "type": "object", "additionalProperties": false,
+      "required": ["linearized_Ricci", "linearized_scalar", "quadratic_action", "Hessian_leading_coefficient", "standard_product_leading_coefficient", "kappa_match"],
+      "properties": {"linearized_Ricci": {"const": "Ricci1_TT=(1/2) p^2 h_TT"}, "linearized_scalar": {"const": "R1_TT=0"}, "quadratic_action": {"const": "S_red^(2)=(1/4)<h,p^4 h>"}, "Hessian_leading_coefficient": {"$ref": "#/$defs/half"}, "standard_product_leading_coefficient": {"const": 1}, "kappa_match": {"const": true}}
+    },
+    "operator_dictionary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bundle", "bundle_rank", "Delta2_definition", "lower_factor", "upper_factor", "repository_Hessian", "factor_commutator_zero", "identity_verified"],
+      "properties": {"bundle": {"const": "real transverse traceless symmetric rank-two tensors"}, "bundle_rank": {"const": 5}, "Delta2_definition": {"const": "Delta_2_perp(M_squared)=-nabla^2+M_squared"}, "lower_factor": {"const": "Delta_2_perp(2)"}, "upper_factor": {"const": "Delta_2_perp(4)"}, "repository_Hessian": {"const": "(1/2) Delta_2_perp(2) Delta_2_perp(4)"}, "factor_commutator_zero": {"const": true}, "identity_verified": {"const": true}}
+    },
+    "constant_curvature_derivation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "all_connection_variations_included", "integration_by_parts_policy", "Euler_term_policy", "residual_operator", "verified"],
+      "properties": {"method": {"type": "string", "minLength": 30}, "all_connection_variations_included": {"const": true}, "integration_by_parts_policy": {"const": "closed S4 no boundary term"}, "Euler_term_policy": {"const": "E4 variation integrated to zero at fixed topology"}, "residual_operator": {"const": "ZERO"}, "verified": {"const": true}}
+    },
+    "formal_properties": {"const": {"formally_self_adjoint": true, "elliptic_on_TT": true, "real_operator": true, "parity_even": true}},
+    "zero_modes": {"const": {"lower_factor_kernel_dimension": 0, "upper_factor_kernel_dimension": 0, "Hessian_kernel_dimension": 0, "verified": true}},
+    "proof_artifacts": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/artifact"}},
+    "claim_flags": {"const": {"REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_SUPPLIED": true, "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": true, "REPOSITORY_ELLIPTIC_TT_BLOCK_CERTIFIED": true, "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false, "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false, "REGULATED_SLAVNOV_BREAKING_COMPUTED": false, "QME_DISPOSITION": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "half": {"const": {"numerator": 1, "denominator": 2}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["format", "path", "sha256"], "properties": {"format": {"enum": ["PYTHON_PRODUCER", "PYTHON_VERIFIER", "JSON_CERTIFICATE", "JSON_SCHEMA"]}, "path": {"type": "string", "minLength": 5}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}
