@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nariai-transverse-normalized-l0-coupled-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "nariai-transverse-normalized-l0-coupled-obstruction-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "items": {"enum": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]}, "minItems": 1, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "additionalProperties": {"$ref": "#/$defs/dependency"}, "minProperties": 3},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["normalized_L0_family", "induced_corrections", "first_square", "shifted_chain_system", "normalized_left_null_witness", "superseded_phi_witness", "interpretation"],
+      "properties": {
+        "normalized_L0_family": {
+          "type": "object", "additionalProperties": false,
+          "required": ["equation", "complement", "complement_rank", "pivot_columns", "family_dimension", "basis_labels"],
+          "properties": {
+            "equation": {"type": "string"}, "complement": {"$ref": "#/$defs/matrix"},
+            "complement_rank": {"type": "integer"}, "pivot_columns": {"type": "array", "items": {"type": "integer"}},
+            "family_dimension": {"type": "integer"}, "basis_labels": {"type": "array", "items": {"$ref": "#/$defs/label"}}
+          }
+        },
+        "induced_corrections": {"type": "array", "items": {"$ref": "#/$defs/correction"}},
+        "first_square": {
+          "type": "object", "additionalProperties": false,
+          "required": ["equation", "rigid_map_shape", "rigid_map_determinant", "max_nonzero_defect_coefficients"],
+          "properties": {
+            "equation": {"type": "string"}, "rigid_map_shape": {"type": "array", "items": {"type": "integer"}},
+            "rigid_map_determinant": {"type": "string"}, "max_nonzero_defect_coefficients": {"type": "integer"}
+          }
+        },
+        "shifted_chain_system": {
+          "type": "object", "additionalProperties": false,
+          "required": ["equation", "shape", "rank", "augmented_rank", "kernel_dimension", "full_column_rank_minor_rows", "full_column_rank_minor_determinant", "nonzero_coefficients", "response_map", "equation_keys", "target"],
+          "properties": {
+            "equation": {"type": "string"}, "shape": {"type": "array", "items": {"type": "integer"}},
+            "rank": {"type": "integer"}, "augmented_rank": {"type": "integer"}, "kernel_dimension": {"type": "integer"},
+            "full_column_rank_minor_rows": {"type": "array", "items": {"type": "integer"}},
+            "full_column_rank_minor_determinant": {"type": "string"},
+            "nonzero_coefficients": {"type": "integer"}, "response_map": {"$ref": "#/$defs/matrix"},
+            "equation_keys": {"type": "array", "items": {"$ref": "#/$defs/equationKey"}}, "target": {"$ref": "#/$defs/matrix"}
+          }
+        },
+        "normalized_left_null_witness": {
+          "type": "object", "additionalProperties": false,
+          "required": ["support_size", "terms", "left_null_map_defect", "left_null_target_value"],
+          "properties": {
+            "support_size": {"type": "integer"}, "terms": {"type": "array", "items": {"$ref": "#/$defs/witnessTerm"}},
+            "left_null_map_defect": {"$ref": "#/$defs/matrix"}, "left_null_target_value": {"type": "string"}
+          }
+        },
+        "superseded_phi_witness": {
+          "type": "object", "additionalProperties": false,
+          "required": ["reachable", "nonzero_basis_sensitivities", "interpretation"],
+          "properties": {
+            "reachable": {"const": true}, "nonzero_basis_sensitivities": {"type": "array", "items": {"$ref": "#/$defs/sensitivity"}},
+            "interpretation": {"type": "string"}
+          }
+        },
+        "interpretation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["normalized_L0_coupled_repair_exists", "complete_coupled_SDR_obstructed", "required_next_ansatz"],
+          "properties": {
+            "normalized_L0_coupled_repair_exists": {"const": false}, "complete_coupled_SDR_obstructed": {"const": false},
+            "required_next_ansatz": {"type": "string"}
+          }
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "flags": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "next_gate": {"type": "string", "minLength": 1}, "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4},
+    "verification_commands": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 4}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "matrix": {"type": "object", "additionalProperties": false, "required": ["shape", "rank", "entries", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false, "minItems": 2, "maxItems": 2}, "rank": {"type": "integer"}, "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "operator": {"type": "object", "additionalProperties": false, "required": ["orders", "nonzero_coefficients", "entries", "sha256"], "properties": {"orders": {"type": "array", "items": {"type": "integer"}}, "nonzero_coefficients": {"type": "integer"}, "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "matrix": {"$ref": "#/$defs/matrix"}}}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "label": {"type": "object", "additionalProperties": false, "required": ["pivot_column", "output_column"], "properties": {"pivot_column": {"type": "integer"}, "output_column": {"type": "integer"}}},
+    "correction": {"type": "object", "additionalProperties": false, "required": ["pivot_column", "output_column", "delta_L0", "delta_d_aut", "delta_L1", "shifted_chain_response"], "properties": {"pivot_column": {"type": "integer"}, "output_column": {"type": "integer"}, "delta_L0": {"$ref": "#/$defs/matrix"}, "delta_d_aut": {"$ref": "#/$defs/operator"}, "delta_L1": {"$ref": "#/$defs/operator"}, "shifted_chain_response": {"$ref": "#/$defs/operator"}}},
+    "equationKey": {"type": "object", "additionalProperties": false, "required": ["word", "output_row", "input_column"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "output_row": {"type": "integer"}, "input_column": {"type": "integer"}}},
+    "witnessTerm": {"type": "object", "additionalProperties": false, "required": ["equation_index", "word", "output_row", "input_column", "coefficient"], "properties": {"equation_index": {"type": "integer"}, "word": {"type": "array", "items": {"type": "integer"}}, "output_row": {"type": "integer"}, "input_column": {"type": "integer"}, "coefficient": {"type": "string"}}},
+    "sensitivity": {"type": "object", "additionalProperties": false, "required": ["pivot_column", "output_column", "value"], "properties": {"pivot_column": {"type": "integer"}, "output_column": {"type": "integer"}, "value": {"type": "string"}}}
+  }
+}

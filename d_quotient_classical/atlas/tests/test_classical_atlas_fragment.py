@@ -41,11 +41,14 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1", ids)
+        self.assertIn("NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1", ids)
         self.assertEqual(entry["descriptions"]["causal"], "OPEN")
         self.assertIn("207-coefficient", entry["claim_boundary"])
         self.assertIn("unique 59-coefficient endpoint gauge repair", entry["claim_boundary"])
-        self.assertIn("38 output rows have augmented rank 46", entry["claim_boundary"])
-        self.assertIn("homogeneous first-square map is invertible", entry["claim_boundary"])
+        self.assertIn("Phi-only repair is obstructed", entry["claim_boundary"])
+        self.assertIn("first-square map is invertible", entry["claim_boundary"])
+        self.assertIn("7380-by-44 response map has rank 44 but augmented rank 45", entry["claim_boundary"])
+        self.assertIn("five-term witness", entry["claim_boundary"])
 
     def test_berger_bridge_one_remains_fail_closed(self) -> None:
         entry = self.entries["classical.berger.crosswalk.retained36_to_einstein_extra"]

@@ -451,6 +451,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   higher differential order remains open:
   [`certificates/NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1.json`](certificates/NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1.json),
   [`reports/nariai-transverse-incidence-l1-rigidity.md`](reports/nariai-transverse-incidence-l1-rigidity.md)
+- Complete normalized-`L0` continuation: the normalization
+  `p0 delta_L0=0` leaves 44 algebraic splitting directions.  Solving the
+  rigid incidence/`L1` pair for every direction preserves the full first BGG
+  square, but the resulting shifted-chain response map has rank 44 and
+  augmented rank 45.  A normalized five-term witness certifies the scoped
+  obstruction.  The earlier Phi-only witness is reachable and is therefore
+  superseded, while `K/p0`, neighbouring equation/constraint/cotangent rows,
+  higher order, the complete SDR and causal transfer remain open:
+  [`certificates/NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1.json`](certificates/NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1.json),
+  [`reports/nariai-transverse-normalized-l0-coupled-obstruction.md`](reports/nariai-transverse-normalized-l0-coupled-obstruction.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

@@ -62,12 +62,18 @@ def verify() -> None:
         raise AssertionError("first-order Schur evidence missing")
     if "NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1" not in transverse_ids:
         raise AssertionError("Phi-only shifted-chain obstruction evidence missing")
+    if "NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1" not in transverse_ids:
+        raise AssertionError("incidence/L1 rigidity evidence missing")
+    if "NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1" not in transverse_ids:
+        raise AssertionError("normalized-L0 coupled obstruction evidence missing")
     if "207-coefficient" not in transverse["claim_boundary"]:
         raise AssertionError("exact shifted-chain boundary missing")
     if "unique 59-coefficient endpoint gauge repair" not in transverse["claim_boundary"]:
         raise AssertionError("first-order Schur claim boundary missing")
-    if "38 output rows have augmented rank 46" not in transverse["claim_boundary"]:
-        raise AssertionError("Phi-only obstruction boundary missing")
+    if "7380-by-44 response map has rank 44 but augmented rank 45" not in transverse["claim_boundary"]:
+        raise AssertionError("normalized-L0 obstruction boundary missing")
+    if "five-term witness" not in transverse["claim_boundary"]:
+        raise AssertionError("normalized-L0 witness boundary missing")
 
 
 if __name__ == "__main__":

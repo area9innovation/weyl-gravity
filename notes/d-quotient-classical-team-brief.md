@@ -87,19 +87,29 @@ the target.  This obstructs a first-order Φ-only repair, not the coupled SDR.
 
 The next smallest coupled continuation is rigid as well.  With an algebraic
 variation of the incidence row and an arbitrary order-at-most-one variation
-of (L_1), homogeneous preservation of the complete first BGG square gives a
-`60 x 60` coefficient map per output row with determinant (-2^{-36}).  Hence
+of $L_1$, homogeneous preservation of the complete first BGG square gives a
+`60 x 60` coefficient map per output row with determinant $-2^{-36}$.  Hence
 the only allowed pair is zero and it cannot act on the shifted-chain defect.
 This supersedes coefficient-layer-only sensitivity tests, which did not impose
 the full differential first square.
 
+Adding every normalized algebraic $L_0$ direction still does not close the
+chain.  The condition $p_0\delta L_0=0$ gives a 44-dimensional family.  The
+unique induced incidence/$L_1$ corrections preserve the complete first BGG
+square for every basis element, but their shifted-chain response map has rank
+44 and augmented rank 45.  A normalized five-term algebraic left-null witness
+detects the remaining obstruction.  Importantly, the earlier Phi-only witness
+is reachable in this enlarged family and is explicitly superseded rather than
+mistaken for a global no-go.
+
 The next coherent classical gate is therefore a genuinely coupled variation
-including (L_0), (K/p_0), or neighbouring equation/constraint/cotangent
-rows (or an explicitly higher-order Φ ansatz), with action-derived cyclic
-identification imposed simultaneously.
+including $K/p_0$ or neighbouring equation/constraint/cotangent rows (or an
+explicitly higher-order Phi ansatz), with action-derived cyclic identification
+imposed simultaneously.
 The atlas remains fail-closed: the parent identity, unique endpoint repair,
-scoped Φ-only obstruction and incidence/(L_1) rigidity are `CERTIFIED`; the
-complete rank-310 SDR and transverse causal transfer remain `OPEN`.
+scoped Phi-only obstruction, incidence/$L_1$ rigidity and normalized-$L_0$
+obstruction are `CERTIFIED`; the complete rank-310 SDR and transverse
+causal transfer remain `OPEN`.
 
 ## Generator correction (2026-07-17; authoritative)
 
