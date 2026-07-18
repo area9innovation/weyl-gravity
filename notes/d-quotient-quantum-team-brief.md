@@ -784,7 +784,7 @@ activation gate was the exact `(199/30,-87/20)` Slavnov vector. The strict
 theory is `OBSTRUCTED`; the compensator cotangent lift and extended `H04/H14`
 are `CERTIFIED`; and the extended one-loop local Euclidean QME is
 `QME_RESTORED`. The active local-to-residual gate is now
-`C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION`.
+`INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION`.
 The coefficient-bearing local Wess--Zumino Hamiltonian contribution
 
 \[
@@ -819,9 +819,12 @@ covariantization
 
 is now universal through curvature order two. The resolvent Fréchet formula
 shows that changing the admissible Laplace-type representative first affects
-the sandwiched functional at curvature order three. The independent `R2`
-form factor, additive finite `C2/R2` normalization, cubic-and-higher `C2`
-completion, renormalized BV Laplacian or time-ordered product, and global
+the sandwiched functional at curvature order three. Evaluating this selected
+carrier on the normalized Fradkin--Vilkovisky scalar-flat representative now
+gives an exact nonlocal functional invariant under the declared local Weyl
+transformations and identifies its first forced cubic correction. The
+independent `R2` form factor, additive finite `C2/R2` normalization,
+independent cubic-and-higher Weyl-invariant form factors, renormalized BV Laplacian or time-ordered product, and global
 Green data remain absent. Complete `Gamma1` and `Q1` therefore remain fail-closed,
 independently of the still-missing compensator-inclusive classical
 contraction.
@@ -834,7 +837,7 @@ rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. Its remaining local gate is the
-cubic-and-higher `C2` completion, the independent nonlocal `R2` form factor,
+independent cubic-and-higher Weyl-invariant form factors, the independent nonlocal `R2` form factor,
 finite `C2` and absolute dressed `R(g_hat)^2` normalization, and complete
 `Q1`; its independent carrier gate is Bridge 2. The generated
 fail-closed row is
@@ -884,13 +887,29 @@ boundary are certified in
 Its curvature-squared covariantization and exact first-missing-order theorem
 are certified in
 [`curvature-squared-covariant-log-gamma1.md`](../quantum-weyl/reports/curvature-squared-covariant-log-gamma1.md).
+The selected carrier now also has an exact Fradkin--Vilkovisky scalar-flat
+Weyl-orbit completion in
+[`fv-conformized-c2-log-gamma1.md`](../quantum-weyl/reports/fv-conformized-c2-log-gamma1.md).
+This fixes the completion of that carrier, not the independent cubic
+Weyl-invariant form factors; its nonlocal representative is not identified
+with the local tau-adic dressed metric.
+The generated atlas records it as
+`quantum.crosswalk.fv_conformized_c2_log_form_factor_to_particle`, with the
+functional imported in its declared role and every particle/state crosswalk
+left `NO_CERTIFIED_MAP`.
 The raw `BoxR` coefficient and exact local scheme conversion are certified in
 [`weyl-graviton-box-r-scheme-conversion.md`](../quantum-weyl/reports/weyl-graviton-box-r-scheme-conversion.md).
 The theorem spine is assembled in
 [`12-pure-weyl-one-loop-bv-anomaly.tex`](../paper/12-pure-weyl-one-loop-bv-anomaly.tex),
 with a generated claim map and compiled draft PDF. Its
 [`computational supplement`](../paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex)
-is also assembled and warning-free; exact quotient, coefficient, quartet, and
-boundary tables are generated directly from thirteen hashed claim-map receipts and pass an
-independent stale/tamper check. Specialist prose, citation, and release review
-remain before theorem freeze.
+is also assembled and warning-free. The focused major revision now displays
+the determinant-to-Slavnov bridge, regular-Bach spectral-sequence proof,
+quartet homotopy, Euler Wess--Zumino primitive, matter vectors, and narrowed
+effective-action claims; the unsupported Hadamard assertion was removed from
+the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
+matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
+claim-map receipts and pass an independent stale/tamper check. The disposition
+is recorded in
+[`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).
+Final human and literature review remains before theorem freeze.

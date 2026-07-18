@@ -22,6 +22,8 @@ def main() -> None:
     assert "A_{\\log}" in rendered
     assert "-\\frac{199}{60}" in rendered
     assert "first admissible operator-choice difference & 3" in rendered
+    assert "selected FV Weyl-orbit completion & certified" in rendered
+    assert "independent cubic Weyl-invariant form factors & open" in rendered
     assert "generated-spectral-sequence" in rendered
     assert "generated-determinant-ledger" in rendered
     assert "generated-matter-vectors" in rendered
@@ -55,6 +57,8 @@ def main() -> None:
     assert values["flat_tt_log"]["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
     assert values["curvature_squared_log"]["operator_choice_independence"]["first_difference_order"] == 3
     assert values["curvature_squared_log"]["claim_flags"]["COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED"] is False
+    assert values["fv_conformized_log"]["decision"]["selected_C2_log_local_Weyl_completion"] == "CERTIFIED"
+    assert values["fv_conformized_log"]["carrier_crosswalk"]["identity_status"] == "DISTINCT_CARRIERS_NO_IDENTIFICATION"
     assert values["minimal_kt"]["spectral_sequence"]["collapse_page"] == "E2"
     assert len(values["elliptic"]["principal_symbol_exactness"]) == 4
     assert len(values["multiplicity"]["repository_factors"]) == 4

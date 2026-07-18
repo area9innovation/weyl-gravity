@@ -43,6 +43,7 @@ DEPENDENCIES = {
     "anomaly_induced_Gamma1": QROOT / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_log_Gamma1": QROOT / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_log_Gamma1": QROOT / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "FV_conformized_C2_log_Gamma1": QROOT / "transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
     "BoxR_scheme_conversion": QROOT / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": QROOT / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "general_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
@@ -161,6 +162,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     anomaly_induced = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_log_Gamma1"]
     curvature_squared_log = values["curvature_squared_log_Gamma1"]
+    fv_conformized_log = values["FV_conformized_C2_log_Gamma1"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     general = values["general_tangent_cone"]
@@ -272,6 +274,16 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
         or curvature_squared_log.get("decision", {}).get("residual_transfer")
         != "FORBIDDEN"
+        or fv_conformized_log.get("decision", {}).get(
+            "selected_C2_log_local_Weyl_completion"
+        )
+        != "CERTIFIED"
+        or fv_conformized_log.get("carrier_crosswalk", {}).get("identity_status")
+        != "DISTINCT_CARRIERS_NO_IDENTIFICATION"
+        or fv_conformized_log.get("claim_flags", {}).get(
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
+        )
+        is not False
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -549,13 +561,13 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and exact strict-metric raw-to-BoxR-zero R2 scheme conversion are fixed, but the independent nonlocal R2 form factor, absolute dressed Rhat2 normalization, C2 cubic completion and complete Q1 are underdetermined"),
-            lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition and relative strict R2 scheme conversion are complete in scope, but the independent nonlocal R2 form factor, absolute dressed Rhat2 normalization, C2 cubic completion, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
+            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and conversion plus the selected FV-conformized C2 logarithmic carrier are fixed, but the independent nonlocal R2 and cubic Weyl-invariant form factors, absolute dressed Rhat2 normalization and complete Q1 are underdetermined"),
+            lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition, relative strict R2 scheme conversion and selected FV carrier completion are complete in scope, but the independent nonlocal R2 and cubic Weyl-invariant form factors, absolute dressed Rhat2 normalization, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "BoxR_scheme_conversion"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. The C2 logarithm is covariant and operator-choice independent through curvature order two. The raw BoxR coefficient and exact one-loop strict-metric raw-to-BoxR-zero R2 conversion are fixed, but the independent nonlocal R2 form factor, absolute dressed Rhat2 normalization, C2 cubic completion, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "BoxR_scheme_conversion"),
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. The selected C2 logarithmic carrier has an exact FV scalar-flat Weyl-orbit completion, but the independent nonlocal R2 form factor and cubic Weyl-invariant form factors, absolute dressed Rhat2 normalization, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 
@@ -565,6 +577,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("flat_tt_log_form_factor", "nonzero-momentum flat-TT logarithmic effective-action form factor", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1")),
         ("curvature_squared_covariant_log_form_factor", "covariant C log(Delta_C/mu^2) C effective-action form factor through curvature order two", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1")),
+        ("fv_conformized_c2_log_form_factor", "FV scalar-flat Weyl-orbit completion of the selected C log(Delta_C/mu^2) C effective-action carrier", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("regulated_Slavnov_breaking", "one_loop_Q1_disposition", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1")),
         ("curvature_observable_generator", "support-local curvature-graph CCR generator", ["LORENTZIAN-CAUSAL"], ("curvature_CCR",)),
     ]
     rows = []
@@ -607,7 +620,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                     complex_structure=("NO_CERTIFIED_MAP", "no particle complex structure crosswalk"),
                     hadamard=("NO_CERTIFIED_MAP", "no particle Hadamard crosswalk"),
                     state_space=("NO_CERTIFIED_MAP", "no particle state-space crosswalk"),
-                    qme=(("CERTIFIED", "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop, and this carrier's coefficient is bound to that disposition") if key in {"local_anomaly_class", "flat_tt_log_form_factor", "curvature_squared_covariant_log_form_factor"} else ("OPEN", "carrier retains its own anomaly/QME dependency")),
+                    qme=(("CERTIFIED", "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop, and this carrier's coefficient is bound to that disposition") if key in {"local_anomaly_class", "flat_tt_log_form_factor", "curvature_squared_covariant_log_form_factor", "fv_conformized_c2_log_form_factor"} else ("OPEN", "carrier retains its own anomaly/QME dependency")),
                     lifecycle=("NO_CERTIFIED_MAP", "not a particle lifecycle entry"),
                     particle=("NO_CERTIFIED_MAP", "forbidden without an explicit physical residual-mode crosswalk"),
                     crosswalk=("NO_CERTIFIED_MAP", "non-mode carrier to particle"),
@@ -634,7 +647,7 @@ def validate_fragment(value: dict[str, Any]) -> None:
         Draft202012Validator.check_schema(schema)
         Draft202012Validator(schema).validate(value)
     ids = [entry["id"] for entry in value["entries"]]
-    if len(ids) != len(set(ids)) or len(ids) != 15:
+    if len(ids) != len(set(ids)) or len(ids) != 16:
         raise ValueError("quantum atlas entry count or uniqueness drifted")
     by_id = {entry["id"]: entry for entry in value["entries"]}
     residual = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NONPARTICLE_RESIDUAL_CLASS"]
@@ -669,7 +682,7 @@ def validate_fragment(value: dict[str, Any]) -> None:
     ):
         raise ValueError("classical tangent obstruction was promoted without the QME bridge")
     guards = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"]
-    if len(guards) != 5 or any(
+    if len(guards) != 6 or any(
         entry["quantum_data"]["particle_interpretation"]["status"] != "NO_CERTIFIED_MAP"
         for entry in guards
     ):

@@ -1,0 +1,142 @@
+{
+  "carrier_crosswalk": {
+    "fv_metric": "g_bar[g]=exp(-2 Sigma_FV[g])g is a nonlocal functional of g fixed by a normalized conformal inverse and is Weyl-orbit invariant",
+    "identity_status": "DISTINCT_CARRIERS_NO_IDENTIFICATION",
+    "reason": "Sigma_FV is determined nonlocally by scalar-flat gauge fixing, whereas tau is an independent compensator field; neither construction is substituted for the other",
+    "wz_metric": "g_hat[g,tau]=exp(-2 tau)g is a local field redefinition in the formally enlarged tau-adic BV theory"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate uses the normalized Fradkin-Vilkovisky scalar-flat representative g_bar=u_g^2 g to give an exact local-Weyl completion of the already certified coefficient-bearing C log(Delta_C/mu^2) C carrier. The coefficient remains -199/60, the representative metric is unchanged along boundary-compatible Weyl orbits, and the conformized functional reduces to the prior curvature-squared spectral logarithm modulo curvature order three. Existence and uniqueness are conditional on the declared normalized inverse domain; a conformal-operator kernel requires a separate projector and orbit-compatible normalization. The first cubic correction carrier is identified by the Frechet derivative of the spectral logarithm under the FV conformal deformation. The nonlocal representative g_bar[g] is not identified with the local tau-adic dressed metric g_hat[g,tau]. This does not compute the independent cubic Weyl-invariant form factors of the full one-loop effective action, decompose the formal correction into the complete cubic invariant basis, determine the independent nonlocal R2 form factor, choose the finite C2 constant or absolute dressed R(g_hat)^2 normalization, solve global kernel or boundary data, construct renormalized products, supply complete Gamma1 or Q1, authorize residual transfer, or establish any Lorentzian, Hadamard, positivity, particle, scattering, or unitarity theorem.",
+  "claim_flags": {
+    "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED": false,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "FINITE_C2_NORMALIZATION_FIXED": false,
+    "FV_CONFORMIZED_C2_LOG_CARRIER_FIXED": true,
+    "FV_SCALAR_FLAT_REPRESENTATIVE_CERTIFIED": true,
+    "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "NONLOCAL_R2_FORM_FACTOR_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false,
+    "SELECTED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "conformized_C2_log": {
+    "coefficient_identity": "A_log=-c/2=-199/60",
+    "functional": "Gamma1_C2_conf[g]=(4 pi)^(-2)(-199/60)<C[g_bar], Pi_bar log(Delta_C[g_bar]/mu^2) Pi_bar C[g_bar]>; every tensor, pairing, projector, operator domain, and spectral logarithm is evaluated on the same scalar-flat representative g_bar[g]",
+    "leading_curvature_order": 2,
+    "leading_reduction": "Gamma1_C2_conf=Gamma1_C2_log+O(curvature^3)",
+    "logarithmic_coefficient": {
+      "denominator": 60,
+      "numerator": -199
+    },
+    "status": "EXACT_LOCAL_WEYL_COMPLETION_OF_SELECTED_SPECTRAL_CARRIER",
+    "weyl_invariance_proof": "the complete metric argument g_bar and its operator, domain, projector, pairing, and Weyl tensors are unchanged along the declared Weyl orbit"
+  },
+  "cubic_carrier": {
+    "basis_decomposition": "NOT_COMPUTED",
+    "first_completion_order": 3,
+    "formal_cubic_term": "(4 pi)^(-2)(-199/60)<C,D log(Delta_C)[delta_Sigma Delta_C]C> plus the transported pairing/projector terms",
+    "frechet_kernel": "D log(Delta_C)[delta Delta_C]=integral_0^infinity (Delta_C+s)^(-1) delta Delta_C (Delta_C+s)^(-1) ds",
+    "independent_W3_form_factors": "NOT_COMPUTED",
+    "operator_difference": "delta_Sigma Delta_C=Delta_C[g_bar]-Delta_C[g]=O(curvature)",
+    "sigma_linearization": "Sigma_FV=-(1/6)Box^(-1)R+O(curvature^2)",
+    "status": "COMPLETION_CARRIER_IDENTIFIED_COEFFICIENT_BASIS_OPEN"
+  },
+  "decision": {
+    "complete_Gamma1": "NO_CERTIFIED_FUNCTIONAL",
+    "complete_Q1": "NO_CERTIFIED_OPERATOR",
+    "cubic_completion_carrier": "IDENTIFIED_NOT_DECOMPOSED",
+    "independent_cubic_form_factors": "NO_CERTIFIED_FUNCTIONAL",
+    "nonlocal_R2_form_factor": "NOT_COMPUTED",
+    "residual_transfer": "FORBIDDEN",
+    "selected_C2_log_coefficient": "CERTIFIED",
+    "selected_C2_log_local_Weyl_completion": "CERTIFIED"
+  },
+  "dependencies": {
+    "Q1_disposition": {
+      "path": "quantum-weyl/transfer/certificates/ONE_LOOP_SLAVNOV_Q1_DISPOSITION.json",
+      "result_id": "ONE_LOOP_SLAVNOV_Q1_DISPOSITION",
+      "sha256": "c5c14192154ff2894633a8e7f35a2209a4b62400085bfc133c2ddbc4044989aa"
+    },
+    "covariant_C2_log": {
+      "path": "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+      "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
+      "sha256": "a67a475da6352ad163a907c2fc6ad0bcb1bf804662bc645eca1487685bccde87"
+    },
+    "extended_cohomology": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+      "result_id": "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY",
+      "sha256": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616"
+    },
+    "regulated_breaking": {
+      "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+      "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+      "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "fv_scalar_flat_representative": {
+    "boundary_normalization": "u_g tends to 1 at asymptotic infinity or obeys the declared fixed boundary normalization",
+    "conformal_operator": "L_g=Box_g-R_g/6",
+    "inverse_domain_policy": "L_g has no normalized zero mode on the declared function space; otherwise this certificate is not applicable until a kernel projector and orbit-compatible normalization are supplied",
+    "inverse_equation": "L_g L_g^(-1) R_g=R_g",
+    "normalized_solution": "u_g=1+(1/6)L_g^(-1)R_g",
+    "operator_on_constant": "L_g(1)=-R_g/6",
+    "representative_metric": "g_bar=u_g^2 g=exp(-2 Sigma_FV[g])g",
+    "scalar_flat_identity": "R[g_bar]=u_g^(-3)(R_g-6 Box_g)u_g=0",
+    "sigma_FV": "Sigma_FV[g]=-log(u_g)",
+    "status": "EXACT_SCALAR_FLAT_REPRESENTATIVE_ON_DECLARED_INVERSE_DOMAIN",
+    "yamabe_residual": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_EXTENDED_CONTRACTION",
+  "normalization_and_missing_physics": {
+    "absolute_dressed_Rhat2_normalization": "NOT_FIXED",
+    "complete_Gamma1": "NO_CERTIFIED_FUNCTIONAL",
+    "complete_Q1": "NO_CERTIFIED_OPERATOR",
+    "finite_C2_constant": "NOT_FIXED",
+    "global_kernel_and_boundary_data": "DECLARED_NOT_SOLVED_GLOBALLY",
+    "independent_cubic_Weyl_invariant_form_factors": "NOT_COMPUTED",
+    "independent_nonlocal_R2_form_factor": "NOT_COMPUTED"
+  },
+  "result_id": "FV_CONFORMIZED_C2_LOG_GAMMA1",
+  "result_state": "FV_CONFORMIZED_C2_LOG_CARRIER_EXACTLY_WEYL_COMPLETED_INDEPENDENT_CUBIC_R2_AND_NORMALIZATION_DATA_OPEN",
+  "schema": "quantum-weyl-fv-conformized-c2-log-gamma1-v1",
+  "scope": {
+    "carrier": "the selected coefficient-bearing C log(Delta_C/mu^2) C spectral functional",
+    "completion_type": "Fradkin-Vilkovisky conformal gauge fixing",
+    "dimension": 4,
+    "geometry": "asymptotically flat manifold or fixed boundary problem with a normalized invertible conformal scalar operator",
+    "signature": "Euclidean",
+    "weyl_transformations": "smooth local sigma compatible with the fixed boundary normalization"
+  },
+  "source_provenance": {
+    "arxiv": "2306.03780v3",
+    "authors": [
+      "A. O. Barvinsky",
+      "W. Wachowski"
+    ],
+    "doi": "10.1103/PhysRevD.108.045014",
+    "journal": "Physical Review D 108, 045014 (2023)",
+    "title": "Notes on conformal anomaly, nonlocal effective action and the metamorphosis of the running scale",
+    "url": "https://arxiv.org/abs/2306.03780",
+    "use": "exact FV scalar-flat representative, conformization identity, and the separation between the conformized quadratic carrier and independent cubic form factors"
+  },
+  "weyl_covariance": {
+    "metric_transformation": "g_prime=exp(2 sigma)g",
+    "representative_identity": "g_bar[g_prime]=g_bar[g]",
+    "sigma_transformation": "Sigma_FV[g_prime]=Sigma_FV[g]+sigma",
+    "solution_transformation": "u_g_prime=exp(-sigma)u_g",
+    "status": "EXACT_ON_BOUNDARY_COMPATIBLE_WEYL_ORBIT",
+    "weight_ledger": {
+      "metric": 2,
+      "u": -1,
+      "u_squared_metric": 0
+    }
+  }
+}

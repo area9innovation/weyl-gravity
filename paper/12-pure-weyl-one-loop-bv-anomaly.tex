@@ -577,8 +577,9 @@ The separation of anomaly-induced and conformal parts and the appearance of
 logarithmic nonlocal curvature form factors follow the covariant effective-
 action framework of Barvinsky and Wachowski~\cite{BarvinskyWachowski}.  The
 present certificate is restricted to the declared flat carrier.  The next
-proposition supplies its curvature-squared covariantization, but neither
-result supplies the cubic completion, zero-momentum definition, Lorentzian
+two propositions supply its curvature-squared covariantization and one exact
+Fradkin--Vilkovisky completion of that selected carrier.  They do not compute
+the independent cubic form factors, a zero-momentum definition, Lorentzian
 branch prescription, or a particle state.
 \end{proposition}
 
@@ -617,8 +618,55 @@ carrier are cubic in the curvature~\cite{BarvinskyCPT,DonoghueElMenoufi}.
 No independence under a change of bundle connection is claimed; such a change
 can introduce first-order differential terms not covered by $V_1$.
 The independent nonlocal $R^2$ form factor, finite $C^2$ and absolute dressed
-$R(\widehat g)^2$ normalizations, cubic $C^2$ completion, kernel data and
-local-Weyl completion remain open.
+$R(\widehat g)^2$ normalizations, independent cubic form factors, and global
+kernel data remain open.  The following proposition supplies a Weyl-orbit
+completion only for the selected $C^2$ logarithmic carrier.
+\end{proposition}
+
+\begin{proposition}[Fradkin--Vilkovisky completion of the selected logarithmic carrier]
+Suppose the Euclidean conformal scalar operator
+\[
+ L_g=\Box_g-\frac16R_g
+\]
+has a normalized inverse on an asymptotically flat or fixed-boundary function
+space, with no normalized zero mode.  Define
+\[
+ u_g=1+\frac16L_g^{-1}R_g,\qquad
+ \Sigma_{\rm FV}[g]=-\log u_g,\qquad
+ \bar g[g]=u_g^2g.
+\]
+Then $L_gu_g=0$ and
+\[
+ R[\bar g]=u_g^{-3}(R_g-6\Box_g)u_g=0.
+\]
+For boundary-compatible $g'=e^{2\sigma}g$, conformal covariance and the
+normalization imply $u_{g'}=e^{-\sigma}u_g$, hence
+$\bar g[g']=\bar g[g]$.  Therefore
+\[
+ \Gamma^{\rm conf}_{1,C^2}[g]
+ =-\frac1{(4\pi)^2}\frac{199}{60}
+ \left\langle C[\bar g],\Pi_{\bar g}
+ \log\frac{\Delta_C[\bar g]}{\mu^2}
+ \Pi_{\bar g}C[\bar g]\right\rangle_{\bar g}
+\]
+is exactly invariant under the declared local Weyl transformations.  Every
+tensor, pairing, projector, operator domain and spectral logarithm is evaluated
+on the same representative.  This is a nonlocal functional invariant under
+local Weyl transformations, not a local functional.
+
+Since $\Sigma_{\rm FV}=-(1/6)\Box^{-1}R+O(\mathcal R^2)$, this completion
+agrees with the preceding carrier through curvature order two and its first
+forced correction is cubic.  The Fr\'echet derivative of the spectral
+logarithm identifies that correction carrier, including transported pairing
+and projector terms, but does not determine the independent cubic
+Weyl-invariant form factors of the full one-loop action~\cite{BarvinskyWachowski}.
+If $L_g$ has a kernel, an orbit-compatible projector and normalization are
+additional data and the proposition does not apply as stated.
+
+Finally, $\bar g[g]$ is not the compensator-dressed
+$\widehat g[g,\tau]=e^{-2\tau}g$: the former is a nonlocal functional of the
+strict metric fixed by scalar-flat gauge, while $\tau$ is an independent local
+field in the enlarged formal BV theory.
 \end{proposition}
 
 \begin{proposition}[Exact local $\Box R$ scheme conversion]
@@ -665,11 +713,13 @@ local Wess--Zumino contribution to $Q_1$ is fixed, but the proposition proves
 that it is not a unique complete renormalized operator.  The
 anomaly-induced Paneitz/Riegert representative fixes one nonlocal solution,
 and the logarithmic conformal-sector coefficient is covariant and universal
-through curvature order two.  The relative strict-metric raw-to-$\Box R=0$
+through curvature order two.  The selected logarithmic carrier now also has
+the exact Fradkin--Vilkovisky Weyl-orbit completion above.  The relative
+strict-metric raw-to-$\Box R=0$
 $R^2$ scheme shift is now exact.  The additive finite $C^2$ constant,
 absolute dressed $R(\widehat g)^2$ normalization, independent nonlocal $R^2$
-form factor, cubic-and-higher $C^2$
-completion, global Green/kernel data, and
+form factor, independent cubic-and-higher Weyl-invariant form factors, global
+Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
 The exact positive-Berger contraction does not fill this gate: its row named
@@ -695,6 +745,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json}.
 \item \cert{quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json}.
 \item \cert{quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json}.
+\item \cert{quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
@@ -718,6 +769,8 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_curvature_squared_covariant_log_gamma1
 PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_fv_conformized_c2_log_gamma1
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
 PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment
@@ -727,8 +780,9 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 \section{Outlook}
 
-The immediate local-to-residual question is now sharp.  Supply the cubic and
-higher $C^2$ completion, independent nonlocal $R^2$ form factor, finite $C^2$
+The immediate local-to-residual question is now sharp.  Supply the independent
+cubic and higher Weyl-invariant form factors, independent nonlocal $R^2$ form
+factor, finite $C^2$
 and absolute dressed $R(\widehat g)^2$ normalization conditions and
 renormalized BV operator data to fix a complete $Q_1$; then, given an extended
 contraction $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$, compute

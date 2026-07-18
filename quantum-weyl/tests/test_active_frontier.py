@@ -171,6 +171,19 @@ class ActiveFrontierTests(unittest.TestCase):
             self.payload["claim_flags"]["FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE"]
         )
         self.assertTrue(
+            self.payload["claim_flags"][
+                "FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["FV_AND_WZ_DRESSED_METRICS_IDENTIFIED"]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"]
         )
         self.assertTrue(
@@ -288,7 +301,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

@@ -78,6 +78,10 @@ def main() -> None:
     }
     assert claims["covariant_C2_log_through_curvature_order_two"] is True
     assert claims["first_unresolved_C2_log_completion_order"] == 3
+    assert claims["FV_conformized_C2_log_local_Weyl_completion"] is True
+    assert claims["FV_scalar_flat_representative"] == "EXACT_SCALAR_FLAT_REPRESENTATIVE_ON_DECLARED_INVERSE_DOMAIN"
+    assert claims["FV_first_forced_completion_order"] == 3
+    assert claims["FV_and_WZ_dressed_metrics_distinct"] is True
     assert claims["raw_zeta_BoxR_coefficient"] == {
         "basis": ["1", "log(3/2)"],
         "rational": {"numerator": -159, "denominator": 80},
@@ -99,11 +103,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
+        == "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 17
+    assert len(payload["inputs"]) == 18
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -118,6 +122,7 @@ def main() -> None:
     gamma1 = dependencies["ANOMALY_INDUCED_NONLOCAL_GAMMA1"]
     flat_tt_log = dependencies["FLAT_TT_LOGARITHMIC_GAMMA1"]
     curvature_squared_log = dependencies["CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1"]
+    fv_conformized_log = dependencies["FV_CONFORMIZED_C2_LOG_GAMMA1"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -142,6 +147,9 @@ def main() -> None:
     assert flat_tt_log["claim_flags"]["FINITE_C2_NORMALIZATION_FIXED"] is False
     assert curvature_squared_log["operator_choice_independence"]["first_difference_order"] == 3
     assert curvature_squared_log["decision"]["residual_transfer"] == "FORBIDDEN"
+    assert fv_conformized_log["decision"]["selected_C2_log_local_Weyl_completion"] == "CERTIFIED"
+    assert fv_conformized_log["carrier_crosswalk"]["identity_status"] == "DISTINCT_CARRIERS_NO_IDENTIFICATION"
+    assert fv_conformized_log["claim_flags"]["INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"] is False
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"

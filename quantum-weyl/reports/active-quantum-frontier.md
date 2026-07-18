@@ -35,8 +35,12 @@ logarithmic form-factor coefficient `-199/60`. Consequently
 declared Euclidean fixture. The spectral covariantization
 `-(199/60)<C,log(Delta_C/mu^2)C>` is now fixed through curvature order two;
 the resolvent filtration proves that admissible Laplace-type representatives
-first differ at curvature order three. The additive `C^2` constant,
-cubic-and-higher Weyl-invariant remainder, renormalized BV Laplacian or
+first differ at curvature order three. Evaluating this selected carrier on
+the normalized Fradkin--Vilkovisky scalar-flat representative now supplies
+its exact nonlocal completion invariant under boundary-compatible local Weyl
+transformations and identifies the first forced cubic correction. The FV
+metric is not the local tau-adic dressed metric. The additive `C^2` constant,
+independent cubic-and-higher Weyl-invariant form factors, renormalized BV Laplacian or
 time-ordered product, the independent nonlocal `R^2` form factor, absolute
 dressed `R(g_hat)^2` normalization, and global Green data remain
 absent, so complete `Gamma1` and `Q1` are fail-closed. Independently, Bridge 4
@@ -65,6 +69,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`anomaly-induced-nonlocal-gamma1.md`](anomaly-induced-nonlocal-gamma1.md), and
 [`flat-tt-logarithmic-gamma1.md`](flat-tt-logarithmic-gamma1.md), and
 [`curvature-squared-covariant-log-gamma1.md`](curvature-squared-covariant-log-gamma1.md),
+[`fv-conformized-c2-log-gamma1.md`](fv-conformized-c2-log-gamma1.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 

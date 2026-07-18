@@ -59,6 +59,7 @@ DEPENDENCIES = {
     "anomaly_induced_nonlocal_Gamma1": HERE / "transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": HERE / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": HERE / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "FV_conformized_C2_log_Gamma1": HERE / "transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -163,6 +164,7 @@ def _load() -> dict[str, dict[str, Any]]:
     anomaly_induced_gamma1 = values["anomaly_induced_nonlocal_Gamma1"]
     flat_tt_logarithmic_gamma1 = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log_gamma1 = values["curvature_squared_covariant_log_Gamma1"]
+    fv_conformized_log_gamma1 = values["FV_conformized_C2_log_Gamma1"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -323,6 +325,29 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN"
     ):
         raise ValueError("curvature-squared covariant-log Gamma1 frontier drifted")
+    if (
+        fv_conformized_log_gamma1.get("result_state")
+        != "FV_CONFORMIZED_C2_LOG_CARRIER_EXACTLY_WEYL_COMPLETED_INDEPENDENT_CUBIC_R2_AND_NORMALIZATION_DATA_OPEN"
+        or fv_conformized_log_gamma1.get("conformized_C2_log", {}).get(
+            "logarithmic_coefficient"
+        )
+        != {"numerator": -199, "denominator": 60}
+        or fv_conformized_log_gamma1.get("decision", {}).get(
+            "selected_C2_log_local_Weyl_completion"
+        )
+        != "CERTIFIED"
+        or fv_conformized_log_gamma1.get("carrier_crosswalk", {}).get(
+            "identity_status"
+        )
+        != "DISTINCT_CARRIERS_NO_IDENTIFICATION"
+        or fv_conformized_log_gamma1.get("claim_flags", {}).get(
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
+        )
+        is not False
+        or fv_conformized_log_gamma1.get("decision", {}).get("residual_transfer")
+        != "FORBIDDEN"
+    ):
+        raise ValueError("FV-conformized C2-log Gamma1 frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1185,11 +1210,11 @@ def build() -> dict[str, Any]:
             },
             "local_obstruction_space": {
                 "status": "STRICT_G2_COMPLETE_TAU_ADIC_EXTENDED_H04_DIMENSIONS_3_1_AND_H14_ZERO",
-                "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_RAW_BOXR_AND_EXACT_REPOSITORY_R2_SCHEME_CONVERSION_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
-                "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_CONFORMIZED_C2_LOG_CARRIER_CERTIFIED_RAW_BOXR_AND_EXACT_REPOSITORY_R2_SCHEME_CONVERSION_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
+                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1204,8 +1229,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_RELATIVE_STRICT_R2_RAW_TO_BOXR_ZERO_SCHEME_NORMALIZATION_FIXED_NONLOCAL_R2_FORM_FACTOR_C2_CUBIC_REMAINDER_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "FORBIDDEN_RELATIVE_STRICT_R2_RAW_TO_BOXR_ZERO_SCHEME_NORMALIZATION_AND_FV_CONFORMIZED_C2_LOG_CARRIER_FIXED_INDEPENDENT_CUBIC_WEYL_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
         "supersession_ledger": [
@@ -1355,6 +1380,9 @@ def build() -> dict[str, Any]:
             "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED": True,
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED": True,
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE": True,
+            "FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED": True,
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED": False,
+            "FV_AND_WZ_DRESSED_METRICS_IDENTIFIED": False,
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED": True,
             "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED": True,
             "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED": True,
@@ -1380,7 +1408,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1411,8 +1439,13 @@ def build() -> dict[str, Any]:
             "form-factor coefficient -199/60 and its scheme-independent momentum "
             "difference. A spectral covariantization now fixes <C,log(Delta_C/mu^2)C> "
             "through curvature order two; the resolvent filtration proves that admissible "
-            "Laplace-type operator choices first differ at curvature order three. The cubic "
-            "completion and additive C2 normalization remain open. The imported raw "
+            "Laplace-type operator choices first differ at curvature order three. A normalized "
+            "Fradkin--Vilkovisky scalar-flat representative now supplies an exact local-Weyl "
+            "completion of that selected coefficient-bearing carrier and identifies its first "
+            "forced cubic correction through the Frechet derivative of the spectral logarithm. "
+            "This nonlocal strict-metric representative is not the local tau-adic dressed metric. "
+            "Independent cubic Weyl-invariant form factors and the additive C2 normalization "
+            "remain open. The imported raw "
             "zeta/proper-time BoxR coefficient is independently replayed as "
             "(7/2)log(3/2)-159/80. The exact strict-metric R2 counterterm "
             "(7/24)log(3/2)-53/320 converts it to the repository BoxR=0 convention "
@@ -1630,6 +1663,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED") is not True
         or flags.get("CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED") is not True
         or flags.get("FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE") is not True
+        or flags.get("FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED") is not True
+        or flags.get("INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED") is not False
+        or flags.get("FV_AND_WZ_DRESSED_METRICS_IDENTIFIED") is not False
         or flags.get("RAW_ZETA_BOXR_COEFFICIENT_COMPUTED") is not True
         or flags.get("RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED") is not True
         or flags.get("REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED") is not True
@@ -1729,6 +1765,9 @@ def validate(result: dict[str, Any]) -> None:
             "FLAT_TT_UNIVERSAL_LOG_GAMMA1_FORM_FACTOR_FIXED",
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED",
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE",
+            "FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED",
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED",
+            "FV_AND_WZ_DRESSED_METRICS_IDENTIFIED",
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED",
             "RAW_TO_REPOSITORY_R2_SCHEME_SHIFT_FIXED",
             "REPOSITORY_29_OVER_120_LOCAL_R2_REPRODUCED",

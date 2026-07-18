@@ -447,14 +447,37 @@ $\Delta_C'=\Delta_C+V_1+O(\mathcal R^2)$,
  (\Delta_C+s)^{-1}\,ds,
 \]
 so the sandwiched change has exact order $1+1+1=3$.  Operator-choice
-dependence for this $C^2$ carrier therefore starts with the missing cubic form
+dependence for this $C^2$ carrier therefore starts with cubic form
 factors within the class sharing principal symbol, connection, domain, and
 source complement and differing at first curvature order only by the
 self-adjoint endomorphism $V_1$.  Connection variations, which can introduce
 first-order differential terms, are not covered.  The independent nonlocal
 $R^2$ form factor, kernel and boundary
-data, local-Weyl completion, finite $C^2$ constant and absolute dressed
-$R(\widehat g)^2$ normalization remain fail-closed.
+data, independent cubic form factors, finite $C^2$ constant and absolute dressed
+$R(\widehat g)^2$ normalization remain fail-closed.  The selected carrier's
+Weyl-orbit completion is handled separately below.
+
+\subsection{Fradkin--Vilkovisky completion of the selected carrier}
+
+The conformization receipt constructs
+\[
+ L_g=\Box_g-\frac16R_g,\qquad
+ u_g=1+\frac16L_g^{-1}R_g,\qquad
+ \bar g[g]=u_g^2g.
+\]
+It independently checks $L_gu_g=0$, $R[\bar g]=0$, the Weyl-weight ledger
+$2(-1)+2=0$, and the boundary-normalized transformation
+$u_{e^{2\sigma}g}=e^{-\sigma}u_g$.  Consequently $\bar g[e^{2\sigma}g]=\bar
+g[g]$, and evaluation of the full selected $C\log\Delta_C C$ carrier---its
+tensors, pairing, projector, domain and logarithm---on $\bar g$ gives an exact
+nonlocal functional invariant under the declared local Weyl transformations.
+
+The verifier retains the inverse-domain hypothesis, replays the coefficient
+$-199/60$ and the first correction order three, and rejects promotion to
+independent cubic form factors, a nonlocal $R^2$ form factor, complete
+$\Gamma_1/Q_1$, residual transfer or a Lorentzian result.  It also enforces a
+carrier crosswalk: the nonlocal $\bar g[g]$ is distinct from the local
+$\tau$-adic field $\widehat g[g,\tau]$.
 
 \subsection{Exact local BoxR scheme conversion}
 
@@ -500,6 +523,9 @@ completion;
 \item replay the curvature-order filtration for the covariant logarithm and
 reject promotion of the cubic remainder, finite constants or Berger/WZ
 contraction merge;
+\item replay the Fradkin--Vilkovisky scalar-flat and Weyl-weight identities,
+and reject identification of its nonlocal representative with the local
+$\tau$-adic dressed metric or promotion to independent cubic form factors;
 \item replay the raw $\Box R$ heat-kernel arithmetic, its exact strict-metric
 $R^2$ scheme shift and the $29/120$ cross-check, while rejecting promotion to
 the nonlocal $R^2$ form factor or an absolute dressed normalization;
@@ -538,6 +564,10 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_curvature_squared_covariant_log_gamma1
 PYTHONPATH=quantum-weyl python3 -m \
+  transfer.fv_conformized_c2_log_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_fv_conformized_c2_log_gamma1
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
@@ -556,7 +586,7 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the cubic-and-higher $C^2$ completion, independent nonlocal $R^2$ form
+\item the independent cubic-and-higher Weyl-invariant form factors, independent nonlocal $R^2$ form
 factor, finite $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete
 $Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT

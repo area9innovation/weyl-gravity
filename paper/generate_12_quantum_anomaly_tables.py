@@ -28,6 +28,7 @@ INPUTS = {
     "gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_tt_log": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_log": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "fv_conformized_log": ROOT / "quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
 }
 
 
@@ -62,6 +63,7 @@ def _load() -> dict[str, dict[str, Any]]:
     gamma1 = values["gamma1"]
     flat_tt_log = values["flat_tt_log"]
     curvature_squared_log = values["curvature_squared_log"]
+    fv_conformized_log = values["fv_conformized_log"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
         or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
@@ -108,6 +110,12 @@ def _load() -> dict[str, dict[str, Any]]:
             "first_difference_order"
         )
         != 3
+        or fv_conformized_log.get("decision", {}).get(
+            "selected_C2_log_local_Weyl_completion"
+        )
+        != "CERTIFIED"
+        or fv_conformized_log.get("carrier_crosswalk", {}).get("identity_status")
+        != "DISTINCT_CARRIERS_NO_IDENTIFICATION"
     ):
         raise ValueError("Paper 12 generated-table dependency drifted")
     return values
@@ -145,6 +153,7 @@ def build() -> str:
     gamma1 = values["gamma1"]
     flat_tt_log = values["flat_tt_log"]
     curvature_squared_log = values["curvature_squared_log"]
+    fv_conformized_log = values["fv_conformized_log"]
     even_orbits = json.loads(
         next(
             item["payload_json"]
@@ -181,6 +190,8 @@ def build() -> str:
     flat_log = flat_tt_log["exact_logarithmic_form_factor"]
     curved_log = curvature_squared_log["covariant_curvature_squared_form_factor"]
     operator_comparison = curvature_squared_log["operator_choice_independence"]
+    fv_carrier = fv_conformized_log["conformized_C2_log"]
+    fv_cubic = fv_conformized_log["cubic_carrier"]
     zero_modes = {
         row["operator"]: row["zero_mode_dimension"]
         for row in integration_slice["factor_exponent_ledger"]
@@ -332,11 +343,13 @@ Covariant-log datum & exact value \\
 curvature order of $\langle C,\log(\Delta_C/\mu^2)C\rangle$ & {curved_log['curvature_order']} \\
 first admissible operator-choice difference & {operator_comparison['first_difference_order']} \\
 logarithmic coefficient & ${_q(curved_log['logarithmic_coefficient'])}$ \\
-cubic nonlocal completion & open \\
+selected FV Weyl-orbit completion & certified \\
+first forced FV correction order & {fv_cubic['first_completion_order']} \\
+independent cubic Weyl-invariant form factors & open \\
 finite $C^2/R^2$ normalization & open \\
 \bottomrule
 \end{{tabular}}
-\caption{{Covariant curvature-squared logarithm and the exact first-missing-order audit.}}
+\caption{{Covariant curvature-squared logarithm, its exact FV completion as a selected carrier, and the independent-data boundary.  The coefficient remains ${_q(fv_carrier['logarithmic_coefficient'])}$.}}
 \label{{tab:generated-curvature-squared-logarithm}}
 \end{{table}}
 

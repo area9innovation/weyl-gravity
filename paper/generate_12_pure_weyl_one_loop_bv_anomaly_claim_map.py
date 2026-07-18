@@ -37,6 +37,7 @@ INPUTS = {
     "anomaly_induced_Gamma1": ROOT / "quantum-weyl/transfer/certificates/ANOMALY_INDUCED_NONLOCAL_GAMMA1.json",
     "flat_TT_logarithmic_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": ROOT / "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+    "FV_conformized_C2_log_Gamma1": ROOT / "quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
 
@@ -67,6 +68,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
+    fv_conformized_log = values["FV_conformized_C2_log_Gamma1"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -128,6 +130,16 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "COMPLETE_CURVED_WEYL_INVARIANT_REMAINDER_SUPPLIED"
         )
         is not False
+        or fv_conformized_log.get("decision", {}).get(
+            "selected_C2_log_local_Weyl_completion"
+        )
+        != "CERTIFIED"
+        or fv_conformized_log.get("carrier_crosswalk", {}).get("identity_status")
+        != "DISTINCT_CARRIERS_NO_IDENTIFICATION"
+        or fv_conformized_log.get("claim_flags", {}).get(
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
+        )
+        is not False
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -156,17 +168,18 @@ def build() -> dict[str, Any]:
     gamma1 = values["anomaly_induced_Gamma1"]
     flat_tt_log = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log = values["curvature_squared_covariant_log_Gamma1"]
+    fv_conformized_log = values["FV_conformized_C2_log_Gamma1"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
         "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
-        "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_COVARIANT_CURVATURE_SQUARED_LOGARITHM",
+        "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_TAU_ADIC_EXTENDED_QME_RESTORATION_ANOMALY_INDUCED_GAMMA1_AND_FV_CONFORMIZED_C2_LOGARITHM",
         "lifecycle_state": "WRITING_STARTED",
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, an exact covariant C2 logarithm through curvature order two, and an exact raw-to-BoxR-zero local R2 scheme conversion.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME, one exact conditional anomaly-induced Gamma1 representative, an exact FV-conformized completion of the selected C2 logarithmic carrier, and an exact raw-to-BoxR-zero local R2 scheme conversion.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -219,6 +232,10 @@ def build() -> dict[str, Any]:
             "flat_TT_scale_response": flat_tt_log["exact_logarithmic_form_factor"]["RG_scale_response"],
             "covariant_C2_log_through_curvature_order_two": True,
             "first_unresolved_C2_log_completion_order": curvature_squared_log["operator_choice_independence"]["first_difference_order"],
+            "FV_conformized_C2_log_local_Weyl_completion": True,
+            "FV_scalar_flat_representative": fv_conformized_log["fv_scalar_flat_representative"]["status"],
+            "FV_first_forced_completion_order": fv_conformized_log["cubic_carrier"]["first_completion_order"],
+            "FV_and_WZ_dressed_metrics_distinct": True,
             "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
             "repository_29_over_120_local_R2_reproduced": True,
@@ -235,7 +252,7 @@ def build() -> dict[str, Any]:
             "residual_quantum_transfer": False,
             "complete_renormalized_Q1_supplied": False,
             "complete_renormalized_Gamma1_supplied": False,
-            "cubic_nonlocal_curvature_completion": False,
+            "independent_cubic_Weyl_invariant_form_factors": False,
             "nonlocal_R2_form_factor": False,
             "absolute_dressed_Rhat2_normalization": False,
             "same_background_compensator_contraction": False,
@@ -246,11 +263,11 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "C2_CUBIC_CURVATURE_COMPLETION_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "status": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
-                "C2 cubic-and-higher nonlocal completion, the independent nonlocal R2 form factor, and global Paneitz Green data",
+                "independent cubic-and-higher Weyl-invariant form factors, the independent nonlocal R2 form factor, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],
             "required_outputs": [

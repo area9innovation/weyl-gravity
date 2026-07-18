@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-fv-conformized-c2-log-gamma1-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "scope", "fv_scalar_flat_representative", "weyl_covariance", "conformized_C2_log", "cubic_carrier", "carrier_crosswalk", "normalization_and_missing_physics", "decision", "claim_flags", "source_provenance", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-fv-conformized-c2-log-gamma1-v1"},
+    "result_id": {"const": "FV_CONFORMIZED_C2_LOG_GAMMA1"},
+    "result_state": {"const": "FV_CONFORMIZED_C2_LOG_CARRIER_EXACTLY_WEYL_COMPLETED_INDEPENDENT_CUBIC_R2_AND_NORMALIZATION_DATA_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["signature", "dimension", "geometry", "weyl_transformations", "carrier", "completion_type"],
+      "properties": {
+        "signature": {"const": "Euclidean"},
+        "dimension": {"const": 4},
+        "geometry": {"type": "string", "minLength": 40},
+        "weyl_transformations": {"type": "string", "minLength": 30},
+        "carrier": {"type": "string", "minLength": 40},
+        "completion_type": {"const": "Fradkin-Vilkovisky conformal gauge fixing"}
+      }
+    },
+    "fv_scalar_flat_representative": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conformal_operator", "normalized_solution", "boundary_normalization", "inverse_domain_policy", "operator_on_constant", "inverse_equation", "yamabe_residual", "sigma_FV", "representative_metric", "scalar_flat_identity", "status"],
+      "properties": {
+        "conformal_operator": {"const": "L_g=Box_g-R_g/6"},
+        "normalized_solution": {"const": "u_g=1+(1/6)L_g^(-1)R_g"},
+        "boundary_normalization": {"type": "string"},
+        "inverse_domain_policy": {"type": "string", "minLength": 100},
+        "operator_on_constant": {"const": "L_g(1)=-R_g/6"},
+        "inverse_equation": {"const": "L_g L_g^(-1) R_g=R_g"},
+        "yamabe_residual": {"$ref": "#/$defs/rational"},
+        "sigma_FV": {"const": "Sigma_FV[g]=-log(u_g)"},
+        "representative_metric": {"const": "g_bar=u_g^2 g=exp(-2 Sigma_FV[g])g"},
+        "scalar_flat_identity": {"const": "R[g_bar]=u_g^(-3)(R_g-6 Box_g)u_g=0"},
+        "status": {"const": "EXACT_SCALAR_FLAT_REPRESENTATIVE_ON_DECLARED_INVERSE_DOMAIN"}
+      }
+    },
+    "weyl_covariance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metric_transformation", "solution_transformation", "sigma_transformation", "weight_ledger", "representative_identity", "status"],
+      "properties": {
+        "metric_transformation": {"const": "g_prime=exp(2 sigma)g"},
+        "solution_transformation": {"const": "u_g_prime=exp(-sigma)u_g"},
+        "sigma_transformation": {"const": "Sigma_FV[g_prime]=Sigma_FV[g]+sigma"},
+        "weight_ledger": {
+          "type": "object", "additionalProperties": false,
+          "required": ["u", "metric", "u_squared_metric"],
+          "properties": {"u": {"const": -1}, "metric": {"const": 2}, "u_squared_metric": {"const": 0}}
+        },
+        "representative_identity": {"const": "g_bar[g_prime]=g_bar[g]"},
+        "status": {"const": "EXACT_ON_BOUNDARY_COMPATIBLE_WEYL_ORBIT"}
+      }
+    },
+    "conformized_C2_log": {
+      "type": "object", "additionalProperties": false,
+      "required": ["functional", "logarithmic_coefficient", "coefficient_identity", "weyl_invariance_proof", "leading_curvature_order", "leading_reduction", "status"],
+      "properties": {
+        "functional": {"type": "string", "minLength": 100},
+        "logarithmic_coefficient": {"$ref": "#/$defs/rational"},
+        "coefficient_identity": {"const": "A_log=-c/2=-199/60"},
+        "weyl_invariance_proof": {"type": "string", "minLength": 80},
+        "leading_curvature_order": {"const": 2},
+        "leading_reduction": {"const": "Gamma1_C2_conf=Gamma1_C2_log+O(curvature^3)"},
+        "status": {"const": "EXACT_LOCAL_WEYL_COMPLETION_OF_SELECTED_SPECTRAL_CARRIER"}
+      }
+    },
+    "cubic_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sigma_linearization", "operator_difference", "frechet_kernel", "first_completion_order", "formal_cubic_term", "basis_decomposition", "independent_W3_form_factors", "status"],
+      "properties": {
+        "sigma_linearization": {"const": "Sigma_FV=-(1/6)Box^(-1)R+O(curvature^2)"},
+        "operator_difference": {"type": "string"},
+        "frechet_kernel": {"type": "string"},
+        "first_completion_order": {"const": 3},
+        "formal_cubic_term": {"type": "string", "minLength": 100},
+        "basis_decomposition": {"const": "NOT_COMPUTED"},
+        "independent_W3_form_factors": {"const": "NOT_COMPUTED"},
+        "status": {"const": "COMPLETION_CARRIER_IDENTIFIED_COEFFICIENT_BASIS_OPEN"}
+      }
+    },
+    "carrier_crosswalk": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fv_metric", "wz_metric", "identity_status", "reason"],
+      "properties": {
+        "fv_metric": {"type": "string", "minLength": 100},
+        "wz_metric": {"type": "string", "minLength": 80},
+        "identity_status": {"const": "DISTINCT_CARRIERS_NO_IDENTIFICATION"},
+        "reason": {"type": "string", "minLength": 100}
+      }
+    },
+    "normalization_and_missing_physics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["finite_C2_constant", "independent_nonlocal_R2_form_factor", "absolute_dressed_Rhat2_normalization", "independent_cubic_Weyl_invariant_form_factors", "global_kernel_and_boundary_data", "complete_Gamma1", "complete_Q1"],
+      "properties": {
+        "finite_C2_constant": {"const": "NOT_FIXED"},
+        "independent_nonlocal_R2_form_factor": {"const": "NOT_COMPUTED"},
+        "absolute_dressed_Rhat2_normalization": {"const": "NOT_FIXED"},
+        "independent_cubic_Weyl_invariant_form_factors": {"const": "NOT_COMPUTED"},
+        "global_kernel_and_boundary_data": {"const": "DECLARED_NOT_SOLVED_GLOBALLY"},
+        "complete_Gamma1": {"const": "NO_CERTIFIED_FUNCTIONAL"},
+        "complete_Q1": {"const": "NO_CERTIFIED_OPERATOR"}
+      }
+    },
+    "decision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_C2_log_local_Weyl_completion", "selected_C2_log_coefficient", "cubic_completion_carrier", "independent_cubic_form_factors", "nonlocal_R2_form_factor", "complete_Gamma1", "complete_Q1", "residual_transfer"],
+      "properties": {
+        "selected_C2_log_local_Weyl_completion": {"const": "CERTIFIED"},
+        "selected_C2_log_coefficient": {"const": "CERTIFIED"},
+        "cubic_completion_carrier": {"const": "IDENTIFIED_NOT_DECOMPOSED"},
+        "independent_cubic_form_factors": {"const": "NO_CERTIFIED_FUNCTIONAL"},
+        "nonlocal_R2_form_factor": {"const": "NOT_COMPUTED"},
+        "complete_Gamma1": {"const": "NO_CERTIFIED_FUNCTIONAL"},
+        "complete_Q1": {"const": "NO_CERTIFIED_OPERATOR"},
+        "residual_transfer": {"const": "FORBIDDEN"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["FV_SCALAR_FLAT_REPRESENTATIVE_CERTIFIED", "FV_CONFORMIZED_C2_LOG_CARRIER_FIXED", "SELECTED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED", "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED", "NONLOCAL_R2_FORM_FACTOR_COMPUTED", "FINITE_C2_NORMALIZATION_FIXED", "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "FV_SCALAR_FLAT_REPRESENTATIVE_CERTIFIED": {"const": true},
+        "FV_CONFORMIZED_C2_LOG_CARRIER_FIXED": {"const": true},
+        "SELECTED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED": {"const": true},
+        "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED": {"const": false},
+        "NONLOCAL_R2_FORM_FACTOR_COMPUTED": {"const": false},
+        "FINITE_C2_NORMALIZATION_FIXED": {"const": false},
+        "ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_FIXED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "source_provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["authors", "title", "journal", "doi", "arxiv", "url", "use"],
+      "properties": {
+        "authors": {"const": ["A. O. Barvinsky", "W. Wachowski"]},
+        "title": {"const": "Notes on conformal anomaly, nonlocal effective action and the metamorphosis of the running scale"},
+        "journal": {"const": "Physical Review D 108, 045014 (2023)"},
+        "doi": {"const": "10.1103/PhysRevD.108.045014"},
+        "arxiv": {"const": "2306.03780v3"},
+        "url": {"const": "https://arxiv.org/abs/2306.03780"},
+        "use": {"type": "string", "minLength": 80}
+      }
+    },
+    "dependencies": {
+      "type": "object", "additionalProperties": false,
+      "required": ["covariant_C2_log", "regulated_breaking", "extended_cohomology", "Q1_disposition"],
+      "properties": {
+        "covariant_C2_log": {"$ref": "#/$defs/artifact"},
+        "regulated_breaking": {"$ref": "#/$defs/artifact"},
+        "extended_cohomology": {"$ref": "#/$defs/artifact"},
+        "Q1_disposition": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "next_gate": {"const": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_EXTENDED_CONTRACTION"},
+    "claim_boundary": {"type": "string", "minLength": 1000}
+  },
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

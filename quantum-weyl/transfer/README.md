@@ -428,13 +428,22 @@ scheme-independent difference
 functional `-(199/60)<C,log(Delta_C/mu^2)C>` through curvature order two.
 The resolvent Fréchet formula proves that admissible Laplace-type operator
 choices first change it at curvature order three.
+`FV_CONFORMIZED_C2_LOG_GAMMA1` now evaluates this entire selected carrier on
+the normalized Fradkin--Vilkovisky scalar-flat representative. This supplies
+an exact nonlocal functional invariant under boundary-compatible local Weyl
+transformations, preserves the coefficient `-199/60`, and identifies the
+first forced cubic correction through the Fréchet derivative of the spectral
+logarithm. It does not calculate the independent cubic Weyl-invariant form
+factors. The FV metric is a nonlocal functional of the strict metric and is
+not identified with the local `tau`-adic dressed metric.
 `WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION` independently replays the published
 raw local coefficient `(7/2)log(3/2)-159/80` and proves that the strict-metric
 counterterm `(7/24)log(3/2)-53/320` converts it exactly to the repository
 `BoxR=0` convention while reproducing the anomaly-induced local `R2`
 coefficient `29/120`. This fixes a relative one-loop scheme conversion only.
 The additive `C^2` constant, independent nonlocal `R^2` form factor, absolute
-dressed `R(g_hat)^2` normalization, cubic-and-higher `C^2` completion, global
+dressed `R(g_hat)^2` normalization, independent cubic-and-higher
+Weyl-invariant form factors, global
 Green/kernel data, and renormalized BV Laplacian or time-ordered product
 remain absent.
 Residual transfer
@@ -453,6 +462,9 @@ python3 quantum-weyl/transfer/d_derivation_certificate.py --check
 python3 quantum-weyl/transfer/nd2_arity_two_certificate.py --check
 python3 quantum-weyl/transfer/nd2_physical_run_certificate.py --check
 python3 quantum-weyl/transfer/total_d_disposition_certificate.py --check
+PYTHONPATH=quantum-weyl python3 -m transfer.fv_conformized_c2_log_gamma1 --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_fv_conformized_c2_log_gamma1
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_fv_conformized_c2_log_gamma1.py -v
 python3 quantum-weyl/transfer/berger_clock_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_retained_q1_import_certificate.py --check
 python3 quantum-weyl/transfer/berger_pbw_backend_certificate.py --check
