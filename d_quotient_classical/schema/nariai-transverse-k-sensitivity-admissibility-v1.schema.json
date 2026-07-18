@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nariai-transverse-k-sensitivity-admissibility-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "nariai-transverse-k-sensitivity-admissibility-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "items": {"enum": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]}, "minItems": 1, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "additionalProperties": {"$ref": "#/$defs/dependency"}, "minProperties": 2},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formal_screen", "action_derived_admissibility", "interpretation"],
+      "properties": {
+        "formal_screen": {
+          "type": "object", "additionalProperties": false,
+          "required": ["ansatz", "basis", "basis_dimension", "sensitivity_map", "nonzero_directions", "nonzero_direction_count", "all_nonzero_directions_first_order"],
+          "properties": {
+            "ansatz": {"type": "string"}, "basis": {"type": "array", "items": {"$ref": "#/$defs/basis"}},
+            "basis_dimension": {"type": "integer"}, "sensitivity_map": {"$ref": "#/$defs/matrix"},
+            "nonzero_directions": {"type": "array", "items": {"$ref": "#/$defs/sensitivity"}},
+            "nonzero_direction_count": {"type": "integer"}, "all_nonzero_directions_first_order": {"type": "boolean"}
+          }
+        },
+        "action_derived_admissibility": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source_path", "authoritative_delta_K_nonzero_coefficients", "authoritative_delta_K_orders", "formal_sensitive_direction_admissible"],
+          "properties": {
+            "source_path": {"type": "string"}, "authoritative_delta_K_nonzero_coefficients": {"const": 0},
+            "authoritative_delta_K_orders": {"type": "array", "items": {"type": "integer"}, "maxItems": 0},
+            "formal_sensitive_direction_admissible": {"const": false}
+          }
+        },
+        "interpretation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["obstruction_formally_K_sensitive", "repair_within_action_derived_target_complex", "complete_coupled_SDR_obstructed", "required_next_ansatz"],
+          "properties": {
+            "obstruction_formally_K_sensitive": {"const": true}, "repair_within_action_derived_target_complex": {"const": false},
+            "complete_coupled_SDR_obstructed": {"const": false}, "required_next_ansatz": {"type": "string"}
+          }
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "flags": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "next_gate": {"type": "string", "minLength": 1}, "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4},
+    "verification_commands": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 4}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "matrix": {"type": "object", "additionalProperties": false, "required": ["shape", "rank", "entries", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false, "minItems": 2, "maxItems": 2}, "rank": {"type": "integer"}, "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "basis": {"type": "object", "additionalProperties": false, "required": ["word", "output_row", "input_column"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "output_row": {"type": "integer"}, "input_column": {"type": "integer"}}},
+    "sensitivity": {"type": "object", "additionalProperties": false, "required": ["word", "output_row", "input_column", "value"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "output_row": {"type": "integer"}, "input_column": {"type": "integer"}, "value": {"type": "string"}}}
+  }
+}

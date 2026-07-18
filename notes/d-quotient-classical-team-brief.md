@@ -102,14 +102,24 @@ detects the remaining obstruction.  Importantly, the earlier Phi-only witness
 is reachable in this enlarged family and is explicitly superseded rather than
 mistaken for a global no-go.
 
+The remaining five-term quotient is formally sensitive to variations of the
+first BGG/gauge row: 23 of 180 complete order-at-most-one basis directions
+hit it after the unique induced incidence/$L_1$ correction and the
+$\delta(Kp_0)$ term are included.  This is not an admissible repair.  The
+authoritative action-derived transverse `first_BGG` variation in the jet
+certificate has zero coefficients, so every sensitive formal direction would
+change the target metric BV differential rather than strictify its parent
+comparison.
+
 The next coherent classical gate is therefore a genuinely coupled variation
-including $K/p_0$ or neighbouring equation/constraint/cotangent rows (or an
-explicitly higher-order Phi ansatz), with action-derived cyclic identification
-imposed simultaneously.
+of neighbouring equation/constraint/cotangent rows, or a homotopy-coherent
+equation cone (or an explicitly higher-order Phi ansatz), with action-derived
+cyclic identification imposed simultaneously.  The action-derived metric
+gauge generator is held fixed.
 The atlas remains fail-closed: the parent identity, unique endpoint repair,
-scoped Phi-only obstruction, incidence/$L_1$ rigidity and normalized-$L_0$
-obstruction are `CERTIFIED`; the complete rank-310 SDR and transverse
-causal transfer remain `OPEN`.
+scoped Phi-only obstruction, incidence/$L_1$ rigidity, normalized-$L_0$
+obstruction and $K$-admissibility screen are `CERTIFIED`; the complete
+rank-310 SDR and transverse causal transfer remain `OPEN`.
 
 ## Generator correction (2026-07-17; authoritative)
 

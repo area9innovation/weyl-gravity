@@ -461,6 +461,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   higher order, the complete SDR and causal transfer remain open:
   [`certificates/NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1.json`](certificates/NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1.json),
   [`reports/nariai-transverse-normalized-l0-coupled-obstruction.md`](reports/nariai-transverse-normalized-l0-coupled-obstruction.md)
+- Gauge-row admissibility screen: 23 of the 180 formal order-at-most-one
+  `delta_K` directions act nontrivially on the five-term obstruction after
+  uniquely preserving the first BGG square and including `delta(K p0)`.
+  However, the authoritative action-derived transverse `first_BGG` variation
+  has zero coefficients.  Those sensitive directions would change the metric
+  gauge generator and are therefore not admissible repairs of the fixed BV
+  complex.  Equation/constraint/cotangent and homotopy-coherent cone rows
+  remain open:
+  [`certificates/NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1.json`](certificates/NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1.json),
+  [`reports/nariai-transverse-k-sensitivity-admissibility.md`](reports/nariai-transverse-k-sensitivity-admissibility.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer
