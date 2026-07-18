@@ -28,6 +28,7 @@ CERTS = {
     "abd_extra_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+    "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
 }
 
 
@@ -186,6 +187,7 @@ def entries() -> list[dict[str, Any]]:
         "k": "all compact-product Fourier sectors required by the full relative triangle",
         "omega": "all product-mode frequencies required by the full relative triangle",
     }
+    identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
             "id": "nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction",
@@ -288,12 +290,12 @@ def entries() -> list[dict[str, Any]]:
                     ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
                 ),
                 dispersion=("CERTIFIED", "The q-primary Einstein shells and p-primary extra shell are explicitly separated."),
-                pairing=("CERTIFIED", "The action-derived Einstein and extra blocks are orthogonal, with inertias (1,1) and (2,0)."),
+                pairing=("CERTIFIED", "The action-derived Einstein and extra blocks are orthogonal, with inertias (1,1) and (2,0); the fixed identity chain map has a separately certified nonradical cyclic defect."),
                 taub=("OPEN", "Only selected quadratic source and moment-map blocks are certified; the complete generic map is open."),
                 resonance=("OPEN", "No complete all-input generic axial resonance table is certified."),
             ),
-            "evidence": _evidence("relative_branch_dictionary", "dictionary"),
-            "claim_boundary": "This is a same-background generic-axial derived cofiber and action-pairing map. It is a sectoral Bridge-1 input, not the all-sector EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 and not a Berger crosswalk. No complete q2/q3 relative morphism, cohomology operation or cyclic deformation verdict is promoted.",
+            "evidence": _evidence("relative_branch_dictionary", "identity_cyclic_obstruction", "dictionary"),
+            "claim_boundary": "This is a same-background generic-axial derived cofiber and action-pairing map. Its fixed identity field inclusion is obstructed from being a strict cyclic map; corrected nonidentity or chain-homotopy cyclic morphisms remain open. It is a sectoral Bridge-1 input, not the all-sector EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 and not a Berger crosswalk. No complete q2/q3 relative morphism, cohomology operation or cyclic deformation verdict is promoted.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_polar_relative_branch_map",
@@ -301,17 +303,17 @@ def entries() -> list[dict[str, Any]]:
             "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
             "mode_data": _mode_data(
                 _second(
-                    ("OPEN", "The polar solution cofiber is certified, but cyclic BV compatibility and the complete quadratic obstruction map remain open."),
+                    ("OPEN", "The polar solution cofiber is certified; the fixed identity cyclic map is obstructed, while corrected cyclic maps and the complete quadratic obstruction map remain open."),
                     ("OPEN", "No complete smooth-secular relative obstruction map is certified."),
                     ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
                 ),
                 dispersion=("CERTIFIED", "The q-primary Einstein shells and p-primary extra shell are explicitly separated."),
-                pairing=("CERTIFIED", "The direct action-derived polar Einstein/extra pairing is nondegenerate and orthogonal on the reduced solution modules."),
+                pairing=("CERTIFIED", "The direct action-derived polar Einstein/extra pairing is nondegenerate and orthogonal; its nonradical defect obstructs strict cyclicity of the fixed identity chain map."),
                 taub=("OPEN", "The polar source fixtures do not yet constitute the complete relative obstruction map."),
-                resonance=("OPEN", "Cyclic BV compatibility and the complete all-input polar resonance table remain open."),
+                resonance=("OPEN", "The fixed identity cyclic route is obstructed; corrected nonidentity/homotopy maps and the complete all-input polar resonance table remain open."),
             ),
-            "evidence": _evidence("relative_branch_dictionary", "dictionary"),
-            "claim_boundary": "This is a same-background generic-polar solution cofiber with a certified direct pairing. Cyclic BV compatibility of the polar chain map and final residual descent are open, so it does not activate a cyclic relative L_infinity theorem or the global Bridge-1 gate.",
+            "evidence": _evidence("relative_branch_dictionary", "identity_cyclic_obstruction", "dictionary"),
+            "claim_boundary": "This is a same-background generic-polar solution cofiber with a certified direct pairing. Strict cyclic compatibility of its fixed identity field map is obstructed; corrected nonidentity or chain-homotopy cyclic morphisms and final residual descent are open. It therefore does not activate a cyclic relative L_infinity theorem or the global Bridge-1 gate.",
         },
         {
             "id": "nonlinear.product.homogeneous_abd_times_ell2_extra.partial_resonance_matrix",
@@ -366,6 +368,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_linfinity_preflight", "relative_branch_dictionary", "dictionary", "mixed_obstruction"),
             "claim_boundary": "Compact-product Bridge 2 is INPUT_BLOCKED until Bridge 1 supplies EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 and complete same-background Einstein-Maxwell and Weyl-Maxwell q1,q2,q3 payloads. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized.",
+        },
+        {
+            "id": "nonlinear.product.bridge1.generic_identity_cyclic_compatibility_obstruction",
+            "scope": identity_cyclic_scope,
+            "descriptions": {"causal": "NOT_APPLICABLE", "symplectic": "OBSTRUCTED", "nonlinear": "NO_CERTIFIED_MAP", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("NO_CERTIFIED_MAP", "The obstructed fixed identity map cannot activate the bounded relative interaction problem."),
+                    ("NO_CERTIFIED_MAP", "No corrected cyclic relative map has been certified for the smooth-secular problem."),
+                    ("NO_CERTIFIED_MAP", "No compact-product causal Green relative morphism is certified."),
+                ),
+                dispersion=("CERTIFIED", "The obstruction is evaluated on both q-primary Einstein-Maxwell shells for every generic physical harmonic."),
+                pairing=("OBSTRUCTED", "The induced solution-pairing defect D=R-I is nonzero and rank two in both axial and polar parity blocks."),
+                taub=("NOT_APPLICABLE", "This is a linear cyclic-pairing obstruction, not a quadratic adjoint-cokernel verdict."),
+                resonance=("NOT_APPLICABLE", "No nonlinear harmonic resonance is decided by the linear pairing defect."),
+            ),
+            "evidence": _evidence("identity_cyclic_obstruction", "relative_branch_dictionary"),
+            "claim_boundary": "Only strict cyclic compatibility of the certified generic chain maps with their fixed identity field inclusion and standard action-derived pairings is obstructed. Corrected nonidentity symplectic maps, pairing improvements, cyclic maps up to declared chain homotopy, exceptional/global sectors and final residual descent remain OPEN or NO_CERTIFIED_MAP. This result does not by itself decide Delta2, ell3 on cohomology, observables, particles or quantum states.",
         },
     ]
 

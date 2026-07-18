@@ -779,7 +779,8 @@ are exact and rank three per polarization, while twist columns and the joint
 stabilizer/resonance zero locus remain open.  It is partial interaction
 sourcing, not an obstruction verdict.  Neither current handoff activates even
 a scoped cyclic Bridge 2 calculation: the axial--polar source uses the polar
-leg whose cyclic BV compatibility is open, while the `a,b,d` source matrix
+leg whose fixed identity cyclic compatibility is obstructed and whose
+corrected nonidentity/homotopy alternative remains open, while the `a,b,d` source matrix
 uses the homogeneous global leg whose map lifecycle is only `ONSHELL_MAP_ONLY`.
 The exceptional `ell=1,k=0` update now supplies explicit CRT solution
 projectors and a nonradical extra Gram matrix `diag(16,3)`, but remains
@@ -800,8 +801,11 @@ publishes the triangle handoff contract at
 `d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json`;
 it requires content-addressed source/target `q1`, inclusion,
 projection-or-cofiber and pairing-or-current artifacts rather than accepting
-status flags alone.  The receiver
-validates full-BV rows, support locality, cyclic pairing, the arity-two and
+status flags alone.  It also requires the handoff to certify that the generic
+fixed-identity cyclic obstruction is respected, so the obstructed inclusion
+cannot be silently relabelled as the full cyclic triangle.  The receiver
+validates full-BV rows, support locality,
+cyclic pairing, the arity-two and
 arity-three identities, `H_product` equivariance, exact artifact hashes and
 an independent-verifier flag.  It rejects Berger-background payloads and
 does not accept sectoral/on-shell branch maps or selected source fixtures as
@@ -810,6 +814,20 @@ primitive or normalized cofiber witness, the complete arity-three morphism
 defect, and then the induced cohomology/deformation verdict.  The existing
 Berger filtered-cyclic `ell3` obstruction remains untouched and `q4` remains
 unauthorized.
+
+The generic Bridge-1 identity route has since closed negatively and is now a
+separate fail-closed atlas row,
+`nonlinear.product.bridge1.generic_identity_cyclic_compatibility_obstruction`.
+`EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1` proves on every
+physical `ell>=2` fibre and allowed compact momentum that the induced
+solution-pairing defect `D=R-I` is nonzero and rank two in both axial and polar
+parities.  Hence the certified polynomial chain maps cannot be strict cyclic
+maps while their field inclusion is fixed to the physical identity.  This is
+not an obstruction to a corrected nonidentity symplectic identification, a
+pairing improvement, or a cyclic morphism up to a declared chain homotopy.
+Those alternatives, the exceptional/global off-shell maps and final residual
+descent remain open; Bridge 1 and the relative nonlinear receiver therefore
+remain inactive.
 
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned

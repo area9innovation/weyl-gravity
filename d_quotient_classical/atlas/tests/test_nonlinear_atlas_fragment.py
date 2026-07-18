@@ -41,8 +41,10 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(axial["descriptions"]["symplectic"], "CERTIFIED")
         self.assertEqual(axial["descriptions"]["nonlinear"], "OPEN")
         self.assertIn("not the all-sector", axial["claim_boundary"])
+        self.assertIn("fixed identity", axial["claim_boundary"])
         self.assertEqual(polar["descriptions"]["nonlinear"], "OPEN")
-        self.assertIn("Cyclic BV compatibility", polar["claim_boundary"])
+        self.assertIn("fixed identity", polar["claim_boundary"])
+        self.assertIn("corrected nonidentity", polar["claim_boundary"])
 
     def test_abd_source_matrix_is_not_an_obstruction_verdict(self):
         entry = next(item for item in atlas.build()["entries"] if "homogeneous_abd" in item["id"])
@@ -66,6 +68,15 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("same-background", entry["claim_boundary"])
         self.assertIn("Berger tensors are ineligible", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
+
+    def test_fixed_identity_cyclic_obstruction_is_scoped(self):
+        entry = next(item for item in atlas.build()["entries"] if "generic_identity_cyclic_compatibility_obstruction" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "OBSTRUCTED")
+        self.assertIn("fixed identity", entry["claim_boundary"])
+        self.assertIn("Corrected nonidentity", entry["claim_boundary"])
+        self.assertIn("remain OPEN", entry["claim_boundary"])
 
 
 if __name__ == "__main__":
