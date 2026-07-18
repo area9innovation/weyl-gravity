@@ -1,5 +1,10 @@
 # Classical snapshot compatibility receiver readiness
 
+Current update: the readiness artifact below remains the historical receiver
+contract, while `REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY` is now the
+accepted physical bridge for the round-`S4` analytic producer. Exact Git-tree
+attribution supplies the analytic proof role.
+
 Status: `LOCAL-ALGEBRAIC` receiver ready; no physical cross-commit bridge supplied.
 
 The regulated Slavnov-breaking input may be produced at a different repository commit from the frozen local-BV calculation. Commit equality is therefore not required, but content equality is. The receiver accepts a distinct-commit bridge only when all five canonical hashes agree exactly:

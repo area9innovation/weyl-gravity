@@ -91,6 +91,11 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            value["claim_flags"][
+                "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED"
+            ]
+        )
+        self.assertTrue(
             value["claim_flags"]["REGULATED_BV_INSERTION_V2_RECEIVER_READY"]
         )
         self.assertEqual(
@@ -114,6 +119,11 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         )
         self.assertEqual(
             physical["repository_BV_anomaly_vector_status"], "NOT_COMPUTED"
+        )
+        self.assertFalse(
+            value["minimal_missing_carrier_theorem"][
+                "classical_snapshot_compatibility_bridge_gap"
+            ]
         )
 
     def test_receiver_mechanics_classifies_both_qme_branches(self) -> None:

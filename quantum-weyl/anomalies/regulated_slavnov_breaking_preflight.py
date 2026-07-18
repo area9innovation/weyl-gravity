@@ -48,6 +48,7 @@ DEPENDENCIES = {
     "physical_full_BV_multiplicity_ledger": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
     "repository_round_S4_Euler_coefficient": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
     "classical_snapshot_compatibility_receiver": ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS.json",
+    "physical_classical_snapshot_compatibility": ROOT / "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
 }
 
@@ -702,6 +703,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     physical_ledger = values["physical_full_BV_multiplicity_ledger"]
     repository_euler = values["repository_round_S4_Euler_coefficient"]
     compatibility = values["classical_snapshot_compatibility_receiver"]
+    physical_compatibility = values["physical_classical_snapshot_compatibility"]
     ward = values["Ward_insertion_contract"]
     if (
         g2.get("result_state")
@@ -873,6 +875,27 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
     ):
         raise ValueError("classical snapshot compatibility dependency drifted")
+    frozen_import = json.loads(
+        (
+            ROOT
+            / "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json"
+        ).read_text()
+    )
+    physical_compatibility_receipt = validate_classical_snapshot_compatibility(
+        physical_compatibility,
+        repository_root=ROOT,
+        expected_local_commit=g2["classical_commit"],
+        expected_local_hashes=frozen_import["independent_replay"]["canonical_hashes"],
+        expected_analytic_commit=physical_commit,
+    )
+    if (
+        physical_compatibility.get("result_state")
+        != "LOCAL_BV_CONTENT_HASHES_EQUAL_ACROSS_DISTINCT_COMMITS"
+        or physical_compatibility_receipt.get("status")
+        != "SEMANTIC_RECEIVER_ACCEPTED"
+        or physical_compatibility_receipt.get("matched_hash_count") != 5
+    ):
+        raise ValueError("physical classical snapshot compatibility drifted")
     if (
         ward.get("result_state") != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
         or ward.get("physical_input_status") != "NOT_RECEIVED"
@@ -935,7 +958,7 @@ def build() -> dict[str, Any]:
     certificate = {
         "schema": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1",
         "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
-        "result_state": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_AND_EULER_COEFFICIENT_BOUND_REGULATED_BV_INSERTION_OPEN",
+        "result_state": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_EULER_AND_SNAPSHOT_COMPATIBILITY_BOUND_REGULATED_BV_INSERTION_OPEN",
         "result_stage": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
         "regularity_scope": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY",
@@ -1012,6 +1035,7 @@ def build() -> dict[str, Any]:
                 "semantically replayed physical round-S4 full-BV multiplicity ledger",
                 "repository round-S4 Euler coefficient a=87/20 (E4 coordinate -87/20)",
                 "semantic cross-commit classical snapshot compatibility receiver",
+                "physical cross-commit classical snapshot compatibility bridge",
                 "versioned regulated BV insertion-decomposition output contract",
                 "portable renormalized Ward-insertion input contract",
             ],
@@ -1019,10 +1043,6 @@ def build() -> dict[str, Any]:
                 {
                     "carrier_id": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH",
                     "required_output": "supply an eligible physical background on which C2 is visible and match the full repository BV operator and measure coefficient c",
-                },
-                {
-                    "carrier_id": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
-                    "required_output": "prove content-hash compatibility between the accepted physical analytic commit and the frozen local-BV quotient commit",
                 },
                 {
                     "carrier_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
@@ -1051,7 +1071,8 @@ def build() -> dict[str, Any]:
             "physical_full_BV_multiplicity_ledger_accepted": True,
             "repository_round_S4_Euler_coefficient_computed": True,
             "repository_C2_coefficient_gap": True,
-            "classical_snapshot_compatibility_bridge_gap": True,
+            "classical_snapshot_compatibility_bridge_gap": False,
+            "physical_classical_snapshot_compatibility_accepted": True,
             "regulated_BV_insertion_v2_receiver_ready": True,
             "remaining_decision_gap": "the round-S4 physical ledger fixes a=87/20 but cannot see C2; a non-conformally-flat or Ricci-flat full-BV coefficient carrier, a cross-snapshot compatibility proof, and a regulated BV Slavnov insertion with Wess-Zumino and parity proofs remain required; determinant coefficients alone do not decide the QME",
             "no_further_local_graph_expansion_required": True,
@@ -1067,6 +1088,7 @@ def build() -> dict[str, Any]:
             "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED": True,
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": True,
             "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": True,
+            "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
             "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
@@ -1081,7 +1103,7 @@ def build() -> dict[str, Any]:
         "proof_sha256": result["proof_sha256"],
         "next_gate": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all local multiplicity rows are exact. The physical round-S4 TT Hessian dictionary and full-BV multiplicity ledger pass their semantic receivers, and the physical round-S4 ledger fixes a=87/20, equivalently E4 coordinate -87/20. Because round S4 is conformally flat, it cannot determine c: 199/30 remains a standard Euclidean cross-check rather than a repository promotion. The accepted analytic artifacts come from a different classical commit than the frozen local-BV quotient, so a content-hash compatibility bridge remains mandatory before a physical insertion can be accepted. This still does not compute a BV Slavnov breaking: a non-conformally-flat or Ricci-flat C2 carrier, complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The versioned v2 export receiver requires the regulated action, total-derivative remainder, gauge-parameter dependence, regularization dependence, and antifield completion explicitly, including certified zero rows. Every insertion-side proof binds the exact commit, analytic route, basis, and coefficient hash. It permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. Distinct analytic and local-BV commits require a full semantic replay of the five canonical classical snapshot hashes and the role-specific nested proofs; a matching result_id alone is rejected. It proves only the conditional implication that a physical regulated breaking with a nonzero quotient coordinate would obstruct the strict fixed-field-content QME. Therefore it does not promote a complete repository anomaly vector, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
+            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all local multiplicity rows are exact. The physical round-S4 TT Hessian dictionary and full-BV multiplicity ledger pass their semantic receivers, and the physical round-S4 ledger fixes a=87/20, equivalently E4 coordinate -87/20. Because round S4 is conformally flat, it cannot determine c: 199/30 remains a standard Euclidean cross-check rather than a repository promotion. Although the analytic producer and local-BV commits differ, exact Git-tree attribution and equality of all five canonical classical hashes now supply the required physical compatibility bridge. This still does not compute a BV Slavnov breaking: a non-conformally-flat or Ricci-flat C2 carrier, complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The versioned v2 export receiver requires the regulated action, total-derivative remainder, gauge-parameter dependence, regularization dependence, and antifield completion explicitly, including certified zero rows. Every insertion-side proof binds the exact commit, analytic route, basis, and coefficient hash. It permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. Distinct analytic and local-BV commits require a full semantic replay of the five canonical classical snapshot hashes and the role-specific nested proofs; a matching result_id alone is rejected. It proves only the conditional implication that a physical regulated breaking with a nonzero quotient coordinate would obstruct the strict fixed-field-content QME. Therefore it does not promote a complete repository anomaly vector, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
         ),
         "provenance": {
             "source_sha256": {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -1106,6 +1128,8 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         or flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
         is not True
         or flags.get("REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED")
+        is not True
+        or flags.get("REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED")
         is not True
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
         is not True

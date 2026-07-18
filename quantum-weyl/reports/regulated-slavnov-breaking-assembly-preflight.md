@@ -69,6 +69,10 @@ a={87\over20},\qquad [E_4]=-{87\over20}.
 It does not compute `c`: the background is conformally flat, so `C2=0` and
 the `C2` coefficient is invisible. The standard value `199/30` remains an
 independent Euclidean cross-check, not a promoted repository coefficient.
+The analytic producer and frozen local-BV commits are distinct, but the new
+physical compatibility bridge replays the producer Git tree and proves that
+both sides use the byte-identical classical export with all five canonical
+hashes equal.
 
 This proves a useful conditional theorem: if a repository regulator, measure,
 and regulated Slavnov functional match those two standard nontrivial
@@ -83,8 +87,6 @@ decision. The remaining inputs are analytic:
 
 - a non-conformally-flat or Ricci-flat physical full-BV operator/measure
   carrier on which the `C2` coefficient is visible;
-- a content-hash compatibility proof between the physical analytic commit
-  and the distinct frozen local-BV quotient commit;
 - a complete Euclidean elliptic-complex receipt with action normalization and
   an explicit `FOURTH_ORDER_METRIC` or `SECOND_ORDER_AUXILIARY` formulation;
 - content-addressed regulator, zero-mode, determinant-measure, and any

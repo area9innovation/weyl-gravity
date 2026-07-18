@@ -7,14 +7,14 @@
   "properties": {
     "schema": {"const": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1"},
     "result_id": {"const": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"},
-    "result_state": {"const": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_AND_EULER_COEFFICIENT_BOUND_REGULATED_BV_INSERTION_OPEN"},
+    "result_state": {"const": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_EULER_AND_SNAPSHOT_COMPATIBILITY_BOUND_REGULATED_BV_INSERTION_OPEN"},
     "result_stage": {"const": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
     "regularity_scope": {"const": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY"},
     "dependency_hashes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "full_BV_ledger_composer", "physical_TT_dictionary", "physical_full_BV_multiplicity_ledger", "repository_round_S4_Euler_coefficient", "classical_snapshot_compatibility_receiver", "Ward_insertion_contract"],
+      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "full_BV_ledger_composer", "physical_TT_dictionary", "physical_full_BV_multiplicity_ledger", "repository_round_S4_Euler_coefficient", "classical_snapshot_compatibility_receiver", "physical_classical_snapshot_compatibility", "Ward_insertion_contract"],
       "properties": {
         "full_local_BV_G2": {"$ref": "#/$defs/hash"},
         "gauge_fixed_H14": {"$ref": "#/$defs/hash"},
@@ -27,6 +27,7 @@
         "physical_full_BV_multiplicity_ledger": {"$ref": "#/$defs/hash"},
         "repository_round_S4_Euler_coefficient": {"$ref": "#/$defs/hash"},
         "classical_snapshot_compatibility_receiver": {"$ref": "#/$defs/hash"},
+        "physical_classical_snapshot_compatibility": {"$ref": "#/$defs/hash"},
         "Ward_insertion_contract": {"$ref": "#/$defs/hash"}
       }
     },
@@ -167,17 +168,17 @@
       "additionalProperties": false,
       "required": ["discharged", "missing"],
       "properties": {
-        "discharged": {"type": "array", "minItems": 17, "maxItems": 17, "items": {"type": "string", "minLength": 10}},
+        "discharged": {"type": "array", "minItems": 18, "maxItems": 18, "items": {"type": "string", "minLength": 10}},
         "missing": {
           "type": "array",
-          "minItems": 5,
-          "maxItems": 5,
+          "minItems": 4,
+          "maxItems": 4,
           "items": {
             "type": "object",
             "additionalProperties": false,
             "required": ["carrier_id", "required_output"],
             "properties": {
-              "carrier_id": {"enum": ["REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH", "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY", "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION"]},
+              "carrier_id": {"enum": ["REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH", "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION"]},
               "required_output": {"type": "string", "minLength": 20}
             }
           }
@@ -198,7 +199,8 @@
         "physical_full_BV_multiplicity_ledger_accepted": true,
         "repository_round_S4_Euler_coefficient_computed": true,
         "repository_C2_coefficient_gap": true,
-        "classical_snapshot_compatibility_bridge_gap": true,
+        "classical_snapshot_compatibility_bridge_gap": false,
+        "physical_classical_snapshot_compatibility_accepted": true,
         "regulated_BV_insertion_v2_receiver_ready": true,
         "remaining_decision_gap": "the round-S4 physical ledger fixes a=87/20 but cannot see C2; a non-conformally-flat or Ricci-flat full-BV coefficient carrier, a cross-snapshot compatibility proof, and a regulated BV Slavnov insertion with Wess-Zumino and parity proofs remain required; determinant coefficients alone do not decide the QME",
         "no_further_local_graph_expansion_required": true
@@ -216,6 +218,7 @@
         "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED": true,
         "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": true,
         "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": true,
+        "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED": true,
         "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": true,
         "REGULATED_BV_INSERTION_V2_RECEIVER_READY": true,
         "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,

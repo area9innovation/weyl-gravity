@@ -38,6 +38,11 @@ class ActiveFrontierTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            self.payload["claim_flags"][
+                "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED"
+            ]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["REGULATED_BV_INSERTION_V2_RECEIVER_READY"]
         )
         self.assertTrue(self.payload["claim_flags"]["MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC"])

@@ -1,0 +1,79 @@
+{
+  "analytic_git_tree_export": {
+    "blob_sha1": "8cf1eab55951cee4cafe176d6b5aefee75903c67",
+    "blob_sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+    "bytes_equal_to_worktree_export": true,
+    "path": "physics/symplectic-reconstruction/d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json"
+  },
+  "analytic_producer_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "canonical_hashes": {
+    "atom_hash": "7112ee35060e5f6fbff929d071c16c8789dc7a3b320a4574a113dd2a6c40658f",
+    "dependency_hash": "9ac0ed304d715c11cd0fdadccc612ce2030c7698cc582174c2ee03a066369d5c",
+    "differential_hash": "151e26d6922356f9ad63a0dc40fa6d216d0949e63e4633bd51f1af660dca73d1",
+    "generator_hash": "5c80b9d4a0f9a62588c6fb7cf1b6f7d4dbbe60c3b6a47aff17e480b75eb9a3ed",
+    "scope_hash": "3328d8c41639e7ff89e250914203e1f79f4e4f29feb83116b332db2410e12791"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL attestation proves that the Git tree of the accepted analytic producer commit contains byte-for-byte the frozen classical minimal-BV export, whose generator, atom, differential, dependency, and scope hashes equal the local-BV import. It attributes the TT dictionary, full-BV multiplicity ledger, and round-S4 Euler coefficient to that classical snapshot. It does not compute the C2 coefficient, a regulated Slavnov breaking, or a QME verdict.",
+  "claim_flags": {
+    "ANALYTIC_PRODUCER_CLASSICAL_SNAPSHOT_ATTRIBUTED": true,
+    "FIVE_CANONICAL_HASHES_MATCH": true,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "physical_analytic_artifacts": [
+    {
+      "artifact": {
+        "format": "JSON_DATA",
+        "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
+        "sha256": "64b3d13ae34128530c2e71f3d3fb48faf543adaf544a89ee319fbe034d41ece3"
+      },
+      "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"
+    },
+    {
+      "artifact": {
+        "format": "JSON_DATA",
+        "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+        "sha256": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970"
+      },
+      "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER"
+    },
+    {
+      "artifact": {
+        "format": "JSON_DATA",
+        "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
+        "sha256": "0543a0eca3a31a07bae125b48367833909a96b5c224fca2a0e1ebe4a3e076070"
+      },
+      "result_id": "REPOSITORY_ROUND_S4_EULER_COEFFICIENT"
+    }
+  ],
+  "proof_artifacts": [
+    {
+      "format": "JSON_PROOF",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+      "sha256": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8"
+    },
+    {
+      "format": "JSON_PROOF",
+      "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+      "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc"
+    }
+  ],
+  "proof_sha256": "57b10423520e89d9760ed8cee95c840d3d52a9e0078438ce56844d01a9508eef",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/classical_import/analytic_operator_snapshot_attribution.py": "79fc5e0ea74a3735824433d61d3b36371b605ce90d420db95b72f92a497efd85",
+      "quantum-weyl/classical_import/schema/analytic-operator-snapshot-attribution-v1.schema.json": "138c2b2e561e68ad6c140d3efbbf4ee09687ae384c4a1a265637f6980ab52ffb",
+      "quantum-weyl/classical_import/tests/test_analytic_operator_snapshot_attribution.py": "fd7f5e1933ed72cc972cfe076fef08e0743b410533360fe3843109cc0604cdab",
+      "quantum-weyl/classical_import/verify_analytic_operator_snapshot_attribution.py": "8259207313508a0a7f03e7d2a08fb9b674423138b7a613938cb318a4c50fe780",
+      "quantum-weyl/reports/analytic-operator-classical-snapshot-attribution.md": "bcebef782ee799c8db5be406fcadd9785b3bec2bd13cd4c87c0da54f641db7eb"
+    }
+  },
+  "result_id": "ANALYTIC_OPERATOR_CLASSICAL_SNAPSHOT_ATTESTATION",
+  "result_state": "ANALYTIC_PRODUCER_GIT_TREE_CONTAINS_FROZEN_CLASSICAL_EXPORT",
+  "schema": "quantum-weyl-analytic-operator-snapshot-attribution-v1",
+  "source_classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca"
+}

@@ -13,6 +13,10 @@ import json
 from pathlib import Path
 from typing import Any
 
+from classical_import.classical_snapshot_compatibility_receiver import (
+    validate_classical_snapshot_compatibility,
+)
+
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -23,6 +27,7 @@ DEPENDENCIES = {
     "H14_AFN0_odd": HERE / "local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
     "antifield_import": HERE / "classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
     "classical_snapshot_compatibility_receiver": HERE / "classical_import/certificates/CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS.json",
+    "physical_classical_snapshot_compatibility": HERE / "classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
     "minimal_KT_collapse": HERE / "local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json",
     "minimal_BV_H14": HERE / "local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
     "general_nonminimal_gauge_fixed": HERE / "local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
@@ -80,6 +85,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "H14_AFN0_odd": "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT",
         "antifield_import": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_IMPORTED_INDEPENDENTLY_REPLAYED",
         "classical_snapshot_compatibility_receiver": "CONTENT_HASH_COMPATIBILITY_RECEIVER_READY_PHYSICAL_BRIDGE_NOT_SUPPLIED",
+        "physical_classical_snapshot_compatibility": "LOCAL_BV_CONTENT_HASHES_EQUAL_ACROSS_DISTINCT_COMMITS",
         "minimal_KT_collapse": "MINIMAL_KT_COLLAPSE_PROVED_AFN0_WEYL_QUOTIENTS_LIFT_DIFF_MIXED_TOTAL_COMPLEX_OPEN",
         "minimal_BV_H14": "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN",
         "general_nonminimal_gauge_fixed": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
@@ -95,7 +101,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "physical_TT_hessian_dictionary": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED",
         "full_BV_multiplicity_ledger": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
         "repository_round_S4_Euler_coefficient": "REPOSITORY_EUCLIDEAN_S4_EULER_COEFFICIENT_MATCHED_C_COEFFICIENT_OPEN",
-        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_AND_EULER_COEFFICIENT_BOUND_REGULATED_BV_INSERTION_OPEN",
+        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_EULER_AND_SNAPSHOT_COMPATIBILITY_BOUND_REGULATED_BV_INSERTION_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
@@ -155,6 +161,23 @@ def _load() -> dict[str, dict[str, Any]]:
         != "SUPPLY_REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_IF_ANALYTIC_COMMIT_DIFFERS"
     ):
         raise ValueError("classical snapshot compatibility receiver frontier drifted")
+    physical_compatibility = values["physical_classical_snapshot_compatibility"]
+    physical_analytic_commit = values["physical_TT_hessian_dictionary"].get(
+        "classical_commit"
+    )
+    physical_compatibility_receipt = validate_classical_snapshot_compatibility(
+        physical_compatibility,
+        repository_root=ROOT,
+        expected_local_commit=antifield["classical_commit"],
+        expected_local_hashes=antifield["independent_replay"]["canonical_hashes"],
+        expected_analytic_commit=physical_analytic_commit,
+    )
+    if (
+        physical_compatibility_receipt.get("status")
+        != "SEMANTIC_RECEIVER_ACCEPTED"
+        or physical_compatibility_receipt.get("matched_hash_count") != 5
+    ):
+        raise ValueError("physical classical snapshot compatibility frontier drifted")
     kt = values["minimal_KT_collapse"]
     kt_flags = kt.get("claim_flags", {})
     if (
@@ -444,6 +467,10 @@ def _load() -> dict[str, dict[str, Any]]:
         or assembly_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
         is not True
         or assembly_flags.get("REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED")
+        is not True
+        or assembly_flags.get(
+            "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED"
+        )
         is not True
         or assembly_flags.get(
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND"
@@ -957,6 +984,7 @@ def build() -> dict[str, Any]:
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
+            "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED": True,
             "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC": True,
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS": True,
@@ -1036,8 +1064,9 @@ def build() -> dict[str, Any]:
             "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
             "operator export and frozen local-BV import come from distinct commits, it "
             "requires exact equality of the generator, atom, differential, dependency and "
-            "scope hashes plus role-specific content-addressed import/export proofs. No "
-            "physical cross-commit bridge has yet been supplied. The v2 regulated-BV "
+            "scope hashes plus role-specific content-addressed import/export proofs. Exact "
+            "Git-tree attribution now supplies and independently replays that physical "
+            "cross-commit bridge for the accepted round-S4 analytic producer. The v2 regulated-BV "
             "insertion receiver additionally requires explicit action, total-derivative, "
             "gauge-dependence, regularization-dependence and antifield-completion ledgers, "
             "each bound to the exact coefficient hash; no physical insertion is supplied. "
@@ -1161,6 +1190,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY") is not True
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
         is not True
+        or flags.get("REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED")
+        is not True
         or flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY") is not True
         or flags.get("MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC") is not True
         or flags.get("MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS") is not True
@@ -1225,6 +1256,7 @@ def validate(result: dict[str, Any]) -> None:
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED",
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY",
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND",
+            "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED",
             "REGULATED_BV_INSERTION_V2_RECEIVER_READY",
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC",
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS",

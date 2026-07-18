@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-analytic-operator-snapshot-attribution-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "analytic_producer_commit", "source_classical_commit", "canonical_hashes", "analytic_git_tree_export", "physical_analytic_artifacts", "proof_artifacts", "claim_flags", "proof_sha256", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-analytic-operator-snapshot-attribution-v1"},
+    "result_id": {"const": "ANALYTIC_OPERATOR_CLASSICAL_SNAPSHOT_ATTESTATION"},
+    "result_state": {"const": "ANALYTIC_PRODUCER_GIT_TREE_CONTAINS_FROZEN_CLASSICAL_EXPORT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "analytic_producer_commit": {"$ref": "#/$defs/commit"},
+    "source_classical_commit": {"$ref": "#/$defs/commit"},
+    "canonical_hashes": {"$ref": "#/$defs/canonicalHashes"},
+    "analytic_git_tree_export": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "blob_sha1", "blob_sha256", "bytes_equal_to_worktree_export"],
+      "properties": {
+        "path": {"type": "string", "minLength": 20},
+        "blob_sha1": {"$ref": "#/$defs/commit"},
+        "blob_sha256": {"$ref": "#/$defs/hash"},
+        "bytes_equal_to_worktree_export": {"const": true}
+      }
+    },
+    "physical_analytic_artifacts": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "prefixItems": [
+        {"$ref": "#/$defs/ttArtifact"},
+        {"$ref": "#/$defs/ledgerArtifact"},
+        {"$ref": "#/$defs/eulerArtifact"}
+      ],
+      "items": false
+    },
+    "proof_artifacts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/artifact"}},
+    "claim_flags": {"const": {"ANALYTIC_PRODUCER_CLASSICAL_SNAPSHOT_ATTRIBUTED": true, "FIVE_CANONICAL_HASHES_MATCH": true, "REGULATED_SLAVNOV_BREAKING_COMPUTED": false, "QME_DISPOSITION": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "claim_boundary": {"type": "string", "minLength": 300},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 5, "maxProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "canonicalHashes": {"type": "object", "additionalProperties": false, "required": ["generator_hash", "atom_hash", "differential_hash", "dependency_hash", "scope_hash"], "properties": {"generator_hash": {"$ref": "#/$defs/hash"}, "atom_hash": {"$ref": "#/$defs/hash"}, "differential_hash": {"$ref": "#/$defs/hash"}, "dependency_hash": {"$ref": "#/$defs/hash"}, "scope_hash": {"$ref": "#/$defs/hash"}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["format", "path", "sha256"], "properties": {"format": {"enum": ["JSON_PROOF", "JSON_DATA"]}, "path": {"type": "string", "minLength": 10}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "ttArtifact": {"type": "object", "additionalProperties": false, "required": ["result_id", "artifact"], "properties": {"result_id": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"}, "artifact": {"$ref": "#/$defs/artifact"}}},
+    "ledgerArtifact": {"type": "object", "additionalProperties": false, "required": ["result_id", "artifact"], "properties": {"result_id": {"const": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER"}, "artifact": {"$ref": "#/$defs/artifact"}}},
+    "eulerArtifact": {"type": "object", "additionalProperties": false, "required": ["result_id", "artifact"], "properties": {"result_id": {"const": "REPOSITORY_ROUND_S4_EULER_COEFFICIENT"}, "artifact": {"$ref": "#/$defs/artifact"}}}
+  }
+}

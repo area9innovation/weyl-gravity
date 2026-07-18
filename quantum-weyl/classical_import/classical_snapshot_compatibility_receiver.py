@@ -98,7 +98,10 @@ def validate_classical_snapshot_compatibility(
         by_result_id = {value.get("result_id"): value for _, value in artifacts}
         local_proof = by_result_id.get("CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2")
         analytic_proof = by_result_id.get("CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2")
-        if local_proof is None or analytic_proof is None:
+        analytic_attribution = by_result_id.get(
+            "ANALYTIC_OPERATOR_CLASSICAL_SNAPSHOT_ATTESTATION"
+        )
+        if local_proof is None or (analytic_proof is None and analytic_attribution is None):
             raise ValueError("snapshot compatibility proof roles are incomplete")
         if (
             local_proof.get("classical_commit") != expected_local_commit
@@ -106,11 +109,29 @@ def validate_classical_snapshot_compatibility(
             != expected_local_hashes
         ):
             raise ValueError("snapshot compatibility local proof content drifted")
-        if (
-            analytic_proof.get("classical_commit") != expected_analytic_commit
-            or analytic_proof.get("canonical_hashes") != expected_local_hashes
-        ):
-            raise ValueError("snapshot compatibility analytic proof content drifted")
+        if analytic_proof is not None:
+            if (
+                analytic_proof.get("classical_commit") != expected_analytic_commit
+                or analytic_proof.get("canonical_hashes") != expected_local_hashes
+            ):
+                raise ValueError("snapshot compatibility analytic proof content drifted")
+        else:
+            try:
+                from .analytic_operator_snapshot_attribution import validate_attribution
+            except ImportError:
+                from analytic_operator_snapshot_attribution import validate_attribution
+
+            receipt = validate_attribution(
+                analytic_attribution, repository_root=repository_root
+            )
+            if (
+                receipt.get("analytic_producer_commit") != expected_analytic_commit
+                or receipt.get("source_classical_commit") != expected_local_commit
+                or receipt.get("canonical_hashes") != expected_local_hashes
+            ):
+                raise ValueError(
+                    "snapshot compatibility analytic attribution content drifted"
+                )
     return {
         "result_id": payload["result_id"],
         "local_BV_commit": local["classical_commit"],

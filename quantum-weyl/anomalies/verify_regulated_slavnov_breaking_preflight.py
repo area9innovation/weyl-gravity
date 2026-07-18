@@ -38,7 +38,9 @@ def verify() -> dict:
         or missing.get("physical_full_BV_multiplicity_ledger_accepted") is not True
         or missing.get("repository_round_S4_Euler_coefficient_computed") is not True
         or missing.get("repository_C2_coefficient_gap") is not True
-        or missing.get("classical_snapshot_compatibility_bridge_gap") is not True
+        or missing.get("classical_snapshot_compatibility_bridge_gap") is not False
+        or missing.get("physical_classical_snapshot_compatibility_accepted")
+        is not True
         or missing.get("regulated_BV_insertion_v2_receiver_ready") is not True
         or missing.get("status") != "EXACT_REGULATED_BV_INSERTION_GAP"
     ):

@@ -27,10 +27,11 @@ The cross-commit classical-snapshot receiver is now executable and
 mutation-tested. If a later analytic operator export comes from a different
 commit, it must match the frozen generator, atom, differential, dependency,
 and scope hashes exactly and supply content-addressed import/export proofs.
-No physical compatibility bridge is claimed until such an analytic producer
-actually supplies it. The regulated Slavnov export path now invokes that
-semantic receiver directly, so a bridge carrying only the expected result ID
-cannot cross the QME assembly gate.
+The accepted analytic producer is now attributed exactly: its Git tree
+contains the byte-identical frozen classical export, all five canonical hashes
+match, and the physical compatibility bridge passes the semantic receiver.
+The regulated Slavnov export path invokes that receiver directly, so a bridge
+carrying only the expected result ID cannot cross the QME assembly gate.
 The exact Slavnov-breaking assembly preflight now reduces the four raw density
 coordinates to this three-class quotient, removes `omega BoxR` with its
 stored primitive, and binds the standard background vector
