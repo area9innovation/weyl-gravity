@@ -322,7 +322,10 @@ geometric proof requires series order 14 and external-clock powers through
 the spatial tail.  The normalized clock moments and all nine additional
 external-clock scalar shards through `p=28` are now validated without
 rewriting the six lower-order shards.  Detector-prefactored polarization for
-the nine new powers is the active gate.  The nonlinear apparatus
+the nine new powers is now certified: 780,624 adaptive intervals and all 330
+direct `p=12` low-mode comparisons pass.  All even-power inputs through
+`p=28` are complete; order-14 charge-block application and its remainder are
+the active gate.  The nonlinear apparatus
 dependency is also explicit and ordered by content hash: the normalized
 mixed `epsilon_R^2 kappa` unary certificate precedes apparatus `q2,q3`, which
 precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
@@ -1278,6 +1281,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that necessary capacity rail |
 | `BERGER_TEMPORAL_GREEN_ORDER_FIVE_HIGH_MODE_PREFLIGHT` (fired with fixed-order obstruction) | extend the external-clock scalar and polarization streams through even `p=28`, then apply a common order-14 charge-block polynomial with a contractive remainder before addressing the spatial tail |
 | `BERGER_HIGH_CLOCK_POWER_MOMENT_RAIL_P28` plus adaptive scalar shards (fired) | compose the nine `p=12,...,28` scalar shards with the detector polarization recurrence through form `two_j=138`, preserving the earlier content-addressed rails |
+| `BERGER_ADAPTIVE_CLOCK_WEIGHTED_POLARIZATION_STREAM_P12_TO_P28_TWO_J138` (fired) | apply the common order-14 cosine and codifferential/sine polynomials in exact charge blocks and export a contractive remainder before addressing the spatial tail |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

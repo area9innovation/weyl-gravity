@@ -99,6 +99,8 @@ python3 -m closed_universe_observers.generate_berger_high_clock_power_moment_rai
 python3 -m closed_universe_observers.verify_berger_high_clock_power_moment_rail
 for p in 12 14 16 18 20 22 24 26 28; do python3 -m closed_universe_observers.generate_berger_adaptive_clock_weighted_scalar_stream --power "$p" --check; done
 for p in 12 14 16 18 20 22 24 26 28; do python3 -m closed_universe_observers.verify_berger_adaptive_clock_weighted_scalar_stream --power "$p"; done
+python3 -m closed_universe_observers.generate_berger_adaptive_clock_weighted_polarization_stream --check
+python3 -m closed_universe_observers.verify_berger_adaptive_clock_weighted_polarization_stream
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -346,6 +348,11 @@ moments through `p=28` and exports nine additional external-clock scalar
 shards for `p=12,14,...,28`.  Each shard reconstructs 9,870 diagonal values
 through `two_j=139`; the published lower-order shards remain unchanged.
 Detector-prefactored polarization of the nine new rails is the next gate.
+The adaptive polarization successor now closes that gate: 86,736 detector
+entries and 780,624 clock-power intervals cover `p=12,14,...,28` through form
+`two_j=138`, with zero defects in 330 direct `p=12` low-mode comparisons.
+Together with the published lower-order stream, all inputs for common series
+order 14 are complete.  Exact charge-block application is next.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

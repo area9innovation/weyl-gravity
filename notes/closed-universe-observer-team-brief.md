@@ -468,6 +468,15 @@ lower-order shards and their polarization certificate were not rewritten.
 The active gate is detector-prefactored polarization of the nine new powers,
 then common order-14 charge-block application with its contractive remainder.
 
+`BERGER_ADAPTIVE_CLOCK_WEIGHTED_POLARIZATION_STREAM_P12_TO_P28_TWO_J138`
+now closes the detector-prefactored extension: 86,736 entries, 231,018 scalar
+term applications and 780,624 adaptive clock-power intervals, with canonical
+hashes and zero defects in 330 direct `p=12`, `two_j<=4` comparisons.  The
+combined published and adaptive streams therefore supply every even power
+through `p=28`.  The active gate is now the actual order-14 cosine and
+codifferential/sine polynomial in exact charge blocks, including a certified
+remainder; no Green image or spatial tail is claimed yet.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger
