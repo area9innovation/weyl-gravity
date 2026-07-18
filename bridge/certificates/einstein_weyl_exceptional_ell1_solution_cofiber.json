@@ -1,0 +1,204 @@
+{
+  "action_derived_pairing": {
+    "cofiber_nonradical": true,
+    "extra_Gram": [
+      [
+        "16",
+        "0"
+      ],
+      [
+        "0",
+        "3"
+      ]
+    ],
+    "extra_inertia": [
+      2,
+      0
+    ],
+    "extra_representative_order": [
+      "axial (h_t,h_x,q_t,q_x)",
+      "polar (A_t,B,C_t,U)"
+    ],
+    "standard_extra_mixed_pairing": [
+      "0",
+      "0"
+    ],
+    "standard_relative_operator": "4*I on the physical axial-plus-polar ell=1 quotient",
+    "twist_relative_operator": "-2*I on the axial generalized-zero twist pair"
+  },
+  "branch_representatives": {
+    "axial": {
+      "extra_fourth_order": [
+        "0",
+        "1",
+        "0",
+        "-3"
+      ],
+      "standard_physical": [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "twist_zero": [
+        "0",
+        "1",
+        "0",
+        "-1"
+      ]
+    },
+    "axial_order": [
+      "h_t",
+      "h_x",
+      "q_t",
+      "q_x"
+    ],
+    "polar": {
+      "fourth_order": {
+        "omega_squared": "4/3",
+        "representative": [
+          "0",
+          "1",
+          "0"
+        ]
+      },
+      "standard": {
+        "omega_squared": "4",
+        "representative": [
+          "1",
+          "0",
+          "1"
+        ]
+      }
+    },
+    "polar_reduced_order": [
+      "A_t",
+      "B",
+      "C_t"
+    ]
+  },
+  "claim_boundary": "This exact same-background REDUCED-MODE solution cofiber is scoped to ell=1,k=0. It does not cover k!=0, an off-shell exceptional chain map, final residual cohomology, changed boundaries, causal propagation, particles, observations, or quantum states.",
+  "classification": {
+    "Einstein_image_identified": true,
+    "Lorentzian_causal_or_quantum_claim": false,
+    "all_m_by_SO3_equivariance": true,
+    "cofiber_action_pairing_nonradical": true,
+    "complete_exceptional_k0_target_solution_decomposition_certified": true,
+    "exceptional_offshell_chain_map_certified": false,
+    "exceptional_solution_cofiber_certified": true,
+    "explicit_CRT_projection_certified": true,
+    "final_residual_descent_certified": false,
+    "nonzero_compact_momentum_exceptional_cofiber_certified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "explicit_projection": {
+    "axial": {
+      "extra": "-9*x*(x - 4)/32",
+      "standard": "x*(3*x - 4)/32",
+      "twist": "(x - 4)*(3*x - 4)/16"
+    },
+    "identities": {
+      "axial_sum": "P_twist+P_extra+P_standard=1",
+      "idempotence_scope": "on the reduced solution module modulo x*(3*x-4)*(x-4) axially and (3*x-4)*(x-4) polarly",
+      "polar_sum": "P_extra+P_standard=1"
+    },
+    "polar": {
+      "extra": "-3*(x - 4)/8",
+      "standard": "(3*x - 4)/8"
+    },
+    "spectral_variable": "x=omega^2"
+  },
+  "interpretation": "At ell=1,k=0 the target quotient splits spectrally into the standard Einstein-Maxwell image, the axial twist already contained in the source, and one additional fourth-order mode in each parity. The displayed CRT polynomials give the explicit solution-level projection onto those branches, and the direct current makes the extra cofiber nonradical. This is not an off-shell exceptional BV triangle.",
+  "lifecycle_state": "CLASSIFIED",
+  "map_lifecycle": "ONSHELL_MAP_ONLY",
+  "next_gate": "construct or obstruct the exceptional ghost-field-equation-identity chain map and classify nonzero compact momentum before promoting the exceptional sector to a derived cofiber triangle",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_weyl_exceptional_ell1_solution_cofiber.py",
+    "generator_sha256": "e9478f821e46f9127b8a3131c66d561a6d4701da9d9539b41a147fd30e4593cf",
+    "inputs": {
+      "axial_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "physical": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+        "sha256": "2596e01ea18030ffeced787629b3d5eba3f6a3d14c3e881e1a4dffd82405e674"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "standard": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      },
+      "twist": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+        "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_SOLUTION_COFIBER_V1",
+  "result_state": "EXCEPTIONAL_ELL1_K0_SOLUTION_COFIBER_AND_CRT_PROJECTION_CERTIFIED",
+  "schema": "einstein-weyl-exceptional-ell1-solution-cofiber-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_weyl_exceptional_ell1_solution_cofiber.schema.json",
+  "schema_sha256": "c98796d9ca8b24626940c7d5a688ef6de69f69306dd991c69e606486740d71c9",
+  "scope": {
+    "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+    "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+    "carrier": "exceptional local-gauge-reduced axial and polar ell=1,k=0 solution modules",
+    "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+    "degree": 1,
+    "ell": 1,
+    "k": 0,
+    "m": "all three real SO(3) components",
+    "omega": "twist x=0 axially, extra x=4/3, standard x=4",
+    "parity": "axial and polar kept separate",
+    "theory": "Einstein-Maxwell source included in Weyl-Maxwell target"
+  },
+  "target_decomposition": {
+    "Einstein_image": "T_EM = T_twist^ax direct-sum T_standard^ax direct-sum T_standard^pol",
+    "axial": "T_WM^ax = T_twist^ax direct-sum T_extra^ax direct-sum T_standard^ax",
+    "polar": "T_WM^pol = T_extra^pol direct-sum T_standard^pol",
+    "solution_cofiber": "C_extra = T_extra^ax direct-sum T_extra^pol, tensored with the real ell=1 SO(3) multiplicity"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_exceptional_ell1_solution_cofiber --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_exceptional_ell1_solution_cofiber.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_exceptional_ell1_solution_cofiber"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_weyl_exceptional_ell1_solution_cofiber --check",
+        "python3 bridge/einstein_sector/verify_einstein_weyl_exceptional_ell1_solution_cofiber.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_exceptional_ell1_solution_cofiber"
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "the complete exceptional operators and direct action currents are unchanged content-addressed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the off-shell exceptional chain map and bridge-1 activation remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

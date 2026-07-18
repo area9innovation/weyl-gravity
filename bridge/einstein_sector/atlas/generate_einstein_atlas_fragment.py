@@ -24,6 +24,7 @@ CERTIFICATES = {
     "taub": ROOT / "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
     "balanced": ROOT / "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
     "exceptional_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+    "exceptional_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "exceptional_resonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
@@ -116,7 +117,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The same-background branch dictionary separates q-primary Einstein, p-primary extra and generalized-zero carriers in every declared certified sector."),
             ("CERTIFIED", "The complete standard pullback and the generic axial/polar direct extra Lee-Wald blocks are exported as three distinct forms."),
             ("OPEN", "Quadratic data are partial handoffs and do not activate the linear bridge or complete the relative obstruction map."),
-            ("OPEN", "Global map lifecycle is ONSHELL_MAP_ONLY: both generic parity chain cofibers are certified, while polar cyclic BV compatibility and exceptional/global cofibers remain absent."),
+            ("OPEN", "Global map lifecycle is ONSHELL_MAP_ONLY: both generic parity chain cofibers and the exceptional k=0 solution cofiber are certified, while cyclic BV compatibility, nonzero-k exceptional and global cofibers remain absent."),
             _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
             _evidence("branch_dictionary"),
             "Bridge 1 activation remains OPEN. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
@@ -166,7 +167,7 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The pure exceptional block has a definite fixed-bundle Taub obstruction."),
             ("CERTIFIED", "The all-m positive-positive source has a nonzero polar ell=2 p-shell projection; its exact STF zero locus is only the origin."),
             _second_order(("OBSTRUCTED", "Every nonzero exceptional dipole is obstructed by the certified Taub and resonant functionals."), ("OBSTRUCTED", "The stabilizer Taub obstruction persists even if a resonant propagation correction is allowed to be secular."), open_causal),
-            _evidence("exceptional_current", "exceptional_resonance", "abstract_cone"),
+            _evidence("exceptional_current", "exceptional_cofiber", "exceptional_resonance", "abstract_cone"),
             "This all-m compact no-go is pre-final-residual and does not identify an asymptotic state or a quantum particle.",
         ),
         _entry(
@@ -242,6 +243,8 @@ def build() -> dict[str, object]:
         raise AssertionError("balanced second-order extension input changed")
     if not records["exceptional_resonance"]["classification"]["complete_all_m_exceptional_ell1_two_polarization_cone_second_order_obstructed"]:
         raise AssertionError("exceptional all-m input changed")
+    if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
+        raise AssertionError("exceptional solution-cofiber input changed")
     if not records["twist_independence"]["classification"]["nonzero_adjoint_cokernel_witness_certified"]:
         raise AssertionError("twist independence witness changed")
     if not records["d_completion"]["classification"]["d_cross_adjoint_map_invertible_in_both_parities"]:

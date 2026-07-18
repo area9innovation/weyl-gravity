@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "map_lifecycle",
+    "target_decomposition", "explicit_projection", "branch_representatives",
+    "action_derived_pairing", "classification", "interpretation", "next_gate",
+    "claim_boundary", "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-exceptional-ell1-solution-cofiber-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_SOLUTION_COFIBER_V1"},
+    "map_lifecycle": {"const": "ONSHELL_MAP_ONLY"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_exceptional_k0_target_solution_decomposition_certified",
+        "Einstein_image_identified", "explicit_CRT_projection_certified",
+        "exceptional_solution_cofiber_certified", "cofiber_action_pairing_nonradical",
+        "exceptional_offshell_chain_map_certified",
+        "nonzero_compact_momentum_exceptional_cofiber_certified",
+        "final_residual_descent_certified"
+      ]
+    }
+  }
+}

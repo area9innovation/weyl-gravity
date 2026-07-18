@@ -11,8 +11,9 @@ polynomial ghost--field--equation--identity level, complete solution-module
 quotients, and direct Lee--Wald forms.  Cyclic BV compatibility of the polar
 chain map is not certified.
 
-Exceptional, homogeneous and twist inclusions and pairings are recorded, but
-their projection/cofiber fields remain `NO_CERTIFIED_MAP`.  The boundary and
+The exceptional `ell=1,k=0` solution cofiber now has explicit CRT projectors
+and a nonradical action pairing.  Nonzero-`k` exceptional, homogeneous and
+twist projection/cofiber fields remain `NO_CERTIFIED_MAP`.  The boundary and
 cross-background row is `NO_CERTIFIED_MAP` in every relevant field.  Hence the
 dictionary does not activate `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.
 
