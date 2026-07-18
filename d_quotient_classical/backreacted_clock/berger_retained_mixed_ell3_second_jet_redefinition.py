@@ -74,7 +74,13 @@ def _word(word: Iterable[int]) -> Word:
 @lru_cache(maxsize=None)
 def _canonical_atom_terms(atom: Atom) -> tuple[tuple[Atom, sp.Expr], ...]:
     field, word = atom
-    return tuple(((field, reduced), coefficient) for reduced, coefficient in _pbw_word(word))
+    return tuple(
+        (
+            (field, reduced),
+            sp.expand(coefficient.subs({engine.U: engine.U0, engine.V: engine.V0})),
+        )
+        for reduced, coefficient in _pbw_word(word)
+    )
 
 
 def _canonical_monomial_terms(atoms: Iterable[Atom]) -> tuple[tuple[Monomial, sp.Expr], ...]:
@@ -119,6 +125,7 @@ def _project_mixed_density(density: Mapping[Monomial, sp.Expr]) -> Density:
     }
 
 
+@lru_cache(maxsize=None)
 def _density_terms(maximum_order: int = 2) -> tuple[Density, Density, Density]:
     """Load the lowered physical S2, S3 and mixed S4 densities."""
 
@@ -276,6 +283,42 @@ def variation(density: Mapping[Monomial, sp.Expr], maps: Mapping[FLabel, sp.Expr
     return value
 
 
+@lru_cache(maxsize=None)
+def _source_terms_by_output(maximum_order: int, arity: str) -> tuple[tuple[tuple[Monomial, sp.Expr], ...], ...]:
+    source = _density_terms(maximum_order)[0 if arity == "F3" else 1]
+    rows: list[list[tuple[Monomial, sp.Expr]]] = [[] for _ in range(14)]
+    for atoms, coefficient in source.items():
+        for field in set(item[0] for item in atoms):
+            rows[field].append((atoms, coefficient))
+    return tuple(tuple(row) for row in rows)
+
+
+def redefinition_column(label: FLabel, page_order: int = 2) -> EulerImage:
+    """Return one lower- or current-jet column on a summed-order page."""
+
+    arity, output, inputs = label
+    map_order = sum(len(word) for _, word in inputs)
+    if map_order > page_order:
+        return {}
+    density: Density = {}
+    for atoms, source_coefficient in _source_terms_by_output(page_order - map_order, arity)[output]:
+        for outer, multiplicity in Counter(atoms).items():
+            if outer[0] != output:
+                continue
+            remaining = list(atoms)
+            remaining.remove(outer)
+            for words, leibniz_coefficient in _output_derivative_terms(outer[1], inputs):
+                inserted = tuple((inputs[index][0], word) for index, word in enumerate(words))
+                _add_density(
+                    density,
+                    (*remaining, *inserted),
+                    source_coefficient * multiplicity * leibniz_coefficient,
+                )
+    return euler_image(
+        _project_mixed_density(_project_density(density, page_order))
+    )
+
+
 def _primitive_maps() -> dict[FLabel, sp.Expr]:
     certificate = zero._load(FIRST_CERTIFICATE)
     x0, y = first._solution_from_records(certificate)
@@ -348,6 +391,60 @@ def second_jet_labels() -> tuple[FLabel, ...]:
     )
 
 
+@lru_cache(maxsize=1)
+def _constant_action_derivatives() -> tuple[tuple[zero.Polynomial, ...], tuple[zero.Polynomial, ...]]:
+    quadratic, cubic, _, _ = zero._action_polynomials()
+    return (
+        tuple(zero._derivative(quadratic, field) for field in range(14)),
+        tuple(zero._derivative(cubic, field) for field in range(14)),
+    )
+
+
+def second_jet_column(label: FLabel) -> EulerImage:
+    """Return one second-jet column in the exact mixed Euler quotient."""
+
+    arity, output, inputs = label
+    if sum(len(word) for _, word in inputs) != 2:
+        raise ValueError("second-jet column received a non-second-order label")
+    d2, d3 = _constant_action_derivatives()
+    derivative = d2[output] if arity == "F3" else d3[output]
+    density: Density = {}
+    for undifferentiated, coefficient in derivative.items():
+        atoms = tuple((field, ()) for field in undifferentiated)
+        _add_density(density, (*atoms, *inputs), coefficient)
+    return euler_image(_project_mixed_density(density))
+
+
+def one_coordinate_support_scan(target: Mapping[EulerKey, sp.Expr]) -> dict[str, object]:
+    """Search the full second-jet image for an untouched target coordinate."""
+
+    target_keys = set(target)
+    touched: set[EulerKey] = set()
+    nonzero_columns = 0
+    target_touching_columns = 0
+    total_column_terms = 0
+    for label in second_jet_labels():
+        column = second_jet_column(label)
+        if column:
+            nonzero_columns += 1
+            total_column_terms += len(column)
+        overlap = target_keys.intersection(column)
+        if overlap:
+            target_touching_columns += 1
+            touched.update(overlap)
+    untouched = sorted(target_keys - touched)
+    return {
+        "columns_scanned": len(second_jet_labels()),
+        "nonzero_columns": nonzero_columns,
+        "target_touching_columns": target_touching_columns,
+        "total_column_Euler_terms": total_column_terms,
+        "target_coordinates": len(target_keys),
+        "touched_target_coordinates": len(touched),
+        "untouched_target_coordinates": len(untouched),
+        "first_untouched": None if not untouched else _euler_records({untouched[0]: target[untouched[0]]})[0],
+    }
+
+
 def _subtract(left: Mapping, right: Mapping) -> dict:
     value = dict(left)
     for key, coefficient in right.items():
@@ -412,6 +509,8 @@ def exact_data() -> dict[str, object]:
     s2, s3, s4, varied = _variation_through_order(2, maps)
     residual = _subtract(s4, varied)
     euler = euler_image(residual)
+    if any(coefficient.free_symbols for coefficient in euler.values()):
+        raise ValueError("order-two Euler source escaped the certified Berger coefficient field")
     residual_by_order = Counter(_total_order(monomial) for monomial in residual)
     euler_by_order = Counter(
         sum(len(word) for _, word in cubic)
@@ -494,6 +593,8 @@ def certificate() -> dict[str, object]:
         },
         "quotient": {
             "method": "variational Euler image after exact Berger PBW reduction",
+            "coefficient_field": "QQ(sqrt(10)) at U=3*sqrt(10)/20, V=2*sqrt(10)/3",
+            "free_symbol_count": 0,
             "summed_pre_reduction_order": 2,
             "mixed_sector": "two gravity and two Maxwell base fields",
             "first_total_derivative_mutations_killed": tests["first_total_derivatives_killed"],

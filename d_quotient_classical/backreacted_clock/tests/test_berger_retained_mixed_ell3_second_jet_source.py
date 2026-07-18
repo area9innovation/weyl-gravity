@@ -25,9 +25,20 @@ class SecondJetSourceTests(unittest.TestCase):
 
     def test_total_derivative_and_ansatz_controls(self) -> None:
         quotient = self.value["quotient"]
+        self.assertEqual(quotient["free_symbol_count"], 0)
+        self.assertEqual(
+            quotient["coefficient_field"],
+            "QQ(sqrt(10)) at U=3*sqrt(10)/20, V=2*sqrt(10)/3",
+        )
         self.assertEqual(quotient["first_total_derivative_mutations_killed"], 4)
         self.assertEqual(quotient["second_total_derivative_mutations_killed"], 16)
         self.assertEqual(self.value["second_jet_ansatz"]["symmetric_PBW_label_count"], 155640)
+
+    def test_symbolic_PBW_mutation_is_fixture_normalized(self) -> None:
+        raw = second._pbw_word((3, 2))
+        self.assertTrue(any(coefficient.free_symbols for _, coefficient in raw))
+        fixture = second._canonical_atom_terms((0, (3, 2)))
+        self.assertFalse(any(coefficient.free_symbols for _, coefficient in fixture))
 
     def test_source_is_not_promoted_to_a_verdict(self) -> None:
         flags = self.value["claim_flags"]

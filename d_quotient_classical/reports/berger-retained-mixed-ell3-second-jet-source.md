@@ -6,6 +6,9 @@ The exact order-two consumer is now frozen, but the scientific compatibility
 verdict is still open. Quartic densities are mapped to their variational Euler
 images after exact Berger-frame PBW reduction. This realizes the quotient by
 total derivatives without selecting an integration-by-parts pivot table.
+Every PBW commutator is evaluated at the certified Berger fixture
+`U=3 sqrt(10)/20`, `V=2 sqrt(10)/3`; the resulting source has no free symbols
+and lies in `QQ(sqrt(10))`.
 
 The consumer first reproduces both frozen lower pages: the zero-jet and
 first-jet primitives have zero Euler residual when evaluated at their declared
@@ -39,3 +42,8 @@ Tier 2 is represented by replay against the pinned typed unary/pairing,
 gravity and mixed binary payloads, retained mixed ternary payload, and frozen
 first-jet certificate. Tier 3 was not run because no shared algebra or theorem
 lifecycle state is promoted by this fail-closed source certificate.
+
+The fixture-normalization portability repair was replayed on the same date.
+Its mutation test confirms that a raw nonordered spatial PBW word carries the
+symbolic structure constants while the certified consumer substitutes the
+Berger values and emits no free symbols. The scoped suite passes 6 tests.

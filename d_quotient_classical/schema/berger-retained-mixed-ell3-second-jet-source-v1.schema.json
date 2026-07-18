@@ -22,9 +22,11 @@
     },
     "quotient": {
       "type": "object",
-      "required": ["method", "summed_pre_reduction_order", "mixed_sector", "first_total_derivative_mutations_killed", "second_total_derivative_mutations_killed"],
+      "required": ["method", "coefficient_field", "free_symbol_count", "summed_pre_reduction_order", "mixed_sector", "first_total_derivative_mutations_killed", "second_total_derivative_mutations_killed"],
       "properties": {
         "method": {"type": "string"},
+        "coefficient_field": {"const": "QQ(sqrt(10)) at U=3*sqrt(10)/20, V=2*sqrt(10)/3"},
+        "free_symbol_count": {"const": 0},
         "summed_pre_reduction_order": {"const": 2},
         "mixed_sector": {"const": "two gravity and two Maxwell base fields"},
         "first_total_derivative_mutations_killed": {"const": 4},
