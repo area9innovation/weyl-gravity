@@ -83,6 +83,8 @@ python3 -m closed_universe_observers.generate_berger_adaptive_peter_weyl_route_p
 python3 -m closed_universe_observers.verify_berger_adaptive_peter_weyl_route_preflight
 python3 -m closed_universe_observers.generate_berger_streamable_polarization_sectors --check
 python3 -m closed_universe_observers.verify_berger_streamable_polarization_sectors
+python3 -m closed_universe_observers.generate_berger_polarization_clebsch_gordan_recurrence --check
+python3 -m closed_universe_observers.verify_berger_polarization_clebsch_gordan_recurrence
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -287,6 +289,13 @@ therefore act in blocks of dimension at most three.  The all-column operation
 upper count through dimension `139` drops from `852,056,100` dense operations
 to `8,066,172`; actual high-mode coefficient values and their tail are still
 open.
+The exact Clebsch--Gordan successor removes high-degree form-polynomial
+expansion from that route.  Each detector coordinate times a conjugate
+`D^j` coefficient reduces after axial averaging to at most four diagonal
+scalar terms in `j+1/2` and `j-1/2`.  Through `two_j=138`, the closed-form
+counts are 57,824 supported entries and 154,012 scalar recurrence terms.
+Clock-integrated scalar evaluation, temporal Green integration, the
+Green-weighted tail, full images, and recoil remain open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

@@ -382,6 +382,19 @@ The next live gate is interval evaluation of those streamed high-mode
 coefficients plus the Green-weighted operator-norm tail; no full image or
 recoil coefficient follows yet.
 
+`BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE` now closes the exact
+pointwise coefficient recurrence.  Multiplying a conjugate `D^j` coefficient
+by any detector coordinate uses only `j+1/2` and `j-1/2`; axial averaging
+retains diagonal scalar coefficients, with at most four terms per supported
+entry.  Exact polynomial identities modulo the unit-sphere relation pass
+through `two_j=4`, and deletion of the lower-spin channel is detected.
+Through the necessary `two_j=138` rail this gives 57,824 supported coordinate
+entries and 154,012 scalar terms, without high-degree form-polynomial
+expansion.  The next live gate is evaluation of the neighboring scalar stream
+with the external clock factor, followed by temporal Green integration and a
+Green-weighted tail.  No full Maxwell/massive image or recoil coefficient is
+claimed.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

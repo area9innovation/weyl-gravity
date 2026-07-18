@@ -1,0 +1,226 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result proves the pointwise all-finite-two_j Clebsch--Gordan recurrence for the detector form profiles. Multiplication of conjugate D^j_rc by y0,y1,y2,y3 is expressed through diagonal scalar coefficients at neighboring two_j+1 and two_j-1 after axial averaging, with at most four nonzero scalar terms per coordinate entry. Polynomial identities are exact modulo y0^2+y1^2+y2^2+y3^2=1 through the audited modes, and deleting the lower-spin channel is detected. The external factor a(t) and declared polarization prefactors reconstruct D0 and D1 before clock/Green integration. This removes high-degree form-polynomial expansion from the adaptive route, but it does not evaluate the neighboring scalar coefficients, perform clock integration or temporal differentiation, certify the Green-weighted tail, construct full Green images, evaluate recoil, restrict to the tangent cone, activate the physical-branch bridge, or make a quantum claim.",
+  "claim_status": "EXACT_POINTWISE_POLARIZATION_RECURRENCE_EXPORTED_SCALAR_STREAM_AND_TAIL_OPEN",
+  "dependency_refs": {
+    "form": {
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json",
+      "result_id": "BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS",
+      "sha256": "fd66add7974cff5628195123c2420245b833b5e8089aab97529f4c4c0500afb5"
+    },
+    "scalar": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCAL_SU2_PROFILE_COEFFICIENT_ENCLOSURES.json",
+      "result_id": "BERGER_LOCAL_SU2_PROFILE_COEFFICIENT_ENCLOSURES",
+      "sha256": "e44bba60ef07d9252aff45b834aea3d799e29dfcf2f84f757eba7efe37b9311e"
+    },
+    "sectors": {
+      "path": "closed_universe_observers/certificates/BERGER_STREAMABLE_POLARIZATION_SECTORS.json",
+      "result_id": "BERGER_STREAMABLE_POLARIZATION_SECTORS",
+      "sha256": "8f7cda5bc086c93fa0bdf4a9bac63ec36c3116786268ac94c9206d2b35ad0b03"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "detector_reconstruction": [
+    {
+      "components": [
+        {
+          "coframe_component": 1,
+          "coordinate": "y2",
+          "prefactor": "-3*sqrt(10)/20"
+        },
+        {
+          "coframe_component": 2,
+          "coordinate": "y1",
+          "prefactor": "3*sqrt(10)/20"
+        },
+        {
+          "coframe_component": 3,
+          "coordinate": "y0",
+          "prefactor": "1"
+        }
+      ],
+      "detector_id": "D0",
+      "pointwise_clock_factor": "a(t)"
+    },
+    {
+      "components": [
+        {
+          "coframe_component": 1,
+          "coordinate": "y0",
+          "prefactor": "1"
+        },
+        {
+          "coframe_component": 2,
+          "coordinate": "y3",
+          "prefactor": "-1"
+        },
+        {
+          "coframe_component": 3,
+          "coordinate": "y2",
+          "prefactor": "2*sqrt(10)/3"
+        }
+      ],
+      "detector_id": "D1",
+      "pointwise_clock_factor": "a(t)"
+    }
+  ],
+  "flags": {
+    "ALL_FINITE_TWO_J_POINTWISE_POLARIZATION_RECURRENCE_EXPORTED": true,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "CLOCK_AND_TEMPORAL_GREEN_INTEGRATION_COMPLETED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "HIGH_MODE_SCALAR_COEFFICIENT_VALUES_EVALUATED": false,
+    "MAXIMUM_FOUR_NEIGHBORING_SCALAR_TERMS_PER_ENTRY": true,
+    "QUANTUM_CLAIM": false
+  },
+  "identity_audit": {
+    "audited_two_j": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "unit_sphere_remainder_defect_count": 0
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "drop_j_minus_one_half_channel",
+      "unit_sphere_remainder_defect_count": 20
+    }
+  ],
+  "next_gate": "EVALUATE_THE_POINTWISE_NEIGHBORING_SCALAR_STREAM_THEN_CLOCK_INTEGRATE_AND_CLOSE_THE_GREEN_WEIGHTED_TAIL",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_polarization_clebsch_gordan_recurrence.py",
+        "sha256": "5c57c3b0f429e4b6ab24a7d972158225533aff0ec613f165f88a83ff1b3be8c6"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_polarization_clebsch_gordan_recurrence.py",
+        "sha256": "5e67e98ceff943d565e82a0552ea883e830a5be49c1f97e10f8e0fa937bbbb62"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py",
+        "sha256": "cb7e8a3c60049b0c6f778035da00430ec576b19bc66d968d275b0139b5c2182b"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-polarization-clebsch-gordan-recurrence-v1.schema.json",
+        "sha256": "59091db71a1ef40b1ff22c65ba81f6ba76b984369b8f6b7634d22bf38879bb6b"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-polarization-clebsch-gordan-recurrence.md",
+        "sha256": "a57b9856e4be99d6fbd8a931755f5e529a86cda884e1a65137d56e97258fb15f"
+      }
+    ]
+  },
+  "recurrence_convention": {
+    "axial_projection": "only next_m=next_n survives",
+    "basis": "ascending m=-j,...,j",
+    "formula": "E[x conjugate(D^j_rc)] = sum_(J=j+-1/2) c_J E[conjugate(D^J_qq)]",
+    "maximum_neighboring_scalar_terms": 4
+  },
+  "representative_recurrences": [
+    {
+      "column": 0,
+      "coordinate": "y0",
+      "row": 0,
+      "terms": [
+        {
+          "coefficient": "1/4",
+          "diagonal_index": 0,
+          "next_two_j": 0
+        },
+        {
+          "coefficient": "1/2",
+          "diagonal_index": 0,
+          "next_two_j": 2
+        },
+        {
+          "coefficient": "1/4",
+          "diagonal_index": 1,
+          "next_two_j": 2
+        }
+      ],
+      "two_j": 1
+    },
+    {
+      "column": 1,
+      "coordinate": "y2",
+      "row": 0,
+      "terms": [
+        {
+          "coefficient": "sqrt(2)/6",
+          "diagonal_index": 0,
+          "next_two_j": 1
+        },
+        {
+          "coefficient": "-sqrt(2)/6",
+          "diagonal_index": 1,
+          "next_two_j": 3
+        }
+      ],
+      "two_j": 2
+    },
+    {
+      "column": 2,
+      "coordinate": "y3",
+      "row": 2,
+      "terms": [
+        {
+          "coefficient": "I/5",
+          "diagonal_index": 1,
+          "next_two_j": 3
+        },
+        {
+          "coefficient": "-I/5",
+          "diagonal_index": 2,
+          "next_two_j": 3
+        },
+        {
+          "coefficient": "3*I/10",
+          "diagonal_index": 2,
+          "next_two_j": 5
+        },
+        {
+          "coefficient": "-3*I/10",
+          "diagonal_index": 3,
+          "next_two_j": 5
+        }
+      ],
+      "two_j": 4
+    },
+    {
+      "column": 2,
+      "coordinate": "y1",
+      "row": 1,
+      "terms": [
+        {
+          "coefficient": "sqrt(6)*I/10",
+          "diagonal_index": 1,
+          "next_two_j": 3
+        },
+        {
+          "coefficient": "-sqrt(6)*I/10",
+          "diagonal_index": 2,
+          "next_two_j": 5
+        }
+      ],
+      "two_j": 4
+    }
+  ],
+  "result_id": "BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE",
+  "scale_audit_through_two_j138": {
+    "coordinate_entry_count": 57824,
+    "maximum_scalar_terms_per_coordinate_entry": 4,
+    "scalar_recurrence_term_count": 154012
+  },
+  "schema": "closed-universe-berger-polarization-clebsch-gordan-recurrence-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

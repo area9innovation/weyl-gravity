@@ -296,8 +296,11 @@ inactive until a same-background Berger physical-branch dictionary lands;
 the unsplit apparatus calculation does not activate that interpretation.
 The exact U(1) selection-rule gate now reduces every one-form Green block to
 axial-charge sectors of dimension at most three.  The remaining bandwidth
-gate is streamed high-mode coefficient evaluation and the operator-norm tail,
-not dense block construction.
+gate now has an exact Clebsch--Gordan recurrence: through `two_j=138`, the
+detector coordinate factors require 57,824 supported entries and 154,012
+neighboring scalar terms, with at most four terms per entry.  The remaining
+work is clock-integrated scalar-stream evaluation and the Green-weighted
+operator-norm tail, not dense block construction.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
@@ -452,9 +455,11 @@ survive the first backreacted, normalized apparatus interaction?
    and the finite-mode advanced Maxwell image is interval-enclosed through
    `two_j=4` uniformly over the emitter switches.  Parseval now proves that
    cutoff omits more than `0.9999975` of the clock-center profile energy, so
-   uniform small-tail promotion is obstructed.  The next gate is an adaptive
-   high-mode cutoff or physical-space Green evaluation, followed by the
-   massive Green images and recoil coefficient.  The independent emitter stress
+   uniform small-tail promotion is obstructed.  Exact axial-charge sectors
+   and Clebsch--Gordan polarization recurrences now make the adaptive route
+   streamable through its necessary `two_j=138` capacity rail.  The next gate
+   is clock-integrated scalar-stream evaluation and a Green-weighted tail,
+   followed by the massive Green images and recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a
    solved backreacted branch remain open.  A common source

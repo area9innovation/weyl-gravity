@@ -1,0 +1,51 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "POLARIZATION_CLEBSCH_GORDAN_RECURRENCE_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact Clebsch--Gordan product recurrence rewrites every pointwise detector-coordinate times conjugate D^j coefficient using diagonal scalar amplitudes in j+1/2 and j-1/2 after axial averaging. There are at most four terms per supported coordinate entry; through two_j=138 the exact closed-form counts are 57,824 supported entries and 154,012 scalar terms. Clock-integrated high-mode values, temporal Green integration, the Green-weighted tail, full Maxwell and massive images, recoil, tangent-cone restriction, the Berger physical-branch bridge and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_polarization_clebsch_gordan_recurrence.py closed_universe_observers/verify_berger_polarization_clebsch_gordan_recurrence.py closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "elapsed_seconds": "0.03", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "recurrence artifact, observer atlas, team brief and canonical roadmap"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_polarization_clebsch_gordan_recurrence --check", "elapsed_seconds": "3.21", "status": "PASS", "scope": "exact recurrence identities, mutation, detector reconstruction and scale generation"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_polarization_clebsch_gordan_recurrence", "elapsed_seconds": "7.96", "status": "PASS", "scope": "independent identity, low-mode sparsity formulas, capacity sums, evidence hashes and fail-closed checks"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": "12.88", "status": "PASS", "scope": "recurrence, lower-channel mutation, generated atlas and inactive bridge consumers", "summary": "9 passed"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-polarization-clebsch-gordan-recurrence-v1.schema.json -d closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json", "elapsed_seconds": "3.81", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "0.43", "status": "PASS", "scope": "shared atlas schema, generated content, evidence hashes and fail-closed bridge rows"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "python3 closed_universe_observers/generate_berger_polarization_clebsch_gordan_recurrence.py --emit", "status": "FAIL", "reason": "Direct path invocation did not place the repository root on PYTHONPATH; the established module invocation succeeded."},
+    {"command": "initial low-mode recurrence enumeration", "status": "FAIL", "reason": "It disproved the provisional two-term sparsity claim; the exact maximum is four and all certificate, schema, report, atlas and tests use the corrected bound."}
+  ],
+  "higher_tiers": [
+    {"tier": 2, "status": "NOT_RUN", "criterion": "The central comparison ledger, shared schema and mathematical inputs used by other certificate chains did not change; direct atlas consumers passed."},
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, convergence theorem, full Green image, recoil coefficient, tangent-cone promotion, physical-branch bridge, or quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_polarization_clebsch_gordan_recurrence.py", "sha256": "5c57c3b0f429e4b6ab24a7d972158225533aff0ec613f165f88a83ff1b3be8c6"},
+    {"path": "closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json", "sha256": "3ff6b596ec42f6ab45aca3ecd3ff22974e658c4534727432dbecf116f77624d0"},
+    {"path": "closed_universe_observers/schema/berger-polarization-clebsch-gordan-recurrence-v1.schema.json", "sha256": "59091db71a1ef40b1ff22c65ba81f6ba76b984369b8f6b7634d22bf38879bb6b"},
+    {"path": "closed_universe_observers/verify_berger_polarization_clebsch_gordan_recurrence.py", "sha256": "5e67e98ceff943d565e82a0552ea883e830a5be49c1f97e10f8e0fa937bbbb62"},
+    {"path": "closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py", "sha256": "cb7e8a3c60049b0c6f778035da00430ec576b19bc66d968d275b0139b5c2182b"},
+    {"path": "closed_universe_observers/reports/berger-polarization-clebsch-gordan-recurrence.md", "sha256": "a57b9856e4be99d6fbd8a931755f5e529a86cda884e1a65137d56e97258fb15f"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "ccfd979b60fe5938c39bc7cf5e4b92d6762a1fe822416f00708658e4994256b1"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "d33a68c897ee6c594dc81b9f58d72db2c23adadbbf1a1b1e83baca14fa5029d8"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "d6e20e144e90d234aa1aecf497db9448cf7a9243899f82ecbbc1b3a9555eecfe"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "aba91a1d66fe5055039cc2a811c0ef017ab0075527439f127f26ce54853d8699"},
+    {"path": "closed_universe_observers/README.md", "sha256": "4d6d241a28e45c2d00d10b3c1d5f68c0f04d3c3a38caf2eb107b0c8f744be76a"}
+  ],
+  "claim_flags": {
+    "ALL_FINITE_TWO_J_POINTWISE_POLARIZATION_RECURRENCE_EXPORTED": true,
+    "MAXIMUM_FOUR_NEIGHBORING_SCALAR_TERMS_PER_ENTRY": true,
+    "HIGH_MODE_SCALAR_COEFFICIENT_VALUES_EVALUATED": false,
+    "CLOCK_AND_TEMPORAL_GREEN_INTEGRATION_COMPLETED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
