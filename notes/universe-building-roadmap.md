@@ -415,7 +415,14 @@ calculus and a controlled spatial tail—not a complete-form or Green-image
 claim.  The six-row scalar successor now closes the first part: every new
 width is below `0.1` (maximum below `0.099`), with radial-only `128 x 64`
 refinement at indices `385,386`.  All 18 scalar inputs are present.  The active
-gate is now the 33 real-form combinations and their even clock-power rails.
+form-companion successor now completes the finite charge-block input gate:
+33 on-support real-form companions use 84 exact recurrence-term applications
+and give 495 complex intervals through `p=28`, all below width `0.1`.  With
+the original 18 selected entries and 27 structural zeros, they export 270
+complete three-component helicity vectors for all 18 selected blocks.  The
+active gate is now exact temporal functional calculus on those completed
+inputs and a controlled spatial tail.  Green images, detector response,
+recoil and second-order-cone restriction remain open.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`; only that completion activates declared `K_Berger` equivariance and
@@ -1481,6 +1488,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL` (fired) | apply the exact temporal functional calculus to the 18 selected rows and derive a controlled spatial tail; do not infer complete form coverage, a Green image, response rank or recoil from the 270 input intervals |
 | `BERGER_SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_GATE` (fired with direct-promotion obstruction) | evaluate scalar rows `(1023;129,257,385)` and `(1025;130,258,386)`, then propagate the 33 on-support real companions through `p=28`; do not set them to zero or apply a charge-block matrix function to the incomplete 18-entry input |
 | `BERGER_SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION` (fired) | construct the 33 on-support real-form companions from the complete 18-row scalar union and propagate them through `p=0,2,...,28`; do not promote scalar input completion to charge-block closure or a Green image |
+| `BERGER_SELECTED_CHARGE_BLOCK_FORM_COMPANION_CLOCK_RAIL` (fired) | apply the exact temporal functional calculus to the 18 completed three-component helicity-block inputs and derive a controlled spatial tail; do not promote completed source inputs to a Green image, detector response, recoil or cone restriction |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

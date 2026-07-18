@@ -80,3 +80,17 @@ def test_selected_scalar_companion_completion_does_not_promote_form_response():
     assert "BERGER_SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_selected_form_companion_clock_rail_closes_inputs_not_response():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.selected_charge_block_form_companion_clock_rail"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert "BERGER_SELECTED_CHARGE_BLOCK_FORM_COMPANION_CLOCK_RAIL" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

@@ -625,6 +625,18 @@ intervals and propagation through the 15 even clock powers, not further
 scalar widening.  Direct temporal promotion remains `OBSTRUCTED` until that
 form-level completion lands.
 
+`BERGER_SELECTED_CHARGE_BLOCK_FORM_COMPANION_CLOCK_RAIL` now satisfies that
+finite form-level gate.  The 33 on-support companions use 84 exact
+recurrence-term applications and are propagated through
+`p=0,2,...,28`, yielding 495 complex intervals, all below width `0.1` and
+without a clock/profile independence assumption.  With the original 18
+selected entries and 27 structural zeros, they close all 18 selected
+three-component helicity-block inputs and serialize 270 clock-power vectors.
+The active gate is now application of the exact temporal functional calculus
+to those completed blocks together with a controlled spatial tail.  No Green
+image, detector response, recoil coefficient, or tangent-cone restriction is
+promoted by this input completion.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

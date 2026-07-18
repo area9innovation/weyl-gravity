@@ -111,6 +111,8 @@ python3 -m closed_universe_observers.generate_berger_selected_charge_block_compa
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_companion_closure_gate
 python3 -m closed_universe_observers.generate_berger_selected_charge_block_scalar_companion_completion --check
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_scalar_companion_completion
+python3 -m closed_universe_observers.generate_berger_selected_charge_block_form_companion_clock_rail --check
+python3 -m closed_universe_observers.verify_berger_selected_charge_block_form_companion_clock_rail
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -482,8 +484,14 @@ rows, 12 already certified and exactly six missing: shell `1023` indices
 33 companion form entries are the next finite gate.  The six-row successor
 now evaluates all of them below width `0.1` (maximum below `0.099`), using
 radial-only `128 x 64` refinement at indices `385,386`.  All 18 scalar inputs
-for the 33 companions are therefore present.  The active gate is now the 33
-real-form combinations and their even clock powers, not further scalar work.
+for the 33 companions are therefore present.  The form-level successor now
+constructs the 33 companions using 84 exact recurrence-term applications and
+propagates them through all 15 even powers, yielding 495 complex intervals
+below width `0.1`.  Together with the 18 selected entries and 27 structural
+zeros, it exports 270 complete three-component helicity vectors for the 18
+selected charge blocks.  The active gate is now the exact temporal functional
+calculus on these completed inputs and a controlled spatial tail; Green
+images, detector response, recoil and cone restriction remain open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

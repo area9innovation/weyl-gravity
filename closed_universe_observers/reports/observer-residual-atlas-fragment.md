@@ -43,8 +43,14 @@ to construct those companions.  This obstruction is scoped to the incomplete
 selected input, not to the exact blockwise functional calculus itself.
 The scalar-companion completion row is now `CERTIFIED`: the six missing
 intervals all pass width `0.1`, completing the 18-row scalar input union.
-This does not change the direct-promotion obstruction until the 33 real-form
-companions and their clock powers are actually constructed.
+The successor form-companion clock rail is also `CERTIFIED`: 33 on-support
+real-form companions use 84 recurrence-term applications and give 495
+intervals through `p=28`, all below width `0.1`.  Together with the 18
+selected entries and 27 structural zeros, they serialize 270 complete
+three-component helicity vectors for the 18 selected charge blocks.  The
+original 18-entry-only promotion remains `OBSTRUCTED`; the finite completion
+does not yet apply temporal functional calculus or certify a spatial tail,
+Green image, detector response, recoil, or cone restriction.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
