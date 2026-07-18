@@ -17,6 +17,7 @@ import argparse
 import hashlib
 import html
 import json
+import os
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
@@ -196,7 +197,9 @@ def load_entries(paths: Iterable[Path], labels: dict[str, Any]) -> list[AtlasEnt
             descriptions = _validate_descriptions(identifier, raw.get("descriptions"))
             scope = raw.get("scope") if isinstance(raw.get("scope"), dict) else {}
             boundary = str(raw.get("claim_boundary") or raw.get("caveats") or "Scope boundary not supplied.")
-            detail_keys = ("mode_data", "quantum_status", "claim", "carrier_crosswalk")
+            detail_keys = (
+                "mode_data", "quantum_data", "quantum_status", "claim", "carrier_crosswalk"
+            )
             details = {key: raw[key] for key in detail_keys if key in raw}
             entries.append(
                 AtlasEntry(
@@ -475,8 +478,14 @@ def render_dot(dot_path: Path, targets: dict[str, Path]) -> None:
     dot = shutil.which("dot")
     if not dot:
         raise RuntimeError("Graphviz 'dot' is required for --render")
+    environment = os.environ.copy()
+    environment["SOURCE_DATE_EPOCH"] = "0"
     for fmt, target in targets.items():
-        subprocess.run([dot, f"-T{fmt}", str(dot_path), "-o", str(target)], check=True)
+        subprocess.run(
+            [dot, f"-T{fmt}", str(dot_path), "-o", str(target)],
+            check=True,
+            env=environment,
+        )
 
 
 def generate(include_working_tree: bool = False, render: bool = False) -> dict[str, Any]:
@@ -501,6 +510,10 @@ def generate(include_working_tree: bool = False, render: bool = False) -> dict[s
         )
         for key in ("svg", "png", "pdf"):
             output_bytes[OUTPUTS[key].name] = OUTPUTS[key].read_bytes()
+    else:
+        for key in ("svg", "png", "pdf"):
+            if OUTPUTS[key].exists():
+                output_bytes[OUTPUTS[key].name] = OUTPUTS[key].read_bytes()
     receipt = build_receipt(entries, inputs, publishable, output_bytes)
     OUTPUTS["receipt"].write_bytes(_json_bytes(receipt))
     return receipt

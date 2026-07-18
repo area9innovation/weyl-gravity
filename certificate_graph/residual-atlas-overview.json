@@ -594,6 +594,138 @@
       "team": "einstein_boundary"
     },
     {
+      "claim_boundary": "The 26/54-row causal carrier is imported, but it is not a stationary mode ledger. No physical mode, complex structure, Hadamard state, or particle is inferred.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "no stationary physical mode basis",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "lee_wald": {
+            "statement": "carrier pairing exists but has no modewise restriction",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "generalized zero and nonzero stationary spectrum not imported",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "Berger finite-harmonic cone not classified",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "Berger causal carrier exists but its nonlinear tangent cone is not classified",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "Berger finite-harmonic cone not classified",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "no per-mode tangent-cone ledger",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "no per-mode cohomology ledger",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "BRST_exactness": {
+            "statement": "no per-mode cohomology ledger",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "not constructed",
+            "status": "OPEN"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "regulated Slavnov breaking and QME disposition required",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "retained 26 rows to stationary physical modes",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "classical_mode_imported": {
+            "statement": "NO: causal carrier imported, no stationary mode crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "compatible_complex_structure": {
+            "statement": "not constructed on the 54-row distributional complex",
+            "status": "OPEN"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE",
+            "LORENTZIAN-CAUSAL"
+          ],
+          "entry_kind": "CARRIER_IMPORT_GAP",
+          "lifecycle_state": {
+            "statement": "classical causal import accepted; quantum mode atlas open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "carrier pairing has no modewise restriction",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "particle_interpretation": {
+            "statement": "no mode basis or Hadamard state",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "reduced Krein evidence does not define a Berger physical state space",
+            "status": "OPEN"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
+          "result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+          "sha256": "2afa06f34d29f9103164d22c9865d4899d5b28d53c6a5a3ce002c89f71c8f1da"
+        },
+        {
+          "path": "quantum-weyl/lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
+          "result_id": "BERGER_HADAMARD_CONSTRUCTION_GATE",
+          "sha256": "d9e19623e928df0b11f0c1c75b63a9c7b83bd3fca024e099e0c11e8341729557"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "berger_clock",
+      "id": "quantum.berger.carrier_gap.retained_26_stationary_modes",
+      "label": "Berger quantum carrier bridge",
+      "scope": {
+        "background": "compact positive Berger clock",
+        "boundaries": "R x S3 with compact Cauchy surfaces",
+        "carrier": "causal 26-row complex; stationary spectral mode basis not supplied",
+        "charge_sector": "retained 26-row classical BV carrier",
+        "degree": "all retained BV degrees",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP: generalized-zero and nonzero spectrum not imported",
+        "parity": "NO_CERTIFIED_MAP",
+        "theory": "pure-Weyl gravity plus positive scalar clock at fixed coupling"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
       "claim_boundary": "Scope boundary not supplied.",
       "descriptions": {
         "causal": "OPEN",
@@ -788,6 +920,1074 @@
       "team": "closed_universe_observer"
     },
     {
+      "claim_boundary": "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "positive cylinder energy n>=3",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "reduced Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "no same-background full-BV stationary/Hadamard spectral theorem",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "no same-background causal tangent-cone crosswalk",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "no second-order tangent-cone restriction is claimed for this all-energy family row",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "survives the selected polarized classical BRST retraction",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact in the selected reduced complex",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no same-background full-BV distributional kernel",
+            "status": "OPEN"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "regulated Slavnov breaking and QME disposition required",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "real phase-space mode to selected positive-frequency oscillator",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: selected reduced E/A/L oscillator",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "reduced positive-frequency polarization only",
+            "status": "OPEN"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "entry_kind": "MODE_FAMILY",
+          "lifecycle_state": {
+            "statement": "reduced classical state carrier; quantum theory open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "no Lorentzian particle interpretation",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "infinite-index Krein reduced mode; not physical positivity",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+          "result_id": "pure-weyl-polarized-state-complex-v1",
+          "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+        },
+        {
+          "path": "analytic_completion/certificates/one_particle_krein.json",
+          "result_id": "pure-weyl-one-particle-krein-v1",
+          "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+        },
+        {
+          "path": "covariant_completion/certificates/positive_frequency_transform.json",
+          "result_id": "pure-weyl-positive-frequency-transform-v1",
+          "sha256": "b1456bf08ec00aa5bdf3a98a2b65e9e820776fdfc6d1fa2e3185f6482cdccbc0"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.mode_family.a.chirality_minus",
+      "label": "Cylinder mode tower A, negative chirality",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "compact S3 Cauchy surface; selected positive-frequency boundary polarization",
+        "carrier": "normalized A energy-tower oscillator in chirality -1",
+        "charge_sector": "ghost-number-zero one-particle reduced cylinder sector",
+        "degree": 0,
+        "ell": "NO_CERTIFIED_MAP: SO(4) irrep labels are not crosswalked to ell",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "NO_CERTIFIED_MAP: magnetic index M is not crosswalked to one m convention",
+        "omega": "positive cylinder energy n with n>=3",
+        "parity": "chirality -1; parity exchanges the opposite-chirality partner",
+        "theory": "free pure-Weyl BV-BFV gravity"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "positive cylinder energy n>=3",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "reduced Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "no same-background full-BV stationary/Hadamard spectral theorem",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "no same-background causal tangent-cone crosswalk",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "no second-order tangent-cone restriction is claimed for this all-energy family row",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "survives the selected polarized classical BRST retraction",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact in the selected reduced complex",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no same-background full-BV distributional kernel",
+            "status": "OPEN"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "regulated Slavnov breaking and QME disposition required",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "real phase-space mode to selected positive-frequency oscillator",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: selected reduced E/A/L oscillator",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "reduced positive-frequency polarization only",
+            "status": "OPEN"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "entry_kind": "MODE_FAMILY",
+          "lifecycle_state": {
+            "statement": "reduced classical state carrier; quantum theory open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "no Lorentzian particle interpretation",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "infinite-index Krein reduced mode; not physical positivity",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+          "result_id": "pure-weyl-polarized-state-complex-v1",
+          "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+        },
+        {
+          "path": "analytic_completion/certificates/one_particle_krein.json",
+          "result_id": "pure-weyl-one-particle-krein-v1",
+          "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+        },
+        {
+          "path": "covariant_completion/certificates/positive_frequency_transform.json",
+          "result_id": "pure-weyl-positive-frequency-transform-v1",
+          "sha256": "b1456bf08ec00aa5bdf3a98a2b65e9e820776fdfc6d1fa2e3185f6482cdccbc0"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.mode_family.a.chirality_plus",
+      "label": "Cylinder mode tower A, positive chirality",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "compact S3 Cauchy surface; selected positive-frequency boundary polarization",
+        "carrier": "normalized A energy-tower oscillator in chirality +1",
+        "charge_sector": "ghost-number-zero one-particle reduced cylinder sector",
+        "degree": 0,
+        "ell": "NO_CERTIFIED_MAP: SO(4) irrep labels are not crosswalked to ell",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "NO_CERTIFIED_MAP: magnetic index M is not crosswalked to one m convention",
+        "omega": "positive cylinder energy n with n>=3",
+        "parity": "chirality +1; parity exchanges the opposite-chirality partner",
+        "theory": "free pure-Weyl BV-BFV gravity"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "positive cylinder energy n>=2",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "reduced Krein sign +1",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "no same-background full-BV stationary/Hadamard spectral theorem",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "no same-background causal tangent-cone crosswalk",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "no second-order tangent-cone restriction is claimed for this all-energy family row",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "survives the selected polarized classical BRST retraction",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact in the selected reduced complex",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no same-background full-BV distributional kernel",
+            "status": "OPEN"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "regulated Slavnov breaking and QME disposition required",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "real phase-space mode to selected positive-frequency oscillator",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: selected reduced E/A/L oscillator",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "reduced positive-frequency polarization only",
+            "status": "OPEN"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "entry_kind": "MODE_FAMILY",
+          "lifecycle_state": {
+            "statement": "reduced classical state carrier; quantum theory open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "Krein sign +1",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "no Lorentzian particle interpretation",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "infinite-index Krein reduced mode; not physical positivity",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+          "result_id": "pure-weyl-polarized-state-complex-v1",
+          "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+        },
+        {
+          "path": "analytic_completion/certificates/one_particle_krein.json",
+          "result_id": "pure-weyl-one-particle-krein-v1",
+          "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+        },
+        {
+          "path": "covariant_completion/certificates/positive_frequency_transform.json",
+          "result_id": "pure-weyl-positive-frequency-transform-v1",
+          "sha256": "b1456bf08ec00aa5bdf3a98a2b65e9e820776fdfc6d1fa2e3185f6482cdccbc0"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.mode_family.e.chirality_minus",
+      "label": "Cylinder mode tower E, negative chirality",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "compact S3 Cauchy surface; selected positive-frequency boundary polarization",
+        "carrier": "normalized E energy-tower oscillator in chirality -1",
+        "charge_sector": "ghost-number-zero one-particle reduced cylinder sector",
+        "degree": 0,
+        "ell": "NO_CERTIFIED_MAP: SO(4) irrep labels are not crosswalked to ell",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "NO_CERTIFIED_MAP: magnetic index M is not crosswalked to one m convention",
+        "omega": "positive cylinder energy n with n>=2",
+        "parity": "chirality -1; parity exchanges the opposite-chirality partner",
+        "theory": "free pure-Weyl BV-BFV gravity"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "positive cylinder energy n>=2",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "reduced Krein sign +1",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "no same-background full-BV stationary/Hadamard spectral theorem",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "no same-background causal tangent-cone crosswalk",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "no second-order tangent-cone restriction is claimed for this all-energy family row",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "survives the selected polarized classical BRST retraction",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact in the selected reduced complex",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no same-background full-BV distributional kernel",
+            "status": "OPEN"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "regulated Slavnov breaking and QME disposition required",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "real phase-space mode to selected positive-frequency oscillator",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: selected reduced E/A/L oscillator",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "reduced positive-frequency polarization only",
+            "status": "OPEN"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "entry_kind": "MODE_FAMILY",
+          "lifecycle_state": {
+            "statement": "reduced classical state carrier; quantum theory open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "Krein sign +1",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "no Lorentzian particle interpretation",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "infinite-index Krein reduced mode; not physical positivity",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+          "result_id": "pure-weyl-polarized-state-complex-v1",
+          "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+        },
+        {
+          "path": "analytic_completion/certificates/one_particle_krein.json",
+          "result_id": "pure-weyl-one-particle-krein-v1",
+          "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+        },
+        {
+          "path": "covariant_completion/certificates/positive_frequency_transform.json",
+          "result_id": "pure-weyl-positive-frequency-transform-v1",
+          "sha256": "b1456bf08ec00aa5bdf3a98a2b65e9e820776fdfc6d1fa2e3185f6482cdccbc0"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.mode_family.e.chirality_plus",
+      "label": "Cylinder mode tower E, positive chirality",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "compact S3 Cauchy surface; selected positive-frequency boundary polarization",
+        "carrier": "normalized E energy-tower oscillator in chirality +1",
+        "charge_sector": "ghost-number-zero one-particle reduced cylinder sector",
+        "degree": 0,
+        "ell": "NO_CERTIFIED_MAP: SO(4) irrep labels are not crosswalked to ell",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "NO_CERTIFIED_MAP: magnetic index M is not crosswalked to one m convention",
+        "omega": "positive cylinder energy n with n>=2",
+        "parity": "chirality +1; parity exchanges the opposite-chirality partner",
+        "theory": "free pure-Weyl BV-BFV gravity"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "positive cylinder energy n>=4",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "reduced Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "no same-background full-BV stationary/Hadamard spectral theorem",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "no same-background causal tangent-cone crosswalk",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "no second-order tangent-cone restriction is claimed for this all-energy family row",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "survives the selected polarized classical BRST retraction",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact in the selected reduced complex",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no same-background full-BV distributional kernel",
+            "status": "OPEN"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "regulated Slavnov breaking and QME disposition required",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "real phase-space mode to selected positive-frequency oscillator",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: selected reduced E/A/L oscillator",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "reduced positive-frequency polarization only",
+            "status": "OPEN"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "entry_kind": "MODE_FAMILY",
+          "lifecycle_state": {
+            "statement": "reduced classical state carrier; quantum theory open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "no Lorentzian particle interpretation",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "infinite-index Krein reduced mode; not physical positivity",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+          "result_id": "pure-weyl-polarized-state-complex-v1",
+          "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+        },
+        {
+          "path": "analytic_completion/certificates/one_particle_krein.json",
+          "result_id": "pure-weyl-one-particle-krein-v1",
+          "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+        },
+        {
+          "path": "covariant_completion/certificates/positive_frequency_transform.json",
+          "result_id": "pure-weyl-positive-frequency-transform-v1",
+          "sha256": "b1456bf08ec00aa5bdf3a98a2b65e9e820776fdfc6d1fa2e3185f6482cdccbc0"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.mode_family.l.chirality_minus",
+      "label": "Cylinder mode tower L, negative chirality",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "compact S3 Cauchy surface; selected positive-frequency boundary polarization",
+        "carrier": "normalized L energy-tower oscillator in chirality -1",
+        "charge_sector": "ghost-number-zero one-particle reduced cylinder sector",
+        "degree": 0,
+        "ell": "NO_CERTIFIED_MAP: SO(4) irrep labels are not crosswalked to ell",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "NO_CERTIFIED_MAP: magnetic index M is not crosswalked to one m convention",
+        "omega": "positive cylinder energy n with n>=4",
+        "parity": "chirality -1; parity exchanges the opposite-chirality partner",
+        "theory": "free pure-Weyl BV-BFV gravity"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "positive cylinder energy n>=4",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "reduced Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "no same-background full-BV stationary/Hadamard spectral theorem",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "no same-background causal tangent-cone crosswalk",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not classified for this mode family",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "no second-order tangent-cone restriction is claimed for this all-energy family row",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "survives the selected polarized classical BRST retraction",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact in the selected reduced complex",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no same-background full-BV distributional kernel",
+            "status": "OPEN"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "regulated Slavnov breaking and QME disposition required",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "real phase-space mode to selected positive-frequency oscillator",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: selected reduced E/A/L oscillator",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "reduced positive-frequency polarization only",
+            "status": "OPEN"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "entry_kind": "MODE_FAMILY",
+          "lifecycle_state": {
+            "statement": "reduced classical state carrier; quantum theory open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "Krein sign -1",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "no Lorentzian particle interpretation",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "infinite-index Krein reduced mode; not physical positivity",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "field_bv_identification/polarized_state/certificates/polarized_state_complex.json",
+          "result_id": "pure-weyl-polarized-state-complex-v1",
+          "sha256": "efe492946333578e91d880fde0008166ba8960bc366840413883e5c0e39d0ec1"
+        },
+        {
+          "path": "analytic_completion/certificates/one_particle_krein.json",
+          "result_id": "pure-weyl-one-particle-krein-v1",
+          "sha256": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374"
+        },
+        {
+          "path": "covariant_completion/certificates/positive_frequency_transform.json",
+          "result_id": "pure-weyl-positive-frequency-transform-v1",
+          "sha256": "b1456bf08ec00aa5bdf3a98a2b65e9e820776fdfc6d1fa2e3185f6482cdccbc0"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.mode_family.l.chirality_plus",
+      "label": "Cylinder mode tower L, positive chirality",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "compact S3 Cauchy surface; selected positive-frequency boundary polarization",
+        "carrier": "normalized L energy-tower oscillator in chirality +1",
+        "charge_sector": "ghost-number-zero one-particle reduced cylinder sector",
+        "degree": 0,
+        "ell": "NO_CERTIFIED_MAP: SO(4) irrep labels are not crosswalked to ell",
+        "k": "NOT_APPLICABLE on S3",
+        "m": "NO_CERTIFIED_MAP: magnetic index M is not crosswalked to one m convention",
+        "omega": "positive cylinder energy n with n>=4",
+        "parity": "chirality +1; parity exchanges the opposite-chirality partner",
+        "theory": "free pure-Weyl BV-BFV gravity"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This is a deformation/vertex class, not a one-particle generator or particle Hilbert-space basis. Its free cohomology and Gram entry do not decide quantum survival.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "deformation class, not a one-particle shell",
+            "status": "NOT_APPLICABLE"
+          },
+          "lee_wald": {
+            "statement": "unit diagonal Gram entry in the final covariant H4 basis",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "not a one-particle shell",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not a tangent mode",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "not a tangent mode",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not a tangent mode",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "not a first-order tangent mode",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "closed class in final covariant H4",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact H4 class",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "not a one-particle carrier",
+            "status": "NOT_APPLICABLE"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "quantum survival requires restored QME and H3-H4-H5 transfer",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "curvature graph image to final free BV cohomology",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: non-particle residual class",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "not a one-particle carrier",
+            "status": "NOT_APPLICABLE"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "LORENTZIAN-CAUSAL"
+          ],
+          "entry_kind": "NONPARTICLE_RESIDUAL_CLASS",
+          "lifecycle_state": {
+            "statement": "classical deformation class; quantum survival open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "unit diagonal Gram entry",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "NOT_A_PARTICLE",
+            "status": "CERTIFIED"
+          },
+          "state_space_status": {
+            "statement": "deformation/vertex class",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
+          "result_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
+          "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.residual_deformation.w_minus_2",
+      "label": "Negative-chirality deformation class (not a particle)",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "closed cylinder with all fifteen residual conformal generators gauged",
+        "carrier": "W_-^2",
+        "charge_sector": "centered residual cohomology H4 at delta=0",
+        "degree": 4,
+        "ell": "NOT_APPLICABLE: two-particle ghost-dressed deformation class",
+        "k": "NOT_APPLICABLE",
+        "m": "NOT_APPLICABLE: two-particle ghost-dressed deformation class",
+        "omega": "NOT_APPLICABLE: not a one-particle frequency",
+        "parity": "chiral -; parity partner is W_+^2",
+        "theory": "free pure-Weyl BV observable cohomology"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This is a deformation/vertex class, not a one-particle generator or particle Hilbert-space basis. Its free cohomology and Gram entry do not decide quantum survival.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "deformation class, not a one-particle shell",
+            "status": "NOT_APPLICABLE"
+          },
+          "lee_wald": {
+            "statement": "unit diagonal Gram entry in the final covariant H4 basis",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "not a one-particle shell",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "not a tangent mode",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "not a tangent mode",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "not a tangent mode",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "not a first-order tangent mode",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "closed class in final covariant H4",
+            "status": "CERTIFIED"
+          },
+          "BRST_exactness": {
+            "statement": "nonexact H4 class",
+            "status": "CERTIFIED"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "not a one-particle carrier",
+            "status": "NOT_APPLICABLE"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "quantum survival requires restored QME and H3-H4-H5 transfer",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "curvature graph image to final free BV cohomology",
+            "status": "CERTIFIED"
+          },
+          "classical_mode_imported": {
+            "statement": "YES: non-particle residual class",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "not a one-particle carrier",
+            "status": "NOT_APPLICABLE"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "LORENTZIAN-CAUSAL"
+          ],
+          "entry_kind": "NONPARTICLE_RESIDUAL_CLASS",
+          "lifecycle_state": {
+            "statement": "classical deformation class; quantum survival open",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "unit diagonal Gram entry",
+            "status": "CERTIFIED"
+          },
+          "particle_interpretation": {
+            "statement": "NOT_A_PARTICLE",
+            "status": "CERTIFIED"
+          },
+          "state_space_status": {
+            "statement": "deformation/vertex class",
+            "status": "NOT_APPLICABLE"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
+          "result_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
+          "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "vacuum_cylinder",
+      "id": "quantum.cylinder.residual_deformation.w_plus_2",
+      "label": "Positive-chirality deformation class (not a particle)",
+      "scope": {
+        "background": "vacuum conformal cylinder R x S3",
+        "boundaries": "closed cylinder with all fifteen residual conformal generators gauged",
+        "carrier": "W_+^2",
+        "charge_sector": "centered residual cohomology H4 at delta=0",
+        "degree": 4,
+        "ell": "NOT_APPLICABLE: two-particle ghost-dressed deformation class",
+        "k": "NOT_APPLICABLE",
+        "m": "NOT_APPLICABLE: two-particle ghost-dressed deformation class",
+        "omega": "NOT_APPLICABLE: not a one-particle frequency",
+        "parity": "chiral +; parity partner is W_-^2",
+        "theory": "free pure-Weyl BV observable cohomology"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
       "claim_boundary": "Scope boundary not supplied.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -816,6 +2016,287 @@
       },
       "source": "closed_universe_observers/atlas/observer-atlas-fragment.json",
       "team": "closed_universe_observer"
+    },
+    {
+      "claim_boundary": "The unsplit cyclic causal carrier remains valid. The obstruction does not rule out a larger noncontractible mixed-bundle carrier or a declared nonlocal reduced-mode split.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "No support-local branch-resolved dispersion map exists on this carrier.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "lee_wald": {
+            "statement": "No branch-resolved pairing pullback exists.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "The canonical support-local same-bundle projector is obstructed by the certified subprincipal witness.",
+            "status": "OBSTRUCTED"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No branch projector.",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "causal_retarded": {
+              "statement": "No branch projector.",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No branch projector.",
+              "status": "NO_CERTIFIED_MAP"
+            }
+          },
+          "taub_maps": {
+            "statement": "No branch-resolved Taub map exists.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
+          "sha256": "2a06fb31f888cab2d0c3e3481a559623098b3efba42cc0cd7b9b2759552e980c"
+        }
+      ],
+      "group": "bridges",
+      "id": "classical.berger.crosswalk.retained36_to_einstein_extra",
+      "label": "Classical / berger / crosswalk / retained36 to einstein extra",
+      "scope": {
+        "background": "fixed rational positive Berger clock",
+        "boundaries": "R_t x compact Berger S3; no spatial boundary",
+        "carrier": "support-local Einstein-like/extra-Weyl dynamical branch projector on the retained 36-row carrier",
+        "charge_sector": "fixed-coupling Taub/moment-map-zero clock sector; K_Berger=D-omega R is the stationary unary generator",
+        "degree": "crosswalk",
+        "ell": "all",
+        "k": "all",
+        "m": "all",
+        "omega": "all",
+        "parity": "all",
+        "theory": "pure-Weyl gravity plus two standard-sign rotating conformal scalars and retained Maxwell sector"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "The universal parent theorem must not be promoted to a metric theorem outside the certified conformal Nariai orbit.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "No class-wide metric endpoint crosswalk.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "lee_wald": {
+            "statement": "No class-wide metric current pullback.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "No class-wide mode/resonance crosswalk.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No metric crosswalk.",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "causal_retarded": {
+              "statement": "No metric crosswalk.",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No metric crosswalk.",
+              "status": "NO_CERTIFIED_MAP"
+            }
+          },
+          "taub_maps": {
+            "statement": "No class-wide charge-sector crosswalk.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+          "result_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+          "sha256": "2ee8be4633c180f178ceff900cda2e6cc6b6f6c51bf7018e59cea3f63d5c14bf"
+        }
+      ],
+      "group": "bridges",
+      "id": "classical.crosswalk.bach_flat_parent_to_metric",
+      "label": "Classical / crosswalk / bach flat parent to metric",
+      "scope": {
+        "background": "open Bach-flat parent class <-> metric Bach complexes away from the certified conformal Nariai orbit",
+        "boundaries": "global compact Cauchy surface S1 x S2; no timelike boundary",
+        "carrier": "support-local parent/metric SDR",
+        "charge_sector": "unquotiented linear gauge complex; no residual state quotient imported",
+        "degree": "crosswalk",
+        "ell": "all",
+        "k": "all",
+        "m": "all",
+        "omega": "all",
+        "parity": "all",
+        "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. An explicit insertion and QME disposition are mandatory.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "abstract finite-block image/cokernel criterion",
+            "status": "NOT_APPLICABLE"
+          },
+          "lee_wald": {
+            "statement": "no universal quantum pairing follows from the classical criterion",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "R_j^C depends on the correction class fixed before the cokernel",
+            "status": "CERTIFIED"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "abstract criterion certified; opposite-momentum moment-map-only fixture fails on a nonempty resonance divisor",
+              "status": "OBSTRUCTED"
+            },
+            "causal_retarded": {
+              "statement": "abstract compatible-source retarded criterion certified, but no background-specific Green theorem is imported",
+              "status": "NO_CERTIFIED_MAP"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "abstract criterion and fixed-(ell,|k|) smooth-secular fixture certified in declared scope",
+              "status": "CERTIFIED"
+            }
+          },
+          "taub_maps": {
+            "statement": "Z2^C={u: mu_X(u)=0 and R_j^C(u)=0}",
+            "status": "CERTIFIED"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "no quantum BRST insertion constructed",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "BRST_exactness": {
+            "statement": "no primitive or nonmembership witness constructed",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no background-specific causal quantum state",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "restored QME or normalized QME obstruction required before interacting-BRST interpretation",
+            "status": "CERTIFIED"
+          },
+          "carrier_crosswalk": {
+            "statement": "classical obstruction to interacting BRST disappearance or quantum constraint",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "classical_mode_imported": {
+            "statement": "abstract classical correction-class theorem imported by content hash",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "classical second-order solvability crosswalk",
+            "status": "NOT_APPLICABLE"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "REDUCED-MODE"
+          ],
+          "entry_kind": "CLASSICAL_TO_QUANTUM_CROSSWALK",
+          "lifecycle_state": {
+            "statement": "classical criterion certified; quantum bridge absent",
+            "status": "OPEN"
+          },
+          "pairing_status": {
+            "statement": "no coefficient-bearing quantum pairing",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "particle_interpretation": {
+            "statement": "classical obstruction is not ghost removal",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "no interacting quantum state space",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FINITE_HARMONIC_K0_COMBINED_CONE_SECOND_ORDER",
+          "sha256": "45f91e2c9342f81dda1624c3ae347816a11ce25c5bf1a28508a7213e984d0d52"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "5be7efd39af228e51efa61e98d5fe76be3a741dd28f54d5d014383d4afe63a9f"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_OPPOSITE_MOMENTUM_PHASE_RESONANCE_DIVISOR",
+          "sha256": "3a58c94bce450cec2bf40eeda9d8bddb7f38617a62b4bcd37ebf5adbc50e3557"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "bridges",
+      "id": "quantum.crosswalk.classical_tangent_cone_to_interacting_brst",
+      "label": "Classical tangent cone to interacting BRST",
+      "scope": {
+        "background": "crosswalk only; every background requires its own certified carrier",
+        "boundaries": "correction-class dependent",
+        "carrier": "Z2^C classical tangent cone to a quantum BRST insertion",
+        "charge_sector": "declared stabilizer moment-map zero sector",
+        "degree": 2,
+        "ell": "finite declared block set",
+        "k": "finite declared block set",
+        "m": "finite declared block set",
+        "omega": "bounded/quasiperiodic, smooth-secular, or causal/retarded",
+        "parity": "all declared finite-harmonic sectors",
+        "theory": "classical finite-harmonic second-order theory to renormalized BV quantum theory"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
     },
     {
       "claim_boundary": "Compact-product modes must not be called asymptotic gravitons or vacuum-cylinder residual classes without an explicit certified crosswalk.",
@@ -880,6 +2361,1057 @@
       },
       "source": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
       "team": "einstein_boundary"
+    },
+    {
+      "claim_boundary": "This carrier remains valid in its local, spectral, or observable-algebra role, but no certified map turns it into a particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "not a physical residual mode shell",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "lee_wald": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "BRST_exactness": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no particle Hadamard crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "carrier retains its own anomaly/QME dependency",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "non-mode carrier to particle",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "classical_mode_imported": {
+            "statement": "carrier imported only in its declared non-particle role",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "no particle complex structure crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "dependency_tags": [
+            "LORENTZIAN-CAUSAL"
+          ],
+          "entry_kind": "NON_MODE_PARTICLE_GUARD",
+          "lifecycle_state": {
+            "statement": "not a particle lifecycle entry",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "pairing_status": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "particle_interpretation": {
+            "statement": "forbidden without an explicit physical residual-mode crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "no particle state-space crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
+          "result_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
+          "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed"
+        }
+      ],
+      "group": "bridges",
+      "id": "quantum.crosswalk.curvature_observable_generator_to_particle",
+      "label": "Curvature observable to particle guard",
+      "scope": {
+        "background": "carrier-specific; no cross-background identification",
+        "boundaries": "carrier-specific",
+        "carrier": "support-local curvature-graph CCR generator",
+        "charge_sector": "not a certified physical one-particle sector",
+        "degree": "carrier-specific",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "carrier-specific",
+        "theory": "pure-Weyl quantum programme"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This carrier remains valid in its local, spectral, or observable-algebra role, but no certified map turns it into a particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "not a physical residual mode shell",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "lee_wald": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "BRST_exactness": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no particle Hadamard crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "carrier retains its own anomaly/QME dependency",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "non-mode carrier to particle",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "classical_mode_imported": {
+            "statement": "carrier imported only in its declared non-particle role",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "no particle complex structure crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "dependency_tags": [
+            "EUCLIDEAN-SPECTRAL"
+          ],
+          "entry_kind": "NON_MODE_PARTICLE_GUARD",
+          "lifecycle_state": {
+            "statement": "not a particle lifecycle entry",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "pairing_status": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "particle_interpretation": {
+            "statement": "forbidden without an explicit physical residual-mode crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "no particle state-space crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "bridges",
+      "id": "quantum.crosswalk.euclidean_determinant_factor_to_particle",
+      "label": "Euclidean determinant to particle guard",
+      "scope": {
+        "background": "carrier-specific; no cross-background identification",
+        "boundaries": "carrier-specific",
+        "carrier": "round-S4 TT or ghost determinant factor",
+        "charge_sector": "not a certified physical one-particle sector",
+        "degree": "carrier-specific",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "carrier-specific",
+        "theory": "pure-Weyl quantum programme"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This carrier remains valid in its local, spectral, or observable-algebra role, but no certified map turns it into a particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "not a physical residual mode shell",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "lee_wald": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "resonance": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "non-mode carrier guard",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "quantum_data": {
+          "BRST_cocycle": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "BRST_exactness": {
+            "statement": "carrier-specific; no physical residual mode imported",
+            "status": "NOT_APPLICABLE"
+          },
+          "Hadamard_two_point_function": {
+            "statement": "no particle Hadamard crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "anomaly_QME_dependency": {
+            "statement": "carrier retains its own anomaly/QME dependency",
+            "status": "OPEN"
+          },
+          "carrier_crosswalk": {
+            "statement": "non-mode carrier to particle",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "classical_mode_imported": {
+            "statement": "carrier imported only in its declared non-particle role",
+            "status": "CERTIFIED"
+          },
+          "compatible_complex_structure": {
+            "statement": "no particle complex structure crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "dependency_tags": [
+            "LOCAL-ALGEBRAIC",
+            "EUCLIDEAN-SPECTRAL"
+          ],
+          "entry_kind": "NON_MODE_PARTICLE_GUARD",
+          "lifecycle_state": {
+            "statement": "not a particle lifecycle entry",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "pairing_status": {
+            "statement": "no particle pairing crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "particle_interpretation": {
+            "statement": "forbidden without an explicit physical residual-mode crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "state_space_status": {
+            "statement": "no particle state-space crosswalk",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+          "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
+          "sha256": "131b4c03b42398b6c4783771710ab67d648e6fb909ca85a4317456ff7fe84c24"
+        }
+      ],
+      "group": "bridges",
+      "id": "quantum.crosswalk.local_anomaly_class_to_particle",
+      "label": "Local anomaly class to particle guard",
+      "scope": {
+        "background": "carrier-specific; no cross-background identification",
+        "boundaries": "carrier-specific",
+        "carrier": "local ghost-number-one anomaly class such as omega C2 or omega E4",
+        "charge_sector": "not a certified physical one-particle sector",
+        "degree": "carrier-specific",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "carrier-specific",
+        "theory": "pure-Weyl quantum programme"
+      },
+      "source": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "team": "quantum"
+    },
+    {
+      "claim_boundary": "This certifies the parent, not a support-local metric/parent SDR or metric Bach Green homotopy throughout the whole relative-open class.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The parent detour is degreewise Green hyperbolic on every declared globally hyperbolic Bach-flat background.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "The parent is cyclic under its tractor fibre pairing and advanced/retarded adjoint reversal.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No finite harmonic resonance decomposition is assumed on the open parent class.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No bounded harmonic class is declared.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "Unary parent Green homotopy does not by itself solve nonlinear sourced second order.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No smooth-secular class-wide theorem.",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "No class-wide nonlinear tangent cone.",
+            "status": "OPEN"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
+          "result_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+          "sha256": "2ee8be4633c180f178ceff900cda2e6cc6b6f6c51bf7018e59cea3f63d5c14bf"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "other",
+      "id": "classical.bach_flat.open_parent_detour",
+      "label": "Classical / bach flat / open parent detour",
+      "scope": {
+        "background": "every globally hyperbolic Bach-flat four-manifold; explicit relative ADM radius-1/4 ball around Nariai",
+        "boundaries": "global compact Cauchy surface S1 x S2; no timelike boundary",
+        "carrier": "normal-adjoint-tractor Yang-Mills detour parent",
+        "charge_sector": "unquotiented linear gauge complex; no residual state quotient imported",
+        "degree": "parent complex degrees",
+        "ell": "NOT_APPLICABLE without additional symmetry",
+        "k": "all local covectors",
+        "m": "NOT_APPLICABLE",
+        "omega": "all",
+        "parity": "all",
+        "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "Causality is unary and the cyclic Cartan theorem stops at arity three. Raw affine D, arity four, Hadamard/QME, and a branch-resolved physical projector remain false.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "CERTIFIED",
+        "observational": "CERTIFIED",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "No complete Berger harmonic dispersion catalogue is asserted.",
+            "status": "OPEN"
+          },
+          "lee_wald": {
+            "statement": "The full and retained odd cyclic pairings and advanced/retarded adjoint reversal are exact.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No complete Berger second-order resonance catalogue exists.",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No finite-harmonic bounded Berger tangent cone.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "The unary retarded complex is certified, but the nonlinear causal second-order tangent cone is open.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No smooth-secular Berger tangent cone.",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "The clock momentum is nonzero but its variation vanishes on the declared fixed-coupling tangent; K_Berger, not raw affine D, is the stationary unary generator.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+          "result_id": "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+          "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b"
+        },
+        {
+          "path": "d_quotient_classical/certificates/BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE.json",
+          "result_id": "BERGER_COUPLED_K_CARTAN_THROUGH_ARITY_THREE",
+          "sha256": "104ff269ddf10ed80ff796c090a2de90a40c62adb0194954e4509b200304184e"
+        },
+        {
+          "path": "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
+          "result_id": "BERGER_FIXED_COUPLING_DELTA_CHARGE",
+          "sha256": "0ae894432b065f9f4ba116e6e2d42e69d1d60cd37dbf6ef21a14d7073c75b786"
+        },
+        {
+          "path": "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
+          "result_id": "BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE",
+          "sha256": "95c4c3a4359db4ec5b03f77a9d86191df97c4cfbbd00ae043dd5ccfc720df996"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "other",
+      "id": "classical.berger.retained_gravity_clock_maxwell",
+      "label": "Classical / berger / retained gravity clock maxwell",
+      "scope": {
+        "background": "fixed rational positive Berger clock",
+        "boundaries": "R_t x compact Berger S3; no spatial boundary",
+        "carrier": "complete 54-row gauge-fixed gravity-clock complex with typed retained 36-row gravity-clock-Maxwell carrier",
+        "charge_sector": "fixed-coupling Taub/moment-map-zero clock sector; K_Berger=D-omega R is the stationary unary generator",
+        "degree": "all BV degrees; physical local fields at degree 0",
+        "ell": "arbitrary four-dimensional jets; no harmonic truncation",
+        "k": "all local covectors",
+        "m": "all",
+        "omega": "K_Berger weight; raw D action is affine",
+        "parity": "all local tensor and Maxwell parities",
+        "theory": "pure-Weyl gravity plus two standard-sign rotating conformal scalars and retained Maxwell sector"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "This is the metric theorem on the conformal Nariai orbit only; transverse Bach-flat directions and Hadamard/nonlinear/quantum claims remain open.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The exact metric biwave endpoint and rank-310 graph carry advanced/retarded propagation on the declared class.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "The support-local SDR is cyclic and the causal homotopies satisfy adjoint reversal.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No nonlinear resonance classification.",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No bounded nonlinear cone.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "Unary causal homotopy is certified; nonlinear causal correction is open.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No smooth-secular nonlinear cone.",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "No nonlinear Taub/tangent-cone classification on the conformal orbit.",
+            "status": "OPEN"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
+          "result_id": "CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1",
+          "sha256": "1a43c1d9b81eec7760bbac3e75c309af432b44be3c5d375948a56d41aa109d26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
+          "result_id": "NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1",
+          "sha256": "0e7774b93f54d5cdc45385b5b119d7508173622fb0d4a7ca93618738971ac2ff"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "other",
+      "id": "classical.nariai.conformal_orbit.rank310_metric",
+      "label": "Classical / nariai / conformal orbit / rank310 metric",
+      "scope": {
+        "background": "bounded smooth global conformal orbit g_phi=exp(2phi)g_N with sup|exp(phi)-1|<1/9",
+        "boundaries": "global compact Cauchy surface S1 x S2; no timelike boundary",
+        "carrier": "metric four-row Bach complex and repaired rank-310 parent-detour graph",
+        "charge_sector": "unquotiented linear gauge complex; no residual state quotient imported",
+        "degree": "all BV degrees",
+        "ell": "all smooth modes",
+        "k": "all",
+        "m": "all",
+        "omega": "all",
+        "parity": "all",
+        "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "The outer/algebraic rank-310 variation is exact, but the complete transverse SDR and causal transfer are not.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "OPEN"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The displayed tangent solves the complete linearized fixed-Lambda Einstein equations and is linearized Bach-flat.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "No physical Lee-Wald norm or reduced pairing is assigned to this tangent.",
+            "status": "OPEN"
+          },
+          "resonance": {
+            "statement": "The connection/PBW and middle/Schur first variations remain open.",
+            "status": "OPEN"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No bounded correction theorem.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "No transverse retarded SDR theorem.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No smooth-secular correction theorem.",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "No second-order Taub classification or exact nonlinear family is certified.",
+            "status": "OPEN"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
+          "result_id": "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1",
+          "sha256": "0f69c6021e702a2ea0fea6bc2d7ba4e088962df7e9eda8d9a071bf22e2130748"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json",
+          "result_id": "NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1",
+          "sha256": "1fd79f620942b5ff51a2b2b1f0f1174f97b9cdf8a45fb22a871f84ab498083dd"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "other",
+      "id": "classical.nariai.transverse_kantowski_sachs_tangent",
+      "label": "Classical / nariai / transverse kantowski sachs tangent",
+      "scope": {
+        "background": "unit Nariai with transverse Kantowski-Sachs linearized Einstein tangent",
+        "boundaries": "global compact Cauchy surface S1 x S2; no timelike boundary",
+        "carrier": "metric tangent plus first rank-310 curvature-incidence and formal-adjoint rows",
+        "charge_sector": "unquotiented linear gauge complex; no residual state quotient imported",
+        "degree": 1,
+        "ell": 0,
+        "k": 0,
+        "m": 0,
+        "omega": "nonstationary sinh(t), sinh(2t) profile",
+        "parity": "homogeneous scalar anisotropy",
+        "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "This is a vertex/deformation class. It must never be relabelled as a positive-norm graviton or one-particle state.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "A composite deformation class has no one-particle dispersion relation.",
+            "status": "NOT_APPLICABLE"
+          },
+          "lee_wald": {
+            "statement": "The complementary-degree residual pairing is positive definite and normalized to I2 on the two chiral classes.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No propagation resonance is assigned to a deformation class.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "Not a first-order tangent mode.",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "Not a first-order tangent mode.",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "Not a first-order tangent mode.",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "The covariant and residual H4 transports identify exactly these two classes.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/atlas/CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1.json",
+          "result_id": "CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1",
+          "sha256": "d60aed2cc1153522b5b1815deca7e2d6de8282feb90539c206e91f1b434a885f"
+        }
+      ],
+      "group": "other",
+      "id": "classical.vacuum_cylinder.deformation.w_minus_squared",
+      "label": "Classical / vacuum cylinder / deformation / w minus squared",
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "ghost-dressed degree-four deformation/vertex class [W_-^2], not a one-particle mode",
+        "charge_sector": "selected closed-universe absolute residual SO(4,2) quotient including D",
+        "degree": 4,
+        "ell": "NOT_APPLICABLE",
+        "k": "NOT_APPLICABLE",
+        "m": "NOT_APPLICABLE",
+        "omega": "centered total residual weight zero",
+        "parity": "chirality -",
+        "theory": "free pure-Weyl gravity"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "This is a vertex/deformation class. It must never be relabelled as a positive-norm graviton or one-particle state.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "A composite deformation class has no one-particle dispersion relation.",
+            "status": "NOT_APPLICABLE"
+          },
+          "lee_wald": {
+            "statement": "The complementary-degree residual pairing is positive definite and normalized to I2 on the two chiral classes.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No propagation resonance is assigned to a deformation class.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "Not a first-order tangent mode.",
+              "status": "NOT_APPLICABLE"
+            },
+            "causal_retarded": {
+              "statement": "Not a first-order tangent mode.",
+              "status": "NOT_APPLICABLE"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "Not a first-order tangent mode.",
+              "status": "NOT_APPLICABLE"
+            }
+          },
+          "taub_maps": {
+            "statement": "The covariant and residual H4 transports identify exactly these two classes.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/atlas/CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1.json",
+          "result_id": "CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1",
+          "sha256": "d60aed2cc1153522b5b1815deca7e2d6de8282feb90539c206e91f1b434a885f"
+        }
+      ],
+      "group": "other",
+      "id": "classical.vacuum_cylinder.deformation.w_plus_squared",
+      "label": "Classical / vacuum cylinder / deformation / w plus squared",
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "ghost-dressed degree-four deformation/vertex class [W_+^2], not a one-particle mode",
+        "charge_sector": "selected closed-universe absolute residual SO(4,2) quotient including D",
+        "degree": 4,
+        "ell": "NOT_APPLICABLE",
+        "k": "NOT_APPLICABLE",
+        "m": "NOT_APPLICABLE",
+        "omega": "centered total residual weight zero",
+        "parity": "chirality +",
+        "theory": "free pure-Weyl gravity"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "This is a classical causal one-particle mode family with an indefinite Krein sign, not a positive residual particle and not either W-square degree-four class.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The A all-level cylinder mode family is part of the exact E/A/L causal Cauchy carrier.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "The normalized one-particle Krein sign is -1 on A.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No second-order resonance claim is needed for this linear carrier entry.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No all-mode bounded second-order classification.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "No nonlinear retarded second-order classification.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No all-mode smooth-secular second-order classification.",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "The selected absolute residual CE complex has zero one-particle cohomology; this does not erase the causal solution family.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/atlas/CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1.json",
+          "result_id": "CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1",
+          "sha256": "d60aed2cc1153522b5b1815deca7e2d6de8282feb90539c206e91f1b434a885f"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "other",
+      "id": "classical.vacuum_cylinder.one_particle.a",
+      "label": "Classical / vacuum cylinder / one particle / a",
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "vector-descendant family, both chiralities",
+        "charge_sector": "selected closed-universe absolute residual SO(4,2) quotient including D",
+        "degree": 1,
+        "ell": "all allowed SO(4) levels",
+        "k": "not a separate cylinder label",
+        "m": "all",
+        "omega": "positive and negative cylinder-energy shells",
+        "parity": "both chiralities",
+        "theory": "free pure-Weyl gravity"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "This is a classical causal one-particle mode family with an indefinite Krein sign, not a positive residual particle and not either W-square degree-four class.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The E all-level cylinder mode family is part of the exact E/A/L causal Cauchy carrier.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "The normalized one-particle Krein sign is +1 on E.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No second-order resonance claim is needed for this linear carrier entry.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No all-mode bounded second-order classification.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "No nonlinear retarded second-order classification.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No all-mode smooth-secular second-order classification.",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "The selected absolute residual CE complex has zero one-particle cohomology; this does not erase the causal solution family.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/atlas/CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1.json",
+          "result_id": "CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1",
+          "sha256": "d60aed2cc1153522b5b1815deca7e2d6de8282feb90539c206e91f1b434a885f"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "other",
+      "id": "classical.vacuum_cylinder.one_particle.e",
+      "label": "Classical / vacuum cylinder / one particle / e",
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "Einstein/lower-TT family, both chiralities",
+        "charge_sector": "selected closed-universe absolute residual SO(4,2) quotient including D",
+        "degree": 1,
+        "ell": "all allowed SO(4) levels",
+        "k": "not a separate cylinder label",
+        "m": "all",
+        "omega": "positive and negative cylinder-energy shells",
+        "parity": "both chiralities",
+        "theory": "free pure-Weyl gravity"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
+    },
+    {
+      "claim_boundary": "This is a classical causal one-particle mode family with an indefinite Krein sign, not a positive residual particle and not either W-square degree-four class.",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "OPEN",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "details": {
+        "mode_data": {
+          "dispersion": {
+            "statement": "The L all-level cylinder mode family is part of the exact E/A/L causal Cauchy carrier.",
+            "status": "CERTIFIED"
+          },
+          "lee_wald": {
+            "statement": "The normalized one-particle Krein sign is -1 on L.",
+            "status": "CERTIFIED"
+          },
+          "resonance": {
+            "statement": "No second-order resonance claim is needed for this linear carrier entry.",
+            "status": "NOT_APPLICABLE"
+          },
+          "second_order": {
+            "bounded_or_finite_quasiperiodic": {
+              "statement": "No all-mode bounded second-order classification.",
+              "status": "OPEN"
+            },
+            "causal_retarded": {
+              "statement": "No nonlinear retarded second-order classification.",
+              "status": "OPEN"
+            },
+            "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+            "smooth_secular": {
+              "statement": "No all-mode smooth-secular second-order classification.",
+              "status": "OPEN"
+            }
+          },
+          "taub_maps": {
+            "statement": "The selected absolute residual CE complex has zero one-particle cohomology; this does not erase the causal solution family.",
+            "status": "CERTIFIED"
+          }
+        }
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/atlas/CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1.json",
+          "result_id": "CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1",
+          "sha256": "d60aed2cc1153522b5b1815deca7e2d6de8282feb90539c206e91f1b434a885f"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "group": "other",
+      "id": "classical.vacuum_cylinder.one_particle.l",
+      "label": "Classical / vacuum cylinder / one particle / l",
+      "scope": {
+        "background": "unit conformal cylinder R_t x S3",
+        "boundaries": "closed compact Cauchy surface S3; no spatial boundary",
+        "carrier": "upper-TT/logarithmic family, both chiralities",
+        "charge_sector": "selected closed-universe absolute residual SO(4,2) quotient including D",
+        "degree": 1,
+        "ell": "all allowed SO(4) levels",
+        "k": "not a separate cylinder label",
+        "m": "all",
+        "omega": "positive and negative cylinder-energy shells",
+        "parity": "both chiralities",
+        "theory": "free pure-Weyl gravity"
+      },
+      "source": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "team": "d_quotient_classical"
     }
   ],
   "inputs": [
@@ -890,6 +3422,14 @@
     {
       "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
       "sha256": "74078741f35d63681705c0f33c0b646f16a0d57d0d07238837aca58d5fd8aa44"
+    },
+    {
+      "path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+      "sha256": "a8cf826690105dc9aef674658b9d5d389365ae7ac3965da2f8de62da9334105f"
+    },
+    {
+      "path": "quantum-weyl/atlas/quantum-atlas-fragment.json",
+      "sha256": "24e0384d5245a431a6152314cbe2c442022beeef9b7bfdaebb968c2c937e4ca7"
     }
   ],
   "publishable_inputs_only": true,

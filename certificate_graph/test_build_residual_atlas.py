@@ -82,6 +82,21 @@ class ResidualAtlasVisualizationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate atlas id"):
                 load_entries([first, second], self.labels)
 
+    def test_quantum_team_extension_reaches_passport_details(self) -> None:
+        fragment = self.fragment()
+        fragment["entries"][0]["quantum_data"] = {
+            "lifecycle_state": {"status": "OPEN", "statement": "QME disposition pending"}
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "test-atlas-fragment.json"
+            path.write_text(json.dumps(fragment))
+            entries = load_entries([path], self.labels)
+        self.assertEqual(
+            entries[0].details["quantum_data"],
+            fragment["entries"][0]["quantum_data"],
+        )
+        self.assertIn("QME disposition pending", build_html(entries, self.labels, publishable=True))
+
 
 if __name__ == "__main__":
     unittest.main()
