@@ -1,0 +1,207 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC/REDUCED-MODE theorem classifies only the common zero locus in the declared single-k=0 homogeneous/twist times ell=2 extra carrier. It does not construct a second-order correction, cover opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish causal, observational, particle or quantum claims.",
+  "classification": {
+    "aligned_SO3_orbit_is_complete": true,
+    "bounded_second_order_right_inverse_constructed": false,
+    "causal_retarded_right_inverse_constructed": false,
+    "complete_common_zero_locus_in_declared_nonzero_extra_carrier": true,
+    "electric_variation_included": true,
+    "final_residual_or_quantum_claim": false,
+    "off_axis_branch_exists": false,
+    "smooth_secular_right_inverse_constructed": false
+  },
+  "coefficient_elimination": {
+    "a": {
+      "mode_pencils": {
+        "-1": {
+          "clebsch_gordan": "sqrt(3)/3",
+          "constant_polar_w1_witnesses": [
+            "-1416*sqrt(3)*I",
+            "-1416*sqrt(3)*I"
+          ],
+          "determinant": "110592*a**2*(29900*a**2 - 5211)/25",
+          "nonzero_candidate_roots": [
+            "-3*sqrt(173121)/2990",
+            "3*sqrt(173121)/2990"
+          ]
+        },
+        "-2": {
+          "clebsch_gordan": "2*sqrt(3)/3",
+          "constant_polar_w1_witnesses": [
+            "-2832*sqrt(3)*I",
+            "-2832*sqrt(3)*I"
+          ],
+          "determinant": "442368*a**2*(7475*a**2 - 5211)/25",
+          "nonzero_candidate_roots": [
+            "-3*sqrt(173121)/1495",
+            "3*sqrt(173121)/1495"
+          ]
+        },
+        "0": {
+          "clebsch_gordan": "0",
+          "constant_polar_w1_witnesses": [],
+          "determinant": "132268032*a**4",
+          "nonzero_candidate_roots": []
+        },
+        "1": {
+          "clebsch_gordan": "-sqrt(3)/3",
+          "constant_polar_w1_witnesses": [
+            "1416*sqrt(3)*I",
+            "1416*sqrt(3)*I"
+          ],
+          "determinant": "110592*a**2*(29900*a**2 - 5211)/25",
+          "nonzero_candidate_roots": [
+            "-3*sqrt(173121)/2990",
+            "3*sqrt(173121)/2990"
+          ]
+        },
+        "2": {
+          "clebsch_gordan": "-2*sqrt(3)/3",
+          "constant_polar_w1_witnesses": [
+            "2832*sqrt(3)*I",
+            "2832*sqrt(3)*I"
+          ],
+          "determinant": "442368*a**2*(7475*a**2 - 5211)/25",
+          "nonzero_candidate_roots": [
+            "-3*sqrt(173121)/1495",
+            "3*sqrt(173121)/1495"
+          ]
+        }
+      },
+      "reason": "every nonzero-a pencil kernel has an uncancellable polar_w1 constant coefficient",
+      "verdict": "a=0"
+    },
+    "b": {
+      "det_D_b2": "8266752",
+      "reason": "the t^2 coefficient is b*D_b2*C and D_b2 is invertible",
+      "verdict": "b=0 for every nonzero extra amplitude"
+    },
+    "d": {
+      "minor": "663364720915390660608*d**12/625",
+      "normalized_B_axis_minor_rows_zero_based": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        10,
+        11,
+        12,
+        13,
+        14,
+        17
+      ],
+      "verdict": "d=0"
+    }
+  },
+  "complete_nonzero_extra_parameterization": {
+    "axis": "choose n in S^2",
+    "energy_balance": "beta^2=Q_e^2/2+(2/3)*X",
+    "extra": "choose nonzero x in C^4 on the ell=2,m=0 harmonic about n, with the negative-frequency conjugate fixed by reality",
+    "homogeneous": "a=b=d=0; c and W_x are arbitrary spectators; Q_e is arbitrary real electric variation",
+    "occupation": "X=1296*|x_a1|^2+(208/3)*|x_a2|^2+22464*|x_p1|^2+12288*|x_p2|^2",
+    "orbit_statement": "every nonzero-extra common-zero solution in the declared carrier is an SO(3) rotation of this family",
+    "twist": "A=alpha*n and B=beta*n with alpha real and beta nonzero"
+  },
+  "correction_class_gate": {
+    "bounded_or_finite_quasiperiodic": "NECESSARY COMMON-ZERO LOCUS CERTIFIED; sufficiency is OPEN because the complete nonresonant q2 source and blockwise bounded right inverses are not exported",
+    "causal_retarded": "NO_CERTIFIED_MAP: no compact-product retarded BV complex is certified",
+    "missing_for_next_gate": [
+      "complete nonresonant q2 source on the aligned SO3 orbit",
+      "content-addressed inverse or homotopy for every selected off-shell output block",
+      "Noether/gauge compatibility of the assembled correction"
+    ],
+    "smooth_secular": "OPEN: secular right inverses and admissible-growth bounds are not exported"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The completed resonance matrix and all five stabilizer maps cut the declared nonzero-extra cone exactly to the aligned SO(3) orbit. There is no hidden off-axis branch. This is a necessary bounded tangent-cone theorem, not yet a second-order solution theorem.",
+  "lifecycle_state": "CLASSIFIED",
+  "moment_map_descent": {
+    "mu_H": "2*|B|^2-Q_e^2-(omega_e^2/4)*X=0 with omega_e^2=16/3",
+    "mu_J": "the resonance kernel is m=0 and has zero extra angular expectation; mu_J=-4*A cross B therefore forces A_perp=0",
+    "mu_Px": "0 identically at k=0"
+  },
+  "next_gate": "import the complete nonresonant q2 output and exact off-shell block inverses, then construct and verify the bounded second-order correction on the certified aligned orbit",
+  "rank_stratification": {
+    "aligned": {
+      "condition": "A_perp=0",
+      "kernel_description": "C is m=0 about B with an arbitrary four-component axial/polar multiplicity vector",
+      "kernel_dimension": 4,
+      "minor": "7252694328213504/625",
+      "reduced_rank": 8
+    },
+    "leading_kernel_dimension": 12,
+    "leading_rank": 8,
+    "off_axis": {
+      "condition": "A_perp != 0 after B=e_z normalization",
+      "kernel_description": "C is m=0 about B and its internal multiplicity vector lies in ker(P)",
+      "kernel_dimension": 2,
+      "minor": "44965136684798705664*sqrt(3)*a_perp**2/125",
+      "reduced_rank": 10
+    }
+  },
+  "result_id": "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1",
+  "result_state": "COMPLETE_DECLARED_NONZERO_EXTRA_COMMON_ZERO_LOCUS_IS_ALIGNED_SO3_ORBIT",
+  "schema": "ph-homogeneous-twist-ell2-extra-bounded-tangent-cone-v1",
+  "schema_path": "d_quotient_classical/schema/ph-homogeneous-twist-ell2-extra-bounded-tangent-cone-v1.schema.json",
+  "schema_sha256": "3e4aca1e9d675d7f632fa126e9b14bd3b5018fbde91607ad944051a6d0f8317c",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction class",
+    "carrier": "one k=0 homogeneous/twist block crossed with one positive-frequency ell=2 extra-primary multiplet and its reality conjugate",
+    "charge_sector": "fixed N=2 magnetic bundle with real electric tangent Q_e allowed",
+    "degree": 2,
+    "ell": "(0 or 1) x 2 -> resonant L=2",
+    "k": 0,
+    "m": "all m modulo the exact SO(3) action",
+    "omega": "generalized-zero global/twist data crossed with omega_e=4/sqrt(3)",
+    "parity": "all four axial/polar extra multiplicities",
+    "theory": "Weyl-Maxwell"
+  },
+  "source_manifest": {
+    "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736",
+    "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json": "9a99c658f34334386d56d6a569e81d73c31251bcd4592324553b7417b74d8f20",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b",
+    "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72",
+    "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6",
+    "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065",
+    "d_quotient_classical/schema/ph-homogeneous-twist-ell2-extra-bounded-tangent-cone-v1.schema.json": "3e4aca1e9d675d7f632fa126e9b14bd3b5018fbde91607ad944051a6d0f8317c",
+    "d_quotient_classical/tangent_cone/plebanski_hacyan_homogeneous_twist_ell2_extra_cone.py": "7556b91a2ec1270d90dd93bb132d36f7c2c3ef3a673e363f9ad9ade771c0a32b"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.tangent_cone.plebanski_hacyan_homogeneous_twist_ell2_extra_cone --check",
+    "python3 d_quotient_classical/tangent_cone/verify_plebanski_hacyan_homogeneous_twist_ell2_extra_cone.py",
+    "python3 -m unittest d_quotient_classical.tangent_cone.tests.test_plebanski_hacyan_homogeneous_twist_ell2_extra_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate and schema>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m d_quotient_classical.tangent_cone.plebanski_hacyan_homogeneous_twist_ell2_extra_cone --check",
+        "python3 d_quotient_classical/tangent_cone/verify_plebanski_hacyan_homogeneous_twist_ell2_extra_cone.py",
+        "python3 -m unittest d_quotient_classical.tangent_cone.tests.test_plebanski_hacyan_homogeneous_twist_ell2_extra_cone"
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "all imported tensors are unchanged and content-addressed; this theorem is an exact elimination on their certified projections",
+      "status": "NOT_RUN"
+    },
+    "tier_3": {
+      "reason": "no lifecycle promotion beyond REDUCED-MODE CLASSIFIED and no second-order sufficiency claim",
+      "status": "NOT_RUN"
+    }
+  }
+}

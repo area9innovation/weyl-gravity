@@ -232,7 +232,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         },
         {
           "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
@@ -375,7 +375,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         },
         {
           "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -449,7 +449,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         },
         {
           "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -528,7 +528,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         },
         {
           "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
@@ -590,6 +590,90 @@
       }
     },
     {
+      "claim_boundary": "This certifies the necessary bounded common-zero locus only in the declared single-k=0 homogeneous/twist times ell=2 extra REDUCED-MODE carrier. It does not construct a bounded or secular second-order correction, cover opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish causal, observational, particle or quantum claims.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
+          "result_id": "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1",
+          "sha256": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
+          "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "nonlinear.product.homogeneous_twist_times_ell2_extra.bounded_tangent_cone",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The theorem uses the generalized-zero homogeneous/twist block and the k=0 ell=2 extra shell omega_e=4/sqrt(3).",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The exact action-derived occupation and twist moment maps are imported in the same reduced carrier.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Exact coefficient elimination gives a=b=d=0 and rank stratification forces the extra tensor and twist position to align with the twist-velocity axis.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The necessary common-zero locus is complete, but bounded sufficiency awaits the full nonresonant q2 output and exact off-shell block inverses.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product retarded BV complex or causal correction carrier is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Smooth-secular sufficiency awaits secular right inverses and admissible-growth bounds.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The full declared nonzero-extra common zero locus of all five stabilizer maps and completed resonance functionals is the aligned SO(3) orbit; no off-axis branch remains.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compact magnetically supported Plebanski-Hacyan product",
+        "boundaries": "closed spatial S1_L times S2; bounded or finite-quasiperiodic resonance-function class",
+        "carrier": "complete homogeneous a,b,d and axial twist position/velocity block crossed with the axial-plus-polar ell=2 extra-primary multiplicity space; c,W_x,Q_e spectator columns imported as removable",
+        "charge_sector": "fixed magnetic bundle; electric variation allowed",
+        "degree": 2,
+        "ell": "(0 or 1) x 2 -> resonant L=2",
+        "k": 0,
+        "m": "one nonzero m Clebsch-Gordan fixture fixes every m by SO(3) equivariance",
+        "omega": "generalized-zero global/twist data crossed with omega_e=4/sqrt(3)",
+        "parity": "all axial/polar input and output blocks retained without merging",
+        "theory": "Weyl-Maxwell"
+      }
+    },
+    {
       "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber only at ell=1,k=0. The exceptional off-shell ghost-field-equation-identity chain map, nonzero-k cofiber and final residual descent remain open, so this row does not activate cyclic Bridge 2.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -607,7 +691,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         },
         {
           "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
@@ -681,7 +765,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         },
         {
           "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
@@ -760,7 +844,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         }
       ],
       "id": "nonlinear.product.bridge1.generic_identity_cyclic_compatibility_obstruction",
@@ -813,7 +897,7 @@
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "45676dc0da0ac9f50a6c614178f6b7a372d0bf94de79e4ff175ac2522e94cc0d",
+  "generated_by_sha256": "6b272237f557e2047434ad66157de149b3dc32529623f85e61059aa83fb3ecc3",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

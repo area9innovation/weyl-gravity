@@ -96,6 +96,16 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("does not solve", entry["claim_boundary"])
         self.assertIn("activate Berger or compact-product Bridge 2", entry["claim_boundary"])
 
+    def test_homogeneous_twist_tangent_cone_closes_necessity_not_sufficiency(self):
+        entry = next(item for item in atlas.build()["entries"] if "bounded_tangent_cone" in item["id"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("no off-axis branch", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not construct", entry["claim_boundary"])
+        self.assertIn("activate either cyclic Bridge 2", entry["claim_boundary"])
+
     def test_exceptional_solution_cofiber_does_not_activate_bridge_two(self):
         entry = next(item for item in atlas.build()["entries"] if "exceptional_ell1_k0_solution_cofiber" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")

@@ -790,11 +790,17 @@ crosswalk.  The earlier `a,b,d` crossed with `ell=2` extra-shell source matrix
 has now been completed by the exact twist position and velocity columns.  In
 the declared `k=0` homogeneous/twist carrier, the twist-position resonance map
 has rank two and the twist-velocity map has pointwise rank four for every real
-time; a non-axisymmetric Clebsch--Gordan fixture fixes every `m`.  This closes
-the declared bounded-resonance **source matrix**, not the tangent-cone verdict:
-the common zero locus with all five stabilizer moment maps and the bilinear
-factorization constraints remains open.  Neither source handoff activates a
-cyclic Bridge 2 calculation.  The axial--polar source uses the polar leg whose
+time; a non-axisymmetric Clebsch--Gordan fixture fixes every `m`.  The resulting
+common-zero calculation is now also complete in this declared nonzero-extra
+carrier.  Exact polynomial elimination forces `a=b=d=0`; after rotating the
+nonzero twist velocity to one axis, the residual rank stratification and
+rotation moment map force the extra `ell=2` tensor and twist position to share
+that axis.  Thus the complete locus is the aligned `SO(3)` orbit
+`beta^2=Q_e^2/2+(2/3)X`, with no additional off-axis branch.  This closes the
+necessary bounded tangent cone, not second-order sufficiency: the full
+nonresonant `q2` source and exact off-shell block inverses remain missing.
+Neither source handoff activates a cyclic Bridge 2 calculation.  The
+axial--polar source uses the polar leg whose
 fixed identity cyclic compatibility is obstructed and whose corrected
 nonidentity/homotopy alternative remains open, while the homogeneous/twist
 source uses global legs whose all-BV off-shell cyclic relative map is absent.

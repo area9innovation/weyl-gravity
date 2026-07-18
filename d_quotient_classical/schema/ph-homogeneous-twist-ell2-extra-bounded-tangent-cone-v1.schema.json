@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.example/schemas/ph-homogeneous-twist-ell2-extra-bounded-tangent-cone-v1.schema.json",
+  "title": "Plebanski-Hacyan homogeneous/twist times ell=2 extra bounded tangent cone",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "coefficient_elimination",
+    "rank_stratification", "moment_map_descent",
+    "complete_nonzero_extra_parameterization", "classification",
+    "correction_class_gate", "interpretation", "next_gate", "claim_boundary",
+    "source_manifest", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "ph-homogeneous-twist-ell2-extra-bounded-tangent-cone-v1"},
+    "schema_path": {"type": "string", "minLength": 1},
+    "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "result_id": {"const": "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1"},
+    "result_state": {"const": "COMPLETE_DECLARED_NONZERO_EXTRA_COMMON_ZERO_LOCUS_IS_ALIGNED_SO3_ORBIT"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "scope": {"$ref": "#/$defs/scope"},
+    "coefficient_elimination": {"type": "object", "required": ["a", "b", "d"]},
+    "rank_stratification": {"type": "object", "required": ["leading_rank", "leading_kernel_dimension", "off_axis", "aligned"]},
+    "moment_map_descent": {"type": "object", "required": ["mu_H", "mu_J", "mu_Px"]},
+    "complete_nonzero_extra_parameterization": {"type": "object", "required": ["axis", "extra", "occupation", "homogeneous", "twist", "energy_balance", "orbit_statement"]},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_common_zero_locus_in_declared_nonzero_extra_carrier",
+        "off_axis_branch_exists", "aligned_SO3_orbit_is_complete",
+        "electric_variation_included", "bounded_second_order_right_inverse_constructed",
+        "smooth_secular_right_inverse_constructed",
+        "causal_retarded_right_inverse_constructed", "final_residual_or_quantum_claim"
+      ],
+      "properties": {
+        "complete_common_zero_locus_in_declared_nonzero_extra_carrier": {"const": true},
+        "off_axis_branch_exists": {"const": false},
+        "aligned_SO3_orbit_is_complete": {"const": true},
+        "electric_variation_included": {"const": true},
+        "bounded_second_order_right_inverse_constructed": {"const": false},
+        "smooth_secular_right_inverse_constructed": {"const": false},
+        "causal_retarded_right_inverse_constructed": {"const": false},
+        "final_residual_or_quantum_claim": {"const": false}
+      }
+    },
+    "correction_class_gate": {"type": "object", "required": ["bounded_or_finite_quasiperiodic", "smooth_secular", "causal_retarded", "missing_for_next_gate"]},
+    "interpretation": {"type": "string", "minLength": 1},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 8,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_receipt": {"type": "object", "required": ["producing_date", "tier_0", "tier_1", "tier_2", "tier_3"]},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {}, "background": {}, "boundaries": {}, "charge_sector": {},
+        "carrier": {}, "degree": {}, "parity": {}, "ell": {}, "m": {},
+        "k": {}, "omega": {}
+      }
+    }
+  }
+}

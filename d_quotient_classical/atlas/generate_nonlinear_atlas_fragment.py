@@ -26,6 +26,7 @@ CERTS = {
     "branch_importer": ROOT / "d_quotient_classical/certificates/BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1.json",
     "relative_branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "homogeneous_twist_extra_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+    "homogeneous_twist_extra_cone": ROOT / "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -365,6 +366,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
             "claim_boundary": "This certifies the complete declared k=0 homogeneous/twist times ell=2 extra bounded-resonance source matrix on the compact Plebanski-Hacyan background. It does not solve the simultaneous stabilizer/resonance zero locus, prove obstruction or extension for a tangent, supply the all-sector off-shell cyclic relative triangle, activate Berger or compact-product Bridge 2, or establish smooth-secular, causal, residual, observational, particle or quantum claims.",
+        },
+        {
+            "id": "nonlinear.product.homogeneous_twist_times_ell2_extra.bounded_tangent_cone",
+            "scope": homogeneous_twist_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The necessary common-zero locus is complete, but bounded sufficiency awaits the full nonresonant q2 output and exact off-shell block inverses."),
+                    ("OPEN", "Smooth-secular sufficiency awaits secular right inverses and admissible-growth bounds."),
+                    ("NO_CERTIFIED_MAP", "No compact-product retarded BV complex or causal correction carrier is certified."),
+                ),
+                dispersion=("CERTIFIED", "The theorem uses the generalized-zero homogeneous/twist block and the k=0 ell=2 extra shell omega_e=4/sqrt(3)."),
+                pairing=("CERTIFIED", "The exact action-derived occupation and twist moment maps are imported in the same reduced carrier."),
+                taub=("CERTIFIED", "The full declared nonzero-extra common zero locus of all five stabilizer maps and completed resonance functionals is the aligned SO(3) orbit; no off-axis branch remains."),
+                resonance=("CERTIFIED", "Exact coefficient elimination gives a=b=d=0 and rank stratification forces the extra tensor and twist position to align with the twist-velocity axis."),
+            ),
+            "evidence": _evidence("homogeneous_twist_extra_cone", "homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
+            "claim_boundary": "This certifies the necessary bounded common-zero locus only in the declared single-k=0 homogeneous/twist times ell=2 extra REDUCED-MODE carrier. It does not construct a bounded or secular second-order correction, cover opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish causal, observational, particle or quantum claims.",
         },
         {
             "id": "nonlinear.product.bridge1.exceptional_ell1_k0_solution_cofiber",
