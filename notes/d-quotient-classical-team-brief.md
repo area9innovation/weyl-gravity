@@ -111,6 +111,14 @@ certificate has zero coefficients, so every sensitive formal direction would
 change the target metric BV differential rather than strictify its parent
 comparison.
 
+The complete existing-row Phi continuation is now exhausted through the first
+order capable of generating every target derivative order.  Allowing all 135
+local Phi coefficients through differential order two gives a `525 x 135`
+map of rank 130 and kernel dimension five.  Twenty-nine target rows are
+consistent, while 31 have augmented rank 131; the normalized row-zero
+two-term witness survives.  Thus neither a Phi-only continuation nor a change
+of the fixed metric gauge generator is the missing repair.
+
 The next coherent classical gate is therefore a genuinely coupled variation
 of neighbouring equation/constraint/cotangent rows, or a homotopy-coherent
 equation cone (or an explicitly higher-order Phi ansatz), with action-derived

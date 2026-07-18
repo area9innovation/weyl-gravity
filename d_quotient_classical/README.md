@@ -471,6 +471,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   remain open:
   [`certificates/NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1.json`](certificates/NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1.json),
   [`reports/nariai-transverse-k-sensitivity-admissibility.md`](reports/nariai-transverse-k-sensitivity-admissibility.md)
+- Complete order-two Phi screen: all 135 local Phi coefficients through
+  differential order two give a `525 x 135` map of rank 130 and kernel
+  dimension five.  Twenty-nine shifted-chain rows are consistent, while 31
+  have augmented rank 131; a normalized two-term witness gives the exact
+  scoped obstruction.  This is the minimal Phi ansatz capable of producing
+  the target's order-three terms.  Coupled equation/constraint/cotangent or
+  homotopy-coherent equation-cone corrections remain open:
+  [`certificates/NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1.json`](certificates/NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1.json),
+  [`reports/nariai-transverse-phi-second-order-obstruction.md`](reports/nariai-transverse-phi-second-order-obstruction.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

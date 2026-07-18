@@ -43,6 +43,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1", ids)
+        self.assertIn("NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1", ids)
         self.assertEqual(entry["descriptions"]["causal"], "OPEN")
         self.assertIn("207-coefficient", entry["claim_boundary"])
         self.assertIn("unique 59-coefficient endpoint gauge repair", entry["claim_boundary"])
@@ -51,6 +52,8 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("normalized-L0 response map has rank 44 but augmented rank 45", entry["claim_boundary"])
         self.assertIn("five-term witness", entry["claim_boundary"])
         self.assertIn("action-derived transverse first-BGG variation has zero coefficients", entry["claim_boundary"])
+        self.assertIn("525-by-135 order-at-most-two Phi-only map has rank 130", entry["claim_boundary"])
+        self.assertIn("31 have augmented rank 131", entry["claim_boundary"])
 
     def test_berger_bridge_one_remains_fail_closed(self) -> None:
         entry = self.entries["classical.berger.crosswalk.retained36_to_einstein_extra"]
