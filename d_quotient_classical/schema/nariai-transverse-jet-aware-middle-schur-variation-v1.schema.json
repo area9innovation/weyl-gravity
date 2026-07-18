@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/nariai-transverse-jet-aware-middle-schur-variation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags",
+    "next_gate", "claim_boundary", "source_manifest", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "nariai-transverse-jet-aware-middle-schur-variation-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1"},
+    "result_state": {"const": "JET_AWARE_BGG_AND_PARENT_YM_MIDDLE_EXACT_SHIFTED_CHAIN_AND_DIFFERENTIAL_SCHUR_OPEN"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "exact_data": {"type": "object", "minProperties": 5},
+    "exact_checks": {
+      "type": "object", "minProperties": 6,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "TRANSVERSE_JET_AWARE_PBW_VARIATION", "TRANSVERSE_BGG_FIRST_SQUARE_VARIATION",
+        "TRANSVERSE_YANG_MILLS_MIDDLE_VARIATION", "TRANSVERSE_SHIFTED_CHAIN_VARIATION",
+        "TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE",
+        "TRANSVERSE_ALGEBRAIC_SCHUR_VARIATION",
+        "TRANSVERSE_ACTION_DERIVED_SCHUR_VARIATION", "TRANSVERSE_CYCLIC_SCHUR_VARIATION",
+        "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION", "TRANSVERSE_CAUSAL_TRANSFER"
+      ],
+      "properties": {
+        "TRANSVERSE_JET_AWARE_PBW_VARIATION": {"const": true},
+        "TRANSVERSE_BGG_FIRST_SQUARE_VARIATION": {"const": true},
+        "TRANSVERSE_YANG_MILLS_MIDDLE_VARIATION": {"const": true},
+        "TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE": {"const": false},
+        "TRANSVERSE_SHIFTED_CHAIN_VARIATION": {"const": false},
+        "TRANSVERSE_ALGEBRAIC_SCHUR_VARIATION": {"const": false},
+        "TRANSVERSE_ACTION_DERIVED_SCHUR_VARIATION": {"const": false},
+        "TRANSVERSE_CYCLIC_SCHUR_VARIATION": {"const": false},
+        "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": {"const": false},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_TRANSVERSE_DIFFERENTIAL_SCHUR_AND_RANK_310_SDR_VARIATION"},
+    "claim_boundary": {"type": "string", "minLength": 40},
+    "source_manifest": {
+      "type": "object", "minProperties": 5,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}
