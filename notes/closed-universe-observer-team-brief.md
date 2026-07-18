@@ -530,12 +530,16 @@ cannot simply reuse the independent-moment expansion.  At scalar
 raw central-`p=0` interval wider than `6e8`; intersecting it with the exact
 unitary coefficient bound gives only `[-1,1]` and therefore no decay.  The
 physical-space branch remains unavailable because no validated Berger
-hyperbolic PDE solver is present.  The active gate is now a correlated direct
-oscillatory quadrature or stable recurrence that preserves every certified
-`two_j<=139` overlap and closes a width-below-`1/10` sentinel at
-`two_j=256`.  Only then should the rail be widened toward the infinite-mode
-Maxwell and massive-two-form images, recoil coefficient and second-order-cone
-restriction.  Bridge 3 remains inactive.
+hyperbolic PDE solver is present.  `BERGER_CORRELATED_CENTRAL_SCALAR_EVALUATOR`
+now closes the selected sentinel in the central even `p=0` channel.  The exact
+identity `D^(j)_(0,0)=P_j(1-2 y_perp^2)` gives a stable alternating series:
+all 70 published central-even overlaps through `two_j=138` pass, the
+`two_j=256` width is below `0.001`, and the scoped rail stays below width
+`0.1` through `two_j=2048`.  The active gate is to generalize this stable
+Jacobi/Legendre reduction to noncentral diagonals, odd representations and
+clock powers `p=2,...,28`.  Only then should the polarized rail be widened
+toward the infinite-mode Maxwell and massive-two-form images, recoil
+coefficient and second-order-cone restriction.  Bridge 3 remains inactive.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.

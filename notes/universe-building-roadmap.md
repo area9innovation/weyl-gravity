@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; obtain the same-gauge generic-background full-BV Hessian and trace substitution that matches the five exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    replace the cancellation-unstable independent-moment high-mode evaluator by correlated oscillatory quadrature or a stable recurrence, then widen the obstructed two_j=138 rail, compose massive images, evaluate recoil, and restrict records to Z2^C
+Observer:    generalize the certified central-even Legendre evaluator to all diagonals, odd representations and clock powers p=0,...,28, then widen the obstructed two_j=138 rail, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
 
@@ -357,9 +357,12 @@ cutoff.  Direct widening with the current independent-moment evaluator is
 also `OBSTRUCTED`: its central scalar interval width grows from below
 `0.001` at `two_j=140` to above `6e8` at `two_j=256`, and exact unitary
 clipping leaves only `[-1,1]`.  No validated Berger physical-space solver is
-present.  The active gate is therefore a correlated oscillatory quadrature
-or stable recurrence with certified low-rail overlap and a narrow
-`two_j=256` sentinel, not another temporal approximation.  The nonlinear apparatus
+present.  The central even `p=0` channel now supplies the stable seed:
+`D^(j)_(0,0)=P_j(1-2 y_perp^2)` overlaps all 70 certified central-even modes,
+has width below `0.001` at `two_j=256`, and remains below width `0.1` through
+`two_j=2048`.  The active gate is to generalize this Jacobi/Legendre reduction
+to all diagonals, odd representations and clock powers `p=0,...,28`, not
+another temporal approximation.  The nonlinear apparatus
 dependency is also explicit and ordered by content hash: the normalized
 mixed `epsilon_R^2 kappa` unary certificate precedes apparatus `q2,q3`, which
 precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
@@ -407,7 +410,10 @@ reproduced exactly. A matched nonminimal ghost determinant and generic
 physical fourth-order Hessian kernel remain open; however, the ghost operator
 is now reduced exactly to a finite-proper-time Endo base plus `W=-2 Ric`.
 Through cubic order its remaining calculation is the finite set of one-, two-
-and three-Ricci insertion traces. Consequently the repository
+and three-Ricci insertion traces. The flat-Endo three-insertion adiabatic
+angular numerator is now exact, with scalar-flat coefficient `503/648` before
+the `W`/Tr-log factors and `-503/243` afterwards. Its IR-singular radial
+integral does not determine the nonzero-momentum triangle. Consequently the repository
 functions and coefficients and the parity-odd derivative manifest remain
 open. The raw local `BoxR` coefficient and exact strict-metric
 raw-to-`BoxR=0` scheme shift are fixed, reproducing the local `R2` coefficient
@@ -571,10 +577,11 @@ survive the first backreacted, normalized apparatus interaction?
    temporal image through `two_j=138`, with propagated error below
    `4.23e-17`.  The first omitted form shell has a dressed coefficient above
    `0.827`, so that rail is not a converged spatial cutoff.  The next gate is
-   a correlated unitary-bounded scalar evaluator; the current independent-
-   moment widening loses cancellation by `two_j=256`.  After that sentinel
-   closes, widen the rail and compose the infinite-mode Maxwell/massive Green
-   images and recoil coefficient.  The independent emitter stress
+   the central even `p=0` Legendre evaluator now closes the `two_j=256`
+   stability sentinel and remains narrow through `two_j=2048`.  Generalize it
+   to all diagonals, odd representations and clock powers, then widen the
+   polarized rail and compose the infinite-mode Maxwell/massive Green images
+   and recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a
    solved backreacted branch remain open.  A common source
@@ -1270,10 +1277,11 @@ Wess--Zumino Hamiltonian piece is fixed, but an exact rank-two `C(g_hat)^2`/
 `R(g_hat)^2` bulk ambiguity refutes uniqueness until finite normalization and
 the finite nonlocal/renormalized-product data are supplied.
 
-The next coefficient-bearing analytic gate is the explicit evaluation of the
-generic ghost's one-, two- and three-Ricci insertion traces, plus the physical
-fourth-order Hessian kernel. The exact Endo--Duhamel reduction proves this
-list is complete through cubic curvature order. The preceding direct-minimal-
+The next coefficient-bearing analytic gate is the generic ghost's nonzero-
+momentum three-Ricci triangle and curved-Endo one-/two-insertion traces, plus
+the physical fourth-order Hessian kernel. The exact Endo--Duhamel reduction
+proves this list is complete through cubic curvature order, while the exact
+adiabatic angular carrier fixes one tensor projection of the n=3 row. The preceding direct-minimal-
 CPT architecture obstruction is neither a new anomaly/QME disposition nor a
 Lorentzian no-go.
 
@@ -1317,7 +1325,7 @@ REPOSITORY_RELEASED artifact is committed, linked to its receipts, and public in
 | Berger light and relational redshift beyond Paper 11 | first scoped C-G4 theorem certified: actual retarded, spatially global probe signal with crossings, reduced probe bracket, and nontrivial evolution | localize emitter and receiver after the mixed \(\epsilon_R^2\kappa\) apparatus gate; do not promote the probe bracket to a full apparatus Dirac bracket |
 | Abstract Green/BGG transfer | outline allowed | abstract hypotheses, toy example, complete detour example, and independent verifier; avoid duplicating Paper 8 without a new abstraction or application |
 | Nonlinear quotient stability | `DRAFT_ALLOWED` for the scoped G0 filtered-cyclic obstruction theorem | keep transformation-class and frozen-carrier qualifiers explicit; branch-resolved or cohomological claims additionally require an accepted branch projector and residual descent |
-| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction, tau-adic extended one-loop local Euclidean restoration, exact rank-two `Q1` underdetermination, the conditional anomaly-induced Paneitz/Riegert `Gamma1` representative, the covariant curvature-squared `C2` logarithmic form factor and its exact FV scalar-flat Weyl-orbit completion, the exact FV anomaly action and Ricci-sector dependence theorem, the exact raw-to-`BoxR=0` strict-metric `R2` scheme conversion, the exhaustive one-even/one-odd zero-derivative algebraic `C3` basis, the parity-even five-carrier third-curvature manifest with exact `12 -> 11` label quotient, five exact universal CPT source kernels, the generic ghost direct-minimal-CPT architecture obstruction, and its exact Endo–Duhamel reduction; focused major revision completed with the determinant-to-Slavnov bridge, regular-Bach spectral sequence, explicit quartet homotopy and Euler primitive, matter vectors, narrowed effective-action claims, and a content-addressed referee-response ledger | final human and literature review before theorem freeze; the next theorem requires evaluation of the ghost one-, two- and three-Ricci insertion traces and the physical fourth-order Hessian kernel before the repository third-curvature functions and coefficients, plus the parity-odd derivative manifest, finite `C2`/absolute dressed `R(g_hat)^2` normalization, renormalized products, a same-background compensator contraction, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
+| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction, tau-adic extended one-loop local Euclidean restoration, exact rank-two `Q1` underdetermination, the conditional anomaly-induced Paneitz/Riegert `Gamma1` representative, the covariant curvature-squared `C2` logarithmic form factor and its exact FV scalar-flat Weyl-orbit completion, the exact FV anomaly action and Ricci-sector dependence theorem, the exact raw-to-`BoxR=0` strict-metric `R2` scheme conversion, the exhaustive one-even/one-odd zero-derivative algebraic `C3` basis, the parity-even five-carrier third-curvature manifest with exact `12 -> 11` label quotient, five exact universal CPT source kernels, the generic ghost direct-minimal-CPT architecture obstruction, its exact Endo–Duhamel reduction, and the exact n=3 adiabatic angular carrier; focused major revision completed with the determinant-to-Slavnov bridge, regular-Bach spectral sequence, explicit quartet homotopy and Euler primitive, matter vectors, narrowed effective-action claims, and a content-addressed referee-response ledger | final human and literature review before theorem freeze; the next theorem requires the ghost n=3 nonzero-momentum triangle, curved-Endo n=1/n=2 traces and the physical fourth-order Hessian kernel before the repository third-curvature functions and coefficients, plus the parity-odd derivative manifest, finite `C2`/absolute dressed `R(g_hat)^2` normalization, renormalized products, a same-background compensator contraction, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
 | Asymptotic radiation and black holes | programme stage | boundary phase space, charges, flux, and extra-branch classification |
 | Galaxy/dark-matter and cosmology/dark-energy phenomenology | later programme stage | physical weak-field/cosmological observables and stability before data comparison |
 
@@ -1377,6 +1385,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138` (fired) | certify the spatial harmonic tail beyond `two_j=138`, then compose the infinite-mode Maxwell and massive-two-form images before evaluating recoil |
 | `BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION` (fired with cutoff obstruction) | widen the adaptive harmonic rail or certify a physical-space Green chain; do not promote the exact-`T` finite rail to an infinite-mode detector response |
 | `BERGER_HIGH_MODE_SCALAR_INTERVAL_STABILITY_PREFLIGHT` (fired with evaluator obstruction) | implement a correlated unitary-bounded scalar quadrature or recurrence, preserve all `two_j<=139` overlaps, and close the width-below-`1/10` sentinel at `two_j=256` before widening the rail |
+| `BERGER_CORRELATED_CENTRAL_SCALAR_EVALUATOR` (fired) | generalize the exact central Legendre reduction to a stable Jacobi recurrence for all diagonals, odd representations and clock powers `p=0,...,28`; do not infer a full tail from the central channel |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |
