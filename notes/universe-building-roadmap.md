@@ -639,6 +639,48 @@ linear certificate, nonlinear arity-three disposition, classical
 symmetry/observable disposition, and quantum dependency ledger cross-reference
 one another by content hash without upgrading one another's lifecycle state.
 
+### Bridge priority ladder
+
+The atlas exposes many `NO_CERTIFIED_MAP` cells, but they are not equally
+urgent.  Bridge work follows one dependency ladder.  A later bridge may be
+prepared in parallel, but it cannot borrow the lifecycle of an earlier one.
+
+| Order | Bridge | Activation gate | Required disposition | Primary owners |
+|---:|---|---|---|---|
+| 1 | common-background causal/BV carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches | a certified relative triangle/cofiber or another admissible branch carrier on that same background | explicit inclusion/projection/cofiber maps, pairing transport, and `NO_CERTIFIED_MAP` for every absent branch; never identify similarly named modes across backgrounds | Einstein + classical |
+| 2 | invariant interaction to physical branches | bridge 1 plus the certified `q2/q3/ell3` carrier and declared admissible cyclic equivalence class | the projected mixed operation is nonzero on cohomology, nontrivial in the cyclic deformation complex, removable with a displayed admissible redefinition, or obstructed with a witness | nonlinear |
+| 3 | branch-labelled mode to relational detector/redshift/memory/recoil | bridge 1 plus an observer and mode on one certified common background | detector response, preparation, gauge descent and `O_detector|Z2^C`; do not use a direct compact-product-to-Berger identification as a substitute | observer + classical/Einstein |
+| 4 | normalized classical mode to free quantum BRST/Hadamard/state carrier | bridge 1 plus a same-background causal Green carrier and normalized classical pairing | BRST closure/exactness, complex structure, two-point function and state-space sign with dependency tags; anomaly classes, determinants and deformation classes remain nonparticles | quantum |
+| 5 | classical tangent-cone/interaction obstruction to interacting BRST | bridge 2 plus a coefficient-bearing QME disposition | explicit quantum insertion and interacting-BRST map; a classical obstruction alone is not ghost removal | quantum + nonlinear |
+| 6 | compact branch data to black-hole or asymptotic radiation | an independently closed exterior/asymptotic phase space, boundary-preserving generators, charges and fluxes | compare invariant branch factors, Lee--Wald signs and limiting data; never import the compact Taub cone as a horizon theorem | black hole + Einstein |
+
+The support-local Bach-flat parent-to-metric causal bridge runs in parallel to
+this ladder.  It is the main generality bridge and may strengthen stages 1,
+3, 4 and 6, but a parent Green theorem does not by itself supply a metric
+branch map or physical state.
+
+The near-term critical path is therefore
+
+\[
+\boxed{
+\text{same-background branch identity}
+\longrightarrow
+\text{interaction meaning}
+\longrightarrow
+\text{operational response}
+\longrightarrow
+\text{free quantum state}
+\longrightarrow
+\text{interacting quantum and exterior physics}.}
+\]
+
+The first bridge is the hub.  On Berger its requested support-local projector
+is already obstructed, so the acceptable next objects are a declared relative
+cofiber, a larger noncontractible mixed-bundle carrier, a scoped nonlocal
+`REDUCED-MODE` map, or a port of the interaction/observer question to a
+background with a certified branch decomposition.  Row-name matching is not
+a bridge.
+
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through
