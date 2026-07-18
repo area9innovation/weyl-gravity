@@ -17,7 +17,7 @@ def test_operator_defined_preparations_are_not_promoted_to_harmonic_data():
 def test_external_parameters_are_a_later_separate_gate():
     value = build()
     assert value["sequencing_decision"]["parameterization_during_internal_gate"] == (
-        "m_0,m_1 symbolic positive; factor g_0,g_1 monomials"
+        "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials"
     )
     assert all(row["status"] == "OPEN" for row in value["readiness"]["external_rows"])
     assert value["flags"]["FOUR_RECOIL_SCALAR_STREAM_ACTIVE"] is False

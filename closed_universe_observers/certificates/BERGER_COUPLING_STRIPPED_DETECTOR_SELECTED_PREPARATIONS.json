@@ -1,0 +1,111 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result resolves the coupling convention in the detector-selected preparations. Because the advanced emitter covector is linear in the declared nonzero g_a, write v_a=g_a tilde_v_a and apply the existing positive-energy dual to tilde_v_a, defining fixed Cauchy data tilde_u_a=(-tilde_p_a,L_a tilde_q_a). Its energy tilde_E_a is strictly positive. The leading diagonal response is then exactly g_a tilde_E_a, the leading determinant is g_0 g_1 tilde_E_0 tilde_E_1, and every absolute-g3 recoil channel has the unambiguous explicit monomial g_b g_c^2 while tilde_u_b is held fixed. This is scalar factorization, not adaptive response normalization. It does not evaluate harmonic coefficients, advanced Green images, per-shell recoil contractions, numerical masses or couplings, four recoil intervals, tangent-cone restriction, Bridge 3, nonlinear all-orders stability or a quantum claim.",
+  "claim_status": "FIXED_COUPLING_STRIPPED_POSITIVE_ENERGY_PREPARATIONS_AND_RECOIL_MONOMIALS_EXPORTED",
+  "dependency_refs": {
+    "covectors": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+      "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"
+    },
+    "positive_dual": {
+      "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+      "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+      "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+    },
+    "rank": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+      "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+    },
+    "recoil": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+      "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "factorization": {
+    "absolute_g3_channel_monomial": "g_b g_c^2",
+    "advanced_covector_factorization": "v_a=g_a tilde_v_a, tilde_v_a=Cauchy(G_Ea,adv[h_a d G_A,adv delta(chi_a P_a)])",
+    "coupling_stripped_cauchy_order": [
+      "tilde_q",
+      "tilde_p"
+    ],
+    "coupling_stripped_preparation": "tilde_u_a=(-tilde_p_a,L_a tilde_q_a)",
+    "fixed_data_convention": "tilde_u_a is held fixed in the formal coupling expansion",
+    "leading_determinant": "g_0 g_1 tilde_E_0 tilde_E_1",
+    "leading_diagonal": "M_aa^(1)=g_a tilde_E_a",
+    "nonzero_for_declared_couplings": true,
+    "positive_energy": "tilde_E_a=||tilde_p_a||^2+<tilde_q_a,L_a tilde_q_a>>0",
+    "relative_g2_channel_monomial": "g_c^2",
+    "source_expression": "g_a tilde_v_a"
+  },
+  "flags": {
+    "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED": true,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "COUPLING_STRIPPED_FIXED_PREPARATIONS_EXPORTED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "HARMONIC_COEFFICIENTS_EVALUATED": false,
+    "LEADING_RESPONSE_COUPLING_FACTORIZATION_EXPORTED": true,
+    "QUANTUM_CLAIM": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "reuse_coupling_dependent_u_as_fixed_formal_initial_data"
+    },
+    {
+      "detected": true,
+      "name": "drop_source_column_coupling_from_absolute_g3_monomial"
+    }
+  ],
+  "next_gate": "SERIALIZE_COMPLETE_PER_SHELL_PREPARATION_AND_RECOIL_CONTRACTION_FOR_FIXED_TILDE_U_B_WITH_SYMBOLIC_POSITIVE_MASSES",
+  "preparation_rows": [
+    {
+      "coupling_domain": "g_0!=0",
+      "held_fixed_in_coupling_expansion": true,
+      "id": "tilde_u_0",
+      "mass_domain": "m_0>0",
+      "preparation": "tilde_u_0=(-tilde_p_0,(Delta_2^co-closed+m_0^2)tilde_q_0)"
+    },
+    {
+      "coupling_domain": "g_1!=0",
+      "held_fixed_in_coupling_expansion": true,
+      "id": "tilde_u_1",
+      "mass_domain": "m_1>0",
+      "preparation": "tilde_u_1=(-tilde_p_1,(Delta_2^co-closed+m_1^2)tilde_q_1)"
+    }
+  ],
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_coupling_stripped_detector_preparations.py",
+        "sha256": "9bcb18c83e696f8c3243c1f38d8bf36f3de2dadaed3392e24ce5c356eece66f5"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_coupling_stripped_detector_preparations.py",
+        "sha256": "0484becc2af2a36b3bae1eda621e895d61e8fdae2c3358fe1ef9b92659353b9e"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_coupling_stripped_detector_preparations.py",
+        "sha256": "e6a981836e9fcbb40532346d98070416ee9e3a88fc8eaf8386b4bb6358a6972a"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-coupling-stripped-detector-selected-preparations-v1.schema.json",
+        "sha256": "da7ac62aa958174b666c2bc4b5aaadcef1d8edc54cd0915af1aef029edf7948c"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-coupling-stripped-detector-selected-preparations.md",
+        "sha256": "d724e233123e6f8c35fd2644d26f9e78df305cac7e6e75bf90b6200ecd0d6d7e"
+      }
+    ]
+  },
+  "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+  "schema": "closed-universe-berger-coupling-stripped-detector-selected-preparations-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

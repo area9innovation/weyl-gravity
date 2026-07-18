@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "factorization", "preparation_rows", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-coupling-stripped-detector-selected-preparations-v1"},
+    "result_id": {"const": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"type": "string"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "factorization": {"type": "object", "required": ["advanced_covector_factorization", "coupling_stripped_preparation", "fixed_data_convention", "positive_energy", "leading_diagonal", "leading_determinant", "absolute_g3_channel_monomial"]},
+    "preparation_rows": {"type": "array", "minItems": 2, "maxItems": 2},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "SERIALIZE_COMPLETE_PER_SHELL_PREPARATION_AND_RECOIL_CONTRACTION_FOR_FIXED_TILDE_U_B_WITH_SYMBOLIC_POSITIVE_MASSES"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

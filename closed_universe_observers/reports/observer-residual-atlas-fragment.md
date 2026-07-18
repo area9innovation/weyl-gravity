@@ -97,6 +97,10 @@ coefficients and evaluated advanced massive images, so no per-shell scalar
 integrand exists.  Externally, numerical masses/couplings and a stopping goal
 remain undeclared.  The atlas makes the internal symbolic integrand the next
 gate and does not activate a scalar stream from its tail envelope alone.
+The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
+coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy
+datum.  Leading columns carry `g_b`, while absolute-`g3` recoil channels carry
+`g_b g_c^2`.  Harmonic evaluation and the four scalar records remain `OPEN`.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

@@ -25,6 +25,7 @@ DEPENDENCIES = {
     "clock_transform": PACKAGE / "certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
     "streaming_preflight": PACKAGE / "certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
     "dual_norms": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
+    "coupling_stripped": PACKAGE / "certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -64,6 +65,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, pretend_profiles_evalu
             "id": "response_specific_stopping_envelope",
             "status": "CERTIFIED" if values["dual_norms"]["flags"]["FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED"] else "OPEN",
             "evidence_flag": "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED",
+        },
+        {
+            "id": "fixed_preparation_coupling_factorization",
+            "status": "CERTIFIED" if values["coupling_stripped"]["flags"]["ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED"] else "OPEN",
+            "evidence_flag": "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED",
         },
         {
             "id": "complete_harmonic_preparation_coefficients",
@@ -107,6 +113,7 @@ def build() -> dict[str, Any]:
         "clock_transform": "FINITE_SELECTED_EXACT_T_TEMPORAL_IMAGE_REPRESENTATION_EXPORTED",
         "streaming_preflight": "RESPONSE_SPECIFIC_STREAMING_STOPPING_RULE_EXPORTED",
         "dual_norms": "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED",
+        "coupling_stripped": "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -125,8 +132,9 @@ def build() -> dict[str, Any]:
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate "
         "separates the internal modewise recoil construction from later "
         "numerical specialization. The absolute-g3 operator, exact switches, "
-        "finite Maxwell/massive kernels, selected exact-T clock transform and "
-        "all four symbolic detector tail radii are certified. The stream is "
+        "finite Maxwell/massive kernels, selected exact-T clock transform, "
+        "the four symbolic detector tail radii, and the fixed coupling-stripped "
+        "preparations are all certified. The stream is "
         "nevertheless inactive because the detector-selected preparations "
         "remain operator-defined: their harmonic coefficients and advanced "
         "massive Green images are explicitly unevaluated, so no complete "
@@ -157,7 +165,7 @@ def build() -> dict[str, Any]:
         "readiness": readiness,
         "sequencing_decision": {
             "current_active_gate": "construct complete modewise preparation/recoil scalar integrand",
-            "parameterization_during_internal_gate": "m_0,m_1 symbolic positive; factor g_0,g_1 monomials",
+            "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
             "later_external_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",

@@ -1,0 +1,45 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "COUPLING_STRIPPED_DETECTOR_PREPARATIONS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The detector-selected advanced covectors are divided by their declared nonzero selection couplings before applying the positive-energy dual. The resulting tilde_u_b are fixed formal Cauchy data; leading columns carry g_b and absolute-g3 recoil channels carry g_b g_c^2. Harmonic coefficients, massive images, per-shell contractions, numerical parameters and recoil intervals remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_coupling_stripped_detector_preparations.py closed_universe_observers/verify_berger_coupling_stripped_detector_preparations.py", "status": "PASS"},
+    {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_coupling_stripped_detector_preparations", "status": "PASS", "summary": "Fixed-data convention, positive-energy factorization, determinant and g_b g_c^2 channel monomials passed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "status": "PASS", "summary": "The factorization is certified while harmonic and scalar lifecycle fields remain fail closed."},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_coupling_stripped_detector_preparations.py closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 4.78, "status": "PASS", "summary": "23 preparation, activation, atlas and ledger tests passed."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_coupling_stripped_detector_preparations --check", "status": "PASS", "summary": "The fixed preparation and coupling-monomial certificate regenerates byte-for-byte."},
+    {"command": "Combined scoped preparation and activation chain", "elapsed_seconds": 6.48, "status": "PASS", "summary": "Compile, two generators, two verifiers, atlas, ledger and 23 tests passed."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No evaluated recoil, shared core algebra, lifecycle freeze or release was promoted."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_coupling_stripped_detector_preparations.py", "sha256": "9bcb18c83e696f8c3243c1f38d8bf36f3de2dadaed3392e24ce5c356eece66f5"},
+    {"path": "closed_universe_observers/verify_berger_coupling_stripped_detector_preparations.py", "sha256": "0484becc2af2a36b3bae1eda621e895d61e8fdae2c3358fe1ef9b92659353b9e"},
+    {"path": "closed_universe_observers/tests/test_berger_coupling_stripped_detector_preparations.py", "sha256": "e6a981836e9fcbb40532346d98070416ee9e3a88fc8eaf8386b4bb6358a6972a"},
+    {"path": "closed_universe_observers/schema/berger-coupling-stripped-detector-selected-preparations-v1.schema.json", "sha256": "da7ac62aa958174b666c2bc4b5aaadcef1d8edc54cd0915af1aef029edf7948c"},
+    {"path": "closed_universe_observers/reports/berger-coupling-stripped-detector-selected-preparations.md", "sha256": "d724e233123e6f8c35fd2644d26f9e78df305cac7e6e75bf90b6200ecd0d6d7e"},
+    {"path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json", "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "d0bfcce743cf27ffd923dd07dbaec5588082ab1f4904352611d646ef4484756a"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "b1897e941944e8a31636df03d40f7fb172899a2969c6e6f49bfd5c8d83dce33d"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "6f993da765f3ece8233de3a4a5cb7d6ea613c9b6d9843610a4a0a63315f2f120"},
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "d7bb3e7d70f3b794b6c686102013a5e53d43a811c88b833afd89a3a1fec40aa2"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "db27bab29309a7fa1f5a81a12ab9e5581d0e32e01ca040d88ade393ddbeca26f"}
+  ],
+  "claim_flags": {
+    "COUPLING_STRIPPED_FIXED_PREPARATIONS_EXPORTED": true,
+    "LEADING_RESPONSE_COUPLING_FACTORIZATION_EXPORTED": true,
+    "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED": true,
+    "HARMONIC_COEFFICIENTS_EVALUATED": false,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

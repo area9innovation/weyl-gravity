@@ -796,6 +796,15 @@ preparation/recoil contraction must therefore be serialized first with
 nonzero couplings and an interval/nonzero/sign goal form a later independent
 activation gate.  No stream or scalar coefficient is currently promoted.
 
+`BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
+order ambiguity before that construction.  The advanced covector factors as
+`v_a=g_a tilde_v_a`; applying the positive-energy dual to `tilde_v_a` defines
+fixed data `tilde_u_a`.  Therefore the leading diagonal is
+`g_a tilde_E_a`, its determinant remains nonzero for the declared nonzero
+couplings, and each absolute-`g3` channel has the explicit monomial
+`g_b g_c^2`.  This is not adaptive response normalization and does not fill
+the still-open harmonic coefficients or massive images.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

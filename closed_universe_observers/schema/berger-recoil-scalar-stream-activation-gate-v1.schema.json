@@ -10,7 +10,7 @@
     "claim_status": {"type": "string"},
     "atlas_status": {"const": "OPEN"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
-    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7},
+    "dependency_refs": {"type": "object", "minProperties": 8, "maxProperties": 8},
     "readiness": {"type": "object", "required": ["internal_rows", "external_rows", "internal_modewise_stream_ready", "numerical_specialization_ready", "four_scalar_stream_active"]},
     "sequencing_decision": {"type": "object"},
     "mutation_results": {"type": "array", "minItems": 2},

@@ -77,6 +77,7 @@ CERTIFICATES = {
     "massive_recoil_finite_slab": PACKAGE / "certificates/BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT.json",
     "downstream_detector_dual_norms": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
     "recoil_stream_activation": PACKAGE / "certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json",
+    "coupling_stripped_preparations": PACKAGE / "certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
     "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
@@ -404,7 +405,15 @@ def entries() -> list[dict]:
             "descriptions": {"causal": "OPEN", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
             "operational_observable": {"detector_response": "OPEN: the analytic stopping envelope is certified but none of the four scalar streams is active", "response_rank": "the independent leading formal rank-two theorem remains CERTIFIED; no recoil-corrected determinant is inferred", "emitter_preparation": "OPEN at harmonic level: u_a=(-p_a,L_a q_a) is operator-defined, while its complete harmonic coefficients and advanced massive image are unevaluated", "clock_and_rod_dependence": "the exact switches, detector profiles and selected exact-T clock transform are CERTIFIED inputs", "relational_redshift_contribution": "NOT_APPLICABLE", "recoil_backreaction_order": "absolute-g3 operator and four symbolic tail radii are certified, but the complete per-shell scalar integrand is OPEN", "survives_gauge_reduction": "OPEN for an evaluated full mode sum; only the factorwise gauge-typed chain is certified", "profile_green_boundary_dependencies": "finite Maxwell/massive kernels and symbolic tail closure are available; complete preparation coefficients, advanced massive images, numerical masses/couplings and a stopping goal remain OPEN"},
             "tangent_cone": {"restriction_status": "NOT_APPLICABLE", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
-            "evidence": _evidence("recoil", "profiles", "response_streaming_preflight", "downstream_detector_dual_norms", "recoil_stream_activation"),
+            "evidence": _evidence("recoil", "profiles", "response_streaming_preflight", "downstream_detector_dual_norms", "coupling_stripped_preparations", "recoil_stream_activation"),
+        },
+        {
+            "id": "observer.berger.massive_emitter.coupling_stripped_preparations",
+            "scope": _scope(carrier="two coupling-stripped detector-selected positive-energy massive-two-form Cauchy preparations", degree=1, parity="real two-form polarizations selected by D0 and D1", ell="all Berger shells; harmonic coefficients unevaluated", m="all", k="all", omega="massive spectra with symbolic m_0,m_1>0"),
+            "descriptions": {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "NOT_APPLICABLE", "observational": "CERTIFIED", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "OPEN numerically: the leading diagonal factorization M_aa^(1)=g_a tilde_E_a is exact", "response_rank": "CERTIFIED for g_0,g_1 nonzero because det M^(1)=g_0 g_1 tilde_E_0 tilde_E_1 with both energies positive", "emitter_preparation": "tilde_u_a=(-tilde_p_a,(Delta_2^co-closed+m_a^2)tilde_q_a) is held fixed in the formal coupling expansion", "clock_and_rod_dependence": "inherits the exact detector advanced covectors and causal Cauchy slices; scalar coupling stripping changes no support", "relational_redshift_contribution": "NOT_APPLICABLE", "recoil_backreaction_order": "CERTIFIED explicit monomial g_b g_c^2 for every absolute-g3 channel, relative monomial g_c^2", "survives_gauge_reduction": "OPEN for the full evaluated harmonic sum; coupling stripping preserves the existing typed causal chain", "profile_green_boundary_dependencies": "operator-defined compact preparations only; harmonic coefficients, advanced massive images and per-shell recoil contractions remain OPEN"},
+            "tangent_cone": {"restriction_status": "NOT_APPLICABLE", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
+            "evidence": _evidence("profiles", "rank", "recoil", "coupling_stripped_preparations"),
         },
         {
             "id": "observer.crosswalk.berger_physical_branch_to_detector",
@@ -463,6 +472,7 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_profile.massive_recoil_finite_slab_energy_constant": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "CERTIFIED", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.downstream_maxwell_detector_dual_norms": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.recoil_scalar_stream_activation": ["OPEN", "CERTIFIED", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "OPEN", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.massive_emitter.coupling_stripped_preparations": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "CERTIFIED", "OPEN", "OPEN", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }

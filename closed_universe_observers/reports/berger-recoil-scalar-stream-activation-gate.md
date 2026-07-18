@@ -5,6 +5,8 @@ Dependency tags: `LOCAL-ALGEBRAIC`, `LORENTZIAN-CAUSAL`.
 The analytic stopping envelope is complete: the absolute-`g^3` operator,
 exact switches, finite Maxwell and massive kernels, selected exact-`T` clock
 transform, and four symbolic detector-tail radii are certified.
+The coupling-stripped successor also fixes `tilde_u_b` as the Cauchy datum,
+so each recoil channel carries the explicit monomial `g_b g_c^2`.
 
 The four scalar streams are not active.  The detector-selected preparations
 are still operator-defined.  Their harmonic coefficients and advanced

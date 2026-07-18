@@ -1,12 +1,17 @@
 {
   "atlas_status": "OPEN",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform and all four symbolic detector tail radii are certified. The stream is nevertheless inactive because the detector-selected preparations remain operator-defined: their harmonic coefficients and advanced massive Green images are explicitly unevaluated, so no complete per-shell scalar integrand exists. Numerical positive masses, nonzero couplings and an interval/nonzero/sign stopping goal are a separate later input gate. The next coherent calculation is to serialize the complete per-shell preparation and recoil contraction with masses symbolic and couplings factored; numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, and the fixed coupling-stripped preparations are all certified. The stream is nevertheless inactive because the detector-selected preparations remain operator-defined: their harmonic coefficients and advanced massive Green images are explicitly unevaluated, so no complete per-shell scalar integrand exists. Numerical positive masses, nonzero couplings and an interval/nonzero/sign stopping goal are a separate later input gate. The next coherent calculation is to serialize the complete per-shell preparation and recoil contraction with masses symbolic and couplings factored; numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
   "claim_status": "SYMBOLIC_TAIL_ENVELOPE_CERTIFIED_MODEWISE_SCALAR_STREAM_INPUTS_OPEN",
   "dependency_refs": {
     "clock_transform": {
       "path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
       "result_id": "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM",
       "sha256": "09d51889e2396fa6388a769c9c37c69b1663f51581ed752ac26d1d9f7b776a42"
+    },
+    "coupling_stripped": {
+      "path": "closed_universe_observers/certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
+      "result_id": "BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS",
+      "sha256": "4ce199552fa37a8c49b90cd5beba1d605152dacd5c8f8fa336d005357657aaf9"
     },
     "dual_norms": {
       "path": "closed_universe_observers/certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
@@ -73,7 +78,7 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "9551291cede05cbd94e8531228f81f1968153ef9f409e8a3c41cc0fcd89976cc"
+        "sha256": "22023f4ffb074110baf3ba6a85f5bddaaed552d11b0d6051b79a0a0f83ca1986"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py",
@@ -81,15 +86,15 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "e74b8573425f1eae34e0bc77e1db5b83c30bb502920ed1a50cc944c449cc3a69"
+        "sha256": "5238a1b95c29e11b306417234ccc2fe8211ee10c3f5b7be221bf36e670ac7326"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json",
-        "sha256": "90ca996a9296774062c78f9446d7cccd9bdfa0aa06de877bbde7063488283855"
+        "sha256": "2f0c4fe83ff3c345b6e015d7d68e06ba78c32bf9a36df396859c3b8aeeb6991f"
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md",
-        "sha256": "eb54cdf50366995ab644af190ce0dbb875060eddcce918edc8e880df65f464a0"
+        "sha256": "3dcc89efe8dd686830c08b59a0e01232c139103f41830eb31d35b29b2e0cd3a7"
       }
     ]
   },
@@ -139,6 +144,11 @@
         "status": "CERTIFIED"
       },
       {
+        "evidence_flag": "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED",
+        "id": "fixed_preparation_coupling_factorization",
+        "status": "CERTIFIED"
+      },
+      {
         "evidence_flag": "HARMONIC_COEFFICIENTS_EVALUATED",
         "id": "complete_harmonic_preparation_coefficients",
         "status": "OPEN"
@@ -162,7 +172,7 @@
     "current_active_gate": "construct complete modewise preparation/recoil scalar integrand",
     "dense_profile_materialization": "NOT_SELECTED",
     "later_external_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
-    "parameterization_during_internal_gate": "m_0,m_1 symbolic positive; factor g_0,g_1 monomials",
+    "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
     "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP"
   },
   "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
