@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; homogeneous circumference-velocity d crossed with the complete axial ell=2,k=0 extra-primary multiplicity space",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "both d-times-extra axial source columns are computed by direct four-dimensional bivariate linearization",
+    "the complete axial p-shell adjoint cokernel is two-dimensional",
+    "the source-to-cokernel pairing matrix is diagonal with determinant 832",
+    "for nonzero d the two axial extra amplitudes cancel an arbitrary axial p-shell adjoint defect",
+    "SO(3) equivariance promotes the multiplicity-space isomorphism to every m"
+  ],
+  "evidence": {
+    "commit": "9da0c2a4d9783a1cf11583dffde3cd858eb53145",
+    "path": "bridge/certificates/einstein_maxwell_weyl_d_axial_ell2_extra_resonance.json",
+    "sha256": "2d0f2a101a80b9ef52b7c1851012b494bc9ede1f5c38e7f77314f2d82dda1f25"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the polar d-times-extra block, then add a,b and twist position/velocity and solve the simultaneous moment-map and resonant-functional zero locus",
+  "not_established": [
+    "the polar d-times-extra source map",
+    "simultaneous vanishing of stabilizer moment maps",
+    "the nonresonant rows or a complete second-order correction",
+    "smooth-secular or causal-retarded correction theorems",
+    "opposite momenta, multiple absolute-momentum fibres, all-orders integration, residual descent, particles, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_d_axial_ell2_extra",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_d_axial_ell2_extra_resonance",
+  "team_id": "einstein_boundary",
+  "verdict": "D_CROSS_AXIAL_EXTRA_ADJOINT_MAP_ISOMORPHISM",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_axial_ell2_extra_resonance --verify bridge/certificates/einstein_maxwell_weyl_d_axial_ell2_extra_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_axial_ell2_extra_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_d_axial_ell2_extra_resonance"
+  ]
+}
