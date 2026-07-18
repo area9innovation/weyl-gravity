@@ -1,0 +1,41 @@
+{
+  "boundary_conditions": "R_t x S3 vacuum conformal cylinder; compactly supported curvature test sources and spacelike-compact solutions; support-local curvature graph presentation; before Hadamard state selection, renormalized products, QME restoration or residual quantum transfer",
+  "claim_status": "PARTIAL",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "established": [
+    "content-hash import of the completed covariant causal quasi-isomorphism, support-local curvature graph, SO(4,2) transport and causal pairing through the quantum curvature certificates",
+    "universal presymplectic graded CCR star algebra on the curvature-image free BV observable cohomology",
+    "gauge-invariant curvature-observable causal propagator Delta_C^obs=R_C Delta_Lambda J_C with exact causal support and graded antisymmetry",
+    "the D_compact action is available as part of the imported strict SO(4,2) free causal transport, but no renormalized D Ward insertion is defined"
+  ],
+  "evidence": {
+    "commit": "cc55f79aa42d232703c00c5008ff1a180e609341",
+    "path": "quantum-weyl/lorentzian/certificates/CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR.json",
+    "sha256": "4c414a0c4e7c681e9a676d2477434bd78011ce4291f575d28bdfaa955c9a8d98"
+  },
+  "generator_id": "D_compact",
+  "lifecycle_layer": "QUANTUM",
+  "next_gate": "prove the curvature propagator wavefront theorem and construct a BRST-compatible Hadamard covariance, then compute the regulated Slavnov breaking and renormalized D Ward insertion; retain ANALYTIC_FRAMEWORK_MISSING until the QME and Ward gates close",
+  "not_established": [
+    "autonomous advanced and retarded Green inverses for the curvature equations",
+    "a curvature Pauli-Jordan wavefront-set theorem or Hadamard two-point function",
+    "physical positivity or a covariant Krein-state theorem",
+    "renormalized time-ordered products or the repository regulated Slavnov breaking",
+    "QME restoration or obstruction and the coefficient-bearing quantum D-Cartan class",
+    "residual quantum transfer, a particle Hilbert space, unitarity or an interacting quantum theory"
+  ],
+  "phase_space_id": "vacuum_cylinder_curvature_observable_free_bv",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "vacuum_cylinder_curvature_observable_quantum_readiness",
+  "team_id": "quantum",
+  "verdict": "ANALYTIC_FRAMEWORK_MISSING",
+  "verification_commands": [
+    "PYTHONPATH=quantum-weyl python3 -m lorentzian.curvature_image_presymplectic_ccr_certificate",
+    "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_curvature_image_presymplectic_ccr",
+    "PYTHONPATH=quantum-weyl python3 -m lorentzian.curvature_observable_causal_propagator_certificate",
+    "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_curvature_observable_causal_propagator",
+    "python3 d_quotient_programme/verify_programme_status.py --check"
+  ]
+}

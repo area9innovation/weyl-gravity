@@ -81,6 +81,9 @@ EINSTEIN_MAXWELL_WEYL_AXIAL_EE_ELL2_SOURCE_CONTRIBUTION = PACKAGE / "contributio
 EINSTEIN_MAXWELL_WEYL_HERMITIAN_AXIAL_POLAR_ELL2_TAUB_CONTRIBUTION = PACKAGE / "contributions" / "einstein-maxwell-weyl-hermitian-axial-polar-ell2-taub.json"
 QUANTUM_CARTAN_CONTRIBUTION = ROOT / "quantum-weyl" / "cartan" / "contributions" / "QUANTUM_CARTAN_BLOCKED.json"
 QUANTUM_RELATIVE_CONTRIBUTION = PACKAGE / "contributions" / "quantum-relative-einstein-weyl-readiness.json"
+QUANTUM_CURVATURE_CAUSAL_CONTRIBUTION = (
+    PACKAGE / "contributions" / "quantum-vacuum-curvature-causal-algebra.json"
+)
 PAPER_IX_CLAIM_TABLE = ROOT / "d_quotient_classical" / "certificates" / "PAPER_09_BERGER_CLAIM_TABLE.json"
 
 TEAM_PATHS = {
@@ -379,6 +382,36 @@ def _quantum_relative_contribution() -> dict[str, Any]:
         raise AssertionError("relative quantum contribution evidence is incomplete")
     if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
         raise AssertionError("relative quantum contribution evidence hash drifted")
+    return contribution
+
+
+def _quantum_curvature_causal_contribution() -> dict[str, Any]:
+    contribution = _load(QUANTUM_CURVATURE_CAUSAL_CONTRIBUTION)
+    if not (
+        contribution.get("schema") == "pure-weyl-d-quotient-team-contribution-v1"
+        and contribution.get("team_id") == "quantum"
+        and contribution.get("setting_id")
+        == "vacuum_cylinder_curvature_observable_quantum_readiness"
+        and contribution.get("generator_id") == "D_compact"
+        and contribution.get("phase_space_id")
+        == "vacuum_cylinder_curvature_observable_free_bv"
+        and contribution.get("lifecycle_layer") == "QUANTUM"
+        and contribution.get("claim_status") == "PARTIAL"
+        and contribution.get("verdict") == "ANALYTIC_FRAMEWORK_MISSING"
+        and contribution.get("dependency_tags") == ["LORENTZIAN-CAUSAL"]
+    ):
+        raise AssertionError("quantum curvature-causal contribution scope drifted")
+    evidence = contribution.get("evidence", {})
+    path, commit = evidence.get("path"), evidence.get("commit")
+    if not isinstance(path, str) or not isinstance(commit, str):
+        raise AssertionError("quantum curvature-causal evidence is incomplete")
+    if _sha256_bytes(_committed_bytes(commit, path)) != evidence.get("sha256"):
+        raise AssertionError("quantum curvature-causal evidence hash drifted")
+    established = contribution.get("established", [])
+    if not any("Delta_C^obs" in statement for statement in established):
+        raise AssertionError("quantum curvature causal propagator statement dropped")
+    if not any("CCR" in statement for statement in established):
+        raise AssertionError("quantum curvature CCR statement dropped")
     return contribution
 
 
@@ -1149,6 +1182,7 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
     berger_retained_q2_contribution = _nonlinear_berger_retained_q2_contribution()
     quantum_cartan_contribution = _quantum_cartan_contribution()
     quantum_relative_contribution = _quantum_relative_contribution()
+    quantum_curvature_causal_contribution = _quantum_curvature_causal_contribution()
     return {
         "schema": "pure-weyl-d-quotient-programme-status-v1",
         "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
@@ -1460,7 +1494,12 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "path": str(QUANTUM_RELATIVE_CONTRIBUTION.relative_to(ROOT)),
                 "sha256": _sha256(QUANTUM_RELATIVE_CONTRIBUTION),
                 "payload": quantum_relative_contribution,
-            }
+            },
+            {
+                "path": str(QUANTUM_CURVATURE_CAUSAL_CONTRIBUTION.relative_to(ROOT)),
+                "sha256": _sha256(QUANTUM_CURVATURE_CAUSAL_CONTRIBUTION),
+                "payload": quantum_curvature_causal_contribution,
+            },
         ],
         "team_status": [
             {
@@ -1486,10 +1525,10 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
             },
             {
                 "team_id": "quantum",
-                "result_state": "ALGEBRAIC_ENGINE_AND_RELATIVE_G0_LEDGER_READY_ANALYTIC_FRAMEWORK_MISSING",
+                "result_state": "FREE_CURVATURE_CAUSAL_ALGEBRA_AND_RELATIVE_G0_LEDGER_READY_QME_HADAMARD_MISSING",
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
-                "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, and a G0 Einstein--Weyl relative dependency ledger are registered",
-                "next_gate": "import EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 by content hash while completing the local anomaly/QME disposition; retain ANALYTIC_FRAMEWORK_MISSING before any relative anomaly or residual-transfer promotion",
+                "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, a G0 Einstein--Weyl relative dependency ledger, and the free vacuum-cylinder curvature-observable CCR algebra with its transported causal propagator are registered",
+                "next_gate": "prove the curvature propagator wavefront theorem and construct a BRST-compatible Hadamard covariance while completing the regulated Slavnov/QME disposition; retain ANALYTIC_FRAMEWORK_MISSING before any quantum D-Ward or residual-transfer promotion",
             },
         ],
         "setting_ledger": [
@@ -2052,6 +2091,15 @@ def build_certificate(base_commit: str | None = None) -> dict[str, Any]:
                 "verdict": "ANALYTIC_FRAMEWORK_MISSING",
             },
             {
+                "setting_id": "vacuum_cylinder_curvature_observable_quantum_readiness",
+                "generator_id": "D_compact",
+                "phase_space_id": "vacuum_cylinder_curvature_observable_free_bv",
+                "boundary_conditions": "R_t x S3 vacuum conformal cylinder; compactly supported curvature test sources and spacelike-compact solutions; support-local curvature graph presentation; before Hadamard state selection, renormalized products, QME restoration or residual quantum transfer",
+                "lifecycle_layer": "QUANTUM",
+                "status": "PARTIAL",
+                "verdict": "ANALYTIC_FRAMEWORK_MISSING",
+            },
+            {
                 "setting_id": "asymptotic_real_cylinder_time",
                 "generator_id": "H_ESU",
                 "phase_space_id": "asymptotically_flat_full_Bach",
@@ -2159,6 +2207,7 @@ def validate(data: dict[str, Any]) -> list[str]:
         == {
             "vacuum_cylinder",
             "compact_einstein_maxwell_weyl_relative_quantum_readiness",
+            "vacuum_cylinder_curvature_observable_quantum_readiness",
         }
         and quantum_contributions["vacuum_cylinder"].get("claim_status") == "BLOCKED"
         and quantum_contributions["vacuum_cylinder"].get("verdict") is None
@@ -2168,6 +2217,14 @@ def validate(data: dict[str, Any]) -> list[str]:
         == "BLOCKED"
         and quantum_contributions[
             "compact_einstein_maxwell_weyl_relative_quantum_readiness"
+        ].get("verdict")
+        == "ANALYTIC_FRAMEWORK_MISSING"
+        and quantum_contributions[
+            "vacuum_cylinder_curvature_observable_quantum_readiness"
+        ].get("claim_status")
+        == "PARTIAL"
+        and quantum_contributions[
+            "vacuum_cylinder_curvature_observable_quantum_readiness"
         ].get("verdict")
         == "ANALYTIC_FRAMEWORK_MISSING"
     ):
@@ -2325,6 +2382,16 @@ def validate(data: dict[str, Any]) -> list[str]:
         != "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent"
     ):
         errors.append("relative quantum readiness was dropped or promoted")
+    curvature_quantum = ledger.get(
+        "vacuum_cylinder_curvature_observable_quantum_readiness", {}
+    )
+    if (
+        curvature_quantum.get("status") != "PARTIAL"
+        or curvature_quantum.get("verdict") != "ANALYTIC_FRAMEWORK_MISSING"
+        or curvature_quantum.get("phase_space_id")
+        != "vacuum_cylinder_curvature_observable_free_bv"
+    ):
+        errors.append("curvature-observable quantum readiness was dropped or promoted")
     if ledger.get("compact_interacting", {}).get("verdict") != (
         "K_CARTAN_THROUGH_ARITY_THREE_ALL_ORDERS_AND_RESIDUAL_BFV_OPEN"
     ):
@@ -2707,6 +2774,26 @@ def mutation_guards(data: dict[str, Any]) -> list[str]:
         != "compact_einstein_maxwell_weyl_relative_quantum_readiness"
     ]
     reject("drop_relative_quantum_readiness_contribution", mutant)
+
+    mutant = deepcopy(data)
+    curvature_quantum = next(
+        row
+        for row in mutant["setting_ledger"]
+        if row["setting_id"]
+        == "vacuum_cylinder_curvature_observable_quantum_readiness"
+    )
+    curvature_quantum["status"] = "CERTIFIED"
+    curvature_quantum["verdict"] = "CARTAN_QUANTUM_EXACT"
+    reject("promote_curvature_quantum_before_hadamard_and_QME", mutant)
+
+    mutant = deepcopy(data)
+    mutant["team_contributions"] = [
+        record
+        for record in mutant["team_contributions"]
+        if record["payload"]["setting_id"]
+        != "vacuum_cylinder_curvature_observable_quantum_readiness"
+    ]
+    reject("drop_curvature_quantum_readiness_contribution", mutant)
 
     mutant = deepcopy(data)
     next(row for row in mutant["setting_ledger"] if row["setting_id"] == "compact_selected_residual_HT1_q2")["verdict"] = "INTERACTING_CARTAN_EXISTS"

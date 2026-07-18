@@ -29,14 +29,14 @@
     ],
     "rule": "The Einstein team must export the complete off-shell all-sector relative triangle with the declared acceptance flags. The classical team then imports it by commit and hash before constructing residual equivariance, cofiber compatibility, and observable pullback. A generic-axial preflight or on-shell inclusion cannot promote this gate."
   },
-  "programme_base_commit": "74eaf0893a5c9c9659b14b7190870b0c57034eec",
+  "programme_base_commit": "29ea7e4c7727d06611fb7f3d6d06245b59e63954",
   "publication_plan": {
     "current_form": "CROSS_PROGRAMME_VALIDATION_DOSSIER",
     "paper_IX": {
       "claim_table": {
-        "commit": "1140a5e35a7eab1b1e08cb1fc8b0a63326d1d41e",
+        "commit": "408824d58392be368831ccf1cdc4ad0000cf823a",
         "path": "d_quotient_classical/certificates/PAPER_09_BERGER_CLAIM_TABLE.json",
-        "sha256": "2adba6d9d0541ef21b46643fe5dd0b37f4d478cbfe52eef4f9de46ee9352c075"
+        "sha256": "90d53b7fa16ec71b7ab9c970d514bc3017511f7ac9f9848adf44a6a7f60b8c90"
       },
       "promotion_gate": "K-generator classical/nonlinear/quantum signoff and clean-tree replay; affine raw-D Cartan is not required for the scoped K theorem",
       "status": "WRITING_STARTED",
@@ -52,7 +52,7 @@
   },
   "registry_hashes": {
     "generator_registry": "bd46ba02eaa31d9b63ada4e6d592b123ebd41dfdef1b642a1bf47daf105d24fa",
-    "phase_space_registry": "f7c020858119feee34cb01b5be13823747f6e2ffc405c13b5c982bec23b8cb8a"
+    "phase_space_registry": "2738611e3ec5a5651f9fe387cde05aca723894b1af0bfcf4bb99ecab543d97b4"
   },
   "result_id": "D_QUOTIENT_PROGRAMME_STATUS",
   "result_state": "CROSS_PROGRAMME_DOSSIER_ACTIVE_RESULTS_SECTOR_INDEXED",
@@ -614,6 +614,15 @@
       "phase_space_id": "einstein_maxwell_product_compact_weyl_complete_standard_harmonic_tangent",
       "setting_id": "compact_einstein_maxwell_weyl_relative_quantum_readiness",
       "status": "BLOCKED",
+      "verdict": "ANALYTIC_FRAMEWORK_MISSING"
+    },
+    {
+      "boundary_conditions": "R_t x S3 vacuum conformal cylinder; compactly supported curvature test sources and spacelike-compact solutions; support-local curvature graph presentation; before Hadamard state selection, renormalized products, QME restoration or residual quantum transfer",
+      "generator_id": "D_compact",
+      "lifecycle_layer": "QUANTUM",
+      "phase_space_id": "vacuum_cylinder_curvature_observable_free_bv",
+      "setting_id": "vacuum_cylinder_curvature_observable_quantum_readiness",
+      "status": "PARTIAL",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     },
     {
@@ -3271,6 +3280,51 @@
         ]
       },
       "sha256": "540237d3e3f0ce6d6ba1abd307e25dab612afdc58bb651135c3ca5b024794877"
+    },
+    {
+      "path": "d_quotient_programme/contributions/quantum-vacuum-curvature-causal-algebra.json",
+      "payload": {
+        "boundary_conditions": "R_t x S3 vacuum conformal cylinder; compactly supported curvature test sources and spacelike-compact solutions; support-local curvature graph presentation; before Hadamard state selection, renormalized products, QME restoration or residual quantum transfer",
+        "claim_status": "PARTIAL",
+        "dependency_tags": [
+          "LORENTZIAN-CAUSAL"
+        ],
+        "established": [
+          "content-hash import of the completed covariant causal quasi-isomorphism, support-local curvature graph, SO(4,2) transport and causal pairing through the quantum curvature certificates",
+          "universal presymplectic graded CCR star algebra on the curvature-image free BV observable cohomology",
+          "gauge-invariant curvature-observable causal propagator Delta_C^obs=R_C Delta_Lambda J_C with exact causal support and graded antisymmetry",
+          "the D_compact action is available as part of the imported strict SO(4,2) free causal transport, but no renormalized D Ward insertion is defined"
+        ],
+        "evidence": {
+          "commit": "cc55f79aa42d232703c00c5008ff1a180e609341",
+          "path": "quantum-weyl/lorentzian/certificates/CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR.json",
+          "sha256": "4c414a0c4e7c681e9a676d2477434bd78011ce4291f575d28bdfaa955c9a8d98"
+        },
+        "generator_id": "D_compact",
+        "lifecycle_layer": "QUANTUM",
+        "next_gate": "prove the curvature propagator wavefront theorem and construct a BRST-compatible Hadamard covariance, then compute the regulated Slavnov breaking and renormalized D Ward insertion; retain ANALYTIC_FRAMEWORK_MISSING until the QME and Ward gates close",
+        "not_established": [
+          "autonomous advanced and retarded Green inverses for the curvature equations",
+          "a curvature Pauli-Jordan wavefront-set theorem or Hadamard two-point function",
+          "physical positivity or a covariant Krein-state theorem",
+          "renormalized time-ordered products or the repository regulated Slavnov breaking",
+          "QME restoration or obstruction and the coefficient-bearing quantum D-Cartan class",
+          "residual quantum transfer, a particle Hilbert space, unitarity or an interacting quantum theory"
+        ],
+        "phase_space_id": "vacuum_cylinder_curvature_observable_free_bv",
+        "schema": "pure-weyl-d-quotient-team-contribution-v1",
+        "setting_id": "vacuum_cylinder_curvature_observable_quantum_readiness",
+        "team_id": "quantum",
+        "verdict": "ANALYTIC_FRAMEWORK_MISSING",
+        "verification_commands": [
+          "PYTHONPATH=quantum-weyl python3 -m lorentzian.curvature_image_presymplectic_ccr_certificate",
+          "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_curvature_image_presymplectic_ccr",
+          "PYTHONPATH=quantum-weyl python3 -m lorentzian.curvature_observable_causal_propagator_certificate",
+          "PYTHONPATH=quantum-weyl python3 -m lorentzian.verify_curvature_observable_causal_propagator",
+          "python3 d_quotient_programme/verify_programme_status.py --check"
+        ]
+      },
+      "sha256": "6715ea600813f5ff9cce54b5c5e7930eb32193260192d0139d5c753ac788a693"
     }
   ],
   "team_inputs": {
@@ -3318,9 +3372,9 @@
       "verdict": "CLASSICAL_K_CARTAN_THROUGH_ARITY_THREE_NONLINEAR_SIGNOFF_PENDING"
     },
     {
-      "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, and a G0 Einstein--Weyl relative dependency ledger are registered",
-      "next_gate": "import EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 by content hash while completing the local anomaly/QME disposition; retain ANALYTIC_FRAMEWORK_MISSING before any relative anomaly or residual-transfer promotion",
-      "result_state": "ALGEBRAIC_ENGINE_AND_RELATIVE_G0_LEDGER_READY_ANALYTIC_FRAMEWORK_MISSING",
+      "established": "the current required classical compact-cylinder settings are imported by content hash without quantum promotion; exact Cartan quotient mechanics, complete intrinsic Euler descent, hash-bound AFN0 closure witnesses, a G0 Einstein--Weyl relative dependency ledger, and the free vacuum-cylinder curvature-observable CCR algebra with its transported causal propagator are registered",
+      "next_gate": "prove the curvature propagator wavefront theorem and construct a BRST-compatible Hadamard covariance while completing the regulated Slavnov/QME disposition; retain ANALYTIC_FRAMEWORK_MISSING before any quantum D-Ward or residual-transfer promotion",
+      "result_state": "FREE_CURVATURE_CAUSAL_ALGEBRA_AND_RELATIVE_G0_LEDGER_READY_QME_HADAMARD_MISSING",
       "team_id": "quantum",
       "verdict": "ANALYTIC_FRAMEWORK_MISSING"
     }
