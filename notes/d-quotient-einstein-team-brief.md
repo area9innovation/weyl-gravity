@@ -1904,6 +1904,18 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    obstructed, including the twist-balanced common-zero family.  The next
    genuine question is whether distinct-`m` interference can cancel the full
    `L=2` adjoint tensor, not another axisymmetric amplitude ratio.
+
+   The distinct-`m` question is now closed.  In the Cartesian real `ell=1`
+   basis, `SO(3)` multiplicity-one promotes the axis fixtures to
+   `E=STF(a a^T-(3/16)p p^T)` and
+   `F=STF(a p^T+p a^T)`.  After rescaling `q=(sqrt(3)/4)p`, `E=F=0` makes the
+   STF parts of `(a+iq)(a+iq)^T` and `(a-iq)(a-iq)^T` vanish.  Rank one versus
+   the three-dimensional identity forces both vectors to vanish.  An exact
+   zero-dimensional Gröbner basis independently gives the same origin-only
+   variety.  Hence no interference among `m=-1,0,1` rescues a nonzero
+   exceptional dipole.  The only remaining scope audit before freezing the
+   complete exceptional `ell=1` fixed-bundle no-go is whether another sector
+   shares the same input frequency `omega^2=4/3`.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately
