@@ -1,0 +1,34 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; one axial exceptional ell=1,m=0,k=0 oscillator balanced by a collinear standard twist velocity",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the nonzero first-order fixture B^2=(8/3)e^2 has vanishing time-translation, momentum, and rotation moment maps",
+    "the direct exceptional positive-positive self-source lands at polar L=2 with Omega^2=16/3, exactly the fourth-order target shell",
+    "the resonant target matrix has rank two while the augmented source matrix has rank three",
+    "two exact adjoint-cokernel witnesses pair with the source as -2/3 and 4/3, proving no second-order correction exists"
+  ],
+  "evidence": {
+    "commit": "489c762eb4bc07a2bfbc159ec679c308030b57e8",
+    "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
+    "sha256": "e2c12e76f0ead8f1d96f5ee953ceca78e85e3d5a74cd37aad4dfe46a0aa047a8"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "test whether polar exceptional or Einstein-minus input can cancel both dynamical resonant pairings as well as the stabilizer moment maps",
+  "not_established": [
+    "the full exceptional ell=1 mixed cone",
+    "cancellation of the two resonant adjoint pairings",
+    "all-orders, residual, causal, scattering, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_exceptional_ell1_twist_resonance",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_exceptional_ell1_twist_resonance",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_COMMON_ZERO_BUT_DYNAMICALLY_OBSTRUCTED",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_twist_resonance --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_twist_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_twist_resonance"
+  ]
+}
