@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; one fixed generic ell>=2 and nonzero |k| with independent +k/-k amplitudes, before stabilizer quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "every fixed-ell phase-sensitive sum/difference channel has an exact linear resonance-divisor formula in k^2",
+    "the divisor is nonempty for every ell through an explicit opposite-momentum Einstein-minus pair driving the L=2ell extra shell",
+    "moment-map densities alone do not imply bounded or finite-quasiperiodic second-order extension on the divisor",
+    "generic nonzero-frequency resonances are removable in the smooth-global correction class by exponential-polynomial secular inversion of the certified Smith factors",
+    "the remaining smooth-global phase gate is the exceptional static L=0,K=2k target block"
+  ],
+  "evidence": {
+    "commit": "f5f764e14b2f234957487095d8ca8b71f43a5a0e",
+    "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+    "sha256": "3a58c94bce450cec2bf40eeda9d8bddb7f38617a62b4bcd37ebf5adbc50e3557"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify the polar Weyl-Maxwell L=0 target at nonzero spatial momentum and test the static K=2k interference source",
+  "not_established": [
+    "bounded correction on the resonance divisor",
+    "the dynamical resonant source projection",
+    "the static L=0,K=2k phase channel",
+    "complete opposite-momentum second-order closure, all-orders integration, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_BOUNDED_RESONANT_SMOOTH_GLOBAL_SECULAR",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor --verify bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor"
+  ]
+}
