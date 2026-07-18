@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2a-flux-matrix-v1",
+  "title": "BH-2A stage 3: axial flux matrix; symplectically null RW branch",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "bilinear",
+    "offshell_identity",
+    "rw_block",
+    "interpretation",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2a-flux-matrix-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2a-flux-matrix-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2A_FLUX_MATRIX" },
+    "result_token": { "const": "BH2A_FLUX_MATRIX_STAGE1_RW_BRANCH_SYMPLECTICALLY_NULL" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "bilinear": {
+      "type": "object",
+      "required": ["F_t", "F_r", "construction"],
+      "properties": {
+        "F_t": { "type": "string", "minLength": 100 },
+        "F_r": { "type": "string", "minLength": 100 }
+      }
+    },
+    "offshell_identity": {
+      "type": "object",
+      "required": ["statement", "consequences"]
+    },
+    "rw_block": {
+      "type": "object",
+      "required": ["on_shell_flux", "null_statement", "validation"],
+      "properties": {
+        "on_shell_flux": {
+          "const": "F^r = -192*pi*alpha*(omega1**2 - omega2**2)*psi1*psi2/(5*omega1*omega2*r)"
+        }
+      }
+    },
+    "interpretation": {
+      "type": "object",
+      "required": ["structure", "consequence"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "machinery_revalidated_certified",
+        "axial_bilinear_certified",
+        "offshell_identity_certified",
+        "rw_block_certified",
+        "rw_branch_null_certified",
+        "point_validation_certified",
+        "cross_block_certified",
+        "extra_block_certified",
+        "horizon_flux_signs_certified",
+        "operator_domains_certified",
+        "causal_disposition_decided",
+        "stability_or_ringdown_certified"
+      ],
+      "properties": {
+        "machinery_revalidated_certified": { "const": true },
+        "axial_bilinear_certified": { "const": true },
+        "offshell_identity_certified": { "const": true },
+        "rw_block_certified": { "const": true },
+        "rw_branch_null_certified": { "const": true },
+        "point_validation_certified": { "const": true },
+        "cross_block_certified": { "const": false },
+        "extra_block_certified": { "const": false },
+        "horizon_flux_signs_certified": { "const": false },
+        "operator_domains_certified": { "const": false },
+        "causal_disposition_decided": { "const": false },
+        "stability_or_ringdown_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "stage_seconds": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "machinery_paths",
+        "machinery_sha256",
+        "engine_path",
+        "engine_sha256",
+        "bh1b_certificate",
+        "bh1b_certificate_sha256",
+        "bh2a_certificate",
+        "bh2a_certificate_sha256"
+      ],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh2a_flux_matrix.py" },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh1b_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh2a_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2a_flux_matrix.py"
+    }
+  }
+}

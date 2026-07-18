@@ -41,6 +41,7 @@ CERTS = {
     "BH1B": PKG / "certificates" / "BH1B_DYNAMICAL_EXTENSION.json",
     "BH2A": PKG / "certificates" / "BH2A_AXIAL_OPERATOR.json",
     "BH2AR": PKG / "certificates" / "BH2A_HORIZON_REACH.json",
+    "BH2AF": PKG / "certificates" / "BH2A_FLUX_MATRIX.json",
 }
 
 
@@ -229,7 +230,10 @@ def entries():
                 "CERTIFIED",
                 "axial l=2 Einstein rows derived exactly; Regge-Wheeler master equation with V = B(6/r^2 - 6m/r^3) reproduced; branch injects exactly into the Bach kernel (delta B = (1/2) Box dRic + C.dRic on the Ricci-flat background)",
                 "operator pending certificate", "BH2A"),
-            "lee_wald": _claim("OPEN", "bilinear flux matrix not yet constructed"),
+            "lee_wald": _gated(
+                "CERTIFIED",
+                "general axial bilinear F^t, F^r certified with the off-shell 4-alpha identity; RW-block on-shell flux -192*pi*alpha*(w1^2-w2^2)*psi1*psi2/(5*w1*w2*r) vanishes for conjugate pairs: the Einstein branch is symplectically null; cross-block and extra-block values OPEN",
+                "bilinear flux matrix not yet constructed", "BH2AF"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
@@ -248,7 +252,7 @@ def entries():
                 "CERTIFIED",
                 "extra branch identified exactly: carrier psi_ab = delta Ric_ab satisfies the second-order Lichnerowicz-type equation (1/2) Box psi + C.psi = 0 on the Ricci-flat background (axial l=2); the naive split is OBSTRUCTED on non-Einstein backgrounds",
                 "operator pending certificate", "BH2A"),
-            "lee_wald": _claim("OPEN", "flux matrix and Lee-Wald signs of the extra branch remain open"),
+            "lee_wald": _claim("OPEN", "extra-block and cross-block flux values and signs remain open; all symplectic pairing must live in the Einstein x extra cross-block (RW branch certified null)"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "must not be identified with the compact-cylinder extra branch without an explicit crosswalk"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,

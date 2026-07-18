@@ -35,7 +35,8 @@ every certificate in this directory.
 | BH-1B | `BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED` | certified (linear charge level, ℓ=0 dynamical sector complete): conformal and diffeo directions carry zero charge/flux exactly; entropy conformally invariant on the family; unique linear extension of the normalized generator; no boundary clock needed |
 | BH-2A stage 1 | `BH2A_AXIAL_L2_OPERATOR_AND_BRANCH_SPLIT_CLASSIFIED` | certified: axial ℓ=2 operator; Regge–Wheeler master equation reproduced exactly; branch-split theorem δB = ½□δRic + C∘δRic (Einstein branch injects; extra branch = 2nd-order Lichnerowicz-type carrier ψ = δRic); split OBSTRUCTED off Einstein backgrounds |
 | BH-2A stage 2 | `BH2A_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL` | certified: in the ingoing EF chart the extra branch has a two-parameter ingoing-regular family at every frequency (regular singular point, residue spectrum {0,0,−4imω,−2−4imω}, kernel rank 2); horizon regularity cannot exclude the extra branch |
-| BH-2A remainder | outer-boundary domains, bilinear flux matrix, causal disposition, polar sector | open — prerequisite for any ringdown/stability language |
+| BH-2A stage 3 | `BH2A_FLUX_MATRIX_STAGE1_RW_BRANCH_SYMPLECTICALLY_NULL` | certified: general axial bilinear + off-shell 4α identity; RW-block flux vanishes for conjugate pairs — the Einstein branch is symplectically null; all pairing lives in the Einstein×extra cross-block |
+| BH-2A remainder | cross/extra flux blocks with horizon signs, outer-boundary domains, causal disposition, polar sector | open — prerequisite for any ringdown/stability language |
 
 Run everything for a certificate:
 
