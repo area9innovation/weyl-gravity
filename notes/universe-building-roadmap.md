@@ -156,12 +156,16 @@ equation-only cone: six independent metric Killing ghosts contrast with an
 upper bound of one parallel normal-adjoint-tractor ghost from the rank-fourteen
 stacked curvature matrix.  Because the incidence cylinder retracts to that
 parent, contractible equation/identity rows cannot remove the deficit of at
-least five.  The next gate is
-`C_G2_NARIAI_CURVATURE_CORRECTED_AUTOMORPHISM_PROLONGATION`, starting from
-`nabla^D s+i_{p(s)} Omega=0`; only after its ghost cohomology matches should
-the equation/identity cone and Green transfer resume.  Do not reopen endpoint
-coefficient or field-graph fitting, or claim endpoint equivalence or a Nariai
-Green homotopy before this gate closes.
+least five.  The curvature-corrected automorphism prolongation now closes its
+first two rows exactly: with `d_aut=d^D-I_Omega p0`, the maps
+`(d_aut,K p0)^T` and `(M^D,-Phi)` form a local complex, and the corrected BGG
+graph carries every metric gauge transformation and global Killing
+reducibility strictly into it.  The next gate is
+`C_G2_NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION`: add the action-derived Bach
+middle and the forced cotangent/identity rows, then prove full odd cyclicity.
+Only after that extension closes should an SDR or Green transfer be attempted.
+Do not reopen endpoint coefficient or field-graph fitting, or claim endpoint
+equivalence or a Nariai Green homotopy before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

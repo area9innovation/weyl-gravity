@@ -1156,6 +1156,40 @@ the local equation
 Only after that corrected ghost complex reproduces the metric reducibilities
 should equation/identity rows, an SDR or Green transfer be attempted.
 
+`NARIAI_AUTOMORPHISM_PROLONGATION_FIRST_TWO_ROWS_V1` now performs that repair.
+With
+
+\[
+d_{\rm aut}=d^D-I_\Omega p_0,
+\qquad
+\Phi=M^DL_1^{\rm corr},
+\]
+
+the exact support-local sequence is
+
+\[
+C_0\xrightarrow{(d_{\rm aut},Kp_0)^T}
+C_1\oplus H_1
+\xrightarrow{(M^D,-\Phi)}C_1^*.
+\]
+
+The two defining identities,
+
+\[
+d_{\rm aut}L_0^{\rm corr}=L_1^{\rm corr}K,
+\qquad
+M^Dd_{\rm aut}=\Phi Kp_0,
+\]
+
+vanish coefficientwise.  Since \(p_0L_0^{\rm corr}=1\), the metric graph
+\(\xi\mapsto L_0^{\rm corr}\xi\),
+\(h\mapsto(L_1^{\rm corr}h,h)\) is strict through the gauge and constraint
+rows, and every metric Killing field becomes a closed prolonged ghost.  The
+next gate is `C_G2_NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION`: add the action
+Bach equation and the forced cotangent/identity rows, then test the complete
+cyclic complex and its metric graph.  No SDR or Green claim precedes that
+test.
+
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
 nonzero stability radius, or an exact no-go witness.

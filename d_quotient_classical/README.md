@@ -256,6 +256,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   prolongation, must be supplied first:
   [`certificates/NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1.json`](certificates/NARIAI_PARENT_REDUCIBILITY_MISMATCH_V1.json),
   [`reports/nariai-parent-reducibility-mismatch.md`](reports/nariai-parent-reducibility-mismatch.md)
+- Curvature-corrected automorphism prolongation: replacing the parallel-
+  tractor ghost operator by `d_aut=d^D-I_Omega p0` gives the strict local
+  two-arrow complex
+  `C0 -> C1+H1 -> C1dual`, with maps `(d_aut,K p0)` and `(M^D,-Phi)`.
+  Both compositions vanish coefficientwise, and the corrected BGG graph
+  `(L0;L1,identity)` carries every metric gauge variation and Killing
+  reducibility exactly.  This resolves the ghost mismatch without yet adding
+  the Bach equation or its cyclic cotangent completion:
+  [`certificates/NARIAI_AUTOMORPHISM_PROLONGATION_FIRST_TWO_ROWS_V1.json`](certificates/NARIAI_AUTOMORPHISM_PROLONGATION_FIRST_TWO_ROWS_V1.json),
+  [`reports/nariai-automorphism-prolongation-first-two-rows.md`](reports/nariai-automorphism-prolongation-first-two-rows.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived
