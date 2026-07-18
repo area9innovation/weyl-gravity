@@ -1,0 +1,208 @@
+{
+  "anisotropic_resolution_mutation": {
+    "actual_basis_index_over_two_j": "3/8",
+    "angular_subdivisions": 128,
+    "basis_index": 384,
+    "declared_even_index_fraction": "3/8",
+    "detected": true,
+    "diagonal_distance": 256,
+    "interval": {
+      "lower": "8918147195204964892817525771/39614081257132168796771975168",
+      "upper": "26512984401510931108801155621/79228162514264337593543950336",
+      "width": "8676690011101001323166104079/79228162514264337593543950336"
+    },
+    "kind": "angular_only_mutation",
+    "m": "-128",
+    "name": "refine_angular_instead_of_radial_at_two_j1024_r384",
+    "radial_subdivisions": 64,
+    "two_j": 1024
+  },
+  "atlas_status": "CERTIFIED",
+  "canonical_scale_rail_sha256": "48405065a80712d35b4519f8697960948a5797a83f8bfe8c5d3bbf5c4a6bcbed",
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result widens the correlated p=0 diagonal-fraction seed to adjacent two_j=1024,1025 representations. The declared r/1024=1/8 and 1/4 rows use 64 radial by 64 angular cells; the 3/8 rows use the minimal tested anisotropic refinement of 128 radial by 64 angular cells. All six declared widths are below 0.1. Refining only the angular axis to 64 by 128 at two_j=1024,r=384 leaves width above 0.1 and is rejected, localizing the adaptive need to the radial enclosure at this sentinel. This is a selected two-scale fraction rail, not a complete diagonal, representation, clock-power or polarized form stream. It does not export a Sobolev/infinite-mode tail, Green image, detector response, recoil, tangent-cone restriction, Bridge 3, finite-r/all-orders observer-morphism stability or quantum claim.",
+  "claim_status": "VALIDATED_ADAPTIVE_P0_TWO_SCALE_DIAGONAL_FRACTION_RAIL_EXPORTED_COMPLETE_AND_POLARIZED_RAILS_OPEN",
+  "dependency_refs": {
+    "fraction_seed": {
+      "path": "closed_universe_observers/certificates/BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM.json",
+      "result_id": "BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM",
+      "sha256": "6289821dbfb1e6df2ce6f606d5818f41db803f6b91ff27fef9e9c0197a6212a6"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "even_scale_rows": [
+    {
+      "actual_basis_index_over_two_j": "1/8",
+      "angular_subdivisions": 64,
+      "basis_index": 128,
+      "declared_even_index_fraction": "1/8",
+      "diagonal_distance": 768,
+      "interval": {
+        "lower": "-5374663041671688097443806981/79228162514264337593543950336",
+        "upper": "284073703890558232873057323/9903520314283042199192993792",
+        "width": "7647252672796153960428265565/79228162514264337593543950336"
+      },
+      "kind": "declared",
+      "m": "-384",
+      "radial_subdivisions": 64,
+      "two_j": 1024
+    },
+    {
+      "actual_basis_index_over_two_j": "1/4",
+      "angular_subdivisions": 64,
+      "basis_index": 256,
+      "declared_even_index_fraction": "1/4",
+      "diagonal_distance": 512,
+      "interval": {
+        "lower": "1111274011841889784162805595/19807040628566084398385987584",
+        "upper": "3066265754971802740159376713/19807040628566084398385987584",
+        "width": "977495871564956477998285559/9903520314283042199192993792"
+      },
+      "kind": "declared",
+      "m": "-256",
+      "radial_subdivisions": 64,
+      "two_j": 1024
+    },
+    {
+      "actual_basis_index_over_two_j": "3/8",
+      "angular_subdivisions": 64,
+      "basis_index": 384,
+      "declared_even_index_fraction": "3/8",
+      "diagonal_distance": 256,
+      "interval": {
+        "lower": "19352416820355944333678165987/79228162514264337593543950336",
+        "upper": "12531421179172741185632291401/39614081257132168796771975168",
+        "width": "5710425537989538037586416815/79228162514264337593543950336"
+      },
+      "kind": "declared",
+      "m": "-128",
+      "radial_subdivisions": 128,
+      "two_j": 1024
+    }
+  ],
+  "flags": {
+    "ADAPTIVE_TWO_SCALE_EVEN_ODD_FRACTION_RAIL_EXPORTED": true,
+    "ALL_CLOCK_POWERS_AND_POLARIZED_ROWS_EVALUATED": false,
+    "ANGULAR_ONLY_REFINEMENT_MUTATION_REJECTED": true,
+    "COMPLETE_DIAGONAL_STREAM_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false,
+    "RADIAL_REFINEMENT_NEED_LOCALIZED": true,
+    "SIX_TWO_J1024_1025_WIDTHS_BELOW_ONE_TENTH": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false
+  },
+  "next_gate": "APPLY_THE_CERTIFIED_POLARIZATION_RECURRENCE_TO_THE_DECLARED_TWO_SCALE_ROWS_AND_ADD_EXTERNAL_CLOCK_POWERS",
+  "odd_scale_rows": [
+    {
+      "actual_basis_index_over_two_j": "128/1025",
+      "angular_subdivisions": 64,
+      "basis_index": 128,
+      "declared_even_index_fraction": "1/8",
+      "diagonal_distance": 769,
+      "interval": {
+        "lower": "-1351776442123795822204594871/19807040628566084398385987584",
+        "upper": "280566291441231948043205297/9903520314283042199192993792",
+        "width": "1912909025006259718291005465/19807040628566084398385987584"
+      },
+      "kind": "declared",
+      "m": "-769/2",
+      "radial_subdivisions": 64,
+      "two_j": 1025
+    },
+    {
+      "actual_basis_index_over_two_j": "256/1025",
+      "angular_subdivisions": 64,
+      "basis_index": 256,
+      "declared_even_index_fraction": "1/4",
+      "diagonal_distance": 513,
+      "interval": {
+        "lower": "4358311030809405219740082789/79228162514264337593543950336",
+        "upper": "12185063255576036682097304669/79228162514264337593543950336",
+        "width": "978344028095828932794652735/9903520314283042199192993792"
+      },
+      "kind": "declared",
+      "m": "-513/2",
+      "radial_subdivisions": 64,
+      "two_j": 1025
+    },
+    {
+      "actual_basis_index_over_two_j": "384/1025",
+      "angular_subdivisions": 64,
+      "basis_index": 384,
+      "declared_even_index_fraction": "3/8",
+      "diagonal_distance": 257,
+      "interval": {
+        "lower": "19248834479902106703311634375/79228162514264337593543950336",
+        "upper": "780064298348968037746849511/2475880078570760549798248448",
+        "width": "5713223067264870504587549977/79228162514264337593543950336"
+      },
+      "kind": "declared",
+      "m": "-257/2",
+      "radial_subdivisions": 128,
+      "two_j": 1025
+    }
+  ],
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_adaptive_diagonal_fraction_scale_rail.py",
+        "sha256": "e5fa38be7033c2dbf9e709428e127a9621ba53f23780bdf949325f54fc089e37"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_adaptive_diagonal_fraction_scale_rail.py",
+        "sha256": "a2a389ad3bb3d284ec2bb371e16d6fc66b0ab37f7db49ff5646416d10eb0f9c2"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_adaptive_diagonal_fraction_scale_rail.py",
+        "sha256": "7390a4c88a1e4e51f8618b1010ffab4a80b812bbe9e83bad745d395f4ebe7878"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-adaptive-diagonal-fraction-scale-rail-v1.schema.json",
+        "sha256": "a6f1ec9ea9c9648dd18d9d262079e0307d8634ec9bcf45b09e97676a58f2e2fd"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-adaptive-diagonal-fraction-scale-rail.md",
+        "sha256": "6406bb10c71da094ad5293a9facb513fa846771dda87c63b1a6d8e2a22b0c151"
+      }
+    ]
+  },
+  "rail_declaration": {
+    "adjacent_odd_two_j": 1025,
+    "even_two_j": 1024,
+    "external_clock_power": 0,
+    "interval_decimal_precision": 18,
+    "interval_engine": "mpmath 1.3.0 iv directed rounding",
+    "output_dyadic_bits": 96,
+    "rows": [
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 128,
+        "declared_even_index_fraction": "1/8",
+        "radial_subdivisions": 64
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 256,
+        "declared_even_index_fraction": "1/4",
+        "radial_subdivisions": 64
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 384,
+        "declared_even_index_fraction": "3/8",
+        "radial_subdivisions": 128
+      }
+    ]
+  },
+  "result_id": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+  "schema": "closed-universe-berger-adaptive-diagonal-fraction-scale-rail-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

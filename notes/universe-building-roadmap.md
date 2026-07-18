@@ -383,6 +383,13 @@ remains fail-closed pending a Haar-relative detector density, clock-uniform
 repeated-Laplacian norm, polarized form norm and Green-weighted tail
 conversion.  The active gate is to optimize and widen the declared fractions,
 then construct polarized rows while deriving those missing Sobolev inputs.
+The adaptive scale successor now certifies the same fractions in adjacent
+`two_j=1024,1025`: `1/8` and `1/4` pass on `64 x 64`, while `3/8` passes
+with `128` radial by `64` angular cells.  An angular-only `64 x 128` mutation
+at the even `3/8` row remains above width `0.1`, localizing the necessary
+refinement to the radial enclosure at that sentinel.  The active profile gate
+is therefore the certified polarization recurrence and external clock powers
+on these declared two-scale rows, not another uniform-grid widening.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`, which
@@ -1187,7 +1194,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative cutoff obstruction, correlated high-mode central/axial/intermediate scalar sentinels and a declared even/odd diagonal-fraction stream, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | widen and polarize the correlated profile stream or certify its Sobolev tail, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative cutoff obstruction, correlated high-mode central/axial/intermediate scalar sentinels and adaptive even/odd diagonal-fraction rails through selected `two_j=1025` rows, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | apply the polarization recurrence and clock powers to the selected scale rail or certify its Sobolev tail, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -1438,6 +1445,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR` (fired) | stream the selected `r=0`, `p=0` evaluator and extend the same directed correlated integration across intermediate Jacobi diagonals; do not infer a complete axial rail or tail from two high sentinels |
 | `BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR` (fired) | stream declared diagonal fractions and add further odd intermediate sentinels at validated resolution; do not infer a complete scalar or polarized rail from the adjacent `two_j=512,513` pair |
 | `BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM` (fired) | optimize and widen the declared fractions, then construct polarized rows while deriving the missing Haar-density, repeated-Laplacian and Green-tail inputs; do not infer a complete rail or Sobolev tail from six sentinels |
+| `BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL` (fired) | apply the certified polarization recurrence and external clock powers to the declared two-scale rows; preserve radial-only refinement at the `3/8` sentinel and do not infer complete or infinite rails |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

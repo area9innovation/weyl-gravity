@@ -439,6 +439,13 @@ repeated-Laplacian norm, polarized form norm and Green-weighted tail
 conversion are not certified inputs.  The next gate is to optimize and widen
 the fraction stream, then construct polarized rows; no complete or infinite
 tail follows from the six sentinels.
+The adaptive scale successor now repeats the three fractions at adjacent
+`two_j=1024,1025`.  The `1/8` and `1/4` rows pass on `64 x 64`; the `3/8`
+row requires `128` radial by `64` angular cells.  All six declared widths are
+below `0.1`.  A `64` radial by `128` angular mutation at the even `3/8` row
+remains about `0.10952`, so the first resolution loss is localized to the
+radial enclosure.  The next gate is the certified polarization recurrence and
+external clock powers on these declared rows, not a complete-rail inference.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

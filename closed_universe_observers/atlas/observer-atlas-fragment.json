@@ -2078,7 +2078,7 @@
       }
     },
     {
-      "claim_boundary": "all six 64x64 rows at r=64,128,192 for two_j=512,513 have width below 0.1; the Sobolev route remains OPEN because the Haar-relative density, repeated-Laplacian norm, polarized form norm and Green-weighted tail conversion are not certified; complete rails and the infinite tail remain OPEN input evaluator only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "claim_boundary": "all six 64x64 rows at r=64,128,192 for two_j=512,513 have width below 0.1; the adaptive scale successor is separate; the Sobolev route remains OPEN because the Haar-relative density, repeated-Laplacian norm, polarized form norm and Green-weighted tail conversion are not certified; complete rails and the infinite tail remain OPEN input evaluator only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
@@ -2096,6 +2096,11 @@
           "path": "closed_universe_observers/certificates/BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM.json",
           "result_id": "BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM",
           "sha256": "6289821dbfb1e6df2ce6f606d5818f41db803f6b91ff27fef9e9c0197a6212a6"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL.json",
+          "result_id": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+          "sha256": "176b262961c108ef01c1cbf89f1c42d408b59af6fcba9c469faf8d0da10db34f"
         }
       ],
       "id": "observer.berger.detector_profile.correlated_diagonal_fraction_stream",
@@ -2150,7 +2155,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "optimize and widen the declared fractions, then apply the certified polarization recurrence",
+          "statement": "the adaptive two_j=1024,1025 scale successor is CERTIFIED; apply the polarization recurrence and external clock powers",
           "status": "OPEN"
         },
         "exceptional_resonant_operational_signature": {
@@ -2166,7 +2171,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "all six 64x64 rows at r=64,128,192 for two_j=512,513 have width below 0.1; the Sobolev route remains OPEN because the Haar-relative density, repeated-Laplacian norm, polarized form norm and Green-weighted tail conversion are not certified; complete rails and the infinite tail remain OPEN",
+          "statement": "all six 64x64 rows at r=64,128,192 for two_j=512,513 have width below 0.1; the adaptive scale successor is separate; the Sobolev route remains OPEN because the Haar-relative density, repeated-Laplacian norm, polarized form norm and Green-weighted tail conversion are not certified; complete rails and the infinite tail remain OPEN",
           "status": "CERTIFIED"
         },
         "recoil_backreaction_order": {
@@ -2197,6 +2202,129 @@
         "m": "basis indices r=64,128,192, equivalently three declared fractions of the even index range",
         "omega": "external clock power p=0; no Green kernel applied",
         "parity": "adjacent even two_j=512 and odd two_j=513 scalar representations",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "all six two_j=1024,1025 widths are below 0.1; angular-only 64x128 refinement at the even 3/8 row remains above 0.1, while radial-only 128x64 refinement passes; complete diagonal, clock-power, polarized and infinite-tail rails remain OPEN input evaluator only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM.json",
+          "result_id": "BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM",
+          "sha256": "6289821dbfb1e6df2ce6f606d5818f41db803f6b91ff27fef9e9c0197a6212a6"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL.json",
+          "result_id": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+          "sha256": "176b262961c108ef01c1cbf89f1c42d408b59af6fcba9c469faf8d0da10db34f"
+        }
+      ],
+      "id": "observer.berger.detector_profile.adaptive_diagonal_fraction_scale",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=adaptive correlated Darboux scalar profile rail on three declared diagonal fractions at a second adjacent even/odd scale; omega=external clock power p=0; no Green kernel applied; OPEN: six second-scale scalar input rows are CERTIFIED, but no polarized Green image or detector response has been composed",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "input evaluator only; absolute-g3 recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "exact radius-1/128 radial bump and external-clock p=0 envelope; 1/8 and 1/4 use 64x64 cells, while 3/8 uses 128 radial by 64 angular cells",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: six second-scale scalar input rows are CERTIFIED, but no polarized Green image or detector response has been composed",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "apply the certified polarization recurrence to the declared two-scale rows and add external clock powers",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "all six two_j=1024,1025 widths are below 0.1; angular-only 64x128 refinement at the even 3/8 row remains above 0.1, while radial-only 128x64 refinement passes; complete diagonal, clock-power, polarized and infinite-tail rails remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "input evaluator only; absolute-g3 recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "adaptive correlated Darboux scalar profile rail on three declared diagonal fractions at a second adjacent even/odd scale",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 0,
+        "ell": "scalar two_j=1024,1025",
+        "k": "matching diagonal representation column",
+        "m": "basis indices r=128,256,384; the 3/8 row has radial-only refinement",
+        "omega": "external clock power p=0; no Green kernel applied",
+        "parity": "adjacent even two_j=1024 and odd two_j=1025 scalar representations",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -2432,7 +2560,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "c7c76ce33963c0421abe02a94bcd055abd3643eaa59b39fd3b378ede47deb028",
+  "generated_by_sha256": "71e6a06abc27b5587ad9ea83587dd8cab6752f6b3c1a700cf6d18c9573b44533",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

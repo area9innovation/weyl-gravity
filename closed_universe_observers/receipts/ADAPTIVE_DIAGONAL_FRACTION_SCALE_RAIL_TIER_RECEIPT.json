@@ -1,0 +1,41 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The correlated p=0 Jacobi evaluator is widened from the declared two_j=512,513 fraction seed to adjacent two_j=1024,1025. The 1/8 and 1/4 rows pass on 64 radial by 64 angular cells. The 3/8 rows pass on 128 radial by 64 angular cells. An angular-only 64 by 128 mutation at two_j=1024,r=384 remains above width 0.1, localizing the required refinement to the radial enclosure at this sentinel. This is a selected two-scale fraction rail, not a complete scalar/form rail. No clock-power/polarized stream, Sobolev or infinite tail, Green image, detector response, recoil, tangent-cone restriction, Bridge 3, finite-r/all-orders observer-morphism stability or quantum claim is promoted. The coefficientwise mixed epsilon_R^2 kappa unary prerequisite remains ordered before apparatus q2,q3 and the affine-K_Berger observer morphism.",
+  "tier_0": [
+    {"command": "python3 -m py_compile on the producer, verifier and test; JSON/schema parse; git diff --check on scoped paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_adaptive_diagonal_fraction_scale_rail.py", "elapsed_seconds": 0.60, "status": "PASS", "summary": "4 tests passed, covering six adaptive widths, radial-only refinement, angular-only mutation rejection and fail-closed complete-rail flags."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_adaptive_diagonal_fraction_scale_rail", "status": "PASS", "summary": "Schema, source/dependency hashes, exact scale-row coverage, anisotropic resolutions, widths, mutation and scoped-open flags passed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The generated observer atlas and shared fail-closed schema passed; detector response, complete/polarized rails and infinite tail remain OPEN."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_adaptive_diagonal_fraction_scale_rail --check", "elapsed_seconds": 78.99, "status": "PASS", "summary": "All six declared scale rows and the angular-only mutation were reevaluated in four worker processes and the certificate matched byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No complete scalar/form rail, infinite-mode theorem, Green image, detector-response lifecycle promotion, shared core-algebra change, freeze or release was claimed."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_adaptive_diagonal_fraction_scale_rail.py", "sha256": "e5fa38be7033c2dbf9e709428e127a9621ba53f23780bdf949325f54fc089e37"},
+    {"path": "closed_universe_observers/verify_berger_adaptive_diagonal_fraction_scale_rail.py", "sha256": "a2a389ad3bb3d284ec2bb371e16d6fc66b0ab37f7db49ff5646416d10eb0f9c2"},
+    {"path": "closed_universe_observers/tests/test_berger_adaptive_diagonal_fraction_scale_rail.py", "sha256": "7390a4c88a1e4e51f8618b1010ffab4a80b812bbe9e83bad745d395f4ebe7878"},
+    {"path": "closed_universe_observers/schema/berger-adaptive-diagonal-fraction-scale-rail-v1.schema.json", "sha256": "a6f1ec9ea9c9648dd18d9d262079e0307d8634ec9bcf45b09e97676a58f2e2fd"},
+    {"path": "closed_universe_observers/reports/berger-adaptive-diagonal-fraction-scale-rail.md", "sha256": "6406bb10c71da094ad5293a9facb513fa846771dda87c63b1a6d8e2a22b0c151"},
+    {"path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL.json", "sha256": "176b262961c108ef01c1cbf89f1c42d408b59af6fcba9c469faf8d0da10db34f"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "c07314cf33c9eb9038f0fe1ce870db50789fdad28daba1b405ef92263cdca766"}
+  ],
+  "claim_flags": {
+    "ADAPTIVE_TWO_SCALE_EVEN_ODD_FRACTION_RAIL_EXPORTED": true,
+    "SIX_TWO_J1024_1025_WIDTHS_BELOW_ONE_TENTH": true,
+    "RADIAL_REFINEMENT_NEED_LOCALIZED": true,
+    "ANGULAR_ONLY_REFINEMENT_MUTATION_REJECTED": true,
+    "COMPLETE_DIAGONAL_STREAM_EXPORTED": false,
+    "ALL_CLOCK_POWERS_AND_POLARIZED_ROWS_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

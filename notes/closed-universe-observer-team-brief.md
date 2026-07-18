@@ -568,7 +568,14 @@ ledger also records that the Haar-relative pushed-forward detector density,
 clock-uniform repeated-Laplacian norm, polarized form norm and Green-weighted
 tail conversion are not yet certified inputs.  The active gate is to optimize
 and widen these declared fractions, then construct polarized rows while
-deriving those Sobolev inputs.  Only after a complete rail or a validated tail
+deriving those Sobolev inputs.  `BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL`
+now widens the same three fractions to adjacent `two_j=1024,1025`.  The `1/8`
+and `1/4` rows remain below width `0.1` on `64 x 64`; the `3/8` pair passes on
+`128` radial by `64` angular cells.  Refining angle instead of radius at the
+even `3/8` sentinel leaves width approximately `0.10952` and is rejected.
+Thus the active gate is now to apply the certified polarization recurrence and
+external clock powers to these declared two-scale rows while deriving the
+Sobolev inputs.  Only after a complete rail or a validated tail
 succeeds should the infinite-mode Maxwell and massive-two-form images, recoil
 coefficient and second-order-cone restriction be composed.  Bridge 3 remains
 inactive.

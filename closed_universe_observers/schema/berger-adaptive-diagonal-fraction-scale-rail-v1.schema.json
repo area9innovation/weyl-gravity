@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-adaptive-diagonal-fraction-scale-rail-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "rail_declaration", "even_scale_rows", "odd_scale_rows", "canonical_scale_rail_sha256", "anisotropic_resolution_mutation", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-adaptive-diagonal-fraction-scale-rail-v1"},
+    "result_id": {"const": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_ADAPTIVE_P0_TWO_SCALE_DIAGONAL_FRACTION_RAIL_EXPORTED_COMPLETE_AND_POLARIZED_RAILS_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "maxProperties": 2},
+    "rail_declaration": {"type": "object"},
+    "even_scale_rows": {"type": "array", "minItems": 3, "maxItems": 3},
+    "odd_scale_rows": {"type": "array", "minItems": 3, "maxItems": 3},
+    "canonical_scale_rail_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "anisotropic_resolution_mutation": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["ADAPTIVE_TWO_SCALE_EVEN_ODD_FRACTION_RAIL_EXPORTED", "SIX_TWO_J1024_1025_WIDTHS_BELOW_ONE_TENTH", "RADIAL_REFINEMENT_NEED_LOCALIZED", "ANGULAR_ONLY_REFINEMENT_MUTATION_REJECTED", "COMPLETE_DIAGONAL_STREAM_EXPORTED", "ALL_CLOCK_POWERS_AND_POLARIZED_ROWS_EVALUATED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ADAPTIVE_TWO_SCALE_EVEN_ODD_FRACTION_RAIL_EXPORTED": {"const": true},
+        "SIX_TWO_J1024_1025_WIDTHS_BELOW_ONE_TENTH": {"const": true},
+        "RADIAL_REFINEMENT_NEED_LOCALIZED": {"const": true},
+        "ANGULAR_ONLY_REFINEMENT_MUTATION_REJECTED": {"const": true},
+        "COMPLETE_DIAGONAL_STREAM_EXPORTED": {"const": false},
+        "ALL_CLOCK_POWERS_AND_POLARIZED_ROWS_EVALUATED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "APPLY_THE_CERTIFIED_POLARIZATION_RECURRENCE_TO_THE_DECLARED_TWO_SCALE_ROWS_AND_ADD_EXTERNAL_CLOCK_POWERS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}
