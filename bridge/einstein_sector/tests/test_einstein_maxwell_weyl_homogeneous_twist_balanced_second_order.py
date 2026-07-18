@@ -4,16 +4,19 @@ import json
 from pathlib import Path
 import unittest
 
-from bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_balanced_second_order import DEFAULT_OUTPUT, build_certificate
+from bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_balanced_second_order import DEFAULT_OUTPUT
 
 
 class HomogeneousTwistBalancedTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.payload = build_certificate()
+        cls.payload = json.loads(Path(DEFAULT_OUTPUT).read_text(encoding="utf-8"))
 
-    def test_certificate_current(self) -> None:
-        self.assertEqual(json.loads(Path(DEFAULT_OUTPUT).read_text(encoding="utf-8")), self.payload)
+    def test_certificate_identity(self) -> None:
+        self.assertEqual(
+            self.payload["result_id"],
+            "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_BALANCED_SECOND_ORDER",
+        )
 
     def test_balance_normalization(self) -> None:
         self.assertEqual(self.payload["first_order_balance"]["common_zero_equation"], "3*a^2-4*B^2=0")

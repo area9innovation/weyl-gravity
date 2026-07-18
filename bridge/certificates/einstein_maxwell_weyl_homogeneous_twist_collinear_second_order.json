@@ -1,0 +1,158 @@
+{
+  "schema": "einstein-maxwell-weyl-homogeneous-twist-collinear-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.schema.json",
+  "schema_sha256": "f9f1727094dede67c94002f8cc3cf87405015e7be9a53c7b2838d10a8388f91d",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_COLLINEAR_SECOND_ORDER",
+  "result_state": "COMPLETE_STANDARD_COLLINEAR_HOMOGENEOUS_TWIST_COMMON_ZERO_FACE_EXTENDIBLE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "arbitrary real standard axial ell=1 twist-position and twist-velocity vectors A,B with A cross B=0, homogeneous a,c,d data satisfying 3a^2=4|B|^2, b=Q_e=W_x=0, fixed magnetic bundle",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.py",
+    "generator_sha256": "155a5ff09a70e1cb7f1ac211f8cdc5d18b0b2df6e256e80836d3449c1ced0ca7",
+    "inputs": {
+      "balanced_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
+        "sha256": "18824ae71c3b5bd59faa0de82e0de23d6679e26048590d8a91bf1a2ed12f86b2"
+      },
+      "so3_orbit": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.json",
+        "sha256": "a4fe918097c24f8d6f1d9b8ad283ab40ead71091920095e6bfcddc7406dcb756"
+      },
+      "homogeneous_quadric": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      }
+    }
+  },
+  "theorem": {
+    "parameter_order": [
+      "a",
+      "A",
+      "B",
+      "c",
+      "d"
+    ],
+    "common_zero_equations": [
+      "3*a^2=4*B^2",
+      "A cross B=0 (automatic on the declared axis)"
+    ],
+    "circumference_c_absent_from_complete_source": true,
+    "projected_source": {
+      "L0": {
+        "metric_00": "0",
+        "metric_01": "0",
+        "metric_11": "16*B**2/3",
+        "sphere_trace": "-8*B**2/3"
+      },
+      "polar_L2": {
+        "metric_00": "-(21*A**2 + 42*A*B*t + 21*B**2*t**2 + 17*B**2)/3",
+        "metric_01": "0",
+        "metric_11": "-(27*A**2 + 54*A*B*t + 27*B**2*t**2 + 13*B**2)/3",
+        "sphere_trace": "(3*A**2 + 6*A*B*t + 3*B**2*t**2 - 2*B**2)/3",
+        "metric_0a": "7*B*(A + B*t)/3",
+        "metric_1a": "0",
+        "sphere_tracefree": "2*(A**2 + 2*A*B*t + B**2*t**2 - 2*B**2)/3",
+        "maxwell_axial_density": "-(A**2 + 2*A*B*t + B**2*t**2 + B**2)/3"
+      },
+      "axial_L1": {
+        "metric_t": "0",
+        "metric_x": "(-4*A*a + 6*B*a*t + 5*B*d)/4",
+        "metric_angular": "0",
+        "maxwell_t": "0",
+        "maxwell_x": "(4*A*a + 2*B*a*t - B*d)/2",
+        "maxwell_angular": "0"
+      }
+    },
+    "correction": {
+      "homogeneous_L0_K2": "-4*B**2*t**4/9",
+      "polar_L2": {
+        "A_t2": "-5*B**2/6",
+        "B2": "0",
+        "C_t2": "5*B**2/6 - 2*(A + B*t)**2/3",
+        "U2": "-7*B**2/36"
+      },
+      "axial_L1": {
+        "h_x2": "A*a + B*a*t**3/6 + B*a*t + B*d*t**2/4",
+        "q_x2": "-B*a*t**3/6 - B*d*t**2/4"
+      },
+      "all_polar_remainders": {
+        "metric_00": "0",
+        "metric_01": "0",
+        "metric_11": "0",
+        "sphere_trace": "0",
+        "metric_0a": "0",
+        "metric_1a": "0",
+        "sphere_tracefree": "0",
+        "maxwell_axial_density": "0"
+      },
+      "all_axial_remainders": {
+        "metric_t": "0",
+        "metric_x": "0",
+        "metric_angular": "0",
+        "maxwell_t": "0",
+        "maxwell_x": "0",
+        "maxwell_angular": "0"
+      }
+    }
+  },
+  "SO3_promotion": {
+    "B_nonzero": "A cross B=0 makes A parallel to B; rotate their common axis to Y_z, apply the direct correction, and rotate back",
+    "B_zero_A_nonzero": "the balance forces a=0; rotate A to Y_z, apply the same direct correction at B=a=0, and rotate back",
+    "A_and_B_zero": "the result reduces to the certified homogeneous common-zero face",
+    "well_defined": "the axisymmetric correction is invariant under the SO(2) stabilizer of the chosen axis",
+    "all_rows": "naturality of the Weyl-Maxwell Euler operator transports every direct zero remainder"
+  },
+  "classification": {
+    "complete_collinear_standard_homogeneous_twist_common_zero_face_second_order_extendible": true,
+    "time_translation_orbit_strictly_enlarged": true,
+    "arbitrary_c_and_d_included": true,
+    "full_SO3_covariant_collinear_cone_classified": true,
+    "physical_or_extra_ell1_inputs_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "Nonzero twist position creates no new second-order obstruction on the standard collinear common-zero face. The result is stronger than the time-translation orbit: c is arbitrary and d is removed by an additional axial polynomial correction. SO(3) covariance closes every standard twist pair satisfying A cross B=0 and the homogeneous energy balance, within the declared b=Q_e=W_x=0 slice.",
+  "next_gate": "add physical and exceptional fourth-order ell=1 input modes, then enlarge the homogeneous slice to b,Q_e,W_x",
+  "claim_boundary": "This does not include general homogeneous b,Q_e,W_x, physical or extra ell=1 inputs, all-orders integration, final residual reduction, causal scattering, or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 47.1,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_collinear_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_twist_collinear_second_order"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "balanced_fixture",
+        "so3_orbit",
+        "homogeneous_quadric"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "physical and exceptional fourth-order ell=1 inputs and the enlarged homogeneous slice remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_collinear_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_twist_collinear_second_order"
+  ]
+}

@@ -39,9 +39,11 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _direct_source() -> tuple[dict[str, sp.Expr], tuple[sp.Symbol, ...]]:
+def _direct_source_general() -> tuple[dict[str, sp.Expr], tuple[sp.Symbol, ...]]:
     epsilon = sp.symbols("epsilon")
-    radion, velocity = sp.symbols("a B", real=True)
+    radion, position, velocity, circumference_position, circumference_velocity = sp.symbols(
+        "a A B c d", real=True
+    )
     time, space, theta, azimuth = sp.symbols("t x theta phi", real=True)
     coordinates = (time, space, theta, azimuth)
     sine = sp.sin(theta)
@@ -49,11 +51,18 @@ def _direct_source() -> tuple[dict[str, sp.Expr], tuple[sp.Symbol, ...]]:
     axial_one_form = -sine * sp.diff(harmonic, theta)
     metric = sp.diag(
         -1,
-        1 + epsilon * radion * time**2,
+        1
+        + epsilon
+        * (
+            radion * time**2
+            + circumference_position
+            + circumference_velocity * time
+        ),
         1 + epsilon * radion,
         (1 + epsilon * radion) * sine**2,
     )
-    metric[1, 3] = metric[3, 1] = epsilon * velocity * time * axial_one_form
+    amplitude = position + velocity * time
+    metric[1, 3] = metric[3, 1] = epsilon * amplitude * axial_one_form
     tr = lambda expression: _trunc(expression, epsilon, 2)
     inverse = metric.inv().applyfunc(tr)
     connection = [[[sp.S.Zero for _ in range(4)] for _ in range(4)] for _ in range(4)]
@@ -72,7 +81,7 @@ def _direct_source() -> tuple[dict[str, sp.Expr], tuple[sp.Symbol, ...]]:
                     )
                     / 2
                 )
-    potential_x = -velocity * time * harmonic
+    potential_x = -amplitude * harmonic
     field = sp.zeros(4)
     field[2, 3] = sine
     field[3, 2] = -sine
@@ -96,7 +105,40 @@ def _direct_source() -> tuple[dict[str, sp.Expr], tuple[sp.Symbol, ...]]:
             for index, value in maxwell_equations.items()
         }
     )
-    return rows, (radion, velocity, time, theta)
+    return rows, (
+        radion,
+        position,
+        velocity,
+        circumference_position,
+        circumference_velocity,
+        time,
+        theta,
+    )
+
+
+def _direct_source() -> tuple[dict[str, sp.Expr], tuple[sp.Symbol, ...]]:
+    rows, (
+        radion,
+        position,
+        velocity,
+        circumference_position,
+        circumference_velocity,
+        time,
+        theta,
+    ) = _direct_source_general()
+    specialized = {
+        name: _canonical(
+            value.subs(
+                {
+                    position: 0,
+                    circumference_position: 0,
+                    circumference_velocity: 0,
+                }
+            )
+        )
+        for name, value in rows.items()
+    }
+    return specialized, (radion, velocity, time, theta)
 
 
 def _project_source(rows: dict[str, sp.Expr], symbols: tuple[sp.Symbol, ...]) -> dict[str, object]:
@@ -259,7 +301,7 @@ def build_certificate() -> dict[str, object]:
         "verification_receipt": {
             "producing_date": "2026-07-18",
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.2, "commands": ["python3 -m py_compile <scoped Python paths>", "python3 -m json.tool <certificate>", "git diff --check -- <scoped paths>"]},
-            "tier_1": {"status": "PASS", "elapsed_seconds": 60.0, "commands": [
+            "tier_1": {"status": "PASS", "elapsed_seconds": 50.0, "commands": [
                 "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_balanced_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
                 "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.py",
                 "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_twist_balanced_second_order"

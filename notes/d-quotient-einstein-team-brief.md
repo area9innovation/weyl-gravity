@@ -1860,9 +1860,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    twist-velocity orbit, not only an `m=0` ray.  In the Cartesian real
    harmonic basis the Gram matrix is `(4*pi/3)I`, so every vector `B` obeying
    `3a^2=4|B|^2` rotates to the certified axisymmetric fixture, and the full
-   correction rotates back.  The first genuinely new twist datum is therefore
-   a nonzero position vector `A` parallel to `B`; non-collinear data are
-   excluded already by `mu_J=-4 A cross B`.
+   correction rotates back.  The nonzero-position refinement is now closed
+   as well.  A direct four-dimensional source calculation with arbitrary
+   collinear `A,B`, arbitrary homogeneous `c,d`, and `3a^2=4|B|^2` has an
+   explicit zero-remainder correction in every `L=0`, polar `L=2`, and axial
+   `L=1` output row.  This is strictly larger than a time-translation orbit:
+   `c` drops out, while `d` is absorbed by an additional axial polynomial
+   correction.  Since the moment map already requires `A cross B=0`, `SO(3)`
+   covariance promotes the axis calculation to the complete standard
+   collinear vector face, including its `B=0` boundary.  The next compact
+   gate is physical and exceptional fourth-order `ell=1` input data, followed
+   by the enlarged homogeneous `b,Q_e,W_x` slice.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

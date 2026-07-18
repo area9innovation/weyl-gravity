@@ -12,7 +12,7 @@
   "domain": "one real m=0 axial twist velocity B balanced by the standard homogeneous a-coordinate on the fixed magnetic bundle, before final residual quotient",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.py",
-    "generator_sha256": "b51ce47d9f898ce44620812ed6161e705cd0c5142383bc5c8ee6ee80b6528137",
+    "generator_sha256": "4fe0605ca8474dac90f7e43a7145b20fafa608d03ba6e863c0c16400baaa2582",
     "inputs": {
       "moment_maps": {
         "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
@@ -130,7 +130,7 @@
     },
     "tier_1": {
       "status": "PASS",
-      "elapsed_seconds": 60.0,
+      "elapsed_seconds": 50.0,
       "commands": [
         "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_balanced_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
         "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.py",
