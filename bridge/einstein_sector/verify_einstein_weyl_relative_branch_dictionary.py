@@ -28,11 +28,9 @@ def main() -> None:
         raise AssertionError("axial derived-cofiber lifecycle changed")
     if rows["ph.generic.polar.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
         raise AssertionError("polar derived-cofiber lifecycle changed")
-    if not any(
-        "cyclic BV compatibility" in item
-        for item in rows["ph.generic.polar.relative"]["missing"]
-    ):
-        raise AssertionError("polar cyclic boundary was hidden")
+    for identifier in ("ph.generic.axial.relative", "ph.generic.polar.relative"):
+        if rows[identifier]["action_derived_pairing"].get("fixed_identity_cyclic_compatibility") != "OBSTRUCTED by a nonradical solution-pairing defect":
+            raise AssertionError(f"fixed-identity cyclic obstruction was hidden: {identifier}")
     if rows["ph.exceptional.ell1.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("exceptional k0 solution cofiber was lost")
     if rows["ph.global.homogeneous.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":

@@ -2070,8 +2070,11 @@ cofiber triangles, solution quotients and direct action-derived pairings.
 The exceptional `ell=1,k=0` solution cofiber now has explicit CRT projectors
 and a nonradical direct current.  The complete homogeneous target quotient is
 also exhausted by the Einstein--Maxwell image, so its solution cofiber is
-zero despite the nontrivial nilpotent relative symplectic shear.  Polar cyclic
-BV compatibility, exceptional off-shell/nonzero-`k` maps, global off-shell
+zero despite the nontrivial nilpotent relative symplectic shear.  Strict
+cyclicity of the generic axial and polar maps with their fixed identity field
+inclusion is now obstructed by a nonradical solution-pairing defect; corrected
+nonidentity or chain-homotopy cyclic morphisms remain open.  Exceptional
+off-shell/nonzero-`k` maps, global off-shell
 endpoints, charge endpoints and the boundary carrier remain
 explicit `NO_CERTIFIED_MAP` fields.
 The generalized-zero twist primary is likewise exhausted by the Einstein

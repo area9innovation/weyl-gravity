@@ -17,6 +17,7 @@ INPUTS = {
     "axial_ring": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
     "polar_ring": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
     "polar_lift": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+    "generic_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "axial_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "exceptional_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
@@ -98,9 +99,10 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
                 "extra_inertia": axial_pairing["extra_branch_signature_for_lambda_ge_6"],
                 "complete_inertia": axial_pairing["complete_generic_axial_target_signature"],
                 "Einstein_extra_orthogonal": True,
+                "fixed_identity_cyclic_compatibility": "OBSTRUCTED by a nonradical solution-pairing defect",
             },
-            "missing": [],
-            "evidence": _evidence("triangle", "axial_ring", "axial_current"),
+            "missing": ["corrected nonidentity or chain-homotopy cyclic morphism", "final residual descent"],
+            "evidence": _evidence("triangle", "axial_ring", "axial_current", "generic_cyclic_obstruction"),
         },
         {
             "id": "ph.generic.polar.relative",
@@ -128,9 +130,10 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
                 "extra_inertia": polar_pairing["extra_positive_frequency_inertia"],
                 "complete_inertia": polar_pairing["complete_polar_target_inertia_before_residual_quotient"],
                 "Einstein_extra_orthogonal": True,
+                "fixed_identity_cyclic_compatibility": "OBSTRUCTED by a nonradical solution-pairing defect",
             },
-            "missing": ["cyclic BV compatibility of the polar chain map", "final residual descent"],
-            "evidence": _evidence("standard", "polar_ring", "polar_lift", "polar_current"),
+            "missing": ["corrected nonidentity or chain-homotopy cyclic morphism", "final residual descent"],
+            "evidence": _evidence("standard", "polar_ring", "polar_lift", "polar_current", "generic_cyclic_obstruction"),
         },
         {
             "id": "ph.exceptional.ell1.relative",
@@ -244,6 +247,8 @@ def build() -> dict[str, object]:
         raise AssertionError("polar ungauged chain-map input changed")
     if records["polar_lift"]["classification"]["cyclic_BV_chain_map_certified"]:
         raise AssertionError("polar cyclic BV lifecycle changed")
+    if records["generic_cyclic_obstruction"]["classification"]["fixed_identity_cyclic_pairing_compatibility"] != "OBSTRUCTED":
+        raise AssertionError("generic fixed-identity cyclic obstruction changed")
     if not records["polar_current"]["classification"]["direct_four_dimensional_Lee_Wald_match"]:
         raise AssertionError("polar direct current changed")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
@@ -276,7 +281,7 @@ def build() -> dict[str, object]:
             "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
             "current_global_map_lifecycle": "ONSHELL_MAP_ONLY",
             "activation_gate": "OPEN",
-            "reason": "generic axial and polar derived chain cofibers, the exceptional k=0 solution cofiber and zero homogeneous and twist-primary solution cofibers are certified, but cyclic BV compatibility, exceptional off-shell/nonzero-k maps, global off-shell endpoints and the boundary domain are absent",
+            "reason": "generic axial and polar derived chain cofibers, their fixed-identity cyclic obstruction, the exceptional k=0 solution cofiber and zero homogeneous and twist-primary solution cofibers are certified, but corrected cyclic morphisms, exceptional off-shell/nonzero-k maps, global off-shell endpoints and the boundary domain are absent",
             "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             "requested_full_artifact_certified": False,
         },
@@ -299,6 +304,7 @@ def build() -> dict[str, object]:
             "generic_polar_derived_cofiber_certified": True,
             "generic_axial_and_polar_solution_cofibers_certified": True,
             "generic_axial_and_polar_action_pairings_exported": True,
+            "generic_fixed_identity_cyclic_compatibility_obstructed": True,
             "exceptional_k0_solution_cofiber_certified": True,
             "homogeneous_solution_cofiber_zero": True,
             "twist_solution_cofiber_zero": True,
@@ -307,8 +313,8 @@ def build() -> dict[str, object]:
             "bridge_1_activation_gate_satisfied": False,
             "cross_background_mode_identification_made": False,
         },
-        "interpretation": "The compact Plebanski-Hacyan calculation already supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, an explicit exceptional k=0 solution cofiber, and zero homogeneous and twist-primary solution cofibers. It does not yet supply the cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
-        "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+        "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, a nonradical obstruction to strict cyclicity of their fixed identity field maps, an explicit exceptional k=0 solution cofiber, and zero homogeneous and twist-primary solution cofibers. It does not yet supply a corrected cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+        "next_gate": "classify corrected nonidentity or chain-homotopy cyclic morphisms, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),

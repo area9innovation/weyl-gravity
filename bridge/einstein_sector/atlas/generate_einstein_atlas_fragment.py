@@ -33,6 +33,7 @@ CERTIFICATES = {
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+    "generic_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "abstract_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -117,12 +118,12 @@ def entries() -> list[dict[str, object]]:
             _scope(carrier="same-background Einstein-Maxwell/Weyl-Maxwell inclusion, solution cofibers and branch dictionary", degree=1, parity="axial, polar, exceptional and global sectors kept separate", ell="generic >=2 plus explicitly listed exceptional/global gaps", m="all where certified", k="all compact momenta where certified", omega="q-primary, p-primary and generalized-zero branches without cross-background identification"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
             ("CERTIFIED", "The same-background branch dictionary separates q-primary Einstein, p-primary extra and generalized-zero carriers in every declared certified sector."),
-            ("CERTIFIED", "The complete standard pullback and the generic axial/polar direct extra Lee-Wald blocks are exported as three distinct forms."),
+            ("CERTIFIED", "The complete standard pullback and generic axial/polar direct extra Lee-Wald blocks are exported as three distinct forms; their nonradical generic identity-pullback defect OBSTRUCTS strict cyclic compatibility of the fixed identity chain maps."),
             ("OPEN", "Quadratic data are partial handoffs and do not activate the linear bridge or complete the relative obstruction map."),
-            ("OPEN", "Global map lifecycle is ONSHELL_MAP_ONLY: both generic parity chain cofibers, the exceptional k=0 solution cofiber and zero homogeneous and twist-primary solution cofibers are certified, while cyclic BV compatibility, nonzero-k exceptional and global off-shell cofibers remain absent."),
+            ("OPEN", "Global map lifecycle is ONSHELL_MAP_ONLY; the complete relative resonance map and Bridge 1 activation are not certified."),
             _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
             _evidence("branch_dictionary"),
-            "Bridge 1 activation remains OPEN. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+            "Global map lifecycle is ONSHELL_MAP_ONLY and Bridge 1 activation remains OPEN. Corrected cyclic morphisms, nonzero-k exceptional and global off-shell cofibers remain absent. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
         ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
@@ -259,6 +260,8 @@ def build() -> dict[str, object]:
         raise AssertionError("homogeneous solution-cofiber input changed")
     if not records["twist_cofiber"]["classification"]["twist_solution_cofiber_zero"]:
         raise AssertionError("twist solution-cofiber input changed")
+    if records["generic_cyclic_obstruction"]["classification"]["fixed_identity_cyclic_pairing_compatibility"] != "OBSTRUCTED":
+        raise AssertionError("generic cyclic-obstruction input changed")
     if not records["abstract_cone"]["flags"]["FINITE_HARMONIC_TANGENT_CONE_FORMULA"]:
         raise AssertionError("abstract tangent-cone theorem changed")
     value = {

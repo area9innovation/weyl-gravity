@@ -15,6 +15,7 @@
           2,
           0
         ],
+        "fixed_identity_cyclic_compatibility": "OBSTRUCTED by a nonradical solution-pairing defect",
         "status": "CERTIFIED"
       },
       "branch_representatives": {
@@ -56,6 +57,11 @@
           "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
           "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
+          "result_id": "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1",
+          "sha256": "8c4d4eb69068c2767955f0b80695cfb81fc086ebaf5658da474f6ebb9f606e90"
         }
       ],
       "id": "ph.generic.axial.relative",
@@ -64,7 +70,10 @@
         "status": "CERTIFIED"
       },
       "map_lifecycle": "DERIVED_COFIBER_TRIANGLE",
-      "missing": [],
+      "missing": [
+        "corrected nonidentity or chain-homotopy cyclic morphism",
+        "final residual descent"
+      ],
       "projection_or_cofiber": {
         "map": "target/q-primary Einstein image = (K[omega]/(p))^2; the quotient projection is the p-primary CRT projection on each physical fibre",
         "status": "CERTIFIED"
@@ -108,6 +117,7 @@
           2,
           0
         ],
+        "fixed_identity_cyclic_compatibility": "OBSTRUCTED by a nonradical solution-pairing defect",
         "status": "CERTIFIED"
       },
       "branch_representatives": {
@@ -158,6 +168,11 @@
           "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
           "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
+          "result_id": "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1",
+          "sha256": "8c4d4eb69068c2767955f0b80695cfb81fc086ebaf5658da474f6ebb9f606e90"
         }
       ],
       "id": "ph.generic.polar.relative",
@@ -167,7 +182,7 @@
       },
       "map_lifecycle": "DERIVED_COFIBER_TRIANGLE",
       "missing": [
-        "cyclic BV compatibility of the polar chain map",
+        "corrected nonidentity or chain-homotopy cyclic morphism",
         "final residual descent"
       ],
       "projection_or_cofiber": {
@@ -491,7 +506,7 @@
     "current_global_map_lifecycle": "ONSHELL_MAP_ONLY",
     "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
     "priority": 1,
-    "reason": "generic axial and polar derived chain cofibers, the exceptional k=0 solution cofiber and zero homogeneous and twist-primary solution cofibers are certified, but cyclic BV compatibility, exceptional off-shell/nonzero-k maps, global off-shell endpoints and the boundary domain are absent",
+    "reason": "generic axial and polar derived chain cofibers, their fixed-identity cyclic obstruction, the exceptional k=0 solution cofiber and zero homogeneous and twist-primary solution cofibers are certified, but corrected cyclic morphisms, exceptional off-shell/nonzero-k maps, global off-shell endpoints and the boundary domain are absent",
     "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
     "requested_full_artifact_certified": false
   },
@@ -505,6 +520,7 @@
     "generic_axial_and_polar_action_pairings_exported": true,
     "generic_axial_and_polar_solution_cofibers_certified": true,
     "generic_axial_derived_cofiber_certified": true,
+    "generic_fixed_identity_cyclic_compatibility_obstructed": true,
     "generic_polar_derived_cofiber_certified": true,
     "homogeneous_solution_cofiber_zero": true,
     "same_background_only": true,
@@ -514,12 +530,12 @@
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "interpretation": "The compact Plebanski-Hacyan calculation already supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, an explicit exceptional k=0 solution cofiber, and zero homogeneous and twist-primary solution cofibers. It does not yet supply the cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+  "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, a nonradical obstruction to strict cyclicity of their fixed identity field maps, an explicit exceptional k=0 solution cofiber, and zero homogeneous and twist-primary solution cofibers. It does not yet supply a corrected cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+  "next_gate": "classify corrected nonidentity or chain-homotopy cyclic morphisms, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "703b681aa8a05fd4db41a21faf610727345d3d53090c805e8e05630121f8f5da",
+    "generator_sha256": "3366fcace9dab199b60259854317084f1bb20fa85d187f397cc13bf311df6877",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
@@ -544,6 +560,10 @@
       "exceptional_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
         "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "generic_cyclic_obstruction": {
+        "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
+        "sha256": "8c4d4eb69068c2767955f0b80695cfb81fc086ebaf5658da474f6ebb9f606e90"
       },
       "homogeneous_cofiber": {
         "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
@@ -599,7 +619,7 @@
   "result_state": "SAME_BACKGROUND_BRANCH_DICTIONARY_EXPORTED_FULL_RELATIVE_TRIANGLE_ACTIVATION_GATE_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "9c3422afe59b8cc71f8d0940d7ff532516b3d5b033a175706c2c20e65f14c465",
+  "schema_sha256": "0a20c5c73d2b9ceab0dd056198623d281bbd0a355848855ae24be53e4ffdd33b",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",

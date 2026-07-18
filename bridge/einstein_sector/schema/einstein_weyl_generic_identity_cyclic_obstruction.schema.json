@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "map_lifecycle",
+    "cyclic_obstruction_theorem", "classification", "interpretation",
+    "next_gate", "claim_boundary", "provenance", "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-generic-identity-cyclic-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_GENERIC_IDENTITY_CYCLIC_OBSTRUCTION_V1"},
+    "map_lifecycle": {"const": "DERIVED_COFIBER_TRIANGLE_NONCYCLIC_FIXED_IDENTITY"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "generic_axial_and_polar_chain_maps_imported",
+        "fixed_identity_cyclic_pairing_compatibility",
+        "induced_solution_pairing_defect_nonzero",
+        "induced_solution_pairing_defect_nonradical",
+        "strict_cyclic_enhancement_with_fixed_identity_field_map_exists",
+        "corrected_nonidentity_or_chain_homotopy_cyclic_morphism_classified",
+        "final_residual_descent_certified"
+      ],
+      "properties": {
+        "fixed_identity_cyclic_pairing_compatibility": {"const": "OBSTRUCTED"},
+        "strict_cyclic_enhancement_with_fixed_identity_field_map_exists": {"const": false}
+      }
+    }
+  }
+}

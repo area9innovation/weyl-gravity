@@ -9,7 +9,10 @@ branch representatives and action-derived pairings.  The generic axial block
 and generic polar blocks both have `DERIVED_COFIBER_TRIANGLE` lifecycle at the
 polynomial ghost--field--equation--identity level, complete solution-module
 quotients, and direct Lee--Wald forms.  Cyclic BV compatibility of the polar
-chain map is not certified.
+chain map is no longer merely open: strict compatibility with the fixed
+identity field map is obstructed by a nonradical solution-pairing defect in
+both parities.  Corrected nonidentity or chain-homotopy cyclic morphisms remain
+open.
 
 The exceptional `ell=1,k=0` solution cofiber now has explicit CRT projectors
 and a nonradical action pairing.  The homogeneous solution cofiber is zero,
