@@ -1,0 +1,184 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result certifies the downstream Maxwell-to-detector energy dual norms for both fixed Berger detector profiles. In physical time t, Theta=3t/4, so the factor 4/3 in dvol_gHat=(4/3)dTheta dSigma cancels the factor 3/4 in <dTheta wedge dR,F>; the unit clock bump leaves only the spatial L2 dual norm of rho J dR. The repaired identity J dSigma=d3R, validated B and B^2 radial integrals, and exact rod derivative matrix give rational squared-norm uppers and dyadic norm uppers for D0 and D1. Composing the unit Maxwell retarded energy estimate with the certified massive finite-slab constant yields all four symbolic bare tail radii D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A for m_b>0. This closes the factorwise analytic tail map, but it does not choose numerical masses or couplings, serialize the complete modewise recoil integrand, evaluate any of the four scalar intervals, certify a recoil-corrected determinant, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_status": "TWO_DETECTOR_DUAL_NORMS_AND_FOUR_SYMBOLIC_RECOIL_TAIL_RADII_CERTIFIED",
+  "clock_lapse_cancellation": {
+    "clock_relation": "Theta=3t/4",
+    "consequence": "|Q_a[F]|<=||rho_a J_a dR_aI||_L2 sup_t||i_e0 F(t)||_L2",
+    "electric_pairing_relation": "<dTheta wedge dR,F>=(3/4)<dt wedge dR,F>",
+    "product": "(4/3)*(3/4)=1",
+    "volume_relation": "dvol_gHat=(4/3)dTheta dSigma"
+  },
+  "dependency_refs": {
+    "chart": {
+      "path": "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "result_id": "BERGER_QUANTITATIVE_DETECTOR_ROD_CHART",
+      "sha256": "9332f4dde9e9f0ad9f677ed92c2438ed0819aeeed6e286338d0d85561faf73d4"
+    },
+    "clock_uniform": {
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1.json",
+      "result_id": "BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1",
+      "sha256": "ed9dedffaf67ba22995bbd9c4972970af554bb5db80575949f0b02f065249076"
+    },
+    "massive_constant": {
+      "path": "closed_universe_observers/certificates/BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT.json",
+      "result_id": "BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT",
+      "sha256": "f927e2e8eea5f5ef9bdbadd2d5c68d162eccb6d428b5356e6024f7d2405dd58e"
+    },
+    "maxwell_energy": {
+      "path": "closed_universe_observers/certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json",
+      "result_id": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL",
+      "sha256": "f3d7e04d7f3035f7435dc1da5d8e9f8ad846ee23092ea618c8dc9c321343aa55"
+    },
+    "normalization": {
+      "path": "closed_universe_observers/certificates/BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR.json",
+      "result_id": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR",
+      "sha256": "9c8b22a0794c20579a3aaf69e82f498d43013035f15fc3f8c3434adfc8587328"
+    },
+    "profiles": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+      "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "detector_dual_norms": [
+    {
+      "J_times_polarization_norm_squared_upper": "1",
+      "detector_energy_dual_norm_upper": "1758269639118428460288861377872950298424902801148367/1461501637330902918203684832716283019655932542976",
+      "detector_id": "D0",
+      "epsilon": "1/128",
+      "polarization": "axial dR0_1",
+      "spatial_profile_L2_norm_squared_upper": "84422163717058634840226373549253800298720626989160043928488846713814641142089121849126069314883944448/58328947136625567263356992672938377014869766550947367576876436849108261985376313763069946680675",
+      "spatial_profile_L2_norm_upper": "1758269639118428460288861377872950298424902801148367/1461501637330902918203684832716283019655932542976",
+      "spatial_profile_L2_norm_upper_decimal": "1.203056906819e+03"
+    },
+    {
+      "J_times_polarization_norm_squared_upper": "40/9",
+      "detector_energy_dual_norm_upper": "3706757866891016454392240058591127662059153751469985/1461501637330902918203684832716283019655932542976",
+      "detector_id": "D1",
+      "epsilon": "1/128",
+      "polarization": "transverse dR1_2",
+      "spatial_profile_L2_norm_squared_upper": "675377309736469078721810988394030402389765015913280351427910773710517129136712974793008554519071555584/104992104845926021074042586811289078626765579791705261638377586328394871573677364773525904025215",
+      "spatial_profile_L2_norm_upper": "3706757866891016454392240058591127662059153751469985/1461501637330902918203684832716283019655932542976",
+      "spatial_profile_L2_norm_upper_decimal": "2.536266653564e+03"
+    }
+  ],
+  "flags": {
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORM_EXPORTED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED": true,
+    "QUANTUM_CLAIM": false,
+    "TWO_DETECTOR_ENERGY_DUAL_NORMS_EXPORTED": true
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "retain_uncancelled_clock_lapse_factor"
+    },
+    {
+      "detected": true,
+      "name": "identify_axial_and_transverse_rod_norms"
+    },
+    {
+      "detected": true,
+      "name": "drop_longitudinal_mass_inverse_squared_term"
+    }
+  ],
+  "next_gate": "STREAM_THE_COMPLETE_MODEWISE_INTEGRAND_INTO_FOUR_SYMBOLIC_RECOIL_INTERVALS_WITH_DECLARED_MASSES_COUPLINGS_AND_STOPPING_GOAL",
+  "profile_norm_inputs": {
+    "clock_uniform_amplitude_interval": [
+      "82915/82944",
+      "1"
+    ],
+    "epsilon": "1/128",
+    "measure_identity": "J dSigma=d3R",
+    "normalization_lower": "C_B3>=12 integral_0^1 r^2 B(r^2)dr",
+    "polarization_bounds": "J|dR0_1|^2<=1 and J|dR1_2|^2<=40/9 on either translated support",
+    "squared_profile_integral_upper": "C_B3,2<=16 integral_0^1 r^2 B(r^2)^2dr"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_downstream_maxwell_detector_dual_norms.py",
+        "sha256": "f1651de9a49227c6c9ad8ec42a07806a155d4d3abef6f3ceb9dd308c1541fab5"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_downstream_maxwell_detector_dual_norms.py",
+        "sha256": "bc730eb9fe9f54e5d7f3ed89fec4bebe27e57786d821eb6610eb5ce2db71a943"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_downstream_maxwell_detector_dual_norms.py",
+        "sha256": "9a43cad993acf6704647a695d8efade2c0e2f8cd9894959327f2be70a20dc4b7"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-downstream-maxwell-detector-dual-norms-v1.schema.json",
+        "sha256": "822a93c7c3abe2c482b285e976772875fbaceb75007ae5cdeed3838f34c64b58"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-downstream-maxwell-detector-dual-norms.md",
+        "sha256": "5dc4b9a9beb65ad33d470adc9fa67d0b5e8ba8663f3707024b5cacac4797405a"
+      }
+    ]
+  },
+  "result_id": "BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS",
+  "retarded_energy_composition": {
+    "bare_scalar_bound": "|Q_a[d G_A,ret delta(h_b K_b)]| <= D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A",
+    "four_channel_bounds": [
+      {
+        "bare_tail_radius": "((493385079636633405341335330372834599843522041353153385590946936872634190671415852173346627720906276864/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569)/m_b^2+(37509752301193140486162376061289606366397926424498496/220480274480969204810823647005560476068131788413)/m_b) E_A",
+        "coupling_dressing": "multiply the bare channel by |g_c|^2 in the absolute-g^3 recoil loop",
+        "detector_id": "D0",
+        "dual_times_m_inverse_coefficient": "37509752301193140486162376061289606366397926424498496/220480274480969204810823647005560476068131788413",
+        "dual_times_m_inverse_squared_coefficient": "493385079636633405341335330372834599843522041353153385590946936872634190671415852173346627720906276864/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569",
+        "massive_channel": "b_0",
+        "switch_id": "h_0"
+      },
+      {
+        "bare_tail_radius": "((54820564404070378371259481152537177760391337928128153954549659652514910074601761352594069746767364096/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569)/m_b^2+(37509752301193140486162376061289606366397926424498496/661440823442907614432470941016681428204395365239)/m_b) E_A",
+        "coupling_dressing": "multiply the bare channel by |g_c|^2 in the absolute-g^3 recoil loop",
+        "detector_id": "D0",
+        "dual_times_m_inverse_coefficient": "37509752301193140486162376061289606366397926424498496/661440823442907614432470941016681428204395365239",
+        "dual_times_m_inverse_squared_coefficient": "54820564404070378371259481152537177760391337928128153954549659652514910074601761352594069746767364096/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569",
+        "massive_channel": "b_1",
+        "switch_id": "h_1"
+      },
+      {
+        "bare_tail_radius": "((1040147076796881723632044411105877358829810696913018371333234998995220414079014684753598571363822469120/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569)/m_b^2+(237232503481025053081103363749832170371785840094079040/661440823442907614432470941016681428204395365239)/m_b) E_A",
+        "coupling_dressing": "multiply the bare channel by |g_c|^2 in the absolute-g^3 recoil loop",
+        "detector_id": "D1",
+        "dual_times_m_inverse_coefficient": "237232503481025053081103363749832170371785840094079040/661440823442907614432470941016681428204395365239",
+        "dual_times_m_inverse_squared_coefficient": "1040147076796881723632044411105877358829810696913018371333234998995220414079014684753598571363822469120/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569",
+        "massive_channel": "b_0",
+        "switch_id": "h_0"
+      },
+      {
+        "bare_tail_radius": "((346715692265627241210681470368625786276603565637672790444411666331740138026338228251199523787940823040/145834654305610561067509223073859594202586230384745187120387979140278812325771209305061403175707)/m_b^2+(237232503481025053081103363749832170371785840094079040/1984322470328722843297412823050044284613186095717)/m_b) E_A",
+        "coupling_dressing": "multiply the bare channel by |g_c|^2 in the absolute-g^3 recoil loop",
+        "detector_id": "D1",
+        "dual_times_m_inverse_coefficient": "237232503481025053081103363749832170371785840094079040/1984322470328722843297412823050044284613186095717",
+        "dual_times_m_inverse_squared_coefficient": "346715692265627241210681470368625786276603565637672790444411666331740138026338228251199523787940823040/145834654305610561067509223073859594202586230384745187120387979140278812325771209305061403175707",
+        "massive_channel": "b_1",
+        "switch_id": "h_1"
+      }
+    ],
+    "mass_domain": "m_b>0",
+    "massive_bound": "integral||delta(h_b K_b)||dt <= (3H_b^2/m_b^2+8H_b/(3m_b))E_A",
+    "maxwell_bound": "sup_t||d G_A,ret J||_energy <= integral||J(t)||_L2 dt"
+  },
+  "route_disposition": {
+    "Maxwell_massive_detector_tail_composition": "CERTIFIED_FOR_SYMBOLIC_POSITIVE_MASSES",
+    "complete_modewise_scalar_integrand": "OPEN",
+    "downstream_Maxwell_detector_dual_norm": "CERTIFIED_FOR_BOTH_DETECTORS",
+    "four_scalar_recoil_intervals": "OPEN",
+    "numerical_mass_coupling_specialization": "OPEN"
+  },
+  "schema": "closed-universe-berger-downstream-maxwell-detector-dual-norms-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

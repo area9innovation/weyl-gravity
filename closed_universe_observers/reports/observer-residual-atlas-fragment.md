@@ -83,6 +83,14 @@ coderivative/sine multipliers are contractions.  The atlas keeps response and
 gauge-survival `OPEN`, because the polarized clock-uniform Sobolev norm,
 numerical tail product and massive-two-form continuation have not been
 evaluated.
+The downstream detector-dual row is now `CERTIFIED`.  Exact cancellation of
+the clock lapse reduces each detector functional to a spatial `L2` pairing,
+giving distinct rigorous energy-dual bounds for the axial D0 and transverse
+D1 profiles.  Composing those bounds with the Maxwell graph tail and both
+symbolic positive-mass finite-slab constants exports four symbolic recoil-tail
+radii.  The atlas keeps the actual recoil scalars `OPEN`: numerical masses and
+couplings, a stopping goal, and the complete streamed scalar integrand have
+not been supplied.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

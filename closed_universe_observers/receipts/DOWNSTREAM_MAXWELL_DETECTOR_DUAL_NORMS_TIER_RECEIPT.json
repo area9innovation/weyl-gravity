@@ -1,0 +1,45 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact clock lapse cancellation reduces both detector functionals to spatial L2 energy duals. Distinct axial and transverse norm bounds compose with both symbolic positive-mass finite-slab constants to give four certified bare recoil-tail radii. Numerical masses/couplings, a stopping goal, the complete modewise scalar integrand, four recoil intervals, cone restriction, Bridge 3, nonlinear all-orders stability and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_downstream_maxwell_detector_dual_norms.py closed_universe_observers/verify_berger_downstream_maxwell_detector_dual_norms.py", "status": "PASS"},
+    {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_downstream_maxwell_detector_dual_norms", "status": "PASS", "summary": "Regeneration, lapse cancellation, detector distinction, four-channel composition and fail-closed interval lifecycle passed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "status": "PASS", "summary": "Generated atlas evidence and comparison-ledger hashes pass with Bridge 3 and scalar intervals fail closed."},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_downstream_maxwell_detector_dual_norms.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 5.33, "status": "PASS", "summary": "21 detector-dual, atlas and comparison-ledger tests passed."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_downstream_maxwell_detector_dual_norms --check", "status": "PASS", "summary": "The rational squared norms, dyadic dual norms and four symbolic tail radii regenerate byte-for-byte."},
+    {"command": "Combined scoped certificate chain", "elapsed_seconds": 7.61, "status": "PASS", "summary": "Compile, generator, verifier, atlas, ledger and 21 tests passed."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No numerical recoil coefficient, full Green image, shared core algebra, lifecycle freeze or release was promoted."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_downstream_maxwell_detector_dual_norms.py", "sha256": "f1651de9a49227c6c9ad8ec42a07806a155d4d3abef6f3ceb9dd308c1541fab5"},
+    {"path": "closed_universe_observers/verify_berger_downstream_maxwell_detector_dual_norms.py", "sha256": "bc730eb9fe9f54e5d7f3ed89fec4bebe27e57786d821eb6610eb5ce2db71a943"},
+    {"path": "closed_universe_observers/tests/test_berger_downstream_maxwell_detector_dual_norms.py", "sha256": "9a43cad993acf6704647a695d8efade2c0e2f8cd9894959327f2be70a20dc4b7"},
+    {"path": "closed_universe_observers/schema/berger-downstream-maxwell-detector-dual-norms-v1.schema.json", "sha256": "822a93c7c3abe2c482b285e976772875fbaceb75007ae5cdeed3838f34c64b58"},
+    {"path": "closed_universe_observers/reports/berger-downstream-maxwell-detector-dual-norms.md", "sha256": "5dc4b9a9beb65ad33d470adc9fa67d0b5e8ba8663f3707024b5cacac4797405a"},
+    {"path": "closed_universe_observers/certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json", "sha256": "3120fc7f60a43c2990bb2aca2a1dd41b7ceec4f099bfb8b280998c6d177d5041"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "99ba4d15f7b8e36f26d417d7bfb701d87ca3c045e93d80069a3669b756a40949"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "12b7198998a540dd3ccec614c498587292a43c2070e6825b21303f29ad7bb475"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "14e18beea7f54bb7691c490c34a353b22c146175b84838fb2fba633662cded87"},
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "7d733f16fc842c49bff430a3e91e46334f357bd75501771762dbe6fa66b9c7c3"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "802257025397cf0e843fc0406f42a29a5278153fe14f82884af7f96fa48b4e7a"}
+  ],
+  "claim_flags": {
+    "DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORM_EXPORTED": true,
+    "TWO_DETECTOR_ENERGY_DUAL_NORMS_EXPORTED": true,
+    "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED": true,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

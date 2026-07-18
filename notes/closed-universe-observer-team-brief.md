@@ -776,6 +776,17 @@ content-addressed.  The next gate is the downstream Maxwell-to-detector dual
 norm and direct streaming of the four recoil scalars; numerical masses and
 coefficients remain open.
 
+`BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS` now closes the remaining
+factorwise analytic norm.  In physical time, the `4/3` clock-coordinate
+volume factor cancels the `3/4` electric pairing factor from `dTheta`, so a
+unit clock bump leaves the spatial dual norm of `rho_a J_a dR_aI`.  The
+repaired measure and validated radial `B,B^2` integrals give distinct norm
+uppers below `1.204e3` for D0 and `2.537e3` for D1.  Their products with both
+massive constants certify the four symbolic tail radii
+`D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A`.  No scalar interval is promoted: the
+complete streamed integrand, numerical masses/couplings and a declared
+interval, nonzero or sign stopping goal remain `OPEN`.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

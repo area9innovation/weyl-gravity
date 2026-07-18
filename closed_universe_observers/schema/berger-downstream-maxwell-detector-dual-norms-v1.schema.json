@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "clock_lapse_cancellation", "profile_norm_inputs", "detector_dual_norms", "retarded_energy_composition", "route_disposition", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-downstream-maxwell-detector-dual-norms-v1"},
+    "result_id": {"const": "BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"type": "string"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 6, "maxProperties": 6},
+    "clock_lapse_cancellation": {"type": "object", "required": ["clock_relation", "volume_relation", "electric_pairing_relation", "product", "consequence"]},
+    "profile_norm_inputs": {"type": "object"},
+    "detector_dual_norms": {"type": "array", "minItems": 2, "maxItems": 2},
+    "retarded_energy_composition": {"type": "object", "required": ["maxwell_bound", "massive_bound", "bare_scalar_bound", "mass_domain", "four_channel_bounds"]},
+    "route_disposition": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 3},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "STREAM_THE_COMPLETE_MODEWISE_INTEGRAND_INTO_FOUR_SYMBOLIC_RECOIL_INTERVALS_WITH_DECLARED_MASSES_COUPLINGS_AND_STOPPING_GOAL"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}
