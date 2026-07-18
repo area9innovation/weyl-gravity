@@ -43,9 +43,9 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Laboratory | What is currently established | What it does not yet establish |
 |---|---|---|
 | Vacuum conformal cylinder | complete free causal gauge complex and the stated residual reduction | matter clocks, interactions, particles, or scattering |
-| Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), and full retained BV cyclicity; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, first formal coupled Euler recoil Green term, coefficientwise causal chain homotopy through \(g^2\), rank-two leading transfer from actual localized massive-emitter Cauchy data, the exact absolute-\(g^3\)/relative-\(g^2\) recoil operator, exact normalized compact emitter switches, the emitter stress/clock-switch \(q_2\) backreaction jet, and the covariant all-row \(q_1q_2\) master identity | invariant/nonremovable meaning of \(\ell_3\), a different noncontractible filtered or mixed-bundle branch split, original common-Hopf emitter, detector-selected emitter Cauchy profiles/Green images and evaluated recoil coefficient, support-local 108-row PBW payload and solved backreacted branch, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter/all-orders Green hyperbolicity, all-orders closure, or genericity |
+| Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), full retained BV cyclicity, and an exact first-page obstruction to removing the mixed \(\ell_3\) by the declared filtered cyclic `F2/F3` class; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, first formal coupled Euler recoil Green term, coefficientwise causal chain homotopy through \(g^2\), rank-two leading transfer from actual localized massive-emitter Cauchy data, the exact absolute-\(g^3\)/relative-\(g^2\) recoil operator, exact normalized compact emitter switches, the emitter stress/clock-switch \(q_2\) backreaction jet, and the covariant all-row \(q_1q_2\) master identity | a residual-cohomology or SDR-independent deformation-class theorem beyond the declared filtered equivalence relation, a different noncontractible filtered or mixed-bundle branch split, a branch-resolved mode-pair source table, original common-Hopf emitter, detector-selected emitter Cauchy profiles/Green images and evaluated recoil coefficient, support-local 108-row PBW payload and solved backreacted branch, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter/all-orders Green hyperbolicity, all-orders closure, or genericity |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; generic extra branches and their Lee--Wald pairing; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | quadratic-source disposition on every mixed-cone stratum, exceptional fourth-order targets, nonlinear causal closure, or asymptotic radiation |
-| Quantum local algebra | complete even/odd AFN0 candidate quotients, classical causal imports, local Hadamard parametrices, exact consumers for the repaired mixed interaction, 36-row projector obstruction, and rank-46 cyclic graph carrier; exact classical minimal-BV foundation, a receiver-side finite-closure obstruction, and a generated fail-closed quantum residual-atlas fragment | a coefficient-bearing regulated Slavnov breaking, restored QME, global BRST Hadamard state, certified particle crosswalk, or scattering |
+| Quantum local algebra | complete full-BV even/odd local quotient on the regular Bach locus; exact repository Euclidean elliptic complex; Ricci-flat `C2` and round-`S4` Euler coefficient carriers giving `(199/30,-87/20,0,0)`; nontrivial regulated Slavnov insertion and `OBSTRUCTED_STRICT_FIELD_CONTENT` local Euclidean QME; generated fail-closed quantum residual-atlas fragment | matter cancellation or certified Wess--Zumino compensator restoration, residual quantum transfer, global BRST Hadamard state, Lorentzian QME, certified particle crosswalk, or scattering |
 | Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; independently verified bare Lee--Wald static surface form and nonintegrability on the chart-normalized parameter family | a normalized field-dependent generator, globally admissible residual quotient, differentiable horizon/outer-boundary phase space, first law, exterior causal perturbations, or stability |
 
 No row may be used as evidence for another row merely because both use the
@@ -57,10 +57,10 @@ The shortest independent paths are now:
 
 ```text
 Einstein:    extend the quadratic-source test across the classified mixed cones
-Nonlinear:   decide whether the landed retained ell3 is invariant or removable
+Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     accept a scope-correct antifield import, then compute beyond AFN0
-Observer:    bound spatial tails, compose massive images, evaluate recoil, and restrict records to Z2^C
+Quantum:     test matter cancellation or a certified Wess--Zumino compensator extension after the strict-field-content QME obstruction
+Observer:    resolve the profile-bandwidth obstruction, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  resolve generator normalization and the first physical boundary ensemble
 ```
 
@@ -248,6 +248,17 @@ causal/retarded second-order statuses are separate on every entry.  No
 cross-background or cross-carrier identification is made without an explicit
 crosswalk.
 
+The nonlinear fragment is generated at
+`d_quotient_classical/atlas/nonlinear-atlas-fragment.json`.  It records the
+22-row full-BV obstruction to filtered cyclic removal of the retained mixed
+`ell3`, the exact `D^2E`--`q2`--`ell2`--`ell3` normalization dictionary, and
+the natural transformation law of the complete second-order obstruction
+map.  Its retained-36 to Einstein-like/extra-Weyl/topological branch row is
+fail-closed at `NO_CERTIFIED_MAP`; the obstructed same-bundle projector is not
+replaced by a row-name identification.  Consequently no per-mode quadratic
+source, harmonic selection rule, cokernel reach, cohomology survival, or
+physical-sign claim is inferred from the local PBW witness.
+
 The observer operational fragment is generated at
 `closed_universe_observers/atlas/observer-atlas-fragment.json`.  It records
 response and rank, preparation, clock/rod and redshift dependence, recoil
@@ -273,7 +284,9 @@ Every row separates classical import, BRST closure/exactness, pairing,
 complex structure, Hadamard kernel, state-space signature, anomaly/QME
 dependency, and lifecycle. Local anomaly classes, Euclidean determinant
 factors, and curvature-observable generators have `NO_CERTIFIED_MAP` to a
-particle entry.
+particle entry. The coefficient-bearing insertion now marks the strict
+fixed-field-content quantum lifecycle `OBSTRUCTED`; this does not alter the
+classical mode imports or manufacture a particle interpretation.
 
 The fragment imports the abstract correction-class-sensitive tangent-cone
 theorem by content hash. Its bounded/quasiperiodic, smooth-secular, and
@@ -282,8 +295,9 @@ fixtures and quantum bridges remain separately typed. In particular, the
 opposite-momentum resonance divisor obstructs a moment-map-only bounded
 inference, no background-specific causal Green theorem is inferred from the
 abstract retarded criterion, and every classical-obstruction-to-quantum map
-is `NO_CERTIFIED_MAP` until an explicit BRST insertion and QME disposition
-exist.
+remains `NO_CERTIFIED_MAP`: the strict-field-content BRST insertion and QME
+obstruction now exist, but no carrier-specific map from a classical tangent
+obstruction to that quantum insertion has been certified.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 
@@ -450,7 +464,8 @@ Read results in dependency order, not commit-count order:
 
 1. freeze the observer normalized unary and quantum V2 import dispositions;
 2. accept the classical C-G2 and Einstein E-G1 independent theorems/no-gos;
-3. decide the nonlinear invariant `ell3` result using only frozen imports;
+3. accept the nonlinear filtered-cyclic `ell3` obstruction and keep the
+   branch-resolved table inactive until a certified crosswalk lands;
 4. decide the black-hole normalized boundary result separately from the
    compact-cylinder quotient;
 5. regenerate programme ledgers and public graphs only for changed lifecycle
@@ -599,6 +614,16 @@ channels.  In parallel it may finish the metric and metric-antifield
 mixed-order Green realization, retained advanced/retarded homotopy, and lift
 through the contraction.  The Green rail and the interacting relative rail
 must retain separate lifecycle labels; neither certifies the other.
+
+On the unsplit Berger retained carrier, the invariant-disposition gate is now
+closed within the declared transformation class:
+`BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1` proves that
+the mixed `ell3` cannot be removed by a nonnegative filtered,
+derivative-aware cyclic super-cotangent `F2/F3` transformation.  This does
+not activate the Einstein/extra/topological mixing table, because the local
+branch crosswalk remains absent.  Do not start `q4`; use the landed source
+dictionary when the relative cofiber or another admissible branch carrier is
+available.
 
 ### Einstein ownership
 
@@ -936,6 +961,12 @@ extended comparison, explicit counterterm/primitive or obstruction, honest
 lifecycle state, and no Lorentzian claim without causal time-ordered products,
 state, and Ward identities.
 
+Activation update (2026-07-18): the prerequisite is satisfied with exact
+coordinates `199/30` and `-87/20`, and the strict fixed-field-content local
+Euclidean QME is certified obstructed. T4 is now the active local quantum
+gate. Residual transfer remains disabled unless an extended theory restores
+the QME.
+
 ## Publication portfolio and readiness gates
 
 The project does not wait for the whole universe before publishing.  A paper
@@ -960,12 +991,12 @@ REPOSITORY_RELEASED artifact is committed, linked to its receipts, and public in
 | Paper 8, covariant causal transport | `ARTIFACT_READY` | same open-repository claim/link audit as Paper 7 |
 | Paper 9, Berger clock and background-preserving Cartan contraction | `THEOREM_FROZEN` | final artifact/link audit; the theorem is for $K_{\mathrm{Berger}}=D-\omega R$, not affine raw $D$ |
 | Paper 10, compact Einstein--Maxwell/Weyl--Maxwell phase space | `THEOREM_FROZEN` | final open-repository specialist, literature, prose, and receipt-link review |
-| Paper 11, retained mixed gravity--Maxwell bracket through $\ell_3$ | `WRITING_STARTED`; frozen-SDR representative theorem, exact cyclic adjoint relations, explicit witnesses, exchange audit, and full-BV cyclicity complete; canonical local same-bundle split obstructed at rank 36; rank-46 cyclic graph carrier landed | freeze the scoped representative theorem after review; independently decide cyclic-deformation nonremovability, and require an accepted rank-46/filtered/mapping-cylinder branch projector only for a later branch-resolved mixing table |
+| Paper 11, retained mixed gravity--Maxwell bracket through $\ell_3$ | `THEOREM_FROZEN` for the frozen-SDR representative theorem and its declared filtered-cyclic nonremovability strengthening; exact cyclic adjoint relations, explicit witnesses, exchange audit, full-BV cyclicity, and the 22-row obstruction are certified; canonical local same-bundle split remains obstructed | incorporate the obstruction certificate and claim boundary into the manuscript/supplement; an accepted noncontractible/filtered/mapping-cylinder branch projector is required only for a later branch-resolved mixing table |
 | Linearization stability with charge fibres | `THEOREM_FROZEN` for Paper 91; post-freeze cone suite `CLASSIFIED` | extend the phase-sensitive quadratic-source test across the classified cones and link each new certificate without silently enlarging Paper 91 |
 | Relative Einstein--Weyl complex | `OUTLINE_ALLOWED` | complete `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`, the polar direct current and ungauged lift, exceptional/global sectors, and one axial-plus-polar cofiber theorem |
 | Berger light and relational redshift beyond Paper 11 | first scoped C-G4 theorem certified: actual retarded, spatially global probe signal with crossings, reduced probe bracket, and nontrivial evolution | localize emitter and receiver after the mixed \(\epsilon_R^2\kappa\) apparatus gate; do not promote the probe bracket to a full apparatus Dirac bracket |
 | Abstract Green/BGG transfer | outline allowed | abstract hypotheses, toy example, complete detour example, and independent verifier; avoid duplicating Paper 8 without a new abstraction or application |
-| Nonlinear quotient stability | invariant theorem not yet draftable | exact nonremovability or trivialization of the landed retained $\ell_3$; branch-resolved claims additionally require an accepted branch projector |
+| Nonlinear quotient stability | `DRAFT_ALLOWED` for the scoped G0 filtered-cyclic obstruction theorem | keep transformation-class and frozen-carrier qualifiers explicit; branch-resolved or cohomological claims additionally require an accepted branch projector and residual descent |
 | Quantum anomaly/QME | local technical note active at G1 | complete antifield quotient, coefficient computation by two paths, and QME/`D`-defect disposition; do not wait for the residual rank-46 projector |
 | Asymptotic radiation and black holes | programme stage | boundary phase space, charges, flux, and extra-branch classification |
 | Galaxy/dark-matter and cosmology/dark-energy phenomenology | later programme stage | physical weak-field/cosmological observables and stability before data comparison |

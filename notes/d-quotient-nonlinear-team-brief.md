@@ -670,16 +670,74 @@ order-one commutator tail. This closes a convention prerequisite only: the
 order-two full-BV coboundary replay and its primitive/obstruction verdict are
 still the active N-G4 gate.
 
+The active N-G4 gate is now terminally closed by
+`BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1`.
+The solve couples all 5,984 zero-page base directions rather than freezing
+the earlier 67-term primitive; this is essential because an individually
+zero `F2` direction cancels the first provisional coordinate witness.  After
+that kernel freedom is included, a normalized 22-row functional over
+`Q(sqrt(10))` annihilates every zero-page column and all 14,998 admissible
+first-jet columns on each of four axes, while evaluating to one on the
+first-page residual.  The obstruction therefore occurs on the first
+associated-graded page of the summed pre-reduction PBW filtration.  No
+nonnegative filtered order-two or higher profile can repair it.
+
+This supplies the promised invariant strengthening, with an exact boundary:
+the landed mixed `ell3` is not removable by the declared derivative-aware
+cyclic super-cotangent `F2/F3` transformations.  The displayed functional,
+its 22 coordinates, and the frozen SDR basis remain representative-dependent;
+the nonzero obstruction class and its zero/nonzero verdict are invariant only
+within that declared filtered cyclic equivalence relation.  Residual
+cohomology, SDR-independent deformation cohomology, Einstein-like versus
+extra-Weyl support, topological inertness, and physical norm remain open.
+
+`NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1` now fixes the adjacent
+source conventions.  With factorial Taylor tensors,
+
+\[
+D^2E_{\bar\Phi}(u,u)=q_2(u,u),\qquad
+q_1v=-\frac12q_2(u,u)
+\]
+
+for `Phi=barPhi+epsilon*u+epsilon^2*v`, while
+`ell2=pi_cl q2(iota,iota)`, `I2=-S q2(iota,iota)`, and `ell3` is the direct
+`q3` term plus the complete shuffled `q2(I2,iota)` exchange.  Thus `ell2` is
+the quadratic tangent-cone source; `ell3` belongs to the next Taylor order
+and quartic deformation problem.
+
+For an admissible field/equation isomorphism preserving the harmonic carrier,
+boundaries, Noether/gauge reduction and correction class `C`, the complete
+obstruction map transforms as
+
+\[
+\mathcal O'_{\mathcal C'}(u)
+=U_{\rm coker}\,\mathcal O_{\mathcal C}(Tu),
+\qquad
+\mathcal Z_2^{\mathcal C'}=T^{-1}\mathcal Z_2^{\mathcal C}.
+\]
+
+The `q1 F2` Hessian-coordinate term is cokernel-exact.  Changing from
+bounded/quasiperiodic to smooth-secular or causal/retarded corrections changes
+the operator image and is therefore a change of theorem, not a coordinate
+redefinition.
+
+The generated claims ledger is
+`d_quotient_classical/atlas/nonlinear-atlas-fragment.json`.  It records the
+full-BV filtered obstruction, the abstract tangent-cone naturality theorem,
+and a fail-closed retained-to-residual branch crosswalk.  Until a new
+noncontractible/mixed-bundle or explicitly `REDUCED-MODE` branch map lands,
+all Einstein-like/extra-Weyl/topological mode-pair source rows remain
+`NO_CERTIFIED_MAP`; no local PBW row is silently identified with a harmonic
+mode.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
-2. Continue N-G4 with total PBW order two; the zero-word physical and full-BV
-   pages are now both explicitly trivialized, and the certified ghost shear
-   is part of the available `F2` carrier.  Do not reuse the
-   order-zero or order-one physical-action coefficients as obstructions:
-   both physical pages are certified exact.  Return either a complete
-   jet-bounded trivializing \((F_2,F_3)\) or the first normalized order-two/full-BV
-   dual witness for the mixed \(\ell_3\).
+2. Treat N-G4 as closed by the first-page full-BV dual obstruction.  Do not
+   enlarge the calculation to `q4` or reinterpret the exact physical-action
+   primitive as a full-BV trivialization.  The next interaction calculation
+   is the branch/mode-pair quadratic-source table, but it remains
+   `NO_CERTIFIED_MAP` until an admissible residual branch crosswalk lands.
 3. Keep the Green/BGG assignment as a bounded parallel theorem-extraction
    rail.  If continuing the Berger PDE construction, contract the acyclic
    clock/graph incidence before constructing

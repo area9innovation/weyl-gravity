@@ -1,0 +1,235 @@
+{
+  "description_axes": [
+    "causal",
+    "symplectic",
+    "nonlinear",
+    "observational",
+    "quantum"
+  ],
+  "entries": [
+    {
+      "claim_boundary": "The mixed ell3 representative is unremovable only within the declared nonnegative filtered derivative-aware cyclic F2/F3 class. Its branch, cohomology, particle, causal and quantum images remain open or lack a certified map.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+          "sha256": "a21f0d0361463f8139f336e21f323ffda06a68709465b8479436fe2c43d023c9"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "6cc11255d4480229534a2b40537bd112646bb26919afd19a87dfc0fe5822b2fa"
+        }
+      ],
+      "id": "nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "A quartic retained deformation representative has no one-particle dispersion relation.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "Cyclicity is certified, but no branch-resolved Lee-Wald norm is assigned.",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "The first associated-graded cyclic redefinition equation has a normalized exact dual obstruction.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The local PBW ell3 carrier has no bounded harmonic crosswalk.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "The algebraic contraction homotopy is not an interacting retarded correction.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The local PBW ell3 carrier has no smooth-secular harmonic crosswalk.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "This ell3 deformation obstruction is not the quadratic q2 tangent-cone obstruction.",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "fixed rational positive Berger clock",
+        "boundaries": "R_t x compact Berger S3; no spatial boundary",
+        "carrier": "typed 36-row retained full-BV gravity-clock-Maxwell carrier; mixed quartic action sector represented by ell3",
+        "charge_sector": "fixed-coupling retained sector with K_Berger=D-omega R",
+        "degree": "all BV degrees participating in the 22-row dual functional",
+        "ell": "NO_CERTIFIED_MAP from local PBW jets to Berger harmonics",
+        "k": "local PBW derivative axes 0 and 1 in the witness; no mode covector crosswalk",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP; raw D is affine and the local witness is not a K_Berger eigenmode",
+        "parity": "graded mixed gravity-Maxwell",
+        "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell"
+      }
+    },
+    {
+      "claim_boundary": "Do not identify retained rows with Einstein-like, extra-Weyl, topological or Maxwell residual modes. A different noncontractible mixed-bundle carrier or explicitly REDUCED-MODE nonlocal split remains possible.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
+          "sha256": "2a06fb31f888cab2d0c3e3481a559623098b3efba42cc0cd7b9b2759552e980c"
+        },
+        {
+          "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+          "sha256": "a21f0d0361463f8139f336e21f323ffda06a68709465b8479436fe2c43d023c9"
+        }
+      ],
+      "id": "nonlinear.berger.crosswalk.retained36_to_residual_branches",
+      "mode_data": {
+        "dispersion": {
+          "statement": "No branch-resolved dispersion pullback.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "No branch-resolved pairing pullback.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The requested support-local same-bundle rank-36 branch projector is obstructed.",
+          "status": "OBSTRUCTED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No retained-to-branch harmonic projector.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "No retained-to-branch causal projector.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No retained-to-branch harmonic projector.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "No branch-resolved quadratic-source/cokernel table.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "fixed rational positive Berger clock",
+        "boundaries": "R_t x compact Berger S3; no spatial boundary",
+        "carrier": "crosswalk from the retained 36-row mixed ell3 carrier to Einstein-like, extra-Weyl, topological and Maxwell residual branches",
+        "charge_sector": "fixed-coupling retained sector with K_Berger=D-omega R",
+        "degree": "crosswalk",
+        "ell": "all",
+        "k": "all",
+        "m": "all",
+        "omega": "all",
+        "parity": "all",
+        "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell"
+      }
+    },
+    {
+      "claim_boundary": "The complete obstruction zero locus is natural under field/equation isomorphisms that preserve the harmonic carrier, domains, boundaries, Noether/gauge reduction and correction class. It supplies no background-specific mode classification.",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "CERTIFIED",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "6cc11255d4480229534a2b40537bd112646bb26919afd19a87dfc0fe5822b2fa"
+        }
+      ],
+      "id": "nonlinear.abstract.finite_harmonic.tangent_cone_naturality",
+      "mode_data": {
+        "dispersion": {
+          "statement": "This is an abstract finite-block image/cokernel theorem.",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "No physical norm is assigned by the abstract theorem.",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "Complementary obstruction maps R_j^C depend on the declared correction class.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Z2^C is the zero locus of moment and bounded-resonance cokernel maps.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "For compatible compact sources and a declared retarded inverse, propagation resonances are removed while static moment maps remain.",
+            "status": "CERTIFIED"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Secular right inverses remove only the resonances admitted by the declared exponential-polynomial class.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The stabilizer part of the reduced adjoint cokernel is the moment map mu_X.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "any fixed background satisfying the declared finite-block hypotheses",
+        "boundaries": "fixed as part of the correction operator domain",
+        "carrier": "finite direct sum of first-order harmonic solution blocks and all quadratically selected output blocks",
+        "charge_sector": "declared stabilizer moment-map sector",
+        "degree": 1,
+        "ell": "declared finite set",
+        "k": "declared finite set or NOT_APPLICABLE in compact harmonic language",
+        "m": "declared finite set",
+        "omega": "declared finite frequency set",
+        "parity": "arbitrary fixed graded block",
+        "theory": "finite-harmonic nonlinear gauge equation with complete Noether and gauge reduction"
+      }
+    }
+  ],
+  "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
+  "generated_by_sha256": "aa33f5179b9255aac4190f091f01911036368b0f317838549503bb109786505f",
+  "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
+  "status_vocabulary": [
+    "CERTIFIED",
+    "OBSTRUCTED",
+    "OPEN",
+    "NOT_APPLICABLE",
+    "NO_CERTIFIED_MAP"
+  ],
+  "team": "d_quotient_nonlinear",
+  "verification_commands": [
+    "python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check",
+    "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+    "python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment"
+  ]
+}

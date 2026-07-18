@@ -1,0 +1,61 @@
+{
+  "schema": "pure-weyl-nonlinear-source-transfer-tangent-cone-dictionary-v1",
+  "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+  "result_state": "SOURCE_TRANSFER_DICTIONARY_AND_FIELD_REDEFINITION_NATURALITY_CERTIFIED",
+  "lifecycle_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "dictionary": {
+    "factorial_Taylor_equation": "E(barPhi+phi)=q1(phi)+(1/2)q2(phi,phi)+(1/3!)q3(phi,phi,phi)+...",
+    "original_Hessian": "D^2E_barPhi(u,u)=q2(u,u)",
+    "second_order_curve_convention": "Phi(epsilon)=barPhi+epsilon*u+epsilon^2*v",
+    "second_order_equation": "q1(v)=-(1/2)q2(u,u)",
+    "alternative_acceleration_convention": "for Phi=barPhi+epsilon*u+(epsilon^2/2)*v2, q1(v2)=-q2(u,u)",
+    "transferred_binary": "ell2=pi_cl q2(iota,iota)",
+    "second_inclusion": "I2=-S q2(iota,iota)",
+    "transferred_ternary": "ell3=pi_cl q3(iota,iota,iota)+sum_Sh(2,1) epsilon*pi_cl q2(I2,iota)",
+    "tangent_cone_source": "ell2(u,u), equivalently the projected class of q2(iota*u,iota*u)",
+    "ell3_role": "third Taylor order / quartic action / deformation representative; not the quadratic second-order tangent-cone source",
+    "cokernel_test": "the class of (1/2)q2(u,u) in the Noether-compatible cokernel of q1 restricted to correction class C",
+    "cohomology_test": "[ell2(u,u)] on ell1 cohomology when that residual crosswalk is certified"
+  },
+  "tangent_cone_naturality": {
+    "field_change": "Phi=F(Psi), T=DF at the background, with invertible equation-bundle map U",
+    "Hessian_transformation": "S'(u,u)=U(S(Tu,Tu)+q1 F2(u,u))",
+    "cokernel_transformation": "O'_C(u)=U_coker O_C(Tu)",
+    "zero_locus_transformation": "Z_2^{C'}=T^{-1}(Z_2^C) when T maps the declared harmonic input and correction class C isomorphically onto C'",
+    "invariant_statement": "vanishing/nonvanishing of the complete obstruction map and the isomorphism class of its zero locus",
+    "representative_dependent_statement": "individual source coefficients, chosen cokernel basis, and the displayed equations before quotient",
+    "category_guard": "bounded/quasiperiodic, smooth secular, and causal/retarded correction classes have different images; changing C is not an admissible coordinate redefinition",
+    "cyclic_L_infinity_form": "ell2 changes by an ell1-coboundary under an admissible cyclic F2, so its induced cohomology obstruction is natural",
+    "mixed_ell3_strengthening": "the separate 22-row witness proves nonremovability of the landed mixed ell3 within its declared filtered cyclic F2/F3 class"
+  },
+  "exact_fixture": {
+    "L": [[1, 0], [0, 0]],
+    "T": [[2, 0], [0, 3]],
+    "U": [[7, 0], [0, 11]],
+    "coordinate_hessian": ["5*a**2", "13*a**2"],
+    "original_obstruction": "18*a**2",
+    "transformed_obstruction": "18*a**2",
+    "zero_locus": "a=0 over characteristic zero"
+  },
+  "dependency_refs": {
+    "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065",
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json": "a21f0d0361463f8139f336e21f323ffda06a68709465b8479436fe2c43d023c9"
+  },
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/nonlinear_source_transfer_tangent_cone_dictionary.py": "4107389571fe8b096aca50d3fa0f746d3efc9597adadc7943513972707d469e5",
+    "d_quotient_classical/backreacted_clock/verify_nonlinear_source_transfer_tangent_cone_dictionary.py": "208b9070954b52ef83ae59d02490b073b9d26fb00ee744e3abe79630e1b3293f",
+    "d_quotient_classical/backreacted_clock/tests/test_nonlinear_source_transfer_tangent_cone_dictionary.py": "df0301d5e9230b4a6058fec37bf7c23033667f57c8ba813cc48613f3908c87ed",
+    "d_quotient_classical/schema/nonlinear-source-transfer-tangent-cone-dictionary-v1.schema.json": "ebb7dea144c89d120b963b3ed3439116dd67b82f2c550ff1e3d32b14d95456e3"
+  },
+  "claim_flags": {
+    "D2E_Q2_DICTIONARY_CERTIFIED": true,
+    "Q2_ELL2_TRANSFER_DICTIONARY_CERTIFIED": true,
+    "ELL3_ROLE_SEPARATED_FROM_SECOND_ORDER_TANGENT_CONE": true,
+    "TANGENT_CONE_ZERO_LOCUS_NATURAL_UNDER_ADMISSIBLE_FIELD_REDEFINITIONS": true,
+    "CORRECTION_CLASS_INDEPENDENCE": false,
+    "BERGER_MODE_PAIR_SOURCE_TABLE_COMPLETE": false,
+    "BERGER_RESIDUAL_BRANCH_CROSSWALK_CERTIFIED": false
+  },
+  "claim_boundary": "This certificate fixes the Taylor normalization, the original-to-transferred source dictionary, and the natural transformation law of the complete finite-harmonic second-order obstruction map. The zero locus is invariant up to the induced isomorphism only when the field redefinition preserves the declared harmonic carrier, Noether/gauge reduction, boundaries, and correction category. It does not identify Berger retained rows with Einstein-like, extra-Weyl, topological, or particle modes and does not complete a background-specific mode-pair source table."
+}

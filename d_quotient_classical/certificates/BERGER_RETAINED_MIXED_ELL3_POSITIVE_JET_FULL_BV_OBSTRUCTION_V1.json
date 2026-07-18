@@ -1,0 +1,114 @@
+{
+  "schema": "pure-weyl-berger-retained-mixed-ell3-positive-jet-full-bv-obstruction-v1",
+  "result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+  "result_state": "FILTERED_CYCLIC_FULL_BV_REMOVAL_OBSTRUCTED_AT_FIRST_ASSOCIATED_GRADED_PAGE",
+  "lifecycle_status": "OBSTRUCTED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "generality_level": "G0",
+  "filtration": {
+    "name": "summed-pre-reduction-input-PBW-order",
+    "target_bound": 2,
+    "obstruction_page": 1,
+    "admissible_transformations": "degree-zero derivative-aware cyclic super-cotangent F2/F3 Taylor maps with nonnegative filtered jet order",
+    "higher_profile_consequence": "profiles of filtered order two or higher cannot alter the obstructed first associated-graded page"
+  },
+  "dependency_refs": {
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_order_two_full_bv_redefinition.py": "6b4fd86058a1f9aeb22530d43e7badd84b58dd293e3b0fc8a23e87fadd1c5710",
+    "d_quotient_classical/backreacted_clock/berger_positive_jet_super_cotangent_redefinition_convention.py": "8f4c6d6a7fbe196517c08f8bbbc8268ad4f5698841d6cc0342795507292f7b32",
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1.json": "e76c9d7e50cb73fb8b71e6ee54d426997131f7cc4eb5452271309d44c41362ff"
+  },
+  "matrix_audit": {
+    "zero_page_shape": [5670, 5984],
+    "zero_page_nonzero_entries": 26783,
+    "zero_page_nonzero_columns": 2446,
+    "zero_page_individually_zero_columns": 3538,
+    "first_page_shape_per_axis": [91116, 14998],
+    "first_page_nonzero_entries_per_axis": 518508,
+    "target_connected_first_page_shape": [31824, 2385],
+    "target_connected_first_page_rank_mod_1000003": 1479,
+    "coupled_rank_mod_1000003": 8419,
+    "coupled_augmented_rank_mod_1000003": 8420,
+    "exact_pivot_support_block_shape": [1912, 1912],
+    "exact_pivot_support_block_nonzero_entries": 19290,
+    "exact_solver": "SPEX rational sparse solve after parity-certified Q(sqrt(10)) rationalization",
+    "provisional_single_coordinate_witness_withdrawn": true,
+    "zero_page_kernel_freedom_coupled": true
+  },
+  "obstruction_witness": {
+    "coefficient_field": "Q(sqrt(10))",
+    "normalization": "witness(first_page_residual)=1",
+    "support_count": 22,
+    "weights": [
+      {"row": 2225, "coefficient": "409*sqrt(10)/372", "page": 0, "output": 31, "inputs": [1, 16, 28]},
+      {"row": 2227, "coefficient": "5677661*sqrt(10)/2380800", "page": 0, "output": 25, "inputs": [14, 27, 29]},
+      {"row": 2228, "coefficient": "31/80", "page": 0, "output": 32, "inputs": [6, 9, 27]},
+      {"row": 2570, "coefficient": "-31/80", "page": 0, "output": 33, "inputs": [6, 11, 27]},
+      {"row": 2575, "coefficient": "409*sqrt(10)/744", "page": 0, "output": 23, "inputs": [16, 27, 29]},
+      {"row": 3712, "coefficient": "1435*sqrt(10)/186", "page": 0, "output": 33, "inputs": [2, 19, 30]},
+      {"row": 3716, "coefficient": "-1435*sqrt(10)/186", "page": 0, "output": 34, "inputs": [2, 21, 28]},
+      {"row": 4646, "coefficient": "-sqrt(10)/6", "page": 0, "output": 16, "inputs": [1, 27, 32]},
+      {"row": 4814, "coefficient": "-sqrt(10)/6", "page": 0, "output": 16, "inputs": [0, 27, 33]},
+      {"row": 5122, "coefficient": "-3*sqrt(10)/40", "page": 0, "output": 14, "inputs": [2, 29, 31]},
+      {"row": 15075, "coefficient": "-9/160", "page": 1, "axis": 0, "output": 15, "term": [29, [0], 34, [], 2, []]},
+      {"row": 15081, "coefficient": "-1/4", "page": 1, "axis": 0, "output": 15, "term": [30, [0], 33, [], 2, []]},
+      {"row": 21315, "coefficient": "-9/160", "page": 1, "axis": 0, "output": 14, "term": [28, [0], 34, [], 2, []]},
+      {"row": 21321, "coefficient": "-1/4", "page": 1, "axis": 0, "output": 14, "term": [30, [0], 32, [], 2, []]},
+      {"row": 39741, "coefficient": "1435/72", "page": 1, "axis": 0, "output": 4, "term": [2, [], 28, [], 30, [0]]},
+      {"row": 39771, "coefficient": "1435/72", "page": 1, "axis": 0, "output": 5, "term": [29, [], 30, [0], 2, []]},
+      {"row": 97994, "coefficient": "3*sqrt(10)/80", "page": 1, "axis": 1, "output": 15, "term": [9, [], 27, [0], 28, []]},
+      {"row": 97998, "coefficient": "-3*sqrt(10)/80", "page": 1, "axis": 1, "output": 15, "term": [11, [], 27, [0], 29, []]},
+      {"row": 98457, "coefficient": "3*sqrt(10)/40", "page": 1, "axis": 1, "output": 31, "term": [4, [], 11, [], 28, [0]]},
+      {"row": 98486, "coefficient": "3*sqrt(10)/40", "page": 1, "axis": 1, "output": 31, "term": [5, [0], 9, [], 28, []]},
+      {"row": 98488, "coefficient": "-3*sqrt(10)/40", "page": 1, "axis": 1, "output": 31, "term": [5, [0], 11, [], 29, []]},
+      {"row": 98688, "coefficient": "3*sqrt(10)/40", "page": 1, "axis": 1, "output": 32, "term": [4, [], 11, [], 27, [0]]}
+    ],
+    "exhaustive_transpose_replay": {
+      "zero_label_columns_checked": 5984,
+      "first_label_columns_checked_per_axis": 14998,
+      "zero_column_defects": 0,
+      "first_column_defects_per_axis": [0, 0, 0, 0],
+      "target_pairing": "1"
+    }
+  },
+  "field_content": {
+    "carrier": "36-row retained full-BV gravity-clock-Maxwell carrier",
+    "sectors_in_witness": ["gravity spatial-diffeomorphism ghost", "dressed metric", "dressed metric antifield", "gravity ghost antifield", "Maxwell potential", "Maxwell antifield density"],
+    "PBW_page_support": [0, 1],
+    "derivative_axis_support": [0, 1],
+    "derivative_axis_interpretation": {"0": "cylinder coordinate derivative", "1": "first left-invariant spatial derivative"},
+    "single_D_weight": null
+  },
+  "physical_scope": {
+    "mixed_sector": "gravity-gravity-Maxwell-Maxwell quartic action sector represented by mixed ell3",
+    "couples_gravity_and_Maxwell_retained_carriers": true,
+    "Einstein_like_vs_extra_Weyl_branch": "NO_CERTIFIED_MAP",
+    "topological_direction": "NO_CERTIFIED_MAP",
+    "negative_physical_direction_introduced": "OPEN",
+    "residual_cohomology_survival": "OPEN",
+    "representative_dependent": ["the displayed 22-row functional", "the frozen SDR coordinates", "the contact/exchange split"],
+    "invariant_within_declared_class": "the nonempty obstruction class and its zero/nonzero verdict under admissible filtered cyclic redefinitions"
+  },
+  "claim_flags": {
+    "ZERO_PAGE_PRIMITIVE_PRESERVED": true,
+    "FILTERED_CYCLIC_REDEFINITION_OBSTRUCTED_AT_FIRST_PAGE": true,
+    "ORDER_TWO_FILTERED_REMOVAL_OBSTRUCTED": true,
+    "UNREMOVABLE_COEFFICIENT_CLASS_WITHIN_DECLARED_TRANSFORMATIONS": true,
+    "RESIDUAL_COHOMOLOGY_OPERATION_NONZERO": false,
+    "BRANCH_PROJECTION_DECIDED": false,
+    "SDR_INDEPENDENT_DEFORMATION_CLASS": false,
+    "NEGATIVE_PHYSICAL_DIRECTION_PROVED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py": "464ca351b277ba98fa3da1faf2cb40f43ee5f00ea486594e3eb579d16ba43e8a",
+    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py": "f860f388b40913813ea6ac34de8916f0a597372b06e7845f976a6237248550ba",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py": "4cf3740a3a63a7f6f9c0540d6f3e71a9842e830da6558618d27d2b6053583855",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-positive-jet-full-bv-obstruction-v1.schema.json": "2344ac5bab72637d2dd760f82b650bd8aafca22de41cc041b68a0e584eeac148"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction -v",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-retained-mixed-ell3-positive-jet-full-bv-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json"
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC G0 certificate proves that the retained mixed gravity-Maxwell ell3 representative is not removable through summed pre-reduction PBW order two by the declared nonnegative filtered, derivative-aware cyclic super-cotangent F2/F3 transformations. The exact normalized full-BV witness obstructs the first associated-graded page after all zero-page kernel freedom is coupled. It does not prove a nonzero operation on residual cohomology, choose Einstein-like versus extra-Weyl branches, establish a transformation-independent class beyond the declared equivalence relation, infer a negative-norm physical mode, or make a quantum or Lorentzian-causal claim."
+}

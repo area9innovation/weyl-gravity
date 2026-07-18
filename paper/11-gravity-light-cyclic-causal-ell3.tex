@@ -80,9 +80,9 @@ compatibility theorem: $\ell_3$ is transferred with the support-local
 algebraic homotopy $S$, not by integrating out fields with a causal
 propagator.  The statement is classical and carries separate
 \textsc{local-algebraic} and \textsc{lorentzian-causal} dependencies.  It
-does not prove a nonzero operation on cohomology, a nontrivial cyclic
-deformation class, invariance under changing the cyclic retract, or
-nonremovability by a cyclic $L_\infty$ field redefinition.  Residual mixing,
+does not prove a nonzero operation on cohomology, invariance under changing
+the cyclic retract, or nonremovability under every unrestricted cyclic
+$L_\infty$ equivalence.  Residual mixing,
 Hadamard products, QME restoration, and every quantum or particle
 interpretation remain open.  The first deformation-filtration screen is now
 exact: after setting every PBW derivative word to zero, the complete
@@ -92,8 +92,16 @@ removes the landed $63$-coordinate constant term.  Thus the displayed
 zero-derivative evaluations witness representative nonvanishing but cannot
 witness deformation-class nontriviality.  The complete first-jet physical
 page is also exact: retaining all zero-jet kernel freedom, the coupled Schur
-system admits an explicit four-axis positive-jet primitive.  The full-BV
-ghost/antifield completion and total jet order two remain open.
+system admits an explicit four-axis positive-jet primitive.  The complete
+full-BV filtered calculation has now returned the opposite invariant verdict.
+After coupling all zero-page kernel freedom, a normalized $22$-row dual
+functional annihilates all $5{,}984$ zero-page cyclic directions and all
+$14{,}998$ first-jet directions on each axis, but evaluates to one on the
+first associated-graded residual.  Hence the landed mixed bracket is not
+removable through total PBW order two by the declared nonnegative filtered,
+derivative-aware cyclic $F_2/F_3$ transformations.  This is a nontrivial class
+in that scoped filtered deformation quotient, not yet a theorem in the
+unrestricted cyclic deformation complex or on residual cohomology.
 A separate exact audit obstructs the canonical
 local same-bundle branch projector on the $36$-row carrier.  The resulting
 rank-$46$ spatial-STF2 graph prolongation and its cyclic dual are now
@@ -140,16 +148,20 @@ under cyclic transposition.  Causal Green and Cartan compatibility are proved
 separately in Section~\ref{sec:causal}; they are not part of the definition of
 the algebraic transfer.
 
-Nonvanishing here is deliberately representative-level.  We have not proved
+Nonvanishing in Theorem~\ref{thm:survival} is deliberately
+representative-level.  By itself it does not prove
 \begin{equation}\label{eq:deformation-nonclaim}
  [\ell_3^{\rm mixed}]\neq0
 \end{equation}
 in a cyclic coderivation or Chevalley--Eilenberg deformation complex.  Nor
 have we proved a nonzero induced operation on $H(\cR_{36},\ell_1)$, survival
 under all cyclic $L_\infty$ equivalences or further minimal transfer, or an
-obstruction to removing the selected component by a cyclic quadratic change
-of retained coordinates.  Those are the nearest invariant strengthenings of
-the present theorem.
+obstruction to removing the selected component under every cyclic change of
+retained coordinates.  Section~\ref{sec:filtered-obstruction} supplies one
+strictly scoped invariant strengthening: nonremovability in the declared
+nonnegative filtered, derivative-aware cyclic $F_2/F_3$ class through total
+PBW order two.  It does not promote Equation~\eqref{eq:deformation-nonclaim}
+for the unrestricted deformation complex.
 
 The theorem stops one rung before physical branch interpretation.  A
 subsequent exact audit now obstructs the canonical support-local same-bundle
@@ -864,6 +876,54 @@ splitting.  The next exact choice is therefore to retain the unsplit complex
 or construct the smallest noncontractible filtered enlargement before lifting
 the nonlinear brackets.
 
+\section{Filtered cyclic nonremovability}\label{sec:filtered-obstruction}
+
+The constant-field and first-jet physical-action primitives do not decide the
+full BV deformation problem: cyclic completion couples fields, ghosts and
+antifields, and a choice of lower primitive may hide kernel directions needed
+on the next filtration page.  We therefore use the summed pre-reduction input
+PBW order and solve the zero and first full-BV pages simultaneously.  The
+allowed coordinate changes are degree-zero, derivative-aware cyclic
+super-cotangent Taylor maps $(F_2,F_3)$ of nonnegative filtered order.
+
+Let $A_0$ denote the complete zero-page coboundary map, let $B_a$ be the
+order-one contribution of a zero-page map on derivative axis $a$, and let
+$C_a$ be the associated-graded first-jet coboundary.  If $r_a$ is the
+first-page residual after one certified zero-page primitive, changing that
+primitive by $x$ and adding first-jet maps $y_a$ requires
+\begin{equation}\label{eq:coupled-filtered-system}
+ A_0x=0,
+ \qquad B_ax+C_ay_a=r_a,
+ \qquad a=0,1,2,3.
+\end{equation}
+The first equation retains the complete kernel of $A_0$; freezing the earlier
+$67$-term primitive would give a false single-coordinate obstruction.
+
+\begin{theorem}[Scoped filtered cyclic obstruction]
+\label{thm:filtered-obstruction}
+For the frozen retained cyclic SDR, Equation~\eqref{eq:coupled-filtered-system}
+has no solution over $\Q(\sqrt{10})$.  There is an exact normalized functional
+$\mathfrak w$ with $22$ supported full-BV coefficient rows such that
+\begin{equation}
+ \mathfrak w(A_0)=0,
+ \qquad \mathfrak w(B_a,C_a)=0\quad(a=0,1,2,3),
+ \qquad \mathfrak w(r)=1.
+\end{equation}
+The exhaustive transpose replay checks all $5{,}984$ zero-page base-label
+columns and all $14{,}998$ first-jet columns on each axis with zero defects.
+Consequently no admissible nonnegative filtered cyclic $F_2/F_3$
+transformation removes the mixed $\ell_3$ through summed PBW order two.
+\end{theorem}
+
+The obstruction lives on the first associated-graded page.  Higher filtered
+profiles have order at least two and cannot alter it, so extending the ansatz
+to $q_4$ is irrelevant to this verdict.  The displayed $22$-row functional
+and its coefficients depend on the chosen SDR coordinates and cokernel basis;
+the invariant content is the nonzero class in this declared filtered cyclic
+quotient.  The theorem does not identify a class in an unrestricted cyclic
+Chevalley--Eilenberg complex, prove invariance under changing SDR, or descend
+the operation to $H(\cR_{36},\ell_1)$.
+
 \section{Interpretation and nonclaims}\label{sec:interpretation}
 
 At representative level, the retained classical tensor contains both a
@@ -886,14 +946,14 @@ or positive-Hilbert-space theorem.
 \item A nonzero retained bracket is not yet a photon or graviton scattering
 amplitude.  Residual projection, causal state selection, and asymptotic or
 relational observables are still required.
-\item Nonvanishing of this coefficient representative proves neither a
-nonzero operation on $\ell_1$-cohomology nor a nontrivial cyclic deformation
-class.  The complete constant-field page is in fact removable by the exact
+\item Nonvanishing of this coefficient representative alone proves neither a
+nonzero operation on $\ell_1$-cohomology nor a class in the unrestricted
+cyclic deformation complex.  The complete constant-field page is removable by the exact
 $F_3$ primitive of Proposition~\ref{prop:constant-redefinition}, and the
 first-jet physical page is removable by
-Proposition~\ref{prop:first-jet-redefinition}.  No full-BV or order-two
-obstruction or trivialization has been computed, and no invariance under
-changing SDR is claimed.
+Proposition~\ref{prop:first-jet-redefinition}.  Theorem~\ref{thm:filtered-obstruction}
+nevertheless proves full-BV nonremovability in its declared filtered cyclic
+class.  No invariance under changing SDR is claimed.
 \item Deformation/vertex classes are not one-particle states and are not
 included in the dynamical branch list used here.
 \item The vanishing one-particle cohomology of the separate free conformal
@@ -929,7 +989,11 @@ Artifact & Role\\
 \cert{BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1}
  & exact constant-field physical-action cyclic-redefinition primitive\\
 \cert{BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1}
- & exact coupled first-jet primitive; full BV and order two remain open\\
+ & exact coupled first-jet physical-action primitive\\
+\cert{BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1}
+ & normalized $22$-row obstruction to the declared filtered cyclic removal\\
+\cert{NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1}
+ & $D^2E$--$q_2$--$\ell_2$--$\ell_3$ normalization and obstruction naturality\\
 \cert{BERGER_RESIDUAL_MIXED_ELL3_BRANCH_PROJECTION_READINESS_V2}
  & historical fail-closed input contract for the mixing table\\
 \cert{BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1}
@@ -979,6 +1043,12 @@ PYTHONPATH=. python3 \
 PYTHONPATH=. python3 \
   d_quotient_classical/backreacted_clock/\
   verify_berger_retained_mixed_ell3_first_jet_redefinition.py
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_berger_retained_mixed_ell3_positive_jet_full_bv_obstruction.py
+PYTHONPATH=. python3 \
+  d_quotient_classical/backreacted_clock/\
+  verify_nonlinear_source_transfer_tangent_cone_dictionary.py
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.berger_residual_ell3_branch_projection_readiness_v2 --check
 PYTHONPATH=quantum-weyl python3 -m \
@@ -1016,8 +1086,9 @@ PYTHONPATH=. python3 \
 \endgroup
 
 The companion machine-readable claim map records the dependency hashes,
-positive claims, explicit nonclaims, and the fact that this manuscript is a
-working draft rather than a theorem freeze.
+positive claims, and explicit nonclaims.  The scoped frozen-SDR transfer and
+filtered-cyclic obstruction statements are theorem-frozen; specialist prose
+and artifact review remain before release.
 
 \section{Outlook}\label{sec:outlook}
 
@@ -1031,11 +1102,13 @@ explicit interaction channel; a block-diagonal table would establish
 nonlinear closure of the Einstein-like direction through this order; and a
 central topological action would isolate the vertex theory from the
 dynamical carrier.  The second is to test whether the selected mixed
-representative defines a nonzero cyclic deformation class or operation on
-$\ell_1$-cohomology.  Its constant-field and first-jet physical-action pages
-are now known to be exact.  The next deformation calculation must therefore
-include the full BV completion and total PBW jet order two rather than reuse
-either displayed zero-derivative evaluations or first-order coefficients.
+representative defines a nonzero operation on $\ell_1$-cohomology or a class
+in an unrestricted cyclic deformation complex.  Its constant-field and
+first-jet physical-action pages are exact, while the complete full-BV
+filtered screen is obstructed on its first associated-graded page by
+Theorem~\ref{thm:filtered-obstruction}.  The next deformation calculation is
+therefore residual descent or comparison with a larger admissible equivalence
+class, not an enlargement to $q_4$.
 
 The algebraic theorem does not need to wait for that verdict.  What the
 mixing table changes is its physical interpretation, not the existence of the

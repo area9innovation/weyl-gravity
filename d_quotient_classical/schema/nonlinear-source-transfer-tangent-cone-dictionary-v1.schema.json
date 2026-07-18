@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/pure-weyl/nonlinear-source-transfer-tangent-cone-dictionary-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "dictionary", "tangent_cone_naturality", "exact_fixture", "dependency_refs", "source_manifest", "claim_flags", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nonlinear-source-transfer-tangent-cone-dictionary-v1"},
+    "result_id": {"const": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1"},
+    "result_state": {"const": "SOURCE_TRANSFER_DICTIONARY_AND_FIELD_REDEFINITION_NATURALITY_CERTIFIED"},
+    "lifecycle_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dictionary": {"type": "object", "additionalProperties": true},
+    "tangent_cone_naturality": {"type": "object", "additionalProperties": true},
+    "exact_fixture": {"type": "object", "additionalProperties": true},
+    "dependency_refs": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/pure-weyl/berger-retained-mixed-ell3-positive-jet-full-bv-obstruction-v1.schema.json",
+  "title": "Berger retained mixed ell3 positive-jet full-BV obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_status",
+    "dependency_tags", "generality_level", "filtration", "dependency_refs",
+    "matrix_audit", "obstruction_witness", "field_content", "physical_scope",
+    "claim_flags", "source_manifest", "verification_commands", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-retained-mixed-ell3-positive-jet-full-bv-obstruction-v1"},
+    "result_id": {"const": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1"},
+    "result_state": {"const": "FILTERED_CYCLIC_FULL_BV_REMOVAL_OBSTRUCTED_AT_FIRST_ASSOCIATED_GRADED_PAGE"},
+    "lifecycle_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"type": "array", "const": ["LOCAL-ALGEBRAIC"]},
+    "generality_level": {"const": "G0"},
+    "filtration": {
+      "type": "object", "additionalProperties": true,
+      "required": ["name", "target_bound", "obstruction_page"],
+      "properties": {
+        "name": {"type": "string"},
+        "target_bound": {"type": "integer", "minimum": 0},
+        "obstruction_page": {"type": "integer", "minimum": 0}
+      }
+    },
+    "dependency_refs": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "matrix_audit": {"type": "object", "additionalProperties": true},
+    "obstruction_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient_field", "normalization", "support_count", "weights", "exhaustive_transpose_replay"],
+      "properties": {
+        "coefficient_field": {"const": "Q(sqrt(10))"},
+        "normalization": {"const": "witness(first_page_residual)=1"},
+        "support_count": {"type": "integer", "minimum": 1},
+        "weights": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": true,
+            "required": ["page", "output", "coefficient"],
+            "properties": {
+              "page": {"enum": [0, 1]}, "axis": {"type": "integer", "minimum": 0, "maximum": 3},
+              "output": {"type": "integer", "minimum": 0, "maximum": 35}, "coefficient": {"type": "string"}
+            }
+          }
+        },
+        "exhaustive_transpose_replay": {"type": "object", "additionalProperties": true}
+      }
+    },
+    "field_content": {"type": "object", "additionalProperties": true},
+    "physical_scope": {"type": "object", "additionalProperties": true},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "items": {"type": "string"}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}
