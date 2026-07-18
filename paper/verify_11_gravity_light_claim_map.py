@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed verification of the Paper 11 working-draft claim map."""
+"""Fail-closed verification of the scoped Paper 11 theorem-freeze claim map."""
 
 from __future__ import annotations
 
@@ -22,12 +22,14 @@ def _sha256(path: Path) -> str:
 def main() -> None:
     payload = json.loads(CLAIM_MAP.read_text(encoding="utf-8"))
     assert payload["schema"] == "paper-11-gravity-light-cyclic-causal-ell3-claim-map-v1"
-    assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT"
+    assert payload["result_id"] == "PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_THEOREM_FROZEN"
     assert (
         payload["result_state"]
-        == "WRITING_STARTED_FIRST_JET_PHYSICAL_REDEFINITION_TRIVIALIZATION_FULL_BV_ORDER2_OPEN"
+        == "SCOPED_FROZEN_SDR_AND_FILTERED_CYCLIC_OBSTRUCTION_THEOREM_FROZEN_EXTERNAL_REVIEW_PENDING"
     )
-    assert payload["lifecycle_state"] == "WRITING_STARTED"
+    assert payload["lifecycle_state"] == "THEOREM_FROZEN"
+    assert payload["freeze_disposition"]["mathematical_claims"] == "THEOREM_FROZEN"
+    assert payload["freeze_disposition"]["additional_internal_major_calculation_required_before_circulation"] is False
     assert payload["dependency_tags"] == ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
     assert payload["paper_scope"]["operator_coefficient_field"] == "Q(sqrt(10))"
     assert (
@@ -37,6 +39,7 @@ def main() -> None:
 
     claims = payload["certified_claims"]
     required_true = {
+        "theorem_frozen_at_declared_scope",
         "typed_cyclic_64_to_36_contraction",
         "formal_cyclic_transfer_theorem_separated_from_sparse_implementation_audit",
         "human_readable_full_and_retained_carrier_map_printed",
@@ -69,6 +72,9 @@ def main() -> None:
         "retained_46_subprincipal_verdict_landed",
         "constant_field_physical_cyclic_redefinition_screen_computed",
         "first_jet_physical_cyclic_redefinition_screen_computed",
+        "full_BV_filtered_cyclic_redefinition_obstruction_computed",
+        "full_BV_order_two_filtered_removal_obstructed",
+        "full_BV_unremovable_within_declared_filtered_cyclic_class",
     }
     assert all(claims[name] is True for name in required_true)
     assert claims["retained_mixed_ell2_coefficient_count"] == 1_474
@@ -107,6 +113,11 @@ def main() -> None:
     assert claims["first_jet_positive_map_cokernel_dimension"] == 3
     assert claims["first_jet_Schur_rank"] == 557
     assert claims["first_jet_positive_primitive_counts"] == [43, 94, 95, 108]
+    assert claims["full_BV_filtered_obstruction_page"] == 1
+    assert claims["full_BV_filtered_obstruction_support_count"] == 22
+    assert claims["full_BV_zero_page_columns_checked"] == 5_984
+    assert claims["full_BV_first_page_columns_checked_per_axis"] == 14_998
+    assert claims["full_BV_first_page_defects_per_axis"] == [0, 0, 0, 0]
 
     witnesses = payload["explicit_nonzero_witnesses"]
     assert witnesses["gravity_equation_output"] == {
@@ -161,8 +172,10 @@ def main() -> None:
     )
     assert (
         payload["next_gate"]["deformation_required_input"]
-        == "FULL_BV_AND_SECOND_JET_CYCLIC_REDEFINITION_COMPLEX"
+        == "UNRESTRICTED_CYCLIC_DEFORMATION_COMPLEX_OR_RESIDUAL_COHOMOLOGY_DESCENT"
     )
+    assert payload["next_gate"]["filtered_deformation_status"] == "FULL_BV_FILTERED_REMOVAL_OBSTRUCTED_THROUGH_TOTAL_PBW_ORDER_TWO"
+    assert payload["next_gate"]["filtered_obstruction"] == "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1"
     assert payload["next_gate"]["first_jet_redefinition"] == "BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1"
     assert (
         payload["next_gate"]["required_input"]
@@ -420,6 +433,25 @@ def main() -> None:
     assert first_jet["claim_flags"]["FULL_BV_REDEFINITION_MATCHED"] is False
     assert first_jet["claim_flags"]["JET_ORDER_TWO_OR_HIGHER_COMPUTED"] is False
 
+    filtered_obstruction = json.loads(
+        (ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json").read_text(encoding="utf-8")
+    )
+    assert filtered_obstruction["result_state"] == "FILTERED_CYCLIC_FULL_BV_REMOVAL_OBSTRUCTED_AT_FIRST_ASSOCIATED_GRADED_PAGE"
+    assert filtered_obstruction["lifecycle_status"] == "OBSTRUCTED"
+    assert filtered_obstruction["filtration"]["target_bound"] == 2
+    assert filtered_obstruction["filtration"]["obstruction_page"] == 1
+    witness = filtered_obstruction["obstruction_witness"]
+    assert witness["support_count"] == 22
+    replay = witness["exhaustive_transpose_replay"]
+    assert replay["zero_label_columns_checked"] == 5_984
+    assert replay["first_label_columns_checked_per_axis"] == 14_998
+    assert replay["zero_column_defects"] == 0
+    assert replay["first_column_defects_per_axis"] == [0, 0, 0, 0]
+    assert replay["target_pairing"] == "1"
+    assert filtered_obstruction["claim_flags"]["ORDER_TWO_FILTERED_REMOVAL_OBSTRUCTED"] is True
+    assert filtered_obstruction["claim_flags"]["SDR_INDEPENDENT_DEFORMATION_CLASS"] is False
+    assert filtered_obstruction["claim_flags"]["RESIDUAL_COHOMOLOGY_OPERATION_NONZERO"] is False
+
     from generate_11_witness_inclusion_columns import (
         OUTPUT as WITNESS_COLUMNS,
         build as build_witness_columns,
@@ -459,6 +491,7 @@ def main() -> None:
         r"\begin{theorem}[Nonzero retained mixed bracket for the frozen cyclic SDR]",
         r"\begin{proposition}[Constant-field cyclic-redefinition screen]",
         r"\begin{proposition}[First positive-jet cyclic-redefinition screen]",
+        r"\begin{theorem}[Scoped filtered cyclic obstruction]",
         r"\begin{proposition}[Independent degree-zero lowered cyclicity]",
         r"\begin{proposition}[Independent full-BV quartic cyclicity]",
         r"\begin{theorem}[Cyclic causal Cartan compatibility]",
@@ -474,7 +507,7 @@ def main() -> None:
         r"25{,}662",
         r"17{,}108",
         r"not yet a photon or graviton scattering amplitude",
-        r"The complete constant-field page is in fact removable by the exact",
+        r"The complete constant-field page is removable by the exact",
         r"BERGER_RETAINED_MIXED_ELL3_CONSTANT_FIELD_REDEFINITION_V1",
         r"BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1",
         r"\input{paper/11-gravity-light-ell3-witness-inclusion-columns.tex}",
@@ -510,7 +543,7 @@ def main() -> None:
     for marker in forbidden_markers:
         assert marker not in text, marker
 
-    print("PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_DRAFT_CLAIM_MAP: PASS")
+    print("PAPER_11_GRAVITY_LIGHT_CYCLIC_CAUSAL_ELL3_THEOREM_FROZEN_CLAIM_MAP: PASS")
 
 
 if __name__ == "__main__":
