@@ -133,6 +133,15 @@ coefficientwise affine-`K` family morphism through arity three.  This is not a
 linear quotient at one fixed apparatus background or a finite-parameter
 theorem.
 
+This also settles the nonlinear-team sequencing request at its certified
+scope: `BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY` is the explicit
+mixed-`epsilon_R^2 kappa` prerequisite of
+`BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE`, which in turn is the hashed input of
+`BERGER_AFFINE_K_OBSERVER_MORPHISM`.  Apparatus `q2,q3` and affine-
+`K_Berger` observer-morphism stability were therefore added only after the
+mixed unary gate closed.  Finite-`r`, fixed-background linear-`K`, full
+`q4`, and all-orders observer stability remain open.
+
 `BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA` now imports C-G4 without redefining
 its signal.  The two detector polarizations evaluate its circular phase plane
 through a moment matrix whose determinant is a strictly positive double
@@ -427,6 +436,18 @@ serialized intervals.  The active gate is now the actual
 polarization-recurrence and three-dimensional
 charge-block Green composition through form `two_j=138`, followed by the
 tail disposition.  Full Maxwell/massive images and recoil remain open.
+
+`BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` now composes the exact
+detector coframe prefactors and Clebsch--Gordan recurrence with all six
+external-clock scalar rails.  The reconstructible stream contains 86,736
+detector-component entries, 231,018 scalar-term applications and 520,416
+clock-power intervals through form `two_j=138`; canonical per-mode/full
+hashes are exported, and 1,980 direct `two_j<=4` interval comparisons have
+zero nonoverlap defects.  This closes polarization coefficient construction,
+not the temporal Green polynomial.  The active gate is now its exact
+application in charge blocks of dimension at most three, followed by the
+tail beyond `two_j=138`; full Maxwell/massive images, recoil, tangent-cone
+restriction and Bridge 3 remain open.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.

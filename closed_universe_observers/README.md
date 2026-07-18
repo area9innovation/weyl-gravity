@@ -91,6 +91,8 @@ python3 -m closed_universe_observers.generate_berger_clock_integrated_scalar_str
 python3 -m closed_universe_observers.verify_berger_clock_integrated_scalar_stream
 for p in 0 2 4 6 8 10; do python3 -m closed_universe_observers.generate_berger_clock_weighted_scalar_stream --power "$p" --check; done
 for p in 0 2 4 6 8 10; do python3 -m closed_universe_observers.verify_berger_clock_weighted_scalar_stream --power "$p"; done
+python3 -m closed_universe_observers.generate_berger_clock_weighted_polarization_stream --check
+python3 -m closed_universe_observers.verify_berger_clock_weighted_polarization_stream
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -319,6 +321,13 @@ polarization recurrence's external `a(t)=cos(lambda s)` factor, so the joint
 clock integrand is `s^p sec(lambda s)^(2k-1)`.  Positivity bounds it without
 an independence assumption.  Polarization/charge-block composition and the
 tail remain open.
+The detector-prefactored successor now applies the exact polarization
+recurrence to all six rails through form `two_j=138`.  It exports canonical
+hashes for 86,736 detector-component entries and 520,416 reconstructible
+clock-power intervals, with 1,980 overlapping direct low-mode checks and no
+defect.  Temporal Green application in the certified charge blocks, the tail
+beyond this capacity rail, full Maxwell/massive images, and recoil remain
+open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

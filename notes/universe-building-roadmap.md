@@ -310,9 +310,16 @@ reconstruct all 9,870 diagonal values, with worst binomial remainder below
 external-clock-weighted rails `a(t)s^p`, `p=0,2,4,6,8,10`, required by the
 finite temporal Green polynomial.  Positivity bounds the joint factor
 `s^p sec(lambda s)^(2k-1)` without an independence assumption.  The active
-gate is the polarization recurrence and
-charge-block Green composition through form `two_j=138`, then the tail beyond
-that rail, rather than dense block construction.
+polarization gate is now closed: exact detector prefactors and the recurrence
+produce 86,736 detector-component entries and 520,416 reconstructible
+clock-power intervals through form `two_j=138`, with zero defects in 1,980
+direct low-mode comparisons.  The active gate is the temporal Green
+polynomial in charge blocks of dimension at most three, then the tail beyond
+that rail, rather than dense block construction.  The nonlinear apparatus
+dependency is also explicit and ordered by content hash: the normalized
+mixed `epsilon_R^2 kappa` unary certificate precedes apparatus `q2,q3`, which
+precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
+finite-`r`, fixed-background linear-`K`, full-`q4`, or all-orders stability.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
@@ -493,8 +500,10 @@ survive the first backreacted, normalized apparatus interaction?
    and Clebsch--Gordan polarization recurrences now make the adaptive route
    streamable through its necessary `two_j=138` capacity rail.  Validated
    radial and clock-secant moments now extend through `k=50`, and the complete
-   diagonal scalar stream is validated through `two_j=139`.  The next gate is
-   the Green-weighted polarization recurrence and tail beyond `two_j=138`,
+   diagonal scalar stream is validated through `two_j=139`.  Detector-
+   prefactored polarization coefficients are now certified through form
+   `two_j=138`; the next gate is exact temporal Green application in the
+   at-most-three-dimensional charge blocks and the tail beyond that rail,
    followed by the massive Green images and recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a
@@ -1255,6 +1264,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` (fired) | replace the inadequate `two_j<=4` tail target by an adaptive cutoff near the radius-`1/128` profile bandwidth or a physical-space Green-chain evaluation |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired) | derive a streamable polarization coefficient recurrence and Green-weighted operator-norm tail beginning from the necessary `two_j>=138` capacity rail; do not treat that rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
+| `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that necessary capacity rail |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

@@ -24,3 +24,19 @@ def test_tangent_cone_is_not_promoted():
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"
     second_order = row["mode_data"]["second_order"]
     assert {second_order[name]["status"] for name in ("bounded_or_finite_quasiperiodic", "smooth_secular", "causal_retarded")} == {"OPEN"}
+
+
+def test_mixed_unary_precedes_apparatus_and_affine_k_morphism():
+    value = build()
+    row = next(row for row in value["entries"] if row["id"] == "observer.berger.massive_emitter.preparation_pair")
+    result_ids = [evidence["result_id"] for evidence in row["evidence"]]
+    assert result_ids.index("BERGER_84_ROW_NORMALIZED_PROFILE_MIXED_UNARY") < result_ids.index("BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE")
+    assert result_ids.index("BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE") < result_ids.index("BERGER_AFFINE_K_OBSERVER_MORPHISM")
+
+
+def test_adaptive_row_imports_polarization_stream_without_green_promotion():
+    row = next(row for row in build()["entries"] if row["id"] == "observer.berger.detector_profile.adaptive_cutoff_preflight")
+    assert "BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"

@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-clock-weighted-polarization-stream-two-j138-v1.schema.json",
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "positive_rational": {"type": "string", "pattern": "^[0-9]+/[1-9][0-9]*$"},
+    "clock_widths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["0", "2", "4", "6", "8", "10"],
+      "properties": {
+        "0": {"$ref": "#/$defs/positive_rational"},
+        "2": {"$ref": "#/$defs/positive_rational"},
+        "4": {"$ref": "#/$defs/positive_rational"},
+        "6": {"$ref": "#/$defs/positive_rational"},
+        "8": {"$ref": "#/$defs/positive_rational"},
+        "10": {"$ref": "#/$defs/positive_rational"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "setting_id", "claim_status", "dependency_tags",
+    "dependency_refs", "stream_convention", "coverage",
+    "maximum_interval_width_by_clock_power", "canonical_full_stream_sha256",
+    "mode_summaries", "direct_low_mode_compatibility_audit",
+    "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-clock-weighted-polarization-stream-two-j138-v1"},
+    "result_id": {"const": "BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138"},
+    "setting_id": {"const": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"},
+    "claim_status": {"const": "VALIDATED_DETECTOR_POLARIZATION_STREAM_TWO_J0_TO_138_EXPORTED_GREEN_BLOCK_APPLICATION_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recurrence", "moments", "low_form", "s0", "s2", "s4", "s6", "s8", "s10"],
+      "properties": {
+        "recurrence": {"$ref": "#/$defs/dependency"},
+        "moments": {"$ref": "#/$defs/dependency"},
+        "low_form": {"$ref": "#/$defs/dependency"},
+        "s0": {"$ref": "#/$defs/dependency"},
+        "s2": {"$ref": "#/$defs/dependency"},
+        "s4": {"$ref": "#/$defs/dependency"},
+        "s6": {"$ref": "#/$defs/dependency"},
+        "s8": {"$ref": "#/$defs/dependency"},
+        "s10": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "stream_convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clock_powers", "maximum_form_two_j", "scalar_neighbor_maximum_two_j",
+        "detectors", "canonical_entry_order", "canonical_encoding",
+        "interval_stream_reconstruction"
+      ],
+      "properties": {
+        "clock_powers": {"const": [0, 2, 4, 6, 8, 10]},
+        "maximum_form_two_j": {"const": 138},
+        "scalar_neighbor_maximum_two_j": {"const": 139},
+        "detectors": {"const": ["D0", "D1"]},
+        "canonical_entry_order": {"type": "string", "minLength": 1},
+        "canonical_encoding": {"type": "string", "minLength": 1},
+        "interval_stream_reconstruction": {"type": "string", "minLength": 1}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unique_coordinate_recurrence_entry_count", "unique_coordinate_scalar_term_count",
+        "detector_component_entry_count", "detector_component_scalar_term_application_count",
+        "clock_power_interval_count"
+      ],
+      "properties": {
+        "unique_coordinate_recurrence_entry_count": {"const": 57824},
+        "unique_coordinate_scalar_term_count": {"const": 154012},
+        "detector_component_entry_count": {"const": 86736},
+        "detector_component_scalar_term_application_count": {"const": 231018},
+        "clock_power_interval_count": {"const": 520416}
+      }
+    },
+    "maximum_interval_width_by_clock_power": {"$ref": "#/$defs/clock_widths"},
+    "canonical_full_stream_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "mode_summaries": {
+      "type": "array",
+      "minItems": 139,
+      "maxItems": 139,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "two_j", "dimension", "detector_component_entry_count",
+          "scalar_term_application_count", "maximum_interval_width_by_clock_power",
+          "canonical_stream_sha256"
+        ],
+        "properties": {
+          "two_j": {"type": "integer", "minimum": 0, "maximum": 138},
+          "dimension": {"type": "integer", "minimum": 1, "maximum": 139},
+          "detector_component_entry_count": {"type": "integer", "minimum": 3},
+          "scalar_term_application_count": {"type": "integer", "minimum": 6},
+          "maximum_interval_width_by_clock_power": {"$ref": "#/$defs/clock_widths"},
+          "canonical_stream_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "direct_low_mode_compatibility_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["audited_two_j_maximum", "interval_comparison_count", "nonoverlap_defect_count"],
+      "properties": {
+        "audited_two_j_maximum": {"const": 4},
+        "interval_comparison_count": {"const": 1980},
+        "nonoverlap_defect_count": {"const": 0}
+      }
+    },
+    "mutation_results": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "detected", "reason"],
+        "properties": {
+          "name": {"const": "use_unweighted_scalar_stream_in_place_of_external_clock_s0"},
+          "detected": {"const": true},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "DETECTOR_PREFACTORED_POLARIZATION_INTERVAL_STREAM_TWO_J0_TO_138_EXPORTED",
+        "ALL_SIX_EXTERNAL_CLOCK_POWERS_APPLIED", "DIRECT_LOW_MODE_FORM_COMPATIBILITY_PASSED",
+        "TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED", "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED",
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED",
+        "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED", "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "DETECTOR_PREFACTORED_POLARIZATION_INTERVAL_STREAM_TWO_J0_TO_138_EXPORTED": {"const": true},
+        "ALL_SIX_EXTERNAL_CLOCK_POWERS_APPLIED": {"const": true},
+        "DIRECT_LOW_MODE_FORM_COMPATIBILITY_PASSED": {"const": true},
+        "TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED": {"const": false},
+        "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": {"const": false},
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "APPLY_THE_DEGREE_TEN_TEMPORAL_GREEN_POLYNOMIAL_IN_EXACT_THREE_DIMENSIONAL_CHARGE_BLOCKS_THROUGH_TWO_J138"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "source_manifest"],
+      "properties": {
+        "source_commit": {"type": "string", "minLength": 1},
+        "source_manifest": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/source"}
+        }
+      }
+    }
+  }
+}

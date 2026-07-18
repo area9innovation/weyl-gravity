@@ -1,0 +1,107 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact detector-prefactored Clebsch--Gordan recurrence has been applied to all six external-clock scalar rails through form two_j=138. The reconstructible stream contains 86,736 detector-component entries, 231,018 scalar-term applications and 520,416 clock-power intervals, with canonical per-mode and full-stream hashes and zero nonoverlap defects in 1,980 direct low-mode comparisons. This closes polarization coefficient construction only. Temporal Green charge-block application, the tail beyond two_j=138, full Maxwell/massive images, recoil, tangent-cone restriction, Bridge 3 and quantum claims remain open. The normalized mixed epsilon_R^2 kappa unary certificate is recorded as the prerequisite of apparatus q2/q3 and the coefficientwise affine-K observer morphism; finite-r, fixed-background linear-K, full-q4 and all-orders stability remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_clock_weighted_polarization_stream.py closed_universe_observers/verify_berger_clock_weighted_polarization_stream.py closed_universe_observers/tests/test_berger_clock_weighted_polarization_stream.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
+      "elapsed_seconds": "under 1",
+      "status": "PASS",
+      "scope": "new producer, verifier, focused tests and atlas consumer"
+    },
+    {
+      "command": "python3 -m json.tool closed_universe_observers/schema/berger-clock-weighted-polarization-stream-two-j138-v1.schema.json and Draft202012Validator.check_schema",
+      "elapsed_seconds": "under 1",
+      "status": "PASS",
+      "scope": "strict fail-closed schema parse and metaschema validation"
+    },
+    {
+      "command": "git diff --check -- scoped observer paths and canonical-roadmap hunk",
+      "elapsed_seconds": "under 1",
+      "status": "PASS",
+      "scope": "recorded after explicit-path staging"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_clock_weighted_polarization_stream.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": "1.52",
+      "status": "PASS",
+      "summary": "12 passed; representative top-mode reconstruction, exact signed-square-root compatibility, exhaustive stored coverage, fail-closed bridge rows and nonlinear prerequisite order"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-clock-weighted-polarization-stream-two-j138-v1.schema.json -d closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138.json",
+      "elapsed_seconds": "under 5",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 certificate validation"
+    },
+    {
+      "command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json and python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": "under 2",
+      "status": "PASS",
+      "scope": "generated atlas, shared schema, evidence hashes, mixed-unary dependency order and fail-closed physical-branch bridge"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_clock_weighted_polarization_stream --emit",
+      "elapsed_seconds": "215.29",
+      "status": "PASS",
+      "scope": "post-hardening exhaustive construction of all 520,416 exact intervals and canonical hashes"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_clock_weighted_polarization_stream",
+      "elapsed_seconds": "206.13",
+      "status": "PASS",
+      "scope": "post-hardening exhaustive freshness, schema, dependency, ordered-mode, interval and provenance replay"
+    }
+  ],
+  "attempts_not_counted_as_passes": [
+    {
+      "command": "initial exhaustive traversal with generic symbolic interval conversion and textual rational hashing",
+      "status": "TERMINATED",
+      "reason": "The prototype exceeded six minutes. It was replaced by a detector-entry loop that computes recurrence coefficients once and uses canonical binary rational encoding. The terminated timing is not a pass."
+    },
+    {
+      "command": "intermediate exhaustive traversal with the generic algebraic interval converter",
+      "status": "TERMINATED",
+      "reason": "The prototype still exceeded three minutes. It was replaced by an exact signed-square-root-of-rational converter with 160-bit outward dyadic endpoints, checked against the generic converter on the direct low-mode rail. The terminated timing is not a pass."
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No classical/quantum freeze, paper theorem, shared core algebra, full Green image, tail theorem, recoil coefficient, tangent-cone promotion, physical-branch bridge activation or quantum lifecycle promotion."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_clock_weighted_polarization_stream.py", "sha256": "b302a27157ecb76b29f3ec78ded938fb6e5a0d51eba012ddd8cfae3c01ccd59f"},
+    {"path": "closed_universe_observers/verify_berger_clock_weighted_polarization_stream.py", "sha256": "0f38825f7cb3f60c6f139cfd5c3c134f70f6c06dc971c967d0ebd0744003c1df"},
+    {"path": "closed_universe_observers/tests/test_berger_clock_weighted_polarization_stream.py", "sha256": "daa0aa508e789e893729218aa5ed1a868a3912ca10f7c25983324a3272bff58f"},
+    {"path": "closed_universe_observers/schema/berger-clock-weighted-polarization-stream-two-j138-v1.schema.json", "sha256": "10058bc1291201c595c98e6e08f120cd8ad997750c619652fa41fa1e662d02bb"},
+    {"path": "closed_universe_observers/reports/berger-clock-weighted-polarization-stream-two-j138.md", "sha256": "f5eb9c0b92a8deac5423d6553d3b323948bf45decba4b99ea279dc708ebf0fa5"},
+    {"path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138.json", "sha256": "694d10bc46f988b40470504167e67df9e5cf7e3d04ad23a66427a02492d9c781"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "e02364f4ab6a09847130b2960850e2edb3f15f68697310aae9636b3766cffdfd"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "ad187d782445f7130173288ee785e6d4303ed8dd3db28461b41d162f48189311"},
+    {"path": "closed_universe_observers/tests/test_observer_atlas_fragment.py", "sha256": "063b102723ddf2ffb50403b01eb57a8b382033043961d9603944353d7eeecf41"},
+    {"path": "closed_universe_observers/README.md", "sha256": "60590afc2dbb375ed4da2bd0a4175080b248306c104af1cc34a8597509721e94"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "2012fb62b74d1543aa24d047768b84ed3e77a56cfbfbab665e29f82059780e98"},
+    {"path": "notes/universe-building-roadmap.md", "staged_sha256": "7ebf6de2d2c708d60e995f0f580a382c22f15f306f420c2382a493744e754fa1"}
+  ],
+  "claim_flags": {
+    "DETECTOR_PREFACTORED_POLARIZATION_INTERVAL_STREAM_TWO_J0_TO_138_EXPORTED": true,
+    "ALL_SIX_EXTERNAL_CLOCK_POWERS_APPLIED": true,
+    "DIRECT_LOW_MODE_FORM_COMPATIBILITY_PASSED": true,
+    "MIXED_UNARY_PRECEDES_APPARATUS_Q2_Q3_AND_AFFINE_K_MORPHISM": true,
+    "TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
