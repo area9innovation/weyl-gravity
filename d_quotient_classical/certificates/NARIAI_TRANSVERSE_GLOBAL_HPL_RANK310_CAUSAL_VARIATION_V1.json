@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "claim_boundary": "This certificate gives a global support-local cyclic first variation of the rank-310 SDR and its advanced/retarded chain homotopies by the normalized basic perturbation lemma. It agrees with the prior one-point geometric representative but does not require one-point Taylor data for globalization. The endpoint Green variation is applied to the HPL-transferred metric differential; no global coefficientwise equality with the separately sampled action-Hessian representative is asserted. It is a formal tangent theorem at epsilon=0, not an exact globally smooth nonzero-epsilon Nariai deformation family.",
+  "dependency_refs": {
+    "base_rank310_SDR": {
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "result_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    },
+    "global_formal_metric_Green_variation": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1",
+      "sha256": "25cf33befe9e872b300c7365a37c32c7b2a9fb69dc13a18b68c994bad6ccaf1f"
+    },
+    "global_transverse_tangent": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1",
+      "sha256": "0f69c6021e702a2ea0fea6bc2d7ba4e088962df7e9eda8d9a071bf22e2130748"
+    },
+    "pointwise_geometric_SDR_variation": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1",
+      "sha256": "f167cb5719eedc3280fe8636c2104006535f436a3fba49faf7d1aa544e50b658"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "HPL_matches_certified_geometric_point_representative": true,
+    "cyclic_HPL_SDR_first_variation": true,
+    "formal_rank310_chain_homotopy_identity": true,
+    "global_Qdot_is_natural_local_operator": true,
+    "nonzero_epsilon_global_family_not_overclaimed": true,
+    "same_sided_support": true
+  },
+  "finite_fixture": {
+    "coefficient_field": "Q",
+    "full_rank": 4,
+    "identity_defects": {
+      "H_I": 0,
+      "H_squared": 0,
+      "Hdot_cyclic": 0,
+      "Qdot_cyclic": 0,
+      "base_retract": 0,
+      "inclusion_chain": 0,
+      "linearized_nilpotency": 0,
+      "metric_Qdot_cyclic": 0,
+      "p_H": 0,
+      "pairing_pullback": 0,
+      "projection_adjoint": 0,
+      "projection_chain": 0,
+      "projection_inclusion": 0,
+      "retract": 0
+    },
+    "qdot_nonzero": 10,
+    "retained_rank": 2
+  },
+  "flags": {
+    "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1": true,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION": true,
+    "TRANSVERSE_GLOBAL_RANK310_SDR_VARIATION": true,
+    "TRANSVERSE_NONZERO_EPSILON_GLOBAL_CAUSAL_FAMILY": false
+  },
+  "global_full_complex_variation": {
+    "coefficient_table_required": false,
+    "cyclicity": "Qdot_310 is odd cyclic after the smooth bundle-density identification with constant pairing",
+    "globality": "dot g, its Levi-Civita connection variation and every finite covariant curvature derivative entering Qdot_310 are smooth on all R times S1 times S2",
+    "linearized_nilpotency": "Q0 Qdot_310+Qdot_310 Q0=0",
+    "operator": "Qdot_310=d/d epsilon of the natural covariant rank-310 mapping-cone differential at epsilon=0 along dot g",
+    "support": "Qdot_310 is finite-order differential and support-nonincreasing"
+  },
+  "hpl_normalized_SDR": {
+    "Hdot": "-H0 Qdot_310 H0",
+    "Idot": "-H0 Qdot_310 I0",
+    "cyclicity": "the cyclic basic perturbation lemma preserves inclusion/projection adjunction and odd cyclicity of H through first order",
+    "identity": "1-I_epsilon p_epsilon=Q_epsilon H_epsilon+H_epsilon Q_epsilon modulo epsilon^2",
+    "pdot": "-p0 Qdot_310 H0",
+    "pointwise_geometric_comparison_defects": {
+      "homotopy_dot": 0,
+      "inclusion_dot": 0,
+      "metric_q_dot": 0,
+      "projection_dot": 0
+    },
+    "qdot_metric": "p0 Qdot_310 I0",
+    "side_conditions": [
+      "p_epsilon I_epsilon=1",
+      "H_epsilon^2=0",
+      "H_epsilon I_epsilon=0",
+      "p_epsilon H_epsilon=0"
+    ],
+    "support": "all four formulas are finite compositions of support-local differential maps"
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "QUEUED_SAME_BACKGROUND_RELATIVE_AND_INTERACTION_HANDOFFS",
+  "rank310_formal_causal_homotopy": {
+    "adjoint_reversal": "cyclic HPL adjunction plus the metric complementary-degree adjoint reversal gives the rank-310 opposite-sided adjoint identity through first order",
+    "base": "Lambda310,0=H0+I0 Lambda_metric,0 p0",
+    "identity": "Q0 Lambdadot310+Qdot_310 Lambda310,0+Lambdadot310 Q0+Lambda310,0 Qdot_310=0",
+    "metric_representative": "Lambdadot_metric is the universal Duhamel variation applied to qdot_metric=p0 Qdot_310 I0; no global coefficientwise identification with the separately sampled action-Hessian representative is required or asserted",
+    "scope": "global formal order epsilon; no single smooth nonzero-epsilon spacetime on the whole cylinder is asserted",
+    "support": "each retarded term maps compact support into J+(support), and each advanced term into J-(support); local HPL terms lie in the original support",
+    "variation": "Lambdadot310=Hdot+Idot Lambda_metric,0 p0+I0 Lambdadot_metric p0+I0 Lambda_metric,0 pdot"
+  },
+  "result_id": "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1",
+  "result_state": "GLOBAL_SUPPORT_LOCAL_CYCLIC_HPL_SDR_AND_FORMAL_RANK310_CAUSAL_VARIATION_EXACT",
+  "schema": "nariai-transverse-global-hpl-rank310-causal-variation-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_global_hpl_rank310_causal_variation.py": "5a3c8dd3983d73088d2047df262afe0ad05d7878009f375d9a018dc73e3de0b4",
+    "d_quotient_classical/causal_transfer/nariai_transverse_rank310_dual_sdr.py": "83dcb9613185a38641f3cf8a957185ab4f274a6b9ac7e186cd7729034360943a",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_global_hpl_rank310_causal_variation.py": "dae835f3b0dcddde5a540008eb7c0fe361e0409709db4e1726b40346b79ff94e",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_global_hpl_rank310_causal_variation.py": "2daa2f2196a462ab84435be2057affb09bb5c1ff3fe8c3d0cae1f0796557ac10",
+    "d_quotient_classical/schema/nariai-transverse-global-hpl-rank310-causal-variation-v1.schema.json": "2736198c0770dee382bb306a69691f31130f15295fd4f3d2070b1b5db4c37e1a"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_global_hpl_rank310_causal_variation --check --guards",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_global_hpl_rank310_causal_variation.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_transverse_global_hpl_rank310_causal_variation",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-global-hpl-rank310-causal-variation-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json"
+  ]
+}

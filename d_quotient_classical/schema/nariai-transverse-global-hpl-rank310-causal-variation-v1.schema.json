@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nariai-transverse-global-hpl-rank310-causal-variation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "schema_version", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "dependency_refs",
+    "global_full_complex_variation", "hpl_normalized_SDR",
+    "rank310_formal_causal_homotopy", "finite_fixture", "exact_checks",
+    "flags", "next_gate", "claim_boundary", "source_manifest",
+    "verification_commands"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-global-hpl-rank310-causal-variation-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "LORENTZIAN-CAUSAL"}],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_rank310_SDR", "pointwise_geometric_SDR_variation", "global_formal_metric_Green_variation", "global_transverse_tangent"],
+      "properties": {
+        "base_rank310_SDR": {"$ref": "#/$defs/reference"},
+        "pointwise_geometric_SDR_variation": {"$ref": "#/$defs/reference"},
+        "global_formal_metric_Green_variation": {"$ref": "#/$defs/reference"},
+        "global_transverse_tangent": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "global_full_complex_variation": {"$ref": "#/$defs/stringBooleanRecord"},
+    "hpl_normalized_SDR": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Idot", "pdot", "Hdot", "qdot_metric", "identity", "side_conditions", "cyclicity", "support", "pointwise_geometric_comparison_defects"],
+      "properties": {
+        "Idot": {"type": "string"}, "pdot": {"type": "string"},
+        "Hdot": {"type": "string"}, "qdot_metric": {"type": "string"},
+        "identity": {"type": "string"},
+        "side_conditions": {"type": "array", "items": {"type": "string"}, "minItems": 4},
+        "cyclicity": {"type": "string"}, "support": {"type": "string"},
+        "pointwise_geometric_comparison_defects": {
+          "type": "object", "minProperties": 4, "maxProperties": 4,
+          "additionalProperties": {"const": 0}
+        }
+      }
+    },
+    "rank310_formal_causal_homotopy": {"$ref": "#/$defs/stringRecord"},
+    "finite_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient_field", "full_rank", "retained_rank", "qdot_nonzero", "identity_defects"],
+      "properties": {
+        "coefficient_field": {"const": "Q"}, "full_rank": {"const": 4},
+        "retained_rank": {"const": 2}, "qdot_nonzero": {"type": "integer", "minimum": 1},
+        "identity_defects": {"type": "object", "minProperties": 14, "maxProperties": 14, "additionalProperties": {"const": 0}}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1", "TRANSVERSE_GLOBAL_RANK310_SDR_VARIATION", "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION", "TRANSVERSE_CAUSAL_TRANSFER", "TRANSVERSE_NONZERO_EPSILON_GLOBAL_CAUSAL_FAMILY"],
+      "properties": {
+        "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1": {"const": true},
+        "TRANSVERSE_GLOBAL_RANK310_SDR_VARIATION": {"const": true},
+        "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION": {"const": true},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false},
+        "TRANSVERSE_NONZERO_EPSILON_GLOBAL_CAUSAL_FAMILY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "QUEUED_SAME_BACKGROUND_RELATIVE_AND_INTERACTION_HANDOFFS"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "items": {"type": "string"}, "minItems": 4}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "stringRecord": {"type": "object", "additionalProperties": {"type": "string"}},
+    "stringBooleanRecord": {"type": "object", "additionalProperties": {"oneOf": [{"type": "string"}, {"type": "boolean"}]}}
+  }
+}

@@ -204,11 +204,15 @@ normal ordering, and the calculation exercises the nonzero curvature jet tower
 through order five.  No interpolation is used.  The upper relative-saddle,
 action endpoint and complete ten-block rank-310 first-variation SDR gates now
 close exactly.  The global four-row metric Green homotopy also has an exact
-formal first variation, with
-`Gdot_+/-=-G0_+/- Pdot G0_+/-` and same-sided support.  The active gate is
-now the global covariant coefficient export for the differentiated rank-310
-SDR: its current PBW realization is a one-point fifth-order Taylor jet and
-cannot be globalized by homogeneity along the time-dependent tangent.
+formal first variation.  The global all-row gate is now closed without
+misusing the one-point coefficient table: the cyclic basic perturbation lemma
+applied to the natural global `Qdot_310` gives
+`Idot=-H Qdot I`, `pdot=-p Qdot H`, `Hdot=-H Qdot H`, and
+`qdot=p Qdot I`.  These formulas reproduce the certified pointwise geometric
+representative exactly and transfer the same-sided Duhamel homotopy to all 310
+rows through formal first order.  The exact nonzero-`epsilon` global family is
+not claimed.  The active queue may now advance to the three same-background
+relative/interaction handoffs below.
 
 For every declared background, charge fibre, boundary condition, and quotient:
 
@@ -1643,16 +1647,18 @@ rank-310 first variation now follows without a new ansatz: differentiating the
 universal ten-block SDR gives twenty-one zero matrix defects in both split and
 original coordinates, including all side conditions and cyclic adjoints.  No
 row is dropped, and all varied maps remain finite-order and support-local.
-The transverse metric causal first variation is now exact globally at formal
+The transverse metric causal first variation is exact globally at formal
 order one.  The tangent is generated on every fixed compact time slab by an
 exact Kantowski--Sachs Einstein family, and the finite Duhamel formula
 `Gdot_+/-=-G0_+/- Pdot G0_+/-` satisfies both inverse identities, the
-differentiated chain homotopy and same-sided support.  The audit also prevents
-an invalid final step: the current rank-310 SDR variation is a Taylor/PBW jet
-through order five at `t=asinh(1)`, not a global coefficient field, and the
-time-dependent tangent cannot be globalized by Nariai homogeneity.  The active
-gate is the global covariant rank-310 SDR coefficient variation, followed by
-its formal causal transfer.
+differentiated chain homotopy and same-sided support.  The full 310-row
+variation is globalized by the normalized cyclic basic perturbation lemma,
+not by treating the Taylor/PBW normalization table as a global field.  Its
+four HPL formulas obey the complete SDR identities, agree with the pointwise
+geometric representative, and transfer the advanced/retarded homotopy through
+formal first order.  This closes the transverse tangent causal gate at its
+honest formal scope.  A single smooth exact nonzero-`epsilon` family over the
+entire cylinder remains unclaimed.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

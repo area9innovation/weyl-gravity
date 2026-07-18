@@ -35,10 +35,10 @@ first variation has 209 coefficients and normalized witness one.  The former
 207-coefficient shifted-chain target and its downstream Phi/L0/K rank screens
 are therefore retained only as backend regression data, not operator no-go
 theorems.  A coefficient-jet-aware associative replay, action-derived cyclic
-identification and rank-310 causal transfer remain `OPEN`.  Its global
-four-row metric Green homotopy now has a certified formal first variation,
-while the differentiated rank-310 SDR is still only a one-point Taylor/PBW
-jet and therefore cannot yet be transferred causally.
+identification remains `OPEN`.  Its global four-row metric Green homotopy and
+the cyclic HPL-normalized rank-310 contraction now have certified formal first
+variations with same-sided support.  This is a tangent theorem at
+`epsilon=0`; no exact nonzero-`epsilon` global family is promoted.
 
 All bounded/quasiperiodic, smooth-secular, and causal/retarded second-order
 statuses are separate fields.  No status is transported between backgrounds

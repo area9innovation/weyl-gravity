@@ -49,18 +49,22 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1", ids)
-        self.assertEqual(entry["descriptions"]["causal"], "OPEN")
+        self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")
         self.assertIn("factorized adjunction before PBW normal ordering", entry["claim_boundary"])
         self.assertIn("upper relative-saddle chain closes", entry["claim_boundary"])
         self.assertIn("unique 15-term algebraic cyclic completion", entry["claim_boundary"])
         self.assertIn("direct action-leading coefficients plus Noether uniqueness", entry["claim_boundary"])
         self.assertIn("all twenty-one differentiated ten-block SDR identities vanish", entry["claim_boundary"])
         self.assertIn(
-            "rank-310 coefficient variation remains a one-point fifth-order Taylor jet",
+            "tangent theorem at epsilon=0",
             entry["claim_boundary"],
         )
         self.assertIn(
             "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 

@@ -594,6 +594,18 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   tangent is not homogeneous:
   [`certificates/NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1.json),
   [`reports/nariai-transverse-formal-metric-green-variation.md`](reports/nariai-transverse-formal-metric-green-variation.md)
+- Transverse global HPL rank-310 causal variation: applying the normalized
+  cyclic basic perturbation lemma directly to the natural global
+  `Qdot_310` gives
+  `Idot=-H Qdot I`, `pdot=-p Qdot H`, `Hdot=-H Qdot H`, and
+  `qdot=p Qdot I`.  These support-local formulas satisfy the complete SDR
+  identities and agree exactly with the earlier one-point geometric
+  representative in the noncommutative operator algebra.  Together with the
+  metric Duhamel variation they give a global formal all-row advanced/retarded
+  chain contraction through first order.  This is a tangent theorem at
+  `epsilon=0`, not a globally smooth exact nonzero-`epsilon` family:
+  [`certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_GLOBAL_HPL_RANK310_CAUSAL_VARIATION_V1.json),
+  [`reports/nariai-transverse-global-hpl-rank310-causal-variation.md`](reports/nariai-transverse-global-hpl-rank310-causal-variation.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer
