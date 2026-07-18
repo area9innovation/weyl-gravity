@@ -543,14 +543,24 @@ the quadratic remainder has normalized dual witness
 `-u^-2 [p0 p3] R2[h00,h03]=1`.  This is not a general Green no-go. Unequal
 subprincipal factors, auxiliary/first-order reductions, and a causal
 Volterra/Levi resolvent remain live.
-The subsequent exact Douglis audit changes the endpoint gate more sharply:
+The subsequent exact Douglis audit changes the raw-endpoint gate more sharply:
 the full `L13` determinant contains the genuine extra characteristic
 `p0^2=2|p_spatial|^2`, of speed `sqrt(2)`. Thus a background-metric-causal
 inverse on arbitrary 13-row sources is impossible. This is not physical
 superluminality: the extra cone lies in the acyclic clock/graph incidence.
-The active PDE gate is now `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`:
-contract that incidence support-locally first, then construct the retained
-causal chain homotopy.
+The required hybrid route is already certified by
+`BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2`.  Its exact formula
+`Lambda54,+/-=S_cl+iota_cl Lambda26,+/- pi_cl` first contracts all 28 acyclic
+clock/nonminimal rows by the support-local cyclic SDR and then propagates the
+retained 26-row complex with the typed Volterra/biwave homotopy.  Thus every
+54-row unary chain-homotopy identity and same-sided support statement is
+certified without inverting the raw `L13` endpoint on arbitrary sources.  The
+raw extra-cone no-go and the hybrid theorem concern different architectures
+and are simultaneously valid.  This lifecycle is already recorded as
+causal `CERTIFIED` in atlas row
+`classical.berger.retained_gravity_clock_maxwell`; the nonlinear atlas keeps
+interacting causal products open because a unary chain homotopy does not
+construct them.
 
 The rank-46 branch input has also advanced.  The exact certificate
 `BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1` derives the
@@ -804,11 +814,11 @@ unauthorized.
    primitive as a full-BV trivialization.  The next interaction calculation
    is the branch/mode-pair quadratic-source table, but it remains
    `NO_CERTIFIED_MAP` until an admissible residual branch crosswalk lands.
-3. Keep the Green/BGG assignment as a bounded parallel theorem-extraction
-   rail.  If continuing the Berger PDE construction, contract the acyclic
-   clock/graph incidence before constructing
-   `BERGER_HYBRID_RETAINED_CAUSAL_CHAIN_HOMOTOPY`; do not demand a
-   metric-causal inverse of the obstructed complete `L13` architecture.
+3. Treat the Green/BGG assignment as complete at the unary hybrid-chain level:
+   `BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2` contracts the acyclic clock/graph
+   incidence before retained causal propagation.  Preserve the raw `L13`
+   metric-cone no-go, and do not promote this unary theorem to interacting
+   retarded products, Hadamard data, or a quantum claim.
 4. Do not continue the obstructed rank-46 contractible-projector ansatz.
    Choose between an unsplit retained observable and the smallest
    noncontractible/mixed-bundle filtered enlargement.  Produce an
@@ -821,8 +831,8 @@ unauthorized.
    four or Yang--Mills only after the invariant \(\ell_3\) disposition or an
    exact obstruction makes the next identity scientifically decisive.
 
-The Green assignment is a temporary parallelization and does not replace the
-invariant interaction gate.  The handback and later physical activation gates are in
+The closed unary Green assignment does not replace the invariant interaction
+gate.  The handback and later physical activation gates are in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).
 
 Escalate immediately if the cubic defect is nontrivial, if cyclicity fails, or
