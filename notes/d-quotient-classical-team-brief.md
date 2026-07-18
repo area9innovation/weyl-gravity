@@ -198,9 +198,12 @@ ordered jet.  With those jets, the parent Yang--Mills identity, both
 parenthesizations of `M_parent/L1_corrected/Kp0`, and the shifted-chain
 identity also close exactly.  The authoritative `Phi` differs from the old
 point-only intermediate, so the old 207-coefficient shifted defect is rejected
-as a backend artifact.  No interpolation is used.  The active gate is now the
-positive-order middle/Hom-adjoint and compressed-Schur replay, followed by the
-rank-310 SDR and causal transfer.
+as a backend artifact.  The Hom-adjoint and compressed-Schur gate is now exact
+as well: the adjoint is taken on the primitive covariant HPL factors before
+normal ordering, and the calculation exercises the nonzero curvature jet tower
+through order five.  No interpolation is used.  The active gate is now the
+upper relative-saddle row and complete rank-310 first-variation SDR, followed
+by causal transfer.
 
 For every declared background, charge fibre, boundary condition, and quotient:
 
@@ -1617,8 +1620,9 @@ the first square and \(p_0L_0=1\) in an associative differential-operator
 obstruction.  The Phi/L0/K screens remain exact regression calculations only
 relative to that superseded target.  The coefficient-jet-aware associative
 replay has since closed the parent identity, associator and shifted chain.  The
-next gate is the action-derived Hom-adjoint middle and cyclic compressed Schur,
-then the rank-310 SDR identity and causal transfer.
+factorized Hom-adjoint middle and cyclic compressed Schur have also closed with
+fifth-order curvature-jet coverage.  The next gate is the upper relative-saddle
+row and rank-310 SDR identity, then causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

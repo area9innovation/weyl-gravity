@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nariai-transverse-factorized-hom-schur-replay-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-factorized-hom-schur-replay-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1"},
+    "result_state": {"const": "FACTORIZED_HOM_ADJOINT_AND_COMPRESSED_SCHUR_EXACT"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["jet_coverage", "factorized_Hom_adjoint", "parent_middle", "compressed_schur", "next_gate_requirements", "disposition"],
+      "properties": {
+        "jet_coverage": {
+          "type": "object", "additionalProperties": false,
+          "required": ["certified_curvature_max_order", "L1_requested_word_count", "L1_max_requested_order", "middle_requested_word_count", "middle_max_requested_order", "curvature_requested_word_count", "curvature_max_requested_order", "above_maximum_fails_closed"],
+          "properties": {
+            "certified_curvature_max_order": {"const": 5},
+            "L1_requested_word_count": {"type": "integer", "minimum": 1},
+            "L1_max_requested_order": {"const": 4},
+            "middle_requested_word_count": {"type": "integer", "minimum": 1},
+            "middle_max_requested_order": {"type": "integer", "minimum": 0, "maximum": 4},
+            "curvature_requested_word_count": {"type": "integer", "minimum": 1},
+            "curvature_max_requested_order": {"const": 5},
+            "above_maximum_fails_closed": {"const": true}
+          }
+        },
+        "factorized_Hom_adjoint": {
+          "type": "object", "additionalProperties": false,
+          "required": ["construction", "L1sharp_base_coefficients", "L1sharp_variation", "naive_normal_table_base_defect", "naive_normal_table_variation_defect", "naive_normal_table_adjoint_authoritative"],
+          "properties": {
+            "construction": {"type": "string", "minLength": 1},
+            "L1sharp_base_coefficients": {"type": "integer", "minimum": 1},
+            "L1sharp_variation": {"$ref": "#/$defs/table"},
+            "naive_normal_table_base_defect": {"$ref": "#/$defs/table"},
+            "naive_normal_table_variation_defect": {"$ref": "#/$defs/table"},
+            "naive_normal_table_adjoint_authoritative": {"const": false}
+          }
+        },
+        "parent_middle": {
+          "type": "object", "additionalProperties": false,
+          "required": ["construction", "base_defect", "variation", "old_point_defect", "curvature_action_base_cyclic_defect", "curvature_action_variation_cyclic_defect", "factorized_formal_self_adjoint"],
+          "properties": {
+            "construction": {"type": "string", "minLength": 1},
+            "base_defect": {"$ref": "#/$defs/table"},
+            "variation": {"$ref": "#/$defs/table"},
+            "old_point_defect": {"$ref": "#/$defs/table"},
+            "curvature_action_base_cyclic_defect": {"$ref": "#/$defs/table"},
+            "curvature_action_variation_cyclic_defect": {"$ref": "#/$defs/table"},
+            "factorized_formal_self_adjoint": {"const": true}
+          }
+        },
+        "compressed_schur": {
+          "type": "object", "additionalProperties": false,
+          "required": ["formula", "base_coefficients", "variation", "phi_base_defect", "phi_variation_defect", "factorized_cyclic"],
+          "properties": {
+            "formula": {"const": "L1_corrected^sharp M_parent L1_corrected"},
+            "base_coefficients": {"type": "integer", "minimum": 1},
+            "variation": {"$ref": "#/$defs/table"},
+            "phi_base_defect": {"$ref": "#/$defs/table"},
+            "phi_variation_defect": {"$ref": "#/$defs/table"},
+            "factorized_cyclic": {"const": true}
+          }
+        },
+        "next_gate_requirements": {
+          "type": "object", "additionalProperties": false,
+          "required": ["gate", "upper_chain_identity", "current_certified_curvature_coefficient_jet_order", "upper_chain_replayed"],
+          "properties": {
+            "gate": {"const": "complete rank-310 first-variation SDR"},
+            "upper_chain_identity": {"type": "string", "minLength": 1},
+            "current_certified_curvature_coefficient_jet_order": {"const": 5},
+            "upper_chain_replayed": {"const": false}
+          }
+        },
+        "disposition": {
+          "type": "object", "additionalProperties": false,
+          "required": ["Hom_adjoint_resolved_factorized", "compressed_schur_replayed", "rank_310_transverse_SDR_decided", "transverse_causal_transfer"],
+          "properties": {
+            "Hom_adjoint_resolved_factorized": {"const": true},
+            "compressed_schur_replayed": {"const": true},
+            "rank_310_transverse_SDR_decided": {"const": false},
+            "transverse_causal_transfer": {"const": false}
+          }
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "boolean"}},
+    "flags": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "boolean"}},
+    "next_gate": {"const": "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "minProperties": 9, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}},
+        "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "table": {
+      "type": "object", "additionalProperties": false,
+      "required": ["orders", "nonzero_coefficients", "entries", "sha256"],
+      "properties": {
+        "orders": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "nonzero_coefficients": {"type": "integer", "minimum": 0},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["word", "matrix"],
+            "properties": {
+              "word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+              "matrix": {"$ref": "#/$defs/matrix"}
+            }
+          }
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

@@ -523,6 +523,18 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   Schur replay, rank-310 SDR and causal transfer remain open:
   [`certificates/NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1.json`](certificates/NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1.json),
   [`reports/nariai-transverse-associative-middle-shifted-chain-replay.md`](reports/nariai-transverse-associative-middle-shifted-chain-replay.md)
+- Factorized Hom-adjoint and compressed-Schur closure: formal adjunction is
+  performed on the primitive covariant HPL factors before PBW normal
+  ordering.  This recovers the authoritative parent middle and `Phi`, proves
+  factorized cyclicity, and emits the complete first variation of
+  `L1_corrected^sharp M_parent L1_corrected`.  The direct adjoint of the
+  already normal-ordered Hom table is rejected by exact 22-coefficient base
+  and 18-coefficient variation defects.  The calculation exercises 725
+  curvature jets through order five and fails closed above that order.  The
+  upper relative-saddle row, complete rank-310 SDR and causal transfer remain
+  open:
+  [`certificates/NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1.json`](certificates/NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1.json),
+  [`reports/nariai-transverse-factorized-hom-schur-replay.md`](reports/nariai-transverse-factorized-hom-schur-replay.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

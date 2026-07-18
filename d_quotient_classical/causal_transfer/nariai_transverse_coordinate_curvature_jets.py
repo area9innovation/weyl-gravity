@@ -30,7 +30,12 @@ t, chi, theta, phi, epsilon = sp.symbols(
 )
 COORDINATES = (t, chi, theta, phi)
 X, Y = sp.symbols("X Y")
-MAX_JET_ORDER = 3
+# The compressed transverse Schur operator differentiates the corrected BGG
+# splitting and the curvature-normalized parent middle deeply enough to
+# request fifth covariant coefficient jets.  Keep this bound explicit and
+# fail closed above it; the previous order-three truncation silently returned
+# zero for longer words.
+MAX_JET_ORDER = 5
 
 
 def _coefficient(value: sp.Expr, order: int) -> sp.Expr:
@@ -432,6 +437,11 @@ def coordinate_delta_jet(order: int) -> PolyTensor:
 
     if order < 0:
         raise ValueError(order)
+    if order > MAX_JET_ORDER:
+        raise ValueError(
+            f"curvature jet order {order} exceeds certified maximum "
+            f"{MAX_JET_ORDER}"
+        )
     gamma0, gamma1 = polynomial_connections()
     base, delta = polynomial_covector_curvature()
     if order == 0:

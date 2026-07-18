@@ -74,12 +74,12 @@ def verify() -> None:
         raise AssertionError("linearized PBW associativity gate missing")
     if "NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1" not in transverse_ids:
         raise AssertionError("associative middle replay missing")
-    if "shifted-chain identity exactly" not in transverse["claim_boundary"]:
-        raise AssertionError("associative closure boundary missing")
-    if "old 207-term shifted defect" not in transverse["claim_boundary"]:
-        raise AssertionError("superseded shifted-chain boundary missing")
-    if "Positive-order middle/Hom-adjoint jets" not in transverse["claim_boundary"]:
-        raise AssertionError("next analytic boundary missing")
+    if "NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1" not in transverse_ids:
+        raise AssertionError("factorized Hom/Schur replay missing")
+    if "factorized adjunction before PBW normal ordering" not in transverse["claim_boundary"]:
+        raise AssertionError("factorized Hom-adjoint boundary missing")
+    if "upper relative-saddle row" not in transverse["claim_boundary"]:
+        raise AssertionError("next rank-310 boundary missing")
 
 
 if __name__ == "__main__":
