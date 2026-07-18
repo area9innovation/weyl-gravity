@@ -61,7 +61,7 @@ Nonlinear:   preserve the filtered ell3 obstruction and await an admissible bran
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     fix finite Gamma1 normalization and import an extended classical contraction before residual Q1 transfer
 Observer:    resolve the profile-bandwidth obstruction, compose massive images, evaluate recoil, and restrict records to Z2^C
-Black hole:  build the odd-parity exterior complex and bilinear flux matrix (BH-2A)
+Black hole:  extra-branch horizon reach and the bilinear flux matrix (BH-2A remainder)
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
@@ -358,8 +358,13 @@ shared validator.  It records the static MK background (symplectic
 `CERTIFIED` through BH-0/BH-1/BH-1A), the `l=0` parameter, conformal-gauge
 and diffeo-gauge modes (symplectic `CERTIFIED` through BH-1B: zero charge
 and flux for arbitrary time-dependent gauge directions, entropy conformally
-invariant), and keeps every radiative `l>=2` field `OPEN` pending the BH-2A
-dynamical complex.  All compact-cylinder relations and the tangent-cone
+invariant), and keeps every radiative `l>=2` field `OPEN` at the domain/flux level.
+BH-2A stage 1 upgrades the axial `l=2` dispersion axes: the Einstein
+Regge--Wheeler branch is reproduced exactly and injects into the Bach
+kernel, and the extra fourth-order branch is exactly the second-order
+Lichnerowicz-type field `psi = delta Ric` via
+`delta B = (1/2) Box dRic + C.dRic` (Ricci-flat backgrounds only; the
+split is OBSTRUCTED on the extra-branch fixture).  All compact-cylinder relations and the tangent-cone
 import are `NO_CERTIFIED_MAP`; the crosswalk entry states the open
 horizon-analogue question (which compact terms are replaced by ADM, horizon
 or quasilocal charges) and defers it until the BH-2A linear phase space and
@@ -677,8 +682,14 @@ homogeneous/twist/global off-shell and charge endpoints, corrected cyclic
 morphisms, and boundary domains remain open.  Therefore these sectoral
 results still do not provide the all-sector off-shell BV triangle or activate
 bridge 1.
-Quadratic extension/obstruction fixtures exist, but not yet a complete
-relative obstruction theorem.  Residual equivariance, the observable map, the
+The declared `k=0` homogeneous/twist-times-`ell=2` extra bounded-resonance
+source matrix is now complete.  Its non-axisymmetric Clebsch--Gordan fixture
+fixes every `m`: the twist-position adjoint matrix has rank two, while the
+twist-velocity matrix has pointwise rank four for real time.  The simultaneous
+zero locus with all five stabilizer moment maps and the bilinear factorization
+constraints remains open, as do opposite momenta, phases and multiple
+absolute-momentum fibres.  Thus this is a complete source-matrix input, not
+yet a relative obstruction theorem.  Residual equivariance, the observable map, the
 relative \(L_\infty\) morphism, and the quantum lift remain open until their
 own certificates land.
 
@@ -794,7 +805,9 @@ to strict cyclicity of the generic fixed identity maps without promoting that
 obstruction to a no-go for corrected cyclic morphisms.  Its atlas row is
 `einstein.ph.bridge.relative_branch_dictionary_v1`; activation remains `OPEN`,
 and no cross-background identity is made.  The certified `a,b,d` polynomial
-resonance matrix is a quadratic input to this bridge, not its completion.
+resonance matrix has now been extended by the complete twist position/velocity
+columns.  This full declared `k=0` source matrix is a quadratic input to this
+bridge and tangent-cone theorem, not their completion.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
