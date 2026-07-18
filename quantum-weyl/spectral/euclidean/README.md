@@ -90,7 +90,7 @@ the complete labelled-Ricci parametric tensor kernel, not yet the repository
 five-carrier decomposition. The zero-derivative sector can feed `I10`, while
 the longitudinal sectors can feed `I24`, `I25`, `I28`, and `I29`; the frozen
 `K_munu` crosswalk/projection remains open in this intermediate receipt; the
-five minimal one-/two-insertion resolvent carriers remain unevaluated.
+pure-vector one-/two-insertion sum is evaluated separately below.
 
 The scalar-flat crosswalk and tensor projection are now completed in
 [`GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json).
@@ -99,8 +99,9 @@ rank ten; the CPT-IV relation is fixed by removing the symmetric `I28`
 coordinate.  Every projected channel is stored as a rational
 Feynman-simplex numerator over the common `Delta^4`, and unseen exact
 momentum/alpha fixtures replay all 125 TT amplitudes.  This closes only the
-parametric `n=3` ghost projection.  The five unevaluated minimal `n=1/n=2`
-resolvent carriers, the complete ghost determinant, the physical fourth-order kernel, and the integrated repository
+parametric `n=3` ghost projection. The combined pure-vector `n=1+n=2` slice
+is now exact; three longitudinal `D_W` carriers, the complete ghost
+determinant, the physical fourth-order kernel, and the integrated repository
 functions and coefficients remain open.
 
 Replay with:
@@ -150,3 +151,12 @@ Before emitting a record, the Euclidean package must separately certify:
 - equivalence of auxiliary and fourth-order formulations;
 - normalization relative to `S_W = alpha_C integral sqrt(g) C^2`;
 - Euler and Pontryagin conventions.
+
+The generic ghost one-/two-insertion gate now has an exact partial
+evaluation. On the scalar-flat source complement the pure-vector physical
+sum reduces to CPT-IV rows 1, 3 and 14,
+`6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14`, with an exact carrier
+projection. The three remaining Hodge carriers contain
+`D_W=delta W d`; its anisotropic principal symbol is outside the imported
+minimal-potential CPT kernels. See
+[`generic-background-ghost-n1-n2-vector-cpt-projection.md`](../../reports/generic-background-ghost-n1-n2-vector-cpt-projection.md).

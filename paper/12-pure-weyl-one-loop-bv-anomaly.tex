@@ -1049,13 +1049,55 @@ independent rational fixture uses a symmetric, noncommuting $W$ that mixes
 the transverse and longitudinal sectors and reproduces the direct resolvent
 traces through $n=3$.
 
-This closes the nonminimal reduction, not the coefficient calculation.  At
-cubic curvature order the $n=1$ carriers still require second-curvature-order
-minimal kernels and the $n=2$ carriers first-curvature-order minimal kernels,
-including their covariant measure, parallel transport and commutator terms.
-A flat metric-vertex substitution is therefore insufficient.  None of the
-five carriers has yet been evaluated or projected to the repository form
-factors.
+This closes the nonminimal reduction.  The next proposition evaluates the
+combined pure-vector slice; the three carriers containing $\delta Wd$ remain
+outside the imported minimal-potential kernels.
+\end{proposition}
+
+\begin{proposition}[Pure-vector $n=1+n=2$ CPT projection and minimal
+missing-carrier theorem]
+On the scalar-flat source complement, the positive minimal vector operators
+$F=-\Box+\operatorname{Ric}$ and
+$F+W=-\Box-\operatorname{Ric}$ correspond in the CPT-IV convention to
+$P_F=-\operatorname{Ric}$ and $P_H=+\operatorname{Ric}$.  Even-$P$ rows cancel and single-$P$ scalar
+traces vanish.  The combined physical pure-vector contribution is therefore
+exactly
+\[
+  6\Gamma_1\mathcal S_1
+  -2\Gamma_3\mathcal S_3
+  -2\Gamma_{14}\mathcal S_{14},
+\]
+where $\Gamma_1,\Gamma_3,\Gamma_{14}$ are the hash-pinned CPT-IV rows 1, 3
+and 14.  In the ordered channel basis
+\[
+ (I_{10};I_{24}^{123},I_{24}^{213},I_{24}^{312};
+ I_{25}^{123},I_{25}^{213},I_{25}^{312};
+ I_{28}^{123},I_{28}^{132},I_{28}^{231};I_{29}),
+\]
+the two nontrivial source structures project as
+\begin{align*}
+ \mathcal S_3&\longmapsto
+ \left(-2,-\frac1{x_2},-\frac1{x_1},
+ -\frac{x_1+x_2}{x_1x_2},-\frac2{x_1},-\frac2{x_2},0,0,0,0,0\right),\\
+ \mathcal S_{14}&\longmapsto
+ \left(-\frac{x_1+x_2-x_3}{2},0,0,-1,-1,-1,0,0,0,0,0\right).
+\end{align*}
+Ten exact momentum fixtures and all $5^3$ transverse-tracefree products
+verify 2,500 projection identities; 750 further rows fix the Riemann/Ricci
+and contracted-Bianchi convention.  An independent unseen-fixture replay
+rejects a coordinate mutation.
+
+The remaining three Hodge carriers contain
+\[
+ D_W=\delta Wd,
+ \qquad \sigma_2(D_W)(p)=W^{\mu\nu}p_\mu p_\nu.
+\]
+This is a curvature-dependent anisotropic principal-symbol insertion, not a
+minimal bundle potential $P$; the mixed carrier also couples scalar and
+vector resolvents.  Hence the imported minimal-Laplace CPT rows do not
+evaluate these three carriers.  Dedicated nonminimal scalar/vector kernels,
+the physical fourth-order Hessian, and the complete repository functions
+remain open.
 \end{proposition}
 
 \begin{proposition}[Exact ghost $n=3$ scalar-flat five-carrier projection]
@@ -1155,7 +1197,9 @@ nonexceptional momentum to an exact eight-sector Feynman-simplex/Wick kernel
 and projected onto the ten-dimensional scalar-flat five-carrier quotient as
 exact rational simplex integrands.  The one-/two-insertion nonminimal
 architecture is now reduced exactly to five minimal vector/scalar resolvent
-carriers, but those carriers remain unevaluated.  They and the physical kernel, hence the five complete repository form-factor functions and
+carriers.  Their pure-vector physical sum is evaluated exactly from CPT rows
+1, 3 and 14.  The three longitudinal $D_W$ carriers and the physical kernel,
+hence the five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
@@ -1188,6 +1232,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json}.
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json}.
 \item \cert{quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json}.

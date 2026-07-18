@@ -84,8 +84,14 @@ momentum fixtures replay all 125 TT amplitudes exactly. This is the parametric
 `n=3` integrand, not the five simplex-integrated repository functions. Exact
 Hodge-resolvent integration reduces the curved `n=1/n=2` architecture to five
 minimal vector/scalar carriers with rational coefficients
-`(1,-1/3)` and `(-1/2,1/3,-1/18)`. Their evaluation and the generic physical
-fourth-order Hessian kernel are the next coefficient-bearing inputs.
+`(1,-1/3)` and `(-1/2,1/3,-1/18)`. The combined pure-vector physical slice
+is now evaluated exactly from CPT rows 1, 3 and 14 as
+`6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14` and projected to the
+scalar-flat carrier quotient. The other three carriers contain
+`D_W=delta W d`; its anisotropic curvature-dependent principal symbol is not
+a minimal bundle potential. Dedicated nonminimal scalar/vector kernels for
+those three carriers and the generic physical fourth-order Hessian are the
+next coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute

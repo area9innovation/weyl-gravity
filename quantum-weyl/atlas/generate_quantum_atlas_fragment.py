@@ -51,6 +51,7 @@ DEPENDENCIES = {
     "generic_background_ghost_CPT_obstruction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
+    "generic_ghost_n1_n2_vector_CPT_projection": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json",
     "generic_ghost_n3_adiabatic_carrier": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
     "generic_ghost_n3_five_carrier_projection": QROOT / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json",
@@ -181,6 +182,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
+    generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     generic_ghost_n3_projection = values["generic_ghost_n3_five_carrier_projection"]
@@ -414,6 +416,18 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
         or generic_ghost_n1_n2.get("claim_flags", {}).get(
             "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED"
+        )
+        is not False
+        or generic_ghost_n1_n2_vector.get("minimal_operator_sign_flip", {}).get(
+            "surviving_rows"
+        )
+        != [1, 3, 14]
+        or generic_ghost_n1_n2_vector.get("claim_flags", {}).get(
+            "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED"
+        )
+        is not True
+        or generic_ghost_n1_n2_vector.get("claim_flags", {}).get(
+            "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED"
         )
         is not False
         or generic_ghost_n3.get("angular_average", {}).get("coefficients", {}).get(
@@ -747,13 +761,13 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient, and its n=1/n=2 nonminimal architecture is reduced exactly to five covariant minimal vector/scalar carriers, while evaluation of those carriers, simplex-integrated repository functions and coefficients, finite normalizations and complete Q1 are underdetermined"),
-            lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels, exact n=3 scalar-flat five-carrier parametric projection and n=1/n=2 five-minimal-carrier reduction are complete in scope, but evaluation of the five minimal carriers, the generic physical fourth-order Hessian kernel, simplex-integrated repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
+            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient, and the pure-vector n=1+n=2 CPT sum is exact, while the three longitudinal D_W carriers, simplex-integrated repository functions and coefficients, finite normalizations and complete Q1 are underdetermined"),
+            lifecycle=("NO_CERTIFIED_MAP", "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels, exact n=3 scalar-flat five-carrier parametric projection and pure-vector n=1+n=2 CPT slice are complete in scope, but the three longitudinal D_W carriers, the generic physical fourth-order Hessian kernel, simplex-integrated repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "FV_anomaly_action_Ricci_sector", "algebraic_cubic_Weyl_carriers", "third_curvature_Weyl_manifest", "CPT_universal_third_curvature_kernels", "generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "scalar_flat_K_Ricci_crosswalk", "BoxR_scheme_conversion"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient, while the n=1/n=2 nonminimal architecture is now reduced exactly to five covariant minimal vector/scalar resolvent carriers. Evaluation of those carriers, simplex-integrated repository functions, the generic physical fourth-order Hessian kernel, coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV", "one_loop_Q1_disposition", "anomaly_induced_Gamma1", "flat_TT_log_Gamma1", "curvature_squared_log_Gamma1", "FV_conformized_C2_log_Gamma1", "FV_anomaly_action_Ricci_sector", "algebraic_cubic_Weyl_carriers", "third_curvature_Weyl_manifest", "CPT_universal_third_curvature_kernels", "generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n1_n2_vector_CPT_projection", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "scalar_flat_K_Ricci_crosswalk", "BoxR_scheme_conversion"),
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The generic ghost n=3 triangle is projected exactly onto the scalar-flat ten-dimensional five-carrier quotient. For n=1+n=2, the pure-vector physical sum is now evaluated exactly from CPT rows 1, 3 and 14; the three carriers containing the anisotropic principal-symbol insertion D_W=delta W d remain open. Those carriers, simplex-integrated repository functions, the generic physical fourth-order Hessian kernel, coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 
@@ -767,7 +781,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         ("algebraic_cubic_weyl_carrier", "four-dimensional zero-derivative algebraic C3 carrier in its exact even/odd parity basis", ["LOCAL-ALGEBRAIC"], ("algebraic_cubic_Weyl_carriers",)),
         ("third_curvature_weyl_carrier_manifest", "five parity-even third-curvature conformal carrier labels modulo the exact four-dimensional symmetric functional relation", ["EUCLIDEAN-SPECTRAL"], ("third_curvature_Weyl_manifest",)),
         ("cpt_universal_third_curvature_kernel", "five exact universal CPT source kernels on the rank-one minimal scalar-Laplacian fixture; repository generic-background full-BV trace substitution open", ["EUCLIDEAN-SPECTRAL"], ("CPT_universal_third_curvature_kernels",)),
-        ("generic_background_diff_weyl_ghost_cpt_obstruction", "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; n=3 projected onto the scalar-flat ten-dimensional five-carrier quotient; n=1/n=2 reduced exactly to five unevaluated covariant minimal vector/scalar resolvent carriers; integrated repository functions remain open", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "scalar_flat_K_Ricci_crosswalk")),
+        ("generic_background_diff_weyl_ghost_cpt_obstruction", "generic-background effective Diff-Weyl ghost determinant: direct minimal-CPT substitution obstructed; exact Endo-Duhamel reduction supplied; n=3 projected onto the scalar-flat ten-dimensional five-carrier quotient; the n=1+n=2 pure-vector CPT sum is exact, while three longitudinal D_W carriers and the integrated repository functions remain open", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("generic_background_ghost_CPT_obstruction", "generic_ghost_Endo_Duhamel_reduction", "generic_ghost_n1_n2_Hodge_resolvent_reduction", "generic_ghost_n1_n2_vector_CPT_projection", "generic_ghost_n3_adiabatic_carrier", "generic_ghost_n3_triangle_kernel", "generic_ghost_n3_five_carrier_projection", "scalar_flat_K_Ricci_crosswalk")),
         ("curvature_observable_generator", "support-local curvature-graph CCR generator", ["LORENTZIAN-CAUSAL"], ("curvature_CCR",)),
     ]
     rows = []

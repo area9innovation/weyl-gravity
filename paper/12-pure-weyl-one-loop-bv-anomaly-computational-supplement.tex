@@ -767,15 +767,74 @@ the Hodge sectors.  It checks $H_0G_{H_0}=1$, equality of the direct and
 reduced traces for $n=1,2,3$, and the cyclic $n=3$ longitudinal coefficients
 $(1/3,-1/3,1/9,-1/81)$.
 
-The reduction is architectural: it does not evaluate the five carriers.  The
-$n=1$ row still needs second-curvature-order minimal vector/scalar kernels,
-and the $n=2$ row needs first-curvature-order kernels.  Their covariant
-measure, parallel transport and commutator data exclude replacement by a
-flat metric vertex.
+The reduction is architectural.  The pure-vector physical sum is evaluated
+next; the three rows containing $\delta Wd$ require nonminimal
+principal-symbol kernels.
 
 \begin{verbatim}
 P=spectral.euclidean
 M=generic_background_ghost_n1_n2_hodge_resolvent_reduction
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest "$P.tests.test_$M"
+\end{verbatim}
+
+\subsection{Exact pure-vector one-/two-insertion CPT projection}
+
+In the CPT-IV convention $H=\Box+P-R/6$, the scalar-flat positive vector
+operators $F=-\Box+\operatorname{Ric}$ and
+$F+W=-\Box-\operatorname{Ric}$ correspond to
+$P_F=-\operatorname{Ric}$ and $P_H=+\operatorname{Ric}$.  Of the $P$-dependent source rows
+\[
+ 1,3,4,5,6,13,14,15,16,17,26,
+\]
+rows $6,13,17$ cancel under $P\mapsto-P$, while $4,5,15,16,26$ vanish by
+$\operatorname{tr}P=R=0$.  Calibration against the independently certified pure-vector
+$n=3$ zero-longitudinal sector fixes the positive-determinant/source sign.
+Thus
+\[
+ \Gamma^{(1)}_{\rm vector}+\Gamma^{(2)}_{\rm vector,vector}
+ =6\Gamma_1\mathcal S_1-2\Gamma_3\mathcal S_3
+  -2\Gamma_{14}\mathcal S_{14}.
+\]
+The source parameter rows are
+\[
+ \Gamma_1=\left\langle\frac{1/3}{\Delta}\right\rangle_3,
+ \quad
+ \Gamma_3=\left\langle\frac{2\alpha_1\alpha_2}{\Delta}\right\rangle_3,
+ \quad
+ \Gamma_{14}=
+ -\left\langle\frac{2\alpha_3-4\alpha_3^2}{x_3\Delta}\right\rangle_3,
+\]
+with
+\[
+ \Delta=\alpha_2\alpha_3x_1+
+        \alpha_1\alpha_3x_2+
+        \alpha_1\alpha_2x_3.
+\]
+The machine-readable result stores all eleven ordered
+$I_{10}/I_{24}/I_{25}/I_{28}/I_{29}$ channel integrands.  Ten momentum
+fixtures times $125$ TT tensor products and two source structures give 2,500
+exact projection identities.  Another 750 identities verify the linearized
+Riemann/Ricci contraction and contracted Bianchi identity.  Two unseen
+fixtures independently replay the coordinates and detect a deliberate
+coordinate mutation.
+
+The exact missing-carrier theorem is equally important.  The other three
+Hodge rows contain
+\[
+ D_W=\delta Wd,
+ \qquad \sigma_2(D_W)(p)=W^{\mu\nu}p_\mu p_\nu.
+\]
+This anisotropic curvature-dependent principal symbol is not a minimal
+bundle endomorphism $P$, and the mixed row couples scalar and vector
+resolvents.  Minimal CPT $P$ rows cannot evaluate them.  Dedicated kernels
+with one and two $D_W$ insertions, or an equivalent direct nonminimal Endo
+form-factor calculation, are the smallest missing input.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_n1_n2_vector_cpt_projection
 PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
 PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
 PYTHONPATH=quantum-weyl python3 -m unittest "$P.tests.test_$M"
@@ -810,8 +869,8 @@ $\operatorname{Tr}\log(1+G_0W)$ gives
 On the scalar-flat carrier only the first term remains.  This is an exact
 tensor numerator, not the full triangle form factor: at zero external
 momentum $J_3$ is scaleless and infrared singular.  The nonzero-momentum
-triangle and the normalization map to the repository $I_{10}$ carrier remain
-open, as does evaluation of the five minimal one- and two-insertion carriers.
+triangle and its repository projection are certified separately; the three
+longitudinal $D_W$ one-/two-insertion carriers remain open.
 Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
 carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
 cyclic trace, the cyclic sum of one trace times one pair trace, and the product
@@ -862,11 +921,11 @@ $\operatorname{Tr}\log$ multiplier is
 An independent
 exact replay checks the direct eight-sector integrand and cyclic covariance
 on noncommuting symmetric endomorphisms.  This closes the generic labelled-
-Ricci parametric triangle, but not its projection to the repository five-
-carrier basis.  The zero-derivative sector can feed $I_{10}$, while the
+Ricci parametric triangle before its separately certified repository
+projection.  The zero-derivative sector can feed $I_{10}$, while the
 longitudinal sectors carry two, four, and six external derivatives and can
-feed $I_{24},I_{25},I_{28},I_{29}$.  The tensor-basis reduction and the
-five minimal one- and two-insertion resolvent carriers remain unevaluated.
+feed $I_{24},I_{25},I_{28},I_{29}$.  The three longitudinal $D_W$
+one-/two-insertion resolvent carriers remain unevaluated.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \
@@ -961,9 +1020,8 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
 The result is the parametric $n=3$ ghost contribution in the declared
-scalar-flat quotient section.  The simplex integrals, five unevaluated
-minimal one- and two-insertion resolvent carriers, physical fourth-order
-Hessian kernel, and their complete
+scalar-flat quotient section. The simplex integrals, three longitudinal
+$D_W$ one-/two-insertion carriers, physical fourth-order Hessian kernel, and their complete
 sum into five repository functions and coefficients remain open.
 
 \subsection{Exact local BoxR scheme conversion}
@@ -1032,6 +1090,9 @@ rejecting promotion of the unevaluated insertion traces;
 \item integrate the Endo identity to the exact Hodge resolvent, reduce the
 $n=1,2$ rows to five minimal vector/scalar carriers, and reject promotion of
 that architecture to evaluated form factors or coefficients;
+\item import CPT rows $1,3,14$, project the combined pure-vector $n=1+n=2$
+slice, replay unseen fixtures, and reject promotion across the three
+longitudinal $D_W$ carriers;
 \item enumerate the second, fourth, and sixth isotropic sphere moments for the
 three-insertion adiabatic angular carrier, while rejecting promotion of its
 IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;

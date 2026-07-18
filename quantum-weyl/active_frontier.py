@@ -67,6 +67,7 @@ DEPENDENCIES = {
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
+    "generic_ghost_n1_n2_vector_CPT_projection": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json",
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
     "scalar_flat_K_Ricci_crosswalk": HERE / "transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
@@ -164,6 +165,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "generic_ghost_n1_n2_Hodge_resolvent_reduction": "CURVED_ENDO_N1_N2_REDUCED_EXACTLY_TO_FIVE_MINIMAL_VECTOR_SCALAR_RESOLVENT_CARRIERS",
+        "generic_ghost_n1_n2_vector_CPT_projection": "PURE_VECTOR_N1_PLUS_N2_PROJECTED_TO_SCALAR_FLAT_CPT_CARRIER_QUOTIENT",
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
@@ -191,6 +193,7 @@ def _load() -> dict[str, dict[str, Any]]:
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
+    generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
@@ -539,6 +542,33 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("generic ghost n=1/n=2 Hodge-resolvent frontier drifted")
+    if (
+        generic_ghost_n1_n2_vector.get("minimal_operator_sign_flip", {}).get(
+            "surviving_rows"
+        )
+        != [1, 3, 14]
+        or generic_ghost_n1_n2_vector.get("minimal_operator_sign_flip", {}).get(
+            "n1_plus_n2_formula"
+        )
+        != "6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14"
+        or generic_ghost_n1_n2_vector.get(
+            "minimal_missing_carrier_theorem", {}
+        ).get("missing_carriers")
+        != [
+            "N1_LONGITUDINAL_SCALAR",
+            "N2_VECTOR_LONGITUDINAL",
+            "N2_LONGITUDINAL_LONGITUDINAL",
+        ]
+        or generic_ghost_n1_n2_vector.get("claim_flags", {}).get(
+            "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED"
+        )
+        is not True
+        or generic_ghost_n1_n2_vector.get("claim_flags", {}).get(
+            "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost vector n=1/n=2 CPT projection frontier drifted")
     if (
         generic_ghost_n3.get("angular_average", {}).get("coefficients", {}).get(
             "tr_R3"
@@ -1509,8 +1539,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_NONMINIMAL_ARCHITECTURE_CLOSED_TO_FIVE_MINIMAL_CARRIERS_UNEVALUATED_Q1_UNDERDETERMINED",
-                "next_gate": "EVALUATE_FIVE_MINIMAL_VECTOR_SCALAR_N1_N2_RESOLVENT_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_THREE_LONGITUDINAL_DW_CARRIERS_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1525,8 +1555,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_REDUCED_TO_FIVE_UNEVALUATED_MINIMAL_CARRIERS_PHYSICAL_FOURTH_ORDER_KERNEL_INTEGRATED_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "EVALUATE_FIVE_MINIMAL_VECTOR_SCALAR_N1_N2_RESOLVENT_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_PURE_VECTOR_CPT_SLICE_EXACT_THREE_LONGITUDINAL_DW_CARRIERS_OPEN_PHYSICAL_FOURTH_ORDER_KERNEL_INTEGRATED_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
         },
         "supersession_ledger": [
@@ -1653,6 +1683,7 @@ def build() -> dict[str, Any]:
             "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": True,
             "GENERIC_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION_COMPUTED": True,
             "GENERIC_GHOST_N1_N2_NONMINIMAL_ARCHITECTURE_CLOSED": True,
+            "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED": True,
             "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED": True,
             "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED": True,
             "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED": True,
@@ -1661,6 +1692,7 @@ def build() -> dict[str, Any]:
             "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": True,
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": False,
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": False,
+            "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED": False,
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": False,
             "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED": False,
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": True,
@@ -1725,7 +1757,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "EVALUATE_FIVE_MINIMAL_VECTOR_SCALAR_N1_N2_RESOLVENT_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1795,7 +1827,10 @@ def build() -> dict[str, Any]:
             "orientations and the ten-dimensional scalar-flat quotient section, with the "
             "common Delta^-4 numerators stored as exact alpha/box polynomials. This is the "
             "parametric n=3 ghost contribution, not the integrated five repository functions; "
-            "the n=1/n=2 curved-Endo traces remain open. "
+            "the n=1/n=2 pure-vector sum is now evaluated exactly from CPT rows 1, 3 and 14 as "
+            "6 Gamma1 S1-2 Gamma3 S3-2 Gamma14 S14 and projected to the scalar-flat carrier quotient. "
+            "The other three carriers contain the anisotropic principal-symbol insertion D_W=delta W d; "
+            "minimal-P kernels cannot evaluate them, so those longitudinal traces remain open. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
@@ -1830,7 +1865,9 @@ def build() -> dict[str, Any]:
             "conditional on an invertible boundary problem or compatible source sector and "
             "does not discard Paneitz kernel/global data. An exact flat-momentum response "
             "matrix still has rank two on the allowed C(g_hat)^2 and R(g_hat)^2 finite-counterterm "
-            "directions. The five parity-even third-curvature repository functions and "
+            "directions. Two of the five n=1/n=2 Hodge carriers have now been combined and evaluated "
+            "in their physical pure-vector sum; the three longitudinal D_W carriers remain open. "
+            "The five parity-even third-curvature repository functions and "
             "coefficients, the parity-odd derivative manifest, renormalized "
             "BV Laplacian or time-ordered product, finite normalization conditions, and global Green data "
             "are absent, so no unique complete Gamma1 or Q1 is supplied. This does not "
@@ -2086,6 +2123,8 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("GENERIC_GHOST_N1_N2_NONMINIMAL_ARCHITECTURE_CLOSED")
         is not True
+        or flags.get("GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED")
+        is not True
         or flags.get("GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED")
         is not True
         or flags.get("GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED")
@@ -2097,6 +2136,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED")
         is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED")
+        is not False
+        or flags.get("GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED")
         is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED")
         is not False
@@ -2164,6 +2205,7 @@ def validate(result: dict[str, Any]) -> None:
             "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED",
             "GENERIC_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION_COMPUTED",
             "GENERIC_GHOST_N1_N2_NONMINIMAL_ARCHITECTURE_CLOSED",
+            "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED",
             "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED",
             "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED",
             "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED",
@@ -2172,6 +2214,7 @@ def validate(result: dict[str, Any]) -> None:
             "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED",
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED",
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED",
+            "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED",
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED",
             "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED",
             "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",

@@ -148,6 +148,15 @@ def main() -> None:
         {"numerator": 1, "denominator": 3},
         {"numerator": -1, "denominator": 18},
     ]
+    assert claims["generic_ghost_vector_n1_plus_n2_CPT_projection"] is True
+    assert claims["generic_ghost_vector_n1_plus_n2_CPT_formula"] == (
+        "6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14"
+    )
+    assert claims["generic_ghost_longitudinal_DW_missing_carriers"] == [
+        "N1_LONGITUDINAL_SCALAR",
+        "N2_VECTOR_LONGITUDINAL",
+        "N2_LONGITUDINAL_LONGITUDINAL",
+    ]
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     assert claims["Euler_Wess_Zumino_primitive_displayed"] is True
     boolean_claims = {
@@ -158,11 +167,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "EVALUATE_FIVE_MINIMAL_VECTOR_SCALAR_N1_N2_RESOLVENT_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
+        == "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 29
+    assert len(payload["inputs"]) == 30
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -189,6 +198,7 @@ def main() -> None:
     scalar_flat_k_ricci = dependencies["SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK"]
     generic_ghost_n3_projection = dependencies["GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION"]
     generic_ghost_n1_n2 = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION"]
+    generic_ghost_n1_n2_vector = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -283,6 +293,18 @@ def main() -> None:
     assert generic_ghost_n1_n2["claim_flags"][
         "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED"
     ] is False
+    assert generic_ghost_n1_n2_vector["minimal_operator_sign_flip"][
+        "surviving_rows"
+    ] == [1, 3, 14]
+    assert generic_ghost_n1_n2_vector["claim_flags"][
+        "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED"
+    ] is True
+    assert generic_ghost_n1_n2_vector["claim_flags"][
+        "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED"
+    ] is False
+    assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
+        generic_ghost_n1_n2_vector["formula_digest"]
+    )
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"

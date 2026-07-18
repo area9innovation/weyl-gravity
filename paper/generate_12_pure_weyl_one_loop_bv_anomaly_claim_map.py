@@ -49,6 +49,7 @@ INPUTS = {
     "scalar_flat_K_Ricci_crosswalk": ROOT / "quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
     "generic_ghost_n3_five_carrier_projection": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json",
     "generic_ghost_n1_n2_Hodge_resolvent_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
+    "generic_ghost_n1_n2_vector_CPT_projection": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
 
@@ -91,6 +92,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     generic_ghost_n3_projection = values["generic_ghost_n3_five_carrier_projection"]
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
+    generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -328,6 +330,18 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED"
         )
         is not False
+        or generic_ghost_n1_n2_vector.get("minimal_operator_sign_flip", {}).get(
+            "surviving_rows"
+        )
+        != [1, 3, 14]
+        or generic_ghost_n1_n2_vector.get("claim_flags", {}).get(
+            "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED"
+        )
+        is not True
+        or generic_ghost_n1_n2_vector.get("claim_flags", {}).get(
+            "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED"
+        )
+        is not False
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -368,6 +382,7 @@ def build() -> dict[str, Any]:
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     generic_ghost_n3_projection = values["generic_ghost_n3_five_carrier_projection"]
     generic_ghost_n1_n2 = values["generic_ghost_n1_n2_Hodge_resolvent_reduction"]
+    generic_ghost_n1_n2_vector = values["generic_ghost_n1_n2_vector_CPT_projection"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
@@ -378,7 +393,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, and the curved n=1/n=2 nonminimal architecture is reduced exactly to five minimal vector/scalar resolvent carriers. Those five carriers, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, and the curved n=1/n=2 pure-vector CPT sum is exact. Three longitudinal D_W carriers, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -482,6 +497,10 @@ def build() -> dict[str, Any]:
                 row["coefficient"]
                 for row in generic_ghost_n1_n2["log_determinant_expansion"]["n2_carriers"]
             ],
+            "generic_ghost_vector_n1_plus_n2_CPT_projection": True,
+            "generic_ghost_vector_n1_plus_n2_CPT_formula": generic_ghost_n1_n2_vector["minimal_operator_sign_flip"]["n1_plus_n2_formula"],
+            "generic_ghost_longitudinal_DW_missing_carriers": generic_ghost_n1_n2_vector["minimal_missing_carrier_theorem"]["missing_carriers"],
+            "generic_ghost_vector_n1_plus_n2_formula_digest": generic_ghost_n1_n2_vector["formula_digest"],
             "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
             "repository_29_over_120_local_R2_reproduced": True,
@@ -503,7 +522,8 @@ def build() -> dict[str, Any]:
             "repository_generic_background_CPT_trace_substitution": False,
             "generic_nonminimal_ghost_CPT_determinant": False,
             "generic_nonminimal_ghost_insertion_traces_evaluated": False,
-            "generic_ghost_n1_n2_minimal_carriers_evaluated": False,
+            "generic_ghost_all_five_n1_n2_carriers_evaluated": False,
+            "generic_ghost_longitudinal_DW_carriers_evaluated": False,
             "generic_ghost_n3_integrated_five_carrier_form_factors": False,
             "absolute_dressed_Rhat2_normalization": False,
             "same_background_compensator_contraction": False,
@@ -514,11 +534,11 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "EVALUATE_FIVE_MINIMAL_VECTOR_SCALAR_N1_N2_RESOLVENT_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "status": "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
-                "evaluation and repository projection of the five exact minimal vector/scalar n=1/n=2 resolvent carriers, plus simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
+                "evaluation and repository projection of the three longitudinal D_W n=1/n=2 carriers, plus simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
                 "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],

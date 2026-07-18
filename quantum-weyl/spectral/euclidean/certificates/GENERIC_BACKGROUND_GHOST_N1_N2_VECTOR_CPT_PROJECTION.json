@@ -1,0 +1,370 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate imports the exact CPT-IV P-sector rows needed by the pure minimal-vector part of the generic Diff-Weyl ghost determinant. On the scalar-flat source complement the P sign flip and trace identities reduce the vector n=1+n=2 sum to 6 Gamma1 S1-2 Gamma3 S3-2 Gamma14 S14, and an exact TT replay projects it to the certified scalar-flat I10/I24/I25 quotient with I28=I29=0. This evaluates the combined N1_VECTOR plus N2_VECTOR_VECTOR contribution, not the three carriers containing D_W=delta W d. Those carriers require anisotropic principal-symbol and mixed scalar/vector kernels unavailable in the imported minimal-Laplace CPT P sector. The complete generic ghost determinant, physical fourth-order Hessian, repository coefficient sum, Gamma1/Q1, residual transfer, Lorentzian QME, Hadamard, particle, positivity, scattering and unitarity claims remain open.",
+  "claim_flags": {
+    "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED": false,
+    "COMPLETE_GENERIC_GHOST_THIRD_CURVATURE_FUNCTIONS_COMPUTED": false,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "CPT_P_SECTOR_ROWS_1_3_14_IMPORTED": true,
+    "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "MINIMAL_MISSING_LONGITUDINAL_CARRIER_THEOREM_COMPUTED": true,
+    "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "CPT_universal_kernels": {
+      "path": "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
+      "result_id": "CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS",
+      "sha256": "2de2d5561deb584c0f911e7a08bc05bb176b43fc367c43d17b48a0fbf110fffc"
+    },
+    "Hodge_resolvent_reduction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION",
+      "sha256": "9fe2fcea1d78d2d3c9e19b2cca6fff61e34af159c7647b959c5ba37b5a01ee78"
+    },
+    "carrier_manifest": {
+      "path": "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
+      "result_id": "FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST",
+      "sha256": "203cc58ea7d2b1cfd468bc660c616e8319250ab522614bcbc16410b1c7006c4c"
+    },
+    "n3_triangle": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",
+      "sha256": "120e37a74e29072a219769d2cca742af4c5f09daa2e0c4fb87280dceadee6ac1"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "formula_digest": "e0aaff1cd557b7766e57f36b9852dd107b0b2cda3b028541cbfd44a68cc2864e",
+  "lifecycle_state": "TWO_OF_FIVE_HODGE_CARRIERS_COMBINED_PHYSICAL_SUM_EVALUATED_THREE_LONGITUDINAL_CARRIERS_OPEN",
+  "minimal_missing_carrier_theorem": {
+    "irreducible_insertion": "D_W=delta W d",
+    "missing_carriers": [
+      "N1_LONGITUDINAL_SCALAR",
+      "N2_VECTOR_LONGITUDINAL",
+      "N2_LONGITUDINAL_LONGITUDINAL"
+    ],
+    "principal_symbol": "sigma_2(D_W)(p)=W^{mu nu} p_mu p_nu",
+    "reason": "D_W is a curvature-dependent anisotropic principal-symbol insertion, not a bundle endomorphism P; the mixed row also couples scalar and vector resolvents. The imported minimal-Laplace CPT P rows therefore do not evaluate these three carriers.",
+    "smallest_next_input": "covariant scalar/vector kernels with one or two D_W insertions through the required curvature order, or an equivalent direct nonminimal Endo form-factor calculation"
+  },
+  "minimal_operator_sign_flip": {
+    "W": "-2 Ric",
+    "all_P_dependent_rows": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      13,
+      14,
+      15,
+      16,
+      17,
+      26
+    ],
+    "even_P_rows_cancel": [
+      6,
+      13,
+      17
+    ],
+    "n1_plus_n2_formula": "6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14",
+    "n3_pure_vector_calibration": "-8 Gamma1 from the zero-longitudinal projector sector",
+    "positive_determinant_to_source_kernel_sign": -1,
+    "positive_vector_base": "F=-Box+Ric corresponds to P_F=-Ric+R/6",
+    "positive_vector_shifted": "F+W=-Box-Ric corresponds to P_H=+Ric+R/6",
+    "scalar_flat_specialization": "P_F=-Ric, P_H=+Ric, tr(P)=0",
+    "single_P_scalar_trace_rows_vanish": [
+      4,
+      5,
+      15,
+      16,
+      26
+    ],
+    "source_operator": "H_CPT=Box+P-R/6",
+    "surviving_rows": [
+      1,
+      3,
+      14
+    ]
+  },
+  "next_gate": "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+  "ordered_structure_projection": {
+    "channels": [
+      {
+        "carrier_id": "I10",
+        "labels": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "carrier_id": "I24",
+        "labels": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "carrier_id": "I24",
+        "labels": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "carrier_id": "I24",
+        "labels": [
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "carrier_id": "I25",
+        "labels": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "carrier_id": "I25",
+        "labels": [
+          2,
+          1,
+          3
+        ]
+      },
+      {
+        "carrier_id": "I25",
+        "labels": [
+          3,
+          1,
+          2
+        ]
+      },
+      {
+        "carrier_id": "I28",
+        "labels": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "carrier_id": "I28",
+        "labels": [
+          1,
+          3,
+          2
+        ]
+      },
+      {
+        "carrier_id": "I28",
+        "labels": [
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "carrier_id": "I29",
+        "labels": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "direct_fixture_replay": {
+      "TT_tensor_products_per_fixture": 125,
+      "convention_identity_rows": 750,
+      "convention_nonzero_residual_count": 0,
+      "direct_identity_rows": 2500,
+      "grading_ansatz": {
+        "structure_14_I10": "box degree 1",
+        "structure_14_I24_I25": "box degree 0",
+        "structure_3_I10": "box degree 0",
+        "structure_3_I24_I25": "degree-one numerator over x1*x2"
+      },
+      "momentum_fixture_count": 10,
+      "nonzero_residual_count": 0
+    },
+    "quotient_gauge": "symmetric I28 coordinate zero",
+    "source_label_policy": "slots 1,2 are commutator curvatures and slot 3 is P; carrier labels follow the stored CPT order",
+    "structure_14_coordinates": [
+      "-(x1 + x2 - x3)/2",
+      "0",
+      "0",
+      "-1",
+      "-1",
+      "-1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "structure_3_coordinates": [
+      "-2",
+      "-1/x2",
+      "-1/x1",
+      "-(x1 + x2)/(x1*x2)",
+      "-2/x1",
+      "-2/x2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ]
+  },
+  "result_id": "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION",
+  "result_state": "PURE_VECTOR_N1_PLUS_N2_PROJECTED_TO_SCALAR_FLAT_CPT_CARRIER_QUOTIENT",
+  "schema": "quantum-weyl-generic-background-ghost-n1-n2-vector-cpt-projection-v1",
+  "scope": {
+    "background": "generic nonexceptional-momentum scalar-flat source complement",
+    "dimension": 4,
+    "loop_prefactor": "common (4*pi)^-2 omitted",
+    "operator_slice": "N1_VECTOR plus N2_VECTOR_VECTOR through cubic curvature order",
+    "signature": "Euclidean"
+  },
+  "source_CPT_rows": {
+    "Delta": "-alpha1**2*x2 - alpha1*alpha2*x1 - alpha1*alpha2*x2 + alpha1*alpha2*x3 + alpha1*x2 - alpha2**2*x1 + alpha2*x1",
+    "Gamma1": "< (1/3)/(-Omega) >_3",
+    "Gamma14": "< ((2 alpha3-4 alpha3^2)/Box3)/(-Omega) >_3",
+    "Gamma3": "< (2 alpha1 alpha2)/(-Omega) >_3",
+    "positive_box_convention": "x_i=-Box_i and Delta=-Omega"
+  },
+  "source_provenance": {
+    "ancillary_file": "anc/ffwa.m",
+    "ancillary_file_sha256": "6a9bc97cab8793aeda563513f6d0bf6ad20b387a4f52c9e1d76d7e9c27bdbd5f",
+    "arxiv": "0911.1168",
+    "formula_rows": [
+      1,
+      3,
+      14
+    ],
+    "source_archive_sha256": "0b6f1f693d56390b00bd19a583cc1edb695330ee128c1dbdbbc727ad554357a4"
+  },
+  "vector_n1_plus_n2_channel_integrands": [
+    {
+      "alpha_integrand": "-2*(2*alpha1**2*x1 + 2*alpha1**2*x2 - 2*alpha1**2*x3 + 4*alpha1*alpha2*x1 + 4*alpha1*alpha2*x2 - 3*alpha1*x1 - 3*alpha1*x2 + 3*alpha1*x3 + 2*alpha2**2*x1 + 2*alpha2**2*x2 - 2*alpha2**2*x3 - 3*alpha2*x1 - 3*alpha2*x2 + 3*alpha2*x3 + x1 + x2)/(x3*(alpha1**2*x2 + alpha1*alpha2*x1 + alpha1*alpha2*x2 - alpha1*alpha2*x3 - alpha1*x2 + alpha2**2*x1 - alpha2*x1))",
+      "carrier_id": "I10",
+      "identically_zero": false,
+      "labels": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alpha_integrand": "-4*alpha1*alpha2/(x2*(alpha1**2*x2 + alpha1*alpha2*x1 + alpha1*alpha2*x2 - alpha1*alpha2*x3 - alpha1*x2 + alpha2**2*x1 - alpha2*x1))",
+      "carrier_id": "I24",
+      "identically_zero": false,
+      "labels": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alpha_integrand": "-4*alpha1*alpha2/(x1*(alpha1**2*x2 + alpha1*alpha2*x1 + alpha1*alpha2*x2 - alpha1*alpha2*x3 - alpha1*x2 + alpha2**2*x1 - alpha2*x1))",
+      "carrier_id": "I24",
+      "identically_zero": false,
+      "labels": [
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "alpha_integrand": "-4*(2*alpha1**2*x1*x2 + 4*alpha1*alpha2*x1*x2 + alpha1*alpha2*x1*x3 + alpha1*alpha2*x2*x3 - 3*alpha1*x1*x2 + 2*alpha2**2*x1*x2 - 3*alpha2*x1*x2 + x1*x2)/(x1*x2*x3*(alpha1**2*x2 + alpha1*alpha2*x1 + alpha1*alpha2*x2 - alpha1*alpha2*x3 - alpha1*x2 + alpha2**2*x1 - alpha2*x1))",
+      "carrier_id": "I24",
+      "identically_zero": false,
+      "labels": [
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "alpha_integrand": "-4*(2*alpha1**2*x1 + 4*alpha1*alpha2*x1 + 2*alpha1*alpha2*x3 - 3*alpha1*x1 + 2*alpha2**2*x1 - 3*alpha2*x1 + x1)/(x1*x3*(alpha1**2*x2 + alpha1*alpha2*x1 + alpha1*alpha2*x2 - alpha1*alpha2*x3 - alpha1*x2 + alpha2**2*x1 - alpha2*x1))",
+      "carrier_id": "I25",
+      "identically_zero": false,
+      "labels": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alpha_integrand": "-4*(2*alpha1**2*x2 + 4*alpha1*alpha2*x2 + 2*alpha1*alpha2*x3 - 3*alpha1*x2 + 2*alpha2**2*x2 - 3*alpha2*x2 + x2)/(x2*x3*(alpha1**2*x2 + alpha1*alpha2*x1 + alpha1*alpha2*x2 - alpha1*alpha2*x3 - alpha1*x2 + alpha2**2*x1 - alpha2*x1))",
+      "carrier_id": "I25",
+      "identically_zero": false,
+      "labels": [
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "alpha_integrand": "0",
+      "carrier_id": "I25",
+      "identically_zero": true,
+      "labels": [
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "alpha_integrand": "0",
+      "carrier_id": "I28",
+      "identically_zero": true,
+      "labels": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "alpha_integrand": "0",
+      "carrier_id": "I28",
+      "identically_zero": true,
+      "labels": [
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "alpha_integrand": "0",
+      "carrier_id": "I28",
+      "identically_zero": true,
+      "labels": [
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "alpha_integrand": "0",
+      "carrier_id": "I29",
+      "identically_zero": true,
+      "labels": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

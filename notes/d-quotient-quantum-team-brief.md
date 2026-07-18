@@ -887,9 +887,15 @@ the exact `n=3` ghost contribution before simplex integration, not the five
 complete repository functions. Exact proper-time integration now gives
 `G_H0=G_F-(1/3)d Delta_0^-2 delta` and reduces the curved `n=1/n=2`
 nonminimal architecture to five minimal vector/scalar resolvent carriers,
-with coefficients `(1,-1/3)` and `(-1/2,1/3,-1/18)`. Those five carriers and
-the generic physical fourth-order Hessian kernel remain independently
-unevaluated. The original
+with coefficients `(1,-1/3)` and `(-1/2,1/3,-1/18)`. The pure-vector
+physical sum is now evaluated exactly from pinned CPT-IV rows 1, 3 and 14 as
+`6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14`, then projected to the
+scalar-flat carrier quotient. The exact replay contains 2,500 TT identities,
+750 Riemann/Bianchi convention checks and unseen-fixture mutation detection.
+The other three carriers contain `D_W=delta W d`, whose principal symbol
+`W^{mu nu}p_mu p_nu` is an anisotropic curvature insertion rather than a
+minimal bundle potential. Dedicated nonminimal scalar/vector kernels and the
+generic physical fourth-order Hessian remain open. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -902,8 +908,8 @@ rejects a direct sum or name-based identification.
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient. Its
-remaining local gate begins with evaluating the five exact minimal
-one-/two-insertion resolvent carriers and
+remaining local gate begins with evaluating the three longitudinal `D_W`
+one-/two-insertion carriers and
 the physical fourth-order Hessian kernel, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
@@ -983,6 +989,9 @@ Its exact constructive reduction is recorded in
 The exact Hodge-resolvent closure of the `n=1,n=2` nonminimal architecture is
 recorded in
 [`generic-background-ghost-n1-n2-hodge-resolvent-reduction.md`](../quantum-weyl/reports/generic-background-ghost-n1-n2-hodge-resolvent-reduction.md).
+Its maximal exact CPT slice and minimal missing-carrier theorem are recorded
+in
+[`generic-background-ghost-n1-n2-vector-cpt-projection.md`](../quantum-weyl/reports/generic-background-ghost-n1-n2-vector-cpt-projection.md).
 The first coefficient-bearing insertion projection is recorded in
 [`generic-background-ghost-n3-adiabatic-carrier.md`](../quantum-weyl/reports/generic-background-ghost-n3-adiabatic-carrier.md).
 The exact generic-momentum eleven-to-ten carrier projection is recorded in

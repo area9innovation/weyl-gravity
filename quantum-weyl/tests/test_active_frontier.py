@@ -229,12 +229,22 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertTrue(
             self.payload["claim_flags"][
+                "GENERIC_GHOST_VECTOR_N1_PLUS_N2_CPT_PROJECTION_COMPUTED"
+            ]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
                 "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED"
             ]
         )
         self.assertTrue(
             self.payload["claim_flags"][
                 "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "GENERIC_GHOST_LONGITUDINAL_DW_CARRIERS_EVALUATED"
             ]
         )
         self.assertFalse(
@@ -373,7 +383,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "EVALUATE_FIVE_MINIMAL_VECTOR_SCALAR_N1_N2_RESOLVENT_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

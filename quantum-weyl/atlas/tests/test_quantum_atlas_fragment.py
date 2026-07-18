@@ -147,7 +147,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             == "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle"
         )
         self.assertIn(
-            "n=1/n=2 reduced exactly to five unevaluated covariant minimal vector/scalar resolvent carriers",
+            "n=1+n=2 pure-vector CPT sum is exact",
             ghost["scope"]["carrier"],
         )
         self.assertEqual(
@@ -159,6 +159,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
                 "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
                 "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
                 "GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION",
+                "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION",
                 "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
                 "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",
                 "GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION",
