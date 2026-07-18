@@ -1,0 +1,129 @@
+{
+  "accepted_contract": {
+    "input_schema_path": "quantum-weyl/spectral/euclidean/schema/repository-euclidean-elliptic-complex-input-v1.schema.json",
+    "physical_input_status": "NOT_SUPPLIED",
+    "required_analytic_route": "EUCLIDEAN_ELLIPTIC",
+    "required_proof_result_ids": {
+      "action_normalization": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+      "field_dictionary": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+      "formal_adjoint": "REPOSITORY_EUCLIDEAN_FORMAL_ADJOINT_COMPLEX",
+      "gauge_fixing": "REPOSITORY_EUCLIDEAN_GAUGE_FIXING",
+      "multiplicity": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+      "snapshot_compatibility": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+    },
+    "required_result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+    "required_symbol_orbit_group": "SO(4)"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL readiness certificate defines an exact sparse principal-symbol receiver for the complete gauge-fixed repository BV complex. It recomputes symbol compositions, ranks, kernel-image equality, nonzero kinetic principal scalars, full-row coverage, proof roles, multiplicity, and snapshot compatibility. The physical round-S4 determinant ledger is reduced and does not provide the full covariant symbol sequence; the local BV contraction is not an analytic ellipticity theorem; Nariai is Lorentzian; and the standard auxiliary TT identity is not a repository full complex. The synthetic sequence tests receiver mechanics only. No physical elliptic complex, coefficient vector, Slavnov breaking, QME disposition, or Lorentzian quantum theory is claimed.",
+  "claim_flags": {
+    "CURRENT_CANDIDATES_AUDITED": true,
+    "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": true,
+    "EXACT_SPARSE_SYMBOL_REPLAY_READY": true,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED": false
+  },
+  "current_candidate_audit": [
+    {
+      "Euclidean": true,
+      "candidate_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+      "disposition": "REDUCED_DETERMINANT_LEDGER_NOT_FULL_SYMBOL_COMPLEX",
+      "full_BV_rows": true,
+      "gauge_fixed_ellipticity": false,
+      "principal_symbol_exactness": false,
+      "proof_sha256": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970"
+    },
+    {
+      "Euclidean": false,
+      "candidate_id": "GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION",
+      "disposition": "LOCAL_BV_CONTRACTION_WITHOUT_ANALYTIC_SYMBOL_CERTIFICATE",
+      "full_BV_rows": true,
+      "gauge_fixed_ellipticity": false,
+      "principal_symbol_exactness": false,
+      "proof_sha256": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a"
+    },
+    {
+      "Euclidean": false,
+      "candidate_id": "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1",
+      "disposition": "LORENTZIAN_CLASSICAL_COMPLEX_NOT_EUCLIDEAN_ELLIPTIC",
+      "full_BV_rows": false,
+      "gauge_fixed_ellipticity": false,
+      "principal_symbol_exactness": false,
+      "proof_sha256": "3333074f4a7b94b9d36ce9d20927155fa61b1541f02b152cfd179e8e50f76dcc"
+    },
+    {
+      "Euclidean": true,
+      "candidate_id": "STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH",
+      "disposition": "STANDARD_TT_BLOCK_IDENTITY_NOT_REPOSITORY_FULL_COMPLEX",
+      "full_BV_rows": false,
+      "gauge_fixed_ellipticity": false,
+      "principal_symbol_exactness": false,
+      "proof_sha256": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be"
+    }
+  ],
+  "dependency_hashes": {
+    "Nariai_metric_Bach_complex": "3333074f4a7b94b9d36ce9d20927155fa61b1541f02b152cfd179e8e50f76dcc",
+    "gauge_fixed_local_BV": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a",
+    "physical_round_S4_ledger": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970",
+    "standard_auxiliary_match": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "minimal_missing_carrier_theorem": {
+    "Lorentzian_Green_hyperbolicity_is_not_Euclidean_ellipticity": true,
+    "local_BV_contraction_is_not_analytic_ellipticity": true,
+    "reduced_round_S4_ledger_is_not_enough": true,
+    "required_artifact": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+    "status": "FULL_COVARIANT_SYMBOL_SEQUENCE_ABSENT"
+  },
+  "next_gate": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+  "proof_sha256": "3e09c5e55db6165abe37cbada64b7da39c64eef59dcb7319d91815949aa172d3",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/repository-euclidean-elliptic-complex-readiness.md": "47007c1ea15a816129eaf40ed5a22b3a2ff6f035e72a717d675f1c6ae271fa07",
+      "quantum-weyl/spectral/euclidean/elliptic_complex_readiness.py": "e146cd4144971d2227d89ed648ee1367e829bb72fc7bc19b02982c56ea8cd41b",
+      "quantum-weyl/spectral/euclidean/elliptic_complex_receiver.py": "26b425c4d51c61d393194365dee4f6da9350a5c932d4ec417339a630c1417a13",
+      "quantum-weyl/spectral/euclidean/schema/repository-euclidean-elliptic-complex-input-v1.schema.json": "e524a94ddef326ceb56854b0c69302208d5050e41618849416d8cefa310fe504",
+      "quantum-weyl/spectral/euclidean/schema/repository-euclidean-elliptic-complex-readiness-v1.schema.json": "f24a27900b9ba5af8b7071a3bdf5d21943631926139e6299c97f73f98d1a5cef",
+      "quantum-weyl/spectral/euclidean/tests/test_elliptic_complex_readiness.py": "a054037e0a8325c53fad1720df61ba3b98cb2466fa5c5226c93ccb1746e06382",
+      "quantum-weyl/spectral/euclidean/verify_elliptic_complex_readiness.py": "b2e4dfef8deadde8915d7d13444201c93458b1f248a30a337241dae2caa5aecc"
+    }
+  },
+  "receiver_mechanics": {
+    "mutation_receipts": [
+      {
+        "mutation": "nonzero_symbol_composition",
+        "rejected": true
+      },
+      {
+        "mutation": "rank_ledger",
+        "rejected": true
+      },
+      {
+        "mutation": "zero_principal_scalar",
+        "rejected": true
+      },
+      {
+        "mutation": "out_of_bounds_sparse_coordinate",
+        "rejected": true
+      },
+      {
+        "mutation": "proof_digest",
+        "rejected": true
+      }
+    ],
+    "scope": "SYNTHETIC_EXACT_SPARSE_SYMBOL_SEQUENCE_ONLY",
+    "synthetic_receipt": {
+      "classical_commit": "0000000000000000000000000000000000000000",
+      "kinetic_block_count": 1,
+      "result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+      "status": "SEMANTIC_RECEIVER_ACCEPTED",
+      "symbol_sector_count": 1
+    }
+  },
+  "result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_READINESS",
+  "result_state": "SYMBOL_EXACTNESS_RECEIVER_READY_PHYSICAL_COMPLEX_NOT_SUPPLIED",
+  "schema": "quantum-weyl-repository-euclidean-elliptic-complex-readiness-v1"
+}

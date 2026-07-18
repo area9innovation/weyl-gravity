@@ -110,6 +110,16 @@ classical complex, whereas round `S4` supplies the repository determinant leg
 but has `C2=0`. Berger and the standard coefficient vector likewise fail
 different legs. No current artifact is silently promoted.
 
+The Euclidean elliptic-complex prerequisite is now executable as a separate
+fail-closed receiver. It replays exact sparse principal-symbol compositions
+and ranks, checks image--kernel equality at every middle bundle, verifies
+nonzero kinetic principal scalars, and binds the field dictionary,
+multiplicity, snapshot, action-normalization, gauge-fixing, and
+formal-adjoint proof roles. The current round-`S4` ledger remains a reduced
+determinant presentation, not a full covariant symbol sequence; Nariai is
+Lorentzian and the TT auxiliary identity covers only one block. Receiver
+readiness therefore does not promote a physical elliptic complex.
+
 The Slavnov assembly gate now records the sharper post-composer boundary.
 The accepted physical TT dictionary and full-BV ledger now permit the
 repository local heat-kernel vector to be bound into the analytic handoff,
@@ -228,9 +238,10 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. match a non-conformally-flat or Ricci-flat repository full-BV
-   operator/measure presentation to determine `c`, while binding the accepted
-   round-`S4` ledger into the V2 regulated Slavnov handoff;
+1. supply the full covariant Euclidean principal-symbol sequence and match a
+   non-conformally-flat or Ricci-flat repository full-BV operator/measure
+   presentation to determine `c`, while binding the accepted round-`S4`
+   ledger into the V2 regulated Slavnov handoff;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;

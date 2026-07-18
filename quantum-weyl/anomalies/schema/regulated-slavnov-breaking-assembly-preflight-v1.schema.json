@@ -14,7 +14,7 @@
     "dependency_hashes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "full_BV_ledger_composer", "physical_TT_dictionary", "physical_full_BV_multiplicity_ledger", "repository_round_S4_Euler_coefficient", "nonconformal_coefficient_match_receiver", "classical_snapshot_compatibility_receiver", "physical_classical_snapshot_compatibility", "Ward_insertion_contract"],
+      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "full_BV_ledger_composer", "physical_TT_dictionary", "physical_full_BV_multiplicity_ledger", "repository_round_S4_Euler_coefficient", "nonconformal_coefficient_match_receiver", "Euclidean_elliptic_complex_receiver", "classical_snapshot_compatibility_receiver", "physical_classical_snapshot_compatibility", "Ward_insertion_contract"],
       "properties": {
         "full_local_BV_G2": {"$ref": "#/$defs/hash"},
         "gauge_fixed_H14": {"$ref": "#/$defs/hash"},
@@ -27,6 +27,7 @@
         "physical_full_BV_multiplicity_ledger": {"$ref": "#/$defs/hash"},
         "repository_round_S4_Euler_coefficient": {"$ref": "#/$defs/hash"},
         "nonconformal_coefficient_match_receiver": {"$ref": "#/$defs/hash"},
+        "Euclidean_elliptic_complex_receiver": {"$ref": "#/$defs/hash"},
         "classical_snapshot_compatibility_receiver": {"$ref": "#/$defs/hash"},
         "physical_classical_snapshot_compatibility": {"$ref": "#/$defs/hash"},
         "Ward_insertion_contract": {"$ref": "#/$defs/hash"}
@@ -169,7 +170,7 @@
       "additionalProperties": false,
       "required": ["discharged", "missing"],
       "properties": {
-        "discharged": {"type": "array", "minItems": 19, "maxItems": 19, "items": {"type": "string", "minLength": 10}},
+        "discharged": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"type": "string", "minLength": 10}},
         "missing": {
           "type": "array",
           "minItems": 4,
@@ -201,6 +202,7 @@
         "repository_round_S4_Euler_coefficient_computed": true,
         "repository_C2_coefficient_gap": true,
         "nonconformal_coefficient_match_receiver_ready": true,
+        "Euclidean_elliptic_complex_receiver_ready": true,
         "classical_snapshot_compatibility_bridge_gap": false,
         "physical_classical_snapshot_compatibility_accepted": true,
         "regulated_BV_insertion_v2_receiver_ready": true,
@@ -222,6 +224,7 @@
         "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": true,
         "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_ACCEPTED": true,
         "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY": true,
+        "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": true,
         "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": true,
         "REGULATED_BV_INSERTION_V2_RECEIVER_READY": true,
         "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,

@@ -592,7 +592,13 @@ through the V2 receiver. The cross-snapshot bridge is now closed by exact
 Git-tree attribution and equality of all five classical content hashes. The
 `C2` carrier now has a strict executable receiver and a current-candidate
 audit: Nariai, Berger, the standard vector, and round `S4` each miss a distinct
-required leg. A nonzero quotient branch
+required leg. The full Euclidean elliptic-complex prerequisite now also has a
+strict sparse-symbol receiver. It independently replays symbol composition,
+exact ranks and image--kernel equality, rejects malformed sparse coordinates,
+and requires complete field, multiplicity, snapshot, normalization,
+gauge-fixing, and formal-adjoint proof roles. The current round-`S4` factor
+ledger is reduced determinant data rather than a covariant full-BV symbol
+sequence, so the physical elliptic complex remains unsupplied. A nonzero quotient branch
 obstructs strict fixed field content; a purely `omega BoxR` branch is restored
 by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See
@@ -601,12 +607,12 @@ alter the classical producer to force acceptance. See
 The multiplicity receiver is executable rather than schema-only. It requires
 complete row/factor coverage, the exact four target ranks and determinant
 signs, a verified rank-two-to-rank-one scalar ghost map, and recursively
-hashed proof artifacts. The scalar operator and nonzero-mode Berezinian maps
-now have exact source certificates, but the complete integration-slice,
-physical-Hessian, zero-mode, contour, and regulator payload has not yet been
-supplied. Orphan, duplicate-map, rank-drift, scalar-drift,
-route-drift, and bad-hash mutations are rejected. This closes receiver
-mechanics only; it does not fabricate the missing physical integration slice.
+hashed proof artifacts. The physical round-`S4` integration slice and composed
+full-BV multiplicity ledger are now accepted. Orphan, duplicate-map,
+rank-drift, scalar-drift, route-drift, and bad-hash mutations are rejected.
+This acceptance fixes the round-sphere factor and Euler ledgers; it does not
+supply the missing covariant principal-symbol sequence, the `C2`-visible
+coefficient carrier, or the regulated Slavnov insertion.
 
 Deliver one human-readable report and machine-readable certificates containing:
 

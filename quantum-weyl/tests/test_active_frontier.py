@@ -98,6 +98,11 @@ class ActiveFrontierTests(unittest.TestCase):
                 "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"]
         )

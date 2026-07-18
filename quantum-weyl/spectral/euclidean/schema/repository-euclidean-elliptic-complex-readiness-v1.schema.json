@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-euclidean-elliptic-complex-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_hashes", "accepted_contract", "receiver_mechanics", "current_candidate_audit", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-euclidean-elliptic-complex-readiness-v1"},
+    "result_id": {"const": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_READINESS"},
+    "result_state": {"const": "SYMBOL_EXACTNESS_RECEIVER_READY_PHYSICAL_COMPLEX_NOT_SUPPLIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "dependency_hashes": {"type": "object", "minProperties": 4, "maxProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "accepted_contract": {"type": "object", "additionalProperties": false, "required": ["required_result_id", "input_schema_path", "required_analytic_route", "required_symbol_orbit_group", "required_proof_result_ids", "physical_input_status"], "properties": {"required_result_id": {"const": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"}, "input_schema_path": {"const": "quantum-weyl/spectral/euclidean/schema/repository-euclidean-elliptic-complex-input-v1.schema.json"}, "required_analytic_route": {"const": "EUCLIDEAN_ELLIPTIC"}, "required_symbol_orbit_group": {"const": "SO(4)"}, "required_proof_result_ids": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"type": "string", "minLength": 10}}, "physical_input_status": {"const": "NOT_SUPPLIED"}}},
+    "receiver_mechanics": {"type": "object", "additionalProperties": false, "required": ["scope", "synthetic_receipt", "mutation_receipts"], "properties": {"scope": {"const": "SYNTHETIC_EXACT_SPARSE_SYMBOL_SEQUENCE_ONLY"}, "synthetic_receipt": {"type": "object", "required": ["status", "symbol_sector_count", "kinetic_block_count"], "properties": {"status": {"const": "SEMANTIC_RECEIVER_ACCEPTED"}, "symbol_sector_count": {"const": 1}, "kinetic_block_count": {"const": 1}}}, "mutation_receipts": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["mutation", "rejected"], "properties": {"mutation": {"enum": ["nonzero_symbol_composition", "rank_ledger", "zero_principal_scalar", "out_of_bounds_sparse_coordinate", "proof_digest"]}, "rejected": {"const": true}}}}}},
+    "current_candidate_audit": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/candidate"}},
+    "minimal_missing_carrier_theorem": {"const": {"status": "FULL_COVARIANT_SYMBOL_SEQUENCE_ABSENT", "reduced_round_S4_ledger_is_not_enough": true, "local_BV_contraction_is_not_analytic_ellipticity": true, "Lorentzian_Green_hyperbolicity_is_not_Euclidean_ellipticity": true, "required_artifact": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"}},
+    "claim_flags": {"const": {"EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": true, "EXACT_SPARSE_SYMBOL_REPLAY_READY": true, "CURRENT_CANDIDATES_AUDITED": true, "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED": false, "REGULATED_SLAVNOV_BREAKING_COMPUTED": false, "QME_DISPOSITION": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"},
+    "claim_boundary": {"type": "string", "minLength": 600},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "candidate": {"type": "object", "additionalProperties": false, "required": ["candidate_id", "Euclidean", "full_BV_rows", "principal_symbol_exactness", "gauge_fixed_ellipticity", "disposition", "proof_sha256"], "properties": {"candidate_id": {"type": "string", "minLength": 10}, "Euclidean": {"type": "boolean"}, "full_BV_rows": {"type": "boolean"}, "principal_symbol_exactness": {"type": "boolean"}, "gauge_fixed_ellipticity": {"type": "boolean"}, "disposition": {"enum": ["REDUCED_DETERMINANT_LEDGER_NOT_FULL_SYMBOL_COMPLEX", "LOCAL_BV_CONTRACTION_WITHOUT_ANALYTIC_SYMBOL_CERTIFICATE", "LORENTZIAN_CLASSICAL_COMPLEX_NOT_EUCLIDEAN_ELLIPTIC", "STANDARD_TT_BLOCK_IDENTITY_NOT_REPOSITORY_FULL_COMPLEX"]}, "proof_sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

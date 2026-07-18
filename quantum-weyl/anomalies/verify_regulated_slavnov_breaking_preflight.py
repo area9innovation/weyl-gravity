@@ -39,6 +39,7 @@ def verify() -> dict:
         or missing.get("repository_round_S4_Euler_coefficient_computed") is not True
         or missing.get("repository_C2_coefficient_gap") is not True
         or missing.get("nonconformal_coefficient_match_receiver_ready") is not True
+        or missing.get("Euclidean_elliptic_complex_receiver_ready") is not True
         or missing.get("classical_snapshot_compatibility_bridge_gap") is not False
         or missing.get("physical_classical_snapshot_compatibility_accepted")
         is not True

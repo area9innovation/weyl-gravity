@@ -45,6 +45,7 @@ DEPENDENCIES = {
     "full_BV_multiplicity_ledger": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
     "repository_round_S4_Euler_coefficient": HERE / "spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
     "nonconformal_coefficient_match_receiver": HERE / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMAL_COEFFICIENT_MATCH_READINESS.json",
+    "Euclidean_elliptic_complex_receiver": HERE / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_READINESS.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -103,6 +104,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "full_BV_multiplicity_ledger": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
         "repository_round_S4_Euler_coefficient": "REPOSITORY_EUCLIDEAN_S4_EULER_COEFFICIENT_MATCHED_C_COEFFICIENT_OPEN",
         "nonconformal_coefficient_match_receiver": "RECEIVER_READY_CURRENT_CANDIDATES_FAIL_COMPLEMENTARY_GATES",
+        "Euclidean_elliptic_complex_receiver": "SYMBOL_EXACTNESS_RECEIVER_READY_PHYSICAL_COMPLEX_NOT_SUPPLIED",
         "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_EULER_AND_SNAPSHOT_COMPATIBILITY_BOUND_REGULATED_BV_INSERTION_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
@@ -466,6 +468,17 @@ def _load() -> dict[str, dict[str, Any]]:
         != "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"
     ):
         raise ValueError("nonconformal coefficient receiver frontier drifted")
+    elliptic = values["Euclidean_elliptic_complex_receiver"]
+    elliptic_flags = elliptic.get("claim_flags", {})
+    if (
+        elliptic_flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY")
+        is not True
+        or elliptic_flags.get("EXACT_SPARSE_SYMBOL_REPLAY_READY") is not True
+        or elliptic_flags.get("REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED")
+        is not False
+        or elliptic.get("next_gate") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
+    ):
+        raise ValueError("Euclidean elliptic-complex receiver frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
@@ -1044,6 +1057,7 @@ def build() -> dict[str, Any]:
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": True,
             "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": True,
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY": True,
+            "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -1237,6 +1251,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED")
         is not True
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
+        or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -1297,6 +1312,7 @@ def validate(result: dict[str, Any]) -> None:
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
             "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED",
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY",
+            "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",

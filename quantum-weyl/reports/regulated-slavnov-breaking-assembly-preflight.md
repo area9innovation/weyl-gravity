@@ -93,6 +93,13 @@ Euler cross-check, and the accepted snapshot bridge. The current-candidate
 audit proves that Nariai, Berger, the standard vector, and round `S4` each
 miss a different required leg; none can be silently promoted.
 
+The full Euclidean elliptic-complex carrier likewise has an executable
+receiver. It requires the complete covariant principal-symbol sequence and
+recomputes exact sparse compositions, ranks, kernel--image equality, kinetic
+principal scalars, row coverage, and proof roles. The accepted round-`S4`
+factor ledger remains reduced determinant data and does not satisfy this
+stronger off-shell symbol gate.
+
 - a non-conformally-flat or Ricci-flat physical full-BV operator/measure
   carrier on which the `C2` coefficient is visible;
 - a complete Euclidean elliptic-complex receipt with action normalization and
