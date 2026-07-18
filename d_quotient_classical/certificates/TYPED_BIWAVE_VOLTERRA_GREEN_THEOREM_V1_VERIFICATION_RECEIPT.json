@@ -1,0 +1,61 @@
+{
+  "certificate_sha256": "52c74ce7e725ff61d49644721bb3329ad385a903c477ed5654fca00d763be8f9",
+  "commands": [
+    {
+      "command": "python3 -m d_quotient_classical.causal_transfer.typed_biwave_volterra_green_theorem --check --guards",
+      "elapsed_seconds": 0.640315,
+      "return_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 d_quotient_classical/causal_transfer/verify_typed_biwave_volterra_green_theorem.py --verify-only",
+      "elapsed_seconds": 0.621514,
+      "return_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_typed_biwave_volterra_green_theorem",
+      "elapsed_seconds": 0.532216,
+      "return_code": 0,
+      "status": "PASS"
+    }
+  ],
+  "covered_roles": [
+    "analytic_proof:adjoint_reversal",
+    "analytic_proof:causal_globalization",
+    "analytic_proof:finite_slab_estimate",
+    "analytic_proof:typed_inverse_identities",
+    "certificate",
+    "producer",
+    "report",
+    "schema",
+    "tests",
+    "verifier"
+  ],
+  "generated_utc": "2026-07-18T04:43:50.625848+00:00",
+  "independent_identity_defects": {
+    "AGA": 0,
+    "C0G0": 0,
+    "CGC": 0,
+    "G0C0": 0,
+    "GAA": 0,
+    "GCC": 0,
+    "graph": 0,
+    "push_through": 0
+  },
+  "overall_status": "PASS",
+  "proof_hashes": {
+    "adjoint_reversal": "bfa16b5f94ae87d777c4d6bc85829395268125cd2c15302886a86bfd99e64002",
+    "causal_globalization": "b8796951adeed2ddbb94339598e2e30ade79eb0505ee8d395b1dbf7786e0e64e",
+    "finite_slab_estimate": "60541bb9184a7b4140afad1ca33e0c4c040a6922417c0c9c621750983bc8eded",
+    "typed_inverse_identities": "246f0a474416949dff8f869ab8bf5c1ea2b567fb517ff7f8fac091c28e066288"
+  },
+  "result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1_VERIFICATION_RECEIPT",
+  "schema": "typed-biwave-volterra-green-theorem-verification-receipt-v1",
+  "schema_sha256": "add6b39c53d37a22f2797181ba74bc5344477d58c29bcac760412979300e8431",
+  "source_manifest": {
+    "path": "d_quotient_classical/manifests/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1_SOURCE_MANIFEST.json",
+    "sha256": "7cdd93ed7fc04fd80c1012e6917e5c297dac7bf65f1c1252cd6a7085bb90a84d"
+  },
+  "target_result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1"
+}

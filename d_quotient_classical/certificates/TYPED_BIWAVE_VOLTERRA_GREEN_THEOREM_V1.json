@@ -1,0 +1,133 @@
+{
+  "analytic_proof_artifacts": {
+    "adjoint_reversal": {
+      "format": "JSON_PROOF_CERTIFICATE",
+      "path": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/adjoint_reversal.json",
+      "sha256": "bfa16b5f94ae87d777c4d6bc85829395268125cd2c15302886a86bfd99e64002"
+    },
+    "causal_globalization": {
+      "format": "JSON_PROOF_CERTIFICATE",
+      "path": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/causal_globalization.json",
+      "sha256": "b8796951adeed2ddbb94339598e2e30ade79eb0505ee8d395b1dbf7786e0e64e"
+    },
+    "finite_slab_estimate": {
+      "format": "JSON_PROOF_CERTIFICATE",
+      "path": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/finite_slab_estimate.json",
+      "sha256": "60541bb9184a7b4140afad1ca33e0c4c040a6922417c0c9c621750983bc8eded"
+    },
+    "typed_inverse_identities": {
+      "format": "JSON_PROOF_CERTIFICATE",
+      "path": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/typed_inverse_identities.json",
+      "sha256": "246f0a474416949dff8f869ab8bf5c1ea2b567fb517ff7f8fac091c28e066288"
+    }
+  },
+  "claim_boundary": "Conditional analytic theorem for exact operators A=P2 P1+V with ord(V)<=2 on compact-Cauchy globally hyperbolic spacetimes. It neither derives this normal form nor promotes any transverse Bach-flat metric/parent SDR, Hadamard, nonlinear, or quantum claim.",
+  "claim_status": "CERTIFIED_CONDITIONAL_ANALYTIC_THEOREM",
+  "consumers": {
+    "Berger_lower_order_biwave": {
+      "dependency": {
+        "path": "d_quotient_classical/certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2.json",
+        "result_id": "BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2",
+        "sha256": "61d0489f7b52b0bc64869bd24b2cd6f1badf8a85609eed5006fb3fe184e713b5"
+      },
+      "specialization": "P1=P2=Box_2 and ord(V2)<=2"
+    },
+    "Nariai_exact_factorization": {
+      "dependency": {
+        "path": "d_quotient_classical/certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+        "result_id": "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+        "sha256": "5d755293ffbe32585fb1d6afc4ccb3643784306236e4b456777040858f5266bc"
+      },
+      "specialization": "distinct normally hyperbolic factors with V=0 (up to certified bundle normalization)"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Berger_consumer_replayed": true,
+    "Nariai_consumer_replayed": true,
+    "causal_support_passage": true,
+    "free_companion_both_inverses": true,
+    "full_companion_both_inverses": true,
+    "globalization_uniqueness": true,
+    "metric_both_inverses": true,
+    "metric_graph_identity": true,
+    "push_through_identity": true,
+    "solution_factorial_estimate": true,
+    "source_factorial_estimate": true,
+    "typed_adjoint_reversal": true,
+    "typed_resolvents_separate": true
+  },
+  "factorial_estimates": {
+    "constant": "C_(s,I)=|I| M_(s,I)||N||_(X_s->Y_s), where M_(s,I) is a common causal energy-kernel bound for G0",
+    "solution": "||(G0,+/- N)^n||_(X_s->X_s)<=C_(s,I)^n/n!",
+    "source": "||(N G0,+/-)^n||_(Y_s->Y_s)<=C_(s,I)^n/n!"
+  },
+  "finite_exact_fixture": {
+    "P1_and_P2_commute": false,
+    "P1_and_V_commute": false,
+    "P2_and_V_commute": false,
+    "base_bundle_fixture_rank": 2,
+    "coefficient_field": "Q",
+    "companion_fixture_rank": 4,
+    "identity_defects": {
+      "C0_left_inverse": 0,
+      "C0_right_inverse": 0,
+      "C_left_inverse": 0,
+      "C_right_inverse": 0,
+      "adjoint_inverse_algebra": 0,
+      "metric_graph": 0,
+      "metric_left_inverse": 0,
+      "metric_right_inverse": 0,
+      "reverse_adjoint_inverse_algebra": 0,
+      "solution_source_push_through": 0
+    },
+    "role": "finite exact audit of universal operator algebra; not Lorentzian existence evidence"
+  },
+  "flags": {
+    "HADAMARD_STATE": false,
+    "NONLINEAR_STABILITY": false,
+    "QUANTUM_THEORY": false,
+    "TRANSVERSE_BACH_FLAT_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_BACH_FLAT_METRIC_SDR": false,
+    "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1": true
+  },
+  "geometric_hypotheses": {
+    "bundle": "finite-rank smooth vector bundle E",
+    "spacetime": "smooth globally hyperbolic M=R times Sigma with compact Cauchy Sigma",
+    "temporal_dependence": "smooth time dependence allowed; every required coefficient/Sobolev bound is finite on finite slabs"
+  },
+  "next_gate": "FIRST_TRANSVERSE_BACH_FLAT_METRIC_PARENT_SDR_DEFECT",
+  "operator_hypotheses": {
+    "A": "P2 P1+V",
+    "P1": "second-order normally hyperbolic on E",
+    "P2": "second-order normally hyperbolic on E",
+    "V": "differential order at most two, bounded from the first wave-energy graph domain to L1(I;H^(s-1)) on every finite slab",
+    "commutativity_required": false,
+    "self_adjointness_required": false,
+    "stationarity_required": false
+  },
+  "result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1",
+  "schema": "typed-biwave-volterra-green-theorem-v1",
+  "schema_version": "1.0.0",
+  "theorem": {
+    "adjoint_reversal": "(G_A,+)^sharp=G_(A^sharp),- and (G_A,-)^sharp=G_(A^sharp),+",
+    "biwave_green_hyperbolic": true,
+    "both_inverse_identities": true,
+    "causal_support": true,
+    "companion_green_hyperbolic": true,
+    "globalization_by_uniqueness": true
+  },
+  "typed_resolvents": {
+    "green": "G_C,+/-=R_sol,+/- G0,+/-=G0,+/- R_src,+/-:Y_s(I)->X_s(I)",
+    "solution": "R_sol,+/-=(I_X+G0,+/- N)^-1:X_s(I)->X_s(I)",
+    "source": "R_src,+/-=(I_Y+N G0,+/-)^-1:Y_s(I)->Y_s(I)"
+  },
+  "typed_spaces": {
+    "V_graph_condition": "the first component is completed in the graph norm for V u in L1(I;H^(s-1))",
+    "X_s(I)": "(C0(I;H^(s+1)) intersect C1(I;H^s)) direct_sum (C0(I;H^s) intersect C1(I;H^(s-1)))",
+    "Y_s(I)": "L1(I;H^s) direct_sum L1(I;H^(s-1))"
+  }
+}

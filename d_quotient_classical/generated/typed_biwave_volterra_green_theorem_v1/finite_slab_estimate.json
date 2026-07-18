@@ -1,0 +1,30 @@
+{
+  "companion": "C=[[P1,-I],[V,P2]]=C0+N",
+  "conclusion": "both Neumann-Volterra series converge absolutely in operator norm on each finite slab",
+  "constant": "C_(s,I)=|I| M_(s,I)||N||_(X_s->Y_s), where M_(s,I) is a common causal energy-kernel bound for G0",
+  "hypotheses": [
+    "P1 and P2 are normally hyperbolic second-order operators on the same finite-rank bundle",
+    "their same-sided Green maps obey finite-slab Sobolev energy estimates at every integer order",
+    "V has differential order at most two and extends boundedly from the first wave-energy graph domain to L1(I;H^(s-1)) on every slab",
+    "N(u,v)=(-v,0) is the canonical order-zero companion incidence",
+    "coefficients may depend smoothly on time; stationarity is not assumed"
+  ],
+  "mappings": {
+    "G0": "Y_s(I)->X_s(I)",
+    "K_sol": "G0 N:X_s(I)->X_s(I)",
+    "K_src": "N G0:Y_s(I)->Y_s(I)",
+    "N": "X_s(I)->Y_s(I)"
+  },
+  "operator": "A=P2 P1+V with ord(V)<=2",
+  "proof": "same-sided compositions integrate over the ordered n-simplex t0<=tau_n<=...<=tau_1<=t1; its volume is |I|^n/n!",
+  "schema": "typed-biwave-volterra-finite-slab-estimate-v1",
+  "slab": "I=[t0,t1] with finite length |I| on a compact-Cauchy globally hyperbolic spacetime",
+  "solution_bound": "||(G0,+/- N)^n||_(X_s->X_s)<=C_(s,I)^n/n!",
+  "source_bound": "||(N G0,+/-)^n||_(Y_s->Y_s)<=C_(s,I)^n/n!",
+  "spaces": {
+    "V_graph_condition": "the first component is completed in the graph norm for V u in L1(I;H^(s-1))",
+    "X_s(I)": "(C0(I;H^(s+1)) intersect C1(I;H^s)) direct_sum (C0(I;H^s) intersect C1(I;H^(s-1)))",
+    "Y_s(I)": "L1(I;H^s) direct_sum L1(I;H^(s-1))"
+  },
+  "theorem_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1"
+}

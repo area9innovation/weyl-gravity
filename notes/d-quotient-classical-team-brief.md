@@ -1421,6 +1421,18 @@ problem is strictly transverse: deform inside the Bach-flat locus away from
 the global conformal orbit and compute the first SDR obstruction or a new
 support-local correction.
 
+`TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` now separates the reusable analytic
+input from both the Berger and Nariai fixtures. For `A=P2 P1+V`, with two
+not-necessarily-commuting normally hyperbolic factors and `ord(V)<=2`, it
+constructs separate solution- and source-space Volterra resolvents on every
+finite slab, proves factorial estimates, both inverse identities, causal
+globalization and adjoint reversal against `A^sharp`. Smooth time dependence
+is allowed, but the exact wave-energy graph bound for `V` is an explicit
+hypothesis. This theorem does not supply the transverse metric/parent SDR.
+The active gate remains the first transverse Bach-flat SDR defect, now with a
+precise analytic acceptance criterion if the corrected metric endpoint has
+this lower-order biwave form.
+
 ### Work package C-G3: clock-family stability
 
 Replace the single Berger fixture by an audit of the full squashing interval,

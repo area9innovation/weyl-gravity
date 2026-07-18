@@ -131,6 +131,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2.json`](certificates/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2.json)
 - Typed Volterra construction, estimates and adjoint-reversal proof:
   [`reports/berger-retained-biwave-volterra-resolvent-v2.md`](reports/berger-retained-biwave-volterra-resolvent-v2.md)
+- Background-independent typed lower-order biwave theorem:
+  [`certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json`](certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json)
+- The theorem allows distinct noncommuting normally hyperbolic factors and
+  smooth time-dependent order-at-most-two remainders, provided the declared
+  finite-slab wave-energy graph bound holds. It keeps source and solution
+  resolvents separate, proves both inverse identities and the correctly typed
+  adjoint reversal, and is independently replayed on a second rational
+  noncommuting fixture:
+  [`reports/typed-biwave-volterra-green-theorem.md`](reports/typed-biwave-volterra-green-theorem.md)
 - Strict schema, source manifest and timed verification receipt:
   [`schema/berger-retained-biwave-volterra-resolvent-v2.schema.json`](schema/berger-retained-biwave-volterra-resolvent-v2.schema.json),
   [`manifests/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_SOURCE_MANIFEST.json`](manifests/BERGER_RETAINED_BIWAVE_VOLTERRA_RESOLVENT_V2_SOURCE_MANIFEST.json),

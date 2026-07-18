@@ -1,0 +1,25 @@
+{
+  "companion": "C=[[P1,-I],[V,P2]]=C0+N",
+  "companion_inverses": [
+    "C G_C,+/-=I_Y",
+    "G_C,+/- C=I_X"
+  ],
+  "factorizations": [
+    "C=C0(I_X+G0,+/- N) on the same-sided solution domain",
+    "C=(I_Y+N G0,+/-)C0 on compactly supported solution-domain sections"
+  ],
+  "free_green": "G0,+/-=[[G1,+/-,0],[-G2,+/- V G1,+/-,G2,+/-]]:Y_s->X_s",
+  "green": "G_C,+/-=R_sol,+/- G0,+/-=G0,+/- R_src,+/-:Y_s->X_s",
+  "metric_graph": "j(u)=(u,P1 u), i(f)=(0,f), p(u,v)=u, and C j=i A",
+  "metric_green": "G_A,+/-=p G_C,+/- i",
+  "metric_inverses": [
+    "A G_A,+/-=I",
+    "G_A,+/- A=I"
+  ],
+  "operator": "A=P2 P1+V with ord(V)<=2",
+  "push_through": "R_sol,+/- G0,+/-=G0,+/- R_src,+/-",
+  "schema": "typed-biwave-volterra-inverse-identities-v1",
+  "solution_resolvent": "R_sol,+/-=(I_X+G0,+/- N)^-1:X_s->X_s",
+  "source_resolvent": "R_src,+/-=(I_Y+N G0,+/-)^-1:Y_s->Y_s",
+  "theorem_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1"
+}

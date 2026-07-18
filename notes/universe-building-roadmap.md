@@ -199,6 +199,13 @@ throughout the bounded-smooth conformal Nariai orbit
 metric descent.  The unresolved direction is therefore transverse to the
 conformal orbit inside the Bach-flat locus; the next certificate must expose
 the first transverse SDR obstruction or construct its support-local repair.
+The analytic endpoint criterion is now background-independent:
+`TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1` proves that every exact endpoint
+`A=P2 P1+V` with normally hyperbolic factors and an order-at-most-two
+wave-energy-graph-bounded remainder has typed advanced/retarded Green
+operators, without assuming stationarity, commutativity or self-adjointness.
+Thus the transverse calculation should first test the SDR/intertwining defect
+and the lower-order normal form; it need not rediscover the Volterra argument.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

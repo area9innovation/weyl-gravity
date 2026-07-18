@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/typed-biwave-volterra-green-theorem-v1.schema.json",
+  "title": "Typed biwave Volterra Green theorem V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "result_id",
+    "claim_status",
+    "dependency_tags",
+    "geometric_hypotheses",
+    "operator_hypotheses",
+    "typed_spaces",
+    "typed_resolvents",
+    "factorial_estimates",
+    "theorem",
+    "finite_exact_fixture",
+    "analytic_proof_artifacts",
+    "consumers",
+    "exact_checks",
+    "flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "typed-biwave-volterra-green-theorem-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1"},
+    "claim_status": {"const": "CERTIFIED_CONDITIONAL_ANALYTIC_THEOREM"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "LORENTZIAN-CAUSAL"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "geometric_hypotheses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spacetime", "bundle", "temporal_dependence"],
+      "properties": {
+        "spacetime": {"type": "string", "minLength": 1},
+        "bundle": {"type": "string", "minLength": 1},
+        "temporal_dependence": {"type": "string", "minLength": 1}
+      }
+    },
+    "operator_hypotheses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["P1", "P2", "V", "A", "commutativity_required", "stationarity_required", "self_adjointness_required"],
+      "properties": {
+        "P1": {"type": "string", "minLength": 1},
+        "P2": {"type": "string", "minLength": 1},
+        "V": {"type": "string", "minLength": 1},
+        "A": {"const": "P2 P1+V"},
+        "commutativity_required": {"const": false},
+        "stationarity_required": {"const": false},
+        "self_adjointness_required": {"const": false}
+      }
+    },
+    "typed_spaces": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["X_s(I)", "Y_s(I)", "V_graph_condition"],
+      "properties": {
+        "X_s(I)": {"type": "string", "minLength": 1},
+        "Y_s(I)": {"type": "string", "minLength": 1},
+        "V_graph_condition": {"type": "string", "pattern": "graph norm"}
+      }
+    },
+    "typed_resolvents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["solution", "source", "green"],
+      "properties": {
+        "solution": {"type": "string", "pattern": "X_s\\(I\\)->X_s\\(I\\)"},
+        "source": {"type": "string", "pattern": "Y_s\\(I\\)->Y_s\\(I\\)"},
+        "green": {"type": "string", "pattern": "Y_s\\(I\\)->X_s\\(I\\)"}
+      }
+    },
+    "factorial_estimates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["constant", "solution", "source"],
+      "properties": {
+        "constant": {"type": "string", "minLength": 1},
+        "solution": {"type": "string", "pattern": "n!"},
+        "source": {"type": "string", "pattern": "n!"}
+      }
+    },
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["companion_green_hyperbolic", "biwave_green_hyperbolic", "both_inverse_identities", "causal_support", "globalization_by_uniqueness", "adjoint_reversal"],
+      "properties": {
+        "companion_green_hyperbolic": {"const": true},
+        "biwave_green_hyperbolic": {"const": true},
+        "both_inverse_identities": {"const": true},
+        "causal_support": {"const": true},
+        "globalization_by_uniqueness": {"const": true},
+        "adjoint_reversal": {"type": "string", "pattern": "A\\^sharp"}
+      }
+    },
+    "finite_exact_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_field", "base_bundle_fixture_rank", "companion_fixture_rank", "P1_and_P2_commute", "P1_and_V_commute", "P2_and_V_commute", "identity_defects", "role"],
+      "properties": {
+        "coefficient_field": {"const": "Q"},
+        "base_bundle_fixture_rank": {"const": 2},
+        "companion_fixture_rank": {"const": 4},
+        "P1_and_P2_commute": {"type": "boolean"},
+        "P1_and_V_commute": {"type": "boolean"},
+        "P2_and_V_commute": {"type": "boolean"},
+        "identity_defects": {
+          "type": "object",
+          "minProperties": 10,
+          "additionalProperties": {"const": 0}
+        },
+        "role": {"type": "string", "minLength": 1}
+      }
+    },
+    "analytic_proof_artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finite_slab_estimate", "typed_inverse_identities", "causal_globalization", "adjoint_reversal"],
+      "properties": {
+        "finite_slab_estimate": {"$ref": "#/$defs/artifact"},
+        "typed_inverse_identities": {"$ref": "#/$defs/artifact"},
+        "causal_globalization": {"$ref": "#/$defs/artifact"},
+        "adjoint_reversal": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "consumers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Berger_lower_order_biwave", "Nariai_exact_factorization"],
+      "properties": {
+        "Berger_lower_order_biwave": {"$ref": "#/$defs/consumer"},
+        "Nariai_exact_factorization": {"$ref": "#/$defs/consumer"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 13,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1", "TRANSVERSE_BACH_FLAT_METRIC_SDR", "TRANSVERSE_BACH_FLAT_CAUSAL_TRANSFER", "HADAMARD_STATE", "NONLINEAR_STABILITY", "QUANTUM_THEORY"],
+      "properties": {
+        "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1": {"const": true},
+        "TRANSVERSE_BACH_FLAT_METRIC_SDR": {"const": false},
+        "TRANSVERSE_BACH_FLAT_CAUSAL_TRANSFER": {"const": false},
+        "HADAMARD_STATE": {"const": false},
+        "NONLINEAR_STABILITY": {"const": false},
+        "QUANTUM_THEORY": {"const": false}
+      }
+    },
+    "next_gate": {"const": "FIRST_TRANSVERSE_BACH_FLAT_METRIC_PARENT_SDR_DEFECT"},
+    "claim_boundary": {"type": "string", "minLength": 80}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "format"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "format": {"const": "JSON_PROOF_CERTIFICATE"}
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "consumer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dependency", "specialization"],
+      "properties": {
+        "dependency": {"$ref": "#/$defs/dependency"},
+        "specialization": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
