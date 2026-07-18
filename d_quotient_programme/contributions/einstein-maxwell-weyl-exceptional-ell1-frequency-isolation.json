@@ -1,0 +1,35 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; k=0, complete ell>=1 oscillatory spectrum at omega_e^2=4/3, with ell=0 removed from the obstructing L=2 channel by angular selection",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "every generic ell>=2 axial or polar p/q primary at k=0 has frequency strictly above omega_e^2=4/3",
+    "the physical ell=1 oscillator has omega^2=4 and the standard homogeneous/twist blocks are generalized zero-frequency data",
+    "the complete ell>=1 omega_e eigenspace is the axial-plus-polar exceptional ell=1 block already covered by the all-m STF obstruction theorem",
+    "angular selection prevents an ell=0 target mode from entering the obstructing L=2 channel without an ell=2 partner",
+    "the pure exceptional ell=1,k=0 second-order no-go is stable under every same-frequency k=0 augmentation"
+  ],
+  "evidence": {
+    "commit": "211b121ff89d66283df25b3bcfdfa937fbb82cc7",
+    "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.json",
+    "sha256": "12b068a00192f231d247fcf4ef86731cd0a8f15d74e015ca988aa06db20909f1"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify unequal-frequency and opposite-momentum pairs that can sum to the L=2,K=0,Omega=2omega_e resonance",
+  "not_established": [
+    "cancellation by unequal frequencies summing to 2omega_e",
+    "cancellation by opposite nonzero momenta",
+    "all-orders, residual, causal, scattering, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_exceptional_ell1_frequency_isolated",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_exceptional_ell1_frequency_isolation",
+  "team_id": "einstein_boundary",
+  "verdict": "PURE_EXCEPTIONAL_ELL1_K0_SECOND_ORDER_NO_GO_FROZEN_AGAINST_SAME_FREQUENCY_AUGMENTATION",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_frequency_isolation --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_frequency_isolation"
+  ]
+}

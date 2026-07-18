@@ -150,6 +150,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-exceptional-ell1-two-polarization-resonance-submission-receipt.md`](reports/einstein-maxwell-weyl-exceptional-ell1-two-polarization-resonance-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-exceptional-ell1-all-m-resonance.json`](contributions/einstein-maxwell-weyl-exceptional-ell1-all-m-resonance.json)
 - [`reports/einstein-maxwell-weyl-exceptional-ell1-all-m-resonance-submission-receipt.md`](reports/einstein-maxwell-weyl-exceptional-ell1-all-m-resonance-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-exceptional-ell1-frequency-isolation.json`](contributions/einstein-maxwell-weyl-exceptional-ell1-frequency-isolation.json)
+- [`reports/einstein-maxwell-weyl-exceptional-ell1-frequency-isolation-submission-receipt.md`](reports/einstein-maxwell-weyl-exceptional-ell1-frequency-isolation-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)
