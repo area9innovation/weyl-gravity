@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-weyl-exceptional-global-offshell-chain-maps-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependency_refs", "blocks", "coverage", "solution_cofiber_imports", "classification", "interpretation", "next_gate", "claim_boundary", "source_manifest", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-weyl-exceptional-global-offshell-chain-maps-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1"},
+    "result_state": {"const": "EXCEPTIONAL_AND_GLOBAL_HARMONIC_OFFSHELL_CHAIN_MAPS_CERTIFIED_COVARIANT_GLUE_OPEN"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {"type": "object", "minProperties": 11, "additionalProperties": {"type": "string", "minLength": 1}},
+    "dependency_refs": {"type": "object", "minProperties": 9, "maxProperties": 9, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "blocks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["axial_ell1", "polar_ell1", "polar_ell0"],
+      "properties": {
+        "axial_ell1": {"$ref": "#/$defs/block"},
+        "polar_ell1": {"$ref": "#/$defs/block"},
+        "polar_ell0": {"$ref": "#/$defs/block"}
+      }
+    },
+    "coverage": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "minLength": 1}},
+    "solution_cofiber_imports": {"type": "object", "minProperties": 3, "additionalProperties": {"type": "string", "minLength": 1}},
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exceptional_axial_all_row_offshell_chain_map_certified", "exceptional_polar_all_row_offshell_chain_map_certified", "homogeneous_all_row_offshell_chain_map_certified", "all_maps_polynomial_without_differential_inverse", "all_compact_momenta_included", "generalized_zero_frequency_retained", "all_harmonic_sector_coefficient_maps_available", "single_covariant_support_local_map_reconstructed", "support_local_global_mapping_cofiber_certified", "finite_large_gauge_and_final_residual_endpoints_included", "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_certified", "Lorentzian_causal_observational_or_quantum_claim"],
+      "properties": {
+        "exceptional_axial_all_row_offshell_chain_map_certified": {"const": true},
+        "exceptional_polar_all_row_offshell_chain_map_certified": {"const": true},
+        "homogeneous_all_row_offshell_chain_map_certified": {"const": true},
+        "all_maps_polynomial_without_differential_inverse": {"const": true},
+        "all_compact_momenta_included": {"const": true},
+        "generalized_zero_frequency_retained": {"const": true},
+        "all_harmonic_sector_coefficient_maps_available": {"const": true},
+        "single_covariant_support_local_map_reconstructed": {"const": false},
+        "support_local_global_mapping_cofiber_certified": {"const": false},
+        "finite_large_gauge_and_final_residual_endpoints_included": {"const": false},
+        "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_certified": {"const": false},
+        "Lorentzian_causal_observational_or_quantum_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string", "minLength": 80},
+    "next_gate": {"type": "string", "minLength": 40},
+    "claim_boundary": {"type": "string", "minLength": 80},
+    "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/tier"},
+        "tier_1": {"$ref": "#/$defs/tier"},
+        "tier_2": {"$ref": "#/$defs/tier"},
+        "tier_3": {"$ref": "#/$defs/tier"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "tier": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["PASS", "PASS_BY_CONTENT_ADDRESS", "NOT_RUN"]},
+        "commands": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "matrix": {
+      "type": "array",
+      "items": {"type": "array", "items": {"type": "string"}}
+    },
+    "orders": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ghosts", "fields", "equations", "identities"],
+      "properties": {
+        "ghosts": {"type": "array", "items": {"type": "string"}},
+        "fields": {"type": "array", "items": {"type": "string"}},
+        "equations": {"type": "array", "items": {"type": "string"}},
+        "identities": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "source_dimensions", "target_dimensions", "source_orders", "target_orders", "maps", "map_ranks_over_Q_k_omega", "defects", "formal_adjoint_audit", "constant_denominators_only", "inverted_polynomials"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "source_dimensions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+        "target_dimensions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}},
+        "source_orders": {"$ref": "#/$defs/orders"},
+        "target_orders": {"$ref": "#/$defs/orders"},
+        "maps": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source_gauge", "target_gauge", "source_euler", "target_euler", "source_noether", "target_noether", "ghost_map", "field_map", "equation_map", "identity_map"],
+          "properties": {
+            "source_gauge": {"$ref": "#/$defs/matrix"},
+            "target_gauge": {"$ref": "#/$defs/matrix"},
+            "source_euler": {"$ref": "#/$defs/matrix"},
+            "target_euler": {"$ref": "#/$defs/matrix"},
+            "source_noether": {"$ref": "#/$defs/matrix"},
+            "target_noether": {"$ref": "#/$defs/matrix"},
+            "ghost_map": {"$ref": "#/$defs/matrix"},
+            "field_map": {"$ref": "#/$defs/matrix"},
+            "equation_map": {"$ref": "#/$defs/matrix"},
+            "identity_map": {"$ref": "#/$defs/matrix"}
+          }
+        },
+        "map_ranks_over_Q_k_omega": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "defects": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"const": "0"}},
+        "formal_adjoint_audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "target"],
+          "properties": {
+            "source": {"enum": ["PASS_IN_IDENTITY_ACTION_COORDINATES", "ACTION_ROW_PAIRING_REQUIRED_NOT_IDENTITY_COORDINATES"]},
+            "target": {"const": "PASS_IN_IDENTITY_ACTION_COORDINATES"}
+          }
+        },
+        "constant_denominators_only": {"type": "array", "items": {"type": "string"}},
+        "inverted_polynomials": {"const": []}
+      }
+    }
+  }
+}

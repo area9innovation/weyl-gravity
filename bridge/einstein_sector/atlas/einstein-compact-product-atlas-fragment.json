@@ -8,7 +8,7 @@
   ],
   "entries": [
     {
-      "claim_boundary": "Global map lifecycle is ONSHELL_MAP_ONLY and Bridge 1 activation remains OPEN. Corrected cyclic morphisms, nonzero-k exceptional and global off-shell cofibers remain absent. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+      "claim_boundary": "Global map lifecycle is HARMONIC_OFFSHELL_MAPS_ONLY and Bridge 1 activation remains OPEN. The complete harmonic coefficient algebra is exact, but harmonic selection is not support local; a single natural covariant glue, nonzero-k exceptional cofiber/pairing, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -20,7 +20,12 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "3701fa96368a1e3952d7952b5fec32e0690de27df4ea1adda250547dc4c48c5c"
+          "sha256": "db9bae204b44989c76e676a2fb463ca815f200e42715d8187b842f9754c16004"
+        },
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1",
+          "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
         }
       ],
       "id": "einstein.ph.bridge.relative_branch_dictionary_v1",
@@ -34,7 +39,7 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "Global map lifecycle is ONSHELL_MAP_ONLY; the complete relative resonance map and Bridge 1 activation are not certified.",
+          "statement": "All harmonic coefficient blocks have off-shell row maps, but a single covariant support-local glue, complete relative resonance map and Bridge 1 activation are not certified.",
           "status": "OPEN"
         },
         "second_order": {
@@ -961,7 +966,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "83154ab2519a06e8f03f62c2bad6964cd811227b38c352271438a762edef7ab6",
+  "generated_by_sha256": "43feea979cae7e57f4e03d5ce32d0de70e67b1cecea77f9f151e5826d21b34ca",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

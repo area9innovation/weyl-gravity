@@ -160,7 +160,8 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
         self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
-        self.assertIn("does not activate cyclic Bridge 2", entry["claim_boundary"])
+        self.assertIn("polynomial ghost-field-equation-identity chain map", entry["claim_boundary"])
+        self.assertIn("does not activate Bridge 2", entry["claim_boundary"])
 
     def test_product_relative_linfinity_receiver_is_fail_closed(self):
         entry = next(item for item in atlas.build()["entries"] if "relative_linfinity_through_arity_three_preflight" in item["id"])

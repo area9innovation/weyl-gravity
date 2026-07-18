@@ -1,6 +1,6 @@
 # Same-background Einstein--Weyl relative branch dictionary
 
-Bridge priority: 1.  Current global lifecycle: `ONSHELL_MAP_ONLY`.  Activation
+Bridge priority: 1.  Current global lifecycle: `HARMONIC_OFFSHELL_MAPS_ONLY`.  Activation
 gate: `OPEN`.
 
 The generated dictionary exports, without cross-background identification,
@@ -18,12 +18,16 @@ current improvements. The remaining admissible target is a noncyclic triangle
 carrying the Einstein, pulled-back Weyl and relative forms separately; an
 explicitly pairing-changed theorem is a different open route.
 
-The exceptional `ell=1,k=0` solution cofiber now has explicit CRT projectors
-and a nonradical action pairing.  The homogeneous solution cofiber is zero,
-although its identity inclusion has the nontrivial nilpotent relative form.
-The generalized-zero twist primary also has zero solution cofiber, with
-relative operator `-2*I`.  Nonzero-`k` exceptional and global off-shell fields
-remain `NO_CERTIFIED_MAP`.  The boundary and
+The exceptional and homogeneous off-shell algebra is now complete in the
+harmonic coefficient presentation. Polynomial all-row maps cover axial and
+polar `ell=1` at every compact momentum and polar `ell=0`, including
+generalized zero frequency, without differential inverses. At `ell=1,k=0`
+the solution cofiber has explicit CRT projectors and a nonradical action
+pairing. The homogeneous solution cofiber is zero, although its identity
+inclusion has the nontrivial nilpotent relative form. The generalized-zero
+twist primary also has zero solution cofiber, with relative operator `-2*I`.
+The nonzero-`k` exceptional cofiber/pairing and the single natural covariant
+support-local glue remain open. The boundary and
 cross-background row is `NO_CERTIFIED_MAP` in every relevant field.  Hence the
 dictionary does not activate `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.
 

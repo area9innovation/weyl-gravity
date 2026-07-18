@@ -15,7 +15,7 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
         cls.value = json.loads(CERT.read_text(encoding="utf-8"))
 
     def test_sectoral_maps_do_not_promote_global_bridge(self) -> None:
-        self.assertEqual(self.value["bridge"]["current_global_map_lifecycle"], "ONSHELL_MAP_ONLY")
+        self.assertEqual(self.value["bridge"]["current_global_map_lifecycle"], "HARMONIC_OFFSHELL_MAPS_ONLY")
         self.assertFalse(self.value["classification"]["bridge_1_activation_gate_satisfied"])
 
     def test_every_row_has_full_scope(self) -> None:
@@ -33,6 +33,16 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
             row = next(item for item in self.value["branch_rows"] if item["id"] == identifier)
             self.assertIn("incompatible cohomology-form inertia", row["action_derived_pairing"]["standard_pairing_cyclic_map"])
             self.assertIn("noncyclic off-shell triangle with three distinct forms", row["missing"])
+
+    def test_exceptional_and_global_row_maps_are_no_longer_open(self) -> None:
+        flags = self.value["classification"]
+        self.assertTrue(flags["exceptional_and_global_harmonic_offshell_maps_certified"])
+        self.assertTrue(flags["all_harmonic_sector_coefficient_maps_available"])
+        self.assertFalse(flags["single_covariant_support_local_map_reconstructed"])
+        rows = {row["id"]: row for row in self.value["branch_rows"]}
+        self.assertEqual(rows["ph.exceptional.ell1.relative"]["map_lifecycle"], "DERIVED_COFIBER_TRIANGLE")
+        self.assertEqual(rows["ph.exceptional.ell1.nonzero_k.relative"]["map_lifecycle"], "OFFSHELL_CHAIN_MAP_ONLY")
+        self.assertEqual(rows["ph.global.homogeneous.relative"]["map_lifecycle"], "DERIVED_COFIBER_TRIANGLE")
 
     def test_aligned_common_zero_face_is_only_a_handoff(self) -> None:
         self.assertTrue(self.value["classification"]["aligned_nonzero_stabilizer_resonance_common_zero_face_imported"])

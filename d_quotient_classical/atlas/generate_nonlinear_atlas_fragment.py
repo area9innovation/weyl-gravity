@@ -33,6 +33,7 @@ CERTS = {
     "global_extra_smooth_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
     "circumference_transport_primitive": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+    "exceptional_global_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
@@ -489,7 +490,7 @@ def entries() -> list[dict[str, Any]]:
             "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
             "mode_data": _mode_data(
                 _second(
-                    ("OPEN", "The exact solution cofiber does not supply the exceptional off-shell q1/q2 relative morphism."),
+                    ("OPEN", "The exceptional all-row q1 chain map is exact, but the q2 relative morphism and one natural support-local covariant glue remain open."),
                     ("OPEN", "No exceptional smooth-secular relative obstruction map is certified."),
                     ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
                 ),
@@ -498,8 +499,8 @@ def entries() -> list[dict[str, Any]]:
                 taub=("OPEN", "The solution cofiber alone does not define the complete exceptional quadratic obstruction map."),
                 resonance=("OPEN", "No complete exceptional nonlinear resonance table is certified."),
             ),
-            "evidence": _evidence("exceptional_ell1_cofiber", "relative_branch_dictionary", "dictionary"),
-            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber only at ell=1,k=0. The exceptional off-shell ghost-field-equation-identity chain map, nonzero-k cofiber and final residual descent remain open, so this row does not activate cyclic Bridge 2.",
+            "evidence": _evidence("exceptional_ell1_cofiber", "exceptional_global_offshell", "relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber at ell=1,k=0 together with a polynomial ghost-field-equation-identity chain map for every exceptional and homogeneous harmonic coefficient block. Harmonic selection is not support local; one natural covariant glue, the nonzero-k cofiber/pairing, q2, and final residual descent remain open, so this row does not activate Bridge 2.",
         },
         {
             "id": "nonlinear.product.bridge2.relative_linfinity_through_arity_three_preflight",

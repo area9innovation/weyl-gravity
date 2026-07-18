@@ -1,0 +1,1491 @@
+{
+  "blocks": {
+    "axial_ell1": {
+      "constant_denominators_only": [
+        "1",
+        "2"
+      ],
+      "defects": {
+        "equation_identity_square": "0",
+        "field_equation_square": "0",
+        "ghost_field_square": "0",
+        "source_q1_squared_left": "0",
+        "source_q1_squared_right": "0",
+        "target_q1_squared_left": "0",
+        "target_q1_squared_right": "0"
+      },
+      "formal_adjoint_audit": {
+        "source": "PASS_IN_IDENTITY_ACTION_COORDINATES",
+        "target": "PASS_IN_IDENTITY_ACTION_COORDINATES"
+      },
+      "inverted_polynomials": [],
+      "map_ranks_over_Q_k_omega": {
+        "equation": 4,
+        "field": 5,
+        "ghost": 2,
+        "identity": 1
+      },
+      "maps": {
+        "equation_map": [
+          [
+            "-(3*k**2 - 3*omega**2 + 4)/2",
+            "0",
+            "-3*(omega**2 - 2)/2",
+            "3*k*omega/2",
+            "0"
+          ],
+          [
+            "0",
+            "-(3*k**2 - 3*omega**2 + 4)/2",
+            "-3*k*omega/2",
+            "3*(k**2 + 2)/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-I*omega",
+            "I*k",
+            "0"
+          ]
+        ],
+        "field_map": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "ghost_map": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "identity_map": [
+          [
+            "-(3*k**2 - 3*omega**2 + 4)/2",
+            "(3*k**2 - 3*omega**2 + 4)/2"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "source_euler": [
+          [
+            "k**2 + 2",
+            "k*omega",
+            "2",
+            "0",
+            "2*I*omega"
+          ],
+          [
+            "k*omega",
+            "omega**2 - 2",
+            "0",
+            "-2",
+            "2*I*k"
+          ],
+          [
+            "2",
+            "0",
+            "k**2 + 2",
+            "k*omega",
+            "2*I*omega"
+          ],
+          [
+            "0",
+            "-2",
+            "k*omega",
+            "omega**2 - 2",
+            "2*I*k"
+          ],
+          [
+            "-2*I*omega",
+            "-2*I*k",
+            "-2*I*omega",
+            "-2*I*k",
+            "-2*(k - omega)*(k + omega)"
+          ]
+        ],
+        "source_gauge": [
+          [
+            "-I*omega",
+            "0"
+          ],
+          [
+            "I*k",
+            "0"
+          ],
+          [
+            "0",
+            "-I*omega"
+          ],
+          [
+            "0",
+            "I*k"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "source_noether": [
+          [
+            "I*omega",
+            "-I*k",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "I*omega",
+            "-I*k",
+            "1"
+          ]
+        ],
+        "target_euler": [
+          [
+            "-(3*k**4 - 3*k**2*omega**2 + 10*k**2 - 4)/2",
+            "-k*omega*(3*k**2 - 3*omega**2 + 10)/2",
+            "2",
+            "0",
+            "2*I*omega"
+          ],
+          [
+            "-k*omega*(3*k**2 - 3*omega**2 + 10)/2",
+            "-(3*k**2*omega**2 - 3*omega**4 + 10*omega**2 + 4)/2",
+            "0",
+            "-2",
+            "2*I*k"
+          ],
+          [
+            "2",
+            "0",
+            "k**2 + 2",
+            "k*omega",
+            "2*I*omega"
+          ],
+          [
+            "0",
+            "-2",
+            "k*omega",
+            "omega**2 - 2",
+            "2*I*k"
+          ],
+          [
+            "-2*I*omega",
+            "-2*I*k",
+            "-2*I*omega",
+            "-2*I*k",
+            "-2*(k - omega)*(k + omega)"
+          ]
+        ],
+        "target_gauge": [
+          [
+            "-I*omega",
+            "0"
+          ],
+          [
+            "I*k",
+            "0"
+          ],
+          [
+            "0",
+            "-I*omega"
+          ],
+          [
+            "0",
+            "I*k"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ],
+        "target_noether": [
+          [
+            "I*omega",
+            "-I*k",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "I*omega",
+            "-I*k",
+            "1"
+          ]
+        ]
+      },
+      "name": "axial ell=1, all compact momenta",
+      "source_dimensions": [
+        2,
+        5,
+        5,
+        2
+      ],
+      "source_orders": {
+        "equations": [
+          "h_t*",
+          "h_x*",
+          "q_t*",
+          "q_x*",
+          "b*"
+        ],
+        "fields": [
+          "h_t",
+          "h_x",
+          "q_t",
+          "q_x",
+          "b"
+        ],
+        "ghosts": [
+          "xi_ax",
+          "chi_ax"
+        ],
+        "identities": [
+          "xi_ax*",
+          "chi_ax*"
+        ]
+      },
+      "target_dimensions": [
+        2,
+        5,
+        5,
+        2
+      ],
+      "target_orders": {
+        "equations": [
+          "h_t*",
+          "h_x*",
+          "q_t*",
+          "q_x*",
+          "b*"
+        ],
+        "fields": [
+          "h_t",
+          "h_x",
+          "q_t",
+          "q_x",
+          "b"
+        ],
+        "ghosts": [
+          "xi_ax",
+          "chi_ax"
+        ],
+        "identities": [
+          "xi_ax*",
+          "chi_ax*"
+        ]
+      }
+    },
+    "polar_ell0": {
+      "constant_denominators_only": [
+        "1",
+        "2"
+      ],
+      "defects": {
+        "equation_identity_square": "0",
+        "field_equation_square": "0",
+        "ghost_field_square": "0",
+        "source_q1_squared_left": "0",
+        "source_q1_squared_right": "0",
+        "target_q1_squared_left": "0",
+        "target_q1_squared_right": "0"
+      },
+      "formal_adjoint_audit": {
+        "source": "PASS_IN_IDENTITY_ACTION_COORDINATES",
+        "target": "PASS_IN_IDENTITY_ACTION_COORDINATES"
+      },
+      "inverted_polynomials": [],
+      "map_ranks_over_Q_k_omega": {
+        "equation": 5,
+        "field": 6,
+        "ghost": 3,
+        "identity": 3
+      },
+      "maps": {
+        "equation_map": [
+          [
+            "-k**2 + omega**2 + 1",
+            "0",
+            "0",
+            "-k**2/2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-k**2 + omega**2 + 1",
+            "0",
+            "-k*omega",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-k**2 + omega**2 + 1",
+            "-omega**2/2",
+            "0",
+            "0"
+          ],
+          [
+            "-k**2 + omega**2 + 1",
+            "0",
+            "k**2 - omega**2 - 1",
+            "-(k - omega)*(k + omega)/2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "field_map": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "ghost_map": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "identity_map": [
+          [
+            "-k**2 + omega**2 + 1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-k**2 + omega**2 + 1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "source_euler": [
+          [
+            "0",
+            "0",
+            "0",
+            "-k**2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-2*k*omega",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-omega**2",
+            "0",
+            "0"
+          ],
+          [
+            "-k**2",
+            "-2*k*omega",
+            "-omega**2",
+            "k**2 - omega**2 - 2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "k**2",
+            "k*omega"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "k*omega",
+            "omega**2"
+          ]
+        ],
+        "source_gauge": [
+          [
+            "-2*I*omega",
+            "0",
+            "0"
+          ],
+          [
+            "I*k",
+            "-I*omega",
+            "0"
+          ],
+          [
+            "0",
+            "2*I*k",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-I*omega"
+          ],
+          [
+            "0",
+            "0",
+            "I*k"
+          ]
+        ],
+        "source_noether": [
+          [
+            "2*I*omega",
+            "-I*k",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*omega",
+            "-2*I*k",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "I*omega",
+            "-I*k"
+          ]
+        ],
+        "target_euler": [
+          [
+            "k**4/2",
+            "k**3*omega",
+            "k**2*omega**2/2",
+            "k**2*(k - omega)*(k + omega)/2",
+            "0",
+            "0"
+          ],
+          [
+            "k**3*omega",
+            "2*k**2*omega**2",
+            "k*omega**3",
+            "k*omega*(k - omega)*(k + omega)",
+            "0",
+            "0"
+          ],
+          [
+            "k**2*omega**2/2",
+            "k*omega**3",
+            "omega**4/2",
+            "omega**2*(k - omega)*(k + omega)/2",
+            "0",
+            "0"
+          ],
+          [
+            "k**2*(k - omega)*(k + omega)/2",
+            "k*omega*(k - omega)*(k + omega)",
+            "omega**2*(k - omega)*(k + omega)/2",
+            "(k - omega)**2*(k + omega)**2/2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "k**2",
+            "k*omega"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "k*omega",
+            "omega**2"
+          ]
+        ],
+        "target_gauge": [
+          [
+            "-2*I*omega",
+            "0",
+            "0",
+            "-2"
+          ],
+          [
+            "I*k",
+            "-I*omega",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2*I*k",
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          [
+            "0",
+            "0",
+            "-I*omega",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "I*k",
+            "0"
+          ]
+        ],
+        "target_noether": [
+          [
+            "2*I*omega",
+            "-I*k",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*omega",
+            "-2*I*k",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "I*omega",
+            "-I*k"
+          ],
+          [
+            "-2",
+            "0",
+            "2",
+            "2",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "name": "polar ell=0, all Fourier pairs including generalized zero",
+      "source_dimensions": [
+        3,
+        6,
+        6,
+        3
+      ],
+      "source_orders": {
+        "equations": [
+          "A*",
+          "B*",
+          "C*",
+          "K*",
+          "T*",
+          "X*"
+        ],
+        "fields": [
+          "A",
+          "B",
+          "C",
+          "K",
+          "T",
+          "X"
+        ],
+        "ghosts": [
+          "xi_t",
+          "xi_x",
+          "chi"
+        ],
+        "identities": [
+          "xi_t*",
+          "xi_x*",
+          "chi*"
+        ]
+      },
+      "target_dimensions": [
+        4,
+        6,
+        6,
+        4
+      ],
+      "target_orders": {
+        "equations": [
+          "A*",
+          "B*",
+          "C*",
+          "K*",
+          "T*",
+          "X*"
+        ],
+        "fields": [
+          "A",
+          "B",
+          "C",
+          "K",
+          "T",
+          "X"
+        ],
+        "ghosts": [
+          "xi_t",
+          "xi_x",
+          "chi",
+          "sigma"
+        ],
+        "identities": [
+          "xi_t*",
+          "xi_x*",
+          "chi*",
+          "sigma*"
+        ]
+      }
+    },
+    "polar_ell1": {
+      "constant_denominators_only": [
+        "1",
+        "2"
+      ],
+      "defects": {
+        "equation_identity_square": "0",
+        "field_equation_square": "0",
+        "ghost_field_square": "0",
+        "source_q1_squared_left": "0",
+        "source_q1_squared_right": "0",
+        "target_q1_squared_left": "0",
+        "target_q1_squared_right": "0"
+      },
+      "formal_adjoint_audit": {
+        "source": "ACTION_ROW_PAIRING_REQUIRED_NOT_IDENTITY_COORDINATES",
+        "target": "PASS_IN_IDENTITY_ACTION_COORDINATES"
+      },
+      "inverted_polynomials": [],
+      "map_ranks_over_Q_k_omega": {
+        "equation": 3,
+        "field": 7,
+        "ghost": 3,
+        "identity": 0
+      },
+      "maps": {
+        "equation_map": [
+          [
+            "k**2 + 1",
+            "3*k*omega",
+            "2*k**2 + 1",
+            "0",
+            "0",
+            "(k - 1)*(k + 1)",
+            "0"
+          ],
+          [
+            "-k*omega",
+            "-3*k**2 + 3*omega**2 - 4",
+            "k*omega",
+            "0",
+            "0",
+            "2*k*omega",
+            "0"
+          ],
+          [
+            "1 - 2*omega**2",
+            "-3*k*omega",
+            "-(omega - 1)*(omega + 1)",
+            "0",
+            "0",
+            "omega**2 + 1",
+            "0"
+          ],
+          [
+            "-I*omega*(3*k**2 + 2)",
+            "-I*k*(3*k**2 + 3*omega**2 + 4)",
+            "-I*omega*(3*k**2 + 2)",
+            "0",
+            "0",
+            "2*I*omega",
+            "0"
+          ],
+          [
+            "-I*k*(3*omega**2 - 2)",
+            "-I*omega*(3*k**2 + 3*omega**2 - 4)",
+            "-I*k*(3*omega**2 - 2)",
+            "0",
+            "0",
+            "2*I*k",
+            "0"
+          ],
+          [
+            "k**2 + 2*omega**2",
+            "6*k*omega",
+            "2*k**2 + omega**2",
+            "0",
+            "0",
+            "k**2 - omega**2 - 2",
+            "0"
+          ],
+          [
+            "-2*omega**2",
+            "-4*k*omega",
+            "-2*k**2",
+            "0",
+            "0",
+            "4",
+            "0"
+          ]
+        ],
+        "field_map": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "ghost_map": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "identity_map": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "source_euler": [
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "-2*I*k",
+            "k**2 + 1",
+            "-2"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "-I*k",
+            "I*omega",
+            "-k*omega",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "2*I*omega",
+            "0",
+            "(omega - 1)*(omega + 1)",
+            "2"
+          ],
+          [
+            "0",
+            "I*k/2",
+            "I*omega/2",
+            "k**2/2",
+            "k*omega/2",
+            "I*omega/2",
+            "-I*omega"
+          ],
+          [
+            "I*k/2",
+            "I*omega/2",
+            "0",
+            "-k*omega/2",
+            "-omega**2/2",
+            "-I*k/2",
+            "I*k"
+          ],
+          [
+            "(k**2 + 1)/2",
+            "k*omega",
+            "(omega - 1)*(omega + 1)/2",
+            "I*omega",
+            "I*k",
+            "-(k**2 - omega**2 - 2)/2",
+            "-2"
+          ],
+          [
+            "1/2",
+            "0",
+            "-1/2",
+            "I*omega",
+            "I*k",
+            "1",
+            "-k**2 + omega**2 - 2"
+          ]
+        ],
+        "source_gauge": [
+          [
+            "-2*I*omega",
+            "0",
+            "0"
+          ],
+          [
+            "I*k",
+            "-I*omega",
+            "0"
+          ],
+          [
+            "0",
+            "2*I*k",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "-I*omega"
+          ],
+          [
+            "0",
+            "1",
+            "I*k"
+          ],
+          [
+            "0",
+            "0",
+            "-2"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "source_noether": [
+          [
+            "-I*omega",
+            "-I*k",
+            "0",
+            "2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-I*omega",
+            "-I*k",
+            "0",
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "omega**2",
+            "2*k*omega",
+            "k**2",
+            "0",
+            "0",
+            "-2",
+            "2"
+          ]
+        ],
+        "target_euler": [
+          [
+            "(k**4 + 4*k**2 + 1)/2",
+            "k*omega*(k**2 + 2)",
+            "(k**2*omega**2 + k**2 - omega**2 + 3)/2",
+            "I*omega*(2*k**2 + 1)",
+            "-I*k*(k**2 - 3*omega**2 + 3)",
+            "(k**4 - k**2*omega**2 + 3*k**2 + omega**2 - 2)/2",
+            "2"
+          ],
+          [
+            "k*omega*(k**2 + 2)",
+            "2*k**2*omega**2 - 3*k**2 + 3*omega**2 - 4",
+            "k*omega*(omega**2 - 2)",
+            "I*k*(3*k**2 + omega**2 + 4)",
+            "I*omega*(k**2 + 3*omega**2 - 4)",
+            "k*omega*(k**2 - omega**2 + 4)",
+            "0"
+          ],
+          [
+            "(k**2*omega**2 + k**2 - omega**2 + 3)/2",
+            "k*omega*(omega**2 - 2)",
+            "(omega**4 - 4*omega**2 + 1)/2",
+            "I*omega*(3*k**2 - omega**2 + 3)",
+            "I*k*(2*omega**2 - 1)",
+            "(k**2*omega**2 + k**2 - omega**4 + 3*omega**2 + 2)/2",
+            "-2"
+          ],
+          [
+            "-I*omega*(2*k**2 + 1)",
+            "-I*k*(3*k**2 + omega**2 + 4)",
+            "-I*omega*(3*k**2 - omega**2 + 3)",
+            "-3*k**4 + 3*k**2*omega**2 - 4*k**2 + 2*omega**2",
+            "-k*omega*(3*k**2 - 3*omega**2 + 2)",
+            "I*omega*(k**2 - omega**2 + 2)",
+            "-4*I*omega"
+          ],
+          [
+            "I*k*(k**2 - 3*omega**2 + 3)",
+            "-I*omega*(k**2 + 3*omega**2 - 4)",
+            "-I*k*(2*omega**2 - 1)",
+            "-k*omega*(3*k**2 - 3*omega**2 + 2)",
+            "-3*k**2*omega**2 + 2*k**2 + 3*omega**4 - 4*omega**2",
+            "I*k*(k**2 - omega**2 + 2)",
+            "-4*I*k"
+          ],
+          [
+            "(k**4 - k**2*omega**2 + 3*k**2 + omega**2 - 2)/2",
+            "k*omega*(k**2 - omega**2 + 4)",
+            "(k**2*omega**2 + k**2 - omega**4 + 3*omega**2 + 2)/2",
+            "-I*omega*(k**2 - omega**2 + 2)",
+            "-I*k*(k**2 - omega**2 + 2)",
+            "(k**4 - 2*k**2*omega**2 + 2*k**2 + omega**4 - 2*omega**2 - 4)/2",
+            "4"
+          ],
+          [
+            "2",
+            "0",
+            "-2",
+            "4*I*omega",
+            "4*I*k",
+            "4",
+            "-4*(k**2 - omega**2 + 2)"
+          ]
+        ],
+        "target_gauge": [
+          [
+            "-2*I*omega",
+            "0",
+            "0",
+            "-2"
+          ],
+          [
+            "I*k",
+            "-I*omega",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2*I*k",
+            "0",
+            "2"
+          ],
+          [
+            "1",
+            "0",
+            "-I*omega",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "I*k",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-2",
+            "2"
+          ],
+          [
+            "0",
+            "0",
+            "-1",
+            "0"
+          ]
+        ],
+        "target_noether": [
+          [
+            "2*I*omega",
+            "-I*k",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "I*omega",
+            "-2*I*k",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "I*omega",
+            "-I*k",
+            "-2",
+            "-1"
+          ],
+          [
+            "-2",
+            "0",
+            "2",
+            "0",
+            "0",
+            "2",
+            "0"
+          ]
+        ]
+      },
+      "name": "polar ell=1, all compact momenta",
+      "source_dimensions": [
+        3,
+        7,
+        7,
+        3
+      ],
+      "source_orders": {
+        "equations": [
+          "A*",
+          "B*",
+          "C*",
+          "h_t*",
+          "h_x*",
+          "K*",
+          "U*"
+        ],
+        "fields": [
+          "A",
+          "B",
+          "C",
+          "h_t",
+          "h_x",
+          "K",
+          "U"
+        ],
+        "ghosts": [
+          "xi_t",
+          "xi_x",
+          "xi"
+        ],
+        "identities": [
+          "xi_t*",
+          "xi_x*",
+          "xi*"
+        ]
+      },
+      "target_dimensions": [
+        4,
+        7,
+        7,
+        4
+      ],
+      "target_orders": {
+        "equations": [
+          "A*",
+          "B*",
+          "C*",
+          "h_t*",
+          "h_x*",
+          "K*",
+          "U*"
+        ],
+        "fields": [
+          "A",
+          "B",
+          "C",
+          "h_t",
+          "h_x",
+          "K",
+          "U"
+        ],
+        "ghosts": [
+          "xi_t",
+          "xi_x",
+          "xi",
+          "sigma"
+        ],
+        "identities": [
+          "xi_t*",
+          "xi_x*",
+          "xi*",
+          "sigma*"
+        ]
+      }
+    }
+  },
+  "claim_boundary": "This exact theorem closes the exceptional and homogeneous off-shell polynomial row-map gap in the complete harmonic presentation. It is not the requested support-local all-sector triangle because no spectral projector may be used to glue harmonic blocks, and it does not include finite large-gauge/final residual endpoints. It makes no causal, observable, particle, scattering, nonlinear or quantum claim.",
+  "classification": {
+    "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_certified": false,
+    "Lorentzian_causal_observational_or_quantum_claim": false,
+    "all_compact_momenta_included": true,
+    "all_harmonic_sector_coefficient_maps_available": true,
+    "all_maps_polynomial_without_differential_inverse": true,
+    "exceptional_axial_all_row_offshell_chain_map_certified": true,
+    "exceptional_polar_all_row_offshell_chain_map_certified": true,
+    "finite_large_gauge_and_final_residual_endpoints_included": false,
+    "generalized_zero_frequency_retained": true,
+    "homogeneous_all_row_offshell_chain_map_certified": true,
+    "single_covariant_support_local_map_reconstructed": false,
+    "support_local_global_mapping_cofiber_certified": false
+  },
+  "coverage": {
+    "axial_ell0": "NOT_APPLICABLE: no axial scalar harmonic",
+    "axial_ell1_all_k": "certified here",
+    "generic_axial_ell_ge_2": "imported strict polynomial all-row chain map",
+    "generic_polar_ell_ge_2": "imported strict polynomial all-row chain map",
+    "polar_ell0_all_k_and_generalized_zero": "certified here",
+    "polar_ell1_all_k": "certified here"
+  },
+  "dependency_refs": {
+    "axial_ell1_target": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+      "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+    },
+    "ell0_target": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+      "sha256": "7ca78a48fd3159a8e636f0c6c14da45c87d7a3fd2f01addd63d579e51e8c886c"
+    },
+    "exceptional_solution_cofiber": {
+      "path": "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+      "sha256": "b56faf37e92d12f37b54c2c5c0224251a73669171a067adb5082f7d71956960d"
+    },
+    "generic_axial": {
+      "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+      "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+    },
+    "generic_polar": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+      "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+    },
+    "homogeneous_solution_cofiber": {
+      "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+      "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+    },
+    "polar_ell1_target": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+      "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+    },
+    "source_exceptional": {
+      "path": "bridge/certificates/einstein_maxwell_polar_exceptional_complex.json",
+      "sha256": "e725a87ea6ab22699a5d25e4ba6ff145e0f2bf7eeefbcd737cfdde0ffc334da3"
+    },
+    "twist_solution_cofiber": {
+      "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+      "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The formerly missing exceptional/global coefficient algebra is not obstructed: every ell=0,1 ghost-field-equation-identity square has an exact polynomial map, including all compact momenta and generalized zero frequency. The remaining Bridge-1 issue is geometric globalization: reconstruct these sector tables together with the generic maps as one natural support-local four-dimensional chain morphism, include finite large-gauge/residual endpoints, and export the three action-derived forms separately. Harmonic row selection itself is not support local.",
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "reconstruct and verify the unique natural covariant equation/identity maps whose harmonic reductions are the complete generic-plus-exceptional tables; then add finite large-gauge/residual endpoint rows and assemble the NONCYCLIC_THREE_FORM triangle",
+  "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1",
+  "result_state": "EXCEPTIONAL_AND_GLOBAL_HARMONIC_OFFSHELL_CHAIN_MAPS_CERTIFIED_COVARIANT_GLUE_OPEN",
+  "schema": "einstein-weyl-exceptional-global-offshell-chain-maps-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "closed S1_L x S2, smooth periodic identity-component gauge",
+    "carrier": "complete exceptional axial ell=1, polar ell=1 and homogeneous polar ell=0 Fourier coefficient complexes",
+    "charge_sector": "fixed magnetic bundle P_N",
+    "degree": "ghost-field-equation-identity rows",
+    "ell": "0 and 1",
+    "k": "all compact Fourier momenta",
+    "m": "all by SO(3) equivariance",
+    "omega": "polynomial Fourier variable; generalized zero retained without inversion",
+    "parity": "axial and polar kept separate",
+    "theory": "Einstein-Maxwell_to_Weyl-Maxwell"
+  },
+  "solution_cofiber_imports": {
+    "ell1_k0": "standard Einstein image plus axial/polar extra cofiber; axial twist lies in the Einstein image",
+    "homogeneous_generalized_zero": "zero cofiber with nontrivial action-form shear",
+    "twist_generalized_zero": "zero cofiber with target form -2 times the source form"
+  },
+  "source_manifest": {
+    "bridge/einstein_sector/einstein_weyl_exceptional_global_offshell_chain_maps.py": "1d673b44b54bf905db50bb1501fa7907dafdf7d9ee959ec7eeb31529b7821f40",
+    "bridge/einstein_sector/schema/einstein-weyl-exceptional-global-offshell-chain-maps-v1.schema.json": "3c4f8154c4d584e8525828a45c0b5935a2efb89a724add3a7ac0aa3e9079a225",
+    "bridge/einstein_sector/tests/test_einstein_weyl_exceptional_global_offshell_chain_maps.py": "074ae30872ca4217f9400e268e73340d5d28d9d50ab334adb05fe68950ce17eb",
+    "bridge/einstein_sector/verify_einstein_weyl_exceptional_global_offshell_chain_maps.py": "fe05f1abbeba855a0bd617d55801f7636204ac51829c59c1dd5f7ae60ef13fae"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_exceptional_global_offshell_chain_maps --check",
+    "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_exceptional_global_offshell_chain_maps.py",
+    "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_exceptional_global_offshell_chain_maps -v"
+  ],
+  "verification_receipt": {
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python files>",
+        "python3 -m json.tool <scoped JSON files>",
+        "git diff --check -- <scoped files>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "PYTHONPATH=. python3 -m bridge.einstein_sector.einstein_weyl_exceptional_global_offshell_chain_maps --check",
+        "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_weyl_exceptional_global_offshell_chain_maps.py",
+        "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_exceptional_global_offshell_chain_maps -v"
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "generic all-row maps, direct exceptional target operators and solution-cofiber pairings are pinned dependencies",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the covariant support-local glue and final residual endpoints remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

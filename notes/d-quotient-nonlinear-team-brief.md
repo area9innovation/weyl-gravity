@@ -835,10 +835,14 @@ the required noncyclic three-form off-shell triangle is absent.  The
 homogeneous/twist source uses global legs whose all-BV off-shell relative map
 is likewise absent.
 The exceptional `ell=1,k=0` update now supplies explicit CRT solution
-projectors and a nonradical extra Gram matrix `diag(16,3)`, but remains
-`ONSHELL_MAP_ONLY`; its off-shell ghost--field--equation--identity map and
-nonzero-`k` cofiber are still absent.  It therefore strengthens the atlas
-without activating cyclic Bridge 2.
+projectors and a nonradical extra Gram matrix `diag(16,3)`.  The subsequent
+exceptional/global export supplies polynomial ghost--field--equation--identity
+chain maps for every exceptional and homogeneous harmonic coefficient block.
+The lifecycle is therefore `HARMONIC_OFFSHELL_MAPS_ONLY`, not
+`ONSHELL_MAP_ONLY`.  A single natural support-local covariant glue, the
+nonzero-`k` exceptional cofiber/pairing, (q_2), and final residual endpoints
+remain absent.  It therefore strengthens the atlas without activating Bridge
+2.
 
 The compact-product Bridge-2 receiver is now frozen as
 `EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1`, with
@@ -880,8 +884,10 @@ congruence invariance rules out corrected nonidentity maps, chain-homotopy
 repairs and cohomologically exact current improvements. The V2 receiver
 therefore asks for a noncyclic off-shell triangle carrying the Einstein,
 pulled-back Weyl and relative forms separately. An explicitly pairing-changed
-theorem, the exceptional/global off-shell maps and final residual descent
-remain open; Bridge 1 and the relative nonlinear receiver remain inactive.
+theorem, the covariant support-local glue of the now-complete harmonic
+off-shell coefficient maps, the nonzero-`k` exceptional cofiber/pairing, and
+final residual descent remain open; Bridge 1 and the relative nonlinear
+receiver remain inactive.
 
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned

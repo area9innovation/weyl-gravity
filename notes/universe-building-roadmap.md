@@ -790,11 +790,13 @@ product-equivariant standard-pairing cyclic correction, including nonidentity
 maps, chain homotopies and exact current improvements. The noncyclic
 three-form triangle and explicitly pairing-changed theories remain open. The generated
 `EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` records global lifecycle
-`ONSHELL_MAP_ONLY`: exceptional nonzero-momentum/off-shell maps,
-homogeneous/twist/global off-shell and charge endpoints, the noncyclic
-three-form triangle, and boundary domains remain open. Therefore these sectoral
-results still do not provide the all-sector off-shell BV triangle or activate
-bridge 1.
+`HARMONIC_OFFSHELL_MAPS_ONLY`: polynomial all-row maps cover every generic,
+exceptional and homogeneous harmonic coefficient block, but harmonic
+selection is not support local.  A single natural covariant glue, the
+nonzero-momentum exceptional cofiber/pairing, finite charge endpoints, the
+noncyclic three-form triangle, and boundary domains remain open. Therefore
+these sectoral results still do not provide the all-sector support-local BV
+triangle or activate bridge 1.
 The declared `k=0` homogeneous/twist-times-`ell=2` extra bounded-resonance
 source matrix is now complete.  Its non-axisymmetric Clebsch--Gordan fixture
 fixes every `m`: the twist-position adjoint matrix has rank two, while the
@@ -824,8 +826,8 @@ secular prefactor.  The aligned twist-position/velocity times extra-primary
 dimensional fixture classifies all sixteen channels, thirteen have printed
 exact polynomial corrections, three vanish, and every full action-row
 remainder is zero.  This advances bridge-1 input but does not activate the
-bridge: the generated branch dictionary remains `ONSHELL_MAP_ONLY`, its gate
-is `OPEN`, and atlas row
+bridge: the generated branch dictionary is `HARMONIC_OFFSHELL_MAPS_ONLY`, its
+gate is `OPEN`, and atlas row
 `einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face` retains
 `NO_CERTIFIED_MAP` for causal/retarded transport.  The remaining complete-
 orbit global/global and extra/extra self coefficient lists are still open.

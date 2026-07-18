@@ -194,7 +194,11 @@ has its fail-closed disposition and the second is active:
    cyclic. Export the Einstein, pulled-back Weyl and relative forms separately.
    An explicitly pairing-changed theorem is a different open route. This is
    Bridge 2 and must not import Berger or vacuum carriers without an explicit
-   crosswalk.
+   crosswalk.  Polynomial all-row maps now exist in every generic,
+   exceptional, and homogeneous harmonic coefficient block.  The remaining
+   linear gate is their reconstruction as one natural support-local covariant
+   morphism, the nonzero-`k` exceptional cofiber/pairing, and the finite
+   residual endpoints; harmonic selection itself is not a local map.
 3. Export complete same-background \(q_1,q_2,q_3\) payloads separately for
    Einstein--Maxwell and Weyl--Maxwell so the nonlinear team can compute
    \(\Delta_2\), the arity-three morphism defect, and the induced deformation

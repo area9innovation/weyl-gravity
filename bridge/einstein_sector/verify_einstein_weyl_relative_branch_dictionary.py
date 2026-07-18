@@ -36,8 +36,14 @@ def main() -> None:
             raise AssertionError(f"noncyclic replacement gate was hidden: {identifier}")
     if rows["ph.exceptional.ell1.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("exceptional k0 solution cofiber was lost")
+    if rows["ph.exceptional.ell1.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
+        raise AssertionError("exceptional k0 off-shell triangle was lost")
+    if rows["ph.exceptional.ell1.nonzero_k.relative"]["map_lifecycle"] != "OFFSHELL_CHAIN_MAP_ONLY":
+        raise AssertionError("nonzero-k exceptional off-shell map was lost")
     if rows["ph.global.homogeneous.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("zero homogeneous solution cofiber was lost")
+    if rows["ph.global.homogeneous.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
+        raise AssertionError("homogeneous off-shell triangle was lost")
     if rows["ph.global.twist.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("zero twist solution cofiber was lost")
     if not value["classification"]["complete_homogeneous_twist_bounded_resonance_matrix_imported"]:
@@ -61,6 +67,10 @@ def main() -> None:
     flags = value["classification"]
     if not flags["generic_standard_pairing_cyclic_maps_obstructed"]:
         raise AssertionError("strong generic cyclic-map obstruction was dropped")
+    if not flags["exceptional_and_global_harmonic_offshell_maps_certified"] or not flags["all_harmonic_sector_coefficient_maps_available"]:
+        raise AssertionError("exceptional/global off-shell coefficient coverage was dropped")
+    if flags["single_covariant_support_local_map_reconstructed"]:
+        raise AssertionError("harmonic coefficient maps were misreported as covariant support-local glue")
     if flags["full_offshell_all_sector_triangle_certified"] or flags["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("bridge 1 was over-promoted")
     if flags["cross_background_mode_identification_made"]:
