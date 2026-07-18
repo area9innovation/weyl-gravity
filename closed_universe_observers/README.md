@@ -178,6 +178,14 @@ order `g^3` (relative order `g^2`).  Its operator and formal rank stability
 are exact.  A numerical detector coefficient is input-blocked until explicit
 compact preparation profiles, switch functions, and their massive Green
 images are exported.
+The emitter backreaction successor now varies the same selected action with
+respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
+the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source
+`-g_b h_b'(Theta)<K_b,dA>` into the existing metric- and clock-antifield
+rows.  Representative common-action third derivatives are cyclic, and an
+exact reduced fixture verifies off-shell energy exchange with the clock.
+This closes the emitter-added `q2` stress/clock jet, not the complete
+componentwise 108-row `q1 q2` identity or a solved backreacted branch.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

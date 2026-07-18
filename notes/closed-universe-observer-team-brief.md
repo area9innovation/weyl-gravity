@@ -209,12 +209,25 @@ coefficient is not yet defined by the artifacts because the rank theorem
 exports an existence-level basis rule rather than serialized compact data,
 exact switches, and evaluated massive Green images.
 
+`BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
+first backreaction jet without pretending to evaluate that missing recoil
+integral.  Direct variation of the selected action gives the free emitter
+stress, the metric stress of the switched emitter--Maxwell coupling, and the
+reciprocal source `-sum_b g_b h_b'(Theta)<K_b,dA>` in the clock equation.
+They occupy the existing metric and clock antifield rows, with their cyclic
+partners in the Maxwell and emitter cotangent rows.  Representative common-
+action third derivatives have zero cyclicity defect, and an exact reduced
+fixture verifies the off-shell clock energy-exchange identity.  The complete
+componentwise 108-row `q1 q2` replay, higher emitter jets, and a solved
+backreacted gravity-clock branch remain open.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Export explicit compact `u_0,u_1` and normalized `h_0,h_1`, evaluate their
    massive Green images, and then compute the absolute-`g^3` (relative-`g^2`)
-   detector recoil coefficient.  After that, construct the emitter stress and
-   clock-switch backreaction ledger.
+   detector recoil coefficient.  In parallel, use the exported emitter stress
+   and clock-switch source to replay the complete 108-row `q1 q2` identity
+   before solving a backreacted gravity-clock branch.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,

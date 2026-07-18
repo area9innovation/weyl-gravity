@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-emitter-stress-clock-backreaction-ledger-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "setting_id",
+    "claim_status",
+    "dependency_tags",
+    "dependency_refs",
+    "covariant_action_derivatives",
+    "q2_backreaction_row_ledger",
+    "reduced_noether_energy_exchange",
+    "record_and_recoil_disposition",
+    "mutation_results",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-emitter-stress-clock-backreaction-ledger-v1"},
+    "result_id": {"const": "BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EMITTER_STRESS_AND_CLOCK_SWITCH_Q2_BACKREACTION_EXPORTED_FULL_ALL_ROW_REPLAY_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "minProperties": 7},
+    "covariant_action_derivatives": {
+      "type": "object",
+      "required": ["definitions", "free_emitter_stress", "interaction_stress", "clock_phase_source", "weyl_completion", "diffeomorphism_completion"],
+      "properties": {
+        "definitions": {"type": "string"},
+        "free_emitter_stress": {"type": "string"},
+        "interaction_stress": {"type": "string"},
+        "clock_phase_source": {"type": "string"},
+        "weyl_completion": {"type": "string"},
+        "diffeomorphism_completion": {"type": "string"}
+      }
+    },
+    "q2_backreaction_row_ledger": {
+      "type": "object",
+      "required": ["existing_targets", "new_action_third_derivative_orbits", "common_action_cyclicity_audit", "scope"],
+      "properties": {
+        "existing_targets": {"type": "object"},
+        "new_action_third_derivative_orbits": {"type": "array"},
+        "common_action_cyclicity_audit": {
+          "type": "object",
+          "required": ["cyclicity_defect_count"],
+          "properties": {"cyclicity_defect_count": {"const": 0}}
+        },
+        "scope": {"type": "string"}
+      }
+    },
+    "reduced_noether_energy_exchange": {
+      "type": "object",
+      "required": ["ward_residual", "ward_defect_count"],
+      "properties": {
+        "ward_residual": {"const": "0"},
+        "ward_defect_count": {"const": 0}
+      }
+    },
+    "record_and_recoil_disposition": {
+      "type": "object",
+      "required": ["leading_emitter_record_matrix_rank", "leading_rank_unchanged", "absolute_g2_detector_term", "first_recoil_order", "numerical_recoil_coefficient_evaluated", "reason"],
+      "properties": {
+        "leading_emitter_record_matrix_rank": {"const": 2},
+        "leading_rank_unchanged": {"const": true},
+        "absolute_g2_detector_term": {"const": "0"},
+        "first_recoil_order": {"type": "string"},
+        "numerical_recoil_coefficient_evaluated": {"const": false},
+        "reason": {"type": "string"}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 3},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "EMITTER_FREE_STRESS_TENSOR_EXPORTED",
+        "EMITTER_INTERACTION_STRESS_TENSOR_EXPORTED",
+        "CLOCK_SWITCH_RECIPROCAL_SOURCE_EXPORTED",
+        "EMITTER_STRESS_AND_CLOCK_SWITCH_Q2_BACKREACTION_INCLUDED",
+        "EMITTER_ADDED_Q2_COMMON_ACTION_CYCLICITY_CERTIFIED",
+        "REDUCED_CLOCK_ENERGY_EXCHANGE_IDENTITY_CERTIFIED",
+        "COMPLETE_108_ROW_Q1_Q2_IDENTITY_CERTIFIED",
+        "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED",
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED",
+        "BACKREACTED_GRAVITY_CLOCK_SOLUTION_CONSTRUCTED",
+        "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED",
+        "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED",
+        "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "EMITTER_FREE_STRESS_TENSOR_EXPORTED": {"const": true},
+        "EMITTER_INTERACTION_STRESS_TENSOR_EXPORTED": {"const": true},
+        "CLOCK_SWITCH_RECIPROCAL_SOURCE_EXPORTED": {"const": true},
+        "EMITTER_STRESS_AND_CLOCK_SWITCH_Q2_BACKREACTION_INCLUDED": {"const": true},
+        "EMITTER_ADDED_Q2_COMMON_ACTION_CYCLICITY_CERTIFIED": {"const": true},
+        "REDUCED_CLOCK_ENERGY_EXCHANGE_IDENTITY_CERTIFIED": {"const": true},
+        "COMPLETE_108_ROW_Q1_Q2_IDENTITY_CERTIFIED": {"const": false},
+        "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "BACKREACTED_GRAVITY_CLOCK_SOLUTION_CONSTRUCTED": {"const": false},
+        "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

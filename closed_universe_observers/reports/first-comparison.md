@@ -327,6 +327,16 @@ the simultaneous-family observer morphism and its rank-two record matrix.
 Raw-\(D\) descent and a linear `K` quotient at one fixed apparatus background
 are not claimed.
 
+The stress/clock successor varies the same selected emitter action rather
+than adding an external force.  It exports the free massive-two-form stress,
+the interaction stress of the switched `K_b`--`dA` term, and the reciprocal
+clock source `-sum_b g_b h_b'(Theta)<K_b,dA>` into the existing 108-row
+metric, clock, Maxwell, and emitter cotangent orbits.  Representative common-
+action third derivatives are exactly cyclic, and a left-invariant coefficient
+fixture has zero off-shell energy-exchange defect.  This is the emitter-added
+`q2` backreaction jet; complete componentwise `q1 q2`, higher emitter jets,
+and a solved backreacted branch remain open.
+
 The precise seven-field claim index, component verdicts, and gauge defects are
 machine-readable in the comparison ledger.
 
@@ -335,7 +345,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | two localized massive-emitter Cauchy preparations give triangular rank two; the first recoil is absolute `g^3`, with its operator known and coefficient profile-blocked | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | two localized massive-emitter Cauchy preparations give triangular rank two; the first recoil is absolute `g^3`, with its operator known and coefficient profile-blocked; emitter stress/clock `q2` outputs are exported | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -362,14 +372,17 @@ formal constant term, so rank two survives any compatible recoil deformation.
 The handoff is now supplied by a standard massive polarization-two-form model
 with compact relational switching.  It fixes an off-shell conserved current,
 reciprocal recoil equation, and nondegenerately paired 108-row carrier.
-The first recoil/backreaction operator is now known, while its detector
-coefficient awaits explicit localized preparation and switch profiles;
+The first recoil operator is now known, while its detector coefficient awaits
+explicit localized preparation and switch profiles.  The emitter stress and
+clock-switch `q2` outputs are exported, while the complete 108-row `q1 q2`
+replay and a solved backreacted branch remain open;
 placing both preparations at the original common Hopf event is a separate
 stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
 fixed-background linear descent remain separate.
-Further missing objects are emitter recoil and higher-order receiver backreaction,
-observer-map compatibility with raw \(D\) and higher brackets, a quantum
+Further missing objects are the evaluated emitter recoil coefficient,
+complete 108-row backreaction identities and higher-order receiver
+backreaction, observer-map compatibility with raw \(D\) and higher brackets, a quantum
 BRST state space, a positive observer state with induced inner product, and a
 QME-restored Lorentzian observer theory.
 
@@ -455,3 +468,7 @@ The recoil preflight proves the absolute quadratic term vanishes, exports the
 absolute-cubic/relative-quadratic operator, preserves formal rank two, and
 returns the exact missing profile/kernel inputs.  Its receipt is
 `closed_universe_observers/receipts/DYNAMICAL_EMITTER_RECOIL_ORDER_INPUT_GATE_TIER_RECEIPT.json`.
+The emitter backreaction successor exports the covariant free and interaction
+stress tensors, reciprocal clock-switch source, common-action cyclic `q2`
+orbits, and exact reduced Noether energy exchange.  Its receipt is
+`closed_universe_observers/receipts/EMITTER_STRESS_CLOCK_BACKREACTION_TIER_RECEIPT.json`.

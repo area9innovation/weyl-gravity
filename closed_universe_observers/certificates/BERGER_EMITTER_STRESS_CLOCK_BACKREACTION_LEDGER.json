@@ -1,0 +1,312 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE first-interaction-jet ledger varies the selected massive-two-form emitter action with respect to the invariant Berger clock metric and the dynamical clock phase. It exports the free emitter stress tensor, the metric stress of the switched K_b--dA coupling, and the reciprocal clock source -sum_b g_b h_b'(Theta)<K_b,dA>. These populate the existing metric-antifield rows 27--36 and clock-antifield row 38, while the cyclic partner blocks populate the Maxwell and emitter cotangent rows. Representative third derivatives of the common action have zero cyclicity defects, and an exact left-invariant reduction verifies off-shell energy exchange with the clock source. This incorporates the emitter stress/clock-switch backreaction at the action-derived q2 jet without altering the certified leading rank-two records or recoil order. It does not serialize the localized emitter preparations, evaluate the absolute-g^3 detector coefficient, replay the complete 108-row q1-q2 identity componentwise, export q3/q4 emitter jets, solve the backreacted gravity-clock equations, certify finite-parameter Green hyperbolicity or the full Dirac algebra, or make a quantum claim.",
+  "claim_status": "EMITTER_STRESS_AND_CLOCK_SWITCH_Q2_BACKREACTION_EXPORTED_FULL_ALL_ROW_REPLAY_OPEN",
+  "covariant_action_derivatives": {
+    "clock_phase_source": "E_Theta^(int)=-sum_b g_b h_b'(Theta) s_b",
+    "definitions": "H_b=dK_b, F=dA, s_b=<K_b,F>_gHat=(1/2)K_b,mn F^mn",
+    "diffeomorphism_completion": "K_b is a two-form and h_b(Theta) is a scalar; the BV term <K_b_plus,L_c K_b> and the metric/clock equation rows are the cotangent lift of the same Diff-invariant action",
+    "free_emitter_stress": "T^(K_b)_mn=(1/2)H_b,mab H_b,n^ab+m_b^2 K_b,ma K_b,n^a-gHat_mn[(1/12)H_b,abc H_b^abc+(m_b^2/4)K_b,ab K_b^ab]",
+    "interaction_stress": "T^(int,b)_mn=2 g_b h_b K_b,(m|a| F_n)^a-gHat_mn g_b h_b s_b",
+    "weyl_completion": "all contractions use gHat=|T|^2 g; varying the original metric and clock modulus is the pullback of the displayed gHat stress, so the emitter extension is Weyl compatible"
+  },
+  "dependency_refs": {
+    "apparatus_interactions": {
+      "path": "closed_universe_observers/certificates/BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE.json",
+      "result_id": "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE",
+      "sha256": "d94854ea0980d22b8a7e8b44a52dd50afa7afd8a0916aff52d3700d1eeb2d0b9"
+    },
+    "emitter_chain": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY",
+      "sha256": "8153e2638865caa30091d5010d9df9442b3395d5996bf503de3a5e7cf354ace0"
+    },
+    "emitter_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json",
+      "result_id": "BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF",
+      "sha256": "2b39749d375ab50966bf286c0a8d6771418c93160457e8f16a65821e8c9d6258"
+    },
+    "emitter_rank": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+      "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"
+    },
+    "emitter_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL",
+      "sha256": "19666c947d0ea45cd62e516bc24310ca005074544f6ab56e292366c1db8d69db"
+    },
+    "recoil_order": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+      "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+    },
+    "repaired_maxwell_q2": {
+      "path": "d_quotient_classical/certificates/BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2.json",
+      "result_id": "BERGER_SUPPORT_LOCAL_COUPLED_MAXWELL_Q2",
+      "sha256": "f518eb8a13ee34021edfd8f1809bf7a0ee139a9a1863d837d83858e34bf461f5"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "flags": {
+    "BACKREACTED_GRAVITY_CLOCK_SOLUTION_CONSTRUCTED": false,
+    "CLOCK_SWITCH_RECIPROCAL_SOURCE_EXPORTED": true,
+    "COMPLETE_108_ROW_Q1_Q2_IDENTITY_CERTIFIED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "EMITTER_ADDED_Q2_COMMON_ACTION_CYCLICITY_CERTIFIED": true,
+    "EMITTER_FREE_STRESS_TENSOR_EXPORTED": true,
+    "EMITTER_INTERACTION_STRESS_TENSOR_EXPORTED": true,
+    "EMITTER_STRESS_AND_CLOCK_SWITCH_Q2_BACKREACTION_INCLUDED": true,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED": false,
+    "QUANTUM_CLAIM": false,
+    "REDUCED_CLOCK_ENERGY_EXCHANGE_IDENTITY_CERTIFIED": true
+  },
+  "mutation_results": [
+    {
+      "audit": {
+        "Euler_A": "-a*beta**2 - a2 + beta*g*h*y - g*h*x1 - g*h_prime*theta1*x",
+        "Euler_x_constraint": "a1*g*h + beta**2*x + beta*y1 + m2*x",
+        "Euler_y": "a*beta*g*h - beta*x1 - m2*y - y2",
+        "canonical_energy": "-(-a**2*beta**2 + 2*a*beta*g*h*y - a1**2 + beta**2*x**2 + m2*x**2 - m2*y**2 - y1**2)/2",
+        "clock_switch_source": "0",
+        "coframe_reduction": "K=x e0 wedge e1+y e2 wedge e3; A=a e1; de1=-beta e2 wedge e3",
+        "off_shell_identity": "dE/dt+E_A a_dot+E_x x_dot+E_y y_dot+E_Theta Theta_dot=0",
+        "reduced_lagrangian": "-a**2*beta**2/2 + a1**2/2 + g*h*(a*beta*y + a1*x) + m2*(x**2 - y**2)/2 + (beta*x + y1)**2/2",
+        "ward_defect_count": 1,
+        "ward_residual": "g*h_prime*theta1*(-a*beta*y - a1*x)"
+      },
+      "detected": true,
+      "name": "omit_clock_switch_equation_row"
+    },
+    {
+      "audit": {
+        "cyclicity_defect_count": 3,
+        "orbits": [
+          {
+            "coefficient": "c_x",
+            "name": "metric_K_K",
+            "permutation_count": 3,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": false
+          },
+          {
+            "coefficient": "g*h",
+            "name": "metric_K_A",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": false
+          },
+          {
+            "coefficient": "beta*g*h",
+            "name": "metric_K_A_spatial",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": false
+          },
+          {
+            "coefficient": "g*h_prime",
+            "name": "clock_K_A",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": true
+          },
+          {
+            "coefficient": "beta*g*h_prime",
+            "name": "clock_K_A_spatial",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": true
+          }
+        ],
+        "representative_action_jet": "g*h*r*(a*beta*y + adot*x) + g*h_prime*theta*(a*beta*y + adot*x) + r*(c_x*x**2 + c_y*y**2)/2"
+      },
+      "detected": true,
+      "name": "omit_metric_antifield_output"
+    },
+    {
+      "audit": {
+        "cyclicity_defect_count": 2,
+        "orbits": [
+          {
+            "coefficient": "c_x",
+            "name": "metric_K_K",
+            "permutation_count": 3,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": true
+          },
+          {
+            "coefficient": "g*h",
+            "name": "metric_K_A",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": true
+          },
+          {
+            "coefficient": "beta*g*h",
+            "name": "metric_K_A_spatial",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": true
+          },
+          {
+            "coefficient": "g*h_prime",
+            "name": "clock_K_A",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": false
+          },
+          {
+            "coefficient": "beta*g*h_prime",
+            "name": "clock_K_A_spatial",
+            "permutation_count": 6,
+            "permutation_symmetric": true,
+            "reciprocal_output_present": false
+          }
+        ],
+        "representative_action_jet": "g*h*r*(a*beta*y + adot*x) + g*h_prime*theta*(a*beta*y + adot*x) + r*(c_x*x**2 + c_y*y**2)/2"
+      },
+      "detected": true,
+      "name": "omit_clock_antifield_output"
+    }
+  ],
+  "next_gate": "SERIALIZE_LOCALIZED_EMITTER_AND_SWITCH_PROFILES_FOR_RECOIL_OR_REPLAY_THE_COMPLETE_108_ROW_Q1_Q2_IDENTITY_BEFORE_SOLVING_BACKREACTED_GRAVITY_CLOCK_EQUATIONS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_emitter_stress_clock_backreaction.py",
+        "sha256": "07a6ba9cc65286dd86cf5f34c1597426bee146d9c40878c2114aae30642c0ffa"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_emitter_stress_clock_backreaction.py",
+        "sha256": "0e6c1a245b5adf002286a717122c62c75d50f0eda773c0515d0020104b3fac68"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_emitter_stress_clock_backreaction.py",
+        "sha256": "b0d563265e27008a7abe67f607ff9da95ce7c3bed9b2f120eaf5d4d6497fd4a9"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-emitter-stress-clock-backreaction-ledger-v1.schema.json",
+        "sha256": "b26d868fc0da49bb3bd48e6d54d840f6b30a51018f08f3f7888c1db94e696364"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-emitter-stress-clock-backreaction-ledger.md",
+        "sha256": "4758cf1bd260305cebb33903635a374a5e44a8db314aac80bfe81ee43ec5df19"
+      }
+    ]
+  },
+  "q2_backreaction_row_ledger": {
+    "common_action_cyclicity_audit": {
+      "cyclicity_defect_count": 0,
+      "orbits": [
+        {
+          "coefficient": "c_x",
+          "name": "metric_K_K",
+          "permutation_count": 3,
+          "permutation_symmetric": true,
+          "reciprocal_output_present": true
+        },
+        {
+          "coefficient": "g*h",
+          "name": "metric_K_A",
+          "permutation_count": 6,
+          "permutation_symmetric": true,
+          "reciprocal_output_present": true
+        },
+        {
+          "coefficient": "beta*g*h",
+          "name": "metric_K_A_spatial",
+          "permutation_count": 6,
+          "permutation_symmetric": true,
+          "reciprocal_output_present": true
+        },
+        {
+          "coefficient": "g*h_prime",
+          "name": "clock_K_A",
+          "permutation_count": 6,
+          "permutation_symmetric": true,
+          "reciprocal_output_present": true
+        },
+        {
+          "coefficient": "beta*g*h_prime",
+          "name": "clock_K_A_spatial",
+          "permutation_count": 6,
+          "permutation_symmetric": true,
+          "reciprocal_output_present": true
+        }
+      ],
+      "representative_action_jet": "g*h*r*(a*beta*y + adot*x) + g*h_prime*theta*(a*beta*y + adot*x) + r*(c_x*x**2 + c_y*y**2)/2"
+    },
+    "existing_targets": {
+      "Maxwell_antifield_rows": [
+        59,
+        60,
+        61,
+        62
+      ],
+      "clock_phase_antifield_row": 38,
+      "emitter_antifield_rows": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "metric_antifield_rows": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    "new_action_third_derivative_orbits": [
+      "q2(K_b,K_b)->h_hat_star from T^(K_b)",
+      "q2(K_b,A)->h_hat_star from T^(int,b)",
+      "q2(K_b,A)->Theta_star from -g_b h_b'(Theta)<K_b,dA>",
+      "cyclic partners q2(h_hat,K_b)->K_b_plus, q2(h_hat,K_b)->A_plus, and q2(h_hat,A)->K_b_plus",
+      "cyclic partners q2(deltaTheta,K_b)->A_plus and q2(deltaTheta,A)->K_b_plus",
+      "Diff cotangent orbit q2(c,K_b)=L_c K_b with its K_b_plus partner"
+    ],
+    "scope": "all emitter-added q2 backreaction orbits at the zero-emitter background; the imported 84-row apparatus q2/q3 and repaired 64-row Maxwell q2 remain authoritative on their rows"
+  },
+  "record_and_recoil_disposition": {
+    "absolute_g2_detector_term": "0",
+    "first_recoil_order": "absolute g^3 / relative g^2",
+    "leading_emitter_record_matrix_rank": 2,
+    "leading_rank_unchanged": true,
+    "numerical_recoil_coefficient_evaluated": false,
+    "reason": "the stress/clock action derivatives do not supply the still-missing serialized localized Cauchy profiles, exact switches, or evaluated massive Green images"
+  },
+  "reduced_noether_energy_exchange": {
+    "Euler_A": "-a*beta**2 - a2 + beta*g*h*y - g*h*x1 - g*h_prime*theta1*x",
+    "Euler_x_constraint": "a1*g*h + beta**2*x + beta*y1 + m2*x",
+    "Euler_y": "a*beta*g*h - beta*x1 - m2*y - y2",
+    "canonical_energy": "-(-a**2*beta**2 + 2*a*beta*g*h*y - a1**2 + beta**2*x**2 + m2*x**2 - m2*y**2 - y1**2)/2",
+    "clock_switch_source": "g*h_prime*(a*beta*y + a1*x)",
+    "coframe_reduction": "K=x e0 wedge e1+y e2 wedge e3; A=a e1; de1=-beta e2 wedge e3",
+    "off_shell_identity": "dE/dt+E_A a_dot+E_x x_dot+E_y y_dot+E_Theta Theta_dot=0",
+    "reduced_lagrangian": "-a**2*beta**2/2 + a1**2/2 + g*h*(a*beta*y + a1*x) + m2*(x**2 - y**2)/2 + (beta*x + y1)**2/2",
+    "ward_defect_count": 0,
+    "ward_residual": "0"
+  },
+  "result_id": "BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER",
+  "schema": "closed-universe-berger-emitter-stress-clock-backreaction-ledger-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "EMITTER_STRESS_CLOCK_BACKREACTION_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The selected massive-two-form emitter action has now been varied with respect to the invariant clock metric and clock phase. The free emitter stress, switched interaction stress, and reciprocal clock source are exported into the existing 108-row cotangent targets. Representative common-action q2 orbits are cyclic and an exact reduced fixture verifies off-shell clock energy exchange. This is a first-interaction-jet result: the complete componentwise 108-row q1-q2 replay, higher emitter jets, a solved backreacted branch, the numerical absolute-g3 detector coefficient, finite-parameter Green theory, full Dirac algebra, and quantum claims remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile on the producer, verifier, and scoped test; git diff --check on observer-owned paths; explicit SHA-256 replay",
+      "elapsed_seconds": "under 1 plus final checks",
+      "status": "PASS",
+      "scope": "producer, verifier, test, schema, certificate, report, receipt, comparison ledger, README, observer brief, and comparison report; unrelated shared-tree files and the concurrently edited roadmap are excluded"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_emitter_stress_clock_backreaction --check",
+      "elapsed_seconds": "under 1",
+      "status": "PASS",
+      "scope": "dependency flags, covariant action derivatives, reduced Noether identity, common-action cyclic orbits, mutations, schema, and freshness"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_emitter_stress_clock_backreaction",
+      "elapsed_seconds": "under 1",
+      "status": "PASS",
+      "scope": "independent dependency/source hashes, Noether replay, cyclic orbit replay, and mutation detection"
+    },
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_emitter_stress_clock_backreaction.py",
+      "elapsed_seconds": "0.78",
+      "status": "PASS",
+      "scope": "all 4 stress, clock-source, cyclicity, and fail-closed tests"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-emitter-stress-clock-backreaction-ledger-v1.schema.json -d closed_universe_observers/certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
+      "elapsed_seconds": "included in focused checks",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 validation"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_comparison_ledger",
+      "elapsed_seconds": "under 1",
+      "status": "PASS",
+      "scope": "historical imports, bridge hashes, stress/clock artifact import, and fail-closed recoil/profile gate"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "198.26 pytest / 199.71 wall",
+      "status": "PASS",
+      "scope": "all 102 closed-universe observer tests"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This adds an observer-owned first interaction jet and central-ledger import but does not alter the shared classical core algebra, complete the all-row q1-q2 theorem, solve the backreacted equations, promote finite-parameter/all-orders Green hyperbolicity, freeze a release, or make a quantum claim."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json", "sha256": "1ea109509a2762e58a24a2c83f08eb9313e04ff3b988eb30cf2e6b554fa58aec"},
+    {"path": "closed_universe_observers/schema/berger-emitter-stress-clock-backreaction-ledger-v1.schema.json", "sha256": "b26d868fc0da49bb3bd48e6d54d840f6b30a51018f08f3f7888c1db94e696364"},
+    {"path": "closed_universe_observers/generate_berger_emitter_stress_clock_backreaction.py", "sha256": "07a6ba9cc65286dd86cf5f34c1597426bee146d9c40878c2114aae30642c0ffa"},
+    {"path": "closed_universe_observers/verify_berger_emitter_stress_clock_backreaction.py", "sha256": "0e6c1a245b5adf002286a717122c62c75d50f0eda773c0515d0020104b3fac68"},
+    {"path": "closed_universe_observers/tests/test_berger_emitter_stress_clock_backreaction.py", "sha256": "b0d563265e27008a7abe67f607ff9da95ce7c3bed9b2f120eaf5d4d6497fd4a9"},
+    {"path": "closed_universe_observers/reports/berger-emitter-stress-clock-backreaction-ledger.md", "sha256": "4758cf1bd260305cebb33903635a374a5e44a8db314aac80bfe81ee43ec5df19"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "dfc19870cf1e93482b9df34dbacf3b0527f1ea6f369de3030d6fcbe2c04dc0fe"},
+    {"path": "closed_universe_observers/README.md", "sha256": "4cd2696f7acb0a535482b2eb2ff4989de0300180fe269b4512c8d16d26f85e33"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "8b57bbe9b77893efc8a32853597d0c3059db411f427ef3e88447216c892c6b43"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "9ce1208ae3edab83922642ff5c33e180d113eecb67520b794e3c2caa50478352"}
+  ],
+  "claim_flags": {
+    "EMITTER_FREE_STRESS_TENSOR_EXPORTED": true,
+    "EMITTER_INTERACTION_STRESS_TENSOR_EXPORTED": true,
+    "CLOCK_SWITCH_RECIPROCAL_SOURCE_EXPORTED": true,
+    "EMITTER_STRESS_AND_CLOCK_SWITCH_Q2_BACKREACTION_INCLUDED": true,
+    "EMITTER_ADDED_Q2_COMMON_ACTION_CYCLICITY_CERTIFIED": true,
+    "REDUCED_CLOCK_ENERGY_EXCHANGE_IDENTITY_CERTIFIED": true,
+    "COMPLETE_108_ROW_Q1_Q2_IDENTITY_CERTIFIED": false,
+    "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
