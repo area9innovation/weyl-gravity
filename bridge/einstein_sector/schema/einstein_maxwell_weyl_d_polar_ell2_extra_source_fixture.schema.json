@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "domain", "case", "coordinate_audit",
+    "representatives_At_B_Ct_U", "action_row_order", "bilinear_source_rows",
+    "provenance", "claim_boundary", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-d-polar-ell2-extra-source-fixture-v1"},
+    "case": {"enum": ["e1", "e2"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "bilinear_source_rows": {"type": "array", "minItems": 4, "maxItems": 4}
+  }
+}

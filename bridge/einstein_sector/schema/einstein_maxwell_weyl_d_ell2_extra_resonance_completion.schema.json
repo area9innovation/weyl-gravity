@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "correction_class", "domain",
+    "polar_theorem", "parity_completion", "classification", "interpretation",
+    "next_gate", "claim_boundary", "provenance", "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-d-ell2-extra-resonance-completion-v1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "correction_class": {"const": "BOUNDED_OR_FINITE_QUASIPERIODIC"}
+  }
+}

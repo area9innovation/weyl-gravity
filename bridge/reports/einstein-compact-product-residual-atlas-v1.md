@@ -32,8 +32,9 @@ smooth-secular and causal/retarded correction classes.  In particular:
   second-order correction;
 - the twist-balanced exceptional fixture is the independence witness
   `mu_X(u)=0` with `R_bounded(u)!=0`;
-- the new `d`-cross axial matrix has a certified cancellable resonant
-  projection but remains `OPEN` as a full nonlinear extension;
+- the completed `d`-cross axial-plus-polar matrix has certified cancellable
+  resonant projections in both parities but remains `OPEN` as a full
+  nonlinear extension;
 - every compact-product causal/retarded verdict remains `OPEN`;
 - the crosswalk to asymptotic or vacuum-cylinder modes is
   `NO_CERTIFIED_MAP`.

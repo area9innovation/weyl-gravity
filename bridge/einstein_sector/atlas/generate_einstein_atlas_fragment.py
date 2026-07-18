@@ -27,7 +27,7 @@ CERTIFICATES = {
     "exceptional_resonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
-    "d_resonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_axial_ell2_extra_resonance.json",
+    "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
     "abstract_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -180,16 +180,16 @@ def entries() -> list[dict[str, object]]:
             "This certifies the A=0 twist-velocity orbit only; twist position and the full global cone remain open.",
         ),
         _entry(
-            "einstein.ph.wm.interaction.d_times_axial_ell2_extra",
-            _scope(theory="Weyl-Maxwell target", carrier="homogeneous circumference velocity d crossed with the two axial ell=2 extra-primary amplitudes", degree=2, parity="axial", ell=2, m="all", k=0, omega="output omega_e^2=16/3"),
+            "einstein.ph.wm.interaction.d_times_ell2_extra",
+            _scope(theory="Weyl-Maxwell target", carrier="homogeneous circumference velocity d crossed with the two extra-primary amplitudes in each parity", degree=2, parity="axial and polar", ell=2, m="all", k=0, omega="output omega_e^2=16/3"),
             {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The resonant output is the axial p-shell at omega_e^2=16/3."),
-            ("CERTIFIED", "The extra input multiplicity is the certified nonradical axial Lee-Wald block."),
+            ("CERTIFIED", "The extra input multiplicities are the certified nonradical axial and polar Lee-Wald blocks."),
             ("OPEN", "The simultaneous five stabilizer moment maps for this enlarged input have not been solved."),
-            ("CERTIFIED", "The d-cross source-to-adjoint pairing is an isomorphism with determinant 832, so any axial p-shell defect is algebraically cancellable for d!=0."),
-            _second_order(("OPEN", "The axial resonant projection is cancellable, but polar, nonresonant and stabilizer conditions remain."), ("OPEN", "No complete smooth-secular extension has been assembled."), open_causal),
-            _evidence("d_resonance", "axial_current", "abstract_cone"),
-            "This is a resonant compatibility matrix, not a complete second-order extension or a full homogeneous/twist source matrix.",
+            ("CERTIFIED", "The d-cross maps are isomorphisms in both parities; their block determinant is 8266752, so any ell=2 p-shell defect is algebraically cancellable for d!=0."),
+            _second_order(("OPEN", "Both resonant projections are cancellable, but nonresonant and simultaneous stabilizer conditions remain."), ("OPEN", "No complete smooth-secular extension has been assembled."), open_causal),
+            _evidence("d_completion", "axial_current", "polar_current", "abstract_cone"),
+            "This completes the d column of the resonant source matrix, not a complete second-order extension or the remaining homogeneous/twist columns.",
         ),
         _entry(
             "einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder",
@@ -218,8 +218,8 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional all-m input changed")
     if not records["twist_independence"]["classification"]["nonzero_adjoint_cokernel_witness_certified"]:
         raise AssertionError("twist independence witness changed")
-    if not records["d_resonance"]["classification"]["d_cross_adjoint_map_invertible"]:
-        raise AssertionError("d-cross resonance input changed")
+    if not records["d_completion"]["classification"]["d_cross_adjoint_map_invertible_in_both_parities"]:
+        raise AssertionError("d-cross parity completion changed")
     if not records["abstract_cone"]["flags"]["FINITE_HARMONIC_TANGENT_CONE_FORMULA"]:
         raise AssertionError("abstract tangent-cone theorem changed")
     value = {

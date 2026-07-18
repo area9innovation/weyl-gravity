@@ -64,7 +64,7 @@ def verify() -> None:
     if "mu_X(u)=0 but R_bounded(u)!=0" not in independence["mode_data"]["resonance"]["statement"]:
         raise AssertionError("independence formula is absent")
 
-    d_cross = by_id["einstein.ph.wm.interaction.d_times_axial_ell2_extra"]
+    d_cross = by_id["einstein.ph.wm.interaction.d_times_ell2_extra"]
     if d_cross["mode_data"]["resonance"]["status"] != "CERTIFIED" or d_cross["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("d-cross compatibility boundary drifted")
 

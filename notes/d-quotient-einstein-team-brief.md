@@ -1982,9 +1982,15 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    with determinant `832`.  Hence, for `d!=0`, the two axial `ell=2` extra
    amplitudes can cancel an arbitrary axial resonant defect.  `SO(3)`
    equivariance promotes the multiplicity-space isomorphism to every `m`.
-   This is a bounded/finite-quasiperiodic compatibility theorem, not yet a
-   full extension: the polar block, stabilizer moment maps, nonresonant rows,
-   and the remaining `a,b` and twist columns are still required.
+   The polar column is now complete as well.  In reduced polar action rows,
+   `S(d,e1)=(0,-6 i sqrt(3),0,0)` and
+   `S(d,e2)=(-376 i sqrt(3),0,-632 i sqrt(3)/9,384 i sqrt(3))`.
+   The complete polar p-shell adjoint pairing is diagonal with determinant
+   `9936`; combined with the axial determinant, the parity-block determinant
+   is `8266752`.  Thus the complete `d` cross map is an isomorphism in both
+   parities for every `m`.  This is still a bounded/finite-quasiperiodic
+   compatibility theorem, not a full extension: stabilizer moment maps,
+   nonresonant rows, and the remaining `a,b` and twist columns are required.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately
@@ -2051,9 +2057,9 @@ The twist-balanced exceptional fixture is the required independence witness:
 all stabilizer moment maps vanish while a polar `ell=2` bounded resonant
 functional is nonzero.  Conversely, the balanced Einstein--extra `ell=2`
 fixture has an explicit complete finite-quasiperiodic correction.  The new
-`d`-cross axial matrix shows that one resonant projection is cancellable, but
-its atlas nonlinear status remains `OPEN` because the polar, nonresonant, and
-simultaneous stabilizer conditions are not yet closed.  No compact-product
+`d`-cross parity completion shows that both resonant projections are
+cancellable, but its atlas nonlinear status remains `OPEN` because the
+nonresonant and simultaneous stabilizer conditions are not yet closed.  No compact-product
 causal/retarded Green theorem or cross-background mode map is certified.
 
 ## Required handoff
@@ -2066,7 +2072,7 @@ matrix, decompose every Noether-compatible adjoint cokernel into the five
 stabilizer covectors plus complementary resonant functionals, and prove
 necessity and sufficiency separately in each correction class.  The current
 matrix has removed the circumference, Wilson-line and electric spectator
-columns and has certified the complete axial `d` column.  Polar `d`, the
+columns and has certified the complete axial-plus-polar `d` column.  The
 remaining `a,b`, twist position/velocity, opposite momenta and phases, and
 multiple `|k|` fibres remain open.  Update the generated atlas after each
 background-specific gate rather than promoting the abstract theorem.

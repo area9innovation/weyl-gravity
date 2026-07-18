@@ -1,0 +1,188 @@
+{
+  "schema": "einstein-maxwell-weyl-d-ell2-extra-resonance-completion-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.schema.json",
+  "schema_sha256": "fd7e00029715c7716d72db2ccbb55b1112159b1f2b3b6f2336d6e8cd24ca03fa",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_D_ELL2_EXTRA_RESONANCE_COMPLETION",
+  "result_state": "D_TIMES_COMPLETE_AXIAL_POLAR_ELL2_EXTRA_ADJOINT_MAP_ISOMORPHISM_CERTIFIED",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "correction_class": "BOUNDED_OR_FINITE_QUASIPERIODIC",
+  "domain": "homogeneous circumference velocity d crossed with the complete axial-plus-polar ell=2,k=0 extra-primary multiplicity space, every m, at Omega^2=16/3",
+  "polar_theorem": {
+    "frequency_squared": "16/3",
+    "action_row_order": [
+      "-polar(metric_00)",
+      "2*polar(metric_01)",
+      "-polar(metric_11)",
+      "2*lambda*polar(maxwell_phi)"
+    ],
+    "action_hessian": [
+      [
+        "27/2",
+        "0",
+        "5/2",
+        "6"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "5/2",
+        "0",
+        "-77/18",
+        "-6"
+      ],
+      [
+        "6",
+        "0",
+        "-6",
+        "-8"
+      ]
+    ],
+    "adjoint_basis": [
+      [
+        "0",
+        "-1/6"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-3/2"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "source_columns_e1_e2": [
+      [
+        "0",
+        "-376*sqrt(3)*I"
+      ],
+      [
+        "-6*sqrt(3)*I",
+        "0"
+      ],
+      [
+        "0",
+        "-632*sqrt(3)*I/9"
+      ],
+      [
+        "0",
+        "384*sqrt(3)*I"
+      ]
+    ],
+    "adjoint_pairing_matrix": [
+      [
+        "-6*sqrt(3)*I",
+        "0"
+      ],
+      [
+        "0",
+        "552*sqrt(3)*I"
+      ]
+    ],
+    "determinant": "9936",
+    "cancellation_for_d_nonzero": {
+      "given_polar_adjoint_defect": "r=(r1,r2)",
+      "e1_amplitude": "z1=r1/(6*i*sqrt(3)*d)",
+      "e2_amplitude": "z2=-r2/(552*i*sqrt(3)*d)"
+    }
+  },
+  "parity_completion": {
+    "axial_pairing_determinant": "832",
+    "polar_pairing_determinant": "9936",
+    "block_diagonal_axial_polar_determinant": "8266752",
+    "SO3_promotion": "d is a scalar and parity is preserved, so the axial and polar multiplicity isomorphisms tensor with the identity on V_2 for every m"
+  },
+  "classification": {
+    "complete_axial_d_cross_source_matrix_certified": true,
+    "complete_polar_d_cross_source_matrix_certified": true,
+    "complete_axial_polar_p_shell_adjoint_cokernel_certified": true,
+    "d_cross_adjoint_map_invertible_in_both_parities": true,
+    "all_m_by_SO3_equivariance": true,
+    "arbitrary_ell2_extra_resonant_defect_algebraically_cancellable_for_d_nonzero": true,
+    "simultaneous_stabilizer_zero_locus_solved": false,
+    "nonresonant_rows_solved": false,
+    "full_second_order_equation_solved": false,
+    "smooth_secular_theorem": false,
+    "causal_retarded_theorem": false,
+    "all_orders_integrability": false
+  },
+  "interpretation": "The circumference velocity supplies a complete resonant control column: crossed with the two extra polarizations in each parity, it spans the entire axial-plus-polar ell=2 p-shell adjoint cokernel. This removes that resonant projection from the remaining tangent-cone problem for d!=0, but does not solve the stabilizer equations or the rest of the quadratic source.",
+  "next_gate": "compute a,b and twist position/velocity cross columns, then solve the simultaneous stabilizer plus complementary-resonance zero locus and all nonresonant rows",
+  "claim_boundary": "This bounded/finite-quasiperiodic result completes only the d column of the homogeneous/twist-times-ell2-extra source matrix. It does not construct a full second-order correction, classify opposite momenta or multiple |k| fibres, or support causal, residual, particle, or quantum claims.",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.py",
+    "generator_sha256": "f1a2fd32a7c0239003158f918b87e455855afc198265d8f84d41d3312c77bed7",
+    "inputs": {
+      "polar_e1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_polar_ell2_extra_e1_source_fixture.json",
+        "sha256": "0f0886b737720fe787754751e664b9a012d7f26cffb972e221df322c8167a8a8"
+      },
+      "polar_e2": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_polar_ell2_extra_e2_source_fixture.json",
+        "sha256": "46f46db2645af8e12657b878092f5e9dee694bf9323d6837ff68fb182e51ad51"
+      },
+      "axial_completion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_d_axial_ell2_extra_resonance.json",
+        "sha256": "2d0f2a101a80b9ef52b7c1851012b494bc9ede1f5c38e7f77314f2d82dda1f25"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      }
+    }
+  },
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_ell2_extra_resonance_completion --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_ell2_extra_resonance_completion.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_d_ell2_extra_resonance_completion"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "polar_e1",
+        "polar_e2",
+        "axial_completion",
+        "polar_operator",
+        "polar_current"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the remaining global source columns and full tangent cone are open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_ell2_extra_resonance_completion --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_ell2_extra_resonance_completion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_d_ell2_extra_resonance_completion"
+  ]
+}

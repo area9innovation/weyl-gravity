@@ -1,0 +1,71 @@
+{
+  "schema": "einstein-maxwell-weyl-d-polar-ell2-extra-source-fixture-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_d_polar_ell2_extra_source_fixture.schema.json",
+  "schema_sha256": "ccf5a3bb66a5d031fbaa0939024d3a7306c541b7ed2435a7b5fb1661814c7c77",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_D_POLAR_ELL2_EXTRA_E1_SOURCE_FIXTURE",
+  "result_state": "DIRECT_FOUR_DIMENSIONAL_D_TIMES_POLAR_EXTRA_SOURCE_COMPUTED",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "axisymmetric homogeneous circumference velocity d crossed with polar ell=2,k=0 extra representative e1 at omega^2=16/3",
+  "case": "e1",
+  "coordinate_audit": "direct z=cos(theta) rational-sphere tensor replay; e1 agrees exactly with the independent theta-coordinate replay",
+  "first_order_global": "g_xx contains d*t with unit d coefficient",
+  "frequency_squared": "16/3",
+  "representatives_At_B_Ct_U": {
+    "e1": [
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    "e2": [
+      "-8",
+      "0",
+      "-72",
+      "48"
+    ]
+  },
+  "action_row_order": [
+    "-polar(metric_00)",
+    "2*polar(metric_01)",
+    "-polar(metric_11)",
+    "2*lambda*polar(maxwell_phi)"
+  ],
+  "bilinear_source_rows": [
+    "0",
+    "-6*sqrt(3)*I",
+    "0",
+    "0"
+  ],
+  "e2_sparse_decomposition": null,
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_d_polar_ell2_extra_source_fixture.py",
+    "generator_sha256": "6a253166da8a7580004ebdc4f82d2901cdd80d33c57442afef90ebc964e1178d",
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_weyl_balanced_ell0_second_order.py",
+    "tensor_helper_sha256": "144dc9ea6173b8980e859b4d98ab41d3730631ae2292198701451f675fbb8ff0"
+  },
+  "claim_boundary": "This direct m=0 polar bilinear source fixture is not by itself an obstruction or extension theorem. The aggregate theorem supplies the complete adjoint pairing and SO(3) promotion.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_1_fast": {
+      "status": "PASS",
+      "command": "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_polar_ell2_extra_source_fixture.py --case e1"
+    },
+    "tier_2_direct_replay": {
+      "status": "PASS",
+      "elapsed_seconds": 15.44,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_polar_ell2_extra_source_fixture --case e1 --write"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the fixture changes no shared operator and the aggregate theorem remains pre-full-cone"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_polar_ell2_extra_source_fixture --case e1 --verify bridge/certificates/einstein_maxwell_weyl_d_polar_ell2_extra_e1_source_fixture.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_polar_ell2_extra_source_fixture.py --case e1"
+  ]
+}
