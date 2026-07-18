@@ -39,7 +39,8 @@
         "q1_arity": {"const": 1},
         "q2_arity": {"const": 2},
         "q3_arity": {"const": 3},
-        "pairing_arity": {"const": 2}
+        "pairing_arity": {"const": 2},
+        "coefficient_jet_order": {"type": "integer", "minimum": 0, "maximum": 10}
       }
     },
     "taylor_artifacts": {
@@ -77,7 +78,7 @@
   },
   "allOf": [
     {"if": {"properties": {"result_id": {"const": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"}}}, "then": {"properties": {"theory_id": {"const": "Einstein-Maxwell"}}}},
-    {"if": {"properties": {"result_id": {"const": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"}}}, "then": {"properties": {"theory_id": {"const": "Weyl-Maxwell"}}}}
+    {"if": {"properties": {"result_id": {"const": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"}}}, "then": {"properties": {"theory_id": {"const": "Weyl-Maxwell"}, "executable_contract": {"type": "object", "required": ["coefficient_jet_order"], "properties": {"coefficient_jet_order": {"type": "integer", "minimum": 4}}}}}}
   ],
   "$defs": {
     "artifact": {

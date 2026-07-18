@@ -177,6 +177,7 @@ def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, exp
             raise ValueError("row-layout contract hash drifted")
         if contract["action_sha256"] != value["taylor_artifacts"]["action"]["sha256"]:
             raise ValueError("action contract hash drifted")
+        operation_metadata: dict[str, tuple[int, int]] = {}
         for name, arity in (("q1", 1), ("q2", 2), ("q3", 3)):
             operation = payloads[name]["content"]
             if operation["arity"] != arity or operation["row_count"] != row_count:
@@ -194,6 +195,8 @@ def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, exp
             }
             term_keys = set()
             maximum_order = 0
+            maximum_input_word_order = 0
+            maximum_coefficient_jet_order = 0
             for term in operation["terms"]:
                 if term["output_row"] >= row_count or len(term["inputs"]) != arity:
                     raise ValueError(f"{name} has an ill-typed output or input arity")
@@ -214,13 +217,42 @@ def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, exp
                     raise ValueError(f"{name} contains an explicit zero coefficient jet")
                 if coefficient != jet_values.get((), sp.S.Zero):
                     raise ValueError(f"{name} base coefficient disagrees with its empty coefficient jet")
+                maximum_coefficient_jet_order = max(
+                    maximum_coefficient_jet_order,
+                    max((len(word) for word in jet_keys), default=0),
+                )
                 key = (term["output_row"], tuple((item["row"], tuple(item["word"])) for item in term["inputs"]))
                 if key in term_keys:
                     raise ValueError(f"{name} contains duplicate PBW support")
                 term_keys.add(key)
                 maximum_order = max(maximum_order, sum(len(item["word"]) for item in term["inputs"]))
+                maximum_input_word_order = max(
+                    maximum_input_word_order,
+                    max(len(item["word"]) for item in term["inputs"]),
+                )
             if maximum_order != operation["maximum_total_order"]:
                 raise ValueError(f"{name} maximum derivative order drifted")
+            declared_operation_order = operation.get("coefficient_jet_order")
+            if expected_theory == "Weyl-Maxwell" and declared_operation_order is None:
+                raise ValueError(f"{name} omits the Weyl coefficient-jet completeness order")
+            if declared_operation_order is not None:
+                if maximum_coefficient_jet_order > declared_operation_order:
+                    raise ValueError(f"{name} contains a coefficient jet beyond its declared order")
+                if contract.get("coefficient_jet_order") != declared_operation_order:
+                    raise ValueError(f"{name} coefficient-jet order disagrees with the executable contract")
+            operation_metadata[name] = (
+                maximum_input_word_order,
+                declared_operation_order
+                if declared_operation_order is not None
+                else maximum_coefficient_jet_order,
+            )
+        required_composition_order = max(order for order, _ in operation_metadata.values())
+        available_composition_order = min(order for _, order in operation_metadata.values())
+        if available_composition_order < required_composition_order:
+            raise ValueError(
+                "coefficient-jet depth is insufficient for independent PBW composition: "
+                f"need {required_composition_order}, have {available_composition_order}"
+            )
         pairing = payloads["pairing"]["content"]
         if pairing["row_count"] != row_count or pairing["term_count"] != len(pairing["terms"]):
             raise ValueError("pairing carrier size or term count drifted")
@@ -406,6 +438,7 @@ def synthetic_taylor(result_id: str, theory_id: str) -> dict:
             "q2_arity": 2,
             "q3_arity": 3,
             "pairing_arity": 2,
+            "coefficient_jet_order": 4 if theory_id == "Weyl-Maxwell" else 2,
         },
         "taylor_artifacts": {name: {"result_id": f"synthetic_{name}", "kind": kind, "path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": schema_hash} for name, kind in kinds.items()},
         "acceptance_flags": {flag: True for flag in TAYLOR_FLAGS},
@@ -470,7 +503,11 @@ each theory must provide a complete row layout, the declared BV action,
 sparse multilinear PBW tables for `q1`, `q2`, and `q3`, and the cyclic
 pairing.  The receiver validates row bounds, arities, term counts, carrier
 identity, background identity, action and layout hashes, and every artifact
-hash.  Opaque hashes plus self-declared booleans no longer satisfy the gate.
+hash.  It also requires the Weyl--Maxwell payload to declare coefficient jets
+through at least order four, because the Bach unary row differentiates inner
+coefficients four times during the independent `Q^2` replay.  Opaque hashes,
+self-declared booleans, or a second-order coefficient-jet truncation no longer
+satisfy the gate.
 
 Sectoral cofibers and selected quadratic sources remain useful evidence but
 do not satisfy this input gate. The standard-pairing cyclic correction is

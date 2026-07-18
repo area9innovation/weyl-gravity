@@ -76,6 +76,7 @@
         "row_count": {"type": "integer", "minimum": 1},
         "derivative_algebra": {"const": "coordinate-product-coefficient-jet-pbw-v1"},
         "maximum_total_order": {"type": "integer", "minimum": 0},
+        "coefficient_jet_order": {"type": "integer", "minimum": 0, "maximum": 10},
         "term_count": {"type": "integer", "minimum": 1},
         "coefficient_profiles": {
           "type": "array",
@@ -123,7 +124,7 @@
       "additionalProperties": false,
       "required": ["word", "coefficient"],
       "properties": {
-        "word": {"type": "array", "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+        "word": {"type": "array", "maxItems": 10, "items": {"type": "integer", "minimum": 0, "maximum": 3}},
         "coefficient": {"type": "string", "minLength": 1}
       }
     },
