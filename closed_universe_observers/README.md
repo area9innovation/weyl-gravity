@@ -68,6 +68,8 @@ python3 -m closed_universe_observers.generate_berger_validated_flat_bump_moments
 python3 -m closed_universe_observers.verify_berger_validated_flat_bump_moments
 python3 -m closed_universe_observers.generate_berger_local_su2_profile_coefficients --check
 python3 -m closed_universe_observers.verify_berger_local_su2_profile_coefficients
+python3 -m closed_universe_observers.generate_berger_clock_integrated_scalar_coefficients --check
+python3 -m closed_universe_observers.verify_berger_clock_integrated_scalar_coefficients
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -233,8 +235,14 @@ The local-coefficient successor matches the quaternion convention to the
 certified Berger generators and interval-encloses the normalized scalar bump
 Fourier matrices through `two_j=4`.  Axial symmetry makes them diagonal, and
 odd-spin `y0` terms carry validated remainders below `10^-24`.  Clock
-integration, form polarizations and coderivatives, higher modes, and the
-evaluated infinite tail remain open.
+integration was the next scalar gate; form polarizations and coderivatives,
+higher modes, and the evaluated infinite tail also remained open.
+The clock-integrated successor then uses `dTheta/dt=3/4` to derive the exact
+argument `sqrt(58)s/288`, proves the required bump-times-secant integrands are
+monotone, and interval-encloses all clock averages through degree twelve.
+This closes the normalized scalar spacetime-profile coefficients through
+`two_j=4`.  Form-valued operations, higher modes, and the evaluated tail
+remain open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

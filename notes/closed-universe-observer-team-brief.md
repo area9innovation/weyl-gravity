@@ -265,9 +265,16 @@ performs the first finite-mode promotion.
 to normalized scalar spatial-profile Fourier matrices through `two_j=4` in
 the exact generator convention.  The matrices are diagonal by the certified
 axial symmetries; detector-center phases are exact, and every odd-spin `y0`
-Taylor remainder is below `10^-24`.  Clock integration, the form-valued
-polarization/coderivative chain, higher modes, and the evaluated Sobolev tail
-remain open.
+Taylor remainder is below `10^-24`.  Clock integration was the next scalar
+gate; the form-valued polarization/coderivative chain, higher modes, and the
+evaluated Sobolev tail also remained open.
+
+`BERGER_CLOCK_INTEGRATED_SCALAR_PROFILE_COEFFICIENTS` now performs the exact
+clock integration.  With `s=(Theta-Theta_a)/(1/64)`, the clock rate gives
+`t-t_a=s/48` and the rod amplitude gives `lambda=sqrt(58)/288`.  Validated
+secant moments through `k=6` produce normalized scalar spacetime-profile
+coefficients through `two_j=4`.  The form-valued polarization/coderivative
+chain, higher modes, and the evaluated Sobolev tail remain open.
 
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil

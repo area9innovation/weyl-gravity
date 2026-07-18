@@ -324,8 +324,13 @@ The local-coefficient successor now performs that scalar spatial promotion
 through `two_j=4`.  Its representation differentiates to the exact Berger
 generators, all local Fourier matrices are diagonal, the two detector-center
 phases are exact, and the odd-spin `y0` remainder is below `10^-24`.  The
-clock factor, form-valued source operations, modes above this audited range,
-and the infinite tail remain separate gates.
+clock factor was the next scalar gate; form-valued source operations, modes
+above this audited range, and the infinite tail remain separate gates.
+The clock-integrated successor closes the first of those gates.  Exact
+clock-to-time conversion gives `lambda=sqrt(58)/288`; monotone directed-
+rounding Darboux sums enclose every required secant moment and produce the
+normalized scalar spacetime-profile coefficients through `two_j=4`.
+Polarization/coderivative operations and the high-mode tail remain open.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -539,3 +544,5 @@ The validated flat-bump moment receipt is
 `closed_universe_observers/receipts/VALIDATED_FLAT_BUMP_MOMENTS_TIER_RECEIPT.json`.
 The local `SU(2)` coefficient receipt is
 `closed_universe_observers/receipts/LOCAL_SU2_PROFILE_COEFFICIENTS_TIER_RECEIPT.json`.
+The clock-integrated scalar coefficient receipt is
+`closed_universe_observers/receipts/CLOCK_INTEGRATED_SCALAR_COEFFICIENTS_TIER_RECEIPT.json`.
