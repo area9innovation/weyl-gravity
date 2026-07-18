@@ -729,11 +729,14 @@ The bounded/finite-quasiperiodic correction class is now obstructed on every
 nonzero point of this orbit: the balance forces `B!=0`, while the zero-frequency
 polar `L=2` twist self-source has the uncancellable coefficient `-7*B^2*t^2`.
 A stationary linearized operator cannot map a bounded finite-quasiperiodic
-correction to that polynomially growing source.  Smooth exponential-polynomial
-right inverses remain open, as do opposite momenta, phases and multiple
-absolute-momentum fibres.  Residual equivariance, the observable map, the
-relative \(L_\infty\) morphism, and the quantum lift remain open until their
-own certificates land.
+correction to that polynomially growing source.  In the smooth exponential-
+polynomial class the verdict reverses: the complete `L=0,...,4` channel ledger
+and physical Smith factors give finite secular right inverses after the five
+stabilizer maps vanish.  Every orbit point therefore extends at second order
+in that class.  Opposite momenta, phases, multiple absolute-momentum fibres
+and the causal/retarded class remain open.  Residual equivariance, the
+observable map, the relative \(L_\infty\) morphism, and the quantum lift remain
+open until their own certificates land.
 
 ### Shared relative reporting contract
 
@@ -851,9 +854,10 @@ resonance matrix has now been extended by the complete twist position/velocity
 columns.  In the declared nonzero-extra `k=0` carrier, its simultaneous
 stabilizer/resonance zero locus is exactly the aligned `SO(3)` orbit; bounded
 corrections are now obstructed by its unavoidable zero-frequency polar `L=2`
-quadratic-time source.  Smooth secular sufficiency remains open because the
-complete nonresonant source and exact polynomial block inverses have not been
-exported.  This does not complete the relative bridge.
+quadratic-time source, while smooth exponential-polynomial sufficiency is
+certified by the complete finite output ledger and blockwise secular inverses.
+The causal class and coefficient-printed correction remain open.  This does
+not complete the relative bridge.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
