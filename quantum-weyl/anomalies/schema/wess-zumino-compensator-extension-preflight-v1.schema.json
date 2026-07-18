@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-wess-zumino-compensator-extension-preflight-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "extension", "nilpotency", "doublet_contraction", "local_primitives", "cohomology_comparison", "qme_lifecycle", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-wess-zumino-compensator-extension-preflight-v1"},
+    "result_id": {"const": "WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT"},
+    "result_state": {"const": "AFN0_DIFF_COMPLETED_WZ_PRIMITIVE_CERTIFIED_FULL_EXTENDED_BV_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "extension": {"type": "object", "required": ["new_field", "required_antifield", "minimal_field_row", "dressed_metric", "dressed_metric_identity", "dressed_metric_Weyl_weights", "weyl_jet_rows"]},
+    "nilpotency": {"type": "object", "required": ["field_sector", "dressed_metric_Weyl_part", "positive_antifield_sector"]},
+    "doublet_contraction": {"type": "object", "required": ["number_operator", "homotopy", "identity", "restricted_matrices"]},
+    "local_primitives": {"type": "object", "required": ["B_C", "B_E", "variation_convention", "coefficient_bearing_primitive", "primitive_coordinates", "image_coordinates", "counterterm"]},
+    "cohomology_comparison": {
+      "type": "object",
+      "required": ["scope", "strict_boundary_matrix", "strict_boundary_rank", "strict_quotient_dimension", "extended_boundary_matrix", "extended_boundary_rank", "extended_quotient_dimension", "status", "full_extended_H14", "full_extended_H04"],
+      "properties": {
+        "strict_quotient_dimension": {"const": 2},
+        "extended_quotient_dimension": {"const": 0},
+        "full_extended_H14": {"const": "NOT_COMPUTED"},
+        "full_extended_H04": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "qme_lifecycle": {
+      "type": "object",
+      "required": ["strict_theory", "extended_AFN0_one_loop_breaking", "full_extended_BV_QME", "residual_transfer"],
+      "properties": {
+        "strict_theory": {"const": "OBSTRUCTED_STRICT_FIELD_CONTENT"},
+        "extended_AFN0_one_loop_breaking": {"const": "EXACT_REMOVABLE"},
+        "full_extended_BV_QME": {"const": "NOT_CERTIFIED"},
+        "residual_transfer": {"const": "FORBIDDEN"}
+      }
+    },
+    "dependencies": {"type": "object", "minProperties": 5},
+    "next_gate": {"const": "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION"},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  }
+}

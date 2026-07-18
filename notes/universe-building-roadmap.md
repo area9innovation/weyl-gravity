@@ -45,7 +45,7 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Vacuum conformal cylinder | complete free causal gauge complex and the stated residual reduction | matter clocks, interactions, particles, or scattering |
 | Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), full retained BV cyclicity, and an exact first-page obstruction to removing the mixed \(\ell_3\) by the declared filtered cyclic `F2/F3` class; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, first formal coupled Euler recoil Green term, coefficientwise causal chain homotopy through \(g^2\), rank-two leading transfer from actual localized massive-emitter Cauchy data, the exact absolute-\(g^3\)/relative-\(g^2\) recoil operator, exact normalized compact emitter switches, the emitter stress/clock-switch \(q_2\) backreaction jet, and the covariant all-row \(q_1q_2\) master identity | a residual-cohomology or SDR-independent deformation-class theorem beyond the declared filtered equivalence relation, a different noncontractible filtered or mixed-bundle branch split, a branch-resolved mode-pair source table, original common-Hopf emitter, detector-selected emitter Cauchy profiles/Green images and evaluated recoil coefficient, support-local 108-row PBW payload and solved backreacted branch, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter/all-orders Green hyperbolicity, all-orders closure, or genericity |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; generic extra branches and their Lee--Wald pairing; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | quadratic-source disposition on every mixed-cone stratum, exceptional fourth-order targets, nonlinear causal closure, or asymptotic radiation |
-| Quantum local algebra | complete full-BV even/odd local quotient on the regular Bach locus; exact repository Euclidean elliptic complex; Ricci-flat `C2` and round-`S4` Euler coefficient carriers giving `(199/30,-87/20,0,0)`; nontrivial regulated Slavnov insertion and `OBSTRUCTED_STRICT_FIELD_CONTENT` local Euclidean QME; generated fail-closed quantum residual-atlas fragment | matter cancellation or certified Wess--Zumino compensator restoration, residual quantum transfer, global BRST Hadamard state, Lorentzian QME, certified particle crosswalk, or scattering |
+| Quantum local algebra | complete full-BV even/odd local quotient on the regular Bach locus; exact repository Euclidean elliptic complex; Ricci-flat `C2` and round-`S4` Euler coefficient carriers giving `(199/30,-87/20,0,0)`; nontrivial regulated Slavnov insertion and `OBSTRUCTED_STRICT_FIELD_CONTENT` local Euclidean QME; standard-unitary-matter cancellation no-go; exact AFN0 Wess--Zumino primitive with full extended BV QME still open; generated fail-closed quantum residual-atlas fragment | compensator cotangent lift and extended `H04/H14`, restored extended QME, residual quantum transfer, global BRST Hadamard state, certified same-background particle crosswalk, or scattering |
 | Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; bare nonintegrability removed by the basicness-forced normalized generator `chi = u d_t` with exact Hamiltonian `H = -16 pi alpha beta^2 D2`, Wald entropy, and first law at every simple horizon; linear-level frame independence: arbitrary time-dependent conformal and `l=0` diffeo perturbations carry exactly zero charge and flux, entropy conformally invariant on the symbolic family, unique linear generator extension | radiative `l>=2` bilinear flux matrix and exterior causal complex (BH-2A), second-order/physical-process first law, nonlinear horizon dynamics, stability, or any ringdown statement |
 
 No row may be used as evidence for another row merely because both use the
@@ -59,7 +59,7 @@ The shortest independent paths are now:
 Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
-Quantum:     test matter cancellation or a certified Wess--Zumino compensator extension after the strict-field-content QME obstruction
+Quantum:     complete the Wess--Zumino compensator cotangent lift and extended H04/H14 after the certified AFN0 primitive
 Observer:    resolve the profile-bandwidth obstruction, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  build the odd-parity exterior complex and bilinear flux matrix (BH-2A)
 ```
@@ -1057,8 +1057,13 @@ the QME.
 The first T4 branch is now closed: a separating dual-cone certificate proves
 that nonnegative standard-sign free conformal scalars, Weyl/Dirac fermions,
 and gauge vectors cannot cancel the two even coordinates. The next conventional
-gate is the authoritative Wess--Zumino compensator extension; interacting,
-nonunitary and conformal-higher-spin proposals remain separately typed.
+gate has advanced: the AFN0 Wess--Zumino preflight constructs the exact
+coefficient-bearing primitive and verifies the finite-jet doublet contraction.
+It does not include the compensator antifield row or recompute the complete
+extended quotient. The active gate is therefore the full Diff×Weyl BV
+cotangent lift and extended `H04/H14`; only that result can restore the
+extended QME. Interacting, nonunitary and conformal-higher-spin proposals
+remain separately typed.
 
 ## Publication portfolio and readiness gates
 

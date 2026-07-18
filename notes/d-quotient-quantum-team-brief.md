@@ -750,10 +750,13 @@ every classical-tangent-to-quantum-insertion and non-mode-to-particle
 crosswalk.
 
 Residual quantum transfer is fail-closed. The next local gate is roadmap T4:
-compute matter cancellation equations and/or import a certified Wess--Zumino
-compensator extension, recompute local cohomology and restore the QME there
-before any Cartan or residual transfer. The independent stationary/Hadamard
-rail remains open and does not repair the local anomaly by itself.
+complete the Diff×Weyl BV cotangent lift of the Wess--Zumino compensator,
+including the `tau_star` row, and recompute extended `H04/H14` before claiming
+a restored QME, Cartan identity, or residual transfer. The AFN0 preflight
+already verifies `Q^2=0` on the restricted graded carrier, the Weyl-doublet
+homotopy, and the exact coefficient-bearing primitive. It does not certify the
+full extended BV theory. The independent stationary/Hadamard rail remains
+open and does not repair the local anomaly by itself.
 
 The ordinary unitary free-matter branch is now closed by an exact dual-cone
 witness. For nonnegative multiplicities of real conformal scalars, Weyl or
@@ -762,6 +765,29 @@ strictly positive (and minus the `omega E4` coordinate does too). Hence the
 cancellation set is empty already over nonnegative real multiplicities. This
 does not cover interacting fixed points, wrong-sign/nonunitary fields,
 conformal higher spins, or compensator trivialization.
+
+### Active bridge and fail-closed gates — 2026-07-18
+
+The active quantum calculation is T4, the coefficient-bearing compensator/QME
+disposition. It is not itself a mode bridge. Its activation gate was the exact
+`(199/30,-87/20)` Slavnov vector; the current gate is
+`FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION`. The
+strict theory remains `OBSTRUCTED`, the AFN0 compensator primitive is
+`CERTIFIED`, and the full extended QME remains `OPEN`.
+
+Bridge 4 activates only when one normalized classical mode, causal Green
+carrier, and pairing all live on the same certified background. Until then its
+atlas disposition is `NO_CERTIFIED_MAP`: no BRST closure/exactness, compatible
+complex structure, two-point function, or state-space sign may be inferred by
+matching mode names across backgrounds.
+
+Bridge 5 has a separate activation gate: Bridge 2 must first give a certified
+interaction-to-physical-branch map, and the applicable coefficient-bearing QME
+must have a declared restored or obstructed disposition. The strict QME
+obstruction and the AFN0 compensator primitive do not supply the missing
+carrier map. Its atlas row therefore remains `NO_CERTIFIED_MAP`; no classical
+tangent-cone or resonance obstruction is advertised as BRST exactness, ghost
+removal, or a quantum constraint.
 
 Receipts are summarized in
 [`coefficient-bearing-qme-obstruction.md`](../quantum-weyl/reports/coefficient-bearing-qme-obstruction.md).

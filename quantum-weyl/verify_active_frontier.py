@@ -33,6 +33,7 @@ def verify() -> dict:
         "HADAMARD_EXISTENCE_THEOREM_APPLIES",
         "RANK_46_IS_QUANTUM_PREREQUISITE",
         "RANK_46_SUPPORT_LOCAL_PROJECTOR_CONSTRUCTED",
+        "FULL_EXTENDED_BV_QME_RESTORED",
         "QME_RESTORED",
         "LORENTZIAN_QUANTUM_THEORY",
     ):
@@ -51,6 +52,7 @@ def verify() -> dict:
         "REGULATED_SLAVNOV_BREAKING_COMPUTED",
         "QME_OBSTRUCTED_STRICT_FIELD_CONTENT",
         "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED",
+        "WZ_AFN0_PRIMITIVE_CERTIFIED",
     ):
         mutant = deepcopy(certificate)
         mutant["claim_flags"][key] = False

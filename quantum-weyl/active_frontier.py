@@ -52,6 +52,7 @@ DEPENDENCIES = {
     "physical_nonconformal_coefficient_match": HERE / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
     "regulated_repository_Slavnov_breaking": HERE / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "unitary_matter_cancellation_no_go": HERE / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
+    "WZ_compensator_preflight": HERE / "anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
@@ -145,6 +146,7 @@ def _load() -> dict[str, dict[str, Any]]:
     physical_coefficient = values["physical_nonconformal_coefficient_match"]
     physical_breaking = values["regulated_repository_Slavnov_breaking"]
     matter_no_go = values["unitary_matter_cancellation_no_go"]
+    wz_preflight = values["WZ_compensator_preflight"]
     if (
         physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
         or physical_elliptic.get("result_state")
@@ -193,6 +195,23 @@ def _load() -> dict[str, dict[str, Any]]:
         != "REMAINS_OBSTRUCTED_IN_DECLARED_MATTER_CLASS"
     ):
         raise ValueError("unitary matter cancellation frontier drifted")
+    if (
+        wz_preflight.get("result_state")
+        != "AFN0_DIFF_COMPLETED_WZ_PRIMITIVE_CERTIFIED_FULL_EXTENDED_BV_OPEN"
+        or wz_preflight.get("cohomology_comparison", {}).get(
+            "extended_quotient_dimension"
+        )
+        != 0
+        or wz_preflight.get("qme_lifecycle", {}).get(
+            "extended_AFN0_one_loop_breaking"
+        )
+        != "EXACT_REMOVABLE"
+        or wz_preflight.get("qme_lifecycle", {}).get("full_extended_BV_QME")
+        != "NOT_CERTIFIED"
+        or wz_preflight.get("qme_lifecycle", {}).get("residual_transfer")
+        != "FORBIDDEN"
+    ):
+        raise ValueError("Wess-Zumino compensator preflight frontier drifted")
     antifield = values["antifield_import"]
     antifield_flags = antifield.get("claim_flags", {})
     if (
@@ -996,12 +1015,12 @@ def build() -> dict[str, Any]:
                 "next_gate": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
             },
             "local_obstruction_space": {
-                "status": "FULL_LOCAL_BV_G2_COMPLETE_AND_NONZERO_REGULATED_BREAKING_REDUCED",
-                "next_gate": "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
+                "status": "FULL_LOCAL_BV_G2_COMPLETE_STRICT_BREAKING_NONZERO_WZ_AFN0_PRIMITIVE_CERTIFIED_FULL_EXTENDED_BV_OPEN",
+                "next_gate": "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
             },
             "coefficient_and_QME": {
-                "status": "C2_AND_E4_COEFFICIENTS_COMPUTED_STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED",
-                "next_gate": "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
+                "status": "C2_AND_E4_COEFFICIENTS_COMPUTED_STRICT_QME_OBSTRUCTED_WZ_AFN0_BREAKING_EXACT_FULL_EXTENDED_BV_QME_OPEN",
+                "next_gate": "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -1157,6 +1176,8 @@ def build() -> dict[str, Any]:
             "REGULATED_SLAVNOV_BREAKING_COMPUTED": True,
             "QME_OBSTRUCTED_STRICT_FIELD_CONTENT": True,
             "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED": True,
+            "WZ_AFN0_PRIMITIVE_CERTIFIED": True,
+            "FULL_EXTENDED_BV_QME_RESTORED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
             "QME_RESTORED": False,
@@ -1164,7 +1185,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
+            "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -1193,6 +1214,13 @@ def build() -> dict[str, Any]:
             "An exact dual-cone witness further proves that no nonnegative collection of "
             "standard-sign free conformal scalars, Weyl or Dirac fermions, and gauge vectors "
             "cancels the C2/E4 vector. "
+            "A separate compensator preflight adjoins Q tau=L_xi tau+omega, verifies the "
+            "finite-jet Weyl-doublet contraction and dressed-metric Weyl cancellation, and "
+            "constructs the exact coefficient-bearing Wess--Zumino primitive on the two "
+            "certified even AFN0 anomaly coordinates. This makes the displayed breaking exact "
+            "only in the declared AFN0 extended sector. The tau-antifield cotangent row and "
+            "full extended H04/H14 quotient have not been constructed, so the full extended "
+            "BV QME is not certified and residual transfer remains forbidden. "
             "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
             "operator export and frozen local-BV import come from distinct commits, it "
             "requires exact equality of the generator, atom, differential, dependency and "
@@ -1286,7 +1314,7 @@ def build() -> dict[str, Any]:
             "still block the all-sector classical triangle. "
             "It does not establish a global BRST Hadamard state, renormalized Lorentzian "
             "products, a Lorentzian QME, residual quantum transfer, or rule out cancellation "
-            "by added matter or a certified compensator extension."
+            "by nonstandard added matter."
         ),
     }
     validate(result)
@@ -1355,6 +1383,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not True
         or flags.get("QME_OBSTRUCTED_STRICT_FIELD_CONTENT") is not True
         or flags.get("STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED") is not True
+        or flags.get("WZ_AFN0_PRIMITIVE_CERTIFIED") is not True
+        or flags.get("FULL_EXTENDED_BV_QME_RESTORED") is not False
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
         or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
         or flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY") is not True
@@ -1426,6 +1456,7 @@ def validate(result: dict[str, Any]) -> None:
             "REGULATED_SLAVNOV_BREAKING_COMPUTED",
             "QME_OBSTRUCTED_STRICT_FIELD_CONTENT",
             "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED",
+            "WZ_AFN0_PRIMITIVE_CERTIFIED",
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY",
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY",
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY",

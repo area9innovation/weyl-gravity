@@ -12,12 +12,17 @@ factorwise local `b4` ledger, and regulated Slavnov insertion replay with
 \]
 
 This nonzero class obstructs the strict fixed-field-content local Euclidean
-QME. Residual quantum transfer remains forbidden. The next local gate is a
-certified matter-cancellation calculation or Wess--Zumino compensator
-extension; the stationary/Hadamard rail remains independently open. The
-older readiness discussion below is retained as historical gate provenance.
+QME. Standard-sign free conformal matter cannot cancel its two even
+coordinates. A Wess--Zumino compensator preflight now makes both coordinates
+exact on the declared AFN0 extended span, with an explicit coefficient-bearing
+primitive and exact doublet homotopy. This does not restore the full extended
+BV QME: the `tau_star` cotangent row and extended `H04/H14` computation remain
+open, so residual quantum transfer stays forbidden. The stationary/Hadamard
+rail remains independently open. The older readiness discussion below is
+retained as historical gate provenance.
 
-See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md).
+See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md)
+and [`wess-zumino-extension-preflight.md`](wess-zumino-extension-preflight.md).
 
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical
 certificates remain immutable receipts, but they are no longer all valid

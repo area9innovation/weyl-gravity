@@ -136,6 +136,10 @@ class ActiveFrontierTests(unittest.TestCase):
                 "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED"
             ]
         )
+        self.assertTrue(self.payload["claim_flags"]["WZ_AFN0_PRIMITIVE_CERTIFIED"])
+        self.assertFalse(
+            self.payload["claim_flags"]["FULL_EXTENDED_BV_QME_RESTORED"]
+        )
         self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
         )
@@ -198,7 +202,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
+            "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

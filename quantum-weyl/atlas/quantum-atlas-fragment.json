@@ -1199,7 +1199,7 @@
       }
     },
     {
-      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The strict-field-content insertion is now nontrivial, but no carrier-specific map from the classical tangent obstruction to that insertion has been certified.",
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The strict-field-content insertion is nontrivial and a compensator primitive is certified only on the declared AFN0 even span; the full extended BV QME and a same-background carrier-specific map from the classical tangent obstruction to an interacting BRST insertion are both absent.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -1237,6 +1237,11 @@
           "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
           "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
           "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
+          "result_id": "WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT",
+          "sha256": "10dbd0b0a1e9190ddd2268a98c2d899808da07fc215d388167743a8bd01df5e9"
         }
       ],
       "id": "quantum.crosswalk.classical_tangent_cone_to_interacting_brst",
@@ -1287,7 +1292,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "anomaly_QME_dependency": {
-          "statement": "normalized strict-field-content QME obstruction is certified; no restored extended theory exists",
+          "statement": "strict QME obstruction is certified; the compensator primitive is AFN0-only and the full extended BV QME is not certified",
           "status": "OBSTRUCTED"
         },
         "carrier_crosswalk": {
@@ -1362,6 +1367,11 @@
           "path": "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
           "result_id": "UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO",
           "sha256": "9c4b1218450e20f0475a70ca36e0de3749f1aa85d90c2b314bf544e0a2605116"
+        },
+        {
+          "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
+          "result_id": "WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT",
+          "sha256": "10dbd0b0a1e9190ddd2268a98c2d899808da07fc215d388167743a8bd01df5e9"
         }
       ],
       "id": "quantum.crosswalk.local_anomaly_class_to_particle",
@@ -1412,7 +1422,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "anomaly_QME_dependency": {
-          "statement": "nontrivial regulated anomaly obstructs the strict local Euclidean QME",
+          "statement": "strict local Euclidean QME is obstructed; AFN0 compensator exactness does not certify the full extended BV QME",
           "status": "OBSTRUCTED"
         },
         "carrier_crosswalk": {
@@ -1703,7 +1713,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "e0e0fb428d993326c88f9864b481adb99488841697275991229326555a42c043",
+  "generated_by_sha256": "c036ee9384a0c263a207e9d8fcac3e3b7f609cc4cddea40d5e571a2c6f801f23",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

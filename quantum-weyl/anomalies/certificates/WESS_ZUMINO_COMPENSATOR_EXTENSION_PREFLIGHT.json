@@ -1,0 +1,316 @@
+{
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC preflight adjoins a shifting scalar compensator, proves the Weyl-jet doublet contraction after the local dressed-metric change of variables, and constructs the coefficient-bearing Wess-Zumino primitive for both certified even anomaly coordinates including the complete universal Diff descent. It proves exact removability of the one-loop breaking only in that AFN0 extended sector. It does not supply the tau antifield cotangent row, recompute the full extended H04 or H14, certify the full extended BV master equation, authorize residual transfer, or establish Lorentzian products, positivity, or particles.",
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "cohomology_comparison": {
+    "extended_boundary_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "extended_boundary_rank": 2,
+    "extended_quotient_dimension": 0,
+    "full_extended_H04": "NOT_COMPUTED",
+    "full_extended_H14": "NOT_COMPUTED",
+    "scope": "SPAN_OF_THE_TWO_CERTIFIED_EVEN_AFN0_ANOMALY_CLASSES_WITH_FULL_DIFF_DESCENT",
+    "status": "BOTH_EVEN_BREAKING_COORDINATES_EXACT_IN_DECLARED_EXTENDED_SECTOR",
+    "strict_boundary_matrix": [
+      [],
+      []
+    ],
+    "strict_boundary_rank": 0,
+    "strict_quotient_dimension": 2
+  },
+  "dependencies": {
+    "Euler_descent": {
+      "path": "quantum-weyl/local_bv/certificates/EULER_TRANSGRESSION_CERTIFICATE.json",
+      "result_id": "EULER_TRANSGRESSION_CERTIFICATE",
+      "sha256": "2c03b184f27d6f0054ed12029b052834ef08aa8bf4f2c42663f84617f0e63063"
+    },
+    "H14": {
+      "path": "quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json",
+      "result_id": "H14_GAUGE_FIXED_BV_RESULT",
+      "sha256": "a7730a34b21d2068cc73e46c563ce929195a3d9a7c7626d3843788b54e0592b3"
+    },
+    "breaking": {
+      "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+      "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+      "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    },
+    "precursor_audit": {
+      "path": "symbolic/verify_conformal_coefficient_triangle.py",
+      "result_id": "verify_conformal_coefficient_triangle.py",
+      "sha256": "9b825777223a4295cfa1039f435bf47e011d72eb97be327f688850f510361cfd"
+    },
+    "precursor_note": {
+      "path": "notes/conformal-c2k-coefficient-compensator.md",
+      "result_id": "conformal-c2k-coefficient-compensator.md",
+      "sha256": "a827430b4e7826302d3d2ce3e5606ea6b62aec9154156131241f03332724f35f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "doublet_contraction": {
+    "homotopy": "h=sum_I tau_I partial/partial omega_I",
+    "identity": "Q_W h + h Q_W = N_tau_omega",
+    "number_operator": "N_tau_omega",
+    "restricted_matrices": {
+      "N": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "Q": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "Q_squared": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "Qh": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "anticommutator": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "h": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "hQ": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "extension": {
+    "dressed_metric": "g_hat = exp(-2 tau) g",
+    "dressed_metric_Weyl_weights": {
+      "exp_minus_2_tau": -2,
+      "metric": 2,
+      "sum": 0
+    },
+    "dressed_metric_identity": "Q g_hat = L_xi g_hat",
+    "minimal_field_row": "Q tau = L_xi tau + omega",
+    "new_field": {
+      "Grassmann_parity": "even",
+      "Weyl_shift": 1,
+      "antifield_number": 0,
+      "ghost_number": 0,
+      "symbol": "tau",
+      "tensor_type": "scalar"
+    },
+    "required_antifield": {
+      "Grassmann_parity": "odd",
+      "antifield_number": 1,
+      "ghost_number": -1,
+      "status": "FULL_COTANGENT_ROW_NOT_IMPORTED",
+      "symbol": "tau_star"
+    },
+    "weyl_jet_rows": "Q_W tau_I = omega_I; Q_W omega_I = 0 for every finite jet multi-index I"
+  },
+  "local_primitives": {
+    "B_C": "integral sqrt(g) tau C2",
+    "B_E": "integral sqrt(g) [tau E4 + 4 G^{mu nu} d_mu tau d_nu tau - 4 (Box tau)(d tau)^2 + 2 (d tau)^4]",
+    "coefficient_bearing_primitive": "(199/30) B_C-(87/20) B_E",
+    "counterterm": "-(4 pi)^(-2) hbar [(199/30) B_C-(87/20) B_E]",
+    "image_coordinates": [
+      {
+        "denominator": 30,
+        "numerator": 199
+      },
+      {
+        "denominator": 20,
+        "numerator": -87
+      }
+    ],
+    "primitive_coordinates": [
+      {
+        "denominator": 30,
+        "numerator": 199
+      },
+      {
+        "denominator": 20,
+        "numerator": -87
+      }
+    ],
+    "variation_convention": "Q_W B_C=ANOM_OMEGA_C2; Q_W B_E=ANOM_OMEGA_E4 modulo d_h"
+  },
+  "next_gate": "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
+  "nilpotency": {
+    "dressed_metric_Weyl_part": "ZERO",
+    "field_sector": "VERIFIED_FROM_Q_DIFF_SQUARE_ZERO_AND_SEMIDIRECT_ACTION",
+    "positive_antifield_sector": "NOT_COMPUTED"
+  },
+  "qme_lifecycle": {
+    "extended_AFN0_one_loop_breaking": "EXACT_REMOVABLE",
+    "full_extended_BV_QME": "NOT_CERTIFIED",
+    "residual_transfer": "FORBIDDEN",
+    "strict_theory": "OBSTRUCTED_STRICT_FIELD_CONTENT"
+  },
+  "result_id": "WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT",
+  "result_state": "AFN0_DIFF_COMPLETED_WZ_PRIMITIVE_CERTIFIED_FULL_EXTENDED_BV_OPEN",
+  "schema": "quantum-weyl-wess-zumino-compensator-extension-preflight-v1"
+}

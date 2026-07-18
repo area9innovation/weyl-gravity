@@ -40,6 +40,10 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["quantum_data"]["carrier_crosswalk"]["status"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["quantum_data"]["anomaly_QME_dependency"]["status"], "OBSTRUCTED")
+        self.assertIn(
+            "full extended BV QME",
+            entry["quantum_data"]["anomaly_QME_dependency"]["statement"],
+        )
 
     def test_strict_field_content_quantum_lifecycle_is_obstructed(self) -> None:
         value = build()
