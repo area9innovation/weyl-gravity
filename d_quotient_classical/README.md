@@ -442,6 +442,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   ruled out:
   [`certificates/NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1.json`](certificates/NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1.json),
   [`reports/nariai-transverse-phi-only-shifted-chain-obstruction.md`](reports/nariai-transverse-phi-only-shifted-chain-obstruction.md)
+- Smallest coupled continuation: allowing an algebraic incidence variation
+  together with an arbitrary order-at-most-one `L1` variation does not restore
+  freedom once the complete first BGG square is preserved.  Per output row the
+  exact homogeneous constraint map is `60 x 60`, has determinant `-1/2^36`,
+  and therefore has zero kernel.  This rules out only that coupled pair; a
+  coherent variation of `L0`, `K/p0`, equation/constraint/cotangent rows, or
+  higher differential order remains open:
+  [`certificates/NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1.json`](certificates/NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1.json),
+  [`reports/nariai-transverse-incidence-l1-rigidity.md`](reports/nariai-transverse-incidence-l1-rigidity.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nariai-transverse-incidence-l1-rigidity-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "nariai-transverse-incidence-l1-rigidity-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "items": {"enum": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]}, "minItems": 1, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "additionalProperties": {"$ref": "#/$defs/dependency"}, "minProperties": 2},
+    "exact_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ansatz", "normalization", "constraint_system", "unrepaired_shifted_chain", "interpretation"],
+      "properties": {
+        "ansatz": {
+          "type": "object", "additionalProperties": false,
+          "required": ["equation", "delta_d_aut_order", "delta_L1_orders", "unknowns_per_output_row", "output_rows", "scope"],
+          "properties": {
+            "equation": {"type": "string"},
+            "delta_d_aut_order": {"type": "integer"},
+            "delta_L1_orders": {"type": "array", "items": {"type": "integer"}},
+            "unknowns_per_output_row": {"type": "integer"},
+            "output_rows": {"type": "integer"},
+            "scope": {"type": "string"}
+          }
+        },
+        "normalization": {
+          "type": "object", "additionalProperties": false,
+          "required": ["p0_L0_minus_identity", "reconstructed_first_BGG"],
+          "properties": {
+            "p0_L0_minus_identity": {"$ref": "#/$defs/operator"},
+            "reconstructed_first_BGG": {"$ref": "#/$defs/operator"}
+          }
+        },
+        "constraint_system": {
+          "type": "object", "additionalProperties": false,
+          "required": ["shape", "rank", "determinant", "kernel_dimension", "nonzero_coefficients", "coefficient_map", "unknown_basis", "equation_keys"],
+          "properties": {
+            "shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false, "minItems": 2, "maxItems": 2},
+            "rank": {"type": "integer"},
+            "determinant": {"type": "string"},
+            "kernel_dimension": {"type": "integer"},
+            "nonzero_coefficients": {"type": "integer"},
+            "coefficient_map": {"$ref": "#/$defs/matrix"},
+            "unknown_basis": {"type": "array", "items": {"$ref": "#/$defs/basisEntry"}},
+            "equation_keys": {"type": "array", "items": {"$ref": "#/$defs/equationKey"}}
+          }
+        },
+        "unrepaired_shifted_chain": {
+          "type": "object", "additionalProperties": false,
+          "required": ["nonzero_coefficients", "operator"],
+          "properties": {
+            "nonzero_coefficients": {"type": "integer"},
+            "operator": {"$ref": "#/$defs/operator"}
+          }
+        },
+        "interpretation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["nonzero_homogeneous_incidence_L1_correction_exists", "shifted_chain_repaired_in_this_ansatz", "complete_coupled_SDR_obstructed", "required_next_ansatz"],
+          "properties": {
+            "nonzero_homogeneous_incidence_L1_correction_exists": {"const": false},
+            "shifted_chain_repaired_in_this_ansatz": {"const": false},
+            "complete_coupled_SDR_obstructed": {"const": false},
+            "required_next_ansatz": {"type": "string"}
+          }
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "flags": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4},
+    "verification_commands": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 4}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "rank", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}], "items": false, "minItems": 2, "maxItems": 2},
+        "rank": {"type": "integer", "minimum": 0},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["orders", "nonzero_coefficients", "entries", "sha256"],
+      "properties": {
+        "orders": {"type": "array", "items": {"type": "integer"}},
+        "nonzero_coefficients": {"type": "integer", "minimum": 0},
+        "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "matrix": {"$ref": "#/$defs/matrix"}}}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "basisEntry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["row", "word", "input_column"],
+      "properties": {
+        "row": {"enum": ["delta_d_aut", "delta_L1"]},
+        "word": {"type": "array", "items": {"type": "integer"}},
+        "input_column": {"type": "integer"}
+      }
+    },
+    "equationKey": {
+      "type": "object", "additionalProperties": false,
+      "required": ["word", "input_column"],
+      "properties": {
+        "word": {"type": "array", "items": {"type": "integer"}},
+        "input_column": {"type": "integer"}
+      }
+    }
+  }
+}

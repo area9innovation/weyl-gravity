@@ -41,6 +41,7 @@ CERTS = {
     "Nariai_jet_aware_parent": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json",
     "Nariai_first_order_schur": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json",
     "Nariai_Phi_only_obstruction": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_PHI_ONLY_SHIFTED_CHAIN_OBSTRUCTION_V1.json",
+    "Nariai_incidence_L1_rigidity": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_INCIDENCE_L1_RIGIDITY_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
@@ -243,10 +244,10 @@ def entries() -> list[dict[str, Any]]:
         ("CERTIFIED", "The displayed tangent solves the complete linearized fixed-Lambda Einstein equations and is linearized Bach-flat."),
         ("OPEN", "No physical Lee-Wald norm or reduced pairing is assigned to this tangent."),
         ("OPEN", "No second-order Taub classification or exact nonlinear family is certified."),
-        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. The complete first-order endpoint gauge equation has a unique solution. A separate normalized left-null witness obstructs every order-at-most-one repair of the Phi row alone in 38 of 60 shifted-chain output rows."),
+        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. The complete first-order endpoint gauge equation has a unique solution. A separate normalized left-null witness obstructs every order-at-most-one repair of the Phi row alone in 38 of 60 shifted-chain output rows. The smallest coupled homogeneous incidence/L1 continuation is rigid: its complete 60-by-60 first-square map has determinant -1/2^36."),
         _second(("OPEN", "No bounded correction theorem."), ("OPEN", "No smooth-secular correction theorem."), ("OPEN", "No transverse retarded SDR theorem.")),
-        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "Nariai_first_order_schur", "Nariai_Phi_only_obstruction", "cone"),
-        "Every requested curvature jet is derived and the jet-aware BGG first square and parent identity are exact. The unique 59-coefficient endpoint gauge repair does not close the separate 207-coefficient shifted-chain defect: the complete 225-by-45 Phi-only first-order map has rank 45, but 38 output rows have augmented rank 46, with a normalized two-term left-null witness. This obstructs only Phi-row repair. The coupled incidence/splitting/constraint variation, action-derived cyclic identification, complete SDR and causal transfer remain open.",
+        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "Nariai_first_order_schur", "Nariai_Phi_only_obstruction", "Nariai_incidence_L1_rigidity", "cone"),
+        "Every requested curvature jet is derived and the jet-aware BGG first square and parent identity are exact. The unique 59-coefficient endpoint gauge repair does not close the separate 207-coefficient shifted-chain defect: the complete 225-by-45 Phi-only first-order map has rank 45, but 38 output rows have augmented rank 46, with a normalized two-term left-null witness. The complete algebraic-incidence/order-at-most-one-L1 homogeneous first-square map is invertible, so that smallest coupled pair has no nonzero freedom. Coherent L0, K/p0, equation/constraint/cotangent variation, action-derived cyclic identification, complete SDR and causal transfer remain open.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",

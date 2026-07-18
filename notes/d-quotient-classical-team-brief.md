@@ -85,12 +85,21 @@ most one, its coefficient map has shape `225 x 45` and rank 45, but 38 of the
 witness in row zero annihilates the complete ansatz and evaluates to one on
 the target.  This obstructs a first-order Φ-only repair, not the coupled SDR.
 
-The next coherent classical gate is therefore the coupled variation of the
-incidence, splitting and constraint rows (or an explicitly higher-order Φ
-ansatz), with action-derived cyclic identification imposed simultaneously.
+The next smallest coupled continuation is rigid as well.  With an algebraic
+variation of the incidence row and an arbitrary order-at-most-one variation
+of (L_1), homogeneous preservation of the complete first BGG square gives a
+`60 x 60` coefficient map per output row with determinant (-2^{-36}).  Hence
+the only allowed pair is zero and it cannot act on the shifted-chain defect.
+This supersedes coefficient-layer-only sensitivity tests, which did not impose
+the full differential first square.
+
+The next coherent classical gate is therefore a genuinely coupled variation
+including (L_0), (K/p_0), or neighbouring equation/constraint/cotangent
+rows (or an explicitly higher-order Φ ansatz), with action-derived cyclic
+identification imposed simultaneously.
 The atlas remains fail-closed: the parent identity, unique endpoint repair,
-and scoped Φ-only obstruction are `CERTIFIED`; the complete rank-310 SDR
-and transverse causal transfer remain `OPEN`.
+scoped Φ-only obstruction and incidence/(L_1) rigidity are `CERTIFIED`; the
+complete rank-310 SDR and transverse causal transfer remain `OPEN`.
 
 ## Generator correction (2026-07-17; authoritative)
 
