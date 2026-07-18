@@ -1,0 +1,35 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; homogeneous electric Q_e direction crossed with the complete axial-plus-polar ell=2,k=0 extra-primary block",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "four-dimensional electromagnetic duality rotates the Maxwell equation doublet and leaves the stress tensor invariant",
+    "the infinitesimal duality direction at the magnetic fixture is the declared homogeneous electric tangent",
+    "duality transport supplies an explicit Q_e-times-wave mixed correction for every ell=2 extra mode",
+    "the correction has zero magnetic period and lifts to a fixed-bundle connection difference",
+    "the Q_e cross-source lies in the linear image and cannot cancel the exceptional adjoint defect"
+  ],
+  "evidence": {
+    "commit": "54727772d41a65c293e0d1ee6b0c8a5484673bd2",
+    "path": "bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json",
+    "sha256": "ae06400d50570b038cfb0feb112b15dd9da6f913269a284a833f12c043099219"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute a,b,d and twist-position/velocity cross-sources against the ell=2 extra block",
+  "not_established": [
+    "all-orders fixed-bundle extension of the pure electric direction",
+    "the remaining global-times-extra source coefficients",
+    "difference-frequency, opposite-momentum, residual, causal, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_electric_duality_ell2_extra",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_electric_duality_ell2_extra_resonance",
+  "team_id": "einstein_boundary",
+  "verdict": "ELECTRIC_CHARGE_RESONANT_CROSS_SOURCE_REMOVABLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_electric_duality_ell2_extra_resonance --verify bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_electric_duality_ell2_extra_resonance"
+  ]
+}
