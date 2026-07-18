@@ -317,9 +317,15 @@ support locality false.  Only the interval profile expansion and infinite
 tail now block the full advanced images.
 The validated-moment successor interval-encloses the universal one- and
 three-dimensional flat-bump moments through even order twelve, with exact
-radius scaling and rational endpoints.  It does not promote those moments to
-Peter--Weyl coefficients: local mode polynomials, the `y0` binomial remainder,
-and an evaluated Sobolev tail constant remain open.
+radius scaling and rational endpoints.  That certificate alone does not
+promote those moments to Peter--Weyl coefficients; the following successor
+performs the first finite-mode promotion.
+The local-coefficient successor now performs that scalar spatial promotion
+through `two_j=4`.  Its representation differentiates to the exact Berger
+generators, all local Fourier matrices are diagonal, the two detector-center
+phases are exact, and the odd-spin `y0` remainder is below `10^-24`.  The
+clock factor, form-valued source operations, modes above this audited range,
+and the infinite tail remain separate gates.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -531,3 +537,5 @@ The finite-mode Green receipt is
 `closed_universe_observers/receipts/FINITE_MODE_GREEN_KERNELS_TIER_RECEIPT.json`.
 The validated flat-bump moment receipt is
 `closed_universe_observers/receipts/VALIDATED_FLAT_BUMP_MOMENTS_TIER_RECEIPT.json`.
+The local `SU(2)` coefficient receipt is
+`closed_universe_observers/receipts/LOCAL_SU2_PROFILE_COEFFICIENTS_TIER_RECEIPT.json`.

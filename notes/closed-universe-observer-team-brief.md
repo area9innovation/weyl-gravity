@@ -258,8 +258,16 @@ coefficients and a validated infinite tail are the remaining Green inputs.
 one- and three-dimensional flat-bump moments through even order twelve using
 directed-rounding dyadic Darboux sums.  Exact scaling specializes them to the
 clock radius `1/64` and detector radius `1/128`.  These are coefficient
-inputs, not Peter--Weyl coefficients: the local `SU(2)` mode polynomials,
-`y0` remainder, and evaluated Sobolev tail constant remain open.
+inputs, not Peter--Weyl coefficients by themselves; the following successor
+performs the first finite-mode promotion.
+
+`BERGER_LOCAL_SU2_PROFILE_COEFFICIENT_ENCLOSURES` now converts those moments
+to normalized scalar spatial-profile Fourier matrices through `two_j=4` in
+the exact generator convention.  The matrices are diagonal by the certified
+axial symmetries; detector-center phases are exact, and every odd-spin `y0`
+Taylor remainder is below `10^-24`.  Clock integration, the form-valued
+polarization/coderivative chain, higher modes, and the evaluated Sobolev tail
+remain open.
 
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil

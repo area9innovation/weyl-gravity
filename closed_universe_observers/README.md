@@ -66,6 +66,8 @@ python3 -m closed_universe_observers.generate_berger_mode_green_kernels --check
 python3 -m closed_universe_observers.verify_berger_mode_green_kernels
 python3 -m closed_universe_observers.generate_berger_validated_flat_bump_moments --check
 python3 -m closed_universe_observers.verify_berger_validated_flat_bump_moments
+python3 -m closed_universe_observers.generate_berger_local_su2_profile_coefficients --check
+python3 -m closed_universe_observers.verify_berger_local_su2_profile_coefficients
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -224,9 +226,15 @@ full profile expansion and tail bounds remain necessary.
 The validated-moment successor supplies directed-rounding Darboux enclosures
 for both standard flat-bump cores through even order twelve and scales them
 exactly to clock radius `1/64` and detector rod radius `1/128`.  This removes
-the universal bump moments from the quadrature obstruction.  Local `SU(2)`
-mode coefficients, the `y0` remainder, and the infinite spectral tail remain
-open.
+the universal bump moments from the quadrature obstruction.  At that stage,
+local `SU(2)` mode coefficients, the `y0` remainder, and the infinite
+spectral tail were still open.
+The local-coefficient successor matches the quaternion convention to the
+certified Berger generators and interval-encloses the normalized scalar bump
+Fourier matrices through `two_j=4`.  Axial symmetry makes them diagonal, and
+odd-spin `y0` terms carry validated remainders below `10^-24`.  Clock
+integration, form polarizations and coderivatives, higher modes, and the
+evaluated infinite tail remain open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

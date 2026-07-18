@@ -1,0 +1,85 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "LOCAL_SU2_PROFILE_COEFFICIENTS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Validated scalar spatial-profile SU(2) Fourier coefficient enclosures are exported through two_j=4. Clock/form-valued source operations, higher modes, infinite tails, Green images and recoil remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_local_su2_profile_coefficients.py closed_universe_observers/verify_berger_local_su2_profile_coefficients.py closed_universe_observers/tests/test_berger_local_su2_profile_coefficients.py",
+      "elapsed_seconds": "0.03",
+      "status": "PASS",
+      "scope": "changed Python sources"
+    },
+    {
+      "command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md",
+      "elapsed_seconds": "0.00",
+      "status": "PASS",
+      "scope": "scoped observer diff"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_local_su2_profile_coefficients.py",
+      "elapsed_seconds": "2.39 pytest; 3.13 wall",
+      "status": "PASS",
+      "scope": "generator convention, symmetry reduction, y0 remainder, normalization, chart scale and sign mutation"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_local_su2_profile_coefficients --check",
+      "elapsed_seconds": "2.11",
+      "status": "PASS",
+      "scope": "deterministic certificate regeneration"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_local_su2_profile_coefficients",
+      "elapsed_seconds": "2.47",
+      "status": "PASS",
+      "scope": "dependency hashes and complete coefficient payload"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-local-su2-profile-coefficient-enclosures-v1.schema.json -d closed_universe_observers/certificates/BERGER_LOCAL_SU2_PROFILE_COEFFICIENT_ENCLOSURES.json",
+      "elapsed_seconds": "2.73",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 schema validation"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.31",
+      "status": "PASS",
+      "scope": "central observer comparison ledger"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "262.58 pytest; 264.15 wall",
+      "status": "PASS",
+      "scope": "full central-observer-ledger consumer suite: 148 tests"
+    }
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No full causal or quantum promotion."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_LOCAL_SU2_PROFILE_COEFFICIENT_ENCLOSURES.json", "sha256": "e44bba60ef07d9252aff45b834aea3d799e29dfcf2f84f757eba7efe37b9311e"},
+    {"path": "closed_universe_observers/generate_berger_local_su2_profile_coefficients.py", "sha256": "5df5fafeeb6bb1df82d8a4579975f308bae6f6060f696e6b59ff08e3c0e0e1ec"},
+    {"path": "closed_universe_observers/verify_berger_local_su2_profile_coefficients.py", "sha256": "4ca279cab535be80655afc228d4781e111fa0ed221d2e2a80ff3119c5b6ca24d"},
+    {"path": "closed_universe_observers/tests/test_berger_local_su2_profile_coefficients.py", "sha256": "daba828a824b53e644f319d6b987a957770b7f93f7bfe19811b7b6d6f78fbe94"},
+    {"path": "closed_universe_observers/schema/berger-local-su2-profile-coefficient-enclosures-v1.schema.json", "sha256": "adde78bdbbcf37c414c901dd88ad148308c88ed504ad78668d38ebfff0bf8956"},
+    {"path": "closed_universe_observers/reports/berger-local-su2-profile-coefficient-enclosures.md", "sha256": "92b90f8ecc5539986d3b4878077d9431c1771b0fb9bcd7e1acccb5abbbaf9308"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "f4b02512cf9c8a4dfa0d7c9370cb5989868e301ea323c1607e635621014b5a22"},
+    {"path": "closed_universe_observers/README.md", "sha256": "37fe50437139eb15006f25772ae916bd0117b98af560b2c944fb648a416815db"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "4e435b39ba7083b307eac59d76a345a2d34631f53ca0fee1dc9106df5cb14628"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "d0dc635708f7c03dd53daff4a76ee2fca2afcbf3c2848ee827b018d0646294c2"}
+  ],
+  "claim_flags": {
+    "LOCAL_SCALAR_PROFILE_COEFFICIENTS_TWO_J0_TO_4_INTERVAL_ENCLOSED": true,
+    "Y0_BINOMIAL_REMAINDER_VALIDATED": true,
+    "FULL_FORM_VALUED_SOURCE_COEFFICIENTS_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED": false,
+    "ADVANCED_GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

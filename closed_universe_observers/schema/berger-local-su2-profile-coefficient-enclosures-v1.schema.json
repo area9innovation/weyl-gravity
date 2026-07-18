@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-local-su2-profile-coefficient-enclosures-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "representation_convention", "uniform_window_geometry", "audited_mode_coefficients", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-local-su2-profile-coefficient-enclosures-v1"},
+    "result_id": {"const": "BERGER_LOCAL_SU2_PROFILE_COEFFICIENT_ENCLOSURES"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "VALIDATED_LOCAL_SCALAR_PROFILE_COEFFICIENTS_THROUGH_TWO_J4_EXPORTED_FULL_SOURCE_AND_TAIL_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "representation_convention": {"type": "object"},
+    "uniform_window_geometry": {"type": "object", "required": ["output_dyadic_bits"], "properties": {"output_dyadic_bits": {"const": 160}}},
+    "audited_mode_coefficients": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["two_j", "dimension", "generator_convention_defect_count", "off_diagonal_nonzero_enclosure_count", "diagonal"],
+        "properties": {
+          "two_j": {"type": "integer", "minimum": 0, "maximum": 4},
+          "dimension": {"type": "integer", "minimum": 1, "maximum": 5},
+          "generator_convention_defect_count": {"const": 0},
+          "off_diagonal_nonzero_enclosure_count": {"const": 0},
+          "diagonal": {"type": "array", "minItems": 1, "maxItems": 5}
+        }
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "object", "required": ["name", "detected", "generator_defect_count"], "properties": {"name": {"const": "flip_fundamental_y1_sign"}, "detected": {"const": true}, "generator_defect_count": {"type": "integer", "minimum": 1}}}},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["REPRESENTATION_CONVENTION_MATCHES_CERTIFIED_GENERATORS", "LOCAL_SCALAR_PROFILE_COEFFICIENTS_TWO_J0_TO_4_INTERVAL_ENCLOSED", "Y0_BINOMIAL_REMAINDER_VALIDATED", "DETECTOR_CENTER_PHASES_EXPORTED", "FULL_FORM_VALUED_SOURCE_COEFFICIENTS_EVALUATED", "MODES_ABOVE_TWO_J4_EVALUATED", "EVALUATED_SOBOLEV_NORM_EXPORTED", "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED", "ADVANCED_GREEN_IMAGES_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "REPRESENTATION_CONVENTION_MATCHES_CERTIFIED_GENERATORS": {"const": true},
+        "LOCAL_SCALAR_PROFILE_COEFFICIENTS_TWO_J0_TO_4_INTERVAL_ENCLOSED": {"const": true},
+        "Y0_BINOMIAL_REMAINDER_VALIDATED": {"const": true},
+        "DETECTOR_CENTER_PHASES_EXPORTED": {"const": true},
+        "FULL_FORM_VALUED_SOURCE_COEFFICIENTS_EVALUATED": {"const": false},
+        "MODES_ABOVE_TWO_J4_EVALUATED": {"const": false},
+        "EVALUATED_SOBOLEV_NORM_EXPORTED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED": {"const": false},
+        "ADVANCED_GREEN_IMAGES_EVALUATED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}
