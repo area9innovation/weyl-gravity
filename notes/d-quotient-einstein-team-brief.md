@@ -1855,6 +1855,14 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    cone-constrained rather than automatically obstructed.  The full
    SO(3)-covariant twist cone with nonzero collinear twist position remains
    the next refinement.
+
+   By exact `SO(3)` equivariance this is already the complete `A=0`
+   twist-velocity orbit, not only an `m=0` ray.  In the Cartesian real
+   harmonic basis the Gram matrix is `(4*pi/3)I`, so every vector `B` obeying
+   `3a^2=4|B|^2` rotates to the certified axisymmetric fixture, and the full
+   correction rotates back.  The first genuinely new twist datum is therefore
+   a nonzero position vector `A` parallel to `B`; non-collinear data are
+   excluded already by `mu_J=-4 A cross B`.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

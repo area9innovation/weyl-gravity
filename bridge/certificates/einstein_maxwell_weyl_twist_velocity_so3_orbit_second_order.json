@@ -1,0 +1,112 @@
+{
+  "schema": "einstein-maxwell-weyl-twist-velocity-so3-orbit-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.schema.json",
+  "schema_sha256": "224b92937c79067f5a346d5349f190cc0a42c7a02cd6b18b26485ae55912c23c",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_TWIST_VELOCITY_SO3_ORBIT_SECOND_ORDER",
+  "result_state": "COMPLETE_A_ZERO_TWIST_VELOCITY_SO3_ORBIT_SECOND_ORDER_EXTENDIBLE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "standard homogeneous a-coordinate plus arbitrary real axial ell=1 twist-velocity vector B with twist position A=0, fixed magnetic bundle, before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.py",
+    "generator_sha256": "dbeeed6656a6005b621565991047ecf734c155a5bf967948c2df49f9c5b04c2b",
+    "inputs": {
+      "fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
+        "sha256": "273d9399f4cb5d3f034933a3b1bd2e8364d2261f72f5d655490ea2b3df92626a"
+      },
+      "stabilizer": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json",
+        "sha256": "212d231aa60f390f4d785a95466156a7851e4c8a531fd2dbaf60c1c50f09d2cf"
+      },
+      "moment_maps": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      }
+    }
+  },
+  "harmonic_geometry": {
+    "basis": [
+      "Y_x=sin(theta)cos(phi)",
+      "Y_y=sin(theta)sin(phi)",
+      "Y_z=cos(theta)"
+    ],
+    "Gram_matrix": [
+      [
+        "4*pi/3",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "4*pi/3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4*pi/3"
+      ]
+    ],
+    "SO3_action": "the real ell=1 coefficient vector transforms in the defining three-dimensional representation",
+    "orbit_statement": "SO(3) acts transitively on each sphere |B|=constant; every B!=0 is a rotation of |B|*Y_z"
+  },
+  "equivariant_extension": {
+    "common_zero_equation": "3*a^2=4*(B_x^2+B_y^2+B_z^2)",
+    "mu_J": "0 because A=0",
+    "construction": "choose R with R B=|B| e_z, use the direct Y_z correction, then apply R^{-1} to every ell=1 and ell=2 correction tensor",
+    "well_defined_on_orbit": "different choices of R differ by the SO(2) stabilizer of e_z, under which the axisymmetric direct correction is invariant",
+    "all_target_rows_follow": "naturality of the Weyl-Maxwell Euler operator makes the direct zero remainder SO(3)-equivariant"
+  },
+  "classification": {
+    "complete_A_zero_twist_velocity_SO3_orbit_second_order_extendible": true,
+    "harmonic_normalization_exact": true,
+    "nonzero_collinear_twist_position_classified": false,
+    "physical_or_extra_ell1_inputs_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The direct m=0 calculation is not an isolated axisymmetric accident. It generates the complete SO(3) orbit of twist-velocity balances with zero twist position. The next new source is a nonzero twist position parallel to its velocity; that datum cannot be removed by rotation and can create additional position-velocity cross terms.",
+  "next_gate": "compute the collinear A parallel B source, then add physical and exceptional fourth-order ell=1 input modes",
+  "claim_boundary": "This is an equivariant corollary of a direct fixture. It does not cover A!=0, physical or extra ell=1 inputs, all-orders integration, final residual reduction, causal scattering, or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.7,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order --verify bridge/certificates/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "fixture",
+        "stabilizer",
+        "moment_maps"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the corollary does not freeze the A!=0 twist cone or exceptional/global programme"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order --verify bridge/certificates/einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_twist_velocity_so3_orbit_second_order"
+  ]
+}
