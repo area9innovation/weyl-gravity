@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; compute regulated R(K), finite R(K^2), Wres(K), any local zeta term, and the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    stream declared diagonal fractions from the certified extreme-axial and adjacent even/odd intermediate correlated evaluators, then widen the obstructed two_j=138 rail, compose massive images, evaluate recoil, and restrict records to Z2^C
+Observer:    bound clock derivatives of the moving Berger detector profile against the certified fixed-vector microphase envelope, then choose the justified complete cutoff, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
 
