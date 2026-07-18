@@ -1,0 +1,283 @@
+{
+  "checks": {
+    "B4_K1_rank": 0,
+    "B4_kernel_dimension": 4,
+    "B4_rank": 5,
+    "K1_rank": 4,
+    "Ksharp1_B4_rank": 0,
+    "Ksharp1_kernel_dimension": 5,
+    "Ksharp1_rank": 4,
+    "M2_d1_rank": 0,
+    "M2_kernel_dimension": 15,
+    "M2_rank": 45,
+    "Phi4_minus_M2_L1_2_rank": 0,
+    "Phi_sharp4_on_kernel_M2_rank": 0,
+    "d1_rank": 15,
+    "metric_kernel_B4_equals_image_K1": true,
+    "metric_kernel_Ksharp1_equals_image_B4": true
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "an obstruction to a larger cyclic mapping-cone prolongation",
+      "an obstruction to Green hyperbolicity after repair",
+      "a global solution-space cohomology calculation",
+      "an open-background no-go theorem",
+      "a nonlinear or quantum obstruction"
+    ],
+    "statement": "At the timelike noncharacteristic covector (1,0,0,0), the metric Bach symbol complex is exact, while the current 288-component cyclic automorphism saddle has at least fifteen degree-zero symbol-cohomology directions in the multiplier block. Therefore this carrier admits no finite-order filtration-compatible differential SDR onto the metric graph."
+  },
+  "dependency_ref": {
+    "artifact_id": "NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1",
+    "path": "d_quotient_classical/certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1.json",
+    "sha256": "a281ee2784393cf82164175eb5444cf3eaf22f9b24f371c121528a6f72afdc44"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "flags": {
+    "CURRENT_CARRIER_SDR_OBSTRUCTED": true,
+    "LARGER_MAPPING_CONE_REPAIR_OBSTRUCTED": false,
+    "METRIC_NONCHARACTERISTIC_SYMBOL_EXACT": true,
+    "MULTIPLIER_SYMBOL_COHOMOLOGY_NONZERO": true,
+    "NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1": true,
+    "NARIAI_GREEN_HOMOTOPY": false,
+    "NONLINEAR_EXTENSION": false,
+    "OPEN_BACKGROUND_CLASS": false,
+    "QUANTUM_CLAIM": false,
+    "SUPPORT_LOCAL_AUTOMORPHISM_SDR": false
+  },
+  "kernel_witness": {
+    "M2_kernel_basis": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ],
+        [
+          5,
+          5,
+          "1"
+        ],
+        [
+          6,
+          6,
+          "1"
+        ],
+        [
+          7,
+          7,
+          "1"
+        ],
+        [
+          8,
+          8,
+          "1"
+        ],
+        [
+          9,
+          9,
+          "1"
+        ],
+        [
+          10,
+          10,
+          "1"
+        ],
+        [
+          11,
+          11,
+          "1"
+        ],
+        [
+          12,
+          12,
+          "1"
+        ],
+        [
+          13,
+          13,
+          "1"
+        ],
+        [
+          14,
+          14,
+          "1"
+        ]
+      ],
+      "sha256": "f6e5d0cacca2d94832c566a99f85d8994f2f460d9e3b551fe336e38688bd0e8b",
+      "shape": [
+        60,
+        15
+      ]
+    },
+    "Phi_sharp4_on_kernel_rank": 0,
+    "dimension": 15,
+    "incoming_lambda_arrows": 0,
+    "lambda_weight": 1,
+    "leading_lambda_targets": [
+      "a_sharp via M2",
+      "h_sharp via Phi_sharp4"
+    ],
+    "outgoing_lambda_factorization": "lambda -> (M2 lambda,-L1_2^sharp M2 lambda)"
+  },
+  "metric_exactness": {
+    "B4_rank": 5,
+    "K1_rank": 4,
+    "Ksharp1_rank": 4,
+    "complex": "H0[4] --K1--> H1[9] --B4--> H1dual[9] --Ksharp1--> H0dual[4]",
+    "kernel_B4_equals_image_K1": true,
+    "kernel_Ksharp1_equals_image_B4": true,
+    "symbol_cohomology_dimension": 0
+  },
+  "next_gate": "C_G2_NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR",
+  "obstruction": {
+    "extra_prolonged_degree_zero_symbol_cohomology_lower_bound": 15,
+    "finite_order_filtration_compatible_SDR_exists": false,
+    "metric_symbol_cohomology_dimension": 0,
+    "reason": "a filtered differential SDR would induce an associated-graded quasi-isomorphism, contradicted by the noncharacteristic symbol cohomology mismatch"
+  },
+  "repair_boundary": {
+    "necessary_new_incoming_symbol_rank_at_this_stratum": 15,
+    "sufficiency_claimed": false,
+    "type_correct_repair": "adjoin a cyclic mapping cone for the parent detour/cotangent complement rather than trying to contract the bare multiplier saddle"
+  },
+  "result_id": "NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1",
+  "result_state": "CURRENT_288_COMPONENT_CARRIER_HAS_EXTRA_NONCHARACTERISTIC_SYMBOL_COHOMOLOGY",
+  "schema": "pure-weyl-nariai-automorphism-cyclic-bach-sdr-symbol-obstruction-v1",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_automorphism_cyclic_bach_extension.py": "f739b3fa82ab6e991ffd1d7bd29b159b0605b1d31b95d30f5bc9c9e83ce5fef3",
+    "d_quotient_classical/causal_transfer/nariai_automorphism_cyclic_bach_sdr_symbol_obstruction.py": "28a42eddadf62af96911d0f1239e645d799615ec4bcd045c8f24c7e8ef366231",
+    "d_quotient_classical/causal_transfer/nariai_automorphism_prolongation_first_two_rows.py": "6270c00d0652d27a21ccd5b5491da0d2de162e251a495e41ea8f4d6381c35835",
+    "d_quotient_classical/causal_transfer/nariai_linearized_bach_endpoint.py": "bf7b91ece73be1ec22e7124db4bbe73325ab9a5b2db264b55e88bbed820b112c",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_automorphism_cyclic_bach_sdr_symbol_obstruction.py": "c4591ad882f186341a9678f6ea746a3cf01c7ed348653f46c4111f7f127bfad6",
+    "d_quotient_classical/causal_transfer/verify_nariai_automorphism_cyclic_bach_sdr_symbol_obstruction.py": "1e1664c2365e817d2a1eb8d1ee3fbb5ee829a12f569f776b334275b45511b548",
+    "d_quotient_classical/schema/nariai-automorphism-cyclic-bach-sdr-symbol-obstruction-v1.schema.json": "6e79c10854d4d41593163935e84397307fad953a0f99497d260f0e2edb4dada7"
+  },
+  "stratum": {
+    "arrow_orders": {
+      "1,0": 1,
+      "2,0": 1,
+      "4,3": 2,
+      "5,2": 4,
+      "5,3": 4,
+      "6,1": 2,
+      "6,2": 4,
+      "7,4": 1,
+      "7,5": 1
+    },
+    "background": "unit Nariai in a normal orthonormal frame",
+    "covector": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "covector_type": "timelike_noncharacteristic",
+    "filtration_rule": "ord(Q_target,source) <= weight_target-weight_source",
+    "metric_block_weights": [
+      0,
+      1,
+      5,
+      6
+    ],
+    "order_defects": {},
+    "prolonged_block_weights": [
+      0,
+      1,
+      1,
+      1,
+      3,
+      5,
+      5,
+      6
+    ],
+    "symbol_category": "principal PBW/Rees associated graded"
+  },
+  "symbols": {
+    "B4": {
+      "rank": 5,
+      "sha256": "c43bbfc4515d3d393505e43caf4adfc0b14808881a4093a5049cc5082d82bc9e",
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "K1": {
+      "rank": 4,
+      "sha256": "00e7f11678af22fd4a727b815c576d6be38ef480b028c67fd9d10f7d1c130a2d",
+      "shape": [
+        9,
+        4
+      ]
+    },
+    "Ksharp1": {
+      "rank": 4,
+      "sha256": "caac794ec1fd98f70ec570d7e562fbddf439e8430d40049e5cededab798d91b9",
+      "shape": [
+        4,
+        9
+      ]
+    },
+    "L1_2": {
+      "rank": 9,
+      "sha256": "56217e45ce0054658736106cdc04539b2c11f6f0d74aba2df804ee438705710d",
+      "shape": [
+        60,
+        9
+      ]
+    },
+    "M2": {
+      "rank": 45,
+      "sha256": "97aa71a4dabc9fe1923abbb1d1b920404b174a627b20a1d3af4ac5a2961524de",
+      "shape": [
+        60,
+        60
+      ]
+    },
+    "Phi4": {
+      "rank": 5,
+      "sha256": "954248848b9712a65fed48894e977fbdef79bd2d3af46b87077f8b1d2eb3a96e",
+      "shape": [
+        60,
+        9
+      ]
+    },
+    "Phi_sharp4": {
+      "rank": 5,
+      "sha256": "2a596f31e77bab0ee6c5efe07aac6d5cbe700b21b40d9bfb04457b1d704fc5d6",
+      "shape": [
+        9,
+        60
+      ]
+    },
+    "d1": {
+      "rank": 15,
+      "sha256": "f6e5d0cacca2d94832c566a99f85d8994f2f460d9e3b551fe336e38688bd0e8b",
+      "shape": [
+        60,
+        15
+      ]
+    }
+  }
+}

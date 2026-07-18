@@ -1222,6 +1222,31 @@ next gate is `C_G2_NARIAI_AUTOMORPHISM_SUPPORT_LOCAL_SDR`: construct or
 obstruct a finite-order projection and homotopy for the complement.  Green
 transfer remains downstream of that gate.
 
+`NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1` now gives the
+negative verdict for this carrier.  Use the explicit Rees weights
+
+\[
+(0,1,1,1,3,5,5,6)
+\]
+
+on the eight prolonged blocks and \((0,1,5,6)\) on the embedded metric
+complex.  At the timelike covector \((1,0,0,0)\), the metric ranks are
+\((4,5,4)\), so its symbol complex is exact.  The parent middle has rank \(45\)
+on \(C_1[60]\).  Since the multiplier \(\lambda\) has no incoming arrow and
+
+\[
+\lambda\longmapsto
+(M_2\lambda,-L_{1,2}^\sharp M_2\lambda),
+\]
+
+its 15-dimensional kernel survives as degree-zero symbol cohomology.  A
+finite-order filtered SDR would induce an associated-graded quasi-isomorphism,
+contradicting this mismatch.  The conclusion is scoped: the cyclic Bach
+complex remains exact as a BV differential, but it is too small for the
+desired retract.  The next gate is
+`C_G2_NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR`, which must add the parent
+detour/cotangent cone rather than trying to invert the bare multiplier saddle.
+
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
 nonzero stability radius, or an exact no-go witness.

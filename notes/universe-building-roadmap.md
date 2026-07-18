@@ -163,12 +163,16 @@ graph carries every metric gauge transformation and global Killing
 reducibility strictly into it.  Its canonical 288-component odd-cotangent
 Bach saddle now closes as well: the action-derived middle is nilpotent and odd
 cyclic, and the four-row metric Bach complex embeds isometrically as the full
-corrected BGG graph.  The next gate is
-`C_G2_NARIAI_AUTOMORPHISM_SUPPORT_LOCAL_SDR`: construct or obstruct a
-finite-order projection and cyclic homotopy for the complement.  Only after
-that retract closes should Green transfer be attempted.  Do not reopen
-endpoint coefficient or field-graph fitting, or claim endpoint equivalence or
-a Nariai Green homotopy before this gate closes.
+corrected BGG graph.  A weighted noncharacteristic symbol audit now proves
+that this 288-component carrier itself cannot retract to the metric complex:
+the metric symbol is exact, while the incoming-free multiplier retains the
+15-dimensional kernel of the rank-45 parent middle.  The next gate is
+`C_G2_NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR`: replace the bare multiplier
+copy by the cyclic cone of the parent detour complement, then rerun the symbol
+cohomology test before any homotopy solve.  Only after that repaired retract
+closes should Green transfer be attempted.  Do not reopen endpoint coefficient
+or field-graph fitting, or claim endpoint equivalence or a Nariai Green
+homotopy before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

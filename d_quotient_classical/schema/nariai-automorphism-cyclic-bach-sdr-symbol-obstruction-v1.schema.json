@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-automorphism-cyclic-bach-sdr-symbol-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_ref", "stratum", "symbols", "kernel_witness", "metric_exactness", "checks", "obstruction", "repair_boundary", "flags", "claim_boundary", "next_gate", "source_manifest"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-automorphism-cyclic-bach-sdr-symbol-obstruction-v1"},
+    "result_id": {"const": "NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1"},
+    "result_state": {"const": "CURRENT_288_COMPONENT_CARRIER_HAS_EXTRA_NONCHARACTERISTIC_SYMBOL_COHOMOLOGY"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_ref": {"$ref": "#/$defs/dependency"},
+    "stratum": {
+      "type": "object", "additionalProperties": false,
+      "required": ["background", "covector", "covector_type", "symbol_category", "prolonged_block_weights", "metric_block_weights", "filtration_rule", "arrow_orders", "order_defects"],
+      "properties": {
+        "background": {"type": "string", "minLength": 1},
+        "covector": {"const": [1, 0, 0, 0]},
+        "covector_type": {"const": "timelike_noncharacteristic"},
+        "symbol_category": {"const": "principal PBW/Rees associated graded"},
+        "prolonged_block_weights": {"const": [0, 1, 1, 1, 3, 5, 5, 6]},
+        "metric_block_weights": {"const": [0, 1, 5, 6]},
+        "filtration_rule": {"const": "ord(Q_target,source) <= weight_target-weight_source"},
+        "arrow_orders": {
+          "const": {"1,0": 1, "2,0": 1, "4,3": 2, "5,2": 4, "5,3": 4, "6,1": 2, "6,2": 4, "7,4": 1, "7,5": 1}
+        },
+        "order_defects": {"const": {}}
+      }
+    },
+    "symbols": {
+      "type": "object", "additionalProperties": false,
+      "required": ["d1", "K1", "M2", "B4", "L1_2", "Phi4", "Phi_sharp4", "Ksharp1"],
+      "properties": {
+        "d1": {"$ref": "#/$defs/symbol"}, "K1": {"$ref": "#/$defs/symbol"},
+        "M2": {"$ref": "#/$defs/symbol"}, "B4": {"$ref": "#/$defs/symbol"},
+        "L1_2": {"$ref": "#/$defs/symbol"}, "Phi4": {"$ref": "#/$defs/symbol"},
+        "Phi_sharp4": {"$ref": "#/$defs/symbol"}, "Ksharp1": {"$ref": "#/$defs/symbol"}
+      }
+    },
+    "kernel_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["M2_kernel_basis", "dimension", "incoming_lambda_arrows", "lambda_weight", "leading_lambda_targets", "outgoing_lambda_factorization", "Phi_sharp4_on_kernel_rank"],
+      "properties": {
+        "M2_kernel_basis": {"$ref": "#/$defs/sparseMatrix"},
+        "dimension": {"const": 15},
+        "incoming_lambda_arrows": {"const": 0},
+        "lambda_weight": {"const": 1},
+        "leading_lambda_targets": {"const": ["a_sharp via M2", "h_sharp via Phi_sharp4"]},
+        "outgoing_lambda_factorization": {"type": "string", "minLength": 1},
+        "Phi_sharp4_on_kernel_rank": {"const": 0}
+      }
+    },
+    "metric_exactness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complex", "K1_rank", "B4_rank", "Ksharp1_rank", "kernel_B4_equals_image_K1", "kernel_Ksharp1_equals_image_B4", "symbol_cohomology_dimension"],
+      "properties": {
+        "complex": {"type": "string", "minLength": 1},
+        "K1_rank": {"const": 4}, "B4_rank": {"const": 5}, "Ksharp1_rank": {"const": 4},
+        "kernel_B4_equals_image_K1": {"const": true},
+        "kernel_Ksharp1_equals_image_B4": {"const": true},
+        "symbol_cohomology_dimension": {"const": 0}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["d1_rank", "K1_rank", "M2_rank", "M2_kernel_dimension", "B4_rank", "B4_kernel_dimension", "Ksharp1_rank", "Ksharp1_kernel_dimension", "M2_d1_rank", "B4_K1_rank", "Ksharp1_B4_rank", "Phi4_minus_M2_L1_2_rank", "Phi_sharp4_on_kernel_M2_rank", "metric_kernel_B4_equals_image_K1", "metric_kernel_Ksharp1_equals_image_B4"],
+      "properties": {
+        "d1_rank": {"const": 15}, "K1_rank": {"const": 4}, "M2_rank": {"const": 45},
+        "M2_kernel_dimension": {"const": 15}, "B4_rank": {"const": 5}, "B4_kernel_dimension": {"const": 4},
+        "Ksharp1_rank": {"const": 4}, "Ksharp1_kernel_dimension": {"const": 5},
+        "M2_d1_rank": {"const": 0}, "B4_K1_rank": {"const": 0}, "Ksharp1_B4_rank": {"const": 0},
+        "Phi4_minus_M2_L1_2_rank": {"const": 0}, "Phi_sharp4_on_kernel_M2_rank": {"const": 0},
+        "metric_kernel_B4_equals_image_K1": {"const": true}, "metric_kernel_Ksharp1_equals_image_B4": {"const": true}
+      }
+    },
+    "obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["extra_prolonged_degree_zero_symbol_cohomology_lower_bound", "metric_symbol_cohomology_dimension", "finite_order_filtration_compatible_SDR_exists", "reason"],
+      "properties": {
+        "extra_prolonged_degree_zero_symbol_cohomology_lower_bound": {"const": 15},
+        "metric_symbol_cohomology_dimension": {"const": 0},
+        "finite_order_filtration_compatible_SDR_exists": {"const": false},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "repair_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["necessary_new_incoming_symbol_rank_at_this_stratum", "type_correct_repair", "sufficiency_claimed"],
+      "properties": {
+        "necessary_new_incoming_symbol_rank_at_this_stratum": {"const": 15},
+        "type_correct_repair": {"type": "string", "minLength": 1},
+        "sufficiency_claimed": {"const": false}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1", "CURRENT_CARRIER_SDR_OBSTRUCTED", "METRIC_NONCHARACTERISTIC_SYMBOL_EXACT", "MULTIPLIER_SYMBOL_COHOMOLOGY_NONZERO", "SUPPORT_LOCAL_AUTOMORPHISM_SDR", "NARIAI_GREEN_HOMOTOPY", "LARGER_MAPPING_CONE_REPAIR_OBSTRUCTED", "OPEN_BACKGROUND_CLASS", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1": {"const": true},
+        "CURRENT_CARRIER_SDR_OBSTRUCTED": {"const": true},
+        "METRIC_NONCHARACTERISTIC_SYMBOL_EXACT": {"const": true},
+        "MULTIPLIER_SYMBOL_COHOMOLOGY_NONZERO": {"const": true},
+        "SUPPORT_LOCAL_AUTOMORPHISM_SDR": {"const": false}, "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "LARGER_MAPPING_CONE_REPAIR_OBSTRUCTED": {"const": false}, "OPEN_BACKGROUND_CLASS": {"const": false},
+        "NONLINEAR_EXTENSION": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["statement", "not_claimed"],
+      "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}
+    },
+    "next_gate": {"const": "C_G2_NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR"},
+    "source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "symbol": {"type": "object", "additionalProperties": false, "required": ["shape", "rank", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2}, "rank": {"type": "integer", "minimum": 0}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "sparseMatrix": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2}, "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

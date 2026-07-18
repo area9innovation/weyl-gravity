@@ -275,6 +275,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   SDR or Green theorem:
   [`certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1.json`](certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1.json),
   [`reports/nariai-automorphism-cyclic-bach-extension.md`](reports/nariai-automorphism-cyclic-bach-extension.md)
+- SDR symbol obstruction for that carrier: with explicit Douglis/Rees weights
+  `(0,1,1,1,3,5,5,6)`, the metric Bach symbol complex is exact at the
+  timelike covector `(1,0,0,0)`, while the multiplier has no incoming arrow
+  and inherits the 15-dimensional kernel of the rank-45 parent middle.  Thus
+  the 288-component saddle cannot admit a finite-order filtration-compatible
+  SDR onto the metric graph.  This does not obstruct the required larger
+  cyclic parent-detour mapping cone:
+  [`certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1.json`](certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1.json),
+  [`reports/nariai-automorphism-cyclic-bach-sdr-symbol-obstruction.md`](reports/nariai-automorphism-cyclic-bach-sdr-symbol-obstruction.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived
