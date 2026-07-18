@@ -33,6 +33,7 @@ CERTS = {
     "Berger_charge": ROOT / "d_quotient_classical/certificates/BERGER_FIXED_COUPLING_DELTA_CHARGE.json",
     "Berger_redshift": ROOT / "d_quotient_classical/certificates/BERGER_DYNAMICAL_MAXWELL_REDSHIFT_MODE.json",
     "Berger_projector": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
+    "Berger_bridge1_disposition": ROOT / "d_quotient_classical/certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json",
     "Nariai_conformal": ROOT / "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
     "Nariai_single": ROOT / "d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json",
     "Nariai_transverse": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
@@ -224,8 +225,8 @@ def entries() -> list[dict[str, Any]]:
         ("NO_CERTIFIED_MAP", "No branch-resolved Taub map exists."),
         ("OBSTRUCTED", "The canonical support-local same-bundle projector is obstructed by the certified subprincipal witness."),
         _second(("NO_CERTIFIED_MAP", "No branch projector."), ("NO_CERTIFIED_MAP", "No branch projector."), ("NO_CERTIFIED_MAP", "No branch projector.")),
-        _evidence("Berger_projector"),
-        "Bridge 1 is not activated on Berger: the unsplit cyclic causal carrier remains valid, but no admissible branch crosswalk has been selected. The certified obstruction leaves four scoped possibilities—a relative cofiber, a larger noncontractible mixed-bundle carrier, a declared nonlocal REDUCED-MODE map, or a port to a background with a certified split.",
+        _evidence("Berger_projector", "Berger_bridge1_disposition"),
+        "Bridge 1 is not activated on Berger. The certified disposition selects the unsplit retained cyclic causal carrier as authoritative: the rank-36 projector and contractible rank-46 graph anchor are obstructed, while a relative cofiber, noncontractible mixed-bundle construction, and any all-mode REDUCED-MODE map remain open.",
     ))
     values.append(_entry(
         "classical.nariai.conformal_orbit.rank310_metric",

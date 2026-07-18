@@ -73,6 +73,10 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertEqual(set(entry["descriptions"].values()), {"NO_CERTIFIED_MAP"})
         self.assertIn("Bridge 1 is not activated", entry["claim_boundary"])
         self.assertIn("relative cofiber", entry["claim_boundary"])
+        self.assertIn(
+            "BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
 
 
 if __name__ == "__main__":

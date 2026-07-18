@@ -94,6 +94,12 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   [`certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json`](certificates/BERGER_RETAINED_46_STF2_PHYSICAL_HELICITY_FILTERED_QUOTIENT_V1.json),
   [`certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json`](certificates/BERGER_RETAINED_46_STF2_SUBPRINCIPAL_BRANCH_ANCHOR_OR_OBSTRUCTION_V1.json),
   [`reports/berger-retained-46-stf2-subprincipal-branch-anchor-or-obstruction.md`](reports/berger-retained-46-stf2-subprincipal-branch-anchor-or-obstruction.md)
+- Fail-closed Berger Bridge-1 carrier disposition: the unsplit retained
+  cyclic causal carrier remains authoritative, while every branch-resolved
+  crosswalk remains `NO_CERTIFIED_MAP` pending a genuinely noncontractible
+  mixed-bundle/cofiber construction:
+  [`certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json`](certificates/BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1.json),
+  [`reports/berger-bridge1-admissible-carrier-disposition.md`](reports/berger-bridge1-admissible-carrier-disposition.md)
 - Berger causal-witness endpoint preflight:
   [`certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json`](certificates/BERGER_CAUSAL_WITNESS_PREFLIGHT.json)
 - Berger causal-witness preflight report:

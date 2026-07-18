@@ -852,11 +852,15 @@ The near-term critical path is therefore
 \]
 
 The first bridge is the hub.  On Berger its requested support-local projector
-is already obstructed, so the acceptable next objects are a declared relative
-cofiber, a larger noncontractible mixed-bundle carrier, a scoped nonlocal
-`REDUCED-MODE` map, or a port of the interaction/observer question to a
-background with a certified branch decomposition.  Row-name matching is not
-a bridge.
+and the subsequent contractible rank-46 graph anchor are obstructed.
+`BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1` therefore selects the
+unsplit retained cyclic causal carrier as authoritative while leaving the
+crosswalk `NO_CERTIFIED_MAP`.  A future Berger activation requires a genuinely
+noncontractible mixed-bundle/cofiber carrier or an explicitly scoped all-mode
+`REDUCED-MODE` map; porting to another background answers a new same-background
+question, not the Berger one.  Row-name matching is not a bridge.  The active
+classical relative gate advances to the compact-product off-shell cyclic
+Einstein--Weyl triangle.
 
 ### Classical ownership
 

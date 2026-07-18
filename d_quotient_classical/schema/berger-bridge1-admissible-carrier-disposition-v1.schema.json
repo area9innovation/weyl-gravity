@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-bridge1-admissible-carrier-disposition-v1.schema.json",
+  "title": "Berger Bridge-1 admissible carrier disposition",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "authoritative_same_background_carrier", "four_alternative_disposition", "exact_obstruction_chain", "category_guards", "bridge_disposition", "exact_checks", "flags", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-bridge1-admissible-carrier-disposition-v1"},
+    "result_id": {"const": "BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1"},
+    "result_state": {"const": "UNSPLIT_RETAINED_CARRIER_SELECTED_BRANCH_CROSSWALK_UNAVAILABLE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "authoritative_same_background_carrier": {"$ref": "#/$defs/stringObject"},
+    "four_alternative_disposition": {
+      "type": "object",
+      "required": ["relative_cofiber", "noncontractible_mixed_bundle", "declared_nonlocal_reduced_mode", "port_to_certified_split_background"],
+      "properties": {
+        "relative_cofiber": {"$ref": "#/$defs/dispositionOpen"},
+        "noncontractible_mixed_bundle": {"$ref": "#/$defs/dispositionOpen"},
+        "declared_nonlocal_reduced_mode": {"$ref": "#/$defs/dispositionNoMap"},
+        "port_to_certified_split_background": {"$ref": "#/$defs/dispositionOpen"}
+      },
+      "additionalProperties": false
+    },
+    "exact_obstruction_chain": {"$ref": "#/$defs/stringObject"},
+    "category_guards": {
+      "type": "object",
+      "required": ["Einstein_like_is_dynamical", "extra_Weyl_is_dynamical", "Maxwell_is_separate_dynamical_carrier", "topological_odd_is_deformation_not_particle"],
+      "properties": {
+        "Einstein_like_is_dynamical": {"const": true},
+        "extra_Weyl_is_dynamical": {"const": true},
+        "Maxwell_is_separate_dynamical_carrier": {"const": true},
+        "topological_odd_is_deformation_not_particle": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "bridge_disposition": {
+      "type": "object",
+      "required": ["bridge_1_activated", "atlas_status", "ell3_branch_mixing_authorized", "paper_11_unsplit_ell3_theorem_valid", "next_local_activation_gate", "queue_after_disposition"],
+      "properties": {
+        "bridge_1_activated": {"const": false},
+        "atlas_status": {"const": "NO_CERTIFIED_MAP"},
+        "ell3_branch_mixing_authorized": {"const": false},
+        "paper_11_unsplit_ell3_theorem_valid": {"const": true},
+        "next_local_activation_gate": {"const": "NONCONTRACTIBLE_MIXED_BUNDLE_OR_SAME_BACKGROUND_RELATIVE_COFIBER"},
+        "queue_after_disposition": {"const": "COMPACT_PRODUCT_OFF_SHELL_CYCLIC_EINSTEIN_WEYL_RELATIVE_TRIANGLE"}
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {"type": "object", "minProperties": 7, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object",
+      "required": ["BERGER_UNSPLIT_RETAINED_CARRIER_SELECTED", "BERGER_BRIDGE1_ACTIVATED", "BERGER_RETAINED_BRANCH_CROSSWALK", "ELL3_BRANCH_MIXING_AUTHORIZED", "GLOBAL_ALL_CARRIER_PROJECTOR_NO_GO", "QUANTUM_CLAIM"],
+      "properties": {
+        "BERGER_UNSPLIT_RETAINED_CARRIER_SELECTED": {"const": true},
+        "BERGER_BRIDGE1_ACTIVATED": {"const": false},
+        "BERGER_RETAINED_BRANCH_CROSSWALK": {"const": false},
+        "ELL3_BRANCH_MIXING_AUTHORIZED": {"const": false},
+        "GLOBAL_ALL_CARRIER_PROJECTOR_NO_GO": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "COMPACT_PRODUCT_OFF_SHELL_CYCLIC_EINSTEIN_WEYL_RELATIVE_TRIANGLE"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "stringObject": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "minLength": 1}},
+    "dispositionOpen": {
+      "type": "object",
+      "required": ["status", "reason"],
+      "properties": {"status": {"const": "OPEN"}, "reason": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    },
+    "dispositionNoMap": {
+      "type": "object",
+      "required": ["status", "reason"],
+      "properties": {"status": {"const": "NO_CERTIFIED_MAP"}, "reason": {"type": "string", "minLength": 1}},
+      "additionalProperties": false
+    }
+  }
+}

@@ -162,23 +162,27 @@ Use the canonical Einstein--Weyl spine in
 team owns `RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1`; it does not own a
 second construction of the linear Einstein inclusion.
 
-The currently active programme bridge is Bridge 1.  Its Berger activation
-gate is not satisfied: atlas row
+The Berger disposition of Bridge 1 is now frozen, but its activation gate is
+not satisfied: atlas row
 `classical.berger.crosswalk.retained36_to_einstein_extra` remains
-`NO_CERTIFIED_MAP` after the support-local projector obstruction.  The next
-admissible carrier must be one of the four scoped alternatives in the shared
-roadmap—a relative cofiber, a larger noncontractible mixed-bundle carrier, a
-declared nonlocal `REDUCED-MODE` map, or a port to a same-background certified
-split.  No row-name or cross-background identification is allowed.  The
-support-local Bach-flat parent-to-metric causal bridge continues independently.
+`NO_CERTIFIED_MAP`.  `BERGER_BRIDGE1_ADMISSIBLE_CARRIER_DISPOSITION_V1`
+selects the unsplit retained 36-row cyclic causal complex as the authoritative
+same-background carrier: the rank-36 projector and the contractible rank-46
+graph anchor are obstructed, while none of the remaining relative-cofiber,
+noncontractible mixed-bundle, all-mode `REDUCED-MODE`, or port alternatives
+currently supplies a Berger branch crosswalk.  No row-name or cross-background
+identification is allowed.  The active queue therefore advances to the
+compact-product off-shell cyclic Einstein--Weyl relative triangle, while a
+genuinely noncontractible Berger carrier and the support-local Bach-flat
+parent-to-metric causal bridge remain independent open rails.
 
-Three same-background handoffs are queued after the active transverse replay:
+Three same-background handoffs follow the transverse replay; the first now
+has its fail-closed disposition and the second is active:
 
-1. For the Berger 36-row carrier, decide Bridge 1 by constructing an
-   admissible Einstein-like/extra-Weyl/Maxwell branch map on that background,
-   or emit the smallest normalized carrier-enlargement obstruction.  The
-   existing support-local projector no-go forbids silently substituting a
-   row-name split.
+1. **Disposed, not activated.**  On Berger, retain the unsplit 36-row carrier
+   and the exact normalized rank-36/rank-46 obstructions.  Reopen the local
+   branch map only for a genuinely noncontractible mixed-bundle/cofiber
+   construction; a row-name or contractible-graph split is forbidden.
 2. For the compact product background, complete the off-shell cyclic
    Einstein--Weyl relative triangle, including the corrected cyclic map needed
    to resolve the fixed-identity pairing obstruction.  This is Bridge 2 and
