@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-correlated-diagonal-fraction-stream-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "stream_declaration", "even_fraction_rows", "odd_companion_rows", "canonical_fraction_stream_sha256", "coverage_mutation", "sobolev_tail_preflight", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-correlated-diagonal-fraction-stream-v1"},
+    "result_id": {"const": "BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_CORRELATED_P0_DIAGONAL_FRACTION_STREAM_EXPORTED_COMPLETE_RAIL_AND_TAIL_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "stream_declaration": {"type": "object"},
+    "even_fraction_rows": {"type": "array", "minItems": 3, "maxItems": 3},
+    "odd_companion_rows": {"type": "array", "minItems": 3, "maxItems": 3},
+    "canonical_fraction_stream_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "coverage_mutation": {"type": "object"},
+    "sobolev_tail_preflight": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["DECLARED_EVEN_ODD_DIAGONAL_FRACTION_STREAM_EXPORTED", "SIX_DECLARED_FRACTION_WIDTHS_BELOW_ONE_TENTH", "COVERAGE_MUTATION_REJECTED", "COMPLETE_DIAGONAL_STREAM_EXPORTED", "ALL_ODD_REPRESENTATIONS_AND_CLOCK_POWERS_EVALUATED", "EVALUATED_SOBOLEV_NORM_EXPORTED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "DECLARED_EVEN_ODD_DIAGONAL_FRACTION_STREAM_EXPORTED": {"const": true},
+        "SIX_DECLARED_FRACTION_WIDTHS_BELOW_ONE_TENTH": {"const": true},
+        "COVERAGE_MUTATION_REJECTED": {"const": true},
+        "COMPLETE_DIAGONAL_STREAM_EXPORTED": {"const": false},
+        "ALL_ODD_REPRESENTATIONS_AND_CLOCK_POWERS_EVALUATED": {"const": false},
+        "EVALUATED_SOBOLEV_NORM_EXPORTED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "OPTIMIZE_AND_WIDEN_THE_DECLARED_FRACTION_STREAM_THEN_BUILD_POLARIZED_ROWS_WHILE_DERIVING_THE_MISSING_SOBOLEV_INPUTS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

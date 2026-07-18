@@ -431,6 +431,14 @@ sentinels `two_j=512,r=128` and `two_j=513,r=128` have widths approximately
 `0.07072` and `0.07075`; the `32 x 32` even mutation remains about `0.14099`
 and is rejected.  The active gate is now a declared diagonal-fraction stream,
 not an inference from these two sentinels to the complete scalar rail.
+The declared-fraction successor evaluates `r/512=1/8,1/4,3/8` and the same
+indices in adjacent odd `two_j=513`.  All six `64 x 64` widths lie between
+approximately `0.0707` and `0.0812`.  The evaluated-Sobolev alternative is
+kept fail-closed: the Haar-relative pushed-forward density, clock-uniform
+repeated-Laplacian norm, polarized form norm and Green-weighted tail
+conversion are not certified inputs.  The next gate is to optimize and widen
+the fraction stream, then construct polarized rows; no complete or infinite
+tail follows from the six sentinels.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

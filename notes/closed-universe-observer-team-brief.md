@@ -560,11 +560,18 @@ such extension.  The terminating Jacobi factor stays inside the directed
 integrand; adjacent even/odd sentinels `two_j=512,r=128` and
 `two_j=513,r=128` have widths approximately `0.07072` and `0.07075` on a
 `64 x 64` grid, while the halved-resolution even mutation remains about
-`0.14099`.  The active gate is a declared diagonal-fraction stream with
-additional odd sentinels, not promotion from two rows to a full rail.
-Only after that succeeds should the polarized rail be
-widened toward the infinite-mode Maxwell and massive-two-form images, recoil
-coefficient and second-order-cone restriction.  Bridge 3 remains inactive.
+`0.14099`.  `BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM` now evaluates the
+declared `r/512=1/8,1/4,3/8` rows and their adjacent odd `two_j=513`
+companions.  All six `64 x 64` widths lie between approximately `0.0707` and
+`0.0812`.  This is not a complete diagonal stream.  Its fail-closed Sobolev
+ledger also records that the Haar-relative pushed-forward detector density,
+clock-uniform repeated-Laplacian norm, polarized form norm and Green-weighted
+tail conversion are not yet certified inputs.  The active gate is to optimize
+and widen these declared fractions, then construct polarized rows while
+deriving those Sobolev inputs.  Only after a complete rail or a validated tail
+succeeds should the infinite-mode Maxwell and massive-two-form images, recoil
+coefficient and second-order-cone restriction be composed.  Bridge 3 remains
+inactive.
 
 The nonlinear sequencing gate is fail-closed and unchanged.  The mixed
 `epsilon_R^2 kappa` unary gate was completed coefficientwise before apparatus

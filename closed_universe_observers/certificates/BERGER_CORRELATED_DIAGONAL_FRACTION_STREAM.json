@@ -1,0 +1,222 @@
+{
+  "atlas_status": "CERTIFIED",
+  "canonical_fraction_stream_sha256": "c5ba3a3aa25c877d0f77889cd69ba0f2a178a3f932a1cf3bc15a6b9b6f48c42c",
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result evaluates the correlated p=0 Jacobi integrand on the declared even-index fractions r/512=1/8,1/4,3/8 and their adjacent odd two_j=513 companions. All six 64x64 directed Darboux enclosures have width below 0.1. This is a selected fraction stream, not a complete diagonal or representation rail. A separate fail-closed Sobolev preflight records the exact spectral identity and available Berger inputs, but no certified density relative to Berger Haar volume, clock-uniform repeated-Laplacian norm, polarized form norm, or Green-weighted tail conversion is exported; no Sobolev or infinite-mode tail is therefore claimed. Other clock powers, complete polarization, Green images, detector response, recoil, tangent-cone restriction, Bridge 3, finite-r/all-orders observer-morphism stability and quantum claims remain open.",
+  "claim_status": "VALIDATED_CORRELATED_P0_DIAGONAL_FRACTION_STREAM_EXPORTED_COMPLETE_RAIL_AND_TAIL_OPEN",
+  "coverage_mutation": {
+    "detected": true,
+    "expected_row_count": 6,
+    "mutated_row_count": 5,
+    "name": "delete_odd_three_eighths_companion"
+  },
+  "dependency_refs": {
+    "chart": {
+      "path": "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "result_id": "BERGER_QUANTITATIVE_DETECTOR_ROD_CHART",
+      "sha256": "9332f4dde9e9f0ad9f677ed92c2438ed0819aeeed6e286338d0d85561faf73d4"
+    },
+    "intermediate": {
+      "path": "closed_universe_observers/certificates/BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR.json",
+      "result_id": "BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR",
+      "sha256": "b44bf2a0131180260cbda339c6e3b7da9a6f200122310587e53028fe1c39d8e5"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "profiles": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+      "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"
+    },
+    "spectral": {
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "even_fraction_rows": [
+    {
+      "actual_basis_index_over_two_j": "1/8",
+      "basis_index": 64,
+      "declared_even_index_fraction": "1/8",
+      "diagonal_distance": 384,
+      "interval": {
+        "lower": "4445199954011845347846936067/9903520314283042199192993792",
+        "upper": "20990440976064291506727239375/39614081257132168796771975168",
+        "width": "3209641160016910115339495107/39614081257132168796771975168"
+      },
+      "m": "-192",
+      "subdivisions_per_axis": 64,
+      "two_j": 512
+    },
+    {
+      "actual_basis_index_over_two_j": "1/4",
+      "basis_index": 128,
+      "declared_even_index_fraction": "1/4",
+      "diagonal_distance": 256,
+      "interval": {
+        "lower": "12083516372962411824113424323/19807040628566084398385987584",
+        "upper": "6742174545427829501736684073/9903520314283042199192993792",
+        "width": "1400832717893247179359943823/19807040628566084398385987584"
+      },
+      "m": "-128",
+      "subdivisions_per_axis": 64,
+      "two_j": 512
+    },
+    {
+      "actual_basis_index_over_two_j": "3/8",
+      "basis_index": 192,
+      "declared_even_index_fraction": "3/8",
+      "diagonal_distance": 128,
+      "interval": {
+        "lower": "28501501015731024247211614261/39614081257132168796771975168",
+        "upper": "7830188848291536328786623495/9903520314283042199192993792",
+        "width": "2819254377435121067934879719/39614081257132168796771975168"
+      },
+      "m": "-64",
+      "subdivisions_per_axis": 64,
+      "two_j": 512
+    }
+  ],
+  "flags": {
+    "ALL_ODD_REPRESENTATIONS_AND_CLOCK_POWERS_EVALUATED": false,
+    "COMPLETE_DIAGONAL_STREAM_EXPORTED": false,
+    "COVERAGE_MUTATION_REJECTED": true,
+    "DECLARED_EVEN_ODD_DIAGONAL_FRACTION_STREAM_EXPORTED": true,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "EVALUATED_SOBOLEV_NORM_EXPORTED": false,
+    "QUANTUM_CLAIM": false,
+    "SIX_DECLARED_FRACTION_WIDTHS_BELOW_ONE_TENTH": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false
+  },
+  "next_gate": "OPTIMIZE_AND_WIDEN_THE_DECLARED_FRACTION_STREAM_THEN_BUILD_POLARIZED_ROWS_WHILE_DERIVING_THE_MISSING_SOBOLEV_INPUTS",
+  "odd_companion_rows": [
+    {
+      "actual_basis_index_over_two_j": "64/513",
+      "basis_index": 64,
+      "declared_even_index_fraction": "1/8",
+      "diagonal_distance": 385,
+      "interval": {
+        "lower": "553331863735118090509770337/1237940039285380274899124224",
+        "upper": "10459950878205221915076745929/19807040628566084398385987584",
+        "width": "1606641058443332466920420537/19807040628566084398385987584"
+      },
+      "m": "-385/2",
+      "subdivisions_per_axis": 64,
+      "two_j": 513
+    },
+    {
+      "actual_basis_index_over_two_j": "128/513",
+      "basis_index": 128,
+      "declared_even_index_fraction": "1/4",
+      "diagonal_distance": 257,
+      "interval": {
+        "lower": "48197897103695310642842586013/79228162514264337593543950336",
+        "upper": "53803681766496137418682018053/79228162514264337593543950336",
+        "width": "700723082850103346979929005/9903520314283042199192993792"
+      },
+      "m": "-257/2",
+      "subdivisions_per_axis": 64,
+      "two_j": 513
+    },
+    {
+      "actual_basis_index_over_two_j": "64/171",
+      "basis_index": 192,
+      "declared_even_index_fraction": "3/8",
+      "diagonal_distance": 129,
+      "interval": {
+        "lower": "56898499573054989555017349959/79228162514264337593543950336",
+        "upper": "62538435922644714315943060239/79228162514264337593543950336",
+        "width": "704992043698715595115713785/9903520314283042199192993792"
+      },
+      "m": "-129/2",
+      "subdivisions_per_axis": 64,
+      "two_j": 513
+    }
+  ],
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_correlated_diagonal_fraction_stream.py",
+        "sha256": "11dfc9010993785f17e6df9b1f86e611d3ddd5b31300286ced8fe3abbb7fa90d"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_correlated_diagonal_fraction_stream.py",
+        "sha256": "aef0db35b7c7f12f0b05ec41356aa7be862b6442ba18f3aa6e300b37cd8eacda"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_correlated_diagonal_fraction_stream.py",
+        "sha256": "3d8abcb97b216c5168524848541c8d2a07850e037db77852d56c5988cf6a8799"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-correlated-diagonal-fraction-stream-v1.schema.json",
+        "sha256": "ac9504cb9585d0f61b9acdef1e8d9f507d5e7a161cdc5353ae16f3a327196dc0"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-correlated-diagonal-fraction-stream.md",
+        "sha256": "8081bac4d9de2fd077eecefc0a533759a8625e5be3ffe7c67da61facd78607b6"
+      }
+    ]
+  },
+  "result_id": "BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM",
+  "schema": "closed-universe-berger-correlated-diagonal-fraction-stream-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "sobolev_tail_preflight": {
+    "available_exact_inputs": [
+      "Berger scalar eigenvalue j(j+1)+31*m^2/9",
+      "exact left-invariant Berger frame and finite form-Laplacian constructor",
+      "fixed radius-1/128 positive-chart rod inverse and normalized flat-bump moments"
+    ],
+    "evaluated_sobolev_norm": false,
+    "identity": "||1_(Delta>Lambda) f||_L2 <= Lambda^(-N) ||Delta^N f||_L2",
+    "missing_input_ledger": [
+      {
+        "available": false,
+        "id": "profile_density_relative_to_berger_haar",
+        "need": "serialize the pushed-forward radius-1/128 detector density, including the rod/Haar Jacobian, as the scalar or form field to which Delta_Berger is applied"
+      },
+      {
+        "available": false,
+        "id": "clock_uniform_repeated_laplacian_norm",
+        "need": "directed enclosure of ||Delta_Berger^N rho_a(t)||_L2 uniformly on both detector clock windows for a declared N"
+      },
+      {
+        "available": false,
+        "id": "polarized_form_sobolev_norm",
+        "need": "the corresponding one-form/coderivative Sobolev norm after multiplying by the exact detector polarization"
+      },
+      {
+        "available": false,
+        "id": "green_weighted_tail_conversion",
+        "need": "a certified conversion from the scalar/form spectral cutoff to the full Maxwell and massive-two-form Green-weighted omitted shell"
+      }
+    ],
+    "route_status": "OPEN",
+    "validated_infinite_mode_tail": false
+  },
+  "stream_declaration": {
+    "adjacent_odd_two_j": 513,
+    "basis_indices": [
+      64,
+      128,
+      192
+    ],
+    "declared_even_index_fractions": [
+      "1/8",
+      "1/4",
+      "3/8"
+    ],
+    "even_two_j": 512,
+    "external_clock_power": 0,
+    "integrand": "{}_2F_1(-r,r+d+1;1;X) (1-X)^(d/2) cos(d atan2(sqrt(Z),sqrt(1-X-Z)))",
+    "interval_engine": "mpmath 1.3.0 iv directed rounding",
+    "subdivisions_per_axis": 64
+  }
+}

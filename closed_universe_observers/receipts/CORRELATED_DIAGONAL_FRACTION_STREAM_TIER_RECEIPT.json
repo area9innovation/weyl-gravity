@@ -1,0 +1,41 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "CORRELATED_DIAGONAL_FRACTION_STREAM_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The directed correlated p=0 Jacobi evaluator now covers declared basis indices r=64,128,192 in adjacent even/odd representations two_j=512,513. All six 64x64 widths are below 0.1. This is a selected diagonal-fraction stream, not a complete scalar or form rail. The Sobolev alternative remains OPEN because the Haar-relative pushed-forward detector density, clock-uniform repeated-Laplacian norm, polarized form norm and Green-weighted omitted-shell conversion are not certified. No infinite tail, Green image, detector response, recoil, tangent-cone restriction, Bridge 3, finite-r/all-orders observer-morphism stability or quantum claim is promoted. The coefficientwise mixed epsilon_R^2 kappa unary prerequisite remains ordered before apparatus q2,q3 and the affine-K_Berger observer morphism.",
+  "tier_0": [
+    {"command": "python3 -m py_compile on the producer, verifier and test; JSON/schema parse; git diff --check on scoped paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_correlated_diagonal_fraction_stream.py", "elapsed_seconds": 0.60, "status": "PASS", "summary": "4 tests passed, covering six even/odd fraction widths, fail-closed Sobolev inputs, deleted-row rejection and width-boundary rejection."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_correlated_diagonal_fraction_stream", "status": "PASS", "summary": "Schema, source/dependency hashes, exact row coverage, widths, missing-input ledger and scoped-open flags passed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The generated observer atlas and shared fail-closed schema passed; detector response, complete rail and infinite tail remain OPEN."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_correlated_diagonal_fraction_stream --check", "elapsed_seconds": 33.40, "status": "PASS", "summary": "All six directed fraction rows were reevaluated in three worker processes and the certificate matched byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No complete scalar/form rail, infinite-mode theorem, Green image, detector-response lifecycle promotion, shared core-algebra change, freeze or release was claimed."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_correlated_diagonal_fraction_stream.py", "sha256": "11dfc9010993785f17e6df9b1f86e611d3ddd5b31300286ced8fe3abbb7fa90d"},
+    {"path": "closed_universe_observers/verify_berger_correlated_diagonal_fraction_stream.py", "sha256": "aef0db35b7c7f12f0b05ec41356aa7be862b6442ba18f3aa6e300b37cd8eacda"},
+    {"path": "closed_universe_observers/tests/test_berger_correlated_diagonal_fraction_stream.py", "sha256": "3d8abcb97b216c5168524848541c8d2a07850e037db77852d56c5988cf6a8799"},
+    {"path": "closed_universe_observers/schema/berger-correlated-diagonal-fraction-stream-v1.schema.json", "sha256": "ac9504cb9585d0f61b9acdef1e8d9f507d5e7a161cdc5353ae16f3a327196dc0"},
+    {"path": "closed_universe_observers/reports/berger-correlated-diagonal-fraction-stream.md", "sha256": "8081bac4d9de2fd077eecefc0a533759a8625e5be3ffe7c67da61facd78607b6"},
+    {"path": "closed_universe_observers/certificates/BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM.json", "sha256": "6289821dbfb1e6df2ce6f606d5818f41db803f6b91ff27fef9e9c0197a6212a6"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "6c27d018d291482dd42330856727d98576f7bd8b854d7c3bbc2419f45ea65d63"}
+  ],
+  "claim_flags": {
+    "DECLARED_EVEN_ODD_DIAGONAL_FRACTION_STREAM_EXPORTED": true,
+    "SIX_DECLARED_FRACTION_WIDTHS_BELOW_ONE_TENTH": true,
+    "COVERAGE_MUTATION_REJECTED": true,
+    "COMPLETE_DIAGONAL_STREAM_EXPORTED": false,
+    "ALL_ODD_REPRESENTATIONS_AND_CLOCK_POWERS_EVALUATED": false,
+    "EVALUATED_SOBOLEV_NORM_EXPORTED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

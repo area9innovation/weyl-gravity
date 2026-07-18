@@ -375,10 +375,17 @@ and extend it across intermediate Jacobi diagonals, not another termwise or
 temporal approximation.  The first intermediate extension is now certified:
 the adjacent even/odd `two_j=512,513`, `r=128` widths are approximately
 `0.07072` and `0.07075` on a `64 x 64` grid, while the halved-resolution even
-mutation remains about `0.14099`.  The active gate is a declared
-diagonal-fraction stream with further odd sentinels.  The nonlinear apparatus
-dependency is also explicit and ordered by content hash: the normalized
-mixed `epsilon_R^2 kappa` unary certificate precedes apparatus `q2,q3`, which
+mutation remains about `0.14099`.  The declared-fraction successor now
+certifies `r/512=1/8,1/4,3/8` and their adjacent odd `two_j=513` companions;
+all six `64 x 64` widths lie between approximately `0.0707` and `0.0812`.
+This is not a complete diagonal stream.  The evaluated-Sobolev route also
+remains fail-closed pending a Haar-relative detector density, clock-uniform
+repeated-Laplacian norm, polarized form norm and Green-weighted tail
+conversion.  The active gate is to optimize and widen the declared fractions,
+then construct polarized rows while deriving those missing Sobolev inputs.
+The nonlinear apparatus dependency is explicit and ordered by content hash:
+the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
+`q2,q3`, which
 precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
 finite-`r`, fixed-background linear-`K`, full-`q4`, or all-orders stability.
 
@@ -1178,7 +1185,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative obstruction to a uniform tail at that cutoff, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | resolve the profile bandwidth by adaptive high modes or a physical-space Green chain, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative cutoff obstruction, correlated high-mode central/axial/intermediate scalar sentinels and a declared even/odd diagonal-fraction stream, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | widen and polarize the correlated profile stream or certify its Sobolev tail, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -1428,6 +1435,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT` (fired with evaluator obstruction) | construct a correlated axial oscillatory evaluator from the exact Jacobi factorization; do not reuse termwise independent moment intervals or infer a noncentral tail |
 | `BERGER_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR` (fired) | stream the selected `r=0`, `p=0` evaluator and extend the same directed correlated integration across intermediate Jacobi diagonals; do not infer a complete axial rail or tail from two high sentinels |
 | `BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR` (fired) | stream declared diagonal fractions and add further odd intermediate sentinels at validated resolution; do not infer a complete scalar or polarized rail from the adjacent `two_j=512,513` pair |
+| `BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM` (fired) | optimize and widen the declared fractions, then construct polarized rows while deriving the missing Haar-density, repeated-Laplacian and Green-tail inputs; do not infer a complete rail or Sobolev tail from six sentinels |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |
