@@ -16,6 +16,11 @@ class NariaiParentDetourMappingConeRepairTests(unittest.TestCase):
 
     def test_economical_carrier(self) -> None:
         self.assertEqual(self.value["carrier"]["total_rank"], 310)
+        self.assertEqual(self.value["carrier"]["metric_total_rank"], 26)
+        self.assertEqual(
+            sum((4, 9, 9, 4)),
+            self.value["carrier"]["metric_total_rank"],
+        )
         self.assertEqual(self.value["carrier"]["added_rank_over_obstructed_carrier"], 22)
         self.assertEqual(self.value["exact_checks"]["ker_p0_dimension"], 11)
 

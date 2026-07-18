@@ -567,7 +567,7 @@ def build() -> dict[str, object]:
             "total_rank": sum(BLOCK_RANKS),
             "metric_block_names": list(METRIC_NAMES),
             "metric_block_degrees": list(METRIC_DEGREES),
-            "metric_total_rank": 36,
+            "metric_total_rank": sum((4, 9, 9, 4)),
             "added_rank_over_obstructed_carrier": 22,
         },
         "construction": {
