@@ -1,10 +1,11 @@
 {
-  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate computes the two reference finite weighted traces of the longitudinal ghost Schur correction on the round unit four-sphere, after deleting the absent constant-gradient row and the five ell=1 conformal-Killing ghost zero modes. The answers are exact digamma/trigamma values for the declared Delta_0 weight. A finite-rank smoothing witness proves that no generic-background finite value follows from the existing complete-symbol and residue receipts: the full primed Green kernel or spectral measure is required. The result is a special-background benchmark, not a generic Schur determinant, multiplicative-anomaly coefficient, physical-Hessian result, complete Gamma1/Q1, Lorentzian QME, state, particle, positivity, scattering or unitarity theorem.",
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL certificate computes the two reference finite weighted traces and the canonical det_3 tail of the longitudinal ghost Schur correction on the round unit four-sphere, after deleting the absent constant-gradient row and the five ell=1 conformal-Killing ghost zero modes. The finite rows are exact digamma/trigamma values for the declared Delta_0 weight. The det_3 tail is enclosed by exact rational arithmetic with an explicit Euler-Maclaurin remainder, and their sum gives the selected round-S4 weighted modified determinant. A finite-rank smoothing witness proves that no generic-background finite value follows from the existing complete-symbol and residue receipts: the full primed Green kernel or spectral measure is required. The result is a special-background benchmark, not a generic Schur determinant, multiplicative-anomaly coefficient, physical-Hessian result, complete Gamma1/Q1, Lorentzian QME, state, particle, positivity, scattering or unitarity theorem.",
   "claim_flags": {
     "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
     "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
     "FULL_GENERIC_SCHUR_DETERMINANT_COMPUTED": false,
-    "FULL_ROUND_S4_DET3_TAIL_COMPUTED": false,
+    "FULL_ROUND_S4_DET3_TAIL_COMPUTED": true,
+    "FULL_ROUND_S4_MODIFIED_DETERMINANT_COMPUTED": true,
     "GENERIC_BACKGROUND_FINITE_R_K2_COMPUTED": false,
     "GENERIC_BACKGROUND_R_K_COMPUTED": false,
     "GENERIC_MULTIPLICATIVE_ANOMALY_COMPUTED": false,
@@ -51,6 +52,28 @@
         "definition": "R_Delta(K)-(1/2)FP R_Delta(K^2)",
         "exact": "-20/9-(7/3)[psi((7-sqrt(33))/2)+psi((7+sqrt(33))/2)]-(8/(3sqrt(33)))[psi1((7-sqrt(33))/2)-psi1((7+sqrt(33))/2)]"
       }
+    },
+    "canonical_det3_tail": {
+      "certified_common_decimal_prefix": "0.4981635654196290984312532999414818723861192934",
+      "definition": "log det_3(I+K)=sum_(ell>=2)d_ell[log(1+k_ell)-k_ell+k_ell^2/2]",
+      "interval_width_decimal_upper": "0.00000000000000000000000000000000000000000000000579295510772539326681824008403787714093393689372773685927335",
+      "lower_endpoint_decimal": "0.498163565419629098431253299941481872386119293406671433517985",
+      "mode_eigenvalue": "k_ell=2/[ell(ell+3)-6]",
+      "proof_method": "exact Fraction arithmetic; even alternating-log enclosures for ell=2..20; binomial Hurwitz-zeta tail; rational Euler-Maclaurin remainder using zeta(2r)<2 and 2pi>6",
+      "proof_parameters": {
+        "direct_log_taylor_order": 180,
+        "hurwitz_euler_maclaurin_order": 22,
+        "hurwitz_finite_terms": 20,
+        "last_direct_mode": 20,
+        "tail_binomial_order": 24,
+        "tail_log_taylor_order": 24
+      },
+      "upper_endpoint_decimal": "0.498163565419629098431253299941481872386119293412464388625712"
+    },
+    "full_modified_determinant": {
+      "definition": "log Det_(3,R_Delta)(S_L)=log det_3(I+K)+R_Delta(K)-(1/2)FP R_Delta(K^2)",
+      "high_precision_decimal": "-3.978145485615411627475395554805986920582166193298890172",
+      "status": "ROUND_S4_WEIGHTED_MODIFIED_DETERMINANT_COMPUTED"
     },
     "parameters": {
       "a": "sqrt(33)/2",
@@ -99,8 +122,8 @@
     }
   ],
   "result_id": "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES",
-  "result_state": "ROUND_S4_SCHUR_REFERENCE_FINITE_WEIGHTED_TRACES_COMPUTED",
-  "schema": "quantum-weyl-round-s4-ghost-schur-finite-weighted-traces-v1",
+  "result_state": "ROUND_S4_SCHUR_REFERENCE_MODIFIED_DETERMINANT_COMPUTED",
+  "schema": "quantum-weyl-round-s4-ghost-schur-finite-weighted-traces-v2",
   "scope": {
     "background": "round unit S4",
     "comparison_weight": "B=Delta_0-6, positive on ell>=2",

@@ -95,15 +95,48 @@ R_Delta(K) -(1/2)FP R_Delta(K^2)
 ```
 
 The last line is the finite low-order part of the modified-determinant split.
-The convergent `det_3` tail is not evaluated in this certificate.
+
+## Canonical modified-determinant tail
+
+The remaining series is absolutely convergent:
+
+```text
+log det_3(I+K)
+  = sum_(ell>=2) d_ell [log(1+k_ell)-k_ell+k_ell^2/2],
+k_ell = 2/[ell(ell+3)-6].
+```
+
+This is not certified by a floating-point truncation.  Modes `ell=2,...,20`
+use even alternating-log Taylor bounds in exact rational arithmetic.  The
+infinite remainder is expanded into positive shifted-zeta tails; each
+Hurwitz-zeta value has an Euler--Maclaurin rational enclosure, with its
+periodic-Bernoulli remainder bounded using `zeta(2r)<2` and `2pi>6`.  The
+result is
+
+```text
+0.4981635654196290984312532999414818723861192934066714...
+  < log det_3(I+K) <
+0.4981635654196290984312532999414818723861192934124644...,
+```
+
+an interval of width below `5.8e-48`.  An independent `mpmath.nsum` replay
+of the original mode series lies strictly inside this enclosure.
+
+Consequently the selected weighted modified determinant is
+
+```text
+log Det_(3,R_Delta)(S_L)
+  = log det_3(I+K)+R_Delta(K)-(1/2)FP R_Delta(K^2)
+  = -3.97814548561541162747539555480598692058216619330...
+```
 
 ## Claim boundary
 
-This closes the two reference finite rows on one fully declared Euclidean
+This closes the two reference finite rows, the canonical `det_3` tail and
+their selected weighted modified determinant on one fully declared Euclidean
 background. It does not compute their generic-background values, a generic
-multiplicative anomaly, the full round-sphere `det_3` tail, the physical
-fourth-order Hessian, complete `Gamma_1/Q_1`, or any Lorentzian quantum
-statement.
+multiplicative anomaly, the physical fourth-order Hessian, complete
+`Gamma_1/Q_1`, or any Lorentzian quantum statement.
 
 ## Replay
 

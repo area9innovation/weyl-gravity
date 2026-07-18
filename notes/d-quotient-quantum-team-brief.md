@@ -911,7 +911,11 @@ after deleting the absent constant-gradient row and five degree-one
 conformal-Killing ghost zero modes:
 `R_Delta(K)=-3.0967576144286354...` and
 `FP R_Delta(K^2)=2.7591028732128106...`, with exact digamma/trigamma
-expressions. A finite-rank smoothing witness proves that the generic rows
+expressions. Exact rational alternating-series and Euler--Maclaurin bounds
+also give `log det_3(I+K)=0.49816356541962909843125329994148...` with
+enclosure width below `5.8e-48`, and therefore
+`log Det_(3,R_Delta)(S_L)=-3.97814548561541162747539555480599...`.
+A finite-rank smoothing witness proves that the generic rows
 cannot follow from local symbols or residues: they require the full primed
 Green kernel or spectral measure. Any local multiplicative anomaly remains
 open, as does the generic
@@ -929,7 +933,8 @@ The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient. Its three
 longitudinal `D_W` towers are now one normalized scalar Schur series, with the
-canonical `det_3` tail and all three Schur residue rows fixed. The remaining
+all three Schur residue rows fixed and the round-`S4` canonical `det_3` tail
+and weighted modified determinant computed. The remaining
 local gate begins with supplying the generic primed Green/spectral carrier
 needed to lift the exact round-`S4` finite benchmark, together with any local
 zeta term and the physical fourth-order
@@ -1007,10 +1012,15 @@ are recorded in
 The exact generic Diff--Weyl ghost Schur operator and the direct minimal-CPT
 architecture obstruction are recorded in
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](../quantum-weyl/reports/generic-background-diff-weyl-ghost-cpt-obstruction.md).
-The sharp four-dimensional Schatten split and canonical `det_3` tail are recorded in
+The sharp four-dimensional Schatten split and existence of the canonical
+`det_3` tail are recorded in
 [`generic-background-ghost-schur-schatten-split.md`](../quantum-weyl/reports/generic-background-ghost-schur-schatten-split.md).
 The exact `Wres(K)`, `Wres(K^2)`, and `Wres(log S_L)` rows are recorded in
 [`generic-background-ghost-schur-wodzicki-residue.md`](../quantum-weyl/reports/generic-background-ghost-schur-wodzicki-residue.md).
+The exact round-`S4` finite rows, rigorously enclosed `det_3` tail, weighted
+modified determinant, and generic missing-global-carrier theorem are recorded
+in
+[`round-s4-ghost-schur-finite-weighted-traces.md`](../quantum-weyl/reports/round-s4-ghost-schur-finite-weighted-traces.md).
 Its exact constructive reduction is recorded in
 [`generic-background-ghost-endo-duhamel-reduction.md`](../quantum-weyl/reports/generic-background-ghost-endo-duhamel-reduction.md).
 The exact Hodge-resolvent closure of the `n=1,n=2` nonminimal architecture is

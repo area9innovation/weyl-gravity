@@ -15,7 +15,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 CERTIFICATE = HERE / "certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json"
-SCHEMA = HERE / "schema/round-s4-ghost-schur-finite-weighted-traces-v1.schema.json"
+SCHEMA = HERE / "schema/round-s4-ghost-schur-finite-weighted-traces-v2.schema.json"
 
 
 def _sha256(path: Path) -> str:
@@ -79,6 +79,33 @@ def main() -> int:
     assert abs(_stored_decimal(payload, "FP_R_Delta_K2") - r_delta_k2) < tolerance
     assert abs(_stored_decimal(payload, "low_order_renormalized_split") - low) < tolerance
 
+    # Independent summation of the absolutely convergent modified-determinant
+    # tail.  This does not reuse the producer's rational Taylor/Hurwitz/
+    # Euler--Maclaurin enclosure.
+    def det3_mode(ell_value: mp.mpf) -> mp.mpf:
+        eigenvalue = ell_value * (ell_value + 3)
+        degeneracy = (2 * ell_value + 3) * (ell_value + 2) * (ell_value + 1) / 6
+        k_value = 2 / (eigenvalue - 6)
+        return degeneracy * (
+            mp.log1p(k_value) - k_value + k_value * k_value / 2
+        )
+
+    det3_direct = mp.nsum(det3_mode, [2, mp.inf])
+    det3_payload = payload["exact_finite_rows"]["canonical_det3_tail"]
+    det3_lower = mp.mpf(det3_payload["lower_endpoint_decimal"])
+    det3_upper = mp.mpf(det3_payload["upper_endpoint_decimal"])
+    assert det3_lower < det3_direct < det3_upper
+    assert det3_payload["certified_common_decimal_prefix"].startswith(
+        "0.4981635654196290984312532999414818723861"
+    )
+    full_direct = low + det3_direct
+    full_stored = mp.mpf(
+        payload["exact_finite_rows"]["full_modified_determinant"][
+            "high_precision_decimal"
+        ]
+    )
+    assert abs(full_direct - full_stored) < mp.mpf("6e-48")
+
     # Independent continuation: subtract the known simple poles from the
     # convergent Hurwitz-zeta expansion and Richardson-extrapolate eps -> 0.
     eps = mp.mpf("2e-4")
@@ -111,8 +138,10 @@ def main() -> int:
     assert flags["ROUND_S4_FINITE_R_DELTA_K2_COMPUTED"] is True
     assert flags["GENERIC_BACKGROUND_R_K_COMPUTED"] is False
     assert flags["GENERIC_MULTIPLICATIVE_ANOMALY_COMPUTED"] is False
-    assert flags["FULL_ROUND_S4_DET3_TAIL_COMPUTED"] is False
-    print("ROUND S4 GHOST SCHUR FINITE WEIGHTED TRACES: INDEPENDENT PASS")
+    assert flags["FULL_ROUND_S4_DET3_TAIL_COMPUTED"] is True
+    assert flags["FULL_ROUND_S4_MODIFIED_DETERMINANT_COMPUTED"] is True
+    assert flags["FULL_GENERIC_SCHUR_DETERMINANT_COMPUTED"] is False
+    print("ROUND S4 GHOST SCHUR MODIFIED DETERMINANT: INDEPENDENT PASS")
     return 0
 
 

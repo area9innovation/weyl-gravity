@@ -188,7 +188,7 @@ is explicitly unevaluated. See
 [`generic-background-ghost-longitudinal-schur-resummation.md`](../../reports/generic-background-ghost-longitudinal-schur-resummation.md).
 The sharp trace-ideal continuation is recorded in
 [`generic-background-ghost-schur-schatten-split.md`](../../reports/generic-background-ghost-schur-schatten-split.md):
-the canonical `det_3` tail and `Wres(K^2)` are computed, while `R(K)`, the
+the canonical `det_3` tail is defined and `Wres(K^2)` is computed, while `R(K)`, the
 finite part of `R(K^2)`, and any zeta multiplicative anomaly remain open.
 The successor
 [`generic-background-ghost-schur-wodzicki-residue.md`](../../reports/generic-background-ghost-schur-wodzicki-residue.md)
@@ -199,6 +199,8 @@ fixes the pole and scale response for the declared order-two weight. The
 round-sphere benchmark
 [`round-s4-ghost-schur-finite-weighted-traces.md`](../../reports/round-s4-ghost-schur-finite-weighted-traces.md)
 then computes both reference finite rows exactly in digamma/trigamma form.
-Its finite-rank smoothing witness proves that generic values require a full
-primed Green kernel or spectral measure; local symbol data cannot determine
-them.
+It also encloses the complete round-sphere `det_3` tail by exact rational
+alternating-series and Euler--Maclaurin bounds and computes the selected
+weighted modified determinant. Its finite-rank smoothing witness proves that
+generic values require a full primed Green kernel or spectral measure; local
+symbol data cannot determine them.

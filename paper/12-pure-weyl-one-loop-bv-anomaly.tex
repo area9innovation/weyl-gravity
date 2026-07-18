@@ -1307,14 +1307,28 @@ modified-determinant split is
  -\frac12\operatorname{FP}\mathcal R_{\Delta_0}(K^2)
  =-4.4763090510350407\ldots.
 \]
+The remaining canonical tail is absolutely convergent.  Exact alternating-
+series bounds on the first nineteen modes, followed by a rational
+Euler--Maclaurin enclosure of the Hurwitz-zeta tail, give
+\[
+ \boxed{
+ \log\det{}_3(I+K)
+ =0.4981635654196290984312532999414818723861192934\ldots,}
+\]
+with certified enclosure width below $5.8\times10^{-48}$.  Hence, for this
+declared weight and reference scale,
+\[
+ \boxed{
+ \log\operatorname{Det}_{3,\mathcal R_{\Delta_0}}(S_L)
+ =-3.9781454856154116274753955548059869205821661933\ldots.}
+\]
 This is a special-background benchmark, not the generic finite row.  Indeed,
 $K\mapsto K+T$ for arbitrary finite-rank smoothing $T$ preserves every
 homogeneous symbol and Wodzicki residue but shifts the two finite rows by
 $\operatorname{Tr}T$ and
 $\operatorname{Tr}(KT+TK+T^2)$.  Thus the generic values require the full
-primed Green kernel or equivalent spectral measure.  The convergent
-$\det_3$ tail and any separately factorized multiplicative anomaly remain
-open.
+primed Green kernel or equivalent spectral measure.  Any separately
+factorized multiplicative anomaly remains open.
 \end{proposition}
 
 \begin{proposition}[Exact ghost $n=3$ scalar-flat five-carrier projection]
@@ -1417,10 +1431,11 @@ architecture is now reduced exactly to five minimal vector/scalar resolvent
 carriers.  Their pure-vector physical sum is evaluated exactly from CPT rows
 1, 3 and 14.  The three longitudinal $D_W$ towers are exactly resummed into
 one normalized scalar Schur determinant.  Its order-$-2$ correction is proved
-to lie in $\mathcal S_3$, the canonical $\det_3$ tail exists, and
+to lie in $\mathcal S_3$, and
 $\operatorname{Wres}(K)$, $\operatorname{Wres}(K^2)$, and
 $\operatorname{Wres}\log S_L$ are exact.  The round-$S^4$ reference finite
-rows are exact as well, but the smoothing theorem shows that their generic
+rows, canonical $\det_3$ tail, and selected weighted modified determinant are
+complete as well, but the smoothing theorem shows that their generic
 counterparts require a full primed Green/spectral carrier.  That carrier,
 the possible local zeta term, and physical kernel, hence the
 five complete repository form-factor functions and

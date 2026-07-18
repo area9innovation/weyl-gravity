@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/quantum-weyl/round-s4-ghost-schur-finite-weighted-traces-v1.schema.json",
+  "$id": "https://example.invalid/quantum-weyl/round-s4-ghost-schur-finite-weighted-traces-v2.schema.json",
   "title": "Round S4 ghost Schur finite weighted traces",
   "type": "object",
   "additionalProperties": false,
@@ -23,13 +23,13 @@
   ],
   "properties": {
     "schema": {
-      "const": "quantum-weyl-round-s4-ghost-schur-finite-weighted-traces-v1"
+      "const": "quantum-weyl-round-s4-ghost-schur-finite-weighted-traces-v2"
     },
     "result_id": {
       "const": "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES"
     },
     "result_state": {
-      "const": "ROUND_S4_SCHUR_REFERENCE_FINITE_WEIGHTED_TRACES_COMPUTED"
+      "const": "ROUND_S4_SCHUR_REFERENCE_MODIFIED_DETERMINANT_COMPUTED"
     },
     "lifecycle_state": {
       "const": "SPECIAL_BACKGROUND_BENCHMARK_COMPLETE_GENERIC_FINITE_ROWS_OPEN"
@@ -47,13 +47,17 @@
         "parameters",
         "shifted_zeta_finite_parts",
         "weight_change",
-        "Delta_weighted_finite_rows"
+        "Delta_weighted_finite_rows",
+        "canonical_det3_tail",
+        "full_modified_determinant"
       ],
       "properties": {
         "parameters": {"type": "object"},
         "shifted_zeta_finite_parts": {"type": "object"},
         "weight_change": {"type": "object"},
-        "Delta_weighted_finite_rows": {"type": "object"}
+        "Delta_weighted_finite_rows": {"type": "object"},
+        "canonical_det3_tail": {"type": "object"},
+        "full_modified_determinant": {"type": "object"}
       }
     },
     "generic_missing_input_theorem": {"$ref": "#/$defs/stringMap"},
@@ -69,6 +73,7 @@
         "GENERIC_BACKGROUND_FINITE_R_K2_COMPUTED",
         "GENERIC_MULTIPLICATIVE_ANOMALY_COMPUTED",
         "FULL_ROUND_S4_DET3_TAIL_COMPUTED",
+        "FULL_ROUND_S4_MODIFIED_DETERMINANT_COMPUTED",
         "FULL_GENERIC_SCHUR_DETERMINANT_COMPUTED",
         "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED",
         "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",

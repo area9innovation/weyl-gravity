@@ -55,6 +55,8 @@ def main() -> None:
         "Order-two weighted-trace pole and scale row",
         "\\frac{\\dd}{\\dd\\log\\mu}",
         "Exact round-$S^4$ finite Schur benchmark",
+        "0.4981635654196290984312532999414818723861192934",
+        "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
     ]
     for fragment in required_manuscript_fragments:
@@ -233,6 +235,12 @@ def main() -> None:
     assert claims["round_S4_ghost_Schur_low_order_split"]["decimal"].startswith(
         "-4.4763090510350407"
     )
+    assert claims["round_S4_ghost_Schur_det3_tail"][
+        "certified_common_decimal_prefix"
+    ].startswith("0.4981635654196290984312532999414818723861")
+    assert claims["round_S4_ghost_Schur_weighted_modified_determinant"][
+        "high_precision_decimal"
+    ].startswith("-3.9781454856154116274753955548059869205821")
     assert claims["generic_Schur_finite_rows_minimal_missing_input"] == (
         "the full primed Green/resolvent kernel or equivalent complete spectral measure on the selected background"
     )
@@ -485,6 +493,15 @@ def main() -> None:
     assert round_s4_ghost_schur_finite["exact_finite_rows"][
         "Delta_weighted_finite_rows"
     ]["FP_R_Delta_K2"] == claims["round_S4_ghost_Schur_FP_R_Delta_K2"]
+    assert round_s4_ghost_schur_finite["exact_finite_rows"][
+        "canonical_det3_tail"
+    ] == claims["round_S4_ghost_Schur_det3_tail"]
+    assert round_s4_ghost_schur_finite["exact_finite_rows"][
+        "full_modified_determinant"
+    ] == claims["round_S4_ghost_Schur_weighted_modified_determinant"]
+    assert round_s4_ghost_schur_finite["claim_flags"][
+        "FULL_ROUND_S4_DET3_TAIL_COMPUTED"
+    ] is True
     assert round_s4_ghost_schur_finite["claim_flags"][
         "GENERIC_BACKGROUND_R_K_COMPUTED"
     ] is False

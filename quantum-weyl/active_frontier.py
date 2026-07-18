@@ -175,7 +175,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_ghost_Schur_Schatten_split": "SCHUR_CORRECTION_IN_S3_WITH_CANONICAL_DET3_TAIL_AND_EXACT_CRITICAL_K2_RESIDUE",
         "generic_ghost_Schur_Wodzicki_residue": "SCHUR_K_AND_LOGARITHM_WODZICKI_RESIDUES_COMPUTED",
         "generic_ghost_Schur_weighted_trace_scale": "ORDER_TWO_WEIGHTED_TRACE_POLE_AND_SCALE_RESPONSE_COMPUTED",
-        "round_S4_ghost_Schur_finite_weighted_traces": "ROUND_S4_SCHUR_REFERENCE_FINITE_WEIGHTED_TRACES_COMPUTED",
+        "round_S4_ghost_Schur_finite_weighted_traces": "ROUND_S4_SCHUR_REFERENCE_MODIFIED_DETERMINANT_COMPUTED",
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
@@ -718,6 +718,18 @@ def _load() -> dict[str, dict[str, Any]]:
             "ROUND_S4_FINITE_R_DELTA_K2_COMPUTED"
         )
         is not True
+        or round_s4_ghost_schur_finite.get("claim_flags", {}).get(
+            "FULL_ROUND_S4_DET3_TAIL_COMPUTED"
+        )
+        is not True
+        or round_s4_ghost_schur_finite.get("claim_flags", {}).get(
+            "FULL_ROUND_S4_MODIFIED_DETERMINANT_COMPUTED"
+        )
+        is not True
+        or not round_s4_ghost_schur_finite.get("exact_finite_rows", {})
+        .get("canonical_det3_tail", {})
+        .get("certified_common_decimal_prefix", "")
+        .startswith("0.4981635654196290984312532999414818723861")
         or round_s4_ghost_schur_finite.get("claim_flags", {}).get(
             "GENERIC_BACKGROUND_R_K_COMPUTED"
         )
@@ -1856,6 +1868,8 @@ def build() -> dict[str, Any]:
             "ZETA_SCALE_COEFFICIENT_COMPUTED": True,
             "ROUND_S4_SCHUR_R_K_COMPUTED": True,
             "ROUND_S4_SCHUR_FINITE_R_K2_COMPUTED": True,
+            "ROUND_S4_SCHUR_DET3_TAIL_COMPUTED": True,
+            "ROUND_S4_SCHUR_MODIFIED_DETERMINANT_COMPUTED": True,
             "GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER": True,
             "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED": False,
             "ZETA_FACTORIZATION_WITHOUT_LOCAL_MULTIPLICATIVE_ANOMALY_PROVED": False,
@@ -2013,7 +2027,7 @@ def build() -> dict[str, Any]:
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. "
             "For the declared order-two scalar weight Q_mu=(Delta_0+Pi_0)/mu^2, the weighted-trace pole and scale conversion are exact: d/dlog(mu) log Det_(3,R_mu)(S_L)=Wres(log S_L). The reference-scale finite R(K), finite R(K^2), and possible "
-            "local zeta multiplicative term remain open generically. On the round unit S4 fixture, after deleting the absent ell=0 gradient and five ell=1 conformal-Killing zero modes, both reference finite rows are exact digamma/trigamma values. A finite-rank smoothing witness proves that the full primed Green kernel or spectral measure is necessary for their generic-background values. "
+            "local zeta multiplicative term remain open generically. On the round unit S4 fixture, after deleting the absent ell=0 gradient and five ell=1 conformal-Killing zero modes, both reference finite rows are exact digamma/trigamma values, the canonical det_3 tail has an exact rational enclosure of width below 5.8e-48, and their selected weighted modified determinant is -3.9781454856154116... . A finite-rank smoothing witness proves that the full primed Green kernel or spectral measure is necessary for their generic-background values. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
@@ -2056,7 +2070,7 @@ def build() -> dict[str, Any]:
             "Wres(K)=(4 pi)^-2 integral(R^2+4 Ric^2)/9, "
             "Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27, and "
             "Wres(log S_L)=(4 pi)^-2 integral(5R^2+22Ric^2)/54. Ordinary trace-class "
-            "determinacy is not implied. The selected order-two weight fixes the pole and scale normalization, and the round-S4 spectrum fixes both reference finite constants after the certified zero-mode deletion. A finite-rank smoothing witness proves that generic finite constants still require the full primed Green/spectral carrier. The det_3 tail and a possible local multiplicative-anomaly term remain open. "
+            "determinacy is not implied. The selected order-two weight fixes the pole and scale normalization, and the round-S4 spectrum fixes both reference finite constants after the certified zero-mode deletion. Exact rational alternating-series and Euler--Maclaurin bounds also fix the round-S4 det_3 tail and selected weighted modified determinant. A finite-rank smoothing witness proves that generic finite constants still require the full primed Green/spectral carrier. A possible local multiplicative-anomaly term remains open. "
             "The five parity-even third-curvature repository functions and "
             "coefficients, the parity-odd derivative manifest, renormalized "
             "BV Laplacian or time-ordered product, finite normalization conditions, and global Green data "
@@ -2332,6 +2346,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("ZETA_SCALE_COEFFICIENT_COMPUTED") is not True
         or flags.get("ROUND_S4_SCHUR_R_K_COMPUTED") is not True
         or flags.get("ROUND_S4_SCHUR_FINITE_R_K2_COMPUTED") is not True
+        or flags.get("ROUND_S4_SCHUR_DET3_TAIL_COMPUTED") is not True
+        or flags.get("ROUND_S4_SCHUR_MODIFIED_DETERMINANT_COMPUTED") is not True
         or flags.get("GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER") is not True
         or flags.get("ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED") is not False
         or flags.get("GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED")
@@ -2486,6 +2502,8 @@ def validate(result: dict[str, Any]) -> None:
             "ZETA_SCALE_COEFFICIENT_COMPUTED",
             "ROUND_S4_SCHUR_R_K_COMPUTED",
             "ROUND_S4_SCHUR_FINITE_R_K2_COMPUTED",
+            "ROUND_S4_SCHUR_DET3_TAIL_COMPUTED",
+            "ROUND_S4_SCHUR_MODIFIED_DETERMINANT_COMPUTED",
             "GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER",
         }
     ):

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from decimal import Decimal
 import unittest
 
 from jsonschema import Draft202012Validator
@@ -45,11 +46,32 @@ class RoundS4GhostSchurFiniteWeightedTracesTests(unittest.TestCase):
         low = exact["Delta_weighted_finite_rows"]["low_order_renormalized_split"]
         self.assertAlmostEqual(float(low["decimal"]), -4.476309051035041)
 
+    def test_rigorously_enclosed_det3_tail_and_modified_determinant(self) -> None:
+        exact = self.value["exact_finite_rows"]
+        det3 = exact["canonical_det3_tail"]
+        lower = Decimal(det3["lower_endpoint_decimal"])
+        upper = Decimal(det3["upper_endpoint_decimal"])
+        self.assertLess(lower, upper)
+        self.assertAlmostEqual(float((lower + upper) / 2), 0.4981635654196291)
+        self.assertTrue(
+            det3["certified_common_decimal_prefix"].startswith(
+                "0.4981635654196290984312532999414818723861"
+            )
+        )
+        full = exact["full_modified_determinant"]
+        self.assertAlmostEqual(float(full["high_precision_decimal"]), -3.9781454856154116)
+        self.assertEqual(
+            full["status"], "ROUND_S4_WEIGHTED_MODIFIED_DETERMINANT_COMPUTED"
+        )
+
     def test_generic_claim_remains_fail_closed(self) -> None:
         flags = self.value["claim_flags"]
         self.assertTrue(flags["ROUND_S4_R_DELTA_K_COMPUTED"])
         self.assertFalse(flags["GENERIC_BACKGROUND_R_K_COMPUTED"])
         self.assertFalse(flags["GENERIC_MULTIPLICATIVE_ANOMALY_COMPUTED"])
+        self.assertTrue(flags["FULL_ROUND_S4_DET3_TAIL_COMPUTED"])
+        self.assertTrue(flags["FULL_ROUND_S4_MODIFIED_DETERMINANT_COMPUTED"])
+        self.assertFalse(flags["FULL_GENERIC_SCHUR_DETERMINANT_COMPUTED"])
         self.assertEqual(
             self.value["generic_missing_input_theorem"]["status"],
             "MINIMAL_MISSING_GLOBAL_CARRIER_THEOREM",

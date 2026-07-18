@@ -262,6 +262,14 @@ class ActiveFrontierTests(unittest.TestCase):
             self.payload["claim_flags"]["ROUND_S4_SCHUR_FINITE_R_K2_COMPUTED"]
         )
         self.assertTrue(
+            self.payload["claim_flags"]["ROUND_S4_SCHUR_DET3_TAIL_COMPUTED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "ROUND_S4_SCHUR_MODIFIED_DETERMINANT_COMPUTED"
+            ]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["GENERIC_SCHUR_FINITE_ROWS_REQUIRE_GLOBAL_CARRIER"]
         )
         self.assertFalse(
