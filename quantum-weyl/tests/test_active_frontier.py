@@ -47,6 +47,9 @@ class ActiveFrontierTests(unittest.TestCase):
             self.payload["claim_flags"]["FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND"]
         )
         self.assertTrue(
+            self.payload["claim_flags"]["FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY"]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED"]
         )
         self.assertTrue(

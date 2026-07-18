@@ -42,13 +42,20 @@
     },
     "cancellations": {
       "type": "object", "additionalProperties": false,
-      "required": ["contractible_pairs_status", "scalar_ghost_reduction_status", "scalar_ghost_input_rank", "scalar_ghost_output_rank", "nonminimal_Berezinian_status", "proof_artifact"],
+      "required": ["contractible_pairs_status", "scalar_ghost_reduction_status", "scalar_ghost_input_rank", "scalar_ghost_output_rank", "scalar_ghost_input_generator_ids", "scalar_ghost_output_repository_factor_id", "nonminimal_Berezinian_status", "cancelled_repository_factor_ids", "cancelled_integration_row_ids", "factor_coverage_status", "integration_row_coverage_status", "determinant_exponent_balance_status", "proof_artifact"],
       "properties": {
         "contractible_pairs_status": {"const": "VERIFIED"},
         "scalar_ghost_reduction_status": {"const": "VERIFIED"},
         "scalar_ghost_input_rank": {"const": 2},
         "scalar_ghost_output_rank": {"const": 1},
+        "scalar_ghost_input_generator_ids": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "scalar_ghost_output_repository_factor_id": {"type": "string", "minLength": 1},
         "nonminimal_Berezinian_status": {"const": "VERIFIED"},
+        "cancelled_repository_factor_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "cancelled_integration_row_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "factor_coverage_status": {"const": "VERIFIED"},
+        "integration_row_coverage_status": {"const": "VERIFIED"},
+        "determinant_exponent_balance_status": {"const": "VERIFIED"},
         "proof_artifact": {"$ref": "#/$defs/artifact"}
       }
     },
@@ -102,17 +109,19 @@
     },
     "mapBase": {
       "type": "object", "additionalProperties": false,
-      "required": ["target_factor_id", "repository_factor_ids", "status", "proof_artifact"],
+      "required": ["target_factor_id", "target_bundle_rank", "target_determinant_sign", "repository_factor_ids", "status", "proof_artifact"],
       "properties": {
         "target_factor_id": {"type": "string"},
+        "target_bundle_rank": {"type": "integer", "minimum": 1},
+        "target_determinant_sign": {"enum": [-1, 1]},
         "repository_factor_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
         "status": {"const": "VERIFIED"},
         "proof_artifact": {"$ref": "#/$defs/artifact"}
       }
     },
-    "mapPhysical0": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "physical_depth_0"}}}]},
-    "mapGhost0": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "ghost_depth_0"}}}]},
-    "mapPhysical1": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "physical_depth_1"}}}]},
-    "mapGhost1": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "ghost_depth_1"}}}]}
+    "mapPhysical0": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "physical_depth_0"}, "target_bundle_rank": {"const": 5}, "target_determinant_sign": {"const": 1}}}]},
+    "mapGhost0": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "ghost_depth_0"}, "target_bundle_rank": {"const": 1}, "target_determinant_sign": {"const": -1}}}]},
+    "mapPhysical1": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "physical_depth_1"}, "target_bundle_rank": {"const": 5}, "target_determinant_sign": {"const": 1}}}]},
+    "mapGhost1": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "ghost_depth_1"}, "target_bundle_rank": {"const": 3}, "target_determinant_sign": {"const": -1}}}]}
   }
 }

@@ -42,6 +42,15 @@ def verify() -> dict:
     rows = checked["standard_factor_multiplicities"]["rows"]
     if sum(row["determinant_sign"] * row["bundle_rank"] for row in rows) != 6:
         raise ValueError("independent signed-rank replay failed")
+    receiver = checked["receiver_mechanics"]["receipt"]
+    if (
+        receiver["target_bundle_ranks"] != [5, 1, 5, 3]
+        or receiver["target_signed_rank"] != 6
+        or receiver["scalar_ghost_input_rank"] != 2
+        or receiver["scalar_ghost_output_rank"] != 1
+        or receiver["status"] != "SEMANTIC_RECEIVER_ACCEPTED"
+    ):
+        raise ValueError("multiplicity semantic receiver mechanics drifted")
     ranks = checked["exact_rank_decomposition"]
     if (
         ranks["scalar_ghost_candidate_rank"]

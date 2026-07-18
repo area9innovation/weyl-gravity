@@ -3,7 +3,7 @@
   "$id": "https://area9.dk/schemas/quantum-weyl-repository-full-bv-multiplicity-preflight-v1.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "accepted_export", "standard_factor_multiplicities", "covariant_BV_component_inventory", "exact_rank_decomposition", "factor_origin_bridge", "forbidden_shortcut_audit", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "accepted_export", "receiver_mechanics", "standard_factor_multiplicities", "covariant_BV_component_inventory", "exact_rank_decomposition", "factor_origin_bridge", "forbidden_shortcut_audit", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
   "properties": {
     "schema": {"const": "quantum-weyl-repository-full-bv-multiplicity-preflight-v1"},
     "result_id": {"const": "REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT"},
@@ -16,7 +16,28 @@
         "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
         "schema": "quantum-weyl-repository-full-bv-multiplicity-export-v1",
         "schema_path": "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json",
-        "status": "RECEIVER_SCHEMA_READY_INPUT_NOT_RECEIVED"
+        "status": "SEMANTIC_RECEIVER_READY_INPUT_NOT_RECEIVED"
+      }
+    },
+    "receiver_mechanics": {
+      "const": {
+        "scope": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY",
+        "receipt": {
+          "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+          "integration_row_count": 5,
+          "repository_factor_count": 4,
+          "mapped_factor_count": 4,
+          "cancelled_factor_count": 0,
+          "target_bundle_ranks": [5, 1, 5, 3],
+          "target_signed_rank": 6,
+          "scalar_ghost_input_rank": 2,
+          "scalar_ghost_output_rank": 1,
+          "row_coverage_complete": true,
+          "factor_coverage_complete": true,
+          "nested_artifact_count": 11,
+          "status": "SEMANTIC_RECEIVER_ACCEPTED"
+        },
+        "mutation_policy": "ORPHAN_ROWS_OR_FACTORS_DUPLICATE_MAPS_WRONG_TARGET_OR_FACTOR_RANKS_STATISTICS_SCALAR_MAP_DRIFT_AND_BAD_HASHES_REJECTED"
       }
     },
     "standard_factor_multiplicities": {
@@ -72,6 +93,7 @@
         "STANDARD_FACTOR_MULTIPLICITIES_COMPLETE": true,
         "COVARIANT_MINIMAL_COMPONENT_RANKS_COMPLETE": true,
         "SCALAR_GHOST_GAP_LOCALIZED_TO_RANK_ONE": true,
+        "MULTIPLICITY_EXPORT_SEMANTIC_RECEIVER_READY": true,
         "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
         "REPOSITORY_ELLIPTIC_COMPLEX_CERTIFIED": false,
         "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
@@ -84,7 +106,7 @@
     "provenance": {
       "type": "object", "additionalProperties": false,
       "required": ["source_sha256"],
-      "properties": {"source_sha256": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}}}
+      "properties": {"source_sha256": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}}}
     }
   },
   "$defs": {

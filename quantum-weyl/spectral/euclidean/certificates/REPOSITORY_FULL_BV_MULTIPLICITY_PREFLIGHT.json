@@ -3,11 +3,12 @@
     "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
     "schema": "quantum-weyl-repository-full-bv-multiplicity-export-v1",
     "schema_path": "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json",
-    "status": "RECEIVER_SCHEMA_READY_INPUT_NOT_RECEIVED"
+    "status": "SEMANTIC_RECEIVER_READY_INPUT_NOT_RECEIVED"
   },
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight computes the four standard determinant bundle ranks 5,1,5,3, their signed effective rank six, the covariant metric/diffeomorphism-ghost/Weyl-ghost component ranks 10,4,1, and the generic rank decompositions 10=5+4+1 and 4=3+1. It localizes the unmatched multiplicity problem to one scalar ghost rank plus the full analytic row/operator/Berezinian map. The 54-row Berger classical carrier is explicitly rejected as loop multiplicity authority because it contains antifields and contractible rows and is marked not a quantum loop operator. No Euclidean Lagrangian integration slice, full Hessian, scalar ghost cancellation, nonminimal determinant, zero-mode policy, measure, contour, repository coefficient, regulated Slavnov breaking, QME disposition, Cartan class, residual transfer, or Lorentzian theorem is claimed.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight computes the four standard determinant bundle ranks 5,1,5,3, their signed effective rank six, the covariant metric/diffeomorphism-ghost/Weyl-ghost component ranks 10,4,1, and the generic rank decompositions 10=5+4+1 and 4=3+1. It localizes the unmatched multiplicity problem to one scalar ghost rank plus the full analytic row/operator/Berezinian map and supplies a mutation-tested semantic receiver enforcing complete row/factor coverage, target ranks/signs, scalar-map consistency, and nested proof hashes. The 54-row Berger classical carrier is explicitly rejected as loop multiplicity authority because it contains antifields and contractible rows and is marked not a quantum loop operator. No Euclidean Lagrangian integration slice, full Hessian, scalar ghost cancellation, nonminimal determinant, zero-mode policy, measure, contour, repository coefficient, regulated Slavnov breaking, QME disposition, Cartan class, residual transfer, or Lorentzian theorem is claimed.",
   "claim_flags": {
     "COVARIANT_MINIMAL_COMPONENT_RANKS_COMPLETE": true,
+    "MULTIPLICITY_EXPORT_SEMANTIC_RECEIVER_READY": true,
     "QME_DISPOSITION": false,
     "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
     "REPOSITORY_ELLIPTIC_COMPLEX_CERTIFIED": false,
@@ -52,8 +53,8 @@
     "covariant_minimal_export": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
     "covariant_minimal_import": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8",
     "general_nonminimal_G2": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a",
-    "standard_auxiliary_match": "4c6182ebab8220ac9f99173bce5b4f11a32be04ce02b91031d1b88787d5a62ba",
-    "standard_factorization": "fef0cc5297f64583643c4456f788cee6a70cd3f8be7bc83264ae57dfdec7ba6f"
+    "standard_auxiliary_match": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be",
+    "standard_factorization": "2c1eaa0a1bf85004b21bf84aa0722c0e9622e6038011b5b2b00c9e82f6fb36d8"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -114,16 +115,41 @@
     "status": "EXACT_RANK_ONE_SCALAR_GHOST_AND_FULL_ANALYTIC_ROW_MAP_GAP"
   },
   "next_gate": "SUPPLY_REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_WITH_SCALAR_GHOST_AND_NONMINIMAL_CANCELLATION",
-  "proof_sha256": "c4e6d6b44a4c718f9b6b504befdb0b5b21448289c38def064aaca3a29ef74d8b",
+  "proof_sha256": "f7fe4c3d4e88a606125050c89dbad5563e27af373e4a53c24622b135ddbd9de0",
   "provenance": {
     "source_sha256": {
-      "quantum-weyl/reports/repository-full-bv-multiplicity-preflight.md": "990141bc54f75ab014db1fa4262700ee9788d517302c82e34745f8f1970ba8e3",
-      "quantum-weyl/spectral/euclidean/full_bv_multiplicity_preflight.py": "af72d2225450b4a503c754973f3e01688836032b46ae32aadba708b91697f5c7",
-      "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json": "fa5dd25a70726ab5465cb3a86bead918a791ce97f55f184879e0b337964ea6f9",
-      "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-preflight-v1.schema.json": "4a10f901735a6cd25f3f63e69362ab1b3774cb7223abc544219b5c439a4e2e21",
-      "quantum-weyl/spectral/euclidean/tests/test_full_bv_multiplicity_preflight.py": "248eb9bb91f506340e7255ee41e4e32bce3a071a861a44c3ce6ea48c4d86a4f6",
-      "quantum-weyl/spectral/euclidean/verify_full_bv_multiplicity_preflight.py": "0f1253cacfd578146a65ccb5d883cfdd6ea5c7e4c8f5d31da5393116664daf75"
+      "quantum-weyl/reports/repository-full-bv-multiplicity-preflight.md": "ff7c11dcea92aeb5e810f1858ef0aa20ba20a72a752353691962e84f2c0bf890",
+      "quantum-weyl/spectral/euclidean/full_bv_multiplicity_preflight.py": "4ff4667b1e43e87d756833c173f99e42451a665cbaafa5b4fb9eeb9e1dc0813d",
+      "quantum-weyl/spectral/euclidean/multiplicity_export_receiver.py": "9c57e44f8b0a47eb7f97e43249e52d32640bbbc3326a992ec8aa350baa8911f4",
+      "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json": "e1b601378cf2b0746cf491bbbc011fca56627934085293bb2276a81344a6afc3",
+      "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-preflight-v1.schema.json": "a2825238ad0759ddfa43e1883704c8ffb9a3b5e392caf80eb5acb4ba843a3b8d",
+      "quantum-weyl/spectral/euclidean/tests/test_full_bv_multiplicity_preflight.py": "96895ca97538bc21bfb4ff08c65edfa8d3996b07092851f0a6de67e978d95c52",
+      "quantum-weyl/spectral/euclidean/verify_full_bv_multiplicity_preflight.py": "d78b10bea4fede8c154898e19c383233247fefa3644bf2a4e6f2da9d30fb5afc"
     }
+  },
+  "receiver_mechanics": {
+    "mutation_policy": "ORPHAN_ROWS_OR_FACTORS_DUPLICATE_MAPS_WRONG_TARGET_OR_FACTOR_RANKS_STATISTICS_SCALAR_MAP_DRIFT_AND_BAD_HASHES_REJECTED",
+    "receipt": {
+      "cancelled_factor_count": 0,
+      "factor_coverage_complete": true,
+      "integration_row_count": 5,
+      "mapped_factor_count": 4,
+      "nested_artifact_count": 11,
+      "repository_factor_count": 4,
+      "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+      "row_coverage_complete": true,
+      "scalar_ghost_input_rank": 2,
+      "scalar_ghost_output_rank": 1,
+      "status": "SEMANTIC_RECEIVER_ACCEPTED",
+      "target_bundle_ranks": [
+        5,
+        1,
+        5,
+        3
+      ],
+      "target_signed_rank": 6
+    },
+    "scope": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY"
   },
   "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT",
   "result_state": "STANDARD_FACTOR_AND_COVARIANT_FIELD_RANKS_MATCHED_SCALAR_GHOST_AND_ANALYTIC_ROW_MAP_OPEN",

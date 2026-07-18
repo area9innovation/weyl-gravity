@@ -27,8 +27,11 @@ The
 derives the standard bundle ranks `(5,1,5,3)`, their signed rank six, and the
 covariant BV component decompositions. It localizes the remaining scalar
 ghost multiplicity problem to one rank and provides the strict
-`REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER` receiver schema. Classical carrier
-row counts are explicitly not treated as determinant multiplicities.
+`REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER` receiver schema and semantic
+validator. The receiver enforces complete integration-row and factor
+coverage, exact target ranks/signs, the scalar rank-two-to-rank-one map, and
+nested proof hashes. Classical carrier row counts are explicitly not treated
+as determinant multiplicities.
 The complete local gauge-fixed BV anomaly basis is now available on the
 regular Bach locus, so these numbers define candidate coordinates along
 `omega C2`, `omega E4`, and `omega C dual C`. This remains a standard background-anomaly result,

@@ -2,13 +2,17 @@ from __future__ import annotations
 
 from copy import deepcopy
 from fractions import Fraction
+import hashlib
 import json
+from pathlib import Path
+import tempfile
 import unittest
 
 from jsonschema import Draft202012Validator
 
 from anomalies.regulated_slavnov_breaking_preflight import (
     OUTPUT,
+    PROOF_RESULT_IDS,
     ROOT,
     SCHEMA,
     analysis,
@@ -17,6 +21,9 @@ from anomalies.regulated_slavnov_breaking_preflight import (
     validate_regulated_breaking_export,
 )
 from anomalies.verify_regulated_slavnov_breaking_preflight import verify
+from spectral.euclidean.multiplicity_export_receiver import (
+    synthetic_multiplicity_payload,
+)
 
 
 class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
@@ -62,6 +69,9 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         self.assertFalse(value["claim_flags"]["QME_OBSTRUCTED"])
         self.assertTrue(value["claim_flags"]["ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY"])
         self.assertTrue(value["claim_flags"]["FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND"])
+        self.assertTrue(
+            value["claim_flags"]["FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND"]
+        )
         self.assertEqual(
             value["minimal_missing_carrier_theorem"]["scalar_ghost_gap_rank"], 1
         )
@@ -126,6 +136,86 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             validate_regulated_breaking_export(
                 payload, repository_root=ROOT, allow_synthetic_fixture=True
             )
+
+    def test_actual_receiver_executes_semantic_multiplicity_validation(self) -> None:
+        def write_json(directory: Path, name: str, value: dict) -> dict[str, str]:
+            path = directory / name
+            path.write_text(json.dumps(value, sort_keys=True) + "\n")
+            return {
+                "format": "JSON_PROOF",
+                "path": str(path.relative_to(ROOT)),
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+
+        g2 = json.loads(
+            (
+                ROOT
+                / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json"
+            ).read_text()
+        )
+        with tempfile.TemporaryDirectory(
+            dir=ROOT / "quantum-weyl/anomalies/tests"
+        ) as temporary:
+            directory = Path(temporary)
+            payload = receiver_fixture_payload(
+                (Fraction(0), Fraction(0), Fraction(0), Fraction(0)),
+                nontrivial=False,
+            )
+            payload["classical_commit"] = g2["classical_commit"]
+            payload["classification"]["exact_counterterm"] = None
+
+            operator_roles = {
+                "complete_complex_artifact": PROOF_RESULT_IDS[
+                    "complete_complex_EUCLIDEAN_ELLIPTIC"
+                ],
+                "auxiliary_fourth_order_match_artifact": PROOF_RESULT_IDS[
+                    "auxiliary_fourth_order_match"
+                ],
+                "zero_mode_ledger_artifact": PROOF_RESULT_IDS["zero_mode_ledger"],
+                "measure_contour_artifact": PROOF_RESULT_IDS["measure_contour"],
+            }
+            for key, result_id in operator_roles.items():
+                payload["operator_and_measure"][key] = write_json(
+                    directory, f"{key}.json", {"result_id": result_id}
+                )
+
+            multiplicity = synthetic_multiplicity_payload()
+            multiplicity["classical_commit"] = g2["classical_commit"]
+            multiplicity_artifact = write_json(
+                directory, "multiplicity.json", multiplicity
+            )
+            payload["operator_and_measure"]["multiplicity_artifact"] = (
+                multiplicity_artifact
+            )
+            payload["consistency"]["wess_zumino_proof"] = write_json(
+                directory,
+                "wess_zumino.json",
+                {"result_id": PROOF_RESULT_IDS["wess_zumino"]},
+            )
+            payload["consistency"]["parity_proof"] = write_json(
+                directory,
+                "parity.json",
+                {"result_id": PROOF_RESULT_IDS["parity_ward_zero"]},
+            )
+            payload["qme_disposition"]["proof_artifact"] = write_json(
+                directory,
+                "qme.json",
+                {"result_id": PROOF_RESULT_IDS["qme_disposition"]},
+            )
+
+            accepted = validate_regulated_breaking_export(
+                payload, repository_root=ROOT
+            )
+            self.assertEqual(accepted["classification"], "TRIVIAL_OR_ZERO")
+
+            orphan = deepcopy(multiplicity["integration_slice"]["rows"][0])
+            orphan["generator_id"] = "orphan_row"
+            multiplicity["integration_slice"]["rows"].append(orphan)
+            payload["operator_and_measure"]["multiplicity_artifact"] = write_json(
+                directory, "multiplicity.json", multiplicity
+            )
+            with self.assertRaisesRegex(ValueError, "row coverage is incomplete"):
+                validate_regulated_breaking_export(payload, repository_root=ROOT)
 
     def test_output_reproduces_validates_and_verifies(self) -> None:
         checked = json.loads(OUTPUT.read_text())

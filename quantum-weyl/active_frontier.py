@@ -167,6 +167,8 @@ def _load() -> dict[str, dict[str, Any]]:
         is not True
         or multiplicity_flags.get("SCALAR_GHOST_GAP_LOCALIZED_TO_RANK_ONE")
         is not True
+        or multiplicity_flags.get("MULTIPLICITY_EXPORT_SEMANTIC_RECEIVER_READY")
+        is not True
         or multiplicity_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
         is not False
     ):
@@ -177,6 +179,8 @@ def _load() -> dict[str, dict[str, Any]]:
         or assembly_flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or assembly_flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or assembly_flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
+        or assembly_flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND")
+        is not True
         or assembly_flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or assembly_flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not False
         or assembly_flags.get("QME_OBSTRUCTED") is not False
@@ -666,6 +670,7 @@ def build() -> dict[str, Any]:
             "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": True,
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
+            "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -698,7 +703,10 @@ def build() -> dict[str, Any]:
             "coordinates 199/30 and -87/20 while keeping the repository matching open. "
             "The standard determinant ranks 5,1,5,3 reproduce signed rank six; the "
             "covariant BV component inventory localizes the unresolved multiplicity to "
-            "one scalar ghost rank plus its analytic operator/Berezinian map, "
+            "one scalar ghost rank plus its analytic operator/Berezinian map. The strict "
+            "semantic receiver checks complete row/factor coverage, exact target ranks and "
+            "signs, scalar-map consistency and nested proof hashes, while physical input "
+            "remains absent; the frontier also contains "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
@@ -790,6 +798,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
+        or flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY") is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
@@ -828,6 +837,7 @@ def validate(result: dict[str, Any]) -> None:
             "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED",
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND",
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND",
+            "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",

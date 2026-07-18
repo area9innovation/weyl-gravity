@@ -40,7 +40,9 @@ Gaussian algebra. The standard determinant bundle ranks `(5,1,5,3)` also
 reproduce signed effective rank six. Comparing them with the covariant BV
 component ranks localizes the missing multiplicity proof to exactly one
 scalar ghost rank and its operator/Jacobian/nonminimal Berezinian map. A
-strict, content-addressed full-BV multiplicity receiver is ready; the
+strict, content-addressed full-BV multiplicity receiver is ready. It rejects
+orphan rows or factors, duplicate standard maps, target-rank drift, scalar
+map drift, and nested proof-hash drift; the
 classical 54-row carrier is not treated as a loop operator. These results do
 not promote the lifecycle because the repository
 operator/measure match, global BRST Hadamard covariance, regulated Slavnov

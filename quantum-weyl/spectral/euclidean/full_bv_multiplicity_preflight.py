@@ -10,6 +10,8 @@ from typing import Any
 
 from jsonschema import Draft202012Validator
 
+from .multiplicity_export_receiver import synthetic_receiver_receipt
+
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -28,6 +30,7 @@ DEPENDENCIES = {
 
 SOURCE_PATHS = (
     "quantum-weyl/spectral/euclidean/full_bv_multiplicity_preflight.py",
+    "quantum-weyl/spectral/euclidean/multiplicity_export_receiver.py",
     "quantum-weyl/spectral/euclidean/verify_full_bv_multiplicity_preflight.py",
     "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-preflight-v1.schema.json",
     "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json",
@@ -192,10 +195,12 @@ def analysis() -> dict[str, Any]:
 
 def build() -> dict[str, Any]:
     result = analysis()
+    receiver_receipt = synthetic_receiver_receipt()
     proof_payload = {
         "dependencies": result["dependency_hashes"],
         "factors": result["factor_multiplicities"],
         "scalar_gap": result["unresolved_scalar_rank"],
+        "receiver_receipt": receiver_receipt,
     }
     certificate = {
         "schema": "quantum-weyl-repository-full-bv-multiplicity-preflight-v1",
@@ -208,7 +213,12 @@ def build() -> dict[str, Any]:
             "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
             "schema": "quantum-weyl-repository-full-bv-multiplicity-export-v1",
             "schema_path": "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json",
-            "status": "RECEIVER_SCHEMA_READY_INPUT_NOT_RECEIVED",
+            "status": "SEMANTIC_RECEIVER_READY_INPUT_NOT_RECEIVED",
+        },
+        "receiver_mechanics": {
+            "scope": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY",
+            "receipt": receiver_receipt,
+            "mutation_policy": "ORPHAN_ROWS_OR_FACTORS_DUPLICATE_MAPS_WRONG_TARGET_OR_FACTOR_RANKS_STATISTICS_SCALAR_MAP_DRIFT_AND_BAD_HASHES_REJECTED",
         },
         "standard_factor_multiplicities": {
             "dimension": 4,
@@ -292,6 +302,7 @@ def build() -> dict[str, Any]:
             "STANDARD_FACTOR_MULTIPLICITIES_COMPLETE": True,
             "COVARIANT_MINIMAL_COMPONENT_RANKS_COMPLETE": True,
             "SCALAR_GHOST_GAP_LOCALIZED_TO_RANK_ONE": True,
+            "MULTIPLICITY_EXPORT_SEMANTIC_RECEIVER_READY": True,
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": False,
             "REPOSITORY_ELLIPTIC_COMPLEX_CERTIFIED": False,
             "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -300,7 +311,7 @@ def build() -> dict[str, Any]:
         "proof_sha256": _canonical_hash(proof_payload),
         "next_gate": "SUPPLY_REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_WITH_SCALAR_GHOST_AND_NONMINIMAL_CANCELLATION",
         "claim_boundary": (
-            "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight computes the four standard determinant bundle ranks 5,1,5,3, their signed effective rank six, the covariant metric/diffeomorphism-ghost/Weyl-ghost component ranks 10,4,1, and the generic rank decompositions 10=5+4+1 and 4=3+1. It localizes the unmatched multiplicity problem to one scalar ghost rank plus the full analytic row/operator/Berezinian map. The 54-row Berger classical carrier is explicitly rejected as loop multiplicity authority because it contains antifields and contractible rows and is marked not a quantum loop operator. No Euclidean Lagrangian integration slice, full Hessian, scalar ghost cancellation, nonminimal determinant, zero-mode policy, measure, contour, repository coefficient, regulated Slavnov breaking, QME disposition, Cartan class, residual transfer, or Lorentzian theorem is claimed."
+            "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight computes the four standard determinant bundle ranks 5,1,5,3, their signed effective rank six, the covariant metric/diffeomorphism-ghost/Weyl-ghost component ranks 10,4,1, and the generic rank decompositions 10=5+4+1 and 4=3+1. It localizes the unmatched multiplicity problem to one scalar ghost rank plus the full analytic row/operator/Berezinian map and supplies a mutation-tested semantic receiver enforcing complete row/factor coverage, target ranks/signs, scalar-map consistency, and nested proof hashes. The 54-row Berger classical carrier is explicitly rejected as loop multiplicity authority because it contains antifields and contractible rows and is marked not a quantum loop operator. No Euclidean Lagrangian integration slice, full Hessian, scalar ghost cancellation, nonminimal determinant, zero-mode policy, measure, contour, repository coefficient, regulated Slavnov breaking, QME disposition, Cartan class, residual transfer, or Lorentzian theorem is claimed."
         ),
         "provenance": {
             "source_sha256": {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -316,6 +327,7 @@ def validate_claim_boundary(value: dict[str, Any]) -> None:
         flags.get("STANDARD_FACTOR_MULTIPLICITIES_COMPLETE") is not True
         or flags.get("COVARIANT_MINIMAL_COMPONENT_RANKS_COMPLETE") is not True
         or flags.get("SCALAR_GHOST_GAP_LOCALIZED_TO_RANK_ONE") is not True
+        or flags.get("MULTIPLICITY_EXPORT_SEMANTIC_RECEIVER_READY") is not True
         or any(
             flags.get(name) is not False
             for name in (

@@ -54,6 +54,17 @@ map to the standard factors, all zero-mode policies, and verified
 contractible/scalar/nonminimal cancellations. Antifields must not be listed as
 independent integration variables. Every proof artifact is content-addressed.
 
+The executable semantic receiver goes beyond schema validation. It verifies
+the target rank/sign ledger `(5,+1),(1,-1),(5,+1),(3,-1)`, requires every
+repository factor to be mapped exactly once or explicitly cancelled, and
+requires every integration row to source a factor or be explicitly
+cancelled. It also checks that the scalar output is a rank-one fermionic
+factor in the standard scalar-ghost row and that both rank-one scalar ghost
+inputs source it. Nested proof hashes, the frozen classical commit, and the
+analytic route are checked recursively. Synthetic mutations with orphan
+rows/factors, duplicate maps, wrong target or repository-factor ranks and
+statistics, scalar-output drift, route drift, and bad hashes are rejected.
+
 ## Claim boundary
 
 This preflight proves the standard factor ranks, covariant component ranks,

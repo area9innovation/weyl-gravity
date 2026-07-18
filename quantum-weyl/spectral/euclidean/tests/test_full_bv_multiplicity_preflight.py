@@ -14,6 +14,11 @@ from spectral.euclidean.full_bv_multiplicity_preflight import (
     transverse_traceless_rank_4d,
 )
 from spectral.euclidean.verify_full_bv_multiplicity_preflight import verify
+from spectral.euclidean.multiplicity_export_receiver import (
+    ROOT as REPOSITORY_ROOT,
+    synthetic_multiplicity_payload,
+    validate_repository_multiplicity_export,
+)
 
 
 class FullBVMultiplicityPreflightTests(unittest.TestCase):
@@ -45,68 +50,116 @@ class FullBVMultiplicityPreflightTests(unittest.TestCase):
     def test_export_schema_fails_closed_on_unverified_scalar_reduction(self) -> None:
         schema = json.loads(EXPORT_SCHEMA.read_text())
         Draft202012Validator.check_schema(schema)
-        fixture = {
-            "schema": "quantum-weyl-repository-full-bv-multiplicity-export-v1",
-            "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
-            "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
-            "classical_commit": "0" * 40,
-            "analytic_route": "EUCLIDEAN_ELLIPTIC",
-            "integration_slice": {
-                "status": "VERIFIED",
-                "gauge": "fixture",
-                "rows": [
-                    {
-                        "generator_id": "g",
-                        "role": "field",
-                        "statistics": "BOSONIC",
-                        "component_rank": 10,
-                        "operator_id": "K_g",
-                        "determinant_exponent": {"numerator": -1, "denominator": 2},
-                        "zero_mode_policy_id": "fixture",
-                    }
-                ],
-                "antifields_integrated_independently": False,
-                "all_rows_accounted": True,
-                "proof_artifact": {"format": "TEXT_PROOF", "path": "proof.txt", "sha256": "0" * 64},
-            },
-            "repository_factors": [
-                {
-                    "factor_id": factor_id,
-                    "bundle": "fixture",
-                    "statistics": "BOSONIC" if factor_id.startswith("physical") else "FERMIONIC",
-                    "component_rank": rank,
-                    "operator": "fixture",
-                    "determinant_exponent": {"numerator": 1, "denominator": 1},
-                    "source_generator_ids": ["g"],
-                    "derivation_artifact": {"format": "TEXT_PROOF", "path": "proof.txt", "sha256": "0" * 64},
-                }
-                for factor_id, rank in (("physical_depth_0", 5), ("ghost_depth_0", 1), ("physical_depth_1", 5), ("ghost_depth_1", 3))
-            ],
-            "standard_factor_map": [
-                {
-                    "target_factor_id": factor_id,
-                    "repository_factor_ids": [factor_id],
-                    "status": "VERIFIED",
-                    "proof_artifact": {"format": "TEXT_PROOF", "path": "proof.txt", "sha256": "0" * 64},
-                }
-                for factor_id in ("physical_depth_0", "ghost_depth_0", "physical_depth_1", "ghost_depth_1")
-            ],
-            "cancellations": {
-                "contractible_pairs_status": "VERIFIED",
-                "scalar_ghost_reduction_status": "VERIFIED",
-                "scalar_ghost_input_rank": 2,
-                "scalar_ghost_output_rank": 1,
-                "nonminimal_Berezinian_status": "VERIFIED",
-                "proof_artifact": {"format": "TEXT_PROOF", "path": "proof.txt", "sha256": "0" * 64},
-            },
-            "proof_artifacts": [{"format": "TEXT_PROOF", "path": "proof.txt", "sha256": "0" * 64}],
-            "claim_boundary": "Synthetic schema-only fixture; this is not a scientific multiplicity export.",
-        }
+        fixture = synthetic_multiplicity_payload()
         Draft202012Validator(schema).validate(fixture)
         mutant = deepcopy(fixture)
         mutant["cancellations"]["scalar_ghost_reduction_status"] = "NOT_COMPUTED"
         with self.assertRaises(ValidationError):
             Draft202012Validator(schema).validate(mutant)
+
+    def test_semantic_receiver_accepts_complete_fixture(self) -> None:
+        receipt = validate_repository_multiplicity_export(
+            synthetic_multiplicity_payload(),
+            repository_root=REPOSITORY_ROOT,
+            expected_classical_commit="0" * 40,
+            expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+        )
+        self.assertEqual(receipt["target_bundle_ranks"], [5, 1, 5, 3])
+        self.assertEqual(receipt["target_signed_rank"], 6)
+        self.assertEqual(
+            (receipt["scalar_ghost_input_rank"], receipt["scalar_ghost_output_rank"]),
+            (2, 1),
+        )
+
+    def test_semantic_receiver_rejects_orphan_factor_and_row(self) -> None:
+        orphan_factor = synthetic_multiplicity_payload()
+        extra_factor = deepcopy(orphan_factor["repository_factors"][0])
+        extra_factor["factor_id"] = "orphan_factor"
+        orphan_factor["repository_factors"].append(extra_factor)
+        with self.assertRaisesRegex(ValueError, "factor coverage is incomplete"):
+            validate_repository_multiplicity_export(
+                orphan_factor,
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+            )
+
+        orphan_row = synthetic_multiplicity_payload()
+        extra_row = deepcopy(orphan_row["integration_slice"]["rows"][0])
+        extra_row["generator_id"] = "orphan_row"
+        orphan_row["integration_slice"]["rows"].append(extra_row)
+        with self.assertRaisesRegex(ValueError, "row coverage is incomplete"):
+            validate_repository_multiplicity_export(
+                orphan_row,
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+            )
+
+    def test_semantic_receiver_rejects_duplicate_map_and_scalar_drift(self) -> None:
+        duplicate = synthetic_multiplicity_payload()
+        duplicate["standard_factor_map"][1]["repository_factor_ids"] = [
+            "repo_physical_0"
+        ]
+        with self.assertRaisesRegex(ValueError, "more than one standard factor"):
+            validate_repository_multiplicity_export(
+                duplicate,
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+            )
+
+        scalar_drift = synthetic_multiplicity_payload()
+        scalar_drift["cancellations"]["scalar_ghost_output_repository_factor_id"] = (
+            "repo_physical_0"
+        )
+        with self.assertRaisesRegex(ValueError, "rank-two to rank-one"):
+            validate_repository_multiplicity_export(
+                scalar_drift,
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+            )
+
+    def test_semantic_receiver_rejects_bad_hash_route_and_target_rank(self) -> None:
+        bad_hash = synthetic_multiplicity_payload()
+        bad_hash["proof_artifacts"][0] = deepcopy(bad_hash["proof_artifacts"][0])
+        bad_hash["proof_artifacts"][0]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "artifact hash mismatch"):
+            validate_repository_multiplicity_export(
+                bad_hash,
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+            )
+
+        with self.assertRaisesRegex(ValueError, "analytic route drifted"):
+            validate_repository_multiplicity_export(
+                synthetic_multiplicity_payload(),
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="LORENTZIAN_CAUSAL",
+            )
+
+        wrong_rank = synthetic_multiplicity_payload()
+        wrong_rank["standard_factor_map"][0]["target_bundle_rank"] = 4
+        with self.assertRaises(ValidationError):
+            validate_repository_multiplicity_export(
+                wrong_rank,
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+            )
+
+        wrong_factor_rank = synthetic_multiplicity_payload()
+        wrong_factor_rank["repository_factors"][0]["component_rank"] = 4
+        with self.assertRaisesRegex(ValueError, "rank/statistics"):
+            validate_repository_multiplicity_export(
+                wrong_factor_rank,
+                repository_root=REPOSITORY_ROOT,
+                expected_classical_commit="0" * 40,
+                expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+            )
 
     def test_certificate_reproduces_validates_and_verifies(self) -> None:
         checked = json.loads(OUTPUT.read_text())

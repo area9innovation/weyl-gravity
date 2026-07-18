@@ -93,7 +93,9 @@ Wess--Zumino, parity, QME-disposition, or counterterm proof.
 The multiplicity artifact is additionally validated against its strict
 schema, must share the frozen classical commit and analytic route, must use
 unique integration-row and factor IDs, and must content-address every nested
-proof.
+proof. Complete row and factor coverage, the exact standard target ranks and
+signs, and the rank-two-to-rank-one scalar ghost map are checked semantically;
+status strings alone cannot satisfy the receiver.
 The complete role-to-`result_id` map is emitted as
 `accepted_proof_result_ids` in the assembly certificate.
 Exact receiver fixtures

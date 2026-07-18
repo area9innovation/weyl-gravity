@@ -552,6 +552,13 @@ by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
+The multiplicity receiver is executable rather than schema-only. It requires
+complete row/factor coverage, the exact four target ranks and determinant
+signs, a verified rank-two-to-rank-one scalar ghost map, and recursively
+hashed proof artifacts. Orphan, duplicate-map, rank-drift, scalar-drift,
+route-drift, and bad-hash mutations are rejected. This closes receiver
+mechanics only; it does not fabricate the missing physical integration slice.
+
 Deliver one human-readable report and machine-readable certificates containing:
 
 - the `G0`--`G5` generality level and exact evidence for every promotion;
