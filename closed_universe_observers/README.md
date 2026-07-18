@@ -370,6 +370,13 @@ Thus the formal polynomial application is complete while temporal Green-image
 promotion is `OBSTRUCTED`.  The next temporal gate is a validated blockwise
 functional calculus or oscillatory approximation, before the spatial tail,
 massive image and recoil coefficient.
+The functional-calculus preflight now selects the first option.  Exact angle
+addition leaves the large separation `T` inside `cos(T sqrt(B))` and
+`sin(T sqrt(B))/sqrt(B)` and expands only the internal clock offset `s/48`.
+All microphase ratios are below `1/100`; the worst order-14 remainder is below
+`1.64e-18`.  Clock parity kills the odd transform, so the published even
+`p=0,...,28` rails suffice.  Streaming the microphase-dressed block inputs is
+the active gate; the exact-`T` image itself is not yet exported.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

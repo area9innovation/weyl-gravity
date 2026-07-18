@@ -498,6 +498,18 @@ profile gate is now a validated blockwise functional calculus or oscillatory
 approximation; the spatial tail, full Maxwell/massive images, recoil,
 tangent-cone restriction and Bridge 3 remain open.
 
+`BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT` now certifies the
+replacement route.  The exact charge-block angle-addition identities retain
+the large detector/source separation in `cos(T sqrt(B))` and
+`sin(T sqrt(B))/sqrt(B)` and Taylor-expand only the internal normalized clock
+offset `s/48`.  At the top rail every microphase ratio is below `1/100`; the
+worst order-14 operator remainder is below `1.64e-18`.  The joint detector
+integrand is even in `s`, so its odd transform vanishes exactly and the
+existing fifteen even rails through `p=28` are sufficient.  The active gate
+is now the microphase-dressed block stream with exact `T` dependence.  This
+preflight does not yet export that image or alter the open spatial-tail,
+massive-image, recoil, tangent-cone or Bridge-3 gates.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

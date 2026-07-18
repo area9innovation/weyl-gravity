@@ -1,0 +1,33 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Exact charge-block angle addition removes the inaccurate large-T Taylor expansion. Only the normalized internal clock microphase s/48 is expanded; all order-14 geometric ratios are below 1/100 and the worst operator remainder is below 1.64e-18. Clock parity makes the odd transform vanish, so the existing even p=0,...,28 rails suffice. This certifies a route and error budget, not the streamed blockwise temporal image, spatial tail, full Maxwell/massive images, recoil, tangent-cone restriction, Bridge 3 or quantum claims.",
+  "tier_0": [
+    {"command": "py_compile, JSON/schema parse and scoped git diff --check", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_blockwise_temporal_functional_calculus_preflight.py", "elapsed_seconds": 0.07, "status": "PASS", "summary": "2 tests passed, including the full-tau mutation that restores the bad global tail."},
+    {"command": "generator, independent verifier, observer atlas verifier and shared atlas validator", "elapsed_seconds": 1.4, "status": "PASS", "summary": "Exact identities, hashes, parity, microphase bounds, fail-closed flags and generated atlas row passed."}
+  ],
+  "higher_tiers": [
+    {"tier": 2, "status": "NOT_RUN", "criterion": "This preflight changes the approximation route but does not generate the blockwise temporal image."},
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No theorem freeze, shared core-algebra change or release promotion."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_blockwise_temporal_functional_calculus_preflight.py", "sha256": "f44ef5d600d00d71c087e79420b6c12a32a9cd7f93155a1cefed56816b9601a2"},
+    {"path": "closed_universe_observers/verify_berger_blockwise_temporal_functional_calculus_preflight.py", "sha256": "8f9f798094e237f277d1c12b358c459aee36772d9d7f5966818b5928d22ceb31"},
+    {"path": "closed_universe_observers/tests/test_berger_blockwise_temporal_functional_calculus_preflight.py", "sha256": "9ba5c1e4c6487ba14f4c2c17e3ed41fb50341704778bf4363b46a712e5671de2"},
+    {"path": "closed_universe_observers/schema/berger-blockwise-temporal-functional-calculus-preflight-v1.schema.json", "sha256": "e40b3d36d448b6612528ad8729465c82fe542e8f7cb9dd1665621f525978c75e"},
+    {"path": "closed_universe_observers/certificates/BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT.json", "sha256": "9ab85e81d1d3d9869c2cd71a02ff1cfc65af9c7abe6b18b6610530881c96db5f"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "0e253c03a4d823aa5a35ae698558ffd6813b3393af473f508f987718f540714b"}
+  ],
+  "claim_flags": {
+    "ANGLE_ADDITION_BLOCKWISE_ROUTE_CERTIFIED": true,
+    "EXISTING_EVEN_CLOCK_INPUTS_P0_TO_P28_SUFFICIENT": true,
+    "INTERNAL_MICROPHASE_REMAINDER_BELOW_ONE_E_MINUS_SEVENTEEN": true,
+    "BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_IMAGE_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
