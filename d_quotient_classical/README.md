@@ -266,6 +266,15 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   the Bach equation or its cyclic cotangent completion:
   [`certificates/NARIAI_AUTOMORPHISM_PROLONGATION_FIRST_TWO_ROWS_V1.json`](certificates/NARIAI_AUTOMORPHISM_PROLONGATION_FIRST_TWO_ROWS_V1.json),
   [`reports/nariai-automorphism-prolongation-first-two-rows.md`](reports/nariai-automorphism-prolongation-first-two-rows.md)
+- Cyclic Bach completion: the corrected constraint complex has the canonical
+  288-component odd-cotangent saddle with quadratic action
+  `1/2<h,B_action h>+<lambda,M^D a-Phi h>`.  Its complete differential is
+  nilpotent and odd cyclic, all dual rows are forced by the displayed fibre
+  pairings, and the exact four-row metric Bach complex embeds isometrically as
+  the corrected BGG graph.  This is a local differential complex, not yet an
+  SDR or Green theorem:
+  [`certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1.json`](certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1.json),
+  [`reports/nariai-automorphism-cyclic-bach-extension.md`](reports/nariai-automorphism-cyclic-bach-extension.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

@@ -160,12 +160,15 @@ least five.  The curvature-corrected automorphism prolongation now closes its
 first two rows exactly: with `d_aut=d^D-I_Omega p0`, the maps
 `(d_aut,K p0)^T` and `(M^D,-Phi)` form a local complex, and the corrected BGG
 graph carries every metric gauge transformation and global Killing
-reducibility strictly into it.  The next gate is
-`C_G2_NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION`: add the action-derived Bach
-middle and the forced cotangent/identity rows, then prove full odd cyclicity.
-Only after that extension closes should an SDR or Green transfer be attempted.
-Do not reopen endpoint coefficient or field-graph fitting, or claim endpoint
-equivalence or a Nariai Green homotopy before this gate closes.
+reducibility strictly into it.  Its canonical 288-component odd-cotangent
+Bach saddle now closes as well: the action-derived middle is nilpotent and odd
+cyclic, and the four-row metric Bach complex embeds isometrically as the full
+corrected BGG graph.  The next gate is
+`C_G2_NARIAI_AUTOMORPHISM_SUPPORT_LOCAL_SDR`: construct or obstruct a
+finite-order projection and cyclic homotopy for the complement.  Only after
+that retract closes should Green transfer be attempted.  Do not reopen
+endpoint coefficient or field-graph fitting, or claim endpoint equivalence or
+a Nariai Green homotopy before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

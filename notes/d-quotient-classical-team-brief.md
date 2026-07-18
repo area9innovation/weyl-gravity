@@ -1190,6 +1190,38 @@ Bach equation and the forced cotangent/identity rows, then test the complete
 cyclic complex and its metric graph.  No SDR or Green claim precedes that
 test.
 
+`NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1` now closes this gate.  The
+canonical completion is the odd-cotangent saddle of the constraint complex,
+with multiplier \(\lambda\in C_1\) and quadratic action
+
+\[
+S^{(2)}_{\rm aut}
+=
+\frac12\langle h,B_{\rm action}h\rangle
++\langle\lambda,M^Da-\Phi h\rangle.
+\]
+
+In the ordered carrier
+
+\[
+\epsilon; (a,h,\lambda);
+(a^\sharp,h^\sharp,\lambda^\sharp);
+\epsilon^\sharp,
+\]
+
+the total rank is \(288\).  Nilpotency reduces exactly to
+\(M^Dd_{\rm aut}=\Phi Kp_0\), \(B_{\rm action}Kp_0=0\), and their formal
+adjoints.  The fibre pairings force every cotangent row, while the graph
+
+\[
+(L_0^{\rm corr};\ L_1^{\rm corr},1,0;\ 0,1,0;\ p_0^\sharp)
+\]
+
+is an isometric strict embedding of the four-row metric Bach complex.  The
+next gate is `C_G2_NARIAI_AUTOMORPHISM_SUPPORT_LOCAL_SDR`: construct or
+obstruct a finite-order projection and homotopy for the complement.  Green
+transfer remains downstream of that gate.
+
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
 nonzero stability radius, or an exact no-go witness.

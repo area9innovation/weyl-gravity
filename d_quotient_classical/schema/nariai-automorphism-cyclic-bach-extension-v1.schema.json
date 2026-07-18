@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-automorphism-cyclic-bach-extension-v1.schema.json",
+  "title": "Nariai automorphism cyclic Bach extension certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "dependency_tags",
+    "dependency_refs", "carrier", "action", "operators", "pairings",
+    "checks", "formal_adjoint_completion", "flags", "claim_boundary",
+    "next_gate", "source_manifest"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-automorphism-cyclic-bach-extension-v1"},
+    "result_id": {"const": "NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1"},
+    "result_state": {"const": "ACTION_DERIVED_ODD_CYCLIC_AUTOMORPHISM_BACH_COMPLEX_EXACT"},
+    "dependency_tags": {
+      "type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false, "minItems": 1, "maxItems": 1
+    },
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["automorphism_first_two_rows", "metric_bach_complex"],
+      "properties": {
+        "automorphism_first_two_rows": {"$ref": "#/$defs/dependency"},
+        "metric_bach_complex": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["block_names", "block_degrees", "block_ranks", "total_rank", "interpretation"],
+      "properties": {
+        "block_names": {"const": ["epsilon_C0", "a_C1", "h_H1", "lambda_C1", "a_sharp_C1dual", "h_sharp_H1dual", "lambda_sharp_C1dual", "epsilon_sharp_C0dual"]},
+        "block_degrees": {"const": [-1, 0, 0, 0, 1, 1, 1, 2]},
+        "block_ranks": {"const": [15, 60, 9, 60, 60, 9, 60, 15]},
+        "total_rank": {"const": 288},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "action": {
+      "type": "object", "additionalProperties": false,
+      "required": ["quadratic_density", "B_source", "Phi_definition", "no_fitted_cotangent_rows"],
+      "properties": {
+        "quadratic_density": {"type": "string", "minLength": 1},
+        "B_source": {"type": "string", "minLength": 1},
+        "Phi_definition": {"type": "string", "minLength": 1},
+        "no_fitted_cotangent_rows": {"const": true}
+      }
+    },
+    "operators": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "abstract_Q", "odd_pairing", "metric_Q", "metric_pairing",
+        "metric_graph_inclusion", "d_aut", "K_p0", "M_D", "Phi",
+        "B_action", "L0_corrected", "L1_corrected", "p0", "p0_sharp"
+      ],
+      "properties": {
+        "abstract_Q": {"$ref": "#/$defs/operatorMatrix"},
+        "odd_pairing": {"$ref": "#/$defs/operatorMatrix"},
+        "metric_Q": {"$ref": "#/$defs/operatorMatrix"},
+        "metric_pairing": {"$ref": "#/$defs/operatorMatrix"},
+        "metric_graph_inclusion": {"$ref": "#/$defs/operatorMatrix"},
+        "d_aut": {"$ref": "#/$defs/pbwTable"},
+        "K_p0": {"$ref": "#/$defs/pbwTable"},
+        "M_D": {"$ref": "#/$defs/pbwTable"},
+        "Phi": {"$ref": "#/$defs/pbwTable"},
+        "B_action": {"$ref": "#/$defs/pbwTable"},
+        "L0_corrected": {"$ref": "#/$defs/pbwTable"},
+        "L1_corrected": {"$ref": "#/$defs/pbwTable"},
+        "p0": {"$ref": "#/$defs/sparseMatrix"},
+        "p0_sharp": {"$ref": "#/$defs/sparseMatrix"}
+      }
+    },
+    "pairings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["C0", "C1", "H0", "H1"],
+      "properties": {
+        "C0": {"$ref": "#/$defs/sparseMatrix"},
+        "C1": {"$ref": "#/$defs/sparseMatrix"},
+        "H0": {"$ref": "#/$defs/sparseMatrix"},
+        "H1": {"$ref": "#/$defs/sparseMatrix"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "abstract_Q_squared_mod_certified_relations", "abstract_odd_cyclicity",
+        "metric_graph_chain_map_mod_certified_relations",
+        "metric_pairing_pullback_mod_retract_relations",
+        "M_daut_minus_Phi_Kp0_entries", "B_Kp0_entries",
+        "daut_L0_minus_L1_K_entries", "p0_L0_minus_identity_entries",
+        "P_metric_graph_entries", "metric_BK_entries", "metric_KsharpB_entries"
+      ],
+      "properties": {
+        "abstract_Q_squared_mod_certified_relations": {"const": true},
+        "abstract_odd_cyclicity": {"const": true},
+        "metric_graph_chain_map_mod_certified_relations": {"const": true},
+        "metric_pairing_pullback_mod_retract_relations": {"const": true},
+        "M_daut_minus_Phi_Kp0_entries": {"const": 0},
+        "B_Kp0_entries": {"const": 0},
+        "daut_L0_minus_L1_K_entries": {"const": 0},
+        "p0_L0_minus_identity_entries": {"const": 0},
+        "P_metric_graph_entries": {"const": 0},
+        "metric_BK_entries": {"const": 0},
+        "metric_KsharpB_entries": {"const": 0}
+      }
+    },
+    "formal_adjoint_completion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["d_aut_sharp", "K_p0_sharp", "Phi_sharp", "M_D_sharp", "B_action_sharp", "factorized_variational_authority"],
+      "properties": {
+        "d_aut_sharp": {"type": "string", "minLength": 1},
+        "K_p0_sharp": {"type": "string", "minLength": 1},
+        "Phi_sharp": {"type": "string", "minLength": 1},
+        "M_D_sharp": {"type": "string", "minLength": 1},
+        "B_action_sharp": {"type": "string", "minLength": 1},
+        "factorized_variational_authority": {"const": true}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1",
+        "FULL_ODD_CYCLIC_BACH_COMPLEX", "ACTION_DERIVED_MIDDLE",
+        "METRIC_BACH_GRAPH_CHAIN_MAP", "METRIC_PAIRING_PULLBACK",
+        "SUPPORT_LOCAL_DIFFERENTIAL_COMPLEX",
+        "FULL_PARENT_METRIC_QUASI_ISOMORPHISM",
+        "SUPPORT_LOCAL_AUTOMORPHISM_SDR", "NARIAI_GREEN_HOMOTOPY",
+        "OPEN_BACKGROUND_CLASS", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"
+      ],
+      "properties": {
+        "NARIAI_AUTOMORPHISM_CYCLIC_BACH_EXTENSION_V1": {"const": true},
+        "FULL_ODD_CYCLIC_BACH_COMPLEX": {"const": true},
+        "ACTION_DERIVED_MIDDLE": {"const": true},
+        "METRIC_BACH_GRAPH_CHAIN_MAP": {"const": true},
+        "METRIC_PAIRING_PULLBACK": {"const": true},
+        "SUPPORT_LOCAL_DIFFERENTIAL_COMPLEX": {"const": true},
+        "FULL_PARENT_METRIC_QUASI_ISOMORPHISM": {"const": false},
+        "SUPPORT_LOCAL_AUTOMORPHISM_SDR": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "OPEN_BACKGROUND_CLASS": {"const": false},
+        "NONLINEAR_EXTENSION": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["statement", "not_claimed"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "next_gate": {"const": "C_G2_NARIAI_AUTOMORPHISM_SUPPORT_LOCAL_SDR"},
+    "source_manifest": {
+      "type": "object", "minProperties": 9,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    }
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "sparseMatrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "pbwTable": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entries", "sha256"],
+      "properties": {
+        "entries": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["word", "matrix"],
+          "properties": {
+            "word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+            "matrix": {"$ref": "#/$defs/sparseMatrix"}
+          }
+        }},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operatorMatrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {
+          "type": "array", "prefixItems": [
+            {"type": "integer", "minimum": 0},
+            {"type": "integer", "minimum": 0},
+            {"type": "array", "items": {
+              "type": "array", "prefixItems": [
+                {"type": "array", "items": {"type": "string"}},
+                {"type": "integer"}, {"type": "integer", "minimum": 1}
+              ], "items": false, "minItems": 3, "maxItems": 3
+            }}
+          ], "items": false, "minItems": 3, "maxItems": 3
+        }},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}
