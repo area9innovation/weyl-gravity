@@ -315,6 +315,11 @@ The finite-mode Green successor supplies the exact Maxwell and massive
 two-form time kernels, including zero modes, while keeping finite-truncation
 support locality false.  Only the interval profile expansion and infinite
 tail now block the full advanced images.
+The validated-moment successor interval-encloses the universal one- and
+three-dimensional flat-bump moments through even order twelve, with exact
+radius scaling and rational endpoints.  It does not promote those moments to
+Peter--Weyl coefficients: local mode polynomials, the `y0` binomial remainder,
+and an evaluated Sobolev tail constant remain open.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -524,3 +529,5 @@ The quantitative-chart receipt is
 `closed_universe_observers/receipts/QUANTITATIVE_DETECTOR_CHART_TIER_RECEIPT.json`.
 The finite-mode Green receipt is
 `closed_universe_observers/receipts/FINITE_MODE_GREEN_KERNELS_TIER_RECEIPT.json`.
+The validated flat-bump moment receipt is
+`closed_universe_observers/receipts/VALIDATED_FLAT_BUMP_MOMENTS_TIER_RECEIPT.json`.

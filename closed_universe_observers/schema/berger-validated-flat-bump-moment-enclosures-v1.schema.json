@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-validated-flat-bump-moment-enclosures-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "quadrature_method", "raw_radial_integral_enclosures", "normalized_moments", "fixed_profile_scaled_moments", "isotropic_tensor_reductions", "spectral_tail_reduction", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-validated-flat-bump-moment-enclosures-v1"},
+    "result_id": {"const": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "VALIDATED_STANDARD_BUMP_MOMENTS_EXPORTED_MODE_COEFFICIENTS_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "quadrature_method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["integrand_family", "subdivisions", "grid", "interval_engine", "decimal_precision", "output_dyadic_bits", "unimodality_identity", "cell_rule", "serialized_endpoints"],
+      "properties": {
+        "integrand_family": {"type": "string", "minLength": 1},
+        "subdivisions": {"const": 32768},
+        "grid": {"type": "string", "minLength": 1},
+        "interval_engine": {"type": "string", "minLength": 1},
+        "decimal_precision": {"const": 50},
+        "output_dyadic_bits": {"const": 160},
+        "unimodality_identity": {"type": "string", "minLength": 1},
+        "cell_rule": {"type": "string", "minLength": 1},
+        "serialized_endpoints": {"type": "string", "minLength": 1}
+      }
+    },
+    "raw_radial_integral_enclosures": {"type": "array", "minItems": 8, "maxItems": 8},
+    "normalized_moments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clock_core_dimension_1", "radial_core_dimension_3"],
+      "properties": {
+        "clock_core_dimension_1": {"$ref": "#/$defs/momentRows"},
+        "radial_core_dimension_3": {"$ref": "#/$defs/momentRows"}
+      }
+    },
+    "fixed_profile_scaled_moments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clock_radius_1_over_64", "detector_rod_radius_1_over_128"],
+      "properties": {
+        "clock_radius_1_over_64": {"type": "array", "minItems": 7, "maxItems": 7},
+        "detector_rod_radius_1_over_128": {"type": "array", "minItems": 7, "maxItems": 7}
+      }
+    },
+    "isotropic_tensor_reductions": {"type": "object"},
+    "spectral_tail_reduction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity", "evaluated_sobolev_norm", "validated_infinite_mode_tail"],
+      "properties": {
+        "identity": {"type": "string", "minLength": 1},
+        "evaluated_sobolev_norm": {"const": false},
+        "validated_infinite_mode_tail": {"const": false}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "object", "required": ["name", "detected"], "properties": {"name": {"const": "replace_peak_cell_cap_by_endpoint_only_upper"}, "detected": {"const": true}}}},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["VALIDATED_STANDARD_FLAT_BUMP_MOMENTS_EXPORTED", "FIXED_CLOCK_AND_DETECTOR_RADIUS_MOMENT_SCALING_EXPORTED", "ISOTROPIC_CARTESIAN_MOMENT_REDUCTION_EXPORTED", "PETER_WEYL_MODE_COEFFICIENTS_EVALUATED", "EVALUATED_SOBOLEV_NORM_EXPORTED", "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED", "ADVANCED_GREEN_IMAGES_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "VALIDATED_STANDARD_FLAT_BUMP_MOMENTS_EXPORTED": {"const": true},
+        "FIXED_CLOCK_AND_DETECTOR_RADIUS_MOMENT_SCALING_EXPORTED": {"const": true},
+        "ISOTROPIC_CARTESIAN_MOMENT_REDUCTION_EXPORTED": {"const": true},
+        "PETER_WEYL_MODE_COEFFICIENTS_EVALUATED": {"const": false},
+        "EVALUATED_SOBOLEV_NORM_EXPORTED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED": {"const": false},
+        "ADVANCED_GREEN_IMAGES_EVALUATED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper", "width"],
+      "properties": {"lower": {"type": "string"}, "upper": {"type": "string"}, "width": {"type": "string"}}
+    },
+    "momentRows": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["k", "normalized_even_moment"],
+        "properties": {"k": {"type": "integer", "minimum": 0, "maximum": 6}, "normalized_even_moment": {"$ref": "#/$defs/interval"}}
+      }
+    }
+  }
+}

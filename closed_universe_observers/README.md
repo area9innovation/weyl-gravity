@@ -64,6 +64,8 @@ python3 -m closed_universe_observers.generate_berger_quantitative_detector_chart
 python3 -m closed_universe_observers.verify_berger_quantitative_detector_chart
 python3 -m closed_universe_observers.generate_berger_mode_green_kernels --check
 python3 -m closed_universe_observers.verify_berger_mode_green_kernels
+python3 -m closed_universe_observers.generate_berger_validated_flat_bump_moments --check
+python3 -m closed_universe_observers.verify_berger_validated_flat_bump_moments
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -219,6 +221,12 @@ The finite-mode Green successor applies exact entire matrix spectral calculus
 to the Maxwell and massive two-form blocks, including the Maxwell zero-mode
 limit.  Finite truncations are explicitly not treated as support-local; the
 full profile expansion and tail bounds remain necessary.
+The validated-moment successor supplies directed-rounding Darboux enclosures
+for both standard flat-bump cores through even order twelve and scales them
+exactly to clock radius `1/64` and detector rod radius `1/128`.  This removes
+the universal bump moments from the quadrature obstruction.  Local `SU(2)`
+mode coefficients, the `y0` remainder, and the infinite spectral tail remain
+open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

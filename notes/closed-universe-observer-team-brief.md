@@ -254,6 +254,13 @@ including the Maxwell zero-mode limit and symbolic positive emitter masses.
 The finite blocks are not advertised as support-local; interval profile
 coefficients and a validated infinite tail are the remaining Green inputs.
 
+`BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES` now encloses the normalized
+one- and three-dimensional flat-bump moments through even order twelve using
+directed-rounding dyadic Darboux sums.  Exact scaling specializes them to the
+clock radius `1/64` and detector radius `1/128`.  These are coefficient
+inputs, not Peter--Weyl coefficients: the local `SU(2)` mode polynomials,
+`y0` remainder, and evaluated Sobolev tail constant remain open.
+
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
 integral.  Direct variation of the selected action gives the free emitter

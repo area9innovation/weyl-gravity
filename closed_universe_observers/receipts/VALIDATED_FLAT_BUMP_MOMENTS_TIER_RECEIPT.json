@@ -1,0 +1,84 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "VALIDATED_FLAT_BUMP_MOMENTS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Validated exact-rational enclosures are exported for universal flat-bump moments and their fixed radius scaling. Peter-Weyl coefficients, y0 remainder, evaluated Sobolev tail, Green images and recoil remain open.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile closed_universe_observers/generate_berger_validated_flat_bump_moments.py closed_universe_observers/verify_berger_validated_flat_bump_moments.py closed_universe_observers/tests/test_berger_validated_flat_bump_moments.py",
+      "elapsed_seconds": "0.03",
+      "status": "PASS",
+      "scope": "changed Python sources"
+    },
+    {
+      "command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md",
+      "elapsed_seconds": "0.00",
+      "status": "PASS",
+      "scope": "scoped observer diff"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_validated_flat_bump_moments.py",
+      "elapsed_seconds": "0.42 pytest; 0.77 wall",
+      "status": "PASS",
+      "scope": "Darboux refinement, probabilistic moments, radius scaling and peak mutation"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_validated_flat_bump_moments --check",
+      "elapsed_seconds": "6.98",
+      "status": "PASS",
+      "scope": "deterministic certificate regeneration"
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_validated_flat_bump_moments",
+      "elapsed_seconds": "6.99",
+      "status": "PASS",
+      "scope": "dependency hashes and complete interval payload"
+    },
+    {
+      "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-validated-flat-bump-moment-enclosures-v1.schema.json -d closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "elapsed_seconds": "2.10",
+      "status": "PASS",
+      "scope": "strict Draft 2020-12 schema validation"
+    },
+    {
+      "command": "python3 closed_universe_observers/verify_comparison_ledger.py",
+      "elapsed_seconds": "0.16",
+      "status": "PASS",
+      "scope": "central observer comparison ledger"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "256.73 pytest; 258.33 wall",
+      "status": "PASS",
+      "scope": "full central-observer-ledger consumer suite: 141 tests"
+    }
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No full causal or quantum promotion."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json", "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"},
+    {"path": "closed_universe_observers/generate_berger_validated_flat_bump_moments.py", "sha256": "c13a3ceed1b039be933d0fd20dd828306dd814cc7c36502c3e482a2e4710326f"},
+    {"path": "closed_universe_observers/verify_berger_validated_flat_bump_moments.py", "sha256": "f269f8a49cb9a998b5077b85a5680004e2abd5818eafb74169be8486e51f120e"},
+    {"path": "closed_universe_observers/tests/test_berger_validated_flat_bump_moments.py", "sha256": "0f139f11013d9b462ff26d65e6a76ef252d0371810519bac1474fd0923ac88a1"},
+    {"path": "closed_universe_observers/schema/berger-validated-flat-bump-moment-enclosures-v1.schema.json", "sha256": "f989fb096b2b72f48253eac086ad4dc475c344cab0dcf0c48d0e73446ea13bdd"},
+    {"path": "closed_universe_observers/reports/berger-validated-flat-bump-moment-enclosures.md", "sha256": "e7c2b60869fa22c3cc0cf53a2a5aa026fee745720713b06866d17b592dbda076"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "a4c6be4d632090b43b8329039528536557c96c4e2bf53ce29a05410c492be983"},
+    {"path": "closed_universe_observers/README.md", "sha256": "454155b83ed4d3cd6196eff526d8512a03944ec042f55450210e9c3df6a1beb7"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "778beb6277750d5ddd25eb2786d6de7f5586278b2862e61571ffa1e0cb173a6b"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "aaaf3001e0bd8c510849d106d9e0a9d6a955dfa9552abe5400d1cb600bca8961"}
+  ],
+  "claim_flags": {
+    "VALIDATED_STANDARD_FLAT_BUMP_MOMENTS_EXPORTED": true,
+    "PETER_WEYL_MODE_COEFFICIENTS_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_BOUND_EXPORTED": false,
+    "ADVANCED_GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}
