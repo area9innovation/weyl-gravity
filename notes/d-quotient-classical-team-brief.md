@@ -24,6 +24,41 @@ presymplectic degeneracy and the renormalized covariant phase-space charge.
 The centered classes \([W_+^2]\) and \([W_-^2]\) are deformation/vertex
 classes.  They are not one-particle graviton states.
 
+## Programme atlas and tangent-cone deliverables (2026-07-18)
+
+The classical fragment of the programme residual atlas is generated at
+`d_quotient_classical/atlas/classical-causal-atlas-fragment.json`.  Its
+producer, independent verifier, tests, strict shared-schema validation and
+human crosswalk report are part of the same handoff.  The fragment covers the
+vacuum cylinder, Berger clock, conformal Nariai orbit, the transverse Nariai
+tangent and the relative-open Bach-flat parent class.  It uses only
+`CERTIFIED`, `OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE` and `NO_CERTIFIED_MAP`,
+and it never imports a mode across backgrounds or carriers without an
+explicit crosswalk.  In particular, the Berger carrier remains unsplit and
+the broad Bach-flat theorem remains a parent theorem rather than a class-wide
+metric theorem.
+
+The abstract second deliverable is certified by
+`FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1`.  After complete
+harmonic closure, Noether-row reduction and removal of gauge-null directions,
+the second-order tangent cone in correction class \(\mathcal C\) is
+
+\[
+\mathcal Z_2^{\mathcal C}
+=\{u\in\ker q_1:\mu_X(u)=0,\ R_j^{\mathcal C}(u)=0\}.
+\]
+
+The correction class is part of the theorem, not metadata: a resonant Fourier
+obstruction can persist for bounded/quasiperiodic corrections while
+disappearing after a smooth secular \(t e^{i\omega t}\) correction or a
+compatible retarded integral.  Stabilizer moment-map conditions remain
+separate and do not disappear merely because the correction space is enlarged.
+
+The next coherent classical gate remains the transverse Nariai
+Levi--Civita/PBW and middle/Schur first variation, followed by the complete
+rank-310 SDR variation.  No atlas lifecycle may be promoted from the already
+certified outer incidence and algebraic pairing rows alone.
+
 ## Generator correction (2026-07-17; authoritative)
 
 The exact co-rotating audit `BERGER_GENERATOR_CONJUGATION_AUDIT` supersedes

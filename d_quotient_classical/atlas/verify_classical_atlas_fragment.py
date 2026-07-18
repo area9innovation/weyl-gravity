@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""Independent fail-closed checks for the classical residual atlas."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+
+from jsonschema import Draft202012Validator
+
+
+ROOT = Path(__file__).resolve().parents[2]
+ATLAS = Path(__file__).with_name("classical-causal-atlas-fragment.json")
+GENERATOR = Path(__file__).with_name("generate_classical_atlas_fragment.py")
+SCHEMA = ROOT / "residual_atlas/schema/residual-atlas-fragment-v1.schema.json"
+
+
+def _sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verify() -> None:
+    value = json.loads(ATLAS.read_text())
+    schema = json.loads(SCHEMA.read_text())
+    Draft202012Validator.check_schema(schema)
+    Draft202012Validator(schema).validate(value)
+    if value["generated_by_sha256"] != _sha(GENERATOR):
+        raise AssertionError("generator hash mismatch")
+    by_id = {entry["id"]: entry for entry in value["entries"]}
+    if len(by_id) != len(value["entries"]):
+        raise AssertionError("duplicate atlas id")
+    for entry in value["entries"]:
+        for evidence in entry["evidence"]:
+            path = ROOT / evidence["path"]
+            payload = json.loads(path.read_text())
+            if _sha(path) != evidence["sha256"] or payload["result_id"] != evidence["result_id"]:
+                raise AssertionError(f"evidence drift: {entry['id']}")
+    for family in "eal":
+        entry = by_id[f"classical.vacuum_cylinder.one_particle.{family}"]
+        if entry["descriptions"]["causal"] != "CERTIFIED" or "not a positive residual particle" not in entry["claim_boundary"]:
+            raise AssertionError("vacuum mode boundary drifted")
+    for chirality in ("plus", "minus"):
+        entry = by_id[f"classical.vacuum_cylinder.deformation.w_{chirality}_squared"]
+        if "not a one-particle mode" not in entry["scope"]["carrier"]:
+            raise AssertionError("W-square was promoted to particle")
+    crosswalk = by_id["classical.crosswalk.bach_flat_parent_to_metric"]
+    if set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
+        raise AssertionError("parent/metric crosswalk overpromoted")
+    transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
+    if transverse["descriptions"]["causal"] != "OPEN":
+        raise AssertionError("transverse causal theorem overpromoted")
+
+
+if __name__ == "__main__":
+    verify()
+    print("CLASSICAL_CAUSAL_RESIDUAL_ATLAS_FRAGMENT_V1 independent verification: PASS")

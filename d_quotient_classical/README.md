@@ -18,6 +18,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
 
 ## Artifacts
 
+- Generated fail-closed classical causal/gauge/carrier atlas fragment,
+  content-addressed legacy vacuum adapter, independent verifier and report:
+  [`atlas/classical-causal-atlas-fragment.json`](atlas/classical-causal-atlas-fragment.json),
+  [`atlas/CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1.json`](atlas/CLASSICAL_VACUUM_CYLINDER_ATLAS_EVIDENCE_V1.json),
+  [`atlas/verify_classical_atlas_fragment.py`](atlas/verify_classical_atlas_fragment.py),
+  [`reports/classical-causal-residual-atlas-fragment.md`](reports/classical-causal-residual-atlas-fragment.md)
+- General correction-class-sensitive finite-harmonic second-order tangent-cone
+  theorem and exact bounded/secular/retarded resonance audit:
+  [`certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json`](certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json),
+  [`reports/finite-harmonic-second-order-tangent-cone-theorem.md`](reports/finite-harmonic-second-order-tangent-cone-theorem.md)
+
 - Machine-readable status:
   [`certificates/CLASSICAL_D_QUOTIENT_STATUS.json`](certificates/CLASSICAL_D_QUOTIENT_STATUS.json)
 - JSON Schema:
