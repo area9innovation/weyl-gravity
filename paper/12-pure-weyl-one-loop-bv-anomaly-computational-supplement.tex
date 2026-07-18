@@ -661,6 +661,37 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   transfer.tests.test_cpt_universal_third_curvature_kernels
 \end{verbatim}
 
+\subsection{Generic Diff--Weyl ghost matching obstruction}
+
+The generic-background gauge rows provide an exact test of whether the
+minimal scalar source kernels can receive the repository ghost block by a
+direct trace substitution.  Eliminating the algebraic Weyl-ghost row gives
+\[
+ (M_{\rm eff}\xi)_\mu=\Box\xi_\mu+R_{\mu\nu}\xi^\nu
+ +\frac12\nabla_\mu\nabla\!\cdot\!\xi,
+\]
+independently of the gauge parameter $\beta$.  The verifier reconstructs the
+Schur complement at $\beta=0,1/4,1/2$, computes the unit-covector principal
+spectrum $(3/2,1,1,1)$, and proves a fixed two-sided scalarization no-go from
+the exact spectrum $(2/3,3/2,1,1)$ of the two-covector comparison matrix.
+It also applies the curvature term to an explicit tracefree-Ricci jet and
+finds the transverse mixing vector $2e_1$ from longitudinal input $e_0$.
+
+The Einstein specialization reproduces
+$M_{\rm eff}(\nabla c)=-(3/2)\nabla(\Delta_0-R/3)c$, so this receipt explains
+both why the accepted special-background scalar factor is correct and why it
+does not define the generic determinant.  The current minimal-CPT matching
+architecture is therefore marked \texttt{OBSTRUCTED}; the anomaly and QME
+theorems are unchanged.  The production and independent replay commands are
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_cpt_obstruction --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_cpt_obstruction
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_cpt_obstruction
+\end{verbatim}
+
 \subsection{Exact local BoxR scheme conversion}
 
 The zeta/proper-time calculation imports the published local heat-kernel rows
@@ -718,6 +749,9 @@ an absolute dressed normalization;
 \item replay the five third-curvature carrier stabilizers, the raw and
 four-dimensional quotient characters, and reject promotion of carrier labels
 to repository form-factor functions or coefficients;
+\item replay the generic Diff--Weyl ghost Schur complement, nonminimal
+principal spectrum and tracefree-Ricci Hodge mixing, while rejecting direct
+minimal-CPT substitution and any promotion to a completed ghost determinant;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
@@ -785,8 +819,10 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the five repository parity-even third-curvature form-factor functions
-and coefficients, the parity-odd derivative carrier manifest, finite
+\item a matched nonminimal generic-background Diff--Weyl ghost determinant
+and the generic physical fourth-order Hessian kernel, followed by the five
+repository parity-even third-curvature form-factor functions and coefficients,
+the parity-odd derivative carrier manifest, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete
 $Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT

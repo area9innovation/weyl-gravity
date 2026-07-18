@@ -905,6 +905,49 @@ substitutions through curvature order three, or an equivalent direct
 nonminimal fourth-order CPT kernel, together with the matching measure.
 \end{proposition}
 
+\begin{proposition}[Generic ghost obstruction to direct minimal-CPT matching]
+For the covariant gauge rows
+\[
+ \delta F_\mu=\Box\xi_\mu+R_{\mu\nu}\xi^\nu
+ +(1-2\beta)\nabla_\mu\nabla\!\cdot\!\xi
+ +2(1-4\beta)\nabla_\mu\omega,
+ \qquad
+ \delta F_W=2\nabla\!\cdot\!\xi+8\omega,
+\]
+the algebraic Weyl-ghost Schur complement is independent of $\beta$:
+\[
+ (M_{\rm eff}\xi)_\mu=
+ \Box\xi_\mu+R_{\mu\nu}\xi^\nu
+ +\frac12\nabla_\mu\nabla\!\cdot\!\xi .
+\]
+At a unit covector its principal eigenvalues are
+$(3/2,1,1,1)$, so the operator is elliptic but not of Laplace type.  No
+fixed invertible left and right bundle maps can scalarize this symbol for
+all covectors: for two orthogonal unit covectors the exact comparison
+spectrum is $(2/3,3/2,1,1)$.  Moreover,
+\[
+ M_{\rm eff}(\nabla c)=
+ -\frac32\nabla\Delta_0c+2R_{\mu\nu}\nabla^\nu c,
+\]
+so generic tracefree Ricci curvature sends a longitudinal input into a
+transverse component.  The Hodge determinant split used by the Einstein
+four-factor ledger therefore does not extend covariantly.  On an Einstein
+background it reduces exactly to
+\[
+ M_{\rm eff}(\nabla c)=-\frac32\nabla(\Delta_0-R/3)c,
+\]
+recovering the accepted scalar ghost factor.
+
+Consequently the imported minimal-Laplace CPT kernels cannot be applied to
+the generic repository ghost sector by direct rank or endomorphism
+substitution.  The missing coefficient-bearing input is a matched
+nonminimal-vector determinant/CPT calculation, or an exact local extension
+with its determinant and Jacobian proved equivalent, together with the
+generic physical fourth-order Hessian kernel.  This is an obstruction to the
+current matching architecture, not a new anomaly, QME, or Lorentzian
+no-go theorem.
+\end{proposition}
+
 \begin{proposition}[Exact local $\Box R$ scheme conversion]
 In the zeta/proper-time prescription of Barvinsky et
 al.~\cite{BarvinskyLocal}, the imported fourth heat-kernel rows combine with
@@ -957,8 +1000,10 @@ dependence of its Ricci-scalar sector are also exact.  The additive finite
 $C^2$ constant and absolute dressed $R(\widehat g)^2$ normalization remain
 open.  The zero-derivative algebraic cubic basis, the parity-even
 third-curvature five-carrier quotient and the five exact universal CPT source
-kernels are exact.  The repository generic-background full-BV trace
-substitution, hence the five repository form-factor functions and
+kernels are exact.  The generic ghost calculation now proves that direct
+minimal-CPT substitution is obstructed by a nonminimal, Hodge-mixed Schur
+operator.  A matched nonminimal-vector determinant and the generic physical
+fourth-order Hessian kernel, hence the five repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
@@ -991,6 +1036,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json}.
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json}.
 \item \cert{quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
@@ -1023,6 +1069,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_third_curvature_weyl_manifest
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_cpt_universal_third_curvature_kernels
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_cpt_obstruction
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier

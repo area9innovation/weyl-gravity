@@ -11,10 +11,10 @@ NOT_APPLICABLE
 NO_CERTIFIED_MAP
 ```
 
-The generator emits a strict common-envelope fragment with nineteen entries:
+The generator emits a strict common-envelope fragment with twenty entries:
 six all-energy vacuum-cylinder E/A/L mode-family rows, two residual
 deformation-class rows, one Berger carrier-gap row, one classical-to-quantum
-tangent-cone crosswalk, and nine non-mode particle guards. Every row carries
+tangent-cone crosswalk, and ten non-mode particle guards. Every row carries
 the full declared mode scope and separately records classical
 import, BRST closure and exactness, pairing, compatible complex structure,
 Hadamard two-point function, state-space signature, anomaly/QME dependency,
@@ -122,6 +122,12 @@ of Weyl gravity, the Laplace-type endomorphism and bundle curvature already
 contribute at first curvature order, so the special-background determinant
 ranks and local heat-kernel coordinates do not determine the required
 generic-background trace substitution.
+The tenth non-mode guard sharpens this boundary: the exact generic
+Diff--Weyl ghost Schur complement is elliptic but nonminimal, has principal
+spectrum `(3/2,1,1,1)`, and is generically Hodge-mixed. It reproduces the
+accepted Einstein scalar factor but obstructs direct minimal-CPT
+substitution. The guard remains `NO_CERTIFIED_MAP` to any particle row and
+does not alter the strict/extended QME disposition.
 The additive
 finite `C2` normalization, absolute dressed `R(g_hat)^2` normalization,
 derivative-decorated cubic-and-higher Weyl completion, global Green/kernel

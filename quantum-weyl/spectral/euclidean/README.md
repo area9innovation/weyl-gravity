@@ -41,6 +41,28 @@ fix `c=199/30`, while the independent round-`S4` calculation fixes
 Slavnov insertion; they still do not establish a Lorentzian QME or global
 determinant phase theorem.
 
+The generic-background ghost applicability question is now decided exactly
+in
+[`GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json`](certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json).
+Eliminating the algebraic Weyl-ghost row gives
+`M_eff xi = Box xi + Ric(xi) + (1/2) grad div(xi)`, independently of the
+covariant gauge parameter. Its unit-covector principal spectrum is
+`(3/2,1,1,1)`, and generic tracefree Ricci curvature mixes the Hodge sectors.
+It is elliptic but nonminimal, while its Einstein specialization reproduces
+the accepted `Delta_0-R/3` scalar ghost factor. Thus the current
+minimal-Laplace CPT kernels cannot receive the generic ghost block by direct
+rank or endomorphism substitution. The next analytic input is a matched
+nonminimal-vector determinant/CPT calculation or an exactly equivalent local
+extension with its Jacobian; this is not an anomaly or Lorentzian no-go.
+
+Replay with:
+
+```bash
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_cpt_obstruction --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_cpt_obstruction
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_cpt_obstruction
+```
+
 The generic schema in this directory remains a promotion gate: a coefficient record is valid
 only when it supplies an exact coefficient together with the action
 normalization, signature, gauge, regularization, zero-mode policy, contour

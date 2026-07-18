@@ -17,6 +17,7 @@
       "denominator": 20,
       "numerator": -87
     },
+    "Einstein_scalar_ghost_factor_reproduced": true,
     "Euclidean_symbol_bundle_dimensions": [
       5,
       10,
@@ -71,6 +72,29 @@
       "numerator": 199
     },
     "formal_tau_adic_coordinate_change_invertible": true,
+    "generic_background_ghost_effective_divergence_coefficient": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "generic_background_ghost_minimal_CPT_substitution_obstructed": true,
+    "generic_background_ghost_principal_eigenvalues": [
+      {
+        "denominator": 2,
+        "numerator": 3
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
     "minimal_BV_compensator_cotangent_lift_exact": true,
     "minimal_Koszul_Tate_collapse_page": "E2",
     "nonlocal_R2_form_factor_disposition": "NOT_AN_INDEPENDENT_DATUM_IN_DECLARED_FV_CONFORMAL_DECOMPOSITION",
@@ -124,7 +148,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "ab62e1e0a24ac7e4a3adfa5e5288811f64c2da214fc8aa3ad2da08ecb6dfe95d",
+  "compiled_pdf_sha256": "8536d81364eb9148cf3c3b20c3f9b7e2ba048250275f1d3e67656e6d5aa54734",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -139,6 +163,7 @@
     "complete_renormalized_Q1_supplied": false,
     "finite_polynomial_in_tau_theorem": false,
     "full_BV_Bridge_4_particle_crosswalk": false,
+    "generic_nonminimal_ghost_CPT_determinant": false,
     "global_BRST_Hadamard_state": false,
     "independent_cubic_Weyl_invariant_form_factors": false,
     "parity_odd_third_curvature_carrier_manifest": false,
@@ -151,7 +176,7 @@
     "theorem_frozen": false,
     "unitarity_theorem": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, and five universal CPT source kernels are exact, while the repository generic-background trace substitution, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, five universal CPT source kernels are exact, and direct minimal-CPT substitution for the generic ghost sector is obstructed, while the matched nonminimal ghost determinant, generic physical fourth-order kernel, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -188,6 +213,10 @@
     "quantum-weyl/local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json": {
       "result_id": "MINIMAL_BV_KOSZUL_TATE_COLLAPSE",
       "sha256": "f2b04706724d79b50ddcbe0895476b4a688b40253715538bbdb8d09ea2c6a461"
+    },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json": {
+      "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+      "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
     },
     "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json": {
       "result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
@@ -244,12 +273,13 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "bd217ce420abd0c97b4d0f00ecac69ddb4d71e0d304d26922fa4ddfd1932cb19",
+  "manuscript_sha256": "dc2dbe076791eca4e4ce1eaf13367a5a24dc22444ce72d7a1e08a76c8eed1bb6",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
-      "same-gauge generic-background full-BV Hessian and trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
+      "matched nonminimal generic-background Diff-Weyl ghost determinant or determinant/Jacobian-equivalent local extension",
+      "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
     "required_outputs": [
@@ -259,12 +289,12 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_PARITY_ODD_MANIFEST_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
+    "status": "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "810c69ff43ec282db4fb91f861c3bea17eb32e5b26fc833caacc1ce0b0a56d05",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "ca0b6bd0ca21eef0d9c4dd7c0e1102358eafc9e91c89e57317a307ba216d1e49",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "b8e74a6933e49d8f50036f683eaf3d556ad21f336cd3b400b56b00bc829f1dd8",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "2b7340d059011f4c87829a6956db56c13c18359a6548f9eba1feb42a25049d4a",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "e4d67523d30542d6c9a6c4cf1aecf7c994c57359d459e0814e1296e130d5fabb",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "aa96af929409e618c743c158428794a5fe08311db679d818e74def2ee9c88048",
     "paper/generate_12_quantum_anomaly_tables.py": "332a4f2655192f6ad7e65e716083e89dbb4195befdd87f0e4e6324015739d874",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "720416a0ae7453a7387eb416b543765e4b07f79afd8c1b5eb773612afe5bf1f0",
     "paper/verify_12_quantum_anomaly_tables.py": "f8b082549a5263b6f2655c6d94c4cf391bb70ca1382563f3b122e17a81882900"

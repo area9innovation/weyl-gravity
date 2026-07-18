@@ -64,6 +64,7 @@ DEPENDENCIES = {
     "algebraic_cubic_Weyl_carriers": HERE / "transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
     "third_curvature_Weyl_manifest": HERE / "transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
     "CPT_universal_third_curvature_kernels": HERE / "transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
+    "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -154,6 +155,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "algebraic_cubic_Weyl_carriers": "ALGEBRAIC_C3_CARRIERS_COMPLETE_NONLOCAL_CUBIC_FORM_FACTORS_OPEN",
         "third_curvature_Weyl_manifest": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN",
         "CPT_universal_third_curvature_kernels": "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_CONFORMAL_GRAVITON_TRACE_SUBSTITUTION_OPEN",
+        "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
@@ -176,6 +178,7 @@ def _load() -> dict[str, dict[str, Any]]:
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
     cpt_third_curvature = values["CPT_universal_third_curvature_kernels"]
+    generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -431,6 +434,37 @@ def _load() -> dict[str, dict[str, Any]]:
         != "NO_REPOSITORY_FORM_FACTOR_COEFFICIENT_CAN_BE_INFERRED_FROM_THE_CURRENT_SPECIAL_BACKGROUND_LEDGER"
     ):
         raise ValueError("universal CPT third-curvature kernel frontier drifted")
+    if (
+        generic_ghost_cpt.get("CPT_applicability_decision", {}).get("verdict")
+        != "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
+        or generic_ghost_cpt.get("algebraic_Weyl_ghost_elimination", {}).get(
+            "effective_vector_operator"
+        )
+        != "M_eff xi_mu=Box xi_mu+Ric_mu_nu xi^nu+(1/2)nabla_mu div(xi)"
+        or generic_ghost_cpt.get("nonminimal_principal_symbol", {}).get("Laplace_type")
+        is not False
+        or generic_ghost_cpt.get("generic_Hodge_mixing", {}).get(
+            "longitudinal_subspace_preserved"
+        )
+        is not False
+        or generic_ghost_cpt.get("generic_Hodge_mixing", {}).get(
+            "Einstein_scalar_factor_reproduced"
+        )
+        != "Delta_0-R/3"
+        or generic_ghost_cpt.get("claim_flags", {}).get(
+            "GENERIC_GHOST_PRINCIPAL_SYMBOL_NONMINIMAL"
+        )
+        is not True
+        or generic_ghost_cpt.get("claim_flags", {}).get(
+            "GENERIC_GHOST_HODGE_SPLIT_OBSTRUCTED"
+        )
+        is not True
+        or generic_ghost_cpt.get("claim_flags", {}).get(
+            "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("generic-background ghost CPT obstruction frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1296,8 +1330,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_TRACE_SUBSTITUTION_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_DIRECT_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED_Q1_UNDERDETERMINED",
+                "next_gate": "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1312,8 +1346,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_DIRECT_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED_NONMINIMAL_GHOST_DETERMINANT_PHYSICAL_FOURTH_ORDER_KERNEL_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
         },
         "supersession_ledger": [
@@ -1436,6 +1470,8 @@ def build() -> dict[str, Any]:
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED": True,
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
             "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED": True,
+            "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED": True,
+            "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": False,
             "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED": False,
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": True,
             "FULL_BV_LEDGER_COMPOSER_READY": True,
@@ -1499,7 +1535,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1544,7 +1580,15 @@ def build() -> dict[str, Any]:
             "imported and symmetrized; they are coefficient-bearing for the rank-one minimal "
             "scalar-Laplacian source fixture. The repository tensor/ghost endomorphism and "
             "connection-curvature trace substitutions on a generic background are not supplied, "
-            "and the special-background determinant ranks cannot determine them. The five repository form-factor functions and their "
+            "and the special-background determinant ranks cannot determine them. The exact "
+            "generic Diff--Weyl ghost Schur complement is beta-independent but nonminimal, "
+            "with principal spectrum (3/2,1,1,1), and generic tracefree Ricci curvature mixes "
+            "its Hodge sectors. It reproduces the accepted scalar factor only on Einstein "
+            "backgrounds. Direct substitution of the current ghost ledger into the imported "
+            "minimal-Laplace CPT kernels is therefore obstructed; a matched nonminimal-vector "
+            "ghost determinant or an exact determinant/Jacobian-equivalent local extension is "
+            "required. This is an architecture obstruction, not an anomaly or Lorentzian no-go. "
+            "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
             "zeta/proper-time BoxR coefficient is independently replayed as "
@@ -1826,6 +1870,10 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED") is not True
         or flags.get("FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED")
         is not True
+        or flags.get("GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED")
+        is not True
+        or flags.get("GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED")
+        is not False
         or flags.get("REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED")
         is not False
     ):
@@ -1886,6 +1934,8 @@ def validate(result: dict[str, Any]) -> None:
             "ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE",
             "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
             "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED",
+            "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
+            "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED",
             "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED",
             "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
             "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED",

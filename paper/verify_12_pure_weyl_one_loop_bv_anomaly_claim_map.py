@@ -97,6 +97,18 @@ def main() -> None:
     assert claims["universal_CPT_third_curvature_kernels_imported"] is True
     assert claims["universal_CPT_source_fixture_status"] == "COEFFICIENT_COMPUTED"
     assert claims["universal_CPT_kernel_box_homogeneities"] == [-1, -2, -2, -3, -4]
+    assert claims["generic_background_ghost_minimal_CPT_substitution_obstructed"] is True
+    assert claims["generic_background_ghost_effective_divergence_coefficient"] == {
+        "numerator": 1,
+        "denominator": 2,
+    }
+    assert claims["generic_background_ghost_principal_eigenvalues"] == [
+        {"numerator": 3, "denominator": 2},
+        {"numerator": 1, "denominator": 1},
+        {"numerator": 1, "denominator": 1},
+        {"numerator": 1, "denominator": 1},
+    ]
+    assert claims["Einstein_scalar_ghost_factor_reproduced"] is True
     assert claims["raw_zeta_BoxR_coefficient"] == {
         "basis": ["1", "log(3/2)"],
         "rational": {"numerator": -159, "denominator": 80},
@@ -118,11 +130,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_PARITY_ODD_MANIFEST_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
+        == "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 22
+    assert len(payload["inputs"]) == 23
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -142,6 +154,7 @@ def main() -> None:
     cubic_weyl = dependencies["FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS"]
     third_curvature_weyl = dependencies["FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST"]
     cpt_kernels = dependencies["CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS"]
+    generic_ghost_cpt = dependencies["GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -185,6 +198,12 @@ def main() -> None:
     assert cpt_kernels["claim_flags"]["FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED"] is True
     assert cpt_kernels["claim_flags"]["REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_SUPPLIED"] is False
     assert cpt_kernels["claim_flags"]["REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"] is False
+    assert generic_ghost_cpt["CPT_applicability_decision"]["verdict"] == (
+        "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
+    )
+    assert generic_ghost_cpt["claim_flags"]["GENERIC_GHOST_PRINCIPAL_SYMBOL_NONMINIMAL"] is True
+    assert generic_ghost_cpt["claim_flags"]["GENERIC_GHOST_HODGE_SPLIT_OBSTRUCTED"] is True
+    assert generic_ghost_cpt["claim_flags"]["GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED"] is False
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"

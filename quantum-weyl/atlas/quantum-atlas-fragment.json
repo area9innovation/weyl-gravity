@@ -1235,7 +1235,7 @@
       }
     },
     {
-      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The zero-derivative algebraic C3 basis and parity-even third-curvature carrier manifest are complete, and five exact universal CPT source kernels are imported. The repository generic-background full-BV trace substitution, hence the five repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. The zero-derivative algebraic C3 basis and parity-even third-curvature carrier manifest are complete, five exact universal CPT source kernels are imported, and the generic ghost operator is proved nonminimal and Hodge-mixed, obstructing direct minimal-CPT substitution. A matched nonminimal ghost determinant, the generic physical fourth-order Hessian kernel, the repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -1335,6 +1335,11 @@
           "sha256": "1c2d987f25042431ad079f976b5a421866d91cc8f720abaaa4ad2e9c9f543805"
         },
         {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
+          "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+          "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
+        },
+        {
           "path": "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
           "result_id": "WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION",
           "sha256": "21fc06bb31a35f8aa8f1d8f35f6fe1e746a8ab881332e16072ee257b3a437b2c"
@@ -1388,7 +1393,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "anomaly_QME_dependency": {
-          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis and parity-even five-carrier manifest are complete, and five exact universal CPT source kernels are imported, while the repository generic-background trace substitution, repository functions and coefficients, finite normalizations and complete Q1 are underdetermined",
+          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis and parity-even five-carrier manifest are complete, five exact universal CPT source kernels are imported, and direct minimal-CPT substitution for the generic ghost sector is obstructed, while the matched nonminimal ghost determinant, repository functions and coefficients, finite normalizations and complete Q1 are underdetermined",
           "status": "CERTIFIED"
         },
         "carrier_crosswalk": {
@@ -1409,7 +1414,7 @@
         ],
         "entry_kind": "CLASSICAL_TO_QUANTUM_CROSSWALK",
         "lifecycle_state": {
-          "statement": "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest and universal source kernels are complete in scope, but the repository generic-background full-BV trace substitution, repository form-factor functions and coefficients, the parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
+          "statement": "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence, selected FV carrier completion, algebraic C3 basis, parity-even third-curvature manifest, universal source kernels and generic-ghost architecture obstruction are complete in scope, but the matched nonminimal ghost determinant, generic physical fourth-order Hessian kernel, repository form-factor functions and coefficients, parity-odd derivative manifest, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
           "status": "NO_CERTIFIED_MAP"
         },
         "pairing_status": {
@@ -2466,6 +2471,121 @@
       },
       "evidence": [
         {
+          "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
+          "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+          "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
+        }
+      ],
+      "id": "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle",
+      "mode_data": {
+        "dispersion": {
+          "statement": "not a physical residual mode shell",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "no particle pairing crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "non-mode carrier guard",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "non-mode carrier guard",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "non-mode carrier guard",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "quantum_data": {
+        "BRST_cocycle": {
+          "statement": "carrier-specific; no physical residual mode imported",
+          "status": "NOT_APPLICABLE"
+        },
+        "BRST_exactness": {
+          "statement": "carrier-specific; no physical residual mode imported",
+          "status": "NOT_APPLICABLE"
+        },
+        "Hadamard_two_point_function": {
+          "statement": "no particle Hadamard crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "anomaly_QME_dependency": {
+          "statement": "carrier retains its own anomaly/QME dependency",
+          "status": "OPEN"
+        },
+        "carrier_crosswalk": {
+          "statement": "non-mode carrier to particle",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "classical_mode_imported": {
+          "statement": "carrier imported only in its declared non-particle role",
+          "status": "CERTIFIED"
+        },
+        "compatible_complex_structure": {
+          "statement": "no particle complex structure crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "dependency_tags": [
+          "LOCAL-ALGEBRAIC",
+          "EUCLIDEAN-SPECTRAL"
+        ],
+        "entry_kind": "NON_MODE_PARTICLE_GUARD",
+        "lifecycle_state": {
+          "statement": "not a particle lifecycle entry",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "pairing_status": {
+          "statement": "no particle pairing crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "particle_interpretation": {
+          "statement": "forbidden without an explicit physical residual-mode crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "state_space_status": {
+          "statement": "no particle state-space crosswalk",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "carrier-specific; no cross-background identification",
+        "boundaries": "carrier-specific",
+        "carrier": "generic-background effective Diff-Weyl ghost determinant: elliptic nonminimal Hodge-mixed vector operator; direct minimal-CPT substitution obstructed",
+        "charge_sector": "not a certified physical one-particle sector",
+        "degree": "carrier-specific",
+        "ell": "NO_CERTIFIED_MAP",
+        "k": "NO_CERTIFIED_MAP",
+        "m": "NO_CERTIFIED_MAP",
+        "omega": "NO_CERTIFIED_MAP",
+        "parity": "carrier-specific",
+        "theory": "pure-Weyl quantum programme"
+      }
+    },
+    {
+      "claim_boundary": "This carrier remains valid in its local, spectral, or observable-algebra role, but no certified map turns it into a particle entry.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
           "path": "quantum-weyl/lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
           "result_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
           "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed"
@@ -2571,7 +2691,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "6fe23d53fe9228bedff92357d4c356b7603b823265ad1fd73eae6e0fdbfbc9dc",
+  "generated_by_sha256": "43a06622a25c0cd7fb1d466292d923075a97358e4757da497536325d53b4e29a",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

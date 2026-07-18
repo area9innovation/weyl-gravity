@@ -1,0 +1,483 @@
+{
+  "CPT_applicability_decision": {
+    "current_four_factor_ledger_background": "Einstein/round-S4 reduction",
+    "generic_repository_ghost_operator_class": "nonminimal vector operator with Hodge mixing",
+    "imported_kernel_operator_class": "minimal second-order Laplace type F=-Box+P",
+    "minimal_missing_calculation": "a covariant nonminimal-vector CPT determinant for M_eff in the matched Diff-Weyl gauge and measure, or a different generic-background gauge/local field extension with an exact determinant-and-Jacobian equivalence to minimal Laplace blocks",
+    "verdict": "DIRECT_MINIMAL_CPT_SUBSTITUTION_FOR_THE_GENERIC_GHOST_SECTOR_IS_OBSTRUCTED"
+  },
+  "algebraic_Weyl_ghost_elimination": {
+    "beta_controls": [
+      {
+        "Schur_correction": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "beta": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "effective_divergence_coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "gradient_weyl_coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "trace_divergence_coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "trace_weyl_coefficient": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "vector_divergence_coefficient_before_elimination": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "Schur_correction": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "beta": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "effective_divergence_coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "gradient_weyl_coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "trace_divergence_coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "trace_weyl_coefficient": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "vector_divergence_coefficient_before_elimination": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      {
+        "Schur_correction": {
+          "denominator": 2,
+          "numerator": -1
+        },
+        "beta": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "effective_divergence_coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "gradient_weyl_coefficient": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "trace_divergence_coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "trace_weyl_coefficient": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "vector_divergence_coefficient_before_elimination": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      }
+    ],
+    "beta_independent": true,
+    "effective_vector_operator": "M_eff xi_mu=Box xi_mu+Ric_mu_nu xi^nu+(1/2)nabla_mu div(xi)",
+    "method": "Schur complement of the algebraic 8 in the coupled (F_mu,F_W) by (xi,omega) FP operator"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL theorem derives the generic coupled Diff-Weyl FP rows and their exact algebraic Weyl-ghost Schur complement. The resulting beta-independent vector operator is elliptic but non-Laplace type, has unequal transverse/longitudinal principal eigenvalues, and fails to preserve the Hodge split for a generic tracefree-Ricci jet. It reproduces the accepted scalar ghost factor only on Einstein backgrounds. Therefore the existing Einstein four-factor ledger cannot be substituted directly into the five imported minimal-Laplace CPT kernels. This does not compute the required nonminimal ghost determinant, the generic physical fourth-order Hessian kernel, any repository cubic function or coefficient, complete Gamma1 or Q1, residual transfer, or a Lorentzian, Hadamard, particle, positivity or unitarity theorem.",
+  "claim_flags": {
+    "ALGEBRAIC_WEYL_GHOST_ELIMINATED": true,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "EFFECTIVE_VECTOR_OPERATOR_BETA_INDEPENDENT": true,
+    "EINSTEIN_SCALAR_GHOST_FACTOR_REPRODUCED": true,
+    "GENERIC_DIFF_WEYL_FP_ROWS_DERIVED": true,
+    "GENERIC_GHOST_HODGE_SPLIT_OBSTRUCTED": true,
+    "GENERIC_GHOST_PRINCIPAL_SYMBOL_NONMINIMAL": true,
+    "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED": false,
+    "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": false,
+    "REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_SUPPLIED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "Einstein_scalar_ghost_reduction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/DIFF_WEYL_SCALAR_GHOST_REDUCTION.json",
+      "result_id": "DIFF_WEYL_SCALAR_GHOST_REDUCTION",
+      "sha256": "7858073c4c8394512f26faf7d884a12411bee6e3a59fe7d8d394d66d07b1b231"
+    },
+    "classical_minimal_BV": {
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+      "result_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+      "sha256": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8"
+    },
+    "full_BV_multiplicity_ledger": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+      "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+      "sha256": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970"
+    },
+    "universal_CPT_kernels": {
+      "path": "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
+      "result_id": "CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS",
+      "sha256": "1c2d987f25042431ad079f976b5a421866d91cc8f720abaaa4ad2e9c9f543805"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_FP_rows": {
+    "metric_BRST": "delta h_mu_nu=nabla_mu xi_nu+nabla_nu xi_mu+2 omega g_mu_nu",
+    "trace_gauge_variation": "delta F_W=2 div(xi)+8 omega",
+    "vector_gauge_variation": "delta F_mu=Box xi_mu+Ric_mu_nu xi^nu+(1-2 beta)nabla_mu div(xi)+2(1-4 beta)nabla_mu omega",
+    "weyl_row_is_algebraically_invertible": true
+  },
+  "generic_Hodge_mixing": {
+    "Einstein_scalar_factor_reproduced": "Delta_0-R/3",
+    "Einstein_specialization": "M_eff(nabla c)=-(3/2)nabla(Delta_0-R/3)c",
+    "Ricci_split": "Ric_mu_nu=(R/4)g_mu_nu+S_mu_nu",
+    "gradient_covector_fixture": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "identity_on_gradient": "M_eff(nabla c)=-(3/2)nabla Delta_0 c+2 Ric_mu_nu nabla^nu c",
+    "longitudinal_subspace_preserved": false,
+    "tracefree_Ricci_fixture": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "transverse_mixing_term_2S_dot_k": [
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  "lifecycle_state": "OBSTRUCTED_CURRENT_MINIMAL_CPT_ARCHITECTURE",
+  "next_gate": "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+  "nonminimal_principal_symbol": {
+    "Laplace_type": false,
+    "characteristic_polynomial": "(lambda-1)^3(lambda-3/2)",
+    "eigenvalues_e0": [
+      {
+        "denominator": 2,
+        "numerator": 3
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "elliptic": true,
+    "fixed_two_sided_scalarizer_no_go": {
+      "is_scalar": false,
+      "principal_symbol_e0_inverse": [
+        [
+          {
+            "denominator": 3,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      ],
+      "principal_symbol_e1": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      ],
+      "reason": "if fixed invertible A,B made A P(k) B scalar for both unit covectors, P0^{-1}P1 would be scalar up to similarity; its exact diagonal is (2/3,3/2,1,1)",
+      "relative_symbol_P0_inverse_P1_diagonal": [
+        {
+          "denominator": 3,
+          "numerator": 2
+        },
+        {
+          "denominator": 2,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    },
+    "longitudinal_multiplicity": 1,
+    "normalized_formula": "sigma_2(M_eff)(k)=|k|^2 I+(1/2) k tensor k",
+    "transverse_multiplicity": 3,
+    "unit_covector_e0": [
+      [
+        {
+          "denominator": 2,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ]
+  },
+  "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+  "result_state": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
+  "schema": "quantum-weyl-generic-background-diff-weyl-ghost-cpt-obstruction-v1",
+  "scope": {
+    "background": "generic local oriented metric; Einstein specialization recorded separately",
+    "dimension": 4,
+    "domain": "compactly supported local ghost jets; zero modes and global boundary data excluded",
+    "gauge": "F_mu=nabla^nu h_mu_nu-beta nabla_mu h and F_W=h",
+    "signature": "Euclidean"
+  }
+}

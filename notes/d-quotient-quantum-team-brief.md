@@ -857,6 +857,19 @@ generic-background full-BV Hessian trace substitution into those five
 kernels, or a direct nonminimal fourth-order CPT calculation, plus the
 matching measure.
 
+The generic ghost part of that gate is now resolved negatively for direct
+minimal-CPT substitution. Eliminating the algebraic Weyl-ghost row gives the
+beta-independent operator
+`M_eff xi = Box xi + Ric(xi) + (1/2) grad div(xi)`. Its exact principal
+spectrum is `(3/2,1,1,1)`, and an explicit tracefree-Ricci jet sends a
+longitudinal input into a transverse component. Thus it is elliptic but
+nonminimal and generically Hodge-mixed. Its Einstein specialization exactly
+reproduces the accepted `Delta_0-R/3` scalar factor. The active coefficient
+gate is consequently a matched nonminimal-vector ghost determinant (or an
+exact determinant/Jacobian-equivalent local extension) together with the
+generic physical fourth-order Hessian kernel. This is an architecture
+obstruction, not an anomaly, QME, or Lorentzian no-go.
+
 The available positive-Berger `34 -> 26` SDR does not supply that contraction.
 Its row named `tau` is the temporal diffeomorphism ghost in the Berger
 gravity--clock complex; Wess--Zumino `tau` is a scalar Weyl compensator in a
@@ -864,8 +877,10 @@ different local-BV carrier. The content-addressed merge audit therefore
 rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
-rail for Bridge 5. Its remaining local gate is the five parity-even
-third-curvature repository form-factor functions and coefficients,
+rail for Bridge 5. Its remaining local gate begins with the nonminimal
+generic-background ghost determinant and physical fourth-order Hessian
+kernel, followed by the five parity-even third-curvature repository
+form-factor functions and coefficients,
 the parity-odd derivative manifest,
 finite `C2` and absolute dressed `R(g_hat)^2` normalization, and complete
 `Q1`; its independent carrier gate is Bridge 2. The generated
@@ -934,6 +949,9 @@ repository form-factor functions or their coefficients.
 The exact universal kernels and their repository nonidentifiability theorem
 are recorded in
 [`cpt-universal-third-curvature-kernels.md`](../quantum-weyl/reports/cpt-universal-third-curvature-kernels.md).
+The exact generic Diff--Weyl ghost Schur operator and the direct minimal-CPT
+architecture obstruction are recorded in
+[`generic-background-diff-weyl-ghost-cpt-obstruction.md`](../quantum-weyl/reports/generic-background-diff-weyl-ghost-cpt-obstruction.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as

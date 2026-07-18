@@ -323,7 +323,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

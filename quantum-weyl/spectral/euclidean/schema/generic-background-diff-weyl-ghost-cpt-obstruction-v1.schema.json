@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.example/schemas/generic-background-diff-weyl-ghost-cpt-obstruction-v1.schema.json",
+  "title": "Generic-background Diff-Weyl ghost CPT obstruction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "scope", "exact_FP_rows",
+    "algebraic_Weyl_ghost_elimination", "nonminimal_principal_symbol",
+    "generic_Hodge_mixing", "CPT_applicability_decision", "claim_flags",
+    "dependencies", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-diff-weyl-ghost-cpt-obstruction-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION"},
+    "result_state": {"const": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED"},
+    "lifecycle_state": {"const": "OBSTRUCTED_CURRENT_MINIMAL_CPT_ARCHITECTURE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {"type": "object", "minProperties": 5},
+    "exact_FP_rows": {"type": "object", "minProperties": 4},
+    "algebraic_Weyl_ghost_elimination": {"type": "object", "minProperties": 4},
+    "nonminimal_principal_symbol": {"type": "object", "minProperties": 9},
+    "generic_Hodge_mixing": {"type": "object", "minProperties": 8},
+    "CPT_applicability_decision": {"type": "object", "minProperties": 5},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "GENERIC_DIFF_WEYL_FP_ROWS_DERIVED",
+        "ALGEBRAIC_WEYL_GHOST_ELIMINATED",
+        "EFFECTIVE_VECTOR_OPERATOR_BETA_INDEPENDENT",
+        "GENERIC_GHOST_PRINCIPAL_SYMBOL_NONMINIMAL",
+        "GENERIC_GHOST_HODGE_SPLIT_OBSTRUCTED",
+        "EINSTEIN_SCALAR_GHOST_FACTOR_REPRODUCED",
+        "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED",
+        "REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_SUPPLIED",
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED",
+        "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "GENERIC_DIFF_WEYL_FP_ROWS_DERIVED": {"const": true},
+        "ALGEBRAIC_WEYL_GHOST_ELIMINATED": {"const": true},
+        "EFFECTIVE_VECTOR_OPERATOR_BETA_INDEPENDENT": {"const": true},
+        "GENERIC_GHOST_PRINCIPAL_SYMBOL_NONMINIMAL": {"const": true},
+        "GENERIC_GHOST_HODGE_SPLIT_OBSTRUCTED": {"const": true},
+        "EINSTEIN_SCALAR_GHOST_FACTOR_REPRODUCED": {"const": true},
+        "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": {"const": false},
+        "REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_SUPPLIED": {"const": false},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_minimal_BV", "Einstein_scalar_ghost_reduction", "full_BV_multiplicity_ledger", "universal_CPT_kernels"],
+      "properties": {
+        "classical_minimal_BV": {"$ref": "#/$defs/reference"},
+        "Einstein_scalar_ghost_reduction": {"$ref": "#/$defs/reference"},
+        "full_BV_multiplicity_ledger": {"$ref": "#/$defs/reference"},
+        "universal_CPT_kernels": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "next_gate": {"const": "NONMINIMAL_GENERIC_BACKGROUND_GHOST_CPT_DETERMINANT_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"},
+    "claim_boundary": {"type": "string", "minLength": 200}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

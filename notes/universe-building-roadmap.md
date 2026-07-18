@@ -378,8 +378,13 @@ also complete: five carrier-labelled functions span twelve generic label
 channels and one symmetric four-dimensional relation leaves eleven. The five
 exact universal CPT alpha kernels are now imported on their rank-one minimal
 scalar-Laplacian source fixture. The repository generic-background full-BV
-trace substitution, hence the repository functions and coefficients, and the
-parity-odd derivative manifest remain open. The raw local `BoxR` coefficient and exact strict-metric
+ghost applicability audit now proves that the beta-independent Schur operator
+is elliptic but nonminimal and Hodge-mixed, so direct minimal-CPT substitution
+is architecture-obstructed even though the accepted Einstein scalar factor is
+reproduced exactly. A matched nonminimal ghost determinant and generic
+physical fourth-order Hessian kernel remain open; consequently the repository
+functions and coefficients and the parity-odd derivative manifest remain
+open. The raw local `BoxR` coefficient and exact strict-metric
 raw-to-`BoxR=0` scheme shift are fixed, reproducing the local `R2` coefficient
 `29/120`. The additive finite `C2` constant, absolute dressed `R(g_hat)^2`
 normalization, repository matching just described, Paneitz/FV kernel and global data, and
@@ -1231,6 +1236,13 @@ Wess--Zumino Hamiltonian piece is fixed, but an exact rank-two `C(g_hat)^2`/
 `R(g_hat)^2` bulk ambiguity refutes uniqueness until finite normalization and
 the finite nonlocal/renormalized-product data are supplied.
 
+The next coefficient-bearing analytic gate is no longer an unspecified trace
+substitution: it is a matched generic-background nonminimal Diff--Weyl ghost
+determinant (or an exactly determinant/Jacobian-equivalent local extension)
+plus the physical fourth-order Hessian kernel. This local Euclidean
+architecture obstruction is neither a new anomaly/QME disposition nor a
+Lorentzian no-go.
+
 The matter-cancellation T4 branch is closed: a separating dual-cone certificate proves
 that nonnegative standard-sign free conformal scalars, Weyl/Dirac fermions,
 and gauge vectors cannot cancel the two even coordinates. The compensator
@@ -1271,7 +1283,7 @@ REPOSITORY_RELEASED artifact is committed, linked to its receipts, and public in
 | Berger light and relational redshift beyond Paper 11 | first scoped C-G4 theorem certified: actual retarded, spatially global probe signal with crossings, reduced probe bracket, and nontrivial evolution | localize emitter and receiver after the mixed \(\epsilon_R^2\kappa\) apparatus gate; do not promote the probe bracket to a full apparatus Dirac bracket |
 | Abstract Green/BGG transfer | outline allowed | abstract hypotheses, toy example, complete detour example, and independent verifier; avoid duplicating Paper 8 without a new abstraction or application |
 | Nonlinear quotient stability | `DRAFT_ALLOWED` for the scoped G0 filtered-cyclic obstruction theorem | keep transformation-class and frozen-carrier qualifiers explicit; branch-resolved or cohomological claims additionally require an accepted branch projector and residual descent |
-| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction, tau-adic extended one-loop local Euclidean restoration, exact rank-two `Q1` underdetermination, the conditional anomaly-induced Paneitz/Riegert `Gamma1` representative, the covariant curvature-squared `C2` logarithmic form factor and its exact FV scalar-flat Weyl-orbit completion, the exact FV anomaly action and Ricci-sector dependence theorem, the exact raw-to-`BoxR=0` strict-metric `R2` scheme conversion, the exhaustive one-even/one-odd zero-derivative algebraic `C3` basis, the parity-even five-carrier third-curvature manifest with exact `12 -> 11` label quotient, and five exact universal CPT source kernels; focused major revision completed with the determinant-to-Slavnov bridge, regular-Bach spectral sequence, explicit quartet homotopy and Euler primitive, matter vectors, narrowed effective-action claims, and a content-addressed referee-response ledger | final human and literature review before theorem freeze; the next theorem requires the same-gauge generic-background full-BV trace substitution matching the source kernels to repository third-curvature functions and coefficients, the parity-odd derivative manifest, finite `C2`/absolute dressed `R(g_hat)^2` normalization, renormalized products, a same-background compensator contraction, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
+| Paper 12, pure-Weyl one-loop BV anomaly/QME | `DRAFT_ALLOWED`; theorem-spine manuscript, computational supplement, both compiled PDFs, generated exact tables, and fail-closed claim map assembled for the strict obstruction, tau-adic extended one-loop local Euclidean restoration, exact rank-two `Q1` underdetermination, the conditional anomaly-induced Paneitz/Riegert `Gamma1` representative, the covariant curvature-squared `C2` logarithmic form factor and its exact FV scalar-flat Weyl-orbit completion, the exact FV anomaly action and Ricci-sector dependence theorem, the exact raw-to-`BoxR=0` strict-metric `R2` scheme conversion, the exhaustive one-even/one-odd zero-derivative algebraic `C3` basis, the parity-even five-carrier third-curvature manifest with exact `12 -> 11` label quotient, five exact universal CPT source kernels, and the generic ghost direct-minimal-CPT architecture obstruction; focused major revision completed with the determinant-to-Slavnov bridge, regular-Bach spectral sequence, explicit quartet homotopy and Euler primitive, matter vectors, narrowed effective-action claims, and a content-addressed referee-response ledger | final human and literature review before theorem freeze; the next theorem requires a matched nonminimal generic-background ghost determinant and physical fourth-order Hessian kernel before the repository third-curvature functions and coefficients, plus the parity-odd derivative manifest, finite `C2`/absolute dressed `R(g_hat)^2` normalization, renormalized products, a same-background compensator contraction, and quantum `D`-defect disposition; Lorentzian/state claims remain separate |
 | Asymptotic radiation and black holes | programme stage | boundary phase space, charges, flux, and extra-branch classification |
 | Galaxy/dark-matter and cosmology/dark-energy phenomenology | later programme stage | physical weak-field/cosmological observables and stability before data comparison |
 
