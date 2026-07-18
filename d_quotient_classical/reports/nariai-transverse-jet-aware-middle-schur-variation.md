@@ -11,12 +11,12 @@ coefficientwise
 \dot(M^D d^D)=0.
 \]
 
-The provisional compressed-middle variation has
+The exact compressed-middle variation has
 `174` coefficients, compared with
 `130` in the rejected frozen-parallel
-shortcut, and the coefficient hashes differ.  Mixed spatial curvature jets of
-orders two and three are still missing from this endpoint calculation, so
-these compressed coefficients are a diagnostic rather than a theorem.
+shortcut, and the coefficient hashes differ.  Every requested mixed spatial
+curvature jet through order three is derived from the coordinate covariant
+recurrence and independently agrees with the earlier moving-frame first jet.
 
 The shifted-chain variation retains an exact defect.  More decisively, the
 endpoint gauge defect contains zeroth- and second-order PBW words.  Since an

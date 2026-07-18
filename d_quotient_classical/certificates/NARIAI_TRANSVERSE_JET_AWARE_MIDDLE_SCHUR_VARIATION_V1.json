@@ -2,7 +2,7 @@
   "schema": "nariai-transverse-jet-aware-middle-schur-variation-v1",
   "schema_version": "1.0.0",
   "result_id": "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1",
-  "result_state": "JET_AWARE_BGG_AND_PARENT_YM_MIDDLE_EXACT_SHIFTED_CHAIN_AND_DIFFERENTIAL_SCHUR_OPEN",
+  "result_state": "COMPLETE_JET_AWARE_BGG_PARENT_AND_ENDPOINT_PBW_EXACT_DIFFERENTIAL_SCHUR_OPEN",
   "lifecycle_state": "CERTIFIED",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC"
@@ -26,11 +26,13 @@
   },
   "exact_data": {
     "jet_model": {
-      "curvature_variation": "exact first covariant jets from the moving-frame variation; repeated time jets from delta R(t)=sinh(t) delta R(t_star)",
-      "accepted_covariant_jet_words": "empty word, every length-one word, and repeated time-axis words",
+      "curvature_variation": "complete coordinate-covariant Taylor recurrence transformed to the moving orthonormal frame",
+      "accepted_covariant_jet_words": "every requested word through total order three",
       "jet_factor_even": "1",
       "jet_factor_odd": "sqrt(2)",
-      "maximum_jet_order_used": 3
+      "maximum_jet_order_used": 3,
+      "coordinate_first_jet_matches_moving_frame": true,
+      "all_requested_higher_jets_are_so13_valued": true
     },
     "operator_variations": {
       "requested_curvature_jet_words": {
@@ -440,308 +442,7 @@
         ]
       },
       "unsupported_parent_identity_curvature_jet_words": {},
-      "unsupported_requested_curvature_jet_words": {
-        "C0": [
-          [
-            0,
-            0,
-            1
-          ],
-          [
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1,
-            1
-          ],
-          [
-            0,
-            1,
-            2
-          ],
-          [
-            0,
-            1,
-            3
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            2,
-            2
-          ],
-          [
-            0,
-            2,
-            3
-          ],
-          [
-            0,
-            3
-          ],
-          [
-            0,
-            3,
-            3
-          ],
-          [
-            1,
-            1
-          ],
-          [
-            1,
-            1,
-            1
-          ],
-          [
-            1,
-            1,
-            2
-          ],
-          [
-            1,
-            1,
-            3
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2,
-            2
-          ],
-          [
-            1,
-            2,
-            3
-          ],
-          [
-            1,
-            3
-          ],
-          [
-            1,
-            3,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2,
-            2
-          ],
-          [
-            2,
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3,
-            3
-          ]
-        ],
-        "H0": [
-          [
-            0,
-            0,
-            1
-          ],
-          [
-            0,
-            0,
-            2
-          ],
-          [
-            0,
-            0,
-            3
-          ],
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            1,
-            1
-          ],
-          [
-            0,
-            1,
-            2
-          ],
-          [
-            0,
-            1,
-            3
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            2,
-            2
-          ],
-          [
-            0,
-            2,
-            3
-          ],
-          [
-            0,
-            3
-          ],
-          [
-            0,
-            3,
-            3
-          ],
-          [
-            1,
-            1
-          ],
-          [
-            1,
-            1,
-            1
-          ],
-          [
-            1,
-            1,
-            2
-          ],
-          [
-            1,
-            1,
-            3
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            2,
-            2
-          ],
-          [
-            1,
-            2,
-            3
-          ],
-          [
-            1,
-            3
-          ],
-          [
-            1,
-            3,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            2,
-            2
-          ],
-          [
-            2,
-            2,
-            3
-          ],
-          [
-            2,
-            3
-          ],
-          [
-            2,
-            3,
-            3
-          ],
-          [
-            3,
-            3
-          ],
-          [
-            3,
-            3,
-            3
-          ]
-        ],
-        "H1": [
-          [
-            0,
-            1
-          ],
-          [
-            0,
-            2
-          ],
-          [
-            0,
-            3
-          ],
-          [
-            1,
-            1
-          ],
-          [
-            1,
-            2
-          ],
-          [
-            1,
-            3
-          ],
-          [
-            2,
-            2
-          ],
-          [
-            2,
-            3
-          ]
-        ]
-      },
+      "unsupported_requested_curvature_jet_words": {},
       "splitting_correction0": {
         "shape": [
           15,
@@ -2179,32 +1880,32 @@
                 [
                   11,
                   1,
-                  "17/3"
+                  "17/4"
                 ],
                 [
                   11,
                   4,
-                  "-11/6"
+                  "-8/3"
                 ],
                 [
                   11,
                   8,
-                  "-23/6"
+                  "-21/4"
                 ],
                 [
                   12,
                   0,
-                  "2"
+                  "3/4"
                 ],
                 [
                   13,
                   2,
-                  "-71/6"
+                  "-31/3"
                 ],
                 [
                   14,
                   5,
-                  "-31/6"
+                  "-47/12"
                 ],
                 [
                   15,
@@ -2274,32 +1975,32 @@
                 [
                   26,
                   0,
-                  "-1"
+                  "-5/4"
                 ],
                 [
                   27,
                   1,
-                  "-3"
+                  "-13/12"
                 ],
                 [
                   27,
                   4,
-                  "7/6"
+                  "13/4"
                 ],
                 [
                   27,
                   8,
-                  "31/6"
+                  "35/6"
                 ],
                 [
                   28,
                   3,
-                  "19/2"
+                  "67/6"
                 ],
                 [
                   29,
                   6,
-                  "1/2"
+                  "25/12"
                 ],
                 [
                   30,
@@ -2369,32 +2070,32 @@
                 [
                   41,
                   2,
-                  "-34/3"
+                  "-65/6"
                 ],
                 [
                   42,
                   3,
-                  "9"
+                  "119/12"
                 ],
                 [
                   43,
                   1,
-                  "17/6"
+                  "29/12"
                 ],
                 [
                   43,
                   4,
-                  "-2/3"
+                  "-4"
                 ],
                 [
                   43,
                   8,
-                  "-17/6"
+                  "-49/12"
                 ],
                 [
                   44,
                   7,
-                  "-11/6"
+                  "-47/12"
                 ],
                 [
                   45,
@@ -2469,30 +2170,30 @@
                 [
                   57,
                   6,
-                  "-1/2"
+                  "7/12"
                 ],
                 [
                   58,
                   7,
-                  "-17/6"
+                  "-35/12"
                 ],
                 [
                   59,
                   1,
-                  "17/6"
+                  "29/12"
                 ],
                 [
                   59,
                   4,
-                  "5/3"
+                  "13/12"
                 ],
                 [
                   59,
                   8,
-                  "-31/6"
+                  "-9/2"
                 ]
               ],
-              "sha256": "6a5c437f655a2cd283bc9309973f51504d8e99b588bb3c9a2daa28c063e0b452"
+              "sha256": "86bb998cb6654254ebfd6162fa48ba7ee96e9c899381ff8ea0a77758fe00c4c4"
             }
           },
           {
@@ -4406,7 +4107,7 @@
             }
           }
         ],
-        "sha256": "310278c7ca90f7c502ff869209af6c974e3ef1c0b7e76692dc6e2a5d361fb5ac"
+        "sha256": "1a3fabc6f4b6beba97349ffffdcf29ca2a3e2faa574e6db64705ff0c8f7357f4"
       },
       "compressed_middle": {
         "orders": [
@@ -4428,80 +4129,80 @@
                 [
                   0,
                   0,
-                  "2"
+                  "5"
                 ],
                 [
                   1,
                   1,
-                  "-28/3"
+                  "-31/3"
                 ],
                 [
                   1,
                   4,
-                  "-32/3"
+                  "-79/6"
                 ],
                 [
                   1,
                   8,
-                  "-44/3"
+                  "-79/6"
                 ],
                 [
                   2,
                   2,
-                  "191/6"
+                  "167/6"
                 ],
                 [
                   3,
                   3,
-                  "-35/2"
+                  "-68/3"
                 ],
                 [
                   4,
                   1,
-                  "-14"
+                  "-31/3"
                 ],
                 [
                   4,
                   4,
-                  "-33/2"
+                  "-49/6"
                 ],
                 [
                   4,
                   8,
-                  "-97/6"
+                  "-65/6"
                 ],
                 [
                   5,
                   5,
-                  "-5/6"
+                  "-10/3"
                 ],
                 [
                   6,
                   6,
-                  "49/2"
+                  "115/6"
                 ],
                 [
                   7,
                   7,
-                  "46/3"
+                  "59/3"
                 ],
                 [
                   8,
                   1,
-                  "-14"
+                  "-31/3"
                 ],
                 [
                   8,
                   4,
-                  "-85/6"
+                  "-34/3"
                 ],
                 [
                   8,
                   8,
-                  "3/2"
+                  "3"
                 ]
               ],
-              "sha256": "2dd1fef414492d3ec5bf9408a24248a943b094b5d18b6873c8d79017066b08e9"
+              "sha256": "ae4b1410df8741817a184e60ecd2593d0712d03b44063f191b424b34569504db"
             }
           },
           {
@@ -5520,7 +5221,7 @@
             }
           }
         ],
-        "sha256": "ac22797a3d101cae7f556f10304d2b7f1c3a695e0f88ce9604843b3adfdb2334"
+        "sha256": "46e477b56d615bd52d4981ad8958170e94448125b84f66cd6e531558c62ff67a"
       }
     },
     "identity_defects": {
@@ -5560,7 +5261,7 @@
           1,
           2
         ],
-        "nonzero_coefficients": 205,
+        "nonzero_coefficients": 207,
         "entries": [
           {
             "word": [],
@@ -5604,22 +5305,22 @@
                 [
                   11,
                   0,
-                  "-13*sqrt(2)/32"
+                  "19*sqrt(2)/32"
                 ],
                 [
                   12,
                   1,
-                  "-7*sqrt(2)/16"
+                  "sqrt(2)/16"
                 ],
                 [
                   13,
                   2,
-                  "-35*sqrt(2)/48"
+                  "-13*sqrt(2)/16"
                 ],
                 [
                   14,
                   3,
-                  "-7*sqrt(2)/6"
+                  "-sqrt(2)/6"
                 ],
                 [
                   15,
@@ -5649,12 +5350,12 @@
                 [
                   26,
                   1,
-                  "-sqrt(2)/16"
+                  "7*sqrt(2)/16"
                 ],
                 [
                   27,
                   0,
-                  "49*sqrt(2)/32"
+                  "sqrt(2)/32"
                 ],
                 [
                   30,
@@ -5684,12 +5385,12 @@
                 [
                   41,
                   2,
-                  "43*sqrt(2)/48"
+                  "13*sqrt(2)/16"
                 ],
                 [
                   43,
                   0,
-                  "-199*sqrt(2)/96"
+                  "-13*sqrt(2)/32"
                 ],
                 [
                   48,
@@ -5714,15 +5415,15 @@
                 [
                   56,
                   3,
-                  "-2*sqrt(2)/3"
+                  "sqrt(2)/3"
                 ],
                 [
                   59,
                   0,
-                  "-59*sqrt(2)/96"
+                  "7*sqrt(2)/32"
                 ]
               ],
-              "sha256": "2b8482f56026bc8e170c711ca794772b156e8ab2343d49e6938b62bc9a4130d9"
+              "sha256": "1f15f4887fc8e8ff3a4d6d42c391900c4fbb5f52e1433deadf33440557a70ce4"
             }
           },
           {
@@ -5759,22 +5460,22 @@
                 [
                   11,
                   0,
-                  "1/3"
+                  "-1/4"
                 ],
                 [
                   12,
                   1,
-                  "-5/4"
+                  "-1/8"
                 ],
                 [
                   13,
                   2,
-                  "-5/6"
+                  "1/12"
                 ],
                 [
                   14,
                   3,
-                  "-4/3"
+                  "5/8"
                 ],
                 [
                   19,
@@ -5799,12 +5500,12 @@
                 [
                   26,
                   1,
-                  "-11/4"
+                  "-9/8"
                 ],
                 [
                   27,
                   0,
-                  "11/3"
+                  "1"
                 ],
                 [
                   35,
@@ -5829,12 +5530,12 @@
                 [
                   41,
                   2,
-                  "-7/12"
+                  "-1/6"
                 ],
                 [
                   43,
                   0,
-                  "-11/6"
+                  "1/4"
                 ],
                 [
                   51,
@@ -5859,15 +5560,15 @@
                 [
                   56,
                   3,
-                  "-5/6"
+                  "1/2"
                 ],
                 [
                   59,
                   0,
-                  "-1"
+                  "-1/4"
                 ]
               ],
-              "sha256": "2794445ee152e25ce9e5524a7ad26c19c694186f2b44b2c626889ee42c17e9f9"
+              "sha256": "3b3fade14acb9dc8ad0a84bce57e445e46cefaea77f31b066f13f2ca13b892a6"
             }
           },
           {
@@ -6168,12 +5869,12 @@
                 [
                   11,
                   1,
-                  "-9/2"
+                  "-17/6"
                 ],
                 [
                   12,
                   0,
-                  "1/4"
+                  "1/8"
                 ],
                 [
                   19,
@@ -6193,22 +5894,22 @@
                 [
                   26,
                   0,
-                  "7/4"
+                  "9/8"
                 ],
                 [
                   27,
                   1,
-                  "17/6"
+                  "13/12"
                 ],
                 [
                   28,
                   2,
-                  "-1/6"
+                  "1/6"
                 ],
                 [
                   29,
                   3,
-                  "-1/2"
+                  "17/24"
                 ],
                 [
                   34,
@@ -6228,12 +5929,12 @@
                 [
                   42,
                   2,
-                  "1/12"
+                  "19/24"
                 ],
                 [
                   43,
                   1,
-                  "-7/3"
+                  "-5/6"
                 ],
                 [
                   49,
@@ -6251,12 +5952,17 @@
                   "7*sqrt(2)/8"
                 ],
                 [
+                  57,
+                  3,
+                  "35/24"
+                ],
+                [
                   59,
                   1,
-                  "-3/2"
+                  "-4/3"
                 ]
               ],
-              "sha256": "37dd0009dc38e383ddc0f7875f33036d981b58584a9a02e4572aade1cfd09e6e"
+              "sha256": "9bb1e1592c1e2b10db1aeb0341f5f70693835f5dcd58b7418512ecb99c2866cc"
             }
           },
           {
@@ -6446,12 +6152,12 @@
                 [
                   11,
                   2,
-                  "7/6"
+                  "13/12"
                 ],
                 [
                   13,
                   0,
-                  "-7/6"
+                  "-1/12"
                 ],
                 [
                   19,
@@ -6469,9 +6175,14 @@
                   "-5*sqrt(2)/16"
                 ],
                 [
+                  27,
+                  2,
+                  "-7/12"
+                ],
+                [
                   28,
                   1,
-                  "2"
+                  "1/6"
                 ],
                 [
                   34,
@@ -6496,22 +6207,22 @@
                 [
                   41,
                   0,
-                  "-17/12"
+                  "1/6"
                 ],
                 [
                   42,
                   1,
-                  "9/4"
+                  "19/24"
                 ],
                 [
                   43,
                   2,
-                  "-11/6"
+                  "-17/12"
                 ],
                 [
                   44,
                   3,
-                  "-7/12"
+                  "-7/8"
                 ],
                 [
                   50,
@@ -6531,15 +6242,15 @@
                 [
                   58,
                   3,
-                  "-1/12"
+                  "-11/8"
                 ],
                 [
                   59,
                   2,
-                  "-1/2"
+                  "4/3"
                 ]
               ],
-              "sha256": "76b8372970c3e04f546429f9d46bd22dc96b366a396bbf8b813154463082fbd2"
+              "sha256": "4648960dcb869c3f20ff2bb0a8ae27c559c241ae3cae73db09e6ce3521d86c94"
             }
           },
           {
@@ -6683,12 +6394,12 @@
                 [
                   11,
                   3,
-                  "-3/2"
+                  "2"
                 ],
                 [
                   14,
                   0,
-                  "-7/12"
+                  "-5/8"
                 ],
                 [
                   23,
@@ -6698,12 +6409,12 @@
                 [
                   27,
                   3,
-                  "-1"
+                  "-3/2"
                 ],
                 [
                   29,
                   1,
-                  "7/4"
+                  "17/24"
                 ],
                 [
                   36,
@@ -6718,12 +6429,12 @@
                 [
                   43,
                   3,
-                  "1"
+                  "2"
                 ],
                 [
                   44,
                   2,
-                  "-17/12"
+                  "-7/8"
                 ],
                 [
                   49,
@@ -6743,25 +6454,25 @@
                 [
                   56,
                   0,
-                  "-13/12"
+                  "-1/2"
                 ],
                 [
                   57,
                   1,
-                  "9/4"
+                  "35/24"
                 ],
                 [
                   58,
                   2,
-                  "-11/12"
+                  "-11/8"
                 ],
                 [
                   59,
                   3,
-                  "-2"
+                  "1/4"
                 ]
               ],
-              "sha256": "652480e5e3340c564f025b27d18efb8526539774012bfe8e55ca05d98a46629a"
+              "sha256": "2fc1fbfb479d70b942ac627fa1b010d7ca04bcad683177b1571f4aa1ab0da34c"
             }
           },
           {
@@ -6821,12 +6532,12 @@
             }
           }
         ],
-        "sha256": "231a181300bcb295df6322673d2f642fa800b16285571d2fc8eb74f5bcd367e4"
+        "sha256": "0d70a04653959657e868ab234f387e0b1281cb055e0ea5321e5633cc4e17ddcc"
       }
     },
     "frozen_parallel_comparison": {
       "frozen_compressed_sha256": "1fdbb92448ff65537164fd0f6b0d36516badd181550f1864b4daea2bf7a67105",
-      "jet_aware_compressed_sha256": "ac22797a3d101cae7f556f10304d2b7f1c3a695e0f88ce9604843b3adfdb2334",
+      "jet_aware_compressed_sha256": "46e477b56d615bd52d4981ad8958170e94448125b84f66cd6e531558c62ff67a",
       "coefficients_differ": true,
       "frozen_nonzero_coefficients": 130,
       "jet_aware_nonzero_coefficients": 174
@@ -6847,40 +6558,35 @@
                 9,
                 4
               ],
-              "rank": 4,
+              "rank": 3,
               "entries": [
                 [
                   0,
                   1,
-                  "-69*sqrt(2)/8"
+                  "-53*sqrt(2)/8"
                 ],
                 [
                   1,
                   0,
-                  "77*sqrt(2)/16"
-                ],
-                [
-                  2,
-                  2,
-                  "sqrt(2)/3"
+                  "61*sqrt(2)/16"
                 ],
                 [
                   4,
                   0,
-                  "2*sqrt(2)/3"
+                  "6*sqrt(2)"
                 ],
                 [
                   5,
                   3,
-                  "-115*sqrt(2)/24"
+                  "-19*sqrt(2)/24"
                 ],
                 [
                   8,
                   0,
-                  "25*sqrt(2)/12"
+                  "23*sqrt(2)/4"
                 ]
               ],
-              "sha256": "0218d3d46e3daafa4f53c93bfb4df2da88e043e358c77b9e30a17fc10b3755fa"
+              "sha256": "acfdfa4cefcc71e84965248e464175eb2ec30bf0475087764820a25f0a07b455"
             }
           },
           {
@@ -6897,35 +6603,35 @@
                 [
                   0,
                   1,
-                  "-26/3"
+                  "-19/6"
                 ],
                 [
                   1,
                   0,
-                  "41/3"
+                  "43/6"
                 ],
                 [
                   2,
                   2,
-                  "15/4"
+                  "77/12"
                 ],
                 [
                   4,
                   0,
-                  "29/3"
+                  "38/3"
                 ],
                 [
                   5,
                   3,
-                  "19/4"
+                  "34/3"
                 ],
                 [
                   8,
                   0,
-                  "19/3"
+                  "20/3"
                 ]
               ],
-              "sha256": "1f0e0e29994ed48be98e16dc8c6122a53bd5fa8090f24a636c505c29a0aab988"
+              "sha256": "636657b7d143cfa30423e5a5511829c34cd8c9c1ea0010020c7577bb0868d9c7"
             }
           },
           {
@@ -7126,30 +6832,35 @@
                 [
                   0,
                   0,
-                  "14/3"
+                  "19/6"
                 ],
                 [
                   1,
                   1,
-                  "1"
+                  "5/6"
                 ],
                 [
                   3,
                   2,
-                  "107/12"
+                  "11"
                 ],
                 [
                   4,
                   1,
-                  "10/3"
+                  "29/3"
                 ],
                 [
                   6,
                   3,
-                  "127/12"
+                  "191/12"
+                ],
+                [
+                  8,
+                  1,
+                  "11/3"
                 ]
               ],
-              "sha256": "63b1a99c3fa446c3addc52eca606c54f4a9681d41b0b22fd59503f211e240320"
+              "sha256": "82777884e737674f98270bbd8d18de184d062ead9449ee8f0396111e11307aba"
             }
           },
           {
@@ -7274,35 +6985,35 @@
                 [
                   1,
                   2,
-                  "-8/3"
+                  "-4"
                 ],
                 [
                   2,
                   0,
-                  "-47/4"
+                  "-77/12"
                 ],
                 [
                   3,
                   1,
-                  "211/12"
+                  "11"
                 ],
                 [
                   4,
                   2,
-                  "-23/2"
+                  "-65/6"
                 ],
                 [
                   7,
                   3,
-                  "3"
+                  "-1/6"
                 ],
                 [
                   8,
                   2,
-                  "-49/6"
+                  "-14/3"
                 ]
               ],
-              "sha256": "49a68a5825f1a7f59e33e4317ee219bca3e503fbbebbb4ea209c3062001f0d46"
+              "sha256": "8f5542dde33a12e4bf717635eaf7e079ccebe8ebadcde70b5cdbadb8430bcc12"
             }
           },
           {
@@ -7396,35 +7107,35 @@
                 [
                   1,
                   3,
-                  "-10"
+                  "-4"
                 ],
                 [
                   4,
                   3,
-                  "-41/2"
+                  "-23/2"
                 ],
                 [
                   5,
                   0,
-                  "-149/12"
+                  "-34/3"
                 ],
                 [
                   6,
                   1,
-                  "235/12"
+                  "191/12"
                 ],
                 [
                   7,
                   2,
-                  "-1/3"
+                  "-1/6"
                 ],
                 [
                   8,
                   3,
-                  "-103/6"
+                  "-17/3"
                 ]
               ],
-              "sha256": "a3824f5a8e1ea38149d3878a36ff6b59c6eace819e0e49fd9e1133883f0e00bf"
+              "sha256": "560d17badd7cfc678a9b2dd5ab4bcd11001d52787401bc52a66d6e75a8d7579f"
             }
           },
           {
@@ -7464,7 +7175,7 @@
             }
           }
         ],
-        "sha256": "5e0d0a0a0835e91f54145a7bc965b231a91335d17b1f85ca36d62c8f398bda21"
+        "sha256": "9cd6c03e77439e256e6093463c3d91346ecb5d10cfbb0c10686cca773b1212bd"
       },
       "non_algebraically_repairable_orders": [
         [],
@@ -7521,7 +7232,9 @@
     "jet_aware_shifted_chain_variation_nonzero": true,
     "jet_terms_change_compressed_middle": true,
     "parent_curvature_jet_coverage_complete": true,
-    "compressed_curvature_jet_coverage_incomplete": true,
+    "compressed_curvature_jet_coverage_complete": true,
+    "coordinate_and_moving_frame_first_jets_agree": true,
+    "higher_curvature_jets_are_so13_valued": true,
     "algebraic_schur_variation_rejected": true,
     "action_schur_not_promoted": true
   },
@@ -7529,7 +7242,7 @@
     "TRANSVERSE_JET_AWARE_PBW_VARIATION": true,
     "TRANSVERSE_BGG_FIRST_SQUARE_VARIATION": true,
     "TRANSVERSE_YANG_MILLS_MIDDLE_VARIATION": true,
-    "TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE": false,
+    "TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE": true,
     "TRANSVERSE_SHIFTED_CHAIN_VARIATION": false,
     "TRANSVERSE_ALGEBRAIC_SCHUR_VARIATION": false,
     "TRANSVERSE_ACTION_DERIVED_SCHUR_VARIATION": false,
@@ -7538,13 +7251,14 @@
     "TRANSVERSE_CAUSAL_TRANSFER": false
   },
   "next_gate": "NARIAI_TRANSVERSE_DIFFERENTIAL_SCHUR_AND_RANK_310_SDR_VARIATION",
-  "claim_boundary": "This certificate implements the first-variation PBW Leibniz rule with complete curvature-jet coverage for the corrected BGG first square and Yang-Mills parent identity at first order along the transverse Nariai tangent. The later compressed endpoint calculation requests mixed spatial curvature jets of orders two and three that are not yet derived, so its coefficients are diagnostic only. Within that diagnostic truncation the shifted-chain identity retains a defect and a purely algebraic Schur correction is insufficient. A complete higher-jet calculation, differential action-derived cyclic Schur correction, rank-310 SDR variation, and transverse causal transfer remain open.",
+  "claim_boundary": "This certificate implements the first-variation PBW Leibniz rule with complete coordinate-derived curvature-jet coverage through every order requested by the corrected BGG, Yang-Mills parent and compressed endpoint calculations. The BGG first square and parent identity close exactly. The shifted-chain identity retains a 207-coefficient defect, and the exact endpoint gauge defect contains zeroth- and second-order words, proving that a purely algebraic Schur correction cannot suffice. The differential action-derived cyclic Schur correction, rank-310 SDR variation, and transverse causal transfer remain open.",
   "source_manifest": {
-    "d_quotient_classical/causal_transfer/nariai_transverse_jet_aware_middle_schur_variation.py": "7b800e30522fdc301f66005d85dc07ad348702bfe468e8319c2524ea1d85165f",
-    "d_quotient_classical/causal_transfer/verify_nariai_transverse_jet_aware_middle_schur_variation.py": "4b093670b99c457e901c69ce5a77e07d27d8ae0eb5b8dff9868cb48ee6626076",
-    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_jet_aware_middle_schur_variation.py": "79d120251c2794798d281fae184a21a17aecdc17abaca393499093f0014b546f",
-    "d_quotient_classical/schema/nariai-transverse-jet-aware-middle-schur-variation-v1.schema.json": "566bdb9c3e14644b052055d2926b72c1ddc4b928fcf751d9f73ee7c5c16da5f4",
-    "d_quotient_classical/causal_transfer/first_variation_pbw.py": "8c4c6c673eca39a42614f12a0c277eff22c40b21aedbf1596a7fe7bc37310978"
+    "d_quotient_classical/causal_transfer/nariai_transverse_jet_aware_middle_schur_variation.py": "d04ac1147b6cf25b8cd2ee3650116c71037b5e1ab282ce598a04032e55947d1a",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_jet_aware_middle_schur_variation.py": "79091a637ecc486bb2ab3c8573fe303f3b3b871a084add81364640592315fb6c",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_jet_aware_middle_schur_variation.py": "c31bee5aeeadb9e80c0ba0be58011b49e332e6159ad9095bcec229bc95ffb7e6",
+    "d_quotient_classical/schema/nariai-transverse-jet-aware-middle-schur-variation-v1.schema.json": "e12d6455e91fbf8b0e466a11c6f17402a7aca6ce43fbfeeeaed3d5e9c5e623a7",
+    "d_quotient_classical/causal_transfer/first_variation_pbw.py": "8c4c6c673eca39a42614f12a0c277eff22c40b21aedbf1596a7fe7bc37310978",
+    "d_quotient_classical/causal_transfer/nariai_transverse_coordinate_curvature_jets.py": "8c637e5fff8101b726b020fa8cbc1278a2458eb2d7fa0d8d9f95d0ef69993c70"
   },
   "verification_commands": [
     "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_jet_aware_middle_schur_variation --check",

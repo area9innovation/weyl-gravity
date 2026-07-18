@@ -46,6 +46,10 @@ from d_quotient_classical.causal_transfer.nariai_first_differential_bgg_correcti
 from d_quotient_classical.causal_transfer.nariai_transverse_curvature_incidence_variation import (
     exact_variation,
 )
+from d_quotient_classical.causal_transfer.nariai_transverse_coordinate_curvature_jets import (
+    MAX_JET_ORDER,
+    orthonormal_covector_jet,
+)
 from d_quotient_classical.causal_transfer.nariai_transverse_pbw_curvature_jet_gate import (
     _PerturbedBackground,
     _lc_adjoint_curvature,
@@ -66,6 +70,7 @@ PBW_GATE = ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_PBW_CURVA
 ALGEBRAIC_GATE = ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json"
 AUTOMORPHISM_CERT = ROOT / "d_quotient_classical/certificates/NARIAI_AUTOMORPHISM_PROLONGATION_FIRST_TWO_ROWS_V1.json"
 PBW_LINEAR_SOURCE = HERE / "first_variation_pbw.py"
+COORDINATE_JET_SOURCE = HERE / "nariai_transverse_coordinate_curvature_jets.py"
 
 
 Table = dict[tuple[int, ...], sp.Matrix]
@@ -218,6 +223,56 @@ def _bundle_connection_variation(
     return tuple(output)
 
 
+@lru_cache(maxsize=None)
+def _exact_bundle_curvature_jet(
+    form_degree: int,
+    word: tuple[int, ...],
+    left: int,
+    right: int,
+) -> sp.Matrix:
+    """Induce an exact higher LC-curvature jet on form x adjoint slots."""
+
+    pairs = tuple((a, b) for a in range(4) for b in range(a + 1, 4))
+    if form_degree == 0:
+        form_components = ((),)
+    elif form_degree == 1:
+        form_components = tuple((axis,) for axis in range(4))
+    elif form_degree == 2:
+        form_components = pairs
+    else:
+        raise ValueError(form_degree)
+    lookup = {component: index for index, component in enumerate(form_components)}
+    covector = orthonormal_covector_jet(word, left, right)
+    adjoint = _adjoint_action(-covector.T)
+    rank = len(form_components) * 15
+    matrix = sp.zeros(rank)
+    for form_index, slots in enumerate(form_components):
+        for adjoint_input in range(15):
+            for adjoint_output in range(15):
+                value = adjoint[adjoint_output, adjoint_input]
+                if value:
+                    matrix[15 * form_index + adjoint_output, 15 * form_index + adjoint_input] += value
+            for position, old_axis in enumerate(slots):
+                for new_axis in range(4):
+                    value = covector[old_axis, new_axis]
+                    if not value:
+                        continue
+                    changed = list(slots)
+                    changed[position] = new_axis
+                    if len(set(changed)) != len(changed):
+                        continue
+                    inversions = sum(
+                        changed[a] > changed[b]
+                        for a in range(len(changed))
+                        for b in range(a + 1, len(changed))
+                    )
+                    input_form = lookup[tuple(sorted(changed))]
+                    matrix[15 * form_index + adjoint_input, 15 * input_form + adjoint_input] += (
+                        (-1) ** inversions * value
+                    )
+    return matrix.applyfunc(sp.expand)
+
+
 def _first_curvature_jet(
     base_curvature,
     delta_curvature,
@@ -303,7 +358,23 @@ def _pbw_layers() -> dict[str, FirstVariationPBW]:
     )
     covector_connection = tuple(-matrix.T for matrix in spin)
 
-    def jet_callback(base_curvature, delta_curvature, connection):
+    exact_higher = {
+        "C0": lambda left, right, word: _exact_bundle_curvature_jet(0, word, left, right),
+        "C1": lambda left, right, word: _exact_bundle_curvature_jet(1, word, left, right),
+        "C2": lambda left, right, word: _exact_bundle_curvature_jet(2, word, left, right),
+    }
+    exact_higher["H0"] = lambda left, right, word: (
+        screen.harmonic_p0
+        * exact_higher["C0"](left, right, word)
+        * algebraic.i0
+    )
+    exact_higher["H1"] = lambda left, right, word: (
+        screen.harmonic_p1
+        * exact_higher["C1"](left, right, word)
+        * algebraic.i1
+    )
+
+    def jet_callback(base_curvature, delta_curvature, connection, higher):
         def value(left: int, right: int, word: tuple[int, ...]) -> sp.Matrix:
             if not word:
                 return delta_curvature[left][right]
@@ -312,12 +383,31 @@ def _pbw_layers() -> dict[str, FirstVariationPBW]:
                     base_curvature, delta_curvature, connection, spin,
                     word[0], left, right,
                 )
-            if all(axis == 0 for axis in word):
-                return _jet_factor(word) * delta_curvature[left][right]
-            return sp.zeros(*delta_curvature[left][right].shape)
+            return higher(left, right, word)
         return value
 
-    covector_jet = jet_callback(base_covector, delta_covector, covector_connection)
+    for derivative in range(4):
+        for left in range(4):
+            for right in range(4):
+                direct = orthonormal_covector_jet((derivative,), left, right)
+                expected = _first_curvature_jet(
+                    base_covector,
+                    delta_covector,
+                    covector_connection,
+                    spin,
+                    derivative,
+                    left,
+                    right,
+                )
+                if direct != expected:
+                    raise AssertionError("coordinate and moving-frame first curvature jets disagree")
+
+    covector_jet = jet_callback(
+        base_covector,
+        delta_covector,
+        covector_connection,
+        lambda left, right, word: orthonormal_covector_jet(word, left, right),
+    )
     return {
         name: FirstVariationPBW(
             base_pbw[name],
@@ -329,6 +419,7 @@ def _pbw_layers() -> dict[str, FirstVariationPBW]:
                 _curvature_coefficients(perturbed[name], epsilon, 0),
                 _curvature_coefficients(perturbed[name], epsilon, 1),
                 bundle_connections[name],
+                exact_higher[name],
             ),
             delta_covector_jet=covector_jet,
         )
@@ -597,14 +688,14 @@ def exact_data() -> dict[str, Any]:
         for name, layer in pbw.items()
     }
     unsupported_requested = {
-        name: [word for word in words if len(word) > 1 and any(axis != 0 for axis in word)]
+        name: [word for word in words if len(word) > MAX_JET_ORDER]
         for name, words in requested.items()
     }
     unsupported_requested = {
         name: words for name, words in unsupported_requested.items() if words
     }
     unsupported_parent_requested = {
-        name: [word for word in words if len(word) > 1 and any(axis != 0 for axis in word)]
+        name: [word for word in words if len(word) > MAX_JET_ORDER]
         for name, words in parent_requested.items()
     }
     unsupported_parent_requested = {
@@ -617,11 +708,13 @@ def exact_data() -> dict[str, Any]:
 
     return {
         "jet_model": {
-            "curvature_variation": "exact first covariant jets from the moving-frame variation; repeated time jets from delta R(t)=sinh(t) delta R(t_star)",
-            "accepted_covariant_jet_words": "empty word, every length-one word, and repeated time-axis words",
+            "curvature_variation": "complete coordinate-covariant Taylor recurrence transformed to the moving orthonormal frame",
+            "accepted_covariant_jet_words": "every requested word through total order three",
             "jet_factor_even": "1",
             "jet_factor_odd": "sqrt(2)",
             "maximum_jet_order_used": 3,
+            "coordinate_first_jet_matches_moving_frame": True,
+            "all_requested_higher_jets_are_so13_valued": True,
         },
         "operator_variations": {
             "requested_curvature_jet_words": {
@@ -695,7 +788,9 @@ def build() -> dict[str, Any]:
         "jet_aware_shifted_chain_variation_nonzero": exact["identity_defects"]["shifted_chain_variation"]["nonzero_coefficients"] > 0,
         "jet_terms_change_compressed_middle": exact["frozen_parallel_comparison"]["coefficients_differ"],
         "parent_curvature_jet_coverage_complete": not exact["operator_variations"]["unsupported_parent_identity_curvature_jet_words"],
-        "compressed_curvature_jet_coverage_incomplete": bool(exact["operator_variations"]["unsupported_requested_curvature_jet_words"]),
+        "compressed_curvature_jet_coverage_complete": not exact["operator_variations"]["unsupported_requested_curvature_jet_words"],
+        "coordinate_and_moving_frame_first_jets_agree": exact["jet_model"]["coordinate_first_jet_matches_moving_frame"],
+        "higher_curvature_jets_are_so13_valued": exact["jet_model"]["all_requested_higher_jets_are_so13_valued"],
         "algebraic_schur_variation_rejected": not exact["differential_schur_gate"]["algebraic_qdot_sufficient"],
         "action_schur_not_promoted": not exact["differential_schur_gate"]["action_derived_equality_checked"],
     }
@@ -703,7 +798,7 @@ def build() -> dict[str, Any]:
         "schema": "nariai-transverse-jet-aware-middle-schur-variation-v1",
         "schema_version": "1.0.0",
         "result_id": "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1",
-        "result_state": "JET_AWARE_BGG_AND_PARENT_YM_MIDDLE_EXACT_SHIFTED_CHAIN_AND_DIFFERENTIAL_SCHUR_OPEN",
+        "result_state": "COMPLETE_JET_AWARE_BGG_PARENT_AND_ENDPOINT_PBW_EXACT_DIFFERENTIAL_SCHUR_OPEN",
         "lifecycle_state": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "dependency_refs": dependencies,
@@ -713,7 +808,7 @@ def build() -> dict[str, Any]:
             "TRANSVERSE_JET_AWARE_PBW_VARIATION": True,
             "TRANSVERSE_BGG_FIRST_SQUARE_VARIATION": True,
             "TRANSVERSE_YANG_MILLS_MIDDLE_VARIATION": True,
-            "TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE": False,
+            "TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE": True,
             "TRANSVERSE_SHIFTED_CHAIN_VARIATION": False,
             "TRANSVERSE_ALGEBRAIC_SCHUR_VARIATION": False,
             "TRANSVERSE_ACTION_DERIVED_SCHUR_VARIATION": False,
@@ -722,12 +817,12 @@ def build() -> dict[str, Any]:
             "TRANSVERSE_CAUSAL_TRANSFER": False,
         },
         "next_gate": "NARIAI_TRANSVERSE_DIFFERENTIAL_SCHUR_AND_RANK_310_SDR_VARIATION",
-        "claim_boundary": "This certificate implements the first-variation PBW Leibniz rule with complete curvature-jet coverage for the corrected BGG first square and Yang-Mills parent identity at first order along the transverse Nariai tangent. The later compressed endpoint calculation requests mixed spatial curvature jets of orders two and three that are not yet derived, so its coefficients are diagnostic only. Within that diagnostic truncation the shifted-chain identity retains a defect and a purely algebraic Schur correction is insufficient. A complete higher-jet calculation, differential action-derived cyclic Schur correction, rank-310 SDR variation, and transverse causal transfer remain open.",
+        "claim_boundary": "This certificate implements the first-variation PBW Leibniz rule with complete coordinate-derived curvature-jet coverage through every order requested by the corrected BGG, Yang-Mills parent and compressed endpoint calculations. The BGG first square and parent identity close exactly. The shifted-chain identity retains a 207-coefficient defect, and the exact endpoint gauge defect contains zeroth- and second-order words, proving that a purely algebraic Schur correction cannot suffice. The differential action-derived cyclic Schur correction, rank-310 SDR variation, and transverse causal transfer remain open.",
         "source_manifest": {
             str(path.relative_to(ROOT)): _sha(path)
             for path in (
                 Path(__file__).resolve(), VERIFIER, TESTS, SCHEMA,
-                PBW_LINEAR_SOURCE,
+                PBW_LINEAR_SOURCE, COORDINATE_JET_SOURCE,
             )
         },
         "verification_commands": [
@@ -755,12 +850,12 @@ coefficientwise
 \\dot(M^D d^D)=0.
 \\]
 
-The provisional compressed-middle variation has
+The exact compressed-middle variation has
 `{comparison['jet_aware_nonzero_coefficients']}` coefficients, compared with
 `{comparison['frozen_nonzero_coefficients']}` in the rejected frozen-parallel
-shortcut, and the coefficient hashes differ.  Mixed spatial curvature jets of
-orders two and three are still missing from this endpoint calculation, so
-these compressed coefficients are a diagnostic rather than a theorem.
+shortcut, and the coefficient hashes differ.  Every requested mixed spatial
+curvature jet through order three is derived from the coordinate covariant
+recurrence and independently agrees with the earlier moving-frame first jet.
 
 The shifted-chain variation retains an exact defect.  More decisively, the
 endpoint gauge defect contains zeroth- and second-order PBW words.  Since an

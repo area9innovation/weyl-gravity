@@ -34,8 +34,14 @@ def verify() -> None:
     operators = value["exact_data"]["operator_variations"]
     if operators["unsupported_parent_identity_curvature_jet_words"]:
         raise AssertionError("parent identity has incomplete curvature-jet coverage")
-    if not operators["unsupported_requested_curvature_jet_words"]:
-        raise AssertionError("endpoint higher-jet limitation was not recorded")
+    if operators["unsupported_requested_curvature_jet_words"]:
+        raise AssertionError("endpoint curvature-jet coverage is incomplete")
+    jet_model = value["exact_data"]["jet_model"]
+    if not (
+        jet_model["coordinate_first_jet_matches_moving_frame"]
+        and jet_model["all_requested_higher_jets_are_so13_valued"]
+    ):
+        raise AssertionError("coordinate curvature-jet audit failed")
     gate = value["exact_data"]["differential_schur_gate"]
     if gate["algebraic_qdot_sufficient"] is not False:
         raise AssertionError("algebraic Schur ansatz was not rejected")
@@ -44,7 +50,6 @@ def verify() -> None:
     for flag in (
         "TRANSVERSE_SHIFTED_CHAIN_VARIATION",
         "TRANSVERSE_ALGEBRAIC_SCHUR_VARIATION",
-        "TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE",
         "TRANSVERSE_ACTION_DERIVED_SCHUR_VARIATION",
         "TRANSVERSE_CYCLIC_SCHUR_VARIATION",
         "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION",
@@ -52,6 +57,8 @@ def verify() -> None:
     ):
         if value["flags"][flag] is not False:
             raise AssertionError(f"downstream flag promoted: {flag}")
+    if value["flags"]["TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE"] is not True:
+        raise AssertionError("complete curvature-jet coverage not promoted")
     for path, digest in value["source_manifest"].items():
         if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != digest:
             raise AssertionError(f"source drift: {path}")

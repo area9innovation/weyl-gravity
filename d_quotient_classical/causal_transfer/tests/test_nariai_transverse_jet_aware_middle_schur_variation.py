@@ -29,8 +29,8 @@ class TransverseJetAwareMiddleTest(unittest.TestCase):
         )
         operators = self.value["exact_data"]["operator_variations"]
         self.assertEqual(operators["unsupported_parent_identity_curvature_jet_words"], {})
-        self.assertTrue(operators["unsupported_requested_curvature_jet_words"])
-        self.assertFalse(self.value["flags"]["TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE"])
+        self.assertEqual(operators["unsupported_requested_curvature_jet_words"], {})
+        self.assertTrue(self.value["flags"]["TRANSVERSE_COMPLETE_CURVATURE_JET_COVERAGE"])
 
     def test_schur_boundary(self) -> None:
         self.assertFalse(self.value["flags"]["TRANSVERSE_ALGEBRAIC_SCHUR_VARIATION"])
