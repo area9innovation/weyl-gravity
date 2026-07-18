@@ -1,0 +1,109 @@
+{
+  "chart_audit": {
+    "clock_windows": [
+      "[11/48,13/48]",
+      "[23/48,25/48]"
+    ],
+    "cosine_lower_bound": "82915/82944",
+    "fixed_rod_radius": "1/128",
+    "forward_inverse_defect_count": 0,
+    "inverse_map": [
+      "y1=(R2-c2)/(2 a(t))",
+      "y2=(R3-c3)/(2 a(t))",
+      "y3=(R1-c1)/(2 c a(t))",
+      "y0=+sqrt(1-y1^2-y2^2-y3^2)"
+    ],
+    "maximum_y_norm_squared_bound": "93312/1374979445",
+    "positive_branch_margin_y_norm_squared_below_1_over_10000": true,
+    "rod_jacobian": "8*c*a(t)^3",
+    "unique_connected_component": "the component containing the detector worldline, equivalently y0>0",
+    "window_phase_bound": "sqrt(58)/288<1/32"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL certificate uses the explicit global detector rods to quantify their inverse on both detector windows. The rod oscillation obeys a(t)>=1-29/82944, and fixing epsilon_0=epsilon_1=1/128 gives |y|^2<1/10000 in the detector-centered SU(2) coordinates. The Jacobian 8 c a(t)^3 is nonzero and the connected component containing the detector worldline is the unique y0>0 branch. Thus the formerly parameterized radial profile family now has a fully fixed admissible member. This does not evaluate harmonic coefficients, Green images, recoil, interacting backreaction, or any quantum claim.",
+  "claim_status": "EXACT_NUMERICAL_DETECTOR_RADIUS_AND_ROD_CHART_INVERSE_CERTIFIED",
+  "dependency_refs": {
+    "global_rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "profiles": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+      "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ADVANCED_GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "DETECTOR_SUPPORT_ON_UNIQUE_POSITIVE_SU2_BRANCH": true,
+    "EXACT_DETECTOR_RADII_FIXED": true,
+    "PROFILE_HARMONIC_COEFFICIENTS_EVALUATED": false,
+    "QUANTITATIVE_LOCAL_ROD_CHART_INVERSE_CERTIFIED": true,
+    "QUANTUM_CLAIM": false
+  },
+  "mutation_results": [
+    {
+      "audit": {
+        "clock_windows": [
+          "[11/48,13/48]",
+          "[23/48,25/48]"
+        ],
+        "cosine_lower_bound": "82915/82944",
+        "fixed_rod_radius": "1/64",
+        "forward_inverse_defect_count": 0,
+        "inverse_map": [
+          "y1=(R2-c2)/(2 a(t))",
+          "y2=(R3-c3)/(2 a(t))",
+          "y3=(R1-c1)/(2 c a(t))",
+          "y0=+sqrt(1-y1^2-y2^2-y3^2)"
+        ],
+        "maximum_y_norm_squared_bound": "373248/1374979445",
+        "positive_branch_margin_y_norm_squared_below_1_over_10000": false,
+        "rod_jacobian": "8*c*a(t)^3",
+        "unique_connected_component": "the component containing the detector worldline, equivalently y0>0",
+        "window_phase_bound": "sqrt(58)/288<1/32"
+      },
+      "detected": true,
+      "name": "double_radius_to_1_over_64"
+    }
+  ],
+  "next_gate": "INTERVAL_INTEGRATE_THE_FIXED_RADIUS_1_OVER_128_BUMPS_AGAINST_PETER_WEYL_MODES",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_quantitative_detector_chart.py",
+        "sha256": "0497bf775bc0bf0fbfb0a9bd79d9e441a052e550da6fa631fe513a410dbefb6a"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_quantitative_detector_chart.py",
+        "sha256": "d19ad10891c6cedd3761ee7e02ced4c3677eeccc406d4c9338693c46a4806e0e"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_quantitative_detector_chart.py",
+        "sha256": "02f020e704ea4d3953173858797e8649b8cf9e8539227f80b36635cbf1241758"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-quantitative-detector-rod-chart-v1.schema.json",
+        "sha256": "f97764e9db1a085b049dca2b43140cf8c2793745176a0f4e273f682050c21e1b"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-quantitative-detector-rod-chart.md",
+        "sha256": "875c1d44c02a74921506779716e31e7be5896bdd03b6523c1134dc361840c765"
+      }
+    ]
+  },
+  "result_id": "BERGER_QUANTITATIVE_DETECTOR_ROD_CHART",
+  "schema": "closed-universe-berger-quantitative-detector-rod-chart-v1",
+  "selected_profiles": {
+    "epsilon_0": "1/128",
+    "epsilon_1": "1/128",
+    "radial_profile": "rho_a=B3((R-c_a)/(1/128))/((1/128)^3 C_B3)"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

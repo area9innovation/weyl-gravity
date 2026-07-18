@@ -1,0 +1,89 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "QUANTITATIVE_DETECTOR_CHART_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "result_boundary": "The global rods quantify a unique detector chart and fix both radii to 1/128. Harmonic quadrature, Green images, recoil, interacting and quantum claims remain open.",
+  "tier_0": [
+    {
+      "command": "compile/diff/hash/stage audit",
+      "elapsed_seconds": "under 1 plus final",
+      "status": "PASS",
+      "scope": "observer files"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "generator, verifier, 4 focused tests, schema and ledger",
+      "elapsed_seconds": "under 3",
+      "status": "PASS",
+      "scope": "inverse, Jacobian, margin and mutation"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "238.91 pytest / 240.38 wall",
+      "status": "PASS",
+      "scope": "all 132 observer tests; required by central-ledger change"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No shared-core or theorem promotion."
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "sha256": "9332f4dde9e9f0ad9f677ed92c2438ed0819aeeed6e286338d0d85561faf73d4"
+    },
+    {
+      "path": "closed_universe_observers/generate_berger_quantitative_detector_chart.py",
+      "sha256": "0497bf775bc0bf0fbfb0a9bd79d9e441a052e550da6fa631fe513a410dbefb6a"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_quantitative_detector_chart.py",
+      "sha256": "d19ad10891c6cedd3761ee7e02ced4c3677eeccc406d4c9338693c46a4806e0e"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_quantitative_detector_chart.py",
+      "sha256": "02f020e704ea4d3953173858797e8649b8cf9e8539227f80b36635cbf1241758"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-quantitative-detector-rod-chart-v1.schema.json",
+      "sha256": "f97764e9db1a085b049dca2b43140cf8c2793745176a0f4e273f682050c21e1b"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-quantitative-detector-rod-chart.md",
+      "sha256": "875c1d44c02a74921506779716e31e7be5896bdd03b6523c1134dc361840c765"
+    },
+    {
+      "path": "closed_universe_observers/ledgers/comparison_ledger.json",
+      "sha256": "31263ab87d67f635aa6c475804ffabc29d8b3883e2e4d86aec187ff506db846e"
+    },
+    {
+      "path": "closed_universe_observers/README.md",
+      "sha256": "d470799fd66eb0cdeeadd83615a2a3a076a25d4bad892abbe9a0a52dfda741c7"
+    },
+    {
+      "path": "notes/closed-universe-observer-team-brief.md",
+      "sha256": "498257d42ef9b4adab9cff43e6420318f0f65076264a540c3b16f6a979fa3524"
+    },
+    {
+      "path": "closed_universe_observers/reports/first-comparison.md",
+      "sha256": "ccfe0f1f904dca6459fa559417e095ba67461f636473891189a6531ccfaebbe2"
+    }
+  ],
+  "claim_flags": {
+    "EXACT_DETECTOR_RADII_FIXED": true,
+    "PROFILE_HARMONIC_COEFFICIENTS_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

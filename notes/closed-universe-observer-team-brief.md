@@ -243,6 +243,11 @@ independent scalar rod eigenvalue `29/18`.  The next missing input is no
 longer the spatial operator: it is validated interval quadrature for the flat
 bumps and a superalgebraic spectral-tail estimate.
 
+`BERGER_QUANTITATIVE_DETECTOR_ROD_CHART` then improves the conservative local
+chart handoff: the explicit global rods prove a nonzero Jacobian throughout
+both windows and allow the exact choice `epsilon_0=epsilon_1=1/128`, with
+`|y|^2<1/10000` on the unique detector-connected branch.
+
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
 integral.  Direct variation of the selected action gives the free emitter

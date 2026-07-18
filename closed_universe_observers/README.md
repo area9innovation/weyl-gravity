@@ -60,6 +60,8 @@ python3 -m closed_universe_observers.generate_berger_positive_energy_emitter_pro
 python3 -m closed_universe_observers.verify_berger_positive_energy_emitter_profiles
 python3 -m closed_universe_observers.generate_berger_peter_weyl_form_laplacian --check
 python3 -m closed_universe_observers.verify_berger_peter_weyl_form_laplacian
+python3 -m closed_universe_observers.generate_berger_quantitative_detector_chart --check
+python3 -m closed_universe_observers.verify_berger_quantitative_detector_chart
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -208,6 +210,9 @@ The Peter--Weyl successor now supplies exact de Rham and form-Laplacian
 matrices in every requested finite Berger `SU(2)` block.  It independently
 reproduces the rod eigenvalue `29/18`.  Validated bump coefficients and
 spectral-tail bounds are the remaining analytic inputs to the Green images.
+The quantitative-chart successor uses the explicit global rods to fix both
+detector radii to `1/128`, with exact `|y|^2<1/10000` support on the unique
+positive `S3` branch.  No free detector-radius parameter remains.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source
