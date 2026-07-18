@@ -73,6 +73,14 @@ IR singular, so the nonzero-momentum triangle, the curved-Endo one- and
 two-insertion traces, and hence the generic ghost form-factor coefficients
 remain open.
 
+The generic nonexceptional-momentum triangle is now reduced exactly in
+[`GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json).
+Expanding the three Endo longitudinal projectors gives eight sectors with
+multiplicities `(1,3,3,1)` and twenty exact Feynman-simplex/Wick rows. This is
+the complete labelled-Ricci parametric tensor kernel, not yet the repository
+`I10` form factor: its frozen `K_munu` normalization/projection and the curved-
+Endo one-/two-insertion traces remain open.
+
 Replay with:
 
 ```bash
@@ -85,6 +93,9 @@ PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generi
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_adiabatic_carrier --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_triangle_kernel --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_triangle_kernel
 ```
 
 The generic schema in this directory remains a promotion gate: a coefficient record is valid

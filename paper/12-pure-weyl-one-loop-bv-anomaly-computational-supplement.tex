@@ -774,6 +774,54 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
 \end{verbatim}
 
+\subsection{Exact nonzero-momentum three-insertion parametric kernel}
+
+For generic nonexceptional Euclidean momenta $k_1+k_2+k_3=0$, route
+$q_0=p$, $q_1=p+k_1$, and $q_2=p-k_3$.  The complete labelled-Ricci
+integrand is
+\[
+ \frac{\operatorname{tr}[\Pi(q_0)R_1\Pi(q_1)R_2\Pi(q_2)R_3]}
+ {q_0^2q_1^2q_2^2},
+ \qquad
+ \Pi(q)=I-\frac13\frac{qq^T}{q^2}.
+\]
+Expansion of the three longitudinal projectors gives exactly eight sectors,
+with multiplicities $(1,3,3,1)$.  If a sector contains $s$ longitudinal
+projectors, Feynman parametrization and the shifted four-dimensional loop
+integral give rows $m=0,\ldots,s$ with coefficient and denominator
+\[
+ c_{s,m}=\frac{(s-m)!}{2^m},\qquad
+ \Delta^{m-s-1},
+ \]
+where
+\[
+ \Delta=\alpha_0\alpha_1k_1^2+
+        \alpha_1\alpha_2k_2^2+
+        \alpha_2\alpha_0k_3^2,
+ \qquad \alpha_0+\alpha_1+\alpha_2=1.
+\]
+There are twenty rational Wick rows in total.  The combined $W^3$ and
+$\operatorname{Tr}\log$ multiplier is
+\[
+ -\frac83(4\pi)^{-2}.
+\]
+An independent
+exact replay checks the direct eight-sector integrand and cyclic covariance
+on noncommuting symmetric endomorphisms.  This closes the generic labelled-
+Ricci parametric triangle, but not its projection to the repository $I_{10}$
+carrier: the frozen scalar-flat $K_{\mu\nu}$ normalization/crosswalk has not
+yet been applied.  The curved-Endo one- and two-insertion traces also remain
+open.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.generic_background_ghost_n3_triangle_kernel --check
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  spectral.euclidean.tests.test_generic_background_ghost_n3_triangle_kernel
+\end{verbatim}
+
 \subsection{Exact local BoxR scheme conversion}
 
 The zeta/proper-time calculation imports the published local heat-kernel rows
@@ -840,6 +888,9 @@ rejecting promotion of the unevaluated insertion traces;
 \item enumerate the second, fourth, and sixth isotropic sphere moments for the
 three-insertion adiabatic angular carrier, while rejecting promotion of its
 IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;
+\item replay the eight projector sectors and twenty exact simplex/Wick rows
+of the generic nonzero-momentum three-insertion kernel, while rejecting
+promotion of the labelled-Ricci kernel to the repository $I_{10}$ form factor;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}

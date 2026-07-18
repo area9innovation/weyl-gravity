@@ -67,6 +67,7 @@ DEPENDENCIES = {
     "generic_background_ghost_CPT_obstruction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
+    "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -184,6 +185,7 @@ def _load() -> dict[str, dict[str, Any]]:
     generic_ghost_cpt = values["generic_background_ghost_CPT_obstruction"]
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
+    generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -522,6 +524,29 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("generic ghost n=3 adiabatic carrier frontier drifted")
+    if (
+        generic_ghost_n3_triangle.get("projector_sector_expansion", {}).get(
+            "sector_count"
+        )
+        != 8
+        or generic_ghost_n3_triangle.get("projector_sector_expansion", {}).get(
+            "total_Wick_rows"
+        )
+        != 20
+        or generic_ghost_n3_triangle.get("carrier_projection", {}).get(
+            "repository_I10_projection"
+        )
+        != "NOT_COMPUTED"
+        or generic_ghost_n3_triangle.get("claim_flags", {}).get(
+            "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED"
+        )
+        is not True
+        or generic_ghost_n3_triangle.get("claim_flags", {}).get(
+            "GENERIC_GHOST_N3_REPOSITORY_I10_PROJECTION_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost n=3 triangle kernel frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1387,8 +1412,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_ENDO_DUHAMEL_REDUCTION_EXACT_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED_FULL_TRIANGLE_N1_N2_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "COMPUTE_GHOST_N3_NONZERO_MOMENTUM_TRIANGLE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_ENDO_DUHAMEL_REDUCTION_EXACT_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED_I10_PROJECTION_AND_N1_N2_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "PROJECT_GHOST_N3_TRIANGLE_TO_REPOSITORY_I10_COMPUTE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1403,8 +1428,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_ENDO_DUHAMEL_REDUCTION_AND_N3_ADIABATIC_ANGULAR_CARRIER_EXACT_FULL_TRIANGLE_N1_N2_PHYSICAL_FOURTH_ORDER_KERNEL_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "COMPUTE_GHOST_N3_NONZERO_MOMENTUM_TRIANGLE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_EXACT_I10_PROJECTION_N1_N2_PHYSICAL_FOURTH_ORDER_KERNEL_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "PROJECT_GHOST_N3_TRIANGLE_TO_REPOSITORY_I10_COMPUTE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
         },
         "supersession_ledger": [
@@ -1530,6 +1555,7 @@ def build() -> dict[str, Any]:
             "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED": True,
             "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": True,
             "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED": True,
+            "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED": True,
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": False,
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": False,
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": False,
@@ -1596,7 +1622,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "COMPUTE_GHOST_N3_NONZERO_MOMENTUM_TRIANGLE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "PROJECT_GHOST_N3_TRIANGLE_TO_REPOSITORY_I10_COMPUTE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1659,9 +1685,10 @@ def build() -> dict[str, Any]:
             "insertions. The flat-Endo three-insertion row now has an exact adiabatic "
             "angular numerator: before the W/log factors its scalar-flat tr(Ric^3) "
             "coefficient is 503/648, and the n=3 Tr-log coefficient is -503/243. "
-            "Its zero-external-momentum radial integral is scaleless and IR singular, "
-            "so the nonzero-momentum triangle, the n=1/n=2 curved-Endo traces and the "
-            "repository I10 normalization map remain open. "
+            "Its generic nonexceptional-momentum continuation is now an exact eight-sector "
+            "Feynman-simplex/Wick kernel with twenty rational Wick rows. The labelled-Ricci "
+            "triangle has not yet been projected through the repository I10 normalization, "
+            "and the n=1/n=2 curved-Endo traces remain open. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
@@ -1950,6 +1977,8 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED")
         is not True
+        or flags.get("GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED")
+        is not True
         or flags.get("GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED")
         is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED")
@@ -2019,6 +2048,7 @@ def validate(result: dict[str, Any]) -> None:
             "GENERIC_BACKGROUND_GHOST_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
             "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED",
             "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED",
+            "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED",
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED",
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED",
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED",

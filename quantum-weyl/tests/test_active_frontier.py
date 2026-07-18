@@ -217,6 +217,11 @@ class ActiveFrontierTests(unittest.TestCase):
                 "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED"
@@ -353,7 +358,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "COMPUTE_GHOST_N3_NONZERO_MOMENTUM_TRIANGLE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "PROJECT_GHOST_N3_TRIANGLE_TO_REPOSITORY_I10_COMPUTE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

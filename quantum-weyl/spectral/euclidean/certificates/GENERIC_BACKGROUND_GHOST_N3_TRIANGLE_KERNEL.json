@@ -1,0 +1,484 @@
+{
+  "carrier_projection": {
+    "reason": "the exact labelled Ricci triangle has not yet been reduced using the frozen scalar-flat K_munu normalization and four-dimensional carrier identities",
+    "repository_I10_projection": "NOT_COMPUTED",
+    "repository_K_to_Ricci_crosswalk": "NO_CERTIFIED_MAP",
+    "source_candidate": "I10"
+  },
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL result computes the full generic-nonexceptional-momentum three-Ricci ghost triangle as an exact eight-sector Feynman-simplex/Wick kernel. All projector coefficients, denominator powers, alpha weights and twenty Wick rows are rational and independently replayed against the direct Endo-projector integrand. The result is a parametric tensor kernel, not yet the repository I10 form factor: the scalar-flat K_munu-to-Ricci normalization and carrier projection remain open, as do the curved-Endo one- and two-insertion rows, the complete ghost determinant, physical fourth-order Hessian, repository functions, Gamma1/Q1, residual, Lorentzian, Hadamard, particle, positivity and unitarity theorems.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED": false,
+    "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED": false,
+    "GENERIC_GHOST_N3_EIGHT_PROJECTOR_SECTORS_EXACT": true,
+    "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED": true,
+    "GENERIC_GHOST_N3_REPOSITORY_I10_PROJECTION_COMPUTED": false,
+    "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "consistency": {
+    "adiabatic_numerator_limit": "RECOVERS_GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER_BEFORE_RADIAL_INTEGRATION",
+    "cyclic_trace_covariance": "EXACT",
+    "direct_eight_sector_integrand_identity": "EXACT",
+    "simplex_Wick_coefficient_formula": "c_(s,m)=(s-m)!/2^m"
+  },
+  "dependency": {
+    "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
+    "result_id": "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
+    "sha256": "9475d5f80e50d61a6b7839e4f7f572ca7d9b9d84a8508f643b8d7353a2a63f1b"
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "feynman_simplex": {
+    "Omega_positive": "Delta=alpha0 alpha1 k1^2+alpha1 alpha2 k2^2+alpha2 alpha0 k3^2",
+    "barycentric_identity": "alpha0 r0+alpha1 r1+alpha2 r2=0",
+    "domain": "alpha_i>=0, alpha0+alpha1+alpha2=1",
+    "loop_prefactor": "(4pi)^-2",
+    "shift": "l=p+alpha1 k1-alpha2 k3",
+    "shifted_vectors": [
+      "r0=-alpha1 k1+alpha2 k3",
+      "r1=(1-alpha1)k1+alpha2 k3",
+      "r2=-alpha1 k1-(1-alpha2)k3"
+    ]
+  },
+  "lifecycle_state": "PARAMETRIC_TRIANGLE_KERNEL_COMPUTED_REPOSITORY_CARRIER_PROJECTION_OPEN",
+  "master_kernel": {
+    "IR_status": "FINITE_ONLY_OFF_EXCEPTIONAL_MOMENTUM_CONFIGURATIONS",
+    "UV_status": "FINITE_BY_POWER_COUNTING_FOR_GENERIC_NONEXCEPTIONAL_EXTERNAL_MOMENTA",
+    "W_and_Tr_log_multiplier": {
+      "denominator": 3,
+      "numerator": -8
+    },
+    "Wick_definition": "take the homogeneous loop-degree 2m part and sum all pair contractions with the Euclidean metric",
+    "alpha_S": "product_i alpha_i for i in S",
+    "formula": "T3=(-8/3)(4pi)^-2 sum_S (-1/3)^|S| int_simplex alpha_S sum_m c_(|S|,m) Delta^(m-|S|-1) Wick_(2m)[N_S(l+r)]",
+    "maximum_Wick_pair_count": 3
+  },
+  "momentum_routing": {
+    "cyclic_covariance": "(R1,k1;R2,k2;R3,k3;p) rotates with p->p+k1",
+    "denominators": [
+      "D0=q0^2",
+      "D1=q1^2",
+      "D2=q2^2"
+    ],
+    "direct_integrand": "tr(Pi(q0)R1 Pi(q1)R2 Pi(q2)R3)/(D0 D1 D2)",
+    "loop_momenta": [
+      "q0=p",
+      "q1=p+k1",
+      "q2=p-k3"
+    ],
+    "projectors": "Pi(qi)=I-(1/3)qi qi^T/Di"
+  },
+  "next_gate": "PROJECT_N3_TRIANGLE_TO_REPOSITORY_I10_AND_COMPUTE_N1_N2_CURVED_ENDO_TRACES",
+  "projector_sector_expansion": {
+    "sector_count": 8,
+    "sector_multiplicities_by_projector_count": [
+      1,
+      3,
+      3,
+      1
+    ],
+    "sectors": [
+      {
+        "alpha_weight_exponents": [
+          0,
+          0,
+          0
+        ],
+        "denominator_powers": [
+          1,
+          1,
+          1
+        ],
+        "maximum_loop_metric_pair_count": 0,
+        "projector_coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "projector_count": 0,
+        "selected_projectors": [],
+        "shifted_numerator": "tr(I R1 I R2 I R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "000",
+        "wick_rows": [
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          }
+        ]
+      },
+      {
+        "alpha_weight_exponents": [
+          0,
+          0,
+          1
+        ],
+        "denominator_powers": [
+          1,
+          1,
+          2
+        ],
+        "maximum_loop_metric_pair_count": 1,
+        "projector_coefficient": {
+          "denominator": 3,
+          "numerator": -1
+        },
+        "projector_count": 1,
+        "selected_projectors": [
+          2
+        ],
+        "shifted_numerator": "tr(I R1 I R2 Q2 R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "001",
+        "wick_rows": [
+          {
+            "Delta_power": -2,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          },
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 2,
+            "loop_metric_pair_count": 1
+          }
+        ]
+      },
+      {
+        "alpha_weight_exponents": [
+          0,
+          1,
+          0
+        ],
+        "denominator_powers": [
+          1,
+          2,
+          1
+        ],
+        "maximum_loop_metric_pair_count": 1,
+        "projector_coefficient": {
+          "denominator": 3,
+          "numerator": -1
+        },
+        "projector_count": 1,
+        "selected_projectors": [
+          1
+        ],
+        "shifted_numerator": "tr(I R1 Q1 R2 I R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "010",
+        "wick_rows": [
+          {
+            "Delta_power": -2,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          },
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 2,
+            "loop_metric_pair_count": 1
+          }
+        ]
+      },
+      {
+        "alpha_weight_exponents": [
+          0,
+          1,
+          1
+        ],
+        "denominator_powers": [
+          1,
+          2,
+          2
+        ],
+        "maximum_loop_metric_pair_count": 2,
+        "projector_coefficient": {
+          "denominator": 9,
+          "numerator": 1
+        },
+        "projector_count": 2,
+        "selected_projectors": [
+          1,
+          2
+        ],
+        "shifted_numerator": "tr(I R1 Q1 R2 Q2 R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "011",
+        "wick_rows": [
+          {
+            "Delta_power": -3,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          },
+          {
+            "Delta_power": -2,
+            "coefficient_per_pairing": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 2,
+            "loop_metric_pair_count": 1
+          },
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 4,
+            "loop_metric_pair_count": 2
+          }
+        ]
+      },
+      {
+        "alpha_weight_exponents": [
+          1,
+          0,
+          0
+        ],
+        "denominator_powers": [
+          2,
+          1,
+          1
+        ],
+        "maximum_loop_metric_pair_count": 1,
+        "projector_coefficient": {
+          "denominator": 3,
+          "numerator": -1
+        },
+        "projector_count": 1,
+        "selected_projectors": [
+          0
+        ],
+        "shifted_numerator": "tr(Q0 R1 I R2 I R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "100",
+        "wick_rows": [
+          {
+            "Delta_power": -2,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          },
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 2,
+            "loop_metric_pair_count": 1
+          }
+        ]
+      },
+      {
+        "alpha_weight_exponents": [
+          1,
+          0,
+          1
+        ],
+        "denominator_powers": [
+          2,
+          1,
+          2
+        ],
+        "maximum_loop_metric_pair_count": 2,
+        "projector_coefficient": {
+          "denominator": 9,
+          "numerator": 1
+        },
+        "projector_count": 2,
+        "selected_projectors": [
+          0,
+          2
+        ],
+        "shifted_numerator": "tr(Q0 R1 I R2 Q2 R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "101",
+        "wick_rows": [
+          {
+            "Delta_power": -3,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          },
+          {
+            "Delta_power": -2,
+            "coefficient_per_pairing": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 2,
+            "loop_metric_pair_count": 1
+          },
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 4,
+            "loop_metric_pair_count": 2
+          }
+        ]
+      },
+      {
+        "alpha_weight_exponents": [
+          1,
+          1,
+          0
+        ],
+        "denominator_powers": [
+          2,
+          2,
+          1
+        ],
+        "maximum_loop_metric_pair_count": 2,
+        "projector_coefficient": {
+          "denominator": 9,
+          "numerator": 1
+        },
+        "projector_count": 2,
+        "selected_projectors": [
+          0,
+          1
+        ],
+        "shifted_numerator": "tr(Q0 R1 Q1 R2 I R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "110",
+        "wick_rows": [
+          {
+            "Delta_power": -3,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          },
+          {
+            "Delta_power": -2,
+            "coefficient_per_pairing": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 2,
+            "loop_metric_pair_count": 1
+          },
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 4,
+            "loop_metric_pair_count": 2
+          }
+        ]
+      },
+      {
+        "alpha_weight_exponents": [
+          1,
+          1,
+          1
+        ],
+        "denominator_powers": [
+          2,
+          2,
+          2
+        ],
+        "maximum_loop_metric_pair_count": 3,
+        "projector_coefficient": {
+          "denominator": 27,
+          "numerator": -1
+        },
+        "projector_count": 3,
+        "selected_projectors": [
+          0,
+          1,
+          2
+        ],
+        "shifted_numerator": "tr(Q0 R1 Q1 R2 Q2 R3) with Qi=(l+ri)(l+ri)^T",
+        "subset_bits": "111",
+        "wick_rows": [
+          {
+            "Delta_power": -4,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 6
+            },
+            "homogeneous_loop_degree": 0,
+            "loop_metric_pair_count": 0
+          },
+          {
+            "Delta_power": -3,
+            "coefficient_per_pairing": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 2,
+            "loop_metric_pair_count": 1
+          },
+          {
+            "Delta_power": -2,
+            "coefficient_per_pairing": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 4,
+            "loop_metric_pair_count": 2
+          },
+          {
+            "Delta_power": -1,
+            "coefficient_per_pairing": {
+              "denominator": 8,
+              "numerator": 1
+            },
+            "homogeneous_loop_degree": 6,
+            "loop_metric_pair_count": 3
+          }
+        ]
+      }
+    ],
+    "total_Wick_rows": 20
+  },
+  "result_id": "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",
+  "result_state": "N3_NONZERO_MOMENTUM_TRIANGLE_REDUCED_TO_EXACT_SIMPLEX_WICK_KERNEL",
+  "schema": "quantum-weyl-generic-background-ghost-n3-triangle-kernel-v1",
+  "scope": {
+    "curvature_order": 3,
+    "dimension": 4,
+    "external_momenta": "k1+k2+k3=0 with generic nonexceptional Euclidean invariants",
+    "field_carrier": "three labelled symmetric Ricci endomorphisms R1,R2,R3",
+    "insertion_count": 3,
+    "signature": "Euclidean"
+  }
+}

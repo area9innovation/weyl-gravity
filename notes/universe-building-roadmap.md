@@ -416,9 +416,13 @@ Through cubic order its remaining calculation is the finite set of one-, two-
 and three-Ricci insertion traces. The flat-Endo three-insertion adiabatic
 angular numerator is now exact, with scalar-flat coefficient `503/648` before
 the `W`/Tr-log factors and `-503/243` afterwards. Its IR-singular radial
-integral does not determine the nonzero-momentum triangle. Consequently the repository
-functions and coefficients and the parity-odd derivative manifest remain
-open. The raw local `BoxR` coefficient and exact strict-metric
+integral does not determine the nonzero-momentum triangle, but that triangle
+has now been reduced independently to an exact eight-sector Feynman-simplex/
+Wick kernel with twenty rational rows at generic nonexceptional momentum.
+The labelled-Ricci kernel still lacks the frozen repository `I10` projection;
+the curved-Endo one-/two-insertion traces, repository functions and
+coefficients, and the parity-odd derivative manifest remain open. The raw
+local `BoxR` coefficient and exact strict-metric
 raw-to-`BoxR=0` scheme shift are fixed, reproducing the local `R2` coefficient
 `29/120`. The additive finite `C2` constant, absolute dressed `R(g_hat)^2`
 normalization, repository matching just described, Paneitz/FV kernel and global data, and

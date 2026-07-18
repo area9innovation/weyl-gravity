@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/quantum-weyl/generic-background-ghost-n3-triangle-kernel-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "momentum_routing", "feynman_simplex", "projector_sector_expansion", "master_kernel", "consistency", "carrier_projection", "claim_flags", "dependency", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n3-triangle-kernel-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL"},
+    "result_state": {"const": "N3_NONZERO_MOMENTUM_TRIANGLE_REDUCED_TO_EXACT_SIMPLEX_WICK_KERNEL"},
+    "lifecycle_state": {"const": "PARAMETRIC_TRIANGLE_KERNEL_COMPUTED_REPOSITORY_CARRIER_PROJECTION_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"$ref": "#/$defs/mixedMap"},
+    "momentum_routing": {"$ref": "#/$defs/mixedMap"},
+    "feynman_simplex": {"$ref": "#/$defs/mixedMap"},
+    "projector_sector_expansion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sector_count", "sector_multiplicities_by_projector_count", "total_Wick_rows", "sectors"],
+      "properties": {
+        "sector_count": {"const": 8},
+        "sector_multiplicities_by_projector_count": {"const": [1, 3, 3, 1]},
+        "total_Wick_rows": {"const": 20},
+        "sectors": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/sector"}}
+      }
+    },
+    "master_kernel": {"$ref": "#/$defs/mixedMap"},
+    "consistency": {"$ref": "#/$defs/stringMap"},
+    "carrier_projection": {"$ref": "#/$defs/stringMap"},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED", "GENERIC_GHOST_N3_EIGHT_PROJECTOR_SECTORS_EXACT", "GENERIC_GHOST_N3_REPOSITORY_I10_PROJECTION_COMPUTED", "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED", "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED", "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED", "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED": {"type": "boolean"},
+        "GENERIC_GHOST_N3_EIGHT_PROJECTOR_SECTORS_EXACT": {"type": "boolean"},
+        "GENERIC_GHOST_N3_REPOSITORY_I10_PROJECTION_COMPUTED": {"type": "boolean"},
+        "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED": {"type": "boolean"},
+        "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED": {"type": "boolean"},
+        "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": {"type": "boolean"},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"type": "boolean"},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"type": "boolean"},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"type": "boolean"},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"type": "boolean"},
+        "LORENTZIAN_CERTIFIED": {"type": "boolean"}
+      }
+    },
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"}, "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "next_gate": {"const": "PROJECT_N3_TRIANGLE_TO_REPOSITORY_I10_AND_COMPUTE_N1_N2_CURVED_ENDO_TRACES"},
+    "claim_boundary": {"type": "string", "minLength": 350}
+  },
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "wick": {
+      "type": "object", "additionalProperties": false,
+      "required": ["loop_metric_pair_count", "homogeneous_loop_degree", "coefficient_per_pairing", "Delta_power"],
+      "properties": {"loop_metric_pair_count": {"type": "integer", "minimum": 0, "maximum": 3}, "homogeneous_loop_degree": {"type": "integer", "minimum": 0, "maximum": 6}, "coefficient_per_pairing": {"$ref": "#/$defs/rational"}, "Delta_power": {"type": "integer", "maximum": -1}}
+    },
+    "sector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["subset_bits", "selected_projectors", "projector_count", "projector_coefficient", "denominator_powers", "alpha_weight_exponents", "shifted_numerator", "maximum_loop_metric_pair_count", "wick_rows"],
+      "properties": {
+        "subset_bits": {"type": "string", "pattern": "^[01]{3}$"},
+        "selected_projectors": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 2}, "uniqueItems": true},
+        "projector_count": {"type": "integer", "minimum": 0, "maximum": 3},
+        "projector_coefficient": {"$ref": "#/$defs/rational"},
+        "denominator_powers": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 1, "maximum": 2}},
+        "alpha_weight_exponents": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 1}},
+        "shifted_numerator": {"type": "string", "minLength": 20},
+        "maximum_loop_metric_pair_count": {"type": "integer", "minimum": 0, "maximum": 3},
+        "wick_rows": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/wick"}}
+      }
+    },
+    "stringMap": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 3},
+    "mixedMap": {"type": "object", "additionalProperties": {"oneOf": [{"type": "string"}, {"type": "integer"}, {"$ref": "#/$defs/rational"}, {"type": "array", "items": {"type": "string"}}]}, "minProperties": 4}
+  }
+}

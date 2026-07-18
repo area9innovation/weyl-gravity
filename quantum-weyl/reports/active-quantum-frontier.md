@@ -72,8 +72,10 @@ exactly the one-, two- and three-Ricci insertion traces. The three-insertion
 row now has an exact adiabatic angular numerator: on the scalar-flat carrier
 the coefficient is `503/648` before the `W`/Tr-log factors and `-503/243`
 afterwards. The zero-momentum radial integral is scaleless and IR singular;
-the nonzero-momentum triangle, curved-Endo one-/two-insertion rows, and the
-generic physical fourth-order Hessian kernel are the next coefficient-bearing inputs.
+the generic nonexceptional-momentum triangle is instead reduced exactly to
+eight projector sectors and twenty Feynman-simplex/Wick rows. Its repository
+`I10` projection, the curved-Endo one-/two-insertion rows, and the generic
+physical fourth-order Hessian kernel are the next coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute

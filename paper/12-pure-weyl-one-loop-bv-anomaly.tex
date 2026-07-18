@@ -1052,10 +1052,11 @@ open.  The zero-derivative algebraic cubic basis, the parity-even
 third-curvature five-carrier quotient and the five exact universal CPT source
 kernels are exact.  The generic ghost calculation now proves that direct
 minimal-CPT substitution is obstructed by a nonminimal, Hodge-mixed Schur
-operator.  A matched nonminimal-vector determinant and the generic physical
-fourth-order Hessian kernel were the missing route; the preceding proposition
-now reduces the ghost part to the finite one-, two- and three-Ricci insertion
-traces.  Those traces and the physical kernel, hence the five repository form-factor functions and
+operator.  The exact Endo reduction leaves finite one-, two- and three-Ricci
+insertion traces.  The three-insertion row is now reduced at generic
+nonexceptional momentum to an exact eight-sector Feynman-simplex/Wick kernel;
+its repository $I_{10}$ projection and the curved-Endo one-/two-insertion
+traces remain open.  Those rows and the physical kernel, hence the five repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
@@ -1091,6 +1092,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
@@ -1129,6 +1131,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_endo_duhamel_reduction
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
