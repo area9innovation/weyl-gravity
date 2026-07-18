@@ -41,6 +41,7 @@ INPUTS = {
     "FV_anomaly_action_Ricci_sector": ROOT / "quantum-weyl/transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json",
     "algebraic_cubic_Weyl_carriers": ROOT / "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
     "third_curvature_Weyl_manifest": ROOT / "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
+    "CPT_universal_third_curvature_kernels": ROOT / "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
 
@@ -75,6 +76,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     fv_anomaly_ricci = values["FV_anomaly_action_Ricci_sector"]
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
+    cpt_kernels = values["CPT_universal_third_curvature_kernels"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -182,6 +184,25 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
         )
         is not False
+        or [
+            row.get("carrier_id")
+            for row in cpt_kernels.get("universal_kernels", [])
+        ]
+        != ["I10", "I24", "I25", "I28", "I29"]
+        or cpt_kernels.get("source_fixture", {}).get("status")
+        != "COEFFICIENT_COMPUTED"
+        or cpt_kernels.get("claim_flags", {}).get(
+            "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED"
+        )
+        is not True
+        or cpt_kernels.get("claim_flags", {}).get(
+            "REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_SUPPLIED"
+        )
+        is not False
+        or cpt_kernels.get("claim_flags", {}).get(
+            "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
+        )
+        is not False
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -214,6 +235,7 @@ def build() -> dict[str, Any]:
     fv_anomaly_ricci = values["FV_anomaly_action_Ricci_sector"]
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
+    cpt_kernels = values["CPT_universal_third_curvature_kernels"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
@@ -224,7 +246,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, while repository form-factor functions, coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, and five universal CPT source kernels are exact, while the repository generic-background trace substitution, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -290,6 +312,12 @@ def build() -> dict[str, Any]:
             "third_curvature_raw_label_dimension": third_curvature_weyl["raw_module"]["generic_label_orbit_dimension"],
             "third_curvature_4d_quotient_label_dimension": third_curvature_weyl["quotient_module"]["generic_label_orbit_dimension"],
             "third_curvature_functional_relation_rank": third_curvature_weyl["four_dimensional_identity"]["relation_rank"],
+            "universal_CPT_third_curvature_kernels_imported": True,
+            "universal_CPT_source_fixture_status": cpt_kernels["source_fixture"]["status"],
+            "universal_CPT_kernel_box_homogeneities": [
+                row["gamma_box_homogeneity"]
+                for row in cpt_kernels["universal_kernels"]
+            ],
             "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
             "repository_29_over_120_local_R2_reproduced": True,
@@ -308,6 +336,7 @@ def build() -> dict[str, Any]:
             "complete_renormalized_Gamma1_supplied": False,
             "independent_cubic_Weyl_invariant_form_factors": False,
             "parity_odd_third_curvature_carrier_manifest": False,
+            "repository_generic_background_CPT_trace_substitution": False,
             "absolute_dressed_Rhat2_normalization": False,
             "same_background_compensator_contraction": False,
             "quantum_Cartan_identity": False,
@@ -321,7 +350,7 @@ def build() -> dict[str, Any]:
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
-                "five repository parity-even third-curvature form-factor functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
+                "same-gauge generic-background full-BV Hessian and trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",
             ],
             "required_outputs": [

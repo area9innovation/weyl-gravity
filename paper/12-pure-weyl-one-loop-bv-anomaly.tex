@@ -866,6 +866,45 @@ functions, all their coefficients, and the parity-odd derivative-decorated
 carrier manifest remain open.
 \end{proposition}
 
+\begin{proposition}[Universal CPT kernels and the repository matching boundary]
+For the rank-one minimal scalar-Laplacian fixture
+\(
+ F=-\Box, P=0, \mathcal R_{\mu\nu}=0
+\), the five source functions associated with
+\(I_{10},I_{24},I_{25},I_{28},I_{29}\) are imported exactly in the
+alpha-parameter convention
+\[
+ \Gamma_i=\left\langle\frac{dff_i}{-\Omega}\right\rangle_3+T_i+L_i,
+ \qquad
+ \Omega=\alpha_2\alpha_3\Box_1+
+        \alpha_1\alpha_3\Box_2+
+        \alpha_1\alpha_2\Box_3.
+\]
+Their stabilizers and box homogeneities are
+\[
+\begin{array}{c|ccccc}
+i&10&24&25&28&29\\ \hline
+\operatorname{Stab}(I_i)&S_3&S_2(23)&S_2(23)&S_2(12)&C_3\\
+\deg_{\Box}\Gamma_i&-1&-2&-2&-3&-4.
+\end{array}
+\]
+The exact source formulas, symmetrized rows and formula hashes are retained
+in the computational receipt~\cite{BarvinskyCPT}.
+
+This imports universal kernels, not the pure-Weyl conformal-graviton
+functions.  For tensor and ghost Laplace-type blocks, both the endomorphism
+\(P\) and bundle curvature \(\mathcal R_{\mu\nu}\) are already linear in the
+spacetime curvature and feed the same pure-gravity carriers through other
+CPT rows.  The available round-sphere constrained determinant factors,
+Ricci-flat local \(b_4\) match and principal-symbol sequence do not determine
+those generic-background trace substitutions.  Consequently no repository
+third-curvature function or coefficient is inferred by summing bundle ranks.
+The minimal missing physical input is a same-gauge generic-background
+full-BV Hessian reduced to minimal Laplace-type blocks with all trace
+substitutions through curvature order three, or an equivalent direct
+nonminimal fourth-order CPT kernel, together with the matching measure.
+\end{proposition}
+
 \begin{proposition}[Exact local $\Box R$ scheme conversion]
 In the zeta/proper-time prescription of Barvinsky et
 al.~\cite{BarvinskyLocal}, the imported fourth heat-kernel rows combine with
@@ -916,10 +955,11 @@ strict-metric raw-to-$\Box R=0$
 $R^2$ scheme shift is now exact.  The FV anomaly action and structural
 dependence of its Ricci-scalar sector are also exact.  The additive finite
 $C^2$ constant and absolute dressed $R(\widehat g)^2$ normalization remain
-open.  The zero-derivative algebraic cubic basis and the parity-even
-third-curvature five-carrier quotient are exact, but the five repository
-form-factor functions and coefficients, the parity-odd derivative manifest,
-global Green/kernel data, and
+open.  The zero-derivative algebraic cubic basis, the parity-even
+third-curvature five-carrier quotient and the five exact universal CPT source
+kernels are exact.  The repository generic-background full-BV trace
+substitution, hence the five repository form-factor functions and
+coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
 The exact positive-Berger contraction does not fill this gate: its row named
@@ -950,6 +990,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json}.
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json}.
 \item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json}.
+\item \cert{quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
@@ -981,6 +1022,8 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_third_curvature_weyl_manifest
 PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cpt_universal_third_curvature_kernels
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
 PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment
@@ -990,9 +1033,11 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 \section{Outlook}
 
-The immediate local-to-residual question is now sharp.  Compute the five
-repository parity-even third-curvature form-factor functions and coefficients
-on the certified carrier quotient, and classify the parity-odd derivative
+The immediate local-to-residual question is now sharp.  Supply the same-gauge
+generic-background full-BV Hessian and trace substitutions needed to match
+the five imported universal CPT kernels to repository parity-even third-
+curvature form-factor functions and coefficients on the certified carrier
+quotient, and classify the parity-odd derivative
 sector; then supply finite $C^2$
 and absolute dressed $R(\widehat g)^2$ normalization conditions and
 renormalized BV operator data to fix a complete $Q_1$; then, given an extended

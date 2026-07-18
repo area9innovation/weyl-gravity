@@ -63,6 +63,7 @@ DEPENDENCIES = {
     "FV_anomaly_action_Ricci_sector": HERE / "transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json",
     "algebraic_cubic_Weyl_carriers": HERE / "transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
     "third_curvature_Weyl_manifest": HERE / "transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
+    "CPT_universal_third_curvature_kernels": HERE / "transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -152,6 +153,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "BoxR_scheme_conversion": "RAW_ZETA_BOX_R_COEFFICIENT_AND_REPOSITORY_BOXR_ZERO_R2_CONVERSION_CERTIFIED_NONLOCAL_R2_FORM_FACTOR_OPEN",
         "algebraic_cubic_Weyl_carriers": "ALGEBRAIC_C3_CARRIERS_COMPLETE_NONLOCAL_CUBIC_FORM_FACTORS_OPEN",
         "third_curvature_Weyl_manifest": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN",
+        "CPT_universal_third_curvature_kernels": "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_CONFORMAL_GRAVITON_TRACE_SUBSTITUTION_OPEN",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
@@ -173,6 +175,7 @@ def _load() -> dict[str, dict[str, Any]]:
     fv_anomaly_ricci = values["FV_anomaly_action_Ricci_sector"]
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
     third_curvature_weyl = values["third_curvature_Weyl_manifest"]
+    cpt_third_curvature = values["CPT_universal_third_curvature_kernels"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -409,6 +412,25 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("third-curvature Weyl carrier manifest frontier drifted")
+    if (
+        [row.get("carrier_id") for row in cpt_third_curvature.get("universal_kernels", [])]
+        != ["I10", "I24", "I25", "I28", "I29"]
+        or cpt_third_curvature.get("claim_flags", {}).get(
+            "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED"
+        )
+        is not True
+        or cpt_third_curvature.get("claim_flags", {}).get(
+            "SOURCE_SCALAR_FIXTURE_COEFFICIENTS_COMPUTED"
+        )
+        is not True
+        or cpt_third_curvature.get("claim_flags", {}).get(
+            "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
+        )
+        is not False
+        or cpt_third_curvature.get("repository_matching_audit", {}).get("verdict")
+        != "NO_REPOSITORY_FORM_FACTOR_COEFFICIENT_CAN_BE_INFERRED_FROM_THE_CURRENT_SPECIAL_BACKGROUND_LEDGER"
+    ):
+        raise ValueError("universal CPT third-curvature kernel frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1274,7 +1296,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_Q1_UNDERDETERMINED",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_TRACE_SUBSTITUTION_OPEN_Q1_UNDERDETERMINED",
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
@@ -1290,7 +1312,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_FIXED_REPOSITORY_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
@@ -1413,6 +1435,8 @@ def build() -> dict[str, Any]:
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE": True,
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED": True,
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
+            "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED": True,
+            "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED": False,
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": True,
             "FULL_BV_LEDGER_COMPOSER_READY": True,
             "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED": True,
@@ -1516,7 +1540,11 @@ def build() -> dict[str, Any]:
             "is also complete in the declared scalar-flat Euclidean scope: five carrier labels "
             "with exact stabilizers span twelve generic label channels, and the single "
             "four-dimensional symmetric functional relation leaves eleven. This is not eleven "
-            "computed form factors. The five repository form-factor functions and their "
+            "computed form factors. The five exact universal CPT alpha kernels have now been "
+            "imported and symmetrized; they are coefficient-bearing for the rank-one minimal "
+            "scalar-Laplacian source fixture. The repository tensor/ghost endomorphism and "
+            "connection-curvature trace substitutions on a generic background are not supplied, "
+            "and the special-background determinant ranks cannot determine them. The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
             "zeta/proper-time BoxR coefficient is independently replayed as "
@@ -1796,6 +1824,10 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("STATIONARY_GENERATOR_IMPORT_CONSUMER_READY") is not True
         or flags.get("POLAR_UNGAUGED_NOETHER_LIFT_IMPORTED") is not True
         or flags.get("PLEBANSKI_HACYAN_STABILIZER_AUTHORITY_IMPORTED") is not True
+        or flags.get("FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED")
+        is not True
+        or flags.get("REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED")
+        is not False
     ):
         raise ValueError("active frontier positive flags dropped")
     if any(
@@ -1853,6 +1885,8 @@ def validate(result: dict[str, Any]) -> None:
             "RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED",
             "ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE",
             "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
+            "FIVE_UNIVERSAL_CPT_THIRD_CURVATURE_KERNELS_IMPORTED",
+            "REPOSITORY_GENERIC_BACKGROUND_CPT_TRACE_SUBSTITUTION_SUPPLIED",
             "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
             "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED",
             "FV_AND_WZ_DRESSED_METRICS_IDENTIFIED",

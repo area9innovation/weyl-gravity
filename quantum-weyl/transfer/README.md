@@ -451,6 +451,17 @@ not a separate datum. The additive `C^2` constant, absolute dressed
 Weyl-invariant form factors, global
 Green/kernel data, and renormalized BV Laplacian or time-ordered product
 remain absent.
+
+`CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS` now imports the exact primary-source
+alpha representations for `Gamma_10, Gamma_24, Gamma_25, Gamma_28,
+Gamma_29`, including their tree/log terms, stabilizer projections and box
+homogeneities. They are coefficient-bearing for the rank-one minimal scalar
+Laplacian fixture. They are not the repository Weyl-graviton answer: the
+generic-background full-BV tensor/ghost endomorphism and connection-curvature
+trace substitutions are missing, and special-background ranks plus local
+`b4` coordinates cannot identify five three-variable functions. The
+certificate therefore records an exact minimal missing physical import rather
+than promoting the scalar fixture by rank.
 Residual transfer
 remains forbidden until those data and a
 compensator-inclusive classical contraction are supplied.  None of the
@@ -487,6 +498,9 @@ PYTHONPATH=quantum-weyl python3 -m transfer.flat_tt_logarithmic_gamma1 --check
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_flat_tt_logarithmic_gamma1
 PYTHONPATH=quantum-weyl python3 -m transfer.curvature_squared_covariant_log_gamma1 --check
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_curvature_squared_covariant_log_gamma1
+PYTHONPATH=quantum-weyl python3 -m transfer.cpt_universal_third_curvature_kernels --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_cpt_universal_third_curvature_kernels
+PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_cpt_universal_third_curvature_kernels.py -v
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

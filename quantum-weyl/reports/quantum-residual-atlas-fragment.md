@@ -11,10 +11,10 @@ NOT_APPLICABLE
 NO_CERTIFIED_MAP
 ```
 
-The generator emits a strict common-envelope fragment with eighteen entries:
+The generator emits a strict common-envelope fragment with nineteen entries:
 six all-energy vacuum-cylinder E/A/L mode-family rows, two residual
 deformation-class rows, one Berger carrier-gap row, one classical-to-quantum
-tangent-cone crosswalk, and eight non-mode particle guards. Every row carries
+tangent-cone crosswalk, and nine non-mode particle guards. Every row carries
 the full declared mode scope and separately records classical
 import, BRST closure and exactness, pairing, compatible complex structure,
 Hadamard two-point function, state-space signature, anomaly/QME dependency,
@@ -51,7 +51,11 @@ one-even/one-odd zero-derivative (C^3) carrier basis is not a mode, state, or
 particle crosswalk. A separate third-curvature guard records the five
 parity-even conformal carrier labels and their one four-dimensional functional
 relation without turning the resulting eleven generic label channels into
-eleven computed form factors or particle entries.
+eleven computed form factors or particle entries. A ninth guard records the
+five exact universal CPT source kernels on the rank-one minimal scalar-
+Laplacian fixture. It does not promote them to Weyl-graviton coefficients or
+particles because the repository generic-background full-BV trace
+substitution is absent.
 
 ## Tangent-cone boundary
 
@@ -110,6 +114,14 @@ scalar-flat Euclidean scope: the five source carriers have exact label
 stabilizers, span twelve generic label channels, and one symmetric functional
 identity leaves eleven. The five repository form-factor functions and their
 coefficients, and the parity-odd derivative-decorated manifest, remain open.
+The exact alpha-parameter kernels for the five corresponding universal CPT
+rows are imported with their source archive and ancillary-code hashes. Their
+coefficient-bearing fixture is one rank-one minimal scalar Laplacian with
+zero endomorphism and zero bundle curvature. For the tensor and ghost bundles
+of Weyl gravity, the Laplace-type endomorphism and bundle curvature already
+contribute at first curvature order, so the special-background determinant
+ranks and local heat-kernel coordinates do not determine the required
+generic-background trace substitution.
 The additive
 finite `C2` normalization, absolute dressed `R(g_hat)^2` normalization,
 derivative-decorated cubic-and-higher Weyl completion, global Green/kernel

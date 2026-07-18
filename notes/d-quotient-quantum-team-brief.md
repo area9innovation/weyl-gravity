@@ -843,6 +843,20 @@ Green data remain absent. Complete `Gamma1` and `Q1` therefore remain fail-close
 independently of the still-missing compensator-inclusive classical
 contraction.
 
+The primary CPT ancillary source has now been consumed one step further. Its
+five exact universal kernels `Gamma_10, Gamma_24, Gamma_25, Gamma_28,
+Gamma_29` are stored in rational alpha form with their tree/log terms,
+stabilizer projections and box homogeneities. They are coefficient-bearing
+for the rank-one minimal scalar-Laplacian fixture. They are not yet the
+repository Weyl-graviton functions: tensor/ghost endomorphism and bundle-
+curvature rows contribute to the same carriers, while the accepted repository
+determinant factors are fixed only on special Einstein/Ricci-flat carriers.
+The current local `b4` data therefore cannot identify five three-variable
+functions. The active coefficient calculation is now sharply the same-gauge
+generic-background full-BV Hessian trace substitution into those five
+kernels, or a direct nonminimal fourth-order CPT calculation, plus the
+matching measure.
+
 The available positive-Berger `34 -> 26` SDR does not supply that contraction.
 Its row named `tau` is the temporal diffeomorphism ghost in the Berger
 gravity--clock complex; Wess--Zumino `tau` is a scalar Weyl compensator in a
@@ -917,6 +931,9 @@ is recorded in
 [`four-dimensional-third-curvature-weyl-carrier-manifest.md`](../quantum-weyl/reports/four-dimensional-third-curvature-weyl-carrier-manifest.md).
 It fixes five carrier labels modulo one symmetric functional relation, not the
 repository form-factor functions or their coefficients.
+The exact universal kernels and their repository nonidentifiability theorem
+are recorded in
+[`cpt-universal-third-curvature-kernels.md`](../quantum-weyl/reports/cpt-universal-third-curvature-kernels.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as

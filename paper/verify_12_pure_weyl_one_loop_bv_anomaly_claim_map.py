@@ -94,6 +94,9 @@ def main() -> None:
     assert claims["third_curvature_raw_label_dimension"] == 12
     assert claims["third_curvature_4d_quotient_label_dimension"] == 11
     assert claims["third_curvature_functional_relation_rank"] == 1
+    assert claims["universal_CPT_third_curvature_kernels_imported"] is True
+    assert claims["universal_CPT_source_fixture_status"] == "COEFFICIENT_COMPUTED"
+    assert claims["universal_CPT_kernel_box_homogeneities"] == [-1, -2, -2, -3, -4]
     assert claims["raw_zeta_BoxR_coefficient"] == {
         "basis": ["1", "log(3/2)"],
         "rational": {"numerator": -159, "denominator": 80},
@@ -119,7 +122,7 @@ def main() -> None:
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 21
+    assert len(payload["inputs"]) == 22
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -138,6 +141,7 @@ def main() -> None:
     fv_anomaly_ricci = dependencies["FV_ANOMALY_ACTION_RICCI_SECTOR"]
     cubic_weyl = dependencies["FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS"]
     third_curvature_weyl = dependencies["FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST"]
+    cpt_kernels = dependencies["CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -174,6 +178,13 @@ def main() -> None:
     assert third_curvature_weyl["raw_module"]["generic_label_orbit_dimension"] == 12
     assert third_curvature_weyl["quotient_module"]["generic_label_orbit_dimension"] == 11
     assert third_curvature_weyl["claim_flags"]["REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"] is False
+    assert cpt_kernels["source_fixture"]["status"] == "COEFFICIENT_COMPUTED"
+    assert [row["carrier_id"] for row in cpt_kernels["universal_kernels"]] == [
+        "I10", "I24", "I25", "I28", "I29"
+    ]
+    assert cpt_kernels["claim_flags"]["FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED"] is True
+    assert cpt_kernels["claim_flags"]["REPOSITORY_GENERIC_BACKGROUND_TRACE_SUBSTITUTION_SUPPLIED"] is False
+    assert cpt_kernels["claim_flags"]["REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"] is False
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"

@@ -17,6 +17,7 @@ Wess–Zumino Resolution*. It is a disposition ledger, not a new theorem.
 | Ricci-sector effective-action gate | Strengthened after the review. The exact FV anomaly action is printed and independently replayed. In the declared massless conformal FV decomposition, generic-basis `R F(Box) R` terms are determined by the anomaly action and conformized Weyl sector, so the earlier “independent nonlocal R² form factor” gate is retired. Cubic Weyl data and finite normalizations remain open. | Main paper FV anomaly-action proposition; computational supplement; `FV_ANOMALY_ACTION_RICCI_SECTOR.json` |
 | Algebraic cubic carrier seam | Strengthened after the review. The complete four-dimensional zero-derivative `C³` carrier space is displayed in chiral and parity bases: one even and one odd direction. The paper explicitly leaves derivative-decorated nonlocal carriers, `Γ_m(Box_1,Box_2,Box_3)`, coefficients, and complete `Γ_1/Q_1` open. | Main paper algebraic-cubic proposition; computational supplement; `FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json` |
 | Parity-even third-curvature seam | Strengthened after the review. Five source carrier-labelled functions, their exact `S3/S2/C3` stabilizers and the single four-dimensional symmetric functional relation are displayed. The generic label module reduces `12 -> 11`, while every repository function and coefficient and the odd derivative manifest remain open. | Main paper third-curvature proposition; computational supplement; `FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json` |
+| Universal CPT kernel seam | Strengthened after the review. The exact alpha-parameter kernels for `I10,I24,I25,I28,I29` are imported from a hash-pinned primary source archive and ancillary symbolic file, with exact stabilizer and homogeneity checks. The coefficient-bearing fixture is explicitly one rank-one minimal scalar Laplacian. The paper proves why special-background ranks and local `b4` coordinates cannot substitute for the missing generic-background full-BV tensor/ghost trace map, so no repository Weyl-gravity function or coefficient is promoted. | Main paper universal-kernel proposition; computational supplement; `CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json` |
 | Unsupported Hadamard assertion | Removed from the abstract and from the paper’s theorem claims. Same-background state constructions are assigned to a separate companion programme. | Abstract; “What does not follow”; Paper 12 claim map |
 | Smaller editorial requests | Addressed: τ-adic title, regular-locus abstract scope, generator terminology, definition of `C_1^{WZ}`, fixture normalization, foundational antifield-BRST reference, Paneitz reference, and consistent receipt punctuation. | Main paper and bibliography |
 
@@ -26,7 +27,7 @@ map are independently replayed, and the scoped scientific verifiers for the
 strict quotient, Euclidean complex, multiplicities, Slavnov breaking, matter
 cone, compensator lift, extended quotient, effective-action carriers, FV
 Ricci-sector disposition, algebraic cubic-Weyl carrier basis, parity-even
-third-curvature carrier quotient, and `Box R`
+third-curvature carrier quotient, universal CPT source kernels, and `Box R`
 scheme conversion pass exactly.
 
 The manuscript remains a working draft pending human and literature review.

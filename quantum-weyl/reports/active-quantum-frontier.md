@@ -53,7 +53,13 @@ scalar-flat Euclidean scope: five carrier-labelled functions have exact
 `S3/S2/C3` stabilizers, span twelve generic label channels, and one exact
 four-dimensional symmetric functional relation leaves eleven. This is not a
 claim that eleven form factors—or any repository coefficient—have been
-computed. The additive `C^2` constant, the five repository third-curvature
+computed. The five universal CPT kernels `Gamma_10, Gamma_24, Gamma_25,
+Gamma_28, Gamma_29` are now imported in exact alpha form and are
+coefficient-bearing for the rank-one minimal scalar-Laplacian source fixture.
+The repository Weyl-graviton problem remains open because its generic-
+background tensor/ghost endomorphism and connection-curvature trace
+substitutions have not been supplied; the special-background determinant
+ranks cannot determine them. The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
 dressed `R(g_hat)^2` normalization, and global Green data remain
@@ -87,6 +93,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`fv-conformized-c2-log-gamma1.md`](fv-conformized-c2-log-gamma1.md),
 [`four-dimensional-algebraic-cubic-weyl-carriers.md`](four-dimensional-algebraic-cubic-weyl-carriers.md),
 [`four-dimensional-third-curvature-weyl-carrier-manifest.md`](four-dimensional-third-curvature-weyl-carrier-manifest.md),
+[`cpt-universal-third-curvature-kernels.md`](cpt-universal-third-curvature-kernels.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 

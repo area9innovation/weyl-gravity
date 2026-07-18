@@ -619,6 +619,48 @@ stabilizer, are subject to one arbitrary symmetric functional relation.  The
 repository functions and coefficients and the parity-odd derivative sector
 remain at \texttt{NOT\_COMPUTED}.
 
+\subsection{Exact universal CPT source kernels}
+
+The next receipt imports the five corresponding third-curvature kernels from
+the primary CPT source archive and its ancillary symbolic file.  It records
+both source SHA-256 hashes, the source effective-action normalization, the
+exact rational alpha-parameter numerator, explicit tree and logarithmic
+terms, the stabilizer symmetrization and the resulting formula-row digest.
+The common convention is
+\[
+ \Gamma_i=\left\langle\frac{dff_i}{-\Omega}\right\rangle_3+T_i+L_i,
+ \qquad
+ \Omega=\alpha_2\alpha_3\Box_1+
+ \alpha_1\alpha_3\Box_2+
+ \alpha_1\alpha_2\Box_3.
+\]
+Exact rescaling verifies homogeneities
+\((-1,-2,-2,-3,-4)\) for
+\((I_{10},I_{24},I_{25},I_{28},I_{29})\), and independent parsing checks
+selected source terms and the full formula digest.
+
+The coefficient-bearing source fixture is deliberately narrow:
+\(F=-\Box\) on one real scalar, with \(P=0\) and zero bundle curvature.
+It is not the conformal-graviton determinant.  On tensor and ghost bundles,
+\(P\) and \(\mathcal R_{\mu\nu}\) are linear in the background curvature
+and their other CPT rows mix into the same pure-gravity carrier functions.
+Thus neither constrained Einstein-background ranks nor finitely many local
+\(b_4\) coordinates identify five functions of three box variables.  The
+receipt fails closed until the repository supplies the same-gauge
+generic-background full-BV Hessian and complete trace-substitution map through
+third curvature order, or an equivalent nonminimal fourth-order CPT kernel,
+with the matching measure.
+
+The production and independent replay commands are
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.cpt_universal_third_curvature_kernels --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cpt_universal_third_curvature_kernels
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  transfer.tests.test_cpt_universal_third_curvature_kernels
+\end{verbatim}
+
 \subsection{Exact local BoxR scheme conversion}
 
 The zeta/proper-time calculation imports the published local heat-kernel rows
@@ -720,6 +762,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_fv_anomaly_action_ricci_sector
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_third_curvature_weyl_manifest
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cpt_universal_third_curvature_kernels
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_cubic_weyl_carrier_basis
 PYTHONPATH=quantum-weyl python3 -m \

@@ -112,10 +112,19 @@
     "strict_quotient_scope": "REGULAR_BACH_LOCUS",
     "third_curvature_4d_quotient_label_dimension": 11,
     "third_curvature_functional_relation_rank": 1,
-    "third_curvature_raw_label_dimension": 12
+    "third_curvature_raw_label_dimension": 12,
+    "universal_CPT_kernel_box_homogeneities": [
+      -1,
+      -2,
+      -2,
+      -3,
+      -4
+    ],
+    "universal_CPT_source_fixture_status": "COEFFICIENT_COMPUTED",
+    "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "b0fd872a5972e359bc0ccb03084d91c6e74ab4999e7e902fe773a73d912fb2ca",
+  "compiled_pdf_sha256": "ab62e1e0a24ac7e4a3adfa5e5288811f64c2da214fc8aa3ad2da08ecb6dfe95d",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -136,12 +145,13 @@
     "positive_particle_Hilbert_space": false,
     "quantum_Cartan_identity": false,
     "renormalized_Lorentzian_products": false,
+    "repository_generic_background_CPT_trace_substitution": false,
     "residual_quantum_transfer": false,
     "same_background_compensator_contraction": false,
     "theorem_frozen": false,
     "unitarity_theorem": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, while repository form-factor functions, coefficients, odd derivative data and finite normalizations remain open.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, and five universal CPT source kernels are exact, while the repository generic-background trace substitution, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -199,6 +209,10 @@
       "result_id": "ANOMALY_INDUCED_NONLOCAL_GAMMA1",
       "sha256": "9531ef49d0d930fc4c2081b292662a1bd4892abab36eee582298ae3839e16810"
     },
+    "quantum-weyl/transfer/certificates/CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS.json": {
+      "result_id": "CPT_UNIVERSAL_THIRD_CURVATURE_KERNELS",
+      "sha256": "1c2d987f25042431ad079f976b5a421866d91cc8f720abaaa4ad2e9c9f543805"
+    },
     "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json": {
       "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
       "sha256": "a67a475da6352ad163a907c2fc6ad0bcb1bf804662bc645eca1487685bccde87"
@@ -230,12 +244,12 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "42b0041b160b8e68e24e4962ce3ccebf1265cff5222b8948ec214e2b8a1b7446",
+  "manuscript_sha256": "bd217ce420abd0c97b4d0f00ecac69ddb4d71e0d304d26922fa4ddfd1932cb19",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
-      "five repository parity-even third-curvature form-factor functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
+      "same-gauge generic-background full-BV Hessian and trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
     "required_outputs": [
@@ -248,9 +262,9 @@
     "status": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_PARITY_ODD_MANIFEST_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "e501834178bef384d00f2b49a94c95394c105f3826a2896b819e10bf4075447a",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "2e1112996c7e4d1db097cd52ef5bdd96254359c7f85b0a8a2e9fcc3e61b641f0",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "e3e2cd5e9ad662af8ff414f9cc7d3f85b14b4c9773ad26ffb8ee54f73935d428",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "810c69ff43ec282db4fb91f861c3bea17eb32e5b26fc833caacc1ce0b0a56d05",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "ca0b6bd0ca21eef0d9c4dd7c0e1102358eafc9e91c89e57317a307ba216d1e49",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "b8e74a6933e49d8f50036f683eaf3d556ad21f336cd3b400b56b00bc829f1dd8",
     "paper/generate_12_quantum_anomaly_tables.py": "332a4f2655192f6ad7e65e716083e89dbb4195befdd87f0e4e6324015739d874",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "720416a0ae7453a7387eb416b543765e4b07f79afd8c1b5eb773612afe5bf1f0",
     "paper/verify_12_quantum_anomaly_tables.py": "f8b082549a5263b6f2655c6d94c4cf391bb70ca1382563f3b122e17a81882900"
