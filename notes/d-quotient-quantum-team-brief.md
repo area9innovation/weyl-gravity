@@ -547,15 +547,19 @@ longitudinal Diff/Weyl Faddeev--Popov block has determinant
 factor at `R=12`. The nonzero-mode York/Hodge and nonminimal measure now
 matches too: the unwanted `Delta_0` Jacobian cancels and every gauge quartet
 has unit superdeterminant, leaving the standard vector/scalar ghost exponents.
-The physical-Hessian step has now been reduced to one exact missing carrier.
-The repository action normalization and conformally-flat `C1^sharp C1`
-Hessian are certified, as are the cylinder TT factorization and the
-action-derived Nariai endpoint. The latter two are not a round-`S4` operator
-dictionary. The required artifact is
-`REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1`, proving
-`H_TT^repository=kappa Delta_2_perp(2) Delta_2_perp(4)` with the exact sign,
-scalar, pairing, Laplacian convention, Euler-term policy, and zero-mode
-domain. Independently, the four standard round-`S4` factors now have a complete
+The physical-Hessian step is now closed by
+`REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1`. The independent round-`S4`
+CHS formula gives the spin-two shifts `4,2`; the repository action,
+conformally-flat `C1^sharp C1` Hessian, and flat TT leading symbol then fix
+`kappa=+1/2`. A separate verifier replays the specialization, normalization,
+formal properties, zero kernel, content hashes, and strict receiver. The
+dictionary has also been composed with the York/Hodge, scalar-ghost,
+nonminimal, and zero-mode inputs into
+`REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`; an independent consumer accepts all
+four rows and factors with ranks `(5,1,5,3)`, exponents
+`(-1/2,+1/2,-1/2,+1/2)`, and priming `(0,5,0,10)`.
+
+The four standard round-`S4` factors have a complete
 zero-mode ledger: no physical TT zeros, ten Killing-vector ghost zeros, and
 five scalar proper-conformal ghost zeros with exact Diff--Weyl kernel vector
 `(1,1)`. These reproduce the classical fifteen conformal reducibilities. The
@@ -565,18 +569,17 @@ background-dependent logarithmic coefficient. All standard factor,
 effective-action/partition-function exponent, nonzero-mode Berezinian,
 zero-mode priming, auxiliary contour, parity, and local-`b4` regulator data are
 now consolidated in `STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE`, which
-reproduces `(199/30,-87/20,0)`. Matching the TT dictionary and auxiliary row to
-the repository, fixing the global determinant phase, accepting the repository
-full-BV ledger, and completing the total row/factor map remain open. The TT
-dictionary handoff now has a strict executable input contract requiring
+reproduces `(199/30,-87/20,0)`. The global determinant phase and the regulated
+repository Slavnov insertion remain open. The TT dictionary handoff has a
+strict executable input contract requiring
 `kappa=1/2`, factor shifts `2,4`, formal TT ellipticity/self-adjointness, zero
 physical kernel, and content-addressed producer plus independent-verifier
-artifacts. The synthetic accepted fixture is receiver mechanics only; no
-physical dictionary has landed. The classical
-54-row carrier is explicitly not a loop-multiplicity authority. The next
-task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
-content-addressed repository regulator/operator/measure match, and compute
-the regulated Slavnov breaking through that receiver. A nonzero quotient branch
+artifacts. The historical synthetic fixture remains receiver mechanics only;
+the physical dictionary and full-BV ledger are separate committed artifacts.
+The classical 54-row carrier is explicitly not a loop-multiplicity authority.
+The next task is to bind the accepted ledger into a content-addressed
+repository regulator/operator/measure match and compute the regulated Slavnov
+breaking through the V2 receiver. A nonzero quotient branch
 obstructs strict fixed field content; a purely `omega BoxR` branch is restored
 by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See

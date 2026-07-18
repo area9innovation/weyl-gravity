@@ -245,6 +245,7 @@ def synthetic_multiplicity_payload(*, repository_root: Path = ROOT) -> dict[str,
     return {
         "schema": "quantum-weyl-repository-full-bv-multiplicity-export-v1",
         "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+        "result_state": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
         "classical_commit": "0" * 40,
         "analytic_route": "EUCLIDEAN_ELLIPTIC",

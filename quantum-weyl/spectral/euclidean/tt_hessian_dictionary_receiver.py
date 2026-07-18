@@ -19,6 +19,20 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _canonical_hash(value: object) -> str:
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+
+
+def proof_hash(payload: dict[str, Any]) -> str:
+    """Bind every scientific and provenance field except the digest itself."""
+
+    return _canonical_hash(
+        {key: value for key, value in payload.items() if key != "proof_sha256"}
+    )
+
+
 def _validate_artifact(value: object, *, repository_root: Path, index: int) -> None:
     if not isinstance(value, dict) or set(value) != {"format", "path", "sha256"}:
         raise ValueError(f"TT dictionary proof artifact {index} fields drifted")
@@ -64,6 +78,8 @@ def validate_tt_hessian_dictionary(
         raise ValueError("TT Hessian zero-mode statement drifted")
     for index, artifact in enumerate(payload["proof_artifacts"]):
         _validate_artifact(artifact, repository_root=repository_root, index=index)
+    if payload["proof_sha256"] != proof_hash(payload):
+        raise ValueError("TT Hessian dictionary proof digest drifted")
     return {
         "result_id": payload["result_id"],
         "classical_commit": payload["classical_commit"],
@@ -88,8 +104,7 @@ def synthetic_payload(*, repository_root: Path = ROOT, classical_commit: str = "
         {"format": format_, "path": path, "sha256": _sha256(repository_root / path)}
         for format_, path in paths
     ]
-    proof_payload = {"fixture": True, "classical_commit": classical_commit, "artifacts": artifacts}
-    return {
+    payload = {
         "schema": "quantum-weyl-repository-round-s4-tt-hessian-dictionary-input-v1",
         "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
         "result_state": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED",
@@ -104,8 +119,9 @@ def synthetic_payload(*, repository_root: Path = ROOT, classical_commit: str = "
         "zero_modes": {"lower_factor_kernel_dimension": 0, "upper_factor_kernel_dimension": 0, "Hessian_kernel_dimension": 0, "verified": True},
         "proof_artifacts": artifacts,
         "claim_flags": {"REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_SUPPLIED": True, "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": True, "REPOSITORY_ELLIPTIC_TT_BLOCK_CERTIFIED": True, "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": False, "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": False, "REGULATED_SLAVNOV_BREAKING_COMPUTED": False, "QME_DISPOSITION": False},
-        "proof_sha256": hashlib.sha256(json.dumps(proof_payload, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
     }
+    payload["proof_sha256"] = proof_hash(payload)
+    return payload
 
 
 def synthetic_receipt() -> dict[str, Any]:

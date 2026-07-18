@@ -263,6 +263,7 @@ def compose_repository_multiplicity_export(
     payload = {
         "schema": "quantum-weyl-repository-full-bv-multiplicity-export-v1",
         "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+        "result_state": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
         "classical_commit": expected_classical_commit,
         "analytic_route": "EUCLIDEAN_ELLIPTIC",

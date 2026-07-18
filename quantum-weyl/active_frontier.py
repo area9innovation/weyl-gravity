@@ -36,6 +36,8 @@ DEPENDENCIES = {
     "standard_Euclidean_integration_slice": HERE / "spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json",
     "TT_hessian_dictionary_receiver": HERE / "spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_RECEIVER_READINESS.json",
     "full_BV_ledger_composer": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_LEDGER_COMPOSER_READINESS.json",
+    "physical_TT_hessian_dictionary": HERE / "spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
+    "full_BV_multiplicity_ledger": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -89,6 +91,8 @@ def _load() -> dict[str, dict[str, Any]]:
         "standard_Euclidean_integration_slice": "STANDARD_LOCAL_B4_FACTOR_MEASURE_ZERO_MODE_AND_CONTOUR_SLICE_COMPLETE_REPOSITORY_TT_MAP_OPEN",
         "TT_hessian_dictionary_receiver": "SEMANTIC_RECEIVER_READY_PHYSICAL_TT_DICTIONARY_INPUT_NOT_SUPPLIED",
         "full_BV_ledger_composer": "ALL_STANDARD_ROWS_BOUND_COMPOSER_READY_PHYSICAL_TT_INPUT_NOT_SUPPLIED",
+        "physical_TT_hessian_dictionary": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED",
+        "full_BV_multiplicity_ledger": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
         "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_LEDGER_COMPOSER_BOUND_REGULATED_BV_INSERTION_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
@@ -366,6 +370,44 @@ def _load() -> dict[str, dict[str, Any]]:
         ]
     ):
         raise ValueError("full-BV ledger composer frontier drifted")
+    physical_tt = values["physical_TT_hessian_dictionary"]
+    physical_tt_flags = physical_tt.get("claim_flags", {})
+    physical_tt_operator = physical_tt.get("operator_dictionary", {})
+    if (
+        physical_tt_flags.get("REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_SUPPLIED")
+        is not True
+        or physical_tt_flags.get("REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED")
+        is not True
+        or physical_tt_flags.get("REPOSITORY_ELLIPTIC_TT_BLOCK_CERTIFIED")
+        is not True
+        or physical_tt_flags.get("REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED")
+        is not False
+        or physical_tt_operator.get("repository_Hessian")
+        != "(1/2) Delta_2_perp(2) Delta_2_perp(4)"
+        or physical_tt.get("zero_modes", {}).get("Hessian_kernel_dimension") != 0
+    ):
+        raise ValueError("physical round-S4 TT Hessian dictionary frontier drifted")
+    physical_ledger = values["full_BV_multiplicity_ledger"]
+    physical_factors = physical_ledger.get("repository_factors", [])
+    if (
+        physical_ledger.get("analytic_route") != "EUCLIDEAN_ELLIPTIC"
+        or physical_ledger.get("classical_commit") != physical_tt.get("classical_commit")
+        or [row.get("operator") for row in physical_factors]
+        != [
+            "Delta_2_perp(4)",
+            "Delta_0(-4)",
+            "Delta_2_perp(2)",
+            "Delta_1_perp(-3)",
+        ]
+        or [row.get("component_rank") for row in physical_factors] != [5, 1, 5, 3]
+        or physical_ledger.get("cancellations", {}).get("factor_coverage_status")
+        != "VERIFIED"
+        or physical_ledger.get("cancellations", {}).get(
+            "integration_row_coverage_status"
+        )
+        != "VERIFIED"
+    ):
+        raise ValueError("physical full-BV multiplicity ledger frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
@@ -774,7 +816,7 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "STANDARD_LOCAL_B4_ROWS_COMPOSER_READY_PHYSICAL_TT_DICTIONARY_GLOBAL_PHASE_AND_LEDGER_OPEN",
+            "G3": "REPOSITORY_FULL_BV_LEDGER_ACCEPTED_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
@@ -788,8 +830,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
-                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_LOCAL_B4_ROWS_COMPOSER_READY_PHYSICAL_TT_DICTIONARY_GLOBAL_PHASE_AND_LEDGER_OPEN",
-                "next_gate": "SUPPLY_AND_ACCEPT_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+                "status": "FULL_BV_QUOTIENT_AND_REPOSITORY_MULTIPLICITY_LEDGER_BOUND_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN",
+                "next_gate": "BIND_ACCEPTED_FULL_BV_LEDGER_AND_COMPUTE_REGULATED_SLAVNOV_BREAKING_V2",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -927,6 +969,8 @@ def build() -> dict[str, Any]:
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": True,
             "FULL_BV_LEDGER_COMPOSER_READY": True,
+            "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED": True,
+            "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -937,7 +981,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "SUPPLY_AND_ACCEPT_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+            "BIND_ACCEPTED_FULL_BV_LEDGER_AND_COMPUTE_REGULATED_SLAVNOV_BREAKING_V2",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -973,28 +1017,25 @@ def build() -> dict[str, Any]:
             "rank-one scalar ghost row. On the common nonzero-mode domain, the York/Hodge "
             "super-Jacobians cancel the unwanted Delta_0 factor and every gauge/nonminimal "
             "quartet has unit superdeterminant, leaving exactly the standard vector and scalar "
-            "ghost exponents. The action normalization, conformally-flat C1-adjoint-C1 Hessian, "
-            "cylinder TT factorization, and Nariai endpoint have now been audited against the "
-            "standard Euclidean pair. The exact remaining physical-Hessian carrier is the round-S4 "
-            "TT operator dictionary, including its scalar and sign; the nearby cylinder and Nariai "
-            "results do not silently substitute for it. The four standard round-S4 factors now "
+            "ghost exponents. The action normalization and flat TT symbol now combine with the "
+            "independent round-S4 spin-two factor specialization to fix the physical repository "
+            "Hessian as one half Delta_2_perp(2) Delta_2_perp(4). A separate verifier replays the "
+            "factor shifts, normalization, proof digest, ellipticity, and zero kernel. The four "
+            "standard round-S4 factors now "
             "have a complete zero-mode ledger: no physical TT zeros, ten Killing-vector ghost "
             "zeros, and five proper-conformal scalar ghost zeros matching the classical fifteen. "
             "The standard algebraic TT auxiliary now also has a convergent oriented +iR thimble, "
             "normalized +1 phase per real mode, and zero background-dependent logarithmic "
             "coefficient. The standard factor, exponent, measure, zero-mode, contour, and "
             "local-b4 regulator data are now consolidated in one integration-slice manifest "
-            "reproducing (199/30,-87/20,0). All non-TT fourth-order rows are additionally "
-            "bound by a mutation-tested full-BV multiplicity composer, so one accepted "
-            "round-S4 repository TT dictionary suffices to emit the local multiplicity ledger; "
-            "matching an auxiliary row is optional for the auxiliary formulation rather than a "
-            "gate on the fourth-order route. The repository TT dictionary, global "
-            "determinant phase, physical full-BV ledger and regulated BV insertion remain open. A strict "
-            "TT-dictionary receiver now enforces kappa=1/2, shifts 2 and 4, zero physical kernel, "
-            "and content-addressed producer/verifier proofs; its physical input is absent. The strict "
-            "semantic receiver checks complete row/factor coverage, exact target ranks and "
-            "signs, scalar-map consistency and nested proof hashes, while physical input "
-            "remains absent; the frontier also contains "
+            "reproducing (199/30,-87/20,0). The accepted TT dictionary has been composed with "
+            "all non-TT fourth-order rows into a physical full-BV multiplicity ledger, and an "
+            "independent consumer verifies complete row/factor coverage, ranks 5,1,5,3, exact "
+            "determinant exponents, scalar-map consistency, nested proof hashes, and priming "
+            "0,5,0,10. Matching an auxiliary row remains optional for the auxiliary formulation. "
+            "The global determinant phase and regulated BV insertion remain open; neither the "
+            "standard coefficient vector nor the accepted multiplicity ledger alone decides the "
+            "QME. The frontier also contains "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The support-local curvature graph, completed causal quasi-isomorphism, and "
             "transported pairing define a universal presymplectic graded CCR algebra on the "
@@ -1071,7 +1112,7 @@ def validate(result: dict[str, Any]) -> None:
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
-        != "STANDARD_LOCAL_B4_ROWS_COMPOSER_READY_PHYSICAL_TT_DICTIONARY_GLOBAL_PHASE_AND_LEDGER_OPEN"
+        != "REPOSITORY_FULL_BV_LEDGER_ACCEPTED_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN"
         or any(
             not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
             for level in ("G4", "G5")
@@ -1109,6 +1150,10 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY") is not True
         or flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
+        or flags.get("REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED")
+        is not True
+        or flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -1164,6 +1209,8 @@ def validate(result: dict[str, Any]) -> None:
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE",
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY",
             "FULL_BV_LEDGER_COMPOSER_READY",
+            "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED",
+            "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",

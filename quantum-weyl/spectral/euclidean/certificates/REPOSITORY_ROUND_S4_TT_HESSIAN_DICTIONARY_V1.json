@@ -28,7 +28,7 @@
     "Euler_term_policy": "E4 variation integrated to zero at fixed topology",
     "all_connection_variations_included": true,
     "integration_by_parts_policy": "closed S4 no boundary term",
-    "method": "synthetic receiver fixture, not a scientific derivation",
+    "method": "independent specialization of arXiv:1503.08143v3 equation (2.22) to spin two on unit S4, followed by exact repository action and flat-leading-symbol convention replay",
     "residual_operator": "ZERO",
     "verified": true
   },
@@ -66,16 +66,16 @@
   "proof_artifacts": [
     {
       "format": "PYTHON_PRODUCER",
-      "path": "symbolic/verify_conformal_detour_action.py",
-      "sha256": "1167b0e4d102e661b32f16a52457eb51173fbfb24190312d9a51577aff0702c0"
+      "path": "quantum-weyl/spectral/euclidean/round_s4_tt_hessian_dictionary.py",
+      "sha256": "8579e2c1566b4e3bf6fa4b0c0e6b610371d39c777ff9d7a96d81c979d3954f5c"
     },
     {
-      "format": "JSON_CERTIFICATE",
-      "path": "quantum-weyl/spectral/euclidean/certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json",
-      "sha256": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be"
+      "format": "PYTHON_VERIFIER",
+      "path": "quantum-weyl/spectral/euclidean/verify_round_s4_tt_hessian_dictionary.py",
+      "sha256": "7a5336bfc82ca1f0c3ac7230cbe0c65bd83edad75e729230817b750323fb3244"
     }
   ],
-  "proof_sha256": "022f7ff7f8b29e75fb8342712d7754bf6433c9354d62b27d854aa0246e87223c",
+  "proof_sha256": "988ae3f0b5194bc783b19008a1f35484bf0c4d633cf134fa2989240b8ff047c6",
   "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
   "result_state": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED",
   "schema": "quantum-weyl-repository-round-s4-tt-hessian-dictionary-input-v1",

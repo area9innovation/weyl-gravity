@@ -22,6 +22,16 @@ class TTHessianDictionaryReceiverTests(unittest.TestCase):
         payload = synthetic_payload()
         self.assertTrue(all(row["rejected"] for row in mutation_receipts(payload, "0" * 40)))
 
+    def test_proof_digest_mutation_is_rejected(self) -> None:
+        payload = synthetic_payload()
+        payload["proof_sha256"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "proof digest"):
+            validate_tt_hessian_dictionary(
+                payload,
+                repository_root=ROOT,
+                expected_classical_commit="0" * 40,
+            )
+
     def test_claim_boundary_rejects_physical_input_promotion(self) -> None:
         mutant = deepcopy(build())
         mutant["claim_flags"]["PHYSICAL_TT_DICTIONARY_INPUT_SUPPLIED"] = True

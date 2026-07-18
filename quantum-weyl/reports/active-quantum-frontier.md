@@ -71,32 +71,34 @@ completion reproduces the fourth-order factor, while the normalized measure
 fixes phase `+1` per real mode and zero background-dependent logarithmic
 coefficient. These factor, exponent, measure, zero-mode, contour, parity, and
 local-`b4` regulator inputs are now consolidated in one standard integration
-slice reproducing `(199/30,-87/20,0)`. The non-TT rows are additionally bound
-by a strict full-BV ledger composer. On the fourth-order route, one accepted
-physical TT dictionary is sufficient to emit the local multiplicity ledger;
-an auxiliary-row match is optional evidence for the auxiliary formulation,
-not a gate on this route. Fixing the global determinant phase and accepting
-the physical repository ledger remain open. The missing TT dictionary now
-has its own executable receiver: it enforces `kappa=1/2`, shifts `2,4`, formal
-self-adjoint TT ellipticity, zero physical kernel, and content-addressed
-producer/verifier artifacts. Its accepted fixture tests mechanics only; no
-physical input has landed. A strict, content-addressed full-BV multiplicity
-receiver is also ready. It rejects
+slice reproducing `(199/30,-87/20,0)`. The physical TT dictionary is now
+accepted: the independent round-`S4` factor formula supplies shifts `4,2`,
+while the repository action and flat TT leading symbol fix `kappa=+1/2`.
+The strict receiver checks formal self-adjoint TT ellipticity, zero physical
+kernel, the full proof digest, and content-addressed producer/verifier
+artifacts. The exact composer has bound this dictionary to the non-TT rows,
+and an independent consumer accepts the resulting physical full-BV
+multiplicity ledger with ranks `(5,1,5,3)`, exponents
+`(-1/2,+1/2,-1/2,+1/2)`, and priming `(0,5,0,10)`. An auxiliary-row match is
+optional evidence for the auxiliary formulation, not a gate on the accepted
+fourth-order route. Fixing the global determinant phase remains open. The
+historical fixture tests receiver mechanics only and is not used as physical
+evidence. The strict, content-addressed full-BV multiplicity receiver rejects
 orphan rows or factors, duplicate standard maps, target-rank drift, scalar
 map drift, and nested proof-hash drift; the
 classical 54-row carrier is not treated as a loop operator. The composer also
 enforces the exact determinant exponents, factor ordering, coupled scalar
 sources, and `(0,5,0,10)` priming ledger, and rejects corresponding mutations.
-Its committed TT input is visibly synthetic, so no physical result is
-promoted. These results do
-not promote the lifecycle because the repository
-operator/measure match, global BRST Hadamard covariance, regulated Slavnov
-breaking, renormalized products, and QME remain open.
+The committed physical ledger is independently replayed. This promotes the
+Euclidean operator/measure multiplicity gate, but not the anomaly/QME
+lifecycle: global BRST Hadamard covariance, the regulated Slavnov breaking,
+renormalized products, and the QME remain open.
 
 The Slavnov assembly gate now records the sharper post-composer boundary.
-Once the physical TT dictionary lands, determinant matching may determine the
-repository local heat-kernel vector, but it still does not determine the BV
-master-equation breaking. A regulated antibracket insertion, Wess--Zumino
+The accepted physical TT dictionary and full-BV ledger now permit the
+repository local heat-kernel vector to be bound into the analytic handoff,
+but they still do not determine the BV master-equation breaking. A regulated
+antibracket insertion, Wess--Zumino
 consistency proof, and repository parity disposition remain mandatory. The
 analytic receiver accepts either a genuine fourth-order metric formulation or
 a second-order auxiliary formulation; only the latter requires an auxiliary
@@ -210,10 +212,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. supply and accept the physical round-`S4` repository TT Hessian dictionary,
-   compose the already-bound fourth-order full-BV local multiplicity ledger,
-   then
-   compute the regulated Slavnov breaking against the completed H14 basis;
+1. bind the accepted physical round-`S4` TT dictionary and full-BV
+   multiplicity ledger into the V2 analytic handoff, then compute the
+   regulated Slavnov breaking against the completed H14 basis;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;
