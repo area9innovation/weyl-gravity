@@ -1,0 +1,32 @@
+{
+  "result_id": "EINSTEIN_COMPACT_PRODUCT_RESIDUAL_ATLAS_FRAGMENT_V1",
+  "producing_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py residual_atlas/validate_fragment.py",
+        "python3 -m json.tool residual_atlas/schema/residual-atlas-fragment-v1.schema.json",
+        "git diff --check -- <scoped atlas paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the atlas does not change mathematical inputs; every positive claim pins an unchanged certificate hash and result id"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "this is a generated claims-ledger/schema gate, not a new mathematical freeze or shared-core algebra change"
+    }
+  }
+}

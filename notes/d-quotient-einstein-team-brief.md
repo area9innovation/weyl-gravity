@@ -2019,16 +2019,57 @@ if a negative-norm radiative mode is unavoidable, or if the selected sector
 fails to reproduce the Einstein symplectic/charge structure.  These are
 successful counterexample results.
 
+## Generated residual atlas and tangent-cone handoff
+
+The Einstein team owns the common fragment schema at
+`residual_atlas/schema/residual-atlas-fragment-v1.schema.json`.  The initial
+compact-product ledger is generated, rather than manually curated, at
+`bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json`.
+Every entry carries the full mode scope, the five fail-closed description
+statuses, and separate dispersion, Lee--Wald, Taub, resonance, and
+second-order fields.  Correction verdicts are separate for bounded or
+finite-quasiperiodic, smooth-secular, and causal/retarded classes.  The
+generic validator is `residual_atlas/validate_fragment.py`.
+
+The atlas records the exact second-order convention
+
+\[
+L_{\bar\Phi}v=-\frac12D^2E_{\bar\Phi}[u,u].
+\]
+
+It imports the certified abstract finite-harmonic image/cokernel theorem
+`FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` without treating that
+abstract result as a compact-product classification.  In each declared
+correction class, the background-specific gate remains
+
+\[
+\mathcal Z_2^{\mathcal C}
+=\{u:\mu_X(u)=0,\ R_j^{\mathcal C}(u)=0\ \text{for every complete output block}\}.
+\]
+
+The twist-balanced exceptional fixture is the required independence witness:
+all stabilizer moment maps vanish while a polar `ell=2` bounded resonant
+functional is nonzero.  Conversely, the balanced Einstein--extra `ell=2`
+fixture has an explicit complete finite-quasiperiodic correction.  The new
+`d`-cross axial matrix shows that one resonant projection is cancellable, but
+its atlas nonlinear status remains `OPEN` because the polar, nonresonant, and
+simultaneous stabilizer conditions are not yet closed.  No compact-product
+causal/retarded Green theorem or cross-background mode map is certified.
+
 ## Required handoff
 
-### Current eight-hour assignment (2026-07-17)
+### Current assignment (2026-07-18)
 
-The active task is **E-G1 beyond the fixed-`ell` theorem**: classify distinct
-input-`ell` harmonic triples, retain magnetic phases and opposite momenta,
-and classify the first exceptional fourth-order target.  The blockwise
-source-rank theorem and an exact `ell=3` coefficient fixture are complete.
-The next result is either the cross-`ell` extension theorem or the first exact
-mixed-frequency resonance/cokernel counterexample with its selection rule.
+The active task is the background-specific completion of the finite-harmonic
+tangent cone.  Finish the homogeneous/twist-times-`ell=2` extra-primary source
+matrix, decompose every Noether-compatible adjoint cokernel into the five
+stabilizer covectors plus complementary resonant functionals, and prove
+necessity and sufficiency separately in each correction class.  The current
+matrix has removed the circumference, Wilson-line and electric spectator
+columns and has certified the complete axial `d` column.  Polar `d`, the
+remaining `a,b`, twist position/velocity, opposite momenta and phases, and
+multiple `|k|` fibres remain open.  Update the generated atlas after each
+background-specific gate rather than promoting the abstract theorem.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
