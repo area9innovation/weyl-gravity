@@ -1,0 +1,32 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; homogeneous ell=0,k=0 coefficient complex at omega!=0",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the nonzero-frequency homogeneous gauge slice has exactly two invariants, C-K and A_x",
+    "direct four-dimensional linearization gives omega^4(C-K)=0 and omega^2 A_x=0",
+    "the homogeneous nonzero-frequency physical quotient is empty and there is no hidden homogeneous fourth-order oscillator"
+  ],
+  "evidence": {
+    "commit": "f39fa01c4653ec4423a393705fb4615354501d21",
+    "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+    "sha256": "880857b4bb004bf1006cf4f7254194753cfd2e065ce915128a781ddd2cd162fc"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "retain only the certified generalized zero-frequency homogeneous block in mixed quadratic resonance tests",
+  "not_established": [
+    "nonlinear mixed-source closure",
+    "final residual, causal, scattering, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_homogeneous_nonzero_frequency",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator",
+  "team_id": "einstein_boundary",
+  "verdict": "HOMOGENEOUS_NONZERO_FREQUENCY_PHYSICAL_QUOTIENT_EMPTY",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator"
+  ]
+}
