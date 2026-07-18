@@ -1,0 +1,88 @@
+{
+  "action_normalization": {
+    "kappa": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "mixed_hessian": "delta_h delta_k S_red=<C1 h,C1 k>",
+    "repository_action": "S_red=int sqrt(g)(Ricci^2-R^2/3)=1/2 int sqrt(g)(C2-E4)"
+  },
+  "background": {
+    "Ricci": "3 g",
+    "Weyl": "0",
+    "dimension": 4,
+    "geometry": "round unit S4",
+    "scalar_curvature": 12
+  },
+  "claim_flags": {
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
+    "REPOSITORY_ELLIPTIC_TT_BLOCK_CERTIFIED": true,
+    "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+    "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": true,
+    "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_SUPPLIED": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "constant_curvature_derivation": {
+    "Euler_term_policy": "E4 variation integrated to zero at fixed topology",
+    "all_connection_variations_included": true,
+    "integration_by_parts_policy": "closed S4 no boundary term",
+    "method": "synthetic receiver fixture, not a scientific derivation",
+    "residual_operator": "ZERO",
+    "verified": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "flat_tt_leading_symbol": {
+    "Hessian_leading_coefficient": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "kappa_match": true,
+    "linearized_Ricci": "Ricci1_TT=(1/2) p^2 h_TT",
+    "linearized_scalar": "R1_TT=0",
+    "quadratic_action": "S_red^(2)=(1/4)<h,p^4 h>",
+    "standard_product_leading_coefficient": 1
+  },
+  "formal_properties": {
+    "elliptic_on_TT": true,
+    "formally_self_adjoint": true,
+    "parity_even": true,
+    "real_operator": true
+  },
+  "operator_dictionary": {
+    "Delta2_definition": "Delta_2_perp(M_squared)=-nabla^2+M_squared",
+    "bundle": "real transverse traceless symmetric rank-two tensors",
+    "bundle_rank": 5,
+    "factor_commutator_zero": true,
+    "identity_verified": true,
+    "lower_factor": "Delta_2_perp(2)",
+    "repository_Hessian": "(1/2) Delta_2_perp(2) Delta_2_perp(4)",
+    "upper_factor": "Delta_2_perp(4)"
+  },
+  "proof_artifacts": [
+    {
+      "format": "PYTHON_PRODUCER",
+      "path": "symbolic/verify_conformal_detour_action.py",
+      "sha256": "1167b0e4d102e661b32f16a52457eb51173fbfb24190312d9a51577aff0702c0"
+    },
+    {
+      "format": "JSON_CERTIFICATE",
+      "path": "quantum-weyl/spectral/euclidean/certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json",
+      "sha256": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be"
+    }
+  ],
+  "proof_sha256": "6eabfd534011ec87aba8545e4fb5aa990b2bc2695f5ccd80513658e4d619920a",
+  "result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+  "result_state": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED",
+  "schema": "quantum-weyl-repository-round-s4-tt-hessian-dictionary-input-v1",
+  "zero_modes": {
+    "Hessian_kernel_dimension": 0,
+    "lower_factor_kernel_dimension": 0,
+    "upper_factor_kernel_dimension": 0,
+    "verified": true
+  }
+}

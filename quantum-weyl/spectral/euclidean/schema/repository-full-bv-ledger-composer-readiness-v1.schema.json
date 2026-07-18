@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-full-bv-ledger-composer-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "closed_standard_inputs", "accepted_contract", "composer_mechanics", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-full-bv-ledger-composer-readiness-v1"},
+    "result_id": {"const": "REPOSITORY_FULL_BV_LEDGER_COMPOSER_READINESS"},
+    "result_state": {"const": "ALL_STANDARD_ROWS_BOUND_COMPOSER_READY_PHYSICAL_TT_INPUT_NOT_SUPPLIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_hashes": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "closed_standard_inputs": {
+      "const": {
+        "scalar_Diff_Weyl_rank_two_to_one": true,
+        "York_Hodge_measure": true,
+        "nonminimal_quartet_Berezinian": true,
+        "round_S4_zero_modes_0_5_0_10": true,
+        "standard_Z_exponents_minus_half_plus_half_minus_half_plus_half": true
+      }
+    },
+    "accepted_contract": {
+      "const": {
+        "required_input_result_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+        "produced_result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+        "analytic_route": "EUCLIDEAN_ELLIPTIC",
+        "integration_stage": "REDUCED_AFTER_EXACT_YORK_HODGE_SCALAR_FP_AND_NONMINIMAL_CANCELLATIONS",
+        "standard_factor_operators": ["Delta_2_perp(4)", "Delta_0(-4)", "Delta_2_perp(2)", "Delta_1_perp(-3)"],
+        "physical_input_status": "NOT_SUPPLIED"
+      }
+    },
+    "composer_mechanics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "synthetic_receipt", "mutation_receipts"],
+      "properties": {
+        "scope": {"const": "SYNTHETIC_TT_INPUT_WITH_REAL_NON_TT_CERTIFICATES"},
+        "synthetic_receipt": {"$ref": "#/$defs/receipt"},
+        "mutation_receipts": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["mutation", "rejected"],
+            "properties": {
+              "mutation": {"enum": ["wrong_physical_upper_operator", "scalar_source_missing_omega", "wrong_vector_zero_mode_policy", "duplicate_physical_factor_map"]},
+              "rejected": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "FULL_BV_LEDGER_COMPOSER_READY": true,
+        "ALL_NON_TT_STANDARD_ROWS_BOUND": true,
+        "COMPOSER_EXACT_EXPONENT_AND_ZERO_MODE_POLICY_ENFORCED": true,
+        "PHYSICAL_TT_DICTIONARY_INPUT_SUPPLIED": false,
+        "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+        "GLOBAL_DETERMINANT_PHASE_FIXED": false,
+        "FINITE_CONFORMAL_GROUP_VOLUME_NORMALIZED": false,
+        "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
+        "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+        "QME_DISPOSITION": false
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "SUPPLY_PHYSICAL_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1_AND_COMPOSE_LEDGER"},
+    "claim_boundary": {"type": "string", "minLength": 600},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_sha256"],
+      "properties": {"source_sha256": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "integration_row_count", "repository_factor_count", "mapped_factor_count", "cancelled_factor_count", "target_bundle_ranks", "target_signed_rank", "scalar_ghost_input_rank", "scalar_ghost_output_rank", "row_coverage_complete", "factor_coverage_complete", "nested_artifact_count", "standard_factor_operators", "Z_exponent_weighted_rank", "physical_TT_dictionary_bound", "standard_non_TT_dependencies_bound", "status"],
+      "properties": {
+        "result_id": {"const": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER"},
+        "integration_row_count": {"const": 4},
+        "repository_factor_count": {"const": 4},
+        "mapped_factor_count": {"const": 4},
+        "cancelled_factor_count": {"const": 0},
+        "target_bundle_ranks": {"const": [5, 1, 5, 3]},
+        "target_signed_rank": {"const": 6},
+        "scalar_ghost_input_rank": {"const": 2},
+        "scalar_ghost_output_rank": {"const": 1},
+        "row_coverage_complete": {"const": true},
+        "factor_coverage_complete": {"const": true},
+        "nested_artifact_count": {"const": 15},
+        "standard_factor_operators": {"const": ["Delta_2_perp(4)", "Delta_0(-4)", "Delta_2_perp(2)", "Delta_1_perp(-3)"]},
+        "Z_exponent_weighted_rank": {"const": {"numerator": -3, "denominator": 1}},
+        "physical_TT_dictionary_bound": {"const": true},
+        "standard_non_TT_dependencies_bound": {"const": true},
+        "status": {"const": "COMPOSED_LEDGER_SEMANTICALLY_ACCEPTED"}
+      }
+    }
+  }
+}

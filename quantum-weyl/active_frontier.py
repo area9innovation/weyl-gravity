@@ -34,6 +34,7 @@ DEPENDENCIES = {
     "standard_TT_auxiliary_contour": HERE / "spectral/euclidean/certificates/STANDARD_TT_AUXILIARY_CONTOUR_PHASE.json",
     "standard_Euclidean_integration_slice": HERE / "spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json",
     "TT_hessian_dictionary_receiver": HERE / "spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_RECEIVER_READINESS.json",
+    "full_BV_ledger_composer": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_LEDGER_COMPOSER_READINESS.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -85,6 +86,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "standard_TT_auxiliary_contour": "STANDARD_AUXILIARY_POSITIVE_IMAGINARY_THIMBLE_AND_MODEWISE_PHASE_FIXED_REPOSITORY_MATCH_OPEN",
         "standard_Euclidean_integration_slice": "STANDARD_LOCAL_B4_FACTOR_MEASURE_ZERO_MODE_AND_CONTOUR_SLICE_COMPLETE_REPOSITORY_TT_MAP_OPEN",
         "TT_hessian_dictionary_receiver": "SEMANTIC_RECEIVER_READY_PHYSICAL_TT_DICTIONARY_INPUT_NOT_SUPPLIED",
+        "full_BV_ledger_composer": "ALL_STANDARD_ROWS_BOUND_COMPOSER_READY_PHYSICAL_TT_INPUT_NOT_SUPPLIED",
         "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
@@ -318,6 +320,30 @@ def _load() -> dict[str, dict[str, Any]]:
         or tt_contract.get("required_kappa") != {"numerator": 1, "denominator": 2}
     ):
         raise ValueError("TT Hessian dictionary receiver frontier drifted")
+    composer = values["full_BV_ledger_composer"]
+    composer_flags = composer.get("claim_flags", {})
+    composer_contract = composer.get("accepted_contract", {})
+    if (
+        composer_flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
+        or composer_flags.get("ALL_NON_TT_STANDARD_ROWS_BOUND") is not True
+        or composer_flags.get(
+            "COMPOSER_EXACT_EXPONENT_AND_ZERO_MODE_POLICY_ENFORCED"
+        )
+        is not True
+        or composer_flags.get("PHYSICAL_TT_DICTIONARY_INPUT_SUPPLIED") is not False
+        or composer_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not False
+        or composer_contract.get("required_input_result_id")
+        != "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"
+        or composer_contract.get("standard_factor_operators")
+        != [
+            "Delta_2_perp(4)",
+            "Delta_0(-4)",
+            "Delta_2_perp(2)",
+            "Delta_1_perp(-3)",
+        ]
+    ):
+        raise ValueError("full-BV ledger composer frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
@@ -719,7 +745,7 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_PHASE_AND_FULL_LEDGER_OPEN",
+            "G3": "STANDARD_LOCAL_B4_ROWS_COMPOSER_READY_PHYSICAL_TT_DICTIONARY_GLOBAL_PHASE_AND_LEDGER_OPEN",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
@@ -733,7 +759,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
-                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_PHASE_AND_FULL_LEDGER_OPEN",
+                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_LOCAL_B4_ROWS_COMPOSER_READY_PHYSICAL_TT_DICTIONARY_GLOBAL_PHASE_AND_LEDGER_OPEN",
                 "next_gate": "SUPPLY_AND_ACCEPT_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
             },
             "free_Lorentzian_state": {
@@ -867,6 +893,7 @@ def build() -> dict[str, Any]:
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED": True,
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY": True,
+            "FULL_BV_LEDGER_COMPOSER_READY": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -914,10 +941,13 @@ def build() -> dict[str, Any]:
             "zeros, and five proper-conformal scalar ghost zeros matching the classical fifteen. "
             "The standard algebraic TT auxiliary now also has a convergent oriented +iR thimble, "
             "normalized +1 phase per real mode, and zero background-dependent logarithmic "
-            "coefficient. Matching that standard contour to the repository auxiliary row, the "
-            "standard factor, exponent, measure, zero-mode, contour, and local-b4 regulator data "
-            "are now consolidated in one integration-slice manifest reproducing "
-            "(199/30,-87/20,0). The repository TT dictionary and auxiliary-row match, global "
+            "coefficient. The standard factor, exponent, measure, zero-mode, contour, and "
+            "local-b4 regulator data are now consolidated in one integration-slice manifest "
+            "reproducing (199/30,-87/20,0). All non-TT fourth-order rows are additionally "
+            "bound by a mutation-tested full-BV multiplicity composer, so one accepted "
+            "round-S4 repository TT dictionary suffices to emit the local multiplicity ledger; "
+            "matching an auxiliary row is optional for the auxiliary formulation rather than a "
+            "gate on the fourth-order route. The repository TT dictionary, global "
             "determinant phase, complete full-BV ledger and total row map remain open. A strict "
             "TT-dictionary receiver now enforces kappa=1/2, shifts 2 and 4, zero physical kernel, "
             "and content-addressed producer/verifier proofs; its physical input is absent. The strict "
@@ -1000,7 +1030,7 @@ def validate(result: dict[str, Any]) -> None:
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
-        != "STANDARD_LOCAL_B4_INTEGRATION_SLICE_COMPLETE_REPOSITORY_TT_DICTIONARY_AUXILIARY_ROW_GLOBAL_PHASE_AND_FULL_LEDGER_OPEN"
+        != "STANDARD_LOCAL_B4_ROWS_COMPOSER_READY_PHYSICAL_TT_DICTIONARY_GLOBAL_PHASE_AND_LEDGER_OPEN"
         or any(
             not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
             for level in ("G4", "G5")
@@ -1032,6 +1062,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE")
         is not True
         or flags.get("TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY") is not True
+        or flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -1082,6 +1113,7 @@ def validate(result: dict[str, Any]) -> None:
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED",
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE",
             "TT_HESSIAN_DICTIONARY_SEMANTIC_RECEIVER_READY",
+            "FULL_BV_LEDGER_COMPOSER_READY",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",

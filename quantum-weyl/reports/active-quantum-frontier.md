@@ -63,9 +63,12 @@ completion reproduces the fourth-order factor, while the normalized measure
 fixes phase `+1` per real mode and zero background-dependent logarithmic
 coefficient. These factor, exponent, measure, zero-mode, contour, parity, and
 local-`b4` regulator inputs are now consolidated in one standard integration
-slice reproducing `(199/30,-87/20,0)`. Matching the TT dictionary and auxiliary
-row to the repository, fixing the global determinant phase, and accepting the
-complete repository full-BV ledger remain open. The missing TT dictionary now
+slice reproducing `(199/30,-87/20,0)`. The non-TT rows are additionally bound
+by a strict full-BV ledger composer. On the fourth-order route, one accepted
+physical TT dictionary is sufficient to emit the local multiplicity ledger;
+an auxiliary-row match is optional evidence for the auxiliary formulation,
+not a gate on this route. Fixing the global determinant phase and accepting
+the physical repository ledger remain open. The missing TT dictionary now
 has its own executable receiver: it enforces `kappa=1/2`, shifts `2,4`, formal
 self-adjoint TT ellipticity, zero physical kernel, and content-addressed
 producer/verifier artifacts. Its accepted fixture tests mechanics only; no
@@ -73,7 +76,11 @@ physical input has landed. A strict, content-addressed full-BV multiplicity
 receiver is also ready. It rejects
 orphan rows or factors, duplicate standard maps, target-rank drift, scalar
 map drift, and nested proof-hash drift; the
-classical 54-row carrier is not treated as a loop operator. These results do
+classical 54-row carrier is not treated as a loop operator. The composer also
+enforces the exact determinant exponents, factor ordering, coupled scalar
+sources, and `(0,5,0,10)` priming ledger, and rejects corresponding mutations.
+Its committed TT input is visibly synthetic, so no physical result is
+promoted. These results do
 not promote the lifecycle because the repository
 operator/measure match, global BRST Hadamard covariance, regulated Slavnov
 breaking, renormalized products, and QME remain open.
@@ -181,10 +188,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. complete the full-BV multiplicity ledger by matching the physical repository
-   Hessian, global zero modes, auxiliary contour/phase, regulator and total
-   row/factor provenance,
-   auxiliary/fourth-order Jacobian, and zero-mode ledger through the accepted analytic export, then
+1. supply and accept the physical round-`S4` repository TT Hessian dictionary,
+   compose the already-bound fourth-order full-BV local multiplicity ledger,
+   then
    compute the regulated Slavnov breaking against the completed H14 basis;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
