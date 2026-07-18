@@ -583,7 +583,12 @@ newly evaluated, all below width `0.1`; a same-index-only mutation omits six
 exact `r-1/r+1` neighbors and is rejected.  The active gate is therefore to
 combine this closed scalar set with the exact Clebsch--Gordan coefficients and
 detector prefactors, then add external clock powers while deriving the
-Sobolev inputs.  Only after a complete rail or a validated tail
+Sobolev inputs.  `BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS` now closes the
+first half: all 18 selected complex detector-form entries and 54 scalar-term
+applications are serialized, and every maximum real/imaginary width is below
+`0.1` (the maximum is below `0.099`).  The active gate is to evaluate the same
+recurrence-closed scalar and polarized rows for external powers `p=2,...,28`
+while deriving the Sobolev inputs.  Only after a complete rail or a validated tail
 succeeds should the infinite-mode Maxwell and massive-two-form images, recoil
 coefficient and second-order-cone restriction be composed.  Bridge 3 remains
 inactive.

@@ -453,6 +453,11 @@ nine companions are newly evaluated, all below width `0.1`.  Retaining only
 the same anchor index on both shells omits six exact `r-1/r+1` neighbors and
 is rejected.  The active gate is now the actual Clebsch--Gordan/detector-
 prefactor combination for those 18 entries, not further scalar widening.
+That selected polarized successor is now evaluated.  All 18 complex `p=0`
+form intervals and 54 scalar-term applications are content-addressed; every
+maximum real/imaginary width is below `0.1`, with the widest approximately
+`0.098702`.  The active gate is higher external clock powers on the same
+recurrence-closed set, not a complete-form or Green-image promotion.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

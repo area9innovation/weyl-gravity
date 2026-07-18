@@ -1,0 +1,1100 @@
+{
+  "atlas_status": "CERTIFIED",
+  "canonical_selected_polarized_sha256": "e5562b2548828b0d06c6a554b14b6ae5a3a97bf4a7fa98772d412906901229b0",
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result combines the exact detector-prefactored Clebsch--Gordan coefficients with the 12 recurrence-closed scalar p=0 intervals to produce 18 selected complex detector-form intervals at form two_j=1024 and anchors r=128,256,384. All 54 scalar-term applications are serialized and content-addressed. Every selected maximum real/imaginary axis width is below 0.1; the largest is below 0.099. Deleting one scalar term is detected by the exact coverage count. This certifies selected p=0 polarized form entries only. It does not add external clock powers p=2,...,28, cover all form rows or representations, certify a Sobolev/infinite-mode tail, apply Maxwell or massive Green kernels, evaluate detector response or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_status": "VALIDATED_SELECTED_P0_POLARIZED_FORM_INTERVALS_EXPORTED_CLOCK_POWER_AND_COMPLETE_FORM_RAIL_OPEN",
+  "dependency_refs": {
+    "closure": {
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json",
+      "result_id": "BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE",
+      "sha256": "d983d0969dcfa4663b6cf4dfbae7e2bf239a007c026bacd9f723ce1fec78ca19"
+    },
+    "recurrence": {
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json",
+      "result_id": "BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE",
+      "sha256": "63ec51f24e3d9adebd00b409a61ec8348d5a9ba636f3bacf984eec8a53fa0294"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED": false,
+    "ALL_FIFTY_FOUR_SCALAR_TERM_APPLICATIONS_EXPORTED": true,
+    "ALL_SELECTED_POLARIZED_WIDTHS_BELOW_ONE_TENTH": true,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "EIGHTEEN_SELECTED_DETECTOR_COMPONENT_ENTRIES_EXPORTED": true,
+    "GREEN_IMAGES_EVALUATED": false,
+    "QUANTUM_CLAIM": false,
+    "SELECTED_P0_POLARIZED_FORM_INTERVALS_EVALUATED": true,
+    "TERM_COVERAGE_MUTATION_REJECTED": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false
+  },
+  "maximum_selected_axis_width": "16030948968215961393480118330503/162417733154241892066765098188800",
+  "next_gate": "EVALUATE_THE_RECURRENCE_CLOSED_SCALAR_INPUTS_AND_SELECTED_POLARIZED_FORM_ROWS_FOR_EXTERNAL_CLOCK_POWERS_P2_TO_P28",
+  "polarized_form_rows": [
+    {
+      "anchor": 128,
+      "coframe_component": 1,
+      "coordinate": "y2",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 129,
+      "form_row": 128,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "439332171518745045759337218894693574085413507336278614784080480937452654235/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+        "real": {
+          "lower": "-55041722551252610412680791543467998095291213336059854083475151840630808731/7237005577332262213973186563042994240829374041602535252466099000494570602496",
+          "upper": "219165281313734604108614052720821581704248653992039198450179873574929419311/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+          "width": "439332171518745045759337218894693574085413507336278614784080480937452654235/28948022309329048855892746252171976963317496166410141009864396001978282409984"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "-6*sqrt(4515)/5125",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-5341930329187131572223178685/79228162514264337593543950336",
+            "upper": "2300942966872382491211174757/79228162514264337593543950336",
+            "width": "3821436648029757031717176721/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "6*sqrt(4515)/5125",
+          "scalar_diagonal_index": 129,
+          "scalar_interval": {
+            "lower": "-5359015860502083122487858631/79228162514264337593543950336",
+            "upper": "1141590460118946557968112561/39614081257132168796771975168",
+            "width": "7642196780739976238424083753/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 128,
+      "coframe_component": 2,
+      "coordinate": "y1",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 129,
+      "form_row": 128,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "-219165281313734604108614052720821581704248653992039198450179873574929419311/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+          "upper": "55041722551252610412680791543467998095291213336059854083475151840630808731/7237005577332262213973186563042994240829374041602535252466099000494570602496",
+          "width": "439332171518745045759337218894693574085413507336278614784080480937452654235/28948022309329048855892746252171976963317496166410141009864396001978282409984"
+        },
+        "maximum_axis_width": "439332171518745045759337218894693574085413507336278614784080480937452654235/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+        "real": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "6*sqrt(4515)*I/5125",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-5341930329187131572223178685/79228162514264337593543950336",
+            "upper": "2300942966872382491211174757/79228162514264337593543950336",
+            "width": "3821436648029757031717176721/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-6*sqrt(4515)*I/5125",
+          "scalar_diagonal_index": 129,
+          "scalar_interval": {
+            "lower": "-5359015860502083122487858631/79228162514264337593543950336",
+            "upper": "1141590460118946557968112561/39614081257132168796771975168",
+            "width": "7642196780739976238424083753/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 128,
+      "coframe_component": 3,
+      "coordinate": "y0",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 128,
+      "form_row": 128,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "15676893296294312066624518409613/162417733154241892066765098188800",
+        "real": {
+          "lower": "-2203564936147832097127690410503/32483546630848378413353019637760",
+          "upper": "2329534307777575790493033178549/81208866577120946033382549094400",
+          "width": "15676893296294312066624518409613/162417733154241892066765098188800"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "64/1025",
+          "scalar_diagonal_index": 127,
+          "scalar_interval": {
+            "lower": "-5390376448769863000433310861/79228162514264337593543950336",
+            "upper": "70690837681769579528085821/2475880078570760549798248448",
+            "width": "7652483254586489545332057133/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "448/1025",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-5341930329187131572223178685/79228162514264337593543950336",
+            "upper": "2300942966872382491211174757/79228162514264337593543950336",
+            "width": "3821436648029757031717176721/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "897/2050",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-1351776442123795822204594871/19807040628566084398385987584",
+            "upper": "280566291441231948043205297/9903520314283042199192993792",
+            "width": "1912909025006259718291005465/19807040628566084398385987584"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "129/2050",
+          "scalar_diagonal_index": 129,
+          "scalar_interval": {
+            "lower": "-5359015860502083122487858631/79228162514264337593543950336",
+            "upper": "1141590460118946557968112561/39614081257132168796771975168",
+            "width": "7642196780739976238424083753/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 128,
+      "coframe_component": 1,
+      "coordinate": "y0",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 128,
+      "form_row": 128,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "15676893296294312066624518409613/162417733154241892066765098188800",
+        "real": {
+          "lower": "-2203564936147832097127690410503/32483546630848378413353019637760",
+          "upper": "2329534307777575790493033178549/81208866577120946033382549094400",
+          "width": "15676893296294312066624518409613/162417733154241892066765098188800"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "64/1025",
+          "scalar_diagonal_index": 127,
+          "scalar_interval": {
+            "lower": "-5390376448769863000433310861/79228162514264337593543950336",
+            "upper": "70690837681769579528085821/2475880078570760549798248448",
+            "width": "7652483254586489545332057133/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "448/1025",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-5341930329187131572223178685/79228162514264337593543950336",
+            "upper": "2300942966872382491211174757/79228162514264337593543950336",
+            "width": "3821436648029757031717176721/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "897/2050",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-1351776442123795822204594871/19807040628566084398385987584",
+            "upper": "280566291441231948043205297/9903520314283042199192993792",
+            "width": "1912909025006259718291005465/19807040628566084398385987584"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "129/2050",
+          "scalar_diagonal_index": 129,
+          "scalar_interval": {
+            "lower": "-5359015860502083122487858631/79228162514264337593543950336",
+            "upper": "1141590460118946557968112561/39614081257132168796771975168",
+            "width": "7642196780739976238424083753/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 128,
+      "coframe_component": 2,
+      "coordinate": "y3",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 128,
+      "form_row": 128,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "-7780575999483247268417982599247/162417733154241892066765098188800",
+          "upper": "3948158648405532399103267905183/81208866577120946033382549094400",
+          "width": "15676893296294312066624518409613/162417733154241892066765098188800"
+        },
+        "maximum_axis_width": "15676893296294312066624518409613/162417733154241892066765098188800",
+        "real": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "-64*I/1025",
+          "scalar_diagonal_index": 127,
+          "scalar_interval": {
+            "lower": "-5390376448769863000433310861/79228162514264337593543950336",
+            "upper": "70690837681769579528085821/2475880078570760549798248448",
+            "width": "7652483254586489545332057133/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "448*I/1025",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-5341930329187131572223178685/79228162514264337593543950336",
+            "upper": "2300942966872382491211174757/79228162514264337593543950336",
+            "width": "3821436648029757031717176721/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-897*I/2050",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-1351776442123795822204594871/19807040628566084398385987584",
+            "upper": "280566291441231948043205297/9903520314283042199192993792",
+            "width": "1912909025006259718291005465/19807040628566084398385987584"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "129*I/2050",
+          "scalar_diagonal_index": 129,
+          "scalar_interval": {
+            "lower": "-5359015860502083122487858631/79228162514264337593543950336",
+            "upper": "1141590460118946557968112561/39614081257132168796771975168",
+            "width": "7642196780739976238424083753/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 128,
+      "coframe_component": 3,
+      "coordinate": "y2",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 129,
+      "form_row": 128,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "7810349715888800813499328335905663539296240130366685672546499307781232916685/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "real": {
+          "lower": "-3896271667799726295264249826147939230297753848719404786755305995253271862681/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "upper": "978519512022268629558769627439431077249621570411820221447798328131990263501/28948022309329048855892746252171976963317496166410141009864396001978282409984",
+          "width": "7810349715888800813499328335905663539296240130366685672546499307781232916685/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "16*sqrt(4515)/3075",
+          "scalar_diagonal_index": 128,
+          "scalar_interval": {
+            "lower": "-5341930329187131572223178685/79228162514264337593543950336",
+            "upper": "2300942966872382491211174757/79228162514264337593543950336",
+            "width": "3821436648029757031717176721/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-16*sqrt(4515)/3075",
+          "scalar_diagonal_index": 129,
+          "scalar_interval": {
+            "lower": "-5359015860502083122487858631/79228162514264337593543950336",
+            "upper": "1141590460118946557968112561/39614081257132168796771975168",
+            "width": "7642196780739976238424083753/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 256,
+      "coframe_component": 1,
+      "coordinate": "y2",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 257,
+      "form_row": 256,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "2350723807535650338597541905114749634601281966157413267570597076353578540295/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "real": {
+          "lower": "-592349816751274798396339404254043134997892821088812475197247365311913764783/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+          "upper": "1166024174033100741804863096606663364605496323979788317176102345729751010729/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "width": "2350723807535650338597541905114749634601281966157413267570597076353578540295/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "-6*sqrt(7710)/5125",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4532198589223609221726239759/79228162514264337593543950336",
+            "upper": "6172672749898662236566460823/39614081257132168796771975168",
+            "width": "7813146910573715251406681887/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "6*sqrt(7710)/5125",
+          "scalar_diagonal_index": 257,
+          "scalar_interval": {
+            "lower": "2229966852082526814544293443/39614081257132168796771975168",
+            "upper": "12293305722117139153496630549/79228162514264337593543950336",
+            "width": "7833372017952085524408043663/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 256,
+      "coframe_component": 2,
+      "coordinate": "y1",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 257,
+      "form_row": 256,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "-1166024174033100741804863096606663364605496323979788317176102345729751010729/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "upper": "592349816751274798396339404254043134997892821088812475197247365311913764783/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+          "width": "2350723807535650338597541905114749634601281966157413267570597076353578540295/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        },
+        "maximum_axis_width": "2350723807535650338597541905114749634601281966157413267570597076353578540295/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "real": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "6*sqrt(7710)*I/5125",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4532198589223609221726239759/79228162514264337593543950336",
+            "upper": "6172672749898662236566460823/39614081257132168796771975168",
+            "width": "7813146910573715251406681887/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-6*sqrt(7710)*I/5125",
+          "scalar_diagonal_index": 257,
+          "scalar_interval": {
+            "lower": "2229966852082526814544293443/39614081257132168796771975168",
+            "upper": "12293305722117139153496630549/79228162514264337593543950336",
+            "width": "7833372017952085524408043663/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 256,
+      "coframe_component": 3,
+      "coordinate": "y0",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 256,
+      "form_row": 256,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "16030948968215961393480118330503/162417733154241892066765098188800",
+        "real": {
+          "lower": "9112581493867741111929721146091/162417733154241892066765098188800",
+          "upper": "12571765231041851252704919738297/81208866577120946033382549094400",
+          "width": "16030948968215961393480118330503/162417733154241892066765098188800"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "128/1025",
+          "scalar_diagonal_index": 255,
+          "scalar_interval": {
+            "lower": "2215056313830386392554840853/39614081257132168796771975168",
+            "upper": "764797828153632895278880447/4951760157141521099596496896",
+            "width": "3903326311398676769676202723/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "384/1025",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4532198589223609221726239759/79228162514264337593543950336",
+            "upper": "6172672749898662236566460823/39614081257132168796771975168",
+            "width": "7813146910573715251406681887/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "769/2050",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4358311030809405219740082789/79228162514264337593543950336",
+            "upper": "12185063255576036682097304669/79228162514264337593543950336",
+            "width": "978344028095828932794652735/9903520314283042199192993792"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "257/2050",
+          "scalar_diagonal_index": 257,
+          "scalar_interval": {
+            "lower": "2229966852082526814544293443/39614081257132168796771975168",
+            "upper": "12293305722117139153496630549/79228162514264337593543950336",
+            "width": "7833372017952085524408043663/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 256,
+      "coframe_component": 1,
+      "coordinate": "y0",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 256,
+      "form_row": 256,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "16030948968215961393480118330503/162417733154241892066765098188800",
+        "real": {
+          "lower": "9112581493867741111929721146091/162417733154241892066765098188800",
+          "upper": "12571765231041851252704919738297/81208866577120946033382549094400",
+          "width": "16030948968215961393480118330503/162417733154241892066765098188800"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "128/1025",
+          "scalar_diagonal_index": 255,
+          "scalar_interval": {
+            "lower": "2215056313830386392554840853/39614081257132168796771975168",
+            "upper": "764797828153632895278880447/4951760157141521099596496896",
+            "width": "3903326311398676769676202723/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "384/1025",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4532198589223609221726239759/79228162514264337593543950336",
+            "upper": "6172672749898662236566460823/39614081257132168796771975168",
+            "width": "7813146910573715251406681887/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "769/2050",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4358311030809405219740082789/79228162514264337593543950336",
+            "upper": "12185063255576036682097304669/79228162514264337593543950336",
+            "width": "978344028095828932794652735/9903520314283042199192993792"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "257/2050",
+          "scalar_diagonal_index": 257,
+          "scalar_interval": {
+            "lower": "2229966852082526814544293443/39614081257132168796771975168",
+            "upper": "12293305722117139153496630549/79228162514264337593543950336",
+            "width": "7833372017952085524408043663/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 256,
+      "coframe_component": 2,
+      "coordinate": "y3",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 256,
+      "form_row": 256,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "-7875994069161101882633602636759/162417733154241892066765098188800",
+          "upper": "509684681190928719427907230859/10151108322140118254172818636800",
+          "width": "16030948968215961393480118330503/162417733154241892066765098188800"
+        },
+        "maximum_axis_width": "16030948968215961393480118330503/162417733154241892066765098188800",
+        "real": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "-128*I/1025",
+          "scalar_diagonal_index": 255,
+          "scalar_interval": {
+            "lower": "2215056313830386392554840853/39614081257132168796771975168",
+            "upper": "764797828153632895278880447/4951760157141521099596496896",
+            "width": "3903326311398676769676202723/39614081257132168796771975168"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "384*I/1025",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4532198589223609221726239759/79228162514264337593543950336",
+            "upper": "6172672749898662236566460823/39614081257132168796771975168",
+            "width": "7813146910573715251406681887/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-769*I/2050",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4358311030809405219740082789/79228162514264337593543950336",
+            "upper": "12185063255576036682097304669/79228162514264337593543950336",
+            "width": "978344028095828932794652735/9903520314283042199192993792"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "257*I/2050",
+          "scalar_diagonal_index": 257,
+          "scalar_interval": {
+            "lower": "2229966852082526814544293443/39614081257132168796771975168",
+            "upper": "12293305722117139153496630549/79228162514264337593543950336",
+            "width": "7833372017952085524408043663/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 256,
+      "coframe_component": 3,
+      "coordinate": "y2",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 257,
+      "form_row": 256,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "10447661366825112615989075133843331709339030960637348584557263343533690769545/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "real": {
+          "lower": "-5182329662369336630243835984918503842691094773212370511376230933838295551379/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "upper": "2632665852227887992872619574462413933323968093712489036590516204847697609083/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+          "width": "10447661366825112615989075133843331709339030960637348584557263343533690769545/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "16*sqrt(7710)/3075",
+          "scalar_diagonal_index": 256,
+          "scalar_interval": {
+            "lower": "4532198589223609221726239759/79228162514264337593543950336",
+            "upper": "6172672749898662236566460823/39614081257132168796771975168",
+            "width": "7813146910573715251406681887/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-16*sqrt(7710)/3075",
+          "scalar_diagonal_index": 257,
+          "scalar_interval": {
+            "lower": "2229966852082526814544293443/39614081257132168796771975168",
+            "upper": "12293305722117139153496630549/79228162514264337593543950336",
+            "width": "7833372017952085524408043663/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 384,
+      "coframe_component": 1,
+      "coordinate": "y2",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 385,
+      "form_row": 384,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "1920330014337929071399569758515981372497307926093513976182007121874116855939/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "real": {
+          "lower": "-489328777461340524593828188702030486911124485844796827627460243357258335351/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+          "upper": "941672459415248022211913381111920398675058954403920320927086635159600185237/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "width": "1920330014337929071399569758515981372497307926093513976182007121874116855939/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "-6*sqrt(385)/1025",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19456055617682885282147044373/79228162514264337593543950336",
+            "upper": "3145464530791042748763809149/9903520314283042199192993792",
+            "width": "5707660628645456707963428819/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "6*sqrt(385)/1025",
+          "scalar_diagonal_index": 385,
+          "scalar_interval": {
+            "lower": "9666823607503516126901387191/39614081257132168796771975168",
+            "upper": "25065796650866601606821336935/79228162514264337593543950336",
+            "width": "5732149435859569353018562553/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 384,
+      "coframe_component": 2,
+      "coordinate": "y1",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 385,
+      "form_row": 384,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "-941672459415248022211913381111920398675058954403920320927086635159600185237/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "upper": "489328777461340524593828188702030486911124485844796827627460243357258335351/57896044618658097711785492504343953926634992332820282019728792003956564819968",
+          "width": "1920330014337929071399569758515981372497307926093513976182007121874116855939/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        },
+        "maximum_axis_width": "1920330014337929071399569758515981372497307926093513976182007121874116855939/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "real": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "6*sqrt(385)*I/1025",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19456055617682885282147044373/79228162514264337593543950336",
+            "upper": "3145464530791042748763809149/9903520314283042199192993792",
+            "width": "5707660628645456707963428819/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-6*sqrt(385)*I/1025",
+          "scalar_diagonal_index": 385,
+          "scalar_interval": {
+            "lower": "9666823607503516126901387191/39614081257132168796771975168",
+            "upper": "25065796650866601606821336935/79228162514264337593543950336",
+            "width": "5732149435859569353018562553/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 384,
+      "coframe_component": 3,
+      "coordinate": "y0",
+      "detector_id": "D0",
+      "external_clock_power": 0,
+      "form_column": 384,
+      "form_row": 384,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "5853242566563710288505243932681/81208866577120946033382549094400",
+        "real": {
+          "lower": "39672243945143076784443576921397/162417733154241892066765098188800",
+          "upper": "51378729078270497361454064786759/162417733154241892066765098188800",
+          "width": "5853242566563710288505243932681/81208866577120946033382549094400"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "192/1025",
+          "scalar_diagonal_index": 383,
+          "scalar_interval": {
+            "lower": "9685431341707125506943545249/39614081257132168796771975168",
+            "upper": "25059739797663240830452526183/79228162514264337593543950336",
+            "width": "5688877114248989816565435685/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "64/205",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19456055617682885282147044373/79228162514264337593543950336",
+            "upper": "3145464530791042748763809149/9903520314283042199192993792",
+            "width": "5707660628645456707963428819/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "641/2050",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19248834479902106703311634375/79228162514264337593543950336",
+            "upper": "780064298348968037746849511/2475880078570760549798248448",
+            "width": "5713223067264870504587549977/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "77/410",
+          "scalar_diagonal_index": 385,
+          "scalar_interval": {
+            "lower": "9666823607503516126901387191/39614081257132168796771975168",
+            "upper": "25065796650866601606821336935/79228162514264337593543950336",
+            "width": "5732149435859569353018562553/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 384,
+      "coframe_component": 1,
+      "coordinate": "y0",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 384,
+      "form_row": 384,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "5853242566563710288505243932681/81208866577120946033382549094400",
+        "real": {
+          "lower": "39672243945143076784443576921397/162417733154241892066765098188800",
+          "upper": "51378729078270497361454064786759/162417733154241892066765098188800",
+          "width": "5853242566563710288505243932681/81208866577120946033382549094400"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "192/1025",
+          "scalar_diagonal_index": 383,
+          "scalar_interval": {
+            "lower": "9685431341707125506943545249/39614081257132168796771975168",
+            "upper": "25059739797663240830452526183/79228162514264337593543950336",
+            "width": "5688877114248989816565435685/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "64/205",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19456055617682885282147044373/79228162514264337593543950336",
+            "upper": "3145464530791042748763809149/9903520314283042199192993792",
+            "width": "5707660628645456707963428819/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "641/2050",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19248834479902106703311634375/79228162514264337593543950336",
+            "upper": "780064298348968037746849511/2475880078570760549798248448",
+            "width": "5713223067264870504587549977/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "77/410",
+          "scalar_diagonal_index": 385,
+          "scalar_interval": {
+            "lower": "9666823607503516126901387191/39614081257132168796771975168",
+            "upper": "25065796650866601606821336935/79228162514264337593543950336",
+            "width": "5732149435859569353018562553/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 384,
+      "coframe_component": 2,
+      "coordinate": "y3",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 384,
+      "form_row": 384,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "-2864144598470981435434485344057/81208866577120946033382549094400",
+          "upper": "186818623005795553316922411789/5075554161070059127086409318400",
+          "width": "5853242566563710288505243932681/81208866577120946033382549094400"
+        },
+        "maximum_axis_width": "5853242566563710288505243932681/81208866577120946033382549094400",
+        "real": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        }
+      },
+      "recurrence_term_count": 4,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "-192*I/1025",
+          "scalar_diagonal_index": 383,
+          "scalar_interval": {
+            "lower": "9685431341707125506943545249/39614081257132168796771975168",
+            "upper": "25059739797663240830452526183/79228162514264337593543950336",
+            "width": "5688877114248989816565435685/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "64*I/205",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19456055617682885282147044373/79228162514264337593543950336",
+            "upper": "3145464530791042748763809149/9903520314283042199192993792",
+            "width": "5707660628645456707963428819/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-641*I/2050",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19248834479902106703311634375/79228162514264337593543950336",
+            "upper": "780064298348968037746849511/2475880078570760549798248448",
+            "width": "5713223067264870504587549977/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        },
+        {
+          "exact_detector_prefactored_coefficient": "77*I/410",
+          "scalar_diagonal_index": 385,
+          "scalar_interval": {
+            "lower": "9666823607503516126901387191/39614081257132168796771975168",
+            "upper": "25065796650866601606821336935/79228162514264337593543950336",
+            "width": "5732149435859569353018562553/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    },
+    {
+      "anchor": 384,
+      "coframe_component": 3,
+      "coordinate": "y2",
+      "detector_id": "D1",
+      "external_clock_power": 0,
+      "form_column": 385,
+      "form_row": 384,
+      "form_two_j": 1024,
+      "polarized_interval": {
+        "imaginary": {
+          "lower": "0",
+          "upper": "0",
+          "width": "0"
+        },
+        "maximum_axis_width": "8534800063724129206220310037848806099988035226919440291998142425771960450511/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "real": {
+          "lower": "-4185210930734435654275170582719646216333595352824961229908007831907771144999/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+          "upper": "543698641623711693993142431891144985456804984261809882761266824233023663189/14474011154664524427946373126085988481658748083205070504932198000989141204992",
+          "width": "8534800063724129206220310037848806099988035226919440291998142425771960450511/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+        }
+      },
+      "recurrence_term_count": 2,
+      "term_applications": [
+        {
+          "exact_detector_prefactored_coefficient": "16*sqrt(385)/615",
+          "scalar_diagonal_index": 384,
+          "scalar_interval": {
+            "lower": "19456055617682885282147044373/79228162514264337593543950336",
+            "upper": "3145464530791042748763809149/9903520314283042199192993792",
+            "width": "5707660628645456707963428819/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1023
+        },
+        {
+          "exact_detector_prefactored_coefficient": "-16*sqrt(385)/615",
+          "scalar_diagonal_index": 385,
+          "scalar_interval": {
+            "lower": "9666823607503516126901387191/39614081257132168796771975168",
+            "upper": "25065796650866601606821336935/79228162514264337593543950336",
+            "width": "5732149435859569353018562553/79228162514264337593543950336"
+          },
+          "scalar_two_j": 1025
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_selected_p0_polarized_form_intervals.py",
+        "sha256": "a3061052fdc74e433770f95855fb7c032b4d831f56d4270e6beb4f4563f02c35"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_selected_p0_polarized_form_intervals.py",
+        "sha256": "643d271e47c13b9687d0e570740c0e8e5911cd787982baffe22e56c9b5d8ed31"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_selected_p0_polarized_form_intervals.py",
+        "sha256": "624914962c1f21f4e742625c65759102e1409935bb92dd7e0ffa1e42c11d9778"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-selected-p0-polarized-form-intervals-v1.schema.json",
+        "sha256": "76bd31202289210285590bcfc76572500a065a9e62fea7516a3a86722abd9290"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-selected-p0-polarized-form-intervals.md",
+        "sha256": "3a7aef90f2f927b53a4c0251630062b3f1d475914454638e538458407bd34f55"
+      }
+    ]
+  },
+  "result_id": "BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS",
+  "schema": "closed-universe-berger-selected-p0-polarized-form-intervals-v1",
+  "selection": {
+    "anchors": [
+      128,
+      256,
+      384
+    ],
+    "detector_component_entry_count": 18,
+    "external_clock_power": 0,
+    "form_two_j": 1024,
+    "scalar_term_application_count": 54
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "term_coverage_mutation": {
+    "detected": true,
+    "expected_total_term_count": 54,
+    "mutated_total_term_count": 53,
+    "name": "delete_last_scalar_term_from_first_selected_form_entry",
+    "omitted_scalar_row": [
+      1025,
+      129
+    ],
+    "target": {
+      "anchor": 128,
+      "coframe_component": 1,
+      "detector_id": "D0"
+    }
+  }
+}

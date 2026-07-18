@@ -1,0 +1,42 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "SELECTED_P0_POLARIZED_FORM_INTERVALS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The 12 recurrence-closed scalar p=0 rows are combined with exact Clebsch-Gordan coefficients and detector prefactors to produce 18 selected complex form-two_j=1024 detector-component intervals at anchors r=128,256,384. All 54 scalar-term applications are serialized and every maximum real/imaginary width is below 0.1, with the maximum below 0.099. A deleted-term mutation is rejected by exact coverage. This does not add external clock powers p=2,...,28, cover every form row or representation, certify Sobolev/infinite tails, apply Maxwell or massive Green kernels, evaluate detector response or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make quantum claims. The coefficientwise mixed epsilon_R^2 kappa unary prerequisite remains ordered before apparatus q2,q3 and the affine-K_Berger observer morphism.",
+  "tier_0": [
+    {"command": "python3 -m py_compile on the producer, verifier and test; JSON/schema parse; git diff --check on scoped paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_selected_p0_polarized_form_intervals.py", "elapsed_seconds": 0.77, "status": "PASS", "summary": "4 tests passed, covering all 18 widths, 54-term coverage, deleted-term rejection and fail-closed clock/Green claims."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_selected_p0_polarized_form_intervals", "status": "PASS", "summary": "Schema, source/dependency hashes and all 18 complex intervals were independently reconstructed from the closure certificate and exact recurrence coefficients."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The generated observer atlas and shared fail-closed schema passed; detector response, higher clock powers, complete form rail and infinite tail remain OPEN."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_selected_p0_polarized_form_intervals --check", "elapsed_seconds": 0.47, "status": "PASS", "summary": "The 18 selected form intervals and 54 term applications were regenerated and the certificate matched byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No complete form rail, infinite-mode theorem, Green image, detector-response lifecycle promotion, shared core-algebra change, freeze or release was claimed."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_selected_p0_polarized_form_intervals.py", "sha256": "a3061052fdc74e433770f95855fb7c032b4d831f56d4270e6beb4f4563f02c35"},
+    {"path": "closed_universe_observers/verify_berger_selected_p0_polarized_form_intervals.py", "sha256": "643d271e47c13b9687d0e570740c0e8e5911cd787982baffe22e56c9b5d8ed31"},
+    {"path": "closed_universe_observers/tests/test_berger_selected_p0_polarized_form_intervals.py", "sha256": "624914962c1f21f4e742625c65759102e1409935bb92dd7e0ffa1e42c11d9778"},
+    {"path": "closed_universe_observers/schema/berger-selected-p0-polarized-form-intervals-v1.schema.json", "sha256": "76bd31202289210285590bcfc76572500a065a9e62fea7516a3a86722abd9290"},
+    {"path": "closed_universe_observers/reports/berger-selected-p0-polarized-form-intervals.md", "sha256": "3a7aef90f2f927b53a4c0251630062b3f1d475914454638e538458407bd34f55"},
+    {"path": "closed_universe_observers/certificates/BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS.json", "sha256": "eec08f69c908bc975a120e635b0abbdc770fe868f0663cc8e9ab4d4854126903"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "5775ec5cbaf10bf786fb79a45e0d775a2ca6eaeb2e16f7165ad28a9ed57e2f87"}
+  ],
+  "claim_flags": {
+    "SELECTED_P0_POLARIZED_FORM_INTERVALS_EVALUATED": true,
+    "EIGHTEEN_SELECTED_DETECTOR_COMPONENT_ENTRIES_EXPORTED": true,
+    "ALL_FIFTY_FOUR_SCALAR_TERM_APPLICATIONS_EXPORTED": true,
+    "ALL_SELECTED_POLARIZED_WIDTHS_BELOW_ONE_TENTH": true,
+    "TERM_COVERAGE_MUTATION_REJECTED": true,
+    "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

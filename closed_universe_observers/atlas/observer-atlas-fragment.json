@@ -2334,7 +2334,7 @@
       }
     },
     {
-      "claim_boundary": "the exact form-two_j=1024 recurrence requires 12 scalar rows on shells 1023,1025; three are imported and nine newly evaluated, all below width 0.1; a same-index-only mutation omits six r-1/r+1 neighbors; polarized combinations, clock powers and all tails remain OPEN input closure only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "claim_boundary": "the exact form-two_j=1024 recurrence requires 12 scalar rows on shells 1023,1025; three are imported and nine newly evaluated, all below width 0.1; a same-index-only mutation omits six r-1/r+1 neighbors; the selected p=0 polarized combinations are separate, while higher clock powers and all tails remain OPEN input closure only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
@@ -2352,12 +2352,17 @@
           "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json",
           "result_id": "BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE",
           "sha256": "d983d0969dcfa4663b6cf4dfbae7e2bf239a007c026bacd9f723ce1fec78ca19"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS.json",
+          "result_id": "BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS",
+          "sha256": "eec08f69c908bc975a120e635b0abbdc770fe868f0663cc8e9ab4d4854126903"
         }
       ],
       "id": "observer.berger.detector_profile.polarization_scalar_closure",
       "mode_data": {
         "dispersion": {
-          "statement": "carrier=recurrence-closed scalar companion inputs for selected detector-polarized form entries; omega=external clock power p=0; no Green kernel applied; OPEN: the recurrence-closed scalar inputs are CERTIFIED, but the 18 polarized form intervals and Green image are not yet composed",
+          "statement": "carrier=recurrence-closed scalar companion inputs for selected detector-polarized form entries; omega=external clock power p=0; no Green kernel applied; OPEN: the recurrence-closed scalar inputs are CERTIFIED, and their selected p=0 polarized successor is separately CERTIFIED; no Green image or detector response is composed",
           "status": "CERTIFIED"
         },
         "lee_wald": {
@@ -2398,7 +2403,7 @@
           "status": "CERTIFIED"
         },
         "detector_response": {
-          "statement": "OPEN: the recurrence-closed scalar inputs are CERTIFIED, but the 18 polarized form intervals and Green image are not yet composed",
+          "statement": "OPEN: the recurrence-closed scalar inputs are CERTIFIED, and their selected p=0 polarized successor is separately CERTIFIED; no Green image or detector response is composed",
           "status": "OPEN"
         },
         "detector_restriction_to_second_order_cone": {
@@ -2406,7 +2411,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "combine the 12 scalar rows with exact Clebsch--Gordan coefficients and detector prefactors for the 18 selected form entries",
+          "statement": "the 18 selected p=0 polarized entries are now evaluated; add external clock powers p=2,...,28",
           "status": "OPEN"
         },
         "exceptional_resonant_operational_signature": {
@@ -2422,7 +2427,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "the exact form-two_j=1024 recurrence requires 12 scalar rows on shells 1023,1025; three are imported and nine newly evaluated, all below width 0.1; a same-index-only mutation omits six r-1/r+1 neighbors; polarized combinations, clock powers and all tails remain OPEN",
+          "statement": "the exact form-two_j=1024 recurrence requires 12 scalar rows on shells 1023,1025; three are imported and nine newly evaluated, all below width 0.1; a same-index-only mutation omits six r-1/r+1 neighbors; the selected p=0 polarized combinations are separate, while higher clock powers and all tails remain OPEN",
           "status": "CERTIFIED"
         },
         "recoil_backreaction_order": {
@@ -2453,6 +2458,129 @@
         "m": "anchors r=128,256,384 with exact r-1,r,r+1 recurrence neighbors",
         "omega": "external clock power p=0; no Green kernel applied",
         "parity": "neighboring odd scalar shells two_j=1023,1025 feeding even form two_j=1024",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "all 18 p=0 form intervals and 54 scalar-term applications are content-addressed; every maximum real/imaginary width is below 0.1, with the maximum below 0.099; higher clock powers, complete form coverage and all tails remain OPEN selected polarized input only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json",
+          "result_id": "BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE",
+          "sha256": "d983d0969dcfa4663b6cf4dfbae7e2bf239a007c026bacd9f723ce1fec78ca19"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS.json",
+          "result_id": "BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS",
+          "sha256": "eec08f69c908bc975a120e635b0abbdc770fe868f0663cc8e9ab4d4854126903"
+        }
+      ],
+      "id": "observer.berger.detector_profile.selected_p0_polarized_form",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=selected detector-polarized form intervals built from the recurrence-closed scalar companion set; omega=external clock power p=0; no Green kernel applied; OPEN: 18 selected high-scale polarized input intervals are CERTIFIED, but no Maxwell/massive Green image or detector response is composed",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE before the full coderivative and Green-weighted sum",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "selected polarized input only; absolute-g3 recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "radius-1/128 detector bump, normalized p=0 clock envelope and exact D0/D1 coframe prefactors",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: 18 selected high-scale polarized input intervals are CERTIFIED, but no Maxwell/massive Green image or detector response is composed",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "evaluate the recurrence-closed scalar inputs and selected polarized entries for external clock powers p=2,...,28",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "all 18 p=0 form intervals and 54 scalar-term applications are content-addressed; every maximum real/imaginary width is below 0.1, with the maximum below 0.099; higher clock powers, complete form coverage and all tails remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "selected polarized input only; absolute-g3 recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE before the full coderivative and Green-weighted sum",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "selected detector-polarized form intervals built from the recurrence-closed scalar companion set",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "selected form two_j=1024",
+        "k": "18 detector/coframe entries and 54 scalar-term applications",
+        "m": "anchors r=128,256,384 with diagonal and upper-first-off-diagonal detector support",
+        "omega": "external clock power p=0; no Green kernel applied",
+        "parity": "even form two_j=1024 fed by odd scalar shells 1023,1025",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -2688,7 +2816,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "89fd6c2e1eb054d9ffc799e63f239a137ecca640ec567faa9763649c5df96ecc",
+  "generated_by_sha256": "50c9e649779d5e5e3267434cd3f3d2b275ba9bb042d4d25fb1d6bccf6a270469",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
