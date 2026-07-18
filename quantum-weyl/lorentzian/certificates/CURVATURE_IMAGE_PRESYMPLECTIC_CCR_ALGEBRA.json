@@ -1,0 +1,135 @@
+{
+  "analytic_boundary": {
+    "Hadamard_two_point_function": "NOT_CONSTRUCTED",
+    "Lorentzian_QME": "NOT_COMPUTED",
+    "direct_curvature_advanced_retarded_Green_operators": "NOT_CONSTRUCTED",
+    "direct_curvature_causal_propagator_kernel": "NOT_CONSTRUCTED",
+    "distributional_quotient_weak_nondegeneracy": "NOT_COMPUTED",
+    "positive_or_Krein_state": "NOT_CONSTRUCTED",
+    "renormalized_time_ordered_products": "NOT_CONSTRUCTED"
+  },
+  "carrier": {
+    "equivalence_relation": "compactly supported representatives differing by a Q-exact source define the same generator",
+    "generator_space": "image of the curvature graph in H(Gamma_c(C_prol)[1],Q)",
+    "no_duplicate_degrees_of_freedom": "P I=1 and I P-1=QH+HQ",
+    "presentation": "support-local 16-block curvature graph inside the 386-row prolonged BV complex",
+    "spectral_projector_used": false,
+    "support_local": true
+  },
+  "causal_presymplectic_form": {
+    "causal_difference": "Delta_Lambda=Lambda_full,+-Lambda_full,-",
+    "causal_support": true,
+    "chain_identity": "Q Delta_Lambda+Delta_Lambda Q=0",
+    "definition": "sigma_curv([I f],[I h])=<I f,Delta_Lambda I h>_BV",
+    "degeneracy_policy": "presymplectic radical is retained; no weak-nondegeneracy theorem is assumed",
+    "graded_antisymmetry": "Delta_Lambda^sharp=-Delta_Lambda",
+    "pairing_transport": "agrees on cohomology with prolonged, auxiliary, metric and E/A/L Cauchy-current pairings",
+    "status": "CERTIFIED_ON_CURVATURE_GRAPH_IMAGE"
+  },
+  "claim_boundary": "Defines the universal presymplectic graded CCR *-algebra on the support-local curvature-graph image of the completed free BV complex. The causal pairing is inherited from the certified full prolonged causal homotopy and agrees with the metric and Cauchy-current pairings on cohomology. This is not a direct curvature Green kernel, a Hadamard state, a positivity theorem, a renormalized product, a Lorentzian QME, or an interacting quantum theory.",
+  "claim_flags": {
+    "CURVATURE_HADAMARD_STATE_CONSTRUCTED": false,
+    "CURVATURE_IMAGE_GRADED_CCR_RELATIONS_CERTIFIED": true,
+    "CURVATURE_IMAGE_PRESYMPLECTIC_ALGEBRA_DEFINED": true,
+    "CURVATURE_PRESENTATION_MATCHES_FREE_BV_OBSERVABLE_COHOMOLOGY": true,
+    "DIRECT_CURVATURE_CAUSAL_PROPAGATOR_CONSTRUCTED": false,
+    "INTERACTING_QUANTUM_THEORY": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "PHYSICAL_POSITIVITY_CERTIFIED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "dependency_refs": {
+    "causal_pairing": {
+      "artifact_id": "pure-weyl-direct-causal-pairing-transport-v1",
+      "sha256": "5de7aa9abc9c5c276092cc9c8e61c1046c870fca3a528464410986535a14704b"
+    },
+    "causal_quasi_isomorphism": {
+      "artifact_id": "pure-weyl-final-covariant-transport-status-v1",
+      "sha256": "4ef4ff5c0284f0d3f7dfcdec58496ffc3b309e3742847092c9e4991acb2361a9"
+    },
+    "core_chain_map": {
+      "artifact_id": "pure-weyl-curved-core-curvature-chain-map-v1",
+      "sha256": "9f7b988f470742e0e4a374859a9eb9ec6dc77922f08424e694bcbc4d3bf125fa"
+    },
+    "curvature_graph": {
+      "artifact_id": "pure-weyl-curvature-mapping-cylinder-substitution-v1",
+      "sha256": "04512974e9b85fde17a184c9840b4b049a3c97c40c0cde57985079f9341968e7"
+    },
+    "curvature_status": {
+      "artifact_id": "pure-weyl-curvature-prolongation-status-v3",
+      "sha256": "bdb2de44f75696fe523c315611295b2dd117ce88485f6dfe4eb1cbf9e3e4af00"
+    },
+    "final_status": {
+      "artifact_id": "pure-weyl-completed-covariant-bv-status-v1",
+      "sha256": "22ca1e14f820cfd660ce39ee7838de49f98cf30f6493ee3f0152d95b4b8c9740"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_ALGEBRA",
+  "next_gate": "DIRECT_CURVATURE_GREEN_KERNEL_OR_BRST_HADAMARD_COVARIANCE",
+  "observable_comparison": {
+    "H4_scope_guard": "W_+^2 and W_-^2 are deformation/vertex classes, not one-particle generators or a particle Hilbert-space basis",
+    "causal_quasi_isomorphism": "CERTIFIED",
+    "curvature_graph_to_prolonged_cohomology": "CERTIFIED_BY_SUPPORT_LOCAL_SDR",
+    "final_H4_Gram": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "final_covariant_H4": [
+      "W_+^2",
+      "W_-^2"
+    ],
+    "metric_auxiliary_prolonged_pairing_agreement": "CERTIFIED",
+    "scope": "free linear BV observable cohomology and its curvature presentation"
+  },
+  "provenance": {
+    "curvature_graph_inclusion": "7c79b667069ddb38f9d33cf3fb10dce5f9d05e50e20fb35e5545ac2dc520acfd",
+    "curvature_graph_projection": "136acb94ce478f52fbdb5849506684cb011f93479b2f8423c0e2516156a54170",
+    "curvature_state_map": "ca86a296fca48e3526690c8c0e94730fc5a8bcd438544306ab2dcdae7c7181ca",
+    "prolonged_Q": "a346542a3c3eae6e80bd28b4ad7e707c51e5f3089b5241ba781efd280363fa29",
+    "source_manifest": {
+      "../reports/curvature-image-presymplectic-ccr.md": "21358412ae0aa35ab19049a4ef5e3dc4626b7bac1521baa39e15ca23010dc3b0",
+      "curvature_image_presymplectic_ccr.py": "b9ea678a191fab9aa3a25dfc0a785b1535e0cf7f4f1045c7ee309d64698ccb7f",
+      "curvature_image_presymplectic_ccr_certificate.py": "aab6be5a04294814233f520be833f185c71cd6f63fdbf10161bd1d85a90422b2",
+      "schema/curvature-image-presymplectic-ccr-v1.schema.json": "5e95e40dae689e3d22914b2763737130f5f33c9c8a3c05da504d923d30e86674",
+      "tests/test_curvature_image_presymplectic_ccr.py": "2b61bae32ed5f8776d679f56df2cc34c20046a4c0195d0fe9c0d37b053290f44",
+      "verify_curvature_image_presymplectic_ccr.py": "d3016336273ef29efbdcfde406f7d99bb6a95cb68fd72f513a2c152dd621c600"
+    },
+    "source_manifest_sha256": "d3def6ecd52322c58ab6f0441fa40a2e082b7bbab64a5a016844413feaa1698c"
+  },
+  "result_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
+  "result_state": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
+  "schema": "quantum-weyl-curvature-image-presymplectic-ccr-v1",
+  "universal_star_algebra": {
+    "brst_Ward_descent": "the chain identity makes sigma_curv independent of Q-exact representatives",
+    "definition": "unital tensor *-algebra on the complexified curvature-image classes modulo linearity, reality and the graded CCR ideal",
+    "even_specialization": "bosonic commutator",
+    "involution": "Phi(u)^*=Phi(conjugate(u))",
+    "odd_specialization": "fermionic anticommutator",
+    "relation": "[Phi(u),Phi(v)]_graded=i sigma_curv(u,v) 1",
+    "status": "DEFINED_AND_WELL_DEFINED"
+  },
+  "well_definedness_replay": {
+    "causal_chain_defect": 0,
+    "checks": {
+      "causal_difference_is_chain_map": true,
+      "curvature_graph_is_cohomology_equivalence": true,
+      "graded_CCR_ideal_is_star_stable": true,
+      "no_nondegeneracy_needed_for_universal_presymplectic_algebra": true,
+      "pairing_is_well_defined_on_Q_classes": true
+    },
+    "graph_cohomology_defect": 0,
+    "same_sided_homotopy_coefficients": [
+      1,
+      1
+    ]
+  }
+}

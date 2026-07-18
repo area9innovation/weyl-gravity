@@ -99,6 +99,7 @@ class ActiveFrontierTests(unittest.TestCase):
 
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:
         flags = self.payload["claim_flags"]
+        self.assertTrue(flags["CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED"])
         self.assertTrue(flags["COMPANION_DECOMPOSABILITY_CERTIFIED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
         self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
@@ -111,6 +112,9 @@ class ActiveFrontierTests(unittest.TestCase):
             row["next_gate"],
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
         )
+        algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
+        self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])
+        self.assertIn("HADAMARD_STATE_OPEN", algebra_row["status"])
 
     def test_relative_frontier_imports_polar_but_not_global_triangle(self) -> None:
         flags = self.payload["claim_flags"]

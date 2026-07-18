@@ -48,6 +48,16 @@ not promote the lifecycle because the repository
 operator/measure match, global BRST Hadamard covariance, regulated Slavnov
 breaking, renormalized products, and QME remain open.
 
+The completed covariant dependency DAG does, however, close a distinct free
+algebraic milestone. The support-local 16-block curvature graph, the causal
+compact-to-global quasi-isomorphism and the transported Green/current pairing
+define a universal presymplectic graded CCR *-algebra on the curvature-image
+free BV observable classes. This construction retains any radical and does
+not claim a direct autonomous curvature Green kernel, a Hadamard state,
+positivity, renormalized products, a Lorentzian QME, or an interacting quantum
+theory. The transported \([W_+^2],[W_-^2]\) pair remains deformation/vertex
+cohomology, not a one-particle basis.
+
 The portable 64/36 carrier and the repaired coupled (q_2) are committed.
 The quantum-side consumer independently replays all 1,890 full and 1,474
 retained coefficients, with zero full and retained `q1/q2` defects, zero full

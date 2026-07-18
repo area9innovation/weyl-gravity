@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-curvature-image-presymplectic-ccr-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "dependency_refs", "carrier",
+    "causal_presymplectic_form", "universal_star_algebra",
+    "well_definedness_replay", "observable_comparison", "analytic_boundary",
+    "claim_flags", "next_gate", "provenance", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-curvature-image-presymplectic-ccr-v1"},
+    "result_id": {"const": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA"},
+    "result_state": {"const": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_ALGEBRA"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["curvature_status", "curvature_graph", "core_chain_map", "causal_quasi_isomorphism", "causal_pairing", "final_status"],
+      "properties": {
+        "curvature_status": {"$ref": "#/$defs/dependency"},
+        "curvature_graph": {"$ref": "#/$defs/dependency"},
+        "core_chain_map": {"$ref": "#/$defs/dependency"},
+        "causal_quasi_isomorphism": {"$ref": "#/$defs/dependency"},
+        "causal_pairing": {"$ref": "#/$defs/dependency"},
+        "final_status": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["presentation", "generator_space", "equivalence_relation", "no_duplicate_degrees_of_freedom", "support_local", "spectral_projector_used"],
+      "properties": {
+        "presentation": {"type": "string", "minLength": 1},
+        "generator_space": {"type": "string", "minLength": 1},
+        "equivalence_relation": {"type": "string", "minLength": 1},
+        "no_duplicate_degrees_of_freedom": {"const": "P I=1 and I P-1=QH+HQ"},
+        "support_local": {"const": true},
+        "spectral_projector_used": {"const": false}
+      }
+    },
+    "causal_presymplectic_form": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "causal_difference", "chain_identity", "graded_antisymmetry", "causal_support", "pairing_transport", "degeneracy_policy", "status"],
+      "properties": {
+        "definition": {"type": "string", "minLength": 1},
+        "causal_difference": {"const": "Delta_Lambda=Lambda_full,+-Lambda_full,-"},
+        "chain_identity": {"const": "Q Delta_Lambda+Delta_Lambda Q=0"},
+        "graded_antisymmetry": {"const": "Delta_Lambda^sharp=-Delta_Lambda"},
+        "causal_support": {"const": true},
+        "pairing_transport": {"type": "string", "minLength": 1},
+        "degeneracy_policy": {"type": "string", "minLength": 1},
+        "status": {"const": "CERTIFIED_ON_CURVATURE_GRAPH_IMAGE"}
+      }
+    },
+    "universal_star_algebra": {"$ref": "#/$defs/nonempty_object"},
+    "well_definedness_replay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["same_sided_homotopy_coefficients", "causal_chain_defect", "graph_cohomology_defect", "checks"],
+      "properties": {
+        "same_sided_homotopy_coefficients": {"const": [1, 1]},
+        "causal_chain_defect": {"const": 0},
+        "graph_cohomology_defect": {"const": 0},
+        "checks": {"$ref": "#/$defs/all_true_checks"}
+      }
+    },
+    "observable_comparison": {"$ref": "#/$defs/nonempty_object"},
+    "analytic_boundary": {
+      "const": {
+        "direct_curvature_advanced_retarded_Green_operators": "NOT_CONSTRUCTED",
+        "direct_curvature_causal_propagator_kernel": "NOT_CONSTRUCTED",
+        "distributional_quotient_weak_nondegeneracy": "NOT_COMPUTED",
+        "Hadamard_two_point_function": "NOT_CONSTRUCTED",
+        "positive_or_Krein_state": "NOT_CONSTRUCTED",
+        "renormalized_time_ordered_products": "NOT_CONSTRUCTED",
+        "Lorentzian_QME": "NOT_COMPUTED"
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "CURVATURE_IMAGE_PRESYMPLECTIC_ALGEBRA_DEFINED": true,
+        "CURVATURE_IMAGE_GRADED_CCR_RELATIONS_CERTIFIED": true,
+        "CURVATURE_PRESENTATION_MATCHES_FREE_BV_OBSERVABLE_COHOMOLOGY": true,
+        "DIRECT_CURVATURE_CAUSAL_PROPAGATOR_CONSTRUCTED": false,
+        "CURVATURE_HADAMARD_STATE_CONSTRUCTED": false,
+        "PHYSICAL_POSITIVITY_CERTIFIED": false,
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "INTERACTING_QUANTUM_THEORY": false
+      }
+    },
+    "next_gate": {"const": "DIRECT_CURVATURE_GREEN_KERNEL_OR_BRST_HADAMARD_COVARIANCE"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["curvature_state_map", "prolonged_Q", "curvature_graph_inclusion", "curvature_graph_projection", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "curvature_state_map": {"$ref": "#/$defs/hash"},
+        "prolonged_Q": {"$ref": "#/$defs/hash"},
+        "curvature_graph_inclusion": {"$ref": "#/$defs/hash"},
+        "curvature_graph_projection": {"$ref": "#/$defs/hash"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "all_true_checks": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}},
+    "nonempty_object": {"type": "object", "minProperties": 3}
+  }
+}

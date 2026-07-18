@@ -49,6 +49,7 @@ DEPENDENCIES = {
     "A104_partial": HERE / "lorentzian/certificates/BERGER_A104_GLOBAL_PARTIAL_ASSEMBLY.json",
     "Hadamard_existence_audit": HERE / "lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
+    "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
     "relative_readiness": HERE / "relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json",
     "Paper09_boundary": HERE / "cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF.json",
 }
@@ -90,6 +91,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "A104_partial": "GLOBAL_A104_104_BY_104_KNOWN_MASK_EXACT_TWO_A12_SLOTS_OPEN",
         "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
+        "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
     for name, state in states.items():
@@ -491,6 +493,24 @@ def _load() -> dict[str, dict[str, Any]]:
         != "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST"
     ):
         raise ValueError("stationary-generator import readiness frontier drifted")
+    curvature_ccr = values["curvature_image_CCR"]
+    curvature_ccr_flags = curvature_ccr.get("claim_flags", {})
+    if (
+        curvature_ccr_flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_ALGEBRA_DEFINED")
+        is not True
+        or curvature_ccr_flags.get(
+            "CURVATURE_PRESENTATION_MATCHES_FREE_BV_OBSERVABLE_COHOMOLOGY"
+        )
+        is not True
+        or curvature_ccr_flags.get("DIRECT_CURVATURE_CAUSAL_PROPAGATOR_CONSTRUCTED")
+        is not False
+        or curvature_ccr_flags.get("CURVATURE_HADAMARD_STATE_CONSTRUCTED")
+        is not False
+        or curvature_ccr_flags.get("INTERACTING_QUANTUM_THEORY") is not False
+        or curvature_ccr.get("next_gate")
+        != "DIRECT_CURVATURE_GREEN_KERNEL_OR_BRST_HADAMARD_COVARIANCE"
+    ):
+        raise ValueError("curvature-image CCR frontier drifted")
     relative = values["relative_readiness"]
     relative_flags = relative.get("claim_flags", {})
     relative_gate = relative.get("classical_import_gate", {})
@@ -554,6 +574,10 @@ def build() -> dict[str, Any]:
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
                 "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
+            },
+            "free_Lorentzian_algebra": {
+                "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_DIRECT_KERNEL_AND_HADAMARD_STATE_OPEN",
+                "next_gate": "DIRECT_CURVATURE_GREEN_KERNEL_OR_BRST_HADAMARD_COVARIANCE",
             },
             "relative_Einstein_Weyl": {
                 "status": "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_PREFLIGHTS_GLOBAL_V1_OPEN",
@@ -671,6 +695,7 @@ def build() -> dict[str, Any]:
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY": True,
+            "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -708,7 +733,11 @@ def build() -> dict[str, Any]:
             "signs, scalar-map consistency and nested proof hashes, while physical input "
             "remains absent; the frontier also contains "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
-            "lift. The repaired Maxwell transfer now replays coefficientwise with 1,890 full "
+            "lift. The support-local curvature graph, completed causal quasi-isomorphism, and "
+            "transported pairing define a universal presymplectic graded CCR algebra on the "
+            "curvature-image free BV observable classes. This is not a direct curvature Green "
+            "kernel, a Hadamard state, positivity, or an interacting quantum theory. The "
+            "repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
             "and retained cyclicity defects, and preserved causal unary flags. The historical "
             "953-term obstruction remains a valid negative control. The typed 59,598-term mixed "
@@ -799,6 +828,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY") is not True
+        or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
+        is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
@@ -838,6 +869,7 @@ def validate(result: dict[str, Any]) -> None:
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND",
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND",
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY",
+            "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
