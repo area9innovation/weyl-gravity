@@ -1,0 +1,34 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; arbitrary complex axial and polar exceptional ell=1,k=0 positive-frequency amplitudes over all m, optionally augmented by standard generalized-zero homogeneous/twist data",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "SO(3) covariance promotes the axisymmetric self and cross resonance pairings to two Cartesian STF compatibility tensors",
+    "after q=(sqrt(3)/4)p the compatibility equations are STF(aa^T-qq^T)=0 and STF(aq^T+qa^T)=0",
+    "a rank-one argument and an independent exact Groebner calculation both prove that the complex common zero locus is only a=p=0",
+    "distinct-m interference and standard generalized-zero homogeneous/twist balancing data cannot rescue any nonzero exceptional ell=1,k=0 tangent at second order"
+  ],
+  "evidence": {
+    "commit": "e3730a14076a8d149edf77df521de0ba60190207",
+    "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
+    "sha256": "42248dd69e97cd5946331431fa02d631edf0f86b717869437640c5651e439ac9"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "audit whether any other k=0 sector shares omega_e^2=4/3 and can enter the same positive-positive source",
+  "not_established": [
+    "same-frequency cancellation using nonexceptional sectors",
+    "different-momentum or different-frequency resonant coincidences",
+    "all-orders, residual, causal, scattering, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_exceptional_ell1_all_m",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_exceptional_ell1_all_m_resonance",
+  "team_id": "einstein_boundary",
+  "verdict": "COMPLETE_ALL_M_EXCEPTIONAL_ELL1_TWO_POLARIZATION_CONE_OBSTRUCTED",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_all_m_resonance --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_all_m_resonance"
+  ]
+}
