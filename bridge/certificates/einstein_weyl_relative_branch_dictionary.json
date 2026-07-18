@@ -1,0 +1,535 @@
+{
+  "branch_rows": [
+    {
+      "action_derived_pairing": {
+        "Einstein_extra_orthogonal": true,
+        "Einstein_inertia": [
+          1,
+          1
+        ],
+        "complete_inertia": [
+          3,
+          1
+        ],
+        "extra_inertia": [
+          2,
+          0
+        ],
+        "status": "CERTIFIED"
+      },
+      "branch_representatives": {
+        "Einstein": [
+          "2*k",
+          "-2*omega_E",
+          "k*(-k**2 - lambda + omega_E**2)",
+          "-omega_E*(-k**2 - lambda + omega_E**2)"
+        ],
+        "extra": [
+          [
+            "-k**2 - lambda",
+            "k*omega_e",
+            "lambda",
+            "0"
+          ],
+          [
+            "-k*omega_e",
+            "k**2 - 2/3",
+            "0",
+            "lambda"
+          ]
+        ],
+        "order": "(H_t,H_x,Q_t,Q_x) on the reduced block",
+        "status": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+          "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_PHYSICAL_RING",
+          "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        }
+      ],
+      "id": "ph.generic.axial.relative",
+      "inclusion": {
+        "map": "identity on the six axial field coefficients, with the exact polynomial equation-row map recorded by the triangle preflight",
+        "status": "CERTIFIED"
+      },
+      "map_lifecycle": "DERIVED_COFIBER_TRIANGLE",
+      "missing": [],
+      "projection_or_cofiber": {
+        "map": "target/q-primary Einstein image = (K[omega]/(p))^2; the quotient projection is the p-primary CRT projection on each physical fibre",
+        "status": "CERTIFIED"
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "generic axial Fourier-polynomial coefficient complex and its reduced solution module",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": ">=2",
+        "k": "2*pi*n/L, every n in Z including zero",
+        "m": "all",
+        "omega": "q-primary Einstein shells and p-primary extra shell",
+        "parity": "axial",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "action_derived_pairing": {
+        "Einstein_extra_orthogonal": true,
+        "Einstein_inertia": [
+          1,
+          1
+        ],
+        "complete_inertia": [
+          3,
+          1
+        ],
+        "extra_Gram": [
+          [
+            "18*lambda*(4*k**2 + lambda - 2)*(12*k**2 + 9*lambda - 2)",
+            "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)"
+          ],
+          [
+            "-6*k*lambda*(3*lambda + 2)*(3*k**2 + 3*lambda - 2)",
+            "lambda*(3*lambda - 2)**2*(3*k**2 + 3*lambda - 2)/2"
+          ]
+        ],
+        "extra_inertia": [
+          2,
+          0
+        ],
+        "status": "CERTIFIED"
+      },
+      "branch_representatives": {
+        "Einstein": [
+          "-2*(k**2*lambda - k**2*mu - lambda)",
+          "2*k*omega_E*(lambda - mu)",
+          "-2*(k**2*lambda - k**2*mu + lambda**2 - lambda*mu - lambda)",
+          "lambda"
+        ],
+        "extra": [
+          [
+            "4*(3*k**2 - 2)",
+            "-2*k*(3*k**2 + 3*lambda - 2)"
+          ],
+          [
+            "0",
+            "omega_e*(6*k**2 + 3*lambda - 2)"
+          ],
+          [
+            "-12*(k**2 + lambda)",
+            "-2*k*(3*k**2 + 3*lambda - 2)"
+          ],
+          [
+            "3*(6*k**2 + 3*lambda - 2)",
+            "0"
+          ]
+        ],
+        "order": "(A_t,B,C_t,U)",
+        "status": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_PHYSICAL_COMPLETION",
+          "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT",
+          "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        }
+      ],
+      "id": "ph.generic.polar.relative",
+      "inclusion": {
+        "map": "polynomial ghost-field-equation-identity chain map on the ungauged polar complex, inducing the injective solution-module map onto the complete q-primary target summand",
+        "status": "CERTIFIED"
+      },
+      "map_lifecycle": "DERIVED_COFIBER_TRIANGLE",
+      "missing": [
+        "cyclic BV compatibility of the polar chain map",
+        "final residual descent"
+      ],
+      "projection_or_cofiber": {
+        "map": "chain mapping cofiber together with solution-module quotient (K[omega]/(p))^2 on every physical fibre; cyclic BV compatibility is not claimed",
+        "status": "CERTIFIED"
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "generic polar gauge-fixed coefficient system and its reduced solution module",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": ">=2",
+        "k": "2*pi*n/L, every n in Z including zero",
+        "m": "all",
+        "omega": "q-primary Einstein shells and p-primary extra shell",
+        "parity": "polar",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "action_derived_pairing": {
+        "extra": "nonradical positive-definite exceptional current block",
+        "standard_relative_operator": "4*I",
+        "status": "CERTIFIED"
+      },
+      "branch_representatives": {
+        "extra": "axisymmetric axial and polar representatives with all-m SO(3) promotion in the exceptional-current evidence",
+        "source": "physical ell=1 quotient representatives in the standard-inclusion evidence",
+        "status": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELL1_PHYSICAL_SYMPLECTIC_RESTRICTION",
+          "sha256": "2596e01ea18030ffeced787629b3d5eba3f6a3d14c3e881e1a4dffd82405e674"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_CURRENT_TAUB",
+          "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+        }
+      ],
+      "id": "ph.exceptional.ell1.relative",
+      "inclusion": {
+        "map": "identity inclusion on the complete physical Einstein-Maxwell ell=1 quotient",
+        "status": "CERTIFIED"
+      },
+      "map_lifecycle": "ONSHELL_MAP_ONLY",
+      "missing": [
+        "exceptional off-shell chain map",
+        "complete exceptional cofiber projection",
+        "final residual descent"
+      ],
+      "projection_or_cofiber": {
+        "map": "the exceptional target current is classified, but no complete source-to-target primary projection or chain cofiber is certified",
+        "status": "NO_CERTIFIED_MAP"
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "physical standard dipoles plus exceptional axial and polar target modes",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": 1,
+        "k": "2*pi*n/L for physical standard modes; k=0 for the certified exceptional extra block",
+        "m": "-1,0,1",
+        "omega": "physical q-primary shells; exceptional extra omega^2=4/3 at k=0",
+        "parity": "axial and polar",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "action_derived_pairing": {
+        "relative_operator": "I+N with N^2=0 and rank(N)=2",
+        "status": "CERTIFIED"
+      },
+      "branch_representatives": {
+        "extra": "NO_CERTIFIED_MAP",
+        "standard": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "Q_e",
+          "W_x"
+        ],
+        "status": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_GLOBAL_SYMPLECTIC_RESTRICTION",
+          "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
+          "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+        }
+      ],
+      "id": "ph.global.homogeneous.relative",
+      "inclusion": {
+        "map": "identity inclusion on the six-dimensional standard homogeneous solution block",
+        "status": "CERTIFIED"
+      },
+      "map_lifecycle": "ONSHELL_MAP_ONLY",
+      "missing": [
+        "homogeneous target complement",
+        "global charge-endpoint chain map",
+        "large-gauge/global quotient"
+      ],
+      "projection_or_cofiber": {
+        "map": "no complete homogeneous target complement or chain cofiber is certified",
+        "status": "NO_CERTIFIED_MAP"
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "homogeneous generalized block (a,b,c,d,Q_e,W_x)",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": 0,
+        "k": 0,
+        "m": 0,
+        "omega": "generalized zero",
+        "parity": "scalar/global",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "action_derived_pairing": {
+        "relative_operator": "-2*I on each twist pair",
+        "status": "CERTIFIED"
+      },
+      "branch_representatives": {
+        "extra": "NO_CERTIFIED_MAP",
+        "standard": [
+          "A_m",
+          "B_m"
+        ],
+        "status": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_HARMONIC_SYMPLECTIC_INCLUSION",
+          "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_TWIST_SYMPLECTIC_RESTRICTION",
+          "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+        }
+      ],
+      "id": "ph.global.twist.relative",
+      "inclusion": {
+        "map": "identity inclusion on each standard twist pair (A_m,B_m)",
+        "status": "CERTIFIED"
+      },
+      "map_lifecycle": "ONSHELL_MAP_ONLY",
+      "missing": [
+        "twist target complement",
+        "twist position/velocity times ell=2 extra source columns",
+        "global moduli-orbifold quotient"
+      ],
+      "projection_or_cofiber": {
+        "map": "no complete twist target complement or chain cofiber is certified",
+        "status": "NO_CERTIFIED_MAP"
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "three axial twist position/velocity pairs",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": 1,
+        "k": 0,
+        "m": "three real SO(3) components",
+        "omega": "generalized zero",
+        "parity": "axial",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "action_derived_pairing": {
+        "status": "NO_CERTIFIED_MAP"
+      },
+      "branch_representatives": {
+        "status": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [],
+      "id": "ph.boundary.relative",
+      "inclusion": {
+        "map": "no boundary-preserving or cross-background inclusion is certified",
+        "status": "NO_CERTIFIED_MAP"
+      },
+      "map_lifecycle": "NO_CERTIFIED_MAP",
+      "missing": [
+        "common boundary domain",
+        "boundary charges and fluxes",
+        "causal Green carrier",
+        "mode crosswalk"
+      ],
+      "projection_or_cofiber": {
+        "map": "no asymptotic or exterior relative cofiber is certified",
+        "status": "NO_CERTIFIED_MAP"
+      },
+      "scope": {
+        "background": "compact Plebanski-Hacyan fixture versus any asymptotic, black-hole, dS/AdS or vacuum-cylinder setting",
+        "boundaries": "cross-background or changed-boundary domain",
+        "carrier": "boundary/asymptotic branch carrier",
+        "charge_sector": "undeclared across settings",
+        "degree": "crosswalk",
+        "ell": "not applicable",
+        "k": "not applicable",
+        "m": "not applicable",
+        "omega": "not applicable",
+        "parity": "not applicable",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    }
+  ],
+  "bridge": {
+    "activation_gate": "OPEN",
+    "current_global_map_lifecycle": "ONSHELL_MAP_ONLY",
+    "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
+    "priority": 1,
+    "reason": "generic axial and polar derived chain cofibers and action pairings are certified, but polar cyclic BV compatibility, exceptional/global chain cofibers, global endpoints and the boundary domain are absent",
+    "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+    "requested_full_artifact_certified": false
+  },
+  "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
+  "classification": {
+    "bridge_1_activation_gate_satisfied": false,
+    "cross_background_mode_identification_made": false,
+    "exceptional_global_and_boundary_absences_explicit": true,
+    "full_offshell_all_sector_triangle_certified": false,
+    "generic_axial_and_polar_action_pairings_exported": true,
+    "generic_axial_and_polar_solution_cofibers_certified": true,
+    "generic_axial_derived_cofiber_certified": true,
+    "generic_polar_derived_cofiber_certified": true,
+    "same_background_only": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The compact Plebanski-Hacyan calculation already supplies a precise same-background Einstein/extra branch dictionary and derived chain cofibers in both generic parities. It does not yet supply the cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional and global endpoint cofibers before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
+    "generator_sha256": "4b0dfb6d9a156f15277f8e9e6a571a8a9b9b58f13f37d6509dca2d55852c5a50",
+    "inputs": {
+      "abd_quadratic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+        "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+      },
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "axial_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "ell1_standard": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+        "sha256": "2596e01ea18030ffeced787629b3d5eba3f6a3d14c3e881e1a4dffd82405e674"
+      },
+      "exceptional_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "homogeneous_standard": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
+        "sha256": "c18f747bb27757f72249f998626fc0f5a02c6a612cb91aa02d49c190b8f49556"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "polar_lift": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+        "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+      },
+      "polar_ring": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "standard": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
+        "sha256": "f61f56fe814582f0f610d1fd69eb929a0488de042307814a90519ebf13355d8d"
+      },
+      "triangle": {
+        "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+        "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+      },
+      "twist_standard": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+        "sha256": "c230db105f4282820ec731418771e95f1fe489fa35ee8add2a7311691de5b7cd"
+      }
+    }
+  },
+  "quadratic_handoff": {
+    "artifact": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
+    "meaning": "the a,b,d polynomial source matrix feeds the relative obstruction map but does not complete bridge 1 or the finite-harmonic tangent cone",
+    "status": "PARTIAL_INPUT"
+  },
+  "relative_forms": {
+    "Einstein": "Omega_EM",
+    "identity_inclusion_nondegenerate": true,
+    "identity_inclusion_symplectic": false,
+    "pulled_back_Weyl": "iota^* Omega_WM = Omega_EM(.,R .) on the complete standard tangent",
+    "relative_extra": "direct action-derived extra Lee-Wald blocks are certified only in generic axial and polar sectors"
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+  "result_state": "SAME_BACKGROUND_BRANCH_DICTIONARY_EXPORTED_FULL_RELATIVE_TRIANGLE_ACTIVATION_GATE_OPEN",
+  "schema": "einstein-weyl-relative-branch-dictionary-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
+  "schema_sha256": "8fff1e4c44f9114dbea9de51e85110e8483e8ab0de3609a225643727e0feb57d",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_branch_dictionary"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
+        "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_branch_dictionary"
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "all imported map, cofiber, representative and pairing artifacts are content-addressed",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "the full all-sector relative triangle activation gate remains open",
+      "status": "NOT_RUN"
+    }
+  }
+}

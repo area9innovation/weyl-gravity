@@ -28,6 +28,8 @@ CERTIFICATES = {
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
+    "abd_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+    "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "abstract_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -107,6 +109,18 @@ def _entry(
 def entries() -> list[dict[str, object]]:
     open_causal = ("OPEN", "No compact-product causal/retarded Green theorem has been certified.")
     return [
+        _entry(
+            "einstein.ph.bridge.relative_branch_dictionary_v1",
+            _scope(carrier="same-background Einstein-Maxwell/Weyl-Maxwell inclusion, solution cofibers and branch dictionary", degree=1, parity="axial, polar, exceptional and global sectors kept separate", ell="generic >=2 plus explicitly listed exceptional/global gaps", m="all where certified", k="all compact momenta where certified", omega="q-primary, p-primary and generalized-zero branches without cross-background identification"),
+            {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            ("CERTIFIED", "The same-background branch dictionary separates q-primary Einstein, p-primary extra and generalized-zero carriers in every declared certified sector."),
+            ("CERTIFIED", "The complete standard pullback and the generic axial/polar direct extra Lee-Wald blocks are exported as three distinct forms."),
+            ("OPEN", "Quadratic data are partial handoffs and do not activate the linear bridge or complete the relative obstruction map."),
+            ("OPEN", "Global map lifecycle is ONSHELL_MAP_ONLY: both generic parity chain cofibers are certified, while polar cyclic BV compatibility and exceptional/global cofibers remain absent."),
+            _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
+            _evidence("branch_dictionary"),
+            "Bridge 1 activation remains OPEN. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+        ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
             _scope(carrier="Einstein q-primary image in the Weyl-Maxwell axial and polar coefficient complexes", degree=1, parity="axial and polar", ell=">=2", m="all", k="2*pi*n/L, n in Z", omega="omega^2=k^2+lambda +/- sqrt(2*lambda), lambda=ell(ell+1)"),
@@ -192,6 +206,18 @@ def entries() -> list[dict[str, object]]:
             "This completes the d column of the resonant source matrix, not a complete second-order extension or the remaining homogeneous/twist columns.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.abd_times_ell2_extra",
+            _scope(theory="Weyl-Maxwell target", carrier="homogeneous generalized-zero a,b,d directions crossed with both ell=2 extra-primary amplitudes", degree=2, parity="axial and polar outputs kept separate", ell="0 x 2 -> 2", m="m=0 direct fixtures; all m by SO(3) equivariance", k=0, omega="polynomial-in-time generalized zero crossed with omega_e=4/sqrt(3)"),
+            {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "Every cross source lies on the ell=2 p-primary output shell with polynomial-in-time coefficients."),
+            ("CERTIFIED", "The projected rows use the certified nonradical axial and polar extra-shell Lee-Wald/adjoint bases."),
+            ("OPEN", "The simultaneous stabilizer zero locus including twist position and velocity has not been solved."),
+            ("CERTIFIED", "All four parity/polarization a,b,d polynomial resonance chains have coefficient rank three; the exact bounded compatibility functionals are generated."),
+            _second_order(("OPEN", "The a,b,d submatrix is complete, but twist columns can enter the same output and remain open."), ("OPEN", "Secular inversion must be proved through the complete operator."), open_causal),
+            _evidence("abd_matrix", "d_completion", "axial_current", "polar_current", "abstract_cone"),
+            "This is an exact source-matrix input to the tangent-cone theorem, not the complete bridge, a no-go theorem, or a full second-order correction.",
+        ),
+        _entry(
             "einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder",
             _scope(theory="crosswalk", background="compact Plebanski-Hacyan <-> asymptotically flat/dS/AdS or vacuum conformal cylinder", boundaries="cross-background boundary/carrier identification", charge_sector="crosswalk", carrier="mode identification map", degree="crosswalk", parity="n/a", ell="n/a", m="n/a", k="n/a", omega="n/a"),
             {axis: "NO_CERTIFIED_MAP" for axis in AXES},
@@ -220,6 +246,10 @@ def build() -> dict[str, object]:
         raise AssertionError("twist independence witness changed")
     if not records["d_completion"]["classification"]["d_cross_adjoint_map_invertible_in_both_parities"]:
         raise AssertionError("d-cross parity completion changed")
+    if not records["abd_matrix"]["classification"]["every_parity_polarization_abd_polynomial_chain_rank_three"]:
+        raise AssertionError("a,b,d resonance-matrix input changed")
+    if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
+        raise AssertionError("relative branch dictionary over-promoted bridge 1")
     if not records["abstract_cone"]["flags"]["FINITE_HARMONIC_TANGENT_CONE_FORMULA"]:
         raise AssertionError("abstract tangent-cone theorem changed")
     value = {

@@ -68,6 +68,18 @@ def verify() -> None:
     if d_cross["mode_data"]["resonance"]["status"] != "CERTIFIED" or d_cross["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("d-cross compatibility boundary drifted")
 
+    bridge = by_id["einstein.ph.bridge.relative_branch_dictionary_v1"]
+    if bridge["mode_data"]["resonance"]["status"] != "OPEN":
+        raise AssertionError("bridge 1 activation was over-promoted")
+    if "ONSHELL_MAP_ONLY" not in bridge["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("exact bridge lifecycle is absent")
+    if bridge["descriptions"]["observational"] != "NO_CERTIFIED_MAP" or bridge["descriptions"]["quantum"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("downstream bridges borrowed the linear lifecycle")
+
+    abd = by_id["einstein.ph.wm.interaction.abd_times_ell2_extra"]
+    if abd["mode_data"]["resonance"]["status"] != "CERTIFIED" or abd["descriptions"]["nonlinear"] != "OPEN":
+        raise AssertionError("a,b,d matrix lifecycle drifted")
+
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("cross-background fail-closed entry changed")

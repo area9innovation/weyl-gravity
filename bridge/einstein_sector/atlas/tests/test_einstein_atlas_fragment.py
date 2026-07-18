@@ -29,6 +29,17 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
             if "crosswalk" not in entry["id"]:
                 self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "OPEN")
 
+    def test_bridge_one_is_fail_closed(self) -> None:
+        entry = self.entries["einstein.ph.bridge.relative_branch_dictionary_v1"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
+        self.assertEqual(entry["descriptions"]["observational"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
+
+    def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+
 
 if __name__ == "__main__":
     unittest.main()

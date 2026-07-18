@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "bridge", "relative_forms",
+    "branch_rows", "quadratic_handoff", "classification", "interpretation",
+    "next_gate", "claim_boundary", "provenance", "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-relative-branch-dictionary-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "bridge": {
+      "type": "object",
+      "required": ["priority", "current_global_map_lifecycle", "activation_gate", "requested_full_artifact_certified"],
+      "properties": {
+        "priority": {"const": 1},
+        "current_global_map_lifecycle": {"const": "ONSHELL_MAP_ONLY"},
+        "activation_gate": {"const": "OPEN"},
+        "requested_full_artifact_certified": {"const": false}
+      }
+    },
+    "branch_rows": {"type": "array", "minItems": 6},
+    "classification": {
+      "type": "object",
+      "required": [
+        "same_background_only", "generic_axial_derived_cofiber_certified",
+        "generic_polar_derived_cofiber_certified",
+        "generic_axial_and_polar_solution_cofibers_certified",
+        "exceptional_global_and_boundary_absences_explicit",
+        "full_offshell_all_sector_triangle_certified",
+        "bridge_1_activation_gate_satisfied",
+        "cross_background_mode_identification_made"
+      ]
+    }
+  }
+}
