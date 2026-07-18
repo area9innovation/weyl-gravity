@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "same compact Plebanski-Hacyan R_t x S1_L x S2 background on the fixed N=2 magnetic bundle; generic ell>=2 axial and polar polynomial chain maps before final residual quotient",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the certified generic axial and polar chain maps are tested against the standard action-derived source and target pairings",
+    "the fixed-identity induced solution-pairing defect is D=R-I=(3/2)*(M-lambda*I)",
+    "in both parities D^2=(9/2)*lambda*I and det(D)=-9*lambda/2, so the defect is nonradical on every physical fibre",
+    "a strict cyclic enhancement preserving the fixed identity field map and standard action pairings is obstructed"
+  ],
+  "evidence": {
+    "commit": "db79b004563417a91ff88a3b8e4a8af441aa2789",
+    "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
+    "sha256": "8c4d4eb69068c2767955f0b80695cfb81fc086ebaf5658da474f6ebb9f606e90"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify polynomial/local corrected field maps or cyclic chain-homotopies and continue the exceptional and global off-shell map gates",
+  "not_established": [
+    "an obstruction to every nonidentity symplectic reidentification",
+    "an obstruction to cyclic morphisms up to a declared chain homotopy",
+    "a corrected all-sector cyclic relative triangle",
+    "exceptional/global off-shell maps or final residual descent",
+    "causal, observational, particle, quantum, changed-boundary, or cross-background claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_generic_identity_cyclic_defect",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_weyl_generic_identity_cyclic_obstruction",
+  "team_id": "einstein_boundary",
+  "verdict": "FIXED_IDENTITY_CYCLIC_COMPATIBILITY_OBSTRUCTED_CORRECTED_MORPHISMS_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_generic_identity_cyclic_obstruction --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_generic_identity_cyclic_obstruction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_generic_identity_cyclic_obstruction"
+  ]
+}

@@ -9,9 +9,11 @@ solution cofiber is included with explicit CRT projectors, and the complete
 homogeneous generalized-zero target is now certified to have zero solution
 cofiber.  The isolated generalized-zero twist primary likewise has zero
 solution cofiber, while retaining relative operator `-2*I`.
+The generic axial and polar fixed identity maps now also carry a certified
+nonradical cyclic defect; corrected cyclic morphisms remain open.
 
-Evidence is content-addressed at commit `845fbbf1` with certificate SHA-256
-`c6865825be46a542340e84c572aee823735bf9b24a4f9bad7a8aaefaaaa70aa9`.
+Evidence is content-addressed at commit `db79b004` with certificate SHA-256
+`0b2d5f78205577b994418c8732184bcafca7364842c271592a5adb48adc4b640`.
 No cross-background mode identity is made; exceptional nonzero-`k`/off-shell,
 homogeneous and twist off-shell, global and boundary carriers remain
 fail-closed.
