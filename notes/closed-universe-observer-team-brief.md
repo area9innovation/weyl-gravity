@@ -417,6 +417,17 @@ The active gate is now application of the polarization recurrence inside the
 temporal Green chain and a tail bound beyond form `two_j=138`; scalar-value
 evaluation itself is no longer open.
 
+`BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S{2,4,6,8,10}_TWO_J139` now supplies
+the five remaining scalar rails required by the degree-ten temporal Green
+polynomial.  For every even power `p`, positivity gives the certified joint
+bound `E[s^p] <= E[s^p sec(lambda s)^(2k)] <=
+cos(lambda)^(-2k) E[s^p]`; no clock/profile independence is assumed.  Each
+shard reconstructs 9,870 diagonal values from 4,970 serialized intervals,
+and the worst top-mode width over the five shards is below `7.7e-5`.  The
+active gate is now the actual polarization-recurrence and three-dimensional
+charge-block Green composition through form `two_j=138`, followed by the
+tail disposition.  Full Maxwell/massive images and recoil remain open.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

@@ -306,9 +306,12 @@ detector coordinate factors require 57,824 supported entries and 154,012
 neighboring scalar terms, with at most four terms per entry.  The remaining
 scalar input is now evaluated through `two_j=139`: 4,970 validated intervals
 reconstruct all 9,870 diagonal values, with worst binomial remainder below
-`10^-150`.  The active gate is application of the polarization recurrence
-inside the temporal Green chain and the tail beyond form `two_j=138`, rather
-than dense block construction.
+`10^-150`.  Five companion streams now evaluate the even clock weights
+`s^2,s^4,s^6,s^8,s^10` required by the finite temporal Green polynomial,
+using positivity bounds on the joint clock-secant moments rather than an
+independence assumption.  The active gate is the polarization recurrence and
+charge-block Green composition through form `two_j=138`, then the tail beyond
+that rail, rather than dense block construction.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at

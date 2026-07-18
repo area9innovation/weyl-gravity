@@ -89,6 +89,8 @@ python3 -m closed_universe_observers.generate_berger_high_order_profile_moment_r
 python3 -m closed_universe_observers.verify_berger_high_order_profile_moment_rail
 python3 -m closed_universe_observers.generate_berger_clock_integrated_scalar_stream --check
 python3 -m closed_universe_observers.verify_berger_clock_integrated_scalar_stream
+for p in 2 4 6 8 10; do python3 -m closed_universe_observers.generate_berger_clock_weighted_scalar_stream --power "$p" --check; done
+for p in 2 4 6 8 10; do python3 -m closed_universe_observers.verify_berger_clock_weighted_scalar_stream --power "$p"; done
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -311,6 +313,12 @@ values from 4,970 serialized intervals; the maximum binomial remainder is
 below `10^-150`, and the top-rail widths remain below `1.2e-4`.  Applying the
 polarization recurrence inside the temporal Green chain and bounding the
 tail beyond form `two_j=138` remain open.
+The five clock-weighted successors export the remaining temporal-polynomial
+inputs `s^p`, `p=2,4,6,8,10`, through the same rail.  Positivity bounds each
+joint clock-secant moment without an independence assumption.  Together with
+the unweighted stream they close scalar input preparation for the finite
+Green polynomial; polarization/charge-block composition and the tail remain
+open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

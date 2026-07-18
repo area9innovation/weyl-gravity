@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-clock-weighted-scalar-stream-two-j139-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "clock_weight", "evaluation_convention", "joint_clock_moment_enclosures", "coverage", "modes", "truncation_remainder_audit", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-clock-weighted-scalar-stream-two-j139-v1"},
+    "result_id": {"enum": ["BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S2_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S4_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S6_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S8_TWO_J139", "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S10_TWO_J139"]},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "VALIDATED_EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED_GREEN_COMPOSITION_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "clock_weight": {
+      "type": "object", "additionalProperties": false,
+      "required": ["power", "variable", "joint_bound", "maximum_secant_index"],
+      "properties": {"power": {"enum": [2, 4, 6, 8, 10]}, "variable": {"type": "string"}, "joint_bound": {"type": "string"}, "maximum_secant_index": {"const": 50}}
+    },
+    "evaluation_convention": {"type": "object"},
+    "joint_clock_moment_enclosures": {
+      "type": "array", "minItems": 51, "maxItems": 51,
+      "items": {"type": "object", "additionalProperties": false, "required": ["k", "interval"], "properties": {"k": {"type": "integer", "minimum": 0, "maximum": 50}, "interval": {"$ref": "#/$defs/interval"}}}
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mode_count", "serialized_unique_diagonal_count", "reconstructed_full_diagonal_count", "reflection"],
+      "properties": {"mode_count": {"const": 140}, "serialized_unique_diagonal_count": {"const": 4970}, "reconstructed_full_diagonal_count": {"const": 9870}, "reflection": {"type": "string"}}
+    },
+    "modes": {
+      "type": "array", "minItems": 140, "maxItems": 140,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["two_j", "dimension", "reflection_rule", "unique_diagonal"],
+        "properties": {"two_j": {"type": "integer", "minimum": 0, "maximum": 139}, "dimension": {"type": "integer", "minimum": 1, "maximum": 140}, "reflection_rule": {"type": "string"}, "unique_diagonal": {"type": "array", "minItems": 1, "maxItems": 70, "items": {"$ref": "#/$defs/diagonalRow"}}}
+      }
+    },
+    "truncation_remainder_audit": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED", "JOINT_CLOCK_MOMENT_DEPENDENCE_BOUNDED_WITHOUT_FACTORIZATION", "POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED", "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "EVEN_CLOCK_WEIGHTED_DIAGONAL_SCALAR_STREAM_TWO_J0_TO_139_EXPORTED": {"const": true},
+        "JOINT_CLOCK_MOMENT_DEPENDENCE_BOUNDED_WITHOUT_FACTORIZATION": {"const": true},
+        "POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED": {"const": false},
+        "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": {"const": false},
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  },
+  "$defs": {
+    "interval": {"type": "object", "additionalProperties": false, "required": ["lower", "upper", "width"], "properties": {"lower": {"type": "string"}, "upper": {"type": "string"}, "width": {"type": "string"}}},
+    "diagonalRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis_index", "reflected_basis_index", "m", "clock_weighted_local_amplitude"],
+      "properties": {"basis_index": {"type": "integer", "minimum": 0, "maximum": 69}, "reflected_basis_index": {"type": "integer", "minimum": 0, "maximum": 139}, "m": {"type": "string"}, "clock_weighted_local_amplitude": {"$ref": "#/$defs/interval"}}
+    }
+  }
+}
