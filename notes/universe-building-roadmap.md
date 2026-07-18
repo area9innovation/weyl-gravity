@@ -232,15 +232,15 @@ row also closes exactly:
 `Schur (K p0)+L1_corrected^sharp M_parent (I_Omega p0)=0` has zero base and
 first-variation defects.  The old 207-term shifted defect and downstream
 Φ/L0/K rank screens are retained only as backend regression data.  The
-active gate is now the independent third variation of the Weyl-squared action
-along the transverse tangent, its comparison with the corrected parent
-endpoint, and the differentiated all-row rank-310 SDR.  The comparison target
-is no longer an ansatz: reconciliation with the base action endpoint replaces
-the historical post-normal-order 15-term correction, and the complete
-405-parameter first-order solve uniquely produces a new 15-term algebraic,
-fibre-self-adjoint completion with zero gauge defect.  Transverse causal
-transfer remains `OPEN` until the independent action-derived endpoint gate
-passes.
+action endpoint gate is now exact.  Direct variation of the Bach formula has
+no order above two and its 115 order-two coefficients equal the scaled parent
+target.  The endpoint artifact now distinguishes the compressed parent table
+from the action-normalized `-1/2` table; its former ambiguous field stored the
+wrong normalization.  Coefficient derivatives omitted in the leading replay
+can affect only order at most one, where the complete `60 x 45` rank-45
+differentiated-Noether system gives the unique completion; cyclicity is checked
+separately.  The active gate is therefore the differentiated all-row rank-310
+SDR.  Transverse causal transfer remains `OPEN` until that retract passes.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves

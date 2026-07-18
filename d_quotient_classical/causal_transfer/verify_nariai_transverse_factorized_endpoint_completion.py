@@ -44,6 +44,9 @@ def verify() -> None:
         raise AssertionError("endpoint completion ceased to be algebraic")
     if replay["factorized_endpoint_target"]["Qdot_fibre_adjoint_defect"]["nonzero_coefficients"]:
         raise AssertionError("endpoint completion lost cyclicity")
+    target = replay["factorized_endpoint_target"]
+    if target["compressed_parent_endpoint_variation"]["sha256"] == target["action_bach_variation_target"]["sha256"]:
+        raise AssertionError("parent and action targets were not normalized separately")
     if payload["flags"]["TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION"]:
         raise AssertionError("action third variation was overpromoted")
     for name, digest in payload["source_manifest"].items():

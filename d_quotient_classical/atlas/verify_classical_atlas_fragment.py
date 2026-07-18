@@ -80,10 +80,14 @@ def verify() -> None:
         raise AssertionError("upper relative-saddle replay missing")
     if "NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1" not in transverse_ids:
         raise AssertionError("factorized endpoint target missing")
+    if "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1" not in transverse_ids:
+        raise AssertionError("action Bach-Hessian variation missing")
     if "factorized adjunction before PBW normal ordering" not in transverse["claim_boundary"]:
         raise AssertionError("factorized Hom-adjoint boundary missing")
-    if "independent action-Hessian variation" not in transverse["claim_boundary"]:
-        raise AssertionError("next rank-310 action-Hessian boundary missing")
+    if "direct action-leading coefficients plus Noether uniqueness" not in transverse["claim_boundary"]:
+        raise AssertionError("action-Hessian closure boundary missing")
+    if "complete SDR and causal transfer remain open" not in transverse["claim_boundary"]:
+        raise AssertionError("next rank-310 boundary missing")
 
 
 if __name__ == "__main__":

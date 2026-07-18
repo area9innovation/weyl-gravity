@@ -47,11 +47,13 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1", ids)
+        self.assertIn("NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1", ids)
         self.assertEqual(entry["descriptions"]["causal"], "OPEN")
         self.assertIn("factorized adjunction before PBW normal ordering", entry["claim_boundary"])
         self.assertIn("upper relative-saddle chain closes", entry["claim_boundary"])
-        self.assertIn("unique 15-term algebraic cyclic target", entry["claim_boundary"])
-        self.assertIn("independent action-Hessian variation", entry["claim_boundary"])
+        self.assertIn("unique 15-term algebraic cyclic completion", entry["claim_boundary"])
+        self.assertIn("direct action-leading coefficients plus Noether uniqueness", entry["claim_boundary"])
+        self.assertIn("complete SDR and causal transfer remain open", entry["claim_boundary"])
 
     def test_berger_bridge_one_remains_fail_closed(self) -> None:
         entry = self.entries["classical.berger.crosswalk.retained36_to_einstein_extra"]

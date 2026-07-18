@@ -17,6 +17,17 @@ solution collapses to
 `15` algebraic coefficients,
 has zero gauge residual, and is fibre-self-adjoint.
 
+The serialized parent endpoint and action-normalized Bach target are now
+distinct fields:
+
+\[
+\dot B_{\rm target}=-\frac12
+  (\dot{\rm Schur}+\dot Q_{\rm fact}).
+\]
+
+This repairs the previous ambiguous `endpoint_variation` field, which stored
+the unscaled parent endpoint despite displaying the scaled formula.
+
 This supplies the exact parent-forced target for the action calculation.  It
 does not replace the independent third variation of the Weyl-squared action,
 and therefore does not yet promote the transverse rank-310 SDR or causal

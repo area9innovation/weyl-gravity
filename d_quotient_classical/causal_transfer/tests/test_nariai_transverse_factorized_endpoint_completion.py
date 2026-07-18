@@ -33,6 +33,14 @@ class NariaiTransverseFactorizedEndpointCompletionTests(unittest.TestCase):
         self.assertTrue(target["endpoint_factorized_cyclic"])
         self.assertTrue(target["endpoint_gauge_closed"])
         self.assertEqual(target["Qdot_fibre_adjoint_defect"]["nonzero_coefficients"], 0)
+        self.assertNotEqual(
+            target["compressed_parent_endpoint_variation"]["sha256"],
+            target["action_bach_variation_target"]["sha256"],
+        )
+        self.assertEqual(
+            target["compressed_parent_endpoint_variation"]["nonzero_coefficients"],
+            target["action_bach_variation_target"]["nonzero_coefficients"],
+        )
 
     def test_action_comparison_remains_open(self):
         disposition = self.data["disposition"]

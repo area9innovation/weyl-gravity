@@ -7,9 +7,9 @@
   "properties": {
     "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
     "schema": {"const": "nariai-transverse-factorized-endpoint-completion-v1"},
-    "schema_version": {"const": "1.0.0"},
+    "schema_version": {"const": "1.1.0"},
     "result_id": {"const": "NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1"},
-    "result_state": {"const": "UNIQUE_CYCLIC_FACTORIZED_ENDPOINT_TARGET_EXACT_ACTION_COMPARISON_OPEN"},
+    "result_state": {"const": "UNIQUE_CYCLIC_FACTORIZED_ENDPOINT_AND_SCALED_ACTION_TARGET_EXACT_ACTION_COMPARISON_OPEN"},
     "lifecycle_state": {"const": "CERTIFIED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
     "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/dependency"}},
@@ -46,10 +46,12 @@
         },
         "factorized_endpoint_target": {
           "type": "object", "additionalProperties": false,
-          "required": ["formula", "endpoint_variation", "Qdot_is_order_zero", "Qdot_fibre_adjoint_defect", "endpoint_factorized_cyclic", "endpoint_gauge_closed"],
+          "required": ["formula", "compressed_parent_endpoint_variation", "action_bach_variation_target", "normalization_audit", "Qdot_is_order_zero", "Qdot_fibre_adjoint_defect", "endpoint_factorized_cyclic", "endpoint_gauge_closed"],
           "properties": {
             "formula": {"type": "string", "minLength": 1},
-            "endpoint_variation": {"$ref": "#/$defs/table"},
+            "compressed_parent_endpoint_variation": {"$ref": "#/$defs/table"},
+            "action_bach_variation_target": {"$ref": "#/$defs/table"},
+            "normalization_audit": {"type": "string", "minLength": 1},
             "Qdot_is_order_zero": {"const": true},
             "Qdot_fibre_adjoint_defect": {"$ref": "#/$defs/table"},
             "endpoint_factorized_cyclic": {"const": true},

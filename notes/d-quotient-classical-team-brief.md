@@ -1624,16 +1624,18 @@ factorized Hom-adjoint middle and cyclic compressed Schur have also closed with
 fifth-order curvature-jet coverage.  The upper relative-saddle identity
 `Schur (K p0)+L1_corrected^sharp M_parent (I_Omega p0)=0` now has zero base and
 first-variation defects as well.  The relative-incidence rows are therefore
-complete.  The remaining rank-310 gate is narrower: derive the transverse
-variation of the Weyl-squared action Hessian independently, compare it with
-the corrected parent endpoint, and only then replay the differentiated all-row
-SDR and causal transfer.  The comparison target is now exact.  With the
-factorized Hom adjoint, the old 15-term `Q_unique` is no longer authoritative;
-reconciliation with the base action endpoint fixes a new 15-term seed.  The
-complete 405-parameter first-order transverse solve is unique and collapses
-again to 15 algebraic, fibre-self-adjoint coefficients with zero gauge defect.
-Thus the action calculation is now a coefficientwise comparison against a
-unique cyclic target rather than an unconstrained ansatz search.
+complete.  The action endpoint gate is now complete as well.  Direct
+differentiation of the Bach formula proves that the transverse action Hessian
+has no varying order above two, and its 115 order-two coefficients agree
+exactly with the correctly scaled parent target.  The parent artifact formerly
+displayed the factor `-1/2` while serializing the unscaled endpoint; it now
+stores both tables separately.  Missing derivatives of the explicit varied
+Weyl coefficient can affect only orders zero and one, so the frozen lower table
+is not used.  Instead the complete `60 x 45` rank-45 differentiated-Noether
+solve determines the unique lower action completion; action cyclicity is a
+separate consistency check rather than an input to uniqueness.  The remaining
+gate is the differentiated all-row rank-310 SDR,
+followed by causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

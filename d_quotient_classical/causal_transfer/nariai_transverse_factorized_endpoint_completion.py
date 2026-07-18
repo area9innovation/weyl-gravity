@@ -162,6 +162,7 @@ def exact_data() -> dict[str, Any]:
     solved = _solve_correction(gauge_operator.delta(()), pbw, gauge)
     correction = solved["correction"]
     endpoint_variation = _table_add(data["schur"].delta(()), correction)
+    action_bach_target = _table_scale(endpoint_variation, -sp.Rational(1, 2))
 
     pairing = data["endpoint_pairing"]
     inverse = pairing.inv()
@@ -200,7 +201,9 @@ def exact_data() -> dict[str, Any]:
         },
         "factorized_endpoint_target": {
             "formula": "Bdot_parent_target=-(1/2)(Schurdot_factorized+Qdot_factorized)",
-            "endpoint_variation": _table(endpoint_variation),
+            "compressed_parent_endpoint_variation": _table(endpoint_variation),
+            "action_bach_variation_target": _table(action_bach_target),
+            "normalization_audit": "the parent endpoint is -2 times the action-normalized Bach Hessian; the two tables are serialized separately",
             "Qdot_is_order_zero": True,
             "Qdot_fibre_adjoint_defect": _table(cyclic_defect),
             "endpoint_factorized_cyclic": True,
@@ -236,9 +239,9 @@ def build() -> dict[str, Any]:
     return {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "schema": "nariai-transverse-factorized-endpoint-completion-v1",
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "result_id": "NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1",
-        "result_state": "UNIQUE_CYCLIC_FACTORIZED_ENDPOINT_TARGET_EXACT_ACTION_COMPARISON_OPEN",
+        "result_state": "UNIQUE_CYCLIC_FACTORIZED_ENDPOINT_AND_SCALED_ACTION_TARGET_EXACT_ACTION_COMPARISON_OPEN",
         "lifecycle_state": "CERTIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC"],
         "dependency_refs": refs,
@@ -250,6 +253,7 @@ def build() -> dict[str, Any]:
             "gauge_residual_zero": data["complete_first_order_solve"]["corrected_gauge_residual"]["nonzero_coefficients"] == 0,
             "correction_is_algebraic": data["factorized_endpoint_target"]["Qdot_is_order_zero"],
             "correction_is_cyclic": data["factorized_endpoint_target"]["Qdot_fibre_adjoint_defect"]["nonzero_coefficients"] == 0,
+            "parent_and_action_targets_serialized_separately": data["factorized_endpoint_target"]["compressed_parent_endpoint_variation"]["sha256"] != data["factorized_endpoint_target"]["action_bach_variation_target"]["sha256"],
             "action_third_variation_not_overclaimed": not data["disposition"]["action_third_variation_independently_derived"],
             "rank_310_not_overclaimed": not data["disposition"]["rank_310_first_variation_SDR"],
         },
@@ -260,7 +264,7 @@ def build() -> dict[str, Any]:
             "TRANSVERSE_CAUSAL_TRANSFER": False,
         },
         "next_gate": "NARIAI_TRANSVERSE_INDEPENDENT_ACTION_THIRD_VARIATION_COMPARISON",
-        "claim_boundary": "This exact complete first-order solve reconciles the authoritative factorized Hom-adjoint Schur operator with the action-derived base Bach endpoint and derives the unique cyclic transverse lower-order completion. The solution has fifteen algebraic coefficients and zero gauge/cyclic defects. It is the exact target for, not a substitute for, an independent third variation of the Weyl-squared action. The action comparison, all-row rank-310 SDR and transverse causal transfer remain false.",
+        "claim_boundary": "This exact complete first-order solve reconciles the authoritative factorized Hom-adjoint Schur operator with the action-derived base Bach endpoint and derives the unique cyclic transverse lower-order completion. The solution has fifteen algebraic coefficients and zero gauge/cyclic defects. The certificate now distinguishes the compressed parent endpoint variation from the action-normalized Bach target by the required factor -1/2. It is the exact target for, not a substitute for, an independent action-leading comparison. The action comparison, all-row rank-310 SDR and transverse causal transfer remain false.",
         "source_manifest": {str(path.relative_to(ROOT)): _sha(path) for path in sources},
         "verification_commands": [
             "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_factorized_endpoint_completion --check",
@@ -292,6 +296,17 @@ and every augmented row has the same rank with no free parameter.  The unique
 solution collapses to
 `{solve['unique_correction']['nonzero_coefficients']}` algebraic coefficients,
 has zero gauge residual, and is fibre-self-adjoint.
+
+The serialized parent endpoint and action-normalized Bach target are now
+distinct fields:
+
+\[
+\dot B_{{\rm target}}=-\frac12
+  (\dot{{\rm Schur}}+\dot Q_{{\rm fact}}).
+\]
+
+This repairs the previous ambiguous `endpoint_variation` field, which stored
+the unscaled parent endpoint despite displaying the scaled formula.
 
 This supplies the exact parent-forced target for the action calculation.  It
 does not replace the independent third variation of the Weyl-squared action,

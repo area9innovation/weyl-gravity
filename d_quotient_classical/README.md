@@ -551,10 +551,25 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   transverse order-at-most-one solve has a `60 x 45` rank-45 coefficient map
   on all nine rows and a unique solution.  That solution collapses to 15
   algebraic coefficients, is fibre-self-adjoint, and restores the gauge row.
-  It is the exact target for an independent third variation of the Weyl action,
-  not a substitute for that comparison:
+  The artifact now serializes the compressed parent variation and its
+  action-normalized `-1/2` target separately; the former ambiguous field had
+  displayed the scaling formula while storing the unscaled parent table:
   [`certificates/NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1.json`](certificates/NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1.json),
   [`reports/nariai-transverse-factorized-endpoint-completion.md`](reports/nariai-transverse-factorized-endpoint-completion.md)
+- Transverse action Bach-Hessian variation: direct differentiation of the
+  covariant Bach formula in the moving orthonormal PBW frame proves that the
+  first variation has no order above two.  Its 115 order-two coefficients
+  agree exactly with the scaled parent target.  Terms omitted by freezing
+  derivatives of the explicit varied Weyl coefficient can only have order at
+  most one; the frozen lower table is retained as a nonauthoritative negative
+  regression.  The complete `60 x 45`, rank-45 differentiated-Noether solve
+  then fixes the lower action completion uniquely on every row, while action
+  cyclicity follows from the third variation in the constant moving-frame
+  pairing.  This closes the action endpoint gate without substituting an
+  external detour theorem.  The all-row rank-310 SDR and causal transfer remain
+  open:
+  [`certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json),
+  [`reports/nariai-transverse-action-bach-hessian-variation.md`](reports/nariai-transverse-action-bach-hessian-variation.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

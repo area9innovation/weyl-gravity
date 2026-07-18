@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nariai-transverse-action-bach-hessian-variation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "primary_sources", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-action-bach-hessian-variation-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1"},
+    "result_state": {"const": "ACTION_BACH_HESSIAN_VARIATION_EXACT_BY_DIRECT_LEADING_DERIVATION_AND_NOETHER_UNIQUENESS"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "primary_sources": {"type": "array", "minItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["title", "url", "use"], "properties": {"title": {"type": "string", "minLength": 1}, "url": {"type": "string", "pattern": "^https://"}, "use": {"type": "string", "minLength": 1}}}},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["direct_action_leading_derivation", "parent_action_comparison", "lower_order_noether_completion", "identified_full_action_variation", "disposition"],
+      "properties": {
+        "direct_action_leading_derivation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["formula", "background", "tangent", "action_normalization", "base_action_defect", "frozen_full_variation", "authoritative_order_two", "orders_above_two_absent", "why_order_two_is_authoritative", "frozen_lower_table_authoritative", "frozen_lower_target_defect"],
+          "properties": {
+            "formula": {"type": "string", "minLength": 1}, "background": {"type": "string", "minLength": 1}, "tangent": {"type": "string", "minLength": 1}, "action_normalization": {"type": "string", "minLength": 1},
+            "base_action_defect": {"$ref": "#/$defs/table"}, "frozen_full_variation": {"$ref": "#/$defs/table"}, "authoritative_order_two": {"$ref": "#/$defs/table"},
+            "orders_above_two_absent": {"const": true}, "why_order_two_is_authoritative": {"type": "string", "minLength": 1}, "frozen_lower_table_authoritative": {"const": false}, "frozen_lower_target_defect": {"$ref": "#/$defs/table"}
+          }
+        },
+        "parent_action_comparison": {
+          "type": "object", "additionalProperties": false,
+          "required": ["identity", "compressed_parent_endpoint_variation", "action_bach_variation_target", "normalization_defect", "direct_order_two_defect"],
+          "properties": {"identity": {"type": "string", "minLength": 1}, "compressed_parent_endpoint_variation": {"$ref": "#/$defs/table"}, "action_bach_variation_target": {"$ref": "#/$defs/table"}, "normalization_defect": {"$ref": "#/$defs/table"}, "direct_order_two_defect": {"$ref": "#/$defs/table"}}
+        },
+        "lower_order_noether_completion": {
+          "type": "object", "additionalProperties": false,
+          "required": ["unknown_class", "total_unknowns", "coefficient_map_shape", "coefficient_map_rank", "augmented_ranks", "free_parameter_counts", "action_correction", "action_correction_orders", "differentiated_noether_identity", "cyclicity", "unique_completion"],
+          "properties": {"unknown_class": {"type": "string", "minLength": 1}, "total_unknowns": {"const": 405}, "coefficient_map_shape": {"const": [60,45]}, "coefficient_map_rank": {"const": 45}, "augmented_ranks": {"const": [45,45,45,45,45,45,45,45,45]}, "free_parameter_counts": {"const": [0,0,0,0,0,0,0,0,0]}, "action_correction": {"$ref": "#/$defs/table"}, "action_correction_orders": {"const": [0]}, "differentiated_noether_identity": {"type": "string", "minLength": 1}, "cyclicity": {"type": "string", "minLength": 1}, "unique_completion": {"const": true}}
+        },
+        "identified_full_action_variation": {"$ref": "#/$defs/table"},
+        "disposition": {
+          "type": "object", "additionalProperties": false,
+          "required": ["action_bach_hessian_variation_exact", "method", "external_detour_theorem_used_as_substitute", "rank_310_first_variation_SDR", "transverse_causal_transfer"],
+          "properties": {"action_bach_hessian_variation_exact": {"const": true}, "method": {"type": "string", "minLength": 1}, "external_detour_theorem_used_as_substitute": {"const": false}, "rank_310_first_variation_SDR": {"const": false}, "transverse_causal_transfer": {"const": false}}
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 10, "additionalProperties": {"type": "boolean"}},
+    "flags": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "boolean"}},
+    "next_gate": {"const": "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "matrix": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}, "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "table": {"type": "object", "additionalProperties": false, "required": ["orders", "nonzero_coefficients", "entries", "sha256"], "properties": {"orders": {"type": "array", "items": {"type": "integer", "minimum": 0}}, "nonzero_coefficients": {"type": "integer", "minimum": 0}, "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/matrix"}}}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}
