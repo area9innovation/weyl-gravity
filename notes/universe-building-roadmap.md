@@ -175,13 +175,15 @@ operator.  The active gate is now
 the Yang--Mills adjoint-tractor parent has the twisted-Hodge backward witness
 and unique retarded/advanced Green homotopies on global Nariai.  What remains
 is not a formal reversal of the SDR, because that SDR retracts onto the metric
-complex.  The repaired-parent witness preflight now proves the correctly typed
+complex.  The repaired-parent witness preflight proves the correctly typed
 metric and ghost scalar-biwave principal identities and rejects the parent
-divergence as a gauge companion because its cubic symbol vanishes.  The active
-subgate is the coefficient-complete lower-order Nariai biwave factorization or
-equivalent Green system, followed by the all-row rank-310 identity and metric
-descent.  Do not promote the rank-310/metric Green flags before that integration
-closes.
+divergence as a gauge companion because its cubic symbol vanishes.  The
+coefficient-complete metric theorem now fixes the unique lower correction
+`T=T_pr+div/3` and factors both ghost and metric blocks into commuting normally
+hyperbolic operators, including their formal-dual rows.  Hence the four-row
+metric causal homotopy is exact.  The active gate is now the purely homological
+all-row rank-310 lift and metric descent.  Do not promote the rank-310 flag
+before that integration closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

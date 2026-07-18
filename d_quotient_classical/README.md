@@ -317,6 +317,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   open:
   [`certificates/NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1.json`](certificates/NARIAI_REPAIRED_PARENT_GREEN_WITNESS_PREFLIGHT_V1.json),
   [`reports/nariai-repaired-parent-green-witness-preflight.md`](reports/nariai-repaired-parent-green-witness-preflight.md)
+- Metric biwave Green theorem: the unique Einstein-background correction is
+  `T=T_pr+div/3`.  It gives the exact factorizations
+  `T K=(Box+1)(Box+1/3)I_4` and
+  `G_H^-1 B_action+K T/2=(Box I+A)(Box I+B)/2`, where the two
+  parallel curvature endomorphisms commute and are `G_H`-self-adjoint.
+  Every primal and formal-dual factor is normally hyperbolic, so their
+  same-sided Green compositions give the complete four-row metric causal
+  homotopy.  The repaired rank-310 lift remains the next gate:
+  [`certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json`](certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json),
+  [`reports/nariai-metric-biwave-green-homotopy.md`](reports/nariai-metric-biwave-green-homotopy.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

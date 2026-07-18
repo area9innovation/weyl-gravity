@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-metric-biwave-green-homotopy-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "companion", "unique_lower_order_solve", "ghost_factorization", "metric_factorization", "metric_witness", "causal_theorem", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-metric-biwave-green-homotopy-v1"},
+    "result_id": {"const": "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"},
+    "result_state": {"const": "FOUR_ROW_METRIC_CAUSAL_GREEN_HOMOTOPY_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false, "required": ["principal_preflight", "metric_bach_complex"],
+      "properties": {"principal_preflight": {"$ref": "#/$defs/dependency"}, "metric_bach_complex": {"$ref": "#/$defs/dependency"}}
+    },
+    "companion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "coefficient_table", "orders", "normalization_in_witness", "middle_fibre_map", "upper_block"],
+      "properties": {
+        "formula": {"type": "string", "minLength": 1}, "coefficient_table": {"$ref": "#/$defs/operatorTable"},
+        "orders": {"const": [1, 3]}, "normalization_in_witness": {"type": "string", "minLength": 1},
+        "middle_fibre_map": {"type": "string", "minLength": 1}, "upper_block": {"type": "string", "minLength": 1}
+      }
+    },
+    "unique_lower_order_solve": {
+      "type": "object", "additionalProperties": false, "required": ["unknowns", "solution", "coefficient_rank", "augmented_rank", "unique"],
+      "properties": {"unknowns": {"const": ["tau", "wave_coefficient", "constant_coefficient"]}, "solution": {"const": ["1/3", "4/3", "1/3"]}, "coefficient_rank": {"const": 3}, "augmented_rank": {"const": 3}, "unique": {"const": true}}
+    },
+    "ghost_factorization": {
+      "type": "object", "additionalProperties": false, "required": ["identity", "witness_block", "factor_shifts", "factor_tables"],
+      "properties": {"identity": {"type": "string", "minLength": 1}, "witness_block": {"type": "string", "minLength": 1}, "factor_shifts": {"const": ["1", "1/3"]}, "factor_tables": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/operatorTable"}}}
+    },
+    "metric_factorization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["identity", "factor_a_matrix", "factor_b_matrix", "factor_a_eigenvalues", "factor_b_eigenvalues", "curvature_channel_projectors", "curvature_channel_ranks", "factors_commute", "factors_are_G_H_formally_self_adjoint"],
+      "properties": {
+        "identity": {"type": "string", "minLength": 1}, "factor_a_matrix": {"$ref": "#/$defs/sparseMatrix"}, "factor_b_matrix": {"$ref": "#/$defs/sparseMatrix"},
+        "factor_a_eigenvalues": {"$ref": "#/$defs/integerMap"}, "factor_b_eigenvalues": {"$ref": "#/$defs/integerMap"},
+        "curvature_channel_projectors": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/sparseMatrix"}},
+        "curvature_channel_ranks": {"const": [4, 1, 4]}, "factors_commute": {"const": true}, "factors_are_G_H_formally_self_adjoint": {"const": true}
+      }
+    },
+    "metric_witness": {"$ref": "#/$defs/stringOrStringArrayMap"},
+    "causal_theorem": {"$ref": "#/$defs/stringMap"},
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lower_order_linear_rank", "lower_order_augmented_rank", "lower_order_solution_unique", "ghost_factorization_defect_entries", "metric_factorization_defect_entries", "metric_factor_order_commutator_entries", "factor_a_formal_adjoint_defect_entries", "factor_b_formal_adjoint_defect_entries", "ghost_factor_left_adjoint_defect_entries", "ghost_factor_right_adjoint_defect_entries", "projector_ranks", "projector_sum_defect_rank", "factor_a_pairing_defect_rank", "factor_b_pairing_defect_rank"],
+      "properties": {
+        "lower_order_linear_rank": {"const": 3}, "lower_order_augmented_rank": {"const": 3}, "lower_order_solution_unique": {"const": true},
+        "ghost_factorization_defect_entries": {"const": 0}, "metric_factorization_defect_entries": {"const": 0}, "metric_factor_order_commutator_entries": {"const": 0},
+        "factor_a_formal_adjoint_defect_entries": {"const": 0}, "factor_b_formal_adjoint_defect_entries": {"const": 0},
+        "ghost_factor_left_adjoint_defect_entries": {"const": 0}, "ghost_factor_right_adjoint_defect_entries": {"const": 0},
+        "projector_ranks": {"const": [4, 1, 4]}, "projector_sum_defect_rank": {"const": 0},
+        "factor_a_pairing_defect_rank": {"const": 0}, "factor_b_pairing_defect_rank": {"const": 0}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1", "NARIAI_LOWER_ORDER_FACTOR_COMPLETION", "NARIAI_METRIC_GREEN_HOMOTOPY", "NARIAI_METRIC_CAUSAL_SUPPORT", "NARIAI_METRIC_ADJOINT_REVERSAL", "NARIAI_REPAIRED_310_GREEN_HOMOTOPY", "GENERIC_PBW_DUAL_COEFFICIENT_REPLAY_USED_AS_AUTHORITY", "OPEN_BACKGROUND_CLASS", "HADAMARD_STATE"],
+      "properties": {
+        "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1": {"const": true}, "NARIAI_LOWER_ORDER_FACTOR_COMPLETION": {"const": true},
+        "NARIAI_METRIC_GREEN_HOMOTOPY": {"const": true}, "NARIAI_METRIC_CAUSAL_SUPPORT": {"const": true}, "NARIAI_METRIC_ADJOINT_REVERSAL": {"const": true},
+        "NARIAI_REPAIRED_310_GREEN_HOMOTOPY": {"const": false}, "GENERIC_PBW_DUAL_COEFFICIENT_REPLAY_USED_AS_AUTHORITY": {"const": false}, "OPEN_BACKGROUND_CLASS": {"const": false}, "HADAMARD_STATE": {"const": false}
+      }
+    },
+    "claim_boundary": {"type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"], "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}},
+    "next_gate": {"const": "C_G2_NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER"},
+    "source_manifest": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "sparseMatrix": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}, "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string", "minLength": 1}], "items": false, "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "operatorTable": {"type": "object", "additionalProperties": false, "required": ["entries", "sha256"], "properties": {"entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/sparseMatrix"}}}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "integerMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "integer", "minimum": 1}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "stringOrStringArrayMap": {"type": "object", "minProperties": 1, "additionalProperties": {"oneOf": [{"type": "string", "minLength": 1}, {"type": "array", "items": {"type": "string", "minLength": 1}}]}}
+  }
+}

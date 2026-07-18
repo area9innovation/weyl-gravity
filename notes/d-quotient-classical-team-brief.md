@@ -1339,6 +1339,35 @@ lower-order companion and an exact normally-hyperbolic factorization or
 equivalent Green system before promoting either the metric or rank-310 causal
 flag.
 
+`NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1` closes the lower-order metric gate.
+The only Einstein-background first-order correction is fixed uniquely:
+
+\[
+T=T_{\rm pr}+\frac13\operatorname{div}.
+\]
+
+It yields
+
+\[
+TK=(\Box+1)(\Box+\tfrac13)I_4,
+\]
+
+and, after the action fibre identification,
+
+\[
+G_H^{-1}B_{\rm action}+\frac12KT
+=\frac12(\Box I_9+A)(\Box I_9+B).
+\]
+
+The parallel endomorphisms (A,B) commute, are (G_H)-self-adjoint, and have
+curvature-channel multiplicities (4+1+4).  All primal factors and their formal
+duals are normally hyperbolic.  Their same-sided Green compositions give the
+complete four-row metric homotopy with causal support and complementary-degree
+adjoint reversal.  The known generic PBW adjoint backend is not used as upper
+row coefficient authority; the invariant action-pairing adjoint theorem is.
+The active gate is now purely homological:
+`C_G2_NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER`.
+
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
 nonzero stability radius, or an exact no-go witness.
