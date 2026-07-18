@@ -1,0 +1,133 @@
+{
+  "schema": "einstein-maxwell-weyl-exceptional-ell1-two-polarization-resonance-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.schema.json",
+  "schema_sha256": "561f65244c8a9deb3d37c342da715d5fa33d83c34f2ed9ac7a3ebf95a56e8bdc",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_TWO_POLARIZATION_RESONANCE",
+  "result_state": "COMPLETE_AXISYMMETRIC_EXCEPTIONAL_ELL1_TWO_POLARIZATION_SUM_RESONANCE_OBSTRUCTED",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "arbitrary complex axial and polar exceptional ell=1,m=0,k=0 positive-frequency amplitudes, optionally balanced by a collinear standard twist velocity, on the fixed magnetic bundle",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.py",
+    "generator_sha256": "67c4a9e76ddadd95b03ec5e8b8bf182ce49b50f87065c72a2d546083b0915bdd",
+    "inputs": {
+      "axial_resonance": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
+        "sha256": "e2c12e76f0ead8f1d96f5ee953ceca78e85e3d5a74cd37aad4dfe46a0aa047a8"
+      },
+      "ell1_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+      },
+      "axial_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_operator.json",
+        "sha256": "483f3e3f7ff1852c3c3f72a09f2169fd14e5f848dd2f041c68eb8c5b947a2dc6"
+      }
+    }
+  },
+  "common_zero_balance": "a collinear twist velocity cancels mu_H when B^2=(8/3)*|a_x|^2+(1/2)*|a_p|^2; it has no 2omega_e temporal support",
+  "resonance_theorem": {
+    "frequency_squared": "4/3",
+    "output_frequency_squared": "16/3",
+    "polar_self_source": [
+      "2",
+      "0",
+      "4/9",
+      "7/9",
+      "4*sqrt(3)*I/9",
+      "0",
+      "-1/3",
+      "-1/3"
+    ],
+    "polar_self_adjoint_pairings": [
+      "1/8",
+      "-1/4"
+    ],
+    "axial_self_adjoint_pairings_from_parent": [
+      "-2/3",
+      "4/3"
+    ],
+    "formal_self_pairing_cancellation_ratio": "|a_p|^2=(16/3)*|a_x|^2",
+    "axial_polar_cross_source": [
+      "2/3",
+      "0",
+      "0",
+      "4",
+      "0",
+      "0"
+    ],
+    "axial_cross_adjoint_witness": [
+      "-4*sqrt(3)/3",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "axial_cross_adjoint_pairing": "-8*sqrt(3)/9",
+    "case_split": {
+      "a_x_times_a_p_nonzero": "the axial cross-channel pairing is nonzero",
+      "a_p_zero_a_x_nonzero": "the parent axial self-channel pairings are nonzero",
+      "a_x_zero_a_p_nonzero": "the polar self-channel pairings are nonzero",
+      "only_compatible_amplitudes": "a_x=a_p=0"
+    }
+  },
+  "classification": {
+    "polar_exceptional_self_source_directly_computed": true,
+    "axial_polar_cross_source_directly_computed": true,
+    "self_pairing_vectors_can_formally_cancel": true,
+    "cross_channel_blocks_every_nonzero_two_polarization_cancellation": true,
+    "complete_axisymmetric_exceptional_ell1_two_polarization_cone_second_order_obstructed": true,
+    "all_m_exceptional_cone_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The polar self-source is exactly capable of canceling the two axial self-source pairings, but doing so requires both exceptional polarizations to be nonzero. Their cross-product then excites an axial L=2 extra-shell cokernel with a nonzero pairing. The boundary cases are already obstructed by the individual self-sources, so only the zero exceptional tangent is compatible on this axisymmetric block.",
+  "next_gate": "extend the resonant obstruction tensor over all m and determine whether interference among distinct m can cancel every L=2 axial and polar adjoint component",
+  "claim_boundary": "This closes the complete m=0 two-polarization exceptional cone at second order, including twist-balanced common-zero fixtures. It does not classify all m, other same-frequency sectors, all-orders solutions, residual descent, causal scattering, particles, or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 49.5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "axial_resonance",
+        "ell1_current",
+        "polar_operator",
+        "axial_operator"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the all-m exceptional cone remains open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance"
+  ]
+}

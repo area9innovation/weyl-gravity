@@ -1892,6 +1892,18 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    cancellation from dynamical resonant solvability and makes cancellation by
    polar exceptional or Einstein-minus input the next cone-classification
    question.
+
+   Polar exceptional input has now been tested on the complete axisymmetric
+   two-polarization cone.  Its self-source pairings are `(1/8,-1/4)`, exactly
+   `-3/16` times the axial pairings, so the even-parity resonances would cancel
+   at `|a_p|^2=(16/3)|a_x|^2`.  The required interior combination, however,
+   has a nonzero axial--polar cross-source in the axial `L=2` extra shell; an
+   exact adjoint row pairs with it as `-8sqrt(3)/9`.  If either amplitude is
+   zero, the corresponding self-source obstruction returns.  Thus every
+   nonzero `m=0` exceptional two-polarization tangent is second-order
+   obstructed, including the twist-balanced common-zero family.  The next
+   genuine question is whether distinct-`m` interference can cancel the full
+   `L=2` adjoint tensor, not another axisymmetric amplitude ratio.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately
