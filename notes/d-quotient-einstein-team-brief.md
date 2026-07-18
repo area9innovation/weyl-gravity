@@ -1945,6 +1945,18 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    resulting `L=2,Omega=2omega_e` source with the exceptional adjoint
    cokernel.  Difference-frequency and opposite-momentum channels remain
    separate after that.
+
+   Two columns of that finite source matrix are now removed without a heavy
+   tensor calculation.  `W_x` is a flat-connection spectator, so its cross
+   source vanishes identically.  The circumference coordinate `c` is tangent
+   to the exact radius family
+   `g_R=-dt^2+R^2 dx^2+dOmega_2^2`.  Every `k=0` extra mode transports along
+   this family; differentiating `L_R u_R=0` supplies an explicit mixed
+   correction and proves that the `c` cross source lies in the linear image.
+   Thus neither `c` nor `W_x` can cancel the exceptional adjoint defect, for
+   either parity or any `m`.  The live positive-sum matrix is reduced to the
+   homogeneous `a,b,d,Q_e` directions and the twist position/velocity vectors
+   crossed with the axial/polar `ell=2` extra block.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

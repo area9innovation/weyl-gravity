@@ -1,0 +1,106 @@
+{
+  "schema": "einstein-maxwell-weyl-global-spectator-ell2-extra-resonance-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.schema.json",
+  "schema_sha256": "13b7d573d81fe9b9e3e7452228c1710953e740c5840ecb551bfb7231288e5175",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_SPECTATOR_ELL2_EXTRA_RESONANCE",
+  "result_state": "CIRCUMFERENCE_AND_WILSON_TIMES_ELL2_EXTRA_RESONANT_SOURCES_REMOVABLE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "constant circumference c and flat Wilson W_x global directions crossed with every axial/polar ell=2,k=0 extra-primary Jacobi field, all m, on the fixed magnetic bundle",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.py",
+    "generator_sha256": "a46be576c7ce239fa813c9e48441e87b1d846c6a4f9901432c88fd74cdde25e5",
+    "inputs": {
+      "resonance_census": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_resonance_census.json",
+        "sha256": "b125eee83e8071f30d2b08e36d74e80a75c18164919ec0a3beb6a97196a65e39"
+      },
+      "homogeneous_quadric": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_quadric_second_order.json",
+        "sha256": "f496750e8af73098b0e9427e2a3b5f7d2bf3ac4c42a1455e3b7807cfa8e73fb6"
+      },
+      "axial_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "polar_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      }
+    }
+  },
+  "transport_theorem": {
+    "exact_background_family": "g_R=-dt^2+R^2 dx^2+dOmega_2^2, F=vol_(S2), with R^2=1+eta*c",
+    "radius_series": "R=1+(eta*c)/2-(eta^2*c^2)/8+O(eta^3)",
+    "radius_first_derivative": "c/2",
+    "k0_mode_transport": {
+      "rule": "pull back the R=1 k=0 Jacobi field under x'=R*x; each covariant x index and each A_x coefficient contributes one factor R",
+      "periodicity": "k=0 representatives remain periodic on the fixed coordinate circle",
+      "equation": "L_R u_R=0 for every R",
+      "mixed_derivative_identity": "L_1*(partial_R u_R)|_1 + (partial_R L_R)|_1*u_1=0",
+      "explicit_mixed_correction": "(c/2) times the derivative with respect to log R of the transported extra representative",
+      "conclusion": "the c-times-extra bilinear source lies in im L and every adjoint-cokernel pairing vanishes"
+    },
+    "Wilson_family": {
+      "connection": "A_W=A_bar+W_x dx",
+      "curvature": "F_W=F_bar for every W_x",
+      "extra_mode_transport": "unchanged",
+      "conclusion": "the W_x-times-extra bilinear Euler source vanishes identically"
+    }
+  },
+  "classification": {
+    "all_m_and_both_parities_by_naturality": true,
+    "circumference_times_ell2_extra_source_in_linear_image": true,
+    "Wilson_times_ell2_extra_source_identically_zero": true,
+    "circumference_and_Wilson_cannot_cancel_exceptional_adjoint_defect": true,
+    "remaining_homogeneous_a_b_d_Qe_cross_sources_classified": false,
+    "remaining_twist_A_B_cross_sources_classified": false,
+    "difference_frequency_resonances_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The unique positive-sum resonance gate has two exact spectator directions. Flat Wilson holonomy never enters the Euler operator, while the circumference direction is tangent to an exact circle-radius family and transports every k=0 extra mode. Their bilinear sources therefore have zero exceptional adjoint projection and cannot cancel the exceptional self-defect. Only the dynamical homogeneous directions and twists remain in this gate.",
+  "next_gate": "compute the a,b,d,Q_e and twist-position/velocity bilinear sources against both axial and polar ell=2 extra representatives",
+  "claim_boundary": "This is a naturality-based second-order removability theorem for c and W_x only. It does not classify the remaining global directions, frequency differences, opposite momenta, all-orders integration, final residual descent, or causal/quantum physics.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.22,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_spectator_ell2_extra_resonance --verify bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_spectator_ell2_extra_resonance"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "resonance_census",
+        "homogeneous_quadric",
+        "axial_generic",
+        "polar_generic"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the remaining global-times-extra source matrix is open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_spectator_ell2_extra_resonance --verify bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_spectator_ell2_extra_resonance"
+  ]
+}
