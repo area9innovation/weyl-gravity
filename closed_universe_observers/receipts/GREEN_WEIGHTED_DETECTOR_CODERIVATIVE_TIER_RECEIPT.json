@@ -1,0 +1,50 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "GREEN_WEIGHTED_DETECTOR_CODERIVATIVE_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The full detector coderivative is convolved with the exact advanced finite-mode Maxwell kernels through two_j=4. Boundary-flat integration by parts gives the cosine-kernel spatial block, the spatial coderivative gives the sine-kernel temporal block, and explicit entire-series remainders are uniform over the emitter-switch intervals. The infinite spatial-harmonic tail, massive-two-form image, positive-energy Cauchy coefficients and absolute-g3 recoil remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_green_weighted_detector_coderivative.py closed_universe_observers/verify_berger_green_weighted_detector_coderivative.py closed_universe_observers/tests/test_berger_green_weighted_detector_coderivative.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py closed_universe_observers/atlas/verify_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- residual_atlas/schema/residual-atlas-fragment-v1.schema.json closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "observer artifact, shared optional observer schema column, atlas and programme documents"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_green_weighted_detector_coderivative --emit", "elapsed_seconds": "39.72", "status": "PASS", "scope": "deterministic finite-mode coefficient and remainder generation"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_green_weighted_detector_coderivative", "elapsed_seconds": "about 40", "status": "PASS", "scope": "independent freshness, evidence, mode, support and remainder checks"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_green_weighted_detector_coderivative.py", "elapsed_seconds": "33.03", "status": "PASS", "scope": "four scoped tests including boundary-flatness mutation"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-green-weighted-detector-coderivative-v1.schema.json -d closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json", "elapsed_seconds": "under 3", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "elapsed_seconds": "under 1", "status": "PASS", "scope": "shared residual-atlas schema and evidence validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "central observer evidence ledger"}
+  ],
+  "tier_2": [
+    {"command": "python3 -m pytest -q bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py; python3 -m pytest -q d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py; python3 -m pytest -q quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py; python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py; python3 -m pytest -q certificate_graph/test_build_residual_atlas.py", "elapsed_seconds": "under 4 total", "status": "PASS", "scope": "all shared-schema fragment producers and atlas visualization consumer; run separately to avoid their pre-existing top-level atlas package-name collision"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests", "elapsed_seconds": "328.83", "status": "PASS", "scope": "full observer regression after central ledger change", "summary": "163 passed"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "python3 -m pytest -q bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py d_quotient_classical/atlas/tests/test_classical_atlas_fragment.py quantum-weyl/atlas/tests/test_quantum_atlas_fragment.py closed_universe_observers/tests/test_observer_atlas_fragment.py certificate_graph/test_build_residual_atlas.py", "status": "FAIL", "reason": "collection-time top-level package collision: quantum test imported atlas.tests from an earlier fragment package; every package passed when invoked separately"}
+  ],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, all-orders Green theorem, nonlinear cone promotion, recoil coefficient, or quantum claim."}],
+  "artifact_hashes": [
+    {"path": "residual_atlas/schema/residual-atlas-fragment-v1.schema.json", "sha256": "c5aa922a1371187e60ff1e97ee092b45d35134d186e0c729f6a1f251a64bbf12"},
+    {"path": "closed_universe_observers/generate_berger_green_weighted_detector_coderivative.py", "sha256": "9600bc8f6ed90f7a1d2cf88cba1664d24cc70d6ec74694a13ca61ebc7f3dd120"},
+    {"path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json", "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"},
+    {"path": "closed_universe_observers/schema/berger-green-weighted-detector-coderivative-v1.schema.json", "sha256": "afe7ee6741a6e9570c9ad61989568b26344a05be0e24306f0dce35219f75a202"},
+    {"path": "closed_universe_observers/verify_berger_green_weighted_detector_coderivative.py", "sha256": "47581ff4599a3aab64f0ae281885cf5763d1c237b0d5644f70f26cf1bc4f4cf5"},
+    {"path": "closed_universe_observers/tests/test_berger_green_weighted_detector_coderivative.py", "sha256": "b606e2788e182815360f7d37478f791c3d79f1b650652d1c797026578743bdc9"},
+    {"path": "closed_universe_observers/reports/berger-green-weighted-detector-coderivative.md", "sha256": "86f482cc97a57a5923d0ab84f3894bd2fd1b2cbe91a15dffc5f406ba84b8c5a6"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "bddd5b5f8753e3c926f3c5f036d2ee6b2590a1da9c7ccf1731dc04708f18f9d2"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "326023dee68bf8126258a251f53167b4f5e7ec94c91986db964de9e160ef57da"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "a2119bf1793e89a058789961f2291a010101141734cf1ba37ccf1a0864b08b0e"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "c75f7be6d95399f2e30bd785ccaeeac17189035b4c35aa977d4db9927be9d5de"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "de0ec6dcb788a0ff732bfaba60395c2246df1f3014bc779f62031dd46f2b1b8a"}
+  ],
+  "claim_flags": {
+    "TEMPORAL_CODERIVATIVE_GREEN_WEIGHTED": true,
+    "FINITE_MODE_ADVANCED_MAXWELL_IMAGE_TWO_J0_TO_4_EVALUATED": true,
+    "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": false,
+    "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

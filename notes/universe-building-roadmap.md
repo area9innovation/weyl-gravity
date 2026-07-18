@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   decide whether the landed retained ell3 is invariant or removable
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     accept a scope-correct antifield import, then compute beyond AFN0
-Observer:    weight temporal sources by Green kernels, bound tails, evaluate recoil, and restrict records to Z2^C
+Observer:    bound spatial tails, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  resolve generator normalization and the first physical boundary ensemble
 ```
 
@@ -256,6 +256,13 @@ restriction `O_detector|Z2^C` is `OPEN` for bounded or quasiperiodic,
 smooth-secular, and causal/retarded correction classes.  The compact-product
 exceptional-resonance to Berger-apparatus crosswalk is
 `NO_CERTIFIED_MAP`; no operational signature is inferred across backgrounds.
+The fragment now validates against the shared residual-atlas schema through
+its optional fail-closed `observer_data` column.  The detector profile has
+also crossed the temporal-source gate: boundary-flat integration by parts
+gives the cosine-kernel spatial block, the spatial coderivative gives the
+sine-kernel temporal block, and both finite-mode advanced Maxwell images are
+certified through `two_j=4` with uniform time-kernel remainders.  The infinite
+spatial tail and subsequent massive-two-form image remain open.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
@@ -384,10 +391,12 @@ survive the first backreacted, normalized apparatus interaction?
    `g^3` (relative `g^2`).  Exact normalized compact switches are now
    serialized.  Detector-selected positive-energy Cauchy profiles are fixed at
    operator level; validated scalar and clock-zero-moment one-form/spatial-
-   coderivative coefficients are now exported through `two_j=4`.  The next
-   gate is the Green-kernel-weighted temporal coderivative, an evaluated
-   infinite-mode tail, the resulting massive Green images, and the recoil
-   coefficient.  The independent emitter stress
+   coderivative coefficients are now exported through `two_j=4`.  Boundary-
+   flat integration by parts now supplies the Green-weighted temporal block,
+   and the finite-mode advanced Maxwell image is interval-enclosed through
+   `two_j=4` uniformly over the emitter switches.  The next gate is an
+   evaluated infinite-mode tail, the resulting massive Green images, and the
+   recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a
    solved backreacted branch remain open.  A common source
@@ -801,7 +810,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | export detector-selected emitter Cauchy profiles and Green images, evaluate the recoil coefficient, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | certify the infinite spatial tail, compose the massive Green images, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -1003,6 +1012,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS` (fired) | evaluate the advanced Maxwell and massive-two-form Green images, take the positive-energy Cauchy dual, and retain the local chart radius as a declared parameter unless separately quantified |
 | `BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES` (fired) | expand the fixed profiles/covectors in Berger Peter--Weyl modes with validated quadrature and tail bounds, then evaluate the absolute-`g^3` recoil coefficient |
 | `BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE` (fired) | interval-enclose the compact bump coefficients, certify superalgebraic spectral tails, apply the exact mode Green kernels, and evaluate recoil |
+| `BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE` (fired) | certify the infinite spatial-harmonic tail, then compose `h_a dA_a^adv` with the massive-two-form kernel and evaluate the positive-energy Cauchy data |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

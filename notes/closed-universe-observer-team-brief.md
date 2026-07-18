@@ -337,6 +337,17 @@ clock/rod and redshift dependence, recoil order, gauge survival, and exact
 profile/Green/boundary dependencies for every observer carrier currently
 mapped by a certificate.  Lifecycle values are restricted to `CERTIFIED`,
 `OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE`, and `NO_CERTIFIED_MAP`.
+It now validates against the shared residual-atlas schema, whose optional
+`observer_data` block carries the fail-closed operational claims.
+
+The detector-profile gate has advanced past the clock-zero-moment source.
+`BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE` uses boundary-flat integration
+by parts to retain the temporal coderivative as a cosine-kernel convolution,
+and propagates the spatial coderivative with the sine kernel.  Both advanced
+Maxwell blocks are certified through `two_j=4`, uniformly over the matching
+emitter-switch intervals, with explicit entire-series remainders.  The
+infinite spatial-harmonic tail, massive-two-form image, and recoil coefficient
+remain open.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to

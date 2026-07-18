@@ -1,5 +1,5 @@
 {
-  "descriptions": [
+  "description_axes": [
     "causal",
     "symplectic",
     "nonlinear",
@@ -8,6 +8,7 @@
   ],
   "entries": [
     {
+      "claim_boundary": "compact S3, exact C-G4 retarded mode and detector moments S0,C0,S1,C1; no spatial boundary Maxwell stress begins at probe-amplitude order epsilon^2; no C-G4 second-order tangent-cone survival theorem OPEN",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -33,15 +34,92 @@
         }
       ],
       "id": "observer.berger.cg4.circular_maxwell_plane",
-      "operational_observable": {
-        "clock_and_rod_dependence": "two disjoint clock-labelled normalized detector windows with detector-indexed rods",
-        "detector_response": "phase-plane map N to persistent memories (m0,m1)",
-        "emitter_preparation": "source-free circular Maxwell cosine/sine phase pair; not identified with the massive-emitter Cauchy preparations",
-        "profile_green_boundary_dependencies": "compact S3, exact C-G4 retarded mode and detector moments S0,C0,S1,C1; no spatial boundary",
-        "recoil_backreaction_order": "Maxwell stress begins at probe-amplitude order epsilon^2; no C-G4 second-order tangent-cone survival theorem",
-        "relational_redshift_contribution": "C-G4 energy/redshift is a quadratic polynomial in the two records",
-        "response_rank": 2,
-        "survives_gauge_reduction": "CERTIFIED for Maxwell gauge and simultaneous affine-K family covariance; fixed-background linear-K descent OPEN"
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=C-G4 two-phase source-free Maxwell plane mapped to two persistent memory records; omega=+/- 1/c = +/-2 sqrt(10)/3; phase-plane map N to persistent memories (m0,m1)",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "CERTIFIED for Maxwell gauge and simultaneous affine-K family covariance; fixed-background linear-K descent OPEN",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "Maxwell stress begins at probe-amplitude order epsilon^2; no C-G4 second-order tangent-cone survival theorem; detector restriction=OPEN",
+          "status": "OPEN"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "two disjoint clock-labelled normalized detector windows with detector-indexed rods",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "phase-plane map N to persistent memories (m0,m1)",
+          "status": "CERTIFIED"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "emitter_preparation": {
+          "statement": "source-free circular Maxwell cosine/sine phase pair; not identified with the massive-emitter Cauchy preparations",
+          "status": "CERTIFIED"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "observer_source_channel": {
+          "statement": "Maxwell stress enters at second order, but its projection to Z2^C has not been computed",
+          "status": "OPEN"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "compact S3, exact C-G4 retarded mode and detector moments S0,C0,S1,C1; no spatial boundary",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "Maxwell stress begins at probe-amplitude order epsilon^2; no C-G4 second-order tangent-cone survival theorem",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "C-G4 energy/redshift is a quadratic polynomial in the two records",
+          "status": "CERTIFIED"
+        },
+        "response_rank": {
+          "statement": "2",
+          "status": "CERTIFIED"
+        },
+        "survives_gauge_reduction": {
+          "statement": "CERTIFIED for Maxwell gauge and simultaneous affine-K family covariance; fixed-background linear-K descent OPEN",
+          "status": "CERTIFIED"
+        }
       },
       "scope": {
         "background": "compact positive Berger clock at fixed coupling",
@@ -55,20 +133,10 @@
         "omega": "+/- 1/c = +/-2 sqrt(10)/3",
         "parity": "circular Maxwell helicity in span(e1,e2)",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
-      },
-      "tangent_cone": {
-        "balanced_detectable_combinations": "OPEN",
-        "correction_classes": {
-          "bounded_or_quasiperiodic": "OPEN",
-          "causal_or_retarded": "OPEN",
-          "smooth_secular": "OPEN"
-        },
-        "linearly_detectable_but_nonlinearly_obstructed": "OPEN",
-        "observer_source_channel": "Maxwell stress enters at second order, but its projection to Z2^C has not been computed",
-        "restriction_status": "OPEN"
       }
     },
     {
+      "claim_boundary": "operator-defined compact Cauchy profiles; full coderivative and finite-mode advanced Maxwell image certified through two_j=4 with uniform temporal-kernel remainder; infinite spatial tail and massive image OPEN absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN OPEN",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "OPEN",
@@ -93,6 +161,11 @@
           "sha256": "fd66add7974cff5628195123c2420245b833b5e8089aab97529f4c4c0500afb5"
         },
         {
+          "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+          "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+          "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+        },
+        {
           "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
           "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
           "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
@@ -104,15 +177,92 @@
         }
       ],
       "id": "observer.berger.massive_emitter.preparation_pair",
-      "operational_observable": {
-        "clock_and_rod_dependence": "exact switches h0,h1 and detector profiles f_a rho_a J_a; u1 is later than D0 so M_01=0",
-        "detector_response": "M_ab=Q_a[d G_A,ret g_b delta(h_b K_b^(0))]",
-        "emitter_preparation": "u_a=(-p_a,L_a q_a), detector-selected positive-energy Cauchy dual",
-        "profile_green_boundary_dependencies": "operator-defined compact Cauchy profiles; form/spatial-coderivative coefficients certified through two_j=4; temporal Green weighting, high-mode tail and full advanced images OPEN",
-        "recoil_backreaction_order": "absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN",
-        "relational_redshift_contribution": "not separately evaluated for the massive-emitter preparation pair",
-        "response_rank": 2,
-        "survives_gauge_reduction": "leading record is Maxwell-gauge compatible and cyclic; fixed-background K quotient and full Dirac reduction OPEN"
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=two compact positive-energy massive-two-form Cauchy preparations u0,u1 and the leading detector record map; omega=massive mode spectrum; unevaluated full profile; M_ab=Q_a[d G_A,ret g_b delta(h_b K_b^(0))]",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "leading record is Maxwell-gauge compatible and cyclic; fixed-background K quotient and full Dirac reduction OPEN",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN; detector restriction=OPEN",
+          "status": "OPEN"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "exact switches h0,h1 and detector profiles f_a rho_a J_a; u1 is later than D0 so M_01=0",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "M_ab=Q_a[d G_A,ret g_b delta(h_b K_b^(0))]",
+          "status": "CERTIFIED"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "emitter_preparation": {
+          "statement": "u_a=(-p_a,L_a q_a), detector-selected positive-energy Cauchy dual",
+          "status": "CERTIFIED"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "observer_source_channel": {
+          "statement": "emitter stress and reciprocal clock source are certified q2 channels; whether they supply or remove a tangent-cone obstruction is OPEN",
+          "status": "OPEN"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "operator-defined compact Cauchy profiles; full coderivative and finite-mode advanced Maxwell image certified through two_j=4 with uniform temporal-kernel remainder; infinite spatial tail and massive image OPEN",
+          "status": "OPEN"
+        },
+        "recoil_backreaction_order": {
+          "statement": "absolute g^2 response vanishes; first feedback is absolute g^3 (relative g^2); coefficient OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "not separately evaluated for the massive-emitter preparation pair",
+          "status": "OPEN"
+        },
+        "response_rank": {
+          "statement": "2",
+          "status": "CERTIFIED"
+        },
+        "survives_gauge_reduction": {
+          "statement": "leading record is Maxwell-gauge compatible and cyclic; fixed-background K quotient and full Dirac reduction OPEN",
+          "status": "OPEN"
+        }
       },
       "scope": {
         "background": "compact positive Berger clock at fixed coupling",
@@ -126,22 +276,12 @@
         "omega": "massive mode spectrum; unevaluated full profile",
         "parity": "real two-form polarization; no spatial parity decomposition certified",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
-      },
-      "tangent_cone": {
-        "balanced_detectable_combinations": "OPEN",
-        "correction_classes": {
-          "bounded_or_quasiperiodic": "OPEN",
-          "causal_or_retarded": "OPEN",
-          "smooth_secular": "OPEN"
-        },
-        "linearly_detectable_but_nonlinearly_obstructed": "OPEN",
-        "observer_source_channel": "emitter stress and reciprocal clock source are certified q2 channels; whether they supply or remove a tangent-cone obstruction is OPEN",
-        "restriction_status": "OPEN"
       }
     },
     {
+      "claim_boundary": "temporal derivative is cosine-kernel weighted by boundary-flat integration by parts; sine spatial-coderivative block and entire-series remainder certified through two_j=4; infinite spatial tail OPEN input to absolute-g^3 coefficient; not an evaluated recoil NOT_APPLICABLE",
       "descriptions": {
-        "causal": "OPEN",
+        "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
         "observational": "OPEN",
         "quantum": "OPEN",
@@ -152,45 +292,117 @@
           "path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json",
           "result_id": "BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS",
           "sha256": "fd66add7974cff5628195123c2420245b833b5e8089aab97529f4c4c0500afb5"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+          "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+          "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
         }
       ],
       "id": "observer.berger.detector_form_modes.two_j_0_to_4",
-      "operational_observable": {
-        "clock_and_rod_dependence": "exact dR0_1 and dR1_2 coframe gradients with validated odd secant moments",
-        "detector_response": "no per-mode detector response until temporal coderivative and Green kernel are composed",
-        "emitter_preparation": "input coefficients for detector-selected preparation construction",
-        "profile_green_boundary_dependencies": "spatial block CERTIFIED through two_j=4; temporal Green weighting and infinite tail OPEN",
-        "recoil_backreaction_order": "input to absolute-g^3 coefficient; not an evaluated recoil",
-        "relational_redshift_contribution": "NOT_APPLICABLE at this coefficient-only gate",
-        "response_rank": "OPEN",
-        "survives_gauge_reduction": "OPEN until the full four-dimensional coexact source is assembled"
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=finite-mode advanced Maxwell image of the full detector coderivative; omega=advanced sine/cosine kernel, series order five with uniform remainder; finite-mode advanced Maxwell covector image only; no per-mode detector response rank yet",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "finite source is the full four-dimensional coderivative, but full spatial-sum gauge reduction remains OPEN",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "input to absolute-g^3 coefficient; not an evaluated recoil; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "exact dR0_1/dR1_2 profiles and flat clock bumps; uniform on the matching h0/h1 switch intervals",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "finite-mode advanced Maxwell covector image only; no per-mode detector response rank yet",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "input field A_a^adv for the detector-selected massive preparation",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "coefficient input only",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "temporal derivative is cosine-kernel weighted by boundary-flat integration by parts; sine spatial-coderivative block and entire-series remainder certified through two_j=4; infinite spatial tail OPEN",
+          "status": "OPEN"
+        },
+        "recoil_backreaction_order": {
+          "statement": "input to absolute-g^3 coefficient; not an evaluated recoil",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE at this Green-image input gate",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "finite source is the full four-dimensional coderivative, but full spatial-sum gauge reduction remains OPEN",
+          "status": "OPEN"
+        }
       },
       "scope": {
         "background": "compact positive Berger clock at fixed coupling",
         "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
-        "carrier": "clock-zero-moment detector one-form Fourier coefficients and spatial coderivatives",
+        "carrier": "finite-mode advanced Maxwell image of the full detector coderivative",
         "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
         "degree": 1,
         "ell": "SU(2) two_j=0,1,2,3,4",
         "k": "all representation columns",
         "m": "all representation rows",
-        "omega": "zero temporal moment only",
-        "parity": "polarization-dependent form coefficients",
+        "omega": "advanced sine/cosine kernel, series order five with uniform remainder",
+        "parity": "polarization-dependent Maxwell one-form image",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
-      },
-      "tangent_cone": {
-        "balanced_detectable_combinations": "NOT_APPLICABLE",
-        "correction_classes": {
-          "bounded_or_quasiperiodic": "NOT_APPLICABLE",
-          "causal_or_retarded": "NOT_APPLICABLE",
-          "smooth_secular": "NOT_APPLICABLE"
-        },
-        "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE",
-        "observer_source_channel": "coefficient input only",
-        "restriction_status": "NOT_APPLICABLE"
       }
     },
     {
+      "claim_boundary": "depends on correction class C and full causal source images q2 stress/clock channels and g3 detector feedback known, cone projection OPEN OPEN",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -226,15 +438,92 @@
         }
       ],
       "id": "observer.berger.second_order_cone_restriction",
-      "operational_observable": {
-        "clock_and_rod_dependence": "Berger apparatus only",
-        "detector_response": "O_detector|Z2^C not yet computed",
-        "emitter_preparation": "only the unrestricted leading massive-emitter pair is certified",
-        "profile_green_boundary_dependencies": "depends on correction class C and full causal source images",
-        "recoil_backreaction_order": "q2 stress/clock channels and g3 detector feedback known, cone projection OPEN",
-        "relational_redshift_contribution": "C-G4 redshift is detectable linearly; survival on Z2^C OPEN",
-        "response_rank": "OPEN",
-        "survives_gauge_reduction": "OPEN on the nonlinear cone"
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=operational detector map restricted to Z2^C on the Berger 108-row carrier; omega=finite but correction-class dependent; O_detector|Z2^C not yet computed",
+          "status": "OPEN"
+        },
+        "lee_wald": {
+          "statement": "OPEN on the nonlinear cone",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: OPEN",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "q2 stress/clock channels and g3 detector feedback known, cone projection OPEN; detector restriction=OPEN",
+          "status": "OPEN"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "Berger apparatus only",
+          "status": "OPEN"
+        },
+        "detector_response": {
+          "statement": "O_detector|Z2^C not yet computed",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "emitter_preparation": {
+          "statement": "only the unrestricted leading massive-emitter pair is certified",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "observer_source_channel": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "depends on correction class C and full causal source images",
+          "status": "OPEN"
+        },
+        "recoil_backreaction_order": {
+          "statement": "q2 stress/clock channels and g3 detector feedback known, cone projection OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "C-G4 redshift is detectable linearly; survival on Z2^C OPEN",
+          "status": "OPEN"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "OPEN on the nonlinear cone",
+          "status": "OPEN"
+        }
       },
       "scope": {
         "background": "compact positive Berger clock at fixed coupling",
@@ -248,21 +537,10 @@
         "omega": "finite but correction-class dependent",
         "parity": "all finite-harmonic sectors admitted by a future cone certificate",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
-      },
-      "tangent_cone": {
-        "balanced_detectable_combinations": "OPEN",
-        "correction_classes": {
-          "bounded_or_quasiperiodic": "OPEN",
-          "causal_or_retarded": "OPEN",
-          "smooth_secular": "OPEN"
-        },
-        "formula": "Z2^C={u: mu_X(u)=0 and R_j^C(u)=0}",
-        "linearly_detectable_but_nonlinearly_obstructed": "OPEN",
-        "observer_source_channel": "OPEN",
-        "restriction_status": "OPEN"
       }
     },
     {
+      "claim_boundary": "NO_CERTIFIED_MAP NO_CERTIFIED_MAP NO_CERTIFIED_MAP",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "NO_CERTIFIED_MAP",
@@ -272,15 +550,92 @@
       },
       "evidence": [],
       "id": "observer.crosswalk.compact_product_exceptional_resonance_to_berger",
-      "operational_observable": {
-        "clock_and_rod_dependence": "NO_CERTIFIED_MAP",
-        "detector_response": "NO_CERTIFIED_MAP",
-        "emitter_preparation": "NO_CERTIFIED_MAP",
-        "profile_green_boundary_dependencies": "NO_CERTIFIED_MAP",
-        "recoil_backreaction_order": "NO_CERTIFIED_MAP",
-        "relational_redshift_contribution": "NO_CERTIFIED_MAP",
-        "response_rank": "NO_CERTIFIED_MAP",
-        "survives_gauge_reduction": "NO_CERTIFIED_MAP"
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=background/carrier mode identification map; omega=n/a; NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NO_CERTIFIED_MAP",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NO_CERTIFIED_MAP",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NO_CERTIFIED_MAP",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "NO_CERTIFIED_MAP; detector restriction=NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "detector_response": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "emitter_preparation": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "observer_source_channel": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "recoil_backreaction_order": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "response_rank": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        }
       },
       "scope": {
         "background": "crosswalk: compact Einstein-Maxwell product exceptional resonance <-> positive Berger observer apparatus",
@@ -294,23 +649,13 @@
         "omega": "n/a",
         "parity": "n/a",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
-      },
-      "tangent_cone": {
-        "balanced_detectable_combinations": "NO_CERTIFIED_MAP",
-        "correction_classes": {
-          "bounded_or_quasiperiodic": "NO_CERTIFIED_MAP",
-          "causal_or_retarded": "NO_CERTIFIED_MAP",
-          "smooth_secular": "NO_CERTIFIED_MAP"
-        },
-        "exceptional_resonant_operational_signature": "NO_CERTIFIED_MAP",
-        "linearly_detectable_but_nonlinearly_obstructed": "NO_CERTIFIED_MAP",
-        "observer_source_channel": "NO_CERTIFIED_MAP",
-        "restriction_status": "NO_CERTIFIED_MAP"
       }
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
+  "generated_by_sha256": "bddd5b5f8753e3c926f3c5f036d2ee6b2590a1da9c7ccf1731dc04708f18f9d2",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
+  "schema_version": "1.0.0",
   "status_vocabulary": [
     "CERTIFIED",
     "OBSTRUCTED",
@@ -318,5 +663,9 @@
     "NOT_APPLICABLE",
     "NO_CERTIFIED_MAP"
   ],
-  "team": "closed_universe_observer"
+  "team": "closed_universe_observer",
+  "verification_commands": [
+    "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+    "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment"
+  ]
 }

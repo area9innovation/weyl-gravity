@@ -343,6 +343,13 @@ The form-profile successor applies the actual detector-centred gradients for
 `two_j=4`, and applies the exact spatial coderivative matrices.  The temporal
 coderivative remains a Green-kernel-weighted calculation, so this is not yet
 a full four-dimensional source or advanced image.
+The Green-weighted successor now performs that missing calculation.  Exact
+boundary flatness converts the temporal derivative to a cosine-kernel
+convolution, while the temporal scalar source uses the sine kernel.  Both
+finite-mode advanced Maxwell blocks are interval-enclosed through `two_j=4`
+uniformly on the corresponding emitter-switch interval; the worst displayed
+entire-series entry remainder is below `6.2e-8`.  The infinite spatial tail
+and massive-two-form image are not inferred from this finite block.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -560,3 +567,5 @@ The clock-integrated scalar coefficient receipt is
 `closed_universe_observers/receipts/CLOCK_INTEGRATED_SCALAR_COEFFICIENTS_TIER_RECEIPT.json`.
 The clock-integrated form coefficient receipt is
 `closed_universe_observers/receipts/CLOCK_INTEGRATED_FORM_COEFFICIENTS_TIER_RECEIPT.json`.
+The Green-weighted coderivative receipt is
+`closed_universe_observers/receipts/GREEN_WEIGHTED_DETECTOR_CODERIVATIVE_TIER_RECEIPT.json`.

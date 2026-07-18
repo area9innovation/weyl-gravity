@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-green-weighted-detector-coderivative-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "series_convention", "coderivative_and_integration_by_parts", "detectors", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-green-weighted-detector-coderivative-v1"},
+    "result_id": {"const": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_FINITE_MODE_ADVANCED_MAXWELL_IMAGE_THROUGH_TWO_J4_EXPORTED_SPATIAL_TAIL_OPEN"},
+    "dependency_tags": {"type": "array", "items": {"enum": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]}, "minItems": 2, "maxItems": 2, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "series_convention": {"type": "object", "required": ["order", "physical_time_offset", "advanced_sine", "advanced_cosine_after_parts", "coefficient_variable", "input_norm_audit"], "properties": {"order": {"const": 5}, "physical_time_offset": {"type": "string"}, "advanced_sine": {"type": "string"}, "advanced_cosine_after_parts": {"type": "string"}, "coefficient_variable": {"type": "string"}, "input_norm_audit": {"type": "object"}}, "additionalProperties": false},
+    "coderivative_and_integration_by_parts": {"type": "object", "required": ["four_dimensional_coderivative", "advanced_spatial_integration_by_parts", "advanced_temporal_block", "boundary_term_zero", "reason"], "properties": {"four_dimensional_coderivative": {"type": "string"}, "advanced_spatial_integration_by_parts": {"type": "string"}, "advanced_temporal_block": {"type": "string"}, "boundary_term_zero": {"const": true}, "reason": {"type": "string"}}, "additionalProperties": false},
+    "detectors": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "required": ["detector_id", "global_right_phase", "time_domain", "modes"], "properties": {"detector_id": {"enum": ["D0", "D1"]}, "global_right_phase": {"type": "string"}, "time_domain": {"type": "object"}, "modes": {"type": "array", "minItems": 5, "maxItems": 5}}, "additionalProperties": false}},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object", "required": ["TEMPORAL_CODERIVATIVE_GREEN_WEIGHTED", "BOUNDARY_FLAT_INTEGRATION_BY_PARTS_CERTIFIED", "FINITE_MODE_ADVANCED_MAXWELL_IMAGE_TWO_J0_TO_4_EVALUATED", "UNIFORM_TIME_KERNEL_SERIES_REMAINDER_EXPORTED", "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "QUANTUM_CLAIM"], "properties": {"TEMPORAL_CODERIVATIVE_GREEN_WEIGHTED": {"const": true}, "BOUNDARY_FLAT_INTEGRATION_BY_PARTS_CERTIFIED": {"const": true}, "FINITE_MODE_ADVANCED_MAXWELL_IMAGE_TWO_J0_TO_4_EVALUATED": {"const": true}, "UNIFORM_TIME_KERNEL_SERIES_REMAINDER_EXPORTED": {"const": true}, "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": {"const": false}, "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false}, "ADVANCED_MASSIVE_EMITTER_GREEN_IMAGE_EVALUATED": {"const": false}, "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}, "additionalProperties": false},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object", "required": ["source_commit", "source_manifest"], "properties": {"source_commit": {"type": "string"}, "source_manifest": {"type": "array"}}, "additionalProperties": false}
+  }
+}

@@ -1,10 +1,15 @@
 # Operational-observer residual-atlas fragment
 
 The generated observer fragment records the certified C-G4 Maxwell phase
-plane, the localized massive-emitter preparation pair, the finite
-clock-zero-moment form blocks, and the still-open restriction of detector
+plane, the localized massive-emitter preparation pair, the finite-mode
+Green-weighted advanced Maxwell blocks, and the still-open restriction of detector
 observables to the second-order cone.  Each entry carries the full programme
 mode scope and certificate hashes.
+
+The fragment validates against the shared
+`residual_atlas/schema/residual-atlas-fragment-v1.schema.json`.  Its optional
+`observer_data` block is the generated operational column; other team
+fragments need not populate it.
 
 The operational column records response, rank, preparation, clock/rod
 dependence, redshift, recoil order, gauge survival, and profile/Green/boundary

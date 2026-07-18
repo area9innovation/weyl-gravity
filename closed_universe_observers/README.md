@@ -73,6 +73,10 @@ python3 -m closed_universe_observers.generate_berger_local_su2_profile_coefficie
 python3 -m closed_universe_observers.verify_berger_local_su2_profile_coefficients
 python3 -m closed_universe_observers.generate_berger_clock_integrated_scalar_coefficients --check
 python3 -m closed_universe_observers.verify_berger_clock_integrated_scalar_coefficients
+python3 -m closed_universe_observers.generate_berger_clock_integrated_form_profile_coefficients --check
+python3 -m closed_universe_observers.verify_berger_clock_integrated_form_profile_coefficients
+python3 -m closed_universe_observers.generate_berger_green_weighted_detector_coderivative --check
+python3 -m closed_universe_observers.verify_berger_green_weighted_detector_coderivative
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -252,6 +256,12 @@ three one-form components and their exact spatial coderivatives through
 `two_j=4`.  This is a clock-zero-moment block: the temporal coderivative must
 still be integrated against each mode Green kernel, and the high-mode tail
 remains open.
+The Green-weighted successor retains that temporal derivative and uses the
+certified boundary flatness to integrate it by parts against the advanced
+kernel.  It exports the resulting cosine-kernel spatial block and sine-kernel
+spatial-coderivative block through `two_j=4`, uniformly over each emitter
+switch, with an explicit entire-series remainder.  The infinite spatial-mode
+tail and subsequent massive-two-form image remain open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

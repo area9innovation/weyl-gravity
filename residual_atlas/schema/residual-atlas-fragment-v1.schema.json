@@ -139,6 +139,34 @@
         "carrier_crosswalk": {"$ref": "#/$defs/claim"}
       }
     },
+    "observerData": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "detector_response", "response_rank", "emitter_preparation",
+        "clock_and_rod_dependence", "relational_redshift_contribution",
+        "recoil_backreaction_order", "survives_gauge_reduction",
+        "profile_green_boundary_dependencies",
+        "detector_restriction_to_second_order_cone",
+        "linearly_detectable_but_nonlinearly_obstructed",
+        "balanced_detectable_combinations",
+        "exceptional_resonant_operational_signature", "observer_source_channel"
+      ],
+      "properties": {
+        "detector_response": {"$ref": "#/$defs/claim"},
+        "response_rank": {"$ref": "#/$defs/claim"},
+        "emitter_preparation": {"$ref": "#/$defs/claim"},
+        "clock_and_rod_dependence": {"$ref": "#/$defs/claim"},
+        "relational_redshift_contribution": {"$ref": "#/$defs/claim"},
+        "recoil_backreaction_order": {"$ref": "#/$defs/claim"},
+        "survives_gauge_reduction": {"$ref": "#/$defs/claim"},
+        "profile_green_boundary_dependencies": {"$ref": "#/$defs/claim"},
+        "detector_restriction_to_second_order_cone": {"$ref": "#/$defs/claim"},
+        "linearly_detectable_but_nonlinearly_obstructed": {"$ref": "#/$defs/claim"},
+        "balanced_detectable_combinations": {"$ref": "#/$defs/claim"},
+        "exceptional_resonant_operational_signature": {"$ref": "#/$defs/claim"},
+        "observer_source_channel": {"$ref": "#/$defs/claim"}
+      }
+    },
     "entry": {
       "type": "object", "additionalProperties": false,
       "required": ["id", "scope", "descriptions", "mode_data", "evidence", "claim_boundary"],
@@ -148,6 +176,7 @@
         "descriptions": {"$ref": "#/$defs/descriptions"},
         "mode_data": {"$ref": "#/$defs/modeData"},
         "quantum_data": {"$ref": "#/$defs/quantumData"},
+        "observer_data": {"$ref": "#/$defs/observerData"},
         "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
         "claim_boundary": {"type": "string", "minLength": 1}
       }
