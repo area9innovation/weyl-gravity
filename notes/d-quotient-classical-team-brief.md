@@ -1247,6 +1247,39 @@ desired retract.  The next gate is
 `C_G2_NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR`, which must add the parent
 detour/cotangent cone rather than trying to invert the bare multiplier saddle.
 
+`NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1` now closes that repair.  The
+economical rank-310 carrier adds the eleven-dimensional pointwise complement
+of (p_0:C_0\to H_0) and its cyclic dual.  With
+
+\[
+x=a-d_{\rm aut}J_0s-L_1h,
+\qquad
+y=\lambda-\frac12\Phi h,
+\]
+
+the complex splits into the metric Bach complex, the algebraic complement
+pair, and the parent saddle
+
+\[
+\begin{pmatrix}-M^D/2&1\\1&0\end{pmatrix},
+\qquad
+\begin{pmatrix}0&1\\1&M^D/2\end{pmatrix}
+\]
+
+as its finite-order local inverse.  Exact coefficient replay gives
+(gJ_0=1), (J_0g=1-L_0p_0),
+(d_{\rm aut}J_0g+L_1Kp_0=d_{\rm aut}), and
+
+\[
+-\frac12L_1^\sharp M^DL_1-\frac12Q_{\rm unique}=B_{\rm action}.
+\]
+
+The ten-block inclusion, projection and cyclic homotopy obey
+(PI=1) and (1-IP=QH+HQ), both before and after the certified BV-canonical
+triangular transform.  No rank-minimality claim is made.  The next gate is
+`C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`: construct the parent Green
+witness and transport its retarded/advanced homotopies through this local SDR.
+
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
 nonzero stability radius, or an exact no-go witness.

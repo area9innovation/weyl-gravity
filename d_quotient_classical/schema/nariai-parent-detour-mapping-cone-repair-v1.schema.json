@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-parent-detour-mapping-cone-repair-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "carrier", "construction", "algebraic_complement", "operators", "fibre_pairings", "abstract_matrices", "exact_checks", "proof", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-parent-detour-mapping-cone-repair-v1"},
+    "result_id": {"const": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1"},
+    "result_state": {"const": "RANK_310_CYCLIC_SUPPORT_LOCAL_SDR_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["automorphism", "sdr_obstruction", "action_bach"],
+      "properties": {
+        "automorphism": {"$ref": "#/$defs/dependency"},
+        "sdr_obstruction": {"$ref": "#/$defs/dependency"},
+        "action_bach": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["background", "block_names", "block_degrees", "block_ranks", "total_rank", "metric_block_names", "metric_block_degrees", "metric_total_rank", "added_rank_over_obstructed_carrier"],
+      "properties": {
+        "background": {"const": "unit Nariai dS2 x S2"},
+        "block_names": {"const": ["epsilon_C0", "s_ker_p0", "x_C1", "h_H1", "y_C1", "s_sharp_ker_p0_dual", "x_sharp_C1dual", "h_sharp_H1dual", "y_sharp_C1dual", "epsilon_sharp_C0dual"]},
+        "block_degrees": {"const": [-1, 0, 0, 0, 0, 1, 1, 1, 1, 2]},
+        "block_ranks": {"const": [15, 11, 60, 9, 60, 11, 60, 9, 60, 15]},
+        "total_rank": {"const": 310},
+        "metric_block_names": {"const": ["xi_H0", "h_H1", "h_sharp_H1dual", "xi_sharp_H0dual"]},
+        "metric_block_degrees": {"const": [-1, 0, 1, 2]},
+        "metric_total_rank": {"const": 36},
+        "added_rank_over_obstructed_carrier": {"const": 22}
+      }
+    },
+    "construction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["c", "split_variables", "original_variables", "split_quadratic_action", "original_quadratic_action", "saddle_operator", "saddle_local_inverse", "metric_inclusion_original_fields", "no_nonlocal_inverse"],
+      "properties": {
+        "c": {"const": "-1/2"},
+        "split_variables": {"$ref": "#/$defs/stringMap"},
+        "original_variables": {"$ref": "#/$defs/stringMap"},
+        "split_quadratic_action": {"type": "string", "minLength": 1},
+        "original_quadratic_action": {"type": "string", "minLength": 1},
+        "saddle_operator": {"const": "[[c M^D,1],[1,0]]"},
+        "saddle_local_inverse": {"const": "[[0,1],[1,-c M^D]]"},
+        "metric_inclusion_original_fields": {"type": "string", "minLength": 1},
+        "no_nonlocal_inverse": {"const": true}
+      }
+    },
+    "algebraic_complement": {
+      "type": "object", "additionalProperties": false,
+      "required": ["p0", "J0", "r0", "R0", "g"],
+      "properties": {
+        "p0": {"$ref": "#/$defs/sparseMatrix"}, "J0": {"$ref": "#/$defs/sparseMatrix"}, "r0": {"$ref": "#/$defs/sparseMatrix"},
+        "R0": {"$ref": "#/$defs/sparseTable"}, "g": {"$ref": "#/$defs/sparseTable"}
+      }
+    },
+    "operators": {
+      "type": "object", "additionalProperties": false,
+      "required": ["d_aut", "K_p0", "L0_corrected", "L1_corrected", "M_parent", "Phi", "B_action", "Q_unique", "effective_Hessian"],
+      "properties": {
+        "d_aut": {"$ref": "#/$defs/sparseTable"}, "K_p0": {"$ref": "#/$defs/sparseTable"},
+        "L0_corrected": {"$ref": "#/$defs/sparseTable"}, "L1_corrected": {"$ref": "#/$defs/sparseTable"},
+        "M_parent": {"$ref": "#/$defs/sparseTable"}, "Phi": {"$ref": "#/$defs/sparseTable"},
+        "B_action": {"$ref": "#/$defs/sparseTable"}, "Q_unique": {"$ref": "#/$defs/sparseMatrix"},
+        "effective_Hessian": {"$ref": "#/$defs/sparseTable"}
+      }
+    },
+    "fibre_pairings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["C0", "C1", "H0", "H1", "ker_p0_coordinate_evaluation", "formal_adjoint_recipes"],
+      "properties": {
+        "C0": {"$ref": "#/$defs/sparseMatrix"}, "C1": {"$ref": "#/$defs/sparseMatrix"},
+        "H0": {"$ref": "#/$defs/sparseMatrix"}, "H1": {"$ref": "#/$defs/sparseMatrix"},
+        "ker_p0_coordinate_evaluation": {"$ref": "#/$defs/sparseMatrix"},
+        "formal_adjoint_recipes": {
+          "type": "object", "additionalProperties": false,
+          "required": ["J0_sharp", "g_sharp", "parent_rows"],
+          "properties": {
+            "J0_sharp": {"type": "string", "minLength": 1}, "g_sharp": {"type": "string", "minLength": 1},
+            "parent_rows": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "abstract_matrices": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q", "pairing", "metric_q", "metric_pairing", "inclusion", "projection", "homotopy", "field_transform", "field_transform_inverse", "transform", "transform_inverse", "original_q", "original_inclusion", "original_projection", "original_homotopy"],
+      "properties": {
+        "q": {"$ref": "#/$defs/operatorMatrix"}, "pairing": {"$ref": "#/$defs/operatorMatrix"},
+        "metric_q": {"$ref": "#/$defs/operatorMatrix"}, "metric_pairing": {"$ref": "#/$defs/operatorMatrix"},
+        "inclusion": {"$ref": "#/$defs/operatorMatrix"}, "projection": {"$ref": "#/$defs/operatorMatrix"},
+        "homotopy": {"$ref": "#/$defs/operatorMatrix"}, "field_transform": {"$ref": "#/$defs/operatorMatrix"},
+        "field_transform_inverse": {"$ref": "#/$defs/operatorMatrix"}, "transform": {"$ref": "#/$defs/operatorMatrix"},
+        "transform_inverse": {"$ref": "#/$defs/operatorMatrix"}, "original_q": {"$ref": "#/$defs/operatorMatrix"},
+        "original_inclusion": {"$ref": "#/$defs/operatorMatrix"}, "original_projection": {"$ref": "#/$defs/operatorMatrix"},
+        "original_homotopy": {"$ref": "#/$defs/operatorMatrix"}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["p0_rank", "ker_p0_dimension", "p0_J0_rank", "r0_J0_minus_identity_rank", "p0_L0_minus_identity_entries", "J0_g_minus_R0_entries", "g_J0_minus_identity_entries", "g_L0_entries", "d_J0_g_plus_L1_k_minus_d_entries", "M_L1_minus_Phi_entries", "effective_Hessian_minus_B_action_entries", "saddle_inverse_is_finite_order", "support_local_entries_only", "split_Q_squared", "split_odd_cyclic", "projection_inclusion_identity", "inclusion_chain_map", "projection_chain_map", "retract_identity", "homotopy_odd_cyclic", "metric_pairing_pullback", "canonical_transform", "transform_left_inverse", "transform_right_inverse", "original_Q_squared", "original_odd_cyclic", "original_retract_identity"],
+      "properties": {
+        "p0_rank": {"const": 4}, "ker_p0_dimension": {"const": 11},
+        "p0_J0_rank": {"const": 0}, "r0_J0_minus_identity_rank": {"const": 0},
+        "p0_L0_minus_identity_entries": {"const": 0}, "J0_g_minus_R0_entries": {"const": 0},
+        "g_J0_minus_identity_entries": {"const": 0}, "g_L0_entries": {"const": 0},
+        "d_J0_g_plus_L1_k_minus_d_entries": {"const": 0}, "M_L1_minus_Phi_entries": {"const": 0},
+        "effective_Hessian_minus_B_action_entries": {"const": 0},
+        "saddle_inverse_is_finite_order": {"const": true}, "support_local_entries_only": {"const": true},
+        "split_Q_squared": {"const": true}, "split_odd_cyclic": {"const": true},
+        "projection_inclusion_identity": {"const": true}, "inclusion_chain_map": {"const": true},
+        "projection_chain_map": {"const": true}, "retract_identity": {"const": true},
+        "homotopy_odd_cyclic": {"const": true}, "metric_pairing_pullback": {"const": true},
+        "canonical_transform": {"const": true}, "transform_left_inverse": {"const": true},
+        "transform_right_inverse": {"const": true}, "original_Q_squared": {"const": true},
+        "original_odd_cyclic": {"const": true}, "original_retract_identity": {"const": true}
+      }
+    },
+    "proof": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ghost_complement", "parent_saddle", "effective_metric_hessian", "support", "cyclicity"],
+      "properties": {
+        "ghost_complement": {"type": "string", "minLength": 1}, "parent_saddle": {"type": "string", "minLength": 1},
+        "effective_metric_hessian": {"type": "string", "minLength": 1}, "support": {"type": "string", "minLength": 1},
+        "cyclicity": {"type": "string", "minLength": 1}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1", "PARENT_DETOUR_MAPPING_CONE_REPAIR", "SUPPORT_LOCAL_AUTOMORPHISM_SDR", "CYCLIC_HOMOTOPY", "EFFECTIVE_HESSIAN_EQUALS_BACH", "COMPLEMENT_LOCAL_INVERSE", "CURRENT_288_COMPONENT_CARRIER_REUSED_UNCHANGED", "NARIAI_GREEN_HOMOTOPY", "OPEN_BACKGROUND_CLASS", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1": {"const": true},
+        "PARENT_DETOUR_MAPPING_CONE_REPAIR": {"const": true}, "SUPPORT_LOCAL_AUTOMORPHISM_SDR": {"const": true},
+        "CYCLIC_HOMOTOPY": {"const": true}, "EFFECTIVE_HESSIAN_EQUALS_BACH": {"const": true},
+        "COMPLEMENT_LOCAL_INVERSE": {"const": true}, "CURRENT_288_COMPONENT_CARRIER_REUSED_UNCHANGED": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false}, "OPEN_BACKGROUND_CLASS": {"const": false},
+        "NONLINEAR_EXTENSION": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["statement", "not_claimed"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "next_gate": {"const": "C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER"},
+    "source_manifest": {"type": "object", "minProperties": 9, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "sparseMatrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string", "minLength": 1}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "sparseTable": {
+      "type": "object", "additionalProperties": false,
+      "required": ["entries", "sha256"],
+      "properties": {
+        "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/sparseMatrix"}}}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operatorTerm": {
+      "type": "array", "prefixItems": [{"type": "array", "items": {"type": "string", "minLength": 1}}, {"type": "integer"}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 3, "maxItems": 3
+    },
+    "operatorEntry": {
+      "type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "array", "items": {"$ref": "#/$defs/operatorTerm"}}], "items": false, "minItems": 3, "maxItems": 3
+    },
+    "operatorMatrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/operatorEntry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

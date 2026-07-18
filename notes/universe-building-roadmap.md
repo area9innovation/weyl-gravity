@@ -166,13 +166,15 @@ cyclic, and the four-row metric Bach complex embeds isometrically as the full
 corrected BGG graph.  A weighted noncharacteristic symbol audit now proves
 that this 288-component carrier itself cannot retract to the metric complex:
 the metric symbol is exact, while the incoming-free multiplier retains the
-15-dimensional kernel of the rank-45 parent middle.  The next gate is
-`C_G2_NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR`: replace the bare multiplier
-copy by the cyclic cone of the parent detour complement, then rerun the symbol
-cohomology test before any homotopy solve.  Only after that repaired retract
-closes should Green transfer be attempted.  Do not reopen endpoint coefficient
-or field-graph fitting, or claim endpoint equivalence or a Nariai Green
-homotopy before this gate closes.
+15-dimensional kernel of the rank-45 parent middle.  The repaired rank-310
+parent-detour cone now closes the support-local cyclic SDR exactly: its
+eleven-dimensional ghost complement contracts pointwise, its parent saddle
+has a finite-order local inverse, and its Schur Hessian is the action Bach
+operator.  The active gate is now
+`C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`: construct retarded/advanced
+Green data for the parent block and transport it through the certified local
+SDR.  Do not reopen endpoint coefficient or field-graph fitting, or claim a
+Nariai Green homotopy before that analytic gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

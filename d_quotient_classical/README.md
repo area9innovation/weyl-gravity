@@ -284,6 +284,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   cyclic parent-detour mapping cone:
   [`certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1.json`](certificates/NARIAI_AUTOMORPHISM_CYCLIC_BACH_SDR_SYMBOL_OBSTRUCTION_V1.json),
   [`reports/nariai-automorphism-cyclic-bach-sdr-symbol-obstruction.md`](reports/nariai-automorphism-cyclic-bach-sdr-symbol-obstruction.md)
+- Parent-detour cone repair: replacing the incoming-free multiplier saddle by
+  an economical 310-component cone adds the eleven-dimensional `ker(p0)`
+  complement and its cyclic dual.  In split variables it is the exact direct
+  sum of the metric Bach complex, a pointwise ghost-complement pair, and the
+  parent saddle `[[ -M^D/2, 1 ], [ 1, 0 ]]`.  The last block has the
+  finite-order local inverse `[[0,1],[1,M^D/2]]`; the resulting inclusion,
+  projection and odd-cyclic homotopy satisfy `PI=1` and
+  `1-IP=QH+HQ`.  The coefficientwise Schur Hessian is exactly `B_action`.
+  This closes the support-local SDR, but not the Green theorem:
+  [`certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json`](certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json),
+  [`reports/nariai-parent-detour-mapping-cone-repair.md`](reports/nariai-parent-detour-mapping-cone-repair.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived
