@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/quantum-weyl/scalar-flat-k-ricci-cubic-crosswalk-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_state", "dependency_tags", "classical_commit", "scope", "source_convention", "linear_crosswalk", "cubic_order_counting", "five_carrier_target", "claim_flags", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-scalar-flat-k-ricci-cubic-crosswalk-v1"},
+    "result_id": {"const": "SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK"},
+    "result_state": {"const": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN"},
+    "lifecycle_state": {"const": "CARRIER_NORMALIZATION_CERTIFIED_FIVE_CARRIER_TENSOR_PROJECTION_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 7},
+    "scope": {"$ref": "#/$defs/stringIntegerMap"},
+    "source_convention": {"$ref": "#/$defs/stringMap"},
+    "linear_crosswalk": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "scalar_flat_condition", "Weyl_divergence_prefactor", "double_divergence", "K_definition_prefactor", "normalized_linear_coefficient", "identity", "zero_mode_boundary"],
+      "properties": {
+        "dimension": {"const": 4},
+        "scalar_flat_condition": {"const": "R=0"},
+        "Weyl_divergence_prefactor": {"$ref": "#/$defs/rational"},
+        "double_divergence": {"type": "string"},
+        "K_definition_prefactor": {"$ref": "#/$defs/rational"},
+        "normalized_linear_coefficient": {"$ref": "#/$defs/rational"},
+        "identity": {"const": "K_munu=Ric_munu+O(curvature^2)"},
+        "zero_mode_boundary": {"type": "string", "minLength": 40}
+      }
+    },
+    "cubic_order_counting": {
+      "type": "object", "additionalProperties": false,
+      "required": ["linear_K_order", "crosswalk_remainder_minimum_order", "three_linear_factors_order", "first_replacement_error_order", "conclusion"],
+      "properties": {
+        "linear_K_order": {"const": 1},
+        "crosswalk_remainder_minimum_order": {"const": 2},
+        "three_linear_factors_order": {"const": 3},
+        "first_replacement_error_order": {"const": 4},
+        "conclusion": {"type": "string", "minLength": 40}
+      }
+    },
+    "five_carrier_target": {
+      "type": "object", "additionalProperties": false,
+      "required": ["carrier_ids", "derivative_orders", "triangle_sector_routing", "projection_status", "four_dimensional_relation_status"],
+      "properties": {
+        "carrier_ids": {"const": ["I10", "I24", "I25", "I28", "I29"]},
+        "derivative_orders": {
+          "type": "object", "additionalProperties": false,
+          "required": ["I10", "I24", "I25", "I28", "I29"],
+          "properties": {"I10": {"const": 0}, "I24": {"const": 2}, "I25": {"const": 2}, "I28": {"const": 4}, "I29": {"const": 6}}
+        },
+        "triangle_sector_routing": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/routing"}},
+        "projection_status": {"const": "NOT_COMPUTED"},
+        "four_dimensional_relation_status": {"const": "IMPORTED_NOT_YET_APPLIED_TO_TRIANGLE"}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED", "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED", "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE", "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED", "GENERIC_GHOST_N1_N2_CURVED_ENDO_TRACES_COMPUTED", "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED": {"const": true},
+        "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED": {"const": true},
+        "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE": {"const": true},
+        "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": {"const": false},
+        "GENERIC_GHOST_N1_N2_CURVED_ENDO_TRACES_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {"type": "object", "additionalProperties": {"$ref": "#/$defs/reference"}, "minProperties": 2, "maxProperties": 2},
+    "next_gate": {"const": "DECOMPOSE_GHOST_N3_PARAMETRIC_KERNEL_INTO_FIVE_CARRIERS_AND_COMPUTE_N1_N2_CURVED_ENDO_TRACES"},
+    "claim_boundary": {"type": "string", "minLength": 550}
+  },
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "reference": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "routing": {"type": "object", "additionalProperties": false, "required": ["longitudinal_projector_count", "possible_external_derivative_orders", "possible_repository_carriers"], "properties": {"longitudinal_projector_count": {"type": "integer", "minimum": 0, "maximum": 3}, "possible_external_derivative_orders": {"type": "array", "items": {"enum": [0, 2, 4, 6]}, "uniqueItems": true}, "possible_repository_carriers": {"type": "array", "items": {"enum": ["I10", "I24", "I25", "I28", "I29"]}, "uniqueItems": true}}},
+    "stringMap": {"type": "object", "additionalProperties": {"type": "string"}, "minProperties": 4},
+    "stringIntegerMap": {"type": "object", "additionalProperties": {"oneOf": [{"type": "string"}, {"type": "integer"}]}, "minProperties": 5}
+  }
+}

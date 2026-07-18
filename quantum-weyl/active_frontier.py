@@ -68,6 +68,7 @@ DEPENDENCIES = {
     "generic_ghost_Endo_Duhamel_reduction": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
+    "scalar_flat_K_Ricci_crosswalk": HERE / "transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -160,6 +161,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "CPT_universal_third_curvature_kernels": "FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_REPOSITORY_CONFORMAL_GRAVITON_TRACE_SUBSTITUTION_OPEN",
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
+        "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
@@ -186,6 +188,7 @@ def _load() -> dict[str, dict[str, Any]]:
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
+    scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -547,6 +550,29 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("generic ghost n=3 triangle kernel frontier drifted")
+    if (
+        scalar_flat_k_ricci.get("linear_crosswalk", {}).get("identity")
+        != "K_munu=Ric_munu+O(curvature^2)"
+        or scalar_flat_k_ricci.get("cubic_order_counting", {}).get(
+            "first_replacement_error_order"
+        )
+        != 4
+        or scalar_flat_k_ricci.get("five_carrier_target", {}).get("carrier_ids")
+        != ["I10", "I24", "I25", "I28", "I29"]
+        or scalar_flat_k_ricci.get("five_carrier_target", {}).get(
+            "projection_status"
+        )
+        != "NOT_COMPUTED"
+        or scalar_flat_k_ricci.get("claim_flags", {}).get(
+            "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED"
+        )
+        is not True
+        or scalar_flat_k_ricci.get("claim_flags", {}).get(
+            "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED"
+        )
+        is not True
+    ):
+        raise ValueError("scalar-flat K/Ricci crosswalk frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1556,6 +1582,10 @@ def build() -> dict[str, Any]:
             "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": True,
             "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED": True,
             "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED": True,
+            "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED": True,
+            "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED": True,
+            "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE": True,
+            "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": False,
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": False,
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": False,
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": False,
@@ -1979,6 +2009,10 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED")
         is not True
+        or flags.get("SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED") is not True
+        or flags.get("CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED") is not True
+        or flags.get("GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE") is not True
+        or flags.get("GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED") is not False
         or flags.get("GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED")
         is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED")
@@ -2049,6 +2083,10 @@ def validate(result: dict[str, Any]) -> None:
             "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED",
             "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED",
             "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED",
+            "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED",
+            "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED",
+            "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE",
+            "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED",
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED",
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED",
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED",

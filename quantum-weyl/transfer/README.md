@@ -462,6 +462,12 @@ trace substitutions are missing, and special-background ranks plus local
 `b4` coordinates cannot identify five three-variable functions. The
 certificate therefore records an exact minimal missing physical import rather
 than promoting the scalar fixture by rank.
+`SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK` now fixes the normalization seam used
+by that matching problem. On the declared scalar-flat inverse domain it
+proves `K_munu=Ric_munu+O(curvature^2)`, with an independent exact TT sign
+fixture, so replacing three labelled K tensors by Ricci tensors is valid
+through cubic curvature order. It does not perform the remaining
+`I10/I24/I25/I28/I29` tensor/form-factor projection.
 Residual transfer
 remains forbidden until those data and a
 compensator-inclusive classical contraction are supplied.  None of the
@@ -501,6 +507,9 @@ PYTHONPATH=quantum-weyl python3 -m transfer.verify_curvature_squared_covariant_l
 PYTHONPATH=quantum-weyl python3 -m transfer.cpt_universal_third_curvature_kernels --check
 PYTHONPATH=quantum-weyl python3 -m transfer.verify_cpt_universal_third_curvature_kernels
 PYTHONPATH=quantum-weyl python3 -m unittest quantum-weyl/transfer/tests/test_cpt_universal_third_curvature_kernels.py -v
+PYTHONPATH=quantum-weyl python3 -m transfer.scalar_flat_k_ricci_crosswalk --check
+PYTHONPATH=quantum-weyl python3 -m transfer.verify_scalar_flat_k_ricci_crosswalk
+PYTHONPATH=quantum-weyl python3 -m unittest transfer.tests.test_scalar_flat_k_ricci_crosswalk
 python3 quantum-weyl/classical_import/support_local_q2_contract_certificate.py --check
 python3 quantum-weyl/classical_import/verify_snapshot.py --check
 python3 -m unittest discover -s quantum-weyl/transfer/tests -v

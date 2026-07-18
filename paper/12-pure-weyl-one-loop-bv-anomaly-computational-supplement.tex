@@ -811,9 +811,8 @@ on noncommuting symmetric endomorphisms.  This closes the generic labelled-
 Ricci parametric triangle, but not its projection to the repository five-
 carrier basis.  The zero-derivative sector can feed $I_{10}$, while the
 longitudinal sectors carry two, four, and six external derivatives and can
-feed $I_{24},I_{25},I_{28},I_{29}$.  The frozen scalar-flat
-$K_{\mu\nu}$ crosswalk and tensor-basis reduction have not yet been applied.
-The curved-Endo one- and two-insertion traces also remain open.
+feed $I_{24},I_{25},I_{28},I_{29}$.  The tensor-basis reduction and the
+curved-Endo one- and two-insertion traces remain open.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \
@@ -822,6 +821,46 @@ PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
 PYTHONPATH=quantum-weyl python3 -m unittest \
   spectral.euclidean.tests.test_generic_background_ghost_n3_triangle_kernel
+\end{verbatim}
+
+\subsection{Scalar-flat \texorpdfstring{$K$}{K}--Ricci normalization crosswalk}
+
+The carrier convention is
+\[
+ K_{\mu\nu}=\frac{2}{\Box}\nabla^\beta\nabla^\alpha
+ C_{\alpha\mu\beta\nu}.
+\]
+In four dimensions, the contracted Weyl identity contributes the coefficient
+$(d-3)/(d-2)=1/2$.  On the declared scalar-flat source complement, the
+contracted Bianchi identity and
+$[\nabla,\nabla]\operatorname{Ric}=O(\mathcal R^2)$ therefore give
+\[
+ \nabla^\beta\nabla^\alpha C_{\alpha\mu\beta\nu}
+ =\frac12\Box R_{\mu\nu}+O(\mathcal R^2),
+ \qquad
+ K_{\mu\nu}=R_{\mu\nu}+O(\mathcal R^2).
+\]
+Replacing one of three linear $K$ factors by the remainder first contributes
+at order $2+1+1=4$.  Thus the labelled cubic $K$ product and labelled cubic
+Ricci product agree through $O(\mathcal R^3)$.  An independent exact fixture
+with $k=(1,0,0,0)$ and a nontrivial TT polarization verifies componentwise
+$k^\alpha k^\beta C_{\alpha\mu\beta\nu}
+=(1/2)k^2R_{\mu\nu}$, guarding the sign and index order.
+
+This receipt closes only the normalization seam.  Derivative counting maps
+the zero-, one-, two- and three-longitudinal-projector sectors respectively
+to possible derivative orders $(0)$, $(0,2)$, $(0,2,4)$ and $(0,2,4,6)$.
+Consequently the complete target remains
+$(I_{10},I_{24},I_{25},I_{28},I_{29})$; no coefficient or form-factor
+projection is inferred.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.scalar_flat_k_ricci_crosswalk --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_scalar_flat_k_ricci_crosswalk
+PYTHONPATH=quantum-weyl python3 -m unittest \
+  transfer.tests.test_scalar_flat_k_ricci_crosswalk
 \end{verbatim}
 
 \subsection{Exact local BoxR scheme conversion}
@@ -894,6 +933,9 @@ IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;
 of the generic nonzero-momentum three-insertion kernel, while rejecting
 promotion of the labelled-Ricci kernel to the repository five-carrier form
 factors;
+\item replay the contracted-Weyl coefficient, direct TT sign fixture and
+fourth-order first replacement error in the scalar-flat $K$--Ricci crosswalk,
+while rejecting promotion of normalization to a five-carrier projection;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}

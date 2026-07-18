@@ -876,8 +876,11 @@ exact adiabatic angular numerator: its scalar-flat `tr(Ric^3)` coefficient is
 integral is scaleless and IR singular at zero external momentum. At generic
 nonexceptional momentum the full labelled-Ricci triangle is now reduced to
 an exact eight-sector Feynman-simplex/Wick kernel with twenty rational rows.
-Its repository five-carrier normalization/projection and the curved-Endo one-/two-
-insertion rows remain open. The generic physical fourth-order Hessian kernel
+Its scalar-flat normalization is now exact:
+`K_munu=Ric_munu+O(curvature^2)`, so the cubic K/Ricci replacement first
+differs at fourth curvature order; an independent TT fixture fixes the sign.
+Its repository five-carrier tensor/form-factor projection and the curved-Endo
+one-/two-insertion rows remain open. The generic physical fourth-order Hessian kernel
 remains independently open. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.

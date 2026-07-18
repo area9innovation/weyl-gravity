@@ -49,6 +49,7 @@
     "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
     "CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND": true,
     "COUPLED_Q2_CYCLIC_REPAIR_ACCEPTED": true,
+    "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED": true,
     "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": true,
     "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": true,
     "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED": true,
@@ -75,6 +76,8 @@
     "GENERIC_GHOST_N3_ADIABATIC_ANGULAR_CARRIER_COMPUTED": true,
     "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": false,
     "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED": true,
+    "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": false,
+    "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE": true,
     "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": false,
     "GENERIC_NONMINIMAL_GHOST_CPT_REDUCTION_SUPPLIED": true,
     "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": false,
@@ -127,6 +130,7 @@
     "RETAINED_MIXED_ELL3_INDEPENDENTLY_ACCEPTED": true,
     "RETAINED_MIXED_ELL3_PHYSICAL_CYCLICITY_ACCEPTED": true,
     "RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED": true,
+    "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED": true,
     "SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED": false,
     "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY": true,
     "SLAVNOV_BV_INSERTION_GAP_ISOLATED": true,
@@ -463,6 +467,11 @@
       "path": "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_STANDARD_FACTOR_ZERO_MODE_LEDGER.json",
       "sha256": "1e1d75b2a199c8fcb58455da0753c62e88a885c892f163650b0b13c966ea765b"
     },
+    "scalar_flat_K_Ricci_crosswalk": {
+      "artifact_id": "SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK",
+      "path": "quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
+      "sha256": "5b6241ed77ee5ec7a89b210454786c99bbc96681709d89b8d868203c120bcf8f"
+    },
     "scalar_ghost_reduction": {
       "artifact_id": "DIFF_WEYL_SCALAR_GHOST_REDUCTION",
       "path": "quantum-weyl/spectral/euclidean/certificates/DIFF_WEYL_SCALAR_GHOST_REDUCTION.json",
@@ -545,14 +554,14 @@
   },
   "provenance": {
     "source_manifest": {
-      "active_frontier.py": "53b429a58962b5931337fc2b825738138688cd573f3e04086f283a62814d9428",
+      "active_frontier.py": "87481b28dc96d36a8e91a753dfcd1a2c3032cad4590ecdc6d222e85778220936",
       "active_frontier_certificate.py": "0fc3d3aed577feaf28e0bb7d7d87874cccfc389f1ae270ab63cd22cbf2a222aa",
-      "reports/active-quantum-frontier.md": "9b5837f230c8c6827e7976fb0388e12cf1cc399a8e7aafefdfd449dea582aa6b",
-      "schema/active-frontier-v1.schema.json": "4af1b87000a039580c568cfdc1b6e4dd6cf12e8fb8e994c5210cdb727161e627",
+      "reports/active-quantum-frontier.md": "695a310fa3d4ab1733ed8faa81c13199026ac3e3889ae54006ef413ca2c53c6f",
+      "schema/active-frontier-v1.schema.json": "a7dd9b3c12f77ae19aede674dd6a5613f20fabc96e0105fe8c3169ce0931557d",
       "tests/test_active_frontier.py": "457bca987c8dbd2bd2abf7bc8c6467af9b2c2346797c07f59b869c902b5f7f22",
-      "verify_active_frontier.py": "acd905f236c00b596438ba4ff2c22bef1a90c8400814a9a0bb2041933fb9a69a"
+      "verify_active_frontier.py": "f572851255e1ccc2201f8c694bf698446d803a0907517d62d274b1714c413335"
     },
-    "source_manifest_sha256": "ec8296f5a2dac640490ccdad0eaf68bac5b588029bb8383aaf5b9c0426d241cf"
+    "source_manifest_sha256": "fd0d1eddfc4bd32595cac211e46f881a2f00c8940dbe4d0ecc18ae2b5f377a3c"
   },
   "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
   "result_state": "STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_REDUCED_BRIDGE4_CERTIFIED_FULL_BV_LORENTZIAN_OPEN",

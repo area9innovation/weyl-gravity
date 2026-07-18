@@ -1,0 +1,147 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate fixes the normalization between the source tensor K_munu=(2/Box)nabla nabla C and the Ricci endomorphism on the declared four-dimensional scalar-flat inverse domain. The contracted Weyl identity and Bianchi identity give K_munu=Ric_munu+O(curvature^2), so replacing three K factors by three Ricci factors is exact modulo O(curvature^4). It also proves from derivative counting that the generic Endo triangle can feed all five parity-even carriers I10, I24, I25, I28 and I29. It does not perform that tensor/form-factor projection, apply the four-dimensional carrier relation to the triangle, compute the curved-Endo one- or two-insertion rows, complete the ghost or physical determinant, supply Gamma1/Q1, authorize residual transfer, or establish Lorentzian, Hadamard, positivity, particle, scattering or unitarity claims.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED": true,
+    "GENERIC_GHOST_N1_N2_CURVED_ENDO_TRACES_COMPUTED": false,
+    "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": false,
+    "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false,
+    "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED": true
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "cubic_order_counting": {
+    "conclusion": "K1 K2 K3 may be replaced by Ric1 Ric2 Ric3 modulo O(curvature^4)",
+    "crosswalk_remainder_minimum_order": 2,
+    "first_replacement_error_order": 4,
+    "linear_K_order": 1,
+    "three_linear_factors_order": 3
+  },
+  "dependencies": {
+    "carrier_manifest": {
+      "path": "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
+      "result_id": "FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST",
+      "sha256": "48d00891ea5096cac56d084da2b1495f351ba4f62f7489aff363d30a9281dcf9"
+    },
+    "ghost_triangle": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",
+      "sha256": "120e37a74e29072a219769d2cca742af4c5f09daa2e0c4fb87280dceadee6ac1"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "five_carrier_target": {
+    "carrier_ids": [
+      "I10",
+      "I24",
+      "I25",
+      "I28",
+      "I29"
+    ],
+    "derivative_orders": {
+      "I10": 0,
+      "I24": 2,
+      "I25": 2,
+      "I28": 4,
+      "I29": 6
+    },
+    "four_dimensional_relation_status": "IMPORTED_NOT_YET_APPLIED_TO_TRIANGLE",
+    "projection_status": "NOT_COMPUTED",
+    "triangle_sector_routing": [
+      {
+        "longitudinal_projector_count": 0,
+        "possible_external_derivative_orders": [
+          0
+        ],
+        "possible_repository_carriers": [
+          "I10"
+        ]
+      },
+      {
+        "longitudinal_projector_count": 1,
+        "possible_external_derivative_orders": [
+          0,
+          2
+        ],
+        "possible_repository_carriers": [
+          "I10",
+          "I24",
+          "I25"
+        ]
+      },
+      {
+        "longitudinal_projector_count": 2,
+        "possible_external_derivative_orders": [
+          0,
+          2,
+          4
+        ],
+        "possible_repository_carriers": [
+          "I10",
+          "I24",
+          "I25",
+          "I28"
+        ]
+      },
+      {
+        "longitudinal_projector_count": 3,
+        "possible_external_derivative_orders": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "possible_repository_carriers": [
+          "I10",
+          "I24",
+          "I25",
+          "I28",
+          "I29"
+        ]
+      }
+    ]
+  },
+  "lifecycle_state": "CARRIER_NORMALIZATION_CERTIFIED_FIVE_CARRIER_TENSOR_PROJECTION_OPEN",
+  "linear_crosswalk": {
+    "K_definition_prefactor": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "Weyl_divergence_prefactor": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "dimension": 4,
+    "double_divergence": "nabla^beta nabla^alpha C_alpha_mu_beta_nu=(1/2)Box Ric_munu+O(curvature^2)",
+    "identity": "K_munu=Ric_munu+O(curvature^2)",
+    "normalized_linear_coefficient": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "scalar_flat_condition": "R=0",
+    "zero_mode_boundary": "identity holds only on the declared Box inverse/source-complement domain"
+  },
+  "next_gate": "DECOMPOSE_GHOST_N3_PARAMETRIC_KERNEL_INTO_FIVE_CARRIERS_AND_COMPUTE_N1_N2_CURVED_ENDO_TRACES",
+  "result_id": "SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK",
+  "result_state": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
+  "schema": "quantum-weyl-scalar-flat-k-ricci-cubic-crosswalk-v1",
+  "scope": {
+    "background": "noncompact asymptotically flat scalar-flat conformal representative",
+    "curvature_order": 3,
+    "dimension": 4,
+    "inverse_domain": "declared source complement of Box with boundary-compatible normalized inverse",
+    "signature": "Euclidean"
+  },
+  "source_convention": {
+    "K_definition": "K_munu=(2/Box) nabla^beta nabla^alpha C_alpha_mu_beta_nu",
+    "commutator_order": "[nabla,nabla]Ric=O(curvature^2)",
+    "contracted_Bianchi_identity": "nabla^beta Ric_mubeta=(1/2)nabla_mu R",
+    "contracted_Weyl_identity": "nabla^alpha C_alpha_mu_beta_nu=((d-3)/(d-2))[nabla_beta Ric_munu-nabla_nu Ric_mubeta-(g_munu nabla_beta R-g_mubeta nabla_nu R)/(2(d-1))]"
+  }
+}

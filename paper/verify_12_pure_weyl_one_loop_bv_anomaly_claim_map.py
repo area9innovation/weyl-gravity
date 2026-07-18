@@ -151,7 +151,7 @@ def main() -> None:
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 26
+    assert len(payload["inputs"]) == 27
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -175,6 +175,7 @@ def main() -> None:
     generic_ghost_endo = dependencies["GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION"]
     generic_ghost_n3 = dependencies["GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER"]
     generic_ghost_n3_triangle = dependencies["GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL"]
+    scalar_flat_k_ricci = dependencies["SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -239,6 +240,12 @@ def main() -> None:
     assert generic_ghost_n3_triangle["projector_sector_expansion"]["total_Wick_rows"] == 20
     assert generic_ghost_n3_triangle["claim_flags"]["GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED"] is True
     assert generic_ghost_n3_triangle["claim_flags"]["GENERIC_GHOST_N3_REPOSITORY_FIVE_CARRIER_PROJECTION_COMPUTED"] is False
+    assert scalar_flat_k_ricci["linear_crosswalk"]["identity"] == "K_munu=Ric_munu+O(curvature^2)"
+    assert scalar_flat_k_ricci["cubic_order_counting"]["first_replacement_error_order"] == 4
+    assert scalar_flat_k_ricci["five_carrier_target"]["carrier_ids"] == [
+        "I10", "I24", "I25", "I28", "I29"
+    ]
+    assert scalar_flat_k_ricci["five_carrier_target"]["projection_status"] == "NOT_COMPUTED"
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"

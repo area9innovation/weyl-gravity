@@ -46,6 +46,7 @@ INPUTS = {
     "generic_ghost_Endo_Duhamel_reduction": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json",
     "generic_ghost_n3_adiabatic_carrier": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
+    "scalar_flat_K_Ricci_crosswalk": ROOT / "quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
 
@@ -85,6 +86,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
+    scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -267,6 +269,16 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "repository_five_carrier_projection"
         )
         != "NOT_COMPUTED"
+        or scalar_flat_k_ricci.get("linear_crosswalk", {}).get("identity")
+        != "K_munu=Ric_munu+O(curvature^2)"
+        or scalar_flat_k_ricci.get("cubic_order_counting", {}).get(
+            "first_replacement_error_order"
+        )
+        != 4
+        or scalar_flat_k_ricci.get("five_carrier_target", {}).get(
+            "projection_status"
+        )
+        != "NOT_COMPUTED"
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -304,6 +316,7 @@ def build() -> dict[str, Any]:
     generic_ghost_endo = values["generic_ghost_Endo_Duhamel_reduction"]
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
+    scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
@@ -314,7 +327,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, five universal CPT source kernels are exact, and the generic ghost n=3 nonzero-momentum triangle is reduced to an exact eight-sector parametric kernel, while its repository five-carrier projection, n=1/n=2 traces, generic physical fourth-order kernel, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, five universal CPT source kernels are exact, and the generic ghost n=3 nonzero-momentum triangle is reduced to an exact eight-sector parametric kernel. Its scalar-flat K-to-Ricci normalization is now exact through cubic order, while the repository five-carrier projection, n=1/n=2 traces, generic physical fourth-order kernel, repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -401,6 +414,9 @@ def build() -> dict[str, Any]:
             "generic_ghost_n3_nonzero_momentum_parametric_kernel": True,
             "generic_ghost_n3_projector_sector_count": generic_ghost_n3_triangle["projector_sector_expansion"]["sector_count"],
             "generic_ghost_n3_total_Wick_rows": generic_ghost_n3_triangle["projector_sector_expansion"]["total_Wick_rows"],
+            "scalar_flat_K_Ricci_linear_crosswalk": scalar_flat_k_ricci["linear_crosswalk"]["identity"],
+            "cubic_K_to_Ricci_first_error_order": scalar_flat_k_ricci["cubic_order_counting"]["first_replacement_error_order"],
+            "generic_ghost_triangle_five_carrier_target": scalar_flat_k_ricci["five_carrier_target"]["carrier_ids"],
             "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
             "repository_29_over_120_local_R2_reproduced": True,
@@ -423,7 +439,6 @@ def build() -> dict[str, Any]:
             "generic_nonminimal_ghost_CPT_determinant": False,
             "generic_nonminimal_ghost_insertion_traces_evaluated": False,
             "generic_ghost_n3_repository_five_carrier_projected_form_factors": False,
-            "repository_I10_normalization_map": False,
             "absolute_dressed_Rhat2_normalization": False,
             "same_background_compensator_contraction": False,
             "quantum_Cartan_identity": False,

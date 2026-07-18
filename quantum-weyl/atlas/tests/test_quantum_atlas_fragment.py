@@ -160,6 +160,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
                 "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
                 "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
                 "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",
+                "SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK",
             },
         )
         self.assertTrue(all(

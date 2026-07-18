@@ -992,10 +992,21 @@ three-insertion rows require the Endo kernels only through curvature orders
 $3,2,1,0$, respectively.  This converts the missing generic ghost
 calculation into a finite coefficient problem.  The insertion traces and
 their carrier coordinates are not yet complete.  The computational supplement
-evaluates the zero-external-momentum angular numerator of the flat-Endo
-three-insertion row, but its radial integral is scaleless and infrared
-singular; the nonzero-momentum triangle, curved-Endo one-/two-insertion rows,
-and generic physical fourth-order Hessian kernel remain separate.
+now reduces the generic nonexceptional-momentum three-insertion triangle to
+eight exact projector sectors and twenty rational simplex/Wick rows.  On the
+declared scalar-flat inverse domain, the contracted Weyl and Bianchi
+identities independently fix
+\[
+ K_{\mu\nu}=\frac{2}{\Box}\nabla^\beta\nabla^\alpha
+ C_{\alpha\mu\beta\nu}=R_{\mu\nu}+O(\mathcal R^2),
+\]
+so the cubic replacement of three labelled $K$ tensors by three labelled
+Ricci tensors is exact modulo $O(\mathcal R^4)$.  A direct flat-TT tensor
+fixture fixes the sign.  This closes the carrier normalization, not the
+tensor projection: the zero-derivative sector can feed $I_{10}$ and the
+longitudinal sectors can feed $I_{24},I_{25},I_{28},I_{29}$.  The five-
+carrier projection, curved-Endo one-/two-insertion rows, and generic physical
+fourth-order Hessian kernel remain separate open calculations.
 \end{proposition}
 
 \begin{proposition}[Exact local $\Box R$ scheme conversion]
@@ -1093,6 +1104,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json}.
+\item \cert{quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
@@ -1133,6 +1145,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_scalar_flat_k_ricci_crosswalk
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
