@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Twist-balanced exceptional ell=1 resonance obstruction",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "result_state", "lifecycle_state", "dependency_tags", "domain", "provenance", "first_order_common_zero_fixture", "resonance_theorem", "classification", "interpretation", "next_gate", "claim_boundary", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-exceptional-ell1-twist-resonance-v1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "classification": {
+      "type": "object",
+      "required": ["nonzero_twist_exceptional_common_zero_fixture_constructed", "complete_direct_exceptional_positive_positive_source_computed", "polar_L2_extra_sum_frequency_resonance_exact", "nonzero_adjoint_cokernel_witness_certified", "twist_balanced_fixture_second_order_extendible", "all_exceptional_ell1_mixed_balances_classified", "all_orders_integrability", "causal_or_quantum_claim"]
+    },
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

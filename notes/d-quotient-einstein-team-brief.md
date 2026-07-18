@@ -1878,6 +1878,20 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    modes; the combined isolated common-zero locus is only the origin.  The
    next nontrivial fixture must import an Einstein-minus or other opposite-sign
    sector.  The enlarged homogeneous `b,Q_e,W_x` slice remains separate.
+
+   The first opposite-sign fixture is already decisive.  A collinear standard
+   twist velocity balances one axial exceptional `ell=1,m=0` mode at
+   `B^2=(8/3)e^2`, so all five stabilizer moment maps vanish.  Nevertheless
+   the exceptional positive-positive self-source lands at
+   `Omega^2=16/3`, exactly the polar `L=2` extra shell.  The target matrix has
+   rank two, the augmented matrix rank three, and two exact adjoint-cokernel
+   rows pair with the source as `-2/3` and `4/3`.  Hence this nonzero
+   common-zero tangent has no second-order correction.  Twist terms cannot
+   alter the channel because their temporal support is at generalized zero
+   frequency or `omega_e`, not `2omega_e`.  This separates global Taub
+   cancellation from dynamical resonant solvability and makes cancellation by
+   polar exceptional or Einstein-minus input the next cone-classification
+   question.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

@@ -1,0 +1,143 @@
+{
+  "schema": "einstein-maxwell-weyl-exceptional-ell1-twist-resonance-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.schema.json",
+  "schema_sha256": "7962553a1ac0d3dab7504911c64c40df1cc63babccf58a1803a579f36696055f",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_TWIST_RESONANCE",
+  "result_state": "TWIST_BALANCED_EXCEPTIONAL_ELL1_TANGENT_RESONANTLY_OBSTRUCTED_AT_SECOND_ORDER",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "one real m=0 axial exceptional ell=1,k=0 mode plus a collinear standard twist velocity on the fixed magnetic bundle, before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.py",
+    "generator_sha256": "40db9e2400ea9d4539efb44a3f7a05633817edd179211651f0e8d335fbdde7d4",
+    "inputs": {
+      "ell1_current_taub": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "exceptional_moment_maps": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_full_tensor.json",
+        "sha256": "e8794a4571e85e382e183b418e4b98fd74b8429837fd1601875f83ea8498df20"
+      }
+    }
+  },
+  "first_order_common_zero_fixture": {
+    "extra_representative": "Re[e*(0,1,0,-3)*exp(-i*(2/sqrt(3))*t)] in axial (h_t,h_x,q_t,q_x)",
+    "twist_representative": "(h_x,q_x)=(B*t,-B*t) on the same real m=0 axis with A=0",
+    "balance": "B^2=(8/3)*e^2",
+    "mu_H": "2*L*N_10*B^2-(16/3)*L*N_10*e^2=0",
+    "mu_Px_and_mu_J": "0 at k=0 on one m=0 axis with A=0"
+  },
+  "resonance_theorem": {
+    "input_extra_frequency_squared": "4/3",
+    "output_channel": "polar L=2,k=0 positive-positive self-sum",
+    "output_frequency_squared": "16/3",
+    "target_extra_shell_check": "Omega^2-Lambda+2/3=16/3-6+2/3=0",
+    "source_row_order": [
+      "metric_00",
+      "metric_01",
+      "metric_11",
+      "sphere_trace",
+      "metric_0a",
+      "metric_1a",
+      "sphere_tracefree",
+      "maxwell_axial_density"
+    ],
+    "complex_positive_positive_source": [
+      "23/3",
+      "0",
+      "49/27",
+      "79/27",
+      "46*sqrt(3)*I/27",
+      "0",
+      "-22/9",
+      "1"
+    ],
+    "target_matrix_rank": 2,
+    "augmented_matrix_rank": 3,
+    "adjoint_witnesses": [
+      [
+        "3/16",
+        "0",
+        "3/16",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "1/72",
+        "0",
+        "1/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "adjoint_pairings": [
+      "-2/3",
+      "4/3"
+    ],
+    "correction_exists": false
+  },
+  "classification": {
+    "nonzero_twist_exceptional_common_zero_fixture_constructed": true,
+    "complete_direct_exceptional_positive_positive_source_computed": true,
+    "polar_L2_extra_sum_frequency_resonance_exact": true,
+    "nonzero_adjoint_cokernel_witness_certified": true,
+    "twist_balanced_fixture_second_order_extendible": false,
+    "all_exceptional_ell1_mixed_balances_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "Canceling every background-stabilizer moment map is not sufficient for this mixed tangent. The exceptional self-sum lands exactly on the polar L=2 fourth-order shell and has a nonzero dynamical adjoint-cokernel projection. Twist self and twist-extra cross terms occur only at generalized zero frequency and omega_e, so they cannot alter the 2omega_e obstruction.",
+  "next_gate": "test whether adding polar exceptional ell=1 data or an Einstein-minus sector can cancel both resonant adjoint pairings, not only the stabilizer moment maps",
+  "claim_boundary": "This is one explicit compact second-order no-go fixture. It does not classify the full exceptional ell=1 mixed cone, all-orders solutions, final residual descent, causal scattering, particles, or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 27.8,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_twist_resonance --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_twist_resonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_twist_resonance"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "ell1_current_taub",
+        "exceptional_moment_maps",
+        "polar_operator"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the full mixed exceptional ell=1 cone and all-orders integration remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_twist_resonance --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_twist_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_twist_resonance"
+  ]
+}
