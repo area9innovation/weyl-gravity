@@ -742,6 +742,45 @@ PYTHONPATH=quantum-weyl python3 -m unittest \
   spectral.euclidean.tests.test_generic_background_ghost_endo_duhamel_reduction
 \end{verbatim}
 
+\subsection{Exact Hodge--resolvent reduction of the one- and two-insertion rows}
+
+Integrating the Endo identity on primed nonzero modes and exchanging the
+proper-time integrals gives the fixed-$s$ interval $2s/3\leq t\leq s$.
+Its width $s/3$, together with
+$\int_0^\infty sK_{\Delta_0}(s)\,ds=\Delta_0^{-2}$, yields
+\[
+ G_{H_0}=G_F-\frac13d\Delta_0^{-2}\delta .
+\]
+Substitution in the trace logarithm and exact cyclic reduction leave five
+minimal carriers:
+\begin{align*}
+ \Gamma^{(1)}_{\rm gh}
+ &=\operatorname{Tr}_1(G_FW)-\frac13\operatorname{Tr}_0(\Delta_0^{-2}\delta Wd),\\
+ \Gamma^{(2)}_{\rm gh}
+ &=-\frac12\operatorname{Tr}_1(G_FW G_FW)
+   +\frac13\operatorname{Tr}_0(\Delta_0^{-2}\delta W G_FWd)\\
+ &\qquad-\frac1{18}\operatorname{Tr}_0(\Delta_0^{-2}\delta Wd\,
+                              \Delta_0^{-2}\delta Wd).
+\end{align*}
+The independent fixture uses an exact symmetric noncommuting $W$ which mixes
+the Hodge sectors.  It checks $H_0G_{H_0}=1$, equality of the direct and
+reduced traces for $n=1,2,3$, and the cyclic $n=3$ longitudinal coefficients
+$(1/3,-1/3,1/9,-1/81)$.
+
+The reduction is architectural: it does not evaluate the five carriers.  The
+$n=1$ row still needs second-curvature-order minimal vector/scalar kernels,
+and the $n=2$ row needs first-curvature-order kernels.  Their covariant
+measure, parallel transport and commutator data exclude replacement by a
+flat metric vertex.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_n1_n2_hodge_resolvent_reduction
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl python3 -m unittest "$P.tests.test_$M"
+\end{verbatim}
+
 \subsection{Exact three-insertion adiabatic angular carrier}
 
 At cubic curvature order the three-insertion row uses only the flat Endo
@@ -772,7 +811,7 @@ On the scalar-flat carrier only the first term remains.  This is an exact
 tensor numerator, not the full triangle form factor: at zero external
 momentum $J_3$ is scaleless and infrared singular.  The nonzero-momentum
 triangle and the normalization map to the repository $I_{10}$ carrier remain
-open, as do the curved-Endo one- and two-insertion rows.
+open, as does evaluation of the five minimal one- and two-insertion carriers.
 Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
 carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
 cyclic trace, the cyclic sum of one trace times one pair trace, and the product
@@ -827,7 +866,7 @@ Ricci parametric triangle, but not its projection to the repository five-
 carrier basis.  The zero-derivative sector can feed $I_{10}$, while the
 longitudinal sectors carry two, four, and six external derivatives and can
 feed $I_{24},I_{25},I_{28},I_{29}$.  The tensor-basis reduction and the
-curved-Endo one- and two-insertion traces remain open.
+five minimal one- and two-insertion resolvent carriers remain unevaluated.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \
@@ -922,8 +961,9 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
 The result is the parametric $n=3$ ghost contribution in the declared
-scalar-flat quotient section.  The simplex integrals, curved-Endo one- and
-two-insertion rows, physical fourth-order Hessian kernel, and their complete
+scalar-flat quotient section.  The simplex integrals, five unevaluated
+minimal one- and two-insertion resolvent carriers, physical fourth-order
+Hessian kernel, and their complete
 sum into five repository functions and coefficients remain open.
 
 \subsection{Exact local BoxR scheme conversion}
@@ -989,6 +1029,9 @@ minimal-CPT substitution and any promotion to a completed ghost determinant;
 \item replay the exact Endo split, finite-proper-time heat kernel,
 nonzero-mode determinant identity and cubic Duhamel insertion bound, while
 rejecting promotion of the unevaluated insertion traces;
+\item integrate the Endo identity to the exact Hodge resolvent, reduce the
+$n=1,2$ rows to five minimal vector/scalar carriers, and reject promotion of
+that architecture to evaluated form factors or coefficients;
 \item enumerate the second, fourth, and sixth isotropic sphere moments for the
 three-insertion adiabatic angular carrier, while rejecting promotion of its
 IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;

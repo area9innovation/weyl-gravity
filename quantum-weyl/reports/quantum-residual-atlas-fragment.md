@@ -59,8 +59,9 @@ substitution is absent.
 A tenth guard follows the generic Diff--Weyl ghost determinant. It records
 the exact Endo--Duhamel reduction and the exact three-insertion adiabatic
 angular carrier without turning either into a particle or a complete form
-factor. The nonzero-momentum triangle and the curved-Endo one-/two-insertion
-traces remain open.
+factor. The nonzero-momentum triangle is exact, while the curved `n=1/n=2`
+architecture is reduced to five minimal vector/scalar resolvent carriers.
+Those five carriers remain unevaluated.
 
 ## Tangent-cone boundary
 
@@ -137,8 +138,9 @@ finite-proper-time Endo base plus `W=-2 Ric`. The n=3 adiabatic angular
 carrier and generic nonzero-momentum triangle are exact. Its eleven labelled
 orientations are projected onto the ten-dimensional scalar-flat five-carrier
 quotient as rational simplex integrands, with two unseen exact momentum
-fixtures replaying all 125 TT amplitudes. The curved-Endo n=1/n=2 traces,
-simplex-integrated repository functions, and physical fourth-order Hessian
+fixtures replaying all 125 TT amplitudes. The five minimal n=1/n=2 resolvent
+carriers remain unevaluated; simplex-integrated repository functions and the
+physical fourth-order Hessian
 remain open. The guard remains
 `NO_CERTIFIED_MAP` to any particle row and
 does not alter the strict/extended QME disposition.

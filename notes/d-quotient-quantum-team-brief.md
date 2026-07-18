@@ -884,8 +884,12 @@ Its eleven raw carrier orientations are now projected exactly to the
 ten-dimensional scalar-flat quotient section, with every parametric channel
 stored as a rational alpha/box numerator over the common `Delta^4`. This is
 the exact `n=3` ghost contribution before simplex integration, not the five
-complete repository functions. The curved-Endo one-/two-insertion rows and
-generic physical fourth-order Hessian kernel remain independently open. The original
+complete repository functions. Exact proper-time integration now gives
+`G_H0=G_F-(1/3)d Delta_0^-2 delta` and reduces the curved `n=1/n=2`
+nonminimal architecture to five minimal vector/scalar resolvent carriers,
+with coefficients `(1,-1/3)` and `(-1/2,1/3,-1/18)`. Those five carriers and
+the generic physical fourth-order Hessian kernel remain independently
+unevaluated. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -898,7 +902,8 @@ rejects a direct sum or name-based identification.
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient. Its
-remaining local gate begins with the curved-Endo one-/two-insertion traces and
+remaining local gate begins with evaluating the five exact minimal
+one-/two-insertion resolvent carriers and
 the physical fourth-order Hessian kernel, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
@@ -975,6 +980,9 @@ architecture obstruction are recorded in
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](../quantum-weyl/reports/generic-background-diff-weyl-ghost-cpt-obstruction.md).
 Its exact constructive reduction is recorded in
 [`generic-background-ghost-endo-duhamel-reduction.md`](../quantum-weyl/reports/generic-background-ghost-endo-duhamel-reduction.md).
+The exact Hodge-resolvent closure of the `n=1,n=2` nonminimal architecture is
+recorded in
+[`generic-background-ghost-n1-n2-hodge-resolvent-reduction.md`](../quantum-weyl/reports/generic-background-ghost-n1-n2-hodge-resolvent-reduction.md).
 The first coefficient-bearing insertion projection is recorded in
 [`generic-background-ghost-n3-adiabatic-carrier.md`](../quantum-weyl/reports/generic-background-ghost-n3-adiabatic-carrier.md).
 The exact generic-momentum eleven-to-ten carrier projection is recorded in

@@ -81,9 +81,11 @@ fixture. The eleven labelled `I10/I24/I25/I28/I29` orientations are now
 projected exactly onto the ten-dimensional scalar-flat quotient. Each channel
 is stored as a rational alpha/box numerator over `Delta^4`, and two unseen
 momentum fixtures replay all 125 TT amplitudes exactly. This is the parametric
-`n=3` integrand, not the five simplex-integrated repository functions. The
-curved-Endo one-/two-insertion rows and the generic physical fourth-order
-Hessian kernel are the next coefficient-bearing inputs.
+`n=3` integrand, not the five simplex-integrated repository functions. Exact
+Hodge-resolvent integration reduces the curved `n=1/n=2` architecture to five
+minimal vector/scalar carriers with rational coefficients
+`(1,-1/3)` and `(-1/2,1/3,-1/18)`. Their evaluation and the generic physical
+fourth-order Hessian kernel are the next coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute

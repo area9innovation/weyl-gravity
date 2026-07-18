@@ -73,6 +73,15 @@ IR singular, so the nonzero-momentum triangle, the curved-Endo one- and
 two-insertion traces, and hence the generic ghost form-factor coefficients
 remain open.
 
+The one- and two-insertion architecture is now closed exactly in
+[`GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json`](certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json).
+Proper-time integration gives
+`G_H0=G_F-(1/3)d Delta_0^-2 delta`; cyclicity then leaves exactly two `n=1`
+and three `n=2` minimal vector/scalar resolvent carriers with coefficients
+`(1,-1/3)` and `(-1/2,1/3,-1/18)`. This closes the nonminimal reduction, not
+the traces: second- and first-curvature-order minimal kernels are still
+required respectively.
+
 The generic nonexceptional-momentum triangle is now reduced exactly in
 [`GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json).
 Expanding the three Endo longitudinal projectors gives eight sectors with
@@ -80,8 +89,8 @@ multiplicities `(1,3,3,1)` and twenty exact Feynman-simplex/Wick rows. This is
 the complete labelled-Ricci parametric tensor kernel, not yet the repository
 five-carrier decomposition. The zero-derivative sector can feed `I10`, while
 the longitudinal sectors can feed `I24`, `I25`, `I28`, and `I29`; the frozen
-`K_munu` crosswalk/projection and curved-Endo one-/two-insertion traces remain
-open.
+`K_munu` crosswalk/projection remains open in this intermediate receipt; the
+five minimal one-/two-insertion resolvent carriers remain unevaluated.
 
 The scalar-flat crosswalk and tensor projection are now completed in
 [`GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json).
@@ -90,8 +99,8 @@ rank ten; the CPT-IV relation is fixed by removing the symmetric `I28`
 coordinate.  Every projected channel is stored as a rational
 Feynman-simplex numerator over the common `Delta^4`, and unseen exact
 momentum/alpha fixtures replay all 125 TT amplitudes.  This closes only the
-parametric `n=3` ghost projection.  Curved-Endo `n=1/n=2`, the complete ghost
-determinant, the physical fourth-order kernel, and the integrated repository
+parametric `n=3` ghost projection.  The five unevaluated minimal `n=1/n=2`
+resolvent carriers, the complete ghost determinant, the physical fourth-order kernel, and the integrated repository
 functions and coefficients remain open.
 
 Replay with:
@@ -103,6 +112,9 @@ PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generi
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_endo_duhamel_reduction --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_endo_duhamel_reduction
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_endo_duhamel_reduction
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n1_n2_hodge_resolvent_reduction --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n1_n2_hodge_resolvent_reduction
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n1_n2_hodge_resolvent_reduction
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_adiabatic_carrier --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
