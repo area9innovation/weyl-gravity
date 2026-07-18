@@ -1,5 +1,24 @@
 # Active quantum frontier
 
+## Superseding coefficient-bearing status
+
+The authoritative lifecycle is now
+`STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_LORENTZIAN_OPEN`. The
+complete repository Euclidean symbol complex, Ricci-flat `C2` carrier,
+factorwise local `b4` ledger, and regulated Slavnov insertion replay with
+
+\[
+\mathcal A^{(1)}={199\over30}[\omega C^2]-{87\over20}[\omega E_4].
+\]
+
+This nonzero class obstructs the strict fixed-field-content local Euclidean
+QME. Residual quantum transfer remains forbidden. The next local gate is a
+certified matter-cancellation calculation or Wess--Zumino compensator
+extension; the stationary/Hadamard rail remains independently open. The
+older readiness discussion below is retained as historical gate provenance.
+
+See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md).
+
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical
 certificates remain immutable receipts, but they are no longer all valid
 status sources. The frontier records explicit supersession edges and selects

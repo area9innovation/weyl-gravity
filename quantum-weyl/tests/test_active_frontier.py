@@ -56,7 +56,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(self.payload["claim_flags"]["FULL_BV_G2_COMPLETE"])
         self.assertEqual(
             ladder["G3"],
-            "REPOSITORY_FULL_BV_LEDGER_ACCEPTED_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN",
+            "PASSED_REPOSITORY_EUCLIDEAN_COEFFICIENT_AND_SLAVNOV_BREAKING",
         )
         self.assertTrue(
             self.payload["claim_flags"][
@@ -116,8 +116,25 @@ class ActiveFrontierTests(unittest.TestCase):
                 "CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND"
             ]
         )
-        self.assertFalse(
+        self.assertTrue(
             self.payload["claim_flags"]["REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REPOSITORY_C2_COEFFICIENT_COMPUTED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REGULATED_SLAVNOV_BREAKING_COMPUTED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["QME_OBSTRUCTED_STRICT_FIELD_CONTENT"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED"
+            ]
         )
         self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
@@ -145,6 +162,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             self.payload["claim_flags"]["STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND"]
         )
+        self.assertTrue(ladder["G4"].startswith("OBSTRUCTED"))
         self.assertTrue(ladder["G5"].startswith("BLOCKED"))
 
     def test_supersession_does_not_delete_history(self) -> None:
@@ -180,7 +198,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
+            "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

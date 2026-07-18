@@ -1,0 +1,34 @@
+{
+  "BoxR_scheme": "set to zero by the declared local R2 counterterm convention",
+  "analytic_route": "EUCLIDEAN_ELLIPTIC",
+  "claim_boundary": "This fixes the local covariant b4 prescription and the removable BoxR scheme only. It does not fix the global determinant phase, collective-coordinate volume, regulated antibracket insertion, QME, or Lorentzian continuation.",
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "factor_count": 4,
+  "factor_ids": [
+    "physical_depth_0",
+    "ghost_depth_0",
+    "physical_depth_1",
+    "ghost_depth_1"
+  ],
+  "global_phase_policy": "not used in local b4; locally constant spectral-cut phases have zero local variation",
+  "locality": "support-local coefficient on a Ricci-flat curvature jet",
+  "proof_sha256": "e0115953be4b52e8677f56a11d221dac1dc4151a4d4546e06de3ccca6ee3e518",
+  "regularization": "covariant parity-even second-order heat-kernel b4 on the four factor blocks",
+  "result_id": "REPOSITORY_LOCAL_B4_REGULATOR",
+  "schema": "quantum-weyl-local-b4-regulator-v1",
+  "source_artifacts": [
+    {
+      "format": "JSON_DATA",
+      "path": "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
+      "sha256": "2c1eaa0a1bf85004b21bf84aa0722c0e9622e6038011b5b2b00c9e82f6fb36d8"
+    },
+    {
+      "format": "JSON_PROOF",
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
+      "sha256": "a1eb7dd598ed341785df3e9771e934fe5c45e0acdb453dff33b511c7912eacf9"
+    }
+  ]
+}

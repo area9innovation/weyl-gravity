@@ -1,0 +1,538 @@
+{
+  "analytic_route": "EUCLIDEAN_ELLIPTIC",
+  "background": {
+    "boundary_policy": "LOCAL_COMPACT_SUPPORT",
+    "dimension": 4,
+    "geometry": "local oriented Euclidean four-manifold",
+    "signature": "EUCLIDEAN"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL certificate proves the exact SO(4)-orbit principal-symbol complex, its formal adjoint, nonminimal doublets, invertible gauge symbol, and ellipticity of the four accepted full-BV determinant blocks. It does not compute local b4 coefficients, a regulated Slavnov insertion, the QME, global determinant phases, or a Lorentzian quantum theory.",
+  "claim_flags": {
+    "FULL_BV_SYMBOL_EXACTNESS_CERTIFIED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED": true
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "cotangent_orbit_reduction": {
+    "all_nonzero_covectors_covered": true,
+    "group": "SO(4)",
+    "representative": "k=(1,0,0,0)"
+  },
+  "coverage": {
+    "all_minimal_nonminimal_and_auxiliary_rows_accounted": true,
+    "all_symbol_sectors_covered": true,
+    "formal_adjoint_complex_verified": true,
+    "gauge_fixed_operator_elliptic": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "formulation": "FOURTH_ORDER_METRIC",
+  "gauge_fixed_kinetic_blocks": [
+    {
+      "block_id": "repository_physical_upper_Delta2perp4",
+      "bundle_rank": 5,
+      "differential_order": 2,
+      "elliptic": true,
+      "principal_scalar": {
+        "denominator": 2,
+        "numerator": 1
+      }
+    },
+    {
+      "block_id": "repository_scalar_ghost_Delta0minus4",
+      "bundle_rank": 1,
+      "differential_order": 2,
+      "elliptic": true,
+      "principal_scalar": {
+        "denominator": 1,
+        "numerator": -12
+      }
+    },
+    {
+      "block_id": "repository_physical_lower_Delta2perp2",
+      "bundle_rank": 5,
+      "differential_order": 2,
+      "elliptic": true,
+      "principal_scalar": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    {
+      "block_id": "repository_vector_ghost_Delta1perpminus3",
+      "bundle_rank": 3,
+      "differential_order": 2,
+      "elliptic": true,
+      "principal_scalar": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    }
+  ],
+  "principal_symbol_exactness": [
+    {
+      "codomain_dimension": 5,
+      "domain_dimension": 5,
+      "exact_at_middle": true,
+      "incoming_rank": 5,
+      "incoming_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 3,
+            "row": 3
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 4,
+            "row": 4
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 4,
+            "row": 5
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 4,
+            "row": 6
+          }
+        ],
+        "shape": [
+          10,
+          5
+        ]
+      },
+      "kernel_outgoing_dimension": 5,
+      "middle_dimension": 10,
+      "outgoing_rank": 5,
+      "outgoing_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "column": 5,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 5,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "column": 6,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 7,
+            "row": 2
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 8,
+            "row": 3
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 9,
+            "row": 4
+          }
+        ],
+        "shape": [
+          5,
+          10
+        ]
+      },
+      "sector_id": "minimal_conformal_deformation"
+    },
+    {
+      "codomain_dimension": 5,
+      "domain_dimension": 5,
+      "exact_at_middle": true,
+      "incoming_rank": 5,
+      "incoming_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 0,
+            "row": 4
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "column": 0,
+            "row": 5
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 1,
+            "row": 5
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "column": 1,
+            "row": 6
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 2,
+            "row": 7
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 3,
+            "row": 8
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 4,
+            "row": 9
+          }
+        ],
+        "shape": [
+          10,
+          5
+        ]
+      },
+      "kernel_outgoing_dimension": 5,
+      "middle_dimension": 10,
+      "outgoing_rank": 5,
+      "outgoing_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 3,
+            "row": 3
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 0,
+            "row": 4
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 4,
+            "row": 4
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 5,
+            "row": 4
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 2
+            },
+            "column": 6,
+            "row": 4
+          }
+        ],
+        "shape": [
+          5,
+          10
+        ]
+      },
+      "sector_id": "minimal_cotangent_formal_adjoint"
+    },
+    {
+      "codomain_dimension": 4,
+      "domain_dimension": 4,
+      "exact_at_middle": true,
+      "incoming_rank": 4,
+      "incoming_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 0,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 1,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 2,
+            "row": 2
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 3,
+            "row": 3
+          }
+        ],
+        "shape": [
+          8,
+          4
+        ]
+      },
+      "kernel_outgoing_dimension": 4,
+      "middle_dimension": 8,
+      "outgoing_rank": 4,
+      "outgoing_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 4,
+            "row": 0
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 5,
+            "row": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 6,
+            "row": 2
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 7,
+            "row": 3
+          }
+        ],
+        "shape": [
+          4,
+          8
+        ]
+      },
+      "sector_id": "nonminimal_diffeomorphism_doublet"
+    },
+    {
+      "codomain_dimension": 1,
+      "domain_dimension": 1,
+      "exact_at_middle": true,
+      "incoming_rank": 1,
+      "incoming_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 0,
+            "row": 0
+          }
+        ],
+        "shape": [
+          2,
+          1
+        ]
+      },
+      "kernel_outgoing_dimension": 1,
+      "middle_dimension": 2,
+      "outgoing_rank": 1,
+      "outgoing_symbol": {
+        "entries": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "column": 1,
+            "row": 0
+          }
+        ],
+        "shape": [
+          1,
+          2
+        ]
+      },
+      "sector_id": "nonminimal_weyl_doublet"
+    }
+  ],
+  "proof_artifacts": {
+    "action_normalization": {
+      "format": "JSON_DATA",
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
+      "sha256": "64b3d13ae34128530c2e71f3d3fb48faf543adaf544a89ee319fbe034d41ece3"
+    },
+    "field_dictionary": {
+      "format": "JSON_PROOF",
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+      "sha256": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8"
+    },
+    "formal_adjoint": {
+      "format": "JSON_PROOF",
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_FORMAL_ADJOINT_COMPLEX.json",
+      "sha256": "ebe0f73790aac5a7fd9a81408a2be408b769eb1e8f5d3e8b1d43456fe73117b6"
+    },
+    "gauge_fixing": {
+      "format": "JSON_PROOF",
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_GAUGE_FIXING.json",
+      "sha256": "1a11092c03382b6dab680609b47b071c19809d2ab530593b97d269b80424ed70"
+    },
+    "multiplicity": {
+      "format": "JSON_DATA",
+      "path": "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+      "sha256": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970"
+    },
+    "snapshot_compatibility": {
+      "format": "JSON_PROOF",
+      "path": "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
+      "sha256": "03953fd210a94b332eddb5e2d98a1dbde67a4bf6a8a4534f98989dd7a1956bac"
+    }
+  },
+  "proof_sha256": "8e6aa3824f67a1972ccb4ae99589de8103b735ed726a35be03083d518894a5bd",
+  "result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
+  "result_state": "COMPLETE_GAUGE_FIXED_BV_PRINCIPAL_SYMBOL_SEQUENCE_EXACT_AND_ELLIPTIC",
+  "schema": "quantum-weyl-repository-euclidean-elliptic-complex-input-v1"
+}

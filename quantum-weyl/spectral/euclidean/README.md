@@ -32,12 +32,14 @@ validator. The receiver enforces complete integration-row and factor
 coverage, exact target ranks/signs, the scalar rank-two-to-rank-one map, and
 nested proof hashes. Classical carrier row counts are explicitly not treated
 as determinant multiplicities.
-The complete local gauge-fixed BV anomaly basis is now available on the
-regular Bach locus, so these numbers define candidate coordinates along
-`omega C2`, `omega E4`, and `omega C dual C`. This remains a standard background-anomaly result,
-not a computation of the repository BV Slavnov breaking: the elliptic
-operator, auxiliary/fourth-order Jacobian, measure, zero modes, and regulated
-Slavnov action still require a matched certificate.
+The complete repository Euclidean principal-symbol sequence is now certified
+by `certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json`. The local
+Ricci-flat carrier and factorwise `b4` calculation in
+`certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json`
+fix `c=199/30`, while the independent round-`S4` calculation fixes
+`a=87/20`. These coefficients feed the separately certified regulated
+Slavnov insertion; they still do not establish a Lorentzian QME or global
+determinant phase theorem.
 
 The generic schema in this directory remains a promotion gate: a coefficient record is valid
 only when it supplies an exact coefficient together with the action

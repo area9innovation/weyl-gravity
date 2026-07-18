@@ -722,3 +722,46 @@ Submit new results through
 row must import the exact classical generator and phase-space certificate by
 content hash and retain `ANALYTIC_FRAMEWORK_MISSING` until the renormalized
 observable algebra and applicable QME/Ward gates are actually constructed.
+
+## Coefficient-bearing strict-field-content disposition — 2026-07-18
+
+The previously open physical inputs have landed and replay independently:
+
+- the repository Euclidean principal-symbol complex is exact and elliptic,
+  with dimensions `5 -> 10 -> 5`, exact formal adjoint, Diff/Weyl nonminimal
+  doublets, and four accepted kinetic blocks;
+- a local Ricci-flat `C2` carrier and the independent round-`S4` Euler carrier
+  give `(C2,E4,CdualC,BoxR)=(199/30,-87/20,0,0)`;
+- the parity-odd zero is Ward-derived, while `BoxR` remains exact in the
+  declared `R2` scheme;
+- the regulated insertion reduces against the complete gauge-fixed quotient
+  to
+  \[
+  \mathcal A^{(1)}={199\over30}[\omega C^2]
+  -{87\over20}[\omega E_4].
+  \]
+
+Both displayed coordinates are nonzero. The strict fixed-field-content local
+Euclidean QME is therefore `OBSTRUCTED_STRICT_FIELD_CONTENT` at one loop.
+This is not a Lorentzian QME or particle theorem, and it does not say that a
+classical tangent obstruction removes a ghost. The generated atlas marks the
+strict quantum lifecycle `OBSTRUCTED` while retaining `NO_CERTIFIED_MAP` for
+every classical-tangent-to-quantum-insertion and non-mode-to-particle
+crosswalk.
+
+Residual quantum transfer is fail-closed. The next local gate is roadmap T4:
+compute matter cancellation equations and/or import a certified Wess--Zumino
+compensator extension, recompute local cohomology and restore the QME there
+before any Cartan or residual transfer. The independent stationary/Hadamard
+rail remains open and does not repair the local anomaly by itself.
+
+The ordinary unitary free-matter branch is now closed by an exact dual-cone
+witness. For nonnegative multiplicities of real conformal scalars, Weyl or
+Dirac fermions, and standard gauge vectors, the `omega C2` coordinate remains
+strictly positive (and minus the `omega E4` coordinate does too). Hence the
+cancellation set is empty already over nonnegative real multiplicities. This
+does not cover interacting fixed points, wrong-sign/nonunitary fields,
+conformal higher spins, or compensator trivialization.
+
+Receipts are summarized in
+[`coefficient-bearing-qme-obstruction.md`](../quantum-weyl/reports/coefficient-bearing-qme-obstruction.md).

@@ -48,6 +48,10 @@ DEPENDENCIES = {
     "Euclidean_elliptic_complex_receiver": HERE / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_READINESS.json",
     "regulator_measure_receiver": HERE / "spectral/euclidean/certificates/REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_READINESS.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+    "physical_Euclidean_elliptic_complex": HERE / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
+    "physical_nonconformal_coefficient_match": HERE / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
+    "regulated_repository_Slavnov_breaking": HERE / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+    "unitary_matter_cancellation_no_go": HERE / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
@@ -137,6 +141,58 @@ def _load() -> dict[str, dict[str, Any]]:
     for name, state in states.items():
         if values[name].get("result_state") != state:
             raise ValueError(f"active frontier dependency state drifted: {name}")
+    physical_elliptic = values["physical_Euclidean_elliptic_complex"]
+    physical_coefficient = values["physical_nonconformal_coefficient_match"]
+    physical_breaking = values["regulated_repository_Slavnov_breaking"]
+    matter_no_go = values["unitary_matter_cancellation_no_go"]
+    if (
+        physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
+        or physical_elliptic.get("result_state")
+        != "COMPLETE_GAUGE_FIXED_BV_PRINCIPAL_SYMBOL_SEQUENCE_EXACT_AND_ELLIPTIC"
+        or physical_elliptic.get("claim_flags", {}).get(
+            "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED"
+        )
+        is not True
+    ):
+        raise ValueError("physical Euclidean elliptic complex frontier drifted")
+    coefficient_result = physical_coefficient.get("coefficient_result", {})
+    coefficient_values = coefficient_result.get("coefficients", {})
+    if (
+        physical_coefficient.get("result_id")
+        != "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"
+        or physical_coefficient.get("result_state")
+        != "C2_VISIBLE_FULL_BV_LOCAL_COEFFICIENT_MATCHED"
+        or physical_coefficient.get("claim_flags", {}).get(
+            "REPOSITORY_C2_COEFFICIENT_COMPUTED"
+        )
+        is not True
+        or coefficient_values.get("C2") != {"numerator": 199, "denominator": 30}
+        or coefficient_values.get("E4") != {"numerator": -87, "denominator": 20}
+        or coefficient_values.get("CdualC") != {"numerator": 0, "denominator": 1}
+    ):
+        raise ValueError("physical nonconformal coefficient frontier drifted")
+    if (
+        physical_breaking.get("result_id")
+        != "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING"
+        or physical_breaking.get("analytic_route") != "EUCLIDEAN_ELLIPTIC"
+        or physical_breaking.get("classification", {}).get("status") != "NONTRIVIAL"
+        or physical_breaking.get("qme_disposition", {}).get("status")
+        != "OBSTRUCTED_STRICT_FIELD_CONTENT"
+        or physical_breaking.get("coefficients", {}).get("ANOM_OMEGA_C2")
+        != {"numerator": 199, "denominator": 30}
+        or physical_breaking.get("coefficients", {}).get("ANOM_OMEGA_E4")
+        != {"numerator": -87, "denominator": 20}
+    ):
+        raise ValueError("regulated repository Slavnov breaking frontier drifted")
+    if (
+        matter_no_go.get("result_id") != "UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO"
+        or matter_no_go.get("result_state")
+        != "NO_NONNEGATIVE_STANDARD_UNITARY_FREE_MATTER_CANCELLATION"
+        or matter_no_go.get("classification", {}).get("solution_set") != "EMPTY"
+        or matter_no_go.get("classification", {}).get("qme_status")
+        != "REMAINS_OBSTRUCTED_IN_DECLARED_MATTER_CLASS"
+    ):
+        raise ValueError("unitary matter cancellation frontier drifted")
     antifield = values["antifield_import"]
     antifield_flags = antifield.get("claim_flags", {})
     if (
@@ -920,7 +976,7 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-active-frontier-v1",
         "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
-        "result_state": "G2_LOCAL_BV_AND_SLAVNOV_ASSEMBLY_READY_GLOBAL_HADAMARD_QME_OPEN",
+        "result_state": "STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_LORENTZIAN_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: _dependency(DEPENDENCIES[name], payload)
@@ -930,8 +986,8 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "REPOSITORY_FULL_BV_LEDGER_ACCEPTED_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN",
-            "G4": "BLOCKED_QME_NOT_RESTORED",
+            "G3": "PASSED_REPOSITORY_EUCLIDEAN_COEFFICIENT_AND_SLAVNOV_BREAKING",
+            "G4": "OBSTRUCTED_STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
         "active_rows": {
@@ -940,12 +996,12 @@ def build() -> dict[str, Any]:
                 "next_gate": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
             },
             "local_obstruction_space": {
-                "status": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
-                "next_gate": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
+                "status": "FULL_LOCAL_BV_G2_COMPLETE_AND_NONZERO_REGULATED_BREAKING_REDUCED",
+                "next_gate": "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
             },
             "coefficient_and_QME": {
-                "status": "ROUND_S4_REPOSITORY_EULER_COEFFICIENT_MATCHED_C2_AND_REGULATED_SLAVNOV_INSERTION_OPEN",
-                "next_gate": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
+                "status": "C2_AND_E4_COEFFICIENTS_COMPUTED_STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED",
+                "next_gate": "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -960,8 +1016,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_BEFORE_QME_RESTORED",
-                "next_gate": "QME_RESTORED",
+                "status": "FORBIDDEN_STRICT_FIELD_CONTENT_QME_OBSTRUCTED",
+                "next_gate": "RESTORE_QME_IN_A_CERTIFIED_EXTENDED_THEORY_BEFORE_TRANSFER",
             },
         },
         "supersession_ledger": [
@@ -1088,6 +1144,8 @@ def build() -> dict[str, Any]:
             "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED": True,
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": True,
             "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": True,
+            "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED": True,
+            "REPOSITORY_C2_COEFFICIENT_COMPUTED": True,
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY": True,
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": True,
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True,
@@ -1095,7 +1153,10 @@ def build() -> dict[str, Any]:
             "CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
-            "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
+            "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": True,
+            "REGULATED_SLAVNOV_BREAKING_COMPUTED": True,
+            "QME_OBSTRUCTED_STRICT_FIELD_CONTENT": True,
+            "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED": True,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
             "QME_RESTORED": False,
@@ -1103,12 +1164,12 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
+            "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
-            "QME_RESTORATION_OR_OBSTRUCTION",
-            "QUANTUM_RESIDUAL_TRANSFER",
+            "RESTORE_QME_IN_A_CERTIFIED_EXTENDED_THEORY",
+            "QUANTUM_RESIDUAL_TRANSFER_ONLY_AFTER_QME_RESTORATION",
             "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
         ],
         "claim_boundary": (
@@ -1123,9 +1184,15 @@ def build() -> dict[str, Any]:
             "general nonminimal doublets contract pointwise and the contraction transports "
             "under arbitrary invertible local BV-canonical gauge fixing, so the gauge-fixed "
             "H04 and H14 quotients are complete with the same 2/1 dimensions on that locus, "
-            "and the exact 3-by-4 breaking reduction binds the standard even background "
-            "coordinates 199/30 and -87/20. The accepted physical round-S4 ledger promotes "
-            "only a=87/20 because C2 vanishes there; the repository c match remains open. "
+            "and the exact 3-by-4 breaking reduction binds the even coordinates 199/30 "
+            "and -87/20. A complete repository Euclidean principal-symbol complex is exact, "
+            "and a local Ricci-flat C2-visible carrier fixes c=199/30 while the round-S4 "
+            "carrier independently fixes a=87/20. Their regulated Slavnov insertion has "
+            "nonzero coordinates in the complete H14 quotient, so the strict fixed-field-content "
+            "local Euclidean QME is obstructed at one loop. "
+            "An exact dual-cone witness further proves that no nonnegative collection of "
+            "standard-sign free conformal scalars, Weyl or Dirac fermions, and gauge vectors "
+            "cancels the C2/E4 vector. "
             "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
             "operator export and frozen local-BV import come from distinct commits, it "
             "requires exact equality of the generator, atom, differential, dependency and "
@@ -1134,7 +1201,8 @@ def build() -> dict[str, Any]:
             "cross-commit bridge for the accepted round-S4 analytic producer. The v2 regulated-BV "
             "insertion receiver additionally requires explicit action, total-derivative, "
             "gauge-dependence, regularization-dependence and antifield-completion ledgers, "
-            "each bound to the exact coefficient hash; no physical insertion is supplied. "
+            "each bound to the exact coefficient hash; the physical insertion supplies and "
+            "passes all of them. "
             "The standard determinant ranks 5,1,5,3 reproduce signed rank six. The exact "
             "longitudinal-Diff/Weyl Faddeev--Popov matrix now reduces its two scalar ghost "
             "inputs to the single differential factor Delta_0-R/3, matching the standard "
@@ -1157,11 +1225,9 @@ def build() -> dict[str, Any]:
             "independent consumer verifies complete row/factor coverage, ranks 5,1,5,3, exact "
             "determinant exponents, scalar-map consistency, nested proof hashes, and priming "
             "0,5,0,10. Matching an auxiliary row remains optional for the auxiliary formulation. "
-            "The global determinant phase and regulated BV insertion remain open; neither the "
-            "standard coefficient vector nor the accepted multiplicity ledger alone decides the "
-            "QME. The round-S4 factor sum now promotes the repository Euler coefficient a=87/20, "
-            "but C2 vanishes on that background, so c=199/30 remains a standard cross-check until "
-            "a non-conformally-flat or Ricci-flat repository operator/measure match lands. The "
+            "The global determinant phase remains open but is locally irrelevant to the b4 "
+            "density used here. The round-S4 factor sum fixes a=87/20, and the local Ricci-flat "
+            "operator/measure carrier independently fixes c=199/30. The "
             "frontier also contains "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The support-local curvature graph, completed causal quasi-isomorphism, and "
@@ -1218,9 +1284,9 @@ def build() -> dict[str, Any]:
             "ungauged off-shell preflights plus the correct five-generator stabilizer "
             "authority, but polar cyclic/stabilizer descent and exceptional/global rows "
             "still block the all-sector classical triangle. "
-            "It does not establish repository Slavnov coefficients, a global BRST Hadamard state, "
-            "renormalized products, QME restoration, "
-            "residual quantum transfer or a Lorentzian quantum theory."
+            "It does not establish a global BRST Hadamard state, renormalized Lorentzian "
+            "products, a Lorentzian QME, residual quantum transfer, or rule out cancellation "
+            "by added matter or a certified compensator extension."
         ),
     }
     validate(result)
@@ -1231,7 +1297,7 @@ def validate(result: dict[str, Any]) -> None:
     if (
         result.get("result_id") != "QUANTUM_WEYL_ACTIVE_FRONTIER"
         or result.get("result_state")
-        != "G2_LOCAL_BV_AND_SLAVNOV_ASSEMBLY_READY_GLOBAL_HADAMARD_QME_OPEN"
+        != "STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_LORENTZIAN_OPEN"
     ):
         raise ValueError("active frontier identity drifted")
     ladder = result.get("promotion_ladder", {})
@@ -1239,11 +1305,9 @@ def validate(result: dict[str, Any]) -> None:
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
-        != "REPOSITORY_FULL_BV_LEDGER_ACCEPTED_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN"
-        or any(
-            not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
-            for level in ("G4", "G5")
-        )
+        != "PASSED_REPOSITORY_EUCLIDEAN_COEFFICIENT_AND_SLAVNOV_BREAKING"
+        or not str(ladder.get("G4", "")).startswith("OBSTRUCTED")
+        or not str(ladder.get("G5", "")).startswith("BLOCKED")
     ):
         raise ValueError("quantum promotion ladder was over-promoted")
     flags = result.get("claim_flags", {})
@@ -1285,6 +1349,12 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED")
         is not True
+        or flags.get("REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED") is not True
+        or flags.get("REPOSITORY_C2_COEFFICIENT_COMPUTED") is not True
+        or flags.get("REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED") is not True
+        or flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not True
+        or flags.get("QME_OBSTRUCTED_STRICT_FIELD_CONTENT") is not True
+        or flags.get("STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED") is not True
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
         or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
         or flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY") is not True
@@ -1350,6 +1420,12 @@ def validate(result: dict[str, Any]) -> None:
             "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED",
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
             "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED",
+            "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED",
+            "REPOSITORY_C2_COEFFICIENT_COMPUTED",
+            "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
+            "REGULATED_SLAVNOV_BREAKING_COMPUTED",
+            "QME_OBSTRUCTED_STRICT_FIELD_CONTENT",
+            "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED",
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY",
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY",
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY",

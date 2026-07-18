@@ -1012,6 +1012,12 @@ Euclidean QME is certified obstructed. T4 is now the active local quantum
 gate. Residual transfer remains disabled unless an extended theory restores
 the QME.
 
+The first T4 branch is now closed: a separating dual-cone certificate proves
+that nonnegative standard-sign free conformal scalars, Weyl/Dirac fermions,
+and gauge vectors cannot cancel the two even coordinates. The next conventional
+gate is the authoritative Wess--Zumino compensator extension; interacting,
+nonunitary and conformal-higher-spin proposals remain separately typed.
+
 ## Publication portfolio and readiness gates
 
 The project does not wait for the whole universe before publishing.  A paper

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-unitary-conformal-matter-cancellation-no-go-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "basis", "gravity_vector", "matter_generators", "cancellation_equations", "separating_witnesses", "classification", "external_coefficient_provenance", "dependency", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-unitary-conformal-matter-cancellation-no-go-v1"},
+    "result_id": {"const": "UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO"},
+    "result_state": {"const": "NO_NONNEGATIVE_STANDARD_UNITARY_FREE_MATTER_CANCELLATION"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "basis": {"const": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4"]},
+    "gravity_vector": {"$ref": "#/$defs/vector"},
+    "matter_generators": {"type": "object", "minProperties": 4},
+    "cancellation_equations": {"type": "object", "required": ["variables", "domain", "rational", "integer_scale", "integer_rows"]},
+    "separating_witnesses": {"type": "array", "minItems": 2, "maxItems": 2},
+    "classification": {
+      "type": "object",
+      "required": ["solution_set", "strength", "integer_search_required", "qme_status"],
+      "properties": {
+        "solution_set": {"const": "EMPTY"},
+        "integer_search_required": {"const": false},
+        "qme_status": {"const": "REMAINS_OBSTRUCTED_IN_DECLARED_MATTER_CLASS"}
+      }
+    },
+    "external_coefficient_provenance": {"type": "object", "required": ["reference", "formula", "convention_map"]},
+    "dependency": {"type": "object", "required": ["path", "result_id", "sha256"]},
+    "next_gate": {"const": "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL"},
+    "claim_boundary": {"type": "string", "minLength": 250}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "vector": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}}
+  }
+}

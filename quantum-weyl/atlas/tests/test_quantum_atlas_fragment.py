@@ -39,7 +39,31 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["quantum_data"]["carrier_crosswalk"]["status"], "NO_CERTIFIED_MAP")
-        self.assertEqual(entry["quantum_data"]["anomaly_QME_dependency"]["status"], "CERTIFIED")
+        self.assertEqual(entry["quantum_data"]["anomaly_QME_dependency"]["status"], "OBSTRUCTED")
+
+    def test_strict_field_content_quantum_lifecycle_is_obstructed(self) -> None:
+        value = build()
+        physical = [
+            entry for entry in value["entries"]
+            if entry["quantum_data"]["entry_kind"]
+            in {"MODE_FAMILY", "NONPARTICLE_RESIDUAL_CLASS", "CARRIER_IMPORT_GAP"}
+        ]
+        self.assertTrue(all(
+            entry["quantum_data"]["anomaly_QME_dependency"]["status"] == "OBSTRUCTED"
+            for entry in physical
+        ))
+        local_guard = next(
+            entry for entry in value["entries"]
+            if entry["id"] == "quantum.crosswalk.local_anomaly_class_to_particle"
+        )
+        self.assertEqual(
+            local_guard["quantum_data"]["anomaly_QME_dependency"]["status"],
+            "OBSTRUCTED",
+        )
+        self.assertEqual(
+            local_guard["quantum_data"]["particle_interpretation"]["status"],
+            "NO_CERTIFIED_MAP",
+        )
 
     def test_non_mode_carriers_are_not_particles(self) -> None:
         guards = [

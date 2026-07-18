@@ -136,6 +136,42 @@ def validate_nonconformal_coefficient_match(
             expected_classical_commit=commit,
             expected_analytic_route="EUCLIDEAN_ELLIPTIC",
         )
+        eligibility = background.get("eligibility", {})
+        invariants = background.get("exact_invariants", {})
+        if (
+            eligibility.get("dimension") != 4
+            or eligibility.get("signature") != "EUCLIDEAN"
+            or eligibility.get("Ricci_flat") is not True
+            or eligibility.get("C2_nonzero") is not True
+            or invariants.get("R") != {"numerator": 0, "denominator": 1}
+            or invariants.get("Ricci_squared") != {"numerator": 0, "denominator": 1}
+            or invariants.get("C2") == {"numerator": 0, "denominator": 1}
+            or invariants.get("E4") != invariants.get("C2")
+        ):
+            raise ValueError("C2-visible Ricci-flat background eligibility drifted")
+        measure = loaded["measure"]
+        regulator = loaded["regulator"]
+        zero_modes = loaded["zero_modes"]
+        parity = loaded["parity"]
+        target_ids = [row["target_factor_id"] for row in loaded["multiplicity"]["standard_factor_map"]]
+        repository_ids = [row["repository_factor_ids"][0] for row in loaded["multiplicity"]["standard_factor_map"]]
+        if (
+            measure.get("factor_bundle_ranks") != [5, 1, 5, 3]
+            or measure.get("York_Hodge_Delta0_cancellation") is not True
+            or measure.get("nonminimal_quartet_superdeterminant") != "1"
+            or regulator.get("factor_count") != 4
+            or regulator.get("factor_ids") != target_ids
+            or regulator.get("BoxR_scheme")
+            != "set to zero by the declared local R2 counterterm convention"
+            or zero_modes.get("policy") != "LOCAL_COMPACT_SUPPORT_NO_GLOBAL_KERNEL_SUBTRACTION"
+            or zero_modes.get("local_b4_modified_by_finite_zero_modes") is not False
+            or parity.get("ward_matrix") != [[2]]
+            or parity.get("ward_rank") != 1
+            or parity.get("CdualC_coefficient") != {"numerator": 0, "denominator": 1}
+            or [row["factor_id"] for row in payload["coefficient_result"]["factor_contributions"]]
+            != repository_ids
+        ):
+            raise ValueError("C2 coefficient carrier coverage or policy drifted")
         frozen = json.loads(FROZEN_IMPORT.read_text())
         validate_classical_snapshot_compatibility(
             loaded["snapshot_compatibility"],

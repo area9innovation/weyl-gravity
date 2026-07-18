@@ -25,12 +25,15 @@ Krein ledgers as `REDUCED-MODE` evidence. They do not promote that evidence to
 a covariant distributional complex structure, a Hadamard state, physical
 positivity, or a Lorentzian particle interpretation. The Berger causal
 26-row carrier is imported, but no stationary mode basis exists; its per-mode
-quantum fields therefore remain `NO_CERTIFIED_MAP` or `OPEN`.
+modewise fields remain `NO_CERTIFIED_MAP` or `OPEN`. Their strict interacting
+quantum lifecycle is separately `OBSTRUCTED` by the local Euclidean QME
+result; this does not alter the accepted classical causal carrier.
 
 The classes `W_+^2` and `W_-^2` remain explicitly identified as classical
 deformation/vertex classes. Their Gram matrix and free-BV cohomology status
-are certified, while their quantum survival is open. They are never emitted
-as particles.
+are certified. Their strict fixed-field-content quantum survival cannot be
+transferred because the local Euclidean QME is obstructed. They are never
+emitted as particles.
 
 The guards are first-class atlas crosswalk entries and assign
 `NO_CERTIFIED_MAP` to particle
@@ -56,6 +59,23 @@ resonances obstruct inference from moment maps alone. The fixed-`(ell,|k|)`
 smooth-secular cone is certified in its declared scope. The causal/retarded
 criterion has no background-specific Green theorem in this import. Every
 correction class still has `NO_CERTIFIED_MAP` to a quantum insertion.
+
+The explicit regulated insertion is now certified as
+
+```text
+(199/30) [omega C2] - (87/20) [omega E4],
+```
+
+and gives `OBSTRUCTED_STRICT_FIELD_CONTENT`. This closes the general strict
+QME disposition but not the carrier-specific crosswalk from a classical Taub
+or resonance obstruction to that insertion. The latter therefore remains
+`NO_CERTIFIED_MAP`.
+
+An exact separating witness also rules out cancellation by nonnegative
+collections of standard-sign free conformal scalars, Weyl/Dirac fermions and
+gauge vectors. This strengthens the declared strict/ordinary-matter lifecycle
+without changing any mode-to-particle crosswalk. Compensator and nonstandard
+matter extensions remain separate open theories.
 
 None of these classical statements implies disappearance from interacting
 BRST cohomology, a nonzero loop interaction, a quantum constraint, or a

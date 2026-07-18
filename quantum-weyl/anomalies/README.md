@@ -10,12 +10,23 @@ locus with even/odd dimensions `2/1`. The assembly preflight at
 quotient to the standard background vector `(199/30,-87/20,0)`. The odd zero
 is a verified Ward identity for the declared standard parity-even determinant
 regulator, not an assumption about the unmatched repository regulator.
-Repository coefficient matching, cancellation, and QME status remain open.
+Repository coefficient matching and the strict-field-content QME disposition
+are now computed. The regulated insertion certificate
+`certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json` reduces to
+`(199/30,-87/20,0,0)` on
+`(omega C2, omega E4, omega CdualC, omega BoxR)`. Its nonzero `C2` and `E4`
+coordinates prove `OBSTRUCTED_STRICT_FIELD_CONTENT`. Matter cancellation and
+a certified compensator extension remain open, as do all Lorentzian QME and
+Hadamard claims.
+The exact cone certificate
+`certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json` further proves
+that no nonnegative collection of standard-sign free conformal scalars,
+Weyl/Dirac fermions, or gauge vectors cancels the two even coordinates.
 The scalar ghost, York/Hodge, nonminimal, and standard zero-mode multiplicity
-rows are no longer open; they are bound by the full-BV ledger composer. After
-the physical TT dictionary lands, the remaining scientific gate is a
-regulated BV Slavnov insertion with Wess--Zumino consistency, not another
-determinant-counting pass. The analytic export accepts both fourth-order
+rows are no longer open; they are bound by the full-BV ledger composer. The
+regulated insertion includes an independently replayed Wess--Zumino
+consistency certificate and empty positive-antifield completion in the
+certified basis. The analytic export accepts both fourth-order
 metric and second-order auxiliary formulations and requires an auxiliary
 equivalence proof only for the latter.
 

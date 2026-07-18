@@ -1,0 +1,186 @@
+{
+  "basis": [
+    "ANOM_OMEGA_C2",
+    "ANOM_OMEGA_E4"
+  ],
+  "cancellation_equations": {
+    "domain": "NONNEGATIVE_REAL_CONE; INTEGER_MULTIPLICITIES_A_SUBSET",
+    "integer_rows": [
+      [
+        4776,
+        6,
+        18,
+        36,
+        72
+      ],
+      [
+        -3132,
+        -2,
+        -11,
+        -22,
+        -124
+      ]
+    ],
+    "integer_scale": 720,
+    "rational": [
+      "199/30 + N_s/120 + N_W/40 + N_D/20 + N_v/10 = 0",
+      "-87/20 - N_s/360 - 11 N_W/720 - 11 N_D/360 - 31 N_v/180 = 0"
+    ],
+    "variables": [
+      "N_s",
+      "N_W",
+      "N_D",
+      "N_v"
+    ]
+  },
+  "claim_boundary": "This exact cone-separation theorem rules out cancellation of the certified pure-Weyl one-loop local Euclidean BV anomaly by any nonnegative collection of free, massless, standard-sign real conformal scalars, Weyl or Dirac fermions, and gauge vectors in the matched anomaly convention. It does not cover interacting fixed points, nonunitary or wrong-sign fields, higher-spin conformal fields, boundary anomalies, compensator trivialization, Lorentzian products, or a particle theory.",
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "classification": {
+    "integer_search_required": false,
+    "qme_status": "REMAINS_OBSTRUCTED_IN_DECLARED_MATTER_CLASS",
+    "solution_set": "EMPTY",
+    "strength": "SEPARATING_DUAL_CONE_WITNESS_OVER_NONNEGATIVE_REALS"
+  },
+  "dependency": {
+    "path": "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+    "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+    "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "external_coefficient_provenance": {
+    "convention_map": "repository E4 coordinate equals -a",
+    "formula": "c=(N_s+6N_D+12N_v)/120; a=(N_s+11N_D+62N_v)/360; Weyl fermion is one half Dirac",
+    "reference": "https://arxiv.org/abs/hep-th/9912122"
+  },
+  "gravity_vector": [
+    {
+      "denominator": 30,
+      "numerator": 199
+    },
+    {
+      "denominator": 20,
+      "numerator": -87
+    }
+  ],
+  "matter_generators": {
+    "Dirac_fermion": {
+      "statistics_and_reality": "FOUR_COMPONENT_COMPLEX_FERMION_STANDARD_SIGN",
+      "vector": [
+        {
+          "denominator": 20,
+          "numerator": 1
+        },
+        {
+          "denominator": 360,
+          "numerator": -11
+        }
+      ]
+    },
+    "Weyl_fermion": {
+      "statistics_and_reality": "TWO_COMPONENT_COMPLEX_FERMION_STANDARD_SIGN",
+      "vector": [
+        {
+          "denominator": 40,
+          "numerator": 1
+        },
+        {
+          "denominator": 720,
+          "numerator": -11
+        }
+      ]
+    },
+    "gauge_vector": {
+      "statistics_and_reality": "REAL_GAUGE_VECTOR_WITH_STANDARD_BRST_GHOSTS",
+      "vector": [
+        {
+          "denominator": 10,
+          "numerator": 1
+        },
+        {
+          "denominator": 180,
+          "numerator": -31
+        }
+      ]
+    },
+    "real_conformal_scalar": {
+      "statistics_and_reality": "REAL_BOSON_STANDARD_SIGN",
+      "vector": [
+        {
+          "denominator": 120,
+          "numerator": 1
+        },
+        {
+          "denominator": 360,
+          "numerator": -1
+        }
+      ]
+    }
+  },
+  "next_gate": "CERTIFIED_WESS_ZUMINO_COMPENSATOR_EXTENSION_OR_NONSTANDARD_NONUNITARY_MATTER_PROPOSAL",
+  "result_id": "UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO",
+  "result_state": "NO_NONNEGATIVE_STANDARD_UNITARY_FREE_MATTER_CANCELLATION",
+  "schema": "quantum-weyl-unitary-conformal-matter-cancellation-no-go-v1",
+  "separating_witnesses": [
+    {
+      "conclusion": "C2_COORDINATE_STRICTLY_POSITIVE_ON_GRAVITY_PLUS_NONNEGATIVE_MATTER_CONE",
+      "functional": [
+        1,
+        0
+      ],
+      "gravity_value": {
+        "denominator": 30,
+        "numerator": 199
+      },
+      "matter_generator_values": {
+        "Dirac_fermion": {
+          "denominator": 20,
+          "numerator": 1
+        },
+        "Weyl_fermion": {
+          "denominator": 40,
+          "numerator": 1
+        },
+        "gauge_vector": {
+          "denominator": 10,
+          "numerator": 1
+        },
+        "real_conformal_scalar": {
+          "denominator": 120,
+          "numerator": 1
+        }
+      }
+    },
+    {
+      "conclusion": "MINUS_E4_COORDINATE_STRICTLY_POSITIVE_ON_GRAVITY_PLUS_NONNEGATIVE_MATTER_CONE",
+      "functional": [
+        0,
+        -1
+      ],
+      "gravity_value": {
+        "denominator": 20,
+        "numerator": 87
+      },
+      "matter_generator_values": {
+        "Dirac_fermion": {
+          "denominator": 360,
+          "numerator": 11
+        },
+        "Weyl_fermion": {
+          "denominator": 720,
+          "numerator": 11
+        },
+        "gauge_vector": {
+          "denominator": 180,
+          "numerator": 31
+        },
+        "real_conformal_scalar": {
+          "denominator": 360,
+          "numerator": 1
+        }
+      }
+    }
+  ]
+}

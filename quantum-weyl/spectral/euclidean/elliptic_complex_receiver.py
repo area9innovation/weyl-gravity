@@ -30,6 +30,18 @@ RESULT_IDS = {
     "gauge_fixing": "REPOSITORY_EUCLIDEAN_GAUGE_FIXING",
     "formal_adjoint": "REPOSITORY_EUCLIDEAN_FORMAL_ADJOINT_COMPLEX",
 }
+PHYSICAL_SECTORS = (
+    "minimal_conformal_deformation",
+    "minimal_cotangent_formal_adjoint",
+    "nonminimal_diffeomorphism_doublet",
+    "nonminimal_weyl_doublet",
+)
+PHYSICAL_BLOCKS = (
+    ("repository_physical_upper_Delta2perp4", 5, 2, Fraction(1, 2)),
+    ("repository_scalar_ghost_Delta0minus4", 1, 2, Fraction(-12)),
+    ("repository_physical_lower_Delta2perp2", 5, 2, Fraction(1)),
+    ("repository_vector_ghost_Delta1perpminus3", 3, 2, Fraction(1)),
+)
 
 
 def _sha256(path: Path) -> str:
@@ -140,6 +152,8 @@ def validate_euclidean_elliptic_complex(
         raise ValueError("Euclidean elliptic complex payload is not an object")
 
     checks = payload["principal_symbol_exactness"]
+    if not allow_synthetic_fixture and tuple(row["sector_id"] for row in checks) != PHYSICAL_SECTORS:
+        raise ValueError("physical elliptic symbol-sector coverage drifted")
     for check in checks:
         incoming = _matrix(check["incoming_symbol"], f"{check['sector_id']}.incoming")
         outgoing = _matrix(check["outgoing_symbol"], f"{check['sector_id']}.outgoing")
@@ -165,7 +179,18 @@ def validate_euclidean_elliptic_complex(
         ):
             raise ValueError("elliptic symbol exactness rank identity drifted")
 
-    for block in payload["gauge_fixed_kinetic_blocks"]:
+    blocks = payload["gauge_fixed_kinetic_blocks"]
+    if not allow_synthetic_fixture:
+        observed_blocks = tuple(
+            (
+                row["block_id"], row["bundle_rank"], row["differential_order"],
+                _q(row["principal_scalar"], row["block_id"]),
+            )
+            for row in blocks
+        )
+        if observed_blocks != PHYSICAL_BLOCKS:
+            raise ValueError("physical gauge-fixed kinetic-block coverage drifted")
+    for block in blocks:
         if not _q(block["principal_scalar"], block["block_id"]):
             raise ValueError("gauge-fixed kinetic block has zero principal scalar")
         if block["elliptic"] is not True:

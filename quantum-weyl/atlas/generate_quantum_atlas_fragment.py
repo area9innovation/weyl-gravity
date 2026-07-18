@@ -32,6 +32,10 @@ DEPENDENCIES = {
     "Berger_causal_chain": QROOT / "lorentzian/certificates/BERGER_CAUSAL_CHAIN_V2_IMPORT.json",
     "Berger_Hadamard_gate": QROOT / "lorentzian/certificates/BERGER_HADAMARD_CONSTRUCTION_GATE.json",
     "Slavnov_preflight": QROOT / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
+    "Euclidean_elliptic_complex": QROOT / "spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
+    "nonconformal_coefficient_match": QROOT / "spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
+    "regulated_Slavnov_breaking": QROOT / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
+    "unitary_matter_no_go": QROOT / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "general_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "finite_k0_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
     "smooth_secular_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
@@ -137,6 +141,10 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     causal = values["Berger_causal_chain"]
     hadamard = values["Berger_Hadamard_gate"]
     slavnov = values["Slavnov_preflight"]
+    elliptic = values["Euclidean_elliptic_complex"]
+    coefficient = values["nonconformal_coefficient_match"]
+    breaking = values["regulated_Slavnov_breaking"]
+    matter_no_go = values["unitary_matter_no_go"]
     general = values["general_tangent_cone"]
     k0 = values["finite_k0_cone"]
     smooth = values["smooth_secular_cone"]
@@ -177,6 +185,23 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         or slavnov.get("claim_flags", {}).get("QME_OBSTRUCTED") is not False
     ):
         raise ValueError("QME lifecycle boundary drifted")
+    if (
+        elliptic.get("claim_flags", {}).get(
+            "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED"
+        )
+        is not True
+        or coefficient.get("claim_flags", {}).get("REPOSITORY_C2_COEFFICIENT_COMPUTED")
+        is not True
+        or coefficient.get("coefficient_result", {}).get("coefficients", {}).get("C2")
+        != {"numerator": 199, "denominator": 30}
+        or breaking.get("classification", {}).get("status") != "NONTRIVIAL"
+        or breaking.get("qme_disposition", {}).get("status")
+        != "OBSTRUCTED_STRICT_FIELD_CONTENT"
+        or matter_no_go.get("classification", {}).get("solution_set") != "EMPTY"
+        or matter_no_go.get("classification", {}).get("qme_status")
+        != "REMAINS_OBSTRUCTED_IN_DECLARED_MATTER_CLASS"
+    ):
+        raise ValueError("coefficient-bearing QME disposition drifted")
 
     if (
         general.get("result_state")
@@ -233,7 +258,7 @@ def _mode_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                         "k": "NOT_APPLICABLE on S3",
                         "omega": f"positive cylinder energy n with n>={minimum}",
                     },
-                    {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+                    {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OBSTRUCTED"},
                     {
                         "dispersion": _claim("CERTIFIED", f"positive cylinder energy n>={minimum}"),
                         "lee_wald": _claim("CERTIFIED", f"reduced Krein sign {sign:+d}"),
@@ -255,12 +280,12 @@ def _mode_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                         complex_structure=("OPEN", "reduced positive-frequency polarization only"),
                         hadamard=("OPEN", "no same-background full-BV distributional kernel"),
                         state_space=("CERTIFIED", "infinite-index Krein reduced mode; not physical positivity"),
-                        qme=("OPEN", "regulated Slavnov breaking and QME disposition required"),
-                        lifecycle=("OPEN", "reduced classical state carrier; quantum theory open"),
+                        qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed at one loop"),
+                        lifecycle=("OBSTRUCTED", "classical reduced carrier remains; strict interacting quantum lifecycle is blocked"),
                         particle=("NO_CERTIFIED_MAP", "no Lorentzian particle interpretation"),
                         crosswalk=("CERTIFIED", "real phase-space mode to selected positive-frequency oscillator"),
                     ),
-                    evidence,
+                    evidence + _evidence(values, "regulated_Slavnov_breaking"),
                     "This is a REDUCED-MODE classical state carrier. It is not a same-background covariant Hadamard state, physical positivity theorem, or Lorentzian particle entry.",
                 )
             )
@@ -269,7 +294,7 @@ def _mode_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
 
 def _residual_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     rows = []
-    evidence = _evidence(values, "curvature_CCR", "Slavnov_preflight")
+    evidence = _evidence(values, "curvature_CCR", "Slavnov_preflight", "regulated_Slavnov_breaking")
     for class_id, chirality in (("W_+^2", "+"), ("W_-^2", "-")):
         partner = "W_-^2" if chirality == "+" else "W_+^2"
         rows.append(
@@ -288,7 +313,7 @@ def _residual_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]
                     "k": "NOT_APPLICABLE",
                     "omega": "NOT_APPLICABLE: not a one-particle frequency",
                 },
-                {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+                {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NOT_APPLICABLE", "quantum": "OBSTRUCTED"},
                 {
                     "dispersion": _claim("NOT_APPLICABLE", "deformation class, not a one-particle shell"),
                     "lee_wald": _claim("CERTIFIED", "unit diagonal Gram entry in the final covariant H4 basis"),
@@ -310,8 +335,8 @@ def _residual_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]
                     complex_structure=("NOT_APPLICABLE", "not a one-particle carrier"),
                     hadamard=("NOT_APPLICABLE", "not a one-particle carrier"),
                     state_space=("NOT_APPLICABLE", "deformation/vertex class"),
-                    qme=("OPEN", "quantum survival requires restored QME and H3-H4-H5 transfer"),
-                    lifecycle=("OPEN", "classical deformation class; quantum survival open"),
+                    qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME fails before H3-H4-H5 transfer"),
+                    lifecycle=("OBSTRUCTED", "classical deformation class remains certified; strict quantum survival is not defined"),
                     particle=("CERTIFIED", "NOT_A_PARTICLE"),
                     crosswalk=("CERTIFIED", "curvature graph image to final free BV cohomology"),
                 ),
@@ -338,7 +363,7 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             "k": "NO_CERTIFIED_MAP",
             "omega": "NO_CERTIFIED_MAP: generalized-zero and nonzero spectrum not imported",
         },
-        {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OPEN"},
+        {"causal": "CERTIFIED", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "OBSTRUCTED"},
         {
             "dispersion": _claim("NO_CERTIFIED_MAP", "no stationary physical mode basis"),
             "lee_wald": _claim("NO_CERTIFIED_MAP", "carrier pairing exists but has no modewise restriction"),
@@ -360,12 +385,12 @@ def _berger_gap(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("OPEN", "not constructed on the 54-row distributional complex"),
             hadamard=("OPEN", "not constructed"),
             state_space=("OPEN", "reduced Krein evidence does not define a Berger physical state space"),
-            qme=("OPEN", "regulated Slavnov breaking and QME disposition required"),
-            lifecycle=("OPEN", "classical causal import accepted; quantum mode atlas open"),
+            qme=("OBSTRUCTED", "strict fixed-field-content local Euclidean QME is obstructed"),
+            lifecycle=("OBSTRUCTED", "classical causal import remains; strict interacting quantum lifecycle is blocked"),
             particle=("NO_CERTIFIED_MAP", "no mode basis or Hadamard state"),
             crosswalk=("NO_CERTIFIED_MAP", "retained 26 rows to stationary physical modes"),
         ),
-        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Slavnov_preflight"),
+        _evidence(values, "Berger_causal_chain", "Berger_Hadamard_gate", "Slavnov_preflight", "regulated_Slavnov_breaking"),
         "The 26/54-row causal carrier is imported, but it is not a stationary mode ledger. No physical mode, complex structure, Hadamard state, or particle is inferred.",
     )
 
@@ -408,20 +433,20 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("CERTIFIED", "restored QME or normalized QME obstruction required before interacting-BRST interpretation"),
-            lifecycle=("OPEN", "classical criterion certified; quantum bridge absent"),
+            qme=("OBSTRUCTED", "normalized strict-field-content QME obstruction is certified; no restored extended theory exists"),
+            lifecycle=("OBSTRUCTED", "classical criterion remains certified; interacting-BRST bridge is unavailable"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. An explicit insertion and QME disposition are mandatory.",
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking"),
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The strict-field-content insertion is now nontrivial, but no carrier-specific map from the classical tangent obstruction to that insertion has been certified.",
     )
 
 
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
-        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight",)),
-        ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight",)),
+        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "unitary_matter_no_go")),
+        ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("curvature_observable_generator", "support-local curvature-graph CCR generator", ["LORENTZIAN-CAUSAL"], ("curvature_CCR",)),
     ]
     rows = []
@@ -464,7 +489,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                     complex_structure=("NO_CERTIFIED_MAP", "no particle complex structure crosswalk"),
                     hadamard=("NO_CERTIFIED_MAP", "no particle Hadamard crosswalk"),
                     state_space=("NO_CERTIFIED_MAP", "no particle state-space crosswalk"),
-                    qme=("OPEN", "carrier retains its own anomaly/QME dependency"),
+                    qme=(("OBSTRUCTED", "nontrivial regulated anomaly obstructs the strict local Euclidean QME") if key == "local_anomaly_class" else ("OPEN", "carrier retains its own anomaly/QME dependency")),
                     lifecycle=("NO_CERTIFIED_MAP", "not a particle lifecycle entry"),
                     particle=("NO_CERTIFIED_MAP", "forbidden without an explicit physical residual-mode crosswalk"),
                     crosswalk=("NO_CERTIFIED_MAP", "non-mode carrier to particle"),
@@ -507,7 +532,7 @@ def validate_fragment(value: dict[str, Any]) -> None:
     tangent = by_id["quantum.crosswalk.classical_tangent_cone_to_interacting_brst"]
     if (
         tangent["quantum_data"]["carrier_crosswalk"]["status"] != "NO_CERTIFIED_MAP"
-        or tangent["quantum_data"]["anomaly_QME_dependency"]["status"] != "CERTIFIED"
+        or tangent["quantum_data"]["anomaly_QME_dependency"]["status"] != "OBSTRUCTED"
     ):
         raise ValueError("classical tangent obstruction was promoted without the QME bridge")
     guards = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"]

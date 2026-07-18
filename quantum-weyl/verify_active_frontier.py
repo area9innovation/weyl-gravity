@@ -29,7 +29,6 @@ def verify() -> dict:
         if reference["sha256"] != hashlib.sha256(path.read_bytes()).hexdigest():
             raise ValueError(f"active frontier dependency drifted: {name}")
     for key in (
-        "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
         "GLOBAL_BRST_HADAMARD_STATE",
         "HADAMARD_EXISTENCE_THEOREM_APPLIES",
         "RANK_46_IS_QUANTUM_PREREQUISITE",
@@ -45,6 +44,22 @@ def verify() -> dict:
             pass
         else:
             raise ValueError(f"active frontier overclaim accepted: {key}")
+    for key in (
+        "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED",
+        "REPOSITORY_C2_COEFFICIENT_COMPUTED",
+        "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
+        "REGULATED_SLAVNOV_BREAKING_COMPUTED",
+        "QME_OBSTRUCTED_STRICT_FIELD_CONTENT",
+        "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED",
+    ):
+        mutant = deepcopy(certificate)
+        mutant["claim_flags"][key] = False
+        try:
+            validate(mutant)
+        except ValueError:
+            pass
+        else:
+            raise ValueError(f"active frontier certified result dropped: {key}")
     return certificate
 
 
