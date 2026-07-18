@@ -48,6 +48,8 @@ python3 -m closed_universe_observers.generate_berger_108_row_emitter_unary_recoi
 python3 -m closed_universe_observers.verify_berger_108_row_emitter_unary_recoil
 python3 -m closed_universe_observers.generate_berger_108_row_emitter_causal_chain --check
 python3 -m closed_universe_observers.verify_berger_108_row_emitter_causal_chain
+python3 -m closed_universe_observers.generate_berger_dynamical_emitter_rank_two --check
+python3 -m closed_universe_observers.verify_berger_dynamical_emitter_rank_two
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -161,7 +163,13 @@ now appends the emitter witness `W_K(K_b_plus)=K_b`, constructs
 fixture.  The remaining operational gate is therefore the choice of two
 localized free-emitter Cauchy preparations and the rank of their actual
 detector matrix.  Finite-parameter/all-orders Green hyperbolicity remains
-separate.
+separate.  The Cauchy-preparation successor now uses Green adjunction and an
+exact constraint-compatible massive polarization to choose two compact local
+free-emitter data sets.  With the second relational switch after `D0`, their
+actual leading matrix is `[[kappa_0,0],[mu,kappa_1]]`, where both diagonal
+witnesses are nonzero.  Thus dynamical-emitter rank two is certified; the
+next calculation is the detector-level `g^2` recoil correction for those fixed
+preparations.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

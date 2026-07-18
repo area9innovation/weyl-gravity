@@ -1,0 +1,197 @@
+{
+  "cauchy_preparation_construction": {
+    "adjoint_functional": "ell_a(u)=Q_a[d G_A,ret g_a delta(h_a U_E u)]; Green adjunction identifies ell_a with the restriction of the advanced detector solution to emitter Cauchy data",
+    "couplings": "g_0 and g_1 are declared nonzero",
+    "free_equation_before_switch": "(delta d+m_a^2)K_a^(0)=0 with delta K_a^(0)=0",
+    "localization": "use H1(S3)=H2(S3)=0 to localize constraint potentials inside that patch; delta K and its normal derivative remain zero and propagate by the massive normally hyperbolic reduction",
+    "nonvanishing": "the detector phase functional is nonzero, its advanced solution reaches a receiver-adjacent past patch, and the displayed constraint-compatible K_01/K_31 polarization has nonzero clock contraction there",
+    "selection_rule": "in the declared oriented local polarization basis, take the first compact constraint datum with nonzero ell_a coefficient; this fixes u_a before the forward response is evaluated and uses no response normalization",
+    "source_map": "J_a^(K)=g_a delta(h_a K_a^(0))=-g_a i_(dh_a sharp)K_a^(0) on the free constraint surface",
+    "switch_order": [
+      "supp h_0 lies immediately before D0",
+      "supp h_1 lies in (13/48,23/48), strictly after D0 and before D1"
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL existence theorem replaces the two external Maxwell currents by two genuine compact localized Cauchy preparations of the selected free massive two-form emitters with declared nonzero couplings g_0,g_1. For each fixed detector Q_a, Green adjunction turns K-data -> Q_a[d G_A,ret g_a delta(h_a K)] into a Cauchy covector ell_a. The certified nontrivial detector phase functional and a local massive polarization with p^mu K_mu nu=0 but i_n K nonzero show ell_a is not zero on a receiver-adjacent patch. H1(S3)=H2(S3)=0 and the normally hyperbolic constraint reduction permit compact constraint-preserving data in that patch. A fixed first-nonzero local polarization-basis rule chooses u_a before forward response evaluation, with kappa_a=ell_a(u_a) nonzero. The second switch lies after D0 and before D1, hence M_01=0 by retarded support. Therefore M^(K)=[[kappa_0,0],[mu,kappa_1]] has determinant kappa_0 kappa_1 nonzero and rank two. The theorem establishes two distinguishable causally acquired records from actual dynamical-emitter preparations at leading order in the emitter couplings. It does not place both preparations at the original common Hopf event, evaluate the g^2 detector recoil correction, include emitter stress/clock backreaction, promote finite-parameter or all-orders apparatus Green hyperbolicity, construct the full apparatus Dirac bracket, or make a quantum claim.",
+  "claim_status": "CERTIFIED_LOCALIZED_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO_AT_LEADING_ORDER",
+  "dependency_refs": {
+    "causal_chain": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY",
+      "sha256": "8153e2638865caa30091d5010d9df9442b3395d5996bf503de3a5e7cf354ace0"
+    },
+    "cg4_records": {
+      "path": "closed_universe_observers/certificates/BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA.json",
+      "result_id": "BERGER_CG4_TWO_RECORD_POISSON_ALGEBRA",
+      "sha256": "62469c93203920fbab4b97883db37c1b86fe093286ec509bd1e2d83eb30970d0"
+    },
+    "detectors": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS.json",
+      "result_id": "BERGER_LOCALIZED_CLOCK_DETECTOR_RECORDS",
+      "sha256": "a77eb1cd8abeee608ee02ce52a0a35f0fdb84531946ef78cc5e36145afc14b6d"
+    },
+    "emitter_handoff": {
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json",
+      "result_id": "BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF",
+      "sha256": "2b39749d375ab50966bf286c0a8d6771418c93160457e8f16a65821e8c9d6258"
+    },
+    "localized_external_transfer": {
+      "path": "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json",
+      "result_id": "BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER",
+      "sha256": "2dc293d4edad9d7e687b5080b05ec9a40b16a83a55ecc2dd655e935295cb6148"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "DETECTOR_RECOIL_G2_COEFFICIENT_EVALUATED": false,
+    "DYNAMICAL_EMITTER_LEADING_RECORD_MATRIX_RANK_TWO_CERTIFIED": true,
+    "EMITTER_STRESS_BACKREACTION_INCLUDED": false,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "TWO_DYNAMICAL_EMITTER_RECORDS_CAUSALLY_DISTINGUISHABLE": true,
+    "TWO_LOCALIZED_FREE_MASSIVE_EMITTER_CAUCHY_PREPARATIONS_CONSTRUCTED": true
+  },
+  "local_massive_polarization": {
+    "clock_contraction": [
+      "0",
+      "k",
+      "0",
+      "0"
+    ],
+    "constraint_defect_count": 0,
+    "mass_shell_defect": "0",
+    "momentum": [
+      "sqrt(k**2 + m**2)",
+      "0",
+      "0",
+      "k"
+    ],
+    "nonzero_components": {
+      "K_01": "k",
+      "K_31": "-sqrt(k**2 + m**2)"
+    },
+    "switched_current_polarization_nonzero": true
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "delete_clock_electric_polarization"
+    },
+    {
+      "audit": {
+        "causal_zero_present": false,
+        "determinant": "0",
+        "determinant_forced_to_nonzero_product": false,
+        "matrix": [
+          [
+            "kappa_0",
+            "kappa_0"
+          ],
+          [
+            "mu",
+            "mu"
+          ]
+        ],
+        "rank": 1
+      },
+      "detected": true,
+      "name": "clone_second_preparation_column"
+    },
+    {
+      "audit": {
+        "causal_zero_present": true,
+        "determinant": "0",
+        "determinant_forced_to_nonzero_product": false,
+        "matrix": [
+          [
+            "kappa_0",
+            "0"
+          ],
+          [
+            "mu",
+            "0"
+          ]
+        ],
+        "rank": 1
+      },
+      "detected": true,
+      "name": "remove_second_diagonal_response"
+    },
+    {
+      "audit": {
+        "causal_zero_present": false,
+        "determinant": "kappa_0*kappa_1 - mu*nu",
+        "determinant_forced_to_nonzero_product": false,
+        "matrix": [
+          [
+            "kappa_0",
+            "nu"
+          ],
+          [
+            "mu",
+            "kappa_1"
+          ]
+        ],
+        "rank": 2
+      },
+      "detected": true,
+      "name": "move_second_switch_before_D0"
+    }
+  ],
+  "next_gate": "EVALUATE_THE_G2_DETECTOR_RECOIL_CORRECTION_FOR_THE_TWO_FIXED_CAUCHY_PREPARATIONS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_dynamical_emitter_rank_two.py",
+        "sha256": "43f2f06616075ef1ae6da6aa907b9fda7aeb731e978f245a56f9e4121009f822"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_dynamical_emitter_rank_two.py",
+        "sha256": "1ded07fc1aec8716d6f4ca4ace3d6557a7f17875a364d85886e9b32d8108d55d"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_dynamical_emitter_rank_two.py",
+        "sha256": "6e6d6b60b01aa77aef9b67a8515e08ce0d1211b66a4f098ddb7cb4e4013d548f"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-dynamical-emitter-cauchy-rank-two-v1.schema.json",
+        "sha256": "ced2db9685db7e4f7688db8a2ce8c7617a9cf04a633e8e2bb5a3dc3322fce674"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-dynamical-emitter-cauchy-rank-two.md",
+        "sha256": "73d9be8e9a4f7e29fb45aa88d1d45dcbb2608dbe1f534c45809ca595bebd21f3"
+      }
+    ]
+  },
+  "result_id": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO",
+  "schema": "closed-universe-berger-dynamical-emitter-cauchy-rank-two-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension",
+  "transfer_matrix": {
+    "basis": "rows (D0,D1), columns (u0,u1)",
+    "causal_zero": "M_01^(K)=0 because the u1 switch is later than D0",
+    "definition": "M_ab^(K)=Q_a[d G_A,ret g_b delta(h_b K_b^(0))]",
+    "determinant": "kappa_0*kappa_1",
+    "diagonal_witnesses": {
+      "kappa_0": "ell_0(u_0) != 0",
+      "kappa_1": "ell_1(u_1) != 0"
+    },
+    "matrix": [
+      [
+        "kappa_0",
+        "0"
+      ],
+      [
+        "mu",
+        "kappa_1"
+      ]
+    ],
+    "rank": 2,
+    "unknown_tail": "mu=M_10^(K) is unrestricted"
+  }
+}

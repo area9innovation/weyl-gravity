@@ -187,11 +187,22 @@ the quadratic Green coefficient or an emitter witness.  This closes the
 formal coefficientwise chain step, not finite-parameter or all-orders Green
 hyperbolicity.
 
+`BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO` now closes the preparation gate at
+leading coupling order.  Green adjunction makes each detector response a
+Cauchy covector on the free massive two-form data.  A constraint-compatible
+local polarization has `p^mu K_mu nu=0` and nonzero clock contraction, so the
+covector is nonzero on a receiver-adjacent patch.  Constraint-potential
+localization then supplies compact data `u_0,u_1`.  With nonzero `g_0,g_1` and
+the second switch after `D0`,
+`M^(K)=[[kappa_0,0],[mu,kappa_1]]` has
+`det M^(K)=kappa_0 kappa_1 !=0`.  These are actual dynamical-emitter
+preparations, not two externally declared Maxwell currents.
+
 ### Immediate priority after the polarization-emitter handoff
 
-1. Choose localized emitter Cauchy preparations using the now-certified
-   coefficientwise 108-row causal homotopy, then replay the leading record
-   rank and first recoil correction.
+1. Evaluate the first `g^2` detector recoil correction for the two now-fixed
+   localized emitter Cauchy preparations, then construct the emitter stress
+   and clock-switch backreaction ledger.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,

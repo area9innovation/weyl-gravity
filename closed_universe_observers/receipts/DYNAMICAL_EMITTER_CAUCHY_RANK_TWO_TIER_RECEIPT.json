@@ -1,0 +1,40 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "DYNAMICAL_EMITTER_CAUCHY_RANK_TWO_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "For declared nonzero emitter couplings, two genuine compact localized Cauchy preparations of the selected free massive two-forms give a triangular leading detector matrix M^(K)=[[kappa_0,0],[mu,kappa_1]] with kappa_0,kappa_1 nonzero. Green adjunction supplies the detector Cauchy covectors, an exact massive polarization verifies the switched source map is nonzero on physical constrained data, topology permits constraint-preserving localization, and retarded timing forces M_01=0. The g^2 detector recoil coefficient, emitter stress/clock backreaction, common-Hopf target, finite-parameter/all-orders Green theory, full Dirac algebra, and quantum claims remain open.",
+  "tier_0": [{"command": "py_compile, json.tool, git diff --check, and explicit SHA-256 replay on dynamical-emitter rank and observer planning paths", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "producer, verifier, tests, schema, certificate, report, receipt, comparison ledger, README, observer brief, and comparison report; the concurrently edited cross-team roadmap is excluded from this commit"}],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_dynamical_emitter_rank_two --check", "elapsed_seconds": "under 1", "status": "PASS", "scope": "massive polarization, adjoint preparation contract, triangular response, mutations, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_dynamical_emitter_rank_two", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent polarization and determinant reconstruction, dependency/source hashes, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_dynamical_emitter_rank_two.py", "elapsed_seconds": "0.49", "status": "PASS", "scope": "all 3 polarization, causal-rank, mutation, and fail-closed tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-dynamical-emitter-cauchy-rank-two-v1.schema.json -d closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json", "elapsed_seconds": "included in focused checks", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "historical imports, bridge hashes, dynamical-emitter rank promotion, and fail-closed recoil gate"}
+  ],
+  "tier_2": [{"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "203.98", "status": "PASS", "scope": "all 95 closed-universe observer tests"}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "This is an observer-owned leading-order existence/rank promotion; it does not alter shared core algebra, promote finite-parameter/all-orders Green hyperbolicity, freeze a release, or make a quantum claim."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json", "sha256": "ad84b7ba1de4d35affc4624415fe66ba4bb09927b71a77acc59257da924c9d78"},
+    {"path": "closed_universe_observers/schema/berger-dynamical-emitter-cauchy-rank-two-v1.schema.json", "sha256": "ced2db9685db7e4f7688db8a2ce8c7617a9cf04a633e8e2bb5a3dc3322fce674"},
+    {"path": "closed_universe_observers/generate_berger_dynamical_emitter_rank_two.py", "sha256": "43f2f06616075ef1ae6da6aa907b9fda7aeb731e978f245a56f9e4121009f822"},
+    {"path": "closed_universe_observers/verify_berger_dynamical_emitter_rank_two.py", "sha256": "1ded07fc1aec8716d6f4ca4ace3d6557a7f17875a364d85886e9b32d8108d55d"},
+    {"path": "closed_universe_observers/tests/test_berger_dynamical_emitter_rank_two.py", "sha256": "6e6d6b60b01aa77aef9b67a8515e08ce0d1211b66a4f098ddb7cb4e4013d548f"},
+    {"path": "closed_universe_observers/reports/berger-dynamical-emitter-cauchy-rank-two.md", "sha256": "73d9be8e9a4f7e29fb45aa88d1d45dcbb2608dbe1f534c45809ca595bebd21f3"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "0e28ffee687fb3a10522ada207e1387753c361ab8ecb6c349aa99e1bbc71e1ba"},
+    {"path": "closed_universe_observers/README.md", "sha256": "93b8b4b25582b19ea781d5c22b077c7a6662c66c6c1d19afadf23e38684321ba"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "a1a46c25d12148bf7b7260e4f74b31e7c439fe0f3bed1d2318eaf7f4435c728c"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "37cac8d6bffcf52955ac6e8ff4cbb9af6b56ead042968a207135a6459865c4f5"}
+  ],
+  "claim_flags": {
+    "TWO_LOCALIZED_FREE_MASSIVE_EMITTER_CAUCHY_PREPARATIONS_CONSTRUCTED": true,
+    "DYNAMICAL_EMITTER_LEADING_RECORD_MATRIX_RANK_TWO_CERTIFIED": true,
+    "TWO_DYNAMICAL_EMITTER_RECORDS_CAUSALLY_DISTINGUISHABLE": true,
+    "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": false,
+    "DETECTOR_RECOIL_G2_COEFFICIENT_EVALUATED": false,
+    "EMITTER_STRESS_BACKREACTION_INCLUDED": false,
+    "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": false,
+    "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

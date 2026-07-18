@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-dynamical-emitter-cauchy-rank-two-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "local_massive_polarization", "cauchy_preparation_construction", "transfer_matrix", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-dynamical-emitter-cauchy-rank-two-v1"},
+    "result_id": {"const": "BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_LOCALIZED_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO_AT_LEADING_ORDER"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5},
+    "local_massive_polarization": {"type": "object", "required": ["mass_shell_defect", "constraint_defect_count", "switched_current_polarization_nonzero"], "properties": {"mass_shell_defect": {"const": "0"}, "constraint_defect_count": {"const": 0}, "switched_current_polarization_nonzero": {"const": true}}},
+    "cauchy_preparation_construction": {"type": "object"},
+    "transfer_matrix": {"type": "object", "required": ["determinant", "rank"], "properties": {"determinant": {"const": "kappa_0*kappa_1"}, "rank": {"const": 2}}},
+    "mutation_results": {"type": "array", "minItems": 4},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["TWO_LOCALIZED_FREE_MASSIVE_EMITTER_CAUCHY_PREPARATIONS_CONSTRUCTED", "DYNAMICAL_EMITTER_LEADING_RECORD_MATRIX_RANK_TWO_CERTIFIED", "TWO_DYNAMICAL_EMITTER_RECORDS_CAUSALLY_DISTINGUISHABLE", "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED", "DETECTOR_RECOIL_G2_COEFFICIENT_EVALUATED", "EMITTER_STRESS_BACKREACTION_INCLUDED", "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"TWO_LOCALIZED_FREE_MASSIVE_EMITTER_CAUCHY_PREPARATIONS_CONSTRUCTED": {"const": true}, "DYNAMICAL_EMITTER_LEADING_RECORD_MATRIX_RANK_TWO_CERTIFIED": {"const": true}, "TWO_DYNAMICAL_EMITTER_RECORDS_CAUSALLY_DISTINGUISHABLE": {"const": true}, "ORIGINAL_COMMON_HOPF_EMITTER_AT_CLOCK_ZERO_CERTIFIED": {"const": false}, "DETECTOR_RECOIL_G2_COEFFICIENT_EVALUATED": {"const": false}, "EMITTER_STRESS_BACKREACTION_INCLUDED": {"const": false}, "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false}, "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}
