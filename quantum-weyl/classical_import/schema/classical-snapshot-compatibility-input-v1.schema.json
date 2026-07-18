@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-classical-snapshot-compatibility-input-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "local_BV_snapshot", "analytic_operator_snapshot", "matched_roles", "compatibility", "proof_artifacts", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-snapshot-compatibility-input-v1"},
+    "result_id": {"const": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"},
+    "result_state": {"const": "LOCAL_BV_CONTENT_HASHES_EQUAL_ACROSS_DISTINCT_COMMITS"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "local_BV_snapshot": {"$ref": "#/$defs/snapshot"},
+    "analytic_operator_snapshot": {"$ref": "#/$defs/snapshot"},
+    "matched_roles": {"const": ["minimal_generator_dictionary", "local_atom_dictionary", "classical_BV_differential", "action_and_identity_dependencies", "grading_and_locality_scope"]},
+    "compatibility": {
+      "const": {
+        "status": "CONTENT_HASH_COMPATIBLE",
+        "all_declared_hashes_equal": true,
+        "semantic_receiver_replayed": true
+      }
+    },
+    "proof_artifacts": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/artifact"}},
+    "claim_boundary": {"type": "string", "minLength": 120}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classical_commit", "canonical_hashes"],
+      "properties": {
+        "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "canonical_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["generator_hash", "atom_hash", "differential_hash", "dependency_hash", "scope_hash"],
+          "properties": {
+            "generator_hash": {"$ref": "#/$defs/hash"},
+            "atom_hash": {"$ref": "#/$defs/hash"},
+            "differential_hash": {"$ref": "#/$defs/hash"},
+            "dependency_hash": {"$ref": "#/$defs/hash"},
+            "scope_hash": {"$ref": "#/$defs/hash"}
+          }
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"const": "JSON_PROOF"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

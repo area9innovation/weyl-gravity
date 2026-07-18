@@ -1,0 +1,96 @@
+{
+  "accepted_contract": {
+    "frozen_local_BV_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+    "input_schema_path": "quantum-weyl/classical_import/schema/classical-snapshot-compatibility-input-v1.schema.json",
+    "physical_input_status": "NOT_SUPPLIED",
+    "required_canonical_hash_keys": [
+      "generator_hash",
+      "atom_hash",
+      "differential_hash",
+      "dependency_hash",
+      "scope_hash"
+    ],
+    "required_physical_proof_roles": [
+      "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+      "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"
+    ],
+    "required_result_id": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC readiness artifact supplies a strict semantic receiver for cross-commit compatibility between the frozen local-BV snapshot and a later analytic-operator snapshot. It enforces exact equality of generator, atom, differential, dependency, and scope hashes and requires role-specific content-addressed import and export proofs on the physical path. The synthetic distinct-commit fixture tests mechanics only and does not certify an absent analytic producer. No physical compatibility bridge, multiplicity ledger, Slavnov breaking, QME disposition, residual transfer, or Lorentzian quantum theory is claimed.",
+  "claim_flags": {
+    "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY": true,
+    "DISTINCT_COMMITS_REQUIRE_CONTENT_PROOF": true,
+    "GENERATOR_ATOM_DIFFERENTIAL_DEPENDENCY_SCOPE_HASHES_ENFORCED": true,
+    "PHYSICAL_COMPATIBILITY_BRIDGE_SUPPLIED": false,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependency_hashes": {
+    "frozen_minimal_BV_import": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8",
+    "input_schema": "b0bf5866cce9c4647d1f1ad454862db629b28bdf2ed6184457686b9b11d42bb6"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "frozen_canonical_hashes": {
+    "atom_hash": "7112ee35060e5f6fbff929d071c16c8789dc7a3b320a4574a113dd2a6c40658f",
+    "dependency_hash": "9ac0ed304d715c11cd0fdadccc612ce2030c7698cc582174c2ee03a066369d5c",
+    "differential_hash": "151e26d6922356f9ad63a0dc40fa6d216d0949e63e4633bd51f1af660dca73d1",
+    "generator_hash": "5c80b9d4a0f9a62588c6fb7cf1b6f7d4dbbe60c3b6a47aff17e480b75eb9a3ed",
+    "scope_hash": "3328d8c41639e7ff89e250914203e1f79f4e4f29feb83116b332db2410e12791"
+  },
+  "next_gate": "SUPPLY_REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_IF_ANALYTIC_COMMIT_DIFFERS",
+  "proof_sha256": "7562677be102bec251164163d4014922896b204ad0211f9b674743a04d48303f",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/classical_import/classical_snapshot_compatibility_readiness.py": "af9319edfff3a43783f817c453ab68a956d7302f28594b7d94cd44a2db7a6b61",
+      "quantum-weyl/classical_import/classical_snapshot_compatibility_receiver.py": "9011c72aaafabfa995a66f9463db1ace47468f4a041f405e4e39d43072bdad5e",
+      "quantum-weyl/classical_import/schema/classical-snapshot-compatibility-input-v1.schema.json": "b0bf5866cce9c4647d1f1ad454862db629b28bdf2ed6184457686b9b11d42bb6",
+      "quantum-weyl/classical_import/schema/classical-snapshot-compatibility-readiness-v1.schema.json": "a2e146cd07e90fee0a74e823f1d99445e28ae3b74d39222555f5a11741cc067f",
+      "quantum-weyl/classical_import/tests/test_classical_snapshot_compatibility.py": "9fd792ddf2fd5eee20814bb52184d0c2cbca792da24db38259d40dc503195acd",
+      "quantum-weyl/classical_import/verify_classical_snapshot_compatibility_readiness.py": "0efad1ddb602ee51b5520afba8e7982d6bd3929430eb9e856067580ae65d33f1",
+      "quantum-weyl/reports/classical-snapshot-compatibility-receiver-readiness.md": "a22996171289d28a64cedae5f90da495eb2b2f346c4ac1ab3caf08d30043e61c"
+    }
+  },
+  "receiver_mechanics": {
+    "mutation_receipts": [
+      {
+        "mutation": "analytic_differential_hash",
+        "rejected": true
+      },
+      {
+        "mutation": "analytic_generator_hash",
+        "rejected": true
+      },
+      {
+        "mutation": "wrong_local_commit",
+        "rejected": true
+      },
+      {
+        "mutation": "bad_proof_hash",
+        "rejected": true
+      }
+    ],
+    "scope": "SYNTHETIC_DISTINCT_COMMIT_EQUAL_HASH_MECHANICS_ONLY",
+    "synthetic_receipt": {
+      "analytic_operator_commit": "1111111111111111111111111111111111111111",
+      "local_BV_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+      "matched_hash_count": 5,
+      "matched_roles": [
+        "minimal_generator_dictionary",
+        "local_atom_dictionary",
+        "classical_BV_differential",
+        "action_and_identity_dependencies",
+        "grading_and_locality_scope"
+      ],
+      "proof_artifact_count": 2,
+      "result_id": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+      "status": "SEMANTIC_RECEIVER_ACCEPTED"
+    }
+  },
+  "result_id": "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS",
+  "result_state": "CONTENT_HASH_COMPATIBILITY_RECEIVER_READY_PHYSICAL_BRIDGE_NOT_SUPPLIED",
+  "schema": "quantum-weyl-classical-snapshot-compatibility-readiness-v1"
+}

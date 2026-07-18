@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-classical-snapshot-compatibility-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "frozen_canonical_hashes", "dependency_hashes", "accepted_contract", "receiver_mechanics", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-snapshot-compatibility-readiness-v1"},
+    "result_id": {"const": "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS"},
+    "result_state": {"const": "CONTENT_HASH_COMPATIBILITY_RECEIVER_READY_PHYSICAL_BRIDGE_NOT_SUPPLIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_commit": {"$ref": "#/$defs/commit"},
+    "frozen_canonical_hashes": {"$ref": "#/$defs/canonical_hashes"},
+    "dependency_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["frozen_minimal_BV_import", "input_schema"],
+      "properties": {
+        "frozen_minimal_BV_import": {"$ref": "#/$defs/hash"},
+        "input_schema": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "accepted_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_result_id", "input_schema_path", "frozen_local_BV_commit", "required_canonical_hash_keys", "required_physical_proof_roles", "physical_input_status"],
+      "properties": {
+        "required_result_id": {"const": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"},
+        "input_schema_path": {"const": "quantum-weyl/classical_import/schema/classical-snapshot-compatibility-input-v1.schema.json"},
+        "frozen_local_BV_commit": {"$ref": "#/$defs/commit"},
+        "required_canonical_hash_keys": {"const": ["generator_hash", "atom_hash", "differential_hash", "dependency_hash", "scope_hash"]},
+        "required_physical_proof_roles": {"const": ["CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2", "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2"]},
+        "physical_input_status": {"const": "NOT_SUPPLIED"}
+      }
+    },
+    "receiver_mechanics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "synthetic_receipt", "mutation_receipts"],
+      "properties": {
+        "scope": {"const": "SYNTHETIC_DISTINCT_COMMIT_EQUAL_HASH_MECHANICS_ONLY"},
+        "synthetic_receipt": {"$ref": "#/$defs/receipt"},
+        "mutation_receipts": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["mutation", "rejected"],
+            "properties": {
+              "mutation": {"enum": ["analytic_differential_hash", "analytic_generator_hash", "wrong_local_commit", "bad_proof_hash"]},
+              "rejected": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY": true,
+        "GENERATOR_ATOM_DIFFERENTIAL_DEPENDENCY_SCOPE_HASHES_ENFORCED": true,
+        "DISTINCT_COMMITS_REQUIRE_CONTENT_PROOF": true,
+        "PHYSICAL_COMPATIBILITY_BRIDGE_SUPPLIED": false,
+        "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+        "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+        "QME_DISPOSITION": false
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "SUPPLY_REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_IF_ANALYTIC_COMMIT_DIFFERS"},
+    "claim_boundary": {"type": "string", "minLength": 300},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_sha256"],
+      "properties": {
+        "source_sha256": {"type": "object", "minProperties": 7, "additionalProperties": {"$ref": "#/$defs/hash"}}
+      }
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator_hash", "atom_hash", "differential_hash", "dependency_hash", "scope_hash"],
+      "properties": {
+        "generator_hash": {"$ref": "#/$defs/hash"},
+        "atom_hash": {"$ref": "#/$defs/hash"},
+        "differential_hash": {"$ref": "#/$defs/hash"},
+        "dependency_hash": {"$ref": "#/$defs/hash"},
+        "scope_hash": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["result_id", "local_BV_commit", "analytic_operator_commit", "matched_hash_count", "matched_roles", "proof_artifact_count", "status"],
+      "properties": {
+        "result_id": {"const": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"},
+        "local_BV_commit": {"$ref": "#/$defs/commit"},
+        "analytic_operator_commit": {"$ref": "#/$defs/commit"},
+        "matched_hash_count": {"const": 5},
+        "matched_roles": {"const": ["minimal_generator_dictionary", "local_atom_dictionary", "classical_BV_differential", "action_and_identity_dependencies", "grading_and_locality_scope"]},
+        "proof_artifact_count": {"const": 2},
+        "status": {"const": "SEMANTIC_RECEIVER_ACCEPTED"}
+      }
+    }
+  }
+}

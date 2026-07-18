@@ -23,6 +23,12 @@ covariant jet prolongations commute with the horizontal differential, and a
 free-word normal-form calculation transports every SDR identity through
 arbitrary invertible local BV-canonical gauge fixing. The gauge-fixed H04 and
 H14 quotients consequently have the same `2/1` dimensions.
+The cross-commit classical-snapshot receiver is now executable and
+mutation-tested. If a later analytic operator export comes from a different
+commit, it must match the frozen generator, atom, differential, dependency,
+and scope hashes exactly and supply content-addressed import/export proofs.
+No physical compatibility bridge is claimed until such an analytic producer
+actually supplies it.
 The exact Slavnov-breaking assembly preflight now reduces the four raw density
 coordinates to this three-class quotient, removes `omega BoxR` with its
 stored primitive, and binds the standard background vector

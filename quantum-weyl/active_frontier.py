@@ -22,6 +22,7 @@ DEPENDENCIES = {
     "H14_AFN0_even": HERE / "local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
     "H14_AFN0_odd": HERE / "local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
     "antifield_import": HERE / "classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+    "classical_snapshot_compatibility_receiver": HERE / "classical_import/certificates/CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS.json",
     "minimal_KT_collapse": HERE / "local_bv/certificates/MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json",
     "minimal_BV_H14": HERE / "local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
     "general_nonminimal_gauge_fixed": HERE / "local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
@@ -75,6 +76,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "H14_AFN0_even": "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT",
         "H14_AFN0_odd": "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT",
         "antifield_import": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2_IMPORTED_INDEPENDENTLY_REPLAYED",
+        "classical_snapshot_compatibility_receiver": "CONTENT_HASH_COMPATIBILITY_RECEIVER_READY_PHYSICAL_BRIDGE_NOT_SUPPLIED",
         "minimal_KT_collapse": "MINIMAL_KT_COLLAPSE_PROVED_AFN0_WEYL_QUOTIENTS_LIFT_DIFF_MIXED_TOTAL_COMPLEX_OPEN",
         "minimal_BV_H14": "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN",
         "general_nonminimal_gauge_fixed": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
@@ -127,6 +129,26 @@ def _load() -> dict[str, dict[str, Any]]:
         != "MINIMAL_BV_H04_H14_WITH_KOSZUL_TATE_ROWS"
     ):
         raise ValueError("antifield v2 receiving frontier drifted")
+    compatibility = values["classical_snapshot_compatibility_receiver"]
+    compatibility_flags = compatibility.get("claim_flags", {})
+    compatibility_contract = compatibility.get("accepted_contract", {})
+    if (
+        compatibility_flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY")
+        is not True
+        or compatibility_flags.get(
+            "GENERATOR_ATOM_DIFFERENTIAL_DEPENDENCY_SCOPE_HASHES_ENFORCED"
+        )
+        is not True
+        or compatibility_flags.get("DISTINCT_COMMITS_REQUIRE_CONTENT_PROOF")
+        is not True
+        or compatibility_flags.get("PHYSICAL_COMPATIBILITY_BRIDGE_SUPPLIED")
+        is not False
+        or compatibility_contract.get("required_result_id")
+        != "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+        or compatibility.get("next_gate")
+        != "SUPPLY_REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY_IF_ANALYTIC_COMMIT_DIFFERS"
+    ):
+        raise ValueError("classical snapshot compatibility receiver frontier drifted")
     kt = values["minimal_KT_collapse"]
     kt_flags = kt.get("claim_flags", {})
     if (
@@ -857,6 +879,7 @@ def build() -> dict[str, Any]:
             "AFN0_G1_COMPLETE": True,
             "ANTIFIELD_EXPORT_V2_RECEIVER_READY": True,
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": True,
+            "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY": True,
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC": True,
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS": True,
             "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE": True,
@@ -928,6 +951,11 @@ def build() -> dict[str, Any]:
             "H04 and H14 quotients are complete with the same 2/1 dimensions on that locus, "
             "and the exact 3-by-4 breaking reduction binds the standard even background "
             "coordinates 199/30 and -87/20 while keeping the repository matching open. "
+            "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
+            "operator export and frozen local-BV import come from distinct commits, it "
+            "requires exact equality of the generator, atom, differential, dependency and "
+            "scope hashes plus role-specific content-addressed import/export proofs. No "
+            "physical cross-commit bridge has yet been supplied. "
             "The standard determinant ranks 5,1,5,3 reproduce signed rank six. The exact "
             "longitudinal-Diff/Weyl Faddeev--Popov matrix now reduces its two scalar ghost "
             "inputs to the single differential factor Delta_0-R/3, matching the standard "
@@ -1045,6 +1073,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("AFN0_G1_COMPLETE") is not True
         or flags.get("ANTIFIELD_EXPORT_V2_RECEIVER_READY") is not True
         or flags.get("CLASSICAL_ANTIFIELD_EXPORT_IMPORTED") is not True
+        or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY") is not True
         or flags.get("MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC") is not True
         or flags.get("MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS") is not True
         or flags.get("GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE") is not True
@@ -1100,6 +1129,7 @@ def validate(result: dict[str, Any]) -> None:
             "AFN0_G1_COMPLETE",
             "ANTIFIELD_EXPORT_V2_RECEIVER_READY",
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED",
+            "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY",
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC",
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS",
             "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE",

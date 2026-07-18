@@ -27,6 +27,11 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertEqual(ladder["G1"], "PASSED_AFN0_LOCAL_QUOTIENT")
         self.assertTrue(self.payload["claim_flags"]["ANTIFIELD_EXPORT_V2_RECEIVER_READY"])
         self.assertTrue(self.payload["claim_flags"]["CLASSICAL_ANTIFIELD_EXPORT_IMPORTED"])
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY"
+            ]
+        )
         self.assertTrue(self.payload["claim_flags"]["MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC"])
         self.assertTrue(
             self.payload["claim_flags"]["MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS"]
