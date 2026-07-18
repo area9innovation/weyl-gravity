@@ -218,17 +218,24 @@ variation, including the varying pairing, followed by the complete rank-310
 SDR identity.  No transverse causal promotion follows from the outer-row
 calculation alone.
 
-After that coherent gate, the classical lane joins the two authoritative
-programme deliverables.  It must populate the causal/gauge/carrier fragment
-of the generated residual atlas for the vacuum cylinder, Berger clock,
+The classical lane has now closed its abstract contribution to the second
+deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves
+the complete finite-block image/cokernel criterion after Noether and gauge
+reduction.  Its exact resonance audit shows that a bounded Fourier
+obstruction disappears in the smooth-secular category through
+`t exp(i omega t)` and in the retarded category for compatible compact
+sources, while the stabilizer moment map persists.  This is not a new
+background classification or an all-orders theorem.
+
+After the coherent transverse-SDR gate, the classical lane must populate the
+causal/gauge/carrier fragment of the generated residual atlas for the vacuum
+cylinder, Berger clock,
 conformal Nariai, and the open Bach-flat parent class, using the Einstein
-team's shared schema and fail-closed lifecycle vocabulary.  It must also
-prove the analytic lemma behind the finite-harmonic second-order tangent-cone
-formula, with the correction category declared separately as bounded or
-quasiperiodic, smooth secular, or causal/retarded.  The first adversarial test
-is whether a Fourier resonance obstructed in the bounded class is removed by
-a `t exp(i omega t)` correction.  No cross-background or cross-carrier mode
-identification is permitted without an explicit atlas crosswalk.
+team's shared schema and fail-closed lifecycle vocabulary.  Each atlas
+second-order status must name its correction category separately as bounded
+or quasiperiodic, smooth secular, or causal/retarded.  No cross-background or
+cross-carrier mode identification is permitted without an explicit atlas
+crosswalk.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 
