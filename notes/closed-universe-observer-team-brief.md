@@ -616,6 +616,15 @@ applying the exact temporal functional calculus.  The atlas row
 marks direct promotion `OBSTRUCTED`; it does not obstruct the finite companion
 completion.
 
+`BERGER_SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION` now evaluates the
+six missing rows.  All widths are below `0.1`, with maximum below `0.099`;
+indices `385,386` retain radial-only `128 x 64` refinement.  Together with the
+previous 12 rows, all 18 scalar inputs for the 33 on-support companions are
+present.  The active gate is therefore construction of those 33 real-form
+intervals and propagation through the 15 even clock powers, not further
+scalar widening.  Direct temporal promotion remains `OBSTRUCTED` until that
+form-level completion lands.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

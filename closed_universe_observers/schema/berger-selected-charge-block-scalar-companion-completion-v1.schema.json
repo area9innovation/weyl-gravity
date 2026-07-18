@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-selected-charge-block-scalar-companion-completion-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "newly_evaluated_scalar_rows", "complete_scalar_input_rows", "coverage", "deleted_row_mutation", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-selected-charge-block-scalar-companion-completion-v1"},
+    "result_id": {"const": "BERGER_SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_SIX_SCALAR_COMPANION_ROWS_EVALUATED_ALL_18_CHARGE_BLOCK_FORM_SCALAR_INPUTS_PRESENT"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3, "maxProperties": 3},
+    "newly_evaluated_scalar_rows": {"type": "array", "minItems": 6, "maxItems": 6},
+    "complete_scalar_input_rows": {"type": "array", "minItems": 18, "maxItems": 18},
+    "coverage": {
+      "type": "object",
+      "required": ["newly_evaluated_scalar_row_count", "previously_certified_scalar_row_count", "complete_required_scalar_row_count", "maximum_new_scalar_interval_width", "canonical_new_scalar_companion_sha256"],
+      "properties": {
+        "newly_evaluated_scalar_row_count": {"const": 6},
+        "previously_certified_scalar_row_count": {"const": 12},
+        "complete_required_scalar_row_count": {"const": 18},
+        "maximum_new_scalar_interval_width": {"type": "string"},
+        "canonical_new_scalar_companion_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "deleted_row_mutation": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["SIX_MISSING_SCALAR_COMPANION_ROWS_EVALUATED", "ALL_SIX_NEW_SCALAR_WIDTHS_BELOW_ONE_TENTH", "ALL_18_CHARGE_BLOCK_FORM_SCALAR_INPUT_ROWS_PRESENT", "DELETED_SCALAR_COMPANION_MUTATION_REJECTED", "THIRTY_THREE_ON_SUPPORT_FORM_COMPANIONS_EVALUATED", "SELECTED_INPUT_RAIL_CHARGE_BLOCK_CLOSED", "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "GREEN_IMAGES_EVALUATED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "SIX_MISSING_SCALAR_COMPANION_ROWS_EVALUATED": {"const": true},
+        "ALL_SIX_NEW_SCALAR_WIDTHS_BELOW_ONE_TENTH": {"const": true},
+        "ALL_18_CHARGE_BLOCK_FORM_SCALAR_INPUT_ROWS_PRESENT": {"const": true},
+        "DELETED_SCALAR_COMPANION_MUTATION_REJECTED": {"const": true},
+        "THIRTY_THREE_ON_SUPPORT_FORM_COMPANIONS_EVALUATED": {"const": false},
+        "SELECTED_INPUT_RAIL_CHARGE_BLOCK_CLOSED": {"const": false},
+        "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "GREEN_IMAGES_EVALUATED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "CONSTRUCT_THE_33_ON_SUPPORT_REAL_FORM_COMPANIONS_AND_PROPAGATE_THEM_THROUGH_P0_TO_P28"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

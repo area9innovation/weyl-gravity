@@ -67,3 +67,16 @@ def test_selected_charge_block_promotion_is_fail_closed():
     assert "BERGER_SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_GATE" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_selected_scalar_companion_completion_does_not_promote_form_response():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.selected_charge_block_scalar_companion_completion"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert "BERGER_SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

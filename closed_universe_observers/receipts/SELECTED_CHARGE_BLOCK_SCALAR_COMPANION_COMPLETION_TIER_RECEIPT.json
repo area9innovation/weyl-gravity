@@ -1,0 +1,48 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The correlated Darboux evaluator interval-encloses the exact six scalar rows missing from the selected charge-block companion gate: shell 1023 indices 129,257,385 and shell 1025 indices 130,258,386. Indices 385,386 use 128 radial by 64 angular cells and the other rows use 64x64. Every new width is below 0.1, with maximum below 0.099. Together with the previously certified 12 rows, all 18 scalar recurrence inputs for the 33 on-support real-form companions are present. Deleting one new row is rejected. This does not construct the 33 form intervals or their p=0,...,28 clock rails, close the selected charge blocks, apply Green kernels, certify a Sobolev/infinite-mode tail, evaluate detector response or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim. The coefficientwise mixed epsilon_R^2 kappa unary sequencing remains unchanged.",
+  "tier_0": [
+    {"command": "python3 -m py_compile on the producer, verifier, atlas producer and scoped tests; JSON/schema parse; git diff --check on scoped paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_selected_charge_block_scalar_companion_completion.py", "elapsed_seconds": 0.65, "status": "PASS", "summary": "5 tests passed, covering exact six-row coverage, width and radial-refinement gates, complete 18-row scalar union, deleted-row rejection and fail-closed form/Green/response claims."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_selected_charge_block_scalar_companion_completion", "status": "PASS", "summary": "Schema, source/dependency hashes, exact row identities, resolutions, widths, complete scalar union, canonical digest, mutation and lifecycle flags passed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The scalar input row is CERTIFIED while direct incomplete-form temporal promotion remains OBSTRUCTED and response, rank, Green, recoil and cone fields remain OPEN."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_selected_charge_block_scalar_companion_completion --check", "elapsed_seconds": 91.49, "status": "PASS", "summary": "All six correlated interval evaluations were recomputed in six workers and the certificate matched byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No form-companion rail, completed charge-block input, Green image, infinite-mode theorem, detector-response lifecycle promotion, recoil coefficient, shared core-algebra change, freeze or release was claimed."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_selected_charge_block_scalar_companion_completion.py", "sha256": "3ffb55190d26f4da39d9632b7f342edc0ec84bba9a0d3595e2818fabdf41693b"},
+    {"path": "closed_universe_observers/verify_berger_selected_charge_block_scalar_companion_completion.py", "sha256": "896fe649b697266fb428e845ca648650612f3c95d83763a756d14ed57132d616"},
+    {"path": "closed_universe_observers/tests/test_berger_selected_charge_block_scalar_companion_completion.py", "sha256": "2fdac5adb54df084c4ff2f3f8338d95046b066fb84f39bfd0b6bc8d98035c990"},
+    {"path": "closed_universe_observers/schema/berger-selected-charge-block-scalar-companion-completion-v1.schema.json", "sha256": "6ac0b15aa982fba2bef06dde5d20efe71fffff093ea5b95ca80dc1f33f17e37d"},
+    {"path": "closed_universe_observers/reports/berger-selected-charge-block-scalar-companion-completion.md", "sha256": "ce275c73d4efa9ac3fb538124df6a4b4313a0aa97cc3fdda364e03341602d6b8"},
+    {"path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_SCALAR_COMPANION_COMPLETION.json", "sha256": "3466793e5e732a0d5ec3f9d415677858cc550c7373760ff1b9e049eb26b8d4ae"},
+    {"path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_GATE.json", "sha256": "68a0744d0bcd8e812134a19c5115d290c2db38315fd1d0ca959a00f0124007ad"},
+    {"path": "closed_universe_observers/certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json", "sha256": "d983d0969dcfa4663b6cf4dfbae7e2bf239a007c026bacd9f723ce1fec78ca19"},
+    {"path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json", "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "1c1aca0af78b31c5cc3db6f5a4b62d50f95f6f18eba0a63e676cf0a21616205d"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "9812311066b144f4243c0cc42fa56d674e96f682ef13e52453338e0c148d709e"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "0a23872152297704b6a16962a67aae79cefbfb019747d489e45a301a02273025"}
+  ],
+  "claim_flags": {
+    "SIX_MISSING_SCALAR_COMPANION_ROWS_EVALUATED": true,
+    "ALL_SIX_NEW_SCALAR_WIDTHS_BELOW_ONE_TENTH": true,
+    "ALL_18_CHARGE_BLOCK_FORM_SCALAR_INPUT_ROWS_PRESENT": true,
+    "DELETED_SCALAR_COMPANION_MUTATION_REJECTED": true,
+    "THIRTY_THREE_ON_SUPPORT_FORM_COMPANIONS_EVALUATED": false,
+    "SELECTED_INPUT_RAIL_CHARGE_BLOCK_CLOSED": false,
+    "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

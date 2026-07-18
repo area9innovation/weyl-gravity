@@ -109,6 +109,8 @@ python3 -m closed_universe_observers.generate_berger_selected_clock_power_polari
 python3 -m closed_universe_observers.verify_berger_selected_clock_power_polarized_form_rail
 python3 -m closed_universe_observers.generate_berger_selected_charge_block_companion_closure_gate --check
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_companion_closure_gate
+python3 -m closed_universe_observers.generate_berger_selected_charge_block_scalar_companion_completion --check
+python3 -m closed_universe_observers.verify_berger_selected_charge_block_scalar_companion_completion
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -477,7 +479,11 @@ zeros and 33 additional on-support real entries.  Direct temporal promotion
 is therefore `OBSTRUCTED`.  The 33 companions require 18 scalar recurrence
 rows, 12 already certified and exactly six missing: shell `1023` indices
 `129,257,385` and shell `1025` indices `130,258,386`.  Those six rows and the
-33 companion form entries are the next finite gate.
+33 companion form entries are the next finite gate.  The six-row successor
+now evaluates all of them below width `0.1` (maximum below `0.099`), using
+radial-only `128 x 64` refinement at indices `385,386`.  All 18 scalar inputs
+for the 33 companions are therefore present.  The active gate is now the 33
+real-form combinations and their even clock powers, not further scalar work.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

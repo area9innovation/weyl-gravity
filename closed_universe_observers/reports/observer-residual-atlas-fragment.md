@@ -41,6 +41,10 @@ promotion.  Its 18 helicity blocks require 33 on-support real companions in
 addition to 27 certified structural zeros.  Six scalar recurrence rows remain
 to construct those companions.  This obstruction is scoped to the incomplete
 selected input, not to the exact blockwise functional calculus itself.
+The scalar-companion completion row is now `CERTIFIED`: the six missing
+intervals all pass width `0.1`, completing the 18-row scalar input union.
+This does not change the direct-promotion obstruction until the 33 real-form
+companions and their clock powers are actually constructed.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
