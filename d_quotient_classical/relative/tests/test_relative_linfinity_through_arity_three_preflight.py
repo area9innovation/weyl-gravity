@@ -1,5 +1,9 @@
 import copy
+import json
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
 from d_quotient_classical.relative import relative_linfinity_through_arity_three_preflight as result
 
@@ -40,6 +44,33 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
         value["result_state"] = "INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY"
         with self.assertRaises(Exception):
             result.verify(value)
+
+    def test_all_valid_inputs_activate_relative_morphism_solve(self):
+        with tempfile.TemporaryDirectory(dir=result.ROOT) as temporary:
+            directory = Path(temporary)
+            triangle_path = directory / "triangle.json"
+            einstein_path = directory / "einstein.json"
+            weyl_path = directory / "weyl.json"
+            triangle_path.write_text(json.dumps(result.synthetic_triangle()))
+            einstein_path.write_text(json.dumps(result.synthetic_taylor(
+                "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+                "Einstein-Maxwell",
+            )))
+            weyl_path.write_text(json.dumps(result.synthetic_taylor(
+                "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+                "Weyl-Maxwell",
+            )))
+            absent = directory / "absent.json"
+            with (
+                patch.object(result, "TRIANGLE_CANDIDATES", (triangle_path, absent)),
+                patch.object(result, "EINSTEIN_CANDIDATES", (einstein_path, absent)),
+                patch.object(result, "WEYL_CANDIDATES", (weyl_path, absent)),
+            ):
+                value = result.build()
+        self.assertTrue(all(status == "IMPORTED" for status in value["input_status"].values()))
+        self.assertTrue(value["claim_flags"]["ALL_SCIENTIFIC_INPUTS_IMPORTED"])
+        self.assertEqual(value["result_state"], "INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY")
+        self.assertEqual(value["next_gate"], "COMPUTE_RELATIVE_ARITY_TWO_AND_THREE_DEFECTS")
 
 
 if __name__ == "__main__":
