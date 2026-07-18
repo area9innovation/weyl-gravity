@@ -302,22 +302,43 @@ class TaylorJet:
         return TaylorJet(coefficient * self.background, self.linear.scale(coefficient), self.bilinear.scale(coefficient), self.trilinear.scale(coefficient))
 
     def __mul__(self, other: "TaylorJet") -> "TaylorJet":
+        bilinear_pieces = (
+            self.bilinear.scale(other.background),
+            other.bilinear.scale(self.background),
+            _outer(self.linear, other.linear),
+            _outer(other.linear, self.linear),
+        )
+        trilinear_pieces = (
+            self.trilinear.scale(other.background),
+            other.trilinear.scale(self.background),
+            _sym_linear_bilinear(self.linear, other.bilinear),
+            _sym_linear_bilinear(other.linear, self.bilinear),
+        )
         return TaylorJet(
             self.background * other.background,
             self.linear.scale(other.background) + other.linear.scale(self.background),
-            self.bilinear.scale(other.background) + other.bilinear.scale(self.background) + _outer(self.linear, other.linear) + _outer(other.linear, self.linear),
-            self.trilinear.scale(other.background) + other.trilinear.scale(self.background) + _sym_linear_bilinear(self.linear, other.bilinear) + _sym_linear_bilinear(other.linear, self.bilinear),
+            _sum_bilinear(bilinear_pieces),
+            _sum_trilinear(trilinear_pieces),
         )
 
     def reciprocal(self) -> "TaylorJet":
         if self.background == 0:
             raise ZeroDivisionError("Taylor reciprocal needs nonzero background")
         inverse = 1 / self.background
+        bilinear = _sum_bilinear((
+            self.bilinear.scale(-inverse**2),
+            _outer(self.linear, self.linear).scale(2 * inverse**3),
+        ))
+        trilinear = _sum_trilinear((
+            self.trilinear.scale(-inverse**2),
+            _sym_linear_bilinear(self.linear, self.bilinear).scale(2 * inverse**3),
+            _outer3(self.linear, self.linear, self.linear).scale(-6 * inverse**4),
+        ))
         return TaylorJet(
             inverse,
             self.linear.scale(-inverse**2),
-            self.bilinear.scale(-inverse**2) + _outer(self.linear, self.linear).scale(2 * inverse**3),
-            self.trilinear.scale(-inverse**2) + _sym_linear_bilinear(self.linear, self.bilinear).scale(2 * inverse**3) + _outer3(self.linear, self.linear, self.linear).scale(-6 * inverse**4),
+            bilinear,
+            trilinear,
         )
 
     def __truediv__(self, other: "TaylorJet") -> "TaylorJet":
@@ -342,8 +363,15 @@ class TaylorJet:
         return TaylorJet(
             root,
             self.linear.scale(first),
-            self.bilinear.scale(first) + _outer(self.linear, self.linear).scale(second),
-            self.trilinear.scale(first) + _sym_linear_bilinear(self.linear, self.bilinear).scale(second) + _outer3(self.linear, self.linear, self.linear).scale(third),
+            _sum_bilinear((
+                self.bilinear.scale(first),
+                _outer(self.linear, self.linear).scale(second),
+            )),
+            _sum_trilinear((
+                self.trilinear.scale(first),
+                _sym_linear_bilinear(self.linear, self.bilinear).scale(second),
+                _outer3(self.linear, self.linear, self.linear).scale(third),
+            )),
         )
 
 
@@ -507,6 +535,44 @@ def operation_record(
             "coefficient_jets": jets,
         })
     return records
+
+
+def profile_operation_records(
+    records: Sequence[dict[str, object]],
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    """Deduplicate coefficient-jet profiles without changing term support."""
+
+    keys = sorted({
+        tuple(
+            (tuple(item["word"]), str(item["coefficient"]))
+            for item in record["coefficient_jets"]
+        )
+        for record in records
+    })
+    index = {key: position for position, key in enumerate(keys)}
+    profiles = [
+        {
+            "index": position,
+            "coefficient_jets": [
+                {"word": list(word), "coefficient": coefficient}
+                for word, coefficient in key
+            ],
+        }
+        for position, key in enumerate(keys)
+    ]
+    terms = []
+    for record in records:
+        key = tuple(
+            (tuple(item["word"]), str(item["coefficient"]))
+            for item in record["coefficient_jets"]
+        )
+        terms.append({
+            "output_row": record["output_row"],
+            "inputs": record["inputs"],
+            "coefficient": record["coefficient"],
+            "coefficient_profile": index[key],
+        })
+    return profiles, terms
 
 
 def compose_linear(

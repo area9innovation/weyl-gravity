@@ -40,11 +40,20 @@ def _rat(value: str) -> sp.Rational:
 
 def _terms(payload: dict) -> tuple[list[list[dict]], int]:
     content = payload["content"]
+    profiles = {
+        profile["index"]: profile["coefficient_jets"]
+        for profile in content.get("coefficient_profiles", [])
+    }
     rows: list[list[dict]] = [[] for _ in range(content["row_count"])]
     for raw in content["terms"]:
+        coefficient_jets = (
+            profiles[raw["coefficient_profile"]]
+            if "coefficient_profile" in raw
+            else raw["coefficient_jets"]
+        )
         term = {
             "inputs": tuple((item["row"], tuple(item["word"])) for item in raw["inputs"]),
-            "jets": {tuple(item["word"]): _rat(item["coefficient"]) for item in raw["coefficient_jets"]},
+            "jets": {tuple(item["word"]): _rat(item["coefficient"]) for item in coefficient_jets},
         }
         rows[raw["output_row"]].append(term)
     return rows, content["arity"]

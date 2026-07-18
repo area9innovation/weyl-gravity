@@ -74,6 +74,28 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
             value = _write_executable_taylor_fixture(Path(temporary), "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1", "Weyl-Maxwell")
             result.validate_taylor(value, expected_result_id=value["result_id"], expected_theory="Weyl-Maxwell")
 
+    def test_profiled_coefficient_jets_validate(self):
+        with tempfile.TemporaryDirectory(dir=result.ROOT) as temporary:
+            value = _write_executable_taylor_fixture(
+                Path(temporary),
+                "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1",
+                "Weyl-Maxwell",
+            )
+            path = result.ROOT / value["taylor_artifacts"]["q3"]["path"]
+            payload = json.loads(path.read_text())
+            jets = payload["content"]["terms"][0].pop("coefficient_jets")
+            payload["content"]["terms"][0]["coefficient_profile"] = 0
+            payload["content"]["coefficient_profiles"] = [
+                {"index": 0, "coefficient_jets": jets}
+            ]
+            path.write_text(json.dumps(payload, sort_keys=True))
+            value["taylor_artifacts"]["q3"]["sha256"] = _sha256(path)
+            result.validate_taylor(
+                value,
+                expected_result_id=value["result_id"],
+                expected_theory="Weyl-Maxwell",
+            )
+
     def test_berger_payload_is_rejected(self):
         value = result.synthetic_taylor("WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1", "Weyl-Maxwell")
         value["background_id"] = "fixed_rational_positive_Berger_clock"

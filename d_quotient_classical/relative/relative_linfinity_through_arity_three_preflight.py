@@ -183,6 +183,15 @@ def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, exp
                 raise ValueError(f"{name} arity or carrier size drifted")
             if operation["term_count"] != len(operation["terms"]):
                 raise ValueError(f"{name} term count drifted")
+            profiles = operation.get("coefficient_profiles", [])
+            if profiles:
+                indices = [profile["index"] for profile in profiles]
+                if sorted(indices) != list(range(len(profiles))):
+                    raise ValueError(f"{name} coefficient profiles are not a contiguous index set")
+            profile_jets = {
+                profile["index"]: profile["coefficient_jets"]
+                for profile in profiles
+            }
             term_keys = set()
             maximum_order = 0
             for term in operation["terms"]:
@@ -191,7 +200,12 @@ def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, exp
                 if any(item["row"] >= row_count for item in term["inputs"]):
                     raise ValueError(f"{name} input escaped the carrier")
                 coefficient = _rational(term["coefficient"])
-                jets = term["coefficient_jets"]
+                if "coefficient_profile" in term:
+                    if term["coefficient_profile"] not in profile_jets:
+                        raise ValueError(f"{name} references a missing coefficient profile")
+                    jets = profile_jets[term["coefficient_profile"]]
+                else:
+                    jets = term["coefficient_jets"]
                 jet_keys = [tuple(item["word"]) for item in jets]
                 if len(jet_keys) != len(set(jet_keys)) or any(tuple(sorted(key)) != key for key in jet_keys):
                     raise ValueError(f"{name} contains duplicate or nonnormal coefficient jets")
