@@ -104,6 +104,41 @@
         "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
       }
     },
+    "dependencyTags": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]
+      }
+    },
+    "quantumData": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "entry_kind", "dependency_tags", "classical_mode_imported", "BRST_cocycle",
+        "BRST_exactness", "pairing_status", "compatible_complex_structure",
+        "Hadamard_two_point_function", "state_space_status", "anomaly_QME_dependency",
+        "lifecycle_state", "particle_interpretation", "carrier_crosswalk"
+      ],
+      "properties": {
+        "entry_kind": {
+          "enum": [
+            "MODE_FAMILY", "NONPARTICLE_RESIDUAL_CLASS", "CARRIER_IMPORT_GAP",
+            "CLASSICAL_TO_QUANTUM_CROSSWALK", "NON_MODE_PARTICLE_GUARD"
+          ]
+        },
+        "dependency_tags": {"$ref": "#/$defs/dependencyTags"},
+        "classical_mode_imported": {"$ref": "#/$defs/claim"},
+        "BRST_cocycle": {"$ref": "#/$defs/claim"},
+        "BRST_exactness": {"$ref": "#/$defs/claim"},
+        "pairing_status": {"$ref": "#/$defs/claim"},
+        "compatible_complex_structure": {"$ref": "#/$defs/claim"},
+        "Hadamard_two_point_function": {"$ref": "#/$defs/claim"},
+        "state_space_status": {"$ref": "#/$defs/claim"},
+        "anomaly_QME_dependency": {"$ref": "#/$defs/claim"},
+        "lifecycle_state": {"$ref": "#/$defs/claim"},
+        "particle_interpretation": {"$ref": "#/$defs/claim"},
+        "carrier_crosswalk": {"$ref": "#/$defs/claim"}
+      }
+    },
     "entry": {
       "type": "object", "additionalProperties": false,
       "required": ["id", "scope", "descriptions", "mode_data", "evidence", "claim_boundary"],
@@ -112,6 +147,7 @@
         "scope": {"$ref": "#/$defs/scope"},
         "descriptions": {"$ref": "#/$defs/descriptions"},
         "mode_data": {"$ref": "#/$defs/modeData"},
+        "quantum_data": {"$ref": "#/$defs/quantumData"},
         "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
         "claim_boundary": {"type": "string", "minLength": 1}
       }

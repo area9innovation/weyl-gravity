@@ -19,6 +19,11 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _artifact_id(payload: dict) -> str:
+    value = payload.get("result_id") or payload.get("certificate_id") or payload.get("schema")
+    return str(value) if value is not None else "UNIDENTIFIED"
+
+
 def validate(fragment: Path) -> None:
     value = json.loads(fragment.read_text(encoding="utf-8"))
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
@@ -34,7 +39,7 @@ def validate(fragment: Path) -> None:
             payload = json.loads(path.read_text(encoding="utf-8"))
             if _sha256(path) != evidence["sha256"]:
                 raise AssertionError(f"evidence hash mismatch: {entry['id']} -> {path}")
-            if payload.get("result_id") != evidence["result_id"]:
+            if _artifact_id(payload) != evidence["result_id"]:
                 raise AssertionError(f"evidence result-id mismatch: {entry['id']} -> {path}")
         if not entry["evidence"] and "crosswalk" not in entry["id"]:
             statuses = set(entry["descriptions"].values())

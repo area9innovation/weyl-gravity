@@ -477,6 +477,50 @@ and fallback, not an existing Berger branch adapter. Both routes must satisfy
 the same exact carrier, cyclicity, intertwining, locality, nonlinear-lift and
 mutation conditions before a mixing table is permitted.
 
+## Generated quantum residual-atlas fragment
+
+The quantum-status column is generated at
+[`quantum-weyl/atlas/quantum-atlas-fragment.json`](../quantum-weyl/atlas/quantum-atlas-fragment.json),
+with its evidence and claim-boundary report at
+[`quantum-residual-atlas-fragment.md`](../quantum-weyl/reports/quantum-residual-atlas-fragment.md).
+The fragment uses only `CERTIFIED`, `OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE`,
+and `NO_CERTIFIED_MAP`.
+
+It currently emits thirteen common-envelope entries: six all-energy
+vacuum-cylinder E/A/L mode-family rows, two non-particle residual deformation
+rows for `W_+^2` and `W_-^2`, one Berger carrier-gap row, one tangent-cone
+crosswalk, and three non-mode particle guards. Each row separately records classical import, BRST
+closure and exactness, pairing, compatible complex structure, Hadamard
+two-point function, state-space signature, anomaly/QME dependency, and
+lifecycle state. The E/A/L positive-frequency and infinite-index Krein
+results remain `REDUCED-MODE`; neither is a same-background distributional
+Hadamard state or a Lorentzian particle theorem. The Berger 26-row causal
+carrier is imported, but the stationary per-mode crosswalk is
+`NO_CERTIFIED_MAP`.
+The generated guard entries assign `NO_CERTIFIED_MAP` to particle readings of
+local anomaly classes, Euclidean determinant factors, and curvature
+observable generators.
+
+The same generated ledger carries the quantum contribution to
+
+\[
+\mathcal Z_2^{\mathcal C}
+=\{u:\mu_X(u)=0,\ R_j^{\mathcal C}(u)=0\}.
+\]
+
+The general classical criterion is imported directly and `CERTIFIED` for all
+three declared correction categories. At the background-fixture level, the
+bounded/quasiperiodic inference from moment maps alone is `OBSTRUCTED` on the
+exact opposite-momentum resonance divisor, although the finite `k=0` cone is
+certified. The smooth-secular fixed-`(ell,|k|)` cone is `CERTIFIED` in its
+declared finite-harmonic scope. The causal/retarded criterion has no imported
+background-specific Green theorem. In quantum, all three correction classes
+have `NO_CERTIFIED_MAP`. In every correction class, a classical
+second-order obstruction has `NO_CERTIFIED_MAP` to interacting-BRST
+disappearance, a loop interaction/constraint, BRST exactness, or ghost
+removal. A restored QME—or a normalized QME obstruction—is required before
+any such interpretation.
+
 ## Common background matrix
 
 Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
@@ -484,8 +528,8 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
 
 | Setting | \(D\) charge | Cartan contraction | Causal homotopy | One-particle sector | Pairing | Einstein sector |
 |---|---|---|---|---|---|---|
-| Vacuum cylinder | classical target; quantum status to compute | classical target; compute defect | proved only classically | zero classically in stated complex; quantum open | \(I_2\) classically; \(G(\hbar)\) open | proper classical solution sector |
-| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish; the canonical same-bundle 36-row branch projector is obstructed; the rank-46 cyclic graph carrier is exact but its projector remains open | classical only; no BRST-compatible Hadamard state or renormalized time ordering | no Paper-IX one-particle claim; quantum physical cohomology open | repaired coupled Maxwell classical pairing is cyclic; quantum pairing open | classical non-Einstein Weyl--matter control branch only; no branch-resolved interaction mixing table is authorized |
+| Vacuum cylinder | classical target; quantum status open | classical target; compute defect after QME | free covariant causal algebra certified, but no explicit crosswalk to the reduced E/A/L mode labels | selected E/A/L positive-frequency Krein carrier is `REDUCED-MODE`; no Lorentzian particle interpretation; `W_+^2,W_-^2` are non-particle deformation classes | E/A/L signs `(+,-,-)` and residual `I_2` certified classically; quantum correction open | proper classical solution sector |
+| Positive Berger clock | zero only as a certified classical fixed-coupling statement; quantum status open | pure gravity--clock \(K_{\rm Berger}\) contraction certified classically through arity three; repaired coupled Maxwell \(q_2\), typed 59,598-term mixed \(q_3\), and 25,950-term retained \(\ell_3\) independently accepted as classical inputs; all retained exchange sectors vanish; the canonical same-bundle 36-row branch projector is obstructed; the rank-46 cyclic graph carrier is exact but its projector remains open | 26/54-row causal v2 carrier imported; no BRST-compatible Hadamard state or renormalized time ordering | stationary physical mode crosswalk is `NO_CERTIFIED_MAP`; quantum physical cohomology open | carrier pairing is cyclic; per-mode restriction and quantum pairing open | classical non-Einstein Weyl--matter control branch only; no branch-resolved interaction mixing table is authorized |
 | Cylinder + scalar clock | open | primary quantum test | open | open | open | open |
 | Cylinder + Yang--Mills | open | open after scalar | open | open | open | open |
 | Weakly deformed background | open | open | open | open | open | open |

@@ -247,6 +247,19 @@ resolvents, proves both factorial bounds and inverse identities, reverses the
 adjoint factor order correctly, and covers the committed Berger and Nariai
 consumers. It remains conditional on an exact physical normal form and its
 finite-slab energy hypotheses and supplies no Hadamard state.
+
+The quantum column of the programme residual atlas is now generated at
+`quantum-weyl/atlas/quantum-atlas-fragment.json`. Its thirteen common-envelope
+entries contain six vacuum-cylinder E/A/L mode-family rows, the two
+`W_+^2,W_-^2` deformation classes guarded as non-particles, a Berger
+carrier-gap row, the tangent-cone crosswalk, and three non-mode particle
+guards. The imported
+Berger causal complex is not promoted to stationary modes; that crosswalk is
+`NO_CERTIFIED_MAP`. The fragment also records the finite-harmonic
+tangent-cone correction-class split and forbids treating a classical
+obstruction as BRST disappearance, a quantum constraint, BRST exactness, or
+ghost removal before an explicit insertion and QME disposition exist.
+
 The exact stationary-carrier import consumer is now ready and mutation-tested,
 but no committed classical manifest has been supplied.  It deliberately does
 not infer spectral isolation of zero from finite PBW coefficient tables.

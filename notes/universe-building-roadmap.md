@@ -45,7 +45,7 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Vacuum conformal cylinder | complete free causal gauge complex and the stated residual reduction | matter clocks, interactions, particles, or scattering |
 | Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), and full retained BV cyclicity; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, first formal coupled Euler recoil Green term, coefficientwise causal chain homotopy through \(g^2\), rank-two leading transfer from actual localized massive-emitter Cauchy data, the exact absolute-\(g^3\)/relative-\(g^2\) recoil operator, exact normalized compact emitter switches, the emitter stress/clock-switch \(q_2\) backreaction jet, and the covariant all-row \(q_1q_2\) master identity | invariant/nonremovable meaning of \(\ell_3\), a different noncontractible filtered or mixed-bundle branch split, original common-Hopf emitter, detector-selected emitter Cauchy profiles/Green images and evaluated recoil coefficient, support-local 108-row PBW payload and solved backreacted branch, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter/all-orders Green hyperbolicity, all-orders closure, or genericity |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; generic extra branches and their Lee--Wald pairing; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | quadratic-source disposition on every mixed-cone stratum, exceptional fourth-order targets, nonlinear causal closure, or asymptotic radiation |
-| Quantum local algebra | complete even/odd AFN0 candidate quotients, classical causal imports, local Hadamard parametrices, and exact consumers for the repaired mixed interaction, 36-row projector obstruction, and rank-46 cyclic graph carrier; exact classical minimal-BV foundation and a receiver-side finite-closure obstruction | a scope-correct V2 import, full antifield anomaly cohomology, coefficient-bearing Slavnov breaking, restored QME, global BRST Hadamard state, particles, or scattering |
+| Quantum local algebra | complete even/odd AFN0 candidate quotients, classical causal imports, local Hadamard parametrices, exact consumers for the repaired mixed interaction, 36-row projector obstruction, and rank-46 cyclic graph carrier; exact classical minimal-BV foundation, a receiver-side finite-closure obstruction, and a generated fail-closed quantum residual-atlas fragment | a coefficient-bearing regulated Slavnov breaking, restored QME, global BRST Hadamard state, certified particle crosswalk, or scattering |
 | Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; independently verified bare Lee--Wald static surface form and nonintegrability on the chart-normalized parameter family | a normalized field-dependent generator, globally admissible residual quotient, differentiable horizon/outer-boundary phase space, first law, exterior causal perturbations, or stability |
 
 No row may be used as evidence for another row merely because both use the
@@ -212,11 +212,13 @@ lies outside the infinitesimal Diff--Weyl orbit, and has normalized
 tractor-curvature drift `delta C_0202=-1` at `t=asinh(1)`.  The active
 certificate has now differentiated the outer incidence rows: the exact
 rank-four map `dot(I_Omega)` and the required correction
-`-dot(I_Omega)p0` each have twelve entries, with the opposite BV row forced
-by formal adjunction.  The active gate is the BGG-splitting and middle/Schur
-variation, including the varying pairing, followed by the complete rank-310
-SDR identity.  No transverse causal promotion follows from the outer-row
-calculation alone.
+`-dot(I_Omega)p0` each have twelve entries.  In the moving orthonormal
+covariant-PBW frame, the algebraic BGG/Kostant maps, harmonic projections,
+Schouten coefficient, and all four fibre pairings have zero variation, so
+the opposite rank-four BV row is now explicit by formal adjunction.  The
+active gate is the Levi--Civita connection/PBW variation and its middle/Schur
+propagation, followed by the complete rank-310 SDR identity.  No transverse
+causal promotion follows from these outer/algebraic rows alone.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves
@@ -227,14 +229,17 @@ obstruction disappears in the smooth-secular category through
 sources, while the stabilizer moment map persists.  This is not a new
 background classification or an all-orders theorem.
 
-After the coherent transverse-SDR gate, the classical lane must populate the
-causal/gauge/carrier fragment of the generated residual atlas for the vacuum
-cylinder, Berger clock,
-conformal Nariai, and the open Bach-flat parent class, using the Einstein
-team's shared schema and fail-closed lifecycle vocabulary.  Each atlas
-second-order status must name its correction category separately as bounded
-or quasiperiodic, smooth secular, or causal/retarded.  No cross-background or
-cross-carrier mode identification is permitted without an explicit atlas
+The classical causal/gauge/carrier atlas fragment is now generated at
+`d_quotient_classical/atlas/classical-causal-atlas-fragment.json` and checked
+against the shared schema.  It covers the vacuum cylinder, Berger clock,
+conformal Nariai orbit, transverse Nariai tangent, and the relative-open
+Bach-flat parent class.  Its lifecycle is fail-closed: E/A/L are causal
+one-particle families, while `[W_+^2]` and `[W_-^2]` remain degree-four
+deformation/vertex classes; Berger has no certified local branch projector;
+the open Bach-flat result is parent-only; and transverse Nariai causal
+transfer remains `OPEN`.  Bounded/quasiperiodic, smooth-secular, and
+causal/retarded second-order statuses are separate on every entry.  No
+cross-background or cross-carrier identification is made without an explicit
 crosswalk.
 
 The observer operational fragment is generated at
@@ -245,6 +250,27 @@ restriction `O_detector|Z2^C` is `OPEN` for bounded or quasiperiodic,
 smooth-secular, and causal/retarded correction classes.  The compact-product
 exceptional-resonance to Berger-apparatus crosswalk is
 `NO_CERTIFIED_MAP`; no operational signature is inferred across backgrounds.
+
+The quantum fragment is generated at
+`quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
+`quantum-weyl/reports/quantum-residual-atlas-fragment.md`. It records six
+vacuum-cylinder E/A/L mode families, two explicitly non-particle
+`W_+^2,W_-^2` deformation classes, and the Berger stationary-mode import gap.
+Every row separates classical import, BRST closure/exactness, pairing,
+complex structure, Hadamard kernel, state-space signature, anomaly/QME
+dependency, and lifecycle. Local anomaly classes, Euclidean determinant
+factors, and curvature-observable generators have `NO_CERTIFIED_MAP` to a
+particle entry.
+
+The fragment imports the abstract correction-class-sensitive tangent-cone
+theorem by content hash. Its bounded/quasiperiodic, smooth-secular, and
+causal/retarded classical criteria are `CERTIFIED`, while their background
+fixtures and quantum bridges remain separately typed. In particular, the
+opposite-momentum resonance divisor obstructs a moment-map-only bounded
+inference, no background-specific causal Green theorem is inferred from the
+abstract retarded criterion, and every classical-obstruction-to-quantum map
+is `NO_CERTIFIED_MAP` until an explicit BRST insertion and QME disposition
+exist.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.example/schemas/quantum-residual-atlas-fragment-v1.schema.json",
+  "title": "Pure-Weyl quantum residual atlas fragment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "team", "generated_by", "generated_by_sha256",
+    "status_vocabulary", "description_axes", "entries", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "pure-weyl-residual-atlas-fragment-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "team": {"const": "quantum"},
+    "generated_by": {"const": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py"},
+    "generated_by_sha256": {"$ref": "#/$defs/hash"},
+    "status_vocabulary": {"const": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]},
+    "description_axes": {"const": ["causal", "symplectic", "nonlinear", "observational", "quantum"]},
+    "entries": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/entry"}},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "status": {"enum": ["CERTIFIED", "OBSTRUCTED", "OPEN", "NOT_APPLICABLE", "NO_CERTIFIED_MAP"]},
+    "scopeValue": {
+      "anyOf": [
+        {"type": "string"}, {"type": "integer"}, {"type": "number"},
+        {"type": "array", "items": {"anyOf": [{"type": "string"}, {"type": "integer"}, {"type": "number"}]}}
+      ]
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"$ref": "#/$defs/scopeValue"}, "background": {"$ref": "#/$defs/scopeValue"},
+        "boundaries": {"$ref": "#/$defs/scopeValue"}, "charge_sector": {"$ref": "#/$defs/scopeValue"},
+        "carrier": {"$ref": "#/$defs/scopeValue"}, "degree": {"$ref": "#/$defs/scopeValue"},
+        "parity": {"$ref": "#/$defs/scopeValue"}, "ell": {"$ref": "#/$defs/scopeValue"},
+        "m": {"$ref": "#/$defs/scopeValue"}, "k": {"$ref": "#/$defs/scopeValue"},
+        "omega": {"$ref": "#/$defs/scopeValue"}
+      }
+    },
+    "claim": {
+      "type": "object", "additionalProperties": false, "required": ["status", "statement"],
+      "properties": {"status": {"$ref": "#/$defs/status"}, "statement": {"type": "string", "minLength": 1}}
+    },
+    "descriptions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["causal", "symplectic", "nonlinear", "observational", "quantum"],
+      "properties": {
+        "causal": {"$ref": "#/$defs/status"}, "symplectic": {"$ref": "#/$defs/status"},
+        "nonlinear": {"$ref": "#/$defs/status"}, "observational": {"$ref": "#/$defs/status"},
+        "quantum": {"$ref": "#/$defs/status"}
+      }
+    },
+    "secondOrder": {
+      "type": "object", "additionalProperties": false,
+      "required": ["equation", "bounded_or_finite_quasiperiodic", "smooth_secular", "causal_retarded"],
+      "properties": {
+        "equation": {"const": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]"},
+        "bounded_or_finite_quasiperiodic": {"$ref": "#/$defs/claim"},
+        "smooth_secular": {"$ref": "#/$defs/claim"}, "causal_retarded": {"$ref": "#/$defs/claim"}
+      }
+    },
+    "modeData": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dispersion", "lee_wald", "taub_maps", "resonance", "second_order"],
+      "properties": {
+        "dispersion": {"$ref": "#/$defs/claim"}, "lee_wald": {"$ref": "#/$defs/claim"},
+        "taub_maps": {"$ref": "#/$defs/claim"}, "resonance": {"$ref": "#/$defs/claim"},
+        "second_order": {"$ref": "#/$defs/secondOrder"}
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "dependencyTags": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "quantumData": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "entry_kind", "dependency_tags", "classical_mode_imported", "BRST_cocycle", "BRST_exactness",
+        "pairing_status", "compatible_complex_structure", "Hadamard_two_point_function", "state_space_status",
+        "anomaly_QME_dependency", "lifecycle_state", "particle_interpretation", "carrier_crosswalk"
+      ],
+      "properties": {
+        "entry_kind": {"enum": ["MODE_FAMILY", "NONPARTICLE_RESIDUAL_CLASS", "CARRIER_IMPORT_GAP", "CLASSICAL_TO_QUANTUM_CROSSWALK", "NON_MODE_PARTICLE_GUARD"]},
+        "dependency_tags": {"$ref": "#/$defs/dependencyTags"},
+        "classical_mode_imported": {"$ref": "#/$defs/claim"}, "BRST_cocycle": {"$ref": "#/$defs/claim"},
+        "BRST_exactness": {"$ref": "#/$defs/claim"}, "pairing_status": {"$ref": "#/$defs/claim"},
+        "compatible_complex_structure": {"$ref": "#/$defs/claim"},
+        "Hadamard_two_point_function": {"$ref": "#/$defs/claim"},
+        "state_space_status": {"$ref": "#/$defs/claim"}, "anomaly_QME_dependency": {"$ref": "#/$defs/claim"},
+        "lifecycle_state": {"$ref": "#/$defs/claim"}, "particle_interpretation": {"$ref": "#/$defs/claim"},
+        "carrier_crosswalk": {"$ref": "#/$defs/claim"}
+      }
+    },
+    "entry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "scope", "descriptions", "mode_data", "quantum_data", "evidence", "claim_boundary"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$"}, "scope": {"$ref": "#/$defs/scope"},
+        "descriptions": {"$ref": "#/$defs/descriptions"}, "mode_data": {"$ref": "#/$defs/modeData"},
+        "quantum_data": {"$ref": "#/$defs/quantumData"},
+        "evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence"}},
+        "claim_boundary": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
