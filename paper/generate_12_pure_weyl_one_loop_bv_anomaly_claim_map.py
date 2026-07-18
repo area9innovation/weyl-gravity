@@ -57,6 +57,7 @@ INPUTS = {
     "generic_ghost_Schur_Wodzicki_residue": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json",
     "generic_ghost_Schur_weighted_trace_scale": ROOT / "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WEIGHTED_TRACE_SCALE.json",
     "round_S4_ghost_Schur_finite_weighted_traces": ROOT / "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES.json",
+    "round_S4_ghost_Schur_zeta_factorization": ROOT / "quantum-weyl/spectral/euclidean/certificates/ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION.json",
     "BoxR_scheme_conversion": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
 }
 
@@ -107,6 +108,7 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
     generic_ghost_schur_wodzicki = values["generic_ghost_Schur_Wodzicki_residue"]
     generic_ghost_schur_scale = values["generic_ghost_Schur_weighted_trace_scale"]
     round_s4_ghost_schur_finite = values["round_S4_ghost_Schur_finite_weighted_traces"]
+    round_s4_ghost_schur_zeta = values["round_S4_ghost_Schur_zeta_factorization"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     if (
         even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
@@ -471,6 +473,18 @@ def _load_inputs() -> dict[str, dict[str, Any]]:
             "GENERIC_BACKGROUND_R_K_COMPUTED"
         )
         is not False
+        or round_s4_ghost_schur_zeta.get("local_residue_derivation", {}).get(
+            "exact_factorization_defect"
+        )
+        != {"numerator": 5, "denominator": 3}
+        or round_s4_ghost_schur_zeta.get("claim_flags", {}).get(
+            "ROUND_S4_ZETA_FACTORIZED_SCHUR_RATIO_COMPUTED"
+        )
+        is not True
+        or round_s4_ghost_schur_zeta.get("claim_flags", {}).get(
+            "GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_DEFECT_COMPUTED"
+        )
+        is not False
         or box_r_scheme_conversion.get("claim_flags", {}).get(
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED"
         )
@@ -518,6 +532,7 @@ def build() -> dict[str, Any]:
     generic_ghost_schur_wodzicki = values["generic_ghost_Schur_Wodzicki_residue"]
     generic_ghost_schur_scale = values["generic_ghost_Schur_weighted_trace_scale"]
     round_s4_ghost_schur_finite = values["round_S4_ghost_Schur_finite_weighted_traces"]
+    round_s4_ghost_schur_zeta = values["round_S4_ghost_Schur_zeta_factorization"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     return {
         "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
@@ -528,7 +543,7 @@ def build() -> dict[str, Any]:
             "LOCAL-ALGEBRAIC",
             "EUCLIDEAN-SPECTRAL",
         ],
-        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, the curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, and weighted modified determinant are complete. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure; any local zeta multiplicative anomaly, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+        "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, the curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3; Wres(K), Wres(K^2), and Wres(log S_L) are exact, the declared order-two weighted trace fixes the pole and scale row, and the round-S4 reference finite K/K2 rows, canonical det_3 tail, weighted modified determinant, and zeta-to-weighted defect 5/3 are complete. A smoothing witness proves that the generic finite rows require a full Green kernel or spectral measure; the generic noncommuting BCH residue, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
         "manuscript": _relative(MANUSCRIPT),
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
@@ -660,6 +675,8 @@ def build() -> dict[str, Any]:
             "round_S4_ghost_Schur_low_order_split": round_s4_ghost_schur_finite["exact_finite_rows"]["Delta_weighted_finite_rows"]["low_order_renormalized_split"],
             "round_S4_ghost_Schur_det3_tail": round_s4_ghost_schur_finite["exact_finite_rows"]["canonical_det3_tail"],
             "round_S4_ghost_Schur_weighted_modified_determinant": round_s4_ghost_schur_finite["exact_finite_rows"]["full_modified_determinant"],
+            "round_S4_ghost_Schur_zeta_weighted_factorization_defect": round_s4_ghost_schur_zeta["local_residue_derivation"]["exact_factorization_defect"],
+            "round_S4_ghost_Schur_zeta_determinant_ratio": round_s4_ghost_schur_zeta["factorization_result"]["zeta_determinant_ratio_decimal"],
             "generic_Schur_finite_rows_minimal_missing_input": round_s4_ghost_schur_finite["generic_missing_input_theorem"]["required_generic_input"],
             "raw_zeta_BoxR_coefficient": box_r_scheme_conversion["heat_kernel_row_reconstruction"]["raw_BoxR_coefficient"],
             "raw_to_repository_R2_scheme_shift": box_r_scheme_conversion["repository_scheme_conversion"]["raw_to_BoxR_zero_counterterm"],
@@ -701,11 +718,12 @@ def build() -> dict[str, Any]:
             "theorem_frozen": False,
         },
         "next_gate": {
-            "status": "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_MULTIPLICATIVE_TERM",
+            "status": "FREEZE_GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_AND_COMPUTE_ITS_BCH_RESIDUE_SEPARATELY_FROM_THE_GLOBAL_FINITE_ROWS",
             "required_inputs": [
                 "same-background compensator-inclusive classical contraction",
                 "finite C2 and absolute dressed Rhat2 normalization conditions",
-                "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), det3 tail and any local zeta multiplicative term; the round-S4 special-background benchmark is complete but does not substitute for this carrier",
+                "generic order-minus-three/four BCH symbols of log(Q S_L)-log Q-log S_L for the frozen noncommuting factorization and cuts",
+                "full generic-background primed Green/resolvent kernel or complete spectral measure for the reference-scale finite R(K), finite R(K^2), and det3 rows; the round-S4 special-background benchmark is complete but does not substitute for this global carrier",
                 "simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
                 "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
                 "renormalized BV operator data fixing complete Q1",

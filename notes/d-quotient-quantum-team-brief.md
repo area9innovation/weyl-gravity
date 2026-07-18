@@ -915,10 +915,15 @@ expressions. Exact rational alternating-series and Euler--Maclaurin bounds
 also give `log det_3(I+K)=0.49816356541962909843125329994148...` with
 enclosure width below `5.8e-48`, and therefore
 `log Det_(3,R_Delta)(S_L)=-3.97814548561541162747539555480599...`.
-A finite-rank smoothing witness proves that the generic rows
+The commuting round-`S4` zeta-to-weighted factorization defect is now exact:
+`m_Delta(Delta_0-4,Delta_0-6)=5/3`, so the zeta-factorized determinant ratio is
+`-2.31147881894874496080872888813932...`. An independent Hurwitz-zeta
+continuation replays the same result. A finite-rank smoothing witness proves
+that the generic finite rows
 cannot follow from local symbols or residues: they require the full primed
-Green kernel or spectral measure. Any local multiplicative anomaly remains
-open, as does the generic
+Green kernel or spectral measure. The generic noncommuting local defect is a
+separate gate requiring the order-minus-three/four BCH symbols of
+`log(Q S_L)-log Q-log S_L`. It remains open, as does the generic
 physical fourth-order Hessian. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
@@ -1054,7 +1059,7 @@ effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
 matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
 certificate inputs and pass an independent stale/tamper check. The claim map now
-binds thirty-seven direct certificate dependencies, including the formerly indirect
+binds thirty-eight direct certificate dependencies, including the formerly indirect
 pure-Diff/mixed quotient and factorwise coefficient ledger. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).

@@ -1143,8 +1143,9 @@ on an Einstein background the minimal-vector longitudinal factor times
 $S_L$ reproduces $(\Delta_0-R/3)/\Delta_0$.
 
 This is a resummation theorem, not a form-factor evaluation.  A separately
-zeta-regularized factorization can carry a local multiplicative anomaly,
-which is not evaluated here.  Moreover $S_L-\mathbf1$ starts at
+zeta-regularized factorization can carry a local multiplicative anomaly.  Its
+generic noncommuting value is not evaluated here; a commuting round-$S^4$
+value is computed below.  Moreover $S_L-\mathbf1$ starts at
 pseudodifferential order $-2$ in four dimensions, so ordinary trace-class
 Fredholm determinacy is not implied by order counting.  A regularized
 relative determinant or equivalent common trace regulator, together with the
@@ -1227,8 +1228,9 @@ isotropic test $W=w\mathbf1$ likewise reduces $B_1$ to $w\Delta_0^{-1}$.
 These checks fix the mixed-kernel sign and normalization.
 
 These equations compute the canonical local residues, not the full Schur
-determinant.  The regulated finite value $\mathcal R(K)$, the finite part of
-$\mathcal R(K^2)$, and any zeta multiplicative anomaly remain open.
+determinant.  The generic regulated finite value $\mathcal R(K)$, the finite
+part of $\mathcal R(K^2)$, and the generic noncommuting zeta multiplicative
+term remain open.
 Converting $\operatorname{Wres}\log S_L$ into a pole or scale coefficient
 requires the order and normalization of a chosen reference operator; the next
 proposition makes that choice explicitly.
@@ -1273,9 +1275,10 @@ and
  \frac{5R^2+22R_{\mu\nu}R^{\mu\nu}}{54}.}
 \]
 This closes the reference-specific pole and scale conversion.  It does not
-fix the reference-scale constants $\mathcal R_{\mu_0}(K)$ and
-$\operatorname{FP}\mathcal R_{\mu_0}(K^2)$, nor the local multiplicative
-anomaly of a separately factorized zeta prescription~\cite{KontsevichVishik}.
+fix the generic reference-scale constants $\mathcal R_{\mu_0}(K)$ and
+$\operatorname{FP}\mathcal R_{\mu_0}(K^2)$, nor the generic noncommuting local
+multiplicative term of a separately factorized zeta
+prescription~\cite{KontsevichVishik,OuedraogoPaycha}.
 \end{proposition}
 
 \begin{proposition}[Exact round-$S^4$ finite Schur benchmark]
@@ -1331,8 +1334,48 @@ $K\mapsto K+T$ for arbitrary finite-rank smoothing $T$ preserves every
 homogeneous symbol and Wodzicki residue but shifts the two finite rows by
 $\operatorname{Tr}T$ and
 $\operatorname{Tr}(KT+TK+T^2)$.  Thus the generic values require the full
-primed Green kernel or equivalent spectral measure.  Any separately
-factorized multiplicative anomaly remains open.
+primed Green kernel or equivalent spectral measure.  The local comparison for
+this commuting round-sphere factorization is computed next; its generic
+noncommuting analogue remains open.
+\end{proposition}
+
+\begin{proposition}[Exact round-$S^4$ zeta-to-weighted factorization defect]
+On the same primed $\ell\geq2$ scalar carrier set
+\[
+ Q=\Delta_0,\qquad A=\Delta_0-4,\qquad B=\Delta_0-6,
+ \qquad S_L=AB^{-1}.
+\]
+These operators commute.  The zeta/weighted-determinant comparison
+of Paycha and Ouedraogo--Paycha~\cite{PaychaWeightedTrace,OuedraogoPaycha}
+therefore reduces in four dimensions to
+\[
+ \begin{split}
+ m_Q(A,B)&=\log\det_\zeta A-\log\det_\zeta B
+             -\operatorname{tr}^Q\log(AB^{-1})\\
+ &=-\frac14(4^2-6^2)\operatorname{Wres}(Q^{-2}).
+ \end{split}
+\]
+The scalar heat-kernel residue gives
+\[
+ \operatorname{Wres}(Q^{-2})
+ =2\operatorname*{Res}_{s=2}\zeta_Q(s)
+ =2\frac{\operatorname{Vol}(S^4)}{(4\pi)^2}=\frac13,
+\]
+so the exact local defect is
+\[
+ \boxed{m_Q(A,B)=\frac53.}
+\]
+Adding it to the weighted modified determinant above gives
+\[
+ \boxed{
+ \log\det_\zeta(\Delta_0-4)-\log\det_\zeta(\Delta_0-6)
+ =-2.3114788189487449608087288881393202539\ldots .}
+\]
+An independent Hurwitz-zeta continuation on the complete primed spectrum
+reproduces the same number.  This is special-background and
+prescription-specific.  It does not compute the order-$-3/-4$ BCH symbols of
+$\log(QS_L)-\log Q-\log S_L$ needed for the generic noncommuting local term,
+and it does not supply the generic global finite rows.
 \end{proposition}
 
 \begin{proposition}[Exact ghost $n=3$ scalar-flat five-carrier projection]
@@ -1438,10 +1481,12 @@ one normalized scalar Schur determinant.  Its order-$-2$ correction is proved
 to lie in $\mathcal S_3$, and
 $\operatorname{Wres}(K)$, $\operatorname{Wres}(K^2)$, and
 $\operatorname{Wres}\log S_L$ are exact.  The round-$S^4$ reference finite
-rows, canonical $\det_3$ tail, and selected weighted modified determinant are
-complete as well, but the smoothing theorem shows that their generic
-counterparts require a full primed Green/spectral carrier.  That carrier,
-the possible local zeta term, and physical kernel, hence the
+rows, canonical $\det_3$ tail, selected weighted modified determinant, and
+zeta-to-weighted defect $5/3$ are complete as well.  The smoothing theorem
+shows that the generic finite counterparts require a full primed
+Green/spectral carrier; the generic noncommuting local defect separately
+requires its order-$-3/-4$ BCH symbols.  Those carriers and the physical
+kernel, hence the
 five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
@@ -1552,6 +1597,8 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_round_s4_ghost_schur_finite_weighted_traces
 PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_round_s4_ghost_schur_zeta_factorization
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
@@ -1608,6 +1655,13 @@ G.~Barnich, F.~Brandt, and M.~Henneaux,
 \emph{Local BRST cohomology in the antifield formalism. I. General theorems},
 Commun. Math. Phys. \textbf{174} (1995), 57--91,
 \href{https://doi.org/10.1007/BF02099464}{doi:10.1007/BF02099464}.
+
+\bibitem{OuedraogoPaycha}
+M.-F.~Ouedraogo and S.~Paycha,
+\emph{The multiplicative anomaly for determinants revisited; locality},
+Commun. Math. Phys. \textbf{273} (2007), 133--167,
+\href{https://doi.org/10.1007/s00220-007-0235-4}
+{doi:10.1007/s00220-007-0235-4}.
 
 \bibitem{Boulanger}
 N.~Boulanger,

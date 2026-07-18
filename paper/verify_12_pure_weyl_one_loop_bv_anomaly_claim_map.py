@@ -57,6 +57,8 @@ def main() -> None:
         "Order-two weighted-trace pole and scale row",
         "\\frac{\\dd}{\\dd\\log\\mu}",
         "Exact round-$S^4$ finite Schur benchmark",
+        "Exact round-$S^4$ zeta-to-weighted factorization defect",
+        "m_Q(A,B)=\\frac53",
         "0.4981635654196290984312532999414818723861192934",
         "-3.9781454856154116274753955548059869205821661933",
         "full primed Green kernel or equivalent spectral measure",
@@ -243,6 +245,13 @@ def main() -> None:
     assert claims["round_S4_ghost_Schur_weighted_modified_determinant"][
         "high_precision_decimal"
     ].startswith("-3.9781454856154116274753955548059869205821")
+    assert claims["round_S4_ghost_Schur_zeta_weighted_factorization_defect"] == {
+        "numerator": 5,
+        "denominator": 3,
+    }
+    assert claims["round_S4_ghost_Schur_zeta_determinant_ratio"].startswith(
+        "-2.311478818948744960808728888139320253"
+    )
     assert claims["generic_Schur_finite_rows_minimal_missing_input"] == (
         "the full primed Green/resolvent kernel or equivalent complete spectral measure on the selected background"
     )
@@ -264,11 +273,11 @@ def main() -> None:
     ] is False
     assert (
         payload["next_gate"]["status"]
-        == "SUPPLY_GENERIC_PRIMED_GREEN_OR_SPECTRAL_MEASURE_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_THEN_COMPUTE_FINITE_SCHUR_ROWS_AND_MULTIPLICATIVE_TERM"
+        == "FREEZE_GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_AND_COMPUTE_ITS_BCH_RESIDUE_SEPARATELY_FROM_THE_GLOBAL_FINITE_ROWS"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 37
+    assert len(payload["inputs"]) == 38
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -308,6 +317,9 @@ def main() -> None:
     ]
     round_s4_ghost_schur_finite = dependencies[
         "ROUND_S4_GHOST_SCHUR_FINITE_WEIGHTED_TRACES"
+    ]
+    round_s4_ghost_schur_zeta = dependencies[
+        "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION"
     ]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
@@ -506,6 +518,15 @@ def main() -> None:
     ] is True
     assert round_s4_ghost_schur_finite["claim_flags"][
         "GENERIC_BACKGROUND_R_K_COMPUTED"
+    ] is False
+    assert round_s4_ghost_schur_zeta["local_residue_derivation"][
+        "exact_factorization_defect"
+    ] == claims["round_S4_ghost_Schur_zeta_weighted_factorization_defect"]
+    assert round_s4_ghost_schur_zeta["factorization_result"][
+        "zeta_determinant_ratio_decimal"
+    ] == claims["round_S4_ghost_Schur_zeta_determinant_ratio"]
+    assert round_s4_ghost_schur_zeta["claim_flags"][
+        "GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_DEFECT_COMPUTED"
     ] is False
     assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
         generic_ghost_n1_n2_vector["formula_digest"]

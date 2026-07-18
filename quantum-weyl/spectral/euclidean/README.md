@@ -204,3 +204,15 @@ alternating-series and Euler--Maclaurin bounds and computes the selected
 weighted modified determinant. Its finite-rank smoothing witness proves that
 generic values require a full primed Green kernel or spectral measure; local
 symbol data cannot determine them.
+
+[`round-s4-ghost-schur-zeta-factorization.md`](../../reports/round-s4-ghost-schur-zeta-factorization.md)
+then closes the zeta-to-weighted comparison on that same primed round-unit-
+`S4` carrier. With `Q=Delta_0`, `A=Delta_0-4`, and `B=Delta_0-6`, the exact
+local defect is
+`m_Q(A,B)=-(1/4)(4^2-6^2)Wres(Q^-2)=5/3`, since
+`Wres(Q^-2)=1/3`. Adding it to the selected weighted modified determinant
+gives the zeta-factorized ratio `-2.3114788189487449608...`, independently
+replayed from Hurwitz-zeta continuation. This is a special-background result.
+The generic noncommuting factorization defect still requires the order-minus-
+three/four BCH symbol of `log(Q S_L)-log Q-log S_L`; the generic finite rows
+remain a separate global Green/spectral problem.

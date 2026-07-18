@@ -19,7 +19,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(kinds.count("NONPARTICLE_RESIDUAL_CLASS"), 2)
         self.assertEqual(kinds.count("CARRIER_IMPORT_GAP"), 1)
         self.assertEqual(kinds.count("CLASSICAL_TO_QUANTUM_CROSSWALK"), 1)
-        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 10)
+        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 11)
         cubic_guard = next(
             entry for entry in value["entries"]
             if entry["id"] == "quantum.crosswalk.algebraic_cubic_weyl_carrier_to_particle"
@@ -132,7 +132,17 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             entry for entry in build()["entries"]
             if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"
         ]
-        self.assertEqual(len(guards), 10)
+        self.assertEqual(len(guards), 11)
+        round_s4 = next(
+            entry for entry in guards
+            if entry["id"]
+            == "quantum.crosswalk.round_s4_schur_zeta_factorization_to_particle"
+        )
+        self.assertIn("factorization defect 5/3", round_s4["scope"]["carrier"])
+        self.assertEqual(
+            round_s4["quantum_data"]["particle_interpretation"]["status"],
+            "NO_CERTIFIED_MAP",
+        )
         fv = next(
             entry for entry in guards
             if entry["id"] == "quantum.crosswalk.fv_conformized_c2_log_form_factor_to_particle"

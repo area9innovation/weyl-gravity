@@ -100,10 +100,16 @@ computed exactly as
 `Wres(K)=(4 pi)^-2 integral(R^2+4 Ric^2)/9`,
 `Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27`, and
 `Wres(log S_L)=(4 pi)^-2 integral(5 R^2+22 Ric^2)/54`. Ordinary trace class
-is not implied. The finite regulated `R(K)` and `R(K^2)` rows, a
-reference-specific scale conversion, possible local zeta multiplicative
-anomaly, and generic physical fourth-order Hessian are the next
-coefficient-bearing inputs.
+is not implied. The declared order-two weight fixes the pole and scale row.
+On the round unit `S4` carrier, both reference finite rows, the canonical
+`det_3` tail and the selected weighted modified determinant are exact. The
+zeta-to-weighted factorization defect is also exact there:
+`m_Delta(Delta_0-4,Delta_0-6)=5/3`, giving the zeta-factorized ratio
+`-2.3114788189487449608...`. This does not close the generic problem. The
+generic noncommuting local defect requires the order-minus-three/four BCH
+symbols, while the generic finite rows separately require the full primed
+Green kernel or spectral measure. The generic physical fourth-order Hessian
+is also still absent.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -423,10 +429,12 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The current coefficient-bearing critical path is:
 
-1. compute the finite regulated `R(K)` and `R(K^2)` rows, the
-   reference-specific scale conversion, and any multiplicative anomaly;
-2. combine them with the same-gauge generic-background physical fourth-order
-   Hessian and integrate the five parity-even repository form factors;
+1. freeze the generic noncommuting zeta factorization and compute its local
+   order-minus-three/four BCH Wodzicki residue;
+2. supply the full generic primed Green kernel or spectral measure for the
+   global finite `R(K)`, `R(K^2)` and `det_3` rows, and combine them with the
+   same-gauge generic-background physical fourth-order Hessian to integrate
+   the five parity-even repository form factors;
 3. classify the parity-odd derivative sector and fix the finite `C2` and
    absolute dressed `R(g_hat)^2` normalizations and renormalized products;
 4. use those data to determine complete `Gamma1/Q1`;

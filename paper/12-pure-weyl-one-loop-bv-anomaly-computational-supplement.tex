@@ -1038,8 +1038,9 @@ Thus the exact Schur pole and scale rows are
 The independent verifier reconstructs the factor
 `scale power / weight order = 2/2` and rejects the mutated choice $Q/\mu$.
 The generic-background reference-scale finite $\mathcal R_{\mu_0}(K)$ row,
-the finite part of $\mathcal R_{\mu_0}(K^2)$, and any multiplicative anomaly
-remain open.  They are not determined by the local residue data.
+the finite part of $\mathcal R_{\mu_0}(K^2)$, and the generic noncommuting
+multiplicative term remain open.  They are not determined by these local
+residue data.
 
 On the round unit $S^4$, however, the complete scalar spectrum supplies an
 exact benchmark.  After deleting the absent $\ell=0$ gradient and the five
@@ -1087,6 +1088,30 @@ by $7/11$ and $126/121$ without changing any homogeneous symbol or residue.
 This proves that the generic gate needs a full primed Green kernel or
 spectral measure rather than another local heat coefficient.
 
+The commuting round-sphere factorization has one further exact local row.
+On the primed $\ell\geq2$ carrier let
+$Q=\Delta_0$, $A=\Delta_0-4$ and $B=\Delta_0-6$, so $S_L=AB^{-1}$.
+The zeta-to-weighted determinant comparison gives
+\[
+ m_Q(A,B)=-\frac14(4^2-6^2)\operatorname{Wres}(Q^{-2}),
+ \qquad
+ \operatorname{Wres}(Q^{-2})=\frac13,
+\]
+and hence
+\[
+ m_Q(A,B)=\frac53.
+\]
+Combining this with the weighted modified determinant yields
+\[
+ \log\det_\zeta A-\log\det_\zeta B
+ =-2.3114788189487449608087288881393202539\ldots.
+\]
+The independent verifier reconstructs the same value from 320 exact
+Hurwitz-zeta continuation terms and rejects mutations of the residue, shift
+pair, zero-mode policy, or generic-background claim flag.  This special
+commuting result does not determine the generic order-$-3/-4$ BCH residue of
+$\log(QS_L)-\log Q-\log S_L$.
+
 \begin{verbatim}
 P=spectral.euclidean
 M=generic_background_ghost_schur_schatten_split
@@ -1108,6 +1133,12 @@ PYTHONPATH=quantum-weyl pytest -q \
  quantum-weyl/spectral/euclidean/tests/test_$M.py
 
 M=round_s4_ghost_schur_finite_weighted_traces
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
+
+M=round_s4_ghost_schur_zeta_factorization
 PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
 PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
 PYTHONPATH=quantum-weyl pytest -q \
@@ -1147,9 +1178,10 @@ triangle and its repository projection are certified separately; the three
 longitudinal $D_W$ one-/two-insertion towers are resummed by the preceding
 Schur factor.  Its $K$, $K^2$, and logarithmic residues and the declared
 order-two weighted-trace pole/scale row are exact; the round-$S^4$ finite
-rows, canonical $\det_3$ tail, and weighted modified determinant are
-complete, while their generic versions require a
-full primed Green/spectral carrier and the local zeta term remains open.
+rows, canonical $\det_3$ tail, weighted modified determinant, and
+zeta-to-weighted defect $5/3$ are complete.  Their generic finite versions
+require a full primed Green/spectral carrier, while the generic noncommuting
+local term separately requires its BCH symbol carrier.
 Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
 carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
 cyclic trace, the cyclic sum of one trace times one pair trace, and the product
@@ -1207,8 +1239,9 @@ feed $I_{24},I_{25},I_{28},I_{29}$.  The three longitudinal $D_W$
 one-/two-insertion towers are resummed by the preceding Schur factor; its
 $K$, $K^2$, and logarithmic residues and the declared order-two
 weighted-trace pole/scale row are fixed.  On round $S^4$ the two finite trace
-rows, canonical $\det_3$ tail, and weighted modified determinant are complete;
-their generic versions and the possible local zeta term remain unevaluated.
+rows, canonical $\det_3$ tail, weighted modified determinant, and
+zeta-to-weighted defect $5/3$ are complete.  Their generic finite versions and
+the generic noncommuting BCH residue remain unevaluated.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \
@@ -1304,7 +1337,7 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 
 The result is the parametric $n=3$ ghost contribution in the declared
 scalar-flat quotient section. The simplex integrals, normalized longitudinal
-Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$ rows, possible local zeta multiplicative term, physical
+Schur $\mathcal R(K)$ and finite $\mathcal R(K^2)$ rows, generic noncommuting BCH residue, physical
 fourth-order Hessian kernel, and their complete sum into five repository
 functions and coefficients remain open.
 
@@ -1381,6 +1414,10 @@ longitudinal $D_W$ carriers;
 fixture through cubic order, detect a mixed-cubic mutation, and reject both
 evaluation of its generic relative kernel and omission of a possible local
 zeta multiplicative term;
+\item compute the commuting round-$S^4$ zeta-to-weighted defect $5/3$ from
+$\operatorname{Wres}(\Delta_0^{-2})=1/3$, replay the determinant ratio by
+independent Hurwitz-zeta continuation, and reject promotion to the generic
+noncommuting BCH residue;
 \item prove the sharp $\mathcal S_3$ trace-ideal disposition, replay the
 modified Fredholm series through sixth order, compute the critical
 $\operatorname{Wres}(K^2)$ coefficient by two independent sphere-moment

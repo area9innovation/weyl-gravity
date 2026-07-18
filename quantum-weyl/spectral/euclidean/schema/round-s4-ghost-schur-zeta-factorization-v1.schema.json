@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-round-s4-ghost-schur-zeta-factorization-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "classical_commit", "scope", "local_residue_derivation",
+    "factorization_result", "generic_boundary", "claim_flags", "dependencies",
+    "references", "next_gate", "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-round-s4-ghost-schur-zeta-factorization-v1"},
+    "result_id": {"const": "ROUND_S4_GHOST_SCHUR_ZETA_FACTORIZATION"},
+    "result_state": {"const": "ROUND_S4_ZETA_TO_WEIGHTED_SCHUR_FACTORIZATION_DEFECT_COMPUTED"},
+    "lifecycle_state": {"const": "SPECIAL_BACKGROUND_ZETA_FACTORIZATION_COMPLETE_GENERIC_NONCOMMUTING_DEFECT_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {"$ref": "#/$defs/nonemptyObject"},
+    "local_residue_derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "zeta_weighted_comparison", "ratio_defect_definition", "logarithm_rows",
+        "four_dimensional_residue_reduction", "Wres_Q_minus_2",
+        "Wres_Q_minus_2_derivation", "finite_rank_projector_effect",
+        "exact_factorization_defect"
+      ],
+      "properties": {
+        "zeta_weighted_comparison": {"type": "string", "minLength": 40},
+        "ratio_defect_definition": {"type": "string", "minLength": 30},
+        "logarithm_rows": {"$ref": "#/$defs/nonemptyObject"},
+        "four_dimensional_residue_reduction": {"const": "m_Q=-(1/4)(4^2-6^2)Wres(Q^-2)"},
+        "Wres_Q_minus_2": {"const": {"numerator": 1, "denominator": 3}},
+        "Wres_Q_minus_2_derivation": {"type": "string", "minLength": 40},
+        "finite_rank_projector_effect": {"const": "ZERO_IN_WODZICKI_RESIDUE"},
+        "exact_factorization_defect": {"const": {"numerator": 5, "denominator": 3}}
+      }
+    },
+    "factorization_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weighted_modified_determinant", "exact_relation",
+        "zeta_determinant_ratio_decimal", "independent_spectral_representation", "status"
+      ],
+      "properties": {
+        "weighted_modified_determinant": {"type": "string", "pattern": "^-?[0-9]+\\.[0-9]+$"},
+        "exact_relation": {"type": "string", "minLength": 50},
+        "zeta_determinant_ratio_decimal": {"type": "string", "pattern": "^-?[0-9]+\\.[0-9]+$"},
+        "independent_spectral_representation": {"type": "string", "minLength": 40},
+        "status": {"const": "ROUND_S4_ZETA_FACTORIZED_SCHUR_RATIO_COMPUTED"}
+      }
+    },
+    "generic_boundary": {"$ref": "#/$defs/nonemptyObject"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ROUND_S4_ZETA_WEIGHTED_FACTORIZATION_DEFECT_COMPUTED",
+        "ROUND_S4_ZETA_FACTORIZED_SCHUR_RATIO_COMPUTED",
+        "ROUND_S4_WEIGHTED_MODIFIED_DETERMINANT_IMPORTED",
+        "GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_DEFECT_COMPUTED",
+        "GENERIC_BACKGROUND_FINITE_SCHUR_ROWS_COMPUTED",
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "ROUND_S4_ZETA_WEIGHTED_FACTORIZATION_DEFECT_COMPUTED": {"const": true},
+        "ROUND_S4_ZETA_FACTORIZED_SCHUR_RATIO_COMPUTED": {"const": true},
+        "ROUND_S4_WEIGHTED_MODIFIED_DETERMINANT_IMPORTED": {"const": true},
+        "GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_DEFECT_COMPUTED": {"const": false},
+        "GENERIC_BACKGROUND_FINITE_SCHUR_ROWS_COMPUTED": {"const": false},
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["round_S4_weighted_determinant", "weighted_trace_scale"],
+      "properties": {
+        "round_S4_weighted_determinant": {"$ref": "#/$defs/dependency"},
+        "weighted_trace_scale": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "references": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/reference"}},
+    "next_gate": {"const": "FREEZE_GENERIC_NONCOMMUTING_ZETA_FACTORIZATION_AND_COMPUTE_ITS_BCH_RESIDUE_SEPARATELY_FROM_THE_GLOBAL_FINITE_ROWS"},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  },
+  "$defs": {
+    "nonemptyObject": {"type": "object", "minProperties": 1},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "result_id": {"type": "string", "minLength": 10},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "authors", "arxiv", "role"],
+      "properties": {
+        "title": {"type": "string", "minLength": 10},
+        "authors": {"type": "string", "minLength": 3},
+        "arxiv": {"type": "string", "minLength": 7},
+        "role": {"type": "string", "minLength": 10}
+      }
+    }
+  }
+}
