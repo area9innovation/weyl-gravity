@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; obtain the same-gauge generic-background full-BV Hessian and trace substitution that matches the five exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    replace the first-omitted-shell-obstructed two_j=138 spatial cutoff by a wider adaptive rail or physical-space Green chain, then compose massive images, evaluate recoil, and restrict records to Z2^C
+Observer:    replace the cancellation-unstable independent-moment high-mode evaluator by correlated oscillatory quadrature or a stable recurrence, then widen the obstructed two_j=138 rail, compose massive images, evaluate recoil, and restrict records to Z2^C
 Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
 
@@ -353,8 +353,13 @@ error stays below `4.23e-17`.  The first omitted form shell then decides the
 spatial gate negatively: at `two_j=139`, column `69` and `q=-1/2`, a dressed
 spatial coefficient is above `0.827` and the dressed coderivative is above
 `0.862`.  Thus `two_j<=138` is `OBSTRUCTED` as a uniformly small input-tail
-cutoff.  The active route is a wider adaptive rail or a physical-space Green
-chain, not another temporal approximation.  The nonlinear apparatus
+cutoff.  Direct widening with the current independent-moment evaluator is
+also `OBSTRUCTED`: its central scalar interval width grows from below
+`0.001` at `two_j=140` to above `6e8` at `two_j=256`, and exact unitary
+clipping leaves only `[-1,1]`.  No validated Berger physical-space solver is
+present.  The active gate is therefore a correlated oscillatory quadrature
+or stable recurrence with certified low-rail overlap and a narrow
+`two_j=256` sentinel, not another temporal approximation.  The nonlinear apparatus
 dependency is also explicit and ordered by content hash: the normalized
 mixed `epsilon_R^2 kappa` unary certificate precedes apparatus `q2,q3`, which
 precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
@@ -566,8 +571,10 @@ survive the first backreacted, normalized apparatus interaction?
    temporal image through `two_j=138`, with propagated error below
    `4.23e-17`.  The first omitted form shell has a dressed coefficient above
    `0.827`, so that rail is not a converged spatial cutoff.  The next gate is
-   a wider adaptive rail or physical-space Green chain, then the infinite-mode
-   Maxwell/massive Green images and recoil coefficient.  The independent emitter stress
+   a correlated unitary-bounded scalar evaluator; the current independent-
+   moment widening loses cancellation by `two_j=256`.  After that sentinel
+   closes, widen the rail and compose the infinite-mode Maxwell/massive Green
+   images and recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a
    solved backreacted branch remain open.  A common source
@@ -1369,6 +1376,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_PREFLIGHT` (fired) | stream the microphase-dressed charge-block inputs while retaining exact `T` dependence; the existing even `p<=28` rails suffice |
 | `BERGER_BLOCKWISE_TEMPORAL_FUNCTIONAL_CALCULUS_STREAM_TWO_J138` (fired) | certify the spatial harmonic tail beyond `two_j=138`, then compose the infinite-mode Maxwell and massive-two-form images before evaluating recoil |
 | `BERGER_TWO_J138_EXACT_T_INPUT_TAIL_OBSTRUCTION` (fired with cutoff obstruction) | widen the adaptive harmonic rail or certify a physical-space Green chain; do not promote the exact-`T` finite rail to an infinite-mode detector response |
+| `BERGER_HIGH_MODE_SCALAR_INTERVAL_STABILITY_PREFLIGHT` (fired with evaluator obstruction) | implement a correlated unitary-bounded scalar quadrature or recurrence, preserve all `two_j<=139` overlaps, and close the width-below-`1/10` sentinel at `two_j=256` before widening the rail |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

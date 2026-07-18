@@ -388,6 +388,13 @@ coderivative is above `0.862`.  Thus the exact-`T` finite rail remains valid,
 but its promotion as a uniformly small spatial cutoff is `OBSTRUCTED`.  The
 active route is a wider adaptive rail or a certified physical-space Green
 chain; no infinite-mode Maxwell image or recoil coefficient is claimed yet.
+The widening preflight now rules out simply reusing the independent-moment
+scalar evaluator: its central `p=0` interval is narrow at scalar
+`two_j=140`, but its width exceeds `6e8` at `two_j=256`.  The exact unitary
+bound clips that interval only to `[-1,1]`, which supplies no decay.  Since no
+validated Berger physical-space solver exists, the next gate is a correlated
+direct oscillatory quadrature or stable recurrence, with low-rail overlap and
+a width-below-`1/10` sentinel at `two_j=256`.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

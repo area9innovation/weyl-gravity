@@ -1,0 +1,85 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "HIGH_MODE_SCALAR_INTERVAL_STABILITY_PREFLIGHT_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The existing independent-moment scalar evaluator is narrowly enclosing at two_j=140 but loses correlated cancellation by two_j=256, where the raw central p=0 interval width exceeds 6e8. The exact normalized-unitary bound clips it only to [-1,1] and supplies no decay. This numerically obstructs direct widening with the current evaluator and selects a correlated oscillatory quadrature or stable recurrence. It does not obstruct the true coefficient, provide an infinite-tail upper bound or physical-space solver, evaluate a full Green image or recoil, restrict to the tangent cone, activate Bridge 3 or make a quantum claim.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile, JSON/schema parse and scoped git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_high_mode_scalar_interval_stability_preflight.py",
+      "elapsed_seconds": 0.29,
+      "status": "PASS",
+      "summary": "3 tests passed, including exact-unit-bound clipping and fail-closed raw-width mutation."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_high_mode_scalar_interval_stability_preflight",
+      "status": "PASS",
+      "summary": "Schema, source/dependency hashes, sentinel widths, unit-bound intersection and obstruction flags passed."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "status": "PASS",
+      "summary": "The generated observer atlas and shared fail-closed atlas schema passed."
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_high_mode_scalar_interval_stability_preflight --emit",
+      "elapsed_seconds": 3.00,
+      "status": "PASS",
+      "summary": "The current exact-rational evaluator was replayed at scalar two_j=140 and 256; no exhaustive all-mode stream was claimed."
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No infinite-mode theorem, shared core-algebra change, freeze, release or lifecycle promotion was claimed."
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/generate_berger_high_mode_scalar_interval_stability_preflight.py",
+      "sha256": "28e9d63922657c0cc8bca01a8cfa90b931041c4e69a19547febd59eba8b301c9"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_high_mode_scalar_interval_stability_preflight.py",
+      "sha256": "41d9cc3b3645524394082d9bd62d263af24e07780c856d1adcaf262d7e74cee6"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_high_mode_scalar_interval_stability_preflight.py",
+      "sha256": "559a882895999385197b61008bf223fc1190cc2eb8d88e3e137e286387f8648b"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-high-mode-scalar-interval-stability-preflight-v1.schema.json",
+      "sha256": "716306735ef6e784369cd2591317dc59b964ccf10e7846b16bfa14d8ea4ea656"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-high-mode-scalar-interval-stability-preflight.md",
+      "sha256": "446376edd7f1ad5afc13d40d8ea06fc841b66a37d4de7d9255647f3ac51f30e3"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_HIGH_MODE_SCALAR_INTERVAL_STABILITY_PREFLIGHT.json",
+      "sha256": "a13f618a1c70778d5c616ce37a3e720b795fc01451ee042f9768714e09399f54"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "4ba9194beaca1c2b6b231ae8b48288f8e1a3f8540ab300261cc972f832acb1e9"
+    }
+  ],
+  "claim_flags": {
+    "TWO_J140_NARROW_OVERLAP_SENTINEL_PASSED": true,
+    "TWO_J256_CURRENT_INTERVAL_WIDTH_ABOVE_ONE_EIGHT": true,
+    "CURRENT_INDEPENDENT_MOMENT_WIDENING_ROUTE_OBSTRUCTED": true,
+    "CORRELATED_HIGH_MODE_SCALAR_EVALUATOR_SELECTED": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-high-mode-scalar-interval-stability-preflight-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "evaluation_convention", "sentinel_audits", "route_disposition", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-high-mode-scalar-interval-stability-preflight-v1"},
+    "result_id": {"const": "BERGER_HIGH_MODE_SCALAR_INTERVAL_STABILITY_PREFLIGHT"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CURRENT_MOMENT_EXPANDED_WIDENING_NUMERICALLY_OBSTRUCTED_CORRELATED_EVALUATOR_SELECTED"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 6},
+    "evaluation_convention": {"type": "object"},
+    "sentinel_audits": {"type": "array", "minItems": 2, "maxItems": 2},
+    "route_disposition": {"type": "array", "minItems": 3, "maxItems": 3},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {
+      "type": "object",
+      "required": ["TWO_J140_NARROW_OVERLAP_SENTINEL_PASSED", "TWO_J256_CURRENT_INTERVAL_WIDTH_ABOVE_ONE_EIGHT", "CURRENT_INDEPENDENT_MOMENT_WIDENING_ROUTE_OBSTRUCTED", "CORRELATED_HIGH_MODE_SCALAR_EVALUATOR_SELECTED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "TWO_J140_NARROW_OVERLAP_SENTINEL_PASSED": {"const": true},
+        "TWO_J256_CURRENT_INTERVAL_WIDTH_ABOVE_ONE_EIGHT": {"const": true},
+        "CURRENT_INDEPENDENT_MOMENT_WIDENING_ROUTE_OBSTRUCTED": {"const": true},
+        "CORRELATED_HIGH_MODE_SCALAR_EVALUATOR_SELECTED": {"const": true},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "IMPLEMENT_A_CORRELATED_UNITARY_BOUNDED_SCALAR_EVALUATOR_AND_CLOSE_THE_TWO_J256_SENTINEL"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

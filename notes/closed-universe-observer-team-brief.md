@@ -524,10 +524,18 @@ neighbor required by form `two_j=139`.  For `D0`, column `69` and charge
 `q=-1/2`, one microphase-dressed spatial coefficient has absolute lower bound
 `0.8271`, and the dressed coderivative lower bound is `0.8629`.  Therefore
 the exact-`T` finite rail remains certified, but `two_j<=138` is
-`OBSTRUCTED` as a uniformly small detector-profile cutoff.  The active gate
-is a wider adaptive rail or a certified physical-space Green chain, followed
-by the infinite-mode Maxwell and massive-two-form images, recoil coefficient
-and second-order-cone restriction.  Bridge 3 remains inactive.
+`OBSTRUCTED` as a uniformly small detector-profile cutoff.  The widening step
+cannot simply reuse the independent-moment expansion.  At scalar
+`two_j=256`, `BERGER_HIGH_MODE_SCALAR_INTERVAL_STABILITY_PREFLIGHT` finds a
+raw central-`p=0` interval wider than `6e8`; intersecting it with the exact
+unitary coefficient bound gives only `[-1,1]` and therefore no decay.  The
+physical-space branch remains unavailable because no validated Berger
+hyperbolic PDE solver is present.  The active gate is now a correlated direct
+oscillatory quadrature or stable recurrence that preserves every certified
+`two_j<=139` overlap and closes a width-below-`1/10` sentinel at
+`two_j=256`.  Only then should the rail be widened toward the infinite-mode
+Maxwell and massive-two-form images, recoil coefficient and second-order-cone
+restriction.  Bridge 3 remains inactive.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
