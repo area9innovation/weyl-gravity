@@ -359,6 +359,17 @@ The exact charge-block successor supplies direct tridiagonal `Delta1` blocks
 and codifferential rows in the helicity basis for every finite `two_j`.
 Comparison with the dense de Rham engine through `two_j=8` has zero entry
 defects, removing dense operator construction from the order-14 gate.
+The order-14 successor now applies all fifteen even clock powers through
+`p=28` to those blocks for every form mode through `two_j=138`.  Its canonical
+stream covers 48,372 populated detector-column/charge blocks, 2,147,700
+spatial and 717,255 temporal coefficient intervals.  The requested geometric
+ratios are contractive, but the uniform remainder bounds are still enormous.
+More decisively, the exact one-dimensional `q=j+1` block gives order-14
+cosine-error lower bounds of about `2.64e5` for `D0` and `8.03e11` for `D1`.
+Thus the formal polynomial application is complete while temporal Green-image
+promotion is `OBSTRUCTED`.  The next temporal gate is a validated blockwise
+functional calculus or oscillatory approximation, before the spatial tail,
+massive image and recoil coefficient.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

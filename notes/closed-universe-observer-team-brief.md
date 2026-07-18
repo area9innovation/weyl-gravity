@@ -484,6 +484,20 @@ codifferential is an explicit row to the scalar `m=q` sector.  Comparison with
 the full de Rham engine through `two_j=8` has zero entry defects.  Order-14
 application therefore no longer requires dense `3(two_j+1)` matrices.
 
+`BERGER_ORDER14_TEMPORAL_GREEN_CHARGE_STREAM_TWO_J138` now closes that formal
+application gate.  It applies all even clock powers `p=0,2,...,28` in 48,372
+populated detector-column/charge blocks and content-addresses 2,147,700
+spatial plus 717,255 temporal coefficient intervals.  Both geometric tail
+ratios are below one, but contractivity is not accuracy: the uniform cosine
+remainder bounds are about `5.46e5` and `3.45e13`, and the temporal sine bounds
+about `2.90e5` and `1.18e13`, for `D0` and `D1`.  On the exact one-dimensional
+`q=j+1` block, boundedness of cosine gives actual order-14 error lower bounds
+about `2.64e5` and `8.03e11`.  The polynomial stream is therefore certified,
+but its promotion to a temporal Green image is `OBSTRUCTED`.  The active
+profile gate is now a validated blockwise functional calculus or oscillatory
+approximation; the spatial tail, full Maxwell/massive images, recoil,
+tangent-cone restriction and Bridge 3 remain open.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

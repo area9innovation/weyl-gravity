@@ -1,0 +1,68 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "ORDER14_TEMPORAL_GREEN_CHARGE_STREAM_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "All even external-clock moments p=0,2,...,28 were applied to the common order-14 cosine and codifferential/sine polynomials in exact Maxwell charge blocks through form two_j=138. The canonical stream covers 48,372 populated detector-column/charge blocks, 2,147,700 spatial coefficient intervals and 717,255 temporal coefficient intervals. Both geometric ratios are contractive, but the uniform bounds exceed one and exact extreme-block cosine-error lower bounds are large. The formal polynomial stream is certified; temporal Green-image promotion is OBSTRUCTED. Spatial tail, full Maxwell/massive images, recoil, tangent-cone restriction, Bridge 3 and quantum claims remain open.",
+  "tier_0": [
+    {
+      "command": "py_compile, JSON parse, Draft 2020-12 schema validation and scoped git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "strict AJV validation",
+      "status": "NOT_RUN",
+      "criterion": "AJV executable was not available; the repository Python Draft 2020-12 validator passed the same schema and artifact."
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_order14_temporal_green_charge_stream.py",
+      "elapsed_seconds": 30.34,
+      "status": "PASS",
+      "summary": "3 tests passed: exact extreme scalar-block coefficients, order-14 obstruction and both contractive ratios, plus expected rejection after deleting the extreme-block obstruction."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_order14_temporal_green_charge_stream",
+      "elapsed_seconds": 16.15,
+      "status": "PASS",
+      "summary": "Independent fast rail validated schema, dependency/source hashes, aggregate mode counts, exact remainder rows and fail-closed lifecycle flags."
+    },
+    {
+      "command": "observer atlas verifier and shared residual-atlas validator",
+      "elapsed_seconds": 1.0,
+      "status": "PASS",
+      "summary": "Generated observer atlas row validates with temporal Green promotion OBSTRUCTED."
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_order14_temporal_green_charge_stream --emit",
+      "elapsed_seconds": 7878.64,
+      "status": "PASS",
+      "summary": "Exhaustive exact interval stream through two_j=138 emitted canonical full hash 080663ca8f67fb8f30252d300a68b4d1cf3f2b1757360185bbf400cca8bb3a85."
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No Green image, theorem freeze, shared core-algebra change or release promotion."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_order14_temporal_green_charge_stream.py", "sha256": "4036bbf8630fcbcd97f49db35044af5e2e14108c84481ae86a4b14611087f846"},
+    {"path": "closed_universe_observers/verify_berger_order14_temporal_green_charge_stream.py", "sha256": "895217f9490b7e24aaff03dd3593a2cf08e0282776b252b90276eab33c712ebc"},
+    {"path": "closed_universe_observers/tests/test_berger_order14_temporal_green_charge_stream.py", "sha256": "6d9f2da1f79f739207d06e99417fa8b9c32699c6a04a9404422db082d75537e6"},
+    {"path": "closed_universe_observers/schema/berger-order14-temporal-green-charge-stream-v1.schema.json", "sha256": "1875b8ad43041f1a379acd6aab251a2753d634b828671557ee6aca9cc76ccf82"},
+    {"path": "closed_universe_observers/certificates/BERGER_ORDER14_TEMPORAL_GREEN_CHARGE_STREAM_TWO_J138.json", "sha256": "a354ce4f39cfd66923d8131f55ab6ba1a968b888ff3a70bbd49cbca0281f38a0"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "126d9be62a50e2553412ab6024362fe089365ebac16c5b35e00b084046e1eca6"}
+  ],
+  "claim_flags": {
+    "ORDER14_TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED": true,
+    "GEOMETRIC_REMAINDER_RATIOS_CONTRACTIVE": true,
+    "ORDER14_UNIFORM_REMAINDERS_BELOW_ONE": false,
+    "ORDER14_TEMPORAL_GREEN_IMAGE_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

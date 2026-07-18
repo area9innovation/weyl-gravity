@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-order14-temporal-green-charge-stream-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "series_convention", "coverage", "mode_summaries", "remainder_audits", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-order14-temporal-green-charge-stream-v1"},
+    "result_id": {"const": "BERGER_ORDER14_TEMPORAL_GREEN_CHARGE_STREAM_TWO_J138"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "ORDER14_CHARGE_BLOCK_POLYNOMIAL_STREAM_CERTIFIED_TEMPORAL_GREEN_PROMOTION_OBSTRUCTED"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 20},
+    "series_convention": {"type": "object", "required": ["order", "clock_powers", "charge_basis", "canonical_stream_order"], "properties": {"order": {"const": 14}, "clock_powers": {"const": [0,2,4,6,8,10,12,14,16,18,20,22,24,26,28]}, "charge_basis": {"const": ["theta_plus", "theta3", "theta_minus"]}, "canonical_stream_order": {"type": "string"}}, "additionalProperties": true},
+    "coverage": {"type": "object", "required": ["nonzero_detector_column_charge_block_count", "spatial_polynomial_coefficient_interval_count", "temporal_polynomial_coefficient_interval_count", "maximum_interval_width", "canonical_full_output_stream_sha256"], "properties": {"nonzero_detector_column_charge_block_count": {"type": "integer", "minimum": 1}, "spatial_polynomial_coefficient_interval_count": {"type": "integer", "minimum": 1}, "temporal_polynomial_coefficient_interval_count": {"type": "integer", "minimum": 1}, "maximum_interval_width": {"type": "string"}, "canonical_full_output_stream_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "mode_summaries": {"type": "array", "minItems": 139, "maxItems": 139},
+    "remainder_audits": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "required": ["detector_id", "cosine_geometric_ratio", "sine_geometric_ratio", "spatial_cosine_entry_remainder_upper", "temporal_sine_entry_remainder_upper", "uniform_remainders_below_one", "exact_cosine_error_absolute_lower"], "properties": {"detector_id": {"enum": ["D0", "D1"]}, "uniform_remainders_below_one": {"const": false}}, "additionalProperties": true}},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object", "required": ["ORDER14_TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED", "GEOMETRIC_REMAINDER_RATIOS_CONTRACTIVE", "ORDER14_UNIFORM_REMAINDERS_BELOW_ONE", "ORDER14_TEMPORAL_GREEN_IMAGE_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"ORDER14_TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED": {"const": true}, "GEOMETRIC_REMAINDER_RATIOS_CONTRACTIVE": {"const": true}, "ORDER14_UNIFORM_REMAINDERS_BELOW_ONE": {"const": false}, "ORDER14_TEMPORAL_GREEN_IMAGE_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}, "additionalProperties": true},
+    "next_gate": {"const": "REPLACE_GLOBAL_TAYLOR_TRUNCATION_BY_VALIDATED_BLOCKWISE_FUNCTIONAL_CALCULUS_OR_OSCILLATORY_APPROXIMATION"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}
