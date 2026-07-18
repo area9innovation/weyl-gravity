@@ -11,8 +11,13 @@ stabilizer moment maps, already zero on the certified orbit.
 
 Thus every orbit point admits a real smooth spatially periodic finite
 exponential-polynomial second-order correction.  Evidence is content-addressed
-at commit `a80dba72` with certificate SHA-256
-`df2ef1bb26bb59e69bb228ad9e8ace8a7ea16d60702585ed408ce61e6f444add`.
+at commit `3407c70b` with certificate SHA-256
+`961548b8e8b8f850e044b55c9b6b82536ba83724b019a4a1137a916a81a21177`.
+
+The aligned twist--extra `L=1,3` mixed block is now coefficient-explicit:
+thirteen printed exact polynomial corrections have zero full action-row
+remainder and three sources vanish.  The complete arbitrary-orbit coefficient
+list remains open.
 
 This result is deliberately paired with, not substituted for, the bounded
 obstruction: bounded/finite-quasiperiodic corrections remain `OBSTRUCTED`,

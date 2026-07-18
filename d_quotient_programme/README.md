@@ -174,6 +174,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-global-extra-bounded-correction-obstruction-submission-receipt.md`](reports/einstein-maxwell-weyl-global-extra-bounded-correction-obstruction-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-global-extra-smooth-secular-second-order.json`](contributions/einstein-maxwell-weyl-global-extra-smooth-secular-second-order.json)
 - [`reports/einstein-maxwell-weyl-global-extra-smooth-secular-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-global-extra-smooth-secular-second-order-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-aligned-twist-ell2-extra-smooth-correction.json`](contributions/einstein-maxwell-weyl-aligned-twist-ell2-extra-smooth-correction.json)
+- [`reports/einstein-maxwell-weyl-aligned-twist-ell2-extra-smooth-correction-submission-receipt.md`](reports/einstein-maxwell-weyl-aligned-twist-ell2-extra-smooth-correction-submission-receipt.md)
 - [`contributions/einstein-weyl-relative-branch-dictionary.json`](contributions/einstein-weyl-relative-branch-dictionary.json)
 - [`reports/einstein-weyl-relative-branch-dictionary-submission-receipt.md`](reports/einstein-weyl-relative-branch-dictionary-submission-receipt.md)
 - [`contributions/einstein-weyl-exceptional-ell1-solution-cofiber.json`](contributions/einstein-weyl-exceptional-ell1-solution-cofiber.json)

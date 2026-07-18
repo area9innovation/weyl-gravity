@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "compact Plebanski-Hacyan R_t x S1_L x S2 background on the fixed N=2 magnetic bundle; aligned m=0 twist position/velocity crossed with every axial/polar ell=2,k=0 extra representative; smooth finite exponential-polynomial corrections",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "a direct four-dimensional tensor calculation supplies all sixteen aligned twist-extra L=1,3 quadratic action sources",
+    "thirteen sources are nonzero and three vanish identically",
+    "every nonzero source is off shell in the applicable exceptional L=1 or generic L=3 action block",
+    "the exact action convention H(omega_e+i*d_t) yields a printed polynomial correction for every nonzero source",
+    "the exceptional L=1 corrections are solved on complete gauge slices and all four unreduced action rows have zero exact remainder",
+    "the aligned twist-extra L=1,3 mixed block is coefficient-explicit in the smooth exponential-polynomial correction class"
+  ],
+  "evidence": {
+    "commit": "3407c70bd842609e81f66c313ef4b7655c14b6cc",
+    "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
+    "sha256": "5788853a60c4fc0caada8b62c2f1e7328b4255a76a9c02dedef564548353cf13"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "print the remaining zero-frequency global/global and extra/extra self corrections before calling the complete global-extra orbit correction coefficient-explicit",
+  "not_established": [
+    "a complete coefficient list for the arbitrary global-extra orbit",
+    "a bounded or finite-quasiperiodic correction",
+    "a causal or retarded compact-product correction",
+    "opposite momenta, relative phases or multiple absolute-momentum fibres",
+    "all-orders integration, residual descent, observational response, particle interpretation or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_aligned_twist_extra_L1_L3_smooth_correction",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_aligned_twist_extra_smooth_correction",
+  "team_id": "einstein_boundary",
+  "verdict": "ALIGNED_TWIST_EXTRA_L1_L3_MIXED_BLOCK_COEFFICIENT_EXPLICIT",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction"
+  ]
+}

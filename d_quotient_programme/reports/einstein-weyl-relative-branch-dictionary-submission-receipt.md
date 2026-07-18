@@ -23,8 +23,12 @@ point by the uncancellable zero-frequency polar `L=2` coefficient
 verdict: every orbit point admits a blockwise constructed second-order
 correction.  The causal class remains open.
 
-Evidence is content-addressed at commit `a80dba72` with certificate SHA-256
-`f00c963cdc08be020e0a6c0d9c13899d25b2d2be28d0a49dfb4c52d9f6f1a377`.
+The aligned twist--extra `L=1,3` mixed part of that smooth correction is now
+coefficient-explicit, with thirteen exact corrections and three zero sources.
+The full orbit coefficient list and bridge-1 activation remain open.
+
+Evidence is content-addressed at commit `3407c70b` with certificate SHA-256
+`ead1c376fcc715b7fcc4d83792a0c192c39ce6efa52868cff324992dea228972`.
 No cross-background mode identity is made; exceptional nonzero-`k`/off-shell,
 homogeneous and twist off-shell, global and boundary carriers remain
 fail-closed.
