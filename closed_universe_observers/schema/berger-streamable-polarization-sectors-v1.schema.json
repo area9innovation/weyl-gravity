@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-streamable-polarization-sectors-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "selection_rules", "low_mode_audits", "laplacian_commutator_audits", "capacity_rail_scale", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-streamable-polarization-sectors-v1"},
+    "result_id": {"const": "BERGER_STREAMABLE_POLARIZATION_SECTORS"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_STREAMABLE_POLARIZATION_AND_GREEN_CHARGE_SECTORS_EXPORTED_COEFFICIENTS_AND_TAIL_OPEN"},
+    "dependency_tags": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "selection_rules": {"type": "object"},
+    "low_mode_audits": {"type": "array", "minItems": 2, "maxItems": 2},
+    "laplacian_commutator_audits": {"type": "array", "minItems": 5, "maxItems": 5},
+    "capacity_rail_scale": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["ALL_FINITE_TWO_J_POLARIZATION_SUPPORT_RULES_EXPORTED", "ALL_FINITE_TWO_J_GREEN_CHARGE_BLOCKS_EXPORTED", "MAXIMUM_GREEN_CHARGE_BLOCK_DIMENSION_THREE", "HIGH_MODE_COEFFICIENT_VALUES_EVALUATED", "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"ALL_FINITE_TWO_J_POLARIZATION_SUPPORT_RULES_EXPORTED": {"const": true}, "ALL_FINITE_TWO_J_GREEN_CHARGE_BLOCKS_EXPORTED": {"const": true}, "MAXIMUM_GREEN_CHARGE_BLOCK_DIMENSION_THREE": {"const": true}, "HIGH_MODE_COEFFICIENT_VALUES_EVALUATED": {"const": false}, "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": {"const": false}, "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false}, "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false}, "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

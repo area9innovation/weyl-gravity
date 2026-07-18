@@ -81,6 +81,8 @@ python3 -m closed_universe_observers.generate_berger_two_j4_profile_tail_obstruc
 python3 -m closed_universe_observers.verify_berger_two_j4_profile_tail_obstruction
 python3 -m closed_universe_observers.generate_berger_adaptive_peter_weyl_route_preflight --check
 python3 -m closed_universe_observers.verify_berger_adaptive_peter_weyl_route_preflight
+python3 -m closed_universe_observers.generate_berger_streamable_polarization_sectors --check
+python3 -m closed_universe_observers.verify_berger_streamable_polarization_sectors
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -278,6 +280,13 @@ representation dimension `139`, or `two_j=138`.  It selects streamed,
 symmetry-reduced Peter--Weyl detector contractions over dense intermediate
 serialization.  This is not a convergence theorem at that cutoff; the
 coefficient recurrence and Green-weighted operator-norm tail remain open.
+The structural recurrence gate is now exact.  Axial symmetry restricts the
+polarization coefficients to diagonals and first off-diagonals, while the
+one-form Laplacian preserves `q=m+s` in the helicity coframe.  Green functions
+therefore act in blocks of dimension at most three.  The all-column operation
+upper count through dimension `139` drops from `852,056,100` dense operations
+to `8,066,172`; actual high-mode coefficient values and their tail are still
+open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

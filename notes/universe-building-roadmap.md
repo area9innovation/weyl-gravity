@@ -291,6 +291,10 @@ stream symmetry-reduced Peter--Weyl contractions and certify a Green-weighted
 operator-norm tail before composing the massive image.  Bridge 3 remains
 inactive until a same-background Berger physical-branch dictionary lands;
 the unsplit apparatus calculation does not activate that interpretation.
+The exact U(1) selection-rule gate now reduces every one-form Green block to
+axial-charge sectors of dimension at most three.  The remaining bandwidth
+gate is streamed high-mode coefficient evaluation and the operator-norm tail,
+not dense block construction.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
@@ -1155,6 +1159,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE` (fired) | certify the infinite spatial-harmonic tail, then compose `h_a dA_a^adv` with the massive-two-form kernel and evaluate the positive-energy Cauchy data |
 | `BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` (fired) | replace the inadequate `two_j<=4` tail target by an adaptive cutoff near the radius-`1/128` profile bandwidth or a physical-space Green-chain evaluation |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired) | derive a streamable polarization coefficient recurrence and Green-weighted operator-norm tail beginning from the necessary `two_j>=138` capacity rail; do not treat that rail as a convergence cutoff |
+| `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

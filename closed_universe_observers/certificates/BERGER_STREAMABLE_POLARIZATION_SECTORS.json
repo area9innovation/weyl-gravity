@@ -1,0 +1,155 @@
+{
+  "capacity_rail_scale": {
+    "all_column_charge_block_apply_upper": 8066172,
+    "charge_block_operator_entry_upper": 86460,
+    "dense_apply_upper_from_preflight": 852056100,
+    "max_dimension": 139,
+    "max_two_j": 138,
+    "two_detector_input_entry_upper": 86736
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result derives all-finite-two_j U(1) support rules for the selected detector polarizations. Axial invariance makes y0 and y3 coefficient matrices diagonal and y1,y2 matrices first-off-diagonal. In the theta_+,theta_3,theta_- coframe, the one-form Laplacian preserves q=m+s with s=+1,0,-1, so every Green matrix function decomposes into charge blocks of dimension at most three. The existing two_j=0..4 interval coefficients are compatible with the exact support rules: every conservative off-support remainder enclosure contains zero. Exact Laplacian commutators have zero defects and a reversed-helicity mutation fails. Through the necessary dimension-139 capacity rail, the two detector inputs require at most 86,736 streamed entries and all-column charge-block application at most 8,066,172 scalar multiplications, instead of the dense 852,056,100 upper count. This certifies support and streaming architecture, not high-mode coefficient values, convergence, an operator-norm tail, full Green images, recoil, tangent-cone restriction, a physical-branch map, or a quantum claim.",
+  "claim_status": "EXACT_STREAMABLE_POLARIZATION_AND_GREEN_CHARGE_SECTORS_EXPORTED_COEFFICIENTS_AND_TAIL_OPEN",
+  "dependency_refs": {
+    "adaptive": {
+      "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json",
+      "result_id": "BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT",
+      "sha256": "40d7ebd4a9a629c70556421e98a4cdc4fa196b488d0e45f7be6bcc23cab9bb84"
+    },
+    "engine": {
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    },
+    "form": {
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json",
+      "result_id": "BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS",
+      "sha256": "fd66add7974cff5628195123c2420245b833b5e8089aab97529f4c4c0500afb5"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ALL_FINITE_TWO_J_GREEN_CHARGE_BLOCKS_EXPORTED": true,
+    "ALL_FINITE_TWO_J_POLARIZATION_SUPPORT_RULES_EXPORTED": true,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "HIGH_MODE_COEFFICIENT_VALUES_EVALUATED": false,
+    "MAXIMUM_GREEN_CHARGE_BLOCK_DIMENSION_THREE": true,
+    "QUANTUM_CLAIM": false
+  },
+  "laplacian_commutator_audits": [
+    {
+      "defect_count": 0,
+      "two_j": 0
+    },
+    {
+      "defect_count": 0,
+      "two_j": 1
+    },
+    {
+      "defect_count": 0,
+      "two_j": 2
+    },
+    {
+      "defect_count": 0,
+      "two_j": 3
+    },
+    {
+      "defect_count": 0,
+      "two_j": 4
+    }
+  ],
+  "low_mode_audits": [
+    {
+      "audited_two_j": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "detector_id": "D0",
+      "off_support_enclosures_containing_zero": 10,
+      "support_defect_count": 0
+    },
+    {
+      "audited_two_j": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "detector_id": "D1",
+      "off_support_enclosures_containing_zero": 6,
+      "support_defect_count": 0
+    }
+  ],
+  "mutation_results": [
+    {
+      "commutator_defect_count_at_two_j2": 8,
+      "detected": true,
+      "name": "reverse_coframe_helicity_signs"
+    }
+  ],
+  "next_gate": "EVALUATE_STREAMED_HIGH_MODE_POLARIZATION_COEFFICIENTS_AND_CERTIFY_THE_GREEN_WEIGHTED_OPERATOR_NORM_TAIL",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_streamable_polarization_sectors.py",
+        "sha256": "297dc0bdd1a2a9d7f68b84800a4c2915e13ae59a51ac7164133c1384bf89824b"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_streamable_polarization_sectors.py",
+        "sha256": "e36da979b7bd8498e8dd5ff52a5cf010adc8329159f92ac2898fcab832515548"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_streamable_polarization_sectors.py",
+        "sha256": "f06b14bca7ea9a2cf3e4045cb32e4d71a40cd2865cd9723261953c03a340994b"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-streamable-polarization-sectors-v1.schema.json",
+        "sha256": "f3d9df102922580eca3ff51fa81ced1caf9b7729f1c9d64e7ddc43e16391b49e"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-streamable-polarization-sectors.md",
+        "sha256": "657133f1454ab69b3659a2cf286e59f2f89b5edbd59b01e32ec9c1da1df7e11c"
+      }
+    ]
+  },
+  "result_id": "BERGER_STREAMABLE_POLARIZATION_SECTORS",
+  "schema": "closed-universe-berger-streamable-polarization-sectors-v1",
+  "selection_rules": {
+    "axial_coordinate_weights": {
+      "y0": 0,
+      "y1_minus_i_y2": -1,
+      "y1_plus_i_y2": 1,
+      "y3": 0
+    },
+    "coframe_helicities": {
+      "theta3": 0,
+      "theta_minus": -1,
+      "theta_plus": 1
+    },
+    "conserved_green_charge": "q=m+s",
+    "detector_component_support": {
+      "D0": {
+        "theta1": "|row-column|=1",
+        "theta2": "|row-column|=1",
+        "theta3": "row=column"
+      },
+      "D1": {
+        "theta1": "row=column",
+        "theta2": "row=column",
+        "theta3": "|row-column|=1"
+      }
+    },
+    "maximum_green_charge_block_dimension": 3
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

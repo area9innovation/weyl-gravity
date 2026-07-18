@@ -1,0 +1,49 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "STREAMABLE_POLARIZATION_SECTORS_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Axial U(1) symmetry restricts the selected detector polarization matrices to diagonals and first off-diagonals, and the one-form Laplacian preserves q=m+s in the helicity coframe. All finite-mode Green matrix functions therefore split into charge blocks of dimension at most three. Through dimension 139 this reduces the all-column application upper count to 8,066,172 from the dense 852,056,100 estimate. High-mode coefficient values, convergence, the Green-weighted tail, full images, recoil, tangent-cone restriction, physical-branch map and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_streamable_polarization_sectors.py closed_universe_observers/verify_berger_streamable_polarization_sectors.py closed_universe_observers/tests/test_berger_streamable_polarization_sectors.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "selection-rule artifact, observer atlas/brief and programme links"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_streamable_polarization_sectors --check", "elapsed_seconds": "about 1", "status": "PASS", "scope": "exact support, charge-sector and scale generation"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_streamable_polarization_sectors", "elapsed_seconds": "about 1", "status": "PASS", "scope": "independent freshness, scale, evidence and fail-closed checks"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_streamable_polarization_sectors.py closed_universe_observers/tests/test_observer_atlas_fragment.py", "elapsed_seconds": "4.13", "status": "PASS", "scope": "selection rules, mutation, generated atlas and fail-closed bridge consumers", "summary": "9 passed"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-streamable-polarization-sectors-v1.schema.json -d closed_universe_observers/certificates/BERGER_STREAMABLE_POLARIZATION_SECTORS.json", "elapsed_seconds": "under 3", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "under 1", "status": "PASS", "scope": "shared atlas schema, generated content and evidence hashes"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_streamable_polarization_sectors --emit", "status": "FAIL", "reason": "initial low-mode audit treated conservative Taylor-remainder spill enclosures as exact nonzero coefficients; repaired to require that every off-support enclosure contain zero"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_streamable_polarization_sectors.py", "status": "FAIL", "reason": "initial hand count omitted the dimension-one sector contribution of two operations; exact generated count 8,066,172 replaced 8,066,170"}
+  ],
+  "higher_tiers": [
+    {"tier": 2, "status": "NOT_RUN", "criterion": "The central comparison ledger, shared schema and mathematical inputs used by other certificate chains did not change; direct atlas consumers passed."},
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, convergence theorem, full Green image, recoil coefficient, tangent-cone promotion, physical-branch bridge, or quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_streamable_polarization_sectors.py", "sha256": "297dc0bdd1a2a9d7f68b84800a4c2915e13ae59a51ac7164133c1384bf89824b"},
+    {"path": "closed_universe_observers/certificates/BERGER_STREAMABLE_POLARIZATION_SECTORS.json", "sha256": "8f7cda5bc086c93fa0bdf4a9bac63ec36c3116786268ac94c9206d2b35ad0b03"},
+    {"path": "closed_universe_observers/schema/berger-streamable-polarization-sectors-v1.schema.json", "sha256": "f3d9df102922580eca3ff51fa81ced1caf9b7729f1c9d64e7ddc43e16391b49e"},
+    {"path": "closed_universe_observers/verify_berger_streamable_polarization_sectors.py", "sha256": "e36da979b7bd8498e8dd5ff52a5cf010adc8329159f92ac2898fcab832515548"},
+    {"path": "closed_universe_observers/tests/test_berger_streamable_polarization_sectors.py", "sha256": "f06b14bca7ea9a2cf3e4045cb32e4d71a40cd2865cd9723261953c03a340994b"},
+    {"path": "closed_universe_observers/reports/berger-streamable-polarization-sectors.md", "sha256": "657133f1454ab69b3659a2cf286e59f2f89b5edbd59b01e32ec9c1da1df7e11c"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "df0b0952490956b33da7ed4677515ec720226f6197b7de6a3f9aa9f97fa0e609"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "e113b7a640de1201217c1c66ce37980c44a8fe21f88af701b26e4d8ba99b57da"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "4c2aa2295760b4e6952e34f4e6352f95f96f006c9cf30ff0cebbfb91d9d5ee42"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "7e5eda7737ba1dcaf2e328dc9a6160a10a400dd3b316a48716c6a3f2775089ec"}
+  ],
+  "claim_flags": {
+    "ALL_FINITE_TWO_J_POLARIZATION_SUPPORT_RULES_EXPORTED": true,
+    "ALL_FINITE_TWO_J_GREEN_CHARGE_BLOCKS_EXPORTED": true,
+    "MAXIMUM_GREEN_CHARGE_BLOCK_DIMENSION_THREE": true,
+    "HIGH_MODE_COEFFICIENT_VALUES_EVALUATED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

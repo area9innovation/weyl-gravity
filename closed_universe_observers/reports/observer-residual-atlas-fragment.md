@@ -25,7 +25,9 @@ image.
 The adaptive-preflight row remains `OPEN` for the response: `two_j>=138` is
 only a necessary capacity rail, and convergence plus the Green-weighted tail
 are not certified.  It records the selected streamed Peter--Weyl route
-without promoting a full image.
+without promoting a full image.  Its structural support is now exact:
+polarization matrices use only diagonals/first off-diagonals and the Green
+operator decomposes into axial-charge blocks of dimension at most three.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

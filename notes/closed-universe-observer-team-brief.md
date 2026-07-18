@@ -371,6 +371,17 @@ million dense one-form operator entries below that rail.  The next analytic
 gate is the polarization coefficient recurrence and a Green-weighted
 operator-norm tail.
 
+`BERGER_STREAMABLE_POLARIZATION_SECTORS` closes the structural part of that
+gate for every finite `two_j`.  Axial invariance makes `y0,y3` coefficients
+diagonal and `y1,y2` coefficients first-off-diagonal.  In the helicity
+coframe, `Delta_1` preserves `q=m+s`, so every Maxwell Green matrix function
+splits into charge blocks of dimension at most three.  Through dimension 139,
+the two inputs require at most 86,736 entries and all-column block application
+at most 8,066,172 scalar operations, below one percent of the dense estimate.
+The next live gate is interval evaluation of those streamed high-mode
+coefficients plus the Green-weighted operator-norm tail; no full image or
+recoil coefficient follows yet.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger
