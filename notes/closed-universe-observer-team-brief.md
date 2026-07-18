@@ -198,11 +198,23 @@ the second switch after `D0`,
 `det M^(K)=kappa_0 kappa_1 !=0`.  These are actual dynamical-emitter
 preparations, not two externally declared Maxwell currents.
 
+`BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE` corrects the next
+order count.  Since the coupled unary is bipartite between `A` and `K_b`, an
+emitter-data record has only odd absolute coupling orders: the leading term is
+`g`, the absolute `g^2` term is zero, and the first recoil is absolute `g^3`
+(relative `g^2`).  The exact operator is the retarded chain
+`K_b^(0)->A^(1)->K_c^(2)->A^(3)->Q_a`; the leading determinant remains the
+nonzero constant term in the relative-recoil formal ring.  A numerical
+coefficient is not yet defined by the artifacts because the rank theorem
+exports an existence-level basis rule rather than serialized compact data,
+exact switches, and evaluated massive Green images.
+
 ### Immediate priority after the polarization-emitter handoff
 
-1. Evaluate the first `g^2` detector recoil correction for the two now-fixed
-   localized emitter Cauchy preparations, then construct the emitter stress
-   and clock-switch backreaction ledger.
+1. Export explicit compact `u_0,u_1` and normalized `h_0,h_1`, evaluate their
+   massive Green images, and then compute the absolute-`g^3` (relative-`g^2`)
+   detector recoil coefficient.  After that, construct the emitter stress and
+   clock-switch backreaction ledger.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,

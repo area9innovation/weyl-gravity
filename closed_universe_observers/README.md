@@ -50,6 +50,8 @@ python3 -m closed_universe_observers.generate_berger_108_row_emitter_causal_chai
 python3 -m closed_universe_observers.verify_berger_108_row_emitter_causal_chain
 python3 -m closed_universe_observers.generate_berger_dynamical_emitter_rank_two --check
 python3 -m closed_universe_observers.verify_berger_dynamical_emitter_rank_two
+python3 -m closed_universe_observers.generate_berger_dynamical_emitter_recoil_preflight --check
+python3 -m closed_universe_observers.verify_berger_dynamical_emitter_recoil_preflight
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -169,7 +171,13 @@ free-emitter data sets.  With the second relational switch after `D0`, their
 actual leading matrix is `[[kappa_0,0],[mu,kappa_1]]`, where both diagonal
 witnesses are nonzero.  Thus dynamical-emitter rank two is certified; the
 next calculation is the detector-level `g^2` recoil correction for those fixed
-preparations.
+preparations.  The recoil preflight corrects that shorthand: the leading
+emitter-data signal is absolute order `g`, the absolute `g^2` detector term
+vanishes by bipartite `A`--`K` parity, and the first feedback is absolute
+order `g^3` (relative order `g^2`).  Its operator and formal rank stability
+are exact.  A numerical detector coefficient is input-blocked until explicit
+compact preparation profiles, switch functions, and their massive Green
+images are exported.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

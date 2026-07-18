@@ -289,7 +289,10 @@ Green adjunction and a constraint-compatible massive polarization: two compact
 localized free-emitter data sets give
 `M^(K)=[[kappa_0,0],[mu,kappa_1]]` with both diagonal entries nonzero.  Actual
 dynamical-emitter rank two is therefore established at leading coupling order;
-the detector-level `g^2` recoil coefficient remains open.
+the recoil preflight then proves the absolute `g^2` detector term is zero and
+the first feedback is absolute `g^3` (relative `g^2`).  Its operator is exact,
+but its coefficient remains input-blocked on explicit preparation/switch
+profiles and evaluated massive Green images.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -332,7 +335,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | two localized massive-emitter Cauchy preparations give triangular rank two; the `g^2` detector recoil coefficient remains open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | two localized massive-emitter Cauchy preparations give triangular rank two; the first recoil is absolute `g^3`, with its operator known and coefficient profile-blocked | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -359,8 +362,8 @@ formal constant term, so rank two survives any compatible recoil deformation.
 The handoff is now supplied by a standard massive polarization-two-form model
 with compact relational switching.  It fixes an off-shell conserved current,
 reciprocal recoil equation, and nondegenerately paired 108-row carrier.
-The first recoil/backreaction correction is now computable for the fixed
-localized Cauchy preparations;
+The first recoil/backreaction operator is now known, while its detector
+coefficient awaits explicit localized preparation and switch profiles;
 placing both preparations at the original common Hopf event is a separate
 stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
@@ -448,3 +451,7 @@ The preparation successor uses the advanced detector Cauchy covectors, a
 massive constraint-compatible polarization, and staggered support to prove the
 actual leading dynamical-emitter matrix has rank two.  Its receipt is
 `closed_universe_observers/receipts/DYNAMICAL_EMITTER_CAUCHY_RANK_TWO_TIER_RECEIPT.json`.
+The recoil preflight proves the absolute quadratic term vanishes, exports the
+absolute-cubic/relative-quadratic operator, preserves formal rank two, and
+returns the exact missing profile/kernel inputs.  Its receipt is
+`closed_universe_observers/receipts/DYNAMICAL_EMITTER_RECOIL_ORDER_INPUT_GATE_TIER_RECEIPT.json`.

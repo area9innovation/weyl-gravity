@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-dynamical-emitter-recoil-order-and-input-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "order_audit", "detector_recoil_operator", "evaluation_input_gate", "formal_rank_stability", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-dynamical-emitter-recoil-order-and-input-gate-v1"},
+    "result_id": {"const": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FIRST_RECOIL_IS_ABSOLUTE_G3_OPERATOR_COMPUTED_NUMERICAL_COEFFICIENT_INPUT_BLOCKED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "order_audit": {"type": "object", "required": ["left_right_inverse_defect_count_through_g3", "emitter_to_Maxwell_absolute_g2", "absolute_g2_term_zero", "cubic_matches_leading_times_relative_g2_self_energy"], "properties": {"left_right_inverse_defect_count_through_g3": {"const": 0}, "emitter_to_Maxwell_absolute_g2": {"const": ["0", "0"]}, "absolute_g2_term_zero": {"const": true}, "cubic_matches_leading_times_relative_g2_self_energy": {"const": true}}},
+    "detector_recoil_operator": {"type": "object"},
+    "evaluation_input_gate": {"type": "object"},
+    "formal_rank_stability": {"type": "object", "required": ["constant_term", "rank_two_over_formal_recoil_ring"], "properties": {"constant_term": {"const": "kappa_0*kappa_1"}, "rank_two_over_formal_recoil_ring": {"const": true}}},
+    "mutation_results": {"type": "array", "minItems": 3},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["EMITTER_TO_DETECTOR_ABSOLUTE_G2_TERM_ZERO_CERTIFIED", "FIRST_DETECTOR_RECOIL_ABSOLUTE_G3_OPERATOR_COMPUTED", "FIRST_DETECTOR_RECOIL_RELATIVE_G2_OPERATOR_COMPUTED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "DYNAMICAL_EMITTER_LEADING_RECORD_MATRIX_RANK_TWO_RETAINED", "EMITTER_STRESS_BACKREACTION_INCLUDED", "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"EMITTER_TO_DETECTOR_ABSOLUTE_G2_TERM_ZERO_CERTIFIED": {"const": true}, "FIRST_DETECTOR_RECOIL_ABSOLUTE_G3_OPERATOR_COMPUTED": {"const": true}, "FIRST_DETECTOR_RECOIL_RELATIVE_G2_OPERATOR_COMPUTED": {"const": true}, "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false}, "DYNAMICAL_EMITTER_LEADING_RECORD_MATRIX_RANK_TWO_RETAINED": {"const": true}, "EMITTER_STRESS_BACKREACTION_INCLUDED": {"const": false}, "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false}, "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}
