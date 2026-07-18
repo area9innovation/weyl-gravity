@@ -95,7 +95,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "physical_TT_hessian_dictionary": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED",
         "full_BV_multiplicity_ledger": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
         "repository_round_S4_Euler_coefficient": "REPOSITORY_EUCLIDEAN_S4_EULER_COEFFICIENT_MATCHED_C_COEFFICIENT_OPEN",
-        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_LEDGER_COMPOSER_BOUND_REGULATED_BV_INSERTION_OPEN",
+        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_AND_EULER_COEFFICIENT_BOUND_REGULATED_BV_INSERTION_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
@@ -438,6 +438,14 @@ def _load() -> dict[str, dict[str, Any]]:
         is not True
         or assembly_flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
         or assembly_flags.get(
+            "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED"
+        )
+        is not True
+        or assembly_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not True
+        or assembly_flags.get("REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED")
+        is not True
+        or assembly_flags.get(
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND"
         )
         is not True
@@ -448,7 +456,7 @@ def _load() -> dict[str, dict[str, Any]]:
         or assembly_flags.get("QME_OBSTRUCTED") is not False
         or assembly_flags.get("QME_RESTORED") is not False
         or assembly.get("next_gate")
-        != "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING"
+        != "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION"
     ):
         raise ValueError("Slavnov-breaking assembly frontier drifted")
     if (
@@ -847,7 +855,7 @@ def build() -> dict[str, Any]:
             },
             "local_obstruction_space": {
                 "status": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
-                "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
+                "next_gate": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
             },
             "coefficient_and_QME": {
                 "status": "ROUND_S4_REPOSITORY_EULER_COEFFICIENT_MATCHED_C2_AND_REGULATED_SLAVNOV_INSERTION_OPEN",
@@ -983,7 +991,7 @@ def build() -> dict[str, Any]:
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY": True,
             "DIFF_WEYL_SCALAR_GHOST_REDUCTION_VERIFIED": True,
             "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES": True,
-            "REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED": True,
+            "REPOSITORY_TT_HESSIAN_HISTORICAL_MISSING_CARRIER_CLOSED": True,
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE": True,
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED": True,
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE": True,
@@ -1023,7 +1031,8 @@ def build() -> dict[str, Any]:
             "under arbitrary invertible local BV-canonical gauge fixing, so the gauge-fixed "
             "H04 and H14 quotients are complete with the same 2/1 dimensions on that locus, "
             "and the exact 3-by-4 breaking reduction binds the standard even background "
-            "coordinates 199/30 and -87/20 while keeping the repository matching open. "
+            "coordinates 199/30 and -87/20. The accepted physical round-S4 ledger promotes "
+            "only a=87/20 because C2 vanishes there; the repository c match remains open. "
             "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
             "operator export and frozen local-BV import come from distinct commits, it "
             "requires exact equality of the generator, atom, differential, dependency and "
@@ -1166,7 +1175,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("DIFF_WEYL_SCALAR_GHOST_REDUCTION_VERIFIED") is not True
         or flags.get("YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES")
         is not True
-        or flags.get("REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED")
+        or flags.get("REPOSITORY_TT_HESSIAN_HISTORICAL_MISSING_CARRIER_CLOSED")
         is not True
         or flags.get("STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE") is not True
         or flags.get("STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED") is not True
@@ -1229,7 +1238,7 @@ def validate(result: dict[str, Any]) -> None:
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY",
             "DIFF_WEYL_SCALAR_GHOST_REDUCTION_VERIFIED",
             "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES",
-            "REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED",
+            "REPOSITORY_TT_HESSIAN_HISTORICAL_MISSING_CARRIER_CLOSED",
             "STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE",
             "STANDARD_TT_AUXILIARY_CONTOUR_AND_PHASE_FIXED",
             "STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE_COMPLETE",

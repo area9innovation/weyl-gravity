@@ -55,13 +55,12 @@ rank-one differential factor, including the `M_squared=-4` specialization at
 `det(Delta_0)^(1/2)` cancels against the Diff ghost, antighost, and multiplier
 Hodge super-Jacobians, and every gauge/nonminimal quartet has unit
 superdeterminant. The surviving ghost factors have precisely the standard
-rank, operator, and `+1/2` partition-function exponents. The physical-Hessian
-gap is now localized exactly. The action normalization, conformally-flat
-`C1^sharp C1` Hessian, cylinder TT factorization, and action-derived Nariai
-endpoint are exact, but the cylinder and Nariai backgrounds cannot substitute
-for the missing round-`S4` TT dictionary. That artifact must identify the
-repository Hessian with `kappa Delta_2_perp(2) Delta_2_perp(4)`, including the
-exact scalar and sign. The four standard round-`S4` factors now have a complete
+rank, operator, and `+1/2` partition-function exponents. The historical
+physical-Hessian gap is closed. The action normalization, conformally-flat
+`C1^sharp C1` Hessian, cylinder TT factorization, and independent round-`S4`
+spin-two specialization identify the repository Hessian with
+`(1/2) Delta_2_perp(2) Delta_2_perp(4)`, including its exact scalar and sign.
+The four standard round-`S4` factors now have a complete
 zero-mode ledger: neither physical TT factor has a kernel, while the two ghost
 factors contribute ten Killing-vector and five proper-conformal scalar modes.
 The latter reproduce the classical fifteen conformal reducibilities, including

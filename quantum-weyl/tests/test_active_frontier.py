@@ -54,7 +54,9 @@ class ActiveFrontierTests(unittest.TestCase):
             "REPOSITORY_FULL_BV_LEDGER_ACCEPTED_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN",
         )
         self.assertTrue(
-            self.payload["claim_flags"]["REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED"]
+            self.payload["claim_flags"][
+                "REPOSITORY_TT_HESSIAN_HISTORICAL_MISSING_CARRIER_CLOSED"
+            ]
         )
         self.assertTrue(
             self.payload["claim_flags"]["STANDARD_ROUND_S4_FACTOR_ZERO_MODES_COMPLETE"]

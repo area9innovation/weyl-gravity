@@ -78,6 +78,19 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         )
         self.assertTrue(value["claim_flags"]["FULL_BV_LEDGER_COMPOSER_READY"])
         self.assertTrue(
+            value["claim_flags"][
+                "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED"
+            ]
+        )
+        self.assertTrue(
+            value["claim_flags"]["REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED"]
+        )
+        self.assertTrue(
+            value["claim_flags"][
+                "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED"
+            ]
+        )
+        self.assertTrue(
             value["claim_flags"]["REGULATED_BV_INSERTION_V2_RECEIVER_READY"]
         )
         self.assertEqual(
@@ -90,6 +103,17 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         self.assertEqual(
             value["minimal_missing_carrier_theorem"]["status"],
             "EXACT_REGULATED_BV_INSERTION_GAP",
+        )
+        physical = value["repository_physical_input"]
+        self.assertEqual(
+            physical["round_S4_Euler_coefficient"]["a"],
+            {"numerator": 87, "denominator": 20},
+        )
+        self.assertEqual(
+            physical["round_S4_C2_status"], "NOT_DETERMINED_ON_ROUND_S4"
+        )
+        self.assertEqual(
+            physical["repository_BV_anomaly_vector_status"], "NOT_COMPUTED"
         )
 
     def test_receiver_mechanics_classifies_both_qme_branches(self) -> None:
@@ -425,6 +449,10 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         schema = json.loads(SCHEMA.read_text())
         Draft202012Validator.check_schema(schema)
         Draft202012Validator(schema).validate(checked)
+        mutant = deepcopy(checked)
+        mutant["repository_physical_input"]["round_S4_C2_status"] = "COMPUTED"
+        with self.assertRaises(ValidationError):
+            Draft202012Validator(schema).validate(mutant)
 
 
 if __name__ == "__main__":

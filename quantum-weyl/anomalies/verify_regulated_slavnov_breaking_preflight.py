@@ -34,10 +34,23 @@ def verify() -> dict:
     if (
         missing.get("scalar_ghost_gap_rank") != 0
         or missing.get("full_BV_ledger_composer_ready") is not True
+        or missing.get("physical_TT_dictionary_accepted") is not True
+        or missing.get("physical_full_BV_multiplicity_ledger_accepted") is not True
+        or missing.get("repository_round_S4_Euler_coefficient_computed") is not True
+        or missing.get("repository_C2_coefficient_gap") is not True
+        or missing.get("classical_snapshot_compatibility_bridge_gap") is not True
         or missing.get("regulated_BV_insertion_v2_receiver_ready") is not True
         or missing.get("status") != "EXACT_REGULATED_BV_INSERTION_GAP"
     ):
         raise ValueError("regulated BV insertion gap was not isolated")
+    physical = checked["repository_physical_input"]
+    if (
+        physical.get("round_S4_Euler_coefficient", {}).get("a")
+        != {"numerator": 87, "denominator": 20}
+        or physical.get("round_S4_C2_status") != "NOT_DETERMINED_ON_ROUND_S4"
+        or physical.get("repository_BV_anomaly_vector_status") != "NOT_COMPUTED"
+    ):
+        raise ValueError("physical round-S4 coefficient boundary drifted")
     for flag in (
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
         "REGULATED_SLAVNOV_BREAKING_COMPUTED",

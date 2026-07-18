@@ -24,6 +24,9 @@ from classical_import.classical_snapshot_compatibility_receiver import (
 from spectral.euclidean.multiplicity_export_receiver import (
     validate_repository_multiplicity_export,
 )
+from spectral.euclidean.tt_hessian_dictionary_receiver import (
+    validate_tt_hessian_dictionary,
+)
 
 
 HERE = Path(__file__).resolve().parent
@@ -41,6 +44,9 @@ DEPENDENCIES = {
     "standard_auxiliary_fourth_order_match": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json",
     "full_BV_multiplicity_preflight": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT.json",
     "full_BV_ledger_composer": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_LEDGER_COMPOSER_READINESS.json",
+    "physical_TT_dictionary": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
+    "physical_full_BV_multiplicity_ledger": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+    "repository_round_S4_Euler_coefficient": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
     "classical_snapshot_compatibility_receiver": ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
 }
@@ -692,6 +698,9 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     auxiliary = values["standard_auxiliary_fourth_order_match"]
     multiplicity = values["full_BV_multiplicity_preflight"]
     composer = values["full_BV_ledger_composer"]
+    physical_tt = values["physical_TT_dictionary"]
+    physical_ledger = values["physical_full_BV_multiplicity_ledger"]
+    repository_euler = values["repository_round_S4_Euler_coefficient"]
     compatibility = values["classical_snapshot_compatibility_receiver"]
     ward = values["Ward_insertion_contract"]
     if (
@@ -780,6 +789,76 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"
     ):
         raise ValueError("full-BV ledger composer dependency drifted")
+    physical_commit = physical_tt.get("classical_commit")
+    if not isinstance(physical_commit, str) or len(physical_commit) != 40:
+        raise ValueError("physical TT dictionary classical commit drifted")
+    validate_tt_hessian_dictionary(
+        physical_tt,
+        repository_root=ROOT,
+        expected_classical_commit=physical_commit,
+    )
+    physical_tt_flags = physical_tt.get("claim_flags", {})
+    if (
+        physical_tt.get("result_state")
+        != "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED"
+        or physical_tt_flags.get(
+            "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_SUPPLIED"
+        )
+        is not True
+        or physical_tt_flags.get("REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED")
+        is not True
+        or physical_tt_flags.get("REPOSITORY_ELLIPTIC_TT_BLOCK_CERTIFIED")
+        is not True
+        or physical_tt_flags.get("REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED")
+        is not False
+    ):
+        raise ValueError("physical TT dictionary dependency drifted")
+    validate_repository_multiplicity_export(
+        physical_ledger,
+        repository_root=ROOT,
+        expected_classical_commit=physical_commit,
+        expected_analytic_route="EUCLIDEAN_ELLIPTIC",
+    )
+    if (
+        physical_ledger.get("result_state")
+        != "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED"
+        or [row.get("operator") for row in physical_ledger.get("repository_factors", [])]
+        != [
+            "Delta_2_perp(4)",
+            "Delta_0(-4)",
+            "Delta_2_perp(2)",
+            "Delta_1_perp(-3)",
+        ]
+        or physical_ledger.get("cancellations", {}).get("factor_coverage_status")
+        != "VERIFIED"
+        or physical_ledger.get("cancellations", {}).get(
+            "integration_row_coverage_status"
+        )
+        != "VERIFIED"
+    ):
+        raise ValueError("physical full-BV multiplicity ledger dependency drifted")
+    repository_euler_flags = repository_euler.get("claim_flags", {})
+    if (
+        repository_euler.get("result_state")
+        != "REPOSITORY_EUCLIDEAN_S4_EULER_COEFFICIENT_MATCHED_C_COEFFICIENT_OPEN"
+        or repository_euler.get("classical_commit") != physical_commit
+        or repository_euler.get("coefficient_result", {}).get("a") != "87/20"
+        or repository_euler.get("coefficient_result", {}).get("E4_coordinate")
+        != "-87/20"
+        or repository_euler.get("coefficient_result", {}).get("c")
+        != "NOT_DETERMINED_ON_ROUND_S4"
+        or repository_euler_flags.get(
+            "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED"
+        )
+        is not True
+        or repository_euler_flags.get("REPOSITORY_C2_COEFFICIENT_COMPUTED")
+        is not False
+        or repository_euler_flags.get(
+            "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("repository round-S4 Euler coefficient dependency drifted")
     compatibility_flags = compatibility.get("claim_flags", {})
     if (
         compatibility.get("result_state")
@@ -832,6 +911,11 @@ def analysis() -> dict[str, Any]:
         "even": [_fraction(value) for value in even],
         "standard_quotient_vector": [_fraction(value) for value in quotient_image],
         "dependency_hashes": dependency_hashes,
+        "repository_physical_input": {
+            "classical_commit": values["physical_TT_dictionary"]["classical_commit"],
+            "round_S4_Euler_a": "87/20",
+            "round_S4_C2_status": "NOT_DETERMINED_ON_ROUND_S4",
+        },
     }
     return {
         "dependency_hashes": dependency_hashes,
@@ -841,6 +925,7 @@ def analysis() -> dict[str, Any]:
         "standard_even_vector": [_fraction(value) for value in even],
         "standard_quotient_vector": [_fraction(value) for value in quotient_image],
         "witness_rows": witness_rows,
+        "repository_physical_input": proof_payload["repository_physical_input"],
         "proof_sha256": _canonical_hash(proof_payload),
     }
 
@@ -850,7 +935,7 @@ def build() -> dict[str, Any]:
     certificate = {
         "schema": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1",
         "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
-        "result_state": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_LEDGER_COMPOSER_BOUND_REGULATED_BV_INSERTION_OPEN",
+        "result_state": "FULL_BV_QUOTIENT_PHYSICAL_ROUND_S4_LEDGER_AND_EULER_COEFFICIENT_BOUND_REGULATED_BV_INSERTION_OPEN",
         "result_stage": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
         "regularity_scope": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY",
@@ -877,7 +962,21 @@ def build() -> dict[str, Any]:
             "quotient_coordinates": result["standard_quotient_vector"],
             "parity_odd_status": "WARD_VERIFIED_ZERO_FOR_STANDARD_PARITY_EVEN_REGULATOR",
             "BoxR_status": "SCHEME_DEPENDENT_EXACT_REMOVABLE",
-            "repository_matching_status": "NOT_COMPUTED",
+            "repository_matching_status": "E4_MATCHED_ON_ROUND_S4_C2_REPOSITORY_MATCH_OPEN",
+        },
+        "repository_physical_input": {
+            "classical_commit": result["repository_physical_input"]["classical_commit"],
+            "analytic_route": "EUCLIDEAN_ELLIPTIC",
+            "TT_dictionary_status": "SEMANTIC_RECEIVER_ACCEPTED",
+            "full_BV_multiplicity_ledger_status": "SEMANTIC_RECEIVER_ACCEPTED",
+            "round_S4_Euler_coefficient": {
+                "a": {"numerator": 87, "denominator": 20},
+                "E4_coordinate": {"numerator": -87, "denominator": 20},
+            },
+            "round_S4_C2_status": result["repository_physical_input"][
+                "round_S4_C2_status"
+            ],
+            "repository_BV_anomaly_vector_status": "NOT_COMPUTED",
         },
         "complete_dual_witness_binding": {
             "basis_status": "COMPLETE_GAUGE_FIXED_BV_QUOTIENT_ON_REGULAR_BACH_LOCUS",
@@ -909,14 +1008,21 @@ def build() -> dict[str, Any]:
                 "York/Hodge measure and nonminimal quartet Berezinian cancellation",
                 "round-S4 standard zero-mode and priming ledger",
                 "mutation-tested full-BV local multiplicity composer for all non-TT rows",
+                "semantically replayed physical round-S4 TT Hessian dictionary",
+                "semantically replayed physical round-S4 full-BV multiplicity ledger",
+                "repository round-S4 Euler coefficient a=87/20 (E4 coordinate -87/20)",
                 "semantic cross-commit classical snapshot compatibility receiver",
                 "versioned regulated BV insertion-decomposition output contract",
                 "portable renormalized Ward-insertion input contract",
             ],
             "missing": [
                 {
-                    "carrier_id": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
-                    "required_output": "supply the physical normalized TT operator so the ready composer can emit the repository local multiplicity ledger",
+                    "carrier_id": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH",
+                    "required_output": "supply an eligible physical background on which C2 is visible and match the full repository BV operator and measure coefficient c",
+                },
+                {
+                    "carrier_id": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+                    "required_output": "prove content-hash compatibility between the accepted physical analytic commit and the frozen local-BV quotient commit",
                 },
                 {
                     "carrier_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
@@ -941,8 +1047,13 @@ def build() -> dict[str, Any]:
             "standard_factor_rank_gap": False,
             "scalar_ghost_gap_rank": 0,
             "full_BV_ledger_composer_ready": True,
+            "physical_TT_dictionary_accepted": True,
+            "physical_full_BV_multiplicity_ledger_accepted": True,
+            "repository_round_S4_Euler_coefficient_computed": True,
+            "repository_C2_coefficient_gap": True,
+            "classical_snapshot_compatibility_bridge_gap": True,
             "regulated_BV_insertion_v2_receiver_ready": True,
-            "remaining_decision_gap": "after the physical TT dictionary composes the local determinant ledger, a regulated BV Slavnov insertion with Wess-Zumino and parity proofs is still required; determinant coefficients alone do not decide the QME",
+            "remaining_decision_gap": "the round-S4 physical ledger fixes a=87/20 but cannot see C2; a non-conformally-flat or Ricci-flat full-BV coefficient carrier, a cross-snapshot compatibility proof, and a regulated BV Slavnov insertion with Wess-Zumino and parity proofs remain required; determinant coefficients alone do not decide the QME",
             "no_further_local_graph_expansion_required": True,
         },
         "claim_flags": {
@@ -953,6 +1064,9 @@ def build() -> dict[str, Any]:
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND": True,
             "FULL_BV_LEDGER_COMPOSER_READY": True,
+            "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED": True,
+            "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": True,
+            "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
             "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
@@ -965,9 +1079,9 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "proof_sha256": result["proof_sha256"],
-        "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
+        "next_gate": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all non-TT local multiplicity rows are now exact and bound by a mutation-tested composer. One physical round-S4 TT dictionary is the remaining input to the local determinant ledger. That still does not compute a BV Slavnov breaking: a complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The versioned v2 export receiver now requires the regulated action, total-derivative remainder, gauge-parameter dependence, regularization dependence, and antifield completion explicitly, including certified zero rows. Every insertion-side proof binds the exact commit, analytic route, basis, and coefficient hash. It permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. Distinct analytic and local-BV commits additionally require a full semantic replay of the five canonical classical snapshot hashes and the role-specific nested proofs; a matching result_id alone is rejected. It proves only the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
+            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all local multiplicity rows are exact. The physical round-S4 TT Hessian dictionary and full-BV multiplicity ledger pass their semantic receivers, and the physical round-S4 ledger fixes a=87/20, equivalently E4 coordinate -87/20. Because round S4 is conformally flat, it cannot determine c: 199/30 remains a standard Euclidean cross-check rather than a repository promotion. The accepted analytic artifacts come from a different classical commit than the frozen local-BV quotient, so a content-hash compatibility bridge remains mandatory before a physical insertion can be accepted. This still does not compute a BV Slavnov breaking: a non-conformally-flat or Ricci-flat C2 carrier, complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The versioned v2 export receiver requires the regulated action, total-derivative remainder, gauge-parameter dependence, regularization dependence, and antifield completion explicitly, including certified zero rows. Every insertion-side proof binds the exact commit, analytic route, basis, and coefficient hash. It permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. Distinct analytic and local-BV commits require a full semantic replay of the five canonical classical snapshot hashes and the role-specific nested proofs; a matching result_id alone is rejected. It proves only the conditional implication that a physical regulated breaking with a nonzero quotient coordinate would obstruct the strict fixed-field-content QME. Therefore it does not promote a complete repository anomaly vector, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
         ),
         "provenance": {
             "source_sha256": {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -987,6 +1101,12 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND") is not True
         or flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
+        or flags.get("REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED")
+        is not True
+        or flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not True
+        or flags.get("REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED")
+        is not True
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
         is not True
         or flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY") is not True
@@ -1006,7 +1126,7 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         or certificate.get("conditional_obstruction_theorem", {}).get("activated")
         is not False
         or certificate.get("next_gate")
-        != "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING"
+        != "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION"
     ):
         raise ValueError("Slavnov-breaking preflight crossed its claim boundary")
 

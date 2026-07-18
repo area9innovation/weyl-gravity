@@ -54,9 +54,21 @@ has rank two whereas the standard scalar ghost factor has rank one. That gap
 is now closed: the exact coupled Diff--Weyl FP matrix reduces to the single
 `Delta_0(-4)` factor, the York/Hodge measure cancels the unwanted scalar
 Jacobian, and every nonminimal quartet has unit superdeterminant. The round-S4
-priming dimensions `(0,5,0,10)` and all non-TT local determinant exponents are
-bound by a mutation-tested full-BV ledger composer. Its sole physical input is
-the still-missing normalized TT dictionary.
+priming dimensions `(0,5,0,10)` and all local determinant exponents are now
+bound. The physical normalized TT dictionary passes its semantic receiver with
+`H_TT=(1/2) Delta_2_perp(2) Delta_2_perp(4)`, and the composed physical
+full-BV multiplicity ledger independently passes exact row, factor, rank,
+exponent, zero-mode, and nested-proof replay.
+
+On round `S4` this physical ledger computes
+
+\[
+a={87\over20},\qquad [E_4]=-{87\over20}.
+\]
+
+It does not compute `c`: the background is conformally flat, so `C2=0` and
+the `C2` coefficient is invisible. The standard value `199/30` remains an
+independent Euclidean cross-check, not a promoted repository coefficient.
 
 This proves a useful conditional theorem: if a repository regulator, measure,
 and regulated Slavnov functional match those two standard nontrivial
@@ -69,8 +81,10 @@ established, so the theorem is deliberately inactive.
 No further local tensor-graph or multiplicity expansion is needed for this
 decision. The remaining inputs are analytic:
 
-- the physical round-S4 TT Hessian dictionary, after which the ready composer
-  emits the local full-BV multiplicity ledger;
+- a non-conformally-flat or Ricci-flat physical full-BV operator/measure
+  carrier on which the `C2` coefficient is visible;
+- a content-hash compatibility proof between the physical analytic commit
+  and the distinct frozen local-BV quotient commit;
 - a complete Euclidean elliptic-complex receipt with action normalization and
   an explicit `FOURTH_ORDER_METRIC` or `SECOND_ORDER_AUXILIARY` formulation;
 - content-addressed regulator, zero-mode, determinant-measure, and any
@@ -82,8 +96,9 @@ The last item is essential. Matching the determinant factors and recovering
 the familiar heat-kernel coefficients does not by itself compute the BV
 master-equation breaking.
 
-The preflight does not call the standard heat-kernel vector a repository BV
-coefficient, does not activate the conditional obstruction, and makes no QME,
+The preflight promotes only the physical round-S4 Euler coefficient. It does
+not call the complete standard heat-kernel vector a repository BV anomaly
+vector, does not activate the conditional obstruction, and makes no QME,
 Cartan, residual-transfer, or Lorentzian claim.
 
 The accepted handoff schema

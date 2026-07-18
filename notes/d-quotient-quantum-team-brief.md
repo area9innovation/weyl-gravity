@@ -584,9 +584,11 @@ physical kernel, and content-addressed producer plus independent-verifier
 artifacts. The historical synthetic fixture remains receiver mechanics only;
 the physical dictionary and full-BV ledger are separate committed artifacts.
 The classical 54-row carrier is explicitly not a loop-multiplicity authority.
-The next task is to bind the accepted ledger into a content-addressed
-repository regulator/operator/measure match and compute the regulated Slavnov
-breaking through the V2 receiver. A nonzero quotient branch
+The accepted TT dictionary, full-BV ledger, and round-`S4` Euler coefficient
+are now bound into the Slavnov assembly preflight. The remaining physical
+inputs are a non-conformally-flat or Ricci-flat `C2` coefficient carrier, the
+cross-snapshot compatibility bridge, the complete regulator/measure receipts,
+and the regulated Slavnov insertion through the V2 receiver. A nonzero quotient branch
 obstructs strict fixed field content; a purely `omega BoxR` branch is restored
 by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See
