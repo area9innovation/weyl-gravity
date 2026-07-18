@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-selected-clock-power-polarized-form-rail-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "joint_clock_weighting", "selected_form_rows", "coverage", "maximum_axis_width_by_clock_power", "clock_power_coverage_mutation", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-selected-clock-power-polarized-form-rail-v1"},
+    "result_id": {"const": "BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_SELECTED_POLARIZED_FORM_CLOCK_POWERS_P0_TO_P28_EXPORTED_COMPLETE_FORM_AND_GREEN_RAILS_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "maxProperties": 2},
+    "joint_clock_weighting": {"type": "object"},
+    "selected_form_rows": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "object",
+        "required": ["anchor", "detector_id", "coframe_component", "coordinate", "form_two_j", "form_row", "form_column", "clock_power_intervals"],
+        "properties": {
+          "anchor": {"type": "integer"},
+          "detector_id": {"type": "string"},
+          "coframe_component": {"type": "integer"},
+          "coordinate": {"type": "string"},
+          "form_two_j": {"const": 1024},
+          "form_row": {"type": "integer"},
+          "form_column": {"type": "integer"},
+          "clock_power_intervals": {"type": "array", "minItems": 15, "maxItems": 15}
+        },
+        "additionalProperties": false
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["selected_form_entry_count", "clock_power_count", "complex_interval_count", "p0_exact_reproduction_defect_count", "canonical_selected_clock_power_rail_sha256"],
+      "properties": {
+        "selected_form_entry_count": {"const": 18},
+        "clock_power_count": {"const": 15},
+        "complex_interval_count": {"const": 270},
+        "p0_exact_reproduction_defect_count": {"const": 0},
+        "canonical_selected_clock_power_rail_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "maximum_axis_width_by_clock_power": {"type": "object", "minProperties": 15, "maxProperties": 15},
+    "clock_power_coverage_mutation": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["SELECTED_POLARIZED_FORM_CLOCK_POWERS_P0_TO_P28_EXPORTED", "ALL_270_SELECTED_COMPLEX_INTERVALS_EXPORTED", "P0_SOURCE_ROWS_REPRODUCED_EXACTLY", "NO_CLOCK_SPATIAL_INDEPENDENCE_ASSUMED", "ALL_SELECTED_CLOCK_POWER_WIDTHS_BELOW_ONE_TENTH", "CLOCK_POWER_COVERAGE_MUTATION_REJECTED", "COMPLETE_FORM_RAIL_EVALUATED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "GREEN_IMAGES_EVALUATED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "SELECTED_POLARIZED_FORM_CLOCK_POWERS_P0_TO_P28_EXPORTED": {"const": true},
+        "ALL_270_SELECTED_COMPLEX_INTERVALS_EXPORTED": {"const": true},
+        "P0_SOURCE_ROWS_REPRODUCED_EXACTLY": {"const": true},
+        "NO_CLOCK_SPATIAL_INDEPENDENCE_ASSUMED": {"const": true},
+        "ALL_SELECTED_CLOCK_POWER_WIDTHS_BELOW_ONE_TENTH": {"const": true},
+        "CLOCK_POWER_COVERAGE_MUTATION_REJECTED": {"const": true},
+        "COMPLETE_FORM_RAIL_EVALUATED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "GREEN_IMAGES_EVALUATED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "APPLY_THE_EXACT_TEMPORAL_GREEN_FUNCTIONAL_CALCULUS_TO_THE_SELECTED_CLOCK_POWER_FORM_ROWS_AND_DERIVE_A_CONTROLLED_SPATIAL_TAIL"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

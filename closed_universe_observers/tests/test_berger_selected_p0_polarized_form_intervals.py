@@ -35,6 +35,7 @@ def test_external_detector_clock_factor_is_applied() -> None:
     mutation = value["external_clock_factor_mutation"]
     assert Fraction(mutation["corrected_positive_real_lower"]) < Fraction(mutation["uncorrected_positive_real_lower"])
     assert value["flags"]["EXTERNAL_DETECTOR_CLOCK_FACTOR_APPLIED"] is True
+    assert value["flags"]["SELECTED_INTERVALS_UNIFORM_OVER_NORMALIZED_CLOCK_SUPPORT"] is True
 
 
 def test_higher_clock_and_green_claims_remain_false() -> None:

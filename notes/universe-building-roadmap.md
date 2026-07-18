@@ -399,13 +399,18 @@ scalar set, followed by external clock powers.  The selected `p=0` polarized
 successor now applies the common pointwise factor
 `82915/82944<=a(t)=cos(lambda s)<=1` and serializes all 18 detector-form
 intervals and 54 scalar-term applications; every maximum real/imaginary width is below `0.1`, with the
-maximum below `0.099`.  The active profile gate is the same selected closure
-for external powers `p=2,...,28`, not a complete-form or Green-image claim.
+maximum below `0.099`.  Those intervals are uniform over the full normalized
+clock support.  The selected clock-power successor now propagates all 18
+entries through the 15 even powers `p=0,2,...,28`: all 270 complex intervals
+are content-addressed, `p=0` is reproduced exactly, every width remains below
+`0.1`, and no clock/profile independence is assumed.  The active profile gate
+is exact temporal functional calculus on this selected rail plus a controlled
+spatial tail, not a complete-form or Green-image claim.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
-`q2,q3`, which
-precedes the coefficientwise affine-`K_Berger` observer morphism.  This is not
-finite-`r`, fixed-background linear-`K`, full-`q4`, or all-orders stability.
+`q2,q3`; only that completion activates declared `K_Berger` equivariance and
+the coefficientwise affine-`K_Berger` observer morphism.  This is not finite-
+`r`, fixed-background linear-`K`, full-`q4`, or all-orders stability.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
@@ -1206,7 +1211,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative cutoff obstruction, correlated high-mode central/axial/intermediate scalar sentinels and adaptive even/odd diagonal-fraction rails through selected `two_j=1025` rows, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | apply the polarization recurrence and clock powers to the selected scale rail or certify its Sobolev tail, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative cutoff obstruction, correlated high-mode central/axial/intermediate scalar sentinels, adaptive even/odd diagonal-fraction rails through selected `two_j=1025` rows, and 270 selected polarized clock-power intervals through `p=28`, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | apply the exact temporal functional calculus to the selected polarized clock-power rail and certify a controlled spatial tail, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -1460,6 +1465,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL` (fired) | apply the certified polarization recurrence and external clock powers to the declared two-scale rows; preserve radial-only refinement at the `3/8` sentinel and do not infer complete or infinite rails |
 | `BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE` (fired) | combine the 12 recurrence-closed scalar rows into the 18 selected detector-polarized form entries, then add external clock powers; do not drop the six `r-1/r+1` neighbors or infer a complete form rail |
 | `BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS` (fired) | evaluate the same recurrence-closed scalar and selected polarized rows for external clock powers `p=2,...,28`; do not infer complete form coverage, an infinite tail or a Green image from the 18 `p=0` entries |
+| `BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL` (fired) | apply the exact temporal functional calculus to the 18 selected rows and derive a controlled spatial tail; do not infer complete form coverage, a Green image, response rank or recoil from the 270 input intervals |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

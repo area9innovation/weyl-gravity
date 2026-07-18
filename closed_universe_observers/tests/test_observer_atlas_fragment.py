@@ -40,3 +40,17 @@ def test_adaptive_row_imports_polarization_stream_without_green_promotion():
         evidence["result_id"] for evidence in row["evidence"]
     }
     assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+
+
+def test_selected_clock_power_row_is_input_certified_and_response_open():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.selected_clock_power_polarized_form"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert "BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

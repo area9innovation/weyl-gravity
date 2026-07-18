@@ -588,18 +588,27 @@ first half: after the common pointwise factor
 `82915/82944<=a(t)=cos(lambda s)<=1` is applied, all 18 selected complex
 detector-form entries and 54 scalar-term applications are serialized, and
 every maximum real/imaginary width is below
-`0.1` (the maximum is below `0.099`).  The active gate is to evaluate the same
-recurrence-closed scalar and polarized rows for external powers `p=2,...,28`
-while deriving the Sobolev inputs.  Only after a complete rail or a validated tail
-succeeds should the infinite-mode Maxwell and massive-two-form images, recoil
-coefficient and second-order-cone restriction be composed.  Bridge 3 remains
-inactive.
+`0.1` (the maximum is below `0.099`).  The intervals are uniform over the
+full normalized clock support.  `BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL`
+now closes the selected clock-power axis: all 18 entries are propagated through
+the 15 even powers `p=0,2,...,28`, giving 270 content-addressed complex
+intervals.  The `p=0` source is reproduced exactly, every width remains below
+`0.1`, and no clock/profile independence is assumed.  The active gate is exact
+temporal functional calculus on these selected form rows together with the
+missing Sobolev/controlled-spatial-tail inputs.  Only after a complete rail or
+a validated tail succeeds should the infinite-mode Maxwell and massive-two-form
+images, recoil coefficient and second-order-cone restriction be composed.
+Bridge 3 remains inactive.  The fail-closed atlas row is
+`observer.berger.detector_profile.selected_clock_power_polarized_form`;
+its input rail is `CERTIFIED`, while response, rank, Green image, recoil and
+cone restriction remain `OPEN`.
 
-The nonlinear sequencing gate is fail-closed and unchanged.  The mixed
-`epsilon_R^2 kappa` unary gate was completed coefficientwise before apparatus
-`q2,q3`, affine-`K_Berger` equivariance and observer-morphism work were
-certified.  Those certificates do not promote finite-`r`, fixed-background
-linear-`K`, full-`q4`, or all-orders observer-morphism stability.
+The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
+mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
+apparatus `q2,q3`; only that completion activated the declared
+`K_Berger`-equivariance and observer-morphism work.  Those certificates do
+not promote finite-`r`, fixed-background linear-`K`, full-`q4`, or all-orders
+observer-morphism stability.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.

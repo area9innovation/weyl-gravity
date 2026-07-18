@@ -1,0 +1,48 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The 18 selected form-two_j=1024 detector-component intervals are propagated through all 15 certified normalized even clock moments p=0,2,...,28. Because the source intervals uniformly enclose a(t)F(t) on the full normalized clock support and every s^p is nonnegative, the 270 resulting complex intervals bound the joint integral without a clock/profile independence assumption. The p=0 rows reproduce their source exactly, every maximum real/imaginary width remains below 0.1, and deletion of the p=28 layer is rejected. This selected input rail does not certify complete form coverage, a Sobolev/infinite-mode tail, temporal or spatial Green images, detector response or rank, recoil, tangent-cone restriction, active Bridge 3, finite-r/all-orders observer-morphism stability or a quantum claim. The completed coefficientwise mixed epsilon_R^2 kappa unary gate remains the prerequisite for apparatus q2,q3, declared K_Berger equivariance and observer-morphism work.",
+  "tier_0": [
+    {"command": "python3 -m py_compile on the p0/clock-power producers, verifiers, atlas producer and scoped tests; JSON/schema parse; git diff --check on scoped paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_selected_clock_power_polarized_form_rail.py", "elapsed_seconds": 0.60, "status": "PASS", "summary": "6 tests passed, covering 18 by 15 coverage, all width gates, exact p=0 reproduction, absence of a clock/profile independence assumption, p=28 deletion rejection, metadata mutation rejection and fail-closed Green/complete-form flags."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_selected_clock_power_polarized_form_rail", "status": "PASS", "summary": "Schema, current source/dependency hashes, row metadata, serialized moments and widths, per-power maxima, canonical digest, all 270 interval products and fail-closed claims were independently reconstructed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The generated fail-closed atlas contains the selected clock-power row with certified input dependence and open response, rank, Green, recoil and cone fields."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_selected_p0_polarized_form_intervals --check", "elapsed_seconds": 0.44, "status": "PASS", "summary": "The uniform-support p=0 dependency matched byte-for-byte."},
+    {"command": "python3 -m closed_universe_observers.generate_berger_selected_clock_power_polarized_form_rail --check", "elapsed_seconds": 0.35, "status": "PASS", "summary": "All 270 selected clock-power form intervals regenerated and the certificate matched byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No complete form rail, infinite-mode theorem, Green image, detector-response lifecycle promotion, recoil coefficient, shared core-algebra change, freeze or release was claimed."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_selected_clock_power_polarized_form_rail.py", "sha256": "793ff9605a9b054dd5dd711f21c6f787665774eb0c4526483534495e3af97292"},
+    {"path": "closed_universe_observers/verify_berger_selected_clock_power_polarized_form_rail.py", "sha256": "a05f78536132ea4f19c643911be5a47b613acc9c500b4768866e4ee84182751c"},
+    {"path": "closed_universe_observers/tests/test_berger_selected_clock_power_polarized_form_rail.py", "sha256": "d22f7694454b15b364bebff57d1d57bb3540a49d7078d70849634b11af8b4504"},
+    {"path": "closed_universe_observers/schema/berger-selected-clock-power-polarized-form-rail-v1.schema.json", "sha256": "5716743803c1d06ebbce7466d8edbdd8d355f6bf6258357a31b07db8265b4888"},
+    {"path": "closed_universe_observers/reports/berger-selected-clock-power-polarized-form-rail.md", "sha256": "70ad7144c3020e6b71cced0fccbaa1884260c69d2cd8124012d7eac09cd130f5"},
+    {"path": "closed_universe_observers/certificates/BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL.json", "sha256": "955f38bc2a136990c46ea915f39e070db4be19c7d9e479a30bef88958e06854a"},
+    {"path": "closed_universe_observers/certificates/BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS.json", "sha256": "a8ce7f80622481c49c0aded9696e1983b737bd1ea449b6c980d406c329c5a244"},
+    {"path": "closed_universe_observers/certificates/BERGER_HIGH_CLOCK_POWER_MOMENT_RAIL_P28.json", "sha256": "50195d86c23e917c87274268547816ea715e0fee5e8097ba7807933454bcbe16"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "a1c1799baa575701b3646dc8ac1aac881dda4c4a40e003944631651347bad80e"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "a3fe300e1b132b0d793a40f081be19e788b1a2754e91c368247c6e8d10d85434"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "01cff2628a5b40b4ccc8fc100e7ec77d292b97cbfdbe12d8e4c2dbfefdbca376"}
+  ],
+  "claim_flags": {
+    "SELECTED_POLARIZED_FORM_CLOCK_POWERS_P0_TO_P28_EXPORTED": true,
+    "ALL_270_SELECTED_COMPLEX_INTERVALS_EXPORTED": true,
+    "P0_SOURCE_ROWS_REPRODUCED_EXACTLY": true,
+    "NO_CLOCK_SPATIAL_INDEPENDENCE_ASSUMED": true,
+    "ALL_SELECTED_CLOCK_POWER_WIDTHS_BELOW_ONE_TENTH": true,
+    "CLOCK_POWER_COVERAGE_MUTATION_REJECTED": true,
+    "COMPLETE_FORM_RAIL_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

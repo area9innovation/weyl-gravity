@@ -103,6 +103,10 @@ python3 -m closed_universe_observers.generate_berger_adaptive_clock_weighted_pol
 python3 -m closed_universe_observers.verify_berger_adaptive_clock_weighted_polarization_stream
 python3 -m closed_universe_observers.generate_berger_exact_maxwell_charge_blocks --check
 python3 -m closed_universe_observers.verify_berger_exact_maxwell_charge_blocks
+python3 -m closed_universe_observers.generate_berger_selected_p0_polarized_form_intervals --check
+python3 -m closed_universe_observers.verify_berger_selected_p0_polarized_form_intervals
+python3 -m closed_universe_observers.generate_berger_selected_clock_power_polarized_form_rail --check
+python3 -m closed_universe_observers.verify_berger_selected_clock_power_polarized_form_rail
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -457,8 +461,14 @@ That selected polarized successor is now evaluated, including the common
 pointwise factor `82915/82944<=a(t)=cos(lambda s)<=1`.  All 18 complex `p=0`
 form intervals and 54 scalar-term applications are content-addressed; every
 maximum real/imaginary width is below `0.1`, with the widest approximately
-`0.098702`.  The active gate is higher external clock powers on the same
-recurrence-closed set, not a complete-form or Green-image promotion.
+`0.098722`.  These are uniform enclosures over the full normalized clock
+support.  `BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL` now propagates
+the same 18 entries through every even external power `p=0,2,...,28` using
+the certified positive normalized moments.  All 270 complex intervals are
+content-addressed, the `p=0` rows reproduce their source exactly, and every
+width remains below `0.1`; no clock/profile independence is assumed.  The
+active gate is exact temporal functional calculus on this selected rail plus
+a controlled spatial tail, not a complete-form or Green-image promotion.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

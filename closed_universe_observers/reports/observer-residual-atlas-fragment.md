@@ -28,6 +28,14 @@ are not certified.  It records the selected streamed Peter--Weyl route
 without promoting a full image.  Its structural support is now exact:
 polarization matrices use only diagonals/first off-diagonals and the Green
 operator decomposes into axial-charge blocks of dimension at most three.
+The selected high-scale profile row now records 270 complex polarized input
+intervals: 18 detector/coframe entries at each even clock power
+`p=0,2,...,28`.  Their input status is `CERTIFIED`, while temporal and spatial
+Green images, response rank, recoil, and second-order-cone restriction remain
+`OPEN`.  The atlas also preserves the coefficientwise mixed
+`epsilon_R^2 kappa` unary gate ahead of apparatus `q2,q3`, Berger equivariance,
+and the observer morphism; it does not promote finite-parameter or all-orders
+stability.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

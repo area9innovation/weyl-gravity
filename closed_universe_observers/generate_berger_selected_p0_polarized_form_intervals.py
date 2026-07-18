@@ -173,7 +173,7 @@ def build() -> dict[str, Any]:
         raise AssertionError("external detector clock-factor mutation escaped")
     digest = hashlib.sha256(json.dumps(rows, sort_keys=True).encode()).hexdigest()
     boundary = (
-        "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result combines the exact detector-prefactored Clebsch--Gordan coefficients with the 12 recurrence-closed scalar p=0 intervals and then applies the common pointwise detector clock factor 82915/82944<=a(t)=cos(lambda s)<=1. It produces 18 selected complex detector-form intervals at form two_j=1024 and anchors r=128,256,384. All 54 scalar-term applications are serialized and content-addressed. Every selected maximum real/imaginary axis width is below 0.1; the largest is below 0.099. Deleting one scalar term and dropping the common clock factor are both detected. This certifies selected p=0 polarized form entries only. It does not add external clock powers p=2,...,28, cover all form rows or representations, certify a Sobolev/infinite-mode tail, apply Maxwell or massive Green kernels, evaluate detector response or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim."
+        "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result combines the exact detector-prefactored Clebsch--Gordan coefficients with the 12 recurrence-closed scalar p=0 intervals and then applies the common pointwise detector clock factor 82915/82944<=a(t)=cos(lambda s)<=1. The resulting intervals are uniform enclosures over the full normalized clock support. They produce 18 selected complex detector-form intervals at form two_j=1024 and anchors r=128,256,384. All 54 scalar-term applications are serialized and content-addressed. Every selected maximum real/imaginary axis width is below 0.1; the largest is below 0.099. Deleting one scalar term and dropping the common clock factor are both detected. This certifies selected p=0 polarized form entries only. It does not add external clock powers p=2,...,28, cover all form rows or representations, certify a Sobolev/infinite-mode tail, apply Maxwell or massive Green kernels, evaluate detector response or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim."
     )
     return {
         "schema": "closed-universe-berger-selected-p0-polarized-form-intervals-v1",
@@ -194,6 +194,7 @@ def build() -> dict[str, Any]:
             "scalar_term_application_count": sum(row["recurrence_term_count"] for row in rows),
             "external_detector_clock_factor": "a(t)=cos(lambda s)",
             "external_detector_clock_factor_interval": [str(AMPLITUDE_LOWER), "1"],
+            "clock_support_treatment": "uniform interval enclosure over the full normalized clock support",
         },
         "polarized_form_rows": rows,
         "maximum_selected_axis_width": str(maximum_width),
@@ -208,6 +209,7 @@ def build() -> dict[str, Any]:
             "TERM_COVERAGE_MUTATION_REJECTED": True,
             "EXTERNAL_DETECTOR_CLOCK_FACTOR_APPLIED": True,
             "EXTERNAL_CLOCK_FACTOR_MUTATION_REJECTED": True,
+            "SELECTED_INTERVALS_UNIFORM_OVER_NORMALIZED_CLOCK_SUPPORT": True,
             "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED": False,
             "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": False,
             "GREEN_IMAGES_EVALUATED": False,
