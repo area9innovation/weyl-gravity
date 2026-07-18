@@ -43,7 +43,7 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Laboratory | What is currently established | What it does not yet establish |
 |---|---|---|
 | Vacuum conformal cylinder | complete free causal gauge complex and the stated residual reduction | matter clocks, interactions, particles, or scattering |
-| Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), and full retained BV cyclicity; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, and selected 108-row massive-two-form emitter handoff | invariant/nonremovable meaning of \(\ell_3\), a different noncontractible filtered or mixed-bundle branch split, original common-Hopf emitter, full 108-row emitter differential/causal contraction, actual emitter-preparation rank and recoil coefficient, emitter stress, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter Green hyperbolicity, all-orders closure, or genericity |
+| Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), and full retained BV cyclicity; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, and first formal coupled Euler recoil Green term | invariant/nonremovable meaning of \(\ell_3\), a different noncontractible filtered or mixed-bundle branch split, original common-Hopf emitter, full 108-row BV causal chain maps, actual emitter-preparation rank and detector recoil coefficient, emitter stress, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter Green hyperbolicity, all-orders closure, or genericity |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; generic extra branches and their Lee--Wald pairing; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | quadratic-source disposition on every mixed-cone stratum, exceptional fourth-order targets, nonlinear causal closure, or asymptotic radiation |
 | Quantum local algebra | complete even/odd AFN0 candidate quotients, classical causal imports, local Hadamard parametrices, and exact consumers for the repaired mixed interaction, 36-row projector obstruction, and rank-46 cyclic graph carrier; exact classical minimal-BV foundation and a receiver-side finite-closure obstruction | a scope-correct V2 import, full antifield anomaly cohomology, coefficient-bearing Slavnov breaking, restored QME, global BRST Hadamard state, particles, or scattering |
 | Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; independently verified bare Lee--Wald static surface form and nonintegrability on the chart-normalized parameter family | a normalized field-dependent generator, globally admissible residual quotient, differentiable horizon/outer-boundary phase space, first law, exterior causal perturbations, or stability |
@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   decide whether the landed retained ell3 is invariant or removable
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     accept a scope-correct antifield import, then compute beyond AFN0
-Observer:    localize two conserved emitters and recompute the record matrix
+Observer:    export 108-row BV chain maps and replay rank for emitter Cauchy data
 Black hole:  resolve generator normalization and the first physical boundary ensemble
 ```
 
@@ -136,18 +136,16 @@ entire surviving first-square residue is now identified coefficientwise as
 the canonical curvature incidence
 `(I_Omega xi)_a=Omega_ab xi^b`; its adjoint action equals the PBW normal
 tractor square.  The next gate is therefore
-the Hom-bundle PBW covariance repair followed by
-`C_G2_NARIAI_CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE`.  The incidence already
-extends one row further as
-`M^D I_Omega+(M^D L1_corrected)K=0`, and the factorized relative saddle closes
-in both blocks.  Before adding the odd cotangent cone, repair the generic PBW
-adjoint replay for the cross-form Hom-bundle coefficients (or supply an
-independent variational-table checker); its current rank-60 replay defect is
-a verifier limitation, not a formal-self-adjointness no-go.  Then add the
-incidence and cyclic dual equation/identity rows, prove the enlarged
-differential squares, and recompress the Yang--Mills middle.  Do not reopen
-algebraic endpoint fitting or claim a Nariai Green homotopy before this gate
-closes.
+`C_G2_NARIAI_METRIC_BACH_ENDPOINT_CHAIN_MAP_AND_GREEN_TRANSFER`.  The
+incidence extends as `M^D I_Omega+(M^D L1_corrected)K=0`; an independent
+factorized variational checker now certifies the complete eight-block odd
+cyclic mapping cylinder, canonical finite-order shear, and SDR to the parent.
+This closes the Hom-bundle replay issue without modifying the generic PBW
+normalizer.  The remaining task is to construct the actual metric-Bach
+endpoint chain map into that cylinder, verify it on the dual rows, and then
+transfer or independently build retarded/advanced Green homotopies.  Do not
+reopen algebraic endpoint fitting or claim endpoint equivalence or a Nariai
+Green homotopy before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 
@@ -246,9 +244,10 @@ survive the first backreacted, normalized apparatus interaction?
    response.  The recoil input gate proves formal rank-two stability but also
    proves that the recoil coefficient depends on an unchosen emitter kinetic
    theory.  The standard massive polarization-two-form model is now selected
-   as a 108-row handoff.  The next gate is its full unary causal complex and
-   localized Cauchy-preparation rank replay; a common source at the original
-   Hopf event remains a stronger separate target.
+   as a 108-row handoff.  Its complete unary and first formal coupled Euler
+   recoil Green term are now certified.  The next gate is the full BV chain-map
+   package and localized Cauchy-preparation rank replay; a common source at the
+   original Hopf event remains a stronger separate target.
 4. Separate a failure of the record map from a failure of the underlying
    causal signal, and keep finite-parameter Green hyperbolicity, emitter recoil
    and quantum observer claims false unless independently reached.
@@ -658,7 +657,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, and selected 108-row polarization-emitter handoff | construct the 108-row unary causal complex, actual emitter-preparation rank, recoil coefficient, and stress backreaction |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, and first formal recoil Euler Green term | export the full 108-row BV chain maps, then establish actual emitter-preparation rank, detector recoil coefficient, and stress backreaction |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -852,6 +851,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER` (fired) | observer adds dynamical emitter degrees of freedom and recoil/backreaction; the original common Hopf emitter and full apparatus Dirac closure remain separate |
 | `BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE` (fired with model underdetermination) | a typed emitter carrier/action/preparation handoff or explicit physical model choice is required before any recoil coefficient; formal rank two is already protected |
 | `BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF` (fired) | construct the complete 108-row q1 and causal contraction, then replay rank two for localized emitter Cauchy data and compute the first recoil/stress terms |
+| `BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL` (fired) | export the full 108-row BV inclusion/projection/homotopy maps, then replay rank two for localized free-emitter Cauchy data and evaluate the detector recoil term |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |
 | `BERGER_26_ROW_GREEN_CERTIFIED` | the causal specialist extracts the abstract Green-transfer theorem or supports the observer rail; nonlinear capacity stays on interaction |
 | `COMPACT_EM_GLOBAL_PAIRING_CLOSED` and `WEYL_EM_PULLBACK_DECIDED` (fired) | Einstein extends the quadratic source test across mixed cones; one bounded design task may continue the asymptotic/black-hole complex |

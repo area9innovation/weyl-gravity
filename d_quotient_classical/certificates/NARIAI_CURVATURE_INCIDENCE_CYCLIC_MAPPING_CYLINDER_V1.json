@@ -1,0 +1,838 @@
+{
+  "block_ledger": {
+    "degrees": [
+      -1,
+      -1,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "graph_coordinates": "b=a+L1_corrected h, with the forced cotangent shift",
+    "names": [
+      "epsilon_C0",
+      "chi_H1",
+      "h_H1",
+      "a_C1",
+      "h_sharp_H1",
+      "a_sharp_C1",
+      "epsilon_sharp_C0",
+      "chi_sharp_H1"
+    ],
+    "parent_relations": [
+      "M d=0",
+      "dsharp M=0"
+    ],
+    "parent_retract_indices": [
+      0,
+      3,
+      5,
+      6
+    ],
+    "split_coordinates": "(epsilon,chi,h,b,hsharp,bsharp,epsilonsharp,chisharp)"
+  },
+  "claim_boundary": "This certificate constructs and independently checks the complete local odd-cyclic mapping-cylinder kernel needed to retain the Nariai curvature incidence. The split complex is the corrected Yang--Mills parent plus one contractible shift pair; the finite-order L1_corrected shear and its cotangent dual are canonical, invertible, nilpotence-preserving and cyclic. The explicit inclusion, projection and cyclic homotopy give an SDR back to the parent, and the endpoint ghost embedding reproduces (K xi,I_Omega xi) exactly through the imported coefficient tables. This closes the parent-relative cone even though the generic post-normal-order PBW adjoint routine remains unrepaired; an independent factorized variational checker supplies the authoritative cyclic proof. It does not yet prove that the metric Bach endpoint is chain-equivalent to this parent-relative cylinder, does not eliminate the connection variable to a support-local metric operator, and does not construct retarded/advanced Green homotopies, a uniform non-conformally-flat class, nonlinear interactions, or a quantum theory.",
+  "dependency_refs": {
+    "curvature_incidence": {
+      "artifact_id": "NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1.json",
+      "sha256": "71016d36ba0613258965e8d4fc85e1d28d647f60b7c7e4de84779bd24e3660b6"
+    },
+    "shifted_chain": {
+      "artifact_id": "NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1.json",
+      "sha256": "ea090e38ab04208762a2f4ad5da550f22e8b5f8c89c3c401dea1a18dc1a87165"
+    },
+    "yang_mills_parent": {
+      "artifact_id": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1",
+      "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json",
+      "sha256": "1b5104082d72a2a6397b4a668a9a1008be22e1daf7481e5de37ad4c31126cee4"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "endpoint_ghost_embedding": {
+    "field_image": "Q xi -> (h=K xi, a=d L0 xi-L1_corrected K xi)=(K xi,I_Omega xi)",
+    "incidence_identity_used": true,
+    "map": "xi -> (epsilon=L0 xi, chi=K xi)",
+    "strict_metric_graph_chain_map": false
+  },
+  "exact_checks": {
+    "block_count": 8,
+    "canonical_shear": true,
+    "factorized_saddle_substitution_exact": true,
+    "homotopy_odd_cyclic": true,
+    "inclusion_chain_map": true,
+    "no_inverse_operator_atoms": true,
+    "pairing_nonzero_blocks": 8,
+    "projection_chain_map": true,
+    "projection_inclusion_identity": true,
+    "prolonged_Q_squared": true,
+    "prolonged_nonzero_blocks": 10,
+    "prolonged_odd_cyclic": true,
+    "retract_identity": true,
+    "shear_left_inverse": true,
+    "shear_right_inverse": true,
+    "shifted_chain_substitution_exact": true,
+    "split_Q_squared": true,
+    "split_nonzero_blocks": 5,
+    "split_odd_cyclic": true
+  },
+  "exact_matrices": {
+    "graph_to_split": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          1,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          2,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          2,
+          [
+            [
+              [
+                "L"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          3,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          4,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          5,
+          [
+            [
+              [
+                "Lsharp"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          5,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          6,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          7,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "d118bb2d7a3697bced126b087b8d158929f63d9d848e56ed8bb31c1d299fbba4",
+      "shape": [
+        8,
+        8
+      ]
+    },
+    "homotopy": {
+      "entries": [
+        [
+          1,
+          2,
+          [
+            [
+              [],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          7,
+          [
+            [
+              [],
+              -1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "7248ad72e0dc35df62153a984317b3e986fc91ed4efdc93ff4ec5fe3ec7f97fc",
+      "shape": [
+        8,
+        8
+      ]
+    },
+    "inclusion": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          3,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          5,
+          [
+            [
+              [
+                "Lsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          5,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          6,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "4eff5d8166114d01d35f1f6dd450ffc1960f9cb31dac88682968900d55cf79ca",
+      "shape": [
+        8,
+        8
+      ]
+    },
+    "pairing": {
+      "entries": [
+        [
+          0,
+          6,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          7,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          4,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          5,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          2,
+          [
+            [
+              [],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          3,
+          [
+            [
+              [],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          0,
+          [
+            [
+              [],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          1,
+          [
+            [
+              [],
+              -1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "b9cd464f77492f0cd086d9354803bf54f762801d022f2025f5011005e291a329",
+      "shape": [
+        8,
+        8
+      ]
+    },
+    "projection": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          2,
+          [
+            [
+              [
+                "L"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          3,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          5,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          6,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "2c631fb281383f05630af5e293730a6703b65d101d8de0a8f429cadb22780e7c",
+      "shape": [
+        8,
+        8
+      ]
+    },
+    "prolonged": {
+      "entries": [
+        [
+          2,
+          1,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          0,
+          [
+            [
+              [
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          1,
+          [
+            [
+              [
+                "L"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          2,
+          [
+            [
+              [
+                "Lsharp",
+                "M",
+                "L"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          3,
+          [
+            [
+              [
+                "Lsharp",
+                "M"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          2,
+          [
+            [
+              [
+                "M",
+                "L"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          3,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          5,
+          [
+            [
+              [
+                "dsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          4,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          5,
+          [
+            [
+              [
+                "Lsharp"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "e64d2b9d4070034c50bfd6d834603b24fca4c2278f0041324cc91d2c52be24de",
+      "shape": [
+        8,
+        8
+      ]
+    },
+    "split": {
+      "entries": [
+        [
+          2,
+          1,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          0,
+          [
+            [
+              [
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          3,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          5,
+          [
+            [
+              [
+                "dsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          4,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "b522c1d5c498937a5a54fe431cdd022ed51b170d953b060b287297027a5d6f8c",
+      "shape": [
+        8,
+        8
+      ]
+    },
+    "split_to_graph": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          1,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          2,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          2,
+          [
+            [
+              [
+                "L"
+              ],
+              -1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          3,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          4,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          5,
+          [
+            [
+              [
+                "Lsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          5,
+          5,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          6,
+          6,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          7,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "8efe34e757162c8d9ca2510ab6e519037b5a8ab6a2c76ba870a1620c9a9d2ad4",
+      "shape": [
+        8,
+        8
+      ]
+    }
+  },
+  "flags": {
+    "CYCLIC_CURVATURE_INCIDENCE_MAPPING_CONE": true,
+    "HOM_BUNDLE_GENERIC_PBW_NORMALIZER_REPAIRED": false,
+    "INDEPENDENT_FACTORIZED_VARIATIONAL_CHECKER": true,
+    "MAPPING_CYLINDER_SDR": true,
+    "METRIC_BACH_ENDPOINT_CHAIN_EQUIVALENCE": false,
+    "NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1": true,
+    "NARIAI_GREEN_HOMOTOPY": false,
+    "OPEN_BACKGROUND_CLASS": false,
+    "QUANTUM_CLAIM": false,
+    "SUPPORT_LOCAL_FINITE_ORDER": true
+  },
+  "next_gate": "C_G2_NARIAI_METRIC_BACH_ENDPOINT_CHAIN_MAP_AND_GREEN_TRANSFER",
+  "provenance": {
+    "source_manifest": {
+      "covariant_completion/minimal_witness/formal_operators.py": "06800afdea13f134bb5101111127a87688cae552360321e8e5cbb88358fb5d7e",
+      "d_quotient_classical/causal_transfer/nariai_curvature_incidence_cyclic_mapping_cylinder.py": "6e9bfe028254c123e43b9431e0d0e906822136c4a63489e33213a9fcdb0dce1a",
+      "d_quotient_classical/causal_transfer/nariai_curvature_incidence_shifted_chain.py": "cfd874a305feca216f59b85310146010a9378bebcc5bd7061d71329712510324",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_curvature_incidence_cyclic_mapping_cylinder.py": "3eebdfc09cd171a4e99125d944c146d785b67ba99993af6dadebbeb53de557dc",
+      "d_quotient_classical/causal_transfer/verify_nariai_curvature_incidence_cyclic_mapping_cylinder.py": "a94d8b58cc6f5ca4074117c5b3eb573362954b63f8eb883b3a058fa4806b9489",
+      "d_quotient_classical/schema/nariai-curvature-incidence-cyclic-mapping-cylinder-v1.schema.json": "e5f59d1ce89dcd29d2fe44ae9bd72a16edd4096607c5dfe7b170dbde99e93268"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_curvature_incidence_cyclic_mapping_cylinder.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_curvature_incidence_cyclic_mapping_cylinder.py",
+      "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_curvature_incidence_cyclic_mapping_cylinder",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-curvature-incidence-cyclic-mapping-cylinder-v1.schema.json -d d_quotient_classical/certificates/NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1",
+  "result_state": "CYCLIC_PARENT_MAPPING_CYLINDER_AND_SDR_EXACT",
+  "schema": "pure-weyl-nariai-curvature-incidence-cyclic-mapping-cylinder-v1",
+  "theorem": {
+    "incidence": "Embedding an endpoint ghost as (L0 xi,K xi) produces the graph-coordinate field image (K xi,I_Omega xi), so the previously certified curvature term is represented as an honest local cylinder incidence rather than suppressed by a nonlocal projector.",
+    "sdr": "The displayed inclusion, projection and degree-minus-one homotopy give PI=1 and IP-1=QH+HQ modulo exactly the two parent-complex relations. The cylinder therefore deformation-retracts to the corrected Yang--Mills parent without duplicating cohomology.",
+    "statement": "The Nariai curvature incidence admits an eight-block local odd-cyclic parent-relative mapping cylinder. It is obtained from the direct sum of the Yang--Mills parent and the contractible chi-to-h pair by the canonical finite-order shear b=a+L1_corrected h and its forced cotangent transform."
+  }
+}

@@ -193,14 +193,25 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
 - Shifted-chain continuation and saddle preflight: the incidence extends
   exactly as `Phi=(I_Omega,M^D L1_corrected)`, with
   `M^D I_Omega + Phi1 K=0`.  The factorized relative saddle
-  `S=A^sharp M^D A` annihilates `(K,I_Omega)^T` in both blocks.  Full cyclic
-  mapping-cylinder promotion remains fail-closed because the generic PBW
-  adjoint replay, when applied after normal ordering, does not yet encode the
-  Hom-bundle covariance of two cross-form coefficient blocks; it leaves a
-  scoped rank-60 algebraic verifier defect.  This is not a formal-adjointness
-  no-go for the factorized Yang--Mills operator:
+  `S=A^sharp M^D A` annihilates `(K,I_Omega)^T` in both blocks.  The generic
+  post-normal-order PBW adjoint replay remains fail-closed because it does not
+  yet encode the Hom-bundle covariance of two cross-form coefficient blocks;
+  it leaves a scoped rank-60 algebraic verifier defect.  This is not a
+  formal-adjointness no-go for the factorized Yang--Mills operator, and the
+  independent checker in the following item removes it from the cone's
+  theorem dependencies:
   [`certificates/NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1.json`](certificates/NARIAI_CURVATURE_INCIDENCE_SHIFTED_CHAIN_V1.json),
   [`reports/nariai-curvature-incidence-shifted-chain.md`](reports/nariai-curvature-incidence-shifted-chain.md)
+- Completed parent-relative cone: an independent factorized variational
+  checker now supplies the rigorous alternative to the deficient generic PBW
+  adjoint replay.  The eight-block finite-order cylinder is nilpotent and odd
+  cyclic; its `L1_corrected` shear is canonical and invertible; and its
+  inclusion, projection and cyclic homotopy give an exact SDR to the corrected
+  Yang--Mills parent.  The endpoint ghost image is exactly
+  `(K xi,I_Omega xi)`.  This does not yet identify the metric Bach endpoint
+  with the cylinder or construct Nariai Green homotopies:
+  [`certificates/NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1.json`](certificates/NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1.json),
+  [`reports/nariai-curvature-incidence-cyclic-mapping-cylinder.md`](reports/nariai-curvature-incidence-cyclic-mapping-cylinder.md)
 - Weaker Yang--Mills translation gate: the corrected component parent now
   satisfies `M^D d^D=0` exactly.  Its naive BGG compression has only a
   24-entry first-order gauge defect.  The unique algebraic endpoint term that

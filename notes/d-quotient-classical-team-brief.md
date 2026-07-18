@@ -1017,7 +1017,43 @@ cross-form coefficient tensors during normal ordering.  Therefore
 `PARENT_FORMAL_SELF_ADJOINTNESS_NO_GO` remains false.  The next gate is a
 Hom-bundle-covariance-aware PBW adjoint/associativity replay (or an independent
 variational coefficient-table checker), followed by the odd cotangent cone
-and mapping-cylinder SDR.
+and mapping-cylinder SDR.  The following certificate takes and completes the
+independent-checker alternative; repairing the generic normalizer is no longer
+on the critical path.
+
+`NARIAI_CURVATURE_INCIDENCE_CYCLIC_MAPPING_CYLINDER_V1` closes that verifier
+gate by taking the allowed independent route rather than modifying the shared
+normalizer.  Its eight blocks are
+\[
+(\epsilon,\chi,h,a,h^\sharp,a^\sharp,
+  \epsilon^\sharp,\chi^\sharp),
+\]
+with split differential equal to the corrected Yang--Mills parent plus the
+contractible pair \(\chi\mapsto h\) and its cotangent dual.  The finite-order
+canonical shear
+\[
+b=a+L_1^{\rm corr}h
+\]
+and the forced cotangent shift produce the graph-coordinate differential.
+The portable formal matrices independently verify both squares, odd
+cyclicity before and after the shear, its two-sided inverse, the inclusion and
+projection chain identities, \(PI=1\),
+\(IP-1=QH+HQ\), and cyclicity of \(H\).  No inverse Laplacian, inverse curl,
+projector or Green atom occurs.  The cone therefore deformation-retracts to
+the parent without duplicating cohomology.
+
+The endpoint ghost embedding is now exact and geometric:
+\[
+\xi\longmapsto (L_0\xi,K\xi),
+\qquad
+Q\xi=(K\xi,I_\Omega\xi).
+\]
+This promotes the parent-relative cyclic incidence cone, while leaving the
+generic post-normal-order PBW adjoint routine unrepaired.  That routine is no
+longer a blocker because the independent factorized variational checker
+covers the theorem.  The remaining C-G2 problem is genuinely analytic and
+comparative again: construct the metric-Bach endpoint chain map into this
+cylinder and transfer or build its retarded/advanced Green homotopies.
 
 `NARIAI_ALGEBRAIC_ENDPOINT_CURVATURE_REPAIR_OBSTRUCTION_V1` now applies the
 weaker and authoritative detour-translation criterion.  Correcting the
@@ -1180,8 +1216,9 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    obstructed on unit Nariai by nonzero tractor curvature.  The differential
    translation residue has now been identified exactly as the canonical
    curvature incidence, and the shifted chain plus factorized saddle now
-   close exactly.  Its next gate is the Hom-bundle PBW covariance repair and
-   cyclic curvature-incidence mapping-cone Nariai BGG completion, or
+   close exactly.  The cyclic parent-relative mapping cylinder and SDR are
+   now certified through an independent factorized variational checker.  Its
+   next gate is the metric-Bach endpoint chain map and Green transfer, or
    conformally flat local patching/new
    topology.  The necessary
    Yang--Mills parent correction is certified; raw pointwise compression and
@@ -1206,12 +1243,12 @@ The physical activation sequence and reassignment triggers are recorded in
 `BERGER_Q2_EXPORTED`, the scoped C-G4 trigger, and the rank-46 carrier trigger
 have fired.  The classical team's current primary ownership is the rank-46
 subprincipal projector obstruction handoff; its next independent generality
-task is the Hom-bundle PBW covariance repair followed by the cyclic
-curvature-incidence Nariai mapping-cone/HPL completion, or patching beyond the
-certified global conformal-orbit class.  The normalized zero-order
+task is the metric-Bach endpoint chain map into the certified cyclic
+curvature-incidence Nariai cylinder followed by Green transfer, or patching
+beyond the certified global conformal-orbit class.  The normalized zero-order
 obstruction, exact curvature-incidence identification, shifted-chain saddle,
-corrected Yang--Mills parent complex and pointwise compression defect are
-certified.
+cyclic parent-relative SDR, corrected Yang--Mills parent complex and pointwise
+compression defect are certified.
 The certified C-G1
 theorem may seed one bounded G3/second-consumer task, while the observer team
 owns localized apparatus completion.
@@ -1232,8 +1269,8 @@ chain/Green/pairing transport and a nonconstant consumer.  Unit Nariai then
 gives a normalized nonzero-tractor-curvature obstruction to extending that
 same zero-order conjugation.  The active next gate is either a curved
 Nariai differential-BGG/HPL compression of the corrected Yang--Mills parent
-starting with the Hom-bundle PBW covariance replay and the now-identified
-curvature-incidence mapping cone with its cyclic dual completion beyond the
+starting with the metric-Bach endpoint chain map into the now-certified
+curvature-incidence mapping cylinder and its later Green transfer beyond the
 certified pointwise, zeroth-order
 strictification and algebraic endpoint defects, or support-local patching to
 new conformally flat topology.  Fixed
