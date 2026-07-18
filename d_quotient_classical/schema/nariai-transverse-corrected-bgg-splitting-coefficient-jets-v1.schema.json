@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/nariai-transverse-corrected-bgg-splitting-coefficient-jets-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "schema_version",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "dependency_refs",
+    "exact_data",
+    "exact_checks",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "source_manifest",
+    "verification_commands"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-corrected-bgg-splitting-coefficient-jets-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_V1"},
+    "result_state": {"const": "CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_EXACT"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_jet_requirements", "superseded_point_replay"],
+      "properties": {
+        "coefficient_jet_requirements": {"$ref": "#/$defs/reference"},
+        "superseded_point_replay": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "exact_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "derivation",
+        "coefficient_jets",
+        "strict_square",
+        "superseded_point_replay_comparison",
+        "disposition"
+      ],
+      "properties": {
+        "derivation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["L0", "L1_raw", "L1_correction", "incidence_zero_jet", "incidence_positive_jets", "interpolation_used"],
+          "properties": {
+            "L0": {"type": "string"},
+            "L1_raw": {"type": "string"},
+            "L1_correction": {"type": "string"},
+            "incidence_zero_jet": {"type": "string"},
+            "incidence_positive_jets": {"type": "string"},
+            "interpolation_used": {"const": false}
+          }
+        },
+        "coefficient_jets": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["L0", "L1_corrected", "L1_algebraic_correction"],
+          "properties": {
+            "L0": {"$ref": "#/$defs/jetFamily"},
+            "L1_corrected": {"$ref": "#/$defs/jetFamily"},
+            "L1_algebraic_correction": {"$ref": "#/$defs/jetFamily"}
+          }
+        },
+        "strict_square": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["identity", "base_defect_coefficients", "coefficient_jet_defects", "all_required_jets_zero"],
+          "properties": {
+            "identity": {"const": "d_aut L0 = L1_corrected K"},
+            "base_defect_coefficients": {"const": 0},
+            "coefficient_jet_defects": {
+              "type": "object",
+              "minProperties": 15,
+              "additionalProperties": {"const": 0}
+            },
+            "all_required_jets_zero": {"const": true}
+          }
+        },
+        "superseded_point_replay_comparison": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["L0_point_defect", "L1_point_defect", "old_point_values_authoritative_after_associative_replay"],
+          "properties": {
+            "L0_point_defect": {"$ref": "#/$defs/table"},
+            "L1_point_defect": {"$ref": "#/$defs/table"},
+            "old_point_values_authoritative_after_associative_replay": {"const": true}
+          }
+        },
+        "disposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["corrected_splitting_coefficient_jets_complete", "associative_M_L1_K_replay_ready", "middle_and_schur_replayed", "rank_310_transverse_SDR_decided"],
+          "properties": {
+            "corrected_splitting_coefficient_jets_complete": {"const": true},
+            "associative_M_L1_K_replay_ready": {"const": true},
+            "middle_and_schur_replayed": {"const": false},
+            "rank_310_transverse_SDR_decided": {"const": false}
+          }
+        }
+      }
+    },
+    "exact_checks": {"$ref": "#/$defs/booleans"},
+    "flags": {"$ref": "#/$defs/booleans"},
+    "next_gate": {"const": "NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_SCHUR_REPLAY"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "prefixItems": [{"type": "integer"}, {"type": "integer"}],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}],
+            "items": false,
+            "minItems": 3,
+            "maxItems": 3
+          }
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["orders", "nonzero_coefficients", "entries", "sha256"],
+      "properties": {
+        "orders": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "nonzero_coefficients": {"type": "integer", "minimum": 0},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["word", "matrix"],
+            "properties": {
+              "word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+              "matrix": {"$ref": "#/$defs/matrix"}
+            }
+          }
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "jetFamily": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"$ref": "#/$defs/table"}
+    },
+    "booleans": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    }
+  }
+}

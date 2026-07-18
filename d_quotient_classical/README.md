@@ -502,6 +502,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   BGG/HPL splitting derives them:
   [`certificates/NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1.json`](certificates/NARIAI_TRANSVERSE_COEFFICIENT_JET_PBW_REQUIREMENTS_V1.json),
   [`reports/nariai-transverse-coefficient-jet-pbw-requirements.md`](reports/nariai-transverse-coefficient-jet-pbw-requirements.md)
+- Corrected-BGG splitting jet closure: the missing tables are now derived
+  from the finite covariant HPL series and the unique normalized algebraic
+  degree-one correction.  All four required `L0_corrected` jets and fourteen
+  required `L1_corrected` jets are serialized exactly, the historical point
+  values are recovered coefficientwise, and
+  `d_aut L0_corrected=L1_corrected K` holds through every requested ordered
+  coefficient jet.  The parent middle, shifted chain, compressed Schur,
+  rank-310 SDR and causal gates remain open:
+  [`certificates/NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_V1.json`](certificates/NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_V1.json),
+  [`reports/nariai-transverse-corrected-bgg-splitting-coefficient-jets.md`](reports/nariai-transverse-corrected-bgg-splitting-coefficient-jets.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

@@ -191,13 +191,13 @@ Three same-background handoffs are queued after the active transverse replay:
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
-It is not yet runnable on the Nariai corrected splitting: the authoritative
-export contains only the point values of `L0_corrected` and `L1_corrected`.
-The exact missing input is four positive-order covariant coefficient-jet
-tables for `L0_corrected` and fourteen for `L1_corrected`.  The curvature jet
-tower through order three is already sufficient.  Derive the splitting jets
-from the full perturbed covariant BGG/HPL construction; do not interpolate the
-point matrices or reuse the superseded shifted-chain target.
+The previously missing corrected-splitting input is also complete: the finite
+covariant HPL series and unique normalized degree-one correction derive all
+four required `L0_corrected` jets and fourteen `L1_corrected` jets, recover the
+old point values, and close `d_aut L0=L1 K` on every requested ordered jet.
+No interpolation is used.  The active gate is now the associative
+parent-middle, shifted-chain and compressed-Schur replay; do not reuse the
+superseded 207-coefficient target.
 
 For every declared background, charge fibre, boundary condition, and quotient:
 
