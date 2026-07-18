@@ -171,9 +171,15 @@
     "REDUCED-MODE"
   ],
   "independent_verifier": {
-    "elapsed_seconds": "32.10",
-    "higher_cyclicity_boundary": "producer action/cotangent-lift derivation; independent consumer replays unary adjointness, higher Koszul symmetry, and Q^2",
-    "maximum_resident_set_kb": 418424,
+    "action_derivation_boundary": "independent consumer verifies the serialized cyclic coderivation but does not independently derive its coefficients from the action",
+    "elapsed_seconds": "58.70",
+    "higher_cyclicity": "exact ordered first-slot PBW transpose replay for q1, q2, and q3",
+    "maximum_resident_set_kb": 419488,
+    "ordered_first_slot_transpose_counts": {
+      "q1": 192,
+      "q2": 4654,
+      "q3": 61306
+    },
     "status": "PASS"
   },
   "overall_producer_seconds": 139.781541,
@@ -197,11 +203,11 @@
   "result_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1_TIER_RECEIPT",
   "source_manifest": {
     "bridge/einstein_sector/einstein_maxwell_product_taylor.py": "c4edd0ce0b51f6a97e2977deefe07d8506a809f782a7602361dddbc202a3cf49",
-    "bridge/einstein_sector/export_einstein_maxwell_product_linfinity.py": "6096683478463b274d693b109bf8ccf1b5656971533a96b2da462a3c05cef74b",
+    "bridge/einstein_sector/export_einstein_maxwell_product_linfinity.py": "0047f70e3edd40504252e9f245bc2ac0597b8f6beb441ec891ec072340bee9ad",
     "bridge/einstein_sector/product_taylor_engine.py": "c9f960047a36687436b9cd37eea88e066148accf1f433eb62e72d4f2d6e43649",
-    "bridge/einstein_sector/reports/einstein-maxwell-product-linfinity-through-arity-three.md": "0e2e3c978b11bc6a69c7a4398475b902cfdd70ce518a5e3007941211eebdbbca",
-    "bridge/einstein_sector/tests/test_einstein_maxwell_product_linfinity.py": "c11c5e680f3c3dfa05d4b36e8413ed9bd435ae84e3adec865e513f805f5e89eb",
-    "bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py": "ddad24de01362e26506782fe33dc8101a30db8a1aa838d95c3f5d099da81a6f7",
+    "bridge/einstein_sector/reports/einstein-maxwell-product-linfinity-through-arity-three.md": "35debb497e20e6931559f1c61644428ac4a2fc6f3c49f6ee2f5d1d0eb1887552",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_product_linfinity.py": "a33528f852f8baff4511ee5b10babd63904ed740530946dd55d32f405d48a92d",
+    "bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py": "8b59239b78266c456a4cd3ff7962f07d4074c23c0e8fd99418856b17bf4711aa",
     "d_quotient_classical/schema/relative-linfinity-product-pbw-payload-v1.schema.json": "46b677fad22b133b21e7d52128ed5d1773442aeed64eea374029599f2618aeec",
     "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v2.schema.json": "718202b37e80fdbbd725efcf503533aa786c513b51b8fe68bcce11a2ea8401c4"
   },
@@ -210,18 +216,34 @@
       "python3 -m py_compile bridge/einstein_sector/product_taylor_engine.py bridge/einstein_sector/einstein_maxwell_product_taylor.py bridge/einstein_sector/export_einstein_maxwell_product_linfinity.py bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py",
       "python3 -m json.tool <generated payloads and certificate>"
     ],
+    "elapsed_seconds": "0.10",
+    "maximum_resident_set_kb": 15788,
     "status": "PASS"
   },
   "tier_1": {
     "commands": [
-      "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py"
+      "PYTHONPATH=. python3 bridge/einstein_sector/verify_einstein_maxwell_product_linfinity.py",
+      "PYTHONPATH=. python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_product_linfinity"
     ],
+    "command_elapsed_seconds": [
+      "58.70",
+      "62.18"
+    ],
+    "maximum_resident_set_kb": 419488,
     "status": "PASS"
   },
   "tier_2": {
     "commands": [
-      "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards"
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v"
     ],
+    "command_elapsed_seconds": [
+      "17.97",
+      "20.94",
+      "39.59"
+    ],
+    "maximum_resident_set_kb": 232064,
     "status": "PASS"
   },
   "tier_3": {

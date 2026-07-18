@@ -230,60 +230,55 @@ def _cyclic_swap_test(
     parities: tuple[int, ...],
     duals: tuple[int, ...],
     omega: dict,
-) -> None:
-    """Replay infinitesimal symplecticity in the first input, including IBP.
+) -> int:
+    """Replay the ordered first-slot cyclic transpose, including PBW IBP.
 
-    With the exported odd Darboux convention the local identity is
-    ``Omega(q(x,...),y)+Omega(x,q(...,y))=0``.  Input Koszul symmetry is
-    checked separately, so the first input generates all cyclic exchanges.
+    The serialized higher brackets are already Koszul-symmetrized in their
+    inputs.  Consequently a global cyclic sum would count equivalent input
+    orientations more than once.  The independent identity is instead the
+    first-slot transpose, checked one output row at a time to keep the ternary
+    replay memory bounded.  The odd Darboux pairing has unit-magnitude entries;
+    its row-dual map fixes the transposed output and the displayed Koszul sign.
     """
 
-    actual = defaultdict(lambda: sp.S.Zero)
-    for output, terms in enumerate(rows):
-        test = duals[output]
-        pairing_coefficient = omega[(test, output)]
-        if pairing_coefficient == 0:
-            raise AssertionError(f"missing output pairing on row {output}")
-        for term in terms:
+    for row, partner in enumerate(duals):
+        if abs(omega[(row, partner)]) != 1 or abs(omega[(partner, row)]) != 1:
+            raise AssertionError(f"non-Darboux pairing on rows {row}, {partner}")
+
+    checked = 0
+    for target, target_terms in enumerate(rows):
+        actual = defaultdict(lambda: sp.S.Zero)
+        for term in target_terms:
             base = term["jets"].get((), sp.S.Zero)
             if base:
-                key = ((test, ()), *term["inputs"])
-                _add(actual, key, pairing_coefficient * base)
+                _add(actual, term["inputs"], base)
 
-    transformed = defaultdict(lambda: sp.S.Zero)
-    for output, terms in enumerate(rows):
-        test = duals[output]
-        pairing_coefficient = omega[(test, output)]
-        for term in terms:
-            selected_row, selected_word = term["inputs"][0]
-            remaining = (*term["inputs"][1:], (test, ()))
-            for differentiated, value in _formal_adjoint_product(
-                term, selected_word, remaining
-            ):
-                key = ((selected_row, ()), *differentiated)
-                _add(
-                    transformed,
-                    key,
-                    (
-                        -1
-                        if (
-                            1
-                            + (arity - 1)
-                            * parities[selected_row]
-                            * (1 + parities[test])
-                        )
-                        % 2
-                        else 1
-                    )
-                    * omega[(output, test)]
-                    * value,
-                )
-    if dict(actual) != dict(transformed):
-        difference = defaultdict(lambda: sp.S.Zero, actual)
-        for key, value in transformed.items():
-            _add(difference, key, -value)
-        sample = next(iter(difference.items())) if difference else None
-        raise AssertionError(f"arity-{arity} cyclic output/input swap failed: {sample}")
+        expected = defaultdict(lambda: sp.S.Zero)
+        selected = duals[target]
+        for source_output, source_terms in enumerate(rows):
+            partner_output = duals[source_output]
+            sign = -1 if parities[selected] * parities[partner_output] else 1
+            for term in source_terms:
+                selected_row, selected_word = term["inputs"][0]
+                if selected_row != selected:
+                    continue
+                remaining = ((partner_output, ()), *term["inputs"][1:])
+                for differentiated, value in _formal_adjoint_product(
+                    term, selected_word, remaining
+                ):
+                    _add(expected, differentiated, sign * value)
+
+        if dict(actual) != dict(expected):
+            difference = defaultdict(lambda: sp.S.Zero, actual)
+            for key, value in expected.items():
+                _add(difference, key, -value)
+            sample = next(iter(difference.items())) if difference else None
+            raise AssertionError(
+                f"arity-{arity} ordered cyclic transpose failed on output "
+                f"row {target}: {sample}"
+            )
+        checked += len(actual)
+    return checked
 
 
 def verify() -> dict:
@@ -303,12 +298,11 @@ def verify() -> dict:
     parities, duals, omega = _pairing_data(payloads["row_layout"], payloads["pairing"])
     _input_symmetry(q2, 2, parities)
     _input_symmetry(q3, 3, parities)
-    _cyclic_swap_test(q1, 1, parities, duals, omega)
-    # Higher cyclicity is tied to the action/cotangent-lift construction in
-    # the producer.  This independent consumer checks the convention-free
-    # content available from the serialized coderivation: full input Koszul
-    # symmetry and every Q^2 identity.  It deliberately does not pretend to
-    # rederive the master action from the coefficient table.
+    cyclic_counts = {
+        "q1": _cyclic_swap_test(q1, 1, parities, duals, omega),
+        "q2": _cyclic_swap_test(q2, 2, parities, duals, omega),
+        "q3": _cyclic_swap_test(q3, 3, parities, duals, omega),
+    }
 
     q1_squared = _q1_qn(q1, q1)
     q1q2 = _combine(_q1_qn(q1, q2), _qn_q1(q2, q1, parities))
@@ -336,7 +330,8 @@ def verify() -> dict:
         "cyclicity": {
             "unary_pairing_adjoint": "PASS",
             "higher_input_koszul_symmetry": "PASS",
-            "higher_output_input_cyclicity": "PRODUCER_ACTION_DERIVATION_NOT_INDEPENDENTLY_REDERIVED",
+            "higher_output_input_cyclicity": "PASS",
+            "ordered_first_slot_transpose_counts": cyclic_counts,
         },
         "defect_counts": defects,
     }

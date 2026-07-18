@@ -180,6 +180,12 @@ The executable records include sparse coefficient jets through order two;
 this is what permits an independent consumer to replay derivatives of the
 coordinate-dependent product coefficients.
 
+The independent consumer also replays the ordered first-slot cyclic
+transpose of `q1`, `q2`, and `q3`, including formal integration by parts
+against the product measure.  This verifies cyclicity of the serialized
+coderivation without claiming a second derivation of its coefficients from
+the action.
+
 Claim boundary: this is a LOCAL-ALGEBRAIC, REDUCED-MODE same-background
 Taylor package.  It does not establish the Einstein--Weyl relative morphism,
 a causal theorem, a particle-branch projector, an observable, or a quantum
@@ -210,6 +216,10 @@ claim.
         "producer_timings_seconds": {key: round(value, 6) for key, value in timings.items()},
         "overall_producer_seconds": round(time.perf_counter() - overall, 6),
         "checks": checks,
+        "independent_verifier_scope": {
+            "ordered_first_slot_cyclicity": "q1_q2_q3_exact_PBW_replay",
+            "action_to_coefficients": "not_independently_rederived",
+        },
     }
     _write(RECEIPT, receipt)
     artifact_kinds = {"row_layout": "row_layout", "action": "action", "q1": "operation", "q2": "operation", "q3": "operation", "pairing": "pairing"}

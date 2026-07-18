@@ -14,10 +14,12 @@ this is what permits an independent consumer to replay derivatives of the
 coordinate-dependent product coefficients.
 
 The independent consumer replays unary pairing adjointness, higher input
-Koszul symmetry, and all three coefficients of `Q^2` from JSON alone.  It
-does not independently rederive higher output--input cyclicity from the
-action; that property remains tied to the producer's explicit master-vertex
-cotangent lift.  This boundary is intentional and recorded fail-closed.
+Koszul symmetry, the ordered first-slot output--input cyclic transpose for
+`q1`, `q2`, and `q3`, and all three coefficients of `Q^2` from JSON alone.
+The transpose check includes formal integration by parts against the product
+measure and is streamed by output row.  It verifies the exported cyclic
+coderivation; it does not independently derive the exported coefficients
+from the Einstein--Maxwell action.
 
 Claim boundary: this is a LOCAL-ALGEBRAIC, REDUCED-MODE same-background
 Taylor package.  It does not establish the Einstein--Weyl relative morphism,

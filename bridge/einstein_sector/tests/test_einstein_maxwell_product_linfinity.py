@@ -11,6 +11,11 @@ class EinsteinMaxwellProductLinfinityTests(unittest.TestCase):
         self.assertTrue(all(not any(counts) for counts in value["defect_counts"].values()))
         self.assertEqual(value["cyclicity"]["unary_pairing_adjoint"], "PASS")
         self.assertEqual(value["cyclicity"]["higher_input_koszul_symmetry"], "PASS")
+        self.assertEqual(value["cyclicity"]["higher_output_input_cyclicity"], "PASS")
+        self.assertEqual(
+            value["cyclicity"]["ordered_first_slot_transpose_counts"],
+            {"q1": 192, "q2": 4654, "q3": 61306},
+        )
 
 
 if __name__ == "__main__":
