@@ -37,7 +37,8 @@ every certificate in this directory.
 | BH-2A stage 2 | `BH2A_EXTRA_BRANCH_REACHES_HORIZON_LINEAR_MODE_LEVEL` | certified: in the ingoing EF chart the extra branch has a two-parameter ingoing-regular family at every frequency (regular singular point, residue spectrum {0,0,−4imω,−2−4imω}, kernel rank 2); horizon regularity cannot exclude the extra branch |
 | BH-2A stage 3 | `BH2A_FLUX_MATRIX_STAGE1_RW_BRANCH_SYMPLECTICALLY_NULL` | certified: general axial bilinear + off-shell 4α identity; RW-block flux vanishes for conjugate pairs — the Einstein branch is symplectically null; all pairing lives in the Einstein×extra cross-block |
 | BH-2A stage 4 | `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES` | certified (fixtures ω∈{3/5,2/7}, verifier adds 1/2; RW-null control < 1e-12): extra-branch horizon flux norm nonzero with i·F^r > 0 for α>0; Einstein×extra cross pairing nonzero — all horizon flux lives in the mixed/extra sectors |
-| BH-2A remainder | causal disposition of the extra branch, outer-boundary domains, polar sector | open — prerequisite for any ringdown/stability language |
+| BH-2A stage 5 | `BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE` | certified: extra branch propagates on Einstein characteristics with no growing asymptotics; no causal boundary prescription excludes it — pure-Weyl exteriors cannot truncate to the Einstein sector; **BH-2A axial ℓ=2 closed** |
+| BH-2A remainder | polar sector, general ℓ, complex-frequency structure, well-posedness theorem | open — BH-3 vocabulary stays locked pending these and coordinator review |
 
 Run everything for a certificate:
 

@@ -43,6 +43,7 @@ CERTS = {
     "BH2AR": PKG / "certificates" / "BH2A_HORIZON_REACH.json",
     "BH2AF": PKG / "certificates" / "BH2A_FLUX_MATRIX.json",
     "BH2AC": PKG / "certificates" / "BH2A_CROSS_FLUX.json",
+    "BH2AD": PKG / "certificates" / "BH2A_CAUSAL_DISPOSITION.json",
 }
 
 
@@ -253,7 +254,9 @@ def entries():
         "id": "bh.mode.axial.extra-fourth-order-branch",
         "scope": _scope(degree=1, parity="odd", ell=">=2", m="all", k="n/a",
                         omega="dynamical"),
-        "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
+        "descriptions": {desc: (_gstat("CERTIFIED", "BH2AD") if desc == "causal"
+                                else ("OPEN" if desc != "symplectic" else _gstat("CERTIFIED", "BH2AC")))
+                         for desc in DESCRIPTIONS},
         "mode_data": {
             "dispersion": _gated(
                 "CERTIFIED",

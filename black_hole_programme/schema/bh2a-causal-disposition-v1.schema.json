@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2a-causal-disposition-v1",
+  "title": "BH-2A stage 5: causal disposition - extra branch unavoidable",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_token",
+    "dependency_tags",
+    "declaration",
+    "asymptotics",
+    "disposition",
+    "claim_flags",
+    "missing_objects",
+    "stage_seconds",
+    "provenance",
+    "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2a-causal-disposition-v1" },
+    "schema_path": {
+      "const": "black_hole_programme/schema/bh2a-causal-disposition-v1.schema.json"
+    },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2A_CAUSAL_DISPOSITION" },
+    "result_token": { "const": "BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": [
+        "theory",
+        "background_family",
+        "conformal_frame",
+        "generator",
+        "phase_space",
+        "horizon_condition",
+        "infinity_condition",
+        "lifecycle"
+      ],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "asymptotics": {
+      "type": "object",
+      "required": ["dispersion", "sigma", "interpretation", "rw_control"]
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["statement", "consequence", "decision_tree"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "dispersion_certified",
+        "no_growing_asymptotics_certified",
+        "rw_control_certified",
+        "extra_branch_unavoidable_mode_level_certified",
+        "complex_frequency_structure_certified",
+        "general_l_or_m_certified",
+        "polar_sector_certified",
+        "initial_boundary_wellposedness_certified",
+        "nonlinear_or_all_orders_certified",
+        "stability_or_ringdown_certified"
+      ],
+      "properties": {
+        "dispersion_certified": { "const": true },
+        "no_growing_asymptotics_certified": { "const": true },
+        "rw_control_certified": { "const": true },
+        "extra_branch_unavoidable_mode_level_certified": { "const": true },
+        "complex_frequency_structure_certified": { "const": false },
+        "general_l_or_m_certified": { "const": false },
+        "polar_sector_certified": { "const": false },
+        "initial_boundary_wellposedness_certified": { "const": false },
+        "nonlinear_or_all_orders_certified": { "const": false },
+        "stability_or_ringdown_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "stage_seconds": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "generator_path",
+        "engine_path",
+        "engine_sha256",
+        "reach_certificate",
+        "reach_certificate_sha256",
+        "cross_certificate",
+        "cross_certificate_sha256"
+      ],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh2a_causal_disposition.py" },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "reach_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "cross_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": {
+      "const": "python3 black_hole_programme/verify_bh2a_causal_disposition.py"
+    }
+  }
+}
