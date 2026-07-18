@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 from collections import defaultdict
+from functools import lru_cache
 import hashlib
 import json
 from pathlib import Path
@@ -57,6 +58,18 @@ def conjugate_fundamental_terms(coordinate: str) -> list[tuple[int, int, sp.Expr
     raise ValueError(coordinate)
 
 
+def spin_half_clebsch_gordan(j: sp.Rational, m: sp.Rational, a: sp.Rational, upper: bool) -> sp.Expr:
+    """Closed form for <j,m;1/2,a|j+/-1/2,m+a> in SymPy's convention."""
+    denominator = 2 * j + 1
+    if upper:
+        numerator = j + m + 1 if a > 0 else j - m + 1
+        return sp.sqrt(numerator / denominator)
+    numerator = j - m if a > 0 else j + m
+    sign = -1 if a > 0 else 1
+    return sign * sp.sqrt(numerator / denominator)
+
+
+@lru_cache(maxsize=None)
 def axial_scalar_recurrence(two_j: int, row: int, column: int, coordinate: str) -> list[dict[str, Any]]:
     """Return terms in E[x conjugate(D^j_rc)] using diagonal scalar amplitudes."""
     if not 0 <= row <= two_j or not 0 <= column <= two_j:
@@ -77,12 +90,13 @@ def axial_scalar_recurrence(two_j: int, row: int, column: int, coordinate: str) 
             if abs(next_m) > next_j or abs(next_n) > next_j or next_m != next_n:
                 continue
             next_index = int(next_m + next_j)
-            coefficient = coordinate_coefficient * clebsch_gordan(j, sp.Rational(1, 2), next_j, m, a, next_m) * clebsch_gordan(j, sp.Rational(1, 2), next_j, n, b, next_n)
-            combined[(next_two_j, next_index)] += sp.simplify(coefficient)
+            upper = next_two_j == two_j + 1
+            coefficient = coordinate_coefficient * spin_half_clebsch_gordan(j, m, a, upper) * spin_half_clebsch_gordan(j, n, b, upper)
+            combined[(next_two_j, next_index)] += coefficient
     return [
-        {"next_two_j": next_two_j, "diagonal_index": index, "coefficient": sp.sstr(sp.simplify(coefficient))}
+        {"next_two_j": next_two_j, "diagonal_index": index, "coefficient": sp.sstr(sp.radsimp(coefficient))}
         for (next_two_j, index), coefficient in sorted(combined.items())
-        if sp.simplify(coefficient) != 0
+        if sp.radsimp(coefficient) != 0
     ]
 
 

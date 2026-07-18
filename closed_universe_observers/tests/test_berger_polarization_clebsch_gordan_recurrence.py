@@ -1,10 +1,13 @@
 import json
+import sympy as sp
+from sympy.physics.wigner import clebsch_gordan
 
 from closed_universe_observers.generate_berger_polarization_clebsch_gordan_recurrence import (
     CERTIFICATE,
     axial_scalar_recurrence,
     build,
     product_identity_defects,
+    spin_half_clebsch_gordan,
 )
 
 
@@ -15,6 +18,20 @@ def test_generated_certificate_is_current():
 def test_exact_product_identity_and_lower_channel_mutation():
     assert product_identity_defects() == 0
     assert product_identity_defects(2, drop_lower_channel=True) > 0
+
+
+def test_closed_spin_half_formula_matches_sympy_convention():
+    half = sp.Rational(1, 2)
+    for two_j in range(1, 9):
+        j = sp.Rational(two_j, 2)
+        for row in range(two_j + 1):
+            m = -j + row
+            for a in (-half, half):
+                for upper in (False, True):
+                    next_j = j + half if upper else j - half
+                    expected = 0 if next_j < 0 or abs(m + a) > next_j else clebsch_gordan(j, half, next_j, m, a, m + a)
+                    actual = 0 if next_j < 0 or abs(m + a) > next_j else spin_half_clebsch_gordan(j, m, a, upper)
+                    assert sp.simplify(actual - expected) == 0
 
 
 def test_exact_low_mode_sparsity_formulas():

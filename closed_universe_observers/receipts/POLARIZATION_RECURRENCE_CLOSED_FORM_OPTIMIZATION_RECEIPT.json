@@ -1,0 +1,39 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "POLARIZATION_RECURRENCE_CLOSED_FORM_OPTIMIZATION_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The certified polarization recurrence now evaluates spin-half Clebsch--Gordan factors with the exact closed formula in SymPy's phase convention and memoizes repeated coordinate rows. This is a semantics-preserving streaming optimization. It does not itself apply the recurrence to the six external-clock scalar rails, compose Green charge blocks, certify the tail, evaluate recoil, activate Bridge 3 or make a quantum claim.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_polarization_clebsch_gordan_recurrence.py closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py", "elapsed_seconds": "under 1", "status": "PASS"},
+    {"command": "git diff --check -- closed_universe_observers", "elapsed_seconds": "under 1", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py", "elapsed_seconds": "9.21", "status": "PASS", "summary": "6 passed, including exact closed-form comparison with SymPy through two_j=8"},
+    {"command": "python3 -m closed_universe_observers.generate_berger_polarization_clebsch_gordan_recurrence --emit and verifier", "elapsed_seconds": "under 11", "status": "PASS", "scope": "certificate freshness, recurrence identity, mutation and provenance"},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "under 1", "status": "PASS", "scope": "updated recurrence evidence hash and fail-closed observer atlas"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "naive all-rail SymPy recurrence traversal", "status": "TERMINATED", "reason": "Repeated generic simplify calls exceeded two minutes. The exact spin-half closed form and memoization replace that path; the terminated timing is not reported as a pass."}
+  ],
+  "higher_tiers": [
+    {"tier": 2, "status": "NOT_RUN", "criterion": "The mathematical recurrence and its dependencies did not change; exact comparison to the prior SymPy convention and direct atlas consumers passed."},
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No lifecycle promotion, Green composition, tail theorem, recoil or bridge activation."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_polarization_clebsch_gordan_recurrence.py", "sha256": "6134e5f4382f29e48462fea9692c2400d4924a8971a0a6b6fb141a3d69dbfb60"},
+    {"path": "closed_universe_observers/tests/test_berger_polarization_clebsch_gordan_recurrence.py", "sha256": "976e6b7f8b03548418ed640e771a693cbfb41c6e798b4d88f1fecaa04c6c3c44"},
+    {"path": "closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json", "sha256": "63ec51f24e3d9adebd00b409a61ec8348d5a9ba636f3bacf984eec8a53fa0294"},
+    {"path": "closed_universe_observers/reports/berger-polarization-clebsch-gordan-recurrence.md", "sha256": "0dafd77a4f0bf12b941de7b158c48155803838091b2bfa18293328f621747bd7"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "0ea5ac09446c331f2337a866fbbc93281b7aa83759c0e824e4266d20c52f5c36"}
+  ],
+  "claim_flags": {
+    "EXACT_SPIN_HALF_CLOSED_FORM_MATCHES_SYMPY": true,
+    "RECURRENCE_ROWS_MEMOIZED": true,
+    "POLARIZATION_RECURRENCE_AND_GREEN_CHARGE_BLOCKS_COMPOSED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

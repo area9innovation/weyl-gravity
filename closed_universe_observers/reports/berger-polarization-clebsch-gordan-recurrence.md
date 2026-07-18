@@ -18,6 +18,12 @@ most four terms in any supported entry.  Summing through the necessary
 detector-specific coframe factors and the external clock factor `a(t)` are
 retained explicitly.
 
+The streamed implementation uses the closed spin-half Clebsch--Gordan
+formula in SymPy's phase convention and memoizes repeated coordinate rows.
+An exact test compares every upper/lower coefficient through `two_j=8`
+against SymPy's Wigner implementation.  This removes the multi-minute
+symbolic simplification bottleneck without changing the recurrence.
+
 This removes high-degree form-polynomial expansion from the selected
 adaptive route.  It does not yet evaluate the neighboring scalar coefficient
 stream, perform clock or temporal Green integration, certify the
