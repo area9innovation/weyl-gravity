@@ -34,12 +34,12 @@ def main() -> int:
         "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "PARTIAL_OFFSHELL_GENERIC_AXIAL_PREFLIGHT",
         "observable_map": "BLOCKED_OFFSHELL_PULLBACK_MISSING",
         "quantum_lift": "NOT_APPLICABLE_TO_CLASSICAL_PREFLIGHT",
-        "relative_pairing": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",
-        "residual_action": "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING",
+        "relative_pairing": "NONCYCLIC_THREE_ACTION_FORMS_IMPORTED" if imported else "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",
+        "residual_action": "IMPORTED_H_PRODUCT_EQUIVARIANCE_AND_ENDPOINT_MAPS" if imported else "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING",
     }
     if certificate["shared_relative_row"] != expected_row:
         raise AssertionError("shared relative row drifted")
-    expected_true = 2 if imported else 1
+    expected_true = 4 if imported else 1
     if sum(bool(v) for v in certificate["flags"].values()) != expected_true:
         raise AssertionError("a downstream relative flag was promoted")
     print("relative residual/observable preflight independent audit: PASS")

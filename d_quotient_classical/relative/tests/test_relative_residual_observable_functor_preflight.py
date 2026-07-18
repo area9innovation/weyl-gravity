@@ -9,6 +9,11 @@ class RelativeFunctorPreflightTest(unittest.TestCase):
         payload = build()
         self.assertTrue(payload["flags"]["RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"])
         self.assertFalse(payload["flags"]["RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1"])
+        self.assertTrue(payload["flags"]["EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED"])
+        self.assertTrue(payload["flags"]["RESIDUAL_EQUIVARIANCE_CERTIFIED"])
+        self.assertTrue(payload["flags"]["COFIBER_COMPATIBILITY_CERTIFIED"])
+        self.assertFalse(payload["flags"]["OBSERVABLE_PULLBACK_CONSTRUCTED"])
+        self.assertEqual(payload["shared_relative_row"]["relative_pairing"], "NONCYCLIC_THREE_ACTION_FORMS_IMPORTED")
 
     def test_rejects_premature_promotion(self):
         payload = build()

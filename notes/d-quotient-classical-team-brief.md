@@ -1851,9 +1851,12 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    contractible STF2 graph and not a reduced-mode projector.  Do not identify
    Berger labels automatically with the actual Einstein--Maxwell image on the
    Pleba\'nski--Hacyan background.
-7. Import `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` only after all six exact
-   acceptance flags pass; until then the relative observable functor remains
-   a preflight and must not reconstruct the Einstein map independently.
+7. `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` is now imported by committed
+   content hash.  Its support-local cofiber, `H_product` equivariance,
+   fixed-`N=2` endpoint maps and three distinct action forms certify residual
+   equivariance and cofiber compatibility.  The relative observable functor
+   remains a preflight until an actual observable pullback is constructed; it
+   must not reconstruct the Einstein map or silently impose a cyclic pairing.
 8. C-G1 is certified as `ABSTRACT_CYCLIC_CAUSAL_TRANSFER`, including both SDR
    lift and descent.  C-G5 now has a second non-cylinder `G2` consumer: the
    doubled adjoint-tractor mixed detour on Minkowski.  Preserve both as

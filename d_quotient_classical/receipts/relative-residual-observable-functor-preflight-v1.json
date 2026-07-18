@@ -1,0 +1,47 @@
+{
+  "schema": "relative-residual-observable-functor-receipt-v1",
+  "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1_RECEIPT",
+  "date": "2026-07-18",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 1.09,
+      "commands": [
+        "python3 -m py_compile <scoped producer, verifier and tests>",
+        "python3 -m json.tool <scoped certificate and schema>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.03,
+      "commands": [
+        "python3 -m d_quotient_classical.relative.relative_residual_observable_functor_preflight --check --guards",
+        "python3 d_quotient_classical/relative/verify_relative_residual_observable_functor_preflight.py",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_relative_residual_observable_functor_preflight"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "elapsed_seconds": 1.43,
+      "commands": [
+        "python3 -m d_quotient_classical.relative.relative_residual_observable_functor_preflight --check --guards",
+        "python3 d_quotient_classical/relative/verify_relative_residual_observable_functor_preflight.py"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a direct committed-dependency import into a fail-closed preflight, not a paper freeze, release or shared-core change."
+    }
+  },
+  "source_manifest": {
+    "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json": "12202b3fa32f64a2c811ce5c9276ee26d5119cb1b20e4e9544e4cc419283865c",
+    "d_quotient_classical/relative/relative_residual_observable_functor_preflight.py": "b3022c4253a8ba941bb4d689bbc0b8d648a015ce4d9bed463ca8e6e6c3a2c08c",
+    "d_quotient_classical/relative/verify_relative_residual_observable_functor_preflight.py": "8fcdffd9529e1179c933e51a9cdf34de34f1ce74b96b258d68eb744b84ec97dd",
+    "d_quotient_classical/relative/tests/test_relative_residual_observable_functor_preflight.py": "0dde5d12de31b61dbc5e3127014338c0d111b3c381d1300eba0498f7e4cc081b",
+    "d_quotient_classical/reports/relative-residual-observable-functor-preflight-v1.md": "ed96da827c5301f006c737b68745f36e3c46596b0d50cb7b0db3dd9dc480e955",
+    "d_quotient_classical/schema/relative-residual-observable-functor-preflight-v1.schema.json": "7c8a404cd0d785f47235d30ad67fa2e9f505785311a492064a941069d5ff16bd",
+    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json": "d0ee5404fd8055e2b67525335142f7986a92516b047d80ded58ed2a3a731f3fa"
+  },
+  "claim_boundary": "The committed compact-product triangle certifies residual equivariance and cofiber compatibility for this preflight. The observable pullback, compact-product causal Green functor, q2/q3 relative morphism, Berger crosswalk and quantum lift remain open or not applicable."
+}

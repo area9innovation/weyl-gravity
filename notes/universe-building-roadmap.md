@@ -980,12 +980,15 @@ exports; compact-product causal Green data remain an independent open rail.
 
 The authoritative support-local Berger tensors are now certified through
 arity three.  The classical team therefore moves to
-`RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1`: import the Einstein map by hash,
-test residual equivariance and quotient/cofiber compatibility, and construct
-the observable pullback and relative-sector detectors.  The first concrete
-observer fixture remains the Berger relational observable and operational
-redshift rail, using only the domain that survives the nonlinear and causal
-gates.  It must not duplicate the Einstein map or the Green construction.
+`RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1`: the committed triangle now
+imports the Einstein map, support-local cofiber, `H_product` equivariance and
+fixed-`N=2` endpoints by hash.  Residual equivariance and cofiber compatibility
+are certified; construct the observable pullback and relative-sector
+detectors without identifying the three noncyclic action forms.  The first
+concrete observer fixture remains the Berger relational observable and
+operational redshift rail, using only the domain that survives the nonlinear
+and causal gates.  It must not duplicate the Einstein map or the Green
+construction.
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not
@@ -1024,9 +1027,10 @@ Taub/extension bilinear that the nonlinear team will refine.
 
 The authoritative fail-closed artifacts are
 `EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` and
-`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.  The dictionary exports the same-background
-generic axial and polar chain cofibers, the exceptional `ell=1,k=0` solution
-cofiber, zero homogeneous and twist-primary solution cofibers, branch
+`EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.  The dictionary exports the
+same-background generic axial and polar chain cofibers, the exceptional
+`ell=1,k=0` solution cofiber, zero homogeneous and twist-primary solution
+cofibers, branch
 representatives and action-derived pairings.  It also records the obstruction
 to strict cyclicity of the generic fixed identity maps. The stronger
 `EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1` now proves that no

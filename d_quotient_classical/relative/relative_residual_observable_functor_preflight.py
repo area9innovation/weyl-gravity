@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Build the classical preflight for the Einstein/Weyl relative functor.
 
-The available common-background result is an on-shell, reduced-mode inclusion.
-It is useful input, but it is not the off-shell BV triangle needed to define a
-mapping cofiber, residual action, or observable pullback.  This producer records
-that distinction exactly and refuses every downstream promotion.
+The committed noncyclic three-form triangle supplies the off-shell mapping
+cofiber, product-equivariance and endpoint maps.  This producer imports those
+facts while leaving the actual observable pullback fail-closed.
 """
 
 from __future__ import annotations
@@ -32,7 +31,8 @@ TRIANGLE_FLAGS = (
     "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS",
     "SUPPORT_LOCAL_MAPPING_COFIBER",
     "GLOBAL_ENDPOINTS_INCLUDED",
-    "PAIRING_OR_CURRENT_COMPATIBLE",
+    "THREE_ACTION_DERIVED_FORMS_EXPORTED",
+    "GENERIC_STANDARD_PAIRING_CYCLIC_OBSTRUCTION_RESPECTED",
     "H_PRODUCT_EQUIVARIANT",
     "INDEPENDENT_VERIFIER_PASS",
 )
@@ -87,7 +87,7 @@ def triangle_import() -> tuple[dict | None, Path | None]:
         "CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE",
     }:
         raise AssertionError("triangle candidate is not certified")
-    flags = payload.get("flags", {})
+    flags = payload.get("acceptance_flags", payload.get("flags", {}))
     missing = [key for key in TRIANGLE_FLAGS if flags.get(key) is not True]
     if missing:
         raise AssertionError("triangle candidate misses acceptance flags: " + ", ".join(missing))
@@ -107,7 +107,7 @@ def build() -> dict:
         raise AssertionError("Berger incidence verdict drifted")
     if quantum["classical_import_gate"]["status"] != "NOT_SATISFIED":
         raise AssertionError("quantum import gate unexpectedly promoted")
-    if quantum["shared_relative_row"]["map_iota"] != "ONSHELL_MAP_ONLY_IMPORTED_BY_HASH":
+    if quantum["shared_relative_row"]["map_iota"] != "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_OFFSHELL_PREFLIGHT_IMPORTED_GLOBAL_V1_OPEN":
         raise AssertionError("quantum relative map disposition drifted")
     if partial_triangle["verdict"] != "G2_PRINCIPAL_AND_GENERIC_AXIAL_OFFSHELL_RELATIVE_TRIANGLE_PREFLIGHT":
         raise AssertionError("partial relative-triangle preflight verdict drifted")
@@ -140,7 +140,7 @@ def build() -> dict:
         "schema": "pure-weyl-relative-residual-observable-functor-preflight-v1",
         "result_id": "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1",
         "result_state": (
-            "OFFSHELL_TRIANGLE_IMPORTED_RELATIVE_FUNCTOR_CONSTRUCTION_OPEN"
+            "OFFSHELL_TRIANGLE_EQUIVARIANT_COFIBER_IMPORTED_OBSERVABLE_PULLBACK_OPEN"
             if imported
             else "PARTIAL_OFFSHELL_PREFLIGHT_IMPORTED_FULL_TRIANGLE_MISSING"
         ),
@@ -155,9 +155,9 @@ def build() -> dict:
         "shared_relative_row": {
             "map_iota": "IMPORTED_OFFSHELL_TRIANGLE" if imported else "PARTIAL_OFFSHELL_GENERIC_AXIAL_PREFLIGHT",
             "cofiber": "IMPORTED_MAPPING_COFIBER" if imported else "PARTIAL_GENERIC_AXIAL_COFIBER_FULL_GLOBAL_BLOCKED",
-            "relative_pairing": "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",
+            "relative_pairing": "NONCYCLIC_THREE_ACTION_FORMS_IMPORTED" if imported else "CLASSICAL_REDUCED_MODE_PULLBACK_ONLY",
             "O2": "PARTIAL_FIXTURES_ONLY",
-            "residual_action": "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING",
+            "residual_action": "IMPORTED_H_PRODUCT_EQUIVARIANCE_AND_ENDPOINT_MAPS" if imported else "BLOCKED_OFFSHELL_EQUIVARIANCE_MISSING",
             "observable_map": "BLOCKED_OFFSHELL_PULLBACK_MISSING",
             "quantum_lift": "NOT_APPLICABLE_TO_CLASSICAL_PREFLIGHT",
         },
@@ -167,7 +167,7 @@ def build() -> dict:
                 "off_shell_chain_map_on_fields_ghosts_antifields_equations_and_identities",
                 "support_local_mapping_cofiber_or_triangle",
                 "global_zero_mode_and_residual_endpoint_map",
-                "pairing_or_current_compatibility",
+                "three_action_derived_forms_with_standard_cyclic_obstruction",
                 "H_product_equivariance",
                 "content_addressed_certificate_and_independent_verifier",
             ],
@@ -184,20 +184,21 @@ def build() -> dict:
             "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1": False,
             "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED": imported,
             "OBSERVABLE_PULLBACK_CONSTRUCTED": False,
-            "RESIDUAL_EQUIVARIANCE_CERTIFIED": False,
-            "COFIBER_COMPATIBILITY_CERTIFIED": False,
+            "RESIDUAL_EQUIVARIANCE_CERTIFIED": imported,
+            "COFIBER_COMPATIBILITY_CERTIFIED": imported,
             "BERGER_SAME_BASE_RELATIVE_MAP_APPLICABLE": False,
         },
         "next_gate": (
-            "CONSTRUCT_RESIDUAL_EQUIVARIANCE_COFIBER_COMPATIBILITY_AND_OBSERVABLE_PULLBACK"
+            "CONSTRUCT_OBSERVABLE_PULLBACK_ON_IMPORTED_NONCYCLIC_TRIANGLE"
             if imported
             else "IMPORT_EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1_BY_HASH"
         ),
         "claim_boundary": (
-            "The exact on-shell standard-harmonic inclusion, reduced-mode pairing, and principal/generic-axial off-shell preflight are imported by commit and content hash. "
-            "The partial preflight does not define the full curved all-sector BV chain map, global mapping cofiber, residual-equivariant observable pullback, "
-            "or relative quantum lift. The Berger clock fixture is a separate Weyl-matter rail and is not a common "
-            "Einstein/Weyl background."
+            "The committed all-row noncyclic triangle, support-local mapping cofiber, H_product equivariance, fixed-N=2 endpoint maps and three distinct action forms are imported by content hash. "
+            "The standard-pairing cyclic route remains obstructed. No observable pullback, causal Green relative functor, complete q2/q3 morphism or quantum lift is claimed. "
+            "The Berger clock fixture is a separate Weyl-matter rail and is not a common Einstein/Weyl background."
+            if imported
+            else "The exact on-shell standard-harmonic inclusion, reduced-mode pairing, and principal/generic-axial off-shell preflight are imported by commit and content hash. The full triangle, residual-equivariant observable pullback and quantum lift remain absent. The Berger clock fixture is a separate Weyl-matter rail."
         ),
     }
     verify(payload)
@@ -218,7 +219,11 @@ def verify(payload: dict) -> None:
         raise AssertionError("preflight not certified")
     allowed_true = {"RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1"}
     if imported:
-        allowed_true.add("EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED")
+        allowed_true.update({
+            "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_IMPORTED",
+            "RESIDUAL_EQUIVARIANCE_CERTIFIED",
+            "COFIBER_COMPATIBILITY_CERTIFIED",
+        })
     for key, value in flags.items():
         if key not in allowed_true and value is not False:
             raise AssertionError(f"forbidden relative promotion: {key}")
@@ -229,10 +234,11 @@ def report_text(payload: dict) -> str:
 
 Result: `{payload['result_state']}`.
 
-The compact Einstein-Maxwell product supplies an exact on-shell harmonic
-inclusion and a nondegenerate reduced-mode pullback pairing.  Triangle import
-status is `{payload['required_import']['status']}`.  Residual equivariance and
-the observable pullback remain separate fail-closed constructions.
+The compact Einstein-Maxwell product triangle import status is
+`{payload['required_import']['status']}`.  When imported, the support-local
+cofiber, product-equivariance, endpoint maps and three noncyclic action forms
+are certified.  The observable pullback remains a separate fail-closed
+construction.
 
 The positive Berger clock is not a fallback common background: the certified
 incidence result excludes a same-base Einstein tangent there.
@@ -243,8 +249,6 @@ def guards(payload: dict) -> None:
     for key in (
         "RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1",
         "OBSERVABLE_PULLBACK_CONSTRUCTED",
-        "RESIDUAL_EQUIVARIANCE_CERTIFIED",
-        "COFIBER_COMPATIBILITY_CERTIFIED",
         "BERGER_SAME_BASE_RELATIVE_MAP_APPLICABLE",
     ):
         mutant = deepcopy(payload)

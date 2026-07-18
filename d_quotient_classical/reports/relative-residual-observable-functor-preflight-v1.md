@@ -1,11 +1,12 @@
 # Relative residual and observable functor preflight
 
-Result: `PARTIAL_OFFSHELL_PREFLIGHT_IMPORTED_FULL_TRIANGLE_MISSING`.
+Result: `OFFSHELL_TRIANGLE_EQUIVARIANT_COFIBER_IMPORTED_OBSERVABLE_PULLBACK_OPEN`.
 
-The compact Einstein-Maxwell product supplies an exact on-shell harmonic
-inclusion and a nondegenerate reduced-mode pullback pairing.  Triangle import
-status is `MISSING`.  Residual equivariance and
-the observable pullback remain separate fail-closed constructions.
+The compact Einstein-Maxwell product triangle import status is
+`IMPORTED`.  When imported, the support-local
+cofiber, product-equivariance, endpoint maps and three noncyclic action forms
+are certified.  The observable pullback remains a separate fail-closed
+construction.
 
 The positive Berger clock is not a fallback common background: the certified
 incidence result excludes a same-base Einstein tangent there.
