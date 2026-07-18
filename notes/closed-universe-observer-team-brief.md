@@ -395,6 +395,16 @@ with the external clock factor, followed by temporal Green integration and a
 Green-weighted tail.  No full Maxwell/massive image or recoil coefficient is
 claimed.
 
+`BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL` now supplies the next validated
+input.  It encloses both normalized radial flat-bump moments and normalized
+clock expectations of `sec(lambda s)^(2k)` through `k=50` using 4096-cell
+dyadic Darboux sums.  Exact radial unimodality and a decreasing-integrand
+clock audit certify the endpoint rules; the coarser `k<=6` intervals contain
+the existing 32768-cell results.  This does not yet evaluate a high-mode
+scalar coefficient.  The active gate is the diagonal scalar recurrence
+through `two_j=139`, including its binomial truncation remainder, before
+Green-weighted tail closure.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

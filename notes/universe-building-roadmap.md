@@ -299,8 +299,10 @@ axial-charge sectors of dimension at most three.  The remaining bandwidth
 gate now has an exact Clebsch--Gordan recurrence: through `two_j=138`, the
 detector coordinate factors require 57,824 supported entries and 154,012
 neighboring scalar terms, with at most four terms per entry.  The remaining
-work is clock-integrated scalar-stream evaluation and the Green-weighted
-operator-norm tail, not dense block construction.
+work now has validated radial and clock-secant moments through `k=50`; its
+active gate is the diagonal scalar recurrence through `two_j=139` with a
+binomial truncation remainder, followed by the Green-weighted operator-norm
+tail rather than dense block construction.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
@@ -457,8 +459,9 @@ survive the first backreacted, normalized apparatus interaction?
    cutoff omits more than `0.9999975` of the clock-center profile energy, so
    uniform small-tail promotion is obstructed.  Exact axial-charge sectors
    and Clebsch--Gordan polarization recurrences now make the adaptive route
-   streamable through its necessary `two_j=138` capacity rail.  The next gate
-   is clock-integrated scalar-stream evaluation and a Green-weighted tail,
+   streamable through its necessary `two_j=138` capacity rail.  Validated
+   radial and clock-secant moments now extend through `k=50`; the next gate is
+   the diagonal scalar stream through `two_j=139` and a Green-weighted tail,
    followed by the massive Green images and recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a

@@ -1,0 +1,50 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "HIGH_ORDER_PROFILE_MOMENT_RAIL_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Validated dyadic Darboux enclosures now cover normalized radial flat-bump moments and normalized clock-secant expectations through k=50. Exact radial unimodality and clock-integrand monotonicity justify the endpoint rules, and the coarser k<=6 intervals contain the prior 32768-cell certificates. No high-mode scalar coefficient, binomial truncation remainder, Green-weighted tail, full image, recoil, tangent-cone restriction, physical-branch bridge, or quantum claim is made.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_high_order_profile_moment_rail.py closed_universe_observers/verify_berger_high_order_profile_moment_rail.py closed_universe_observers/tests/test_berger_high_order_profile_moment_rail.py closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "changed Python sources"},
+    {"command": "git diff --check -- closed_universe_observers notes/closed-universe-observer-team-brief.md notes/universe-building-roadmap.md", "elapsed_seconds": "under 1", "status": "PASS", "scope": "moment rail, generated atlas, observer brief and canonical roadmap"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_high_order_profile_moment_rail --emit", "elapsed_seconds": "39.76", "status": "PASS", "scope": "validated radial and clock-secant moment rail through k=50"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_high_order_profile_moment_rail", "elapsed_seconds": "38.69", "status": "PASS", "scope": "independent freshness, probability bounds, compatibility, evidence and fail-closed checks"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_high_order_profile_moment_rail.py", "elapsed_seconds": "37.98", "status": "PASS", "scope": "five focused moment, monotonicity, compatibility and lifecycle tests", "summary": "5 passed"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-high-order-profile-moment-rail-v1.schema.json -d closed_universe_observers/certificates/BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL.json", "elapsed_seconds": "under 3", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_observer_atlas_fragment.py && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json && python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment", "elapsed_seconds": "under 1", "status": "PASS", "scope": "generated atlas, shared schema, evidence hashes and inactive bridge rows", "summary": "4 passed plus two atlas verifiers"}
+  ],
+  "attempts_not_counted_as_passes": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_high_order_profile_moment_rail --emit", "status": "FAIL", "reason": "The first assertion demanded a strict clock-expectation lower bound above one after division by an interval-enclosed normalization. The validated coarse quotient can cross one, so the overclaim was removed while retaining positivity, containment of the stronger low-order certificate, and an upper bound above one."}
+  ],
+  "higher_tiers": [
+    {"tier": 2, "status": "NOT_RUN", "criterion": "This is a successor input certificate; no existing mathematical input, shared schema, central comparison ledger, or lifecycle state changed, and direct atlas consumers passed."},
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No freeze, coefficient-stream completion, convergence or tail theorem, full Green image, recoil coefficient, tangent-cone promotion, physical-branch bridge, or quantum claim."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_high_order_profile_moment_rail.py", "sha256": "6b3226be5b95725f3929cce1b31e0a540f54202e820ccf8da56a9970b0b00408"},
+    {"path": "closed_universe_observers/certificates/BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL.json", "sha256": "eef457789018aba42808d5b3fd5a4898535db9f9f8757af6e25150721d9a61e7"},
+    {"path": "closed_universe_observers/schema/berger-high-order-profile-moment-rail-v1.schema.json", "sha256": "2341bbc0e208f76c3a4780fb254b0ba9a51bd144f8324c3ecf5377076cc5665b"},
+    {"path": "closed_universe_observers/verify_berger_high_order_profile_moment_rail.py", "sha256": "13a35e1989e3ef76c089bf07f258c66cc46efda02652041bb885e27f4dc52ef6"},
+    {"path": "closed_universe_observers/tests/test_berger_high_order_profile_moment_rail.py", "sha256": "73f6feff254ef026fdad773ffb53513e927895604c0375cdfdd0154fb75df9e1"},
+    {"path": "closed_universe_observers/reports/berger-high-order-profile-moment-rail.md", "sha256": "8bd2b70ba5db578496accac6ab769cd17fb19c04d1194e23ec1ff77615feabf4"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "272c8fbbdadef14fc53e10d114b54fdd281243187dccf89686f07e32cf9bf13f"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "53fac83ee10aacc7c1022fb0fd70842abe77dc723bf4ae5645fee50a951825ca"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "ff5ad19272e64ed8e8f42be8edd0df91c20185dd96b765d4b398e517c582e4ab"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "722c4232f700872a2f4e8e0575f92cb8f339546798afa9e19bbaa4a179e7f166"},
+    {"path": "closed_universe_observers/README.md", "sha256": "2a4baf2029e22eccdca85d83b730e511c1032a17c3fb899e239adbc1e9740dc9"}
+  ],
+  "claim_flags": {
+    "VALIDATED_RADIAL_MOMENTS_K0_TO_50_EXPORTED": true,
+    "VALIDATED_CLOCK_SECANT_MOMENTS_K0_TO_50_EXPORTED": true,
+    "LOW_ORDER_CERTIFICATE_COMPATIBILITY_PASSED": true,
+    "HIGH_MODE_SCALAR_COEFFICIENT_VALUES_EVALUATED": false,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "BERGER_PHYSICAL_BRANCH_TO_DETECTOR_MAP_CERTIFIED": false,
+    "OBSERVER_RESTRICTION_TO_Z2_CERTIFIED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

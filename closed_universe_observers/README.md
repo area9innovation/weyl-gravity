@@ -85,6 +85,8 @@ python3 -m closed_universe_observers.generate_berger_streamable_polarization_sec
 python3 -m closed_universe_observers.verify_berger_streamable_polarization_sectors
 python3 -m closed_universe_observers.generate_berger_polarization_clebsch_gordan_recurrence --check
 python3 -m closed_universe_observers.verify_berger_polarization_clebsch_gordan_recurrence
+python3 -m closed_universe_observers.generate_berger_high_order_profile_moment_rail --check
+python3 -m closed_universe_observers.verify_berger_high_order_profile_moment_rail
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -296,6 +298,11 @@ scalar terms in `j+1/2` and `j-1/2`.  Through `two_j=138`, the closed-form
 counts are 57,824 supported entries and 154,012 scalar recurrence terms.
 Clock-integrated scalar evaluation, temporal Green integration, the
 Green-weighted tail, full images, and recoil remain open.
+The high-order moment successor validates the radial flat-bump moments and
+normalized clock-secant expectations through `k=50`.  Its coarser low-order
+intervals contain the earlier 32768-cell results.  These are inputs to the
+diagonal scalar recurrence through `two_j=139`, not evaluated high-mode
+coefficients or a tail theorem.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

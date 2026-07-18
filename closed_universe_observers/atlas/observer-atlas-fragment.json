@@ -668,7 +668,7 @@
       }
     },
     {
-      "claim_boundary": "exact Clebsch--Gordan recurrences reduce the detector polarizations through two_j=138 to 57,824 supported coordinate entries and 154,012 neighboring scalar terms; clock-integrated high-mode scalar values, Green-weighted operator-norm tail, full Maxwell image and massive image remain OPEN absolute g^3 operator exact; coefficient remains OPEN NOT_APPLICABLE at the bandwidth-route preflight",
+      "claim_boundary": "exact Clebsch--Gordan recurrences reduce the detector polarizations through two_j=138 to 57,824 supported coordinate entries and 154,012 neighboring scalar terms; validated radial and clock-secant moments now extend through k=50, while high-mode scalar values, truncation remainder, Green-weighted operator-norm tail, full Maxwell image and massive image remain OPEN absolute g^3 operator exact; coefficient remains OPEN NOT_APPLICABLE at the bandwidth-route preflight",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "NOT_APPLICABLE",
@@ -691,6 +691,11 @@
           "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json",
           "result_id": "BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE",
           "sha256": "3ff6b596ec42f6ab45aca3ecd3ff22974e658c4534727432dbecf116f77624d0"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL.json",
+          "result_id": "BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL",
+          "sha256": "eef457789018aba42808d5b3fd5a4898535db9f9f8757af6e25150721d9a61e7"
         }
       ],
       "id": "observer.berger.detector_profile.adaptive_cutoff_preflight",
@@ -733,7 +738,7 @@
           "status": "NOT_APPLICABLE"
         },
         "clock_and_rod_dependence": {
-          "statement": "radius-1/128 rod profile fixes the necessary two_j>=138 capacity rail",
+          "statement": "radius-1/128 rod profile fixes the necessary two_j>=138 capacity rail; radial and clock-secant moments through k=50 are validated inputs",
           "status": "CERTIFIED"
         },
         "detector_response": {
@@ -761,7 +766,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "exact Clebsch--Gordan recurrences reduce the detector polarizations through two_j=138 to 57,824 supported coordinate entries and 154,012 neighboring scalar terms; clock-integrated high-mode scalar values, Green-weighted operator-norm tail, full Maxwell image and massive image remain OPEN",
+          "statement": "exact Clebsch--Gordan recurrences reduce the detector polarizations through two_j=138 to 57,824 supported coordinate entries and 154,012 neighboring scalar terms; validated radial and clock-secant moments now extend through k=50, while high-mode scalar values, truncation remainder, Green-weighted operator-norm tail, full Maxwell image and massive image remain OPEN",
           "status": "OPEN"
         },
         "recoil_backreaction_order": {
@@ -1027,7 +1032,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "ccfd979b60fe5938c39bc7cf5e4b92d6762a1fe822416f00708658e4994256b1",
+  "generated_by_sha256": "272c8fbbdadef14fc53e10d114b54fdd281243187dccf89686f07e32cf9bf13f",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
