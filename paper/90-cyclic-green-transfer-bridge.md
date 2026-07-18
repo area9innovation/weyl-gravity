@@ -1,8 +1,8 @@
 # From Green-hyperbolic complexes to conformal detours
 
 *Bridge note for Lorentzian PDE, Green-hyperbolic-complex, and BGG/detour
-geometry researchers. Status: abstract transfer theorem certified with a
-complete Berger consumer; second detour consumer open, 17 July 2026.*
+geometry researchers. Status: abstract transfer theorem certified with
+Berger, flat-Minkowski, and curved Nariai consumers, 18 July 2026.*
 
 ## 1. Their object and the unresolved question
 
@@ -123,9 +123,10 @@ which requires typed operator domains, boundary conditions, pairing-derived
 sign data, the exact cyclic SDR, causal-input Green data, and finite local inverses
 for all shears.  The accepted Berger adapter is
 [`BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER`](../d_quotient_classical/certificates/BERGER_ABSTRACT_CAUSAL_TRANSFER_CONSUMER.json).
-The theorem is background-uniform as a conditional statement. Two `G2`
-consumers are now certified: the Berger lift above and a non-cylinder
-parent-to-endpoint descent on Minkowski. The latter doubles the flat
+The theorem is background-uniform as a conditional statement. Three scoped
+`G2` consumers are now certified: the Berger lift above, a non-cylinder
+parent-to-endpoint descent on Minkowski, and a curved Nariai
+parent-detour-to-metric descent. The Minkowski consumer doubles the flat
 adjoint-tractor detour with opposite normalization, applies a cyclic triangular
 flavor shear, and descends the parent Hodge homotopy through the exact flat
 differential BGG retract. Its proof and portable adapter are
@@ -134,8 +135,27 @@ and
 [`MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_CAUSAL_TRANSFER_CONSUMER`](../d_quotient_classical/certificates/MINKOWSKI_DOUBLED_ADJOINT_TRACTOR_CAUSAL_TRANSFER_CONSUMER.json).
 The mixed unary presentation has a nonzero off-diagonal block, but is linearly
 equivalent to two free copies; it is a portability test, not an interacting
-model. No open `G3` background family has yet been proved to satisfy the
-analytic hypotheses uniformly.
+model.
+
+The Nariai consumer is the first substantial curved portability test. Its
+repaired ten-block parent-detour cone has degree ranks
+`15/140/140/15`, hence 310 components in total, and retracts cyclically and
+support-locally onto an independently certified 26-component metric Bach
+endpoint. Exact operator-polynomial replay verifies all ten blocks,
+
+```text
+Lambda_310,+/- = H + I Lambda_metric,+/- P,
+Q_310 Lambda_310,+/- + Lambda_310,+/- Q_310 = 1_310,
+P Lambda_310,+/- I = Lambda_metric,+/-.
+```
+
+The advanced/retarded support and complementary-degree adjoint relation are
+preserved. The certificate and independent replay are
+[`NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1`](../d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json)
+and its [result-boundary report](../d_quotient_classical/reports/nariai-repaired-310-all-row-green-transfer.md).
+This closes one curved single-background `G2` gate; it is not a uniform
+open-family theorem. No open `G3` background family has yet been proved to
+satisfy the analytic hypotheses uniformly.
 
 The earlier conformal-cylinder construction remains the motivating detour
 example:
@@ -170,9 +190,9 @@ The abstract result is conditional: it does **not** establish endpoint Green
 hyperbolicity on a proposed background. It does not cover timelike boundaries,
 interactions, a Hadamard state, time-ordered products, or the quantum master
 equation. The surviving $H^4$ classes are centered deformation classes, not
-one-particle gravitons. The second non-Berger detour consumer is now present,
-but uniform `G3` background dependence and timelike-boundary domains remain
-open.
+one-particle gravitons. Flat Minkowski and curved Nariai now supply two
+non-Berger consumers, but uniform `G3` background dependence and
+timelike-boundary domains remain open.
 
 ## 7. One useful question for adjacent experts
 
@@ -187,8 +207,8 @@ source papers: arXiv:2207.04069v2; arXiv:math/0606401v2
 project source: Paper 8 artifact-ready snapshot and current master
 verification: commands in section 3
 dependency tag: LORENTZIAN-CAUSAL
-generality level: ABSTRACT_CONDITIONAL_THEOREM; TWO_G2_CONSUMERS
-lifecycle state: ABSTRACT_THEOREM_AND_SECOND_NONCYLINDER_CONSUMER_CERTIFIED
+generality level: ABSTRACT_CONDITIONAL_THEOREM; THREE_SCOPED_G2_CONSUMERS
+lifecycle state: ABSTRACT_THEOREM_AND_THREE_SCOPED_CONSUMERS_CERTIFIED
 claim flag: ABSTRACT_CAUSAL_TRANSFER_CERTIFIED
 open fields: G3 family; boundary version; Hadamard transfer
 ```

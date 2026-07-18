@@ -87,8 +87,9 @@ symmetry with a nonzero charge.
 
 - **Cause runs from past to future.** If a source is switched on tomorrow,
   the tested classical equations do not let it change a detector today. This
-  has been checked for the complete gravitational system and for the version
-  containing the matter clock—not merely for one convenient equation.
+  has been checked for the complete gravitational system, for the version
+  containing the matter clock, and for a second curved universe with a
+  different geometry—not merely for one convenient equation.
 - **There are physical clocks.** Healthy matter fields provide an internal
   reading that changes steadily. In a particular zero-total-charge version of
   the closed universe, shifting the time label of the entire history can be a
@@ -108,9 +109,12 @@ symmetry with a nonzero charge.
   Berger matter clock. The response obeys the expected causal rule, its
   clock-defined frequency is unchanged by coordinate, local-scale,
   electromagnetic-gauge and overall-time relabelings, and one exact fixture
-  gives \(1+z=2\). The present source and readout are spread over the compact
-  spherical space; localized emitter and receiver apparatus, recoil,
-  backreaction and phenomenology remain open.
+  gives \(1+z=2\). A separate observer construction now has localized,
+  conserved emitters near two receivers and two distinguishable leading
+  detector records. It does not yet combine those local records into the
+  complete redshift comparison: the common preparation, full apparatus
+  comparison rule, evaluated recoil, backreaction and phenomenology remain
+  open.
 - **The larger theory also has extra classical wave directions.** Two extra
   directions occur in each of the tested axial and polar wave families at the
   equation level. In the axial family, the direct spacetime current between
@@ -130,7 +134,14 @@ symmetry with a nonzero charge.
   order for the combined time-and-clock rotation that preserves the
   background. The complete first nonlinear electromagnetic coupling also
   passes. This is not yet a theorem for an unmodified global time shift, every
-  higher interaction, or a localized light experiment.
+  higher interaction, or a complete localized redshift experiment.
+- **Static black holes have entered the model.** An exact family of spherical
+  vacuum geometries contains regular black-hole and cosmological horizons,
+  including Einstein-like and genuinely extra fourth-order members. On the
+  static family a consistently normalized time generator gives exact energy,
+  entropy and a first law at every simple horizon. Time-dependent
+  perturbations, horizon flux, ringdown, stability and Hawking radiation have
+  not yet passed.
 - **Every statement has a computational receipt.** Exact symbolic programs
   derive and check the large identities. Separate verifiers, broken-input
   tests, content hashes and clean rebuilds record what was proved and prevent
@@ -141,18 +152,20 @@ This is a real but incomplete mathematical universe. It has spacetime,
 classical causal propagation, clocks, classical electromagnetic and
 gravitational wave directions, extra fourth-order axial and polar equation
 directions in a separate compact gravity-and-electromagnetism setting, and a
-first controlled interaction layer. It does not yet have a certified relational
-redshift with localized endpoints, a physical mass-generation mechanism,
-electrons, non-Abelian gauge fields, quantum particles, a unified
-gauge--matter sector, gravitational lensing, black-hole boundaries, a
-scattering experiment, or a dark-matter or dark-energy prediction.
+first controlled interaction layer. It also has static black-hole backgrounds
+with an exact thermodynamic law. It does not yet have a complete relational
+redshift comparison with localized endpoints, a physical mass-generation
+mechanism, electrons, non-Abelian gauge fields, quantum particles, a unified
+gauge--matter sector, gravitational lensing, a dynamical black-hole phase
+space, a scattering experiment, or a dark-matter or dark-energy prediction.
 
-The map below shows how these pieces depend on one another. Green boxes are
-foundations that have passed their stated mathematical tests, amber boxes are
-areas where real results exist but the larger physical claim is not finished,
-and gray boxes are still open. The arrows matter: for example, a classical
-wave is a prerequisite for a quantum particle, but it is not itself a quantum
-particle. Behind every green or amber box is a named computational receipt.
+The map below shows how these pieces depend on one another. Green boxes mark
+something demonstrated in a declared setting, gold boxes mark a working
+example whose larger physical claim is unfinished, red boxes mark a precise
+limit found by the calculation, and gray boxes mark the next frontier. The
+arrows matter: for example, a classical wave is a prerequisite for a quantum
+particle, but it is not itself a quantum particle. Behind every demonstrated,
+working, or limiting result is a named computational receipt.
 
 ![How the candidate universe is being built](../certificate_graph/universe-building-dag.png)
 
@@ -211,8 +224,10 @@ source-response rule is retarded.
 The complete free pure-Weyl calculation passes this classical causality test
 across all 386 linked parts of its gravitational bookkeeping system. The
 clock-coupled Berger universe has a separate causal result across all 54 parts
-of its gauge-fixed system. In both cases the retarded response is confined to
-the causal future and the constraints propagate with it.
+of its gauge-fixed system. A geometrically different Nariai universe now has
+the same result across all 310 parts of its repaired gravitational system. In
+all three cases the retarded response is confined to the causal future and
+the constraints propagate with it.
 
 We have also extracted the reusable mathematical rule behind these examples:
 if a larger causal system is reduced by local operations that preserve its
@@ -309,9 +324,11 @@ observable is the ratio of the frequencies measured by the two clocks, stated
 without relying on arbitrary coordinate labels. The present Berger fixture
 passes this test for an actual retarded Maxwell signal and clock-defined,
 spatially global observers, with an exact ratio \(1+z=2\). The source acts
-only during a bounded time interval, so the signal is causal, but it is spread
-across the compact spherical space. Turning it into localized emitter and
-receiver apparatus, including recoil and backreaction, is the next rung.
+only during a bounded time interval, so the signal is causal. A complementary
+construction now supplies two receiver-adjacent localized emitters and two
+independent leading detector records. The next rung is to place both
+preparations in one common emission experiment, form the complete physical
+frequency comparison, and include recoil and backreaction.
 
 ### Gravitational lensing
 
@@ -342,6 +359,15 @@ artifact. Its boundary conditions, conserved charges, causal perturbations,
 thermodynamic quantities and stability must all be controlled. A metric with a
 zero in one coefficient is not by itself a physical black hole.
 
+The current static result passes several—but not all—of those tests. An exact
+spherical pure-Weyl family is classified within the stated radial ansatz. It
+has horizon-regular coordinates, finite curvature at every simple horizon,
+and an explicit non-Einstein member with black-hole and cosmological horizons.
+A residual-symmetry-compatible normalization produces an integrable static
+energy, Wald entropy and the exact first law at every horizon. The result is
+still confined to a static parameter family: causal perturbations, horizon
+flux, ringdown, stability and quantum radiation remain future rungs.
+
 ### Quantum gravity
 
 The quantum gauge identities must remain consistent after regularization and
@@ -366,22 +392,22 @@ quantum theory.
 
 | Familiar feature | Where the project stands | Decisive next test |
 |---|---|---|
-| **Spacetime and curvature** | **Scoped pass.** Exact boundary-free spherical and Berger backgrounds solve their declared classical equations. | Extend causal control to broader globally hyperbolic backgrounds. |
-| **Causality** | **Scoped pass.** Retarded responses in the complete 386-part gravity system and 54-part clock system do not let future sources alter the past. | Construct the corresponding global quantum state and quantum causality theorem. |
-| **Clocks and time dilation** | **Partial.** A healthy matter clock changes internally while total time shift can remain gauge in the fixed-coupling, linear, zero-charge sector. | Compare two physical clocks and calculate an observable time-dilation law. |
-| **Gravitational redshift** | **Scoped partial pass.** An actual retarded Maxwell response with a source bounded in time and a gauge-independent clock-defined frequency ratio is certified; one exact spatially global fixture gives \(1+z=2\). | Localize emitter and receiver, construct their full physical comparison rule, include recoil and backreaction, then test phenomenology. |
-| **Classical light** | **Partial.** Standard electromagnetic waves occur, and the complete first local gravity--clock--Maxwell interaction passes its exact gauge identities. | Transfer that interaction through the causal reduction and build localized sources, detectors, energy flux and boundary conditions. |
-| **Physical mass scale and massive matter** | **Open.** The conformal theory has no certified mass-generation mechanism or stable massive excitation. \(E=mc^2\) is a later relativistic consistency check, not the missing mechanism. | Generate a physical scale, construct a stable massive mode, and verify its causal dynamics and relativistic mass shell. |
-| **Electrons and charged matter** | **Open.** No certified charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
-| **Non-Abelian gauge fields and chiral matter** | **Open.** The certified matter content does not yet contain a Yang--Mills gauge group or chiral fermion spectrum resembling the strong and weak interactions. | Build the causal BV complex, physical pairing and stable interactions for a non-Abelian gauge group and chiral representations. |
-| **Unified gauge--matter sector (GUT candidate)** | **Open, long-range target.** No unified group, anomaly-free matter representation, breaking mechanism or low-energy recovery theorem has been selected. This would initially be a GUT coupled to Weyl gravity, not a theory unifying gravity itself. | Find a viable group and chiral matter sector, cancel all relevant anomalies, generate and break the physical scale, and recover Standard Model particles and interactions. |
-| **Gravitational waves** | **Partial.** Standard linear gravitational waves have a nonzero pairing, and the pure-gravity complex propagates causally. Separate compact axial and polar families each contain two additional equation directions; the axial extra pair has passed a direct spacetime-current test. | Complete the polar current and final physical quotient, impose causal boundaries, and produce measurable waveforms, flux and detector response. |
-| **Gravitational lensing** | **Open, with geometric ingredients present.** Curved spacetime and light cones exist, but no certified lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
-| **Quantum particles** | **Open.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature classes are not particles. | Construct a global quantum state, physical positive pairing and incoming/outgoing particle interpretation. |
-| **Interactions** | **Partial.** The gravity--clock system and mixed gravity--clock--light operations pass their declared identities through the third tested order. A nonzero interaction survives one exact reduction, and an enlarged 46-part cyclic bookkeeping system has been built for the branch test. | Decide whether that interaction is an invariant physical effect, separate its Einstein-like and extra fourth-order outputs, then test higher orders and global evolution. |
-| **Black holes** | **Open in this certified pipeline.** No horizon phase space, boundary charge or stability theorem has been imported into the universe. | Select a black-hole background and certify its horizons, causal perturbations, charges, entropy and stability. |
-| **Quantum gravity** | **Early groundwork only.** Candidate anomaly types and the basic local short-distance wave structure are partly classified. Exact formal transport through the clock system is known, but its distributional wavefront safety is not; there is no coupled Hadamard state or restored quantum master equation. | Prove or obstruct the microlocal transport, then compute anomaly coefficients, restore the quantum gauge identity and construct the global quantum theory. |
-| **Cosmology, dark matter and dark energy** | **Open.** The current work establishes consistency machinery, not a fitted cosmological model. | Build stable cosmological and galaxy backgrounds, derive observables, then compare them with data. |
+| **Spacetime and curvature** | **Demonstrated in the starting settings.** Exact boundary-free spherical and Berger backgrounds solve their declared classical equations. | Extend causal control to broader globally hyperbolic backgrounds. |
+| **Causality** | **Demonstrated in three settings.** Retarded responses in the complete 386-part spherical-universe system, 54-part clock system and 310-part Nariai system do not let future sources alter the past. | Prove stability across a continuous family of less symmetric spacetimes and construct the corresponding quantum state. |
+| **Clocks and time dilation** | **Working example.** A healthy matter clock changes internally while total time shift can remain gauge in the fixed-coupling, linear, zero-charge sector. | Compare two physical clocks and calculate an observable time-dilation law. |
+| **Gravitational redshift** | **Working example.** A causal, clock-defined global signal gives \(1+z=2\); separate localized emitters now produce two independent leading receiver records. | Join the localized preparations into one physical frequency comparison, then include recoil, backreaction and phenomenology. |
+| **Classical light** | **Working example.** Standard electromagnetic waves occur, their first gravity-and-clock interaction is consistent, and localized conserved emitters have causal leading detector responses. | Complete the physical detector comparison, energy flux, recoil and boundary conditions. |
+| **Physical mass scale and massive matter** | **Next frontier.** The conformal theory has no demonstrated mass-generation mechanism or stable massive excitation. \(E=mc^2\) is a later relativistic consistency check, not the missing mechanism. | Generate a physical scale, construct a stable massive mode, and verify its causal dynamics and relativistic mass shell. |
+| **Electrons and charged matter** | **Next frontier.** No demonstrated charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
+| **Non-Abelian gauge fields and chiral matter** | **Next frontier.** The demonstrated matter content does not yet contain a Yang--Mills gauge group or chiral fermion spectrum resembling the strong and weak interactions. | Build the causal gauge complex, physical pairing and stable interactions for a non-Abelian gauge group and chiral representations. |
+| **Unified gauge--matter sector (GUT candidate)** | **Next frontier, long-range target.** No unified group, anomaly-free matter representation, breaking mechanism or low-energy recovery theorem has been selected. This would initially be a GUT coupled to Weyl gravity, not a theory unifying gravity itself. | Find a viable group and chiral matter sector, cancel all relevant anomalies, generate and break the physical scale, and recover Standard Model particles and interactions. |
+| **Gravitational waves** | **Working example.** Standard linear gravitational waves have a nonzero comparison rule, and the pure-gravity system propagates causally. Separate compact wave families each contain two additional directions; one extra pair has passed a direct spacetime-current test. | Complete the remaining current and final physical reduction, impose causal boundaries, and produce measurable waveforms, flux and detector response. |
+| **Gravitational lensing** | **Next frontier, with geometric ingredients present.** Curved spacetime and light cones exist, but no demonstrated lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
+| **Quantum particles** | **Next frontier.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature patterns are not particles. | Construct a global quantum state, physical positive probability rule and incoming/outgoing particle interpretation. |
+| **Interactions** | **Working example.** The gravity--clock system and its coupling to light pass the first three declared interaction layers. The remaining interaction can be removed at the first tested derivative levels, so its invariant physical meaning is still undecided. | Complete the next derivative test, separate familiar and extra gravity-wave outputs, then test higher orders and global evolution. |
+| **Black holes** | **Static sector demonstrated.** A classified spherical family has regular simple horizons; a symmetry-compatible static generator gives exact energy, entropy and the first law. | Build the time-dependent horizon phase space, causal exterior propagation, flux, ringdown and stability. |
+| **Quantum gravity** | **Working foundations.** Candidate anomaly types, local short-distance wave structure, a causal curvature-observable bracket and the corresponding free observable algebra are constructed in scoped settings. There is still no physical global vacuum, interacting quantum product or restored quantum gauge identity. | Construct a compatible global state, complete anomaly coefficients and restore or obstruct the quantum gauge identity. |
+| **Cosmology, dark matter and dark energy** | **Next frontier.** The current work establishes consistency machinery, not a fitted cosmological model. | Build stable cosmological and galaxy backgrounds, derive observables, then compare them with data. |
 
 ## If the universe differs from standard physics
 

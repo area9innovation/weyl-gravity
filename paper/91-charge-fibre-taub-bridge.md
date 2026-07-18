@@ -9,7 +9,7 @@ The research programme was commissioned and directed by Asger Alstrup Palm
 orchestrator and corresponding human contact, but claims no technical
 contribution.
 
-Working manuscript, 17 July 2026. The theorem-frozen scope is
+Working manuscript, 18 July 2026. The theorem-frozen scope is
 `LOCAL-ALGEBRAIC` and `REDUCED-MODE`. Circulation remains conditional on the
 documented final human review described below.
 
@@ -50,9 +50,10 @@ The result exhibits a sharp nonlinear distinction:
 \]
 
 The theorem concerns a formal second-order jet, not an exact family or an
-all-orders solution. Classification of the full mixed moment-map zero cone is
-left as the next theorem rather than imposed as a prerequisite for the
-present result.
+all-orders solution. Post-freeze successor certificates now classify the
+complete finite-harmonic generic $k=0$ zero cone, one fixed-$|k|$
+opposite-momentum cone, and the full exceptional $\ell=1,k=0$ all-$m$ pure
+cone. They sharpen the frontier without changing Theorems A and B below.
 
 ## 1. Introduction
 
@@ -113,8 +114,8 @@ balanced mixed direction passes and extends through second order.
 This paper does **not** delay that conclusion until the entire indefinite
 mixed cone is classified. The full common zero locus of
 $\left(\mu_H,\mu_{P_x},\mu_{J_1},\mu_{J_2},\mu_{J_3}\right)$, including
-opposite-momentum standing waves and exceptional/global blocks, is the next
-theorem.
+opposite-momentum standing waves and exceptional/global blocks, is a
+post-freeze successor programme summarized in Section 10.
 
 ### Main theorems
 
@@ -1051,12 +1052,14 @@ equations are closed by a constant-determinant Noether argument.
 
 ## 10. Why the full nonlinear cone is the next theorem
 
-The current paper proves a general no-go on one large linear subspace and an
-existence result on one nontrivial mixed ray. That is already a coherent
-nonlinear statement. Completing the full mixed cone would answer a different
-classification problem.
+### Post-freeze enlargement of the second-order cone
 
-The next theorem should determine the common zero locus
+The frozen theorem proves a general no-go on one large linear subspace and an
+existence result on one nontrivial mixed ray. Subsequent certificates answer
+three parts of the larger classification problem without altering that
+theorem boundary.
+
+The relevant common zero locus is
 
 \[
 \mathcal Z_2=
@@ -1064,18 +1067,22 @@ The next theorem should determine the common zero locus
 \mu_{J_1}(u)=\mu_{J_2}(u)=\mu_{J_3}(u)=0\}
 \]
 
-and then test the quadratic source on its strata. The natural order is:
+and the landed results are:
 
-1. classify the full $k=0$ cone using Gram-normalized occupation matrices;
-2. classify opposite-momentum standing-wave balances;
-3. incorporate exceptional, homogeneous, twist, charge, and Wilson-line
-   blocks;
-4. determine which surviving second-order jets encounter cubic or higher
-   obstructions.
+1. every finite-harmonic generic $k=0$ tangent on this zero locus has a
+   smooth, spatially periodic, finite-quasiperiodic second-order correction;
+2. for one generic $\ell\geq2$ and fixed nonzero $|k|$, the complete
+   both-momentum-sign, all-$m$, both-parity zero cone has a smooth-global
+   second-order correction, allowing secular time dependence at resonances;
+3. every nonzero exceptional $\ell=1,k=0$ axial-plus-polar all-$m$ pure
+   tangent is obstructed: distinct-$m$ interference cannot cancel its
+   positive-positive resonance.
 
-None of those steps is needed to validate Theorems 5.1 and 8.1. Conversely,
-the single balanced extension must not be extrapolated into a general closure
-theorem.
+The remaining cone problem includes multiple $|k|$ fibres, infinite-mode
+Sobolev completion, homogeneous/twist/Wilson-line/charge mixtures, and the
+quadratic-source disposition of their surviving strata. None of the
+post-freeze steps is needed to validate Theorems 5.1 and 8.1, and no scoped
+second-order extension is extrapolated into an all-orders closure theorem.
 
 ## 11. Scope boundary
 
@@ -1089,12 +1096,21 @@ The established statements are:
 - one all-stabilizer-zero Einstein--extra $k=0$ tangent;
 - one complete explicit second-order correction for that tangent.
 
+Post-freeze certified successors additionally establish:
+
+- complete finite-harmonic generic $k=0$ second-order extension on the full
+  stabilizer-zero cone;
+- smooth-global second-order extension on one fixed-$|k|$
+  opposite-momentum cone, with boundedness not claimed;
+- the full exceptional $\ell=1,k=0$ all-$m$ pure-sector resonance no-go.
+
 The following remain open:
 
-- the full mixed moment-map zero cone;
+- mixed cones involving multiple $|k|$ fibres or infinite-mode completion;
 - general mixed second-order closure;
 - integration of the certified jet to an exact or all-orders family;
-- exceptional and generalized global blocks;
+- homogeneous, twist, Wilson-line, charge, and other generalized global
+  mixtures not covered by the all-$m$ exceptional theorem;
 - a final background-stabilizer quotient or relational observable;
 - Lorentzian causal propagation, asymptotic scattering, particles,
   quantization, ghosts, and unitarity.
@@ -1118,6 +1134,9 @@ algebraic arithmetic. The principal certificates are:
 | generic moment-map bridge and pure-extra no-go | `bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json` |
 | mixed zero-locus fixture and off-shell preflight | `bridge/certificates/einstein_maxwell_weyl_mixed_moment_map_zero_locus.json` |
 | complete balanced correction | `bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json` |
+| complete finite-harmonic generic $k=0$ cone | `bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json` |
+| fixed-$|k|$ opposite-momentum cone | `bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json` |
+| exceptional $\ell=1$ all-$m$ pure no-go | `bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json` |
 
 Fast verification:
 
@@ -1210,5 +1229,6 @@ proof boundaries, source citations, and final text.
 **Frozen claim flag:**
 `PURE_EXTRA_GENERIC_NO_GO_AND_ONE_BALANCED_MIXED_SECOND_ORDER_EXTENSION_CERTIFIED`.
 
-**Next theorem:** full $k=0$ common moment-map zero cone, followed by
-opposite-momentum standing-wave and exceptional/global strata.
+**Next theorem:** dispose the remaining multi-$|k|$, infinite-mode, and
+homogeneous/twist/charge/Wilson-line mixed strata, then test higher-order
+integrability of the certified second-order cones.
