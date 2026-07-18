@@ -34,6 +34,31 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("INPUT_BLOCKED", entry["claim_boundary"])
         self.assertIn("q4 is not authorized", entry["claim_boundary"])
 
+    def test_product_branch_dictionary_is_sectoral_only(self):
+        value = atlas.build()["entries"]
+        axial = next(item for item in value if "generic_axial_relative_branch_map" in item["id"])
+        polar = next(item for item in value if "generic_polar_relative_branch_map" in item["id"])
+        self.assertEqual(axial["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(axial["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("not the all-sector", axial["claim_boundary"])
+        self.assertEqual(polar["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("Cyclic BV compatibility", polar["claim_boundary"])
+
+    def test_abd_source_matrix_is_not_an_obstruction_verdict(self):
+        entry = next(item for item in atlas.build()["entries"] if "homogeneous_abd" in item["id"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("on-shell map lifecycle", entry["claim_boundary"])
+        self.assertIn("No individual mode is declared obstructed", entry["claim_boundary"])
+
+    def test_exceptional_solution_cofiber_does_not_activate_bridge_two(self):
+        entry = next(item for item in atlas.build()["entries"] if "exceptional_ell1_k0_solution_cofiber" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
+        self.assertIn("does not activate cyclic Bridge 2", entry["claim_boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()

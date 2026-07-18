@@ -215,7 +215,7 @@
       }
     },
     {
-      "claim_boundary": "This is one REDUCED-MODE axial ell=2,m=0,k=0 sum-frequency source block on the compact product background. Its exact second-order correction is not a cyclic L_infinity field redefinition. Even outputs, conjugate/difference frequencies, the complete real tangent, final residual descent, causal propagation and the Berger retained carrier remain separate or NO_CERTIFIED_MAP.",
+      "claim_boundary": "This is one REDUCED-MODE axial ell=2,m=0,k=0 sum-frequency source block on the compact product background. Its exact second-order correction is not a cyclic L_infinity field redefinition, and the polar input leg still lacks cyclic BV compatibility. Even outputs, conjugate/difference frequencies, the complete real tangent, final residual descent, causal propagation and the Berger retained carrier remain separate or NO_CERTIFIED_MAP.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -228,6 +228,11 @@
           "path": "bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_EE_ELL2_SOURCE_AND_CORRECTION",
           "sha256": "1355b39e523ba4385c8871a4a02772ed32920bede920b6242d4c5068ce44fbcc"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "9437fe3f96ec3a375b05cbb3c4300ecd56530d3c71c77831cc3f536acb710cf6"
         },
         {
           "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
@@ -356,10 +361,296 @@
         "parity": "all",
         "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell"
       }
+    },
+    {
+      "claim_boundary": "This is a same-background generic-axial derived cofiber and action-pairing map. It is a sectoral Bridge-1 input, not the all-sector EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 and not a Berger crosswalk. No complete q2/q3 relative morphism, cohomology operation or cyclic deformation verdict is promoted.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "9437fe3f96ec3a375b05cbb3c4300ecd56530d3c71c77831cc3f536acb710cf6"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+        }
+      ],
+      "id": "nonlinear.product.bridge1.generic_axial_relative_branch_map",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The q-primary Einstein shells and p-primary extra shell are explicitly separated.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The action-derived Einstein and extra blocks are orthogonal, with inertias (1,1) and (2,0).",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No complete all-input generic axial resonance table is certified.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The generic axial cofiber is certified, but its complete branchwise quadratic obstruction map has not been assembled.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product causal Green carrier is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No complete smooth-secular relative obstruction map is certified.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "Only selected quadratic source and moment-map blocks are certified; the complete generic map is open.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "generic axial Fourier-polynomial coefficient complex and its reduced solution module",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": ">=2",
+        "k": "2*pi*n/L, every n in Z including zero",
+        "m": "all",
+        "omega": "q-primary Einstein shells and p-primary extra shell",
+        "parity": "axial",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This is a same-background generic-polar solution cofiber with a certified direct pairing. Cyclic BV compatibility of the polar chain map and final residual descent are open, so it does not activate a cyclic relative L_infinity theorem or the global Bridge-1 gate.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "9437fe3f96ec3a375b05cbb3c4300ecd56530d3c71c77831cc3f536acb710cf6"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+        }
+      ],
+      "id": "nonlinear.product.bridge1.generic_polar_relative_branch_map",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The q-primary Einstein shells and p-primary extra shell are explicitly separated.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The direct action-derived polar Einstein/extra pairing is nondegenerate and orthogonal on the reduced solution modules.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Cyclic BV compatibility and the complete all-input polar resonance table remain open.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The polar solution cofiber is certified, but cyclic BV compatibility and the complete quadratic obstruction map remain open.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product causal Green carrier is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No complete smooth-secular relative obstruction map is certified.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The polar source fixtures do not yet constitute the complete relative obstruction map.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "generic polar gauge-fixed coefficient system and its reduced solution module",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": ">=2",
+        "k": "2*pi*n/L, every n in Z including zero",
+        "m": "all",
+        "omega": "q-primary Einstein shells and p-primary extra shell",
+        "parity": "polar",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This certifies a partial D^2E=q2 source/compatibility matrix on the compact product background. Its homogeneous global input leg has only an on-shell map lifecycle. No individual mode is declared obstructed: twist position and velocity may contribute to the same extra-shell channel. Smooth-secular, causal, final-residual, observational and quantum conclusions remain open or NO_CERTIFIED_MAP.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ABD_ELL2_EXTRA_RESONANCE_MATRIX",
+          "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "9437fe3f96ec3a375b05cbb3c4300ecd56530d3c71c77831cc3f536acb710cf6"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+        }
+      ],
+      "id": "nonlinear.product.homogeneous_abd_times_ell2_extra.partial_resonance_matrix",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The output lies on the generic ell=2 extra shell omega_e=4/sqrt(3).",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The exact axial and polar adjoint bases define the displayed compatibility polynomials.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Within each parity and polarization, the a,b,d projected polynomial columns have exact rank three.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "All a,b,d compatibility columns are exact, but twist position/velocity columns and the simultaneous zero locus remain missing.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product retarded complex is certified.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Secular sufficiency requires the complete operator and is not inferred from the projected source matrix.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The stabilizer and complete bounded-resonance common zero locus has not been solved.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "homogeneous generalized-zero Einstein block crossed with the generic ell=2 extra-primary block",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 2,
+        "ell": "0 x 2 -> 2",
+        "k": 0,
+        "m": "m=0 direct fixtures; every m by SO(3) equivariance",
+        "omega": "generalized zero crossed with omega_e=4/sqrt(3)",
+        "parity": "axial and polar output sectors kept separate",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber only at ell=1,k=0. The exceptional off-shell ghost-field-equation-identity chain map, nonzero-k cofiber and final residual descent remain open, so this row does not activate cyclic Bridge 2.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_SOLUTION_COFIBER_V1",
+          "sha256": "b56faf37e92d12f37b54c2c5c0224251a73669171a067adb5082f7d71956960d"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "9437fe3f96ec3a375b05cbb3c4300ecd56530d3c71c77831cc3f536acb710cf6"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+        }
+      ],
+      "id": "nonlinear.product.bridge1.exceptional_ell1_k0_solution_cofiber",
+      "mode_data": {
+        "dispersion": {
+          "statement": "CRT projectors separate twist omega^2=0, extra omega^2=4/3 and standard omega^2=4 at k=0.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The extra Gram matrix diag(16,3) is nonradical and orthogonal to the standard image.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No complete exceptional nonlinear resonance table is certified.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The exact solution cofiber does not supply the exceptional off-shell q1/q2 relative morphism.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product causal Green carrier is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No exceptional smooth-secular relative obstruction map is certified.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The solution cofiber alone does not define the complete exceptional quadratic obstruction map.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "carrier": "exceptional local-gauge-reduced axial and polar ell=1,k=0 solution modules",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+        "degree": 1,
+        "ell": 1,
+        "k": 0,
+        "m": "all three real SO(3) components",
+        "omega": "twist omega^2=0 axially, extra omega^2=4/3, standard omega^2=4",
+        "parity": "axial and polar kept separate",
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
+      }
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "7f37e435d703ab7e6dc1ab284e2726d152e0c76be304e5307717477bb03a76f9",
+  "generated_by_sha256": "909a6a362524339cf88d5056467f2ba0c6e1d9d92e9f97182038edb9e483aa93",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

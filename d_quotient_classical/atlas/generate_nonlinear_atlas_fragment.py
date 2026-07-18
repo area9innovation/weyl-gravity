@@ -24,6 +24,9 @@ CERTS = {
     "branch_projector": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "axial_ee_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
     "branch_importer": ROOT / "d_quotient_classical/certificates/BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1.json",
+    "relative_branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+    "abd_extra_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+    "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
 }
 
 
@@ -126,6 +129,52 @@ def entries() -> list[dict[str, Any]]:
         "k": "NO_CERTIFIED_MAP pending bridge 1",
         "omega": "NO_CERTIFIED_MAP pending bridge 1",
     }
+    product_common = {
+        "theory": "Einstein-Maxwell source and Weyl-Maxwell target",
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
+    }
+    product_axial_scope = {
+        **product_common,
+        "carrier": "generic axial Fourier-polynomial coefficient complex and its reduced solution module",
+        "degree": 1,
+        "parity": "axial",
+        "ell": ">=2",
+        "m": "all",
+        "k": "2*pi*n/L, every n in Z including zero",
+        "omega": "q-primary Einstein shells and p-primary extra shell",
+    }
+    product_polar_scope = {
+        **product_common,
+        "carrier": "generic polar gauge-fixed coefficient system and its reduced solution module",
+        "degree": 1,
+        "parity": "polar",
+        "ell": ">=2",
+        "m": "all",
+        "k": "2*pi*n/L, every n in Z including zero",
+        "omega": "q-primary Einstein shells and p-primary extra shell",
+    }
+    abd_scope = {
+        **product_common,
+        "carrier": "homogeneous generalized-zero Einstein block crossed with the generic ell=2 extra-primary block",
+        "degree": 2,
+        "parity": "axial and polar output sectors kept separate",
+        "ell": "0 x 2 -> 2",
+        "m": "m=0 direct fixtures; every m by SO(3) equivariance",
+        "k": 0,
+        "omega": "generalized zero crossed with omega_e=4/sqrt(3)",
+    }
+    exceptional_scope = {
+        **product_common,
+        "carrier": "exceptional local-gauge-reduced axial and polar ell=1,k=0 solution modules",
+        "degree": 1,
+        "parity": "axial and polar kept separate",
+        "ell": 1,
+        "m": "all three real SO(3) components",
+        "k": 0,
+        "omega": "twist omega^2=0 axially, extra omega^2=4/3, standard omega^2=4",
+    }
     return [
         {
             "id": "nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction",
@@ -196,8 +245,8 @@ def entries() -> list[dict[str, Any]]:
                 taub=("CERTIFIED", "The nonzero D^2E source lies in the image of the selected four-row Hessian block, so it does not reach that block's adjoint cokernel."),
                 resonance=("CERTIFIED", "The selected sum-frequency block is nonresonant and explicitly removable by a second-order correction."),
             ),
-            "evidence": _evidence("axial_ee_source", "dictionary"),
-            "claim_boundary": "This is one REDUCED-MODE axial ell=2,m=0,k=0 sum-frequency source block on the compact product background. Its exact second-order correction is not a cyclic L_infinity field redefinition. Even outputs, conjugate/difference frequencies, the complete real tangent, final residual descent, causal propagation and the Berger retained carrier remain separate or NO_CERTIFIED_MAP.",
+            "evidence": _evidence("axial_ee_source", "relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is one REDUCED-MODE axial ell=2,m=0,k=0 sum-frequency source block on the compact product background. Its exact second-order correction is not a cyclic L_infinity field redefinition, and the polar input leg still lacks cyclic BV compatibility. Even outputs, conjugate/difference frequencies, the complete real tangent, final residual descent, causal propagation and the Berger retained carrier remain separate or NO_CERTIFIED_MAP.",
         },
         {
             "id": "nonlinear.berger.bridge2.invariant_interaction_to_physical_branches",
@@ -216,6 +265,78 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
             "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
+        },
+        {
+            "id": "nonlinear.product.bridge1.generic_axial_relative_branch_map",
+            "scope": product_axial_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The generic axial cofiber is certified, but its complete branchwise quadratic obstruction map has not been assembled."),
+                    ("OPEN", "No complete smooth-secular relative obstruction map is certified."),
+                    ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
+                ),
+                dispersion=("CERTIFIED", "The q-primary Einstein shells and p-primary extra shell are explicitly separated."),
+                pairing=("CERTIFIED", "The action-derived Einstein and extra blocks are orthogonal, with inertias (1,1) and (2,0)."),
+                taub=("OPEN", "Only selected quadratic source and moment-map blocks are certified; the complete generic map is open."),
+                resonance=("OPEN", "No complete all-input generic axial resonance table is certified."),
+            ),
+            "evidence": _evidence("relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is a same-background generic-axial derived cofiber and action-pairing map. It is a sectoral Bridge-1 input, not the all-sector EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 and not a Berger crosswalk. No complete q2/q3 relative morphism, cohomology operation or cyclic deformation verdict is promoted.",
+        },
+        {
+            "id": "nonlinear.product.bridge1.generic_polar_relative_branch_map",
+            "scope": product_polar_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The polar solution cofiber is certified, but cyclic BV compatibility and the complete quadratic obstruction map remain open."),
+                    ("OPEN", "No complete smooth-secular relative obstruction map is certified."),
+                    ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
+                ),
+                dispersion=("CERTIFIED", "The q-primary Einstein shells and p-primary extra shell are explicitly separated."),
+                pairing=("CERTIFIED", "The direct action-derived polar Einstein/extra pairing is nondegenerate and orthogonal on the reduced solution modules."),
+                taub=("OPEN", "The polar source fixtures do not yet constitute the complete relative obstruction map."),
+                resonance=("OPEN", "Cyclic BV compatibility and the complete all-input polar resonance table remain open."),
+            ),
+            "evidence": _evidence("relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is a same-background generic-polar solution cofiber with a certified direct pairing. Cyclic BV compatibility of the polar chain map and final residual descent are open, so it does not activate a cyclic relative L_infinity theorem or the global Bridge-1 gate.",
+        },
+        {
+            "id": "nonlinear.product.homogeneous_abd_times_ell2_extra.partial_resonance_matrix",
+            "scope": abd_scope,
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "All a,b,d compatibility columns are exact, but twist position/velocity columns and the simultaneous zero locus remain missing."),
+                    ("OPEN", "Secular sufficiency requires the complete operator and is not inferred from the projected source matrix."),
+                    ("OPEN", "No compact-product retarded complex is certified."),
+                ),
+                dispersion=("CERTIFIED", "The output lies on the generic ell=2 extra shell omega_e=4/sqrt(3)."),
+                pairing=("CERTIFIED", "The exact axial and polar adjoint bases define the displayed compatibility polynomials."),
+                taub=("OPEN", "The stabilizer and complete bounded-resonance common zero locus has not been solved."),
+                resonance=("CERTIFIED", "Within each parity and polarization, the a,b,d projected polynomial columns have exact rank three."),
+            ),
+            "evidence": _evidence("abd_extra_source", "relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This certifies a partial D^2E=q2 source/compatibility matrix on the compact product background. Its homogeneous global input leg has only an on-shell map lifecycle. No individual mode is declared obstructed: twist position and velocity may contribute to the same extra-shell channel. Smooth-secular, causal, final-residual, observational and quantum conclusions remain open or NO_CERTIFIED_MAP.",
+        },
+        {
+            "id": "nonlinear.product.bridge1.exceptional_ell1_k0_solution_cofiber",
+            "scope": exceptional_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The exact solution cofiber does not supply the exceptional off-shell q1/q2 relative morphism."),
+                    ("OPEN", "No exceptional smooth-secular relative obstruction map is certified."),
+                    ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
+                ),
+                dispersion=("CERTIFIED", "CRT projectors separate twist omega^2=0, extra omega^2=4/3 and standard omega^2=4 at k=0."),
+                pairing=("CERTIFIED", "The extra Gram matrix diag(16,3) is nonradical and orthogonal to the standard image."),
+                taub=("OPEN", "The solution cofiber alone does not define the complete exceptional quadratic obstruction map."),
+                resonance=("OPEN", "No complete exceptional nonlinear resonance table is certified."),
+            ),
+            "evidence": _evidence("exceptional_ell1_cofiber", "relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber only at ell=1,k=0. The exceptional off-shell ghost-field-equation-identity chain map, nonzero-k cofiber and final residual descent remain open, so this row does not activate cyclic Bridge 2.",
         },
     ]
 

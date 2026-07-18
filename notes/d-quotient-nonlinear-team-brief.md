@@ -756,6 +756,27 @@ deformation nontriviality, or removal by a displayed admissible redefinition.
 The certified filtered-cyclic `ell3` obstruction is preserved and `q4` is not
 authorized.
 
+The compact-product
+`EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` is now imported by hash into
+the nonlinear atlas.  It supplies sectoral same-background generic axial and
+polar cofibers and action-derived pairings, but its own global Bridge-1 flag is
+false: polar cyclic BV compatibility, exceptional/global cofibers and final
+endpoints remain open.  Accordingly these rows are usable as scoped branch
+labels, not as the all-sector relative triangle and never as a Berger
+crosswalk.  The accompanying `a,b,d` crossed with `ell=2` extra-shell source
+matrix is also recorded: its six axial and six polar compatibility columns
+are exact and rank three per polarization, while twist columns and the joint
+stabilizer/resonance zero locus remain open.  It is partial interaction
+sourcing, not an obstruction verdict.  Neither current handoff activates even
+a scoped cyclic Bridge 2 calculation: the axial--polar source uses the polar
+leg whose cyclic BV compatibility is open, while the `a,b,d` source matrix
+uses the homogeneous global leg whose map lifecycle is only `ONSHELL_MAP_ONLY`.
+The exceptional `ell=1,k=0` update now supplies explicit CRT solution
+projectors and a nonradical extra Gram matrix `diag(16,3)`, but remains
+`ONSHELL_MAP_ONLY`; its off-shell ghost--field--equation--identity map and
+nonzero-`k` cofiber are still absent.  It therefore strengthens the atlas
+without activating cyclic Bridge 2.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
