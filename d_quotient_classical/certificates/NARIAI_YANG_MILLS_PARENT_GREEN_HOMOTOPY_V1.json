@@ -1,0 +1,287 @@
+{
+  "analytic_proof": {
+    "complex_input": "Yang--Mills detour identities M^D d^D=0 and delta^D M^D=0",
+    "existence_input": "standard global Cauchy theorem for normally hyperbolic operators on globally hyperbolic Lorentzian manifolds",
+    "homotopy_step": "QWG+W GQ=(QW+WQ)G=P G=1",
+    "principal_calculation": "sigma(delta d)=-zeta^2 on zero-forms and sigma(d delta+delta d)=-zeta^2 identity on one-forms",
+    "uniqueness_step": "QG and GQ solve the same retarded/advanced inhomogeneous problem"
+  },
+  "causal_construction": {
+    "Green_operators": "unique G_parent,+/- for the four degreewise normally hyperbolic blocks",
+    "adjoint_reversal": "Lambda_parent,+^sharp=Sigma Lambda_parent,- Sigma^{-1}, with Sigma the pairing-derived complementary-degree sign involution",
+    "chain_commutation": "Q G_parent,+/-=G_parent,+/- Q by QP=PQ and same-sided uniqueness",
+    "homotopy": "Lambda_parent,+/-=W_parent G_parent,+/-",
+    "homotopy_identity": "Q Lambda_parent,+/-+Lambda_parent,+/- Q=1",
+    "same_sided_inverse_extension": "standard extension of normally hyperbolic Green operators to past/future compact intermediate sources",
+    "support": "supp G_parent,+/- f subset J^+/- supp f"
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "the repaired rank-310 cone Green homotopy",
+      "the metric Bach Green homotopy",
+      "uniformity on an open background family",
+      "Hadamard two-point functions",
+      "nonlinear or quantum completion"
+    ],
+    "statement": "The adjoint-tractor Yang--Mills detour parent on global unit Nariai has unique advanced and retarded Green homotopies with causal support and complementary-degree adjoint reversal."
+  },
+  "dependency_ref": {
+    "artifact_id": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1",
+    "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json",
+    "sha256": "1b5104082d72a2a6397b4a668a9a1008be22e1daf7481e5de37ad4c31126cee4"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "Nariai_parent_complex_exact": true,
+    "QW_plus_WQ_equals_declared_wave": true,
+    "Q_commutes_with_wave": true,
+    "Q_squared": true,
+    "Yang_Mills_condition_exact": true,
+    "adjoint_reversal": true,
+    "advanced_retarded_existence_uniqueness": true,
+    "all_four_wave_symbols_scalar_metric": true,
+    "causal_support": true,
+    "curvature_is_lower_order": true
+  },
+  "flags": {
+    "HADAMARD_STATE": false,
+    "NARIAI_METRIC_GREEN_HOMOTOPY": false,
+    "NARIAI_PARENT_CAUSAL_SUPPORT": true,
+    "NARIAI_PARENT_DEGREEWISE_NORMAL_HYPERBOLICITY": true,
+    "NARIAI_PARENT_GREEN_HOMOTOPY": true,
+    "NARIAI_REPAIRED_310_GREEN_HOMOTOPY": false,
+    "NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1": true,
+    "NONLINEAR_EXTENSION": false,
+    "OPEN_BACKGROUND_CLASS": false,
+    "QUANTUM_CLAIM": false
+  },
+  "geometry": {
+    "background": "global unit Nariai dS2 x S2",
+    "compact_Cauchy_surface": "S1 x S2",
+    "connection": "normal adjoint-tractor connection D",
+    "connection_preserves_fibre_pairing": true,
+    "global_time_topology": "R x (S1 x S2)",
+    "globally_hyperbolic": true,
+    "yang_mills_condition": "delta^D F^D=0, equivalent here to the vanishing Bach tractor current"
+  },
+  "next_gate": "C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER",
+  "normal_hyperbolicity": {
+    "curvature_terms": "bundle curvature F^D and spacetime Ricci commutators are zeroth order",
+    "degree_blocks": [
+      "delta^D d^D on Omega0(adT)",
+      "d^D delta^D+M^D on Omega1(adT)",
+      "M^D+d^D delta^D on Omega1(adT)",
+      "delta^D d^D on Omega0(adT)"
+    ],
+    "degreewise_normally_hyperbolic": true,
+    "principal_symbol": "-g^{ab} zeta_a zeta_b times the identity in every degree"
+  },
+  "parent_complex": {
+    "abstract_Q": {
+      "entries": [
+        [
+          1,
+          0,
+          [
+            [
+              [
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          1,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          2,
+          [
+            [
+              [
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "2ba376f707b6a2a549d59a50b80e4c21ed466eb4658791077eaa5e1ab1eda360",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "backward_witness": {
+      "entries": [
+        [
+          0,
+          1,
+          [
+            [
+              [
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          2,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          3,
+          [
+            [
+              [
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "3a26f0b0f007c1a85d4b1f2a5da157999a374d6ab497809f33e66b407de7b2a5",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "bundle_ranks": [
+      15,
+      60,
+      60,
+      15
+    ],
+    "differential": [
+      "d^D",
+      "M^D=delta^D d^D-F^D dot",
+      "delta^D"
+    ],
+    "formal_self_adjoint": true,
+    "wave_anticommutator": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [
+                "delta",
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          1,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "d",
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          2,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "d",
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          3,
+          [
+            [
+              [
+                "delta",
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "3aeb5d39f379d64f7843294e9c6da2b243f4381f31adc69470ffeec85f576a00",
+      "shape": [
+        4,
+        4
+      ]
+    }
+  },
+  "result_id": "NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1",
+  "result_state": "CURVED_PARENT_CAUSAL_GREEN_HOMOTOPY_THEOREM",
+  "schema": "pure-weyl-nariai-yang-mills-parent-green-homotopy-v1",
+  "source_manifest": {
+    "covariant_completion/minimal_witness/formal_operators.py": "06800afdea13f134bb5101111127a87688cae552360321e8e5cbb88358fb5d7e",
+    "d_quotient_classical/causal_transfer/conformally_einstein_yang_mills_detour.py": "5f9b4b53dcf0d7e0806444a27fd92d2859ae280c0d34ebf0c4a3cf3c76cf43a8",
+    "d_quotient_classical/causal_transfer/nariai_yang_mills_parent_green_homotopy.py": "e005b1290a1ffc624002aec225bc147c3e2f0b9689ab88221acfba88a48b034b",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_yang_mills_parent_green_homotopy.py": "880340a7fabf92201df1a28b1b1077d7989692228db066edfdeeb71df5ae2ecb",
+    "d_quotient_classical/causal_transfer/verify_conformally_einstein_yang_mills_detour.py": "efc2af6827f2b020657a1c1c890ffd52af26a6dde3e7a0f21bf4fbb8d90f856c",
+    "d_quotient_classical/causal_transfer/verify_nariai_yang_mills_parent_green_homotopy.py": "b690394e09754854e70f3fd99f5d026daa7c6af3f15d08b078bdf61103b44b4e",
+    "d_quotient_classical/schema/nariai-yang-mills-parent-green-homotopy-v1.schema.json": "c4de4ed7694ccea807bb162c9ad6eb1becc0c7efd8f794125d1a90f746e837ab"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_yang_mills_parent_green_homotopy.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_yang_mills_parent_green_homotopy.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_yang_mills_parent_green_homotopy",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-yang-mills-parent-green-homotopy-v1.schema.json -d d_quotient_classical/certificates/NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1.json"
+  ]
+}

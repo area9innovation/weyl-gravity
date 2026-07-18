@@ -295,6 +295,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   This closes the support-local SDR, but not the Green theorem:
   [`certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json`](certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json),
   [`reports/nariai-parent-detour-mapping-cone-repair.md`](reports/nariai-parent-detour-mapping-cone-repair.md)
+- Curved parent causal input: on global unit Nariai the normal
+  adjoint-tractor connection is Yang--Mills.  The backward witness
+  `(delta^D,1,d^D)` turns the four parent degrees into twisted Hodge wave
+  operators with scalar metric principal symbol; curvature contributes only
+  lower-order endomorphisms.  Standard normally-hyperbolic uniqueness gives
+  chain-commuting advanced/retarded Green operators and causal parent
+  homotopies with the pairing-derived complementary-degree adjoint reversal.
+  The rank-310 and metric transfers remain fail-closed:
+  [`certificates/NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1.json`](certificates/NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1.json),
+  [`reports/nariai-yang-mills-parent-green-homotopy.md`](reports/nariai-yang-mills-parent-green-homotopy.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

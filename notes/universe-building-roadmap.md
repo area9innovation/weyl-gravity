@@ -171,10 +171,13 @@ parent-detour cone now closes the support-local cyclic SDR exactly: its
 eleven-dimensional ghost complement contracts pointwise, its parent saddle
 has a finite-order local inverse, and its Schur Hessian is the action Bach
 operator.  The active gate is now
-`C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`: construct retarded/advanced
-Green data for the parent block and transport it through the certified local
-SDR.  Do not reopen endpoint coefficient or field-graph fitting, or claim a
-Nariai Green homotopy before that analytic gate closes.
+`C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`.  Its causal input is now exact:
+the Yang--Mills adjoint-tractor parent has the twisted-Hodge backward witness
+and unique retarded/advanced Green homotopies on global Nariai.  What remains
+is to insert that parent homotopy into the repaired rank-310 cone and verify
+the all-row identity and metric descent.  Do not reopen endpoint coefficient
+or field-graph fitting, or promote the rank-310/metric Green flags before that
+integration closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

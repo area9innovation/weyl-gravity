@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-yang-mills-parent-green-homotopy-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_ref", "geometry", "parent_complex", "normal_hyperbolicity", "causal_construction", "exact_checks", "analytic_proof", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-yang-mills-parent-green-homotopy-v1"},
+    "result_id": {"const": "NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1"},
+    "result_state": {"const": "CURVED_PARENT_CAUSAL_GREEN_HOMOTOPY_THEOREM"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_ref": {"$ref": "#/$defs/dependency"},
+    "geometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["background", "global_time_topology", "globally_hyperbolic", "compact_Cauchy_surface", "connection", "connection_preserves_fibre_pairing", "yang_mills_condition"],
+      "properties": {
+        "background": {"const": "global unit Nariai dS2 x S2"},
+        "global_time_topology": {"const": "R x (S1 x S2)"}, "globally_hyperbolic": {"const": true},
+        "compact_Cauchy_surface": {"const": "S1 x S2"}, "connection": {"type": "string", "minLength": 1},
+        "connection_preserves_fibre_pairing": {"const": true}, "yang_mills_condition": {"type": "string", "minLength": 1}
+      }
+    },
+    "parent_complex": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bundle_ranks", "differential", "formal_self_adjoint", "abstract_Q", "backward_witness", "wave_anticommutator"],
+      "properties": {
+        "bundle_ranks": {"const": [15, 60, 60, 15]},
+        "differential": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 1}},
+        "formal_self_adjoint": {"const": true},
+        "abstract_Q": {"$ref": "#/$defs/operatorMatrix"}, "backward_witness": {"$ref": "#/$defs/operatorMatrix"},
+        "wave_anticommutator": {"$ref": "#/$defs/operatorMatrix"}
+      }
+    },
+    "normal_hyperbolicity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["degree_blocks", "principal_symbol", "curvature_terms", "degreewise_normally_hyperbolic"],
+      "properties": {
+        "degree_blocks": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 1}},
+        "principal_symbol": {"const": "-g^{ab} zeta_a zeta_b times the identity in every degree"},
+        "curvature_terms": {"type": "string", "minLength": 1}, "degreewise_normally_hyperbolic": {"const": true}
+      }
+    },
+    "causal_construction": {"$ref": "#/$defs/stringMap"},
+    "exact_checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Q_squared", "QW_plus_WQ_equals_declared_wave", "Q_commutes_with_wave", "Nariai_parent_complex_exact", "Yang_Mills_condition_exact", "all_four_wave_symbols_scalar_metric", "curvature_is_lower_order", "advanced_retarded_existence_uniqueness", "causal_support", "adjoint_reversal"],
+      "properties": {
+        "Q_squared": {"const": true}, "QW_plus_WQ_equals_declared_wave": {"const": true},
+        "Q_commutes_with_wave": {"const": true}, "Nariai_parent_complex_exact": {"const": true},
+        "Yang_Mills_condition_exact": {"const": true}, "all_four_wave_symbols_scalar_metric": {"const": true},
+        "curvature_is_lower_order": {"const": true}, "advanced_retarded_existence_uniqueness": {"const": true},
+        "causal_support": {"const": true}, "adjoint_reversal": {"const": true}
+      }
+    },
+    "analytic_proof": {"$ref": "#/$defs/stringMap"},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1", "NARIAI_PARENT_GREEN_HOMOTOPY", "NARIAI_PARENT_DEGREEWISE_NORMAL_HYPERBOLICITY", "NARIAI_PARENT_CAUSAL_SUPPORT", "NARIAI_REPAIRED_310_GREEN_HOMOTOPY", "NARIAI_METRIC_GREEN_HOMOTOPY", "OPEN_BACKGROUND_CLASS", "HADAMARD_STATE", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1": {"const": true},
+        "NARIAI_PARENT_GREEN_HOMOTOPY": {"const": true}, "NARIAI_PARENT_DEGREEWISE_NORMAL_HYPERBOLICITY": {"const": true},
+        "NARIAI_PARENT_CAUSAL_SUPPORT": {"const": true}, "NARIAI_REPAIRED_310_GREEN_HOMOTOPY": {"const": false},
+        "NARIAI_METRIC_GREEN_HOMOTOPY": {"const": false}, "OPEN_BACKGROUND_CLASS": {"const": false},
+        "HADAMARD_STATE": {"const": false}, "NONLINEAR_EXTENSION": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"],
+      "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}
+    },
+    "next_gate": {"const": "C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER"},
+    "source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "operatorTerm": {"type": "array", "prefixItems": [{"type": "array", "items": {"type": "string", "minLength": 1}}, {"type": "integer"}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 3, "maxItems": 3},
+    "operatorEntry": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "array", "items": {"$ref": "#/$defs/operatorTerm"}}], "items": false, "minItems": 3, "maxItems": 3},
+    "operatorMatrix": {
+      "type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"const": [4, 4]}, "entries": {"type": "array", "items": {"$ref": "#/$defs/operatorEntry"}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

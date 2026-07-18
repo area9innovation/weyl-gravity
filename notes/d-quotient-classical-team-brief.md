@@ -1280,6 +1280,38 @@ triangular transform.  No rank-minimality claim is made.  The next gate is
 `C_G2_NARIAI_REPAIRED_PARENT_GREEN_TRANSFER`: construct the parent Green
 witness and transport its retarded/advanced homotopies through this local SDR.
 
+The first analytic half is now frozen in
+`NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1`.  Flatness is not required.  On
+global unit Nariai the normal adjoint-tractor connection is Yang--Mills, and
+the backward witness
+
+\[
+W_{\rm parent}=(\delta^D,1,d^D)
+\]
+
+gives
+
+\[
+QW+WQ=
+\operatorname{diag}
+\bigl(
+\delta^Dd^D,
+d^D\delta^D+M^D,
+M^D+d^D\delta^D,
+\delta^Dd^D
+\bigr).
+\]
+
+Every block has principal symbol
+(-g^{ab}\zeta_a\zeta_bI); tractor curvature and spacetime Ricci commutators
+are lower order.  Global hyperbolicity therefore supplies unique
+(G_{{\rm parent},\pm}), and
+(\Lambda_{{\rm parent},\pm}=W_{\rm parent}G_{{\rm parent},\pm}) obeys the
+same-sided causal homotopy identity.  Adjoint reversal uses the
+pairing-derived degree-sign involution, not a uniform scalar sign.  The active
+gate remains the second half: insert this causal input into the repaired
+rank-310 cone and verify the all-row homotopy and metric descent.
+
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and
 nonzero stability radius, or an exact no-go witness.
