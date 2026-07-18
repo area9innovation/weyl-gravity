@@ -38,8 +38,10 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_tangent"]
         ids = {item["result_id"] for item in entry["evidence"]}
         self.assertIn("NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1", ids)
+        self.assertIn("NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1", ids)
         self.assertEqual(entry["descriptions"]["causal"], "OPEN")
         self.assertIn("207 coefficients", entry["claim_boundary"])
+        self.assertIn("unique 59-coefficient local gauge repair", entry["claim_boundary"])
 
     def test_berger_bridge_one_remains_fail_closed(self) -> None:
         entry = self.entries["classical.berger.crosswalk.retained36_to_einstein_extra"]

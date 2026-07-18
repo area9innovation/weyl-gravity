@@ -71,11 +71,18 @@ shifted-chain variation retains 207 coefficients.  The endpoint gauge defect
 contains zeroth- and second-order words, so a purely algebraic Schur
 correction cannot suffice.
 
-The next coherent classical gate is therefore
-`NARIAI_TRANSVERSE_ACTION_DERIVED_DIFFERENTIAL_SCHUR`, followed by the
-complete rank-310 SDR variation.  The atlas remains
-fail-closed: the parent identity is `CERTIFIED`, the algebraic endpoint ansatz
-is `OBSTRUCTED`, and transverse causal transfer is `OPEN`.
+The complete first-order differential screen is now solved as well.  For each
+of the nine output rows the exact coefficient map has shape `60 x 45` and
+rank 45; every augmented system has rank 45 and no free parameter.  Hence a
+unique 59-coefficient local first-order Schur correction kills the complete
+endpoint gauge defect.  This is a gauge-repair theorem, not yet an action or
+cyclic theorem.
+
+The next coherent classical gate is therefore the action-derived and cyclic
+identification of that unique correction, followed by the complete rank-310
+SDR variation.  The atlas remains fail-closed: the parent identity and unique
+first-order gauge repair are `CERTIFIED`, the algebraic endpoint ansatz is
+`OBSTRUCTED`, and transverse causal transfer is `OPEN`.
 
 ## Generator correction (2026-07-17; authoritative)
 

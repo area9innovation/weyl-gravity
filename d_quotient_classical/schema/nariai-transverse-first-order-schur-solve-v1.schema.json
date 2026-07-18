@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/nariai-transverse-first-order-schur-solve-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data",
+    "exact_checks", "flags", "next_gate", "claim_boundary",
+    "source_manifest", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "nariai-transverse-first-order-schur-solve-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "items": {"enum": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]}, "minItems": 1, "uniqueItems": true},
+    "dependency_refs": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "exact_data": {"$ref": "#/$defs/exactData"},
+    "exact_checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "flags": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 1},
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 4},
+    "verification_commands": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 4}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "rank", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}], "items": false, "minItems": 2, "maxItems": 2},
+        "rank": {"type": "integer", "minimum": 0},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["orders", "nonzero_coefficients", "entries", "sha256"],
+      "properties": {
+        "orders": {"type": "array", "items": {"type": "integer", "minimum": 0}, "uniqueItems": true},
+        "nonzero_coefficients": {"type": "integer", "minimum": 0},
+        "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/matrix"}}}},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "exactData": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ansatz", "linear_system", "unique_first_order_correction", "corrected_gauge_residual", "interpretation"],
+      "properties": {
+        "ansatz": {"type": "object", "additionalProperties": false, "required": ["operator_type", "formula", "derivative_orders", "unknowns_per_output_row", "output_rows", "total_unknowns", "equations_per_output_row", "equation_orders"], "properties": {"operator_type": {"type": "string"}, "formula": {"type": "string"}, "derivative_orders": {"type": "array", "items": {"type": "integer"}}, "unknowns_per_output_row": {"type": "integer"}, "output_rows": {"type": "integer"}, "total_unknowns": {"type": "integer"}, "equations_per_output_row": {"type": "integer"}, "equation_orders": {"type": "array", "items": {"type": "integer"}}}},
+        "linear_system": {"type": "object", "additionalProperties": false, "required": ["coefficient_map_shape", "coefficient_map_rank", "augmented_ranks", "free_parameter_counts", "equation_keys", "coefficient_map"], "properties": {"coefficient_map_shape": {"type": "array", "items": {"type": "integer"}}, "coefficient_map_rank": {"type": "integer"}, "augmented_ranks": {"type": "array", "items": {"type": "integer"}}, "free_parameter_counts": {"type": "array", "items": {"type": "integer"}}, "equation_keys": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "input_column"], "properties": {"word": {"type": "array", "items": {"type": "integer"}}, "input_column": {"type": "integer"}}}}, "coefficient_map": {"$ref": "#/$defs/matrix"}}},
+        "unique_first_order_correction": {"$ref": "#/$defs/operator"},
+        "corrected_gauge_residual": {"$ref": "#/$defs/operator"},
+        "interpretation": {"type": "object", "additionalProperties": false, "required": ["local_first_order_gauge_repair_exists", "local_first_order_gauge_repair_unique_in_complete_ansatz", "action_derived_identification", "cyclicity_with_authoritative_action_pairing", "reason_for_fail_closed_boundary"], "properties": {"local_first_order_gauge_repair_exists": {"const": true}, "local_first_order_gauge_repair_unique_in_complete_ansatz": {"const": true}, "action_derived_identification": {"const": false}, "cyclicity_with_authoritative_action_pairing": {"const": false}, "reason_for_fail_closed_boundary": {"type": "string", "minLength": 1}}}
+      }
+    }
+  }
+}

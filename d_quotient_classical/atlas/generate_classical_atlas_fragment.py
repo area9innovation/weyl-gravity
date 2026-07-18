@@ -39,6 +39,7 @@ CERTS = {
     "Nariai_incidence": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json",
     "Nariai_PBW_gate": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1.json",
     "Nariai_jet_aware_parent": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json",
+    "Nariai_first_order_schur": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
@@ -241,10 +242,10 @@ def entries() -> list[dict[str, Any]]:
         ("CERTIFIED", "The displayed tangent solves the complete linearized fixed-Lambda Einstein equations and is linearized Bach-flat."),
         ("OPEN", "No physical Lee-Wald norm or reduced pairing is assigned to this tangent."),
         ("OPEN", "No second-order Taub classification or exact nonlinear family is certified."),
-        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. Complete coordinate-derived jets through order three close the jet-aware BGG first square and parent Yang-Mills identity and determine the exact compressed PBW endpoint."),
+        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. Complete coordinate-derived jets through order three close the jet-aware BGG first square and parent Yang-Mills identity. The complete first-order local Schur gauge equation has a unique solution, but action-derived cyclic identification remains open."),
         _second(("OPEN", "No bounded correction theorem."), ("OPEN", "No smooth-secular correction theorem."), ("OPEN", "No transverse retarded SDR theorem.")),
-        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "cone"),
-        "Every curvature jet requested through order three is derived and the jet-aware BGG first square and parent Yang-Mills identity are exact. The exact shifted-chain variation has 207 coefficients and the endpoint gauge defect has zeroth- and second-order words, so an algebraic Schur correction is insufficient. The differential action-derived cyclic Schur, complete transverse SDR and causal transfer remain open.",
+        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "Nariai_first_order_schur", "cone"),
+        "Every curvature jet requested through order three is derived and the jet-aware BGG first square and parent Yang-Mills identity are exact. The exact shifted-chain variation has 207 coefficients and an algebraic Schur correction is insufficient. The complete 60-by-45 first-order map has rank 45 on every output row, yielding a unique 59-coefficient local gauge repair. Its action-derived and cyclic identification, the complete transverse SDR and causal transfer remain open.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",

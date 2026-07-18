@@ -1,0 +1,1531 @@
+{
+  "claim_boundary": "This exact calculation exhausts the complete local first-order H1-to-H1dual Schur ansatz in the declared covariant PBW frame. The 60-by-45 coefficient map has full column rank, all nine output rows are consistent, and the resulting 59-coefficient correction is unique and kills the complete transverse endpoint gauge defect. This proves local first-order gauge repair, not that the correction is the variation of the action-derived Bach Hessian or that it is cyclic for the authoritative action/Hom-bundle adjoint. The rank-310 SDR and causal transfer remain open.",
+  "dependency_refs": {
+    "jet_aware_middle_schur": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1",
+      "sha256": "1c21b2be307cc8102303aacfc90062cd4a2934c57fac9c7379e5d3a23bda5d3b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "action_identification_not_promoted": true,
+    "all_nine_rows_consistent": true,
+    "coefficient_map_full_column_rank": true,
+    "complete_first_order_ansatz": true,
+    "corrected_gauge_residual_zero": true,
+    "cyclicity_not_promoted": true,
+    "solution_unique": true
+  },
+  "exact_data": {
+    "ansatz": {
+      "derivative_orders": [
+        0,
+        1
+      ],
+      "equation_orders": [
+        0,
+        1,
+        2
+      ],
+      "equations_per_output_row": 60,
+      "formula": "Qdot=Q0+sum_a Qa nabla_a",
+      "operator_type": "H1_to_H1dual",
+      "output_rows": 9,
+      "total_unknowns": 405,
+      "unknowns_per_output_row": 45
+    },
+    "corrected_gauge_residual": {
+      "entries": [],
+      "nonzero_coefficients": 0,
+      "orders": [],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "interpretation": {
+      "action_derived_identification": false,
+      "cyclicity_with_authoritative_action_pairing": false,
+      "local_first_order_gauge_repair_exists": true,
+      "local_first_order_gauge_repair_unique_in_complete_ansatz": true,
+      "reason_for_fail_closed_boundary": "gauge closure and ansatz uniqueness do not by themselves derive the correction from the Weyl-squared action or certify the cyclic Hom-bundle adjoint"
+    },
+    "linear_system": {
+      "augmented_ranks": [
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45
+      ],
+      "coefficient_map": {
+        "entries": [
+          [
+            0,
+            18,
+            "1/2"
+          ],
+          [
+            1,
+            19,
+            "1/4"
+          ],
+          [
+            1,
+            22,
+            "1/4"
+          ],
+          [
+            1,
+            26,
+            "1/4"
+          ],
+          [
+            2,
+            43,
+            "1/2"
+          ],
+          [
+            3,
+            37,
+            "1/4"
+          ],
+          [
+            3,
+            40,
+            "-3/4"
+          ],
+          [
+            3,
+            44,
+            "1/4"
+          ],
+          [
+            4,
+            1,
+            "-1/4"
+          ],
+          [
+            4,
+            4,
+            "-1/4"
+          ],
+          [
+            4,
+            8,
+            "-1/4"
+          ],
+          [
+            5,
+            0,
+            "-1/2"
+          ],
+          [
+            6,
+            2,
+            "-1/2"
+          ],
+          [
+            7,
+            5,
+            "-1/2"
+          ],
+          [
+            8,
+            0,
+            "1/2"
+          ],
+          [
+            9,
+            1,
+            "3/4"
+          ],
+          [
+            9,
+            4,
+            "-1/4"
+          ],
+          [
+            9,
+            8,
+            "-1/4"
+          ],
+          [
+            10,
+            3,
+            "1/2"
+          ],
+          [
+            11,
+            6,
+            "1/2"
+          ],
+          [
+            12,
+            2,
+            "1/2"
+          ],
+          [
+            13,
+            3,
+            "1/2"
+          ],
+          [
+            14,
+            1,
+            "-1/4"
+          ],
+          [
+            14,
+            4,
+            "3/4"
+          ],
+          [
+            14,
+            8,
+            "-1/4"
+          ],
+          [
+            15,
+            7,
+            "1/2"
+          ],
+          [
+            16,
+            5,
+            "1/2"
+          ],
+          [
+            17,
+            6,
+            "1/2"
+          ],
+          [
+            18,
+            7,
+            "1/2"
+          ],
+          [
+            19,
+            1,
+            "-1/4"
+          ],
+          [
+            19,
+            4,
+            "-1/4"
+          ],
+          [
+            19,
+            8,
+            "3/4"
+          ],
+          [
+            20,
+            10,
+            "-1/4"
+          ],
+          [
+            20,
+            13,
+            "-1/4"
+          ],
+          [
+            20,
+            17,
+            "-1/4"
+          ],
+          [
+            21,
+            9,
+            "-1/2"
+          ],
+          [
+            22,
+            11,
+            "-1/2"
+          ],
+          [
+            23,
+            14,
+            "-1/2"
+          ],
+          [
+            24,
+            9,
+            "1/2"
+          ],
+          [
+            24,
+            19,
+            "-1/4"
+          ],
+          [
+            24,
+            22,
+            "-1/4"
+          ],
+          [
+            24,
+            26,
+            "-1/4"
+          ],
+          [
+            25,
+            10,
+            "3/4"
+          ],
+          [
+            25,
+            13,
+            "-1/4"
+          ],
+          [
+            25,
+            17,
+            "-1/4"
+          ],
+          [
+            25,
+            18,
+            "-1/2"
+          ],
+          [
+            26,
+            12,
+            "1/2"
+          ],
+          [
+            26,
+            20,
+            "-1/2"
+          ],
+          [
+            27,
+            15,
+            "1/2"
+          ],
+          [
+            27,
+            23,
+            "-1/2"
+          ],
+          [
+            28,
+            11,
+            "1/2"
+          ],
+          [
+            28,
+            28,
+            "-1/4"
+          ],
+          [
+            28,
+            31,
+            "-1/4"
+          ],
+          [
+            28,
+            35,
+            "-1/4"
+          ],
+          [
+            29,
+            12,
+            "1/2"
+          ],
+          [
+            29,
+            27,
+            "-1/2"
+          ],
+          [
+            30,
+            10,
+            "-1/4"
+          ],
+          [
+            30,
+            13,
+            "3/4"
+          ],
+          [
+            30,
+            17,
+            "-1/4"
+          ],
+          [
+            30,
+            29,
+            "-1/2"
+          ],
+          [
+            31,
+            16,
+            "1/2"
+          ],
+          [
+            31,
+            32,
+            "-1/2"
+          ],
+          [
+            32,
+            14,
+            "1/2"
+          ],
+          [
+            32,
+            37,
+            "-1/4"
+          ],
+          [
+            32,
+            40,
+            "-1/4"
+          ],
+          [
+            32,
+            44,
+            "-1/4"
+          ],
+          [
+            33,
+            15,
+            "1/2"
+          ],
+          [
+            33,
+            36,
+            "-1/2"
+          ],
+          [
+            34,
+            16,
+            "1/2"
+          ],
+          [
+            34,
+            38,
+            "-1/2"
+          ],
+          [
+            35,
+            10,
+            "-1/4"
+          ],
+          [
+            35,
+            13,
+            "-1/4"
+          ],
+          [
+            35,
+            17,
+            "3/4"
+          ],
+          [
+            35,
+            41,
+            "-1/2"
+          ],
+          [
+            36,
+            18,
+            "1/2"
+          ],
+          [
+            37,
+            19,
+            "3/4"
+          ],
+          [
+            37,
+            22,
+            "-1/4"
+          ],
+          [
+            37,
+            26,
+            "-1/4"
+          ],
+          [
+            38,
+            21,
+            "1/2"
+          ],
+          [
+            39,
+            24,
+            "1/2"
+          ],
+          [
+            40,
+            20,
+            "1/2"
+          ],
+          [
+            40,
+            27,
+            "1/2"
+          ],
+          [
+            41,
+            21,
+            "1/2"
+          ],
+          [
+            41,
+            28,
+            "3/4"
+          ],
+          [
+            41,
+            31,
+            "-1/4"
+          ],
+          [
+            41,
+            35,
+            "-1/4"
+          ],
+          [
+            42,
+            19,
+            "-1/4"
+          ],
+          [
+            42,
+            22,
+            "3/4"
+          ],
+          [
+            42,
+            26,
+            "-1/4"
+          ],
+          [
+            42,
+            30,
+            "1/2"
+          ],
+          [
+            43,
+            25,
+            "1/2"
+          ],
+          [
+            43,
+            33,
+            "1/2"
+          ],
+          [
+            44,
+            23,
+            "1/2"
+          ],
+          [
+            44,
+            36,
+            "1/2"
+          ],
+          [
+            45,
+            24,
+            "1/2"
+          ],
+          [
+            45,
+            37,
+            "3/4"
+          ],
+          [
+            45,
+            40,
+            "-1/4"
+          ],
+          [
+            45,
+            44,
+            "-1/4"
+          ],
+          [
+            46,
+            25,
+            "1/2"
+          ],
+          [
+            46,
+            39,
+            "1/2"
+          ],
+          [
+            47,
+            19,
+            "-1/4"
+          ],
+          [
+            47,
+            22,
+            "-1/4"
+          ],
+          [
+            47,
+            26,
+            "3/4"
+          ],
+          [
+            47,
+            42,
+            "1/2"
+          ],
+          [
+            48,
+            29,
+            "1/2"
+          ],
+          [
+            49,
+            30,
+            "1/2"
+          ],
+          [
+            50,
+            28,
+            "-1/4"
+          ],
+          [
+            50,
+            31,
+            "3/4"
+          ],
+          [
+            50,
+            35,
+            "-1/4"
+          ],
+          [
+            51,
+            34,
+            "1/2"
+          ],
+          [
+            52,
+            32,
+            "1/2"
+          ],
+          [
+            52,
+            38,
+            "1/2"
+          ],
+          [
+            53,
+            33,
+            "1/2"
+          ],
+          [
+            53,
+            39,
+            "1/2"
+          ],
+          [
+            54,
+            34,
+            "1/2"
+          ],
+          [
+            54,
+            37,
+            "-1/4"
+          ],
+          [
+            54,
+            40,
+            "3/4"
+          ],
+          [
+            54,
+            44,
+            "-1/4"
+          ],
+          [
+            55,
+            28,
+            "-1/4"
+          ],
+          [
+            55,
+            31,
+            "-1/4"
+          ],
+          [
+            55,
+            35,
+            "3/4"
+          ],
+          [
+            55,
+            43,
+            "1/2"
+          ],
+          [
+            56,
+            41,
+            "1/2"
+          ],
+          [
+            57,
+            42,
+            "1/2"
+          ],
+          [
+            58,
+            43,
+            "1/2"
+          ],
+          [
+            59,
+            37,
+            "-1/4"
+          ],
+          [
+            59,
+            40,
+            "-1/4"
+          ],
+          [
+            59,
+            44,
+            "3/4"
+          ]
+        ],
+        "rank": 45,
+        "sha256": "a4a0503c82fb2337283d39d35c28fc25d3965b857e345f727565a99b16e3e44a",
+        "shape": [
+          60,
+          45
+        ]
+      },
+      "coefficient_map_rank": 45,
+      "coefficient_map_shape": [
+        60,
+        45
+      ],
+      "equation_keys": [
+        {
+          "input_column": 0,
+          "word": []
+        },
+        {
+          "input_column": 1,
+          "word": []
+        },
+        {
+          "input_column": 2,
+          "word": []
+        },
+        {
+          "input_column": 3,
+          "word": []
+        },
+        {
+          "input_column": 0,
+          "word": [
+            0
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            0
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            0
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            0
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            1
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            1
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            1
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            1
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            2
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            2
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            2
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            2
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            3
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            3
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            3
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            3
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            0,
+            0
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            0,
+            0
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            0,
+            0
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            0,
+            0
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            0,
+            1
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            0,
+            2
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            0,
+            3
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            0,
+            3
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            0,
+            3
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            0,
+            3
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            1,
+            1
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            1,
+            1
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            1,
+            1
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            1,
+            1
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            1,
+            2
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            1,
+            3
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            1,
+            3
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            1,
+            3
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            1,
+            3
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            2,
+            2
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            2,
+            2
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            2,
+            2
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            2,
+            2
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            2,
+            3
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            2,
+            3
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            2,
+            3
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            2,
+            3
+          ]
+        },
+        {
+          "input_column": 0,
+          "word": [
+            3,
+            3
+          ]
+        },
+        {
+          "input_column": 1,
+          "word": [
+            3,
+            3
+          ]
+        },
+        {
+          "input_column": 2,
+          "word": [
+            3,
+            3
+          ]
+        },
+        {
+          "input_column": 3,
+          "word": [
+            3,
+            3
+          ]
+        }
+      ],
+      "free_parameter_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "unique_first_order_correction": {
+      "entries": [
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                0,
+                "-19/3"
+              ],
+              [
+                1,
+                1,
+                "19/3"
+              ],
+              [
+                1,
+                4,
+                "67/6"
+              ],
+              [
+                1,
+                8,
+                "67/6"
+              ],
+              [
+                2,
+                2,
+                "77/6"
+              ],
+              [
+                3,
+                3,
+                "-22"
+              ],
+              [
+                4,
+                1,
+                "3"
+              ],
+              [
+                4,
+                4,
+                "47/2"
+              ],
+              [
+                4,
+                8,
+                "145/6"
+              ],
+              [
+                5,
+                5,
+                "68/3"
+              ],
+              [
+                6,
+                6,
+                "-191/6"
+              ],
+              [
+                7,
+                7,
+                "1/3"
+              ],
+              [
+                8,
+                1,
+                "3"
+              ],
+              [
+                8,
+                4,
+                "34/3"
+              ],
+              [
+                8,
+                8,
+                "37/3"
+              ]
+            ],
+            "rank": 9,
+            "sha256": "d294bf76c2a6351b765936b36b51e820e25e78898d5654e47631b077be78abdf",
+            "shape": [
+              9,
+              9
+            ]
+          },
+          "word": []
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                0,
+                "-77*sqrt(2)/8"
+              ],
+              [
+                1,
+                1,
+                "241*sqrt(2)/24"
+              ],
+              [
+                1,
+                4,
+                "65*sqrt(2)/6"
+              ],
+              [
+                1,
+                8,
+                "77*sqrt(2)/8"
+              ],
+              [
+                2,
+                2,
+                "145*sqrt(2)/24"
+              ],
+              [
+                3,
+                3,
+                "-6*sqrt(2)"
+              ],
+              [
+                4,
+                1,
+                "-23*sqrt(2)/24"
+              ],
+              [
+                4,
+                4,
+                "-17*sqrt(2)/3"
+              ],
+              [
+                4,
+                8,
+                "-103*sqrt(2)/8"
+              ],
+              [
+                5,
+                5,
+                "47*sqrt(2)/8"
+              ],
+              [
+                6,
+                6,
+                "-6*sqrt(2)"
+              ],
+              [
+                7,
+                7,
+                "23*sqrt(2)/2"
+              ],
+              [
+                8,
+                1,
+                "-11*sqrt(2)/24"
+              ],
+              [
+                8,
+                4,
+                "-32*sqrt(2)/3"
+              ],
+              [
+                8,
+                8,
+                "-51*sqrt(2)/8"
+              ]
+            ],
+            "rank": 9,
+            "sha256": "16c9a9c430506a3fa71afcec5505babb87fad76d7094b1c1046c4acf9f4d8f9b",
+            "shape": [
+              9,
+              9
+            ]
+          },
+          "word": [
+            0
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                1,
+                "193*sqrt(2)/24"
+              ],
+              [
+                0,
+                4,
+                "59*sqrt(2)/6"
+              ],
+              [
+                0,
+                8,
+                "69*sqrt(2)/8"
+              ],
+              [
+                1,
+                0,
+                "-61*sqrt(2)/8"
+              ],
+              [
+                2,
+                3,
+                "-7*sqrt(2)/2"
+              ],
+              [
+                3,
+                2,
+                "169*sqrt(2)/24"
+              ],
+              [
+                4,
+                0,
+                "-12*sqrt(2)"
+              ],
+              [
+                5,
+                6,
+                "-5*sqrt(2)/2"
+              ],
+              [
+                6,
+                5,
+                "47*sqrt(2)/8"
+              ],
+              [
+                8,
+                0,
+                "-23*sqrt(2)/2"
+              ]
+            ],
+            "rank": 6,
+            "sha256": "0ffc37425986da143470e2ba86051aa28d3ea024006b2467c1855726b2f5e1f3",
+            "shape": [
+              9,
+              9
+            ]
+          },
+          "word": [
+            1
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                3,
+                "4*sqrt(2)"
+              ],
+              [
+                1,
+                2,
+                "-3*sqrt(2)"
+              ],
+              [
+                2,
+                1,
+                "-143*sqrt(2)/24"
+              ],
+              [
+                2,
+                4,
+                "-14*sqrt(2)/3"
+              ],
+              [
+                2,
+                8,
+                "-7*sqrt(2)/8"
+              ],
+              [
+                3,
+                0,
+                "31*sqrt(2)/8"
+              ],
+              [
+                4,
+                2,
+                "121*sqrt(2)/24"
+              ],
+              [
+                5,
+                7,
+                "-3*sqrt(2)"
+              ],
+              [
+                7,
+                5,
+                "-93*sqrt(2)/8"
+              ],
+              [
+                8,
+                2,
+                "33*sqrt(2)/2"
+              ]
+            ],
+            "rank": 6,
+            "sha256": "0ecaf617e3226f610cbd14f0439e0920e7706dbbc08315c501b5988f659034d1",
+            "shape": [
+              9,
+              9
+            ]
+          },
+          "word": [
+            2
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                6,
+                "6*sqrt(2)"
+              ],
+              [
+                1,
+                5,
+                "-5*sqrt(2)"
+              ],
+              [
+                4,
+                5,
+                "27*sqrt(2)/2"
+              ],
+              [
+                5,
+                1,
+                "-167*sqrt(2)/24"
+              ],
+              [
+                5,
+                4,
+                "-14*sqrt(2)/3"
+              ],
+              [
+                5,
+                8,
+                "-31*sqrt(2)/8"
+              ],
+              [
+                6,
+                0,
+                "39*sqrt(2)/8"
+              ],
+              [
+                7,
+                2,
+                "-239*sqrt(2)/24"
+              ],
+              [
+                8,
+                5,
+                "27*sqrt(2)/8"
+              ]
+            ],
+            "rank": 5,
+            "sha256": "7f2d86dbcf8f8937cb524dbd2cb162d1815928edcb8c0930f27f8a9904bdb3ad",
+            "shape": [
+              9,
+              9
+            ]
+          },
+          "word": [
+            3
+          ]
+        }
+      ],
+      "nonzero_coefficients": 59,
+      "orders": [
+        0,
+        1
+      ],
+      "sha256": "97823d95872ea2acd6aa9551153dfe6c0841ac992bc15a9e65b2f9eb82a69ed7"
+    }
+  },
+  "flags": {
+    "TRANSVERSE_ACTION_DERIVED_SCHUR_VARIATION": false,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": false,
+    "TRANSVERSE_CYCLIC_SCHUR_VARIATION": false,
+    "TRANSVERSE_FIRST_ORDER_GAUGE_SCHUR_EXISTS": true,
+    "TRANSVERSE_FIRST_ORDER_GAUGE_SCHUR_UNIQUE": true
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "NARIAI_TRANSVERSE_ACTION_AND_CYCLIC_IDENTIFICATION_OF_UNIQUE_FIRST_ORDER_SCHUR",
+  "result_id": "NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1",
+  "result_state": "COMPLETE_FIRST_ORDER_LOCAL_GAUGE_SCHUR_EXISTS_UNIQUELY_ACTION_AND_CYCLIC_IDENTIFICATION_OPEN",
+  "schema": "nariai-transverse-first-order-schur-solve-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_first_order_schur_solve.py": "0ae8e32c0b3124502504e6c49b3be74c5d17d8f2b036a6492d1c05ae4359b167",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_first_order_schur_solve.py": "d3bf1e34c413689e2de23c470e69fb2e2bc92c53202c15daac197620659b3209",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_first_order_schur_solve.py": "41a5bb63b1461d111b560c3a8e740b2429425c4a2106a1ddb2ce8e625261194d",
+    "d_quotient_classical/schema/nariai-transverse-first-order-schur-solve-v1.schema.json": "797a227175c3ebb225a66fa9aa132c28ed0518c98dc56aac4d3575668a3d5db0"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_first_order_schur_solve --check",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_first_order_schur_solve.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_first_order_schur_solve",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-first-order-schur-solve-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json"
+  ]
+}

@@ -30,8 +30,11 @@ Kantowski--Sachs tangent records exact outer/algebraic incidence evidence, an
 Yang--Mills identities.  All endpoint curvature jets through order three are
 now coordinate-derived.  The exact shifted-chain variation retains 207
 coefficients, and the endpoint gauge defect contains zeroth- and second-order
-words, obstructing a purely algebraic Schur correction.  The differential
-Schur and causal transfer remain `OPEN`.
+words, obstructing a purely algebraic Schur correction.  The complete
+first-order local Schur gauge map is now solved exactly: its `60 x 45` map has
+rank 45 on every output row and gives one unique 59-coefficient repair.  Its
+action-derived and cyclic identification, the rank-310 SDR variation, and
+causal transfer remain `OPEN`.
 
 All bounded/quasiperiodic, smooth-secular, and causal/retarded second-order
 statuses are separate fields.  No status is transported between backgrounds

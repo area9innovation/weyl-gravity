@@ -58,8 +58,12 @@ def verify() -> None:
     transverse_ids = {item["result_id"] for item in transverse["evidence"]}
     if "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1" not in transverse_ids:
         raise AssertionError("jet-aware parent-middle evidence missing")
+    if "NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1" not in transverse_ids:
+        raise AssertionError("first-order Schur evidence missing")
     if "207 coefficients" not in transverse["claim_boundary"]:
         raise AssertionError("exact shifted-chain boundary missing")
+    if "unique 59-coefficient local gauge repair" not in transverse["claim_boundary"]:
+        raise AssertionError("first-order Schur claim boundary missing")
 
 
 if __name__ == "__main__":
