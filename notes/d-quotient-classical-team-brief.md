@@ -203,8 +203,12 @@ as well: the adjoint is taken on the primitive covariant HPL factors before
 normal ordering, and the calculation exercises the nonzero curvature jet tower
 through order five.  No interpolation is used.  The upper relative-saddle,
 action endpoint and complete ten-block rank-310 first-variation SDR gates now
-close exactly.  The active gate is transverse metric biwave Green control,
-followed by causal transfer through the certified SDR.
+close exactly.  The global four-row metric Green homotopy also has an exact
+formal first variation, with
+`Gdot_+/-=-G0_+/- Pdot G0_+/-` and same-sided support.  The active gate is
+now the global covariant coefficient export for the differentiated rank-310
+SDR: its current PBW realization is a one-point fifth-order Taylor jet and
+cannot be globalized by homogeneity along the time-dependent tangent.
 
 For every declared background, charge fibre, boundary condition, and quotient:
 
@@ -1639,8 +1643,16 @@ rank-310 first variation now follows without a new ansatz: differentiating the
 universal ten-block SDR gives twenty-one zero matrix defects in both split and
 original coordinates, including all side conditions and cyclic adjoints.  No
 row is dropped, and all varied maps remain finite-order and support-local.
-The remaining gate is transverse metric biwave Green control, followed by
-rank-310 causal transfer.
+The transverse metric causal first variation is now exact globally at formal
+order one.  The tangent is generated on every fixed compact time slab by an
+exact Kantowski--Sachs Einstein family, and the finite Duhamel formula
+`Gdot_+/-=-G0_+/- Pdot G0_+/-` satisfies both inverse identities, the
+differentiated chain homotopy and same-sided support.  The audit also prevents
+an invalid final step: the current rank-310 SDR variation is a Taylor/PBW jet
+through order five at `t=asinh(1)`, not a global coefficient field, and the
+time-dependent tangent cannot be globalized by Nariai homogeneity.  The active
+gate is the global covariant rank-310 SDR coefficient variation, followed by
+its formal causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

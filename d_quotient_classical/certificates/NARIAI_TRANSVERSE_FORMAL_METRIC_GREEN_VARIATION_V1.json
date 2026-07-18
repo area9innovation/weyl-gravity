@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "claim_boundary": "This theorem constructs the global first-order formal advanced/retarded variation of the four-row metric Green homotopy along the certified smooth transverse Einstein tangent. It is a finite Duhamel identity at epsilon=0 and does not assert a global nonzero-epsilon spacetime. The existing rank-310 SDR variation is an exact one-point coefficient-jet theorem only; it is not globalized or causally transferred here.",
+  "dependency_refs": {
+    "base_metric_green": {
+      "path": "d_quotient_classical/certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+      "result_id": "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+      "sha256": "5d755293ffbe32585fb1d6afc4ccb3643784306236e4b456777040858f5266bc"
+    },
+    "global_transverse_tangent": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1",
+      "sha256": "0f69c6021e702a2ea0fea6bc2d7ba4e088962df7e9eda8d9a071bf22e2130748"
+    },
+    "one_point_action_variation": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1",
+      "sha256": "8d18f7b7817bc424a4bb39a98875086a0b2bd0e6534f3409fdaa1b5f7a571817"
+    },
+    "one_point_rank310_SDR_variation": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1",
+      "sha256": "f167cb5719eedc3280fe8636c2104006535f436a3fba49faf7d1aa544e50b658"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "formal_chain_homotopy_variation": true,
+    "formal_two_sided_Green_variation": true,
+    "global_linearized_tangent": true,
+    "rank310_global_transfer_not_promoted": true,
+    "rank310_input_is_one_point_jet": true,
+    "same_sided_causal_support": true,
+    "slabwise_exact_Einstein_family_generates_tangent": true
+  },
+  "finite_fixture": {
+    "coefficient_field": "Q",
+    "gdot_nonzero": 8,
+    "identity_defects": {
+      "base_Q_squared": 0,
+      "base_chain_commutation": 0,
+      "base_homotopy": 0,
+      "base_left_inverse": 0,
+      "base_right_inverse": 0,
+      "linearized_Q_squared": 0,
+      "varied_chain_commutation": 0,
+      "varied_homotopy": 0,
+      "varied_left_inverse": 0,
+      "varied_right_inverse": 0
+    },
+    "pdot_nonzero": 8,
+    "qdot_nonzero": 6,
+    "rank": 4
+  },
+  "flags": {
+    "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1": true,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION": true,
+    "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION": false,
+    "TRANSVERSE_GLOBAL_RANK310_SDR_VARIATION": false
+  },
+  "formal_green_theorem": {
+    "adjoint_reversal": "(Gdot_A,+)^sharp=Gdot_(A^sharp),- after differentiating the complementary-degree adjoint theorem; no self-adjoint simplification is made without the cyclic family identification",
+    "base_complex": "(C_metric,Q0) on global unit Nariai",
+    "chain_identity": "qdot Lambda0+Q0 Lambdadot+Lambdadot Q0+Lambda0 qdot=0",
+    "fixed_witness_choice": "W_epsilon=W0 through first order",
+    "green_variation": "Gdot_+/-=-G0_+/- pdot G0_+/-",
+    "homotopy_variation": "Lambdadot_+/-=W0 Gdot_+/-",
+    "identified_family": "Q_epsilon=Q0+epsilon qdot+O(epsilon^2) in a smooth bundle-density identification with constant pairing",
+    "inverse_identities": [
+      "P0 Gdot_+/-+pdot G0_+/-=0",
+      "Gdot_+/- P0+G0_+/- pdot=0"
+    ],
+    "scope": "formal first order in epsilon; no nonzero-epsilon global spacetime or convergent operator family is asserted",
+    "support": "Gdot_+ maps compact sources to future-supported sections and Gdot_- to past-supported sections; locality of pdot and the standard extension of G0,+/- to past-/future-compact sources make the two same-sided compositions well typed",
+    "witness_operator": "P_epsilon=Q_epsilon W0+W0 Q_epsilon=P0+epsilon pdot+O(epsilon^2)"
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "NARIAI_TRANSVERSE_GLOBAL_RANK310_SDR_COEFFICIENT_VARIATION",
+  "rank310_globalization_audit": {
+    "current_scope": "Taylor/PBW coefficient jets at the normal-frame point t=asinh(1), theta=pi/2",
+    "forbidden_inference": "homogeneity globalization, because the transverse tangent is time dependent and is not invariant under Nariai time translations",
+    "global_smooth_coefficient_export_present": false,
+    "global_varied_inclusion_projection_homotopy_present": false,
+    "maximum_curvature_jet_order": 5,
+    "reason_transfer_is_open": "a causal operator identity is global; a finite Taylor jet at one point does not define the coefficient functions of the varied rank-310 maps on R times S1 times S2",
+    "required_next_input": "global covariant formulas, or globally evaluated smooth coefficient tables, for Idot, pdot_SDR and Hdot together with their differentiated chain and cyclic identities"
+  },
+  "result_id": "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1",
+  "result_state": "GLOBAL_FORMAL_METRIC_CAUSAL_VARIATION_EXACT_RANK310_GLOBALIZATION_OPEN",
+  "schema": "nariai-transverse-formal-metric-green-variation-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_coordinate_curvature_jets.py": "5a48af506082c6a256f1b568acb209e624df6eedff22267d39e7cb52c8aebef3",
+    "d_quotient_classical/causal_transfer/nariai_transverse_formal_metric_green_variation.py": "3be2f337317f0f33452cc4a940b89e23b32805c8c03f986204f6fd2dd9f98d27",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_formal_metric_green_variation.py": "2c00675295f334a3e38d38310e518b0a45879166ca120ebafbf99469cf07f07e",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_formal_metric_green_variation.py": "bdeb8fb101583642e2ac3f6dbb9692949d17e658e69a4a57f8b78f5fb504d2b5",
+    "d_quotient_classical/schema/nariai-transverse-formal-metric-green-variation-v1.schema.json": "5bd7f25acfd5b34814b1ab9bc2fc24c4d08a93a02e66ed6cb15972451664a954"
+  },
+  "tangent_family": {
+    "evolution_defect_through_epsilon2": 0,
+    "exact_Einstein_component_defects": 0,
+    "exact_Einstein_reduction": "for a=b'/epsilon, differentiating 2bb''+(b')^2+1=b^2 gives a''/a+2b''/b=1 and a''/a+2(a'/a)(b'/b)=1; the undifferentiated equation is the sphere component",
+    "exact_ode": "2 b b''+(b')^2+1=b^2",
+    "expansion": "b_epsilon=1+epsilon sinh(t)-(epsilon^2/6)cosh(2t)+O(epsilon^3)",
+    "finite_slab_statement": "analytic ODE dependence gives an exact Einstein family on every fixed compact time slab for sufficiently small epsilon depending on the slab",
+    "first_integral": "(b')^2=b^2/3-1+C_epsilon/b with C_epsilon=b_epsilon(0)(epsilon^2-b_epsilon(0)^2/3+1)",
+    "first_integral_defect_through_epsilon2": 0,
+    "global_nonzero_epsilon_statement": "not claimed; the areal factor can reach zero outside a fixed slab",
+    "initial_data": "b_epsilon(0)=1-epsilon^2/6, b_epsilon'(0)=epsilon",
+    "metric_coefficient": "a_epsilon=b_epsilon'/epsilon, extended smoothly at epsilon=0",
+    "tangent": "dot a=-(1/3)sinh(2t), dot b=sinh(t)"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_formal_metric_green_variation --check --guards",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_formal_metric_green_variation.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_transverse_formal_metric_green_variation",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-formal-metric-green-variation-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1.json"
+  ]
+}

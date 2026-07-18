@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nariai-transverse-formal-metric-green-variation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "schema_version",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "dependency_refs",
+    "tangent_family",
+    "formal_green_theorem",
+    "finite_fixture",
+    "rank310_globalization_audit",
+    "exact_checks",
+    "flags",
+    "next_gate",
+    "claim_boundary",
+    "source_manifest",
+    "verification_commands"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-formal-metric-green-variation-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "LORENTZIAN-CAUSAL"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/reference"},
+      "properties": {
+        "base_metric_green": {"$ref": "#/$defs/reference"},
+        "global_transverse_tangent": {"$ref": "#/$defs/reference"},
+        "one_point_action_variation": {"$ref": "#/$defs/reference"},
+        "one_point_rank310_SDR_variation": {"$ref": "#/$defs/reference"}
+      },
+      "required": [
+        "base_metric_green",
+        "global_transverse_tangent",
+        "one_point_action_variation",
+        "one_point_rank310_SDR_variation"
+      ]
+    },
+    "tangent_family": {"$ref": "#/$defs/stringIntegerRecord"},
+    "formal_green_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base_complex",
+        "identified_family",
+        "fixed_witness_choice",
+        "witness_operator",
+        "green_variation",
+        "homotopy_variation",
+        "inverse_identities",
+        "chain_identity",
+        "support",
+        "adjoint_reversal",
+        "scope"
+      ],
+      "properties": {
+        "base_complex": {"type": "string"},
+        "identified_family": {"type": "string"},
+        "fixed_witness_choice": {"type": "string"},
+        "witness_operator": {"type": "string"},
+        "green_variation": {"type": "string"},
+        "homotopy_variation": {"type": "string"},
+        "inverse_identities": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+        "chain_identity": {"type": "string"},
+        "support": {"type": "string"},
+        "adjoint_reversal": {"type": "string"},
+        "scope": {"type": "string"}
+      }
+    },
+    "finite_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient_field", "rank", "qdot_nonzero", "pdot_nonzero", "gdot_nonzero", "identity_defects"],
+      "properties": {
+        "coefficient_field": {"const": "Q"},
+        "rank": {"const": 4},
+        "qdot_nonzero": {"type": "integer", "minimum": 1},
+        "pdot_nonzero": {"type": "integer", "minimum": 1},
+        "gdot_nonzero": {"type": "integer", "minimum": 1},
+        "identity_defects": {
+          "type": "object",
+          "minProperties": 10,
+          "maxProperties": 10,
+          "additionalProperties": {"const": 0}
+        }
+      }
+    },
+    "rank310_globalization_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "current_scope",
+        "maximum_curvature_jet_order",
+        "global_smooth_coefficient_export_present",
+        "global_varied_inclusion_projection_homotopy_present",
+        "reason_transfer_is_open",
+        "required_next_input",
+        "forbidden_inference"
+      ],
+      "properties": {
+        "current_scope": {"type": "string"},
+        "maximum_curvature_jet_order": {"const": 5},
+        "global_smooth_coefficient_export_present": {"const": false},
+        "global_varied_inclusion_projection_homotopy_present": {"const": false},
+        "reason_transfer_is_open": {"type": "string"},
+        "required_next_input": {"type": "string"},
+        "forbidden_inference": {"type": "string"}
+      }
+    },
+    "exact_checks": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1",
+        "TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION",
+        "TRANSVERSE_GLOBAL_RANK310_SDR_VARIATION",
+        "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION",
+        "TRANSVERSE_CAUSAL_TRANSFER"
+      ],
+      "properties": {
+        "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1": {"const": true},
+        "TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION": {"const": true},
+        "TRANSVERSE_GLOBAL_RANK310_SDR_VARIATION": {"const": false},
+        "TRANSVERSE_FORMAL_RANK310_CAUSAL_VARIATION": {"const": false},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_TRANSVERSE_GLOBAL_RANK310_SDR_COEFFICIENT_VARIATION"},
+    "claim_boundary": {"type": "string", "minLength": 80},
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_commands": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 4
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "stringIntegerRecord": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {"type": "string"},
+          {"type": "integer"}
+        ]
+      }
+    }
+  }
+}

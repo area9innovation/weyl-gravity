@@ -55,7 +55,14 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("unique 15-term algebraic cyclic completion", entry["claim_boundary"])
         self.assertIn("direct action-leading coefficients plus Noether uniqueness", entry["claim_boundary"])
         self.assertIn("all twenty-one differentiated ten-block SDR identities vanish", entry["claim_boundary"])
-        self.assertIn("algebraic SDR is exact; transverse causal transfer remains open", entry["claim_boundary"])
+        self.assertIn(
+            "rank-310 coefficient variation remains a one-point fifth-order Taylor jet",
+            entry["claim_boundary"],
+        )
+        self.assertIn(
+            "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
 
     def test_berger_bridge_one_remains_fail_closed(self) -> None:
         entry = self.entries["classical.berger.crosswalk.retained36_to_einstein_extra"]

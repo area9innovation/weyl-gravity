@@ -84,11 +84,13 @@ def verify() -> None:
         raise AssertionError("action Bach-Hessian variation missing")
     if "NARIAI_TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION_V1" not in transverse_ids:
         raise AssertionError("complete rank-310 SDR variation missing")
+    if "NARIAI_TRANSVERSE_FORMAL_METRIC_GREEN_VARIATION_V1" not in transverse_ids:
+        raise AssertionError("formal metric Green variation missing")
     if "factorized adjunction before PBW normal ordering" not in transverse["claim_boundary"]:
         raise AssertionError("factorized Hom-adjoint boundary missing")
     if "direct action-leading coefficients plus Noether uniqueness" not in transverse["claim_boundary"]:
         raise AssertionError("action-Hessian closure boundary missing")
-    if "algebraic SDR is exact; transverse causal transfer remains open" not in transverse["claim_boundary"]:
+    if "rank-310 coefficient variation remains a one-point fifth-order Taylor jet" not in transverse["claim_boundary"]:
         raise AssertionError("next transverse causal boundary missing")
 
 
