@@ -446,6 +446,13 @@ below `0.1`.  A `64` radial by `128` angular mutation at the even `3/8` row
 remains about `0.10952`, so the first resolution loss is localized to the
 radial enclosure.  The next gate is the certified polarization recurrence and
 external clock powers on these declared rows, not a complete-rail inference.
+The recurrence-closure successor now derives the exact scalar input union for
+18 selected detector-component entries at form `two_j=1024`.  It requires 12
+rows on scalar shells `1023,1025`: three are imported from the scale rail and
+nine companions are newly evaluated, all below width `0.1`.  Retaining only
+the same anchor index on both shells omits six exact `r-1/r+1` neighbors and
+is rejected.  The active gate is now the actual Clebsch--Gordan/detector-
+prefactor combination for those 18 entries, not further scalar widening.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

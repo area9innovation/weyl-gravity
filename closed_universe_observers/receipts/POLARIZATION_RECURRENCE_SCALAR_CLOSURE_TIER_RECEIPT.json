@@ -1,0 +1,42 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "POLARIZATION_RECURRENCE_SCALAR_CLOSURE_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact Clebsch-Gordan recurrence is applied structurally to 18 selected detector-component entries at form two_j=1024 and anchors r=128,256,384. It requires 12 scalar rows on shells two_j=1023,1025. Three are imported by content hash and nine companions are newly interval-evaluated; every width is below 0.1. A same-index-only mutation omits six required r-1/r+1 neighbors and is rejected. This certifies recurrence-closed scalar inputs, not the polarized interval combinations, other form rows, clock powers above p=0, complete scalar/form rails, Sobolev or infinite tails, Green images, detector response, recoil, tangent-cone restriction, Bridge 3, finite-r/all-orders observer-morphism stability or quantum claims. The coefficientwise mixed epsilon_R^2 kappa unary prerequisite remains ordered before apparatus q2,q3 and the affine-K_Berger observer morphism.",
+  "tier_0": [
+    {"command": "python3 -m py_compile on the producer, verifier and test; JSON/schema parse; git diff --check on scoped paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_polarization_recurrence_scalar_closure.py", "elapsed_seconds": 0.71, "status": "PASS", "summary": "4 tests passed, covering exact 12-row closure, all imported/new widths, same-index mutation rejection and deleted-companion rejection."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_polarization_recurrence_scalar_closure", "status": "PASS", "summary": "Schema, source/dependency hashes, mechanically reconstructed recurrence closure, row coverage, resolutions, widths, mutation and scoped-open flags passed."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The generated observer atlas and shared fail-closed schema passed; polarized intervals, detector response, complete form rail and infinite tail remain OPEN."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_polarization_recurrence_scalar_closure --check", "elapsed_seconds": 93.27, "status": "PASS", "summary": "All nine new scalar companion intervals were reevaluated in six worker processes and the certificate matched byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No polarized form rail, infinite-mode theorem, Green image, detector-response lifecycle promotion, shared core-algebra change, freeze or release was claimed."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_polarization_recurrence_scalar_closure.py", "sha256": "de6df4947465d8137a84882681ea2d3bb25f36c9dac16766752a0a7b93fa68ee"},
+    {"path": "closed_universe_observers/verify_berger_polarization_recurrence_scalar_closure.py", "sha256": "9a67972aec4f89b1d74f153979db87b15c3d38ee7351bfb2fe475199ff5019e6"},
+    {"path": "closed_universe_observers/tests/test_berger_polarization_recurrence_scalar_closure.py", "sha256": "c2d354dc18f36d635f305601d41791e2cde6936c23370bd86551eb477b435b10"},
+    {"path": "closed_universe_observers/schema/berger-polarization-recurrence-scalar-closure-v1.schema.json", "sha256": "b8587b152b7478fa13a02100343cc2dc6587c87d85aac60e9a57b3135ecf13e0"},
+    {"path": "closed_universe_observers/reports/berger-polarization-recurrence-scalar-closure.md", "sha256": "23ba17d2a91a32bf98f618b0b5ece511207158e0887f05b5b16671c861cfd8ca"},
+    {"path": "closed_universe_observers/certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json", "sha256": "d983d0969dcfa4663b6cf4dfbae7e2bf239a007c026bacd9f723ce1fec78ca19"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "430b1edce9c892720777b0be239f7d174faee1d2108c9afb3601d3bd0c77be5c"}
+  ],
+  "claim_flags": {
+    "SELECTED_FORM_RECURRENCE_SCALAR_CLOSURE_EXPORTED": true,
+    "EIGHTEEN_SELECTED_FORM_ENTRY_REQUIREMENTS_EXPORTED": true,
+    "TWELVE_REQUIRED_SCALAR_ROWS_PRESENT": true,
+    "NINE_NEW_COMPANION_WIDTHS_BELOW_ONE_TENTH": true,
+    "SAME_INDEX_ONLY_MUTATION_REJECTED": true,
+    "SELECTED_POLARIZED_FORM_INTERVALS_EVALUATED": false,
+    "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

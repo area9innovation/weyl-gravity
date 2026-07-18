@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-polarization-recurrence-scalar-closure-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "form_selection", "scalar_closure", "same_index_only_mutation", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-polarization-recurrence-scalar-closure-v1"},
+    "result_id": {"const": "BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_SELECTED_FORM_RECURRENCE_SCALAR_CLOSURE_EXPORTED_POLARIZED_COMBINATIONS_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3, "maxProperties": 3},
+    "form_selection": {"type": "object"},
+    "scalar_closure": {"type": "object"},
+    "same_index_only_mutation": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["SELECTED_FORM_RECURRENCE_SCALAR_CLOSURE_EXPORTED", "EIGHTEEN_SELECTED_FORM_ENTRY_REQUIREMENTS_EXPORTED", "TWELVE_REQUIRED_SCALAR_ROWS_PRESENT", "NINE_NEW_COMPANION_WIDTHS_BELOW_ONE_TENTH", "SAME_INDEX_ONLY_MUTATION_REJECTED", "SELECTED_POLARIZED_FORM_INTERVALS_EVALUATED", "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "SELECTED_FORM_RECURRENCE_SCALAR_CLOSURE_EXPORTED": {"const": true},
+        "EIGHTEEN_SELECTED_FORM_ENTRY_REQUIREMENTS_EXPORTED": {"const": true},
+        "TWELVE_REQUIRED_SCALAR_ROWS_PRESENT": {"const": true},
+        "NINE_NEW_COMPANION_WIDTHS_BELOW_ONE_TENTH": {"const": true},
+        "SAME_INDEX_ONLY_MUTATION_REJECTED": {"const": true},
+        "SELECTED_POLARIZED_FORM_INTERVALS_EVALUATED": {"const": false},
+        "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "COMBINE_THE_TWELVE_SCALAR_ROWS_WITH_EXACT_CLEBSCH_GORDAN_AND_DETECTOR_PREFACTORS_FOR_THE_EIGHTEEN_SELECTED_FORM_ENTRIES"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

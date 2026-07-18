@@ -1,0 +1,1080 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result closes the scalar input set required by 18 selected detector-polarized form entries at form two_j=1024 and anchors r=128,256,384. The exact Clebsch--Gordan recurrence requires 12 scalar diagonal rows on neighboring shells two_j=1023,1025. Three rows are imported by content hash from the adaptive scale rail and nine companion rows are newly interval-evaluated; every imported and new width is below 0.1. The high-fraction companions retain 128 radial by 64 angular cells and the other rows use 64 by 64. A same-index-only mutation omits six required r-1/r+1 neighbors and is rejected. This certifies recurrence-closed scalar inputs, not the 18 polarized interval combinations themselves, other form entries, clock powers beyond p=0, a complete scalar/form rail, Sobolev or infinite-mode tail, Green image, detector response, recoil, tangent-cone restriction, Bridge 3, finite-r/all-orders observer-morphism stability or a quantum claim.",
+  "claim_status": "VALIDATED_SELECTED_FORM_RECURRENCE_SCALAR_CLOSURE_EXPORTED_POLARIZED_COMBINATIONS_OPEN",
+  "dependency_refs": {
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "recurrence": {
+      "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json",
+      "result_id": "BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE",
+      "sha256": "63ec51f24e3d9adebd00b409a61ec8348d5a9ba636f3bacf984eec8a53fa0294"
+    },
+    "scale_rail": {
+      "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL.json",
+      "result_id": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+      "sha256": "176b262961c108ef01c1cbf89f1c42d408b59af6fcba9c469faf8d0da10db34f"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "EIGHTEEN_SELECTED_FORM_ENTRY_REQUIREMENTS_EXPORTED": true,
+    "NINE_NEW_COMPANION_WIDTHS_BELOW_ONE_TENTH": true,
+    "QUANTUM_CLAIM": false,
+    "SAME_INDEX_ONLY_MUTATION_REJECTED": true,
+    "SELECTED_FORM_RECURRENCE_SCALAR_CLOSURE_EXPORTED": true,
+    "SELECTED_POLARIZED_FORM_INTERVALS_EVALUATED": false,
+    "TWELVE_REQUIRED_SCALAR_ROWS_PRESENT": true,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false
+  },
+  "form_selection": {
+    "anchors": [
+      128,
+      256,
+      384
+    ],
+    "detector_component_entry_count": 18,
+    "entries": [
+      {
+        "anchor": 128,
+        "coframe_component": 1,
+        "coordinate": "y2",
+        "detector_id": "D0",
+        "form_column": 129,
+        "form_row": 128,
+        "prefactor": "-3*sqrt(10)/20",
+        "required_scalar_rows": [
+          [
+            1023,
+            128
+          ],
+          [
+            1025,
+            129
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "4*sqrt(1806)/1025",
+            "diagonal_index": 128,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-4*sqrt(1806)/1025",
+            "diagonal_index": 129,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 128,
+        "coframe_component": 2,
+        "coordinate": "y1",
+        "detector_id": "D0",
+        "form_column": 129,
+        "form_row": 128,
+        "prefactor": "3*sqrt(10)/20",
+        "required_scalar_rows": [
+          [
+            1023,
+            128
+          ],
+          [
+            1025,
+            129
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "4*sqrt(1806)*I/1025",
+            "diagonal_index": 128,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-4*sqrt(1806)*I/1025",
+            "diagonal_index": 129,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 128,
+        "coframe_component": 3,
+        "coordinate": "y0",
+        "detector_id": "D0",
+        "form_column": 128,
+        "form_row": 128,
+        "prefactor": "1",
+        "required_scalar_rows": [
+          [
+            1023,
+            127
+          ],
+          [
+            1023,
+            128
+          ],
+          [
+            1025,
+            128
+          ],
+          [
+            1025,
+            129
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "64/1025",
+            "diagonal_index": 127,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "448/1025",
+            "diagonal_index": 128,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "897/2050",
+            "diagonal_index": 128,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "129/2050",
+            "diagonal_index": 129,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 128,
+        "coframe_component": 1,
+        "coordinate": "y0",
+        "detector_id": "D1",
+        "form_column": 128,
+        "form_row": 128,
+        "prefactor": "1",
+        "required_scalar_rows": [
+          [
+            1023,
+            127
+          ],
+          [
+            1023,
+            128
+          ],
+          [
+            1025,
+            128
+          ],
+          [
+            1025,
+            129
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "64/1025",
+            "diagonal_index": 127,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "448/1025",
+            "diagonal_index": 128,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "897/2050",
+            "diagonal_index": 128,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "129/2050",
+            "diagonal_index": 129,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 128,
+        "coframe_component": 2,
+        "coordinate": "y3",
+        "detector_id": "D1",
+        "form_column": 128,
+        "form_row": 128,
+        "prefactor": "-1",
+        "required_scalar_rows": [
+          [
+            1023,
+            127
+          ],
+          [
+            1023,
+            128
+          ],
+          [
+            1025,
+            128
+          ],
+          [
+            1025,
+            129
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "64*I/1025",
+            "diagonal_index": 127,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-448*I/1025",
+            "diagonal_index": 128,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "897*I/2050",
+            "diagonal_index": 128,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "-129*I/2050",
+            "diagonal_index": 129,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 128,
+        "coframe_component": 3,
+        "coordinate": "y2",
+        "detector_id": "D1",
+        "form_column": 129,
+        "form_row": 128,
+        "prefactor": "2*sqrt(10)/3",
+        "required_scalar_rows": [
+          [
+            1023,
+            128
+          ],
+          [
+            1025,
+            129
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "4*sqrt(1806)/1025",
+            "diagonal_index": 128,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-4*sqrt(1806)/1025",
+            "diagonal_index": 129,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 256,
+        "coframe_component": 1,
+        "coordinate": "y2",
+        "detector_id": "D0",
+        "form_column": 257,
+        "form_row": 256,
+        "prefactor": "-3*sqrt(10)/20",
+        "required_scalar_rows": [
+          [
+            1023,
+            256
+          ],
+          [
+            1025,
+            257
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "8*sqrt(771)/1025",
+            "diagonal_index": 256,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-8*sqrt(771)/1025",
+            "diagonal_index": 257,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 256,
+        "coframe_component": 2,
+        "coordinate": "y1",
+        "detector_id": "D0",
+        "form_column": 257,
+        "form_row": 256,
+        "prefactor": "3*sqrt(10)/20",
+        "required_scalar_rows": [
+          [
+            1023,
+            256
+          ],
+          [
+            1025,
+            257
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "8*sqrt(771)*I/1025",
+            "diagonal_index": 256,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-8*sqrt(771)*I/1025",
+            "diagonal_index": 257,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 256,
+        "coframe_component": 3,
+        "coordinate": "y0",
+        "detector_id": "D0",
+        "form_column": 256,
+        "form_row": 256,
+        "prefactor": "1",
+        "required_scalar_rows": [
+          [
+            1023,
+            255
+          ],
+          [
+            1023,
+            256
+          ],
+          [
+            1025,
+            256
+          ],
+          [
+            1025,
+            257
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "128/1025",
+            "diagonal_index": 255,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "384/1025",
+            "diagonal_index": 256,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "769/2050",
+            "diagonal_index": 256,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "257/2050",
+            "diagonal_index": 257,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 256,
+        "coframe_component": 1,
+        "coordinate": "y0",
+        "detector_id": "D1",
+        "form_column": 256,
+        "form_row": 256,
+        "prefactor": "1",
+        "required_scalar_rows": [
+          [
+            1023,
+            255
+          ],
+          [
+            1023,
+            256
+          ],
+          [
+            1025,
+            256
+          ],
+          [
+            1025,
+            257
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "128/1025",
+            "diagonal_index": 255,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "384/1025",
+            "diagonal_index": 256,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "769/2050",
+            "diagonal_index": 256,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "257/2050",
+            "diagonal_index": 257,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 256,
+        "coframe_component": 2,
+        "coordinate": "y3",
+        "detector_id": "D1",
+        "form_column": 256,
+        "form_row": 256,
+        "prefactor": "-1",
+        "required_scalar_rows": [
+          [
+            1023,
+            255
+          ],
+          [
+            1023,
+            256
+          ],
+          [
+            1025,
+            256
+          ],
+          [
+            1025,
+            257
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "128*I/1025",
+            "diagonal_index": 255,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-384*I/1025",
+            "diagonal_index": 256,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "769*I/2050",
+            "diagonal_index": 256,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "-257*I/2050",
+            "diagonal_index": 257,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 256,
+        "coframe_component": 3,
+        "coordinate": "y2",
+        "detector_id": "D1",
+        "form_column": 257,
+        "form_row": 256,
+        "prefactor": "2*sqrt(10)/3",
+        "required_scalar_rows": [
+          [
+            1023,
+            256
+          ],
+          [
+            1025,
+            257
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "8*sqrt(771)/1025",
+            "diagonal_index": 256,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-8*sqrt(771)/1025",
+            "diagonal_index": 257,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 384,
+        "coframe_component": 1,
+        "coordinate": "y2",
+        "detector_id": "D0",
+        "form_column": 385,
+        "form_row": 384,
+        "prefactor": "-3*sqrt(10)/20",
+        "required_scalar_rows": [
+          [
+            1023,
+            384
+          ],
+          [
+            1025,
+            385
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "4*sqrt(154)/205",
+            "diagonal_index": 384,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-4*sqrt(154)/205",
+            "diagonal_index": 385,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 384,
+        "coframe_component": 2,
+        "coordinate": "y1",
+        "detector_id": "D0",
+        "form_column": 385,
+        "form_row": 384,
+        "prefactor": "3*sqrt(10)/20",
+        "required_scalar_rows": [
+          [
+            1023,
+            384
+          ],
+          [
+            1025,
+            385
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "4*sqrt(154)*I/205",
+            "diagonal_index": 384,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-4*sqrt(154)*I/205",
+            "diagonal_index": 385,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 384,
+        "coframe_component": 3,
+        "coordinate": "y0",
+        "detector_id": "D0",
+        "form_column": 384,
+        "form_row": 384,
+        "prefactor": "1",
+        "required_scalar_rows": [
+          [
+            1023,
+            383
+          ],
+          [
+            1023,
+            384
+          ],
+          [
+            1025,
+            384
+          ],
+          [
+            1025,
+            385
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "192/1025",
+            "diagonal_index": 383,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "64/205",
+            "diagonal_index": 384,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "641/2050",
+            "diagonal_index": 384,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "77/410",
+            "diagonal_index": 385,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 384,
+        "coframe_component": 1,
+        "coordinate": "y0",
+        "detector_id": "D1",
+        "form_column": 384,
+        "form_row": 384,
+        "prefactor": "1",
+        "required_scalar_rows": [
+          [
+            1023,
+            383
+          ],
+          [
+            1023,
+            384
+          ],
+          [
+            1025,
+            384
+          ],
+          [
+            1025,
+            385
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "192/1025",
+            "diagonal_index": 383,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "64/205",
+            "diagonal_index": 384,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "641/2050",
+            "diagonal_index": 384,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "77/410",
+            "diagonal_index": 385,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 384,
+        "coframe_component": 2,
+        "coordinate": "y3",
+        "detector_id": "D1",
+        "form_column": 384,
+        "form_row": 384,
+        "prefactor": "-1",
+        "required_scalar_rows": [
+          [
+            1023,
+            383
+          ],
+          [
+            1023,
+            384
+          ],
+          [
+            1025,
+            384
+          ],
+          [
+            1025,
+            385
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "192*I/1025",
+            "diagonal_index": 383,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-64*I/205",
+            "diagonal_index": 384,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "641*I/2050",
+            "diagonal_index": 384,
+            "next_two_j": 1025
+          },
+          {
+            "coefficient": "-77*I/410",
+            "diagonal_index": 385,
+            "next_two_j": 1025
+          }
+        ]
+      },
+      {
+        "anchor": 384,
+        "coframe_component": 3,
+        "coordinate": "y2",
+        "detector_id": "D1",
+        "form_column": 385,
+        "form_row": 384,
+        "prefactor": "2*sqrt(10)/3",
+        "required_scalar_rows": [
+          [
+            1023,
+            384
+          ],
+          [
+            1025,
+            385
+          ]
+        ],
+        "scalar_terms": [
+          {
+            "coefficient": "4*sqrt(154)/205",
+            "diagonal_index": 384,
+            "next_two_j": 1023
+          },
+          {
+            "coefficient": "-4*sqrt(154)/205",
+            "diagonal_index": 385,
+            "next_two_j": 1025
+          }
+        ]
+      }
+    ],
+    "form_two_j": 1024
+  },
+  "next_gate": "COMBINE_THE_TWELVE_SCALAR_ROWS_WITH_EXACT_CLEBSCH_GORDAN_AND_DETECTOR_PREFACTORS_FOR_THE_EIGHTEEN_SELECTED_FORM_ENTRIES",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_polarization_recurrence_scalar_closure.py",
+        "sha256": "de6df4947465d8137a84882681ea2d3bb25f36c9dac16766752a0a7b93fa68ee"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_polarization_recurrence_scalar_closure.py",
+        "sha256": "9a67972aec4f89b1d74f153979db87b15c3d38ee7351bfb2fe475199ff5019e6"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_polarization_recurrence_scalar_closure.py",
+        "sha256": "c2d354dc18f36d635f305601d41791e2cde6936c23370bd86551eb477b435b10"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-polarization-recurrence-scalar-closure-v1.schema.json",
+        "sha256": "b8587b152b7478fa13a02100343cc2dc6587c87d85aac60e9a57b3135ecf13e0"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-polarization-recurrence-scalar-closure.md",
+        "sha256": "23ba17d2a91a32bf98f618b0b5ece511207158e0887f05b5b16671c861cfd8ca"
+      }
+    ]
+  },
+  "result_id": "BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE",
+  "same_index_only_mutation": {
+    "detected": true,
+    "mutated_rows": [
+      [
+        1023,
+        128
+      ],
+      [
+        1023,
+        256
+      ],
+      [
+        1023,
+        384
+      ],
+      [
+        1025,
+        128
+      ],
+      [
+        1025,
+        256
+      ],
+      [
+        1025,
+        384
+      ]
+    ],
+    "name": "drop_r_minus_one_and_r_plus_one_recurrence_neighbors",
+    "omitted_required_row_count": 6,
+    "omitted_required_rows": [
+      [
+        1023,
+        127
+      ],
+      [
+        1023,
+        255
+      ],
+      [
+        1023,
+        383
+      ],
+      [
+        1025,
+        129
+      ],
+      [
+        1025,
+        257
+      ],
+      [
+        1025,
+        385
+      ]
+    ]
+  },
+  "scalar_closure": {
+    "canonical_closure_sha256": "fc9cdb0a5d3cc6ef51a9d55e425f7b72012bfd01d67c6fedcc2a6a0e69f20888",
+    "canonical_new_row_sha256": "f91c530296ce9f3bb376661794b7912dae11fbab98b3bf05a4f1fb4bc511cf3e",
+    "imported_rows": [
+      {
+        "basis_index": 128,
+        "interval": {
+          "lower": "-1351776442123795822204594871/19807040628566084398385987584",
+          "upper": "280566291441231948043205297/9903520314283042199192993792",
+          "width": "1912909025006259718291005465/19807040628566084398385987584"
+        },
+        "source": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+        "two_j": 1025
+      },
+      {
+        "basis_index": 256,
+        "interval": {
+          "lower": "4358311030809405219740082789/79228162514264337593543950336",
+          "upper": "12185063255576036682097304669/79228162514264337593543950336",
+          "width": "978344028095828932794652735/9903520314283042199192993792"
+        },
+        "source": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+        "two_j": 1025
+      },
+      {
+        "basis_index": 384,
+        "interval": {
+          "lower": "19248834479902106703311634375/79228162514264337593543950336",
+          "upper": "780064298348968037746849511/2475880078570760549798248448",
+          "width": "5713223067264870504587549977/79228162514264337593543950336"
+        },
+        "source": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+        "two_j": 1025
+      }
+    ],
+    "newly_evaluated_row_count": 9,
+    "newly_evaluated_rows": [
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 127,
+        "diagonal_distance": 769,
+        "interval": {
+          "lower": "-5390376448769863000433310861/79228162514264337593543950336",
+          "upper": "70690837681769579528085821/2475880078570760549798248448",
+          "width": "7652483254586489545332057133/79228162514264337593543950336"
+        },
+        "m": "-769/2",
+        "nearest_form_anchor": 128,
+        "offset_from_anchor": -1,
+        "radial_subdivisions": 64,
+        "two_j": 1023
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 128,
+        "diagonal_distance": 767,
+        "interval": {
+          "lower": "-5341930329187131572223178685/79228162514264337593543950336",
+          "upper": "2300942966872382491211174757/79228162514264337593543950336",
+          "width": "3821436648029757031717176721/39614081257132168796771975168"
+        },
+        "m": "-767/2",
+        "nearest_form_anchor": 128,
+        "offset_from_anchor": 0,
+        "radial_subdivisions": 64,
+        "two_j": 1023
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 255,
+        "diagonal_distance": 513,
+        "interval": {
+          "lower": "2215056313830386392554840853/39614081257132168796771975168",
+          "upper": "764797828153632895278880447/4951760157141521099596496896",
+          "width": "3903326311398676769676202723/39614081257132168796771975168"
+        },
+        "m": "-513/2",
+        "nearest_form_anchor": 256,
+        "offset_from_anchor": -1,
+        "radial_subdivisions": 64,
+        "two_j": 1023
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 256,
+        "diagonal_distance": 511,
+        "interval": {
+          "lower": "4532198589223609221726239759/79228162514264337593543950336",
+          "upper": "6172672749898662236566460823/39614081257132168796771975168",
+          "width": "7813146910573715251406681887/79228162514264337593543950336"
+        },
+        "m": "-511/2",
+        "nearest_form_anchor": 256,
+        "offset_from_anchor": 0,
+        "radial_subdivisions": 64,
+        "two_j": 1023
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 383,
+        "diagonal_distance": 257,
+        "interval": {
+          "lower": "9685431341707125506943545249/39614081257132168796771975168",
+          "upper": "25059739797663240830452526183/79228162514264337593543950336",
+          "width": "5688877114248989816565435685/79228162514264337593543950336"
+        },
+        "m": "-257/2",
+        "nearest_form_anchor": 384,
+        "offset_from_anchor": -1,
+        "radial_subdivisions": 128,
+        "two_j": 1023
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 384,
+        "diagonal_distance": 255,
+        "interval": {
+          "lower": "19456055617682885282147044373/79228162514264337593543950336",
+          "upper": "3145464530791042748763809149/9903520314283042199192993792",
+          "width": "5707660628645456707963428819/79228162514264337593543950336"
+        },
+        "m": "-255/2",
+        "nearest_form_anchor": 384,
+        "offset_from_anchor": 0,
+        "radial_subdivisions": 128,
+        "two_j": 1023
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 129,
+        "diagonal_distance": 767,
+        "interval": {
+          "lower": "-5359015860502083122487858631/79228162514264337593543950336",
+          "upper": "1141590460118946557968112561/39614081257132168796771975168",
+          "width": "7642196780739976238424083753/79228162514264337593543950336"
+        },
+        "m": "-767/2",
+        "nearest_form_anchor": 128,
+        "offset_from_anchor": 1,
+        "radial_subdivisions": 64,
+        "two_j": 1025
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 257,
+        "diagonal_distance": 511,
+        "interval": {
+          "lower": "2229966852082526814544293443/39614081257132168796771975168",
+          "upper": "12293305722117139153496630549/79228162514264337593543950336",
+          "width": "7833372017952085524408043663/79228162514264337593543950336"
+        },
+        "m": "-511/2",
+        "nearest_form_anchor": 256,
+        "offset_from_anchor": 1,
+        "radial_subdivisions": 64,
+        "two_j": 1025
+      },
+      {
+        "angular_subdivisions": 64,
+        "basis_index": 385,
+        "diagonal_distance": 255,
+        "interval": {
+          "lower": "9666823607503516126901387191/39614081257132168796771975168",
+          "upper": "25065796650866601606821336935/79228162514264337593543950336",
+          "width": "5732149435859569353018562553/79228162514264337593543950336"
+        },
+        "m": "-255/2",
+        "nearest_form_anchor": 384,
+        "offset_from_anchor": 1,
+        "radial_subdivisions": 128,
+        "two_j": 1025
+      }
+    ],
+    "required_row_count": 12,
+    "required_rows": [
+      [
+        1023,
+        127
+      ],
+      [
+        1023,
+        128
+      ],
+      [
+        1023,
+        255
+      ],
+      [
+        1023,
+        256
+      ],
+      [
+        1023,
+        383
+      ],
+      [
+        1023,
+        384
+      ],
+      [
+        1025,
+        128
+      ],
+      [
+        1025,
+        129
+      ],
+      [
+        1025,
+        256
+      ],
+      [
+        1025,
+        257
+      ],
+      [
+        1025,
+        384
+      ],
+      [
+        1025,
+        385
+      ]
+    ]
+  },
+  "schema": "closed-universe-berger-polarization-recurrence-scalar-closure-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

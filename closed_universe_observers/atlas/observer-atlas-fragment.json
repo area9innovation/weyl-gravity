@@ -2206,7 +2206,7 @@
       }
     },
     {
-      "claim_boundary": "all six two_j=1024,1025 widths are below 0.1; angular-only 64x128 refinement at the even 3/8 row remains above 0.1, while radial-only 128x64 refinement passes; complete diagonal, clock-power, polarized and infinite-tail rails remain OPEN input evaluator only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "claim_boundary": "all six two_j=1024,1025 widths are below 0.1; angular-only 64x128 refinement at the even 3/8 row remains above 0.1, while radial-only 128x64 refinement passes; the recurrence-closure successor is separate; complete diagonal, clock-power, polarized and infinite-tail rails remain OPEN input evaluator only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
@@ -2224,6 +2224,11 @@
           "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL.json",
           "result_id": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
           "sha256": "176b262961c108ef01c1cbf89f1c42d408b59af6fcba9c469faf8d0da10db34f"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json",
+          "result_id": "BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE",
+          "sha256": "d983d0969dcfa4663b6cf4dfbae7e2bf239a007c026bacd9f723ce1fec78ca19"
         }
       ],
       "id": "observer.berger.detector_profile.adaptive_diagonal_fraction_scale",
@@ -2278,7 +2283,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "apply the certified polarization recurrence to the declared two-scale rows and add external clock powers",
+          "statement": "the exact recurrence-closed scalar companion set is now CERTIFIED; combine it into the 18 selected polarized entries",
           "status": "OPEN"
         },
         "exceptional_resonant_operational_signature": {
@@ -2294,7 +2299,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "all six two_j=1024,1025 widths are below 0.1; angular-only 64x128 refinement at the even 3/8 row remains above 0.1, while radial-only 128x64 refinement passes; complete diagonal, clock-power, polarized and infinite-tail rails remain OPEN",
+          "statement": "all six two_j=1024,1025 widths are below 0.1; angular-only 64x128 refinement at the even 3/8 row remains above 0.1, while radial-only 128x64 refinement passes; the recurrence-closure successor is separate; complete diagonal, clock-power, polarized and infinite-tail rails remain OPEN",
           "status": "CERTIFIED"
         },
         "recoil_backreaction_order": {
@@ -2325,6 +2330,129 @@
         "m": "basis indices r=128,256,384; the 3/8 row has radial-only refinement",
         "omega": "external clock power p=0; no Green kernel applied",
         "parity": "adjacent even two_j=1024 and odd two_j=1025 scalar representations",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "the exact form-two_j=1024 recurrence requires 12 scalar rows on shells 1023,1025; three are imported and nine newly evaluated, all below width 0.1; a same-index-only mutation omits six r-1/r+1 neighbors; polarized combinations, clock powers and all tails remain OPEN input closure only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL.json",
+          "result_id": "BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL",
+          "sha256": "176b262961c108ef01c1cbf89f1c42d408b59af6fcba9c469faf8d0da10db34f"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json",
+          "result_id": "BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE",
+          "sha256": "d983d0969dcfa4663b6cf4dfbae7e2bf239a007c026bacd9f723ce1fec78ca19"
+        }
+      ],
+      "id": "observer.berger.detector_profile.polarization_scalar_closure",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=recurrence-closed scalar companion inputs for selected detector-polarized form entries; omega=external clock power p=0; no Green kernel applied; OPEN: the recurrence-closed scalar inputs are CERTIFIED, but the 18 polarized form intervals and Green image are not yet composed",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE before polarized coderivative and Green composition",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "input closure only; absolute-g3 recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "radius-1/128 detector bump and normalized p=0 clock envelope; high-fraction scalar companions use radial-only 128x64 refinement",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: the recurrence-closed scalar inputs are CERTIFIED, but the 18 polarized form intervals and Green image are not yet composed",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "combine the 12 scalar rows with exact Clebsch--Gordan coefficients and detector prefactors for the 18 selected form entries",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "the exact form-two_j=1024 recurrence requires 12 scalar rows on shells 1023,1025; three are imported and nine newly evaluated, all below width 0.1; a same-index-only mutation omits six r-1/r+1 neighbors; polarized combinations, clock powers and all tails remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "input closure only; absolute-g3 recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE before polarized coderivative and Green composition",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "recurrence-closed scalar companion inputs for selected detector-polarized form entries",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 0,
+        "ell": "scalar two_j=1023,1025 -> selected form two_j=1024",
+        "k": "12 diagonal scalar rows feeding 18 selected detector-component entries",
+        "m": "anchors r=128,256,384 with exact r-1,r,r+1 recurrence neighbors",
+        "omega": "external clock power p=0; no Green kernel applied",
+        "parity": "neighboring odd scalar shells two_j=1023,1025 feeding even form two_j=1024",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -2560,7 +2688,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "71e6a06abc27b5587ad9ea83587dd8cab6752f6b3c1a700cf6d18c9573b44533",
+  "generated_by_sha256": "89fd6c2e1eb054d9ffc799e63f239a137ecca640ec567faa9763649c5df96ecc",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

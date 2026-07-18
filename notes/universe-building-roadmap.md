@@ -389,7 +389,13 @@ with `128` radial by `64` angular cells.  An angular-only `64 x 128` mutation
 at the even `3/8` row remains above width `0.1`, localizing the necessary
 refinement to the radial enclosure at that sentinel.  The active profile gate
 is therefore the certified polarization recurrence and external clock powers
-on these declared two-scale rows, not another uniform-grid widening.
+on these declared two-scale rows, not another uniform-grid widening.  The
+recurrence-closure successor now derives the exact scalar union required by 18
+selected form-`two_j=1024` detector-component entries: 12 rows on scalar
+shells `1023,1025`, with three imported and nine newly evaluated below width
+`0.1`.  A same-index-only mutation omits six required `r-1/r+1` neighbors.
+The active profile gate is the exact polarized combination of this closed
+scalar set, followed by external clock powers.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`, which
@@ -1446,6 +1452,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_CORRELATED_INTERMEDIATE_JACOBI_EVALUATOR` (fired) | stream declared diagonal fractions and add further odd intermediate sentinels at validated resolution; do not infer a complete scalar or polarized rail from the adjacent `two_j=512,513` pair |
 | `BERGER_CORRELATED_DIAGONAL_FRACTION_STREAM` (fired) | optimize and widen the declared fractions, then construct polarized rows while deriving the missing Haar-density, repeated-Laplacian and Green-tail inputs; do not infer a complete rail or Sobolev tail from six sentinels |
 | `BERGER_ADAPTIVE_DIAGONAL_FRACTION_SCALE_RAIL` (fired) | apply the certified polarization recurrence and external clock powers to the declared two-scale rows; preserve radial-only refinement at the `3/8` sentinel and do not infer complete or infinite rails |
+| `BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE` (fired) | combine the 12 recurrence-closed scalar rows into the 18 selected detector-polarized form entries, then add external clock powers; do not drop the six `r-1/r+1` neighbors or infer a complete form rail |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

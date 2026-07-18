@@ -575,6 +575,14 @@ and `1/4` rows remain below width `0.1` on `64 x 64`; the `3/8` pair passes on
 even `3/8` sentinel leaves width approximately `0.10952` and is rejected.
 Thus the active gate is now to apply the certified polarization recurrence and
 external clock powers to these declared two-scale rows while deriving the
+Sobolev inputs.  The exact recurrence audit sharpens that step:
+`BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE` derives 12 required scalar
+rows on shells `two_j=1023,1025` for the 18 selected detector-component
+entries at form `two_j=1024`.  Three rows are imported and nine companions are
+newly evaluated, all below width `0.1`; a same-index-only mutation omits six
+exact `r-1/r+1` neighbors and is rejected.  The active gate is therefore to
+combine this closed scalar set with the exact Clebsch--Gordan coefficients and
+detector prefactors, then add external clock powers while deriving the
 Sobolev inputs.  Only after a complete rail or a validated tail
 succeeds should the infinite-mode Maxwell and massive-two-form images, recoil
 coefficient and second-order-cone restriction be composed.  Bridge 3 remains
