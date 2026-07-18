@@ -1,0 +1,127 @@
+{
+  "schema": "einstein-maxwell-weyl-electric-duality-ell2-extra-resonance-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.schema.json",
+  "schema_sha256": "345c7d9ed611d8074c1fed46b4f819f827fb65785afa61d34efe77df0b6a0070",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELECTRIC_DUALITY_ELL2_EXTRA_RESONANCE",
+  "result_state": "ELECTRIC_CHARGE_TIMES_ELL2_EXTRA_RESONANT_SOURCE_REMOVABLE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the homogeneous electric Q_e direction crossed with the complete axial-plus-polar ell=2,k=0 extra-primary block, all m, on the fixed magnetic bundle",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.py",
+    "generator_sha256": "b3332e4d83cc63b5c4746e7c154e500fca8c65c50a510e40ff1ab944adb92e3b",
+    "inputs": {
+      "spectator_gate": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json",
+        "sha256": "e3cb628273df1f7984559c4721d01b89d7fb1696b5dd5bb6f3e5aba8ebc94c13"
+      },
+      "background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "global_block": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      },
+      "axial_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "polar_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      }
+    }
+  },
+  "duality_identities": {
+    "Lorentzian_Hodge_identity": "star_g^2=-1 on two-forms",
+    "duality_rotation": "F_theta=cos(theta)F+sin(theta)star_g F",
+    "Maxwell_equation_doublet": [
+      "dF",
+      "d star_g F"
+    ],
+    "doublet_rotation_matrix": [
+      [
+        "cos(theta)",
+        "sin(theta)"
+      ],
+      [
+        "-sin(theta)",
+        "cos(theta)"
+      ]
+    ],
+    "stress_tensor_invariance": {
+      "energy_density": true,
+      "spatial_dyad": true,
+      "Poynting_vector": true,
+      "conclusion": "T_ab[F_theta]=T_ab[F] exactly"
+    },
+    "Weyl_Maxwell_covariance": "B_ab depends only on g; Maxwell equations rotate as a doublet and T_ab is invariant"
+  },
+  "mixed_extension": {
+    "background_tangent": "partial_theta F_theta|_0=star F_bar=dt wedge dx, equal to the declared Q_e tangent up to the fixed orientation convention",
+    "Jacobi_transport": "for every extra Jacobi field (h,f), duality gives a Jacobi field about the duality-rotated background with the same ell,m,k,omega",
+    "metric_correction": "zero in the mixed theta-times-wave coefficient",
+    "field_strength_correction": "f_cross=star_bar f+(D_g star)[h]F_bar",
+    "mixed_equation_identity": "L(f_cross) plus the Q_e-times-extra quadratic source equals zero",
+    "fixed_bundle_lift": "f_cross is closed and its S2 period vanishes because it has ell=2 angular support; on R x S1 x S2 it is therefore exact and lifts to a global connection-difference correction",
+    "parity_statement": "duality may mix axial and polar representatives, but preserves their complete four-dimensional p-primary direct sum"
+  },
+  "classification": {
+    "Maxwell_equations_duality_covariant": true,
+    "Maxwell_stress_duality_invariant": true,
+    "complete_ell2_extra_block_transported": true,
+    "mixed_correction_fixed_bundle_admissible": true,
+    "electric_Qe_times_ell2_extra_source_in_linear_image": true,
+    "electric_Qe_cannot_cancel_exceptional_adjoint_defect": true,
+    "remaining_homogeneous_a_b_d_cross_sources_classified": false,
+    "remaining_twist_A_B_cross_sources_classified": false,
+    "all_orders_fixed_bundle_duality_orbit": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "Although the pure Q_e direction is obstructed at second order on a fixed magnetic bundle, its bilinear coupling to an ell=2 extra wave is removable. Electromagnetic duality transports the wave and supplies an exact mixed correction whose magnetic period vanishes. Therefore Q_e cannot cancel the exceptional adjoint defect; the remaining positive-sum source matrix contains only a,b,d and the twist position/velocity directions.",
+  "next_gate": "compute the a,b,d and twist-position/velocity bilinear sources against both axial and polar ell=2 extra representatives",
+  "claim_boundary": "This proves only mixed Q_e-times-wave removability. The finite duality orbit changes magnetic flux at second order, so it is not an all-orders fixed-bundle extension of the pure Q_e direction. Remaining global sources, frequency differences, opposite momenta, residual descent, and causal/quantum claims are open.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.92,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_electric_duality_ell2_extra_resonance --verify bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_electric_duality_ell2_extra_resonance"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "spectator_gate",
+        "background",
+        "global_block",
+        "axial_generic",
+        "polar_generic"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the remaining global-times-extra source matrix is open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_electric_duality_ell2_extra_resonance --verify bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_electric_duality_ell2_extra_resonance"
+  ]
+}

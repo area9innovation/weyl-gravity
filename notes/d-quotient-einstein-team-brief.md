@@ -1957,6 +1957,21 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    either parity or any `m`.  The live positive-sum matrix is reduced to the
    homogeneous `a,b,d,Q_e` directions and the twist position/velocity vectors
    crossed with the axial/polar `ell=2` extra block.
+
+   The `Q_e` column is removed as well, but for a different reason.
+   Four-dimensional electromagnetic duality rotates `(dF,d star F)` and
+   leaves the Maxwell stress tensor invariant.  Its infinitesimal action on
+   the magnetic fixture is exactly the declared homogeneous electric tangent.
+   Transporting an arbitrary `ell=2` extra Jacobi field and differentiating
+   gives the explicit mixed correction
+   `f_cross=star f+(D_g star)[h]F_bar`.  This correction has zero sphere period
+   by `ell=2` orthogonality and therefore lifts to a global connection
+   difference on the fixed bundle.  Hence the `Q_e` cross source lies in the
+   linear image and cannot cancel the exceptional defect.  This does not make
+   the pure electric direction all-orders extendible at fixed magnetic flux;
+   only its mixed wave coefficient is settled.  The live matrix is now
+   `a,b,d` plus twist position/velocity against the axial/polar `ell=2` extra
+   block.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately
