@@ -25,8 +25,9 @@ evidence.
 The conformal Nariai orbit has both metric and rank-310 causal homotopies.
 The broader Bach-flat theorem applies to the tractor parent only; its
 parent-to-metric crosswalk is `NO_CERTIFIED_MAP`.  The transverse
-Kantowski--Sachs tangent records exact outer/algebraic incidence evidence but
-keeps causal transfer `OPEN`.
+Kantowski--Sachs tangent records exact outer/algebraic incidence evidence and
+an `OBSTRUCTED` frozen-parallel PBW shortcut.  Its jet-aware middle/Schur and
+causal transfer gates remain `OPEN`.
 
 All bounded/quasiperiodic, smooth-secular, and causal/retarded second-order
 statuses are separate fields.  No status is transported between backgrounds

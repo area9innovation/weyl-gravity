@@ -54,10 +54,19 @@ disappearing after a smooth secular \(t e^{i\omega t}\) correction or a
 compatible retarded integral.  Stabilizer moment-map conditions remain
 separate and do not disappear merely because the correction space is enlarged.
 
-The next coherent classical gate remains the transverse Nariai
-Levi--Civita/PBW and middle/Schur first variation, followed by the complete
-rank-310 SDR variation.  No atlas lifecycle may be promoted from the already
-certified outer incidence and algebraic pairing rows alone.
+The transverse Nariai connection/curvature-jet gate is now scoped exactly.
+The fixed-frame Levi--Civita variation is nonzero and
+\((\nabla_0\delta C)_{0202}=-\sqrt2\).  The old locally symmetric PBW backend
+therefore cannot produce the true middle/Schur derivative: it omits the
+Leibniz terms in which an outer derivative hits the varied curvature.  Its
+frozen-parallel response is retained as a checked diagnostic, including exact
+normal-tractor-square agreement, but is marked `OBSTRUCTED` rather than
+promoted.
+
+The next coherent classical gate is
+`NARIAI_TRANSVERSE_JET_AWARE_PBW_LEIBNIZ_AND_MIDDLE_SCHUR_VARIATION`, followed
+by the complete rank-310 SDR variation.  No atlas lifecycle may be promoted
+from the outer incidence, algebraic pairing, or frozen-parallel PBW rows.
 
 ## Generator correction (2026-07-17; authoritative)
 

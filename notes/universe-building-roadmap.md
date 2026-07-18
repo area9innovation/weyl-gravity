@@ -216,9 +216,15 @@ rank-four map `dot(I_Omega)` and the required correction
 covariant-PBW frame, the algebraic BGG/Kostant maps, harmonic projections,
 Schouten coefficient, and all four fibre pairings have zero variation, so
 the opposite rank-four BV row is now explicit by formal adjunction.  The
-active gate is the Levi--Civita connection/PBW variation and its middle/Schur
-propagation, followed by the complete rank-310 SDR identity.  No transverse
-causal promotion follows from these outer/algebraic rows alone.
+connection/curvature-jet audit is now exact as well: the fixed-frame
+Levi--Civita variation is nonzero and
+`nabla_0 delta(C_0202)=-sqrt(2)`.  Consequently the locally symmetric
+frozen-parallel PBW shortcut is `OBSTRUCTED`.  Its diagnostic response agrees
+with the independent varied tractor-curvature action, but its middle/Schur
+coefficients are not authoritative because derivatives may hit the varying
+curvature.  The active gate is a jet-aware PBW Leibniz normal form, followed
+by the true middle/Schur and complete rank-310 SDR variations.  No transverse
+causal promotion follows from the outer/algebraic or frozen-parallel rows.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves

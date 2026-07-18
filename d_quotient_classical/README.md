@@ -408,6 +408,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   variation are the next gate:
   [`certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json),
   [`reports/nariai-transverse-algebraic-bgg-pairing-variation.md`](reports/nariai-transverse-algebraic-bgg-pairing-variation.md)
+- Transverse connection/PBW curvature-jet gate: the fixed-frame connection
+  variation and the curvature time jet are nonzero, with normalized witness
+  `nabla_0 delta(C_0202)=-sqrt(2)`.  The frozen-parallel PBW response is
+  coefficientwise reproducible and its varied normal-tractor square agrees
+  with the independent curvature action, but it omits derivative-on-curvature
+  Leibniz terms.  Reuse of the locally symmetric PBW backend is therefore
+  `OBSTRUCTED`; the jet-aware middle/Schur, rank-310 SDR and causal gates stay
+  open:
+  [`certificates/NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1.json`](certificates/NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1.json),
+  [`reports/nariai-transverse-pbw-curvature-jet-gate.md`](reports/nariai-transverse-pbw-curvature-jet-gate.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

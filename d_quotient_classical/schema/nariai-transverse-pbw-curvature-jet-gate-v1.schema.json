@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/nariai-transverse-pbw-curvature-jet-gate-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "result_id", "result_state", "lifecycle_state",
+    "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags",
+    "next_gate", "claim_boundary", "source_manifest", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "nariai-transverse-pbw-curvature-jet-gate-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_PBW_CURVATURE_JET_GATE_V1"},
+    "result_state": {"const": "NONPARALLEL_CURVATURE_JET_EXACT_PARALLEL_PBW_SHORTCUT_OBSTRUCTED"},
+    "lifecycle_state": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 3},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["connection", "curvature_jet", "frozen_parallel_PBW_audit"],
+      "properties": {
+        "connection": {"type": "object"},
+        "curvature_jet": {"type": "object"},
+        "frozen_parallel_PBW_audit": {"type": "object"}
+      }
+    },
+    "exact_checks": {
+      "type": "object", "minProperties": 5,
+      "additionalProperties": {"const": true}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "TRANSVERSE_CONNECTION_VARIATION_EXACT", "TRANSVERSE_CURVATURE_JET_EXACT",
+        "FROZEN_PARALLEL_PBW_RESPONSE_EXACT", "PARALLEL_CURVATURE_PBW_SUFFICIENT",
+        "TRANSVERSE_JET_AWARE_PBW_VARIATION", "TRANSVERSE_MIDDLE_SCHUR_VARIATION",
+        "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION", "TRANSVERSE_CAUSAL_TRANSFER"
+      ],
+      "properties": {
+        "TRANSVERSE_CONNECTION_VARIATION_EXACT": {"const": true},
+        "TRANSVERSE_CURVATURE_JET_EXACT": {"const": true},
+        "FROZEN_PARALLEL_PBW_RESPONSE_EXACT": {"const": true},
+        "PARALLEL_CURVATURE_PBW_SUFFICIENT": {"const": false},
+        "TRANSVERSE_JET_AWARE_PBW_VARIATION": {"const": false},
+        "TRANSVERSE_MIDDLE_SCHUR_VARIATION": {"const": false},
+        "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": {"const": false},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_TRANSVERSE_JET_AWARE_PBW_LEIBNIZ_AND_MIDDLE_SCHUR_VARIATION"},
+    "claim_boundary": {"type": "string", "minLength": 40},
+    "source_manifest": {
+      "type": "object", "minProperties": 5,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}
