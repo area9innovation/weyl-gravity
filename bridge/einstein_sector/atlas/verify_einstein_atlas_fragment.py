@@ -71,10 +71,10 @@ def verify() -> None:
     bridge = by_id["einstein.ph.bridge.relative_branch_dictionary_v1"]
     if bridge["mode_data"]["resonance"]["status"] != "OPEN":
         raise AssertionError("bridge 1 activation was over-promoted")
-    if "All harmonic coefficient blocks have off-shell row maps" not in bridge["mode_data"]["resonance"]["statement"]:
+    if "natural support-local minimal chain map" not in bridge["mode_data"]["resonance"]["statement"]:
         raise AssertionError("exact bridge lifecycle is absent")
-    if "HARMONIC_OFFSHELL_MAPS_ONLY" not in bridge["claim_boundary"]:
-        raise AssertionError("global harmonic lifecycle is absent")
+    if "NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN" not in bridge["claim_boundary"]:
+        raise AssertionError("global covariant-map lifecycle is absent")
     if bridge["descriptions"]["observational"] != "NO_CERTIFIED_MAP" or bridge["descriptions"]["quantum"] != "NO_CERTIFIED_MAP":
         raise AssertionError("downstream bridges borrowed the linear lifecycle")
 

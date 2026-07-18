@@ -5,6 +5,7 @@
   "tiers": {
     "tier_0": {
       "status": "PASS",
+      "elapsed_seconds": 0.08,
       "commands": [
         "python3 -m py_compile bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py residual_atlas/validate_fragment.py",
         "python3 -m json.tool residual_atlas/schema/residual-atlas-fragment-v1.schema.json",
@@ -13,6 +14,7 @@
     },
     "tier_1": {
       "status": "PASS",
+      "elapsed_seconds": 0.40,
       "commands": [
         "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
         "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
@@ -22,7 +24,7 @@
     },
     "tier_2": {
       "status": "PASS_BY_CONTENT_ADDRESS",
-      "criterion": "the atlas does not change mathematical inputs; every positive claim pins an unchanged certificate hash and result id"
+      "criterion": "the atlas pins the new compact-product covariant chain-map certificate, whose exact Tier-2 replay passed in 329.92 seconds, together with unchanged content-addressed cofiber and pairing inputs"
     },
     "tier_3": {
       "status": "NOT_RUN",

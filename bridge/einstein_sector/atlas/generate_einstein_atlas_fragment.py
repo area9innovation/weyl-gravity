@@ -39,6 +39,7 @@ CERTIFICATES = {
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "exceptional_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+    "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
     "generic_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -128,10 +129,10 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The same-background branch dictionary separates q-primary Einstein, p-primary extra and generalized-zero carriers in every declared certified sector."),
             ("CERTIFIED", "The complete standard pullback and generic axial/polar direct extra Lee-Wald blocks are exported as three distinct forms; their nonradical generic identity-pullback defect OBSTRUCTS strict cyclic compatibility of the fixed identity chain maps."),
             ("OPEN", "Quadratic data are partial handoffs and do not activate the linear bridge or complete the relative obstruction map."),
-            ("OPEN", "All harmonic coefficient blocks have off-shell row maps, but a single covariant support-local glue, complete relative resonance map and Bridge 1 activation are not certified."),
+            ("OPEN", "One natural support-local minimal chain map globalizes every harmonic coefficient block, but the noncyclic three-form triangle, finite endpoints, complete relative resonance map and Bridge 1 activation are not certified."),
             _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
-            _evidence("branch_dictionary", "exceptional_offshell", "exceptional_nonzero_k_cofiber"),
-            "Global map lifecycle is HARMONIC_OFFSHELL_MAPS_ONLY and Bridge 1 activation remains OPEN. The complete harmonic coefficient algebra and solution cofibers are exact, but harmonic selection is not support local; a single natural covariant glue, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+            _evidence("covariant_chain_map", "branch_dictionary", "exceptional_offshell", "exceptional_nonzero_k_cofiber"),
+            "Global map lifecycle is NATURAL_SUPPORT_LOCAL_MINIMAL_MAP_ENDPOINTS_OPEN and Bridge 1 activation remains OPEN. One natural support-local minimal chain map now globalizes the complete harmonic coefficient algebra without harmonic selection. The separate Einstein, pulled-back Weyl and relative forms, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
         ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
@@ -191,7 +192,7 @@ def entries() -> list[dict[str, object]]:
             ("OPEN", "No complete nonzero-k quadratic resonance table is certified."),
             _second_order(("OPEN", "No bounded second-order classification on this carrier."), ("OPEN", "No smooth-secular second-order classification on this carrier."), open_causal),
             _evidence("exceptional_nonzero_k_cofiber", "exceptional_offshell", "branch_dictionary", "abstract_cone"),
-            "This is a same-background REDUCED-MODE solution cofiber with a polynomial all-row coefficient map. It does not supply the natural covariant glue, finite residual descent, causal propagation, a particle interpretation, or a cross-background map.",
+            "This is a same-background REDUCED-MODE solution cofiber whose coefficient map is the reduction of the certified natural support-local minimal chain map. It does not supply finite residual descent, causal propagation, a particle interpretation, or a cross-background map.",
         ),
         _entry(
             "einstein.ph.wm.mixed.twist_exceptional_independence",
@@ -324,6 +325,14 @@ def build() -> dict[str, object]:
         raise AssertionError("aligned mixed block over-promoted the complete orbit")
     if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("relative branch dictionary over-promoted bridge 1")
+    covariant_map = records["covariant_chain_map"]["classification"]
+    if not (
+        covariant_map["single_covariant_support_local_map_reconstructed"]
+        and covariant_map["full_curved_minimal_local_chain_map_certified"]
+    ):
+        raise AssertionError("natural compact-product chain map changed")
+    if covariant_map["noncyclic_three_form_triangle_completed"]:
+        raise AssertionError("local chain map over-promoted the full relative triangle")
     if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:
         raise AssertionError("homogeneous solution-cofiber input changed")
     if not records["twist_cofiber"]["classification"]["twist_solution_cofiber_zero"]:
