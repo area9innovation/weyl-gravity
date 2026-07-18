@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-york-hodge-nonminimal-berezinian-match-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "background_and_domain", "york_gram_operators", "exact_york_dimension_identity", "hodge_superjacobians", "nonminimal_quartet_identity", "standard_ghost_factor_match", "negative_control", "claim_flags", "minimal_missing_carrier", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-york-hodge-nonminimal-berezinian-match-v1"},
+    "result_id": {"const": "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCH"},
+    "result_state": {"const": "NONZERO_MODE_YORK_HODGE_AND_BRST_QUARTET_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_hashes": {"type": "object", "additionalProperties": false, "required": ["scalar_ghost_reduction", "standard_TT_auxiliary_match", "general_nonminimal_contraction"], "properties": {"scalar_ghost_reduction": {"$ref": "#/$defs/hash"}, "standard_TT_auxiliary_match": {"$ref": "#/$defs/hash"}, "general_nonminimal_contraction": {"$ref": "#/$defs/hash"}}},
+    "background_and_domain": {"type": "object", "additionalProperties": false, "required": ["dimension", "geometry", "domain", "zero_mode_status", "operator_conventions"], "properties": {"dimension": {"const": 4}, "geometry": {"type": "string"}, "domain": {"type": "string"}, "zero_mode_status": {"const": "EXCLUDED_NOT_YET_GLOBALLY_CLASSIFIED"}, "operator_conventions": {"const": ["A_1=Delta_1_T-R/4", "A_0=Delta_0-R/3"]}}},
+    "york_gram_operators": {"type": "object", "additionalProperties": false, "required": ["decomposition", "transverse_vector_norm", "traceless_scalar_norm", "trace_norm", "background_dependent_jacobian", "verified"], "properties": {"decomposition": {"type": "string"}, "transverse_vector_norm": {"const": "<Lv,Lv>=2<v,(Delta_1_T-R/4)v>"}, "traceless_scalar_norm": {"const": "<S sigma,S sigma>=(3/4)<sigma,Delta_0(Delta_0-R/3)sigma>"}, "trace_norm": {"const": "(1/4)<h,h>"}, "background_dependent_jacobian": {"const": "[det(A_1) det(Delta_0) det(A_0)]^(1/2)"}, "verified": {"const": true}}},
+    "exact_york_dimension_identity": {"type": "object", "additionalProperties": false, "required": ["canonical", "dimension_five_mutant", "mutation_rejected"], "properties": {"canonical": {"$ref": "#/$defs/york"}, "dimension_five_mutant": {"$ref": "#/$defs/york"}, "mutation_rejected": {"const": true}}},
+    "hodge_superjacobians": {"type": "object", "additionalProperties": false, "required": ["fermionic_vector_rule", "bosonic_vector_rule", "included_vectors", "measure_exponent_ledger"], "properties": {"fermionic_vector_rule": {"const": "D c_mu=det(Delta_0)^(-1/2) D c_T D c_L"}, "bosonic_vector_rule": {"const": "D b_mu=det(Delta_0)^(+1/2) D b_T D b_L"}, "included_vectors": {"const": ["xi", "bar_xi", "b_xi"]}, "measure_exponent_ledger": {"$ref": "#/$defs/ledger"}}},
+    "nonminimal_quartet_identity": {"type": "object", "additionalProperties": false, "required": ["scope", "identity", "general_nonminimal_atom_count", "local_contractibility_imported", "analytic_domain_match"], "properties": {"scope": {"type": "string"}, "identity": {"$ref": "#/$defs/quartet"}, "general_nonminimal_atom_count": {"const": 20}, "local_contractibility_imported": {"const": true}, "analytic_domain_match": {"const": "NONZERO_MODE_SAME_DOMAIN_ASSUMPTION_EXPLICIT"}}},
+    "standard_ghost_factor_match": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rows", "unwanted_Delta_0_exponent", "status"],
+      "properties": {
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["factor_id", "bundle", "operator", "rank", "partition_function_exponent", "standard_M_squared_at_R_12"]
+          }
+        },
+        "unwanted_Delta_0_exponent": {"$ref": "#/$defs/rational"},
+        "status": {"const": "EXACT_NONZERO_MODE_OPERATOR_RANK_AND_EXPONENT_MATCH"}
+      }
+    },
+    "negative_control": {"type": "object", "additionalProperties": false, "required": ["mutation", "mutated_ledger", "residual_Delta_0_exponent", "rejected"], "properties": {"mutation": {"type": "string"}, "mutated_ledger": {"$ref": "#/$defs/ledger"}, "residual_Delta_0_exponent": {"$ref": "#/$defs/rational"}, "rejected": {"const": true}}},
+    "claim_flags": {"type": "object", "additionalProperties": false, "required": ["YORK_GRAM_OPERATORS_DERIVED", "HODGE_SUPERJACOBIAN_DELTA0_CANCELLATION", "NONZERO_MODE_BRST_QUARTET_SUPERDETERMINANT_ONE", "STANDARD_GHOST_OPERATOR_RANK_AND_EXPONENTS_MATCHED", "GLOBAL_ZERO_MODE_LEDGER_COMPLETE", "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED", "AUXILIARY_CONTOUR_AND_PHASE_FIXED", "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED", "REGULATED_SLAVNOV_BREAKING_COMPUTED", "QME_DISPOSITION"], "properties": {"YORK_GRAM_OPERATORS_DERIVED": {"const": true}, "HODGE_SUPERJACOBIAN_DELTA0_CANCELLATION": {"const": true}, "NONZERO_MODE_BRST_QUARTET_SUPERDETERMINANT_ONE": {"const": true}, "STANDARD_GHOST_OPERATOR_RANK_AND_EXPONENTS_MATCHED": {"const": true}, "GLOBAL_ZERO_MODE_LEDGER_COMPLETE": {"const": false}, "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": {"const": false}, "AUXILIARY_CONTOUR_AND_PHASE_FIXED": {"const": false}, "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": {"const": false}, "REGULATED_SLAVNOV_BREAKING_COMPUTED": {"const": false}, "QME_DISPOSITION": {"const": false}}},
+    "minimal_missing_carrier": {"type": "object", "additionalProperties": false, "required": ["closed_gaps", "remaining_gap", "next_required_artifact"], "properties": {"closed_gaps": {"type": "array", "minItems": 3, "items": {"type": "string"}}, "remaining_gap": {"type": "string", "minLength": 50}, "next_required_artifact": {"const": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER"}}},
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "MATCH_REPOSITORY_PHYSICAL_HESSIAN_ZERO_MODES_AUXILIARY_CONTOUR_AND_REGULATOR"},
+    "claim_boundary": {"type": "string", "minLength": 400},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "ledgerRow": {"type": "object", "additionalProperties": false, "required": ["source", "factor", "determinant_exponent"], "properties": {"source": {"type": "string"}, "factor": {"type": "string"}, "determinant_exponent": {"$ref": "#/$defs/rational"}}},
+    "ledger": {"type": "object", "additionalProperties": false, "required": ["rows", "totals", "expected_totals", "verified"], "properties": {"rows": {"type": "array", "items": {"$ref": "#/$defs/ledgerRow"}}, "totals": {"type": "object", "additionalProperties": {"$ref": "#/$defs/rational"}}, "expected_totals": {"type": "object", "additionalProperties": {"$ref": "#/$defs/rational"}}, "verified": {"type": "boolean"}}},
+    "quartet": {"type": "object", "additionalProperties": false, "required": ["bosonic_block", "bosonic_block_determinant", "gauge_weight_independence", "bosonic_gaussian_det_M_exponent", "fermionic_antighost_ghost_det_M_exponent", "total_det_M_exponent", "verified"], "properties": {"bosonic_block": {"type": "string"}, "bosonic_block_determinant": {"const": "det(-M^T M)"}, "gauge_weight_independence": {"const": true}, "bosonic_gaussian_det_M_exponent": {"$ref": "#/$defs/rational"}, "fermionic_antighost_ghost_det_M_exponent": {"$ref": "#/$defs/rational"}, "total_det_M_exponent": {"$ref": "#/$defs/rational"}, "verified": {"const": true}}},
+    "york": {"type": "object", "additionalProperties": false, "required": ["dimension", "Einstein_Ricci_fraction", "vector_norm_prefactor", "vector_operator_R_shift", "scalar_norm_prefactor", "scalar_operator_R_shift", "derivation", "verified_4d_target"], "properties": {"dimension": {"type": "integer", "minimum": 2}, "Einstein_Ricci_fraction": {"$ref": "#/$defs/rational"}, "vector_norm_prefactor": {"$ref": "#/$defs/rational"}, "vector_operator_R_shift": {"$ref": "#/$defs/rational"}, "scalar_norm_prefactor": {"$ref": "#/$defs/rational"}, "scalar_operator_R_shift": {"$ref": "#/$defs/rational"}, "derivation": {"type": "object", "required": ["vector", "scalar"], "properties": {"vector": {"type": "string"}, "scalar": {"type": "string"}}}, "verified_4d_target": {"type": "boolean"}}}
+  }
+}

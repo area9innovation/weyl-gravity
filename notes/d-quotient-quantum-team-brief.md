@@ -541,8 +541,15 @@ The exact `3 x 4` Slavnov-breaking assembly preflight and strict analytic
 export receiver are now ready. An exact multiplicity preflight also derives
 the standard determinant bundle ranks `(5,1,5,3)`, reproduces signed rank
 six, and compares them with the covariant metric/Diff-ghost/Weyl-ghost ranks
-`(10,4,1)`. It localizes the unproved counting step to a rank-one scalar
-ghost cancellation plus the analytic operator/Berezinian map; the classical
+`(10,4,1)`. The rank-one scalar operator gap is now closed: the exact
+longitudinal Diff/Weyl Faddeev--Popov block has determinant
+`-12 (Delta_0-R/3)` and matches the standard `M_squared=-4` scalar ghost
+factor at `R=12`. The nonzero-mode York/Hodge and nonminimal measure now
+matches too: the unwanted `Delta_0` Jacobian cancels and every gauge quartet
+has unit superdeterminant, leaving the standard vector/scalar ghost exponents.
+The remaining counting step is the physical repository Hessian normalization,
+global zero modes, auxiliary contour/phase, regulator, and total row/factor
+map; the classical
 54-row carrier is explicitly not a loop-multiplicity authority. The next
 task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
 content-addressed repository regulator/operator/measure match, and compute
@@ -555,7 +562,10 @@ alter the classical producer to force acceptance. See
 The multiplicity receiver is executable rather than schema-only. It requires
 complete row/factor coverage, the exact four target ranks and determinant
 signs, a verified rank-two-to-rank-one scalar ghost map, and recursively
-hashed proof artifacts. Orphan, duplicate-map, rank-drift, scalar-drift,
+hashed proof artifacts. The scalar operator and nonzero-mode Berezinian maps
+now have exact source certificates, but the complete integration-slice,
+physical-Hessian, zero-mode, contour, and regulator payload has not yet been
+supplied. Orphan, duplicate-map, rank-drift, scalar-drift,
 route-drift, and bad-hash mutations are rejected. This closes receiver
 mechanics only; it does not fabricate the missing physical integration slice.
 

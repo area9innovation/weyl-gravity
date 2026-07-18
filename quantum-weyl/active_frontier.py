@@ -27,6 +27,8 @@ DEPENDENCIES = {
     "general_nonminimal_gauge_fixed": HERE / "local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
     "background_coefficients": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "full_BV_multiplicity_preflight": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT.json",
+    "scalar_ghost_reduction": HERE / "spectral/euclidean/certificates/DIFF_WEYL_SCALAR_GHOST_REDUCTION.json",
+    "york_hodge_berezinian": HERE / "spectral/euclidean/certificates/YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCH.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -71,6 +73,8 @@ def _load() -> dict[str, dict[str, Any]]:
         "minimal_BV_H14": "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN",
         "general_nonminimal_gauge_fixed": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
         "full_BV_multiplicity_preflight": "STANDARD_FACTOR_AND_COVARIANT_FIELD_RANKS_MATCHED_SCALAR_GHOST_AND_ANALYTIC_ROW_MAP_OPEN",
+        "scalar_ghost_reduction": "SCALAR_FP_RANK_TWO_TO_ONE_DIFFERENTIAL_FACTOR_VERIFIED_FULL_BV_MEASURE_MAP_OPEN",
+        "york_hodge_berezinian": "NONZERO_MODE_YORK_HODGE_AND_BRST_QUARTET_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN",
         "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
@@ -177,6 +181,45 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("full-BV multiplicity frontier drifted")
+    scalar_ghost_flags = values["scalar_ghost_reduction"].get("claim_flags", {})
+    scalar_ghost_target = values["scalar_ghost_reduction"].get("target_match", {})
+    if (
+        scalar_ghost_flags.get("DIFF_WEYL_SCALAR_FP_MATRIX_DERIVED") is not True
+        or scalar_ghost_flags.get("SCALAR_GHOST_DIFFERENTIAL_RANK_TWO_TO_ONE")
+        is not True
+        or scalar_ghost_flags.get("STANDARD_SCALAR_GHOST_OPERATOR_MATCHED")
+        is not True
+        or scalar_ghost_flags.get("NONMINIMAL_BEREZINIAN_MATCHED") is not False
+        or scalar_ghost_flags.get("FULL_REPOSITORY_HESSIAN_MATCHED") is not False
+        or scalar_ghost_flags.get(
+            "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED"
+        )
+        is not False
+        or scalar_ghost_target.get("standard_factor_id") != "ghost_depth_0"
+        or scalar_ghost_target.get("differential_input_rank") != 2
+        or scalar_ghost_target.get("differential_output_factor_rank") != 1
+    ):
+        raise ValueError("Diff-Weyl scalar ghost reduction frontier drifted")
+    measure_flags = values["york_hodge_berezinian"].get("claim_flags", {})
+    measure_match = values["york_hodge_berezinian"].get(
+        "standard_ghost_factor_match", {}
+    )
+    if (
+        measure_flags.get("YORK_GRAM_OPERATORS_DERIVED") is not True
+        or measure_flags.get("HODGE_SUPERJACOBIAN_DELTA0_CANCELLATION") is not True
+        or measure_flags.get("NONZERO_MODE_BRST_QUARTET_SUPERDETERMINANT_ONE")
+        is not True
+        or measure_flags.get("STANDARD_GHOST_OPERATOR_RANK_AND_EXPONENTS_MATCHED")
+        is not True
+        or measure_flags.get("GLOBAL_ZERO_MODE_LEDGER_COMPLETE") is not False
+        or measure_flags.get("REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED") is not False
+        or measure_flags.get("AUXILIARY_CONTOUR_AND_PHASE_FIXED") is not False
+        or measure_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not False
+        or measure_match.get("status")
+        != "EXACT_NONZERO_MODE_OPERATOR_RANK_AND_EXPONENT_MATCH"
+    ):
+        raise ValueError("York/Hodge nonminimal Berezinian frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
@@ -578,7 +621,7 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "FULL_STANDARD_VECTOR_TT_AUXILIARY_AND_MULTIPLICITY_GAP_BOUND_ANALYTIC_MATCHING_OPEN",
+            "G3": "STANDARD_VECTOR_TT_AUXILIARY_AND_GHOST_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
@@ -592,8 +635,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
-                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_VECTOR_MULTIPLICITY_RANK_ONE_GAP_LOCALIZED_ANALYTIC_MATCHING_OPEN",
-                "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
+                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_VECTOR_GHOST_OPERATORS_AND_NONZERO_MODE_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN",
+                "next_gate": "MATCH_REPOSITORY_PHYSICAL_HESSIAN_ZERO_MODES_AUXILIARY_CONTOUR_REGULATOR_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -719,6 +762,8 @@ def build() -> dict[str, Any]:
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY": True,
+            "DIFF_WEYL_SCALAR_GHOST_REDUCTION_VERIFIED": True,
+            "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -729,7 +774,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
+            "MATCH_REPOSITORY_PHYSICAL_HESSIAN_ZERO_MODES_AUXILIARY_CONTOUR_REGULATOR_AND_COMPUTE_SLAVNOV_BREAKING",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -751,9 +796,14 @@ def build() -> dict[str, Any]:
             "H04 and H14 quotients are complete with the same 2/1 dimensions on that locus, "
             "and the exact 3-by-4 breaking reduction binds the standard even background "
             "coordinates 199/30 and -87/20 while keeping the repository matching open. "
-            "The standard determinant ranks 5,1,5,3 reproduce signed rank six; the "
-            "covariant BV component inventory localizes the unresolved multiplicity to "
-            "one scalar ghost rank plus its analytic operator/Berezinian map. The strict "
+            "The standard determinant ranks 5,1,5,3 reproduce signed rank six. The exact "
+            "longitudinal-Diff/Weyl Faddeev--Popov matrix now reduces its two scalar ghost "
+            "inputs to the single differential factor Delta_0-R/3, matching the standard "
+            "rank-one scalar ghost row. On the common nonzero-mode domain, the York/Hodge "
+            "super-Jacobians cancel the unwanted Delta_0 factor and every gauge/nonminimal "
+            "quartet has unit superdeterminant, leaving exactly the standard vector and scalar "
+            "ghost exponents. The remaining gap is the physical repository Hessian normalization, "
+            "global zero modes, auxiliary contour/phase, regulator and total row map. The strict "
             "semantic receiver checks complete row/factor coverage, exact target ranks and "
             "signs, scalar-map consistency and nested proof hashes, while physical input "
             "remains absent; the frontier also contains "
@@ -833,7 +883,7 @@ def validate(result: dict[str, Any]) -> None:
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
-        != "FULL_STANDARD_VECTOR_TT_AUXILIARY_AND_MULTIPLICITY_GAP_BOUND_ANALYTIC_MATCHING_OPEN"
+        != "STANDARD_VECTOR_TT_AUXILIARY_AND_GHOST_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN"
         or any(
             not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
             for level in ("G4", "G5")
@@ -855,6 +905,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY") is not True
+        or flags.get("DIFF_WEYL_SCALAR_GHOST_REDUCTION_VERIFIED") is not True
+        or flags.get("YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES")
+        is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -898,6 +951,8 @@ def validate(result: dict[str, Any]) -> None:
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND",
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND",
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY",
+            "DIFF_WEYL_SCALAR_GHOST_REDUCTION_VERIFIED",
+            "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",

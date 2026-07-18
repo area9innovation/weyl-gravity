@@ -1,0 +1,351 @@
+{
+  "background_and_domain": {
+    "dimension": 4,
+    "domain": "orthogonal complement of all York/Hodge and FP zero modes",
+    "geometry": "compact Euclidean Einstein background without boundary",
+    "operator_conventions": [
+      "A_1=Delta_1_T-R/4",
+      "A_0=Delta_0-R/3"
+    ],
+    "zero_mode_status": "EXCLUDED_NOT_YET_GLOBALLY_CLASSIFIED"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL result derives the York Gram operators and the Hodge super-Jacobians on the nonzero spectrum of a compact four-dimensional Einstein background. The metric scalar det(Delta_0)^(1/2) is cancelled exactly by the combined diffeomorphism ghost, antighost and bosonic multiplier Hodge measures, while each gauge/nonminimal quartet has unit nonzero-mode superdeterminant. The surviving determinant exponents are precisely +1/2 for the transverse-vector Delta_1_T-R/4 factor and +1/2 for the scalar Delta_0-R/3 factor. It does not classify global zero modes, prove the repository physical TT Hessian normalization, fix the auxiliary contour or phase, supply the full multiplicity ledger, compute the repository anomaly coefficients or Slavnov breaking, restore or obstruct the QME, classify the quantum D-Cartan defect, transfer residual cohomology, or establish Lorentzian quantum theory.",
+  "claim_flags": {
+    "AUXILIARY_CONTOUR_AND_PHASE_FIXED": false,
+    "GLOBAL_ZERO_MODE_LEDGER_COMPLETE": false,
+    "HODGE_SUPERJACOBIAN_DELTA0_CANCELLATION": true,
+    "NONZERO_MODE_BRST_QUARTET_SUPERDETERMINANT_ONE": true,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+    "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": false,
+    "STANDARD_GHOST_OPERATOR_RANK_AND_EXPONENTS_MATCHED": true,
+    "YORK_GRAM_OPERATORS_DERIVED": true
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependency_hashes": {
+    "general_nonminimal_contraction": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a",
+    "scalar_ghost_reduction": "7858073c4c8394512f26faf7d884a12411bee6e3a59fe7d8d394d66d07b1b231",
+    "standard_TT_auxiliary_match": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_york_dimension_identity": {
+    "canonical": {
+      "Einstein_Ricci_fraction": {
+        "denominator": 4,
+        "numerator": 1
+      },
+      "derivation": {
+        "scalar": "||Hess sigma-(1/d)g Box sigma||^2=((d-1)/d)<sigma,Delta_0(Delta_0-R/(d-1))sigma>",
+        "vector": "2[(nabla v)^2+nabla_mu v_nu nabla^nu v^mu]=2<v,(Delta_1^T-R/d)v>"
+      },
+      "dimension": 4,
+      "scalar_norm_prefactor": {
+        "denominator": 4,
+        "numerator": 3
+      },
+      "scalar_operator_R_shift": {
+        "denominator": 3,
+        "numerator": 1
+      },
+      "vector_norm_prefactor": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "vector_operator_R_shift": {
+        "denominator": 4,
+        "numerator": 1
+      },
+      "verified_4d_target": true
+    },
+    "dimension_five_mutant": {
+      "Einstein_Ricci_fraction": {
+        "denominator": 5,
+        "numerator": 1
+      },
+      "derivation": {
+        "scalar": "||Hess sigma-(1/d)g Box sigma||^2=((d-1)/d)<sigma,Delta_0(Delta_0-R/(d-1))sigma>",
+        "vector": "2[(nabla v)^2+nabla_mu v_nu nabla^nu v^mu]=2<v,(Delta_1^T-R/d)v>"
+      },
+      "dimension": 5,
+      "scalar_norm_prefactor": {
+        "denominator": 5,
+        "numerator": 4
+      },
+      "scalar_operator_R_shift": {
+        "denominator": 4,
+        "numerator": 1
+      },
+      "vector_norm_prefactor": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "vector_operator_R_shift": {
+        "denominator": 5,
+        "numerator": 1
+      },
+      "verified_4d_target": false
+    },
+    "mutation_rejected": true
+  },
+  "hodge_superjacobians": {
+    "bosonic_vector_rule": "D b_mu=det(Delta_0)^(+1/2) D b_T D b_L",
+    "fermionic_vector_rule": "D c_mu=det(Delta_0)^(-1/2) D c_T D c_L",
+    "included_vectors": [
+      "xi",
+      "bar_xi",
+      "b_xi"
+    ],
+    "measure_exponent_ledger": {
+      "expected_totals": {
+        "Delta_0": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "Delta_0-R/3": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "Delta_1_T-R/4": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      "rows": [
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "factor": "Delta_1_T-R/4",
+          "source": "metric_York_transverse_vector"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "factor": "Delta_0",
+          "source": "metric_York_scalar_gradient"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "factor": "Delta_0-R/3",
+          "source": "metric_York_traceless_scalar"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "factor": "Delta_0",
+          "source": "diffeomorphism_ghost_Hodge"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "factor": "Delta_0",
+          "source": "diffeomorphism_antighost_Hodge"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "factor": "Delta_0",
+          "source": "diffeomorphism_multiplier_Hodge"
+        }
+      ],
+      "totals": {
+        "Delta_0": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "Delta_0-R/3": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "Delta_1_T-R/4": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      "verified": true
+    }
+  },
+  "minimal_missing_carrier": {
+    "closed_gaps": [
+      "longitudinal Diff/Weyl scalar FP operator reduction",
+      "York/Hodge nonzero-mode measure exponents",
+      "nonzero-mode gauge/nonminimal quartet superdeterminant"
+    ],
+    "next_required_artifact": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+    "remaining_gap": "normalize the repository physical Hessian against the standard TT pair and fix zero modes, algebraic auxiliary contour/phase, regulator and total factor provenance"
+  },
+  "negative_control": {
+    "mutated_ledger": {
+      "expected_totals": {
+        "Delta_0": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "Delta_0-R/3": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "Delta_1_T-R/4": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      "rows": [
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "factor": "Delta_1_T-R/4",
+          "source": "metric_York_transverse_vector"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "factor": "Delta_0",
+          "source": "metric_York_scalar_gradient"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "factor": "Delta_0-R/3",
+          "source": "metric_York_traceless_scalar"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "factor": "Delta_0",
+          "source": "diffeomorphism_ghost_Hodge"
+        },
+        {
+          "determinant_exponent": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "factor": "Delta_0",
+          "source": "diffeomorphism_antighost_Hodge"
+        }
+      ],
+      "totals": {
+        "Delta_0": {
+          "denominator": 2,
+          "numerator": -1
+        },
+        "Delta_0-R/3": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "Delta_1_T-R/4": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      "verified": false
+    },
+    "mutation": "omit the bosonic diffeomorphism multiplier Hodge Jacobian",
+    "rejected": true,
+    "residual_Delta_0_exponent": {
+      "denominator": 2,
+      "numerator": -1
+    }
+  },
+  "next_gate": "MATCH_REPOSITORY_PHYSICAL_HESSIAN_ZERO_MODES_AUXILIARY_CONTOUR_AND_REGULATOR",
+  "nonminimal_quartet_identity": {
+    "analytic_domain_match": "NONZERO_MODE_SAME_DOMAIN_ASSUMPTION_EXPLICIT",
+    "general_nonminimal_atom_count": 20,
+    "identity": {
+      "bosonic_block": "[[0,M^T],[M,alpha Y]]",
+      "bosonic_block_determinant": "det(-M^T M)",
+      "bosonic_gaussian_det_M_exponent": {
+        "denominator": 1,
+        "numerator": -1
+      },
+      "fermionic_antighost_ghost_det_M_exponent": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "gauge_weight_independence": true,
+      "total_det_M_exponent": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "verified": true
+    },
+    "local_contractibility_imported": true,
+    "scope": "each nonzero gauge-mode block, including the coupled scalar Diff x Weyl FP matrix"
+  },
+  "proof_sha256": "55a7d922fd32f15022764e9c4ea829cd90cc7992f287c62fef13d940b926f806",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/york-hodge-nonminimal-berezinian-match.md": "7640f84f15fe80e45f80b8ee875811cdd215239122d4272f84ec896d7b3e168f",
+      "quantum-weyl/spectral/euclidean/schema/york-hodge-nonminimal-berezinian-match-v1.schema.json": "031594afe01485811285a474ec79956b4ce8ebae473ff9a8ad353ec6bd2b0e1f",
+      "quantum-weyl/spectral/euclidean/tests/test_york_hodge_berezinian.py": "5e69518d4c2b371cf0d40a0279853f47bb86d9f91c37e296b182e1396cbb10bd",
+      "quantum-weyl/spectral/euclidean/verify_york_hodge_berezinian.py": "f9f00c4631ea1db2d6fe49f9cecd1be88ee9f896a9e89c0f88d34065e4aaebbe",
+      "quantum-weyl/spectral/euclidean/york_hodge_berezinian.py": "2f1ac39cfcd37c1cf0b9557b51cf6aa1b6742d6980faf3feef007c5493120794"
+    }
+  },
+  "result_id": "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCH",
+  "result_state": "NONZERO_MODE_YORK_HODGE_AND_BRST_QUARTET_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN",
+  "schema": "quantum-weyl-york-hodge-nonminimal-berezinian-match-v1",
+  "standard_ghost_factor_match": {
+    "rows": [
+      {
+        "bundle": "transverse vectors",
+        "factor_id": "ghost_depth_1",
+        "operator": "Delta_1_T-R/4",
+        "partition_function_exponent": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "rank": 3,
+        "standard_M_squared_at_R_12": -3
+      },
+      {
+        "bundle": "scalars",
+        "factor_id": "ghost_depth_0",
+        "operator": "Delta_0-R/3",
+        "partition_function_exponent": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "rank": 1,
+        "standard_M_squared_at_R_12": -4
+      }
+    ],
+    "status": "EXACT_NONZERO_MODE_OPERATOR_RANK_AND_EXPONENT_MATCH",
+    "unwanted_Delta_0_exponent": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "york_gram_operators": {
+    "background_dependent_jacobian": "[det(A_1) det(Delta_0) det(A_0)]^(1/2)",
+    "decomposition": "h=h_TT+2 nabla_(mu v^T_nu)+(nabla_mu nabla_nu-(1/4)g_mu_nu Box)sigma+(1/4)g_mu_nu h",
+    "trace_norm": "(1/4)<h,h>",
+    "traceless_scalar_norm": "<S sigma,S sigma>=(3/4)<sigma,Delta_0(Delta_0-R/3)sigma>",
+    "transverse_vector_norm": "<Lv,Lv>=2<v,(Delta_1_T-R/4)v>",
+    "verified": true
+  }
+}

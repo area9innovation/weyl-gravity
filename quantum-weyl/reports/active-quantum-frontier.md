@@ -38,8 +38,18 @@ local-Jacobian identity, so the remaining auxiliary gap is repository row
 identification, normalization, contour, and finite phase rather than the
 Gaussian algebra. The standard determinant bundle ranks `(5,1,5,3)` also
 reproduce signed effective rank six. Comparing them with the covariant BV
-component ranks localizes the missing multiplicity proof to exactly one
-scalar ghost rank and its operator/Jacobian/nonminimal Berezinian map. A
+component ranks originally localized the missing multiplicity proof to one
+scalar ghost rank. That operator gap is now closed: the exact longitudinal
+Diff/Weyl Faddeev--Popov matrix has determinant
+`-12 (Delta_0-R/3)`, so its two scalar ghost inputs yield the single standard
+rank-one differential factor, including the `M_squared=-4` specialization at
+`R=12`. The nonzero-mode functional measure now matches as well: the York
+`det(Delta_0)^(1/2)` cancels against the Diff ghost, antighost, and multiplier
+Hodge super-Jacobians, and every gauge/nonminimal quartet has unit
+superdeterminant. The surviving ghost factors have precisely the standard
+rank, operator, and `+1/2` partition-function exponents. The remaining
+multiplicity proof is the physical repository Hessian normalization, global
+zero modes, auxiliary contour/phase, regulator, and complete row/factor map. A
 strict, content-addressed full-BV multiplicity receiver is ready. It rejects
 orphan rows or factors, duplicate standard maps, target-rank drift, scalar
 map drift, and nested proof-hash drift; the
@@ -151,8 +161,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. supply the full-BV multiplicity ledger resolving the rank-one scalar ghost
-   cancellation, then match a repository regulator, operator, measure,
+1. complete the full-BV multiplicity ledger by matching the physical repository
+   Hessian, global zero modes, auxiliary contour/phase, regulator and total
+   row/factor provenance,
    auxiliary/fourth-order Jacobian, and zero-mode ledger through the accepted analytic export, then
    compute the regulated Slavnov breaking against the completed H14 basis;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;

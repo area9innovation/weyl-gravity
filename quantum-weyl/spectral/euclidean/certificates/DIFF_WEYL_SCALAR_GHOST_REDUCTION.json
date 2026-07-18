@@ -1,0 +1,317 @@
+{
+  "background": {
+    "dimension": 4,
+    "geometry": "Einstein",
+    "laplacian_convention": "Delta_0=-nabla^2",
+    "ricci_identity": "Ric_mu_nu=(R/4)g_mu_nu",
+    "signature": "EUCLIDEAN"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL result derives the two-by-two longitudinal-diffeomorphism/Weyl Faddeev--Popov scalar block on a four-dimensional Einstein background. In the conformally invariant vector gauge it is triangular and its determinant is -12 times Delta_0-R/3, so the two scalar ghost inputs yield exactly the one differential rank-one standard ghost factor with mass shift -4 at R=12; the remaining multiplier is operator independent, but its infinite-dimensional measure normalization is open. It does not compute the York/Hodge functional measure, antighost/multiplier or nonminimal Berezinian, the complete repository Hessian, zero modes, contours, anomaly coefficients, a regulated Slavnov breaking, QME disposition, D-Cartan class, residual transfer, or Lorentzian quantum theory.",
+  "claim_flags": {
+    "DIFF_WEYL_SCALAR_FP_MATRIX_DERIVED": true,
+    "FULL_REPOSITORY_HESSIAN_MATCHED": false,
+    "NONMINIMAL_BEREZINIAN_MATCHED": false,
+    "QME_DISPOSITION": false,
+    "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
+    "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+    "SCALAR_BLOCK_GAUGE_PARAMETER_DETERMINANT_INVARIANCE": true,
+    "SCALAR_GHOST_DIFFERENTIAL_RANK_TWO_TO_ONE": true,
+    "STANDARD_SCALAR_GHOST_OPERATOR_MATCHED": true,
+    "YORK_HODGE_MEASURE_MATCHED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependency_hashes": {
+    "classical_minimal_BV_import": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8",
+    "standard_spin2_factorization": "2c1eaa0a1bf85004b21bf84aa0722c0e9622e6038011b5b2b00c9e82f6fb36d8"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_variation": {
+    "canonical_longitudinal_row": "-(3/2)nabla_mu(Delta_0-R/3)c",
+    "canonical_trace_row": "-2 Delta_0 c+8 omega",
+    "gradient_commutator": "Box nabla_mu c=nabla_mu Box c+Ric_mu_nu nabla^nu c",
+    "vector_gauge_general_beta": "delta F_mu=Box xi_mu+Ric_mu_nu xi^nu+(1-2 beta)nabla_mu div(xi)+2(1-4 beta)nabla_mu omega",
+    "weyl_decoupling_from_vector_gauge": true
+  },
+  "gauge_conventions": {
+    "ghost_inputs": [
+      "xi_longitudinal_scalar",
+      "omega"
+    ],
+    "metric_BRST_row": "Q g_mu_nu=nabla_mu xi_nu+nabla_nu xi_mu+2 omega g_mu_nu",
+    "scalar_outputs": [
+      "longitudinal_part_of_F_mu",
+      "F_W"
+    ],
+    "trace_gauge": "F_W=h",
+    "vector_gauge": "F_mu=nabla^nu h_mu_nu-(1/4)nabla_mu h"
+  },
+  "gauge_parameter_control": {
+    "beta_zero_matrix": {
+      "beta": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "determinant": [
+        {
+          "R_degree": 1,
+          "denominator": 1,
+          "lambda_degree": 0,
+          "numerator": 4
+        },
+        {
+          "R_degree": 0,
+          "denominator": 1,
+          "lambda_degree": 1,
+          "numerator": -12
+        }
+      ],
+      "matrix": {
+        "longitudinal_gauge_from_weyl_ghost": [
+          {
+            "R_degree": 0,
+            "denominator": 1,
+            "lambda_degree": 0,
+            "numerator": 2
+          }
+        ],
+        "longitudinal_gauge_from_xi_scalar": [
+          {
+            "R_degree": 1,
+            "denominator": 2,
+            "lambda_degree": 0,
+            "numerator": 1
+          },
+          {
+            "R_degree": 0,
+            "denominator": 1,
+            "lambda_degree": 1,
+            "numerator": -2
+          }
+        ],
+        "trace_gauge_from_weyl_ghost": [
+          {
+            "R_degree": 0,
+            "denominator": 1,
+            "lambda_degree": 0,
+            "numerator": 8
+          }
+        ],
+        "trace_gauge_from_xi_scalar": [
+          {
+            "R_degree": 0,
+            "denominator": 1,
+            "lambda_degree": 1,
+            "numerator": -2
+          }
+        ]
+      },
+      "proportionality_constant": -12,
+      "target_residual": [],
+      "target_scalar_operator": [
+        {
+          "R_degree": 1,
+          "denominator": 3,
+          "lambda_degree": 0,
+          "numerator": -1
+        },
+        {
+          "R_degree": 0,
+          "denominator": 1,
+          "lambda_degree": 1,
+          "numerator": 1
+        }
+      ],
+      "triangular": false,
+      "verified": true
+    },
+    "canonical_beta_selected_for_triangularity": "1/4",
+    "determinant_independent_of_beta": true
+  },
+  "minimal_missing_carrier": {
+    "closed_gap": "rank-two longitudinal Diff/Weyl scalar FP operator reduces exactly to the rank-one standard differential factor",
+    "next_required_artifact": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+    "remaining_gap": "York/Hodge measure, antighost-multiplier and nonminimal Berezinian, physical repository Hessian normalization, zero modes, contour, and total row/factor map"
+  },
+  "negative_control": {
+    "mutated_identity": {
+      "beta": {
+        "denominator": 4,
+        "numerator": 1
+      },
+      "determinant": [
+        {
+          "R_degree": 1,
+          "denominator": 1,
+          "lambda_degree": 0,
+          "numerator": 2
+        },
+        {
+          "R_degree": 0,
+          "denominator": 1,
+          "lambda_degree": 1,
+          "numerator": -12
+        }
+      ],
+      "matrix": {
+        "longitudinal_gauge_from_weyl_ghost": [],
+        "longitudinal_gauge_from_xi_scalar": [
+          {
+            "R_degree": 1,
+            "denominator": 4,
+            "lambda_degree": 0,
+            "numerator": 1
+          },
+          {
+            "R_degree": 0,
+            "denominator": 2,
+            "lambda_degree": 1,
+            "numerator": -3
+          }
+        ],
+        "trace_gauge_from_weyl_ghost": [
+          {
+            "R_degree": 0,
+            "denominator": 1,
+            "lambda_degree": 0,
+            "numerator": 8
+          }
+        ],
+        "trace_gauge_from_xi_scalar": [
+          {
+            "R_degree": 0,
+            "denominator": 1,
+            "lambda_degree": 1,
+            "numerator": -2
+          }
+        ]
+      },
+      "proportionality_constant": -12,
+      "target_residual": [
+        {
+          "R_degree": 1,
+          "denominator": 1,
+          "lambda_degree": 0,
+          "numerator": -2
+        }
+      ],
+      "target_scalar_operator": [
+        {
+          "R_degree": 1,
+          "denominator": 3,
+          "lambda_degree": 0,
+          "numerator": -1
+        },
+        {
+          "R_degree": 0,
+          "denominator": 1,
+          "lambda_degree": 1,
+          "numerator": 1
+        }
+      ],
+      "triangular": true,
+      "verified": false
+    },
+    "mutated_ricci_coefficient": "R/4",
+    "mutation": "drop one of the two Einstein Ricci contributions in the longitudinal row",
+    "rejected": true
+  },
+  "next_gate": "MATCH_YORK_HODGE_MEASURE_NONMINIMAL_BEREZINIAN_AND_REPOSITORY_HESSIAN_ROWS",
+  "proof_sha256": "835dc239ef0bec7db30629b3784780571979d4daa3d2dc57a86c0c66d29b4e2c",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/diff-weyl-scalar-ghost-reduction.md": "f034b17e0238871610cf07feaa1902231c6425e16149bda3e85239ee33a6f0b5",
+      "quantum-weyl/spectral/euclidean/scalar_ghost_reduction.py": "377d198d676a19386bc51c009895efb1ba6726678a9e69df4982a38cc0727cf5",
+      "quantum-weyl/spectral/euclidean/schema/diff-weyl-scalar-ghost-reduction-v1.schema.json": "48da8394deda3a7e98d2f3a63dc4719bfdd16fc4acb288cdbb52154c03eba298",
+      "quantum-weyl/spectral/euclidean/tests/test_scalar_ghost_reduction.py": "30cbf6a1d529cb8e3c5cbfc900a5d45a01f4df3bcd2d1b7850079fed6a967695",
+      "quantum-weyl/spectral/euclidean/verify_scalar_ghost_reduction.py": "830b8933af9272a7cd328be9b94f6ece35212ffc13065e7d08f06229b1dd9241"
+    }
+  },
+  "result_id": "DIFF_WEYL_SCALAR_GHOST_REDUCTION",
+  "result_state": "SCALAR_FP_RANK_TWO_TO_ONE_DIFFERENTIAL_FACTOR_VERIFIED_FULL_BV_MEASURE_MAP_OPEN",
+  "scalar_matrix_identity": {
+    "beta": {
+      "denominator": 4,
+      "numerator": 1
+    },
+    "determinant": [
+      {
+        "R_degree": 1,
+        "denominator": 1,
+        "lambda_degree": 0,
+        "numerator": 4
+      },
+      {
+        "R_degree": 0,
+        "denominator": 1,
+        "lambda_degree": 1,
+        "numerator": -12
+      }
+    ],
+    "matrix": {
+      "longitudinal_gauge_from_weyl_ghost": [],
+      "longitudinal_gauge_from_xi_scalar": [
+        {
+          "R_degree": 1,
+          "denominator": 2,
+          "lambda_degree": 0,
+          "numerator": 1
+        },
+        {
+          "R_degree": 0,
+          "denominator": 2,
+          "lambda_degree": 1,
+          "numerator": -3
+        }
+      ],
+      "trace_gauge_from_weyl_ghost": [
+        {
+          "R_degree": 0,
+          "denominator": 1,
+          "lambda_degree": 0,
+          "numerator": 8
+        }
+      ],
+      "trace_gauge_from_xi_scalar": [
+        {
+          "R_degree": 0,
+          "denominator": 1,
+          "lambda_degree": 1,
+          "numerator": -2
+        }
+      ]
+    },
+    "proportionality_constant": -12,
+    "target_residual": [],
+    "target_scalar_operator": [
+      {
+        "R_degree": 1,
+        "denominator": 3,
+        "lambda_degree": 0,
+        "numerator": -1
+      },
+      {
+        "R_degree": 0,
+        "denominator": 1,
+        "lambda_degree": 1,
+        "numerator": 1
+      }
+    ],
+    "triangular": true,
+    "verified": true
+  },
+  "schema": "quantum-weyl-diff-weyl-scalar-ghost-reduction-v1",
+  "target_match": {
+    "differential_input_rank": 2,
+    "differential_output_factor_rank": 1,
+    "remaining_factor": "operator-independent algebraic constant -12; functional-measure normalization open",
+    "repository_scalar_operator": "Delta_0-R/3",
+    "standard_M_squared_at_R_12": -4,
+    "standard_factor_id": "ghost_depth_0",
+    "standard_spin": 0,
+    "status": "EXACT_OPERATOR_AND_RANK_MATCH",
+    "unit_curvature_specialization": "R=12 gives Delta_0-4"
+  }
+}

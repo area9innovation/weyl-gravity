@@ -38,7 +38,7 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(self.payload["claim_flags"]["FULL_BV_G2_COMPLETE"])
         self.assertEqual(
             ladder["G3"],
-            "FULL_STANDARD_VECTOR_TT_AUXILIARY_AND_MULTIPLICITY_GAP_BOUND_ANALYTIC_MATCHING_OPEN",
+            "STANDARD_VECTOR_TT_AUXILIARY_AND_GHOST_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN",
         )
         self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
@@ -48,6 +48,14 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertTrue(
             self.payload["claim_flags"]["FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["DIFF_WEYL_SCALAR_GHOST_REDUCTION_VERIFIED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "YORK_HODGE_NONMINIMAL_BEREZINIAN_MATCHED_NONZERO_MODES"
+            ]
         )
         self.assertTrue(
             self.payload["claim_flags"]["STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED"]
@@ -90,7 +98,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
+            "MATCH_REPOSITORY_PHYSICAL_HESSIAN_ZERO_MODES_AUXILIARY_CONTOUR_REGULATOR_AND_COMPUTE_SLAVNOV_BREAKING",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],
