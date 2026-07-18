@@ -44,6 +44,7 @@ CERTS = {
     "BH2AF": PKG / "certificates" / "BH2A_FLUX_MATRIX.json",
     "BH2AC": PKG / "certificates" / "BH2A_CROSS_FLUX.json",
     "BH2AD": PKG / "certificates" / "BH2A_CAUSAL_DISPOSITION.json",
+    "BH2BP": PKG / "certificates" / "BH2B_POLAR_SPLIT.json",
 }
 
 
@@ -281,14 +282,17 @@ def entries():
                         omega="dynamical"),
         "descriptions": {desc: "OPEN" for desc in DESCRIPTIONS},
         "mode_data": {
-            "dispersion": _claim("OPEN", "no even-parity exterior operator exists in the repository"),
-            "lee_wald": _claim("OPEN", "bilinear flux matrix is BH-2A/B"),
+            "dispersion": _gated(
+                "CERTIFIED",
+                "polar l=2 rows derived; general branch-split identity delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: Einstein branch injects, polar extra branch = trace-coupled second-order Lichnerowicz system",
+                "no even-parity exterior operator exists in the repository", "BH2BP"),
+            "lee_wald": _claim("OPEN", "polar flux blocks open"),
             "taub_maps": _claim("NO_CERTIFIED_MAP", "no crosswalk to compact structures"),
             "resonance": _claim("OPEN", "no exterior cokernel object"),
             "second_order": SECOND_ORDER_OPEN,
         },
-        "evidence": [],
-        "claim_boundary": "no repository object exists",
+        "evidence": _evidence("BH2BP"),
+        "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, horizon reach, flux, causal disposition all OPEN",
     })
 
     E.append({

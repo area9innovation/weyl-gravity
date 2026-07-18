@@ -1,0 +1,66 @@
+{
+  "claim_flags": {
+    "axial_special_case_consistent": true,
+    "general_l_certified": false,
+    "general_split_identity_certified": true,
+    "polar_causal_disposition_decided": false,
+    "polar_flux_blocks_certified": false,
+    "polar_horizon_reach_certified": false,
+    "polar_rows_certified": true,
+    "stability_or_ringdown_certified": false,
+    "zerilli_benchmark_certified": false
+  },
+  "declaration": {
+    "background_family": "Schwarzschild (symbolic m)",
+    "conformal_frame": "working gauge; rational chart x = cos theta",
+    "generator": "none; operator-level identity",
+    "horizon_condition": "none imposed",
+    "infinity_condition": "none imposed",
+    "lifecycle": "CLASSIFIED",
+    "phase_space": "polar l = 2 RW-gauge perturbations (H0, H1, H2, K)",
+    "theory": "pure-Weyl gravity L = alpha C_abcd C^abcd"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "identity": {
+    "axial_consistency": "the certified axial identity (BH2A_AXIAL_OPERATOR) is the delta R = 0 special case",
+    "consequence": "the Einstein branch injects exactly into the Bach kernel in the polar sector; the polar extra branch is the second-order trace-coupled Lichnerowicz system on (delta Ric_ab, delta R)",
+    "constants": {
+      "box_ric": "1/2",
+      "g_box_R": "-1/12",
+      "grad_grad_R": "-1/6",
+      "weyl_coupling": "1"
+    },
+    "statement": "delta B_ab = (1/2) Box(delta Ric)_ab + C_acbd (delta Ric)^{cd} - (1/6) nabla_a nabla_b(delta R) - (1/12) g_ab Box(delta R), componentwise on the Ricci-flat background"
+  },
+  "missing_objects": [
+    "Zerilli master-equation reproduction (polar literature anchor)",
+    "polar extra-carrier horizon reach and asymptotics",
+    "polar flux blocks and Lee-Wald signs",
+    "polar causal disposition; general l",
+    "any stability or ringdown statement"
+  ],
+  "provenance": {
+    "bh2a_certificate": "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+    "bh2a_certificate_sha256": "58eead1536d9c14696dd3b21592aa22523681cad7b42f8179b322c5872391c2a",
+    "engine_path": "black_hole_programme/weyl_geometry.py",
+    "engine_sha256": "a7270c354d902cb9b106677e5fbeda75c5e44dd137655c5201c91ce47dde381c",
+    "generator_path": "black_hole_programme/bh2b_polar_split.py",
+    "machinery_path": "black_hole_programme/linearized_bach.py",
+    "machinery_sha256": "17af69d23396452fc1a60306787a38276b12ebcabec72dc397e69533486f120a"
+  },
+  "result_id": "PURE_WEYL_BH2B_POLAR_SPLIT",
+  "result_token": "BH2B_GENERAL_BRANCH_SPLIT_IDENTITY_CLASSIFIED",
+  "schema": "pure-weyl-bh2b-polar-split-v1",
+  "schema_path": "black_hole_programme/schema/bh2b-polar-split-v1.schema.json",
+  "schema_sha256": "1c5ec1a5664e6e307a2659489e8ee7e5fe8755cfaff7d85664c633a1864a7151",
+  "stage_seconds": {
+    "basis": 24.6,
+    "identity": 7.2,
+    "polar_rows": 47.3,
+    "total": 79.3
+  },
+  "verification_command": "python3 black_hole_programme/verify_bh2b_polar_split.py"
+}

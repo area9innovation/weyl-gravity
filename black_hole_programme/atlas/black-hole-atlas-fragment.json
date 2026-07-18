@@ -422,7 +422,7 @@
       }
     },
     {
-      "claim_boundary": "no repository object exists",
+      "claim_boundary": "operator-level split only (Schwarzschild, l=2): Zerilli benchmark, horizon reach, flux, causal disposition all OPEN",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -430,15 +430,21 @@
         "quantum": "OPEN",
         "symplectic": "OPEN"
       },
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json",
+          "result_id": "PURE_WEYL_BH2B_POLAR_SPLIT",
+          "sha256": "1c84cd014d31e1f97b6489ef083d5e81bcf83ba08eb9aa749c19931e60d5b8d5"
+        }
+      ],
       "id": "bh.mode.polar",
       "mode_data": {
         "dispersion": {
-          "statement": "no even-parity exterior operator exists in the repository",
-          "status": "OPEN"
+          "statement": "polar l=2 rows derived; general branch-split identity delta B = (1/2) Box dRic + C.dRic - (1/6) grad grad dR - (1/12) g Box dR certified componentwise: Einstein branch injects, polar extra branch = trace-coupled second-order Lichnerowicz system",
+          "status": "CERTIFIED"
         },
         "lee_wald": {
-          "statement": "bilinear flux matrix is BH-2A/B",
+          "statement": "polar flux blocks open",
           "status": "OPEN"
         },
         "resonance": {
@@ -597,7 +603,7 @@
     }
   ],
   "generated_by": "black_hole_programme/atlas/generate_atlas_fragment.py",
-  "generated_by_sha256": "1b82e9679857cd6875420a8b92d91d2cb6e5f87605eb581a43c01c220171b10a",
+  "generated_by_sha256": "7409c0104ef38d2b9fac4c51c812e341209f89e7c7db9d255ade32f1148bd5c4",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

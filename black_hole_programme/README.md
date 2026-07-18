@@ -38,7 +38,8 @@ every certificate in this directory.
 | BH-2A stage 3 | `BH2A_FLUX_MATRIX_STAGE1_RW_BRANCH_SYMPLECTICALLY_NULL` | certified: general axial bilinear + off-shell 4α identity; RW-block flux vanishes for conjugate pairs — the Einstein branch is symplectically null; all pairing lives in the Einstein×extra cross-block |
 | BH-2A stage 4 | `BH2A_CROSS_BLOCK_NONZERO_HORIZON_FLUX_FIXTURES` | certified (fixtures ω∈{3/5,2/7}, verifier adds 1/2; RW-null control < 1e-12): extra-branch horizon flux norm nonzero with i·F^r > 0 for α>0; Einstein×extra cross pairing nonzero — all horizon flux lives in the mixed/extra sectors |
 | BH-2A stage 5 | `BH2A_AXIAL_CAUSAL_DISPOSITION_EXTRA_BRANCH_UNAVOIDABLE` | certified: extra branch propagates on Einstein characteristics with no growing asymptotics; no causal boundary prescription excludes it — pure-Weyl exteriors cannot truncate to the Einstein sector; **BH-2A axial ℓ=2 closed** |
-| BH-2A remainder | polar sector, general ℓ, complex-frequency structure, well-posedness theorem | open — BH-3 vocabulary stays locked pending these and coordinator review |
+| BH-2B stage 1 | `BH2B_GENERAL_BRANCH_SPLIT_IDENTITY_CLASSIFIED` | certified: δB = ½□δRic + C∘δRic − ⅙∇∇δR − (1/12)g□δR componentwise (polar ℓ=2 included; axial identity is the δR=0 case); polar extra branch = trace-coupled 2nd-order Lichnerowicz system |
+| BH-2B remainder | Zerilli benchmark, polar reach/flux/disposition, general ℓ, complex-frequency, well-posedness | open — BH-3 vocabulary stays locked pending these and coordinator review |
 
 Run everything for a certificate:
 

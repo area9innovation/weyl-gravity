@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pure-weyl-bh2b-polar-split-v1",
+  "title": "BH-2B stage 1: general branch-split identity (polar included)",
+  "type": "object",
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_token",
+    "dependency_tags", "declaration", "identity", "claim_flags",
+    "missing_objects", "stage_seconds", "provenance", "verification_command"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "pure-weyl-bh2b-polar-split-v1" },
+    "schema_path": { "const": "black_hole_programme/schema/bh2b-polar-split-v1.schema.json" },
+    "schema_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "result_id": { "const": "PURE_WEYL_BH2B_POLAR_SPLIT" },
+    "result_token": { "const": "BH2B_GENERAL_BRANCH_SPLIT_IDENTITY_CLASSIFIED" },
+    "dependency_tags": { "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"] },
+    "declaration": {
+      "type": "object",
+      "required": ["theory", "background_family", "conformal_frame", "generator",
+                   "phase_space", "horizon_condition", "infinity_condition", "lifecycle"],
+      "properties": { "lifecycle": { "const": "CLASSIFIED" } }
+    },
+    "identity": {
+      "type": "object",
+      "required": ["statement", "constants", "axial_consistency", "consequence"],
+      "properties": {
+        "constants": {
+          "const": { "box_ric": "1/2", "weyl_coupling": "1", "grad_grad_R": "-1/6", "g_box_R": "-1/12" }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "polar_rows_certified", "general_split_identity_certified",
+        "axial_special_case_consistent", "zerilli_benchmark_certified",
+        "polar_horizon_reach_certified", "polar_flux_blocks_certified",
+        "polar_causal_disposition_decided", "general_l_certified",
+        "stability_or_ringdown_certified"
+      ],
+      "properties": {
+        "polar_rows_certified": { "const": true },
+        "general_split_identity_certified": { "const": true },
+        "axial_special_case_consistent": { "const": true },
+        "zerilli_benchmark_certified": { "const": false },
+        "polar_horizon_reach_certified": { "const": false },
+        "polar_flux_blocks_certified": { "const": false },
+        "polar_causal_disposition_decided": { "const": false },
+        "general_l_certified": { "const": false },
+        "stability_or_ringdown_certified": { "const": false }
+      }
+    },
+    "missing_objects": { "type": "array", "items": { "type": "string" }, "minItems": 5 },
+    "stage_seconds": { "type": "object", "additionalProperties": { "type": "number" } },
+    "provenance": {
+      "type": "object",
+      "required": ["generator_path", "machinery_path", "machinery_sha256",
+                   "engine_path", "engine_sha256", "bh2a_certificate", "bh2a_certificate_sha256"],
+      "properties": {
+        "generator_path": { "const": "black_hole_programme/bh2b_polar_split.py" },
+        "machinery_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "engine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "bh2a_certificate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "verification_command": { "const": "python3 black_hole_programme/verify_bh2b_polar_split.py" }
+  }
+}
