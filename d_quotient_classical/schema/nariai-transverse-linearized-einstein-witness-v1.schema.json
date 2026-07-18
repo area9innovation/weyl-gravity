@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/nariai-transverse-linearized-einstein-witness-v1.schema.json",
+  "title": "Nariai transverse linearized Einstein witness V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "result_id", "result_state", "dependency_tags", "dependency_refs", "background", "kantowski_sachs_tangent", "exact_witness", "bach_flatness", "transversality", "first_curvature_drift", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "nariai-transverse-linearized-einstein-witness-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1"},
+    "result_state": {"const": "FORMAL_TRANSVERSE_LINEARIZED_BACH_FLAT_WITNESS_EXACT"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "items": false, "minItems": 1, "maxItems": 1},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Nariai_curvature", "Nariai_metric_parent_SDR", "conformal_orbit_transfer", "typed_biwave_theorem"],
+      "properties": {
+        "Nariai_curvature": {"$ref": "#/$defs/dependency"},
+        "Nariai_metric_parent_SDR": {"$ref": "#/$defs/dependency"},
+        "conformal_orbit_transfer": {"$ref": "#/$defs/dependency"},
+        "typed_biwave_theorem": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "background": {"$ref": "#/$defs/string_object"},
+    "kantowski_sachs_tangent": {"$ref": "#/$defs/string_object"},
+    "exact_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["einstein_residuals", "weyl_contraction_rank", "background_weyl_components", "evaluation_time", "relative_metric_variations", "delta_C_0202_orthonormal", "background_C_squared", "delta_C_squared"],
+      "properties": {
+        "einstein_residuals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tt", "chi_chi", "sphere"],
+          "properties": {"tt": {"const": "0"}, "chi_chi": {"const": "0"}, "sphere": {"const": "0"}}
+        },
+        "weyl_contraction_rank": {"const": 4},
+        "background_weyl_components": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["C_0101", "C_0202", "C_2323"],
+          "properties": {"C_0101": {"const": "-2/3"}, "C_0202": {"const": "1/3"}, "C_2323": {"const": "2/3"}}
+        },
+        "evaluation_time": {"const": "asinh(1)"},
+        "relative_metric_variations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["chi", "sphere", "difference"],
+          "properties": {"chi": {"const": "-4/3"}, "sphere": {"const": "2"}, "difference": {"const": "-10/3"}}
+        },
+        "delta_C_0202_orthonormal": {"const": "-1"},
+        "background_C_squared": {"const": "16/3"},
+        "delta_C_squared": {"const": "-32"}
+      }
+    },
+    "bach_flatness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["linearized_Einstein", "linearized_Cotton", "linearized_Bach"],
+      "properties": {
+        "linearized_Einstein": {"const": true},
+        "linearized_Cotton": {"type": "string", "minLength": 1},
+        "linearized_Bach": {"type": "string", "minLength": 1}
+      }
+    },
+    "transversality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["not_pointwise_conformal", "not_infinitesimal_Diff_Weyl", "weyl_contraction_rank"],
+      "properties": {
+        "not_pointwise_conformal": {"type": "string", "minLength": 1},
+        "not_infinitesimal_Diff_Weyl": {"type": "string", "minLength": 1},
+        "weyl_contraction_rank": {"const": 4}
+      }
+    },
+    "first_curvature_drift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normal_tractor_slot", "normalized_component", "value", "consequence"],
+      "properties": {
+        "normal_tractor_slot": {"type": "string", "minLength": 1},
+        "normalized_component": {"type": "string", "minLength": 1},
+        "value": {"const": "-1"},
+        "consequence": {"type": "string", "minLength": 1}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1", "TRANSVERSE_FORMAL_BACH_FLAT_TANGENT", "TRANSVERSE_EXACT_NONLINEAR_BACKGROUND_FAMILY", "TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION", "TRANSVERSE_METRIC_PARENT_SDR", "TRANSVERSE_CAUSAL_TRANSFER"],
+      "properties": {
+        "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1": {"const": true},
+        "TRANSVERSE_FORMAL_BACH_FLAT_TANGENT": {"const": true},
+        "TRANSVERSE_EXACT_NONLINEAR_BACKGROUND_FAMILY": {"const": false},
+        "TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION": {"const": false},
+        "TRANSVERSE_METRIC_PARENT_SDR": {"const": false},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION"},
+    "claim_boundary": {"type": "string", "minLength": 120},
+    "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "string_object": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {"type": "string", "minLength": 1}
+    }
+  }
+}

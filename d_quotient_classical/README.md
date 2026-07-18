@@ -367,6 +367,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   to this conformal orbit remain open:
   [`certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json`](certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json),
   [`reports/conformal-nariai-310-causal-transfer.md`](reports/conformal-nariai-310-causal-transfer.md)
+- First genuinely transverse tangent: the exact Kantowski--Sachs variation
+  `delta a=-(1/3)sinh(2t)`, `delta b=sinh(t)` solves all three linearized
+  Einstein equations and is therefore linearized Bach-flat.  At
+  `t=asinh(1)` its relative circle/sphere variations are `-4/3` and `2`, the
+  Nariai Weyl-contraction map has rank four, and
+  `delta(C_abcd C^abcd)=-32`.  It is transverse to the infinitesimal
+  Diff--Weyl orbit and gives a normalized nonzero tractor-curvature drift,
+  while the full rank-310 SDR variation remains fail-closed:
+  [`certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json`](certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json),
+  [`reports/nariai-transverse-linearized-einstein-witness.md`](reports/nariai-transverse-linearized-einstein-witness.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

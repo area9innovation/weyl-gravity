@@ -1,0 +1,114 @@
+{
+  "bach_flatness": {
+    "linearized_Bach": "0 because the four-dimensional Einstein locus is Bach-flat and the displayed tangent solves the linearized Einstein equations",
+    "linearized_Cotton": "0 because delta P=(1/6)h and the varied Levi-Civita connection remains metric-compatible to first order",
+    "linearized_Einstein": true
+  },
+  "background": {
+    "equation": "Ric(g_N)=g_N",
+    "metric": "g_N=-dt^2+cosh(t)^2 dchi^2+dOmega_2^2",
+    "topology": "R times S1 times S2"
+  },
+  "claim_boundary": "This is a formal linearized Einstein, hence linearized Bach-flat, Kantowski-Sachs tangent at unit Nariai with an exact nonzero curvature witness transverse to the infinitesimal Diff-Weyl orbit. It is not an exact nonlinear background family, does not yet compute the full first variation of the rank-310 SDR, and does not promote transverse causal transfer.",
+  "dependency_refs": {
+    "Nariai_curvature": {
+      "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1.json",
+      "result_id": "CONFORMALLY_EINSTEIN_TRACTOR_CURVATURE_OBSTRUCTION_V1",
+      "sha256": "f8c511d3e594d5610ee2ff5fe7654a2950ec8fbb0760067757d09d9e3abd0b70"
+    },
+    "Nariai_metric_parent_SDR": {
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "result_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    },
+    "conformal_orbit_transfer": {
+      "path": "d_quotient_classical/certificates/CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1.json",
+      "result_id": "CONFORMAL_NARIAI_310_CAUSAL_TRANSFER_V1",
+      "sha256": "1a43c1d9b81eec7760bbac3e75c309af432b44be3c5d375948a56d41aa109d26"
+    },
+    "typed_biwave_theorem": {
+      "path": "d_quotient_classical/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json",
+      "result_id": "TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1",
+      "sha256": "52c74ce7e725ff61d49644721bb3329ad385a903c477ed5654fca00d763be8f9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "Nariai_Weyl_contraction_injective": true,
+    "linearized_Bach_flat": true,
+    "linearized_Einstein_chichi": true,
+    "linearized_Einstein_sphere": true,
+    "linearized_Einstein_tt": true,
+    "nonconstant_Weyl_scalar_variation": true,
+    "normal_tractor_curvature_drift_nonzero": true,
+    "relative_metric_variation_nonconformal": true,
+    "transverse_to_Diff_Weyl_orbit": true
+  },
+  "exact_witness": {
+    "background_C_squared": "16/3",
+    "background_weyl_components": {
+      "C_0101": "-2/3",
+      "C_0202": "1/3",
+      "C_2323": "2/3"
+    },
+    "delta_C_0202_orthonormal": "-1",
+    "delta_C_squared": "-32",
+    "einstein_residuals": {
+      "chi_chi": "0",
+      "sphere": "0",
+      "tt": "0"
+    },
+    "evaluation_time": "asinh(1)",
+    "relative_metric_variations": {
+      "chi": "-4/3",
+      "difference": "-10/3",
+      "sphere": "2"
+    },
+    "weyl_contraction_rank": 4
+  },
+  "first_curvature_drift": {
+    "consequence": "the coefficient-frozen Nariai curvature incidence and BGG maps do not extend unchanged along this tangent; curvature-dependent first variations must be included",
+    "normal_tractor_slot": "the Weyl block of the normal tractor curvature",
+    "normalized_component": "delta C_0202 at t=asinh(1)",
+    "value": "-1"
+  },
+  "flags": {
+    "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1": true,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_EXACT_NONLINEAR_BACKGROUND_FAMILY": false,
+    "TRANSVERSE_FORMAL_BACH_FLAT_TANGENT": true,
+    "TRANSVERSE_METRIC_PARENT_SDR": false,
+    "TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION": false
+  },
+  "kantowski_sachs_tangent": {
+    "alpha": "-(1/3)sinh(2t)",
+    "ansatz": "g_epsilon=-dt^2+(cosh(t)+epsilon alpha(t))^2 dchi^2+(1+epsilon beta(t))^2 dOmega_2^2+O(epsilon^2)",
+    "beta": "sinh(t)",
+    "cosmological_constant_fixed": "1",
+    "linearized_equation": "delta(Ric-g)=0"
+  },
+  "next_gate": "NARIAI_TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION",
+  "result_id": "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1",
+  "result_state": "FORMAL_TRANSVERSE_LINEARIZED_BACH_FLAT_WITNESS_EXACT",
+  "schema": "nariai-transverse-linearized-einstein-witness-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_linearized_einstein_witness.py": "f3829597529e965c4c4ac6337e2b491a74004cd568418ec683305920e92b8862",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_linearized_einstein_witness.py": "188b116451ebc8106845fadb1491622e2ae06388b0f5de812a4b6fe4b2c32520",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_linearized_einstein_witness.py": "6ecba1d67287720c5e5a7880517d3e29ea15a89f0ce43e27dec3175ce8354d32",
+    "d_quotient_classical/schema/nariai-transverse-linearized-einstein-witness-v1.schema.json": "794fed88959d8a1ebc6b12b73bdcdb620f6f2cde4349b09b96a4940c1e6549c9"
+  },
+  "transversality": {
+    "not_infinitesimal_Diff_Weyl": "linearized Cotton is zero; injectivity of v^d -> C_abcd v^d forces the Weyl parameter to be constant, while delta(C_abcd C^abcd)=-32 sinh(t) is nonconstant and the background invariant is constant",
+    "not_pointwise_conformal": "at t=asinh(1), h_chichi/g_chichi=-4/3 while h_sphere/g_sphere=2",
+    "weyl_contraction_rank": 4
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_linearized_einstein_witness --check --guards",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_linearized_einstein_witness.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_linearized_einstein_witness",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-linearized-einstein-witness-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json"
+  ]
+}

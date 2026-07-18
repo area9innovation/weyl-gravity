@@ -206,6 +206,13 @@ wave-energy-graph-bounded remainder has typed advanced/retarded Green
 operators, without assuming stationarity, commutativity or self-adjointness.
 Thus the transverse calculation should first test the SDR/intertwining defect
 and the lower-order normal form; it need not rediscover the Volterra argument.
+The first transverse input is now exact: the Kantowski--Sachs tangent
+`delta a=-(1/3)sinh(2t)`, `delta b=sinh(t)` is linearized Einstein/Bach-flat,
+lies outside the infinitesimal Diff--Weyl orbit, and has normalized
+tractor-curvature drift `delta C_0202=-1` at `t=asinh(1)`.  The active
+certificate must differentiate the rank-310 SDR identities along this
+witness and either solve the curvature-dependent correction or return its
+normalized Hom-complex obstruction.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

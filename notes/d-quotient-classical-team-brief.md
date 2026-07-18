@@ -1433,6 +1433,19 @@ The active gate remains the first transverse Bach-flat SDR defect, now with a
 precise analytic acceptance criterion if the corrected metric endpoint has
 this lower-order biwave form.
 
+`NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1` supplies the missing
+transverse input.  In the Kantowski--Sachs sector,
+`delta a=-(1/3)sinh(2t)` and `delta b=sinh(t)` solve the complete linearized
+Einstein ODE at fixed cosmological constant and hence are linearized
+Bach-flat.  The tangent is not in the infinitesimal Diff--Weyl orbit: the
+background Weyl contraction on one-forms has rank four, the tangent remains
+Cotton-flat, and its nonconstant scalar variation is
+`delta(C_abcd C^abcd)=-32 sinh(t)`.  At `t=asinh(1)` the normalized tractor
+Weyl-slot drift is `delta C_0202=-1`.  This proves that coefficient-frozen
+Nariai maps do not extend unchanged, but it is not yet an obstruction to
+curvature-corrected maps.  The next gate is now the actual first variation of
+the rank-310 chain-map, retract and cyclicity identities along this witness.
+
 ### Work package C-G3: clock-family stability
 
 Replace the single Berger fixture by an audit of the full squashing interval,
