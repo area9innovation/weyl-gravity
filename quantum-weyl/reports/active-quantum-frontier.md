@@ -95,12 +95,15 @@ the normalized scalar Schur operator
 `(-1/3,1/9,-1/81)`. This removes three separate kernel evaluations from the
 architecture. The infinite-dimensional continuation is now sharp: writing
 `S_L=I+K`, the order-`-2` correction lies in every Schatten `S_p` for `p>2`,
-so the canonical `det_3(I+K)` tail exists. The critical local residue is
+so the canonical `det_3(I+K)` tail exists. The canonical local residues are
 computed exactly as
-`Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27`. Ordinary trace class is not
-implied. The regulated `R(K)`, finite part of `R(K^2)`, possible local zeta
-multiplicative anomaly, and generic physical fourth-order Hessian are the
-next coefficient-bearing inputs.
+`Wres(K)=(4 pi)^-2 integral(R^2+4 Ric^2)/9`,
+`Wres(K^2)=(4 pi)^-2 integral(R^2+2 Ric^2)/27`, and
+`Wres(log S_L)=(4 pi)^-2 integral(5 R^2+22 Ric^2)/54`. Ordinary trace class
+is not implied. The finite regulated `R(K)` and `R(K^2)` rows, a
+reference-specific scale conversion, possible local zeta multiplicative
+anomaly, and generic physical fourth-order Hessian are the next
+coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute
@@ -418,18 +421,20 @@ stabilizer and rejects an automatic `SO(4,2)` quotient. This remains preflight:
 polar cyclic BV enhancement, moment-map/Taub-zero descent,
 exceptional/global rows, and the global mapping cone are still open.
 
-The ordered critical path is:
+The current coefficient-bearing critical path is:
 
-1. supply the full covariant Euclidean principal-symbol sequence and match a
-   non-conformally-flat or Ricci-flat repository full-BV operator/measure
-   presentation to determine `c`, while binding the accepted round-`S4`
-   ledger into the V2 regulated Slavnov handoff;
-2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
-3. retained 26-row zero-frequency spectral carrier;
-4. typed companion microlocal transport and global covariance;
-5. QME restoration or obstruction;
-6. residual quantum transfer;
-7. optionally, construct a rank-46 branch projector or a normalized obstruction for Paper 11 branch interpretation.
+1. compute the finite regulated `R(K)` and `R(K^2)` rows, the
+   reference-specific scale conversion, and any multiplicative anomaly;
+2. combine them with the same-gauge generic-background physical fourth-order
+   Hessian and integrate the five parity-even repository form factors;
+3. classify the parity-odd derivative sector and fix the finite `C2` and
+   absolute dressed `R(g_hat)^2` normalizations and renormalized products;
+4. use those data to determine complete `Gamma1/Q1`;
+5. import a same-background compensator-inclusive classical contraction
+   before residual transfer.
+
+The same-background Lorentzian/Bridge 4 programme remains a parallel carrier
+problem and does not substitute for these Euclidean coefficient inputs.
 
 The frontier is `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, and
 `LORENTZIAN-CAUSAL` bookkeeping. It is not a quantum theorem.

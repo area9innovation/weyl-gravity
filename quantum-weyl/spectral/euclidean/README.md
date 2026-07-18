@@ -110,11 +110,14 @@ The infinite-dimensional regularization gate is now sharpened in
 [`GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json`](certificates/GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT.json).
 Writing `S_L=I+K`, the order-`-2` correction lies in every Schatten `S_p`
 with `p>2`, so `det_3(I+K)` is canonical and contains the trace-class tail.
-Only `R(K)` and the finite part of `R(K^2)` require the common regulator.
-The critical local coefficient is exact:
-`Wres(K^2)=(4 pi)^-2 integral (R^2+2 Ric^2)/27`. Conversion to a zeta pole
-or scale coefficient still requires a declared reference-operator order and
-trace normalization.
+Only the finite `R(K)` and `R(K^2)` rows require the common regulator.  The
+canonical local residues are exact:
+`Wres(K)=(4 pi)^-2 integral (R^2+4 Ric^2)/9`,
+`Wres(K^2)=(4 pi)^-2 integral (R^2+2 Ric^2)/27`, and
+`Wres(log S_L)=(4 pi)^-2 integral (5 R^2+22 Ric^2)/54`. Conversion to a zeta
+pole or scale coefficient still requires a declared reference-operator order
+and trace normalization. See
+[`GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json`](certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json).
 
 Replay with:
 
@@ -187,3 +190,7 @@ The sharp trace-ideal continuation is recorded in
 [`generic-background-ghost-schur-schatten-split.md`](../../reports/generic-background-ghost-schur-schatten-split.md):
 the canonical `det_3` tail and `Wres(K^2)` are computed, while `R(K)`, the
 finite part of `R(K^2)`, and any zeta multiplicative anomaly remain open.
+The successor
+[`generic-background-ghost-schur-wodzicki-residue.md`](../../reports/generic-background-ghost-schur-wodzicki-residue.md)
+computes `Wres(K)` and `Wres(log S_L)` and keeps the finite and
+reference-specific scale rows fail-closed.

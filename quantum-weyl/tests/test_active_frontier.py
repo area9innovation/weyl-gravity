@@ -250,7 +250,13 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertFalse(
             self.payload["claim_flags"]["FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED"]
         )
-        self.assertFalse(self.payload["claim_flags"]["WODZICKI_RESIDUE_K_COMPUTED"])
+        self.assertTrue(self.payload["claim_flags"]["WODZICKI_RESIDUE_K_COMPUTED"])
+        self.assertTrue(
+            self.payload["claim_flags"]["WODZICKI_RESIDUE_LOG_S_COMPUTED"]
+        )
+        self.assertFalse(self.payload["claim_flags"]["RENORMALIZED_R_K_COMPUTED"])
+        self.assertFalse(self.payload["claim_flags"]["FINITE_PART_R_K2_COMPUTED"])
+        self.assertFalse(self.payload["claim_flags"]["ZETA_SCALE_COEFFICIENT_COMPUTED"])
         self.assertFalse(
             self.payload["claim_flags"]["ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"]
         )

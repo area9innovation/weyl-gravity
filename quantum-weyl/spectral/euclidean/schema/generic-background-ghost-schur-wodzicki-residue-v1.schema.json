@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-generic-background-ghost-schur-wodzicki-residue-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "residue_truncation",
+    "linear_heat_insertion",
+    "quadratic_principal_insertion",
+    "exact_residues",
+    "regularization_boundary",
+    "claim_flags",
+    "dependencies",
+    "references",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-schur-wodzicki-residue-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"},
+    "result_state": {"const": "SCHUR_K_AND_LOGARITHM_WODZICKI_RESIDUES_COMPUTED"},
+    "lifecycle_state": {"const": "LOCAL_RESIDUES_COMPLETE_FINITE_TRACE_ROWS_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "manifold", "mode_domain", "operator_scope", "reference_operator"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "manifold": {"const": "closed compact smooth manifold without boundary"},
+        "mode_domain": {"type": "string", "minLength": 20},
+        "operator_scope": {"const": "normalized scalar Schur factor S_L=I+K"},
+        "reference_operator": {"const": "positive scalar Laplacian Delta_0 of order two"}
+      }
+    },
+    "residue_truncation": {"$ref": "#/$defs/nonemptyObject"},
+    "linear_heat_insertion": {"$ref": "#/$defs/nonemptyObject"},
+    "quadratic_principal_insertion": {"$ref": "#/$defs/nonemptyObject"},
+    "exact_residues": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["K_W_basis", "K_Ricci_basis", "K_scalar_flat_basis", "K2_Ricci_basis", "log_S_Ricci_basis", "Einstein_basis", "coefficient_replay"],
+      "properties": {
+        "K_W_basis": {"const": "Wres(K)=(4 pi)^-2 integral[W.Ric/9-(tr W)R/18+tr(W^2)/6]"},
+        "K_Ricci_basis": {"const": "Wres(K)=(4 pi)^-2 integral[R^2+4 Ric_mn Ric^mn]/9"},
+        "K_scalar_flat_basis": {"const": "Wres(K)=(4 pi)^-2 integral[4 Ric_mn Ric^mn]/9 when R=0"},
+        "K2_Ricci_basis": {"const": "Wres(K^2)=(4 pi)^-2 integral[R^2+2 Ric_mn Ric^mn]/27"},
+        "log_S_Ricci_basis": {"const": "Wres(log S_L)=(4 pi)^-2 integral[5 R^2+22 Ric_mn Ric^mn]/54"},
+        "Einstein_basis": {"const": "Wres(K)=(4 pi)^-2 integral[2 R^2/9] when Ric=(R/4)g and nabla R=0"},
+        "coefficient_replay": {"$ref": "#/$defs/nonemptyObject"}
+      }
+    },
+    "regularization_boundary": {"$ref": "#/$defs/nonemptyObject"},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "WODZICKI_RESIDUE_K_COMPUTED",
+        "WODZICKI_RESIDUE_K2_IMPORTED",
+        "WODZICKI_RESIDUE_LOG_S_COMPUTED",
+        "EINSTEIN_SPECIALIZATION_REPLAYED",
+        "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED",
+        "RENORMALIZED_R_K_COMPUTED",
+        "FINITE_PART_R_K2_COMPUTED",
+        "ZETA_SCALE_COEFFICIENT_COMPUTED",
+        "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED",
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "WODZICKI_RESIDUE_K_COMPUTED": {"const": true},
+        "WODZICKI_RESIDUE_K2_IMPORTED": {"const": true},
+        "WODZICKI_RESIDUE_LOG_S_COMPUTED": {"const": true},
+        "EINSTEIN_SPECIALIZATION_REPLAYED": {"const": true},
+        "FULL_SCHUR_REGULARIZED_DETERMINANT_COMPUTED": {"const": false},
+        "RENORMALIZED_R_K_COMPUTED": {"const": false},
+        "FINITE_PART_R_K2_COMPUTED": {"const": false},
+        "ZETA_SCALE_COEFFICIENT_COMPUTED": {"const": false},
+        "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED": {"const": false},
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Schatten_split"],
+      "properties": {"Schatten_split": {"$ref": "#/$defs/dependency"}}
+    },
+    "references": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/reference"}
+    },
+    "next_gate": {"const": "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN"},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "nonemptyObject": {"type": "object", "minProperties": 1},
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "result_id": {"type": "string", "minLength": 10},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "authors", "arxiv", "role"],
+      "properties": {
+        "title": {"type": "string", "minLength": 10},
+        "authors": {"type": "string", "minLength": 3},
+        "arxiv": {"type": "string", "minLength": 7},
+        "role": {"type": "string", "minLength": 10}
+      }
+    }
+  }
+}
