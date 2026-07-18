@@ -187,7 +187,13 @@ split and original coordinates, descends back to the metric homotopy, covers
 all ten blocks, and preserves causal support and cyclic adjoint reversal.  The
 single-background Nariai `G2` causal gate is complete; the next gate is the
 first controlled curvature obstruction or stability radius beyond Nariai in
-the conformally Einstein/Bach-flat class.
+the conformally Einstein/Bach-flat class.  The parent half now has such a
+radius: the normal-tractor detour complex is causally Green on every globally
+hyperbolic Bach-flat background, and an explicit relative ADM ball of radius
+`1/4` around Nariai contains a nonconstant non-conformally-flat consumer.  The
+remaining gate is the support-local metric/parent SDR on that class, or its
+first normalized obstruction; do not promote the class-wide metric theorem
+from the universal parent result alone.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

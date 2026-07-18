@@ -337,6 +337,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   complementary-degree adjoint reversal transfer from the metric endpoint:
   [`certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json`](certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json),
   [`reports/nariai-repaired-310-all-row-green-transfer.md`](reports/nariai-repaired-310-all-row-green-transfer.md)
+- Bach-flat parent stability: in four dimensions Bach-flatness is the
+  Yang--Mills condition for the normal tractor connection, so the universal
+  detour witness gives degreewise normally hyperbolic parent blocks on every
+  globally hyperbolic Bach-flat background.  An explicit ADM ball of radius
+  `1/4` around Nariai has a common reference speed cone and contains the
+  nonconstant, non-conformally-flat consumer
+  `g_Omega=(1+1/(10(1+t^2)))^2 g_N`.  This is a genuine relative-open `G3`
+  parent class; the metric SDR and metric Bach Green theorem on that class
+  remain fail-closed:
+  [`certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json`](certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json),
+  [`reports/bach-flat-parent-green-stability.md`](reports/bach-flat-parent-green-stability.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

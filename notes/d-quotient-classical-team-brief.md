@@ -1384,9 +1384,23 @@ The exact replay includes `H^2=HI=PH=0`, all ten BV blocks, causal support,
 the original-coordinate conjugation, and complementary-degree adjoint
 reversal.  Thus the single-background Nariai `G2` causal theorem is complete.
 
-Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
-first curvature obstruction and give a controlled norm/filtration and
-nonzero stability radius, or an exact no-go witness.
+`BACH_FLAT_PARENT_GREEN_STABILITY_V1` then promotes the parent analytic input
+to a relative-open `G3` class.  In four dimensions `Bach(g)=0` is the
+Yang--Mills condition for the normal tractor connection, so the universal
+detour witness is degreewise normally hyperbolic on every globally hyperbolic
+Bach-flat representative.  The declared ADM ball around Nariai has radius
+`1/4`, a common reference causal-speed bound below `2`, and contains the exact
+nonconstant consumer
+
+\[
+g_\Omega=\left(1+\frac1{10(1+t^2)}\right)^2g_N,
+\]
+
+which is Bach-flat and non-conformally-flat.  The class is open relative to
+the Bach-flat solution locus, not in the space of all metrics.  The next gate
+is now sharply the support-local metric/parent SDR stability theorem or its
+first normalized obstruction on this class; the parent Green theorem itself
+is no longer the issue.
 
 ### Work package C-G3: clock-family stability
 

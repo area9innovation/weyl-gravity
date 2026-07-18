@@ -1,0 +1,322 @@
+{
+  "background_class": {
+    "adm_form": "g=-N^2 dt^2+h_ij(dx^i+beta^i dt)(dx^j+beta^j dt)",
+    "conditions": [
+      "sup |N-1|<1/4",
+      "sup |beta|_hN<1/4",
+      "sup ||h_N^(-1/2)(h-h_N)h_N^(-1/2)||_op<1/4",
+      "Bach(g)=0",
+      "all coefficients are smooth"
+    ],
+    "manifold": "M=R x (S1 x S2)",
+    "nonempty": true,
+    "not_open_in_all_metrics": true,
+    "radius": "1/4",
+    "reference": "unit Nariai g_N=-dt^2+cosh(t)^2 dchi^2+dOmega_2^2",
+    "relatively_open": true,
+    "topology": "relative C0 ADM topology on the smooth Bach-flat locus; derivative-bounded refinements give the corresponding C_b^k classes"
+  },
+  "causal_theorem": {
+    "Green_operators": "each degreewise normally hyperbolic block has unique advanced and retarded Green operators G_g,+/-",
+    "adjoint_reversal": "the tractor pairing and formal self-adjoint detour complex give complementary-degree advanced/retarded reversal",
+    "chain_commutation": "Q_g G_g,+/-=G_g,+/- Q_g by same-sided uniqueness",
+    "chain_identity": "Q_g Lambda_g,+/-+Lambda_g,+/- Q_g=1",
+    "homotopy": "Lambda_g,+/-=W_g G_g,+/-",
+    "lower_order_terms": "tractor curvature, spacetime curvature, and connection coefficients are lower order",
+    "principal_symbol": "-g^{ab}zeta_a zeta_b times the identity in every degree",
+    "support": "supp G_g,+/- f subset J_g^+/-(supp f), and the ADM radius gives the common reference speed cone |dx/dt|_hN<2"
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "an ambient-open set of Bach-flat metrics in the space of all metrics",
+      "a support-local metric/parent SDR away from unit Nariai",
+      "a metric Bach Green homotopy on the whole class",
+      "uniform higher-Sobolev or Hadamard estimates without derivative bounds",
+      "nonlinear or quantum stability"
+    ],
+    "statement": "On every globally hyperbolic four-dimensional Bach-flat background, the normal-adjoint-tractor Yang--Mills detour parent is a cyclic Green-hyperbolic complex.  In particular this holds on the explicit radius-1/4 relative ADM neighborhood of unit Nariai, which contains the displayed nonconstant, non-conformally-flat conformal-Nariai metric."
+  },
+  "dependency_refs": {
+    "abstract_causal_transfer": {
+      "artifact_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+      "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+      "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
+    },
+    "nariai_parent_control": {
+      "artifact_id": "NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_YANG_MILLS_PARENT_GREEN_HOMOTOPY_V1.json",
+      "sha256": "88c6c6a132ee5e6a61c1fb3e3585095bc26b63525ed01bfb824a6d19e56393a8"
+    },
+    "yang_mills_detour": {
+      "artifact_id": "CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1",
+      "path": "d_quotient_classical/certificates/CONFORMALLY_EINSTEIN_YANG_MILLS_DETOUR_CORRECTION_V1.json",
+      "sha256": "1b5104082d72a2a6397b4a668a9a1008be22e1daf7481e5de37ad4c31126cee4"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "QW_plus_WQ_equals_declared_wave": true,
+    "Q_commutes_with_wave": true,
+    "Q_squared": true,
+    "advanced_retarded_parent_homotopies_exist": true,
+    "all_four_parent_blocks_normally_hyperbolic": true,
+    "causal_support_uniformly_enclosed": true,
+    "cone_speed_bound_below_two": true,
+    "cyclic_adjoint_reversal": true,
+    "finite_slab_extension_argument_applies": true,
+    "lapse_stays_positive": true,
+    "nonconstant_consumer_inside_radius": true,
+    "nonconstant_consumer_is_Bach_flat": true,
+    "nonconstant_consumer_is_not_conformally_flat": true,
+    "normal_tractor_Yang_Mills_on_class": true,
+    "radius_is_positive": true,
+    "spatial_metric_stays_positive": true
+  },
+  "flags": {
+    "ALL_GLOBALLY_HYPERBOLIC_BACH_FLAT_PARENT_COMPLEXES": true,
+    "BACH_FLAT_PARENT_GREEN_STABILITY_V1": true,
+    "BACH_FLAT_PARENT_RELATIVE_G3_CLASS": true,
+    "EXPLICIT_NONZERO_ADM_RADIUS": true,
+    "HADAMARD_STATE": false,
+    "METRIC_BACH_GREEN_HOMOTOPY_ON_CLASS": false,
+    "NONCONSTANT_NONCONFORMALLY_FLAT_CONSUMER": true,
+    "NONLINEAR_EXTENSION": false,
+    "OPEN_CLASS_IN_FULL_METRIC_SPACE": false,
+    "QUANTUM_CLAIM": false,
+    "RANK_310_SDR_ON_CLASS": false,
+    "UNIFORM_HIGHER_SOBOLEV_ESTIMATES": false
+  },
+  "global_hyperbolicity": {
+    "cauchy_argument": "a causal curve has strictly monotone t and reference spatial speed below 2; if t had a finite endpoint, compactness of S1 x S2 and smooth bounded coefficients on that finite slab would extend the curve",
+    "conclusion": "every metric in the declared ball is globally hyperbolic and every t-slice is Cauchy",
+    "exact_speed_majorant": "29/16",
+    "lapse_interval": [
+      "3/4",
+      "5/4"
+    ],
+    "reference_speed_bound": "|dx/dt|_hN<2",
+    "shift_bound": "1/4",
+    "spatial_metric_eigenvalue_interval": [
+      "3/4",
+      "5/4"
+    ],
+    "temporal_covector": "g^{-1}(dt,dt)=-N^{-2}<0"
+  },
+  "next_gate": "C_G3_BACH_FLAT_METRIC_SDR_STABILITY_OR_OBSTRUCTION",
+  "nonconstant_consumer": {
+    "Bach_flat": "Bach-flatness is conformally invariant in four dimensions and B(g_N)=0",
+    "Omega": "1+1/(10(1+t^2))",
+    "inside_radius": true,
+    "lapse_deviation_sup": "1/10",
+    "metric": "g_Omega=Omega(t)^2 g_N",
+    "nonconstant": true,
+    "not_conformally_flat": "the nonzero Nariai Weyl tensor remains nonzero under positive conformal rescaling",
+    "spatial_relative_deviation_sup": "21/100"
+  },
+  "result_id": "BACH_FLAT_PARENT_GREEN_STABILITY_V1",
+  "result_state": "RELATIVELY_OPEN_BACH_FLAT_PARENT_CAUSAL_CLASS_CERTIFIED",
+  "schema": "pure-weyl-bach-flat-parent-green-stability-v1",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/abstract_cyclic_causal_transfer.py": "9e75fa8127ae349535c3be1816a7a713b7b56e7868e172638cb94efde4ea6ea0",
+    "d_quotient_classical/causal_transfer/bach_flat_parent_green_stability.py": "30f6bf20725ccfc13427ca9daa5291d333cf7bd9c4bc5be1dc0ec0e7844ad56f",
+    "d_quotient_classical/causal_transfer/conformally_einstein_yang_mills_detour.py": "5f9b4b53dcf0d7e0806444a27fd92d2859ae280c0d34ebf0c4a3cf3c76cf43a8",
+    "d_quotient_classical/causal_transfer/nariai_yang_mills_parent_green_homotopy.py": "e005b1290a1ffc624002aec225bc147c3e2f0b9689ab88221acfba88a48b034b",
+    "d_quotient_classical/causal_transfer/tests/test_bach_flat_parent_green_stability.py": "06bf4353516d556fc1860646409e55675c69f944ebc9bef8188652b47e04fa3c",
+    "d_quotient_classical/causal_transfer/verify_bach_flat_parent_green_stability.py": "307b249668a5850352e8891e742f6e1d25f69d8542d5d47ff8983edb7970fbef",
+    "d_quotient_classical/schema/bach-flat-parent-green-stability-v1.schema.json": "9ca0bac653c18445b147e841a5916ba282472c15d25368f0adfc000e340ac5dd"
+  },
+  "universal_parent": {
+    "abstract_Q": {
+      "entries": [
+        [
+          1,
+          0,
+          [
+            [
+              [
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          1,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          2,
+          [
+            [
+              [
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "2ba376f707b6a2a549d59a50b80e4c21ed466eb4658791077eaa5e1ab1eda360",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "backward_witness": {
+      "entries": [
+        [
+          0,
+          1,
+          [
+            [
+              [
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          2,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          3,
+          [
+            [
+              [
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "3a26f0b0f007c1a85d4b1f2a5da157999a374d6ab497809f33e66b407de7b2a5",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "bundle_ranks": [
+      15,
+      60,
+      60,
+      15
+    ],
+    "complex_condition": "Bach(g)=0 implies delta^D F^D=0 and hence M^D d^D=delta^D M^D=0",
+    "geometric_input": "for a four-dimensional conformal structure, the normal tractor connection is Yang--Mills exactly when the Bach tractor current vanishes",
+    "middle": "M^D=delta^D d^D-F^D dot",
+    "sequence": "Omega0(adT) --dD--> Omega1(adT) --M^D--> Omega1(adT) --deltaD--> Omega0(adT)",
+    "wave_anticommutator": {
+      "entries": [
+        [
+          0,
+          0,
+          [
+            [
+              [
+                "delta",
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          1,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "d",
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          2,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              1
+            ],
+            [
+              [
+                "d",
+                "delta"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          3,
+          [
+            [
+              [
+                "delta",
+                "d"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "3aeb5d39f379d64f7843294e9c6da2b243f4381f31adc69470ffeec85f576a00",
+      "shape": [
+        4,
+        4
+      ]
+    }
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/bach_flat_parent_green_stability.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_bach_flat_parent_green_stability.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_bach_flat_parent_green_stability",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/bach-flat-parent-green-stability-v1.schema.json -d d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json"
+  ]
+}
