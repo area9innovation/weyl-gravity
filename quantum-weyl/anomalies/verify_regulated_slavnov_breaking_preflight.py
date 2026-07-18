@@ -42,6 +42,7 @@ def verify() -> dict:
         or missing.get("Euclidean_elliptic_complex_receiver_ready") is not True
         or missing.get("regulator_zero_mode_measure_receiver_ready") is not True
         or missing.get("negative_scalar_phase_locality_bound") is not True
+        or missing.get("conformal_zero_mode_volume_locality_bound") is not True
         or missing.get("classical_snapshot_compatibility_bridge_gap") is not False
         or missing.get("physical_classical_snapshot_compatibility_accepted")
         is not True

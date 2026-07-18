@@ -88,6 +88,10 @@ The unique negative scalar level-zero mode has now been evaluated separately:
 the two spectral cuts give opposite half-integer phases, and the phase has
 zero local Slavnov variation on the fixed-sign chamber. This removes it from
 the local anomaly decision while leaving the global determinant branch open.
+Likewise, the fifteen zero modes form the noncompact `SO(5,1)` conformal
+algebra. A constant volume normalization is locally irrelevant on a fixed
+stabilizer stratum, but the global collective-coordinate measure is not
+normalized and is not silently called finite.
 
 ## Exact remaining gap
 

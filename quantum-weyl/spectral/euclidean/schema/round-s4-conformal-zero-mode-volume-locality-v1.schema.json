@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://area9.dk/schemas/quantum-weyl-round-s4-conformal-zero-mode-volume-locality-v1.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_hashes", "group_ledger", "measure_disposition", "locality", "negative_control", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-round-s4-conformal-zero-mode-volume-locality-v1"}, "result_id": {"const": "ROUND_S4_CONFORMAL_ZERO_MODE_VOLUME_LOCALITY"}, "result_state": {"const": "SO_5_1_ZERO_MODE_VOLUME_LOCALLY_IRRELEVANT_GLOBAL_COLLECTIVE_COORDINATE_NORMALIZATION_OPEN"}, "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "dependency_hashes": {"type": "object", "additionalProperties": false, "required": ["zero_modes", "physical_multiplicity"], "properties": {"zero_modes": {"$ref": "#/$defs/hash"}, "physical_multiplicity": {"$ref": "#/$defs/hash"}}},
+    "group_ledger": {"const": {"Euclidean_conformal_group": "SO(5,1)", "Lie_algebra": "so(5,1)", "Killing_generators": 10, "proper_conformal_generators": 5, "total_generators": 15, "dimension_formula": "6*5/2=15", "naive_Haar_volume": "NONCOMPACT_DIVERGENT"}},
+    "measure_disposition": {"const": {"prime_deleted_kernel_dimension": 15, "collective_coordinate_or_group_volume_factor_required": true, "normalization_selected": false, "Gram_or_Faddeev_Popov_measure_required_for_global_partition_function": true}},
+    "locality": {"const": {"constant_Haar_normalization_changes_local_symbol": false, "constant_Haar_normalization_changes_local_b4_density": false, "local_Slavnov_variation_on_fixed_stabilizer_stratum": "ZERO", "stabilizer_dimension_jump_requires_separate_treatment": true, "global_partition_function_normalization_remains_open": true}},
+    "negative_control": {"const": {"mutation": "drop one proper-conformal generator", "mutated_dimension": 14, "so_5_1_dimension": 15, "rejected": true}},
+    "claim_flags": {"const": {"FIFTEEN_CONFORMAL_ZERO_MODES_BOUND": true, "NAIVE_CONFORMAL_HAAR_VOLUME_FINITE": false, "VOLUME_NORMALIZATION_IRRELEVANT_TO_LOCAL_B4_FIXED_STRATUM": true, "VOLUME_NORMALIZATION_IRRELEVANT_TO_LOCAL_SLAVNOV_FIXED_STRATUM": true, "GLOBAL_COLLECTIVE_COORDINATE_MEASURE_NORMALIZED": false, "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": false, "QME_DISPOSITION": false}},
+    "proof_sha256": {"$ref": "#/$defs/hash"}, "next_gate": {"const": "SUPPLY_GLOBAL_COLLECTIVE_COORDINATE_NORMALIZATION_OR_DECLARE_LOCAL_SLAVNOV_ONLY_SCOPE"}, "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 5, "maxProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  }, "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

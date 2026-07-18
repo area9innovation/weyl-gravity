@@ -1,0 +1,62 @@
+{
+  "claim_boundary": "This exact bookkeeping certificate identifies the ten Killing and five proper-conformal round-S4 zero modes with the fifteen-dimensional noncompact Euclidean conformal group SO(5,1). Its naive Haar volume is divergent and no global collective-coordinate normalization is selected. A constant choice of group-volume normalization cannot modify the local operator symbol, local b4 density, or local Slavnov breaking on a fixed stabilizer stratum. Stabilizer jumps, the collective-coordinate Gram/Faddeev-Popov factor, the global partition function, the combined repository measure ledger, QME disposition and Lorentzian theory remain open.",
+  "claim_flags": {
+    "FIFTEEN_CONFORMAL_ZERO_MODES_BOUND": true,
+    "GLOBAL_COLLECTIVE_COORDINATE_MEASURE_NORMALIZED": false,
+    "NAIVE_CONFORMAL_HAAR_VOLUME_FINITE": false,
+    "QME_DISPOSITION": false,
+    "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": false,
+    "VOLUME_NORMALIZATION_IRRELEVANT_TO_LOCAL_B4_FIXED_STRATUM": true,
+    "VOLUME_NORMALIZATION_IRRELEVANT_TO_LOCAL_SLAVNOV_FIXED_STRATUM": true
+  },
+  "dependency_hashes": {
+    "physical_multiplicity": "5bdc6ee4674e3a58ab0da0d4f8dc848ac7eebc4b84544c2079dee766362b9970",
+    "zero_modes": "1e1d75b2a199c8fcb58455da0753c62e88a885c892f163650b0b13c966ea765b"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "group_ledger": {
+    "Euclidean_conformal_group": "SO(5,1)",
+    "Killing_generators": 10,
+    "Lie_algebra": "so(5,1)",
+    "dimension_formula": "6*5/2=15",
+    "naive_Haar_volume": "NONCOMPACT_DIVERGENT",
+    "proper_conformal_generators": 5,
+    "total_generators": 15
+  },
+  "locality": {
+    "constant_Haar_normalization_changes_local_b4_density": false,
+    "constant_Haar_normalization_changes_local_symbol": false,
+    "global_partition_function_normalization_remains_open": true,
+    "local_Slavnov_variation_on_fixed_stabilizer_stratum": "ZERO",
+    "stabilizer_dimension_jump_requires_separate_treatment": true
+  },
+  "measure_disposition": {
+    "Gram_or_Faddeev_Popov_measure_required_for_global_partition_function": true,
+    "collective_coordinate_or_group_volume_factor_required": true,
+    "normalization_selected": false,
+    "prime_deleted_kernel_dimension": 15
+  },
+  "negative_control": {
+    "mutated_dimension": 14,
+    "mutation": "drop one proper-conformal generator",
+    "rejected": true,
+    "so_5_1_dimension": 15
+  },
+  "next_gate": "SUPPLY_GLOBAL_COLLECTIVE_COORDINATE_NORMALIZATION_OR_DECLARE_LOCAL_SLAVNOV_ONLY_SCOPE",
+  "proof_sha256": "fb5d1b912768c059c17f12f6174b5f9925686e47909ded11b3d50a8ebec2bddf",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/round-s4-conformal-zero-mode-volume-locality.md": "4fc378eab0fc391d935d2d612154d58c9a68ad5eb6b0cf7bd2f6cf78e3e61f17",
+      "quantum-weyl/spectral/euclidean/round_s4_conformal_volume_locality.py": "11f45090a87ee07c2684dbab488767b9b9eaeacb5431854746f8d5606177963e",
+      "quantum-weyl/spectral/euclidean/schema/round-s4-conformal-zero-mode-volume-locality-v1.schema.json": "bb27b2dd8808d571f90ce5c2cdd2776e0e571783e240091036a315d87921a993",
+      "quantum-weyl/spectral/euclidean/tests/test_round_s4_conformal_volume_locality.py": "825824fdbe9235805b09b498f40f0b0c4a88791337dbce144fdcdf5cdd6cde74",
+      "quantum-weyl/spectral/euclidean/verify_round_s4_conformal_volume_locality.py": "ffa361bde166cbc42811e36f0640703e4f266a4ece9559098fd37d086cc87fe8"
+    }
+  },
+  "result_id": "ROUND_S4_CONFORMAL_ZERO_MODE_VOLUME_LOCALITY",
+  "result_state": "SO_5_1_ZERO_MODE_VOLUME_LOCALLY_IRRELEVANT_GLOBAL_COLLECTIVE_COORDINATE_NORMALIZATION_OPEN",
+  "schema": "quantum-weyl-round-s4-conformal-zero-mode-volume-locality-v1"
+}

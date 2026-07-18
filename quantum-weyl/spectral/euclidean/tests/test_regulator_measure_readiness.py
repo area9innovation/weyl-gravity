@@ -17,6 +17,7 @@ class RegulatorMeasureReadinessTests(unittest.TestCase):
         self.assertTrue(all(not row["complete"] for row in value["current_candidate_audit"]))
         self.assertFalse(value["claim_flags"]["REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED"])
         self.assertTrue(value["claim_flags"]["NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND"])
+        self.assertTrue(value["claim_flags"]["CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND"])
         standard = value["current_candidate_audit"][0]
         self.assertTrue(standard["global_phase_policy"])
 

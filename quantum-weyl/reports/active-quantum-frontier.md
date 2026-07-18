@@ -131,6 +131,10 @@ The single negative scalar level-zero mode is no longer a local-coefficient
 ambiguity: its upper/lower cut phases are explicit and its local Slavnov
 variation vanishes on the fixed-sign chamber. The global determinant branch
 and continuous conformal-group volume remain separate open data.
+More precisely, the fifteen conformal zero modes generate noncompact
+`SO(5,1)`: a constant volume convention cannot affect local `b4` or local
+Slavnov breaking on a fixed stabilizer stratum, while the global
+collective-coordinate/Gram measure and stabilizer jumps remain open.
 
 The Slavnov assembly gate now records the sharper post-composer boundary.
 The accepted physical TT dictionary and full-BV ledger now permit the

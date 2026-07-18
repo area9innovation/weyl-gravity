@@ -489,6 +489,8 @@ def _load() -> dict[str, dict[str, Any]]:
         regulator_flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY")
         is not True
         or regulator_flags.get("NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND") is not True
+        or regulator_flags.get("CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND")
+        is not True
         or regulator_flags.get(
             "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED"
         )
@@ -1090,6 +1092,7 @@ def build() -> dict[str, Any]:
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": True,
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True,
             "NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND": True,
+            "CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -1286,6 +1289,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
         or flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY") is not True
         or flags.get("NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND") is not True
+        or flags.get("CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND") is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -1350,6 +1354,7 @@ def validate(result: dict[str, Any]) -> None:
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY",
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY",
             "NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND",
+            "CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",

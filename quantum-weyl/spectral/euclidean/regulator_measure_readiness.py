@@ -25,6 +25,7 @@ DEPENDENCIES = {
     "elliptic_readiness": HERE / "certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_READINESS.json",
     "snapshot_compatibility": ROOT / "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
     "negative_scalar_phase": HERE / "certificates/ROUND_S4_NEGATIVE_SCALAR_PHASE_LOCALITY.json",
+    "conformal_zero_mode_volume": HERE / "certificates/ROUND_S4_CONFORMAL_ZERO_MODE_VOLUME_LOCALITY.json",
 }
 SOURCE_PATHS = (
     "quantum-weyl/spectral/euclidean/regulator_measure_receiver.py",
@@ -92,6 +93,16 @@ def build() -> dict[str, Any]:
         or phase_flags.get("GLOBAL_DETERMINANT_BRANCH_SELECTED") is not False
     ):
         raise ValueError("negative scalar phase locality drifted")
+    volume_flags = values["conformal_zero_mode_volume"].get("claim_flags", {})
+    if (
+        volume_flags.get(
+            "VOLUME_NORMALIZATION_IRRELEVANT_TO_LOCAL_SLAVNOV_FIXED_STRATUM"
+        )
+        is not True
+        or volume_flags.get("GLOBAL_COLLECTIVE_COORDINATE_MEASURE_NORMALIZED")
+        is not False
+    ):
+        raise ValueError("conformal zero-mode volume locality drifted")
     candidates = [
         {"candidate_id": values["standard_slice"]["result_id"], "repository_bound": False, "measure": True, "zero_modes": True, "local_regulator": True, "global_phase_policy": True, "complete": False, "disposition": "STANDARD_BACKGROUND_SLICE_PHASE_LOCALLY_IRRELEVANT_REPOSITORY_BINDING_OPEN"},
         {"candidate_id": values["physical_multiplicity"]["result_id"], "repository_bound": True, "measure": True, "zero_modes": True, "local_regulator": False, "global_phase_policy": False, "complete": False, "disposition": "REPOSITORY_MULTIPLICITY_LEDGER_NOT_REGULATOR_OR_GLOBAL_PHASE_LEDGER"},
@@ -107,7 +118,7 @@ def build() -> dict[str, Any]:
         "accepted_contract": {"required_result_id": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER", "input_schema_path": str(INPUT_SCHEMA.relative_to(ROOT)), "physical_input_status": "NOT_SUPPLIED"},
         "receiver_mechanics": {"synthetic_receipt": receipt, "mutation_receipts": mutations},
         "current_candidate_audit": candidates,
-        "claim_flags": {"REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True, "NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND": True, "CURRENT_CANDIDATES_AUDITED": True, "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": False, "REGULATED_SLAVNOV_BREAKING_COMPUTED": False, "QME_DISPOSITION": False},
+        "claim_flags": {"REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True, "NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND": True, "CONFORMAL_ZERO_MODE_VOLUME_LOCALITY_BOUND": True, "CURRENT_CANDIDATES_AUDITED": True, "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": False, "REGULATED_SLAVNOV_BREAKING_COMPUTED": False, "QME_DISPOSITION": False},
         "proof_sha256": _canonical_hash(proof_payload),
         "next_gate": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER",
         "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL readiness certificate defines a compositional receiver for the repository full-BV determinant measure, zero-mode priming and symmetry-volume policy, covariant local regulator, indefinite-direction contours, and global phase disposition. The standard round-S4 slice supplies local factor evidence and the accepted multiplicity ledger supplies repository row binding, but neither artifact alone supplies the complete carrier. Receiver mechanics use a synthetic fixture only. No physical combined ledger, regulated Slavnov breaking, QME disposition, or Lorentzian quantum theory is claimed.",

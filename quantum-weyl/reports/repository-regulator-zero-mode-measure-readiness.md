@@ -19,6 +19,12 @@ repository rows and standard factors, but is not itself a regulator or phase
 ledger. The elliptic receiver remains ready without a physical full symbol
 complex. These complementary artifacts are not silently composed.
 
+The fifteen conformal zero modes are now identified with noncompact
+`SO(5,1)`. A constant group-volume normalization is irrelevant to local `b4`
+and local Slavnov breaking on a fixed stabilizer stratum, but the global
+collective-coordinate/Gram measure is not normalized and stabilizer jumps are
+outside the certificate.
+
 The synthetic fixture and four mutations test exact weighted-rank arithmetic,
 zero-mode totals, priming consistency, and the proof digest. They do not
 certify the physical functional measure or a Slavnov breaking.

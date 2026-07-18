@@ -618,6 +618,11 @@ and their phase is locally constant while the eigenvalue stays negative.
 Hence it does not alter the support-local `b4` density or local Slavnov
 breaking, although the global determinant branch and symmetry-volume
 normalization remain open.
+The zero-mode volume boundary is now precise: the ten Killing plus five
+proper-conformal generators form noncompact `SO(5,1)`, so the naive Haar
+volume diverges. A constant normalization does not enter local `b4` or local
+Slavnov breaking on a fixed stabilizer stratum; the global
+collective-coordinate/Gram measure and stabilizer jumps remain open.
 
 The generic classical typed biwave Volterra theorem is now pinned and
 independently imported by quantum. The import checks distinct source and
