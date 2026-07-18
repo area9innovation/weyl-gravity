@@ -435,6 +435,11 @@
           "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
           "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE",
+          "sha256": "f7be0c5571327d5ecb14194e3a6f485ae22547979f66b4ec45d614a3fbc28e9c"
         }
       ],
       "id": "ph.global.twist.relative",
@@ -516,6 +521,7 @@
   },
   "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
   "classification": {
+    "aligned_nonzero_stabilizer_resonance_common_zero_face_imported": true,
     "bridge_1_activation_gate_satisfied": false,
     "complete_homogeneous_twist_bounded_resonance_matrix_imported": true,
     "cross_background_mode_identification_made": false,
@@ -540,11 +546,15 @@
   "next_gate": "classify corrected nonidentity or chain-homotopy cyclic morphisms, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "842d93ef57dbb46ce8b1996bcd7572b44912400db359b46932ee2897a2cf1843",
+    "generator_sha256": "1e9edc503326a06563814bafa738dfc89573c18f81d682115e96fd9159dfd9ef",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
         "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+      },
+      "aligned_twist_extra_face": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
+        "sha256": "f7be0c5571327d5ecb14194e3a6f485ae22547979f66b4ec45d614a3fbc28e9c"
       },
       "axial_current": {
         "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
@@ -613,8 +623,11 @@
     }
   },
   "quadratic_handoff": {
-    "artifact": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
-    "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra bounded-resonance source matrix feeds the relative obstruction map but does not solve the simultaneous stabilizer zero locus, complete bridge 1 or the finite-harmonic tangent cone",
+    "artifacts": [
+      "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
+      "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE"
+    ],
+    "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra bounded-resonance source matrix feeds the relative obstruction map, and a nonzero aligned simultaneous stabilizer/resonance common-zero face is certified; the complete off-axis zero locus, every full correction class, bridge 1 and the finite-harmonic tangent cone remain open",
     "status": "PARTIAL_INPUT"
   },
   "relative_forms": {
@@ -628,7 +641,7 @@
   "result_state": "SAME_BACKGROUND_BRANCH_DICTIONARY_EXPORTED_FULL_RELATIVE_TRIANGLE_ACTIVATION_GATE_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "30fa76dd1109c2e2332fc2a045d59213f54438e4cf55ec840c578d19f3e8e444",
+  "schema_sha256": "734b370d8c2b2f2b13fdbba4382ea933cce28f21097282b7fbb95db5262c7b66",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",

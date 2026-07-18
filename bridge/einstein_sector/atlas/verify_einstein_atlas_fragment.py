@@ -86,6 +86,12 @@ def verify() -> None:
     if complete_matrix["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
         raise AssertionError("complete source matrix over-promoted the tangent cone")
 
+    aligned = by_id["einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face"]
+    if aligned["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or aligned["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("aligned common-zero face lost a certified compatibility gate")
+    if aligned["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("aligned compatibility face was promoted to a correction")
+
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("cross-background fail-closed entry changed")

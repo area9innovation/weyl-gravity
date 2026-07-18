@@ -31,6 +31,7 @@ CERTIFICATES = {
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
     "abd_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
     "homogeneous_twist_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+    "aligned_twist_extra_face": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
@@ -235,6 +236,18 @@ def entries() -> list[dict[str, object]]:
             "This completes the declared k=0 source matrix, not the finite-harmonic tangent cone, opposite momenta, multiple absolute-momentum fibres, a causal theorem, or Bridge 1.",
         ),
         _entry(
+            "einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face",
+            _scope(theory="Weyl-Maxwell target", carrier="one shared-axis ell=2,m=0,k=0 generic extra multiplicity vector plus collinear standard twist position/velocity and homogeneous spectators c,W_x", degree=2, parity="all four axial/polar extra multiplicities retained", ell="(1 x 2 -> resonant 2) plus self-source blocks", m="shared-axis twist m=0 and extra m=0", k=0, omega="generalized-zero twist crossed with omega_e=4/sqrt(3)"),
+            {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            ("CERTIFIED", "The extra input lies on the generic ell=2 p-shell and the twist input is generalized-zero."),
+            ("CERTIFIED", "The extra occupation X uses the direct positive axial-plus-polar Lee-Wald Gram; the standard twist block supplies the opposite Taub sign."),
+            ("CERTIFIED", "For B_z^2=(2/3)X, all five stabilizer maps vanish on the aligned m=0 family."),
+            ("CERTIFIED", "The exact coefficient <1,0;2,0|2,0>=0 kills the complete twist-extra p-shell resonance, while nonzero extra amplitude and the rank-three a,b,d chains force a=b=d=0."),
+            _second_order(("OPEN", "A nonzero simultaneous moment-map/resonance common-zero face is certified, but nonresonant polynomial channels have no assembled bounded right inverse."), ("OPEN", "Smooth exponential-polynomial right inverses for every mixed channel are not yet assembled."), open_causal),
+            _evidence("aligned_twist_extra_face", "homogeneous_twist_matrix", "axial_current", "polar_current", "taub", "abstract_cone"),
+            "This is an exact aligned compatibility face, not the complete off-axis zero locus, a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
+        ),
+        _entry(
             "einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder",
             _scope(theory="crosswalk", background="compact Plebanski-Hacyan <-> asymptotically flat/dS/AdS or vacuum conformal cylinder", boundaries="cross-background boundary/carrier identification", charge_sector="crosswalk", carrier="mode identification map", degree="crosswalk", parity="n/a", ell="n/a", m="n/a", k="n/a", omega="n/a"),
             {axis: "NO_CERTIFIED_MAP" for axis in AXES},
@@ -269,6 +282,10 @@ def build() -> dict[str, object]:
         raise AssertionError("a,b,d resonance-matrix input changed")
     if not records["homogeneous_twist_matrix"]["classification"]["complete_homogeneous_twist_bounded_resonance_matrix"]:
         raise AssertionError("complete homogeneous/twist matrix input changed")
+    if not records["aligned_twist_extra_face"]["classification"]["nonzero_simultaneous_stabilizer_and_bounded_resonance_zero_face"]:
+        raise AssertionError("aligned twist--extra compatibility face changed")
+    if records["aligned_twist_extra_face"]["classification"]["bounded_second_order_correction_constructed"]:
+        raise AssertionError("aligned compatibility face was over-promoted")
     if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("relative branch dictionary over-promoted bridge 1")
     if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:

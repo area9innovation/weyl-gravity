@@ -26,9 +26,12 @@ dictionary does not activate `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`.
 The quadratic handoff now imports the complete declared `k=0`
 homogeneous/twist-times-`ell=2` extra bounded-resonance source matrix.  The
 twist-position block has rank two and the twist-velocity block has pointwise
-rank four for real time.  This does not substitute for the linear bridge or
-complete the finite-harmonic tangent cone: the simultaneous stabilizer and
-resonance zero locus remains open.
+rank four for real time.  It also imports the first exact nonzero intersection
+with the stabilizer cone: on the shared-axis `m=0` face,
+`B_z^2=(2/3)X` cancels the Taub energy and the twist--extra resonant map
+vanishes.  This does not substitute for the linear bridge or complete the
+finite-harmonic tangent cone: the full off-axis zero locus and every complete
+correction class remain open.
 
 Evidence and verification:
 
@@ -37,6 +40,6 @@ Evidence and verification:
 - `bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py`
 
 Tier 1 consists of the generator freshness check, the independent hash and
-lifecycle verifier, and three scoped unit tests.  Imported Tier-2 mathematical
+lifecycle verifier, and four scoped unit tests.  Imported Tier-2 mathematical
 artifacts are accepted by content hash.  Tier 3 is not run because the full
 all-sector relative triangle remains open.

@@ -1,0 +1,146 @@
+{
+  "angular_theorem": {
+    "aligned_coefficient": "<1,0;2,0|2,0>=0",
+    "nonaxisymmetric_normalization": "<1,1;2,0|2,1>=sqrt(2)/2",
+    "representation_statement": "the unique V1 tensor V2 to V2 resonance map is the infinitesimal SO(3) action; it annihilates an axisymmetric ell=2 tensor when the twist vector lies on the same axis",
+    "twist_position_and_velocity_resonance_on_face": "0 for every axial/polar extra-primary multiplicity coefficient"
+  },
+  "branchwise_abd_gate": {
+    "coefficient_ranks": {
+      "axial": [
+        3,
+        3
+      ],
+      "polar": [
+        3,
+        3
+      ]
+    },
+    "consequence_for_nonzero_extra_amplitude": "a=b=d=0"
+  },
+  "claim_boundary": "This theorem certifies a nonzero aligned family in the simultaneous stabilizer and completed bounded-resonance zero set. It does not classify the full zero locus, prove a bounded or secular second-order correction, cover opposite momenta or multiple |k| fibres, or support causal, residual, observational, particle or quantum claims.",
+  "classification": {
+    "abd_profiles_forced_zero_on_nonzero_extra_face": true,
+    "aligned_twist_extra_resonance_vanishes_by_exact_Clebsch_Gordan_rule": true,
+    "all_four_extra_multiplicities_retained": true,
+    "all_orders_integrability": false,
+    "bounded_second_order_correction_constructed": false,
+    "causal_retarded_theorem": false,
+    "complete_simultaneous_zero_locus_classified": false,
+    "nonzero_simultaneous_stabilizer_and_bounded_resonance_zero_face": true,
+    "smooth_secular_second_order_correction_constructed": false
+  },
+  "correction_classes": {
+    "bounded_or_finite_quasiperiodic": "CERTIFIED common zero of every known stabilizer and completed bounded-resonance functional; a full bounded correction is OPEN because the nonresonant polynomial cross channels have not been assigned bounded right inverses",
+    "causal_or_retarded": "OPEN: no compact-product retarded complex is certified",
+    "smooth_exponential_polynomial": "OPEN: the finite secular right inverses for every mixed nonresonant channel have not been assembled"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "explicit_nonzero_witness": {
+    "A_z": "0",
+    "B_z": "12*sqrt(6)",
+    "X": "1296",
+    "all_completed_bounded_resonance_functionals_zero": true,
+    "all_five_moment_maps_zero": true,
+    "extra_amplitudes": [
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    "mu_H_remainder": "0"
+  },
+  "extra_current_gram_at_ell2_k0": {
+    "basis_order": [
+      "axial_e1",
+      "axial_e2",
+      "polar_e1",
+      "polar_e2"
+    ],
+    "diagonal": [
+      "1296",
+      "208/3",
+      "22464",
+      "12288"
+    ],
+    "occupation": "X=1296*|x_a1|^2+(208/3)*|x_a2|^2+22464*|x_p1|^2+12288*|x_p2|^2",
+    "omega_e_squared": "16/3",
+    "positive_for_nonzero_x": true
+  },
+  "face_parameterization": {
+    "bounded_resonance_maps": "all complementary L=2 p-shell functionals vanish: a,b,d are zero and the aligned twist intertwiner annihilates m=0",
+    "extra": "an arbitrary nonzero multiplicity vector x in C^4 carried by one positive-frequency ell=2,m=0,k=0 harmonic, with its conjugate fixed by reality",
+    "homogeneous": "a=b=d=Q_e=0; c and W_x arbitrary spectators",
+    "stabilizer_maps": {
+      "mu_H": "2*B_z^2-(omega_e^2/4)*X=0",
+      "mu_J": "-4*A cross B plus the m=0 extra expectation =0",
+      "mu_Px": "0"
+    },
+    "twist": "A=A_z e_z is arbitrary and B=B_z e_z with B_z^2=(2/3)*X"
+  },
+  "interpretation": "The completed source matrix does not collapse the global-extra cone to the origin. A twist velocity supplies the positive Taub charge needed to balance any shared-axis generic extra occupation, while the unique twist-extra resonant intertwiner vanishes on the aligned m=0 tensor. This is an exact nonzero common-zero face, not yet a full second-order extension or the complete off-axis zero locus.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the off-axis solutions of H(t)C+P R_A(C)+V(t)R_B(C)=0 together with the five quadratic moment maps, then assemble correction-class-specific right inverses",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE",
+  "result_state": "NONZERO_ALIGNED_STABILIZER_AND_BOUNDED_RESONANCE_COMMON_ZERO_FACE_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-aligned-twist-ell2-extra-compatibility-face-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.schema.json",
+  "schema_sha256": "cd01adeecfd1443da5c8774de1e73e99bd197ea311fe118091640da705f08533",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed spatial S1_L times S2; bounded-resonance compatibility category",
+    "carrier": "one shared-axis ell=2,m=0,k=0 generic extra-primary multiplicity vector plus collinear standard twist position/velocity and homogeneous spectators c,W_x",
+    "charge_sector": "fixed N=2 magnetic bundle and Q_e=0 on the declared face",
+    "degree": 2,
+    "ell": "(1 x 2 -> resonant 2) plus additive self-source blocks",
+    "k": 0,
+    "m": "shared-axis twist m=0 and extra m=0",
+    "omega": "generalized-zero twist crossed with omega_e=4/sqrt(3)",
+    "parity": "all four axial/polar extra multiplicities retained",
+    "theory": "Weyl-Maxwell"
+  },
+  "source_manifest": {
+    "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736",
+    "bridge/certificates/einstein_maxwell_weyl_axial_extra_green_pairing.json": "9a99c658f34334386d56d6a569e81d73c31251bcd4592324553b7417b74d8f20",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b",
+    "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72",
+    "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6",
+    "bridge/einstein_sector/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.py": "65bd410099f843f2662b878b76023e7e4c5b6957def60a170f023ae7988259cb",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.schema.json": "cd01adeecfd1443da5c8774de1e73e99bd197ea311fe118091640da705f08533"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face"
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "reason": "all imported tensor rows are content-addressed and unchanged; this gate is an exact representation/moment-map elimination on their certified projections",
+      "status": "NOT_RUN"
+    },
+    "tier_3": {
+      "reason": "the complete off-axis zero locus and every full correction class remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

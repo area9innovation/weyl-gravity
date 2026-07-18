@@ -2123,6 +2123,27 @@ tangent-cone theorem, not their completion.  The simultaneous stabilizer plus
 resonance zero locus, opposite momenta and phases, and multiple `|k|` fibres
 remain open.  Update the generated atlas after each background-specific gate
 rather than promoting the abstract theorem.
+
+The first exact intersection with the stabilizer cone is now certified, but
+it is deliberately narrower than the requested full zero-locus theorem.  Put
+an arbitrary nonzero four-component extra-primary amplitude on the shared-axis
+`ell=2,m=0,k=0` harmonic and take collinear twist position and velocity.  The
+unique `V1 tensor V2 -> V2` resonant map vanishes because
+`<1,0;2,0|2,0>=0`; the branchwise `a,b,d` rank-three gates force
+`a=b=d=0`.  With orthonormal harmonics,
+
+```text
+X=1296|x_a1|^2+(208/3)|x_a2|^2+22464|x_p1|^2+12288|x_p2|^2,
+B_z^2=(2/3)X,
+```
+
+so `mu_H=0`, while `mu_Px=0` and all three rotations vanish by `m=0` and
+`A cross B=0`.  Thus this is a nonzero simultaneous stabilizer and completed
+bounded-resonance common-zero face.  It is not yet a second-order extension:
+the nonresonant polynomial cross channels and their bounded versus smooth-
+secular right inverses remain open, as does the complete off-axis zero locus.
+The fail-closed atlas row is
+`einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face`.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "angular_theorem",
+    "branchwise_abd_gate", "extra_current_gram_at_ell2_k0",
+    "face_parameterization", "explicit_nonzero_witness", "correction_classes",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "source_manifest", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-aligned-twist-ell2-extra-compatibility-face-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "nonzero_simultaneous_stabilizer_and_bounded_resonance_zero_face",
+        "aligned_twist_extra_resonance_vanishes_by_exact_Clebsch_Gordan_rule",
+        "abd_profiles_forced_zero_on_nonzero_extra_face",
+        "all_four_extra_multiplicities_retained",
+        "complete_simultaneous_zero_locus_classified",
+        "bounded_second_order_correction_constructed",
+        "smooth_secular_second_order_correction_constructed",
+        "causal_retarded_theorem", "all_orders_integrability"
+      ]
+    }
+  }
+}

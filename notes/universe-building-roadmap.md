@@ -688,11 +688,15 @@ bridge 1.
 The declared `k=0` homogeneous/twist-times-`ell=2` extra bounded-resonance
 source matrix is now complete.  Its non-axisymmetric Clebsch--Gordan fixture
 fixes every `m`: the twist-position adjoint matrix has rank two, while the
-twist-velocity matrix has pointwise rank four for real time.  The simultaneous
-zero locus with all five stabilizer moment maps and the bilinear factorization
-constraints remains open, as do opposite momenta, phases and multiple
-absolute-momentum fibres.  Thus this is a complete source-matrix input, not
-yet a relative obstruction theorem.  Residual equivariance, the observable map, the
+twist-velocity matrix has pointwise rank four for real time.  Its first exact
+intersection with the five stabilizer maps is nonempty: on the shared-axis
+`m=0` face the twist intertwiner vanishes, `a=b=d=0`, and
+`B_z^2=(2/3)X` balances the positive twist and negative extra Taub charges.
+This certifies a nonzero simultaneous compatibility face, not a full
+second-order correction.  The complete off-axis zero locus, nonresonant
+bounded/smooth right inverses, opposite momenta, phases and multiple
+absolute-momentum fibres remain open.  Thus this is a source-matrix and
+common-zero input, not yet a relative obstruction theorem.  Residual equivariance, the observable map, the
 relative \(L_\infty\) morphism, and the quantum lift remain open until their
 own certificates land.
 

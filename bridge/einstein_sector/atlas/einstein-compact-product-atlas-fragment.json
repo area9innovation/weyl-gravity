@@ -20,7 +20,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "8ae2935b62b339cdf9d559b911252bc1b0f2626df7344f725c46f48034ef18dd"
+          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
         }
       ],
       "id": "einstein.ph.bridge.relative_branch_dictionary_v1",
@@ -793,6 +793,95 @@
       }
     },
     {
+      "claim_boundary": "This is an exact aligned compatibility face, not the complete off-axis zero locus, a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE",
+          "sha256": "f7be0c5571327d5ecb14194e3a6f485ae22547979f66b4ec45d614a3fbc28e9c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
+          "sha256": "4096367d5477d63d5300f43829120f2c70358ab637ea51cc9948973cd8940b72"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_LEE_WALD_COMPLETION",
+          "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
+          "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_MOMENT_MAP_TAUB_BRIDGE",
+          "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The extra input lies on the generic ell=2 p-shell and the twist input is generalized-zero.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "The extra occupation X uses the direct positive axial-plus-polar Lee-Wald Gram; the standard twist block supplies the opposite Taub sign.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "The exact coefficient <1,0;2,0|2,0>=0 kills the complete twist-extra p-shell resonance, while nonzero extra amplitude and the rank-three a,b,d chains force a=b=d=0.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "A nonzero simultaneous moment-map/resonance common-zero face is certified, but nonresonant polynomial channels have no assembled bounded right inverse.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product causal/retarded Green theorem has been certified.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "Smooth exponential-polynomial right inverses for every mixed channel are not yet assembled.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "For B_z^2=(2/3)X, all five stabilizer maps vanish on the aligned m=0 family.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "one shared-axis ell=2,m=0,k=0 generic extra multiplicity vector plus collinear standard twist position/velocity and homogeneous spectators c,W_x",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "(1 x 2 -> resonant 2) plus self-source blocks",
+        "k": 0,
+        "m": "shared-axis twist m=0 and extra m=0",
+        "omega": "generalized-zero twist crossed with omega_e=4/sqrt(3)",
+        "parity": "all four axial/polar extra multiplicities retained",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
       "claim_boundary": "Compact-product modes must not be called asymptotic gravitons or vacuum-cylinder residual classes without an explicit certified crosswalk.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -852,7 +941,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "9eee8791ae49f8ef4da421a4cc1844bf8650b0193a43bfc58c0f659120b4ec38",
+  "generated_by_sha256": "15db91b8e3f979a0d789d3c7afdad2e1214e8f687bdb453b4c3b611c30b19753",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
