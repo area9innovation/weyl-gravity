@@ -1869,8 +1869,15 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    correction.  Since the moment map already requires `A cross B=0`, `SO(3)`
    covariance promotes the axis calculation to the complete standard
    collinear vector face, including its `B=0` boundary.  The next compact
-   gate is physical and exceptional fourth-order `ell=1` input data, followed
-   by the enlarged homogeneous `b,Q_e,W_x` slice.
+   gate was physical and exceptional fourth-order `ell=1` input data.  That
+   isolated block is now classified: the axial and polar extra shell is
+   `omega^2=4/3`, with normalized Hermitian current Gram `diag(16,3)`.  The
+   constant-lapse Taub form is therefore negative definite on every nonzero
+   real pure-extra dipole tangent.  Standard physical `ell=1` oscillators are
+   orthogonal and carry the same sign, so they cannot balance the exceptional
+   modes; the combined isolated common-zero locus is only the origin.  The
+   next nontrivial fixture must import an Einstein-minus or other opposite-sign
+   sector.  The enlarged homogeneous `b,Q_e,W_x` slice remains separate.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

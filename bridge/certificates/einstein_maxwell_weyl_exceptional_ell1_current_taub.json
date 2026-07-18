@@ -1,0 +1,172 @@
+{
+  "schema": "einstein-maxwell-weyl-exceptional-ell1-current-taub-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_current_taub.schema.json",
+  "schema_sha256": "2990c7a8894293902cf0d225aa8648951eb20cf697983a4e3696fa4c4d305c1d",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_CURRENT_TAUB",
+  "result_state": "EXCEPTIONAL_ELL1_EXTRA_CURRENT_POSITIVE_AND_PURE_BLOCK_SECOND_ORDER_OBSTRUCTED",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "axial and polar k=0 exceptional ell=1 fourth-order modes, all real m, optionally direct-summed with the standard physical ell=1 oscillators, on the fixed magnetic bundle before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_current_taub.py",
+    "generator_sha256": "27f615a40522b987df14b103130a09a2199157c2654ef95c1d6efa556e81ccbc",
+    "inputs": {
+      "axial_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "polar_operator": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "axial_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json",
+        "sha256": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567"
+      },
+      "polar_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
+        "sha256": "8175f454ab4ff0f95a047aa7fb13b7ed1f7ed40acb2ee76b3b943426330d3ce6"
+      },
+      "direct_physical_fixture": {
+        "path": "bridge/certificates/weyl_maxwell_ell1_exceptional_lee_wald_fixture.json",
+        "sha256": "9ff4005e852e12e2cea8eedf35c85b155efe3c1570ab10665b4c74cb511e891c"
+      },
+      "taub_bridge": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
+        "sha256": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+      },
+      "standard_moment_maps": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      }
+    }
+  },
+  "current_theorem": {
+    "frequency_squared": "4/3",
+    "representative_order": [
+      "axial (h_t,h_x,q_t,q_x)",
+      "polar (A_t,B,C_t,U)"
+    ],
+    "extra_representatives": [
+      [
+        "0",
+        "1",
+        "0",
+        "-3"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    ],
+    "normalized_extra_Hermitian_current_Gram": [
+      [
+        "16",
+        "0"
+      ],
+      [
+        "0",
+        "3"
+      ]
+    ],
+    "extra_positive_frequency_inertia": [
+      2,
+      0
+    ],
+    "standard_gauge_slice_representatives": [
+      [
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "standard_gauge_slice_weights": [
+      "16",
+      "1"
+    ],
+    "extra_standard_mixed_pairing": [
+      "0",
+      "0"
+    ],
+    "direct_physical_cross_check": {
+      "harmonic_norm": "4*pi/3",
+      "axial_fixture_weight": "64",
+      "axial_coordinate_map": "physical curl amplitude maps to -2 times the axial gauge-slice representative",
+      "polar_fixture_weight": "16",
+      "polar_coordinate_map": "physical potential representative equals 4 times the polar gauge-slice representative plus residual gauge"
+    },
+    "specialization_argument": "the certified direct four-dimensional natural current equals the polynomial action Green current identically in lambda; no lambda-2 factor is inverted, so the identity specializes to lambda=2 after the exceptional quotient is taken",
+    "all_real_m": "SO(3) invariance tensors the displayed Gram matrix with the positive ell=1 angular Gram W_1"
+  },
+  "Taub_witness": {
+    "extra_block": "mu_H=-(L/4)*(4/3)*(16*||c_ax||^2_W1+3*||c_pol||^2_W1)<0 for every nonzero real exceptional extra tangent",
+    "physical_plus_extra_block": "the standard physical ell=1 block is orthogonal and has the same positive-current sign, so the combined isolated common-zero locus is also only the origin",
+    "adjoint_cokernel": "the constant-lapse stabilizer supplies the nonzero Taub pairing; therefore no second-order correction can remove it on the closed fixed-bundle slice"
+  },
+  "classification": {
+    "axial_exceptional_ell1_current_classified": true,
+    "polar_exceptional_ell1_current_classified": true,
+    "exceptional_extra_ell1_current_nonradical_positive_definite": true,
+    "pure_exceptional_ell1_nonzero_tangents_second_order_obstructed": true,
+    "isolated_physical_plus_exceptional_ell1_common_zero_is_origin": true,
+    "mixed_balance_with_opposite_sign_sector_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The exceptional ell=1 fourth-order solutions are genuine nonnull linear modes, but no nonzero real tangent supported only on them passes the compact second-order Taub constraint. Adding standard physical ell=1 oscillators does not help because they carry the same time-translation sign. Any extendible mixed ell=1 configuration must import an opposite-sign sector outside this isolated block.",
+  "next_gate": "pair exceptional ell=1 modes with an Einstein-minus or other opposite-sign block and test the complete quadratic source on the resulting common-zero fixture",
+  "claim_boundary": "This is a compact fixed-bundle second-order obstruction, not removal of linear modes. It does not classify mixed opposite-sign balances, all-orders solutions, final residual descent, asymptotic waves, particles, or quantum ghosts.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.1,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_current_taub --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_current_taub.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_current_taub"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "axial_operator",
+        "polar_operator",
+        "axial_current",
+        "polar_current",
+        "direct_physical_fixture",
+        "taub_bridge",
+        "standard_moment_maps"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "mixed opposite-sign ell=1 balances and all-orders integration remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_current_taub --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_current_taub.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_current_taub"
+  ]
+}
