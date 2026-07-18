@@ -191,13 +191,16 @@ Three same-background handoffs are queued after the active transverse replay:
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
-The previously missing corrected-splitting input is also complete: the finite
-covariant HPL series and unique normalized degree-one correction derive all
-four required `L0_corrected` jets and fourteen `L1_corrected` jets, recover the
-old point values, and close `d_aut L0=L1 K` on every requested ordered jet.
-No interpolation is used.  The active gate is now the associative
-parent-middle, shifted-chain and compressed-Schur replay; do not reuse the
-superseded 207-coefficient target.
+The finite covariant HPL series and unique normalized degree-one correction
+derive all four required `L0_corrected` jets and fourteen `L1_corrected` jets,
+recover the old point values, and close `d_aut L0=L1 K` on every requested
+ordered jet.  With those jets, the parent Yang--Mills identity, both
+parenthesizations of `M_parent/L1_corrected/Kp0`, and the shifted-chain
+identity also close exactly.  The authoritative `Phi` differs from the old
+point-only intermediate, so the old 207-coefficient shifted defect is rejected
+as a backend artifact.  No interpolation is used.  The active gate is now the
+positive-order middle/Hom-adjoint and compressed-Schur replay, followed by the
+rank-310 SDR and causal transfer.
 
 For every declared background, charge fibre, boundary condition, and quotient:
 
@@ -1610,11 +1613,12 @@ more basic backend failure.  The typed
 and has 209 first-variation coefficients in the current linearized PBW
 backend.  Since the shifted chain follows abstractly from the parent identity,
 the first square and \(p_0L_0=1\) in an associative differential-operator
-algebra, the reported 207-coefficient defect is not an authoritative operator
+  algebra, the reported 207-coefficient defect is not an authoritative operator
 obstruction.  The Phi/L0/K screens remain exact regression calculations only
-relative to that superseded target.  The next gate is a coefficient-jet-aware
-associative PBW replay, then the action-derived cyclic Schur, rank-310 SDR
-identity and causal transfer.
+relative to that superseded target.  The coefficient-jet-aware associative
+replay has since closed the parent identity, associator and shifted chain.  The
+next gate is the action-derived Hom-adjoint middle and cyclic compressed Schur,
+then the rank-310 SDR identity and causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

@@ -72,10 +72,14 @@ def verify() -> None:
         raise AssertionError("order-two Phi obstruction evidence missing")
     if "NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1" not in transverse_ids:
         raise AssertionError("linearized PBW associativity gate missing")
-    if "associator has 209 first-variation coefficients" not in transverse["claim_boundary"]:
-        raise AssertionError("associativity failure boundary missing")
-    if "207-coefficient shifted-chain defect is not an authoritative operator obstruction" not in transverse["claim_boundary"]:
+    if "NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1" not in transverse_ids:
+        raise AssertionError("associative middle replay missing")
+    if "shifted-chain identity exactly" not in transverse["claim_boundary"]:
+        raise AssertionError("associative closure boundary missing")
+    if "old 207-term shifted defect" not in transverse["claim_boundary"]:
         raise AssertionError("superseded shifted-chain boundary missing")
+    if "Positive-order middle/Hom-adjoint jets" not in transverse["claim_boundary"]:
+        raise AssertionError("next analytic boundary missing")
 
 
 if __name__ == "__main__":

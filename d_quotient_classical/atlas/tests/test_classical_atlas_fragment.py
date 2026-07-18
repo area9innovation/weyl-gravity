@@ -45,10 +45,11 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1", ids)
         self.assertIn("NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1", ids)
+        self.assertIn("NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1", ids)
         self.assertEqual(entry["descriptions"]["causal"], "OPEN")
-        self.assertIn("associator has 209 first-variation coefficients", entry["claim_boundary"])
-        self.assertIn("207-coefficient shifted-chain defect is not an authoritative operator obstruction", entry["claim_boundary"])
-        self.assertIn("rank screens remain exact linear algebra relative to that superseded target only", entry["claim_boundary"])
+        self.assertIn("shifted-chain identity exactly", entry["claim_boundary"])
+        self.assertIn("old 207-term shifted defect", entry["claim_boundary"])
+        self.assertIn("Positive-order middle/Hom-adjoint jets", entry["claim_boundary"])
 
     def test_berger_bridge_one_remains_fail_closed(self) -> None:
         entry = self.entries["classical.berger.crosswalk.retained36_to_einstein_extra"]

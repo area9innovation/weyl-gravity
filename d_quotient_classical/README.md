@@ -508,10 +508,21 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   required `L1_corrected` jets are serialized exactly, the historical point
   values are recovered coefficientwise, and
   `d_aut L0_corrected=L1_corrected K` holds through every requested ordered
-  coefficient jet.  The parent middle, shifted chain, compressed Schur,
-  rank-310 SDR and causal gates remain open:
+  coefficient jet.  The compressed Schur, rank-310 SDR and causal gates
+  remain open:
   [`certificates/NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_V1.json`](certificates/NARIAI_TRANSVERSE_CORRECTED_BGG_SPLITTING_COEFFICIENT_JETS_V1.json),
   [`reports/nariai-transverse-corrected-bgg-splitting-coefficient-jets.md`](reports/nariai-transverse-corrected-bgg-splitting-coefficient-jets.md)
+- Associative middle and shifted-chain closure: using those full corrected
+  splitting jets, both parenthesizations of
+  `M_parent o L1_corrected o (K p0)` agree exactly.  The parent Yang--Mills
+  identity and the shifted-chain identity have zero base and first-variation
+  defects.  The authoritative `Phi` variation has 415 coefficients and
+  differs in 129 coefficients from the old point-only intermediate; the old
+  207-coefficient shifted-chain defect is therefore rejected as a backend
+  artifact.  Positive-order middle and Hom-adjoint jets, the compressed
+  Schur replay, rank-310 SDR and causal transfer remain open:
+  [`certificates/NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1.json`](certificates/NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1.json),
+  [`reports/nariai-transverse-associative-middle-shifted-chain-replay.md`](reports/nariai-transverse-associative-middle-shifted-chain-replay.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

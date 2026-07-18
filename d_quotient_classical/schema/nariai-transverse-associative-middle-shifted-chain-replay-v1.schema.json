@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/nariai-transverse-associative-middle-shifted-chain-replay-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-associative-middle-shifted-chain-replay-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_ASSOCIATIVE_MIDDLE_SHIFTED_CHAIN_REPLAY_V1"},
+    "result_state": {"const": "ASSOCIATIVE_PARENT_MIDDLE_AND_SHIFTED_CHAIN_EXACT"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["corrected_splitting_jets", "old_associativity_gate", "old_point_replay"],
+      "properties": {
+        "corrected_splitting_jets": {"$ref": "#/$defs/reference"},
+        "old_associativity_gate": {"$ref": "#/$defs/reference"},
+        "old_point_replay": {"$ref": "#/$defs/reference"}
+      }
+    },
+    "exact_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["typed_replay", "parent_identity", "authoritative_phi_variation", "old_phi_comparison", "shifted_chain", "disposition"],
+      "properties": {
+        "typed_replay": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["triple", "left_parenthesization", "right_parenthesization", "base_associator_coefficients", "variation_associator_coefficients", "middle_coefficient_jet_words_requested"],
+          "properties": {
+            "triple": {"const": "M_parent o L1_corrected o (K p0)"},
+            "left_parenthesization": {"type": "string"},
+            "right_parenthesization": {"type": "string"},
+            "base_associator_coefficients": {"const": 0},
+            "variation_associator_coefficients": {"const": 0},
+            "middle_coefficient_jet_words_requested": {
+              "type": "array",
+              "prefixItems": [{"type": "array", "maxItems": 0}],
+              "items": false,
+              "minItems": 1,
+              "maxItems": 1
+            }
+          }
+        },
+        "parent_identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["identity", "base_defect_coefficients", "variation_defect_coefficients"],
+          "properties": {
+            "identity": {"const": "M_parent d_parent = 0"},
+            "base_defect_coefficients": {"const": 0},
+            "variation_defect_coefficients": {"const": 0}
+          }
+        },
+        "authoritative_phi_variation": {"$ref": "#/$defs/table"},
+        "old_phi_comparison": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["defect", "old_point_phi_authoritative"],
+          "properties": {
+            "defect": {"$ref": "#/$defs/table"},
+            "old_point_phi_authoritative": {"type": "boolean"}
+          }
+        },
+        "shifted_chain": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["identity", "base_defect_coefficients", "variation_defect_coefficients", "old_backend_reported_coefficients", "old_backend_defect_authoritative"],
+          "properties": {
+            "identity": {"type": "string"},
+            "base_defect_coefficients": {"const": 0},
+            "variation_defect_coefficients": {"const": 0},
+            "old_backend_reported_coefficients": {"const": 207},
+            "old_backend_defect_authoritative": {"const": false}
+          }
+        },
+        "disposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["associative_parent_middle_replay_complete", "shifted_chain_exact", "compressed_schur_replayed", "rank_310_transverse_SDR_decided"],
+          "properties": {
+            "associative_parent_middle_replay_complete": {"const": true},
+            "shifted_chain_exact": {"const": true},
+            "compressed_schur_replayed": {"const": false},
+            "rank_310_transverse_SDR_decided": {"const": false}
+          }
+        }
+      }
+    },
+    "exact_checks": {"$ref": "#/$defs/booleans"},
+    "flags": {"$ref": "#/$defs/booleans"},
+    "next_gate": {"const": "NARIAI_TRANSVERSE_HOM_ADJOINT_MIDDLE_AND_COMPRESSED_SCHUR_REPLAY"},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "source_manifest": {
+      "type": "object",
+      "minProperties": 5,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_id": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {
+          "type": "array",
+          "prefixItems": [{"type": "integer"}, {"type": "integer"}],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}],
+            "items": false,
+            "minItems": 3,
+            "maxItems": 3
+          }
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "table": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["orders", "nonzero_coefficients", "entries", "sha256"],
+      "properties": {
+        "orders": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "nonzero_coefficients": {"type": "integer", "minimum": 0},
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["word", "matrix"],
+            "properties": {
+              "word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+              "matrix": {"$ref": "#/$defs/matrix"}
+            }
+          }
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "booleans": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    }
+  }
+}
