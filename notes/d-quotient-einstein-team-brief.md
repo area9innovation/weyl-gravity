@@ -2153,6 +2153,16 @@ is no longer zero-locus classification: it is the complete nonresonant `q2`
 source plus content-addressed bounded/smooth right inverses and their
 Noether/gauge completion.  Causal/retarded sufficiency remains
 `NO_CERTIFIED_MAP`.
+
+The bounded correction class is now fully obstructed on this orbit.  The
+energy balance forces `B!=0` whenever `X>0`, while the directly certified
+zero-frequency polar `L=2` source contains `-7*B^2*t^2` in the `metric_00`
+row.  Extra conjugate-self and electric sources are time independent in that
+channel, and the mixed/sum sources have nonzero frequency, so the quadratic
+coefficient cannot cancel.  Since the stationary linearized operator maps
+bounded finite-quasiperiodic corrections to bounded sources, no such
+correction exists.  This does not obstruct the smooth exponential-polynomial
+class; its complete mixed right inverse is now the sole local nonlinear gate.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

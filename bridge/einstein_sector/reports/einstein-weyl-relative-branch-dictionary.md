@@ -36,6 +36,12 @@ necessary classification: every common zero in the declared carrier is an
 for the linear bridge or complete the finite-harmonic tangent cone: every
 complete correction class remains open.
 
+The bounded class is now closed negatively.  Every nonzero point on the orbit
+has `B!=0`, and its zero-frequency polar `L=2` source contains the nonzero
+quadratic coefficient `-7*B^2*t^2`.  A stationary linear operator cannot map
+a bounded finite-quasiperiodic correction to this growth.  Smooth
+exponential-polynomial corrections remain a separate open gate.
+
 Evidence and verification:
 
 - `bridge/certificates/einstein_weyl_relative_branch_dictionary.json`

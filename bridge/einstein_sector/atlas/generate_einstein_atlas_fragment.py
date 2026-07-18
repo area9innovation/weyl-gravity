@@ -33,6 +33,7 @@ CERTIFICATES = {
     "homogeneous_twist_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
     "aligned_twist_extra_face": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
     "complete_global_extra_cone": ROOT / "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
+    "global_extra_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
@@ -239,13 +240,13 @@ def entries() -> list[dict[str, object]]:
         _entry(
             "einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face",
             _scope(theory="Weyl-Maxwell target", carrier="complete declared homogeneous/twist block crossed with one ell=2,k=0 generic extra multiplet; surviving locus is the aligned SO(3) orbit", degree=2, parity="all four axial/polar extra multiplicities retained", ell="(0 or 1) x 2 -> resonant 2", m="all modulo SO(3); every solution is m=0 about the common twist axis", k=0, omega="generalized-zero global/twist data crossed with omega_e=4/sqrt(3)"),
-            {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The extra input lies on the generic ell=2 p-shell and the twist input is generalized-zero."),
             ("CERTIFIED", "The extra occupation X uses the direct positive axial-plus-polar Lee-Wald Gram; the standard twist block supplies the opposite Taub sign."),
             ("CERTIFIED", "The complete common-zero locus has a=b=d=0, A=alpha*n, B=beta*n and beta^2=Q_e^2/2+(2/3)X; all five stabilizer maps vanish."),
             ("CERTIFIED", "Exact coefficient elimination and rank minors prove every common zero is an SO(3) rotation of the aligned m=0 face; there is no additional off-axis branch in the declared carrier."),
-            _second_order(("OPEN", "A nonzero simultaneous moment-map/resonance common-zero face is certified, but nonresonant polynomial channels have no assembled bounded right inverse."), ("OPEN", "Smooth exponential-polynomial right inverses for every mixed channel are not yet assembled."), open_causal),
-            _evidence("complete_global_extra_cone", "aligned_twist_extra_face", "homogeneous_twist_matrix", "axial_current", "polar_current", "taub", "abstract_cone"),
+            _second_order(("OBSTRUCTED", "Every nonzero orbit point has B!=0 and an uncancellable zero-frequency polar L=2 source coefficient -7*B^2*t^2, outside the image of bounded finite-quasiperiodic corrections."), ("OPEN", "Smooth exponential-polynomial right inverses can admit polynomial growth but have not yet been assembled for every mixed channel."), open_causal),
+            _evidence("global_extra_bounded_obstruction", "complete_global_extra_cone", "aligned_twist_extra_face", "homogeneous_twist_matrix", "axial_current", "polar_current", "taub", "abstract_cone"),
             "This is the complete necessary common-zero locus in one declared homogeneous/twist times ell=2,k=0 extra carrier, not a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
         ),
         _entry(
@@ -291,6 +292,10 @@ def build() -> dict[str, object]:
         raise AssertionError("complete homogeneous/twist--extra common-zero cone changed")
     if records["complete_global_extra_cone"]["classification"]["bounded_second_order_right_inverse_constructed"]:
         raise AssertionError("necessary common-zero cone was over-promoted to sufficiency")
+    if not records["global_extra_bounded_obstruction"]["classification"]["bounded_or_finite_quasiperiodic_correction_obstructed"]:
+        raise AssertionError("global--extra bounded obstruction changed")
+    if records["global_extra_bounded_obstruction"]["classification"]["smooth_exponential_polynomial_correction_constructed"]:
+        raise AssertionError("bounded obstruction over-promoted the smooth class")
     if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("relative branch dictionary over-promoted bridge 1")
     if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:

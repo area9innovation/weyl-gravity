@@ -89,8 +89,10 @@ def verify() -> None:
     aligned = by_id["einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face"]
     if aligned["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or aligned["mode_data"]["resonance"]["status"] != "CERTIFIED":
         raise AssertionError("aligned common-zero face lost a certified compatibility gate")
-    if aligned["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-        raise AssertionError("aligned compatibility face was promoted to a correction")
+    if aligned["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED":
+        raise AssertionError("aligned orbit lost the bounded correction obstruction")
+    if aligned["mode_data"]["second_order"]["smooth_secular"]["status"] != "OPEN":
+        raise AssertionError("bounded obstruction leaked into the smooth class")
     if "no additional off-axis branch" not in aligned["mode_data"]["resonance"]["statement"]:
         raise AssertionError("complete common-zero classification is absent")
 

@@ -20,7 +20,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "96d93cd1bfd87eb431b69a6d6225a69a4688b333c0353af9f45139497178362e"
+          "sha256": "c3734f1f26d8b8148212fe9eb1a0128d427e84021e7bd4082d44deb9b303ee93"
         }
       ],
       "id": "einstein.ph.bridge.relative_branch_dictionary_v1",
@@ -796,12 +796,17 @@
       "claim_boundary": "This is the complete necessary common-zero locus in one declared homogeneous/twist times ell=2,k=0 extra carrier, not a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
       "descriptions": {
         "causal": "OPEN",
-        "nonlinear": "OPEN",
+        "nonlinear": "OBSTRUCTED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
       },
       "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION",
+          "sha256": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389"
+        },
         {
           "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
           "result_id": "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1",
@@ -854,8 +859,8 @@
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "A nonzero simultaneous moment-map/resonance common-zero face is certified, but nonresonant polynomial channels have no assembled bounded right inverse.",
-            "status": "OPEN"
+            "statement": "Every nonzero orbit point has B!=0 and an uncancellable zero-frequency polar L=2 source coefficient -7*B^2*t^2, outside the image of bounded finite-quasiperiodic corrections.",
+            "status": "OBSTRUCTED"
           },
           "causal_retarded": {
             "statement": "No compact-product causal/retarded Green theorem has been certified.",
@@ -863,7 +868,7 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "Smooth exponential-polynomial right inverses for every mixed channel are not yet assembled.",
+            "statement": "Smooth exponential-polynomial right inverses can admit polynomial growth but have not yet been assembled for every mixed channel.",
             "status": "OPEN"
           }
         },
@@ -946,7 +951,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "28cfec8499e1c2264126ebbca1220e4de83a88341d8284ffb776309af0c69abb",
+  "generated_by_sha256": "91d2244e2febaa3fd4fc371b32cefff763bd5391a96e79d1c705a8d48cff5edc",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

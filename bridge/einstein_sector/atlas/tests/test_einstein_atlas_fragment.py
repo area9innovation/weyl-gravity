@@ -49,7 +49,8 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         entry = self.entries["einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face"]
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["second_order"]["smooth_secular"]["status"], "OPEN")
         self.assertIn("no additional off-axis branch", entry["mode_data"]["resonance"]["statement"])
 

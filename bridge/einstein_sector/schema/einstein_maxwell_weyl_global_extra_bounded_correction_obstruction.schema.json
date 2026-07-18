@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "channel",
+    "selection_rule_audit", "functional_analysis", "correction_classes",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "source_manifest", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-global-extra-bounded-correction-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION"},
+    "lifecycle_state": {"const": "OBSTRUCTED"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_nonzero_extra_common_zero_orbit_covered",
+        "bounded_or_finite_quasiperiodic_correction_obstructed",
+        "obstruction_is_independent_of_propagation_resonance",
+        "smooth_exponential_polynomial_correction_constructed",
+        "causal_retarded_map_certified", "all_orders_integrability"
+      ]
+    }
+  }
+}

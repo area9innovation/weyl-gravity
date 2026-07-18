@@ -445,6 +445,11 @@
           "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
           "result_id": "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1",
           "sha256": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION",
+          "sha256": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389"
         }
       ],
       "id": "ph.global.twist.relative",
@@ -529,6 +534,7 @@
     "aligned_nonzero_stabilizer_resonance_common_zero_face_imported": true,
     "bridge_1_activation_gate_satisfied": false,
     "complete_declared_global_extra_common_zero_locus_imported": true,
+    "complete_global_extra_bounded_correction_obstruction_imported": true,
     "complete_homogeneous_twist_bounded_resonance_matrix_imported": true,
     "cross_background_mode_identification_made": false,
     "exceptional_global_and_boundary_absences_explicit": true,
@@ -552,7 +558,7 @@
   "next_gate": "classify corrected nonidentity or chain-homotopy cyclic morphisms, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "ed44236f70cc96622e90e3f09bb9d18886c6f65f293f5de522d8ae379b05c512",
+    "generator_sha256": "cca49815f24f75fd71df1bfacecde00445d28fe1f7ff7cba5188ffe8810b36d7",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
@@ -589,6 +595,10 @@
       "generic_cyclic_obstruction": {
         "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
         "sha256": "8c4d4eb69068c2767955f0b80695cfb81fc086ebaf5658da474f6ebb9f606e90"
+      },
+      "global_extra_bounded_obstruction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+        "sha256": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389"
       },
       "homogeneous_cofiber": {
         "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
@@ -636,9 +646,10 @@
     "artifacts": [
       "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX",
       "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE",
-      "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1"
+      "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1",
+      "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION"
     ],
-    "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra source matrix and its full necessary common-zero locus feed the relative obstruction map; every common zero is on the aligned SO3 orbit, while every full correction class, bridge 1 and the general finite-harmonic tangent cone remain open",
+    "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra source matrix and its common-zero locus feed the relative obstruction map; every common zero is on the aligned SO3 orbit and every nonzero point is obstructed in the bounded correction class, while smooth, causal, bridge 1 and the general finite-harmonic tangent cone remain open",
     "status": "PARTIAL_INPUT"
   },
   "relative_forms": {
@@ -652,7 +663,7 @@
   "result_state": "SAME_BACKGROUND_BRANCH_DICTIONARY_EXPORTED_FULL_RELATIVE_TRIANGLE_ACTIVATION_GATE_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "8222edb98cb1bb9692524ca3ea1e34be942c7f45d7422e9f56cc5512b964936d",
+  "schema_sha256": "b9d8ff23d33a8a62bc2cad4e6a48729a10c28fcea8ee1fa4605f766acfcce3a3",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",
