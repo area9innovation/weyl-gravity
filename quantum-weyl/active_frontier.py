@@ -69,6 +69,7 @@ DEPENDENCIES = {
     "generic_ghost_n3_adiabatic_carrier": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json",
     "generic_ghost_n3_triangle_kernel": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json",
     "scalar_flat_K_Ricci_crosswalk": HERE / "transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json",
+    "generic_ghost_n3_five_carrier_projection": HERE / "spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -162,6 +163,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "generic_background_ghost_CPT_obstruction": "GENERIC_GHOST_OPERATOR_NONMINIMAL_AND_HODGE_MIXED_MINIMAL_CPT_SUBSTITUTION_OBSTRUCTED",
         "generic_ghost_Endo_Duhamel_reduction": "NONMINIMAL_GHOST_EXACTLY_REDUCED_TO_ENDO_BASE_PLUS_LOCAL_RICCI_DUHAMEL_SERIES",
         "scalar_flat_K_Ricci_crosswalk": "K_EQUALS_RICCI_MODULO_QUADRATIC_CURVATURE_ON_SCALAR_FLAT_DOMAIN",
+        "generic_ghost_n3_five_carrier_projection": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
@@ -189,6 +191,7 @@ def _load() -> dict[str, dict[str, Any]]:
     generic_ghost_n3 = values["generic_ghost_n3_adiabatic_carrier"]
     generic_ghost_n3_triangle = values["generic_ghost_n3_triangle_kernel"]
     scalar_flat_k_ricci = values["scalar_flat_K_Ricci_crosswalk"]
+    generic_ghost_n3_projection = values["generic_ghost_n3_five_carrier_projection"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -579,6 +582,38 @@ def _load() -> dict[str, dict[str, Any]]:
         is not True
     ):
         raise ValueError("scalar-flat K/Ricci crosswalk frontier drifted")
+    if (
+        generic_ghost_n3_projection.get("quotient_section", {}).get(
+            "raw_effective_channel_count"
+        )
+        != 11
+        or generic_ghost_n3_projection.get("quotient_section", {}).get(
+            "quotient_dimension"
+        )
+        != 10
+        or len(generic_ghost_n3_projection.get("projection_rows", [])) != 11
+        or generic_ghost_n3_projection.get("coefficient_disposition", {}).get(
+            "ghost_n3_five_carrier_parametric_contribution"
+        )
+        != "COMPUTED"
+        or generic_ghost_n3_projection.get("coefficient_disposition", {}).get(
+            "ghost_n1_curved_Endo_trace"
+        )
+        != "NOT_COMPUTED"
+        or generic_ghost_n3_projection.get("coefficient_disposition", {}).get(
+            "ghost_n2_curved_Endo_trace"
+        )
+        != "NOT_COMPUTED"
+        or generic_ghost_n3_projection.get("claim_flags", {}).get(
+            "GENERIC_GHOST_N3_REPOSITORY_FIVE_CARRIER_PROJECTION_COMPUTED"
+        )
+        is not True
+        or generic_ghost_n3_projection.get("claim_flags", {}).get(
+            "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("generic ghost n=3 five-carrier projection frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1444,8 +1479,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_ENDO_DUHAMEL_REDUCTION_EXACT_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED_FIVE_CARRIER_PROJECTION_AND_N1_N2_OPEN_Q1_UNDERDETERMINED",
-                "next_gate": "PROJECT_GHOST_N3_TRIANGLE_TO_REPOSITORY_FIVE_CARRIERS_COMPUTE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_FIVE_UNIVERSAL_CPT_KERNELS_IMPORTED_GENERIC_GHOST_ENDO_DUHAMEL_REDUCTION_EXACT_N3_NONZERO_MOMENTUM_FIVE_CARRIER_PARAMETRIC_PROJECTION_COMPUTED_N1_N2_OPEN_Q1_UNDERDETERMINED",
+                "next_gate": "COMPUTE_CURVED_ENDO_N1_N2_INSERTION_TRACES_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1460,8 +1495,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_EXACT_FIVE_CARRIER_PROJECTION_N1_N2_PHYSICAL_FOURTH_ORDER_KERNEL_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "PROJECT_GHOST_N3_TRIANGLE_TO_REPOSITORY_FIVE_CARRIERS_COMPUTE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_AND_FIVE_UNIVERSAL_CPT_KERNELS_FIXED_GENERIC_GHOST_N3_FIVE_CARRIER_PARAMETRIC_PROJECTION_EXACT_N1_N2_PHYSICAL_FOURTH_ORDER_KERNEL_INTEGRATED_FORM_FACTOR_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "COMPUTE_CURVED_ENDO_N1_N2_INSERTION_TRACES_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             },
         },
         "supersession_ledger": [
@@ -1591,7 +1626,7 @@ def build() -> dict[str, Any]:
             "SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED": True,
             "CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED": True,
             "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE": True,
-            "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": False,
+            "GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED": True,
             "GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED": False,
             "GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED": False,
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": False,
@@ -1658,7 +1693,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "PROJECT_GHOST_N3_TRIANGLE_TO_REPOSITORY_FIVE_CARRIERS_COMPUTE_N1_N2_CURVED_ENDO_TRACES_AND_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+            "COMPUTE_CURVED_ENDO_N1_N2_INSERTION_TRACES_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1724,8 +1759,11 @@ def build() -> dict[str, Any]:
             "coefficient is 503/648, and the n=3 Tr-log coefficient is -503/243. "
             "Its generic nonexceptional-momentum continuation is now an exact eight-sector "
             "Feynman-simplex/Wick kernel with twenty rational Wick rows. The labelled-Ricci "
-            "triangle has not yet been projected onto the repository I10/I24/I25/I28/I29 basis, "
-            "and the n=1/n=2 curved-Endo traces remain open. "
+            "triangle is now projected exactly onto the eleven raw I10/I24/I25/I28/I29 "
+            "orientations and the ten-dimensional scalar-flat quotient section, with the "
+            "common Delta^-4 numerators stored as exact alpha/box polynomials. This is the "
+            "parametric n=3 ghost contribution, not the integrated five repository functions; "
+            "the n=1/n=2 curved-Endo traces remain open. "
             "The five repository form-factor functions and their "
             "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
             "normalization remain open. The imported raw "
@@ -2019,7 +2057,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("SCALAR_FLAT_K_RICCI_LINEAR_CROSSWALK_CERTIFIED") is not True
         or flags.get("CUBIC_K_TO_RICCI_REPLACEMENT_CERTIFIED") is not True
         or flags.get("GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_TARGET_COMPLETE") is not True
-        or flags.get("GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED") is not False
+        or flags.get("GENERIC_GHOST_TRIANGLE_FIVE_CARRIER_PROJECTION_COMPUTED") is not True
         or flags.get("GENERIC_GHOST_N3_FULL_MOMENTUM_KERNEL_COMPUTED")
         is not False
         or flags.get("GENERIC_NONMINIMAL_GHOST_INSERTION_TRACES_EVALUATED")

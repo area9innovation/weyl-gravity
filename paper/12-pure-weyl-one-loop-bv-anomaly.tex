@@ -1011,11 +1011,49 @@ identities independently fix
 \]
 so the cubic replacement of three labelled $K$ tensors by three labelled
 Ricci tensors is exact modulo $O(\mathcal R^4)$.  A direct flat-TT tensor
-fixture fixes the sign.  This closes the carrier normalization, not the
+fixture fixes the sign.  This closes the carrier normalization needed by the
 tensor projection: the zero-derivative sector can feed $I_{10}$ and the
-longitudinal sectors can feed $I_{24},I_{25},I_{28},I_{29}$.  The five-
-carrier projection, curved-Endo one-/two-insertion rows, and generic physical
-fourth-order Hessian kernel remain separate open calculations.
+longitudinal sectors can feed $I_{24},I_{25},I_{28},I_{29}$.  The next
+proposition performs that projection.  The curved-Endo one-/two-insertion
+rows and generic physical fourth-order Hessian kernel remain separate open
+calculations.
+\end{proposition}
+
+\begin{proposition}[Exact ghost $n=3$ scalar-flat five-carrier projection]
+Evaluate the eleven effective labelled orientations
+\[
+ I_{10};\quad I_{24}^{\times3};\quad I_{25}^{\times3};\quad
+ I_{28}^{\times3};\quad I_{29}
+\]
+on the $5^3=125$ products of exact transverse-tracefree polarizations at
+generic nonexceptional Euclidean momenta.  The resulting $125\times11$
+matrix has exact rank ten.  Appending the quotient section
+\[
+ \Gamma_{28}^{123}+\Gamma_{28}^{132}+\Gamma_{28}^{231}=0
+\]
+fixes the unique CPT-IV four-dimensional null direction.  In that section,
+the complete three-insertion ghost triangle has exact channel coordinates
+\[
+ \Gamma_i(\alpha;x)=
+ \frac{N_i(\alpha_1,\alpha_2;x_1,x_2,x_3)}{\Delta^4},
+ \qquad
+ \Delta=\alpha_0\alpha_1x_1+
+ \alpha_1\alpha_2x_2+
+ \alpha_2\alpha_0x_3,
+\]
+where every coefficient of every numerator $N_i$ is rational.  If carrier
+$i$ has $d_i$ explicit derivatives, $N_i$ is homogeneous of box degree
+$3-d_i/2$ and has alpha degree at most nine.  The $W=-2\operatorname{Ric}$
+and third-order trace-log multiplier $-8/3$ is included; the common
+$(4\pi)^{-2}$ loop prefactor is not.
+
+Ten box-unisolvent momentum fixtures reconstruct the stored polynomials.
+Two unseen momentum fixtures and unseen rational simplex points independently
+reproduce all 125 triangle amplitudes with zero exact residual, and a
+rehashed coefficient mutation is rejected.  This is the parametric $n=3$
+ghost contribution.  It is not the integrated five repository functions,
+the curved-Endo $n=1/n=2$ contribution, the complete ghost determinant, or
+the physical fourth-order Hessian contribution.
 \end{proposition}
 
 \begin{proposition}[Exact local $\Box R$ scheme conversion]
@@ -1074,9 +1112,10 @@ kernels are exact.  The generic ghost calculation now proves that direct
 minimal-CPT substitution is obstructed by a nonminimal, Hodge-mixed Schur
 operator.  The exact Endo reduction leaves finite one-, two- and three-Ricci
 insertion traces.  The three-insertion row is now reduced at generic
-nonexceptional momentum to an exact eight-sector Feynman-simplex/Wick kernel;
-its repository five-carrier projection and the curved-Endo one-/two-insertion
-traces remain open.  Those rows and the physical kernel, hence the five repository form-factor functions and
+nonexceptional momentum to an exact eight-sector Feynman-simplex/Wick kernel
+and projected onto the ten-dimensional scalar-flat five-carrier quotient as
+exact rational simplex integrands.  The curved-Endo one-/two-insertion traces
+remain open.  Those rows and the physical kernel, hence the five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
@@ -1114,6 +1153,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL.json}.
 \item \cert{quantum-weyl/transfer/certificates/SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK.json}.
+\item \cert{quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The

@@ -880,9 +880,12 @@ an exact eight-sector Feynman-simplex/Wick kernel with twenty rational rows.
 Its scalar-flat normalization is now exact:
 `K_munu=Ric_munu+O(curvature^2)`, so the cubic K/Ricci replacement first
 differs at fourth curvature order; an independent TT fixture fixes the sign.
-Its repository five-carrier tensor/form-factor projection and the curved-Endo
-one-/two-insertion rows remain open. The generic physical fourth-order Hessian kernel
-remains independently open. The original
+Its eleven raw carrier orientations are now projected exactly to the
+ten-dimensional scalar-flat quotient section, with every parametric channel
+stored as a rational alpha/box numerator over the common `Delta^4`. This is
+the exact `n=3` ghost contribution before simplex integration, not the five
+complete repository functions. The curved-Endo one-/two-insertion rows and
+generic physical fourth-order Hessian kernel remain independently open. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
 
@@ -893,10 +896,10 @@ different local-BV carrier. The content-addressed merge audit therefore
 rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
-rail for Bridge 5. Its remaining local gate begins with projecting the generic
-ghost's exact nonzero-momentum triangle to the repository five-carrier basis, the
-curved-Endo one-/two-insertion traces and the physical fourth-order Hessian
-kernel, followed by the five
+rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
+been projected to the scalar-flat repository five-carrier quotient. Its
+remaining local gate begins with the curved-Endo one-/two-insertion traces and
+the physical fourth-order Hessian kernel, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
 the parity-odd derivative manifest,
@@ -974,6 +977,8 @@ Its exact constructive reduction is recorded in
 [`generic-background-ghost-endo-duhamel-reduction.md`](../quantum-weyl/reports/generic-background-ghost-endo-duhamel-reduction.md).
 The first coefficient-bearing insertion projection is recorded in
 [`generic-background-ghost-n3-adiabatic-carrier.md`](../quantum-weyl/reports/generic-background-ghost-n3-adiabatic-carrier.md).
+The exact generic-momentum eleven-to-ten carrier projection is recorded in
+[`generic-background-ghost-n3-five-carrier-projection.md`](../quantum-weyl/reports/generic-background-ghost-n3-five-carrier-projection.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as

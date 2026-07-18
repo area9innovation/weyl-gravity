@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl/generic-background-ghost-n3-five-carrier-projection-v1.schema.json",
+  "title": "Generic-background ghost n=3 five-carrier projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "convention",
+    "quotient_section",
+    "interpolation_certificate",
+    "projection_rows",
+    "formula_digest",
+    "coefficient_disposition",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-generic-background-ghost-n3-five-carrier-projection-v1"},
+    "result_id": {"const": "GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION"},
+    "result_state": {"const": "N3_GHOST_TRIANGLE_PROJECTED_TO_SCALAR_FLAT_FIVE_CARRIER_QUOTIENT"},
+    "lifecycle_state": {"const": "N3_PARAMETRIC_CARRIER_PROJECTION_COMPUTED_N1_N2_AND_PHYSICAL_BLOCKS_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "curvature_order", "background", "input_block", "output"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "curvature_order": {"const": 3},
+        "background": {"type": "string", "minLength": 1},
+        "input_block": {"type": "string", "minLength": 1},
+        "output": {"type": "string", "minLength": 1}
+      }
+    },
+    "convention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alpha0", "Delta", "box_invariants", "channel_formula", "overall_loop_prefactor", "W_and_Tr_log_multiplier", "Fourier_derivative_convention"],
+      "properties": {
+        "alpha0": {"const": "1-alpha1-alpha2"},
+        "Delta": {"const": "alpha0*alpha1*x1+alpha1*alpha2*x2+alpha2*alpha0*x3"},
+        "box_invariants": {"const": "xi=ki^2 with k1+k2+k3=0"},
+        "channel_formula": {"const": "Gamma_channel(alpha,x)=N_channel(alpha1,alpha2,x1,x2,x3)/Delta^4"},
+        "overall_loop_prefactor": {"const": "(4*pi)^-2"},
+        "W_and_Tr_log_multiplier": {"const": "-8/3 already included in every numerator"},
+        "Fourier_derivative_convention": {"type": "string", "minLength": 1}
+      }
+    },
+    "quotient_section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_effective_channel_count", "quotient_dimension", "raw_channel_order", "gauge_condition", "relation", "I29_policy"],
+      "properties": {
+        "raw_effective_channel_count": {"const": 11},
+        "quotient_dimension": {"const": 10},
+        "raw_channel_order": {
+          "const": ["I10_123", "I24_123", "I24_213", "I24_312", "I25_123", "I25_213", "I25_312", "I28_123", "I28_132", "I28_231", "I29_123"]
+        },
+        "gauge_condition": {"const": "Gamma_I28_123+Gamma_I28_132+Gamma_I28_231=0"},
+        "relation": {"type": "string", "minLength": 1},
+        "I29_policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "interpolation_certificate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["box_degree_bound", "alpha_degree_bound", "momentum_fixture_count", "maximum_box_monomial_count", "degree_three_box_evaluation_rank", "fixtures"],
+      "properties": {
+        "box_degree_bound": {"type": "string", "minLength": 1},
+        "alpha_degree_bound": {"type": "string", "minLength": 1},
+        "momentum_fixture_count": {"const": 10},
+        "maximum_box_monomial_count": {"const": 10},
+        "degree_three_box_evaluation_rank": {"const": 10},
+        "fixtures": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {"$ref": "#/$defs/fixture"}
+        }
+      }
+    },
+    "projection_rows": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {"$ref": "#/$defs/projectionRow"}
+    },
+    "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "coefficient_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ghost_n3_five_carrier_parametric_contribution", "ghost_n1_curved_Endo_trace", "ghost_n2_curved_Endo_trace", "complete_ghost_third_curvature_functions", "physical_fourth_order_Hessian_functions", "complete_repository_third_curvature_functions"],
+      "properties": {
+        "ghost_n3_five_carrier_parametric_contribution": {"const": "COMPUTED"},
+        "ghost_n1_curved_Endo_trace": {"const": "NOT_COMPUTED"},
+        "ghost_n2_curved_Endo_trace": {"const": "NOT_COMPUTED"},
+        "complete_ghost_third_curvature_functions": {"const": "NOT_COMPUTED"},
+        "physical_fourth_order_Hessian_functions": {"const": "NOT_COMPUTED"},
+        "complete_repository_third_curvature_functions": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["GENERIC_GHOST_N3_REPOSITORY_FIVE_CARRIER_PROJECTION_COMPUTED", "GENERIC_GHOST_N3_SCALAR_FLAT_QUOTIENT_SECTION_EXACT", "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED", "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED", "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED", "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "GENERIC_GHOST_N3_REPOSITORY_FIVE_CARRIER_PROJECTION_COMPUTED": {"const": true},
+        "GENERIC_GHOST_N3_SCALAR_FLAT_QUOTIENT_SECTION_EXACT": {"const": true},
+        "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED": {"const": false},
+        "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED": {"const": false},
+        "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["triangle", "carrier_manifest", "K_Ricci_crosswalk"],
+      "properties": {
+        "triangle": {"$ref": "#/$defs/dependency"},
+        "carrier_manifest": {"$ref": "#/$defs/dependency"},
+        "K_Ricci_crosswalk": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "next_gate": {"const": "COMPUTE_CURVED_ENDO_N1_N2_INSERTION_TRACES_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "vector4": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"type": "integer"}
+    },
+    "exponents": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["momenta", "box_invariants", "carrier_matrix_shape", "carrier_matrix_rank", "pivot_tensor_rows", "gauge_completed_rank"],
+      "properties": {
+        "momenta": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/vector4"}
+        },
+        "box_invariants": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "carrier_matrix_shape": {"const": [125, 11]},
+        "carrier_matrix_rank": {"const": 10},
+        "pivot_tensor_rows": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {"type": "integer", "minimum": 0, "maximum": 124},
+          "uniqueItems": true
+        },
+        "gauge_completed_rank": {"const": 11}
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alpha_exponents", "box_exponents", "coefficient"],
+      "properties": {
+        "alpha_exponents": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "box_exponents": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "integer", "minimum": 0}
+        },
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "projectionRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_id", "carrier_id", "label_order", "explicit_derivative_order", "form_factor_box_homogeneity", "common_denominator_power", "numerator_box_degree", "maximum_alpha_degree", "term_count", "terms"],
+      "properties": {
+        "channel_id": {"type": "string", "pattern": "^I(10|24|25|28|29)_[123]{3}$"},
+        "carrier_id": {"enum": ["I10", "I24", "I25", "I28", "I29"]},
+        "label_order": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"type": "integer", "minimum": 1, "maximum": 3},
+          "uniqueItems": true
+        },
+        "explicit_derivative_order": {"enum": [0, 2, 4, 6]},
+        "form_factor_box_homogeneity": {"enum": [-1, -2, -3, -4]},
+        "common_denominator_power": {"const": 4},
+        "numerator_box_degree": {"type": "integer", "minimum": 0, "maximum": 3},
+        "maximum_alpha_degree": {"type": "integer", "minimum": 0, "maximum": 9},
+        "term_count": {"type": "integer", "minimum": 1},
+        "terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/term"}
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

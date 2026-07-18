@@ -75,11 +75,15 @@ the coefficient is `503/648` before the `W`/Tr-log factors and `-503/243`
 afterwards. The zero-momentum radial integral is scaleless and IR singular;
 the generic nonexceptional-momentum triangle is instead reduced exactly to
 eight projector sectors and twenty Feynman-simplex/Wick rows. The scalar-flat
-crosswalk now certifies `K_munu=Ric_munu+O(curvature^2)` and hence the cubic
+crosswalk certifies `K_munu=Ric_munu+O(curvature^2)` and hence the cubic
 normalization through third curvature order, with an independent TT sign
-fixture. Its repository five-carrier tensor/form-factor projection, the
-curved-Endo one-/two-insertion rows, and the generic
-physical fourth-order Hessian kernel are the next coefficient-bearing inputs.
+fixture. The eleven labelled `I10/I24/I25/I28/I29` orientations are now
+projected exactly onto the ten-dimensional scalar-flat quotient. Each channel
+is stored as a rational alpha/box numerator over `Delta^4`, and two unseen
+momentum fixtures replay all 125 TT amplitudes exactly. This is the parametric
+`n=3` integrand, not the five simplex-integrated repository functions. The
+curved-Endo one-/two-insertion rows and the generic physical fourth-order
+Hessian kernel are the next coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute

@@ -83,6 +83,17 @@ the longitudinal sectors can feed `I24`, `I25`, `I28`, and `I29`; the frozen
 `K_munu` crosswalk/projection and curved-Endo one-/two-insertion traces remain
 open.
 
+The scalar-flat crosswalk and tensor projection are now completed in
+[`GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json`](certificates/GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION.json).
+The eleven raw `I10/I24/I25/I28/I29` orientations have exact TT evaluation
+rank ten; the CPT-IV relation is fixed by removing the symmetric `I28`
+coordinate.  Every projected channel is stored as a rational
+Feynman-simplex numerator over the common `Delta^4`, and unseen exact
+momentum/alpha fixtures replay all 125 TT amplitudes.  This closes only the
+parametric `n=3` ghost projection.  Curved-Endo `n=1/n=2`, the complete ghost
+determinant, the physical fourth-order kernel, and the integrated repository
+functions and coefficients remain open.
+
 Replay with:
 
 ```bash
@@ -98,6 +109,15 @@ PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generi
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_triangle_kernel --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_triangle_kernel
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_triangle_kernel
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
+PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_five_carrier_projection
+```
+
+Full regeneration of the five-carrier projection is an exact scientific-tier
+check and takes roughly 163 seconds on the current workstation:
+
+```bash
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_five_carrier_projection --check
 ```
 
 The generic schema in this directory remains a promotion gate: a coefficient record is valid

@@ -862,12 +862,12 @@ with $k=(1,0,0,0)$ and a nontrivial TT polarization verifies componentwise
 $k^\alpha k^\beta C_{\alpha\mu\beta\nu}
 =(1/2)k^2R_{\mu\nu}$, guarding the sign and index order.
 
-This receipt closes only the normalization seam.  Derivative counting maps
+This receipt closes the normalization seam.  Derivative counting maps
 the zero-, one-, two- and three-longitudinal-projector sectors respectively
 to possible derivative orders $(0)$, $(0,2)$, $(0,2,4)$ and $(0,2,4,6)$.
-Consequently the complete target remains
-$(I_{10},I_{24},I_{25},I_{28},I_{29})$; no coefficient or form-factor
-projection is inferred.
+Consequently the complete target is
+$(I_{10},I_{24},I_{25},I_{28},I_{29})$.  The next subsection performs the
+parametric tensor/form-factor projection.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \
@@ -877,6 +877,54 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m unittest \
   transfer.tests.test_scalar_flat_k_ricci_crosswalk
 \end{verbatim}
+
+\subsection{Exact ghost \texorpdfstring{$n=3$}{n=3} five-carrier projection}
+
+The five carrier labels have eleven effective labelled orientations with
+multiplicities $(1,3,3,3,1)$.  On each of ten generic momentum fixtures the
+producer constructs five exact TT polarizations on every leg and evaluates
+all $5^3=125$ tensor products.  The resulting carrier matrix has shape
+$125\times11$ and exact rank ten.  The appended section row
+\[
+ (0,\ldots,0,1,1,1,0)
+\]
+imposes
+$\Gamma_{28}^{123}+\Gamma_{28}^{132}+\Gamma_{28}^{231}=0$ and completes the
+rank to eleven.  This fixes a representative modulo the unique arbitrary
+symmetric CPT-IV relation; it does not add an independent identity.
+
+The exact triangle solve retains $(\alpha_1,\alpha_2)$ symbolically.  After
+multiplication by the common $\Delta^4$, each channel numerator is a
+rational polynomial.  Its box degree is $3-d/2$ for explicit derivative
+order $d=0,2,4,6$, and its alpha degree is at most nine.  Homogeneous box
+interpolation uses ten unisolvent fixtures, enough for the maximum degree-
+three sector.  The stored row counts are
+\[
+ (195;\ 65,103,65;\ 97,91,97;\ 37,40,37;\ 10),
+\]
+for a total of 837 nonzero rational terms.
+
+The independent fast verifier evaluates the stored formula on two momentum
+fixtures absent from interpolation and two rational simplex points absent
+from generation.  At each fixture it compares the reconstructed carrier
+combination against all 125 direct Endo-triangle tensor amplitudes.  Every
+exact residual and the symmetric $I_{28}$ coordinate vanish.  It also rejects
+a changed coefficient after recomputing the formula digest.  Full symbolic
+regeneration takes about 163 seconds and is assigned to the scientific/
+release tier; the unseen exact replay takes about four seconds.
+
+\begin{verbatim}
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
+TEST="spectral.euclidean.tests."
+TEST="${TEST}test_generic_background_ghost_n3_five_carrier_projection"
+PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
+\end{verbatim}
+
+The result is the parametric $n=3$ ghost contribution in the declared
+scalar-flat quotient section.  The simplex integrals, curved-Endo one- and
+two-insertion rows, physical fourth-order Hessian kernel, and their complete
+sum into five repository functions and coefficients remain open.
 
 \subsection{Exact local BoxR scheme conversion}
 
@@ -950,7 +998,10 @@ promotion of the labelled-Ricci kernel to the repository five-carrier form
 factors;
 \item replay the contracted-Weyl coefficient, direct TT sign fixture and
 fourth-order first replacement error in the scalar-flat $K$--Ricci crosswalk,
-while rejecting promotion of normalization to a five-carrier projection;
+while rejecting promotion of normalization alone to a five-carrier projection;
+\item replay the stored eleven-to-ten five-carrier projection on unseen exact
+momentum/simplex fixtures across all 125 TT tensor products, and reject a
+coefficient mutation even after its formula digest is recomputed;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
@@ -1000,6 +1051,8 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_cubic_weyl_carrier_basis
 PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
@@ -1018,8 +1071,9 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item evaluation of the generic Diff--Weyl ghost one-, two- and three-Ricci
-insertion traces and the generic physical fourth-order Hessian kernel, followed by the five
+\item evaluation of the generic Diff--Weyl ghost one- and two-Ricci
+insertion traces and the generic physical fourth-order Hessian kernel,
+followed by integration and assembly of the five
 repository parity-even third-curvature form-factor functions and coefficients,
 the parity-odd derivative carrier manifest, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,

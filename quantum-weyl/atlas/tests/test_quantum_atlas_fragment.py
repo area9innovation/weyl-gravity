@@ -147,7 +147,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             == "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle"
         )
         self.assertIn(
-            "n=3 nonzero-momentum triangle reduced to an exact parametric kernel",
+            "n=3 nonzero-momentum triangle projected exactly onto the scalar-flat ten-dimensional five-carrier quotient",
             ghost["scope"]["carrier"],
         )
         self.assertEqual(
@@ -160,6 +160,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
                 "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
                 "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
                 "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",
+                "GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION",
                 "SCALAR_FLAT_K_RICCI_CUBIC_CROSSWALK",
             },
         )

@@ -134,8 +134,12 @@ spectrum `(3/2,1,1,1)`, and is generically Hodge-mixed. It reproduces the
 accepted Einstein scalar factor but obstructs direct minimal-CPT
 substitution. Its constructive successor exactly reduces the operator to a
 finite-proper-time Endo base plus `W=-2 Ric`. The n=3 adiabatic angular
-carrier is exact, but its nonzero-momentum triangle and the curved-Endo n=1/n=2
-traces remain. The guard remains
+carrier and generic nonzero-momentum triangle are exact. Its eleven labelled
+orientations are projected onto the ten-dimensional scalar-flat five-carrier
+quotient as rational simplex integrands, with two unseen exact momentum
+fixtures replaying all 125 TT amplitudes. The curved-Endo n=1/n=2 traces,
+simplex-integrated repository functions, and physical fourth-order Hessian
+remain open. The guard remains
 `NO_CERTIFIED_MAP` to any particle row and
 does not alter the strict/extended QME disposition.
 The additive
