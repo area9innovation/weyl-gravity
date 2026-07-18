@@ -235,6 +235,42 @@ has its fail-closed disposition and the second is active:
    missing scientific input; neither the Einstein delivery nor the stricter
    contract is itself a relative \(L_\infty\) theorem.
 
+### Queued nonlinear-team handoffs (2026-07-18)
+
+The nonlinear team has requested three classical inputs.  They form one
+dependency chain, not three interchangeable branch-labelled calculations:
+
+1. **Berger same-background branch carrier — blocked, fail-closed.**  The
+   desired Einstein-like/extra-Weyl/Maxwell map on the retained 36-row Berger
+   carrier is still `NO_CERTIFIED_MAP`.  The certified support-local projector
+   obstruction rules out the requested split on that carrier.  Reopen this
+   handoff only through one of the admissible Bridge-1 alternatives: a relative
+   cofiber, a larger noncontractible mixed-bundle carrier, an explicitly
+   nonlocal all-mode `REDUCED-MODE` map, or a port to a background with a
+   certified split.  Matching branch names across backgrounds is forbidden.
+   A successful handoff must export exact inclusions/projections or cofiber
+   maps, pairing, parity, real structure, Berger-generator weights and the
+   Maxwell carrier.  Otherwise the normalized local-projector obstruction is
+   the authoritative binary result.
+2. **Compact-product cyclic relative triangle — open after the interaction
+   payloads.**  The support-local off-shell noncyclic Einstein--Weyl triangle
+   is certified, while a standard-pairing cyclic correction is obstructed by
+   the fixed inertia mismatch.  The requested cyclic triangle therefore must
+   either declare and justify a changed relative pairing or return the existing
+   normalized obstruction; it may not silently relabel the noncyclic triangle
+   as cyclic.  Its arity-two and arity-three corrections depend on item 3.
+3. **Same-background interaction payloads — active.**  The complete
+   Einstein--Maxwell \((q_1,q_2,q_3)\) payload is delivered.  The corresponding
+   Weyl--Maxwell payload is the current active gate.  Both must be derived from
+   their actions and exported in the strict executable V2 PBW contract.  Only
+   after both pass independent replay may the nonlinear team compute
+   \(\Delta_2\), the arity-three morphism defect, the induced cohomology map and
+   the separate even/odd deformation verdict.
+
+The activation order is therefore `Weyl--Maxwell payload -> relative
+arity-two/three defect -> cyclic correction or obstruction`.  The Berger
+branch-carrier rail remains independent and fail-closed throughout.
+
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.
 The finite covariant HPL series and unique normalized degree-one correction
