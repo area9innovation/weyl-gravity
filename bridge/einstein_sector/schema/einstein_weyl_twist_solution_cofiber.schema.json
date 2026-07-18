@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "map_lifecycle",
+    "spectral_projection_theorem", "solution_map", "action_derived_pairing",
+    "classification", "interpretation", "next_gate", "claim_boundary",
+    "provenance", "verification_receipt", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-weyl-twist-solution-cofiber-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_TWIST_SOLUTION_COFIBER_V1"},
+    "map_lifecycle": {"const": "ONSHELL_MAP_ONLY"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_twist_target_primary_certified",
+        "explicit_twist_CRT_projection_certified",
+        "Einstein_image_equals_complete_twist_target_primary",
+        "twist_solution_cofiber_zero", "twist_pairing_transport_certified",
+        "twist_offshell_chain_map_certified",
+        "global_moduli_or_final_residual_descent_certified"
+      ]
+    }
+  }
+}

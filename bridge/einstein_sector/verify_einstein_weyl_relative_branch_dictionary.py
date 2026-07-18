@@ -37,7 +37,9 @@ def main() -> None:
         raise AssertionError("exceptional k0 solution cofiber was lost")
     if rows["ph.global.homogeneous.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("zero homogeneous solution cofiber was lost")
-    for identifier in ("ph.exceptional.ell1.nonzero_k.relative", "ph.global.twist.relative"):
+    if rows["ph.global.twist.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
+        raise AssertionError("zero twist solution cofiber was lost")
+    for identifier in ("ph.exceptional.ell1.nonzero_k.relative",):
         if rows[identifier]["projection_or_cofiber"]["status"] != "NO_CERTIFIED_MAP":
             raise AssertionError(f"missing cofiber was hidden: {identifier}")
     boundary = rows["ph.boundary.relative"]

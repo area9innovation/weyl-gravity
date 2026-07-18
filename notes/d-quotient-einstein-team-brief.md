@@ -2071,9 +2071,13 @@ The exceptional `ell=1,k=0` solution cofiber now has explicit CRT projectors
 and a nonradical direct current.  The complete homogeneous target quotient is
 also exhausted by the Einstein--Maxwell image, so its solution cofiber is
 zero despite the nontrivial nilpotent relative symplectic shear.  Polar cyclic
-BV compatibility, exceptional off-shell/nonzero-`k` maps, twist/global
-off-shell endpoints, charge endpoints and the boundary carrier remain
+BV compatibility, exceptional off-shell/nonzero-`k` maps, global off-shell
+endpoints, charge endpoints and the boundary carrier remain
 explicit `NO_CERTIFIED_MAP` fields.
+The generalized-zero twist primary is likewise exhausted by the Einstein
+image: its CRT projector is explicit, its solution cofiber is zero, and its
+identity pullback still has relative operator `-2I`.  Its off-shell complex,
+finite holonomy-moduli quotient and final residual descent remain open.
 The fail-closed atlas row is
 `einstein.ph.bridge.relative_branch_dictionary_v1`.  It does not identify any
 similarly named mode on another background.

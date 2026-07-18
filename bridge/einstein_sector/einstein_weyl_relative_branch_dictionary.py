@@ -25,6 +25,7 @@ INPUTS = {
     "homogeneous_standard": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_standard": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_twist_symplectic_restriction.json",
+    "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
     "abd_quadratic": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
 }
 
@@ -197,11 +198,11 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
             ),
             "map_lifecycle": "ONSHELL_MAP_ONLY",
             "inclusion": {"status": "CERTIFIED", "map": "identity inclusion on each standard twist pair (A_m,B_m)"},
-            "projection_or_cofiber": {"status": "NO_CERTIFIED_MAP", "map": "no complete twist target complement or chain cofiber is certified"},
-            "branch_representatives": {"status": "CERTIFIED", "standard": ["A_m", "B_m"], "extra": "NO_CERTIFIED_MAP"},
+            "projection_or_cofiber": {"status": "CERTIFIED", "map": "P_twist=3*(x-4/3)*(x-4)/16 isolates the complete target twist primary, which equals the Einstein image; solution cofiber zero"},
+            "branch_representatives": {"status": "CERTIFIED", "standard_and_complete_target": ["A_m", "B_m"], "extra": "zero solution cofiber in the x=0 primary"},
             "action_derived_pairing": {"status": "CERTIFIED", "relative_operator": "-2*I on each twist pair"},
-            "missing": ["twist target complement", "twist position/velocity times ell=2 extra source columns", "global moduli-orbifold quotient"],
-            "evidence": _evidence("standard", "twist_standard"),
+            "missing": ["twist off-shell chain map", "twist position/velocity times ell=2 extra source columns", "global moduli-orbifold quotient", "final residual descent"],
+            "evidence": _evidence("standard", "twist_standard", "exceptional_cofiber", "twist_cofiber"),
         },
         {
             "id": "ph.boundary.relative",
@@ -249,6 +250,8 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional k0 solution cofiber changed")
     if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:
         raise AssertionError("homogeneous zero solution cofiber changed")
+    if not records["twist_cofiber"]["classification"]["twist_solution_cofiber_zero"]:
+        raise AssertionError("twist zero solution cofiber changed")
     rows = _branch_rows(records)
     identifiers = [row["id"] for row in rows]
     if len(identifiers) != len(set(identifiers)):
@@ -273,7 +276,7 @@ def build() -> dict[str, object]:
             "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
             "current_global_map_lifecycle": "ONSHELL_MAP_ONLY",
             "activation_gate": "OPEN",
-            "reason": "generic axial and polar derived chain cofibers, the exceptional k=0 solution cofiber and the zero homogeneous solution cofiber are certified, but cyclic BV compatibility, exceptional off-shell/nonzero-k maps, twist/global off-shell endpoints and the boundary domain are absent",
+            "reason": "generic axial and polar derived chain cofibers, the exceptional k=0 solution cofiber and zero homogeneous and twist-primary solution cofibers are certified, but cyclic BV compatibility, exceptional off-shell/nonzero-k maps, global off-shell endpoints and the boundary domain are absent",
             "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             "requested_full_artifact_certified": False,
         },
@@ -298,13 +301,14 @@ def build() -> dict[str, object]:
             "generic_axial_and_polar_action_pairings_exported": True,
             "exceptional_k0_solution_cofiber_certified": True,
             "homogeneous_solution_cofiber_zero": True,
+            "twist_solution_cofiber_zero": True,
             "exceptional_global_and_boundary_absences_explicit": True,
             "full_offshell_all_sector_triangle_certified": False,
             "bridge_1_activation_gate_satisfied": False,
             "cross_background_mode_identification_made": False,
         },
-        "interpretation": "The compact Plebanski-Hacyan calculation already supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, an explicit exceptional k=0 solution cofiber, and a zero homogeneous solution cofiber. It does not yet supply the cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
-        "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional off-shell/nonzero-k, twist/global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+        "interpretation": "The compact Plebanski-Hacyan calculation already supplies a precise same-background Einstein/extra branch dictionary, derived chain cofibers in both generic parities, an explicit exceptional k=0 solution cofiber, and zero homogeneous and twist-primary solution cofibers. It does not yet supply the cyclic all-sector BV relative triangle required to activate downstream bridges. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+        "next_gate": "test cyclic pairing compatibility of the generic chain maps, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
