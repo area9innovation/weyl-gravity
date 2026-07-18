@@ -1,0 +1,398 @@
+{
+  "schema": "einstein-maxwell-weyl-polar-ell0-nonzero-fourier-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.schema.json",
+  "schema_sha256": "2c3b16819dbd852c2c7273d7195c866b74a2efe02520d0cdcd160d82c949aaaf",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_POLAR_ELL0_NONZERO_FOURIER",
+  "result_state": "STATIC_NONZERO_MOMENTUM_EXCEPTIONAL_TARGET_EXACT_AND_SURJECTIVE_MODULO_NOETHER",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "fixed magnetic bundle on R x S1_L x S2; polar ell=0 Fourier target with (omega,kappa), specialized for the phase-sensitive static channel omega=0 and kappa=+/-2k_input nonzero",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.py",
+    "generator_sha256": "3ce3c729aaec27f32f5c803bdbe9fbd1d32bcc634040767ebe7c5fed60e1af03",
+    "engine": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_polar_full_tensor.py",
+      "sha256": "1230f1ea1ffdb81b5209ff410e7b3e4b6cd16ac11c9ce0de481f0474b1cc7f11"
+    },
+    "input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+      "sha256": "3a58c94bce450cec2bf40eeda9d8bddb7f38617a62b4bcd37ebf5adbc50e3557"
+    }
+  },
+  "fourier_complex": {
+    "field_order": [
+      "A=h_tt",
+      "B=h_tx",
+      "C=h_xx",
+      "K=sphere_trace",
+      "T=a_t",
+      "X=a_x"
+    ],
+    "Euler_row_order": [
+      "metric_00",
+      "metric_01",
+      "metric_11",
+      "sphere_trace",
+      "Maxwell_density_t",
+      "Maxwell_density_x"
+    ],
+    "raw_operator": [
+      [
+        "-k**4/2",
+        "-k**3*omega",
+        "-k**2*omega**2/2",
+        "-k**2*(k - omega)*(k + omega)/2",
+        "0",
+        "0"
+      ],
+      [
+        "k**3*omega/2",
+        "k**2*omega**2",
+        "k*omega**3/2",
+        "k*omega*(k - omega)*(k + omega)/2",
+        "0",
+        "0"
+      ],
+      [
+        "-k**2*omega**2/2",
+        "-k*omega**3",
+        "-omega**4/2",
+        "-omega**2*(k - omega)*(k + omega)/2",
+        "0",
+        "0"
+      ],
+      [
+        "-k**2*(k - omega)*(k + omega)/4",
+        "-k*omega*(k - omega)*(k + omega)/2",
+        "-omega**2*(k - omega)*(k + omega)/4",
+        "-(k - omega)**2*(k + omega)**2/4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "k**2",
+        "k*omega"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "k*omega",
+        "omega**2"
+      ]
+    ],
+    "action_row_multipliers": [
+      "-1",
+      "2",
+      "-1",
+      "-2",
+      "1",
+      "1"
+    ],
+    "action_Hessian": [
+      [
+        "k**4/2",
+        "k**3*omega",
+        "k**2*omega**2/2",
+        "k**2*(k - omega)*(k + omega)/2",
+        "0",
+        "0"
+      ],
+      [
+        "k**3*omega",
+        "2*k**2*omega**2",
+        "k*omega**3",
+        "k*omega*(k - omega)*(k + omega)",
+        "0",
+        "0"
+      ],
+      [
+        "k**2*omega**2/2",
+        "k*omega**3",
+        "omega**4/2",
+        "omega**2*(k - omega)*(k + omega)/2",
+        "0",
+        "0"
+      ],
+      [
+        "k**2*(k - omega)*(k + omega)/2",
+        "k*omega*(k - omega)*(k + omega)",
+        "omega**2*(k - omega)*(k + omega)/2",
+        "(k - omega)**2*(k + omega)**2/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "k**2",
+        "k*omega"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "k*omega",
+        "omega**2"
+      ]
+    ],
+    "rank_one_factorization": {
+      "metric_vector": [
+        "k**2",
+        "2*k*omega",
+        "omega**2",
+        "k**2 - omega**2"
+      ],
+      "Maxwell_vector": [
+        "k",
+        "omega"
+      ],
+      "identity": "H=(1/2)*v_metric*v_metric^T direct-sum v_Maxwell*v_Maxwell^T"
+    },
+    "formally_self_adjoint": true,
+    "gauge_parameter_order": [
+      "xi_t",
+      "xi_x",
+      "sigma_Weyl",
+      "chi_U1"
+    ],
+    "gauge_matrix": [
+      [
+        "-2*I*omega",
+        "0",
+        "-2",
+        "0"
+      ],
+      [
+        "I*k",
+        "-I*omega",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2*I*k",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-I*omega"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "I*k"
+      ]
+    ],
+    "gauge_defect_zero": true,
+    "gauge_rank_chart_witnesses": {
+      "kappa_nonzero_minor": "-4*I*k**3",
+      "omega_nonzero_minor": "4*I*omega**3"
+    },
+    "fixed_bundle_note": "the uniform magnetic variation is absent; T,X are the global difference of two fixed-bundle connections"
+  },
+  "all_nonzero_fourier_pairs": {
+    "domain": "real (omega,kappa)!=(0,0)",
+    "operator_rank": 2,
+    "gauge_rank": 4,
+    "kernel_equals_Diff_Weyl_U1_image": true,
+    "cokernel_equals_adjoint_gauge_Noether_space": true,
+    "source_consequence": "every Noether-compatible ell=0 nonzero-Fourier source is in the operator image"
+  },
+  "static_nonzero_momentum": {
+    "substitution": "omega=0, kappa!=0",
+    "action_Hessian": [
+      [
+        "k**4/2",
+        "0",
+        "0",
+        "k**4/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "k**4/2",
+        "0",
+        "0",
+        "k**4/2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "k**2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "gauge_matrix": [
+      [
+        "0",
+        "0",
+        "-2",
+        "0"
+      ],
+      [
+        "I*k",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2*I*k",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "I*k"
+      ]
+    ],
+    "operator_rank": 2,
+    "gauge_rank": 4,
+    "kernel_dimension": 4,
+    "kernel_equals_Diff_Weyl_U1_image": true,
+    "left_cokernel_equals_adjoint_gauge_Noether_space": true,
+    "compatible_source_conditions": [
+      "S_B=0",
+      "S_C=0",
+      "S_X=0",
+      "S_A=S_K"
+    ],
+    "right_inverse_for_L_Phi=S": [
+      "A=S_A/kappa^4",
+      "B=0",
+      "C=0",
+      "K=S_A/kappa^4",
+      "T=S_T/kappa^2",
+      "X=0"
+    ],
+    "right_inverse_for_second_order_equation": [
+      "A=-S_A/kappa^4",
+      "B=0",
+      "C=0",
+      "K=-S_A/kappa^4",
+      "T=-S_T/kappa^2",
+      "X=0"
+    ]
+  },
+  "phase_channel_consequence": {
+    "channel": "same-branch opposite-frequency interference at L=0, K=+/-2k_input, Omega=0",
+    "quadratic_Noether_identity": "for an on-shell first-order tangent, the second-order action source is orthogonal to the adjoint gauge space on the closed slice",
+    "therefore_source_is_in_operator_image": true,
+    "smooth_global_static_correction_exists": true,
+    "relative_phase_creates_no_new_static_Taub_obstruction": true
+  },
+  "classification": {
+    "direct_four_dimensional_exceptional_operator_constructed": true,
+    "generic_ell_master_operator_specialized": false,
+    "Diff_Weyl_U1_complex_exact_at_static_nonzero_momentum": true,
+    "Diff_Weyl_U1_complex_exact_at_every_nonzero_Fourier_pair": true,
+    "static_L0_K2k_exceptional_block_classified": true,
+    "static_phase_sensitive_source_removable_if_Noether_compatible": true,
+    "smooth_global_opposite_momentum_cone_ready_for_aggregation": true,
+    "bounded_resonant_projection_classified": false
+  },
+  "interpretation": "The last exceptional static phase channel has no physical adjoint cokernel. Its entire cokernel is the Noether space, and the quadratic source of an on-shell first-order field automatically obeys those identities. The source is therefore removable by the displayed spatially periodic static correction. This closes the static smooth-global gate but says nothing about bounded corrections on the nonzero-frequency resonance divisor.",
+  "next_gate": "aggregate this exceptional theorem with the common-zero moment-map cone and the generic secular inverse to certify the complete fixed-(ell,|k|) smooth-global opposite-momentum second-order cone; retain the bounded resonance projection as a separate open problem",
+  "claim_boundary": "This is an exceptional LOCAL-ALGEBRAIC/REDUCED-MODE second-order solvability statement. It does not compute the phase-source coefficient, prove bounded or finite-quasiperiodic extension on a resonant shell, join distinct |k| fibers, establish all-orders integration, or make Lorentzian-causal or quantum claims.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 21.9,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ell0_nonzero_fourier --verify bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_ell0_nonzero_fourier.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ell0_nonzero_fourier"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "four-dimensional Weyl-Maxwell engine",
+        "opposite-momentum phase divisor"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the bounded resonant projection and programme-wide nonlinear theorem remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ell0_nonzero_fourier --verify bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_ell0_nonzero_fourier.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_polar_ell0_nonzero_fourier"
+  ]
+}

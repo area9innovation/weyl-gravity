@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Exceptional polar ell=0 nonzero Fourier Weyl--Maxwell complex",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "domain",
+    "provenance",
+    "fourier_complex",
+    "all_nonzero_fourier_pairs",
+    "static_nonzero_momentum",
+    "phase_channel_consequence",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-polar-ell0-nonzero-fourier-v1"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "fourier_complex": {"type": "object"},
+    "all_nonzero_fourier_pairs": {"type": "object"},
+    "static_nonzero_momentum": {"type": "object"},
+    "phase_channel_consequence": {"type": "object"},
+    "classification": {"type": "object"},
+    "verification_receipt": {"type": "object"},
+    "verification_commands": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": true
+}

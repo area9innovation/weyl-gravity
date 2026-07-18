@@ -1,0 +1,241 @@
+{
+  "schema": "einstein-maxwell-weyl-ell1-nonzero-static-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell1_nonzero_static.schema.json",
+  "schema_sha256": "a38785e172d40c7de266aaab931cb8deb698e92821ecba221d0446c1749c1807",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL1_NONZERO_STATIC",
+  "result_state": "AXIAL_AND_POLAR_ELL1_STATIC_NONZERO_MOMENTUM_EXACT_MODULO_GAUGE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "axial and polar L=1 target harmonics at Omega=0 and real nonzero output momentum kappa, all m by SO(3), before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell1_nonzero_static.py",
+    "generator_sha256": "da2587a162cdbd8c1c573d233c51c42b09acb75bc3f837f79f21f10deb0ddbb9",
+    "engines": {
+      "bridge/einstein_sector/einstein_maxwell_weyl_axial_ell2_full_tensor.py": "e688393e9fb31bb55972f243554544c4ecac8409c6cf2d4fa5c8f039cd98aa25",
+      "bridge/einstein_sector/einstein_maxwell_weyl_polar_full_tensor.py": "1230f1ea1ffdb81b5209ff410e7b3e4b6cd16ac11c9ce0de481f0474b1cc7f11"
+    },
+    "input": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_phase_resonance_divisor.json",
+      "sha256": "3a58c94bce450cec2bf40eeda9d8bddb7f38617a62b4bcd37ebf5adbc50e3557"
+    }
+  },
+  "direct_replay": {
+    "method": "insert Y_10=cos(theta) in the four-dimensional axial and polar fields, omit only the identically absent ell=1 tensor-harmonic equation, linearize 3B-T and Maxwell, then set Omega=0",
+    "generic_lambda_continuation_used_as_proof": false,
+    "axial": {
+      "field_order": [
+        "h_t",
+        "h_x",
+        "q_t",
+        "q_x"
+      ],
+      "full_Fourier_action_Hessian": [
+        [
+          "-(3*k**4 - 3*k**2*omega**2 + 10*k**2 - 4)/2",
+          "-k*omega*(3*k**2 - 3*omega**2 + 10)/2",
+          "2",
+          "0"
+        ],
+        [
+          "-k*omega*(3*k**2 - 3*omega**2 + 10)/2",
+          "-(3*k**2*omega**2 - 3*omega**4 + 10*omega**2 + 4)/2",
+          "0",
+          "-2"
+        ],
+        [
+          "2",
+          "0",
+          "k**2 + 2",
+          "k*omega"
+        ],
+        [
+          "0",
+          "-2",
+          "k*omega",
+          "omega**2 - 2"
+        ]
+      ],
+      "full_Fourier_residual_gauge": [
+        "omega",
+        "-k",
+        "-omega",
+        "k"
+      ],
+      "three_by_three_determinantal_divisor": "(k**2 - omega**2 + 4)*(3*k**2 - 3*omega**2 + 4)",
+      "action_Hessian": [
+        [
+          "-(3*k**4 + 10*k**2 - 4)/2",
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "-2",
+          "0",
+          "-2"
+        ],
+        [
+          "2",
+          "0",
+          "k**2 + 2",
+          "0"
+        ],
+        [
+          "0",
+          "-2",
+          "0",
+          "-2"
+        ]
+      ],
+      "residual_gauge": [
+        "0",
+        "-1",
+        "0",
+        "1"
+      ],
+      "rank_three_minor": "k**2*(k**2 + 4)*(3*k**2 + 4)"
+    },
+    "polar": {
+      "field_order": [
+        "A_t",
+        "B",
+        "C_t",
+        "U"
+      ],
+      "full_Fourier_action_Hessian": [
+        [
+          "(k**4 + 4*k**2 + 1)/2",
+          "k*omega*(k**2 + 2)",
+          "(k**2*omega**2 + k**2 - omega**2 + 3)/2",
+          "2"
+        ],
+        [
+          "k*omega*(k**2 + 2)",
+          "2*k**2*omega**2 - 3*k**2 + 3*omega**2 - 4",
+          "k*omega*(omega**2 - 2)",
+          "0"
+        ],
+        [
+          "(k**2*omega**2 + k**2 - omega**2 + 3)/2",
+          "k*omega*(omega**2 - 2)",
+          "(omega**4 - 4*omega**2 + 1)/2",
+          "-2"
+        ],
+        [
+          "2",
+          "0",
+          "-2",
+          "-4*(k**2 - omega**2 + 2)"
+        ]
+      ],
+      "full_Fourier_residual_gauge": [
+        "2 - 2*omega**2",
+        "2*k*omega",
+        "-2*k**2 - 2",
+        "1"
+      ],
+      "three_by_three_determinantal_divisor": "(k**2 - omega**2 + 4)*(3*k**2 - 3*omega**2 + 4)/3",
+      "action_Hessian": [
+        [
+          "(k**4 + 4*k**2 + 1)/2",
+          "0",
+          "(k**2 + 3)/2",
+          "2"
+        ],
+        [
+          "0",
+          "-3*k**2 - 4",
+          "0",
+          "0"
+        ],
+        [
+          "(k**2 + 3)/2",
+          "0",
+          "1/2",
+          "-2"
+        ],
+        [
+          "2",
+          "0",
+          "-2",
+          "-4*(k**2 + 2)"
+        ]
+      ],
+      "residual_gauge": [
+        "2",
+        "0",
+        "-2*k**2 - 2",
+        "1"
+      ],
+      "rank_three_minor": "(k**2 + 4)*(3*k**2 + 4)/2"
+    }
+  },
+  "nonzero_Fourier_consequence": {
+    "reduced_shells": [
+      "omega^2-kappa^2=4",
+      "omega^2-kappa^2=4/3"
+    ],
+    "off_shell": "the quotient operator is invertible",
+    "on_shell_smooth_global": "the exponential-polynomial secular inverse removes every Noether-compatible resonant source",
+    "bounded_on_shell": "requires the separate resonant source projection and is not inferred"
+  },
+  "static_consequence": {
+    "for_real_kappa_nonzero": "both rank-three minors are strictly positive",
+    "axial_kernel_equals_residual_gauge": true,
+    "polar_kernel_equals_residual_gauge": true,
+    "axial_cokernel_is_Noether_only": true,
+    "polar_cokernel_is_Noether_only": true,
+    "every_Noether_compatible_static_L1_source_is_removable": true
+  },
+  "classification": {
+    "direct_axial_ell1_static_nonzero_momentum_operator_certified": true,
+    "direct_polar_ell1_static_nonzero_momentum_operator_certified": true,
+    "static_L1_K2k_phase_source_removable": true,
+    "bounded_nonzero_frequency_resonant_projection_classified": false
+  },
+  "interpretation": "The L=1 output seam does not add a phase obstruction at nonzero circle momentum. In both parities the static Hessian has one residual gauge kernel and no physical adjoint cokernel, so every quadratic source satisfying the Noether identity is removable.",
+  "next_gate": "aggregate the L=0 and L=1 exceptional results with the generic Smith/secular and common-zero moment-map theorems to close the fixed-(ell,|k|) smooth-global opposite-momentum cone",
+  "claim_boundary": "This is a static exceptional target theorem. It does not classify the K=0 twist cokernel, bounded nonzero-frequency resonant projections, distinct |k| fibres, exceptional/global input modes, all-orders integration, causal scattering, or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 51.2,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell1_nonzero_static --verify bridge/certificates/einstein_maxwell_weyl_ell1_nonzero_static.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell1_nonzero_static.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_nonzero_static"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "direct axial full-tensor engine",
+        "direct polar full-tensor engine",
+        "opposite-momentum phase divisor"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the bounded resonant projection and programme-wide nonlinear theorem remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell1_nonzero_static --verify bridge/certificates/einstein_maxwell_weyl_ell1_nonzero_static.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell1_nonzero_static.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell1_nonzero_static"
+  ]
+}

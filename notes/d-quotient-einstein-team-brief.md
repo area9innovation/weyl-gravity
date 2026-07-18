@@ -1808,6 +1808,27 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    secular inverses using the certified Smith factors.  The remaining
    smooth-global phase gate is the exceptional static `L=0,K=2k` target
    block; do not infer it from the generic polar operator.
+
+   That remaining smooth-global gate is now closed, together with a hidden
+   exceptional `L=1` seam.  Direct four-dimensional `L=0` linearization gives
+   a rank-two action Hessian whose four-dimensional kernel is exactly
+   `Diff x Weyl x U(1)` for every nonzero Fourier pair.  At the static phase
+   channel a compatible source has the explicit correction
+   `A=K=-S_A/K^4`, `T=-S_T/K^2`.  Direct axial and polar `L=1` replays at
+   arbitrary Fourier momentum give only the reduced shells
+   `Omega^2-K^2=4,4/3`; their static nonzero-momentum rank witnesses are
+   strictly positive, and resonant forcing has the same finite secular
+   inverse.
+
+   Therefore the complete common-zero cone in one fixed generic
+   `(ell,|k|)` paired-momentum block is second-order extendible for arbitrary
+   relative phases in the smooth-global, spatially periodic,
+   exponential-polynomial temporal class.  This is a genuine promotion from
+   the phase-divisor result.  It is not a bounded or finite-quasiperiodic
+   theorem: the universal resonance family remains, and its dynamical source
+   projection is the separate bounded gate.  The next nonlinear enlargement
+   is exceptional/global input data (homogeneous and twist velocities,
+   Wilson line, charge, physical `ell=1`), followed by distinct `|k|` fibres.
 2. Test the homogeneous quadric and twist-velocity mixed balances against the
    complete quadratic source, and classify exceptional fourth-order target
    modes.  Only after these gates should any null-subalgebra quotient be
