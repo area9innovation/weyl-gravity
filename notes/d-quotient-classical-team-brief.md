@@ -1452,11 +1452,16 @@ Ricci-free moving-frame curvature variation, obtains the exact rank-four
 normal-tractor incidence `dot(I_Omega)`, and proves that the automorphism row
 must acquire `-dot(I_Omega)p0`.  Both maps have twelve nonzero entries and the
 normalization `-(1/2)dot(I_Omega)[4,1]=1`; cyclicity fixes the formal-adjoint
-dual row.  This is not yet the full first variation: the BGG splitting maps,
-the varying fibre pairing, and the middle/Schur identities remain open.  The
-next gate is therefore
-`NARIAI_TRANSVERSE_BGG_SPLITTING_AND_MIDDLE_SCHUR_VARIATION`, followed by the
-complete rank-310 SDR identity and only then causal transfer.
+dual row.  `NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1` now makes
+that dual coefficientwise explicit.  In the moving orthonormal
+conformal-tractor/covariant-PBW frame, the representation-theoretic Kostant
+maps, harmonic projections, and four fibre pairings have zero variation; the
+fixed-Λ Einstein tangent also has zero moving-frame Schouten variation.  The
+remaining BGG variation is therefore not algebraic and not a pairing
+normalization: it is the Levi--Civita connection/PBW variation and its
+middle/Schur propagation.  The next gate is
+`NARIAI_TRANSVERSE_CONNECTION_PBW_AND_MIDDLE_SCHUR_VARIATION`, followed by
+the complete rank-310 SDR identity and only then causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

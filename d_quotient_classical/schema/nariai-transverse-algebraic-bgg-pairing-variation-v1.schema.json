@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.example/schemas/nariai-transverse-algebraic-bgg-pairing-variation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "nariai-transverse-algebraic-bgg-pairing-variation-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"$ref": "#/$defs/object"},
+    "exact_data": {"$ref": "#/$defs/object"},
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION", "TRANSVERSE_INCIDENCE_DUAL_EXACT", "TRANSVERSE_CONNECTION_PBW_VARIATION", "TRANSVERSE_MIDDLE_SCHUR_VARIATION", "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION", "TRANSVERSE_CAUSAL_TRANSFER"],
+      "properties": {
+        "TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION": {"const": true},
+        "TRANSVERSE_INCIDENCE_DUAL_EXACT": {"const": true},
+        "TRANSVERSE_CONNECTION_PBW_VARIATION": {"const": false},
+        "TRANSVERSE_MIDDLE_SCHUR_VARIATION": {"const": false},
+        "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": {"const": false},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "object": {"type": "object", "additionalProperties": {"$ref": "#/$defs/value"}},
+    "value": {
+      "anyOf": [
+        {"type": "string"}, {"type": "number"}, {"type": "integer"},
+        {"type": "boolean"}, {"type": "null"},
+        {"type": "array", "items": {"$ref": "#/$defs/value"}},
+        {"$ref": "#/$defs/object"}
+      ]
+    }
+  }
+}

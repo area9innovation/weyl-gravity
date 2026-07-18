@@ -387,6 +387,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   middle/Schur, full SDR, and causal variations remain open:
   [`certificates/NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1.json),
   [`reports/nariai-transverse-curvature-incidence-variation.md`](reports/nariai-transverse-curvature-incidence-variation.md)
+- Algebraic BGG/pairing transverse variation: in the moving orthonormal
+  conformal-tractor and covariant-PBW frame, the Kostant maps, harmonic
+  projections, and all four fibre pairings are constant; the fixed-Λ
+  Einstein tangent also has zero Schouten variation in that frame.  The
+  formal-adjoint dual of `-dot(I_Omega)p0` is now computed coefficientwise
+  and has rank four with zero adjoint defect.  This does not set the
+  Levi--Civita connection variation to zero: connection/PBW and middle/Schur
+  variation are the next gate:
+  [`certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_ALGEBRAIC_BGG_PAIRING_VARIATION_V1.json),
+  [`reports/nariai-transverse-algebraic-bgg-pairing-variation.md`](reports/nariai-transverse-algebraic-bgg-pairing-variation.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer
