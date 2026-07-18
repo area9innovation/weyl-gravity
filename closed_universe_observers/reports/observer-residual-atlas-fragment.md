@@ -24,6 +24,11 @@ than `0.99999` of the clock-center one-form profile energy and cannot be
 promoted to a uniform full-profile image.  The corrected necessary capacity
 lower bound is `two_j>=97`; the computed `two_j=138` rail is a valid larger
 working rail, not a necessary or converged cutoff.
+The clock-uniform physical-space `N=1` successor certifies finite Maxwell tail
+upper bounds above `two_j=1024`, approximately `4.98e4` and `5.05e4` for the
+two polarizations.  These coarse values do not certify a small tail or fill
+the incomplete retained projection, so response, massive continuation and
+recoil remain fail-closed.
 The adaptive-preflight row remains `OPEN` for the response.  It records the selected streamed Peter--Weyl route
 without promoting a full image.  Its structural support is now exact:
 polarization matrices use only diagonals/first off-diagonals and the Green

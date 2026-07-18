@@ -150,3 +150,18 @@ def test_haar_normalization_repair_supersedes_capacity_label_fail_closed():
     assert "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR" in {
         evidence["result_id"] for evidence in repair["evidence"]
     }
+
+
+def test_clock_uniform_sobolev_n1_exports_finite_tail_without_full_image():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.clock_uniform_sobolev_n1"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OPEN"
+    assert "does not certify smallness" in row["observer_data"]["profile_green_boundary_dependencies"]["statement"]
+    assert "BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

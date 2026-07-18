@@ -681,6 +681,18 @@ the clock-uniform polarized norm `sup_t ||Delta1^N F_a(t)||_L2` in the
 certified Berger Haar convention, followed by the numerical tail product and
 massive-two-form continuation.
 
+`BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1` now evaluates the first physical-
+space norm in that convention.  Its exterior-calculus operator exactly
+reproduces `Delta0 x_mu=(29/18)x_mu` and `Delta1 dR=d Delta0 R`, then applies
+`Delta1` to both normalized fields `rho_a a(t)^3 y0 dR_aI`.  Rational support,
+flat-bump derivative, normalization and volume bounds give finite uniform
+`L2` enclosures.  After the certified first-omitted factor above
+`two_j=1024`, the axial and transverse tail upper bounds are approximately
+`4.98e4` and `5.05e4`.  These are rigorous but too coarse to certify a small
+tail, and the complete retained projection is still absent.  The next gate is
+a correlated squared-norm quadrature (or a wider complete retained rail), not
+full Maxwell/massive-image or recoil promotion.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

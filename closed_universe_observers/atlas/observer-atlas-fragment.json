@@ -3649,6 +3649,134 @@
       }
     },
     {
+      "claim_boundary": "the physical-space Hodge operator matches the spectral engine exactly; clock-uniform ||Delta1 F_a|| bounds are finite, and Lambda(1025/2)^-1 gives rigorous tail uppers, but the current coarse N=1 enclosure does not certify smallness finite Maxwell-tail input only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR.json",
+          "result_id": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR",
+          "sha256": "9c8b22a0794c20579a3aaf69e82f498d43013035f15fc3f8c3434adfc8587328"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
+          "result_id": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION",
+          "sha256": "4e6c2ac1685221704ef42f7cd4d2a31d14daede5f9f048ec1d05e5dfe53cce83"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1.json",
+          "result_id": "BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1",
+          "sha256": "ed9dedffaf67ba22995bbd9c4972970af554bb5db80575949f0b02f065249076"
+        }
+      ],
+      "id": "observer.berger.detector_profile.clock_uniform_sobolev_n1",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=normalized radius-1/128 Berger detector one-form under one physical-space Hodge Laplacian and the all-omitted-mode Maxwell Green reduction; omega=clock-uniform rod amplitude and nonnegative unit clock bump; exact-T Maxwell multipliers; OPEN: finite N=1 tail upper bounds are certified but are approximately 4.98e4 and 5.05e4, so they do not promote a small tail or full detector record",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "the exact-T spatial and coderivative multipliers are contractive, but the complete retained projection and massive continuation remain OPEN",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "finite Maxwell-tail input only; absolute-g3 recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "F_a(t)=rho_a a(t)^3 y0 dR_aI, a(t) in [82915/82944,1], dSigma=d^3R/(a^3y0), exact radius 1/128",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: finite N=1 tail upper bounds are certified but are approximately 4.98e4 and 5.05e4, so they do not promote a small tail or full detector record",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "replace the coarse termwise triangle bound by correlated squared-norm quadrature or widen a complete retained rail before composing the massive image",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "the physical-space Hodge operator matches the spectral engine exactly; clock-uniform ||Delta1 F_a|| bounds are finite, and Lambda(1025/2)^-1 gives rigorous tail uppers, but the current coarse N=1 enclosure does not certify smallness",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "finite Maxwell-tail input only; absolute-g3 recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "the exact-T spatial and coderivative multipliers are contractive, but the complete retained projection and massive continuation remain OPEN",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "normalized radius-1/128 Berger detector one-form under one physical-space Hodge Laplacian and the all-omitted-mode Maxwell Green reduction",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "tail form two_j>1024; complete retained projection still OPEN",
+        "k": "all omitted representation columns",
+        "m": "all omitted representation rows",
+        "omega": "clock-uniform rod amplitude and nonnegative unit clock bump; exact-T Maxwell multipliers",
+        "parity": "D0 axial dR0_1 and D1 transverse dR1_2",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
       "claim_boundary": "Bridge 3 is inactive until a same-background Berger branch dictionary lands NO_CERTIFIED_MAP NO_CERTIFIED_MAP",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -3880,7 +4008,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "37049978bfda6e84ff4f520314fef7463edd209f3fd162dd2062b317e0239bb1",
+  "generated_by_sha256": "95736f8ac3d575112bcc01312f17832c2b2b021f7c9ec64ff728c958c550a82e",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

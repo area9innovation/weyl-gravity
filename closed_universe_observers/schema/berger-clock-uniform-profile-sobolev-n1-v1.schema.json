@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "operator_audit", "profile_convention", "rational_bound_ledger", "polarization_bounds", "clock_and_green_transfer", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-clock-uniform-profile-sobolev-n1-v1"},
+    "result_id": {"const": "BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"type": "string", "minLength": 1},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 7, "maxProperties": 7},
+    "operator_audit": {"type": "object"},
+    "profile_convention": {"type": "object"},
+    "rational_bound_ledger": {"type": "object"},
+    "polarization_bounds": {"type": "array", "minItems": 2, "maxItems": 2},
+    "clock_and_green_transfer": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "REPLACE_THE_COARSE_N1_TRIANGLE_BOUND_BY_A_CORRELATED_SQUARED_NORM_QUADRATURE_OR_WIDEN_THE_COMPLETE_RETAINED_RAIL_BEFORE_FULL_IMAGE_PROMOTION"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

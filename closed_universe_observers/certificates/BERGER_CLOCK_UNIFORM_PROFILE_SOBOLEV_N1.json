@@ -1,0 +1,181 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result applies the physical-space Berger Hodge Laplacian once to each normalized detector form F_a(t)=rho_a J_a dR_aI, with J_a=a(t)^3 y0 and dSigma=d^3R/J_a. The differential operator exactly reproduces Delta0 x_mu=(29/18)x_mu and Delta1 dR=d Delta0 R. Rational support, flat-bump derivative, normalization and volume bounds give clock-uniform L2 enclosures for ||Delta1 F_a(t)||. Combining them with the certified first-omitted spectral lower bound above two_j=1024 gives finite Maxwell spatial and coderivative tail upper bounds of about 4.98e4 and 5.05e4. The nonnegative unit clock bump makes the same bound valid after clock integration, and the exact-T Maxwell multipliers add no amplification. This is a rigorous but deliberately coarse N=1 triangle/Darboux enclosure: it does not certify a small tail, convergence of the current working rail, a complete low-mode projection, a full Maxwell or massive-two-form image, detector response or rank, recoil, tangent-cone restriction, active Bridge 3, nonlinear observer-morphism stability or a quantum claim.",
+  "claim_status": "CERTIFIED_CLOCK_UNIFORM_N1_PROFILE_SOBOLEV_AND_FINITE_TAIL_UPPER_BOUND_SMALL_TAIL_OPEN",
+  "clock_and_green_transfer": {
+    "clock_profile_nonnegative_unit_integral": true,
+    "coderivative_sine_exact_T_multiplier_norm_upper": "1",
+    "same_uniform_tail_bound_after_clock_integration": true,
+    "spatial_exact_T_multiplier_norm_upper": "1"
+  },
+  "dependency_refs": {
+    "chart": {
+      "path": "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "result_id": "BERGER_QUANTITATIVE_DETECTOR_ROD_CHART",
+      "sha256": "9332f4dde9e9f0ad9f677ed92c2438ed0819aeeed6e286338d0d85561faf73d4"
+    },
+    "coderivative": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+      "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "normalization_repair": {
+      "path": "closed_universe_observers/certificates/BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR.json",
+      "result_id": "BERGER_HAAR_PROFILE_NORMALIZATION_REPAIR",
+      "sha256": "9c8b22a0794c20579a3aaf69e82f498d43013035f15fc3f8c3434adfc8587328"
+    },
+    "profiles": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+      "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"
+    },
+    "rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "tail_reduction": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION",
+      "sha256": "4e6c2ac1685221704ef42f7cd4d2a31d14daede5f9f048ec1d05e5dfe53cce83"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "CLOCK_UNIFORM_POLARIZED_DELTA1_PROFILE_NORM_EXPORTED": true,
+    "COMPLETE_LOW_MODE_PROJECTION_EXPORTED": false,
+    "CURRENT_N1_BOUND_CERTIFIES_SMALL_TAIL": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "MASSIVE_TWO_FORM_TAIL_BOUND_EXPORTED": false,
+    "PHYSICAL_SPACE_HODGE_LAPLACIAN_MATCHES_SPECTRAL_ENGINE": true,
+    "QUANTUM_CLAIM": false,
+    "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_UPPER_BOUND_EXPORTED": true
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "drop_gram_factor_a3_y0_from_profile"
+    },
+    {
+      "detected": true,
+      "name": "replace_flat_bump_second_derivative_bound_by_first_derivative_bound"
+    }
+  ],
+  "next_gate": "REPLACE_THE_COARSE_N1_TRIANGLE_BOUND_BY_A_CORRELATED_SQUARED_NORM_QUADRATURE_OR_WIDEN_THE_COMPLETE_RETAINED_RAIL_BEFORE_FULL_IMAGE_PROMOTION",
+  "operator_audit": {
+    "d_Delta_equals_Delta_d_defect_count": 0,
+    "delta_convention": "delta=(-1)^p star d star on spatial p-forms",
+    "scalar_coordinate_defect_count": 0,
+    "scalar_coordinate_eigenvalue": "29/18"
+  },
+  "polarization_bounds": [
+    {
+      "clock_uniform_Delta1_profile_L2_norm_upper": "1102037997615984587205751436642811605866744629884307621002990315148393805760167936/84308756177804392552168208393073083450782525731607416337075032308949375",
+      "clock_uniform_Delta1_profile_L2_norm_upper_decimal": "1.307145363753e+10",
+      "coframe_component_term_counts": [
+        12,
+        12,
+        13
+      ],
+      "normalized_Delta1_profile_pointwise_norm_upper": "120866978488960630394592299519120192795884627069007678640426532879698737025225123168256/14754032331115768696629436468787789603886942003031297858988130654066140625",
+      "polarization": "D0:dR0_1 axial",
+      "small_tail_certified": false,
+      "tail_L2_upper_after_two_j1024": "273305423408764177627026356287417278254952668211308290008741598156801663828521648128/5495241001222267247596173017225692605491716502598534059802748507180892206937625",
+      "tail_L2_upper_after_two_j1024_decimal": "4.973492943221e+04",
+      "unnormalized_component_absolute_upper_bounds": [
+        "40914105733385859158168609484/3918912125900337572321875",
+        "40914105733385859158168609484/3918912125900337572321875",
+        "378706658747629078872255511/85075581337762861125"
+      ]
+    },
+    {
+      "clock_uniform_Delta1_profile_L2_norm_upper": "223575835564755138850061365686282877116341570421295517240756584693059061941272576/16861751235560878510433641678614616690156505146321483267415006461789875",
+      "clock_uniform_Delta1_profile_L2_norm_upper_decimal": "1.325934847700e+10",
+      "coframe_component_term_counts": [
+        13,
+        12,
+        12
+      ],
+      "normalized_Delta1_profile_pointwise_norm_upper": "24520874748706307566191753629328304791624222156422700535103903465564149919311720349696/2950806466223153739325887293757557920777388400606259571797626130813228125",
+      "polarization": "D1:dR1_2 transverse",
+      "small_tail_certified": false,
+      "tail_L2_upper_after_two_j1024": "55446807220059274434815218690198153524852709464481288275707633003878647361435598848/1099048200244453449519234603445138521098343300519706811960549701436178441387525",
+      "tail_L2_upper_after_two_j1024_decimal": "5.044984124238e+04",
+      "unnormalized_component_absolute_upper_bounds": [
+        "378705533061106659982020337/85075581337762861125",
+        "5955823274893254482550590736/156756485036013502892875",
+        "36983710029026450335585594938/783782425180067514464375"
+      ]
+    }
+  ],
+  "profile_convention": {
+    "amplitude_interval": [
+      "82915/82944",
+      "1"
+    ],
+    "bump_argument": "q=|R-c|^2/epsilon^2, B(q)=exp(1-1/(1-q)) for 0<=q<1",
+    "detector_center_phase_disposition": "the Hopf U(1) right phase is an isometry of the Berger metric and commutes with the left form Laplacian",
+    "local_rod_coordinates": [
+      "R1-c1=2 c a y3",
+      "R2-c2=2 a y1",
+      "R3-c3=2 a y2"
+    ],
+    "normalization": "C_B3=4 pi integral_0^1 r^2 B(r^2) dr; the imported radial bump uses the equivalent B(radius)",
+    "spatial_form": "F_a(t)=B(q)/(epsilon^3 C_B3) a^3 y0 dR_aI"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_clock_uniform_profile_sobolev_n1.py",
+        "sha256": "0828063c423b06fb76c28bdb6aa6f4d2d1eb508abb5a856cb0d45780eff56fb1"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_clock_uniform_profile_sobolev_n1.py",
+        "sha256": "4262a8adb76273a091d7926fbcdf21797d4d25236c49a56299dd86d05670c296"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_clock_uniform_profile_sobolev_n1.py",
+        "sha256": "8bde8c8de1aeee223ada83e0d186db5df1d79a2de6b1dee17147be0cb573a6b2"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-clock-uniform-profile-sobolev-n1-v1.schema.json",
+        "sha256": "8c55651f298bccafa0c1eccff4383e580aa0e2a48e7a0c70706b6a79549ab957"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-clock-uniform-profile-sobolev-n1.md",
+        "sha256": "ae3a53794d40f8645a9bf5c54190784c4a6062795c6980a7f53490b996319d0c"
+      }
+    ]
+  },
+  "rational_bound_ledger": {
+    "bump_derivative_absolute_uppers_orders_0_1_2": [
+      "1",
+      "3/2",
+      "675/32"
+    ],
+    "e_lower_for_bump_derivatives": "e>8/3",
+    "first_omitted_delta1_lower": "325899779/1240",
+    "gram_jacobian_lower_on_support": "569993418588475/570630428688384",
+    "inverse_profile_normalization_upper": "766247770432944429179173513575154591809369561091801088/418314285448007024896795819035843949479975999795",
+    "pi_bounds": "3<pi<4",
+    "radial_normalization_integral_lower": "139438095149335674965598606345281316493325333265/1461501637330902918203684832716283019655932542976",
+    "retained_max_two_j": 1024,
+    "sqrt10_lower_for_c": "sqrt(10)>3, hence c>9/20",
+    "sqrt10_upper_for_coefficients": "sqrt(10)<4",
+    "support_berger_volume_sqrt_upper": "67869775120661059916948790521796725/42535295865117307932921825928971026432",
+    "support_berger_volume_upper": "1451188224/569993418588475"
+  },
+  "result_id": "BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1",
+  "schema": "closed-universe-berger-clock-uniform-profile-sobolev-n1-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}
