@@ -584,8 +584,10 @@ exact `r-1/r+1` neighbors and is rejected.  The active gate is therefore to
 combine this closed scalar set with the exact Clebsch--Gordan coefficients and
 detector prefactors, then add external clock powers while deriving the
 Sobolev inputs.  `BERGER_SELECTED_P0_POLARIZED_FORM_INTERVALS` now closes the
-first half: all 18 selected complex detector-form entries and 54 scalar-term
-applications are serialized, and every maximum real/imaginary width is below
+first half: after the common pointwise factor
+`82915/82944<=a(t)=cos(lambda s)<=1` is applied, all 18 selected complex
+detector-form entries and 54 scalar-term applications are serialized, and
+every maximum real/imaginary width is below
 `0.1` (the maximum is below `0.099`).  The active gate is to evaluate the same
 recurrence-closed scalar and polarized rows for external powers `p=2,...,28`
 while deriving the Sobolev inputs.  Only after a complete rail or a validated tail

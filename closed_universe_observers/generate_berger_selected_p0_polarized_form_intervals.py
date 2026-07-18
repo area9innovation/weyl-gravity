@@ -15,6 +15,9 @@ import sympy as sp
 from closed_universe_observers.generate_berger_clock_weighted_polarization_stream import (
     _fast_complex_interval,
 )
+from closed_universe_observers.generate_berger_clock_integrated_scalar_coefficients import (
+    AMPLITUDE_LOWER,
+)
 from closed_universe_observers.generate_berger_green_weighted_detector_coderivative import (
     CZERO,
     _cadd,
@@ -30,6 +33,7 @@ REPORT = PACKAGE / "reports/berger-selected-p0-polarized-form-intervals.md"
 DEPENDENCIES = {
     "closure": PACKAGE / "certificates/BERGER_POLARIZATION_RECURRENCE_SCALAR_CLOSURE.json",
     "recurrence": PACKAGE / "certificates/BERGER_POLARIZATION_CLEBSCH_GORDAN_RECURRENCE.json",
+    "clock": PACKAGE / "certificates/BERGER_CLOCK_INTEGRATED_SCALAR_PROFILE_COEFFICIENTS.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -70,6 +74,11 @@ def _width(interval: ComplexInterval) -> Fraction:
     return max(interval[0][1] - interval[0][0], interval[1][1] - interval[1][0])
 
 
+def apply_external_clock_factor(interval: ComplexInterval) -> ComplexInterval:
+    amplitude = (AMPLITUDE_LOWER, Fraction(1))
+    return _mul(amplitude, interval[0]), _mul(amplitude, interval[1])
+
+
 def polarized_interval(entry: dict[str, Any], lookup: dict[tuple[int, int], Interval]) -> tuple[ComplexInterval, list[dict[str, Any]]]:
     answer = CZERO
     applications = []
@@ -95,6 +104,7 @@ def build() -> dict[str, Any]:
     required = {
         "closure": "SELECTED_FORM_RECURRENCE_SCALAR_CLOSURE_EXPORTED",
         "recurrence": "ALL_FINITE_TWO_J_POINTWISE_POLARIZATION_RECURRENCE_EXPORTED",
+        "clock": "VALIDATED_CLOCK_SECANT_MOMENTS_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -102,7 +112,8 @@ def build() -> dict[str, Any]:
     lookup = _scalar_lookup(values["closure"])
     rows = []
     for entry in values["closure"]["form_selection"]["entries"]:
-        interval, applications = polarized_interval(entry, lookup)
+        spatial_interval, applications = polarized_interval(entry, lookup)
+        interval = apply_external_clock_factor(spatial_interval)
         rows.append({
             "anchor": entry["anchor"],
             "detector_id": entry["detector_id"],
@@ -114,6 +125,11 @@ def build() -> dict[str, Any]:
             "external_clock_power": 0,
             "recurrence_term_count": len(applications),
             "term_applications": applications,
+            "spatial_recurrence_interval_before_external_clock_factor": {
+                "real": _serialize_axis(spatial_interval[0]),
+                "imaginary": _serialize_axis(spatial_interval[1]),
+            },
+            "external_clock_factor_interval": [str(AMPLITUDE_LOWER), "1"],
             "polarized_interval": {
                 "real": _serialize_axis(interval[0]),
                 "imaginary": _serialize_axis(interval[1]),
@@ -140,9 +156,24 @@ def build() -> dict[str, Any]:
         "mutated_total_term_count": 53,
         "detected": True,
     }
+    clock_target = next(
+        row for row in rows
+        if row["anchor"] == 256 and row["detector_id"] == "D0" and row["coframe_component"] == 3
+    )
+    raw_lower = Fraction(clock_target["spatial_recurrence_interval_before_external_clock_factor"]["real"]["lower"])
+    corrected_lower = Fraction(clock_target["polarized_interval"]["real"]["lower"])
+    clock_mutation = {
+        "name": "drop_common_external_detector_clock_factor_a_of_t",
+        "target": {"anchor": 256, "detector_id": "D0", "coframe_component": 3},
+        "uncorrected_positive_real_lower": str(raw_lower),
+        "corrected_positive_real_lower": str(corrected_lower),
+        "detected": corrected_lower < raw_lower,
+    }
+    if not clock_mutation["detected"]:
+        raise AssertionError("external detector clock-factor mutation escaped")
     digest = hashlib.sha256(json.dumps(rows, sort_keys=True).encode()).hexdigest()
     boundary = (
-        "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result combines the exact detector-prefactored Clebsch--Gordan coefficients with the 12 recurrence-closed scalar p=0 intervals to produce 18 selected complex detector-form intervals at form two_j=1024 and anchors r=128,256,384. All 54 scalar-term applications are serialized and content-addressed. Every selected maximum real/imaginary axis width is below 0.1; the largest is below 0.099. Deleting one scalar term is detected by the exact coverage count. This certifies selected p=0 polarized form entries only. It does not add external clock powers p=2,...,28, cover all form rows or representations, certify a Sobolev/infinite-mode tail, apply Maxwell or massive Green kernels, evaluate detector response or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim."
+        "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result combines the exact detector-prefactored Clebsch--Gordan coefficients with the 12 recurrence-closed scalar p=0 intervals and then applies the common pointwise detector clock factor 82915/82944<=a(t)=cos(lambda s)<=1. It produces 18 selected complex detector-form intervals at form two_j=1024 and anchors r=128,256,384. All 54 scalar-term applications are serialized and content-addressed. Every selected maximum real/imaginary axis width is below 0.1; the largest is below 0.099. Deleting one scalar term and dropping the common clock factor are both detected. This certifies selected p=0 polarized form entries only. It does not add external clock powers p=2,...,28, cover all form rows or representations, certify a Sobolev/infinite-mode tail, apply Maxwell or massive Green kernels, evaluate detector response or recoil, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim."
     )
     return {
         "schema": "closed-universe-berger-selected-p0-polarized-form-intervals-v1",
@@ -161,17 +192,22 @@ def build() -> dict[str, Any]:
             "external_clock_power": 0,
             "detector_component_entry_count": len(rows),
             "scalar_term_application_count": sum(row["recurrence_term_count"] for row in rows),
+            "external_detector_clock_factor": "a(t)=cos(lambda s)",
+            "external_detector_clock_factor_interval": [str(AMPLITUDE_LOWER), "1"],
         },
         "polarized_form_rows": rows,
         "maximum_selected_axis_width": str(maximum_width),
         "canonical_selected_polarized_sha256": digest,
         "term_coverage_mutation": mutation,
+        "external_clock_factor_mutation": clock_mutation,
         "flags": {
             "SELECTED_P0_POLARIZED_FORM_INTERVALS_EVALUATED": True,
             "EIGHTEEN_SELECTED_DETECTOR_COMPONENT_ENTRIES_EXPORTED": True,
             "ALL_FIFTY_FOUR_SCALAR_TERM_APPLICATIONS_EXPORTED": True,
             "ALL_SELECTED_POLARIZED_WIDTHS_BELOW_ONE_TENTH": True,
             "TERM_COVERAGE_MUTATION_REJECTED": True,
+            "EXTERNAL_DETECTOR_CLOCK_FACTOR_APPLIED": True,
+            "EXTERNAL_CLOCK_FACTOR_MUTATION_REJECTED": True,
             "ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED": False,
             "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": False,
             "GREEN_IMAGES_EVALUATED": False,

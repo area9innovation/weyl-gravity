@@ -30,6 +30,13 @@ def test_deleted_term_coverage_is_rejected() -> None:
         verify(value)
 
 
+def test_external_detector_clock_factor_is_applied() -> None:
+    value = json.loads(CERTIFICATE.read_text())
+    mutation = value["external_clock_factor_mutation"]
+    assert Fraction(mutation["corrected_positive_real_lower"]) < Fraction(mutation["uncorrected_positive_real_lower"])
+    assert value["flags"]["EXTERNAL_DETECTOR_CLOCK_FACTOR_APPLIED"] is True
+
+
 def test_higher_clock_and_green_claims_remain_false() -> None:
     value = json.loads(CERTIFICATE.read_text())
     assert value["flags"]["ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED"] is False

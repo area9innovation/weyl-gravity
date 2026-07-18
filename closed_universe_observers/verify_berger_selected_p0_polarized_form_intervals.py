@@ -11,6 +11,7 @@ from closed_universe_observers.generate_berger_selected_p0_polarized_form_interv
     ROOT,
     SCHEMA,
     _scalar_lookup,
+    apply_external_clock_factor,
     polarized_interval,
 )
 
@@ -37,9 +38,14 @@ def verify(value: dict) -> None:
     assert len(entries) == len(rows) == 18
     total_terms = 0
     for entry, row in zip(entries, rows):
-        interval, applications = polarized_interval(entry, lookup)
+        spatial_interval, applications = polarized_interval(entry, lookup)
+        interval = apply_external_clock_factor(spatial_interval)
         assert row["recurrence_term_count"] == len(applications)
         assert row["term_applications"] == applications
+        assert Fraction(row["spatial_recurrence_interval_before_external_clock_factor"]["real"]["lower"]) == spatial_interval[0][0]
+        assert Fraction(row["spatial_recurrence_interval_before_external_clock_factor"]["real"]["upper"]) == spatial_interval[0][1]
+        assert Fraction(row["spatial_recurrence_interval_before_external_clock_factor"]["imaginary"]["lower"]) == spatial_interval[1][0]
+        assert Fraction(row["spatial_recurrence_interval_before_external_clock_factor"]["imaginary"]["upper"]) == spatial_interval[1][1]
         assert Fraction(row["polarized_interval"]["real"]["lower"]) == interval[0][0]
         assert Fraction(row["polarized_interval"]["real"]["upper"]) == interval[0][1]
         assert Fraction(row["polarized_interval"]["imaginary"]["lower"]) == interval[1][0]
@@ -49,6 +55,8 @@ def verify(value: dict) -> None:
     assert total_terms == value["selection"]["scalar_term_application_count"] == 54
     assert Fraction(value["maximum_selected_axis_width"]) < Fraction(99, 1000)
     assert value["term_coverage_mutation"]["detected"] is True
+    assert value["external_clock_factor_mutation"]["detected"] is True
+    assert value["flags"]["EXTERNAL_DETECTOR_CLOCK_FACTOR_APPLIED"] is True
     assert value["flags"]["ALL_CLOCK_POWERS_AND_COMPLETE_FORM_RAIL_EVALUATED"] is False
     assert value["flags"]["GREEN_IMAGES_EVALUATED"] is False
 

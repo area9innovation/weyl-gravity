@@ -396,8 +396,9 @@ shells `1023,1025`, with three imported and nine newly evaluated below width
 `0.1`.  A same-index-only mutation omits six required `r-1/r+1` neighbors.
 The active profile gate is the exact polarized combination of this closed
 scalar set, followed by external clock powers.  The selected `p=0` polarized
-successor now serializes all 18 detector-form intervals and 54 scalar-term
-applications; every maximum real/imaginary width is below `0.1`, with the
+successor now applies the common pointwise factor
+`82915/82944<=a(t)=cos(lambda s)<=1` and serializes all 18 detector-form
+intervals and 54 scalar-term applications; every maximum real/imaginary width is below `0.1`, with the
 maximum below `0.099`.  The active profile gate is the same selected closure
 for external powers `p=2,...,28`, not a complete-form or Green-image claim.
 The nonlinear apparatus dependency is explicit and ordered by content hash:

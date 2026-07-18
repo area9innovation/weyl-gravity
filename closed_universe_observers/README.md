@@ -453,7 +453,8 @@ nine companions are newly evaluated, all below width `0.1`.  Retaining only
 the same anchor index on both shells omits six exact `r-1/r+1` neighbors and
 is rejected.  The active gate is now the actual Clebsch--Gordan/detector-
 prefactor combination for those 18 entries, not further scalar widening.
-That selected polarized successor is now evaluated.  All 18 complex `p=0`
+That selected polarized successor is now evaluated, including the common
+pointwise factor `82915/82944<=a(t)=cos(lambda s)<=1`.  All 18 complex `p=0`
 form intervals and 54 scalar-term applications are content-addressed; every
 maximum real/imaginary width is below `0.1`, with the widest approximately
 `0.098702`.  The active gate is higher external clock powers on the same
