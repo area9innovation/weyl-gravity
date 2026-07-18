@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-selected-charge-block-temporal-bandwidth-preflight-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "scope", "charge_audits", "actual_completed_input_order14_interval_audits", "coverage", "route_disposition", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-selected-charge-block-temporal-bandwidth-preflight-v1"},
+    "result_id": {"const": "BERGER_SELECTED_CHARGE_BLOCK_TEMPORAL_BANDWIDTH_PREFLIGHT"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "ORDER14_P28_SELECTED_TWO_J1024_MICROPHASE_PROMOTION_OBSTRUCTED_CORRELATED_DIRECT_TRANSFORM_REQUIRED"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "scope": {"type": "object"},
+    "charge_audits": {"type": "array", "minItems": 9, "maxItems": 9},
+    "actual_completed_input_order14_interval_audits": {"type": "array", "minItems": 18, "maxItems": 18},
+    "coverage": {
+      "type": "object",
+      "required": ["minimum_exact_order14_cosine_error_absolute_lower", "minimum_actual_order14_independent_interval_width", "maximum_actual_order14_independent_interval_width", "maximum_required_geometric_order_for_1e_minus_17", "maximum_required_even_clock_power", "canonical_order14_completed_input_output_sha256"],
+      "properties": {
+        "minimum_exact_order14_cosine_error_absolute_lower": {"type": "string"},
+        "minimum_actual_order14_independent_interval_width": {"type": "string"},
+        "maximum_actual_order14_independent_interval_width": {"type": "string"},
+        "maximum_required_geometric_order_for_1e_minus_17": {"const": 39},
+        "maximum_required_even_clock_power": {"const": 78},
+        "canonical_order14_completed_input_output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "route_disposition": {"type": "object"},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {
+      "type": "object",
+      "required": ["ALL_18_COMPLETED_SELECTED_BLOCK_INPUTS_AUDITED", "ALL_9_DISTINCT_SELECTED_CHARGES_AUDITED", "ORDER14_P28_SELECTED_MICROPHASE_PROMOTION_OBSTRUCTED", "CURRENT_INDEPENDENT_MOMENT_INTERVAL_ROUTE_WIDTH_BELOW_ONE_TENTH_OBSTRUCTED", "GEOMETRIC_REMAINDER_BELOW_ONE_E_MINUS_SEVENTEEN_REQUIRES_POWERS_THROUGH_P78", "CORRELATED_DIRECT_CLOCK_MICROPHASE_TRANSFORM_REQUIRED", "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED", "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ALL_18_COMPLETED_SELECTED_BLOCK_INPUTS_AUDITED": {"const": true},
+        "ALL_9_DISTINCT_SELECTED_CHARGES_AUDITED": {"const": true},
+        "ORDER14_P28_SELECTED_MICROPHASE_PROMOTION_OBSTRUCTED": {"const": true},
+        "CURRENT_INDEPENDENT_MOMENT_INTERVAL_ROUTE_WIDTH_BELOW_ONE_TENTH_OBSTRUCTED": {"const": true},
+        "GEOMETRIC_REMAINDER_BELOW_ONE_E_MINUS_SEVENTEEN_REQUIRES_POWERS_THROUGH_P78": {"const": true},
+        "CORRELATED_DIRECT_CLOCK_MICROPHASE_TRANSFORM_REQUIRED": {"const": true},
+        "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED": {"const": false},
+        "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "CERTIFY_A_CORRELATED_DIRECT_NORMALIZED_CLOCK_MICROPHASE_TRANSFORM_IN_THE_EXACT_SELECTED_BLOCK_SPECTRAL_PROJECTORS_WITH_LOW_BAND_OVERLAP"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

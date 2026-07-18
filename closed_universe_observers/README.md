@@ -113,6 +113,8 @@ python3 -m closed_universe_observers.generate_berger_selected_charge_block_scala
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_scalar_companion_completion
 python3 -m closed_universe_observers.generate_berger_selected_charge_block_form_companion_clock_rail --check
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_form_companion_clock_rail
+python3 -m closed_universe_observers.generate_berger_selected_charge_block_temporal_bandwidth_preflight --check
+python3 -m closed_universe_observers.verify_berger_selected_charge_block_temporal_bandwidth_preflight
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -492,6 +494,16 @@ zeros, it exports 270 complete three-component helicity vectors for the 18
 selected charge blocks.  The active gate is now the exact temporal functional
 calculus on these completed inputs and a controlled spatial tail; Green
 images, detector response, recoil and cone restriction remain open.
+The selected temporal-bandwidth preflight prevents an invalid reuse of the
+lower-band order-14 theorem: that theorem ends at `two_j=138`, while these
+inputs lie at `two_j=1024`.  Each of the nine distinct selected charges has an
+exact scalar eigenvalue whose order-14 cosine polynomial gives a positive
+error lower bound, and all 18 direct independent-interval outputs have width
+above `0.1`.  The same geometric proof would need order 39 and even powers
+through `p=78` at the widest block, but appending independent monomials cannot
+narrow the existing interval sums.  The active temporal gate is therefore a
+correlated direct normalized clock-microphase transform in the exact block
+spectral projectors, with overlap against the certified lower band.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

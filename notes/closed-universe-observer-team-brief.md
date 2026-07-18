@@ -637,6 +637,21 @@ to those completed blocks together with a controlled spatial tail.  No Green
 image, detector response, recoil coefficient, or tangent-cone restriction is
 promoted by this input completion.
 
+`BERGER_SELECTED_CHARGE_BLOCK_TEMPORAL_BANDWIDTH_PREFLIGHT` now prevents a
+cross-band temporal promotion.  The earlier order-14 microphase theorem is
+certified only through `two_j=138`, whereas the completed selected blocks are
+at form `two_j=1024`.  On each of their nine distinct charges an exact rational
+scalar eigenvalue embedded in the one-form block gives a positive rigorous
+order-14 cosine-error lower bound `|P_14|-1`; direct use of the current
+independent moment/interval-matrix-power rail gives width above `0.1` on all
+18 completed inputs.  The present geometric proof would require order 39 and
+even powers through `p=78` at the widest block, but merely appending independent
+monomial intervals cannot narrow those sums.  The active temporal gate is a
+correlated direct normalized clock-microphase transform in the exact block
+spectral projectors, with certified lower-band overlap.  This is an
+`OBSTRUCTED` route, not an obstruction to the exact temporal functional
+calculus.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

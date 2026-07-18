@@ -51,6 +51,14 @@ three-component helicity vectors for the 18 selected charge blocks.  The
 original 18-entry-only promotion remains `OBSTRUCTED`; the finite completion
 does not yet apply temporal functional calculus or certify a spatial tail,
 Green image, detector response, recoil, or cone restriction.
+The temporal-bandwidth successor is separately `OBSTRUCTED`: the certified
+order-14 microphase theorem ends at `two_j=138` and cannot be reused at the
+selected `two_j=1024` carrier.  Exact embedded scalar eigenvalues give a
+positive order-14 cosine-error lower bound on all nine selected charges, and
+the current independent-interval implementation is wider than `0.1` on all
+18 completed inputs.  A correlated direct clock-microphase transform in exact
+block spectral projectors is required; this does not obstruct the exact
+functional calculus itself.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

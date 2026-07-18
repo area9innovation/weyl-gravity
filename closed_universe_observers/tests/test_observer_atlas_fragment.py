@@ -94,3 +94,17 @@ def test_selected_form_companion_clock_rail_closes_inputs_not_response():
     assert "BERGER_SELECTED_CHARGE_BLOCK_FORM_COMPANION_CLOCK_RAIL" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_selected_temporal_bandwidth_preflight_is_fail_closed():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.selected_charge_block_temporal_bandwidth_preflight"
+    )
+    assert row["descriptions"]["causal"] == "OBSTRUCTED"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert "BERGER_SELECTED_CHARGE_BLOCK_TEMPORAL_BANDWIDTH_PREFLIGHT" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
