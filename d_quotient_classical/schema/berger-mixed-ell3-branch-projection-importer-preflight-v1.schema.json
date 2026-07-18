@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-berger-mixed-ell3-branch-projection-importer-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "active_bridge", "input_contract", "dependency_refs", "downstream_disposition", "claim_flags", "next_gate", "source_manifest", "verification_commands", "verification_receipt", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-berger-mixed-ell3-branch-projection-importer-preflight-v1"},
+    "result_id": {"const": "BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1"},
+    "result_state": {"enum": ["INPUT_BLOCKED_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_MISSING", "BRIDGE_1_IMPORTED_BRIDGE_2_PROJECTION_READY"]},
+    "lifecycle_status": {"const": "OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "active_bridge": {"type": "object", "required": ["order", "name", "activation_gate", "status"], "properties": {"order": {"const": 2}, "name": {"const": "invariant interaction to physical branches"}, "activation_gate": {"type": "string", "minLength": 1}, "status": {"enum": ["INPUT_BLOCKED", "READY"]}}},
+    "input_contract": {"type": "object", "required": ["required_result_id", "schema_path", "schema_sha256", "candidate_paths", "required_flags", "accepted_map_categories", "status"], "properties": {"required_result_id": {"const": "BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1"}, "schema_path": {"type": "string"}, "schema_sha256": {"$ref": "#/$defs/hash"}, "candidate_paths": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "required_flags": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"type": "string"}}, "accepted_map_categories": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string"}}, "status": {"enum": ["MISSING", "IMPORTED"]}}},
+    "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "downstream_disposition": {"type": "object", "required": ["projected_operation", "operation_on_cohomology", "cyclic_deformation_class", "admissible_redefinition", "q4"], "properties": {"projected_operation": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "operation_on_cohomology": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "cyclic_deformation_class": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "admissible_redefinition": {"enum": ["NO_CERTIFIED_MAP", "OPEN"]}, "q4": {"const": "NOT_AUTHORIZED"}}},
+    "claim_flags": {"type": "object", "required": ["BRANCH_PROJECTION_IMPORTER_READY", "ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED", "BRIDGE_2_ACTIVATED", "PROJECTED_ELL3_COMPUTED", "COHOMOLOGY_OPERATION_DECIDED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "ADMISSIBLE_REDEFINITION_DISPLAYED", "Q4_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {"BRANCH_PROJECTION_IMPORTER_READY": {"const": true}, "ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": {"type": "boolean"}, "BRIDGE_2_ACTIVATED": {"type": "boolean"}, "PROJECTED_ELL3_COMPUTED": {"const": false}, "COHOMOLOGY_OPERATION_DECIDED": {"const": false}, "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false}, "ADMISSIBLE_REDEFINITION_DISPLAYED": {"const": false}, "Q4_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"enum": ["SUPPLY_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP", "COMPUTE_PROJECTED_ELL2_ELL3_AND_INVARIANT_DISPOSITION"]},
+    "source_manifest": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "verification_receipt": {"type": "object", "additionalProperties": false, "required": ["producing_date", "tier_0", "tier_1", "tier_2_dependency_replay", "tier_3"], "properties": {"producing_date": {"const": "2026-07-18"}, "tier_0": {"type": "object"}, "tier_1": {"type": "object"}, "tier_2_dependency_replay": {"type": "object"}, "tier_3": {"type": "object"}}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"input_contract": {"type": "object", "properties": {"status": {"const": "MISSING"}}}}},
+      "then": {
+        "properties": {
+          "result_state": {"const": "INPUT_BLOCKED_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_MISSING"},
+          "active_bridge": {"type": "object", "properties": {"status": {"const": "INPUT_BLOCKED"}}},
+          "claim_flags": {"type": "object", "properties": {"ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": {"const": false}, "BRIDGE_2_ACTIVATED": {"const": false}}},
+          "next_gate": {"const": "SUPPLY_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP"}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"input_contract": {"type": "object", "properties": {"status": {"const": "IMPORTED"}}}}},
+      "then": {
+        "properties": {
+          "result_state": {"const": "BRIDGE_1_IMPORTED_BRIDGE_2_PROJECTION_READY"},
+          "active_bridge": {"type": "object", "properties": {"status": {"const": "READY"}}},
+          "claim_flags": {"type": "object", "properties": {"ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": {"const": true}, "BRIDGE_2_ACTIVATED": {"const": true}}},
+          "next_gate": {"const": "COMPUTE_PROJECTED_ELL2_ELL3_AND_INVARIANT_DISPOSITION"}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {"type": "object", "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

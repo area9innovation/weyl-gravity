@@ -730,6 +730,32 @@ all Einstein-like/extra-Weyl/topological mode-pair source rows remain
 `NO_CERTIFIED_MAP`; no local PBW row is silently identified with a harmonic
 mode.
 
+The ledger also imports one independently certified mode-pair source on the
+different compact product background: the positive-frequency axial/polar
+Einstein minus-branch pair has a nonzero axial `ell=2,m=0,k=0` sum-frequency
+source, but that selected four-row block is off shell and admits an exact
+second-order correction.  This is an explicit `D^2E=q2` source/image verdict,
+not a Berger crosswalk, residual operation, or cyclic `L_infinity` field
+redefinition.  Its causal and final-cohomology images remain fail-closed.
+
+### Active bridge
+
+The active nonlinear bridge is bridge 2, **invariant interaction to physical
+branches**.  Its activation gate is bridge 1: an admissible branch map on the
+same fixed rational Berger background, with explicit carrier crosswalk,
+chain/cohomology maps, pairing transport, gauge/nondynamical disposition and
+`K_Berger` equivariance.  The fail-closed importer is
+`BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1`; it accepts a
+support-local mixed-bundle map, noncontractible cofiber, or explicitly tagged
+`REDUCED-MODE` nonlocal map and rejects background-name matching.  No input is
+present, so the corresponding atlas row
+`nonlinear.berger.bridge2.invariant_interaction_to_physical_branches` remains
+`NO_CERTIFIED_MAP` on every axis.  Once activated, use the landed
+`D^2E`--`q2`--`ell_n` dictionary to decide cohomology survival, cyclic
+deformation nontriviality, or removal by a displayed admissible redefinition.
+The certified filtered-cyclic `ell3` obstruction is preserved and `q4` is not
+authorized.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.

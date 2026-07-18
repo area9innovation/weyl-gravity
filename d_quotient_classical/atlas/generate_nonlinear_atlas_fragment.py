@@ -22,6 +22,8 @@ CERTS = {
     "dictionary": ROOT / "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "branch_projector": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
+    "axial_ee_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+    "branch_importer": ROOT / "d_quotient_classical/certificates/BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1.json",
 }
 
 
@@ -101,6 +103,29 @@ def entries() -> list[dict[str, Any]]:
         "k": "declared finite set or NOT_APPLICABLE in compact harmonic language",
         "omega": "declared finite frequency set",
     }
+    axial_ee_scope = {
+        "theory": "Einstein-Maxwell embedded in pure-Weyl/Weyl-Maxwell gravity",
+        "background": "unit-magnetic fixed-P_N product background on R_t x S1_L x S2",
+        "boundaries": "compact S1_L x S2; no spatial boundary",
+        "charge_sector": "fixed unit magnetic charge after local Diff x U(1) reduction",
+        "carrier": "four independent gauge-fixed axial output rows before the final residual quotient",
+        "degree": "degree-zero inputs; equation-row quadratic-source output",
+        "parity": "odd axial-polar input pair to axial output",
+        "ell": 2,
+        "m": 0,
+        "k": 0,
+        "omega": "two positive-frequency minus-branch inputs at sqrt(6-2sqrt(3)); sum-frequency output 2*sqrt(6-2sqrt(3))",
+    }
+    bridge2_scope = {
+        **berger,
+        "carrier": "prospective admissible same-background branch map from the retained interaction carrier or an explicitly crosswalked enlargement",
+        "degree": "all declared BV degrees and induced cohomology map",
+        "parity": "all",
+        "ell": "NO_CERTIFIED_MAP pending bridge 1",
+        "m": "NO_CERTIFIED_MAP pending bridge 1",
+        "k": "NO_CERTIFIED_MAP pending bridge 1",
+        "omega": "NO_CERTIFIED_MAP pending bridge 1",
+    }
     return [
         {
             "id": "nonlinear.berger.retained_mixed_ell3.filtered_cyclic_obstruction",
@@ -155,6 +180,42 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("cone", "dictionary"),
             "claim_boundary": "The complete obstruction zero locus is natural under field/equation isomorphisms that preserve the harmonic carrier, domains, boundaries, Noether/gauge reduction and correction class. It supplies no background-specific mode classification.",
+        },
+        {
+            "id": "nonlinear.product.axial_polar_einstein_minus_to_axial_extra.ell2_m0_k0_sum_frequency",
+            "scope": axial_ee_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "OPEN", "nonlinear": "CERTIFIED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("CERTIFIED", "The selected four-row source is off both target normal shells and has an explicit exact harmonic correction."),
+                    ("CERTIFIED", "The same exact nonresonant correction is admissible in the smooth-secular class."),
+                    ("NO_CERTIFIED_MAP", "No retarded Green realization of this reduced-mode correction is certified."),
+                ),
+                dispersion=("CERTIFIED", "Both inputs lie on the certified minus branch; their sum frequency is off the selected axial target shells."),
+                pairing=("OPEN", "No final residual Lee-Wald pairing or norm is established by this source certificate."),
+                taub=("CERTIFIED", "The nonzero D^2E source lies in the image of the selected four-row Hessian block, so it does not reach that block's adjoint cokernel."),
+                resonance=("CERTIFIED", "The selected sum-frequency block is nonresonant and explicitly removable by a second-order correction."),
+            ),
+            "evidence": _evidence("axial_ee_source", "dictionary"),
+            "claim_boundary": "This is one REDUCED-MODE axial ell=2,m=0,k=0 sum-frequency source block on the compact product background. Its exact second-order correction is not a cyclic L_infinity field redefinition. Even outputs, conjugate/difference frequencies, the complete real tangent, final residual descent, causal propagation and the Berger retained carrier remain separate or NO_CERTIFIED_MAP.",
+        },
+        {
+            "id": "nonlinear.berger.bridge2.invariant_interaction_to_physical_branches",
+            "scope": bridge2_scope,
+            "descriptions": {axis: "NO_CERTIFIED_MAP" for axis in AXES},
+            "mode_data": _mode_data(
+                _second(
+                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the bounded obstruction problem."),
+                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the secular correction problem."),
+                    ("NO_CERTIFIED_MAP", "No same-background branch map exists on which to project the retarded correction problem."),
+                ),
+                dispersion=("NO_CERTIFIED_MAP", "Branch-labelled Berger dispersion requires bridge 1."),
+                pairing=("NO_CERTIFIED_MAP", "Branch pairing transport is an acceptance condition of bridge 1."),
+                taub=("NO_CERTIFIED_MAP", "The landed D^2E-q2 dictionary cannot be evaluated branchwise before bridge 1."),
+                resonance=("NO_CERTIFIED_MAP", "The filtered-cyclic ell3 obstruction is certified only on the unsplit retained carrier."),
+            ),
+            "evidence": _evidence("branch_importer", "mixed_obstruction", "dictionary"),
+            "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
         },
     ]
 

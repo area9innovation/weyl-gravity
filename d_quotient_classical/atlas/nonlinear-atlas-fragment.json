@@ -213,10 +213,153 @@
         "parity": "arbitrary fixed graded block",
         "theory": "finite-harmonic nonlinear gauge equation with complete Noether and gauge reduction"
       }
+    },
+    {
+      "claim_boundary": "This is one REDUCED-MODE axial ell=2,m=0,k=0 sum-frequency source block on the compact product background. Its exact second-order correction is not a cyclic L_infinity field redefinition. Even outputs, conjugate/difference frequencies, the complete real tangent, final residual descent, causal propagation and the Berger retained carrier remain separate or NO_CERTIFIED_MAP.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "OPEN"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_EE_ELL2_SOURCE_AND_CORRECTION",
+          "sha256": "1355b39e523ba4385c8871a4a02772ed32920bede920b6242d4c5068ce44fbcc"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+        }
+      ],
+      "id": "nonlinear.product.axial_polar_einstein_minus_to_axial_extra.ell2_m0_k0_sum_frequency",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Both inputs lie on the certified minus branch; their sum frequency is off the selected axial target shells.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "No final residual Lee-Wald pairing or norm is established by this source certificate.",
+          "status": "OPEN"
+        },
+        "resonance": {
+          "statement": "The selected sum-frequency block is nonresonant and explicitly removable by a second-order correction.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The selected four-row source is off both target normal shells and has an explicit exact harmonic correction.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No retarded Green realization of this reduced-mode correction is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The same exact nonresonant correction is admissible in the smooth-secular class.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "The nonzero D^2E source lies in the image of the selected four-row Hessian block, so it does not reach that block's adjoint cokernel.",
+          "status": "CERTIFIED"
+        }
+      },
+      "scope": {
+        "background": "unit-magnetic fixed-P_N product background on R_t x S1_L x S2",
+        "boundaries": "compact S1_L x S2; no spatial boundary",
+        "carrier": "four independent gauge-fixed axial output rows before the final residual quotient",
+        "charge_sector": "fixed unit magnetic charge after local Diff x U(1) reduction",
+        "degree": "degree-zero inputs; equation-row quadratic-source output",
+        "ell": 2,
+        "k": 0,
+        "m": 0,
+        "omega": "two positive-frequency minus-branch inputs at sqrt(6-2sqrt(3)); sum-frequency output 2*sqrt(6-2sqrt(3))",
+        "parity": "odd axial-polar input pair to axial output",
+        "theory": "Einstein-Maxwell embedded in pure-Weyl/Weyl-Maxwell gravity"
+      }
+    },
+    {
+      "claim_boundary": "Bridge 2 is INPUT_BLOCKED. It activates only after an admissible same-background mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE branch map passes the importer. The compact-product mode-pair row is not a Berger crosswalk. Projected cohomology, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP, and q4 is not authorized.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "NO_CERTIFIED_MAP",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1.json",
+          "result_id": "BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1",
+          "sha256": "dded146eba88f9ffe76244ed2842ad08f4e093bde3f3fcdf872ab6eea741d3c9"
+        },
+        {
+          "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+          "result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+          "sha256": "4051d27dd45fb5a8781348bccb4e21859cf736124cca026182978177ced62e44"
+        },
+        {
+          "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+          "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+          "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+        }
+      ],
+      "id": "nonlinear.berger.bridge2.invariant_interaction_to_physical_branches",
+      "mode_data": {
+        "dispersion": {
+          "statement": "Branch-labelled Berger dispersion requires bridge 1.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "Branch pairing transport is an acceptance condition of bridge 1.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The filtered-cyclic ell3 obstruction is certified only on the unsplit retained carrier.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No same-background branch map exists on which to project the bounded obstruction problem.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "No same-background branch map exists on which to project the retarded correction problem.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No same-background branch map exists on which to project the secular correction problem.",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "The landed D^2E-q2 dictionary cannot be evaluated branchwise before bridge 1.",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "fixed rational positive Berger clock",
+        "boundaries": "R_t x compact Berger S3; no spatial boundary",
+        "carrier": "prospective admissible same-background branch map from the retained interaction carrier or an explicitly crosswalked enlargement",
+        "charge_sector": "fixed-coupling retained sector with K_Berger=D-omega R",
+        "degree": "all declared BV degrees and induced cohomology map",
+        "ell": "NO_CERTIFIED_MAP pending bridge 1",
+        "k": "NO_CERTIFIED_MAP pending bridge 1",
+        "m": "NO_CERTIFIED_MAP pending bridge 1",
+        "omega": "NO_CERTIFIED_MAP pending bridge 1",
+        "parity": "all",
+        "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell"
+      }
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py",
-  "generated_by_sha256": "aa33f5179b9255aac4190f091f01911036368b0f317838549503bb109786505f",
+  "generated_by_sha256": "7f37e435d703ab7e6dc1ab284e2726d152e0c76be304e5307717477bb03a76f9",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

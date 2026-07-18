@@ -1,0 +1,132 @@
+{
+  "active_bridge": {
+    "activation_gate": "bridge 1 supplies an admissible same-background branch map",
+    "name": "invariant interaction to physical branches",
+    "order": 2,
+    "status": "INPUT_BLOCKED"
+  },
+  "claim_boundary": "This preflight prepares bridge 2 and imports only a schema-valid, content-addressed branch map on the exact Berger interaction background. The existing support-local same-bundle projector remains obstructed. Until bridge 1 supplies an admissible mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE map, projected ell2/ell3, cohomology survival, cyclic deformation nontriviality and removability are NO_CERTIFIED_MAP. It preserves the filtered-cyclic ell3 obstruction and does not authorize q4, particles, causality, QME promotion or quantum claims.",
+  "claim_flags": {
+    "ADMISSIBLE_REDEFINITION_DISPLAYED": false,
+    "ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": false,
+    "BRANCH_PROJECTION_IMPORTER_READY": true,
+    "BRIDGE_2_ACTIVATED": false,
+    "COHOMOLOGY_OPERATION_DECIDED": false,
+    "CYCLIC_DEFORMATION_CLASS_DECIDED": false,
+    "PROJECTED_ELL3_COMPUTED": false,
+    "Q4_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "dependency_refs": {
+    "mixed_ell3_filtered_obstruction": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+      "result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+      "sha256": "4051d27dd45fb5a8781348bccb4e21859cf736124cca026182978177ced62e44"
+    },
+    "same_bundle_projector_obstruction": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
+      "result_id": "BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1",
+      "sha256": "2a06fb31f888cab2d0c3e3481a559623098b3efba42cc0cd7b9b2759552e980c"
+    },
+    "source_transfer_dictionary": {
+      "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+      "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+      "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "downstream_disposition": {
+    "admissible_redefinition": "NO_CERTIFIED_MAP",
+    "cyclic_deformation_class": "NO_CERTIFIED_MAP",
+    "operation_on_cohomology": "NO_CERTIFIED_MAP",
+    "projected_operation": "NO_CERTIFIED_MAP",
+    "q4": "NOT_AUTHORIZED"
+  },
+  "input_contract": {
+    "accepted_map_categories": [
+      "SUPPORT_LOCAL_MIXED_BUNDLE",
+      "NONCONTRACTIBLE_COFIBER",
+      "REDUCED_MODE_NONLOCAL"
+    ],
+    "candidate_paths": [
+      "d_quotient_classical/certificates/BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1.json",
+      "bridge/certificates/BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1.json"
+    ],
+    "required_flags": [
+      "SAME_BACKGROUND_AS_INTERACTION",
+      "EXPLICIT_CARRIER_CROSSWALK",
+      "CHAIN_MAP_ALL_DECLARED_ROWS",
+      "EINSTEIN_EXTRA_MAXWELL_BRANCH_MAPS",
+      "GAUGE_AND_NONDYNAMICAL_DISPOSITION",
+      "PAIRING_TRANSPORT_VERIFIED",
+      "K_BERGER_EQUIVARIANT",
+      "COHOMOLOGY_MAP_VERIFIED",
+      "INDEPENDENT_VERIFIER_PASS"
+    ],
+    "required_result_id": "BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1",
+    "schema_path": "d_quotient_classical/schema/berger-admissible-same-background-branch-map-v1.schema.json",
+    "schema_sha256": "c5cdb56a067534e3a32b2e82bfe2b9670470ffc857fc0f1c00356a0c92b83ef5",
+    "status": "MISSING"
+  },
+  "lifecycle_status": "OPEN",
+  "next_gate": "SUPPLY_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP",
+  "result_id": "BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1",
+  "result_state": "INPUT_BLOCKED_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_MISSING",
+  "schema": "pure-weyl-berger-mixed-ell3-branch-projection-importer-preflight-v1",
+  "source_manifest": {
+    "d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py": "2e0273bb4601d384cac0f4ac8f8208bbd23b8adab28efe5843c770bcd9ab5e0a",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_mixed_ell3_branch_projection_importer.py": "357da091f3d53b5ea67c3388c9efbe0974c1888e8d0379b8c0f02dae8ea6fe78",
+    "d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py": "409f40e5c03a87e1e5f5dd0e4baf53946504aa6c8960ae0786d3fb9573347f11",
+    "d_quotient_classical/schema/berger-admissible-same-background-branch-map-v1.schema.json": "c5cdb56a067534e3a32b2e82bfe2b9670470ffc857fc0f1c00356a0c92b83ef5",
+    "d_quotient_classical/schema/berger-mixed-ell3-branch-projection-importer-preflight-v1.schema.json": "444b4a2939b0b745a59afc125e942f46c5b372653e29913832ab3f0834c5c223"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer -v"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands_and_elapsed_seconds": [
+        {
+          "command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards",
+          "elapsed_seconds": 0.145
+        },
+        {
+          "command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py",
+          "elapsed_seconds": 0.537
+        },
+        {
+          "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+          "elapsed_seconds": 0.714
+        },
+        {
+          "command": "npx --yes ajv-cli@5 compile/validate --spec=draft2020 --strict=true <two scoped schemas>",
+          "elapsed_seconds": 10.006
+        }
+      ],
+      "status": "PASS"
+    },
+    "tier_2_dependency_replay": {
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ee_ell2_source --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
+      "measured_elapsed_seconds_lower_bound": 300.01,
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "No shared algebra, classical freeze, theorem lifecycle promotion, or release boundary changed.",
+      "status": "NOT_RUN"
+    }
+  }
+}
