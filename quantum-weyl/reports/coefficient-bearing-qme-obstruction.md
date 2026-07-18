@@ -46,6 +46,11 @@ particles, or residual quantum transfer. It also does not rule out coefficient
 cancellation by added matter or restoration in a certified Wess--Zumino
 compensator extension.
 
+That compensator alternative has since been decided at one-loop local
+Euclidean order in the formal tau-adic algebra; see
+[`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md).
+The result does not alter this strict-field-content obstruction.
+
 The first extension test is also complete: a dual-cone witness proves that no
 nonnegative collection of standard-sign free conformal scalars, Weyl/Dirac
 fermions, or gauge vectors cancels the two even coordinates. The strict QME

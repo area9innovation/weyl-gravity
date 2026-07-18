@@ -37,6 +37,8 @@ DEPENDENCIES = {
     "regulated_Slavnov_breaking": QROOT / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "unitary_matter_no_go": QROOT / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "WZ_compensator_preflight": QROOT / "anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
+    "WZ_cotangent_lift": QROOT / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+    "WZ_extended_local_BV": QROOT / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "general_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "finite_k0_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_harmonic_k0_combined_cone_second_order.json",
     "smooth_secular_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
@@ -147,6 +149,8 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     breaking = values["regulated_Slavnov_breaking"]
     matter_no_go = values["unitary_matter_no_go"]
     wz_preflight = values["WZ_compensator_preflight"]
+    wz_lift = values["WZ_cotangent_lift"]
+    wz_extended = values["WZ_extended_local_BV"]
     general = values["general_tangent_cone"]
     k0 = values["finite_k0_cone"]
     smooth = values["smooth_secular_cone"]
@@ -210,6 +214,14 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "EXACT_REMOVABLE"
         or wz_preflight.get("qme_lifecycle", {}).get("full_extended_BV_QME")
         != "NOT_CERTIFIED"
+        or wz_lift.get("contractible_quartet", {}).get("status")
+        != "EXACT_CONTRACTIBLE_WEYL_QUARTET_IN_DRESSED_VARIABLES"
+        or wz_extended.get("H14", {}).get("even_quotient_dimension") != 0
+        or wz_extended.get("H14", {}).get("odd_quotient_dimension") != 0
+        or wz_extended.get("one_loop_QME", {}).get("status")
+        != "QME_RESTORED_AT_ONE_LOOP_LOCAL_EUCLIDEAN_TAU_ADIC_EXTENDED_THEORY"
+        or wz_extended.get("lifecycle", {}).get("residual_transfer")
+        != "FORBIDDEN_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED"
     ):
         raise ValueError("coefficient-bearing QME disposition drifted")
 
@@ -443,19 +455,19 @@ def _tangent_crosswalk(values: dict[str, dict[str, Any]]) -> dict[str, Any]:
             complex_structure=("NOT_APPLICABLE", "classical second-order solvability crosswalk"),
             hadamard=("NO_CERTIFIED_MAP", "no background-specific causal quantum state"),
             state_space=("NO_CERTIFIED_MAP", "no interacting quantum state space"),
-            qme=("OBSTRUCTED", "strict QME obstruction is certified; the compensator primitive is AFN0-only and the full extended BV QME is not certified"),
-            lifecycle=("OBSTRUCTED", "classical criterion remains certified; interacting-BRST bridge is unavailable"),
+            qme=("CERTIFIED", "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored"),
+            lifecycle=("NO_CERTIFIED_MAP", "QME disposition is complete, but Bridge 2 and an extended same-background classical carrier map are absent"),
             particle=("NO_CERTIFIED_MAP", "classical obstruction is not ghost removal"),
             crosswalk=("NO_CERTIFIED_MAP", "classical obstruction to interacting BRST disappearance or quantum constraint"),
         ),
-        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight"),
-        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The strict-field-content insertion is nontrivial and a compensator primitive is certified only on the declared AFN0 even span; the full extended BV QME and a same-background carrier-specific map from the classical tangent obstruction to an interacting BRST insertion are both absent.",
+        _evidence(values, "general_tangent_cone", "finite_k0_cone", "smooth_secular_cone", "bounded_resonance_divisor", "Slavnov_preflight", "regulated_Slavnov_breaking", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV"),
+        "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is now complete—strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop—but Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
     )
 
 
 def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     specs = [
-        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "unitary_matter_no_go", "WZ_compensator_preflight")),
+        ("local_anomaly_class", "local ghost-number-one anomaly class such as omega C2 or omega E4", ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "regulated_Slavnov_breaking", "unitary_matter_no_go", "WZ_compensator_preflight", "WZ_cotangent_lift", "WZ_extended_local_BV")),
         ("euclidean_determinant_factor", "round-S4 TT or ghost determinant factor", ["EUCLIDEAN-SPECTRAL"], ("Slavnov_preflight", "Euclidean_elliptic_complex", "nonconformal_coefficient_match")),
         ("curvature_observable_generator", "support-local curvature-graph CCR generator", ["LORENTZIAN-CAUSAL"], ("curvature_CCR",)),
     ]
@@ -499,7 +511,7 @@ def _guard_entries(values: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                     complex_structure=("NO_CERTIFIED_MAP", "no particle complex structure crosswalk"),
                     hadamard=("NO_CERTIFIED_MAP", "no particle Hadamard crosswalk"),
                     state_space=("NO_CERTIFIED_MAP", "no particle state-space crosswalk"),
-                    qme=(("OBSTRUCTED", "strict local Euclidean QME is obstructed; AFN0 compensator exactness does not certify the full extended BV QME") if key == "local_anomaly_class" else ("OPEN", "carrier retains its own anomaly/QME dependency")),
+                    qme=(("CERTIFIED", "strict local Euclidean QME is obstructed; the tau-adic compensator-extended local Euclidean QME is restored at one loop") if key == "local_anomaly_class" else ("OPEN", "carrier retains its own anomaly/QME dependency")),
                     lifecycle=("NO_CERTIFIED_MAP", "not a particle lifecycle entry"),
                     particle=("NO_CERTIFIED_MAP", "forbidden without an explicit physical residual-mode crosswalk"),
                     crosswalk=("NO_CERTIFIED_MAP", "non-mode carrier to particle"),
@@ -542,7 +554,8 @@ def validate_fragment(value: dict[str, Any]) -> None:
     tangent = by_id["quantum.crosswalk.classical_tangent_cone_to_interacting_brst"]
     if (
         tangent["quantum_data"]["carrier_crosswalk"]["status"] != "NO_CERTIFIED_MAP"
-        or tangent["quantum_data"]["anomaly_QME_dependency"]["status"] != "OBSTRUCTED"
+        or tangent["quantum_data"]["anomaly_QME_dependency"]["status"] != "CERTIFIED"
+        or tangent["quantum_data"]["lifecycle_state"]["status"] != "NO_CERTIFIED_MAP"
     ):
         raise ValueError("classical tangent obstruction was promoted without the QME bridge")
     guards = [entry for entry in value["entries"] if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"]

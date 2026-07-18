@@ -39,11 +39,12 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["quantum_data"]["carrier_crosswalk"]["status"], "NO_CERTIFIED_MAP")
-        self.assertEqual(entry["quantum_data"]["anomaly_QME_dependency"]["status"], "OBSTRUCTED")
+        self.assertEqual(entry["quantum_data"]["anomaly_QME_dependency"]["status"], "CERTIFIED")
         self.assertIn(
-            "full extended BV QME",
+            "tau-adic compensator-extended",
             entry["quantum_data"]["anomaly_QME_dependency"]["statement"],
         )
+        self.assertEqual(entry["quantum_data"]["lifecycle_state"]["status"], "NO_CERTIFIED_MAP")
 
     def test_strict_field_content_quantum_lifecycle_is_obstructed(self) -> None:
         value = build()
@@ -60,10 +61,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             entry for entry in value["entries"]
             if entry["id"] == "quantum.crosswalk.local_anomaly_class_to_particle"
         )
-        self.assertEqual(
-            local_guard["quantum_data"]["anomaly_QME_dependency"]["status"],
-            "OBSTRUCTED",
-        )
+        self.assertEqual(local_guard["quantum_data"]["anomaly_QME_dependency"]["status"], "CERTIFIED")
         self.assertEqual(
             local_guard["quantum_data"]["particle_interpretation"]["status"],
             "NO_CERTIFIED_MAP",

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-wess-zumino-extended-local-bv-cohomology-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "local_algebra", "quartet_reduction", "H04", "H14", "one_loop_QME", "lifecycle", "dependencies", "proof_hashes", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-wess-zumino-extended-local-bv-cohomology-v1"},
+    "result_id": {"const": "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY"},
+    "result_state": {"const": "TAU_ADIC_EXTENDED_GAUGE_FIXED_H04_H14_COMPLETE_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "local_algebra": {
+      "type": "object",
+      "required": ["kind", "dressed_generators", "coordinate_change", "formal_inverse_order_checked", "exp_minus_2tau_coefficients", "exp_plus_2tau_coefficients", "left_inverse_matrix", "right_inverse_matrix", "all_orders_inverse_identity", "all_orders_inverse_status", "completion_boundary"],
+      "properties": {
+        "kind": {"const": "FORMAL_TAU_ADIC_LOCAL_ANALYTIC_JET_ALGEBRA"},
+        "formal_inverse_order_checked": {"const": 8},
+        "all_orders_inverse_status": {"const": "VERIFIED_BY_BINOMIAL_THEOREM"},
+        "completion_boundary": {"const": "the theorem is not a finite polynomial-in-tau statement"}
+      }
+    },
+    "quartet_reduction": {
+      "type": "object",
+      "required": ["contracted_generators", "remaining_complex", "minimal_positive_afn", "nonminimal_extension", "status"],
+      "properties": {
+        "status": {"const": "EXACT_QUASI_ISOMORPHISM_TO_DRESSED_PURE_DIFF_BV_COMPLEX"}
+      }
+    },
+    "H04": {
+      "type": "object",
+      "required": ["ghost_number", "form_degree", "engineering_dimension", "even_top_basis", "even_closure_matrix", "even_dh_boundary_matrix", "positive_afn_boundary_matrix", "even_boundary_rank", "even_quotient_dimension", "even_classes", "even_dual_witnesses", "odd_top_basis", "odd_boundary_rank", "odd_quotient_dimension", "odd_classes", "odd_dual_witnesses", "exact_classes", "status"],
+      "properties": {
+        "ghost_number": {"const": 0},
+        "form_degree": {"const": 4},
+        "engineering_dimension": {"const": 4},
+        "even_boundary_rank": {"const": 1},
+        "even_quotient_dimension": {"const": 3},
+        "even_classes": {"const": ["C(g_hat)^2", "E4(g_hat)", "R(g_hat)^2"]},
+        "odd_boundary_rank": {"const": 0},
+        "odd_quotient_dimension": {"const": 1},
+        "status": {"const": "COMPLETE_IN_DECLARED_TAU_ADIC_DIMENSION_FOUR_ALGEBRA"}
+      }
+    },
+    "H14": {
+      "type": "object",
+      "required": ["ghost_number", "form_degree", "engineering_dimension", "strict_candidate_basis", "normalized_extended_primitives", "primitive_basis", "boundary_matrix", "boundary_rank", "Weyl_and_mixed_quotient_dimension", "pure_Diff_quotient_dimension", "even_quotient_dimension", "odd_quotient_dimension", "status"],
+      "properties": {
+        "ghost_number": {"const": 1},
+        "form_degree": {"const": 4},
+        "engineering_dimension": {"const": 4},
+        "boundary_rank": {"const": 4},
+        "Weyl_and_mixed_quotient_dimension": {"const": 0},
+        "pure_Diff_quotient_dimension": {"const": 0},
+        "even_quotient_dimension": {"const": 0},
+        "odd_quotient_dimension": {"const": 0},
+        "status": {"const": "COMPLETE_ZERO_IN_DECLARED_TAU_ADIC_DIMENSION_FOUR_ALGEBRA"}
+      }
+    },
+    "one_loop_QME": {
+      "type": "object",
+      "required": ["strict_breaking_coordinates", "counterterm_primitive_coordinates", "boundary_image_coordinates", "counterterm", "restored_equation", "status"],
+      "properties": {
+        "status": {"const": "QME_RESTORED_AT_ONE_LOOP_LOCAL_EUCLIDEAN_TAU_ADIC_EXTENDED_THEORY"}
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": ["strict_fixed_field_content", "tau_adic_compensator_extended_local_Euclidean_one_loop", "all_loop_extended_QME", "Lorentzian_QME", "residual_transfer", "Bridge_4", "Bridge_5"],
+      "properties": {
+        "strict_fixed_field_content": {"const": "OBSTRUCTED"},
+        "tau_adic_compensator_extended_local_Euclidean_one_loop": {"const": "QME_RESTORED"},
+        "all_loop_extended_QME": {"const": "OPEN"},
+        "Lorentzian_QME": {"const": "OPEN"},
+        "residual_transfer": {"const": "FORBIDDEN_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED"},
+        "Bridge_4": {"const": "NO_CERTIFIED_MAP"},
+        "Bridge_5": {"const": "NO_CERTIFIED_MAP_BRIDGE_2_ABSENT"}
+      }
+    },
+    "dependencies": {"type": "object", "minProperties": 8},
+    "proof_hashes": {"type": "object", "required": ["H04_matrices_sha256", "H14_boundary_sha256", "formal_inverse_sha256"]},
+    "next_gate": {"const": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1"},
+    "claim_boundary": {"type": "string", "minLength": 900}
+  }
+}

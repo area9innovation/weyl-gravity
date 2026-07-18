@@ -87,8 +87,8 @@ schema/             machine-readable result contracts
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, but normalized `pi_cl` projection and adjacent H3/H5 bases remain unavailable |
 | D | reduced and Euclidean coefficient ledgers | `REPOSITORY_C2_VISIBLE_FULL_BV_LOCAL_COEFFICIENT_MATCHED`; the exact factorwise local calculation gives `(C2,E4,CdualC,BoxR)=(199/30,-87/20,0,0)` with a Ricci-flat `C2` carrier, independent round-`S4` Euler carrier, parity Ward identity, measure, zero-mode, contour and regulator receipts |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED`; the complete `5 -> 10 -> 5` physical symbol sequence, formal adjoint, Diff/Weyl nonminimal doublets and four kinetic blocks replay exactly. The curvature CCR/causal propagator remains certified separately; a global BRST Hadamard state and renormalized Lorentzian products remain open |
-| F | one-loop Slavnov breaking and QME status | `OBSTRUCTED_STRICT_FIELD_CONTENT`; the regulated insertion is `(199/30)[omega C2]-(87/20)[omega E4]`, nonzero in the complete gauge-fixed quotient. Standard unitary free matter cannot cancel it. A shifting-scalar Wess--Zumino primitive makes both coordinates exact in the declared AFN0 extended sector, but the compensator cotangent lift and full extended `H04/H14` recomputation remain open |
-| G | residual quantum transfer and pairing correction | `FORBIDDEN`; neither AFN0 compensator exactness nor the independent causal carrier restores the full extended BV QME. Transfer reopens only after the cotangent lift, extended quotient, and QME certificate pass |
+| F | one-loop Slavnov breaking and QME status | `STRICT_OBSTRUCTED; TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED`; the regulated insertion is `(199/30)[omega C2]-(87/20)[omega E4]`, nonzero in the complete strict gauge-fixed quotient. Standard unitary free matter cannot cancel it. In the formal tau-adic compensator extension the exact cotangent lift contracts the Weyl quartet, the extended quotient has `dim H04=(3 even,1 odd)` and `H14=0`, and the coefficient-bearing Wess--Zumino counterterm restores the local Euclidean QME at one loop. This is neither an all-loop nor Lorentzian theorem |
+| G | residual quantum transfer and pairing correction | `FORBIDDEN`; the frozen strict residual contraction does not include the compensator and no extended one-loop Slavnov operator `Q1` has been transferred. Transfer reopens only after an extended classical contraction and coefficient-bearing `Q1` are certified |
 | N | nonlinear classical transfer prerequisite | `REPAIRED_Q2_Q3_AND_RETAINED_FULL_BV_ELL3_ACCEPTED`; the support-local cyclic repair, typed mixed `q3`, retained contact/exchange replay, and all 26,238 retained BV `ell3` coefficients are independently accepted; this remains classical nonlinear input and does not bypass the local QME gate |
 
 The precursor audits
@@ -177,6 +177,13 @@ or quantum-master-equation result.
 - [`reports/renormalized-D-ward-insertion-contract.md`](reports/renormalized-D-ward-insertion-contract.md)
   records the sourced/restored Ward-operator lifecycle and the prohibition on
   a Cartan classification before QME restoration.
+- [`reports/wess-zumino-minimal-bv-cotangent-lift.md`](reports/wess-zumino-minimal-bv-cotangent-lift.md)
+  records the exact compensator cotangent lift, dressed canonical variables,
+  and contractible Weyl quartet in the formal tau-adic local algebra.
+- [`reports/wess-zumino-extended-local-bv-cohomology.md`](reports/wess-zumino-extended-local-bv-cohomology.md)
+  records the complete dimension-four extended `H04/H14` quotient and the
+  coefficient-bearing one-loop local Euclidean QME restoration, with the
+  all-loop, Lorentzian, state, and residual-transfer boundaries left open.
 - [`reports/bootstrap-integration.md`](reports/bootstrap-integration.md)
   records the integrated scoped test run and why the full classical suite was
   not triggered.

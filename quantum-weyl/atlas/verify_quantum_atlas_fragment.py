@@ -57,7 +57,8 @@ def verify() -> dict:
     )
     if (
         tangent["carrier_crosswalk"]["status"] != "NO_CERTIFIED_MAP"
-        or tangent["anomaly_QME_dependency"]["status"] != "OBSTRUCTED"
+        or tangent["anomaly_QME_dependency"]["status"] != "CERTIFIED"
+        or tangent["lifecycle_state"]["status"] != "NO_CERTIFIED_MAP"
     ):
         raise ValueError("classical tangent obstruction crossed the quantum boundary")
     print("quantum residual-atlas fragment independent verification: PASS")

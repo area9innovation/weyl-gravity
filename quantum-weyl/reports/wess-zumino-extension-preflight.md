@@ -1,5 +1,12 @@
 # Wess–Zumino compensator extension preflight
 
+Historical scope note: this AFN0 preflight is superseded for current lifecycle
+purposes by the exact cotangent-lift and extended-cohomology receipts in
+[`wess-zumino-minimal-bv-cotangent-lift.md`](wess-zumino-minimal-bv-cotangent-lift.md)
+and
+[`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md).
+The statements below remain the immutable scope of this precursor calculation.
+
 The strict pure-Weyl one-loop breaking is nontrivial, but after adjoining a
 shifting scalar
 

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-wess-zumino-minimal-bv-cotangent-lift-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "extension_scope", "master_term", "extended_rows", "exact_checks", "dressed_cotangent_change", "contractible_quartet", "cohomology_gate", "qme_lifecycle", "dependencies", "next_gate", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-wess-zumino-minimal-bv-cotangent-lift-v1"},
+    "result_id": {"const": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT"},
+    "result_state": {"const": "EXACT_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED_EXTENDED_COHOMOLOGY_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "extension_scope": {
+      "type": "object",
+      "required": ["base", "new_generators", "generator_count", "atom_count", "locality", "coefficient_field"],
+      "properties": {
+        "new_generators": {"const": ["tau", "tau_star"]},
+        "generator_count": {"const": 8},
+        "atom_count": {"const": 24},
+        "coefficient_field": {"const": "Q"}
+      }
+    },
+    "master_term": {"type": "object", "required": ["density", "derived_rows", "variational_origin"]},
+    "extended_rows": {"type": "object", "minProperties": 10},
+    "exact_checks": {
+      "type": "object",
+      "required": ["delta_squared_zero_on_all_atoms", "delta_gamma_anticommutator_zero_on_all_atoms", "Q_squared_zero_on_all_atoms", "exact_component_gradings_verified", "checked_atom_count", "differential_sha256"],
+      "properties": {
+        "delta_squared_zero_on_all_atoms": {"const": true},
+        "delta_gamma_anticommutator_zero_on_all_atoms": {"const": true},
+        "Q_squared_zero_on_all_atoms": {"const": true},
+        "exact_component_gradings_verified": {"const": true},
+        "checked_atom_count": {"const": 24},
+        "differential_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "dressed_cotangent_change": {
+      "type": "object",
+      "required": ["g_hat", "g_hat_star", "tau_hat_star", "canonical_one_form_identity", "Weyl_Koszul_Tate_row", "inverse", "formal_completion"],
+      "properties": {
+        "Weyl_Koszul_Tate_row": {"const": "delta omega_star = tau_hat_star"},
+        "formal_completion": {"const": "TAU_ADIC_LOCAL_ANALYTIC_COMPLETION_REQUIRED_FOR_EXPONENTIAL_CHANGE"}
+      }
+    },
+    "contractible_quartet": {
+      "type": "object",
+      "required": ["ordered_basis", "Q_W", "h", "QW_squared", "QW_h", "h_QW", "anticommutator", "number_operator", "status"],
+      "properties": {
+        "ordered_basis": {"const": ["tau", "omega", "omega_star", "tau_hat_star"]},
+        "status": {"const": "EXACT_CONTRACTIBLE_WEYL_QUARTET_IN_DRESSED_VARIABLES"}
+      }
+    },
+    "cohomology_gate": {
+      "type": "object",
+      "required": ["extended_H14", "extended_H04", "known_reduction", "missing_exhaustiveness_step"],
+      "properties": {
+        "extended_H14": {"const": "NOT_COMPUTED"},
+        "extended_H04": {"const": "NOT_COMPUTED"}
+      }
+    },
+    "qme_lifecycle": {
+      "type": "object",
+      "required": ["strict_theory", "extended_AFN0_breaking", "extended_minimal_BV_cotangent_lift", "full_extended_BV_QME", "residual_transfer"],
+      "properties": {
+        "strict_theory": {"const": "OBSTRUCTED_STRICT_FIELD_CONTENT"},
+        "extended_AFN0_breaking": {"const": "EXACT_REMOVABLE"},
+        "extended_minimal_BV_cotangent_lift": {"const": "CERTIFIED"},
+        "full_extended_BV_QME": {"const": "NOT_CERTIFIED"},
+        "residual_transfer": {"const": "FORBIDDEN"}
+      }
+    },
+    "dependencies": {"type": "object", "minProperties": 4},
+    "next_gate": {"const": "TAU_ADIC_DRESSED_PURE_DIFF_H04_H14_QUOTIENT"},
+    "claim_boundary": {"type": "string", "minLength": 500}
+  }
+}

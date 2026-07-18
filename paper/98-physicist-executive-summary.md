@@ -173,7 +173,7 @@ their status.
 | Is the Einstein sector nonlinearly closed? | Every nonzero pure-extra generic Weyl--Maxwell tangent is Taub-obstructed on the tested fixed compact bundle. Mixed Einstein--extra cones, finite-harmonic and opposite-momentum balanced families, and a two-parameter axial \(\ell=2\) second-order face are classified. The complete exceptional \(\ell=1\), all-\(m\) pure cone is also obstructed. | **Pure-extra no-go, scoped mixed extensions, and exceptional all-\(m\) no-go certified** | The quadratic source is not disposed on every mixed-cone stratum; generalized/infinite exceptional targets, a structural all-background theorem, and all-orders closure remain open. |
 | Is there a free Lorentzian quantum-observable algebra? | Gauge-invariant curvature test observables carry an exact causal presymplectic form, and the corresponding curvature-image CCR algebra is defined with the expected causal commutator and quotient relations. | **Certified, LORENTZIAN-CAUSAL free observable algebra** | No compatible positive/Hadamard state, Hilbert representation, interacting product, particle interpretation, or QME theorem follows from the algebra alone. |
 | Can the Berger system support the short-distance structure needed for quantum fields? | The base tensor and ghost wave factors have a certified local Hadamard parametrix, and exact typed Møller intertwiners give the unique formal companion-kernel candidate. | **Partial; microlocal promotion fail-closed** | The order-two transport has no certified Hörmander composition or uniform wavefront control. No companion Hadamard parametrix, global state, QME, or quantum theory is claimed. |
-| Is the quantum theory anomaly-free and unitary? | The even antifield-zero, local dimension-four anomaly candidates reduce to \([\omega C^2]\) and \([\omega E_4]\), with \(\omega\Box R\) exact. | **Partial, local-algebraic** | Coefficients, antifield-dependent sectors, QME restoration, Lorentzian time-ordered products, Hadamard state, and asymptotic unitarity are open. |
+| Is the quantum theory anomaly-free and unitary? | The complete strict gauge-fixed local quotient contains \([\omega C^2]\) and \([\omega E_4]\), and the repository one-loop insertion has coefficients \((199/30,-87/20)\), so strict field content is obstructed. In the formal tau-adic compensator extension the exact cotangent lift gives \(H^{1,4}_{\rm ext}=0\), and the explicit Wess--Zumino counterterm restores the local Euclidean QME at one loop. | **Strict theory obstructed; tau-adic extended one-loop local Euclidean QME restored** | This is not a finite-polynomial, all-loop, Lorentzian, Hadamard, particle, or unitarity theorem. Residual transfer still needs a compensator-inclusive classical contraction and \(Q_1\). |
 | Are black-hole solutions and thermodynamics present? | The static spherical pure-Weyl family is classified in the declared Laurent ansatz, including a non-Einstein regular-horizon fixture. A residual-basic field-dependent generator makes the static charge integrable and gives exact energy, Wald entropy, and \(dH=T\,dS\) at every simple horizon. | **Certified static parameter-slice theorem** | No time-dependent horizon phase space, causal exterior problem, flux, ringdown, stability, Hawking state, or general completeness theorem is claimed. |
 
 ## Highlights by audience
@@ -210,11 +210,13 @@ quotient. The residual BFV complex is obtained from the metric BV complex,
 the quadratic moment map is identified with the Taub obstruction, and the
 derived zero fibre explains why the zero-charge condition cannot be omitted.
 
-For quantum field theorists the present result is a classical input, not a
-QME theorem. The immediate target is to finish local anomaly cohomology,
-compute the actual type-A and type-B coefficients by two independent methods,
-restore or obstruct the QME, and only then ask whether the \(D\)-Cartan
-identity transfers quantum mechanically.
+For quantum field theorists the programme now has a coefficient-bearing local
+one-loop QME disposition. The strict fixed-field-content theory is obstructed,
+whereas the formal tau-adic compensator theory has a restored local Euclidean
+QME at one loop. The immediate target is to construct a compensator-inclusive
+classical contraction and the renormalized Slavnov operator \(Q_1\), then ask
+whether the \(D\)-Cartan identity transfers. Lorentzian time-ordered products
+and a compatible state remain independent gates.
 
 **Possible novelty, pending literature audit:** a coefficient-bearing map from
 the standard type-A/type-B Weyl-anomaly classes to the obstruction of a
@@ -457,7 +459,7 @@ Readiness is reported by lifecycle and missing gate.
 | Relational clock and light | **Spatially global retarded redshift plus localized causal emitters and leading rank-two detector response certified** | Unite the local preparations into one clock-frequency comparison and complete recoil, backreaction, and the apparatus Dirac bracket. |
 | Static black holes | **Background family, horizon-regular fixture, normalized energy, entropy, and exact static first law certified** | Construct the time-dependent horizon phase space and causal exterior perturbation theory before ringdown or stability claims. |
 | Residual branch mixing | **Rank-46 cyclic carrier certified; retained \(\ell_3\) representative certified** | Construct or obstruct a support-local branch projector, then compute the background-indexed Einstein-like/extra-Weyl/Maxwell mixing table and its invariant meaning. |
-| Quantum anomaly bridge | **Candidate classes classified** in the stated antifield-zero sector | Compute coefficients by two methods, complete antifields, and restore or obstruct the QME and \(D\) identity. |
+| Quantum anomaly bridge | **Strict one-loop obstruction and tau-adic extended local Euclidean QME restoration certified** | Build the compensator-inclusive classical contraction and coefficient-bearing \(Q_1\), then compute the quantum \(D\) defect; keep Lorentzian state and particle questions separate. |
 | Asymptotic Bach/BMS | **Programme stage** | Construct a closed Lorentzian boundary phase space with differentiable charges, flux, and extra-branch signs. |
 
 The charge-fibre project has been promoted from a bridge note to a standalone

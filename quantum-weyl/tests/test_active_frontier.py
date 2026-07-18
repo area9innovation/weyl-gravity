@@ -137,6 +137,17 @@ class ActiveFrontierTests(unittest.TestCase):
             ]
         )
         self.assertTrue(self.payload["claim_flags"]["WZ_AFN0_PRIMITIVE_CERTIFIED"])
+        self.assertTrue(
+            self.payload["claim_flags"]["WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["FULL_EXTENDED_BV_QME_RESTORED"]
         )
@@ -166,7 +177,10 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             self.payload["claim_flags"]["STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND"]
         )
-        self.assertTrue(ladder["G4"].startswith("OBSTRUCTED"))
+        self.assertEqual(
+            ladder["G4"],
+            "DISPOSITION_COMPLETE_STRICT_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
+        )
         self.assertTrue(ladder["G5"].startswith("BLOCKED"))
 
     def test_supersession_does_not_delete_history(self) -> None:
@@ -202,7 +216,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
+            "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

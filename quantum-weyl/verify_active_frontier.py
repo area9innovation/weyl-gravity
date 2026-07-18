@@ -53,6 +53,9 @@ def verify() -> dict:
         "QME_OBSTRUCTED_STRICT_FIELD_CONTENT",
         "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED",
         "WZ_AFN0_PRIMITIVE_CERTIFIED",
+        "WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED",
+        "WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE",
+        "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
     ):
         mutant = deepcopy(certificate)
         mutant["claim_flags"][key] = False

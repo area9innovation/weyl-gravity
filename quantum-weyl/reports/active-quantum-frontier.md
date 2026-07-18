@@ -3,7 +3,7 @@
 ## Superseding coefficient-bearing status
 
 The authoritative lifecycle is now
-`STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_LORENTZIAN_OPEN`. The
+`STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_LORENTZIAN_OPEN`. The
 complete repository Euclidean symbol complex, Ricci-flat `C2` carrier,
 factorwise local `b4` ledger, and regulated Slavnov insertion replay with
 
@@ -13,16 +13,21 @@ factorwise local `b4` ledger, and regulated Slavnov insertion replay with
 
 This nonzero class obstructs the strict fixed-field-content local Euclidean
 QME. Standard-sign free conformal matter cannot cancel its two even
-coordinates. A Wess--Zumino compensator preflight now makes both coordinates
-exact on the declared AFN0 extended span, with an explicit coefficient-bearing
-primitive and exact doublet homotopy. This does not restore the full extended
-BV QME: the `tau_star` cotangent row and extended `H04/H14` computation remain
-open, so residual quantum transfer stays forbidden. The stationary/Hadamard
-rail remains independently open. The older readiness discussion below is
-retained as historical gate provenance.
+coordinates. The compensator extension now has an exact minimal-BV cotangent
+lift and a complete dimension-four quotient in the formal tau-adic local
+analytic algebra. The Weyl quartet contracts, the extended quotient has
+`dim H04=(3 even,1 odd)` and `H14=0`, and the explicit coefficient-bearing
+counterterm restores the extended local Euclidean QME at one loop. This is
+not an all-loop or Lorentzian QME theorem. The frozen strict residual
+contraction does not contain the compensator, so residual transfer remains
+forbidden until an extended classical contraction and one-loop Slavnov
+operator `Q1` are certified. The stationary/Hadamard rail remains
+independently open. The older readiness discussion below is retained as
+historical gate provenance.
 
-See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md)
-and [`wess-zumino-extension-preflight.md`](wess-zumino-extension-preflight.md).
+See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md),
+[`wess-zumino-minimal-bv-cotangent-lift.md`](wess-zumino-minimal-bv-cotangent-lift.md),
+and [`wess-zumino-extended-local-bv-cohomology.md`](wess-zumino-extended-local-bv-cohomology.md).
 
 This report accompanies `QUANTUM_WEYL_ACTIVE_FRONTIER`. Historical
 certificates remain immutable receipts, but they are no longer all valid

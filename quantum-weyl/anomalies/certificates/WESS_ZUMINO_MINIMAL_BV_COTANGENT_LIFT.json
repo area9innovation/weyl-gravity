@@ -1,0 +1,585 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate appends the compensator and its antifield to the frozen strict minimal-BV atom dictionary, derives every new field and cotangent row from the single support-local master term tau_star(L_xi tau+omega), and independently verifies delta squared, the delta-gamma anticommutator and total Q squared on all extended atoms. The canonical dressed cotangent change turns the Weyl Noether row into delta omega_star=tau_hat_star and exhibits an exact four-generator contractible quartet. The exponential field change is interpreted only in the declared tau-adic local analytic completion. This does not enumerate the resulting pure-Diff H04 basis, bind the pure-Diff H14 theorem to that completion, add nonminimal gauge-fixing partners, certify a full extended BV QME, authorize residual transfer, or establish Lorentzian products, states, positivity, or particles.",
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "cohomology_gate": {
+    "extended_H04": "NOT_COMPUTED",
+    "extended_H14": "NOT_COMPUTED",
+    "known_reduction": "in the tau-adic dressed algebra the Weyl quartet contracts, leaving the pure-Diff BV problem for g_hat",
+    "missing_exhaustiveness_step": "enumerate the pure-Diff dimension-four H04 quotient in g_hat and bind the existing pure-Diff H14-zero theorem to the completed dressed algebra"
+  },
+  "contractible_quartet": {
+    "QW_h": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "QW_squared": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "Q_W": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "anticommutator": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "h": [
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "h_QW": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "number_operator": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "ordered_basis": [
+      "tau",
+      "omega",
+      "omega_star",
+      "tau_hat_star"
+    ],
+    "status": "EXACT_CONTRACTIBLE_WEYL_QUARTET_IN_DRESSED_VARIABLES"
+  },
+  "dependencies": {
+    "Diff_mixed_H14": {
+      "path": "quantum-weyl/local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
+      "result_id": "AFN0_DIFF_MIXED_MINIMAL_BV_H14",
+      "sha256": "f2624bad4840e33682b1dc3971c09e466f530c90e4404edd19c65613187dc81b"
+    },
+    "WZ_AFN0_preflight": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
+      "result_id": "WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT",
+      "sha256": "10dbd0b0a1e9190ddd2268a98c2d899808da07fc215d388167743a8bd01df5e9"
+    },
+    "strict_classical_export": {
+      "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+      "result_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+      "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc"
+    },
+    "strict_quantum_import": {
+      "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+      "result_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+      "sha256": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "dressed_cotangent_change": {
+    "Weyl_Koszul_Tate_row": "delta omega_star = tau_hat_star",
+    "canonical_one_form_identity": "g_star delta g + tau_star delta tau = g_hat_star delta g_hat + tau_hat_star delta tau",
+    "formal_completion": "TAU_ADIC_LOCAL_ANALYTIC_COMPLETION_REQUIRED_FOR_EXPONENTIAL_CHANGE",
+    "g_hat": "exp(-2 tau) g",
+    "g_hat_star": "exp(2 tau) g_star",
+    "inverse": "g=exp(2 tau)g_hat; g_star=exp(-2 tau)g_hat_star; tau_star=tau_hat_star-2 g_hat g_hat_star",
+    "tau_hat_star": "tau_star + 2 g_{mu nu} g_star^{mu nu} = tau_star + N_omega"
+  },
+  "exact_checks": {
+    "Q_squared_zero_on_all_atoms": true,
+    "checked_atom_count": 24,
+    "delta_gamma_anticommutator_zero_on_all_atoms": true,
+    "delta_squared_zero_on_all_atoms": true,
+    "differential_sha256": "3bd00ca3b30de003d11ec69cb53d3fa7d08650e86e29609e18020464bd847efd",
+    "exact_component_gradings_verified": true
+  },
+  "extended_rows": {
+    "Lie_N_tau": {
+      "Q": {
+        "terms": []
+      },
+      "delta": {
+        "terms": []
+      },
+      "gamma": {
+        "terms": []
+      }
+    },
+    "Lie_omega_star": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_N_omega"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_tau_star"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": [
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_N_omega"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_tau_star"
+            ]
+          }
+        ]
+      },
+      "gamma": {
+        "terms": []
+      }
+    },
+    "Lie_tau": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_omega"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": []
+      },
+      "gamma": {
+        "terms": [
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_omega"
+            ]
+          }
+        ]
+      }
+    },
+    "Lie_tau_star": {
+      "Q": {
+        "terms": []
+      },
+      "delta": {
+        "terms": []
+      },
+      "gamma": {
+        "terms": []
+      }
+    },
+    "Lie_xi_star": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_N_xi"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_N_tau"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": [
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_N_xi"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "factors": [
+              "Lie_N_tau"
+            ]
+          }
+        ]
+      },
+      "gamma": {
+        "terms": []
+      }
+    },
+    "N_tau": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_N_tau"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": []
+      },
+      "gamma": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_N_tau"
+            ]
+          }
+        ]
+      }
+    },
+    "omega_star": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "N_omega"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_omega_star"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "tau_star"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "N_omega"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "tau_star"
+            ]
+          }
+        ]
+      },
+      "gamma": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_omega_star"
+            ]
+          }
+        ]
+      }
+    },
+    "tau": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "omega"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_tau"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": []
+      },
+      "gamma": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "omega"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_tau"
+            ]
+          }
+        ]
+      }
+    },
+    "tau_star": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_tau_star"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": []
+      },
+      "gamma": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_tau_star"
+            ]
+          }
+        ]
+      }
+    },
+    "xi_star": {
+      "Q": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "N_xi"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_xi_star"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "N_tau"
+            ]
+          }
+        ]
+      },
+      "delta": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "N_xi"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "factors": [
+              "N_tau"
+            ]
+          }
+        ]
+      },
+      "gamma": {
+        "terms": [
+          {
+            "coefficient": 1,
+            "factors": [
+              "Lie_xi_star"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "extension_scope": {
+    "atom_count": 24,
+    "base": "frozen strict pure-Weyl minimal BV export",
+    "coefficient_field": "Q",
+    "generator_count": 8,
+    "locality": "SUPPORT_LOCAL_FIRST_COVARIANT_JETS",
+    "new_generators": [
+      "tau",
+      "tau_star"
+    ]
+  },
+  "master_term": {
+    "density": "tau_star (xi^mu nabla_mu tau + omega)",
+    "derived_rows": {
+      "Q_tau": "L_xi tau + omega",
+      "delta_omega_star_extension": "+tau_star",
+      "delta_xi_star_extension": "+N_tau, with N_tau_mu=tau_star nabla_mu tau",
+      "gamma_tau_star": "L_xi tau_star as a scalar density"
+    },
+    "variational_origin": "all four rows are Euler derivatives of the single displayed minimal master term"
+  },
+  "next_gate": "TAU_ADIC_DRESSED_PURE_DIFF_H04_H14_QUOTIENT",
+  "qme_lifecycle": {
+    "extended_AFN0_breaking": "EXACT_REMOVABLE",
+    "extended_minimal_BV_cotangent_lift": "CERTIFIED",
+    "full_extended_BV_QME": "NOT_CERTIFIED",
+    "residual_transfer": "FORBIDDEN",
+    "strict_theory": "OBSTRUCTED_STRICT_FIELD_CONTENT"
+  },
+  "result_id": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT",
+  "result_state": "EXACT_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED_EXTENDED_COHOMOLOGY_OPEN",
+  "schema": "quantum-weyl-wess-zumino-minimal-bv-cotangent-lift-v1"
+}

@@ -53,6 +53,8 @@ DEPENDENCIES = {
     "regulated_repository_Slavnov_breaking": HERE / "anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "unitary_matter_cancellation_no_go": HERE / "anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "WZ_compensator_preflight": HERE / "anomalies/certificates/WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json",
+    "WZ_minimal_BV_cotangent_lift": HERE / "anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
+    "WZ_extended_local_BV": HERE / "anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
     "coupled_36_transfer_replay": HERE / "transfer/certificates/BERGER_COUPLED_36_TRANSFER_INDEPENDENT_REPLAY.json",
@@ -147,6 +149,8 @@ def _load() -> dict[str, dict[str, Any]]:
     physical_breaking = values["regulated_repository_Slavnov_breaking"]
     matter_no_go = values["unitary_matter_cancellation_no_go"]
     wz_preflight = values["WZ_compensator_preflight"]
+    wz_lift = values["WZ_minimal_BV_cotangent_lift"]
+    wz_extended = values["WZ_extended_local_BV"]
     if (
         physical_elliptic.get("result_id") != "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"
         or physical_elliptic.get("result_state")
@@ -212,6 +216,28 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN"
     ):
         raise ValueError("Wess-Zumino compensator preflight frontier drifted")
+    if (
+        wz_lift.get("result_state")
+        != "EXACT_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED_EXTENDED_COHOMOLOGY_OPEN"
+        or wz_lift.get("exact_checks", {}).get("Q_squared_zero_on_all_atoms")
+        is not True
+        or wz_lift.get("contractible_quartet", {}).get("status")
+        != "EXACT_CONTRACTIBLE_WEYL_QUARTET_IN_DRESSED_VARIABLES"
+    ):
+        raise ValueError("Wess-Zumino minimal-BV cotangent lift frontier drifted")
+    if (
+        wz_extended.get("result_state")
+        != "TAU_ADIC_EXTENDED_GAUGE_FIXED_H04_H14_COMPLETE_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED"
+        or wz_extended.get("H04", {}).get("even_quotient_dimension") != 3
+        or wz_extended.get("H04", {}).get("odd_quotient_dimension") != 1
+        or wz_extended.get("H14", {}).get("even_quotient_dimension") != 0
+        or wz_extended.get("H14", {}).get("odd_quotient_dimension") != 0
+        or wz_extended.get("one_loop_QME", {}).get("status")
+        != "QME_RESTORED_AT_ONE_LOOP_LOCAL_EUCLIDEAN_TAU_ADIC_EXTENDED_THEORY"
+        or wz_extended.get("lifecycle", {}).get("residual_transfer")
+        != "FORBIDDEN_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED"
+    ):
+        raise ValueError("Wess-Zumino extended local-BV frontier drifted")
     antifield = values["antifield_import"]
     antifield_flags = antifield.get("claim_flags", {})
     if (
@@ -995,7 +1021,7 @@ def build() -> dict[str, Any]:
     result = {
         "schema": "quantum-weyl-active-frontier-v1",
         "result_id": "QUANTUM_WEYL_ACTIVE_FRONTIER",
-        "result_state": "STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_LORENTZIAN_OPEN",
+        "result_state": "STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_LORENTZIAN_OPEN",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: _dependency(DEPENDENCIES[name], payload)
@@ -1006,7 +1032,7 @@ def build() -> dict[str, Any]:
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
             "G3": "PASSED_REPOSITORY_EUCLIDEAN_COEFFICIENT_AND_SLAVNOV_BREAKING",
-            "G4": "OBSTRUCTED_STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME",
+            "G4": "DISPOSITION_COMPLETE_STRICT_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
         "active_rows": {
@@ -1015,12 +1041,12 @@ def build() -> dict[str, Any]:
                 "next_gate": "OPTIONAL_BERGER_RETAINED_46_STF2_BRANCH_PROJECTOR_OR_OBSTRUCTION_V1",
             },
             "local_obstruction_space": {
-                "status": "FULL_LOCAL_BV_G2_COMPLETE_STRICT_BREAKING_NONZERO_WZ_AFN0_PRIMITIVE_CERTIFIED_FULL_EXTENDED_BV_OPEN",
-                "next_gate": "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
+                "status": "STRICT_G2_COMPLETE_TAU_ADIC_EXTENDED_H04_DIMENSIONS_3_1_AND_H14_ZERO",
+                "next_gate": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
             },
             "coefficient_and_QME": {
-                "status": "C2_AND_E4_COEFFICIENTS_COMPUTED_STRICT_QME_OBSTRUCTED_WZ_AFN0_BREAKING_EXACT_FULL_EXTENDED_BV_QME_OPEN",
-                "next_gate": "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED",
+                "next_gate": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -1035,8 +1061,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_STRICT_FIELD_CONTENT_QME_OBSTRUCTED",
-                "next_gate": "RESTORE_QME_IN_A_CERTIFIED_EXTENDED_THEORY_BEFORE_TRANSFER",
+                "status": "FORBIDDEN_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
             },
         },
         "supersession_ledger": [
@@ -1177,6 +1203,9 @@ def build() -> dict[str, Any]:
             "QME_OBSTRUCTED_STRICT_FIELD_CONTENT": True,
             "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED": True,
             "WZ_AFN0_PRIMITIVE_CERTIFIED": True,
+            "WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED": True,
+            "WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE": True,
+            "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED": True,
             "FULL_EXTENDED_BV_QME_RESTORED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -1185,7 +1214,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION",
+            "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -1219,8 +1248,15 @@ def build() -> dict[str, Any]:
             "constructs the exact coefficient-bearing Wess--Zumino primitive on the two "
             "certified even AFN0 anomaly coordinates. This makes the displayed breaking exact "
             "only in the declared AFN0 extended sector. The tau-antifield cotangent row and "
-            "full extended H04/H14 quotient have not been constructed, so the full extended "
-            "BV QME is not certified and residual transfer remains forbidden. "
+            "full extended H04/H14 quotient are now constructed in the formal tau-adic local "
+            "analytic algebra. The canonical cotangent lift verifies delta squared, the "
+            "delta-gamma anticommutator and Q squared on all extended atoms, and the dressed "
+            "Weyl quartet contracts. The remaining pure-Diff quotient has H04 dimensions "
+            "three even and one odd, including R(g_hat)^2, while H14 vanishes. The displayed "
+            "counterterm therefore restores the compensator-extended local Euclidean QME at "
+            "one loop. This does not establish an all-loop or Lorentzian QME. The frozen "
+            "classical residual contraction has no compensator rows, so residual transfer "
+            "remains forbidden. "
             "A cross-commit classical-snapshot receiver is now ready: if the later analytic "
             "operator export and frozen local-BV import come from distinct commits, it "
             "requires exact equality of the generator, atom, differential, dependency and "
@@ -1325,7 +1361,7 @@ def validate(result: dict[str, Any]) -> None:
     if (
         result.get("result_id") != "QUANTUM_WEYL_ACTIVE_FRONTIER"
         or result.get("result_state")
-        != "STRICT_FIELD_CONTENT_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_LORENTZIAN_OPEN"
+        != "STRICT_QME_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED_LORENTZIAN_OPEN"
     ):
         raise ValueError("active frontier identity drifted")
     ladder = result.get("promotion_ladder", {})
@@ -1334,7 +1370,8 @@ def validate(result: dict[str, Any]) -> None:
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
         != "PASSED_REPOSITORY_EUCLIDEAN_COEFFICIENT_AND_SLAVNOV_BREAKING"
-        or not str(ladder.get("G4", "")).startswith("OBSTRUCTED")
+        or ladder.get("G4")
+        != "DISPOSITION_COMPLETE_STRICT_OBSTRUCTED_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED"
         or not str(ladder.get("G5", "")).startswith("BLOCKED")
     ):
         raise ValueError("quantum promotion ladder was over-promoted")
@@ -1384,6 +1421,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("QME_OBSTRUCTED_STRICT_FIELD_CONTENT") is not True
         or flags.get("STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED") is not True
         or flags.get("WZ_AFN0_PRIMITIVE_CERTIFIED") is not True
+        or flags.get("WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED") is not True
+        or flags.get("WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE") is not True
+        or flags.get("TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED") is not True
         or flags.get("FULL_EXTENDED_BV_QME_RESTORED") is not False
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
         or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
@@ -1457,6 +1497,9 @@ def validate(result: dict[str, Any]) -> None:
             "QME_OBSTRUCTED_STRICT_FIELD_CONTENT",
             "STANDARD_UNITARY_FREE_MATTER_CANCELLATION_OBSTRUCTED",
             "WZ_AFN0_PRIMITIVE_CERTIFIED",
+            "WZ_MINIMAL_BV_COTANGENT_LIFT_CERTIFIED",
+            "WZ_TAU_ADIC_EXTENDED_H04_H14_COMPLETE",
+            "TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED",
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY",
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY",
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY",

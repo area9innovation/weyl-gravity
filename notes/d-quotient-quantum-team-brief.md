@@ -749,14 +749,24 @@ strict quantum lifecycle `OBSTRUCTED` while retaining `NO_CERTIFIED_MAP` for
 every classical-tangent-to-quantum-insertion and non-mode-to-particle
 crosswalk.
 
-Residual quantum transfer is fail-closed. The next local gate is roadmap T4:
-complete the Diff×Weyl BV cotangent lift of the Wess--Zumino compensator,
-including the `tau_star` row, and recompute extended `H04/H14` before claiming
-a restored QME, Cartan identity, or residual transfer. The AFN0 preflight
-already verifies `Q^2=0` on the restricted graded carrier, the Weyl-doublet
-homotopy, and the exact coefficient-bearing primitive. It does not certify the
-full extended BV theory. The independent stationary/Hadamard rail remains
-open and does not repair the local anomaly by itself.
+The compensator branch is now complete at the declared one-loop local gate.
+The exact minimal-BV cotangent lift includes the `tau_star` row and contracts
+the Weyl quartet after the canonical change to `g_hat`. In the formal tau-adic
+local analytic jet algebra, the complete dimension-four result is
+
+\[
+\dim H^{0,4}_{\rm ext}=(3\ {\rm even},1\ {\rm odd}),
+\qquad H^{1,4}_{\rm ext}=0.
+\]
+
+The coefficient-bearing Wess--Zumino counterterm therefore restores the
+extended local Euclidean QME at one loop. The strict fixed-field-content
+theory remains obstructed. This result is not finite-polynomial in `tau`,
+all-loop, Lorentzian, or a state theorem. Residual quantum transfer remains
+fail-closed because the frozen strict contraction has no compensator rows and
+the extended one-loop Slavnov operator `Q1` has not been transferred. The
+independent stationary/Hadamard rail remains open and is not supplied by the
+local QME repair.
 
 The ordinary unitary free-matter branch is now closed by an exact dual-cone
 witness. For nonnegative multiplicities of real conformal scalars, Weyl or
@@ -768,12 +778,13 @@ conformal higher spins, or compensator trivialization.
 
 ### Active bridge and fail-closed gates — 2026-07-18
 
-The active quantum calculation is T4, the coefficient-bearing compensator/QME
-disposition. It is not itself a mode bridge. Its activation gate was the exact
-`(199/30,-87/20)` Slavnov vector; the current gate is
-`FULL_DIFF_WEYL_BV_COTANGENT_LIFT_AND_EXTENDED_H04_H14_RECOMPUTATION`. The
-strict theory remains `OBSTRUCTED`, the AFN0 compensator primitive is
-`CERTIFIED`, and the full extended QME remains `OPEN`.
+The coefficient-bearing T4 disposition is complete at one loop in the
+declared local Euclidean tau-adic theory. It is not itself a mode bridge. Its
+activation gate was the exact `(199/30,-87/20)` Slavnov vector. The strict
+theory is `OBSTRUCTED`; the compensator cotangent lift and extended `H04/H14`
+are `CERTIFIED`; and the extended one-loop local Euclidean QME is
+`QME_RESTORED`. The active local-to-residual gate is now
+`EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1`.
 
 Bridge 4 activates only when one normalized classical mode, causal Green
 carrier, and pairing all live on the same certified background. Until then its
@@ -781,13 +792,17 @@ atlas disposition is `NO_CERTIFIED_MAP`: no BRST closure/exactness, compatible
 complex structure, two-point function, or state-space sign may be inferred by
 matching mode names across backgrounds.
 
-Bridge 5 has a separate activation gate: Bridge 2 must first give a certified
-interaction-to-physical-branch map, and the applicable coefficient-bearing QME
-must have a declared restored or obstructed disposition. The strict QME
-obstruction and the AFN0 compensator primitive do not supply the missing
-carrier map. Its atlas row therefore remains `NO_CERTIFIED_MAP`; no classical
-tangent-cone or resonance obstruction is advertised as BRST exactness, ghost
-removal, or a quantum constraint.
+Bridge 5 has a separate two-part activation gate. Its QME-disposition part is
+now satisfied: strict and tau-adic extended theories have distinct certified
+one-loop dispositions. Bridge 2 must still provide a certified
+interaction-to-physical-branch map, and the compensator-extended theory still
+lacks a same-background classical carrier/contraction. Its atlas row therefore
+remains `NO_CERTIFIED_MAP_BRIDGE_2_ABSENT`; no classical tangent-cone or
+resonance obstruction is advertised as BRST exactness, ghost removal, or a
+quantum constraint.
 
 Receipts are summarized in
-[`coefficient-bearing-qme-obstruction.md`](../quantum-weyl/reports/coefficient-bearing-qme-obstruction.md).
+[`coefficient-bearing-qme-obstruction.md`](../quantum-weyl/reports/coefficient-bearing-qme-obstruction.md),
+[`wess-zumino-minimal-bv-cotangent-lift.md`](../quantum-weyl/reports/wess-zumino-minimal-bv-cotangent-lift.md),
+and
+[`wess-zumino-extended-local-bv-cohomology.md`](../quantum-weyl/reports/wess-zumino-extended-local-bv-cohomology.md).
