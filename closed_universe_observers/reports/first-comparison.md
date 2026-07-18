@@ -305,6 +305,9 @@ The positive-energy successor nevertheless fixes the Cauchy preparation as
 `u_a=(-p_a,L_a q_a)` directly from the advanced covector data.  Its leading
 response is the strictly positive massive-two-form energy, so profile
 selection is no longer open; only validated harmonic evaluation is.
+The Peter--Weyl successor supplies the exact finite form-Laplacian blocks
+needed for that evaluation and cross-checks the independent rod spectrum.
+Interval-enclosed bump coefficients and spectral-tail bounds remain open.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -507,3 +510,6 @@ coordinate Cauchy dual open.  Its receipt is
 The positive-energy successor fixes the compact constrained preparations and
 their positive diagonal witnesses without response normalization.  Its receipt
 is `closed_universe_observers/receipts/POSITIVE_ENERGY_EMITTER_PROFILES_TIER_RECEIPT.json`.
+The Peter--Weyl successor certifies exact de Rham/form-Laplacian blocks and
+keeps profile quadrature and tail control fail-closed.  Its receipt is
+`closed_universe_observers/receipts/PETER_WEYL_FORM_LAPLACIAN_TIER_RECEIPT.json`.

@@ -1,0 +1,200 @@
+{
+  "audited_blocks": [
+    {
+      "all_laplacians_hermitian": true,
+      "d_squared_defect_counts": [
+        0,
+        0
+      ],
+      "dimensions": [
+        1,
+        3,
+        3,
+        1
+      ],
+      "hodge_dual_spectra_match": true,
+      "laplacian_ranks": [
+        0,
+        3,
+        3,
+        0
+      ],
+      "scalar_eigenvalues": {
+        "0": 1
+      },
+      "two_j": 0
+    },
+    {
+      "all_laplacians_hermitian": true,
+      "d_squared_defect_counts": [
+        0,
+        0
+      ],
+      "dimensions": [
+        2,
+        6,
+        6,
+        2
+      ],
+      "hodge_dual_spectra_match": true,
+      "laplacian_ranks": [
+        2,
+        6,
+        6,
+        2
+      ],
+      "scalar_eigenvalues": {
+        "29/18": 2
+      },
+      "two_j": 1
+    },
+    {
+      "all_laplacians_hermitian": true,
+      "d_squared_defect_counts": [
+        0,
+        0
+      ],
+      "dimensions": [
+        3,
+        9,
+        9,
+        3
+      ],
+      "hodge_dual_spectra_match": true,
+      "laplacian_ranks": [
+        3,
+        9,
+        9,
+        3
+      ],
+      "scalar_eigenvalues": {
+        "2": 1,
+        "49/9": 2
+      },
+      "two_j": 2
+    },
+    {
+      "all_laplacians_hermitian": true,
+      "d_squared_defect_counts": [
+        0,
+        0
+      ],
+      "dimensions": [
+        4,
+        12,
+        12,
+        4
+      ],
+      "hodge_dual_spectra_match": true,
+      "laplacian_ranks": [
+        4,
+        12,
+        12,
+        4
+      ],
+      "scalar_eigenvalues": {
+        "23/2": 2,
+        "83/18": 2
+      },
+      "two_j": 3
+    },
+    {
+      "all_laplacians_hermitian": true,
+      "d_squared_defect_counts": [
+        0,
+        0
+      ],
+      "dimensions": [
+        5,
+        15,
+        15,
+        5
+      ],
+      "hodge_dual_spectra_match": true,
+      "laplacian_ranks": [
+        5,
+        15,
+        15,
+        5
+      ],
+      "scalar_eigenvalues": {
+        "178/9": 2,
+        "6": 1,
+        "85/9": 2
+      },
+      "two_j": 4
+    }
+  ],
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL spectral engine constructs the Berger-S3 de Rham matrices d_p and Hodge Laplacians Delta_p=d^dagger d+d d^dagger in any requested finite SU(2) Peter-Weyl block. It uses the certified squashing c=3 sqrt(10)/20, exact skew-Hermitian spin generators, and the orthonormal coframe equations dtheta1=-c^-1 theta2 theta3, dtheta2=c^-1 theta1 theta3, dtheta3=-c theta1 theta2. Blocks two_j=0..4 have zero d^2 defects, Hermitian Laplacians, Hodge-dual spectra, and the two_j=1 scalar eigenvalue 29/18 matching the global-rod certificate. This is an exact finite-block engine, not a validated expansion of the compact detector bumps: harmonic coefficients, quadrature bounds, spectral-tail bounds, Green images, and the absolute-g3 recoil coefficient remain open. It does not make a finite-parameter interacting or quantum claim.",
+  "claim_status": "EXACT_FINITE_PETER_WEYL_FORM_LAPLACIAN_ENGINE_EXPORTED_PROFILE_EXPANSION_OPEN",
+  "dependency_refs": {
+    "profiles": {
+      "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+      "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+      "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+    },
+    "rods": {
+      "path": "closed_universe_observers/certificates/BERGER_GLOBAL_DETECTOR_INDEXED_RODS.json",
+      "result_id": "BERGER_GLOBAL_DETECTOR_INDEXED_RODS",
+      "sha256": "03c70e99a606ce53ec0ddd97f4e3f1913700c889d554c88986e63ccb476d9b83"
+    },
+    "unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL",
+      "sha256": "19666c947d0ea45cd62e516bc24310ca005074544f6ab56e292366c1db8d69db"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ADVANCED_GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "D_SQUARED_ZERO_AUDITED": true,
+    "EXACT_FORM_LAPLACIAN_BLOCKS_EXPORTED": true,
+    "GENERIC_FINITE_PETER_WEYL_DE_RHAM_BLOCK_CONSTRUCTOR": true,
+    "HODGE_DUAL_SPECTRA_AUDITED": true,
+    "PROFILE_HARMONIC_COEFFICIENTS_EVALUATED": false,
+    "QUANTUM_CLAIM": false,
+    "VALIDATED_SPECTRAL_TAIL_BOUND_EXPORTED": false
+  },
+  "geometry": {
+    "frame": [
+      "e1=xi1",
+      "e2=xi2",
+      "e3=xi3/c"
+    ],
+    "scalar_eigenvalue_formula": "j(j+1)+(c^-2-1)m^2=j(j+1)+31*m^2/9",
+    "squashing": "3*sqrt(10)/20"
+  },
+  "next_gate": "COMPUTE_INTERVAL_ENCLOSED_PROFILE_COEFFICIENTS_AND_SUPERALGEBRAIC_TAIL_BOUNDS_THEN_APPLY_MODE_GREEN_KERNELS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_peter_weyl_form_laplacian.py",
+        "sha256": "bf1d08817b6a6d6c198af0d97ac095027583d7d292f14cbb05b17c4bfdcd1ac2"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_peter_weyl_form_laplacian.py",
+        "sha256": "4d916a50c4b19b43beca097a41f4e83424616a9bfe3e76c6cc68ca8bc591c9d2"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_peter_weyl_form_laplacian.py",
+        "sha256": "578f14abffa834e0b5aef28e64e89ebcdb215458d67179965df4a97d3f2a225f"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-peter-weyl-form-laplacian-engine-v1.schema.json",
+        "sha256": "4905f700e1d89ac37e8d6f54225453b5ea12e27359469b76b24aaa1eed381661"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-peter-weyl-form-laplacian-engine.md",
+        "sha256": "32564b5efc7b690a1e2634856cae470aa6cdd6bd3fbb3391f92e7c01c79def3a"
+      }
+    ]
+  },
+  "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+  "schema": "closed-universe-berger-peter-weyl-form-laplacian-engine-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

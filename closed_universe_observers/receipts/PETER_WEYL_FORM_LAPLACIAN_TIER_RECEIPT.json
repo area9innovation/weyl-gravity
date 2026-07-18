@@ -1,0 +1,103 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "PETER_WEYL_FORM_LAPLACIAN_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "result_boundary": "Exact finite Berger Peter-Weyl de Rham and form-Laplacian blocks are exported and audited. Compact-profile coefficients, validated tails, Green images, recoil, interacting and quantum claims remain open.",
+  "tier_0": [
+    {
+      "command": "py_compile; diff check; hashes; staged inspection",
+      "elapsed_seconds": "under 1 plus final",
+      "status": "PASS",
+      "scope": "observer files only"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "generator and independent verifier",
+      "elapsed_seconds": "under 3",
+      "status": "PASS",
+      "scope": "exact generators, d-square, adjoints, Laplacians and dependencies"
+    },
+    {
+      "command": "pytest focused Peter-Weyl tests",
+      "elapsed_seconds": "4.44",
+      "status": "PASS",
+      "scope": "all 5 tests"
+    },
+    {
+      "command": "strict AJV and comparison ledger",
+      "elapsed_seconds": "under 2",
+      "status": "PASS",
+      "scope": "schema and import"
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests",
+      "elapsed_seconds": "201.75 pytest / 203.09 wall",
+      "status": "PASS",
+      "scope": "all 128 observer tests; required by central-ledger change"
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No shared core, finite-parameter, release, or quantum promotion."
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    },
+    {
+      "path": "closed_universe_observers/generate_berger_peter_weyl_form_laplacian.py",
+      "sha256": "bf1d08817b6a6d6c198af0d97ac095027583d7d292f14cbb05b17c4bfdcd1ac2"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_peter_weyl_form_laplacian.py",
+      "sha256": "4d916a50c4b19b43beca097a41f4e83424616a9bfe3e76c6cc68ca8bc591c9d2"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_peter_weyl_form_laplacian.py",
+      "sha256": "578f14abffa834e0b5aef28e64e89ebcdb215458d67179965df4a97d3f2a225f"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-peter-weyl-form-laplacian-engine-v1.schema.json",
+      "sha256": "4905f700e1d89ac37e8d6f54225453b5ea12e27359469b76b24aaa1eed381661"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-peter-weyl-form-laplacian-engine.md",
+      "sha256": "32564b5efc7b690a1e2634856cae470aa6cdd6bd3fbb3391f92e7c01c79def3a"
+    },
+    {
+      "path": "closed_universe_observers/ledgers/comparison_ledger.json",
+      "sha256": "8f3d7c4648bf4f2f39b35d2b610464d20adeaf9a1fe28911d5b2ccf2aaeb4269"
+    },
+    {
+      "path": "closed_universe_observers/README.md",
+      "sha256": "82b8ea862f0eec8270c54b270797cb3f92abc19d7e5bebfe7098fd6d42933d7e"
+    },
+    {
+      "path": "notes/closed-universe-observer-team-brief.md",
+      "sha256": "bb2da7dba3a690875e342a2db739f5d466bb4b5736533339deb4c6f50d39f7e0"
+    },
+    {
+      "path": "closed_universe_observers/reports/first-comparison.md",
+      "sha256": "e91e0fa1fe34c83f674892e1441611f093b9699767d16d32342c4a9ba4731207"
+    }
+  ],
+  "claim_flags": {
+    "EXACT_FORM_LAPLACIAN_BLOCKS_EXPORTED": true,
+    "PROFILE_HARMONIC_COEFFICIENTS_EVALUATED": false,
+    "VALIDATED_SPECTRAL_TAIL_BOUND_EXPORTED": false,
+    "ADVANCED_GREEN_IMAGES_EVALUATED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

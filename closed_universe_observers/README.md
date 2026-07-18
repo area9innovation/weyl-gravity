@@ -58,6 +58,8 @@ python3 -m closed_universe_observers.generate_berger_exact_detector_smearings --
 python3 -m closed_universe_observers.verify_berger_exact_detector_smearings
 python3 -m closed_universe_observers.generate_berger_positive_energy_emitter_profiles --check
 python3 -m closed_universe_observers.verify_berger_positive_energy_emitter_profiles
+python3 -m closed_universe_observers.generate_berger_peter_weyl_form_laplacian --check
+python3 -m closed_universe_observers.verify_berger_peter_weyl_form_laplacian
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -202,6 +204,10 @@ ambiguity without waiting for a harmonic expansion: for advanced Cauchy data
 `(q_a,p_a)`, it sets `u_a=(-p_a,L_a q_a)`.  Its detector response is the
 strictly positive massive-two-form energy.  Harmonic coefficients and the
 absolute-`g^3` recoil integral remain open.
+The Peter--Weyl successor now supplies exact de Rham and form-Laplacian
+matrices in every requested finite Berger `SU(2)` block.  It independently
+reproduces the rod eigenvalue `29/18`.  Validated bump coefficients and
+spectral-tail bounds are the remaining analytic inputs to the Green images.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

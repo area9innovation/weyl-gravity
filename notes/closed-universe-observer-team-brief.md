@@ -236,6 +236,13 @@ then `u_a=(-p_a,L_a q_a)` has response
 constraint and causal support and uses no response normalization.  Only the
 Berger harmonic coefficients and Green integrals remain unevaluated.
 
+`BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE` now constructs exact finite Berger
+`SU(2)` blocks of `d_p` and `Delta_p`.  Blocks through `two_j=4` have zero
+`d^2` defects, Hermitian Laplacians, Hodge-dual spectra, and reproduce the
+independent scalar rod eigenvalue `29/18`.  The next missing input is no
+longer the spatial operator: it is validated interval quadrature for the flat
+bumps and a superalgebraic spectral-tail estimate.
+
 `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` closes the independent
 first backreaction jet without pretending to evaluate that missing recoil
 integral.  Direct variation of the selected action gives the free emitter
