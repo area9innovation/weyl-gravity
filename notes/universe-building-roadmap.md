@@ -718,10 +718,13 @@ exact coefficient elimination gives `a=b=d=0`, and the remaining rank
 stratification plus `mu_J` proves that every solution is an `SO(3)` rotation
 of this aligned face, with the electric extension
 `B^2=Q_e^2/2+(2/3)X`.  No additional off-axis branch exists in this carrier.
-This is still not a full second-order correction: nonresonant bounded/smooth
-right inverses, opposite momenta, phases and multiple absolute-momentum fibres
-remain open.  Thus this is a necessary tangent-cone theorem, not yet a
-relative obstruction theorem.  Residual equivariance, the observable map, the
+The bounded/finite-quasiperiodic correction class is now obstructed on every
+nonzero point of this orbit: the balance forces `B!=0`, while the zero-frequency
+polar `L=2` twist self-source has the uncancellable coefficient `-7*B^2*t^2`.
+A stationary linearized operator cannot map a bounded finite-quasiperiodic
+correction to that polynomially growing source.  Smooth exponential-polynomial
+right inverses remain open, as do opposite momenta, phases and multiple
+absolute-momentum fibres.  Residual equivariance, the observable map, the
 relative \(L_\infty\) morphism, and the quantum lift remain open until their
 own certificates land.
 
@@ -840,9 +843,10 @@ and no cross-background identity is made.  The certified `a,b,d` polynomial
 resonance matrix has now been extended by the complete twist position/velocity
 columns.  In the declared nonzero-extra `k=0` carrier, its simultaneous
 stabilizer/resonance zero locus is exactly the aligned `SO(3)` orbit; bounded
-and secular correction sufficiency remain open because the nonresonant source
-and exact block inverses have not been exported.  This does not complete the
-relative bridge.
+corrections are now obstructed by its unavoidable zero-frequency polar `L=2`
+quadratic-time source.  Smooth secular sufficiency remains open because the
+complete nonresonant source and exact polynomial block inverses have not been
+exported.  This does not complete the relative bridge.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
