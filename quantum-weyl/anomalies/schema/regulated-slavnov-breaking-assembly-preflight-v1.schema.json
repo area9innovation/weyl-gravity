@@ -14,7 +14,7 @@
     "dependency_hashes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "full_BV_ledger_composer", "Ward_insertion_contract"],
+      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "full_BV_ledger_composer", "classical_snapshot_compatibility_receiver", "Ward_insertion_contract"],
       "properties": {
         "full_local_BV_G2": {"$ref": "#/$defs/hash"},
         "gauge_fixed_H14": {"$ref": "#/$defs/hash"},
@@ -23,10 +23,11 @@
         "standard_auxiliary_fourth_order_match": {"$ref": "#/$defs/hash"},
         "full_BV_multiplicity_preflight": {"$ref": "#/$defs/hash"},
         "full_BV_ledger_composer": {"$ref": "#/$defs/hash"},
+        "classical_snapshot_compatibility_receiver": {"$ref": "#/$defs/hash"},
         "Ward_insertion_contract": {"$ref": "#/$defs/hash"}
       }
     },
-    "accepted_export_schema": {"const": "quantum-weyl-regulated-slavnov-breaking-export-v1"},
+    "accepted_export_schema": {"const": "quantum-weyl-regulated-slavnov-breaking-export-v2"},
     "accepted_proof_result_ids": {
       "const": {
         "complete_complex_EUCLIDEAN_ELLIPTIC": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
@@ -40,7 +41,12 @@
         "parity_coefficient": "REPOSITORY_PARITY_ODD_COEFFICIENT",
         "qme_disposition": "REGULATED_SLAVNOV_QME_DISPOSITION",
         "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM",
-        "snapshot_compatibility": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+        "snapshot_compatibility": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+        "slavnov_action": "REGULATED_BV_SLAVNOV_ACTION",
+        "total_derivative": "REGULATED_SLAVNOV_TOTAL_DERIVATIVE",
+        "gauge_dependence": "REGULATED_SLAVNOV_GAUGE_PARAMETER_DEPENDENCE",
+        "regularization_dependence": "REGULATED_SLAVNOV_REGULARIZATION_DEPENDENCE",
+        "antifield_completion": "REGULATED_SLAVNOV_ANTIFIELD_COMPLETION"
       }
     },
     "receiver_mechanics": {
@@ -136,7 +142,7 @@
       "additionalProperties": false,
       "required": ["discharged", "missing"],
       "properties": {
-        "discharged": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "string", "minLength": 10}},
+        "discharged": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"type": "string", "minLength": 10}},
         "missing": {
           "type": "array",
           "minItems": 4,
@@ -163,6 +169,7 @@
         "standard_factor_rank_gap": false,
         "scalar_ghost_gap_rank": 0,
         "full_BV_ledger_composer_ready": true,
+        "regulated_BV_insertion_v2_receiver_ready": true,
         "remaining_decision_gap": "after the physical TT dictionary composes the local determinant ledger, a regulated BV Slavnov insertion with Wess-Zumino and parity proofs is still required; determinant coefficients alone do not decide the QME",
         "no_further_local_graph_expansion_required": true
       }
@@ -176,6 +183,8 @@
         "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": true,
         "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND": true,
         "FULL_BV_LEDGER_COMPOSER_READY": true,
+        "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": true,
+        "REGULATED_BV_INSERTION_V2_RECEIVER_READY": true,
         "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,
         "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": true,
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,
@@ -235,12 +244,13 @@
     "receiverResult": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["cohomology_coordinates", "exact_coordinate", "classification", "qme_disposition"],
+      "required": ["cohomology_coordinates", "exact_coordinate", "classification", "qme_disposition", "insertion_decomposition"],
       "properties": {
         "cohomology_coordinates": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
         "exact_coordinate": {"$ref": "#/$defs/rational"},
         "classification": {"enum": ["NONTRIVIAL", "TRIVIAL_OR_ZERO"]},
-        "qme_disposition": {"enum": ["OBSTRUCTED_STRICT_FIELD_CONTENT", "RESTORABLE_BY_LOCAL_COUNTERTERM"]}
+        "qme_disposition": {"enum": ["OBSTRUCTED_STRICT_FIELD_CONTENT", "RESTORABLE_BY_LOCAL_COUNTERTERM"]},
+        "insertion_decomposition": {"const": "COMPLETE_RECEIVER_INPUT"}
       }
     }
   }

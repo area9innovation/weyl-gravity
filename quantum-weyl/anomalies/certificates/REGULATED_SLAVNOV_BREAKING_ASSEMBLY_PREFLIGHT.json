@@ -1,16 +1,21 @@
 {
-  "accepted_export_schema": "quantum-weyl-regulated-slavnov-breaking-export-v1",
+  "accepted_export_schema": "quantum-weyl-regulated-slavnov-breaking-export-v2",
   "accepted_proof_result_ids": {
+    "antifield_completion": "REGULATED_SLAVNOV_ANTIFIELD_COMPLETION",
     "auxiliary_fourth_order_match": "REPOSITORY_AUXILIARY_FOURTH_ORDER_MATCH",
     "complete_complex_EUCLIDEAN_ELLIPTIC": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
     "complete_complex_LORENTZIAN_CAUSAL": "REPOSITORY_LORENTZIAN_CAUSAL_RENORMALIZED_PRODUCTS",
     "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM",
+    "gauge_dependence": "REGULATED_SLAVNOV_GAUGE_PARAMETER_DEPENDENCE",
     "measure_contour": "REPOSITORY_MEASURE_CONTOUR_LEDGER",
     "multiplicity": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
     "parity_coefficient": "REPOSITORY_PARITY_ODD_COEFFICIENT",
     "parity_ward_zero": "REPOSITORY_PARITY_WARD_IDENTITY",
     "qme_disposition": "REGULATED_SLAVNOV_QME_DISPOSITION",
+    "regularization_dependence": "REGULATED_SLAVNOV_REGULARIZATION_DEPENDENCE",
+    "slavnov_action": "REGULATED_BV_SLAVNOV_ACTION",
     "snapshot_compatibility": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+    "total_derivative": "REGULATED_SLAVNOV_TOTAL_DERIVATIVE",
     "wess_zumino": "REGULATED_SLAVNOV_WESS_ZUMINO_CONSISTENCY",
     "zero_mode_ledger": "REPOSITORY_ZERO_MODE_LEDGER"
   },
@@ -27,6 +32,8 @@
       "York/Hodge measure and nonminimal quartet Berezinian cancellation",
       "round-S4 standard zero-mode and priming ledger",
       "mutation-tested full-BV local multiplicity composer for all non-TT rows",
+      "semantic cross-commit classical snapshot compatibility receiver",
+      "versioned regulated BV insertion-decomposition output contract",
       "portable renormalized Ward-insertion input contract"
     ],
     "missing": [
@@ -48,9 +55,10 @@
       }
     ]
   },
-  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all non-TT local multiplicity rows are now exact and bound by a mutation-tested composer. One physical round-S4 TT dictionary is the remaining input to the local determinant ledger. That still does not compute a BV Slavnov breaking: a complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The export receiver now permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. It proves only the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all non-TT local multiplicity rows are now exact and bound by a mutation-tested composer. One physical round-S4 TT dictionary is the remaining input to the local determinant ledger. That still does not compute a BV Slavnov breaking: a complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The versioned v2 export receiver now requires the regulated action, total-derivative remainder, gauge-parameter dependence, regularization dependence, and antifield completion explicitly, including certified zero rows. Every insertion-side proof binds the exact commit, analytic route, basis, and coefficient hash. It permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. Distinct analytic and local-BV commits additionally require a full semantic replay of the five canonical classical snapshot hashes and the role-specific nested proofs; a matching result_id alone is rejected. It proves only the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory.",
   "claim_flags": {
     "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": true,
+    "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": true,
     "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,
     "D_CARTAN_CLASSIFIED": false,
     "FULL_BV_LEDGER_COMPOSER_READY": true,
@@ -60,6 +68,7 @@
     "LORENTZIAN_QUANTUM_THEORY": false,
     "QME_OBSTRUCTED": false,
     "QME_RESTORED": false,
+    "REGULATED_BV_INSERTION_V2_RECEIVER_READY": true,
     "REGULATED_SLAVNOV_BREAKING_COMPUTED": false,
     "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,
     "STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED": true,
@@ -204,6 +213,7 @@
   "dependency_hashes": {
     "BoxR_triviality": "b712a4745e7424baf1fa4a52fb1efc192196a95bdea939619052a6c9f7031685",
     "Ward_insertion_contract": "0d7ac0bfb866341bd5b61f8c92f112de76b67261bd2378b954fd58e8aa70c191",
+    "classical_snapshot_compatibility_receiver": "74a0c02f8725f72210c6d3aedd06359dee84092ef0b05c48ce5dfc595440f483",
     "full_BV_ledger_composer": "6affa890c33b1bfca06cd38efb0801fc967c40f721288fa1cbc2fedb5895e566",
     "full_BV_multiplicity_preflight": "d7b6f9985d8ea66f31e4680f19d53d4d1c1bc62e6abb64dab4c840f91eb37071",
     "full_local_BV_G2": "4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a",
@@ -220,6 +230,7 @@
     "coefficient_arithmetic_gap": false,
     "full_BV_ledger_composer_ready": true,
     "no_further_local_graph_expansion_required": true,
+    "regulated_BV_insertion_v2_receiver_ready": true,
     "remaining_decision_gap": "after the physical TT dictionary composes the local determinant ledger, a regulated BV Slavnov insertion with Wess-Zumino and parity proofs is still required; determinant coefficients alone do not decide the QME",
     "scalar_ghost_gap_rank": 0,
     "standard_factor_rank_gap": false,
@@ -228,15 +239,15 @@
     "status": "EXACT_REGULATED_BV_INSERTION_GAP"
   },
   "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
-  "proof_sha256": "0abb21ccbbd1c31ce756ab59e817e25f7e1e3887f2f343b0515df3521a4816b3",
+  "proof_sha256": "be0cdbd2b6d6bedb063270899356c0856824cb09f010bccaba15599f032f7416",
   "provenance": {
     "source_sha256": {
-      "quantum-weyl/anomalies/regulated_slavnov_breaking_preflight.py": "d65fb0286be324e43d5500f23286761f92f9952145011439b68d964ce439f002",
-      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json": "afc85d8e7893ced59dbb607b03045a9ce62296bd82237646c34a461f277d737c",
-      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-export-v1.schema.json": "57ad66adc62158da26bb65d1e8ca669191ec4eca821041f293c4a8eaae6b42c2",
-      "quantum-weyl/anomalies/tests/test_regulated_slavnov_breaking_preflight.py": "39436700a2a2d665bdf7cd9fef7567e81e47bd06f01ccadea2a65e132bf7d536",
-      "quantum-weyl/anomalies/verify_regulated_slavnov_breaking_preflight.py": "e40ff57ee4f2d1a2b5dba997b540f8d78c4ded855687b85758dced115c19a400",
-      "quantum-weyl/reports/regulated-slavnov-breaking-assembly-preflight.md": "bcd4b0020d8a8175d011f39b45127593f9a040dc690d8ad74b3ce88ba4058e49"
+      "quantum-weyl/anomalies/regulated_slavnov_breaking_preflight.py": "76c77d2485a75a04b0fd0060f3874e275a0e3d3e147e5cb7babbe03cefa0bc4e",
+      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json": "cb341637e5e4d2c0ef05d4990f53d12654ecd1f4a3454811e3e10381ad598c9c",
+      "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-export-v2.schema.json": "4cdbcd71e8f3e8e6b80511c675312593945474b180a21e446b7ce164efddd836",
+      "quantum-weyl/anomalies/tests/test_regulated_slavnov_breaking_preflight.py": "79a185093ea8488a3f97688f43f9dde82e54b719d33c889d80c5e13734637a94",
+      "quantum-weyl/anomalies/verify_regulated_slavnov_breaking_preflight.py": "21b24454288ed84b6ec166a704fb05fa29f03c7b394e7ab67544f1ed4b78f403",
+      "quantum-weyl/reports/regulated-slavnov-breaking-assembly-preflight.md": "be03706149dee715214cae98949b13677f8c44b6502191d43f047f2261580127"
     }
   },
   "receiver_mechanics": {
@@ -260,6 +271,7 @@
         "denominator": 1,
         "numerator": 0
       },
+      "insertion_decomposition": "COMPLETE_RECEIVER_INPUT",
       "qme_disposition": "OBSTRUCTED_STRICT_FIELD_CONTENT"
     },
     "scope": "SYNTHETIC_EXACT_RECEIVER_MECHANICS_ONLY",
@@ -283,6 +295,7 @@
         "denominator": 1,
         "numerator": 1
       },
+      "insertion_decomposition": "COMPLETE_RECEIVER_INPUT",
       "qme_disposition": "RESTORABLE_BY_LOCAL_COUNTERTERM"
     }
   },

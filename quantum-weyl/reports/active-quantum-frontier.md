@@ -28,7 +28,9 @@ mutation-tested. If a later analytic operator export comes from a different
 commit, it must match the frozen generator, atom, differential, dependency,
 and scope hashes exactly and supply content-addressed import/export proofs.
 No physical compatibility bridge is claimed until such an analytic producer
-actually supplies it.
+actually supplies it. The regulated Slavnov export path now invokes that
+semantic receiver directly, so a bridge carrying only the expected result ID
+cannot cross the QME assembly gate.
 The exact Slavnov-breaking assembly preflight now reduces the four raw density
 coordinates to this three-class quotient, removes `omega BoxR` with its
 stored primitive, and binds the standard background vector
@@ -99,6 +101,11 @@ consistency proof, and repository parity disposition remain mandatory. The
 analytic receiver accepts either a genuine fourth-order metric formulation or
 a second-order auxiliary formulation; only the latter requires an auxiliary
 equivalence artifact.
+Its versioned v2 input now also requires the regulated Slavnov action,
+total-derivative row, gauge and regularization dependence, and full antifield
+completion. These proof objects bind the exact coefficient hash, route, and
+classical commit. This closes the insertion handoff specification, not the
+physical insertion itself.
 
 The completed covariant dependency DAG does, however, close a distinct free
 algebraic milestone. The support-local 16-block curvature graph, the causal

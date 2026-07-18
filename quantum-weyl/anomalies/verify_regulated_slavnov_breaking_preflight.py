@@ -34,6 +34,7 @@ def verify() -> dict:
     if (
         missing.get("scalar_ghost_gap_rank") != 0
         or missing.get("full_BV_ledger_composer_ready") is not True
+        or missing.get("regulated_BV_insertion_v2_receiver_ready") is not True
         or missing.get("status") != "EXACT_REGULATED_BV_INSERTION_GAP"
     ):
         raise ValueError("regulated BV insertion gap was not isolated")

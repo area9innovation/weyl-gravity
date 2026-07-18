@@ -375,6 +375,12 @@ def _load() -> dict[str, dict[str, Any]]:
         or assembly_flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND")
         is not True
         or assembly_flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
+        or assembly_flags.get(
+            "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND"
+        )
+        is not True
+        or assembly_flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY")
+        is not True
         or assembly_flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or assembly_flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not False
         or assembly_flags.get("QME_OBSTRUCTED") is not False
@@ -880,6 +886,8 @@ def build() -> dict[str, Any]:
             "ANTIFIELD_EXPORT_V2_RECEIVER_READY": True,
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY": True,
+            "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
+            "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC": True,
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS": True,
             "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE": True,
@@ -955,7 +963,10 @@ def build() -> dict[str, Any]:
             "operator export and frozen local-BV import come from distinct commits, it "
             "requires exact equality of the generator, atom, differential, dependency and "
             "scope hashes plus role-specific content-addressed import/export proofs. No "
-            "physical cross-commit bridge has yet been supplied. "
+            "physical cross-commit bridge has yet been supplied. The v2 regulated-BV "
+            "insertion receiver additionally requires explicit action, total-derivative, "
+            "gauge-dependence, regularization-dependence and antifield-completion ledgers, "
+            "each bound to the exact coefficient hash; no physical insertion is supplied. "
             "The standard determinant ranks 5,1,5,3 reproduce signed rank six. The exact "
             "longitudinal-Diff/Weyl Faddeev--Popov matrix now reduces its two scalar ghost "
             "inputs to the single differential factor Delta_0-R/3, matching the standard "
@@ -1074,6 +1085,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("ANTIFIELD_EXPORT_V2_RECEIVER_READY") is not True
         or flags.get("CLASSICAL_ANTIFIELD_EXPORT_IMPORTED") is not True
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY") is not True
+        or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
+        is not True
+        or flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY") is not True
         or flags.get("MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC") is not True
         or flags.get("MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS") is not True
         or flags.get("GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE") is not True
@@ -1130,6 +1144,8 @@ def validate(result: dict[str, Any]) -> None:
             "ANTIFIELD_EXPORT_V2_RECEIVER_READY",
             "CLASSICAL_ANTIFIELD_EXPORT_IMPORTED",
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY",
+            "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND",
+            "REGULATED_BV_INSERTION_V2_RECEIVER_READY",
             "MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC",
             "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS",
             "GENERAL_NONMINIMAL_GAUGE_FIXED_H14_COMPLETE",

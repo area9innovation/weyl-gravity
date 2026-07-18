@@ -87,7 +87,9 @@ coefficient, does not activate the conditional obstruction, and makes no QME,
 Cartan, residual-transfer, or Lorentzian claim.
 
 The accepted handoff schema
-`quantum-weyl-regulated-slavnov-breaking-export-v1` is executable. It requires
+`quantum-weyl-regulated-slavnov-breaking-export-v2` is executable. Version 1
+remains a historical contract; version 2 adds the outputs required to decide
+the actual insertion rather than only its quotient coordinates. It requires
 content-addressed complex, multiplicity, auxiliary/fourth-order, zero-mode,
 measure/contour, Wess--Zumino, and parity proofs, with every analytic role
 explicitly marked `VERIFIED` and the classical commit equal to the frozen G2
@@ -99,6 +101,11 @@ carry a content-addressed
 field/differential/pairing data used by the quotient have not drifted. Thus a
 new TT producer commit is not rejected merely for being newer, but neither is
 commit compatibility assumed.
+That bridge is now replayed semantically: all five frozen generator, atom,
+differential, dependency, and scope hashes must agree, and its nested
+role-specific import/export proofs must verify by content hash. A JSON object
+carrying only the expected `result_id` is rejected before analytic row
+validation begins.
 The receiver now distinguishes formulations. A `FOURTH_ORDER_METRIC` export
 must mark the auxiliary-equivalence role `NOT_APPLICABLE` with a null artifact;
 a `SECOND_ORDER_AUXILIARY` export must supply and verify it. This prevents an
@@ -113,6 +120,13 @@ unique integration-row and factor IDs, and must content-address every nested
 proof. Complete row and factor coverage, the exact standard target ranks and
 signs, and the rank-two-to-rank-one scalar ghost map are checked semantically;
 status strings alone cannot satisfy the receiver.
+The insertion decomposition must now include the regulated Slavnov action,
+an explicit total-derivative row (including a certified zero), gauge-parameter
+dependence, regularization dependence, and the complete antifield completion.
+Every corresponding proof, together with the Wess--Zumino, parity,
+counterterm, and QME-disposition proofs, binds the analytic commit, route,
+ordered coefficient basis, and exact coefficient hash. Stale or swapped proof
+objects are rejected even when their role-specific `result_id` is correct.
 The complete role-to-`result_id` map is emitted as
 `accepted_proof_result_ids` in the assembly certificate.
 Exact receiver fixtures

@@ -10,6 +10,9 @@ import unittest
 
 from jsonschema import Draft202012Validator, ValidationError
 
+from classical_import.classical_snapshot_compatibility_receiver import (
+    synthetic_payload as snapshot_compatibility_payload,
+)
 from anomalies.regulated_slavnov_breaking_preflight import (
     OUTPUT,
     PROOF_RESULT_IDS,
@@ -74,6 +77,13 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             value["claim_flags"]["FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND"]
         )
         self.assertTrue(value["claim_flags"]["FULL_BV_LEDGER_COMPOSER_READY"])
+        self.assertTrue(
+            value["claim_flags"]["REGULATED_BV_INSERTION_V2_RECEIVER_READY"]
+        )
+        self.assertEqual(
+            value["accepted_export_schema"],
+            "quantum-weyl-regulated-slavnov-breaking-export-v2",
+        )
         self.assertEqual(
             value["minimal_missing_carrier_theorem"]["scalar_ghost_gap_rank"], 0
         )
@@ -148,6 +158,16 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
                 payload, repository_root=ROOT, allow_synthetic_fixture=True
             )
 
+    def test_v2_receiver_requires_complete_insertion_decomposition(self) -> None:
+        payload = receiver_fixture_payload(
+            (Fraction(0), Fraction(0), Fraction(0), Fraction(0)), nontrivial=False
+        )
+        del payload["insertion_decomposition"]["antifield_completion_artifact"]
+        with self.assertRaisesRegex(ValueError, "insertion-decomposition fields"):
+            validate_regulated_breaking_export(
+                payload, repository_root=ROOT, allow_synthetic_fixture=True
+            )
+
     def test_fourth_order_route_does_not_invent_an_auxiliary_gate(self) -> None:
         payload = receiver_fixture_payload(
             (Fraction(0), Fraction(0), Fraction(0), Fraction(0)),
@@ -206,7 +226,55 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
                 "path": str(path.relative_to(ROOT)),
                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
             }
+            with self.assertRaisesRegex(ValueError, "semantic replay failed"):
+                validate_regulated_breaking_export(payload, repository_root=ROOT)
+
+            frozen_import_path = (
+                ROOT
+                / "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json"
+            )
+            frozen_import = json.loads(frozen_import_path.read_text())
+            hashes = frozen_import["independent_replay"]["canonical_hashes"]
+            analytic_proof = Path(temporary) / "analytic-export.json"
+            analytic_proof.write_text(
+                json.dumps(
+                    {
+                        "result_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+                        "classical_commit": analytic_commit,
+                        "canonical_hashes": hashes,
+                    },
+                    sort_keys=True,
+                )
+                + "\n"
+            )
+            compatibility = snapshot_compatibility_payload(
+                local_commit=g2["classical_commit"],
+                analytic_commit=analytic_commit,
+                canonical_hashes=hashes,
+            )
+            compatibility["proof_artifacts"][1] = {
+                "format": "JSON_PROOF",
+                "path": str(analytic_proof.relative_to(ROOT)),
+                "sha256": hashlib.sha256(analytic_proof.read_bytes()).hexdigest(),
+            }
+            path.write_text(json.dumps(compatibility, sort_keys=True) + "\n")
+            payload["classical_snapshot_compatibility"]["proof_artifact"][
+                "sha256"
+            ] = hashlib.sha256(path.read_bytes()).hexdigest()
             with self.assertRaisesRegex(ValueError, "expected 'REPOSITORY_AUXILIARY"):
+                validate_regulated_breaking_export(payload, repository_root=ROOT)
+
+            analytic_mutant = json.loads(analytic_proof.read_text())
+            analytic_mutant["canonical_hashes"]["differential_hash"] = "0" * 64
+            analytic_proof.write_text(json.dumps(analytic_mutant, sort_keys=True) + "\n")
+            compatibility["proof_artifacts"][1]["sha256"] = hashlib.sha256(
+                analytic_proof.read_bytes()
+            ).hexdigest()
+            path.write_text(json.dumps(compatibility, sort_keys=True) + "\n")
+            payload["classical_snapshot_compatibility"]["proof_artifact"][
+                "sha256"
+            ] = hashlib.sha256(path.read_bytes()).hexdigest()
+            with self.assertRaisesRegex(ValueError, "semantic replay failed"):
                 validate_regulated_breaking_export(payload, repository_root=ROOT)
 
             payload["classical_snapshot_compatibility"]["proof_artifact"][
@@ -246,6 +314,23 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             )
             payload["classification"]["exact_counterterm"] = None
 
+            coefficient_hash = hashlib.sha256(
+                json.dumps(
+                    payload["coefficients"],
+                    sort_keys=True,
+                    separators=(",", ":"),
+                ).encode()
+            ).hexdigest()
+
+            def bound_proof(result_id: str) -> dict:
+                return {
+                    "result_id": result_id,
+                    "classical_commit": payload["classical_commit"],
+                    "analytic_route": payload["analytic_route"],
+                    "coefficient_basis": payload["coefficient_basis"],
+                    "coefficients_sha256": coefficient_hash,
+                }
+
             operator_roles = {
                 "complete_complex_artifact": PROOF_RESULT_IDS[
                     "complete_complex_EUCLIDEAN_ELLIPTIC"
@@ -269,26 +354,60 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             payload["operator_and_measure"]["multiplicity_artifact"] = (
                 multiplicity_artifact
             )
+            insertion_roles = {
+                "regulated_slavnov_action_artifact": PROOF_RESULT_IDS[
+                    "slavnov_action"
+                ],
+                "total_derivative_artifact": PROOF_RESULT_IDS[
+                    "total_derivative"
+                ],
+                "gauge_parameter_dependence_artifact": PROOF_RESULT_IDS[
+                    "gauge_dependence"
+                ],
+                "regularization_dependence_artifact": PROOF_RESULT_IDS[
+                    "regularization_dependence"
+                ],
+                "antifield_completion_artifact": PROOF_RESULT_IDS[
+                    "antifield_completion"
+                ],
+            }
+            for key, result_id in insertion_roles.items():
+                payload["insertion_decomposition"][key] = write_json(
+                    directory, f"{key}.json", bound_proof(result_id)
+                )
             payload["consistency"]["wess_zumino_proof"] = write_json(
                 directory,
                 "wess_zumino.json",
-                {"result_id": PROOF_RESULT_IDS["wess_zumino"]},
+                bound_proof(PROOF_RESULT_IDS["wess_zumino"]),
             )
             payload["consistency"]["parity_proof"] = write_json(
                 directory,
                 "parity.json",
-                {"result_id": PROOF_RESULT_IDS["parity_ward_zero"]},
+                bound_proof(PROOF_RESULT_IDS["parity_ward_zero"]),
             )
             payload["qme_disposition"]["proof_artifact"] = write_json(
                 directory,
                 "qme.json",
-                {"result_id": PROOF_RESULT_IDS["qme_disposition"]},
+                bound_proof(PROOF_RESULT_IDS["qme_disposition"]),
             )
 
             accepted = validate_regulated_breaking_export(
                 payload, repository_root=ROOT
             )
             self.assertEqual(accepted["classification"], "TRIVIAL_OR_ZERO")
+
+            stale_wz = bound_proof(PROOF_RESULT_IDS["wess_zumino"])
+            stale_wz["coefficients_sha256"] = "0" * 64
+            payload["consistency"]["wess_zumino_proof"] = write_json(
+                directory, "wess_zumino.json", stale_wz
+            )
+            with self.assertRaisesRegex(ValueError, "breaking binding drifted"):
+                validate_regulated_breaking_export(payload, repository_root=ROOT)
+            payload["consistency"]["wess_zumino_proof"] = write_json(
+                directory,
+                "wess_zumino.json",
+                bound_proof(PROOF_RESULT_IDS["wess_zumino"]),
+            )
 
             orphan = deepcopy(multiplicity["integration_slice"]["rows"][0])
             orphan["generator_id"] = "orphan_row"

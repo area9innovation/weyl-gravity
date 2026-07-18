@@ -17,6 +17,10 @@ from typing import Any
 
 from jsonschema import Draft202012Validator
 
+from classical_import.classical_snapshot_compatibility_receiver import (
+    HASH_KEYS as SNAPSHOT_HASH_KEYS,
+    validate_classical_snapshot_compatibility,
+)
 from spectral.euclidean.multiplicity_export_receiver import (
     validate_repository_multiplicity_export,
 )
@@ -26,8 +30,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 OUTPUT = HERE / "certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json"
 SCHEMA = HERE / "schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json"
-EXPORT_SCHEMA = HERE / "schema/regulated-slavnov-breaking-export-v1.schema.json"
-EXPORT_SCHEMA_ID = "quantum-weyl-regulated-slavnov-breaking-export-v1"
+EXPORT_SCHEMA = HERE / "schema/regulated-slavnov-breaking-export-v2.schema.json"
+EXPORT_SCHEMA_ID = "quantum-weyl-regulated-slavnov-breaking-export-v2"
 
 DEPENDENCIES = {
     "full_local_BV_G2": ROOT / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
@@ -37,6 +41,7 @@ DEPENDENCIES = {
     "standard_auxiliary_fourth_order_match": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json",
     "full_BV_multiplicity_preflight": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT.json",
     "full_BV_ledger_composer": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_LEDGER_COMPOSER_READINESS.json",
+    "classical_snapshot_compatibility_receiver": ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READINESS.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
 }
 
@@ -44,7 +49,7 @@ SOURCE_PATHS = (
     "quantum-weyl/anomalies/regulated_slavnov_breaking_preflight.py",
     "quantum-weyl/anomalies/verify_regulated_slavnov_breaking_preflight.py",
     "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json",
-    "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-export-v1.schema.json",
+    "quantum-weyl/anomalies/schema/regulated-slavnov-breaking-export-v2.schema.json",
     "quantum-weyl/anomalies/tests/test_regulated_slavnov_breaking_preflight.py",
     "quantum-weyl/reports/regulated-slavnov-breaking-assembly-preflight.md",
 )
@@ -69,6 +74,11 @@ PROOF_RESULT_IDS = {
     "qme_disposition": "REGULATED_SLAVNOV_QME_DISPOSITION",
     "exact_counterterm": "REGULATED_SLAVNOV_EXACT_COUNTERTERM",
     "snapshot_compatibility": "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+    "slavnov_action": "REGULATED_BV_SLAVNOV_ACTION",
+    "total_derivative": "REGULATED_SLAVNOV_TOTAL_DERIVATIVE",
+    "gauge_dependence": "REGULATED_SLAVNOV_GAUGE_PARAMETER_DEPENDENCE",
+    "regularization_dependence": "REGULATED_SLAVNOV_REGULARIZATION_DEPENDENCE",
+    "antifield_completion": "REGULATED_SLAVNOV_ANTIFIELD_COMPLETION",
 }
 
 
@@ -122,6 +132,34 @@ def _require_json_result_id(
         )
 
 
+def _require_bound_breaking_proof(
+    artifact: dict[str, str],
+    *,
+    repository_root: Path,
+    label: str,
+    expected_result_id: str,
+    classical_commit: str,
+    analytic_route: str,
+    coefficient_basis: list[str],
+    coefficients: dict[str, object],
+) -> None:
+    """Require a role proof to bind the exact breaking it is certifying."""
+
+    if artifact["format"] not in {"JSON_DATA", "JSON_PROOF"}:
+        raise ValueError(f"{label} must be a machine-readable bound proof")
+    value = json.loads((repository_root / artifact["path"]).read_text())
+    expected = {
+        "result_id": expected_result_id,
+        "classical_commit": classical_commit,
+        "analytic_route": analytic_route,
+        "coefficient_basis": coefficient_basis,
+        "coefficients_sha256": _canonical_hash(coefficients),
+    }
+    actual = {key: value.get(key) for key in expected}
+    if actual != expected:
+        raise ValueError(f"{label} breaking binding drifted")
+
+
 def _rational_value(value: object, label: str) -> Fraction:
     if (
         not isinstance(value, dict)
@@ -150,6 +188,7 @@ def validate_regulated_breaking_export(
         "operator_and_measure",
         "coefficient_basis",
         "coefficients",
+        "insertion_decomposition",
         "consistency",
         "classification",
         "qme_disposition",
@@ -214,6 +253,32 @@ def validate_regulated_breaking_export(
                 label="classical_snapshot_compatibility.proof_artifact",
                 expected_result_id=PROOF_RESULT_IDS["snapshot_compatibility"],
             )
+            compatibility_payload = json.loads(
+                (repository_root / compatibility_artifact["path"]).read_text()
+            )
+            frozen_import = json.loads(
+                (
+                    repository_root
+                    / "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json"
+                ).read_text()
+            )
+            canonical_hashes = frozen_import.get("independent_replay", {}).get(
+                "canonical_hashes", {}
+            )
+            if set(canonical_hashes) != set(SNAPSHOT_HASH_KEYS):
+                raise ValueError("frozen classical snapshot canonical hashes drifted")
+            try:
+                validate_classical_snapshot_compatibility(
+                    compatibility_payload,
+                    repository_root=repository_root,
+                    expected_local_commit=local_commit,
+                    expected_local_hashes=canonical_hashes,
+                    expected_analytic_commit=analytic_commit,
+                )
+            except Exception as exc:
+                raise ValueError(
+                    "classical snapshot compatibility semantic replay failed"
+                ) from exc
     tags = payload["dependency_tags"]
     expected_analytic_tag = (
         "EUCLIDEAN-SPECTRAL"
@@ -319,6 +384,61 @@ def validate_regulated_breaking_export(
     if not isinstance(coefficients, dict) or set(coefficients) != set(RAW_BASIS):
         raise ValueError("regulated-breaking coefficient fields drifted")
     values = tuple(_rational_value(coefficients[key], key) for key in RAW_BASIS)
+    insertion = payload["insertion_decomposition"]
+    insertion_fields = {
+        "regulated_slavnov_action_status",
+        "regulated_slavnov_action_artifact",
+        "cohomology_reduction_status",
+        "total_derivative_status",
+        "total_derivative_artifact",
+        "gauge_parameter_dependence_status",
+        "gauge_parameter_dependence_artifact",
+        "regularization_dependence_status",
+        "regularization_dependence_artifact",
+        "antifield_completion_status",
+        "antifield_completion_artifact",
+    }
+    if not isinstance(insertion, dict) or set(insertion) != insertion_fields:
+        raise ValueError("regulated BV insertion-decomposition fields drifted")
+    if (
+        insertion["regulated_slavnov_action_status"] != "COMPUTED"
+        or insertion["cohomology_reduction_status"]
+        != "VERIFIED_AGAINST_COMPLETE_GAUGE_FIXED_H14"
+        or insertion["total_derivative_status"] != "EXPLICIT_INCLUDING_ZERO"
+        or insertion["gauge_parameter_dependence_status"]
+        not in {"INDEPENDENT_VERIFIED", "DEPENDENT_DECOMPOSED"}
+        or insertion["regularization_dependence_status"]
+        not in {"INDEPENDENT_VERIFIED", "DEPENDENT_DECOMPOSED"}
+        or insertion["antifield_completion_status"]
+        != "COMPLETE_INCLUDING_ZERO"
+    ):
+        raise ValueError("regulated BV insertion decomposition is incomplete")
+    insertion_roles = {
+        "regulated_slavnov_action_artifact": PROOF_RESULT_IDS["slavnov_action"],
+        "total_derivative_artifact": PROOF_RESULT_IDS["total_derivative"],
+        "gauge_parameter_dependence_artifact": PROOF_RESULT_IDS[
+            "gauge_dependence"
+        ],
+        "regularization_dependence_artifact": PROOF_RESULT_IDS[
+            "regularization_dependence"
+        ],
+        "antifield_completion_artifact": PROOF_RESULT_IDS[
+            "antifield_completion"
+        ],
+    }
+    for key, result_id in insertion_roles.items():
+        artifact = _artifact(insertion[key], repository_root=repository_root, label=key)
+        if not allow_synthetic_fixture:
+            _require_bound_breaking_proof(
+                artifact,
+                repository_root=repository_root,
+                label=key,
+                expected_result_id=result_id,
+                classical_commit=payload["classical_commit"],
+                analytic_route=payload["analytic_route"],
+                coefficient_basis=payload["coefficient_basis"],
+                coefficients=coefficients,
+            )
     consistency = payload["consistency"]
     if not isinstance(consistency, dict) or set(consistency) != {
         "wess_zumino_status",
@@ -344,13 +464,17 @@ def validate_regulated_breaking_export(
         label="parity_proof",
     )
     if not allow_synthetic_fixture:
-        _require_json_result_id(
+        _require_bound_breaking_proof(
             wess_zumino_artifact,
             repository_root=repository_root,
             label="wess_zumino_proof",
             expected_result_id=PROOF_RESULT_IDS["wess_zumino"],
+            classical_commit=payload["classical_commit"],
+            analytic_route=payload["analytic_route"],
+            coefficient_basis=payload["coefficient_basis"],
+            coefficients=coefficients,
         )
-        _require_json_result_id(
+        _require_bound_breaking_proof(
             parity_artifact,
             repository_root=repository_root,
             label="parity_proof",
@@ -359,6 +483,10 @@ def validate_regulated_breaking_export(
                 if consistency["parity_status"] == "WARD_VERIFIED_ZERO"
                 else PROOF_RESULT_IDS["parity_coefficient"]
             ),
+            classical_commit=payload["classical_commit"],
+            analytic_route=payload["analytic_route"],
+            coefficient_basis=payload["coefficient_basis"],
+            coefficients=coefficients,
         )
     classification = payload["classification"]
     if not isinstance(classification, dict) or set(classification) != {
@@ -375,11 +503,15 @@ def validate_regulated_breaking_export(
         label="qme_disposition.proof_artifact",
     )
     if not allow_synthetic_fixture:
-        _require_json_result_id(
+        _require_bound_breaking_proof(
             disposition_artifact,
             repository_root=repository_root,
             label="qme_disposition.proof_artifact",
             expected_result_id=PROOF_RESULT_IDS["qme_disposition"],
+            classical_commit=payload["classical_commit"],
+            analytic_route=payload["analytic_route"],
+            coefficient_basis=payload["coefficient_basis"],
+            coefficients=coefficients,
         )
     nontrivial = any(values[:3])
     if nontrivial:
@@ -401,19 +533,27 @@ def validate_regulated_breaking_export(
                 counterterm, repository_root=repository_root, label="exact_counterterm"
             )
             if not allow_synthetic_fixture:
-                _require_json_result_id(
+                _require_bound_breaking_proof(
                     counterterm_artifact,
                     repository_root=repository_root,
                     label="exact_counterterm",
                     expected_result_id=PROOF_RESULT_IDS["exact_counterterm"],
+                    classical_commit=payload["classical_commit"],
+                    analytic_route=payload["analytic_route"],
+                    coefficient_basis=payload["coefficient_basis"],
+                    coefficients=coefficients,
                 )
     if not isinstance(payload["claim_boundary"], str) or not payload["claim_boundary"]:
         raise ValueError("regulated-breaking claim boundary is missing")
+    export_schema = json.loads(EXPORT_SCHEMA.read_text())
+    Draft202012Validator.check_schema(export_schema)
+    Draft202012Validator(export_schema).validate(payload)
     return {
         "cohomology_coordinates": [_fraction(value) for value in values[:3]],
         "exact_coordinate": _fraction(values[3]),
         "classification": classification["status"],
         "qme_disposition": disposition["status"],
+        "insertion_decomposition": "COMPLETE_RECEIVER_INPUT",
     }
 
 
@@ -485,6 +625,19 @@ def receiver_fixture_payload(
         "coefficients": {
             key: _fraction(value) for key, value in zip(RAW_BASIS, coefficients)
         },
+        "insertion_decomposition": {
+            "regulated_slavnov_action_status": "COMPUTED",
+            "regulated_slavnov_action_artifact": artifact,
+            "cohomology_reduction_status": "VERIFIED_AGAINST_COMPLETE_GAUGE_FIXED_H14",
+            "total_derivative_status": "EXPLICIT_INCLUDING_ZERO",
+            "total_derivative_artifact": artifact,
+            "gauge_parameter_dependence_status": "INDEPENDENT_VERIFIED",
+            "gauge_parameter_dependence_artifact": artifact,
+            "regularization_dependence_status": "DEPENDENT_DECOMPOSED",
+            "regularization_dependence_artifact": artifact,
+            "antifield_completion_status": "COMPLETE_INCLUDING_ZERO",
+            "antifield_completion_artifact": artifact,
+        },
         "consistency": {
             "wess_zumino_status": "VERIFIED",
             "wess_zumino_proof": artifact,
@@ -539,6 +692,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     auxiliary = values["standard_auxiliary_fourth_order_match"]
     multiplicity = values["full_BV_multiplicity_preflight"]
     composer = values["full_BV_ledger_composer"]
+    compatibility = values["classical_snapshot_compatibility_receiver"]
     ward = values["Ward_insertion_contract"]
     if (
         g2.get("result_state")
@@ -626,6 +780,20 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"
     ):
         raise ValueError("full-BV ledger composer dependency drifted")
+    compatibility_flags = compatibility.get("claim_flags", {})
+    if (
+        compatibility.get("result_state")
+        != "CONTENT_HASH_COMPATIBILITY_RECEIVER_READY_PHYSICAL_BRIDGE_NOT_SUPPLIED"
+        or compatibility_flags.get(
+            "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY"
+        )
+        is not True
+        or compatibility_flags.get("DISTINCT_COMMITS_REQUIRE_CONTENT_PROOF")
+        is not True
+        or compatibility_flags.get("PHYSICAL_COMPATIBILITY_BRIDGE_SUPPLIED")
+        is not False
+    ):
+        raise ValueError("classical snapshot compatibility dependency drifted")
     if (
         ward.get("result_state") != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
         or ward.get("physical_input_status") != "NOT_RECEIVED"
@@ -741,6 +909,8 @@ def build() -> dict[str, Any]:
                 "York/Hodge measure and nonminimal quartet Berezinian cancellation",
                 "round-S4 standard zero-mode and priming ledger",
                 "mutation-tested full-BV local multiplicity composer for all non-TT rows",
+                "semantic cross-commit classical snapshot compatibility receiver",
+                "versioned regulated BV insertion-decomposition output contract",
                 "portable renormalized Ward-insertion input contract",
             ],
             "missing": [
@@ -771,6 +941,7 @@ def build() -> dict[str, Any]:
             "standard_factor_rank_gap": False,
             "scalar_ghost_gap_rank": 0,
             "full_BV_ledger_composer_ready": True,
+            "regulated_BV_insertion_v2_receiver_ready": True,
             "remaining_decision_gap": "after the physical TT dictionary composes the local determinant ledger, a regulated BV Slavnov insertion with Wess-Zumino and parity proofs is still required; determinant coefficients alone do not decide the QME",
             "no_further_local_graph_expansion_required": True,
         },
@@ -782,6 +953,8 @@ def build() -> dict[str, Any]:
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND": True,
             "FULL_BV_LEDGER_COMPOSER_READY": True,
+            "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
+            "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
             "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -794,7 +967,7 @@ def build() -> dict[str, Any]:
         "proof_sha256": result["proof_sha256"],
         "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all non-TT local multiplicity rows are now exact and bound by a mutation-tested composer. One physical round-S4 TT dictionary is the remaining input to the local determinant ledger. That still does not compute a BV Slavnov breaking: a complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The export receiver now permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. It proves only the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
+            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. The rank-two scalar Diff-Weyl ghost reduction, York/Hodge measure, nonminimal Berezinian, standard zero modes, determinant exponents, and all non-TT local multiplicity rows are now exact and bound by a mutation-tested composer. One physical round-S4 TT dictionary is the remaining input to the local determinant ledger. That still does not compute a BV Slavnov breaking: a complete elliptic realization, regulator and measure policy, regularized antibracket insertion, Wess-Zumino proof, and repository parity disposition remain required. The versioned v2 export receiver now requires the regulated action, total-derivative remainder, gauge-parameter dependence, regularization dependence, and antifield completion explicitly, including certified zero rows. Every insertion-side proof binds the exact commit, analytic route, basis, and coefficient hash. It permits a genuinely fourth-order metric route without inventing an auxiliary-row proof, while retaining the equivalence proof on an auxiliary route. Distinct analytic and local-BV commits additionally require a full semantic replay of the five canonical classical snapshot hashes and the role-specific nested proofs; a matching result_id alone is rejected. It proves only the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
         ),
         "provenance": {
             "source_sha256": {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -814,6 +987,9 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_BOUND") is not True
         or flags.get("FULL_BV_LEDGER_COMPOSER_READY") is not True
+        or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
+        is not True
+        or flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY") is not True
         or flags.get("CONDITIONAL_NONZERO_QME_CLASS_THEOREM") is not True
         or flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or any(

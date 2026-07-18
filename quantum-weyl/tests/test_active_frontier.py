@@ -32,6 +32,14 @@ class ActiveFrontierTests(unittest.TestCase):
                 "CLASSICAL_SNAPSHOT_COMPATIBILITY_RECEIVER_READY"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND"
+            ]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REGULATED_BV_INSERTION_V2_RECEIVER_READY"]
+        )
         self.assertTrue(self.payload["claim_flags"]["MINIMAL_KOSZUL_TATE_POSITIVE_AFN_ACYCLIC"])
         self.assertTrue(
             self.payload["claim_flags"]["MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS"]
