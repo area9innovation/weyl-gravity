@@ -796,9 +796,16 @@ carrier.  Exact polynomial elimination forces `a=b=d=0`; after rotating the
 nonzero twist velocity to one axis, the residual rank stratification and
 rotation moment map force the extra `ell=2` tensor and twist position to share
 that axis.  Thus the complete locus is the aligned `SO(3)` orbit
-`beta^2=Q_e^2/2+(2/3)X`, with no additional off-axis branch.  This closes the
-necessary bounded tangent cone, not second-order sufficiency: the full
-nonresonant `q2` source and exact off-shell block inverses remain missing.
+`beta^2=Q_e^2/2+(2/3)X`, with no additional off-axis branch.  The bounded or
+finite-quasiperiodic second-order problem is now obstructed at every nonzero
+point of this orbit.  The balance forces `B != 0`, while the zero-frequency
+polar `L=2` metric-equation source contains the exact quadratic coefficient
+`-7*B^2*t^2`; the stationary Weyl--Maxwell operator maps bounded
+finite-quasiperiodic corrections (with bounded derivatives through its order)
+to bounded sources, so it cannot cancel this growth.  This is a
+correction-class-specific no-go.  Smooth exponential-polynomial correction
+remains a separate gate until its complete channel assembly is committed, and
+the causal/retarded class remains `NO_CERTIFIED_MAP`.
 Neither source handoff activates a cyclic Bridge 2 calculation.  The
 axial--polar source uses the polar leg whose
 fixed identity cyclic compatibility is obstructed and whose corrected
