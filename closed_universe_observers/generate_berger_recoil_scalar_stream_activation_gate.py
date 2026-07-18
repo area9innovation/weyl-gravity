@@ -28,6 +28,7 @@ DEPENDENCIES = {
     "coupling_stripped": PACKAGE / "certificates/BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS.json",
     "spacetime_signs": PACKAGE / "certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
     "per_shell_word": PACKAGE / "certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+    "executable_readiness": PACKAGE / "certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -93,17 +94,38 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "status": "CERTIFIED" if word_flags["COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED"] else "OPEN",
             "evidence_flag": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
         },
+        {
+            "id": "callable_shell_interval_backend",
+            "status": "CERTIFIED" if values["executable_readiness"]["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
+        },
+        {
+            "id": "complete_detector_coefficient_provider",
+            "status": "CERTIFIED" if values["executable_readiness"]["flags"]["COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED",
+        },
+        {
+            "id": "nested_time_convolution_backend",
+            "status": "CERTIFIED" if values["executable_readiness"]["flags"]["NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED",
+        },
+        {
+            "id": "tail_aware_aggregate_stop_loop",
+            "status": "CERTIFIED" if values["executable_readiness"]["flags"]["TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED",
+        },
     ]
     external = [
-        {"id": "numerical_positive_masses", "status": "OPEN", "required_domain": "m_0>0 and m_1>0"},
-        {"id": "numerical_nonzero_couplings", "status": "OPEN", "required_domain": "g_0!=0 and g_1!=0"},
-        {"id": "scalar_stopping_goal", "status": "OPEN", "allowed": ["interval_tolerance", "nonzero", "sign"]},
+        {"id": "numerical_positive_masses", "status": "OPEN", "activation": "DEFERRED", "required_domain": "m_0>0 and m_1>0"},
+        {"id": "numerical_nonzero_couplings", "status": "OPEN", "activation": "DEFERRED", "required_domain": "g_0!=0 and g_1!=0"},
+        {"id": "scalar_stopping_goal", "status": "OPEN", "activation": "DEFERRED", "allowed": ["interval_tolerance", "nonzero", "sign"]},
     ]
     internal_ready = all(row["status"] == "CERTIFIED" for row in internal)
     external_ready = all(row["status"] == "CERTIFIED" for row in external)
     return {
         "internal_rows": internal,
         "external_rows": external,
+        "symbolic_modewise_word_ready": all(row["status"] == "CERTIFIED" for row in internal[:9]),
         "internal_modewise_stream_ready": internal_ready,
         "numerical_specialization_ready": external_ready,
         "four_scalar_stream_active": internal_ready and external_ready,
@@ -123,12 +145,13 @@ def build() -> dict[str, Any]:
         "coupling_stripped": "ABSOLUTE_G3_CHANNEL_MONOMIALS_EXPORTED",
         "spacetime_signs": "RECOIL_SWITCH_PRODUCT_RULE_COMPONENT_SIGNS_EXPORTED",
         "per_shell_word": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
+        "executable_readiness": "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
             raise AssertionError(f"dependency dropped: {name}.{flag}")
     readiness = readiness_audit(values)
-    if not readiness["internal_modewise_stream_ready"] or readiness["four_scalar_stream_active"]:
+    if not readiness["symbolic_modewise_word_ready"] or readiness["internal_modewise_stream_ready"] or readiness["four_scalar_stream_active"]:
         raise AssertionError("internal recoil readiness or external gate drifted")
     mutation = readiness_audit(values, drop_per_shell_word=True)
     word_rows = {
@@ -145,10 +168,11 @@ def build() -> dict[str, Any]:
         "the four symbolic detector tail radii, the fixed coupling-stripped "
         "preparations, the Lorentzian spacetime form-block signs, and the "
         "complete symbolic per-shell preparation/recoil word are all "
-        "certified. The internal modewise stream is therefore ready. The "
-        "four numerical streams remain inactive because numerical positive masses, "
-        "nonzero couplings and an interval/nonzero/sign stopping goal are a "
-        "separate external input gate and have not been declared. The exact "
+        "certified. The symbolic word is ready, but the executable stream is "
+        "obstructed: no callable coefficient provider, nested time-convolution "
+        "backend, shell interval evaluator or tail-aware aggregate stop loop is "
+        "exported. Numerical masses, couplings and a stopping goal are therefore "
+        "deferred; supplying them now would not produce an interval. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
         "evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, "
         "restrict to the tangent cone, activate Bridge 3, promote finite-r/"
@@ -158,8 +182,8 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
         "result_id": "BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE",
         "setting_id": values["dual_norms"]["setting_id"],
-        "claim_status": "INTERNAL_MODEWISE_RECOIL_STREAM_READY_NUMERICAL_SPECIALIZATION_OPEN",
-        "atlas_status": "OPEN",
+        "claim_status": "SYMBOLIC_WORD_READY_EXECUTABLE_RECOIL_STREAM_OBSTRUCTED",
+        "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
             name: {
@@ -171,9 +195,10 @@ def build() -> dict[str, Any]:
         },
         "readiness": readiness,
         "sequencing_decision": {
-            "completed_internal_gate": "complete modewise preparation/recoil scalar integrand with exact Peter-Weyl reconstruction",
+            "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
+            "current_active_gate": "implement validated callable finite-shell interval backend",
+            "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
         },
@@ -195,7 +220,9 @@ def build() -> dict[str, Any]:
         "flags": {
             "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": True,
             "ANALYTIC_SYMBOLIC_TAIL_ENVELOPE_COMPLETE": True,
-            "INTERNAL_MODEWISE_RECOIL_STREAM_READY": True,
+            "INTERNAL_MODEWISE_RECOIL_STREAM_READY": False,
+            "SYMBOLIC_MODEWISE_RECOIL_WORD_READY": True,
+            "EXECUTABLE_MODEWISE_RECOIL_STREAM_READY": False,
             "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
@@ -203,7 +230,7 @@ def build() -> dict[str, Any]:
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL",
+        "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

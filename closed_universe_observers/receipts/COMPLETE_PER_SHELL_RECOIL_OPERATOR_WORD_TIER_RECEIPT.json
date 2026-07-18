@@ -1,44 +1,30 @@
 {
   "schema": "closed-universe-observer-tier-receipt-v1",
   "result_id": "COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD_TIER_RECEIPT",
-  "run_date": "2026-07-18",
+  "run_date": "2026-07-19",
   "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
-  "result_boundary": "The complete generic Peter-Weyl preparation and absolute-g3 recoil coefficient functional is serialized for all eight detector/source/feedback channels and four aggregate streams, with exact spacetime form typing, both feedback switches, the physical massive correction, factored couplings, feedback-indexed tail factors and the dimension-over-volume reconstruction weight. Numerical masses, couplings and a stopping goal remain undeclared, so no numerical stream, recoil interval, cone restriction, Bridge 3, nonlinear all-orders stability or quantum claim is promoted.",
+  "result_boundary": "The eight detector/source/feedback words and four aggregate formulas remain certified symbolically. This correction records that the word is not a callable interval evaluator; numerical specialization is deferred until the executable backend closes.",
   "tier_0": [
-    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_per_shell_recoil_operator_word.py closed_universe_observers/verify_berger_per_shell_recoil_operator_word.py closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "status": "PASS"},
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_per_shell_recoil_operator_word.py closed_universe_observers/verify_berger_per_shell_recoil_operator_word.py", "status": "PASS"},
     {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
   ],
   "tier_1": [
-    {"command": "python3 -m closed_universe_observers.verify_berger_per_shell_recoil_operator_word && python3 -m closed_universe_observers.verify_berger_recoil_scalar_stream_activation_gate", "status": "PASS", "summary": "The typed word, eight channels, four aggregates and internal-ready/external-open activation split pass."},
-    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "status": "PASS", "summary": "The generated atlas certifies the symbolic word, keeps numerical records OPEN and Bridge 3 NO_CERTIFIED_MAP."},
-    {"command": "pytest -q closed_universe_observers/tests/test_berger_per_shell_recoil_operator_word.py closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 6.27, "status": "PASS", "summary": "24 per-shell-word, activation, atlas and comparison-ledger tests passed."}
+    {"command": "python3 -m closed_universe_observers.verify_berger_per_shell_recoil_operator_word", "status": "PASS", "summary": "The typed symbolic word, eight channels, four aggregates and deferred-execution boundary pass."},
+    {"command": "Scoped pytest chain listed in BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT_TIER_RECEIPT", "elapsed_seconds": 11.0, "status": "PASS", "summary": "29 word, readiness, activation, atlas and ledger tests passed."}
   ],
   "tier_2": [
-    {"command": "python3 -m closed_universe_observers.generate_berger_per_shell_recoil_operator_word --check && python3 -m closed_universe_observers.generate_berger_recoil_scalar_stream_activation_gate --check", "status": "PASS", "summary": "Both certificates regenerate byte-for-byte against their hashed dependencies."},
-    {"command": "Combined scoped certificate chain", "elapsed_seconds": 11.08, "status": "PASS", "summary": "Compile, generators, verifiers, atlas, ledger and 24 tests passed."}
+    {"command": "python3 -m closed_universe_observers.generate_berger_per_shell_recoil_operator_word --check", "status": "PASS", "summary": "The corrected certificate regenerates byte-for-byte."}
   ],
   "higher_tiers": [
     {"tier": 3, "status": "NOT_RUN", "criterion": "No numerical recoil, shared core algebra, lifecycle freeze or release was promoted."}
   ],
   "artifact_hashes": [
-    {"path": "closed_universe_observers/generate_berger_per_shell_recoil_operator_word.py", "sha256": "083d7e71298168b4d63444cd786e8b221fd82b40560c08e3963f0dd5f7e63f0b"},
-    {"path": "closed_universe_observers/verify_berger_per_shell_recoil_operator_word.py", "sha256": "3ee5c1921e5979fd3a366b6b6fdd128684f88a8eee5ea1e652442c62568fcf0c"},
-    {"path": "closed_universe_observers/tests/test_berger_per_shell_recoil_operator_word.py", "sha256": "ca0171a70afc76c662b0446dbba8e855d34a38883919d69784408e9083bd51f3"},
-    {"path": "closed_universe_observers/schema/berger-complete-per-shell-recoil-operator-word-v1.schema.json", "sha256": "dcc97432e176d9ecb572c4341e63f1f4c965e95bbd32b0e911e3a20efcbe8241"},
-    {"path": "closed_universe_observers/reports/berger-complete-per-shell-recoil-operator-word.md", "sha256": "adf4285d438ecb6973cab5b75e2ea9e9bc4f5ed797171eaa2a6082f22bf4d3d3"},
-    {"path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json", "sha256": "e946dded7a0d2a8d204e40baa337ed2a951d3cdbf71bbe9a76949b559ff37851"},
-    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json", "sha256": "2d706ebb2a76fc7773449d070c3960a6f47f42059665ab53499ae523a7e7c20b"},
-    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "893dea1c1c4b271313082dcdd40a6f3603a462048c324c1acf8a90ef772bec87"},
-    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "3b45b874ca085e5cfa7273007011e8d1b0736d4714583b4512993905dfff047e"},
-    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "ac927e5ec7731d8f75c99f7e9a883ea7988c12ce89612286cb763525742546cd"},
-    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "127e0c8f0959999ea5be22d0a62d4b7d24e9cce5de09f123f0073754514a48b0"}
+    {"path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json", "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"},
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json", "sha256": "7ddc624c40d024a9d82d965a6b1903062e2de56468cf179510084e5ce5f8c54a"}
   ],
   "claim_flags": {
-    "DETECTOR_SELECTED_PREPARATION_WORD_EXPORTED": true,
-    "ALL_EIGHT_ABC_RECOIL_CHANNEL_WORDS_EXPORTED": true,
-    "ALL_FOUR_AB_AGGREGATE_STREAMS_SERIALIZED": true,
     "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": true,
-    "INTERNAL_MODEWISE_RECOIL_STREAM_READY": true,
+    "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": false,
     "NUMERICAL_SPECIALIZATION_DECLARED": false,
     "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
     "QUANTUM_CLAIM": false

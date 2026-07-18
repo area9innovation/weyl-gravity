@@ -266,7 +266,7 @@
       "word_token_sha256": "6a4a9cdb918573accfdcb436a094bed67cc8699f297c67a00e96807c0033af7d"
     }
   ],
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result serializes the complete symbolic per-shell preparation and absolute-g3 recoil contraction for the two Berger detectors and two selected massive two-form sources. For every two_j and passive Peter-Weyl right column k, it types the coupling-stripped advanced preparation word, the free emitter evolution, both switched coderivatives, both retarded Maxwell factors, the physical massive Green factor (I+m_c^-2 d delta)G_(wave2+m_c^2), the detector field strength and the final profile pairing. The exact switch product rule fixes the h-prime component. Eight a,b,c channel words carry g_b g_c^2 and combine into four a,b streams with the exact Peter-Weyl weight (two_j+1)/Vol_Berger. Exact dimension audits through two_j=4 have zero composition defects and mutations detect deletion of the outer feedback switch, d/delta interchange, coupling absorption and omission of the Peter-Weyl weight. This is a complete generic symbolic integrand and coefficient functional, not a numerical evaluation: m_0,m_1 remain symbolic positive, g_0,g_1 remain symbolic nonzero, and no interval/nonzero/sign stopping goal has been declared. It does not export four recoil intervals, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability or make a quantum claim.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result serializes the complete symbolic per-shell preparation and absolute-g3 recoil contraction for the two Berger detectors and two selected massive two-form sources. For every two_j and passive Peter-Weyl right column k, it types the coupling-stripped advanced preparation word, the free emitter evolution, both switched coderivatives, both retarded Maxwell factors, the physical massive Green factor (I+m_c^-2 d delta)G_(wave2+m_c^2), the detector field strength and the final profile pairing. The exact switch product rule fixes the h-prime component. Eight a,b,c channel words carry g_b g_c^2 and combine into four a,b streams with the exact Peter-Weyl weight (two_j+1)/Vol_Berger. Exact dimension audits through two_j=4 have zero composition defects and mutations detect deletion of the outer feedback switch, d/delta interchange, coupling absorption and omission of the Peter-Weyl weight. This is a complete generic symbolic integrand and coefficient functional, not an executable interval evaluator: no callable detector-coefficient provider, nested time-convolution backend, shell evaluator or tail-aware stop loop is exported. Numerical specialization is therefore deferred even though m_0,m_1 and g_0,g_1 remain symbolic. It does not export four recoil intervals, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability or make a quantum claim.",
   "claim_status": "COMPLETE_SYMBOLIC_PER_SHELL_PREPARATION_AND_ABSOLUTE_G3_RECOIL_INTEGRAND_EXPORTED",
   "dependency_refs": {
     "coupling_stripped": {
@@ -320,10 +320,11 @@
     "LORENTZIAN-CAUSAL"
   ],
   "external_specialization_gate": {
+    "activation": "DEFERRED_UNTIL_EXECUTABLE_INTERVAL_BACKEND",
     "four_streams_active": false,
-    "numerical_nonzero_couplings": "OPEN: choose g_0!=0,g_1!=0",
-    "numerical_positive_masses": "OPEN: choose m_0>0,m_1>0",
-    "stopping_goal": "OPEN: choose interval_tolerance, nonzero, or sign"
+    "numerical_nonzero_couplings": "OPEN but deferred: later choose g_0!=0,g_1!=0",
+    "numerical_positive_masses": "OPEN but deferred: later choose m_0>0,m_1>0",
+    "stopping_goal": "OPEN but deferred: later choose interval_tolerance, nonzero, or sign"
   },
   "flags": {
     "ABSOLUTE_G3_COUPLINGS_FACTORED": true,
@@ -381,7 +382,7 @@
       "required_weight": "(two_j+1)/Vol_Berger"
     }
   ],
-  "next_gate": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL",
+  "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
   "operator_definitions": {
     "Deltahat_2_after_switch": "delta(h(alpha,beta))=(-h deltaSigma alpha,h partial_t alpha+(partial_t h)alpha+h deltaSigma beta)",
     "Dhat_1": "(phi,a)->(partial_t a-dSigma phi,dSigma a)",
@@ -460,7 +461,7 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_per_shell_recoil_operator_word.py",
-        "sha256": "083d7e71298168b4d63444cd786e8b221fd82b40560c08e3963f0dd5f7e63f0b"
+        "sha256": "bcded89f86c8ed91631d931460e756c4ee8acee40c98986cb0f8bf325a452d0c"
       },
       {
         "path": "closed_universe_observers/verify_berger_per_shell_recoil_operator_word.py",
@@ -468,15 +469,15 @@
       },
       {
         "path": "closed_universe_observers/tests/test_berger_per_shell_recoil_operator_word.py",
-        "sha256": "ca0171a70afc76c662b0446dbba8e855d34a38883919d69784408e9083bd51f3"
+        "sha256": "384386645b4293da04fcecf2985a959aeba91e66115f18b7b4c81383d35cfa0d"
       },
       {
         "path": "closed_universe_observers/schema/berger-complete-per-shell-recoil-operator-word-v1.schema.json",
-        "sha256": "dcc97432e176d9ecb572c4341e63f1f4c965e95bbd32b0e911e3a20efcbe8241"
+        "sha256": "06ca21ffe9a97c1838e7b2503ea3ebb419062387845e9ce406885e2edb6bcd25"
       },
       {
         "path": "closed_universe_observers/reports/berger-complete-per-shell-recoil-operator-word.md",
-        "sha256": "adf4285d438ecb6973cab5b75e2ea9e9bc4f5ed797171eaa2a6082f22bf4d3d3"
+        "sha256": "0d3a14176f052b708114987c40443b7e856fd295996eeb7e0ee2f5527afcdc91"
       }
     ]
   },

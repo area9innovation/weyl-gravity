@@ -36,3 +36,5 @@ def test_symbolic_integrand_does_not_activate_numerical_streams():
     value = build()
     assert value["flags"]["COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED"] is True
     assert value["external_specialization_gate"]["four_streams_active"] is False
+    assert value["external_specialization_gate"]["activation"] == "DEFERRED_UNTIL_EXECUTABLE_INTERVAL_BACKEND"
+    assert value["next_gate"] == "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND"

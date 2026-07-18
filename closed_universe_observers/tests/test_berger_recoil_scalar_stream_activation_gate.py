@@ -1,12 +1,13 @@
 from closed_universe_observers.generate_berger_recoil_scalar_stream_activation_gate import build
 
 
-def test_analytic_tail_envelope_and_symbolic_modewise_integrand_are_ready():
+def test_analytic_tail_envelope_and_symbolic_modewise_word_are_ready():
     value = build()
     rows = {row["id"]: row["status"] for row in value["readiness"]["internal_rows"]}
     assert rows["response_specific_stopping_envelope"] == "CERTIFIED"
     assert rows["complete_modewise_recoil_scalar_integrand"] == "CERTIFIED"
-    assert value["readiness"]["internal_modewise_stream_ready"] is True
+    assert value["readiness"]["symbolic_modewise_word_ready"] is True
+    assert value["readiness"]["internal_modewise_stream_ready"] is False
 
 
 def test_preparation_and_advanced_words_are_symbolically_serialized():
@@ -15,10 +16,22 @@ def test_preparation_and_advanced_words_are_symbolically_serialized():
     assert rows["advanced_massive_preparation_operator_word"] == "CERTIFIED"
 
 
-def test_external_parameters_are_a_later_separate_gate():
+def test_external_parameters_are_deferred_until_executable_backend():
     value = build()
     assert value["sequencing_decision"]["parameterization_during_internal_gate"] == (
         "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials"
     )
     assert all(row["status"] == "OPEN" for row in value["readiness"]["external_rows"])
+    assert all(row["activation"] == "DEFERRED" for row in value["readiness"]["external_rows"])
+    assert value["sequencing_decision"]["current_active_gate"] == "implement validated callable finite-shell interval backend"
     assert value["flags"]["FOUR_RECOIL_SCALAR_STREAM_ACTIVE"] is False
+
+
+def test_missing_execution_capabilities_obstruct_activation():
+    value = build()
+    rows = {row["id"]: row["status"] for row in value["readiness"]["internal_rows"]}
+    assert rows["callable_shell_interval_backend"] == "OBSTRUCTED"
+    assert rows["complete_detector_coefficient_provider"] == "OBSTRUCTED"
+    assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
+    assert rows["tail_aware_aggregate_stop_loop"] == "OBSTRUCTED"
+    assert value["atlas_status"] == "OBSTRUCTED"

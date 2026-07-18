@@ -8,14 +8,14 @@
     "result_id": {"const": "BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE"},
     "setting_id": {"type": "string"},
     "claim_status": {"type": "string"},
-    "atlas_status": {"const": "OPEN"},
+    "atlas_status": {"const": "OBSTRUCTED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
-    "dependency_refs": {"type": "object", "minProperties": 10, "maxProperties": 10},
-    "readiness": {"type": "object", "required": ["internal_rows", "external_rows", "internal_modewise_stream_ready", "numerical_specialization_ready", "four_scalar_stream_active"]},
+    "dependency_refs": {"type": "object", "minProperties": 11, "maxProperties": 11},
+    "readiness": {"type": "object", "required": ["internal_rows", "external_rows", "symbolic_modewise_word_ready", "internal_modewise_stream_ready", "numerical_specialization_ready", "four_scalar_stream_active"]},
     "sequencing_decision": {"type": "object"},
     "mutation_results": {"type": "array", "minItems": 2},
     "flags": {"type": "object"},
-    "next_gate": {"const": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL"},
+    "next_gate": {"const": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND"},
     "claim_boundary": {"type": "string"},
     "provenance": {"type": "object"}
   }

@@ -783,21 +783,28 @@ unit clock bump leaves the spatial dual norm of `rho_a J_a dR_aI`.  The
 repaired measure and validated radial `B,B^2` integrals give distinct norm
 uppers below `1.204e3` for D0 and `2.537e3` for D1.  Their products with both
 massive constants certify the four symbolic tail radii
-`D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A`.  No scalar interval is promoted: the
-complete streamed integrand, numerical masses/couplings and a declared
+`D_a(3H_b^2/m_b^2+8H_b/(3m_b))E_A`.  No scalar interval is promoted:
+executable shell evaluation, numerical masses/couplings and a declared
 interval, nonzero or sign stopping goal remain `OPEN`.
 
-`BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` now records completion of the
-internal symbolic gate.  `BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD`
+`BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` records completion of the
+symbolic operator gate.  `BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD`
 serializes the coupling-stripped advanced preparation and full retarded
 absolute-`g3` contraction in every Peter–Weyl shell.  Its eight `(a,b,c)`
 channels carry `g_b g_c^2`, use both feedback switches and the physical
 massive correction, and combine into four `(a,b)` streams with exact weight
 `(two_j+1)/Vol_Berger`.  The channel tail is correctly indexed by the feedback
 emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
-composition defects.  The internal stream is ready; numerical positive
-masses, nonzero couplings and an interval/nonzero/sign goal remain the active
-external gate, so no scalar interval is promoted.
+composition defects.
+
+`BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
+boundary.  The symbolic word is not a callable interval stream: the package
+has no detector-coefficient provider, nested advanced/retarded time-
+convolution backend, one-shell interval evaluator, or tail-aware aggregate
+stop loop.  Supplying masses and couplings now would still produce no
+interval.  The active gate is the validated callable finite-shell backend.
+An exact-rational input schema in the certified `gHat` operator units is
+exported but its numerical values remain deferred.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as
@@ -805,8 +812,8 @@ order ambiguity before that construction.  The advanced covector factors as
 fixed data `tilde_u_a`.  Therefore the leading diagonal is
 `g_a tilde_E_a`, its determinant remains nonzero for the declared nonzero
 couplings, and each absolute-`g3` channel has the explicit monomial
-`g_b g_c^2`.  This is not adaptive response normalization and does not fill
-the still-open harmonic coefficients or massive images.
+`g_b g_c^2`.  This is not adaptive response normalization; the later
+symbolic shell word still requires a separate executable backend.
 
 `BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE` closes the convention gate for the
 per-shell word.  With `dt wedge alpha+beta`, the exported matrices give

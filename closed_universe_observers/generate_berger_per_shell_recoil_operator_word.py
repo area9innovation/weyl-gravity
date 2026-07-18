@@ -212,7 +212,7 @@ def build() -> dict[str, Any]:
     omitted_dimension_weight = "1/Vol_Berger"
 
     boundary = (
-        "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result serializes the complete symbolic per-shell preparation and absolute-g3 recoil contraction for the two Berger detectors and two selected massive two-form sources. For every two_j and passive Peter-Weyl right column k, it types the coupling-stripped advanced preparation word, the free emitter evolution, both switched coderivatives, both retarded Maxwell factors, the physical massive Green factor (I+m_c^-2 d delta)G_(wave2+m_c^2), the detector field strength and the final profile pairing. The exact switch product rule fixes the h-prime component. Eight a,b,c channel words carry g_b g_c^2 and combine into four a,b streams with the exact Peter-Weyl weight (two_j+1)/Vol_Berger. Exact dimension audits through two_j=4 have zero composition defects and mutations detect deletion of the outer feedback switch, d/delta interchange, coupling absorption and omission of the Peter-Weyl weight. This is a complete generic symbolic integrand and coefficient functional, not a numerical evaluation: m_0,m_1 remain symbolic positive, g_0,g_1 remain symbolic nonzero, and no interval/nonzero/sign stopping goal has been declared. It does not export four recoil intervals, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability or make a quantum claim."
+        "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result serializes the complete symbolic per-shell preparation and absolute-g3 recoil contraction for the two Berger detectors and two selected massive two-form sources. For every two_j and passive Peter-Weyl right column k, it types the coupling-stripped advanced preparation word, the free emitter evolution, both switched coderivatives, both retarded Maxwell factors, the physical massive Green factor (I+m_c^-2 d delta)G_(wave2+m_c^2), the detector field strength and the final profile pairing. The exact switch product rule fixes the h-prime component. Eight a,b,c channel words carry g_b g_c^2 and combine into four a,b streams with the exact Peter-Weyl weight (two_j+1)/Vol_Berger. Exact dimension audits through two_j=4 have zero composition defects and mutations detect deletion of the outer feedback switch, d/delta interchange, coupling absorption and omission of the Peter-Weyl weight. This is a complete generic symbolic integrand and coefficient functional, not an executable interval evaluator: no callable detector-coefficient provider, nested time-convolution backend, shell evaluator or tail-aware stop loop is exported. Numerical specialization is therefore deferred even though m_0,m_1 and g_0,g_1 remain symbolic. It does not export four recoil intervals, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability or make a quantum claim."
     )
     return {
         "schema": "closed-universe-berger-complete-per-shell-recoil-operator-word-v1",
@@ -281,9 +281,10 @@ def build() -> dict[str, Any]:
             {"name": "omit_Peter_Weyl_dimension_over_volume_weight", "detected": omitted_dimension_weight != canonical_weight, "mutated_weight": omitted_dimension_weight, "required_weight": canonical_weight},
         ],
         "external_specialization_gate": {
-            "numerical_positive_masses": "OPEN: choose m_0>0,m_1>0",
-            "numerical_nonzero_couplings": "OPEN: choose g_0!=0,g_1!=0",
-            "stopping_goal": "OPEN: choose interval_tolerance, nonzero, or sign",
+            "activation": "DEFERRED_UNTIL_EXECUTABLE_INTERVAL_BACKEND",
+            "numerical_positive_masses": "OPEN but deferred: later choose m_0>0,m_1>0",
+            "numerical_nonzero_couplings": "OPEN but deferred: later choose g_0!=0,g_1!=0",
+            "stopping_goal": "OPEN but deferred: later choose interval_tolerance, nonzero, or sign",
             "four_streams_active": False,
         },
         "flags": {
@@ -299,7 +300,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "DECLARE_NUMERICAL_POSITIVE_MASSES_NONZERO_COUPLINGS_AND_INTERVAL_NONZERO_OR_SIGN_STOPPING_GOAL",
+        "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

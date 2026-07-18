@@ -21,5 +21,8 @@ The tail factor is indexed by the feedback emitter: each channel uses
 `D_a C_c(m_c) E_A,b`, and the aggregate envelope sums its two `c` terms.
 
 This completes the symbolic scalar integrand for arbitrary positive masses.
-It does not choose numerical masses or couplings, declare a stopping goal, or
-evaluate the four recoil intervals.
+It does not implement the callable coefficient provider, nested time
+convolutions, shell interval evaluator, or tail-aware aggregate stop loop.
+Numerical masses, couplings and a stopping goal are therefore deferred until
+that executable backend exists; none of the four recoil intervals is
+evaluated here.

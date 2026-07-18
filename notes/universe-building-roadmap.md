@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark by supplying a generic primed Green/spectral carrier, compute any local zeta multiplicative term and the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    serialize the complete modewise recoil integrand with symbolic masses and factored couplings, then declare numerical parameters/goal and stream four intervals before restricting records to Z2^C
+Observer:    implement a validated callable finite-shell recoil interval backend, then accept exact numerical inputs and stream four intervals before restricting records to Z2^C
 Black hole:  polar sector and complex-frequency structure (BH-2A axial closed: extra branch certified causally unavoidable)
 ```
 
@@ -502,31 +502,37 @@ spatial `L2` norms of the two normalized rod profiles.  The resulting bounds
 are below `1.204e3` for D0 and `2.537e3` for D1.  Composing them with the
 Maxwell and massive constants exports all four symbolic tail radii
 `D_a C_b(m_b) E_A`.  This is the certified stopping envelope, not a numerical
-recoil interval: the complete modewise scalar integrand, numerical masses and
-couplings, and a declared tolerance/nonzero/sign goal remain open.
-The recoil-stream activation audit improves the order of those remaining
-tasks.  Numerical specialization is not yet the active gate: the selected
-preparations are still operator-defined, with harmonic coefficients and the
-advanced massive image explicitly unevaluated.  First serialize the complete
-per-shell preparation/recoil contraction with positive masses symbolic and
-coupling monomials factored.  Only then request numerical masses, nonzero
-couplings and an interval/nonzero/sign stopping goal.  The four streams remain
-`OPEN`; the symbolic tail radii alone do not activate them.
+recoil interval: executable shell evaluation, numerical masses and couplings,
+and a declared tolerance/nonzero/sign goal remain open.
+The complete per-shell successor now closes the internal symbolic part.  It
+serializes the detector-selected advanced preparation and absolute-`g3`
+retarded word in every Peter–Weyl shell, with exact spacetime form blocks,
+both feedback switches, the physical massive correction, eight factored
+`g_b g_c^2` channels, four aggregate streams and the reconstruction weight
+`(two_j+1)/Vol_Berger`.  Its factorwise tail is indexed by the feedback
+emitter, `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` close.
+The executable-readiness audit preserves that symbolic theorem but blocks its
+promotion to a numerical stream.  No callable detector-coefficient provider,
+nested time-convolution backend, per-shell interval evaluator or tail-aware
+aggregate stop loop currently exists.  Supplying masses and couplings would
+therefore still not produce an interval.  The active gate is a validated
+callable finite-shell backend; exact numerical inputs remain deferred under
+the new strict specialization schema.
 The coupling-stripped preparation successor fixes the formal-order convention
 needed by that stream.  Since the advanced detector covector is linear in
 nonzero `g_a`, write `v_a=g_a tilde_v_a` and hold its positive-energy dual
 `tilde_u_a` fixed.  Then `M_aa^(1)=g_a tilde_E_a`, the leading determinant is
 `g_0 g_1 tilde_E_0 tilde_E_1`, and each absolute-`g3` channel carries exactly
 `g_b g_c^2`.  This is scalar factorization, not response normalization; the
-harmonic coefficients and per-shell contractions remain open.
+later symbolic per-shell word does not itself evaluate those contractions.
 The spacetime form-block sign bridge now fixes the remaining convention-level
 input.  For `dt wedge alpha+beta`, the exact Berger blocks use
 `d(alpha,beta)=(partial_t beta-dSigma alpha,dSigma beta)` and
 `delta(alpha,beta)=(-deltaSigma alpha,partial_t alpha+deltaSigma beta)`.
 Exact audits through `two_j=4` give `d^2=delta^2=0` and diagonal
 `partial_t^2+Delta` wave blocks for both Maxwell one-forms and emitter
-two-forms.  The per-shell recoil word can now be serialized without an
-implicit sign choice; profile coefficients and time convolutions remain open.
+two-forms.  These signs are used by the now-certified complete symbolic
+per-shell recoil word; numerical time convolutions remain open.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`; only that completion activates declared `K_Berger` equivariance and
@@ -1377,7 +1383,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative cutoff obstruction, correlated high-mode central/axial/intermediate scalar sentinels, adaptive even/odd diagonal-fraction rails through selected `two_j=1025` rows, 270 selected polarized clock-power intervals through `p=28`, an exact 33-companion charge-block closure gate, and completed 18-row scalar input union, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | construct and clock-propagate 33 charge-block form companions through `p=28`, apply the exact temporal functional calculus and certify a controlled spatial tail, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, selected 108-row massive emitters, complete unary and causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, complete symbolic per-shell preparation/recoil word with four aggregate formulas, exact normalized switches, response-specific symbolic tail envelopes, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | implement and validate a callable finite-shell interval backend, then accept exact masses/couplings and a stopping goal, stream four recoil intervals, and restrict records to the second-order cone; in parallel refine `q1 q2` to a support-local PBW payload and solve the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -1622,9 +1628,11 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL` (fired; field-strength tail certified, dense rail unselected) | certify the finite-time massive retarded energy constant on the exact switch slabs and combine it with the graph tail inside the response-specific scalar stream; do not materialize the 14,177,143,864-entry sub-unit rail |
 | `BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT` (fired for symbolic positive masses) | certify the downstream Maxwell-to-detector dual norms and stream the four recoil scalar intervals; retain the unsmoothed longitudinal `1/m_b^2` contribution and do not invent numerical masses |
 | `BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS` (fired for both detectors and symbolic positive masses) | use the recoil-stream activation successor to separate the internal integrand from later numerical inputs; do not promote the symbolic radii to evaluated coefficients |
-| `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` (fired; analytic envelope complete, stream inactive) | serialize the complete per-shell preparation and recoil contraction with symbolic positive masses and factored couplings before numerical specialization; operator-defined preparations are not harmonic data |
+| `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` (fired; symbolic word ready, executable stream obstructed) | implement the validated callable finite-shell interval backend; defer external parameters until it can return directed-rounding intervals |
 | `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` (fired; fixed formal Cauchy data) | build the per-shell word for fixed `tilde_u_b`, symbolic positive masses and explicit `g_b g_c^2`; do not count the selection coupling twice |
 | `BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE` (fired; d/delta signs and wave split exact) | serialize the fixed-`tilde_u_b` per-shell recoil operator word using the exact spacetime blocks; do not infer a scalar value from convention closure |
+| `BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD` (fired; eight channels and four symbolic formulas complete) | pass through the executable-readiness audit; do not identify a typed operator word with a callable interval stream |
+| `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; four backend capabilities obstructed) | implement the detector coefficient provider, nested causal convolution, one-shell interval evaluator and tail-aware four-stream stop loop; only then activate the exact numerical input schema |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |

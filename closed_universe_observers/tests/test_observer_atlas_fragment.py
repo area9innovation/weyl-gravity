@@ -26,6 +26,18 @@ def test_tangent_cone_is_not_promoted():
     assert {second_order[name]["status"] for name in ("bounded_or_finite_quasiperiodic", "smooth_secular", "causal_retarded")} == {"OPEN"}
 
 
+def test_recoil_executable_readiness_is_fail_closed():
+    rows = {row["id"]: row for row in build()["entries"]}
+    readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]
+    activation = rows["observer.berger.detector_profile.recoil_scalar_stream_activation"]
+    assert readiness["descriptions"]["causal"] == "OBSTRUCTED"
+    assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
+    assert activation["observer_data"]["profile_green_boundary_dependencies"]["status"] == "OBSTRUCTED"
+    assert "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT" in {
+        evidence["result_id"] for evidence in activation["evidence"]
+    }
+
+
 def test_mixed_unary_precedes_apparatus_and_affine_k_morphism():
     value = build()
     row = next(row for row in value["entries"] if row["id"] == "observer.berger.massive_emitter.preparation_pair")

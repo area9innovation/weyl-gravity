@@ -1,0 +1,149 @@
+{
+  "atlas_status": "OBSTRUCTED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to an executable interval stream. No callable backend currently provides the detector coefficient intervals, nested advanced/retarded time convolutions, per-shell interval evaluation, or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce an interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
+  "claim_status": "SYMBOLIC_WORD_CERTIFIED_EXECUTABLE_INTERVAL_STREAM_OBSTRUCTED",
+  "dependency_refs": {
+    "mode_kernels": {
+      "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+      "result_id": "BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS",
+      "sha256": "f39348c599ca4c69461bc1ebaf2d32c51a733865165b66e4815d26c53cb48ecc"
+    },
+    "per_shell_word": {
+      "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+      "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+      "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"
+    },
+    "tail_envelopes": {
+      "path": "closed_universe_observers/certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
+      "result_id": "BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS",
+      "sha256": "3120fc7f60a43c2990bb2aca2a1dd41b7ceec4f099bfb8b280998c6d177d5041"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "execution_protocol": {
+    "backend_module": "closed_universe_observers/berger_recoil_interval_stream.py",
+    "backend_module_present": false,
+    "discovered_module_callables": [],
+    "interval_output_requirement": "directed-rounding lower/upper endpoints plus retained-shell and analytic-tail bounds",
+    "required_callables": {
+      "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
+      "nested_time_convolution_backend": "evaluate_nested_green_time_convolution_interval",
+      "shell_interval_evaluator": "evaluate_recoil_shell_interval",
+      "tail_aware_aggregate_stop_loop": "stream_recoil_intervals"
+    }
+  },
+  "flags": {
+    "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": false,
+    "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": false,
+    "COMPLETE_SYMBOLIC_OPERATOR_WORD_RETAINED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
+    "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": false,
+    "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED": true,
+    "NUMERICAL_SPECIALIZATION_VALUES_DECLARED": false,
+    "QUANTUM_CLAIM": false,
+    "TAIL_AWARE_AGGREGATE_STOP_LOOP_EXPORTED": false
+  },
+  "mode_scope": {
+    "background": "compact positive Berger clock at fixed coupling",
+    "boundaries": "R x S3 with retarded/advanced time support and no spatial boundary",
+    "carrier": "Peter-Weyl spacetime one-form/two-form blocks and emitter Cauchy data",
+    "charge_sector": "fixed-coupling Berger sector; no compact-product mode import",
+    "degree": "Maxwell 1-form, field/emitter 2-form, emitter Cauchy pair",
+    "ell": "two_j=0,1,...",
+    "k": "all passive right columns k=0,...,two_j",
+    "m": "all representation rows inside each form block",
+    "omega": "exact retarded/advanced time convolution; no frequency discretization",
+    "parity": "all form polarizations",
+    "theory": "classical pure-Weyl gravity plus Berger clock, Maxwell detector apparatus and two selected massive two-form emitters"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "treat_symbolic_operator_word_as_executable_backend"
+    },
+    {
+      "detected": true,
+      "name": "request_external_values_before_internal_backend"
+    }
+  ],
+  "next_gate": "IMPLEMENT_VALIDATED_CALLABLE_FINITE_SHELL_INTERVAL_BACKEND",
+  "numerical_input_contract": {
+    "operator_units": "certified_gHat_clock_and_Berger_spatial_operator_units",
+    "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
+    "sha256": "c509321fe2f7bc2d73f6cb55872fcff3b04ac9e26cc80c21c7c95caf733ce8d5",
+    "status": "CERTIFIED_SCHEMA_VALUES_DEFERRED"
+  },
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_stream_executable_readiness_audit.py",
+        "sha256": "c2ed55d747d5bef7cc62fc9d02957c45a84ffe2759b1f72c2db6fb848c5aa10d"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_stream_executable_readiness_audit.py",
+        "sha256": "37375d5b63a4d50a4c4528b985d4413d7a03d2a31ef94adc0676cc13b1a69a87"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py",
+        "sha256": "7bc0264bb0682a1a615c80194185d638592e4ba47fdc1fa8d6dce0c7032968fd"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-stream-executable-readiness-audit-v1.schema.json",
+        "sha256": "75a4960adc81f850d8bdcc05c3b30cea5f367ae95af4658b1fb7a32c59969fa4"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
+        "sha256": "c509321fe2f7bc2d73f6cb55872fcff3b04ac9e26cc80c21c7c95caf733ce8d5"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-stream-executable-readiness-audit.md",
+        "sha256": "e8536ca2d802df10ac5800783021aafa597e31ba988977bb8212aa6a08afa7c7"
+      }
+    ]
+  },
+  "readiness": {
+    "external_specialization_deferred": true,
+    "four_scalar_stream_active": false,
+    "internal_executable_stream_ready": false,
+    "rows": [
+      {
+        "evidence": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+        "id": "complete_symbolic_operator_word",
+        "status": "CERTIFIED"
+      },
+      {
+        "evidence": "NO_CALLABLE_IMPLEMENTATION",
+        "id": "detector_profile_coefficient_provider",
+        "required_callable": "detector_profile_coefficient_interval",
+        "status": "OBSTRUCTED"
+      },
+      {
+        "evidence": "NO_CALLABLE_IMPLEMENTATION",
+        "id": "nested_time_convolution_backend",
+        "required_callable": "evaluate_nested_green_time_convolution_interval",
+        "status": "OBSTRUCTED"
+      },
+      {
+        "evidence": "NO_CALLABLE_IMPLEMENTATION",
+        "id": "shell_interval_evaluator",
+        "required_callable": "evaluate_recoil_shell_interval",
+        "status": "OBSTRUCTED"
+      },
+      {
+        "evidence": "NO_CALLABLE_IMPLEMENTATION",
+        "id": "tail_aware_aggregate_stop_loop",
+        "required_callable": "stream_recoil_intervals",
+        "status": "OBSTRUCTED"
+      }
+    ],
+    "symbolic_word_ready": true
+  },
+  "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
+  "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

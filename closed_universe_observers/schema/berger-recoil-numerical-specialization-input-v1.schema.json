@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "operator_units", "masses", "couplings", "stopping_goal"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-numerical-specialization-input-v1"},
+    "operator_units": {"const": "certified_gHat_clock_and_Berger_spatial_operator_units"},
+    "masses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["m_0", "m_1"],
+      "properties": {
+        "m_0": {"type": "string", "pattern": "^[1-9][0-9]*(/[1-9][0-9]*)?$"},
+        "m_1": {"type": "string", "pattern": "^[1-9][0-9]*(/[1-9][0-9]*)?$"}
+      }
+    },
+    "couplings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["g_0", "g_1"],
+      "properties": {
+        "g_0": {"type": "string", "pattern": "^-?[1-9][0-9]*(/[1-9][0-9]*)?$"},
+        "g_1": {"type": "string", "pattern": "^-?[1-9][0-9]*(/[1-9][0-9]*)?$"}
+      }
+    },
+    "stopping_goal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "absolute_tolerance"],
+          "properties": {
+            "kind": {"const": "interval_tolerance"},
+            "absolute_tolerance": {"type": "string", "pattern": "^[1-9][0-9]*(/[1-9][0-9]*)?$"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "minimum_margin"],
+          "properties": {
+            "kind": {"const": "nonzero"},
+            "minimum_margin": {"type": "string", "pattern": "^[1-9][0-9]*(/[1-9][0-9]*)?$"}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "expected_sign", "minimum_margin"],
+          "properties": {
+            "kind": {"const": "sign"},
+            "expected_sign": {"enum": ["positive", "negative"]},
+            "minimum_margin": {"type": "string", "pattern": "^[1-9][0-9]*(/[1-9][0-9]*)?$"}
+          }
+        }
+      ]
+    }
+  }
+}

@@ -88,15 +88,17 @@ the clock lapse reduces each detector functional to a spatial `L2` pairing,
 giving distinct rigorous energy-dual bounds for the axial D0 and transverse
 D1 profiles.  Composing those bounds with the Maxwell graph tail and both
 symbolic positive-mass finite-slab constants exports four symbolic recoil-tail
-radii.  The atlas keeps the actual recoil scalars `OPEN`: numerical masses and
-couplings and a stopping goal have not been supplied.
+radii.  The atlas keeps the actual recoil scalars fail-closed: executable
+shell evaluation is absent and numerical inputs remain deferred.
 The complete per-shell recoil-word row is `CERTIFIED`.  It types the advanced
 detector-selected preparation and the full retarded absolute-`g3` word in
 every Peter–Weyl shell, including both feedback switches, the physical
 massive correction, the exact dimension/volume weight, eight `(a,b,c)`
-channels and four aggregate streams.  The adjacent activation row therefore
-marks the internal modewise stream ready.  Its external parameters remain
-`OPEN`, so none of the four numerical streams is active.
+channels and four aggregate formulas.  The adjacent executable-readiness and
+activation rows are `OBSTRUCTED`: no callable detector-coefficient provider,
+nested causal time convolution, shell interval evaluator or tail-aware stop
+loop exists.  External parameters are deferred, so none of the four numerical
+streams is active.
 The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
 coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy
 datum.  Leading columns carry `g_b`, while absolute-`g3` recoil channels carry
