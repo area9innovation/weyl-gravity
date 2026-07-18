@@ -425,10 +425,14 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   BGG first square and Yang--Mills parent identity coefficientwise.  The exact
   shifted-chain variation retains 207 coefficients, and the endpoint gauge
   defect has zeroth- and second-order words; hence a purely algebraic Schur
-  correction cannot suffice.  The differential action-derived Schur,
-  rank-310 SDR variation and causal transfer stay open:
+  correction cannot suffice.  The complete first-order local Schur gauge map
+  is now a `60 x 45` full-column-rank system on each output row, with a unique
+  59-coefficient solution and zero residual.  Its action-derived/cyclic
+  identification, rank-310 SDR variation and causal transfer stay open:
   [`certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json),
-  [`reports/nariai-transverse-jet-aware-middle-schur-variation.md`](reports/nariai-transverse-jet-aware-middle-schur-variation.md)
+  [`reports/nariai-transverse-jet-aware-middle-schur-variation.md`](reports/nariai-transverse-jet-aware-middle-schur-variation.md),
+  [`certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json`](certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json),
+  [`reports/nariai-transverse-first-order-schur-solve.md`](reports/nariai-transverse-first-order-schur-solve.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer
