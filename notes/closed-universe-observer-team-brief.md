@@ -717,6 +717,17 @@ commutator bound is `NO_CERTIFIED_MAP`, and the complete low-mode projection
 is still open.  The active gate is that moving-profile derivative estimate,
 not immediate widening to `3421` or full-image promotion.
 
+`BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL` now closes that derivative
+estimate.  Differentiation at fixed Berger spatial point retains the moving
+support, `a^3 y0` Gram factor and polarization; correlated quadrature gives
+finite bounds for both `||Delta1 partial_a F||` and
+`||Delta1 partial_a^2 F||`.  The resulting operator-valued clock estimate is
+about `196` above retained `two_j=1024`, and its first sub-unit sufficient
+cutoff is `two_j=3835` for both detector polarizations.  Thus the physical
+tail route is certified, but not yet completed: no complete retained
+projection through `3835` exists.  That projection is now the active gate
+before the massive-two-form image, recoil coefficient and cone restriction.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

@@ -1,0 +1,37 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "Fixed-point amplitude differentiation and correlated physical-space quadrature certify Delta1 norms for the first two derivatives of the actual moving detector profile. An operator-valued two-integration-by-parts estimate gives physical Maxwell tail uppers about 196 above retained two_j=1024 and the first sub-unit sufficient cutoff two_j=3835. The complete retained projection, massive continuation, full Green image, response/rank, recoil, tangent-cone restriction, active Bridge 3, nonlinear all-orders stability and quantum claims remain open.",
+  "tier_0": [{"command": "python3 -m py_compile on producer, verifier and scoped tests; JSON/schema parse; git diff --check", "status": "PASS"}],
+  "tier_1": [
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_moving_profile_clock_derivative_tail.py", "elapsed_seconds": 117.73, "status": "PASS", "summary": "3 tests passed, independently rebuilding both derivative channels, cutoff minimality and fail-closed projection/response flags."},
+    {"command": "python3 -m closed_universe_observers.verify_berger_moving_profile_clock_derivative_tail", "elapsed_seconds": 123.12, "status": "PASS", "summary": "The certificate regenerated exactly; cutoff 3835 is sufficient and 3834 fails for at least one polarization."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json", "status": "PASS", "summary": "The generated atlas certifies the physical tail bound while projection, full image, response, recoil and cone fields remain open."},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "status": "PASS", "summary": "The claims ledger accepts the moving-profile artifact without activating either physical-branch crosswalk."}
+  ],
+  "tier_2": [{"command": "python3 -m closed_universe_observers.verify_berger_moving_profile_clock_derivative_tail", "status": "PASS", "summary": "Byte-for-byte regeneration exercised four 4096-cell derivative quadratures and the exact cutoff search."}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "No complete projection, full image, response/recoil, shared core-algebra, freeze or release promotion was claimed."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_moving_profile_clock_derivative_tail.py", "sha256": "605d93e4f6e0bf6dfb29de6e8ec2de08bc9866fe3efe2d274959ddb8eade31e0"},
+    {"path": "closed_universe_observers/verify_berger_moving_profile_clock_derivative_tail.py", "sha256": "ba83f293ea26cda5bad306ad7a9086a6bfd6fa1e8bae57dbdec221ff7e03f66b"},
+    {"path": "closed_universe_observers/tests/test_berger_moving_profile_clock_derivative_tail.py", "sha256": "27bde4f933bc2ef05375933670439fa4a3f112477e375d297c43803068e1d59f"},
+    {"path": "closed_universe_observers/schema/berger-moving-profile-clock-derivative-tail-v1.schema.json", "sha256": "fd180a50a57e6b75b933623b0d489fd04949f158b4adf0226a77b2a1c16f2032"},
+    {"path": "closed_universe_observers/reports/berger-moving-profile-clock-derivative-tail.md", "sha256": "e999b394afe73b398f766d53a6803ebba44b097fe4a851578b854b481e9b060c"},
+    {"path": "closed_universe_observers/certificates/BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL.json", "sha256": "83f9df58ad7c0542eba15da54da7739f49a2f483d3308eb8b9074b0f2721eadb"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "4af0aecb074e0b4e3843711f45afe5b57216f885a747ed1cfd423e0ce3fc27cd"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "dba70dbdc29cd0bad6eadcb0ef15aa02f1ebc1ad9b82589bf9e5b44faf6cec18"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "390eac5cc6d7ead313456c30a5ab2ceb8d0804e99fd7590fcc0ef9a45d0a599a"}
+  ],
+  "claim_flags": {
+    "MOVING_DETECTOR_PROFILE_CLOCK_DERIVATIVE_BOUND_EXPORTED": true,
+    "VALIDATED_PHYSICAL_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": true,
+    "CURRENT_TWO_J1024_MOVING_PROFILE_BOUND_CERTIFIES_SMALL_TAIL": false,
+    "COMPLETE_LOW_MODE_PROJECTION_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "MASSIVE_TWO_FORM_TAIL_BOUND_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

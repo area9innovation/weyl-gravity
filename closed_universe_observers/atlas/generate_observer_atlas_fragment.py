@@ -70,6 +70,7 @@ CERTIFICATES = {
     "profile_sobolev_n1": PACKAGE / "certificates/BERGER_CLOCK_UNIFORM_PROFILE_SOBOLEV_N1.json",
     "correlated_profile_sobolev_n1": PACKAGE / "certificates/BERGER_CORRELATED_PROFILE_SOBOLEV_N1.json",
     "clock_microphase_tail_envelope": PACKAGE / "certificates/BERGER_CLOCK_MICROPHASE_TAIL_ENVELOPE.json",
+    "moving_profile_clock_derivative_tail": PACKAGE / "certificates/BERGER_MOVING_PROFILE_CLOCK_DERIVATIVE_TAIL.json",
     "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
@@ -344,6 +345,14 @@ def entries() -> list[dict]:
             "evidence": _evidence("selected_correlated_clock_transform", "green_weighted_tail_reduction", "correlated_profile_sobolev_n1", "clock_microphase_tail_envelope"),
         },
         {
+            "id": "observer.berger.detector_profile.moving_profile_clock_derivative_tail",
+            "scope": _scope(carrier="actual clock-driven Berger detector one-form under operator-valued temporal integration by parts and the all-omitted Maxwell tail", degree=1, parity="D0 axial and D1 transverse moving profiles", ell="tail form two_j>1024; sufficient bound target two_j>3835", m="all omitted representation rows", k="all omitted representation columns", omega="sqrt(lambda)/48 internal microphase and sqrt(58)/288 rod amplitude"),
+            "descriptions": {"causal": "CERTIFIED", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "OPEN: the physical moving-profile Maxwell tail bound is certified, but the complete retained projection and full Green image are absent", "response_rank": "OPEN", "emitter_preparation": "construct a complete retained projection through the justified cutoff before massive-two-form composition", "clock_and_rod_dependence": "the fixed-point derivatives partial_a F and partial_a^2 F include the moving radius-1/128 support, a^3 y0 Gram factor and detector polarization; their Delta1 norms are enclosed by correlated radial quadrature", "relational_redshift_contribution": "NOT_APPLICABLE", "recoil_backreaction_order": "physical Maxwell-tail input only; absolute-g3 recoil remains OPEN", "survives_gauge_reduction": "the Maxwell tail estimate is on the full one-form/coderivative source, but retained projection, massive continuation and nonlinear gauge reduction remain OPEN", "profile_green_boundary_dependencies": "operator-valued clock integration by parts gives moving-profile tail uppers about 196 above two_j=1024 and the first sub-unit sufficient cutoff two_j=3835; the bound is physical but not a complete Green image"},
+            "tangent_cone": {"restriction_status": "NOT_APPLICABLE", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
+            "evidence": _evidence("green_weighted_tail_reduction", "correlated_profile_sobolev_n1", "clock_microphase_tail_envelope", "moving_profile_clock_derivative_tail"),
+        },
+        {
             "id": "observer.crosswalk.berger_physical_branch_to_detector",
             "scope": _scope(carrier="same-background Berger physical-branch dictionary to relational detector, redshift, memory and recoil records", degree="crosswalk", parity="all", ell="all", m="all", k="all", omega="all"),
             "descriptions": {name: "NO_CERTIFIED_MAP" for name in DESCRIPTIONS},
@@ -393,6 +402,7 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_profile.clock_uniform_sobolev_n1": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.correlated_sobolev_n1": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.clock_microphase_tail_envelope": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.detector_profile.moving_profile_clock_derivative_tail": ["OPEN", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }
