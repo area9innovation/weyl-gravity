@@ -804,8 +804,15 @@ polar `L=2` metric-equation source contains the exact quadratic coefficient
 finite-quasiperiodic corrections (with bounded derivatives through its order)
 to bounded sources, so it cannot cancel this growth.  This is a
 correction-class-specific no-go.  Smooth exponential-polynomial correction
-remains a separate gate until its complete channel assembly is committed, and
-the causal/retarded class remains `NO_CERTIFIED_MAP`.
+is already constructive on the decisive twist-self subblock: the exact full
+polar `L=2` primitive is
+`A_t2=-5*B^2/6`, `B2=0`,
+`C_t2=5*B^2/6-2*(A+B*t)^2/3`, and `U2=-7*B^2/36`, with all eight projected
+remainders zero.  Thus the obstruction is genuinely caused by the bounded
+correction class, not by failure of the linearized equations.  The complete
+global--extra mixed-channel assembly remains a separate gate until its
+certificate is committed, and the causal/retarded class remains
+`NO_CERTIFIED_MAP`.
 Neither source handoff activates a cyclic Bridge 2 calculation.  The
 axial--polar source uses the polar leg whose
 fixed identity cyclic compatibility is obstructed and whose corrected

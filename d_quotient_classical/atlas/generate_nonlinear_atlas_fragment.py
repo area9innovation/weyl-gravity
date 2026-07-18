@@ -28,6 +28,7 @@ CERTS = {
     "homogeneous_twist_extra_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
     "homogeneous_twist_extra_cone": ROOT / "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
     "homogeneous_twist_extra_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+    "homogeneous_twist_polynomial_correction": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -375,7 +376,7 @@ def entries() -> list[dict[str, Any]]:
             "mode_data": _mode_data(
                 _second(
                     ("OBSTRUCTED", "Every nonzero point on the complete aligned orbit has B nonzero, and its zero-frequency polar L=2 metric_00 source contains the uncancellable coefficient -7*B^2*t^2; no bounded finite-quasiperiodic correction exists."),
-                    ("OPEN", "Polynomial growth can invert the decisive zero-frequency channel, but the complete smooth exponential-polynomial correction has not been assembled in a committed certificate."),
+                    ("OPEN", "The full eight-row zero-frequency polar L=2 twist-self source has an exact polynomial primitive with all remainders zero; the complete global-extra mixed-channel smooth correction has not yet landed in a committed certificate."),
                     ("NO_CERTIFIED_MAP", "No compact-product retarded BV complex or causal correction carrier is certified."),
                 ),
                 dispersion=("CERTIFIED", "The theorem uses the generalized-zero homogeneous/twist block and the k=0 ell=2 extra shell omega_e=4/sqrt(3)."),
@@ -383,7 +384,7 @@ def entries() -> list[dict[str, Any]]:
                 taub=("CERTIFIED", "The full declared nonzero-extra common zero locus of all five stabilizer maps and completed resonance functionals is the aligned SO(3) orbit; no off-axis branch remains."),
                 resonance=("CERTIFIED", "Exact coefficient elimination gives a=b=d=0 and rank stratification forces the extra tensor and twist position to align with the twist-velocity axis."),
             ),
-            "evidence": _evidence("homogeneous_twist_extra_bounded_obstruction", "homogeneous_twist_extra_cone", "homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
+            "evidence": _evidence("homogeneous_twist_extra_bounded_obstruction", "homogeneous_twist_polynomial_correction", "homogeneous_twist_extra_cone", "homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
             "claim_boundary": "The bounded/finite-quasiperiodic second-order problem is obstructed on every nonzero point of the complete aligned orbit in the declared single-k=0 homogeneous/twist times ell=2 extra REDUCED-MODE carrier. This correction-class-specific no-go does not obstruct smooth secular or causal corrections, cover opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish observational, particle or quantum claims.",
         },
         {

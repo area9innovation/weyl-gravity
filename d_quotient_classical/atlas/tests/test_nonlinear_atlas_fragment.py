@@ -104,7 +104,10 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         bounded = entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]
         self.assertEqual(bounded["status"], "OBSTRUCTED")
         self.assertIn("-7*B^2*t^2", bounded["statement"])
-        self.assertEqual(entry["mode_data"]["second_order"]["smooth_secular"]["status"], "OPEN")
+        smooth = entry["mode_data"]["second_order"]["smooth_secular"]
+        self.assertEqual(smooth["status"], "OPEN")
+        self.assertIn("full eight-row", smooth["statement"])
+        self.assertIn("exact polynomial primitive", smooth["statement"])
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
         self.assertIn("correction-class-specific", entry["claim_boundary"])
         self.assertIn("activate either cyclic Bridge 2", entry["claim_boundary"])
