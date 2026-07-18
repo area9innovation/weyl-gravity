@@ -128,20 +128,33 @@ symmetry with a nonzero charge.
   graviton survives after redundant descriptions are removed. Two collective
   curvature patterns remain with a positive comparison rule. They describe
   possible interactions or changes to the theory, not particles flying
-  through space.
+  through space. A separate reduced free-wave construction now supplies
+  quantum two-point functions with the correct causal short-distance form:
+  the Einstein-like branch is positive, while two extra branches have
+  negative comparison signs. That is a concrete warning, not yet a final
+  particle verdict, because the complete quantum gauge reduction and positive
+  probability space have not been constructed.
 - **The first interaction tests work in the clock universe.** The pure
   gravity--clock calculation passes through the third tested interaction
   order for the combined time-and-clock rotation that preserves the
   background. The complete first nonlinear electromagnetic coupling also
-  passes. This is not yet a theorem for an unmodified global time shift, every
-  higher interaction, or a complete localized redshift experiment.
-- **Static black holes have entered the model.** An exact family of spherical
-  vacuum geometries contains regular black-hole and cosmological horizons,
+  passes, and the retained gravity--light interaction cannot be removed by
+  the tested symmetry-preserving redefinitions. In a separate compact
+  gravity-and-electromagnetism setting, the global constraints allow only an
+  aligned family of extra waves, and every nonzero member fails to remain a
+  bounded repeating motion at the next correction order. The calculation now
+  also proves that a smooth continuation exists if polynomial growth is
+  allowed. This is mathematically consistent evolution, but not stable
+  repeating motion. Causally prepared corrections remain an open question.
+- **Black holes and their first wave branches have entered the model.** An
+  exact family of spherical vacuum geometries contains regular black-hole and cosmological horizons,
   including Einstein-like and genuinely extra fourth-order members. On the
   static family a consistently normalized time generator gives exact energy,
-  entropy and a first law at every simple horizon. Time-dependent
-  perturbations, horizon flux, ringdown, stability and Hawking radiation have
-  not yet passed.
+  entropy and a first law at every simple horizon. Around the Schwarzschild
+  member, the ordinary axial gravitational wave equation is recovered
+  exactly, and the additional fourth-order branch becomes another explicit
+  second-order wave equation. Horizon flux, causal exterior evolution,
+  ringdown, stability and Hawking radiation have not yet passed.
 - **Every statement has a computational receipt.** Exact symbolic programs
   derive and check the large identities. Separate verifiers, broken-input
   tests, content hashes and clean rebuilds record what was proved and prevent
@@ -152,9 +165,11 @@ This is a real but incomplete mathematical universe. It has spacetime,
 classical causal propagation, clocks, classical electromagnetic and
 gravitational wave directions, extra fourth-order axial and polar equation
 directions in a separate compact gravity-and-electromagnetism setting, and a
-first controlled interaction layer. It also has static black-hole backgrounds
-with an exact thermodynamic law. It does not yet have a complete relational
-redshift comparison with localized endpoints, a physical mass-generation
+first controlled interaction layer with a precise bounded-motion obstruction.
+It also has static black-hole backgrounds with an exact thermodynamic law,
+their first classified axial wave branches, and a reduced free quantum carrier
+whose extra branches have negative signs. It does not yet have a complete
+relational redshift comparison with localized endpoints, a physical mass-generation
 mechanism, electrons, non-Abelian gauge fields, quantum particles, a unified
 gauge--matter sector, gravitational lensing, a dynamical black-hole phase
 space, a scattering experiment, or a dark-matter or dark-energy prediction.
@@ -315,6 +330,13 @@ survive all redundant coordinate and scale descriptions, carry a nonzero
 physical comparison rule, and propagate causally. An observable waveform also
 needs energy flux, boundary conditions and a response in a detector.
 
+The project now has two complementary wave results. Compact Einstein-like
+waves have a nonzero spacetime comparison rule, while the Schwarzschild axial
+calculation reproduces the ordinary Regge--Wheeler equation exactly. The same
+black-hole calculation isolates an additional fourth-order branch as a
+second-order curvature wave. Its horizon reach and flux sign are the next
+tests; no ringdown or stability claim follows yet.
+
 ### Clocks, time dilation and redshift
 
 A clock must change steadily, have healthy energy and couple consistently to
@@ -359,14 +381,16 @@ artifact. Its boundary conditions, conserved charges, causal perturbations,
 thermodynamic quantities and stability must all be controlled. A metric with a
 zero in one coefficient is not by itself a physical black hole.
 
-The current static result passes several—but not all—of those tests. An exact
+The current result passes several—but not all—of those tests. An exact
 spherical pure-Weyl family is classified within the stated radial ansatz. It
 has horizon-regular coordinates, finite curvature at every simple horizon,
 and an explicit non-Einstein member with black-hole and cosmological horizons.
 A residual-symmetry-compatible normalization produces an integrable static
-energy, Wald entropy and the exact first law at every horizon. The result is
-still confined to a static parameter family: causal perturbations, horizon
-flux, ringdown, stability and quantum radiation remain future rungs.
+energy, Wald entropy and the exact first law at every horizon. On the
+Schwarzschild member, the first axial perturbation calculation exactly
+separates the familiar Einstein wave from an additional curvature-wave
+branch. The calculation has not yet supplied the physical horizon domain,
+flux matrix, ringdown, stability or quantum radiation.
 
 ### Quantum gravity
 
@@ -375,6 +399,15 @@ renormalization. Quantum anomalies must either cancel or have an allowed
 repair. The theory also needs suitable short-distance states, causal quantum
 products and a physical state space. Classical causal propagation is an
 essential input, not the completed quantum theory.
+
+The strict theory now has a calculated nonzero one-loop anomaly. Adding a
+declared conformal compensator repairs the local Euclidean quantum gauge
+identity at that order, and the anomaly-fixed part of the effective action is
+known. Separately, reduced free waves on the spherical universe admit
+Hadamard two-point functions—the standard short-distance condition—but the
+two extra branches have negative signs. The complete Lorentzian gauge system,
+interacting products, positive state space and particle interpretation remain
+open.
 
 ### Cosmology, dark matter and dark energy
 
@@ -401,12 +434,12 @@ quantum theory.
 | **Electrons and charged matter** | **Next frontier.** No demonstrated charged spin-one-half matter sector exists in the current universe. | Add a Dirac field, a physical mass/scale mechanism, causal propagation and stable interactions. |
 | **Non-Abelian gauge fields and chiral matter** | **Next frontier.** The demonstrated matter content does not yet contain a Yang--Mills gauge group or chiral fermion spectrum resembling the strong and weak interactions. | Build the causal gauge complex, physical pairing and stable interactions for a non-Abelian gauge group and chiral representations. |
 | **Unified gauge--matter sector (GUT candidate)** | **Next frontier, long-range target.** No unified group, anomaly-free matter representation, breaking mechanism or low-energy recovery theorem has been selected. This would initially be a GUT coupled to Weyl gravity, not a theory unifying gravity itself. | Find a viable group and chiral matter sector, cancel all relevant anomalies, generate and break the physical scale, and recover Standard Model particles and interactions. |
-| **Gravitational waves** | **Working example.** Standard linear gravitational waves have a nonzero comparison rule, and the pure-gravity system propagates causally. Separate compact wave families each contain two additional directions; one extra pair has passed a direct spacetime-current test. | Complete the remaining current and final physical reduction, impose causal boundaries, and produce measurable waveforms, flux and detector response. |
+| **Gravitational waves** | **Working examples in compact and black-hole settings.** Standard compact waves have a nonzero comparison rule, and Schwarzschild axial perturbations reproduce the Regge--Wheeler equation exactly. The black-hole extra branch is an explicit second-order curvature wave. | Determine the extra branch's horizon domain and flux sign, then construct measurable ringdown waveforms and detector response. |
 | **Gravitational lensing** | **Next frontier, with geometric ingredients present.** Curved spacetime and light cones exist, but no demonstrated lensing observable does. | Add a localized lens, propagate light around it and compare observable angles and arrival times. |
-| **Quantum particles** | **Next frontier.** Classical waves are not yet photons, gravitons or electrons; the surviving curvature patterns are not particles. | Construct a global quantum state, physical positive probability rule and incoming/outgoing particle interpretation. |
-| **Interactions** | **Working example.** The gravity--clock system and its coupling to light pass the first three declared interaction layers. The remaining interaction can be removed at the first tested derivative levels, so its invariant physical meaning is still undecided. | Complete the next derivative test, separate familiar and extra gravity-wave outputs, then test higher orders and global evolution. |
-| **Black holes** | **Static sector demonstrated.** A classified spherical family has regular simple horizons; a symmetry-compatible static generator gives exact energy, entropy and the first law. | Build the time-dependent horizon phase space, causal exterior propagation, flux, ringdown and stability. |
-| **Quantum gravity** | **Working foundations.** Candidate anomaly types, local short-distance wave structure, a causal curvature-observable bracket and the corresponding free observable algebra are constructed in scoped settings. There is still no physical global vacuum, interacting quantum product or restored quantum gauge identity. | Construct a compatible global state, complete anomaly coefficients and restore or obstruct the quantum gauge identity. |
+| **Quantum particles** | **Reduced free quantum carrier demonstrated, particles still open.** Vacuum-cylinder waves admit causal Hadamard two-point functions; the Einstein-like branch is positive and two extra branches have negative signs. This is not yet a full gauge-reduced positive probability space or a particle interpretation. | Construct the full BRST-compatible state, determine the fate of the negative directions, and then define asymptotic incoming/outgoing particles. |
+| **Interactions** | **Working example with a precise correction-class split.** Gravity, clock and light pass through the first three declared interaction layers, and the retained gravity--light term survives the tested symmetry-preserving redefinitions. In a separate compact sector, every nonzero aligned extra-wave configuration is obstructed if the next correction must stay bounded and repeating, but a smooth polynomially growing correction exists. | Decide whether causal preparation controls the secular growth, obtain a physical branch split, and continue to higher orders and global evolution. |
+| **Black holes** | **Static thermodynamics and first axial wave split demonstrated.** The spherical family has regular horizons, exact energy, entropy and first law; Schwarzschild axial waves split into familiar Einstein and extra curvature branches. | Establish horizon domains and flux signs, then causal exterior propagation, ringdown and stability. |
+| **Quantum gravity** | **Working foundations with a concrete obstruction and repair.** The strict one-loop quantum gauge identity is anomalous; a compensator restores its local Euclidean form at one loop. The anomaly-fixed effective action and a reduced Hadamard/Krein carrier are known. | Complete the renormalized operator, full Lorentzian gauge-compatible state and interacting quantum products, and decide whether the negative branches survive physically. |
 | **Cosmology, dark matter and dark energy** | **Next frontier.** The current work establishes consistency machinery, not a fitted cosmological model. | Build stable cosmological and galaxy backgrounds, derive observables, then compare them with data. |
 
 ## If the universe differs from standard physics
