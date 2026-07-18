@@ -222,15 +222,15 @@ Levi--Civita variation is nonzero and
 frozen-parallel PBW shortcut is `OBSTRUCTED`.  Its diagnostic response agrees
 with the independent varied tractor-curvature action, but its middle/Schur
 coefficients are not authoritative because derivatives may hit the varying
-curvature.  The jet-aware parent gate now closes the corrected BGG first
-square and Yang--Mills identity with complete coverage of every curvature jet
-requested at that stage.  Endpoint compression exposes the next precise
-boundary: it requests mixed spatial curvature jets of orders two and three,
-which are not yet derived, and its diagnostic gauge defect contains zeroth-
-and second-order words that cannot be removed by an algebraic Schur
-correction.  The active gate is therefore complete higher-jet evaluation and
-the differential action-derived Schur correction, followed by the rank-310
-SDR variation.  Transverse causal transfer remains `OPEN`.
+curvature.  The complete jet-aware gate now derives every coordinate
+covariant curvature jet requested through order three, independently
+reproduces the moving-frame first jet, and closes the corrected BGG first
+square and Yang--Mills identity.  Endpoint compression is now exact: the
+shifted-chain variation retains 207 coefficients and its gauge defect has
+zeroth- and second-order words that cannot be removed by an algebraic Schur
+correction.  The active gate is the differential action-derived Schur
+correction, followed by the rank-310 SDR variation.  Transverse causal
+transfer remains `OPEN`.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves
@@ -697,6 +697,11 @@ the observable pullback and relative-sector detectors.  The first concrete
 observer fixture remains the Berger relational observable and operational
 redshift rail, using only the domain that survives the nonlinear and causal
 gates.  It must not duplicate the Einstein map or the Green construction.
+Until one of the four admissible Berger carrier alternatives passes, atlas
+row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
+`NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not
+activated by row-name matching.  The open Bach-flat parent-to-metric causal
+bridge continues as an independent support-local rail.
 
 ### Nonlinear ownership
 

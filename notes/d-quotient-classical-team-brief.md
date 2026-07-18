@@ -63,17 +63,17 @@ frozen-parallel response is retained as a checked diagnostic, including exact
 normal-tractor-square agreement, but is marked `OBSTRUCTED` rather than
 promoted.
 
-The jet-aware parent gate is now certified.  The exact moving-frame first
-curvature jets close the corrected BGG first square and the parent
-Yang--Mills identity, and the audit confirms that these parent identities
-request no unsupported jets.  The later endpoint compression requests mixed
-spatial curvature jets of orders two and three; those values are not yet
-derived.  Its truncated diagnostic also contains zeroth- and second-order
-gauge defects, so a purely algebraic Schur correction cannot suffice.
+The complete jet-aware gate is now certified.  An exact bivariate Taylor-jet
+recurrence derives every coordinate covariant curvature jet requested through
+order three, reproduces the earlier moving-frame first jet, and closes the
+corrected BGG first square and parent Yang--Mills identity.  The exact
+shifted-chain variation retains 207 coefficients.  The endpoint gauge defect
+contains zeroth- and second-order words, so a purely algebraic Schur
+correction cannot suffice.
 
 The next coherent classical gate is therefore
-`NARIAI_TRANSVERSE_COMPLETE_HIGHER_CURVATURE_JETS_AND_DIFFERENTIAL_SCHUR`,
-followed by the complete rank-310 SDR variation.  The atlas remains
+`NARIAI_TRANSVERSE_ACTION_DERIVED_DIFFERENTIAL_SCHUR`, followed by the
+complete rank-310 SDR variation.  The atlas remains
 fail-closed: the parent identity is `CERTIFIED`, the algebraic endpoint ansatz
 is `OBSTRUCTED`, and transverse causal transfer is `OPEN`.
 
@@ -109,6 +109,16 @@ Use the canonical Einstein--Weyl spine in
 [`universe-building-roadmap.md`](universe-building-roadmap.md).  The classical
 team owns `RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_V1`; it does not own a
 second construction of the linear Einstein inclusion.
+
+The currently active programme bridge is Bridge 1.  Its Berger activation
+gate is not satisfied: atlas row
+`classical.berger.crosswalk.retained36_to_einstein_extra` remains
+`NO_CERTIFIED_MAP` after the support-local projector obstruction.  The next
+admissible carrier must be one of the four scoped alternatives in the shared
+roadmap—a relative cofiber, a larger noncontractible mixed-bundle carrier, a
+declared nonlocal `REDUCED-MODE` map, or a port to a same-background certified
+split.  No row-name or cross-background identification is allowed.  The
+support-local Bach-flat parent-to-metric causal bridge continues independently.
 
 For every declared background, charge fibre, boundary condition, and quotient:
 
@@ -1514,11 +1524,12 @@ remaining BGG variation is therefore not algebraic and not a pairing
 normalization: it is the Levi--Civita connection/PBW variation and its
 middle/Schur propagation.  The jet-aware parent calculation now closes the
 BGG first square and Yang--Mills identity with complete first-jet coverage.
-Endpoint compression requests mixed spatial jets of orders two and three and
-exhibits a differential, rather than algebraic, Schur requirement.  The next
-gate is complete higher curvature-jet evaluation plus the action-derived
-differential Schur, then the rank-310 SDR identity and only then causal
-transfer.
+The exact bivariate coordinate recurrence now supplies every mixed spatial
+jet requested through order three.  Endpoint compression is therefore exact,
+not diagnostic: its shifted-chain variation has 207 coefficients and the
+gauge defect requires a differential rather than algebraic Schur correction.
+The next gate is the action-derived differential Schur, then the rank-310 SDR
+identity and only then causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

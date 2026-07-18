@@ -47,14 +47,19 @@ def verify() -> None:
     crosswalk = by_id["classical.crosswalk.bach_flat_parent_to_metric"]
     if set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("parent/metric crosswalk overpromoted")
+    berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
+    if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
+        raise AssertionError("Berger Bridge 1 overpromoted")
+    if "Bridge 1 is not activated" not in berger_crosswalk["claim_boundary"]:
+        raise AssertionError("Berger Bridge 1 activation gate missing")
     transverse = by_id["classical.nariai.transverse_kantowski_sachs_tangent"]
     if transverse["descriptions"]["causal"] != "OPEN":
         raise AssertionError("transverse causal theorem overpromoted")
     transverse_ids = {item["result_id"] for item in transverse["evidence"]}
     if "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1" not in transverse_ids:
         raise AssertionError("jet-aware parent-middle evidence missing")
-    if "orders two and three" not in transverse["claim_boundary"]:
-        raise AssertionError("incomplete endpoint curvature-jet boundary missing")
+    if "207 coefficients" not in transverse["claim_boundary"]:
+        raise AssertionError("exact shifted-chain boundary missing")
 
 
 if __name__ == "__main__":

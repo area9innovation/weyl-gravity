@@ -208,7 +208,7 @@ def entries() -> list[dict[str, Any]]:
         ("OBSTRUCTED", "The canonical support-local same-bundle projector is obstructed by the certified subprincipal witness."),
         _second(("NO_CERTIFIED_MAP", "No branch projector."), ("NO_CERTIFIED_MAP", "No branch projector."), ("NO_CERTIFIED_MAP", "No branch projector.")),
         _evidence("Berger_projector"),
-        "The unsplit cyclic causal carrier remains valid. The obstruction does not rule out a larger noncontractible mixed-bundle carrier or a declared nonlocal reduced-mode split.",
+        "Bridge 1 is not activated on Berger: the unsplit cyclic causal carrier remains valid, but no admissible branch crosswalk has been selected. The certified obstruction leaves four scoped possibilities—a relative cofiber, a larger noncontractible mixed-bundle carrier, a declared nonlocal REDUCED-MODE map, or a port to a background with a certified split.",
     ))
     values.append(_entry(
         "classical.nariai.conformal_orbit.rank310_metric",
@@ -241,10 +241,10 @@ def entries() -> list[dict[str, Any]]:
         ("CERTIFIED", "The displayed tangent solves the complete linearized fixed-Lambda Einstein equations and is linearized Bach-flat."),
         ("OPEN", "No physical Lee-Wald norm or reduced pairing is assigned to this tangent."),
         ("OPEN", "No second-order Taub classification or exact nonlinear family is certified."),
-        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. The jet-aware BGG first square and parent Yang-Mills identity close with complete first-jet coverage, but endpoint compression still requires mixed spatial curvature jets of orders two and three."),
+        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. Complete coordinate-derived jets through order three close the jet-aware BGG first square and parent Yang-Mills identity and determine the exact compressed PBW endpoint."),
         _second(("OPEN", "No bounded correction theorem."), ("OPEN", "No smooth-secular correction theorem."), ("OPEN", "No transverse retarded SDR theorem.")),
         _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "cone"),
-        "The jet-aware BGG first square and parent Yang-Mills identity are exact with complete requested first-jet coverage. The compressed endpoint requests unsupported mixed spatial curvature jets of orders two and three; its diagnostic Schur defect is not an authoritative action Hessian. The complete transverse SDR and causal transfer remain open.",
+        "Every curvature jet requested through order three is derived and the jet-aware BGG first square and parent Yang-Mills identity are exact. The exact shifted-chain variation has 207 coefficients and the endpoint gauge defect has zeroth- and second-order words, so an algebraic Schur correction is insufficient. The differential action-derived cyclic Schur, complete transverse SDR and causal transfer remain open.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",

@@ -39,7 +39,13 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         ids = {item["result_id"] for item in entry["evidence"]}
         self.assertIn("NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1", ids)
         self.assertEqual(entry["descriptions"]["causal"], "OPEN")
-        self.assertIn("orders two and three", entry["claim_boundary"])
+        self.assertIn("207 coefficients", entry["claim_boundary"])
+
+    def test_berger_bridge_one_remains_fail_closed(self) -> None:
+        entry = self.entries["classical.berger.crosswalk.retained36_to_einstein_extra"]
+        self.assertEqual(set(entry["descriptions"].values()), {"NO_CERTIFIED_MAP"})
+        self.assertIn("Bridge 1 is not activated", entry["claim_boundary"])
+        self.assertIn("relative cofiber", entry["claim_boundary"])
 
 
 if __name__ == "__main__":
