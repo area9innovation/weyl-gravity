@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "claim_boundary": "The current first-variation PBW backend is nonassociative on the typed M_parent, L1_corrected, Kp0 triple: its base associator vanishes but its first variation has 209 coefficients, with normalized algebraic witness one. Since the shifted-chain identity follows abstractly from already-certified chain identities in any associative differential-operator algebra, the backend's 207-term shifted-chain defect and downstream Phi-only repair obstructions are not mathematical operator obstructions. This audit does not prove the transverse rank-310 SDR or causal transfer; it requires an associative coefficient-jet-aware replay.",
+  "dependency_refs": {
+    "jet_aware_backend_output": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_JET_AWARE_MIDDLE_SCHUR_VARIATION_V1",
+      "sha256": "1c21b2be307cc8102303aacfc90062cd4a2934c57fac9c7379e5d3a23bda5d3b"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "base_associator_zero": true,
+    "linearized_associator_nonzero": true,
+    "normalized_witness_one": true,
+    "phi_definition_exact": true,
+    "rank_310_not_overclaimed": true,
+    "reported_shifted_chain_not_authoritative": true
+  },
+  "exact_data": {
+    "abstract_identity": {
+      "derivation": [
+        "Phi=M L1",
+        "M d_parent=0",
+        "d_aut=d_parent-I_Omega p0",
+        "d_aut L0=L1 K",
+        "p0 L0=1",
+        "p0(1-L0 p0)=0",
+        "M d_aut-M Phi(K p0)=M d_aut(1-L0 p0)=0"
+      ],
+      "first_variation_must_vanish_in_an_associative_operator_algebra": true
+    },
+    "associator": {
+      "base_nonzero_coefficients": 0,
+      "normalized_witness": {
+        "coefficient": "7*sqrt(2)/16",
+        "input_column": 0,
+        "normalized_value": "1",
+        "normalizing_multiplier": "8*sqrt(2)/7",
+        "output_row": 0,
+        "word": []
+      },
+      "variation_nonzero_coefficients": 209,
+      "variation_orders": [
+        0,
+        1,
+        2
+      ],
+      "variation_sha256": "51db139bd2341b8f564cceddf7b4a13edff3a6cbf4a1988d62cbb52c68a5436a"
+    },
+    "interpretation": {
+      "linearized_PBW_backend_associative_on_test_triple": false,
+      "phi_ansatz_obstructions_remain_backend_linear_algebra_only": true,
+      "rank_310_transverse_SDR_decided": false,
+      "required_next_gate": "coefficient-jet-aware associative PBW composition, then replay action Schur and rank-310 SDR",
+      "shifted_chain_obstruction_superseded": true
+    },
+    "phi_definition": {
+      "base_defect_coefficients": 0,
+      "variation_defect_coefficients": 0
+    },
+    "reported_shifted_chain": {
+      "nonzero_coefficients": 207,
+      "operator_obstruction_authoritative": false,
+      "sha256": "c4a3a9ddbb107ce45a9905ddc1deefa7d0791e3248d1d2a5025f8fb5c310ec0b"
+    },
+    "typed_triple": {
+      "expression": "M_parent o L1_corrected o (K p0)",
+      "intermediate": [
+        "H1 rank 9",
+        "C1 rank 60"
+      ],
+      "source": "C0 rank 15",
+      "target": "C1dual rank 60"
+    }
+  },
+  "flags": {
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": false,
+    "TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE": false,
+    "TRANSVERSE_LINEARIZED_PBW_NONASSOCIATIVITY_EXACT": true,
+    "TRANSVERSE_SHIFTED_CHAIN_OBSTRUCTION_AUTHORITATIVE": false
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "NARIAI_TRANSVERSE_COEFFICIENT_JET_ASSOCIATIVE_PBW_REPLAY",
+  "result_id": "NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1",
+  "result_state": "LINEARIZED_PBW_NONASSOCIATIVE_SHIFTED_CHAIN_OBSTRUCTION_SUPERSEDED",
+  "schema": "nariai-transverse-linearized-pbw-associativity-gate-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/first_variation_pbw.py": "8c4c6c673eca39a42614f12a0c277eff22c40b21aedbf1596a7fe7bc37310978",
+    "d_quotient_classical/causal_transfer/nariai_transverse_jet_aware_middle_schur_variation.py": "d04ac1147b6cf25b8cd2ee3650116c71037b5e1ab282ce598a04032e55947d1a",
+    "d_quotient_classical/causal_transfer/nariai_transverse_linearized_pbw_associativity_gate.py": "a4eac427c4de57ee9b7de16c9c29ec0fcb32f6bd15827cfe6ad905f33c9997ec",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_linearized_pbw_associativity_gate.py": "2797cc17a267a6c32ca1520cb709d90f4cecca3b41f4aa10af4677c7ae0ddd1d",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_linearized_pbw_associativity_gate.py": "f84949317ab15ffe5bd9dd130f5fbf185117dcaf5cb1bc4be3ca1bebf32edcc1",
+    "d_quotient_classical/schema/nariai-transverse-linearized-pbw-associativity-gate-v1.schema.json": "cbf3c8ff3e523fed9158e6059c69ea1758d7ded5ba0f27158b9d7b29534fa301"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_linearized_pbw_associativity_gate --check",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_linearized_pbw_associativity_gate.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_linearized_pbw_associativity_gate",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-linearized-pbw-associativity-gate-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json"
+  ]
+}

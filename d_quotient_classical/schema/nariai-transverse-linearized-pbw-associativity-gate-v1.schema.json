@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-linearized-pbw-associativity-gate-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1"},
+    "result_state": {"const": "LINEARIZED_PBW_NONASSOCIATIVE_SHIFTED_CHAIN_OBSTRUCTION_SUPERSEDED"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"type": "array", "minItems": 1, "maxItems": 1, "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "items": false},
+    "dependency_refs": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/reference"}},
+    "exact_data": {"type": "object"},
+    "exact_checks": {"type": "object", "minProperties": 6, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE", "TRANSVERSE_LINEARIZED_PBW_NONASSOCIATIVITY_EXACT", "TRANSVERSE_SHIFTED_CHAIN_OBSTRUCTION_AUTHORITATIVE", "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION", "TRANSVERSE_CAUSAL_TRANSFER"],
+      "properties": {
+        "TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE": {"const": false},
+        "TRANSVERSE_LINEARIZED_PBW_NONASSOCIATIVITY_EXACT": {"const": true},
+        "TRANSVERSE_SHIFTED_CHAIN_OBSTRUCTION_AUTHORITATIVE": {"const": false},
+        "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": {"const": false},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_TRANSVERSE_COEFFICIENT_JET_ASSOCIATIVE_PBW_REPLAY"},
+    "claim_boundary": {"type": "string", "minLength": 200},
+    "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

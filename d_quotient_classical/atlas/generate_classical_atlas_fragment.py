@@ -45,6 +45,7 @@ CERTS = {
     "Nariai_normalized_L0_obstruction": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_NORMALIZED_L0_COUPLED_OBSTRUCTION_V1.json",
     "Nariai_K_admissibility": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_K_SENSITIVITY_ADMISSIBILITY_V1.json",
     "Nariai_Phi2_obstruction": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1.json",
+    "Nariai_PBW_associativity": ROOT / "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json",
     "Bach_parent": ROOT / "d_quotient_classical/certificates/BACH_FLAT_PARENT_GREEN_STABILITY_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
@@ -247,10 +248,10 @@ def entries() -> list[dict[str, Any]]:
         ("CERTIFIED", "The displayed tangent solves the complete linearized fixed-Lambda Einstein equations and is linearized Bach-flat."),
         ("OPEN", "No physical Lee-Wald norm or reduced pairing is assigned to this tangent."),
         ("OPEN", "No second-order Taub classification or exact nonlinear family is certified."),
-        ("OBSTRUCTED", "The frozen-parallel shortcut and a purely algebraic transverse Schur correction are obstructed. The complete first-order endpoint gauge equation has a unique solution. The complete order-at-most-two Phi-only map has rank 130 with 31 obstructed target rows. The normalized-L0 family is also obstructed. Formal K directions hit its witness, but the authoritative action-derived transverse delta_K is zero, so those directions are inadmissible."),
+        ("OPEN", "The frozen-parallel shortcut is obstructed. The later jet-aware shifted-chain target is now fail-closed because its linearized PBW backend is nonassociative; its Phi/L0/K rank screens are retained only as backend regression data, not operator no-go theorems."),
         _second(("OPEN", "No bounded correction theorem."), ("OPEN", "No smooth-secular correction theorem."), ("OPEN", "No transverse retarded SDR theorem.")),
-        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "Nariai_first_order_schur", "Nariai_Phi_only_obstruction", "Nariai_incidence_L1_rigidity", "Nariai_normalized_L0_obstruction", "Nariai_K_admissibility", "Nariai_Phi2_obstruction", "cone"),
-        "Every requested curvature jet is derived and the jet-aware BGG first square and parent identity are exact. The unique 59-coefficient endpoint gauge repair does not close the 207-coefficient shifted-chain defect. Phi-only repair is obstructed: the complete 525-by-135 order-at-most-two Phi-only map has rank 130; 29 target rows are consistent and 31 have augmented rank 131, with a normalized two-term witness. The homogeneous incidence/L1 first-square map is invertible, and the normalized-L0 response map has rank 44 but augmented rank 45 with a five-term witness. Exactly 23 formal K directions hit that witness, but the action-derived transverse first-BGG variation has zero coefficients, so none is admissible. Equation/constraint/cotangent or homotopy-coherent equation-cone variation, action-derived cyclic identification, complete SDR and causal transfer remain open.",
+        _evidence("Nariai_transverse", "Nariai_incidence", "Nariai_PBW_gate", "Nariai_jet_aware_parent", "Nariai_first_order_schur", "Nariai_Phi_only_obstruction", "Nariai_incidence_L1_rigidity", "Nariai_normalized_L0_obstruction", "Nariai_K_admissibility", "Nariai_Phi2_obstruction", "Nariai_PBW_associativity", "cone"),
+        "The BGG first square and parent identity replay in the current jet-aware backend, but its typed M_parent/L1_corrected/Kp0 associator has 209 first-variation coefficients and normalized witness one. Therefore the reported 207-coefficient shifted-chain defect is not an authoritative operator obstruction. The Phi-only, normalized-L0, and formal-K rank screens remain exact linear algebra relative to that superseded target only. A coefficient-jet-aware associative PBW replay, action-derived cyclic Schur identification, complete SDR and causal transfer remain open.",
     ))
     values.append(_entry(
         "classical.crosswalk.bach_flat_parent_to_metric",

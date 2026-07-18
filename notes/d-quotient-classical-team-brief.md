@@ -172,6 +172,23 @@ declared nonlocal `REDUCED-MODE` map, or a port to a same-background certified
 split.  No row-name or cross-background identification is allowed.  The
 support-local Bach-flat parent-to-metric causal bridge continues independently.
 
+Three same-background handoffs are queued after the active transverse replay:
+
+1. For the Berger 36-row carrier, decide Bridge 1 by constructing an
+   admissible Einstein-like/extra-Weyl/Maxwell branch map on that background,
+   or emit the smallest normalized carrier-enlargement obstruction.  The
+   existing support-local projector no-go forbids silently substituting a
+   row-name split.
+2. For the compact product background, complete the off-shell cyclic
+   Einstein--Weyl relative triangle, including the corrected cyclic map needed
+   to resolve the fixed-identity pairing obstruction.  This is Bridge 2 and
+   must not import Berger or vacuum carriers without an explicit crosswalk.
+3. Export complete same-background \(q_1,q_2,q_3\) payloads separately for
+   Einstein--Maxwell and Weyl--Maxwell so the nonlinear team can compute
+   \(\Delta_2\), the arity-three morphism defect, and the induced deformation
+   verdict.  Neither payload may be inferred from the other theory by matching
+   branch labels.
+
 For every declared background, charge fibre, boundary condition, and quotient:
 
 1. import the Einstein team's map/cofiber certificate by content hash;
@@ -1576,12 +1593,18 @@ remaining BGG variation is therefore not algebraic and not a pairing
 normalization: it is the Levi--Civita connection/PBW variation and its
 middle/Schur propagation.  The jet-aware parent calculation now closes the
 BGG first square and Yang--Mills identity with complete first-jet coverage.
-The exact bivariate coordinate recurrence now supplies every mixed spatial
-jet requested through order three.  Endpoint compression is therefore exact,
-not diagnostic: its shifted-chain variation has 207 coefficients and the
-gauge defect requires a differential rather than algebraic Schur correction.
-The next gate is the action-derived differential Schur, then the rank-310 SDR
-identity and only then causal transfer.
+The exact bivariate coordinate recurrence supplies every mixed spatial jet
+requested through order three, but the subsequent composition audit finds a
+more basic backend failure.  The typed
+\(M^D\circ L_1^{\rm corr}\circ Kp_0\) associator vanishes at the base point
+and has 209 first-variation coefficients in the current linearized PBW
+backend.  Since the shifted chain follows abstractly from the parent identity,
+the first square and \(p_0L_0=1\) in an associative differential-operator
+algebra, the reported 207-coefficient defect is not an authoritative operator
+obstruction.  The Phi/L0/K screens remain exact regression calculations only
+relative to that superseded target.  The next gate is a coefficient-jet-aware
+associative PBW replay, then the action-derived cyclic Schur, rank-310 SDR
+identity and causal transfer.
 
 ### Programme residual-atlas and tangent-cone handoff (2026-07-18)
 

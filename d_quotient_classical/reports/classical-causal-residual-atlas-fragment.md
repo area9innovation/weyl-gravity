@@ -28,16 +28,14 @@ parent-to-metric crosswalk is `NO_CERTIFIED_MAP`.  The transverse
 Kantowski--Sachs tangent records exact outer/algebraic incidence evidence, an
 `OBSTRUCTED` frozen-parallel shortcut, and the exact jet-aware BGG/parent
 Yang--Mills identities.  All endpoint curvature jets through order three are
-now coordinate-derived.  The exact shifted-chain variation retains 207
-coefficients, and the endpoint gauge defect contains zeroth- and second-order
-words, obstructing a purely algebraic Schur correction.  The complete
-first-order local Schur gauge map is now solved exactly: its `60 x 45` map has
-rank 45 on every output row and gives one unique 59-coefficient repair.  Its
-post-delivery audit then rules out an order-at-most-one correction of the
-`Phi` row alone: 38 of 60 shifted-chain rows have augmented rank 46, with a
-normalized two-term left-null witness.  The coupled incidence/splitting/
-constraint variation, action-derived cyclic identification, rank-310 SDR,
-and causal transfer remain `OPEN`.
+coordinate-derived.  A later typed composition audit finds that the
+linearized PBW backend is nonassociative on
+`M_parent o L1_corrected o (K p0)`: the base associator vanishes, while its
+first variation has 209 coefficients and normalized witness one.  The former
+207-coefficient shifted-chain target and its downstream Phi/L0/K rank screens
+are therefore retained only as backend regression data, not operator no-go
+theorems.  A coefficient-jet-aware associative replay, action-derived cyclic
+identification, rank-310 SDR, and causal transfer remain `OPEN`.
 
 All bounded/quasiperiodic, smooth-secular, and causal/retarded second-order
 statuses are separate fields.  No status is transported between backgrounds

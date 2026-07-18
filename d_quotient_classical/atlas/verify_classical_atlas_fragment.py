@@ -70,18 +70,12 @@ def verify() -> None:
         raise AssertionError("K-sensitivity admissibility evidence missing")
     if "NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1" not in transverse_ids:
         raise AssertionError("order-two Phi obstruction evidence missing")
-    if "207-coefficient" not in transverse["claim_boundary"]:
-        raise AssertionError("exact shifted-chain boundary missing")
-    if "unique 59-coefficient endpoint gauge repair" not in transverse["claim_boundary"]:
-        raise AssertionError("first-order Schur claim boundary missing")
-    if "normalized-L0 response map has rank 44 but augmented rank 45" not in transverse["claim_boundary"]:
-        raise AssertionError("normalized-L0 obstruction boundary missing")
-    if "five-term witness" not in transverse["claim_boundary"]:
-        raise AssertionError("normalized-L0 witness boundary missing")
-    if "action-derived transverse first-BGG variation has zero coefficients" not in transverse["claim_boundary"]:
-        raise AssertionError("K-admissibility boundary missing")
-    if "525-by-135 order-at-most-two Phi-only map has rank 130" not in transverse["claim_boundary"]:
-        raise AssertionError("order-two Phi boundary missing")
+    if "NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1" not in transverse_ids:
+        raise AssertionError("linearized PBW associativity gate missing")
+    if "associator has 209 first-variation coefficients" not in transverse["claim_boundary"]:
+        raise AssertionError("associativity failure boundary missing")
+    if "207-coefficient shifted-chain defect is not an authoritative operator obstruction" not in transverse["claim_boundary"]:
+        raise AssertionError("superseded shifted-chain boundary missing")
 
 
 if __name__ == "__main__":

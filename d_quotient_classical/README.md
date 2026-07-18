@@ -480,6 +480,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   homotopy-coherent equation-cone corrections remain open:
   [`certificates/NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1.json`](certificates/NARIAI_TRANSVERSE_PHI_SECOND_ORDER_OBSTRUCTION_V1.json),
   [`reports/nariai-transverse-phi-second-order-obstruction.md`](reports/nariai-transverse-phi-second-order-obstruction.md)
+- Linearized PBW associativity gate: the typed
+  `M_parent o L1_corrected o (K p0)` associator vanishes at the base point but
+  has 209 nonzero first-variation coefficients, with normalized witness one.
+  Since the shifted-chain identity follows abstractly from the parent and
+  first-square identities in an associative differential-operator algebra,
+  the reported 207-term target and its downstream Phi/L0/K screens are now
+  classified as backend regression data rather than operator obstructions.
+  The next gate is a coefficient-jet-aware associative PBW replay:
+  [`certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json`](certificates/NARIAI_TRANSVERSE_LINEARIZED_PBW_ASSOCIATIVITY_GATE_V1.json),
+  [`reports/nariai-transverse-linearized-pbw-associativity-gate.md`](reports/nariai-transverse-linearized-pbw-associativity-gate.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer
