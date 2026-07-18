@@ -64,6 +64,16 @@ def test_finite_detector_provider_is_certified_without_all_shell_promotion():
     }
 
 
+def test_finite_nested_convolution_is_certified_without_physical_binding():
+    rows = {row["id"]: row for row in build()["entries"]}
+    finite = rows["observer.berger.detector_profile.recoil_finite_nested_time_convolution"]
+    readiness = rows["observer.berger.detector_profile.recoil_stream_executable_readiness"]
+    assert finite["descriptions"]["causal"] == "CERTIFIED"
+    assert finite["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert finite["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
+    assert readiness["observer_data"]["detector_response"]["status"] == "OBSTRUCTED"
+
+
 def test_mixed_unary_precedes_apparatus_and_affine_k_morphism():
     value = build()
     row = next(row for row in value["entries"] if row["id"] == "observer.berger.massive_emitter.preparation_pair")

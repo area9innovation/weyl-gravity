@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "callable_contract", "fixtures", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-finite-nested-time-convolution-v1"},
+    "result_id": {"const": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FINITE_SLAB_POLYNOMIAL_CAUSAL_CONVOLUTION_ENGINE_CERTIFIED_PHYSICAL_BINDING_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "maxProperties": 2},
+    "mode_scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"}, "boundaries": {"type": "string"},
+        "charge_sector": {"type": "string"}, "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"}, "m": {"type": "string"},
+        "k": {"type": "string"}, "omega": {"type": "string"}
+      }
+    },
+    "callable_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["module", "callable", "formula", "remainder_rule"],
+      "properties": {
+        "module": {"const": "closed_universe_observers.berger_recoil_interval_stream"},
+        "callable": {"const": "evaluate_nested_green_time_convolution_interval"},
+        "formula": {"type": "string"}, "remainder_rule": {"type": "string"}
+      }
+    },
+    "fixtures": {
+      "type": "object", "additionalProperties": false,
+      "required": ["two_stage_canonical_sha256", "advanced_coordinate_match", "remainder_upper"],
+      "properties": {
+        "two_stage_canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "advanced_coordinate_match": {"const": true}, "remainder_upper": {"const": "61/200"}
+      }
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 3,
+      "items": {"type": "object", "additionalProperties": false, "required": ["name", "detected"], "properties": {"name": {"type": "string"}, "detected": {"const": true}}}
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED", "COMPLETE_PHYSICAL_NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED", "ACTUAL_BERGER_MODE_KERNELS_BOUND", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": {"const": true},
+        "COMPLETE_PHYSICAL_NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": {"const": false},
+        "ACTUAL_BERGER_MODE_KERNELS_BOUND": {"const": false},
+        "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "BIND_ACTUAL_BERGER_MODE_KERNEL_SWITCH_AND_DETECTOR_INTERVALS_TO_NESTED_CONVOLUTION"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

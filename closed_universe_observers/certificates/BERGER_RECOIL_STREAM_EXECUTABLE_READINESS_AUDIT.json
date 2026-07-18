@@ -1,12 +1,17 @@
 {
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to a complete executable interval stream. Exact callable per-shell aggregation of supplied channel intervals is now certified, including the couplings, passive-column sum and Peter-Weyl weight. A detector-coefficient callable is also certified only on the validated advanced-Maxwell image for 2j=0,...,4. It is not a complete all-shell detector provider and is not a massive or recoil evaluation. No callable backend yet provides the remaining detector coefficient intervals, nested advanced/retarded time convolutions, or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce a physical recoil interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
-  "claim_status": "FINITE_DETECTOR_PROVIDER_AND_SHELL_AGGREGATOR_CERTIFIED_REMAINING_BACKENDS_OBSTRUCTED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves the certified complete symbolic Peter-Weyl recoil word but rejects its promotion to a complete executable interval stream. Exact callable per-shell aggregation of supplied channel intervals is now certified, including the couplings, passive-column sum and Peter-Weyl weight. A detector-coefficient callable is also certified only on the validated advanced-Maxwell image for 2j=0,...,4. It is not a complete all-shell detector provider and is not a massive or recoil evaluation. A separate exact finite-slab polynomial convolution callable is certified, but the actual Berger mode kernels, switches and detector intervals are not bound to it, so the complete nested-convolution row remains obstructed. No complete callable backend yet provides the remaining detector coefficient intervals or tail-aware four-stream stop loop. Supplying masses and couplings would therefore still not produce a physical recoil interval. The numerical input schema is certified only as a deferred exact contract in the gHat operator units; it contains no chosen physical values. This audit does not demote the symbolic operator theorem, evaluate recoil, restrict records to the second-order cone, activate Bridge 3, promote finite-r/all-orders observer stability, or make a quantum claim.",
+  "claim_status": "THREE_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
   "dependency_refs": {
     "finite_detector_provider": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
       "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
       "sha256": "9c58de32f8937b4142532d70f5a17afa9e05722ff1b7a284c1d68de40682cb2d"
+    },
+    "finite_nested_convolution": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION.json",
+      "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+      "sha256": "39cb2d9b5a7060d8888eab1d04ce9f7e88937f136c97b424fa25332fe31557da"
     },
     "finite_shell_aggregator": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
@@ -37,8 +42,12 @@
     "backend_module": "closed_universe_observers/berger_recoil_interval_stream.py",
     "backend_module_present": true,
     "discovered_module_callables": [
+      "_absolute_upper",
+      "_polynomial_uniform_upper",
       "_sum_intervals",
+      "_volterra_polynomial_convolution",
       "detector_profile_coefficient_interval",
+      "evaluate_nested_green_time_convolution_interval",
       "evaluate_recoil_shell_interval"
     ],
     "interval_output_requirement": "directed-rounding lower/upper endpoints plus retained-shell and analytic-tail bounds",
@@ -54,6 +63,7 @@
     "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": false,
     "COMPLETE_SYMBOLIC_OPERATOR_WORD_RETAINED": true,
     "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": true,
+    "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": true,
     "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
     "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
     "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": false,
@@ -85,7 +95,7 @@
       "name": "request_external_values_before_internal_backend"
     }
   ],
-  "next_gate": "EXTEND_DETECTOR_COEFFICIENT_PROVIDER_BEYOND_TWO_J4_AND_IMPLEMENT_NESTED_TIME_CONVOLUTION",
+  "next_gate": "BIND_ACTUAL_BERGER_INTERVALS_TO_NESTED_CONVOLUTION_AND_EXTEND_DETECTOR_PROVIDER",
   "numerical_input_contract": {
     "operator_units": "certified_gHat_clock_and_Berger_spatial_operator_units",
     "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -97,19 +107,19 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "75747dcb4aabe0e4d25a01a74d30315247788933264c6d7a6ab1be0ec271dc89"
+        "sha256": "de4a41565987475fc170a04d78eb7b24b9d34f313cc6cc1ee1034318ff2d1104"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "1eef1d47bd1ae11e6590ab24d150b86382f4130114c76ff45ea192591dac64a1"
+        "sha256": "3eb2fe337be78abf1e814905b4e149ce2d76e1fbebd82dd0a0eaf8be654fe818"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_stream_executable_readiness_audit.py",
-        "sha256": "040e5c9acc554fe36803a30985876ccc44dbaeae5e73ac22f16a88035dbbbf3f"
+        "sha256": "8464edbcb131d343112fcbd9759bda608dc1f6fc4f504fae3c30861693d6d425"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-stream-executable-readiness-audit-v1.schema.json",
-        "sha256": "973af26c6131f733f9c815e2f3fdb04f088600f3a9eef99306dcde412d8b1eb4"
+        "sha256": "db5db02a1c6e977cf9dd211db7122e2e3f0ea2c4a493b0002c46f74abc2f1497"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-numerical-specialization-input-v1.schema.json",
@@ -117,11 +127,11 @@
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-stream-executable-readiness-audit.md",
-        "sha256": "f4dbfea83f4ef25b7202eaad8ed89025391aaa4bdbb8e39db92b5ad22e32c1c1"
+        "sha256": "4dda008d9ef6b17f2670ec78a924666aa2a568d8c17782ce2197e529caee5324"
       },
       {
         "path": "closed_universe_observers/berger_recoil_interval_stream.py",
-        "sha256": "4d14e76fa21757767a8c270832262e541036219632ca30d39e910d533768b71e"
+        "sha256": "161596456b1adda355e8b08fbdead2c1f14a7971d96a77ee7b81b67ef7181042"
       }
     ]
   },
@@ -143,13 +153,20 @@
         "status": "CERTIFIED"
       },
       {
+        "coverage": "supplied_finite_slab_polynomial_enclosures",
+        "evidence": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+        "id": "finite_polynomial_nested_time_convolution",
+        "required_callable": "evaluate_nested_green_time_convolution_interval",
+        "status": "CERTIFIED"
+      },
+      {
         "evidence": "CALLABLE_SCOPED_TWO_J0_TO_4_ONLY",
         "id": "detector_profile_coefficient_provider",
         "required_callable": "detector_profile_coefficient_interval",
         "status": "OBSTRUCTED"
       },
       {
-        "evidence": "NO_CALLABLE_IMPLEMENTATION",
+        "evidence": "CALLABLE_SCOPED_TO_SUPPLIED_POLYNOMIAL_ENCLOSURES",
         "id": "nested_time_convolution_backend",
         "required_callable": "evaluate_nested_green_time_convolution_interval",
         "status": "OBSTRUCTED"

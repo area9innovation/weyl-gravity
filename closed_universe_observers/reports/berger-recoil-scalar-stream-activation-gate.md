@@ -14,14 +14,15 @@ compositions and the Peter–Weyl reconstruction weight.  This closes the
 symbolic word, not an executable stream.
 
 The exact shell interval evaluator and finite `two_j=0,...,4`
-advanced-Maxwell detector-coefficient callable now close two scoped execution
-capabilities.  The readiness audit still finds three complete-stream missing
-pieces: an all-shell detector coefficient provider, nested time-convolution
-backend, and tail-aware aggregate stop loop.
+advanced-Maxwell detector-coefficient callable and finite polynomial causal
+convolution engine now close three scoped execution capabilities.  The
+readiness audit still finds three complete-stream missing pieces: an all-shell
+detector coefficient provider, physical Berger binding of the nested engine,
+and the tail-aware aggregate stop loop.
 The remaining sequence is:
 
-1. Extend the detector coefficient provider beyond `two_j=4` and implement
-   the nested causal-convolution backend.
+1. Bind actual Berger kernels, switches, detector intervals and form blocks to
+   the nested engine while extending the coefficient provider beyond `two_j=4`.
 2. Implement the tail-aware four-stream stop loop.
 3. Only then declare numerical positive masses, nonzero couplings, and an
    interval, nonzero, or sign stopping goal.

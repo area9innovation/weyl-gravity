@@ -100,6 +100,11 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "evidence_flag": "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED",
         },
         {
+            "id": "finite_polynomial_nested_time_convolution",
+            "status": "CERTIFIED" if values["executable_readiness"]["flags"]["FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED",
+        },
+        {
             "id": "callable_shell_interval_backend",
             "status": "CERTIFIED" if values["executable_readiness"]["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] else "OBSTRUCTED",
             "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
@@ -177,8 +182,10 @@ def build() -> dict[str, Any]:
         "still obstructed: exact shell aggregation is callable and the validated "
         "advanced-Maxwell detector coefficients are callable for 2j=0,...,4, but the "
         "latter are not a complete all-shell detector provider or a massive/recoil "
-        "evaluation. No nested time-convolution backend or tail-aware aggregate stop "
-        "loop is exported. Numerical masses, couplings and a stopping goal are therefore "
+        "evaluation. A finite polynomial causal-convolution engine is certified, but "
+        "the actual Berger mode kernels, switches and detector intervals are not bound "
+        "to it. No complete nested backend or tail-aware aggregate stop loop is "
+        "exported. Numerical masses, couplings and a stopping goal are therefore "
         "deferred; supplying them now would not produce an interval. The exact "
         "generic coefficient functional is not itself a numerical Green-image "
         "evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, "
@@ -204,7 +211,7 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "extend the detector coefficient provider beyond two_j=4 and implement the nested time-convolution backend",
+            "current_active_gate": "bind actual Berger intervals to the finite nested-convolution engine and extend the detector provider beyond two_j=4",
             "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
@@ -232,13 +239,14 @@ def build() -> dict[str, Any]:
             "EXECUTABLE_MODEWISE_RECOIL_STREAM_READY": False,
             "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": True,
             "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": True,
+            "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "EXTEND_DETECTOR_COEFFICIENT_PROVIDER_BEYOND_TWO_J4_AND_IMPLEMENT_NESTED_TIME_CONVOLUTION",
+        "next_gate": "BIND_ACTUAL_BERGER_INTERVALS_TO_NESTED_CONVOLUTION_AND_EXTEND_DETECTOR_PROVIDER",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

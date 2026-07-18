@@ -100,8 +100,9 @@ Peter--Weyl weight.  A separate atlas row certifies exact callable detector
 coefficients only for the validated advanced-Maxwell image through
 `two_j=4`, including structural zeros and uniform temporal-kernel remainders.
 It does not construct a recoil channel.  The adjacent readiness and activation
-rows remain `OBSTRUCTED` on the complete all-shell detector provider, nested
-causal convolution and the tail-aware stop loop.  External parameters are
+rows now also cite a separately certified finite polynomial causal-convolution
+engine.  Actual Berger kernel/switch/profile binding remains `OBSTRUCTED`, as
+do the complete all-shell detector provider and tail-aware stop loop.  External parameters are
 deferred, so none of the four numerical streams is active.
 The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
 coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy

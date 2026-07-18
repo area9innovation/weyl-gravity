@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
+from math import factorial
 from typing import Any, Mapping, Sequence
 
 
@@ -127,6 +128,104 @@ def detector_profile_coefficient_interval(
         "structural_zero": structural_zero,
         "uniform_entire_series_remainders": mode["uniform_entire_series_remainders"],
         "claim_boundary": "finite advanced Maxwell detector coefficient through two_j=4; not a massive or recoil-channel coefficient",
+    }
+
+
+def _absolute_upper(interval: RationalInterval) -> Fraction:
+    return max(abs(interval.lower), abs(interval.upper))
+
+
+def _polynomial_uniform_upper(
+    coefficients: Sequence[RationalInterval], slab_length: Fraction
+) -> Fraction:
+    return sum(
+        (_absolute_upper(coefficient) * slab_length**power for power, coefficient in enumerate(coefficients)),
+        Fraction(0),
+    )
+
+
+def _volterra_polynomial_convolution(
+    source: Sequence[RationalInterval], kernel: Sequence[RationalInterval]
+) -> tuple[RationalInterval, ...]:
+    output = [RationalInterval.point(0) for _ in range(len(source) + len(kernel))]
+    for source_power, source_coefficient in enumerate(source):
+        for kernel_power, kernel_coefficient in enumerate(kernel):
+            output_power = source_power + kernel_power + 1
+            beta = Fraction(
+                factorial(source_power) * factorial(kernel_power),
+                factorial(output_power),
+            )
+            output[output_power] = output[output_power] + (
+                source_coefficient * kernel_coefficient
+            ).scale(beta)
+    return tuple(output)
+
+
+def evaluate_nested_green_time_convolution_interval(
+    *,
+    source_coefficients: Sequence[RationalInterval],
+    source_remainder_upper: Fraction,
+    kernel_stages: Sequence[Mapping[str, Any]],
+    slab_length: Fraction,
+    orientation: str,
+) -> dict[str, object]:
+    """Compose supplied polynomial Green-kernel enclosures causally.
+
+    In the retarded coordinate ``x=t-t_left`` and advanced coordinate
+    ``x=t_right-t``, each stage evaluates ``integral_0^x K(x-y)f(y)dy``.
+    Coefficients use the exact beta-integral factor, while uniform input and
+    kernel remainders are propagated on the declared finite slab.
+    """
+    slab_length = Fraction(slab_length)
+    source_remainder_upper = Fraction(source_remainder_upper)
+    if orientation not in ("retarded", "advanced"):
+        raise ValueError("orientation must be retarded or advanced")
+    if slab_length <= 0:
+        raise ValueError("slab_length must be positive")
+    if source_remainder_upper < 0:
+        raise ValueError("source remainder upper bound must be nonnegative")
+    if not source_coefficients:
+        raise ValueError("source polynomial must contain at least one coefficient")
+    if not kernel_stages:
+        raise ValueError("at least one Green-kernel stage is required")
+
+    coefficients = tuple(source_coefficients)
+    remainder = source_remainder_upper
+    stage_rows = []
+    for stage_index, stage in enumerate(kernel_stages):
+        kernel = tuple(stage.get("coefficients", ()))
+        kernel_remainder = Fraction(stage.get("uniform_remainder_upper", 0))
+        if not kernel:
+            raise ValueError("each Green-kernel stage needs polynomial coefficients")
+        if kernel_remainder < 0:
+            raise ValueError("kernel remainder upper bound must be nonnegative")
+        source_upper = _polynomial_uniform_upper(coefficients, slab_length)
+        kernel_upper = _polynomial_uniform_upper(kernel, slab_length)
+        output = _volterra_polynomial_convolution(coefficients, kernel)
+        output_remainder = slab_length * (
+            source_upper * kernel_remainder
+            + kernel_upper * remainder
+            + remainder * kernel_remainder
+        )
+        stage_rows.append(
+            {
+                "stage": stage_index,
+                "kernel_label": str(stage.get("label", f"stage_{stage_index}")),
+                "polynomial_coefficients": [value.serialize() for value in output],
+                "uniform_remainder_upper": str(output_remainder),
+            }
+        )
+        coefficients = output
+        remainder = output_remainder
+
+    return {
+        "orientation": orientation,
+        "causal_coordinate": "t-t_left" if orientation == "retarded" else "t_right-t",
+        "slab_length": str(slab_length),
+        "stages": stage_rows,
+        "polynomial_coefficients": [value.serialize() for value in coefficients],
+        "uniform_remainder_upper": str(remainder),
+        "claim_boundary": "supplied finite-slab polynomial Green enclosures only; no physical Berger mode binding or recoil channel evaluated",
     }
 
 

@@ -60,7 +60,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark with a generic primed Green/spectral carrier, and supply the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    extend the certified finite detector-coefficient provider beyond two_j=4 and implement the nested causal-convolution backend, then the tail-aware four-stream loop before restricting records to Z2^C
+Observer:    bind actual Berger kernels, switches and detector intervals to the certified finite nested-convolution engine while extending coefficient coverage beyond two_j=4, then build the tail-aware loop before restricting records to Z2^C
 Black hole:  polar reach/flux/disposition via the certified general split; then complex-frequency structure
 ```
 
@@ -511,17 +511,19 @@ both feedback switches, the physical massive correction, eight factored
 `g_b g_c^2` channels, four aggregate streams and the reconstruction weight
 `(two_j+1)/Vol_Berger`.  Its factorwise tail is indexed by the feedback
 emitter, `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` close.
-The first executable successors now close two finite capabilities.  The shell
+The first executable successors now close three finite capabilities.  The shell
 evaluator aggregates supplied exact rational channel intervals, requires both
 feedback channels and every passive column, applies `g_b g_c^2` and
 `(two_j+1)/Vol_Berger`, and detects deletion of those factors.  The detector
 coefficient callable exposes exact real/imaginary rational intervals,
 structural zeros and certified temporal-kernel remainders from the validated
 advanced-Maxwell image for `two_j=0,...,4`.  It is not a complete all-shell
-provider, massive image or recoil evaluation.  Extension beyond `two_j=4`,
-nested causal time convolutions and the tail-aware four-stream stop loop
-remain `OBSTRUCTED`, so external numerical inputs remain deferred under the
-strict specialization schema.
+provider, massive image or recoil evaluation.  A finite-slab Volterra engine
+also composes supplied retarded/advanced polynomial interval kernels with
+exact beta factors and uniform rational remainder propagation.  Actual Berger
+kernel/switch/profile binding, extension beyond `two_j=4`, and the tail-aware
+four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
+deferred under the strict specialization schema.
 The coupling-stripped preparation successor fixes the formal-order convention
 needed by that stream.  Since the advanced detector covector is linear in
 nonzero `g_a`, write `v_a=g_a tilde_v_a` and hold its positive-energy dual
@@ -1637,12 +1639,13 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL` (fired; field-strength tail certified, dense rail unselected) | certify the finite-time massive retarded energy constant on the exact switch slabs and combine it with the graph tail inside the response-specific scalar stream; do not materialize the 14,177,143,864-entry sub-unit rail |
 | `BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT` (fired for symbolic positive masses) | certify the downstream Maxwell-to-detector dual norms and stream the four recoil scalar intervals; retain the unsmoothed longitudinal `1/m_b^2` contribution and do not invent numerical masses |
 | `BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS` (fired for both detectors and symbolic positive masses) | use the recoil-stream activation successor to separate the internal integrand from later numerical inputs; do not promote the symbolic radii to evaluated coefficients |
-| `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` (fired; finite `two_j<=4` detector coefficients and shell aggregation certified, complete stream obstructed) | extend the detector provider beyond `two_j=4`, implement nested causal-convolution intervals, and defer external parameters |
+| `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` (fired; three finite execution primitives certified, complete stream obstructed) | bind actual Berger data to the nested engine, extend the detector provider beyond `two_j=4`, and defer external parameters |
 | `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` (fired; fixed formal Cauchy data) | build the per-shell word for fixed `tilde_u_b`, symbolic positive masses and explicit `g_b g_c^2`; do not count the selection coupling twice |
 | `BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE` (fired; d/delta signs and wave split exact) | serialize the fixed-`tilde_u_b` per-shell recoil operator word using the exact spacetime blocks; do not infer a scalar value from convention closure |
 | `BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD` (fired; eight channels and four symbolic formulas complete) | pass through the executable-readiness audit; do not identify a typed operator word with a callable interval stream |
 | `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` (fired; exact supplied-channel aggregation certified) | construct physical `I_abc[two_j,k]` intervals with detector coefficients and nested causal convolutions; do not treat the exact fixture as recoil data |
 | `BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER` (fired for the validated advanced-Maxwell image through `two_j=4`) | extend coefficient access beyond `two_j=4` and through the massive/recoil chain; do not identify finite Maxwell coefficients with physical `I_abc` intervals |
+| `BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION` (fired for supplied polynomial interval enclosures) | bind the actual Berger Maxwell/massive kernels, switches, detector coefficients and form contractions; do not identify the exact beta-integral fixture with a physical channel |
 | `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` (fired; two finite capabilities certified, complete provider/nested convolution/stop loop obstructed) | extend the detector provider beyond `two_j=4`, implement the nested causal convolution and tail-aware four-stream stop loop; only then activate the exact numerical input schema |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |

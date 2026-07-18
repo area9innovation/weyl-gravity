@@ -1,0 +1,99 @@
+{
+  "atlas_status": "CERTIFIED",
+  "callable_contract": {
+    "callable": "evaluate_nested_green_time_convolution_interval",
+    "formula": "(K*f)(x)=integral_0^x K(x-y)f(y)dy; coefficient beta(i+1,j+1)",
+    "module": "closed_universe_observers.berger_recoil_interval_stream",
+    "remainder_rule": "L(P_sup rK + K_sup rP + rP rK) at each stage"
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result exports the public evaluate_nested_green_time_convolution_interval callable for supplied finite-slab polynomial interval enclosures. In retarded x=t-t_left or advanced x=t_right-t coordinates it composes any nonempty kernel list by the exact beta-integral coefficient formula and propagates uniform source/kernel remainders with rational arithmetic. A two-stage fixture is exactly x^3/3+x^4/12 and a nonzero-remainder fixture gives 61/200. This is a scoped causal convolution engine, not a binding of the actual Berger Maxwell/massive mode kernels, switches or detector coefficients. It therefore is not a complete recoil convolution backend and does not evaluate I_abc, a shell, a record, the cone, Bridge 3 or quantum data.",
+  "claim_status": "FINITE_SLAB_POLYNOMIAL_CAUSAL_CONVOLUTION_ENGINE_CERTIFIED_PHYSICAL_BINDING_OPEN",
+  "dependency_refs": {
+    "mode_kernels": {
+      "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+      "result_id": "BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS",
+      "sha256": "f39348c599ca4c69461bc1ebaf2d32c51a733865165b66e4815d26c53cb48ecc"
+    },
+    "shell_word": {
+      "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+      "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+      "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fixtures": {
+    "advanced_coordinate_match": true,
+    "remainder_upper": "61/200",
+    "two_stage_canonical_sha256": "540316f3b26c1eb80598d67d175f11b59c7fe50a35bb25779201c6ee11c2213c"
+  },
+  "flags": {
+    "ACTUAL_BERGER_MODE_KERNELS_BOUND": false,
+    "COMPLETE_PHYSICAL_NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": false,
+    "FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "mode_scope": {
+    "background": "compact positive Berger clock at fixed coupling",
+    "boundaries": "one declared compact causal time slab; no spatial boundary",
+    "carrier": "supplied polynomial interval enclosures for causal Green kernels and sources",
+    "charge_sector": "fixed-coupling Berger sector",
+    "degree": "time-convolution coefficient engine independent of form-block degree",
+    "ell": "finite supplied mode block only; no all-shell binding",
+    "k": "supplied passive column",
+    "m": "supplied block row",
+    "omega": "finite polynomial kernel plus uniform remainder on a rational slab",
+    "parity": "retarded or advanced causal orientation",
+    "theory": "classical pure-Weyl gravity plus Berger clock, Maxwell detector and massive two-form emitters"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "unknown_orientation"
+    },
+    {
+      "detected": true,
+      "name": "negative_source_remainder"
+    },
+    {
+      "detected": true,
+      "name": "delete_all_kernel_stages"
+    }
+  ],
+  "next_gate": "BIND_ACTUAL_BERGER_MODE_KERNEL_SWITCH_AND_DETECTOR_INTERVALS_TO_NESTED_CONVOLUTION",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_finite_nested_time_convolution.py",
+        "sha256": "c1a19322b9836d2287ace17c5b69e3604f8784f4bf11602709e4423fedcfaef0"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_interval_stream.py",
+        "sha256": "161596456b1adda355e8b08fbdead2c1f14a7971d96a77ee7b81b67ef7181042"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_finite_nested_time_convolution.py",
+        "sha256": "74f9ca5dfb0e1c833ae34b87d0f078e969448d901cf2bc96ef7c1ed09eacc40e"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_finite_nested_time_convolution.py",
+        "sha256": "786c1e5b6ff4875c369225fe90293cbd8ea4e2a3ff6a1daf03cfd6c631760002"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-finite-nested-time-convolution-v1.schema.json",
+        "sha256": "45c8b26394c3c5bc1ed201eb960e9639b2c1f52968b5b325e51286f61b52bd69"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-finite-nested-time-convolution.md",
+        "sha256": "8c5fdd8e2270017d7626efa44aa06e46a2c0c7af443e3cad75c744c405c5b269"
+      }
+    ]
+  },
+  "result_id": "BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION",
+  "schema": "closed-universe-berger-recoil-finite-nested-time-convolution-v1",
+  "setting_id": "compact_positive_berger_clock_observer_apparatus_extension"
+}

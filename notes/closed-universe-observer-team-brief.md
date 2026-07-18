@@ -806,9 +806,13 @@ sums every passive column and both feedback channels and applies
 `BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER` separately exposes exact
 rational real/imaginary coefficient intervals, structural zeros and the
 certified uniform remainder from the advanced-Maxwell image through
-`two_j=4`.  This finite callable is `CERTIFIED`, but the complete all-shell
-detector provider, nested advanced/retarded time-convolution backend and
-tail-aware aggregate stop loop remain `OBSTRUCTED`.  Supplying
+`two_j=4`.  `BERGER_RECOIL_FINITE_NESTED_TIME_CONVOLUTION` additionally
+certifies exact beta-integral composition and rational uniform-remainder
+propagation for supplied finite-slab retarded/advanced polynomial enclosures.
+The actual Berger kernels, switches, detector intervals and form contractions
+are not yet bound to that engine.  Thus the complete all-shell detector
+provider, physical nested-convolution backend and tail-aware aggregate stop
+loop remain `OBSTRUCTED`.  Supplying
 masses and couplings would still produce no physical interval.  The exact-
 rational input schema remains deferred.
 
