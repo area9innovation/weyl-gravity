@@ -24,6 +24,7 @@ INPUTS = {
     "polar_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "exceptional_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
     "exceptional_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+    "exceptional_nonzero_k_cofiber": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
     "ell1_standard": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
     "homogeneous_standard": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_global_symplectic_restriction.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
@@ -164,20 +165,20 @@ def _branch_rows(records: dict[str, dict[str, object]]) -> list[dict[str, object
         {
             "id": "ph.exceptional.ell1.nonzero_k.relative",
             "scope": _scope(
-                carrier="physical standard axial-plus-polar ell=1 quotient at nonzero compact momentum",
+                carrier="standard Einstein image and extra axial-plus-polar ell=1 solution cofiber at nonzero compact momentum",
                 parity="axial and polar",
                 ell=1,
                 m="-1,0,1",
                 k="2*pi*n/L with n!=0",
-                omega="physical omega^2=k^2+4; any extra target branch unclassified",
+                omega="standard omega^2=k^2+4 and extra omega^2=k^2+4/3",
             ),
-            "map_lifecycle": "OFFSHELL_CHAIN_MAP_ONLY",
+            "map_lifecycle": "DERIVED_COFIBER_TRIANGLE",
             "inclusion": {"status": "CERTIFIED", "map": "polynomial all-row axial and polar chain maps for every compact momentum, inducing the identity inclusion on the physical Einstein-Maxwell ell=1 quotient"},
-            "projection_or_cofiber": {"status": "NO_CERTIFIED_MAP", "map": "no complete nonzero-k exceptional target classification or cofiber projection is certified"},
-            "branch_representatives": {"status": "CERTIFIED", "source": "physical ell=1 quotient representatives", "extra": "NO_CERTIFIED_MAP"},
-            "action_derived_pairing": {"status": "CERTIFIED", "standard_relative_operator": "4*I", "extra": "NO_CERTIFIED_MAP"},
-            "missing": ["nonzero-k solution cofiber and action-derived extra pairing", "final residual descent"],
-            "evidence": _evidence("standard", "ell1_standard", "exceptional_global_offshell"),
+            "projection_or_cofiber": {"status": "CERTIFIED", "map": "CRT projectors in s=omega^2-k^2 isolate the standard source image and the one-dimensional extra target quotient in each parity"},
+            "branch_representatives": {"status": "CERTIFIED", "source": "one standard polynomial representative in each parity", "extra": "one polynomial representative in each parity without k or omega inversion"},
+            "action_derived_pairing": {"status": "CERTIFIED", "standard_relative_operator": "4*I after normalized quotient coordinates", "extra_Gram_on_polynomial_representatives": {"axial": "4*(3*k^2+4)", "polar": "4*(3*k^2+4)"}, "standard_extra_orthogonal": True},
+            "missing": ["finite large-gauge/global quotient", "final residual descent"],
+            "evidence": _evidence("standard", "ell1_standard", "exceptional_global_offshell", "exceptional_nonzero_k_cofiber"),
         },
         {
             "id": "ph.global.homogeneous.relative",
@@ -278,6 +279,8 @@ def build() -> dict[str, object]:
         raise AssertionError("polar direct current changed")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional k0 solution cofiber changed")
+    if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:
+        raise AssertionError("exceptional nonzero-k solution cofiber changed")
     if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:
         raise AssertionError("homogeneous zero solution cofiber changed")
     if not records["twist_cofiber"]["classification"]["twist_solution_cofiber_zero"]:
@@ -320,7 +323,7 @@ def build() -> dict[str, object]:
             "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
             "current_global_map_lifecycle": "HARMONIC_OFFSHELL_MAPS_ONLY",
             "activation_gate": "OPEN",
-            "reason": "polynomial all-row maps now cover every generic, exceptional and homogeneous harmonic coefficient block, while generic and k=0/global solution cofibers are certified and the all-standard-pairing cyclic-map route is obstructed; a single natural covariant support-local map, nonzero-k exceptional cofiber/pairing, finite residual endpoints and boundary domain remain absent",
+            "reason": "polynomial all-row maps and solution cofibers now cover every generic, exceptional and homogeneous harmonic coefficient block, while the all-standard-pairing cyclic-map route is obstructed; a single natural covariant support-local map, finite residual endpoints and boundary domain remain absent",
             "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             "requested_full_artifact_certified": False,
         },
@@ -351,6 +354,7 @@ def build() -> dict[str, object]:
             "all_harmonic_sector_coefficient_maps_available": True,
             "single_covariant_support_local_map_reconstructed": False,
             "exceptional_k0_solution_cofiber_certified": True,
+            "exceptional_nonzero_k_solution_cofiber_certified": True,
             "homogeneous_solution_cofiber_zero": True,
             "twist_solution_cofiber_zero": True,
             "complete_homogeneous_twist_bounded_resonance_matrix_imported": True,
@@ -364,8 +368,8 @@ def build() -> dict[str, object]:
             "bridge_1_activation_gate_satisfied": False,
             "cross_background_mode_identification_made": False,
         },
-        "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, polynomial all-row chain maps in every generic, exceptional and homogeneous harmonic coefficient block, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, an explicit exceptional k=0 solution cofiber, and zero homogeneous and twist-primary solution cofibers. Harmonic selection is not support local, so the honest all-sector target remains a single natural covariant noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
-        "next_gate": "reconstruct the complete harmonic tables as one natural support-local four-dimensional chain morphism, classify the nonzero-k exceptional cofiber/pairing, and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+        "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, polynomial all-row chain maps and solution cofibers in every generic, exceptional and homogeneous harmonic coefficient block, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, and zero homogeneous and twist-primary solution cofibers. Harmonic selection is not support local, so the honest all-sector target remains a single natural covariant noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+        "next_gate": "reconstruct the complete harmonic tables as one natural support-local four-dimensional chain morphism and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),

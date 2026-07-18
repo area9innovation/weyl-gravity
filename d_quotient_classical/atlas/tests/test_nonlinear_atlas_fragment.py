@@ -163,6 +163,15 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("polynomial ghost-field-equation-identity chain map", entry["claim_boundary"])
         self.assertIn("does not activate Bridge 2", entry["claim_boundary"])
 
+    def test_nonzero_k_exceptional_cofiber_is_a_linear_handoff_only(self):
+        entry = next(item for item in atlas.build()["entries"] if "exceptional_ell1_nonzero_k_solution_cofiber" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not", entry["claim_boundary"])
+        self.assertIn("activate Bridge 2", entry["claim_boundary"])
+
     def test_product_relative_linfinity_receiver_is_fail_closed(self):
         entry = next(item for item in atlas.build()["entries"] if "relative_linfinity_through_arity_three_preflight" in item["id"])
         self.assertTrue(all(status == "NO_CERTIFIED_MAP" for status in entry["descriptions"].values()))

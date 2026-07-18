@@ -197,8 +197,12 @@ has its fail-closed disposition and the second is active:
    crosswalk.  Polynomial all-row maps now exist in every generic,
    exceptional, and homogeneous harmonic coefficient block.  The remaining
    linear gate is their reconstruction as one natural support-local covariant
-   morphism, the nonzero-`k` exceptional cofiber/pairing, and the finite
-   residual endpoints; harmonic selection itself is not a local map.
+   morphism and the finite residual endpoints; harmonic selection itself is
+   not a local map.  The nonzero-`k` exceptional solution cofiber and its
+   action pairing are now exact: each parity has the standard Einstein image
+   at `omega^2-k^2=4` and one nonradical extra class at
+   `omega^2-k^2=4/3`, represented polynomially without a differential
+   inverse.
 3. Export complete same-background \(q_1,q_2,q_3\) payloads separately for
    Einstein--Maxwell and Weyl--Maxwell so the nonlinear team can compute
    \(\Delta_2\), the arity-three morphism defect, and the induced deformation

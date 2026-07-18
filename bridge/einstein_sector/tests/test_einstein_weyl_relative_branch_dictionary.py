@@ -41,7 +41,8 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
         self.assertFalse(flags["single_covariant_support_local_map_reconstructed"])
         rows = {row["id"]: row for row in self.value["branch_rows"]}
         self.assertEqual(rows["ph.exceptional.ell1.relative"]["map_lifecycle"], "DERIVED_COFIBER_TRIANGLE")
-        self.assertEqual(rows["ph.exceptional.ell1.nonzero_k.relative"]["map_lifecycle"], "OFFSHELL_CHAIN_MAP_ONLY")
+        self.assertEqual(rows["ph.exceptional.ell1.nonzero_k.relative"]["map_lifecycle"], "DERIVED_COFIBER_TRIANGLE")
+        self.assertEqual(rows["ph.exceptional.ell1.nonzero_k.relative"]["projection_or_cofiber"]["status"], "CERTIFIED")
         self.assertEqual(rows["ph.global.homogeneous.relative"]["map_lifecycle"], "DERIVED_COFIBER_TRIANGLE")
 
     def test_aligned_common_zero_face_is_only_a_handoff(self) -> None:

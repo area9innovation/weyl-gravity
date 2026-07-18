@@ -33,6 +33,7 @@ CERTS = {
     "global_extra_smooth_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
     "circumference_transport_primitive": ROOT / "bridge/certificates/einstein_maxwell_weyl_circumference_ell2_extra_transport_primitive.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+    "exceptional_ell1_nonzero_k_cofiber": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
     "exceptional_global_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -318,6 +319,16 @@ def entries() -> list[dict[str, Any]]:
         "k": 0,
         "omega": "twist omega^2=0 axially, extra omega^2=4/3, standard omega^2=4",
     }
+    exceptional_nonzero_k_scope = {
+        **product_common,
+        "carrier": "exceptional local-gauge-reduced axial and polar ell=1 solution modules at nonzero compact momentum",
+        "degree": 1,
+        "parity": "axial and polar kept separate",
+        "ell": 1,
+        "m": "all three real SO(3) components",
+        "k": "2*pi*n/L with n!=0",
+        "omega": "standard omega^2=k^2+4 and extra omega^2=k^2+4/3",
+    }
     relative_linfinity_scope = {
         **product_common,
         "carrier": "prospective full off-shell Einstein--Weyl relative BV triangle with complete same-background Einstein-Maxwell and Weyl-Maxwell q1,q2,q3 Taylor payloads",
@@ -500,7 +511,25 @@ def entries() -> list[dict[str, Any]]:
                 resonance=("OPEN", "No complete exceptional nonlinear resonance table is certified."),
             ),
             "evidence": _evidence("exceptional_ell1_cofiber", "exceptional_global_offshell", "relative_branch_dictionary", "dictionary"),
-            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber at ell=1,k=0 together with a polynomial ghost-field-equation-identity chain map for every exceptional and homogeneous harmonic coefficient block. Harmonic selection is not support local; one natural covariant glue, the nonzero-k cofiber/pairing, q2, and final residual descent remain open, so this row does not activate Bridge 2.",
+            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber at ell=1,k=0 together with a polynomial ghost-field-equation-identity chain map for every exceptional and homogeneous harmonic coefficient block. Harmonic selection is not support local; one natural covariant glue, q2, and final residual descent remain open, so this row does not activate Bridge 2.",
+        },
+        {
+            "id": "nonlinear.product.bridge1.exceptional_ell1_nonzero_k_solution_cofiber",
+            "scope": exceptional_nonzero_k_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The all-row q1 map and solution cofiber are exact; the q2 relative morphism and one natural support-local covariant glue remain open."),
+                    ("OPEN", "No nonzero-k smooth-secular relative obstruction map is certified."),
+                    ("NO_CERTIFIED_MAP", "No compact-product causal Green carrier is certified."),
+                ),
+                dispersion=("CERTIFIED", "The standard shell omega^2-k^2=4 is the Einstein image and the extra shell omega^2-k^2=4/3 is a one-class cofiber in each parity."),
+                pairing=("CERTIFIED", "Polynomial extra representatives have positive Gram weight 4*(3*k^2+4) in each parity and are orthogonal to the standard image."),
+                taub=("OPEN", "The solution cofiber alone does not define the nonzero-k quadratic tangent cone."),
+                resonance=("OPEN", "No complete nonzero-k nonlinear resonance table is certified."),
+            ),
+            "evidence": _evidence("exceptional_ell1_nonzero_k_cofiber", "exceptional_global_offshell", "relative_branch_dictionary", "dictionary"),
+            "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber and polynomial all-row q1 coefficient map for ell=1 at nonzero compact momentum. It does not reconstruct the natural covariant glue, supply q2, perform final residual descent, or activate Bridge 2.",
         },
         {
             "id": "nonlinear.product.bridge2.relative_linfinity_through_arity_three_preflight",

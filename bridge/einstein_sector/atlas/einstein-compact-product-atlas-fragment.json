@@ -8,7 +8,7 @@
   ],
   "entries": [
     {
-      "claim_boundary": "Global map lifecycle is HARMONIC_OFFSHELL_MAPS_ONLY and Bridge 1 activation remains OPEN. The complete harmonic coefficient algebra is exact, but harmonic selection is not support local; a single natural covariant glue, nonzero-k exceptional cofiber/pairing, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+      "claim_boundary": "Global map lifecycle is HARMONIC_OFFSHELL_MAPS_ONLY and Bridge 1 activation remains OPEN. The complete harmonic coefficient algebra and solution cofibers are exact, but harmonic selection is not support local; a single natural covariant glue, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -20,12 +20,17 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "db9bae204b44989c76e676a2fb463ca815f200e42715d8187b842f9754c16004"
+          "sha256": "75b66ff38d11354ee7da49c8592e0045013cfa41497989fa64869f9f4c78aed5"
         },
         {
           "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
           "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1",
           "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+        },
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1",
+          "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
         }
       ],
       "id": "einstein.ph.bridge.relative_branch_dictionary_v1",
@@ -398,6 +403,85 @@
         "k": 0,
         "m": "-1,0,1",
         "omega": "omega_e^2=4/3",
+        "parity": "axial and polar",
+        "theory": "Weyl-Maxwell target"
+      }
+    },
+    {
+      "claim_boundary": "This is a same-background REDUCED-MODE solution cofiber with a polynomial all-row coefficient map. It does not supply the natural covariant glue, finite residual descent, causal propagation, a particle interpretation, or a cross-background map.",
+      "descriptions": {
+        "causal": "OPEN",
+        "nonlinear": "OPEN",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NO_CERTIFIED_MAP",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1",
+          "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
+        },
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1",
+          "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+        },
+        {
+          "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+          "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+          "sha256": "75b66ff38d11354ee7da49c8592e0045013cfa41497989fa64869f9f4c78aed5"
+        },
+        {
+          "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+          "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+          "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+        }
+      ],
+      "id": "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The target quotient contains one standard and one extra class in each parity; the standard shell is the Einstein-Maxwell image.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "Polynomial representatives give extra Gram weights 4*(3*k^2+4) in both parities and zero standard-extra pairing.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No complete nonzero-k quadratic resonance table is certified.",
+          "status": "OPEN"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "No bounded second-order classification on this carrier.",
+            "status": "OPEN"
+          },
+          "causal_retarded": {
+            "statement": "No compact-product causal/retarded Green theorem has been certified.",
+            "status": "OPEN"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "No smooth-secular second-order classification on this carrier.",
+            "status": "OPEN"
+          }
+        },
+        "taub_maps": {
+          "statement": "The linear cofiber and current do not classify the nonzero-k fixed-bundle tangent cone.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "axial-plus-polar exceptional ell=1 solution cofiber at nonzero compact momentum",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 1,
+        "ell": 1,
+        "k": "2*pi*n/L with n!=0",
+        "m": "-1,0,1",
+        "omega": "standard omega^2=k^2+4 and extra omega^2=k^2+4/3",
         "parity": "axial and polar",
         "theory": "Weyl-Maxwell target"
       }
@@ -966,7 +1050,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "43feea979cae7e57f4e03d5ce32d0de70e67b1cecea77f9f151e5826d21b34ca",
+  "generated_by_sha256": "fe54bd387facb785665d88c10bcf340cbc40bd1b69791b41cc3768c647fe1d2b",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

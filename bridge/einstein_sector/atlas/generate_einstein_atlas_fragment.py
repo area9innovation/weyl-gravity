@@ -25,6 +25,7 @@ CERTIFICATES = {
     "balanced": ROOT / "bridge/certificates/einstein_maxwell_weyl_balanced_ell0_second_order.json",
     "exceptional_current": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
     "exceptional_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+    "exceptional_nonzero_k_cofiber": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
     "exceptional_resonance": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
@@ -129,8 +130,8 @@ def entries() -> list[dict[str, object]]:
             ("OPEN", "Quadratic data are partial handoffs and do not activate the linear bridge or complete the relative obstruction map."),
             ("OPEN", "All harmonic coefficient blocks have off-shell row maps, but a single covariant support-local glue, complete relative resonance map and Bridge 1 activation are not certified."),
             _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
-            _evidence("branch_dictionary", "exceptional_offshell"),
-            "Global map lifecycle is HARMONIC_OFFSHELL_MAPS_ONLY and Bridge 1 activation remains OPEN. The complete harmonic coefficient algebra is exact, but harmonic selection is not support local; a single natural covariant glue, nonzero-k exceptional cofiber/pairing, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+            _evidence("branch_dictionary", "exceptional_offshell", "exceptional_nonzero_k_cofiber"),
+            "Global map lifecycle is HARMONIC_OFFSHELL_MAPS_ONLY and Bridge 1 activation remains OPEN. The complete harmonic coefficient algebra and solution cofibers are exact, but harmonic selection is not support local; a single natural covariant glue, finite residual endpoints and boundary domain remain absent. Every standard-pairing cyclic correction is obstructed, so the required replacement is a noncyclic three-form triangle. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
         ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
@@ -179,6 +180,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OBSTRUCTED", "Every nonzero exceptional dipole is obstructed by the certified Taub and resonant functionals."), ("OBSTRUCTED", "The stabilizer Taub obstruction persists even if a resonant propagation correction is allowed to be secular."), open_causal),
             _evidence("exceptional_current", "exceptional_cofiber", "exceptional_resonance", "abstract_cone"),
             "This all-m compact no-go is pre-final-residual and does not identify an asymptotic state or a quantum particle.",
+        ),
+        _entry(
+            "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
+            _scope(theory="Weyl-Maxwell target", carrier="axial-plus-polar exceptional ell=1 solution cofiber at nonzero compact momentum", degree=1, parity="axial and polar", ell=1, m="-1,0,1", k="2*pi*n/L with n!=0", omega="standard omega^2=k^2+4 and extra omega^2=k^2+4/3"),
+            {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            ("CERTIFIED", "The target quotient contains one standard and one extra class in each parity; the standard shell is the Einstein-Maxwell image."),
+            ("CERTIFIED", "Polynomial representatives give extra Gram weights 4*(3*k^2+4) in both parities and zero standard-extra pairing."),
+            ("OPEN", "The linear cofiber and current do not classify the nonzero-k fixed-bundle tangent cone."),
+            ("OPEN", "No complete nonzero-k quadratic resonance table is certified."),
+            _second_order(("OPEN", "No bounded second-order classification on this carrier."), ("OPEN", "No smooth-secular second-order classification on this carrier."), open_causal),
+            _evidence("exceptional_nonzero_k_cofiber", "exceptional_offshell", "branch_dictionary", "abstract_cone"),
+            "This is a same-background REDUCED-MODE solution cofiber with a polynomial all-row coefficient map. It does not supply the natural covariant glue, finite residual descent, causal propagation, a particle interpretation, or a cross-background map.",
         ),
         _entry(
             "einstein.ph.wm.mixed.twist_exceptional_independence",
@@ -279,6 +292,8 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional all-m input changed")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
+    if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:
+        raise AssertionError("exceptional nonzero-k solution-cofiber input changed")
     if not records["twist_independence"]["classification"]["nonzero_adjoint_cokernel_witness_certified"]:
         raise AssertionError("twist independence witness changed")
     if not records["d_completion"]["classification"]["d_cross_adjoint_map_invertible_in_both_parities"]:

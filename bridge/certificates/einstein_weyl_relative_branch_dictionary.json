@@ -294,13 +294,17 @@
     },
     {
       "action_derived_pairing": {
-        "extra": "NO_CERTIFIED_MAP",
-        "standard_relative_operator": "4*I",
+        "extra_Gram_on_polynomial_representatives": {
+          "axial": "4*(3*k^2+4)",
+          "polar": "4*(3*k^2+4)"
+        },
+        "standard_extra_orthogonal": true,
+        "standard_relative_operator": "4*I after normalized quotient coordinates",
         "status": "CERTIFIED"
       },
       "branch_representatives": {
-        "extra": "NO_CERTIFIED_MAP",
-        "source": "physical ell=1 quotient representatives",
+        "extra": "one polynomial representative in each parity without k or omega inversion",
+        "source": "one standard polynomial representative in each parity",
         "status": "CERTIFIED"
       },
       "evidence": [
@@ -318,6 +322,11 @@
           "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
           "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1",
           "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+        },
+        {
+          "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+          "result_id": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1",
+          "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
         }
       ],
       "id": "ph.exceptional.ell1.nonzero_k.relative",
@@ -325,25 +334,25 @@
         "map": "polynomial all-row axial and polar chain maps for every compact momentum, inducing the identity inclusion on the physical Einstein-Maxwell ell=1 quotient",
         "status": "CERTIFIED"
       },
-      "map_lifecycle": "OFFSHELL_CHAIN_MAP_ONLY",
+      "map_lifecycle": "DERIVED_COFIBER_TRIANGLE",
       "missing": [
-        "nonzero-k solution cofiber and action-derived extra pairing",
+        "finite large-gauge/global quotient",
         "final residual descent"
       ],
       "projection_or_cofiber": {
-        "map": "no complete nonzero-k exceptional target classification or cofiber projection is certified",
-        "status": "NO_CERTIFIED_MAP"
+        "map": "CRT projectors in s=omega^2-k^2 isolate the standard source image and the one-dimensional extra target quotient in each parity",
+        "status": "CERTIFIED"
       },
       "scope": {
         "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
         "boundaries": "closed Cauchy slice S1_L x S2; before final residual quotient",
-        "carrier": "physical standard axial-plus-polar ell=1 quotient at nonzero compact momentum",
+        "carrier": "standard Einstein image and extra axial-plus-polar ell=1 solution cofiber at nonzero compact momentum",
         "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed",
         "degree": 1,
         "ell": 1,
         "k": "2*pi*n/L with n!=0",
         "m": "-1,0,1",
-        "omega": "physical omega^2=k^2+4; any extra target branch unclassified",
+        "omega": "standard omega^2=k^2+4 and extra omega^2=k^2+4/3",
         "parity": "axial and polar",
         "theory": "Einstein-Maxwell source and Weyl-Maxwell target"
       }
@@ -557,7 +566,7 @@
     "current_global_map_lifecycle": "HARMONIC_OFFSHELL_MAPS_ONLY",
     "name": "common-background carrier to Einstein, extra-Weyl, Maxwell, gauge and nondynamical branches",
     "priority": 1,
-    "reason": "polynomial all-row maps now cover every generic, exceptional and homogeneous harmonic coefficient block, while generic and k=0/global solution cofibers are certified and the all-standard-pairing cyclic-map route is obstructed; a single natural covariant support-local map, nonzero-k exceptional cofiber/pairing, finite residual endpoints and boundary domain remain absent",
+    "reason": "polynomial all-row maps and solution cofibers now cover every generic, exceptional and homogeneous harmonic coefficient block, while the all-standard-pairing cyclic-map route is obstructed; a single natural covariant support-local map, finite residual endpoints and boundary domain remain absent",
     "requested_full_artifact": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
     "requested_full_artifact_certified": false
   },
@@ -575,6 +584,7 @@
     "exceptional_and_global_harmonic_offshell_maps_certified": true,
     "exceptional_global_and_boundary_absences_explicit": true,
     "exceptional_k0_solution_cofiber_certified": true,
+    "exceptional_nonzero_k_solution_cofiber_certified": true,
     "full_offshell_all_sector_triangle_certified": false,
     "generic_axial_and_polar_action_pairings_exported": true,
     "generic_axial_and_polar_solution_cofibers_certified": true,
@@ -591,12 +601,12 @@
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE"
   ],
-  "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, polynomial all-row chain maps in every generic, exceptional and homogeneous harmonic coefficient block, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, an explicit exceptional k=0 solution cofiber, and zero homogeneous and twist-primary solution cofibers. Harmonic selection is not support local, so the honest all-sector target remains a single natural covariant noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
+  "interpretation": "The compact Plebanski-Hacyan calculation supplies a precise same-background Einstein/extra branch dictionary, polynomial all-row chain maps and solution cofibers in every generic, exceptional and homogeneous harmonic coefficient block, an inertia obstruction to every standard-pairing cyclic correction on generic physical cohomology, and zero homogeneous and twist-primary solution cofibers. Harmonic selection is not support local, so the honest all-sector target remains a single natural covariant noncyclic BV relative triangle carrying the Einstein, pulled-back Weyl and relative forms separately. Matching branch names on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds remains forbidden without a separate crosswalk.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "reconstruct the complete harmonic tables as one natural support-local four-dimensional chain morphism, classify the nonzero-k exceptional cofiber/pairing, and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
+  "next_gate": "reconstruct the complete harmonic tables as one natural support-local four-dimensional chain morphism and include finite large-gauge/residual endpoints before assembling the NONCYCLIC_THREE_FORM EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "ee6abd64d46a748ea922295e4303d8f79576a4e6bd8695e6a6fdb0340b889df1",
+    "generator_sha256": "8bc3cf5b4bad2df10483aa425689ed31ccd047f6ef02723d5c21083cef1684a8",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
@@ -637,6 +647,10 @@
       "exceptional_global_offshell": {
         "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
         "sha256": "7eb8f00f0cad1cc54570b0e288c90770a1912885396d7ff47661bb09908a97a7"
+      },
+      "exceptional_nonzero_k_cofiber": {
+        "path": "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1.json",
+        "sha256": "00fc3fa6da7273ca3ae8a5c51a973f5a91b898b58b49e4bf2d7d0c30711f994c"
       },
       "generic_cyclic_inertia_obstruction": {
         "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
@@ -721,7 +735,7 @@
   "result_state": "ALL_HARMONIC_OFFSHELL_MAPS_EXPORTED_COVARIANT_GLUE_AND_ENDPOINT_GATE_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "4bc641cc2f7c2f9d9f6f51200e87f95f7b2a10fba061e7c6d41f0814ee66c1ac",
+  "schema_sha256": "86c4e1e69a3b8bbc001cc0e9a1eb9a4b973234dc53482fc8cfcba1804af19803",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",

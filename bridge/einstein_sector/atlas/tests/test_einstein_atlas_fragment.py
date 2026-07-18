@@ -37,6 +37,13 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["observational"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
 
+    def test_nonzero_k_exceptional_cofiber_is_registered_without_bridge_promotion(self) -> None:
+        entry = self.entries["einstein.ph.wm.extra.exceptional_ell1_nonzero_k"]
+        self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "OPEN")
+
     def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")

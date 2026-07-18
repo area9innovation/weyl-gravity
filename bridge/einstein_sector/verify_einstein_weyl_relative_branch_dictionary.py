@@ -38,8 +38,10 @@ def main() -> None:
         raise AssertionError("exceptional k0 solution cofiber was lost")
     if rows["ph.exceptional.ell1.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
         raise AssertionError("exceptional k0 off-shell triangle was lost")
-    if rows["ph.exceptional.ell1.nonzero_k.relative"]["map_lifecycle"] != "OFFSHELL_CHAIN_MAP_ONLY":
-        raise AssertionError("nonzero-k exceptional off-shell map was lost")
+    if rows["ph.exceptional.ell1.nonzero_k.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
+        raise AssertionError("nonzero-k exceptional derived cofiber was lost")
+    if rows["ph.exceptional.ell1.nonzero_k.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
+        raise AssertionError("nonzero-k exceptional solution cofiber was lost")
     if rows["ph.global.homogeneous.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("zero homogeneous solution cofiber was lost")
     if rows["ph.global.homogeneous.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
@@ -58,9 +60,6 @@ def main() -> None:
         raise AssertionError("global--extra smooth extension handoff was lost")
     if not value["classification"]["aligned_twist_extra_L1_L3_coefficient_correction_imported"]:
         raise AssertionError("aligned twist--extra coefficient correction handoff was lost")
-    for identifier in ("ph.exceptional.ell1.nonzero_k.relative",):
-        if rows[identifier]["projection_or_cofiber"]["status"] != "NO_CERTIFIED_MAP":
-            raise AssertionError(f"missing cofiber was hidden: {identifier}")
     boundary = rows["ph.boundary.relative"]
     if boundary["map_lifecycle"] != "NO_CERTIFIED_MAP" or boundary["evidence"]:
         raise AssertionError("cross-background row acquired an implicit map")
@@ -69,6 +68,8 @@ def main() -> None:
         raise AssertionError("strong generic cyclic-map obstruction was dropped")
     if not flags["exceptional_and_global_harmonic_offshell_maps_certified"] or not flags["all_harmonic_sector_coefficient_maps_available"]:
         raise AssertionError("exceptional/global off-shell coefficient coverage was dropped")
+    if not flags["exceptional_nonzero_k_solution_cofiber_certified"]:
+        raise AssertionError("nonzero-k exceptional cofiber coverage was dropped")
     if flags["single_covariant_support_local_map_reconstructed"]:
         raise AssertionError("harmonic coefficient maps were misreported as covariant support-local glue")
     if flags["full_offshell_all_sector_triangle_certified"] or flags["bridge_1_activation_gate_satisfied"]:

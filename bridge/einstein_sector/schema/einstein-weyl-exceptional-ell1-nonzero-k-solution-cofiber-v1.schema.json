@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/einstein-weyl-exceptional-ell1-nonzero-k-solution-cofiber-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "map_lifecycle", "theorem", "classification", "interpretation", "next_gate", "claim_boundary", "dependency_refs", "source_manifest", "verification_receipt", "verification_commands"],
+  "properties": {
+    "schema": {"const": "einstein-weyl-exceptional-ell1-nonzero-k-solution-cofiber-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_EXCEPTIONAL_ELL1_NONZERO_K_SOLUTION_COFIBER_V1"},
+    "result_state": {"const": "NONZERO_K_EXCEPTIONAL_SOLUTION_COFIBER_AND_ACTION_PAIRING_CERTIFIED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background": {"type": "string", "minLength": 1},
+        "boundaries": {"type": "string", "minLength": 1},
+        "charge_sector": {"type": "string", "minLength": 1},
+        "carrier": {"type": "string", "minLength": 1},
+        "degree": {"type": "string", "minLength": 1},
+        "parity": {"type": "string", "minLength": 1},
+        "ell": {"type": "string", "minLength": 1},
+        "m": {"type": "string", "minLength": 1},
+        "k": {"type": "string", "minLength": 1},
+        "omega": {"type": "string", "minLength": 1}
+      }
+    },
+    "map_lifecycle": {"const": "HARMONIC_OFFSHELL_MAP_AND_ONSHELL_COFIBER"},
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spectral_variable", "shells", "projectors", "field_orders", "polynomial_representatives", "rank_witnesses", "inclusion_relations", "solution_quotients", "action_pairing"],
+      "properties": {
+        "spectral_variable": {"const": "s=omega^2-k^2"},
+        "shells": {"$ref": "#/$defs/twoStrings"},
+        "projectors": {"$ref": "#/$defs/twoStrings"},
+        "field_orders": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["axial_reduced", "polar_reduced", "polar_source"],
+          "properties": {
+            "axial_reduced": {"$ref": "#/$defs/stringVector4"},
+            "polar_reduced": {"$ref": "#/$defs/stringVector4"},
+            "polar_source": {"$ref": "#/$defs/stringVector5"}
+          }
+        },
+        "polynomial_representatives": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["axial", "polar", "polar_source_standard"],
+          "properties": {
+            "axial": {"$ref": "#/$defs/twoVectors4"},
+            "polar": {"$ref": "#/$defs/twoVectors4"},
+            "polar_source_standard": {"$ref": "#/$defs/stringVector5"}
+          }
+        },
+        "rank_witnesses": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["axial", "polar"],
+          "properties": {
+            "axial": {"$ref": "#/$defs/rankBlock"},
+            "polar": {"$ref": "#/$defs/rankBlock"}
+          }
+        },
+        "inclusion_relations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["axial", "polar", "polar_relation_remainder"],
+          "properties": {
+            "axial": {"type": "string", "minLength": 1},
+            "polar": {"type": "string", "minLength": 1},
+            "polar_relation_remainder": {"type": "array", "prefixItems": [{"const": "0"}, {"const": "0"}, {"const": "0"}, {"const": "0"}], "items": false}
+          }
+        },
+        "solution_quotients": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["axial_source_standard", "axial_source_extra", "axial_target_each_shell", "polar_source_standard", "polar_source_extra", "polar_target_each_shell", "cofiber"],
+          "properties": {
+            "axial_source_standard": {"type": "string"},
+            "axial_source_extra": {"type": "string"},
+            "axial_target_each_shell": {"type": "string"},
+            "polar_source_standard": {"type": "string"},
+            "polar_source_extra": {"type": "string"},
+            "polar_target_each_shell": {"type": "string"},
+            "cofiber": {"type": "string"}
+          }
+        },
+        "action_pairing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["representative_normalization", "Gram", "standard_extra_mixed", "extra_inertia_for_real_nonzero_k", "cofiber_nonradical"],
+          "properties": {
+            "representative_normalization": {"type": "string"},
+            "Gram": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["axial", "polar"],
+              "properties": {"axial": {"$ref": "#/$defs/twoStrings"}, "polar": {"$ref": "#/$defs/twoStrings"}}
+            },
+            "standard_extra_mixed": {"$ref": "#/$defs/twoParityStrings"},
+            "extra_inertia_for_real_nonzero_k": {"type": "array", "prefixItems": [{"const": 2}, {"const": 0}], "items": false},
+            "cofiber_nonradical": {"const": true}
+          }
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nonzero_k_exceptional_solution_cofiber_certified", "Einstein_image_is_standard_shell", "one_extra_class_per_parity", "polynomial_representatives_without_differential_inverse", "action_pairing_nonradical_positive_on_extra_cofiber", "standard_extra_action_orthogonality", "all_m_by_SO3_equivariance", "single_covariant_support_local_map_reconstructed", "finite_residual_endpoint_descent_certified", "Lorentzian_causal_observational_particle_or_quantum_claim"],
+      "properties": {
+        "nonzero_k_exceptional_solution_cofiber_certified": {"const": true},
+        "Einstein_image_is_standard_shell": {"const": true},
+        "one_extra_class_per_parity": {"const": true},
+        "polynomial_representatives_without_differential_inverse": {"const": true},
+        "action_pairing_nonradical_positive_on_extra_cofiber": {"const": true},
+        "standard_extra_action_orthogonality": {"const": true},
+        "all_m_by_SO3_equivariance": {"const": true},
+        "single_covariant_support_local_map_reconstructed": {"const": false},
+        "finite_residual_endpoint_descent_certified": {"const": false},
+        "Lorentzian_causal_observational_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "interpretation": {"type": "string", "minLength": 100},
+    "next_gate": {"type": "string", "minLength": 60},
+    "claim_boundary": {"type": "string", "minLength": 100},
+    "dependency_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["offshell_maps", "direct_target", "source_exceptional", "k0_cofiber", "exceptional_current", "physical_pairing"],
+      "properties": {
+        "offshell_maps": {"$ref": "#/$defs/artifact"},
+        "direct_target": {"$ref": "#/$defs/artifact"},
+        "source_exceptional": {"$ref": "#/$defs/artifact"},
+        "k0_cofiber": {"$ref": "#/$defs/artifact"},
+        "exceptional_current": {"$ref": "#/$defs/artifact"},
+        "physical_pairing": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "source_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator", "schema", "verifier", "test", "report", "input_offshell_maps", "input_direct_target", "input_source_exceptional", "input_k0_cofiber", "input_exceptional_current", "input_physical_pairing", "engine_axial_current", "engine_polar_current"],
+      "properties": {
+        "generator": {"$ref": "#/$defs/hash"}, "schema": {"$ref": "#/$defs/hash"}, "verifier": {"$ref": "#/$defs/hash"}, "test": {"$ref": "#/$defs/hash"}, "report": {"$ref": "#/$defs/hash"},
+        "input_offshell_maps": {"$ref": "#/$defs/hash"}, "input_direct_target": {"$ref": "#/$defs/hash"}, "input_source_exceptional": {"$ref": "#/$defs/hash"}, "input_k0_cofiber": {"$ref": "#/$defs/hash"}, "input_exceptional_current": {"$ref": "#/$defs/hash"}, "input_physical_pairing": {"$ref": "#/$defs/hash"},
+        "engine_axial_current": {"$ref": "#/$defs/hash"}, "engine_polar_current": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "verification_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/tier"},
+        "tier_1": {"$ref": "#/$defs/tier"},
+        "tier_2": {"$ref": "#/$defs/tier"},
+        "tier_3": {"$ref": "#/$defs/tier"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "stringVector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+    "stringVector5": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string"}},
+    "twoStrings": {
+      "type": "object", "additionalProperties": false, "required": ["standard", "extra"],
+      "properties": {"standard": {"type": "string"}, "extra": {"type": "string"}}
+    },
+    "twoParityStrings": {
+      "type": "object", "additionalProperties": false, "required": ["axial", "polar"],
+      "properties": {"axial": {"type": "string"}, "polar": {"type": "string"}}
+    },
+    "twoVectors4": {
+      "type": "object", "additionalProperties": false, "required": ["standard", "extra"],
+      "properties": {"standard": {"$ref": "#/$defs/stringVector4"}, "extra": {"$ref": "#/$defs/stringVector4"}}
+    },
+    "witness": {
+      "type": "object", "additionalProperties": false, "required": ["rows", "columns", "determinant"],
+      "properties": {
+        "rows": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+        "columns": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 0}},
+        "determinant": {"type": "string", "minLength": 1}
+      }
+    },
+    "rankBlock": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_standard", "source_extra", "target_standard", "target_extra"],
+      "properties": {
+        "source_standard": {"$ref": "#/$defs/witness"}, "source_extra": {"$ref": "#/$defs/witness"},
+        "target_standard": {"$ref": "#/$defs/witness"}, "target_extra": {"$ref": "#/$defs/witness"}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "tier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["PASS", "PASS_BY_CONTENT_ADDRESS", "NOT_RUN"]},
+        "commands": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string"}
+      }
+    }
+  }
+}

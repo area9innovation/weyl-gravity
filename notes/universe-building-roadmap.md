@@ -809,8 +809,9 @@ three-form triangle and explicitly pairing-changed theories remain open. The gen
 `EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` records global lifecycle
 `HARMONIC_OFFSHELL_MAPS_ONLY`: polynomial all-row maps cover every generic,
 exceptional and homogeneous harmonic coefficient block, but harmonic
-selection is not support local.  A single natural covariant glue, the
-nonzero-momentum exceptional cofiber/pairing, finite charge endpoints, the
+selection is not support local.  The nonzero-momentum exceptional cofiber and
+action pairing are now certified in both parities by polynomial
+representatives.  A single natural covariant glue, finite charge endpoints, the
 noncyclic three-form triangle, and boundary domains remain open. Therefore
 these sectoral results still do not provide the all-sector support-local BV
 triangle or activate bridge 1.
