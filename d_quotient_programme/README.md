@@ -162,6 +162,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-electric-duality-ell2-extra-resonance-submission-receipt.md`](reports/einstein-maxwell-weyl-electric-duality-ell2-extra-resonance-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-d-axial-ell2-extra-resonance.json`](contributions/einstein-maxwell-weyl-d-axial-ell2-extra-resonance.json)
 - [`reports/einstein-maxwell-weyl-d-axial-ell2-extra-resonance-submission-receipt.md`](reports/einstein-maxwell-weyl-d-axial-ell2-extra-resonance-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-d-ell2-extra-resonance-completion.json`](contributions/einstein-maxwell-weyl-d-ell2-extra-resonance-completion.json)
+- [`reports/einstein-maxwell-weyl-d-ell2-extra-resonance-completion-submission-receipt.md`](reports/einstein-maxwell-weyl-d-ell2-extra-resonance-completion-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)

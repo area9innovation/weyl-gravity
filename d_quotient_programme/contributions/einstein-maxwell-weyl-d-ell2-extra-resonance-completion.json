@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; homogeneous circumference velocity d crossed with the complete axial-plus-polar ell=2,k=0 extra-primary multiplicity space",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the complete polar d-times-extra source matrix is computed by direct four-dimensional rational-sphere replay",
+    "the polar p-shell source-to-adjoint pairing is diagonal with determinant 9936",
+    "together with the axial determinant 832, the parity-block determinant is 8266752",
+    "for nonzero d the extra amplitudes cancel an arbitrary ell=2 p-shell adjoint defect in both parities",
+    "SO(3) equivariance promotes the parity-complete multiplicity isomorphism to every m"
+  ],
+  "evidence": {
+    "commit": "5a28f1f7072776dd31e8961192d8e39a810040ac",
+    "path": "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
+    "sha256": "35e07ee8b77d16314a5b306e0dcbedd3d9d6e852d1a0180196973142b5aa0a4e"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute a,b and twist-position/velocity cross columns, then solve the simultaneous stabilizer and complementary-resonance zero locus",
+  "not_established": [
+    "the remaining homogeneous and twist source columns",
+    "simultaneous stabilizer-moment-map cancellation",
+    "the nonresonant rows or a complete second-order correction",
+    "smooth-secular or causal-retarded compact-product theorems",
+    "opposite momenta, multiple absolute-momentum fibres, all-orders integration, residual descent, particles, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_d_ell2_extra_parity_complete",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_d_ell2_extra_resonance_completion",
+  "team_id": "einstein_boundary",
+  "verdict": "D_CROSS_COMPLETE_AXIAL_POLAR_ADJOINT_MAP_ISOMORPHISM",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_ell2_extra_resonance_completion --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_ell2_extra_resonance_completion.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_d_ell2_extra_resonance_completion"
+  ]
+}
