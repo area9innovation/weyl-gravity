@@ -1972,6 +1972,19 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    only its mixed wave coefficient is settled.  The live matrix is now
    `a,b,d` plus twist position/velocity against the axial/polar `ell=2` extra
    block.
+
+   The first genuinely dynamical column, `d`, is now computed on the complete
+   axial extra multiplicity space.  Direct four-dimensional bivariate sources
+   are
+   `S(d,e1)=(-72 i sqrt(3),0,0,0)` and
+   `S(d,e2)=(0,-4 i sqrt(3)/3,0,-4 i sqrt(3))` in action-row order.  Against
+   the complete axial p-shell adjoint basis their pairing matrix is diagonal
+   with determinant `832`.  Hence, for `d!=0`, the two axial `ell=2` extra
+   amplitudes can cancel an arbitrary axial resonant defect.  `SO(3)`
+   equivariance promotes the multiplicity-space isomorphism to every `m`.
+   This is a bounded/finite-quasiperiodic compatibility theorem, not yet a
+   full extension: the polar block, stabilizer moment maps, nonresonant rows,
+   and the remaining `a,b` and twist columns are still required.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

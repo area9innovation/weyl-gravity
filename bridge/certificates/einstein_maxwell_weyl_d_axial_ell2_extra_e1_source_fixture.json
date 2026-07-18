@@ -1,0 +1,81 @@
+{
+  "schema": "einstein-maxwell-weyl-d-axial-ell2-extra-source-fixture-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_d_axial_ell2_extra_source_fixture.schema.json",
+  "schema_sha256": "4004a7e857d1c3baa7f8c38fbe0b1fc09ea4404788d6c2abda093106566a646f",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_D_AXIAL_ELL2_EXTRA_E1_SOURCE_FIXTURE",
+  "result_state": "DIRECT_FOUR_DIMENSIONAL_D_TIMES_AXIAL_EXTRA_SOURCE_COMPUTED",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "axisymmetric homogeneous d direction crossed with axial ell=2,k=0 extra representative e1 at omega^2=16/3",
+  "case": "e1",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_d_axial_ell2_extra_source_fixture.py",
+    "generator_sha256": "1c01569325332851557a141d86c27b8e2c55df627dbdbfacac4832e736e99d87",
+    "tensor_helper_path": "bridge/einstein_sector/einstein_maxwell_weyl_balanced_ell0_second_order.py",
+    "tensor_helper_sha256": "144dc9ea6173b8980e859b4d98ab41d3730631ae2292198701451f675fbb8ff0",
+    "method": "direct four-dimensional bivariate coefficient of the Weyl-Maxwell Euler operator"
+  },
+  "first_order_global": "C=d*t with unit d coefficient",
+  "frequency_squared": "16/3",
+  "representatives_Ht_Hx_Qt_Qx": {
+    "e1": [
+      "-6",
+      "0",
+      "6",
+      "0"
+    ],
+    "e2": [
+      "0",
+      "-2/3",
+      "0",
+      "6"
+    ]
+  },
+  "action_row_order": [
+    "6*metric_t",
+    "-6*metric_x",
+    "maxwell_t",
+    "maxwell_x"
+  ],
+  "bilinear_source_rows": [
+    "-72*sqrt(3)*I",
+    "0",
+    "0",
+    "0"
+  ],
+  "claim_boundary": "This is one direct m=0 axial bilinear source fixture. The aggregate theorem performs the adjoint pairing and SO(3) promotion; polar sources and the rest of the global block are separate.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1_fast": {
+      "status": "PASS",
+      "commands": [
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_axial_ell2_extra_source_fixture.py --case e1"
+      ]
+    },
+    "tier_2_direct_four_dimensional_replay": {
+      "status": "PASS",
+      "elapsed_seconds": 27.87,
+      "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_axial_ell2_extra_source_fixture --case e1 --write",
+      "criterion": "the direct bivariate four-dimensional Euler coefficient is the mathematical input; e2 is retained as an explicit expensive rail because its exact replay exceeds the fast-loop target"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the aggregate axial theorem does not freeze the polar or full global cone"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_d_axial_ell2_extra_source_fixture --case e1 --write",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_d_axial_ell2_extra_source_fixture.py --case e1"
+  ]
+}
