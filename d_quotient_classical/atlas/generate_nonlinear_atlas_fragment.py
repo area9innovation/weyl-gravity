@@ -25,7 +25,7 @@ CERTS = {
     "axial_ee_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json",
     "branch_importer": ROOT / "d_quotient_classical/certificates/BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1.json",
     "relative_branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
-    "abd_extra_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
+    "homogeneous_twist_extra_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_ell2_extra_resonance_matrix.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -216,16 +216,7 @@ def entries() -> list[dict[str, Any]]:
         "k": "2*pi*n/L, every n in Z including zero",
         "omega": "q-primary Einstein shells and p-primary extra shell",
     }
-    abd_scope = {
-        **product_common,
-        "carrier": "homogeneous generalized-zero Einstein block crossed with the generic ell=2 extra-primary block",
-        "degree": 2,
-        "parity": "axial and polar output sectors kept separate",
-        "ell": "0 x 2 -> 2",
-        "m": "m=0 direct fixtures; every m by SO(3) equivariance",
-        "k": 0,
-        "omega": "generalized zero crossed with omega_e=4/sqrt(3)",
-    }
+    homogeneous_twist_scope = json.loads(CERTS["homogeneous_twist_extra_source"].read_text())["scope"]
     exceptional_scope = {
         **product_common,
         "carrier": "exceptional local-gauge-reduced axial and polar ell=1,k=0 solution modules",
@@ -358,22 +349,22 @@ def entries() -> list[dict[str, Any]]:
             "claim_boundary": "This is a same-background generic-polar solution cofiber with a certified direct pairing. Strict cyclic compatibility of its fixed identity field map is obstructed; corrected nonidentity or chain-homotopy cyclic morphisms and final residual descent are open. It therefore does not activate a cyclic relative L_infinity theorem or the global Bridge-1 gate.",
         },
         {
-            "id": "nonlinear.product.homogeneous_abd_times_ell2_extra.partial_resonance_matrix",
-            "scope": abd_scope,
-            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "id": "nonlinear.product.homogeneous_twist_times_ell2_extra.complete_bounded_resonance_matrix",
+            "scope": homogeneous_twist_scope,
+            "descriptions": {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
             "mode_data": _mode_data(
                 _second(
-                    ("OPEN", "All a,b,d compatibility columns are exact, but twist position/velocity columns and the simultaneous zero locus remain missing."),
-                    ("OPEN", "Secular sufficiency requires the complete operator and is not inferred from the projected source matrix."),
-                    ("OPEN", "No compact-product retarded complex is certified."),
+                    ("OPEN", "The complete declared bounded-resonance functionals are certified, but their simultaneous zero locus with all five stabilizer moment maps and the bilinear factorization constraints has not been solved."),
+                    ("OPEN", "Smooth-secular sufficiency requires the complete Noether-compatible operator and is not inferred from the resonant projection."),
+                    ("NO_CERTIFIED_MAP", "No compact-product retarded complex or causal correction carrier is certified."),
                 ),
-                dispersion=("CERTIFIED", "The output lies on the generic ell=2 extra shell omega_e=4/sqrt(3)."),
-                pairing=("CERTIFIED", "The exact axial and polar adjoint bases define the displayed compatibility polynomials."),
-                taub=("OPEN", "The stabilizer and complete bounded-resonance common zero locus has not been solved."),
-                resonance=("CERTIFIED", "Within each parity and polarization, the a,b,d projected polynomial columns have exact rank three."),
+                dispersion=("CERTIFIED", "The generalized-zero homogeneous/twist inputs are crossed with the resonant ell=2 extra shell omega_e=4/sqrt(3) at k=0."),
+                pairing=("CERTIFIED", "Exact axial and polar adjoint bases define the resonance functionals; the same-background relative dictionary imports their action-derived pairing context."),
+                taub=("OPEN", "The common zero locus of the five stabilizer moment maps and the complete resonance matrix remains unsolved."),
+                resonance=("CERTIFIED", "The a,b,d chains are exact; twist position has rank two and twist velocity has pointwise rank four for every real time, with all m fixed by SO(3) equivariance."),
             ),
-            "evidence": _evidence("abd_extra_source", "relative_branch_dictionary", "dictionary"),
-            "claim_boundary": "This certifies a partial D^2E=q2 source/compatibility matrix on the compact product background. Its homogeneous global input leg has only an on-shell map lifecycle. No individual mode is declared obstructed: twist position and velocity may contribute to the same extra-shell channel. Smooth-secular, causal, final-residual, observational and quantum conclusions remain open or NO_CERTIFIED_MAP.",
+            "evidence": _evidence("homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
+            "claim_boundary": "This certifies the complete declared k=0 homogeneous/twist times ell=2 extra bounded-resonance source matrix on the compact Plebanski-Hacyan background. It does not solve the simultaneous stabilizer/resonance zero locus, prove obstruction or extension for a tangent, supply the all-sector off-shell cyclic relative triangle, activate Berger or compact-product Bridge 2, or establish smooth-secular, causal, residual, observational, particle or quantum claims.",
         },
         {
             "id": "nonlinear.product.bridge1.exceptional_ell1_k0_solution_cofiber",

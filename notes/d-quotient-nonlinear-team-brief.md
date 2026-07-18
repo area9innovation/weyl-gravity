@@ -786,15 +786,18 @@ polar cofibers and action-derived pairings, but its own global Bridge-1 flag is
 false: polar cyclic BV compatibility, exceptional/global cofibers and final
 endpoints remain open.  Accordingly these rows are usable as scoped branch
 labels, not as the all-sector relative triangle and never as a Berger
-crosswalk.  The accompanying `a,b,d` crossed with `ell=2` extra-shell source
-matrix is also recorded: its six axial and six polar compatibility columns
-are exact and rank three per polarization, while twist columns and the joint
-stabilizer/resonance zero locus remain open.  It is partial interaction
-sourcing, not an obstruction verdict.  Neither current handoff activates even
-a scoped cyclic Bridge 2 calculation: the axial--polar source uses the polar
-leg whose fixed identity cyclic compatibility is obstructed and whose
-corrected nonidentity/homotopy alternative remains open, while the `a,b,d` source matrix
-uses the homogeneous global leg whose map lifecycle is only `ONSHELL_MAP_ONLY`.
+crosswalk.  The earlier `a,b,d` crossed with `ell=2` extra-shell source matrix
+has now been completed by the exact twist position and velocity columns.  In
+the declared `k=0` homogeneous/twist carrier, the twist-position resonance map
+has rank two and the twist-velocity map has pointwise rank four for every real
+time; a non-axisymmetric Clebsch--Gordan fixture fixes every `m`.  This closes
+the declared bounded-resonance **source matrix**, not the tangent-cone verdict:
+the common zero locus with all five stabilizer moment maps and the bilinear
+factorization constraints remains open.  Neither source handoff activates a
+cyclic Bridge 2 calculation.  The axial--polar source uses the polar leg whose
+fixed identity cyclic compatibility is obstructed and whose corrected
+nonidentity/homotopy alternative remains open, while the homogeneous/twist
+source uses global legs whose all-BV off-shell cyclic relative map is absent.
 The exceptional `ell=1,k=0` update now supplies explicit CRT solution
 projectors and a nonradical extra Gram matrix `diag(16,3)`, but remains
 `ONSHELL_MAP_ONLY`; its off-shell ghost--field--equation--identity map and

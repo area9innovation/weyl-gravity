@@ -84,13 +84,17 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("fixed identity", polar["claim_boundary"])
         self.assertIn("corrected nonidentity", polar["claim_boundary"])
 
-    def test_abd_source_matrix_is_not_an_obstruction_verdict(self):
-        entry = next(item for item in atlas.build()["entries"] if "homogeneous_abd" in item["id"])
+    def test_complete_homogeneous_twist_matrix_still_leaves_zero_locus_open(self):
+        entry = next(item for item in atlas.build()["entries"] if "homogeneous_twist_times" in item["id"])
         self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("rank two", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("rank four", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
-        self.assertIn("on-shell map lifecycle", entry["claim_boundary"])
-        self.assertIn("No individual mode is declared obstructed", entry["claim_boundary"])
+        self.assertEqual(entry["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertIn("does not solve", entry["claim_boundary"])
+        self.assertIn("activate Berger or compact-product Bridge 2", entry["claim_boundary"])
 
     def test_exceptional_solution_cofiber_does_not_activate_bridge_two(self):
         entry = next(item for item in atlas.build()["entries"] if "exceptional_ell1_k0_solution_cofiber" in item["id"])
