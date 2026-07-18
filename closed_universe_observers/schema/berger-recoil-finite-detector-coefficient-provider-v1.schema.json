@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "callable_contract", "fixture", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-recoil-finite-detector-coefficient-provider-v1"},
+    "result_id": {"const": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "FINITE_ADVANCED_MAXWELL_DETECTOR_COEFFICIENT_CALLABLE_TWO_J0_TO_4_CERTIFIED"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 2, "maxProperties": 2},
+    "mode_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"],
+      "properties": {
+        "theory": {"type": "string"}, "background": {"type": "string"},
+        "boundaries": {"type": "string"}, "charge_sector": {"type": "string"},
+        "carrier": {"type": "string"}, "degree": {"type": "string"},
+        "parity": {"type": "string"}, "ell": {"type": "string"},
+        "m": {"type": "string"}, "k": {"type": "string"},
+        "omega": {"type": "string"}
+      }
+    },
+    "callable_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": ["module", "callable", "coverage", "not_covered"],
+      "properties": {
+        "module": {"const": "closed_universe_observers.berger_recoil_interval_stream"},
+        "callable": {"const": "detector_profile_coefficient_interval"},
+        "coverage": {"type": "string"}, "not_covered": {"type": "string"}
+      }
+    },
+    "fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lookup", "canonical_sha256", "structural_zero_lookup_passed"],
+      "properties": {
+        "lookup": {"type": "string"},
+        "canonical_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "structural_zero_lookup_passed": {"const": true}
+      }
+    },
+    "mutation_results": {
+      "type": "array", "minItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "detected"],
+        "properties": {"name": {"type": "string"}, "detected": {"const": true}}
+      }
+    },
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED", "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED", "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED", "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": {"const": true},
+        "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": {"const": false},
+        "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": {"const": false},
+        "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"const": "EXTEND_DETECTOR_COEFFICIENT_PROVIDER_BEYOND_TWO_J4_AND_IMPLEMENT_NESTED_TIME_CONVOLUTION"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

@@ -803,8 +803,12 @@ one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
 `g_b g_c^2 (two_j+1)/Vol_Berger`.  Its signed fixture gives exactly
 `[-16,-72/5]`, but is validation data rather than a physical recoil value.
-The detector-coefficient provider, nested advanced/retarded time-convolution
-backend and tail-aware aggregate stop loop remain `OBSTRUCTED`.  Supplying
+`BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER` separately exposes exact
+rational real/imaginary coefficient intervals, structural zeros and the
+certified uniform remainder from the advanced-Maxwell image through
+`two_j=4`.  This finite callable is `CERTIFIED`, but the complete all-shell
+detector provider, nested advanced/retarded time-convolution backend and
+tail-aware aggregate stop loop remain `OBSTRUCTED`.  Supplying
 masses and couplings would still produce no physical interval.  The exact-
 rational input schema remains deferred.
 

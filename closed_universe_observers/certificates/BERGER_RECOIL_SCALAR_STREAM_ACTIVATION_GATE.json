@@ -1,6 +1,6 @@
 {
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, the Lorentzian spacetime form-block signs, and the complete symbolic per-shell preparation/recoil word are all certified. The symbolic word is ready, but the executable stream is still obstructed: exact shell aggregation is callable, but no coefficient provider, nested time-convolution backend or tail-aware aggregate stop loop is exported. Numerical masses, couplings and a stopping goal are therefore deferred; supplying them now would not produce an interval. The exact generic coefficient functional is not itself a numerical Green-image evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform, the four symbolic detector tail radii, the fixed coupling-stripped preparations, the Lorentzian spacetime form-block signs, and the complete symbolic per-shell preparation/recoil word are all certified. The symbolic word is ready, but the executable stream is still obstructed: exact shell aggregation is callable and the validated advanced-Maxwell detector coefficients are callable for 2j=0,...,4, but the latter are not a complete all-shell detector provider or a massive/recoil evaluation. No nested time-convolution backend or tail-aware aggregate stop loop is exported. Numerical masses, couplings and a stopping goal are therefore deferred; supplying them now would not produce an interval. The exact generic coefficient functional is not itself a numerical Green-image evaluation. Numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
   "claim_status": "SYMBOLIC_WORD_READY_EXECUTABLE_RECOIL_STREAM_OBSTRUCTED",
   "dependency_refs": {
     "clock_transform": {
@@ -21,7 +21,7 @@
     "executable_readiness": {
       "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
       "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
-      "sha256": "bbda3db40b7608006416cb5a42525562bfd18167e3b300d861fca2ab0666e316"
+      "sha256": "9384ebbb0a065e1c0c9abe7a8c058e2a9e8b8e27bc5daf811208f1571fb8f37b"
     },
     "mode_kernels": {
       "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
@@ -68,6 +68,7 @@
     "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": true,
     "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
     "EXECUTABLE_MODEWISE_RECOIL_STREAM_READY": false,
+    "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": true,
     "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
     "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
     "INTERNAL_MODEWISE_RECOIL_STREAM_READY": false,
@@ -91,29 +92,29 @@
       "name": "activate_stream_from_symbolic_tail_radius_alone"
     }
   ],
-  "next_gate": "IMPLEMENT_DETECTOR_COEFFICIENT_AND_NESTED_TIME_CONVOLUTION_BACKENDS",
+  "next_gate": "EXTEND_DETECTOR_COEFFICIENT_PROVIDER_BEYOND_TWO_J4_AND_IMPLEMENT_NESTED_TIME_CONVOLUTION",
   "provenance": {
     "source_commit": "WORKTREE",
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "bf51d25b426e30479b3e1a59c06ddb2fae054f292fae252a53b215ede2a41bc1"
+        "sha256": "979786998d2a1ed261079ee375adb2a289da67e2813e3991588fbe06509c083c"
       },
       {
         "path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "296ade3b2bb134e4a66844e619cf7533625813308666a7e546fb156ecfacb101"
+        "sha256": "8ac87250a1ef4faeeb98da7ae72079debe525fdd1cab82199fed9a4e1a3b6829"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py",
-        "sha256": "24d3fb0f598ee0cb3f83a07ef349ffc5c951025a4df1c783cc5a79cc64b75a3a"
+        "sha256": "0bbd1bc3e9bcdea541b162592bce7416f7b79de246934da282e8b1cf8acb8622"
       },
       {
         "path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json",
-        "sha256": "ee3e80e386ee0425bc2f8b6e9da7aa96e828cccb402f4171afa6cd4941f98e12"
+        "sha256": "d740c0a0ee4967a729b81dfa906520dca265f253adb7abdcbdb9e812a0fb28bd"
       },
       {
         "path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md",
-        "sha256": "c9c8469bcc26d862e3fd7c7a457659cdc57edf86c62fb053543a22156f3dc45a"
+        "sha256": "b58027af4c1aefcdf1f03534b2a3add2f6f6bc98cacd4a967817f575d243ca27"
       }
     ]
   },
@@ -191,6 +192,11 @@
         "status": "CERTIFIED"
       },
       {
+        "evidence_flag": "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED",
+        "id": "finite_detector_coefficient_provider_two_j0_to_4",
+        "status": "CERTIFIED"
+      },
+      {
         "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
         "id": "callable_shell_interval_backend",
         "status": "CERTIFIED"
@@ -218,7 +224,7 @@
   "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
   "sequencing_decision": {
     "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
-    "current_active_gate": "implement detector coefficient and nested time-convolution backends",
+    "current_active_gate": "extend the detector coefficient provider beyond two_j=4 and implement the nested time-convolution backend",
     "dense_profile_materialization": "NOT_SELECTED",
     "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
     "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",

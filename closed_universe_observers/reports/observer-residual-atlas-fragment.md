@@ -96,10 +96,13 @@ every Peter–Weyl shell, including both feedback switches, the physical
 massive correction, the exact dimension/volume weight, eight `(a,b,c)`
 channels and four aggregate formulas.  Exact one-shell supplied-channel
 aggregation is now `CERTIFIED`, including couplings, passive columns and the
-Peter--Weyl weight.  The adjacent readiness and activation rows remain
-`OBSTRUCTED` on detector coefficients, nested causal convolution and the
-tail-aware stop loop.  External parameters are deferred, so none of the four
-numerical streams is active.
+Peter--Weyl weight.  A separate atlas row certifies exact callable detector
+coefficients only for the validated advanced-Maxwell image through
+`two_j=4`, including structural zeros and uniform temporal-kernel remainders.
+It does not construct a recoil channel.  The adjacent readiness and activation
+rows remain `OBSTRUCTED` on the complete all-shell detector provider, nested
+causal convolution and the tail-aware stop loop.  External parameters are
+deferred, so none of the four numerical streams is active.
 The coupling-stripped preparation row is `CERTIFIED`: it factors the selection
 coupling from the advanced covector and fixes `tilde_u_b` as the formal Cauchy
 datum.  Leading columns carry `g_b`, while absolute-`g3` recoil channels carry

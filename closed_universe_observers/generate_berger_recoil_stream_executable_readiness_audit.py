@@ -25,6 +25,7 @@ DEPENDENCIES = {
     "tail_envelopes": PACKAGE / "certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
     "mode_kernels": PACKAGE / "certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
     "finite_shell_aggregator": PACKAGE / "certificates/BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR.json",
+    "finite_detector_provider": PACKAGE / "certificates/BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -58,16 +59,41 @@ def _backend_functions(path: Path = BACKEND) -> set[str]:
     }
 
 
-def readiness_rows(functions: set[str], *, treat_symbolic_word_as_backend: bool = False) -> list[dict[str, Any]]:
+def readiness_rows(
+    functions: set[str],
+    *,
+    finite_detector_provider: bool = False,
+    complete_detector_provider: bool = False,
+    treat_symbolic_word_as_backend: bool = False,
+) -> list[dict[str, Any]]:
     rows = [
         {
             "id": "complete_symbolic_operator_word",
             "status": "CERTIFIED",
             "evidence": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
-        }
+        },
+        {
+            "id": "finite_detector_coefficient_provider_two_j0_to_4",
+            "status": (
+                "CERTIFIED"
+                if finite_detector_provider
+                and REQUIRED_CALLABLES["detector_profile_coefficient_provider"] in functions
+                else "OBSTRUCTED"
+            ),
+            "required_callable": REQUIRED_CALLABLES["detector_profile_coefficient_provider"],
+            "coverage": "two_j_inclusive_0_to_4",
+            "evidence": (
+                "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER"
+                if finite_detector_provider
+                and REQUIRED_CALLABLES["detector_profile_coefficient_provider"] in functions
+                else "NO_CERTIFIED_FINITE_CALLABLE"
+            ),
+        },
     ]
     for identifier, callable_name in REQUIRED_CALLABLES.items():
         present = callable_name in functions
+        if identifier == "detector_profile_coefficient_provider":
+            present = present and complete_detector_provider
         if treat_symbolic_word_as_backend:
             present = False
         rows.append(
@@ -75,7 +101,17 @@ def readiness_rows(functions: set[str], *, treat_symbolic_word_as_backend: bool 
                 "id": identifier,
                 "status": "CERTIFIED" if present else "OBSTRUCTED",
                 "required_callable": callable_name,
-                "evidence": str(BACKEND.relative_to(ROOT)) if present else "NO_CALLABLE_IMPLEMENTATION",
+                "evidence": (
+                    str(BACKEND.relative_to(ROOT))
+                    if present
+                    else (
+                        "CALLABLE_SCOPED_TWO_J0_TO_4_ONLY"
+                        if identifier == "detector_profile_coefficient_provider"
+                        and finite_detector_provider
+                        and callable_name in functions
+                        else "NO_CALLABLE_IMPLEMENTATION"
+                    )
+                ),
             }
         )
     return rows
@@ -88,6 +124,7 @@ def build() -> dict[str, Any]:
         "tail_envelopes": "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED",
         "mode_kernels": "EXACT_FINITE_MODE_MASSIVE_TWO_FORM_GREEN_KERNELS_EXPORTED",
         "finite_shell_aggregator": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
+        "finite_detector_provider": "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -96,25 +133,42 @@ def build() -> dict[str, Any]:
     input_schema = json.loads(INPUT_SCHEMA.read_text())
     Draft202012Validator.check_schema(input_schema)
     functions = _backend_functions()
-    rows = readiness_rows(functions)
-    internal_rows = rows[1:]
-    internal_ready = all(row["status"] == "CERTIFIED" for row in internal_rows)
+    finite_detector_provider = values["finite_detector_provider"]["flags"][
+        "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED"
+    ]
+    complete_detector_provider = values["finite_detector_provider"]["flags"][
+        "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED"
+    ]
+    rows = readiness_rows(
+        functions,
+        finite_detector_provider=finite_detector_provider,
+        complete_detector_provider=complete_detector_provider,
+    )
+    row_status = {row["id"]: row["status"] for row in rows}
+    internal_ready = all(row_status[identifier] == "CERTIFIED" for identifier in REQUIRED_CALLABLES)
     if internal_ready:
         raise AssertionError("obstruction audit must be retired after the executable backend lands")
     if any(name in functions for name in REQUIRED_CALLABLES.values()) and not BACKEND.exists():
         raise AssertionError("backend function inventory is inconsistent")
 
-    symbolic_as_backend = readiness_rows(set(), treat_symbolic_word_as_backend=True)
+    symbolic_as_backend = readiness_rows(
+        set(),
+        finite_detector_provider=finite_detector_provider,
+        complete_detector_provider=complete_detector_provider,
+        treat_symbolic_word_as_backend=True,
+    )
     mutation_detected = all(row["status"] == "OBSTRUCTED" for row in symbolic_as_backend[1:])
-    row_status = {row["id"]: row["status"] for row in rows}
     boundary = (
         "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL readiness audit preserves "
         "the certified complete symbolic Peter-Weyl recoil word but rejects its "
         "promotion to a complete executable interval stream. Exact callable per-shell "
         "aggregation of supplied channel intervals is now certified, including the "
-        "couplings, passive-column sum and Peter-Weyl weight. No callable backend yet "
-        "provides the detector coefficient intervals, nested advanced/retarded time "
-        "convolutions, or tail-aware four-stream stop loop. Supplying masses and "
+        "couplings, passive-column sum and Peter-Weyl weight. A detector-coefficient "
+        "callable is also certified only on the validated advanced-Maxwell image for "
+        "2j=0,...,4. It is not a complete all-shell detector provider and is not a "
+        "massive or recoil evaluation. No callable backend yet provides the remaining "
+        "detector coefficient intervals, nested advanced/retarded time convolutions, "
+        "or tail-aware four-stream stop loop. Supplying masses and "
         "couplings would therefore still not produce a physical recoil interval. The "
         "numerical input schema is certified only as a deferred exact "
         "contract in the gHat operator units; it contains no chosen physical values. "
@@ -126,7 +180,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "SYMBOLIC_WORD_AND_SHELL_AGGREGATOR_CERTIFIED_REMAINING_BACKENDS_OBSTRUCTED",
+        "claim_status": "FINITE_DETECTOR_PROVIDER_AND_SHELL_AGGREGATOR_CERTIFIED_REMAINING_BACKENDS_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -170,6 +224,7 @@ def build() -> dict[str, Any]:
         ],
         "flags": {
             "COMPLETE_SYMBOLIC_OPERATOR_WORD_RETAINED": True,
+            "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": row_status["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED",
             "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": False,
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
@@ -180,7 +235,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "IMPLEMENT_DETECTOR_COEFFICIENT_AND_NESTED_TIME_CONVOLUTION_BACKENDS",
+        "next_gate": "EXTEND_DETECTOR_COEFFICIENT_PROVIDER_BEYOND_TWO_J4_AND_IMPLEMENT_NESTED_TIME_CONVOLUTION",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

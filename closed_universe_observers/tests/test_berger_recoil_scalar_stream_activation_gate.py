@@ -23,13 +23,16 @@ def test_external_parameters_are_deferred_until_executable_backend():
     )
     assert all(row["status"] == "OPEN" for row in value["readiness"]["external_rows"])
     assert all(row["activation"] == "DEFERRED" for row in value["readiness"]["external_rows"])
-    assert value["sequencing_decision"]["current_active_gate"] == "implement detector coefficient and nested time-convolution backends"
+    assert value["sequencing_decision"]["current_active_gate"] == (
+        "extend the detector coefficient provider beyond two_j=4 and implement the nested time-convolution backend"
+    )
     assert value["flags"]["FOUR_RECOIL_SCALAR_STREAM_ACTIVE"] is False
 
 
 def test_missing_execution_capabilities_obstruct_activation():
     value = build()
     rows = {row["id"]: row["status"] for row in value["readiness"]["internal_rows"]}
+    assert rows["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED"
     assert rows["callable_shell_interval_backend"] == "CERTIFIED"
     assert rows["complete_detector_coefficient_provider"] == "OBSTRUCTED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"

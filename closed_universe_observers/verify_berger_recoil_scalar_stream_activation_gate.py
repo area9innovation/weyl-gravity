@@ -19,7 +19,9 @@ def main() -> int:
     assert rows["complete_modewise_recoil_scalar_integrand"] == "CERTIFIED"
     assert value["readiness"]["symbolic_modewise_word_ready"] is True
     assert value["readiness"]["internal_modewise_stream_ready"] is False
+    assert rows["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED"
     assert rows["callable_shell_interval_backend"] == "CERTIFIED"
+    assert rows["complete_detector_coefficient_provider"] == "OBSTRUCTED"
     assert value["readiness"]["four_scalar_stream_active"] is False
     assert all(row["detected"] for row in value["mutation_results"])
     assert value["atlas_status"] == "OBSTRUCTED"

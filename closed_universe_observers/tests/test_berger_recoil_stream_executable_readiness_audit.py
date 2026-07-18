@@ -5,6 +5,8 @@ def test_symbolic_word_is_not_promoted_to_an_interval_backend():
     value = build()
     rows = {row["id"]: row["status"] for row in value["readiness"]["rows"]}
     assert rows["complete_symbolic_operator_word"] == "CERTIFIED"
+    assert rows["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED"
+    assert rows["detector_profile_coefficient_provider"] == "OBSTRUCTED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
     assert rows["tail_aware_aggregate_stop_loop"] == "OBSTRUCTED"
     assert value["atlas_status"] == "OBSTRUCTED"
@@ -18,8 +20,8 @@ def test_external_specialization_is_deferred_until_backend_exists():
     assert value["flags"]["NUMERICAL_SPECIALIZATION_VALUES_DECLARED"] is False
 
 
-def test_shell_aggregation_closes_but_three_execution_capabilities_remain_fail_closed():
+def test_two_finite_capabilities_close_but_three_complete_execution_capabilities_remain_fail_closed():
     rows = build()["readiness"]["rows"][1:]
-    assert len(rows) == 4
-    assert [row["status"] for row in rows].count("CERTIFIED") == 1
+    assert len(rows) == 5
+    assert [row["status"] for row in rows].count("CERTIFIED") == 2
     assert [row["status"] for row in rows].count("OBSTRUCTED") == 3

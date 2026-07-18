@@ -1,0 +1,99 @@
+{
+  "atlas_status": "CERTIFIED",
+  "callable_contract": {
+    "callable": "detector_profile_coefficient_interval",
+    "coverage": "D0,D1; spatial/temporal advanced Maxwell blocks; two_j=0,...,4",
+    "module": "closed_universe_observers.berger_recoil_interval_stream",
+    "not_covered": "two_j>=5, massive image and nested recoil channel"
+  },
+  "claim_boundary": "This validated LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result exposes the certified BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE data through the public detector_profile_coefficient_interval callable. It returns exact rational real/imaginary polynomial-coefficient enclosures and the uniform entire-series remainder for D0 or D1, both advanced Maxwell blocks, and two_j=0,...,4; omitted entries in the validated index domain are explicit structural zeros. Mutations reject two_j=5, a missing spatial coframe and an undeclared block. This is not an all-shell provider and does not evaluate the massive advanced image, positive-energy Cauchy preparation, nested recoil convolution, multi-shell tail, physical recoil, cone, Bridge 3 or quantum data.",
+  "claim_status": "FINITE_ADVANCED_MAXWELL_DETECTOR_COEFFICIENT_CALLABLE_TWO_J0_TO_4_CERTIFIED",
+  "dependency_refs": {
+    "detector_image": {
+      "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
+      "result_id": "BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE",
+      "sha256": "d61e8399ba235c22239ca52864aed148b1e2b4d2154685d12324bf4b3037e9dc"
+    },
+    "shell_word": {
+      "path": "closed_universe_observers/certificates/BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD.json",
+      "result_id": "BERGER_COMPLETE_PER_SHELL_RECOIL_OPERATOR_WORD",
+      "sha256": "2127d1611bfa8029daae03b837bf18f55acbfe4b5efef4e39a404ba53bcb77d2"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "fixture": {
+    "canonical_sha256": "63c14e3734ac2a6e3d36a3504e4354595379f40e151359ca1d2ff063c5dd35e1",
+    "lookup": "D0/two_j0/spatial/coframe3/row0/column0/T0",
+    "structural_zero_lookup_passed": true
+  },
+  "flags": {
+    "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": false,
+    "FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED": true,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "mode_scope": {
+    "background": "compact positive Berger clock at fixed coupling",
+    "boundaries": "R x S3 with compact detector windows and no spatial boundary",
+    "carrier": "finite advanced Maxwell detector coefficient polynomials",
+    "charge_sector": "fixed-coupling Berger sector",
+    "degree": "spatial one-form and temporal scalar blocks",
+    "ell": "two_j=0,1,2,3,4",
+    "k": "all representation columns",
+    "m": "all representation rows",
+    "omega": "entire-series advanced Maxwell time kernel through order five plus certified remainder",
+    "parity": "D0 axial and D1 transverse detector polarizations",
+    "theory": "classical pure-Weyl gravity plus Berger clock and Maxwell detector apparatus"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "request_two_j5"
+    },
+    {
+      "detected": true,
+      "name": "omit_spatial_coframe"
+    },
+    {
+      "detected": true,
+      "name": "unknown_block"
+    }
+  ],
+  "next_gate": "EXTEND_DETECTOR_COEFFICIENT_PROVIDER_BEYOND_TWO_J4_AND_IMPLEMENT_NESTED_TIME_CONVOLUTION",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_finite_detector_coefficient_provider.py",
+        "sha256": "7f256fd058d662fb77e274b27ef95a6b0100def3a43472d48dc3a7b8472877a9"
+      },
+      {
+        "path": "closed_universe_observers/berger_recoil_interval_stream.py",
+        "sha256": "4d14e76fa21757767a8c270832262e541036219632ca30d39e910d533768b71e"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_finite_detector_coefficient_provider.py",
+        "sha256": "7be8e255317fac5a2b45cfcc8f6f18802a2f009bd8ee80167db0579340760bf2"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_finite_detector_coefficient_provider.py",
+        "sha256": "90b9a3556fe1014f7f47cad71ae339530e8354a1ec73c54ceaebc31d22e96b20"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-finite-detector-coefficient-provider-v1.schema.json",
+        "sha256": "4c10f98e6f19ca2d45120cb8b0527c889fd883800c278508e7b0e12788e1859e"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-finite-detector-coefficient-provider.md",
+        "sha256": "573af2d954e6930515414c7106996a1deb561d615b5482ce685ccbcb7564825d"
+      }
+    ]
+  },
+  "result_id": "BERGER_RECOIL_FINITE_DETECTOR_COEFFICIENT_PROVIDER",
+  "schema": "closed-universe-berger-recoil-finite-detector-coefficient-provider-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}
