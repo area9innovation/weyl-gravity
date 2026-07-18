@@ -20,6 +20,7 @@ INPUTS = {
     "elliptic": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json",
     "multiplicity": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
     "integration_slice": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_EUCLIDEAN_LOCAL_B4_INTEGRATION_SLICE.json",
+    "factor_coefficients": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json",
     "breaking": ROOT / "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "matter": ROOT / "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
@@ -55,6 +56,7 @@ def _load() -> dict[str, dict[str, Any]]:
     elliptic = values["elliptic"]
     multiplicity = values["multiplicity"]
     integration_slice = values["integration_slice"]
+    factor_coefficients = values["factor_coefficients"]
     breaking = values["breaking"]
     matter = values["matter"]
     lift = values["lift"]
@@ -81,6 +83,12 @@ def _load() -> dict[str, dict[str, Any]]:
         or any(not row.get("exact_at_middle") for row in elliptic.get("principal_symbol_exactness", []))
         or len(multiplicity.get("repository_factors", [])) != 4
         or len(integration_slice.get("factor_exponent_ledger", [])) != 4
+        or factor_coefficients.get("coefficient_result", {}).get("coefficients", {}).get("C2")
+        != {"numerator": 199, "denominator": 30}
+        or factor_coefficients.get("coefficient_result", {}).get("coefficients", {}).get("E4")
+        != {"numerator": -87, "denominator": 20}
+        or len(factor_coefficients.get("coefficient_result", {}).get("factor_contributions", []))
+        != 4
         or breaking.get("qme_disposition", {}).get("status")
         != "OBSTRUCTED_STRICT_FIELD_CONTENT"
         or matter.get("result_state")
@@ -145,6 +153,7 @@ def build() -> str:
     elliptic = values["elliptic"]
     multiplicity = values["multiplicity"]
     integration_slice = values["integration_slice"]
+    factor_coefficients = values["factor_coefficients"]
     breaking = values["breaking"]
     matter = values["matter"]
     lift = values["lift"]
@@ -202,6 +211,12 @@ def build() -> str:
         rf"{factor['statistics'].lower()} & ${_q(factor['determinant_exponent'])}$ & "
         rf"{zero_modes[factor['operator']]} & {_local_prescription(factor['operator'])} \\"
         for factor in multiplicity["repository_factors"]
+    )
+    contribution_rows = "\n".join(
+        rf"{_factor_label(row['factor_id'])} & ${_q(row['coordinates']['C2'])}$ & "
+        rf"${_q(row['coordinates']['E4'])}$ & ${_q(row['coordinates']['CdualC'])}$ & "
+        rf"${_q(row['coordinates']['BoxR'])}$ \\"
+        for row in factor_coefficients["coefficient_result"]["factor_contributions"]
     )
     matter_labels = {
         "real_conformal_scalar": "real conformal scalar",
@@ -275,6 +290,21 @@ Sector & operator & rank & statistics & exponent in $Z$ & zero modes removed & l
 \end{{tabularx}}
 \caption{{Human-readable determinant ledger for the accepted repository Euclidean integration slice.  Exponents are determinant powers in $Z$; the corresponding $\Gamma_1$ powers have the opposite sign.}}
 \label{{tab:generated-determinant-ledger}}
+\end{{table}}
+
+\begin{{table}}[ht]
+\centering
+\begin{{tabular}}{{@{{}}lrrrr@{{}}}}
+\toprule
+Sector & $C^2$ & $E_4$ & $C\widetilde C$ & $\Box R$ \\
+\midrule
+{contribution_rows}
+\midrule
+exact sum & $\frac{{199}}{{30}}$ & $-\frac{{87}}{{20}}$ & $0$ & $0$ \\
+\bottomrule
+\end{{tabular}}
+\caption{{Factorwise local heat-kernel coordinates after the accepted determinant exponents, measure and quartet cancellations.  Their exact sum is the bosonic-Weyl-parameter Ward carrier before ghost replacement and BV quotient reduction.}}
+\label{{tab:generated-factorwise-coefficients}}
 \end{{table}}
 
 \begin{{table}}[ht]

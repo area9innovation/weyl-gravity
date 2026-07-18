@@ -48,7 +48,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             "raw BoxR coefficient",
             entry["quantum_data"]["anomaly_QME_dependency"]["statement"],
         )
-        self.assertIn("nonlocal R2 form factor", entry["claim_boundary"])
+        self.assertIn("structural dependence of the Ricci-scalar sector", entry["claim_boundary"])
         self.assertEqual(entry["quantum_data"]["lifecycle_state"]["status"], "NO_CERTIFIED_MAP")
 
     def test_strict_field_content_quantum_lifecycle_is_obstructed(self) -> None:

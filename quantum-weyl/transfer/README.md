@@ -441,8 +441,13 @@ raw local coefficient `(7/2)log(3/2)-159/80` and proves that the strict-metric
 counterterm `(7/24)log(3/2)-53/320` converts it exactly to the repository
 `BoxR=0` convention while reproducing the anomaly-induced local `R2`
 coefficient `29/120`. This fixes a relative one-loop scheme conversion only.
-The additive `C^2` constant, independent nonlocal `R^2` form factor, absolute
-dressed `R(g_hat)^2` normalization, independent cubic-and-higher
+`FV_ANOMALY_ACTION_RICCI_SECTOR` then fixes the full coefficient-bearing FV
+anomaly action and proves that, in the declared massless conformal
+decomposition, the Ricci-scalar sector is structurally dependent. A generic
+original-metric `R F(Box) R` term may appear after re-expansion, but its form
+factor is determined by the anomaly action and conformized Weyl sector; it is
+not a separate datum. The additive `C^2` constant, absolute dressed
+`R(g_hat)^2` normalization, independent cubic-and-higher
 Weyl-invariant form factors, global
 Green/kernel data, and renormalized BV Laplacian or time-ordered product
 remain absent.

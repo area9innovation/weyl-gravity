@@ -93,8 +93,11 @@ counterterms. On the positive nonzero-momentum flat Euclidean TT carrier the
 universal logarithmic form factor is now fixed with coefficient `-199/60`,
 scale response `199/30`, and scheme-independent momentum difference. Its
 spectral covariantization is universal through curvature order two, with
-operator-choice dependence beginning at curvature order three. The additive
-finite `C2` normalization, independent nonlocal `R2` form factor, absolute
+operator-choice dependence beginning at curvature order three. The exact FV
+anomaly action now also proves that the Ricci-scalar sector is structurally
+dependent: generic-basis `R F(Box) R` terms may occur, but are determined by
+the anomaly action and conformized Weyl sector. The additive finite `C2`
+normalization, absolute
 dressed `R(g_hat)^2` normalization, cubic-and-higher `C2` completion, global
 Green/kernel data, and renormalized BV
 Laplacian or time-ordered product have not been supplied. The extended

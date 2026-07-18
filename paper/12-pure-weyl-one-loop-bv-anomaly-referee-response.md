@@ -6,7 +6,7 @@ Wess–Zumino Resolution*. It is a disposition ledger, not a new theorem.
 
 | Referee requirement | Revision disposition | Evidence |
 | --- | --- | --- |
-| Determinant-to-Slavnov bridge | Addressed. The four-factor determinant ledger, zero-mode policy, local spectral-cut/phase prescription, dimensional Ward insertion, ghost replacement, Diff completion, and quotient reduction are displayed. The `5→10→5` bundles are named. | Main paper, “Coefficient-bearing one-loop breaking”; generated determinant table; `REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json`; `REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json` |
+| Determinant-to-Slavnov bridge | Addressed. The four-factor determinant ledger, factorwise `(C²,E₄,CĈ,□R)` heat-kernel coordinates and exact sum, zero-mode policy, local spectral-cut/phase prescription, dimensional Ward insertion, ghost replacement, Diff completion, and quotient reduction are displayed. The `5→10→5` bundles are named. | Main paper, “Coefficient-bearing one-loop breaking”; generated determinant and factorwise-coefficient tables; `REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json`; `REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH.json`; `REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json` |
 | Strict quotient proof architecture | Addressed on the declared regular Bach-locus chart. The Koszul–Tate page, AFN0 invariant page, relative descent, pure-Diff/mixed zero result, nonminimal contraction, and gauge-fixing transport are stated in spectral-sequence order. | Main paper, “Strict local BV obstruction space”; generated spectral-sequence table; `MINIMAL_BV_KOSZUL_TATE_COLLAPSE.json`; `GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json` |
 | Explicit Euler Wess–Zumino primitive | Addressed. The complete four-dimensional functional and its BRST boundary equation are printed. | Main paper, “Extended cohomology and QME restoration”; generated Euler equation; `WESS_ZUMINO_COMPENSATOR_EXTENSION_PREFLIGHT.json` |
 | Quartet contracting homotopy | Addressed. The actions of `Q_W` and `h`, the quartet-number identity, jet extension, and filtered total-complex lift are displayed. | Main paper, “The compensator cotangent lift”; generated quartet matrices; `WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json` |
@@ -14,6 +14,7 @@ Wess–Zumino Resolution*. It is a disposition ledger, not a new theorem.
 | Matter no-go proof | Addressed. Exact anomaly vectors for scalar, Weyl/Dirac fermion, and gauge vector matter are printed, together with the separating functional `(1,0)` and coupling scope. | Main paper matter proposition; generated matter table; `UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json` |
 | Effective-action scope | Addressed. The material is labeled as consequences; the covariant-log claim is restricted to a shared principal symbol, connection, domain, and endomorphism variation. The flat-TT `-c/2` normalization is derived. | Main paper, “Consequences for one-loop effective-action representatives” |
 | Selected logarithmic-carrier Weyl completion | Strengthened after the review. The normalized Fradkin–Vilkovisky scalar-flat representative gives an exact nonlocal functional invariant under the declared local Weyl transformations. The paper keeps its inverse-domain hypothesis, does not claim the independent cubic form factors, and explicitly distinguishes this metric from the local τ-adic dressed metric. | Main paper FV proposition; computational supplement; `FV_CONFORMIZED_C2_LOG_GAMMA1.json` |
+| Ricci-sector effective-action gate | Strengthened after the review. The exact FV anomaly action is printed and independently replayed. In the declared massless conformal FV decomposition, generic-basis `R F(Box) R` terms are determined by the anomaly action and conformized Weyl sector, so the earlier “independent nonlocal R² form factor” gate is retired. Cubic Weyl data and finite normalizations remain open. | Main paper FV anomaly-action proposition; computational supplement; `FV_ANOMALY_ACTION_RICCI_SECTOR.json` |
 | Unsupported Hadamard assertion | Removed from the abstract and from the paper’s theorem claims. Same-background state constructions are assigned to a separate companion programme. | Abstract; “What does not follow”; Paper 12 claim map |
 | Smaller editorial requests | Addressed: τ-adic title, regular-locus abstract scope, generator terminology, definition of `C_1^{WZ}`, fixture normalization, foundational antifield-BRST reference, Paneitz reference, and consistent receipt punctuation. | Main paper and bibliography |
 
@@ -21,8 +22,8 @@ Both PDFs compile in two passes without errors, warnings, undefined
 references, underfull boxes, or overfull boxes. The generated tables and claim
 map are independently replayed, and the scoped scientific verifiers for the
 strict quotient, Euclidean complex, multiplicities, Slavnov breaking, matter
-cone, compensator lift, extended quotient, effective-action carriers, and
-`Box R` scheme conversion pass exactly.
+cone, compensator lift, extended quotient, effective-action carriers, FV
+Ricci-sector disposition, and `Box R` scheme conversion pass exactly.
 
 The manuscript remains a working draft pending human and literature review.
 No Lorentzian QME, all-loop restoration, particle Hilbert space, or residual

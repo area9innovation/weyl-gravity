@@ -175,6 +175,15 @@ class ActiveFrontierTests(unittest.TestCase):
                 "FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED"
             ]
         )
+        self.assertTrue(self.payload["claim_flags"]["FV_ANOMALY_ACTION_FIXED"])
+        self.assertTrue(
+            self.payload["claim_flags"]["RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED"]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
@@ -301,7 +310,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_FINITE_C2_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

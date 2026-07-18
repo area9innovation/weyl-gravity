@@ -26,6 +26,7 @@ def main() -> None:
     assert "independent cubic Weyl-invariant form factors & open" in rendered
     assert "generated-spectral-sequence" in rendered
     assert "generated-determinant-ledger" in rendered
+    assert "generated-factorwise-coefficients" in rendered
     assert "generated-matter-vectors" in rendered
     assert "generated-euler-wz" in rendered
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
@@ -62,6 +63,8 @@ def main() -> None:
     assert values["minimal_kt"]["spectral_sequence"]["collapse_page"] == "E2"
     assert len(values["elliptic"]["principal_symbol_exactness"]) == 4
     assert len(values["multiplicity"]["repository_factors"]) == 4
+    assert len(values["factor_coefficients"]["coefficient_result"]["factor_contributions"]) == 4
+    assert values["factor_coefficients"]["coefficient_result"]["coefficients"]["C2"] == {"numerator": 199, "denominator": 30}
     assert values["matter"]["separating_witnesses"][0]["functional"] == [1, 0]
     print("Paper 12 generated quantum-anomaly tables: PASS")
 

@@ -1235,7 +1235,7 @@
       }
     },
     {
-      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and one conditional anomaly-induced Paneitz/Riegert Gamma1 representative is fixed. The selected C2 logarithmic carrier has an exact FV scalar-flat Weyl-orbit completion, but the independent nonlocal R2 form factor and cubic Weyl-invariant form factors, absolute dressed Rhat2 normalization, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
+      "claim_boundary": "Classical second-order obstruction does not imply BRST disappearance, a loop interaction, a quantum constraint, BRST exactness, or ghost removal. The coefficient-bearing QME disposition is complete\u2014strict obstructed, tau-adic compensator extension restored locally at one Euclidean loop\u2014and the exact FV anomaly action proves structural dependence of the Ricci-scalar sector. Independent cubic Weyl-invariant form factors, finite normalizations, global Green data and complete Q1 remain open. Bridge 2 and a same-background extended classical carrier map are absent, so no interacting-BRST insertion crosswalk is certified.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -1315,6 +1315,11 @@
           "sha256": "7a4e55efa7284d303a7e929b4a0a0fd284b4508695958f575bcbb6a8a44f90c7"
         },
         {
+          "path": "quantum-weyl/transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json",
+          "result_id": "FV_ANOMALY_ACTION_RICCI_SECTOR",
+          "sha256": "d0cd966bc71dfbffd39945921578ae0e7c76943b2db2e9a46867d3dc8558c1ea"
+        },
+        {
           "path": "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
           "result_id": "WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION",
           "sha256": "21fc06bb31a35f8aa8f1d8f35f6fe1e746a8ab881332e16072ee257b3a437b2c"
@@ -1368,7 +1373,7 @@
           "status": "NO_CERTIFIED_MAP"
         },
         "anomaly_QME_dependency": {
-          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and conversion plus the selected FV-conformized C2 logarithmic carrier are fixed, but the independent nonlocal R2 and cubic Weyl-invariant form factors, absolute dressed Rhat2 normalization and complete Q1 are underdetermined",
+          "statement": "strict one-loop local Euclidean QME is obstructed and the tau-adic compensator-extended one-loop local Euclidean QME is restored; the raw BoxR coefficient and scheme conversion are fixed, and the FV anomaly action fixes the Ricci-scalar sector, while cubic Weyl-invariant form factors, finite normalizations and complete Q1 are underdetermined",
           "status": "CERTIFIED"
         },
         "carrier_crosswalk": {
@@ -1389,7 +1394,7 @@
         ],
         "entry_kind": "CLASSICAL_TO_QUANTUM_CROSSWALK",
         "lifecycle_state": {
-          "statement": "the coefficient-bearing QME disposition, relative strict R2 scheme conversion and selected FV carrier completion are complete in scope, but the independent nonlocal R2 and cubic Weyl-invariant form factors, absolute dressed Rhat2 normalization, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
+          "statement": "the coefficient-bearing QME disposition, FV anomaly action, Ricci-sector dependence and selected FV carrier completion are complete in scope, but cubic Weyl-invariant form factors, finite normalizations, complete Q1, Bridge 2, and an extended same-background classical carrier map are absent",
           "status": "NO_CERTIFIED_MAP"
         },
         "pairing_status": {
@@ -1987,6 +1992,11 @@
           "path": "quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
           "result_id": "FV_CONFORMIZED_C2_LOG_GAMMA1",
           "sha256": "7a4e55efa7284d303a7e929b4a0a0fd284b4508695958f575bcbb6a8a44f90c7"
+        },
+        {
+          "path": "quantum-weyl/transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json",
+          "result_id": "FV_ANOMALY_ACTION_RICCI_SECTOR",
+          "sha256": "d0cd966bc71dfbffd39945921578ae0e7c76943b2db2e9a46867d3dc8558c1ea"
         }
       ],
       "id": "quantum.crosswalk.fv_conformized_c2_log_form_factor_to_particle",
@@ -2077,7 +2087,7 @@
       "scope": {
         "background": "carrier-specific; no cross-background identification",
         "boundaries": "carrier-specific",
-        "carrier": "FV scalar-flat Weyl-orbit completion of the selected C log(Delta_C/mu^2) C effective-action carrier",
+        "carrier": "FV scalar-flat Weyl-orbit completion of the selected C log(Delta_C/mu^2) C carrier plus the exact FV anomaly action and dependent Ricci sector",
         "charge_sector": "not a certified physical one-particle sector",
         "degree": "carrier-specific",
         "ell": "NO_CERTIFIED_MAP",
@@ -2204,7 +2214,7 @@
     }
   ],
   "generated_by": "quantum-weyl/atlas/generate_quantum_atlas_fragment.py",
-  "generated_by_sha256": "b1d83d6529a1ba7858fea6cf3fd5d4c80756fd993aa2d13fd1e829d0cabc06d1",
+  "generated_by_sha256": "3ef862a491e4da64bccf036b85e4562886e04a5450676d394f2265344c353e90",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

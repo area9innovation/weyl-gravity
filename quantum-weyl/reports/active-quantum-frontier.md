@@ -39,9 +39,13 @@ first differ at curvature order three. Evaluating this selected carrier on
 the normalized Fradkin--Vilkovisky scalar-flat representative now supplies
 its exact nonlocal completion invariant under boundary-compatible local Weyl
 transformations and identifies the first forced cubic correction. The FV
-metric is not the local tau-adic dressed metric. The additive `C^2` constant,
+metric is not the local tau-adic dressed metric. The exact FV anomaly action
+also proves that the Ricci-scalar sector is structurally dependent: a generic
+`R F(Box) R` term can occur after re-expansion, but it carries no separately
+specifiable form factor in the declared massless conformal decomposition.
+The additive `C^2` constant,
 independent cubic-and-higher Weyl-invariant form factors, renormalized BV Laplacian or
-time-ordered product, the independent nonlocal `R^2` form factor, absolute
+time-ordered product, absolute
 dressed `R(g_hat)^2` normalization, and global Green data remain
 absent, so complete `Gamma1` and `Q1` are fail-closed. Independently, Bridge 4
 is certified on the free reduced E/A/L vacuum-cylinder carrier: the
@@ -58,9 +62,10 @@ The published raw zeta/proper-time coefficient is imported and independently
 replayed as `(7/2)log(3/2)-159/80`. Composing it with the certified primitive
 `omega BoxR=-(1/12)s(R2) mod d_h` fixes the exact strict-metric counterterm
 `(7/24)log(3/2)-53/320`, sends the raw coordinate to `BoxR=0`, and reproduces
-the stored anomaly-induced local `R2` coefficient `29/120`. This does not fix
-the momentum-dependent nonlocal `R2` form factor or the independent dressed
-`R(g_hat)^2` class, and it is not an all-loop equivalence of strict theories.
+the stored anomaly-induced local `R2` coefficient `29/120`. This local scheme
+conversion does not by itself establish the FV Ricci-sector dependence
+theorem, fix the independent dressed `R(g_hat)^2` class, or give an all-loop
+equivalence of strict theories.
 
 See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstruction.md),
 [`wess-zumino-minimal-bv-cotangent-lift.md`](wess-zumino-minimal-bv-cotangent-lift.md),

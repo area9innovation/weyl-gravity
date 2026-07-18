@@ -60,6 +60,7 @@ DEPENDENCIES = {
     "flat_TT_logarithmic_Gamma1": HERE / "transfer/certificates/FLAT_TT_LOGARITHMIC_GAMMA1.json",
     "curvature_squared_covariant_log_Gamma1": HERE / "transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
     "FV_conformized_C2_log_Gamma1": HERE / "transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
+    "FV_anomaly_action_Ricci_sector": HERE / "transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -165,6 +166,7 @@ def _load() -> dict[str, dict[str, Any]]:
     flat_tt_logarithmic_gamma1 = values["flat_TT_logarithmic_Gamma1"]
     curvature_squared_log_gamma1 = values["curvature_squared_covariant_log_Gamma1"]
     fv_conformized_log_gamma1 = values["FV_conformized_C2_log_Gamma1"]
+    fv_anomaly_ricci = values["FV_anomaly_action_Ricci_sector"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -348,6 +350,29 @@ def _load() -> dict[str, dict[str, Any]]:
         != "FORBIDDEN"
     ):
         raise ValueError("FV-conformized C2-log Gamma1 frontier drifted")
+    if (
+        fv_anomaly_ricci.get("result_state")
+        != "FV_ANOMALY_ACTION_FIXED_RICCI_SECTOR_NOT_INDEPENDENT_CUBIC_WEYL_AND_FINITE_NORMALIZATIONS_OPEN"
+        or fv_anomaly_ricci.get("decision", {}).get("FV_anomaly_action")
+        != "CERTIFIED"
+        or fv_anomaly_ricci.get("decision", {}).get(
+            "Ricci_scalar_sector_dependence"
+        )
+        != "CERTIFIED"
+        or fv_anomaly_ricci.get("decision", {}).get(
+            "independent_nonlocal_R2_form_factor"
+        )
+        != "NOT_AN_INDEPENDENT_DATUM_IN_DECLARED_FV_CONFORMAL_DECOMPOSITION"
+        or fv_anomaly_ricci.get("claim_flags", {}).get(
+            "SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED"
+        )
+        is not False
+        or fv_anomaly_ricci.get("decision", {}).get("complete_Gamma1")
+        != "NO_CERTIFIED_FUNCTIONAL"
+        or fv_anomaly_ricci.get("decision", {}).get("residual_transfer")
+        != "FORBIDDEN"
+    ):
+        raise ValueError("FV anomaly-action/Ricci-sector frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1210,11 +1235,11 @@ def build() -> dict[str, Any]:
             },
             "local_obstruction_space": {
                 "status": "STRICT_G2_COMPLETE_TAU_ADIC_EXTENDED_H04_DIMENSIONS_3_1_AND_H14_ZERO",
-                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_FINITE_C2_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_CONFORMIZED_C2_LOG_CARRIER_CERTIFIED_RAW_BOXR_AND_EXACT_REPOSITORY_R2_SCHEME_CONVERSION_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
-                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_AND_RICCI_SECTOR_DEPENDENCE_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
+                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_FINITE_C2_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1229,8 +1254,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_RELATIVE_STRICT_R2_RAW_TO_BOXR_ZERO_SCHEME_NORMALIZATION_AND_FV_CONFORMIZED_C2_LOG_CARRIER_FIXED_INDEPENDENT_CUBIC_WEYL_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_AND_RICCI_SECTOR_DEPENDENCE_FIXED_INDEPENDENT_CUBIC_WEYL_FORM_FACTORS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_FINITE_C2_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
         "supersession_ledger": [
@@ -1381,6 +1406,9 @@ def build() -> dict[str, Any]:
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED": True,
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE": True,
             "FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED": True,
+            "FV_ANOMALY_ACTION_FIXED": True,
+            "RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED": True,
+            "SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED": False,
             "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED": False,
             "FV_AND_WZ_DRESSED_METRICS_IDENTIFIED": False,
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED": True,
@@ -1408,7 +1436,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_NONLOCAL_R2_FORM_FACTOR_ABSOLUTE_DRESSED_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_FINITE_C2_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1450,8 +1478,12 @@ def build() -> dict[str, Any]:
             "(7/2)log(3/2)-159/80. The exact strict-metric R2 counterterm "
             "(7/24)log(3/2)-53/320 converts it to the repository BoxR=0 convention "
             "and reproduces the anomaly-induced local R2 coefficient 29/120. This fixes "
-            "only a relative one-loop strict-metric scheme conversion; the independent "
-            "nonlocal R2 form factor and absolute dressed R(g_hat)^2 normalization remain open. "
+            "only a relative one-loop strict-metric scheme conversion. The exact FV anomaly "
+            "action and conformal decomposition now prove that the Ricci-scalar sector is "
+            "structurally dependent: a generic-basis nonlocal R F(Box) R term can appear after "
+            "re-expansion, but it is fixed by the anomaly action and conformized Weyl sector, "
+            "not a separately specifiable form factor. The absolute dressed R(g_hat)^2 "
+            "normalization remains open. "
             "An exact dual-cone witness further proves that no nonnegative collection of "
             "standard-sign free conformal scalars, Weyl or Dirac fermions, and gauge vectors "
             "cancels the C2/E4 vector. "
@@ -1473,8 +1505,7 @@ def build() -> dict[str, Any]:
             "conditional on an invertible boundary problem or compatible source sector and "
             "does not discard Paneitz kernel/global data. An exact flat-momentum response "
             "matrix still has rank two on the allowed C(g_hat)^2 and R(g_hat)^2 finite-counterterm "
-            "directions. The independent R^2 form factor, cubic-and-higher C^2 nonlocal "
-            "remainder, renormalized "
+            "directions. The independent cubic-and-higher Weyl-sector form factors, renormalized "
             "BV Laplacian or time-ordered product, finite normalization conditions, and global Green data "
             "are absent, so no unique complete Gamma1 or Q1 is supplied. This does not "
             "establish an all-loop or Lorentzian QME. The frozen classical residual contraction "
@@ -1664,6 +1695,9 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED") is not True
         or flags.get("FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE") is not True
         or flags.get("FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED") is not True
+        or flags.get("FV_ANOMALY_ACTION_FIXED") is not True
+        or flags.get("RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED") is not True
+        or flags.get("SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED") is not False
         or flags.get("INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED") is not False
         or flags.get("FV_AND_WZ_DRESSED_METRICS_IDENTIFIED") is not False
         or flags.get("RAW_ZETA_BOXR_COEFFICIENT_COMPUTED") is not True
@@ -1766,6 +1800,8 @@ def validate(result: dict[str, Any]) -> None:
             "CURVATURE_SQUARED_COVARIANT_C2_LOG_FIXED",
             "FIRST_UNRESOLVED_C2_LOG_COMPLETION_ORDER_IS_THREE",
             "FV_CONFORMIZED_C2_LOG_LOCAL_WEYL_COMPLETION_SUPPLIED",
+            "FV_ANOMALY_ACTION_FIXED",
+            "RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED",
             "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED",
             "FV_AND_WZ_DRESSED_METRICS_IDENTIFIED",
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED",

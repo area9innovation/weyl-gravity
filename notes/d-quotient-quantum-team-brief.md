@@ -823,8 +823,11 @@ the sandwiched functional at curvature order three. Evaluating this selected
 carrier on the normalized Fradkin--Vilkovisky scalar-flat representative now
 gives an exact nonlocal functional invariant under the declared local Weyl
 transformations and identifies its first forced cubic correction. The
-independent `R2` form factor, additive finite `C2/R2` normalization,
-independent cubic-and-higher Weyl-invariant form factors, renormalized BV Laplacian or time-ordered product, and global
+exact FV anomaly action now also proves that the Ricci-scalar sector is
+structurally dependent: a generic-basis `R F(Box) R` term may appear after
+re-expansion, but is fixed by the anomaly and conformized Weyl sector. The
+additive finite `C2/R(g_hat)^2` normalization, independent cubic-and-higher
+Weyl-invariant form factors, renormalized BV Laplacian or time-ordered product, and global
 Green data remain absent. Complete `Gamma1` and `Q1` therefore remain fail-closed,
 independently of the still-missing compensator-inclusive classical
 contraction.
@@ -837,7 +840,7 @@ rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. Its remaining local gate is the
-independent cubic-and-higher Weyl-invariant form factors, the independent nonlocal `R2` form factor,
+independent cubic-and-higher Weyl-invariant form factors,
 finite `C2` and absolute dressed `R(g_hat)^2` normalization, and complete
 `Q1`; its independent carrier gate is Bridge 2. The generated
 fail-closed row is
@@ -864,8 +867,9 @@ disposition are present. Its strict-versus-tau-adic one-loop QME-disposition
 part is certified. The raw local `BoxR` coefficient
 `(7/2)log(3/2)-159/80` and the exact strict-metric raw-to-`BoxR=0` scheme
 shift `(7/24)log(3/2)-53/320` are also certified, reproducing the local
-anomaly-induced `R2` coefficient `29/120`. This does not fix the independent
-nonlocal `R2` form factor or the dressed `R(g_hat)^2` normalization. Complete
+anomaly-induced `R2` coefficient `29/120`. The local scheme conversion does
+not by itself prove the FV Ricci-sector
+dependence theorem or fix the dressed `R(g_hat)^2` normalization. Complete
 `Q1` remains open, and Bridge 2 has not supplied the required
 interaction-to-physical-branch map. No classical tangent-cone or resonance
 obstruction is therefore advertised as BRST exactness, ghost removal, or a
@@ -893,6 +897,8 @@ Weyl-orbit completion in
 This fixes the completion of that carrier, not the independent cubic
 Weyl-invariant form factors; its nonlocal representative is not identified
 with the local tau-adic dressed metric.
+The exact anomaly action and Ricci-sector dependence theorem are recorded in
+[`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as
 `quantum.crosswalk.fv_conformized_c2_log_form_factor_to_particle`, with the
 functional imported in its declared role and every particle/state crosswalk
@@ -908,7 +914,7 @@ the determinant-to-Slavnov bridge, regular-Bach spectral-sequence proof,
 quartet homotopy, Euler Wess--Zumino primitive, matter vectors, and narrowed
 effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
-matter, quartet, effective-action, and boundary tables are generated from eighteen hashed
+matter, quartet, effective-action, and boundary tables are generated from nineteen hashed
 claim-map receipts and pass an independent stale/tamper check. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).

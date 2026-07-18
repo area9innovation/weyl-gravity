@@ -451,8 +451,7 @@ dependence for this $C^2$ carrier therefore starts with cubic form
 factors within the class sharing principal symbol, connection, domain, and
 source complement and differing at first curvature order only by the
 self-adjoint endomorphism $V_1$.  Connection variations, which can introduce
-first-order differential terms, are not covered.  The independent nonlocal
-$R^2$ form factor, kernel and boundary
+first-order differential terms, are not covered.  Kernel and boundary
 data, independent cubic form factors, finite $C^2$ constant and absolute dressed
 $R(\widehat g)^2$ normalization remain fail-closed.  The selected carrier's
 Weyl-orbit completion is handled separately below.
@@ -474,10 +473,41 @@ nonlocal functional invariant under the declared local Weyl transformations.
 
 The verifier retains the inverse-domain hypothesis, replays the coefficient
 $-199/60$ and the first correction order three, and rejects promotion to
-independent cubic form factors, a nonlocal $R^2$ form factor, complete
+independent cubic form factors, complete
 $\Gamma_1/Q_1$, residual transfer or a Lorentzian result.  It also enforces a
 carrier crosswalk: the nonlocal $\bar g[g]$ is distinct from the local
 $\tau$-adic field $\widehat g[g,\tau]$.
+
+\subsection{FV anomaly action and dependent Ricci sector}
+
+The coefficient-bearing anomaly action is replayed as
+\[
+ \Gamma_{1,\mathrm{FV}}=\frac1{(4\pi)^2}\int\!\sqrt g\,
+ \left[\left(\frac{199}{30}C^2-\frac{87}{20}\mathcal E_4\right)
+ \Sigma_{\mathrm{FV}}
+ +\frac{87}{10}\Sigma_{\mathrm{FV}}\Delta_4\Sigma_{\mathrm{FV}}
+ +\frac{29}{120}R^2\right],
+ \qquad \mathcal E_4=E_4-\frac23\Box R.
+\]
+The independent verifier checks both exact cancellations
+\[
+ -\frac{87}{5}+\frac{87}{5}=0,
+ \qquad
+ \frac{29}{10}-\frac{29}{10}=0,
+\]
+and the RFT specialization
+\((199/120,-87/160,29/120)\).
+
+The decomposition
+\(
+ \Gamma_1[g]=\Gamma_{1,\mathrm{FV}}[g]+W_1[\bar g[g]]
+\)
+with \(R[\bar g]=0\) makes the Ricci-scalar sector dependent.  A generic-basis
+term \(R F(\Box)R\) can appear after re-expansion, but its form factor is fixed
+by the anomaly action and the conformized Weyl sector.  It is not a separate
+coefficient gate in the declared massless conformal FV scope.  Independent
+cubic-and-higher Weyl form factors, finite normalizations, global inverse data
+and renormalized products remain open.
 
 \subsection{Exact local BoxR scheme conversion}
 
@@ -494,10 +524,11 @@ The repository primitive $\omega\Box R=-(1/12)s(R^2)$ modulo $\dd$ then fixes
 The verifier checks that $b_{\Box}^{\rm raw}-12z_R^{\rm raw\to0}=0$ and that
 adding the same shift to $391/960-(7/24)\log(3/2)$ gives the stored local
 coefficient $29/120$.  Alternating-series rational bounds certify the strict
-sign without floating-point arithmetic.  The receipt keeps three objects
-separate: this strict-metric local scheme counterterm, the independent dressed
-$R(\widehat g)^2$ class in the compensator theory, and the momentum-dependent
-nonlocal $R^2$ form factor.  Only the first is fixed.
+sign without floating-point arithmetic.  The receipt keeps the strict-metric
+local scheme counterterm separate from the independent dressed
+$R(\widehat g)^2$ class in the compensator theory.  The subsequent FV
+certificate, not the local scheme conversion alone, proves that generic-basis
+nonlocal Ricci terms are structurally determined.
 
 The same certificate binds the contraction non-merge: the Berger `tau` row
 is the temporal diffeomorphism ghost in the positive-Berger clock complex,
@@ -526,9 +557,12 @@ contraction merge;
 \item replay the Fradkin--Vilkovisky scalar-flat and Weyl-weight identities,
 and reject identification of its nonlocal representative with the local
 $\tau$-adic dressed metric or promotion to independent cubic form factors;
+\item replay the exact FV anomaly-action response cancellations and RFT
+specialization, while rejecting a separate nonlocal $R^2$ datum or a complete
+$\Gamma_1$;
 \item replay the raw $\Box R$ heat-kernel arithmetic, its exact strict-metric
 $R^2$ scheme shift and the $29/120$ cross-check, while rejecting promotion to
-the nonlocal $R^2$ form factor or an absolute dressed normalization;
+an absolute dressed normalization;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
@@ -568,6 +602,10 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_fv_conformized_c2_log_gamma1
 PYTHONPATH=quantum-weyl python3 -m \
+  transfer.fv_anomaly_action_ricci_sector --check
+PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_fv_anomaly_action_ricci_sector
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
@@ -586,8 +624,8 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the independent cubic-and-higher Weyl-invariant form factors, independent nonlocal $R^2$ form
-factor, finite $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
+\item the independent cubic-and-higher Weyl-invariant form factors, finite
+$C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete
 $Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT
 logarithmic contributions;
