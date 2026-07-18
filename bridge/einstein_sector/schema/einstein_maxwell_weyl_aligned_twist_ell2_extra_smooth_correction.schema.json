@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_path",
+    "schema_sha256",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "scope",
+    "second_order_equation",
+    "operator_convention",
+    "exceptional_slices",
+    "cases",
+    "classification",
+    "interpretation",
+    "next_gate",
+    "claim_boundary",
+    "source_manifest",
+    "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-aligned-twist-ell2-extra-smooth-correction-v1"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "contains": {"const": "LOCAL-ALGEBRAIC"}
+    },
+    "cases": {
+      "type": "object",
+      "minProperties": 16,
+      "maxProperties": 16,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["output_ell", "output_parity", "source_action_rows", "correction_coefficients", "full_action_remainder", "status"]
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "all_16_aligned_mixed_channels_classified",
+        "13_nonzero_sources_have_exact_polynomial_corrections",
+        "all_full_action_row_remainders_zero",
+        "aligned_twist_extra_L1_L3_block_coefficient_explicit",
+        "complete_arbitrary_orbit_correction_coefficient_explicit",
+        "causal_retarded_correction_certified"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

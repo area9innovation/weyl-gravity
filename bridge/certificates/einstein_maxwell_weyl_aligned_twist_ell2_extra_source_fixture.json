@@ -1,0 +1,267 @@
+{
+  "classification": {
+    "aligned_L1_and_L3_outputs": true,
+    "all_four_extra_representatives": true,
+    "correction_constructed": false,
+    "direct_four_dimensional_source": true,
+    "twist_position_and_velocity": true
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "normalization": {
+    "axial": "integral_-1^1 (1-z^2)(P_L'(z))^2 dz=2L(L+1)/(2L+1)",
+    "axial_action_rows": [
+      "lambda*metric_t",
+      "-lambda*metric_x",
+      "maxwell_t",
+      "maxwell_x"
+    ],
+    "polar_action_rows": [
+      "-metric_00",
+      "2*metric_01",
+      "-metric_11",
+      "2lambda*maxwell_axial_density"
+    ],
+    "scalar": "integral_-1^1 P_L(z)^2 dz=2/(2L+1)"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_SOURCE_FIXTURE",
+  "result_state": "DIRECT_FOUR_DIMENSIONAL_ALIGNED_TWIST_EXTRA_L1_L3_ACTION_SOURCES",
+  "schema": "einstein-maxwell-weyl-aligned-twist-ell2-extra-source-fixture-v1",
+  "scope": "m=0 axial twist position/velocity crossed with all four axial/polar ell=2,k=0 extra representatives; L=1,3 outputs at omega_e^2=16/3",
+  "source_manifest": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_aligned_twist_ell2_extra_source.py": "4291d8aaf06e4f4f5dcdd0b8a750feb4f9b0fbe31d9c0512da9bb7d3c768bfb8",
+    "bridge/einstein_sector/einstein_maxwell_weyl_aligned_twist_ell2_extra_source_fixture.py": "4fa99453456c58b46281a24958a9709ad1ca2ee7346ceb34d223b053fe00f165"
+  },
+  "sources": {
+    "axial_e1_position_L1": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "432/5",
+        "0",
+        "0"
+      ]
+    },
+    "axial_e1_position_L3": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "3888/5",
+        "0",
+        "0"
+      ]
+    },
+    "axial_e1_velocity_L1": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "432*t/5",
+        "0",
+        "0"
+      ]
+    },
+    "axial_e1_velocity_L3": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "144*(27*t - 10*sqrt(3)*I)/5",
+        "0",
+        "0"
+      ]
+    },
+    "axial_e2_position_L1": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "-28/15",
+        "0",
+        "292/45",
+        "-16/5"
+      ]
+    },
+    "axial_e2_position_L3": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "-184/5",
+        "0",
+        "-952/45",
+        "96/5"
+      ]
+    },
+    "axial_e2_velocity_L1": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "-28*t/15",
+        "0",
+        "4*(73*t + 80*sqrt(3)*I)/45",
+        "-16*(3*t - 4*sqrt(3)*I)/15"
+      ]
+    },
+    "axial_e2_velocity_L3": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "-8*(23*t - 20*sqrt(3)*I)/5",
+        "0",
+        "-8*(119*t - 80*sqrt(3)*I)/45",
+        "32*(9*t - 22*sqrt(3)*I)/15"
+      ]
+    },
+    "polar_e1_position_L1": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "polar_e1_position_L3": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "polar_e1_velocity_L1": {
+      "axial_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "polar_e1_velocity_L3": {
+      "axial_action_source": [
+        "-24*sqrt(3)*I",
+        "0",
+        "0",
+        "0"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "polar_e2_position_L1": {
+      "axial_action_source": [
+        "0",
+        "576/5",
+        "0",
+        "-192"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "polar_e2_position_L3": {
+      "axial_action_source": [
+        "0",
+        "-3456/5",
+        "0",
+        "-384"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "polar_e2_velocity_L1": {
+      "axial_action_source": [
+        "0",
+        "64*(9*t - 14*sqrt(3)*I)/5",
+        "0",
+        "-64*(45*t + 22*sqrt(3)*I)/15"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "polar_e2_velocity_L3": {
+      "axial_action_source": [
+        "0",
+        "-192*(18*t + 37*sqrt(3)*I)/5",
+        "0",
+        "-128*(15*t - 2*sqrt(3)*I)/5"
+      ],
+      "polar_action_source": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_aligned_twist_ell2_extra_source_fixture --check --workers 4"
+  ]
+}

@@ -29,6 +29,7 @@ INPUTS = {
     "circumference": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json",
     "electric": ROOT / "bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json",
     "twist_polynomial_audit": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+    "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
 }
 
 
@@ -126,6 +127,10 @@ def build() -> dict[str, Any]:
         raise AssertionError("electric cross correction changed")
     if not records["twist_polynomial_audit"]["classification"]["complete_collinear_standard_homogeneous_twist_common_zero_face_second_order_extendible"]:
         raise AssertionError("twist polynomial audit changed")
+    if not records["aligned_twist_extra_coefficients"]["classification"]["aligned_twist_extra_L1_L3_block_coefficient_explicit"]:
+        raise AssertionError("aligned twist--extra coefficient block changed")
+    if records["aligned_twist_extra_coefficients"]["classification"]["complete_arbitrary_orbit_correction_coefficient_explicit"]:
+        raise AssertionError("scoped coefficient block over-promoted the complete orbit")
 
     ledger = _channel_ledger()
     return {
@@ -161,6 +166,7 @@ def build() -> dict[str, Any]:
             "persistent_cokernel": "only the zero-frequency compact stabilizer components remain; their source pairings are the five certified moment maps",
             "stabilizer_disposition": "all five moment maps vanish identically on the complete certified orbit",
             "assembly": "apply the finite block right inverse in every ledger channel and impose conjugate corrections on conjugate frequencies",
+            "printed_mixed_block": "all 16 aligned twist-position/velocity times ell=2 extra L=1,3 channels are classified; 13 exact polynomial corrections are printed, 3 sources vanish, and every full action-row remainder is zero",
         },
         "channel_ledger": ledger,
         "correction_classes": {
@@ -173,14 +179,15 @@ def build() -> dict[str, Any]:
             "complete_quadratic_channel_ledger": True,
             "all_nonstabilizer_smooth_secular_cokernels_zero": True,
             "smooth_exponential_polynomial_second_order_correction_exists": True,
+            "aligned_twist_extra_L1_L3_correction_coefficient_explicit": True,
             "coefficient_explicit_correction_printed": False,
             "bounded_correction_exists": False,
             "causal_retarded_map_certified": False,
             "all_orders_integrability": False,
         },
         "interpretation": "The same nonzero global--extra tangent is excluded if its correction must remain bounded, yet extends at second order when finite secular growth is allowed. The distinction is entirely correction-class dependent: the twist velocity forces a quadratic zero-frequency source, while the smooth exponential-polynomial category supplies polynomial right inverses and removes every propagation resonance after the stabilizer moment maps vanish.",
-        "next_gate": "make the smooth correction coefficient-explicit if needed for Paper 91, then classify opposite momenta, relative phases, multiple absolute-momentum fibres and the causal compact-source category separately",
-        "claim_boundary": "This is a blockwise constructive existence theorem, not a printed coefficient formula for every correction component. It does not give a bounded correction, a causal/retarded solution, all-orders integration, final residual descent, an observable, particle state or quantum theorem.",
+        "next_gate": "print the remaining zero-frequency global/global and extra/extra self coefficients if the complete orbit correction is needed explicitly, then classify opposite momenta, relative phases, multiple absolute-momentum fibres and the causal compact-source category separately",
+        "claim_boundary": "The aligned twist--extra mixed L=1,3 block is coefficient-explicit, but this remains a blockwise constructive existence theorem rather than a printed formula for every correction component on the complete orbit. It does not give a bounded correction, a causal/retarded solution, all-orders integration, final residual descent, an observable, particle state or quantum theorem.",
         "source_manifest": {str(path.relative_to(ROOT)): _sha256(path) for path in (*INPUTS.values(), Path(__file__).resolve(), SCHEMA)},
         "verification_receipt": {
             "producing_date": "2026-07-18",

@@ -454,7 +454,7 @@
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER",
-          "sha256": "df2ef1bb26bb59e69bb228ad9e8ace8a7ea16d60702585ed408ce61e6f444add"
+          "sha256": "961548b8e8b8f850e044b55c9b6b82536ba83724b019a4a1137a916a81a21177"
         }
       ],
       "id": "ph.global.twist.relative",
@@ -537,6 +537,7 @@
   "claim_boundary": "This is a fail-closed branch dictionary and exact map-lifecycle ledger. It does not promote the full relative triangle, provide a causal Green carrier, identify cross-background modes, or support observational or quantum state claims.",
   "classification": {
     "aligned_nonzero_stabilizer_resonance_common_zero_face_imported": true,
+    "aligned_twist_extra_L1_L3_coefficient_correction_imported": true,
     "bridge_1_activation_gate_satisfied": false,
     "complete_declared_global_extra_common_zero_locus_imported": true,
     "complete_global_extra_bounded_correction_obstruction_imported": true,
@@ -564,11 +565,15 @@
   "next_gate": "classify corrected nonidentity or chain-homotopy cyclic morphisms, then construct or obstruct exceptional off-shell/nonzero-k and global off-shell endpoints and boundary domains before promoting EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_weyl_relative_branch_dictionary.py",
-    "generator_sha256": "38999842a352b821622cc33b57f6deb74a760608aa3ff5a3b6eaf6370aa6203f",
+    "generator_sha256": "139289708c1ec6d5c049a3899c55c748c16d7707a678cc6676916f2b66099fac",
     "inputs": {
       "abd_quadratic": {
         "path": "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
         "sha256": "9bf4fb15a934bba3690d92f630c027ec40f166360c012689425e8a473aa42736"
+      },
+      "aligned_twist_extra_coefficients": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
+        "sha256": "5788853a60c4fc0caada8b62c2f1e7328b4255a76a9c02dedef564548353cf13"
       },
       "aligned_twist_extra_face": {
         "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
@@ -608,7 +613,7 @@
       },
       "global_extra_smooth_extension": {
         "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
-        "sha256": "df2ef1bb26bb59e69bb228ad9e8ace8a7ea16d60702585ed408ce61e6f444add"
+        "sha256": "961548b8e8b8f850e044b55c9b6b82536ba83724b019a4a1137a916a81a21177"
       },
       "homogeneous_cofiber": {
         "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
@@ -658,9 +663,10 @@
       "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE",
       "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1",
       "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION",
-      "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER"
+      "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER",
+      "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_SMOOTH_CORRECTION"
     ],
-    "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra source matrix and its common-zero locus feed the relative obstruction map; every common zero is on the aligned SO3 orbit, every nonzero point is obstructed in the bounded correction class, and every point extends in the smooth exponential-polynomial class, while causal, bridge 1 and the general finite-harmonic tangent cone remain open",
+    "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra source matrix and its common-zero locus feed the relative obstruction map; every common zero is on the aligned SO3 orbit, every nonzero point is obstructed in the bounded correction class, and every point extends in the smooth exponential-polynomial class. The aligned twist--extra L=1,3 mixed block is coefficient-explicit, while the complete orbit coefficient list, causal category, bridge 1 and the general finite-harmonic tangent cone remain open",
     "status": "PARTIAL_INPUT"
   },
   "relative_forms": {
@@ -674,7 +680,7 @@
   "result_state": "SAME_BACKGROUND_BRANCH_DICTIONARY_EXPORTED_FULL_RELATIVE_TRIANGLE_ACTIVATION_GATE_OPEN",
   "schema": "einstein-weyl-relative-branch-dictionary-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_weyl_relative_branch_dictionary.schema.json",
-  "schema_sha256": "16ae991865ddd8ca1997c4345dd82ea12bb7add761af6f1049ed869555472e40",
+  "schema_sha256": "c14a5182bf464a61ecd25f6e69ebfcaa873fbec6996fb5b94b8e6e25f207d7a3",
   "verification_commands": [
     "python3 -m bridge.einstein_sector.einstein_weyl_relative_branch_dictionary --check",
     "python3 bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py",

@@ -47,6 +47,8 @@ def main() -> None:
         raise AssertionError("global--extra bounded obstruction handoff was lost")
     if not value["classification"]["complete_global_extra_smooth_secular_extension_imported"]:
         raise AssertionError("global--extra smooth extension handoff was lost")
+    if not value["classification"]["aligned_twist_extra_L1_L3_coefficient_correction_imported"]:
+        raise AssertionError("aligned twist--extra coefficient correction handoff was lost")
     for identifier in ("ph.exceptional.ell1.nonzero_k.relative",):
         if rows[identifier]["projection_or_cofiber"]["status"] != "NO_CERTIFIED_MAP":
             raise AssertionError(f"missing cofiber was hidden: {identifier}")

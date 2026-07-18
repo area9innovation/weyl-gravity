@@ -25,6 +25,14 @@ moment maps already proved to vanish on the complete orbit.  The finite block
 right inverses consequently assemble a real smooth spatially periodic
 second-order correction.
 
+The aligned twist--extra mixed block is now also coefficient-explicit.  A
+separate direct four-dimensional fixture supplies all sixteen `L=1,3`
+channels; thirteen have printed exact polynomial corrections, three vanish,
+and all four action rows have zero remainder.  This does not yet print the
+remaining global/global and extra/extra self corrections for an arbitrary
+orbit point, so the complete correction retains its blockwise-constructive
+rather than fully coefficient-printed status.
+
 This is a blockwise constructive existence theorem.  It does not print every
 correction coefficient, certify boundedness, produce a compact-product
 retarded solution, prove all-orders integration, or descend to residual,

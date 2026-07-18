@@ -33,6 +33,7 @@ INPUTS = {
     "complete_global_extra_cone": ROOT / "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
     "global_extra_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
     "global_extra_smooth_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
+    "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
 }
 
 STATUS = {"CERTIFIED", "OPEN", "NO_CERTIFIED_MAP", "NOT_APPLICABLE"}
@@ -314,8 +315,8 @@ def build() -> dict[str, object]:
         "branch_rows": rows,
         "quadratic_handoff": {
             "status": "PARTIAL_INPUT",
-            "artifacts": ["EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX", "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE", "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1", "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION", "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER"],
-            "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra source matrix and its common-zero locus feed the relative obstruction map; every common zero is on the aligned SO3 orbit, every nonzero point is obstructed in the bounded correction class, and every point extends in the smooth exponential-polynomial class, while causal, bridge 1 and the general finite-harmonic tangent cone remain open",
+            "artifacts": ["EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_TWIST_ELL2_EXTRA_RESONANCE_MATRIX", "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE", "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1", "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION", "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER", "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_SMOOTH_CORRECTION"],
+            "meaning": "the complete declared k=0 homogeneous/twist times ell=2 extra source matrix and its common-zero locus feed the relative obstruction map; every common zero is on the aligned SO3 orbit, every nonzero point is obstructed in the bounded correction class, and every point extends in the smooth exponential-polynomial class. The aligned twist--extra L=1,3 mixed block is coefficient-explicit, while the complete orbit coefficient list, causal category, bridge 1 and the general finite-harmonic tangent cone remain open",
         },
         "classification": {
             "same_background_only": True,
@@ -332,6 +333,7 @@ def build() -> dict[str, object]:
             "complete_declared_global_extra_common_zero_locus_imported": True,
             "complete_global_extra_bounded_correction_obstruction_imported": True,
             "complete_global_extra_smooth_secular_extension_imported": True,
+            "aligned_twist_extra_L1_L3_coefficient_correction_imported": True,
             "exceptional_global_and_boundary_absences_explicit": True,
             "full_offshell_all_sector_triangle_certified": False,
             "bridge_1_activation_gate_satisfied": False,

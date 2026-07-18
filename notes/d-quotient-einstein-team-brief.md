@@ -2173,8 +2173,23 @@ Smith factor is surjective on finite exponential-polynomial coefficients,
 while the remaining five stabilizer pairings vanish on the certified orbit.
 Thus every orbit point has a smooth spatially periodic finite exponential-
 polynomial second-order correction.  This is existence by exact blockwise
-right inverses, not a printed coefficient list; bounded remains `OBSTRUCTED`
+right inverses, not yet a complete printed coefficient list; bounded remains `OBSTRUCTED`
 and causal/retarded remains `NO_CERTIFIED_MAP`.
+
+The currently active bridge-1 nonlinear input has now advanced one scoped
+coefficient gate.  A separate direct four-dimensional aligned source fixture
+classifies all sixteen twist-position/velocity times `ell=2` extra-primary
+`L=1,3` channels.  Thirteen nonzero sources have printed exact polynomial
+right inverses and three vanish identically; every full action-row remainder,
+including the rows omitted in the exceptional `L=1` gauge slices, is zero.
+The fail-closed atlas row remains
+`einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face`: its
+smooth-secular status is `CERTIFIED`, now with coefficient-explicit mixed
+`L=1,3` evidence.  The complete arbitrary-orbit coefficient list is still
+`OPEN`, because the remaining zero-frequency global/global and extra/extra
+self coefficients have not been printed.  This result is bridge input only;
+bridge 1 stays `ONSHELL_MAP_ONLY` with activation gate `OPEN`, and the
+causal/retarded atlas cell stays `NO_CERTIFIED_MAP`.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

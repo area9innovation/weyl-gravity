@@ -93,6 +93,8 @@ def verify() -> None:
         raise AssertionError("aligned orbit lost the bounded correction obstruction")
     if aligned["mode_data"]["second_order"]["smooth_secular"]["status"] != "CERTIFIED":
         raise AssertionError("aligned orbit lost the smooth-secular extension")
+    if "13 exact corrections and 3 zero sources" not in aligned["mode_data"]["second_order"]["smooth_secular"]["statement"]:
+        raise AssertionError("aligned coefficient-explicit mixed block is absent")
     if "no additional off-axis branch" not in aligned["mode_data"]["resonance"]["statement"]:
         raise AssertionError("complete common-zero classification is absent")
 
