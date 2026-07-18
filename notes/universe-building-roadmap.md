@@ -422,7 +422,7 @@ the `W`/Tr-log factors and `-503/243` afterwards. Its IR-singular radial
 integral does not determine the nonzero-momentum triangle, but that triangle
 has now been reduced independently to an exact eight-sector Feynman-simplex/
 Wick kernel with twenty rational rows at generic nonexceptional momentum.
-The labelled-Ricci kernel still lacks the frozen repository `I10` projection;
+The labelled-Ricci kernel still lacks the frozen repository five-carrier projection;
 the curved-Endo one-/two-insertion traces, repository functions and
 coefficients, and the parity-odd derivative manifest remain open. The raw
 local `BoxR` coefficient and exact strict-metric
