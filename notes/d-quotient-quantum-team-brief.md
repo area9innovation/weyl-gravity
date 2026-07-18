@@ -784,7 +784,7 @@ activation gate was the exact `(199/30,-87/20)` Slavnov vector. The strict
 theory is `OBSTRUCTED`; the compensator cotangent lift and extended `H04/H14`
 are `CERTIFIED`; and the extended one-loop local Euclidean QME is
 `QME_RESTORED`. The active local-to-residual gate is now
-`INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_R2_FORM_FACTOR_FINITE_C2_R2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION`.
+`DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION`.
 The coefficient-bearing local Wess--Zumino Hamiltonian contribution
 
 \[
@@ -826,8 +826,14 @@ transformations and identifies its first forced cubic correction. The
 exact FV anomaly action now also proves that the Ricci-scalar sector is
 structurally dependent: a generic-basis `R F(Box) R` term may appear after
 re-expansion, but is fixed by the anomaly and conformized Weyl sector. The
-additive finite `C2/R(g_hat)^2` normalization, independent cubic-and-higher
-Weyl-invariant form factors, renormalized BV Laplacian or time-ordered product, and global
+zero-derivative algebraic cubic-Weyl carrier basis is now exact in four
+Euclidean dimensions: the two chiral rows `tr(C_plus^3)` and
+`tr(C_minus^3)` are equivalent to one even `C3` and one odd `star(C) C C`
+carrier. This is a `LOCAL-ALGEBRAIC` carrier theorem only. It does not supply
+derivative-decorated carriers, any `Gamma_m(Box1,Box2,Box3)`, or a cubic
+coefficient. The additive finite `C2/R(g_hat)^2` normalization,
+derivative-decorated nonlocal cubic-and-higher Weyl-invariant form factors,
+renormalized BV Laplacian or time-ordered product, and global
 Green data remain absent. Complete `Gamma1` and `Q1` therefore remain fail-closed,
 independently of the still-missing compensator-inclusive classical
 contraction.
@@ -840,7 +846,7 @@ rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. Its remaining local gate is the
-independent cubic-and-higher Weyl-invariant form factors,
+derivative-decorated nonlocal cubic-and-higher Weyl-invariant form factors,
 finite `C2` and absolute dressed `R(g_hat)^2` normalization, and complete
 `Q1`; its independent carrier gate is Bridge 2. The generated
 fail-closed row is
@@ -894,9 +900,12 @@ are certified in
 The selected carrier now also has an exact Fradkin--Vilkovisky scalar-flat
 Weyl-orbit completion in
 [`fv-conformized-c2-log-gamma1.md`](../quantum-weyl/reports/fv-conformized-c2-log-gamma1.md).
-This fixes the completion of that carrier, not the independent cubic
-Weyl-invariant form factors; its nonlocal representative is not identified
-with the local tau-adic dressed metric.
+This fixes the completion of that carrier, not the derivative-decorated
+nonlocal cubic Weyl-invariant form factors; its nonlocal representative is
+not identified with the local tau-adic dressed metric. The exhaustive
+zero-derivative algebraic cubic carrier basis and exact chiral/parity
+crosswalk are recorded separately in
+[`four-dimensional-algebraic-cubic-weyl-carriers.md`](../quantum-weyl/reports/four-dimensional-algebraic-cubic-weyl-carriers.md).
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as
@@ -914,7 +923,7 @@ the determinant-to-Slavnov bridge, regular-Bach spectral-sequence proof,
 quartet homotopy, Euler Wess--Zumino primitive, matter vectors, and narrowed
 effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
-matter, quartet, effective-action, and boundary tables are generated from nineteen hashed
+matter, quartet, effective-action, and boundary tables are generated from twenty hashed
 claim-map receipts and pass an independent stale/tamper check. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).

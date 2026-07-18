@@ -484,7 +484,7 @@ factors within the class sharing principal symbol, connection, domain, and
 source complement and differing at first curvature order only by the
 self-adjoint endomorphism $V_1$.  Connection variations, which can introduce
 first-order differential terms, are not covered.  Kernel and boundary
-data, independent cubic form factors, finite $C^2$ constant and absolute dressed
+data, derivative-decorated nonlocal cubic form factors, finite $C^2$ constant and absolute dressed
 $R(\widehat g)^2$ normalization remain fail-closed.  The selected carrier's
 Weyl-orbit completion is handled separately below.
 
@@ -505,7 +505,7 @@ nonlocal functional invariant under the declared local Weyl transformations.
 
 The verifier retains the inverse-domain hypothesis, replays the coefficient
 $-199/60$ and the first correction order three, and rejects promotion to
-independent cubic form factors, complete
+derivative-decorated nonlocal cubic form factors, complete
 $\Gamma_1/Q_1$, residual transfer or a Lorentzian result.  It also enforces a
 carrier crosswalk: the nonlocal $\bar g[g]$ is distinct from the local
 $\tau$-adic field $\widehat g[g,\tau]$.
@@ -537,9 +537,49 @@ The decomposition
 with \(R[\bar g]=0\) makes the Ricci-scalar sector dependent.  A generic-basis
 term \(R F(\Box)R\) can appear after re-expansion, but its form factor is fixed
 by the anomaly action and the conformized Weyl sector.  It is not a separate
-coefficient gate in the declared massless conformal FV scope.  Independent
-cubic-and-higher Weyl form factors, finite normalizations, global inverse data
+coefficient gate in the declared massless conformal FV scope.  Derivative-decorated
+nonlocal cubic-and-higher Weyl form factors, finite normalizations, global inverse data
 and renormalized products remain open.
+
+\subsection{Four-dimensional algebraic cubic Weyl carriers}
+
+The next exact receipt isolates the zero-derivative part of the open cubic
+seam.  In four Euclidean dimensions the Weyl tensor is a pair of symmetric
+tracefree rank-two blocks on self-dual and anti-self-dual two-forms.  For
+three identical blocks, the generator enumerates all fifteen complete
+pairings of six slots and reduces them under identical-factor permutations:
+\[
+ 15\ \hbox{pairings}\longrightarrow 3\ \hbox{orbits}
+ \longrightarrow 2\ \hbox{tracefree zeros}+1\ \hbox{triangle}.
+\]
+The triangle is \(\operatorname{tr}(C_\pm^3)\).  Orthogonality of the chiral
+projectors kills cross-block edges, and both mixed allocations then vanish by
+the trace of the lone block.  Thus the parity basis has
+the exact dimensions
+\[
+ \dim V_{C^3}^{\rm even}=1,
+ \qquad
+ \dim V_{C^3}^{\rm odd}=1,
+\]
+with carriers
+\[
+ C_{ab}{}^{cd}C_{cd}{}^{ef}C_{ef}{}^{ab},
+ \qquad
+ ({*C})_{ab}{}^{cd}C_{cd}{}^{ef}C_{ef}{}^{ab}.
+\]
+The verifier independently checks the raw pairing count, every orbit
+disposition, the exact rank-two sample matrix, the inverse chiral/parity
+crosswalk, and the even carrier's coordinate in the earlier Schouten-zero
+Weyl quotient.
+
+This closes only the algebraic carrier subspace.  A nonlocal third-curvature
+functional contains independently labelled \(\Box_i\), derivative
+placements and functions \(\Gamma_m(\Box_1,\Box_2,\Box_3)\); unrestricted
+local integration by parts does not classify that space.  The receipt
+therefore keeps derivative-decorated carriers, form-factor functions and all
+cubic coefficients at \texttt{NOT\_COMPUTED}.  It also records that the
+dimension-six \(C^3\) density is not a new dimension-four local one-loop
+counterterm.
 
 \subsection{Exact local BoxR scheme conversion}
 
@@ -588,7 +628,7 @@ reject promotion of the cubic remainder, finite constants or Berger/WZ
 contraction merge;
 \item replay the Fradkin--Vilkovisky scalar-flat and Weyl-weight identities,
 and reject identification of its nonlocal representative with the local
-$\tau$-adic dressed metric or promotion to independent cubic form factors;
+$\tau$-adic dressed metric or promotion to derivative-decorated nonlocal cubic form factors;
 \item replay the exact FV anomaly-action response cancellations and RFT
 specialization, while rejecting a separate nonlocal $R^2$ datum or a complete
 $\Gamma_1$;
@@ -638,6 +678,8 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_fv_anomaly_action_ricci_sector
 PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cubic_weyl_carrier_basis
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 python3 paper/generate_12_quantum_anomaly_tables.py --check
 python3 paper/verify_12_quantum_anomaly_tables.py
@@ -656,7 +698,8 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the independent cubic-and-higher Weyl-invariant form factors, finite
+\item the derivative-decorated nonlocal cubic-and-higher Weyl-invariant
+carrier basis and form factors, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete
 $Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT

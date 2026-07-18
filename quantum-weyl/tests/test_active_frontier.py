@@ -184,6 +184,9 @@ class ActiveFrontierTests(unittest.TestCase):
                 "SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"]["ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE"]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
@@ -310,7 +313,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_FINITE_C2_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

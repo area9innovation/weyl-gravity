@@ -15,6 +15,7 @@ Wess–Zumino Resolution*. It is a disposition ledger, not a new theorem.
 | Effective-action scope | Addressed. The material is labeled as consequences; the covariant-log claim is restricted to a shared principal symbol, connection, domain, and endomorphism variation. The flat-TT `-c/2` normalization is derived. | Main paper, “Consequences for one-loop effective-action representatives” |
 | Selected logarithmic-carrier Weyl completion | Strengthened after the review. The normalized Fradkin–Vilkovisky scalar-flat representative gives an exact nonlocal functional invariant under the declared local Weyl transformations. The paper keeps its inverse-domain hypothesis, does not claim the independent cubic form factors, and explicitly distinguishes this metric from the local τ-adic dressed metric. | Main paper FV proposition; computational supplement; `FV_CONFORMIZED_C2_LOG_GAMMA1.json` |
 | Ricci-sector effective-action gate | Strengthened after the review. The exact FV anomaly action is printed and independently replayed. In the declared massless conformal FV decomposition, generic-basis `R F(Box) R` terms are determined by the anomaly action and conformized Weyl sector, so the earlier “independent nonlocal R² form factor” gate is retired. Cubic Weyl data and finite normalizations remain open. | Main paper FV anomaly-action proposition; computational supplement; `FV_ANOMALY_ACTION_RICCI_SECTOR.json` |
+| Algebraic cubic carrier seam | Strengthened after the review. The complete four-dimensional zero-derivative `C³` carrier space is displayed in chiral and parity bases: one even and one odd direction. The paper explicitly leaves derivative-decorated nonlocal carriers, `Γ_m(Box_1,Box_2,Box_3)`, coefficients, and complete `Γ_1/Q_1` open. | Main paper algebraic-cubic proposition; computational supplement; `FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json` |
 | Unsupported Hadamard assertion | Removed from the abstract and from the paper’s theorem claims. Same-background state constructions are assigned to a separate companion programme. | Abstract; “What does not follow”; Paper 12 claim map |
 | Smaller editorial requests | Addressed: τ-adic title, regular-locus abstract scope, generator terminology, definition of `C_1^{WZ}`, fixture normalization, foundational antifield-BRST reference, Paneitz reference, and consistent receipt punctuation. | Main paper and bibliography |
 
@@ -23,7 +24,8 @@ references, underfull boxes, or overfull boxes. The generated tables and claim
 map are independently replayed, and the scoped scientific verifiers for the
 strict quotient, Euclidean complex, multiplicities, Slavnov breaking, matter
 cone, compensator lift, extended quotient, effective-action carriers, FV
-Ricci-sector disposition, and `Box R` scheme conversion pass exactly.
+Ricci-sector disposition, algebraic cubic-Weyl carrier basis, and `Box R`
+scheme conversion pass exactly.
 
 The manuscript remains a working draft pending human and literature review.
 No Lorentzian QME, all-loop restoration, particle Hilbert space, or residual

@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-four-dimensional-algebraic-cubic-weyl-carriers-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "chiral_block_enumeration",
+    "chirality_allocation",
+    "tensor_carriers",
+    "chiral_parity_crosswalk",
+    "independence_witness",
+    "nonlocal_form_factor_boundary",
+    "source_provenance",
+    "decision",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-four-dimensional-algebraic-cubic-weyl-carriers-v1"},
+    "result_id": {"const": "FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS"},
+    "result_state": {"const": "ALGEBRAIC_C3_CARRIERS_COMPLETE_NONLOCAL_CUBIC_FORM_FACTORS_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "curvature_order", "derivative_order", "carrier_algebra", "hodge_convention"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "EUCLIDEAN"},
+        "curvature_order": {"const": 3},
+        "derivative_order": {"const": 0},
+        "carrier_algebra": {"type": "string", "minLength": 70},
+        "hodge_convention": {"type": "string", "minLength": 80}
+      }
+    },
+    "chiral_block_enumeration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_complete_contractions", "signed_identical_factor_orbits", "tracefree_zero_orbits", "canonical_nonzero_orbits", "orbit_ledger", "surviving_contraction"],
+      "properties": {
+        "raw_complete_contractions": {"const": 15},
+        "signed_identical_factor_orbits": {"const": 3},
+        "tracefree_zero_orbits": {"const": 2},
+        "canonical_nonzero_orbits": {"const": 1},
+        "orbit_ledger": {"type": "array", "minItems": 3, "maxItems": 3},
+        "surviving_contraction": {"type": "object"}
+      }
+    },
+    "chirality_allocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allocations", "mixed_allocations_zero", "nonzero_chiral_dimension", "proof"],
+      "properties": {
+        "allocations": {"type": "array", "minItems": 4, "maxItems": 4},
+        "mixed_allocations_zero": {"const": 2},
+        "nonzero_chiral_dimension": {"const": 2},
+        "proof": {"type": "string", "minLength": 100}
+      }
+    },
+    "tensor_carriers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["even_id", "even_formula", "even_expression", "even_coordinate_in_schouten_zero_weyl_image", "odd_id", "odd_formula", "odd_expression", "parity_dimensions", "status"],
+      "properties": {
+        "even_id": {"const": "C3_EVEN"},
+        "even_formula": {"const": "C_ab^cd C_cd^ef C_ef^ab"},
+        "even_expression": {"type": "object"},
+        "even_coordinate_in_schouten_zero_weyl_image": {"const": [{"numerator": 2, "denominator": 3}]},
+        "odd_id": {"const": "C3_ODD"},
+        "odd_formula": {"const": "(star C)_ab^cd C_cd^ef C_ef^ab"},
+        "odd_expression": {"type": "object"},
+        "parity_dimensions": {"const": {"even": 1, "odd": 1}},
+        "status": {"const": "COMPLETE_FOR_ZERO_DERIVATIVE_ALGEBRAIC_C3_SECTOR"}
+      }
+    },
+    "chiral_parity_crosswalk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chiral_basis", "parity_basis", "chiral_from_parity", "parity_from_chiral", "parity_action_on_chiral_basis", "parity_action_on_parity_basis", "status"],
+      "properties": {
+        "chiral_basis": {"const": ["tr(C_plus^3)", "tr(C_minus^3)"]},
+        "parity_basis": {"const": ["C3_EVEN", "C3_ODD"]},
+        "chiral_from_parity": {"type": "array"},
+        "parity_from_chiral": {"type": "array"},
+        "parity_action_on_chiral_basis": {"const": [[0, 1], [1, 0]]},
+        "parity_action_on_parity_basis": {"const": [[1, 0], [0, -1]]},
+        "status": {"const": "EXACT_INVERSE_CROSSWALK"}
+      }
+    },
+    "independence_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tracefree_sample", "trace_cube", "sample_order", "carrier_order", "evaluation_matrix", "rank", "status"],
+      "properties": {
+        "tracefree_sample": {"const": [1, 1, -2]},
+        "trace_cube": {"const": {"numerator": -6, "denominator": 1}},
+        "sample_order": {"type": "array", "minItems": 2, "maxItems": 2},
+        "carrier_order": {"const": ["C3_EVEN", "C3_ODD"]},
+        "evaluation_matrix": {"type": "array"},
+        "rank": {"const": 2},
+        "status": {"const": "EXACT_RANK_TWO"}
+      }
+    },
+    "nonlocal_form_factor_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generic_syntax", "algebraic_zero_derivative_carrier_basis", "derivative_decorated_cubic_Weyl_carriers", "form_factor_functions", "form_factor_coefficients", "permutation_and_branch_analyticity", "local_counterterm_warning", "ibp_warning"],
+      "properties": {
+        "generic_syntax": {"type": "string"},
+        "algebraic_zero_derivative_carrier_basis": {"const": "CERTIFIED"},
+        "derivative_decorated_cubic_Weyl_carriers": {"const": "NOT_COMPUTED"},
+        "form_factor_functions": {"const": "NOT_COMPUTED"},
+        "form_factor_coefficients": {"const": "NOT_COMPUTED"},
+        "permutation_and_branch_analyticity": {"const": "NOT_COMPUTED"},
+        "local_counterterm_warning": {"type": "string", "minLength": 100},
+        "ibp_warning": {"type": "string", "minLength": 120}
+      }
+    },
+    "source_provenance": {"type": "array", "minItems": 3, "maxItems": 3},
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zero_derivative_algebraic_C3_carriers", "independent_cubic_Weyl_form_factors", "complete_Gamma1", "complete_Q1", "residual_transfer"],
+      "properties": {
+        "zero_derivative_algebraic_C3_carriers": {"const": "CERTIFIED_COMPLETE"},
+        "independent_cubic_Weyl_form_factors": {"const": "CARRIER_SUBSPACE_ONLY_NO_CERTIFIED_FUNCTION"},
+        "complete_Gamma1": {"const": "NO_CERTIFIED_FUNCTIONAL"},
+        "complete_Q1": {"const": "NO_CERTIFIED_OPERATOR"},
+        "residual_transfer": {"const": "FORBIDDEN"}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE", "PARITY_ODD_ALGEBRAIC_C3_CARRIER_COMPLETE", "DERIVATIVE_DECORATED_CUBIC_WEYL_BASIS_COMPLETE", "INDEPENDENT_CUBIC_WEYL_FORM_FACTORS_COMPUTED", "CUBIC_WEYL_COEFFICIENTS_COMPUTED", "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED", "COMPLETE_RENORMALIZED_Q1_SUPPLIED", "RESIDUAL_TRANSFER_AUTHORIZED", "LORENTZIAN_CERTIFIED"],
+      "properties": {
+        "ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE": {"const": true},
+        "PARITY_ODD_ALGEBRAIC_C3_CARRIER_COMPLETE": {"const": true},
+        "DERIVATIVE_DECORATED_CUBIC_WEYL_BASIS_COMPLETE": {"const": false},
+        "INDEPENDENT_CUBIC_WEYL_FORM_FACTORS_COMPUTED": {"const": false},
+        "CUBIC_WEYL_COEFFICIENTS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "next_gate": {"const": "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_CARRIERS_AND_FORM_FACTOR_FUNCTIONS"},
+    "claim_boundary": {"type": "string", "minLength": 1000}
+  }
+}

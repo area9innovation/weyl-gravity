@@ -643,7 +643,7 @@ action framework of Barvinsky and Wachowski~\cite{BarvinskyWachowski}.  The
 present certificate is restricted to the declared flat carrier.  The next
 two propositions supply its curvature-squared covariantization and one exact
 Fradkin--Vilkovisky completion of that selected carrier.  They do not compute
-the independent cubic form factors, a zero-momentum definition, Lorentzian
+the derivative-decorated nonlocal cubic form factors, a zero-momentum definition, Lorentzian
 branch prescription, or a particle state.
 \end{proposition}
 
@@ -682,7 +682,7 @@ carrier are cubic in the curvature~\cite{BarvinskyCPT,DonoghueElMenoufi}.
 No independence under a change of bundle connection is claimed; such a change
 can introduce first-order differential terms not covered by $V_1$.
 Finite $C^2$ and absolute dressed $R(\widehat g)^2$ normalizations,
-independent cubic form factors, and global kernel data remain open.  The
+derivative-decorated nonlocal cubic form factors, and global kernel data remain open.  The
 following proposition supplies a Weyl-orbit
 completion only for the selected $C^2$ logarithmic carrier.
 \end{proposition}
@@ -722,8 +722,8 @@ Since $\Sigma_{\rm FV}=-(1/6)\Box^{-1}R+O(\mathcal R^2)$, this completion
 agrees with the preceding carrier through curvature order two and its first
 forced correction is cubic.  The Fr\'echet derivative of the spectral
 logarithm identifies that correction carrier, including transported pairing
-and projector terms, but does not determine the independent cubic
-Weyl-invariant form factors of the full one-loop action~\cite{BarvinskyWachowski}.
+and projector terms, but does not determine the derivative-decorated nonlocal
+cubic Weyl-invariant form factors of the full one-loop action~\cite{BarvinskyWachowski}.
 If $L_g$ has a kernel, an orbit-compatible projector and normalization are
 additional data and the proposition does not apply as stated.
 
@@ -776,6 +776,46 @@ fixed-boundary FV domain and does not extend without new analysis to massive,
 explicitly nonconformal, or symmetry-broken theories.
 \end{proposition}
 
+\begin{proposition}[Algebraic cubic Weyl carriers in four dimensions]
+In the pointwise zero-derivative sector of three algebraic Weyl tensors in
+four Euclidean dimensions, the parity-even and parity-odd carrier spaces are
+both one-dimensional:
+\[
+ I_e=C_{ab}{}^{cd}C_{cd}{}^{ef}C_{ef}{}^{ab},
+ \qquad
+ I_o=({*C})_{ab}{}^{cd}C_{cd}{}^{ef}C_{ef}{}^{ab}.
+\]
+Equivalently, after the Hodge decomposition on two-forms, the chiral basis is
+\(
+ I_+=\operatorname{tr}(C_+^3)
+\)
+and
+\(
+ I_-=\operatorname{tr}(C_-^3)
+\), with
+\[
+ \binom{I_+}{I_-}
+ =\frac12\begin{pmatrix}1&1\\1&-1\end{pmatrix}
+ \binom{I_e}{I_o}.
+\]
+The exact contraction enumeration has fifteen raw six-slot pairings, three
+identical-factor orbits, two tracefree-zero orbits, and one surviving triangle
+\(\operatorname{tr}(C_\pm^3)\) in each chirality.  The mixed allocations
+vanish because the chiral projectors are orthogonal and the resulting lone
+block can only close through its zero trace.
+An exact rank-two evaluation witness and the independent Schouten-zero Weyl
+quotient verify the parity basis.
+
+This is a \textnormal{\textsc{local-algebraic}} carrier classification, not a third-order
+effective-action calculation.  Since \(C^3\) has engineering dimension six,
+it is not an additional dimension-four one-loop local counterterm.  The
+derivative-decorated nonlocal carriers, functions
+\(\Gamma_m(\Box_1,\Box_2,\Box_3)\), branch and permutation data, and all
+cubic coefficients remain open.  In particular, unrestricted local
+integration by parts cannot be used across independently labelled
+\(\Box_i\)~\cite{BarvinskyCPT,BarvinskyWachowski}.
+\end{proposition}
+
 \begin{proposition}[Exact local $\Box R$ scheme conversion]
 In the zeta/proper-time prescription of Barvinsky et
 al.~\cite{BarvinskyLocal}, the imported fourth heat-kernel rows combine with
@@ -825,8 +865,9 @@ the exact Fradkin--Vilkovisky Weyl-orbit completion above.  The relative
 strict-metric raw-to-$\Box R=0$
 $R^2$ scheme shift is now exact.  The FV anomaly action and structural
 dependence of its Ricci-scalar sector are also exact.  The additive finite
-$C^2$ constant, absolute dressed $R(\widehat g)^2$ normalization,
-independent cubic-and-higher Weyl-invariant form factors, global
+$C^2$ constant and absolute dressed $R(\widehat g)^2$ normalization remain
+open.  The zero-derivative algebraic cubic carrier basis is exact, but the
+derivative-decorated nonlocal cubic-and-higher Weyl-invariant form factors, global
 Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.
@@ -856,6 +897,7 @@ The coefficient-bearing theorem receipts are
 \item \cert{quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json}.
 \item \cert{quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json}.
 \item \cert{quantum-weyl/transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json}.
+\item \cert{quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json}.
 \item \cert{quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json}.
 \end{itemize}
 The cotangent-lift and matter-cone receipts are separate dependencies.  The
@@ -883,6 +925,8 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_fv_anomaly_action_ricci_sector
 PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_cubic_weyl_carrier_basis
+PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 PYTHONPATH=quantum-weyl python3 -m verify_active_frontier
 PYTHONPATH=quantum-weyl python3 -m atlas.verify_quantum_atlas_fragment
@@ -892,8 +936,9 @@ python3 paper/verify_12_pure_weyl_one_loop_bv_anomaly_claim_map.py
 
 \section{Outlook}
 
-The immediate local-to-residual question is now sharp.  Supply the independent
-cubic and higher Weyl-invariant form factors, finite $C^2$
+The immediate local-to-residual question is now sharp.  Extend the certified
+algebraic cubic basis to the derivative-decorated nonlocal cubic and higher
+Weyl-invariant carriers and their form factors; then supply finite $C^2$
 and absolute dressed $R(\widehat g)^2$ normalization conditions and
 renormalized BV operator data to fix a complete $Q_1$; then, given an extended
 contraction $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$, compute

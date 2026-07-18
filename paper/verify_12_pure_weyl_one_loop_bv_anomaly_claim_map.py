@@ -88,6 +88,8 @@ def main() -> None:
         claims["nonlocal_R2_form_factor_disposition"]
         == "NOT_AN_INDEPENDENT_DATUM_IN_DECLARED_FV_CONFORMAL_DECOMPOSITION"
     )
+    assert claims["algebraic_C3_carrier_dimensions"] == {"even": 1, "odd": 1}
+    assert claims["algebraic_C3_chiral_parity_crosswalk_exact"] is True
     assert claims["raw_zeta_BoxR_coefficient"] == {
         "basis": ["1", "log(3/2)"],
         "rational": {"numerator": -159, "denominator": 80},
@@ -109,11 +111,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_FINITE_C2_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
+        == "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 19
+    assert len(payload["inputs"]) == 20
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -130,6 +132,7 @@ def main() -> None:
     curvature_squared_log = dependencies["CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1"]
     fv_conformized_log = dependencies["FV_CONFORMIZED_C2_LOG_GAMMA1"]
     fv_anomaly_ricci = dependencies["FV_ANOMALY_ACTION_RICCI_SECTOR"]
+    cubic_weyl = dependencies["FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -160,6 +163,9 @@ def main() -> None:
     assert fv_anomaly_ricci["decision"]["FV_anomaly_action"] == "CERTIFIED"
     assert fv_anomaly_ricci["decision"]["Ricci_scalar_sector_dependence"] == "CERTIFIED"
     assert fv_anomaly_ricci["claim_flags"]["SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED"] is False
+    assert cubic_weyl["tensor_carriers"]["parity_dimensions"] == {"even": 1, "odd": 1}
+    assert cubic_weyl["decision"]["zero_derivative_algebraic_C3_carriers"] == "CERTIFIED_COMPLETE"
+    assert cubic_weyl["claim_flags"]["INDEPENDENT_CUBIC_WEYL_FORM_FACTORS_COMPUTED"] is False
     assert box_r_scheme_conversion["decision"]["repository_BoxR_zero_scheme_conversion"] == "CERTIFIED"
     assert box_r_scheme_conversion["decision"]["nonlocal_R2_form_factor"] == "NOT_COMPUTED"
     assert minimal_kt["spectral_sequence"]["collapse_page"] == "E2"
