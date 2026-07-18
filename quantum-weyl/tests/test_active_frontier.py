@@ -82,6 +82,14 @@ class ActiveFrontierTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            self.payload["claim_flags"][
+                "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"]["REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"]
+        )
+        self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
         )
         self.assertTrue(
@@ -142,7 +150,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "BIND_ACCEPTED_FULL_BV_LEDGER_AND_COMPUTE_REGULATED_SLAVNOV_BREAKING_V2",
+            "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

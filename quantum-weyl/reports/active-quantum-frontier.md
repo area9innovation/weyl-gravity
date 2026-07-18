@@ -94,6 +94,12 @@ Euclidean operator/measure multiplicity gate, but not the anomaly/QME
 lifecycle: global BRST Hadamard covariance, the regulated Slavnov breaking,
 renormalized products, and the QME remain open.
 
+The round-sphere factor sum now promotes one repository coefficient:
+\(a=87/20\), or \(E_4\) coordinate \(-87/20\). It does not promote
+\(c=199/30\): \(C^2\) vanishes on conformally flat round \(S^4\), so the
+standard value remains a cross-check until a non-conformally-flat or
+Ricci-flat repository full-BV operator/measure match is certified.
+
 The Slavnov assembly gate now records the sharper post-composer boundary.
 The accepted physical TT dictionary and full-BV ledger now permit the
 repository local heat-kernel vector to be bound into the analytic handoff,
@@ -212,9 +218,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. bind the accepted physical round-`S4` TT dictionary and full-BV
-   multiplicity ledger into the V2 analytic handoff, then compute the
-   regulated Slavnov breaking against the completed H14 basis;
+1. match a non-conformally-flat or Ricci-flat repository full-BV
+   operator/measure presentation to determine `c`, while binding the accepted
+   round-`S4` ledger into the V2 regulated Slavnov handoff;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;
 4. typed companion microlocal transport and global covariance;

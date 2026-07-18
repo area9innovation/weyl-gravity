@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-round-s4-euler-coefficient-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "background", "factor_match", "coefficient_result", "minimal_missing_carrier_theorem", "claim_flags", "next_gate", "claim_boundary", "provenance", "proof_sha256"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-round-s4-euler-coefficient-v1"},
+    "result_id": {"const": "REPOSITORY_ROUND_S4_EULER_COEFFICIENT"},
+    "result_state": {"const": "REPOSITORY_EUCLIDEAN_S4_EULER_COEFFICIENT_MATCHED_C_COEFFICIENT_OPEN"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL", "LOCAL-ALGEBRAIC"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_hashes": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "background": {"const": {"geometry": "round unit S4", "Weyl": "0", "coefficient_visibility": {"E4": "VISIBLE", "C2": "INVISIBLE"}}},
+    "factor_match": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["target_factor_id", "repository_factor_id", "operator", "bundle_rank", "Gamma_determinant_sign", "signed_a_contribution", "status"], "properties": {"target_factor_id": {"type": "string"}, "repository_factor_id": {"type": "string"}, "operator": {"type": "string"}, "bundle_rank": {"type": "integer", "minimum": 1}, "Gamma_determinant_sign": {"enum": [-1, 1]}, "signed_a_contribution": {"type": "string"}, "status": {"const": "MATCHED"}}}},
+    "coefficient_result": {"const": {"convention": "(4 pi)^(-2) [c C2-a E4] modulo BoxR", "a": "87/20", "E4_coordinate": "-87/20", "c": "NOT_DETERMINED_ON_ROUND_S4", "standard_c_cross_check_only": "199/30", "parity_odd_coordinate": "0_FOR_DECLARED_PARITY_EVEN_REGULATOR"}},
+    "minimal_missing_carrier_theorem": {"type": "object", "additionalProperties": false, "required": ["result", "unresolved_coefficient", "reason", "required_artifact", "standard_value_status"], "properties": {"result": {"const": "MINIMAL_MISSING_CARRIER_THEOREM"}, "unresolved_coefficient": {"const": "c_C2"}, "reason": {"type": "string", "minLength": 40}, "required_artifact": {"const": "REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH"}, "standard_value_status": {"const": "199/30_AVAILABLE_AS_STANDARD_EUCLIDEAN_CROSS_CHECK_NOT_REPOSITORY_PROMOTED"}}},
+    "claim_flags": {"const": {"REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": true, "REPOSITORY_C2_COEFFICIENT_COMPUTED": false, "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false, "REGULATED_SLAVNOV_BREAKING_COMPUTED": false, "QME_DISPOSITION": false, "LORENTZIAN_CERTIFIED": false}},
+    "next_gate": {"const": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION"},
+    "claim_boundary": {"type": "string", "minLength": 250},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 5, "additionalProperties": {"$ref": "#/$defs/hash"}}}},
+    "proof_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

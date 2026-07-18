@@ -559,6 +559,13 @@ nonminimal, and zero-mode inputs into
 four rows and factors with ranks `(5,1,5,3)`, exponents
 `(-1/2,+1/2,-1/2,+1/2)`, and priming `(0,5,0,10)`.
 
+That physical round-sphere ledger now promotes the repository Euler
+coefficient `a=87/20` (`E4` coordinate `-87/20`). It does **not** promote
+`c=199/30`: `C2` vanishes on conformally flat round `S4`, so a
+non-conformally-flat or Ricci-flat repository full-BV operator/measure match
+is the exact remaining coefficient carrier. The regulated Slavnov insertion
+and QME disposition remain separate downstream gates.
+
 The four standard round-`S4` factors have a complete
 zero-mode ledger: no physical TT zeros, ten Killing-vector ghost zeros, and
 five scalar proper-conformal ghost zeros with exact Diff--Weyl kernel vector

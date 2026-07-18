@@ -38,6 +38,7 @@ DEPENDENCIES = {
     "full_BV_ledger_composer": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_LEDGER_COMPOSER_READINESS.json",
     "physical_TT_hessian_dictionary": HERE / "spectral/euclidean/certificates/REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1.json",
     "full_BV_multiplicity_ledger": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
+    "repository_round_S4_Euler_coefficient": HERE / "spectral/euclidean/certificates/REPOSITORY_ROUND_S4_EULER_COEFFICIENT.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -93,6 +94,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "full_BV_ledger_composer": "ALL_STANDARD_ROWS_BOUND_COMPOSER_READY_PHYSICAL_TT_INPUT_NOT_SUPPLIED",
         "physical_TT_hessian_dictionary": "REPOSITORY_ROUND_S4_TT_HESSIAN_FACTORIZED_AND_NORMALIZED",
         "full_BV_multiplicity_ledger": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
+        "repository_round_S4_Euler_coefficient": "REPOSITORY_EUCLIDEAN_S4_EULER_COEFFICIENT_MATCHED_C_COEFFICIENT_OPEN",
         "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_LEDGER_COMPOSER_BOUND_REGULATED_BV_INSERTION_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
@@ -408,6 +410,24 @@ def _load() -> dict[str, dict[str, Any]]:
         != "VERIFIED"
     ):
         raise ValueError("physical full-BV multiplicity ledger frontier drifted")
+    repository_euler = values["repository_round_S4_Euler_coefficient"]
+    repository_euler_flags = repository_euler.get("claim_flags", {})
+    if (
+        repository_euler_flags.get(
+            "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED"
+        )
+        is not True
+        or repository_euler_flags.get("REPOSITORY_C2_COEFFICIENT_COMPUTED")
+        is not False
+        or repository_euler_flags.get(
+            "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"
+        )
+        is not False
+        or repository_euler.get("coefficient_result", {}).get("a") != "87/20"
+        or repository_euler.get("coefficient_result", {}).get("c")
+        != "NOT_DETERMINED_ON_ROUND_S4"
+    ):
+        raise ValueError("repository round-S4 Euler coefficient frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
@@ -830,8 +850,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
-                "status": "FULL_BV_QUOTIENT_AND_REPOSITORY_MULTIPLICITY_LEDGER_BOUND_REGULATED_SLAVNOV_INSERTION_AND_GLOBAL_PHASE_OPEN",
-                "next_gate": "BIND_ACCEPTED_FULL_BV_LEDGER_AND_COMPUTE_REGULATED_SLAVNOV_BREAKING_V2",
+                "status": "ROUND_S4_REPOSITORY_EULER_COEFFICIENT_MATCHED_C2_AND_REGULATED_SLAVNOV_INSERTION_OPEN",
+                "next_gate": "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
             },
             "free_Lorentzian_state": {
                 "status": "STATIONARY_IMPORT_CONSUMER_READY_INPUT_ABSENT_ANALYTIC_ZERO_ISOLATION_SEPARATE",
@@ -971,6 +991,7 @@ def build() -> dict[str, Any]:
             "FULL_BV_LEDGER_COMPOSER_READY": True,
             "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED": True,
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": True,
+            "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -981,7 +1002,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "BIND_ACCEPTED_FULL_BV_LEDGER_AND_COMPUTE_REGULATED_SLAVNOV_BREAKING_V2",
+            "SUPPLY_REPOSITORY_NONCONFORMALLY_FLAT_OR_RICCI_FLAT_FULL_BV_OPERATOR_MEASURE_COEFFICIENT_MATCH_AND_REGULATED_SLAVNOV_INSERTION",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
             "BERGER_TYPED_COMPANION_MICROLOCAL_COMPOSITION_AND_GLOBAL_COVARIANCE",
@@ -1035,7 +1056,10 @@ def build() -> dict[str, Any]:
             "0,5,0,10. Matching an auxiliary row remains optional for the auxiliary formulation. "
             "The global determinant phase and regulated BV insertion remain open; neither the "
             "standard coefficient vector nor the accepted multiplicity ledger alone decides the "
-            "QME. The frontier also contains "
+            "QME. The round-S4 factor sum now promotes the repository Euler coefficient a=87/20, "
+            "but C2 vanishes on that background, so c=199/30 remains a standard cross-check until "
+            "a non-conformally-flat or Ricci-flat repository operator/measure match lands. The "
+            "frontier also contains "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The support-local curvature graph, completed causal quasi-isomorphism, and "
             "transported pairing define a universal presymplectic graded CCR algebra on the "
@@ -1154,6 +1178,8 @@ def validate(result: dict[str, Any]) -> None:
         is not True
         or flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
         is not True
+        or flags.get("REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED")
+        is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
         or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
@@ -1211,6 +1237,7 @@ def validate(result: dict[str, Any]) -> None:
             "FULL_BV_LEDGER_COMPOSER_READY",
             "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_ACCEPTED",
             "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED",
+            "REPOSITORY_ROUND_S4_EULER_COEFFICIENT_COMPUTED",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
             "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
