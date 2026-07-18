@@ -1844,6 +1844,17 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    radion, which remains off-cone and obstructed at fixed bundle topology.
    The next exceptional/global gate is therefore twist velocity (and then
    physical `ell=1` input), not the homogeneous sector.
+
+   The first nonzero twist-velocity face also extends.  For the direct
+   `Y_10=cos(theta)` normalization, the common-zero ratio is
+   `3a^2=4B^2` between homogeneous radion-position/Jordan data and a twist
+   velocity with zero twist position.  Its complete quadratic source splits
+   into homogeneous `L=0`, polar `L=2`, and axial `L=1` channels.  Explicit
+   polynomial corrections solve all four homogeneous rows, all eight polar
+   rows, and all six axial rows.  This proves that twist velocity is
+   cone-constrained rather than automatically obstructed.  The full
+   SO(3)-covariant twist cone with nonzero collinear twist position remains
+   the next refinement.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately
