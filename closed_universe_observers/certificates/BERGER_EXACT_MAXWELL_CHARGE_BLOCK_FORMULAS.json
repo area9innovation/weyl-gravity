@@ -1,0 +1,77 @@
+{
+  "basis": {
+    "charge": "q=m+s",
+    "maximum_dimension": 3,
+    "order": [
+      "theta_plus",
+      "theta3",
+      "theta_minus"
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result exports closed formulas for every finite q=m+s Maxwell Delta1 charge block and the corresponding spatial codifferential row. Blocks have dimension at most three and are tridiagonal in theta_plus,theta3,theta_minus. Exact comparison with the authoritative dense de Rham engine through two_j=8 has zero Laplacian and codifferential entry defects. These formulas enable streaming order-14 Green application; they do not apply the polynomial, certify its remainder or spatial tail, construct full images, evaluate recoil, activate Bridge 3 or make quantum claims.",
+  "claim_status": "EXACT_ALL_FINITE_TWO_J_MAXWELL_CHARGE_BLOCK_AND_CODIFFERENTIAL_FORMULAS_EXPORTED",
+  "dense_engine_audit": {
+    "audited_two_j_maximum": 8,
+    "charge_block_count": 63,
+    "codifferential_entry_defect_count": 0,
+    "laplacian_entry_defect_count": 0
+  },
+  "dependency_refs": {
+    "sectors": {
+      "path": "closed_universe_observers/certificates/BERGER_STREAMABLE_POLARIZATION_SECTORS.json",
+      "result_id": "BERGER_STREAMABLE_POLARIZATION_SECTORS",
+      "sha256": "8f7cda5bc086c93fa0bdf4a9bac63ec36c3116786268ac94c9206d2b35ad0b03"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ALL_FINITE_TWO_J_EXACT_CODIFFERENTIAL_CHARGE_ROWS_EXPORTED": true,
+    "ALL_FINITE_TWO_J_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS_EXPORTED": true,
+    "GREEN_WEIGHTED_OPERATOR_NORM_TAIL_EXPORTED": false,
+    "ORDER14_TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED": false,
+    "QUANTUM_CLAIM": false
+  },
+  "formulas": {
+    "delta_minus": "i/sqrt(2)*sqrt((j+m)(j-m+1))",
+    "delta_plus": "i/sqrt(2)*sqrt((j-m)(j+m+1))",
+    "delta_theta3": "i*m/c",
+    "plus_to_theta3": "-(c/sqrt(2))*sqrt((j-m)(j+m+1))",
+    "scalar_Delta0": "j(j+1)+31q^2/9",
+    "theta3_diagonal": "j(j+1)+31m^2/9+9/40",
+    "theta3_to_minus": "+(c/sqrt(2))*sqrt((j-m)(j+m+1))",
+    "theta_minus_diagonal": "j(j+1)+(31m^2-71m+40)/9",
+    "theta_plus_diagonal": "j(j+1)+(31m^2+71m+40)/9"
+  },
+  "next_gate": "APPLY_COMMON_ORDER14_COSINE_AND_CODIFFERENTIAL_SINE_POLYNOMIALS_THROUGH_TWO_J138",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_exact_maxwell_charge_blocks.py",
+        "sha256": "cf53941ff27ec15fa5577e53ac8a1a6a73c24b27630c9e7c845becbd6b6188c9"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_exact_maxwell_charge_blocks.py",
+        "sha256": "c932ac9af51011ec793b5358108063776f90f3bd704adf967e853876812e7452"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_exact_maxwell_charge_blocks.py",
+        "sha256": "3869aec2fedcad00552c6d36db698311dc8bd2abcaf9734f6498da37f6cc15ed"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-exact-maxwell-charge-block-formulas-v1.schema.json",
+        "sha256": "5484135c69b4f02e6d0a880ab6125e87b21ed51d6e261d61944c98d895c45ea0"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-exact-maxwell-charge-block-formulas.md",
+        "sha256": "8d8489709dde52d7d1b8984a4b6ab3e52558181bfcdcc49be2be479ac1ca58ad"
+      }
+    ]
+  },
+  "result_id": "BERGER_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS",
+  "schema": "closed-universe-berger-exact-maxwell-charge-block-formulas-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

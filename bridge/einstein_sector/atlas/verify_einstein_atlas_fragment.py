@@ -91,8 +91,8 @@ def verify() -> None:
         raise AssertionError("aligned common-zero face lost a certified compatibility gate")
     if aligned["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED":
         raise AssertionError("aligned orbit lost the bounded correction obstruction")
-    if aligned["mode_data"]["second_order"]["smooth_secular"]["status"] != "OPEN":
-        raise AssertionError("bounded obstruction leaked into the smooth class")
+    if aligned["mode_data"]["second_order"]["smooth_secular"]["status"] != "CERTIFIED":
+        raise AssertionError("aligned orbit lost the smooth-secular extension")
     if "no additional off-axis branch" not in aligned["mode_data"]["resonance"]["statement"]:
         raise AssertionError("complete common-zero classification is absent")
 

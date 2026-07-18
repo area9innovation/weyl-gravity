@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema", "schema_path", "schema_sha256", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "scope", "second_order_equation",
+    "source_space", "smooth_secular_right_inverse", "channel_ledger",
+    "correction_classes", "classification", "interpretation", "next_gate",
+    "claim_boundary", "source_manifest", "verification_receipt",
+    "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-global-extra-smooth-secular-second-order-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "complete_nonzero_extra_common_zero_orbit_covered",
+        "complete_quadratic_channel_ledger",
+        "all_nonstabilizer_smooth_secular_cokernels_zero",
+        "smooth_exponential_polynomial_second_order_correction_exists",
+        "coefficient_explicit_correction_printed", "bounded_correction_exists",
+        "causal_retarded_map_certified", "all_orders_integrability"
+      ]
+    }
+  }
+}

@@ -477,6 +477,13 @@ through `p=28`.  The active gate is now the actual order-14 cosine and
 codifferential/sine polynomial in exact charge blocks, including a certified
 remainder; no Green image or spatial tail is claimed yet.
 
+`BERGER_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS` now supplies the streaming
+operator itself.  In the `theta_+,theta_3,theta_-` basis every `Delta1` block
+is an explicit tridiagonal matrix of dimension at most three, and the spatial
+codifferential is an explicit row to the scalar `m=q` sector.  Comparison with
+the full de Rham engine through `two_j=8` has zero entry defects.  Order-14
+application therefore no longer requires dense `3(two_j+1)` matrices.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

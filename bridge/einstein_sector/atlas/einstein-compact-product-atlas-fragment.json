@@ -20,7 +20,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "c3734f1f26d8b8148212fe9eb1a0128d427e84021e7bd4082d44deb9b303ee93"
+          "sha256": "f00c963cdc08be020e0a6c0d9c13899d25b2d2be28d0a49dfb4c52d9f6f1a377"
         }
       ],
       "id": "einstein.ph.bridge.relative_branch_dictionary_v1",
@@ -793,7 +793,7 @@
       }
     },
     {
-      "claim_boundary": "This is the complete necessary common-zero locus in one declared homogeneous/twist times ell=2,k=0 extra carrier, not a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
+      "claim_boundary": "This correction-class split is complete only in one declared homogeneous/twist times ell=2,k=0 extra carrier. It is not an opposite-momentum or multi-fibre classification, coefficient-printed correction, causal theorem, all-orders family, residual state or quantum claim.",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OBSTRUCTED",
@@ -802,6 +802,11 @@
         "symplectic": "CERTIFIED"
       },
       "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER",
+          "sha256": "df2ef1bb26bb59e69bb228ad9e8ace8a7ea16d60702585ed408ce61e6f444add"
+        },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_BOUNDED_CORRECTION_OBSTRUCTION",
@@ -868,8 +873,8 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "Smooth exponential-polynomial right inverses can admit polynomial growth but have not yet been assembled for every mixed channel.",
-            "status": "OPEN"
+            "statement": "Every orbit point admits a real smooth spatially periodic finite exponential-polynomial correction; secular right inverses remove the propagation resonances after the five moment maps vanish.",
+            "status": "CERTIFIED"
           }
         },
         "taub_maps": {
@@ -951,7 +956,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "91d2244e2febaa3fd4fc371b32cefff763bd5391a96e79d1c705a8d48cff5edc",
+  "generated_by_sha256": "a5e5cebc98d9f252ec111e344d46b291387d57758cda8a085e28025b4f6b37d4",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -33,14 +33,17 @@ vanishes.  The classical tangent-cone certificate now completes this
 necessary classification: every common zero in the declared carrier is an
 `SO(3)` rotation of the aligned face, with electric extension
 `B^2=Q_e^2/2+(2/3)X`; no off-axis branch survives.  This does not substitute
-for the linear bridge or complete the finite-harmonic tangent cone: every
-complete correction class remains open.
+for the linear bridge or complete the general finite-harmonic tangent cone.
 
 The bounded class is now closed negatively.  Every nonzero point on the orbit
 has `B!=0`, and its zero-frequency polar `L=2` source contains the nonzero
 quadratic coefficient `-7*B^2*t^2`.  A stationary linear operator cannot map
 a bounded finite-quasiperiodic correction to this growth.  Smooth
-exponential-polynomial corrections remain a separate open gate.
+exponential-polynomial corrections have the opposite verdict: the complete
+finite channel ledger and physical Smith factors supply secular right
+inverses after the five stabilizer moment maps vanish.  Every point of the
+orbit therefore extends at second order in that class.  The causal/retarded
+class remains `NO_CERTIFIED_MAP`.
 
 Evidence and verification:
 

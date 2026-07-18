@@ -34,6 +34,7 @@ CERTIFICATES = {
     "aligned_twist_extra_face": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
     "complete_global_extra_cone": ROOT / "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
     "global_extra_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+    "global_extra_smooth_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
     "branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
@@ -245,9 +246,9 @@ def entries() -> list[dict[str, object]]:
             ("CERTIFIED", "The extra occupation X uses the direct positive axial-plus-polar Lee-Wald Gram; the standard twist block supplies the opposite Taub sign."),
             ("CERTIFIED", "The complete common-zero locus has a=b=d=0, A=alpha*n, B=beta*n and beta^2=Q_e^2/2+(2/3)X; all five stabilizer maps vanish."),
             ("CERTIFIED", "Exact coefficient elimination and rank minors prove every common zero is an SO(3) rotation of the aligned m=0 face; there is no additional off-axis branch in the declared carrier."),
-            _second_order(("OBSTRUCTED", "Every nonzero orbit point has B!=0 and an uncancellable zero-frequency polar L=2 source coefficient -7*B^2*t^2, outside the image of bounded finite-quasiperiodic corrections."), ("OPEN", "Smooth exponential-polynomial right inverses can admit polynomial growth but have not yet been assembled for every mixed channel."), open_causal),
-            _evidence("global_extra_bounded_obstruction", "complete_global_extra_cone", "aligned_twist_extra_face", "homogeneous_twist_matrix", "axial_current", "polar_current", "taub", "abstract_cone"),
-            "This is the complete necessary common-zero locus in one declared homogeneous/twist times ell=2,k=0 extra carrier, not a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
+            _second_order(("OBSTRUCTED", "Every nonzero orbit point has B!=0 and an uncancellable zero-frequency polar L=2 source coefficient -7*B^2*t^2, outside the image of bounded finite-quasiperiodic corrections."), ("CERTIFIED", "Every orbit point admits a real smooth spatially periodic finite exponential-polynomial correction; secular right inverses remove the propagation resonances after the five moment maps vanish."), open_causal),
+            _evidence("global_extra_smooth_extension", "global_extra_bounded_obstruction", "complete_global_extra_cone", "aligned_twist_extra_face", "homogeneous_twist_matrix", "axial_current", "polar_current", "taub", "abstract_cone"),
+            "This correction-class split is complete only in one declared homogeneous/twist times ell=2,k=0 extra carrier. It is not an opposite-momentum or multi-fibre classification, coefficient-printed correction, causal theorem, all-orders family, residual state or quantum claim.",
         ),
         _entry(
             "einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder",
@@ -296,6 +297,10 @@ def build() -> dict[str, object]:
         raise AssertionError("global--extra bounded obstruction changed")
     if records["global_extra_bounded_obstruction"]["classification"]["smooth_exponential_polynomial_correction_constructed"]:
         raise AssertionError("bounded obstruction over-promoted the smooth class")
+    if not records["global_extra_smooth_extension"]["classification"]["smooth_exponential_polynomial_second_order_correction_exists"]:
+        raise AssertionError("global--extra smooth extension changed")
+    if records["global_extra_smooth_extension"]["classification"]["bounded_correction_exists"]:
+        raise AssertionError("smooth extension over-promoted the bounded class")
     if records["branch_dictionary"]["classification"]["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("relative branch dictionary over-promoted bridge 1")
     if not records["homogeneous_cofiber"]["classification"]["homogeneous_solution_cofiber_zero"]:

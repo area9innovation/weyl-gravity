@@ -2163,6 +2163,18 @@ coefficient cannot cancel.  Since the stationary linearized operator maps
 bounded finite-quasiperiodic corrections to bounded sources, no such
 correction exists.  This does not obstruct the smooth exponential-polynomial
 class; its complete mixed right inverse is now the sole local nonlinear gate.
+
+That smooth gate is now closed at the blockwise constructive level.  The
+quadratic source has finite closure in `L=0,...,4` and frequencies
+`0,+/-omega_e,+/-2*omega_e`.  The aligned twist--extra cross has only `L=1,3`
+and is off shell; the `ell=0`--extra `L=2` channel is p-resonant but admits a
+finite secular inverse.  After gauge/Noether reduction every nonstabilizer
+Smith factor is surjective on finite exponential-polynomial coefficients,
+while the remaining five stabilizer pairings vanish on the certified orbit.
+Thus every orbit point has a smooth spatially periodic finite exponential-
+polynomial second-order correction.  This is existence by exact blockwise
+right inverses, not a printed coefficient list; bounded remains `OBSTRUCTED`
+and causal/retarded remains `NO_CERTIFIED_MAP`.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

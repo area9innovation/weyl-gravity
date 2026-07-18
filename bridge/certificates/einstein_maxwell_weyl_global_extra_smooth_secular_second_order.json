@@ -1,0 +1,198 @@
+{
+  "channel_ledger": {
+    "aligned_twist_extra_cross": {
+      "L1_divisors": {
+        "extra": "-4",
+        "standard": "-4/3"
+      },
+      "L3_divisors": {
+        "lambda": "12",
+        "p": "-6",
+        "q": "184/9"
+      },
+      "angular_outputs": "L=1,3; the unique L=2 intertwiner vanishes on the aligned m=0 orbit and hence on its SO3 rotations",
+      "disposition": "both exceptional L=1 shells and both generic L=3 primaries are off shell; polynomial-in-time amplitudes remain in the algebraic exponential-polynomial image",
+      "frequency_squared": "16/3"
+    },
+    "ell0_extra_cross": {
+      "angular_output": "L=2",
+      "disposition": "the p-primary is resonant, but its finite exponential-polynomial right inverse is obtained by a secular prefactor; q is off shell",
+      "divisors": {
+        "lambda": "6",
+        "p": "0",
+        "q": "-104/9"
+      },
+      "frequency_squared": "16/3",
+      "spectators": "c has a certified algebraic image representative, W_x gives zero source, and Q_e has a fixed-bundle duality correction"
+    },
+    "extra_conjugate_self": {
+      "angular_outputs": "L=0,...,4",
+      "disposition": "L=0,1 reduce to stabilizer cokernels; every L>=2 block is off shell",
+      "frequency_squared": 0,
+      "generic_divisors": {
+        "2": {
+          "lambda": "6",
+          "p": "-16/3",
+          "q": "24"
+        },
+        "3": {
+          "lambda": "12",
+          "p": "-34/3",
+          "q": "120"
+        },
+        "4": {
+          "lambda": "20",
+          "p": "-58/3",
+          "q": "360"
+        }
+      }
+    },
+    "extra_sum": {
+      "angular_outputs": "L=0,...,4",
+      "exceptional_disposition": "the L=0 oscillatory quotient is empty and the L=1 roots 4/3 and 4 are both missed by 64/3",
+      "frequency_squared": "64/3",
+      "generic_divisors": {
+        "2": {
+          "lambda": "6",
+          "p": "16",
+          "q": "2008/9"
+        },
+        "3": {
+          "lambda": "12",
+          "p": "10",
+          "q": "568/9"
+        },
+        "4": {
+          "lambda": "20",
+          "p": "2",
+          "q": "-344/9"
+        }
+      }
+    },
+    "global_global": {
+      "angular_outputs": "L=0,1,2",
+      "disposition": "L=0 time-translation and L=1 rotation cokernels are exactly the vanishing stabilizer moment maps; L=2 is off shell and polynomially invertible",
+      "frequencies": "zero with finite polynomial coefficients"
+    }
+  },
+  "claim_boundary": "This is a blockwise constructive existence theorem, not a printed coefficient formula for every correction component. It does not give a bounded correction, a causal/retarded solution, all-orders integration, final residual descent, an observable, particle state or quantum theorem.",
+  "classification": {
+    "all_nonstabilizer_smooth_secular_cokernels_zero": true,
+    "all_orders_integrability": false,
+    "bounded_correction_exists": false,
+    "causal_retarded_map_certified": false,
+    "coefficient_explicit_correction_printed": false,
+    "complete_nonzero_extra_common_zero_orbit_covered": true,
+    "complete_quadratic_channel_ledger": true,
+    "smooth_exponential_polynomial_second_order_correction_exists": true
+  },
+  "correction_classes": {
+    "bounded_or_finite_quasiperiodic": "OBSTRUCTED on every nonzero orbit point by the separate -7*B^2*t^2 certificate",
+    "causal_or_retarded": "NO_CERTIFIED_MAP: no compact-product retarded full-BV complex is certified",
+    "smooth_exponential_polynomial": "CERTIFIED: every orbit point admits a real smooth spatially periodic finite exponential-polynomial second-order correction"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "interpretation": "The same nonzero global--extra tangent is excluded if its correction must remain bounded, yet extends at second order when finite secular growth is allowed. The distinction is entirely correction-class dependent: the twist velocity forces a quadratic zero-frequency source, while the smooth exponential-polynomial category supplies polynomial right inverses and removes every propagation resonance after the stabilizer moment maps vanish.",
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "make the smooth correction coefficient-explicit if needed for Paper 91, then classify opposite momenta, relative phases, multiple absolute-momentum fibres and the causal compact-source category separately",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER",
+  "result_state": "COMPLETE_NONZERO_GLOBAL_EXTRA_COMMON_ZERO_ORBIT_SECOND_ORDER_EXTENDIBLE_IN_SMOOTH_EXPONENTIAL_POLYNOMIAL_CLASS",
+  "schema": "einstein-maxwell-weyl-global-extra-smooth-secular-second-order-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.schema.json",
+  "schema_sha256": "4973407c759afd38f7812a0177fe8d5cb92a9e239d2673fc7cc743a821e5bd34",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; smooth spatially periodic finite exponential-polynomial correction class",
+    "carrier": "complete certified nonzero-extra common-zero orbit in one homogeneous/twist times ell=2,k=0 extra multiplet",
+    "charge_sector": "fixed N=2 magnetic bundle with arbitrary real first-order Q_e",
+    "degree": 2,
+    "ell": "all quadratic outputs L=0,...,4",
+    "k": 0,
+    "m": "all through the certified aligned SO3 orbit",
+    "omega": "0, +/-omega_e and +/-2*omega_e with omega_e^2=16/3; finite polynomial prefactors allowed",
+    "parity": "all four axial/polar extra multiplicities",
+    "theory": "Weyl-Maxwell"
+  },
+  "second_order_equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "smooth_secular_right_inverse": {
+    "assembly": "apply the finite block right inverse in every ledger channel and impose conjugate corrections on conjugate frequencies",
+    "block_lemma": "after complete gauge and Noether reduction, the physical Smith invariant factors p and q therefore have finite exponential-polynomial right inverses, including at their roots",
+    "persistent_cokernel": "only the zero-frequency compact stabilizer components remain; their source pairings are the five certified moment maps",
+    "scalar_lemma": "on finite exponential-polynomial functions, every nonzero scalar polynomial P(d_t) is surjective: factor P into shifted derivatives and integrate the finite polynomial coefficient at each root",
+    "stabilizer_disposition": "all five moment maps vanish identically on the complete certified orbit"
+  },
+  "source_manifest": {
+    "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164",
+    "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb",
+    "bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json": "ae06400d50570b038cfb0feb112b15dd9da6f913269a284a833f12c043099219",
+    "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json": "0d38d8f23a62984ba946ffd50c0c441572b8f8b7744e2434ec3698c1b35cf389",
+    "bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json": "e3cb628273df1f7984559c4721d01b89d7fb1696b5dd5bb6f3e5aba8ebc94c13",
+    "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json": "880857b4bb004bf1006cf4f7254194753cfd2e065ce915128a781ddd2cd162fc",
+    "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json": "c5594fb45209332f7d1bf8d143908a490bcaa2c3f794b72fe7f3302ddb93a43e",
+    "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json": "5be7efd39af228e51efa61e98d5fe76be3a741dd28f54d5d014383d4afe63a9f",
+    "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c",
+    "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d",
+    "bridge/einstein_sector/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.py": "2bca313e758d8f46e333009b23efd2ab335c4c7cbf22bd7e573ce8a176b77713",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.schema.json": "4973407c759afd38f7812a0177fe8d5cb92a9e239d2673fc7cc743a821e5bd34",
+    "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065",
+    "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+  },
+  "source_space": {
+    "Noether_compatibility": "differentiating the exact Diff-Weyl-U(1) Noether identity twice at the solution background, with the first-order Euler residual zero, places every quadratic source in the compatible target",
+    "bundle": "all Maxwell corrections are connection differences on the same fixed magnetic bundle",
+    "finite_closure": "the generalized-zero global/twist input and one real ell=2 extra wave produce only L=0,...,4 and frequencies 0,+/-omega_e,+/-2*omega_e with finite polynomial time coefficients"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_extra_smooth_secular_second_order --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_extra_smooth_secular_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_extra_smooth_secular_second_order"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <certificate and schema>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_extra_smooth_secular_second_order --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_extra_smooth_secular_second_order.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_extra_smooth_secular_second_order"
+      ],
+      "elapsed_seconds": {
+        "generator_check": 0.53,
+        "independent_verifier": 0.6,
+        "unit_tests": 0.09
+      },
+      "status": "PASS"
+    },
+    "tier_2": {
+      "inputs": [
+        "cone",
+        "abstract_cone",
+        "bounded_obstruction",
+        "homogeneous_operator",
+        "axial_ell1",
+        "polar_ell1",
+        "axial_generic",
+        "polar_generic",
+        "smooth_module",
+        "circumference",
+        "electric",
+        "twist_polynomial_audit"
+      ],
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "bounded and smooth categories are separated; causal, multi-fibre and all-orders gates remain open",
+      "status": "NOT_RUN"
+    }
+  }
+}

@@ -101,6 +101,8 @@ for p in 12 14 16 18 20 22 24 26 28; do python3 -m closed_universe_observers.gen
 for p in 12 14 16 18 20 22 24 26 28; do python3 -m closed_universe_observers.verify_berger_adaptive_clock_weighted_scalar_stream --power "$p"; done
 python3 -m closed_universe_observers.generate_berger_adaptive_clock_weighted_polarization_stream --check
 python3 -m closed_universe_observers.verify_berger_adaptive_clock_weighted_polarization_stream
+python3 -m closed_universe_observers.generate_berger_exact_maxwell_charge_blocks --check
+python3 -m closed_universe_observers.verify_berger_exact_maxwell_charge_blocks
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -353,6 +355,10 @@ entries and 780,624 clock-power intervals cover `p=12,14,...,28` through form
 `two_j=138`, with zero defects in 330 direct `p=12` low-mode comparisons.
 Together with the published lower-order stream, all inputs for common series
 order 14 are complete.  Exact charge-block application is next.
+The exact charge-block successor supplies direct tridiagonal `Delta1` blocks
+and codifferential rows in the helicity basis for every finite `two_j`.
+Comparison with the dense de Rham engine through `two_j=8` has zero entry
+defects, removing dense operator construction from the order-14 gate.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source
