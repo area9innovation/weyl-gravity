@@ -204,7 +204,7 @@ def build() -> dict:
                 "commands_and_elapsed_seconds": [
                     {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards", "elapsed_seconds": 0.16},
                     {"command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py", "elapsed_seconds": 0.14},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.62},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.50},
                     {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json", "elapsed_seconds": 2.11},
                     {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json", "elapsed_seconds": 3.34},
                     {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json", "elapsed_seconds": 2.02},

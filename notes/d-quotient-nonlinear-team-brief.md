@@ -804,8 +804,10 @@ projection-or-cofiber and pairing-or-current artifacts rather than accepting
 status flags alone.  It also requires hashed artifacts for both the generic
 fixed-identity cyclic obstruction and its corrected resolution, plus an
 explicit nonidentity, pairing-improvement or declared chain-homotopy
-resolution kind.  Thus the obstructed inclusion cannot be silently relabelled
-as the full cyclic triangle.  The receiver
+resolution kind.  A corrected-nonidentity resolution must not reuse the
+identity map; a pairing improvement or declared chain homotopy may retain it
+only explicitly and with its resolution artifact pinned.  Thus the obstructed
+inclusion cannot be silently relabelled as the full cyclic triangle.  The receiver
 validates full-BV rows, support locality,
 cyclic pairing, the arity-two and
 arity-three identities, `H_product` equivariance, exact artifact hashes and

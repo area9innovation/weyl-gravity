@@ -57,11 +57,19 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
         with self.assertRaises(Exception):
             result.validate_triangle(value)
 
-    def test_fixed_identity_field_inclusion_cannot_be_silently_reused(self):
+    def test_corrected_nonidentity_resolution_cannot_reuse_identity(self):
         value = result.synthetic_triangle()
         value["cyclic_obstruction_disposition"]["fixed_identity_field_inclusion_reused"] = True
         with self.assertRaises(Exception):
             result.validate_triangle(value)
+
+    def test_declared_chain_homotopy_may_explicitly_reuse_identity(self):
+        value = result.synthetic_triangle()
+        value["cyclic_obstruction_disposition"] = {
+            "fixed_identity_field_inclusion_reused": True,
+            "resolution_kind": "DECLARED_CHAIN_HOMOTOPY_CYCLIC_MORPHISM",
+        }
+        result.validate_triangle(value)
 
     def test_missing_inputs_cannot_claim_ready(self):
         value = result.build()

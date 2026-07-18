@@ -33,7 +33,7 @@
       "additionalProperties": false,
       "required": ["fixed_identity_field_inclusion_reused", "resolution_kind"],
       "properties": {
-        "fixed_identity_field_inclusion_reused": {"const": false},
+        "fixed_identity_field_inclusion_reused": {"type": "boolean"},
         "resolution_kind": {"enum": ["CORRECTED_NONIDENTITY_SYMPLECTIC_MAP", "PAIRING_IMPROVEMENT", "DECLARED_CHAIN_HOMOTOPY_CYCLIC_MORPHISM"]}
       }
     },
@@ -53,6 +53,30 @@
     },
     "claim_boundary": {"type": "string", "minLength": 1}
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "cyclic_obstruction_disposition": {
+            "type": "object",
+            "properties": {
+              "resolution_kind": {"const": "CORRECTED_NONIDENTITY_SYMPLECTIC_MAP"}
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "cyclic_obstruction_disposition": {
+            "type": "object",
+            "properties": {
+              "fixed_identity_field_inclusion_reused": {"const": false}
+            }
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
     "artifact": {
       "type": "object",

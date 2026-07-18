@@ -72,7 +72,7 @@
     },
     "triangle_schema": {
       "path": "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
-      "sha256": "9802a7a06f7382ad8f1410fd593bfb5a6340e9ea6a01ab67f9e95550391a0491"
+      "sha256": "4acf577b250cca60b7fcfed964a564e1ff9904da28a58be7ba2c8f3919dde083"
     },
     "weyl_taylor": {
       "candidate_paths": [
@@ -123,12 +123,12 @@
     "generator": "H_product"
   },
   "source_manifest": {
-    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "ae971928d0030d3881ab631f894a23c8e6bcd9282ab3eabee84a44048b923318",
-    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "cfbbac953b3f390e8e7f85fcd80f7a815a36779f99bcfcc2d7f3b947c24561a6",
+    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "79002ff84f07871d5cf2386f53b7151a2d7d41187c09a3d6b067f2dba6f0e69c",
+    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "779ef75edf8247a67150fb37cc9e0d2614fc5a0104383a43f3d416f0a9d7dfc6",
     "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py": "25c5f9da4ed1a38087287f501459a14ea094dd35fd5fe884c88cf00d1c6ec716",
     "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json": "758ceaefc77f662e53fd3147dac18a5a74b2ed2643c40adc2a3b09d4963b469f",
     "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json": "01bc56d19caf58c117a662d328ff805ee0407199eaf60ec8b210c56474857750",
-    "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json": "9802a7a06f7382ad8f1410fd593bfb5a6340e9ea6a01ab67f9e95550391a0491"
+    "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json": "4acf577b250cca60b7fcfed964a564e1ff9904da28a58be7ba2c8f3919dde083"
   },
   "verification_commands": [
     "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
@@ -160,7 +160,7 @@
         },
         {
           "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
-          "elapsed_seconds": 0.62
+          "elapsed_seconds": 0.5
         },
         {
           "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
