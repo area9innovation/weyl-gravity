@@ -1,0 +1,42 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "For each exact switch and symbolic m_b>0, the Maxwell field-strength tail maps to a switched recoil-current L1 tail with constant 3H_b^2/m_b^2+8H_b/(3m_b). The unsmoothed longitudinal 1/m_b^2 sector, physical clock-time normalization and both sides of switch total variation are included. Downstream detector dual norms, four scalar intervals, numerical masses, recoil coefficients, cone, Bridge 3, nonlinear stability and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_massive_recoil_finite_slab_energy_constant.py closed_universe_observers/verify_berger_massive_recoil_finite_slab_energy_constant.py closed_universe_observers/tests/test_berger_massive_recoil_finite_slab_energy_constant.py", "elapsed_seconds": 0.04, "status": "PASS"},
+    {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_massive_recoil_finite_slab_energy_constant", "elapsed_seconds": 0.11, "status": "PASS", "summary": "Regeneration, sector inverse, clock conversion, switch ratio and fail-closed scalar lifecycle passed."},
+    {"command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_massive_recoil_finite_slab_energy_constant.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 7.31, "status": "PASS", "summary": "20 massive-constant, atlas and comparison-ledger tests passed."},
+    {"command": "residual-atlas validator, observer-atlas verifier and comparison-ledger verifier", "elapsed_seconds": 8.9, "status": "PASS", "summary": "The symbolic massive constant is certified while response, numerical recoil, cone and crosswalk claims remain fail closed."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_massive_recoil_finite_slab_energy_constant --check", "elapsed_seconds": 0.15, "status": "PASS", "summary": "The finite-slab constant and rational switch bounds regenerate byte-for-byte."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No numerical recoil coefficient, full Green image, shared core algebra, lifecycle freeze or release was promoted."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_massive_recoil_finite_slab_energy_constant.py", "sha256": "493d9d72a8906faba566b8cebc5785310bb0997993b43f965638dbf1822b32cc"},
+    {"path": "closed_universe_observers/verify_berger_massive_recoil_finite_slab_energy_constant.py", "sha256": "1502bef8225aff0e1bd17fe4a5d6d463dd6c3d4d8caaa8cabcb5e09294d9221e"},
+    {"path": "closed_universe_observers/tests/test_berger_massive_recoil_finite_slab_energy_constant.py", "sha256": "34662b8bfa0209f437b47539e1ac215d564fd52cace7c7152da81a6840bddd6c"},
+    {"path": "closed_universe_observers/schema/berger-massive-recoil-finite-slab-energy-constant-v1.schema.json", "sha256": "f23dcbb4fcf1526508e61a0d3c667d9bad15d1c0633c7e94e1250425aaf0ead6"},
+    {"path": "closed_universe_observers/reports/berger-massive-recoil-finite-slab-energy-constant.md", "sha256": "cdd9a371c6850c5877a073f52028fc6e0d9665d66dc0b60e86445102ecf40ecc"},
+    {"path": "closed_universe_observers/certificates/BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT.json", "sha256": "f927e2e8eea5f5ef9bdbadd2d5c68d162eccb6d428b5356e6024f7d2405dd58e"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "5c6b73d3055e993e56fe8c2d699d3e5150bfe2a7cc238c1c74f35cb3ef20cdb5"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "ceab2f8db0f17e7db134f5dbaf5f6dc2406ed794b91eb0fe1d1c08f5abc66249"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "7c94b2a641f38bc2c6130f4029f05851175ad25d6904350c244fd14f1d1aaf1b"}
+  ],
+  "claim_flags": {
+    "MASSIVE_FINITE_TIME_ENERGY_CONSTANT_EXPORTED": true,
+    "SYMBOLIC_POSITIVE_MASS_RECOIL_CURRENT_L1_TAIL_EXPORTED": true,
+    "UNSMOOTHED_LONGITUDINAL_SECTOR_INCLUDED": true,
+    "DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORM_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

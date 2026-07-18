@@ -4565,6 +4565,129 @@
       }
     },
     {
+      "claim_boundary": "the transverse massive sector uses the finite-slab energy estimate and the exact longitudinal sector retains its unsmoothed 1/m_b^2 term; rational H_b bounds use the certified flat-bump core and exact switch radii absolute-g3 channel bound is CERTIFIED symbolically as (3H_b^2/m_b^2+8H_b/(3m_b)) E_A; four scalar coefficients remain OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json",
+          "result_id": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL",
+          "sha256": "f3d7e04d7f3035f7435dc1da5d8e9f8ad846ee23092ea618c8dc9c321343aa55"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT.json",
+          "result_id": "BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT",
+          "sha256": "f927e2e8eea5f5ef9bdbadd2d5c68d162eccb6d428b5356e6024f7d2405dd58e"
+        }
+      ],
+      "id": "observer.berger.detector_profile.massive_recoil_finite_slab_energy_constant",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=massive-two-form recoil current on the two exact compact switch slabs; omega=retarded massive propagation with symbolic positive masses m_b; OPEN: the switched recoil-current L1 tail is certified, but the downstream Maxwell-to-detector dual norm is absent",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "the conserved switched recoil source is gauge typed, but downstream detector and nonlinear quotient descent remain OPEN",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "absolute-g3 channel bound is CERTIFIED symbolically as (3H_b^2/m_b^2+8H_b/(3m_b)) E_A; four scalar coefficients remain OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "unit clock integral becomes integral h_b dt=4/3; exact switch total variation is 2 sup h_b",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: the switched recoil-current L1 tail is certified, but the downstream Maxwell-to-detector dual norm is absent",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "the two detector-selected preparations, exact switches and symbolic positive emitter masses are fixed",
+          "status": "CERTIFIED"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "the transverse massive sector uses the finite-slab energy estimate and the exact longitudinal sector retains its unsmoothed 1/m_b^2 term; rational H_b bounds use the certified flat-bump core and exact switch radii",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "absolute-g3 channel bound is CERTIFIED symbolically as (3H_b^2/m_b^2+8H_b/(3m_b)) E_A; four scalar coefficients remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "the independent leading formal rank-two theorem remains CERTIFIED; no numerical recoil determinant is inferred",
+          "status": "CERTIFIED"
+        },
+        "survives_gauge_reduction": {
+          "statement": "the conserved switched recoil source is gauge typed, but downstream detector and nonlinear quotient descent remain OPEN",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "massive-two-form recoil current on the two exact compact switch slabs",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 2,
+        "ell": "all Berger shells through the Maxwell graph-tail input",
+        "k": "two emitter channels b=0,1",
+        "m": "transverse and longitudinal massive sectors",
+        "omega": "retarded massive propagation with symbolic positive masses m_b",
+        "parity": "two selected massive polarization channels",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
       "claim_boundary": "Bridge 3 is inactive until a same-background Berger branch dictionary lands NO_CERTIFIED_MAP NO_CERTIFIED_MAP",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -4796,7 +4919,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "b778727e772d7c55bddb8d1e8acd89f0cf08088c966416a3f934a30fabec3219",
+  "generated_by_sha256": "ba2651acaa55eecfc072473bed2254465c982acb2c69d1778721957feb5623a3",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

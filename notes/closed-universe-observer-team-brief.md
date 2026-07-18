@@ -765,6 +765,17 @@ profiles at retained `two_j=68743`.  A dense rail there would require
 remains mandatory.  The next gate is the finite-time massive retarded energy
 constant on the exact switch slabs; no recoil scalar is yet certified.
 
+`BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT` now closes that massive
+subgate for symbolic positive masses.  The transverse sector obeys the
+retarded estimate, while the exact longitudinal sector contributes its
+unsmoothed `1/m_b^2` term.  If `H_b=sup h_b`, exact switch normalization gives
+`integral h_b dt=4/3` and `integral |partial_t h_b|dt=2H_b`, hence
+`integral ||delta(h_b K_b)||dt <=
+(3H_b^2/m_b^2+8H_b/(3m_b))E_A`.  Both `H_b` bounds are rational and
+content-addressed.  The next gate is the downstream Maxwell-to-detector dual
+norm and direct streaming of the four recoil scalars; numerical masses and
+coefficients remain open.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

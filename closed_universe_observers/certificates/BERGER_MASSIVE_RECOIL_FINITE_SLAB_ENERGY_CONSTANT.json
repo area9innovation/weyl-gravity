@@ -1,0 +1,157 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL finite-slab result maps the certified Maxwell field-strength energy tail E_A into an L1 bound for the switched massive recoil current. The transverse massive sector obeys the retarded energy estimate sup||K_T||<=m_b^-1 integral||h_b dA||dt; the exact longitudinal sector contributes the unsmoothed algebraic term m_b^-2||h_b dA||. Exact switch normalization gives integral h_b dt=4/3 and total variation integral|partial_t h_b|dt=2 sup h_b. Together with delta(h_b K_b)=-m_b^-2 h_b i_grad(h_b)dA-i_grad(h_b)K_b, this yields integral||delta(h_b K_b)||dt <= (3 H_b^2/m_b^2+8 H_b/(3m_b)) E_A, with certified rational H_b bounds for both exact switches. This closes the finite-time massive constant symbolically for every m_b>0. It does not supply a numerical mass, the downstream Maxwell-to-detector dual norm, the four streamed scalar intervals, numerical recoil, tangent-cone restriction, Bridge 3, nonlinear observer-morphism stability or a quantum claim.",
+  "claim_status": "SYMBOLIC_POSITIVE_MASS_FINITE_SLAB_RECOIL_CURRENT_CONSTANT_CERTIFIED",
+  "dependency_refs": {
+    "graph_gate": {
+      "path": "closed_universe_observers/certificates/BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE.json",
+      "result_id": "BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE",
+      "sha256": "53382edc9f355be47e9adaaaa1e1cd18097ee7bef39346aa48b227e60f3ab346"
+    },
+    "massive_unary": {
+      "path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
+      "result_id": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL",
+      "sha256": "19666c947d0ea45cd62e516bc24310ca005074544f6ab56e292366c1db8d69db"
+    },
+    "maxwell_energy": {
+      "path": "closed_universe_observers/certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json",
+      "result_id": "BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL",
+      "sha256": "f3d7e04d7f3035f7435dc1da5d8e9f8ad846ee23092ea618c8dc9c321343aa55"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "switches": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+      "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORM_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "MASSIVE_FINITE_TIME_ENERGY_CONSTANT_EXPORTED": true,
+    "QUANTUM_CLAIM": false,
+    "SYMBOLIC_POSITIVE_MASS_RECOIL_CURRENT_L1_TAIL_EXPORTED": true,
+    "UNSMOOTHED_LONGITUDINAL_SECTOR_INCLUDED": true
+  },
+  "massive_energy_theorem": {
+    "combined_solution_bound": "sup_t ||K_b|| <= (H_b/m_b^2+4/(3m_b)) E_A",
+    "longitudinal_algebraic_bound": "sup_t ||K_L(t)|| <= m_b^-2 sup_t ||h_b dA||",
+    "mass_domain": "m_b>0",
+    "recoil_current_L1_bound": "integral ||delta(h_b K_b)||dt <= (3H_b^2/m_b^2+8H_b/(3m_b)) E_A",
+    "recoil_identity": "delta(h_b K_b)=-m_b^-2 h_b i_grad(h_b)dA-i_grad(h_b)K_b",
+    "sector_inverse": [
+      [
+        "1/(lambda + m2)",
+        "0"
+      ],
+      [
+        "0",
+        "1/m2"
+      ]
+    ],
+    "sector_order": [
+      "co-closed/transverse",
+      "exact/longitudinal"
+    ],
+    "transverse_retarded_bound": "sup_t ||K_T(t)|| <= m_b^-1 integral ||h_b dA|| dt"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "drop_unsmoothed_longitudinal_massive_sector"
+    },
+    {
+      "detected": true,
+      "name": "treat_unit_clock_integral_as_unit_physical_time_integral"
+    },
+    {
+      "detected": true,
+      "name": "drop_one_side_of_switch_total_variation"
+    }
+  ],
+  "next_gate": "CERTIFY_THE_DOWNSTREAM_MAXWELL_TO_DETECTOR_DUAL_NORMS_AND_STREAM_THE_FOUR_RECOIL_SCALARS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_massive_recoil_finite_slab_energy_constant.py",
+        "sha256": "493d9d72a8906faba566b8cebc5785310bb0997993b43f965638dbf1822b32cc"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_massive_recoil_finite_slab_energy_constant.py",
+        "sha256": "1502bef8225aff0e1bd17fe4a5d6d463dd6c3d4d8caaa8cabcb5e09294d9221e"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_massive_recoil_finite_slab_energy_constant.py",
+        "sha256": "34662b8bfa0209f437b47539e1ac215d564fd52cace7c7152da81a6840bddd6c"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-massive-recoil-finite-slab-energy-constant-v1.schema.json",
+        "sha256": "f23dcbb4fcf1526508e61a0d3c667d9bad15d1c0633c7e94e1250425aaf0ead6"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-massive-recoil-finite-slab-energy-constant.md",
+        "sha256": "cdd9a371c6850c5877a073f52028fc6e0d9665d66dc0b60e86445102ecf40ecc"
+      }
+    ]
+  },
+  "result_id": "BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT",
+  "route_disposition": {
+    "downstream_Maxwell_detector_dual_norm": "OPEN",
+    "four_scalar_recoil_intervals": "OPEN",
+    "maxwell_graph_tail_to_massive_recoil_current_L1": "CERTIFIED_FOR_SYMBOLIC_POSITIVE_MASS",
+    "numerical_mass_specialization": "OPEN"
+  },
+  "schema": "closed-universe-berger-massive-recoil-finite-slab-energy-constant-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "switch_constants": [
+    {
+      "clock_radius": "1/64",
+      "core_integral_lower": "220480274480969204810823647005560476068131788413/182687704666362864775460604089535377456991567872",
+      "h_physical_time_L1": "4/3",
+      "h_physical_time_total_variation_upper": "23384026197294446691258957323460528314494920687616/220480274480969204810823647005560476068131788413",
+      "h_sup_upper": "11692013098647223345629478661730264157247460343808/220480274480969204810823647005560476068131788413",
+      "massive_solution_sup_bound": "(11692013098647223345629478661730264157247460343808/220480274480969204810823647005560476068131788413)/m_b^2 + (4/3)/m_b",
+      "physical_support": [
+        "7/48",
+        "3/16"
+      ],
+      "recoil_current_L1_bound": "((410109510896814735819844167584554006003719268292477331829831988701866187349882985604408720691822592/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569)/m_b^2 + (93536104789177786765035829293842113257979682750464/661440823442907614432470941016681428204395365239)/m_b) E_A",
+      "recoil_current_L1_m_inverse_coefficient": "93536104789177786765035829293842113257979682750464/661440823442907614432470941016681428204395365239",
+      "recoil_current_L1_m_inverse_squared_coefficient": "410109510896814735819844167584554006003719268292477331829831988701866187349882985604408720691822592/48611551435203520355836407691286531400862076794915062373462659713426270775257069768353801058569",
+      "switch_id": "h_0"
+    },
+    {
+      "clock_radius": "3/64",
+      "core_integral_lower": "220480274480969204810823647005560476068131788413/182687704666362864775460604089535377456991567872",
+      "h_physical_time_L1": "4/3",
+      "h_physical_time_total_variation_upper": "23384026197294446691258957323460528314494920687616/661440823442907614432470941016681428204395365239",
+      "h_sup_upper": "11692013098647223345629478661730264157247460343808/661440823442907614432470941016681428204395365239",
+      "massive_solution_sup_bound": "(11692013098647223345629478661730264157247460343808/661440823442907614432470941016681428204395365239)/m_b^2 + (4/3)/m_b",
+      "physical_support": [
+        "5/16",
+        "7/16"
+      ],
+      "recoil_current_L1_bound": "((136703170298938245273281389194851335334573089430825777276610662900622062449960995201469573563940864/145834654305610561067509223073859594202586230384745187120387979140278812325771209305061403175707)/m_b^2 + (93536104789177786765035829293842113257979682750464/1984322470328722843297412823050044284613186095717)/m_b) E_A",
+      "recoil_current_L1_m_inverse_coefficient": "93536104789177786765035829293842113257979682750464/1984322470328722843297412823050044284613186095717",
+      "recoil_current_L1_m_inverse_squared_coefficient": "136703170298938245273281389194851335334573089430825777276610662900622062449960995201469573563940864/145834654305610561067509223073859594202586230384745187120387979140278812325771209305061403175707",
+      "switch_id": "h_1"
+    }
+  ],
+  "tail_composition": {
+    "C_b": "3H_b^2/m_b^2+8H_b/(3m_b)",
+    "channel_b_output": "E_recoil,b(N)<=C_b(m_b) E_A(N)",
+    "current_two_j1024_status": "finite symbolic bound; not a declared scalar tolerance",
+    "input": "E_A(N)=certified component-sum Maxwell field-strength graph tail",
+    "two_j68743_status": "E_A<1 only; C_b(m_b) and downstream detector norm still apply"
+  }
+}

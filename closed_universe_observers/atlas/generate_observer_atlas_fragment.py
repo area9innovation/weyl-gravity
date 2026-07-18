@@ -74,6 +74,7 @@ CERTIFICATES = {
     "response_streaming_preflight": PACKAGE / "certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
     "recoil_chain_graph_norm_gate": PACKAGE / "certificates/BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE.json",
     "maxwell_energy_graph_norm_tail": PACKAGE / "certificates/BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL.json",
+    "massive_recoil_finite_slab": PACKAGE / "certificates/BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT.json",
     "branch_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_36_RESIDUAL_BRANCH_LOCAL_PROJECTOR_OBSTRUCTION_V1.json",
     "recoil": PACKAGE / "certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
     "stress": PACKAGE / "certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
@@ -380,6 +381,14 @@ def entries() -> list[dict]:
             "evidence": _evidence("recoil_chain_graph_norm_gate", "maxwell_energy_graph_norm_tail"),
         },
         {
+            "id": "observer.berger.detector_profile.massive_recoil_finite_slab_energy_constant",
+            "scope": _scope(carrier="massive-two-form recoil current on the two exact compact switch slabs", degree=2, parity="two selected massive polarization channels", ell="all Berger shells through the Maxwell graph-tail input", m="transverse and longitudinal massive sectors", k="two emitter channels b=0,1", omega="retarded massive propagation with symbolic positive masses m_b"),
+            "descriptions": {"causal": "CERTIFIED", "symplectic": "NOT_APPLICABLE", "nonlinear": "NOT_APPLICABLE", "observational": "OPEN", "quantum": "NOT_APPLICABLE"},
+            "operational_observable": {"detector_response": "OPEN: the switched recoil-current L1 tail is certified, but the downstream Maxwell-to-detector dual norm is absent", "response_rank": "the independent leading formal rank-two theorem remains CERTIFIED; no numerical recoil determinant is inferred", "emitter_preparation": "the two detector-selected preparations, exact switches and symbolic positive emitter masses are fixed", "clock_and_rod_dependence": "unit clock integral becomes integral h_b dt=4/3; exact switch total variation is 2 sup h_b", "relational_redshift_contribution": "NOT_APPLICABLE", "recoil_backreaction_order": "absolute-g3 channel bound is CERTIFIED symbolically as (3H_b^2/m_b^2+8H_b/(3m_b)) E_A; four scalar coefficients remain OPEN", "survives_gauge_reduction": "the conserved switched recoil source is gauge typed, but downstream detector and nonlinear quotient descent remain OPEN", "profile_green_boundary_dependencies": "the transverse massive sector uses the finite-slab energy estimate and the exact longitudinal sector retains its unsmoothed 1/m_b^2 term; rational H_b bounds use the certified flat-bump core and exact switch radii"},
+            "tangent_cone": {"restriction_status": "NOT_APPLICABLE", "linearly_detectable_but_nonlinearly_obstructed": "NOT_APPLICABLE", "balanced_detectable_combinations": "NOT_APPLICABLE", "observer_source_channel": "NOT_APPLICABLE", "correction_classes": {"bounded_or_quasiperiodic": "NOT_APPLICABLE", "smooth_secular": "NOT_APPLICABLE", "causal_or_retarded": "NOT_APPLICABLE"}},
+            "evidence": _evidence("maxwell_energy_graph_norm_tail", "massive_recoil_finite_slab"),
+        },
+        {
             "id": "observer.crosswalk.berger_physical_branch_to_detector",
             "scope": _scope(carrier="same-background Berger physical-branch dictionary to relational detector, redshift, memory and recoil records", degree="crosswalk", parity="all", ell="all", m="all", k="all", omega="all"),
             "descriptions": {name: "NO_CERTIFIED_MAP" for name in DESCRIPTIONS},
@@ -433,6 +442,7 @@ OBSERVER_STATUSES = {
     "observer.berger.detector_profile.response_specific_streaming_preflight": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.recoil_chain_graph_norm_gate": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.berger.detector_profile.maxwell_energy_graph_norm_tail": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "OPEN", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
+    "observer.berger.detector_profile.massive_recoil_finite_slab_energy_constant": ["OPEN", "CERTIFIED", "CERTIFIED", "CERTIFIED", "NOT_APPLICABLE", "CERTIFIED", "OPEN", "CERTIFIED", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE", "NOT_APPLICABLE"],
     "observer.crosswalk.berger_physical_branch_to_detector": ["NO_CERTIFIED_MAP"] * 13,
     "observer.crosswalk.compact_product_exceptional_resonance_to_berger": ["NO_CERTIFIED_MAP"] * 13,
 }
