@@ -697,11 +697,15 @@ twist-velocity matrix has pointwise rank four for real time.  Its first exact
 intersection with the five stabilizer maps is nonempty: on the shared-axis
 `m=0` face the twist intertwiner vanishes, `a=b=d=0`, and
 `B_z^2=(2/3)X` balances the positive twist and negative extra Taub charges.
-This certifies a nonzero simultaneous compatibility face, not a full
-second-order correction.  The complete off-axis zero locus, nonresonant
-bounded/smooth right inverses, opposite momenta, phases and multiple
-absolute-momentum fibres remain open.  Thus this is a source-matrix and
-common-zero input, not yet a relative obstruction theorem.  Residual equivariance, the observable map, the
+The complete declared nonzero-extra common-zero locus is now classified:
+exact coefficient elimination gives `a=b=d=0`, and the remaining rank
+stratification plus `mu_J` proves that every solution is an `SO(3)` rotation
+of this aligned face, with the electric extension
+`B^2=Q_e^2/2+(2/3)X`.  No additional off-axis branch exists in this carrier.
+This is still not a full second-order correction: nonresonant bounded/smooth
+right inverses, opposite momenta, phases and multiple absolute-momentum fibres
+remain open.  Thus this is a necessary tangent-cone theorem, not yet a
+relative obstruction theorem.  Residual equivariance, the observable map, the
 relative \(L_\infty\) morphism, and the quantum lift remain open until their
 own certificates land.
 
@@ -818,8 +822,11 @@ obstruction to a no-go for corrected cyclic morphisms.  Its atlas row is
 `einstein.ph.bridge.relative_branch_dictionary_v1`; activation remains `OPEN`,
 and no cross-background identity is made.  The certified `a,b,d` polynomial
 resonance matrix has now been extended by the complete twist position/velocity
-columns.  This full declared `k=0` source matrix is a quadratic input to this
-bridge and tangent-cone theorem, not their completion.
+columns.  In the declared nonzero-extra `k=0` carrier, its simultaneous
+stabilizer/resonance zero locus is exactly the aligned `SO(3)` orbit; bounded
+and secular correction sufficiency remain open because the nonresonant source
+and exact block inverses have not been exported.  This does not complete the
+relative bridge.
 
 The full-triangle importer is automatic but strict. It accepts only an exact
 `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1` artifact at one of the two declared
