@@ -100,6 +100,7 @@ class ActiveFrontierTests(unittest.TestCase):
     def test_hadamard_existence_boundary_is_authoritative(self) -> None:
         flags = self.payload["claim_flags"]
         self.assertTrue(flags["CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED"])
+        self.assertTrue(flags["CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED"])
         self.assertTrue(flags["COMPANION_DECOMPOSABILITY_CERTIFIED"])
         self.assertTrue(flags["STATIONARY_GENERATOR_IMPORT_CONSUMER_READY"])
         self.assertFalse(flags["HADAMARD_EXISTENCE_THEOREM_APPLIES"])
@@ -114,7 +115,12 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         algebra_row = self.payload["active_rows"]["free_Lorentzian_algebra"]
         self.assertIn("PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED", algebra_row["status"])
+        self.assertIn("OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED", algebra_row["status"])
         self.assertIn("HADAMARD_STATE_OPEN", algebra_row["status"])
+        self.assertEqual(
+            algebra_row["next_gate"],
+            "CURVATURE_PROPAGATOR_WAVEFRONT_THEOREM_OR_BRST_HADAMARD_COVARIANCE",
+        )
 
     def test_relative_frontier_imports_polar_but_not_global_triangle(self) -> None:
         flags = self.payload["claim_flags"]

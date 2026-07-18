@@ -1,0 +1,131 @@
+{
+  "CCR_comparison": {
+    "equality": "sigma_C equals the previously certified curvature-image presymplectic form",
+    "graded_relation": "[Phi_C(f),Phi_C(h)]_graded=i sigma_C(f,h) 1",
+    "pairing": "sigma_C(f,h)=<f,Delta_C^obs h>_curv",
+    "status": "EXACT"
+  },
+  "analytic_boundary": {
+    "Hadamard_two_point_function": "NOT_CONSTRUCTED",
+    "Lorentzian_QME": "NOT_COMPUTED",
+    "autonomous_curvature_Green_inverse_identity": "NOT_PROVED",
+    "autonomous_curvature_advanced_retarded_Green_operators": "NOT_CONSTRUCTED",
+    "positive_or_Krein_state": "NOT_CONSTRUCTED",
+    "renormalized_time_ordered_products": "NOT_CONSTRUCTED",
+    "separately_emitted_distributional_kernel_table": "NOT_EMITTED",
+    "transported_curvature_observable_causal_propagator": "CONSTRUCTED",
+    "wavefront_set_theorem_for_Delta_C": "NOT_PROVED"
+  },
+  "claim_boundary": "Constructs the gauge-invariant causal propagator of curvature observables by exact support-local transport of the certified full prolonged causal difference through T_state and its BV formal adjoint. It does not construct autonomous curvature advanced/retarded Green inverses, prove a curvature wavefront-set theorem, construct a Hadamard or positive state, define renormalized products, restore the Lorentzian QME, or provide an interacting quantum theory.",
+  "claim_flags": {
+    "AUTONOMOUS_CURVATURE_GREEN_OPERATORS_CONSTRUCTED": false,
+    "CURVATURE_HADAMARD_STATE_CONSTRUCTED": false,
+    "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": true,
+    "CURVATURE_OBSERVABLE_CCR_KERNEL_MATCHED": true,
+    "CURVATURE_OBSERVABLE_GAUGE_INVARIANCE_CERTIFIED": true,
+    "CURVATURE_PROPAGATOR_WAVEFRONT_SET_CERTIFIED": false,
+    "INTERACTING_QUANTUM_THEORY": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "PHYSICAL_POSITIVITY_CERTIFIED": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "curvature_map": {
+    "chain_identity": "E_curv T_state=A_equation Ebar_aux",
+    "formal_adjoint_sha256": "3fd9a84a101242ad8f17dcc4e352028c2fd6ad734e2e3d8e2119588543767cb6",
+    "gauge_identity": "T_state K_aux=0",
+    "maximum_order": 3,
+    "operator": "T_state=(C1,div C1)",
+    "sha256": "ca86a296fca48e3526690c8c0e94730fc5a8bcd438544306ab2dcdae7c7181ca",
+    "shape": [
+      26,
+      24
+    ],
+    "support_local": true
+  },
+  "dependency_refs": {
+    "causal_pairing": {
+      "artifact_id": "pure-weyl-direct-causal-pairing-transport-v1",
+      "sha256": "5de7aa9abc9c5c276092cc9c8e61c1046c870fca3a528464410986535a14704b"
+    },
+    "curvature_CCR": {
+      "artifact_id": "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA",
+      "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed"
+    },
+    "curvature_gauge_map": {
+      "artifact_id": "pure-weyl-curvature-state-gauge-chain-map-v1",
+      "sha256": "0013fc6573a4f2b78b71b49feb58f60f2f3bf86c7f8102684624e35a20385d18"
+    },
+    "curvature_graph": {
+      "artifact_id": "pure-weyl-curvature-mapping-cylinder-substitution-v1",
+      "sha256": "04512974e9b85fde17a184c9840b4b049a3c97c40c0cde57985079f9341968e7"
+    },
+    "full_causal_homotopy": {
+      "artifact_id": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+      "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_layer": "LORENTZIAN_FREE_QUANTUM_ALGEBRA",
+  "next_gate": "CURVATURE_PROPAGATOR_WAVEFRONT_THEOREM_OR_BRST_HADAMARD_COVARIANCE",
+  "provenance": {
+    "T_state_sha256": "ca86a296fca48e3526690c8c0e94730fc5a8bcd438544306ab2dcdae7c7181ca",
+    "T_state_sharp_sha256": "3fd9a84a101242ad8f17dcc4e352028c2fd6ad734e2e3d8e2119588543767cb6",
+    "graph_inclusion_sha256": "7c79b667069ddb38f9d33cf3fb10dce5f9d05e50e20fb35e5545ac2dc520acfd",
+    "graph_projection_sha256": "136acb94ce478f52fbdb5849506684cb011f93479b2f8423c0e2516156a54170",
+    "source_manifest": {
+      "../reports/curvature-observable-causal-propagator.md": "1e234473a2ec375776d3a3c784156eca6acd75530784d7a4ff2a336c02bd6c02",
+      "curvature_observable_causal_propagator.py": "02bdecf267a5a32f039f54493e22c7dfc4e56f1d7c0cafeb5596a0d893f8878e",
+      "curvature_observable_causal_propagator_certificate.py": "9e1fd92d71a9ab897c6422ab8ca466bdd032461b24dd216f7677ed8a2e39588a",
+      "schema/curvature-observable-causal-propagator-v1.schema.json": "5eb1ecc53205c891ea9032e08f7c2ad15a05b6ee47bf5a6608afa5bd67d930fa",
+      "tests/test_curvature_observable_causal_propagator.py": "72d8eaca32bafd7f4343915f90d6d761f078f47ed74f1768f5f5c87347e3a4c0",
+      "verify_curvature_observable_causal_propagator.py": "d1b0020b125276f3be65f655f4a9773abaf96314e47d8827d97c4855e4a04555"
+    },
+    "source_manifest_sha256": "1ab070383ead4ab2fc9891aa5bf33d8d07b9276e87b4a6e05830f35b385b3e9a"
+  },
+  "result_id": "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR",
+  "result_state": "GAUGE_INVARIANT_CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED_AUTONOMOUS_GREEN_AND_HADAMARD_OPEN",
+  "schema": "quantum-weyl-curvature-observable-causal-propagator-v1",
+  "transport_identity_replay": {
+    "adjoint_calculation": "(Delta_C^obs)^sharp=J_C^sharp Delta_Lambda^sharp R_C^sharp=-Delta_C^obs",
+    "checks": {
+      "K_sharp_T_sharp_zero_follows_by_formal_adjoint": true,
+      "T_K_zero_makes_curvature_observables_gauge_invariant": true,
+      "autonomous_curvature_Green_inverse_not_used": true,
+      "finite_order_maps_preserve_causal_support": true,
+      "source_lift_and_solution_restriction_are_formal_adjoints": true,
+      "transported_kernel_reproduces_curvature_CCR_form": true,
+      "transported_propagator_is_graded_skew": true
+    },
+    "formal_adjoint_sign": -1,
+    "formal_adjoint_word": [
+      "R_C",
+      "Delta_Lambda",
+      "J_C"
+    ],
+    "gauge_calculation": "T_state K_aux=0 and K_aux^sharp T_state^sharp=0",
+    "graded_skew_defect": 0,
+    "propagator": "Delta_C^obs=R_C Delta_Lambda J_C",
+    "propagator_word": [
+      "R_C",
+      "Delta_Lambda",
+      "J_C"
+    ],
+    "solution_restriction": "R_C=T_state p_aux=J_C^sharp",
+    "source_lift": "J_C=i_aux T_state^sharp",
+    "support_calculation": "supp(Delta_C^obs f) subset J(supp f)"
+  },
+  "transported_propagator": {
+    "BRST_Ward_identity": "inherited from Q Delta_Lambda+Delta_Lambda Q=0 and the exact curvature chain map",
+    "causal_support": "supp(Delta_C^obs f) subset J(supp f)",
+    "codomain": "spacelike-compact curvature solutions in the curvature-graph image",
+    "definition": "Delta_C^obs=R_C Delta_Lambda J_C",
+    "domain": "compactly supported curvature test sources",
+    "gauge_invariance": "T_state K_aux=0 and K_aux^sharp T_state^sharp=0",
+    "graded_antisymmetry": "(Delta_C^obs)^sharp=-Delta_C^obs",
+    "solution_restriction": "R_C=T_state p_aux=J_C^sharp",
+    "source_lift": "J_C=i_aux T_state^sharp",
+    "status": "CONSTRUCTED_AS_EXACT_SUPPORT_LOCAL_TRANSPORT"
+  }
+}

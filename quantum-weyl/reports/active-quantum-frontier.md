@@ -52,8 +52,11 @@ The completed covariant dependency DAG does, however, close a distinct free
 algebraic milestone. The support-local 16-block curvature graph, the causal
 compact-to-global quasi-isomorphism and the transported Green/current pairing
 define a universal presymplectic graded CCR *-algebra on the curvature-image
-free BV observable classes. This construction retains any radical and does
-not claim a direct autonomous curvature Green kernel, a Hadamard state,
+free BV observable classes. Exact transport through the curvature map and its
+BV formal adjoint now also constructs the gauge-invariant curvature-observable
+Pauli--Jordan operator, with inherited causal support and graded
+antisymmetry. This construction retains any radical and does not claim
+autonomous curvature Green inverses, a wavefront-set theorem, a Hadamard state,
 positivity, renormalized products, a Lorentzian QME, or an interacting quantum
 theory. The transported \([W_+^2],[W_-^2]\) pair remains deformation/vertex
 cohomology, not a one-particle basis.

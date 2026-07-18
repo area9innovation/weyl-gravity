@@ -86,7 +86,7 @@ schema/             machine-readable result contracts
 | B | counterterm/anomaly bases and descent database | `FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN`; the ghost-zero and ghost-one quotients both have even/odd dimensions `2/1`; the exact small-algebra calculation eliminates independent pure-Diff and mixed Diff--Weyl classes, ten general nonminimal pairs contract, and exact BV-canonical transport proves gauge-fixed invariance |
 | C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, but normalized `pi_cl` projection and adjacent H3/H5 bases remain unavailable |
 | D | reduced and Euclidean coefficient ledgers | `STANDARD_VECTOR_TT_AUXILIARY_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN`; the exact standard vector `(199/30,-87/20,0)` is reduced against the complete gauge-fixed BV quotient, the odd zero is proved by a parity Ward identity, the physical TT auxiliary Schur/Jacobian identity is exact, and the standard/covariant rank comparison localizes the missing scalar ghost cancellation to one rank; the analytic operator/Berezinian/measure/contour match remains uncomputed |
-| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED_HADAMARD_OPEN`; the completed covariant causal quasi-isomorphism, support-local curvature graph and transported pairing define the universal graded CCR algebra on curvature-image free BV observable classes; a direct curvature kernel, BRST-compatible global Hadamard state and renormalized products remain open |
+| E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_AND_CCR_ALGEBRA_DEFINED_HADAMARD_OPEN`; the completed causal quasi-isomorphism, support-local curvature map and transported pairing define both the gauge-invariant curvature-observable Pauli--Jordan operator and its universal graded CCR algebra; autonomous curvature Green inverses, a BRST-compatible global Hadamard state and renormalized products remain open |
 | F | one-loop Slavnov breaking and QME status | `ASSEMBLY_AND_SEMANTIC_MULTIPLICITY_RECEIVERS_READY_ANALYTIC_MATCHING_OPEN`; the exact quotient reduction and mutation-tested analytic exports are ready, but the repository full-BV multiplicity ledger, regulated breaking, and QME disposition are `NOT_COMPUTED` |
 | G | residual quantum transfer and pairing correction | `NOT_COMPUTED` |
 | N | nonlinear classical transfer prerequisite | `REPAIRED_Q2_Q3_AND_RETAINED_FULL_BV_ELL3_ACCEPTED`; the support-local cyclic repair, typed mixed `q3`, retained contact/exchange replay, and all 26,238 retained BV `ell3` coefficients are independently accepted; this remains classical nonlinear input and does not bypass the local QME gate |
@@ -169,6 +169,11 @@ or quantum-master-equation result.
   records the `LORENTZIAN-CAUSAL` curvature-presentation presymplectic graded
   CCR algebra and its fail-closed direct-kernel, Hadamard, positivity and QME
   boundaries.
+- [`reports/curvature-observable-causal-propagator.md`](reports/curvature-observable-causal-propagator.md)
+  records the exact support-local transport
+  \(\Delta_C^{\rm obs}=R_C\Delta_\Lambda J_C\), its gauge invariance and
+  causal support, while leaving autonomous curvature Green inverses and the
+  wavefront/Hadamard stage open.
 - [`reports/renormalized-D-ward-insertion-contract.md`](reports/renormalized-D-ward-insertion-contract.md)
   records the sourced/restored Ward-operator lifecycle and the prohibition on
   a Cartan classification before QME restoration.

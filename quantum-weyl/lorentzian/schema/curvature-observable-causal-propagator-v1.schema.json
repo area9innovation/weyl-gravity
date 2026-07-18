@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-curvature-observable-causal-propagator-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle_layer",
+    "dependency_tags", "dependency_refs", "curvature_map",
+    "transported_propagator", "CCR_comparison", "transport_identity_replay",
+    "analytic_boundary", "claim_flags", "next_gate", "provenance",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-curvature-observable-causal-propagator-v1"},
+    "result_id": {"const": "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR"},
+    "result_state": {"const": "GAUGE_INVARIANT_CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED_AUTONOMOUS_GREEN_AND_HADAMARD_OPEN"},
+    "lifecycle_layer": {"const": "LORENTZIAN_FREE_QUANTUM_ALGEBRA"},
+    "dependency_tags": {"const": ["LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["curvature_CCR", "curvature_graph", "curvature_gauge_map", "full_causal_homotopy", "causal_pairing"],
+      "properties": {
+        "curvature_CCR": {"$ref": "#/$defs/dependency"},
+        "curvature_graph": {"$ref": "#/$defs/dependency"},
+        "curvature_gauge_map": {"$ref": "#/$defs/dependency"},
+        "full_causal_homotopy": {"$ref": "#/$defs/dependency"},
+        "causal_pairing": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "curvature_map": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator", "shape", "maximum_order", "sha256", "formal_adjoint_sha256", "gauge_identity", "chain_identity", "support_local"],
+      "properties": {
+        "operator": {"const": "T_state=(C1,div C1)"},
+        "shape": {"const": [26, 24]},
+        "maximum_order": {"const": 3},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "formal_adjoint_sha256": {"$ref": "#/$defs/hash"},
+        "gauge_identity": {"const": "T_state K_aux=0"},
+        "chain_identity": {"const": "E_curv T_state=A_equation Ebar_aux"},
+        "support_local": {"const": true}
+      }
+    },
+    "transported_propagator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_lift", "solution_restriction", "definition", "domain", "codomain", "causal_support", "graded_antisymmetry", "BRST_Ward_identity", "gauge_invariance", "status"],
+      "properties": {
+        "source_lift": {"const": "J_C=i_aux T_state^sharp"},
+        "solution_restriction": {"const": "R_C=T_state p_aux=J_C^sharp"},
+        "definition": {"const": "Delta_C^obs=R_C Delta_Lambda J_C"},
+        "domain": {"type": "string", "minLength": 1},
+        "codomain": {"type": "string", "minLength": 1},
+        "causal_support": {"const": "supp(Delta_C^obs f) subset J(supp f)"},
+        "graded_antisymmetry": {"const": "(Delta_C^obs)^sharp=-Delta_C^obs"},
+        "BRST_Ward_identity": {"type": "string", "minLength": 1},
+        "gauge_invariance": {"type": "string", "minLength": 1},
+        "status": {"const": "CONSTRUCTED_AS_EXACT_SUPPORT_LOCAL_TRANSPORT"}
+      }
+    },
+    "CCR_comparison": {"$ref": "#/$defs/nonempty_object"},
+    "transport_identity_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_lift", "solution_restriction", "propagator", "adjoint_calculation", "gauge_calculation", "support_calculation", "propagator_word", "formal_adjoint_word", "formal_adjoint_sign", "graded_skew_defect", "checks"],
+      "properties": {
+        "source_lift": {"const": "J_C=i_aux T_state^sharp"},
+        "solution_restriction": {"const": "R_C=T_state p_aux=J_C^sharp"},
+        "propagator": {"const": "Delta_C^obs=R_C Delta_Lambda J_C"},
+        "adjoint_calculation": {"type": "string", "minLength": 1},
+        "gauge_calculation": {"type": "string", "minLength": 1},
+        "support_calculation": {"type": "string", "minLength": 1},
+        "propagator_word": {"const": ["R_C", "Delta_Lambda", "J_C"]},
+        "formal_adjoint_word": {"const": ["R_C", "Delta_Lambda", "J_C"]},
+        "formal_adjoint_sign": {"const": -1},
+        "graded_skew_defect": {"const": 0},
+        "checks": {"$ref": "#/$defs/all_true_checks"}
+      }
+    },
+    "analytic_boundary": {
+      "const": {
+        "transported_curvature_observable_causal_propagator": "CONSTRUCTED",
+        "autonomous_curvature_advanced_retarded_Green_operators": "NOT_CONSTRUCTED",
+        "autonomous_curvature_Green_inverse_identity": "NOT_PROVED",
+        "separately_emitted_distributional_kernel_table": "NOT_EMITTED",
+        "wavefront_set_theorem_for_Delta_C": "NOT_PROVED",
+        "Hadamard_two_point_function": "NOT_CONSTRUCTED",
+        "positive_or_Krein_state": "NOT_CONSTRUCTED",
+        "renormalized_time_ordered_products": "NOT_CONSTRUCTED",
+        "Lorentzian_QME": "NOT_COMPUTED"
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": true,
+        "CURVATURE_OBSERVABLE_GAUGE_INVARIANCE_CERTIFIED": true,
+        "CURVATURE_OBSERVABLE_CCR_KERNEL_MATCHED": true,
+        "AUTONOMOUS_CURVATURE_GREEN_OPERATORS_CONSTRUCTED": false,
+        "CURVATURE_PROPAGATOR_WAVEFRONT_SET_CERTIFIED": false,
+        "CURVATURE_HADAMARD_STATE_CONSTRUCTED": false,
+        "PHYSICAL_POSITIVITY_CERTIFIED": false,
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": false,
+        "LORENTZIAN_QME_RESTORED": false,
+        "INTERACTING_QUANTUM_THEORY": false
+      }
+    },
+    "next_gate": {"const": "CURVATURE_PROPAGATOR_WAVEFRONT_THEOREM_OR_BRST_HADAMARD_COVARIANCE"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["T_state_sha256", "T_state_sharp_sha256", "graph_inclusion_sha256", "graph_projection_sha256", "source_manifest", "source_manifest_sha256"],
+      "properties": {
+        "T_state_sha256": {"$ref": "#/$defs/hash"},
+        "T_state_sharp_sha256": {"$ref": "#/$defs/hash"},
+        "graph_inclusion_sha256": {"$ref": "#/$defs/hash"},
+        "graph_projection_sha256": {"$ref": "#/$defs/hash"},
+        "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+        "source_manifest_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "all_true_checks": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}},
+    "nonempty_object": {"type": "object", "minProperties": 3}
+  }
+}

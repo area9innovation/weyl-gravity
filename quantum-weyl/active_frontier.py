@@ -50,6 +50,7 @@ DEPENDENCIES = {
     "Hadamard_existence_audit": HERE / "lorentzian/certificates/BERGER_COMPANION_HADAMARD_EXISTENCE_CRITERION_AUDIT.json",
     "stationary_generator_import_readiness": HERE / "lorentzian/certificates/BERGER_RETAINED_26_STATIONARY_GENERATOR_IMPORT_READINESS.json",
     "curvature_image_CCR": HERE / "lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
+    "curvature_observable_propagator": HERE / "lorentzian/certificates/CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR.json",
     "relative_readiness": HERE / "relative/certificates/QUANTUM_RELATIVE_EINSTEIN_WEYL_QME_DEFECT_READINESS.json",
     "Paper09_boundary": HERE / "cartan/certificates/PAPER09_QUANTUM_CLAIM_BOUNDARY_SIGNOFF.json",
 }
@@ -92,6 +93,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "Hadamard_existence_audit": "DECOMPOSABILITY_CERTIFIED_EXISTENCE_NOT_IMPLIED_STATIONARY_POSITIVITY_CARRIER_OPEN",
         "stationary_generator_import_readiness": "CONSUMER_READY_STATIONARY_CARRIER_INPUT_NOT_SUPPLIED",
         "curvature_image_CCR": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_CERTIFIED_DIRECT_KERNEL_AND_STATE_OPEN",
+        "curvature_observable_propagator": "GAUGE_INVARIANT_CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED_AUTONOMOUS_GREEN_AND_HADAMARD_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
     for name, state in states.items():
@@ -511,6 +513,28 @@ def _load() -> dict[str, dict[str, Any]]:
         != "DIRECT_CURVATURE_GREEN_KERNEL_OR_BRST_HADAMARD_COVARIANCE"
     ):
         raise ValueError("curvature-image CCR frontier drifted")
+    curvature_propagator = values["curvature_observable_propagator"]
+    curvature_propagator_flags = curvature_propagator.get("claim_flags", {})
+    if (
+        curvature_propagator_flags.get(
+            "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED"
+        )
+        is not True
+        or curvature_propagator_flags.get(
+            "CURVATURE_OBSERVABLE_GAUGE_INVARIANCE_CERTIFIED"
+        )
+        is not True
+        or curvature_propagator_flags.get(
+            "AUTONOMOUS_CURVATURE_GREEN_OPERATORS_CONSTRUCTED"
+        )
+        is not False
+        or curvature_propagator_flags.get("CURVATURE_HADAMARD_STATE_CONSTRUCTED")
+        is not False
+        or curvature_propagator_flags.get("INTERACTING_QUANTUM_THEORY") is not False
+        or curvature_propagator.get("next_gate")
+        != "CURVATURE_PROPAGATOR_WAVEFRONT_THEOREM_OR_BRST_HADAMARD_COVARIANCE"
+    ):
+        raise ValueError("curvature observable propagator frontier drifted")
     relative = values["relative_readiness"]
     relative_flags = relative.get("claim_flags", {})
     relative_gate = relative.get("classical_import_gate", {})
@@ -576,8 +600,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             },
             "free_Lorentzian_algebra": {
-                "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_DIRECT_KERNEL_AND_HADAMARD_STATE_OPEN",
-                "next_gate": "DIRECT_CURVATURE_GREEN_KERNEL_OR_BRST_HADAMARD_COVARIANCE",
+                "status": "CURVATURE_IMAGE_PRESYMPLECTIC_GRADED_CCR_ALGEBRA_DEFINED_AND_GAUGE_INVARIANT_OBSERVABLE_CAUSAL_PROPAGATOR_DEFINED_AUTONOMOUS_GREEN_AND_HADAMARD_STATE_OPEN",
+                "next_gate": "CURVATURE_PROPAGATOR_WAVEFRONT_THEOREM_OR_BRST_HADAMARD_COVARIANCE",
             },
             "relative_Einstein_Weyl": {
                 "status": "PRINCIPAL_GENERIC_AXIAL_AND_GENERIC_POLAR_UNGAUGED_PREFLIGHTS_GLOBAL_V1_OPEN",
@@ -696,6 +720,7 @@ def build() -> dict[str, Any]:
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY": True,
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED": True,
+            "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -735,8 +760,10 @@ def build() -> dict[str, Any]:
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The support-local curvature graph, completed causal quasi-isomorphism, and "
             "transported pairing define a universal presymplectic graded CCR algebra on the "
-            "curvature-image free BV observable classes. This is not a direct curvature Green "
-            "kernel, a Hadamard state, positivity, or an interacting quantum theory. The "
+            "curvature-image free BV observable classes. Exact transport through the curvature "
+            "map and its formal adjoint also constructs the gauge-invariant curvature-observable "
+            "Pauli-Jordan operator. This is not an autonomous curvature Green inverse, a "
+            "Hadamard state, positivity, or an interacting quantum theory. The "
             "repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
             "and retained cyclicity defects, and preserved causal unary flags. The historical "
@@ -830,6 +857,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY") is not True
         or flags.get("CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED")
         is not True
+        or flags.get("CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED")
+        is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
@@ -870,6 +899,7 @@ def validate(result: dict[str, Any]) -> None:
             "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND",
             "FULL_BV_MULTIPLICITY_SEMANTIC_RECEIVER_READY",
             "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA_DEFINED",
+            "CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
