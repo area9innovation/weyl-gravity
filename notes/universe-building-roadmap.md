@@ -234,8 +234,13 @@ first-variation defects.  The old 207-term shifted defect and downstream
 Φ/L0/K rank screens are retained only as backend regression data.  The
 active gate is now the independent third variation of the Weyl-squared action
 along the transverse tangent, its comparison with the corrected parent
-endpoint, and the differentiated all-row rank-310 SDR.  Transverse causal
-transfer remains `OPEN` until that action-derived endpoint gate passes.
+endpoint, and the differentiated all-row rank-310 SDR.  The comparison target
+is no longer an ansatz: reconciliation with the base action endpoint replaces
+the historical post-normal-order 15-term correction, and the complete
+405-parameter first-order solve uniquely produces a new 15-term algebraic,
+fibre-self-adjoint completion with zero gauge defect.  Transverse causal
+transfer remains `OPEN` until the independent action-derived endpoint gate
+passes.
 
 The classical lane has now closed its abstract contribution to the second
 deliverable.  `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` proves
