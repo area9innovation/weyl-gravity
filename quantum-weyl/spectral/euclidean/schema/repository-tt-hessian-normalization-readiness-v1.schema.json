@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-tt-hessian-normalization-readiness-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "repository_action_normalization", "evidence_eligibility_ledger", "target_operator", "negative_control", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-tt-hessian-normalization-readiness-v1"},
+    "result_id": {"const": "REPOSITORY_TT_HESSIAN_NORMALIZATION_READINESS"},
+    "result_state": {"const": "ACTION_NORMALIZATION_AND_NEARBY_FACTORIZATIONS_VERIFIED_ROUND_S4_TT_DICTIONARY_NOT_SUPPLIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["standard_TT_auxiliary_match", "cylinder_TT_factorization", "nariai_action_derived_Bach_endpoint"],
+      "properties": {
+        "standard_TT_auxiliary_match": {"$ref": "#/$defs/hash"},
+        "cylinder_TT_factorization": {"$ref": "#/$defs/hash"},
+        "nariai_action_derived_Bach_endpoint": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "repository_action_normalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action", "conformally_flat_mixed_hessian", "operator", "unit_coefficient_verified", "curvature_identity"],
+      "properties": {
+        "action": {"const": "S_red=int sqrt(g)(Ricci^2-R^2/3)=1/2 int sqrt(g)(C2-E4)"},
+        "conformally_flat_mixed_hessian": {"const": "delta_h delta_k S_red=<C1 h,C1 k>"},
+        "operator": {"const": "B_lin=C1^sharp C1"},
+        "unit_coefficient_verified": {"const": true},
+        "curvature_identity": {"$ref": "#/$defs/identity"}
+      }
+    },
+    "evidence_eligibility_ledger": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["artifact", "setting", "establishes", "eligibility"],
+        "properties": {
+          "artifact": {"type": "string"}, "setting": {"type": "string"}, "establishes": {"type": "string"},
+          "eligibility": {"enum": ["ACCEPTED_ACTION_NORMALIZATION_INPUT", "ACCEPTED_CYLINDER_OPERATOR_INPUT", "ACCEPTED_TARGET_NOT_REPOSITORY_IDENTIFICATION", "REJECTED_AS_ROUND_S4_OPERATOR_DICTIONARY_BACKGROUND_MISMATCH"]}
+        }
+      }
+    },
+    "target_operator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bundle", "standard_identity", "repository_identity_status"],
+      "properties": {
+        "bundle": {"const": "real transverse traceless symmetric rank-two tensors"},
+        "standard_identity": {"const": "Delta_2_perp(2)Delta_2_perp(4)=A(A+2)"},
+        "repository_identity_status": {"const": "NOT_COMPUTED_ON_ROUND_S4"}
+      }
+    },
+    "negative_control": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mutation", "mutated_identity", "rejected"],
+      "properties": {"mutation": {"type": "string"}, "mutated_identity": {"$ref": "#/$defs/identity"}, "rejected": {"const": true}}
+    },
+    "minimal_missing_carrier_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["result", "missing_artifact", "required_domain", "required_identity", "required_exact_fields", "why_existing_inputs_do_not_close_it"],
+      "properties": {
+        "result": {"const": "MINIMAL_MISSING_CARRIER_THEOREM"},
+        "missing_artifact": {"const": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"},
+        "required_domain": {"type": "string", "minLength": 40},
+        "required_identity": {"const": "H_TT^repository=kappa Delta_2_perp(2)Delta_2_perp(4)"},
+        "required_exact_fields": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string"}},
+        "why_existing_inputs_do_not_close_it": {"type": "string", "minLength": 80}
+      }
+    },
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["REPOSITORY_ACTION_NORMALIZATION_VERIFIED", "CONFORMALLY_FLAT_C1_ADJOINT_C1_HESSIAN_VERIFIED", "CYLINDER_TT_BACH_FACTORIZATION_IMPORTED", "NARIAI_ENDPOINT_ELIGIBILITY_AUDITED", "ROUND_S4_REPOSITORY_TT_HESSIAN_DICTIONARY_SUPPLIED", "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED", "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED", "QME_DISPOSITION"],
+      "properties": {
+        "REPOSITORY_ACTION_NORMALIZATION_VERIFIED": {"const": true},
+        "CONFORMALLY_FLAT_C1_ADJOINT_C1_HESSIAN_VERIFIED": {"const": true},
+        "CYLINDER_TT_BACH_FACTORIZATION_IMPORTED": {"const": true},
+        "NARIAI_ENDPOINT_ELIGIBILITY_AUDITED": {"const": true},
+        "ROUND_S4_REPOSITORY_TT_HESSIAN_DICTIONARY_SUPPLIED": {"const": false},
+        "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": {"const": false},
+        "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": {"const": false},
+        "QME_DISPOSITION": {"const": false}
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1"},
+    "claim_boundary": {"type": "string", "minLength": 500},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_sha256"], "properties": {"source_sha256": {"type": "object", "minProperties": 8, "additionalProperties": {"$ref": "#/$defs/hash"}}}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["declared_scalar_coefficient", "reduced_coordinates", "half_C2_minus_E4_coordinates", "residual_coordinates", "verified"],
+      "properties": {
+        "declared_scalar_coefficient": {"type": "string"},
+        "reduced_coordinates": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "half_C2_minus_E4_coordinates": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "residual_coordinates": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "verified": {"type": "boolean"}
+      }
+    }
+  }
+}

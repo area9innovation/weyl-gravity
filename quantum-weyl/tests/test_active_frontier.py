@@ -38,7 +38,10 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(self.payload["claim_flags"]["FULL_BV_G2_COMPLETE"])
         self.assertEqual(
             ladder["G3"],
-            "STANDARD_VECTOR_TT_AUXILIARY_AND_GHOST_MEASURE_MATCHED_PHYSICAL_HESSIAN_ZERO_MODES_CONTOUR_OPEN",
+            "STANDARD_VECTOR_TT_AUXILIARY_AND_GHOST_MEASURE_MATCHED_ROUND_S4_TT_DICTIONARY_ZERO_MODES_CONTOUR_OPEN",
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["REPOSITORY_TT_HESSIAN_MISSING_CARRIER_ISOLATED"]
         )
         self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
@@ -98,7 +101,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "MATCH_REPOSITORY_PHYSICAL_HESSIAN_ZERO_MODES_AUXILIARY_CONTOUR_REGULATOR_AND_COMPUTE_SLAVNOV_BREAKING",
+            "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

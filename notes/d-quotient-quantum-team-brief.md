@@ -547,9 +547,16 @@ longitudinal Diff/Weyl Faddeev--Popov block has determinant
 factor at `R=12`. The nonzero-mode York/Hodge and nonminimal measure now
 matches too: the unwanted `Delta_0` Jacobian cancels and every gauge quartet
 has unit superdeterminant, leaving the standard vector/scalar ghost exponents.
-The remaining counting step is the physical repository Hessian normalization,
-global zero modes, auxiliary contour/phase, regulator, and total row/factor
-map; the classical
+The physical-Hessian step has now been reduced to one exact missing carrier.
+The repository action normalization and conformally-flat `C1^sharp C1`
+Hessian are certified, as are the cylinder TT factorization and the
+action-derived Nariai endpoint. The latter two are not a round-`S4` operator
+dictionary. The required artifact is
+`REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1`, proving
+`H_TT^repository=kappa Delta_2_perp(2) Delta_2_perp(4)` with the exact sign,
+scalar, pairing, Laplacian convention, Euler-term policy, and zero-mode
+domain. Global zero modes, auxiliary contour/phase, regulator, and total
+row/factor map remain open; the classical
 54-row carrier is explicitly not a loop-multiplicity authority. The next
 task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
 content-addressed repository regulator/operator/measure match, and compute

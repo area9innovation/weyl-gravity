@@ -1,0 +1,135 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL readiness audit verifies the repository curvature identity, the unit C1-adjoint-C1 Hessian coefficient on conformally flat backgrounds, the existing cylinder TT Bach factorization, the standard Euclidean A(A+2) target, and the action-derived Nariai endpoint. It proves that these are nearby but nonidentical statements. The Nariai endpoint is not eligible as a round-S4 operator dictionary because its background has nonzero parallel Weyl curvature, and the cylinder factorization does not by itself fix the repository round-S4 transverse Laplacian convention. Therefore the exact scalar and sign in H_TT^repository=kappa Delta_2_perp(2)Delta_2_perp(4) remain uncomputed. No repository determinant, anomaly coefficient, Slavnov breaking, QME disposition, D-Cartan class, residual transfer, or Lorentzian quantum theorem is claimed.",
+  "claim_flags": {
+    "CONFORMALLY_FLAT_C1_ADJOINT_C1_HESSIAN_VERIFIED": true,
+    "CYLINDER_TT_BACH_FACTORIZATION_IMPORTED": true,
+    "NARIAI_ENDPOINT_ELIGIBILITY_AUDITED": true,
+    "QME_DISPOSITION": false,
+    "REPOSITORY_ACTION_NORMALIZATION_VERIFIED": true,
+    "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
+    "REPOSITORY_PHYSICAL_HESSIAN_NORMALIZED": false,
+    "ROUND_S4_REPOSITORY_TT_HESSIAN_DICTIONARY_SUPPLIED": false
+  },
+  "classical_commit": "25a0d3ff50dad5c7191c6ea9f560b0b999dec504",
+  "dependency_hashes": {
+    "cylinder_TT_factorization": "42ce4c10b09ac7dd6a8dfee410f3dac21725735d0d02a13d8f9e9b9426afb291",
+    "nariai_action_derived_Bach_endpoint": "1dcc5e83f6942b3598930b8ffe206bc8ff0b0f821d74b9925ad61e5db9b8267d",
+    "standard_TT_auxiliary_match": "042402d481f99845a12bdb80f94ad6349165203577e3c4afff850f42af3366be"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "evidence_eligibility_ledger": [
+    {
+      "artifact": "repository reduced Weyl action",
+      "eligibility": "ACCEPTED_ACTION_NORMALIZATION_INPUT",
+      "establishes": "S_red=(C2-E4)/2 and Hessian B_lin=C1^sharp C1 with unit coefficient",
+      "setting": "four-dimensional conformally flat background"
+    },
+    {
+      "artifact": "pure-weyl-tt-local-factorization-v1",
+      "eligibility": "ACCEPTED_CYLINDER_OPERATOR_INPUT",
+      "establishes": "action-derived reduced TT Bach factorization and r+2,r+4 frequencies",
+      "setting": "unit Lorentzian cylinder and its periodic Euclidean continuation"
+    },
+    {
+      "artifact": "STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH",
+      "eligibility": "ACCEPTED_TARGET_NOT_REPOSITORY_IDENTIFICATION",
+      "establishes": "target A(A+2)=Delta_2_perp(2)Delta_2_perp(4) and auxiliary Schur identity",
+      "setting": "standard constant-curvature Euclidean determinant convention"
+    },
+    {
+      "artifact": "NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1",
+      "eligibility": "REJECTED_AS_ROUND_S4_OPERATOR_DICTIONARY_BACKGROUND_MISMATCH",
+      "establishes": "complete action-derived Nariai Bach endpoint and normalization",
+      "setting": "unit Nariai with nonzero parallel Weyl curvature"
+    }
+  ],
+  "minimal_missing_carrier_theorem": {
+    "missing_artifact": "REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+    "required_domain": "smooth real TT symmetric rank-two tensors on the round unit S4, with zero modes declared separately",
+    "required_exact_fields": [
+      "repository action and Euclidean-continuation convention",
+      "TT L2 pairing and formal-adjoint convention",
+      "definition of Delta_2_perp(M_squared)",
+      "exact scalar kappa including sign",
+      "integration-by-parts and Euler-term policy",
+      "zero-mode domain/exclusion policy"
+    ],
+    "required_identity": "H_TT^repository=kappa Delta_2_perp(2)Delta_2_perp(4)",
+    "result": "MINIMAL_MISSING_CARRIER_THEOREM",
+    "why_existing_inputs_do_not_close_it": "the cylinder factorization and Nariai endpoint live on different backgrounds, while the standard S4 pair is presently only a target determinant convention"
+  },
+  "negative_control": {
+    "mutated_identity": {
+      "declared_scalar_coefficient": "1/4",
+      "half_C2_minus_E4_coordinates": [
+        "0",
+        "1",
+        "-1/3"
+      ],
+      "reduced_coordinates": [
+        "0",
+        "1",
+        "-1/4"
+      ],
+      "residual_coordinates": [
+        "0",
+        "0",
+        "1/12"
+      ],
+      "verified": false
+    },
+    "mutation": "replace the repository R^2 coefficient 1/3 by 1/4",
+    "rejected": true
+  },
+  "next_gate": "SUPPLY_REPOSITORY_ROUND_S4_TT_HESSIAN_DICTIONARY_V1",
+  "proof_sha256": "31638e2151f069b9be640bd52e0e29ad60b8f6e3197a8f6b92b75d8b13aac637",
+  "provenance": {
+    "source_sha256": {
+      "covariant_completion/certificates/tt_local_factorization.json": "42ce4c10b09ac7dd6a8dfee410f3dac21725735d0d02a13d8f9e9b9426afb291",
+      "d_quotient_classical/certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json": "1dcc5e83f6942b3598930b8ffe206bc8ff0b0f821d74b9925ad61e5db9b8267d",
+      "notes/conformal-local-detour.md": "902e5b853fa8a18336ed3bd6b53e9c9c00d66d1a8bb13ac4cb10bc1e6042c1ae",
+      "quantum-weyl/reports/repository-tt-hessian-normalization-readiness.md": "a80bcf9d746e34293f89645015947c5b4adc8d0dc2062ad89c1f81ddf2acb53c",
+      "quantum-weyl/spectral/euclidean/schema/repository-tt-hessian-normalization-readiness-v1.schema.json": "7d684cf3af21d717750bbbc015edac8d759f3b085b72e26f8667fadd9719f1b9",
+      "quantum-weyl/spectral/euclidean/tests/test_tt_hessian_normalization_readiness.py": "4348c313f9e1a161693f5f9c588fc62af84c0dbdcf57a0b601b713113e478016",
+      "quantum-weyl/spectral/euclidean/tt_hessian_normalization_readiness.py": "efdd5ae8aa7ca2a4f1fd472dc7937103f67bdede6dd3abd0d40997f1ec9e4c3f",
+      "quantum-weyl/spectral/euclidean/verify_tt_hessian_normalization_readiness.py": "56e27ea07b0db30d94c3378221d25214f2ed666c399c6c73b3617ac8b1b864c0",
+      "symbolic/verify_conformal_detour_action.py": "1167b0e4d102e661b32f16a52457eb51173fbfb24190312d9a51577aff0702c0"
+    }
+  },
+  "repository_action_normalization": {
+    "action": "S_red=int sqrt(g)(Ricci^2-R^2/3)=1/2 int sqrt(g)(C2-E4)",
+    "conformally_flat_mixed_hessian": "delta_h delta_k S_red=<C1 h,C1 k>",
+    "curvature_identity": {
+      "declared_scalar_coefficient": "1/3",
+      "half_C2_minus_E4_coordinates": [
+        "0",
+        "1",
+        "-1/3"
+      ],
+      "reduced_coordinates": [
+        "0",
+        "1",
+        "-1/3"
+      ],
+      "residual_coordinates": [
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    "operator": "B_lin=C1^sharp C1",
+    "unit_coefficient_verified": true
+  },
+  "result_id": "REPOSITORY_TT_HESSIAN_NORMALIZATION_READINESS",
+  "result_state": "ACTION_NORMALIZATION_AND_NEARBY_FACTORIZATIONS_VERIFIED_ROUND_S4_TT_DICTIONARY_NOT_SUPPLIED",
+  "schema": "quantum-weyl-repository-tt-hessian-normalization-readiness-v1",
+  "target_operator": {
+    "bundle": "real transverse traceless symmetric rank-two tensors",
+    "repository_identity_status": "NOT_COMPUTED_ON_ROUND_S4",
+    "standard_identity": "Delta_2_perp(2)Delta_2_perp(4)=A(A+2)"
+  }
+}
