@@ -624,14 +624,24 @@ ghost-coordinate redefinitions were not admitted.  The earlier provisional
 obstruction from an absolute-weight or untyped zero-jet matrix is superseded
 and must not be cited.
 
+The scoped obstruction has now supplied its missing carrier and is superseded
+as a zero-page verdict.  `BERGER_RETAINED_MIXED_ELL3_ZERO_JET_GHOST_SHEAR_COMPLETION_V1`
+adds exactly the three retained components of the already-certified typed
+Maxwell covariant-ghost shear.  The target-connected matrix becomes
+`477 x 289` with rank and augmented rank both 132.  An explicit 67-coefficient
+primitive, entirely in `F2`, includes the three ghost-shear base maps with
+coefficient `-1` and reconstructs all 186 canonical two-Maxwell zero-word BV
+coefficients with zero missing, extra, or changed entries.  Thus the complete
+zero-PBW full-BV page is trivial in the extended certified ansatz; the
+physical-only witness was a useful smallest-missing-carrier diagnostic, not a
+deformation obstruction.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
-2. Continue N-G4 by extending the convention rail to nonlinear ghost
-   coordinate maps and testing them against the normalized zero-word BV
-   witness.  In parallel, close total PBW order two as the remaining physical
-   action page; PBW augmentation proves that page cannot remove the present
-   zero-word witness.  Do not reuse the
+2. Continue N-G4 with total PBW order two; the zero-word physical and full-BV
+   pages are now both explicitly trivialized, and the certified ghost shear
+   is part of the available `F2` carrier.  Do not reuse the
    order-zero or order-one physical-action coefficients as obstructions:
    both physical pages are certified exact.  Return either a complete
    jet-bounded trivializing \((F_2,F_3)\) or the first normalized order-two/full-BV
