@@ -1,0 +1,43 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "POLARIZATION_TWO_FORM_EMITTER_UNARY_FIRST_RECOIL_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The selected two massive polarization two-forms are appended as 24 explicitly indexed field/antifield rows with a rank-24 odd pairing, giving degree ranks (6,48,48,6). The six new unary operator blocks satisfy the Maxwell gauge, Noether, and Hessian-adjoint cyclicity identities. The exact massive-two-form Green formula and a same-sided coupled Euler inverse through g^2 yield the first formal Maxwell recoil self-energy. This does not export every inclusion, projection, and homotopy map in a full 108-row BV causal contraction, prove rank two for actual emitter Cauchy preparations, evaluate the detector recoil coefficient, include emitter stress, establish finite-parameter apparatus Green hyperbolicity, construct the full Dirac algebra, or make a quantum claim.",
+  "tier_0": [{"command": "py_compile, json.tool, git diff --check, and explicit SHA-256 replay on emitter-unary/recoil and observer planning paths", "elapsed_seconds": "under 1 plus final checks", "status": "PASS", "scope": "producer, verifier, tests, schema, certificate, report, receipt, comparison ledger, README, brief, roadmap, and comparison report"}],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_108_row_emitter_unary_recoil --check", "elapsed_seconds": "under 1", "status": "PASS", "scope": "row/pairing construction, unary identities, massive Green formula, formal recoil inverse, mutations, schema, and freshness"},
+    {"command": "python3 -m closed_universe_observers.verify_berger_108_row_emitter_unary_recoil", "elapsed_seconds": "under 1", "status": "PASS", "scope": "independent row order, Green inverse, recoil coefficient, dependency/source hashes, and overclaim boundary"},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_108_row_emitter_unary_recoil.py", "elapsed_seconds": "0.54", "status": "PASS", "scope": "all 4 carrier/pairing, unary, Green/recoil, mutation, and fail-closed tests"},
+    {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s closed_universe_observers/schema/berger-108-row-polarization-emitter-unary-first-recoil-v1.schema.json -d closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json", "elapsed_seconds": "included in focused checks", "status": "PASS", "scope": "strict Draft 2020-12 validation"},
+    {"command": "python3 closed_universe_observers/verify_comparison_ledger.py", "elapsed_seconds": "under 1", "status": "PASS", "scope": "historical imports, bridge hashes, 108-row unary/recoil status, and fail-closed next gate"}
+  ],
+  "tier_2": [{"command": "pytest -q closed_universe_observers/tests", "elapsed_seconds": "207.10", "status": "PASS", "scope": "all 89 closed-universe observer tests"}],
+  "higher_tiers": [{"tier": 3, "status": "NOT_RUN", "criterion": "This adds an observer-owned unary and formal Euler Green certificate but does not alter shared core algebra, certify the full BV causal contraction, promote a finite-parameter or all-orders theorem, freeze a release, or make a quantum claim."}],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json", "sha256": "19666c947d0ea45cd62e516bc24310ca005074544f6ab56e292366c1db8d69db"},
+    {"path": "closed_universe_observers/schema/berger-108-row-polarization-emitter-unary-first-recoil-v1.schema.json", "sha256": "3b330c378f3652901adc1022758154c62354bbb890fe2dd8e9f2e0f16034dc4d"},
+    {"path": "closed_universe_observers/generate_berger_108_row_emitter_unary_recoil.py", "sha256": "20c391a80620bf87b49345e08c869a9e5a10e38a661973248312f12fa16861f6"},
+    {"path": "closed_universe_observers/verify_berger_108_row_emitter_unary_recoil.py", "sha256": "e18a1fa9caa7a3c5bd435b4c0a4e491d5f479507f1a2416afa46d942b71ad26e"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_emitter_unary_recoil.py", "sha256": "7eeeb8a1069992705195e467b4b28043852df6b31abad58972533bab010ec523"},
+    {"path": "closed_universe_observers/reports/berger-108-row-polarization-emitter-unary-first-recoil.md", "sha256": "0225bc0d2dfe246ccc995e9d36642ca2f57f5ad0503aa58dffd2fa74b6a9a730"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "ae604749a9239f3beec65ba989ffad19f3dd711dad43797d4cccbfc81b94dd20"},
+    {"path": "closed_universe_observers/README.md", "sha256": "6ba2a26dbdc8403fa88301209c9eea860b4ccf2e8a7986be619526ea2e7df15c"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "81da7e4e86bd76719f71490b4a5169f238482bc0b2b4840e4a2b15ab531960c0"},
+    {"path": "notes/universe-building-roadmap.md", "sha256": "eb2d4869f93265f908cf36218fc4b79a4ce51ccffcecc9bca3042bcffc5d3f0b"},
+    {"path": "closed_universe_observers/reports/first-comparison.md", "sha256": "e9590aea921403ed094c754b373ac0c1455bf8640f68bcd3ed2161b383708a34"}
+  ],
+  "claim_flags": {
+    "108_ROW_Q1_CERTIFIED": true,
+    "108_ROW_UNARY_NILPOTENCY_CERTIFIED": true,
+    "108_ROW_UNARY_CYCLICITY_CERTIFIED": true,
+    "MASSIVE_TWO_FORM_ADVANCED_RETARDED_GREEN_CERTIFIED": true,
+    "108_ROW_FORMAL_COUPLED_EULER_GREEN_THROUGH_G2_CERTIFIED": true,
+    "FIRST_FORMAL_EMITTER_RECOIL_GREEN_OPERATOR_COMPUTED": true,
+    "FULL_108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": false,
+    "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": false,
+    "DETECTOR_RECOIL_COEFFICIENT_EVALUATED": false,
+    "EMITTER_STRESS_BACKREACTION_INCLUDED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

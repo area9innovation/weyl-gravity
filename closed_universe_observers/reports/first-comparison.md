@@ -274,6 +274,13 @@ M=\begin{pmatrix}-\beta S_0&0\\ \mu&\beta C_1\end{pmatrix},
 
 This certifies two receiver-adjacent localized conserved emitter currents.
 It does not yet place both preparations at the original common Hopf emitter.
+The selected massive polarization-two-form successor now enlarges the
+apparatus to 108 rows.  Its unary gate explicitly indexes all 24 new rows,
+verifies their rank-24 odd pairing, closes the new unary identities, and
+constructs the exact emitter Green operator plus the first formal `g^2`
+Maxwell recoil term.  This is a coupled Euler inverse; the full 108-row BV
+inclusion, projection, and homotopy maps and the rank replay for actual free
+emitter Cauchy data remain open.
 
 Gauge tests remain deliberately separate.  Diff covariance, Weyl invariance,
 and Maxwell gauge invariance pass for the localized probe functionals.  Six
@@ -316,7 +323,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus carrier | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | receiver-adjacent localized emitters give a triangular rank-two response; common Hopf emitter and finite-parameter Green hyperbolicity open | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | receiver-adjacent external currents give triangular rank two; the dynamical-emitter Euler Green operator is formal through first recoil, while actual Cauchy-preparation rank and full BV chain maps remain open | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -335,7 +342,7 @@ formal Green coefficient, and apparatus `q2,q3` action jets with cyclic
 cotangent partners, the Ward-determined `q4(K0,-,-,-)` contraction, and the
 scoped C-G4 record Poisson algebra are no longer missing.  Two receiver-adjacent
 localized conserved emitters and their rank-two transfer are also exact.  The
-the primary missing object was a typed dynamical-emitter theory.  An exact
+primary missing object was a typed dynamical-emitter theory.  An exact
 input gate showed that two cyclic local completions reproduce the same frozen
 current but give recoil coefficients `1/2` and `1/5`; the coefficient was not
 inferable before a model choice.  The localized determinant remains a nonzero
@@ -344,7 +351,7 @@ The handoff is now supplied by a standard massive polarization-two-form model
 with compact relational switching.  It fixes an off-shell conserved current,
 reciprocal recoil equation, and nondegenerately paired 108-row carrier.
 Emitter recoil/backreaction becomes computable after the complete 108-row
-unary causal complex and actual localized Cauchy preparations are constructed;
+causal chain maps and actual localized Cauchy preparations are constructed;
 placing both preparations at the original common Hopf event is a separate
 stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
@@ -421,3 +428,7 @@ The model-selection successor freezes the standard massive two-form action,
 its constraint-reduced common causal cone, conserved current, reciprocal
 recoil block, and 108-row carrier.  Its receipt is
 `closed_universe_observers/receipts/POLARIZATION_TWO_FORM_EMITTER_HANDOFF_TIER_RECEIPT.json`.
+The unary/recoil successor explicitly certifies the appended row order and
+pairing, the six new unary blocks and their identities, the massive two-form
+Green formula, and the first formal coupled Euler recoil term.  Its receipt is
+`closed_universe_observers/receipts/POLARIZATION_TWO_FORM_EMITTER_UNARY_FIRST_RECOIL_TIER_RECEIPT.json`.

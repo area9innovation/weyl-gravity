@@ -44,6 +44,8 @@ python3 -m closed_universe_observers.generate_berger_dynamical_emitter_recoil_ga
 python3 -m closed_universe_observers.verify_berger_dynamical_emitter_recoil_gate
 python3 -m closed_universe_observers.generate_berger_polarization_emitter_handoff --check
 python3 -m closed_universe_observers.verify_berger_polarization_emitter_handoff
+python3 -m closed_universe_observers.generate_berger_108_row_emitter_unary_recoil --check
+python3 -m closed_universe_observers.verify_berger_108_row_emitter_unary_recoil
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -144,7 +146,13 @@ The selected successor is a standard massive polarization two-form model on
 contains the Maxwell recoil.  Two six-component fields plus cotangent partners
 extend the apparatus from 84 to 108 rows.  The complete 108-row differential,
 causal contraction, actual Cauchy-preparation rank, and stress backreaction are
-the next construction.
+the next construction.  The unary successor now explicitly indexes the 24
+emitter rows and their rank-24 odd pairing, closes the new nilpotency and
+cyclicity paths, and constructs the exact massive-two-form Green operator and
+the first formal Maxwell recoil self-energy through order `g^2`.  This is a
+coupled Euler inverse, not yet the full 108-row BV inclusion/projection/homotopy
+package.  Exporting those chain maps and realizing rank two with actual free
+emitter Cauchy data are the immediate next gates.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-108-row-polarization-emitter-unary-first-recoil-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "carrier_and_background", "q1_new_blocks", "massive_two_form_causal_inverse", "coupled_recoil_green", "record_rank_disposition", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-polarization-emitter-unary-first-recoil-v1"},
+    "result_id": {"const": "BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_108_ROW_EMITTER_UNARY_AND_FIRST_FORMAL_RECOIL_EULER_GREEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4},
+    "carrier_and_background": {"type": "object", "required": ["degree_ranks_minus1_0_1_2", "total_rows", "ordered_new_rows", "new_pairing_rank", "new_pairing_nondegenerate"], "properties": {"degree_ranks_minus1_0_1_2": {"const": [6,48,48,6]}, "total_rows": {"const": 108}, "ordered_new_rows": {"type": "array", "minItems": 24, "maxItems": 24}, "new_pairing_rank": {"const": 24}, "new_pairing_nondegenerate": {"const": true}}},
+    "q1_new_blocks": {"type": "object"},
+    "massive_two_form_causal_inverse": {"type": "object", "required": ["left_right_defect_count"], "properties": {"left_right_defect_count": {"const": 0}}},
+    "coupled_recoil_green": {"type": "object"},
+    "record_rank_disposition": {"type": "object", "required": ["actual_emitter_Cauchy_preparation_matrix_computed"], "properties": {"actual_emitter_Cauchy_preparation_matrix_computed": {"const": false}}},
+    "mutation_results": {"type": "array", "minItems": 5},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["108_ROW_Q1_CERTIFIED", "108_ROW_UNARY_NILPOTENCY_CERTIFIED", "108_ROW_UNARY_CYCLICITY_CERTIFIED", "MASSIVE_TWO_FORM_ADVANCED_RETARDED_GREEN_CERTIFIED", "108_ROW_FORMAL_COUPLED_EULER_GREEN_THROUGH_G2_CERTIFIED", "FIRST_FORMAL_EMITTER_RECOIL_GREEN_OPERATOR_COMPUTED", "FULL_108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED", "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED", "DETECTOR_RECOIL_COEFFICIENT_EVALUATED", "EMITTER_STRESS_BACKREACTION_INCLUDED", "FINITE_PARAMETER_84_ROW_APPARATUS_GREEN_HYPERBOLICITY_CERTIFIED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"108_ROW_Q1_CERTIFIED": {"const": true}, "108_ROW_UNARY_NILPOTENCY_CERTIFIED": {"const": true}, "108_ROW_UNARY_CYCLICITY_CERTIFIED": {"const": true}, "MASSIVE_TWO_FORM_ADVANCED_RETARDED_GREEN_CERTIFIED": {"const": true}, "108_ROW_FORMAL_COUPLED_EULER_GREEN_THROUGH_G2_CERTIFIED": {"const": true}, "FIRST_FORMAL_EMITTER_RECOIL_GREEN_OPERATOR_COMPUTED": {"const": true}, "FULL_108_ROW_CAUSAL_CHAIN_CONTRACTION_CERTIFIED": {"const": false}, "DYNAMICAL_EMITTER_RECORD_RANK_TWO_CERTIFIED": {"const": false}, "DETECTOR_RECOIL_COEFFICIENT_EVALUATED": {"const": false}, "EMITTER_STRESS_BACKREACTION_INCLUDED": {"const": false}, "FINITE_PARAMETER_84_ROW_APPARATUS_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false}, "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"type": "string"}, "claim_boundary": {"type": "string"}, "provenance": {"type": "object"}
+  }
+}

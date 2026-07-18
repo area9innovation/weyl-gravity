@@ -166,11 +166,21 @@ compact functions of the dynamical clock.  The current
 constraint reduction is normally hyperbolic and the carrier grows from 84 to
 108 rows with degree ranks `(6,48,48,6)`.
 
+`BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL` now explicitly
+appends the 24 emitter field/antifield rows, verifies their odd pairing has
+rank 24, and exports all six new row-indexed unary blocks.  The new Maxwell
+gauge and Noether paths close by `d^2=delta^2=0`, and Hessian adjointness closes
+unary cyclicity.  The massive two-form Green formula is exact, while the
+coupled Neumann inverse gives the first formal Maxwell recoil self-energy
+through order `g^2`.  This is deliberately not called a full 108-row BV causal
+chain contraction: its deformed inclusion, projection, and homotopy maps have
+not yet been exported.
+
 ### Immediate priority after the polarization-emitter handoff
 
-1. Construct the complete 108-row unary BV differential and causal chain
-   contraction, then choose localized emitter Cauchy preparations and replay
-   the leading record rank and first recoil correction.
+1. Complete the 108-row BV causal chain maps from the now-certified unary and
+   Euler Green data, then choose localized emitter Cauchy preparations and
+   replay the leading record rank and first recoil correction.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,
