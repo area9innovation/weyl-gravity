@@ -902,6 +902,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         != "COMPOSITIONAL_RECEIVER_READY_PHYSICAL_LEDGER_NOT_SUPPLIED"
         or regulator_flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY")
         is not True
+        or regulator_flags.get("NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND") is not True
         or regulator_flags.get(
             "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED"
         )
@@ -1126,6 +1127,7 @@ def build() -> dict[str, Any]:
             "nonconformal_coefficient_match_receiver_ready": True,
             "Euclidean_elliptic_complex_receiver_ready": True,
             "regulator_zero_mode_measure_receiver_ready": True,
+            "negative_scalar_phase_locality_bound": True,
             "classical_snapshot_compatibility_bridge_gap": False,
             "physical_classical_snapshot_compatibility_accepted": True,
             "regulated_BV_insertion_v2_receiver_ready": True,
@@ -1147,6 +1149,7 @@ def build() -> dict[str, Any]:
             "NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY": True,
             "EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY": True,
             "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True,
+            "NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND": True,
             "CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND": True,
             "REGULATED_BV_INSERTION_V2_RECEIVER_READY": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
@@ -1192,6 +1195,7 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         or flags.get("NONCONFORMAL_COEFFICIENT_MATCH_RECEIVER_READY") is not True
         or flags.get("EUCLIDEAN_ELLIPTIC_COMPLEX_RECEIVER_READY") is not True
         or flags.get("REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY") is not True
+        or flags.get("NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND") is not True
         or flags.get("CLASSICAL_SNAPSHOT_COMPATIBILITY_SEMANTIC_RECEIVER_BOUND")
         is not True
         or flags.get("REGULATED_BV_INSERTION_V2_RECEIVER_READY") is not True

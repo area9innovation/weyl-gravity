@@ -11,8 +11,10 @@ For physical inputs it recursively invokes the semantic elliptic-complex,
 multiplicity, and cross-snapshot validators rather than trusting result IDs.
 
 The standard round-`S4` integration slice supplies local regulator, measure,
-priming, and auxiliary-contour evidence, but its global determinant phase and
-repository binding are open. The accepted full-BV multiplicity ledger binds
+priming, and auxiliary-contour evidence. The unique negative scalar phase is
+now explicit and proved irrelevant to the local `b4` density and local Slavnov
+variation on its fixed-sign chamber; no global determinant branch is selected.
+Repository binding remains open. The accepted full-BV multiplicity ledger binds
 repository rows and standard factors, but is not itself a regulator or phase
 ledger. The elliptic receiver remains ready without a physical full symbol
 complex. These complementary artifacts are not silently composed.

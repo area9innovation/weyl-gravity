@@ -84,6 +84,10 @@ The regulator/zero-mode/measure carrier now has an executable compositional
 receiver. It keeps the accepted repository multiplicity ledger, the standard
 local regulator and priming slice, and the still-open global phase policy
 distinct until one content-addressed physical ledger binds them.
+The unique negative scalar level-zero mode has now been evaluated separately:
+the two spectral cuts give opposite half-integer phases, and the phase has
+zero local Slavnov variation on the fixed-sign chamber. This removes it from
+the local anomaly decision while leaving the global determinant branch open.
 
 ## Exact remaining gap
 

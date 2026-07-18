@@ -612,6 +612,12 @@ symmetry volume, and a fixed or locally irrelevant global phase policy. The
 standard round-`S4` slice and accepted repository multiplicity ledger provide
 complementary inputs but are deliberately not promoted to the combined
 physical carrier without a content-addressed composition artifact.
+The unique negative scalar level-zero factor has an exact phase-locality
+certificate: upper and lower cuts give Gamma phases `-i*pi/2` and `+i*pi/2`,
+and their phase is locally constant while the eigenvalue stays negative.
+Hence it does not alter the support-local `b4` density or local Slavnov
+breaking, although the global determinant branch and symmetry-volume
+normalization remain open.
 
 The multiplicity receiver is executable rather than schema-only. It requires
 complete row/factor coverage, the exact four target ranks and determinant

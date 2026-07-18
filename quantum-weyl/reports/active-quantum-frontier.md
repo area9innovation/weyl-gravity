@@ -127,6 +127,10 @@ parity policies, indefinite contours, symmetry-volume normalization, and the
 global phase disposition. The standard round-`S4` slice and accepted physical
 multiplicity ledger supply complementary evidence but are not implicitly
 composed into this missing repository carrier.
+The single negative scalar level-zero mode is no longer a local-coefficient
+ambiguity: its upper/lower cut phases are explicit and its local Slavnov
+variation vanishes on the fixed-sign chamber. The global determinant branch
+and continuous conformal-group volume remain separate open data.
 
 The Slavnov assembly gate now records the sharper post-composer boundary.
 The accepted physical TT dictionary and full-BV ledger now permit the

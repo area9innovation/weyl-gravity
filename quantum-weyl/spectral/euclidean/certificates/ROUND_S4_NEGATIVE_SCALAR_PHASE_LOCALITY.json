@@ -1,0 +1,93 @@
+{
+  "claim_boundary": "This exact finite-mode calculation fixes both spectral-cut phases of the unique negative level-zero eigenvalue of Delta_0-4 and proves that the branch phase is constant while that eigenvalue remains negative. A finite-rank branch phase changes neither the local principal symbol nor the local b4 density and has zero local Slavnov variation on the fixed-sign chamber. The magnitude, overall partition-function phase, continuous-symmetry volume, full repository regulator ledger, coefficient match and QME remain open. No Lorentzian claim is made.",
+  "claim_flags": {
+    "GLOBAL_DETERMINANT_BRANCH_SELECTED": false,
+    "NEGATIVE_SCALAR_PHASE_EXPLICIT": true,
+    "PHASE_IRRELEVANT_TO_LOCAL_B4_DENSITY": true,
+    "PHASE_IRRELEVANT_TO_LOCAL_SLAVNOV_BREAKING_ON_FIXED_SIGN_CHAMBER": true,
+    "QME_DISPOSITION": false,
+    "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": false
+  },
+  "dependency_hashes": {
+    "integration_slice": "edde6206a9dc62d0b8e65b9197509cb5e20136f3db523300efcb2a4f868ca509",
+    "zero_modes": "1e1d75b2a199c8fcb58455da0753c62e88a885c892f163650b0b13c966ea765b"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "locality": {
+    "BRST_or_Weyl_variation_of_phase_on_chamber": "ZERO",
+    "eigenvalue_crossing_requires_separate_treatment": true,
+    "finite_rank_magnitude_and_phase_remain_global_determinant_data": true,
+    "finite_rank_phase_changes_local_symbol_b4_density": false,
+    "spectral_cut_phase_constant_on_negative_eigenvalue_chamber": true
+  },
+  "mode": {
+    "degeneracy": 1,
+    "eigenvalue_at_unit_radius": -4,
+    "factor_id": "ghost_depth_0",
+    "harmonic_level": 0,
+    "radius_scaling": "lambda_0(a)=-4/a^2"
+  },
+  "negative_control": {
+    "mutated_phase": {
+      "Gamma_logdet_exponent": {
+        "denominator": 2,
+        "numerator": -1
+      },
+      "lower_cut_Gamma_phase_in_units_of_i_pi": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "lower_cut_log_phase_in_units_of_i_pi": -2,
+      "negative_mode_count": 2,
+      "phase_jump_in_units_of_i_pi": {
+        "denominator": 1,
+        "numerator": -2
+      },
+      "upper_cut_Gamma_phase_in_units_of_i_pi": {
+        "denominator": 1,
+        "numerator": -1
+      },
+      "upper_cut_log_phase_in_units_of_i_pi": 2
+    },
+    "mutation": "double the level-zero degeneracy",
+    "rejected": true
+  },
+  "next_gate": "BIND_PHASE_LOCALITY_TO_REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER",
+  "phase": {
+    "Gamma_logdet_exponent": {
+      "denominator": 2,
+      "numerator": -1
+    },
+    "lower_cut_Gamma_phase_in_units_of_i_pi": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "lower_cut_log_phase_in_units_of_i_pi": -1,
+    "negative_mode_count": 1,
+    "phase_jump_in_units_of_i_pi": {
+      "denominator": 1,
+      "numerator": -1
+    },
+    "upper_cut_Gamma_phase_in_units_of_i_pi": {
+      "denominator": 2,
+      "numerator": -1
+    },
+    "upper_cut_log_phase_in_units_of_i_pi": 1
+  },
+  "proof_sha256": "96ad04571c10ee47db38be41d19d92955397f9e5bbf437bea4384da25fc1f85b",
+  "provenance": {
+    "source_sha256": {
+      "quantum-weyl/reports/round-s4-negative-scalar-phase-locality.md": "56609312271e0549c41fcf3e5a4faca234453f09391b35fc666a7cb975f2e9f4",
+      "quantum-weyl/spectral/euclidean/round_s4_negative_scalar_phase.py": "13ae0435c8a70349fdab5ca26e06e9c29f9ffb597de3cdf7b32dc62213346845",
+      "quantum-weyl/spectral/euclidean/schema/round-s4-negative-scalar-phase-locality-v1.schema.json": "734a09ed857de9daedde753d65e7c6096e93ae26296223cf3e768533f33a3b1b",
+      "quantum-weyl/spectral/euclidean/tests/test_round_s4_negative_scalar_phase.py": "c53c586570adc1825e9cde3f6d46befb4e68cabef827f3b24bfb196f38a931dc",
+      "quantum-weyl/spectral/euclidean/verify_round_s4_negative_scalar_phase.py": "4f623d671d695237b708b9464ebe4de04edad3df38f1c7782aa99f53deb726f8"
+    }
+  },
+  "result_id": "ROUND_S4_NEGATIVE_SCALAR_PHASE_LOCALITY",
+  "result_state": "SPECTRAL_CUT_PHASE_EXPLICIT_LOCAL_B4_AND_LOCAL_SLAVNOV_INDEPENDENT_GLOBAL_BRANCH_OPEN",
+  "schema": "quantum-weyl-round-s4-negative-scalar-phase-locality-v1"
+}

@@ -24,6 +24,7 @@ DEPENDENCIES = {
     "physical_multiplicity": HERE / "certificates/REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER.json",
     "elliptic_readiness": HERE / "certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_READINESS.json",
     "snapshot_compatibility": ROOT / "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
+    "negative_scalar_phase": HERE / "certificates/ROUND_S4_NEGATIVE_SCALAR_PHASE_LOCALITY.json",
 }
 SOURCE_PATHS = (
     "quantum-weyl/spectral/euclidean/regulator_measure_receiver.py",
@@ -82,8 +83,17 @@ def build() -> dict[str, Any]:
         raise ValueError("physical multiplicity ledger drifted")
     if values["elliptic_readiness"].get("claim_flags", {}).get("REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED") is not False:
         raise ValueError("elliptic readiness boundary drifted")
+    phase_flags = values["negative_scalar_phase"].get("claim_flags", {})
+    if (
+        phase_flags.get(
+            "PHASE_IRRELEVANT_TO_LOCAL_SLAVNOV_BREAKING_ON_FIXED_SIGN_CHAMBER"
+        )
+        is not True
+        or phase_flags.get("GLOBAL_DETERMINANT_BRANCH_SELECTED") is not False
+    ):
+        raise ValueError("negative scalar phase locality drifted")
     candidates = [
-        {"candidate_id": values["standard_slice"]["result_id"], "repository_bound": False, "measure": True, "zero_modes": True, "local_regulator": True, "global_phase_policy": False, "complete": False, "disposition": "STANDARD_BACKGROUND_SLICE_GLOBAL_PHASE_AND_REPOSITORY_BINDING_OPEN"},
+        {"candidate_id": values["standard_slice"]["result_id"], "repository_bound": False, "measure": True, "zero_modes": True, "local_regulator": True, "global_phase_policy": True, "complete": False, "disposition": "STANDARD_BACKGROUND_SLICE_PHASE_LOCALLY_IRRELEVANT_REPOSITORY_BINDING_OPEN"},
         {"candidate_id": values["physical_multiplicity"]["result_id"], "repository_bound": True, "measure": True, "zero_modes": True, "local_regulator": False, "global_phase_policy": False, "complete": False, "disposition": "REPOSITORY_MULTIPLICITY_LEDGER_NOT_REGULATOR_OR_GLOBAL_PHASE_LEDGER"},
         {"candidate_id": values["elliptic_readiness"]["result_id"], "repository_bound": False, "measure": False, "zero_modes": False, "local_regulator": False, "global_phase_policy": False, "complete": False, "disposition": "ELLIPTIC_RECEIVER_READY_PHYSICAL_COMPLEX_UNSUPPLIED"},
     ]
@@ -97,7 +107,7 @@ def build() -> dict[str, Any]:
         "accepted_contract": {"required_result_id": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER", "input_schema_path": str(INPUT_SCHEMA.relative_to(ROOT)), "physical_input_status": "NOT_SUPPLIED"},
         "receiver_mechanics": {"synthetic_receipt": receipt, "mutation_receipts": mutations},
         "current_candidate_audit": candidates,
-        "claim_flags": {"REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True, "CURRENT_CANDIDATES_AUDITED": True, "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": False, "REGULATED_SLAVNOV_BREAKING_COMPUTED": False, "QME_DISPOSITION": False},
+        "claim_flags": {"REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY": True, "NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND": True, "CURRENT_CANDIDATES_AUDITED": True, "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER_CERTIFIED": False, "REGULATED_SLAVNOV_BREAKING_COMPUTED": False, "QME_DISPOSITION": False},
         "proof_sha256": _canonical_hash(proof_payload),
         "next_gate": "REPOSITORY_REGULATOR_ZERO_MODE_MEASURE_LEDGER",
         "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL readiness certificate defines a compositional receiver for the repository full-BV determinant measure, zero-mode priming and symmetry-volume policy, covariant local regulator, indefinite-direction contours, and global phase disposition. The standard round-S4 slice supplies local factor evidence and the accepted multiplicity ledger supplies repository row binding, but neither artifact alone supplies the complete carrier. Receiver mechanics use a synthetic fixture only. No physical combined ledger, regulated Slavnov breaking, QME disposition, or Lorentzian quantum theory is claimed.",

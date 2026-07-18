@@ -105,6 +105,9 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
             value["claim_flags"]["REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY"]
         )
         self.assertTrue(
+            value["claim_flags"]["NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND"]
+        )
+        self.assertTrue(
             value["claim_flags"]["REGULATED_BV_INSERTION_V2_RECEIVER_READY"]
         )
         self.assertEqual(

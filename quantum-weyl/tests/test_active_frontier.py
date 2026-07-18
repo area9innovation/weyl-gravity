@@ -108,6 +108,9 @@ class ActiveFrontierTests(unittest.TestCase):
                 "REGULATOR_ZERO_MODE_MEASURE_RECEIVER_READY"
             ]
         )
+        self.assertTrue(
+            self.payload["claim_flags"]["NEGATIVE_SCALAR_PHASE_LOCALITY_BOUND"]
+        )
         self.assertFalse(
             self.payload["claim_flags"]["REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED"]
         )
