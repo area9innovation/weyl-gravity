@@ -777,6 +777,25 @@ projectors and a nonradical extra Gram matrix `diag(16,3)`, but remains
 nonzero-`k` cofiber are still absent.  It therefore strengthens the atlas
 without activating cyclic Bridge 2.
 
+The compact-product Bridge-2 receiver is now frozen as
+`EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1`, with
+atlas row
+`nonlinear.product.bridge2.relative_linfinity_through_arity_three_preflight`.
+Its activation gate is exactly three same-background inputs: the full
+off-shell `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`, the complete
+`EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1`, and the complete
+`WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1`.  All three are
+currently `MISSING`, so every atlas axis is `NO_CERTIFIED_MAP`.  The receiver
+validates full-BV rows, support locality, cyclic pairing, the arity-two and
+arity-three identities, `H_product` equivariance, exact artifact hashes and
+an independent-verifier flag.  It rejects Berger-background payloads and
+does not accept sectoral/on-shell branch maps or selected source fixtures as
+scientific substitutes.  Once all inputs pass, compute `Delta2`, its exact
+primitive or normalized cofiber witness, the complete arity-three morphism
+defect, and then the induced cohomology/deformation verdict.  The existing
+Berger filtered-cyclic `ell3` obstruction remains untouched and `q4` remains
+unauthorized.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.

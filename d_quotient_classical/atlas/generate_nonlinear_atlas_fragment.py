@@ -27,6 +27,7 @@ CERTS = {
     "relative_branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "abd_extra_source": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_ell2_extra_resonance_matrix.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
+    "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
 }
 
 
@@ -174,6 +175,16 @@ def entries() -> list[dict[str, Any]]:
         "m": "all three real SO(3) components",
         "k": 0,
         "omega": "twist omega^2=0 axially, extra omega^2=4/3, standard omega^2=4",
+    }
+    relative_linfinity_scope = {
+        **product_common,
+        "carrier": "prospective full off-shell Einstein--Weyl relative BV triangle with complete same-background Einstein-Maxwell and Weyl-Maxwell q1,q2,q3 Taylor payloads",
+        "degree": "all BV degrees",
+        "parity": "all axial, polar, exceptional and global sectors",
+        "ell": "all sectors required by the full relative triangle",
+        "m": "all sectors required by the full relative triangle",
+        "k": "all compact-product Fourier sectors required by the full relative triangle",
+        "omega": "all product-mode frequencies required by the full relative triangle",
     }
     return [
         {
@@ -337,6 +348,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("exceptional_ell1_cofiber", "relative_branch_dictionary", "dictionary"),
             "claim_boundary": "This is an exact same-background REDUCED-MODE solution cofiber only at ell=1,k=0. The exceptional off-shell ghost-field-equation-identity chain map, nonzero-k cofiber and final residual descent remain open, so this row does not activate cyclic Bridge 2.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_linfinity_through_arity_three_preflight",
+            "scope": relative_linfinity_scope,
+            "descriptions": {axis: "NO_CERTIFIED_MAP" for axis in AXES},
+            "mode_data": _mode_data(
+                _second(
+                    ("NO_CERTIFIED_MAP", "The full off-shell relative triangle and both same-background product Taylor payloads are missing."),
+                    ("NO_CERTIFIED_MAP", "No full relative morphism exists on which to compare smooth-secular correction classes."),
+                    ("NO_CERTIFIED_MAP", "No compact-product retarded relative morphism is certified."),
+                ),
+                dispersion=("NO_CERTIFIED_MAP", "Sectoral solution cofibers do not supply the full off-shell relative carrier."),
+                pairing=("NO_CERTIFIED_MAP", "The required full-BV cyclic pairing compatibility has not been imported on both sides of the triangle."),
+                taub=("NO_CERTIFIED_MAP", "Selected D^2E=q2 source blocks do not constitute the complete relative cokernel map."),
+                resonance=("NO_CERTIFIED_MAP", "Delta2, the arity-three morphism defect and their cohomology images have not been computed."),
+            ),
+            "evidence": _evidence("relative_linfinity_preflight", "relative_branch_dictionary", "dictionary", "mixed_obstruction"),
+            "claim_boundary": "Compact-product Bridge 2 is INPUT_BLOCKED until Bridge 1 supplies EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1 and complete same-background Einstein-Maxwell and Weyl-Maxwell q1,q2,q3 payloads. Sectoral cofibers, on-shell maps, selected D^2E sources and all Berger tensors are ineligible substitutes. Cohomology survival, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP. The Berger filtered-cyclic ell3 obstruction is preserved, and q4 is not authorized.",
         },
     ]
 

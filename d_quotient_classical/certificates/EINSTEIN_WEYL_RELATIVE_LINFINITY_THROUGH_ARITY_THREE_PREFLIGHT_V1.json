@@ -1,0 +1,196 @@
+{
+  "claim_boundary": "This preflight prepares the compact-product relative L_infinity calculation but does not substitute sectoral solution cofibers or selected D^2E source fixtures for the full off-shell triangle and complete same-background Einstein/Weyl q2,q3 payloads. Berger tensors are explicitly ineligible. Until all three inputs arrive, Delta2, the arity-three morphism defect, cohomology survival, cyclic deformation nontriviality and admissible removal remain NO_CERTIFIED_MAP or OPEN. The Berger filtered-cyclic ell3 obstruction is preserved and q4 is not authorized.",
+  "claim_flags": {
+    "ALL_SCIENTIFIC_INPUTS_IMPORTED": false,
+    "COHOMOLOGY_OPERATION_DECIDED": false,
+    "CYCLIC_DEFORMATION_CLASS_DECIDED": false,
+    "PREFLIGHT_READY": true,
+    "Q4_AUTHORIZED": false,
+    "QUANTUM_CLAIM": false,
+    "RELATIVE_ARITY_THREE_DEFECT_COMPUTED": false,
+    "RELATIVE_ARITY_TWO_DEFECT_COMPUTED": false
+  },
+  "dependency_refs": {
+    "berger_filtered_ell3_obstruction": {
+      "path": "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
+      "result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1",
+      "sha256": "4051d27dd45fb5a8781348bccb4e21859cf736124cca026182978177ced62e44"
+    },
+    "finite_harmonic_tangent_cone": {
+      "path": "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+      "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+      "sha256": "c80967db8cce02594a346bef3ec6a0f1d6863c85167aec7b661d2d102a248065"
+    },
+    "relative_branch_dictionary": {
+      "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+      "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
+      "sha256": "515c25a690171fda0850f94fa3a3677e0784413bfd14229938160e3234036f0f"
+    },
+    "source_transfer_dictionary": {
+      "path": "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
+      "result_id": "NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1",
+      "sha256": "a26b494c4cb5559f62bb738efe0b36e5f1ae43f3bdc425b8bf6e2f2c714fb4a3"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "input_contracts": {
+    "einstein_taylor": {
+      "candidate_paths": [
+        "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+        "bridge/certificates/einstein_maxwell_product_linfinity_through_arity_three_v1.json"
+      ],
+      "required_background_id": "compact_magnetic_Plebanski_Hacyan_product",
+      "required_flags": [
+        "FULL_BV_ROWS",
+        "SUPPORT_LOCAL",
+        "CYCLIC_PAIRING_VERIFIED",
+        "Q1_Q2_IDENTITY_VERIFIED",
+        "ARITY_THREE_IDENTITY_VERIFIED",
+        "H_PRODUCT_EQUIVARIANT",
+        "INDEPENDENT_VERIFIER_PASS"
+      ],
+      "required_result_id": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"
+    },
+    "relative_triangle": {
+      "candidate_paths": [
+        "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
+        "bridge/certificates/einstein_weyl_relative_linear_triangle_v1.json"
+      ],
+      "required_background_id": "compact_magnetic_Plebanski_Hacyan_product",
+      "required_flags": [
+        "OFF_SHELL_CHAIN_MAP_ALL_BV_ROWS",
+        "SUPPORT_LOCAL_MAPPING_COFIBER",
+        "GLOBAL_ENDPOINTS_INCLUDED",
+        "PAIRING_OR_CURRENT_COMPATIBLE",
+        "H_PRODUCT_EQUIVARIANT",
+        "INDEPENDENT_VERIFIER_PASS"
+      ],
+      "required_result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1"
+    },
+    "taylor_schema": {
+      "path": "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
+      "sha256": "758ceaefc77f662e53fd3147dac18a5a74b2ed2643c40adc2a3b09d4963b469f"
+    },
+    "weyl_taylor": {
+      "candidate_paths": [
+        "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
+        "bridge/certificates/weyl_maxwell_product_linfinity_through_arity_three_v1.json"
+      ],
+      "required_background_id": "compact_magnetic_Plebanski_Hacyan_product",
+      "required_flags": [
+        "FULL_BV_ROWS",
+        "SUPPORT_LOCAL",
+        "CYCLIC_PAIRING_VERIFIED",
+        "Q1_Q2_IDENTITY_VERIFIED",
+        "ARITY_THREE_IDENTITY_VERIFIED",
+        "H_PRODUCT_EQUIVARIANT",
+        "INDEPENDENT_VERIFIER_PASS"
+      ],
+      "required_result_id": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"
+    }
+  },
+  "input_status": {
+    "einstein_product_q2_q3": "MISSING",
+    "relative_linear_triangle": "MISSING",
+    "weyl_product_q2_q3": "MISSING"
+  },
+  "lifecycle_status": "OPEN",
+  "next_gate": "SUPPLY_FULL_TRIANGLE_AND_SAME_BACKGROUND_PRODUCT_Q2_Q3_PAYLOADS",
+  "required_computation": [
+    "Delta2=q2_Weyl(iota,iota)-iota*q2_Einstein on every declared channel",
+    "exact iota2 primitive or normalized cofiber obstruction witness",
+    "complete arity-three defect including q3, q2*iota2 and iota2*q2 terms",
+    "exact iota3 primitive or normalized obstruction witness",
+    "EE_to_X, EX_to_E_plus_X and XX_to_E_plus_X channel table",
+    "cyclicity, H_product equivariance and action on cohomology",
+    "cyclic deformation nontriviality or displayed admissible removal"
+  ],
+  "result_id": "EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1",
+  "result_state": "INPUT_BLOCKED_FULL_TRIANGLE_AND_PRODUCT_TAYLOR_PAYLOADS_MISSING",
+  "schema": "pure-weyl-relative-linfinity-through-arity-three-preflight-v1",
+  "scope_guard": {
+    "berger_filtered_obstruction_preserved": true,
+    "berger_tensors_eligible": false,
+    "q4_authorized": false,
+    "reason": "The certified Berger q2/q3/ell3 tensors live on a different background and carrier."
+  },
+  "setting": {
+    "background_id": "compact_magnetic_Plebanski_Hacyan_product",
+    "boundaries": "closed S1_L x S2 before final residual quotient",
+    "generator": "H_product"
+  },
+  "source_manifest": {
+    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "e1a45c9af5731665bae5ad93175fb2f5d7e342570f57042b66e0add741c8178f",
+    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "da9939c2e6868b2cbbb113c168a9815927481772d224792079ffde329b848014",
+    "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py": "25c5f9da4ed1a38087287f501459a14ea094dd35fd5fe884c88cf00d1c6ec716",
+    "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json": "758ceaefc77f662e53fd3147dac18a5a74b2ed2643c40adc2a3b09d4963b469f",
+    "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json": "3cad8f8a6e836f275f42c57ee79db407f800f63f526f07c84a84e7ac0bae961c"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
+    "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
+    "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <scoped relative preflight Python paths>",
+        "python3 -m json.tool <scoped relative preflight JSON schemas>",
+        "git diff --cached --check"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": {
+      "commands_and_elapsed_seconds": [
+        {
+          "command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
+          "elapsed_seconds": 0.16
+        },
+        {
+          "command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
+          "elapsed_seconds": 0.14
+        },
+        {
+          "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
+          "elapsed_seconds": 0.19
+        },
+        {
+          "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
+          "elapsed_seconds": 2.11
+        },
+        {
+          "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+          "elapsed_seconds": 2.02
+        }
+      ],
+      "status": "PASS"
+    },
+    "tier_2": {
+      "commands_and_elapsed_seconds": [
+        {
+          "command": "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_nonlinear_atlas_fragment --check",
+          "elapsed_seconds": 0.18
+        },
+        {
+          "command": "PYTHONPATH=. python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/nonlinear-atlas-fragment.json",
+          "elapsed_seconds": 0.16
+        },
+        {
+          "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
+          "elapsed_seconds": 0.5
+        }
+      ],
+      "status": "PASS"
+    },
+    "tier_3": {
+      "reason": "No shared core algebra, theorem lifecycle promotion, freeze, release or publication boundary changed.",
+      "status": "NOT_RUN"
+    }
+  }
+}

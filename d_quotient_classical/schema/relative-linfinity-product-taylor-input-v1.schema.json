@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/pure-weyl-relative-linfinity-product-taylor-input-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "claim_status", "dependency_tags", "theory_id", "background_id", "carrier_id", "coefficient_field", "taylor_artifacts", "acceptance_flags", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-linfinity-product-taylor-input-v1"},
+    "result_id": {"enum": ["EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1", "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"]},
+    "claim_status": {"enum": ["CERTIFIED", "THEOREM_FROZEN", "CERTIFIED_THROUGH_ARITY_THREE"]},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "theory_id": {"enum": ["Einstein-Maxwell", "Weyl-Maxwell"]},
+    "background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"},
+    "carrier_id": {"type": "string", "minLength": 1},
+    "coefficient_field": {"type": "string", "minLength": 1},
+    "taylor_artifacts": {"type": "object", "additionalProperties": false, "required": ["q1", "q2", "q3", "pairing"], "properties": {"q1": {"$ref": "#/$defs/artifact"}, "q2": {"$ref": "#/$defs/artifact"}, "q3": {"$ref": "#/$defs/artifact"}, "pairing": {"$ref": "#/$defs/artifact"}}},
+    "acceptance_flags": {"type": "object", "additionalProperties": false, "required": ["FULL_BV_ROWS", "SUPPORT_LOCAL", "CYCLIC_PAIRING_VERIFIED", "Q1_Q2_IDENTITY_VERIFIED", "ARITY_THREE_IDENTITY_VERIFIED", "H_PRODUCT_EQUIVARIANT", "INDEPENDENT_VERIFIER_PASS"], "properties": {"FULL_BV_ROWS": {"const": true}, "SUPPORT_LOCAL": {"const": true}, "CYCLIC_PAIRING_VERIFIED": {"const": true}, "Q1_Q2_IDENTITY_VERIFIED": {"const": true}, "ARITY_THREE_IDENTITY_VERIFIED": {"const": true}, "H_PRODUCT_EQUIVARIANT": {"const": true}, "INDEPENDENT_VERIFIER_PASS": {"const": true}}},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  },
+  "allOf": [
+    {"if": {"properties": {"result_id": {"const": "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"}}}, "then": {"properties": {"theory_id": {"const": "Einstein-Maxwell"}}}},
+    {"if": {"properties": {"result_id": {"const": "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"}}}, "then": {"properties": {"theory_id": {"const": "Weyl-Maxwell"}}}}
+  ],
+  "$defs": {"artifact": {"type": "object", "additionalProperties": false, "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}
+}

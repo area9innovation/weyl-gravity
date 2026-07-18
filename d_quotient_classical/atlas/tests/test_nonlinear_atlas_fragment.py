@@ -59,6 +59,14 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
         self.assertIn("does not activate cyclic Bridge 2", entry["claim_boundary"])
 
+    def test_product_relative_linfinity_receiver_is_fail_closed(self):
+        entry = next(item for item in atlas.build()["entries"] if "relative_linfinity_through_arity_three_preflight" in item["id"])
+        self.assertTrue(all(status == "NO_CERTIFIED_MAP" for status in entry["descriptions"].values()))
+        self.assertIn("INPUT_BLOCKED", entry["claim_boundary"])
+        self.assertIn("same-background", entry["claim_boundary"])
+        self.assertIn("Berger tensors are ineligible", entry["claim_boundary"])
+        self.assertIn("q4 is not authorized", entry["claim_boundary"])
+
 
 if __name__ == "__main__":
     unittest.main()
