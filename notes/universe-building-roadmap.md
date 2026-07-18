@@ -737,7 +737,17 @@ in that class.  The potential `p=0` circumference-times-extra resonance is
 now coefficient-explicit on all four extra columns: exact radius-family
 transport cancels its only nonzero (second polar) source on all eight rows
 with an ordinary same-frequency primitive, so this actual source needs no
-secular prefactor.  Opposite momenta, phases, multiple absolute-momentum fibres
+secular prefactor.  The aligned twist-position/velocity times extra-primary
+`L=1,3` mixed block is likewise coefficient-explicit: a direct four-
+dimensional fixture classifies all sixteen channels, thirteen have printed
+exact polynomial corrections, three vanish, and every full action-row
+remainder is zero.  This advances bridge-1 input but does not activate the
+bridge: the generated branch dictionary remains `ONSHELL_MAP_ONLY`, its gate
+is `OPEN`, and atlas row
+`einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face` retains
+`NO_CERTIFIED_MAP` for causal/retarded transport.  The remaining complete-
+orbit global/global and extra/extra self coefficient lists are still open.
+Opposite momenta, phases, multiple absolute-momentum fibres
 and the causal/retarded class remain open.  Residual equivariance, the
 observable map, the relative \(L_\infty\) morphism, and the quantum lift remain
 open until their own certificates land.
