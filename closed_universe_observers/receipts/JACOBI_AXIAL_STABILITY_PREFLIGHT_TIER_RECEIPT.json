@@ -1,0 +1,66 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "JACOBI_AXIAL_STABILITY_PREFLIGHT_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact diagonal factorization D_(m,m)^(n/2)=(y0+i y3)^(n-2r) P_r^(0,n-2r)(1-2 y_perp^2) passes 119,280 coefficient comparisons covering all 4,970 symmetry-unique low-rail rows through two_j=139. The declared termwise independent-moment extension through total order 50 is obstructed in the extreme axial r=0 channel: its selected partial width is below 0.1 at two_j=974, above 0.1 at two_j=975 and above 1,000 at two_j=2047. An independently enclosed remainder cannot reduce these widths, and the exact unitary fallback [-1,1] provides no decay. The central all-clock-power rail remains certified. No correlated axial evaluator, noncentral/odd full rail, polarized tail, Green image, detector response, recoil, cone restriction, Bridge 3 or quantum claim is promoted.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile, JSON/schema parse and scoped git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_jacobi_axial_stability_preflight.py",
+      "elapsed_seconds": 0.61,
+      "status": "PASS",
+      "summary": "3 tests passed, covering exact factorization coefficients, strict axial-width witnesses and fail-closed mutation rejection."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_jacobi_axial_stability_preflight",
+      "status": "PASS",
+      "summary": "Schema, source/dependency hashes, low-rail identity coverage, axial sentinels and scoped-open flags passed."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "status": "PASS",
+      "summary": "The generated observer atlas and shared fail-closed atlas schema passed; detector_response remains OPEN and the evaluator dependency is OBSTRUCTED."
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_jacobi_axial_stability_preflight --check",
+      "elapsed_seconds": 8.48,
+      "status": "PASS",
+      "summary": "All 119,280 low-rail coefficient identities and six exact-rational axial moment sentinels were reevaluated; the certificate matched byte-for-byte."
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No full diagonal/form rail, infinite-mode theorem, shared core-algebra change, freeze, release or detector-response lifecycle promotion was claimed."
+    }
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_jacobi_axial_stability_preflight.py", "sha256": "c07a09e0219386525d7100887c8bf14fcb4837d318934f2aef09cdf5a45e0559"},
+    {"path": "closed_universe_observers/verify_berger_jacobi_axial_stability_preflight.py", "sha256": "89bc0ee22401f29b6cb7f0a95373a79b14bce41a6f12bf2869800ff3afb48211"},
+    {"path": "closed_universe_observers/tests/test_berger_jacobi_axial_stability_preflight.py", "sha256": "9ea39b8551db667c3a8244b668a7fbdafe99cf6ac43ca807425d65171c20b747"},
+    {"path": "closed_universe_observers/schema/berger-jacobi-axial-stability-preflight-v1.schema.json", "sha256": "62f0190ba36dfb9b66e7f20baa3563ef2aed772a7d6d9eb4edfe1ef1ac3a1b62"},
+    {"path": "closed_universe_observers/reports/berger-jacobi-axial-stability-preflight.md", "sha256": "4c3ac7fddb670769b506eba38f68e6394a5d98662a23eedd3119a2d6207239bf"},
+    {"path": "closed_universe_observers/certificates/BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT.json", "sha256": "629f2d6709c7f1083a7fe14af0e08287297e130d1c60b9101d7ac47d424361ec"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "1126b95b8cb3a2365715ae9a2a0add8e38690e4561f7de6708725c94560e9e59"}
+  ],
+  "claim_flags": {
+    "EXACT_DIAGONAL_JACOBI_FACTORIZATION_EXPORTED": true,
+    "ALL_4970_LOW_RAIL_DIAGONALS_ALGEBRAICALLY_PRESERVED": true,
+    "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_TENTH_WITNESSED": true,
+    "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_THOUSAND_WITNESSED": true,
+    "CORRELATED_AXIAL_OSCILLATORY_EVALUATOR_EXPORTED": false,
+    "ALL_DIAGONALS_AND_ODD_REPRESENTATIONS_STABLY_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

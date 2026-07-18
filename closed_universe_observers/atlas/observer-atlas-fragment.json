@@ -1561,7 +1561,7 @@
       }
     },
     {
-      "claim_boundary": "15,375 intervals are content-addressed; all 1,050 published central-even overlaps through two_j=138 pass, every two_j=256 width is below 0.001, and every selected two_j=2048 width is below 0.1; noncentral, odd, polarized-tail and Green-image gates remain OPEN input evaluator only; recoil remains OPEN NOT_APPLICABLE",
+      "claim_boundary": "15,375 intervals are content-addressed; all 1,050 published central-even overlaps through two_j=138 pass, every two_j=256 width is below 0.001, and every selected two_j=2048 width is below 0.1; the independent-moment noncentral/odd extension is separately OBSTRUCTED input evaluator only; recoil remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "CERTIFIED",
         "nonlinear": "NOT_APPLICABLE",
@@ -1579,6 +1579,11 @@
           "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL.json",
           "result_id": "BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL",
           "sha256": "51e623b88b158331a19ef9782fb06c2da6fd97171b4b8e10c8ea2d1c5344da0a"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT.json",
+          "result_id": "BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT",
+          "sha256": "629f2d6709c7f1083a7fe14af0e08287297e130d1c60b9101d7ac47d424361ec"
         }
       ],
       "id": "observer.berger.detector_profile.correlated_central_clock_power",
@@ -1633,7 +1638,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "general stable Jacobi recurrence for noncentral diagonals and odd representations is the next gate",
+          "statement": "the exact noncentral Jacobi factorization is now certified, but its termwise high-axial moment evaluator is OBSTRUCTED; construct a correlated axial oscillatory evaluator",
           "status": "OPEN"
         },
         "exceptional_resonant_operational_signature": {
@@ -1649,7 +1654,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "15,375 intervals are content-addressed; all 1,050 published central-even overlaps through two_j=138 pass, every two_j=256 width is below 0.001, and every selected two_j=2048 width is below 0.1; noncentral, odd, polarized-tail and Green-image gates remain OPEN",
+          "statement": "15,375 intervals are content-addressed; all 1,050 published central-even overlaps through two_j=138 pass, every two_j=256 width is below 0.001, and every selected two_j=2048 width is below 0.1; the independent-moment noncentral/odd extension is separately OBSTRUCTED",
           "status": "CERTIFIED"
         },
         "recoil_backreaction_order": {
@@ -1680,6 +1685,129 @@
         "m": "central diagonal m=0",
         "omega": "external clock powers p=0,2,...,28; no Green kernel applied",
         "parity": "even two_j central diagonal",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "all 4,970 low-rail diagonal formulas are algebraically preserved, but the declared order-50 termwise moment interval has width above 0.1 at two_j=975 and above 1,000 at two_j=2047 in the r=0 axial channel; the unitary fallback [-1,1] supplies no decay input evaluator only; recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "OBSTRUCTED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL.json",
+          "result_id": "BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL",
+          "sha256": "51e623b88b158331a19ef9782fb06c2da6fd97171b4b8e10c8ea2d1c5344da0a"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT.json",
+          "result_id": "BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT",
+          "sha256": "629f2d6709c7f1083a7fe14af0e08287297e130d1c60b9101d7ac47d424361ec"
+        }
+      ],
+      "id": "observer.berger.detector_profile.jacobi_axial_stability",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=exact Jacobi-axial factorization of diagonal scalar profile modes and the declared independent-moment high-axial evaluator; omega=external clock power p=0; no Green kernel applied; OPEN: this is a scalar input-evaluator obstruction, not a detector response",
+          "status": "OBSTRUCTED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "input evaluator only; recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "fixed radius-1/128 profile and external clock power p=0; other clock powers remain certified only on the central-even channel",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: this is a scalar input-evaluator obstruction, not a detector response",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "construct a correlated axial oscillatory evaluator using the certified exact Jacobi factorization",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "all 4,970 low-rail diagonal formulas are algebraically preserved, but the declared order-50 termwise moment interval has width above 0.1 at two_j=975 and above 1,000 at two_j=2047 in the r=0 axial channel; the unitary fallback [-1,1] supplies no decay",
+          "status": "OBSTRUCTED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "input evaluator only; recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "exact Jacobi-axial factorization of diagonal scalar profile modes and the declared independent-moment high-axial evaluator",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 0,
+        "ell": "algebraic identity for scalar two_j=0,...,139; axial sentinels two_j=256,512,974,975,1024,2047",
+        "k": "matching diagonal representation column",
+        "m": "all low-rail diagonals; high-mode witness m=-two_j/2 at basis index r=0",
+        "omega": "external clock power p=0; no Green kernel applied",
+        "parity": "even and odd diagonal scalar representations",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -1915,7 +2043,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "5a884edc11e87d1b984858d7879bfc54a308c3edd87c882a69c476c778c72847",
+  "generated_by_sha256": "85ed7eea02719875aa73f4b61f33829849441468f7d2d66359fcbcd3587dfc22",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -406,6 +406,15 @@ and the same width sentinels hold for every power.  This remains scoped to the
 central-even channel; noncentral diagonals and odd representations are the
 active gate before widening the polarized rail.  It does not certify an
 infinite tail, Green image, detector response, recoil, or cone restriction.
+The noncentral preflight now factors every diagonal exactly as
+`(y0+i*y3)^(n-2r) P_r^(0,n-2r)(1-2*y_perp^2)`.  All 119,280 coefficient
+comparisons covering the 4,970 unique low-rail diagonals pass.  This exposes
+a separate high-axial oscillation which the termwise moment evaluator does
+not preserve: its selected `r=0` partial width exceeds `0.1` at
+`two_j=975` and `1,000` at `two_j=2047`.  An independent remainder cannot
+narrow it, and the unitary fallback `[-1,1]` supplies no decay.  The active
+gate is therefore a correlated axial oscillatory evaluator built on the exact
+Jacobi factorization, not direct termwise widening.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

@@ -539,8 +539,16 @@ all 70 published central-even overlaps through `two_j=138` pass, the
 now closes the clock-power axis: it repeats the stable correlated evaluation
 for all fifteen even powers `p=0,...,28`, passes all 1,050 low-rail overlap
 checks, and content-addresses 15,375 intervals with the same width sentinels.
-The active gate is therefore only the stable Jacobi reduction for noncentral
-diagonals and odd representations.  Only then should the polarized rail be
+The noncentral identity is now exact:
+`D_(m,m)^(n/2)=(y0+i*y3)^(n-2r)P_r^(0,n-2r)(1-2*y_perp^2)`.
+`BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT` verifies 119,280 coefficients over
+all 4,970 unique low-rail diagonals, so the published rail is preserved
+algebraically.  The associated termwise independent-moment evaluator is
+nevertheless `OBSTRUCTED` in the high-axial channel: the selected `r=0`
+partial width exceeds `0.1` at `two_j=975` and `1,000` at `two_j=2047`,
+while unitary clipping supplies only `[-1,1]`.  The active gate is therefore
+a correlated axial oscillatory evaluator using this exact factorization.
+Only after that succeeds should the polarized rail be
 widened toward the infinite-mode Maxwell and massive-two-form images, recoil
 coefficient and second-order-cone restriction.  Bridge 3 remains inactive.
 

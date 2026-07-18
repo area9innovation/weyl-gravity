@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-jacobi-axial-stability-preflight-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "factorization", "declared_evaluator_class", "axial_sentinel_audits", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-jacobi-axial-stability-preflight-v1"},
+    "result_id": {"const": "BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_JACOBI_FACTORIZATION_EXPORTED_INDEPENDENT_MOMENT_AXIAL_WIDENING_OBSTRUCTED"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5},
+    "factorization": {"type": "object", "required": ["formula", "jacobi_series", "axial_series", "low_rail_maximum_two_j", "low_rail_unique_diagonal_count", "coefficient_identity_comparison_count", "coefficient_identity_defect_count"]},
+    "declared_evaluator_class": {"type": "object"},
+    "axial_sentinel_audits": {"type": "array", "minItems": 6, "maxItems": 6},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {
+      "type": "object",
+      "required": ["EXACT_DIAGONAL_JACOBI_FACTORIZATION_EXPORTED", "ALL_4970_LOW_RAIL_DIAGONALS_ALGEBRAICALLY_PRESERVED", "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_TENTH_WITNESSED", "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_THOUSAND_WITNESSED", "CORRELATED_AXIAL_OSCILLATORY_EVALUATOR_EXPORTED", "ALL_DIAGONALS_AND_ODD_REPRESENTATIONS_STABLY_EVALUATED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "EXACT_DIAGONAL_JACOBI_FACTORIZATION_EXPORTED": {"const": true},
+        "ALL_4970_LOW_RAIL_DIAGONALS_ALGEBRAICALLY_PRESERVED": {"const": true},
+        "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_TENTH_WITNESSED": {"const": true},
+        "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_THOUSAND_WITNESSED": {"const": true},
+        "CORRELATED_AXIAL_OSCILLATORY_EVALUATOR_EXPORTED": {"const": false},
+        "ALL_DIAGONALS_AND_ODD_REPRESENTATIONS_STABLY_EVALUATED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "CONSTRUCT_A_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR_USING_THE_EXACT_JACOBI_FACTORIZATION"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

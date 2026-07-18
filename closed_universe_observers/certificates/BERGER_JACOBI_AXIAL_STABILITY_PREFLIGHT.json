@@ -1,0 +1,156 @@
+{
+  "atlas_status": "OBSTRUCTED",
+  "axial_sentinel_audits": [
+    {
+      "basis_index": 0,
+      "diagonal_distance_d": 256,
+      "m": "-128",
+      "partial_interval_lower_outward": "0.773497252855",
+      "partial_interval_upper_outward": "0.774388064086",
+      "partial_interval_width_lower": "0.000890811229",
+      "two_j": 256
+    },
+    {
+      "basis_index": 0,
+      "diagonal_distance_d": 512,
+      "m": "-256",
+      "partial_interval_lower_outward": "0.317060778015",
+      "partial_interval_upper_outward": "0.321302085110",
+      "partial_interval_width_lower": "0.004241307093",
+      "two_j": 512
+    },
+    {
+      "basis_index": 0,
+      "diagonal_distance_d": 974,
+      "m": "-487",
+      "partial_interval_lower_outward": "-0.095734167138",
+      "partial_interval_upper_outward": "0.004014424348",
+      "partial_interval_width_lower": "0.099748591484",
+      "two_j": 974
+    },
+    {
+      "basis_index": 0,
+      "diagonal_distance_d": 975,
+      "m": "-975/2",
+      "partial_interval_lower_outward": "-0.096139791627",
+      "partial_interval_upper_outward": "0.004380319776",
+      "partial_interval_width_lower": "0.100520111401",
+      "two_j": 975
+    },
+    {
+      "basis_index": 0,
+      "diagonal_distance_d": 1024,
+      "m": "-512",
+      "partial_interval_lower_outward": "-0.119354778916",
+      "partial_interval_upper_outward": "0.028289390142",
+      "partial_interval_width_lower": "0.147644169056",
+      "two_j": 1024
+    },
+    {
+      "basis_index": 0,
+      "diagonal_distance_d": 2047,
+      "m": "-2047/2",
+      "partial_interval_lower_outward": "-703.631409544841",
+      "partial_interval_upper_outward": "587.941302961806",
+      "partial_interval_width_lower": "1291.572712506645",
+      "two_j": 2047
+    }
+  ],
+  "claim_boundary": "This LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL preflight proves the exact diagonal factorization D_(m,m)^(n/2)=(y0+i y3)^(n-2r) P_r^(0,n-2r)(1-2 y_perp^2) for every one of the 4,970 symmetry-unique rows through two_j=139 by coefficient comparison with the published Sym^n formula. The factorization preserves the certified low rail algebraically and exposes separate Jacobi and axial oscillatory channels. It does not provide a uniformly stable widened evaluator: in the declared termwise independent-moment class through total order 50, the extreme axial r=0 partial interval already has width above 0.1 at the selected two_j=975 sentinel and above 1,000 at two_j=2047. Adding an independent remainder interval cannot reduce those widths, while the exact unitary fallback |D_(m,m)|<=1 supplies only [-1,1] and no decay. The central all-clock-power rail remains certified. A correlated axial oscillatory evaluator is required before noncentral/odd polarization, tail, Green-image, detector-response, recoil or tangent-cone promotion. Bridge 3 and quantum claims remain open.",
+  "claim_status": "EXACT_JACOBI_FACTORIZATION_EXPORTED_INDEPENDENT_MOMENT_AXIAL_WIDENING_OBSTRUCTED",
+  "declared_evaluator_class": {
+    "external_clock_power": 0,
+    "high_mode_scope": "extreme axial basis_index r=0 only",
+    "independent_remainder_can_reduce_partial_width": false,
+    "moment_order": 50,
+    "name": "termwise independent radial/clock moment intervals after exact Jacobi-axial factorization",
+    "unitary_fallback": "[-1,1]"
+  },
+  "dependency_refs": {
+    "central_clock_rail": {
+      "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL.json",
+      "result_id": "BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL",
+      "sha256": "51e623b88b158331a19ef9782fb06c2da6fd97171b4b8e10c8ea2d1c5344da0a"
+    },
+    "high_moments": {
+      "path": "closed_universe_observers/certificates/BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL.json",
+      "result_id": "BERGER_HIGH_ORDER_PROFILE_MOMENT_RAIL",
+      "sha256": "eef457789018aba42808d5b3fd5a4898535db9f9f8757af6e25150721d9a61e7"
+    },
+    "low_clock": {
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_SCALAR_PROFILE_COEFFICIENTS.json",
+      "result_id": "BERGER_CLOCK_INTEGRATED_SCALAR_PROFILE_COEFFICIENTS",
+      "sha256": "a49ea2f12941abdfcaa385ec0f1126963d78ad1e806efde231ce3053180ce843"
+    },
+    "low_moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "scalar_s0": {
+      "path": "closed_universe_observers/certificates/BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S0_TWO_J139.json",
+      "result_id": "BERGER_CLOCK_WEIGHTED_SCALAR_STREAM_S0_TWO_J139",
+      "sha256": "5160cf123e6910db3d060ad2c856e5a159f0acdd3e67b9318ca6816b5c0e0cbe"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "factorization": {
+    "axial_series": "Re[(y0+i*y3)^d]=sum_b (-d/2)_b(d/2)_b/((1/2)_b b!) Z^b(1-X)^(d/2-b)",
+    "coefficient_identity_comparison_count": 119280,
+    "coefficient_identity_defect_count": 0,
+    "formula": "D_(m,m)^(n/2)=(y0+i*y3)^(n-2r) P_r^(0,n-2r)(1-2*y_perp^2), m=-n/2+r, 0<=r<=floor(n/2)",
+    "jacobi_series": "P_r^(0,d)(1-2X)=sum_p (-r)_p(r+d+1)_p/(p!)^2 X^p",
+    "low_rail_maximum_two_j": 139,
+    "low_rail_unique_diagonal_count": 4970
+  },
+  "flags": {
+    "ALL_4970_LOW_RAIL_DIAGONALS_ALGEBRAICALLY_PRESERVED": true,
+    "ALL_DIAGONALS_AND_ODD_REPRESENTATIONS_STABLY_EVALUATED": false,
+    "CORRELATED_AXIAL_OSCILLATORY_EVALUATOR_EXPORTED": false,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "EXACT_DIAGONAL_JACOBI_FACTORIZATION_EXPORTED": true,
+    "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_TENTH_WITNESSED": true,
+    "INDEPENDENT_MOMENT_AXIAL_WIDTH_ABOVE_ONE_THOUSAND_WITNESSED": true,
+    "QUANTUM_CLAIM": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "replace_axial_obstruction_width_by_one_tenth",
+      "strict_witness_two_j": 975
+    }
+  ],
+  "next_gate": "CONSTRUCT_A_CORRELATED_AXIAL_OSCILLATORY_EVALUATOR_USING_THE_EXACT_JACOBI_FACTORIZATION",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_jacobi_axial_stability_preflight.py",
+        "sha256": "c07a09e0219386525d7100887c8bf14fcb4837d318934f2aef09cdf5a45e0559"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_jacobi_axial_stability_preflight.py",
+        "sha256": "89bc0ee22401f29b6cb7f0a95373a79b14bce41a6f12bf2869800ff3afb48211"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_jacobi_axial_stability_preflight.py",
+        "sha256": "9ea39b8551db667c3a8244b668a7fbdafe99cf6ac43ca807425d65171c20b747"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-jacobi-axial-stability-preflight-v1.schema.json",
+        "sha256": "62f0190ba36dfb9b66e7f20baa3563ef2aed772a7d6d9eb4edfe1ef1ac3a1b62"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-jacobi-axial-stability-preflight.md",
+        "sha256": "4c3ac7fddb670769b506eba38f68e6394a5d98662a23eedd3119a2d6207239bf"
+      }
+    ]
+  },
+  "result_id": "BERGER_JACOBI_AXIAL_STABILITY_PREFLIGHT",
+  "schema": "closed-universe-berger-jacobi-axial-stability-preflight-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}
