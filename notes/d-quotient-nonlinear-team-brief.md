@@ -617,18 +617,21 @@ single normalized dual coordinate detects the defect: output 23 on inputs
 `(1,30,35)` has target coefficient `3 sqrt(10)/10`, every admitted column
 vanishes there, and dual weight `sqrt(10)/3` evaluates to one.  This is a
 ghost/antifield-completion obstruction: the physical projection remains
-compatible.  It is not yet the N-G4 verdict because positive-PBW-jet maps can
-feed this page and nonlinear ghost-coordinate redefinitions were not
-admitted.  The earlier provisional obstruction from an absolute-weight or
-untyped zero-jet matrix is superseded and must not be cited.
+compatible.  The exact PBW augmentation audit checks all positive words
+through length six and proves that first/second-jet maps cannot hit this
+zero-word witness.  It is not yet the N-G4 verdict because nonlinear
+ghost-coordinate redefinitions were not admitted.  The earlier provisional
+obstruction from an absolute-weight or untyped zero-jet matrix is superseded
+and must not be cited.
 
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.
-2. Continue N-G4 by testing whether first/second-PBW-jet physical cotangent
-   maps kill the normalized zero-jet BV witness, then close total PBW order
-   two.  If they do not, extend the convention rail to nonlinear ghost
-   coordinate maps before promoting an obstruction.  Do not reuse the
+2. Continue N-G4 by extending the convention rail to nonlinear ghost
+   coordinate maps and testing them against the normalized zero-word BV
+   witness.  In parallel, close total PBW order two as the remaining physical
+   action page; PBW augmentation proves that page cannot remove the present
+   zero-word witness.  Do not reuse the
    order-zero or order-one physical-action coefficients as obstructions:
    both physical pages are certified exact.  Return either a complete
    jet-bounded trivializing \((F_2,F_3)\) or the first normalized order-two/full-BV

@@ -17,6 +17,11 @@ class ZeroJetFullBVRedefinitionTests(unittest.TestCase):
         lift = result.cotangent_column(3, (27, 27))
         self.assertEqual(str(lift[(31, (13, 27))]), "-1/2")
 
+    def test_positive_pbw_words_have_no_scalar_reduction(self) -> None:
+        replay = result.pbw_augmentation_replay()
+        self.assertEqual(replay["scalar_output_defects"], 0)
+        self.assertEqual(replay["positive_input_words_checked"], 5460)
+
     def test_claim_remains_fail_closed(self) -> None:
         value = json.loads(result.OUTPUT.read_text())
         self.assertFalse(value["claim_flags"]["FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED"])

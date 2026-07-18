@@ -18,6 +18,8 @@ def verify() -> None:
         raise ValueError("dual witness is not normalized")
     if value["exact_matrix_audit"]["rank"] + 1 != value["exact_matrix_audit"]["augmented_rank"]:
         raise ValueError("rank obstruction ledger drifted")
+    if value["PBW_augmentation_ideal"]["scalar_output_defects"]:
+        raise ValueError("positive PBW words acquired a scalar component")
     flags = value["claim_flags"]
     if flags["FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED"] or flags["QUANTUM_CLAIM"]:
         raise ValueError("zero-jet screen was overpromoted")

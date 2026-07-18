@@ -4,7 +4,7 @@
   "type": "object",
   "required": [
     "schema", "result_id", "result_state", "dependency_tags", "generality_level",
-    "dependency_refs", "ansatz", "exact_matrix_audit", "normalized_dual_witness",
+    "dependency_refs", "ansatz", "exact_matrix_audit", "normalized_dual_witness", "PBW_augmentation_ideal",
     "claim_flags", "next_gate", "source_manifest", "verification_commands", "claim_boundary"
   ],
   "properties": {
@@ -83,19 +83,32 @@
       },
       "additionalProperties": false
     },
+    "PBW_augmentation_ideal": {
+      "type": "object",
+      "required": ["maximum_input_word_length", "positive_input_words_checked", "nonzero_reduced_terms_checked", "scalar_output_defects", "conclusion"],
+      "properties": {
+        "maximum_input_word_length": {"const": 6},
+        "positive_input_words_checked": {"const": 5460},
+        "nonzero_reduced_terms_checked": {"const": 22614},
+        "scalar_output_defects": {"const": 0},
+        "conclusion": {"type": "string", "minLength": 50}
+      },
+      "additionalProperties": false
+    },
     "claim_flags": {
       "type": "object",
-      "required": ["ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED", "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED", "POSITIVE_JET_REDEFINITIONS_EXCLUDED", "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED", "QUANTUM_CLAIM"],
+      "required": ["ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED", "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED", "PBW_AUGMENTATION_IDEAL_STABLE_THROUGH_ORDER_SIX", "PBW_POSITIVE_JETS_CAN_HIT_ZERO_WORD_WITNESS", "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED", "QUANTUM_CLAIM"],
       "properties": {
         "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED": {"const": true},
         "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false},
-        "POSITIVE_JET_REDEFINITIONS_EXCLUDED": {"const": false},
+        "PBW_AUGMENTATION_IDEAL_STABLE_THROUGH_ORDER_SIX": {"const": true},
+        "PBW_POSITIVE_JETS_CAN_HIT_ZERO_WORD_WITNESS": {"const": false},
         "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED": {"const": false},
         "QUANTUM_CLAIM": {"const": false}
       },
       "additionalProperties": false
     },
-    "next_gate": {"const": "BERGER_RETAINED_MIXED_ELL3_PBW_ORDER_TWO_FULL_BV_REDEFINITION_V1"},
+    "next_gate": {"const": "BERGER_RETAINED_MIXED_ELL3_NONLINEAR_GHOST_COTANGENT_COMPLETION_V1"},
     "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
     "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}},
     "claim_boundary": {"type": "string", "minLength": 100}

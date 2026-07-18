@@ -20,10 +20,14 @@ That row vanishes on all 4,970 admitted columns. It belongs to the
 ghost/antifield completion; the separately projected degree-zero physical
 action remains compatible.
 
-This is not the final N-G4 verdict. Positive-PBW-jet redefinitions can feed
-this filtration page, nonlinear ghost-coordinate redefinitions were not
-admitted, and total PBW order two remains open. No cyclic deformation class,
-residual interaction, or quantum conclusion is promoted.
+The PBW augmentation-ideal audit checks all 5,460 positive words through
+length six (22,614 reduced terms) and finds no scalar output. Therefore
+first- and second-jet redefinitions cannot hit this zero-word witness.
+
+This is still not the final N-G4 verdict: nonlinear ghost-coordinate
+redefinitions were not admitted. Total PBW order two also remains open as a
+separate physical-action page. No cyclic deformation class, residual
+interaction, or quantum conclusion is promoted.
 
 ## Verification receipt
 
@@ -31,7 +35,7 @@ All commands passed from the repository root on 2026-07-18.
 
 | Tier | Command | Elapsed | Result |
 |---|---|---:|---|
-| 2 | exhaustive matrix/rank writer | 79.83 s | PASS; max RSS 157,204 KB |
+| 2 | exhaustive matrix/rank writer | 87.84 s | PASS; max RSS 157,204 KB |
 | 0/1 | fast certificate check | 6.56 s | PASS |
 | 1 | independent witness verifier | 6.11 s | PASS |
 | 1 | scoped unit tests | 6.81 s | PASS (3 tests) |

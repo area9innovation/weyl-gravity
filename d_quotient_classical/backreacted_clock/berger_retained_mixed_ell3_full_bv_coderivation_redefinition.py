@@ -27,6 +27,7 @@ from sympy.polys.matrices import DomainMatrix
 from d_quotient_classical.backreacted_clock import (
     berger_retained_mixed_ell3_constant_field_redefinition as zero,
 )
+from d_quotient_classical.backreacted_clock import berger_support_local_q2 as pbw
 
 
 ROOT = zero.ROOT
@@ -488,6 +489,27 @@ def witness_replay() -> dict[str, object]:
     }
 
 
+def pbw_augmentation_replay() -> dict[str, object]:
+    """Check that positive PBW words cannot acquire a scalar component."""
+
+    input_words = reduced_terms = scalar_defects = 0
+    for length in range(1, 7):
+        for word in itertools.product(range(4), repeat=length):
+            input_words += 1
+            reduction = pbw._pbw_word(word)
+            reduced_terms += len(reduction)
+            scalar_defects += sum(not reduced and coefficient != 0 for reduced, coefficient in reduction)
+    if input_words != 5460 or reduced_terms != 22614 or scalar_defects:
+        raise ValueError("PBW augmentation-ideal replay drifted")
+    return {
+        "maximum_input_word_length": 6,
+        "positive_input_words_checked": input_words,
+        "nonzero_reduced_terms_checked": reduced_terms,
+        "scalar_output_defects": scalar_defects,
+        "conclusion": "positive-PBW-jet redefinitions cannot hit a zero-word Taylor coefficient through total redefinition order two",
+    }
+
+
 def _dependency(path: Path, artifact_id: str) -> dict[str, str]:
     return {
         "artifact_id": artifact_id,
@@ -569,14 +591,16 @@ def exhaustive_build() -> dict[str, object]:
             "elapsed_seconds": round(time.monotonic() - started, 6),
         },
         "normalized_dual_witness": replay,
+        "PBW_augmentation_ideal": pbw_augmentation_replay(),
         "claim_flags": {
             "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED": True,
             "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED": False,
-            "POSITIVE_JET_REDEFINITIONS_EXCLUDED": False,
+            "PBW_AUGMENTATION_IDEAL_STABLE_THROUGH_ORDER_SIX": True,
+            "PBW_POSITIVE_JETS_CAN_HIT_ZERO_WORD_WITNESS": False,
             "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "BERGER_RETAINED_MIXED_ELL3_PBW_ORDER_TWO_FULL_BV_REDEFINITION_V1",
+        "next_gate": "BERGER_RETAINED_MIXED_ELL3_NONLINEAR_GHOST_COTANGENT_COMPLETION_V1",
         "source_manifest": {
             str(path.relative_to(ROOT)): _sha256(path)
             for path in (Path(__file__).resolve(), VERIFIER, TESTS, SCHEMA)
@@ -594,10 +618,12 @@ def exhaustive_build() -> dict[str, object]:
             "of zero-jet degree-zero physical base-field F2/F3 redefinitions with "
             "their certified typed super-cotangent completion. The normalized witness "
             "is a single ghost/antifield coefficient and the separately projected "
-            "degree-zero physical action remains compatible. This is not a nontrivial "
-            "cyclic deformation class: positive-jet redefinitions can feed this PBW "
-            "page, nonlinear ghost-coordinate redefinitions were not admitted, total "
-            "PBW order two remains open, and no quantum claim is made."
+            "degree-zero physical action remains compatible. The PBW augmentation "
+            "ideal proves that positive-jet redefinitions through total order two "
+            "cannot hit this zero-word witness. This is not yet a nontrivial cyclic "
+            "deformation class because nonlinear ghost-coordinate redefinitions were "
+            "not admitted; total PBW order two also remains open as a separate physical "
+            "action page, and no quantum claim is made."
         ),
     }
     Draft202012Validator(json.loads(SCHEMA.read_text())).validate(value)
@@ -610,6 +636,8 @@ def fast_validate(value: Mapping[str, object]) -> None:
     Draft202012Validator(schema).validate(value)
     if value["normalized_dual_witness"] != witness_replay():
         raise ValueError("normalized dual witness replay drifted")
+    if value["PBW_augmentation_ideal"] != pbw_augmentation_replay():
+        raise ValueError("PBW augmentation-ideal replay drifted")
     for dependency in value["dependency_refs"].values():
         if _sha256(ROOT / dependency["path"]) != dependency["sha256"]:
             raise ValueError(f"dependency hash drifted: {dependency['path']}")

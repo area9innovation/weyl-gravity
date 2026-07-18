@@ -1,4 +1,11 @@
 {
+  "PBW_augmentation_ideal": {
+    "conclusion": "positive-PBW-jet redefinitions cannot hit a zero-word Taylor coefficient through total redefinition order two",
+    "maximum_input_word_length": 6,
+    "nonzero_reduced_terms_checked": 22614,
+    "positive_input_words_checked": 5460,
+    "scalar_output_defects": 0
+  },
   "ansatz": {
     "F2_physical_base_coefficients": 810,
     "F3_physical_base_coefficients": 4160,
@@ -6,11 +13,12 @@
     "nonlinear_ghost_coordinate_redefinitions_included": false,
     "typed_super_cotangent_completion": true
   },
-  "claim_boundary": "This LOCAL-ALGEBRAIC G0 result proves that the two-Maxwell zero-PBW Taylor component of the complete retained BV ell3 is not in the image of zero-jet degree-zero physical base-field F2/F3 redefinitions with their certified typed super-cotangent completion. The normalized witness is a single ghost/antifield coefficient and the separately projected degree-zero physical action remains compatible. This is not a nontrivial cyclic deformation class: positive-jet redefinitions can feed this PBW page, nonlinear ghost-coordinate redefinitions were not admitted, total PBW order two remains open, and no quantum claim is made.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC G0 result proves that the two-Maxwell zero-PBW Taylor component of the complete retained BV ell3 is not in the image of zero-jet degree-zero physical base-field F2/F3 redefinitions with their certified typed super-cotangent completion. The normalized witness is a single ghost/antifield coefficient and the separately projected degree-zero physical action remains compatible. The PBW augmentation ideal proves that positive-jet redefinitions through total order two cannot hit this zero-word witness. This is not yet a nontrivial cyclic deformation class because nonlinear ghost-coordinate redefinitions were not admitted; total PBW order two also remains open as a separate physical action page, and no quantum claim is made.",
   "claim_flags": {
     "FULL_JET_BOUNDED_CYCLIC_DEFORMATION_CLASS_DECIDED": false,
     "NONLINEAR_GHOST_REDEFINITIONS_EXCLUDED": false,
-    "POSITIVE_JET_REDEFINITIONS_EXCLUDED": false,
+    "PBW_AUGMENTATION_IDEAL_STABLE_THROUGH_ORDER_SIX": true,
+    "PBW_POSITIVE_JETS_CAN_HIT_ZERO_WORD_WITNESS": false,
     "QUANTUM_CLAIM": false,
     "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED": true
   },
@@ -51,7 +59,7 @@
   ],
   "exact_matrix_audit": {
     "augmented_rank": 130,
-    "elapsed_seconds": 79.12588,
+    "elapsed_seconds": 79.662535,
     "physical_projection_augmented_rank": 66,
     "physical_projection_rank": 66,
     "physical_projection_shape": [
@@ -74,7 +82,7 @@
     ]
   },
   "generality_level": "G0",
-  "next_gate": "BERGER_RETAINED_MIXED_ELL3_PBW_ORDER_TWO_FULL_BV_REDEFINITION_V1",
+  "next_gate": "BERGER_RETAINED_MIXED_ELL3_NONLINEAR_GHOST_COTANGENT_COMPLETION_V1",
   "normalized_dual_witness": {
     "annihilated_F2_columns": 810,
     "annihilated_F3_columns": 4160,
@@ -105,10 +113,10 @@
   "result_state": "ZERO_JET_FULL_BV_PHYSICAL_COTANGENT_SUBCOMPLEX_OBSTRUCTED",
   "schema": "pure-weyl-berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1",
   "source_manifest": {
-    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_full_bv_coderivation_redefinition.py": "d9b8b75ab3404c0df670ec20b2c866b02b52a700c4d4a222128a37c361acd7fe",
-    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition.py": "9d1749cc25141ea9577a5d8094029a2cd9f58fcedd5006fad542773cada85d8a",
-    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition.py": "ed59e7946be16b1fb33acb14714e403256ce929bc5556589816489dde526c543",
-    "d_quotient_classical/schema/berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1.schema.json": "aa020ae212581ead07a66116114351c3edf3e2ec852828dfdfb752c06067fe41"
+    "d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_full_bv_coderivation_redefinition.py": "0cc1d0eaffc14894ae17b19fd48bbbecb550961f38522947ebd89188725fa983",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition.py": "5eeef6e365e5705e881518222b3f8d41bb474e8bc472e4c673edcef6241321dd",
+    "d_quotient_classical/backreacted_clock/verify_berger_retained_mixed_ell3_zero_jet_full_bv_redefinition.py": "15ec05c8d412123f0f699c0062f5237767f6c660ade2c0625a1f954acb5b8ee9",
+    "d_quotient_classical/schema/berger-retained-mixed-ell3-zero-jet-full-bv-redefinition-v1.schema.json": "65bcc3f2fee1cf38185b7684932571735be28aeb9f636fb7c458610b049c9a76"
   },
   "verification_commands": [
     "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_retained_mixed_ell3_full_bv_coderivation_redefinition.py --check",
