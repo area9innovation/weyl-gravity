@@ -403,8 +403,9 @@ Q_Wh+hQ_W=I_4,
 \end{{equation}}
 in the ordered basis
 $(\tau,\omega,\omega^*,\widehat\tau^*)$.
-The certificate checks {lift['exact_checks']['checked_atom_count']} atoms and
-{lift['extension_scope']['generator_count']} generators over
+The certificate checks {lift['exact_checks']['checked_atom_count']} component
+rows on {lift['extension_scope']['generator_count']} generators and their jet
+prolongations over
 ${lift['extension_scope']['coefficient_field']}$; all component gradings,
 $\delta^2$, $\delta\gamma+\gamma\delta$, and $Q^2$ pass exactly.
 

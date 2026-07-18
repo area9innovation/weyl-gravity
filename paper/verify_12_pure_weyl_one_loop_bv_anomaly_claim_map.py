@@ -28,6 +28,29 @@ def main() -> None:
     manuscript = ROOT / payload["manuscript"]
     assert manuscript.is_file()
     assert _sha256(manuscript) == payload["manuscript_sha256"]
+    manuscript_text = manuscript.read_text()
+    normalized_manuscript = " ".join(manuscript_text.split())
+    abstract = manuscript_text.split("\\begin{abstract}", 1)[1].split(
+        "\\end{abstract}", 1
+    )[0]
+    # Freeze the human-readable bridges requested in the focused referee
+    # revision. Certificate hashes alone cannot prove that these arguments
+    # remain visible to a reader.
+    required_manuscript_fragments = [
+        "regular Bach-locus chart",
+        "The proof is an antifield-number spectral sequence",
+        "The complete local determinant ledger is small enough to display",
+        "determinant-to-Slavnov bridge",
+        "Q_Wh+hQ_W=N_{\\rm quartet}",
+        "B_E=\\int\\!\\sqrt g",
+        "This restoration has a physical price",
+        "The separating functional is simply",
+        "same principal symbol, connection, self-adjoint domain",
+        "-\\frac{199}{60}=-\\frac c2",
+    ]
+    for fragment in required_manuscript_fragments:
+        assert fragment in normalized_manuscript, fragment
+    assert "Hadamard" not in abstract
     compiled_pdf = ROOT / payload["compiled_pdf"]
     assert compiled_pdf.is_file()
     assert _sha256(compiled_pdf) == payload["compiled_pdf_sha256"]
