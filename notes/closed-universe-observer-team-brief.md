@@ -459,6 +459,15 @@ therefore extension of the external-clock scalar and polarization streams
 through even `p=28`, then common order-14 charge-block application.  This is
 an obstruction to fixed-order promotion, not to the exact Green function.
 
+`BERGER_HIGH_CLOCK_POWER_MOMENT_RAIL_P28` and the nine
+`BERGER_ADAPTIVE_CLOCK_WEIGHTED_SCALAR_STREAM_S{12,...,28}_TWO_J139`
+shards now close that scalar-input extension.  The new moment rail overlaps
+all foundational `p<=12` rows, and each typed scalar shard reconstructs 9,870
+diagonal coefficients from 4,970 validated intervals.  The six published
+lower-order shards and their polarization certificate were not rewritten.
+The active gate is detector-prefactored polarization of the nine new powers,
+then common order-14 charge-block application with its contractive remainder.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger

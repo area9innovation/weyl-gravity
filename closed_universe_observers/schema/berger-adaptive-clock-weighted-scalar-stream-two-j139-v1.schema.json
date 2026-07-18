@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "clock_weight", "evaluation_convention", "joint_clock_moment_enclosures", "coverage", "modes", "truncation_remainder_audit", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-adaptive-clock-weighted-scalar-stream-two-j139-v1"},
+    "result_id": {"type": "string", "pattern": "^BERGER_ADAPTIVE_CLOCK_WEIGHTED_SCALAR_STREAM_S(12|14|16|18|20|22|24|26|28)_TWO_J139$"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"type": "string"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object"},
+    "clock_weight": {"type": "object"},
+    "evaluation_convention": {"type": "object"},
+    "joint_clock_moment_enclosures": {"type": "array", "minItems": 51, "maxItems": 51},
+    "coverage": {"type": "object"},
+    "modes": {"type": "array", "minItems": 140, "maxItems": 140},
+    "truncation_remainder_audit": {"type": "object"},
+    "mutation_results": {"type": "array"},
+    "flags": {"type": "object"},
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

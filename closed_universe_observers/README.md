@@ -95,6 +95,10 @@ python3 -m closed_universe_observers.generate_berger_clock_weighted_polarization
 python3 -m closed_universe_observers.verify_berger_clock_weighted_polarization_stream
 python3 -m closed_universe_observers.generate_berger_temporal_green_order_preflight --check
 python3 -m closed_universe_observers.verify_berger_temporal_green_order_preflight
+python3 -m closed_universe_observers.generate_berger_high_clock_power_moment_rail --check
+python3 -m closed_universe_observers.verify_berger_high_clock_power_moment_rail
+for p in 12 14 16 18 20 22 24 26 28; do python3 -m closed_universe_observers.generate_berger_adaptive_clock_weighted_scalar_stream --power "$p" --check; done
+for p in 12 14 16 18 20 22 24 26 28; do python3 -m closed_universe_observers.verify_berger_adaptive_clock_weighted_scalar_stream --power "$p"; done
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -337,6 +341,11 @@ detector time radii.  The current geometric remainder rail first contracts at
 series order 14 for a common proof, so the next typed inputs are the even
 external-clock streams through `p=28`, followed by adaptive charge-block
 application.
+The adaptive input successor now validates the fixed clock bump's even
+moments through `p=28` and exports nine additional external-clock scalar
+shards for `p=12,14,...,28`.  Each shard reconstructs 9,870 diagonal values
+through `two_j=139`; the published lower-order shards remain unchanged.
+Detector-prefactored polarization of the nine new rails is the next gate.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source
