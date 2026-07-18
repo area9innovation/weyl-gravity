@@ -4,19 +4,25 @@
       "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
       "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_UNARY_FIRST_RECOIL.json",
       "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_INPUT_GATE.json",
+      "closed_universe_observers/certificates/BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT.json",
       "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
       "closed_universe_observers/certificates/BERGER_QUANTITATIVE_DETECTOR_ROD_CHART.json",
+      "closed_universe_observers/certificates/BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION.json",
       "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_CAUCHY_RANK_TWO.json",
       "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY.json",
       "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
       "closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_UNARY_TIER_RECEIPT.json",
       "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
       "closed_universe_observers/certificates/BERGER_POLARIZATION_TWO_FORM_EMITTER_HANDOFF.json",
+      "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_FORM_PROFILE_COEFFICIENTS.json",
       "closed_universe_observers/certificates/BERGER_108_ROW_POLARIZATION_EMITTER_CAUSAL_CHAIN_HOMOTOPY.json",
+      "closed_universe_observers/certificates/BERGER_CLOCK_INTEGRATED_SCALAR_PROFILE_COEFFICIENTS.json",
       "closed_universe_observers/ledgers/comparison_ledger.json",
+      "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE.json",
       "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
       "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
       "d_quotient_classical/certificates/BERGER_RETARDED_RELATIONAL_MAXWELL_OBSERVABLE.json",
+      "closed_universe_observers/certificates/BERGER_LOCAL_SU2_PROFILE_COEFFICIENT_ENCLOSURES.json",
       "closed_universe_observers/certificates/BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER.json",
       "closed_universe_observers/certificates/BERGER_LOCALIZED_EMITTER_RANK_TWO_TRANSFER.json",
       "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
@@ -264,6 +270,12 @@
       "relation": "VERIFIES_WITH",
       "source": "cert:288e6ae4d331326c",
       "target": "cert:856b87cc4d817723"
+    },
+    {
+      "evidence": "source_manifest.path",
+      "relation": "MUTUALLY_AUDITS",
+      "source": "cert:2a1839357dbd47eb",
+      "target": "cert:bb273f762fa8a786"
     },
     {
       "evidence": "provenance.classical_artifacts.receipt.path",
@@ -836,6 +848,18 @@
       "target": "cert:cfecf65372e59d7b"
     },
     {
+      "evidence": "receipt_path",
+      "relation": "MUTUALLY_AUDITS",
+      "source": "cert:bb273f762fa8a786",
+      "target": "cert:2a1839357dbd47eb"
+    },
+    {
+      "evidence": "provenance.classical_artifacts.receipt.path",
+      "relation": "MUTUALLY_AUDITS",
+      "source": "cert:bb273f762fa8a786",
+      "target": "cert:43a27911ae1ee5e1"
+    },
+    {
       "evidence": "team_contributions.45.payload.evidence.path",
       "relation": "REGISTERS",
       "source": "cert:bd56f3a65e5f22ff",
@@ -1079,6 +1103,10 @@
   "public_missing_evidence": [],
   "support_json_references": [
     {
+      "consumer": "bridge/einstein_sector/atlas/EINSTEIN_ATLAS_V1_TIER_RECEIPT.json",
+      "support": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+    },
+    {
       "consumer": "closed_universe_observers/certificates/BERGER_84_ROW_OBSERVER_APPARATUS_HANDOFF.json",
       "support": "closed_universe_observers/fixtures/berger_84_row_apparatus_handoff_input.json"
     },
@@ -1119,8 +1147,20 @@
       "support": "closed_universe_observers/fixtures/rank_one_cloned_observer_input.json"
     },
     {
+      "consumer": "closed_universe_observers/receipts/ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
       "consumer": "closed_universe_observers/receipts/APPARATUS_84_HANDOFF_TIER_RECEIPT.json",
       "support": "closed_universe_observers/fixtures/berger_84_row_apparatus_handoff_input.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/CLOCK_INTEGRATED_SCALAR_STREAM_TWO_J139_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/CLOCK_WEIGHTED_SCALAR_STREAMS_TWO_J139_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
     },
     {
       "consumer": "closed_universe_observers/receipts/DETECTOR_RECORD_HARDENING_TIER_RECEIPT.json",
@@ -1147,6 +1187,14 @@
       "support": "closed_universe_observers/fixtures/berger_global_detector_rods_input.json"
     },
     {
+      "consumer": "closed_universe_observers/receipts/GREEN_WEIGHTED_DETECTOR_CODERIVATIVE_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/HIGH_ORDER_PROFILE_MOMENT_RAIL_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
       "consumer": "closed_universe_observers/receipts/OBSERVER_INTERACTION_IMPORT_GATE_TIER_RECEIPT.json",
       "support": "closed_universe_observers/fixtures/berger_observer_interaction_import_gate_input.json"
     },
@@ -1155,8 +1203,28 @@
       "support": "closed_universe_observers/fixtures/berger_observer_interaction_import_gate_input.json"
     },
     {
+      "consumer": "closed_universe_observers/receipts/OBSERVER_RESIDUAL_ATLAS_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/POLARIZATION_CLEBSCH_GORDAN_RECURRENCE_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/POLARIZATION_RECURRENCE_CLOSED_FORM_OPTIMIZATION_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
       "consumer": "closed_universe_observers/receipts/SMEARED_RETARDED_TRANSFER_TIER_RECEIPT.json",
       "support": "closed_universe_observers/fixtures/berger_smeared_retarded_transfer_input.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/STREAMABLE_POLARIZATION_SECTORS_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
+    },
+    {
+      "consumer": "closed_universe_observers/receipts/TWO_J4_PROFILE_TAIL_OBSTRUCTION_TIER_RECEIPT.json",
+      "support": "closed_universe_observers/atlas/observer-atlas-fragment.json"
     },
     {
       "consumer": "d_quotient_classical/certificates/BERGER_CURVED_CLOCK_REATTACHED_WITNESS.json",
@@ -1415,6 +1483,10 @@
       "support": "symbolic/conformal-d-global-alternatives.json"
     },
     {
+      "consumer": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+      "support": "d_quotient_classical/atlas/nonlinear-atlas-fragment.json"
+    },
+    {
       "consumer": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
       "support": "d_quotient_programme/contributions/einstein-berger-incidence.json"
     },
@@ -1425,6 +1497,38 @@
     {
       "consumer": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
       "support": "d_quotient_programme/contributions/einstein-weyl-relative-linear-triangle-preflight.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/adjoint_reversal.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/causal_globalization.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/finite_slab_estimate.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/typed_inverse_identities.json"
+    },
+    {
+      "consumer": "d_quotient_classical/manifests/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1_SOURCE_MANIFEST.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/adjoint_reversal.json"
+    },
+    {
+      "consumer": "d_quotient_classical/manifests/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1_SOURCE_MANIFEST.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/causal_globalization.json"
+    },
+    {
+      "consumer": "d_quotient_classical/manifests/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1_SOURCE_MANIFEST.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/finite_slab_estimate.json"
+    },
+    {
+      "consumer": "d_quotient_classical/manifests/TYPED_BIWAVE_VOLTERRA_GREEN_THEOREM_V1_SOURCE_MANIFEST.json",
+      "support": "d_quotient_classical/generated/typed_biwave_volterra_green_theorem_v1/typed_inverse_identities.json"
     },
     {
       "consumer": "d_quotient_programme/certificates/D_QUOTIENT_PROGRAMME_STATUS.json",
@@ -1936,6 +2040,46 @@
     }
   ],
   "unresolved_declared_json_dependencies": [
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1.json",
+      "context": "input_contract.candidate_paths.0",
+      "reference": "d_quotient_classical/certificates/BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1.json",
+      "context": "input_contract.candidate_paths.1",
+      "reference": "bridge/certificates/BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+      "context": "input_contracts.einstein_taylor.candidate_paths.0",
+      "reference": "bridge/certificates/EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+      "context": "input_contracts.einstein_taylor.candidate_paths.1",
+      "reference": "bridge/certificates/einstein_maxwell_product_linfinity_through_arity_three_v1.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+      "context": "input_contracts.relative_triangle.candidate_paths.0",
+      "reference": "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+      "context": "input_contracts.relative_triangle.candidate_paths.1",
+      "reference": "bridge/certificates/einstein_weyl_relative_linear_triangle_v1.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+      "context": "input_contracts.weyl_taylor.candidate_paths.0",
+      "reference": "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json"
+    },
+    {
+      "consumer": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
+      "context": "input_contracts.weyl_taylor.candidate_paths.1",
+      "reference": "bridge/certificates/weyl_maxwell_product_linfinity_through_arity_three_v1.json"
+    },
     {
       "consumer": "d_quotient_classical/certificates/RELATIVE_RESIDUAL_AND_OBSERVABLE_FUNCTOR_PREFLIGHT_V1.json",
       "context": "required_import.candidate_paths.0",
