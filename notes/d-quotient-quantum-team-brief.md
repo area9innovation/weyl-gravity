@@ -806,3 +806,7 @@ Receipts are summarized in
 [`wess-zumino-minimal-bv-cotangent-lift.md`](../quantum-weyl/reports/wess-zumino-minimal-bv-cotangent-lift.md),
 and
 [`wess-zumino-extended-local-bv-cohomology.md`](../quantum-weyl/reports/wess-zumino-extended-local-bv-cohomology.md).
+The theorem spine is assembled in
+[`12-pure-weyl-one-loop-bv-anomaly.tex`](../paper/12-pure-weyl-one-loop-bv-anomaly.tex),
+with a generated claim map and compiled draft PDF. Literature and human prose
+review remain before theorem freeze.

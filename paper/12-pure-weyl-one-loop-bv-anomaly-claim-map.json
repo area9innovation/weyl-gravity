@@ -1,0 +1,96 @@
+{
+  "certified_claims": {
+    "BoxR_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "C2_coefficient": {
+      "denominator": 30,
+      "numerator": 199
+    },
+    "CdualC_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "E4_coefficient": {
+      "denominator": 20,
+      "numerator": -87
+    },
+    "Weyl_quartet_contractible": true,
+    "extended_H04_even_dimension": 3,
+    "extended_H04_odd_dimension": 1,
+    "extended_H14_even_dimension": 0,
+    "extended_H14_odd_dimension": 0,
+    "extended_one_loop_local_Euclidean_QME_restored": true,
+    "formal_tau_adic_coordinate_change_invertible": true,
+    "minimal_BV_compensator_cotangent_lift_exact": true,
+    "pure_Diff_and_mixed_additional_classes": 0,
+    "standard_unitary_free_matter_cancellation_excluded": true,
+    "strict_full_gauge_fixed_H14_even_dimension": 2,
+    "strict_full_gauge_fixed_H14_odd_dimension": 1,
+    "strict_one_loop_local_Euclidean_QME_obstructed": true
+  },
+  "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
+  "compiled_pdf_sha256": "abf99c8cb059a6d3fe4d0ce0af83db97f340c92c25fb19525973164390d154aa",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "explicit_nonclaims": {
+    "Bridge_4_particle_crosswalk": false,
+    "Bridge_5_interacting_BRST_map": false,
+    "Lorentzian_QME": false,
+    "all_loop_extended_QME": false,
+    "finite_polynomial_in_tau_theorem": false,
+    "global_BRST_Hadamard_state": false,
+    "positive_particle_Hilbert_space": false,
+    "quantum_Cartan_identity": false,
+    "renormalized_Lorentzian_products": false,
+    "residual_quantum_transfer": false,
+    "theorem_frozen": false,
+    "unitarity_theorem": false
+  },
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME.",
+  "inputs": {
+    "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
+      "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
+      "sha256": "d11ebc782c6a388e2fd2d934e0a60c7016faf60b9c22691cceeeb6a8080bf3f8"
+    },
+    "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json": {
+      "result_id": "UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO",
+      "sha256": "9c4b1218450e20f0475a70ca36e0de3749f1aa85d90c2b314bf544e0a2605116"
+    },
+    "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json": {
+      "result_id": "WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY",
+      "sha256": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616"
+    },
+    "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json": {
+      "result_id": "WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT",
+      "sha256": "b265dc9d86938ed7bee0f57a1394e26e762e99841a89b1310b950542e0c2e2b1"
+    }
+  },
+  "lifecycle_state": "WRITING_STARTED",
+  "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
+  "manuscript_sha256": "c02982251ef7ee0be9e14b6a94d9e9a6993b6bfe615eb90a0060ab7aef75e487",
+  "next_gate": {
+    "required_inputs": [
+      "compensator-inclusive classical contraction",
+      "coefficient-bearing restored one-loop Slavnov operator Q1"
+    ],
+    "required_outputs": [
+      "q1=pi_ext Q1 iota_ext",
+      "first-order residual nilpotency",
+      "quantum D-Cartan defect",
+      "H3-to-H4 and H4-to-H5 maps",
+      "pairing correction"
+    ],
+    "status": "EXTENDED_CLASSICAL_CONTRACTION_AND_ONE_LOOP_SLAVNOV_OPERATOR_Q1"
+  },
+  "result_id": "PAPER_12_PURE_WEYL_ONE_LOOP_BV_ANOMALY_DRAFT",
+  "result_state": "DRAFT_ALLOWED_STRICT_OBSTRUCTION_AND_TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORATION",
+  "schema": "paper-12-pure-weyl-one-loop-bv-anomaly-claim-map-v1",
+  "theory_dispositions": {
+    "strict_fixed_field_content": "OBSTRUCTED",
+    "tau_adic_compensator_extended_local_Euclidean_one_loop": "QME_RESTORED"
+  }
+}
