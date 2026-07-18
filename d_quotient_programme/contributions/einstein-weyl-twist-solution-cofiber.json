@@ -1,0 +1,36 @@
+{
+  "boundary_conditions": "same compact Plebanski-Hacyan R_t x S1_L x S2 background on the fixed N=2 magnetic bundle; axial ell=1,k=0 generalized-zero twist primary before finite holonomy-moduli and final residual quotients",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the exact CRT polynomial P_twist=3*(x-4/3)*(x-4)/16 isolates the x=0 target primary",
+    "the complete target twist primary is the identity image of the Einstein-Maxwell twist position/velocity pairs",
+    "the twist solution cofiber is zero for all three real ell=1 harmonics",
+    "the action-derived target form is nondegenerate and equals -2 times the Einstein-Maxwell form under the identity inclusion"
+  ],
+  "evidence": {
+    "commit": "845fbbf1e43b2d8664c82e6782085cc991f4fa01",
+    "path": "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
+    "sha256": "94309d5f8a3710e0527b5325a42329165b848bf61f50cfa12746a341e213d21c"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct or obstruct the twist ghost-field-equation-identity chain map and classify the finite holonomy moduli and final residual quotient",
+  "not_established": [
+    "an off-shell twist chain map or derived cofiber triangle",
+    "the finite SO(3)-holonomy moduli-orbifold quotient",
+    "final residual descent",
+    "the pending twist position/velocity times ell=2 extra quadratic source columns",
+    "causal, observational, particle, quantum, changed-boundary, or cross-background claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_axial_twist_generalized_zero_solution_cofiber",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_weyl_twist_solution_cofiber",
+  "team_id": "einstein_boundary",
+  "verdict": "TWIST_PRIMARY_SOLUTION_COFIBER_ZERO_OFFSHELL_AND_GLOBAL_DESCENT_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_twist_solution_cofiber --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_twist_solution_cofiber.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_twist_solution_cofiber"
+  ]
+}
