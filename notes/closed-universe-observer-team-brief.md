@@ -787,6 +787,15 @@ massive constants certify the four symbolic tail radii
 complete streamed integrand, numerical masses/couplings and a declared
 interval, nonzero or sign stopping goal remain `OPEN`.
 
+`BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` corrects the sequence of those
+open inputs.  The next task is internal, not numerical: the positive-energy
+preparations remain operator-defined, while their complete harmonic
+coefficients and advanced massive images are still `OPEN`.  The per-shell
+preparation/recoil contraction must therefore be serialized first with
+`m_0,m_1>0` symbolic and the `g_0,g_1` monomials factored.  Numerical masses,
+nonzero couplings and an interval/nonzero/sign goal form a later independent
+activation gate.  No stream or scalar coefficient is currently promoted.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

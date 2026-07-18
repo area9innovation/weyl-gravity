@@ -1,0 +1,169 @@
+{
+  "atlas_status": "OPEN",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL activation gate separates the internal modewise recoil construction from later numerical specialization. The absolute-g3 operator, exact switches, finite Maxwell/massive kernels, selected exact-T clock transform and all four symbolic detector tail radii are certified. The stream is nevertheless inactive because the detector-selected preparations remain operator-defined: their harmonic coefficients and advanced massive Green images are explicitly unevaluated, so no complete per-shell scalar integrand exists. Numerical positive masses, nonzero couplings and an interval/nonzero/sign stopping goal are a separate later input gate. The next coherent calculation is to serialize the complete per-shell preparation and recoil contraction with masses symbolic and couplings factored; numerical values must not be invented. This gate does not evaluate a recoil scalar, restrict to the tangent cone, activate Bridge 3, promote finite-r/all-orders observer-morphism stability or make a quantum claim.",
+  "claim_status": "SYMBOLIC_TAIL_ENVELOPE_CERTIFIED_MODEWISE_SCALAR_STREAM_INPUTS_OPEN",
+  "dependency_refs": {
+    "clock_transform": {
+      "path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
+      "result_id": "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM",
+      "sha256": "09d51889e2396fa6388a769c9c37c69b1663f51581ed752ac26d1d9f7b776a42"
+    },
+    "dual_norms": {
+      "path": "closed_universe_observers/certificates/BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS.json",
+      "result_id": "BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS",
+      "sha256": "3120fc7f60a43c2990bb2aca2a1dd41b7ceec4f099bfb8b280998c6d177d5041"
+    },
+    "mode_kernels": {
+      "path": "closed_universe_observers/certificates/BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS.json",
+      "result_id": "BERGER_FINITE_MODE_MAXWELL_EMITTER_GREEN_KERNELS",
+      "sha256": "f39348c599ca4c69461bc1ebaf2d32c51a733865165b66e4815d26c53cb48ecc"
+    },
+    "preparations": {
+      "path": "closed_universe_observers/certificates/BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES.json",
+      "result_id": "BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES",
+      "sha256": "83663f884e69735f5233a0231d3d974d7c4886f42664cf7f1f375a841ac96019"
+    },
+    "recoil_operator": {
+      "path": "closed_universe_observers/certificates/BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE.json",
+      "result_id": "BERGER_DYNAMICAL_EMITTER_RECOIL_ORDER_AND_INPUT_GATE",
+      "sha256": "28aec893743778eae6b9e22732a3e58a010de6075f9a9373f17a5352052ef08c"
+    },
+    "streaming_preflight": {
+      "path": "closed_universe_observers/certificates/BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT.json",
+      "result_id": "BERGER_RESPONSE_SPECIFIC_STREAMING_PREFLIGHT",
+      "sha256": "235afae162f5373b623504d5d4c83feaf929ce8ae9190bd9dd62ef6a8b7076cd"
+    },
+    "switches": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES.json",
+      "result_id": "BERGER_EXACT_NORMALIZED_EMITTER_SWITCH_PROFILES",
+      "sha256": "ba2bc98d538c09530c1ac7021520b8559ee14bff040e5be8659ac829f98f6a34"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ANALYTIC_SYMBOLIC_TAIL_ENVELOPE_COMPLETE": true,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
+    "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": false,
+    "QUANTUM_CLAIM": false,
+    "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": true
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "mutated_rows": [
+        "complete_harmonic_preparation_coefficients",
+        "advanced_massive_preparation_image"
+      ],
+      "name": "pretend_operator_defined_preparations_are_harmonically_evaluated"
+    },
+    {
+      "detected": true,
+      "name": "activate_stream_from_symbolic_tail_radius_alone"
+    }
+  ],
+  "next_gate": "SERIALIZE_COMPLETE_PER_SHELL_PREPARATION_AND_RECOIL_CONTRACTION_WITH_SYMBOLIC_POSITIVE_MASSES_AND_FACTORED_COUPLINGS",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py",
+        "sha256": "9551291cede05cbd94e8531228f81f1968153ef9f409e8a3c41cc0fcd89976cc"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py",
+        "sha256": "976064df779a06a6da53ae1006905fae2ec83f4d058156e6b24561e0ecbd5427"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py",
+        "sha256": "e74b8573425f1eae34e0bc77e1db5b83c30bb502920ed1a50cc944c449cc3a69"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json",
+        "sha256": "90ca996a9296774062c78f9446d7cccd9bdfa0aa06de877bbde7063488283855"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md",
+        "sha256": "eb54cdf50366995ab644af190ce0dbb875060eddcce918edc8e880df65f464a0"
+      }
+    ]
+  },
+  "readiness": {
+    "external_rows": [
+      {
+        "id": "numerical_positive_masses",
+        "required_domain": "m_0>0 and m_1>0",
+        "status": "OPEN"
+      },
+      {
+        "id": "numerical_nonzero_couplings",
+        "required_domain": "g_0!=0 and g_1!=0",
+        "status": "OPEN"
+      },
+      {
+        "allowed": [
+          "interval_tolerance",
+          "nonzero",
+          "sign"
+        ],
+        "id": "scalar_stopping_goal",
+        "status": "OPEN"
+      }
+    ],
+    "four_scalar_stream_active": false,
+    "internal_modewise_stream_ready": false,
+    "internal_rows": [
+      {
+        "evidence_flag": "FIRST_DETECTOR_RECOIL_ABSOLUTE_G3_OPERATOR_COMPUTED",
+        "id": "exact_absolute_g3_operator",
+        "status": "CERTIFIED"
+      },
+      {
+        "evidence_flag": "EXACT_H0_H1_SWITCH_PROFILES_SERIALIZED",
+        "id": "exact_normalized_switches",
+        "status": "CERTIFIED"
+      },
+      {
+        "evidence_flag": "EXACT_FINITE_MODE_MAXWELL_GREEN_KERNELS_EXPORTED+EXACT_FINITE_MODE_MASSIVE_TWO_FORM_GREEN_KERNELS_EXPORTED",
+        "id": "finite_mode_Maxwell_and_massive_kernels",
+        "status": "CERTIFIED"
+      },
+      {
+        "evidence_flag": "FOUR_SYMBOLIC_RECOIL_TAIL_RADII_EXPORTED",
+        "id": "response_specific_stopping_envelope",
+        "status": "CERTIFIED"
+      },
+      {
+        "evidence_flag": "HARMONIC_COEFFICIENTS_EVALUATED",
+        "id": "complete_harmonic_preparation_coefficients",
+        "status": "OPEN"
+      },
+      {
+        "evidence_flag": "ADVANCED_GREEN_IMAGES_EVALUATED",
+        "id": "advanced_massive_preparation_image",
+        "status": "OPEN"
+      },
+      {
+        "evidence_flag": "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED",
+        "id": "complete_modewise_recoil_scalar_integrand",
+        "status": "OPEN"
+      }
+    ],
+    "numerical_specialization_ready": false
+  },
+  "result_id": "BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE",
+  "schema": "closed-universe-berger-recoil-scalar-stream-activation-gate-v1",
+  "sequencing_decision": {
+    "current_active_gate": "construct complete modewise preparation/recoil scalar integrand",
+    "dense_profile_materialization": "NOT_SELECTED",
+    "later_external_gate": "declare numerical masses, nonzero couplings and interval/nonzero/sign stopping goal",
+    "parameterization_during_internal_gate": "m_0,m_1 symbolic positive; factor g_0,g_1 monomials",
+    "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP"
+  },
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus"
+}

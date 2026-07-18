@@ -1,0 +1,45 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "RECOIL_SCALAR_STREAM_ACTIVATION_GATE_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The activation audit certifies that the analytic symbolic tail envelope is complete while the four scalar streams remain inactive. Complete harmonic preparation coefficients, advanced massive images and the per-shell scalar integrand are internal open gates; numerical masses/couplings and a stopping goal are separate later inputs. No recoil interval, cone, Bridge 3, nonlinear all-orders stability or quantum claim is promoted.",
+  "tier_0": [
+    {"command": "python3 -m py_compile closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "status": "PASS"},
+    {"command": "JSON/schema parse and git diff --check on scoped observer paths", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.verify_berger_recoil_scalar_stream_activation_gate", "status": "PASS", "summary": "Readiness rows distinguish certified analytic inputs, open harmonic preparation data and later external parameters."},
+    {"command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 -m closed_universe_observers.verify_comparison_ledger", "status": "PASS", "summary": "The stream remains OPEN and Bridge 3 remains NO_CERTIFIED_MAP in generated lifecycle data."},
+    {"command": "pytest -q closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 4.76, "status": "PASS", "summary": "20 activation-gate, atlas and ledger tests passed."}
+  ],
+  "tier_2": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_recoil_scalar_stream_activation_gate --check", "status": "PASS", "summary": "The fail-closed readiness matrix regenerates byte-for-byte."},
+    {"command": "Combined scoped certificate chain", "elapsed_seconds": 6.31, "status": "PASS", "summary": "Compile, generator, verifier, atlas, ledger and 20 tests passed."}
+  ],
+  "higher_tiers": [
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No evaluated recoil, shared core algebra, lifecycle freeze or release was promoted."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_recoil_scalar_stream_activation_gate.py", "sha256": "9551291cede05cbd94e8531228f81f1968153ef9f409e8a3c41cc0fcd89976cc"},
+    {"path": "closed_universe_observers/verify_berger_recoil_scalar_stream_activation_gate.py", "sha256": "976064df779a06a6da53ae1006905fae2ec83f4d058156e6b24561e0ecbd5427"},
+    {"path": "closed_universe_observers/tests/test_berger_recoil_scalar_stream_activation_gate.py", "sha256": "e74b8573425f1eae34e0bc77e1db5b83c30bb502920ed1a50cc944c449cc3a69"},
+    {"path": "closed_universe_observers/schema/berger-recoil-scalar-stream-activation-gate-v1.schema.json", "sha256": "90ca996a9296774062c78f9446d7cccd9bdfa0aa06de877bbde7063488283855"},
+    {"path": "closed_universe_observers/reports/berger-recoil-scalar-stream-activation-gate.md", "sha256": "eb54cdf50366995ab644af190ce0dbb875060eddcce918edc8e880df65f464a0"},
+    {"path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json", "sha256": "5e8d76e28f11f3b91755b630ac5d0b6bf5f2b0b0c843586232d6977f6c5fb082"},
+    {"path": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py", "sha256": "d4c7cfc87ae648b7012fce312644fa1c5cfa0e56ef8fd96e7f4a130eb6d61f13"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "d967047afdfa031ae75c4d67fecaffdb14e6977c4316de21003cc9b1545e7a0b"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "39a96e5642c7514a26310f48dfad07f3f830fb47b50b384a18bb19f9019bcff1"},
+    {"path": "closed_universe_observers/reports/observer-residual-atlas-fragment.md", "sha256": "4ac5ff598cf1746342e4628aea637a3190bfa522d0b736f609f66b39abd58613"},
+    {"path": "notes/closed-universe-observer-team-brief.md", "sha256": "6c280298ec492c1a53361935bb64417a1c2728754b3bae3af335f26ad614444e"}
+  ],
+  "claim_flags": {
+    "RECOIL_SCALAR_STREAM_ACTIVATION_AUDIT_EXPORTED": true,
+    "ANALYTIC_SYMBOLIC_TAIL_ENVELOPE_COMPLETE": true,
+    "COMPLETE_MODEWISE_RECOIL_SCALAR_INTEGRAND_EXPORTED": false,
+    "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": false,
+    "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": false,
+    "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

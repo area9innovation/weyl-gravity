@@ -91,6 +91,12 @@ symbolic positive-mass finite-slab constants exports four symbolic recoil-tail
 radii.  The atlas keeps the actual recoil scalars `OPEN`: numerical masses and
 couplings, a stopping goal, and the complete streamed scalar integrand have
 not been supplied.
+The adjacent recoil-stream activation row is `OPEN` and separates two gates.
+Internally, the operator-defined preparations still lack complete harmonic
+coefficients and evaluated advanced massive images, so no per-shell scalar
+integrand exists.  Externally, numerical masses/couplings and a stopping goal
+remain undeclared.  The atlas makes the internal symbolic integrand the next
+gate and does not activate a scalar stream from its tail envelope alone.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has
