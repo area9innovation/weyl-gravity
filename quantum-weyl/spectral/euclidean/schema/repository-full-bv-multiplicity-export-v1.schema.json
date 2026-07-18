@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-full-bv-multiplicity-export-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "dependency_tags", "classical_commit", "analytic_route", "integration_slice", "repository_factors", "standard_factor_map", "cancellations", "proof_artifacts", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-full-bv-multiplicity-export-v1"},
+    "result_id": {"const": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "uniqueItems": true,
+      "contains": {"const": "LOCAL-ALGEBRAIC"},
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "LORENTZIAN-CAUSAL"]}
+    },
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "analytic_route": {"enum": ["EUCLIDEAN_ELLIPTIC", "LORENTZIAN_CAUSAL"]},
+    "integration_slice": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "gauge", "rows", "antifields_integrated_independently", "all_rows_accounted", "proof_artifact"],
+      "properties": {
+        "status": {"const": "VERIFIED"},
+        "gauge": {"type": "string", "minLength": 1},
+        "rows": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/integrationRow"}},
+        "antifields_integrated_independently": {"const": false},
+        "all_rows_accounted": {"const": true},
+        "proof_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "repository_factors": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/factor"}
+    },
+    "standard_factor_map": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "prefixItems": [
+        {"$ref": "#/$defs/mapPhysical0"},
+        {"$ref": "#/$defs/mapGhost0"},
+        {"$ref": "#/$defs/mapPhysical1"},
+        {"$ref": "#/$defs/mapGhost1"}
+      ],
+      "items": false
+    },
+    "cancellations": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contractible_pairs_status", "scalar_ghost_reduction_status", "scalar_ghost_input_rank", "scalar_ghost_output_rank", "nonminimal_Berezinian_status", "proof_artifact"],
+      "properties": {
+        "contractible_pairs_status": {"const": "VERIFIED"},
+        "scalar_ghost_reduction_status": {"const": "VERIFIED"},
+        "scalar_ghost_input_rank": {"const": 2},
+        "scalar_ghost_output_rank": {"const": 1},
+        "nonminimal_Berezinian_status": {"const": "VERIFIED"},
+        "proof_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "proof_artifacts": {
+      "type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}
+    },
+    "claim_boundary": {"type": "string", "minLength": 50}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "path", "sha256"],
+      "properties": {
+        "format": {"enum": ["JSON_DATA", "JSON_PROOF", "TEXT_PROOF"]},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "integrationRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generator_id", "role", "statistics", "component_rank", "operator_id", "determinant_exponent", "zero_mode_policy_id"],
+      "properties": {
+        "generator_id": {"type": "string", "minLength": 1},
+        "role": {"enum": ["field", "ghost", "antighost", "multiplier", "auxiliary", "jacobian"]},
+        "statistics": {"enum": ["BOSONIC", "FERMIONIC"]},
+        "component_rank": {"type": "integer", "minimum": 1},
+        "operator_id": {"type": "string", "minLength": 1},
+        "determinant_exponent": {"$ref": "#/$defs/rational"},
+        "zero_mode_policy_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "factor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_id", "bundle", "statistics", "component_rank", "operator", "determinant_exponent", "source_generator_ids", "derivation_artifact"],
+      "properties": {
+        "factor_id": {"type": "string", "minLength": 1},
+        "bundle": {"type": "string", "minLength": 1},
+        "statistics": {"enum": ["BOSONIC", "FERMIONIC"]},
+        "component_rank": {"type": "integer", "minimum": 1},
+        "operator": {"type": "string", "minLength": 1},
+        "determinant_exponent": {"$ref": "#/$defs/rational"},
+        "source_generator_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "derivation_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "mapBase": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_factor_id", "repository_factor_ids", "status", "proof_artifact"],
+      "properties": {
+        "target_factor_id": {"type": "string"},
+        "repository_factor_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "status": {"const": "VERIFIED"},
+        "proof_artifact": {"$ref": "#/$defs/artifact"}
+      }
+    },
+    "mapPhysical0": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "physical_depth_0"}}}]},
+    "mapGhost0": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "ghost_depth_0"}}}]},
+    "mapPhysical1": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "physical_depth_1"}}}]},
+    "mapGhost1": {"allOf": [{"$ref": "#/$defs/mapBase"}, {"type": "object", "properties": {"target_factor_id": {"const": "ghost_depth_1"}}}]}
+  }
+}

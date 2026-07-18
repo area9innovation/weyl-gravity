@@ -7,20 +7,21 @@
   "properties": {
     "schema": {"const": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1"},
     "result_id": {"const": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT"},
-    "result_state": {"const": "FULL_BV_QUOTIENT_BOUND_TO_STANDARD_BACKGROUND_VECTOR_REPOSITORY_MATCHING_OPEN"},
+    "result_state": {"const": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN"},
     "result_stage": {"const": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
     "regularity_scope": {"const": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY"},
     "dependency_hashes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "Ward_insertion_contract"],
+      "required": ["full_local_BV_G2", "gauge_fixed_H14", "BoxR_triviality", "standard_background_coefficients", "standard_auxiliary_fourth_order_match", "full_BV_multiplicity_preflight", "Ward_insertion_contract"],
       "properties": {
         "full_local_BV_G2": {"$ref": "#/$defs/hash"},
         "gauge_fixed_H14": {"$ref": "#/$defs/hash"},
         "BoxR_triviality": {"$ref": "#/$defs/hash"},
         "standard_background_coefficients": {"$ref": "#/$defs/hash"},
         "standard_auxiliary_fourth_order_match": {"$ref": "#/$defs/hash"},
+        "full_BV_multiplicity_preflight": {"$ref": "#/$defs/hash"},
         "Ward_insertion_contract": {"$ref": "#/$defs/hash"}
       }
     },
@@ -133,17 +134,17 @@
       "additionalProperties": false,
       "required": ["discharged", "missing"],
       "properties": {
-        "discharged": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string", "minLength": 10}},
+        "discharged": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "string", "minLength": 10}},
         "missing": {
           "type": "array",
-          "minItems": 4,
-          "maxItems": 4,
+          "minItems": 5,
+          "maxItems": 5,
           "items": {
             "type": "object",
             "additionalProperties": false,
             "required": ["carrier_id", "required_output"],
             "properties": {
-              "carrier_id": {"enum": ["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "REPOSITORY_FULL_BV_OPERATOR_AUXILIARY_NORMALIZATION_AND_CONTOUR_MATCH", "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION"]},
+              "carrier_id": {"enum": ["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX", "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER", "REPOSITORY_FULL_BV_OPERATOR_AUXILIARY_NORMALIZATION_AND_CONTOUR_MATCH", "ZERO_MODE_CONTOUR_AND_MEASURE_LEDGER", "REGULATED_BV_SLAVNOV_ACTION"]},
               "required_output": {"type": "string", "minLength": 20}
             }
           }
@@ -157,7 +158,9 @@
         "coefficient_arithmetic_gap": false,
         "standard_parity_gap": false,
         "standard_physical_TT_auxiliary_identity_gap": false,
-        "remaining_decision_gap": "the map from the standard background determinant to the repository regulated BV Slavnov functional",
+        "standard_factor_rank_gap": false,
+        "scalar_ghost_gap_rank": 1,
+        "remaining_decision_gap": "the analytic operator/Berezinian map resolving the rank-one scalar ghost gap and mapping the complete repository determinant to the regulated BV Slavnov functional",
         "no_further_local_graph_expansion_required": true
       }
     },
@@ -167,6 +170,7 @@
         "STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED": true,
         "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": true,
         "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": true,
+        "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": true,
         "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": true,
         "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": true,
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": false,

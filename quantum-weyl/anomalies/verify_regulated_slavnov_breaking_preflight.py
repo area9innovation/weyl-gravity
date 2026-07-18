@@ -30,6 +30,8 @@ def verify() -> dict:
     entries = checked["cohomology_reduction"]["matrix_entries"]
     if [(row["row"], row["column"]) for row in entries] != [(0, 0), (1, 1), (2, 2)]:
         raise ValueError("relative-cohomology reduction is not the certified quotient map")
+    if checked["minimal_missing_carrier_theorem"].get("scalar_ghost_gap_rank") != 1:
+        raise ValueError("rank-one scalar ghost gap was not bound")
     for flag in (
         "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED",
         "REGULATED_SLAVNOV_BREAKING_COMPUTED",

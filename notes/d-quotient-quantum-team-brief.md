@@ -538,9 +538,15 @@ The scope-correct V2 classical antifield import and **G2 local BV cohomology**
 are now closed on the regular Bach locus, including minimal Koszul--Tate,
 pure-Diff, mixed, descent, nonminimal, and canonically gauge-fixed sectors.
 The exact `3 x 4` Slavnov-breaking assembly preflight and strict analytic
-export receiver are now ready. The next task is to supply a
-content-addressed repository regulator/operator/measure match and compute the
-regulated Slavnov breaking through that receiver. A nonzero quotient branch
+export receiver are now ready. An exact multiplicity preflight also derives
+the standard determinant bundle ranks `(5,1,5,3)`, reproduces signed rank
+six, and compares them with the covariant metric/Diff-ghost/Weyl-ghost ranks
+`(10,4,1)`. It localizes the unproved counting step to a rank-one scalar
+ghost cancellation plus the analytic operator/Berezinian map; the classical
+54-row carrier is explicitly not a loop-multiplicity authority. The next
+task is to supply the strict `REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER`, a
+content-addressed repository regulator/operator/measure match, and compute
+the regulated Slavnov breaking through that receiver. A nonzero quotient branch
 obstructs strict fixed field content; a purely `omega BoxR` branch is restored
 by its explicit counterterm. Neither branch has yet been activated. Do not
 alter the classical producer to force acceptance. See

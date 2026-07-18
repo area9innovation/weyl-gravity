@@ -38,10 +38,13 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(self.payload["claim_flags"]["FULL_BV_G2_COMPLETE"])
         self.assertEqual(
             ladder["G3"],
-            "FULL_STANDARD_VECTOR_AND_TT_AUXILIARY_IDENTITY_BOUND_ANALYTIC_MATCHING_OPEN",
+            "FULL_STANDARD_VECTOR_TT_AUXILIARY_AND_MULTIPLICITY_GAP_BOUND_ANALYTIC_MATCHING_OPEN",
         )
         self.assertTrue(
             self.payload["claim_flags"]["SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY"]
+        )
+        self.assertTrue(
+            self.payload["claim_flags"]["FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND"]
         )
         self.assertTrue(
             self.payload["claim_flags"]["STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED"]

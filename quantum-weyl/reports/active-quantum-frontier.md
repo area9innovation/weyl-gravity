@@ -36,7 +36,13 @@ handoff receiver now distinguishes the obstructed and counterterm-restorable
 branches. The physical TT pair additionally has an exact auxiliary Schur and
 local-Jacobian identity, so the remaining auxiliary gap is repository row
 identification, normalization, contour, and finite phase rather than the
-Gaussian algebra. These results do not promote the lifecycle because the repository
+Gaussian algebra. The standard determinant bundle ranks `(5,1,5,3)` also
+reproduce signed effective rank six. Comparing them with the covariant BV
+component ranks localizes the missing multiplicity proof to exactly one
+scalar ghost rank and its operator/Jacobian/nonminimal Berezinian map. A
+strict, content-addressed full-BV multiplicity receiver is ready; the
+classical 54-row carrier is not treated as a loop operator. These results do
+not promote the lifecycle because the repository
 operator/measure match, global BRST Hadamard covariance, regulated Slavnov
 breaking, renormalized products, and QME remain open.
 
@@ -130,8 +136,9 @@ exceptional/global rows, and the global mapping cone are still open.
 
 The ordered critical path is:
 
-1. match a repository regulator, operator, measure, auxiliary/fourth-order
-   Jacobian, and zero-mode ledger through the accepted analytic export, then
+1. supply the full-BV multiplicity ledger resolving the rank-one scalar ghost
+   cancellation, then match a repository regulator, operator, measure,
+   auxiliary/fourth-order Jacobian, and zero-mode ledger through the accepted analytic export, then
    compute the regulated Slavnov breaking against the completed H14 basis;
 2. in parallel, supply and accept the stationary generator, Cauchy BRST, pairing, and real-structure manifest;
 3. retained 26-row zero-frequency spectral carrier;

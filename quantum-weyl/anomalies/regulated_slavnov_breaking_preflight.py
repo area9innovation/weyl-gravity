@@ -24,6 +24,10 @@ OUTPUT = HERE / "certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json
 SCHEMA = HERE / "schema/regulated-slavnov-breaking-assembly-preflight-v1.schema.json"
 EXPORT_SCHEMA = HERE / "schema/regulated-slavnov-breaking-export-v1.schema.json"
 EXPORT_SCHEMA_ID = "quantum-weyl-regulated-slavnov-breaking-export-v1"
+MULTIPLICITY_EXPORT_SCHEMA = (
+    ROOT
+    / "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json"
+)
 
 DEPENDENCIES = {
     "full_local_BV_G2": ROOT / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
@@ -31,6 +35,7 @@ DEPENDENCIES = {
     "BoxR_triviality": ROOT / "quantum-weyl/local_bv/certificates/TRIVIALITY_CERTIFICATE.json",
     "standard_background_coefficients": ROOT / "quantum-weyl/spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
     "standard_auxiliary_fourth_order_match": ROOT / "quantum-weyl/spectral/euclidean/certificates/STANDARD_SPIN2_AUXILIARY_FOURTH_ORDER_MATCH.json",
+    "full_BV_multiplicity_preflight": ROOT / "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT.json",
     "Ward_insertion_contract": ROOT / "quantum-weyl/cartan/certificates/RENORMALIZED_D_WARD_INSERTION_CONTRACT.json",
 }
 
@@ -112,6 +117,63 @@ def _require_json_result_id(
     if value.get("result_id") != expected_result_id:
         raise ValueError(
             f"{label} has result_id {value.get('result_id')!r}, expected {expected_result_id!r}"
+        )
+
+
+def _validate_multiplicity_artifact(
+    artifact: dict[str, str],
+    *,
+    repository_root: Path,
+    classical_commit: str,
+    analytic_route: str,
+) -> None:
+    """Validate the strict multiplicity handoff, including nested proof hashes."""
+
+    value = json.loads((repository_root / artifact["path"]).read_text())
+    schema = json.loads(MULTIPLICITY_EXPORT_SCHEMA.read_text())
+    Draft202012Validator.check_schema(schema)
+    Draft202012Validator(schema).validate(value)
+    if value["classical_commit"] != classical_commit:
+        raise ValueError("multiplicity artifact classical commit drifted")
+    if value["analytic_route"] != analytic_route:
+        raise ValueError("multiplicity artifact analytic route drifted")
+    expected_tag = (
+        "EUCLIDEAN-SPECTRAL"
+        if analytic_route == "EUCLIDEAN_ELLIPTIC"
+        else "LORENTZIAN-CAUSAL"
+    )
+    if expected_tag not in value["dependency_tags"]:
+        raise ValueError("multiplicity artifact dependency tag drifted")
+
+    rows = value["integration_slice"]["rows"]
+    row_ids = [row["generator_id"] for row in rows]
+    if len(row_ids) != len(set(row_ids)):
+        raise ValueError("multiplicity integration row IDs are not unique")
+    factors = value["repository_factors"]
+    factor_ids = [row["factor_id"] for row in factors]
+    if len(factor_ids) != len(set(factor_ids)):
+        raise ValueError("multiplicity factor IDs are not unique")
+    known_rows = set(row_ids)
+    for factor in factors:
+        if not set(factor["source_generator_ids"]).issubset(known_rows):
+            raise ValueError("multiplicity factor cites an unknown integration row")
+    known_factors = set(factor_ids)
+    for row in value["standard_factor_map"]:
+        if not set(row["repository_factor_ids"]).issubset(known_factors):
+            raise ValueError("standard factor map cites an unknown repository factor")
+
+    nested_artifacts = [
+        value["integration_slice"]["proof_artifact"],
+        value["cancellations"]["proof_artifact"],
+        *value["proof_artifacts"],
+        *(row["derivation_artifact"] for row in factors),
+        *(row["proof_artifact"] for row in value["standard_factor_map"]),
+    ]
+    for index, nested in enumerate(nested_artifacts):
+        _artifact(
+            nested,
+            repository_root=repository_root,
+            label=f"multiplicity_nested_proof[{index}]",
         )
 
 
@@ -233,6 +295,13 @@ def validate_regulated_breaking_export(
                 label=key,
                 expected_result_id=role_result_ids[key],
             )
+            if key == "multiplicity_artifact":
+                _validate_multiplicity_artifact(
+                    artifact,
+                    repository_root=repository_root,
+                    classical_commit=payload["classical_commit"],
+                    analytic_route=payload["analytic_route"],
+                )
     if payload["coefficient_basis"] != list(RAW_BASIS):
         raise ValueError("regulated-breaking coefficient basis drifted")
     coefficients = payload["coefficients"]
@@ -441,6 +510,7 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
     triviality = values["BoxR_triviality"]
     coefficients = values["standard_background_coefficients"]
     auxiliary = values["standard_auxiliary_fourth_order_match"]
+    multiplicity = values["full_BV_multiplicity_preflight"]
     ward = values["Ward_insertion_contract"]
     if (
         g2.get("result_state")
@@ -494,6 +564,20 @@ def _validate_inputs(values: dict[str, dict[str, Any]]) -> None:
         is not False
     ):
         raise ValueError("standard auxiliary/fourth-order dependency drifted")
+    multiplicity_flags = multiplicity.get("claim_flags", {})
+    if (
+        multiplicity.get("result_state")
+        != "STANDARD_FACTOR_AND_COVARIANT_FIELD_RANKS_MATCHED_SCALAR_GHOST_AND_ANALYTIC_ROW_MAP_OPEN"
+        or multiplicity.get("classical_commit") != g2.get("classical_commit")
+        or multiplicity_flags.get("STANDARD_FACTOR_MULTIPLICITIES_COMPLETE") is not True
+        or multiplicity_flags.get("COVARIANT_MINIMAL_COMPONENT_RANKS_COMPLETE")
+        is not True
+        or multiplicity_flags.get("SCALAR_GHOST_GAP_LOCALIZED_TO_RANK_ONE")
+        is not True
+        or multiplicity_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not False
+    ):
+        raise ValueError("full-BV multiplicity preflight dependency drifted")
     if (
         ward.get("result_state") != "INTERFACE_READY_PHYSICAL_INPUT_BLOCKED"
         or ward.get("physical_input_status") != "NOT_RECEIVED"
@@ -550,7 +634,7 @@ def build() -> dict[str, Any]:
     certificate = {
         "schema": "quantum-weyl-regulated-slavnov-breaking-assembly-preflight-v1",
         "result_id": "REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT",
-        "result_state": "FULL_BV_QUOTIENT_BOUND_TO_STANDARD_BACKGROUND_VECTOR_REPOSITORY_MATCHING_OPEN",
+        "result_state": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
         "result_stage": "CLASSIFIED_AND_BACKGROUND_VECTOR_BOUND",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
         "regularity_scope": "REGULAR_BACH_LOCUS_FOR_LOCAL_BV_COHOMOLOGY",
@@ -604,12 +688,18 @@ def build() -> dict[str, Any]:
                 "exact standard background even coefficient reconstruction",
                 "standard parity-even determinant Ward identity fixing the odd coordinate to zero",
                 "standard physical TT auxiliary/fourth-order Schur and local Jacobian identity",
+                "standard determinant bundle ranks and covariant BV component ranks",
+                "exact localization of the scalar ghost mismatch to one rank",
                 "portable renormalized Ward-insertion input contract",
             ],
             "missing": [
                 {
                     "carrier_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
-                    "required_output": "ellipticity, exact field/ghost/auxiliary multiplicities and action normalization",
+                    "required_output": "ellipticity, gauge-fixed Lagrangian integration slice and action normalization",
+                },
+                {
+                    "carrier_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+                    "required_output": "resolve the rank-two xi-longitudinal/Weyl scalar sector to the rank-one standard ghost factor and prove every nonminimal Berezinian cancellation",
                 },
                 {
                     "carrier_id": "REPOSITORY_FULL_BV_OPERATOR_AUXILIARY_NORMALIZATION_AND_CONTOUR_MATCH",
@@ -631,7 +721,9 @@ def build() -> dict[str, Any]:
             "coefficient_arithmetic_gap": False,
             "standard_parity_gap": False,
             "standard_physical_TT_auxiliary_identity_gap": False,
-            "remaining_decision_gap": "the map from the standard background determinant to the repository regulated BV Slavnov functional",
+            "standard_factor_rank_gap": False,
+            "scalar_ghost_gap_rank": 1,
+            "remaining_decision_gap": "the analytic operator/Berezinian map resolving the rank-one scalar ghost gap and mapping the complete repository determinant to the regulated BV Slavnov functional",
             "no_further_local_graph_expansion_required": True,
         },
         "claim_flags": {
@@ -639,6 +731,7 @@ def build() -> dict[str, Any]:
             "STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED": True,
             "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": True,
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
+            "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "CONDITIONAL_NONZERO_QME_CLASS_THEOREM": True,
             "ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
@@ -651,7 +744,7 @@ def build() -> dict[str, Any]:
         "proof_sha256": result["proof_sha256"],
         "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
         "claim_boundary": (
-            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. It also proves the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. The antecedent is not established: no repository elliptic complex, auxiliary/fourth-order measure Jacobian, zero-mode/contour ledger, or regulated BV Slavnov action is supplied. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
+            "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL preflight binds the complete local gauge-fixed BV H14 quotient on the regular Bach locus to the exact standard conformal-spin-two background vector (199/30,-87/20,0). It proves the quotient reduction, removes omega BoxR with its explicit primitive, and imports an exact parity Ward zero for the declared standard parity-even determinant regulator. It also binds the standard determinant bundle ranks 5,1,5,3 to the covariant BV component ranks and localizes the still-unproved scalar ghost cancellation to exactly one rank. It proves the conditional implication that an identity match of either nonzero even coordinate would obstruct the strict fixed-field-content QME. The antecedent is not established: no repository elliptic complex, full multiplicity/operator/Berezinian ledger, zero-mode/contour ledger, or regulated BV Slavnov action is supplied. Therefore it does not compute the repository anomaly coefficients, activate the obstruction theorem, restore or obstruct the QME, classify the D-Cartan defect, transfer to residual cohomology, or establish Lorentzian quantum theory."
         ),
         "provenance": {
             "source_sha256": {path: _sha256(ROOT / path) for path in SOURCE_PATHS}
@@ -668,6 +761,7 @@ def validate_claim_boundary(certificate: dict[str, Any]) -> None:
         or flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
         or flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
+        or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or flags.get("CONDITIONAL_NONZERO_QME_CLASS_THEOREM") is not True
         or flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or any(

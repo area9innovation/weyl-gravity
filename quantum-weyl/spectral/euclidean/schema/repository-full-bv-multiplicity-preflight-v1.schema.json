@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/quantum-weyl-repository-full-bv-multiplicity-preflight-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "classical_commit", "dependency_hashes", "accepted_export", "standard_factor_multiplicities", "covariant_BV_component_inventory", "exact_rank_decomposition", "factor_origin_bridge", "forbidden_shortcut_audit", "minimal_missing_carrier_theorem", "claim_flags", "proof_sha256", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-repository-full-bv-multiplicity-preflight-v1"},
+    "result_id": {"const": "REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT"},
+    "result_state": {"const": "STANDARD_FACTOR_AND_COVARIANT_FIELD_RANKS_MATCHED_SCALAR_GHOST_AND_ANALYTIC_ROW_MAP_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_hashes": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "accepted_export": {
+      "const": {
+        "result_id": "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER",
+        "schema": "quantum-weyl-repository-full-bv-multiplicity-export-v1",
+        "schema_path": "quantum-weyl/spectral/euclidean/schema/repository-full-bv-multiplicity-export-v1.schema.json",
+        "status": "RECEIVER_SCHEMA_READY_INPUT_NOT_RECEIVED"
+      }
+    },
+    "standard_factor_multiplicities": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "rank_formula", "rows", "signed_effective_rank", "expected_nu", "nu_match"],
+      "properties": {
+        "dimension": {"const": 4},
+        "rank_formula": {"const": "rank(TT_s)=((s+1)^2-s^2)=2s+1"},
+        "rows": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/factorRow"}},
+        "signed_effective_rank": {"const": 6},
+        "expected_nu": {"const": 6},
+        "nu_match": {"const": true}
+      }
+    },
+    "covariant_BV_component_inventory": {"type": "object", "minProperties": 6},
+    "exact_rank_decomposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["metric", "diffeomorphism_ghost", "weyl_ghost", "scalar_ghost_candidate_rank", "standard_scalar_ghost_factor_rank", "unresolved_scalar_cancellation_rank"],
+      "properties": {
+        "metric": {"const": "10=5_TT+4_Diff_orbit+1_Weyl_trace"},
+        "diffeomorphism_ghost": {"const": "4=3_transverse+1_longitudinal_scalar"},
+        "weyl_ghost": {"const": "1=1_scalar"},
+        "scalar_ghost_candidate_rank": {"const": 2},
+        "standard_scalar_ghost_factor_rank": {"const": 1},
+        "unresolved_scalar_cancellation_rank": {"const": 1}
+      }
+    },
+    "factor_origin_bridge": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object"}},
+    "forbidden_shortcut_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Berger_total_component_rows", "Berger_minimal_component_rows", "Berger_nonminimal_component_rows", "producer_semantics", "component_rows_equal_determinant_multiplicities", "reason"],
+      "properties": {
+        "Berger_total_component_rows": {"const": 54},
+        "Berger_minimal_component_rows": {"const": 34},
+        "Berger_nonminimal_component_rows": {"const": 20},
+        "producer_semantics": {"const": "classical_unary_q1_not_quantum_loop_operator"},
+        "component_rows_equal_determinant_multiplicities": {"const": false},
+        "reason": {"type": "string", "minLength": 80}
+      }
+    },
+    "minimal_missing_carrier_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "missing_scalar_rank", "required_rows", "no_component_row_counting_shortcut"],
+      "properties": {
+        "status": {"const": "EXACT_RANK_ONE_SCALAR_GHOST_AND_FULL_ANALYTIC_ROW_MAP_GAP"},
+        "missing_scalar_rank": {"const": 1},
+        "required_rows": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 20}},
+        "no_component_row_counting_shortcut": {"const": true}
+      }
+    },
+    "claim_flags": {
+      "const": {
+        "STANDARD_FACTOR_MULTIPLICITIES_COMPLETE": true,
+        "COVARIANT_MINIMAL_COMPONENT_RANKS_COMPLETE": true,
+        "SCALAR_GHOST_GAP_LOCALIZED_TO_RANK_ONE": true,
+        "REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED": false,
+        "REPOSITORY_ELLIPTIC_COMPLEX_CERTIFIED": false,
+        "REPOSITORY_ANOMALY_COEFFICIENT_COMPUTED": false,
+        "QME_DISPOSITION": false
+      }
+    },
+    "proof_sha256": {"$ref": "#/$defs/hash"},
+    "next_gate": {"const": "SUPPLY_REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_WITH_SCALAR_GHOST_AND_NONMINIMAL_CANCELLATION"},
+    "claim_boundary": {"type": "string", "minLength": 400},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_sha256"],
+      "properties": {"source_sha256": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"$ref": "#/$defs/hash"}}}
+    }
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "factorRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factor_id", "spin", "bundle_rank", "determinant_sign", "statistics", "M_squared"],
+      "properties": {
+        "factor_id": {"enum": ["physical_depth_0", "ghost_depth_0", "physical_depth_1", "ghost_depth_1"]},
+        "spin": {"type": "integer", "minimum": 0, "maximum": 2},
+        "bundle_rank": {"type": "integer", "minimum": 1, "maximum": 5},
+        "determinant_sign": {"enum": [-1, 1]},
+        "statistics": {"enum": ["BOSONIC", "FERMIONIC_GHOST"]},
+        "M_squared": {"type": "integer"}
+      }
+    }
+  }
+}

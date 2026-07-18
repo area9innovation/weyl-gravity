@@ -46,6 +46,15 @@ background-dependent logarithmic coefficient under a normalized
 translation-invariant measure. Repository row identification, normalization,
 contour, and finite phase remain open.
 
+The multiplicity preflight now derives the standard bundle ranks
+`(5,1,5,3)` and their signed effective rank six. The imported covariant BV
+dictionary decomposes as `10=5+4+1` for the metric and `4=3+1` for the
+diffeomorphism ghost. Together with the Weyl ghost, the scalar ghost input
+has rank two whereas the standard scalar ghost factor has rank one. Thus the
+unknown multiplicity content is no longer an unspecified counting problem:
+it is exactly a rank-one scalar cancellation plus the analytic
+row/operator/Berezinian map proving that cancellation.
+
 This proves a useful conditional theorem: if a repository regulator, measure,
 and regulated Slavnov functional match those two standard nontrivial
 coordinates, and no compensating Wess--Zumino field is added, the strict
@@ -57,8 +66,11 @@ established, so the theorem is deliberately inactive.
 No further local tensor-graph expansion is needed for this decision. The
 remaining inputs are analytic:
 
-- a repository Euclidean elliptic complex with exact multiplicities and
-  action normalization;
+- a repository Euclidean elliptic complex with a gauge-fixed Lagrangian
+  integration slice and action normalization;
+- a full-BV multiplicity ledger resolving the rank-two longitudinal
+  Diff/Weyl scalar ghost sector to the rank-one standard scalar factor and
+  proving all nonminimal Berezinian cancellations;
 - the full repository BV-row/operator match and the auxiliary normalization,
   contour, and finite phase;
 - zero-mode, contour, and determinant-measure policies;
@@ -78,6 +90,10 @@ On the physical path each JSON proof must also carry the role-specific
 `result_id` required by the receiver; an unrelated hashed artifact cannot be
 reused as an ellipticity, multiplicity, auxiliary, zero-mode, measure,
 Wess--Zumino, parity, QME-disposition, or counterterm proof.
+The multiplicity artifact is additionally validated against its strict
+schema, must share the frozen classical commit and analytic route, must use
+unique integration-row and factor IDs, and must content-address every nested
+proof.
 The complete role-to-`result_id` map is emitted as
 `accepted_proof_result_ids` in the assembly certificate.
 Exact receiver fixtures

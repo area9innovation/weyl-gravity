@@ -61,6 +61,10 @@ class RegulatedSlavnovBreakingPreflightTests(unittest.TestCase):
         self.assertFalse(value["claim_flags"]["REGULATED_SLAVNOV_BREAKING_COMPUTED"])
         self.assertFalse(value["claim_flags"]["QME_OBSTRUCTED"])
         self.assertTrue(value["claim_flags"]["ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY"])
+        self.assertTrue(value["claim_flags"]["FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND"])
+        self.assertEqual(
+            value["minimal_missing_carrier_theorem"]["scalar_ghost_gap_rank"], 1
+        )
 
     def test_receiver_mechanics_classifies_both_qme_branches(self) -> None:
         value = build()

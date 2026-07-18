@@ -26,6 +26,7 @@ DEPENDENCIES = {
     "minimal_BV_H14": HERE / "local_bv/certificates/AFN0_DIFF_MIXED_MINIMAL_BV_H14.json",
     "general_nonminimal_gauge_fixed": HERE / "local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
     "background_coefficients": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_ANOMALY_COEFFICIENTS_D_DESCENT.json",
+    "full_BV_multiplicity_preflight": HERE / "spectral/euclidean/certificates/REPOSITORY_FULL_BV_MULTIPLICITY_PREFLIGHT.json",
     "Slavnov_breaking_assembly": HERE / "anomalies/certificates/REGULATED_SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
     "coupled_q2": HERE / "transfer/certificates/BERGER_COUPLED_64_Q2_IMPORT_REPLAY.json",
@@ -67,7 +68,8 @@ def _load() -> dict[str, dict[str, Any]]:
         "minimal_KT_collapse": "MINIMAL_KT_COLLAPSE_PROVED_AFN0_WEYL_QUOTIENTS_LIFT_DIFF_MIXED_TOTAL_COMPLEX_OPEN",
         "minimal_BV_H14": "MINIMAL_BV_H14_COMPLETE_ON_REGULAR_BACH_LOCUS_NONMINIMAL_OPEN",
         "general_nonminimal_gauge_fixed": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
-        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_BOUND_TO_STANDARD_BACKGROUND_VECTOR_REPOSITORY_MATCHING_OPEN",
+        "full_BV_multiplicity_preflight": "STANDARD_FACTOR_AND_COVARIANT_FIELD_RANKS_MATCHED_SCALAR_GHOST_AND_ANALYTIC_ROW_MAP_OPEN",
+        "Slavnov_breaking_assembly": "FULL_BV_QUOTIENT_STANDARD_VECTOR_AND_MULTIPLICITY_GAP_BOUND_REPOSITORY_MATCHING_OPEN",
         "coupled_q2": "COUPLED_64_Q2_IMPORTED_STRUCTURAL_AND_K_REPLAY_COMPLETE_Q1Q2_AND_CYCLICITY_BLOCKED",
         "coupled_36_transfer_replay": "TRANSFER_AND_Q1Q2_REPLAYED_CYCLICITY_OBSTRUCTION_FOUND",
         "coupled_cyclicity_atlas": "EXACT_DEFECT_LOCALIZED_FACTOR_TWO_PARTIAL_REPAIR_IDENTIFIED",
@@ -156,11 +158,25 @@ def _load() -> dict[str, dict[str, Any]]:
         raise ValueError("background coefficient boundary drifted")
     assembly = values["Slavnov_breaking_assembly"]
     assembly_flags = assembly.get("claim_flags", {})
+    multiplicity_flags = values["full_BV_multiplicity_preflight"].get(
+        "claim_flags", {}
+    )
+    if (
+        multiplicity_flags.get("STANDARD_FACTOR_MULTIPLICITIES_COMPLETE") is not True
+        or multiplicity_flags.get("COVARIANT_MINIMAL_COMPONENT_RANKS_COMPLETE")
+        is not True
+        or multiplicity_flags.get("SCALAR_GHOST_GAP_LOCALIZED_TO_RANK_ONE")
+        is not True
+        or multiplicity_flags.get("REPOSITORY_FULL_BV_MULTIPLICITY_LEDGER_ACCEPTED")
+        is not False
+    ):
+        raise ValueError("full-BV multiplicity frontier drifted")
     if (
         assembly_flags.get("FULL_GAUGE_FIXED_BV_H14_BOUND") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_EVEN_VECTOR_REDUCED") is not True
         or assembly_flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or assembly_flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
+        or assembly_flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or assembly_flags.get("ANALYTIC_SLAVNOV_EXPORT_RECEIVER_READY") is not True
         or assembly_flags.get("REGULATED_SLAVNOV_BREAKING_COMPUTED") is not False
         or assembly_flags.get("QME_OBSTRUCTED") is not False
@@ -514,7 +530,7 @@ def build() -> dict[str, Any]:
             "G0": "PASSED",
             "G1": "PASSED_AFN0_LOCAL_QUOTIENT",
             "G2": "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS",
-            "G3": "FULL_STANDARD_VECTOR_AND_TT_AUXILIARY_IDENTITY_BOUND_ANALYTIC_MATCHING_OPEN",
+            "G3": "FULL_STANDARD_VECTOR_TT_AUXILIARY_AND_MULTIPLICITY_GAP_BOUND_ANALYTIC_MATCHING_OPEN",
             "G4": "BLOCKED_QME_NOT_RESTORED",
             "G5": "BLOCKED_GLOBAL_BRST_HADAMARD_AND_RENORMALIZED_PRODUCTS",
         },
@@ -528,7 +544,7 @@ def build() -> dict[str, Any]:
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "coefficient_and_QME": {
-                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_VECTOR_CONDITIONAL_OBSTRUCTION_ANALYTIC_MATCHING_OPEN",
+                "status": "FULL_BV_QUOTIENT_BOUND_STANDARD_VECTOR_MULTIPLICITY_RANK_ONE_GAP_LOCALIZED_ANALYTIC_MATCHING_OPEN",
                 "next_gate": "MATCH_REPOSITORY_ANALYTIC_REGULATOR_MEASURE_AND_COMPUTE_SLAVNOV_BREAKING",
             },
             "free_Lorentzian_state": {
@@ -649,6 +665,7 @@ def build() -> dict[str, Any]:
             "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY": True,
             "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED": True,
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND": True,
+            "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND": True,
             "REPOSITORY_BV_ANOMALY_COEFFICIENT_COMPUTED": False,
             "GLOBAL_BRST_HADAMARD_STATE": False,
             "RENORMALIZED_LORENTZIAN_PRODUCTS": False,
@@ -678,7 +695,10 @@ def build() -> dict[str, Any]:
             "under arbitrary invertible local BV-canonical gauge fixing, so the gauge-fixed "
             "H04 and H14 quotients are complete with the same 2/1 dimensions on that locus, "
             "and the exact 3-by-4 breaking reduction binds the standard even background "
-            "coordinates 199/30 and -87/20 while keeping the repository matching open, "
+            "coordinates 199/30 and -87/20 while keeping the repository matching open. "
+            "The standard determinant ranks 5,1,5,3 reproduce signed rank six; the "
+            "covariant BV component inventory localizes the unresolved multiplicity to "
+            "one scalar ghost rank plus its analytic operator/Berezinian map, "
             "a complete classical causal chain, local Hadamard parametrices and a covariance "
             "lift. The repaired Maxwell transfer now replays coefficientwise with 1,890 full "
             "and 1,474 retained coefficients, zero full and retained q1/q2 defects, zero full "
@@ -749,7 +769,7 @@ def validate(result: dict[str, Any]) -> None:
         ladder.get("G1") != "PASSED_AFN0_LOCAL_QUOTIENT"
         or ladder.get("G2") != "PASSED_LOCAL_BV_COHOMOLOGY_REGULAR_BACH_LOCUS"
         or ladder.get("G3")
-        != "FULL_STANDARD_VECTOR_AND_TT_AUXILIARY_IDENTITY_BOUND_ANALYTIC_MATCHING_OPEN"
+        != "FULL_STANDARD_VECTOR_TT_AUXILIARY_AND_MULTIPLICITY_GAP_BOUND_ANALYTIC_MATCHING_OPEN"
         or any(
             not str(ladder.get(level, "")).startswith(("BLOCKED", "PARTIAL"))
             for level in ("G4", "G5")
@@ -769,6 +789,7 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY") is not True
         or flags.get("STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED") is not True
         or flags.get("STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND") is not True
+        or flags.get("FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND") is not True
         or flags.get("CLASSICAL_MAXWELL_TRANSFER_LANDED") is not True
         or flags.get("MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
         or flags.get("MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM") is not True
@@ -806,6 +827,7 @@ def validate(result: dict[str, Any]) -> None:
             "SLAVNOV_BREAKING_ASSEMBLY_PREFLIGHT_READY",
             "STANDARD_BACKGROUND_PARITY_ODD_ZERO_VERIFIED",
             "STANDARD_PHYSICAL_TT_AUXILIARY_IDENTITY_BOUND",
+            "FULL_BV_MULTIPLICITY_PREFLIGHT_BOUND",
             "CLASSICAL_MAXWELL_TRANSFER_LANDED",
             "MAXWELL_TRANSFER_FORMULA_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
             "MAXWELL_TRANSFER_INDEPENDENTLY_REPLAYED_BY_QUANTUM",
