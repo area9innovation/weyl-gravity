@@ -1,0 +1,87 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "CORRELATED_CENTRAL_CLOCK_POWER_RAIL_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The exact central-even Legendre evaluator is extended from p=0 to every certified even external clock power p=0,...,28. All 1,050 overlaps with the fifteen published scalar shards through two_j=138 pass, and 15,375 intervals through two_j=2048 are content-addressed. Every two_j=256 width is below 0.001 and every selected two_j=2048 width is below 0.1. This certifies a scalar input rail, not a detector response. Noncentral diagonals, odd representations, polarized form blocks, an infinite-tail upper bound, full Green images, recoil, tangent-cone restriction, Bridge 3 and quantum claims remain open. The coefficientwise mixed epsilon_R^2 kappa unary dependency remains prior to the already certified apparatus q2,q3 and affine-K_Berger observer-morphism artifacts; finite-r and all-orders stability are not promoted.",
+  "tier_0": [
+    {
+      "command": "python3 -m py_compile, JSON/schema parse and scoped git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "tier_1": [
+    {
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_correlated_central_clock_power_rail.py",
+      "elapsed_seconds": 0.93,
+      "status": "PASS",
+      "summary": "3 tests passed, covering the complete clock-power set, all low-rail overlap checks and rejection of the limiting two_j256 width mutation."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.verify_berger_correlated_central_clock_power_rail",
+      "status": "PASS",
+      "summary": "Schema, source and dependency hashes, coverage, overlap defects, sentinel widths and scoped-open flags passed."
+    },
+    {
+      "command": "python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment && python3 residual_atlas/validate_fragment.py closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "status": "PASS",
+      "summary": "The generated observer atlas and shared fail-closed atlas schema passed; detector_response remains OPEN for the scalar input rail."
+    }
+  ],
+  "tier_2": [
+    {
+      "command": "python3 -m closed_universe_observers.generate_berger_correlated_central_clock_power_rail --check",
+      "elapsed_seconds": 26.61,
+      "status": "PASS",
+      "summary": "All 15,375 central-even intervals through two_j=2048 were reevaluated and the generated certificate matched byte-for-byte."
+    }
+  ],
+  "higher_tiers": [
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No full scalar/form rail, infinite-mode theorem, shared core-algebra change, freeze, release or detector-response lifecycle promotion was claimed."
+    }
+  ],
+  "artifact_hashes": [
+    {
+      "path": "closed_universe_observers/generate_berger_correlated_central_clock_power_rail.py",
+      "sha256": "6f74d11e5c4c23687a360bc0352e763309b11dfad5ad8f6e571d7a08b4b1f340"
+    },
+    {
+      "path": "closed_universe_observers/verify_berger_correlated_central_clock_power_rail.py",
+      "sha256": "fe3d81a0dde422080706f1e6316bc370f53d885b700aee2e8113015e81e31f15"
+    },
+    {
+      "path": "closed_universe_observers/tests/test_berger_correlated_central_clock_power_rail.py",
+      "sha256": "771577979913a9cf2c177beb721f8fd7aed513728ad8a3e37628e7b5c8335fab"
+    },
+    {
+      "path": "closed_universe_observers/schema/berger-correlated-central-clock-power-rail-v1.schema.json",
+      "sha256": "8ad46b076093fe0f23ebe41b7ff59359e3d1c9a76c674e5f1c2a6ce5b07e5851"
+    },
+    {
+      "path": "closed_universe_observers/reports/berger-correlated-central-clock-power-rail.md",
+      "sha256": "a0a702392c98df2b67b0b684ef60b6c3bd1c842d033f4974f309442b4513ccfe"
+    },
+    {
+      "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL.json",
+      "sha256": "51e623b88b158331a19ef9782fb06c2da6fd97171b4b8e10c8ea2d1c5344da0a"
+    },
+    {
+      "path": "closed_universe_observers/atlas/observer-atlas-fragment.json",
+      "sha256": "ef461c0cd96f8e290924099224ab1a2c0b31aef7c13efe81b1f37d20af009b79"
+    }
+  ],
+  "claim_flags": {
+    "ALL_EVEN_CLOCK_POWERS_P0_TO_P28_EVALUATED": true,
+    "ALL_1050_CENTRAL_LOW_RAIL_OVERLAPS_PASSED": true,
+    "ALL_TWO_J256_WIDTHS_BELOW_ONE_E_MINUS_THREE": true,
+    "CENTRAL_ALL_CLOCK_POWER_RAIL_THROUGH_TWO_J2048_EXPORTED": true,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "ALL_DIAGONALS_AND_ODD_REPRESENTATIONS_EVALUATED": false,
+    "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

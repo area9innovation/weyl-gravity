@@ -1315,7 +1315,7 @@
       }
     },
     {
-      "claim_boundary": "the obsolete raw two_j=256 width exceeds 6e8; the correlated central successor reduces it below 0.001 and remains below width 0.1 through two_j=2048; noncentral and p>0 channels remain OPEN absolute-g3 coefficient remains OPEN NOT_APPLICABLE",
+      "claim_boundary": "the obsolete raw two_j=256 width exceeds 6e8; the correlated central successor reduces every clock-power width below 0.001 there and below 0.1 through two_j=2048; noncentral and odd channels remain OPEN absolute-g3 coefficient remains OPEN NOT_APPLICABLE",
       "descriptions": {
         "causal": "OBSTRUCTED",
         "nonlinear": "NOT_APPLICABLE",
@@ -1333,12 +1333,17 @@
           "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_SCALAR_EVALUATOR.json",
           "result_id": "BERGER_CORRELATED_CENTRAL_SCALAR_EVALUATOR",
           "sha256": "a4df430c0858418c266d6413f7c38b55fe9f23a6b4648203e4656ffb930ba782"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL.json",
+          "result_id": "BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL",
+          "sha256": "51e623b88b158331a19ef9782fb06c2da6fd97171b4b8e10c8ea2d1c5344da0a"
         }
       ],
       "id": "observer.berger.detector_profile.adaptive_scalar_stability",
       "mode_data": {
         "dispersion": {
-          "statement": "carrier=central external-clock s0 scalar coefficient evaluator for widening the detector Peter-Weyl rail; omega=clock-integrated profile input; no Green kernel applied; OPEN: the current independent-moment scalar evaluator is numerically obstructed; its central even p=0 correlated successor is now CERTIFIED but not yet generalized",
+          "statement": "carrier=central external-clock s0 scalar coefficient evaluator for widening the detector Peter-Weyl rail; omega=clock-integrated profile input; no Green kernel applied; OPEN: the current independent-moment scalar evaluator is numerically obstructed; its correlated central-even successor is CERTIFIED for all even clock powers p=0,...,28 but not for noncentral or odd channels",
           "status": "OBSTRUCTED"
         },
         "lee_wald": {
@@ -1375,11 +1380,11 @@
           "status": "NOT_APPLICABLE"
         },
         "clock_and_rod_dependence": {
-          "statement": "external clock power p=0 and the fixed radius-1/128 profile; every certified central even overlap is preserved",
+          "statement": "all even external clock powers p=0,...,28 and the fixed radius-1/128 profile; every certified central even overlap is preserved",
           "status": "CERTIFIED"
         },
         "detector_response": {
-          "statement": "OPEN: the current independent-moment scalar evaluator is numerically obstructed; its central even p=0 correlated successor is now CERTIFIED but not yet generalized",
+          "statement": "OPEN: the current independent-moment scalar evaluator is numerically obstructed; its correlated central-even successor is CERTIFIED for all even clock powers p=0,...,28 but not for noncentral or odd channels",
           "status": "OBSTRUCTED"
         },
         "detector_restriction_to_second_order_cone": {
@@ -1387,7 +1392,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "generalize the certified central Legendre reduction to every diagonal and clock power",
+          "statement": "generalize the certified central Legendre reduction to noncentral diagonals and odd representations",
           "status": "OPEN"
         },
         "exceptional_resonant_operational_signature": {
@@ -1403,7 +1408,7 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "the obsolete raw two_j=256 width exceeds 6e8; the correlated central successor reduces it below 0.001 and remains below width 0.1 through two_j=2048; noncentral and p>0 channels remain OPEN",
+          "statement": "the obsolete raw two_j=256 width exceeds 6e8; the correlated central successor reduces every clock-power width below 0.001 there and below 0.1 through two_j=2048; noncentral and odd channels remain OPEN",
           "status": "OBSTRUCTED"
         },
         "recoil_backreaction_order": {
@@ -1456,7 +1461,7 @@
       "id": "observer.berger.detector_profile.correlated_central_scalar",
       "mode_data": {
         "dispersion": {
-          "statement": "carrier=correlated central-even external-clock p=0 scalar profile coefficients; omega=clock-integrated p=0 input; no Green kernel applied; central even p=0 scalar input rail CERTIFIED; full polarized detector response remains OPEN",
+          "statement": "carrier=correlated central-even external-clock p=0 scalar profile coefficients; omega=clock-integrated p=0 input; no Green kernel applied; OPEN: the central even p=0 scalar input rail is CERTIFIED, but no polarized Green image or detector response has been composed",
           "status": "CERTIFIED"
         },
         "lee_wald": {
@@ -1497,15 +1502,15 @@
           "status": "CERTIFIED"
         },
         "detector_response": {
-          "statement": "central even p=0 scalar input rail CERTIFIED; full polarized detector response remains OPEN",
-          "status": "CERTIFIED"
+          "statement": "OPEN: the central even p=0 scalar input rail is CERTIFIED, but no polarized Green image or detector response has been composed",
+          "status": "OPEN"
         },
         "detector_restriction_to_second_order_cone": {
           "statement": "NOT_APPLICABLE",
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "general stable Jacobi recurrence for noncentral, odd and p=2,...,28 channels remains the next gate",
+          "statement": "general stable Jacobi recurrence for noncentral and odd channels remains the next gate",
           "status": "OPEN"
         },
         "exceptional_resonant_operational_signature": {
@@ -1551,6 +1556,129 @@
         "k": "central representation column",
         "m": "central diagonal m=0",
         "omega": "clock-integrated p=0 input; no Green kernel applied",
+        "parity": "even two_j central diagonal",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "15,375 intervals are content-addressed; all 1,050 published central-even overlaps through two_j=138 pass, every two_j=256 width is below 0.001, and every selected two_j=2048 width is below 0.1; noncentral, odd, polarized-tail and Green-image gates remain OPEN input evaluator only; recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_SCALAR_EVALUATOR.json",
+          "result_id": "BERGER_CORRELATED_CENTRAL_SCALAR_EVALUATOR",
+          "sha256": "a4df430c0858418c266d6413f7c38b55fe9f23a6b4648203e4656ffb930ba782"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL.json",
+          "result_id": "BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL",
+          "sha256": "51e623b88b158331a19ef9782fb06c2da6fd97171b4b8e10c8ea2d1c5344da0a"
+        }
+      ],
+      "id": "observer.berger.detector_profile.correlated_central_clock_power",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=correlated central-even external-clock scalar profile coefficients for every certified even clock power; omega=external clock powers p=0,2,...,28; no Green kernel applied; OPEN: the central-even scalar input rail is CERTIFIED for all fifteen even clock powers p=0,...,28, but no polarized Green image or detector response has been composed",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "input evaluator only; recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "exact radius-1/128 support, all normalized even clock powers p=0,...,28 and exact angular average",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: the central-even scalar input rail is CERTIFIED for all fifteen even clock powers p=0,...,28, but no polarized Green image or detector response has been composed",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "general stable Jacobi recurrence for noncentral diagonals and odd representations is the next gate",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "15,375 intervals are content-addressed; all 1,050 published central-even overlaps through two_j=138 pass, every two_j=256 width is below 0.001, and every selected two_j=2048 width is below 0.1; noncentral, odd, polarized-tail and Green-image gates remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "input evaluator only; recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NOT_APPLICABLE at this scalar coefficient gate",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "correlated central-even external-clock scalar profile coefficients for every certified even clock power",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 0,
+        "ell": "scalar even two_j=0,...,2048",
+        "k": "central representation column",
+        "m": "central diagonal m=0",
+        "omega": "external clock powers p=0,2,...,28; no Green kernel applied",
         "parity": "even two_j central diagonal",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
@@ -1787,7 +1915,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "f47ab00cb227ae28c6365daf539d42e61e1362daa418c4c353f5e27ac6cd2cbd",
+  "generated_by_sha256": "5a884edc11e87d1b984858d7879bfc54a308c3edd87c882a69c476c778c72847",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

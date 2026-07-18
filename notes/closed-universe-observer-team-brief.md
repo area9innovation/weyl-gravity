@@ -531,15 +531,24 @@ raw central-`p=0` interval wider than `6e8`; intersecting it with the exact
 unitary coefficient bound gives only `[-1,1]` and therefore no decay.  The
 physical-space branch remains unavailable because no validated Berger
 hyperbolic PDE solver is present.  `BERGER_CORRELATED_CENTRAL_SCALAR_EVALUATOR`
-now closes the selected sentinel in the central even `p=0` channel.  The exact
+closes the selected sentinel in the central even `p=0` channel.  The exact
 identity `D^(j)_(0,0)=P_j(1-2 y_perp^2)` gives a stable alternating series:
 all 70 published central-even overlaps through `two_j=138` pass, the
 `two_j=256` width is below `0.001`, and the scoped rail stays below width
-`0.1` through `two_j=2048`.  The active gate is to generalize this stable
-Jacobi/Legendre reduction to noncentral diagonals, odd representations and
-clock powers `p=2,...,28`.  Only then should the polarized rail be widened
-toward the infinite-mode Maxwell and massive-two-form images, recoil
+`0.1` through `two_j=2048`.  `BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL`
+now closes the clock-power axis: it repeats the stable correlated evaluation
+for all fifteen even powers `p=0,...,28`, passes all 1,050 low-rail overlap
+checks, and content-addresses 15,375 intervals with the same width sentinels.
+The active gate is therefore only the stable Jacobi reduction for noncentral
+diagonals and odd representations.  Only then should the polarized rail be
+widened toward the infinite-mode Maxwell and massive-two-form images, recoil
 coefficient and second-order-cone restriction.  Bridge 3 remains inactive.
+
+The nonlinear sequencing gate is fail-closed and unchanged.  The mixed
+`epsilon_R^2 kappa` unary gate was completed coefficientwise before apparatus
+`q2,q3`, affine-`K_Berger` equivariance and observer-morphism work were
+certified.  Those certificates do not promote finite-`r`, fixed-background
+linear-`K`, full-`q4`, or all-orders observer-morphism stability.
 
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.

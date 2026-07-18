@@ -395,12 +395,17 @@ bound clips that interval only to `[-1,1]`, which supplies no decay.  Since no
 validated Berger physical-space solver exists, the next gate is a correlated
 direct oscillatory quadrature or stable recurrence, with low-rail overlap and
 a width-below-`1/10` sentinel at `two_j=256`.
-The central even `p=0` successor now closes that sentinel by using
+The central even `p=0` successor closes that sentinel by using
 `D^(j)_(0,0)=P_j(1-2 y_perp^2)`.  Its stable alternating Legendre series
 overlaps all 70 published central even intervals through `two_j=138`, reduces
 the `two_j=256` width below `0.001`, and remains below width `0.1` through
-`two_j=2048`.  This is a scoped seed: noncentral diagonals, odd
-representations and clock powers `p=2,...,28` remain open.
+`two_j=2048`.  The clock-power successor applies the same correlated spatial
+evaluation to all fifteen even powers `p=0,...,28`: all 1,050 low-rail
+overlaps pass, 15,375 intervals through `two_j=2048` are content-addressed,
+and the same width sentinels hold for every power.  This remains scoped to the
+central-even channel; noncentral diagonals and odd representations are the
+active gate before widening the polarized rail.  It does not certify an
+infinite tail, Green image, detector response, recoil, or cone restriction.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

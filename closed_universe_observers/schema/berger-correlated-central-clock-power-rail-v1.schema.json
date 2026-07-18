@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-correlated-central-clock-power-rail-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "evaluation_convention", "coverage", "sentinel_audits", "maximum_sentinel_widths", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-correlated-central-clock-power-rail-v1"},
+    "result_id": {"const": "BERGER_CORRELATED_CENTRAL_CLOCK_POWER_RAIL"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "VALIDATED_CORRELATED_CENTRAL_EVEN_SCALAR_CLOCK_POWERS_P0_TO_P28_THROUGH_TWO_J2048_EXPORTED"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 20},
+    "evaluation_convention": {"type": "object"},
+    "coverage": {"type": "object", "required": ["clock_power_count", "even_mode_count_per_power", "total_interval_count", "low_rail_overlap_comparison_count", "low_rail_overlap_defect_count", "canonical_full_rail_sha256"]},
+    "sentinel_audits": {"type": "array", "minItems": 30, "maxItems": 30},
+    "maximum_sentinel_widths": {"type": "object", "required": ["256", "2048"]},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {
+      "type": "object",
+      "required": ["ALL_EVEN_CLOCK_POWERS_P0_TO_P28_EVALUATED", "ALL_1050_CENTRAL_LOW_RAIL_OVERLAPS_PASSED", "ALL_TWO_J256_WIDTHS_BELOW_ONE_E_MINUS_THREE", "CENTRAL_ALL_CLOCK_POWER_RAIL_THROUGH_TWO_J2048_EXPORTED", "ALL_DIAGONALS_AND_ODD_REPRESENTATIONS_EVALUATED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "ALL_EVEN_CLOCK_POWERS_P0_TO_P28_EVALUATED": {"const": true},
+        "ALL_1050_CENTRAL_LOW_RAIL_OVERLAPS_PASSED": {"const": true},
+        "ALL_TWO_J256_WIDTHS_BELOW_ONE_E_MINUS_THREE": {"const": true},
+        "CENTRAL_ALL_CLOCK_POWER_RAIL_THROUGH_TWO_J2048_EXPORTED": {"const": true},
+        "ALL_DIAGONALS_AND_ODD_REPRESENTATIONS_EVALUATED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "GENERALIZE_THE_STABLE_JACOBI_RECURRENCE_TO_NONCENTRAL_DIAGONALS_AND_ODD_REPRESENTATIONS"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}
