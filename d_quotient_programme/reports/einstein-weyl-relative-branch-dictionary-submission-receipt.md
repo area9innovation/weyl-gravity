@@ -5,9 +5,12 @@ the compact Plebański--Hacyan Einstein-Maxwell/Weyl-Maxwell fixture.  It
 exports the generic parity chain maps, solution cofibers, branch
 representatives and action-derived pairings while retaining global lifecycle
 `ONSHELL_MAP_ONLY` and activation `OPEN`.  The exceptional `ell=1,k=0`
-solution cofiber is now included with explicit CRT projectors.
+solution cofiber is included with explicit CRT projectors, and the complete
+homogeneous generalized-zero target is now certified to have zero solution
+cofiber.
 
-Evidence is content-addressed at commit `5b5676e2` with certificate SHA-256
-`9437fe3f96ec3a375b05cbb3c4300ecd56530d3c71c77831cc3f536acb710cf6`.
+Evidence is content-addressed at commit `263383df` with certificate SHA-256
+`515c25a690171fda0850f94fa3a3677e0784413bfd14229938160e3234036f0f`.
 No cross-background mode identity is made; exceptional nonzero-`k`/off-shell,
-global and boundary carriers remain fail-closed.
+homogeneous and twist off-shell, global and boundary carriers remain
+fail-closed.

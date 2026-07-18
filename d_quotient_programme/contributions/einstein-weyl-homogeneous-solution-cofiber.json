@@ -1,0 +1,37 @@
+{
+  "boundary_conditions": "same compact Plebanski-Hacyan R_t x S1_L x S2 background on the fixed N=2 magnetic bundle; homogeneous ell=0,k=0 smooth polynomial generalized-zero class before large-gauge and final residual quotients",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "a polynomial gauge slice leaves exactly the invariant fields D=C-K and A_x without frequency inversion",
+    "the complete target quotient is D''''=0 and A_x''=0 with six generalized-zero coefficients",
+    "the Einstein-Maxwell source coefficient map has determinant 1/3 and an explicit polynomial inverse",
+    "the homogeneous Weyl-Maxwell solution cofiber is zero in the declared class",
+    "the identity inclusion is not symplectic: its relative endomorphism is the certified nontrivial unipotent shear R=I+N"
+  ],
+  "evidence": {
+    "commit": "263383df3933722578e1008afcb20889d97e2ddb",
+    "path": "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
+    "sha256": "b92210530ac733d4323a3be3ae381c9f43d12dc24b7667b978dd2ce603d360fe"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "construct or obstruct the homogeneous ghost-field-equation-identity chain map and perform the large-gauge and final-residual descent",
+  "not_established": [
+    "a homogeneous off-shell chain map or derived cofiber triangle",
+    "large-gauge or global-moduli identifications",
+    "final residual descent",
+    "bounded-time, causal, observational, particle, or quantum claims",
+    "a changed-boundary or cross-background map"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_homogeneous_generalized_zero_solution_cofiber",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_weyl_homogeneous_solution_cofiber",
+  "team_id": "einstein_boundary",
+  "verdict": "HOMOGENEOUS_SOLUTION_COFIBER_ZERO_OFFSHELL_AND_GLOBAL_DESCENT_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_weyl_homogeneous_solution_cofiber --check",
+    "python3 bridge/einstein_sector/verify_einstein_weyl_homogeneous_solution_cofiber.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_homogeneous_solution_cofiber"
+  ]
+}
