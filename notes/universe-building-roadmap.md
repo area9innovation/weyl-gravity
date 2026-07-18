@@ -61,7 +61,7 @@ Nonlinear:   preserve the filtered ell3 obstruction and await an admissible bran
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; obtain the same-gauge generic-background full-BV Hessian and trace substitution that matches the five exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
 Observer:    certify the spatial tail beyond the exact-T two_j=138 temporal rail, compose massive images, evaluate recoil, and restrict records to Z2^C
-Black hole:  bilinear flux matrix and outer-boundary domains (extra branch certified to reach the horizon)
+Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
