@@ -93,6 +93,8 @@ for p in 0 2 4 6 8 10; do python3 -m closed_universe_observers.generate_berger_c
 for p in 0 2 4 6 8 10; do python3 -m closed_universe_observers.verify_berger_clock_weighted_scalar_stream --power "$p"; done
 python3 -m closed_universe_observers.generate_berger_clock_weighted_polarization_stream --check
 python3 -m closed_universe_observers.verify_berger_clock_weighted_polarization_stream
+python3 -m closed_universe_observers.generate_berger_temporal_green_order_preflight --check
+python3 -m closed_universe_observers.verify_berger_temporal_green_order_preflight
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -328,6 +330,13 @@ clock-power intervals, with 1,980 overlapping direct low-mode checks and no
 defect.  Temporal Green application in the certified charge blocks, the tail
 beyond this capacity rail, full Maxwell/massive images, and recoil remain
 open.
+The temporal-order preflight prevents promotion of that fixed degree-ten
+polynomial at the high-mode rail.  On the exact one-dimensional extreme
+charge block its error lower bound is already positive and large at both
+detector time radii.  The current geometric remainder rail first contracts at
+series order 14 for a common proof, so the next typed inputs are the even
+external-clock streams through `p=28`, followed by adaptive charge-block
+application.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

@@ -1,0 +1,37 @@
+{
+  "schema": "closed-universe-observer-tier-receipt-v1",
+  "result_id": "TEMPORAL_GREEN_ORDER_FIVE_HIGH_MODE_PREFLIGHT_TIER_RECEIPT",
+  "run_date": "2026-07-18",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "result_boundary": "The formal degree-ten temporal polynomial is not a certified Green approximation through two_j=138. The exact q=j+1 witness has Delta1=196000/9 and gives positive rational error lower bounds at both detector time radii. The current geometric remainder rail first contracts at series order 8 for D0 and 14 for D1, so a common proof requires external-clock powers through p=28. This is not an obstruction to the exact Green function; adaptive charge-block application, the spatial tail, full images, recoil, tangent-cone restriction, Bridge 3 and quantum claims remain open.",
+  "tier_0": [
+    {"command": "python3 -m py_compile producer verifier and tests; json/schema parse; git diff --check", "elapsed_seconds": "under 1", "status": "PASS"}
+  ],
+  "tier_1": [
+    {"command": "python3 -m closed_universe_observers.generate_berger_temporal_green_order_preflight --emit and independent verifier", "elapsed_seconds": "about 24 total", "status": "PASS", "scope": "top-rail operator norm, exact extreme block, degree-ten error and required adaptive order"},
+    {"command": "python3 -m pytest -q temporal-order and observer-atlas focused tests", "elapsed_seconds": "2.00", "status": "PASS", "summary": "10 passed, including exact low-mode cross-check of the extreme-charge formula against the spectral engine"},
+    {"command": "strict AJV validation and shared residual-atlas validation", "elapsed_seconds": "under 5", "status": "PASS"}
+  ],
+  "higher_tiers": [
+    {"tier": 2, "status": "NOT_RUN", "criterion": "The preflight consumes content-addressed certificates and does not change a shared operator or prior certificate."},
+    {"tier": 3, "status": "NOT_RUN", "criterion": "No theorem freeze, full Green image, tail theorem, recoil, bridge or quantum promotion."}
+  ],
+  "artifact_hashes": [
+    {"path": "closed_universe_observers/generate_berger_temporal_green_order_preflight.py", "sha256": "5bab6558796cd3b27e06aa6b39b572716e61be6a831c5ef93150c10a8f6f78b0"},
+    {"path": "closed_universe_observers/verify_berger_temporal_green_order_preflight.py", "sha256": "9f47f8b5d7e27838d68c83aba1d396c51b583d245e3db2d5845b639c0894a9b2"},
+    {"path": "closed_universe_observers/tests/test_berger_temporal_green_order_preflight.py", "sha256": "4c01a8e6e0f3387267b6e750a85ecb7657abbcff6bed0db38e5a1e0f2c28d426"},
+    {"path": "closed_universe_observers/schema/berger-temporal-green-order-five-high-mode-preflight-v1.schema.json", "sha256": "68af3fb37751a4785b1bf5f2a59d6b655a9565363c8ccba532457861f0ba250c"},
+    {"path": "closed_universe_observers/reports/berger-temporal-green-order-five-high-mode-preflight.md", "sha256": "0b2251c2fb46dde7a01545c1203817e80226594ea1ee24f3c5bc247c6d0ff02c"},
+    {"path": "closed_universe_observers/certificates/BERGER_TEMPORAL_GREEN_ORDER_FIVE_HIGH_MODE_PREFLIGHT.json", "sha256": "770a90874ffa7225e688df71ec9a7dde63ffeb01b19871dfbfce1f21947ee192"}
+  ],
+  "claim_flags": {
+    "DEGREE_TEN_FORMAL_TEMPORAL_POLYNOMIAL_DEFINED": true,
+    "DEGREE_TEN_UNIFORM_GREEN_APPROXIMATION_TWO_J0_TO_138_CERTIFIED": false,
+    "FIXED_ORDER_GREEN_PROMOTION_OBSTRUCTED": true,
+    "COMMON_SERIES_ORDER_AT_LEAST_FOURTEEN_REQUIRED": true,
+    "CLOCK_WEIGHTED_STREAMS_THROUGH_S28_EXPORTED": false,
+    "TEMPORAL_GREEN_CHARGE_BLOCKS_APPLIED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "closed-universe-berger-temporal-green-order-five-high-mode-preflight-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "top_rail_two_j", "input_series_order", "detector_audits", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-temporal-green-order-five-high-mode-preflight-v1"},
+    "result_id": {"const": "BERGER_TEMPORAL_GREEN_ORDER_FIVE_HIGH_MODE_PREFLIGHT"},
+    "setting_id": {"type": "string", "minLength": 1},
+    "claim_status": {"const": "FIXED_DEGREE_TEN_GREEN_PROMOTION_OBSTRUCTED_ADAPTIVE_ORDER_FOURTEEN_REQUIRED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "top_rail_two_j": {"const": 138},
+    "input_series_order": {"const": 5},
+    "detector_audits": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["detector_id", "tau_max", "extreme_charge_q", "extreme_block_dimension", "extreme_block_eigenvalue", "witness_y_lambda_tau_squared", "degree_ten_cosine_polynomial", "cosine_error_absolute_lower", "Delta1_infinity_norm_upper", "norm_y_upper", "first_geometric_contractive_series_order", "required_even_clock_power_maximum"],
+        "properties": {
+          "detector_id": {"enum": ["D0", "D1"]},
+          "tau_max": {"type": "string"}, "extreme_charge_q": {"const": "j+1"},
+          "extreme_block_dimension": {"const": 1}, "extreme_block_eigenvalue": {"const": "196000/9"},
+          "witness_y_lambda_tau_squared": {"type": "string"}, "degree_ten_cosine_polynomial": {"type": "string"},
+          "cosine_error_absolute_lower": {"type": "string"}, "Delta1_infinity_norm_upper": {"type": "string"},
+          "norm_y_upper": {"type": "string"}, "first_geometric_contractive_series_order": {"enum": [8, 14]},
+          "required_even_clock_power_maximum": {"enum": [16, 28]}
+        }
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 1, "maxItems": 1},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "EXTEND_EXTERNAL_CLOCK_WEIGHTED_SCALAR_AND_POLARIZATION_STREAMS_THROUGH_P28_THEN_APPLY_ADAPTIVE_ORDER_FOURTEEN_CHARGE_BLOCK_POLYNOMIAL"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object"}
+  }
+}

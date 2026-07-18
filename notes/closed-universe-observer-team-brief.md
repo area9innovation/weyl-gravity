@@ -449,6 +449,16 @@ application in charge blocks of dimension at most three, followed by the
 tail beyond `two_j=138`; full Maxwell/massive images, recoil, tangent-cone
 restriction and Bridge 3 remain open.
 
+`BERGER_TEMPORAL_GREEN_ORDER_FIVE_HIGH_MODE_PREFLIGHT` now blocks an invalid
+promotion of the six-rail degree-ten polynomial.  The extreme one-dimensional
+charge block at `two_j=138` has `Delta1=196000/9`; at the certified time
+radii, boundedness of the exact cosine gives large positive rational lower
+bounds on the degree-ten error.  The current geometric remainder rail first
+contracts at series order 8 for `D0` and 14 for `D1`.  The active gate is
+therefore extension of the external-clock scalar and polarization streams
+through even `p=28`, then common order-14 charge-block application.  This is
+an obstruction to fixed-order promotion, not to the exact Green function.
+
 The currently relevant programme bridge is Bridge 3, from a branch-labelled
 mode to relational detector/redshift/memory/recoil data on one background.
 It is **inactive**: activation requires Bridge 1 and a same-background Berger
