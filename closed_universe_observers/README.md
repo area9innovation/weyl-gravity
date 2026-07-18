@@ -186,6 +186,12 @@ rows.  Representative common-action third derivatives are cyclic, and an
 exact reduced fixture verifies off-shell energy exchange with the clock.
 This closes the emitter-added `q2` stress/clock jet, not the complete
 componentwise 108-row `q1 q2` identity or a solved backreacted branch.
+The master-identity successor now closes the covariant all-row step over the
+imported apparatus `r`-first-jet ring.  It classifies every output row
+0--107, checks the Maxwell, clock, Weyl, Diff-cotangent, and common-action
+cyclic orbits, and derives `[q1,q2]=0` from the cubic BV master-equation
+coefficient.  It explicitly leaves the sparse support-local PBW payload and
+coefficient-by-coefficient PBW replay open.
 The comparison ledger replays its
 historical imports exactly, checks current compatibility separately, and
 remains fail-closed on the classical-map and quantum gates.

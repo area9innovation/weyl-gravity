@@ -336,6 +336,12 @@ action third derivatives are exactly cyclic, and a left-invariant coefficient
 fixture has zero off-shell energy-exchange defect.  This is the emitter-added
 `q2` backreaction jet; complete componentwise `q1 q2`, higher emitter jets,
 and a solved backreacted branch remain open.
+The master-identity successor closes the covariant all-row arity-two step over
+the imported apparatus `r`-first-jet ring.  Its cubic BV master-equation
+coefficient covers every row 0--107 and has zero Maxwell, clock, Weyl,
+Diff-cotangent, and common-action cyclic defects.  A canonical sparse
+support-local PBW payload and component-coefficient replay remain open and
+are not inferred from row coverage alone.
 
 The precise seven-field claim index, component verdicts, and gauge defects are
 machine-readable in the comparison ledger.
@@ -345,7 +351,7 @@ machine-readable in the comparison ledger.
 | Setting | Global carrier | Reduction | Observer result | Causal result | Verdict |
 |---|---|---|---|---|---|
 | selected vacuum cylinder | separate classical one-particle and residual carriers | Taub-zero plus residual quotient | no physical clock | classical causal complex | `ANALOGY_ONLY_OBJECT_MISMATCH` |
-| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; full apparatus/harmonic closure open | two localized massive-emitter Cauchy preparations give triangular rank two; the first recoil is absolute `g^3`, with its operator known and coefficient profile-blocked; emitter stress/clock `q2` outputs are exported | `OBSERVER_RECOVERY_OBSTRUCTED` |
+| Berger clock | classical fixed-coupling phase space with an 84-row apparatus and selected 108-row emitter extension | raw-\(D\) nullity; nonlinear \(K_{\rm Berger}\) | rank-two coefficientwise affine-`K` family morphism and scoped C-G4 two-record Poisson algebra; covariant 108-row `q1 q2` identity certified, PBW payload open | two localized massive-emitter Cauchy preparations give triangular rank two; the first recoil is absolute `g^3`, with its operator known and coefficient profile-blocked; emitter stress/clock `q2` outputs are exported | `OBSERVER_RECOVERY_OBSTRUCTED` |
 | external fixed-\(O\) code | real four-dimensional effective input | one-row projection plus pointer clone | rank-two exact carrier | not modeled | `STRUCTURAL_BRIDGE_CERTIFIED` within the external model only |
 | full quantum Berger | not constructed | not defined | open | open | `QUANTUM_COMPARISON_NOT_YET_DEFINED` |
 | asymptotic boundary | different boundary phase space | charged symmetries may replace quotient | different typed observer | not tested | `ANALOGY_ONLY_OBJECT_MISMATCH` |
@@ -375,7 +381,8 @@ reciprocal recoil equation, and nondegenerately paired 108-row carrier.
 The first recoil operator is now known, while its detector coefficient awaits
 explicit localized preparation and switch profiles.  The emitter stress and
 clock-switch `q2` outputs are exported, while the complete 108-row `q1 q2`
-replay and a solved backreacted branch remain open;
+covariant master identity is certified and its support-local PBW refinement
+and a solved backreacted branch remain open;
 placing both preparations at the original common Hopf event is a separate
 stronger localization target.
 Full apparatus/harmonic brackets, full `q4`, higher brackets, and
@@ -472,3 +479,7 @@ The emitter backreaction successor exports the covariant free and interaction
 stress tensors, reciprocal clock-switch source, common-action cyclic `q2`
 orbits, and exact reduced Noether energy exchange.  Its receipt is
 `closed_universe_observers/receipts/EMITTER_STRESS_CLOCK_BACKREACTION_TIER_RECEIPT.json`.
+The arity-two successor expands the common BV master equation, classifies all
+108 output rows, verifies the independent Noether/cyclicity rails and their
+mutations, and keeps the unexported PBW payload fail-closed.  Its receipt is
+`closed_universe_observers/receipts/EMITTER_108_ROW_Q1_Q2_MASTER_IDENTITY_TIER_RECEIPT.json`.

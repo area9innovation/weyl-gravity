@@ -221,13 +221,24 @@ fixture verifies the off-shell clock energy-exchange identity.  The complete
 componentwise 108-row `q1 q2` replay, higher emitter jets, and a solved
 backreacted gravity-clock branch remain open.
 
+`BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` now closes the covariant
+version of that arity-two gate over the imported apparatus `r`-first-jet
+coefficient ring.  The cubic master-equation coefficient `{S_2,S_3}=0`
+combines the imported 84-row identity with the emitter Maxwell, clock, Weyl,
+Diff-cotangent, stress, and cyclic orbits.  All output rows 0--107 are
+classified exactly once and all 108 covariant row defects are zero.  This is
+not yet a sparse support-local PBW payload or a component-coefficient PBW
+replay; those remain the algebraic refinement before a solved backreacted
+branch.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Export explicit compact `u_0,u_1` and normalized `h_0,h_1`, evaluate their
    massive Green images, and then compute the absolute-`g^3` (relative-`g^2`)
    detector recoil coefficient.  In parallel, use the exported emitter stress
-   and clock-switch source to replay the complete 108-row `q1 q2` identity
-   before solving a backreacted gravity-clock branch.
+   and clock-switch source to refine the certified covariant 108-row
+   `q1 q2` identity into a support-local PBW payload before solving a
+   backreacted gravity-clock branch.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
 2. Keep the full apparatus Dirac bracket, complete harmonic signal algebra,

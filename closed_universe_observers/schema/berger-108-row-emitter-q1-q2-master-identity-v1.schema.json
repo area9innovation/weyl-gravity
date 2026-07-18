@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/closed-universe/berger-108-row-emitter-q1-q2-master-identity-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "master_action_expansion", "output_row_coverage", "stitching_ledger", "pbw_payload_boundary", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-emitter-q1-q2-master-identity-v1"},
+    "result_id": {"const": "BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "COVARIANT_108_ROW_Q1_Q2_MASTER_IDENTITY_CERTIFIED_PBW_PAYLOAD_OPEN"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 5},
+    "master_action_expansion": {
+      "type": "object",
+      "required": ["master_action", "background", "CME_order", "raised_identity", "audit"],
+      "properties": {
+        "master_action": {"type": "string"},
+        "background": {"type": "string"},
+        "CME_order": {"type": "string"},
+        "raised_identity": {"type": "string"},
+        "audit": {
+          "type": "object",
+          "required": ["total_defect_count"],
+          "properties": {"total_defect_count": {"const": 0}}
+        }
+      }
+    },
+    "output_row_coverage": {
+      "type": "object",
+      "required": ["total_rows", "ranges", "covered_row_count", "missing_rows", "overlap_rows", "all_output_rows_covered_exactly_once", "certified_arity_two_defect_count_by_output_row", "zero_reason"],
+      "properties": {
+        "total_rows": {"const": 108},
+        "ranges": {"type": "array", "minItems": 9},
+        "covered_row_count": {"const": 108},
+        "missing_rows": {"const": []},
+        "overlap_rows": {"const": []},
+        "all_output_rows_covered_exactly_once": {"const": true},
+        "certified_arity_two_defect_count_by_output_row": {
+          "type": "array",
+          "minItems": 108,
+          "maxItems": 108,
+          "items": {"const": 0}
+        },
+        "zero_reason": {"type": "string"}
+      }
+    },
+    "stitching_ledger": {"type": "object"},
+    "pbw_payload_boundary": {
+      "type": "object",
+      "required": ["covariant_action_derivative_identity", "all_108_output_rows_classified", "support_local_PBW_q2_payload_exported", "component_coefficient_PBW_replay_certified", "missing_object"],
+      "properties": {
+        "covariant_action_derivative_identity": {"const": true},
+        "all_108_output_rows_classified": {"const": true},
+        "support_local_PBW_q2_payload_exported": {"const": false},
+        "component_coefficient_PBW_replay_certified": {"const": false},
+        "missing_object": {"type": "string"}
+      }
+    },
+    "mutation_results": {"type": "array", "minItems": 7},
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["COVARIANT_108_ROW_Q1_Q2_MASTER_IDENTITY_CERTIFIED", "ALL_108_Q2_OUTPUT_ROWS_CLASSIFIED", "EMITTER_ADDED_NOETHER_ORBITS_COMPLETE", "EMITTER_ADDED_Q2_CYCLICITY_CERTIFIED", "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED", "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED", "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED", "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED", "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED", "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED", "QUANTUM_CLAIM"],
+      "properties": {
+        "COVARIANT_108_ROW_Q1_Q2_MASTER_IDENTITY_CERTIFIED": {"const": true},
+        "ALL_108_Q2_OUTPUT_ROWS_CLASSIFIED": {"const": true},
+        "EMITTER_ADDED_NOETHER_ORBITS_COMPLETE": {"const": true},
+        "EMITTER_ADDED_Q2_CYCLICITY_CERTIFIED": {"const": true},
+        "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": {"const": false},
+        "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": {"const": false},
+        "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": {"const": false},
+        "FULL_NONLINEAR_EMITTER_BACKREACTION_INCLUDED": {"const": false},
+        "FINITE_PARAMETER_108_ROW_GREEN_HYPERBOLICITY_CERTIFIED": {"const": false},
+        "FULL_APPARATUS_DIRAC_BRACKET_CERTIFIED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}
