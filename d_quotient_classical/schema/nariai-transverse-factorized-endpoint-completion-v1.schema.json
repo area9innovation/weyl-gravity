@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nariai-transverse-factorized-endpoint-completion-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema", "schema_version", "result_id", "result_state", "lifecycle_state", "dependency_tags", "dependency_refs", "exact_data", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "nariai-transverse-factorized-endpoint-completion-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1"},
+    "result_state": {"const": "UNIQUE_CYCLIC_FACTORIZED_ENDPOINT_TARGET_EXACT_ACTION_COMPARISON_OPEN"},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/dependency"}},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["base_reconciliation", "complete_first_order_solve", "factorized_endpoint_target", "disposition"],
+      "properties": {
+        "base_reconciliation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["formula", "correction", "historical_Q_base_defect", "endpoint_plus_2_B_action_defect", "historical_post_normal_order_Q_authoritative"],
+          "properties": {
+            "formula": {"type": "string", "minLength": 1},
+            "correction": {"$ref": "#/$defs/table"},
+            "historical_Q_base_defect": {"$ref": "#/$defs/table"},
+            "endpoint_plus_2_B_action_defect": {"$ref": "#/$defs/table"},
+            "historical_post_normal_order_Q_authoritative": {"const": false}
+          }
+        },
+        "complete_first_order_solve": {
+          "type": "object", "additionalProperties": false,
+          "required": ["ansatz", "total_unknowns", "coefficient_map_shape", "coefficient_map_rank", "augmented_ranks", "free_parameter_counts", "equation_key_count", "unique_correction", "corrected_gauge_residual", "historical_point_correction_defect"],
+          "properties": {
+            "ansatz": {"type": "string", "minLength": 1},
+            "total_unknowns": {"const": 405},
+            "coefficient_map_shape": {"const": [60, 45]},
+            "coefficient_map_rank": {"const": 45},
+            "augmented_ranks": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"const": 45}},
+            "free_parameter_counts": {"const": [0,0,0,0,0,0,0,0,0]},
+            "equation_key_count": {"const": 60},
+            "unique_correction": {"$ref": "#/$defs/table"},
+            "corrected_gauge_residual": {"$ref": "#/$defs/table"},
+            "historical_point_correction_defect": {"$ref": "#/$defs/table"}
+          }
+        },
+        "factorized_endpoint_target": {
+          "type": "object", "additionalProperties": false,
+          "required": ["formula", "endpoint_variation", "Qdot_is_order_zero", "Qdot_fibre_adjoint_defect", "endpoint_factorized_cyclic", "endpoint_gauge_closed"],
+          "properties": {
+            "formula": {"type": "string", "minLength": 1},
+            "endpoint_variation": {"$ref": "#/$defs/table"},
+            "Qdot_is_order_zero": {"const": true},
+            "Qdot_fibre_adjoint_defect": {"$ref": "#/$defs/table"},
+            "endpoint_factorized_cyclic": {"const": true},
+            "endpoint_gauge_closed": {"const": true}
+          }
+        },
+        "disposition": {
+          "type": "object", "additionalProperties": false,
+          "required": ["unique_factorized_endpoint_completion", "action_base_reconciled", "action_third_variation_independently_derived", "rank_310_first_variation_SDR", "transverse_causal_transfer"],
+          "properties": {
+            "unique_factorized_endpoint_completion": {"const": true},
+            "action_base_reconciled": {"const": true},
+            "action_third_variation_independently_derived": {"const": false},
+            "rank_310_first_variation_SDR": {"const": false},
+            "transverse_causal_transfer": {"const": false}
+          }
+        }
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "boolean"}},
+    "flags": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "boolean"}},
+    "next_gate": {"const": "NARIAI_TRANSVERSE_INDEPENDENT_ACTION_THIRD_VARIATION_COMPARISON"},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {"type": "object", "minProperties": 6, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["path", "result_id", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "result_id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "matrix": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}, "entries": {"type": "array", "items": {"type": "array", "minItems": 3, "maxItems": 3}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "table": {"type": "object", "additionalProperties": false, "required": ["orders", "nonzero_coefficients", "entries", "sha256"], "properties": {"orders": {"type": "array", "items": {"type": "integer", "minimum": 0}}, "nonzero_coefficients": {"type": "integer", "minimum": 0}, "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "matrix": {"$ref": "#/$defs/matrix"}}}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  }
+}

@@ -1,0 +1,1889 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "claim_boundary": "This exact complete first-order solve reconciles the authoritative factorized Hom-adjoint Schur operator with the action-derived base Bach endpoint and derives the unique cyclic transverse lower-order completion. The solution has fifteen algebraic coefficients and zero gauge/cyclic defects. It is the exact target for, not a substitute for, an independent third variation of the Weyl-squared action. The action comparison, all-row rank-310 SDR and transverse causal transfer remain false.",
+  "dependency_refs": {
+    "factorized_Hom_schur": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_FACTORIZED_HOM_SCHUR_REPLAY_V1",
+      "sha256": "406d4f3f3288a55221a1f69a7d2d0d69eced747ddabf36b1d961ca09e37d6e98"
+    },
+    "superseded_point_solve": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_FIRST_ORDER_SCHUR_SOLVE_V1",
+      "sha256": "79d1d3e1fd046715b738f3d373183685f181adb806b57dad38739ba908875d39"
+    },
+    "upper_relative_saddle": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1",
+      "sha256": "fc77bf152e481bd949dae8cfbf0108cd4eb4d8e653ca650be72d7d51750e4513"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "action_third_variation_not_overclaimed": true,
+    "all_rows_unique": true,
+    "base_action_endpoint_exact": true,
+    "complete_ansatz_full_rank": true,
+    "correction_is_algebraic": true,
+    "correction_is_cyclic": true,
+    "gauge_residual_zero": true,
+    "rank_310_not_overclaimed": true
+  },
+  "exact_data": {
+    "base_reconciliation": {
+      "correction": {
+        "entries": [
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "-16/9"
+                ],
+                [
+                  1,
+                  1,
+                  "16/9"
+                ],
+                [
+                  1,
+                  4,
+                  "8/9"
+                ],
+                [
+                  1,
+                  8,
+                  "8/9"
+                ],
+                [
+                  2,
+                  2,
+                  "-40/9"
+                ],
+                [
+                  3,
+                  3,
+                  "40/9"
+                ],
+                [
+                  4,
+                  1,
+                  "8/9"
+                ],
+                [
+                  4,
+                  4,
+                  "40/9"
+                ],
+                [
+                  4,
+                  8,
+                  "32/9"
+                ],
+                [
+                  5,
+                  5,
+                  "-40/9"
+                ],
+                [
+                  6,
+                  6,
+                  "40/9"
+                ],
+                [
+                  7,
+                  7,
+                  "16/9"
+                ],
+                [
+                  8,
+                  1,
+                  "8/9"
+                ],
+                [
+                  8,
+                  4,
+                  "32/9"
+                ],
+                [
+                  8,
+                  8,
+                  "40/9"
+                ]
+              ],
+              "sha256": "2bf38f01b20ffa41aa157f721ec9c72a2b5fdbb61ed1b94bd1ed1d985bbcc7b6",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": []
+          }
+        ],
+        "nonzero_coefficients": 15,
+        "orders": [
+          0
+        ],
+        "sha256": "3e61da75791e4f2383632d5e0cbbcfc3a07bd378840d0d9e539cf1104875942c"
+      },
+      "endpoint_plus_2_B_action_defect": {
+        "entries": [],
+        "nonzero_coefficients": 0,
+        "orders": [],
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "formula": "Q_factorized,0=-2 B_action-Schur_factorized,0",
+      "historical_Q_base_defect": {
+        "entries": [
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "-8/3"
+                ],
+                [
+                  1,
+                  1,
+                  "8/3"
+                ],
+                [
+                  1,
+                  4,
+                  "10/3"
+                ],
+                [
+                  1,
+                  8,
+                  "10/3"
+                ],
+                [
+                  2,
+                  2,
+                  "-5/3"
+                ],
+                [
+                  3,
+                  3,
+                  "2/3"
+                ],
+                [
+                  4,
+                  1,
+                  "1/3"
+                ],
+                [
+                  4,
+                  4,
+                  "23/3"
+                ],
+                [
+                  4,
+                  8,
+                  "22/3"
+                ],
+                [
+                  5,
+                  5,
+                  "-2/3"
+                ],
+                [
+                  6,
+                  6,
+                  "-1/3"
+                ],
+                [
+                  7,
+                  7,
+                  "8/3"
+                ],
+                [
+                  8,
+                  1,
+                  "1/3"
+                ],
+                [
+                  8,
+                  4,
+                  "13/3"
+                ],
+                [
+                  8,
+                  8,
+                  "20/3"
+                ]
+              ],
+              "sha256": "1a01d85375322a859a48b2435336a961da6ccfc27c6103bdd9443c018d3676e6",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": []
+          }
+        ],
+        "nonzero_coefficients": 15,
+        "orders": [
+          0
+        ],
+        "sha256": "d5f3f92f3187c5d9d33331ffc2bae236f033bd41ce14793fec75eeb9ceeba9d9"
+      },
+      "historical_post_normal_order_Q_authoritative": false
+    },
+    "complete_first_order_solve": {
+      "ansatz": "Qdot=Qdot_0+sum_a Qdot_a nabla_a",
+      "augmented_ranks": [
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45,
+        45
+      ],
+      "coefficient_map_rank": 45,
+      "coefficient_map_shape": [
+        60,
+        45
+      ],
+      "corrected_gauge_residual": {
+        "entries": [],
+        "nonzero_coefficients": 0,
+        "orders": [],
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "equation_key_count": 60,
+      "free_parameter_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "historical_point_correction_defect": {
+        "entries": [
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "17"
+                ],
+                [
+                  1,
+                  1,
+                  "-17"
+                ],
+                [
+                  1,
+                  4,
+                  "-33/2"
+                ],
+                [
+                  1,
+                  8,
+                  "-33/2"
+                ],
+                [
+                  2,
+                  2,
+                  "83/6"
+                ],
+                [
+                  3,
+                  3,
+                  "-14/3"
+                ],
+                [
+                  4,
+                  1,
+                  "-25/3"
+                ],
+                [
+                  4,
+                  4,
+                  "-301/6"
+                ],
+                [
+                  4,
+                  8,
+                  "-91/2"
+                ],
+                [
+                  5,
+                  5,
+                  "4"
+                ],
+                [
+                  6,
+                  6,
+                  "31/6"
+                ],
+                [
+                  7,
+                  7,
+                  "-11"
+                ],
+                [
+                  8,
+                  1,
+                  "-25/3"
+                ],
+                [
+                  8,
+                  4,
+                  "-98/3"
+                ],
+                [
+                  8,
+                  8,
+                  "-39"
+                ]
+              ],
+              "sha256": "d34011b3bf83eb8e3be4fdac80878cff4510458721ea666fad38ee7fa15a5341",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": []
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "77*sqrt(2)/8"
+                ],
+                [
+                  1,
+                  1,
+                  "-241*sqrt(2)/24"
+                ],
+                [
+                  1,
+                  4,
+                  "-65*sqrt(2)/6"
+                ],
+                [
+                  1,
+                  8,
+                  "-77*sqrt(2)/8"
+                ],
+                [
+                  2,
+                  2,
+                  "-145*sqrt(2)/24"
+                ],
+                [
+                  3,
+                  3,
+                  "6*sqrt(2)"
+                ],
+                [
+                  4,
+                  1,
+                  "23*sqrt(2)/24"
+                ],
+                [
+                  4,
+                  4,
+                  "17*sqrt(2)/3"
+                ],
+                [
+                  4,
+                  8,
+                  "103*sqrt(2)/8"
+                ],
+                [
+                  5,
+                  5,
+                  "-47*sqrt(2)/8"
+                ],
+                [
+                  6,
+                  6,
+                  "6*sqrt(2)"
+                ],
+                [
+                  7,
+                  7,
+                  "-23*sqrt(2)/2"
+                ],
+                [
+                  8,
+                  1,
+                  "11*sqrt(2)/24"
+                ],
+                [
+                  8,
+                  4,
+                  "32*sqrt(2)/3"
+                ],
+                [
+                  8,
+                  8,
+                  "51*sqrt(2)/8"
+                ]
+              ],
+              "sha256": "bfefc3e82e2017daed1e9b8ce8f72b8ef320fa32dc391a01388a574b14de1892",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              0
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  1,
+                  "-193*sqrt(2)/24"
+                ],
+                [
+                  0,
+                  4,
+                  "-59*sqrt(2)/6"
+                ],
+                [
+                  0,
+                  8,
+                  "-69*sqrt(2)/8"
+                ],
+                [
+                  1,
+                  0,
+                  "61*sqrt(2)/8"
+                ],
+                [
+                  2,
+                  3,
+                  "7*sqrt(2)/2"
+                ],
+                [
+                  3,
+                  2,
+                  "-169*sqrt(2)/24"
+                ],
+                [
+                  4,
+                  0,
+                  "12*sqrt(2)"
+                ],
+                [
+                  5,
+                  6,
+                  "5*sqrt(2)/2"
+                ],
+                [
+                  6,
+                  5,
+                  "-47*sqrt(2)/8"
+                ],
+                [
+                  8,
+                  0,
+                  "23*sqrt(2)/2"
+                ]
+              ],
+              "sha256": "0ca99f4a29d95bf965b758a439babff6cd5b6553b5ed8e0810daf4e009e653b4",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              1
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  3,
+                  "-4*sqrt(2)"
+                ],
+                [
+                  1,
+                  2,
+                  "3*sqrt(2)"
+                ],
+                [
+                  2,
+                  1,
+                  "143*sqrt(2)/24"
+                ],
+                [
+                  2,
+                  4,
+                  "14*sqrt(2)/3"
+                ],
+                [
+                  2,
+                  8,
+                  "7*sqrt(2)/8"
+                ],
+                [
+                  3,
+                  0,
+                  "-31*sqrt(2)/8"
+                ],
+                [
+                  4,
+                  2,
+                  "-121*sqrt(2)/24"
+                ],
+                [
+                  5,
+                  7,
+                  "3*sqrt(2)"
+                ],
+                [
+                  7,
+                  5,
+                  "93*sqrt(2)/8"
+                ],
+                [
+                  8,
+                  2,
+                  "-33*sqrt(2)/2"
+                ]
+              ],
+              "sha256": "f22d9df03cc1a39775e1e85536cf628e84d883535f9a04b4ffce085b66f16442",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              2
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  6,
+                  "-6*sqrt(2)"
+                ],
+                [
+                  1,
+                  5,
+                  "5*sqrt(2)"
+                ],
+                [
+                  4,
+                  5,
+                  "-27*sqrt(2)/2"
+                ],
+                [
+                  5,
+                  1,
+                  "167*sqrt(2)/24"
+                ],
+                [
+                  5,
+                  4,
+                  "14*sqrt(2)/3"
+                ],
+                [
+                  5,
+                  8,
+                  "31*sqrt(2)/8"
+                ],
+                [
+                  6,
+                  0,
+                  "-39*sqrt(2)/8"
+                ],
+                [
+                  7,
+                  2,
+                  "239*sqrt(2)/24"
+                ],
+                [
+                  8,
+                  5,
+                  "-27*sqrt(2)/8"
+                ]
+              ],
+              "sha256": "18aa1d1c7ec99b1220d37f2508ac9beb0bc6a4b0acc4ad31a7d3b56e0d5591eb",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              3
+            ]
+          }
+        ],
+        "nonzero_coefficients": 59,
+        "orders": [
+          0,
+          1
+        ],
+        "sha256": "fab08defdb3ba57778da5ef901a12b71641d85da5908b8bf4848159711c77892"
+      },
+      "total_unknowns": 405,
+      "unique_correction": {
+        "entries": [
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "32/3"
+                ],
+                [
+                  1,
+                  1,
+                  "-32/3"
+                ],
+                [
+                  1,
+                  4,
+                  "-16/3"
+                ],
+                [
+                  1,
+                  8,
+                  "-16/3"
+                ],
+                [
+                  2,
+                  2,
+                  "80/3"
+                ],
+                [
+                  3,
+                  3,
+                  "-80/3"
+                ],
+                [
+                  4,
+                  1,
+                  "-16/3"
+                ],
+                [
+                  4,
+                  4,
+                  "-80/3"
+                ],
+                [
+                  4,
+                  8,
+                  "-64/3"
+                ],
+                [
+                  5,
+                  5,
+                  "80/3"
+                ],
+                [
+                  6,
+                  6,
+                  "-80/3"
+                ],
+                [
+                  7,
+                  7,
+                  "-32/3"
+                ],
+                [
+                  8,
+                  1,
+                  "-16/3"
+                ],
+                [
+                  8,
+                  4,
+                  "-64/3"
+                ],
+                [
+                  8,
+                  8,
+                  "-80/3"
+                ]
+              ],
+              "sha256": "d459b5b1a22c89ee05e8429081e6892da6e70c6210ae6f03318f901f21a09c8a",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": []
+          }
+        ],
+        "nonzero_coefficients": 15,
+        "orders": [
+          0
+        ],
+        "sha256": "43a3fcaa0e3acf02f8d8333e7ef77acff72ed92b803aa63d3db666a7c60e3e3e"
+      }
+    },
+    "disposition": {
+      "action_base_reconciled": true,
+      "action_third_variation_independently_derived": false,
+      "rank_310_first_variation_SDR": false,
+      "transverse_causal_transfer": false,
+      "unique_factorized_endpoint_completion": true
+    },
+    "factorized_endpoint_target": {
+      "Qdot_fibre_adjoint_defect": {
+        "entries": [],
+        "nonzero_coefficients": 0,
+        "orders": [],
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "Qdot_is_order_zero": true,
+      "endpoint_factorized_cyclic": true,
+      "endpoint_gauge_closed": true,
+      "endpoint_variation": {
+        "entries": [
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "-4/3"
+                ],
+                [
+                  1,
+                  1,
+                  "-4"
+                ],
+                [
+                  1,
+                  4,
+                  "-2"
+                ],
+                [
+                  1,
+                  8,
+                  "-2"
+                ],
+                [
+                  2,
+                  2,
+                  "122/3"
+                ],
+                [
+                  3,
+                  3,
+                  "-134/3"
+                ],
+                [
+                  4,
+                  1,
+                  "-22/3"
+                ],
+                [
+                  4,
+                  4,
+                  "46/3"
+                ],
+                [
+                  4,
+                  8,
+                  "40/3"
+                ],
+                [
+                  5,
+                  5,
+                  "58/3"
+                ],
+                [
+                  6,
+                  6,
+                  "-38/3"
+                ],
+                [
+                  7,
+                  7,
+                  "20"
+                ],
+                [
+                  8,
+                  1,
+                  "-22/3"
+                ],
+                [
+                  8,
+                  8,
+                  "46/3"
+                ]
+              ],
+              "sha256": "0aaac6ca64ffe518c45b7fc4e11b0bfcf4ca2eb9fcced9a4b39b38434a02f35e",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": []
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "-26*sqrt(2)/3"
+                ],
+                [
+                  1,
+                  1,
+                  "-6*sqrt(2)"
+                ],
+                [
+                  1,
+                  4,
+                  "2*sqrt(2)/3"
+                ],
+                [
+                  1,
+                  8,
+                  "-8*sqrt(2)/3"
+                ],
+                [
+                  2,
+                  2,
+                  "28*sqrt(2)/3"
+                ],
+                [
+                  3,
+                  3,
+                  "-6*sqrt(2)"
+                ],
+                [
+                  4,
+                  1,
+                  "10*sqrt(2)"
+                ],
+                [
+                  4,
+                  4,
+                  "10*sqrt(2)"
+                ],
+                [
+                  4,
+                  8,
+                  "-28*sqrt(2)/3"
+                ],
+                [
+                  5,
+                  5,
+                  "6*sqrt(2)"
+                ],
+                [
+                  6,
+                  6,
+                  "-16*sqrt(2)"
+                ],
+                [
+                  7,
+                  7,
+                  "14*sqrt(2)"
+                ],
+                [
+                  8,
+                  1,
+                  "20*sqrt(2)/3"
+                ],
+                [
+                  8,
+                  4,
+                  "-8*sqrt(2)/3"
+                ],
+                [
+                  8,
+                  8,
+                  "-20*sqrt(2)/3"
+                ]
+              ],
+              "sha256": "62e9a5e971210e802219f6f2f62c2275febc709aa3799e6f6b5a6125986e4843",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              0
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "-16/3"
+                ],
+                [
+                  1,
+                  4,
+                  "4/3"
+                ],
+                [
+                  1,
+                  8,
+                  "-4/3"
+                ],
+                [
+                  2,
+                  2,
+                  "10/3"
+                ],
+                [
+                  3,
+                  3,
+                  "-6"
+                ],
+                [
+                  4,
+                  1,
+                  "8"
+                ],
+                [
+                  4,
+                  4,
+                  "10/3"
+                ],
+                [
+                  4,
+                  8,
+                  "-34/3"
+                ],
+                [
+                  5,
+                  5,
+                  "2"
+                ],
+                [
+                  6,
+                  6,
+                  "-10"
+                ],
+                [
+                  7,
+                  7,
+                  "16"
+                ],
+                [
+                  8,
+                  1,
+                  "8"
+                ],
+                [
+                  8,
+                  4,
+                  "-14/3"
+                ],
+                [
+                  8,
+                  8,
+                  "-10/3"
+                ]
+              ],
+              "sha256": "fd6bda5f56337fafc324f750ec6cb069d90b331c5785d3ba3fd4c9a599d68964",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              0,
+              0
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  1,
+                  "-40/3"
+                ],
+                [
+                  0,
+                  4,
+                  "-4/3"
+                ],
+                [
+                  0,
+                  8,
+                  "-20/3"
+                ],
+                [
+                  1,
+                  0,
+                  "-8/3"
+                ],
+                [
+                  2,
+                  3,
+                  "-8/3"
+                ],
+                [
+                  3,
+                  2,
+                  "40/3"
+                ],
+                [
+                  4,
+                  0,
+                  "4/3"
+                ],
+                [
+                  5,
+                  6,
+                  "-8"
+                ],
+                [
+                  6,
+                  5,
+                  "8"
+                ],
+                [
+                  8,
+                  0,
+                  "4/3"
+                ]
+              ],
+              "sha256": "2bf2867ab36349f89abfea8250267cc9296163cfad406f55ffdc2d638c30a5af",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              0,
+              1
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  3,
+                  "-16/3"
+                ],
+                [
+                  1,
+                  2,
+                  "8/3"
+                ],
+                [
+                  2,
+                  1,
+                  "8/3"
+                ],
+                [
+                  2,
+                  4,
+                  "8"
+                ],
+                [
+                  2,
+                  8,
+                  "16/3"
+                ],
+                [
+                  3,
+                  0,
+                  "-40/3"
+                ],
+                [
+                  4,
+                  2,
+                  "8"
+                ],
+                [
+                  5,
+                  7,
+                  "-8"
+                ],
+                [
+                  8,
+                  2,
+                  "16/3"
+                ]
+              ],
+              "sha256": "9e27a885545a9f524fb5341b5769b60a89a671379f695a3ea93478eb3d41ddf5",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              0,
+              2
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  6,
+                  "20/3"
+                ],
+                [
+                  1,
+                  5,
+                  "-28/3"
+                ],
+                [
+                  2,
+                  7,
+                  "52/3"
+                ],
+                [
+                  4,
+                  5,
+                  "-4/3"
+                ],
+                [
+                  5,
+                  1,
+                  "-4/3"
+                ],
+                [
+                  5,
+                  4,
+                  "4/3"
+                ],
+                [
+                  5,
+                  8,
+                  "16/3"
+                ],
+                [
+                  6,
+                  0,
+                  "-28/3"
+                ],
+                [
+                  7,
+                  2,
+                  "4/3"
+                ],
+                [
+                  8,
+                  5,
+                  "-16/3"
+                ]
+              ],
+              "sha256": "171ba11284d5689d986d7e7c7d2d8c55d90799f93e9ed7c1caa85615ce5b4bc5",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              0,
+              3
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  1,
+                  "-46*sqrt(2)/3"
+                ],
+                [
+                  0,
+                  4,
+                  "-16*sqrt(2)/3"
+                ],
+                [
+                  0,
+                  8,
+                  "-26*sqrt(2)/3"
+                ],
+                [
+                  1,
+                  0,
+                  "-10*sqrt(2)/3"
+                ],
+                [
+                  2,
+                  3,
+                  "-2*sqrt(2)/3"
+                ],
+                [
+                  3,
+                  2,
+                  "24*sqrt(2)"
+                ],
+                [
+                  4,
+                  0,
+                  "-2*sqrt(2)/3"
+                ],
+                [
+                  5,
+                  6,
+                  "-4*sqrt(2)"
+                ],
+                [
+                  6,
+                  5,
+                  "14*sqrt(2)"
+                ],
+                [
+                  8,
+                  0,
+                  "-4*sqrt(2)"
+                ]
+              ],
+              "sha256": "d1dc10059e147ef0ceaebc66fb12dda21de183379f03449e0e80032bf7118ecf",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              1
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  1,
+                  1,
+                  "-32/3"
+                ],
+                [
+                  1,
+                  4,
+                  "-4"
+                ],
+                [
+                  1,
+                  8,
+                  "-20/3"
+                ],
+                [
+                  2,
+                  2,
+                  "14"
+                ],
+                [
+                  3,
+                  3,
+                  "22/3"
+                ],
+                [
+                  4,
+                  1,
+                  "-40/3"
+                ],
+                [
+                  4,
+                  4,
+                  "-14"
+                ],
+                [
+                  4,
+                  8,
+                  "6"
+                ],
+                [
+                  5,
+                  5,
+                  "10"
+                ],
+                [
+                  6,
+                  6,
+                  "6"
+                ],
+                [
+                  7,
+                  7,
+                  "-32"
+                ],
+                [
+                  8,
+                  1,
+                  "-40/3"
+                ],
+                [
+                  8,
+                  4,
+                  "2"
+                ],
+                [
+                  8,
+                  8,
+                  "-10"
+                ]
+              ],
+              "sha256": "30631e230a3dd57b2533d4e3b5db3fb0df222f7215872b22ae2d75b47fe30887",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              1,
+              1
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  2,
+                  "4"
+                ],
+                [
+                  1,
+                  3,
+                  "-28/3"
+                ],
+                [
+                  2,
+                  0,
+                  "-12"
+                ],
+                [
+                  3,
+                  1,
+                  "-4/3"
+                ],
+                [
+                  3,
+                  4,
+                  "28/3"
+                ],
+                [
+                  3,
+                  8,
+                  "8/3"
+                ],
+                [
+                  4,
+                  3,
+                  "12"
+                ],
+                [
+                  6,
+                  7,
+                  "-4"
+                ],
+                [
+                  7,
+                  6,
+                  "12"
+                ],
+                [
+                  8,
+                  3,
+                  "-8/3"
+                ]
+              ],
+              "sha256": "10602e6becf0792978d7d8063ad6a343dc27c2db09c6a98d09d78d7a80007c25",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              1,
+              2
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  5,
+                  "-8"
+                ],
+                [
+                  1,
+                  6,
+                  "8/3"
+                ],
+                [
+                  3,
+                  7,
+                  "64/3"
+                ],
+                [
+                  4,
+                  6,
+                  "8/3"
+                ],
+                [
+                  5,
+                  0,
+                  "-16"
+                ],
+                [
+                  6,
+                  1,
+                  "8/3"
+                ],
+                [
+                  6,
+                  4,
+                  "8/3"
+                ],
+                [
+                  6,
+                  8,
+                  "32/3"
+                ],
+                [
+                  7,
+                  3,
+                  "40/3"
+                ],
+                [
+                  8,
+                  6,
+                  "32/3"
+                ]
+              ],
+              "sha256": "929d7726550329b786a39da4a436810a31db7bfac71ccacdb40f08226e282709",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              1,
+              3
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  3,
+                  "-4*sqrt(2)/3"
+                ],
+                [
+                  1,
+                  2,
+                  "-4*sqrt(2)"
+                ],
+                [
+                  2,
+                  1,
+                  "32*sqrt(2)/3"
+                ],
+                [
+                  2,
+                  4,
+                  "16*sqrt(2)"
+                ],
+                [
+                  2,
+                  8,
+                  "64*sqrt(2)/3"
+                ],
+                [
+                  3,
+                  0,
+                  "-64*sqrt(2)/3"
+                ],
+                [
+                  4,
+                  2,
+                  "16*sqrt(2)/3"
+                ],
+                [
+                  5,
+                  7,
+                  "-8*sqrt(2)"
+                ],
+                [
+                  7,
+                  5,
+                  "-20*sqrt(2)"
+                ],
+                [
+                  8,
+                  2,
+                  "28*sqrt(2)/3"
+                ]
+              ],
+              "sha256": "bb3e9e3b94648a342e5c337ff6c9483e5d7e15a61bb438f02c77648fc31e2a18",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              2
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "-8"
+                ],
+                [
+                  1,
+                  1,
+                  "8"
+                ],
+                [
+                  1,
+                  4,
+                  "4"
+                ],
+                [
+                  1,
+                  8,
+                  "4"
+                ],
+                [
+                  2,
+                  2,
+                  "2"
+                ],
+                [
+                  3,
+                  3,
+                  "-10/3"
+                ],
+                [
+                  4,
+                  1,
+                  "-8/3"
+                ],
+                [
+                  4,
+                  4,
+                  "22/3"
+                ],
+                [
+                  4,
+                  8,
+                  "58/3"
+                ],
+                [
+                  5,
+                  5,
+                  "-22"
+                ],
+                [
+                  6,
+                  6,
+                  "26"
+                ],
+                [
+                  7,
+                  7,
+                  "-8"
+                ],
+                [
+                  8,
+                  4,
+                  "38/3"
+                ],
+                [
+                  8,
+                  8,
+                  "22"
+                ]
+              ],
+              "sha256": "e27b60ecd0b5634f3fa8b9e483e9100d5850888bb8c9c0089239662f2fa50c3a",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              2,
+              2
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  2,
+                  5,
+                  "24"
+                ],
+                [
+                  3,
+                  6,
+                  "-88/3"
+                ],
+                [
+                  4,
+                  7,
+                  "-20/3"
+                ],
+                [
+                  5,
+                  2,
+                  "8"
+                ],
+                [
+                  6,
+                  3,
+                  "-40/3"
+                ],
+                [
+                  7,
+                  1,
+                  "-16/3"
+                ],
+                [
+                  7,
+                  4,
+                  "-4"
+                ],
+                [
+                  7,
+                  8,
+                  "-52/3"
+                ],
+                [
+                  8,
+                  7,
+                  "-28/3"
+                ]
+              ],
+              "sha256": "278afd1975c76c7deca4db0df901f40395fb0b9d017e6ebd3c2049753faec2fc",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              2,
+              3
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  6,
+                  "8*sqrt(2)/3"
+                ],
+                [
+                  1,
+                  5,
+                  "-8*sqrt(2)"
+                ],
+                [
+                  2,
+                  7,
+                  "22*sqrt(2)/3"
+                ],
+                [
+                  4,
+                  5,
+                  "58*sqrt(2)/3"
+                ],
+                [
+                  5,
+                  1,
+                  "-10*sqrt(2)/3"
+                ],
+                [
+                  5,
+                  4,
+                  "4*sqrt(2)/3"
+                ],
+                [
+                  5,
+                  8,
+                  "-2*sqrt(2)/3"
+                ],
+                [
+                  6,
+                  0,
+                  "-22*sqrt(2)/3"
+                ],
+                [
+                  7,
+                  2,
+                  "-4*sqrt(2)/3"
+                ],
+                [
+                  8,
+                  5,
+                  "2*sqrt(2)"
+                ]
+              ],
+              "sha256": "fc72ab28cbafd6231ca58e6294af4445991adc4cc1e686a5b6a6a3af594b31f4",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              3
+            ]
+          },
+          {
+            "matrix": {
+              "entries": [
+                [
+                  0,
+                  0,
+                  "8"
+                ],
+                [
+                  1,
+                  1,
+                  "-8"
+                ],
+                [
+                  1,
+                  4,
+                  "-4"
+                ],
+                [
+                  1,
+                  8,
+                  "-4"
+                ],
+                [
+                  2,
+                  2,
+                  "-2"
+                ],
+                [
+                  3,
+                  3,
+                  "6"
+                ],
+                [
+                  4,
+                  1,
+                  "-8"
+                ],
+                [
+                  4,
+                  4,
+                  "2"
+                ],
+                [
+                  4,
+                  8,
+                  "14"
+                ],
+                [
+                  5,
+                  5,
+                  "-2"
+                ],
+                [
+                  6,
+                  6,
+                  "2/3"
+                ],
+                [
+                  7,
+                  7,
+                  "-8/3"
+                ],
+                [
+                  8,
+                  1,
+                  "-32/3"
+                ],
+                [
+                  8,
+                  4,
+                  "14/3"
+                ],
+                [
+                  8,
+                  8,
+                  "10/3"
+                ]
+              ],
+              "sha256": "192d453173f8e246f6ecca5076cf9527008ac4f37adf50a55b99013babf2e964",
+              "shape": [
+                9,
+                9
+              ]
+            },
+            "word": [
+              3,
+              3
+            ]
+          }
+        ],
+        "nonzero_coefficients": 174,
+        "orders": [
+          0,
+          1,
+          2
+        ],
+        "sha256": "55a3a3037c5ba95af94becb7d27e67d80bf43be2b7708f9fc52410b78b0ac100"
+      },
+      "formula": "Bdot_parent_target=-(1/2)(Schurdot_factorized+Qdot_factorized)"
+    }
+  },
+  "flags": {
+    "NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION": true,
+    "TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION": false,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_COMPLETE_RANK_310_SDR_FIRST_VARIATION": false
+  },
+  "lifecycle_state": "CERTIFIED",
+  "next_gate": "NARIAI_TRANSVERSE_INDEPENDENT_ACTION_THIRD_VARIATION_COMPARISON",
+  "result_id": "NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1",
+  "result_state": "UNIQUE_CYCLIC_FACTORIZED_ENDPOINT_TARGET_EXACT_ACTION_COMPARISON_OPEN",
+  "schema": "nariai-transverse-factorized-endpoint-completion-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_factorized_endpoint_completion.py": "daa45d9e55d44c5a958850590d0f4062631bded09a3bb512bee31d84823315e9",
+    "d_quotient_classical/causal_transfer/nariai_transverse_factorized_hom_schur_replay.py": "184cc9a79312a1f314fe08c95b49fd0ebd631fa583dee8d96839fdc91aafb513",
+    "d_quotient_classical/causal_transfer/nariai_transverse_relative_saddle_upper_chain.py": "04919bb178fa235139bfba96843c1626dfc20817833917f49936e4e4eabe4b43",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_factorized_endpoint_completion.py": "25146c53a75a323a87e53af0009dffd71f241a95e11566395110ab7cd36c10d4",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_factorized_endpoint_completion.py": "0bd8e837d4365ad8549799102a462cd6f13ccec2169a1cf9a221aeb4ca1ee59d",
+    "d_quotient_classical/schema/nariai-transverse-factorized-endpoint-completion-v1.schema.json": "6269ef981586c1c72a1ad1cfacb19b7f9277b0805d20ab979772c43132dd0ac9"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_factorized_endpoint_completion --check",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_factorized_endpoint_completion.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_factorized_endpoint_completion",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-factorized-endpoint-completion-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1.json"
+  ]
+}

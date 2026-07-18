@@ -545,6 +545,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   rank-310 SDR are the remaining algebraic gate before causal transfer:
   [`certificates/NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1.json`](certificates/NARIAI_TRANSVERSE_RELATIVE_SADDLE_UPPER_CHAIN_V1.json),
   [`reports/nariai-transverse-relative-saddle-upper-chain.md`](reports/nariai-transverse-relative-saddle-upper-chain.md)
+- Factorized endpoint target: the authoritative pre-normal-order Hom adjoint
+  requires a new 15-term base completion; the historical `Q_unique` is retained
+  only for its superseded adjoint convention.  The complete 405-parameter
+  transverse order-at-most-one solve has a `60 x 45` rank-45 coefficient map
+  on all nine rows and a unique solution.  That solution collapses to 15
+  algebraic coefficients, is fibre-self-adjoint, and restores the gauge row.
+  It is the exact target for an independent third variation of the Weyl action,
+  not a substitute for that comparison:
+  [`certificates/NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1.json`](certificates/NARIAI_TRANSVERSE_FACTORIZED_ENDPOINT_COMPLETION_V1.json),
+  [`reports/nariai-transverse-factorized-endpoint-completion.md`](reports/nariai-transverse-factorized-endpoint-completion.md)
 - General finite-harmonic second-order tangent-cone theorem: after complete
   harmonic decomposition, Noether reduction, and removal of gauge-null
   correction columns, solvability is exactly the vanishing of the stabilizer

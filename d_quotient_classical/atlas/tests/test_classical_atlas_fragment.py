@@ -50,6 +50,7 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["causal"], "OPEN")
         self.assertIn("factorized adjunction before PBW normal ordering", entry["claim_boundary"])
         self.assertIn("upper relative-saddle chain closes", entry["claim_boundary"])
+        self.assertIn("unique 15-term algebraic cyclic target", entry["claim_boundary"])
         self.assertIn("independent action-Hessian variation", entry["claim_boundary"])
 
     def test_berger_bridge_one_remains_fail_closed(self) -> None:
