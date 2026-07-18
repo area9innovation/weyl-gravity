@@ -47,9 +47,15 @@ The zero-derivative algebraic cubic Weyl carrier basis is now exhaustive in
 four Euclidean dimensions: the chiral basis has
 `tr(C_plus^3),tr(C_minus^3)`, equivalently one even `C3` and one odd
 `star(C) C C` carrier. This is a `LOCAL-ALGEBRAIC` carrier theorem, not a
-nonlocal form-factor or coefficient computation. The additive `C^2` constant,
-derivative-decorated cubic-and-higher Weyl-invariant carriers and their
-form-factor functions, renormalized BV Laplacian or time-ordered product, absolute
+nonlocal form-factor or coefficient computation. The parity-even
+third-curvature conformal carrier manifest is now complete in the declared
+scalar-flat Euclidean scope: five carrier-labelled functions have exact
+`S3/S2/C3` stabilizers, span twelve generic label channels, and one exact
+four-dimensional symmetric functional relation leaves eleven. This is not a
+claim that eleven form factors—or any repository coefficient—have been
+computed. The additive `C^2` constant, the five repository third-curvature
+form-factor functions and coefficients, the parity-odd derivative manifest,
+renormalized BV Laplacian or time-ordered product, absolute
 dressed `R(g_hat)^2` normalization, and global Green data remain
 absent, so complete `Gamma1` and `Q1` are fail-closed. Independently, Bridge 4
 is certified on the free reduced E/A/L vacuum-cylinder carrier: the
@@ -80,6 +86,7 @@ See [`coefficient-bearing-qme-obstruction.md`](coefficient-bearing-qme-obstructi
 [`curvature-squared-covariant-log-gamma1.md`](curvature-squared-covariant-log-gamma1.md),
 [`fv-conformized-c2-log-gamma1.md`](fv-conformized-c2-log-gamma1.md),
 [`four-dimensional-algebraic-cubic-weyl-carriers.md`](four-dimensional-algebraic-cubic-weyl-carriers.md),
+[`four-dimensional-third-curvature-weyl-carrier-manifest.md`](four-dimensional-third-curvature-weyl-carrier-manifest.md),
 [`weyl-graviton-box-r-scheme-conversion.md`](weyl-graviton-box-r-scheme-conversion.md), and
 [`vacuum-cylinder-reduced-bridge4-hadamard.md`](vacuum-cylinder-reduced-bridge4-hadamard.md).
 

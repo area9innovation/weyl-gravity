@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-four-dimensional-third-curvature-weyl-carrier-manifest-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "derived_tensor",
+    "carrier_manifest",
+    "permutation_modules",
+    "raw_module",
+    "four_dimensional_identity",
+    "quotient_module",
+    "algebraic_anchor",
+    "coefficient_gate",
+    "source_provenance",
+    "dependencies",
+    "claim_flags",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-four-dimensional-third-curvature-weyl-carrier-manifest-v1"},
+    "result_id": {"const": "FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST"},
+    "result_state": {"const": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["EUCLIDEAN-SPECTRAL"]},
+    "classical_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "curvature_order", "parity", "background", "boundary_policy", "inverse_policy", "order_policy"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "EUCLIDEAN"},
+        "curvature_order": {"const": 3},
+        "parity": {"const": "EVEN_ONLY"},
+        "background": {"type": "string", "minLength": 40},
+        "boundary_policy": {"type": "string", "minLength": 15},
+        "inverse_policy": {"type": "string", "minLength": 70},
+        "order_policy": {"type": "string", "minLength": 70}
+      }
+    },
+    "derived_tensor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["symbol", "definition", "properties", "collision_warning"],
+      "properties": {
+        "symbol": {"const": "K_munu"},
+        "definition": {"const": "K_munu=(2/Box) nabla^beta nabla^alpha C_alpha_mu_beta_nu"},
+        "properties": {"const": ["K_mu^mu=0", "nabla^mu K_munu=O(curvature^2)"]},
+        "collision_warning": {"type": "string", "minLength": 80}
+      }
+    },
+    "carrier_manifest": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["carrier_id", "source_structure", "formula", "explicit_derivative_order", "stabilizer", "source_symmetry_equation", "coefficient_status"],
+        "properties": {
+          "carrier_id": {"enum": ["I10", "I24", "I25", "I28", "I29"]},
+          "source_structure": {"enum": [10, 24, 25, 28, 29]},
+          "formula": {"type": "string", "minLength": 20},
+          "explicit_derivative_order": {"enum": [0, 2, 4, 6]},
+          "stabilizer": {"enum": ["S3", "S2_23", "S2_12", "C3"]},
+          "source_symmetry_equation": {"type": "string", "pattern": "^CPT-IV \\(2\\.(55|69|70|73|74)\\)$"},
+          "coefficient_status": {"const": "NOT_COMPUTED"}
+        }
+      }
+    },
+    "permutation_modules": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["carrier_id", "stabilizer", "stabilizer_order", "generic_label_orbit_dimension", "cosets", "character_by_cycle_type", "trivial_projector", "trivial_projector_rank"],
+        "properties": {
+          "carrier_id": {"enum": ["I10", "I24", "I25", "I28", "I29"]},
+          "stabilizer": {"enum": ["S3", "S2_23", "S2_12", "C3"]},
+          "stabilizer_order": {"enum": [2, 3, 6]},
+          "generic_label_orbit_dimension": {"enum": [1, 2, 3]},
+          "cosets": {"type": "array", "minItems": 1, "maxItems": 3},
+          "character_by_cycle_type": {"$ref": "#/$defs/character"},
+          "trivial_projector": {"type": "array", "minItems": 1, "maxItems": 3},
+          "trivial_projector_rank": {"const": 1}
+        }
+      }
+    },
+    "raw_module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carrier_labeled_function_count", "generic_label_orbit_dimension", "character_by_cycle_type", "irreducible_multiplicities"],
+      "properties": {
+        "carrier_labeled_function_count": {"const": 5},
+        "generic_label_orbit_dimension": {"const": 12},
+        "character_by_cycle_type": {"const": {"identity": 12, "transposition": 4, "three_cycle": 3}},
+        "irreducible_multiplicities": {"const": {"trivial": 5, "sign": 1, "standard": 3}}
+      }
+    },
+    "four_dimensional_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "form_factor_symmetry", "coefficient_polynomials", "absent_carrier", "elimination_choice", "relation_rank", "scope"],
+      "properties": {
+        "source": {"type": "string", "minLength": 60},
+        "form_factor_symmetry": {"const": "COMPLETELY_S3_SYMMETRIC_ARBITRARY_FUNCTION"},
+        "coefficient_polynomials": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["I10", "I24", "I25", "I28"],
+          "properties": {
+            "I10": {"type": "object", "minProperties": 6, "maxProperties": 6},
+            "I24": {"type": "object", "minProperties": 1, "maxProperties": 1},
+            "I25": {"type": "object", "minProperties": 3, "maxProperties": 3},
+            "I28": {"const": {"0,0,0": {"numerator": 1, "denominator": 1}}}
+          }
+        },
+        "absent_carrier": {"const": "I29"},
+        "elimination_choice": {"const": "REMOVE_TRIVIAL_S3_COMPONENT_OF_I28"},
+        "relation_rank": {"const": 1},
+        "scope": {"type": "string", "minLength": 80}
+      }
+    },
+    "quotient_module": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generic_label_orbit_dimension", "character_by_cycle_type", "irreducible_multiplicities", "carrier_labeled_description"],
+      "properties": {
+        "generic_label_orbit_dimension": {"const": 11},
+        "character_by_cycle_type": {"const": {"identity": 11, "transposition": 3, "three_cycle": 2}},
+        "irreducible_multiplicities": {"const": {"trivial": 4, "sign": 1, "standard": 3}},
+        "carrier_labeled_description": {"type": "string", "minLength": 100}
+      }
+    },
+    "algebraic_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carrier_id", "status", "source_statement", "normalization_to_C3_EVEN", "odd_anchor"],
+      "properties": {
+        "carrier_id": {"const": "I29"},
+        "status": {"const": "INEXCLUDABLE_SIX_DERIVATIVE_ROW_WITH_LOCAL_C3_LINEAGE"},
+        "source_statement": {"type": "string", "minLength": 100},
+        "normalization_to_C3_EVEN": {"const": "NOT_COMPUTED"},
+        "odd_anchor": {"const": "NOT_CLASSIFIED_IN_THIS_PARITY_EVEN_MANIFEST"}
+      }
+    },
+    "coefficient_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_factor_functions", "finite_C2_normalization", "absolute_dressed_Rhat2_normalization", "complete_Gamma1", "complete_Q1", "residual_transfer", "minimal_missing_input"],
+      "properties": {
+        "repository_factor_functions": {
+          "const": {"I10": "NOT_COMPUTED", "I24": "NOT_COMPUTED", "I25": "NOT_COMPUTED", "I28": "NOT_COMPUTED", "I29": "NOT_COMPUTED"}
+        },
+        "finite_C2_normalization": {"const": "NOT_FIXED"},
+        "absolute_dressed_Rhat2_normalization": {"const": "NOT_FIXED"},
+        "complete_Gamma1": {"const": "NO_CERTIFIED_FUNCTIONAL"},
+        "complete_Q1": {"const": "NO_CERTIFIED_OPERATOR"},
+        "residual_transfer": {"const": "FORBIDDEN"},
+        "minimal_missing_input": {"type": "string", "minLength": 100}
+      }
+    },
+    "source_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula_digest", "sources"],
+      "properties": {
+        "formula_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "sources": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "dependencies": {"type": "object", "minProperties": 4, "maxProperties": 4},
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
+        "FIVE_SOURCE_CARRIERS_IMPORTED",
+        "PERMUTATION_MODULE_QUOTIENT_REPLAYED",
+        "FOUR_DIMENSIONAL_FUNCTIONAL_IDENTITY_REPLAYED",
+        "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE",
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED",
+        "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE": {"const": true},
+        "FIVE_SOURCE_CARRIERS_IMPORTED": {"const": true},
+        "PERMUTATION_MODULE_QUOTIENT_REPLAYED": {"const": true},
+        "FOUR_DIMENSIONAL_FUNCTIONAL_IDENTITY_REPLAYED": {"const": true},
+        "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE": {"const": false},
+        "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": {"const": false},
+        "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "next_gate": {"const": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FACTOR_FORM_FUNCTIONS_AND_COEFFICIENTS"},
+    "claim_boundary": {"type": "string", "minLength": 1300}
+  },
+  "$defs": {
+    "character": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity", "transposition", "three_cycle"],
+      "properties": {
+        "identity": {"type": "integer", "minimum": 0},
+        "transposition": {"type": "integer", "minimum": 0},
+        "three_cycle": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

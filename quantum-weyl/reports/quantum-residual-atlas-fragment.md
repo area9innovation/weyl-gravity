@@ -11,10 +11,10 @@ NOT_APPLICABLE
 NO_CERTIFIED_MAP
 ```
 
-The generator emits a strict common-envelope fragment with seventeen entries:
+The generator emits a strict common-envelope fragment with eighteen entries:
 six all-energy vacuum-cylinder E/A/L mode-family rows, two residual
 deformation-class rows, one Berger carrier-gap row, one classical-to-quantum
-tangent-cone crosswalk, and seven non-mode particle guards. Every row carries
+tangent-cone crosswalk, and eight non-mode particle guards. Every row carries
 the full declared mode scope and separately records classical
 import, BRST closure and exactness, pairing, compatible complex structure,
 Hadamard two-point function, state-space signature, anomaly/QME dependency,
@@ -48,7 +48,10 @@ the physical mode atlas. The third and fourth guards exclude promotion of the
 flat-TT logarithmic form factor or its curvature-squared covariantization to a
 particle entry. The algebraic-cubic guard likewise records that the exact
 one-even/one-odd zero-derivative (C^3) carrier basis is not a mode, state, or
-particle crosswalk.
+particle crosswalk. A separate third-curvature guard records the five
+parity-even conformal carrier labels and their one four-dimensional functional
+relation without turning the resulting eleven generic label channels into
+eleven computed form factors or particle entries.
 
 ## Tangent-cone boundary
 
@@ -100,8 +103,14 @@ anomaly action now also proves that the Ricci-scalar sector is structurally
 dependent: generic-basis `R F(Box) R` terms may occur, but are determined by
 the anomaly action and conformized Weyl sector. The zero-derivative algebraic
 cubic carrier basis is now complete, with one even and one odd (C^3)
-direction; this does not supply the derivative-decorated nonlocal cubic
-carrier basis, any `Gamma_m(Box1,Box2,Box3)`, or a coefficient. The additive
+direction; this does not supply any derivative-decorated
+`Gamma_m(Box1,Box2,Box3)` or a coefficient. The
+parity-even third-curvature carrier manifest is now complete in its declared
+scalar-flat Euclidean scope: the five source carriers have exact label
+stabilizers, span twelve generic label channels, and one symmetric functional
+identity leaves eleven. The five repository form-factor functions and their
+coefficients, and the parity-odd derivative-decorated manifest, remain open.
+The additive
 finite `C2` normalization, absolute dressed `R(g_hat)^2` normalization,
 derivative-decorated cubic-and-higher Weyl completion, global Green/kernel
 data, and renormalized BV

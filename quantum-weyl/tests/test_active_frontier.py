@@ -187,6 +187,16 @@ class ActiveFrontierTests(unittest.TestCase):
         self.assertTrue(
             self.payload["claim_flags"]["ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE"]
         )
+        self.assertTrue(
+            self.payload["claim_flags"][
+                "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
+            ]
+        )
+        self.assertFalse(
+            self.payload["claim_flags"][
+                "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
+            ]
+        )
         self.assertFalse(
             self.payload["claim_flags"][
                 "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED"
@@ -313,7 +323,7 @@ class ActiveFrontierTests(unittest.TestCase):
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][0],
-            "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
         )
         self.assertEqual(
             self.payload["ordered_next_gates"][-1],

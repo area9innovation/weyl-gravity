@@ -581,6 +581,44 @@ cubic coefficients at \texttt{NOT\_COMPUTED}.  It also records that the
 dimension-six \(C^3\) density is not a new dimension-four local one-loop
 counterterm.
 
+\subsection{Parity-even third-curvature carrier quotient}
+
+The next receipt imports the complete pure-gravity parity-even conformal
+carrier list in terms of
+\[
+ K_{\mu\nu}=\frac{2}{\Box}\nabla^\beta\nabla^\alpha
+ C_{\alpha\mu\beta\nu}.
+\]
+The symbol $K$ here denotes this derived nonlocal symmetric tensor, not the
+four-index Weyl tensor or a kinetic operator.  The five rows
+$I_{10},I_{24},I_{25},I_{28},I_{29}$ have stabilizers
+$S_3,S_2(23),S_2(23),S_2(12),C_3$, respectively.  Independent coset
+enumeration gives generic label dimensions
+\[
+ 1+3+3+3+2=12
+\]
+and character $(12,4,3)$, hence multiplicities
+$5\mathbf1\oplus\mathbf1_{\rm sign}\oplus3\mathbf2_{\rm std}$.
+
+The exact four-dimensional identity from CPT-IV (A.35), restricted to the
+pure-$K$ scalar-flat sector, has one arbitrary completely symmetric form
+factor.  Its coefficient rows contain $I_{10},I_{24},I_{25},I_{28}$ and
+omit $I_{29}$.  Deleting the trivial $S_3$ component of $I_{28}$ is one
+section of the quotient.  The resulting character is $(11,3,2)$, with
+multiplicities
+\[
+ 4\mathbf1\oplus\mathbf1_{\rm sign}\oplus3\mathbf2_{\rm std}.
+\]
+The verifier separately checks every subgroup index, both character
+decompositions, the symmetry of the coefficient polynomials, the absence of
+$I_{29}$, all dependency hashes and fail-closed coefficient flags.
+
+This result does not mean that eleven analytic form factors have been
+computed.  It means that five carrier-labelled functions, each with its own
+stabilizer, are subject to one arbitrary symmetric functional relation.  The
+repository functions and coefficients and the parity-odd derivative sector
+remain at \texttt{NOT\_COMPUTED}.
+
 \subsection{Exact local BoxR scheme conversion}
 
 The zeta/proper-time calculation imports the published local heat-kernel rows
@@ -635,6 +673,9 @@ $\Gamma_1$;
 \item replay the raw $\Box R$ heat-kernel arithmetic, its exact strict-metric
 $R^2$ scheme shift and the $29/120$ cross-check, while rejecting promotion to
 an absolute dressed normalization;
+\item replay the five third-curvature carrier stabilizers, the raw and
+four-dimensional quotient characters, and reject promotion of carrier labels
+to repository form-factor functions or coefficients;
 \item reject changes to the cotangent signs, gradings, or quartet identity;
 \item validate every content hash used by the paper claim map.
 \end{itemize}
@@ -678,6 +719,8 @@ PYTHONPATH=quantum-weyl python3 -m \
 PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_fv_anomaly_action_ricci_sector
 PYTHONPATH=quantum-weyl python3 -m \
+  transfer.verify_third_curvature_weyl_manifest
+PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_cubic_weyl_carrier_basis
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
@@ -698,8 +741,8 @@ The next theorem requires actual new physical input:
 \begin{enumerate}
 \item a same-background compensator-inclusive classical contraction
 $(\iota_{\rm ext},\pi_{\rm ext},S_{\rm ext})$;
-\item the derivative-decorated nonlocal cubic-and-higher Weyl-invariant
-carrier basis and form factors, finite
+\item the five repository parity-even third-curvature form-factor functions
+and coefficients, the parity-odd derivative carrier manifest, finite
 $C^2$ and absolute dressed $R(\widehat g)^2$ normalization,
 global Paneitz Green data, and renormalized BV operator data fixing a complete
 $Q_1$ beyond its certified local Wess--Zumino, anomaly-induced, and flat-TT

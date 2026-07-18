@@ -1,0 +1,672 @@
+{
+  "algebraic_anchor": {
+    "carrier_id": "I29",
+    "normalization_to_C3_EVEN": "NOT_COMPUTED",
+    "odd_anchor": "NOT_CLASSIFIED_IN_THIS_PARITY_EVEN_MANIFEST",
+    "source_statement": "CPT-IV after (A.35) identifies I29 as absent from the 4D constraint and as the row whose local version is the unique algebraic C3 contraction",
+    "status": "INEXCLUDABLE_SIX_DERIVATIVE_ROW_WITH_LOCAL_C3_LINEAGE"
+  },
+  "carrier_manifest": [
+    {
+      "carrier_id": "I10",
+      "coefficient_status": "NOT_COMPUTED",
+      "explicit_derivative_order": 0,
+      "formula": "K1_mu^alpha K2_alpha^beta K3_beta^mu",
+      "source_structure": 10,
+      "source_symmetry_equation": "CPT-IV (2.55)",
+      "stabilizer": "S3"
+    },
+    {
+      "carrier_id": "I24",
+      "coefficient_status": "NOT_COMPUTED",
+      "explicit_derivative_order": 2,
+      "formula": "K1_munu nabla^mu K2_alphabeta nabla^nu K3^alphabeta",
+      "source_structure": 24,
+      "source_symmetry_equation": "CPT-IV (2.69)",
+      "stabilizer": "S2_23"
+    },
+    {
+      "carrier_id": "I25",
+      "coefficient_status": "NOT_COMPUTED",
+      "explicit_derivative_order": 2,
+      "formula": "K1_munu nabla_alpha K2_beta^mu nabla^beta K3^alpha_nu",
+      "source_structure": 25,
+      "source_symmetry_equation": "CPT-IV (2.70)",
+      "stabilizer": "S2_23"
+    },
+    {
+      "carrier_id": "I28",
+      "coefficient_status": "NOT_COMPUTED",
+      "explicit_derivative_order": 4,
+      "formula": "nabla_mu K1_alphalambda nabla_nu K2_beta^lambda nabla^alpha nabla^beta K3^munu",
+      "source_structure": 28,
+      "source_symmetry_equation": "CPT-IV (2.73)",
+      "stabilizer": "S2_12"
+    },
+    {
+      "carrier_id": "I29",
+      "coefficient_status": "NOT_COMPUTED",
+      "explicit_derivative_order": 6,
+      "formula": "nabla_lambda nabla_sigma K1_alphabeta nabla^alpha nabla^beta K2_munu nabla^mu nabla^nu K3^lambdasigma",
+      "source_structure": 29,
+      "source_symmetry_equation": "CPT-IV (2.74)",
+      "stabilizer": "C3"
+    }
+  ],
+  "claim_boundary": "This EUCLIDEAN-SPECTRAL receipt imports the complete parity-even pure-gravity third-curvature conformal carrier list of covariant perturbation theory on the declared four-dimensional noncompact asymptotically flat scalar-flat representative. It distinguishes the source's nonlocal symmetric tensor K_munu=(2/Box)nabla nabla C from the four-index Weyl tensor. The five carrier labels are I10, I24, I25, I28 and I29, with exact S3, S2_23, S2_23, S2_12 and C3 stabilizers. Their generic labelled permutation modules have dimensions 1,3,3,3,2 and total dimension twelve. The four-dimensional integrated identity with arbitrary completely symmetric form factor removes one trivial S3 component, chosen here as the symmetric part of I28, leaving eleven generic labelled channels with irreducible multiplicities four trivial, one sign and three standard. I29 is absent from that identity and anchors the unique local algebraic even C3 lineage, but its normalization is not inferred. This is a source-derived carrier and permutation-quotient certificate, not a computation of the five repository form-factor functions or their coefficients. It does not classify the parity-odd derivative-decorated sector, fix finite C2 or absolute dressed Rhat2 normalizations, supply complete Gamma1 or Q1, define global inverse or kernel data, construct renormalized products, authorize residual transfer, or establish a Lorentzian QME, Hadamard state, positivity, particle, scattering, or unitarity theorem.",
+  "claim_flags": {
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "FIVE_SOURCE_CARRIERS_IMPORTED": true,
+    "FOUR_DIMENSIONAL_FUNCTIONAL_IDENTITY_REPLAYED": true,
+    "LORENTZIAN_CERTIFIED": false,
+    "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE": true,
+    "PARITY_ODD_DERIVATIVE_CARRIER_MANIFEST_COMPLETE": false,
+    "PERMUTATION_MODULE_QUOTIENT_REPLAYED": true,
+    "REPOSITORY_CUBIC_COEFFICIENTS_COMPUTED": false,
+    "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false
+  },
+  "classical_commit": "318589ffae21fb1ae1abfd046b2f367b05c52bab",
+  "coefficient_gate": {
+    "absolute_dressed_Rhat2_normalization": "NOT_FIXED",
+    "complete_Gamma1": "NO_CERTIFIED_FUNCTIONAL",
+    "complete_Q1": "NO_CERTIFIED_OPERATOR",
+    "finite_C2_normalization": "NOT_FIXED",
+    "minimal_missing_input": "the five carrier-labeled repository form-factor functions modulo the exact S3 stabilizers and the single 4D symmetric relation",
+    "repository_factor_functions": {
+      "I10": "NOT_COMPUTED",
+      "I24": "NOT_COMPUTED",
+      "I25": "NOT_COMPUTED",
+      "I28": "NOT_COMPUTED",
+      "I29": "NOT_COMPUTED"
+    },
+    "residual_transfer": "FORBIDDEN"
+  },
+  "dependencies": {
+    "FV_Ricci_sector": {
+      "path": "quantum-weyl/transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json",
+      "result_id": "FV_ANOMALY_ACTION_RICCI_SECTOR",
+      "sha256": "d0cd966bc71dfbffd39945921578ae0e7c76943b2db2e9a46867d3dc8558c1ea"
+    },
+    "FV_conformized_C2_log": {
+      "path": "quantum-weyl/transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
+      "result_id": "FV_CONFORMIZED_C2_LOG_GAMMA1",
+      "sha256": "7a4e55efa7284d303a7e929b4a0a0fd284b4508695958f575bcbb6a8a44f90c7"
+    },
+    "algebraic_C3": {
+      "path": "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
+      "result_id": "FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS",
+      "sha256": "921a5ce8ad89ca8289781883f5c72527008dae7e72c0e8bcbcf3dd7b61896b3d"
+    },
+    "covariant_C2_log": {
+      "path": "quantum-weyl/transfer/certificates/CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1.json",
+      "result_id": "CURVATURE_SQUARED_COVARIANT_LOG_GAMMA1",
+      "sha256": "a67a475da6352ad163a907c2fc6ad0bcb1bf804662bc645eca1487685bccde87"
+    }
+  },
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "derived_tensor": {
+    "collision_warning": "K_munu is the nonlocal transverse-tracefree Ricci/Weyl contraction used by the source; it is not the four-index Weyl tensor C_munurhosigma",
+    "definition": "K_munu=(2/Box) nabla^beta nabla^alpha C_alpha_mu_beta_nu",
+    "properties": [
+      "K_mu^mu=0",
+      "nabla^mu K_munu=O(curvature^2)"
+    ],
+    "symbol": "K_munu"
+  },
+  "four_dimensional_identity": {
+    "absent_carrier": "I29",
+    "coefficient_polynomials": {
+      "I10": {
+        "0,0,2": {
+          "denominator": 12,
+          "numerator": -1
+        },
+        "0,1,1": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "0,2,0": {
+          "denominator": 12,
+          "numerator": -1
+        },
+        "1,0,1": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "1,1,0": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "2,0,0": {
+          "denominator": 12,
+          "numerator": -1
+        }
+      },
+      "I24": {
+        "1,0,0": {
+          "denominator": 2,
+          "numerator": -1
+        }
+      },
+      "I25": {
+        "0,0,1": {
+          "denominator": 2,
+          "numerator": -1
+        },
+        "0,1,0": {
+          "denominator": 2,
+          "numerator": -1
+        },
+        "1,0,0": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      "I28": {
+        "0,0,0": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      }
+    },
+    "elimination_choice": "REMOVE_TRIVIAL_S3_COMPONENT_OF_I28",
+    "form_factor_symmetry": "COMPLETELY_S3_SYMMETRIC_ARBITRARY_FUNCTION",
+    "relation_rank": 1,
+    "scope": "integrated modulo total derivatives and O(curvature^4), with labelled Box_i and the declared inverse domain",
+    "source": "CPT-IV Appendix equation (A.35), restricted to the pure-K scalar-flat conformal sector"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FACTOR_FORM_FUNCTIONS_AND_COEFFICIENTS",
+  "permutation_modules": [
+    {
+      "carrier_id": "I10",
+      "character_by_cycle_type": {
+        "identity": 1,
+        "three_cycle": 1,
+        "transposition": 1
+      },
+      "cosets": [
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      ],
+      "generic_label_orbit_dimension": 1,
+      "stabilizer": "S3",
+      "stabilizer_order": 6,
+      "trivial_projector": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      ],
+      "trivial_projector_rank": 1
+    },
+    {
+      "carrier_id": "I24",
+      "character_by_cycle_type": {
+        "identity": 3,
+        "three_cycle": 0,
+        "transposition": 1
+      },
+      "cosets": [
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      ],
+      "generic_label_orbit_dimension": 3,
+      "stabilizer": "S2_23",
+      "stabilizer_order": 2,
+      "trivial_projector": [
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ]
+      ],
+      "trivial_projector_rank": 1
+    },
+    {
+      "carrier_id": "I25",
+      "character_by_cycle_type": {
+        "identity": 3,
+        "three_cycle": 0,
+        "transposition": 1
+      },
+      "cosets": [
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            3,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      ],
+      "generic_label_orbit_dimension": 3,
+      "stabilizer": "S2_23",
+      "stabilizer_order": 2,
+      "trivial_projector": [
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ]
+      ],
+      "trivial_projector_rank": 1
+    },
+    {
+      "carrier_id": "I28",
+      "character_by_cycle_type": {
+        "identity": 3,
+        "three_cycle": 0,
+        "transposition": 1
+      },
+      "cosets": [
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      ],
+      "generic_label_orbit_dimension": 3,
+      "stabilizer": "S2_12",
+      "stabilizer_order": 2,
+      "trivial_projector": [
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": 1
+          }
+        ]
+      ],
+      "trivial_projector_rank": 1
+    },
+    {
+      "carrier_id": "I29",
+      "character_by_cycle_type": {
+        "identity": 2,
+        "three_cycle": 2,
+        "transposition": 0
+      },
+      "cosets": [
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            1
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            3,
+            2
+          ],
+          [
+            2,
+            1,
+            3
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      ],
+      "generic_label_orbit_dimension": 2,
+      "stabilizer": "C3",
+      "stabilizer_order": 3,
+      "trivial_projector": [
+        [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ]
+      ],
+      "trivial_projector_rank": 1
+    }
+  ],
+  "quotient_module": {
+    "carrier_labeled_description": "five carrier-labeled functions with one arbitrary completely symmetric functional relation; choose a section by deleting the trivial S3 component of I28",
+    "character_by_cycle_type": {
+      "identity": 11,
+      "three_cycle": 2,
+      "transposition": 3
+    },
+    "generic_label_orbit_dimension": 11,
+    "irreducible_multiplicities": {
+      "sign": 1,
+      "standard": 3,
+      "trivial": 4
+    }
+  },
+  "raw_module": {
+    "carrier_labeled_function_count": 5,
+    "character_by_cycle_type": {
+      "identity": 12,
+      "three_cycle": 3,
+      "transposition": 4
+    },
+    "generic_label_orbit_dimension": 12,
+    "irreducible_multiplicities": {
+      "sign": 1,
+      "standard": 3,
+      "trivial": 5
+    }
+  },
+  "result_id": "FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST",
+  "result_state": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN",
+  "schema": "quantum-weyl-four-dimensional-third-curvature-weyl-carrier-manifest-v1",
+  "scope": {
+    "background": "noncompact asymptotically flat scalar-flat conformal representative",
+    "boundary_policy": "surface terms vanish",
+    "curvature_order": 3,
+    "dimension": 4,
+    "inverse_policy": "Box inverse and every labelled form factor act on a declared kernel-free source complement",
+    "order_policy": "commutators of Box_i with derivatives are O(curvature^4) and are excluded at the certified order",
+    "parity": "EVEN_ONLY",
+    "signature": "EUCLIDEAN"
+  },
+  "source_provenance": {
+    "formula_digest": "46e5f03e67419c5786146306db5b7f4c92dc7f58c586ffdb32d393d85dc7194a",
+    "sources": [
+      {
+        "arxiv": "0911.1168",
+        "equations": [
+          "(2.55)",
+          "(2.69)",
+          "(2.70)",
+          "(2.73)",
+          "(2.74)",
+          "(A.35)"
+        ],
+        "role": "complete third-curvature basis symmetries and the four-dimensional nonlocal identity",
+        "title": "Covariant Perturbation Theory (IV). Third Order in the Curvature"
+      },
+      {
+        "arxiv": "gr-qc/9510037",
+        "equations": [
+          "(29)",
+          "(33)",
+          "(41)"
+        ],
+        "role": "five pure-gravity conformal carriers in the K_munu basis",
+        "title": "Conformal Decomposition of the Effective Action and Covariant Curvature Expansion"
+      },
+      {
+        "arxiv": "hep-th/9510205",
+        "equations": [
+          "(9)",
+          "(12)",
+          "(24)",
+          "(30)"
+        ],
+        "role": "Weyl-sector sufficiency and Ricci-scalar dependence in the declared conformal decomposition",
+        "title": "Partial Summation of the Nonlocal Expansion for the Gravitational Effective Action in 4 Dimensions"
+      }
+    ]
+  }
+}

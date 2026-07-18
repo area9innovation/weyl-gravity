@@ -62,6 +62,7 @@ DEPENDENCIES = {
     "FV_conformized_C2_log_Gamma1": HERE / "transfer/certificates/FV_CONFORMIZED_C2_LOG_GAMMA1.json",
     "FV_anomaly_action_Ricci_sector": HERE / "transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json",
     "algebraic_cubic_Weyl_carriers": HERE / "transfer/certificates/FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS.json",
+    "third_curvature_Weyl_manifest": HERE / "transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json",
     "BoxR_scheme_conversion": HERE / "spectral/euclidean/certificates/WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION.json",
     "vacuum_cylinder_reduced_Bridge4": HERE / "lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
     "Cartan_comparison": HERE / "cartan/certificates/LOCAL_ANOMALY_TO_D_CARTAN_COMPARISON.json",
@@ -150,6 +151,7 @@ def _load() -> dict[str, dict[str, Any]]:
         "curvature_observable_propagator": "GAUGE_INVARIANT_CURVATURE_OBSERVABLE_CAUSAL_PROPAGATOR_CONSTRUCTED_AUTONOMOUS_GREEN_AND_HADAMARD_OPEN",
         "BoxR_scheme_conversion": "RAW_ZETA_BOX_R_COEFFICIENT_AND_REPOSITORY_BOXR_ZERO_R2_CONVERSION_CERTIFIED_NONLOCAL_R2_FORM_FACTOR_OPEN",
         "algebraic_cubic_Weyl_carriers": "ALGEBRAIC_C3_CARRIERS_COMPLETE_NONLOCAL_CUBIC_FORM_FACTORS_OPEN",
+        "third_curvature_Weyl_manifest": "PARITY_EVEN_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST_COMPLETE_COEFFICIENT_FUNCTIONS_OPEN",
         "vacuum_cylinder_reduced_Bridge4": "BRIDGE4_CERTIFIED_ON_REDUCED_VACUUM_CYLINDER_KREIN_CARRIER_FULL_BV_EXTENSION_OPEN",
         "relative_readiness": "G0_DEPENDENCY_LEDGER_READY_CLASSICAL_TRIANGLE_AND_QME_MISSING",
     }
@@ -170,6 +172,7 @@ def _load() -> dict[str, dict[str, Any]]:
     fv_conformized_log_gamma1 = values["FV_conformized_C2_log_Gamma1"]
     fv_anomaly_ricci = values["FV_anomaly_action_Ricci_sector"]
     cubic_weyl = values["algebraic_cubic_Weyl_carriers"]
+    third_curvature_weyl = values["third_curvature_Weyl_manifest"]
     box_r_scheme_conversion = values["BoxR_scheme_conversion"]
     reduced_bridge4 = values["vacuum_cylinder_reduced_Bridge4"]
     if (
@@ -387,6 +390,25 @@ def _load() -> dict[str, dict[str, Any]]:
         is not False
     ):
         raise ValueError("algebraic cubic-Weyl carrier frontier drifted")
+    if (
+        third_curvature_weyl.get("raw_module", {}).get(
+            "generic_label_orbit_dimension"
+        )
+        != 12
+        or third_curvature_weyl.get("quotient_module", {}).get(
+            "generic_label_orbit_dimension"
+        )
+        != 11
+        or third_curvature_weyl.get("claim_flags", {}).get(
+            "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE"
+        )
+        is not True
+        or third_curvature_weyl.get("claim_flags", {}).get(
+            "REPOSITORY_CUBIC_FORM_FACTOR_FUNCTIONS_COMPUTED"
+        )
+        is not False
+    ):
+        raise ValueError("third-curvature Weyl carrier manifest frontier drifted")
     if (
         box_r_scheme_conversion.get("decision", {}).get(
             "raw_zeta_BoxR_coefficient"
@@ -1249,11 +1271,11 @@ def build() -> dict[str, Any]:
             },
             "local_obstruction_space": {
                 "status": "STRICT_G2_COMPLETE_TAU_ADIC_EXTENDED_H04_DIMENSIONS_3_1_AND_H14_ZERO",
-                "next_gate": "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "coefficient_and_QME": {
-                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_AND_ALGEBRAIC_C3_CARRIERS_CERTIFIED_COMPLETE_Q1_UNDERDETERMINED",
-                "next_gate": "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "STRICT_ONE_LOOP_LOCAL_EUCLIDEAN_QME_OBSTRUCTED_TAU_ADIC_COMPENSATOR_EXTENDED_ONE_LOOP_QME_RESTORED_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_COMPLETE_Q1_UNDERDETERMINED",
+                "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
             "free_Lorentzian_state": {
                 "status": "VACUUM_CYLINDER_REDUCED_BRIDGE4_KREIN_HADAMARD_CARRIER_CERTIFIED_BERGER_AND_FULL_BV_OPEN",
@@ -1268,8 +1290,8 @@ def build() -> dict[str, Any]:
                 "next_gate": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
             },
             "quantum_transfer": {
-                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_AND_ALGEBRAIC_C3_CARRIERS_FIXED_DERIVATIVE_DECORATED_NONLOCAL_CUBIC_FORM_FACTORS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
-                "next_gate": "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+                "status": "FORBIDDEN_FV_ANOMALY_ACTION_RICCI_SECTOR_ALGEBRAIC_C3_AND_PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFESTS_FIXED_REPOSITORY_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_NORMALIZATIONS_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION_NOT_SUPPLIED",
+                "next_gate": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             },
         },
         "supersession_ledger": [
@@ -1424,6 +1446,8 @@ def build() -> dict[str, Any]:
             "RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED": True,
             "SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED": False,
             "ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE": True,
+            "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE": True,
+            "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE": False,
             "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED": False,
             "FV_AND_WZ_DRESSED_METRICS_IDENTIFIED": False,
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED": True,
@@ -1451,7 +1475,7 @@ def build() -> dict[str, Any]:
             "LORENTZIAN_QUANTUM_THEORY": False,
         },
         "ordered_next_gates": [
-            "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
+            "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION",
             "FULL_BV_BRST_HADAMARD_EXTENSION_OR_SAME_BACKGROUND_BERGER_STATIONARY_MODE_IMPORT",
             "SUPPLY_COMMITTED_BERGER_RETAINED_26_STATIONARY_GENERATOR_V1_MANIFEST",
             "BERGER_RETAINED_26_ZERO_FREQUENCY_SPECTRAL_LEDGER",
@@ -1488,9 +1512,13 @@ def build() -> dict[str, Any]:
             "forced cubic correction through the Frechet derivative of the spectral logarithm. "
             "This nonlocal strict-metric representative is not the local tau-adic dressed metric. "
             "The zero-derivative algebraic C3 carrier basis is complete with one even and "
-            "one odd direction. Derivative-decorated nonlocal cubic Weyl carriers, their "
-            "form-factor functions, coefficients and the additive C2 normalization remain "
-            "open. The imported raw "
+            "one odd direction. The parity-even third-curvature conformal carrier manifest "
+            "is also complete in the declared scalar-flat Euclidean scope: five carrier labels "
+            "with exact stabilizers span twelve generic label channels, and the single "
+            "four-dimensional symmetric functional relation leaves eleven. This is not eleven "
+            "computed form factors. The five repository form-factor functions and their "
+            "coefficients, the parity-odd derivative-decorated manifest and the additive C2 "
+            "normalization remain open. The imported raw "
             "zeta/proper-time BoxR coefficient is independently replayed as "
             "(7/2)log(3/2)-159/80. The exact strict-metric R2 counterterm "
             "(7/24)log(3/2)-53/320 converts it to the repository BoxR=0 convention "
@@ -1522,8 +1550,8 @@ def build() -> dict[str, Any]:
             "conditional on an invertible boundary problem or compatible source sector and "
             "does not discard Paneitz kernel/global data. An exact flat-momentum response "
             "matrix still has rank two on the allowed C(g_hat)^2 and R(g_hat)^2 finite-counterterm "
-            "directions. The derivative-decorated nonlocal cubic-and-higher Weyl-sector "
-            "form factors, renormalized "
+            "directions. The five parity-even third-curvature repository functions and "
+            "coefficients, the parity-odd derivative manifest, renormalized "
             "BV Laplacian or time-ordered product, finite normalization conditions, and global Green data "
             "are absent, so no unique complete Gamma1 or Q1 is supplied. This does not "
             "establish an all-loop or Lorentzian QME. The frozen classical residual contraction "
@@ -1717,6 +1745,8 @@ def validate(result: dict[str, Any]) -> None:
         or flags.get("RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED") is not True
         or flags.get("SEPARATE_NONLOCAL_R2_FORM_FACTOR_REQUIRED") is not False
         or flags.get("ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE") is not True
+        or flags.get("PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE") is not True
+        or flags.get("PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE") is not False
         or flags.get("INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED") is not False
         or flags.get("FV_AND_WZ_DRESSED_METRICS_IDENTIFIED") is not False
         or flags.get("RAW_ZETA_BOXR_COEFFICIENT_COMPUTED") is not True
@@ -1822,6 +1852,8 @@ def validate(result: dict[str, Any]) -> None:
             "FV_ANOMALY_ACTION_FIXED",
             "RICCI_SCALAR_SECTOR_DEPENDENCE_PROVED",
             "ALGEBRAIC_C3_CARRIER_BASIS_COMPLETE",
+            "PARITY_EVEN_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
+            "PARITY_ODD_THIRD_CURVATURE_CARRIER_MANIFEST_COMPLETE",
             "INDEPENDENT_CUBIC_WEYL_INVARIANT_FORM_FACTORS_COMPUTED",
             "FV_AND_WZ_DRESSED_METRICS_IDENTIFIED",
             "RAW_ZETA_BOXR_COEFFICIENT_COMPUTED",

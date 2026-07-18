@@ -74,6 +74,7 @@
     "minimal_BV_compensator_cotangent_lift_exact": true,
     "minimal_Koszul_Tate_collapse_page": "E2",
     "nonlocal_R2_form_factor_disposition": "NOT_AN_INDEPENDENT_DATUM_IN_DECLARED_FV_CONFORMAL_DECOMPOSITION",
+    "parity_even_third_curvature_carrier_count": 5,
     "pure_Diff_and_mixed_additional_classes": 0,
     "raw_to_repository_R2_scheme_shift": {
       "basis": [
@@ -108,10 +109,13 @@
     "strict_full_gauge_fixed_H14_even_dimension": 2,
     "strict_full_gauge_fixed_H14_odd_dimension": 1,
     "strict_one_loop_local_Euclidean_QME_obstructed": true,
-    "strict_quotient_scope": "REGULAR_BACH_LOCUS"
+    "strict_quotient_scope": "REGULAR_BACH_LOCUS",
+    "third_curvature_4d_quotient_label_dimension": 11,
+    "third_curvature_functional_relation_rank": 1,
+    "third_curvature_raw_label_dimension": 12
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "9ae8ef3219899fc41349bc3a13884748b2e85ffe5f68f4a836cf72c02caa1d06",
+  "compiled_pdf_sha256": "b0fd872a5972e359bc0ccb03084d91c6e74ab4999e7e902fe773a73d912fb2ca",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -128,6 +132,7 @@
     "full_BV_Bridge_4_particle_crosswalk": false,
     "global_BRST_Hadamard_state": false,
     "independent_cubic_Weyl_invariant_form_factors": false,
+    "parity_odd_third_curvature_carrier_manifest": false,
     "positive_particle_Hilbert_space": false,
     "quantum_Cartan_identity": false,
     "renormalized_Lorentzian_products": false,
@@ -136,7 +141,7 @@
     "theorem_frozen": false,
     "unitarity_theorem": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector and the zero-derivative algebraic C3 basis is complete, while derivative-decorated nonlocal cubic data and finite normalizations remain open.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact 12-to-11 label quotient, while repository form-factor functions, coefficients, odd derivative data and finite normalizations remain open.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -206,6 +211,10 @@
       "result_id": "FOUR_DIMENSIONAL_ALGEBRAIC_CUBIC_WEYL_CARRIERS",
       "sha256": "921a5ce8ad89ca8289781883f5c72527008dae7e72c0e8bcbcf3dd7b61896b3d"
     },
+    "quantum-weyl/transfer/certificates/FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST.json": {
+      "result_id": "FOUR_DIMENSIONAL_THIRD_CURVATURE_WEYL_CARRIER_MANIFEST",
+      "sha256": "48d00891ea5096cac56d084da2b1495f351ba4f62f7489aff363d30a9281dcf9"
+    },
     "quantum-weyl/transfer/certificates/FV_ANOMALY_ACTION_RICCI_SECTOR.json": {
       "result_id": "FV_ANOMALY_ACTION_RICCI_SECTOR",
       "sha256": "d0cd966bc71dfbffd39945921578ae0e7c76943b2db2e9a46867d3dc8558c1ea"
@@ -221,12 +230,12 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "5a09ce9c40fa9b4e56c816ffaa93fccedfb2aae2f4421bfeba2e17c7329ce2a9",
+  "manuscript_sha256": "42b0041b160b8e68e24e4962ce3ccebf1265cff5222b8948ec214e2b8a1b7446",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
-      "derivative-decorated nonlocal cubic-and-higher Weyl-invariant carrier/form-factor data and global Paneitz/FV Green data",
+      "five repository parity-even third-curvature form-factor functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
     "required_outputs": [
@@ -236,12 +245,12 @@
       "H3-to-H4 and H4-to-H5 maps",
       "pairing correction"
     ],
-    "status": "DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
+    "status": "REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_PARITY_ODD_MANIFEST_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "3d3feed1494b223a92f3011924d5265ce5efc23585c08ea9f88b2224714b47a9",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "43bd6563f2b1b35888968f0447e439569cbb76f0fe678b5d73142333a554f4d6",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "a1b5fa073e4372732779d5fbdd15f71ebae061814060a4f8089ae7de13665bbe",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "e501834178bef384d00f2b49a94c95394c105f3826a2896b819e10bf4075447a",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "2e1112996c7e4d1db097cd52ef5bdd96254359c7f85b0a8a2e9fcc3e61b641f0",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "e3e2cd5e9ad662af8ff414f9cc7d3f85b14b4c9773ad26ffb8ee54f73935d428",
     "paper/generate_12_quantum_anomaly_tables.py": "332a4f2655192f6ad7e65e716083e89dbb4195befdd87f0e4e6324015739d874",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "720416a0ae7453a7387eb416b543765e4b07f79afd8c1b5eb773612afe5bf1f0",
     "paper/verify_12_quantum_anomaly_tables.py": "f8b082549a5263b6f2655c6d94c4cf391bb70ca1382563f3b122e17a81882900"

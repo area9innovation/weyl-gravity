@@ -784,7 +784,7 @@ activation gate was the exact `(199/30,-87/20)` Slavnov vector. The strict
 theory is `OBSTRUCTED`; the compensator cotangent lift and extended `H04/H14`
 are `CERTIFIED`; and the extended one-loop local Euclidean QME is
 `QME_RESTORED`. The active local-to-residual gate is now
-`DERIVATIVE_DECORATED_NONLOCAL_CUBIC_WEYL_FORM_FACTORS_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION`.
+`REPOSITORY_PARITY_EVEN_THIRD_CURVATURE_FORM_FACTOR_FUNCTIONS_AND_COEFFICIENTS_PARITY_ODD_MANIFEST_FINITE_C2_ABSOLUTE_RHAT2_NORMALIZATION_RENORMALIZED_PRODUCTS_AND_SAME_BACKGROUND_EXTENDED_CLASSICAL_CONTRACTION`.
 The coefficient-bearing local Wess--Zumino Hamiltonian contribution
 
 \[
@@ -831,8 +831,13 @@ Euclidean dimensions: the two chiral rows `tr(C_plus^3)` and
 `tr(C_minus^3)` are equivalent to one even `C3` and one odd `star(C) C C`
 carrier. This is a `LOCAL-ALGEBRAIC` carrier theorem only. It does not supply
 derivative-decorated carriers, any `Gamma_m(Box1,Box2,Box3)`, or a cubic
-coefficient. The additive finite `C2/R(g_hat)^2` normalization,
-derivative-decorated nonlocal cubic-and-higher Weyl-invariant form factors,
+coefficient. The parity-even third-curvature carrier manifest is now complete
+in the declared scalar-flat Euclidean scope: five carrier-labelled functions
+with exact `S3/S2/C3` stabilizers span twelve generic label channels, and one
+four-dimensional symmetric functional relation leaves eleven. This is not a
+computation of eleven form factors. The five repository functions and their
+coefficients, the parity-odd derivative manifest, additive finite
+`C2/R(g_hat)^2` normalization,
 renormalized BV Laplacian or time-ordered product, and global
 Green data remain absent. Complete `Gamma1` and `Q1` therefore remain fail-closed,
 independently of the still-missing compensator-inclusive classical
@@ -845,8 +850,9 @@ different local-BV carrier. The content-addressed merge audit therefore
 rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
-rail for Bridge 5. Its remaining local gate is the
-derivative-decorated nonlocal cubic-and-higher Weyl-invariant form factors,
+rail for Bridge 5. Its remaining local gate is the five parity-even
+third-curvature repository form-factor functions and coefficients,
+the parity-odd derivative manifest,
 finite `C2` and absolute dressed `R(g_hat)^2` normalization, and complete
 `Q1`; its independent carrier gate is Bridge 2. The generated
 fail-closed row is
@@ -906,6 +912,11 @@ not identified with the local tau-adic dressed metric. The exhaustive
 zero-derivative algebraic cubic carrier basis and exact chiral/parity
 crosswalk are recorded separately in
 [`four-dimensional-algebraic-cubic-weyl-carriers.md`](../quantum-weyl/reports/four-dimensional-algebraic-cubic-weyl-carriers.md).
+The parity-even derivative-decorated carrier and permutation-module quotient
+is recorded in
+[`four-dimensional-third-curvature-weyl-carrier-manifest.md`](../quantum-weyl/reports/four-dimensional-third-curvature-weyl-carrier-manifest.md).
+It fixes five carrier labels modulo one symmetric functional relation, not the
+repository form-factor functions or their coefficients.
 The exact anomaly action and Ricci-sector dependence theorem are recorded in
 [`fv-anomaly-action-ricci-sector.md`](../quantum-weyl/reports/fv-anomaly-action-ricci-sector.md).
 The generated atlas records it as
@@ -923,7 +934,7 @@ the determinant-to-Slavnov bridge, regular-Bach spectral-sequence proof,
 quartet homotopy, Euler Wess--Zumino primitive, matter vectors, and narrowed
 effective-action claims; the unsupported Hadamard assertion was removed from
 the abstract. Exact quotient, coefficient, determinant, spectral-sequence,
-matter, quartet, effective-action, and boundary tables are generated from twenty hashed
+matter, quartet, effective-action, and boundary tables are generated from twenty-one hashed
 claim-map receipts and pass an independent stale/tamper check. The disposition
 is recorded in
 [`12-pure-weyl-one-loop-bv-anomaly-referee-response.md`](../paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md).

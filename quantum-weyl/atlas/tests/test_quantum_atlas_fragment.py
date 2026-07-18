@@ -19,13 +19,21 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(kinds.count("NONPARTICLE_RESIDUAL_CLASS"), 2)
         self.assertEqual(kinds.count("CARRIER_IMPORT_GAP"), 1)
         self.assertEqual(kinds.count("CLASSICAL_TO_QUANTUM_CROSSWALK"), 1)
-        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 7)
+        self.assertEqual(kinds.count("NON_MODE_PARTICLE_GUARD"), 8)
         cubic_guard = next(
             entry for entry in value["entries"]
             if entry["id"] == "quantum.crosswalk.algebraic_cubic_weyl_carrier_to_particle"
         )
         self.assertEqual(
             cubic_guard["quantum_data"]["particle_interpretation"]["status"],
+            "NO_CERTIFIED_MAP",
+        )
+        third_curvature_guard = next(
+            entry for entry in value["entries"]
+            if entry["id"] == "quantum.crosswalk.third_curvature_weyl_carrier_manifest_to_particle"
+        )
+        self.assertEqual(
+            third_curvature_guard["quantum_data"]["particle_interpretation"]["status"],
             "NO_CERTIFIED_MAP",
         )
         residual = [
@@ -103,7 +111,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             entry for entry in build()["entries"]
             if entry["quantum_data"]["entry_kind"] == "NON_MODE_PARTICLE_GUARD"
         ]
-        self.assertEqual(len(guards), 7)
+        self.assertEqual(len(guards), 8)
         fv = next(
             entry for entry in guards
             if entry["id"] == "quantum.crosswalk.fv_conformized_c2_log_form_factor_to_particle"
