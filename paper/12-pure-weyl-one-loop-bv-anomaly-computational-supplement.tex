@@ -830,7 +830,8 @@ This anisotropic curvature-dependent principal symbol is not a minimal
 bundle endomorphism $P$, and the mixed row couples scalar and vector
 resolvents.  Minimal CPT $P$ rows cannot evaluate them.  Dedicated kernels
 with one and two $D_W$ insertions, or an equivalent direct nonminimal Endo
-form-factor calculation, are the smallest missing input.
+form-factor calculation, were therefore the smallest missing input before
+the Schur resummation below.
 
 \begin{verbatim}
 P=spectral.euclidean
@@ -838,6 +839,76 @@ M=generic_background_ghost_n1_n2_vector_cpt_projection
 PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
 PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
 PYTHONPATH=quantum-weyl python3 -m unittest "$P.tests.test_$M"
+\end{verbatim}
+
+\subsection{Exact longitudinal Schur resummation}
+
+Let $A=F+W$, $H=A+\frac12d\delta$, and
+$H_0=F+\frac12d\delta$ in the differential-form sign convention.  The
+matrix determinant lemma and the Hodge Ward identities give
+\[
+ S_L(W)=\frac23\mathbf1+\frac13\delta(F+W)^{-1}d,
+\]
+and, for one compatible determinant-class relative prescription,
+\[
+ \operatorname{Det}_{\rm rel}(H,H_0)
+ =\operatorname{Det}_{\rm rel}(F+W,F)
+  \operatorname{Det}_{F}(S_L(W),\mathbf1).
+\]
+The factor $2/3$ removes the base scalar determinant
+$\mathbf1+\frac12\delta F^{-1}d=\frac32\mathbf1$.
+
+With
+\[
+ B_n=\Delta_0^{-1}\delta W(G_FW)^{n-1}d\Delta_0^{-1},
+\]
+the exact resolvent series is
+$S_L=\mathbf1+\sum_{n\geq1}(-1)^nB_n/3$.  Expansion of
+$\operatorname{Tr}\log S_L$ gives
+\[
+ -\frac13\operatorname{Tr}B_1,
+\]
+\[
+ \frac13\operatorname{Tr}B_2-\frac1{18}\operatorname{Tr}B_1^2,
+\]
+and
+\[
+ -\frac13\operatorname{Tr}B_3
+ +\frac19\operatorname{Tr}(B_1B_2)
+ -\frac1{81}\operatorname{Tr}B_1^3.
+\]
+The first two rows coincide coefficientwise with the three previously open
+one-/two-insertion $D_W$ carriers.  Thus they are not three independent
+analytic kernels; all longitudinal insertion orders are one scalar Schur
+trace-log series.  The cubic longitudinal weights are
+$(-1/3,1/9,-1/81)$.
+
+The producer checks a noncommuting $4\times4$ vector/$2\times2$ scalar
+fixture.  The verifier uses an unrelated $5\times5$ vector/$3\times3$ scalar
+fixture, replays the determinant and all three trace-log orders, and rejects
+the mutation $1/9\mapsto1/8$.  For
+$\operatorname{Ric}=(R/4)g$, the minimal-vector longitudinal ratio
+$(\Delta_0-R/2)/\Delta_0$ times the Schur ratio
+$(\Delta_0-R/3)/(\Delta_0-R/2)$ reproduces the accepted scalar ghost factor.
+
+The regularization boundary is explicit.  The finite-dimensional identity
+and formal trace-log series are exact.  Since $S_L-\mathbf1$ begins at
+pseudodifferential order $-2$ in dimension four, ordinary trace-class
+Fredholm determinacy does not follow from order counting.  The Fredholm
+identity applies if determinant-class hypotheses hold on a restricted
+domain; generically a regularized relative determinant or equivalent common
+trace regulator is required.  Separate zeta determinants may also add a
+local multiplicative anomaly.  That local term and the generic Schur relative
+kernel are not evaluated, so no repository coefficient or complete ghost
+form factor is promoted.
+
+\begin{verbatim}
+P=spectral.euclidean
+M=generic_background_ghost_longitudinal_schur_resummation
+PYTHONPATH=quantum-weyl python3 -m "$P.$M" --check
+PYTHONPATH=quantum-weyl python3 -m "$P.verify_$M"
+PYTHONPATH=quantum-weyl pytest -q \
+ quantum-weyl/spectral/euclidean/tests/test_$M.py
 \end{verbatim}
 
 \subsection{Exact three-insertion adiabatic angular carrier}
@@ -870,7 +941,8 @@ On the scalar-flat carrier only the first term remains.  This is an exact
 tensor numerator, not the full triangle form factor: at zero external
 momentum $J_3$ is scaleless and infrared singular.  The nonzero-momentum
 triangle and its repository projection are certified separately; the three
-longitudinal $D_W$ one-/two-insertion carriers remain open.
+longitudinal $D_W$ one-/two-insertion towers are resummed by the preceding
+Schur factor, whose generic relative kernel and local zeta term remain open.
 Polarizing the cubic polynomial gives the complete zero-momentum $S_3$
 carrier on $(R_1,R_2,R_3)$: its three basis elements are the symmetrized
 cyclic trace, the cyclic sum of one trace times one pair trace, and the product
@@ -925,7 +997,8 @@ Ricci parametric triangle before its separately certified repository
 projection.  The zero-derivative sector can feed $I_{10}$, while the
 longitudinal sectors carry two, four, and six external derivatives and can
 feed $I_{24},I_{25},I_{28},I_{29}$.  The three longitudinal $D_W$
-one-/two-insertion resolvent carriers remain unevaluated.
+one-/two-insertion towers are resummed by the preceding Schur factor; its
+generic relative kernel and possible local zeta term remain unevaluated.
 
 \begin{verbatim}
 PYTHONPATH=quantum-weyl python3 -m \
@@ -1020,9 +1093,10 @@ PYTHONPATH=quantum-weyl python3 -m unittest "$TEST"
 \end{verbatim}
 
 The result is the parametric $n=3$ ghost contribution in the declared
-scalar-flat quotient section. The simplex integrals, three longitudinal
-$D_W$ one-/two-insertion carriers, physical fourth-order Hessian kernel, and their complete
-sum into five repository functions and coefficients remain open.
+scalar-flat quotient section. The simplex integrals, normalized longitudinal
+Schur relative kernel, possible local zeta multiplicative term, physical
+fourth-order Hessian kernel, and their complete sum into five repository
+functions and coefficients remain open.
 
 \subsection{Exact local BoxR scheme conversion}
 
@@ -1093,6 +1167,10 @@ that architecture to evaluated form factors or coefficients;
 \item import CPT rows $1,3,14$, project the combined pure-vector $n=1+n=2$
 slice, replay unseen fixtures, and reject promotion across the three
 longitudinal $D_W$ carriers;
+\item replay the longitudinal Schur determinant on a distinct noncommuting
+fixture through cubic order, detect a mixed-cubic mutation, and reject both
+evaluation of its generic relative kernel and omission of a possible local
+zeta multiplicative term;
 \item enumerate the second, fourth, and sixth isotropic sphere moments for the
 three-insertion adiabatic angular carrier, while rejecting promotion of its
 IR-singular radial integral to a nonzero-momentum triangle or $I_{10}$ map;
@@ -1156,6 +1234,8 @@ PYTHONPATH=quantum-weyl python3 -m \
   transfer.verify_cubic_weyl_carrier_basis
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_generic_background_ghost_n3_five_carrier_projection
+PYTHONPATH=quantum-weyl python3 -m \
+  spectral.euclidean.verify_generic_background_ghost_longitudinal_schur_resummation
 PYTHONPATH=quantum-weyl python3 -m \
   spectral.euclidean.verify_box_r_scheme_conversion
 python3 paper/generate_12_quantum_anomaly_tables.py --check

@@ -1,0 +1,252 @@
+{
+  "Einstein_specialization": {
+    "Ricci_specialization": "Ric=(R/4)g and W=-(R/2)I",
+    "accepted_scalar_factor": "Delta0-R/3",
+    "minimal_vector_longitudinal_ratio": "(Delta0-R/2)/Delta0",
+    "normalized_Schur_factor": "(Delta0-R/3)/(Delta0-R/2)",
+    "product": "(Delta0-R/3)/Delta0"
+  },
+  "analytic_disposition": {
+    "global_data": "primed inverse, boundary condition and relative determinant prescription remain required",
+    "operator_type": "elliptic scalar pseudodifferential operator of order zero with identity principal symbol",
+    "single_remaining_generic_kernel": "relative trace log det' S_L(W)",
+    "smallest_missing_input": "same-regulator relative determinant kernel of S_L(W), equivalently covariant scalar/vector open-derivative kernels through cubic curvature order",
+    "three_separate_DW_carrier_evaluations_required": false
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC plus EUCLIDEAN-SPECTRAL certificate uses the exact finite-dimensional matrix determinant lemma and the frozen Hodge Ward identities to resum every longitudinal D_W trace-log contribution to the generic Diff-Weyl ghost determinant into the single normalized scalar Schur operator S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d. Its trace-log expansion reproduces the three open n=1/n=2 coefficients and the completed n=3 longitudinal coefficients, an exact noncommuting fixture verifies the relative determinant through cubic order, and the Einstein specialization reproduces the accepted Delta0-R/3 scalar ghost factor. This is a formal trace-log factorization and resummation theorem, not an evaluation of the generic relative determinant kernel. Since S_L-I begins at pseudodifferential order -2 in dimension four, ordinary trace-class/Fredholm determinacy is not proved by order counting; a regularized relative determinant or equivalent common trace regulator is required. A zeta-factorized implementation can additionally carry a local multiplicative anomaly, which is explicitly unevaluated here. The generic Schur form factors, local multiplicative-anomaly term, full five-carrier ghost functions, physical fourth-order Hessian, complete repository functions or coefficients, Gamma1/Q1, residual transfer, Lorentzian QME, Hadamard, particle, positivity, scattering and unitarity claims remain open.",
+  "claim_flags": {
+    "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED": false,
+    "COMPLETE_GENERIC_GHOST_THIRD_CURVATURE_FUNCTIONS_COMPUTED": false,
+    "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": false,
+    "COMPLETE_RENORMALIZED_Q1_SUPPLIED": false,
+    "EINSTEIN_SCALAR_GHOST_FACTOR_REPRODUCED_FROM_SCHUR_FACTOR": true,
+    "GENERIC_GHOST_LONGITUDINAL_SCHUR_FACTORIZATION_COMPUTED": true,
+    "GENERIC_LONGITUDINAL_SCHUR_FORM_FACTORS_COMPUTED": false,
+    "LORENTZIAN_CERTIFIED": false,
+    "ORDINARY_FREDHOLM_DETERMINANT_CLASS_PROVED": false,
+    "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": false,
+    "RESIDUAL_TRANSFER_AUTHORIZED": false,
+    "THREE_DW_CARRIERS_RESUMMED_IN_COMMON_RELATIVE_DETERMINANT_EXPANSION": true,
+    "ZETA_FACTORIZATION_WITHOUT_LOCAL_MULTIPLICATIVE_ANOMALY_PROVED": false
+  },
+  "classical_commit": "3e15eafa5e0bb8cbc3eb1d2ad79a669c54ce9cca",
+  "dependencies": {
+    "Hodge_resolvent_reduction": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION",
+      "sha256": "9fe2fcea1d78d2d3c9e19b2cca6fff61e34af159c7647b959c5ba37b5a01ee78"
+    },
+    "ghost_operator": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION.json",
+      "result_id": "GENERIC_BACKGROUND_DIFF_WEYL_GHOST_CPT_OBSTRUCTION",
+      "sha256": "ee02a37c798d991354372d0371db46cf2e54cd1a119434ad775e0adc8b329bf8"
+    },
+    "vector_CPT_projection": {
+      "path": "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION.json",
+      "result_id": "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION",
+      "sha256": "3902a44c45e970124e00136b6b7a683ff1a6ff28907f1ac5d00cde3c391384b9"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "exact_determinant_factorization": {
+    "base_scalar_factor": "I+(1/2)delta F^-1 d=(3/2)I",
+    "first_correction_order": "pseudodifferential order -2 and curvature order one",
+    "matrix_determinant_lemma": "det(H)=det(A) det[I+(1/2)delta A^-1 d] in finite dimension, and for a common Fredholm determinant-class prescription",
+    "normalized_scalar_Schur_operator": "S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d",
+    "principal_symbol": "sigma_0(S_L)=1",
+    "relative_identity": "Det_rel(H,H0)=Det_rel(F+W,F) Det_F(S_L(W),I) under one compatible determinant-class prescription"
+  },
+  "exact_noncommuting_fixture": {
+    "Ward_identities_verified": [
+      "delta d=Delta0",
+      "F d=d Delta0",
+      "delta F=Delta0 delta"
+    ],
+    "determinant_identity_residual": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "direct_log_coefficients_through_W3": [
+      {
+        "denominator": 153,
+        "numerator": 37
+      },
+      {
+        "denominator": 23409,
+        "numerator": -46814
+      },
+      {
+        "denominator": 10744731,
+        "numerator": -318383
+      }
+    ],
+    "noncommuting_W": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ]
+    ],
+    "scalar_dimension": 2,
+    "vector_dimension": 4,
+    "vector_plus_scalar_coefficients_through_W3": [
+      {
+        "denominator": 153,
+        "numerator": 37
+      },
+      {
+        "denominator": 23409,
+        "numerator": -46814
+      },
+      {
+        "denominator": 10744731,
+        "numerator": -318383
+      }
+    ]
+  },
+  "lifecycle_state": "GENERIC_SCHUR_OPERATOR_DERIVED_RELATIVE_DETERMINANT_KERNEL_UNEVALUATED",
+  "next_gate": "EVALUATE_NORMALIZED_LONGITUDINAL_SCHUR_RELATIVE_DETERMINANT_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL",
+  "operator_dictionary": {
+    "Endo_base": "H0=F+(1/2)d delta",
+    "Ward_identities": [
+      "F d=d Delta0",
+      "delta F=Delta0 delta",
+      "delta d=Delta0"
+    ],
+    "full_positive_ghost_operator": "H=A+(1/2)d delta",
+    "minimal_vector_operator": "A=F+W with F=-Box I+Ric and W=-2 Ric"
+  },
+  "regularization_boundary": {
+    "Fredholm_relative_identity": "EXACT_IF_S_L_MINUS_I_AND_RELATIVE_RESOLVENTS_ARE_DETERMINANT_CLASS_IN_THE_DECLARED_COMMON_PRESCRIPTION",
+    "finite_dimensional_identity": "EXACT",
+    "generic_4d_trace_class_status": "ORDER_MINUS_TWO_DOES_NOT_PROVE_TRACE_CLASS_IN_DIMENSION_FOUR",
+    "nonlocal_consequence": "THE_THREE_DW_TRACE_LOG_TOWERS_ARE_ONE_SCHUR_SERIES; LOCAL_ZETA_ANOMALY_MAY_SHIFT_ONLY_LOCAL_COUNTERTERM_COORDINATES",
+    "required_generic_determinant": "REGULARIZED_RELATIVE_DETERMINANT_OR_EQUIVALENT_COMMON_TRACE_REGULATOR",
+    "zeta_multiplicative_anomaly": "LOCAL_TERM_NOT_EVALUATED"
+  },
+  "resolvent_series": {
+    "Hodge_carrier_match": {
+      "N1_LONGITUDINAL_SCALAR": "-(1/3)Tr(B1)",
+      "N2_LONGITUDINAL_LONGITUDINAL": "-(1/18)Tr(B1^2)",
+      "N2_VECTOR_LONGITUDINAL": "+(1/3)Tr(B2)",
+      "completed_n3_longitudinal_coefficients": [
+        {
+          "denominator": 3,
+          "numerator": -1
+        },
+        {
+          "denominator": 9,
+          "numerator": 1
+        },
+        {
+          "denominator": 81,
+          "numerator": -1
+        }
+      ]
+    },
+    "Schur_series": "S_L=I+sum_(n>=1) (-1)^n B_n/3",
+    "definition": "B_n=Delta0^-1 delta W (G_F W)^(n-1) d Delta0^-1",
+    "trace_log_through_W3": [
+      {
+        "W_order": 1,
+        "terms": [
+          "-(1/3)Tr(B1)"
+        ]
+      },
+      {
+        "W_order": 2,
+        "terms": [
+          "+(1/3)Tr(B2)",
+          "-(1/18)Tr(B1^2)"
+        ]
+      },
+      {
+        "W_order": 3,
+        "terms": [
+          "-(1/3)Tr(B3)",
+          "+(1/9)Tr(B1 B2)",
+          "-(1/81)Tr(B1^3)"
+        ]
+      }
+    ]
+  },
+  "result_id": "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
+  "result_state": "THREE_LONGITUDINAL_DW_CARRIERS_RESUMMED_TO_ONE_NORMALIZED_SCALAR_SCHUR_FACTOR_WITH_REGULATOR_BOUNDARY",
+  "schema": "quantum-weyl-generic-background-ghost-longitudinal-schur-resummation-v1",
+  "scope": {
+    "dimension": 4,
+    "mode_domain": "primed nonzero ghost modes on a compact manifold without boundary",
+    "operator_scope": "generic-background Diff-Weyl ghost determinant relative to the Endo base",
+    "signature": "Euclidean"
+  }
+}

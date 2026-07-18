@@ -1095,9 +1095,56 @@ The remaining three Hodge carriers contain
 This is a curvature-dependent anisotropic principal-symbol insertion, not a
 minimal bundle potential $P$; the mixed carrier also couples scalar and
 vector resolvents.  Hence the imported minimal-Laplace CPT rows do not
-evaluate these three carriers.  Dedicated nonminimal scalar/vector kernels,
-the physical fourth-order Hessian, and the complete repository functions
-remain open.
+evaluate these three carriers separately.  The next proposition resums them
+into one scalar Schur determinant; its generic kernel, the physical
+fourth-order Hessian, and the complete repository functions remain open.
+\end{proposition}
+
+\begin{proposition}[Exact longitudinal ghost Schur resummation]
+On the same primed nonzero-mode domain, write
+\[
+ A=F+W,\qquad H=A+\frac12d\delta,
+ \qquad H_0=F+\frac12d\delta .
+\]
+The Ward identities $Fd=d\Delta_0$, $\delta F=\Delta_0\delta$, and
+$\delta d=\Delta_0$ give the normalized scalar Schur operator
+\[
+ S_L(W)=\frac23\mathbf1+\frac13\delta(F+W)^{-1}d,
+ \qquad \sigma_0(S_L)=1.
+\]
+For one compatible determinant-class relative prescription, the matrix
+determinant lemma gives
+\[
+ \operatorname{Det}_{\rm rel}(H,H_0)
+ =\operatorname{Det}_{\rm rel}(F+W,F)
+  \operatorname{Det}_{F}(S_L(W),\mathbf1).
+\]
+If
+\[
+ B_n=\Delta_0^{-1}\delta W(G_FW)^{n-1}d\Delta_0^{-1},
+\]
+then $S_L=\mathbf1+\sum_{n\geq1}(-1)^nB_n/3$, and its logarithm begins
+\begin{align*}
+ O(W)&:-\frac13\operatorname{Tr}B_1,\\
+ O(W^2)&:\frac13\operatorname{Tr}B_2
+          -\frac1{18}\operatorname{Tr}B_1^2,\\
+ O(W^3)&:-\frac13\operatorname{Tr}B_3
+          +\frac19\operatorname{Tr}(B_1B_2)
+          -\frac1{81}\operatorname{Tr}B_1^3.
+\end{align*}
+The first two lines reproduce the three previously isolated longitudinal
+carriers, and the third fixes their complete cubic weights.  A distinct
+noncommuting exact fixture verifies the determinant and trace-log identities;
+on an Einstein background the minimal-vector longitudinal factor times
+$S_L$ reproduces $(\Delta_0-R/3)/\Delta_0$.
+
+This is a resummation theorem, not a form-factor evaluation.  A separately
+zeta-regularized factorization can carry a local multiplicative anomaly,
+which is not evaluated here.  Moreover $S_L-\mathbf1$ starts at
+pseudodifferential order $-2$ in four dimensions, so ordinary trace-class
+Fredholm determinacy is not implied by order counting.  A regularized
+relative determinant or equivalent common trace regulator, together with the
+possible local term, is the remaining longitudinal coefficient input.
 \end{proposition}
 
 \begin{proposition}[Exact ghost $n=3$ scalar-flat five-carrier projection]
@@ -1198,8 +1245,10 @@ and projected onto the ten-dimensional scalar-flat five-carrier quotient as
 exact rational simplex integrands.  The one-/two-insertion nonminimal
 architecture is now reduced exactly to five minimal vector/scalar resolvent
 carriers.  Their pure-vector physical sum is evaluated exactly from CPT rows
-1, 3 and 14.  The three longitudinal $D_W$ carriers and the physical kernel,
-hence the five complete repository form-factor functions and
+1, 3 and 14.  The three longitudinal $D_W$ towers are exactly resummed into
+one normalized scalar Schur determinant, but its generic relative kernel and
+possible local zeta multiplicative term remain open.  Those data and the
+physical kernel, hence the five complete repository form-factor functions and
 coefficients, the parity-odd derivative manifest, global Green/kernel data, and
 renormalized-product contribution remain open.  The next gate is a
 compensator-inclusive classical contraction together with those missing data.

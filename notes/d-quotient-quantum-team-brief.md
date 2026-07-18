@@ -894,7 +894,13 @@ scalar-flat carrier quotient. The exact replay contains 2,500 TT identities,
 750 Riemann/Bianchi convention checks and unseen-fixture mutation detection.
 The other three carriers contain `D_W=delta W d`, whose principal symbol
 `W^{mu nu}p_mu p_nu` is an anisotropic curvature insertion rather than a
-minimal bundle potential. Dedicated nonminimal scalar/vector kernels and the
+minimal bundle potential. The exact matrix determinant lemma and Hodge Ward
+identities now resum all three longitudinal trace-log towers into
+`S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d`. Its expansion reproduces the three
+previously open `n=1/n=2` carriers and fixes the cubic weights
+`(-1/3,1/9,-1/81)`. The finite/Fredholm relative identity is exact, while a
+separately zeta-factorized implementation can add an unevaluated local
+multiplicative term. The normalized Schur relative determinant and the
 generic physical fourth-order Hessian remain open. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
@@ -907,10 +913,11 @@ rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
-been projected to the scalar-flat repository five-carrier quotient. Its
-remaining local gate begins with evaluating the three longitudinal `D_W`
-one-/two-insertion carriers and
-the physical fourth-order Hessian kernel, followed by the five
+been projected to the scalar-flat repository five-carrier quotient. Its three
+longitudinal `D_W` towers are now one normalized scalar Schur series. The
+remaining local gate begins with evaluating that relative determinant kernel
+and its possible local zeta term, together with the physical fourth-order
+Hessian kernel, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
 the parity-odd derivative manifest,

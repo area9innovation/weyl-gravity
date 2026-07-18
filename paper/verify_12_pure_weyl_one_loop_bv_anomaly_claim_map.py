@@ -180,6 +180,21 @@ def main() -> None:
         "N2_VECTOR_LONGITUDINAL",
         "N2_LONGITUDINAL_LONGITUDINAL",
     ]
+    assert claims["generic_ghost_longitudinal_Schur_factorization"] is True
+    assert claims["generic_ghost_normalized_Schur_operator"] == (
+        "S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d"
+    )
+    assert claims["generic_ghost_longitudinal_cubic_coefficients"] == [
+        {"numerator": -1, "denominator": 3},
+        {"numerator": 1, "denominator": 9},
+        {"numerator": -1, "denominator": 81},
+    ]
+    assert claims["generic_ghost_zeta_multiplicative_anomaly_status"] == (
+        "LOCAL_TERM_NOT_EVALUATED"
+    )
+    assert claims["generic_ghost_4d_trace_class_status"] == (
+        "ORDER_MINUS_TWO_DOES_NOT_PROVE_TRACE_CLASS_IN_DIMENSION_FOUR"
+    )
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     assert claims["Euler_Wess_Zumino_primitive_displayed"] is True
     boolean_claims = {
@@ -190,11 +205,11 @@ def main() -> None:
     assert all(value is False for value in payload["explicit_nonclaims"].values())
     assert (
         payload["next_gate"]["status"]
-        == "EVALUATE_THREE_DW_LONGITUDINAL_GHOST_CARRIERS_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
+        == "EVALUATE_NORMALIZED_LONGITUDINAL_SCHUR_RELATIVE_DETERMINANT_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 30
+    assert len(payload["inputs"]) == 31
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -222,6 +237,7 @@ def main() -> None:
     generic_ghost_n3_projection = dependencies["GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION"]
     generic_ghost_n1_n2 = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION"]
     generic_ghost_n1_n2_vector = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION"]
+    generic_ghost_longitudinal_schur = dependencies["GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -325,6 +341,21 @@ def main() -> None:
     assert generic_ghost_n1_n2_vector["claim_flags"][
         "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED"
     ] is False
+    assert generic_ghost_longitudinal_schur["claim_flags"][
+        "GENERIC_GHOST_LONGITUDINAL_SCHUR_FACTORIZATION_COMPUTED"
+    ] is True
+    assert generic_ghost_longitudinal_schur["claim_flags"][
+        "THREE_DW_CARRIERS_RESUMMED_IN_COMMON_RELATIVE_DETERMINANT_EXPANSION"
+    ] is True
+    assert generic_ghost_longitudinal_schur["claim_flags"][
+        "GENERIC_LONGITUDINAL_SCHUR_FORM_FACTORS_COMPUTED"
+    ] is False
+    assert generic_ghost_longitudinal_schur["regularization_boundary"][
+        "zeta_multiplicative_anomaly"
+    ] == "LOCAL_TERM_NOT_EVALUATED"
+    assert generic_ghost_longitudinal_schur["regularization_boundary"][
+        "generic_4d_trace_class_status"
+    ] == "ORDER_MINUS_TWO_DOES_NOT_PROVE_TRACE_CLASS_IN_DIMENSION_FOUR"
     assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
         generic_ghost_n1_n2_vector["formula_digest"]
     )

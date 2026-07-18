@@ -88,10 +88,16 @@ minimal vector/scalar carriers with rational coefficients
 is now evaluated exactly from CPT rows 1, 3 and 14 as
 `6 Gamma1 S1 - 2 Gamma3 S3 - 2 Gamma14 S14` and projected to the
 scalar-flat carrier quotient. The other three carriers contain
-`D_W=delta W d`; its anisotropic curvature-dependent principal symbol is not
-a minimal bundle potential. Dedicated nonminimal scalar/vector kernels for
-those three carriers and the generic physical fourth-order Hessian are the
-next coefficient-bearing inputs.
+`D_W=delta W d`; they are now resummed exactly, to all insertion orders, into
+the normalized scalar Schur operator
+`S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d`. Its trace-log reproduces the three open
+`n=1/n=2` coefficients and fixes the complete longitudinal cubic weights
+`(-1/3,1/9,-1/81)`. This removes three separate kernel evaluations from the
+architecture, but does not evaluate the resulting scalar pseudodifferential
+relative determinant. The exact identity is finite-dimensional/Fredholm; a
+zeta-factorized implementation can carry an unevaluated local multiplicative
+anomaly. The normalized Schur relative kernel and the generic physical
+fourth-order Hessian are therefore the next coefficient-bearing inputs.
 The additive `C^2` constant, the five repository third-curvature
 form-factor functions and coefficients, the parity-odd derivative manifest,
 renormalized BV Laplacian or time-ordered product, absolute

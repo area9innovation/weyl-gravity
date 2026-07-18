@@ -147,7 +147,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
             == "quantum.crosswalk.generic_background_diff_weyl_ghost_cpt_obstruction_to_particle"
         )
         self.assertIn(
-            "n=1+n=2 pure-vector CPT sum is exact",
+            "longitudinal D_W towers are resummed",
             ghost["scope"]["carrier"],
         )
         self.assertEqual(
@@ -160,6 +160,7 @@ class QuantumAtlasFragmentTests(unittest.TestCase):
                 "GENERIC_BACKGROUND_GHOST_ENDO_DUHAMEL_REDUCTION",
                 "GENERIC_BACKGROUND_GHOST_N1_N2_HODGE_RESOLVENT_REDUCTION",
                 "GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION",
+                "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION",
                 "GENERIC_BACKGROUND_GHOST_N3_ADIABATIC_CARRIER",
                 "GENERIC_BACKGROUND_GHOST_N3_TRIANGLE_KERNEL",
                 "GENERIC_BACKGROUND_GHOST_N3_FIVE_CARRIER_PROJECTION",

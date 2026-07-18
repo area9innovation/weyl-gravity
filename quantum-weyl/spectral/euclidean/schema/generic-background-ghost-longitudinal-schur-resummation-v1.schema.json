@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quantum-weyl-generic-background-ghost-longitudinal-schur-resummation-v1.schema.json",
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "result_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "result_id",
+    "result_state",
+    "lifecycle_state",
+    "dependency_tags",
+    "classical_commit",
+    "scope",
+    "operator_dictionary",
+    "exact_determinant_factorization",
+    "regularization_boundary",
+    "resolvent_series",
+    "Einstein_specialization",
+    "exact_noncommuting_fixture",
+    "analytic_disposition",
+    "claim_flags",
+    "dependencies",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {
+      "const": "quantum-weyl-generic-background-ghost-longitudinal-schur-resummation-v1"
+    },
+    "result_id": {
+      "const": "GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION"
+    },
+    "result_state": {
+      "const": "THREE_LONGITUDINAL_DW_CARRIERS_RESUMMED_TO_ONE_NORMALIZED_SCALAR_SCHUR_FACTOR_WITH_REGULATOR_BOUNDARY"
+    },
+    "lifecycle_state": {
+      "const": "GENERIC_SCHUR_OPERATOR_DERIVED_RELATIVE_DETERMINANT_KERNEL_UNEVALUATED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "classical_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "signature", "mode_domain", "operator_scope"],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": "Euclidean"},
+        "mode_domain": {"type": "string", "minLength": 1},
+        "operator_scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "operator_dictionary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimal_vector_operator", "full_positive_ghost_operator", "Endo_base", "Ward_identities"],
+      "properties": {
+        "minimal_vector_operator": {"type": "string", "minLength": 1},
+        "full_positive_ghost_operator": {"type": "string", "minLength": 1},
+        "Endo_base": {"type": "string", "minLength": 1},
+        "Ward_identities": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "exact_determinant_factorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["matrix_determinant_lemma", "base_scalar_factor", "normalized_scalar_Schur_operator", "relative_identity", "principal_symbol", "first_correction_order"],
+      "properties": {
+        "matrix_determinant_lemma": {"type": "string", "minLength": 1},
+        "base_scalar_factor": {"type": "string", "minLength": 1},
+        "normalized_scalar_Schur_operator": {
+          "const": "S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d"
+        },
+        "relative_identity": {"type": "string", "minLength": 1},
+        "principal_symbol": {"const": "sigma_0(S_L)=1"},
+        "first_correction_order": {"type": "string", "minLength": 1}
+      }
+    },
+    "regularization_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finite_dimensional_identity", "Fredholm_relative_identity", "generic_4d_trace_class_status", "required_generic_determinant", "zeta_multiplicative_anomaly", "nonlocal_consequence"],
+      "properties": {
+        "finite_dimensional_identity": {"const": "EXACT"},
+        "Fredholm_relative_identity": {
+          "const": "EXACT_IF_S_L_MINUS_I_AND_RELATIVE_RESOLVENTS_ARE_DETERMINANT_CLASS_IN_THE_DECLARED_COMMON_PRESCRIPTION"
+        },
+        "generic_4d_trace_class_status": {
+          "const": "ORDER_MINUS_TWO_DOES_NOT_PROVE_TRACE_CLASS_IN_DIMENSION_FOUR"
+        },
+        "required_generic_determinant": {
+          "const": "REGULARIZED_RELATIVE_DETERMINANT_OR_EQUIVALENT_COMMON_TRACE_REGULATOR"
+        },
+        "zeta_multiplicative_anomaly": {"const": "LOCAL_TERM_NOT_EVALUATED"},
+        "nonlocal_consequence": {
+          "const": "THE_THREE_DW_TRACE_LOG_TOWERS_ARE_ONE_SCHUR_SERIES; LOCAL_ZETA_ANOMALY_MAY_SHIFT_ONLY_LOCAL_COUNTERTERM_COORDINATES"
+        }
+      }
+    },
+    "resolvent_series": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "Schur_series", "trace_log_through_W3", "Hodge_carrier_match"],
+      "properties": {
+        "definition": {"type": "string", "minLength": 1},
+        "Schur_series": {"type": "string", "minLength": 1},
+        "trace_log_through_W3": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["W_order", "terms"],
+            "properties": {
+              "W_order": {"type": "integer", "minimum": 1, "maximum": 3},
+              "terms": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        },
+        "Hodge_carrier_match": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["N1_LONGITUDINAL_SCALAR", "N2_VECTOR_LONGITUDINAL", "N2_LONGITUDINAL_LONGITUDINAL", "completed_n3_longitudinal_coefficients"],
+          "properties": {
+            "N1_LONGITUDINAL_SCALAR": {"const": "-(1/3)Tr(B1)"},
+            "N2_VECTOR_LONGITUDINAL": {"const": "+(1/3)Tr(B2)"},
+            "N2_LONGITUDINAL_LONGITUDINAL": {"const": "-(1/18)Tr(B1^2)"},
+            "completed_n3_longitudinal_coefficients": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {"$ref": "#/$defs/rational"}
+            }
+          }
+        }
+      }
+    },
+    "Einstein_specialization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["Ricci_specialization", "minimal_vector_longitudinal_ratio", "normalized_Schur_factor", "product", "accepted_scalar_factor"],
+      "properties": {
+        "Ricci_specialization": {"type": "string", "minLength": 1},
+        "minimal_vector_longitudinal_ratio": {"type": "string", "minLength": 1},
+        "normalized_Schur_factor": {"const": "(Delta0-R/3)/(Delta0-R/2)"},
+        "product": {"const": "(Delta0-R/3)/Delta0"},
+        "accepted_scalar_factor": {"const": "Delta0-R/3"}
+      }
+    },
+    "exact_noncommuting_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vector_dimension", "scalar_dimension", "Ward_identities_verified", "determinant_identity_residual", "direct_log_coefficients_through_W3", "vector_plus_scalar_coefficients_through_W3", "noncommuting_W"],
+      "properties": {
+        "vector_dimension": {"const": 4},
+        "scalar_dimension": {"const": 2},
+        "Ward_identities_verified": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "determinant_identity_residual": {
+          "const": {"numerator": 0, "denominator": 1}
+        },
+        "direct_log_coefficients_through_W3": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "vector_plus_scalar_coefficients_through_W3": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "noncommuting_W": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {"$ref": "#/$defs/rational"}
+          }
+        }
+      }
+    },
+    "analytic_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["three_separate_DW_carrier_evaluations_required", "single_remaining_generic_kernel", "operator_type", "smallest_missing_input", "global_data"],
+      "properties": {
+        "three_separate_DW_carrier_evaluations_required": {"const": false},
+        "single_remaining_generic_kernel": {"const": "relative trace log det' S_L(W)"},
+        "operator_type": {"type": "string", "minLength": 1},
+        "smallest_missing_input": {"type": "string", "minLength": 1},
+        "global_data": {"type": "string", "minLength": 1}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "GENERIC_GHOST_LONGITUDINAL_SCHUR_FACTORIZATION_COMPUTED",
+        "THREE_DW_CARRIERS_RESUMMED_IN_COMMON_RELATIVE_DETERMINANT_EXPANSION",
+        "EINSTEIN_SCALAR_GHOST_FACTOR_REPRODUCED_FROM_SCHUR_FACTOR",
+        "ZETA_FACTORIZATION_WITHOUT_LOCAL_MULTIPLICATIVE_ANOMALY_PROVED",
+        "ORDINARY_FREDHOLM_DETERMINANT_CLASS_PROVED",
+        "GENERIC_LONGITUDINAL_SCHUR_FORM_FACTORS_COMPUTED",
+        "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED",
+        "COMPLETE_GENERIC_GHOST_THIRD_CURVATURE_FUNCTIONS_COMPUTED",
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED",
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED",
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED",
+        "RESIDUAL_TRANSFER_AUTHORIZED",
+        "LORENTZIAN_CERTIFIED"
+      ],
+      "properties": {
+        "GENERIC_GHOST_LONGITUDINAL_SCHUR_FACTORIZATION_COMPUTED": {"const": true},
+        "THREE_DW_CARRIERS_RESUMMED_IN_COMMON_RELATIVE_DETERMINANT_EXPANSION": {"const": true},
+        "EINSTEIN_SCALAR_GHOST_FACTOR_REPRODUCED_FROM_SCHUR_FACTOR": {"const": true},
+        "ZETA_FACTORIZATION_WITHOUT_LOCAL_MULTIPLICATIVE_ANOMALY_PROVED": {"const": false},
+        "ORDINARY_FREDHOLM_DETERMINANT_CLASS_PROVED": {"const": false},
+        "GENERIC_LONGITUDINAL_SCHUR_FORM_FACTORS_COMPUTED": {"const": false},
+        "ALL_FIVE_HODGE_RESOLVENT_CARRIERS_EVALUATED": {"const": false},
+        "COMPLETE_GENERIC_GHOST_THIRD_CURVATURE_FUNCTIONS_COMPUTED": {"const": false},
+        "PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL_COMPUTED": {"const": false},
+        "COMPLETE_RENORMALIZED_GAMMA1_SUPPLIED": {"const": false},
+        "COMPLETE_RENORMALIZED_Q1_SUPPLIED": {"const": false},
+        "RESIDUAL_TRANSFER_AUTHORIZED": {"const": false},
+        "LORENTZIAN_CERTIFIED": {"const": false}
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "minProperties": 3,
+      "additionalProperties": {"$ref": "#/$defs/dependency"}
+    },
+    "next_gate": {
+      "const": "EVALUATE_NORMALIZED_LONGITUDINAL_SCHUR_RELATIVE_DETERMINANT_AND_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN_KERNEL"
+    },
+    "claim_boundary": {"type": "string", "minLength": 500}
+  }
+}

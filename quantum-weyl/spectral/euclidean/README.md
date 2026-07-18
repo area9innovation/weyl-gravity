@@ -100,9 +100,11 @@ coordinate.  Every projected channel is stored as a rational
 Feynman-simplex numerator over the common `Delta^4`, and unseen exact
 momentum/alpha fixtures replay all 125 TT amplitudes.  This closes only the
 parametric `n=3` ghost projection. The combined pure-vector `n=1+n=2` slice
-is now exact; three longitudinal `D_W` carriers, the complete ghost
-determinant, the physical fourth-order kernel, and the integrated repository
-functions and coefficients remain open.
+is now exact; the three longitudinal `D_W` towers are resummed into the
+normalized scalar Schur operator
+`S_L(W)=(2/3)I+(1/3)delta(F+W)^-1 d`. Its relative determinant kernel, a
+possible local zeta multiplicative term, the physical fourth-order kernel,
+and the integrated repository functions and coefficients remain open.
 
 Replay with:
 
@@ -116,6 +118,9 @@ PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generi
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n1_n2_hodge_resolvent_reduction --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n1_n2_hodge_resolvent_reduction
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n1_n2_hodge_resolvent_reduction
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_longitudinal_schur_resummation --check
+PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_longitudinal_schur_resummation
+PYTHONPATH=quantum-weyl pytest -q quantum-weyl/spectral/euclidean/tests/test_generic_background_ghost_longitudinal_schur_resummation.py
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_adiabatic_carrier --check
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.verify_generic_background_ghost_n3_adiabatic_carrier
 PYTHONPATH=quantum-weyl python3 -m unittest spectral.euclidean.tests.test_generic_background_ghost_n3_adiabatic_carrier
@@ -160,3 +165,8 @@ projection. The three remaining Hodge carriers contain
 `D_W=delta W d`; its anisotropic principal symbol is outside the imported
 minimal-potential CPT kernels. See
 [`generic-background-ghost-n1-n2-vector-cpt-projection.md`](../../reports/generic-background-ghost-n1-n2-vector-cpt-projection.md).
+The exact matrix determinant lemma and Hodge Ward identities now resum all
+three towers to `S_L(W)`, with cubic weights `(-1/3,1/9,-1/81)`. The
+finite/Fredholm relative identity is exact; a local zeta multiplicative term
+is explicitly unevaluated. See
+[`generic-background-ghost-longitudinal-schur-resummation.md`](../../reports/generic-background-ghost-longitudinal-schur-resummation.md).

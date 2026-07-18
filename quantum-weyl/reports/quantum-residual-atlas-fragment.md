@@ -62,7 +62,9 @@ angular carrier without turning either into a particle or a complete form
 factor. The nonzero-momentum triangle is exact, while the curved `n=1/n=2`
 architecture is reduced to five minimal vector/scalar resolvent carriers.
 Its combined pure-vector CPT slice is exact; the three longitudinal `D_W`
-carriers remain unevaluated.
+towers are resummed into one normalized scalar Schur kernel. That relative
+determinant and its possible local zeta multiplicative term remain
+unevaluated.
 
 ## Tangent-cone boundary
 
@@ -141,7 +143,9 @@ orientations are projected onto the ten-dimensional scalar-flat five-carrier
 quotient as rational simplex integrands, with two unseen exact momentum
 fixtures replaying all 125 TT amplitudes. The five minimal n=1/n=2 resolvent
 carriers have an exact combined pure-vector CPT slice; three longitudinal
-`D_W` carriers remain unevaluated. Simplex-integrated repository functions and the
+`D_W` towers now form one normalized scalar Schur trace-log series. Its
+relative determinant and possible local zeta multiplicative term remain
+unevaluated. Simplex-integrated repository functions and the
 physical fourth-order Hessian
 remain open. The guard remains
 `NO_CERTIFIED_MAP` to any particle row and
