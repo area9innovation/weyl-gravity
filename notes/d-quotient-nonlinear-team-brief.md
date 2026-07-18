@@ -648,6 +648,17 @@ first-jet enumeration independently reproducing `4 x 6560 = 26240`). This is
 `SOURCE_COMPUTED_SOLVE_PENDING`, not an obstruction: the affine second-jet
 image solve and positive-jet full-BV lift remain required.
 
+The physical affine solve has now closed exactly.
+`BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1` reduces the mixed
+order-two local-functional space to 39,170 independent Euler coordinates and
+exports a 4,276-coefficient homogeneous correction to the frozen lower
+primitive. All 550 zero-page equations, all four 1,330-row first-page blocks,
+and all 10,043 nonzero order-two Euler target coordinates replay exactly with
+zero missing, extra, or changed terms. Thus the complete degree-zero physical
+action through summed differential order two is trivializable. This is not
+the final cyclic deformation verdict: the positive-jet ghost/antifield lift
+is now the only remaining N-G4 gate.
+
 1. Treat the repaired mixed \(q_2\), typed \(q_3\), retained \(\ell_3\),
    exchange audit, and full retained BV cyclicity as complete on their pinned
    carriers.  Do not recompute them as if they were open.

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/berger-retained-mixed-ell3-second-jet-exact-primitive-v1.schema.json",
+  "title": "Berger retained mixed ell3 exact second-jet primitive",
+  "type": "object",
+  "required": ["artifact_id", "schema_version", "dependency_tags", "generality", "status", "dependency_refs", "quotient", "basis_selection_audit", "exact_solver_audit", "exact_correction", "full_replay", "claim_flags", "next_gate", "claim_boundary"],
+  "properties": {
+    "artifact_id": {"const": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1"},
+    "schema_version": {"const": "berger-retained-mixed-ell3-second-jet-exact-primitive-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "generality": {"const": "G0"},
+    "status": {"const": "PHYSICAL_ACTION_ORDER_TWO_TRIVIALIZED"},
+    "dependency_refs": {
+      "type": "object", "minProperties": 2,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "quotient": {
+      "type": "object",
+      "required": ["method", "mixed_field_multisets", "independent_coordinate_count", "multiplicity_pattern_dimensions"],
+      "properties": {
+        "method": {"type": "string"},
+        "mixed_field_multisets": {"const": 550},
+        "independent_coordinate_count": {"const": 39170},
+        "multiplicity_pattern_dimensions": {
+          "const": {"2+2": 35, "2+1+1": 55, "1+1+1+1": 91}
+        }
+      },
+      "additionalProperties": false
+    },
+    "basis_selection_audit": {
+      "type": "object",
+      "required": ["active_component_shape", "rank_revealed", "selected_exact_square_shape", "selected_exact_square_nonzero_count", "selected_zero_columns", "selected_first_columns_by_axis", "selected_second_columns", "selection_only_backend", "selection_is_not_trusted_by_replay", "second_jet_untouched_coordinate_count", "untouched_C_cokernel_rank", "untouched_C_compatible_dimension", "untouched_Schur_constraint_rank", "untouched_Schur_compatible_dimension", "untouched_nonzero_target_evaluation_dimension"],
+      "properties": {
+        "active_component_shape": {"const": [5995, 18751]},
+        "rank_revealed": {"const": 5754},
+        "selected_exact_square_shape": {"const": [5754, 5754]},
+        "selected_exact_square_nonzero_count": {"const": 26578},
+        "selected_zero_columns": {"const": 175},
+        "selected_first_columns_by_axis": {"const": [112, 212, 223, 239]},
+        "selected_second_columns": {"const": 4793},
+        "selection_only_backend": {"type": "string"},
+        "selection_is_not_trusted_by_replay": {"const": true},
+        "second_jet_untouched_coordinate_count": {"const": 16},
+        "untouched_C_cokernel_rank": {"const": 14},
+        "untouched_C_compatible_dimension": {"const": 2},
+        "untouched_Schur_constraint_rank": {"const": 1},
+        "untouched_Schur_compatible_dimension": {"const": 1},
+        "untouched_nonzero_target_evaluation_dimension": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "exact_solver_audit": {
+      "type": "object",
+      "required": ["coefficient_field", "sqrt10_row_parity_count", "sqrt10_column_parity_count", "parity_conflicts", "row_cleared_MPZ_nonzero_count", "backend", "elapsed_seconds", "peak_RSS_kB", "basis_square_exact_replay"],
+      "properties": {
+        "coefficient_field": {"const": "QQ(sqrt(10))"},
+        "sqrt10_row_parity_count": {"const": 1139},
+        "sqrt10_column_parity_count": {"const": 787},
+        "parity_conflicts": {"const": 0},
+        "row_cleared_MPZ_nonzero_count": {"const": 26578},
+        "backend": {"type": "string"},
+        "elapsed_seconds": {"type": "string"},
+        "peak_RSS_kB": {"type": "integer", "minimum": 1},
+        "basis_square_exact_replay": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "exact_correction": {
+      "type": "object",
+      "required": ["records_sha256", "records_file_sha256", "records_path", "nonzero_count"],
+      "properties": {
+        "records_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "records_file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "records_path": {"const": "d_quotient_classical/certificates/data/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1.records.json.gz"},
+        "nonzero_count": {"const": 4276}
+      },
+      "additionalProperties": false
+    },
+    "full_replay": {
+      "type": "object",
+      "required": ["correction_nonzero", "correction_total_nonzero", "final_lower_nonzero", "Euler_target_coordinates", "Euler_reconstruction_coordinates", "missing", "extra", "changed"],
+      "properties": {
+        "correction_nonzero": {"const": {"zero": 34, "first_by_axis": [33, 109, 118, 173], "second": 3809}},
+        "correction_total_nonzero": {"const": 4276},
+        "final_lower_nonzero": {"const": {"zero": 77, "first_by_axis": [76, 195, 206, 273]}},
+        "Euler_target_coordinates": {"const": 10043},
+        "Euler_reconstruction_coordinates": {"const": 10043},
+        "missing": {"const": 0},
+        "extra": {"const": 0},
+        "changed": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["PHYSICAL_ACTION_ORDER_TWO_TRIVIALIZATION_COMPUTED", "FULL_BV_POSITIVE_JET_REDEFINITION_MATCHED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "ELL3_NONREMOVABLE", "RESIDUAL_COHOMOLOGY_OPERATION_COMPUTED", "QUANTUM_CLAIM"],
+      "properties": {
+        "PHYSICAL_ACTION_ORDER_TWO_TRIVIALIZATION_COMPUTED": {"const": true},
+        "FULL_BV_POSITIVE_JET_REDEFINITION_MATCHED": {"const": false},
+        "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false},
+        "ELL3_NONREMOVABLE": {"const": false},
+        "RESIDUAL_COHOMOLOGY_OPERATION_COMPUTED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "LIFT_EXACT_ORDER_TWO_PHYSICAL_PRIMITIVE_TO_POSITIVE_JET_FULL_BV"},
+    "claim_boundary": {"type": "string", "minLength": 150}
+  },
+  "additionalProperties": false
+}

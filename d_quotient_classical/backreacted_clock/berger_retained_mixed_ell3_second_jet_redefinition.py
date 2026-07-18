@@ -445,6 +445,79 @@ def one_coordinate_support_scan(target: Mapping[EulerKey, sp.Expr]) -> dict[str,
     }
 
 
+def untouched_second_jet_target_coordinates(
+    target: Mapping[EulerKey, sp.Expr],
+) -> tuple[EulerKey, ...]:
+    target_keys = set(target)
+    touched: set[EulerKey] = set()
+    for label in second_jet_labels():
+        touched.update(target_keys.intersection(second_jet_column(label)))
+    return tuple(sorted(target_keys - touched))
+
+
+def _quartic_density_monomials(base: tuple[int, int, int, int]) -> tuple[Monomial, ...]:
+    """All symmetric PBW quartic densities through total order two."""
+
+    values: set[Monomial] = {tuple((field, ()) for field in base)}
+    for slot in range(4):
+        for axis in range(4):
+            atoms = [(field, ()) for field in base]
+            atoms[slot] = (base[slot], (axis,))
+            values.add(tuple(sorted(atoms)))
+        for first_axis in range(4):
+            for second_axis in range(first_axis, 4):
+                atoms = [(field, ()) for field in base]
+                atoms[slot] = (base[slot], (first_axis, second_axis))
+                values.add(tuple(sorted(atoms)))
+    for left_slot in range(4):
+        for right_slot in range(left_slot + 1, 4):
+            for left_axis in range(4):
+                for right_axis in range(4):
+                    atoms = [(field, ()) for field in base]
+                    atoms[left_slot] = (base[left_slot], (left_axis,))
+                    atoms[right_slot] = (base[right_slot], (right_axis,))
+                    values.add(tuple(sorted(atoms)))
+    return tuple(sorted(values))
+
+
+@lru_cache(maxsize=None)
+def _independent_euler_template(base: tuple[int, int, int, int]) -> tuple[EulerKey, ...]:
+    monomials = _quartic_density_monomials(base)
+    images = tuple(euler_image({monomial: sp.Integer(1)}) for monomial in monomials)
+    keys = tuple(sorted(set().union(*(set(image) for image in images))))
+    key_index = {key: row for row, key in enumerate(keys)}
+    entries = {
+        (key_index[key], column): coefficient
+        for column, image in enumerate(images)
+        for key, coefficient in image.items()
+    }
+    matrix = sp.MutableSparseMatrix(len(keys), len(monomials), entries)
+    independent_rows = matrix.T.rref()[1]
+    return tuple(keys[row] for row in independent_rows)
+
+
+@lru_cache(maxsize=1)
+def independent_mixed_euler_coordinates() -> tuple[EulerKey, ...]:
+    """Exact independent coordinates for every mixed quartic local functional."""
+
+    selected: set[EulerKey] = set()
+    for base in zero._mixed_basis():
+        unique = tuple(sorted(set(base)))
+        to_template = {field: index for index, field in enumerate(unique)}
+        from_template = {index: field for field, index in to_template.items()}
+        template_base = tuple(to_template[field] for field in base)
+        for varied, cubic in _independent_euler_template(template_base):
+            selected.add(
+                (
+                    from_template[varied],
+                    tuple((from_template[field], word) for field, word in cubic),
+                )
+            )
+    if len(selected) != 39170:
+        raise AssertionError(f"mixed Euler quotient dimension drifted: {len(selected)}")
+    return tuple(sorted(selected))
+
+
 def _subtract(left: Mapping, right: Mapping) -> dict:
     value = dict(left)
     for key, coefficient in right.items():

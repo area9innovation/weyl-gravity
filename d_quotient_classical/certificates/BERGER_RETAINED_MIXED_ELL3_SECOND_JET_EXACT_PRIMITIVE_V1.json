@@ -1,0 +1,105 @@
+{
+  "artifact_id": "BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1",
+  "basis_selection_audit": {
+    "active_component_shape": [
+      5995,
+      18751
+    ],
+    "rank_revealed": 5754,
+    "second_jet_untouched_coordinate_count": 16,
+    "selected_exact_square_nonzero_count": 26578,
+    "selected_exact_square_shape": [
+      5754,
+      5754
+    ],
+    "selected_first_columns_by_axis": [
+      112,
+      212,
+      223,
+      239
+    ],
+    "selected_second_columns": 4793,
+    "selected_zero_columns": 175,
+    "selection_is_not_trusted_by_replay": true,
+    "selection_only_backend": "SuiteSparseQR tolerance 1e-9",
+    "untouched_C_cokernel_rank": 14,
+    "untouched_C_compatible_dimension": 2,
+    "untouched_Schur_compatible_dimension": 1,
+    "untouched_Schur_constraint_rank": 1,
+    "untouched_nonzero_target_evaluation_dimension": 0
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC G0 theorem gives an exact physical-base F2/F3 correction which, when added to the frozen lower primitive, trivializes the complete mixed degree-zero physical action through summed differential order two. It does not yet match the positive-jet ghost/antifield completion, decide the full cyclic deformation class, descend to residual cohomology, prove SDR independence, or make a quantum claim.",
+  "claim_flags": {
+    "CYCLIC_DEFORMATION_CLASS_DECIDED": false,
+    "ELL3_NONREMOVABLE": false,
+    "FULL_BV_POSITIVE_JET_REDEFINITION_MATCHED": false,
+    "PHYSICAL_ACTION_ORDER_TWO_TRIVIALIZATION_COMPUTED": true,
+    "QUANTUM_CLAIM": false,
+    "RESIDUAL_COHOMOLOGY_OPERATION_COMPUTED": false
+  },
+  "dependency_refs": {
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_FIRST_JET_REDEFINITION_V1.json": "b191c57d2fa17846746f5020a1f4aae70df0dfec64d8d81d8351cf886ab240cd",
+    "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_SOURCE_V1.json": "2845cdc79b534052698dee9e929ae7c980be08101516a8cb8820ec5805ab069c"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_correction": {
+    "nonzero_count": 4276,
+    "records_file_sha256": "10812763f9519d25ead427770c90d4e8fe9f135553b5ea16df58cbb4889b324e",
+    "records_path": "d_quotient_classical/certificates/data/BERGER_RETAINED_MIXED_ELL3_SECOND_JET_EXACT_PRIMITIVE_V1.records.json.gz",
+    "records_sha256": "49db1dfbb86cebec26a5faf1d027d277bd0976bc81ef69a1f613ff1edd9dc1c8"
+  },
+  "exact_solver_audit": {
+    "backend": "SuiteSparse SPEX 3.2.4 exact sparse LU",
+    "basis_square_exact_replay": true,
+    "coefficient_field": "QQ(sqrt(10))",
+    "elapsed_seconds": "31.91",
+    "parity_conflicts": 0,
+    "peak_RSS_kB": 662048,
+    "row_cleared_MPZ_nonzero_count": 26578,
+    "sqrt10_column_parity_count": 787,
+    "sqrt10_row_parity_count": 1139
+  },
+  "full_replay": {
+    "Euler_reconstruction_coordinates": 10043,
+    "Euler_target_coordinates": 10043,
+    "changed": 0,
+    "correction_nonzero": {
+      "first_by_axis": [
+        33,
+        109,
+        118,
+        173
+      ],
+      "second": 3809,
+      "zero": 34
+    },
+    "correction_total_nonzero": 4276,
+    "extra": 0,
+    "final_lower_nonzero": {
+      "first_by_axis": [
+        76,
+        195,
+        206,
+        273
+      ],
+      "zero": 77
+    },
+    "missing": 0
+  },
+  "generality": "G0",
+  "next_gate": "LIFT_EXACT_ORDER_TWO_PHYSICAL_PRIMITIVE_TO_POSITIVE_JET_FULL_BV",
+  "quotient": {
+    "independent_coordinate_count": 39170,
+    "method": "exact independent variational-Euler coordinates after Berger PBW reduction",
+    "mixed_field_multisets": 550,
+    "multiplicity_pattern_dimensions": {
+      "1+1+1+1": 91,
+      "2+1+1": 55,
+      "2+2": 35
+    }
+  },
+  "schema_version": "berger-retained-mixed-ell3-second-jet-exact-primitive-v1",
+  "status": "PHYSICAL_ACTION_ORDER_TWO_TRIVIALIZED"
+}
