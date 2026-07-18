@@ -117,6 +117,8 @@ python3 -m closed_universe_observers.generate_berger_selected_charge_block_tempo
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_temporal_bandwidth_preflight
 python3 -m closed_universe_observers.generate_berger_selected_charge_block_correlated_clock_transform --check
 python3 -m closed_universe_observers.verify_berger_selected_charge_block_correlated_clock_transform
+python3 -m closed_universe_observers.generate_berger_green_weighted_spatial_tail_reduction --check
+python3 -m closed_universe_observers.verify_berger_green_weighted_spatial_tail_reduction
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -518,6 +520,15 @@ transform overlaps both the `p=0` clock-factor gate and the earlier
 `two_j=138` order-14 result.  This closes the selected finite-block exact-`T`
 temporal image representation.  The active gate is the controlled spatial
 harmonic tail, not detector response or recoil.
+The Green-weighted tail-reduction successor now closes the operator half of
+that gate.  Exact completion of the charge-block diagonals and a rational
+Gershgorin estimate give
+`Lambda(j)=j^2+13j/40-1017/2480` on every omitted form representation.  Above
+retained `two_j=1024`, the first omitted lower bound is
+`325899779/1240`.  Both exact-T Maxwell tail multipliers have operator norm at
+most one, so the Green step adds no `L2` amplification.  This is not yet a
+numerical tail: the clock-uniform polarized repeated-Laplacian norm in the
+Berger Haar convention and the massive-two-form continuation remain open.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

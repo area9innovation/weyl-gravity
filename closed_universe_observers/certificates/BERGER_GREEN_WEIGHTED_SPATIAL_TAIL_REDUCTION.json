@@ -1,0 +1,210 @@
+{
+  "atlas_status": "CERTIFIED",
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC/LORENTZIAN-CAUSAL result converts any omitted Berger Maxwell one-form representation tail into a declared Sobolev norm. Completing the three charge-block diagonal quadratics gives the uniform shift -9/124; sqrt(5)<9/4 and the at-most-two tridiagonal couplings give the rational Gershgorin bound Lambda(j)=j^2+13j/40-1017/2480. For every tail above a retained two_j cutoff, ||Pi_tail F|| is at most Lambda(first omitted j)^(-N)||Delta1^N F||. Both exact-T Maxwell multipliers relevant here are contractions: ||cos(T sqrt(Delta1))||<=1 and ||delta sin(T sqrt(Delta1))/sqrt(Delta1)||<=1, the latter because delta^dagger delta<=Delta1 with the zero-mode extension. Thus no additional Green amplification enters the Maxwell L2 tail. At retained two_j=1024 the first-omitted lower bound and powers N=1,...,4 are exported exactly. This certifies the spectral and Maxwell Green-weighted reduction only. The detector profile relative to Berger Haar measure, its clock-uniform polarized repeated-Laplacian norm, the numerical tail product, the massive-two-form continuation, detector response, recoil and tangent-cone restriction remain OPEN.",
+  "claim_status": "EXACT_MAXWELL_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION_CERTIFIED_PROFILE_SOBOLEV_NORM_OPEN",
+  "cutoff_reductions": [
+    {
+      "delta1_spectral_lower_bound": "601701/124",
+      "delta1_spectral_lower_bound_decimal": "4852.427419354839",
+      "first_omitted_j": "139/2",
+      "first_omitted_two_j": 139,
+      "retained_max_two_j": 138,
+      "sobolev_norm_reductions": [
+        {
+          "factor": "124/601701",
+          "factor_decimal": "2.060824229975e-04",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-1) ||Delta1^1 F||_L2",
+          "power": 1
+        },
+        {
+          "factor": "15376/362044093401",
+          "factor_decimal": "4.246996506851e-08",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-2) ||Delta1^2 F||_L2",
+          "power": 2
+        },
+        {
+          "factor": "1906624/217842293043475101",
+          "factor_decimal": "8.752313305936e-12",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-3) ||Delta1^3 F||_L2",
+          "power": 3
+        },
+        {
+          "factor": "236421376/131075925566552011746801",
+          "factor_decimal": "1.803697932920e-15",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-4) ||Delta1^4 F||_L2",
+          "power": 4
+        }
+      ]
+    },
+    {
+      "delta1_spectral_lower_bound": "325899779/1240",
+      "delta1_spectral_lower_bound_decimal": "262822.402419354825",
+      "first_omitted_j": "1025/2",
+      "first_omitted_two_j": 1025,
+      "retained_max_two_j": 1024,
+      "sobolev_norm_reductions": [
+        {
+          "factor": "1240/325899779",
+          "factor_decimal": "3.804850693072e-06",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-1) ||Delta1^1 F||_L2",
+          "power": 1
+        },
+        {
+          "factor": "1537600/106210665952248841",
+          "factor_decimal": "1.447688879657e-11",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-2) ||Delta1^2 F||_L2",
+          "power": 2
+        },
+        {
+          "factor": "1906624000/34614032561280721834906139",
+          "factor_decimal": "5.508240037114e-17",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-3) ||Delta1^3 F||_L2",
+          "power": 3
+        },
+        {
+          "factor": "2364213760000/11280705562020191202956385185843281",
+          "factor_decimal": "2.095803092282e-22",
+          "inequality": "||Pi_tail F||_L2 <= Lambda^(-4) ||Delta1^4 F||_L2",
+          "power": 4
+        }
+      ]
+    }
+  ],
+  "dependency_refs": {
+    "charge_blocks": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS.json",
+      "result_id": "BERGER_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS",
+      "sha256": "81e8977fef45cfe82f88e1e62025ad1f0720f9d394eb59446b297ea47369b4ad"
+    },
+    "moments": {
+      "path": "closed_universe_observers/certificates/BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES.json",
+      "result_id": "BERGER_VALIDATED_FLAT_BUMP_MOMENT_ENCLOSURES",
+      "sha256": "10ea2bc9462d446117c6369a2fd2b81f7fc06eff383b80b7a80854a12e7231a1"
+    },
+    "profiles": {
+      "path": "closed_universe_observers/certificates/BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS.json",
+      "result_id": "BERGER_EXACT_DETECTOR_SMEARINGS_AND_ADVANCED_COVECTORS",
+      "sha256": "d91786a68bc15691eaea64bc48c93d3d4523f7fe3e13f1cda7b065d2ba08c947"
+    },
+    "selected_transform": {
+      "path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
+      "result_id": "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM",
+      "sha256": "09d51889e2396fa6388a769c9c37c69b1663f51581ed752ac26d1d9f7b776a42"
+    },
+    "spectral_engine": {
+      "path": "closed_universe_observers/certificates/BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE.json",
+      "result_id": "BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE",
+      "sha256": "e24c860b338188254c4388a7ca660ac454ba7b70c13659ffc36a98bf39250120"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "flags": {
+    "ALL_OMITTED_REPRESENTATION_DELTA1_LOWER_BOUND_EXPORTED": true,
+    "DETECTOR_RESPONSE_EVALUATED": false,
+    "EVALUATED_PROFILE_SOBOLEV_NORM_EXPORTED": false,
+    "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": false,
+    "GREEN_WEIGHTED_MAXWELL_TAIL_CONVERSION_EXPORTED": true,
+    "MASSIVE_TWO_FORM_TAIL_BOUND_EXPORTED": false,
+    "MAXWELL_CODERIVATIVE_SINE_TAIL_MULTIPLIER_CONTRACTIVE": true,
+    "MAXWELL_EXACT_T_SPATIAL_TAIL_MULTIPLIER_CONTRACTIVE": true,
+    "QUANTUM_CLAIM": false,
+    "SELECTED_TWO_J1024_SOBOLEV_REDUCTION_FACTORS_EXPORTED": true,
+    "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": false
+  },
+  "maxwell_green_weighting": {
+    "additional_tail_amplification_factor": "1",
+    "spatial_multiplier": "cos(T sqrt(Delta1))",
+    "spatial_operator_norm_upper": "1",
+    "temporal_contraction_reason": "delta^dagger delta<=Delta1 and |sin|<=1; use the entire zero-mode extension",
+    "temporal_multiplier": "delta sin(T sqrt(Delta1))/sqrt(Delta1)",
+    "temporal_operator_norm_upper": "1"
+  },
+  "mutation_results": [
+    {
+      "detected": true,
+      "name": "replace_sqrt5_upper_9_over_4_by_false_upper_2"
+    },
+    {
+      "detected": true,
+      "name": "delete_second_interior_charge_block_coupling"
+    }
+  ],
+  "next_gate": "EVALUATE_THE_CLOCK_UNIFORM_POLARIZED_PROFILE_SOBOLEV_NORM_IN_THE_CERTIFIED_BERGER_HAAR_CONVENTION",
+  "provenance": {
+    "source_commit": "WORKTREE",
+    "source_manifest": [
+      {
+        "path": "closed_universe_observers/generate_berger_green_weighted_spatial_tail_reduction.py",
+        "sha256": "d62712696397fd92787881648fbc9e0eadf4b50552f47aa66ba851eb08ceeec8"
+      },
+      {
+        "path": "closed_universe_observers/verify_berger_green_weighted_spatial_tail_reduction.py",
+        "sha256": "65ebe8f2efc6e22767f6e785c6d3c985c98d5465bde7607db8d83b75b401c871"
+      },
+      {
+        "path": "closed_universe_observers/tests/test_berger_green_weighted_spatial_tail_reduction.py",
+        "sha256": "ed697a2a00dd67cdc7f6da08f512ae7a7bfb6f47da72cc91a497b0eb9befb707"
+      },
+      {
+        "path": "closed_universe_observers/schema/berger-green-weighted-spatial-tail-reduction-v1.schema.json",
+        "sha256": "3bb03e3584304861c1ca4c17e338a309a18441d690d15c5f0384253a46049231"
+      },
+      {
+        "path": "closed_universe_observers/reports/berger-green-weighted-spatial-tail-reduction.md",
+        "sha256": "898626578a8ace5ddef7f62af6bf8fe9cfcc4cb543186b2dafa82185d32d83dc"
+      }
+    ]
+  },
+  "result_id": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION",
+  "schema": "closed-universe-berger-green-weighted-spatial-tail-reduction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_probe_apparatus",
+  "spectral_lower_bound_theorem": {
+    "charge_block_basis": [
+      "theta_plus",
+      "theta3",
+      "theta_minus"
+    ],
+    "coupling_identity": "|b|=(3 sqrt(5)/20)sqrt((j-m)(j+m+1))",
+    "coupling_product_bound": "(j-m)(j+m+1)<=(j+1/2)^2",
+    "diagonal_completion": "(31 m^2 +/- 71 m + 40)/9 >= -9/124",
+    "exact_formula_audit": {
+      "audited_charge_block_count": 117,
+      "audited_two_j_maximum": 12,
+      "diagonal_shift_defect_count": 0,
+      "maximum_row_degree_defect_count": 0,
+      "single_coupling_bound_defect_count": 0,
+      "three_member_block_count": 66
+    },
+    "gershgorin_lower": "Lambda(j)=j(j+1)-9/124-(27/40)(j+1/2)=j^2+13j/40-1017/2480",
+    "maximum_block_dimension": 3,
+    "maximum_row_sum_upper": "(27/40)(j+1/2)",
+    "monotone_for": "j>=0",
+    "rational_radical_bound": "sqrt(5)<9/4",
+    "single_coupling_upper": "(27/80)(j+1/2)"
+  },
+  "unresolved_profile_ledger": [
+    {
+      "id": "profile_density_relative_to_berger_haar",
+      "need": "serialize the exact detector one-form source F_a(t) as the field on which Delta1 acts in the certified Fourier/Haar convention",
+      "status": "OPEN"
+    },
+    {
+      "id": "clock_uniform_polarized_repeated_laplacian_norm",
+      "need": "directed enclosure of sup_t ||Delta1^N F_a(t)||_L2 for at least one declared N",
+      "status": "OPEN"
+    },
+    {
+      "id": "numerical_tail_product",
+      "need": "multiply the certified Sobolev norm by the exact cutoff factor without replacing the complete tail by selected modes",
+      "status": "OPEN"
+    },
+    {
+      "id": "massive_two_form_tail_continuation",
+      "need": "propagate the certified Maxwell tail through h_a d and the massive two-form advanced Green operator",
+      "status": "OPEN"
+    }
+  ]
+}

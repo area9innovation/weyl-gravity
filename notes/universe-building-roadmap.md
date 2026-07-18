@@ -438,6 +438,14 @@ selected spatial widths below `0.02`, and amplified temporal coderivative
 widths below `1.2`; lower-band overlap passes.  This closes the selected
 finite-block exact-`T` temporal image representation.  The active gate is now
 the controlled spatial harmonic tail, not a detector-response promotion.
+The Green-weighted reduction now closes the operator half of that tail gate:
+all omitted Maxwell form blocks satisfy
+`Lambda(j)=j^2+13j/40-1017/2480`, with
+`Lambda(1025/2)=325899779/1240` above retained `two_j=1024`, and both exact-T
+Maxwell tail multipliers are `L2` contractions.  The numerical tail remains
+`OPEN`; the active input is the clock-uniform polarized repeated-Laplacian
+norm in the certified Berger Haar convention, followed by the massive-two-
+form continuation.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`; only that completion activates declared `K_Berger` equivariance and
@@ -1526,6 +1534,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_SELECTED_CHARGE_BLOCK_FORM_COMPANION_CLOCK_RAIL` (fired) | apply the exact temporal functional calculus to the 18 completed three-component helicity-block inputs and derive a controlled spatial tail; do not promote completed source inputs to a Green image, detector response, recoil or cone restriction |
 | `BERGER_SELECTED_CHARGE_BLOCK_TEMPORAL_BANDWIDTH_PREFLIGHT` (fired with order-14/p28 obstruction) | certify a correlated direct normalized clock-microphase transform in the exact selected-block spectral projectors with lower-band overlap; do not widen the `two_j<=138` theorem by carrier-name matching or append independent monomials as a cancellation repair |
 | `BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM` (fired) | derive a controlled spatial harmonic tail around the selected finite-block exact-`T` image representation, then compose the full Maxwell/massive Green chain; do not promote finite selected blocks to detector response or recoil |
+| `BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION` (fired) | evaluate the clock-uniform polarized repeated-Laplacian norm in the certified Berger Haar convention, multiply by the exact cutoff factor, then continue through the massive-two-form Green operator; do not promote the reduction theorem itself to a numerical tail or response |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

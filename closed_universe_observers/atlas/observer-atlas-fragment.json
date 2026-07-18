@@ -3393,6 +3393,134 @@
       }
     },
     {
+      "claim_boundary": "every omitted charge block obeys Lambda(j)=j^2+13j/40-1017/2480; above retained two_j=1024, Lambda(1025/2)=325899779/1240 and the exact spatial and coderivative Green multipliers add no L2 amplification; the evaluated profile Sobolev norm, numerical tail and massive continuation remain OPEN operator tail input only; absolute-g3 recoil remains OPEN NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "OPEN",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "NOT_APPLICABLE"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS.json",
+          "result_id": "BERGER_EXACT_MAXWELL_CHARGE_BLOCK_FORMULAS",
+          "sha256": "81e8977fef45cfe82f88e1e62025ad1f0720f9d394eb59446b297ea47369b4ad"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM.json",
+          "result_id": "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM",
+          "sha256": "09d51889e2396fa6388a769c9c37c69b1663f51581ed752ac26d1d9f7b776a42"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION.json",
+          "result_id": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION",
+          "sha256": "4e6c2ac1685221704ef42f7cd4d2a31d14daede5f9f048ec1d05e5dfe53cce83"
+        }
+      ],
+      "id": "observer.berger.detector_profile.green_weighted_spatial_tail_reduction",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=all omitted Berger Maxwell one-form representations under exact-T Green weighting; omega=exact cos(T sqrt(Delta1)) and delta sin(T sqrt(Delta1))/sqrt(Delta1); OPEN: the exact Maxwell tail reduction is not an evaluated profile tail or detector record",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "the Maxwell coderivative exact-T multiplier is contractive, but the complete source tail and massive-two-form continuation remain OPEN",
+          "status": "NOT_APPLICABLE"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "operator tail input only; absolute-g3 recoil remains OPEN; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "the reduction applies uniformly once the radius-1/128 detector one-form F_a(t) and its clock-uniform Sobolev norm are serialized; that norm remains OPEN",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: the exact Maxwell tail reduction is not an evaluated profile tail or detector record",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "evaluate the clock-uniform polarized repeated-Laplacian norm in the certified Berger Haar convention",
+          "status": "OPEN"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "every omitted charge block obeys Lambda(j)=j^2+13j/40-1017/2480; above retained two_j=1024, Lambda(1025/2)=325899779/1240 and the exact spatial and coderivative Green multipliers add no L2 amplification; the evaluated profile Sobolev norm, numerical tail and massive continuation remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "operator tail input only; absolute-g3 recoil remains OPEN",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "OPEN",
+          "status": "OPEN"
+        },
+        "survives_gauge_reduction": {
+          "statement": "the Maxwell coderivative exact-T multiplier is contractive, but the complete source tail and massive-two-form continuation remain OPEN",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "all omitted Berger Maxwell one-form representations under exact-T Green weighting",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": 1,
+        "ell": "form two_j>1024; legacy comparison two_j>138",
+        "k": "all representation columns and q=m+s charge blocks",
+        "m": "all representation rows",
+        "omega": "exact cos(T sqrt(Delta1)) and delta sin(T sqrt(Delta1))/sqrt(Delta1)",
+        "parity": "all theta_plus,theta3,theta_minus helicity charge blocks",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
       "claim_boundary": "Bridge 3 is inactive until a same-background Berger branch dictionary lands NO_CERTIFIED_MAP NO_CERTIFIED_MAP",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
@@ -3624,7 +3752,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "15f5fa016e560607e15b3ec49be5e3d3c7572f44d45cf1bf5e2933f9c4f02eb6",
+  "generated_by_sha256": "d1db385ef06de14c31e1f2f8d7304e024320d4b30b4f6af1d409bd2095c18e0b",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

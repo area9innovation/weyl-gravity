@@ -668,6 +668,21 @@ image representation is therefore `CERTIFIED`.  The active gate is now a
 controlled spatial harmonic tail before full Maxwell/massive Green
 composition, detector response, recoil and cone restriction.
 
+`BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION` now closes the operator half
+of that spatial gate without replacing the full tail by selected modes.  Exact
+completion of the three Maxwell charge-block diagonals gives the common shift
+`-9/124`; the at-most-two couplings give the rational Gershgorin lower bound
+`Lambda(j)=j^2+13j/40-1017/2480`.  For the first omitted representation above
+retained form `two_j=1024`, `Lambda(1025/2)=325899779/1240`, and the exact
+Sobolev factors through power four are exported.  Both
+`cos(T sqrt(Delta1))` and
+`delta sin(T sqrt(Delta1))/sqrt(Delta1)` are `L2` contractions, so the
+Maxwell Green step supplies no further tail amplification.  This reduction is
+`CERTIFIED`, while the evaluated tail remains `OPEN`: the active gate is now
+the clock-uniform polarized norm `sup_t ||Delta1^N F_a(t)||_L2` in the
+certified Berger Haar convention, followed by the numerical tail product and
+massive-two-form continuation.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

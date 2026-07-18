@@ -66,6 +66,13 @@ overlap.  Clock-transform widths are below `0.004`, selected spatial widths
 below `0.02`, and amplified temporal coderivative widths below `1.2`.  This is
 a finite selected exact-`T` image representation, not a controlled spatial
 tail, full Green image, detector response, recoil or cone restriction.
+The all-omitted-mode Green-weighted reduction is separately `CERTIFIED`.
+Every Maxwell form representation above the cutoff obeys the exact rational
+lower bound `Lambda(j)=j^2+13j/40-1017/2480`; the exact-T cosine and
+coderivative/sine multipliers are contractions.  The atlas keeps response and
+gauge-survival `OPEN`, because the polarized clock-uniform Sobolev norm,
+numerical tail product and massive-two-form continuation have not been
+evaluated.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

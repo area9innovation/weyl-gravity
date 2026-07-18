@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-green-weighted-spatial-tail-reduction-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "spectral_lower_bound_theorem", "cutoff_reductions", "maxwell_green_weighting", "unresolved_profile_ledger", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-green-weighted-spatial-tail-reduction-v1"},
+    "result_id": {"const": "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "EXACT_MAXWELL_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION_CERTIFIED_PROFILE_SOBOLEV_NORM_OPEN"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "spectral_lower_bound_theorem": {"type": "object"},
+    "cutoff_reductions": {"type": "array", "minItems": 2, "maxItems": 2},
+    "maxwell_green_weighting": {"type": "object", "properties": {"additional_tail_amplification_factor": {"const": "1"}}, "additionalProperties": true},
+    "unresolved_profile_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "properties": {"status": {"const": "OPEN"}}, "required": ["id", "status", "need"]}},
+    "mutation_results": {"type": "array", "minItems": 2, "maxItems": 2},
+    "flags": {
+      "type": "object",
+      "properties": {
+        "ALL_OMITTED_REPRESENTATION_DELTA1_LOWER_BOUND_EXPORTED": {"const": true},
+        "SELECTED_TWO_J1024_SOBOLEV_REDUCTION_FACTORS_EXPORTED": {"const": true},
+        "MAXWELL_EXACT_T_SPATIAL_TAIL_MULTIPLIER_CONTRACTIVE": {"const": true},
+        "MAXWELL_CODERIVATIVE_SINE_TAIL_MULTIPLIER_CONTRACTIVE": {"const": true},
+        "GREEN_WEIGHTED_MAXWELL_TAIL_CONVERSION_EXPORTED": {"const": true},
+        "EVALUATED_PROFILE_SOBOLEV_NORM_EXPORTED": {"const": false},
+        "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED": {"const": false},
+        "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED": {"const": false},
+        "MASSIVE_TWO_FORM_TAIL_BOUND_EXPORTED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "required": ["ALL_OMITTED_REPRESENTATION_DELTA1_LOWER_BOUND_EXPORTED", "SELECTED_TWO_J1024_SOBOLEV_REDUCTION_FACTORS_EXPORTED", "MAXWELL_EXACT_T_SPATIAL_TAIL_MULTIPLIER_CONTRACTIVE", "MAXWELL_CODERIVATIVE_SINE_TAIL_MULTIPLIER_CONTRACTIVE", "GREEN_WEIGHTED_MAXWELL_TAIL_CONVERSION_EXPORTED", "EVALUATED_PROFILE_SOBOLEV_NORM_EXPORTED", "VALIDATED_INFINITE_SPATIAL_MODE_TAIL_BOUND_EXPORTED", "FULL_ADVANCED_MAXWELL_GREEN_IMAGE_EVALUATED", "MASSIVE_TWO_FORM_TAIL_BOUND_EXPORTED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "EVALUATE_THE_CLOCK_UNIFORM_POLARIZED_PROFILE_SOBOLEV_NORM_IN_THE_CERTIFIED_BERGER_HAAR_CONVENTION"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}

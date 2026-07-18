@@ -122,3 +122,17 @@ def test_selected_correlated_clock_transform_certifies_image_not_response():
     assert "BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_green_weighted_tail_reduction_is_certified_without_tail_promotion():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.green_weighted_spatial_tail_reduction"
+    )
+    assert row["descriptions"]["causal"] == "CERTIFIED"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "CERTIFIED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert row["observer_data"]["survives_gauge_reduction"]["status"] == "OPEN"
+    assert "BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }
