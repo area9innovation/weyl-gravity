@@ -156,6 +156,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-homogeneous-nonzero-frequency-operator-submission-receipt.md`](reports/einstein-maxwell-weyl-homogeneous-nonzero-frequency-operator-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-exceptional-ell1-resonance-census.json`](contributions/einstein-maxwell-weyl-exceptional-ell1-resonance-census.json)
 - [`reports/einstein-maxwell-weyl-exceptional-ell1-resonance-census-submission-receipt.md`](reports/einstein-maxwell-weyl-exceptional-ell1-resonance-census-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-global-spectator-ell2-extra-resonance.json`](contributions/einstein-maxwell-weyl-global-spectator-ell2-extra-resonance.json)
+- [`reports/einstein-maxwell-weyl-global-spectator-ell2-extra-resonance-submission-receipt.md`](reports/einstein-maxwell-weyl-global-spectator-ell2-extra-resonance-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)

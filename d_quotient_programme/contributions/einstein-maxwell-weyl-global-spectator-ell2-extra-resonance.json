@@ -1,0 +1,34 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; constant circumference and Wilson directions crossed with every axial/polar ell=2,k=0 extra-primary mode",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "flat Wilson holonomy leaves F and the Euler operator unchanged, so every W_x-times-extra source vanishes",
+    "the circumference direction belongs to an exact circle-radius family transporting every k=0 extra Jacobi field",
+    "differentiating the transported Jacobi equation gives an explicit mixed correction and puts every c-times-extra source in the linear image",
+    "neither spectator can cancel the exceptional adjoint defect, for either parity or any m"
+  ],
+  "evidence": {
+    "commit": "bcafc3bf6df80b8e354f4c4c656a227688de8d07",
+    "path": "bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json",
+    "sha256": "e3cb628273df1f7984559c4721d01b89d7fb1696b5dd5bb6f3e5aba8ebc94c13"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "compute the a,b,d,Q_e and twist-position/velocity cross-source matrix against the ell=2 extra block",
+  "not_established": [
+    "the remaining global-times-extra source coefficients",
+    "difference-frequency and opposite-momentum resonances",
+    "all-orders, residual, causal, scattering, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_global_spectator_ell2_extra",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_global_spectator_ell2_extra_resonance",
+  "team_id": "einstein_boundary",
+  "verdict": "CIRCUMFERENCE_AND_WILSON_RESONANT_CROSS_SOURCES_REMOVABLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_global_spectator_ell2_extra_resonance --verify bridge/certificates/einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_spectator_ell2_extra_resonance.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_global_spectator_ell2_extra_resonance"
+  ]
+}
