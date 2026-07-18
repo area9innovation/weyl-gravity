@@ -8,6 +8,7 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
     def test_current_gate_is_input_blocked(self):
         value = result.build()
         self.assertTrue(all(status == "MISSING" for status in value["input_status"].values()))
+        self.assertNotIn("relative_branch_dictionary", value["dependency_refs"])
         self.assertFalse(value["scope_guard"]["berger_tensors_eligible"])
         self.assertFalse(value["claim_flags"]["Q4_AUTHORIZED"])
 

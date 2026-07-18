@@ -31,7 +31,7 @@
         }
       }
     },
-    "dependency_refs": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "dependency_refs": {"type": "object", "minProperties": 3, "additionalProperties": {"$ref": "#/$defs/artifact"}},
     "required_computation": {"type": "array", "minItems": 7, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
     "scope_guard": {"type": "object", "additionalProperties": false, "required": ["berger_tensors_eligible", "reason", "berger_filtered_obstruction_preserved", "q4_authorized"], "properties": {"berger_tensors_eligible": {"const": false}, "reason": {"type": "string", "minLength": 1}, "berger_filtered_obstruction_preserved": {"const": true}, "q4_authorized": {"const": false}}},
     "claim_flags": {"type": "object", "additionalProperties": false, "required": ["PREFLIGHT_READY", "ALL_SCIENTIFIC_INPUTS_IMPORTED", "RELATIVE_ARITY_TWO_DEFECT_COMPUTED", "RELATIVE_ARITY_THREE_DEFECT_COMPUTED", "COHOMOLOGY_OPERATION_DECIDED", "CYCLIC_DEFORMATION_CLASS_DECIDED", "Q4_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {"PREFLIGHT_READY": {"const": true}, "ALL_SCIENTIFIC_INPUTS_IMPORTED": {"type": "boolean"}, "RELATIVE_ARITY_TWO_DEFECT_COMPUTED": {"const": false}, "RELATIVE_ARITY_THREE_DEFECT_COMPUTED": {"const": false}, "COHOMOLOGY_OPERATION_DECIDED": {"const": false}, "CYCLIC_DEFORMATION_CLASS_DECIDED": {"const": false}, "Q4_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},

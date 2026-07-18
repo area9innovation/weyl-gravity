@@ -51,7 +51,6 @@ TAYLOR_FLAGS = (
     "INDEPENDENT_VERIFIER_PASS",
 )
 DEPENDENCIES = {
-    "relative_branch_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
     "source_transfer_dictionary": ROOT / "d_quotient_classical/certificates/NONLINEAR_SOURCE_TRANSFER_TANGENT_CONE_DICTIONARY_V1.json",
     "finite_harmonic_tangent_cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
     "berger_filtered_ell3_obstruction": ROOT / "d_quotient_classical/certificates/BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1.json",
@@ -114,10 +113,6 @@ def _select(candidates: tuple[Path, ...], validator) -> tuple[dict | None, Path 
 
 
 def build() -> dict:
-    branch = _load(DEPENDENCIES["relative_branch_dictionary"])
-    branch_gate = branch.get("classification", {}).get("bridge_1_activation_gate_satisfied")
-    if not isinstance(branch_gate, bool):
-        raise ValueError("relative branch dictionary has no boolean Bridge-1 lifecycle flag")
     triangle, triangle_path = _select(TRIANGLE_CANDIDATES, validate_triangle)
     einstein_id = "EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"
     weyl_id = "WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1"
