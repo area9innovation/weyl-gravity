@@ -1,0 +1,554 @@
+{
+  "action_pairing": {
+    "compact_support_boundary_term": "zero",
+    "field_equation_interpretation": "evaluation pairing after the tensor Gram has converted the Bach output to H1-dual coordinates",
+    "field_equation_pairing": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ],
+        [
+          4,
+          4,
+          "1"
+        ],
+        [
+          5,
+          5,
+          "1"
+        ],
+        [
+          6,
+          6,
+          "1"
+        ],
+        [
+          7,
+          7,
+          "1"
+        ],
+        [
+          8,
+          8,
+          "1"
+        ]
+      ],
+      "sha256": "3223a03fb4cb2282dccc6a63dac6d4482de2d4a7f3297293d850985d59fde089",
+      "shape": [
+        9,
+        9
+      ]
+    },
+    "ghost_identity_pairing": {
+      "entries": [
+        [
+          0,
+          0,
+          "-1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ]
+      ],
+      "sha256": "864bdcbd5a48c75ae414cbde73f8d1e7fb3aa6730127bf38cedc27c4b5da4dbd",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "tensor_gram_not_applied_twice": true
+  },
+  "claim_boundary": "This certificate derives the endpoint field/equation and ghost/identity pairings from the action-coordinate types, derives Ksharp from K, and verifies the exact four-row metric Bach BV complex on unit Nariai: B K=0, Ksharp B=0, Q squared zero modulo those coefficient identities, and odd cyclicity. Formal self-adjointness of B is the second-variation theorem for the Weyl-squared action at the Bach-flat background; the known generic post-normal-order PBW adjoint path is not used as authority. This does not yet construct a chain equivalence to the parent curvature-incidence cylinder, the relative equation/identity-row cone or SDR, any Green homotopy, an open background class, nonlinear interactions, or a quantum claim.",
+  "complex": {
+    "B_action_sha256": "91658e2c3bd6deb6c713ee410ea5fd427d42c9baab927b089997cfac67f67922",
+    "abstract_differential_sha256": "bcc893b027148d900a393d98ba180a0ba2c472e221d3a76ffc44e0dc0ccc2007",
+    "abstract_pairing_sha256": "c2975244a11a82d4d1bae195d210df5061dff4b0c4b3917ce6adf5a16f535fbc",
+    "arrows": [
+      "K",
+      "B_action",
+      "Ksharp"
+    ],
+    "block_degrees": [
+      -1,
+      0,
+      1,
+      2
+    ],
+    "block_dimensions": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "block_names": [
+      "ghost_H0",
+      "metric_H1",
+      "metric_equation_H1dual",
+      "identity_H0dual"
+    ]
+  },
+  "dependency_refs": {
+    "action_bach_endpoint": {
+      "artifact_id": "NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json",
+      "sha256": "1dcc5e83f6942b3598930b8ffe206bc8ff0b0f821d74b9925ad61e5db9b8267d"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "B_K_defect_entries": 0,
+    "B_formal_self_adjointness": "the Hessian symmetry of the Weyl-squared action at the Bach-flat Nariai solution, for compactly supported variations",
+    "B_orders": [
+      0,
+      2,
+      4
+    ],
+    "K_orders": [
+      1
+    ],
+    "Ksharp_B_defect_entries": 0,
+    "Ksharp_orders": [
+      1
+    ],
+    "abstract_Q_squared_mod_Noether": true,
+    "abstract_odd_cyclicity": true,
+    "action_pairing_reconciled": true,
+    "coefficientwise_generic_PBW_adjoint_used_as_authority": false
+  },
+  "exact_operators": {
+    "B_action": {
+      "artifact_path": "d_quotient_classical/certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json",
+      "coefficient_sha256": "91658e2c3bd6deb6c713ee410ea5fd427d42c9baab927b089997cfac67f67922",
+      "orders": [
+        0,
+        2,
+        4
+      ]
+    },
+    "K": {
+      "entries": [
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                1,
+                "-1/2"
+              ],
+              [
+                1,
+                0,
+                "-1/4"
+              ],
+              [
+                2,
+                2,
+                "-1/2"
+              ],
+              [
+                4,
+                0,
+                "-1/4"
+              ],
+              [
+                5,
+                3,
+                "-1/2"
+              ],
+              [
+                8,
+                0,
+                "-1/4"
+              ]
+            ],
+            "sha256": "00e7f11678af22fd4a727b815c576d6be38ef480b028c67fd9d10f7d1c130a2d",
+            "shape": [
+              9,
+              4
+            ]
+          },
+          "word": [
+            0
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                0,
+                "1/2"
+              ],
+              [
+                1,
+                1,
+                "3/4"
+              ],
+              [
+                3,
+                2,
+                "1/2"
+              ],
+              [
+                4,
+                1,
+                "-1/4"
+              ],
+              [
+                6,
+                3,
+                "1/2"
+              ],
+              [
+                8,
+                1,
+                "-1/4"
+              ]
+            ],
+            "sha256": "f4f27e834071f45e94a82a2ce342db99fbd475454aafcc1b08422165174bacd0",
+            "shape": [
+              9,
+              4
+            ]
+          },
+          "word": [
+            1
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                1,
+                2,
+                "-1/4"
+              ],
+              [
+                2,
+                0,
+                "1/2"
+              ],
+              [
+                3,
+                1,
+                "1/2"
+              ],
+              [
+                4,
+                2,
+                "3/4"
+              ],
+              [
+                7,
+                3,
+                "1/2"
+              ],
+              [
+                8,
+                2,
+                "-1/4"
+              ]
+            ],
+            "sha256": "0804e01e72de9ed5c540ec9ff6357c9c2307a681c09336a16a000876024f04b8",
+            "shape": [
+              9,
+              4
+            ]
+          },
+          "word": [
+            2
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                1,
+                3,
+                "-1/4"
+              ],
+              [
+                4,
+                3,
+                "-1/4"
+              ],
+              [
+                5,
+                0,
+                "1/2"
+              ],
+              [
+                6,
+                1,
+                "1/2"
+              ],
+              [
+                7,
+                2,
+                "1/2"
+              ],
+              [
+                8,
+                3,
+                "3/4"
+              ]
+            ],
+            "sha256": "53c287fc3e0f4030dc63c3b9c5e1702b68c36ed552628c2a20b630e81e917b48",
+            "shape": [
+              9,
+              4
+            ]
+          },
+          "word": [
+            3
+          ]
+        }
+      ],
+      "sha256": "1308e2c3a0645c6e6fad661a2f77d12ad6ea26af01978790a8e7e04052ccf4ce"
+    },
+    "Ksharp": {
+      "entries": [
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                1,
+                "-1/4"
+              ],
+              [
+                0,
+                4,
+                "-1/4"
+              ],
+              [
+                0,
+                8,
+                "-1/4"
+              ],
+              [
+                1,
+                0,
+                "1/2"
+              ],
+              [
+                2,
+                2,
+                "1/2"
+              ],
+              [
+                3,
+                5,
+                "1/2"
+              ]
+            ],
+            "sha256": "caac794ec1fd98f70ec570d7e562fbddf439e8430d40049e5cededab798d91b9",
+            "shape": [
+              4,
+              9
+            ]
+          },
+          "word": [
+            0
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                0,
+                "1/2"
+              ],
+              [
+                1,
+                1,
+                "-3/4"
+              ],
+              [
+                1,
+                4,
+                "1/4"
+              ],
+              [
+                1,
+                8,
+                "1/4"
+              ],
+              [
+                2,
+                3,
+                "-1/2"
+              ],
+              [
+                3,
+                6,
+                "-1/2"
+              ]
+            ],
+            "sha256": "e0701bd6171478c46411e70c4b9ecdac5a72d36d2e804829cf8240b50342fdfa",
+            "shape": [
+              4,
+              9
+            ]
+          },
+          "word": [
+            1
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                2,
+                "1/2"
+              ],
+              [
+                1,
+                3,
+                "-1/2"
+              ],
+              [
+                2,
+                1,
+                "1/4"
+              ],
+              [
+                2,
+                4,
+                "-3/4"
+              ],
+              [
+                2,
+                8,
+                "1/4"
+              ],
+              [
+                3,
+                7,
+                "-1/2"
+              ]
+            ],
+            "sha256": "d484663964083993b92255cda1f34634500eb1b88c91ba84db8e7913baba6d55",
+            "shape": [
+              4,
+              9
+            ]
+          },
+          "word": [
+            2
+          ]
+        },
+        {
+          "matrix": {
+            "entries": [
+              [
+                0,
+                5,
+                "1/2"
+              ],
+              [
+                1,
+                6,
+                "-1/2"
+              ],
+              [
+                2,
+                7,
+                "-1/2"
+              ],
+              [
+                3,
+                1,
+                "1/4"
+              ],
+              [
+                3,
+                4,
+                "1/4"
+              ],
+              [
+                3,
+                8,
+                "-3/4"
+              ]
+            ],
+            "sha256": "301e012fcf9541dfcf431289737de9ff48db06825c374184012033a493101a99",
+            "shape": [
+              4,
+              9
+            ]
+          },
+          "word": [
+            3
+          ]
+        }
+      ],
+      "sha256": "16ae125b043ea67bf6c2b8decda85d98110c9751296c7b007c7b608fa07112d7"
+    }
+  },
+  "flags": {
+    "NARIAI_ACTION_PAIRING_RECONCILED": true,
+    "NARIAI_GREEN_HOMOTOPY": false,
+    "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1": true,
+    "NARIAI_METRIC_BACH_ENDPOINT_CHAIN_COMPLEX": true,
+    "OPEN_BACKGROUND_CLASS": false,
+    "QUANTUM_CLAIM": false,
+    "RELATIVE_EQUATION_IDENTITY_CONE": false,
+    "RELATIVE_PARENT_METRIC_CHAIN_EQUIVALENCE": false
+  },
+  "next_gate": "C_G2_NARIAI_RELATIVE_EQUATION_IDENTITY_CONE",
+  "provenance": {
+    "source_manifest": {
+      "covariant_completion/curved_operator/adjoint_tractor_kostant_compression.py": "57c46c94701f57912612ad0e9100746a7acf533e44a35c3a712c40afd64efbb7",
+      "covariant_completion/minimal_witness/formal_operators.py": "06800afdea13f134bb5101111127a87688cae552360321e8e5cbb88358fb5d7e",
+      "d_quotient_classical/causal_transfer/nariai_linearized_bach_endpoint.py": "bf7b91ece73be1ec22e7124db4bbe73325ab9a5b2db264b55e88bbed820b112c",
+      "d_quotient_classical/causal_transfer/nariai_metric_bach_cyclic_bv_complex.py": "2b65492e9bfeff91719af4ee3b373182cfe703b515dc8306562211a94bebbe62",
+      "d_quotient_classical/causal_transfer/nariai_yang_mills_middle_compression.py": "d8a3420d79708092556b0412dba7aba9d81b3a27715d70fd3775cc460707e868",
+      "d_quotient_classical/causal_transfer/tests/test_nariai_metric_bach_cyclic_bv_complex.py": "1d0c6fdf13409b8975d722660ae4d0a7f19f57f53ab59ec0ede9d6a1504814ad",
+      "d_quotient_classical/causal_transfer/verify_nariai_metric_bach_cyclic_bv_complex.py": "8e7b691daec262051d7e1b3fb43df0e41ffac51ab7830d2108b3b2643999bdab",
+      "d_quotient_classical/schema/nariai-metric-bach-cyclic-bv-complex-v1.schema.json": "d0a81b66f4b55dae7b7e5bcd9e0c9b2729639c14508075921a710dbaaece9b5a"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_metric_bach_cyclic_bv_complex.py --check --guards",
+      "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_metric_bach_cyclic_bv_complex.py",
+      "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_metric_bach_cyclic_bv_complex",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-metric-bach-cyclic-bv-complex-v1.schema.json -d d_quotient_classical/certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json"
+    ]
+  },
+  "result_id": "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1",
+  "result_state": "ACTION_PAIRED_FOUR_ROW_METRIC_BACH_COMPLEX_EXACT",
+  "schema": "pure-weyl-nariai-metric-bach-cyclic-bv-complex-v1"
+}

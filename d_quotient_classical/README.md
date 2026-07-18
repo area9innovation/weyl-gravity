@@ -230,11 +230,20 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   Its symmetry, trace, divergence and gauge defects vanish exactly.  In the
   repository normalization the corrected parent compression obeys
   `B_parent,comp+Q_unique=-2 B_action` coefficientwise; an independent
-  product-scaling family fixes the algebraic normalization.  The active gate
-  is therefore the Hom-bundle/action-pairing reconciliation and relative
-  equation/identity-row cone, not another endpoint coefficient search:
+  product-scaling family fixes the algebraic normalization.  This supplies
+  the operator used by the typed action-pairing theorem below:
   [`certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json`](certificates/NARIAI_ACTION_DERIVED_BACH_ENDPOINT_V1.json),
   [`reports/nariai-action-derived-bach-endpoint.md`](reports/nariai-action-derived-bach-endpoint.md)
+- Action-paired metric BV endpoint: the tensor Gram is applied exactly once,
+  when the Bach tensor is converted into endpoint covector coordinates.  The
+  resulting field/equation pairing is `I9`, the ghost/identity pairing is
+  `diag(-1,1,1,1)`, and the exact four-row complex
+  `H0 -> H1 -> H1dual -> H0dual` is nilpotent and odd cyclic.  An independent
+  consumer reconstructs `Ksharp`, `B K=0` and the tensor divergence directly
+  from the serialized coefficient tables.  The next gate is now solely the
+  relative parent--metric equation/identity-row cone:
+  [`certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json`](certificates/NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1.json),
+  [`reports/nariai-metric-bach-cyclic-bv-complex.md`](reports/nariai-metric-bach-cyclic-bv-complex.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

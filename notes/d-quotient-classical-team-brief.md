@@ -1101,12 +1101,31 @@ coefficientwise, with zero defect, and an independent product-scaling family
 checks the algebraic coefficient.  Thus the old certificate showing that
 \(Q_{\rm unique}\) alone is noncyclic remains only a diagnostic of the
 provisional coefficientwise Hom-bundle adjoint; it is not an endpoint no-go.
-The strict field graph is still excluded by the Killing-field theorem.  The
-active gate is now
-`C_G2_NARIAI_RELATIVE_CYCLIC_PAIRING_AND_EQUATION_CONE`: derive the true
-action metric/antifield pairing in the parent coordinates, complete the
-relative equation and identity rows, and only then attempt an SDR or Green
-transfer.
+The strict field graph is still excluded by the Killing-field theorem.
+
+`NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1` now closes the endpoint pairing
+layer.  The Bach output is already in evaluation-dual coordinates, so the
+tensor Gram is not applied a second time: the field/equation pairing is
+(I_9), while the ghost/identity pairing is
+(\operatorname{diag}(-1,1,1,1)).  The typed adjoint (K^\sharp) is derived
+from these pairings.  The identities
+
+\[
+B_{\rm action}K=0,
+\qquad
+K^\sharp B_{\rm action}=0
+\]
+
+are exact, and the four-row complex
+(H_0\to H_1\to H_1^*\to H_0^*) is nilpotent and odd cyclic.  An independent
+consumer reconstructs both Noether identities from the serialized Bach and
+BGG tables, including the tensor divergence.  Formal self-adjointness of the
+middle row is the second-variation theorem for the Weyl-squared action at the
+Bach-flat solution; the deficient generic normal-order adjoint is not used as
+authority.  The active gate is now
+`C_G2_NARIAI_RELATIVE_EQUATION_IDENTITY_CONE`: compare this exact metric
+complex to the certified curvature-incidence cylinder on every equation and
+identity row, and only then attempt an SDR or Green transfer.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and

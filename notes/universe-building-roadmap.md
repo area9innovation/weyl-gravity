@@ -147,14 +147,16 @@ action-derived trace-free Bach endpoint is now also exact: after retaining
 every connection variation against the parallel background Weyl tensor, it
 has zero tensor, Noether and divergence defects and satisfies
 `B_parent,comp+Q_unique=-2 B_action` coefficientwise.  This supersedes the
-old interpretation of `Q_unique` as an algebraic endpoint no-go; that receipt
-now diagnoses only the provisional Hom-bundle adjoint convention.  The next
-gate is `C_G2_NARIAI_RELATIVE_CYCLIC_PAIRING_AND_EQUATION_CONE`: reconcile the
-action metric/antifield pairing, construct the relative equation/identity-row
-cone and its dual completion, and only then build or transfer retarded and
-advanced Green homotopies.  Do not reopen endpoint coefficient fitting or
-higher-order field-graph fitting, or claim endpoint equivalence or a Nariai
-Green homotopy before this gate closes.
+old interpretation of `Q_unique` as an algebraic endpoint no-go.  The action
+pairing is now reconciled as well: the tensor Gram is used once to produce
+evaluation-dual Bach coordinates, and the resulting exact four-row metric
+complex is nilpotent and odd cyclic with both Noether identities independently
+replayed.  The next gate is `C_G2_NARIAI_RELATIVE_EQUATION_IDENTITY_CONE`:
+construct the parent--metric comparison on every equation and identity row
+and its dual completion, and only then build or transfer retarded and advanced
+Green homotopies.  Do not reopen endpoint coefficient fitting or higher-order
+field-graph fitting, or claim endpoint equivalence or a Nariai Green homotopy
+before this gate closes.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

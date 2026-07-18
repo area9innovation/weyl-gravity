@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/pure-weyl/nariai-metric-bach-cyclic-bv-complex-v1.schema.json",
+  "title": "Action-paired Nariai metric Bach cyclic BV complex",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "complex", "action_pairing", "exact_operators", "exact_checks", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-metric-bach-cyclic-bv-complex-v1"},
+    "result_id": {"const": "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1"},
+    "result_state": {"const": "ACTION_PAIRED_FOUR_ROW_METRIC_BACH_COMPLEX_EXACT"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "items": false, "minItems": 1, "maxItems": 1},
+    "dependency_refs": {
+      "type": "object",
+      "required": ["action_bach_endpoint"],
+      "properties": {"action_bach_endpoint": {"$ref": "#/$defs/dependency"}},
+      "additionalProperties": false
+    },
+    "complex": {
+      "type": "object",
+      "required": ["block_names", "block_degrees", "block_dimensions", "arrows", "B_action_sha256", "abstract_differential_sha256", "abstract_pairing_sha256"],
+      "properties": {
+        "block_names": {"type": "array", "prefixItems": [{"const": "ghost_H0"}, {"const": "metric_H1"}, {"const": "metric_equation_H1dual"}, {"const": "identity_H0dual"}], "items": false, "minItems": 4, "maxItems": 4},
+        "block_degrees": {"type": "array", "prefixItems": [{"const": -1}, {"const": 0}, {"const": 1}, {"const": 2}], "items": false, "minItems": 4, "maxItems": 4},
+        "block_dimensions": {"type": "array", "prefixItems": [{"const": 4}, {"const": 9}, {"const": 9}, {"const": 4}], "items": false, "minItems": 4, "maxItems": 4},
+        "arrows": {"type": "array", "prefixItems": [{"const": "K"}, {"const": "B_action"}, {"const": "Ksharp"}], "items": false, "minItems": 3, "maxItems": 3},
+        "B_action_sha256": {"$ref": "#/$defs/sha256"},
+        "abstract_differential_sha256": {"$ref": "#/$defs/sha256"},
+        "abstract_pairing_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "action_pairing": {
+      "type": "object",
+      "required": ["ghost_identity_pairing", "field_equation_pairing", "field_equation_interpretation", "tensor_gram_not_applied_twice", "compact_support_boundary_term"],
+      "properties": {
+        "ghost_identity_pairing": {"$ref": "#/$defs/sparseMatrix"},
+        "field_equation_pairing": {"$ref": "#/$defs/sparseMatrix"},
+        "field_equation_interpretation": {"type": "string"},
+        "tensor_gram_not_applied_twice": {"const": true},
+        "compact_support_boundary_term": {"const": "zero"}
+      },
+      "additionalProperties": false
+    },
+    "exact_operators": {
+      "type": "object",
+      "required": ["K", "Ksharp", "B_action"],
+      "properties": {
+        "K": {"$ref": "#/$defs/sparseTable"},
+        "Ksharp": {"$ref": "#/$defs/sparseTable"},
+        "B_action": {
+          "type": "object",
+          "required": ["artifact_path", "coefficient_sha256", "orders"],
+          "properties": {
+            "artifact_path": {"type": "string"},
+            "coefficient_sha256": {"$ref": "#/$defs/sha256"},
+            "orders": {"type": "array", "prefixItems": [{"const": 0}, {"const": 2}, {"const": 4}], "items": false, "minItems": 3, "maxItems": 3}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "exact_checks": {
+      "type": "object",
+      "required": ["abstract_Q_squared_mod_Noether", "abstract_odd_cyclicity", "B_K_defect_entries", "Ksharp_B_defect_entries", "K_orders", "Ksharp_orders", "B_orders", "B_formal_self_adjointness", "coefficientwise_generic_PBW_adjoint_used_as_authority", "action_pairing_reconciled"],
+      "properties": {
+        "abstract_Q_squared_mod_Noether": {"const": true},
+        "abstract_odd_cyclicity": {"const": true},
+        "B_K_defect_entries": {"const": 0},
+        "Ksharp_B_defect_entries": {"const": 0},
+        "K_orders": {"type": "array", "prefixItems": [{"const": 1}], "items": false, "minItems": 1, "maxItems": 1},
+        "Ksharp_orders": {"type": "array", "prefixItems": [{"const": 1}], "items": false, "minItems": 1, "maxItems": 1},
+        "B_orders": {"type": "array", "prefixItems": [{"const": 0}, {"const": 2}, {"const": 4}], "items": false, "minItems": 3, "maxItems": 3},
+        "B_formal_self_adjointness": {"type": "string", "minLength": 40},
+        "coefficientwise_generic_PBW_adjoint_used_as_authority": {"const": false},
+        "action_pairing_reconciled": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "object",
+      "required": ["NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1", "NARIAI_ACTION_PAIRING_RECONCILED", "NARIAI_METRIC_BACH_ENDPOINT_CHAIN_COMPLEX", "RELATIVE_PARENT_METRIC_CHAIN_EQUIVALENCE", "RELATIVE_EQUATION_IDENTITY_CONE", "NARIAI_GREEN_HOMOTOPY", "OPEN_BACKGROUND_CLASS", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_METRIC_BACH_CYCLIC_BV_COMPLEX_V1": {"const": true},
+        "NARIAI_ACTION_PAIRING_RECONCILED": {"const": true},
+        "NARIAI_METRIC_BACH_ENDPOINT_CHAIN_COMPLEX": {"const": true},
+        "RELATIVE_PARENT_METRIC_CHAIN_EQUIVALENCE": {"const": false},
+        "RELATIVE_EQUATION_IDENTITY_CONE": {"const": false},
+        "NARIAI_GREEN_HOMOTOPY": {"const": false},
+        "OPEN_BACKGROUND_CLASS": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "C_G2_NARIAI_RELATIVE_EQUATION_IDENTITY_CONE"},
+    "claim_boundary": {"type": "string", "minLength": 200},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "dependency": {
+      "type": "object",
+      "required": ["artifact_id", "path", "sha256"],
+      "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/sha256"}},
+      "additionalProperties": false
+    },
+    "sparseMatrix": {
+      "type": "object",
+      "required": ["shape", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 1}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 2, "maxItems": 2},
+        "entries": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "sparseTable": {
+      "type": "object",
+      "required": ["entries", "sha256"],
+      "properties": {
+        "entries": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["word", "matrix"], "properties": {"word": {"type": "array", "items": {"type": "integer", "minimum": 0, "maximum": 3}, "maxItems": 4}, "matrix": {"$ref": "#/$defs/sparseMatrix"}}, "additionalProperties": false}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_manifest", "verification_commands"],
+      "properties": {
+        "source_manifest": {"type": "object", "minProperties": 8, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+        "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  }
+}
