@@ -1,0 +1,34 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; standard axial ell=1 twist position and velocity vectors with A cross B=0, balanced homogeneous a,c,d data, and b=Q_e=W_x=0",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the direct four-dimensional quadratic source is independent of the arbitrary homogeneous circumference position c",
+    "every standard collinear twist pair satisfying 3a^2=4|B|^2 has an explicit complete L=0, polar L=2, and axial L=1 second-order correction",
+    "the independent homogeneous velocity d is removed by an axial polynomial correction, so the extendible face is strictly larger than a time-translation orbit",
+    "SO(3) covariance closes the complete standard vector face A cross B=0, including the B=0 boundary"
+  ],
+  "evidence": {
+    "commit": "2fb2ff8405fa91ae4e92f90963b833c6363968ad",
+    "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+    "sha256": "c5594fb45209332f7d1bf8d143908a490bcaa2c3f794b72fe7f3302ddb93a43e"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "classify physical and exceptional fourth-order ell=1 inputs, then enlarge the homogeneous slice to b,Q_e,W_x",
+  "not_established": [
+    "physical or extra fourth-order ell=1 input closure",
+    "the homogeneous b,Q_e,W_x enlargement",
+    "all-orders, residual, causal, scattering, particle, or quantum claims"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_homogeneous_twist_collinear",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_homogeneous_twist_collinear_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_STANDARD_COLLINEAR_TWIST_FACE_EXTENDIBLE",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_twist_collinear_second_order --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_twist_collinear_second_order"
+  ]
+}

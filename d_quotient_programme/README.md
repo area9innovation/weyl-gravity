@@ -140,6 +140,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-homogeneous-twist-balanced-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-homogeneous-twist-balanced-second-order-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-twist-velocity-so3-orbit-second-order.json`](contributions/einstein-maxwell-weyl-twist-velocity-so3-orbit-second-order.json)
 - [`reports/einstein-maxwell-weyl-twist-velocity-so3-orbit-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-twist-velocity-so3-orbit-second-order-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-homogeneous-twist-collinear-second-order.json`](contributions/einstein-maxwell-weyl-homogeneous-twist-collinear-second-order.json)
+- [`reports/einstein-maxwell-weyl-homogeneous-twist-collinear-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-homogeneous-twist-collinear-second-order-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)
