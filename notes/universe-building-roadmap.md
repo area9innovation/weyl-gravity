@@ -46,7 +46,7 @@ The backgrounds must remain separate until an explicit bridge is certified.
 | Positive Berger clock | healthy rotating scalar clock and fixed-coupling `D`-degeneracy; complete 54-row causal clock complex; repaired mixed \(q_2,q_3\), retained \(\ell_3\), full retained BV cyclicity, and an exact first-page obstruction to removing the mixed \(\ell_3\) by the declared filtered cyclic `F2/F3` class; exact spatially global retarded relational Maxwell observable with \(1+z=2\); exact cyclic rank-46 STF2 graph carrier and physical-helicity quotient; exact subprincipal obstruction to the requested support-local branch projector; covariantly normalized coefficientwise 84-row apparatus unary through the mixed first jet with a formal bivariate Green coefficient; exact apparatus cubic/quartic action jets, rank-two affine-`K` family observer morphism, scoped C-G4 two-record Poisson algebra, receiver-adjacent localized-emitter rank-two transfer, recoil-input underdetermination with formal rank stability, selected 108-row massive-two-form emitter handoff, certified 108-row unary, first formal coupled Euler recoil Green term, coefficientwise causal chain homotopy through \(g^2\), rank-two leading transfer from actual localized massive-emitter Cauchy data, the exact absolute-\(g^3\)/relative-\(g^2\) recoil operator, exact normalized compact emitter switches, the emitter stress/clock-switch \(q_2\) backreaction jet, and the covariant all-row \(q_1q_2\) master identity | a residual-cohomology or SDR-independent deformation-class theorem beyond the declared filtered equivalence relation, a different noncontractible filtered or mixed-bundle branch split, a branch-resolved mode-pair source table, original common-Hopf emitter, detector-selected emitter Cauchy profiles/Green images and evaluated recoil coefficient, support-local 108-row PBW payload and solved backreacted branch, full apparatus/harmonic algebra, full `q4` and higher brackets, fixed-background linear descent, finite-parameter/all-orders Green hyperbolicity, all-orders closure, or genericity |
 | Compact Einstein--Maxwell product | complete standard harmonic Einstein--Maxwell inclusion with nondegenerate nonsymplectic Weyl--Maxwell pullback; generic extra branches and their Lee--Wald pairing; pure-extra Taub no-go, classified mixed moment-map cones, and a two-parameter second-order-extendible face | quadratic-source disposition on every mixed-cone stratum, exceptional fourth-order targets, nonlinear causal closure, or asymptotic radiation |
 | Quantum local algebra | complete full-BV even/odd local quotient on the regular Bach locus; exact repository Euclidean elliptic complex; Ricci-flat `C2` and round-`S4` Euler coefficient carriers giving `(199/30,-87/20,0,0)`; nontrivial regulated Slavnov insertion and `OBSTRUCTED_STRICT_FIELD_CONTENT` local Euclidean QME; generated fail-closed quantum residual-atlas fragment | matter cancellation or certified Wess--Zumino compensator restoration, residual quantum transfer, global BRST Hadamard state, Lorentzian QME, certified particle crosswalk, or scattering |
-| Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; independently verified bare Lee--Wald static surface form and nonintegrability on the chart-normalized parameter family | a normalized field-dependent generator, globally admissible residual quotient, differentiable horizon/outer-boundary phase space, first law, exterior causal perturbations, or stability |
+| Static pure-Weyl black holes | exact static spherical Bach-flat family and regular three-horizon fixture; bare nonintegrability removed by the basicness-forced normalized generator `chi = u d_t` with exact Hamiltonian `H = -16 pi alpha beta^2 D2`, Wald entropy, and first law at every simple horizon; linear-level frame independence: arbitrary time-dependent conformal and `l=0` diffeo perturbations carry exactly zero charge and flux, entropy conformally invariant on the symbolic family, unique linear generator extension | radiative `l>=2` bilinear flux matrix and exterior causal complex (BH-2A), second-order/physical-process first law, nonlinear horizon dynamics, stability, or any ringdown statement |
 
 No row may be used as evidence for another row merely because both use the
 word cylinder, wave, or Einstein.
@@ -61,7 +61,7 @@ Nonlinear:   preserve the filtered ell3 obstruction and await an admissible bran
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     test matter cancellation or a certified Wess--Zumino compensator extension after the strict-field-content QME obstruction
 Observer:    resolve the profile-bandwidth obstruction, compose massive images, evaluate recoil, and restrict records to Z2^C
-Black hole:  resolve generator normalization and the first physical boundary ensemble
+Black hole:  build the odd-parity exterior complex and bilinear flux matrix (BH-2A)
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
@@ -274,6 +274,11 @@ gives the cosine-kernel spatial block, the spatial coderivative gives the
 sine-kernel temporal block, and both finite-mode advanced Maxwell images are
 certified through `two_j=4` with uniform time-kernel remainders.  The infinite
 spatial tail and subsequent massive-two-form image remain open.
+The `two_j<=4` tail is now quantitatively `OBSTRUCTED`, not merely open:
+more than `0.9999975` of the clock-center normalized detector one-form energy
+lies above that cutoff.  Observer work must use an adaptive cutoff near the
+profile bandwidth or evaluate the Green chain in physical space before
+claiming a full advanced image.
 
 The quantum fragment is generated at
 `quantum-weyl/atlas/quantum-atlas-fragment.json`, with its evidence report at
@@ -298,6 +303,19 @@ abstract retarded criterion, and every classical-obstruction-to-quantum map
 remains `NO_CERTIFIED_MAP`: the strict-field-content BRST insertion and QME
 obstruction now exist, but no carrier-specific map from a classical tangent
 obstruction to that quantum insertion has been certified.
+
+The black-hole horizon/exterior fragment is generated at
+`black_hole_programme/atlas/black-hole-atlas-fragment.json` and passes the
+shared validator.  It records the static MK background (symplectic
+`CERTIFIED` through BH-0/BH-1/BH-1A), the `l=0` parameter, conformal-gauge
+and diffeo-gauge modes (symplectic `CERTIFIED` through BH-1B: zero charge
+and flux for arbitrary time-dependent gauge directions, entropy conformally
+invariant), and keeps every radiative `l>=2` field `OPEN` pending the BH-2A
+dynamical complex.  All compact-cylinder relations and the tangent-cone
+import are `NO_CERTIFIED_MAP`; the crosswalk entry states the open
+horizon-analogue question (which compact terms are replaced by ADM, horizon
+or quasilocal charges) and defers it until the BH-2A linear phase space and
+adjoint problem exist.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 
@@ -408,9 +426,11 @@ survive the first backreacted, normalized apparatus interaction?
    coderivative coefficients are now exported through `two_j=4`.  Boundary-
    flat integration by parts now supplies the Green-weighted temporal block,
    and the finite-mode advanced Maxwell image is interval-enclosed through
-   `two_j=4` uniformly over the emitter switches.  The next gate is an
-   evaluated infinite-mode tail, the resulting massive Green images, and the
-   recoil coefficient.  The independent emitter stress
+   `two_j=4` uniformly over the emitter switches.  Parseval now proves that
+   cutoff omits more than `0.9999975` of the clock-center profile energy, so
+   uniform small-tail promotion is obstructed.  The next gate is an adaptive
+   high-mode cutoff or physical-space Green evaluation, followed by the
+   massive Green images and recoil coefficient.  The independent emitter stress
    and reciprocal clock-switch `q2` jet is exported; its complete 108-row
    `q1 q2` identity is certified, while its support-local PBW refinement and a
    solved backreacted branch remain open.  A common source
@@ -457,6 +477,25 @@ integrability.  Acceptable scoped outcomes are
 `BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR`, or
 `BH1_BOUNDARY_ENSEMBLE_REQUIRED`; none by itself is the full BH-1 phase-space
 theorem.
+
+**Outcome (2026-07-18).**  BH-1A closed with
+`BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR`: Frobenius
+`F ^ dF = 0`, basicness forces `N = u f(J)`, `d(uF) = 0` exactly,
+`H = -16 pi alpha beta^2 D2` with `J = -u^2 D1 D2` (energy vanishes on the
+`D2` extremal branch, `dH ^ dJ = 0`), exact Wald entropy and first law
+`dH = T dS` at every simple root, and the fixed-falloff ensemble audit
+(`c = 0` and `lambda = 1` only, exact exceptional loci).  The follow-on
+BH-1B gate closed with `BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED` at the
+linear charge level: arbitrary time-dependent conformal and `l=0` diffeo
+perturbations are exactly annihilated by the charge form (componentwise),
+entropy is conformally invariant on the symbolic family, the corrected
+presymplectic current has the conformal direction as an exact null
+direction, and the linear extension of the generator is unique.  No
+boundary clock or conformal frame is required at this order.  Certificates:
+`black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json`,
+`black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json`.  The
+radiative bilinear flux matrix and every ringdown-adjacent object remain
+gated on BH-2A.
 
 ### Morning integration order
 
@@ -835,7 +874,7 @@ for the outward-facing two-page note.
 | A2 | Linearization stability and charge fibres — Einstein | obstruction bilinear with harmonic selection rules, fixed-charge no-go, and explicit variable-charge extension | current compact harmonic domain; full paper waits for the complete bilinear |
 | A3 | Weyl anomaly coefficients and the `D` defect — quantum | independently reproduced `a,c` coefficients and the coefficient-bearing map to the actual Cartan defect | after the local anomaly complex closes |
 | A4 | Lorentzian Einstein-from-conformal comparison — Einstein | causal and symplectic complement to boundary branch selection | after compact Weyl--Maxwell pullback; boundary theorem requires its own phase space |
-| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | certify the infinite spatial tail, compose the massive Green images, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
+| B1 | Berger relational observables — classical with observer localization | rank-two affine-`K` morphism, C-G4 record Poisson algebra, localized transfer, recoil-input obstruction, selected 108-row polarization-emitter handoff, complete unary, coefficientwise causal chain homotopy, actual emitter-preparation rank two, exact absolute-`g^3` recoil operator, exact normalized compact switches, finite-mode Green-weighted detector coderivative through `two_j=4`, quantitative obstruction to a uniform tail at that cutoff, emitter stress/clock-switch `q2` backreaction, and covariant 108-row `q1 q2` | resolve the profile bandwidth by adaptive high modes or a physical-space Green chain, compose the massive image, evaluate recoil, refine `q1 q2` to a support-local PBW payload, and solve the first backreacted branch |
 | B2 | Asymptotic Bach/BMS — Einstein | falloffs, radiative data, differentiable charges, flux, and extra-branch sign | Lorentzian boundary phase space closed |
 | B3 | Nearby conformal detour/higher-spin pilot — classical | one causal transfer beyond spin two | abstract A1 theorem frozen |
 | B4 | Twistor/helicity fixture — nonlinear | one projected cubic or MHV comparison with branch/charge interpretation | physical transferred cubic tensor |
@@ -1044,6 +1083,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_POSITIVE_ENERGY_DETECTOR_SELECTED_EMITTER_PROFILES` (fired) | expand the fixed profiles/covectors in Berger Peter--Weyl modes with validated quadrature and tail bounds, then evaluate the absolute-`g^3` recoil coefficient |
 | `BERGER_PETER_WEYL_FORM_LAPLACIAN_ENGINE` (fired) | interval-enclose the compact bump coefficients, certify superalgebraic spectral tails, apply the exact mode Green kernels, and evaluate recoil |
 | `BERGER_GREEN_WEIGHTED_DETECTOR_CODERIVATIVE` (fired) | certify the infinite spatial-harmonic tail, then compose `h_a dA_a^adv` with the massive-two-form kernel and evaluate the positive-energy Cauchy data |
+| `BERGER_TWO_J4_PROFILE_TAIL_OBSTRUCTION` (fired) | replace the inadequate `two_j<=4` tail target by an adaptive cutoff near the radius-`1/128` profile bandwidth or a physical-space Green-chain evaluation |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
 | `BERGER_108_ROW_EMITTER_Q1_Q2_MASTER_IDENTITY` (fired) | export a canonical support-local PBW payload and component-coefficient replay; do not infer it from covariant row coverage |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |

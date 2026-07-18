@@ -349,6 +349,33 @@ Do not start quasinormal numerics tonight unless all six items pass.
 
 ## Interface with the existing teams
 
+### Status ledger (2026-07-18)
+
+| Gate | Verdict | Certificate |
+|---|---|---|
+| BH-0 | `PURE_WEYL_STATIC_SPHERICAL_BACKGROUND_CLASSIFIED` | `black_hole_programme/certificates/BH0_STATIC_SPHERICAL_BACKGROUND.json` |
+| BH-1 preflight | `BH1_PREFLIGHT_COMPLETE_BARE_FORM_NONINTEGRABLE` | `black_hole_programme/certificates/BH1_LEE_WALD_PREFLIGHT.json` |
+| BH-1A | `BH1_NONINTEGRABILITY_REMOVED_BY_FIELD_DEPENDENT_GENERATOR` | `black_hole_programme/certificates/BH1A_NORMALIZED_GENERATOR.json` |
+| BH-1B | `BH1_DYNAMICAL_HORIZON_PHASE_SPACE_CERTIFIED` (linear charge level; `l=0` dynamical sector complete) | `black_hole_programme/certificates/BH1B_DYNAMICAL_EXTENSION.json` |
+
+Headline exact facts now certified: normalized generator `chi = u d_t`
+forced by basicness (`u = beta(2-3 beta gamma)`, unique up to component
+sign and `f(J)`), `H = -16 pi alpha beta^2 D2` with `J = -u^2 D1 D2`,
+Wald entropy `S = 64 pi^2 alpha beta (2 - 3 beta gamma + gamma r_h)/r_h`,
+first law `dH = T dS` at every simple horizon, and linear-level
+frame-independence (time-dependent conformal and `l=0` diffeo directions
+carry exactly zero charge and flux; entropy conformally invariant on the
+symbolic family).  The atlas fragment lives at
+`black_hole_programme/atlas/black-hole-atlas-fragment.json` (generated,
+fail-closed, shared-validator checked).  Radiative `l>=2` fields are
+`OPEN`: the next gate is **BH-2A** (odd-parity horizon-regular
+Diff x Weyl complex, Einstein/extra branch split, ingoing/outgoing
+domains, bilinear horizon and boundary flux matrix, causal disposition of
+the extra branch).  The tangent-cone horizon analogue (global charges +
+horizon/boundary flux constraints + resonant or stationary cokernel) is
+deferred until the BH-2A linear phase space and adjoint problem exist;
+the compact moment-map theorem is not imported as a horizon theorem.
+
 ### Current eight-hour assignment (2026-07-17; supersedes the BH-0 preflight queue)
 
 BH-0 and the bare BH-1 preflight are certified.  Do **BH-1A normalized
