@@ -28,6 +28,12 @@ def main() -> None:
     compiled_pdf = ROOT / payload["compiled_pdf"]
     assert compiled_pdf.is_file()
     assert _sha256(compiled_pdf) == payload["compiled_pdf_sha256"]
+    artifacts = payload["publication_artifacts"]
+    assert len(artifacts) == 5
+    for relative, expected in artifacts.items():
+        artifact = ROOT / relative
+        assert artifact.is_file(), relative
+        assert _sha256(artifact) == expected, relative
 
     dispositions = payload["theory_dispositions"]
     assert dispositions == {
@@ -58,6 +64,7 @@ def main() -> None:
     )
 
     dependencies = {}
+    assert len(payload["inputs"]) == 7
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative

@@ -808,5 +808,9 @@ and
 [`wess-zumino-extended-local-bv-cohomology.md`](../quantum-weyl/reports/wess-zumino-extended-local-bv-cohomology.md).
 The theorem spine is assembled in
 [`12-pure-weyl-one-loop-bv-anomaly.tex`](../paper/12-pure-weyl-one-loop-bv-anomaly.tex),
-with a generated claim map and compiled draft PDF. Literature and human prose
-review remain before theorem freeze.
+with a generated claim map and compiled draft PDF. Its
+[`computational supplement`](../paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex)
+is also assembled and warning-free; exact quotient, coefficient, quartet, and
+boundary tables are generated directly from seven hashed receipts and pass an
+independent stale/tamper check. Specialist prose, citation, and release review
+remain before theorem freeze.

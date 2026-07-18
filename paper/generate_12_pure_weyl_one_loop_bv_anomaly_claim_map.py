@@ -13,8 +13,16 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 MANUSCRIPT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly.tex"
 PDF = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly.pdf"
+SUPPLEMENT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex"
+SUPPLEMENT_PDF = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf"
+GENERATED_TABLES = ROOT / "paper/generated/12-quantum-anomaly-certificate-tables.tex"
+TABLE_GENERATOR = ROOT / "paper/generate_12_quantum_anomaly_tables.py"
+TABLE_VERIFIER = ROOT / "paper/verify_12_quantum_anomaly_tables.py"
 OUTPUT = ROOT / "paper/12-pure-weyl-one-loop-bv-anomaly-claim-map.json"
 INPUTS = {
+    "strict_AFN0_even": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_EVEN_CANONICAL_QUOTIENT.json",
+    "strict_AFN0_odd": ROOT / "quantum-weyl/local_bv/certificates/AFN0_H14_ODD_CANONICAL_QUOTIENT.json",
+    "strict_gauge_fixed": ROOT / "quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json",
     "strict_breaking": ROOT / "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json",
     "matter_no_go": ROOT / "quantum-weyl/anomalies/certificates/UNITARY_CONFORMAL_MATTER_CANCELLATION_NO_GO.json",
     "cotangent_lift": ROOT / "quantum-weyl/anomalies/certificates/WESS_ZUMINO_MINIMAL_BV_COTANGENT_LIFT.json",
@@ -32,12 +40,22 @@ def _relative(path: Path) -> str:
 
 def _load_inputs() -> dict[str, dict[str, Any]]:
     values = {name: json.loads(path.read_text()) for name, path in INPUTS.items()}
+    even = values["strict_AFN0_even"]
+    odd = values["strict_AFN0_odd"]
+    gauge = values["strict_gauge_fixed"]
     strict = values["strict_breaking"]
     matter = values["matter_no_go"]
     lift = values["cotangent_lift"]
     extended = values["extended_cohomology"]
     if (
-        strict.get("qme_disposition", {}).get("status")
+        even.get("result_state") != "COMPLETE_AFN0_EVEN_CANDIDATE_QUOTIENT"
+        or even.get("smallest_relative_sector", {}).get("closure_rank") != 6
+        or even.get("smallest_relative_sector", {}).get("boundary_rank") != 4
+        or odd.get("result_state") != "COMPLETE_AFN0_ODD_CANDIDATE_QUOTIENT"
+        or odd.get("smallest_relative_sector", {}).get("quotient_dimension") != 1
+        or gauge.get("gauge_fixed_cohomology", {}).get("H14_even_dimension") != 2
+        or gauge.get("gauge_fixed_cohomology", {}).get("H14_odd_dimension") != 1
+        or strict.get("qme_disposition", {}).get("status")
         != "OBSTRUCTED_STRICT_FIELD_CONTENT"
         or strict.get("coefficients", {}).get("ANOM_OMEGA_C2")
         != {"numerator": 199, "denominator": 30}
@@ -75,6 +93,16 @@ def build() -> dict[str, Any]:
         "manuscript_sha256": _sha256(MANUSCRIPT),
         "compiled_pdf": _relative(PDF),
         "compiled_pdf_sha256": _sha256(PDF),
+        "publication_artifacts": {
+            _relative(path): _sha256(path)
+            for path in (
+                SUPPLEMENT,
+                SUPPLEMENT_PDF,
+                GENERATED_TABLES,
+                TABLE_GENERATOR,
+                TABLE_VERIFIER,
+            )
+        },
         "theory_dispositions": {
             "strict_fixed_field_content": "OBSTRUCTED",
             "tau_adic_compensator_extended_local_Euclidean_one_loop": "QME_RESTORED",
