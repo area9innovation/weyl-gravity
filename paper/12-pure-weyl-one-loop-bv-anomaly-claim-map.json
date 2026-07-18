@@ -97,6 +97,7 @@
       }
     ],
     "generic_ghost_4d_trace_class_status": "ORDER_MINUS_TWO_DOES_NOT_PROVE_TRACE_CLASS_IN_DIMENSION_FOUR",
+    "generic_ghost_Einstein_K_Wodzicki_residue": "Wres(K)=(4 pi)^-2 integral[2 R^2/9] when Ric=(R/4)g and nabla R=0",
     "generic_ghost_Endo_Duhamel_reduction_supplied": true,
     "generic_ghost_Endo_alpha": {
       "denominator": 2,
@@ -104,9 +105,11 @@
     },
     "generic_ghost_K2_Wodzicki_residue": "Wres(K^2)=(4 pi)^-2 integral[R^2+2 Ric_mn Ric^mn]/27",
     "generic_ghost_K2_scalar_flat_Wodzicki_residue": "Wres(K^2)=(4 pi)^-2 integral[2 Ric_mn Ric^mn]/27 when R=0",
+    "generic_ghost_K_Wodzicki_residue": "Wres(K)=(4 pi)^-2 integral[R^2+4 Ric_mn Ric^mn]/9",
     "generic_ghost_Schur_S3_class": true,
     "generic_ghost_det3_tail_defined": true,
     "generic_ghost_local_perturbation": "W=-2 Ric",
+    "generic_ghost_log_S_Wodzicki_residue": "Wres(log S_L)=(4 pi)^-2 integral[5 R^2+22 Ric_mn Ric^mn]/54",
     "generic_ghost_longitudinal_DW_missing_carriers": [
       "N1_LONGITUDINAL_SCALAR",
       "N2_VECTOR_LONGITUDINAL",
@@ -238,7 +241,7 @@
     "universal_CPT_third_curvature_kernels_imported": true
   },
   "compiled_pdf": "paper/12-pure-weyl-one-loop-bv-anomaly.pdf",
-  "compiled_pdf_sha256": "dd919c80912f8a0bbbe7a2b1295910446739f85d3d7b6c4178afa3c68f98e592",
+  "compiled_pdf_sha256": "09b75c2f988980c5b812459d707337d7308ba79731d9166150230e39ab583b8a",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL"
@@ -253,13 +256,15 @@
     "complete_renormalized_Q1_supplied": false,
     "finite_polynomial_in_tau_theorem": false,
     "full_BV_Bridge_4_particle_crosswalk": false,
-    "generic_ghost_Wodzicki_residue_K": false,
     "generic_ghost_all_five_n1_n2_carriers_evaluated": false,
+    "generic_ghost_finite_part_R_K2": false,
     "generic_ghost_full_Schur_regularized_determinant": false,
     "generic_ghost_longitudinal_DW_carriers_evaluated": false,
     "generic_ghost_longitudinal_Schur_form_factors_evaluated": false,
     "generic_ghost_n3_integrated_five_carrier_form_factors": false,
+    "generic_ghost_renormalized_R_K": false,
     "generic_ghost_zeta_multiplicative_anomaly_computed": false,
+    "generic_ghost_zeta_scale_coefficient": false,
     "generic_nonminimal_ghost_CPT_determinant": false,
     "generic_nonminimal_ghost_insertion_traces_evaluated": false,
     "global_BRST_Hadamard_state": false,
@@ -276,7 +281,7 @@
     "unitarity_theorem": false,
     "zeta_factorization_without_local_multiplicative_anomaly": false
   },
-  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, the curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3, its canonical det_3 tail is defined, and Wres(K^2) is exact; R(K), the finite part of R(K^2), Wres(K), any local zeta multiplicative anomaly, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
+  "headline": "Strict pure Weyl gravity is locally QME-obstructed at one loop; the formal tau-adic compensator extension has a restored one-loop local Euclidean QME; the FV anomaly action fixes the Ricci-scalar sector, the algebraic C3 basis is complete, and the parity-even five-carrier third-curvature manifest has an exact scalar-flat I29 symmetry enhancement and 11-to-10 effective label quotient. Five universal CPT source kernels are exact, the generic ghost n=3 triangle is projected exactly onto that quotient, the curved n=1/n=2 pure-vector CPT sum is exact, and all longitudinal D_W towers are resummed into one normalized scalar Schur kernel. The Schur correction lies in S_3, its canonical det_3 tail is defined, and Wres(K), Wres(K^2), and Wres(log S_L) are exact; the finite R(K) and R(K^2) rows, reference-specific scale conversion, any local zeta multiplicative anomaly, simplex integration, the generic physical fourth-order kernel, complete repository functions and coefficients, odd derivative data and finite normalizations remain open.",
   "inputs": {
     "quantum-weyl/anomalies/certificates/REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING.json": {
       "result_id": "REGULATED_REPOSITORY_BV_SLAVNOV_BREAKING",
@@ -350,6 +355,10 @@
       "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT",
       "sha256": "b9f047ca74ba8c335bdb53ecb8af684c2e9529d8d9be622efc8df8b43dcacb51"
     },
+    "quantum-weyl/spectral/euclidean/certificates/GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE.json": {
+      "result_id": "GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE",
+      "sha256": "536d2d44d2d60499c2167935b7e77fa80238a94cd9138bc2e462f7d33582cc10"
+    },
     "quantum-weyl/spectral/euclidean/certificates/REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX.json": {
       "result_id": "REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX",
       "sha256": "a1eb7dd598ed341785df3e9771e934fe5c45e0acdb453dff33b511c7912eacf9"
@@ -409,12 +418,12 @@
   },
   "lifecycle_state": "WRITING_STARTED",
   "manuscript": "paper/12-pure-weyl-one-loop-bv-anomaly.tex",
-  "manuscript_sha256": "32bc4d70d2f19ce6bebfe4433d8f512c77d6751c9bff8b6ff609057073b7079d",
+  "manuscript_sha256": "edaafa9a37b0364d3104016fb789f1e0e4d4b695aec4e0fa99a6fb295e08ec54",
   "next_gate": {
     "required_inputs": [
       "same-background compensator-inclusive classical contraction",
       "finite C2 and absolute dressed Rhat2 normalization conditions",
-      "renormalized R(K), the finite part of R(K^2), Wres(K), and any local zeta multiplicative term for the normalized longitudinal Schur determinant, plus simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
+      "renormalized R(K), the finite part of R(K^2), reference-specific scale conversion, and any local zeta multiplicative term for the normalized longitudinal Schur determinant, plus simplex integration of the exact generic Diff-Weyl ghost n=3 five-carrier parametric projection",
       "same-gauge generic-background physical fourth-order Hessian and remaining trace substitutions matching the five universal CPT kernels to repository parity-even third-curvature functions and coefficients, the parity-odd derivative carrier manifest, and global Paneitz/FV Green data",
       "renormalized BV operator data fixing complete Q1"
     ],
@@ -428,9 +437,9 @@
     "status": "COMPUTE_RENORMALIZED_R_K_AND_FINITE_R_K2_THEN_COMBINE_WITH_GENERIC_PHYSICAL_FOURTH_ORDER_HESSIAN"
   },
   "publication_artifacts": {
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "37a1f6b7b058027d17ad89012aefddf2d2dbf7548fd1c74455b95095f5a1f627",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "5da06ede8b2b81495150ce0233fb293257cd735a4a4fa30a79bd9808f474d2b1",
-    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "3a698713585bc0bec3ede033310f6736e43582ce787810242428e53b6d46fca4",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.pdf": "755a609a05d1b4d982199779506fe7102225756818c48e8687d212a4595a46e6",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-computational-supplement.tex": "88cc15317831d30b365bb4e1ca8a46451be026ee5076ec40bf7abe115d87abed",
+    "paper/12-pure-weyl-one-loop-bv-anomaly-referee-response.md": "cc6e356d90053f1face232fe076098556295a2ed23c8b9ea171cb87b61d8f71c",
     "paper/generate_12_quantum_anomaly_tables.py": "c672b0a7d53ac973beac60a9b4c07e8566bd25dbeb23f1ce3bd732824346a05a",
     "paper/generated/12-quantum-anomaly-certificate-tables.tex": "3d47b9e8997d10f3897e733b107a804c31c36c25aef5bece4237ecf045b16d5a",
     "paper/verify_12_quantum_anomaly_tables.py": "f8b082549a5263b6f2655c6d94c4cf391bb70ca1382563f3b122e17a81882900"

@@ -900,10 +900,12 @@ identities now resum all three longitudinal trace-log towers into
 previously open `n=1/n=2` carriers and fixes the cubic weights
 `(-1/3,1/9,-1/81)`. Its correction `K=S_L-I` is an order-minus-two classical
 pseudodifferential operator in every Schatten class `S_p`, `p>2`; the
-canonical `det_3(I+K)` tail is therefore defined. The exact critical residue
-is `Wres(K^2)=(4 pi)^-2 integral (R^2+2 Ric^2)/27`. The regulated `R(K)`, the
-finite part of `R(K^2)`, `Wres(K)`, conversion to a zeta scale coefficient,
-and any local multiplicative anomaly remain open, as does the generic
+canonical `det_3(I+K)` tail is therefore defined. The exact local residues are
+`Wres(K)=(4 pi)^-2 integral (R^2+4 Ric^2)/9`,
+`Wres(K^2)=(4 pi)^-2 integral (R^2+2 Ric^2)/27`, and
+`Wres(log S_L)=(4 pi)^-2 integral (5 R^2+22 Ric^2)/54`. The finite regulated
+`R(K)` and `R(K^2)` rows, reference-specific zeta scale conversion, and any
+local multiplicative anomaly remain open, as does the generic
 physical fourth-order Hessian. The original
 direct-substitution failure
 is an architecture obstruction, not an anomaly, QME, or Lorentzian no-go.
@@ -918,9 +920,10 @@ The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. The generic ghost's exact nonzero-momentum triangle has now
 been projected to the scalar-flat repository five-carrier quotient. Its three
 longitudinal `D_W` towers are now one normalized scalar Schur series, with the
-canonical `det_3` tail and critical `Wres(K^2)` row fixed. The remaining local
-gate begins with computing the regulated `R(K)` and finite `R(K^2)` rows,
-`Wres(K)`, and any local zeta term, together with the physical fourth-order
+canonical `det_3` tail and all three Schur residue rows fixed. The remaining
+local gate begins with computing the finite regulated `R(K)` and `R(K^2)`
+rows, the reference-specific scale conversion, and any local zeta term,
+together with the physical fourth-order
 Hessian kernel, followed by the five
 parity-even third-curvature repository
 form-factor functions and coefficients,
@@ -995,9 +998,10 @@ are recorded in
 The exact generic Diff--Weyl ghost Schur operator and the direct minimal-CPT
 architecture obstruction are recorded in
 [`generic-background-diff-weyl-ghost-cpt-obstruction.md`](../quantum-weyl/reports/generic-background-diff-weyl-ghost-cpt-obstruction.md).
-The sharp four-dimensional Schatten split, canonical `det_3` tail, and exact
-critical `Wres(K^2)` row are recorded in
+The sharp four-dimensional Schatten split and canonical `det_3` tail are recorded in
 [`generic-background-ghost-schur-schatten-split.md`](../quantum-weyl/reports/generic-background-ghost-schur-schatten-split.md).
+The exact `Wres(K)`, `Wres(K^2)`, and `Wres(log S_L)` rows are recorded in
+[`generic-background-ghost-schur-wodzicki-residue.md`](../quantum-weyl/reports/generic-background-ghost-schur-wodzicki-residue.md).
 Its exact constructive reduction is recorded in
 [`generic-background-ghost-endo-duhamel-reduction.md`](../quantum-weyl/reports/generic-background-ghost-endo-duhamel-reduction.md).
 The exact Hodge-resolvent closure of the `n=1,n=2` nonminimal architecture is

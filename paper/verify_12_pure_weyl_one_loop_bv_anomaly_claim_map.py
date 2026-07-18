@@ -49,7 +49,9 @@ def main() -> None:
         "-\\frac{199}{60}=-\\frac c2",
         "Sharp Schatten split and critical Schur residue",
         "\\det{}_3(\\mathbf1+K)",
+        "\\operatorname{Wres}(K)=",
         "\\operatorname{Wres}(K^2)",
+        "\\operatorname{Wres}\\log S_L",
     ]
     for fragment in required_manuscript_fragments:
         assert fragment in normalized_manuscript, fragment
@@ -207,6 +209,12 @@ def main() -> None:
     assert claims["generic_ghost_K2_scalar_flat_Wodzicki_residue"] == (
         "Wres(K^2)=(4 pi)^-2 integral[2 Ric_mn Ric^mn]/27 when R=0"
     )
+    assert claims["generic_ghost_K_Wodzicki_residue"] == (
+        "Wres(K)=(4 pi)^-2 integral[R^2+4 Ric_mn Ric^mn]/9"
+    )
+    assert claims["generic_ghost_log_S_Wodzicki_residue"] == (
+        "Wres(log S_L)=(4 pi)^-2 integral[5 R^2+22 Ric_mn Ric^mn]/54"
+    )
     assert claims["Berger_WZ_tau_contraction_merge_rejected"] is True
     assert claims["Euler_Wess_Zumino_primitive_displayed"] is True
     boolean_claims = {
@@ -218,9 +226,9 @@ def main() -> None:
     assert payload["explicit_nonclaims"][
         "generic_ghost_full_Schur_regularized_determinant"
     ] is False
-    assert payload["explicit_nonclaims"][
-        "generic_ghost_Wodzicki_residue_K"
-    ] is False
+    assert payload["explicit_nonclaims"]["generic_ghost_renormalized_R_K"] is False
+    assert payload["explicit_nonclaims"]["generic_ghost_finite_part_R_K2"] is False
+    assert payload["explicit_nonclaims"]["generic_ghost_zeta_scale_coefficient"] is False
     assert payload["explicit_nonclaims"][
         "generic_ghost_zeta_multiplicative_anomaly_computed"
     ] is False
@@ -230,7 +238,7 @@ def main() -> None:
     )
 
     dependencies = {}
-    assert len(payload["inputs"]) == 32
+    assert len(payload["inputs"]) == 33
     for relative, reference in payload["inputs"].items():
         path = ROOT / relative
         assert path.is_file(), relative
@@ -260,6 +268,7 @@ def main() -> None:
     generic_ghost_n1_n2_vector = dependencies["GENERIC_BACKGROUND_GHOST_N1_N2_VECTOR_CPT_PROJECTION"]
     generic_ghost_longitudinal_schur = dependencies["GENERIC_BACKGROUND_GHOST_LONGITUDINAL_SCHUR_RESUMMATION"]
     generic_ghost_schur_schatten = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_SCHATTEN_SPLIT"]
+    generic_ghost_schur_wodzicki = dependencies["GENERIC_BACKGROUND_GHOST_SCHUR_WODZICKI_RESIDUE"]
     box_r_scheme_conversion = dependencies["WEYL_GRAVITON_BOX_R_SCHEME_CONVERSION"]
     minimal_kt = dependencies["MINIMAL_BV_KOSZUL_TATE_COLLAPSE"]
     elliptic = dependencies["REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX"]
@@ -398,6 +407,21 @@ def main() -> None:
     ] is False
     assert generic_ghost_schur_schatten["claim_flags"][
         "ZETA_MULTIPLICATIVE_ANOMALY_COMPUTED"
+    ] is False
+    assert generic_ghost_schur_wodzicki["exact_residues"]["K_Ricci_basis"] == (
+        claims["generic_ghost_K_Wodzicki_residue"]
+    )
+    assert generic_ghost_schur_wodzicki["exact_residues"]["log_S_Ricci_basis"] == (
+        claims["generic_ghost_log_S_Wodzicki_residue"]
+    )
+    assert generic_ghost_schur_wodzicki["claim_flags"][
+        "WODZICKI_RESIDUE_K_COMPUTED"
+    ] is True
+    assert generic_ghost_schur_wodzicki["claim_flags"][
+        "WODZICKI_RESIDUE_LOG_S_COMPUTED"
+    ] is True
+    assert generic_ghost_schur_wodzicki["claim_flags"][
+        "ZETA_SCALE_COEFFICIENT_COMPUTED"
     ] is False
     assert claims["generic_ghost_vector_n1_plus_n2_formula_digest"] == (
         generic_ghost_n1_n2_vector["formula_digest"]
