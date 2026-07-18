@@ -879,8 +879,8 @@ crosswalk `NO_CERTIFIED_MAP`.  A future Berger activation requires a genuinely
 noncontractible mixed-bundle/cofiber carrier or an explicitly scoped all-mode
 `REDUCED-MODE` map; porting to another background answers a new same-background
 question, not the Berger one.  Row-name matching is not a bridge.  The active
-classical relative gate advances to the compact-product off-shell cyclic
-Einstein--Weyl triangle.
+classical relative gate advances to the compact-product off-shell noncyclic
+three-form Einstein--Weyl triangle.
 
 ### Classical ownership
 

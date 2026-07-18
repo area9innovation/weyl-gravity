@@ -783,7 +783,8 @@ The compact-product
 `EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1` is now imported by hash into
 the nonlinear atlas.  It supplies sectoral same-background generic axial and
 polar cofibers and action-derived pairings, but its own global Bridge-1 flag is
-false: polar cyclic BV compatibility, exceptional/global cofibers and final
+false: the standard-pairing cyclic route is obstructed, while the noncyclic
+three-form all-sector triangle, exceptional/global off-shell cofibers and final
 endpoints remain open.  Accordingly these rows are usable as scoped branch
 labels, not as the all-sector relative triangle and never as a Berger
 crosswalk.  The earlier `a,b,d` crossed with `ell=2` extra-shell source matrix
@@ -828,11 +829,11 @@ source vanishes, and the second polar source
 `(A_t,B,C_t,U)=(0,0,-72*c,24*c)` on all eight rows.  Thus this actual resonant
 source needs no secular time prefactor; changing the two-covariant-`x`
 `C_t` transport weight from two to one gives a nonzero normalized control.
-Neither source handoff activates a cyclic Bridge 2 calculation.  The
-axial--polar source uses the polar leg whose
-fixed identity cyclic compatibility is obstructed and whose corrected
-nonidentity/homotopy alternative remains open, while the homogeneous/twist
-source uses global legs whose all-BV off-shell cyclic relative map is absent.
+Neither source handoff activates Bridge 2.  The axial--polar source uses a
+polar leg for which every standard-pairing cyclic correction is obstructed;
+the required noncyclic three-form off-shell triangle is absent.  The
+homogeneous/twist source uses global legs whose all-BV off-shell relative map
+is likewise absent.
 The exceptional `ell=1,k=0` update now supplies explicit CRT solution
 projectors and a nonradical extra Gram matrix `diag(16,3)`, but remains
 `ONSHELL_MAP_ONLY`; its off-shell ghost--field--equation--identity map and
