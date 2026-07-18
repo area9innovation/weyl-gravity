@@ -1916,6 +1916,18 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    exceptional dipole.  The only remaining scope audit before freezing the
    complete exceptional `ell=1` fixed-bundle no-go is whether another sector
    shares the same input frequency `omega^2=4/3`.
+
+   That final same-frequency audit is now closed.  At `k=0`, generic
+   `ell>=2` extra modes have `omega_X^2>=16/3`, the Einstein-minus branch has
+   `omega_-^2>=6-2sqrt(3)>4/3`, the physical `ell=1` shell is `omega^2=4`,
+   and the standard homogeneous/twist blocks are generalized zero-frequency
+   data.  The axial and polar exceptional operators show that the complete
+   `ell>=1`, `omega^2=4/3` eigenspace is precisely the all-`m` block already
+   proved obstructed.  Angular selection also makes any unclassified `ell=0`
+   target irrelevant to the resonant `L=2` channel without an `ell=2` partner.
+   Hence the pure exceptional `ell=1,k=0` second-order no-go is frozen against
+   every same-frequency `k=0` augmentation.  Unequal-frequency pairs summing
+   to `2omega_e` and opposite nonzero momenta remain explicitly open.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

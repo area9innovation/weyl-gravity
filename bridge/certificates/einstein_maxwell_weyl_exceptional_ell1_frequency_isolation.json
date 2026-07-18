@@ -1,0 +1,139 @@
+{
+  "schema": "einstein-maxwell-weyl-exceptional-ell1-frequency-isolation-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.schema.json",
+  "schema_sha256": "f7cf36a7356ab672f17919921407f63295d02f0f69336983e86a69d1ba2cef2e",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_FREQUENCY_ISOLATION",
+  "result_state": "EXCEPTIONAL_ELL1_K0_SAME_FREQUENCY_SECTOR_ISOLATED_AND_SECOND_ORDER_OBSTRUCTED",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the complete fixed-bundle k=0 ell>=1 oscillatory source spectrum at omega_e^2=4/3, together with the angular-selection proof that ell=0 cannot enter the obstructing L=2 channel, before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.py",
+    "generator_sha256": "31c42e2142b70528029b7e56dd7d875d20e6363d3fbca2aac8f710f65381718d",
+    "inputs": {
+      "all_m_obstruction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_all_m_resonance.json",
+        "sha256": "42248dd69e97cd5946331431fa02d631edf0f86b717869437640c5651e439ac9"
+      },
+      "axial_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "polar_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "axial_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_ell1_k0_operator.json",
+        "sha256": "72d80a950221204cc6656ce08ec51c0c86f417b4586dc4f728be7ce50e528164"
+      },
+      "polar_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_ell1_k0_operator.json",
+        "sha256": "e8344bcfab80a3abe19bfe392f0f8576977fac1b1c34e4f20aee4aaeff74e77c"
+      },
+      "physical_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_ell1_physical_symplectic_restriction.json",
+        "sha256": "2596e01ea18030ffeced787629b3d5eba3f6a3d14c3e881e1a4dffd82405e674"
+      },
+      "standard_globals": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      }
+    }
+  },
+  "frequency_audit": {
+    "exceptional_frequency_squared": "4/3",
+    "generic_ell_ge_2_k0": {
+      "extra_p": "lambda-2/3 >= 16/3, gap from 4/3 is at least 4",
+      "Einstein_minus_q": "lambda-sqrt(2lambda) is increasing for lambda>=6 and its minimum 6-2sqrt(3) exceeds 4/3",
+      "Einstein_minus_derivative": "1 - sqrt(2)/(2*sqrt(lambda))",
+      "Einstein_minus_endpoint_gap": "-2*(-7 + 3*sqrt(3))/3",
+      "Einstein_minus_exact_square_witness": "(14/3)^2-12=88/9>0",
+      "Einstein_plus_q": "lambda+sqrt(2lambda) is strictly above the minus branch",
+      "conclusion": "no generic axial or polar k=0 p- or q-primary has omega^2=4/3"
+    },
+    "exceptional_ell1_k0": {
+      "axial_roots": [
+        "0",
+        "4/3",
+        "4"
+      ],
+      "polar_roots": [
+        "4/3",
+        "4"
+      ],
+      "complete_same_frequency_block": "among ell>=1, the omega^2=4/3 eigenspace is exactly the axial-plus-polar exceptional block already covered by the all-m obstruction theorem"
+    },
+    "standard_global_blocks": {
+      "ell0_and_twist": "generalized zero-frequency polynomial/Jordan data, with no positive-positive 2omega_e temporal component",
+      "physical_ell1": "omega^2=4 at k=0"
+    },
+    "angular_selection": {
+      "obstructing_channel": "the exceptional dipole self-source has a nonzero L=2 component at Omega=2omega_e",
+      "ell0_times_ell0": "L=0 only",
+      "ell0_times_ell1": "L=1 only",
+      "ell0_times_other": "an L=2 contribution would require an ell=2 partner, but every classified ell>=2 k=0 oscillator is frequency-separated",
+      "ell1_times_ell1": "L=0 direct-sum L=2; the complete omega_e ell1 block is already included in the all-m STF theorem"
+    }
+  },
+  "classification": {
+    "all_k0_generic_axial_and_polar_p_q_primaries_frequency_separated": true,
+    "physical_ell1_frequency_separated": true,
+    "exceptional_ell1_same_frequency_eigenspace_complete": true,
+    "standard_generalized_zero_blocks_have_no_2omega_e_component": true,
+    "ell0_unknown_extra_target_not_needed_by_angular_selection": true,
+    "same_frequency_nonexceptional_cancellation_excluded": true,
+    "complete_pure_exceptional_ell1_k0_second_order_no_go_frozen": true,
+    "different_frequency_pair_sums_classified": false,
+    "different_momentum_pairs_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The exceptional dipole obstruction cannot be removed by adding another k=0 mode on the same positive-frequency shell. The complete ell>=1 omega_e eigenspace is precisely the axial-plus-polar exceptional ell=1 block, whose all-m resonance tensor has only the origin as a compatible point; angular selection excludes ell=0 from the obstructing L=2 channel. Thus the pure exceptional ell=1,k=0 second-order no-go is frozen, while cancellations built from different input frequencies or momenta remain separate questions.",
+  "next_gate": "classify whether pairs of different-frequency or opposite-momentum modes can sum to the exceptional 2omega_e,L=2,K=0 resonant channel",
+  "claim_boundary": "This is a compact fixed-bundle same-frequency second-order theorem at k=0. It does not exclude cancellation by pairs with unequal frequencies summing to 2omega_e, opposite nonzero momenta, all-orders integration, final residual descent, causal scattering, particles, or quantum theory.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.13,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_frequency_isolation --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_frequency_isolation"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "all_m_obstruction",
+        "axial_generic",
+        "polar_generic",
+        "axial_ell1",
+        "polar_ell1",
+        "physical_ell1",
+        "standard_globals"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "different-frequency, different-momentum, and all-orders gates remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_frequency_isolation --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_frequency_isolation"
+  ]
+}
