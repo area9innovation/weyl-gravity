@@ -50,11 +50,12 @@ eight expanded sectors on exact rational momenta and noncommuting symmetric
 endomorphisms. It also verifies cyclic covariance and reconstructs every
 simplex/Wick coefficient from the gamma-function formula.
 
-This is a full parametric labelled-Ricci triangle kernel, but it is not yet
-the repository (I_{10}) form factor. The frozen normalization/crosswalk from
-the scalar-flat (K_{\mu\nu}) carrier to the labelled Ricci endomorphisms has
-not been applied. The curved-Endo one- and two-insertion rows also remain
-open.
+This is a full parametric labelled-Ricci triangle kernel, but it is not yet a
+repository five-carrier decomposition. Its zero-derivative sector can feed
+(I_{10}); the longitudinal projector sectors carry two, four, and six
+external derivatives and can also feed (I_{24},I_{25},I_{28},I_{29}). The
+frozen scalar-flat (K_{\mu\nu}) crosswalk and tensor-basis projection have not
+been applied. The curved-Endo one- and two-insertion rows also remain open.
 
 ```bash
 PYTHONPATH=quantum-weyl python3 -m spectral.euclidean.generic_background_ghost_n3_triangle_kernel --emit

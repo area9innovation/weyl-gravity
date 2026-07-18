@@ -105,7 +105,7 @@ def verify() -> dict:
                 or wick["homogeneous_loop_degree"] != 2 * pair_count
             ):
                 raise ValueError("triangle Wick coefficient drifted")
-    if stored["carrier_projection"]["repository_I10_projection"] != "NOT_COMPUTED":
+    if stored["carrier_projection"]["repository_five_carrier_projection"] != "NOT_COMPUTED":
         raise ValueError("triangle crossed repository carrier boundary")
     return stored
 

@@ -32,8 +32,9 @@ class GenericGhostN3TriangleKernelTests(unittest.TestCase):
 
     def test_fail_closed_repository_projection(self) -> None:
         value = build()
-        self.assertEqual(value["carrier_projection"]["repository_I10_projection"], "NOT_COMPUTED")
-        self.assertFalse(value["claim_flags"]["GENERIC_GHOST_N3_REPOSITORY_I10_PROJECTION_COMPUTED"])
+        self.assertEqual(value["carrier_projection"]["repository_five_carrier_projection"], "NOT_COMPUTED")
+        self.assertEqual(value["carrier_projection"]["source_candidates"], ["I10", "I24", "I25", "I28", "I29"])
+        self.assertFalse(value["claim_flags"]["GENERIC_GHOST_N3_REPOSITORY_FIVE_CARRIER_PROJECTION_COMPUTED"])
 
     def test_schema_is_strict(self) -> None:
         schema = json.loads(SCHEMA.read_text())
@@ -49,7 +50,7 @@ class GenericGhostN3TriangleKernelTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate(mutant)
         mutant = deepcopy(build())
-        mutant["claim_flags"]["GENERIC_GHOST_N3_REPOSITORY_I10_PROJECTION_COMPUTED"] = True
+        mutant["claim_flags"]["GENERIC_GHOST_N3_REPOSITORY_FIVE_CARRIER_PROJECTION_COMPUTED"] = True
         with self.assertRaises(ValueError):
             validate(mutant)
         mutant = deepcopy(build())

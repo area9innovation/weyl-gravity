@@ -134,15 +134,15 @@ def build() -> dict[str, Any]:
             "simplex_Wick_coefficient_formula": "c_(s,m)=(s-m)!/2^m",
         },
         "carrier_projection": {
-            "source_candidate": "I10",
-            "repository_I10_projection": "NOT_COMPUTED",
+            "source_candidates": ["I10", "I24", "I25", "I28", "I29"],
+            "repository_five_carrier_projection": "NOT_COMPUTED",
             "repository_K_to_Ricci_crosswalk": "NO_CERTIFIED_MAP",
-            "reason": "the exact labelled Ricci triangle has not yet been reduced using the frozen scalar-flat K_munu normalization and four-dimensional carrier identities",
+            "reason": "the zero-derivative sector can feed I10, while the longitudinal projector sectors carry two, four and six external derivatives and can feed I24, I25, I28 and I29; the exact labelled Ricci triangle has not yet been reduced in the frozen scalar-flat five-carrier basis",
         },
         "claim_flags": {
             "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED": True,
             "GENERIC_GHOST_N3_EIGHT_PROJECTOR_SECTORS_EXACT": True,
-            "GENERIC_GHOST_N3_REPOSITORY_I10_PROJECTION_COMPUTED": False,
+            "GENERIC_GHOST_N3_REPOSITORY_FIVE_CARRIER_PROJECTION_COMPUTED": False,
             "GENERIC_GHOST_N2_INSERTION_TRACE_COMPUTED": False,
             "GENERIC_GHOST_N1_INSERTION_TRACE_COMPUTED": False,
             "GENERIC_NONMINIMAL_GHOST_CPT_DETERMINANT_COMPUTED": False,
@@ -157,9 +157,9 @@ def build() -> dict[str, Any]:
             "result_id": parent["result_id"],
             "sha256": _sha256(DEPENDENCY),
         },
-        "next_gate": "PROJECT_N3_TRIANGLE_TO_REPOSITORY_I10_AND_COMPUTE_N1_N2_CURVED_ENDO_TRACES",
+        "next_gate": "PROJECT_N3_TRIANGLE_TO_REPOSITORY_FIVE_CARRIERS_AND_COMPUTE_N1_N2_CURVED_ENDO_TRACES",
         "claim_boundary": (
-            "This EUCLIDEAN-SPECTRAL result computes the full generic-nonexceptional-momentum three-Ricci ghost triangle as an exact eight-sector Feynman-simplex/Wick kernel. All projector coefficients, denominator powers, alpha weights and twenty Wick rows are rational and independently replayed against the direct Endo-projector integrand. The result is a parametric tensor kernel, not yet the repository I10 form factor: the scalar-flat K_munu-to-Ricci normalization and carrier projection remain open, as do the curved-Endo one- and two-insertion rows, the complete ghost determinant, physical fourth-order Hessian, repository functions, Gamma1/Q1, residual, Lorentzian, Hadamard, particle, positivity and unitarity theorems."
+            "This EUCLIDEAN-SPECTRAL result computes the full generic-nonexceptional-momentum three-Ricci ghost triangle as an exact eight-sector Feynman-simplex/Wick kernel. All projector coefficients, denominator powers, alpha weights and twenty Wick rows are rational and independently replayed against the direct Endo-projector integrand. The zero-derivative sector can feed I10, while the longitudinal sectors can populate I24, I25, I28 and I29. The result is therefore a parametric tensor kernel, not yet a repository five-carrier form-factor decomposition: the scalar-flat K_munu-to-Ricci normalization and carrier projection remain open, as do the curved-Endo one- and two-insertion rows, the complete ghost determinant, physical fourth-order Hessian, repository functions, Gamma1/Q1, residual, Lorentzian, Hadamard, particle, positivity and unitarity theorems."
         ),
     }
     validate(result)
@@ -186,6 +186,10 @@ def validate(value: dict[str, Any]) -> None:
         raise ValueError("triangle sector coefficients or structure drifted")
     if value["master_kernel"]["W_and_Tr_log_multiplier"] != _q(Fraction(-8, 3)):
         raise ValueError("triangle W/Tr-log multiplier drifted")
+    if value["carrier_projection"]["source_candidates"] != [
+        "I10", "I24", "I25", "I28", "I29"
+    ]:
+        raise ValueError("triangle five-carrier target drifted")
     flags = value["claim_flags"]
     true_flags = {
         "GENERIC_GHOST_N3_NONZERO_MOMENTUM_PARAMETRIC_KERNEL_COMPUTED",
@@ -207,7 +211,7 @@ def main() -> int:
         OUTPUT.write_text(rendered)
     if args.check and (not OUTPUT.exists() or OUTPUT.read_text() != rendered):
         raise SystemExit(f"stale n=3 triangle certificate: {OUTPUT}")
-    print("GENERIC GHOST N3 TRIANGLE: EXACT PARAMETRIC KERNEL; I10 PROJECTION OPEN")
+    print("GENERIC GHOST N3 TRIANGLE: EXACT PARAMETRIC KERNEL; FIVE-CARRIER PROJECTION OPEN")
     return 0
 
 

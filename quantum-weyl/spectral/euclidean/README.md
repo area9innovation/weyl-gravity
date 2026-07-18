@@ -78,8 +78,10 @@ The generic nonexceptional-momentum triangle is now reduced exactly in
 Expanding the three Endo longitudinal projectors gives eight sectors with
 multiplicities `(1,3,3,1)` and twenty exact Feynman-simplex/Wick rows. This is
 the complete labelled-Ricci parametric tensor kernel, not yet the repository
-`I10` form factor: its frozen `K_munu` normalization/projection and the curved-
-Endo one-/two-insertion traces remain open.
+five-carrier decomposition. The zero-derivative sector can feed `I10`, while
+the longitudinal sectors can feed `I24`, `I25`, `I28`, and `I29`; the frozen
+`K_munu` crosswalk/projection and curved-Endo one-/two-insertion traces remain
+open.
 
 Replay with:
 

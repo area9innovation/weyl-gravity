@@ -876,7 +876,7 @@ exact adiabatic angular numerator: its scalar-flat `tr(Ric^3)` coefficient is
 integral is scaleless and IR singular at zero external momentum. At generic
 nonexceptional momentum the full labelled-Ricci triangle is now reduced to
 an exact eight-sector Feynman-simplex/Wick kernel with twenty rational rows.
-Its repository `I10` normalization/projection and the curved-Endo one-/two-
+Its repository five-carrier normalization/projection and the curved-Endo one-/two-
 insertion rows remain open. The generic physical fourth-order Hessian kernel
 remains independently open. The original
 direct-substitution failure
@@ -890,7 +890,7 @@ rejects a direct sum or name-based identification.
 
 The currently active coefficient-bearing ladder work is the QME-dependency
 rail for Bridge 5. Its remaining local gate begins with projecting the generic
-ghost's exact nonzero-momentum triangle to the repository `I10` carrier, the
+ghost's exact nonzero-momentum triangle to the repository five-carrier basis, the
 curved-Endo one-/two-insertion traces and the physical fourth-order Hessian
 kernel, followed by the five
 parity-even third-curvature repository
