@@ -377,6 +377,16 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   while the full rank-310 SDR variation remains fail-closed:
   [`certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json`](certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json),
   [`reports/nariai-transverse-linearized-einstein-witness.md`](reports/nariai-transverse-linearized-einstein-witness.md)
+- First transverse rank-310 incidence variation: in the tangent's moving
+  orthonormal frame at `t=asinh(1)`, the Ricci-free Weyl variation has
+  sectional entries `(2,-1,-1,1,1,-2)`.  Its normal-adjoint-tractor
+  incidence is a rank-four `60x4` map with twelve nonzero entries, and the
+  forced automorphism-arrow correction `-dot(I_Omega)p0` has the same rank
+  and support.  The opposite BV row is fixed by formal adjunction.  This
+  closes only the first and dual incidence terms: BGG splitting, pairing,
+  middle/Schur, full SDR, and causal variations remain open:
+  [`certificates/NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1.json),
+  [`reports/nariai-transverse-curvature-incidence-variation.md`](reports/nariai-transverse-curvature-incidence-variation.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

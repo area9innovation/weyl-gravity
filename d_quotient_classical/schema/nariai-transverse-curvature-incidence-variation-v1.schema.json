@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/nariai-transverse-curvature-incidence-variation-v1.schema.json",
+  "title": "Nariai transverse curvature-incidence variation V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "schema_version", "result_id", "result_state", "dependency_tags", "dependency_refs", "evaluation", "exact_data", "linearized_first_square", "cyclic_completion", "exact_checks", "flags", "next_gate", "claim_boundary", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "nariai-transverse-curvature-incidence-variation-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1"},
+    "result_state": {"const": "FIRST_AND_DUAL_CURVATURE_INCIDENCE_VARIATION_EXACT"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}], "items": false, "minItems": 1, "maxItems": 1},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["transverse_witness", "curvature_incidence_identity", "rank_310_mapping_cone"],
+      "properties": {
+        "transverse_witness": {"$ref": "#/$defs/dependency"},
+        "curvature_incidence_identity": {"$ref": "#/$defs/dependency"},
+        "rank_310_mapping_cone": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "evaluation": {"$ref": "#/$defs/string_object"},
+    "exact_data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["adjoint_basis_names", "delta_ricci", "algebraic_bianchi_defect_count", "delta_normal_tractor_curvature", "delta_curvature_incidence", "harmonic_projection_p0", "delta_daut_incidence_term", "normalized_anchor"],
+      "properties": {
+        "adjoint_basis_names": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"type": "string"}},
+        "delta_ricci": {"$ref": "#/$defs/sparse"},
+        "algebraic_bianchi_defect_count": {"const": 0},
+        "delta_normal_tractor_curvature": {
+          "type": "object", "additionalProperties": false,
+          "required": ["01", "02", "03", "12", "13", "23"],
+          "properties": {
+            "01": {"$ref": "#/$defs/sparse"}, "02": {"$ref": "#/$defs/sparse"}, "03": {"$ref": "#/$defs/sparse"},
+            "12": {"$ref": "#/$defs/sparse"}, "13": {"$ref": "#/$defs/sparse"}, "23": {"$ref": "#/$defs/sparse"}
+          }
+        },
+        "delta_curvature_incidence": {"allOf": [{"$ref": "#/$defs/sparse"}, {"type": "object", "properties": {"shape": {"const": [60, 4]}, "rank": {"const": 4}, "entries": {"type": "array", "minItems": 12, "maxItems": 12}}}]},
+        "harmonic_projection_p0": {"$ref": "#/$defs/sparse"},
+        "delta_daut_incidence_term": {"allOf": [{"$ref": "#/$defs/sparse"}, {"type": "object", "properties": {"shape": {"const": [60, 15]}, "rank": {"const": 4}, "entries": {"type": "array", "minItems": 12, "maxItems": 12}}}]},
+        "normalized_anchor": {
+          "type": "object", "additionalProperties": false,
+          "required": ["expression", "value"],
+          "properties": {"expression": {"type": "string", "minLength": 1}, "value": {"const": "1"}}
+        }
+      }
+    },
+    "linearized_first_square": {
+      "type": "object", "additionalProperties": false,
+      "required": ["identity", "strict_automorphism_arrow", "required_incidence_correction", "normalized_nonzero_term"],
+      "properties": {
+        "identity": {"type": "string", "minLength": 1},
+        "strict_automorphism_arrow": {"type": "string", "minLength": 1},
+        "required_incidence_correction": {"type": "string", "minLength": 1},
+        "normalized_nonzero_term": {
+          "type": "object", "additionalProperties": false,
+          "required": ["expression", "value"],
+          "properties": {"expression": {"type": "string", "minLength": 1}, "value": {"const": "1"}}
+        }
+      }
+    },
+    "cyclic_completion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dual_rule", "dual_rank", "dual_nonzero_entries_before_pairing_change", "full_pairing_variation_solved"],
+      "properties": {
+        "dual_rule": {"type": "string", "minLength": 1},
+        "dual_rank": {"const": 4},
+        "dual_nonzero_entries_before_pairing_change": {"const": 12},
+        "full_pairing_variation_solved": {"const": false}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 9, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1", "TRANSVERSE_FIRST_AND_DUAL_INCIDENCE_VARIATION", "TRANSVERSE_BGG_SPLITTING_VARIATION", "TRANSVERSE_MIDDLE_SCHUR_VARIATION", "TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION", "TRANSVERSE_METRIC_PARENT_SDR", "TRANSVERSE_CAUSAL_TRANSFER"],
+      "properties": {
+        "NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1": {"const": true},
+        "TRANSVERSE_FIRST_AND_DUAL_INCIDENCE_VARIATION": {"const": true},
+        "TRANSVERSE_BGG_SPLITTING_VARIATION": {"const": false},
+        "TRANSVERSE_MIDDLE_SCHUR_VARIATION": {"const": false},
+        "TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION": {"const": false},
+        "TRANSVERSE_METRIC_PARENT_SDR": {"const": false},
+        "TRANSVERSE_CAUSAL_TRANSFER": {"const": false}
+      }
+    },
+    "next_gate": {"const": "NARIAI_TRANSVERSE_BGG_SPLITTING_AND_MIDDLE_SCHUR_VARIATION"},
+    "claim_boundary": {"type": "string", "minLength": 120},
+    "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_id", "sha256"],
+      "properties": {"path": {"type": "string"}, "result_id": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    },
+    "string_object": {"type": "object", "minProperties": 3, "additionalProperties": {"type": "string", "minLength": 1}},
+    "sparse": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "rank", "entries", "sha256"],
+      "properties": {
+        "shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}},
+        "rank": {"type": "integer", "minimum": 0},
+        "entries": {
+          "type": "array",
+          "items": {"type": "array", "prefixItems": [{"type": "integer"}, {"type": "integer"}, {"type": "string"}], "items": false, "minItems": 3, "maxItems": 3}
+        },
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

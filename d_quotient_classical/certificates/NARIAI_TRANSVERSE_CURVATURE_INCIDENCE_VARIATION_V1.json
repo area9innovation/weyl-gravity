@@ -1,0 +1,378 @@
+{
+  "claim_boundary": "This exact first-order certificate differentiates the canonical curvature-incidence term and its forced cyclic dual along the certified transverse linearized Einstein tangent. It proves the rank-four twelve-entry correction required in the first automorphism row. It does not yet solve the variations of the BGG splittings, middle/Schur identity, fibre pairing, complete rank-310 SDR, or causal transfer.",
+  "cyclic_completion": {
+    "dual_nonzero_entries_before_pairing_change": 12,
+    "dual_rank": 4,
+    "dual_rule": "the opposite BV row receives the forced formal adjoint of -dot(I_Omega)p0 under the serialized rank-310 pairings",
+    "full_pairing_variation_solved": false
+  },
+  "dependency_refs": {
+    "curvature_incidence_identity": {
+      "path": "d_quotient_classical/certificates/NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1.json",
+      "result_id": "NARIAI_CURVATURE_INCIDENCE_FIRST_SQUARE_V1",
+      "sha256": "71016d36ba0613258965e8d4fc85e1d28d647f60b7c7e4de84779bd24e3660b6"
+    },
+    "rank_310_mapping_cone": {
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "result_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    },
+    "transverse_witness": {
+      "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1.json",
+      "result_id": "NARIAI_TRANSVERSE_LINEARIZED_EINSTEIN_WITNESS_V1",
+      "sha256": "0f69c6021e702a2ea0fea6bc2d7ba4e088962df7e9eda8d9a071bf22e2130748"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "evaluation": {
+    "background": "unit Nariai",
+    "delta_cotton": "0",
+    "delta_schouten_components": "0 because the tangent is Einstein at fixed cosmological constant in the moving orthonormal frame",
+    "frame": "epsilon-dependent orthonormal normal frame",
+    "point": "t=asinh(1)",
+    "tangent": "delta a=-(1/3)sinh(2t), delta b=sinh(t)"
+  },
+  "exact_checks": {
+    "delta_Ricci_zero": true,
+    "delta_Riemann_algebraic_Bianchi": true,
+    "delta_curvature_incidence_rank_four": true,
+    "delta_curvature_incidence_twelve_entries": true,
+    "delta_daut_incidence_rank_four": true,
+    "delta_daut_incidence_twelve_entries": true,
+    "delta_normal_tractor_curvature_reconstructed": true,
+    "dual_row_forced_by_cyclicity": true,
+    "normalized_anchor_equals_one": true
+  },
+  "exact_data": {
+    "adjoint_basis_names": [
+      "P0",
+      "P1",
+      "P2",
+      "P3",
+      "M01",
+      "M02",
+      "M03",
+      "M12",
+      "M13",
+      "M23",
+      "D",
+      "K0",
+      "K1",
+      "K2",
+      "K3"
+    ],
+    "algebraic_bianchi_defect_count": 0,
+    "delta_curvature_incidence": {
+      "entries": [
+        [
+          4,
+          1,
+          "-2"
+        ],
+        [
+          5,
+          2,
+          "1"
+        ],
+        [
+          6,
+          3,
+          "1"
+        ],
+        [
+          19,
+          0,
+          "2"
+        ],
+        [
+          22,
+          2,
+          "1"
+        ],
+        [
+          23,
+          3,
+          "1"
+        ],
+        [
+          35,
+          0,
+          "-1"
+        ],
+        [
+          37,
+          1,
+          "-1"
+        ],
+        [
+          39,
+          3,
+          "-2"
+        ],
+        [
+          51,
+          0,
+          "-1"
+        ],
+        [
+          53,
+          1,
+          "-1"
+        ],
+        [
+          54,
+          2,
+          "2"
+        ]
+      ],
+      "rank": 4,
+      "sha256": "4a61e99f6de6f1e20b35deee4f96a72f3b6f0ba938bbeac86fa62d41f074354f",
+      "shape": [
+        60,
+        4
+      ]
+    },
+    "delta_daut_incidence_term": {
+      "entries": [
+        [
+          4,
+          1,
+          "2"
+        ],
+        [
+          5,
+          2,
+          "-1"
+        ],
+        [
+          6,
+          3,
+          "-1"
+        ],
+        [
+          19,
+          0,
+          "-2"
+        ],
+        [
+          22,
+          2,
+          "-1"
+        ],
+        [
+          23,
+          3,
+          "-1"
+        ],
+        [
+          35,
+          0,
+          "1"
+        ],
+        [
+          37,
+          1,
+          "1"
+        ],
+        [
+          39,
+          3,
+          "2"
+        ],
+        [
+          51,
+          0,
+          "1"
+        ],
+        [
+          53,
+          1,
+          "1"
+        ],
+        [
+          54,
+          2,
+          "-2"
+        ]
+      ],
+      "rank": 4,
+      "sha256": "bf6c368fb24328c18bb83ab00a076ed3a01ff1ad961d8e98b24052cbc2742a1b",
+      "shape": [
+        60,
+        15
+      ]
+    },
+    "delta_normal_tractor_curvature": {
+      "01": {
+        "entries": [
+          [
+            4,
+            0,
+            "-2"
+          ]
+        ],
+        "rank": 1,
+        "sha256": "d81e13b50921b504d529946e4e08cda281cf3160182ac6b1a8a34a4324a614ee",
+        "shape": [
+          15,
+          1
+        ]
+      },
+      "02": {
+        "entries": [
+          [
+            5,
+            0,
+            "1"
+          ]
+        ],
+        "rank": 1,
+        "sha256": "87f6590554525c116e4671778e7f7baf6e2bf88224c2847480a6b7f638b44ca4",
+        "shape": [
+          15,
+          1
+        ]
+      },
+      "03": {
+        "entries": [
+          [
+            6,
+            0,
+            "1"
+          ]
+        ],
+        "rank": 1,
+        "sha256": "5a2ae70218ac028e67cf30592039b0aa5a8c93ea847abced3e27d31ec8d101ec",
+        "shape": [
+          15,
+          1
+        ]
+      },
+      "12": {
+        "entries": [
+          [
+            7,
+            0,
+            "1"
+          ]
+        ],
+        "rank": 1,
+        "sha256": "023fae7128c406fd177dcab727d8d41d8783949bc8dd17d12520e2734bed5064",
+        "shape": [
+          15,
+          1
+        ]
+      },
+      "13": {
+        "entries": [
+          [
+            8,
+            0,
+            "1"
+          ]
+        ],
+        "rank": 1,
+        "sha256": "ffb8565160f4cd88a3670a2efcf717224c7b6e48e8490d51f23fd9a436ec534c",
+        "shape": [
+          15,
+          1
+        ]
+      },
+      "23": {
+        "entries": [
+          [
+            9,
+            0,
+            "-2"
+          ]
+        ],
+        "rank": 1,
+        "sha256": "27185870f7d1bc1a52738c62b6fcc794e76e47da3cb7a766acd807565cb6b552",
+        "shape": [
+          15,
+          1
+        ]
+      }
+    },
+    "delta_ricci": {
+      "entries": [],
+      "rank": 0,
+      "sha256": "6e8a32c4d064f40fd1fc79ce85018d67229d2165bcfd40661191c20105450d45",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "harmonic_projection_p0": {
+      "entries": [
+        [
+          0,
+          0,
+          "1"
+        ],
+        [
+          1,
+          1,
+          "1"
+        ],
+        [
+          2,
+          2,
+          "1"
+        ],
+        [
+          3,
+          3,
+          "1"
+        ]
+      ],
+      "rank": 4,
+      "sha256": "53ecbb8f0d2a545fbc17376dcd078eb49b6c2bbf0edb5f8aadcd79e919f8011b",
+      "shape": [
+        4,
+        15
+      ]
+    },
+    "normalized_anchor": {
+      "expression": "-(1/2) delta_I_Omega[4,1]",
+      "value": "1"
+    }
+  },
+  "flags": {
+    "NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1": true,
+    "TRANSVERSE_BGG_SPLITTING_VARIATION": false,
+    "TRANSVERSE_CAUSAL_TRANSFER": false,
+    "TRANSVERSE_FIRST_AND_DUAL_INCIDENCE_VARIATION": true,
+    "TRANSVERSE_METRIC_PARENT_SDR": false,
+    "TRANSVERSE_METRIC_PARENT_SDR_FIRST_VARIATION": false,
+    "TRANSVERSE_MIDDLE_SCHUR_VARIATION": false
+  },
+  "linearized_first_square": {
+    "identity": "dot(d^D)L0+d^D dot(L0)-dot(L1)K-L1 dot(K)=dot(I_Omega)",
+    "normalized_nonzero_term": {
+      "expression": "-(1/2) delta_I_Omega[4,1]",
+      "value": "1"
+    },
+    "required_incidence_correction": "dot(d_aut)=dot(d^D)-dot(I_Omega)p0",
+    "strict_automorphism_arrow": "d_aut=d^D-I_Omega p0"
+  },
+  "next_gate": "NARIAI_TRANSVERSE_BGG_SPLITTING_AND_MIDDLE_SCHUR_VARIATION",
+  "result_id": "NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1",
+  "result_state": "FIRST_AND_DUAL_CURVATURE_INCIDENCE_VARIATION_EXACT",
+  "schema": "nariai-transverse-curvature-incidence-variation-v1",
+  "schema_version": "1.0.0",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/nariai_transverse_curvature_incidence_variation.py": "a59d1ece471bb97a0c210b1a0bb1f238bbb021fe6490ecc5ba6f544b5cdd559e",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_transverse_curvature_incidence_variation.py": "4cfb99ef84718e3aab903a704dd3f48905c1dc01e79e137f54d5d2897c7814df",
+    "d_quotient_classical/causal_transfer/verify_nariai_transverse_curvature_incidence_variation.py": "41d39b1c05d36dcd49a5e2a238654cfd8eeb339fe98d6c957e15353a3f18099e",
+    "d_quotient_classical/schema/nariai-transverse-curvature-incidence-variation-v1.schema.json": "59f9e182c2a32922275fb78089441aacfdccc766ea06a3b267328cdeffc122e9"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.causal_transfer.nariai_transverse_curvature_incidence_variation --check --guards",
+    "python3 d_quotient_classical/causal_transfer/verify_nariai_transverse_curvature_incidence_variation.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_nariai_transverse_curvature_incidence_variation",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-transverse-curvature-incidence-variation-v1.schema.json -d d_quotient_classical/certificates/NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1.json"
+  ]
+}

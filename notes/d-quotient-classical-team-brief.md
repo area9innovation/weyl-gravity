@@ -1446,6 +1446,48 @@ Nariai maps do not extend unchanged, but it is not yet an obstruction to
 curvature-corrected maps.  The next gate is now the actual first variation of
 the rank-310 chain-map, retract and cyclicity identities along this witness.
 
+That first variation is now closed in the outer incidence rows.
+`NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1` reconstructs the
+Ricci-free moving-frame curvature variation, obtains the exact rank-four
+normal-tractor incidence `dot(I_Omega)`, and proves that the automorphism row
+must acquire `-dot(I_Omega)p0`.  Both maps have twelve nonzero entries and the
+normalization `-(1/2)dot(I_Omega)[4,1]=1`; cyclicity fixes the formal-adjoint
+dual row.  This is not yet the full first variation: the BGG splitting maps,
+the varying fibre pairing, and the middle/Schur identities remain open.  The
+next gate is therefore
+`NARIAI_TRANSVERSE_BGG_SPLITTING_AND_MIDDLE_SCHUR_VARIATION`, followed by the
+complete rank-310 SDR identity and only then causal transfer.
+
+### Programme residual-atlas and tangent-cone handoff (2026-07-18)
+
+After the current transverse-SDR gate, this lane must emit the classical
+causal/gauge/carrier fragment of the shared generated residual atlas.  Use the
+Einstein team's authoritative schema when it lands; do not create a competing
+programme schema.  Seed vacuum cylinder, Berger clock, conformal Nariai, and
+the open Bach-flat parent class at exactly their certified scopes.  Every
+record must declare theory, background, boundaries, charge sector, carrier,
+degree, parity, `(ell,m,k,omega)`, causal maps, support class, and an explicit
+carrier crosswalk or `NO_CERTIFIED_MAP`.  The only allowed lifecycle values
+are `CERTIFIED`, `OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE`, and
+`NO_CERTIFIED_MAP`.  The centered classes `[W_+^2]` and `[W_-^2]` are
+deformation/vertex classes, never one-particle modes.
+
+This lane also owns the analytic reduction lemma for the shared finite-
+harmonic second-order tangent cone
+
+\[
+\mathcal Z_2^{\mathcal C}
+=\{u:\mu_X(u)=0,\ R_j^{\mathcal C}(u)=0\}.
+\]
+
+The proof must state completeness of the harmonic block decomposition, remove
+gauge and Noether rows before forming the adjoint cokernel, and distinguish
+bounded/quasiperiodic, smooth-secular, and causal/retarded correction spaces.
+In particular it must audit a resonant source twice: first in the bounded
+Fourier class, and then after allowing `t exp(i omega t)` corrections.  Any
+change of cokernel or obstruction status must be recorded as a change of
+correction category, not as a contradiction between certificates.
+
 ### Work package C-G3: clock-family stability
 
 Replace the single Berger fixture by an audit of the full squashing interval,

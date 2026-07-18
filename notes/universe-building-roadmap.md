@@ -210,9 +210,25 @@ The first transverse input is now exact: the Kantowski--Sachs tangent
 `delta a=-(1/3)sinh(2t)`, `delta b=sinh(t)` is linearized Einstein/Bach-flat,
 lies outside the infinitesimal Diff--Weyl orbit, and has normalized
 tractor-curvature drift `delta C_0202=-1` at `t=asinh(1)`.  The active
-certificate must differentiate the rank-310 SDR identities along this
-witness and either solve the curvature-dependent correction or return its
-normalized Hom-complex obstruction.
+certificate has now differentiated the outer incidence rows: the exact
+rank-four map `dot(I_Omega)` and the required correction
+`-dot(I_Omega)p0` each have twelve entries, with the opposite BV row forced
+by formal adjunction.  The active gate is the BGG-splitting and middle/Schur
+variation, including the varying pairing, followed by the complete rank-310
+SDR identity.  No transverse causal promotion follows from the outer-row
+calculation alone.
+
+After that coherent gate, the classical lane joins the two authoritative
+programme deliverables.  It must populate the causal/gauge/carrier fragment
+of the generated residual atlas for the vacuum cylinder, Berger clock,
+conformal Nariai, and the open Bach-flat parent class, using the Einstein
+team's shared schema and fail-closed lifecycle vocabulary.  It must also
+prove the analytic lemma behind the finite-harmonic second-order tangent-cone
+formula, with the correction category declared separately as bounded or
+quasiperiodic, smooth secular, or causal/retarded.  The first adversarial test
+is whether a Fourier resonance obstructed in the bounded class is removed by
+a `t exp(i omega t)` correction.  No cross-background or cross-carrier mode
+identification is permitted without an explicit atlas crosswalk.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 
