@@ -15,19 +15,14 @@
     "input_contracts": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["relative_triangle", "einstein_taylor", "weyl_taylor", "taylor_schema"],
+      "required": ["relative_triangle", "einstein_taylor", "weyl_taylor", "triangle_schema", "taylor_schema"],
       "properties": {
         "relative_triangle": {"$ref": "#/$defs/contract"},
         "einstein_taylor": {"$ref": "#/$defs/contract"},
         "weyl_taylor": {"$ref": "#/$defs/contract"},
+        "triangle_schema": {"$ref": "#/$defs/schema_ref"},
         "taylor_schema": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["path", "sha256"],
-          "properties": {
-            "path": {"type": "string", "minLength": 1},
-            "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
-          }
+          "$ref": "#/$defs/schema_ref"
         }
       }
     },
@@ -111,6 +106,7 @@
   ],
   "$defs": {
     "artifact": {"type": "object", "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "schema_ref": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
     "contract": {"type": "object", "additionalProperties": false, "required": ["required_result_id", "required_background_id", "candidate_paths", "required_flags"], "properties": {"required_result_id": {"type": "string", "minLength": 1}, "required_background_id": {"const": "compact_magnetic_Plebanski_Hacyan_product"}, "candidate_paths": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}}, "required_flags": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}}},
     "timed_command": {"type": "object", "additionalProperties": false, "required": ["command", "elapsed_seconds"], "properties": {"command": {"type": "string", "minLength": 1}, "elapsed_seconds": {"type": "number", "minimum": 0}}},
     "passing_timed_tier": {"type": "object", "additionalProperties": false, "required": ["commands_and_elapsed_seconds", "status"], "properties": {"commands_and_elapsed_seconds": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/timed_command"}}, "status": {"const": "PASS"}}}

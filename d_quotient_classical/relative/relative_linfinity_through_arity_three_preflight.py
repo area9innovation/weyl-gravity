@@ -16,6 +16,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json"
 REPORT = ROOT / "d_quotient_classical/reports/einstein-weyl-relative-linfinity-through-arity-three-preflight.md"
+TRIANGLE_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json"
 INPUT_SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json"
 SCHEMA = ROOT / "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json"
 VERIFIER = ROOT / "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py"
@@ -73,16 +74,24 @@ def _artifact(path: Path, value: Mapping[str, object]) -> dict[str, str]:
     return {"result_id": str(value["result_id"]), "path": str(path.relative_to(ROOT)), "sha256": _sha256(path)}
 
 
-def validate_triangle(value: Mapping[str, object]) -> None:
+def validate_triangle(value: Mapping[str, object], *, verify_artifacts: bool = True) -> None:
+    schema = _load(TRIANGLE_SCHEMA)
+    Draft202012Validator.check_schema(schema)
+    Draft202012Validator(schema).validate(value)
     if value.get("result_id") != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1":
         raise ValueError("relative triangle result id drifted")
     if value.get("claim_status") not in {"CERTIFIED", "THEOREM_FROZEN", "CERTIFIED_OFF_SHELL_LINEAR_TRIANGLE"}:
         raise ValueError("relative triangle is not certified")
     if value.get("background_id") != BACKGROUND_ID:
         raise ValueError("relative triangle is not on the compact-product interaction background")
-    missing = [flag for flag in TRIANGLE_FLAGS if value.get("flags", {}).get(flag) is not True]
+    missing = [flag for flag in TRIANGLE_FLAGS if value["acceptance_flags"].get(flag) is not True]
     if missing:
         raise ValueError("relative triangle misses acceptance flags: " + ", ".join(missing))
+    if verify_artifacts:
+        for artifact in value["triangle_artifacts"].values():
+            path = ROOT / artifact["path"]
+            if not path.is_file() or _sha256(path) != artifact["sha256"]:
+                raise ValueError(f"triangle artifact drifted: {artifact['path']}")
 
 
 def validate_taylor(value: Mapping[str, object], *, expected_result_id: str, expected_theory: str, verify_artifacts: bool = True) -> None:
@@ -124,7 +133,7 @@ def build() -> dict:
     for name, path, value in (("relative_linear_triangle", triangle_path, triangle), ("einstein_product_taylor", einstein_path, einstein), ("weyl_product_taylor", weyl_path, weyl)):
         if value is not None:
             dependencies[name] = _artifact(path, value)
-    source_paths = (Path(__file__), VERIFIER, TESTS, INPUT_SCHEMA, SCHEMA)
+    source_paths = (Path(__file__), VERIFIER, TESTS, TRIANGLE_SCHEMA, INPUT_SCHEMA, SCHEMA)
     status = {"relative_linear_triangle": "IMPORTED" if triangle else "MISSING", "einstein_product_q2_q3": "IMPORTED" if einstein else "MISSING", "weyl_product_q2_q3": "IMPORTED" if weyl else "MISSING"}
     value = {
         "schema": "pure-weyl-relative-linfinity-through-arity-three-preflight-v1",
@@ -138,6 +147,7 @@ def build() -> dict:
             "relative_triangle": {"required_result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1", "required_background_id": BACKGROUND_ID, "candidate_paths": [str(path.relative_to(ROOT)) for path in TRIANGLE_CANDIDATES], "required_flags": list(TRIANGLE_FLAGS)},
             "einstein_taylor": {"required_result_id": einstein_id, "required_background_id": BACKGROUND_ID, "candidate_paths": [str(path.relative_to(ROOT)) for path in EINSTEIN_CANDIDATES], "required_flags": list(TAYLOR_FLAGS)},
             "weyl_taylor": {"required_result_id": weyl_id, "required_background_id": BACKGROUND_ID, "candidate_paths": [str(path.relative_to(ROOT)) for path in WEYL_CANDIDATES], "required_flags": list(TAYLOR_FLAGS)},
+            "triangle_schema": {"path": str(TRIANGLE_SCHEMA.relative_to(ROOT)), "sha256": _sha256(TRIANGLE_SCHEMA)},
             "taylor_schema": {"path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": _sha256(INPUT_SCHEMA)},
         },
         "dependency_refs": dependencies,
@@ -173,6 +183,7 @@ def build() -> dict:
             "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
             "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
             "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
+            "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
             "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
         ],
         "verification_receipt": {
@@ -189,8 +200,9 @@ def build() -> dict:
                 "commands_and_elapsed_seconds": [
                     {"command": "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards", "elapsed_seconds": 0.16},
                     {"command": "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py", "elapsed_seconds": 0.14},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.37},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v", "elapsed_seconds": 0.38},
                     {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json", "elapsed_seconds": 2.11},
+                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json", "elapsed_seconds": 3.34},
                     {"command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json", "elapsed_seconds": 2.02},
                 ],
                 "status": "PASS",
@@ -255,10 +267,25 @@ def synthetic_taylor(result_id: str, theory_id: str) -> dict:
 
 def synthetic_triangle() -> dict:
     return {
+        "schema": "pure-weyl-relative-linfinity-triangle-input-v1",
         "result_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1",
         "claim_status": "CERTIFIED",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "theory_map": "Einstein-Maxwell_to_Weyl-Maxwell",
         "background_id": BACKGROUND_ID,
-        "flags": {flag: True for flag in TRIANGLE_FLAGS},
+        "boundaries": "closed S1_L x S2 before final residual quotient",
+        "carrier_id": "synthetic_test_relative_triangle",
+        "coefficient_field": "Q(sqrt(3))",
+        "triangle_artifacts": {
+            name: {
+                "result_id": f"synthetic_{name}",
+                "path": str(TRIANGLE_SCHEMA.relative_to(ROOT)),
+                "sha256": _sha256(TRIANGLE_SCHEMA),
+            }
+            for name in ("source_q1", "target_q1", "inclusion", "projection_or_cofiber", "pairing_or_current")
+        },
+        "acceptance_flags": {flag: True for flag in TRIANGLE_FLAGS},
+        "claim_boundary": "Synthetic receiver fixture only; no scientific relative triangle.",
     }
 
 
@@ -294,12 +321,17 @@ def guards(value: Mapping[str, object]) -> None:
         raise ValueError(f"mutation accepted: {name}")
     triangle = synthetic_triangle()
     validate_triangle(triangle)
-    triangle["background_id"] = "fixed_rational_positive_Berger_clock"
-    try:
-        validate_triangle(triangle)
-    except Exception:
-        return
-    raise ValueError("mutation accepted: triangle background")
+    for name, mutate in (
+        ("triangle background", lambda item: item.__setitem__("background_id", "fixed_rational_positive_Berger_clock")),
+        ("triangle artifact hash", lambda item: item["triangle_artifacts"]["inclusion"].__setitem__("sha256", "0" * 64)),
+    ):
+        mutant = deepcopy(triangle)
+        mutate(mutant)
+        try:
+            validate_triangle(mutant)
+        except Exception:
+            continue
+        raise ValueError(f"mutation accepted: {name}")
 
 
 def main() -> int:

@@ -69,6 +69,10 @@
       "path": "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
       "sha256": "758ceaefc77f662e53fd3147dac18a5a74b2ed2643c40adc2a3b09d4963b469f"
     },
+    "triangle_schema": {
+      "path": "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
+      "sha256": "2a13969cdc980ac844a6aa167b5d562e373cb970de6908aaa7a98a7891043648"
+    },
     "weyl_taylor": {
       "candidate_paths": [
         "bridge/certificates/WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1.json",
@@ -118,17 +122,19 @@
     "generator": "H_product"
   },
   "source_manifest": {
-    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "d11b5724748d1f9d219ed355018c0e193ee61ae78332687cd8aa2b1d37f7c472",
-    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "7990765338963f5f7d0ad79ebc74a2123547c9359ae4dcd59df575b4f846ec2e",
+    "d_quotient_classical/relative/relative_linfinity_through_arity_three_preflight.py": "71559acf7c09b4627a6313fb590aab01ec1d8f8f19e26f99e3a3e36374ed4e27",
+    "d_quotient_classical/relative/tests/test_relative_linfinity_through_arity_three_preflight.py": "aba11aa1b8a91587fc8252670e5509eb210955cc76189cb27268588a8d818276",
     "d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py": "25c5f9da4ed1a38087287f501459a14ea094dd35fd5fe884c88cf00d1c6ec716",
     "d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json": "758ceaefc77f662e53fd3147dac18a5a74b2ed2643c40adc2a3b09d4963b469f",
-    "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json": "785808b0922f5bdfc65b33c8a139daf5330ef9da84a6e0bec34f932de8d155eb"
+    "d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json": "01bc56d19caf58c117a662d328ff805ee0407199eaf60ec8b210c56474857750",
+    "d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json": "2a13969cdc980ac844a6aa167b5d562e373cb970de6908aaa7a98a7891043648"
   },
   "verification_commands": [
     "PYTHONPATH=. python3 -m d_quotient_classical.relative.relative_linfinity_through_arity_three_preflight --check --guards",
     "PYTHONPATH=. python3 d_quotient_classical/relative/verify_relative_linfinity_through_arity_three_preflight.py",
     "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
     "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
+    "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
     "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json"
   ],
   "verification_receipt": {
@@ -153,11 +159,15 @@
         },
         {
           "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.relative.tests.test_relative_linfinity_through_arity_three_preflight -v",
-          "elapsed_seconds": 0.37
+          "elapsed_seconds": 0.38
         },
         {
           "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-product-taylor-input-v1.schema.json",
           "elapsed_seconds": 2.11
+        },
+        {
+          "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json",
+          "elapsed_seconds": 3.34
         },
         {
           "command": "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-linfinity-through-arity-three-preflight-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",

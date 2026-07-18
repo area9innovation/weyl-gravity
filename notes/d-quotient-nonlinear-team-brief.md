@@ -796,6 +796,11 @@ off-shell `EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1`, the complete
 `EINSTEIN_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1`, and the complete
 `WEYL_MAXWELL_PRODUCT_LINFINITY_THROUGH_ARITY_THREE_V1`.  All three are
 currently `MISSING`, so every atlas axis is `NO_CERTIFIED_MAP`.  The receiver
+publishes the triangle handoff contract at
+`d_quotient_classical/schema/relative-linfinity-triangle-input-v1.schema.json`;
+it requires content-addressed source/target `q1`, inclusion,
+projection-or-cofiber and pairing-or-current artifacts rather than accepting
+status flags alone.  The receiver
 validates full-BV rows, support locality, cyclic pairing, the arity-two and
 arity-three identities, `H_product` equivariance, exact artifact hashes and
 an independent-verifier flag.  It rejects Berger-background payloads and

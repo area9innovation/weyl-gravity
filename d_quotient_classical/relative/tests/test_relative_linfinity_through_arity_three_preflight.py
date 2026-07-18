@@ -39,6 +39,12 @@ class RelativeLinfinityPreflightTests(unittest.TestCase):
         with self.assertRaises(Exception):
             result.validate_triangle(value)
 
+    def test_triangle_artifact_hash_is_verified(self):
+        value = result.synthetic_triangle()
+        value["triangle_artifacts"]["inclusion"]["sha256"] = "0" * 64
+        with self.assertRaises(Exception):
+            result.validate_triangle(value)
+
     def test_missing_inputs_cannot_claim_ready(self):
         value = result.build()
         value["result_state"] = "INPUTS_IMPORTED_RELATIVE_MORPHISM_SOLVE_READY"
