@@ -11,6 +11,11 @@
     "standard_pairing_all_sector_cyclic_triangle_possible": false
   },
   "dependency_refs": {
+    "axial_chain_map": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_PREFLIGHT",
+      "path": "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+      "sha256": "c420c68f24d46c51b3f41ac3c64227a06e510d3ec4d3365ec9871b169d3bc295"
+    },
     "axial_physical_ring": {
       "artifact_id": "EINSTEIN_MAXWELL_WEYL_AXIAL_PHYSICAL_RING",
       "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
@@ -21,6 +26,11 @@
       "path": "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
       "sha256": "8c4d4eb69068c2767955f0b80695cfb81fc086ebaf5658da474f6ebb9f606e90"
     },
+    "polar_chain_map": {
+      "artifact_id": "EINSTEIN_MAXWELL_WEYL_POLAR_UNGAUGED_NOETHER_LIFT",
+      "path": "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
+      "sha256": "1247963ba92efc60b7d6744140c6412e3667bb03010c2251db752d23d7707d34"
+    },
     "polar_pairing": {
       "artifact_id": "EINSTEIN_MAXWELL_WEYL_POLAR_LEE_WALD_GATE",
       "path": "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
@@ -30,11 +40,6 @@
       "artifact_id": "EINSTEIN_MAXWELL_WEYL_RADIATIVE_SYMPLECTIC_RESTRICTION",
       "path": "bridge/certificates/einstein_maxwell_weyl_radiative_symplectic_restriction.json",
       "sha256": "25a798211bea52cbf9d8becae64672ac327be7a09adb50e30e45fa8287a608b7"
-    },
-    "relative_dictionary": {
-      "artifact_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-      "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
-      "sha256": "ead1c376fcc715b7fcc4d83792a0c192c39ce6efa52868cff324992dea228972"
     }
   },
   "dependency_tags": [
@@ -177,10 +182,10 @@
   },
   "provenance": {
     "source_manifest": {
-      "d_quotient_classical/relative/einstein_weyl_generic_cyclic_map_inertia_obstruction.py": "637f5b631b3214aba19eaf16754cb0bb36dc31d379dd1090b42598fc5abd9c69",
+      "d_quotient_classical/relative/einstein_weyl_generic_cyclic_map_inertia_obstruction.py": "29c81500068c86f810a9f88c9488e82d437d321df452bbb0e299c53c7062b2c8",
       "d_quotient_classical/relative/tests/test_einstein_weyl_generic_cyclic_map_inertia_obstruction.py": "3b1da8a4a80078bbff72d82a6dde6b14d5f06ff4b6429aa1eb128ef0643e19b9",
-      "d_quotient_classical/relative/verify_einstein_weyl_generic_cyclic_map_inertia_obstruction.py": "905a1421e26e813d9940eb6150398406bd949eb6a859463e45f8ce547dd06d9d",
-      "d_quotient_classical/schema/einstein-weyl-generic-cyclic-map-inertia-obstruction-v1.schema.json": "6ddf5421626cbe96ded7f55c7077408b413dea6fb07d4a0512b1c61151987a1b"
+      "d_quotient_classical/relative/verify_einstein_weyl_generic_cyclic_map_inertia_obstruction.py": "3cd99866b8dc2d9305bee7de07c73cc0e526184637fdd35f70f2c81353e5ac98",
+      "d_quotient_classical/schema/einstein-weyl-generic-cyclic-map-inertia-obstruction-v1.schema.json": "d2a084eda0a310c6d28f12e8b2cba9312a2c3e3bf5ca6ccada5d6372af0fa971"
     },
     "verification_commands": [
       "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_generic_cyclic_map_inertia_obstruction --check --guards",

@@ -39,8 +39,10 @@ def verify() -> dict:
             raise ValueError(f"source digest drifted: {relative}")
     if records["axial_physical_ring"]["classification"]["Einstein_image_equals_complete_q_primary_summand_on_every_physical_fiber"] is not True:
         raise ValueError("axial q-primary completeness disappeared")
-    if records["relative_dictionary"]["classification"]["generic_axial_and_polar_solution_cofibers_certified"] is not True:
-        raise ValueError("generic solution cofibers disappeared")
+    if records["axial_chain_map"]["classification"]["generic_axial_offshell_chain_map_certified"] is not True:
+        raise ValueError("generic axial chain map disappeared")
+    if records["polar_chain_map"]["classification"]["polynomial_ghost_field_equation_identity_chain_map_certified"] is not True:
+        raise ValueError("generic polar chain map disappeared")
 
     lam = sp.symbols("lambda", positive=True)
     expected = {

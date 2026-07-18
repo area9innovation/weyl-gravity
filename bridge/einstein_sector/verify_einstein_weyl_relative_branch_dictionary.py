@@ -29,8 +29,11 @@ def main() -> None:
     if rows["ph.generic.polar.relative"]["map_lifecycle"] != "DERIVED_COFIBER_TRIANGLE":
         raise AssertionError("polar derived-cofiber lifecycle changed")
     for identifier in ("ph.generic.axial.relative", "ph.generic.polar.relative"):
-        if rows[identifier]["action_derived_pairing"].get("fixed_identity_cyclic_compatibility") != "OBSTRUCTED by a nonradical solution-pairing defect":
-            raise AssertionError(f"fixed-identity cyclic obstruction was hidden: {identifier}")
+        if rows[identifier]["action_derived_pairing"].get("standard_pairing_cyclic_map") != "OBSTRUCTED by incompatible cohomology-form inertia (2,0) versus (1,1)":
+            raise AssertionError(f"generic cyclic-map inertia obstruction was hidden: {identifier}")
+        missing = rows[identifier]["missing"]
+        if "noncyclic off-shell triangle with three distinct forms" not in missing:
+            raise AssertionError(f"noncyclic replacement gate was hidden: {identifier}")
     if rows["ph.exceptional.ell1.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
         raise AssertionError("exceptional k0 solution cofiber was lost")
     if rows["ph.global.homogeneous.relative"]["projection_or_cofiber"]["status"] != "CERTIFIED":
@@ -56,6 +59,8 @@ def main() -> None:
     if boundary["map_lifecycle"] != "NO_CERTIFIED_MAP" or boundary["evidence"]:
         raise AssertionError("cross-background row acquired an implicit map")
     flags = value["classification"]
+    if not flags["generic_standard_pairing_cyclic_maps_obstructed"]:
+        raise AssertionError("strong generic cyclic-map obstruction was dropped")
     if flags["full_offshell_all_sector_triangle_certified"] or flags["bridge_1_activation_gate_satisfied"]:
         raise AssertionError("bridge 1 was over-promoted")
     if flags["cross_background_mode_identification_made"]:

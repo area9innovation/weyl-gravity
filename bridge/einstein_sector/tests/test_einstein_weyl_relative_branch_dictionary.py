@@ -26,6 +26,14 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
     def test_no_cross_background_identity(self) -> None:
         self.assertFalse(self.value["classification"]["cross_background_mode_identification_made"])
 
+    def test_generic_standard_pairing_cyclic_route_is_closed(self) -> None:
+        self.assertTrue(self.value["classification"]["generic_standard_pairing_cyclic_maps_obstructed"])
+        self.assertEqual(self.value["relative_forms"]["required_triangle_kind"], "NONCYCLIC_THREE_FORM")
+        for identifier in ("ph.generic.axial.relative", "ph.generic.polar.relative"):
+            row = next(item for item in self.value["branch_rows"] if item["id"] == identifier)
+            self.assertIn("incompatible cohomology-form inertia", row["action_derived_pairing"]["standard_pairing_cyclic_map"])
+            self.assertIn("noncyclic off-shell triangle with three distinct forms", row["missing"])
+
     def test_aligned_common_zero_face_is_only_a_handoff(self) -> None:
         self.assertTrue(self.value["classification"]["aligned_nonzero_stabilizer_resonance_common_zero_face_imported"])
         self.assertTrue(self.value["classification"]["complete_declared_global_extra_common_zero_locus_imported"])

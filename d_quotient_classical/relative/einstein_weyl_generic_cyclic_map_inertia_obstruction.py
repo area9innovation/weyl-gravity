@@ -34,7 +34,8 @@ DEPENDENCIES = {
     "axial_physical_ring": ROOT / "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
     "polar_pairing": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_lee_wald_gate.json",
     "fixed_identity_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
-    "relative_dictionary": ROOT / "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
+    "axial_chain_map": ROOT / "bridge/certificates/einstein_weyl_relative_linear_triangle_preflight.json",
+    "polar_chain_map": ROOT / "bridge/certificates/einstein_maxwell_weyl_polar_ungauged_noether_lift.json",
 }
 
 
@@ -115,12 +116,10 @@ def build() -> dict:
         raise ValueError("axial q-primary completeness authority drifted")
     if records["polar_pairing"].get("classification", {}).get("extra_block_nonradical") is not True:
         raise ValueError("polar pairing authority drifted")
-    dictionary = records["relative_dictionary"].get("classification", {})
-    if (
-        dictionary.get("generic_axial_and_polar_solution_cofibers_certified") is not True
-        or dictionary.get("same_background_only") is not True
-    ):
-        raise ValueError("generic same-background cofiber authority drifted")
+    if records["axial_chain_map"].get("classification", {}).get("generic_axial_offshell_chain_map_certified") is not True:
+        raise ValueError("generic axial chain-map authority drifted")
+    if records["polar_chain_map"].get("classification", {}).get("polynomial_ghost_field_equation_identity_chain_map_certified") is not True:
+        raise ValueError("generic polar chain-map authority drifted")
 
     blocks = _exact_blocks()
     sources = {

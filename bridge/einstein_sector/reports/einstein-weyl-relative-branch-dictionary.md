@@ -8,11 +8,15 @@ the compact Plebański--Hacyan Einstein/Weyl inclusion, solution cofibers,
 branch representatives and action-derived pairings.  The generic axial block
 and generic polar blocks both have `DERIVED_COFIBER_TRIANGLE` lifecycle at the
 polynomial ghost--field--equation--identity level, complete solution-module
-quotients, and direct Lee--Wald forms.  Cyclic BV compatibility of the polar
-chain map is no longer merely open: strict compatibility with the fixed
-identity field map is obstructed by a nonradical solution-pairing defect in
-both parities.  Corrected nonidentity or chain-homotopy cyclic morphisms remain
-open.
+quotients, and direct Lee--Wald forms.  Cyclic BV compatibility of the generic
+axial and polar chain maps is no longer merely open. The Einstein source form has inertia
+`(2,0)`, whereas the Weyl form on the complete `q`-primary target has inertia
+`(1,1)` in both parities. Congruence invariance therefore obstructs every
+real-structure-preserving, product-equivariant standard-pairing cyclic
+correction, including nonidentity maps, chain-homotopy repairs and exact
+current improvements. The remaining admissible target is a noncyclic triangle
+carrying the Einstein, pulled-back Weyl and relative forms separately; an
+explicitly pairing-changed theorem is a different open route.
 
 The exceptional `ell=1,k=0` solution cofiber now has explicit CRT projectors
 and a nonradical action pairing.  The homogeneous solution cofiber is zero,
@@ -52,6 +56,6 @@ Evidence and verification:
 - `bridge/einstein_sector/verify_einstein_weyl_relative_branch_dictionary.py`
 
 Tier 1 consists of the generator freshness check, the independent hash and
-lifecycle verifier, and four scoped unit tests.  Imported Tier-2 mathematical
+lifecycle verifier, and five scoped unit tests.  Imported Tier-2 mathematical
 artifacts are accepted by content hash.  Tier 3 is not run because the full
 all-sector relative triangle remains open.
