@@ -60,8 +60,8 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   prove or obstruct causal transfer on an open conformally flat class
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; lift the exact round-S4 finite Schur benchmark by supplying a generic primed Green/spectral carrier, compute any local zeta multiplicative term and the same-gauge generic-background full-BV Hessian matching the exact universal CPT source kernels to repository parity-even third-curvature functions and coefficients, separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    stream the complete modewise integrand into four symbolic recoil intervals after declaring masses, couplings and a stopping goal, then restrict records to Z2^C
-Black hole:  Einstein x extra cross-block flux and outer-boundary domains (RW branch certified symplectically null)
+Observer:    serialize the complete modewise recoil integrand with symbolic masses and factored couplings, then declare numerical parameters/goal and stream four intervals before restricting records to Z2^C
+Black hole:  causal disposition of the extra branch (horizon flux matrix closed at fixture level: cross and extra blocks nonzero)
 ```
 
 These jobs use different bottlenecks.  Running them in parallel is more useful
@@ -504,6 +504,14 @@ Maxwell and massive constants exports all four symbolic tail radii
 `D_a C_b(m_b) E_A`.  This is the certified stopping envelope, not a numerical
 recoil interval: the complete modewise scalar integrand, numerical masses and
 couplings, and a declared tolerance/nonzero/sign goal remain open.
+The recoil-stream activation audit improves the order of those remaining
+tasks.  Numerical specialization is not yet the active gate: the selected
+preparations are still operator-defined, with harmonic coefficients and the
+advanced massive image explicitly unevaluated.  First serialize the complete
+per-shell preparation/recoil contraction with positive masses symbolic and
+coupling monomials factored.  Only then request numerical masses, nonzero
+couplings and an interval/nonzero/sign stopping goal.  The four streams remain
+`OPEN`; the symbolic tail radii alone do not activate them.
 The nonlinear apparatus dependency is explicit and ordered by content hash:
 the normalized mixed `epsilon_R^2 kappa` unary certificate precedes apparatus
 `q2,q3`; only that completion activates declared `K_Berger` equivariance and
@@ -1597,7 +1605,8 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_RECOIL_CHAIN_GRAPH_NORM_GATE` (fired; current Maxwell `L2` transfer is `NO_CERTIFIED_MAP`) | certify the correlated Maxwell energy/graph-norm tail and finite-time massive energy constant, or prove exact block cancellation, before assigning a recoil-chain scalar tail; do not infer that the full recoil operator is unbounded |
 | `BERGER_MAXWELL_ENERGY_GRAPH_NORM_TAIL` (fired; field-strength tail certified, dense rail unselected) | certify the finite-time massive retarded energy constant on the exact switch slabs and combine it with the graph tail inside the response-specific scalar stream; do not materialize the 14,177,143,864-entry sub-unit rail |
 | `BERGER_MASSIVE_RECOIL_FINITE_SLAB_ENERGY_CONSTANT` (fired for symbolic positive masses) | certify the downstream Maxwell-to-detector dual norms and stream the four recoil scalar intervals; retain the unsmoothed longitudinal `1/m_b^2` contribution and do not invent numerical masses |
-| `BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS` (fired for both detectors and symbolic positive masses) | declare masses, couplings and an interval/nonzero/sign stopping goal, then stream the complete modewise scalar integrand into four recoil intervals; do not promote the symbolic radii to evaluated coefficients |
+| `BERGER_DOWNSTREAM_MAXWELL_DETECTOR_DUAL_NORMS` (fired for both detectors and symbolic positive masses) | use the recoil-stream activation successor to separate the internal integrand from later numerical inputs; do not promote the symbolic radii to evaluated coefficients |
+| `BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE` (fired; analytic envelope complete, stream inactive) | serialize the complete per-shell preparation and recoil contraction with symbolic positive masses and factored couplings before numerical specialization; operator-defined preparations are not harmonic data |
 | `BERGER_ADAPTIVE_PETER_WEYL_ROUTE_PREFLIGHT` (fired, capacity label superseded) | retain the streamed route and its computed `two_j=138` working rail, but use the normalization repair for the authoritative necessary capacity lower bound; do not treat either rail as a convergence cutoff |
 | `BERGER_STREAMABLE_POLARIZATION_SECTORS` (fired) | evaluate the diagonal/first-off-diagonal high-mode coefficients in the certified three-dimensional-or-smaller charge blocks and close the Green-weighted operator-norm tail |
 | `BERGER_CLOCK_WEIGHTED_POLARIZATION_STREAM_TWO_J138` (fired) | apply the degree-ten temporal Green polynomial in exact charge blocks of dimension at most three through form `two_j=138`, then certify or obstruct the tail beyond that published working rail |
