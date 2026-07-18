@@ -29,9 +29,12 @@ twist-position block has rank two and the twist-velocity block has pointwise
 rank four for real time.  It also imports the first exact nonzero intersection
 with the stabilizer cone: on the shared-axis `m=0` face,
 `B_z^2=(2/3)X` cancels the Taub energy and the twist--extra resonant map
-vanishes.  This does not substitute for the linear bridge or complete the
-finite-harmonic tangent cone: the full off-axis zero locus and every complete
-correction class remain open.
+vanishes.  The classical tangent-cone certificate now completes this
+necessary classification: every common zero in the declared carrier is an
+`SO(3)` rotation of the aligned face, with electric extension
+`B^2=Q_e^2/2+(2/3)X`; no off-axis branch survives.  This does not substitute
+for the linear bridge or complete the finite-harmonic tangent cone: every
+complete correction class remains open.
 
 Evidence and verification:
 

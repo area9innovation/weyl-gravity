@@ -28,6 +28,7 @@ class RelativeBranchDictionaryTests(unittest.TestCase):
 
     def test_aligned_common_zero_face_is_only_a_handoff(self) -> None:
         self.assertTrue(self.value["classification"]["aligned_nonzero_stabilizer_resonance_common_zero_face_imported"])
+        self.assertTrue(self.value["classification"]["complete_declared_global_extra_common_zero_locus_imported"])
         self.assertEqual(self.value["quadratic_handoff"]["status"], "PARTIAL_INPUT")
         self.assertFalse(self.value["classification"]["bridge_1_activation_gate_satisfied"])
 

@@ -20,7 +20,7 @@
         {
           "path": "bridge/certificates/einstein_weyl_relative_branch_dictionary.json",
           "result_id": "EINSTEIN_WEYL_RELATIVE_BRANCH_DICTIONARY_V1",
-          "sha256": "bb5bbc0d79afba6130f36454621565d75466586bc4b83aa4559f6de396bdf85d"
+          "sha256": "96d93cd1bfd87eb431b69a6d6225a69a4688b333c0353af9f45139497178362e"
         }
       ],
       "id": "einstein.ph.bridge.relative_branch_dictionary_v1",
@@ -793,7 +793,7 @@
       }
     },
     {
-      "claim_boundary": "This is an exact aligned compatibility face, not the complete off-axis zero locus, a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
+      "claim_boundary": "This is the complete necessary common-zero locus in one declared homogeneous/twist times ell=2,k=0 extra carrier, not a full second-order correction, opposite-momentum classification, all-orders family, residual state or quantum claim.",
       "descriptions": {
         "causal": "OPEN",
         "nonlinear": "OPEN",
@@ -802,6 +802,11 @@
         "symplectic": "CERTIFIED"
       },
       "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
+          "result_id": "PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1",
+          "sha256": "fa3dcb747f66a5933a440288d712e1b85a445bf24cae347c023e58b1e7203ec1"
+        },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_compatibility_face.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_ALIGNED_TWIST_ELL2_EXTRA_COMPATIBILITY_FACE",
@@ -844,7 +849,7 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The exact coefficient <1,0;2,0|2,0>=0 kills the complete twist-extra p-shell resonance, while nonzero extra amplitude and the rank-three a,b,d chains force a=b=d=0.",
+          "statement": "Exact coefficient elimination and rank minors prove every common zero is an SO(3) rotation of the aligned m=0 face; there is no additional off-axis branch in the declared carrier.",
           "status": "CERTIFIED"
         },
         "second_order": {
@@ -863,20 +868,20 @@
           }
         },
         "taub_maps": {
-          "statement": "For B_z^2=(2/3)X, all five stabilizer maps vanish on the aligned m=0 family.",
+          "statement": "The complete common-zero locus has a=b=d=0, A=alpha*n, B=beta*n and beta^2=Q_e^2/2+(2/3)X; all five stabilizer maps vanish.",
           "status": "CERTIFIED"
         }
       },
       "scope": {
         "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
         "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
-        "carrier": "one shared-axis ell=2,m=0,k=0 generic extra multiplicity vector plus collinear standard twist position/velocity and homogeneous spectators c,W_x",
+        "carrier": "complete declared homogeneous/twist block crossed with one ell=2,k=0 generic extra multiplet; surviving locus is the aligned SO(3) orbit",
         "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
         "degree": 2,
-        "ell": "(1 x 2 -> resonant 2) plus self-source blocks",
+        "ell": "(0 or 1) x 2 -> resonant 2",
         "k": 0,
-        "m": "shared-axis twist m=0 and extra m=0",
-        "omega": "generalized-zero twist crossed with omega_e=4/sqrt(3)",
+        "m": "all modulo SO(3); every solution is m=0 about the common twist axis",
+        "omega": "generalized-zero global/twist data crossed with omega_e=4/sqrt(3)",
         "parity": "all four axial/polar extra multiplicities retained",
         "theory": "Weyl-Maxwell target"
       }
@@ -941,7 +946,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "15db91b8e3f979a0d789d3c7afdad2e1214e8f687bdb453b4c3b611c30b19753",
+  "generated_by_sha256": "28cfec8499e1c2264126ebbca1220e4de83a88341d8284ffb776309af0c69abb",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

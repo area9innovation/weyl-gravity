@@ -51,6 +51,7 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
         self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
         self.assertEqual(entry["mode_data"]["second_order"]["smooth_secular"]["status"], "OPEN")
+        self.assertIn("no additional off-axis branch", entry["mode_data"]["resonance"]["statement"])
 
 
 if __name__ == "__main__":

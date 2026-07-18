@@ -91,6 +91,8 @@ def verify() -> None:
         raise AssertionError("aligned common-zero face lost a certified compatibility gate")
     if aligned["mode_data"]["second_order"]["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
         raise AssertionError("aligned compatibility face was promoted to a correction")
+    if "no additional off-axis branch" not in aligned["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("complete common-zero classification is absent")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

@@ -2144,6 +2144,15 @@ the nonresonant polynomial cross channels and their bounded versus smooth-
 secular right inverses remain open, as does the complete off-axis zero locus.
 The fail-closed atlas row is
 `einstein.ph.wm.mixed.aligned_twist_ell2_extra_compatibility_face`.
+The classical team has now closed the full necessary zero locus in this
+declared carrier.  Exact coefficient elimination gives `a=b=d=0`; rank
+stratification and `mu_J` then force every solution to be an `SO(3)` rotation
+of the aligned face, with the electric extension
+`B^2=Q_e^2/2+(2/3)X`.  No additional off-axis branch exists.  The active gate
+is no longer zero-locus classification: it is the complete nonresonant `q2`
+source plus content-addressed bounded/smooth right inverses and their
+Noether/gauge completion.  Causal/retarded sufficiency remains
+`NO_CERTIFIED_MAP`.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 
