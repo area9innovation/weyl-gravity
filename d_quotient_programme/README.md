@@ -132,6 +132,8 @@ change the verdict or lifecycle rules in this dossier.
 - [`reports/einstein-maxwell-weyl-finite-harmonic-k0-combined-cone-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-finite-harmonic-k0-combined-cone-second-order-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-opposite-momentum-phase-resonance-divisor.json`](contributions/einstein-maxwell-weyl-opposite-momentum-phase-resonance-divisor.json)
 - [`reports/einstein-maxwell-weyl-opposite-momentum-phase-resonance-divisor-submission-receipt.md`](reports/einstein-maxwell-weyl-opposite-momentum-phase-resonance-divisor-submission-receipt.md)
+- [`contributions/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order.json`](contributions/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order.json)
+- [`reports/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order-submission-receipt.md`](reports/einstein-maxwell-weyl-opposite-momentum-smooth-global-second-order-submission-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json`](contributions/einstein-maxwell-weyl-axial-extra-green-pairing.json)
 - [`reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md`](reports/einstein-maxwell-weyl-axial-extra-green-pairing-registration-receipt.md)
 - [`contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json`](contributions/einstein-maxwell-weyl-axial-lee-wald-completion.json)

@@ -1,0 +1,40 @@
+{
+  "boundary_conditions": "R_t x S1_L x S2 on the fixed N=2 magnetic bundle; one fixed generic ell>=2 and nonzero |k|, all m/parities/primaries at both momentum signs, smooth spatially periodic and finite exponential-polynomial second-order corrections",
+  "claim_status": "CERTIFIED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "established": [
+    "the exceptional polar L=0 Weyl-Maxwell complex is exact modulo Diff-Weyl-U(1) at every nonzero Fourier pair",
+    "the axial and polar L=1 nonzero-Fourier quotients have only the standard and extra shell factors and no static nonzero-momentum physical cokernel",
+    "every tangent in the complete fixed-(ell,|k|) common H,P_x,J_i zero cone extends through second order for arbitrary opposite-momentum relative phases in the smooth-global correction class",
+    "off-shell blocks have algebraic inverses and resonant blocks have finite exponential-polynomial secular inverses",
+    "the bounded and finite-quasiperiodic extension question remains separate because the exact resonance divisor is nonempty"
+  ],
+  "evidence": {
+    "commit": "c238eecafb77c039cc965afe27a7d37d0b2d276d",
+    "path": "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
+    "sha256": "5be7efd39af228e51efa61e98d5fe76be3a741dd28f54d5d014383d4afe63a9f"
+  },
+  "generator_id": "H_product",
+  "lifecycle_layer": "CLASSICAL_BV",
+  "next_gate": "test exceptional/global homogeneous and twist-velocity input balances, then distinct |k| fibres; keep the bounded resonant source projection on its own rail",
+  "not_established": [
+    "bounded or finite-quasiperiodic correction on the resonance divisor",
+    "the dynamical resonant source projection",
+    "cancellations between distinct |k| fibres",
+    "closure with homogeneous, twist, Wilson-line, charge, or physical ell=1 input modes",
+    "all-orders integration, causal propagation, scattering, particles, or quantum theory"
+  ],
+  "phase_space_id": "einstein_maxwell_product_compact_weyl_generic_stabilizer_representation",
+  "schema": "pure-weyl-d-quotient-team-contribution-v1",
+  "setting_id": "compact_einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order",
+  "team_id": "einstein_boundary",
+  "verdict": "SECTOR_DEPENDENT_SMOOTH_GLOBAL_EXTENDIBLE_BOUNDED_OPEN",
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_polar_ell0_nonzero_fourier --verify bridge/certificates/einstein_maxwell_weyl_polar_ell0_nonzero_fourier.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_polar_ell0_nonzero_fourier.py",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_ell1_nonzero_static --verify bridge/certificates/einstein_maxwell_weyl_ell1_nonzero_static.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_ell1_nonzero_static.py",
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order --verify bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.py"
+  ]
+}
