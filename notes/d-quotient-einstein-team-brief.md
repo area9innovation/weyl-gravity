@@ -1928,6 +1928,23 @@ Complete every cell established by your work; write `OPEN`, `NOT TESTED`, or
    Hence the pure exceptional `ell=1,k=0` second-order no-go is frozen against
    every same-frequency `k=0` augmentation.  Unequal-frequency pairs summing
    to `2omega_e` and opposite nonzero momenta remain explicitly open.
+
+   The positive-sum part of that broader resonance census is also exact now.
+   A direct four-dimensional `ell=0,k=0,omega!=0` linearization gives the
+   complete invariants `C-K,A_x` with equations
+   `omega^4(C-K)=omega^2 A_x=0`; hence the homogeneous target contains no
+   hidden nonzero-frequency oscillator.  Two nonzero positive-frequency
+   inputs can therefore sum to `2omega_e` only if both are exceptional
+   dipoles, already covered above.  If one input is a
+   generalized zero-frequency global direction, the other must have
+   `omega^2=16/3`.  The unique physical `k=0` block with that frequency is the
+   generic `ell=2` extra primary: `lambda-2/3=16/3` forces `lambda=6`, while
+   neither Einstein branch has a physical root.  The next direct source gate
+   is therefore sharply finite: cross every homogeneous/twist global
+   direction with the axial and polar `ell=2` extra-primary block and pair the
+   resulting `L=2,Omega=2omega_e` source with the exceptional adjoint
+   cokernel.  Difference-frequency and opposite-momentum channels remain
+   separate after that.
 3. Complete the asymptotically flat linear causal complex and boundary phase
    space without importing the compact result as a boundary theorem.
 4. Choose a real boundary-preserving image, then compute its charge separately

@@ -1,0 +1,123 @@
+{
+  "schema": "einstein-maxwell-weyl-exceptional-ell1-resonance-census-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ell1_resonance_census.schema.json",
+  "schema_sha256": "ed077e78f0935345e2eff1ac5da897c0e71274a151a58f3ca59b881bce583074",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELL1_RESONANCE_CENSUS",
+  "result_state": "EXCEPTIONAL_2OMEGA_POSITIVE_SUM_CENSUS_COMPLETE_UNIQUE_GLOBAL_TIMES_ELL2_EXTRA_GATE",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "the complete fixed-bundle k=0 harmonic source spectrum for positive-sum quadratic inputs capable of reaching the exceptional L=2,K=0,Omega=2omega_e resonance",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ell1_resonance_census.py",
+    "generator_sha256": "e21a162fd3d048297ce4f94b33ab4b22a46e8f0cba428046b08d74534e6ba347",
+    "inputs": {
+      "frequency_isolation": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_frequency_isolation.json",
+        "sha256": "12b068a00192f231d247fcf4ef86731cd0a8f15d74e015ca988aa06db20909f1"
+      },
+      "axial_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_axial_physical_ring.json",
+        "sha256": "c002aa85f1a55d7a610bcf185008056470f117e711f674f20559bb20d4ad68eb"
+      },
+      "polar_generic": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_polar_physical_completion.json",
+        "sha256": "110b2f226f89b9766a7549c3f48b84828046ea8b9d53f2ea81d7e13e3522948d"
+      },
+      "standard_globals": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      },
+      "homogeneous_target": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+        "sha256": "880857b4bb004bf1006cf4f7254194753cfd2e065ce915128a781ddd2cd162fc"
+      }
+    }
+  },
+  "resonance_census": {
+    "target": {
+      "input_frequency_squared": "4/3",
+      "positive_sum_frequency": "2omega_e",
+      "positive_sum_frequency_squared": "16/3",
+      "spatial_momentum": "K=0",
+      "angular_channel": "L=2"
+    },
+    "two_nonzero_positive_inputs": {
+      "lower_bound": "every nonzero k=0 oscillatory mode has omega>=omega_e",
+      "equality_case": "omega_a+omega_b=2omega_e iff both inputs lie in the exceptional ell=1 omega_e block",
+      "status": "covered by the all-m STF obstruction theorem"
+    },
+    "zero_plus_positive_inputs": {
+      "required_positive_shell": "omega^2=(2omega_e)^2=16/3",
+      "generic_extra_equation": "lambda-2/3=16/3 iff lambda=6 iff ell=2",
+      "Einstein_plus": "lambda+sqrt(2lambda)>16/3 for every physical lambda>=6",
+      "Einstein_minus_squared_equation": "(9*lambda**2 - 114*lambda + 256)/9",
+      "Einstein_minus_candidate_lambdas": [
+        "19/3 - sqrt(105)/3",
+        "sqrt(105)/3 + 19/3"
+      ],
+      "Einstein_minus_exclusion": "one root is below 6 and the other lies strictly between the consecutive physical values lambda=6 and lambda=12",
+      "physical_ell1": "omega^2=4, not 16/3",
+      "unique_live_block": "generic ell=2 extra p-primary, either parity, at k=0"
+    },
+    "difference_frequency_inputs": {
+      "condition": "|omega_a-omega_b|=2omega_e with |ell_a-ell_b|<=2 for an L=2 output",
+      "status": "OPEN"
+    }
+  },
+  "classification": {
+    "positive_sum_resonance_census_complete": true,
+    "homogeneous_nonzero_frequency_target_empty": true,
+    "two_nonzero_positive_inputs_reduce_to_exceptional_all_m_block": true,
+    "unique_zero_plus_positive_resonance_is_global_times_ell2_extra": true,
+    "global_times_ell2_extra_source_pairing_computed": false,
+    "difference_frequency_resonances_classified": false,
+    "opposite_nonzero_momenta_classified": false,
+    "all_orders_integrability": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The same-frequency audit does not end the mixed-cone problem. The direct homogeneous operator theorem excludes hidden ell=0 oscillators, so the complete positive-frequency sum census has exactly one new route to the exceptional 2omega_e,L=2 resonance: a generalized zero-frequency global direction multiplied by a generic ell=2 extra-primary mode at omega^2=16/3. This is now the unique positive-sum source calculation to perform. Difference-frequency and opposite-momentum resonances remain separate.",
+  "next_gate": "compute the bilinear second-order source and adjoint pairings for every standard homogeneous/twist global direction crossed with the axial and polar ell=2 extra-primary block",
+  "claim_boundary": "This is an exact positive-sum resonance census, not a source-solvability theorem. It does not compute the live global-times-ell2-extra coefficient, classify frequency differences, include opposite nonzero momenta, prove all-orders integration, or make causal or quantum claims.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.52,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_resonance_census --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_resonance_census.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_resonance_census.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_resonance_census"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "frequency_isolation",
+        "axial_generic",
+        "polar_generic",
+        "standard_globals",
+        "homogeneous_target"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "the live source coefficient and broader resonance classes remain open"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ell1_resonance_census --verify bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_resonance_census.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ell1_resonance_census.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ell1_resonance_census"
+  ]
+}

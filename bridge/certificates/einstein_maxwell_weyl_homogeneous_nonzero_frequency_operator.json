@@ -1,0 +1,132 @@
+{
+  "schema": "einstein-maxwell-weyl-homogeneous-nonzero-frequency-operator-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.schema.json",
+  "schema_sha256": "f950ed48a515b3821f6ea6402ec0219d7a141de26b7b40c0762b81d8fba3034c",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_HOMOGENEOUS_NONZERO_FREQUENCY_OPERATOR",
+  "result_state": "HOMOGENEOUS_NONZERO_FREQUENCY_WEYL_MAXWELL_QUOTIENT_EMPTY",
+  "lifecycle_state": "CLASSIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "domain": "homogeneous ell=0,k=0 Weyl-Maxwell coefficient complex at omega!=0 on the fixed magnetic bundle, before final residual quotient",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.py",
+    "generator_sha256": "bcdee83baefea7c5a7a8e9e073f6674794c2e6a64589dce4c7ea5191f078d1fe",
+    "engines": {
+      "curvature": {
+        "path": "bridge/einstein_sector/einstein_maxwell_periodic_photon_second_order.py",
+        "sha256": "801bd2ea66675d8b8db075c3499f28ef83909749efc4f2b3240da681f3fea8d9"
+      },
+      "weyl_maxwell_equations": {
+        "path": "bridge/einstein_sector/einstein_maxwell_weyl_balanced_ell0_second_order.py",
+        "sha256": "144dc9ea6173b8980e859b4d98ab41d3730631ae2292198701451f675fbb8ff0"
+      }
+    }
+  },
+  "gauge_completeness": {
+    "raw_fields": [
+      "h_tt",
+      "h_tx",
+      "h_xx",
+      "sphere trace",
+      "a_t",
+      "a_x"
+    ],
+    "nonzero_frequency_gauge_parameters": [
+      "xi_t",
+      "xi_x",
+      "sigma",
+      "chi"
+    ],
+    "first_slice": "xi_t,xi_x,chi set h_tt,h_tx,a_t to zero for omega!=0",
+    "residual_slice_action": "sigma accompanied by xi_t preserves h_tt=0 and shifts h_xx and the sphere trace equally",
+    "complete_gauge_invariants": [
+      "h_xx-sphere trace",
+      "a_x"
+    ]
+  },
+  "operator_theorem": {
+    "frequency": "omega!=0",
+    "partial_gauge_slice": "h_tt=h_tx=a_t=0",
+    "slice_fields": [
+      "C=h_xx",
+      "K=sphere trace coefficient",
+      "A_x"
+    ],
+    "residual_gauge": "a combined Weyl/time-diffeomorphism shifts (C,K) by the same amount; C-K is invariant",
+    "row_order": [
+      "E00",
+      "E01",
+      "E11",
+      "sphere_trace",
+      "Maxwell0",
+      "Maxwell1"
+    ],
+    "rows": [
+      "0",
+      "0",
+      "-omega**4*(C - K)/2",
+      "omega**4*(C - K)/4",
+      "0",
+      "A_x*omega**2"
+    ],
+    "reduced_invariants": [
+      "D=C-K",
+      "A_x"
+    ],
+    "invariant_equations": [
+      "omega^4*D=0",
+      "omega^2*A_x=0"
+    ],
+    "nonzero_frequency_quotient_dimension": 0
+  },
+  "classification": {
+    "direct_four_dimensional_linearization_computed": true,
+    "nonzero_frequency_gauge_slice_complete": true,
+    "homogeneous_nonzero_frequency_physical_quotient_empty": true,
+    "homogeneous_extra_oscillatory_weyl_modes_absent": true,
+    "generalized_zero_frequency_block_unchanged": true,
+    "final_residual_descent_certified": false,
+    "causal_or_quantum_claim": false
+  },
+  "interpretation": "The homogeneous target has no hidden fourth-order oscillator. At nonzero frequency its only gauge-invariant coefficients obey omega^4(C-K)=0 and omega^2 A_x=0, so both vanish; the remaining common metric coefficient is residual Weyl/diffeomorphism gauge. All genuine homogeneous data therefore remain in the separately certified generalized zero-frequency block.",
+  "next_gate": "use the empty homogeneous oscillatory quotient to close the exceptional 2omega positive-sum resonance census, then compute the surviving generalized-zero times ell=2-extra bilinear source",
+  "claim_boundary": "This is a local-gauge-reduced homogeneous nonzero-frequency operator theorem. It does not alter the generalized zero-frequency phase space, classify nonlinear mixed sources, perform final residual descent, or make causal, particle, or quantum claims.",
+  "verification_receipt": {
+    "producing_date": "2026-07-18",
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 6.42,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "inputs": [
+        "curvature",
+        "weyl_maxwell_equations"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "no freeze promotion beyond the scoped homogeneous operator theorem"
+    }
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator --verify bridge/certificates/einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.json",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_homogeneous_nonzero_frequency_operator"
+  ]
+}
