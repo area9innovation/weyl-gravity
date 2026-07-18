@@ -66,6 +66,17 @@ def _load(path: Path) -> dict:
     return value
 
 
+def _repo_path(value: str) -> Path:
+    relative = Path(value)
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ValueError(f"artifact path escapes repository: {value}")
+    path = (ROOT / relative).resolve()
+    root = ROOT.resolve()
+    if path != root and root not in path.parents:
+        raise ValueError(f"artifact path escapes repository: {value}")
+    return path
+
+
 def validate_candidate(value: Mapping[str, object], *, verify_artifacts: bool = True) -> None:
     schema = _load(INPUT_SCHEMA)
     Draft202012Validator.check_schema(schema)
@@ -78,7 +89,10 @@ def validate_candidate(value: Mapping[str, object], *, verify_artifacts: bool = 
     missing = [flag for flag in REQUIRED_FLAGS if flags.get(flag) is not True]
     if missing:
         raise ValueError("branch map misses acceptance flags: " + ", ".join(missing))
-    roles = {artifact["role"] for artifact in value["map_artifacts"]}
+    role_list = [artifact["role"] for artifact in value["map_artifacts"]]
+    roles = set(role_list)
+    if len(role_list) != len(roles):
+        raise ValueError("branch map repeats an evidence role")
     missing_roles = [role for role in REQUIRED_ARTIFACT_ROLES if role not in roles]
     if missing_roles:
         raise ValueError("branch map misses evidence roles: " + ", ".join(missing_roles))
@@ -91,12 +105,21 @@ def validate_candidate(value: Mapping[str, object], *, verify_artifacts: bool = 
     if interaction["path"] != str(expected.relative_to(ROOT)) or interaction["sha256"] != _sha256(expected):
         raise ValueError("branch map does not pin the authoritative interaction bytes")
     if verify_artifacts:
-        if _sha256(ROOT / interaction["path"]) != interaction["sha256"]:
+        if _sha256(_repo_path(interaction["path"])) != interaction["sha256"]:
             raise ValueError("interaction dependency hash drifted")
         for artifact in value["map_artifacts"]:
-            path = ROOT / artifact["path"]
+            path = _repo_path(artifact["path"])
+            schema_path = _repo_path(artifact["schema_path"])
             if not path.is_file() or _sha256(path) != artifact["sha256"]:
                 raise ValueError(f"branch-map artifact drifted: {artifact['path']}")
+            if not schema_path.is_file() or _sha256(schema_path) != artifact["schema_sha256"]:
+                raise ValueError(f"branch-map artifact schema drifted: {artifact['schema_path']}")
+            artifact_schema = _load(schema_path)
+            Draft202012Validator.check_schema(artifact_schema)
+            artifact_value = _load(path)
+            Draft202012Validator(artifact_schema).validate(artifact_value)
+            if artifact_value.get("result_id") != artifact["result_id"]:
+                raise ValueError(f"branch-map artifact result id drifted: {artifact['path']}")
 
 
 def _candidate() -> tuple[dict | None, Path | None]:
@@ -189,16 +212,16 @@ def build() -> dict:
             "tier_1": {
                 "status": "PASS",
                 "commands_and_elapsed_seconds": [
-                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards", "elapsed_seconds": 0.53},
-                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py", "elapsed_seconds": 1.15},
-                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 0.84},
-                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true <two scoped schemas>", "elapsed_seconds": 3.10}
+                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards", "elapsed_seconds": 0.36},
+                    {"command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py", "elapsed_seconds": 0.68},
+                    {"command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v", "elapsed_seconds": 1.72},
+                    {"command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true <two scoped schemas>", "elapsed_seconds": 3.95}
                 ]
             },
             "tier_2_dependency_replay": {"status": "PASS", "command": "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_axial_ee_ell2_source --verify-exhaustive bridge/certificates/einstein_maxwell_weyl_axial_ee_ell2_source.json", "measured_elapsed_seconds_lower_bound": 300.01},
             "tier_3": {"status": "NOT_RUN", "reason": "No shared algebra, classical freeze, theorem lifecycle promotion, or release boundary changed."}
         },
-        "claim_boundary": "This preflight prepares bridge 2 and imports only a schema-valid, content-addressed branch map on the exact Berger interaction background. The existing support-local same-bundle projector remains obstructed. Until bridge 1 supplies an admissible mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE map, projected ell2/ell3, cohomology survival, cyclic deformation nontriviality and removability are NO_CERTIFIED_MAP. It preserves the filtered-cyclic ell3 obstruction and does not authorize q4, particles, causality, QME promotion or quantum claims.",
+        "claim_boundary": "This preflight prepares bridge 2 and imports only a schema-valid, content-addressed branch map on the exact Berger interaction background. Every required evidence role is itself a typed JSON artifact validated against a content-addressed Draft 2020-12 schema. The existing support-local same-bundle projector remains obstructed. Until bridge 1 supplies an admissible mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE map, projected ell2/ell3, cohomology survival, cyclic deformation nontriviality and removability are NO_CERTIFIED_MAP. It preserves the filtered-cyclic ell3 obstruction and does not authorize q4, particles, causality, QME promotion or quantum claims.",
     }
     verify(value)
     return value
@@ -250,7 +273,14 @@ def synthetic_candidate() -> dict:
         },
         "interaction_dependency": {"result_id": "BERGER_RETAINED_MIXED_ELL3_POSITIVE_JET_FULL_BV_OBSTRUCTION_V1", "path": str(interaction.relative_to(ROOT)), "sha256": _sha256(interaction)},
         "map_artifacts": [
-            {"role": role, "path": str(INPUT_SCHEMA.relative_to(ROOT)), "sha256": _sha256(INPUT_SCHEMA)}
+            {
+                "role": role,
+                "result_id": f"SYNTHETIC_{role.upper()}",
+                "path": str(INPUT_SCHEMA.relative_to(ROOT)),
+                "sha256": _sha256(INPUT_SCHEMA),
+                "schema_path": str(INPUT_SCHEMA.relative_to(ROOT)),
+                "schema_sha256": _sha256(INPUT_SCHEMA),
+            }
             for role in REQUIRED_ARTIFACT_ROLES
         ],
         "acceptance_flags": {flag: True for flag in REQUIRED_FLAGS},
@@ -269,7 +299,8 @@ Result: `{value['result_state']}`.
 
 The importer is ready, but bridge 2 remains fail-closed until bridge 1 supplies
 an admissible branch map on the exact Berger interaction background.  The
-candidate must declare the full atlas mode scope and content-addressed evidence
+candidate must declare the full atlas mode scope and typed, schema-validated,
+content-addressed evidence
 for its carrier crosswalk, chain map, inclusion/projection/cofiber, pairing,
 gauge/nondynamical disposition, `K_Berger` equivariance, cohomology map and
 independent verifier.  The compact-product source atlas row is not such a map.
@@ -298,6 +329,7 @@ def main() -> int:
             ("wrong background", lambda item: item.__setitem__("background_id", "compact_product")),
             ("missing pairing", lambda item: item["acceptance_flags"].__setitem__("PAIRING_TRANSPORT_VERIFIED", False)),
             ("missing cohomology artifact", lambda item: item["map_artifacts"].pop(6)),
+            ("untyped crosswalk artifact", lambda item: item["map_artifacts"][0].pop("schema_path")),
         ):
             mutant = deepcopy(candidate)
             mutate(mutant)

@@ -5,7 +5,7 @@
     "order": 2,
     "status": "INPUT_BLOCKED"
   },
-  "claim_boundary": "This preflight prepares bridge 2 and imports only a schema-valid, content-addressed branch map on the exact Berger interaction background. The existing support-local same-bundle projector remains obstructed. Until bridge 1 supplies an admissible mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE map, projected ell2/ell3, cohomology survival, cyclic deformation nontriviality and removability are NO_CERTIFIED_MAP. It preserves the filtered-cyclic ell3 obstruction and does not authorize q4, particles, causality, QME promotion or quantum claims.",
+  "claim_boundary": "This preflight prepares bridge 2 and imports only a schema-valid, content-addressed branch map on the exact Berger interaction background. Every required evidence role is itself a typed JSON artifact validated against a content-addressed Draft 2020-12 schema. The existing support-local same-bundle projector remains obstructed. Until bridge 1 supplies an admissible mixed-bundle, noncontractible-cofiber, or explicitly REDUCED-MODE map, projected ell2/ell3, cohomology survival, cyclic deformation nontriviality and removability are NO_CERTIFIED_MAP. It preserves the filtered-cyclic ell3 obstruction and does not authorize q4, particles, causality, QME promotion or quantum claims.",
   "claim_flags": {
     "ADMISSIBLE_REDEFINITION_DISPLAYED": false,
     "ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_IMPORTED": false,
@@ -79,7 +79,7 @@
     ],
     "required_result_id": "BERGER_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_V1",
     "schema_path": "d_quotient_classical/schema/berger-admissible-same-background-branch-map-v1.schema.json",
-    "schema_sha256": "90a8e62d6d9a6bc5e4d2ffe4c5f1f13875bb46314578200a5eb05b74603f75a7",
+    "schema_sha256": "8a78e52a459776fdbfad4e5d21ec3e8319ca8ea92a44b0fdef2a10d2057a6ae0",
     "status": "MISSING"
   },
   "lifecycle_status": "OPEN",
@@ -88,10 +88,10 @@
   "result_state": "INPUT_BLOCKED_ADMISSIBLE_SAME_BACKGROUND_BRANCH_MAP_MISSING",
   "schema": "pure-weyl-berger-mixed-ell3-branch-projection-importer-preflight-v1",
   "source_manifest": {
-    "d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py": "9de08d7eed5e1d9222ca0b4eab9ffb2b60154787d3de2a46a2159d80ee997101",
-    "d_quotient_classical/backreacted_clock/tests/test_berger_mixed_ell3_branch_projection_importer.py": "b4d11ca93acd8a305c39a4c6201d07eeeb9b5d9538587249e4b1a161fd10957e",
+    "d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py": "bed6a9746a22d61bef8d471dfd0b8ab3cb9399a215f85b9ecdbf794ecd1a66df",
+    "d_quotient_classical/backreacted_clock/tests/test_berger_mixed_ell3_branch_projection_importer.py": "c55b8e08d085df12aae6d27d336016a8047eae949ff446f2a34ef742ae03ec23",
     "d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py": "60bb55446ac91cabc5281d2a6d8b336d01587b8251fef5762a3e2de807261aba",
-    "d_quotient_classical/schema/berger-admissible-same-background-branch-map-v1.schema.json": "90a8e62d6d9a6bc5e4d2ffe4c5f1f13875bb46314578200a5eb05b74603f75a7",
+    "d_quotient_classical/schema/berger-admissible-same-background-branch-map-v1.schema.json": "8a78e52a459776fdbfad4e5d21ec3e8319ca8ea92a44b0fdef2a10d2057a6ae0",
     "d_quotient_classical/schema/berger-mixed-ell3-branch-projection-importer-preflight-v1.schema.json": "ddb513352f75c34645dc3f067c35e99d0f0aa4c17aebbea5c1f2b6d21ccf43fe"
   },
   "verification_commands": [
@@ -113,19 +113,19 @@
       "commands_and_elapsed_seconds": [
         {
           "command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/berger_mixed_ell3_branch_projection_importer.py --check --guards",
-          "elapsed_seconds": 0.53
+          "elapsed_seconds": 0.36
         },
         {
           "command": "PYTHONPATH=. python3 d_quotient_classical/backreacted_clock/verify_berger_mixed_ell3_branch_projection_importer.py",
-          "elapsed_seconds": 1.15
+          "elapsed_seconds": 0.68
         },
         {
           "command": "PYTHONPATH=. python3 -m unittest d_quotient_classical.backreacted_clock.tests.test_berger_mixed_ell3_branch_projection_importer d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -v",
-          "elapsed_seconds": 0.84
+          "elapsed_seconds": 1.72
         },
         {
           "command": "npx --yes ajv-cli@5 compile --spec=draft2020 --strict=true <two scoped schemas>",
-          "elapsed_seconds": 3.1
+          "elapsed_seconds": 3.95
         }
       ],
       "status": "PASS"

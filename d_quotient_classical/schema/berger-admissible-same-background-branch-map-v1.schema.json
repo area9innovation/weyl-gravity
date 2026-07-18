@@ -35,6 +35,7 @@
     "map_artifacts": {
       "type": "array",
       "minItems": 8,
+      "maxItems": 8,
       "allOf": [
         {"contains": {"type": "object", "properties": {"role": {"const": "carrier_crosswalk"}}, "required": ["role"]}},
         {"contains": {"type": "object", "properties": {"role": {"const": "chain_map"}}, "required": ["role"]}},
@@ -67,6 +68,6 @@
   },
   "$defs": {
     "artifact": {"type": "object", "additionalProperties": false, "required": ["result_id", "path", "sha256"], "properties": {"result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
-    "map_artifact": {"type": "object", "additionalProperties": false, "required": ["role", "path", "sha256"], "properties": {"role": {"enum": ["carrier_crosswalk", "chain_map", "branch_inclusion_projection_or_cofiber", "pairing_transport", "gauge_nondynamical_disposition", "k_berger_equivariance", "cohomology_map", "independent_verifier"]}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+    "map_artifact": {"type": "object", "additionalProperties": false, "required": ["role", "result_id", "path", "sha256", "schema_path", "schema_sha256"], "properties": {"role": {"enum": ["carrier_crosswalk", "chain_map", "branch_inclusion_projection_or_cofiber", "pairing_transport", "gauge_nondynamical_disposition", "k_berger_equivariance", "cohomology_map", "independent_verifier"]}, "result_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "schema_path": {"type": "string", "minLength": 1}, "schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
   }
 }

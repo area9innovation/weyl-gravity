@@ -1,5 +1,9 @@
 import copy
+import json
+from pathlib import Path
+import tempfile
 import unittest
+from unittest import mock
 
 from d_quotient_classical.backreacted_clock import berger_mixed_ell3_branch_projection_importer as result
 
@@ -54,6 +58,54 @@ class BranchProjectionImporterTests(unittest.TestCase):
         value["dependency_tags"] = ["LOCAL-ALGEBRAIC"]
         with self.assertRaises(Exception):
             result.validate_candidate(value, verify_artifacts=False)
+
+    def test_untyped_evidence_artifact_is_rejected(self):
+        value = copy.deepcopy(result.synthetic_candidate())
+        del value["map_artifacts"][0]["schema_path"]
+        with self.assertRaises(Exception):
+            result.validate_candidate(value, verify_artifacts=False)
+
+    def test_duplicate_evidence_role_is_rejected(self):
+        value = copy.deepcopy(result.synthetic_candidate())
+        value["map_artifacts"][1]["role"] = value["map_artifacts"][0]["role"]
+        with self.assertRaises(Exception):
+            result.validate_candidate(value, verify_artifacts=False)
+
+    def test_repository_escape_is_rejected(self):
+        value = copy.deepcopy(result.synthetic_candidate())
+        value["map_artifacts"][0]["path"] = "../outside.json"
+        with self.assertRaises(Exception):
+            result.validate_candidate(value, verify_artifacts=True)
+
+    def test_typed_candidate_activates_receiver_end_to_end(self):
+        with tempfile.TemporaryDirectory(dir=result.ROOT) as directory:
+            root = Path(directory)
+            artifact_schema = root / "artifact.schema.json"
+            artifact_schema.write_text(json.dumps({
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["result_id"],
+                "properties": {"result_id": {"type": "string", "minLength": 1}},
+            }))
+            candidate = result.synthetic_candidate()
+            for artifact in candidate["map_artifacts"]:
+                payload = root / f"{artifact['role']}.json"
+                payload.write_text(json.dumps({"result_id": artifact["result_id"]}))
+                artifact.update({
+                    "path": str(payload.relative_to(result.ROOT)),
+                    "sha256": result._sha256(payload),
+                    "schema_path": str(artifact_schema.relative_to(result.ROOT)),
+                    "schema_sha256": result._sha256(artifact_schema),
+                })
+            candidate_path = root / "candidate.json"
+            candidate_path.write_text(json.dumps(candidate))
+            with mock.patch.object(result, "CANDIDATES", (candidate_path, root / "absent.json")):
+                value = result.build()
+        self.assertEqual(value["input_contract"]["status"], "IMPORTED")
+        self.assertTrue(value["claim_flags"]["BRIDGE_2_ACTIVATED"])
+        self.assertEqual(value["downstream_disposition"]["projected_operation"], "OPEN")
+        self.assertEqual(value["imported_branch_map"]["mode_scope"], candidate["mode_scope"])
 
 
 if __name__ == "__main__":

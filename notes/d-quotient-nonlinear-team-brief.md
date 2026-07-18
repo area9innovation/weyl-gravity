@@ -758,7 +758,8 @@ chain/cohomology maps, pairing transport, gauge/nondynamical disposition and
 `BERGER_MIXED_ELL3_BRANCH_PROJECTION_IMPORTER_PREFLIGHT_V1`; it accepts a
 support-local mixed-bundle map, noncontractible cofiber, or explicitly tagged
 `REDUCED-MODE` nonlocal map and rejects background-name matching.  The input
-contract requires the complete atlas mode scope and content-addressed evidence
+contract requires the complete atlas mode scope and typed, schema-validated,
+content-addressed evidence
 roles for the carrier crosswalk, chain map, inclusion/projection/cofiber,
 pairing transport, gauge/nondynamical disposition, `K_Berger` equivariance,
 cohomology map and independent verifier.  Its independent verifier is
