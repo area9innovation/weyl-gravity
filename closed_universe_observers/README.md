@@ -107,6 +107,8 @@ python3 -m closed_universe_observers.generate_berger_selected_p0_polarized_form_
 python3 -m closed_universe_observers.verify_berger_selected_p0_polarized_form_intervals
 python3 -m closed_universe_observers.generate_berger_selected_clock_power_polarized_form_rail --check
 python3 -m closed_universe_observers.verify_berger_selected_clock_power_polarized_form_rail
+python3 -m closed_universe_observers.generate_berger_selected_charge_block_companion_closure_gate --check
+python3 -m closed_universe_observers.verify_berger_selected_charge_block_companion_closure_gate
 python3 closed_universe_observers/verify_comparison_ledger.py
 python3 -m pytest -q closed_universe_observers/tests
 ```
@@ -468,7 +470,14 @@ the certified positive normalized moments.  All 270 complex intervals are
 content-addressed, the `p=0` rows reproduce their source exactly, and every
 width remains below `0.1`; no clock/profile independence is assumed.  The
 active gate is exact temporal functional calculus on this selected rail plus
-a controlled spatial tail, not a complete-form or Green-image promotion.
+a controlled spatial tail, not a complete-form or Green-image promotion.  The
+charge-block closure audit sharpens that gate.  The 18 real entries seed 18
+distinct `q=m+s` Maxwell blocks whose union also contains 27 exact structural
+zeros and 33 additional on-support real entries.  Direct temporal promotion
+is therefore `OBSTRUCTED`.  The 33 companions require 18 scalar recurrence
+rows, 12 already certified and exactly six missing: shell `1023` indices
+`129,257,385` and shell `1025` indices `130,258,386`.  Those six rows and the
+33 companion form entries are the next finite gate.
 The emitter backreaction successor now varies the same selected action with
 respect to `gHat` and `Theta`.  It exports the free massive-two-form stress,
 the metric stress of `g_b h_b<K_b,dA>`, and the reciprocal clock source

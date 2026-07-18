@@ -36,6 +36,11 @@ Green images, response rank, recoil, and second-order-cone restriction remain
 `epsilon_R^2 kappa` unary gate ahead of apparatus `q2,q3`, Berger equivariance,
 and the observer morphism; it does not promote finite-parameter or all-orders
 stability.
+The adjacent selected-charge-block row is `OBSTRUCTED` for direct temporal
+promotion.  Its 18 helicity blocks require 33 on-support real companions in
+addition to 27 certified structural zeros.  Six scalar recurrence rows remain
+to construct those companions.  This obstruction is scoped to the incomplete
+selected input, not to the exact blockwise functional calculus itself.
 
 No compact Einstein--Maxwell product mode is placed in a Berger row.  The
 exceptional-resonance crosswalk is explicitly `NO_CERTIFIED_MAP`, so it has

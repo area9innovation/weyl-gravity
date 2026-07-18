@@ -603,6 +603,19 @@ Bridge 3 remains inactive.  The fail-closed atlas row is
 its input rail is `CERTIFIED`, while response, rank, Green image, recoil and
 cone restriction remain `OPEN`.
 
+`BERGER_SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_GATE` now prevents an invalid
+direct temporal promotion.  The 18 real entries seed 18 distinct `q=m+s`
+Maxwell helicity blocks.  Their real-entry union contains 18 selected inputs,
+27 exact structural zeros and 33 additional on-support companions.  The 33
+companions require 18 scalar recurrence rows; 12 are already certified and
+the exact missing set is `(1023;129,257,385)` and
+`(1025;130,258,386)`.  Thus the active gate is to evaluate those six scalar
+rows and propagate the 33 form companions through `p=0,2,...,28` before
+applying the exact temporal functional calculus.  The atlas row
+`observer.berger.detector_profile.selected_charge_block_companion_closure`
+marks direct promotion `OBSTRUCTED`; it does not obstruct the finite companion
+completion.
+
 The nonlinear-team sequencing handoff is fail-closed and unchanged.  The
 mixed `epsilon_R^2 kappa` unary gate was completed coefficientwise before
 apparatus `q2,q3`; only that completion activated the declared

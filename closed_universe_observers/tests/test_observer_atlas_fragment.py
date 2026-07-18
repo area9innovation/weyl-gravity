@@ -54,3 +54,16 @@ def test_selected_clock_power_row_is_input_certified_and_response_open():
     assert "BERGER_SELECTED_CLOCK_POWER_POLARIZED_FORM_RAIL" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_selected_charge_block_promotion_is_fail_closed():
+    row = next(
+        row for row in build()["entries"]
+        if row["id"] == "observer.berger.detector_profile.selected_charge_block_companion_closure"
+    )
+    assert row["descriptions"]["causal"] == "OBSTRUCTED"
+    assert row["observer_data"]["profile_green_boundary_dependencies"]["status"] == "OBSTRUCTED"
+    assert row["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert "BERGER_SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_GATE" in {
+        evidence["result_id"] for evidence in row["evidence"]
+    }

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "berger-selected-charge-block-companion-closure-gate-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "selection", "charge_blocks", "missing_on_support_real_form_entries", "missing_scalar_rows", "coverage", "direct_promotion_mutation", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-selected-charge-block-companion-closure-gate-v1"},
+    "result_id": {"const": "BERGER_SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_GATE"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "CERTIFIED_DIRECT_SELECTED_RAIL_TEMPORAL_PROMOTION_OBSTRUCTED_33_ON_SUPPORT_COMPANIONS_AND_6_SCALAR_ROWS_MISSING"},
+    "atlas_status": {"const": "OBSTRUCTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "selection": {"type": "object"},
+    "charge_blocks": {"type": "array", "minItems": 18, "maxItems": 18},
+    "missing_on_support_real_form_entries": {"type": "array", "minItems": 33, "maxItems": 33},
+    "missing_scalar_rows": {
+      "const": [[1023, 129], [1023, 257], [1023, 385], [1025, 130], [1025, 258], [1025, 386]]
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["selected_real_form_entry_count", "selected_helicity_seed_count", "distinct_charge_block_count", "missing_on_support_real_form_entry_count", "structural_zero_real_form_entry_count", "charge_block_real_entry_union_count", "required_scalar_row_count_for_missing_entries", "already_certified_scalar_row_count", "missing_scalar_row_count", "canonical_companion_closure_sha256"],
+      "properties": {
+        "selected_real_form_entry_count": {"const": 18},
+        "selected_helicity_seed_count": {"const": 18},
+        "distinct_charge_block_count": {"const": 18},
+        "missing_on_support_real_form_entry_count": {"const": 33},
+        "structural_zero_real_form_entry_count": {"const": 27},
+        "charge_block_real_entry_union_count": {"const": 78},
+        "required_scalar_row_count_for_missing_entries": {"const": 18},
+        "already_certified_scalar_row_count": {"const": 12},
+        "missing_scalar_row_count": {"const": 6},
+        "canonical_companion_closure_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "direct_promotion_mutation": {"type": "object"},
+    "flags": {
+      "type": "object",
+      "required": ["SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_EXPORTED", "EIGHTEEN_DISTINCT_SELECTED_HELICITY_BLOCKS_EXPORTED", "THIRTY_THREE_ON_SUPPORT_REAL_FORM_COMPANIONS_MISSING", "TWENTY_SEVEN_STRUCTURAL_ZERO_REAL_FORM_COMPANIONS_CERTIFIED", "SIX_SCALAR_RECURRENCE_ROWS_MISSING", "UNSELECTED_COMPANIONS_ZERO_MUTATION_REJECTED", "SELECTED_INPUT_RAIL_CHARGE_BLOCK_CLOSED", "DIRECT_SELECTED_RAIL_TEMPORAL_PROMOTION_OBSTRUCTED", "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED", "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED", "GREEN_IMAGES_EVALUATED", "DETECTOR_RESPONSE_EVALUATED", "QUANTUM_CLAIM"],
+      "properties": {
+        "SELECTED_CHARGE_BLOCK_COMPANION_CLOSURE_EXPORTED": {"const": true},
+        "EIGHTEEN_DISTINCT_SELECTED_HELICITY_BLOCKS_EXPORTED": {"const": true},
+        "THIRTY_THREE_ON_SUPPORT_REAL_FORM_COMPANIONS_MISSING": {"const": true},
+        "TWENTY_SEVEN_STRUCTURAL_ZERO_REAL_FORM_COMPANIONS_CERTIFIED": {"const": true},
+        "SIX_SCALAR_RECURRENCE_ROWS_MISSING": {"const": true},
+        "UNSELECTED_COMPANIONS_ZERO_MUTATION_REJECTED": {"const": true},
+        "SELECTED_INPUT_RAIL_CHARGE_BLOCK_CLOSED": {"const": false},
+        "DIRECT_SELECTED_RAIL_TEMPORAL_PROMOTION_OBSTRUCTED": {"const": true},
+        "TEMPORAL_FUNCTIONAL_CALCULUS_APPLIED": {"const": false},
+        "VALIDATED_INFINITE_MODE_TAIL_UPPER_BOUND_EXPORTED": {"const": false},
+        "GREEN_IMAGES_EVALUATED": {"const": false},
+        "DETECTOR_RESPONSE_EVALUATED": {"const": false},
+        "QUANTUM_CLAIM": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"const": "EVALUATE_THE_SIX_MISSING_SCALAR_ROWS_AND_PROPAGATE_THE_33_ON_SUPPORT_FORM_COMPANIONS_THROUGH_P0_TO_P28"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  },
+  "additionalProperties": false
+}
