@@ -810,9 +810,16 @@ polar `L=2` primitive is
 `C_t2=5*B^2/6-2*(A+B*t)^2/3`, and `U2=-7*B^2/36`, with all eight projected
 remainders zero.  Thus the obstruction is genuinely caused by the bounded
 correction class, not by failure of the linearized equations.  The complete
-global--extra mixed-channel assembly remains a separate gate until its
-certificate is committed, and the causal/retarded class remains
-`NO_CERTIFIED_MAP`.
+global--extra channel ledger has now landed as a blockwise constructive
+existence theorem: after the five stabilizer maps vanish, every remaining
+finite block has a smooth exponential-polynomial right inverse, including
+secular prefactors at propagation roots.  The smooth class is therefore
+`CERTIFIED` on the complete declared orbit, while the causal/retarded class
+remains `NO_CERTIFIED_MAP`.  The nonlinear atlas importer is
+activation-sensitive and fail-closed: it made this promotion only after the
+exact result and scope, correction-class separation, Draft 2020-12 schema,
+required content-addressed source manifest, independent-verifier command and
+Tier-1 `PASS` receipt all validated.
 Neither source handoff activates a cyclic Bridge 2 calculation.  The
 axial--polar source uses the polar leg whose
 fixed identity cyclic compatibility is obstructed and whose corrected

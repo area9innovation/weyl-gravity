@@ -105,12 +105,48 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(bounded["status"], "OBSTRUCTED")
         self.assertIn("-7*B^2*t^2", bounded["statement"])
         smooth = entry["mode_data"]["second_order"]["smooth_secular"]
-        self.assertEqual(smooth["status"], "OPEN")
-        self.assertIn("full eight-row", smooth["statement"])
-        self.assertIn("exact polynomial primitive", smooth["statement"])
+        expected = "CERTIFIED" if atlas.smooth_extension_import_ready() else "OPEN"
+        self.assertEqual(smooth["status"], expected)
+        if expected == "OPEN":
+            self.assertIn("full eight-row", smooth["statement"])
+            self.assertIn("PASS Tier-1 receipt", smooth["statement"])
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
         self.assertIn("correction-class-specific", entry["claim_boundary"])
         self.assertIn("activate either cyclic Bridge 2", entry["claim_boundary"])
+
+    def test_smooth_extension_import_requires_complete_pass_receipt(self):
+        payload = {
+            "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER",
+            "lifecycle_state": "CERTIFIED",
+            "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+            "scope": {"background": "compact magnetically supported Plebanski-Hacyan product", "k": 0},
+            "classification": {
+                "complete_nonzero_extra_common_zero_orbit_covered": True,
+                "complete_quadratic_channel_ledger": True,
+                "all_nonstabilizer_smooth_secular_cokernels_zero": True,
+                "smooth_exponential_polynomial_second_order_correction_exists": True,
+                "coefficient_explicit_correction_printed": False,
+                "bounded_correction_exists": False,
+                "causal_retarded_map_certified": False,
+                "all_orders_integrability": False,
+            },
+            "correction_classes": {
+                "bounded_or_finite_quasiperiodic": "OBSTRUCTED",
+                "smooth_exponential_polynomial": "CERTIFIED",
+                "causal_or_retarded": "NO_CERTIFIED_MAP",
+            },
+            "verification_receipt": {"tier_1": {"status": "PENDING"}},
+            "verification_commands": [
+                "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_global_extra_smooth_secular_second_order.py"
+            ],
+            "source_manifest": {path: "unused-in-structural-test" for path in atlas.SMOOTH_REQUIRED_MANIFEST_PATHS},
+        }
+        self.assertFalse(atlas.smooth_extension_payload_ready(payload, verify_manifest=False))
+        payload["verification_receipt"]["tier_1"]["status"] = "PASS"
+        self.assertTrue(atlas.smooth_extension_payload_ready(payload, verify_manifest=False))
+        self.assertFalse(atlas.smooth_extension_payload_ready(payload, verify_manifest=True))
+        payload["classification"]["bounded_correction_exists"] = True
+        self.assertFalse(atlas.smooth_extension_payload_ready(payload, verify_manifest=False))
 
     def test_exceptional_solution_cofiber_does_not_activate_bridge_two(self):
         entry = next(item for item in atlas.build()["entries"] if "exceptional_ell1_k0_solution_cofiber" in item["id"])

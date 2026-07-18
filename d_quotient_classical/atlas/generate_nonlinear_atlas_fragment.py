@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator
+from jsonschema.exceptions import SchemaError, ValidationError
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -29,6 +30,7 @@ CERTS = {
     "homogeneous_twist_extra_cone": ROOT / "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
     "homogeneous_twist_extra_bounded_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
     "homogeneous_twist_polynomial_correction": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+    "global_extra_smooth_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.json",
     "exceptional_ell1_cofiber": ROOT / "bridge/certificates/einstein_weyl_exceptional_ell1_solution_cofiber.json",
     "relative_linfinity_preflight": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_LINFINITY_THROUGH_ARITY_THREE_PREFLIGHT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -46,6 +48,88 @@ def _evidence(*names: str) -> list[dict[str, str]]:
         payload = json.loads(path.read_text())
         rows.append({"path": str(path.relative_to(ROOT)), "result_id": payload["result_id"], "sha256": _sha(path)})
     return rows
+
+
+SMOOTH_REQUIRED_MANIFEST_PATHS = {
+    "bridge/certificates/einstein_maxwell_weyl_global_extra_bounded_correction_obstruction.json",
+    "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_collinear_second_order.json",
+    "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json",
+    "bridge/einstein_sector/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.py",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_global_extra_smooth_secular_second_order.schema.json",
+    "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
+    "d_quotient_classical/certificates/PH_HOMOGENEOUS_TWIST_ELL2_EXTRA_BOUNDED_TANGENT_CONE_V1.json",
+}
+
+
+def smooth_extension_payload_ready(payload: dict[str, Any], *, verify_manifest: bool = True) -> bool:
+    """Accept only the exact, fully receipted smooth correction-class theorem."""
+
+    try:
+        flags = payload["classification"]
+        classes = payload["correction_classes"]
+        scope = payload["scope"]
+        receipt = payload["verification_receipt"]
+        commands = payload["verification_commands"]
+        manifest = payload["source_manifest"]
+        required_true = (
+            "complete_nonzero_extra_common_zero_orbit_covered",
+            "complete_quadratic_channel_ledger",
+            "all_nonstabilizer_smooth_secular_cokernels_zero",
+            "smooth_exponential_polynomial_second_order_correction_exists",
+        )
+        required_false = (
+            "coefficient_explicit_correction_printed",
+            "bounded_correction_exists",
+            "causal_retarded_map_certified",
+            "all_orders_integrability",
+        )
+        if payload["result_id"] != "EINSTEIN_MAXWELL_WEYL_GLOBAL_EXTRA_SMOOTH_SECULAR_SECOND_ORDER":
+            return False
+        if payload["lifecycle_state"] != "CERTIFIED":
+            return False
+        if set(payload["dependency_tags"]) != {"LOCAL-ALGEBRAIC", "REDUCED-MODE"}:
+            return False
+        if scope["background"] != "compact magnetically supported Plebanski-Hacyan product" or scope["k"] != 0:
+            return False
+        if not all(flags[name] is True for name in required_true):
+            return False
+        if not all(flags[name] is False for name in required_false):
+            return False
+        if not classes["bounded_or_finite_quasiperiodic"].startswith("OBSTRUCTED"):
+            return False
+        if not classes["smooth_exponential_polynomial"].startswith("CERTIFIED"):
+            return False
+        if not classes["causal_or_retarded"].startswith("NO_CERTIFIED_MAP"):
+            return False
+        if receipt["tier_1"]["status"] != "PASS":
+            return False
+        if not any("verify_einstein_maxwell_weyl_global_extra_smooth_secular_second_order.py" in command for command in commands):
+            return False
+        if not SMOOTH_REQUIRED_MANIFEST_PATHS.issubset(manifest):
+            return False
+        if verify_manifest:
+            for relative, expected in manifest.items():
+                path = ROOT / relative
+                if not path.is_file() or _sha(path) != expected:
+                    return False
+    except (KeyError, TypeError, ValueError):
+        return False
+    return True
+
+
+def smooth_extension_import_ready() -> bool:
+    path = CERTS["global_extra_smooth_extension"]
+    if not path.is_file():
+        return False
+    try:
+        payload = json.loads(path.read_text())
+        schema_path = ROOT / payload["schema_path"]
+        schema = json.loads(schema_path.read_text())
+        Draft202012Validator.check_schema(schema)
+        Draft202012Validator(schema).validate(payload)
+    except (KeyError, OSError, SchemaError, TypeError, ValidationError, ValueError):
+        return False
+    return smooth_extension_payload_ready(payload)
 
 
 def _claim(status: str, statement: str) -> dict[str, str]:
@@ -131,6 +215,7 @@ def bridge2_entry(importer: dict[str, Any], fallback_scope: dict[str, Any]) -> d
 
 def entries() -> list[dict[str, Any]]:
     branch_importer = json.loads(CERTS["branch_importer"].read_text())
+    smooth_extension_ready = smooth_extension_import_ready()
     berger = {
         "theory": "pure-Weyl gravity plus rotating Berger clocks and Maxwell",
         "background": "fixed rational positive Berger clock",
@@ -376,7 +461,12 @@ def entries() -> list[dict[str, Any]]:
             "mode_data": _mode_data(
                 _second(
                     ("OBSTRUCTED", "Every nonzero point on the complete aligned orbit has B nonzero, and its zero-frequency polar L=2 metric_00 source contains the uncancellable coefficient -7*B^2*t^2; no bounded finite-quasiperiodic correction exists."),
-                    ("OPEN", "The full eight-row zero-frequency polar L=2 twist-self source has an exact polynomial primitive with all remainders zero; the complete global-extra mixed-channel smooth correction has not yet landed in a committed certificate."),
+                    (
+                        "CERTIFIED" if smooth_extension_ready else "OPEN",
+                        "Every orbit point admits a real smooth spatially periodic finite exponential-polynomial second-order correction; the complete finite channel ledger has no nonstabilizer cokernel after the five moment maps vanish."
+                        if smooth_extension_ready else
+                        "The full eight-row zero-frequency polar L=2 twist-self source has an exact polynomial primitive with all remainders zero; the complete global-extra mixed-channel smooth correction awaits a schema-valid, content-addressed certificate with a PASS Tier-1 receipt.",
+                    ),
                     ("NO_CERTIFIED_MAP", "No compact-product retarded BV complex or causal correction carrier is certified."),
                 ),
                 dispersion=("CERTIFIED", "The theorem uses the generalized-zero homogeneous/twist block and the k=0 ell=2 extra shell omega_e=4/sqrt(3)."),
@@ -384,8 +474,12 @@ def entries() -> list[dict[str, Any]]:
                 taub=("CERTIFIED", "The full declared nonzero-extra common zero locus of all five stabilizer maps and completed resonance functionals is the aligned SO(3) orbit; no off-axis branch remains."),
                 resonance=("CERTIFIED", "Exact coefficient elimination gives a=b=d=0 and rank stratification forces the extra tensor and twist position to align with the twist-velocity axis."),
             ),
-            "evidence": _evidence("homogeneous_twist_extra_bounded_obstruction", "homogeneous_twist_polynomial_correction", "homogeneous_twist_extra_cone", "homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
-            "claim_boundary": "The bounded/finite-quasiperiodic second-order problem is obstructed on every nonzero point of the complete aligned orbit in the declared single-k=0 homogeneous/twist times ell=2 extra REDUCED-MODE carrier. This correction-class-specific no-go does not obstruct smooth secular or causal corrections, cover opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish observational, particle or quantum claims.",
+            "evidence": _evidence(*(("global_extra_smooth_extension",) if smooth_extension_ready else ()), "homogeneous_twist_extra_bounded_obstruction", "homogeneous_twist_polynomial_correction", "homogeneous_twist_extra_cone", "homogeneous_twist_extra_source", "relative_branch_dictionary", "dictionary", "cone"),
+            "claim_boundary": (
+                "The correction-class split is certified on every nonzero point of the complete aligned orbit in the declared single-k=0 homogeneous/twist times ell=2 extra REDUCED-MODE carrier: bounded/finite-quasiperiodic corrections are obstructed, while smooth exponential-polynomial corrections exist. This correction-class-specific theorem does not cover causal corrections, opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish observational, particle or quantum claims."
+                if smooth_extension_ready else
+                "The bounded/finite-quasiperiodic second-order problem is obstructed on every nonzero point of the complete aligned orbit in the declared single-k=0 homogeneous/twist times ell=2 extra REDUCED-MODE carrier. This correction-class-specific no-go does not obstruct smooth secular or causal corrections, cover opposite momenta or multiple fibres, activate either cyclic Bridge 2, descend to final cohomology, or establish observational, particle or quantum claims."
+            ),
         },
         {
             "id": "nonlinear.product.bridge1.exceptional_ell1_k0_solution_cofiber",
