@@ -1472,21 +1472,25 @@ are `CERTIFIED`, `OBSTRUCTED`, `OPEN`, `NOT_APPLICABLE`, and
 `NO_CERTIFIED_MAP`.  The centered classes `[W_+^2]` and `[W_-^2]` are
 deformation/vertex classes, never one-particle modes.
 
-This lane also owns the analytic reduction lemma for the shared finite-
-harmonic second-order tangent cone
+The analytic reduction lemma is now certified by
+`FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1`.  For the shared
+finite-harmonic second-order tangent cone,
 
 \[
 \mathcal Z_2^{\mathcal C}
 =\{u:\mu_X(u)=0,\ R_j^{\mathcal C}(u)=0\}.
 \]
 
-The proof must state completeness of the harmonic block decomposition, remove
-gauge and Noether rows before forming the adjoint cokernel, and distinguish
-bounded/quasiperiodic, smooth-secular, and causal/retarded correction spaces.
-In particular it must audit a resonant source twice: first in the bounded
-Fourier class, and then after allowing `t exp(i omega t)` corrections.  Any
-change of cokernel or obstruction status must be recorded as a change of
-correction category, not as a contradiction between certificates.
+the theorem requires complete harmonic output closure, removes gauge and
+Noether rows before forming the adjoint cokernel, identifies the certified
+stabilizer subspace with `mu_X`, and uses a complementary basis for
+`R_j^C`.  Its adversarial resonance fixture has one persistent moment-map
+row and one category-sensitive row: the latter obstructs bounded finite
+Fourier corrections but is killed by `t exp(i omega t)` in the smooth-
+secular category and by the retarded integral for compatible compact
+sources.  The theorem is abstract and does not upgrade any background.  Its
+next gate is atlas instantiation, with a distinct correction-category record
+rather than one ambiguous second-order status.
 
 ### Work package C-G3: clock-family stability
 

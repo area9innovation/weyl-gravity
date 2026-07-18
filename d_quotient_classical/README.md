@@ -387,6 +387,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   middle/Schur, full SDR, and causal variations remain open:
   [`certificates/NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1.json`](certificates/NARIAI_TRANSVERSE_CURVATURE_INCIDENCE_VARIATION_V1.json),
   [`reports/nariai-transverse-curvature-incidence-variation.md`](reports/nariai-transverse-curvature-incidence-variation.md)
+- General finite-harmonic second-order tangent-cone theorem: after complete
+  harmonic decomposition, Noether reduction, and removal of gauge-null
+  correction columns, solvability is exactly the vanishing of the stabilizer
+  moment maps and a complementary reduced adjoint cokernel.  The cokernel is
+  correction-category dependent.  An exact resonance fixture remains
+  obstructed for bounded finite Fourier corrections but is solved by
+  `t exp(i omega t)` in the smooth-secular category and by the retarded
+  integral for compatible compact sources.  This classifies no new
+  background and makes no all-orders claim:
+  [`certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json`](certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json),
+  [`reports/finite-harmonic-second-order-tangent-cone-theorem.md`](reports/finite-harmonic-second-order-tangent-cone-theorem.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

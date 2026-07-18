@@ -1,0 +1,274 @@
+{
+  "schema": "finite-harmonic-second-order-tangent-cone-theorem-v1",
+  "schema_version": "1.0.0",
+  "result_id": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1",
+  "result_state": "ABSTRACT_CORRECTION_CLASS_SENSITIVE_TANGENT_CONE_THEOREM_CERTIFIED",
+  "lifecycle_state": "CERTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "theorem": {
+    "domain": "a finite direct sum of complete harmonic blocks in the first-order solution space",
+    "source": "the quadratic second-variation source S_j(u,u) in each output block",
+    "Noether_reduction": "replace each equation target by ker(I_j) before taking the cokernel; require I_j S_j=0",
+    "gauge_reduction": "remove gauge-null correction columns or pass to a complete gauge slice; this does not change im(L_j)",
+    "obstruction_space": "the adjoint annihilator of im(L_j^C) inside the Noether-compatible target",
+    "obstruction_decomposition": "identify the certified stabilizer subspace of the reduced adjoint cokernel with the moment maps mu_X and choose R_j^C only on a complementary cokernel basis, so no obstruction is counted twice",
+    "formula": "Z_2^C={u in ker(q1): mu_X(u)=0 and R_j^C(u)=0 for every output block j}",
+    "sufficiency_hypotheses": [
+      "the input and every quadratic output decompose into finitely many declared harmonic blocks",
+      "the block list is exhaustive under the quadratic selection rules",
+      "the gauge slice or quotient and every Noether identity row are complete",
+      "the correction space C and its block operator domains are fixed before the adjoint cokernel is formed",
+      "each zero obstruction pairing has a right inverse in the same declared correction category"
+    ],
+    "necessity": "pairing the second-order equation with every reduced adjoint-cokernel vector gives mu_X and R_j^C",
+    "sufficiency": "vanishing of those pairings places every compatible source in im(L_j^C); finite blockwise right inverses assemble the correction",
+    "compactness_and_symmetry": {
+      "compactness": "used only to obtain a discrete complete harmonic decomposition and finite output closure; the abstract image/cokernel statement is finite-dimensional",
+      "exact_symmetry": "used to block-diagonalize L and identify stabilizer moment maps; without it one must use a different complete decomposition",
+      "causal_category": "does not compare an eternal Fourier source with a compact source; it uses a retarded inverse on the declared compatible compact-source space"
+    }
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED",
+      "image_rule": "only bounded finite Fourier corrections are admitted; a resonant Fourier coefficient is an adjoint-cokernel obstruction"
+    },
+    "SMOOTH_SECULAR": {
+      "status": "CERTIFIED",
+      "image_rule": "finite exponential-polynomial corrections are admitted; a root of multiplicity r is inverted by a polynomial prefactor of degree at most r"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "CERTIFIED",
+      "image_rule": "for compatible compact sources, a declared retarded Green operator removes propagation resonances while preserving future support",
+      "background_specific_Green_theorem": "NOT_APPLICABLE"
+    }
+  },
+  "exact_fixture": {
+    "static_moment_map_block": {
+      "Noether_identity": {
+        "shape": [
+          1,
+          3
+        ],
+        "rank": 1,
+        "entries": [
+          [
+            0,
+            2,
+            "1"
+          ]
+        ]
+      },
+      "correction_operator": {
+        "shape": [
+          3,
+          2
+        ],
+        "rank": 1,
+        "entries": [
+          [
+            0,
+            0,
+            "1"
+          ]
+        ]
+      },
+      "compatible_basis": {
+        "shape": [
+          3,
+          2
+        ],
+        "rank": 2,
+        "entries": [
+          [
+            0,
+            0,
+            "1"
+          ],
+          [
+            1,
+            1,
+            "1"
+          ]
+        ]
+      },
+      "reduced_operator": {
+        "shape": [
+          2,
+          2
+        ],
+        "rank": 1,
+        "entries": [
+          [
+            0,
+            0,
+            "1"
+          ]
+        ]
+      },
+      "cokernel_basis": [
+        {
+          "shape": [
+            2,
+            1
+          ],
+          "rank": 1,
+          "entries": [
+            [
+              1,
+              0,
+              "1"
+            ]
+          ]
+        }
+      ],
+      "cokernel_dimension": 1,
+      "interpretation": "one compatible target direction survives as the stabilizer moment map after the Noether row and gauge-null correction are removed"
+    },
+    "resonant_block": {
+      "bounded_or_finite_quasiperiodic": {
+        "compatible_basis": {
+          "shape": [
+            2,
+            1
+          ],
+          "rank": 1,
+          "entries": [
+            [
+              0,
+              0,
+              "1"
+            ]
+          ]
+        },
+        "reduced_operator": {
+          "shape": [
+            1,
+            2
+          ],
+          "rank": 0,
+          "entries": []
+        },
+        "cokernel_basis": [
+          {
+            "shape": [
+              1,
+              1
+            ],
+            "rank": 1,
+            "entries": [
+              [
+                0,
+                0,
+                "1"
+              ]
+            ]
+          }
+        ],
+        "cokernel_dimension": 1
+      },
+      "smooth_secular": {
+        "compatible_basis": {
+          "shape": [
+            2,
+            1
+          ],
+          "rank": 1,
+          "entries": [
+            [
+              0,
+              0,
+              "1"
+            ]
+          ]
+        },
+        "reduced_operator": {
+          "shape": [
+            1,
+            2
+          ],
+          "rank": 1,
+          "entries": [
+            [
+              0,
+              0,
+              "1"
+            ]
+          ]
+        },
+        "cokernel_basis": [],
+        "cokernel_dimension": 0
+      },
+      "causal_retarded": {
+        "compatible_basis": {
+          "shape": [
+            2,
+            1
+          ],
+          "rank": 1,
+          "entries": [
+            [
+              0,
+              0,
+              "1"
+            ]
+          ]
+        },
+        "reduced_operator": {
+          "shape": [
+            1,
+            2
+          ],
+          "rank": 1,
+          "entries": [
+            [
+              0,
+              0,
+              "1"
+            ]
+          ]
+        },
+        "cokernel_basis": [],
+        "cokernel_dimension": 0
+      },
+      "bounded_residual_equation": "R_res(u)=0",
+      "secular_identity": "(d_t-i omega)(t exp(i omega t))=exp(i omega t)",
+      "secular_defect": "0",
+      "retarded_formula": "v(t)=int_0^t exp(i omega(t-s)) f(s) ds",
+      "retarded_polynomial_source": "f(t)=t^2+1 on the audited future interval",
+      "retarded_defect": "0",
+      "retarded_initial_value": "0"
+    },
+    "category_cones": {
+      "BOUNDED_OR_FINITE_QUASIPERIODIC": "mu_X(u)=0 and R_res(u)=0",
+      "SMOOTH_SECULAR": "mu_X(u)=0",
+      "CAUSAL_RETARDED": "mu_X(u)=0 for compatible compact sources, assuming the declared retarded block inverse"
+    }
+  },
+  "flags": {
+    "FINITE_HARMONIC_TANGENT_CONE_FORMULA": true,
+    "GAUGE_AND_NOETHER_ROWS_REMOVED_BEFORE_COKERNEL": true,
+    "BOUNDED_RESONANCE_OBSTRUCTED": true,
+    "SMOOTH_SECULAR_RESONANCE_REMOVED": true,
+    "CAUSAL_RETARDED_RESONANCE_REMOVED_FOR_COMPATIBLE_SOURCE": true,
+    "BACKGROUND_SPECIFIC_TANGENT_CONE_CLASSIFICATION": false,
+    "ALL_ORDERS_INTEGRABILITY": false
+  },
+  "next_gate": "instantiate the theorem in the generated residual atlas using the Einstein schema, preserving a separate correction-class record for every background and mode block",
+  "claim_boundary": "This proves the finite-block image/cokernel criterion and audits the category change on an exact resonant model. It does not classify any new background, identify modes across carriers, prove a background Green theorem, or imply all-orders integrability.",
+  "source_manifest": {
+    "d_quotient_classical/tangent_cone/finite_harmonic_second_order_tangent_cone.py": "f26f59d8d45c677963a832c773c7843353cc70a24f418283a1486b1693cbb2be",
+    "d_quotient_classical/tangent_cone/verify_finite_harmonic_second_order_tangent_cone.py": "a461b80ea6ec47569582fd1503847f5387469079bfdccf3acb140abfe92336cc",
+    "d_quotient_classical/tangent_cone/tests/test_finite_harmonic_second_order_tangent_cone.py": "fed7293de39006d3737c314cbe74de2d4ec31274c0df1ca902ee0478b55ad316",
+    "d_quotient_classical/schema/finite-harmonic-second-order-tangent-cone-theorem-v1.schema.json": "3bb800d170688fafa3824c3c3f1865c5ff6bc5bad3d3b82afcec08b56b2d26c9"
+  },
+  "verification_commands": [
+    "python3 -m d_quotient_classical.tangent_cone.finite_harmonic_second_order_tangent_cone --check",
+    "python3 d_quotient_classical/tangent_cone/verify_finite_harmonic_second_order_tangent_cone.py",
+    "python3 -m unittest d_quotient_classical.tangent_cone.tests.test_finite_harmonic_second_order_tangent_cone",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/finite-harmonic-second-order-tangent-cone-theorem-v1.schema.json -d d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json"
+  ]
+}

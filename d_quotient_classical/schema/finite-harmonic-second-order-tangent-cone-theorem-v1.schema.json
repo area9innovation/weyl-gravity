@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.example/schemas/finite-harmonic-second-order-tangent-cone-theorem-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "result_id", "result_state",
+    "lifecycle_state", "dependency_tags", "theorem", "correction_classes",
+    "exact_fixture", "flags", "next_gate", "claim_boundary",
+    "source_manifest", "verification_commands"
+  ],
+  "properties": {
+    "schema": {"const": "finite-harmonic-second-order-tangent-cone-theorem-v1"},
+    "schema_version": {"const": "1.0.0"},
+    "result_id": {"const": "FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1"},
+    "result_state": {"type": "string", "minLength": 1},
+    "lifecycle_state": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array", "minItems": 2, "uniqueItems": true,
+      "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}
+    },
+    "theorem": {"$ref": "#/$defs/jsonObject"},
+    "correction_classes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_SECULAR", "CAUSAL_RETARDED"],
+      "properties": {
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"$ref": "#/$defs/jsonObject"},
+        "SMOOTH_SECULAR": {"$ref": "#/$defs/jsonObject"},
+        "CAUSAL_RETARDED": {"$ref": "#/$defs/jsonObject"}
+      }
+    },
+    "exact_fixture": {"$ref": "#/$defs/jsonObject"},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "FINITE_HARMONIC_TANGENT_CONE_FORMULA",
+        "GAUGE_AND_NOETHER_ROWS_REMOVED_BEFORE_COKERNEL",
+        "BOUNDED_RESONANCE_OBSTRUCTED", "SMOOTH_SECULAR_RESONANCE_REMOVED",
+        "CAUSAL_RETARDED_RESONANCE_REMOVED_FOR_COMPATIBLE_SOURCE",
+        "BACKGROUND_SPECIFIC_TANGENT_CONE_CLASSIFICATION", "ALL_ORDERS_INTEGRABILITY"
+      ],
+      "properties": {
+        "FINITE_HARMONIC_TANGENT_CONE_FORMULA": {"const": true},
+        "GAUGE_AND_NOETHER_ROWS_REMOVED_BEFORE_COKERNEL": {"const": true},
+        "BOUNDED_RESONANCE_OBSTRUCTED": {"const": true},
+        "SMOOTH_SECULAR_RESONANCE_REMOVED": {"const": true},
+        "CAUSAL_RETARDED_RESONANCE_REMOVED_FOR_COMPATIBLE_SOURCE": {"const": true},
+        "BACKGROUND_SPECIFIC_TANGENT_CONE_CLASSIFICATION": {"const": false},
+        "ALL_ORDERS_INTEGRABILITY": {"const": false}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "claim_boundary": {"type": "string", "minLength": 1},
+    "source_manifest": {
+      "type": "object", "minProperties": 4,
+      "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "jsonObject": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/jsonValue"}
+    },
+    "jsonValue": {
+      "anyOf": [
+        {"type": "string"},
+        {"type": "number"},
+        {"type": "integer"},
+        {"type": "boolean"},
+        {"type": "null"},
+        {"type": "array", "items": {"$ref": "#/$defs/jsonValue"}},
+        {"$ref": "#/$defs/jsonObject"}
+      ]
+    }
+  }
+}
