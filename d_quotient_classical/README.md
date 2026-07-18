@@ -324,9 +324,19 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   parallel curvature endomorphisms commute and are `G_H`-self-adjoint.
   Every primal and formal-dual factor is normally hyperbolic, so their
   same-sided Green compositions give the complete four-row metric causal
-  homotopy.  The repaired rank-310 lift remains the next gate:
+  homotopy.  This is the endpoint input used by the all-row transfer below:
   [`certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json`](certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json),
   [`reports/nariai-metric-biwave-green-homotopy.md`](reports/nariai-metric-biwave-green-homotopy.md)
+- Complete Nariai all-row causal transfer: the cyclic support-local SDR and
+  metric endpoint combine as
+  `Lambda_310,+/-=H+I Lambda_metric,+/- P`.  Exact operator-polynomial replay
+  verifies the chain identity in split and original coordinates, the side
+  conditions `H^2=HI=PH=0`, and exact descent
+  `P Lambda_310,+/- I=Lambda_metric,+/-`.  All ten blocks and degree ranks
+  `15,140,140,15` are enumerated; no row is dropped.  Causal support and
+  complementary-degree adjoint reversal transfer from the metric endpoint:
+  [`certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json`](certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json),
+  [`reports/nariai-repaired-310-all-row-green-transfer.md`](reports/nariai-repaired-310-all-row-green-transfer.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

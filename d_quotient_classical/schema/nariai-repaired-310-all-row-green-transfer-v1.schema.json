@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/nariai-repaired-310-all-row-green-transfer-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "carrier", "transfer", "formal_replay", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-nariai-repaired-310-all-row-green-transfer-v1"},
+    "result_id": {"const": "NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1"},
+    "result_state": {"const": "RANK_310_CAUSAL_GREEN_HOMOTOPY_AND_METRIC_DESCENT_EXACT"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rank_310_cyclic_sdr", "metric_causal_homotopy", "abstract_causal_transfer"],
+      "properties": {
+        "rank_310_cyclic_sdr": {"$ref": "#/$defs/dependency"},
+        "metric_causal_homotopy": {"$ref": "#/$defs/dependency"},
+        "abstract_causal_transfer": {"$ref": "#/$defs/dependency"}
+      }
+    },
+    "carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["background", "block_count", "total_rank", "degree_ranks", "metric_endpoint_degree_ranks", "metric_endpoint_total_rank", "endpoint_embedding", "row_coverage", "dropped_rows"],
+      "properties": {
+        "background": {"const": "global unit Nariai R x (S1 x S2)"},
+        "block_count": {"const": 10}, "total_rank": {"const": 310},
+        "degree_ranks": {"const": [15, 140, 140, 15]},
+        "metric_endpoint_degree_ranks": {"const": [4, 9, 9, 4]},
+        "metric_endpoint_total_rank": {"const": 26},
+        "endpoint_embedding": {"type": "string", "minLength": 1},
+        "row_coverage": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/row"}},
+        "dropped_rows": {"const": []}
+      }
+    },
+    "transfer": {"$ref": "#/$defs/stringMap"},
+    "formal_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["endpoint_homotopy", "split_transferred_homotopy", "original_transferred_homotopy", "endpoint_relations"],
+      "properties": {
+        "endpoint_homotopy": {"$ref": "#/$defs/operatorMatrix"},
+        "split_transferred_homotopy": {"$ref": "#/$defs/operatorMatrix"},
+        "original_transferred_homotopy": {"$ref": "#/$defs/operatorMatrix"},
+        "endpoint_relations": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "exact_checks": {"type": "object", "minProperties": 18, "additionalProperties": {"const": true}},
+    "flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1", "NARIAI_REPAIRED_310_GREEN_HOMOTOPY", "NARIAI_REPAIRED_310_CAUSAL_SUPPORT", "NARIAI_REPAIRED_310_ADJOINT_REVERSAL", "NARIAI_METRIC_DESCENT_RECOVERS_ENDPOINT", "NARIAI_G2_SINGLE_BACKGROUND_CAUSAL_GATE", "OPEN_BACKGROUND_CLASS", "HADAMARD_STATE", "NONLINEAR_EXTENSION", "QUANTUM_CLAIM"],
+      "properties": {
+        "NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1": {"const": true},
+        "NARIAI_REPAIRED_310_GREEN_HOMOTOPY": {"const": true},
+        "NARIAI_REPAIRED_310_CAUSAL_SUPPORT": {"const": true},
+        "NARIAI_REPAIRED_310_ADJOINT_REVERSAL": {"const": true},
+        "NARIAI_METRIC_DESCENT_RECOVERS_ENDPOINT": {"const": true},
+        "NARIAI_G2_SINGLE_BACKGROUND_CAUSAL_GATE": {"const": true},
+        "OPEN_BACKGROUND_CLASS": {"const": false}, "HADAMARD_STATE": {"const": false},
+        "NONLINEAR_EXTENSION": {"const": false}, "QUANTUM_CLAIM": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"],
+      "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}
+    },
+    "next_gate": {"const": "C_G2_CONFORMALLY_EINSTEIN_FIRST_CURVATURE_OBSTRUCTION"},
+    "source_manifest": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "row": {"type": "object", "additionalProperties": false, "required": ["index", "name", "degree", "rank", "sector"], "properties": {"index": {"type": "integer", "minimum": 0, "maximum": 9}, "name": {"type": "string", "minLength": 1}, "degree": {"type": "integer", "minimum": -1, "maximum": 2}, "rank": {"type": "integer", "minimum": 1}, "sector": {"enum": ["metric_field_endpoint", "metric_ghost_plus_algebraic_complement", "algebraic_parent_cone"]}}},
+    "operatorMatrix": {"type": "object", "additionalProperties": false, "required": ["shape", "entries", "sha256"], "properties": {"shape": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}, "entries": {"type": "array", "items": {"$ref": "#/$defs/operatorEntry"}}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "operatorEntry": {"type": "array", "prefixItems": [{"type": "integer", "minimum": 0}, {"type": "integer", "minimum": 0}, {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/operatorTerm"}}], "items": false, "minItems": 3, "maxItems": 3},
+    "operatorTerm": {"type": "array", "prefixItems": [{"type": "array", "items": {"type": "string", "minLength": 1}}, {"type": "integer"}, {"type": "integer", "minimum": 1}], "items": false, "minItems": 3, "maxItems": 3},
+    "stringMap": {"type": "object", "minProperties": 7, "additionalProperties": {"type": "string", "minLength": 1}}
+  }
+}

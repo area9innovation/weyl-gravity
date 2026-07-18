@@ -181,9 +181,13 @@ divergence as a gauge companion because its cubic symbol vanishes.  The
 coefficient-complete metric theorem now fixes the unique lower correction
 `T=T_pr+div/3` and factors both ghost and metric blocks into commuting normally
 hyperbolic operators, including their formal-dual rows.  Hence the four-row
-metric causal homotopy is exact.  The active gate is now the purely homological
-all-row rank-310 lift and metric descent.  Do not promote the rank-310 flag
-before that integration closes.
+metric causal homotopy is exact.  The all-row integration now closes as well:
+`Lambda_310,+/-=H+I Lambda_metric,+/- P` satisfies the exact chain identity in
+split and original coordinates, descends back to the metric homotopy, covers
+all ten blocks, and preserves causal support and cyclic adjoint reversal.  The
+single-background Nariai `G2` causal gate is complete; the next gate is the
+first controlled curvature obstruction or stability radius beyond Nariai in
+the conformally Einstein/Bach-flat class.
 
 ### Einstein team — E-G1 harmonic obstruction beyond the fixture
 

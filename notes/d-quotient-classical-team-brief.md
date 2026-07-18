@@ -1365,8 +1365,24 @@ duals are normally hyperbolic.  Their same-sided Green compositions give the
 complete four-row metric homotopy with causal support and complementary-degree
 adjoint reversal.  The known generic PBW adjoint backend is not used as upper
 row coefficient authority; the invariant action-pairing adjoint theorem is.
-The active gate is now purely homological:
-`C_G2_NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER`.
+`NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1` closes the remaining
+homological gate.  In both split and original coordinates,
+
+\[
+\Lambda_{310,\pm}=H+I\Lambda_{{\rm met},\pm}P
+\]
+
+satisfies
+
+\[
+Q\Lambda_{310,\pm}+\Lambda_{310,\pm}Q=1,
+\qquad
+P\Lambda_{310,\pm}I=\Lambda_{{\rm met},\pm}.
+\]
+
+The exact replay includes `H^2=HI=PH=0`, all ten BV blocks, causal support,
+the original-coordinate conjugation, and complementary-degree adjoint
+reversal.  Thus the single-background Nariai `G2` causal theorem is complete.
 
 Then move to conformally Einstein and Bach-flat backgrounds.  Compute the
 first curvature obstruction and give a controlled norm/filtration and

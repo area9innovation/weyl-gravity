@@ -1,0 +1,566 @@
+{
+  "carrier": {
+    "background": "global unit Nariai R x (S1 x S2)",
+    "block_count": 10,
+    "degree_ranks": [
+      15,
+      140,
+      140,
+      15
+    ],
+    "dropped_rows": [],
+    "endpoint_embedding": "the rank-4 metric ghost and dual ghost are support-local subbundles of the first and last rank-15 blocks; the rank-9 field and antifield are full blocks",
+    "metric_endpoint_degree_ranks": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "metric_endpoint_total_rank": 26,
+    "row_coverage": [
+      {
+        "degree": -1,
+        "index": 0,
+        "name": "epsilon_C0",
+        "rank": 15,
+        "sector": "metric_ghost_plus_algebraic_complement"
+      },
+      {
+        "degree": 0,
+        "index": 1,
+        "name": "s_ker_p0",
+        "rank": 11,
+        "sector": "algebraic_parent_cone"
+      },
+      {
+        "degree": 0,
+        "index": 2,
+        "name": "x_C1",
+        "rank": 60,
+        "sector": "algebraic_parent_cone"
+      },
+      {
+        "degree": 0,
+        "index": 3,
+        "name": "h_H1",
+        "rank": 9,
+        "sector": "metric_field_endpoint"
+      },
+      {
+        "degree": 0,
+        "index": 4,
+        "name": "y_C1",
+        "rank": 60,
+        "sector": "algebraic_parent_cone"
+      },
+      {
+        "degree": 1,
+        "index": 5,
+        "name": "s_sharp_ker_p0_dual",
+        "rank": 11,
+        "sector": "algebraic_parent_cone"
+      },
+      {
+        "degree": 1,
+        "index": 6,
+        "name": "x_sharp_C1dual",
+        "rank": 60,
+        "sector": "algebraic_parent_cone"
+      },
+      {
+        "degree": 1,
+        "index": 7,
+        "name": "h_sharp_H1dual",
+        "rank": 9,
+        "sector": "metric_field_endpoint"
+      },
+      {
+        "degree": 1,
+        "index": 8,
+        "name": "y_sharp_C1dual",
+        "rank": 60,
+        "sector": "algebraic_parent_cone"
+      },
+      {
+        "degree": 2,
+        "index": 9,
+        "name": "epsilon_sharp_C0dual",
+        "rank": 15,
+        "sector": "metric_ghost_plus_algebraic_complement"
+      }
+    ],
+    "total_rank": 310
+  },
+  "claim_boundary": {
+    "not_claimed": [
+      "uniform Green estimates on an open conformally Einstein or Bach-flat family",
+      "Hadamard wavefront-set control",
+      "a timelike-boundary version",
+      "nonlinear stability",
+      "a quantum state or quantum master equation"
+    ],
+    "statement": "The complete repaired 310-component BV complex on global unit Nariai has advanced and retarded Green homotopies obtained by cyclic support-local SDR transfer from the exact four-row metric biwave endpoint, and descending recovers that endpoint homotopy exactly."
+  },
+  "dependency_refs": {
+    "abstract_causal_transfer": {
+      "artifact_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+      "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+      "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
+    },
+    "metric_causal_homotopy": {
+      "artifact_id": "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+      "sha256": "5d755293ffbe32585fb1d6afc4ccb3643784306236e4b456777040858f5266bc"
+    },
+    "rank_310_cyclic_sdr": {
+      "artifact_id": "NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1",
+      "path": "d_quotient_classical/certificates/NARIAI_PARENT_DETOUR_MAPPING_CONE_REPAIR_V1.json",
+      "sha256": "112a21a1b46889143505c41773295845a627d2757c9d5218f0eded93a4dadaae"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "abstract_cyclic_transfer_dependency": true,
+    "abstract_transfer_fixture_exact": true,
+    "all_ten_blocks_enumerated": true,
+    "coordinate_conjugation": true,
+    "degree_ranks_are_15_140_140_15": true,
+    "endpoint_causal_chain_identity": true,
+    "full_rank_is_310": true,
+    "metric_adjoint_reversal_dependency": true,
+    "metric_causal_support_dependency": true,
+    "metric_rank_is_26": true,
+    "original_causal_chain_identity": true,
+    "original_homotopy_inclusion_zero": true,
+    "original_homotopy_square_zero": true,
+    "original_metric_descent": true,
+    "original_projection_homotopy_zero": true,
+    "repair_core_checks_all_true": true,
+    "split_causal_chain_identity": true,
+    "split_homotopy_inclusion_zero": true,
+    "split_homotopy_square_zero": true,
+    "split_metric_descent": true,
+    "split_projection_homotopy_zero": true,
+    "support_local_sdr_dependency": true
+  },
+  "flags": {
+    "HADAMARD_STATE": false,
+    "NARIAI_G2_SINGLE_BACKGROUND_CAUSAL_GATE": true,
+    "NARIAI_METRIC_DESCENT_RECOVERS_ENDPOINT": true,
+    "NARIAI_REPAIRED_310_ADJOINT_REVERSAL": true,
+    "NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1": true,
+    "NARIAI_REPAIRED_310_CAUSAL_SUPPORT": true,
+    "NARIAI_REPAIRED_310_GREEN_HOMOTOPY": true,
+    "NONLINEAR_EXTENSION": false,
+    "OPEN_BACKGROUND_CLASS": false,
+    "QUANTUM_CLAIM": false
+  },
+  "formal_replay": {
+    "endpoint_homotopy": {
+      "entries": [
+        [
+          0,
+          1,
+          [
+            [
+              [
+                "Lambda01"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          1,
+          2,
+          [
+            [
+              [
+                "Lambda12"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          3,
+          [
+            [
+              [
+                "Lambda23"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "56b91e2489f6b505ff645c3b0f1cfcd00eeb3003a4184e4d1754c187d5da13c8",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    "endpoint_relations": [
+      "Lambda01 K=1",
+      "K Lambda01+Lambda12 B=1",
+      "B Lambda12+Lambda23 Ksharp=1",
+      "Ksharp Lambda23=1"
+    ],
+    "original_transferred_homotopy": {
+      "entries": [
+        [
+          0,
+          1,
+          [
+            [
+              [
+                "J"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          0,
+          3,
+          [
+            [
+              [
+                "L0",
+                "Lambda01"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          6,
+          [
+            [
+              [
+                "L",
+                "Lambda12",
+                "Lsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          7,
+          [
+            [
+              [
+                "L",
+                "Lambda12"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          8,
+          [
+            [
+              [],
+              1,
+              1
+            ],
+            [
+              [
+                "L",
+                "Lambda12",
+                "Phisharp"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          3,
+          6,
+          [
+            [
+              [
+                "Lambda12",
+                "Lsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          7,
+          [
+            [
+              [
+                "Lambda12"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          8,
+          [
+            [
+              [
+                "Lambda12",
+                "Phisharp"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          4,
+          6,
+          [
+            [
+              [],
+              1,
+              1
+            ],
+            [
+              [
+                "Phi",
+                "Lambda12",
+                "Lsharp"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          4,
+          7,
+          [
+            [
+              [
+                "Phi",
+                "Lambda12"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          4,
+          8,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              2
+            ],
+            [
+              [
+                "Phi",
+                "Lambda12",
+                "Phisharp"
+              ],
+              1,
+              4
+            ]
+          ]
+        ],
+        [
+          5,
+          9,
+          [
+            [
+              [
+                "Jsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          9,
+          [
+            [
+              [
+                "Lambda23",
+                "L0sharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "243ec4c091ea0e3b0e4cc7ac5e81d80f9d04b62eac5df9c84c5d509507ac6d1e",
+      "shape": [
+        10,
+        10
+      ]
+    },
+    "split_transferred_homotopy": {
+      "entries": [
+        [
+          0,
+          1,
+          [
+            [
+              [
+                "J"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          0,
+          3,
+          [
+            [
+              [
+                "L0",
+                "Lambda01"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          2,
+          8,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          3,
+          7,
+          [
+            [
+              [
+                "Lambda12"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          6,
+          [
+            [
+              [],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          4,
+          8,
+          [
+            [
+              [
+                "M"
+              ],
+              1,
+              2
+            ]
+          ]
+        ],
+        [
+          5,
+          9,
+          [
+            [
+              [
+                "Jsharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ],
+        [
+          7,
+          9,
+          [
+            [
+              [
+                "Lambda23",
+                "L0sharp"
+              ],
+              1,
+              1
+            ]
+          ]
+        ]
+      ],
+      "sha256": "62c56b859aa26511b6170ec8d667a35dc75145a2f93aac67265ed1a57f3fb3a1",
+      "shape": [
+        10,
+        10
+      ]
+    }
+  },
+  "next_gate": "C_G2_CONFORMALLY_EINSTEIN_FIRST_CURVATURE_OBSTRUCTION",
+  "result_id": "NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1",
+  "result_state": "RANK_310_CAUSAL_GREEN_HOMOTOPY_AND_METRIC_DESCENT_EXACT",
+  "schema": "pure-weyl-nariai-repaired-310-all-row-green-transfer-v1",
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/abstract_cyclic_causal_transfer.py": "9e75fa8127ae349535c3be1816a7a713b7b56e7868e172638cb94efde4ea6ea0",
+    "d_quotient_classical/causal_transfer/nariai_metric_biwave_green_homotopy.py": "9261c6308ac006fc02ced26f29e6c9bcd638cd06716c34a592b633f5c9fdced0",
+    "d_quotient_classical/causal_transfer/nariai_parent_detour_mapping_cone_repair.py": "193ea3d204096d17b527172dca6fd018f23be0c880c611896163a928ada82d8f",
+    "d_quotient_classical/causal_transfer/nariai_repaired_310_all_row_green_transfer.py": "4ca676352fb9eccfde29eddd1159fe176c0894a656240e949a37962cd7dfa425",
+    "d_quotient_classical/causal_transfer/tests/test_nariai_repaired_310_all_row_green_transfer.py": "632d2bb2d3c4dca349eb46f09be9dc4eda36e7e0154c78a77acfd740ab8d989b",
+    "d_quotient_classical/causal_transfer/verify_nariai_repaired_310_all_row_green_transfer.py": "fc01b72b8c4e4ec933fbf4b0534f35882f1477d7f28577411e48f632850d0e3a",
+    "d_quotient_classical/schema/nariai-repaired-310-all-row-green-transfer-v1.schema.json": "fb32b48e998089206ed38e45ee6c4eeafa053fda8db396fe1735896ced82e77a"
+  },
+  "transfer": {
+    "chain_identity": "Q_310 Lambda_310,+/-+Lambda_310,+/- Q_310=1_310",
+    "coordinate_relation": "Lambda_original=U Lambda_split U^-1",
+    "cyclic_adjoint": "Lambda_310,+^sharp=Sigma_310 Lambda_310,- Sigma_310^-1",
+    "cyclic_route": "I^sharp=P, the algebraic H is odd cyclic, and the metric endpoint has complementary-degree advanced/retarded adjoint reversal",
+    "metric_descent": "P Lambda_310,+/- I=Lambda_metric,+/-",
+    "original_formula": "Lambda_310,+/-=H_original+I_original Lambda_metric,+/- P_original",
+    "split_formula": "Lambda_310,+/-=H_split+I_split Lambda_metric,+/- P_split",
+    "support": "H,I,P,U,U^-1 are support-nonincreasing and Lambda_metric,+/- is same-sided causal; hence supp Lambda_310,+/- f subset J^+/-(supp f)"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/nariai_repaired_310_all_row_green_transfer.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_nariai_repaired_310_all_row_green_transfer.py",
+    "python3 -m unittest -v d_quotient_classical.causal_transfer.tests.test_nariai_repaired_310_all_row_green_transfer",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/nariai-repaired-310-all-row-green-transfer-v1.schema.json -d d_quotient_classical/certificates/NARIAI_REPAIRED_310_ALL_ROW_GREEN_TRANSFER_V1.json"
+  ]
+}
