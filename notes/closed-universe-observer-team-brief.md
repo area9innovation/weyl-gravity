@@ -1476,14 +1476,26 @@ passes: `BERGER_108_ROW_COMPLETE_Q3_PBW` zero-extends the certified typed base
 and combines all five nonzero sources plus the zero ledger into 43 hashed row
 chunks.  It contains 616,738 operator keys and 1,439,238 exact monomials with
 zero cross-source key collisions.  This completes q3, but it does not prove
-the extended identities.  `O_detector|Z2^C` remains fail-closed.  The active
-next gate is the complete 108-row `q1q2` and `q2q2+q1q3` replay.
+the extended identities.  The first identity replay is now decisive:
+`BERGER_108_ROW_ARITY_TWO_OBSTRUCTION` finds 4,768 nonzero operator keys and
+5,128 exact coefficient monomials already at bidegree `(0,0)`, on 30 output
+rows.  The typed 64-row base is an exact zero control.  The first
+lexicographic witness is
+`c_spatial_1_star <- (c_spatial_1,R0_1_plus)` with coefficient
+`-e1^2 R0_1`; it is isolated to the apparatus scalar-BV source and its two
+time modes remain nonzero in the certified background quotient.  A trial
+four-ghost row clone does not repair this chart-dependent defect and is not
+part of the certified payload.  The required repair is a common-action
+derivation of the background-compatible apparatus BV/chart contribution, or
+a corrected unary/binary crosswalk, followed by the full first-bidegree
+replay.  Arity three, `K_Berger`, observer-morphism stability and
+`O_detector|Z2^C` remain fail-closed.
 
 The C-G4 phase plane and the leading massive-emitter preparation map are
 operationally rank two.  Their restrictions to
 `Z2^C={u:mu_X(u)=0,R_j^C(u)=0}` now have `NO_CERTIFIED_MAP` from the complete
-scalar apparatus while its arity, equivariance and morphism gates remain
-open.  Individual
+scalar apparatus while its arity-two gate is obstructed and all later gates
+remain closed.  Individual
 detectable-mode obstruction and balanced-combination survival remain `OPEN`;
 the passing unary gate does not by itself classify either.  The atlas cites
 `FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1` for the general

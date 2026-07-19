@@ -1,0 +1,57 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_ARITY_TWO_OBSTRUCTION",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "result_boundary": "The complete typed 108-row q1q2 replay is obstructed already at bidegree (0,0): 4,768 nonzero PBW keys and 5,128 exact coefficient monomials remain on 30 output rows. The typed 64-row base is an exact zero control. The first apparatus-scalar-BV witness survives the certified background quotient. Higher first-bidegree coefficients, arity three, K_Berger, observer-morphism, tangent-cone, Bridge 3, causal and quantum claims are not promoted.",
+  "commands": [
+    {
+      "tier": 0,
+      "command": "py_compile; json.tool; generator --check; atlas generation; git diff --check",
+      "elapsed_seconds": 27.67,
+      "peak_rss_mb": 288.32,
+      "status": "PASS",
+      "scope": "arity replay engine, obstruction certificate/schema/report, atlas, work-item lifecycle and observer notes"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_arity_two_obstruction.py closed_universe_observers/tests/test_observer_atlas_fragment.py",
+      "elapsed_seconds": 53.20,
+      "peak_rss_mb": 303.98,
+      "status": "PASS",
+      "scope": "44 exact base-control, full-defect, quotient-witness, fail-closed atlas and lifecycle tests"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m closed_universe_observers.verify_berger_108_row_arity_two_obstruction; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment",
+      "elapsed_seconds": 23.85,
+      "peak_rss_mb": 290.14,
+      "status": "PASS",
+      "scope": "independent exact rebuild of the complete degree-zero q1q2 defect, typed-base zero control, source isolation, background-quotient witness and evidence hashes"
+    }
+  ],
+  "higher_tiers_not_run": {
+    "remaining_first_bidegrees": "Not run because the exact (0,0) coefficient already falsifies the complete arity-two identity.",
+    "arity_three_and_downstream": "Not authorized after the arity-two stop condition fired.",
+    "tier_3": "Scoped obstruction certificate; no theorem freeze or release promotion."
+  },
+  "source_manifest": [
+    {"path": "closed_universe_observers/berger_108_row_arity_replay.py", "sha256": "7c1b2cbee5facd935f10b9e86a648cdce53e95331a4ecc62426e43c414cc273b"},
+    {"path": "closed_universe_observers/generate_berger_108_row_arity_two_obstruction.py", "sha256": "ed1a198d1f942d2228de60997b88cd693c09563bdc195edc4752b153b9deed0c"},
+    {"path": "closed_universe_observers/verify_berger_108_row_arity_two_obstruction.py", "sha256": "83be1d2ccc542bb7cedebc8b7a5a77df02f30a1a4a39450f9de1229ca9b68d18"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_arity_two_obstruction.py", "sha256": "5f4f11168036927caf168b29992e2d3f22b24f20e05bc81be21c01fe83d4f12d"},
+    {"path": "closed_universe_observers/schema/berger-108-row-arity-two-obstruction-v1.schema.json", "sha256": "ac937c7ac1940e3632574b57cdcb49e86929ae7cf9a90b59e0903cac86602c4f"},
+    {"path": "closed_universe_observers/reports/berger-108-row-arity-two-obstruction.md", "sha256": "f190bd2baee1d5789c5462b52adc1af4a5a2febd108e11b02fed4549503c38d5"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_ARITY_TWO_OBSTRUCTION.json", "sha256": "86e9711de9a5561eee528359885cc4e99553ee97a8ec3399295266585fa59af5"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "0caf782d21776e9619a8d5ef4459244e111a4ae14ed38c87ba0ce28295413118"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "d7a7779493206d2eca0bf6c79a1568e22b6ff55adac5d327d3f2b7a03742cc70"}
+  ],
+  "flags": {
+    "TYPED_64_ROW_BASE_ARITY_TWO_CONTROL_ZERO": true,
+    "COMPLETE_108_ROW_ARITY_TWO_OBSTRUCTED": true,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

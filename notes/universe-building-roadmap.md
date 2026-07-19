@@ -87,7 +87,7 @@ Einstein:    extend the quadratic-source test across the classified mixed cones
 Nonlinear:   preserve the filtered ell3 obstruction and await an admissible branch crosswalk before the mode-pair source table
 Classical:   attach the certified 188-row physical/current q2 interface to the 78-row relative mapping cofiber and solve or certify the remaining cross-incidence; causal Green data and the eighteen candidate-13 spectral receivers remain separate fail-closed gates
 Quantum:     keep reduced vacuum-cylinder Bridge 4 scoped to its Krein carrier; analytically continue the exact S2(1)xS2(2) weighted R(K) and finite-part R(K2) rows now that its product spectrum, matched 3^-6 exceptional factor and regular-complement det3 are certified, then add remaining BV rows to the exact partial-BV five-carrier representative; separately classify the odd derivative sector, fix finite C2/absolute dressed R(g_hat)^2 normalization and renormalized products, then import a same-background compensator contraction before residual Q1 transfer
-Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete q2 and the 616,738-key complete source-labelled q3 are executable, so replay the 108-row arity identities, then test K_Berger equivariance and observer-morphism stability, and only then restrict records to Z2^C
+Observer:    await and independently verify an explicit provenance-complete physical declaration under the certified v2 recoil contract; complete typed q2 and the 616,738-key q3 are executable, but the 108-row arity-two replay is OBSTRUCTED at bidegree (0,0), so derive the background-compatible apparatus BV/chart contribution before any arity-three, K_Berger, observer-morphism or Z2^C restriction
 Black hole:  BH-2C COMPLETE: claim repair; log-free Jordan gate both parities; composed metric LOG TAILS at infinity; finite-flux boundary class = EXACTLY the Einstein sector (axial fixture: E x E r^-2 integrable, extra-involving pairs divergent, shift-invariant) -- horizon nonselection + infinity norm-selection now both certified. Residual: symbolic frequency, polar flux table, summability, phase-space construction, general l; ringdown coordinator-gated
 ```
 
@@ -1131,7 +1131,17 @@ survive the first backreacted, normalized apparatus interaction?
    The collision-safe complete assembly now imports the 59,598-term typed base
    and all apparatus/emitter sources into 43 hashed rows with 616,738 disjoint
    operator keys and 1,439,238 coefficient monomials.  Complete q3 is exported;
-   the extended-carrier arity identities are not yet promoted.
+   the extended-carrier arity identities are not promoted.  The exact
+   arity-two replay now stops already at bidegree `(0,0)`: the typed 64-row
+   base control is zero, while the 108-row extension has 4,768 nonzero keys
+   and 5,128 coefficient monomials on 30 output rows.  Its first witness is
+   `c_spatial_1_star <- (c_spatial_1,R0_1_plus)` with coefficient
+   `-e1^2 R0_1`; only the apparatus scalar-BV source contributes to that key,
+   and both exact time modes survive the background quotient.  The repair
+   gate is a common-action derivation of the background-compatible apparatus
+   BV/chart contribution or a corrected unary/binary crosswalk—not a fitted
+   cancellation.  Arity three, `K_Berger`, the observer morphism and
+   `O_detector|Z2^C` remain unavailable.
    The interaction identities and all observer-cone consumers remain
    fail-closed.
    A common source
