@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/black-hole-local-einstein-cauchy-truncation",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "black-hole",
+    "state": "PROPOSED",
+    "objective": "Black-hole local Einstein-sector selection theorem, independent of the currently repaired sourced-flux lift. On the Schwarzschild exterior, use the exact Ricci-to-Bach composition with psi_ab = delta Ric_ab[h] to determine whether local Cauchy data psi|_Sigma = 0 and nabla_n psi|_Sigma = 0 propagate psi = 0 in the declared linear axial and polar sectors. State the result as an exact sequence, not a presumed direct sum: 0 -> ker(delta Ric) -> ker(delta Bach) -> ker(L_psi) intersect im(delta Ric). Identify the precise globally hyperbolic domain, gauge/constraint conditions, regularity class, and any horizon or finite-radius boundary data needed for uniqueness. Then distinguish this local initial-data truncation from the already tested endpoint regularity/falloff conditions, which need not select the Einstein branch. This is deliberately chosen so the black-hole team can make progress while the sourced Ricci reconstruction in black_hole_programme/axial_flux_modes.py is under repair.",
+    "depends_on": [
+      "black_hole_programme/certificates/BH2A_AXIAL_OPERATOR.json",
+      "black_hole_programme/certificates/BH2B_POLAR_SPLIT.json"
+    ],
+    "activates": [
+      "a corrected Paper-14 theorem separating local Cauchy truncation from endpoint nonselection",
+      "the exterior Einstein-to-Weyl exact-sequence row in the residual atlas",
+      "a later well-posed exterior phase-space and BH-3 stability programme"
+    ],
+    "current_gate": "prove uniqueness/constraint propagation for the homogeneous psi carrier on one declared Schwarzschild exterior Cauchy domain in both l=2 parities, or certify the first exact domain or constraint obstruction",
+    "allowed_paths": [
+      "black_hole_programme/",
+      "paper/14-pure-weyl-black-hole-radiation.tex",
+      "paper/14-pure-weyl-black-hole-radiation-claim-map.json"
+    ],
+    "input_commit": "667e7eb417a58a670dfabd387a3baca45186a0cb",
+    "resource_hint": "exact symbolic and PDE-identity work first; scoped l=2 axial and polar fixtures; no repository-wide replay until a theorem lifecycle is proposed",
+    "stop_condition": "Land one certificate, independent verifier, mutation test, and human report establishing either: (A) on a precisely declared Schwarzschild exterior globally hyperbolic domain and regularity class, the homogeneous curvature-carrier equation has uniqueness from zero Cauchy data, its differential constraints propagate, and therefore psi=0 locally selects and preserves the linear Einstein-image sector in both l=2 parities; or (B) the first exact obstruction to that statement, naming the missing boundary condition, nonpropagating constraint, degeneracy, or domain failure and the smallest additional hypothesis that removes it. The certificate must print the Ricci-to-Bach operator identity used, the Cauchy data and domain, the constraint propagation equations, and the exact-sequence conclusion without asserting a canonical split or surjectivity. It must compare the result explicitly with horizon/falloff endpoint nonselection and reject a mutation that drops one required Cauchy datum or constraint equation. If (A) holds, update Paper 14 and its claim map to withdraw every broader claim that no local causal truncation exists; if (B) holds, keep that issue fail-closed.",
+    "forbid": "using the dirty sourced particular-solution path in black_hole_programme/axial_flux_modes.py; relying on any mixed/extra flux number currently awaiting revalidation; inferring a canonical Einstein-plus-extra direct sum from operator composition; claiming that every psi solution lifts to a metric perturbation; treating endpoint regularity/falloff nonselection as a classification of local Cauchy restrictions; claiming nonlinear closure, stability, quasinormal modes, ringdown, scattering unitarity, full-BV chain-map closure, or general l from the l=2 linear theorem; hiding a timelike-boundary condition inside the phrase Cauchy problem; using numerical evolution as the sole uniqueness proof.",
+    "notes": [
+      "Coordinator directive: this is the active bypass task while the sourced-flux reconstruction is blocked. Do not wait for that repair and do not edit its dirty file.",
+      "The referee identified the key logical correction: psi=0 and its normal derivative are local differential initial-data restrictions. The scientifically useful question is whether they form a constraint-compatible, well-posed invariant subspace on a declared exterior domain—not whether endpoint conditions alone select them.",
+      "Report with CLOSE-OUT: DONE only if the full stop condition is met; use CLOSE-OUT: OBSTRUCTED for an exact no-go/first obstruction and SHORTFALL for a partial domain or one-parity result."
+    ]
+  }
+}
