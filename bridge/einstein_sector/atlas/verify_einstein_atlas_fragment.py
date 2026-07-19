@@ -303,6 +303,18 @@ def verify() -> None:
         raise AssertionError("Wiener-Bohr no-go was hidden")
     if wiener_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or wiener_second["smooth_secular"]["status"] != "OPEN" or wiener_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("Wiener-Bohr correction classes changed")
+    exceptional_global = by_id["einstein.ph.wm.mixed.exceptional_ellipse_standard_global_minus_no_go"]
+    global_second = exceptional_global["mode_data"]["second_order"]
+    if exceptional_global["descriptions"]["nonlinear"] != "OBSTRUCTED" or "triangular a then d pivots" not in exceptional_global["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("standard-global no-go was hidden")
+    if global_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or global_second["smooth_secular"]["status"] != "OPEN" or global_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("standard-global correction classes changed")
+    exceptional_ell1 = by_id["einstein.ph.wm.mixed.exceptional_ellipse_ell1_oscillator_minus_no_go"]
+    ell1_second = exceptional_ell1["mode_data"]["second_order"]
+    if exceptional_ell1["descriptions"]["nonlinear"] != "OBSTRUCTED" or "fourteen exact" not in exceptional_ell1["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("ell1-oscillator no-go was hidden")
+    if ell1_second["bounded_or_finite_quasiperiodic"]["status"] != "OBSTRUCTED" or ell1_second["smooth_secular"]["status"] != "OPEN" or ell1_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("ell1-oscillator correction classes changed")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")
@@ -365,6 +377,16 @@ def verify() -> None:
         raise AssertionError("tuned mixed-parity bounded correction was hidden")
     if mixed_bounded_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("tuned mixed-parity row gained an uncertified causal map")
+    tuned_cone = by_id["einstein.ph.wm.interaction.opposite_momentum_ell2_tuned_axisymmetric_bounded_cone"]
+    tuned_cone_second = tuned_cone["mode_data"]["second_order"]
+    if tuned_cone["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("complete tuned axisymmetric cone was hidden")
+    if tuned_cone["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or tuned_cone["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("tuned cone necessity data changed")
+    if tuned_cone_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("tuned cone sufficiency was hidden")
+    if tuned_cone_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "Extra p-primary inputs" not in tuned_cone["claim_boundary"]:
+        raise AssertionError("tuned cone boundary was over-promoted")
     repair = by_id["einstein.ph.wm.interaction.constant_twist_ell2_projector_repair"]
     if repair["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("constant-twist projector repair was not promoted")

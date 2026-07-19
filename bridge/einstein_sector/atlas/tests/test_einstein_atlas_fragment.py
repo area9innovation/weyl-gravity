@@ -100,6 +100,16 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("one tuned", entry["claim_boundary"])
 
+    def test_tuned_axisymmetric_bounded_cone_is_complete_only_in_scope(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.opposite_momentum_ell2_tuned_axisymmetric_bounded_cone"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Extra p-primary inputs", entry["claim_boundary"])
+
     def test_abd_matrix_is_input_not_full_nonlinear_theorem(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.abd_times_ell2_extra"]
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "OPEN")
@@ -321,6 +331,26 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         second = entry["mode_data"]["second_order"]
         self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertIn("Bohr-frequency", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_no_standard_global_data_rescue_the_exceptional_ellipse(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.exceptional_ellipse_standard_global_minus_no_go"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertIn("b=B=0", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("triangular a then d pivots", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
+    def test_no_ell1_oscillators_rescue_the_exceptional_ellipse(self) -> None:
+        entry = self.entries["einstein.ph.wm.mixed.exceptional_ellipse_ell1_oscillator_minus_no_go"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertIn("strictly negative", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("fourteen exact", entry["mode_data"]["resonance"]["statement"])
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")

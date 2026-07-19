@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_ELL1_OSCILLATOR_MINUS_NO_GO_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "All additional physical and extra k=0 ell1 oscillators on the exceptional ellipse, standard-global and Wiener-minus carrier.",
+  "content_sha256": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.py": "bc63f4c52be4bfb04bb068e50d804e4337bb23af7d1f2842fb110da719cd9a12",
+    "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.json": "65dd6a42ba53ab073b1d0c21a82ac3db7a80330169a3aaf6b4456881d4a5343a",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.schema.json": "b66f57e68659db85a4f19fb6bc8d4d304e407cff08f50ab3d211a78d38e8fb27",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.py": "ad2a53de836262fb82c08662363d6c295173b33cb5b37c7b302cbd9c29ae1e42",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.py": "224dfea01ce57f583dabb60d0ca64f609e0ead44305370739750cbfb8e9bdece",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-exceptional-ellipse-ell1-oscillator-minus-no-go.md": "832a5594cae7db1cfa583d388aac57dd4611ba2256ee9642bb2db030089e17cf"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 5,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The exact adjacent-minus gap theorem, ell1 current signs, standard-global reduction and ellipse carrier are unchanged hashed inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "Generic ell>=2 nonminus oscillators, maximal completions, infinite secular inverses and causal propagation remain open."
+    }
+  },
+  "claim_boundary": "All k=0 ell1 oscillatory additions only; generic ell>=2 nonminus, maximal completion, infinite secular, nonzero momentum, causal, residual and quantum claims remain fail-closed."
+}

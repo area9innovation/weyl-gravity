@@ -39,6 +39,8 @@ CERTIFICATES = {
     "exceptional_single_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_single_minus_dressing_no_go.json",
     "exceptional_finite_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.json",
     "exceptional_wiener_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_wiener_minus_dressing_no_go.json",
+    "exceptional_standard_global_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_standard_global_minus_no_go.json",
+    "exceptional_ell1_oscillator_minus_no_go": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.json",
     "twist_independence": ROOT / "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_twist_resonance.json",
     "twist_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_homogeneous_twist_balanced_second_order.json",
     "d_completion": ROOT / "bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_resonance_completion.json",
@@ -82,6 +84,7 @@ CERTIFICATES = {
     "twist_aligned_opposite_momentum_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_bounded_obstruction.json",
     "opposite_momentum_ell2_parity_matrix": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_parity_resonance_matrix.json",
     "opposite_momentum_ell2_mixed_parity_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_mixed_parity_bounded_extension.json",
+    "opposite_momentum_ell2_tuned_axisymmetric_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_opposite_momentum_ell2_tuned_axisymmetric_bounded_cone.json",
     "aligned_twist_extra_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_aligned_twist_ell2_extra_smooth_correction.json",
     "global_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_orbit_self_second_order.json",
     "extra_self_coefficients": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_extra_self_second_order.json",
@@ -331,6 +334,30 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OBSTRUCTED","A bounded smooth uniformly almost-periodic correction forces every minus coefficient to vanish separately, contradicting moment-map balance."),("OPEN","The finite secular theorem supplies no uniform estimates for an infinite secular sum."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
             _evidence("exceptional_wiener_minus_no_go","exceptional_finite_minus_no_go","abd_generic_lambda_pivot","abstract_cone"),
             "This is a strong smooth Wiener-Bohr completion, not the maximal finite-energy/Sobolev space. Additional carriers, nonzero momentum, infinite secular solvability and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_ellipse_standard_global_minus_no_go",
+            _scope(theory="Weyl-Maxwell target", carrier="any axisymmetric exceptional resonance-ellipse point plus arbitrary standard generalized-zero data and a smooth Wiener-Bohr k=0 Einstein-minus sum", degree=2, parity="homogeneous plus both axial/polar dressing parities", ell="global 0,1; exceptional/control 1,2; countable minus ell>=2", m="all global components and minus m with convergent moment maps", k=0, omega="generalized zero, exceptional/control frequencies and occupied omega_minus(ell)"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","Every global coordinate and minus coefficient retains its same-background carrier and fixed-bundle meaning."),
+            ("CERTIFIED","After the bounded polynomial ideal, surviving global data have nonpositive or zero mu_H; moment-map balance still needs a nonzero minus coefficient."),
+            ("CERTIFIED","The universal global polynomial ideal is b=B=0 and Q_e*a=0; its validity extends to bounded Wiener-Bohr oscillator products."),
+            ("CERTIFIED","Electric, Wilson, circumference and constant-twist columns have zero relevant minus-shell adjoint component; the triangular a then d pivots remain unscreened."),
+            _second_order(("OBSTRUCTED","The a pivot first forces a=0; the nonzero total ellipse d pivot then removes every required minus coefficient."),("OPEN","No uniform estimate certifies the infinite secular sum."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_standard_global_minus_no_go","exceptional_wiener_minus_no_go","standard_global_bounded","electric_wilson_transport","circumference_classification","fixed_ell_constant_twist_bounded_cone","abd_generic_lambda_pivot","abstract_cone"),
+            "All standard generalized-zero additions are covered. Genuinely oscillatory nonminus carriers, maximal Sobolev completion, nonzero momentum and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
+            "einstein.ph.wm.mixed.exceptional_ellipse_ell1_oscillator_minus_no_go",
+            _scope(theory="Weyl-Maxwell target", carrier="exceptional resonance ellipse, arbitrary standard generalized-zero data, arbitrary finite physical/extra k=0 ell1 oscillators, and a smooth Wiener-Bohr k=0 Einstein-minus sum", degree=2, parity="both ell1 and minus parities", ell="global 0,1; added oscillatory 1; control 2; countable minus ell>=2", m="all ell1 and minus m with convergent moment maps", k=0, omega="0, 2/sqrt(3), 2, 4/sqrt(3), and occupied omega_minus(ell)"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","All physical and extra dipole additions retain their exceptional branch, parity and harmonic labels."),
+            ("CERTIFIED","The physical and extra dipole current blocks are nonradical in both parities before the final residual quotient."),
+            ("CERTIFIED","Both added ell1 oscillator blocks have the same strictly negative mu_H sign as the ellipse, so a nonzero minus balance remains necessary."),
+            ("CERTIFIED","Adjacent-gap separation excludes ell1-minus collisions, and fourteen exact low-ell comparisons exclude ell1-ell1, ell1-control and constant-twist-ell1 collisions with the L=2,3 minus targets."),
+            _second_order(("OBSTRUCTED","No added dipole product screens the nonzero d-times-minus pivot, which removes every required minus coefficient."),("OPEN","No uniform estimate certifies the infinite secular sum."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell complex is certified.")),
+            _evidence("exceptional_ell1_oscillator_minus_no_go","exceptional_standard_global_minus_no_go","exceptional_current","exceptional_finite_minus_no_go","abstract_cone"),
+            "All k=0 physical and extra ell1 oscillator additions are covered. Generic ell>=2 nonminus carriers, maximal Sobolev completion, nonzero momentum and higher lifecycles remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.extra.exceptional_ell1_nonzero_k",
@@ -717,6 +744,18 @@ def entries() -> list[dict[str, object]]:
             "This is one tuned nonzero bounded second-order jet, not the full mixed null face or general bounded cone. Other ell, circumference and |k| fibres, exceptional inputs, all-orders integration and higher lifecycles remain fail-closed.",
         ),
         _entry(
+            "einstein.ph.wm.interaction.opposite_momentum_ell2_tuned_axisymmetric_bounded_cone",
+            _scope(theory="Weyl-Maxwell target", boundaries="closed S1_L times S2 with k^2=2*sqrt(3)-7/6 allowed; before final residual quotient", carrier="one constant twist position plus arbitrary m_A=0 axial/polar q-minus amplitudes and normalized q-plus balancing multiplicities at +/-k; no p-primary input", degree=2, parity="both q-minus parities and arbitrary q-plus multiplicity factorization", ell="input ell=2; every quadratic output L=0,...,4", m="m_A=0", k="+/-sqrt(2*sqrt(3)-7/6)", omega="q-minus and q-plus shells", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            ("CERTIFIED","The complete carrier stays on one same-background tuned compact fibre with q-plus/q-minus branches and signed momenta retained."),
+            ("CERTIFIED","The occupation variables are defined by the action-derived Hermitian q-branch forms; parity orthogonality makes each N_sigma positive on the absolute q-minus form."),
+            ("CERTIFIED","H and P_x have a nonnegative q-plus solution exactly when |N_+-N_-|<=r(N_++N_-); J_i vanish on m_A=0."),
+            ("CERTIFIED","The two resonance equations have four linear complex components; moment balance removes the two one-sided planes and leaves exactly the sigma=+/- mixed-parity components with a sharp amplitude interval."),
+            _second_order(("CERTIFIED","The origin plus the two mixed components with (1-r)/(1+r)<=|p_+|^2/|p_-|^2<=(1+r)/(1-r) are necessary and sufficient for a bounded correction in the declared carrier."),("CERTIFIED","The complete moment cone is smooth-secular extendible, including the bounded subcone."),("NO_CERTIFIED_MAP","No retarded Weyl-Maxwell complex is certified.")),
+            _evidence("opposite_momentum_ell2_tuned_axisymmetric_cone","opposite_momentum_ell2_mixed_parity_bounded","opposite_momentum_ell2_parity_matrix"),
+            "Complete only for the tuned ell=2 axisymmetric q-plus/q-minus/constant-twist carrier. Extra p-primary inputs, nonaxisymmetric modes, other fibres, all-orders integration and higher lifecycles remain fail-closed.",
+        ),
+        _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus every axial/polar q/p primary in one arbitrary fixed generic ell block", degree=2, parity="homogeneous, axial and polar", ell="one fixed integer ell>=2 with global ell=0,1 data adjoined", m="all wave m=-ell,...,ell and all three real twist components", k=0, omega="generalized zero and every fixed-ell q/p shell"),
             {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
@@ -947,6 +986,16 @@ def build() -> dict[str, object]:
         raise AssertionError("exceptional Wiener-Bohr no-go changed")
     if exceptional_wiener["maximal_finite_energy_or_sobolev_completion_classified"] or exceptional_wiener["smooth_infinite_secular_extension_classified"] or exceptional_wiener["additional_nonminus_carriers_classified"] or exceptional_wiener["causal_or_quantum_claim"]:
         raise AssertionError("exceptional Wiener-Bohr no-go exceeded its scope")
+    exceptional_global = records["exceptional_standard_global_minus_no_go"]["classification"]
+    if not (exceptional_global["all_standard_generalized_zero_additions_covered"] and exceptional_global["smooth_wiener_bohr_minus_completion_covered"] and exceptional_global["bounded_extension_obstructed"] and exceptional_global["twist_velocity_and_cubic_jordan_velocity_eliminated"] and exceptional_global["electric_wilson_circumference_and_constant_twist_transport_accounted_for"]):
+        raise AssertionError("exceptional standard-global no-go changed")
+    if exceptional_global["genuinely_oscillatory_nonminus_carriers_classified"] or exceptional_global["maximal_sobolev_or_finite_energy_completion_classified"] or exceptional_global["smooth_infinite_secular_extension_classified"] or exceptional_global["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional standard-global no-go exceeded its scope")
+    exceptional_ell1 = records["exceptional_ell1_oscillator_minus_no_go"]["classification"]
+    if not (exceptional_ell1["all_k0_physical_and_extra_ell1_oscillator_additions_covered"] and exceptional_ell1["all_ell1_m_and_both_parities_covered"] and exceptional_ell1["ell1_minus_shell_collisions_excluded"] and exceptional_ell1["low_ell_original_and_global_collisions_excluded_exactly"] and exceptional_ell1["bounded_extension_obstructed"]):
+        raise AssertionError("exceptional ell1-oscillator no-go changed")
+    if exceptional_ell1["generic_ell_ge_2_nonminus_oscillators_classified"] or exceptional_ell1["maximal_sobolev_or_finite_energy_completion_classified"] or exceptional_ell1["smooth_infinite_secular_extension_classified"] or exceptional_ell1["causal_or_quantum_claim"]:
+        raise AssertionError("exceptional ell1-oscillator no-go exceeded its scope")
     if not records["exceptional_cofiber"]["classification"]["exceptional_solution_cofiber_certified"]:
         raise AssertionError("exceptional solution-cofiber input changed")
     if not records["exceptional_nonzero_k_cofiber"]["classification"]["nonzero_k_exceptional_solution_cofiber_certified"]:

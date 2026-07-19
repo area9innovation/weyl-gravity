@@ -2949,6 +2949,29 @@ contradicting the Hamiltonian balance.  This completion is bounded
 `OBSTRUCTED`; infinite secular solvability remains `OPEN`, and the maximal
 finite-energy/Sobolev completion is not claimed.
 
+All standard generalized-zero additions are now exhausted on this carrier.
+For bounded corrections the universal polynomial ledger first gives
+`b=B=0` and `Q_e*a=0`; bounded Wiener--Bohr products cannot cancel those
+positive-degree coefficients.  The remaining global Hamiltonian contribution
+is `-a^2-Q_e^2`, so a common zero still needs Einstein-minus occupation.
+Electric charge, Wilson holonomy, circumference and constant twist position
+have certified zero adjoint contribution on the relevant minus shell.  The
+triangular polynomial projection therefore forces `a=0` first and then uses
+the nonzero ellipse `d` pivot to remove every minus coefficient.  The bounded
+class is `OBSTRUCTED`.  Only genuinely oscillatory nonminus carriers can now
+screen this gate; infinite secular and causal classes remain open/fail-closed.
+
+The first genuinely oscillatory enlargement is also excluded.  Arbitrary
+finite physical and extra `ell=1,k=0` additions have frequencies `2` and
+`2/sqrt(3)` and the same negative Hamiltonian sign as the ellipse.  Their
+product with a minus harmonic reaches only `L=ell-1,ell,ell+1`, but every
+adjacent minus gap is strictly smaller than `2/sqrt(3)`.  Fourteen further
+exact comparisons exclude ell1--ell1, ell1--control and constant-twist--ell1
+collisions with the possible `L=2,3` minus targets.  Hence the `d` pivot stays
+isolated and the bounded class remains `OBSTRUCTED`.  The open oscillatory
+frontier now begins with generic `ell>=2` Einstein-plus and extra-primary
+carriers.
+
 The nonzero-momentum twist face has now been intersected with the independent
 opposite-momentum phase divisor.  For every `ell>=2`, the exact choice
 

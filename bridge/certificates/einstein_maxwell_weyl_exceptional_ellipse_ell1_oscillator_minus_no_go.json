@@ -1,0 +1,271 @@
+{
+  "claim_boundary": "This theorem covers all additional k=0 ell1 oscillators, standard globals and the smooth Wiener-Bohr minus sector. Generic ell>=2 nonminus carriers, maximal completions, infinite secular inverses, nonzero momentum, causal, residual and quantum claims remain open.",
+  "classification": {
+    "all_ell1_m_and_both_parities_covered": true,
+    "all_k0_physical_and_extra_ell1_oscillator_additions_covered": true,
+    "bounded_extension_obstructed": true,
+    "causal_or_quantum_claim": false,
+    "ell1_minus_shell_collisions_excluded": true,
+    "generic_ell_ge_2_nonminus_oscillators_classified": false,
+    "low_ell_original_and_global_collisions_excluded_exactly": true,
+    "maximal_sobolev_or_finite_energy_completion_classified": false,
+    "nonzero_momentum_classified": false,
+    "smooth_infinite_secular_extension_classified": false
+  },
+  "correction_classes": {
+    "BOUNDED_SMOOTH_UNIFORMLY_ALMOST_PERIODIC": {
+      "status": "OBSTRUCTED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_INFINITE_SECULAR": {
+      "status": "OPEN"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "ell1_sign_and_inventory": {
+    "Hamiltonian_sign": "both additional ell1 oscillator blocks have the same strictly negative mu_H sign as the ellipse",
+    "balance_consequence": "they increase rather than replace the required opposite-sign Einstein-minus occupation",
+    "ellipse_control_frequency": "4/sqrt(3)",
+    "exceptional_extra_frequency": "2/sqrt(3)",
+    "physical_standard_frequency": "2"
+  },
+  "ell1_times_minus_exclusion": {
+    "angular_rule": "ell1 times ell reaches only L=ell-1,ell,ell+1",
+    "conclusion": "no sum or difference of an added ell1 frequency and a minus frequency is another angularly allowed minus frequency",
+    "frequency_shifts": "the two added ell1 frequencies are 2/sqrt(3) and 2, both at least the strict adjacent-gap bound",
+    "minus_gap_bound": "every adjacent minus-frequency gap is strictly less than 2/sqrt(3)"
+  },
+  "finite_low_ell_audit": {
+    "all_residuals_nonzero": true,
+    "comparisons": [
+      {
+        "frequency_squared": "16/3",
+        "minus_target_residuals": {
+          "2": "-2/3 + 2*sqrt(3)",
+          "3": "-20/3 + 2*sqrt(6)"
+        },
+        "pair": [
+          "exceptional_extra",
+          "exceptional_extra"
+        ],
+        "sign": "sum"
+      },
+      {
+        "frequency_squared": "0",
+        "minus_target_residuals": {
+          "2": "-6 + 2*sqrt(3)",
+          "3": "-12 + 2*sqrt(6)"
+        },
+        "pair": [
+          "exceptional_extra",
+          "exceptional_extra"
+        ],
+        "sign": "difference"
+      },
+      {
+        "frequency_squared": "8*sqrt(3)/3 + 16/3",
+        "minus_target_residuals": {
+          "2": "-2/3 + 14*sqrt(3)/3",
+          "3": "-20/3 + 8*sqrt(3)/3 + 2*sqrt(6)"
+        },
+        "pair": [
+          "exceptional_extra",
+          "physical_standard"
+        ],
+        "sign": "sum"
+      },
+      {
+        "frequency_squared": "16/3 - 8*sqrt(3)/3",
+        "minus_target_residuals": {
+          "2": "-2*sqrt(3)/3 - 2/3",
+          "3": "-20/3 - 8*sqrt(3)/3 + 2*sqrt(6)"
+        },
+        "pair": [
+          "exceptional_extra",
+          "physical_standard"
+        ],
+        "sign": "difference"
+      },
+      {
+        "frequency_squared": "12",
+        "minus_target_residuals": {
+          "2": "2*sqrt(3) + 6",
+          "3": "2*sqrt(6)"
+        },
+        "pair": [
+          "exceptional_extra",
+          "ell2_control"
+        ],
+        "sign": "sum"
+      },
+      {
+        "frequency_squared": "4/3",
+        "minus_target_residuals": {
+          "2": "-14/3 + 2*sqrt(3)",
+          "3": "-32/3 + 2*sqrt(6)"
+        },
+        "pair": [
+          "exceptional_extra",
+          "ell2_control"
+        ],
+        "sign": "difference"
+      },
+      {
+        "frequency_squared": "4/3",
+        "minus_target_residuals": {
+          "2": "-14/3 + 2*sqrt(3)"
+        },
+        "pair": [
+          "constant_twist_position",
+          "exceptional_extra"
+        ],
+        "sign": "zero-frequency shift"
+      },
+      {
+        "frequency_squared": "8*sqrt(3)/3 + 16/3",
+        "minus_target_residuals": {
+          "2": "-2/3 + 14*sqrt(3)/3",
+          "3": "-20/3 + 8*sqrt(3)/3 + 2*sqrt(6)"
+        },
+        "pair": [
+          "physical_standard",
+          "exceptional_extra"
+        ],
+        "sign": "sum"
+      },
+      {
+        "frequency_squared": "16/3 - 8*sqrt(3)/3",
+        "minus_target_residuals": {
+          "2": "-2*sqrt(3)/3 - 2/3",
+          "3": "-20/3 - 8*sqrt(3)/3 + 2*sqrt(6)"
+        },
+        "pair": [
+          "physical_standard",
+          "exceptional_extra"
+        ],
+        "sign": "difference"
+      },
+      {
+        "frequency_squared": "16",
+        "minus_target_residuals": {
+          "2": "2*sqrt(3) + 10",
+          "3": "4 + 2*sqrt(6)"
+        },
+        "pair": [
+          "physical_standard",
+          "physical_standard"
+        ],
+        "sign": "sum"
+      },
+      {
+        "frequency_squared": "0",
+        "minus_target_residuals": {
+          "2": "-6 + 2*sqrt(3)",
+          "3": "-12 + 2*sqrt(6)"
+        },
+        "pair": [
+          "physical_standard",
+          "physical_standard"
+        ],
+        "sign": "difference"
+      },
+      {
+        "frequency_squared": "16*sqrt(3)/3 + 28/3",
+        "minus_target_residuals": {
+          "2": "10/3 + 22*sqrt(3)/3",
+          "3": "-8/3 + 2*sqrt(6) + 16*sqrt(3)/3"
+        },
+        "pair": [
+          "physical_standard",
+          "ell2_control"
+        ],
+        "sign": "sum"
+      },
+      {
+        "frequency_squared": "28/3 - 16*sqrt(3)/3",
+        "minus_target_residuals": {
+          "2": "10/3 - 10*sqrt(3)/3",
+          "3": "-16*sqrt(3)/3 - 8/3 + 2*sqrt(6)"
+        },
+        "pair": [
+          "physical_standard",
+          "ell2_control"
+        ],
+        "sign": "difference"
+      },
+      {
+        "frequency_squared": "4",
+        "minus_target_residuals": {
+          "2": "-2 + 2*sqrt(3)"
+        },
+        "pair": [
+          "constant_twist_position",
+          "physical_standard"
+        ],
+        "sign": "zero-frequency shift"
+      }
+    ],
+    "coverage": "ell1-ell1, ell1-ellipse-control and constant-twist-position-times-ell1 products, conservatively checked against the L=2,3 minus targets",
+    "targets": {
+      "2": "6 - 2*sqrt(3)",
+      "3": "12 - 2*sqrt(6)"
+    }
+  },
+  "interpretation": "Neither standard nor extra dipole oscillators can rescue the exceptional ellipse. Their Taub sign worsens the deficit, and exact angular-frequency separation prevents their quadratic products from screening the required minus-shell d pivot.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify generic ell>=2 Einstein-plus and extra-primary oscillator pairs on the minus-shell resonance ledger",
+  "obstruction": {
+    "bounded_condition": "the nonzero d pivot forces every required minus coefficient to vanish",
+    "contradiction": "moment-map balance and bounded resonant compatibility cannot hold simultaneously",
+    "required_minus": "the total nonminus Hamiltonian contribution remains strictly negative on every nonzero ellipse point",
+    "source_isolation": "the added ell1 blocks create no d-times-minus shell competitor; the standard-global transport and Wiener coefficient projections remain authoritative"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.py",
+    "generator_sha256": "bc63f4c52be4bfb04bb068e50d804e4337bb23af7d1f2842fb110da719cd9a12",
+    "inputs": {
+      "ellipse": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_axisymmetric_resonance_ellipse.json",
+        "sha256": "431b7b0015bb8691c610597d07ac24241aa9b295dc2b54dbadb39be6e136c2f1"
+      },
+      "exceptional_current": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_current_taub.json",
+        "sha256": "066b0dff514de21b392842b0059f5548183fe68336665970ee3a3eb34610e829"
+      },
+      "finite_dispersion": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_finite_minus_dressing_no_go.json",
+        "sha256": "8b064462da92fd06e311eaf7f5c73540cd089af7d16d5a74571af2b04af115e3"
+      },
+      "global_minus": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_ellipse_standard_global_minus_no_go.json",
+        "sha256": "f02789b3d06238a4ebc9fd1ac25c635a9a7ff4bbceaabbdd49a2e509a5b5de38"
+      },
+      "standard_ell1": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_exceptional_global_moment_maps.json",
+        "sha256": "ddb7c68050cec9b2fd3ec5f3b90a0612e9ce07487490ada0fc770cd4db704e3b"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_EXCEPTIONAL_ELLIPSE_ELL1_OSCILLATOR_MINUS_NO_GO",
+  "schema": "einstein-maxwell-weyl-exceptional-ellipse-ell1-oscillator-minus-no-go-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_exceptional_ellipse_ell1_oscillator_minus_no_go.schema.json",
+  "schema_sha256": "b66f57e68659db85a4f19fb6bc8d4d304e407cff08f50ab3d211a78d38e8fb27",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded smooth uniformly almost-periodic correction",
+    "carrier": "exceptional resonance ellipse, arbitrary standard generalized-zero data, arbitrary finite physical/extra k=0 ell=1 oscillators, and a smooth Wiener-Bohr k=0 Einstein-minus sum",
+    "charge_sector": "fixed N=2 magnetic bundle with first-order electric tangent allowed",
+    "degree": 2,
+    "ell": "global 0,1; arbitrary additional oscillatory ell=1; control 2; every minus ell>=2 with countable support",
+    "k": 0,
+    "m": "all ell1 and minus m subject to convergent stabilizer moment maps",
+    "omega": "0, 2/sqrt(3), 2, 4/sqrt(3), and occupied omega_minus(ell)",
+    "parity": "both exceptional/physical ell1 and minus parities",
+    "theory": "Weyl-Maxwell target"
+  }
+}
