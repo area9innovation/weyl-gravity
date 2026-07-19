@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_COLLISION_SAME_FIBRE_CENSUS_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "Exact same-fibre nonzero-frequency shell census on the six distinct same-sign ell=2 collision backgrounds.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json": "ad7133a8fa789f4848a5d3fd7ff6afef68b155b03f2c4e84065cc947c708f1c4",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.py": "09ab18ae3f12dfa4271867f0152cfdb139261ed052c053171c9396cd741b1439",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.schema.json": "9f8b79eef57237af9c86cd4e55e9c91750b71eb087e9d04b9d6bd3d29e70069f",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_collision_same_fibre_census.py": "5ac422d394456d39381dd932171dad55841816d6143639483621080c235a2492",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_collision_same_fibre_census.py": "7b5834a38b7956a6c1bc8dc565b89f08b94779f59bac134163aad5e7c1a09555",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-collision-same-fibre-census.md": "633b346d2042871e86c2d0bb1ce293a8bf0cbe2a11f709afcb54832bbd7c9075"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 2,
+      "elapsed_seconds": 21.895,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_collision_same_fibre_census --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_collision_same_fibre_census",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_collision_same_fibre_census"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The census imports the exact six-candidate ledger, generic branch shells, exceptional ell=1 cofiber and both empty ell=0 nonzero-frequency quotients; every one of 864 shell defects has a certified rational interval excluding zero."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The theorem does not freeze the six full cone geometries, exceptional/global carriers, causal corrections, all-orders integration or a release."
+    }
+  },
+  "claim_boundary": "All same-fibre nonzero-frequency rows on candidates 16--21 are off shell. The zero-frequency receiver is imported separately and the cross-fibre resonance-amplitude joins are not classified by this census."
+}

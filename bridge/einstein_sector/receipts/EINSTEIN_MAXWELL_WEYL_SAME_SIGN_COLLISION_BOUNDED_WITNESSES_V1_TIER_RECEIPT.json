@@ -1,0 +1,42 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_COLLISION_BOUNDED_WITNESSES_V1_TIER_RECEIPT",
+  "date": "2026-07-20",
+  "scope": "One exact nonzero bounded second-order point on each of the six distinct same-sign ell=2 collision backgrounds.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json": "4a49e1fb59f0e7e11f75bce769b7959c07a39a99ec8c83363073c2926b8e2c6e",
+    "bridge/einstein_sector/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.py": "f88a69f6ce648e8aa1f65f10f6024a2116c8a88c70773263dfb17ac5df2d9daf",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.schema.json": "df25146561a12a54e8ff52af4f919387fa72a72c5f7164c54e7d6f3046a6fcbb",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.py": "c26c14ff1bfa9da655e6ac0f2c349fe5d86e66f95a1e1c17a9b1a042898b0482",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.py": "8f457a62b1190faf95e34ad0f885e20843faf610354091ef3b8169c9517199d6",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-same-sign-collision-bounded-witnesses.md": "917730011e16c1734c891ab02f2a8b576cad06155be51b07dd75d0d9a81add99"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 3,
+      "elapsed_seconds": 1.8,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_same_sign_collision_bounded_witnesses --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_same_sign_collision_bounded_witnesses",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_same_sign_collision_bounded_witnesses"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The witnesses join exact positive Farkas occupations, the complete finite-carrier cokernel criterion, the 864-defect same-fibre census and each candidate's independently classified cross-fibre zero variety."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This promotes nonemptiness only, not the six full real cones, all-orders integration, causal correction or a release."
+    }
+  },
+  "claim_boundary": "Each candidate 16--21 has one nonzero bounded finite-quasiperiodic second-order point. The backgrounds remain distinct and their full real cone decompositions, exceptional/global extensions and higher lifecycles remain open."
+}

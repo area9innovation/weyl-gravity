@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx,longtable}
 \usepackage{microtype,xurl}
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!55!black,
@@ -963,7 +963,7 @@ complete bounded generic cone is \(\{0\}\) at collision candidates (1)
 through (15).  At each same-sign candidate (16) through (21), the scalar
 common zero is nontrivial and no strict separator in
 \(\operatorname{span}(\mu_H,\mu_{P_x},R_c)\) exists.  The six full
-resonance-joined bounded cones remain open.
+resonance-joined bounded cones are not classified by this scalar theorem.
 \end{theorem}
 
 \begin{proof}
@@ -987,6 +987,42 @@ instead gives four positive exact cofactors \(y_i\) satisfying
 Farkas duality excludes a strict scalar separator, while the same positive
 weights give a nonzero scalar common-zero occupation.  Finite-frequency
 resonances are separate conditions and are not inferred to vanish.
+\end{proof}
+
+\begin{theorem}[Sharp collision nonemptiness split]\label{thm:collision-nonemptiness}
+On each of the six distinct same-sign collision backgrounds (16)--(21), the
+complete generic bounded second-order cone contains a nonzero real point.
+Together with the preceding theorem, the twenty-one collision fibres split
+sharply as
+\[
+ \cZ_{2,\mathrm{bounded}}^{(i)}=\{0\}\quad(1\leq i\leq15),
+ \qquad
+ \cZ_{2,\mathrm{bounded}}^{(i)}\neq\{0\}\quad(16\leq i\leq21).
+\]
+This is a nonemptiness theorem for the last six cones, not a classification
+of their full real algebraic geometry.
+\end{theorem}
+
+\begin{proof}
+For each same-sign fibre, use the four positive exact Farkas cofactors as
+absolute-current occupations and take axisymmetric input, so all three
+lifted rotation moment maps vanish.  The same cofactors set
+\(\mu_H=\mu_{P_x}=R_c=0\).  All 108 nonzero-frequency same-fibre temporal
+channels are off shell: the exact census contains 864 nonzero target-shell
+defects, while its \(L=0\) rows use the separately empty nonzero-Fourier and
+homogeneous nonzero-frequency quotients.
+
+It remains only to kill the one cross-fibre resonance assigned to each
+candidate.  On (17)--(19), the Farkas support omits one required resonant
+factor.  On (16) and (20), choose the occupied modes axial with \(m=0\);
+the relevant \(L=3\) or \(L=1\) coefficient contains
+\(\langle2,0;2,0\mid L,0\rangle=0\).  On (21), put the resonant
+\(q_+(1),q_-(2)\) pair on the certified real mixed-parity \(L=4\) component
+\(A_{\rm pol}=rA_{\rm ax}\), \(B_{\rm pol}=sB_{\rm ax}\).  Its two real
+nonzero parity vectors have positive absolute-current norms and may be scaled
+independently to the prescribed occupations.  The complete finite-harmonic
+cokernel criterion then supplies a bounded finite-quasiperiodic second-order
+correction on each of the six backgrounds.
 \end{proof}
 
 \section{Current bounded frontier}
@@ -1160,12 +1196,22 @@ The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
 integration of committed certificates.  Its current source baseline is
 repository commit \texttt{4657baebd558a4cbb50873812701b5911a3df861}.
 
-\begin{center}
+\begingroup
 \small
-\begin{tabularx}{0.98\textwidth}{@{}Y Y@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth} >{\raggedright\arraybackslash}p{0.63\textwidth}@{}}
 \toprule
 Claim & Authoritative certificate\\
 \midrule
+\endfirsthead
+\toprule
+Claim & Authoritative certificate\\
+\midrule
+\endhead
+\midrule
+\multicolumn{2}{r}{\small Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
 Complete finite-support exponential-polynomial cone and bounded ledger &
 \cert{bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json}\\
 Finite-generic bounded zero-frequency receiver &
@@ -1176,6 +1222,10 @@ Candidate-13 scalar-separation bounded-origin theorem &
 \cert{bridge/certificates/einstein_maxwell_weyl_candidate13_scalar_separation_no_go.json}\\
 All-collision scalar-separation classification &
 \cert{bridge/certificates/einstein_maxwell_weyl_collision_scalar_separation_classification.json}\\
+Same-sign collision same-fibre shell census &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_same_fibre_census.json}\\
+Six same-sign collision bounded witnesses &
+\cert{bridge/certificates/einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.json}\\
 Stabilizer action and lifted rotations &
 \cert{bridge/certificates/einstein_maxwell_weyl_plebanski_hacyan_stabilizer.json}\\
 Generalized-mode symplectic form &
@@ -1210,29 +1260,29 @@ Two-momentum nonaxisymmetric \(L=1,3\) completion &
 \cert{bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_nonaxisymmetric_L1_L3_matrix.json}\\
 Moment-map/Taub bridge &
 \cert{bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json}\\
-\bottomrule
-\end{tabularx}
-\end{center}
+\end{longtable}
+\endgroup
 
 Each certificate records its schema, imported hashes, exact commands, test
 tier, assumptions, and missing-object ledger.  The independent verifier for
 each named certificate must pass before this manuscript advances to
 \textsc{theorem-frozen}.  The current draft promotes only the scoped complete
 formulas displayed above.  The candidate-13 real bounded geometry and all
-fifteen opposite-sign collision carriers are closed; the unrestricted
-finite-support bounded zero set and the six same-sign resonance joins remain
-open.
+fifteen opposite-sign collision carriers are closed.  Each same-sign
+collision cone has a certified nonzero bounded point, while its full real
+component geometry remains open; so does the unrestricted finite-support
+bounded zero set.
 
 \section{Outlook}
 
-The immediate mathematical target is the six same-sign collision backgrounds
-whose scalar common zero is nontrivial: their resonance-amplitude ideals must
-be joined separately.
+The immediate mathematical target is the full real component geometry of the
+six same-sign collision cones.  Their nonemptiness, same-fibre shell census,
+and one complete resonance/moment-map join per background are now closed.
 The symbolic-\(\ell\) standard-branch resonance and collision theorem is now
 closed, as is the complete 164-coefficient two-momentum branch-basis census.
-The next exact enlargement is the six common amplitude-level zero varieties,
-followed by joins of distinct \(|k|\) fibres without identifying their phase
-carriers or circumference backgrounds.
+The next exact enlargement is to decompose the six common amplitude-level
+zero varieties, followed by joins of distinct \(|k|\) fibres without
+identifying their phase carriers or circumference backgrounds.
 The immediate physical target is to compare its strata with the transferred
 Einstein/extra/Maxwell interaction tensor and with observer response.  A
 later causal theorem would replace the finite secular right inverses by

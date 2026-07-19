@@ -420,6 +420,24 @@ def verify() -> None:
         raise AssertionError("collision scalar bounded verdict changed")
     if scalar_collision_second["smooth_secular"]["status"] != "OPEN" or scalar_collision_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP" or "not a mode identification across backgrounds" not in scalar_collision["claim_boundary"]:
         raise AssertionError("collision scalar classifier exceeded scope")
+    same_fibre = by_id["einstein.ph.wm.interaction.ell2_same_sign_collision_same_fibre_census"]
+    same_fibre_second = same_fibre["mode_data"]["second_order"]
+    if same_fibre["mode_data"]["resonance"]["status"] != "CERTIFIED" or "864 exact" not in same_fibre["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("same-sign same-fibre census was hidden")
+    if same_fibre["mode_data"]["taub_maps"]["status"] != "NOT_APPLICABLE" or "equal-branch zero-frequency products" not in same_fibre["scope"]["omega"]:
+        raise AssertionError("same-sign same-fibre census merged zero-frequency receivers")
+    if same_fibre_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or same_fibre_second["smooth_secular"]["status"] != "CERTIFIED" or same_fibre_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("same-sign same-fibre correction classes changed")
+    witnesses = by_id["einstein.ph.wm.interaction.ell2_same_sign_collision_bounded_witnesses"]
+    witness_second = witnesses["mode_data"]["second_order"]
+    if witnesses["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "Farkas dependence" not in witnesses["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("same-sign bounded Taub witnesses were hidden")
+    if witnesses["mode_data"]["resonance"]["status"] != "CERTIFIED" or "candidate 21" not in witnesses["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("same-sign bounded resonance witnesses were hidden")
+    if witness_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED" or witness_second["smooth_secular"]["status"] != "CERTIFIED" or witness_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("same-sign bounded witness correction classes changed")
+    if "not a classification of their full real geometry" not in witnesses["claim_boundary"]:
+        raise AssertionError("same-sign bounded witness row exceeded nonemptiness scope")
     parity_workload = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]
     if parity_workload["descriptions"]["nonlinear"] != "OPEN":
         raise AssertionError("two-absolute-momentum parity workload was promoted")

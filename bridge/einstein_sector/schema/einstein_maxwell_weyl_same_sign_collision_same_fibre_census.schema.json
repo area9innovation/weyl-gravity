@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_collision_same_fibre_census.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "scope", "candidate_rows", "summary", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_COLLISION_SAME_FIBRE_CENSUS"},
+    "candidate_rows": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["candidate_index", "rho", "channel_count", "nonzero_defect_count", "channels"],
+        "properties": {
+          "channel_count": {"const": 18},
+          "nonzero_defect_count": {"const": 144},
+          "channels": {"type": "array", "minItems": 18, "maxItems": 18}
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["candidate_indices", "channels_per_candidate", "defects_per_candidate", "total_exact_nonzero_defects"]
+    }
+  },
+  "additionalProperties": true
+}

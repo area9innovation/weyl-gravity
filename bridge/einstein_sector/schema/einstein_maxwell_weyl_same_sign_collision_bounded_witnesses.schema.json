@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein_maxwell_weyl_same_sign_collision_bounded_witnesses.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "scope", "witness_rows", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_SAME_SIGN_COLLISION_BOUNDED_WITNESSES"},
+    "witness_rows": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["candidate_index", "rho", "positive_absolute_current_occupations", "support", "cross_fibre_resonance", "same_fibre_resonance", "isolated_resonance_crosswalk", "bounded_verdict"]
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["all_six_nonzero_bounded_points_certified", "all_six_complete_bounded_cones_classified", "cross_background_mode_identification_made"]
+    }
+  },
+  "additionalProperties": true
+}

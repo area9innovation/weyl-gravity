@@ -3714,6 +3714,29 @@ candidate-specific resonance joins fail-closed.  The active Einstein gate is
 therefore no longer a 21-row search: it is precisely those six same-sign
 amplitude ideals.
 
+That six-row existence gate is now closed.  An exact same-fibre census checks
+18 nonzero temporal channels on each background against eight target defects:
+all 864 defects exclude zero, with the `L=0` rows discharged by the separately
+empty nonzero-Fourier and homogeneous nonzero-frequency quotients.  Joining
+the remaining cross-fibre ideal to the positive Farkas occupations gives one
+nonzero bounded point on every candidate 16--21.  Candidates 17--19 omit a
+required resonant factor; 16 and 20 use the exact axisymmetric odd-`L`
+Clebsch--Gordan zero; 21 uses its real mixed-parity `L=4` component and scales
+the two current norms independently.  Thus the collision family has the
+sharp disposition
+
+```text
+indices 1--15: Z2_bounded={0}
+indices 16--21: Z2_bounded contains an explicit nonzero point
+```
+
+The six full real cone decompositions remain `OPEN`; all-orders, causal,
+residual, observational and quantum promotions remain fail-closed.  Atlas
+rows
+`einstein.ph.wm.interaction.ell2_same_sign_collision_same_fibre_census` and
+`einstein.ph.wm.interaction.ell2_same_sign_collision_bounded_witnesses`
+record the gate without identifying any circumference backgrounds.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

@@ -107,7 +107,8 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
         self.assertEqual(second["smooth_secular"]["status"], "OPEN")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("separate scalar theorem", entry["claim_boundary"])
+        self.assertIn("Later rows close bounded origin", entry["claim_boundary"])
+        self.assertIn("nonzero bounded points for 16-21", entry["claim_boundary"])
 
     def test_collision_scalar_classifier_keeps_fifteen_six_split(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification"]
@@ -120,6 +121,26 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("indices 16-21", second["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("not a mode identification across backgrounds", entry["claim_boundary"])
+
+    def test_same_sign_same_fibre_census_closes_only_its_rows(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_collision_same_fibre_census"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("864 exact same-fibre", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("cross-fibre resonance remains", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("full cone geometry", entry["claim_boundary"])
+
+    def test_same_sign_witnesses_prove_nonempty_not_full_cones(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_same_sign_collision_bounded_witnesses"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertIn("candidate 21", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("six distinct", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("not a classification", entry["claim_boundary"])
 
     def test_first_two_abs_momentum_parity_workload_is_fail_closed(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_parity_workload"]

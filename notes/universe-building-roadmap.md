@@ -2418,6 +2418,21 @@ are computed.  Atlas row
 `einstein.ph.wm.interaction.ell2_collision_scalar_separation_classification`
 records this 15/6 split without identifying any two circumference backgrounds.
 
+The six same-sign existence joins are now `CERTIFIED`.  Across candidates
+16--21, an exact census excludes all 864 nonzero-frequency same-fibre target
+defects, so no such source matrices remain.  The positive Farkas occupations
+then meet the single cross-fibre zero set and all three rotation moment maps:
+three candidates omit a resonant factor, two use the axisymmetric odd-`L`
+Clebsch--Gordan zero, and candidate 21 uses its exact real mixed-parity `L=4`
+component.  Hence every same-sign cone contains a nonzero bounded point, while
+the earlier separator gives origin-only cones on all fifteen opposite-sign
+backgrounds.  The atlas rows
+`einstein.ph.wm.interaction.ell2_same_sign_collision_same_fibre_census` and
+`einstein.ph.wm.interaction.ell2_same_sign_collision_bounded_witnesses` keep
+all six backgrounds distinct.  Their full real component decompositions,
+all-orders integration and causal/retarded maps remain `OPEN` or
+`NO_CERTIFIED_MAP` as appropriate.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
