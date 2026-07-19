@@ -1,0 +1,26 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "The exact four-term e1(Box R0_1) free-jet residual and separating value one certify NO_CERTIFIED_MAP from the current free coefficient algebra to a nilpotent scalar 108-row q1. The covariant unary, pinned scalar 64-row q1, six on-shell rods and noncommuting PBW contract are preserved. Scalar q1/q2, replay, backreaction, cone, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile and python3 -m json.tool on changed source/schema/certificate/atlas/ledger/Science Forge objects; git diff --check on explicit paths", "elapsed_seconds": "under 1", "status": "PASS"},
+    {"tier": 1, "command": "pytest -q closed_universe_observers/tests/test_berger_108_row_q1_pbw_background_ideal_obstruction.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": "10.24", "status": "PASS", "scope": "34 exact obstruction, mutation, atlas and ledger tests"},
+    {"tier": 2, "command": "producer --check; independent verifier; residual atlas schema/verifier; comparison ledger verifier", "elapsed_seconds": "1.92", "status": "PASS", "scope": "all dependency hashes, independent four-term PBW reconstruction, fail-closed generated claims and direct evidence consumer"},
+    {"tier": 2, "command": "ci/science-forge-shadow.sh", "elapsed_seconds": "2.83", "status": "ADVISORY_PASS", "scope": "bridge audit PASS; repository-wide coverage snapshot drift reported at 945 certificates versus 820"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is an observer-owned fail-closed obstruction, not a release, freeze, shared-core change or paper theorem promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_q1_pbw_background_ideal_obstruction.py", "sha256": "a3cadf779351ed62190b9f19a8e955e0d7cca10891302eac8ff1ace263281e4d"},
+    {"path": "closed_universe_observers/verify_berger_108_row_q1_pbw_background_ideal_obstruction.py", "sha256": "64a4a6f57fde8944f0dd94de33dc905608e722074fd2cc8f23b9374384a93cf8"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_q1_pbw_background_ideal_obstruction.py", "sha256": "6d4b64fbdb8533d75df32983be863d9d95574274139d2121416ec41e7018dc00"},
+    {"path": "closed_universe_observers/schema/berger-108-row-q1-pbw-background-ideal-obstruction-v1.schema.json", "sha256": "c162c6590c6cfa3033902a8b31f01d2c3325492fa0769802b09e1d5bffb8d190"},
+    {"path": "closed_universe_observers/reports/berger-108-row-q1-pbw-background-ideal-obstruction.md", "sha256": "b5d5b0ea200ed6996d882759ec60632866dac924280f2293ce6617639f58ede5"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION.json", "sha256": "afe111335e2d4c6ca84b32b68774b954e444032e09e5780322b507161099f6c1"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "7af603cb0abe31903d0b44e803c972b3fde0d2df48d72c5bb54be128c60a173c"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "bd413ff37286b5e50493381e90f939a022ad809fb0fbe07a0d3d7e6836211b13"},
+    {"path": "planning/work-items/berger-108-row-q1-pbw-background-ideal.json", "sha256": "ec62cbfd7a125dc35f12549ec7602d22d01b74e175c0c885461b0850325d7ba2"}
+  ],
+  "flags": {"BACKGROUND_DIFFERENTIAL_IDEAL_MISSING": true, "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": false, "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": false, "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": false, "QUANTUM_CLAIM": false}
+}

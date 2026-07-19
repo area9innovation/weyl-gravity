@@ -959,9 +959,13 @@ survive the first backreacted, normalized apparatus interaction?
    initially commuting multiindex action: left differentiation now PBW-reduces
    with the three nonzero Berger frame brackets, all bracket defects vanish on
    profile and background generators, and deletion/sign mutations fail.
-   Export the complete scalar 108-row `q1` PBW matrix next, then the
-   action-derived scalar `q2` tensor and independent replay before a solved
-   backreacted branch.
+   The next audit now finds a four-term free-jet residual
+   `e1(Box R0_1)` with exact separating value one: the six certified on-shell
+   rods and `Phi2` have no content-addressed specialization or
+   Berger-frame-closed background equation ideal in this algebra.  Export that
+   specialization/differential ideal, then the complete scalar 108-row `q1`
+   PBW matrix, action-derived scalar `q2` tensor and independent replay before
+   a solved backreacted branch.
    A common source
    at the original Hopf event remains a stronger separate target.
 4. Separate a failure of the record map from a failure of the underlying
@@ -2204,7 +2208,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_SELECTED_CHARGE_BLOCK_CORRELATED_CLOCK_TRANSFORM` (fired) | derive a controlled spatial harmonic tail around the selected finite-block exact-`T` image representation, then compose the full Maxwell/massive Green chain; do not promote finite selected blocks to detector response or recoil |
 | `BERGER_GREEN_WEIGHTED_SPATIAL_TAIL_REDUCTION` (fired) | combine with the correlated `N=1` profile norm, then build a direct correlated Green-tail estimator or wider complete rail before massive continuation; do not promote the non-small `1.95e3` bound to a response |
 | `BERGER_EMITTER_STRESS_CLOCK_BACKREACTION_LEDGER` (fired) | replay the covariant 108-row `q1 q2` identity and keep the localized-profile recoil evaluation as the parallel causal gate before solving a backreacted gravity-clock branch |
-| `BERGER_108_ROW_COMPONENT_JET_CONTRACT` (fired; noncommuting Berger-frame PBW action repaired) | export the complete scalar 108-row q1 PBW matrix in the certified arbitrary-finite coefficient-jet normal form, then derive scalar q2 and replay q1q2; do not infer either tensor from covariant block ranges or row coverage |
+| `BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION` (fired) | export a content-addressed specialization of all six rods and Phi2 plus the Berger-frame-closed differential ideal of shifted background equations; then replay and export scalar q1 before q2; do not silently set free background jets on shell |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |
 | `BERGER_26_ROW_GREEN_CERTIFIED` | the causal specialist extracts the abstract Green-transfer theorem or supports the observer rail; nonlinear capacity stays on interaction |
 | `COMPACT_EM_GLOBAL_PAIRING_CLOSED` and `WEYL_EM_PULLBACK_DECIDED` (fired) | Einstein extends the quadratic source test across mixed cones; one bounded design task may continue the asymptotic/black-hole complex |

@@ -352,14 +352,30 @@ consumers.  This is not yet scalar `q1` or `q2`: the next algebraic gate is the
 complete scalar 108-row unary PBW matrix, followed by the action-derived
 bilinear tensor and independent component replay.
 
+`BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION` now identifies the
+first remaining defect in that unary gate.  The pinned 64-row scalar matrix,
+noncommuting PBW algebra, covariant rod Noether identity, and all six exact
+on-shell rod wave equations remain valid.  But the receiving coefficient
+algebra still treats `R0_1` and `Phi2` as abstract free background generators:
+it has no content-addressed specialization to the certified fields and no
+differential ideal of their shifted equations.  Consequently the required
+rod/diffeomorphism path is `e1(Box R0_1)`, whose free PBW normal form has four
+independent third-jet terms and evaluates exactly to one when the
+`[0,3,0,0]` jet is set to one and the other displayed jets to zero.  It
+vanishes only in the missing on-shell differential quotient.  Scalar `q1`
+therefore remains `NO_CERTIFIED_MAP`; the next exact gate is the
+content-addressed six-rod/`Phi2` specialization and its Berger-frame-closed
+background equation ideal, followed by the scalar nilpotency/cyclicity replay.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
    invent those values.  In parallel, use the certified component/jet contract
-   to export the complete scalar 108-row `q1` PBW matrix before attempting
-   scalar `q2`, its replay, or a solved backreacted gravity-clock branch.
+   to export the six-rod/`Phi2` background specialization and differential
+   equation ideal, then the complete scalar 108-row `q1` PBW matrix, before
+   attempting scalar `q2`, its replay, or a solved backreacted gravity-clock branch.
    Covariant row coverage is not a substitute for either scalar payload.
    Treat realization of both preparations at the original common Hopf event
    as a stronger, separate localization target.
@@ -1159,8 +1175,10 @@ Its atlas row is
 and pinned 64-row base are preserved, and the new sibling row
 `observer.berger.interaction.pbw_108_component_jet_contract` is `CERTIFIED`.
 The contract now includes the exact noncommuting Berger-frame PBW brackets;
-the scalar promotion remains `NO_CERTIFIED_MAP` only because complete scalar
-`q1` and `q2` payloads have not yet been exported.  This does not activate the physical-
+the new sibling row `observer.berger.interaction.pbw_108_q1_background_ideal`
+is `OBSTRUCTED`.  The scalar promotion remains `NO_CERTIFIED_MAP` because the
+background specialization/differential ideal and complete scalar `q1`,`q2`
+payloads have not yet been exported.  This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.
 

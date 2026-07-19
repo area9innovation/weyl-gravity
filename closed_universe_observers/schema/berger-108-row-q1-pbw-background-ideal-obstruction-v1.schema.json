@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/pure-weyl/berger-108-row-q1-pbw-background-ideal-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "dependency_tags", "dependency_refs", "available_scalar_data", "background_ideal_obstruction", "missing_object_ledger", "mutations", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-108-row-q1-pbw-background-ideal-obstruction-v1"},
+    "result_id": {"const": "BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "NO_CERTIFIED_MAP_FREE_JET_ALGEBRA_TO_NILPOTENT_SCALAR_108_ROW_Q1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "dependency_refs": {"type": "object", "minProperties": 6, "maxProperties": 6},
+    "available_scalar_data": {"type": "object"},
+    "background_ideal_obstruction": {"type": "object", "required": ["free_jet_residual_normal_form", "free_jet_residual_term_count", "separating_evaluation", "free_and_on_shell_realizations_distinct"], "properties": {"free_jet_residual_term_count": {"const": 4}, "free_and_on_shell_realizations_distinct": {"const": true}}},
+    "missing_object_ledger": {"type": "object", "required": ["first_missing_object", "rod_background_specialization_exported", "Phi2_background_specialization_exported", "background_equation_differential_ideal_exported", "complete_scalar_108_row_q1_exported"], "properties": {"rod_background_specialization_exported": {"const": false}, "Phi2_background_specialization_exported": {"const": false}, "background_equation_differential_ideal_exported": {"const": false}, "complete_scalar_108_row_q1_exported": {"const": false}}},
+    "mutations": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["name", "detected"], "properties": {"detected": {"const": true}}}},
+    "flags": {"type": "object", "required": ["PINNED_64_ROW_SCALAR_Q1_VERIFIED", "NONCOMMUTING_COMPONENT_JET_CONTRACT_VERIFIED", "COVARIANT_ROD_NOETHER_IDENTITY_PRESERVED", "GLOBAL_ROD_ON_SHELL_WAVE_EQUATIONS_PRESERVED", "BACKGROUND_DIFFERENTIAL_IDEAL_MISSING", "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED", "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED", "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED", "QUANTUM_CLAIM"], "properties": {"PINNED_64_ROW_SCALAR_Q1_VERIFIED": {"const": true}, "NONCOMMUTING_COMPONENT_JET_CONTRACT_VERIFIED": {"const": true}, "COVARIANT_ROD_NOETHER_IDENTITY_PRESERVED": {"const": true}, "GLOBAL_ROD_ON_SHELL_WAVE_EQUATIONS_PRESERVED": {"const": true}, "BACKGROUND_DIFFERENTIAL_IDEAL_MISSING": {"const": true}, "SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED": {"const": false}, "SUPPORT_LOCAL_108_ROW_PBW_Q2_PAYLOAD_EXPORTED": {"const": false}, "COMPONENT_COEFFICIENT_108_ROW_PBW_REPLAY_CERTIFIED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "next_gate": {"const": "EXPORT_CONTENT_ADDRESSED_BERGER_BACKGROUND_SPECIALIZATION_AND_DIFFERENTIAL_IDEAL_THEN_REPLAY_SCALAR_Q1"},
+    "claim_boundary": {"type": "string", "minLength": 400},
+    "provenance": {"type": "object"}
+  }
+}

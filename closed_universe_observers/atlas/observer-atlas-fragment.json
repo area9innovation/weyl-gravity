@@ -8354,7 +8354,7 @@
       }
     },
     {
-      "claim_boundary": "the pinned 64-row payload and corrected 108-row noncommuting component/jet activation contract are certified; complete scalar q1 and action-derived scalar q2 serializers remain OPEN the covariant emitter stress/clock source is certified at q2, but its scalar component PBW transport remains NO_CERTIFIED_MAP NOT_APPLICABLE",
+      "claim_boundary": "the pinned 64-row payload and corrected 108-row noncommuting component/jet activation contract are certified; the rod/Phi2 background specialization and differential ideal, complete scalar q1, and action-derived scalar q2 remain OPEN the covariant emitter stress/clock source is certified at q2, but its scalar component PBW transport remains NO_CERTIFIED_MAP NOT_APPLICABLE",
       "descriptions": {
         "causal": "NOT_APPLICABLE",
         "nonlinear": "OPEN",
@@ -8381,7 +8381,7 @@
           "status": "NOT_APPLICABLE"
         },
         "lee_wald": {
-          "statement": "NO_CERTIFIED_MAP: complete scalar q1/q2 payloads and their replay must precede any new nonlinear quotient claim",
+          "statement": "NO_CERTIFIED_MAP: the first scalar q1 nilpotency path requires an unexported background differential ideal; complete scalar q1/q2 payloads and their replay must precede any new nonlinear quotient claim",
           "status": "CERTIFIED"
         },
         "resonance": {
@@ -8442,7 +8442,7 @@
           "status": "OPEN"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "the pinned 64-row payload and corrected 108-row noncommuting component/jet activation contract are certified; complete scalar q1 and action-derived scalar q2 serializers remain OPEN",
+          "statement": "the pinned 64-row payload and corrected 108-row noncommuting component/jet activation contract are certified; the rod/Phi2 background specialization and differential ideal, complete scalar q1, and action-derived scalar q2 remain OPEN",
           "status": "OPEN"
         },
         "recoil_backreaction_order": {
@@ -8458,7 +8458,7 @@
           "status": "NOT_APPLICABLE"
         },
         "survives_gauge_reduction": {
-          "statement": "NO_CERTIFIED_MAP: complete scalar q1/q2 payloads and their replay must precede any new nonlinear quotient claim",
+          "statement": "NO_CERTIFIED_MAP: the first scalar q1 nilpotency path requires an unexported background differential ideal; complete scalar q1/q2 payloads and their replay must precede any new nonlinear quotient claim",
           "status": "NO_CERTIFIED_MAP"
         }
       },
@@ -8591,6 +8591,129 @@
         "m": "all 108 scalar component rows",
         "omega": "exact f0/f1/rho0/rho1/J0/J1/h0/h1 profile specializations with formal couplings",
         "parity": "full suspended-graded carrier with signed odd pairing",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "CERTIFIED pinned 64-row q1 and noncommuting component algebra; OBSTRUCTED on the missing Berger background specialization and differential ideal; no Green or boundary claim NO_CERTIFIED_MAP: q1 must precede scalar q2 and recoil/backreaction transport NO_CERTIFIED_MAP",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NO_CERTIFIED_MAP",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+          "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+          "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION.json",
+          "result_id": "BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION",
+          "sha256": "afe111335e2d4c6ca84b32b68774b954e444032e09e5780322b507161099f6c1"
+        }
+      ],
+      "id": "observer.berger.interaction.pbw_108_q1_background_ideal",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=abstract 108-row support-local component carrier over free background jets versus the on-shell Berger rod/Phi2 background; omega=background equation ideal and all Berger-frame differential prolongations; NO_CERTIFIED_MAP: scalar observer transport cannot be replayed before a nilpotent scalar q1 exists",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "NO_CERTIFIED_MAP: e1(Box R0_1) has four nonzero free-jet terms and value one under an exact separating assignment",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "NO_CERTIFIED_MAP: no cross-background mode identification is introduced",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NO_CERTIFIED_MAP",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NO_CERTIFIED_MAP",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NO_CERTIFIED_MAP",
+            "status": "NO_CERTIFIED_MAP"
+          }
+        },
+        "taub_maps": {
+          "statement": "NO_CERTIFIED_MAP: q1 must precede scalar q2 and recoil/backreaction transport; detector restriction=NO_CERTIFIED_MAP",
+          "status": "OBSTRUCTED"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "OBSTRUCTED at the scalar interface: the six rods are on shell covariantly, but no content-addressed map binds them or Phi2 to the abstract background generators",
+          "status": "OBSTRUCTED"
+        },
+        "detector_response": {
+          "statement": "NO_CERTIFIED_MAP: scalar observer transport cannot be replayed before a nilpotent scalar q1 exists",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "emitter_preparation": {
+          "statement": "the emitter basis is certified and unaffected; the first obstruction already occurs in the rod/diffeomorphism orbit",
+          "status": "CERTIFIED"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "NO_CERTIFIED_MAP: no cross-background mode identification is introduced",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NO_CERTIFIED_MAP",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "observer_source_channel": {
+          "statement": "NO_CERTIFIED_MAP: the scalar source channel awaits the same background ideal",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "CERTIFIED pinned 64-row q1 and noncommuting component algebra; OBSTRUCTED on the missing Berger background specialization and differential ideal; no Green or boundary claim",
+          "status": "OBSTRUCTED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "NO_CERTIFIED_MAP: q1 must precede scalar q2 and recoil/backreaction transport",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NO_CERTIFIED_MAP: e1(Box R0_1) has four nonzero free-jet terms and value one under an exact separating assignment",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "abstract 108-row support-local component carrier over free background jets versus the on-shell Berger rod/Phi2 background",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "unary BV differential q1 on degrees -1,0,1,2",
+        "ell": "arbitrary compactly supported local Berger jets; no harmonic identification",
+        "k": "ordered PBW multiindices e0^n0 e1^n1 e2^n2 e3^n3",
+        "m": "R0_1 background generator and all scalar component rows",
+        "omega": "background equation ideal and all Berger-frame differential prolongations",
+        "parity": "full suspended-graded carrier with rod/diffeomorphism Noether orbit",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -9295,7 +9418,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "b2f2c0800f2fd6bb09835a8be3c0e45811b674baa9d7ab6bcc52b0d9d354a404",
+  "generated_by_sha256": "54851787891e56b488b955f35ea640b3196d315b3f223c2be6a7bc5fd2723f64",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
