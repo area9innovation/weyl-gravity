@@ -15,6 +15,7 @@ def main() -> int:
     assert "observer.berger.interaction.pbw_108_component_map" in ids
     assert "observer.berger.interaction.pbw_108_component_jet_contract" in ids
     assert "observer.berger.interaction.pbw_108_background_differential_quotient" in ids
+    assert "observer.berger.interaction.pbw_108_emitter_q1_overlay" in ids
     crosswalks = [row for row in value["entries"] if row["id"].startswith("observer.crosswalk")]
     assert {row["id"] for row in crosswalks} == {
         "observer.crosswalk.berger_physical_branch_to_detector",

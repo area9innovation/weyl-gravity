@@ -34,6 +34,19 @@ def test_background_differential_quotient_closes_only_the_missing_map_gate():
         evidence["result_id"] for evidence in quotient["evidence"]
     }
 
+
+def test_scalar_emitter_q1_overlay_does_not_promote_complete_q1():
+    rows = {row["id"]: row for row in build()["entries"]}
+    emitter = rows["observer.berger.interaction.pbw_108_emitter_q1_overlay"]
+    component = rows["observer.berger.interaction.pbw_108_component_map"]
+    assert emitter["descriptions"]["symplectic"] == "CERTIFIED"
+    assert emitter["observer_data"]["emitter_preparation"]["status"] == "CERTIFIED"
+    assert emitter["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert component["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
+    assert "BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY" in {
+        evidence["result_id"] for evidence in emitter["evidence"]
+    }
+
 def test_tangent_cone_is_not_promoted():
     row = next(row for row in build()["entries"] if row["id"] == "observer.berger.second_order_cone_restriction")
     assert row["observer_data"]["detector_restriction_to_second_order_cone"]["status"] == "OPEN"

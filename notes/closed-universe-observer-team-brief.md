@@ -382,14 +382,26 @@ free-algebra row correctly remains `OBSTRUCTED`.  No complete scalar 84- or
 108-row `q1` has yet been serialized or replayed; that is now the immediate
 local-interaction gate.
 
+`BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY` now closes the emitter part of that
+gate.  It derives the support-local exterior derivative in the exact
+noncommuting Berger frame and the Lorentzian coderivative by formal
+adjunction, with coefficientwise `d^2=delta^2=0`.  All six covariant emitter
+unary ranges become scalar PBW blocks: 132 distinct matrix positions and 204
+serialized terms, including every first switch jet in
+`delta(h_b K_b)`.  The pinned 64-row scalar `q1` hash is unchanged.  This is
+not yet the complete unary differential: scalar rod--gravity and memory
+apparatus rows 64--83, their composition with the base and emitter blocks, and
+the all-row nilpotency/odd-cyclicity replay remain open.
+
 ### Immediate priority after the polarization-emitter handoff
 
 1. Await and independently verify a provenance-complete external declaration
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
-   invent those values.  In parallel, use the certified component/jet contract
-   to use the certified six-rod/`Phi2` background differential quotient to
-   export the complete scalar 108-row `q1` PBW matrix, before
+   invent those values.  In parallel, use the certified component/jet contract,
+   six-rod/`Phi2` background differential quotient and scalar emitter overlay
+   to export the scalar rod--gravity and memory apparatus overlay on rows
+   64--83, then compose and replay the complete 108-row `q1` PBW matrix before
    attempting scalar `q2`, its replay, or a solved backreacted gravity-clock branch.
    Covariant row coverage is not a substitute for either scalar payload.
    Treat realization of both preparations at the original common Hopf event
@@ -1193,8 +1205,11 @@ The contract now includes the exact noncommuting Berger-frame PBW brackets;
 the new sibling row `observer.berger.interaction.pbw_108_q1_background_ideal`
 is `OBSTRUCTED` specifically on the unquotiented free algebra, while
 `observer.berger.interaction.pbw_108_background_differential_quotient` is
-`CERTIFIED`.  The scalar promotion remains `NO_CERTIFIED_MAP` because the
-complete scalar `q1`,`q2` payloads have not yet been exported or replayed.
+`CERTIFIED`.  The scalar emitter contribution is separately `CERTIFIED` in
+`observer.berger.interaction.pbw_108_emitter_q1_overlay`, including all six
+blocks and explicit first switch jets.  The complete scalar promotion remains
+`NO_CERTIFIED_MAP` because the apparatus overlay, all-row `q1` replay, scalar
+`q2` and its replay have not yet been exported.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.

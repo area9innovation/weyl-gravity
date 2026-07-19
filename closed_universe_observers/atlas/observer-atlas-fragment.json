@@ -8354,7 +8354,7 @@
       }
     },
     {
-      "claim_boundary": "the pinned 64-row payload, corrected 108-row noncommuting component/jet contract, and content-addressed rod/Phi2 differential quotient are certified; complete scalar q1 and action-derived scalar q2 remain OPEN the covariant emitter stress/clock source is certified at q2, but its scalar component PBW transport remains NO_CERTIFIED_MAP NOT_APPLICABLE",
+      "claim_boundary": "the pinned 64-row payload, corrected 108-row noncommuting component/jet contract, content-addressed rod/Phi2 differential quotient and scalar emitter q1 overlay are certified; the scalar apparatus overlay and action-derived scalar q2 remain OPEN the linear emitter q1 overlay and covariant q2 stress/clock source are certified separately, but scalar apparatus q1 and scalar q2 transport remain NO_CERTIFIED_MAP NOT_APPLICABLE",
       "descriptions": {
         "causal": "NOT_APPLICABLE",
         "nonlinear": "OPEN",
@@ -8377,16 +8377,21 @@
           "path": "closed_universe_observers/certificates/BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL.json",
           "result_id": "BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL",
           "sha256": "ea6efe4d7680f48e20d088e5d97c21d730716f8c300932668afec9e9c16ec3e8"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY.json",
+          "result_id": "BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY",
+          "sha256": "6c22ba4794bc877774719ed11d01828a35568e8b6cf185a56d1b86f8f70313f8"
         }
       ],
       "id": "observer.berger.interaction.pbw_108_component_map",
       "mode_data": {
         "dispersion": {
-          "statement": "carrier=covariant 108-row q1-q2 identity to scalar support-local Berger-frame PBW component tensor; omega=local differential coefficient jets of detector and emitter switches; NO_CERTIFIED_MAP: the covariant detector/emitter action identity has no complete scalar 108-row q1/q2 PBW serialization",
+          "statement": "carrier=covariant 108-row q1-q2 identity to scalar support-local Berger-frame PBW component tensor; omega=local differential coefficient jets of detector and emitter switches; NO_CERTIFIED_MAP: the covariant detector/emitter action identity still lacks a complete scalar 108-row q1/q2 PBW serialization",
           "status": "NOT_APPLICABLE"
         },
         "lee_wald": {
-          "statement": "NO_CERTIFIED_MAP: the background quotient is now certified, but complete scalar q1/q2 payloads and their replay must precede any new nonlinear quotient claim",
+          "statement": "NO_CERTIFIED_MAP: the background quotient and emitter overlay are certified, but apparatus q1, complete composition and all-row replay must precede any new nonlinear quotient claim",
           "status": "CERTIFIED"
         },
         "resonance": {
@@ -8409,7 +8414,7 @@
           }
         },
         "taub_maps": {
-          "statement": "the covariant emitter stress/clock source is certified at q2, but its scalar component PBW transport remains NO_CERTIFIED_MAP; detector restriction=NOT_APPLICABLE",
+          "statement": "the linear emitter q1 overlay and covariant q2 stress/clock source are certified separately, but scalar apparatus q1 and scalar q2 transport remain NO_CERTIFIED_MAP; detector restriction=NOT_APPLICABLE",
           "status": "OPEN"
         }
       },
@@ -8419,11 +8424,11 @@
           "status": "NOT_APPLICABLE"
         },
         "clock_and_rod_dependence": {
-          "statement": "CERTIFIED: detector radii, switch radii, arbitrary-finite coefficient jets, noncommuting Berger-frame PBW brackets, the 108-row component basis, and the six-rod/Phi2 background quotient are canonical",
+          "statement": "CERTIFIED: detector radii, switch radii and first switch jets, arbitrary-finite coefficient jets, noncommuting Berger-frame PBW brackets, the 108-row component basis, and the six-rod/Phi2 background quotient are canonical",
           "status": "CERTIFIED"
         },
         "detector_response": {
-          "statement": "NO_CERTIFIED_MAP: the covariant detector/emitter action identity has no complete scalar 108-row q1/q2 PBW serialization",
+          "statement": "NO_CERTIFIED_MAP: the covariant detector/emitter action identity still lacks a complete scalar 108-row q1/q2 PBW serialization",
           "status": "NO_CERTIFIED_MAP"
         },
         "detector_restriction_to_second_order_cone": {
@@ -8431,7 +8436,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "the selected massive-emitter component and cotangent bases are fixed, but the q1 block ranges are not yet a complete scalar PBW matrix",
+          "statement": "CERTIFIED for the scalar emitter q1 overlay: both massive two-form component/cotangent sectors and all six unary blocks are serialized; apparatus rows 64--83 remain open",
           "status": "CERTIFIED"
         },
         "exceptional_resonant_operational_signature": {
@@ -8447,11 +8452,11 @@
           "status": "OPEN"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "the pinned 64-row payload, corrected 108-row noncommuting component/jet contract, and content-addressed rod/Phi2 differential quotient are certified; complete scalar q1 and action-derived scalar q2 remain OPEN",
+          "statement": "the pinned 64-row payload, corrected 108-row noncommuting component/jet contract, content-addressed rod/Phi2 differential quotient and scalar emitter q1 overlay are certified; the scalar apparatus overlay and action-derived scalar q2 remain OPEN",
           "status": "OPEN"
         },
         "recoil_backreaction_order": {
-          "statement": "the covariant emitter stress/clock source is certified at q2, but its scalar component PBW transport remains NO_CERTIFIED_MAP",
+          "statement": "the linear emitter q1 overlay and covariant q2 stress/clock source are certified separately, but scalar apparatus q1 and scalar q2 transport remain NO_CERTIFIED_MAP",
           "status": "NO_CERTIFIED_MAP"
         },
         "relational_redshift_contribution": {
@@ -8463,7 +8468,7 @@
           "status": "NOT_APPLICABLE"
         },
         "survives_gauge_reduction": {
-          "statement": "NO_CERTIFIED_MAP: the background quotient is now certified, but complete scalar q1/q2 payloads and their replay must precede any new nonlinear quotient claim",
+          "statement": "NO_CERTIFIED_MAP: the background quotient and emitter overlay are certified, but apparatus q1, complete composition and all-row replay must precede any new nonlinear quotient claim",
           "status": "NO_CERTIFIED_MAP"
         }
       },
@@ -8847,6 +8852,129 @@
         "m": "all displayed polynomial-S3 basis components",
         "omega": "time modes 0,+/-sqrt(58)/6,+/-sqrt(58)/3",
         "parity": "six scalar rods and ten even metric Phi2 components",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "CERTIFIED exact noncommuting Berger-frame d and Lorentzian coderivative, h0/h1 values and first jets, formal g0/g1 and mass-squared parameters; no Green image or boundary theorem is promoted OPEN: this linear q1 overlay is the carrier for later recoil/backreaction consistency, but no scalar q2 or recoil coefficient is computed NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "NOT_APPLICABLE",
+        "nonlinear": "CERTIFIED",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_108_ROW_COMPONENT_JET_CONTRACT.json",
+          "result_id": "BERGER_108_ROW_COMPONENT_JET_CONTRACT",
+          "sha256": "4113635be1493e0eac5e945a970ce4989f0484d5fa658a10bf893c63f5ae707c"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY.json",
+          "result_id": "BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY",
+          "sha256": "6c22ba4794bc877774719ed11d01828a35568e8b6cf185a56d1b86f8f70313f8"
+        }
+      ],
+      "id": "observer.berger.interaction.pbw_108_emitter_q1_overlay",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=scalar support-local massive-two-form emitter contribution to the ordered 108-row unary BV differential; omega=exact h0/h1 switch values and first Berger-frame jets with formal masses and couplings; NO_CERTIFIED_MAP: this is a local unary emitter overlay, not a retarded detector record",
+          "status": "NOT_APPLICABLE"
+        },
+        "lee_wald": {
+          "statement": "NO_CERTIFIED_MAP pending the scalar apparatus overlay, complete 108-row composition and all-row nilpotency/odd-cyclicity replay",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "NO_CERTIFIED_MAP: no same-background branch dictionary or cross-background mode identification is introduced",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "OPEN: this linear q1 overlay is the carrier for later recoil/backreaction consistency, but no scalar q2 or recoil coefficient is computed; detector restriction=NOT_APPLICABLE",
+          "status": "CERTIFIED"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "CERTIFIED for exact clock switches h0,h1 including every first Berger-frame switch jet; rod-gravity and memory apparatus rows 64--83 remain outside this overlay",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "NO_CERTIFIED_MAP: this is a local unary emitter overlay, not a retarded detector record",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "CERTIFIED: both canonical massive two-form component sectors and all six reciprocal/diagonal unary blocks are scalarized",
+          "status": "CERTIFIED"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "NO_CERTIFIED_MAP: no same-background branch dictionary or cross-background mode identification is introduced",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "OPEN: the reciprocal Maxwell--emitter unary channel is explicit, but the scalar q2 source channel and second-order cone restriction are not",
+          "status": "OPEN"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "CERTIFIED exact noncommuting Berger-frame d and Lorentzian coderivative, h0/h1 values and first jets, formal g0/g1 and mass-squared parameters; no Green image or boundary theorem is promoted",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "OPEN: this linear q1 overlay is the carrier for later recoil/backreaction consistency, but no scalar q2 or recoil coefficient is computed",
+          "status": "OPEN"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE at this unary local-algebraic gate",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "NOT_APPLICABLE: the leading rank-two causal response is certified on a separate Green-image carrier",
+          "status": "NOT_APPLICABLE"
+        },
+        "survives_gauge_reduction": {
+          "statement": "NO_CERTIFIED_MAP pending the scalar apparatus overlay, complete 108-row composition and all-row nilpotency/odd-cyclicity replay",
+          "status": "NO_CERTIFIED_MAP"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "scalar support-local massive-two-form emitter contribution to the ordered 108-row unary BV differential",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "unary q1 blocks from degree-zero Maxwell fields and degree-one massive two-forms to their cotangent partners",
+        "ell": "arbitrary compactly supported Berger-frame jets; no harmonic or reduced-mode identification",
+        "k": "ordered PBW multiindices e0^n0 e1^n1 e2^n2 e3^n3",
+        "m": "canonical one-form and ordered two-form scalar components",
+        "omega": "exact h0/h1 switch values and first Berger-frame jets with formal masses and couplings",
+        "parity": "two real massive two-form emitter sectors with signed Lorentzian form pairing",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -9551,7 +9679,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "9f4a9b86faf4839c583b166761c0fcf954d0665a22bcf284ca2fb719c31f0e7c",
+  "generated_by_sha256": "ddcc79502d0c4c17ec15fbc704a9f04df24645199e68315a81c612c799682f2e",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [
