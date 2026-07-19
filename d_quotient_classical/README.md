@@ -734,6 +734,17 @@ counterexample on the Taub-zero, nonlinearly integrable phase space.
   background and makes no all-orders claim:
   [`certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json`](certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json),
   [`reports/finite-harmonic-second-order-tangent-cone-theorem.md`](reports/finite-harmonic-second-order-tangent-cone-theorem.md)
+- Candidate-13 category boundary: the exact bounded-origin and nontrivial
+  smooth derived-source pullbacks remain certified `REDUCED-MODE` results,
+  but their declared zero-frequency and finite-harmonic receivers cannot be
+  reused as
+  support-local BV or causal differentials.  Global-mode projectors enlarge
+  support, as shown both abstractly and by exact rational finite fixtures.
+  This is not a no-go for a new local equation-level cofiber or a larger
+  noncontractible mixed-bundle carrier, and it does not demote the unary
+  support-local Einstein--Weyl relative triangle:
+  [`certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json`](certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json),
+  [`reports/candidate13-reduced-source-support-local-upgrade-obstruction.md`](reports/candidate13-reduced-source-support-local-upgrade-obstruction.md)
 - Historical algebraic screen: before the action Hessian was available, the
   unique endpoint term `Q_unique` was found to be noncyclic when tested alone
   with the provisional coefficientwise Hom-bundle adjoint.  The action-derived

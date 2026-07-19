@@ -2321,15 +2321,21 @@ The physical activation sequence and reassignment triggers are recorded in
 have fired.  The rank-46 projector handoff is closed by its normalized
 subprincipal obstruction, and the Bach-flat four-row/rank-310 causal
 generality rail is now closed on the certified relative ADM class.  The
-classical team's current primary ownership is Bridge~1's category audit:
-test whether the candidate-13 derived-source pullback can be upgraded from
-its exact `REDUCED-MODE` bounded/smooth cone to a support-local
-same-background equation-level causal/BV cofiber.  A valid output is either
-the typed local carrier and maps or a normalized obstruction proving that the
-candidate remains reduced-mode only.  Do not infer the upgrade from matching
-mode labels or from the finite-harmonic tangent-cone theorem.  The bare
-normal-tractor-parent-to-metric crosswalk also remains fail-closed, while the
-observer team owns localized apparatus completion.
+first Bridge~1 category audit is now closed by
+`CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1`.  The exact
+candidate-13 bounded-origin and nontrivial smooth pullbacks remain valid
+`REDUCED-MODE` theorems, but their declared zero- and finite-frequency
+receivers cannot themselves be promoted to a support-local causal/BV
+differential: nonzero global-mode
+projectors enlarge support.  This does not obstruct the certified unary
+support-local relative triangle, nor does it prove that every local relative
+carrier is impossible.  The next admissible Bridge~1 construction must be a
+genuinely new local equation-level cofiber or a larger noncontractible
+mixed-bundle carrier; otherwise the candidate remains reduced-mode only.
+Do not infer a local upgrade from matching mode labels or from the
+finite-harmonic tangent-cone theorem.  The bare normal-tractor-parent-to-metric
+crosswalk also remains fail-closed, while the observer team owns localized
+apparatus completion.
 
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a

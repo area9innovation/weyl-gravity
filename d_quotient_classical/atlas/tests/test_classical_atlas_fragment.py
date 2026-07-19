@@ -97,6 +97,17 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
         self.assertIn("BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1", ids)
         self.assertIn("pure normal-tractor-parent-to-metric crosswalk remains fail-closed", entry["claim_boundary"])
 
+    def test_candidate13_reduced_source_is_not_promoted_to_local_bv(self) -> None:
+        entry = self.entries["classical.crosswalk.candidate13_reduced_source_to_local_bv"]
+        self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
+        self.assertEqual(entry["mode_data"]["second_order"]["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("new local equation-level cofiber", entry["claim_boundary"])
+        self.assertIn(
+            "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+
     def test_transverse_exact_einstein_branch_is_slabwise_only(self) -> None:
         entry = self.entries["classical.nariai.transverse_kantowski_sachs_exact_branch"]
         self.assertEqual(entry["descriptions"]["causal"], "CERTIFIED")

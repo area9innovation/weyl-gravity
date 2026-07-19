@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/candidate13-reduced-source-support-local-upgrade-obstruction-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "dependency_tags", "dependency_refs", "scope", "receiver_audit", "support_obstruction", "category_disposition", "exact_checks", "flags", "claim_boundary", "next_gate", "source_manifest", "verification_commands"],
+  "properties": {
+    "schema": {"const": "pure-weyl-candidate13-reduced-source-support-local-upgrade-obstruction-v1"},
+    "result_id": {"const": "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1"},
+    "result_state": {"const": "SPECIFIED_REDUCED_MODE_RECEIVER_HAS_NO_DIRECT_SUPPORT_LOCAL_DIFFERENTIAL_UPGRADE"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "dependency_refs": {"type": "object", "additionalProperties": false, "required": ["candidate13_derived_source", "support_local_unary_triangle", "finite_generic_zero_block"], "properties": {"candidate13_derived_source": {"$ref": "#/$defs/dependency"}, "support_local_unary_triangle": {"$ref": "#/$defs/dependency"}, "finite_generic_zero_block": {"$ref": "#/$defs/dependency"}}},
+    "scope": {"type": "object", "minProperties": 10},
+    "receiver_audit": {"$ref": "#/$defs/stringMap"},
+    "support_obstruction": {"type": "object", "additionalProperties": false, "required": ["lemma", "temporal_witness", "spatial_witness", "finite_exact_fixture", "conclusion"], "properties": {"lemma": {"type": "string", "minLength": 1}, "temporal_witness": {"type": "string", "minLength": 1}, "spatial_witness": {"type": "string", "minLength": 1}, "finite_exact_fixture": {"type": "object", "minProperties": 6}, "conclusion": {"type": "string", "minLength": 1}}},
+    "category_disposition": {"$ref": "#/$defs/stringMap"},
+    "exact_checks": {"$ref": "#/$defs/trueMap"},
+    "flags": {"type": "object", "additionalProperties": false, "required": ["CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1", "DECLARED_MODE_PROJECTORS_SUPPORT_LOCAL", "DIRECT_REDUCED_RECEIVER_TO_LOCAL_BV_UPGRADE", "CANDIDATE13_CAUSAL_RETARDED_CROSSWALK", "ALTERNATIVE_LOCAL_COFIBER_GLOBALLY_OBSTRUCTED", "ARITY_THREE_AUTHORIZED", "QUANTUM_CLAIM"], "properties": {"CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1": {"const": true}, "DECLARED_MODE_PROJECTORS_SUPPORT_LOCAL": {"const": false}, "DIRECT_REDUCED_RECEIVER_TO_LOCAL_BV_UPGRADE": {"const": false}, "CANDIDATE13_CAUSAL_RETARDED_CROSSWALK": {"const": false}, "ALTERNATIVE_LOCAL_COFIBER_GLOBALLY_OBSTRUCTED": {"const": false}, "ARITY_THREE_AUTHORIZED": {"const": false}, "QUANTUM_CLAIM": {"const": false}}},
+    "claim_boundary": {"type": "object", "additionalProperties": false, "required": ["statement", "not_claimed"], "properties": {"statement": {"type": "string", "minLength": 1}, "not_claimed": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}}},
+    "next_gate": {"const": "NEW_LOCAL_EQUATION_LEVEL_COFIBER_OR_RETAIN_REDUCED_MODE_ONLY"},
+    "source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "dependency": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string", "minLength": 1}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "stringMap": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+    "trueMap": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+  }
+}

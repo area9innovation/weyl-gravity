@@ -52,6 +52,13 @@ def verify() -> None:
         raise AssertionError("Nariai normal-tractor cylinder crosswalk overpromoted")
     if "rank-310" not in nariai_crosswalk["claim_boundary"]:
         raise AssertionError("Nariai replacement carrier boundary missing")
+    candidate13 = by_id["classical.crosswalk.candidate13_reduced_source_to_local_bv"]
+    if candidate13["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 reduced source was promoted causally")
+    if candidate13["descriptions"]["nonlinear"] != "OBSTRUCTED":
+        raise AssertionError("candidate-13 category obstruction missing")
+    if "new local equation-level cofiber" not in candidate13["claim_boundary"]:
+        raise AssertionError("candidate-13 obstruction was overgeneralized")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

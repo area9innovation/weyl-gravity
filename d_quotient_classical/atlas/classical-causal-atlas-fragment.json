@@ -1043,10 +1043,74 @@
         "parity": "all",
         "theory": "free pure-Weyl metric BV complex and normal-adjoint-tractor parent"
       }
+    },
+    {
+      "claim_boundary": "The obstruction applies to direct reuse of the declared global mode projectors and inverses. It does not rule out a new local equation-level cofiber or a larger noncontractible mixed-bundle carrier, and it does not demote the support-local unary relative triangle.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "OBSTRUCTED",
+        "observational": "NOT_APPLICABLE",
+        "quantum": "OPEN",
+        "symplectic": "NO_CERTIFIED_MAP"
+      },
+      "evidence": [
+        {
+          "path": "d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json",
+          "result_id": "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1",
+          "sha256": "de3e5be077ee2c474a5e40e6ec222a128b659f326412ec65050ef574dc8b4eaf"
+        }
+      ],
+      "id": "classical.crosswalk.candidate13_reduced_source_to_local_bv",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The declared Fourier/harmonic receiver and modewise inverses are not support-local causal operators.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "lee_wald": {
+          "statement": "The noncyclic three-form triangle does not supply one transported cyclic pairing on the reduced-source pullback.",
+          "status": "NO_CERTIFIED_MAP"
+        },
+        "resonance": {
+          "statement": "The bounded and smooth coefficientwise receivers remain exact REDUCED-MODE results.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "The bounded finite-quasiperiodic zero locus is exact in mode space.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No causal-retarded derived-source crosswalk is supplied.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The smooth exponential-polynomial zero locus is exact in mode space.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "Direct promotion of the declared reduced receiver is blocked by an exact support-expansion witness.",
+          "status": "OBSTRUCTED"
+        }
+      },
+      "scope": {
+        "background": "candidate-13 compact magnetic Plebanski-Hacyan product",
+        "boundaries": "R_t x closed S1_L x S2 before final residual quotient",
+        "carrier": "finite generic candidate-13 bounded/smooth derived-source receiver -> support-local equation-level BV cofiber",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2",
+        "degree": 2,
+        "ell": "input ell=2; outputs L=0,...,4",
+        "k": "signed n=1,-2 fibres and conjugates",
+        "m": "all allowed m,M",
+        "omega": "zero and eighteen selected finite-frequency receiver components",
+        "parity": "both axial and polar",
+        "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+      }
     }
   ],
   "generated_by": "d_quotient_classical/atlas/generate_classical_atlas_fragment.py",
-  "generated_by_sha256": "5f3445a05997595c72c0100d75f04a68b54add495ab70966e9f849027eac8492",
+  "generated_by_sha256": "42bd982f5de1b7237989dd784b6b4c4626d7ff0c1ca8ee81eef7496d7f7b039a",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

@@ -69,6 +69,7 @@ CERTS = {
     "Bach_rank310_SDR": ROOT / "d_quotient_classical/certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json",
     "Bach_metric_biwave": ROOT / "d_quotient_classical/certificates/BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
     "Bach_rank310_causal": ROOT / "d_quotient_classical/certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json",
+    "candidate13_local_upgrade_obstruction": ROOT / "d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -310,6 +311,18 @@ def entries() -> list[dict[str, Any]]:
         _second(("NO_CERTIFIED_MAP", "No metric crosswalk."), ("NO_CERTIFIED_MAP", "No metric crosswalk."), ("NO_CERTIFIED_MAP", "No metric crosswalk.")),
         _evidence("Bach_parent"),
         "The universal parent theorem must not be promoted to a metric theorem outside the certified conformal Nariai orbit.",
+    ))
+    values.append(_entry(
+        "classical.crosswalk.candidate13_reduced_source_to_local_bv",
+        _scope(NARIAI, theory="Einstein-Maxwell source relative to Weyl-Maxwell target", background="candidate-13 compact magnetic Plebanski-Hacyan product", boundaries="R_t x closed S1_L x S2 before final residual quotient", charge_sector="fixed magnetic U(1) bundle P_N with N=2", carrier="finite generic candidate-13 bounded/smooth derived-source receiver -> support-local equation-level BV cofiber", degree=2, parity="both axial and polar", ell="input ell=2; outputs L=0,...,4", m="all allowed m,M", k="signed n=1,-2 fibres and conjugates", omega="zero and eighteen selected finite-frequency receiver components"),
+        {"causal": "NO_CERTIFIED_MAP", "symplectic": "NO_CERTIFIED_MAP", "nonlinear": "OBSTRUCTED", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+        ("NO_CERTIFIED_MAP", "The declared Fourier/harmonic receiver and modewise inverses are not support-local causal operators."),
+        ("NO_CERTIFIED_MAP", "The noncyclic three-form triangle does not supply one transported cyclic pairing on the reduced-source pullback."),
+        ("OBSTRUCTED", "Direct promotion of the declared reduced receiver is blocked by an exact support-expansion witness."),
+        ("CERTIFIED", "The bounded and smooth coefficientwise receivers remain exact REDUCED-MODE results."),
+        _second(("CERTIFIED", "The bounded finite-quasiperiodic zero locus is exact in mode space."), ("CERTIFIED", "The smooth exponential-polynomial zero locus is exact in mode space."), ("NO_CERTIFIED_MAP", "No causal-retarded derived-source crosswalk is supplied.")),
+        _evidence("candidate13_local_upgrade_obstruction"),
+        "The obstruction applies to direct reuse of the declared global mode projectors and inverses. It does not rule out a new local equation-level cofiber or a larger noncontractible mixed-bundle carrier, and it does not demote the support-local unary relative triangle.",
     ))
     return values
 

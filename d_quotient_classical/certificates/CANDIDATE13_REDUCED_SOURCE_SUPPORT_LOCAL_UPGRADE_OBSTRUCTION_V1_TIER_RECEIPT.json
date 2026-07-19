@@ -1,0 +1,51 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_ids": [
+    "CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1"
+  ],
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json", "sha256": "de3e5be077ee2c474a5e40e6ec222a128b659f326412ec65050ef574dc8b4eaf"},
+    "schema": {"path": "d_quotient_classical/schema/candidate13-reduced-source-support-local-upgrade-obstruction-v1.schema.json", "sha256": "658f90679ce936e18c3affb513f5402c2521f4a9842e8ba2fbfca0d1590c226a"},
+    "producer": {"path": "d_quotient_classical/causal_transfer/candidate13_reduced_source_support_local_upgrade_obstruction.py", "sha256": "0332d3f166600420773a6dfedf040d12c15a2457b3b7b1d2f4bbbbe5b8c368e8"},
+    "verifier": {"path": "d_quotient_classical/causal_transfer/verify_candidate13_reduced_source_support_local_upgrade_obstruction.py", "sha256": "bfa52f4fbb224419db9d585929d8e53a7c3b50de0f9b093acbcb590d76e2b06d"},
+    "tests": {"path": "d_quotient_classical/causal_transfer/tests/test_candidate13_reduced_source_support_local_upgrade_obstruction.py", "sha256": "7ebd7a19ba0d00088595f544731bf658eec15c2d34ccd172705455bca4037601"},
+    "report": {"path": "d_quotient_classical/reports/candidate13-reduced-source-support-local-upgrade-obstruction.md", "sha256": "1b17c56ac1561f4d672fae459d90f9992cd40617d0a736a43fdf6c8b1fcfc02c"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "41099fbf88f1b35bdb98e5a1120fec80bc7315345bc76a679e95f761579e2cf7"}
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 4.12,
+      "peak_rss_kb": 195408,
+      "commands": [
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/candidate13_reduced_source_support_local_upgrade_obstruction.py --check --guards",
+        "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_candidate13_reduced_source_support_local_upgrade_obstruction.py",
+        "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_candidate13_reduced_source_support_local_upgrade_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/candidate13-reduced-source-support-local-upgrade-obstruction-v1.schema.json -d d_quotient_classical/certificates/CANDIDATE13_REDUCED_SOURCE_SUPPORT_LOCAL_UPGRADE_OBSTRUCTION_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.49,
+      "peak_rss_kb": 24940,
+      "commands": [
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py d_quotient_classical/atlas/classical-causal-atlas-fragment.json",
+        "python3 d_quotient_classical/atlas/verify_classical_atlas_fragment.py",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "The scoped producer, independent verifier, strict schema, direct tests and atlas consumer passed. The full repository rail was deferred because this is a category-boundary certificate rather than a theorem freeze or shared-core algebra change, and unrelated Einstein, observer and black-hole work is concurrently dirty."
+    }
+  },
+  "claim_boundary": "This receipt proves only that the already-declared candidate-13 zero- and finite-frequency receiver cannot itself be promoted to a support-local BV or causal differential. The bounded-origin and nontrivial smooth pullbacks remain exact REDUCED-MODE theorems. A new local equation-level cofiber or larger noncontractible mixed-bundle carrier is not ruled out, and no causal, arity-three, particle, observable or quantum claim is promoted."
+}
