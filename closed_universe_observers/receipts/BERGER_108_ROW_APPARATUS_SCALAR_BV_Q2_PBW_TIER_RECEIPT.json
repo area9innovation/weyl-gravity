@@ -1,0 +1,34 @@
+{
+  "schema": "closed-universe-test-tier-receipt-v1",
+  "result_id": "BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW_TIER_RECEIPT",
+  "certificate_result_id": "BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "result_boundary": "Ten exact signed-pairing-isometric copies of the certified scalar Lie-derivative tensor export 240 executable apparatus q2 PBW terms. This certifies only the universal scalar-BV semidirect sector. Rod metric, memory transport, normalized readout, emitter and cotangent q2 sectors, every q3 sector, arity replay, K_Berger equivariance, observer-morphism stability, tangent-cone response, Bridge 3 and quantum claims remain unavailable.",
+  "commands": [
+    {"tier": 0, "command": "python3 -m py_compile on changed Python; python3 -m json.tool on changed structured data; generator --check; git diff --check on explicit observer paths", "elapsed_seconds": "under 1 plus final diff check", "status": "PASS", "scope": "producer, independent verifier, focused test, schema, generated certificate, generated atlas, ledger, lifecycle work item, receipt and canonical observer notes"},
+    {"tier": 1, "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_apparatus_scalar_bv_q2_pbw.py closed_universe_observers/tests/test_observer_atlas_fragment.py closed_universe_observers/tests/test_comparison_ledger.py", "elapsed_seconds": 26.82, "status": "PASS", "scope": "42 exact cloning, block-hash, deletion-mutation, generated-atlas, evidence-hash and fail-closed ledger tests"},
+    {"tier": 1, "command": "python3 -m closed_universe_observers.verify_berger_108_row_apparatus_scalar_bv_q2_pbw; python3 -m closed_universe_observers.atlas.verify_observer_atlas_fragment; python3 -m closed_universe_observers.verify_comparison_ledger", "elapsed_seconds": 3.47, "status": "PASS", "scope": "independent dependency hashes, signed-pairing isometry, generated atlas and comparison-ledger lifecycle"},
+    {"tier": 2, "command": "python3 -m pytest -q closed_universe_observers/tests/test_berger_108_row_component_jet_contract.py closed_universe_observers/tests/test_berger_nonlinear_clock_combined_canonical_map_f2_f3.py d_quotient_classical/backreacted_clock/tests/test_berger_support_local_q2.py", "elapsed_seconds": 95.80, "status": "PASS", "scope": "13 tests for the complete direct dependency chain: 108-row carrier/pairing, combined nonlinear clock chart and authoritative support-local q2 template"}
+  ],
+  "higher_tiers_not_run": {"tier_3": "This is a scoped apparatus interaction subblock on content-addressed inputs, not a freeze, release, shared-core algebra change or paper theorem promotion."},
+  "source_manifest": [
+    {"path": "closed_universe_observers/generate_berger_108_row_apparatus_scalar_bv_q2_pbw.py", "sha256": "510533d7dd39684515813d0889f976f44ff023f77b95c5be03b725a89bdc9cb6"},
+    {"path": "closed_universe_observers/verify_berger_108_row_apparatus_scalar_bv_q2_pbw.py", "sha256": "64f308799dc967ddd8bec2845948e5986321d5cfc1d8399faec9e075a694c637"},
+    {"path": "closed_universe_observers/tests/test_berger_108_row_apparatus_scalar_bv_q2_pbw.py", "sha256": "f52b3c414a317ab5603ef64fda36816b8d797e6c294dbc8c6b6a6e8d094aaf13"},
+    {"path": "closed_universe_observers/schema/berger-108-row-apparatus-scalar-bv-q2-pbw-v1.schema.json", "sha256": "bf931dd26964884994a3f079e56dbea16cf224ec6609f754f665d4f436f5b3c9"},
+    {"path": "closed_universe_observers/reports/berger-108-row-apparatus-scalar-bv-q2-pbw.md", "sha256": "895361b6b60c51b9c9a100420578b1552427bc2ed06b55567ee1194dd5155b07"},
+    {"path": "closed_universe_observers/certificates/BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW.json", "sha256": "8aca7503ca2a03d224a3f953d92a652e57e8cf526507f865d43e5db1f5958f7d"},
+    {"path": "closed_universe_observers/atlas/observer-atlas-fragment.json", "sha256": "eabcef4d6f0a66b9a883268ca0c2fe897e1b838bb1b96210eb12300493a6b804"},
+    {"path": "closed_universe_observers/ledgers/comparison_ledger.json", "sha256": "65e1fbfbba7499768ad94520821feb8abda1c7abd428f271380ea1687de1f98c"},
+    {"path": "planning/work-items/berger-108-row-apparatus-q2-q3-extension.json", "sha256": "21cd2abd3aa30bbdaa4078782fb03956b6584f50208ac957a824d9ce8d1e28ff"}
+  ],
+  "flags": {
+    "APPARATUS_SCALAR_BV_Q2_PBW_EXPORTED": true,
+    "COMPLETE_SCALAR_108_ROW_Q2_EXPORTED": false,
+    "COMPLETE_SCALAR_108_ROW_Q3_EXPORTED": false,
+    "COMPONENT_ARITY_IDENTITIES_CERTIFIED": false,
+    "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": false,
+    "PHYSICAL_BRANCH_BRIDGE_ACTIVATED": false,
+    "QUANTUM_CLAIM": false
+  }
+}

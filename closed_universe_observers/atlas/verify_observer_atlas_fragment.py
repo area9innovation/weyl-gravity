@@ -22,6 +22,7 @@ def main() -> int:
     assert "observer.berger.interaction.pbw_108_nonlinear_clock_second_jet" in ids
     assert "observer.berger.interaction.pbw_108_apparatus_q2_q3_scalarization_obstruction" in ids
     assert "observer.berger.interaction.nonlinear_clock_radial_canonical_map_f2_f3" in ids
+    assert "observer.berger.interaction.apparatus_scalar_bv_q2_pbw" in ids
     crosswalks = [row for row in value["entries"] if row["id"].startswith("observer.crosswalk")]
     assert {row["id"] for row in crosswalks} == {
         "observer.crosswalk.berger_physical_branch_to_detector",

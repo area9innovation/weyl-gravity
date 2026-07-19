@@ -473,17 +473,17 @@ coordinate witness has fixed `F1=id` and hence identical `q1`, while changing
 Weyl/temporal unary blocks therefore cannot substitute for an action-derived
 nonlinear clock chart.
 
-The currently active bridge is the action-normalized same-background
-nonlinear clock canonical map through `F2,F3`, including its signed-pairing
-cotangent lift.  Its activation gate is the exact coordinate-jet
-nonuniqueness witness; its fail-closed atlas row is
-`observer.berger.interaction.pbw_108_apparatus_q2_q3_scalarization_obstruction`
-(`NO_CERTIFIED_MAP` for the scalar interactions, detector response and cone
-restriction).  After the map is serialized, regenerate `q2,q3` rather than
-fitting them to the arity identities, then replay `q1q2`, `q2q2+q1q3`,
-`K_Berger` equivariance and observer-morphism stability.  Physical Bridge 3
-remains inactive and no compact-product mode is identified with a Berger
-mode.
+The currently active bridge is regeneration of the action-normalized
+same-background apparatus/emitter interactions through the certified combined
+nonlinear clock chart.  Its activation gate is the exact combined `F2,F3`
+canonical map and signed-pairing cotangent lift.  Its first fail-closed atlas
+successor is `observer.berger.interaction.apparatus_scalar_bv_q2_pbw`: the
+universal scalar-BV semidirect block is `CERTIFIED`, while complete apparatus
+`q2`, all `q3`, detector response and cone restriction remain
+`NO_CERTIFIED_MAP`.  Regenerate every remaining block rather than fitting it
+to the arity identities, then replay `q1q2`, `q2q2+q1q3`, `K_Berger`
+equivariance and observer-morphism stability.  Physical Bridge 3 remains
+inactive and no compact-product mode is identified with a Berger mode.
 
 The radial subgate is now certified.  From the authoritative relation
 `gHat=(1+R)^2 g` and the linear dressing `g=eta+H-2 R eta`,
@@ -1361,6 +1361,19 @@ scalar `q2,q3`; it does not certify those tensors.  Arity replay,
 `K_Berger` equivariance, observer-morphism stability and
 `O_detector|Z2^C` remain `NO_CERTIFIED_MAP` until the transported interactions
 are exported and checked.
+
+The first regenerated apparatus interaction block is now executable.
+`BERGER_108_ROW_APPARATUS_SCALAR_BV_Q2_PBW` transports the certified
+`Theta,Theta_star` scalar Lie-derivative tensor to each of the six rod and four
+memory/readout scalar pairs by an exact row relabeling that fixes the three
+spatial diffeomorphism ghosts and their cotangents.  The 108-row pairing makes
+each relabeling a signed-pairing isometry, so graded symmetry and lowered
+cyclicity transfer termwise.  Ten independently hashed 24-term blocks give
+240 exact PBW terms, and deletion of one term is detected.  This closes only
+the universal scalar-BV `q2` sector.  Rod metric interaction, memory
+transport, normalized readout, emitter and cotangent `q2` sectors, every
+`q3`, the arity identities, `K_Berger` equivariance, observer-morphism
+stability and `O_detector|Z2^C` remain fail-closed.
 This does not activate the physical-
 branch bridge and does not identify any compact-product mode with a Berger
 apparatus row.

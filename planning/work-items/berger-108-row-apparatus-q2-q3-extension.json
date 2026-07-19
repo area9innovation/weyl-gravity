@@ -4,11 +4,11 @@
   "schema": "work-v0",
   "body": {
     "owner": "observer",
-    "state": "PROPOSED",
+    "state": "ACTIVE",
     "objective": "Export scalar apparatus q2 and q3 on the completed Berger 108-row unary carrier, then test the q1q2 and q2q2+q1q3 arity identities, K_Berger equivariance, and observer-morphism stability.",
     "depends_on": ["BERGER_108_ROW_NONLINEAR_CLOCK_SECOND_JET", "BERGER_84_ROW_APPARATUS_Q2_Q3_K_GATE", "BERGER_AFFINE_K_OBSERVER_MORPHISM"],
     "activates": ["observer detector response restricted to the second-order tangent cone", "same-background nonlinear response-rank replay"],
-    "current_gate": "lift the certified 84-row apparatus q2/q3 tensors into the explicit completed 108-row component/PBW carrier without importing modes across backgrounds or assuming the old affine-K morphism survives the extension",
+    "current_gate": "the universal scalar-BV semidirect apparatus q2 block is exported as ten exact 24-term signed-pairing-isometric PBW blocks; next export the rod metric-interaction, memory transport and normalized readout q2 blocks, then the emitter q2 and every q3 block before replaying arity, K_Berger and observer-morphism identities",
     "stop_condition": "the scalarized apparatus arity identities, K_Berger equivariance and observer-morphism stability pass on the completed carrier, OR an exact first defect is exported with tangent-cone and physical-branch activations false",
     "forbid": "identifying compact-product modes with Berger rows; activating Bridge 3 without a same-background branch dictionary; treating unary nilpotency or the historical 84-row theorem as proof of the new 108-row arity identities; promoting finite-parameter causal, tangent-cone, or quantum claims before their own gates"
   }
