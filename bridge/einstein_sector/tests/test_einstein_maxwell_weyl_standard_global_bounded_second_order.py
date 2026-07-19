@@ -22,7 +22,8 @@ class StandardGlobalBoundedTest(unittest.TestCase):
             self.value["moment_map_intersection"]["complete_bounded_tangent_cone"],
             "Z2_global^bounded={(c,d,W_x,A): c,d,W_x real, A in R^3}",
         )
-        self.assertTrue(self.value["classification"]["universal_b_and_twist_velocity_elimination_on_complete_finite_carrier"])
+        self.assertTrue(self.value["classification"]["universal_b_twist_velocity_and_Qe_a_elimination_on_complete_finite_carrier"])
+        self.assertIn("Q_e*a=0", self.value["universal_complete_carrier_corollary"]["statement"])
 
     def test_fail_closed_remaining_scopes(self) -> None:
         self.assertFalse(self.value["classification"]["complete_finite_bounded_common_zero_locus_solved"])

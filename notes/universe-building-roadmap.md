@@ -1157,13 +1157,25 @@ Z2_global^bounded={(c,d,W_x,A): c,d,W_x real, A in R^3}.
 ```
 
 This surviving standard-global source has a time-independent correction.
-The two leading eliminations are also universal in the complete finite
-carrier: bounded oscillator products cannot cancel either zero-frequency
-`t^2` block, so every full bounded candidate already satisfies `b=B=0`.
+The polynomial eliminations are also universal in the complete finite
+carrier: bounded oscillator products cannot cancel the zero-frequency
+`b^2*t^2`, `STF(B tensor B)*t^2`, or `Q_e*a*t` coefficients, so every full
+bounded candidate already satisfies `b=B=0` and `Q_e*a=0`.
 Atlas row `einstein.ph.wm.standard.global_bounded_cone` records the scoped
-theorem.  The active polynomial gate is now the residual `a,d,Q_e` times
-finite oscillatory carrier, followed by its intersection with the shell
-functionals `R_(j,a)`.
+theorem.
+
+The electric and Wilson oscillator columns are now closed on the complete
+certified nonzero-frequency inventory.  Electromagnetic duality supplies the
+bounded fixed-bundle mixed correction
+`f_cross=star_bar f+(D_g star)[h]F_bar` for every generic or exceptional
+`q/p` oscillator, at every allowed compact momentum; the flat `W_x` tangent
+has zero mixed source.  This gives atlas row
+`einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport`.
+It does not remove the independent global condition `Q_e*a=0`.  The active
+polynomial gate is now `a,c,d` times the finite oscillatory carrier, followed
+by constant-twist and oscillator shell functionals `R_(j,a)`.  Radius `c`
+remains explicit because its exact-family transport can be secular at
+nonzero momentum and therefore is not automatically bounded.
 
 This advances nonlinear input to the already activated compact-product
 linear bridge but does not certify a nonlinear relative morphism.  Atlas row

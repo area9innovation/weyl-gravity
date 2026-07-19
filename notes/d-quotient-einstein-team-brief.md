@@ -2269,13 +2269,39 @@ Thus `P=0` is exactly `b=B=0, Q_e*a=0`.  Intersecting with the five moment
 maps forces `a=Q_e=0`, and the complete bounded cone in this carrier is
 `(c,d,W_x,A)`.  Its correction is bounded: the homogeneous source vanishes,
 and constant `A` uses the certified time-independent polar `L=2` correction.
-Moreover `b=B=0` is universal for every complete finite-support bounded
-candidate because no bounded oscillator product occupies either leading
-zero-frequency polynomial block.  The fail-closed atlas row is
+Moreover `b=B=0` and `Q_e*a=0` are universal for every complete
+finite-support bounded candidate because no bounded oscillator product can
+occupy those zero-frequency polynomial coefficients.  The fail-closed atlas row is
 `einstein.ph.wm.standard.global_bounded_cone`.  The active next gate is the
-residual `a,d,Q_e` times arbitrary finite `q/p` oscillator polynomial map;
-only after that elimination should its zero locus be intersected with the
-shell-resonance ledger `R_(j,a)`.
+residual global-times-oscillator map.
+
+That gate has now been reduced further by a complete transport theorem.
+Electromagnetic duality transports every certified nonzero-frequency
+standard `q`-primary and extra `p`-primary mode, including exceptional
+`ell=1`, both parities, all `m`, and every allowed compact momentum.  The
+mixed correction is
+
+```text
+h_cross=0,
+f_cross=star_bar f+(D_g star)[h]F_bar.
+```
+
+It has the same bounded quasiperiodic time dependence as the oscillator and
+zero `S2` period, hence lifts on the fixed magnetic bundle.  Thus every
+`Q_e`-times-oscillator source is a bounded linear image.  The flat Wilson
+direction has `delta F=0`, so every `W_x` mixed source vanishes.  Atlas row
+`einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport`
+records these claims with causal transport still `NO_CERTIFIED_MAP`.
+
+The active bounded polynomial gate is therefore exactly `a,c,d` crossed
+with the finite oscillator inventory.  The inclusion of `c` is deliberate:
+the certified radius transport is bounded at `k=0`, but at nonzero momentum
+differentiating the dispersion can produce a secular
+`t*exp(-i*omega*t)` correction and cannot be imported into the bounded class.
+After the `a,c,d` polynomial zero locus is known, it must be intersected with
+constant-twist and oscillator shell functionals `R_(j,a)`.  This nonlinear
+transport result is input to active Bridge 1; it does not promote the linear
+relative triangle to a nonlinear morphism.
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

@@ -90,7 +90,17 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("{(c,d,W_x,A)}", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("a,d,Q_e times oscillatory modes", entry["claim_boundary"])
+        self.assertIn("a,c,d times oscillatory modes", entry["claim_boundary"])
+        self.assertIn("Q_e*a=0", entry["claim_boundary"])
+
+    def test_complete_electric_wilson_transport_is_bounded_but_not_causal(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport"]
+        second_order = entry["mode_data"]["second_order"]
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("Q_e*a=0", entry["claim_boundary"])
+        self.assertIn("a,c,d polynomial maps", entry["claim_boundary"])
 
 
 if __name__ == "__main__":

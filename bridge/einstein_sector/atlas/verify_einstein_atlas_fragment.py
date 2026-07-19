@@ -131,8 +131,19 @@ def verify() -> None:
         raise AssertionError("standard global bounded cone was lost")
     if global_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
         raise AssertionError("standard global causal lifecycle was over-promoted")
-    if "a,d,Q_e times oscillatory modes" not in standard_global["claim_boundary"]:
+    if "a,c,d times oscillatory modes" not in standard_global["claim_boundary"]:
         raise AssertionError("remaining polynomial gate was hidden")
+    if "Q_e*a=0" not in standard_global["claim_boundary"]:
+        raise AssertionError("universal electric-radion polynomial condition was hidden")
+
+    electric_wilson = by_id["einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport"]
+    transport_second_order = electric_wilson["mode_data"]["second_order"]
+    if transport_second_order["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("complete electric/Wilson bounded transport was lost")
+    if transport_second_order["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("electric/Wilson causal lifecycle was over-promoted")
+    if "a,c,d polynomial maps" not in electric_wilson["claim_boundary"]:
+        raise AssertionError("remaining transport gate was hidden")
 
     crosswalk = by_id["einstein.crosswalk.compact_product_to_asymptotic_or_vacuum_cylinder"]
     if crosswalk["evidence"] or set(crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:

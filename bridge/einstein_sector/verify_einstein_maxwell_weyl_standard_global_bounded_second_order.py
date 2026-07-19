@@ -59,7 +59,8 @@ def main() -> None:
     assert classes["BOUNDED_OR_FINITE_QUASIPERIODIC"]["status"] == "CERTIFIED"
     assert classes["CAUSAL_RETARDED"]["status"] == "NO_CERTIFIED_MAP"
     classification = value["classification"]
-    assert classification["universal_b_and_twist_velocity_elimination_on_complete_finite_carrier"] is True
+    assert classification["universal_b_twist_velocity_and_Qe_a_elimination_on_complete_finite_carrier"] is True
+    assert "Q_e*a=0" in value["universal_complete_carrier_corollary"]["statement"]
     assert classification["complete_finite_bounded_common_zero_locus_solved"] is False
 
 

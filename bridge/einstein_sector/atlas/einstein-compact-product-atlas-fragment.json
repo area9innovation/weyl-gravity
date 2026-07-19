@@ -645,7 +645,7 @@
       }
     },
     {
-      "claim_boundary": "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 in every finite-support bounded candidate, but a,d,Q_e times oscillatory modes, shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
+      "claim_boundary": "This is the complete bounded second-order theorem only for the standard generalized-zero carrier. Universally it forces b=B=0 and Q_e*a=0 in every finite-support bounded candidate, but a,c,d times oscillatory modes, constant-A shell resonances, infinite sums, causal propagation, final residual states, observables and quantum transfer remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
         "nonlinear": "CERTIFIED",
@@ -657,7 +657,7 @@
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
-          "sha256": "8d36197f365abf1fb5d923e15a5a5589da0f4881ebb9acc0d66cf688df2194b4"
+          "sha256": "b54c17cce8a0e219b0158a13a7a810fa2fa9230f6a5052ffe7cd601c7d769fb7"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_standard_harmonic_symplectic_inclusion.json",
@@ -721,6 +721,80 @@
         "omega": "generalized zero only",
         "parity": "homogeneous and axial ell=1 inputs; homogeneous, axial ell=1 and polar ell=2 outputs kept distinct",
         "theory": "Weyl-Maxwell target restricted to the standard Einstein-Maxwell generalized-zero image"
+      }
+    },
+    {
+      "claim_boundary": "This removes Q_e and W_x only from oscillator cross columns. The independent global condition Q_e*a=0, the a,c,d polynomial maps, constant-A resonance, full bounded cone, all-orders duality and residual/observational/quantum maps remain fail-closed.",
+      "descriptions": {
+        "causal": "NO_CERTIFIED_MAP",
+        "nonlinear": "CERTIFIED",
+        "observational": "OPEN",
+        "quantum": "OPEN",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELECTRIC_WILSON_COMPLETE_OSCILLATOR_TRANSPORT",
+          "sha256": "3c59735a377d4b1329413f1e15625e38e7547ae5c4156a0e1b4d2053a4af8e8c"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_FINITE_HARMONIC_SMOOTH_GLOBAL_SECOND_ORDER",
+          "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
+          "sha256": "b54c17cce8a0e219b0158a13a7a810fa2fa9230f6a5052ffe7cd601c7d769fb7"
+        }
+      ],
+      "id": "einstein.ph.wm.interaction.electric_wilson_complete_oscillator_transport",
+      "mode_data": {
+        "dispersion": {
+          "statement": "The carrier is the complete certified nonzero-frequency q/p inventory; duality preserves k, ell and omega while it may exchange parity representatives.",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "All imported oscillator blocks have certified compact Lee-Wald forms before final residual descent.",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "Q_e-times-oscillator sources are bounded linear images and W_x-times-oscillator sources vanish, so these columns have zero P_(j,r) and R_(j,a) components.",
+          "status": "CERTIFIED"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "Electromagnetic duality supplies f_cross=star_bar f+(D_g star)[h]F_bar with unchanged frequency; the fixed-bundle lift is exact for ell>=1. W_x needs zero correction.",
+            "status": "CERTIFIED"
+          },
+          "causal_retarded": {
+            "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
+            "status": "NO_CERTIFIED_MAP"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "The bounded correction is contained in the smooth exponential-polynomial class.",
+            "status": "CERTIFIED"
+          }
+        },
+        "taub_maps": {
+          "statement": "This transport theorem does not solve the simultaneous stabilizer moment-map equations for the full carrier.",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compactified magnetically supported Plebanski-Hacyan R_t x S1_L x S2 fixture",
+        "boundaries": "closed Cauchy slice S1_L x S2; no asymptotic boundary; before final residual SO(4,2) quotient",
+        "carrier": "Q_e or W_x crossed with every certified nonzero-frequency standard q-primary or extra p-primary compact oscillator",
+        "charge_sector": "fixed magnetic U(1) bundle P_N with N=2; electric tangent allowed unless narrowed",
+        "degree": 2,
+        "ell": "exceptional ell=1 and generic ell>=2",
+        "k": "every 2*pi*n/L",
+        "m": "all allowed m",
+        "omega": "every certified nonzero real q/p shell frequency",
+        "parity": "both parities; Hodge duality may exchange representatives",
+        "theory": "Weyl-Maxwell target"
       }
     },
     {
@@ -1302,7 +1376,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "d5ad9f299e07bfbe9b2f17f8ff7084c0a66810d25b0b64c0a677538f80b23b14",
+  "generated_by_sha256": "4911f95dfb5759df7c17a64174bd45e040df7ded1edfbfc17235b02bd72a1ec3",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

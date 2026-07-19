@@ -1,0 +1,137 @@
+{
+  "Wilson_proof": {
+    "correction": "zero",
+    "field_equation_dependence": "the classical action and Euler-Lagrange operators depend on the U1 connection only through F=dA",
+    "mixed_source": "D^2 E_barPhi[W_x,(h,f)]=0 for every oscillator",
+    "tangent": "delta A=W_x dx with delta F=0"
+  },
+  "bounded_ledger_consequence": {
+    "Wilson_column": "every W_x-times-oscillator source vanishes identically",
+    "electric_column": "every Q_e-times-oscillator source is in the image of L on the bounded finite-quasiperiodic correction class, so all of its P_(j,r) and R_(j,a) components vanish",
+    "independent_global_condition": "the zero-frequency global self coefficient still requires Q_e*a=0",
+    "remaining_polynomial_gate": "after b=B=0 and Q_e*a=0, only a,c,d crossed with oscillators can contribute new positive-degree P_(j,r) components",
+    "remaining_resonance_gate": "constant twist position A and the remaining bounded oscillator products can still contribute R_(j,a)"
+  },
+  "claim_boundary": "This is a second-order mixed transport theorem for certified nonzero-frequency compact modes. It does not extend the pure Q_e direction to an all-orders fixed-bundle duality orbit, classify a,c,d or constant-A interactions, solve the complete bounded cone, construct a causal map, descend residual states, or make observational, particle or quantum claims.",
+  "classification": {
+    "Q_e_times_every_oscillator_bounded_removable": true,
+    "W_x_times_every_oscillator_source_zero": true,
+    "all_orders_fixed_bundle_duality_orbit": false,
+    "causal_or_quantum_claim": false,
+    "complete_certified_nonzero_frequency_inventory_covered": true,
+    "fixed_bundle_mixed_correction_admissible": true,
+    "full_bounded_cone_solved": false
+  },
+  "complete_oscillator_inventory": {
+    "exceptional": "all ell=1 standard and extra axial/polar oscillators at every compact momentum",
+    "excluded": "homogeneous and twist generalized-zero blocks, which are not oscillators",
+    "finite_sums": "the bilinear transport extends coefficientwise to arbitrary real finite harmonic sums",
+    "generic": "all ell>=2 axial/polar Einstein q-primary and extra p-primary modes"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_SECULAR": {
+      "reason": "the bounded correction lies in the smooth exponential-polynomial class",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "duality_proof": {
+    "Lorentzian_Hodge_identity": "star_g^2=-1 on two-forms",
+    "Maxwell_doublet": "(dF_theta,d star_g F_theta) is the SO(2) rotation of (dF,d star_g F)",
+    "Weyl_Maxwell_identity": "the Bach tensor is unchanged because the metric is unchanged",
+    "background_tangent": "partial_theta F_theta at theta=0 is star_bar F_bar=dt wedge dx, the declared Q_e tangent up to orientation",
+    "boundedness": "f_cross has the same finite nonzero-frequency time dependence as (h,f), with no secular derivative because duality leaves the metric and dispersion fixed",
+    "direct_fixture": "the ell=2,k=0 extra-primary block was independently checked coefficientwise",
+    "fixed_bundle": "f_cross is closed and has zero S2 period for ell>=1; hence it is exact on R times S1 times S2 and lifts to a global connection-difference correction",
+    "mixed_equation": "L_barPhi(0,f_cross)+(D^2 E_barPhi)[Q_e,(h,f)]=0",
+    "mixed_field_strength_correction": "f_cross=star_bar f+(D_g star)[h]F_bar",
+    "mixed_metric_correction": "h_cross=0",
+    "rotation": "F_theta=cos(theta)F+sin(theta)star_g F",
+    "stress_identity": "T_ab[F_theta]=T_ab[F]",
+    "symbolic_SO2_audit": true,
+    "transported_Jacobi_field": "(h,f) maps to (h,cos(theta)f+sin(theta)(star_g f plus the metric variation of star acting on F))"
+  },
+  "interpretation": "Electric variation is not an independent bounded resonance column against radiative modes: electromagnetic duality transports every certified oscillator and supplies a bounded fixed-bundle mixed correction. Flat Wilson data are invisible to the local equations. This removes Q_e and W_x from the oscillator part of the bounded ledger without removing the separate global condition Q_e*a=0.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute the a,c,d oscillator polynomial maps, then solve the surviving constant-A and oscillator shell-resonance equations",
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.py",
+    "generator_sha256": "805b30a3f0be0784fbb6401c38bbe58d785b761e83a51ee1c1dea2bdbaeee957",
+    "inputs": {
+      "background": {
+        "path": "bridge/certificates/einstein_maxwell_product_incidence.json",
+        "sha256": "6493a2ce5a392939468dee9070df7d0e57d73459d6142af243b0628021fdb8b8"
+      },
+      "bounded_global_gate": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "b54c17cce8a0e219b0158a13a7a810fa2fa9230f6a5052ffe7cd601c7d769fb7"
+      },
+      "complete_inventory": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json",
+        "sha256": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885"
+      },
+      "ell2_direct_fixture": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_duality_ell2_extra_resonance.json",
+        "sha256": "ae06400d50570b038cfb0feb112b15dd9da6f913269a284a833f12c043099219"
+      },
+      "global_block": {
+        "path": "bridge/certificates/einstein_maxwell_exceptional_global_symplectic.json",
+        "sha256": "ee677574b8295169ebb89360fe4ac03ab58f0d7a8273ab395e0087ee0d50ef18"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELECTRIC_WILSON_COMPLETE_OSCILLATOR_TRANSPORT",
+  "result_state": "COMPLETE_OSCILLATORY_QE_AND_WILSON_BOUNDED_TRANSPORT_CERTIFIED",
+  "schema": "einstein-maxwell-weyl-electric-wilson-complete-oscillator-transport-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.schema.json",
+  "schema_sha256": "9cf7314fbdd4a5d71e4d444c553e8950f631d73b1378a48321d28a02c6f0154c",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction",
+    "carrier": "Q_e or W_x crossed bilinearly with every certified nonzero-frequency standard q-primary or extra p-primary oscillator",
+    "charge_sector": "fixed N=2 magnetic bundle with first-order electric tangent Q_e",
+    "degree": 2,
+    "ell": "generic ell>=2 and exceptional ell=1",
+    "k": "every allowed compact momentum 2*pi*n/L",
+    "m": "all allowed m",
+    "omega": "every certified nonzero real q/p shell frequency",
+    "parity": "both parities, allowing Hodge duality to exchange their representatives",
+    "theory": "Weyl-Maxwell"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "elapsed_seconds": 0.2,
+      "max_rss_kb": 16184,
+      "status": "PASS"
+    },
+    "tier_1": {
+      "elapsed_seconds": 1.9,
+      "max_rss_kb": 59624,
+      "status": "PASS",
+      "tests_run": 8
+    },
+    "tier_2": {
+      "criterion": "the complete oscillator inventory and direct ell=2 duality fixture are unchanged exact inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "a,c,d, constant-A, complete bounded, causal, residual and quantum gates remain excluded",
+      "status": "NOT_RUN"
+    }
+  }
+}

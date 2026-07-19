@@ -190,9 +190,9 @@ def build() -> dict[str, Any]:
         },
         "polynomial_growth_ideal": polynomial,
         "universal_complete_carrier_corollary": {
-            "statement": "for any complete finite-support input admitting a bounded second-order correction, b=0 and B=0",
-            "reason": "oscillator products are bounded; homogeneous-twist cross terms lie in L=1; therefore neither the homogeneous L=0 b^2*t^2 coefficient nor the twist L=2 STF(B tensor B)*t^2 coefficient can be canceled by any other certified input block",
-            "remaining_full_carrier_polynomial_gate": "classify a,d,Q_e crossed with the finite oscillatory carrier; c,W_x and constant A are certified spectator/modulus directions",
+            "statement": "for any complete finite-support input admitting a bounded second-order correction, b=0, B=0 and Q_e*a=0",
+            "reason": "oscillator products are bounded; homogeneous-twist cross terms lie in L=1; therefore neither the homogeneous L=0 b^2*t^2 coefficient, the twist L=2 STF(B tensor B)*t^2 coefficient, nor the zero-frequency Maxwell Q_e*a*t coefficient can be canceled by another certified input block",
+            "remaining_full_carrier_polynomial_gate": "classify a,c,d crossed with the finite oscillatory carrier; Q_e-times-oscillator transport and W_x are treated separately, while constant A can still enter the bounded shell-resonance ledger",
         },
         "moment_map_intersection": {
             "after_polynomial_elimination": "mu_H=-(a^2+Q_e^2), mu_Px=0, mu_J=0",
@@ -213,15 +213,15 @@ def build() -> dict[str, Any]:
         "classification": {
             "complete_standard_generalized_zero_polynomial_ideal_classified": True,
             "complete_standard_generalized_zero_bounded_cone_classified": True,
-            "universal_b_and_twist_velocity_elimination_on_complete_finite_carrier": True,
+            "universal_b_twist_velocity_and_Qe_a_elimination_on_complete_finite_carrier": True,
             "oscillatory_cross_polynomial_ideal_classified": False,
             "complete_finite_bounded_common_zero_locus_solved": False,
             "all_orders_integrability": False,
             "causal_retarded_map_certified": False,
         },
-        "interpretation": "Bounded second-order consistency does not remove all global data. It removes the homogeneous cubic Jordan velocity b and every twist velocity B, and the Taub equation then removes a and Q_e in the pure global sector. Static circumference, linear circle shear d, Wilson holonomy and constant SO3 twist survive with a bounded correction. In the full finite carrier, b=B=0 is already universal; only the residual a,d,Q_e times oscillator polynomial ideal and the bounded shell resonances remain.",
-        "next_gate": "compute the residual a,d,Q_e times arbitrary q/p oscillator polynomial maps after the universal b=B=0 elimination, then intersect their zero locus with the finite shell-resonance ledger R_(j,a)",
-        "claim_boundary": "This is the complete bounded second-order theorem for the standard generalized-zero carrier and a universal b=B=0 consequence for arbitrary finite inputs. It does not classify cancellations involving a,d,Q_e and oscillatory modes, solve the full bounded finite-support cone, prove causal propagation, all-orders integration, final residual descent, observables, particles or quantum theory.",
+        "interpretation": "Bounded second-order consistency does not remove all global data. It removes the homogeneous cubic Jordan velocity b and every twist velocity B, and the Taub equation then removes a and Q_e in the pure global sector. Static circumference, linear circle shear d, Wilson holonomy and constant SO3 twist survive with a bounded correction. In the full finite carrier, b=B=0 and Q_e*a=0 are already universal; the remaining positive-degree problem contains a,c,d times oscillators, while constant A can still enter bounded shell resonances.",
+        "next_gate": "remove the universal Q_e-times-oscillator and W_x columns, then compute the residual a,c,d times arbitrary q/p oscillator polynomial maps and intersect their zero locus with the finite shell-resonance ledger R_(j,a)",
+        "claim_boundary": "This is the complete bounded second-order theorem for the standard generalized-zero carrier and a universal b=B=0, Q_e*a=0 consequence for arbitrary finite inputs. It does not classify a,c,d crossed with oscillatory modes or constant-A shell resonances, solve the full bounded finite-support cone, prove causal propagation, all-orders integration, final residual descent, observables, particles or quantum theory.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": _sha256(Path(__file__)),
@@ -235,7 +235,7 @@ def build() -> dict[str, Any]:
             "tier_0": {"status": "PASS", "elapsed_seconds": 0.12, "max_rss_kb": 16228},
             "tier_1": {"status": "PASS", "elapsed_seconds": 1.36, "max_rss_kb": 58756, "tests_run": 15},
             "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "all direct four-dimensional source and current inputs are unchanged exact certificates"},
-            "tier_3": {"status": "NOT_RUN", "reason": "oscillatory cross-polynomial, complete bounded, causal, all-orders, residual and quantum gates remain excluded"},
+            "tier_3": {"status": "NOT_RUN", "reason": "a,c,d oscillator cross-polynomials, constant-A resonance, complete bounded, causal, all-orders, residual and quantum gates remain excluded"},
         },
         "verification_commands": [
             "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_standard_global_bounded_second_order --check",

@@ -18,11 +18,13 @@ The surviving source has a bounded correction.  The homogeneous `c,d,W_x`
 source vanishes, while constant `A` is the tangent to the exact lifted
 mapping-torus family and has the certified constant polar `L=2` correction.
 
-The leading elimination is also universal in the complete finite-support
+The polynomial elimination is also universal in the complete finite-support
 carrier: bounded oscillatory products cannot cancel the zero-frequency
-homogeneous `b^2 t^2` or twist `STF(B tensor B)t^2` blocks.  Thus every point
-of the still-open complete bounded cone already satisfies `b=B=0`.  The next
-gate is the residual `a,d,Q_e` times oscillator polynomial ideal, followed by
+homogeneous `b^2 t^2`, twist `STF(B tensor B)t^2`, or Maxwell `Q_e*a*t`
+blocks.  Thus every point of the still-open complete bounded cone already
+satisfies `b=B=0` and `Q_e*a=0`.  The next gate is the residual `a,c,d` times
+oscillator polynomial ideal.  Electric-duality transport and flat Wilson
+data are treated separately, while constant twist position can still enter
 the shell-resonance ledger.
 
 No complete finite-support bounded, causal, all-orders, residual,

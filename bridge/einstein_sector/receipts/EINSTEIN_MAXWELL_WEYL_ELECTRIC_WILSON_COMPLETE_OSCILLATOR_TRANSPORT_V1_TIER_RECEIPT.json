@@ -1,0 +1,74 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELECTRIC_WILSON_COMPLETE_OSCILLATOR_TRANSPORT_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELECTRIC_WILSON_COMPLETE_OSCILLATOR_TRANSPORT",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "artifacts": {
+    "generator": {
+      "path": "bridge/einstein_sector/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.py",
+      "sha256": "805b30a3f0be0784fbb6401c38bbe58d785b761e83a51ee1c1dea2bdbaeee957"
+    },
+    "certificate": {
+      "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+      "sha256": "3c59735a377d4b1329413f1e15625e38e7547ae5c4156a0e1b4d2053a4af8e8c"
+    },
+    "schema": {
+      "path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.schema.json",
+      "sha256": "9cf7314fbdd4a5d71e4d444c553e8950f631d73b1378a48321d28a02c6f0154c"
+    },
+    "independent_verifier": {
+      "path": "bridge/einstein_sector/verify_einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.py",
+      "sha256": "1f66605c843556181b9d9bdbcc9bea7f5a7c9033d1eea7957ed9910a10fe3b40"
+    },
+    "tests": {
+      "path": "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.py",
+      "sha256": "2c5868f5af5bfc8fa23b98fd9fe9e1685764316bc93863e1a922ca825815d7f5"
+    },
+    "atlas_generator": {
+      "path": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
+      "sha256": "4911f95dfb5759df7c17a64174bd45e040df7ded1edfbfc17235b02bd72a1ec3"
+    },
+    "atlas_fragment": {
+      "path": "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+      "sha256": "0c9d0cadc70e06a90cc9fff267cc3b3c5c583e81b94a934aac9c6c3e5d31eafc"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.20,
+      "max_rss_kb": 16184,
+      "commands": [
+        "python3 -m py_compile <scoped theorem, verifier, tests and atlas generator>",
+        "python3 -m json.tool <scoped schema, certificate, atlas fragment and receipt>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.90,
+      "max_rss_kb": 59624,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ],
+      "tests_run": 16
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "criterion": "the complete oscillator inventory, action/background incidence, global electric/Wilson normalization and direct ell=2 duality fixture are unchanged exact inputs"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "a,c,d polynomial maps, constant-A resonance, complete bounded, causal, all-orders, residual, observational and quantum gates remain excluded"
+    }
+  }
+}
