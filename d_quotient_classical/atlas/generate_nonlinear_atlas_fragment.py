@@ -48,6 +48,7 @@ CERTS = {
     "relative_polarized_noether_current_seed": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
     "relative_hessian_green_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
     "relative_five_stabilizer_current_cone": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
+    "relative_green_lee_wald_improvement": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json",
     "identity_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
     "generic_cyclic_map_inertia_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_GENERIC_CYCLIC_MAP_INERTIA_OBSTRUCTION_V1.json",
 }
@@ -391,6 +392,8 @@ def entries() -> list[dict[str, Any]]:
     relative_green_cone_scope = relative_green_cone["scope"]
     relative_five_current_cone = json.loads(CERTS["relative_five_stabilizer_current_cone"].read_text())
     relative_five_current_cone_scope = relative_five_current_cone["scope"]
+    relative_current_improvement = json.loads(CERTS["relative_green_lee_wald_improvement"].read_text())
+    relative_current_improvement_scope = relative_current_improvement["scope"]
     identity_cyclic_scope = json.loads(CERTS["identity_cyclic_obstruction"].read_text())["scope"]
     return [
         {
@@ -799,6 +802,24 @@ def entries() -> list[dict[str, Any]]:
             ),
             "evidence": _evidence("relative_five_stabilizer_current_cone", "relative_hessian_green_current_cone", "relative_polarized_noether_current_seed", "relative_complete_standard_charge_q2"),
             "claim_boundary": "All five connected product stabilizers now have exact bundle-covariant polarized local currents with zero coefficient-jet divergence defect. The canonical Green representatives have not yet been related to the Lee-Wald representatives by explicit horizontal improvements, cyclic BV-dual rows are absent, and the complete Cauchy charge replay, repaired f2, arity three, causal, observational, particle and quantum claims remain OPEN or NO_CERTIFIED_MAP.",
+        },
+        {
+            "id": "nonlinear.product.bridge2.relative_green_lee_wald_horizontal_improvement",
+            "scope": relative_current_improvement_scope,
+            "descriptions": {"causal": "OPEN", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NO_CERTIFIED_MAP", "quantum": "NO_CERTIFIED_MAP"},
+            "mode_data": _mode_data(
+                _second(
+                    ("OPEN", "The local current representatives agree up to an exact improvement, but the cyclic BV receiver and bounded f2 remain open."),
+                    ("OPEN", "The horizontal improvement does not construct a smooth-secular correction."),
+                    ("OPEN", "The finite-order improvement is support local, but no retarded relative f2 or current-cone Green enlargement is certified."),
+                ),
+                dispersion=("NOT_APPLICABLE", "This is a local variational-current comparison, not a mode dispersion theorem."),
+                pairing=("CERTIFIED", "The action-derived Lee-Wald and Hessian Green representatives differ by the exported exact antisymmetric horizontal superpotential."),
+                taub=("OPEN", "The superpotential is exact locally; its global Cauchy-slice boundary contribution and the five reduced charges remain to be replayed."),
+                resonance=("OPEN", "The local improvement closes the current-representative ambiguity but does not decide the f2 obstruction or arity three."),
+            ),
+            "evidence": _evidence("relative_green_lee_wald_improvement", "relative_five_stabilizer_current_cone", "relative_hessian_green_current_cone", "relative_polarized_noether_current_seed"),
+            "claim_boundary": "The exact 2,478-term support-local superpotential proves equality of the canonical Green and action Lee-Wald current representatives up to a horizontal divergence on the standard product-coordinate atlas. Cyclic BV-dual rows, global chart/slice cancellation, the complete five-charge Cauchy replay, repaired f2, arity three, causal, observational, particle and quantum claims remain OPEN or NO_CERTIFIED_MAP.",
         },
         {
             "id": "nonlinear.product.bridge1.generic_standard_pairing_cyclic_map_inertia_obstruction",

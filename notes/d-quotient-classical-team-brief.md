@@ -495,11 +495,27 @@ H=\partial_t,\quad P_x=\partial_x,\quad J_1,J_2,J_3\in\mathfrak{so}(3)
 using the tensor Lie derivative and the fixed-bundle Maxwell Cartan lift.
 All five vectors preserve the product metric and magnetic two-form.  Every
 polarized current is symmetric, and every complete coefficient-jet divergence
-equals its action-Euler source with zero defect.  The remaining local gate is
-now only the horizontal-improvement comparison between these canonical Green
-representatives and the exported Lee--Wald representatives; after that come
-the cyclic BV-dual rows and the five Cauchy-charge replay.  No \(f_2\) repair
-or arity-three promotion follows yet.
+equals its action-Euler source with zero defect.
+
+`EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1` now closes the local
+representative comparison.  A sparse first-field-jet derivation reconstructs
+the action Lee--Wald current and independently reconstructs the symbolic
+coordinate-density Hessian whose ordered Green current agrees exactly with
+the frozen PBW table.  Their nonzero difference is horizontally closed, and
+an exact rational solve in the seven-function Laurent--trigonometric product
+basis exports
+
+\[
+\omega_{\rm LW}^{\mu}-\omega_G^{\mu}
+=\partial_\nu U^{\mu\nu},
+\qquad U^{\mu\nu}=-U^{\nu\mu},
+\]
+
+with 2,478 finite-order PBW terms and zero symbolic replay defect.  An
+independent coordinate-curvature-momentum fixture also matches the sparse
+Lee--Wald coefficient.  The next gate is the cyclic BV-dual completion and
+the global chart/Cauchy-slice cancellation needed to replay all five reduced
+charges.  No \(f_2\) repair or arity-three promotion follows yet.
 
 The transverse replay now has an associative coefficient-jet PBW algebra,
 independently matched to direct symbolic differential-operator composition.

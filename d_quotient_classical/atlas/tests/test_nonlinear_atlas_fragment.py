@@ -253,6 +253,15 @@ class NonlinearAtlasFragmentTests(unittest.TestCase):
         self.assertIn("horizontal improvements", entry["claim_boundary"])
         self.assertIn("remain OPEN", entry["claim_boundary"])
 
+    def test_green_lee_wald_improvement_is_exact_but_not_a_global_charge_replay(self):
+        entry = next(item for item in atlas.build()["entries"] if "relative_green_lee_wald_horizontal_improvement" in item["id"])
+        self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["causal"], "OPEN")
+        self.assertEqual(entry["mode_data"]["lee_wald"]["status"], "CERTIFIED")
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("2,478-term", entry["claim_boundary"])
+        self.assertIn("global chart/slice cancellation", entry["claim_boundary"])
+
     def test_generic_standard_pairing_cyclic_obstruction_is_scoped(self):
         entry = next(item for item in atlas.build()["entries"] if "generic_standard_pairing_cyclic_map_inertia_obstruction" in item["id"])
         self.assertEqual(entry["descriptions"]["symplectic"], "OBSTRUCTED")

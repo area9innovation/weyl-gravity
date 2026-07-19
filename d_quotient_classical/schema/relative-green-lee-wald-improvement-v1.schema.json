@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "construction", "classification", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-green-lee-wald-improvement-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1"},
+    "result_state": {"const": "EXPLICIT_HORIZONTAL_IMPROVEMENT_CERTIFIED"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {"type": "object"},
+    "dependencies": {"type": "object"},
+    "construction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lee_wald_current", "green_current", "difference_identity", "improvement_identity", "coefficient_basis", "solver", "generated_table", "lee_wald_component_term_counts", "green_component_term_counts", "difference_component_term_counts", "improvement_component_term_counts", "improvement_total_term_count", "maximum_difference_order"],
+      "properties": {
+        "lee_wald_current": {"type": "string"},
+        "green_current": {"type": "string"},
+        "difference_identity": {"type": "string"},
+        "improvement_identity": {"type": "string"},
+        "coefficient_basis": {"type": "string"},
+        "solver": {"type": "string"},
+        "generated_table": {"type": "string"},
+        "lee_wald_component_term_counts": {"type": "array", "items": {"type": "integer"}, "minItems": 4, "maxItems": 4},
+        "green_component_term_counts": {"type": "array", "items": {"type": "integer"}, "minItems": 4, "maxItems": 4},
+        "difference_component_term_counts": {"type": "array", "items": {"type": "integer"}, "minItems": 4, "maxItems": 4},
+        "improvement_component_term_counts": {"type": "object", "additionalProperties": {"type": "integer"}},
+        "improvement_total_term_count": {"const": 2478},
+        "maximum_difference_order": {"const": 3}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action_first_jet_lee_wald_current_derived", "symbolic_hessian_green_current_matches_serialized_current", "green_lee_wald_difference_horizontally_closed", "explicit_horizontal_improvement_exported", "horizontal_improvement_identity_exact", "finite_order_support_local", "lee_wald_improvement_comparison_certified", "cyclic_dual_bv_rows_certified", "slice_integral_matches_complete_five_charge_q2", "direct_f2_repaired", "arity_three_authorized", "causal_observable_particle_or_quantum_claim"],
+      "properties": {
+        "action_first_jet_lee_wald_current_derived": {"const": true},
+        "symbolic_hessian_green_current_matches_serialized_current": {"const": true},
+        "green_lee_wald_difference_horizontally_closed": {"const": true},
+        "explicit_horizontal_improvement_exported": {"const": true},
+        "horizontal_improvement_identity_exact": {"const": true},
+        "finite_order_support_local": {"const": true},
+        "lee_wald_improvement_comparison_certified": {"const": true},
+        "cyclic_dual_bv_rows_certified": {"const": false},
+        "slice_integral_matches_complete_five_charge_q2": {"const": false},
+        "direct_f2_repaired": {"const": false},
+        "arity_three_authorized": {"const": false},
+        "causal_observable_particle_or_quantum_claim": {"const": false}
+      }
+    },
+    "next_gate": {"const": "ADD_CYCLIC_BV_DUAL_ROWS_AND_REPLAY_FIVE_CAUCHY_CHARGES"},
+    "provenance": {"type": "object"},
+    "claim_boundary": {"type": "string", "minLength": 1}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1_TIER_RECEIPT",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "status": "PASS",
+  "source_manifest": {
+    "d_quotient_classical/relative/einstein_weyl_relative_lee_wald_pbw.py": "e7c226b21ea8de9d7021961a1805a512e35f88f76ce97045dc2cbd3be9cf8358",
+    "d_quotient_classical/relative/einstein_weyl_relative_current_improvement.py": "9c41fa42f88355849cc7c65422c889c2cade941a0b931a71e2980e9c292404fc",
+    "d_quotient_classical/relative/verify_einstein_weyl_relative_current_improvement.py": "6726551cb2990a0473af60fc322138f6a6fb457c3ee4197c33c5143d4adb0965",
+    "d_quotient_classical/relative/tests/test_einstein_weyl_relative_current_improvement.py": "607a47744c2b37ecf394fb77a29fab5bc25fc921bf98cb168227c003e6fc8c87",
+    "d_quotient_classical/schema/relative-green-lee-wald-improvement-v1.schema.json": "739f109823ae624607fd3883090c9802f6224e175ff616eaedfa75124b8c2783",
+    "d_quotient_classical/generated/einstein_weyl_relative_current_improvement_v1/improvement.json": "8980c2ebc5e7adab3e18207790701ce8d128d16471525437f894c9e9a17840c2",
+    "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json": "91c99cfa310b380933e24e374976c8c8d73ebe0edfadfb9237779fefb612e596",
+    "d_quotient_classical/reports/einstein-weyl-relative-green-lee-wald-improvement.md": "ef7c25feff3ce969d55bbe750028b5d9a772abcd7c6554a303de59d42697e4b3",
+    "d_quotient_classical/atlas/generate_nonlinear_atlas_fragment.py": "29f66db8605efc44b072393ea5b6440303f4d0b788a40d90f24abe04dfb3f396",
+    "d_quotient_classical/atlas/nonlinear-atlas-fragment.json": "d0725b33b0851585c1e6847c33d1fc19300b6ecb2ce309dab18a0e2b57fa107e",
+    "d_quotient_classical/atlas/tests/test_nonlinear_atlas_fragment.py": "2ebfd4824f1177db1c2d3af092598a934732ca78877b46bb7653c33954601cc3",
+    "notes/d-quotient-classical-team-brief.md": "9cf7479cc5c8f447ddc6c5da235b34046f81f31eeb05dd8f6af04f1cb7a0adf2",
+    "notes/universe-building-roadmap.md": "3dd2905e159550538ee7e4055b3ada19d928dd96ad962f2060acdccbe63d1397"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "py_compile, strict Draft 2020-12 AJV validation, source-manifest hashes and scoped git diff --check"
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.7,
+      "max_rss_kib": 62612,
+      "commands": [
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_current_improvement d_quotient_classical.atlas.tests.test_nonlinear_atlas_fragment -q",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-green-lee-wald-improvement-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json"
+      ],
+      "result": "25 fast schema, basis, mutation-guard and atlas tests passed"
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 290.89,
+      "max_rss_kib": 96816,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_current_improvement --write --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_current_improvement"
+      ],
+      "result": "The producer solved 100 exact rational field-pair systems and exported 2,478 superpotential terms; the independent consumer rederived both currents, replayed the full symbolic horizontal identity with zero defects and matched a separate coordinate curvature-momentum fixture"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This local current-representative theorem does not freeze cyclic BV rows, global Cauchy charges, f2, arity three, the causal bridge or a paper theorem."
+    }
+  },
+  "claim_boundary": "The receipt certifies a finite-order LOCAL-ALGEBRAIC horizontal superpotential between the action Lee-Wald and Hessian Green currents on the compact product coordinate atlas. It does not certify cyclic BV-dual rows, global chart/slice cancellation, the five-charge Cauchy replay, repaired f2, arity three, causal propagation, observables, particles or quantum transfer."
+}

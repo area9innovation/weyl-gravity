@@ -1,0 +1,108 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC certificate derives the product-coordinate Lee-Wald and canonical Green currents independently and exports an exact finite-order antisymmetric horizontal improvement between them. It does not yet construct cyclic BV-dual current rows, prove the global Cauchy-slice boundary term vanishes in every bundle chart, replay the complete five reduced charges, repair f2, authorize arity three, or establish causal, observational, particle or quantum claims.",
+  "classification": {
+    "action_first_jet_lee_wald_current_derived": true,
+    "arity_three_authorized": false,
+    "causal_observable_particle_or_quantum_claim": false,
+    "cyclic_dual_bv_rows_certified": false,
+    "direct_f2_repaired": false,
+    "explicit_horizontal_improvement_exported": true,
+    "finite_order_support_local": true,
+    "green_lee_wald_difference_horizontally_closed": true,
+    "horizontal_improvement_identity_exact": true,
+    "lee_wald_improvement_comparison_certified": true,
+    "slice_integral_matches_complete_five_charge_q2": false,
+    "symbolic_hessian_green_current_matches_serialized_current": true
+  },
+  "construction": {
+    "coefficient_basis": "seven exact Laurent-trigonometric product functions",
+    "difference_component_term_counts": [
+      1050,
+      1090,
+      1058,
+      1048
+    ],
+    "difference_identity": "partial_mu(omega_LW^mu-omega_G^mu)=0",
+    "generated_table": "d_quotient_classical/generated/einstein_weyl_relative_current_improvement_v1/improvement.json",
+    "green_component_term_counts": [
+      922,
+      922,
+      928,
+      932
+    ],
+    "green_current": "ordered Green concomitant of the independently derived coordinate-density Hessian",
+    "improvement_component_term_counts": {
+      "01": 436,
+      "02": 454,
+      "03": 440,
+      "12": 404,
+      "13": 388,
+      "23": 356
+    },
+    "improvement_identity": "omega_LW^mu-omega_G^mu=partial_nu U^(mu nu)",
+    "improvement_total_term_count": 2478,
+    "lee_wald_component_term_counts": [
+      1042,
+      1042,
+      1052,
+      1050
+    ],
+    "lee_wald_current": "first field jet of the action curvature momentum, including delta(nabla P)",
+    "maximum_difference_order": 3,
+    "solver": "100 independent ordered field-pair rational sparse systems"
+  },
+  "dependencies": {
+    "five_stabilizer_current_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_STABILIZER_CURRENT_CONE_V1.json",
+      "sha256": "24f398bba251649fefec48bdbcc2aa35bf4ca113cdcf031819b9e1d820e491e9"
+    },
+    "green_current_cone": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_HESSIAN_GREEN_CURRENT_CONE_V1.json",
+      "sha256": "fa237b92636a1e8ab95bcca0eab14cf3f2f92448a1a0791e8da8a889de20bc13"
+    },
+    "lee_wald_seed": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_POLARIZED_NOETHER_CURRENT_SEED_V1.json",
+      "sha256": "25aab484188126107c2495c100fca1b67b686f28dc60a2f8999c99155752fd95"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "ADD_CYCLIC_BV_DUAL_ROWS_AND_REPLAY_FIVE_CAUCHY_CHARGES",
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/generated/einstein_weyl_relative_current_improvement_v1/improvement.json": "8980c2ebc5e7adab3e18207790701ce8d128d16471525437f894c9e9a17840c2",
+      "d_quotient_classical/relative/einstein_weyl_relative_current_improvement.py": "9c41fa42f88355849cc7c65422c889c2cade941a0b931a71e2980e9c292404fc",
+      "d_quotient_classical/relative/einstein_weyl_relative_lee_wald_pbw.py": "e7c226b21ea8de9d7021961a1805a512e35f88f76ce97045dc2cbd3be9cf8358",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_current_improvement.py": "607a47744c2b37ecf394fb77a29fab5bc25fc921bf98cb168227c003e6fc8c87",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_current_improvement.py": "6726551cb2990a0473af60fc322138f6a6fb457c3ee4197c33c5143d4adb0965",
+      "d_quotient_classical/schema/relative-green-lee-wald-improvement-v1.schema.json": "739f109823ae624607fd3883090c9802f6224e175ff616eaedfa75124b8c2783"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_current_improvement --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_current_improvement",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_current_improvement -v",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-green-lee-wald-improvement-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1.json"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1",
+  "result_state": "EXPLICIT_HORIZONTAL_IMPROVEMENT_CERTIFIED",
+  "schema": "pure-weyl-relative-green-lee-wald-improvement-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "standard product-coordinate atlas; global Cauchy integral is not promoted here",
+    "carrier": "antisymmetric bilinear horizontal two-form improvement U^(mu nu)",
+    "charge_sector": "unprecomposed physical relative current; naturality then applies to all five stabilizers",
+    "degree": "physical Hessian current comparison",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "even metric fields",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

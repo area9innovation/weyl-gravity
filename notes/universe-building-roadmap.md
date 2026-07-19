@@ -1575,6 +1575,18 @@ Einstein--Maxwell `q1/q2/q3` payload is now imported, so the active classical
 relative gate is the same-background Weyl--Maxwell export. Compact-product
 causal Green data remain an independent open rail.
 
+The compact-product current receiver has now advanced through its local
+representative gate.  The complete densitized relative Hessian has an exact
+Green current; all five connected stabilizers have zero-defect local
+current/divergence pairs; and
+`EINSTEIN_WEYL_RELATIVE_GREEN_LEE_WALD_IMPROVEMENT_V1` exports a 2,478-term
+support-local superpotential satisfying
+`omega_LW^mu-omega_G^mu=partial_nu U^(mu nu)` exactly.  The active Bridge-1
+gate is therefore the cyclic BV-dual completion plus global chart/Cauchy-slice
+cancellation and five-charge replay.  Until that lands, the atlas row remains
+fail-closed for the global charge receiver, repaired `f2`, arity three and
+causal propagation.
+
 The Einstein-owned nonlinear domain filter feeding Bridge 1 is certified for
 constant twist position plus the complete axial/polar `ell=2,k=0` wave
 carrier: `A` is arbitrary and the wave lies on the common `H,J_i` zero cone.
