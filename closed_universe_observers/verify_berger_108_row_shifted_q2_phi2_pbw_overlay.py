@@ -44,15 +44,11 @@ def reconstruct():
         for row in json.loads(path.read_text())["rows"]:
             for first, first_word, second, second_word, coefficient in row["terms"]:
                 value = scalar(coefficient)
-                for metric, metric_word, other, other_word in (
-                    (first, first_word, second, second_word),
-                    (second, second_word, first, first_word),
-                ):
-                    if 5 <= metric <= 14:
-                        key = row["output"], other, tuple(other_word), metric - 5, tuple(metric_word)
-                        old = result[key]
-                        result[key] = old[0] + value[0], old[1] + value[1]
-                        raw += 1
+                if 5 <= first <= 14:
+                    key = row["output"], second, tuple(second_word), first - 5, tuple(first_word)
+                    old = result[key]
+                    result[key] = old[0] + value[0], old[1] + value[1]
+                    raw += 1
     return {key: value for key, value in result.items() if value != (0, 0)}, raw
 
 
@@ -84,7 +80,7 @@ def main() -> int:
     expected, raw = reconstruct()
     actual = payload_terms(payload)
     assert actual == expected
-    assert raw == payload["raw_contraction_count"] == 185930
+    assert raw == payload["raw_contraction_count"] == 92965
     assert len(actual) == payload["normalized_term_count"] == 92965
     assert len({(key[0], key[1]) for key in actual}) == payload["nonzero_matrix_position_count"] == 310
 
@@ -101,7 +97,8 @@ def main() -> int:
             exact_coefficient = sp.Rational(coefficient[0].numerator, coefficient[0].denominator)
             exact_coefficient += sp.sqrt(10) * sp.Rational(coefficient[1].numerator, coefficient[1].denominator)
             witness += exact_coefficient * zero.get(10 * component, 0)
-    assert sp.simplify(witness) == sp.Rational(623, 81)
+    assert sp.simplify(witness) == sp.Rational(623, 324)
+    assert value["identity_disposition"]["both_symmetric_slots_mutation_detected"] is True
     assert not value["flags"]["SCALAR_ROD_LOCAL_HESSIAN_PBW_OVERLAY_EXPORTED"]
     assert not value["flags"]["SUPPORT_LOCAL_108_ROW_PBW_Q1_PAYLOAD_EXPORTED"]
     print("BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY independent verification: PASS")

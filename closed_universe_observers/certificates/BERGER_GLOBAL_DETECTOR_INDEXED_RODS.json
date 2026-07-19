@@ -206,7 +206,7 @@
   ],
   "global_source_export": {
     "conservation_identity": "nabla^m T_rod_mn=sum_{a,I}(Box_gHat R_{aI}) partial_n R_{aI}=0",
-    "retained_metric_source": "q0_(h_plus_ab)=(2-delta_ab) T_rod^{ab} in field order (00,01,02,03,11,12,13,22,23,33)",
+    "retained_metric_source": "q0_(h_plus_ab)=(2-delta_ab) T_rod^{ab}/2 in field order (00,01,02,03,11,12,13,22,23,33), as fixed by delta S_R/delta g_ab=sqrt(-gHat) T_rod^{ab}/2",
     "rod_action": "S_R=-1/2 sum_{a=0}^1 sum_{I=1}^3 integral sqrt(-gHat) gHat^mn partial_m R_{aI} partial_n R_{aI}",
     "source_is_fully_determined_by_displayed_rods": true,
     "source_is_global_smooth": true,
@@ -240,22 +240,22 @@
       {
         "path": "closed_universe_observers/generate_berger_global_detector_rods.py",
         "role": "producer",
-        "sha256": "dd0a7199719a2e7b64fcd008f979283a12dd6173653857ac3885d42f2fd6c846"
+        "sha256": "db986502c5bf7831ffadba3d5e360a8e7b0858818f70299b0445110d25d5b1d4"
       },
       {
         "path": "closed_universe_observers/verify_berger_global_detector_rods.py",
         "role": "independent_verifier",
-        "sha256": "0e07379f4238bfc78392024e3a9c6e0179e4db6efc3861ac57d8515c7fac8fdd"
+        "sha256": "0c806ee91eb8f72e376c5135cdf6c6428d7a8591d679bc70502d32254659a23b"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_global_detector_rods.py",
         "role": "tests",
-        "sha256": "f571e101432fc01fc07d63055a962013e5dcb588507b80eee97812cc97d0d843"
+        "sha256": "9c274c85695fef15a34b8bb46e0c4b53e9214cd49fe5857e2139991f600e525e"
       },
       {
         "path": "closed_universe_observers/reports/berger-global-detector-rods.md",
         "role": "report",
-        "sha256": "f5b87bde59ccd6ea64844af636c54ae4aa0f12808e7d85971f9425725f9d554b"
+        "sha256": "6b26527342ac759b3ebbcd19672250a935ea465c923af47bd67d80df5cd17ed5"
       },
       {
         "path": "closed_universe_observers/schema/berger-global-detector-rods-v1.schema.json",

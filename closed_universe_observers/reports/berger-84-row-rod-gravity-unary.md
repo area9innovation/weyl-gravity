@@ -53,7 +53,7 @@ The original causal rationale incorrectly classified `q2(Phi2,-)` as order
 two.  The pinned pure-Weyl payload has 53,468 metric--metric terms and 7,488
 terms with four derivatives on one argument.  The corrected certificate
 contracts the physical zero-frequency `Phi2` exactly and obtains the nonzero
-coefficient `623/81` multiplying `e3^4 h_hat_00` in the
+coefficient `623/324` multiplying `e3^4 h_hat_00` in the
 `h_hat_00`-antifield equation.  Thus this block is constructively a
 fourth-order diagonal principal deformation, rather than merely being
 classified that way fail-closed.

@@ -6,9 +6,9 @@ from closed_universe_observers.generate_berger_108_row_shifted_q2_phi2_pbw_overl
 )
 
 
-def test_shifted_q2_contracts_both_pinned_payloads_exactly():
+def test_shifted_q2_contracts_first_slot_of_both_pinned_payloads_exactly():
     payload = payload_document()
-    assert payload["raw_contraction_count"] == 185930
+    assert payload["raw_contraction_count"] == 92965
     assert payload["normalized_term_count"] == 92965
     assert payload["nonzero_matrix_position_count"] == 310
 
@@ -20,7 +20,9 @@ def test_shifted_q2_retains_fourth_order_unary_and_phi2_jets():
 
 
 def test_known_physical_principal_witness_remains_pinned():
-    assert build()["principal_witness"]["contracted_coefficient"] == "623/81"
+    value = build()
+    assert value["principal_witness"]["contracted_coefficient"] == "623/324"
+    assert value["identity_disposition"]["both_symmetric_slots_mutation_detected"] is True
 
 
 def test_complete_q1_remains_fail_closed_on_local_rod_hessian():

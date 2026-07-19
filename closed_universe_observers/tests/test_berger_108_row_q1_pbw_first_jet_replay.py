@@ -18,6 +18,5 @@ def test_unraised_euler_rows_reproduce_the_detected_interface_mutation():
     assert replay.summary(replay.cyclicity_defect(q00))["operator_key_count"] == 102
 
 
-def test_strict_first_jet_sign_bound_is_negative():
-    upper = Fraction(27, 32) * Fraction(5, 72) - Fraction(2921, 480)
-    assert upper < 0
+def test_weyl_first_jet_witness_is_rationally_nonzero():
+    assert replay.parse_qsqrt10("-49/20") == (Fraction(-49, 20), Fraction(0))

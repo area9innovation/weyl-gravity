@@ -31,9 +31,15 @@ def main() -> int:
             raise AssertionError(f"{name} pivot witness count drifted")
         if block["augmented_ranks"] != [block["operator_rank"]] * 3:
             raise AssertionError(f"{name} augmented ranks do not certify solvability")
+        full_stress_mutation = (operator * primitives + 2 * sources).applyfunc(sp.simplify)
+        mutation_count = sum(value != 0 for value in full_stress_mutation)
+        if mutation_count != block["full_stress_mutation_residual_nonzero_count"]:
+            raise AssertionError(f"{name} full-stress normalization mutation drifted")
     flags = payload["flags"]
     if not flags["GLOBAL_ROD_BACKREACTION_SOLVABLE_THROUGH_ORDER_EPSILON_R_SQUARED"]:
         raise AssertionError("second-order solvability flag dropped")
+    if not flags["ACTION_EULER_HALF_STRESS_NORMALIZATION_CERTIFIED"]:
+        raise AssertionError("action-derived half-stress normalization flag dropped")
     if flags["FULL_NONLINEAR_BACKREACTED_ROD_BRANCH_CERTIFIED"] or flags["84_ROW_INTERACTING_COMPLEX_CERTIFIED"]:
         raise AssertionError("nonlinear result was over-promoted")
     print("BERGER_GLOBAL_ROD_Q1_SOURCE_SECTOR_SOLVABILITY independent verification: PASS")

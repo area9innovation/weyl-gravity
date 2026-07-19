@@ -216,7 +216,7 @@ def build() -> dict[str, Any]:
         "global_source_export": {
             "rod_action": "S_R=-1/2 sum_{a=0}^1 sum_{I=1}^3 integral sqrt(-gHat) gHat^mn partial_m R_{aI} partial_n R_{aI}",
             "stress_tensor": "T_rod_mn=sum_{a,I}(partial_m R_{aI} partial_n R_{aI}-1/2 gHat_mn gHat^rs partial_r R_{aI} partial_s R_{aI})",
-            "retained_metric_source": "q0_(h_plus_ab)=(2-delta_ab) T_rod^{ab} in field order (00,01,02,03,11,12,13,22,23,33)",
+            "retained_metric_source": "q0_(h_plus_ab)=(2-delta_ab) T_rod^{ab}/2 in field order (00,01,02,03,11,12,13,22,23,33), as fixed by delta S_R/delta g_ab=sqrt(-gHat) T_rod^{ab}/2",
             "conservation_identity": "nabla^m T_rod_mn=sum_{a,I}(Box_gHat R_{aI}) partial_n R_{aI}=0",
             "spatial_harmonic_support": ["j=0", "j=1"],
             "temporal_frequency_support": ["0", "+sqrt(58)/3", "-sqrt(58)/3"],

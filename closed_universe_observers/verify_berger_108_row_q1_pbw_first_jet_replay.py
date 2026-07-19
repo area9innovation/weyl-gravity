@@ -41,15 +41,35 @@ def main() -> int:
     assert replay.summary(first_jet) == value["nilpotency_replay"]["bidegree_summaries"]["(1, 0)"]
 
     evaluator = replay.BackgroundEvaluator()
-    normal = replay.sphere_normal_form(evaluator.polynomial(first_jet[(27, 0, ())])[0])
+    normal = replay.sphere_normal_form(evaluator.polynomial(first_jet[(27, 4, ())])[-2])
     x0, x1, x2, x3 = replay.background_ideal.X
-    selected = sp.Poly(normal, x0, x1, x2, x3).coeff_monomial(x0 * x1)
     sine = replay.TRIG_S
-    expected = -sp.Rational(27, 40) * sine**4 + sp.Rational(27, 32) * sine**2 - sp.Rational(2921, 480)
+    cosine = replay.TRIG_C
+    time_phase = replay.TIME_Z
+    selected = sp.Poly(
+        normal, x0, x1, x2, x3, cosine, sine, time_phase
+    ).coeff_monomial(x0 * x3 * cosine * sine**3 * time_phase**4)
+    expected = -sp.Rational(49, 20)
     assert sp.expand(selected - expected) == 0
-    strict_upper = sp.Rational(27, 32) * sp.Rational(5, 72) - sp.Rational(2921, 480)
-    assert strict_upper < 0
-    assert str(strict_upper) == value["nilpotency_replay"]["first_jet_witness"]["coefficient_strict_upper"]
+    assert str(selected) == value["nilpotency_replay"]["first_jet_witness"]["selected_coefficient"]
+
+    base = {}
+    replay.load_base(base)
+    shifted = {}
+    replay.load_shifted(shifted)
+    pair_values = {}
+    for name, contribution in (
+        ("q00_base_after_q10_shifted", replay.compose(base[(0, 0)], shifted[(1, 0)])),
+        ("q10_shifted_after_q00_base", replay.compose(shifted[(1, 0)], base[(0, 0)])),
+    ):
+        pair_normal = replay.sphere_normal_form(
+            evaluator.polynomial(contribution[(27, 4, ())])[-2]
+        )
+        pair_values[name] = str(
+            sp.Poly(pair_normal, x0, x1, x2, x3, cosine, sine, time_phase)
+            .coeff_monomial(x0 * x3 * cosine * sine**3 * time_phase**4)
+        )
+    assert pair_values == value["nilpotency_replay"]["first_jet_witness"]["source_pair_decomposition"]
     print("BERGER_108_ROW_Q1_PBW_FIRST_JET_REPLAY_OBSTRUCTION independent replay: PASS")
     return 0
 

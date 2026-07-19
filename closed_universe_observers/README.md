@@ -148,7 +148,7 @@ uses composite polarization, keeps the present currents external, and records
 `p*A`, `p*A*deltaR`, and `p*A*deltaR^2` as `q1`, `q2`, and `q3` contributions,
 respectively.  The exact two-channel memory--Maxwell unary and its finite
 advanced/retarded inverse are certified; together with the base rows they
-form a 72-row causal subcomplex.  The six clock-dressed rod diffeomorphism
+form a 72-row causal subcomplex.  The six linearly clock-dressed rod diffeomorphism
 blocks, their cotangent adjoints, the action-derived gravity--rod Hessian, and
 the coupled causal witness are now also exported.  An exact Schur--Laurent
 inverse certifies the rod--gravity `epsilon_R^2` coefficient formally.  A
@@ -156,7 +156,7 @@ subsequent bidegree audit corrects `delta_r T` from `Q11` to `Q10`, computes it
 and its frozen-pairing adjoint exactly, and repairs the memory portion of the
 separate `r` axis.  A corrected payload audit treats
 `q2(Phi2,-)` as a fourth-order diagonal principal deformation and explicitly
-exhibits the nonzero contracted principal coefficient `623/81`; it explicitly
+exhibits the action-normalized, fixed-slot principal coefficient `623/324`; it explicitly
 does not claim finite-parameter Green hyperbolicity.  The physical `Phi2` is
 now exported in one canonical tensor/harmonic/frequency order, and the mixed
 coefficient ring and varied-adjoint requirements are frozen.  The actual

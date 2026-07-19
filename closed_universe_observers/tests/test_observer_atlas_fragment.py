@@ -70,13 +70,13 @@ def test_shifted_q2_phi2_overlay_keeps_local_rod_hessian_fail_closed():
     }
 
 
-def test_local_rod_hessian_overlay_closes_inputs_but_not_complete_q1():
+def test_local_rod_hessian_overlay_is_linear_only_and_weyl_obstructed():
     rows = {row["id"]: row for row in build()["entries"]}
     local = rows["observer.berger.interaction.pbw_108_local_rod_hessian_overlay"]
     component = rows["observer.berger.interaction.pbw_108_component_map"]
     assert local["descriptions"]["symplectic"] == "CERTIFIED"
     assert local["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
-    assert local["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    assert local["observer_data"]["survives_gauge_reduction"]["status"] == "OBSTRUCTED"
     assert component["observer_data"]["detector_response"]["status"] == "NO_CERTIFIED_MAP"
     assert "BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY" in {
         evidence["result_id"] for evidence in local["evidence"]

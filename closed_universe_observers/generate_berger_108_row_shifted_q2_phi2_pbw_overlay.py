@@ -75,8 +75,19 @@ def serialize_scalar(value: Scalar) -> dict[str, Any]:
     return {"rational": serialize_rational(value[0]), "sqrt10": serialize_rational(value[1])}
 
 
-def contract_payloads(gravity: dict[str, Any], maxwell: dict[str, Any]) -> dict[str, Any]:
-    """Evaluate q2(Phi2,-), with epsilon_R_squared implicit in every term."""
+def contract_payloads(
+    gravity: dict[str, Any],
+    maxwell: dict[str, Any],
+    *,
+    both_symmetric_slots: bool = False,
+) -> dict[str, Any]:
+    """Evaluate q2(Phi2,-), with epsilon_R_squared implicit in every term.
+
+    The source payload stores the complete ordered-slot representation of a
+    graded-symmetric bilinear map.  Fixing the first slot therefore means
+    selecting first-slot metric entries only.  Adding second-slot entries as
+    well computes q2(Phi2,-)+q2(-,Phi2) and doubles the shifted unary.
+    """
 
     if gravity["shape"] != [54, 54, 54] or maxwell["shape"] != [64, 64, 64]:
         raise AssertionError("pinned q2 carrier shape drifted")
@@ -96,7 +107,7 @@ def contract_payloads(gravity: dict[str, Any], maxwell: dict[str, Any]) -> dict[
                     key = output, second, tuple(second_word), first - 5, tuple(first_word)
                     coefficients[key] = scalar_add(coefficients[key], value)
                     raw_contraction_count += 1
-                if 5 <= second <= 14:
+                if both_symmetric_slots and 5 <= second <= 14:
                     key = output, first, tuple(first_word), second - 5, tuple(second_word)
                     coefficients[key] = scalar_add(coefficients[key], value)
                     raw_contraction_count += 1
@@ -119,6 +130,7 @@ def contract_payloads(gravity: dict[str, Any], maxwell: dict[str, Any]) -> dict[
         "scalar_matrix_shape": [108, 108],
         "active_base_shape": [64, 64],
         "factorial_convention": gravity["factorial_convention"],
+        "fixed_slot_convention": "q2(Phi2,-): contract the first ordered slot only; the second ordered slot represents q2(-,Phi2)",
         "coefficient_field": "Q(sqrt(10))[epsilon_R_squared; Phi2 component jets]",
         "term_decoder": "[input_row,input_PBW_multiindex,Phi2_component_index,Phi2_PBW_multiindex,Q(sqrt(10)) coefficient]; multiply every term by epsilon_R_squared",
         "Phi2_component_order": list(METRIC_COMPONENTS),
@@ -154,6 +166,11 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
         if values[name]["flags"][flag] is not True:
             raise AssertionError(f"required dependency dropped: {name}.{flag}")
     payload = payload or payload_document()
+    doubled_slot_mutation = contract_payloads(
+        json.loads(DEPENDENCIES["gravity_q2"].read_text()),
+        json.loads(DEPENDENCIES["maxwell_q2_overlay"].read_text()),
+        both_symmetric_slots=True,
+    )
     rendered_payload = json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n"
     payload_sha256 = payload_sha256 or hashlib.sha256(rendered_payload.encode()).hexdigest()
     summary_keys = (
@@ -181,12 +198,13 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
             "source_composition": "zero-extend the pinned 54-row gravity q2 to 64 rows and add the pinned Maxwell q2 overlay before contraction",
             "Phi2_components": [f"Phi2_{name}" for name in METRIC_COMPONENTS],
             "coefficient_jet_rule": "the derivative word on the contracted metric input becomes the ordered PBW jet of that Phi2 component; the other input and its PBW word remain the unary input",
-            "factorial_rule": "sum both ordered metric placements exactly as serialized by the suspended-graded-symmetric source payload",
+            "factorial_rule": "fix the first ordered slot only; source Koszul symmetry separately represents q2(-,Phi2) in the second slot",
         },
         "principal_witness": values["rod_gravity_unary"]["coupled_causal_witness"]["q2_principal_order_audit"]["physical_contraction_witness"],
         "identity_disposition": {
             "source_q2_cyclicity_imported": True,
             "contraction_exact": True,
+            "both_symmetric_slots_mutation_detected": doubled_slot_mutation["raw_contraction_count"] == 2 * payload["raw_contraction_count"],
             "complete_108_row_q1_nilpotency_replayed": False,
             "complete_108_row_q1_odd_cyclicity_replayed": False,
         },
@@ -200,7 +218,7 @@ def build(*, payload: dict[str, Any] | None = None, payload_sha256: str | None =
         },
         "next_gate": "EXPORT_SCALAR_ROD_GAUGE_WAVE_AND_LOCAL_HESSIAN_PBW_OVERLAY",
         "claim_boundary": (
-            "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate contracts the pinned support-local 54-row gravity q2 tensor and its pinned 64-row Maxwell overlay with the certified physical Phi2 metric background. It exports epsilon_R_squared q2_64(Phi2,-) as a canonical scalar unary PBW payload, retaining every derivative on Phi2 and every derivative on the remaining unary input. Both serialized metric placements are summed with the source factorial convention, and the known nonzero fourth-order physical contraction witness remains pinned. It does not export the six rod gauge/wave blocks, the local gravity--rod Hessian, a complete 108-row q1, an all-row nilpotency or odd-cyclicity replay, scalar q2 on the full 108-row carrier, a solved backreaction, tangent-cone restriction, Bridge 3, finite-parameter causal propagation or any quantum claim."
+            "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate contracts the pinned support-local 54-row gravity q2 tensor and its pinned 64-row Maxwell overlay with the certified physical Phi2 metric background. It exports epsilon_R_squared q2_64(Phi2,-) as a canonical scalar unary PBW payload, retaining every derivative on Phi2 and every derivative on the remaining unary input. The first ordered slot alone is fixed; the second ordered slot is the separately serialized symmetric map q2(-,Phi2), and summing it is retained as a detected factor-two mutation. The action-normalized Phi2 source and the nonzero fourth-order physical contraction witness remain pinned. It does not export the six rod gauge/wave blocks, the local gravity--rod Hessian, a complete 108-row q1, an all-row nilpotency or odd-cyclicity replay, scalar q2 on the full 108-row carrier, a solved backreaction, tangent-cone restriction, Bridge 3, finite-parameter causal propagation or any quantum claim."
         ),
         "provenance": {"source_commit": "WORKTREE", "source_manifest": [{"path": str(path.relative_to(ROOT)), "sha256": sha256(path)} for path in SOURCE_FILES]},
     }

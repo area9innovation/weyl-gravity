@@ -2,9 +2,14 @@
 
 ## Exact result
 
-The complete stress source of the six global detector-indexed rods has no
+The complete action-normalized source of the six global detector-indexed rods has no
 second-order compact Taub obstruction in the certified retained Berger metric
 complex.
+
+For the declared action, variation in the covariant metric coordinate gives
+`delta S_R/delta g_ab=sqrt(-gHat) T_rod^{ab}/2`.  Thus the retained source is
+`(2-delta_ab)T_rod^{ab}/2`; the former full-stress source was an exact
+factor-two normalization mutation.
 
 The source occupies ten spatial basis functions (`j=0,1`) and the temporal
 frequencies `0,+-sqrt(58)/3`.  Because its Hopf-position dependence is

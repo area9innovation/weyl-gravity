@@ -3,13 +3,14 @@
   "$id": "https://area9.dk/pure-weyl/berger-108-row-shifted-q2-phi2-pbw-overlay-payload-v1.schema.json",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema", "result_id", "scalar_matrix_shape", "active_base_shape", "factorial_convention", "coefficient_field", "term_decoder", "Phi2_component_order", "rows", "raw_contraction_count", "normalized_term_count", "nonzero_matrix_position_count", "row_support", "column_support", "derivative_order_histogram", "rows_canonical_sha256"],
+  "required": ["schema", "result_id", "scalar_matrix_shape", "active_base_shape", "factorial_convention", "fixed_slot_convention", "coefficient_field", "term_decoder", "Phi2_component_order", "rows", "raw_contraction_count", "normalized_term_count", "nonzero_matrix_position_count", "row_support", "column_support", "derivative_order_histogram", "rows_canonical_sha256"],
   "properties": {
     "schema": {"const": "closed-universe-berger-108-row-shifted-q2-phi2-pbw-overlay-payload-v1"},
     "result_id": {"const": "BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY_PAYLOAD"},
     "scalar_matrix_shape": {"const": [108, 108]},
     "active_base_shape": {"const": [64, 64]},
     "factorial_convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "fixed_slot_convention": {"type": "string", "minLength": 20},
     "coefficient_field": {"type": "string"},
     "term_decoder": {"type": "string"},
     "Phi2_component_order": {"const": ["00", "01", "02", "03", "11", "12", "13", "22", "23", "33"]},
@@ -23,7 +24,7 @@
         }
       }
     },
-    "raw_contraction_count": {"const": 185930},
+    "raw_contraction_count": {"const": 92965},
     "normalized_term_count": {"const": 92965},
     "nonzero_matrix_position_count": {"const": 310},
     "row_support": {"type": "array"},

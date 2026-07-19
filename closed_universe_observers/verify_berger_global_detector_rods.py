@@ -21,6 +21,8 @@ def main() -> int:
         raise AssertionError("detector-event rod charts are not identity charts")
     if sp.simplify(2 * result.OMEGA - sp.sqrt(58) / 3) != 0:
         raise AssertionError("rod stress temporal frequency was not independently replayed")
+    if "T_rod^{ab}/2" not in payload["global_source_export"]["retained_metric_source"]:
+        raise AssertionError("covariant metric Euler half-stress normalization dropped")
     flags = payload["flags"]
     if not flags["GLOBAL_COMPACT_ROD_CONFIGURATION_EXPORTED"] or not flags["GLOBAL_COMPACT_ROD_Q0_FORMULA_EXPORTED"]:
         raise AssertionError("global rod export flags dropped")

@@ -378,7 +378,7 @@ bidegree audit moves `delta_r T` from `Q11` to `Q10` and computes its exact
 frozen-pairing adjoint and formal Green correction.  The corrected payload
 audit classifies `q2(Phi2,-)` as a fourth-order
 principal deformation and exhibits the nonzero contracted coefficient
-`623/81`, so no finite-parameter Green theorem is claimed.  The normalized
+`623/324` after action-derived half-stress and fixed-slot normalization, so no finite-parameter Green theorem is claimed.  The normalized
 mixed `epsilon_R^2*kappa` profile and its four unary/adjoint blocks are now
 exact.  The apparatus cubic and quartic tensors are also exported as exact
 action-derivative families with cyclic cotangent partners.  Their unshifted
@@ -489,7 +489,7 @@ its receipt is
 `closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_UNARY_TIER_RECEIPT.json`.
 The subsequent principal-order correction independently reconstructs the
 physical `Phi2`, recounts all 7,488 raw fourth-order terms, verifies the exact
-nonzero contracted coefficient `623/81`, and records the mixed-jet preflight;
+nonzero contracted coefficient `623/324`, and records the mixed-jet preflight;
 its receipt is
 `closed_universe_observers/receipts/APPARATUS_84_ROD_GRAVITY_PRINCIPAL_CORRECTION_TIER_RECEIPT.json`.
 The mixed-axis continuation corrects `delta_r T` to `Q10`, reconstructs its

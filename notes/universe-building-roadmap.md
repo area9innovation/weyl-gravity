@@ -987,8 +987,10 @@ survive the first backreacted, normalized apparatus interaction?
    normalized profiles, `Phi2` transport/profile variations and explicit
    adjoint coefficient jets; its audit repaired the invariant-frame Cartan
    sign.  The shifted `q2_64(Phi2,-)` base block is now independently
-   contracted into 92,965 exact PBW terms on 310 positions, retaining every
-   Phi2 jet and the physical fourth-order witness `623/81`.  The six-rod local
+   contracted by fixing one ordered slot into 92,965 exact PBW terms on 310
+   positions, retaining every Phi2 jet and the physical fourth-order witness
+   `623/324`; summing both symmetric slots is a detected factor-two mutation.
+   The six-rod local
    gauge/wave/Hessian overlay is now also exact: six blocks, 256 matrix
    positions and 1,530 terms, with the nonholonomic Koszul connection, all ten
    mixed scalar-wave columns and 200 metric-Hessian variations independently
@@ -997,12 +999,16 @@ survive the first backreacted, normalized apparatus interaction?
    antifield rows and `-eta_2` on emitter antifield rows.  After that repair,
    all four first-jet coefficients are odd-cyclic and the `(0,0)`, `(0,1)`
    and `(1,1)` coefficients of `q1^2` vanish.  The
-   `epsilon_R_squared` coefficient remains `OBSTRUCTED` in the certified
-   same-background quotient: at output 27, input 0 and time mode zero its
-   `x0*x1` coefficient is
-   `-27 s^4/40+27 s^2/32-2921/480<0`,
-   `s=sin(sqrt(10)/12)`.  Repair this shifted-gravity/rod-memory unary
-   witness and replay it before exporting scalar `q2`, activating the
+   action-derived half-stress metric Euler normalization and single-fixed-slot
+   contraction remove the former spatial witness.  The `epsilon_R_squared`
+   coefficient remains `OBSTRUCTED` in the certified same-background quotient
+   with 374 defects on 54 positions: at output 27, Weyl input 4 and time mode
+   `-2`, the coefficient of
+   `x0*x3*cos(sqrt(10)/12)*sin(sqrt(10)/12)^3*detector_time_phase^4`
+   is `-49/20`.  It is independent of six tested rescalings of the linear
+   radial metric column and localizes the missing object to the action-derived
+   second jet of the clock canonical map and its rod-source cotangent lift.
+   Export that completion and replay the witness before scalar `q2`, the
    nonlinear apparatus request, or restricting records to the tangent cone.
    A common source
    at the original Hopf event remains a stronger separate target.
@@ -2620,7 +2626,7 @@ Do not reshuffle whole teams now.  Use explicit activation triggers:
 | `BERGER_108_ROW_Q1_PBW_BACKGROUND_IDEAL_OBSTRUCTION` (fired) | export a content-addressed specialization of all six rods and Phi2 plus the Berger-frame-closed differential ideal of shifted background equations; then replay and export scalar q1 before q2; do not silently set free background jets on shell |
 | `BERGER_108_ROW_EMITTER_Q1_PBW_OVERLAY` (fired) | export scalar rod--gravity and memory apparatus blocks on rows 64--83, compose them with the pinned 64-row base and six emitter blocks, and replay complete q1 nilpotency/odd cyclicity before scalar q2; do not promote the emitter overlay alone to a complete unary differential |
 | `BERGER_108_ROW_MEMORY_Q1_PBW_OVERLAY` (fired) | export the remaining six-rod gauge/wave and gravity--rod Hessian blocks including the shifted `q2(Phi2,-)` payload, then compose with the pinned base, memory and emitter overlays and replay complete q1 nilpotency/odd cyclicity; do not promote the memory overlay alone to complete q1 |
-| `BERGER_108_ROW_Q1_PBW_FIRST_JET_REPLAY_OBSTRUCTION` (fired with repaired emitter interface and scalar first-jet obstruction) | repair the exact `epsilon_R_squared` output-27/input-0 quotient witness in the shifted-gravity/rod-memory unary composition and replay it; do not activate apparatus `q2,q3`, `K_Berger` equivariance, observer-morphism stability, tangent-cone response or the physical-branch bridge while `q1^2` is nonzero |
+| `BERGER_108_ROW_Q1_PBW_FIRST_JET_REPLAY_OBSTRUCTION` (fired with repaired emitter interface, half-stress/fixed-slot normalizations and localized Weyl obstruction) | export the action-derived second jet of the clock canonical map and rod-source cotangent completion, then replay the exact `epsilon_R_squared` output-27/input-4 time-mode-`-2` witness; do not activate apparatus `q2,q3`, `K_Berger` equivariance, observer-morphism stability, tangent-cone response or the physical-branch bridge while `q1^2` is nonzero |
 | rank-46 cyclic graph carrier (fired), followed by accepted projector/splitting (open) | carrier may be imported now; only the projector/splitting activates the branch-resolved $\ell_3$ table and later residual quantum transfer |
 | `BERGER_26_ROW_GREEN_CERTIFIED` | the causal specialist extracts the abstract Green-transfer theorem or supports the observer rail; nonlinear capacity stays on interaction |
 | `COMPACT_EM_GLOBAL_PAIRING_CLOSED` and `WEYL_EM_PULLBACK_DECIDED` (fired) | Einstein extends the quadratic source test across mixed cones; one bounded design task may continue the asymptotic/black-hole complex |

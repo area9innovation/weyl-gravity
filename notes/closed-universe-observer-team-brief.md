@@ -81,12 +81,13 @@ Euler equations on the separate \((0,0)\), \((\epsilon_R^2,0)\), and
 \((0,\kappa)\) axes.  At that stage, full 84-row promotion was correctly blocked on the
 nonzero rod diffeomorphism action and the missing gravity--rod Hessian,
 cotangent-adjoint, shifted-metric-Hessian, and causal-witness payloads.
-`BERGER_84_ROW_ROD_GRAVITY_UNARY` now supplies those six clock-dressed gauge
+`BERGER_84_ROW_ROD_GRAVITY_UNARY` now supplies those six linearly clock-dressed gauge
 blocks, their exact odd-pairing adjoints, the covariant action Hessian, the
 `q2(Phi2,-)` base shift, and a coupled formal causal witness.  A correction
 audit finds that `q2(Phi2,-)` is a fourth-order diagonal principal deformation,
 not the previously stated order-two subprincipal term; the exact physical
-contraction witness is `623/81` on an `e3^4 h_hat_00` coefficient.  The Schur--Laurent
+contraction witness is `623/324` on an `e3^4 h_hat_00` coefficient after the
+action-derived half-stress and single-fixed-slot normalizations.  The Schur--Laurent
 formula therefore certifies only a formal coefficientwise same-sided inverse,
 not finite-parameter Green hyperbolicity.  A further bidegree audit corrects
 `delta_r T`: since the memory kinetic term has no `kappa`, it belongs to `Q10`,
@@ -407,12 +408,13 @@ certificate retains the support, counts, canonical term digest and payload
 byte digest.
 
 `BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY` now closes the shifted-base
-portion of the rod/gravity first jet.  It contracts both ordered metric
-placements in the pinned 54-row gravity `q2` and 64-row Maxwell overlay,
-turning 185,930 placements into 92,965 exact PBW terms on 310 matrix
+portion of the rod/gravity first jet.  It fixes the first ordered metric
+slot in the pinned 54-row gravity `q2` and 64-row Maxwell overlay; the second
+slot separately represents `q2(-,Phi2)`.  This gives 92,965 exact PBW terms on 310 matrix
 positions.  Every derivative on the contracted metric argument is retained as
 a `Phi2` coefficient jet, and the independent reconstruction recovers the
-physical fourth-order coefficient `623/81`.
+physical fourth-order coefficient `623/324`.  Summing both symmetric slots is
+a detected factor-two mutation.
 
 `BERGER_108_ROW_LOCAL_ROD_HESSIAN_PBW_OVERLAY` now closes the remaining local
 rod/gravity input.  Its six blocks contain the spatial diffeomorphism action
@@ -425,7 +427,9 @@ contracted scalar-wave connection audit vanish.  A direct variation of the
 general nonholonomic scalar wave operator checks all ten mixed columns with
 nonzero metric first jets and PBW-reduced scalar second jets.  Two hundred
 independent density variations check the symmetric metric Hessian.  The
-generated payload has 256 nonzero positions and 1,530 exact terms.
+generated payload has 256 nonzero positions and 1,530 exact terms.  This
+payload is only linearly clock-dressed: it does not contain the second jet of
+the raw-to-dressed clock canonical map or its cotangent lift.
 
 The local-interaction composition gate has now fired with an obstruction.
 The first full replay found that the emitter overlay had serialized covariant
@@ -436,13 +440,19 @@ removes exactly 24 zeroth-order square terms and 102 cyclicity terms.  The
 repaired complete scalar `q1` is cyclic in all four first-jet bidegrees, and
 the `(0,0)`, `(0,1)` and `(1,1)` square coefficients vanish.
 
-The `epsilon_R_squared` coefficient is nevertheless `OBSTRUCTED` in the
-certified same-background quotient.  At output row 27, input row 0, identity
-PBW word and time mode zero, its `x0*x1` coefficient is
-`-27 s^4/40+27 s^2/32-2921/480`, `s=sin(sqrt(10)/12)`, which is strictly
-negative from `0<s^2<5/72`.  The active local-interaction bridge is therefore
-the repair of this shifted-gravity/rod-memory witness, followed by exact
-replay.  Its fail-closed row is
+Two normalization repairs remove the former spatial witness: the covariant
+metric Euler source is `(2-delta_ab)T^{ab}/2`, and `q2(Phi2,-)` fixes one
+ordered slot.  The `epsilon_R_squared` coefficient is nevertheless
+`OBSTRUCTED` in the certified same-background quotient, with 374 remaining
+defects on 54 positions.  At output row 27, Weyl-ghost input row 4, identity
+PBW word and time mode `-2`, the coefficient of
+`x0*x3*cos(sqrt(10)/12)*sin(sqrt(10)/12)^3*detector_time_phase^4` is exactly
+`-49/20`.  The two shifted-base compositions contribute `49/20` and
+`-49/10`; the local rod Hessian contributes zero in the sigma column, and six
+radial-column rescalings leave the witness unchanged.  The active
+local-interaction bridge is therefore export of the action-derived second jet
+of the clock canonical map and its rod-source cotangent completion, followed
+by exact replay.  Its fail-closed row is
 `observer.berger.interaction.pbw_108_q1_first_jet_replay` (`OBSTRUCTED`);
 the component map remains `NO_CERTIFIED_MAP`.  This does not activate
 physical Bridge 3.
@@ -453,8 +463,8 @@ physical Bridge 3.
    of physical masses, couplings, inverse volume, shell/tail schedule,
    precision and stopping goal under the certified v2 recoil contract; do not
    invent those values.  In parallel, repair the exact
-   `epsilon_R_squared` output-27/input-0 scalar `q1^2` witness in the
-   shifted-gravity/rod-memory composition and replay it before attempting
+   `epsilon_R_squared` output-27/input-4 Weyl/sigma scalar `q1^2` witness by
+   exporting the second clock-map jet and replay it before attempting
    scalar `q2`, its replay, tangent-cone restriction, or a solved
    backreacted gravity-clock branch.  Covariant row coverage and odd
    cyclicity are not substitutes for nilpotency.

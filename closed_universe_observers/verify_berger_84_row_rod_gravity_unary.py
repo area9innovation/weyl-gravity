@@ -203,12 +203,10 @@ def _independent_principal_order(value: dict) -> None:
             continue
         for first, first_word, second, second_word, coefficient in row["terms"]:
             scalar = payload_scalar(coefficient)
-            if first == witness["fluctuation_input_row"] and first_word == word and 5 <= second <= 14 and sum(second_word) == 0:
-                contracted += scalar * phi2_zero.get(10 * (second - 5) + witness["background_spatial_basis_index"], 0)
             if second == witness["fluctuation_input_row"] and second_word == word and 5 <= first <= 14 and sum(first_word) == 0:
                 contracted += scalar * phi2_zero.get(10 * (first - 5) + witness["background_spatial_basis_index"], 0)
     contracted = sp.factor(contracted)
-    if contracted != sp.Rational(623, 81) or witness["contracted_coefficient"] != "623/81":
+    if contracted != sp.Rational(623, 324) or witness["contracted_coefficient"] != "623/324":
         raise ValueError("physical Phi2 fourth-order contraction witness failed independently")
     if audit["physical_contracted_principal_order"] != 4 or not audit["exact_non_cancellation_after_physical_phi2_contraction_certified"]:
         raise ValueError("physical q2(Phi2,-) principal order was not certified")

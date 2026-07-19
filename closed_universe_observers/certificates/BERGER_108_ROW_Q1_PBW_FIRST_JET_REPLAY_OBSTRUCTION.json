@@ -4,12 +4,12 @@
     "gate_status": "OBSTRUCTED",
     "nonlinear_team_request_activated": false,
     "physical_branch_bridge_activated": false,
-    "reason": "q1 squared is nonzero in the certified same-background quotient",
-    "repair_target": "the epsilon_R_squared shifted-gravity/rod-memory unary composition, before any q2/q3 apparatus extension",
+    "reason": "q1 squared has a nonzero Weyl/sigma witness in the certified same-background quotient because only the linear clock canonical map is serialized",
+    "repair_target": "the action-derived second jet of the clock canonical transformation, including its rod-source cotangent completion, before any q2/q3 apparatus extension",
     "tangent_cone_observer_restriction_activated": false
   },
   "atlas_status": "OBSTRUCTED",
-  "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate composes the pinned base, memory, emitter, shifted-q2 and local rod-Hessian PBW overlays into one in-memory scalar 108-row q1 over Q(sqrt(10))[epsilon_R_squared,kappa]/(epsilon_R_squared^2,kappa^2). After the explicit Euler-form-to-density-cotangent repair, all four coefficient operators are exactly odd-cyclic; q00 squared, the kappa coefficient and the mixed epsilon_R_squared*kappa coefficient vanish exactly. The epsilon_R_squared coefficient does not vanish. Its complete free PBW residual has 355 operator keys, 150 matrix positions and 30326 serialized coefficient monomials. Evaluation in the certified finite Berger background quotient retains an exact time-mode-zero witness at output row 27 and input row 0: the x0*x1 coefficient is -27 s^4/40+27 s^2/32-2921/480 with s=sin(sqrt(10)/12), strictly negative because 0<s^2<5/72. Therefore the complete scalar first-jet unary gate is OBSTRUCTED at epsilon_R_squared. The mixed epsilon_R_squared*kappa coefficient itself passes, but the nonlinear apparatus q2/q3, K_Berger-equivariance, observer-morphism-stability and tangent-cone response steps remain inactive while q1 squared is nonzero. This is not a no-go theorem for another correction class, a finite-parameter causal theorem, a same-background physical-branch bridge, or a quantum claim.",
+  "claim_boundary": "This corrected exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate composes the pinned base, memory, emitter, shifted-q2 and local rod-Hessian PBW overlays into one in-memory scalar 108-row q1 over Q(sqrt(10))[epsilon_R_squared,kappa]/(epsilon_R_squared^2,kappa^2). The rod source now uses the action-derived half-stress covariant metric Euler normalization, and q2(Phi2,-) fixes one ordered input slot rather than summing both symmetric placements. After those factor-two repairs and the explicit Euler-form-to-density-cotangent repair, all four coefficient operators are exactly odd-cyclic; q00 squared, the kappa coefficient and the mixed epsilon_R_squared*kappa coefficient vanish exactly. The former spatial witness cancels, but the epsilon_R_squared coefficient still does not vanish. Its complete free PBW residual has 355 operator keys, 150 matrix positions and 30326 serialized coefficient monomials. Evaluation in the certified finite Berger background quotient leaves 374 defects on 54 matrix positions. An exact Weyl witness occurs at output row 27, sigma input row 4 and time mode -2: the coefficient of x0*x3*cos(sqrt(10)/12)*sin(sqrt(10)/12)^3*detector_time_phase^4 is -49/20. It decomposes entirely into q00_base after q10_shifted and q10_shifted after q00_base, with coefficients 49/20 and -49/10; the serialized local rod Hessian has no sigma column. Rescaling the linear radial metric column through -1,-1/2,0,1/2,1,2 leaves -49/20 unchanged. The obstruction therefore localizes to a missing second jet of the clock canonical transformation (or an equivalent action-derived clock-source completion), not to a remaining normalization choice. The complete scalar first-jet unary gate remains OBSTRUCTED at epsilon_R_squared. The mixed epsilon_R_squared*kappa coefficient itself passes, but apparatus q2/q3, K_Berger-equivariance, observer-morphism stability and tangent-cone response remain inactive while q1 squared is nonzero. This is not a no-go theorem for the nonlinear clock completion, a finite-parameter causal theorem, a same-background physical-branch bridge, or a quantum claim.",
   "claim_status": "CERTIFIED_FIRST_JET_NILPOTENCY_OBSTRUCTION",
   "coefficient_ring": "Q(sqrt(10))[epsilon_R_squared,kappa]/(epsilon_R_squared^2,kappa^2), with formal g0,g1,m0_squared,m1_squared and certified coefficient jets",
   "composed_q1": {
@@ -330,7 +330,7 @@
     "background_quotient": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL.json",
       "result_id": "BERGER_108_ROW_BACKGROUND_SPECIALIZATION_DIFFERENTIAL_IDEAL",
-      "sha256": "ea6efe4d7680f48e20d088e5d97c21d730716f8c300932668afec9e9c16ec3e8"
+      "sha256": "45afd94c2d06f8d5d4a9de93327bd3604be29c931ca25257e66bcac31cea8850"
     },
     "base_q1": {
       "path": "d_quotient_classical/certificates/BERGER_PORTABLE_COUPLED_64_UNARY_PAIRING_36_SDR.json",
@@ -360,7 +360,7 @@
     "shifted_q2_overlay": {
       "path": "closed_universe_observers/certificates/BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY_PAYLOAD.json",
       "result_id": "BERGER_108_ROW_SHIFTED_Q2_PHI2_PBW_OVERLAY_PAYLOAD",
-      "sha256": "83a0d450d6e131f3ea1a2d31e1192f3fe6ff6412d30b200d377d246613ab2e1f"
+      "sha256": "40e3ec703b98ec4cabe406de76a593880118a7b0c2d31b8aef9002eb49d63f9a"
     }
   },
   "dependency_tags": [
@@ -369,10 +369,10 @@
   ],
   "exhaustive_specialization_diagnostic": {
     "command": "exact quotient_defect on the complete (1,0) residual",
-    "elapsed_seconds": "231.46",
+    "elapsed_seconds": "202.18",
     "evaluated_time_mode_count": 930,
-    "matrix_position_count": 114,
-    "nonzero_quotient_term_count_before_selecting_the_minimal_witness": 818,
+    "matrix_position_count": 54,
+    "nonzero_quotient_term_count_before_selecting_the_minimal_witness": 374,
     "role": "Tier-2 diagnostic; the independently replayable strict-sign witness is the certification rail"
   },
   "flags": {
@@ -455,11 +455,11 @@
     },
     {
       "detected": true,
-      "name": "set_certified_first_jet_witness_to_zero",
-      "strict_upper": "-23143/3840"
+      "name": "delete_missing_nonlinear_clock_dressing_witness",
+      "selected_coefficient": "-49/20"
     }
   ],
-  "next_gate": "REPAIR_EPSILON_R_SQUARED_SHIFTED_GRAVITY_ROD_MEMORY_UNARY_COMPOSITION_AND_REPLAY_THE_EXACT_WITNESS",
+  "next_gate": "EXPORT_ACTION_DERIVED_SECOND_JET_CLOCK_CANONICAL_MAP_AND_ROD_SOURCE_COMPLETION_THEN_REPLAY_EPSILON_R_SQUARED_Q1_SQUARED",
   "nilpotency_replay": {
     "bidegree_summaries": {
       "(0, 0)": {
@@ -545,18 +545,34 @@
     },
     "first_jet_witness": {
       "coefficient_nonzero": true,
-      "coefficient_strict_upper": "-23143/3840",
+      "input_interpretation": "Weyl ghost sigma",
+      "local_rod_sigma_column_contribution": "0",
       "operator_key": {
         "input_pbw_word": [],
-        "input_row": 0,
+        "input_row": 4,
         "output_row": 27
       },
-      "phase_definition": "s=sin(sqrt(10)/12)",
-      "selected_coefficient": "-27*detector_phase_sine**4/40 + 27*detector_phase_sine**2/32 - 2921/480",
-      "selected_spatial_monomial": "x0*x1",
-      "sphere_normal_form": "27*detector_phase_cosine*detector_phase_sine**3*x0*x2/40 + 27*detector_phase_cosine*detector_phase_sine**3*x1*x3/40 - 81*detector_phase_cosine*detector_phase_sine*x0*x2/160 - 81*detector_phase_cosine*detector_phase_sine*x1*x3/160 - 27*detector_phase_sine**4*x0*x1/40 + 27*detector_phase_sine**4*x2*x3/40 + 27*detector_phase_sine**2*x0*x1/32 - 27*detector_phase_sine**2*x2*x3/32 - 2921*x0*x1/480 - 2759*x2*x3/480",
-      "strict_inequality": "0<s^2<10/144=5/72",
-      "target_time_mode": 0
+      "radial_linear_map_scale_diagnostic": {
+        "interpretation": "the defect is not removable by rescaling the linear dressed-to-raw radial metric column",
+        "selected_coefficient_at_every_scale": "-49/20",
+        "tested_scales": [
+          "-1",
+          "-1/2",
+          "0",
+          "1/2",
+          "1",
+          "2"
+        ]
+      },
+      "selected_coefficient": "-49/20",
+      "selected_phase_monomial": "cos(sqrt(10)/12)*sin(sqrt(10)/12)^3*detector_time_phase^4",
+      "selected_spatial_monomial": "x0*x3",
+      "source_pair_decomposition": {
+        "q00_base_after_q10_shifted": "49/20",
+        "q10_shifted_after_q00_base": "-49/10"
+      },
+      "sphere_normal_form": "-49*detector_phase_cosine*detector_phase_sine**3*detector_time_phase**4*x0*x3/20 + 49*detector_phase_cosine*detector_phase_sine*detector_time_phase**4*x0*x3/40 + 49*detector_phase_cosine*detector_phase_sine*detector_time_phase**2*x0*x3/80 + 49*detector_phase_sine**4*detector_time_phase**4*x0**2/20 + 49*detector_phase_sine**4*detector_time_phase**4*x1**2/40 + 49*detector_phase_sine**4*detector_time_phase**4*x2**2/40 - 49*detector_phase_sine**4*detector_time_phase**4/40 - 49*detector_phase_sine**2*detector_time_phase**4*x0**2/20 - 49*detector_phase_sine**2*detector_time_phase**4*x1**2/40 - 49*detector_phase_sine**2*detector_time_phase**4*x2**2/40 + 49*detector_phase_sine**2*detector_time_phase**4/40 - 49*detector_phase_sine**2*detector_time_phase**2*x0**2/80 - 49*detector_phase_sine**2*detector_time_phase**2*x1**2/160 - 49*detector_phase_sine**2*detector_time_phase**2*x2**2/160 + 49*detector_phase_sine**2*detector_time_phase**2/160 + 49*detector_time_phase**4*x0**2/160 - 93*detector_time_phase**4*x1**2/320 - 93*detector_time_phase**4*x2**2/320 + 11*detector_time_phase**4/160 + 49*detector_time_phase**2*x0**2/160 - 93*detector_time_phase**2*x1**2/320 - 93*detector_time_phase**2*x2**2/320 + 11*detector_time_phase**2/160",
+      "target_time_mode": -2
     },
     "obstructed_bidegree": "(1, 0)",
     "passing_bidegrees": [
@@ -604,7 +620,7 @@
     "source_manifest": [
       {
         "path": "closed_universe_observers/generate_berger_108_row_q1_pbw_first_jet_replay.py",
-        "sha256": "8b0ebcbdce2855ad90709651188b3c479e71592bb43a2fb8d495f3b846447c20"
+        "sha256": "87d270c9a23253d00fcf096d0e5d56c44f44789763fcbac99d2becc7ea048ba9"
       },
       {
         "path": "closed_universe_observers/berger_108_row_q1_pbw_replay.py",
@@ -612,19 +628,19 @@
       },
       {
         "path": "closed_universe_observers/verify_berger_108_row_q1_pbw_first_jet_replay.py",
-        "sha256": "da085e1e3a4d06b367908e9f8108cb67299764ee260666445599a8f3f73df8e4"
+        "sha256": "e2afd11ade37e310ab7a30f25f101fc81f4b41a1328fa3f633e112faac892fd4"
       },
       {
         "path": "closed_universe_observers/tests/test_berger_108_row_q1_pbw_first_jet_replay.py",
-        "sha256": "dda21ab27d52a9cbd7aa5d7c77344b4b35e7beb97e711b84d052b9700dcbfe98"
+        "sha256": "b63d7ae1a757f767bafe994f11dc3758183cf43212584b72ef3fc566ccf3d393"
       },
       {
         "path": "closed_universe_observers/schema/berger-108-row-q1-pbw-first-jet-replay-obstruction-v1.schema.json",
-        "sha256": "e8fd045cb98aee2aec40511e7f6d8c12c9f789ae8e9d8a1cefa6e1240685319a"
+        "sha256": "de277a98799d28495db48865eee814ab315f1496c0336632f30812e4187dd070"
       },
       {
         "path": "closed_universe_observers/reports/berger-108-row-q1-pbw-first-jet-replay-obstruction.md",
-        "sha256": "4cc5015784333f0de86aeebe1cbd35c0f59d6bf382311803b9c81658cc3b4ab9"
+        "sha256": "8192b6fa7cfb2eda12882922239d95dc4244ec6859f10e99f6ec38fe0a9a0218"
       }
     ]
   },

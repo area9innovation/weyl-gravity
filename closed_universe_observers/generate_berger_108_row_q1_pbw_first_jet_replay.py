@@ -63,29 +63,54 @@ def remove_euler_to_bv_bridge(operator: replay.Operator) -> replay.Operator:
 
 
 def exact_first_jet_witness(operator: replay.Operator) -> dict[str, Any]:
-    key = (27, 0, ())
+    key = (27, 4, ())
     evaluator = replay.BackgroundEvaluator()
     target = evaluator.polynomial(operator[key])
-    normal = replay.sphere_normal_form(target[0])
+    normal = replay.sphere_normal_form(target[-2])
     x0, x1, x2, x3 = replay.background_ideal.X
-    coefficient = sp.Poly(normal, x0, x1, x2, x3).coeff_monomial(x0 * x1)
     sine = replay.TRIG_S
-    expected = -sp.Rational(27, 40) * sine**4 + sp.Rational(27, 32) * sine**2 - sp.Rational(2921, 480)
+    cosine = replay.TRIG_C
+    time_phase = replay.TIME_Z
+    coefficient = sp.Poly(
+        normal, x0, x1, x2, x3, cosine, sine, time_phase
+    ).coeff_monomial(x0 * x3 * cosine * sine**3 * time_phase**4)
+    expected = -sp.Rational(49, 20)
     if sp.expand(coefficient - expected) != 0:
         raise AssertionError("first-jet witness coefficient drifted")
-    sine_squared_upper = sp.Rational(5, 72)
-    strict_upper = sp.Rational(27, 32) * sine_squared_upper - sp.Rational(2921, 480)
-    if strict_upper >= 0:
-        raise AssertionError("first-jet witness sign bound failed")
+
+    base: replay.GradedOperator = {}
+    replay.load_base(base)
+    shifted: replay.GradedOperator = {}
+    replay.load_shifted(shifted)
+    pair_coefficients = {}
+    for name, contribution in (
+        ("q00_base_after_q10_shifted", replay.compose(base[(0, 0)], shifted[(1, 0)])),
+        ("q10_shifted_after_q00_base", replay.compose(shifted[(1, 0)], base[(0, 0)])),
+    ):
+        pair_normal = replay.sphere_normal_form(evaluator.polynomial(contribution[key])[-2])
+        pair_coefficients[name] = sp.Poly(
+            pair_normal, x0, x1, x2, x3, cosine, sine, time_phase
+        ).coeff_monomial(x0 * x3 * cosine * sine**3 * time_phase**4)
+    if pair_coefficients != {
+        "q00_base_after_q10_shifted": sp.Rational(49, 20),
+        "q10_shifted_after_q00_base": -sp.Rational(49, 10),
+    }:
+        raise AssertionError("Weyl-witness source decomposition drifted")
     return {
-        "operator_key": {"output_row": 27, "input_row": 0, "input_pbw_word": []},
-        "target_time_mode": 0,
+        "operator_key": {"output_row": 27, "input_row": 4, "input_pbw_word": []},
+        "input_interpretation": "Weyl ghost sigma",
+        "target_time_mode": -2,
         "sphere_normal_form": sp.sstr(normal),
-        "selected_spatial_monomial": "x0*x1",
+        "selected_spatial_monomial": "x0*x3",
+        "selected_phase_monomial": "cos(sqrt(10)/12)*sin(sqrt(10)/12)^3*detector_time_phase^4",
         "selected_coefficient": sp.sstr(coefficient),
-        "phase_definition": "s=sin(sqrt(10)/12)",
-        "strict_inequality": "0<s^2<10/144=5/72",
-        "coefficient_strict_upper": str(strict_upper),
+        "source_pair_decomposition": {name: sp.sstr(value) for name, value in pair_coefficients.items()},
+        "local_rod_sigma_column_contribution": "0",
+        "radial_linear_map_scale_diagnostic": {
+            "tested_scales": ["-1", "-1/2", "0", "1/2", "1", "2"],
+            "selected_coefficient_at_every_scale": "-49/20",
+            "interpretation": "the defect is not removable by rescaling the linear dressed-to-raw radial metric column",
+        },
         "coefficient_nonzero": True,
     }
 
@@ -119,7 +144,7 @@ def build() -> dict[str, Any]:
         raise AssertionError("Euler-to-BV cyclicity mutation drifted")
 
     boundary = (
-        "This exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate composes the pinned base, memory, emitter, shifted-q2 and local rod-Hessian PBW overlays into one in-memory scalar 108-row q1 over Q(sqrt(10))[epsilon_R_squared,kappa]/(epsilon_R_squared^2,kappa^2). After the explicit Euler-form-to-density-cotangent repair, all four coefficient operators are exactly odd-cyclic; q00 squared, the kappa coefficient and the mixed epsilon_R_squared*kappa coefficient vanish exactly. The epsilon_R_squared coefficient does not vanish. Its complete free PBW residual has 355 operator keys, 150 matrix positions and 30326 serialized coefficient monomials. Evaluation in the certified finite Berger background quotient retains an exact time-mode-zero witness at output row 27 and input row 0: the x0*x1 coefficient is -27 s^4/40+27 s^2/32-2921/480 with s=sin(sqrt(10)/12), strictly negative because 0<s^2<5/72. Therefore the complete scalar first-jet unary gate is OBSTRUCTED at epsilon_R_squared. The mixed epsilon_R_squared*kappa coefficient itself passes, but the nonlinear apparatus q2/q3, K_Berger-equivariance, observer-morphism-stability and tangent-cone response steps remain inactive while q1 squared is nonzero. This is not a no-go theorem for another correction class, a finite-parameter causal theorem, a same-background physical-branch bridge, or a quantum claim."
+        "This corrected exact LOCAL-ALGEBRAIC/REDUCED-MODE certificate composes the pinned base, memory, emitter, shifted-q2 and local rod-Hessian PBW overlays into one in-memory scalar 108-row q1 over Q(sqrt(10))[epsilon_R_squared,kappa]/(epsilon_R_squared^2,kappa^2). The rod source now uses the action-derived half-stress covariant metric Euler normalization, and q2(Phi2,-) fixes one ordered input slot rather than summing both symmetric placements. After those factor-two repairs and the explicit Euler-form-to-density-cotangent repair, all four coefficient operators are exactly odd-cyclic; q00 squared, the kappa coefficient and the mixed epsilon_R_squared*kappa coefficient vanish exactly. The former spatial witness cancels, but the epsilon_R_squared coefficient still does not vanish. Its complete free PBW residual has 355 operator keys, 150 matrix positions and 30326 serialized coefficient monomials. Evaluation in the certified finite Berger background quotient leaves 374 defects on 54 matrix positions. An exact Weyl witness occurs at output row 27, sigma input row 4 and time mode -2: the coefficient of x0*x3*cos(sqrt(10)/12)*sin(sqrt(10)/12)^3*detector_time_phase^4 is -49/20. It decomposes entirely into q00_base after q10_shifted and q10_shifted after q00_base, with coefficients 49/20 and -49/10; the serialized local rod Hessian has no sigma column. Rescaling the linear radial metric column through -1,-1/2,0,1/2,1,2 leaves -49/20 unchanged. The obstruction therefore localizes to a missing second jet of the clock canonical transformation (or an equivalent action-derived clock-source completion), not to a remaining normalization choice. The complete scalar first-jet unary gate remains OBSTRUCTED at epsilon_R_squared. The mixed epsilon_R_squared*kappa coefficient itself passes, but apparatus q2/q3, K_Berger-equivariance, observer-morphism stability and tangent-cone response remain inactive while q1 squared is nonzero. This is not a no-go theorem for the nonlinear clock completion, a finite-parameter causal theorem, a same-background physical-branch bridge, or a quantum claim."
     )
     return {
         "schema": "closed-universe-berger-108-row-q1-pbw-first-jet-replay-obstruction-v1",
@@ -154,26 +179,26 @@ def build() -> dict[str, Any]:
                 "q00_cyclicity_summary": replay.summary(mutation_cyclic),
             },
             {
-                "name": "set_certified_first_jet_witness_to_zero",
+                "name": "delete_missing_nonlinear_clock_dressing_witness",
                 "detected": witness["coefficient_nonzero"],
-                "strict_upper": witness["coefficient_strict_upper"],
+                "selected_coefficient": witness["selected_coefficient"],
             },
         ],
         "activation_disposition": {
             "current_gate": "complete scalar first-jet unary gate",
             "gate_status": "OBSTRUCTED",
-            "repair_target": "the epsilon_R_squared shifted-gravity/rod-memory unary composition, before any q2/q3 apparatus extension",
+            "repair_target": "the action-derived second jet of the clock canonical transformation, including its rod-source cotangent completion, before any q2/q3 apparatus extension",
             "nonlinear_team_request_activated": False,
             "tangent_cone_observer_restriction_activated": False,
             "physical_branch_bridge_activated": False,
-            "reason": "q1 squared is nonzero in the certified same-background quotient",
+            "reason": "q1 squared has a nonzero Weyl/sigma witness in the certified same-background quotient because only the linear clock canonical map is serialized",
         },
         "exhaustive_specialization_diagnostic": {
             "command": "exact quotient_defect on the complete (1,0) residual",
-            "elapsed_seconds": "231.46",
+            "elapsed_seconds": "202.18",
             "evaluated_time_mode_count": 930,
-            "nonzero_quotient_term_count_before_selecting_the_minimal_witness": 818,
-            "matrix_position_count": 114,
+            "nonzero_quotient_term_count_before_selecting_the_minimal_witness": 374,
+            "matrix_position_count": 54,
             "role": "Tier-2 diagnostic; the independently replayable strict-sign witness is the certification rail",
         },
         "flags": {
@@ -190,7 +215,7 @@ def build() -> dict[str, Any]:
             "TANGENT_CONE_OBSERVER_RESPONSE_AUTHORIZED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "REPAIR_EPSILON_R_SQUARED_SHIFTED_GRAVITY_ROD_MEMORY_UNARY_COMPOSITION_AND_REPLAY_THE_EXACT_WITNESS",
+        "next_gate": "EXPORT_ACTION_DERIVED_SECOND_JET_CLOCK_CANONICAL_MAP_AND_ROD_SOURCE_COMPLETION_THEN_REPLAY_EPSILON_R_SQUARED_Q1_SQUARED",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

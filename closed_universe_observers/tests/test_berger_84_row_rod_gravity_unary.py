@@ -79,7 +79,7 @@ def test_q2_phi2_is_fail_closed_at_fourth_order() -> None:
     assert audit["fourth_order_argument_term_count"] > 0
     assert audit["physical_contracted_principal_order"] == 4
     assert audit["exact_non_cancellation_after_physical_phi2_contraction_certified"]
-    assert audit["physical_contraction_witness"]["contracted_coefficient"] == "623/81"
+    assert audit["physical_contraction_witness"]["contracted_coefficient"] == "623/324"
     assert audit["prior_order_two_classification_rejected"]
     assert not value["flags"]["FINITE_R_84_ROW_GREEN_HYPERBOLICITY_CERTIFIED"]
 

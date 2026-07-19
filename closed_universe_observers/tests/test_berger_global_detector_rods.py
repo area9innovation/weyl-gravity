@@ -28,6 +28,7 @@ def test_detector_indexing_corrects_carrier_arity() -> None:
 
 def test_compact_nonlinear_gate_remains_fail_closed() -> None:
     payload = result.build()
+    assert "T_rod^{ab}/2" in payload["global_source_export"]["retained_metric_source"]
     assert payload["flags"]["GLOBAL_COMPACT_ROD_CONFIGURATION_EXPORTED"] is True
     assert payload["flags"]["GLOBAL_COMPACT_ROD_Q0_FORMULA_EXPORTED"] is True
     assert payload["flags"]["COMPACT_TAUB_PROJECTION_COMPUTED"] is False

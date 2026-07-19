@@ -223,6 +223,8 @@ def _payload_scalar(value: dict[str, Any]) -> sp.Expr:
 def physical_phi2_export(handoff: dict[str, Any], solvability: dict[str, Any]) -> dict[str, Any]:
     """Assemble the physical real Phi2 in one canonical 10 x 10 basis."""
 
+    if not solvability["flags"]["ACTION_EULER_HALF_STRESS_NORMALIZATION_CERTIFIED"]:
+        raise AssertionError("physical Phi2 source is not action normalized")
     synthesis = handoff["physical_backreaction_synthesis"]
     zero_primitive = _primitive_matrix(solvability["exact_blocks"]["zero"])
     positive_primitive = _primitive_matrix(solvability["exact_blocks"]["positive"])
@@ -326,12 +328,10 @@ def q2_principal_order_audit(payload: dict[str, Any], phi2: dict[str, Any]) -> d
             continue
         for first, first_word, second, second_word, coefficient in row["terms"]:
             scalar = _payload_scalar(coefficient)
-            if first == witness_fluctuation and first_word == witness_word and 5 <= second <= 14 and sum(second_word) == 0:
-                contracted_witness += scalar * zero_phi2.get(10 * (second - 5) + witness_spatial_basis, 0)
             if second == witness_fluctuation and second_word == witness_word and 5 <= first <= 14 and sum(first_word) == 0:
                 contracted_witness += scalar * zero_phi2.get(10 * (first - 5) + witness_spatial_basis, 0)
     contracted_witness = sp.factor(contracted_witness)
-    if contracted_witness != sp.Rational(623, 81):
+    if contracted_witness != sp.Rational(623, 324):
         raise AssertionError("physical Phi2 fourth-order contraction witness drifted")
     return {
         "payload_shape": payload["shape"],

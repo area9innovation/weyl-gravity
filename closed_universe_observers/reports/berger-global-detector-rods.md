@@ -16,7 +16,8 @@ derivative, and identity relational Jacobian in direction order
 `((4/3)e0,e3,e1,e2)`.
 
 Their conserved quadratic stress is now a fully determined global compact
-source.  Its spatial support is confined to `j=0` and `j=1`, and its temporal
+source.  In the covariant metric Euler row the action normalization is
+`(2-delta_ab)T_rod^{ab}/2`.  Its spatial support is confined to `j=0` and `j=1`, and its temporal
 frequencies are `0` and `+-sqrt(58)/3`.  This finite sector is the exact input
 for the next compact Taub calculation.
 

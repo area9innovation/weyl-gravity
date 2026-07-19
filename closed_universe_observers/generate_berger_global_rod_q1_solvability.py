@@ -135,11 +135,16 @@ def _source_at_phase(phase: sp.Expr, harmonic: str) -> sp.Matrix:
                 if left == right:
                     stress[left][right] -= eta[left] * norm / 2
     # The retained canonical rows use T^{ab}, hence eta_a eta_b T_ab.
+    # The covariant metric coordinate is g_ab.  For
+    # S_R=-1/2 int sqrt(-g) g^{mn} d_m R d_n R, its Euler row is
+    # delta S_R/delta g_ab=sqrt(-g) T^{ab}/2.  The historical full-stress
+    # source was therefore twice the action-derived BV source.
     return sp.Matrix.vstack(*[
         (2 if left != right else 1)
         * eta[left]
         * eta[right]
         * _reduce_quadratic(stress[left][right])
+        / 2
         for left, right in PAIRS
     ]).applyfunc(sp.simplify)
 
@@ -211,6 +216,7 @@ def _exact_blocks() -> dict[str, Any]:
             "primitive_nonzero_counts": [sum(value != 0 for value in primitives[:, column]) for column in range(3)],
             "canonical_primitives_sparse": _sparse_columns(primitives),
             "primitive_residual_nonzero_count": 0,
+            "full_stress_mutation_residual_nonzero_count": sum(value != 0 for value in sources),
         }
     return result
 
@@ -244,7 +250,7 @@ def build() -> dict[str, Any]:
         "exact_blocks": blocks,
         "second_order_equation": {
             "equation": "H_retained Phi2=-q0^rod",
-            "source_convention": "q0_(h_plus_ab)=(2-delta_ab) T_rod^{ab}",
+            "source_convention": "q0_(h_plus_ab)=(2-delta_ab) T_rod^{ab}/2 from delta S_R/delta g_ab=sqrt(-gHat) T_rod^{ab}/2",
             "verdict": "EXACTLY_SOLVABLE_ON_COMPLETE_GLOBAL_ROD_SOURCE_SECTOR",
             "cokernel_projection": "ZERO",
             "witness": "the sparse canonical primitives in exact_blocks replay with zero residual",
@@ -253,6 +259,7 @@ def build() -> dict[str, Any]:
             "GLOBAL_ROD_SOURCE_Q1_CLOSED": True,
             "GLOBAL_ROD_SOURCE_COKERNEL_PROJECTION_ZERO": True,
             "GLOBAL_ROD_SECOND_ORDER_PRIMITIVES_EXPORTED": True,
+            "ACTION_EULER_HALF_STRESS_NORMALIZATION_CERTIFIED": True,
             "GLOBAL_ROD_BACKREACTION_SOLVABLE_THROUGH_ORDER_EPSILON_R_SQUARED": True,
             "FULL_NONLINEAR_BACKREACTED_ROD_BRANCH_CERTIFIED": False,
             "84_ROW_INTERACTING_COMPLEX_CERTIFIED": False,
@@ -274,7 +281,7 @@ def build() -> dict[str, Any]:
                 for role, path in SOURCE_FILES.items()
             ]
         },
-        "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE calculation evaluates the complete global six-rod stress sector against the certified retained Berger metric Hessian. Exact sparse primitives solve H_retained Phi2=-q0^rod for the full j=0,1 and temporal 0,+-sqrt(58)/3 source support, so the rod stress has no second-order compact Taub obstruction. It does not construct an all-orders branch, the corrected 84-row interacting or causal complex, apparatus recoil, nonlinear observer-map consistency, or any quantum object.",
+        "claim_boundary": "This exact LOCAL-ALGEBRAIC/REDUCED-MODE calculation evaluates the complete action-normalized global six-rod source against the certified retained Berger metric Hessian. The covariant metric Euler row is q0_(h_plus_ab)=(2-delta_ab)T_rod^{ab}/2 because delta S_R/delta g_ab=sqrt(-gHat)T_rod^{ab}/2; the historical full-stress normalization is retained as a detected factor-two mutation. Exact sparse primitives solve H_retained Phi2=-q0^rod for the full j=0,1 and temporal 0,+-sqrt(58)/3 source support, so the rod source has no second-order compact Taub obstruction. It does not construct an all-orders branch, the corrected 84-row interacting or causal complex, apparatus recoil, nonlinear observer-map consistency, or any quantum object.",
     }
     schema = json.loads(SCHEMA.read_text())
     jsonschema.Draft202012Validator.check_schema(schema)
