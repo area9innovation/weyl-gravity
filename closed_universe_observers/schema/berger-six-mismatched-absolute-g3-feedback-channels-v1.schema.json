@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "causal_support_zero_channels", "causally_allowed_partition_rails", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-six-mismatched-absolute-g3-feedback-channels-v1"},
+    "result_id": {"const": "BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "SIX_MISMATCHED_CHANNELS_EVALUATED_FOUR_CAUSAL_ZEROS_TWO_ZERO_CONTAINING"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 8, "maxProperties": 8},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "causal_support_zero_channels": {"type": "array", "minItems": 4, "maxItems": 4},
+    "causally_allowed_partition_rails": {"type": "object", "required": ["I_100", "I_101"], "minProperties": 2, "maxProperties": 2},
+    "mutation_results": {"type": "array", "minItems": 2},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "EXTEND_THE_DETECTOR_AND_FEEDBACK_PROVIDER_BEYOND_TWO_J4"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

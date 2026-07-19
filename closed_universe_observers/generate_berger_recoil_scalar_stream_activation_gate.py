@@ -31,6 +31,8 @@ DEPENDENCIES = {
     "executable_readiness": PACKAGE / "certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
     "finite_kernel_intervals": PACKAGE / "certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
     "partitioned_matched_feedback": PACKAGE / "certificates/BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK.json",
+    "cross_window_detector_remainder": PACKAGE / "certificates/BERGER_CROSS_WINDOW_DETECTOR_ADVANCED_MAXWELL_REMAINDER.json",
+    "six_mismatched_feedback": PACKAGE / "certificates/BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS.json",
 }
 SOURCE_FILES = [
     Path(__file__),
@@ -122,6 +124,16 @@ def readiness_audit(values: dict[str, dict[str, Any]], *, drop_per_shell_word: b
             "evidence_flag": "MATCHED_FEEDBACK_WIDTHS_STRICTLY_CONTRACT_2_TO_4_TO_8",
         },
         {
+            "id": "finite_cross_window_detector_advanced_maxwell_remainder",
+            "status": "CERTIFIED" if values["cross_window_detector_remainder"]["flags"]["D1_ADVANCED_MAXWELL_POLYNOMIAL_REMAINDER_ON_H0_EXPORTED"] else "OBSTRUCTED",
+            "evidence_flag": "D1_ADVANCED_MAXWELL_POLYNOMIAL_REMAINDER_ON_H0_EXPORTED",
+        },
+        {
+            "id": "finite_six_mismatched_absolute_g3_feedback_channels",
+            "status": "CERTIFIED" if values["six_mismatched_feedback"]["flags"]["SIX_MISMATCHED_TWO_J0_K0_CHANNELS_EVALUATED"] else "OBSTRUCTED",
+            "evidence_flag": "SIX_MISMATCHED_TWO_J0_K0_CHANNELS_EVALUATED",
+        },
+        {
             "id": "callable_shell_interval_backend",
             "status": "CERTIFIED" if values["executable_readiness"]["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] else "OBSTRUCTED",
             "evidence_flag": "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED",
@@ -175,6 +187,8 @@ def build() -> dict[str, Any]:
         "executable_readiness": "NUMERICAL_SPECIALIZATION_INPUT_SCHEMA_EXPORTED",
         "finite_kernel_intervals": "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED",
         "partitioned_matched_feedback": "MATCHED_FEEDBACK_WIDTHS_STRICTLY_CONTRACT_2_TO_4_TO_8",
+        "cross_window_detector_remainder": "D1_ADVANCED_MAXWELL_POLYNOMIAL_REMAINDER_ON_H0_EXPORTED",
+        "six_mismatched_feedback": "SIX_MISMATCHED_TWO_J0_K0_CHANNELS_EVALUATED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -208,7 +222,10 @@ def build() -> dict[str, Any]:
         "validation mass domain by Green adjunction. A causal cellwise refinement "
         "strictly contracts both matched complex enclosures on its 2/4/8-cell rail "
         "below the whole-support hulls, but both 8-cell enclosures still contain "
-        "zero. The six mismatched channels, complete "
+        "zero. The D1/h0 cross-window remainder is certified, and all six "
+        "mismatched two_j=0,column-0 channels are evaluated: four are exact "
+        "support zeros and the two allowed channels have contracting but "
+        "zero-containing enclosures. Extension beyond two_j=4, the complete "
         "nested backend and tail-aware aggregate stop loop are not "
         "exported. Numerical masses, couplings and a stopping goal are therefore "
         "deferred; supplying them now would not produce an interval. The exact "
@@ -236,7 +253,7 @@ def build() -> dict[str, Any]:
         "sequencing_decision": {
             "completed_internal_gate": "complete symbolic preparation/recoil scalar operator word with exact Peter-Weyl reconstruction",
             "parameterization_during_internal_gate": "hold tilde_u_0,tilde_u_1 fixed; m_0,m_1 symbolic positive; factor explicit g_b g_c^2 monomials",
-            "current_active_gate": "evaluate the six mismatched channels with the partitioned causal backend, then extend the detector provider beyond two_j=4",
+            "current_active_gate": "extend the detector and feedback provider beyond two_j=4, then implement the tail-aware aggregate stop loop",
             "external_specialization_gate": "DEFERRED_UNTIL_EXECUTABLE_BACKEND",
             "dense_profile_materialization": "NOT_SELECTED",
             "physical_branch_bridge": "INACTIVE_NO_CERTIFIED_MAP",
@@ -268,13 +285,16 @@ def build() -> dict[str, Any]:
             "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": True,
             "FINITE_DETECTOR_MATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED": True,
             "FINITE_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK_EXPORTED": True,
+            "FINITE_CROSS_WINDOW_DETECTOR_ADVANCED_MAXWELL_REMAINDER_EXPORTED": True,
+            "FINITE_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS_EXPORTED": True,
+            "ALL_EIGHT_ABC_TWO_J0_K0_INTERVALS_EXPORTED": True,
             "NUMERICAL_RECOIL_SPECIALIZATION_INPUT_EXPORTED": False,
             "FOUR_RECOIL_SCALAR_STREAM_ACTIVE": False,
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "DETECTOR_RECOIL_NUMERICAL_COEFFICIENT_EVALUATED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "EVALUATE_SIX_MISMATCHED_CHANNELS_WITH_THE_PARTITIONED_CAUSAL_BACKEND",
+        "next_gate": "EXTEND_THE_DETECTOR_AND_FEEDBACK_PROVIDER_BEYOND_TWO_J4",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

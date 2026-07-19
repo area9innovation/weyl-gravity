@@ -322,9 +322,8 @@ branch.
 
 ### Immediate priority after the polarization-emitter handoff
 
-1. Evaluate the six mismatched `(a,b,c)` absolute-`g^3` channels with the
-   certified cell-partitioned causal backend, and then extend the finite
-   Berger rail beyond `two_j=4` with validated spectral-tail bounds and a
+1. Extend all eight absolute-`g^3` channel providers beyond `two_j=4` with
+   validated spectral-tail bounds, then implement the tail-aware aggregate
    stopping rule.  Physical masses and couplings remain deferred until that
    backend is complete.  In parallel, use the
    exported emitter stress
@@ -803,13 +802,14 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its twelve finite capabilities include the four baseline consumers,
+boundary.  Its fourteen finite capabilities include the four baseline consumers,
 the detector/`Dhat_1` binding, the switched diagonal massive stage, the
 physical full-form Cauchy pair and the canonical positive-energy preparation
 coefficients described below, plus the first freely evolved retarded Maxwell
 channel, the partition-refined leading rank-two response, the matched
-absolute-`g3` feedback-channel evaluator and its cell-partitioned causal
-refinement.
+absolute-`g3` feedback-channel evaluator, its cell-partitioned causal
+refinement, the D1/h0 cross-window remainder and the six mismatched-channel
+evaluator.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -953,7 +953,8 @@ form blocks and detects an all-plus pairing-sign mutation.  On
 whole-support interval enclosures containing zero.  They are therefore
 evaluated coefficient blocks, not nonzero recoil witnesses: sign,
 nonvanishing, recoil-corrected rank, Peter--Weyl aggregation, physical masses,
-the six mismatched channels and the infinite tail remain `OPEN`.
+the six mismatched channels and the infinite tail were `OPEN` at that gate;
+the finite mismatched successor below closes only the six-channel item.
 
 `BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK` removes the repeated
 whole-support dependency loss from those two matched contractions.  Every
@@ -963,9 +964,24 @@ both D0 and D1 the real and imaginary widths contract strictly from 2 to 4
 to 8 cells, and the 8-cell widths are strictly below their coarse
 counterparts.  Both refined intervals still contain zero.  Thus this is a
 certified enclosure improvement, not a sign, nonvanishing, recoil-rank or
-physical-mass result.  The active gate is now the six mismatched `(a,b,c)`
-channels with the same partitioned backend, followed by extension beyond
-`two_j=4` and the tail-aware aggregate stop loop.
+physical-mass result.
+
+`BERGER_CROSS_WINDOW_DETECTOR_ADVANCED_MAXWELL_REMAINDER` closes the only new
+profile-bandwidth input required by the mismatched channels.  The existing D1
+advanced polynomial is evaluated on the earlier h0 feedback window, where
+`T in [5/16,17/48]` and `source_time-t in [7/24,3/8]`.  Fresh order-five
+entire-series tails are certified through `two_j=4`; the smaller corresponding
+D1/h1 remainder is not extrapolated.
+
+`BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS` evaluates the remaining
+`two_j=0,k=0` blocks.  Strict support order `h0<D0<h1<D1` gives
+`I_001=I_010=I_011=I_110=0`.  `I_100` uses the D1/h0 advanced remainder;
+`I_101` propagates the h0 source retardedly to h1.  Both allowed complex
+enclosures contract strictly from 2 to 4 to 8 cells and still contain zero.
+Together with the matched pair, all eight finite blocks are evaluated on the
+validation mass domain.  The active gate is now extension beyond `two_j=4`,
+followed by the tail-aware aggregate stop loop; all-shell recoil, physical
+masses, quotient descent and tangent-cone restriction remain open.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as

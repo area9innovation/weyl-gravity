@@ -22,6 +22,8 @@ def main() -> int:
     assert rows["finite_detector_coefficient_provider_two_j0_to_4"] == "CERTIFIED"
     assert rows["finite_polynomial_nested_time_convolution"] == "CERTIFIED"
     assert rows["finite_partitioned_detector_matched_absolute_g3_feedback"] == "CERTIFIED"
+    assert rows["finite_cross_window_detector_advanced_maxwell_remainder"] == "CERTIFIED"
+    assert rows["finite_six_mismatched_absolute_g3_feedback_channels"] == "CERTIFIED"
     assert rows["callable_shell_interval_backend"] == "CERTIFIED"
     assert rows["complete_detector_coefficient_provider"] == "OBSTRUCTED"
     assert value["readiness"]["four_scalar_stream_active"] is False

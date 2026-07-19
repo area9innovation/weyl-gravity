@@ -24,7 +24,7 @@ def test_external_parameters_are_deferred_until_executable_backend():
     assert all(row["status"] == "OPEN" for row in value["readiness"]["external_rows"])
     assert all(row["activation"] == "DEFERRED" for row in value["readiness"]["external_rows"])
     assert value["sequencing_decision"]["current_active_gate"] == (
-        "evaluate the six mismatched channels with the partitioned causal backend, then extend the detector provider beyond two_j=4"
+        "extend the detector and feedback provider beyond two_j=4, then implement the tail-aware aggregate stop loop"
     )
     assert value["flags"]["FOUR_RECOIL_SCALAR_STREAM_ACTIVE"] is False
 
@@ -37,6 +37,8 @@ def test_missing_execution_capabilities_obstruct_activation():
     assert rows["finite_exact_mode_kernel_interval_enclosure"] == "CERTIFIED"
     assert rows["finite_detector_matched_absolute_g3_feedback_channels"] == "CERTIFIED"
     assert rows["finite_partitioned_detector_matched_absolute_g3_feedback"] == "CERTIFIED"
+    assert rows["finite_cross_window_detector_advanced_maxwell_remainder"] == "CERTIFIED"
+    assert rows["finite_six_mismatched_absolute_g3_feedback_channels"] == "CERTIFIED"
     assert rows["callable_shell_interval_backend"] == "CERTIFIED"
     assert rows["complete_detector_coefficient_provider"] == "OBSTRUCTED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"

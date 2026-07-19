@@ -10,12 +10,12 @@
     "claim_status": {"type": "string"},
     "atlas_status": {"const": "OBSTRUCTED"},
     "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
-    "dependency_refs": {"type": "object", "minProperties": 13, "maxProperties": 13},
+    "dependency_refs": {"type": "object", "minProperties": 15, "maxProperties": 15},
     "readiness": {"type": "object", "required": ["internal_rows", "external_rows", "symbolic_modewise_word_ready", "internal_modewise_stream_ready", "numerical_specialization_ready", "four_scalar_stream_active"]},
     "sequencing_decision": {"type": "object"},
     "mutation_results": {"type": "array", "minItems": 2},
     "flags": {"type": "object"},
-    "next_gate": {"const": "EVALUATE_SIX_MISMATCHED_CHANNELS_WITH_THE_PARTITIONED_CAUSAL_BACKEND"},
+    "next_gate": {"const": "EXTEND_THE_DETECTOR_AND_FEEDBACK_PROVIDER_BEYOND_TWO_J4"},
     "claim_boundary": {"type": "string"},
     "provenance": {"type": "object"}
   }

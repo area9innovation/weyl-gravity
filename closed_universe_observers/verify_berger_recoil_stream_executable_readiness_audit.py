@@ -21,11 +21,14 @@ def main() -> int:
     assert rows["detector_profile_coefficient_provider"] == "OBSTRUCTED"
     assert rows["finite_polynomial_nested_time_convolution"] == "CERTIFIED"
     assert rows["finite_partitioned_detector_matched_absolute_g3_feedback"] == "CERTIFIED"
+    assert rows["finite_cross_window_detector_advanced_maxwell_remainder"] == "CERTIFIED"
+    assert rows["finite_six_mismatched_absolute_g3_feedback_channels"] == "CERTIFIED"
     assert rows["nested_time_convolution_backend"] == "OBSTRUCTED"
     assert rows["shell_interval_evaluator"] == "CERTIFIED"
     assert value["flags"]["FINITE_DETECTOR_COEFFICIENT_PROVIDER_TWO_J0_TO_4_EXPORTED"] is True
     assert value["flags"]["FINITE_POLYNOMIAL_NESTED_TIME_CONVOLUTION_EXPORTED"] is True
     assert value["flags"]["FINITE_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK_EXPORTED"] is True
+    assert value["flags"]["ALL_EIGHT_ABC_TWO_J0_K0_INTERVALS_EXPORTED"] is True
     assert value["flags"]["CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED"] is True
     assert all(row["detected"] for row in value["mutation_results"])
     print("Berger recoil executable-readiness audit verification: PASS")

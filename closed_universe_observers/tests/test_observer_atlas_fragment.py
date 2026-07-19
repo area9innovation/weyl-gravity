@@ -287,3 +287,24 @@ def test_partitioned_matched_feedback_records_contraction_without_nonzero_promot
     assert "BERGER_RECOIL_PARTITIONED_MATCHED_ABSOLUTE_G3_FEEDBACK" in {
         evidence["result_id"] for evidence in row["evidence"]
     }
+
+
+def test_six_mismatched_feedback_channels_record_four_zeros_and_two_open_signs():
+    rows = {row["id"]: row for row in build()["entries"]}
+    cross = rows[
+        "observer.berger.detector_profile.recoil_cross_window_detector_advanced_maxwell_remainder"
+    ]
+    mismatch = rows[
+        "observer.berger.detector_profile.recoil_six_mismatched_absolute_g3_feedback_channels"
+    ]
+    assert cross["observer_data"]["detector_response"]["status"] == "OPEN"
+    assert cross["observer_data"]["clock_and_rod_dependence"]["status"] == "CERTIFIED"
+    assert mismatch["observer_data"]["detector_response"]["status"] == "CERTIFIED"
+    assert mismatch["observer_data"]["response_rank"]["status"] == "OPEN"
+    assert mismatch["observer_data"]["survives_gauge_reduction"]["status"] == "NO_CERTIFIED_MAP"
+    statement = mismatch["observer_data"]["detector_response"]["statement"]
+    assert "I_001, I_010, I_011 and I_110 are exact support zeros" in statement
+    assert "I_100 and I_101" in statement
+    assert "BERGER_SIX_MISMATCHED_ABSOLUTE_G3_FEEDBACK_CHANNELS" in {
+        evidence["result_id"] for evidence in mismatch["evidence"]
+    }

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "setting_id", "claim_status", "atlas_status", "dependency_tags", "dependency_refs", "mode_scope", "cross_window", "mode_remainders", "mutation_results", "flags", "next_gate", "claim_boundary", "provenance"],
+  "properties": {
+    "schema": {"const": "closed-universe-berger-cross-window-detector-advanced-maxwell-remainder-v1"},
+    "result_id": {"const": "BERGER_CROSS_WINDOW_DETECTOR_ADVANCED_MAXWELL_REMAINDER"},
+    "setting_id": {"type": "string"},
+    "claim_status": {"const": "D1_ADVANCED_MAXWELL_REMAINDER_CERTIFIED_ON_H0_WINDOW_TWO_J0_TO_4"},
+    "atlas_status": {"const": "CERTIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "dependency_refs": {"type": "object", "minProperties": 3, "maxProperties": 3},
+    "mode_scope": {"type": "object", "required": ["theory", "background", "boundaries", "charge_sector", "carrier", "degree", "parity", "ell", "m", "k", "omega"]},
+    "cross_window": {"type": "object", "required": ["detector", "feedback_switch", "detector_support_physical_time", "feedback_support_physical_time", "T_interval", "kernel_tau_interval", "strict_advanced_support_separation"]},
+    "mode_remainders": {"type": "array", "minItems": 5, "maxItems": 5},
+    "mutation_results": {"type": "array", "minItems": 1},
+    "flags": {"type": "object"},
+    "next_gate": {"const": "EVALUATE_CAUSALLY_ALLOWED_I_100_WITH_THE_CROSS_WINDOW_REMAINDER"},
+    "claim_boundary": {"type": "string"},
+    "provenance": {"type": "object"}
+  }
+}

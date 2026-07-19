@@ -27,10 +27,16 @@ enclosures still contain zero.  The
 readiness audit still finds three complete-stream missing pieces: an all-shell
 detector coefficient provider, physical Berger binding of the nested engine,
 and the tail-aware aggregate stop loop.
+
+The D1 advanced detector remainder is now certified on the earlier h0 window.
+All six mismatched `two_j=0,k=0` channels are also evaluated: four vanish by
+strict support order, while `I_100` and `I_101` contract on the 2/4/8-cell
+rail but still contain zero.  Thus all eight finite blocks are evaluated on
+the validation domain.
+
 The remaining sequence is:
 
-1. Evaluate the six mismatched `(a,b,c)` channels with the partitioned causal
-   backend, then extend the coefficient provider beyond `two_j=4`.
+1. Extend the coefficient and feedback provider beyond `two_j=4`.
 2. Implement the tail-aware four-stream stop loop.
 3. Only then declare numerical positive masses, nonzero couplings, and an
    interval, nonzero, or sign stopping goal.
