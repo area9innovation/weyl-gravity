@@ -3161,6 +3161,18 @@ and remains an explicit source-matrix gate.  Atlas row
 therefore resonance `CERTIFIED` but nonlinear `OPEN`; it computes no source
 coefficient and does not replace the five zero-frequency moment maps.
 
+The first genuine two-`|k|` identity ledger is also complete.  On the full
+`ell=2` primary carrier with `|n|=1,2`, simultaneous sign reversal and ordered
+branch interchange reduce every cross-fibre test to 198 canonical rows: two
+relative spatial signs, nine ordered input-primary pairs, and eleven target
+shells at `L=1,2,3,4`.  Exact evaluation finds no row for which both the
+linear and constant circumference-divisor coefficients vanish.  Hence no
+cross-fibre collision persists for every circumference, and outside a finite
+algebraic exceptional set every nonzero-frequency `|n|=1` times `|n|=2`
+source is off shell.  The isolated candidates, their projected source
+coefficients, same-fibre rows and the complete two-fibre tangent cone remain
+`OPEN`; the nonzero-Fourier `L=0` complex is separately exact.
+
 The complementary symbolic-`ell` self-product gate is also closed without
 extrapolating the direct `ell=2` source coefficient.  For every integer
 `ell>=2`, at
