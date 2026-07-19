@@ -347,6 +347,30 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("pure-extra Taub no-go", entry["claim_boundary"])
         self.assertIn("larger mixed Einstein-extra", entry["claim_boundary"])
 
+    def test_candidate13_mixed_null_witness_activates_same_fibre_gate(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["scope"]["m"], 0)
+        self.assertIn("Einstein-minus", entry["scope"]["carrier"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
+        self.assertIn("J_1,J_2,J_3", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("second-fibre-zero sheet", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("independence and activation witness", entry["claim_boundary"])
+
+    def test_candidate13_same_fibre_census_leaves_only_zero_frequency(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_same_fibre_resonance_census"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("144 exact defects", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertIn("Equal-branch reality products", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
         second = entry["mode_data"]["second_order"]

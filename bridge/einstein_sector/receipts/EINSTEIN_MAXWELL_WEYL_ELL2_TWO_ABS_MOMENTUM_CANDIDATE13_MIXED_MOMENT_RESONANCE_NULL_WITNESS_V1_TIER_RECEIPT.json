@@ -1,0 +1,45 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_MOMENT_RESONANCE_NULL_WITNESS_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Exact nonzero candidate-13 axial Einstein-minus/extra witness in the common zero of all five stabilizer moment maps and the certified cross-fibre resonance block.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.json": "cc7f8d781acc021152305734e4040f08e3d3d83d8e22ae1a26b90193f491f619",
+    "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.py": "1d9ec755fa9cad98ba54733ad0195081946bae4e25cb78079e55a0f619ffe040",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.py": "3a94fcdc0827859a33425f1647af5c4623aba210f7f4df0a8e8cb53f9821f388",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.py": "9b3e27e1672dd8286d30ac5e4f577b9f49e7e06c0ebaf3697dd77f0db28d6d52",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.schema.json": "e2fdaeab510cc142038cfb684b2e3f89c4f9fb6a10d2d8fb4271fc2ef898b28c",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-moment-resonance-null-witness.md": "d7c762e5515c088846862a39506a95efefc2feae165d04584df9af8a8bd10e93"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 81,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "producer_elapsed_seconds": 0.43,
+      "independent_verifier_elapsed_seconds": 0.49,
+      "reason": "The producer imports content-addressed current, moment-map and cross-fibre certificates; exact rational identities independently verify H and P_x cancellation, elementary squared inequalities verify positivity, and m=0 plus the certified angular selection rules close the three rotations."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a scoped independence witness and atlas lifecycle update, not a complete mixed-cone theorem, paper freeze, shared-core algebra change or release gate."
+    }
+  },
+  "claim_boundary": "All five stabilizer moment maps and the candidate-13 cross-fibre resonance block vanish on one exact nonzero axial mixed witness. Same-fibre functionals and bounded/smooth-secular extension remain OPEN; causal correction is NO_CERTIFIED_MAP."
+}

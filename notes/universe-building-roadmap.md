@@ -2285,6 +2285,20 @@ The next activation gate is the larger mixed Einstein--extra carrier, where
 the Taub form is indefinite; same-fibre sources and all five moment maps must
 be joined there.  Causal correction remains `NO_CERTIFIED_MAP`.
 
+The first exact mixed candidate-13 activation witness is now certified.  One
+axial `m=0` extra mode on `n=1`, together with two normalized
+negative-current Einstein-minus modes on `n=1,-2`, has positive exact
+occupations that cancel `H` and `P_x`; angular selection cancels all three
+rotations.  Setting the extra `n=-2` occupation to zero places the same
+nonzero tangent on the certified candidate-13 second-fibre-zero resonance
+sheet.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness`
+therefore records Taub and cross-fibre resonance `CERTIFIED`, bounded and
+smooth-secular correction `OPEN`, and causal correction `NO_CERTIFIED_MAP`.
+This is the active same-background Bridge 1 nonlinear input: the activation
+gate is the same-fibre adjoint-cokernel source ledger on the displayed mixed
+witness.  It is not a complete mixed-cone or second-order extension theorem.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell

@@ -1,0 +1,91 @@
+{
+  "claim_boundary": "This is an independence and activation witness, not a second-order extension. It certifies only the declared axial m=0 mixed carrier on the candidate-13 background. Same-fibre sources, the complete mixed cone, causal corrections, residual observables and quantum states remain fail-closed.",
+  "classification": {
+    "all_five_stabilizer_moment_maps_zero": true,
+    "bounded_or_smooth_second_order_extension_certified": false,
+    "candidate_13_cross_fibre_resonance_functionals_zero": true,
+    "candidate_13_mixed_Taub_resonance_common_zero_nontrivial": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "complete_mixed_two_fibre_tangent_cone_classified": false,
+    "nonzero_real_mixed_witness_certified": true,
+    "same_fibre_resonance_functionals_classified": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_fixture": {
+    "axial_q_minus_unnormalized_current_at_lambda_6": "96*(-3 + sqrt(3))*(-1 + 3*sqrt(3))",
+    "frequencies": {
+      "p1": "sqrt(461*sqrt(10)/2132 + 16681/3198)",
+      "q1": "sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066)",
+      "q2": "sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533)"
+    },
+    "normalized_current_signs": {
+      "p_primary": 1,
+      "q_minus": -1
+    },
+    "p_primary_offset_b": "16/3",
+    "q_minus_offset_a": "6 - 2*sqrt(3)",
+    "rho": "-125/1066 + 461*sqrt(10)/2132",
+    "rho_exact_interval": [
+      "1/2",
+      "3/5"
+    ]
+  },
+  "generality_level": "G1",
+  "interpretation": "The pure-extra Taub no-go is not stable under adjoining the negative-current Einstein-minus branch: an exact nonzero mixed tangent cancels all five moment maps while remaining on the candidate-13 cross-fibre resonance zero set. This activates, but does not solve, the same-fibre source gate.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "compute and restrict every same-fibre quadratic adjoint-cokernel functional to this exact mixed three-occupation witness, then decide bounded and smooth-secular extension separately",
+  "occupation_witness": {
+    "moment_equations": {
+      "H": "q1^2*y1+q2^2*y2-p1^2=0",
+      "J_1": "0",
+      "J_2": "0",
+      "J_3": "0",
+      "P_x": "q1*y1-2*q2*y2-p1=0"
+    },
+    "p_primary_n1": "1",
+    "p_primary_n_minus2": "0",
+    "positivity_certificate": "y1>0 and y2>0; p1>q1 because p1^2-q1^2=b-a=2*sqrt(3)-2/3>0",
+    "q_minus_n1": "(1383*sqrt(10) + sqrt(3)*sqrt(1383*sqrt(10) + 33362)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 33362)/(-12792*sqrt(3) + 1383*sqrt(10) + 3*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 37626)",
+    "q_minus_n_minus2": "(-sqrt(3)*sqrt(1383*sqrt(10) + 33362)*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542) + 1383*sqrt(10) + 33362)/(-12792*sqrt(3) + 5532*sqrt(10) + 35376 + 12*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948))",
+    "rotation_reason": "A coefficient supported only at m=0 has zero T3 expectation, while T1 and T2 connect m=0 only to absent m=+/-1 coefficients; distinct momentum/shell blocks are orthogonal."
+  },
+  "provenance": {
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_weyl_axial_lee_wald_completion.json": "de86c6af1439a9f47ddf8b50f2647fc6f706272e95cd7da7ace8677e63695567",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json": "7c4e0ac43d1db48098d1250e09abdefbf209758167882b68239c6c9841c71046",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json": "27fe530f6d296453e4eaf504eed688b6a2480cac18e0581e839898c7868e3450",
+      "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json": "4cbf20f26e3d87d981e5949b4d0727a0c8e936dba8f64503a19615fa18346e26"
+    }
+  },
+  "resonance_restriction": {
+    "candidate_13_cross_fibre_equations": "zero because every bilinear candidate-13 p(n=1)*p(n=-2) term vanishes on the certified second-fibre-zero plane",
+    "candidate_13_rho_isolated": "the exact isolated-candidate certificate proves that all 21 admissible circumference values are pairwise distinct",
+    "other_cross_fibre_functionals_at_this_rho": "absent from the certified 21-fibre ledger by pairwise distinctness",
+    "same_fibre_functionals": "OPEN"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_MOMENT_RESONANCE_NULL_WITNESS",
+  "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-moment-resonance-null-witness-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.schema.json",
+  "schema_sha256": "e2fdaeab510cc142038cfb684b2e3f89c4f9fb6a10d2d8fb4271fc2ef898b28c",
+  "scope": {
+    "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "one normalized axial p-primary mode at n=1 plus normalized axial q-minus modes at n=1 and n=-2; the p-primary n=-2 occupation is zero",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "input ell=2; candidate-13 cross-fibre output L=4",
+    "k": "signed momentum integers n=1 and n=-2 with k_n=n*sqrt(rho)",
+    "m": 0,
+    "omega": "p-primary at n=1 and q-minus at n=1,-2; positive-frequency carrier with conjugates understood",
+    "parity": "axial",
+    "theory": "Weyl-Maxwell target"
+  },
+  "second_order_verdict": {
+    "bounded_or_finite_quasiperiodic": "OPEN",
+    "causal_retarded": "NO_CERTIFIED_MAP",
+    "smooth_secular": "OPEN"
+  }
+}

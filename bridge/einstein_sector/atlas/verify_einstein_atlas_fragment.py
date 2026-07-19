@@ -610,6 +610,28 @@ def verify() -> None:
         raise AssertionError("candidate-13 pure-extra Taub lifecycle changed")
     if "pure-extra Taub no-go" not in candidate13["claim_boundary"] or "larger mixed Einstein-extra" not in candidate13["claim_boundary"]:
         raise AssertionError("candidate-13 theorem boundary changed")
+    candidate13_mixed = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness"]
+    candidate13_mixed_second = candidate13_mixed["mode_data"]["second_order"]
+    if candidate13_mixed["scope"]["m"] != 0 or "Einstein-minus" not in candidate13_mixed["scope"]["carrier"]:
+        raise AssertionError("candidate-13 mixed witness scope changed")
+    if candidate13_mixed["mode_data"]["taub_maps"]["status"] != "CERTIFIED" or "J_1,J_2,J_3" not in candidate13_mixed["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-13 mixed moment-null witness was hidden")
+    if candidate13_mixed["mode_data"]["resonance"]["status"] != "CERTIFIED" or "second-fibre-zero sheet" not in candidate13_mixed["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-13 mixed resonance-null witness was hidden")
+    if candidate13_mixed_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate13_mixed_second["smooth_secular"]["status"] != "OPEN" or candidate13_mixed_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 mixed correction classes were merged")
+    if "independence and activation witness" not in candidate13_mixed["claim_boundary"]:
+        raise AssertionError("candidate-13 mixed witness exceeded scope")
+    candidate13_same = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_same_fibre_resonance_census"]
+    candidate13_same_second = candidate13_same["mode_data"]["second_order"]
+    if candidate13_same["mode_data"]["resonance"]["status"] != "CERTIFIED" or "144 exact defects" not in candidate13_same["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("candidate-13 same-fibre shell census was hidden")
+    if candidate13_same["mode_data"]["taub_maps"]["status"] != "OPEN" or "Equal-branch reality products" not in candidate13_same["mode_data"]["taub_maps"]["statement"]:
+        raise AssertionError("candidate-13 zero-frequency same-fibre gate was hidden")
+    if candidate13_same_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate13_same_second["smooth_secular"]["status"] != "OPEN" or candidate13_same_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-13 same-fibre correction classes were merged")
+    if "not the mixed Einstein-extra tangent-cone theorem" not in candidate13_same["claim_boundary"]:
+        raise AssertionError("candidate-13 same-fibre census exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

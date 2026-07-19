@@ -3620,6 +3620,31 @@ uncomputed same-fibre rows.  The next fail-closed gate is the larger mixed
 Einstein--extra two-momentum carrier, where `mu_H` is indefinite and the
 same-fibre sources plus all five moment maps must be joined.
 
+That mixed carrier now has an exact nonzero activation witness.  At the
+candidate-13 value
+`rho=(-250+461 sqrt(10))/2132`, take one unit-current axial extra mode on
+`n=1`, no extra occupation on `n=-2`, and axial Einstein-minus occupations
+
+```text
+y1=p1(2p1+q2)/(q1(2q1+q2)),
+y2=p1(p1-q1)/(q2(2q1+q2)),
+```
+
+where `q1^2=rho+6-2sqrt(3)`, `q2^2=4rho+6-2sqrt(3)` and
+`p1^2=rho+16/3`.  Both are positive, and the two exact identities
+`q1^2 y1+q2^2 y2=p1^2` and `q1 y1-2q2 y2=p1` set `mu_H=mu_Px=0`.
+Axisymmetric support sets all three rotation moment maps to zero.  The absent
+extra `n=-2` occupation simultaneously places the tangent on candidate 13's
+certified second-fibre-zero resonance sheet.  Thus the pure-extra no-go does
+not survive adjoining the negative-current Einstein-minus branch, and the
+cross-fibre candidate-13 functional is independent of the five moment maps.
+The fail-closed atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness`
+keeps bounded and smooth-secular extension `OPEN` and causal correction
+`NO_CERTIFIED_MAP`.  The active gate is now exactly the same-fibre quadratic
+adjoint-cokernel ledger restricted to this witness; this is input to the
+same-background Einstein–Weyl bridge, not a completed nonlinear bridge.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

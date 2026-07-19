@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-moment-resonance-null-witness-v1.schema.json",
+  "title": "Candidate-13 mixed moment and resonance-null witness",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_sha256",
+    "result_id",
+    "dependency_tags",
+    "scope",
+    "exact_fixture",
+    "occupation_witness",
+    "resonance_restriction",
+    "classification",
+    "second_order_verdict",
+    "provenance",
+    "next_gate",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-moment-resonance-null-witness-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_MOMENT_RESONANCE_NULL_WITNESS"},
+    "classification": {
+      "type": "object",
+      "required": [
+        "nonzero_real_mixed_witness_certified",
+        "all_five_stabilizer_moment_maps_zero",
+        "candidate_13_cross_fibre_resonance_functionals_zero",
+        "candidate_13_mixed_Taub_resonance_common_zero_nontrivial",
+        "same_fibre_resonance_functionals_classified",
+        "complete_mixed_two_fibre_tangent_cone_classified",
+        "bounded_or_smooth_second_order_extension_certified",
+        "causal_residual_observational_or_quantum_claim"
+      ],
+      "properties": {
+        "nonzero_real_mixed_witness_certified": {"const": true},
+        "all_five_stabilizer_moment_maps_zero": {"const": true},
+        "candidate_13_cross_fibre_resonance_functionals_zero": {"const": true},
+        "candidate_13_mixed_Taub_resonance_common_zero_nontrivial": {"const": true},
+        "same_fibre_resonance_functionals_classified": {"const": false},
+        "complete_mixed_two_fibre_tangent_cone_classified": {"const": false},
+        "bounded_or_smooth_second_order_extension_certified": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      }
+    },
+    "second_order_verdict": {
+      "type": "object",
+      "properties": {
+        "bounded_or_finite_quasiperiodic": {"const": "OPEN"},
+        "smooth_secular": {"const": "OPEN"},
+        "causal_retarded": {"const": "NO_CERTIFIED_MAP"}
+      },
+      "required": ["bounded_or_finite_quasiperiodic", "smooth_secular", "causal_retarded"]
+    }
+  },
+  "additionalProperties": true
+}
