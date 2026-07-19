@@ -17,13 +17,13 @@
     "tangent_cones": {
       "type": "object",
       "properties": {
-        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["status", "formula"]},
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "OPEN"}}, "required": ["status", "necessary_formula"]},
         "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["status", "formula"]},
         "CAUSAL_RETARDED": {"type": "object", "properties": {"status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["status", "formula"]}
       },
       "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"]
     },
-    "classification": {"type": "object", "required": ["complete_candidate13_bounded_tangent_cone_formula_certified", "complete_candidate13_smooth_tangent_cone_formula_certified", "five_stabilizer_and_eighteen_resonance_functionals_necessary_and_sufficient_bounded", "five_stabilizer_functionals_necessary_and_sufficient_smooth", "real_algebraic_component_decomposition_classified", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]}
+    "classification": {"type": "object", "required": ["complete_candidate13_bounded_tangent_cone_formula_certified", "candidate13_known_bounded_functional_ledger_certified", "complete_candidate13_bounded_functional_ledger_certified", "complete_candidate13_smooth_tangent_cone_formula_certified", "five_stabilizer_pressure_and_eighteen_resonance_functionals_necessary_bounded", "five_stabilizer_pressure_and_eighteen_resonance_functionals_sufficient_bounded", "five_stabilizer_functionals_necessary_and_sufficient_smooth", "real_algebraic_component_decomposition_classified", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]}
   },
   "additionalProperties": true
 }

@@ -1,4 +1,4 @@
-"""Certify a bounded second-order extension of the candidate-13 mixed witness."""
+"""Audit and retract the claimed bounded extension of the candidate-13 witness."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ INPUTS = {
     "same_fibre_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
     "finite_generic_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
     "isolated_cross_fibre_candidates": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_isolated_candidates.json",
+    "pressure_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
 }
 
 
@@ -36,6 +37,7 @@ def build() -> dict[str, object]:
     same = records["same_fibre_census"]
     generic = records["finite_generic_cone"]
     isolated = records["isolated_cross_fibre_candidates"]
+    pressure = records["pressure_obstruction"]
 
     witness_flags = witness["classification"]
     require(witness_flags["nonzero_real_mixed_witness_certified"], "candidate-13 mixed witness disappeared")
@@ -46,16 +48,18 @@ def build() -> dict[str, object]:
     require(same_flags["candidate_13_all_nonzero_same_fibre_channels_off_shell"], "same-fibre shell exclusion changed")
     require(not same_flags["same_fibre_nonzero_frequency_source_matrices_required_for_bounded_gate"], "same-fibre source gate reopened")
     generic_flags = generic["classification"]
-    require(generic_flags["complete_reduced_adjoint_cokernel_decomposition_certified"], "zero-block cokernel theorem changed")
-    require("exists exactly" in generic["bounded_resonance_functionals"]["necessity_and_sufficiency"], "bounded sufficiency theorem changed")
+    require(generic_flags["complete_reduced_adjoint_cokernel_decomposition_certified"], "generic decomposition changed")
+    require(not generic_flags["bounded_resonance_zero_locus_solved"], "generic bounded gate unexpectedly closed")
     require(isolated["classification"]["twenty_one_distinct_admissible_candidates"], "cross-fibre isolation changed")
+    require(pressure["classification"]["candidate13_bounded_pressure_functional_nonzero"], "bounded pressure obstruction changed")
+    require(pressure["classification"]["candidate13_smooth_exponential_polynomial_extension_certified"], "smooth pressure extension changed")
 
     return {
         "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-bounded-extension-v1",
         "schema_path": str(SCHEMA.relative_to(ROOT)),
         "schema_sha256": sha(SCHEMA),
         "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_BOUNDED_EXTENSION",
-        "result_state": "ONE_CANDIDATE13_MIXED_EINSTEIN_EXTRA_TANGENT_EXTENDS_TO_SECOND_ORDER_IN_THE_BOUNDED_CLASS",
+        "result_state": "CANDIDATE13_MIXED_TANGENT_BOUNDED_OBSTRUCTED_SMOOTH_SECOND_ORDER_EXTENDIBLE",
         "lifecycle_state": "CLASSIFIED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "generality_level": "G1_ONE_EXACT_MIXED_THREE_OCCUPATION_WITNESS",
@@ -69,9 +73,9 @@ def build() -> dict[str, object]:
             "reality": "the resulting first-order tangent and its blockwise correction are real",
         },
         "second_order_equation": "L_WM v=-(1/2)D^2E_WM[u,u]",
-        "complete_blockwise_proof": {
-            "abstract_criterion": generic["bounded_resonance_functionals"]["necessity_and_sufficiency"],
-            "zero_frequency_cokernel": generic["complete_adjoint_cokernel_decomposition"]["zero_block"]["decomposition"],
+        "complete_blockwise_disposition": {
+            "audit_result": "the former proof imported a smooth-class zero-block decomposition as bounded sufficiency and omitted the constant circle-pressure functional",
+            "generic_claim_boundary": generic["claim_boundary"],
             "zero_frequency_pairings": {
                 "mu_H": "0",
                 "mu_Px": "0",
@@ -79,32 +83,37 @@ def build() -> dict[str, object]:
                 "mu_J2": "0",
                 "mu_J3": "0",
             },
-            "zero_frequency_consequence": "every constant source block lies in the image; L=0 and L=1 use the five vanishing stabilizer pairings, while every static L>=2 block is invertible after local gauge reduction",
+            "zero_frequency_pressure_functional": pressure["primary_action_identity"]["pressure_functional"],
+            "zero_frequency_pressure_value": pressure["exact_witness"]["pressure"],
+            "zero_frequency_consequence": "the five persistent smooth adjoint pairings vanish, but the independent bounded circle-pressure functional is strictly negative and has no bounded homogeneous image",
             "same_fibre_nonzero_frequency": "all 18 channels are off shell by 144 exact defects; the two L=0 Fourier types use their separately certified empty quotients",
             "cross_fibre_nonzero_frequency": "the only candidate-13 shell functional is zero because p_primary_n_minus2=0; all other isolated cross-fibre collision fibres have distinct circumference",
-            "correction_construction": "solve each finite off-shell block by its certified algebraic inverse, solve each zero-frequency compatible block by the certified reduced right inverse, and adjoin complex-conjugate blocks",
-            "temporal_class": "finite quasiperiodic with no secular term",
+            "smooth_correction_construction": "solve each finite off-shell block algebraically and use the certified finite secular inverse for the pressure block; componentwise pressure-row normalization is not asserted here",
+            "temporal_class": "smooth finite exponential-polynomial; bounded finite-quasiperiodic correction is obstructed",
             "spatial_class": "smooth and S1_L-periodic",
         },
         "correction_classes": {
-            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "CERTIFIED"},
-            "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"status": "CERTIFIED", "reason": "the bounded correction lies in this larger class"},
+            "BOUNDED_OR_FINITE_QUASIPERIODIC": {"status": "OBSTRUCTED", "reason": "R_c(u)<0 in the zero-frequency circle-pressure row"},
+            "SMOOTH_EXPONENTIAL_POLYNOMIAL": {"status": "CERTIFIED", "reason": "the five stabilizer moment maps vanish and the complete finite-support smooth theorem supplies secular inverses"},
             "CAUSAL_RETARDED": {"status": "NO_CERTIFIED_MAP"},
         },
         "classification": {
-            "candidate_13_mixed_witness_bounded_second_order_extendible": True,
+            "candidate_13_mixed_witness_bounded_second_order_extendible": False,
+            "candidate_13_mixed_witness_bounded_second_order_obstructed": True,
+            "candidate_13_mixed_witness_smooth_second_order_extendible": True,
+            "candidate_13_bounded_pressure_functional_nonzero": True,
             "all_five_zero_frequency_adjoint_pairings_vanish": True,
             "all_same_fibre_nonzero_frequency_blocks_off_shell": True,
             "all_cross_fibre_bounded_resonance_functionals_vanish": True,
-            "complete_finite_block_bounded_source_in_image": True,
-            "explicit_blockwise_correction_recipe_certified": True,
+            "complete_finite_block_bounded_source_in_image": False,
+            "explicit_blockwise_smooth_correction_recipe_certified": True,
             "full_candidate_13_mixed_tangent_cone_classified": False,
             "all_orders_integrability": False,
             "causal_residual_observational_or_quantum_claim": False,
         },
-        "interpretation": "The candidate-13 mixed witness is not merely Taub-null. Its zero-frequency source has no adjoint-cokernel component, every nonzero same-fibre block is off shell, and its only possible cross-fibre shell coefficient vanishes. Hence the pure-extra obstruction is genuinely evaded by an Einstein-minus admixture at second order in the bounded class.",
-        "next_gate": "classify the full mixed candidate-13 coefficient cone rather than extrapolating from this one extendible ray; causal/retarded extension remains a separate background-specific problem",
-        "claim_boundary": "This certifies one exact axial m=0 mixed three-occupation tangent and a bounded second-order correction before the final residual quotient. It does not classify the full mixed cone, arbitrary phases or polar amplitudes, prove all-orders integration, construct a causal correction, or make residual, observational or quantum claims.",
+        "interpretation": "The candidate-13 mixed witness is Taub-null and misses every finite-frequency resonance, but it is not boundedly extendible: a distinct zero-frequency circle-pressure functional is strictly negative. The complete smooth theorem still gives a finite secular second-order correction.",
+        "next_gate": "classify the bounded circle-pressure functional jointly with the five moment maps and eighteen candidate-13 resonance coefficients on the full mixed carrier",
+        "claim_boundary": "This certifies one exact axial m=0 mixed tangent as bounded/finitely-quasiperiodically OBSTRUCTED and smoothly second-order extendible before the final residual quotient. It does not classify the full mixed cone, arbitrary phases or polar amplitudes, prove all-orders integration, construct a causal correction, or make residual, observational or quantum claims.",
         "provenance": {
             "generator_path": str(Path(__file__).relative_to(ROOT)),
             "generator_sha256": sha(Path(__file__)),

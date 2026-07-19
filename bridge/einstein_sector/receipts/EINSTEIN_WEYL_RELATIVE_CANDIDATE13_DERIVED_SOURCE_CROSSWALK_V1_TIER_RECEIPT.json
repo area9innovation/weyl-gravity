@@ -1,0 +1,47 @@
+{
+  "receipt_id": "EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Typed smooth reduced-mode derived-source pullback and partial known necessary bounded receiver from candidate 13 into the same-background relative current/cofiber receiver.",
+  "content_sha256": {
+    "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json": "42272b71184e23949246e73a123e47e917115e702238870b339b40f794c33add",
+    "bridge/einstein_sector/einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "aeffef1bbeec3f860bfe4a508a7b35c778e3722dbb63e2e15c7deb964ec284a1",
+    "bridge/einstein_sector/schema/einstein-weyl-relative-candidate13-derived-source-crosswalk-v1.schema.json": "ef0484b28bcbfc55efb397407924373f23eb9a9cb5d73c426d956a4813b01ab4",
+    "bridge/einstein_sector/verify_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "4e2e038bca1fc8ce19ddc8b8836722a4f23291dcdb02f6b3faba3c7124133529",
+    "bridge/einstein_sector/tests/test_einstein_weyl_relative_candidate13_derived_source_crosswalk.py": "c62d7cf0397be2bc9e05a21ba700a76ad826f8c3179da132596ae4609c0d017e",
+    "bridge/einstein_sector/reports/einstein-weyl-relative-candidate13-derived-source-crosswalk.md": "ab80ee644c624bb9d6751bf64619c97d08520f57d627d7d841601b7a84d02dfb"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 84,
+      "commands": [
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_weyl_relative_candidate13_derived_source_crosswalk",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json",
+        "python3 -m bridge.einstein_sector.atlas.verify_einstein_atlas_fragment",
+        "python3 -m unittest bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "producer_elapsed_seconds": 0.09,
+      "producer_max_rss_kib": 24288,
+      "independent_verifier_elapsed_seconds": 0.09,
+      "independent_verifier_max_rss_kib": 23300,
+      "reason": "The crosswalk pins the off-shell linear triangle, branch dictionary, current-cofiber receiver, full-domain f2 obstruction, pressure witness, and corrected candidate-13 smooth/partial-bounded cone by SHA-256."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This is a reduced-mode derived-source crosswalk, not a support-local BV derived subcomplex, full relative f2 repair, arity-three morphism, causal functor, observable map, quantum theorem, freeze, or release."
+    }
+  },
+  "claim_boundary": "The candidate-13 smooth derived pullback is certified. The known bounded receiver has five stabilizer, one pressure, and eighteen finite-frequency components, but its completeness and sufficiency are OPEN. The full-domain support-local f2 remains obstructed and arity three remains unauthorized."
+}

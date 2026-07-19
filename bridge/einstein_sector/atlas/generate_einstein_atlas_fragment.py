@@ -113,6 +113,7 @@ CERTIFICATES = {
     "ell2_two_abs_momentum_candidate13_same_fibre_census": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
     "ell2_two_abs_momentum_candidate13_mixed_bounded_extension": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.json",
     "ell2_two_abs_momentum_candidate13_complete_mixed_cone": ROOT / "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.json",
+    "candidate13_mixed_pressure_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
     "twist_aligned_opposite_momentum_gate": ROOT / "bridge/certificates/einstein_maxwell_weyl_twist_aligned_opposite_momentum_resonance_gate.json",
     "symbolic_ell_qminus_self_collision": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_qminus_self_collision.json",
     "symbolic_ell_axial_qminus_obstruction": ROOT / "bridge/certificates/einstein_maxwell_weyl_symbolic_ell_axial_qminus_obstruction.json",
@@ -138,6 +139,9 @@ CERTIFICATES = {
     "exceptional_offshell": ROOT / "bridge/certificates/EINSTEIN_WEYL_EXCEPTIONAL_GLOBAL_OFFSHELL_CHAIN_MAPS_V1.json",
     "covariant_chain_map": ROOT / "bridge/certificates/EINSTEIN_WEYL_COMPACT_PRODUCT_COVARIANT_CHAIN_MAP_V1.json",
     "relative_linear_triangle": ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1.json",
+    "relative_candidate13_derived_source_crosswalk": ROOT / "bridge/certificates/EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1.json",
+    "relative_current_cofiber_receiver": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
+    "relative_full_domain_f2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
     "homogeneous_cofiber": ROOT / "bridge/certificates/einstein_weyl_homogeneous_solution_cofiber.json",
     "twist_cofiber": ROOT / "bridge/certificates/einstein_weyl_twist_solution_cofiber.json",
     "generic_cyclic_obstruction": ROOT / "bridge/certificates/einstein_weyl_generic_identity_cyclic_obstruction.json",
@@ -231,6 +235,18 @@ def entries() -> list[dict[str, object]]:
             _second_order(("OPEN", "Bridge 1 is a linear carrier gate; the complete bounded tangent cone is not certified."), ("OPEN", "No all-sector smooth-secular relative theorem."), open_causal),
             _evidence("relative_linear_triangle", "covariant_chain_map", "branch_dictionary", "exceptional_offshell", "exceptional_nonzero_k_cofiber"),
             "Global map lifecycle is NONCYCLIC_THREE_FORM_LINEAR_TRIANGLE_CERTIFIED and compact-product Bridge 1 is active only at the linear algebraic/cofiber level. One natural support-local minimal chain map globalizes the complete harmonic coefficient algebra without harmonic selection; the three action forms and declared fixed-N=2 residual endpoints are explicit. Every standard-pairing cyclic correction is obstructed. Compact-product causal Green data and q2/q3 relative compatibility remain open. No similarly named mode on Berger, black-hole, asymptotic or vacuum-cylinder backgrounds is identified by this row.",
+        ),
+        _entry(
+            "einstein.ph.bridge.relative_candidate13_derived_source_crosswalk",
+            _scope(theory="Einstein-Maxwell source relative to Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="generic ell=2 q-primary Einstein image plus p-primary relative cofiber on signed n=1,-2 fibres", degree=2, parity="axial and polar", ell="input ell=2; outputs L=0,...,4", m="all m and allowed output M", k="signed n=1,-2 fibres with reality conjugates", omega="all generic branch shells and quadratic signed sums", charge_sector="fixed magnetic U1 bundle P_N with N=2"),
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"NO_CERTIFIED_MAP","quantum":"NO_CERTIFIED_MAP"},
+            ("CERTIFIED","The q-primary Einstein image and p-primary relative cofiber are crosswalked on the same candidate-13 compact-product background only."),
+            ("CERTIFIED","The source, pulled-back target and cofiber action-derived forms remain three distinct noncyclic triangle forms."),
+            ("CERTIFIED","The smooth zero-block map lands in the five-current/Koszul receiver; bounded inversion adds a distinct circle-pressure component R_c."),
+            ("CERTIFIED","The finite-frequency relative map lands in the separate 18-dimensional candidate-13 adjoint-cokernel coefficient receiver."),
+            _second_order(("OPEN","The five stabilizers, R_c and eighteen resonance coefficients are a necessary bounded receiver ledger; full bounded homogeneous sufficiency is open."),("CERTIFIED","The smooth derived source is the five-moment-map zero locus because the pressure and resonance components have secular inverses."),("NO_CERTIFIED_MAP","No background-specific retarded relative correction complex is certified.")),
+            _evidence("relative_candidate13_derived_source_crosswalk","relative_linear_triangle","relative_current_cofiber_receiver","relative_full_domain_f2_obstruction","ell2_two_abs_momentum_candidate13_complete_mixed_cone","candidate13_mixed_pressure_obstruction","branch_dictionary"),
+            "This is a same-background REDUCED-MODE smooth derived-source crosswalk and necessary bounded ledger. A bounded pullback is not certified; the frozen-unary full-domain support-local f2 remains obstructed, no support-local derived BV subcomplex is constructed, arity three is not authorized, and higher maps remain fail-closed.",
         ),
         _entry(
             "einstein.ph.em_wm.standard.generic_radiative",
@@ -1075,26 +1091,26 @@ def entries() -> list[dict[str, object]]:
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_bounded_extension",
             _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="one normalized axial p-primary mode at n=1 plus normalized axial Einstein-minus q-primary modes at n=1 and n=-2; p-primary occupation at n=-2 is zero", degree=2, parity="axial", ell="input ell=2; quadratic outputs L=0,...,4", m=0, k="signed momentum integers n=1 and n=-2 with k_n=n*sqrt(rho)", omega="finite q-minus/p-primary sum, difference and zero-frequency products with conjugates", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
-            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OBSTRUCTED","observational":"OPEN","quantum":"OPEN"},
             ("CERTIFIED","The exact candidate-13 circumference, three occupied generic modes and their reality conjugates are retained without cross-background identification."),
             ("CERTIFIED","The action-normalized p-primary and Einstein-minus current signs supply the exact positive occupations used by the mixed witness."),
-            ("CERTIFIED","The complete zero-block adjoint cokernel is span{H,P_x,J_1,J_2,J_3}, and all five pairings vanish on the declared tangent."),
+            ("CERTIFIED","All five persistent stabilizer pairings vanish, but the independent bounded circle-pressure functional R_c is strictly negative."),
             ("CERTIFIED","All 18 nonzero same-fibre channels are off shell; the candidate-13 cross-fibre functional vanishes on the second-fibre-zero plane, and the other 20 collision circumferences are distinct."),
-            _second_order(("CERTIFIED","Every finite source block lies in the bounded reduced image, yielding a real smooth spatially periodic finite-quasiperiodic correction."),("CERTIFIED","The bounded correction is also a smooth exponential-polynomial correction."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("ell2_two_abs_momentum_candidate13_mixed_bounded_extension","ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_mixed_null_witness","finite_generic_smooth","ell2_two_abs_momentum_isolated_candidates","abstract_cone"),
-            "This certifies one exact axial m=0 mixed three-occupation second-order jet, not the full candidate-13 mixed tangent cone. Arbitrary phases and polar amplitudes, all-orders integration, causal propagation, residual observables and quantum claims remain fail-closed.",
+            _second_order(("OBSTRUCTED","R_c<0 has no bounded homogeneous image, despite vanishing moment maps and finite-frequency resonance coefficients."),("CERTIFIED","The complete finite-support smooth theorem supplies a finite secular correction; componentwise pressure-row normalization is not asserted here."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate13_mixed_bounded_extension","candidate13_mixed_pressure_obstruction","ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_mixed_null_witness","finite_generic_smooth","abstract_cone"),
+            "This certifies one exact axial m=0 mixed tangent as bounded-obstructed and smoothly second-order extendible, not the full candidate-13 mixed cone. Arbitrary phases and polar amplitudes, all-orders integration, causal propagation, residual observables and quantum claims remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_complete_mixed_cone",
             _scope(theory="Weyl-Maxwell target", boundaries="candidate-13 closed S1_L times S2 circumference fibre; before final residual quotient", carrier="all generic ell=2 q-minus, p-extra and q-plus coefficients on signed n=1 and n=-2 collision fibres with reality conjugates", degree=2, parity="both axial and polar inputs and all selected output parities", ell="input ell=2; every quadratic output L=0,1,2,3,4", m="all m=-2,...,2 and every allowed output M", k="signed n=1 and n=-2 candidate-13 fibres and their conjugates", omega="all generic branch shells and quadratic signed sums", charge_sector="fixed magnetic U(1) bundle P_N with N=2"),
-            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"CERTIFIED","observational":"OPEN","quantum":"OPEN"},
+            {"causal":"NO_CERTIFIED_MAP","symplectic":"CERTIFIED","nonlinear":"OPEN","observational":"OPEN","quantum":"OPEN"},
             ("CERTIFIED","The complete finite generic candidate-13 two-fibre carrier is kept on one exact circumference background."),
             ("CERTIFIED","The branch dictionary and stabilizer moment maps use the action-derived reduced current forms; no new quantum sign claim is made."),
-            ("CERTIFIED","The complete zero-frequency adjoint cokernel is exactly the five stabilizer covectors, with no additional same-fibre functional."),
+            ("CERTIFIED","The smooth zero-frequency cokernel is exactly the five stabilizers; bounded inversion has the additional necessary circle-pressure functional R_c."),
             ("CERTIFIED","The bounded nonzero-frequency obstruction is exactly the 18-coefficient prime candidate-13 cross-fibre ideal; all same-fibre and other cross-fibre channels are off shell."),
-            _second_order(("CERTIFIED","The bounded cone is exactly {mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_13,1=...=R_13,18=0}."),("CERTIFIED","The smooth exponential-polynomial cone is exactly the common zero of the five stabilizer moment maps."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
-            _evidence("ell2_two_abs_momentum_candidate13_complete_mixed_cone","ell2_two_abs_momentum_candidate13_mixed_bounded_extension","ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","finite_generic_smooth","abstract_cone"),
-            "This is a complete equation-level tangent-cone theorem on the declared finite generic candidate-13 carrier. The irreducible real moment-map intersection, exceptional/global inputs, all-orders integration, causal propagation, residual observables and quantum claims remain fail-closed.",
+            _second_order(("OPEN","A necessary bounded ledger is mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=R_13,1=...=R_13,18=0; full bounded homogeneous sufficiency is open."),("CERTIFIED","The smooth exponential-polynomial cone is exactly the common zero of the five stabilizer moment maps."),("NO_CERTIFIED_MAP","No background-specific retarded Weyl-Maxwell correction complex is certified.")),
+            _evidence("ell2_two_abs_momentum_candidate13_complete_mixed_cone","candidate13_mixed_pressure_obstruction","ell2_two_abs_momentum_candidate13_mixed_bounded_extension","ell2_two_abs_momentum_candidate13_same_fibre_census","ell2_two_abs_momentum_candidate13_L4_incidence_reduction","finite_generic_smooth","abstract_cone"),
+            "This is a complete smooth-secular cone theorem and partial necessary bounded-functional ledger on the declared finite generic candidate-13 carrier. Bounded ledger completeness and sufficiency, the irreducible real moment-map intersection, all-orders, causal, residual, observational and quantum claims remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.interaction.twist_aligned_opposite_momentum_resonance_gate",
@@ -1969,11 +1985,14 @@ def build() -> dict[str, object]:
     candidate13_extension = records["ell2_two_abs_momentum_candidate13_mixed_bounded_extension"]
     candidate13_extension_flags = candidate13_extension["classification"]
     if not (
-        candidate13_extension_flags["candidate_13_mixed_witness_bounded_second_order_extendible"]
+        not candidate13_extension_flags["candidate_13_mixed_witness_bounded_second_order_extendible"]
+        and candidate13_extension_flags["candidate_13_mixed_witness_bounded_second_order_obstructed"]
+        and candidate13_extension_flags["candidate_13_mixed_witness_smooth_second_order_extendible"]
+        and candidate13_extension_flags["candidate_13_bounded_pressure_functional_nonzero"]
         and candidate13_extension_flags["all_five_zero_frequency_adjoint_pairings_vanish"]
         and candidate13_extension_flags["all_same_fibre_nonzero_frequency_blocks_off_shell"]
         and candidate13_extension_flags["all_cross_fibre_bounded_resonance_functionals_vanish"]
-        and candidate13_extension_flags["complete_finite_block_bounded_source_in_image"]
+        and not candidate13_extension_flags["complete_finite_block_bounded_source_in_image"]
     ):
         raise AssertionError("candidate-13 mixed bounded extension changed")
     if (
@@ -1985,13 +2004,17 @@ def build() -> dict[str, object]:
     candidate13_cone = records["ell2_two_abs_momentum_candidate13_complete_mixed_cone"]
     candidate13_cone_flags = candidate13_cone["classification"]
     if not (
-        candidate13_cone_flags["complete_candidate13_bounded_tangent_cone_formula_certified"]
+        not candidate13_cone_flags["complete_candidate13_bounded_tangent_cone_formula_certified"]
+        and candidate13_cone_flags["candidate13_known_bounded_functional_ledger_certified"]
+        and not candidate13_cone_flags["complete_candidate13_bounded_functional_ledger_certified"]
         and candidate13_cone_flags["complete_candidate13_smooth_tangent_cone_formula_certified"]
-        and candidate13_cone_flags["five_stabilizer_and_eighteen_resonance_functionals_necessary_and_sufficient_bounded"]
+        and candidate13_cone_flags["five_stabilizer_pressure_and_eighteen_resonance_functionals_necessary_bounded"]
+        and not candidate13_cone_flags["five_stabilizer_pressure_and_eighteen_resonance_functionals_sufficient_bounded"]
         and candidate13_cone_flags["five_stabilizer_functionals_necessary_and_sufficient_smooth"]
-        and candidate13_cone_flags["same_fibre_source_functionals_absent_after_shell_reduction"]
+        and candidate13_cone_flags["same_fibre_nonzero_frequency_source_functionals_absent_after_shell_reduction"]
         and candidate13_cone_flags["pure_extra_face_is_origin"]
-        and candidate13_cone_flags["nonzero_mixed_bounded_point_exists"]
+        and not candidate13_cone_flags["nonzero_mixed_bounded_point_exists"]
+        and candidate13_cone_flags["nonzero_mixed_smooth_point_exists"]
     ):
         raise AssertionError("candidate-13 complete mixed cone changed")
     if (
@@ -2295,6 +2318,25 @@ def build() -> dict[str, object]:
     triangle = records["relative_linear_triangle"]
     if triangle["result_id"] != "EINSTEIN_WEYL_RELATIVE_LINEAR_TRIANGLE_V1" or not all(triangle["acceptance_flags"].values()):
         raise AssertionError("full relative linear triangle input changed")
+    relative_candidate13 = records["relative_candidate13_derived_source_crosswalk"]["classification"]
+    if not (
+        relative_candidate13["same_background_relative_branch_crosswalk_certified"]
+        and relative_candidate13["candidate13_five_plus_pressure_plus_eighteen_quadratic_receiver_typed"]
+        and not relative_candidate13["bounded_derived_source_pullback_certified"]
+        and relative_candidate13["bounded_derived_source_known_necessary_ledger_certified"]
+        and relative_candidate13["smooth_derived_source_pullback_certified"]
+        and not relative_candidate13["nonzero_mixed_bounded_derived_source_point_certified"]
+        and relative_candidate13["nonzero_mixed_smooth_derived_source_point_certified"]
+        and relative_candidate13["full_domain_f2_obstruction_preserved"]
+    ):
+        raise AssertionError("relative candidate-13 derived-source crosswalk changed")
+    if (
+        relative_candidate13["support_local_BV_derived_subcomplex_constructed"]
+        or relative_candidate13["full_relative_arity_two_morphism_constructed"]
+        or relative_candidate13["arity_three_authorized"]
+        or relative_candidate13["cross_background_causal_observational_or_quantum_claim"]
+    ):
+        raise AssertionError("relative candidate-13 crosswalk exceeded scope")
     covariant_map = records["covariant_chain_map"]["classification"]
     if not (
         covariant_map["single_covariant_support_local_map_reconstructed"]

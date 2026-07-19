@@ -1,0 +1,32 @@
+# Candidate-13 derived-source crosswalk
+
+The certified same-background Einstein--Weyl linear triangle has a
+support-local mapping cofiber, but its frozen unary inclusion does not admit a
+full-domain support-local `f2`.  The relative current-cofiber assembly left two
+admissible routes: a typed cross-incidence or a derived source pullback.
+
+The candidate-13 tangent-cone theorem supplies the latter at reduced-mode
+level.  Its bounded quadratic receiver has three distinct summands:
+
+```text
+(mu_H, mu_Px, mu_J1, mu_J2, mu_J3)
+    in the five-current/Koszul receiver,
+
+(R_13,1, ..., R_13,18)
+    in the finite-frequency relative adjoint-cokernel receiver.
+
+R_c = (1/2) sum k_j^2 h_j
+    in the bounded homogeneous pressure receiver.
+```
+
+Vanishing of all 24 components is necessary for a bounded derived source;
+sufficiency remains open pending the complete bounded homogeneous range.  The
+smooth exponential-polynomial derived source is exactly the common zero of
+the five stabilizer components because both finite-frequency resonances and
+the pressure functional admit secular inverses.  The displayed mixed point belongs to
+the smooth pullback but is bounded-obstructed because `R_c<0`.
+
+This solves the quadratic extension equation on the typed smooth reduced-mode domain.
+It does not construct a support-local BV subcomplex, repair the full-domain
+`f2`, or authorize arity three.  Causal, cross-background, observable,
+particle, and quantum maps remain fail-closed.

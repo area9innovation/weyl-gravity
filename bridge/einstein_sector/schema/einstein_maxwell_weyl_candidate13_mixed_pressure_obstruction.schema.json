@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-candidate13-mixed-pressure-obstruction-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "primary_action_identity", "exact_witness", "independence_theorem", "zero_frequency_source", "correction_classes", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_MIXED_PRESSURE_OBSTRUCTION"},
+    "classification": {
+      "type": "object",
+      "properties": {
+        "candidate13_mixed_moment_resonance_independence_witness_certified": {"const": true},
+        "candidate13_bounded_pressure_functional_nonzero": {"const": true},
+        "candidate13_bounded_or_finite_quasiperiodic_extension_obstructed": {"const": true},
+        "candidate13_smooth_exponential_polynomial_extension_certified": {"const": true},
+        "complete_candidate13_mixed_cone_classified": {"const": false},
+        "causal_residual_observational_or_quantum_claim": {"const": false}
+      },
+      "required": ["candidate13_mixed_moment_resonance_independence_witness_certified", "candidate13_bounded_pressure_functional_nonzero", "candidate13_bounded_or_finite_quasiperiodic_extension_obstructed", "candidate13_smooth_exponential_polynomial_extension_certified", "complete_candidate13_mixed_cone_classified", "causal_residual_observational_or_quantum_claim"]
+    }
+  },
+  "additionalProperties": true
+}

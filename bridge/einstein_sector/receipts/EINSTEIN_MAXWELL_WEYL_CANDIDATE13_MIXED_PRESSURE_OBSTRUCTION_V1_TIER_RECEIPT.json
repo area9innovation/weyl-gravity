@@ -1,0 +1,41 @@
+{
+  "receipt_id": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_MIXED_PRESSURE_OBSTRUCTION_V1_TIER_RECEIPT",
+  "date": "2026-07-19",
+  "scope": "Action-derived candidate-13 circle-pressure independence witness and correction-class split.",
+  "content_sha256": {
+    "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json": "85ac9f723d7f7cb823ab4052ef3221820f0148295d697139cb95452773dc5530",
+    "bridge/einstein_sector/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.py": "2ff277d7200fc30fe5936b4df65c5161d96ca94cf53dd489427ac310504c66b6",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.schema.json": "1a87d09773021fd3b15d1981200219654687ee643c3804a6272f08b20ec19937",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.py": "9c3c553a2a36500e526c512b9a7b76464b6a8f0d3cf1e332bc286a09020371c0",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.py": "9d276fa12087447f30be51e751814a7bd29b862d0ed2f0c10550f1f21acac146",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-candidate13-mixed-pressure-obstruction.md": "797daa1def184ba2718bf86ad5cbceb540c2897b3fbbced24c25a3930af297c4"
+  },
+  "verification": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <scoped Python paths>",
+        "python3 -m json.tool <scoped JSON paths>",
+        "git diff --check -- <scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "tests_run": 4,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction --check",
+        "python3 -m bridge.einstein_sector.verify_einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_BY_CONTENT_ADDRESS",
+      "reason": "The proof imports the exact mixed witness, complete nonzero-frequency same-fibre census, action-derived primary circle variation, and complete finite-support smooth theorem; the producer and independent verifier reconstruct the exact pressure/current identity and sign chain."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "This corrects one finite-carrier second-order lifecycle and reopens the bounded cone; it is not an all-orders, causal, residual, quantum, freeze, or release gate."
+    }
+  },
+  "claim_boundary": "The declared candidate-13 axial mixed tangent has mu_X=R_13,a=0 but R_c<0. Bounded correction is OBSTRUCTED, smooth exponential-polynomial correction is CERTIFIED, the complete bounded cone is OPEN, and causal correction is NO_CERTIFIED_MAP."
+}

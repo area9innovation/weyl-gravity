@@ -1,18 +1,27 @@
 {
-  "claim_boundary": "This is a complete equation-level second-order tangent-cone theorem on the declared finite generic candidate-13 carrier. It does not give the irreducible real component decomposition, include exceptional or global inputs, prove all-orders integration, construct a causal correction, or make residual, observational or quantum claims.",
+  "claim_boundary": "This is a complete smooth-secular cone theorem and a partial necessary bounded-functional ledger on the declared finite generic candidate-13 carrier. Completeness and sufficiency of the bounded ledger, the irreducible real component decomposition, exceptional/global inputs, all-orders integration, causal correction, residual, observational and quantum claims remain open or NO_CERTIFIED_MAP.",
   "classification": {
     "all_orders_integrability": false,
+    "candidate13_known_bounded_functional_ledger_certified": true,
     "causal_residual_observational_or_quantum_claim": false,
-    "complete_candidate13_bounded_tangent_cone_formula_certified": true,
+    "complete_candidate13_bounded_functional_ledger_certified": false,
+    "complete_candidate13_bounded_tangent_cone_formula_certified": false,
     "complete_candidate13_smooth_tangent_cone_formula_certified": true,
-    "five_stabilizer_and_eighteen_resonance_functionals_necessary_and_sufficient_bounded": true,
     "five_stabilizer_functionals_necessary_and_sufficient_smooth": true,
-    "nonzero_mixed_bounded_point_exists": true,
+    "five_stabilizer_pressure_and_eighteen_resonance_functionals_necessary_bounded": true,
+    "five_stabilizer_pressure_and_eighteen_resonance_functionals_sufficient_bounded": false,
+    "nonzero_mixed_bounded_point_exists": false,
+    "nonzero_mixed_smooth_point_exists": true,
     "pure_extra_face_is_origin": true,
     "real_algebraic_component_decomposition_classified": false,
-    "same_fibre_source_functionals_absent_after_shell_reduction": true
+    "same_fibre_nonzero_frequency_source_functionals_absent_after_shell_reduction": true
   },
   "coefficientwise_functionals": {
+    "bounded_circle_pressure": {
+      "description": "independent bounded zero-frequency circle-pressure functional; it is secularly removable but not in the bounded class",
+      "formula": "R_c(u)=(1/2) sum k_j^2 h_j",
+      "name": "R_c"
+    },
     "candidate13_cross_fibre": {
       "count_over_C": 18,
       "description": "the 18 Sym^8(C^2) coefficients of the two displayed binary-octic equations on the p-primary amplitudes; q-primary amplitudes are spectators for this resonance ideal",
@@ -30,7 +39,7 @@
       "mu_J2",
       "mu_J3"
     ],
-    "zero_frequency": "no independent functional beyond the five stabilizer pairings"
+    "zero_frequency": "the independent circle-pressure functional R_c is certified; completeness of the bounded zero-frequency ledger is OPEN"
   },
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -39,16 +48,16 @@
   "generality_level": "G4_COMPLETE_FINITE_CANDIDATE13_GENERIC_TWO_FIBRE_CARRIER",
   "geometry": {
     "cross_fibre_resonance_variety": "the 18 candidate-13 equations alone define one prime complex dimension-22 cone in the 40-dimensional p-primary ambient space",
-    "mixed_nonzero_point": "the separately certified axial m=0 three-occupation witness lies in Z2_bounded and therefore also in Z2_smooth",
+    "mixed_nonzero_point": "the axial m=0 three-occupation witness lies in Z2_smooth but not Z2_bounded because R_c<0",
     "pure_extra_face": "the bounded and smooth cones meet the declared pure-extra carrier only at the origin because mu_H is negative definite there",
     "real_moment_map_intersection_decomposed": false
   },
-  "interpretation": "At candidate 13 the nonlinear second-order selection rule is completely explicit: bounded corrections require both the compact stabilizer moment maps and the prime cross-fibre resonance ideal, whereas smooth secular corrections require only the moment maps. The pure-extra face is deleted, but the full mixed cone is nontrivial and contains a certified Einstein-minus/extra-primary point.",
+  "interpretation": "At candidate 13 the smooth second-order cone is exactly the five-moment-map zero set. Bounded correction has an additional circle-pressure condition beyond the eighteen finite-frequency resonance coefficients; the displayed mixed witness violates it. The full bounded sufficiency theorem therefore remains open.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "decompose the real intersection of the prime candidate-13 resonance cone with the indefinite five-moment-map zero set, or move to the same-background Einstein-Weyl cofiber bridge using this coefficientwise theorem",
+  "next_gate": "classify the complete bounded zero-frequency homogeneous range on the full candidate-13 carrier, then decide whether the five moment maps, R_c and eighteen resonance coefficients are jointly sufficient",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.py",
-    "generator_sha256": "68c9954ecf35ef1a88a0469bc9754330b065c701f71b43e1de70c4af840d7cc3",
+    "generator_sha256": "5c2a8333987f7ae6ef84fff4cf948ca4b46a4f47b4434c938194c1a703a18b17",
     "inputs": {
       "candidate13_incidence": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_L4_incidence_reduction.json",
@@ -64,7 +73,11 @@
       },
       "mixed_bounded_witness": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.json",
-        "sha256": "4fb928eb28cd5ba76426d1407e69c032978857cf34199c094e49632015a8c4d2"
+        "sha256": "5b474d5a4e501dd7c730023fade6f0e77640446b5b211251f18a6a25f837b9c6"
+      },
+      "pressure_obstruction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
+        "sha256": "85ac9f723d7f7cb823ab4052ef3221820f0148295d697139cb95452773dc5530"
       },
       "pure_extra_taub_join": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_pure_extra_taub_join.json",
@@ -77,10 +90,10 @@
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_COMPLETE_MIXED_CONE",
-  "result_state": "COMPLETE_COEFFICIENTWISE_BOUNDED_AND_SMOOTH_SECOND_ORDER_CONES_ON_THE_CANDIDATE13_GENERIC_CARRIER",
+  "result_state": "COMPLETE_SMOOTH_CONE_AND_PARTIAL_NECESSARY_BOUNDED_LEDGER_ON_THE_CANDIDATE13_GENERIC_CARRIER",
   "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-complete-mixed-cone-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_complete_mixed_cone.schema.json",
-  "schema_sha256": "870094ad3312912b63fdbc35d3cd4a3da36e96967b339184adc476ad38fb2615",
+  "schema_sha256": "659d294ea4327c565b18a3f35d7a6ffe21424c98f07822c38de6993732edd6cd",
   "scope": {
     "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2 before final residual quotient",
@@ -97,10 +110,10 @@
   "second_order_equation": "L_WM v=-(1/2)D^2E_WM[u,u]",
   "tangent_cones": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-      "formula": "Z2_bounded={u:mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0 and R_13,1=...=R_13,18=0}",
-      "necessity": "the five zero-block adjoint covectors and every nonzero-shell reduced left-kernel coefficient must annihilate the source",
-      "status": "CERTIFIED",
-      "sufficiency": "candidate 13 is the only cross-fibre collision at this circumference, every same-fibre nonzero channel is off shell, and all remaining static or nonzero blocks have certified reduced right inverses"
+      "necessary_formula": "Z2_bounded is contained in {u:mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_c=0 and R_13,1=...=R_13,18=0}",
+      "necessity": "the five stabilizer pairings, independent bounded circle pressure, and every candidate-13 shell coefficient must vanish",
+      "status": "OPEN",
+      "sufficiency": "OPEN until the complete bounded zero-frequency homogeneous range is classified on the full mixed carrier"
     },
     "CAUSAL_RETARDED": {
       "formula": "NO_CERTIFIED_MAP",

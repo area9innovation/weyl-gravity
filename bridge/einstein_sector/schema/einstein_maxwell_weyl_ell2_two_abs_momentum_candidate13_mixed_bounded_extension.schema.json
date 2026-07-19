@@ -2,21 +2,21 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-bounded-extension-v1.schema.json",
   "type": "object",
-  "required": ["schema", "result_id", "result_state", "scope", "declared_tangent", "second_order_equation", "complete_blockwise_proof", "correction_classes", "classification", "provenance", "claim_boundary"],
+  "required": ["schema", "result_id", "result_state", "scope", "declared_tangent", "second_order_equation", "complete_blockwise_disposition", "correction_classes", "classification", "provenance", "claim_boundary"],
   "properties": {
     "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_BOUNDED_EXTENSION"},
     "second_order_equation": {"const": "L_WM v=-(1/2)D^2E_WM[u,u]"},
     "correction_classes": {
       "type": "object",
       "properties": {
-        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["status"]},
+        "BOUNDED_OR_FINITE_QUASIPERIODIC": {"type": "object", "properties": {"status": {"const": "OBSTRUCTED"}}, "required": ["status"]},
         "CAUSAL_RETARDED": {"type": "object", "properties": {"status": {"const": "NO_CERTIFIED_MAP"}}, "required": ["status"]}
       },
       "required": ["BOUNDED_OR_FINITE_QUASIPERIODIC", "SMOOTH_EXPONENTIAL_POLYNOMIAL", "CAUSAL_RETARDED"]
     },
     "classification": {
       "type": "object",
-      "required": ["candidate_13_mixed_witness_bounded_second_order_extendible", "all_five_zero_frequency_adjoint_pairings_vanish", "all_same_fibre_nonzero_frequency_blocks_off_shell", "all_cross_fibre_bounded_resonance_functionals_vanish", "complete_finite_block_bounded_source_in_image", "full_candidate_13_mixed_tangent_cone_classified", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]
+      "required": ["candidate_13_mixed_witness_bounded_second_order_extendible", "candidate_13_mixed_witness_bounded_second_order_obstructed", "candidate_13_mixed_witness_smooth_second_order_extendible", "candidate_13_bounded_pressure_functional_nonzero", "all_five_zero_frequency_adjoint_pairings_vanish", "all_same_fibre_nonzero_frequency_blocks_off_shell", "all_cross_fibre_bounded_resonance_functionals_vanish", "complete_finite_block_bounded_source_in_image", "full_candidate_13_mixed_tangent_cone_classified", "all_orders_integrability", "causal_residual_observational_or_quantum_claim"]
     }
   },
   "additionalProperties": true

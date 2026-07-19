@@ -1,0 +1,93 @@
+{
+  "claim_boundary": "This theorem classifies one declared candidate-13 axial m=0 mixed tangent: bounded/finitely quasiperiodic correction is OBSTRUCTED, while a smooth exponential-polynomial second-order correction is CERTIFIED. It does not classify the full mixed cone, all-orders integration, causal corrections, residual observables or quantum states.",
+  "classification": {
+    "candidate13_bounded_or_finite_quasiperiodic_extension_obstructed": true,
+    "candidate13_bounded_pressure_functional_nonzero": true,
+    "candidate13_mixed_moment_resonance_independence_witness_certified": true,
+    "candidate13_smooth_exponential_polynomial_extension_certified": true,
+    "causal_residual_observational_or_quantum_claim": false,
+    "complete_candidate13_mixed_cone_classified": false
+  },
+  "correction_classes": {
+    "bounded_or_finite_quasiperiodic": {
+      "reason": "at Omega=0 the homogeneous operator has no bounded image in the E11 pressure row, while R_c(u)<0",
+      "status": "OBSTRUCTED"
+    },
+    "causal_retarded": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "smooth_exponential_polynomial": {
+      "abstract_sufficiency": "the complete finite-support smooth theorem says the five stabilizer moment maps exhaust the persistent cokernel",
+      "pressure_correction": "a finite secular primitive exists by the complete smooth theorem; its componentwise normalization is not asserted by this pressure-pairing certificate",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_witness": {
+    "exact_nonzero_sign_proof": "rho>0 and p1>q1. Therefore y1=(p1/q1)*(2*p1+q2)/(2*q1+q2)>1 and y2>0, so 1-y1-4*y2<0 and R_c(u)<0.",
+    "moment_identities": {
+      "H": "q1^2*y1+q2^2*y2-p1^2=0",
+      "P_x": "q1*y1-2*q2*y2-p1=0",
+      "rotations": "J_1=J_2=J_3=0"
+    },
+    "pressure": "-(-250 + 461*sqrt(10))*(-9*sqrt(3)*sqrt(1383*sqrt(10) + 33362) - 4*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 3*sqrt(3)*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542) + 12*sqrt(3)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 9*sqrt(1383*sqrt(10) + 33362) + 23*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542))/(12*(sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542))*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948))",
+    "pressure_reduced_factor": "-sqrt(461*sqrt(10)/2132 + 16681/3198)*(sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533) + 2*sqrt(461*sqrt(10)/2132 + 16681/3198))/((sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533) + 2*sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066))*sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066)) - 4*sqrt(461*sqrt(10)/2132 + 16681/3198)*(-sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066) + sqrt(461*sqrt(10)/2132 + 16681/3198))/((sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533) + 2*sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066))*sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533)) + 1",
+    "rho": "-125/1066 + 461*sqrt(10)/2132",
+    "signed_current_occupations": {
+      "p_n1": "1",
+      "qminus_n1": "-(sqrt(461*sqrt(10)/2132 + 16681/3198)*(sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533) + 2*sqrt(461*sqrt(10)/2132 + 16681/3198))/((sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533) + 2*sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066))*sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066)))",
+      "qminus_n_minus2": "-(sqrt(461*sqrt(10)/2132 + 16681/3198)*(-sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066) + sqrt(461*sqrt(10)/2132 + 16681/3198))/((sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533) + 2*sqrt(-2*sqrt(3) + 461*sqrt(10)/2132 + 6271/1066))*sqrt(-2*sqrt(3) + 461*sqrt(10)/533 + 2948/533)))"
+    }
+  },
+  "generality_level": "G1",
+  "independence_theorem": {
+    "all_nonzero_frequency_same_fibre_functionals": "not applicable because every channel is off shell",
+    "bounded_circle_pressure_functional": "strictly negative",
+    "candidate_13_cross_fibre_functionals": "zero",
+    "conclusion": "mu_X(u)=0 for every compact stabilizer X, but R_c^bounded(u)!=0",
+    "five_moment_maps": "zero"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify the bounded pressure/resonance functionals on the full candidate-13 mixed moment-map cone rather than this single exact axial witness",
+  "primary_action_identity": {
+    "kernel": "A=sqrt(1+c)*G(c)*P(omega^2-k^2/(1+c))",
+    "normalized_current": "h=2*G(0)*P'(s)",
+    "on_shell_circle_derivative": "dA/dc|_(c=0,P=0)=G(0)*P'(s)*k^2",
+    "pressure_functional": "R_c(u)=(1/2) sum k_j^2 h_j",
+    "universality": "the formula holds for every simple p- or q-primary and is independent of the regular primary normalization G"
+  },
+  "provenance": {
+    "inputs": {
+      "bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json": "4230400a4d4ddfc5181749879b13df159c8d4de3a307a42fa3c916de2ec6c885",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.json": "cc7f8d781acc021152305734e4040f08e3d3d83d8e22ae1a26b90193f491f619",
+      "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json": "fd94929e0c18e87787e6ad1e241a29dae1f4bf46a33d8454a9bf7e5a5bdbfc41",
+      "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json": "9c9b5db86f50a624f84a0ec6548d2c07030109626d076c0e5ee6f9e9115f9e54"
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_CANDIDATE13_MIXED_PRESSURE_OBSTRUCTION",
+  "schema": "einstein-maxwell-weyl-candidate13-mixed-pressure-obstruction-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.schema.json",
+  "schema_sha256": "1a87d09773021fd3b15d1981200219654687ee643c3804a6272f08b20ec19937",
+  "scope": {
+    "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "one normalized axial p-primary mode at n=1 plus normalized axial q-minus modes at n=1 and n=-2; the p-primary n=-2 occupation is zero",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "input ell=2; candidate-13 cross-fibre output L=4",
+    "k": "signed momentum integers n=1 and n=-2 with k_n=n*sqrt(rho)",
+    "m": 0,
+    "omega": "p-primary at n=1 and q-minus at n=1,-2; positive-frequency carrier with conjugates understood",
+    "parity": "axial",
+    "theory": "Weyl-Maxwell target"
+  },
+  "zero_frequency_source": {
+    "bounded_cokernel_reason": "a nonzero constant circle-pressure coefficient cannot be produced by a bounded or finite-quasiperiodic correction in the homogeneous zero-frequency block",
+    "calibration_boundary": "only the action-derived pairing and its nonzero sign are asserted here; no componentwise E11 source convention is imported",
+    "typed_pairing": "R_c(u)=<dcircle,(1/2)D^2E_WM[u,u]> in the constant circumference/radius direction",
+    "value": "-(-250 + 461*sqrt(10))*(-9*sqrt(3)*sqrt(1383*sqrt(10) + 33362) - 4*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 3*sqrt(3)*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542) + 12*sqrt(3)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 9*sqrt(1383*sqrt(10) + 33362) + 23*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542))/(12*(sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542))*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948))"
+  }
+}

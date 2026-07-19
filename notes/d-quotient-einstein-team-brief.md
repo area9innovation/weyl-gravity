@@ -3646,23 +3646,31 @@ nonzero-frequency row before a source calculation: 18 sum/difference channels
 give 144 exact nonzero `ell=1,...,4` shell defects.  For `ell=0`, sum channels
 use the empty nonzero-Fourier quotient, while unequal-branch differences have
 `K=0,Omega!=0` and use the separately empty homogeneous nonzero-frequency
-quotient.  The zero-frequency gate then closes without an additional
-coefficient table: the complete generic finite-harmonic theorem identifies its
-reduced cokernel exactly with `H,P_x,J_1,J_2,J_3`, whose five pairings already
-vanish on the witness, while every static `L>=2` block is invertible.  Together
-with the isolated cross-fibre ledger this certifies a real bounded
-finite-quasiperiodic second-order correction for the declared mixed witness.
-The full coefficientwise cone is now closed as well.  On the complete finite
-generic candidate-13 carrier,
-`Z2_bounded={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=R_13,1=...=R_13,18=0}`, whereas
-`Z2_smooth={mu_H=mu_Px=mu_J1=mu_J2=mu_J3=0}` because finite-frequency
-resonances admit secular inverses.  The prime pure-extra face meets either
-moment-map zero set only at the origin, while the mixed cone contains the
-certified bounded ray.  The real irreducible decomposition remains open, but
-is not needed for the equation-level tangent-cone theorem.  The active gate
-returns to the same-background Einstein–Weyl relative triangle/cofiber and
-branch dictionary; this nonlinear result is an input, not an all-orders or
-causal bridge.
+quotient.  The zero-frequency gate does not close in the bounded class.  The
+generic finite-harmonic theorem used in the former join is scoped to smooth
+exponential-polynomial corrections and explicitly leaves the bounded common
+zero locus open.  Differentiating the exact primary action with respect to the
+circle radius gives the independent bounded functional
+`R_c=(1/2) sum_j k_j^2 h_j`.  On the displayed witness,
+`R_c=(rho/2)(1-y1-4y2)<0`: `rho>0`, `p1>q1`, hence `y1>1` and `y2>0`.
+Thus this is the required independence witness `mu_X=R_13,a=0` but
+`R_c!=0`.  It is bounded/finitely-quasiperiodically `OBSTRUCTED` and smooth
+exponential-polynomial `CERTIFIED`.  The complete smooth cone remains exactly
+the five-moment-map zero set.  For bounded corrections the five moment maps,
+`R_c`, and the eighteen candidate-13 coefficients are known necessary
+conditions, but completeness of the zero-frequency ledger and bounded
+sufficiency are `OPEN`.
+
+That Bridge 1 handoff is now explicit in
+`EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1`.  The
+candidate-13 known bounded receiver is the typed direct sum of the five-current
+Koszul receiver, the circle-pressure component `R_c`, and the eighteen
+finite-frequency relative adjoint coefficients.  Their common zero is only a
+known necessary bounded domain; the bounded pullback is `OPEN`.  The smooth
+derived source retains only the five moment maps and is `CERTIFIED`.  This is
+a `REDUCED-MODE` crosswalk: the frozen-unary full-domain support-local `f2`
+obstruction is preserved, no support-local derived BV subcomplex is
+constructed, and arity three remains unauthorized.
 
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).

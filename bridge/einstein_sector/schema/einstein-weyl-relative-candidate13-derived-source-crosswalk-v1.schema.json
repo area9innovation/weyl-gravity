@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-weyl-relative-candidate13-derived-source-crosswalk-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "scope", "relative_triangle", "quadratic_receiver", "derived_source_pullback", "morphism_disposition", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_CANDIDATE13_DERIVED_SOURCE_CROSSWALK_V1"},
+    "quadratic_receiver": {
+      "type": "object",
+      "properties": {
+        "zero_block_map": {"type": "object", "properties": {"components": {"type": "array", "minItems": 5, "maxItems": 5}, "status": {"const": "CERTIFIED"}}, "required": ["components", "status"]},
+        "relative_resonance_map": {"type": "object", "properties": {"status": {"const": "CERTIFIED"}}, "required": ["components", "status"]}
+      },
+      "required": ["equation", "zero_block_map", "relative_resonance_map", "bounded_pressure_map", "combined_bounded_map", "typing"]
+    },
+    "morphism_disposition": {
+      "type": "object",
+      "properties": {
+        "full_domain_support_local_f2": {"const": "OBSTRUCTED"},
+        "derived_reduced_source_second_order_solve": {"const": "CERTIFIED_SMOOTH_ONLY"},
+        "full_relative_arity_two_morphism": {"const": "OPEN"},
+        "arity_three_authorized": {"const": false}
+      },
+      "required": ["full_domain_support_local_f2", "derived_reduced_source_second_order_solve", "full_relative_arity_two_morphism", "arity_three_authorized"]
+    },
+    "classification": {"type": "object", "required": ["same_background_relative_branch_crosswalk_certified", "candidate13_five_plus_pressure_plus_eighteen_quadratic_receiver_typed", "bounded_derived_source_pullback_certified", "bounded_derived_source_known_necessary_ledger_certified", "smooth_derived_source_pullback_certified", "full_domain_f2_obstruction_preserved", "support_local_BV_derived_subcomplex_constructed", "full_relative_arity_two_morphism_constructed", "arity_three_authorized", "cross_background_causal_observational_or_quantum_claim"]}
+  },
+  "additionalProperties": true
+}

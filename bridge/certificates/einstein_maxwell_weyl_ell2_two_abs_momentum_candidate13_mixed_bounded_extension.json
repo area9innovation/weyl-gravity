@@ -1,42 +1,48 @@
 {
-  "claim_boundary": "This certifies one exact axial m=0 mixed three-occupation tangent and a bounded second-order correction before the final residual quotient. It does not classify the full mixed cone, arbitrary phases or polar amplitudes, prove all-orders integration, construct a causal correction, or make residual, observational or quantum claims.",
+  "claim_boundary": "This certifies one exact axial m=0 mixed tangent as bounded/finitely-quasiperiodically OBSTRUCTED and smoothly second-order extendible before the final residual quotient. It does not classify the full mixed cone, arbitrary phases or polar amplitudes, prove all-orders integration, construct a causal correction, or make residual, observational or quantum claims.",
   "classification": {
     "all_cross_fibre_bounded_resonance_functionals_vanish": true,
     "all_five_zero_frequency_adjoint_pairings_vanish": true,
     "all_orders_integrability": false,
     "all_same_fibre_nonzero_frequency_blocks_off_shell": true,
-    "candidate_13_mixed_witness_bounded_second_order_extendible": true,
+    "candidate_13_bounded_pressure_functional_nonzero": true,
+    "candidate_13_mixed_witness_bounded_second_order_extendible": false,
+    "candidate_13_mixed_witness_bounded_second_order_obstructed": true,
+    "candidate_13_mixed_witness_smooth_second_order_extendible": true,
     "causal_residual_observational_or_quantum_claim": false,
-    "complete_finite_block_bounded_source_in_image": true,
-    "explicit_blockwise_correction_recipe_certified": true,
+    "complete_finite_block_bounded_source_in_image": false,
+    "explicit_blockwise_smooth_correction_recipe_certified": true,
     "full_candidate_13_mixed_tangent_cone_classified": false
   },
-  "complete_blockwise_proof": {
-    "abstract_criterion": "a bounded or finite-quasiperiodic correction exists exactly when all five mu_X and every finite R_(j,a) vanish",
-    "correction_construction": "solve each finite off-shell block by its certified algebraic inverse, solve each zero-frequency compatible block by the certified reduced right inverse, and adjoin complex-conjugate blocks",
+  "complete_blockwise_disposition": {
+    "audit_result": "the former proof imported a smooth-class zero-block decomposition as bounded sufficiency and omitted the constant circle-pressure functional",
     "cross_fibre_nonzero_frequency": "the only candidate-13 shell functional is zero because p_primary_n_minus2=0; all other isolated cross-fibre collision fibres have distinct circumference",
+    "generic_claim_boundary": "This theorem covers arbitrary finite generic ell>=2 input sums and multiple compact momentum fibres only in the smooth exponential-polynomial category. It does not include exceptional/global input modes, solve the bounded resonance zero locus, prove an infinite-mode PDE completion, all-orders integration, final residual descent, causal propagation, scattering, particles or quantum theory.",
     "same_fibre_nonzero_frequency": "all 18 channels are off shell by 144 exact defects; the two L=0 Fourier types use their separately certified empty quotients",
+    "smooth_correction_construction": "solve each finite off-shell block algebraically and use the certified finite secular inverse for the pressure block; componentwise pressure-row normalization is not asserted here",
     "spatial_class": "smooth and S1_L-periodic",
-    "temporal_class": "finite quasiperiodic with no secular term",
-    "zero_frequency_cokernel": "coker L_zero = span{zeta_H,zeta_Px,zeta_J1,zeta_J2,zeta_J3} modulo Noether identities",
-    "zero_frequency_consequence": "every constant source block lies in the image; L=0 and L=1 use the five vanishing stabilizer pairings, while every static L>=2 block is invertible after local gauge reduction",
+    "temporal_class": "smooth finite exponential-polynomial; bounded finite-quasiperiodic correction is obstructed",
+    "zero_frequency_consequence": "the five persistent smooth adjoint pairings vanish, but the independent bounded circle-pressure functional is strictly negative and has no bounded homogeneous image",
     "zero_frequency_pairings": {
       "mu_H": "0",
       "mu_J1": "0",
       "mu_J2": "0",
       "mu_J3": "0",
       "mu_Px": "0"
-    }
+    },
+    "zero_frequency_pressure_functional": "R_c(u)=(1/2) sum k_j^2 h_j",
+    "zero_frequency_pressure_value": "-(-250 + 461*sqrt(10))*(-9*sqrt(3)*sqrt(1383*sqrt(10) + 33362) - 4*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 3*sqrt(3)*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542) + 12*sqrt(3)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + 9*sqrt(1383*sqrt(10) + 33362) + 23*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542))/(12*(sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948) + sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542))*sqrt(-4264*sqrt(3) + 461*sqrt(10) + 12542)*sqrt(-1066*sqrt(3) + 461*sqrt(10) + 2948))"
   },
   "correction_classes": {
     "BOUNDED_OR_FINITE_QUASIPERIODIC": {
-      "status": "CERTIFIED"
+      "reason": "R_c(u)<0 in the zero-frequency circle-pressure row",
+      "status": "OBSTRUCTED"
     },
     "CAUSAL_RETARDED": {
       "status": "NO_CERTIFIED_MAP"
     },
     "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
-      "reason": "the bounded correction lies in this larger class",
+      "reason": "the five stabilizer moment maps vanish and the complete finite-support smooth theorem supplies secular inverses",
       "status": "CERTIFIED"
     }
   },
@@ -53,12 +59,12 @@
     "REDUCED-MODE"
   ],
   "generality_level": "G1_ONE_EXACT_MIXED_THREE_OCCUPATION_WITNESS",
-  "interpretation": "The candidate-13 mixed witness is not merely Taub-null. Its zero-frequency source has no adjoint-cokernel component, every nonzero same-fibre block is off shell, and its only possible cross-fibre shell coefficient vanishes. Hence the pure-extra obstruction is genuinely evaded by an Einstein-minus admixture at second order in the bounded class.",
+  "interpretation": "The candidate-13 mixed witness is Taub-null and misses every finite-frequency resonance, but it is not boundedly extendible: a distinct zero-frequency circle-pressure functional is strictly negative. The complete smooth theorem still gives a finite secular second-order correction.",
   "lifecycle_state": "CLASSIFIED",
-  "next_gate": "classify the full mixed candidate-13 coefficient cone rather than extrapolating from this one extendible ray; causal/retarded extension remains a separate background-specific problem",
+  "next_gate": "classify the bounded circle-pressure functional jointly with the five moment maps and eighteen candidate-13 resonance coefficients on the full mixed carrier",
   "provenance": {
     "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.py",
-    "generator_sha256": "49d3c379f5384250998e66bda85c3cdc0e245e0b7f009f9bcf25189ea2898642",
+    "generator_sha256": "34edfa883c4fb1b7280facbf31b1ab31404cb4199fcb30649eb6f126e87f591c",
     "inputs": {
       "finite_generic_cone": {
         "path": "bridge/certificates/einstein_maxwell_weyl_finite_generic_smooth_global_second_order.json",
@@ -72,6 +78,10 @@
         "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_moment_resonance_null_witness.json",
         "sha256": "cc7f8d781acc021152305734e4040f08e3d3d83d8e22ae1a26b90193f491f619"
       },
+      "pressure_obstruction": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_candidate13_mixed_pressure_obstruction.json",
+        "sha256": "85ac9f723d7f7cb823ab4052ef3221820f0148295d697139cb95452773dc5530"
+      },
       "same_fibre_census": {
         "path": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_same_fibre_resonance_census.json",
         "sha256": "fd94929e0c18e87787e6ad1e241a29dae1f4bf46a33d8454a9bf7e5a5bdbfc41"
@@ -79,10 +89,10 @@
     }
   },
   "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_BOUNDED_EXTENSION",
-  "result_state": "ONE_CANDIDATE13_MIXED_EINSTEIN_EXTRA_TANGENT_EXTENDS_TO_SECOND_ORDER_IN_THE_BOUNDED_CLASS",
+  "result_state": "CANDIDATE13_MIXED_TANGENT_BOUNDED_OBSTRUCTED_SMOOTH_SECOND_ORDER_EXTENDIBLE",
   "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate13-mixed-bounded-extension-v1",
   "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate13_mixed_bounded_extension.schema.json",
-  "schema_sha256": "ae6d63a4e2ff5786b518c720ab5748d2d9a98020879c99ace11edb4785d7420e",
+  "schema_sha256": "7a79fd23f4dc6be0038bac9307401645ad2e1409feab836463c6fd150ab4aaa0",
   "scope": {
     "background": "candidate-13 tuned compact magnetically supported Plebanski-Hacyan product",
     "boundaries": "closed S1_L times S2 before final residual quotient",

@@ -45,6 +45,18 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(entry["descriptions"]["observational"], "NO_CERTIFIED_MAP")
         self.assertEqual(entry["descriptions"]["quantum"], "NO_CERTIFIED_MAP")
 
+    def test_candidate13_derived_source_crosswalk_preserves_full_f2_obstruction(self) -> None:
+        entry = self.entries["einstein.ph.bridge.relative_candidate13_derived_source_crosswalk"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("circle-pressure", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("separate 18-dimensional", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("full-domain support-local f2 remains obstructed", entry["claim_boundary"])
+        self.assertIn("arity three is not authorized", entry["claim_boundary"])
+
     def test_nonzero_k_exceptional_cofiber_is_registered_without_bridge_promotion(self) -> None:
         entry = self.entries["einstein.ph.wm.extra.exceptional_ell1_nonzero_k"]
         self.assertEqual(entry["mode_data"]["dispersion"]["status"], "CERTIFIED")
@@ -374,29 +386,29 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertIn("complete nonzero-frequency same-fibre shell census", entry["claim_boundary"])
         self.assertIn("K!=0 and K=0", entry["claim_boundary"])
 
-    def test_candidate13_mixed_witness_has_bounded_second_order_extension(self) -> None:
+    def test_candidate13_mixed_witness_has_pressure_obstruction(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_mixed_bounded_extension"]
         second = entry["mode_data"]["second_order"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "CERTIFIED")
-        self.assertIn("span{H,P_x,J_1,J_2,J_3}", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertIn("R_c is strictly negative", entry["mode_data"]["taub_maps"]["statement"])
         self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
-        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OBSTRUCTED")
         self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("not the full candidate-13 mixed tangent cone", entry["claim_boundary"])
+        self.assertIn("not the full candidate-13 mixed cone", entry["claim_boundary"])
 
     def test_candidate13_complete_mixed_cone_separates_correction_classes(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate13_complete_mixed_cone"]
         second = entry["mode_data"]["second_order"]
-        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
-        self.assertIn("exactly the five stabilizer covectors", entry["mode_data"]["taub_maps"]["statement"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("additional necessary circle-pressure", entry["mode_data"]["taub_maps"]["statement"])
         self.assertIn("18-coefficient prime", entry["mode_data"]["resonance"]["statement"])
-        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
-        self.assertIn("R_13,18=0", second["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertIn("R_c=R_13,1", second["bounded_or_finite_quasiperiodic"]["statement"])
         self.assertEqual(second["smooth_secular"]["status"], "CERTIFIED")
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
-        self.assertIn("irreducible real moment-map intersection", entry["claim_boundary"])
+        self.assertIn("Bounded ledger completeness", entry["claim_boundary"])
 
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]

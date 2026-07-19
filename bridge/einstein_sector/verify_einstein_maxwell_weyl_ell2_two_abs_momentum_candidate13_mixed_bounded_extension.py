@@ -37,16 +37,21 @@ def verify() -> None:
     assert same["classification"]["candidate_13_all_nonzero_same_fibre_channels_off_shell"]
     generic = records["finite_generic_cone"]
     assert generic["classification"]["complete_reduced_adjoint_cokernel_decomposition_certified"]
-    assert "span{zeta_H,zeta_Px,zeta_J1,zeta_J2,zeta_J3}" in payload["complete_blockwise_proof"]["zero_frequency_cokernel"]
-    assert set(payload["complete_blockwise_proof"]["zero_frequency_pairings"].values()) == {"0"}
+    assert not generic["classification"]["bounded_resonance_zero_locus_solved"]
+    assert "smooth-class" in payload["complete_blockwise_disposition"]["audit_result"]
+    assert set(payload["complete_blockwise_disposition"]["zero_frequency_pairings"].values()) == {"0"}
+    assert records["pressure_obstruction"]["classification"]["candidate13_bounded_pressure_functional_nonzero"]
     assert records["isolated_cross_fibre_candidates"]["classification"]["twenty_one_distinct_admissible_candidates"]
     flags = payload["classification"]
-    assert flags["candidate_13_mixed_witness_bounded_second_order_extendible"]
-    assert flags["complete_finite_block_bounded_source_in_image"]
+    assert not flags["candidate_13_mixed_witness_bounded_second_order_extendible"]
+    assert flags["candidate_13_mixed_witness_bounded_second_order_obstructed"]
+    assert flags["candidate_13_mixed_witness_smooth_second_order_extendible"]
+    assert flags["candidate_13_bounded_pressure_functional_nonzero"]
+    assert not flags["complete_finite_block_bounded_source_in_image"]
     assert not flags["full_candidate_13_mixed_tangent_cone_classified"]
     assert not flags["all_orders_integrability"]
     assert not flags["causal_residual_observational_or_quantum_claim"]
-    assert payload["correction_classes"]["BOUNDED_OR_FINITE_QUASIPERIODIC"]["status"] == "CERTIFIED"
+    assert payload["correction_classes"]["BOUNDED_OR_FINITE_QUASIPERIODIC"]["status"] == "OBSTRUCTED"
     assert payload["correction_classes"]["CAUSAL_RETARDED"]["status"] == "NO_CERTIFIED_MAP"
     print("EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE13_MIXED_BOUNDED_EXTENSION verifier: PASS")
 
