@@ -4888,7 +4888,7 @@
         {
           "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
           "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
-          "sha256": "a533451d90ca848813ab1ceddbebfa6d556fbae0d52b2b3c4990a635a784377d"
+          "sha256": "38997bf401a7366b60e19dfaa310a1c4ecc2609137f1daf7d7428b0775dabd1c"
         },
         {
           "path": "closed_universe_observers/certificates/BERGER_RECOIL_SCALAR_STREAM_ACTIVATION_GATE.json",
@@ -5005,7 +5005,7 @@
         "nonlinear": "NOT_APPLICABLE",
         "observational": "CERTIFIED",
         "quantum": "NOT_APPLICABLE",
-        "symplectic": "CERTIFIED"
+        "symplectic": "NOT_APPLICABLE"
       },
       "evidence": [
         {
@@ -5037,7 +5037,7 @@
         },
         "lee_wald": {
           "statement": "OPEN for the full evaluated harmonic sum; coupling stripping preserves the existing typed causal chain",
-          "status": "CERTIFIED"
+          "status": "NOT_APPLICABLE"
         },
         "resonance": {
           "statement": "No exceptional-resonance question applies within this Berger carrier.",
@@ -6188,7 +6188,7 @@
         {
           "path": "closed_universe_observers/certificates/BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION.json",
           "result_id": "BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION",
-          "sha256": "4599dff549948fe72e49d47aafe1fd46765032488a58440a74a02801188fd779"
+          "sha256": "aa16a351c346b05cc9e231832cee996754b992c7485e70a0f31fb1d5c265782e"
         }
       ],
       "id": "observer.berger.detector_profile.recoil_massive_diagonal_preparation",
@@ -6290,6 +6290,134 @@
         "m": "all component-major two-form rows",
         "omega": "advanced support coordinate with sine powers 1,3,5,7,9,11 and uniform source/kernel remainders",
         "parity": "D0 axial and D1 transverse detector profiles",
+        "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
+      }
+    },
+    {
+      "claim_boundary": "cosine derivative enclosure, F_tt=-AF, F_ttt=-AF_t at the flat boundary and exact spacetime d/delta blocks are CERTIFIED; positive-energy dual and spatial tail remain OPEN finite preparation input to absolute-g3 only; no I_abc NOT_APPLICABLE",
+      "descriptions": {
+        "causal": "CERTIFIED",
+        "nonlinear": "NOT_APPLICABLE",
+        "observational": "CERTIFIED",
+        "quantum": "NOT_APPLICABLE",
+        "symplectic": "CERTIFIED"
+      },
+      "evidence": [
+        {
+          "path": "closed_universe_observers/certificates/BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE.json",
+          "result_id": "BERGER_SPACETIME_FORM_BLOCK_SIGN_BRIDGE",
+          "sha256": "47921d3753f9cd60d3574b4bd1fac3738412a2c7de51e6541a587bec0cde8dfd"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION",
+          "sha256": "aa16a351c346b05cc9e231832cee996754b992c7485e70a0f31fb1d5c265782e"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION",
+          "sha256": "9c3eb77cc487624bf67e8832a847daf614959a8723fed9eb1eaf7d69ced776a3"
+        }
+      ],
+      "id": "observer.berger.detector_profile.recoil_physical_massive_cauchy_preparation",
+      "mode_data": {
+        "dispersion": {
+          "statement": "carrier=physical massive two-form value and physical-time derivative interval vectors; omega=advanced sine/cosine finite series with uniform remainders; OPEN: the physical massive preparation Cauchy pair is finite and callable, but no retarded recoil contraction is evaluated",
+          "status": "CERTIFIED"
+        },
+        "lee_wald": {
+          "statement": "the physical Proca correction enforces the finite co-closed form structure; full spatial sum and fixed-background quotient remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "resonance": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "second_order": {
+          "bounded_or_finite_quasiperiodic": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "causal_retarded": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          },
+          "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
+          "smooth_secular": {
+            "statement": "O_detector|Z2^C: NOT_APPLICABLE",
+            "status": "NOT_APPLICABLE"
+          }
+        },
+        "taub_maps": {
+          "statement": "finite preparation input to absolute-g3 only; no I_abc; detector restriction=NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        }
+      },
+      "observer_data": {
+        "balanced_detectable_combinations": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "clock_and_rod_dependence": {
+          "statement": "inherits exact D0/D1 detector and h0/h1 support data; endpoint flatness closes the derivative jets",
+          "status": "CERTIFIED"
+        },
+        "detector_response": {
+          "statement": "OPEN: the physical massive preparation Cauchy pair is finite and callable, but no retarded recoil contraction is evaluated",
+          "status": "OPEN"
+        },
+        "detector_restriction_to_second_order_cone": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "emitter_preparation": {
+          "statement": "the physical I+mu^-2 Dhat_1 Deltahat_2 corrected value and physical-time derivative are CERTIFIED through two_j=4; positive-energy dual remains OPEN",
+          "status": "CERTIFIED"
+        },
+        "exceptional_resonant_operational_signature": {
+          "statement": "No exceptional-resonance question applies within this Berger carrier.",
+          "status": "NOT_APPLICABLE"
+        },
+        "linearly_detectable_but_nonlinearly_obstructed": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "observer_source_channel": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "profile_green_boundary_dependencies": {
+          "statement": "cosine derivative enclosure, F_tt=-AF, F_ttt=-AF_t at the flat boundary and exact spacetime d/delta blocks are CERTIFIED; positive-energy dual and spatial tail remain OPEN",
+          "status": "CERTIFIED"
+        },
+        "recoil_backreaction_order": {
+          "statement": "finite preparation input to absolute-g3 only; no I_abc",
+          "status": "CERTIFIED"
+        },
+        "relational_redshift_contribution": {
+          "statement": "NOT_APPLICABLE",
+          "status": "NOT_APPLICABLE"
+        },
+        "response_rank": {
+          "statement": "leading rank two remains independently CERTIFIED; recoil-corrected rank is OPEN",
+          "status": "CERTIFIED"
+        },
+        "survives_gauge_reduction": {
+          "statement": "the physical Proca correction enforces the finite co-closed form structure; full spatial sum and fixed-background quotient remain OPEN",
+          "status": "OPEN"
+        }
+      },
+      "scope": {
+        "background": "compact positive Berger clock at fixed coupling",
+        "boundaries": "R x S3; compact spatial slices, relationally compact detector and switch windows, no spatial boundary",
+        "carrier": "physical massive two-form value and physical-time derivative interval vectors",
+        "charge_sector": "fixed-coupling Berger clock sector; no compact-product charge fibre imported",
+        "degree": "spacetime two-form Cauchy pair",
+        "ell": "two_j=0,...,4",
+        "k": "all passive columns",
+        "m": "all component-major rows",
+        "omega": "advanced sine/cosine finite series with uniform remainders",
+        "parity": "D0 axial and D1 transverse",
         "theory": "classical pure-Weyl gravity plus positive scalar clock, Maxwell field, detector rods/memories and selected massive two-form emitters"
       }
     },
@@ -6535,7 +6663,7 @@
       }
     },
     {
-      "claim_boundary": "the finite diagonal massive preparation is certified; physical Proca/Cauchy completion, the complete detector provider and stream_recoil_intervals remain obstructed; numerical specialization is deferred absolute-g3 symbolic operator and six finite execution primitives are CERTIFIED in their scopes; executable physical coefficient OBSTRUCTED NOT_APPLICABLE",
+      "claim_boundary": "the corrected finite massive Cauchy preparation is certified; positive-energy dual, complete detector provider and stream_recoil_intervals remain obstructed; numerical specialization is deferred absolute-g3 symbolic operator and seven finite execution primitives are CERTIFIED in their scopes; executable physical coefficient OBSTRUCTED NOT_APPLICABLE",
       "descriptions": {
         "causal": "OBSTRUCTED",
         "nonlinear": "NOT_APPLICABLE",
@@ -6577,12 +6705,17 @@
         {
           "path": "closed_universe_observers/certificates/BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION.json",
           "result_id": "BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION",
-          "sha256": "4599dff549948fe72e49d47aafe1fd46765032488a58440a74a02801188fd779"
+          "sha256": "aa16a351c346b05cc9e231832cee996754b992c7485e70a0f31fb1d5c265782e"
+        },
+        {
+          "path": "closed_universe_observers/certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
+          "result_id": "BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION",
+          "sha256": "9c3eb77cc487624bf67e8832a847daf614959a8723fed9eb1eaf7d69ced776a3"
         },
         {
           "path": "closed_universe_observers/certificates/BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT.json",
           "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
-          "sha256": "a533451d90ca848813ab1ceddbebfa6d556fbae0d52b2b3c4990a635a784377d"
+          "sha256": "38997bf401a7366b60e19dfaa310a1c4ecc2609137f1daf7d7428b0775dabd1c"
         }
       ],
       "id": "observer.berger.detector_profile.recoil_stream_executable_readiness",
@@ -6592,7 +6725,7 @@
           "status": "OBSTRUCTED"
         },
         "lee_wald": {
-          "statement": "the symbolic word and finite Dhat_1 source are gauge typed; physical co-closed correction and full executable evaluation remain untested",
+          "statement": "finite physical co-closed correction is certified; full spatial sum and executable evaluation remain open",
           "status": "NOT_APPLICABLE"
         },
         "resonance": {
@@ -6615,7 +6748,7 @@
           }
         },
         "taub_maps": {
-          "statement": "absolute-g3 symbolic operator and six finite execution primitives are CERTIFIED in their scopes; executable physical coefficient OBSTRUCTED; detector restriction=NOT_APPLICABLE",
+          "statement": "absolute-g3 symbolic operator and seven finite execution primitives are CERTIFIED in their scopes; executable physical coefficient OBSTRUCTED; detector restriction=NOT_APPLICABLE",
           "status": "NOT_APPLICABLE"
         }
       },
@@ -6625,7 +6758,7 @@
           "status": "NOT_APPLICABLE"
         },
         "clock_and_rod_dependence": {
-          "statement": "exact switch and rod profiles are bound through the diagonal massive wave stage for two_j<=4",
+          "statement": "exact switch and rod profiles are bound through the corrected massive Cauchy stage for two_j<=4",
           "status": "CERTIFIED"
         },
         "detector_response": {
@@ -6637,7 +6770,7 @@
           "status": "NOT_APPLICABLE"
         },
         "emitter_preparation": {
-          "statement": "the switched diagonal massive support-left image is CERTIFIED finitely; physical Proca correction, Cauchy momentum and positive-energy dual remain OPEN",
+          "statement": "the physical massive full-form Cauchy pair is CERTIFIED finitely; positive-energy dual remains OPEN",
           "status": "CERTIFIED"
         },
         "exceptional_resonant_operational_signature": {
@@ -6653,11 +6786,11 @@
           "status": "NOT_APPLICABLE"
         },
         "profile_green_boundary_dependencies": {
-          "statement": "the finite diagonal massive preparation is certified; physical Proca/Cauchy completion, the complete detector provider and stream_recoil_intervals remain obstructed; numerical specialization is deferred",
+          "statement": "the corrected finite massive Cauchy preparation is certified; positive-energy dual, complete detector provider and stream_recoil_intervals remain obstructed; numerical specialization is deferred",
           "status": "OBSTRUCTED"
         },
         "recoil_backreaction_order": {
-          "statement": "absolute-g3 symbolic operator and six finite execution primitives are CERTIFIED in their scopes; executable physical coefficient OBSTRUCTED",
+          "statement": "absolute-g3 symbolic operator and seven finite execution primitives are CERTIFIED in their scopes; executable physical coefficient OBSTRUCTED",
           "status": "CERTIFIED"
         },
         "relational_redshift_contribution": {
@@ -6669,7 +6802,7 @@
           "status": "CERTIFIED"
         },
         "survives_gauge_reduction": {
-          "statement": "the symbolic word and finite Dhat_1 source are gauge typed; physical co-closed correction and full executable evaluation remain untested",
+          "statement": "finite physical co-closed correction is certified; full spatial sum and executable evaluation remain open",
           "status": "OPEN"
         }
       },
@@ -6919,7 +7052,7 @@
     }
   ],
   "generated_by": "closed_universe_observers/atlas/generate_observer_atlas_fragment.py",
-  "generated_by_sha256": "8e8ee58a7609f5770b89028f54f74d29cc6f586def0653722ad9b465348e1e9f",
+  "generated_by_sha256": "7e3d05f1713b6ee7ad9714e262f6213bb5f4618b74f764585e02e68e302153e1",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

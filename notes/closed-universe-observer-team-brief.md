@@ -798,9 +798,9 @@ emitter as `D_a C_c(m_c) E_A,b`.  Exact type audits through `two_j=4` have no
 composition defects.
 
 `BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT` corrects the activation
-boundary.  Its six finite capabilities include the four baseline consumers
-here, the detector/`Dhat_1` binding and the switched diagonal massive stage
-described below.
+boundary.  Its seven finite capabilities include the four baseline consumers,
+the detector/`Dhat_1` binding, the switched diagonal massive stage and the
+physical full-form Cauchy pair described below.
 `BERGER_RECOIL_FINITE_SHELL_INTERVAL_AGGREGATOR` closes the
 one-shell supplied-channel capability with exact rational arithmetic: it
 sums every passive column and both feedback channels and applies
@@ -870,6 +870,17 @@ interval.  The whole-support switch hull is rigorous but coarse, and the mass
 interval is runtime parameterization rather than a physical choice.  This is
 the diagonal massive wave inverse only: the physical
 `I+mu^-2 Dhat_1 Deltahat_2` correction, Cauchy momentum, positive-energy dual,
+full spatial tail and `I_abc` remain open.
+
+`BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION` closes the correction and
+time-derivative gate.  Cosine-kernel intervals derived from the corrected sine
+payload give the first derivative.  At the compact support-left boundary,
+flatness makes the source and all source derivatives vanish, so the wave
+equation supplies `F_tt=-A F` and `F_ttt=-A F_t` without differentiating a
+value-only remainder.  Exact spacetime blocks then apply
+`I+mu^-2 Dhat_1 Deltahat_2` to the value and derivative.  The resulting
+physical two-form Cauchy pair is callable for every finite column through
+`two_j=4` on a runtime positive mass interval.  The positive-energy dual,
 full spatial tail and `I_abc` remain open.
 
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal

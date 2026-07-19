@@ -32,6 +32,7 @@ DEPENDENCIES = {
     "finite_mode_kernel_intervals": PACKAGE / "certificates/BERGER_RECOIL_FINITE_MODE_KERNEL_INTERVAL_ENCLOSURE.json",
     "finite_detector_form_binding": PACKAGE / "certificates/BERGER_RECOIL_DETECTOR_FORM_BINDING.json",
     "finite_massive_diagonal_preparation": PACKAGE / "certificates/BERGER_RECOIL_MASSIVE_DIAGONAL_PREPARATION.json",
+    "finite_physical_massive_cauchy": PACKAGE / "certificates/BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION.json",
 }
 REQUIRED_CALLABLES = {
     "detector_profile_coefficient_provider": "detector_profile_coefficient_interval",
@@ -78,6 +79,7 @@ def readiness_rows(
     finite_mode_kernel_intervals: bool = False,
     finite_detector_form_binding: bool = False,
     finite_massive_diagonal_preparation: bool = False,
+    finite_physical_massive_cauchy: bool = False,
     complete_nested_convolution: bool = False,
     treat_symbolic_word_as_backend: bool = False,
 ) -> list[dict[str, Any]]:
@@ -179,6 +181,18 @@ def readiness_rows(
                 else "NO_CERTIFIED_FINITE_CALLABLE"
             ),
         },
+        {
+            "id": "finite_physical_massive_advanced_cauchy_pair",
+            "status": (
+                "CERTIFIED"
+                if finite_physical_massive_cauchy
+                and "evaluate_physical_massive_advanced_cauchy_pair_at_support_left" in massive_functions
+                else "OBSTRUCTED"
+            ),
+            "required_callable": "evaluate_physical_massive_advanced_cauchy_pair_at_support_left",
+            "coverage": "D0_D1_all_passive_columns_two_j_inclusive_0_to_4_runtime_positive_mass_interval",
+            "evidence": "BERGER_RECOIL_PHYSICAL_MASSIVE_CAUCHY_PREPARATION" if finite_physical_massive_cauchy and "evaluate_physical_massive_advanced_cauchy_pair_at_support_left" in massive_functions else "NO_CERTIFIED_FINITE_CALLABLE",
+        },
     ]
     for identifier, callable_name in REQUIRED_CALLABLES.items():
         present = callable_name in functions
@@ -227,6 +241,7 @@ def build() -> dict[str, Any]:
         "finite_mode_kernel_intervals": "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED",
         "finite_detector_form_binding": "EXACT_SPACETIME_DHAT1_APPLIED_TO_DETECTOR_IMAGE",
         "finite_massive_diagonal_preparation": "DIAGONAL_MASSIVE_DEGREE_TWO_ADVANCED_IMAGE_AT_SUPPORT_LEFT_EXPORTED",
+        "finite_physical_massive_cauchy": "EMITTER_FULL_FORM_CAUCHY_PAIR_EXPORTED",
     }
     for name, flag in required.items():
         if values[name].get("flags", {}).get(flag) is not True:
@@ -258,6 +273,9 @@ def build() -> dict[str, Any]:
     finite_massive_diagonal_preparation = values["finite_massive_diagonal_preparation"]["flags"][
         "DIAGONAL_MASSIVE_DEGREE_TWO_ADVANCED_IMAGE_AT_SUPPORT_LEFT_EXPORTED"
     ]
+    finite_physical_massive_cauchy = values["finite_physical_massive_cauchy"]["flags"][
+        "EMITTER_FULL_FORM_CAUCHY_PAIR_EXPORTED"
+    ]
     rows = readiness_rows(
         functions,
         form_functions=form_functions,
@@ -268,6 +286,7 @@ def build() -> dict[str, Any]:
         finite_mode_kernel_intervals=finite_mode_kernel_intervals,
         finite_detector_form_binding=finite_detector_form_binding,
         finite_massive_diagonal_preparation=finite_massive_diagonal_preparation,
+        finite_physical_massive_cauchy=finite_physical_massive_cauchy,
         complete_nested_convolution=complete_nested_convolution,
     )
     row_status = {row["id"]: row["status"] for row in rows}
@@ -287,6 +306,7 @@ def build() -> dict[str, Any]:
         finite_mode_kernel_intervals=finite_mode_kernel_intervals,
         finite_detector_form_binding=finite_detector_form_binding,
         finite_massive_diagonal_preparation=finite_massive_diagonal_preparation,
+        finite_physical_massive_cauchy=finite_physical_massive_cauchy,
         complete_nested_convolution=complete_nested_convolution,
         treat_symbolic_word_as_backend=True,
     )
@@ -306,8 +326,8 @@ def build() -> dict[str, Any]:
         "detector column is now assembled and passed through exact Dhat_1 with a "
         "physical-time derivative-tail bound. The switched source is also propagated "
         "through the block-diagonal massive wave kernel to the support-left slice. "
-        "The physical Proca correction and Cauchy/positive-energy completion are "
-        "still not bound into a physical nested channel, "
+        "The physical Proca correction and full-form Cauchy pair are now finite "
+        "callables; the positive-energy dual is still not bound into a physical nested channel, "
         "so the complete nested-convolution row remains "
         "obstructed. "
         "No complete callable backend yet provides the remaining detector coefficient "
@@ -324,7 +344,7 @@ def build() -> dict[str, Any]:
         "schema": "closed-universe-berger-recoil-stream-executable-readiness-audit-v1",
         "result_id": "BERGER_RECOIL_STREAM_EXECUTABLE_READINESS_AUDIT",
         "setting_id": values["per_shell_word"]["setting_id"],
-        "claim_status": "SIX_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
+        "claim_status": "SEVEN_FINITE_EXECUTION_CAPABILITIES_CERTIFIED_COMPLETE_STREAM_OBSTRUCTED",
         "atlas_status": "OBSTRUCTED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
         "dependency_refs": {
@@ -379,6 +399,7 @@ def build() -> dict[str, Any]:
             "FINITE_MODE_KERNEL_INTERVAL_ENCLOSURES_EXPORTED": row_status["finite_exact_mode_kernel_interval_enclosure"] == "CERTIFIED",
             "FINITE_DETECTOR_ADVANCED_MAXWELL_DHAT1_BINDING_EXPORTED": row_status["finite_detector_advanced_maxwell_Dhat1_binding"] == "CERTIFIED",
             "FINITE_SWITCHED_DIAGONAL_MASSIVE_ADVANCED_PREPARATION_EXPORTED": row_status["finite_switched_diagonal_massive_advanced_preparation"] == "CERTIFIED",
+            "FINITE_PHYSICAL_MASSIVE_ADVANCED_CAUCHY_PAIR_EXPORTED": row_status["finite_physical_massive_advanced_cauchy_pair"] == "CERTIFIED",
             "CALLABLE_SHELL_INTERVAL_BACKEND_EXPORTED": row_status["shell_interval_evaluator"] == "CERTIFIED",
             "COMPLETE_DETECTOR_COEFFICIENT_PROVIDER_EXPORTED": False,
             "NESTED_TIME_CONVOLUTION_BACKEND_EXPORTED": False,
@@ -389,7 +410,7 @@ def build() -> dict[str, Any]:
             "FOUR_RECOIL_SCALAR_INTERVALS_EXPORTED": False,
             "QUANTUM_CLAIM": False,
         },
-        "next_gate": "APPLY_PHYSICAL_PROCA_CORRECTION_AND_EXPORT_CAUCHY_MOMENTUM_AND_POSITIVE_ENERGY_DUAL",
+        "next_gate": "APPLY_POSITIVE_ENERGY_DUAL_AND_SERIALIZE_COUPLING_STRIPPED_EMITTER_PREPARATION_COEFFICIENTS",
         "claim_boundary": boundary,
         "provenance": {
             "source_commit": "WORKTREE",

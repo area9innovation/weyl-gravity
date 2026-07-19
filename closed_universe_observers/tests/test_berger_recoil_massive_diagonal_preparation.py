@@ -8,6 +8,7 @@ from closed_universe_observers.berger_recoil_interval_stream import (
     RationalInterval,
 )
 from closed_universe_observers.berger_recoil_massive_diagonal_preparation import (
+    evaluate_physical_massive_advanced_cauchy_pair_at_support_left,
     evaluate_switched_detector_diagonal_massive_advanced_image_at_support_left,
     translate_vector_polynomial,
 )
@@ -72,3 +73,22 @@ def test_certificate_stops_before_physical_proca_and_cauchy_gates():
     assert value["flags"]["DIAGONAL_MASSIVE_DEGREE_TWO_ADVANCED_IMAGE_AT_SUPPORT_LEFT_EXPORTED"] is True
     assert value["flags"]["PHYSICAL_PROCA_TWO_FORM_GREEN_CORRECTION_EXPORTED"] is False
     assert value["flags"]["EMITTER_CAUCHY_MOMENTUM_EXPORTED"] is False
+
+
+def test_physical_proca_cauchy_pair_uses_cosine_derivative_and_flat_endpoint(certificates):
+    value = evaluate_physical_massive_advanced_cauchy_pair_at_support_left(
+        detector_image_certificate=certificates["detector_image"],
+        detector_profile_certificate=certificates["profiles"],
+        switch_certificate=certificates["switches"],
+        moment_certificate=certificates["moments"],
+        exact_kernel_certificate=certificates["kernels"],
+        detector="D0",
+        two_j=0,
+        column=0,
+        mass_squared_interval=RationalInterval(Fraction(1), Fraction(2)),
+        radical_bits=32,
+    )
+    assert value["cosine_nonzero_tau_powers"] == [0, 2, 4, 6, 8, 10]
+    assert len(value["physical_two_form_value"]) == 6
+    assert len(value["physical_two_form_time_derivative"]) == 6
+    assert "every physical-time derivative" in value["endpoint_flatness"]

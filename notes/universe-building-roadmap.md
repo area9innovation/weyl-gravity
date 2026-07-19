@@ -547,8 +547,11 @@ physical preparation-form stage.  A further successor translates it to the
 advanced support coordinate, multiplies the normalized whole-support switch
 hull and applies the block-diagonal massive degree-one/degree-two wave kernel.
 It certifies the diagonal massive support-left image for all finite columns
-and runtime positive mass intervals.  The physical
-`I+mu^-2 Dhat_1 Deltahat_2` correction and Cauchy/positive-energy preparation,
+and runtime positive mass intervals.  A cosine-kernel successor uses switch
+boundary flatness and `F_tt=-AF`, `F_ttt=-AF_t` to apply the physical
+`I+mu^-2 Dhat_1 Deltahat_2` correction to both value and time derivative.
+The full-form finite Cauchy pair is therefore certified; the positive-energy
+dual,
 extension beyond `two_j=4`, and the tail-aware
 four-stream stop loop remain `OBSTRUCTED`, so external numerical inputs remain
 deferred under the strict specialization schema.
