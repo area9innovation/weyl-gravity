@@ -1,0 +1,83 @@
+{
+  "admissible_successors": [
+    "replace the block direct sum by a genuine derived Taub-zero homotopy pullback",
+    "add a nonzero typed unary cross-incidence whose Weyl projection can absorb the defect",
+    "modify the unary endpoint map or work on a background where the direct f2 witness vanishes"
+  ],
+  "claim_boundary": "This theorem obstructs only a complete full-domain relative q2 on the selected 316-row carrier while its unary operator remains block diagonal between the relative cone, its cotangent dual and the five-current resolution. Projection to the Weyl target reproduces the independently certified nonzero direct-f2 Taub witness, so neither a current-valued nor a cotangent-valued q2 output can cancel it. The exact unary cyclic carrier and scoped 188-row current q2 interface remain certified. The theorem does not obstruct a genuine derived Taub-zero homotopy pullback, a nonzero typed unary cross-incidence, a modified endpoint or background, causal propagation, observables, particles or quantum states.",
+  "classification": {
+    "causal_or_quantum_claim": false,
+    "complete_full_domain_q2_on_block_diagonal_316_exists": false,
+    "current_q2_interface_demoted": false,
+    "derived_taub_zero_homotopy_pullback_obstructed": false,
+    "modified_endpoint_or_background_obstructed": false,
+    "nonzero_typed_unary_cross_incidence_obstructed": false,
+    "unary_316_cyclic_carrier_retained": true
+  },
+  "dependencies": {
+    "cotangent_completion": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
+      "sha256": "d17a9249b6a385410ba8bd747259842c70bb811dfb0ce9aa74aa3d03c7fe6fad"
+    },
+    "current_cofiber_assembly": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_CURRENT_COFIBER_ASSEMBLY_V1.json",
+      "sha256": "1fc80971388e4442aff3e9b7e88362e2018d80c7164262918619e436d4a4711a"
+    },
+    "direct_f2_obstruction": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_F2_TAUB_OBSTRUCTION_V1.json",
+      "sha256": "b96fa2c3eb54a9df86d6e7b319d9244c8c54d023d8edc2425e8df29177c590dc"
+    },
+    "five_current_q2": {
+      "artifact_id": "EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1",
+      "path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
+      "sha256": "438d9d4035f655b0902bc328af18c8e526289b63085e1b49e1065501d8475cf6"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "CONSTRUCT_THE_DERIVED_TAUB_ZERO_HOMOTOPY_PULLBACK_OR_EMIT_ITS_FIRST_TYPED_UNARY_INCIDENCE_OBSTRUCTION",
+  "projection_argument": {
+    "conclusion": "a q2 on the block-diagonal 316-row carrier with the declared Einstein and Weyl restrictions would induce the impossible full-domain direct f2",
+    "current_or_cotangent_output_projects_to_zero": true,
+    "normalized_nonzero_witness": "-54*(1 + sqrt(3))/5",
+    "projected_arity_two_equation": "q1_W f2 + f2(q1_E,.) + (-1)^|.| f2(.,q1_E) = -Delta2",
+    "projected_equation_is_the_certified_direct_f2_problem": true,
+    "projection": "p_W kills the current and cotangent summands and projects q_C to the Weyl target",
+    "unary_split": "q_316=q_current direct_sum q_C direct_sum (-q_C^sharp)"
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/relative/einstein_weyl_relative_316_block_diagonal_q2_obstruction.py": "84d4c320d558e0b49fa308abcd72c6c01c7554ea8e733454da17d30d1819a77b",
+      "d_quotient_classical/relative/tests/test_einstein_weyl_relative_316_block_diagonal_q2_obstruction.py": "63125000d785abd7ba4f08394560d37d7e8124600176e47d7c925d3e6c0aa5ae",
+      "d_quotient_classical/relative/verify_einstein_weyl_relative_316_block_diagonal_q2_obstruction.py": "071272e76a6c6ead8fcedc2217acd531a87a30918e885473d9e2c94757365bfc",
+      "d_quotient_classical/schema/relative-316-block-diagonal-q2-obstruction-v1.schema.json": "f9ba18f094db538b7f2c95a289d97b3d76b8b83d9cef09db133a28d7a300368b"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_316_block_diagonal_q2_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_316_block_diagonal_q2_obstruction",
+      "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_316_block_diagonal_q2_obstruction"
+    ]
+  },
+  "result_id": "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1",
+  "result_state": "BLOCK_DIAGONAL_316_ROW_UNARY_CARRIER_CANNOT_SUPPORT_THE_FULL_DOMAIN_RELATIVE_Q2",
+  "schema": "pure-weyl-relative-316-block-diagonal-q2-obstruction-v1",
+  "scope": {
+    "background": "compact magnetic Plebanski-Hacyan product",
+    "boundaries": "support-local off-shell bundle complex before harmonic or causal reduction",
+    "carrier": "160-row five-current carrier plus T*[1] of the complete 78-row relative mapping cofiber",
+    "charge_sector": "five connected stabilizers H,P_x,J_1,J_2,J_3",
+    "degree": "-2 through 3",
+    "ell": "not harmonic-reduced",
+    "k": "not harmonic-reduced",
+    "m": "not harmonic-reduced",
+    "omega": "not harmonic-reduced",
+    "parity": "canonical nondegenerate BV odd pairing of cohomological degree one",
+    "theory": "Einstein-Maxwell source relative to Weyl-Maxwell target"
+  }
+}

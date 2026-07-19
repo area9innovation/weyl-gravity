@@ -1927,6 +1927,17 @@ to the exact `q2` extension/obstruction on this 316-row carrier, followed by a
 separate comparison between its canonical pairing and the action current;
 causal and quantum rows remain `NO_CERTIFIED_MAP`/`OPEN`.
 
+The block-diagonal arity-two option is now closed.
+`EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1` proves by exact
+projection that current/cotangent outputs cannot change the Weyl component of
+the `q1 q2` identity.  The projected equation is the certified direct-`f2`
+problem and retains the nonzero normalized Taub witness
+`-54*(1+sqrt(3))/5`.  Thus the 316-row carrier remains the authoritative
+unary cyclic carrier, but its full-domain nonlinear lifecycle is
+`OBSTRUCTED` while the unary split is block diagonal.  Bridge 1 now targets a
+derived Taub-zero homotopy pullback or a nonzero typed unary cross-incidence;
+neither alternative is obstructed by this theorem.
+
 Until one of the four admissible Berger carrier alternatives passes, atlas
 row `classical.berger.crosswalk.retained36_to_einstein_extra` remains
 `NO_CERTIFIED_MAP`; the relative functor may be prepared but Bridge 1 is not

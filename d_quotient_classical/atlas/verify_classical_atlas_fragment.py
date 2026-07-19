@@ -78,12 +78,14 @@ def verify() -> None:
     if "EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1" not in {item["result_id"] for item in completion["evidence"]}:
         raise AssertionError("fixed 238-row rank evidence missing")
     cotangent = by_id["classical.crosswalk.compact_product_relative_316_cotangent_carrier"]
-    if cotangent["descriptions"]["symplectic"] != "CERTIFIED" or cotangent["descriptions"]["nonlinear"] != "OPEN":
+    if cotangent["descriptions"]["symplectic"] != "CERTIFIED" or cotangent["descriptions"]["nonlinear"] != "OBSTRUCTED":
         raise AssertionError("316-row unary cotangent lifecycle changed")
     if cotangent["descriptions"]["causal"] != "NO_CERTIFIED_MAP":
         raise AssertionError("316-row cotangent carrier was overpromoted causally")
-    if "not either standard action-derived form" not in cotangent["claim_boundary"] or "Complete q2" not in cotangent["claim_boundary"]:
+    if "not either standard action-derived form" not in cotangent["claim_boundary"] or "full-domain q2 is obstructed" not in cotangent["claim_boundary"]:
         raise AssertionError("316-row cotangent claim boundary missing")
+    if "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1" not in {item["result_id"] for item in cotangent["evidence"]}:
+        raise AssertionError("316-row projected q2 obstruction missing")
     berger_crosswalk = by_id["classical.berger.crosswalk.retained36_to_einstein_extra"]
     if set(berger_crosswalk["descriptions"].values()) != {"NO_CERTIFIED_MAP"}:
         raise AssertionError("Berger Bridge 1 overpromoted")

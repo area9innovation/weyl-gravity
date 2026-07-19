@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/relative-316-block-diagonal-q2-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_state", "lifecycle_status", "dependency_tags", "scope", "dependencies", "projection_argument", "classification", "admissible_successors", "next_gate", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "pure-weyl-relative-316-block-diagonal-q2-obstruction-v1"},
+    "result_id": {"const": "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1"},
+    "result_state": {"const": "BLOCK_DIAGONAL_316_ROW_UNARY_CARRIER_CANNOT_SUPPORT_THE_FULL_DOMAIN_RELATIVE_Q2"},
+    "lifecycle_status": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "scope": {"type": "object", "minProperties": 11, "additionalProperties": {"type": "string"}},
+    "dependencies": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/artifact"}},
+    "projection_argument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unary_split", "projection", "projected_arity_two_equation", "current_or_cotangent_output_projects_to_zero", "projected_equation_is_the_certified_direct_f2_problem", "normalized_nonzero_witness", "conclusion"],
+      "properties": {
+        "unary_split": {"type": "string"},
+        "projection": {"type": "string"},
+        "projected_arity_two_equation": {"type": "string"},
+        "current_or_cotangent_output_projects_to_zero": {"const": true},
+        "projected_equation_is_the_certified_direct_f2_problem": {"const": true},
+        "normalized_nonzero_witness": {"const": "-54*(1 + sqrt(3))/5"},
+        "conclusion": {"type": "string", "minLength": 80}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unary_316_cyclic_carrier_retained", "complete_full_domain_q2_on_block_diagonal_316_exists", "current_q2_interface_demoted", "derived_taub_zero_homotopy_pullback_obstructed", "nonzero_typed_unary_cross_incidence_obstructed", "modified_endpoint_or_background_obstructed", "causal_or_quantum_claim"],
+      "properties": {
+        "unary_316_cyclic_carrier_retained": {"const": true},
+        "complete_full_domain_q2_on_block_diagonal_316_exists": {"const": false},
+        "current_q2_interface_demoted": {"const": false},
+        "derived_taub_zero_homotopy_pullback_obstructed": {"const": false},
+        "nonzero_typed_unary_cross_incidence_obstructed": {"const": false},
+        "modified_endpoint_or_background_obstructed": {"const": false},
+        "causal_or_quantum_claim": {"const": false}
+      }
+    },
+    "admissible_successors": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 40}},
+    "next_gate": {"const": "CONSTRUCT_THE_DERIVED_TAUB_ZERO_HOMOTOPY_PULLBACK_OR_EMIT_ITS_FIRST_TYPED_UNARY_INCIDENCE_OBSTRUCTION"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_manifest", "verification_commands"], "properties": {"source_manifest": {"type": "object", "minProperties": 4, "additionalProperties": {"$ref": "#/$defs/hash"}}, "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}}},
+    "claim_boundary": {"type": "string", "minLength": 300}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["artifact_id", "path", "sha256"], "properties": {"artifact_id": {"type": "string"}, "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

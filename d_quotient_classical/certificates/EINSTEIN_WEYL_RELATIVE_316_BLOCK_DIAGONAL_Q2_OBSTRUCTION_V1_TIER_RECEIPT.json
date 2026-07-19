@@ -1,0 +1,40 @@
+{
+  "schema": "pure-weyl-tier-receipt-v1",
+  "result_id": "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1_TIER_RECEIPT",
+  "claim_ids": ["EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1"],
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifacts": {
+    "certificate": {"path": "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json", "sha256": "42884f8a4c9216492158c6064bec530afbc788e281917d284a156e16158f5aa2"},
+    "schema": {"path": "d_quotient_classical/schema/relative-316-block-diagonal-q2-obstruction-v1.schema.json", "sha256": "f9ba18f094db538b7f2c95a289d97b3d76b8b83d9cef09db133a28d7a300368b"},
+    "producer": {"path": "d_quotient_classical/relative/einstein_weyl_relative_316_block_diagonal_q2_obstruction.py", "sha256": "84d4c320d558e0b49fa308abcd72c6c01c7554ea8e733454da17d30d1819a77b"},
+    "verifier": {"path": "d_quotient_classical/relative/verify_einstein_weyl_relative_316_block_diagonal_q2_obstruction.py", "sha256": "071272e76a6c6ead8fcedc2217acd531a87a30918e885473d9e2c94757365bfc"},
+    "tests": {"path": "d_quotient_classical/relative/tests/test_einstein_weyl_relative_316_block_diagonal_q2_obstruction.py", "sha256": "63125000d785abd7ba4f08394560d37d7e8124600176e47d7c925d3e6c0aa5ae"},
+    "report": {"path": "d_quotient_classical/reports/einstein-weyl-relative-316-block-diagonal-q2-obstruction.md", "sha256": "400ce90517ace709baedd28cb7b58f42ec23545cbabc94e6ec74e35a27352e7a"},
+    "atlas_fragment": {"path": "d_quotient_classical/atlas/classical-causal-atlas-fragment.json", "sha256": "700e7e589366a9f8fcff8ee00dba7bd2a629de238afcae693ce4d1f40d25a072"}
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "checks": ["Python compilation", "strict Draft 2020-12 schema", "scoped diff check", "content-hash replay"]},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.6,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.einstein_weyl_relative_316_block_diagonal_q2_obstruction --check --guards",
+        "PYTHONPATH=. python3 -m d_quotient_classical.relative.verify_einstein_weyl_relative_316_block_diagonal_q2_obstruction",
+        "python3 -m unittest d_quotient_classical.relative.tests.test_einstein_weyl_relative_316_block_diagonal_q2_obstruction",
+        "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/relative-316-block-diagonal-q2-obstruction-v1.schema.json -d d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json"
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.9,
+      "commands": [
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --write",
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.generate_classical_atlas_fragment --check",
+        "PYTHONPATH=. python3 -m d_quotient_classical.atlas.verify_classical_atlas_fragment",
+        "python3 -m unittest d_quotient_classical.atlas.tests.test_classical_atlas_fragment"
+      ]
+    },
+    "tier_3": {"status": "NOT_RUN", "reason": "This scoped projection obstruction changes no shared algebra and makes no causal, paper-freeze or quantum promotion; unrelated Einstein, observer, quantum and black-hole work is concurrently dirty."}
+  },
+  "claim_boundary": "This receipt covers the exact projection of the full-domain q2 identity on the block-diagonal 316-row unary carrier to the independently obstructed direct Einstein-to-Weyl f2 equation, including the normalized nonzero Taub witness. It leaves the 316-row unary cyclic carrier and scoped 188-row current q2 theorem intact. It does not obstruct a derived Taub-zero homotopy pullback, a nonzero typed unary cross-incidence, a modified endpoint or background, causal propagation, observables, particles or quantum states."
+}

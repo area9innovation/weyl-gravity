@@ -2402,6 +2402,19 @@ PBW-expanded.  The active gate is now the complete `q2` extension or its first
 normalized obstruction on these 316 rows; action-current comparison and
 causal propagation remain later gates.
 
+That first arity-two gate is now an exact scoped obstruction.
+`EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1` projects any
+candidate full-domain `q2` through the block-diagonal unary carrier to the
+Weyl target.  Current-valued and cotangent-valued outputs vanish under this
+projection, leaving precisely the old direct-`f2` equation.  Its normalized
+Taub witness remains `-54*(1+sqrt(3))/5`, so no complete full-domain relative
+`q2` exists while the 316-row unary operator stays block diagonal.  The unary
+cyclic carrier and scoped 188-row physical/current interface are not demoted.
+The active construction is now a genuine derived Taub-zero homotopy pullback,
+or, failing that, the first typed obstruction to a nonzero unary
+cross-incidence.  Modified endpoints and other backgrounds remain admissible;
+no causal or quantum consequence is inferred.
+
 Escalate immediately if \(D\) is charged on the intended compact phase space,
 if the clock necessarily charges it, or if the alternative quotient restores a
 negative-norm one-particle class.  A counterexample is a successful result, not

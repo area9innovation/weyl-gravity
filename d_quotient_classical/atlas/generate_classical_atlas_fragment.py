@@ -74,6 +74,7 @@ CERTS = {
     "five_current_de_rham_q2": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_FIVE_CURRENT_DE_RHAM_Q2_V1.json",
     "relative_238_cyclic_rank_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_238_ROW_CYCLIC_RANK_OBSTRUCTION_V1.json",
     "relative_316_cotangent_completion": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1.json",
+    "relative_316_block_q2_obstruction": ROOT / "d_quotient_classical/certificates/EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1.json",
     "cone": ROOT / "d_quotient_classical/certificates/FINITE_HARMONIC_SECOND_ORDER_TANGENT_CONE_THEOREM_V1.json",
 }
 
@@ -355,14 +356,14 @@ def entries() -> list[dict[str, Any]]:
     values.append(_entry(
         "classical.crosswalk.compact_product_relative_316_cotangent_carrier",
         _scope(NARIAI, theory="Einstein-Maxwell source relative to Weyl-Maxwell target", background="compact magnetic Plebanski-Hacyan product", boundaries="support-local off-shell bundle complex before harmonic or causal reduction", charge_sector="H,P_x,J_1,J_2,J_3 simultaneous derived zero-charge sector", carrier="160-row current resolution direct-summed with T*[1] of the complete 78-row relative mapping cone", degree="-2,...,3 with ranks (10,51,97,97,51,10)", parity="canonical nondegenerate BV odd pairing of degree one", ell="not harmonic-reduced", m="not harmonic-reduced", k="not harmonic-reduced", omega="not harmonic-reduced"),
-        {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
+        {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OBSTRUCTED", "observational": "NOT_APPLICABLE", "quantum": "OPEN"},
         ("NO_CERTIFIED_MAP", "The unary cotangent carrier has no advanced/retarded Green homotopy."),
         ("CERTIFIED", "The canonical cone/cotangent pairing is nondegenerate and q1-cyclic on all 316 rows."),
-        ("OPEN", "The complete q2 extension on the cotangent carrier is the active gate."),
+        ("OBSTRUCTED", "The block-diagonal full-domain q2 projects to the certified nonzero direct-f2 Taub obstruction."),
         ("NOT_APPLICABLE", "This is an off-shell carrier, not an observable or particle map."),
         _second(("NOT_APPLICABLE", "No reduced-mode tangent claim is made."), ("NOT_APPLICABLE", "No smooth-secular tangent claim is made."), ("NO_CERTIFIED_MAP", "No causal-retarded completion is supplied.")),
-        _evidence("relative_238_cyclic_rank_obstruction", "relative_316_cotangent_completion"),
-        "This carrier resolves the 238-row rank obstruction by adjoining the full 78-row odd cotangent of the relative cone, not by identifying unlike bundles at the 28-row rank lower bound. Its pairing is the canonical cone/cotangent pairing, not either standard action-derived form; the generic inertia obstruction is therefore retained rather than refuted. The cotangent adjoint is factorized and not PBW-expanded. Complete q2, relative f2 repair, current comparison, causal and quantum claims remain open.",
+        _evidence("relative_238_cyclic_rank_obstruction", "relative_316_cotangent_completion", "relative_316_block_q2_obstruction"),
+        "This carrier resolves the 238-row rank obstruction by adjoining the full 78-row odd cotangent of the relative cone, not by identifying unlike bundles at the 28-row rank lower bound. Its pairing is the canonical cone/cotangent pairing, not either standard action-derived form; the generic inertia obstruction is therefore retained rather than refuted. The cotangent adjoint is factorized and not PBW-expanded. Projection proves that a complete full-domain q2 is obstructed while the unary operator remains block diagonal. A genuine derived Taub-zero homotopy pullback, nonzero typed unary cross-incidence, modified endpoint or different background remains open; current comparison, causal and quantum claims are absent.",
     ))
     return values
 

@@ -140,12 +140,17 @@ class ClassicalAtlasFragmentTest(unittest.TestCase):
     def test_316_row_cotangent_carrier_is_unary_only(self) -> None:
         entry = self.entries["classical.crosswalk.compact_product_relative_316_cotangent_carrier"]
         self.assertEqual(entry["descriptions"]["symplectic"], "CERTIFIED")
-        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OBSTRUCTED")
         self.assertEqual(entry["descriptions"]["causal"], "NO_CERTIFIED_MAP")
         self.assertIn("not either standard action-derived form", entry["claim_boundary"])
-        self.assertIn("Complete q2", entry["claim_boundary"])
+        self.assertIn("full-domain q2 is obstructed", entry["claim_boundary"])
+        self.assertIn("derived Taub-zero homotopy pullback", entry["claim_boundary"])
         self.assertIn(
             "EINSTEIN_WEYL_RELATIVE_316_ROW_COTANGENT_COMPLETION_V1",
+            {item["result_id"] for item in entry["evidence"]},
+        )
+        self.assertIn(
+            "EINSTEIN_WEYL_RELATIVE_316_BLOCK_DIAGONAL_Q2_OBSTRUCTION_V1",
             {item["result_id"] for item in entry["evidence"]},
         )
 
