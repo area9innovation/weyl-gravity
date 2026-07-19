@@ -833,6 +833,14 @@ equation `1-3s^4=0`.  Centers have zero derivative and support-disjoint cells
 are structural zeros.  Kernel composition, typed form contraction and the
 harmonic Cauchy coefficients of `tilde_u0,tilde_u1` remain open.
 
+`BERGER_RECOIL_MATRIX_INTERVAL_CONVOLUTION` now lifts the scalar Volterra
+engine to complex interval vectors and square interval-matrix kernels.  It
+checks dimensions, applies exact beta coefficients, propagates induced-
+infinity-norm source/operator remainders, and supports pointwise multiplication
+by the certified real switch-cell hulls.  The finite execution layer is ready;
+detector polynomials, exact spacetime `d/delta` matrices and harmonic emitter
+Cauchy coefficients are not yet jointly bound, so no `I_abc` follows.
+
 `BERGER_COUPLING_STRIPPED_DETECTOR_SELECTED_PREPARATIONS` removes a formal
 order ambiguity before that construction.  The advanced covector factors as
 `v_a=g_a tilde_v_a`; applying the positive-energy dual to `tilde_v_a` defines
