@@ -3505,6 +3505,33 @@ marks this complete resonance ideal `CERTIFIED`, while the other fifteen
 ideals, same-fibre sources, Taub join, bounded and smooth-secular corrections
 remain `OPEN`; causal correction remains `NO_CERTIFIED_MAP`.
 
+Candidate 4 now supplies the first complete target-doublet `L=4` ideal.
+Although each target parity has a two-dimensional adjoint cokernel, its exact
+rows reduce to the two binary-quartic multiplication equations
+`A_a B_p-A_p B_a=0` and `A_a B_a-3A_p B_p=0`.  Their `sqrt(3)` sum and
+difference factor in `C[x,y]`, giving exactly four ten-complex-dimensional
+linear components: the two one-fibre-zero planes and two real mixed sheets
+with common parity ratio `+sqrt(3)` or `-sqrt(3)`.  Atlas row
+`einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety`
+marks this resonance decomposition `CERTIFIED`; after also closing the three
+scalar `L=1` ideals, eleven cross-fibre ideals remain.  Their
+same-fibre sources, Taub join and correction classes remain fail-closed.
+
+All three scalar-internal `L=1` difference fibres, candidates `14,17,20`,
+are also completely decomposed.  Their action-derived parity pencils share
+the exact eigenvalue square `128/5` and reduce to two independent third
+binary-quartic transvectants.  Exact elimination identifies the rank-two
+drop locus of the `3 x 5` transvectant matrix with the square-quartic cone;
+the rank-at-most-one locus is supported only at zero.  The three incidence
+strata have dimensions `7,6,5`, and unmixedness of the height-three complete
+intersection proves that each transvectant kernel is irreducible of dimension
+7.  Hence each physical zero variety is one irreducible dimension-14 product
+inside dimension 20.  The scalar certificate remains theorem-local; the
+generated atlas combines it with candidate 4 and the earlier six classified
+fibres, leaving eleven fibrewise ideals `OPEN`.  Same-fibre sources, the five
+Taub maps, bounded and smooth-secular corrections remain `OPEN`; causal
+correction remains `NO_CERTIFIED_MAP`.
+
 See the authoritative queue in
 [`universe-building-roadmap.md`](universe-building-roadmap.md#coordinated-eight-hour-work-queue--2026-07-17).
 

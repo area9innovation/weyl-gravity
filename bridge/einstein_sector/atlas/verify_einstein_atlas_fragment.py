@@ -528,6 +528,28 @@ def verify() -> None:
         raise AssertionError("candidate-2 scalar L3 correction classes were merged")
     if "other fifteen fibrewise ideals" not in scalar_l3["claim_boundary"] or "two-fibre tangent cone" not in scalar_l3["claim_boundary"]:
         raise AssertionError("candidate-2 scalar L3 theorem exceeded scope")
+    scalar_l1 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l1_zero_varieties"]
+    scalar_l1_second = scalar_l1["mode_data"]["second_order"]
+    if scalar_l1["descriptions"]["nonlinear"] != "OPEN" or "Candidates 14,17,20" not in scalar_l1["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("scalar L1 fibre scope was hidden")
+    if "lambda squared equal to 128/5" not in scalar_l1["mode_data"]["lee_wald"]["statement"]:
+        raise AssertionError("scalar L1 parity-pencil normalization was hidden")
+    if scalar_l1["mode_data"]["resonance"]["status"] != "CERTIFIED" or "irreducible complex dimension-14" not in scalar_l1["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("scalar L1 ideals were hidden")
+    if scalar_l1["mode_data"]["taub_maps"]["status"] != "OPEN" or scalar_l1_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or scalar_l1_second["smooth_secular"]["status"] != "OPEN" or scalar_l1_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("scalar L1 correction classes were merged")
+    if "eleven fibrewise ideals remain" not in scalar_l1["claim_boundary"] or "two-fibre tangent cone" not in scalar_l1["claim_boundary"]:
+        raise AssertionError("scalar L1 theorem exceeded scope")
+    candidate4 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety"]
+    candidate4_second = candidate4["mode_data"]["second_order"]
+    if candidate4["descriptions"]["nonlinear"] != "OPEN" or "Candidate 4 remains one declared physical circumference" not in candidate4["mode_data"]["dispersion"]["statement"]:
+        raise AssertionError("candidate-4 L4 fibre scope was hidden")
+    if candidate4["mode_data"]["resonance"]["status"] != "CERTIFIED" or "exactly four ten-dimensional linear components" not in candidate4["mode_data"]["resonance"]["statement"] or "plus or minus sqrt(3)" not in candidate4["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("candidate-4 L4 decomposition was hidden")
+    if candidate4["mode_data"]["taub_maps"]["status"] != "OPEN" or candidate4_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN" or candidate4_second["smooth_secular"]["status"] != "OPEN" or candidate4_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("candidate-4 L4 correction classes were merged")
+    if "eleven fibrewise ideals remain" not in candidate4["claim_boundary"] or "two-fibre tangent cone" not in candidate4["claim_boundary"]:
+        raise AssertionError("candidate-4 L4 theorem exceeded scope")
     l3 = by_id["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
     l3_second = l3["mode_data"]["second_order"]
     if l3["descriptions"]["nonlinear"] != "OBSTRUCTED" or "All 44 target-adjoint coefficients" not in l3["mode_data"]["resonance"]["statement"]:

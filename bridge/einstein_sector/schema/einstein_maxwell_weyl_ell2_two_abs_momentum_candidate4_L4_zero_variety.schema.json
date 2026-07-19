@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate4-L4-zero-variety-v1",
+  "type": "object",
+  "required": ["schema", "schema_path", "schema_sha256", "result_id", "dependency_tags", "lifecycle_state", "generality_level", "scope", "candidate_index", "fibre_id", "rho", "coefficients", "axisymmetric_to_reduced_conversion", "coefficient_nonzero_intervals", "exact_target_relations", "factorization", "zero_variety", "classification", "provenance", "claim_boundary"],
+  "properties": {
+    "schema": {"const": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate4-L4-zero-variety-v1"},
+    "result_id": {"const": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE4_L4_ZERO_VARIETY"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "generality_level": {"const": "G2"},
+    "candidate_index": {"const": 4},
+    "zero_variety": {
+      "type": "object",
+      "required": ["ambient_dimension_over_C", "irreducible_components_over_C", "all_mixed_components_real"],
+      "properties": {
+        "ambient_dimension_over_C": {"const": 20},
+        "irreducible_components_over_C": {"type": "array", "minItems": 4, "maxItems": 4},
+        "all_mixed_components_real": {"const": true}
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": ["candidate_4_target_doublet_L4_zero_variety_classified", "all_m_irreducible_decomposition_classified", "two_target_components_reduced_exactly", "other_twenty_parent_fibre_zero_varieties_classified", "same_fibre_quadratic_sources_classified", "taub_common_zero_intersection_classified", "complete_two_fibre_tangent_cone_classified", "smooth_secular_classified", "causal_or_quantum_claim"]
+    }
+  }
+}

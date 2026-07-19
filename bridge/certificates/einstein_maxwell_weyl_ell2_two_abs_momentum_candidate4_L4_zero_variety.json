@@ -1,0 +1,140 @@
+{
+  "axisymmetric_to_reduced_conversion": "18*sqrt(70)*sqrt(pi)/175",
+  "candidate_index": 4,
+  "claim_boundary": "This certificate classifies candidate 4, one of the twenty-one parent amplitude fibres. The other twenty parent fibres are outside this certificate; aggregate progress belongs to the generated atlas. Same-fibre sources, Taub intersections and higher correction classes remain fail-closed.",
+  "classification": {
+    "all_m_irreducible_decomposition_classified": true,
+    "candidate_4_target_doublet_L4_zero_variety_classified": true,
+    "causal_or_quantum_claim": false,
+    "complete_two_fibre_tangent_cone_classified": false,
+    "other_twenty_parent_fibre_zero_varieties_classified": false,
+    "same_fibre_quadratic_sources_classified": false,
+    "smooth_secular_classified": false,
+    "taub_common_zero_intersection_classified": false,
+    "two_target_components_reduced_exactly": true
+  },
+  "coefficient_nonzero_intervals": {
+    "cross_target_0": {
+      "decimal_digits": 30,
+      "excludes_zero": true,
+      "lower": "-53108121712649087423184773051000391807987065025021463478504336481022612684965500707229668321164456890598801/75870750230733062500000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "-151737490607568821209099351292718666908321432559968824656301012710687735681283902297758869164973044369119943/216773572087808750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "cross_target_1": {
+      "decimal_digits": 30,
+      "excludes_zero": true,
+      "lower": "2222805212946417847039919244890221386487441855234794480770597561357364195864857093793688811245112312618920001/13817766837940037750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "upper": "408440457878904279393585161678900109795963264306630889240692537652120508158895489259468318499383701608048573027/2539014656471481936562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "same_target_1": {
+      "decimal_digits": 30,
+      "excludes_zero": true,
+      "lower": "124639734100271098759388912080665303735809515846042696144066569/3171875000000000000000000000000000000000000000000000000000000",
+      "upper": "37606816323357659108436309679784318868605089432940376973304277/957031250000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "coefficients": {
+    "aa": [
+      "0",
+      "(-23840*sqrt(210) + 42400*sqrt(70))/(203*sqrt(pi))"
+    ],
+    "ap": [
+      "(-99906693840*sqrt(2264465)*sqrt(-80425176383 + 1320403600839*sqrt(3)) - 1079097994339890*sqrt(13586790)*sqrt(-361 + 783*sqrt(3)) + 28292403180*sqrt(6793395)*sqrt(-80425176383 + 1320403600839*sqrt(3)) + 3561806113587270*sqrt(4528930)*sqrt(-361 + 783*sqrt(3)))/(173418857670247*sqrt(pi))",
+      "(-57650594580238400*sqrt(234255)*sqrt(787283067*sqrt(3) + 21333443597) - 12963398113323611770*sqrt(468510)*sqrt(9321*sqrt(3) + 29689) - 12229818016974700*sqrt(78085)*sqrt(174029058215 - 72813616647*sqrt(3)) - 3256780942161371390*sqrt(468510)*sqrt(150163 - 30837*sqrt(3)) - 3197281639546360*sqrt(234255)*sqrt(174029058215 - 72813616647*sqrt(3)) + 40247394668461220*sqrt(78085)*sqrt(787283067*sqrt(3) + 21333443597) + 15611885741726925010*sqrt(156170)*sqrt(150163 - 30837*sqrt(3)) + 50494822190519906230*sqrt(156170)*sqrt(9321*sqrt(3) + 29689))/(10446231729482668539*sqrt(pi))"
+    ],
+    "pa": [
+      "(-1553757894689130*sqrt(4528930)*sqrt(-361 + 783*sqrt(3)) - 14580277620*sqrt(6793395)*sqrt(-80425176383 + 1320403600839*sqrt(3)) + 29659077360*sqrt(2264465)*sqrt(-80425176383 + 1320403600839*sqrt(3)) + 813590880223710*sqrt(13586790)*sqrt(-361 + 783*sqrt(3)))/(173418857670247*sqrt(pi))",
+      "(-44718512841830237065*sqrt(468510)*sqrt(9321*sqrt(3) + 29689) - 41044034866313830*sqrt(234255)*sqrt(174029058215 - 72813616647*sqrt(3)) - 67393551323037150*sqrt(78085)*sqrt(787283067*sqrt(3) + 21333443597) - 10315748212799563935*sqrt(156170)*sqrt(150163 - 30837*sqrt(3)) + 10164769351031753935*sqrt(468510)*sqrt(150163 - 30837*sqrt(3)) + 51502318872327540*sqrt(78085)*sqrt(174029058215 - 72813616647*sqrt(3)) + 59533554426574540*sqrt(234255)*sqrt(787283067*sqrt(3) + 21333443597) + 63156953746083271275*sqrt(156170)*sqrt(9321*sqrt(3) + 29689))/(41784926917930674156*sqrt(pi))"
+    ],
+    "pp": [
+      "0",
+      "(-127200*sqrt(70) + 71520*sqrt(210))/(203*sqrt(pi))"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_target_relations": {
+    "cross_parity": "c_pa[j]=-c_ap[j] for j=0,1, with both c_ap[j] nonzero",
+    "independent_equations": [
+      "F_cross=A_axial*B_polar-A_polar*B_axial=0",
+      "F_same=A_axial*B_axial-3*A_polar*B_polar=0"
+    ],
+    "same_parity": "c_aa[0]=c_pp[0]=0 and c_pp[1]=-3*c_aa[1], with c_aa[1] nonzero"
+  },
+  "factorization": {
+    "U_minus": "A_axial-sqrt(3)*A_polar",
+    "U_plus": "A_axial+sqrt(3)*A_polar",
+    "V_minus": "B_axial-sqrt(3)*B_polar",
+    "V_plus": "B_axial+sqrt(3)*B_polar",
+    "domain_argument": "binary-quartic multiplication occurs in C[x,y], an integral domain",
+    "equations": [
+      "F_same+sqrt(3)*F_cross=U_minus*V_plus=0",
+      "F_same-sqrt(3)*F_cross=U_plus*V_minus=0"
+    ]
+  },
+  "fibre_id": "L4_candidate_4",
+  "generality_level": "G2",
+  "lifecycle_state": "CLASSIFIED",
+  "provenance": {
+    "parent": "bridge/certificates/einstein_maxwell_weyl_ell2_two_abs_momentum_cross_fibre_amplitude_system.json",
+    "parent_sha256": "7c4e0ac43d1db48098d1250e09abdefbf209758167882b68239c6c9841c71046"
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_ELL2_TWO_ABS_MOMENTUM_CANDIDATE4_L4_ZERO_VARIETY",
+  "rho": "29*(-361 + 783*sqrt(3))/26772",
+  "schema": "einstein-maxwell-weyl-ell2-two-abs-momentum-candidate4-L4-zero-variety-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_ell2_two_abs_momentum_candidate4_L4_zero_variety.schema.json",
+  "schema_sha256": "db3b07ca4c1f9b7d9252178441fc2ca25094ba6758e242fa22ff5810206ad8c6",
+  "scope": {
+    "background": "candidate-4 compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2 before final residual quotient",
+    "carrier": "scalar-input target-doublet all-m L4 cross-|n| resonance block",
+    "charge_sector": "fixed N=2 magnetic bundle",
+    "degree": 2,
+    "ell": "2 times 2 -> L=4",
+    "k": "signed momenta (1,-2)",
+    "m": "all magnetic components",
+    "omega": "positive-frequency SUM channel",
+    "parity": "both axial and polar amplitudes on both momentum fibres",
+    "theory": "Weyl-Maxwell target"
+  },
+  "zero_variety": {
+    "all_mixed_components_real": true,
+    "ambient_dimension_over_C": 20,
+    "irreducible_components_over_C": [
+      {
+        "component_id": "first_fibre_zero",
+        "dimension_over_C": 10,
+        "equations": [
+          "A_axial=0",
+          "A_polar=0"
+        ]
+      },
+      {
+        "component_id": "second_fibre_zero",
+        "dimension_over_C": 10,
+        "equations": [
+          "B_axial=0",
+          "B_polar=0"
+        ]
+      },
+      {
+        "component_id": "mixed_plus",
+        "dimension_over_C": 10,
+        "equations": [
+          "A_axial=sqrt(3)*A_polar",
+          "B_axial=sqrt(3)*B_polar"
+        ]
+      },
+      {
+        "component_id": "mixed_minus",
+        "dimension_over_C": 10,
+        "equations": [
+          "A_axial=-sqrt(3)*A_polar",
+          "B_axial=-sqrt(3)*B_polar"
+        ]
+      }
+    ]
+  }
+}

@@ -250,6 +250,33 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
         self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
         self.assertIn("other fifteen fibrewise ideals", entry["claim_boundary"])
 
+    def test_scalar_l1_varieties_are_full_ideals_not_extensions(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_scalar_l1_zero_varieties"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("Candidates 14,17,20", entry["mode_data"]["dispersion"]["statement"])
+        self.assertIn("lambda squared equal to 128/5", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("irreducible complex dimension-14", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("eleven fibrewise ideals remain", entry["claim_boundary"])
+
+    def test_candidate4_target_doublet_has_four_components_not_an_extension(self) -> None:
+        entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_candidate4_l4_zero_variety"]
+        second = entry["mode_data"]["second_order"]
+        self.assertEqual(entry["descriptions"]["nonlinear"], "OPEN")
+        self.assertIn("two target-adjoint components", entry["mode_data"]["lee_wald"]["statement"])
+        self.assertIn("exactly four ten-dimensional linear components", entry["mode_data"]["resonance"]["statement"])
+        self.assertIn("plus or minus sqrt(3)", entry["mode_data"]["resonance"]["statement"])
+        self.assertEqual(entry["mode_data"]["taub_maps"]["status"], "OPEN")
+        self.assertEqual(second["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
+        self.assertEqual(second["smooth_secular"]["status"], "OPEN")
+        self.assertEqual(second["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
+        self.assertIn("eleven fibrewise ideals remain", entry["claim_boundary"])
+
     def test_nonaxisymmetric_l3_matrix_closes_basis_not_cone(self) -> None:
         entry = self.entries["einstein.ph.wm.interaction.ell2_two_abs_momentum_nonaxisymmetric_l3_matrix"]
         second = entry["mode_data"]["second_order"]

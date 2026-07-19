@@ -2108,6 +2108,31 @@ marks only this complete ideal `CERTIFIED`.  The other fifteen fibrewise
 ideals, same-fibre sources, five Taub maps, bounded and smooth-secular classes
 remain `OPEN`; causal correction remains `NO_CERTIFIED_MAP`.
 
+Candidate 4 gives the first complete target-doublet `L=4` fibrewise ideal.
+Its two adjoint components per target parity reduce exactly to a cross-parity
+determinant and the same-parity form of ratio `-3`.  The resulting two
+binary-quartic multiplication equations factor over `R(sqrt(3))`, so the
+all-`m` zero variety has exactly four real ten-complex-dimensional linear
+components: two one-fibre-zero planes and two mixed sheets with common parity
+ratio `+sqrt(3)` or `-sqrt(3)`.  The corresponding atlas row certifies only
+this resonance ideal.  After also closing the three scalar `L=1` ideals,
+eleven ideals, same-fibre sources, Taub intersection,
+bounded and smooth-secular classes remain `OPEN`; causal correction remains
+`NO_CERTIFIED_MAP`.
+
+The three scalar-internal `L=1` difference fibres, candidates `14,17,20`,
+also have complete resonance ideals.  Their exact parity pencils have
+`lambda^2=128/5` and diagonalize into two third-transvectant kernels.  The
+`3 x 5` transvectant matrix has generic rank three; its rank-two drop locus is
+exactly the irreducible square-quartic cone, while rank at most one is
+supported only at zero.  The resulting height-three complete intersection is
+irreducible of dimension seven, so each physical parity product is
+irreducible of dimension 14 in ambient dimension 20.  The generated atlas
+combines these three fibres with candidate 4 and the earlier six complete
+ideals, leaving eleven fibrewise ideals `OPEN`.  Same-fibre sources, the five
+Taub maps, bounded and smooth-secular classes remain `OPEN`; causal correction
+remains `NO_CERTIFIED_MAP`.
+
 The tuned Einstein-minus self-product collision is now symbolic in `ell`.
 For every integer `ell>=2`, at
 `k^2=sqrt(2*ell*(ell+1))-ell/2-1/6`, the over-complete characteristic-shell
