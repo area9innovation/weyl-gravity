@@ -1,0 +1,142 @@
+{
+  "acyclic_dependency_audit": {
+    "historical_partial_predecessor": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
+    "only_replaced_statement": "A=0 on the historical wave subcone",
+    "reason": "the fixed-ell twist factorization already imports the historical global subcone; replacing that predecessor in place would create a certificate cycle",
+    "replacement": "A arbitrary on the complete fixed-ell H,J_i-zero wave cone",
+    "retained_inputs": [
+      "generic a,b,d pivots",
+      "B=0",
+      "E11=Q_e^2/2",
+      "c transport",
+      "W_x zero source"
+    ],
+    "successor_absent_from_transitive_predecessors": true,
+    "successor_is_separate": true,
+    "transitive_dependency_edge_count": 416,
+    "transitive_predecessor_count": 137
+  },
+  "claim_boundary": "Complete only for the standard-global plus one fixed ell>=2,k=0 carrier in the bounded class. Finite multi-ell, nonzero momentum, exceptional waves, unrestricted secular, causal, all-orders, residual, observational and quantum scopes remain fail-closed.",
+  "classification": {
+    "all_orders_integrability": false,
+    "all_standard_globals_all_m_both_parities_all_qp_branches_included": true,
+    "bounded_zero_locus_necessary_and_sufficient": true,
+    "causal_or_quantum_claim": false,
+    "constant_twist_position_free_on_wave_stratum": true,
+    "ell2_complete_global_theorem_recovered": true,
+    "every_fixed_generic_ell_complete_global_bounded_cone_classified": true,
+    "exceptional_wave_inputs_classified": false,
+    "finite_multi_ell_twist_cone_classified": false,
+    "historical_A_zero_restriction_superseded": true,
+    "nonzero_momentum_classified": false
+  },
+  "complete_bounded_zero_locus": {
+    "intersection": "wave=0,d=0 with c,W_x,A arbitrary",
+    "static_stratum": "wave=0: a=b=Q_e=B=0; c,d,W_x,A arbitrary",
+    "union_is_necessary_and_sufficient": true,
+    "wave_stratum": "wave!=0: a=b=d=Q_e=B=0; c,W_x,A arbitrary; mu_H=mu_J1=mu_J2=mu_J3=0"
+  },
+  "correction_classes": {
+    "BOUNDED_OR_FINITE_QUASIPERIODIC": {
+      "status": "CERTIFIED"
+    },
+    "CAUSAL_RETARDED": {
+      "status": "NO_CERTIFIED_MAP"
+    },
+    "SMOOTH_EXPONENTIAL_POLYNOMIAL": {
+      "reason": "bounded corrections form a smooth subclass; unrestricted secular data are not reclassified",
+      "status": "CERTIFIED"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "equation": "L_WM Phi^(2)=-(1/2)D^2E_WM[Phi^(1),Phi^(1)]",
+  "generality_level": "G4_EVERY_ONE_FIXED_GENERIC_ELL_K0_COMPLETE_GLOBAL_CARRIER",
+  "interpretation": "At rest, constant SO(3) holonomy survives freely over every one-fixed-ell nonlinear bounded wave cone. Nonzero waves still remove a,b,d,Q_e,B while c and W_x remain spectators.",
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "classify constant-twist cross terms for finite sums of distinct ell blocks without merging output frequencies or angular carriers",
+  "pairwise_sufficiency": {
+    "A_wave": "same-shell zero and uniformly invertible L=ell-1,ell+1 outputs",
+    "W_x_wave": "identically zero",
+    "assembly": "D^2E is bilinear and L is linear, so the pairwise corrections add",
+    "c_wave": "bounded removable at k=0",
+    "static_pairs": "complete standard generalized-zero bounded theorem",
+    "wave_wave": "certified on mu_H=mu_J1=mu_J2=mu_J3=0"
+  },
+  "provenance": {
+    "generator_path": "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.py",
+    "generator_sha256": "f4a4f9cb92683059f261587843a797066f2b026ba284e5fbae7461b3657e887f",
+    "inputs": {
+      "circumference": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+        "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
+      },
+      "electric_wilson": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+        "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+      },
+      "ell2_calibration": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_ell2_bounded_cone.json",
+        "sha256": "cf962f7e1a06c96766aa009ed5c58bea43b11ce7e3429056cee52f147d8ed668"
+      },
+      "partial_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
+        "sha256": "9b6854e6405b6ffb028376c071ee69233dfd888a27b738985a7e56074cd1bc6c"
+      },
+      "standard_global": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
+        "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+      },
+      "twist_wave": {
+        "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
+        "sha256": "3d91382ed023b0e6bd8f0ca637824a2460de8a18eb9b6b2050dcf3faa61bf439"
+      }
+    }
+  },
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FIXED_ELL_BOUNDED_CONE",
+  "result_state": "EVERY_FIXED_GENERIC_ELL_COMPLETE_STANDARD_GLOBAL_TWIST_BOUNDED_CONE_CLASSIFIED",
+  "schema": "einstein-maxwell-weyl-complete-global-twist-fixed-ell-bounded-cone-v1",
+  "schema_path": "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.schema.json",
+  "schema_sha256": "6f2f77f36ed55d21d603f132355826d073b1fffcf72b8d838c8e384f4e82f5c0",
+  "scope": {
+    "background": "compact magnetically supported Plebanski-Hacyan product",
+    "boundaries": "closed S1_L times S2; bounded or finite-quasiperiodic correction",
+    "carrier": "complete standard homogeneous/twist data plus every q/p primary in one fixed generic ell block",
+    "charge_sector": "fixed N=2 magnetic bundle; electric tangent allowed before elimination",
+    "degree": 2,
+    "ell": "one fixed integer ell>=2 with global ell=0,1 data adjoined",
+    "k": 0,
+    "m": "all wave m and all three real twist components",
+    "omega": "generalized zero and every fixed-ell p/q shell",
+    "parity": "homogeneous, axial and polar",
+    "theory": "Weyl-Maxwell target"
+  },
+  "verification_commands": [
+    "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone --check",
+    "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.py",
+    "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone"
+  ],
+  "verification_receipt": {
+    "producing_date": "2026-07-19",
+    "tier_0": {
+      "status": "PASS"
+    },
+    "tier_1": {
+      "direct_consumer": "Einstein residual-atlas producer/verifier/tests PASS",
+      "elapsed_seconds": 1.4,
+      "independent_verifier": "PASS",
+      "status": "PASS",
+      "tests_run": 34
+    },
+    "tier_2": {
+      "criterion": "all predecessor theorems are unchanged exact hashed inputs",
+      "status": "PASS_BY_CONTENT_ADDRESS"
+    },
+    "tier_3": {
+      "reason": "finite multi-ell and higher lifecycles remain fail-closed",
+      "status": "NOT_RUN"
+    }
+  }
+}

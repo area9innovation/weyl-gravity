@@ -2820,24 +2820,29 @@
       }
     },
     {
-      "claim_boundary": "LIFECYCLE REOPENED for every constant-twist-dependent statement. The ell=2 corrected spectator theorem does not by itself identify or classify another ell or a finite multi-ell sum.",
+      "claim_boundary": "The historical A=0 restriction is superseded by the complete fixed-ell constant-twist theorem. This result remains blockwise in one fixed ell at k=0; finite multi-ell, nonzero-momentum, exceptional and higher scopes remain fail-closed.",
       "descriptions": {
         "causal": "NO_CERTIFIED_MAP",
-        "nonlinear": "OPEN",
+        "nonlinear": "CERTIFIED",
         "observational": "OPEN",
         "quantum": "OPEN",
         "symplectic": "CERTIFIED"
       },
       "evidence": [
         {
+          "path": "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FIXED_ELL_BOUNDED_CONE",
+          "sha256": "6ffb2279d37686514d18625392a6cf0fb44904324f857d43728c0983c1e7c6d4"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_fixed_ell_constant_twist_bounded_cone.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_FIXED_ELL_CONSTANT_TWIST_BOUNDED_CONE",
+          "sha256": "3d91382ed023b0e6bd8f0ca637824a2460de8a18eb9b6b2050dcf3faa61bf439"
+        },
+        {
           "path": "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_FIXED_ELL_K0_BOUNDED_CONE",
           "sha256": "9b6854e6405b6ffb028376c071ee69233dfd888a27b738985a7e56074cd1bc6c"
-        },
-        {
-          "path": "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
-          "result_id": "EINSTEIN_MAXWELL_WEYL_CONSTANT_TWIST_WAVE_COUNTEREXAMPLE",
-          "sha256": "6ddebcd00b2934d513f0676d87f8ec2423f79ec30d1341cb73b484362b533c72"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
@@ -2845,14 +2850,19 @@
           "sha256": "a0d9769e6363031fb0259f6a529919a19d45c37ed7d59027765d9311a77fc411"
         },
         {
-          "path": "bridge/certificates/einstein_maxwell_weyl_global_ell2_all_m_both_parity_bounded_cone.json",
-          "result_id": "EINSTEIN_MAXWELL_WEYL_GLOBAL_ELL2_ALL_M_BOTH_PARITY_BOUNDED_CONE",
-          "sha256": "42864eac4f672db0111badbfb2ff37e2311f0fe627f6a381a6c380365d0c0c10"
-        },
-        {
           "path": "bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json",
           "result_id": "EINSTEIN_MAXWELL_WEYL_STANDARD_GLOBAL_BOUNDED_SECOND_ORDER",
           "sha256": "a5dda5ac0b0e7d97667767ecbbfbdd2a86606d361eadcf3201a69a11a5f02cb5"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_ELECTRIC_WILSON_COMPLETE_OSCILLATOR_TRANSPORT",
+          "sha256": "50d0bf118e1699122b8bf4e0c3da7b8fb0295a9a4725d05c155122e8d2202676"
+        },
+        {
+          "path": "bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json",
+          "result_id": "EINSTEIN_MAXWELL_WEYL_CIRCUMFERENCE_COMPLETE_OSCILLATOR_BOUNDED_CLASSIFICATION",
+          "sha256": "80f36e27d91cf92211b94c2fbc8d74e97806c04b688f72e02284f8951f8fecb9"
         },
         {
           "path": "bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json",
@@ -2876,13 +2886,13 @@
           "status": "CERTIFIED"
         },
         "resonance": {
-          "statement": "The old constant-twist regression used a mistyped output carrier. This row retains only its twist-independent ingredients until a correctly typed fixed-ell source map is derived.",
-          "status": "OPEN"
+          "statement": "The generic pivots remove a,b,d, the independent homogeneous row removes Q_e, and the corrected fixed-ell flat-connection theorem leaves constant twist position A free.",
+          "status": "CERTIFIED"
         },
         "second_order": {
           "bounded_or_finite_quasiperiodic": {
-            "statement": "The nonzero-constant-twist bounded cone is not classified in this scope after the projector repair.",
-            "status": "OPEN"
+            "statement": "The exact bounded cone is stratified: wave=0 retains c,d,W_x,A; every nonzero H,J_i-zero wave retains c,W_x,A and removes a,b,d,Q_e,B.",
+            "status": "CERTIFIED"
           },
           "causal_retarded": {
             "statement": "No background-specific compact-source retarded Weyl-Maxwell complex is certified.",
@@ -2890,7 +2900,7 @@
           },
           "equation": "L_barPhi v = -(1/2) D^2 E_barPhi[u,u]",
           "smooth_secular": {
-            "statement": "The certified bounded subcones are smooth finite exponential-polynomial corrections.",
+            "statement": "The bounded corrections are smooth finite exponential-polynomial corrections; the unrestricted secular cone is not reclassified.",
             "status": "CERTIFIED"
           }
         },
@@ -3220,7 +3230,7 @@
     }
   ],
   "generated_by": "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py",
-  "generated_by_sha256": "795cbd7d33ca1b0fdb5bdd31dfd3fb46c91e69e61e34136ca35f13eb732848b3",
+  "generated_by_sha256": "e26c564f7d69ee71c591a4af583aa10237e309586ab2a65d5e86c63597fba437",
   "schema": "pure-weyl-residual-atlas-fragment-v1",
   "schema_version": "1.0.0",
   "status_vocabulary": [

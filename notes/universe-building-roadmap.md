@@ -1523,6 +1523,15 @@ standard-global plus one-fixed-`ell` stratified cone with `A` free; finite
 multi-`ell` sums stay separate.  This does not alter the Bridge 1 causal
 lifecycle.
 
+That regeneration is now an append-only, acyclic successor.  For every one
+fixed generic `ell>=2` at `k=0`, the static stratum retains `c,d,W_x,A`; every
+nonzero common-`H,J_i` wave stratum retains `c,W_x,A` and forces
+`a=b=d=Q_e=B=0`.  The successor leaves the historical certificate available
+to the twist-factorization dependency chain and supersedes only its `A=0`
+restriction.  The next Einstein activation gate is the finite multi-`ell`
+constant-twist cross ledger.  Nonzero momentum and `CAUSAL_RETARDED` remain
+fail-closed.
+
 ### Classical ownership
 
 The authoritative support-local Berger tensors are now certified through

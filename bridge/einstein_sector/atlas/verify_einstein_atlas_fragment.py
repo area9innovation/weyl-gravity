@@ -219,21 +219,26 @@ def verify() -> None:
             raise AssertionError(f"historical ell2 bounded verdict survived: {identifier}")
         if "SUPERSEDED BY" not in entry["claim_boundary"]:
             raise AssertionError(f"historical ell2 successor was not named: {identifier}")
-    reopened_generic = {
-        "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
-        "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
-    }
-    for identifier in reopened_generic:
-        entry = by_id[identifier]
-        second = entry["mode_data"]["second_order"]
-        if entry["mode_data"]["resonance"]["status"] != "OPEN" or "mistyped output carrier" not in entry["mode_data"]["resonance"]["statement"]:
-            raise AssertionError(f"generic constant-twist lifecycle was not reopened: {identifier}")
-        if second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
-            raise AssertionError(f"generic constant-twist cone was over-promoted: {identifier}")
-        if second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
-            raise AssertionError(f"generic constant-twist causal lifecycle was over-promoted: {identifier}")
-        if "LIFECYCLE REOPENED" not in entry["claim_boundary"]:
-            raise AssertionError(f"generic constant-twist reopen reason is absent: {identifier}")
+    fixed_global = by_id["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
+    fixed_second = fixed_global["mode_data"]["second_order"]
+    if fixed_global["descriptions"]["nonlinear"] != "CERTIFIED":
+        raise AssertionError("complete fixed-ell global cone was not promoted")
+    if fixed_global["mode_data"]["resonance"]["status"] != "CERTIFIED":
+        raise AssertionError("fixed-ell global twist resonance was not closed")
+    if fixed_second["bounded_or_finite_quasiperiodic"]["status"] != "CERTIFIED":
+        raise AssertionError("complete fixed-ell global bounded cone was hidden")
+    if fixed_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("fixed-ell global causal lifecycle was over-promoted")
+    if "historical A=0 restriction is superseded" not in fixed_global["claim_boundary"]:
+        raise AssertionError("fixed-ell global replacement lifecycle is absent")
+    finite_global = by_id["einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"]
+    finite_second = finite_global["mode_data"]["second_order"]
+    if finite_global["mode_data"]["resonance"]["status"] != "OPEN" or "mistyped output carrier" not in finite_global["mode_data"]["resonance"]["statement"]:
+        raise AssertionError("finite multi-ell constant-twist lifecycle was not kept open")
+    if finite_second["bounded_or_finite_quasiperiodic"]["status"] != "OPEN":
+        raise AssertionError("finite multi-ell constant-twist cone was over-promoted")
+    if finite_second["causal_retarded"]["status"] != "NO_CERTIFIED_MAP":
+        raise AssertionError("finite multi-ell causal lifecycle was over-promoted")
     fixed_ell_twist = by_id["einstein.ph.wm.interaction.fixed_ell_constant_twist_factorization"]
     if fixed_ell_twist["descriptions"]["nonlinear"] != "CERTIFIED":
         raise AssertionError("fixed-ell bounded lifecycle was not promoted")

@@ -181,10 +181,11 @@ class EinsteinAtlasFragmentTests(unittest.TestCase):
     def test_global_fixed_ell_k0_bounded_cone_is_registered(self) -> None:
         entry = self.entries["einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone"]
         second_order = entry["mode_data"]["second_order"]
-        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "OPEN")
-        self.assertIn("not classified", second_order["bounded_or_finite_quasiperiodic"]["statement"])
-        self.assertIn("mistyped output carrier", entry["mode_data"]["resonance"]["statement"])
-        self.assertIn("LIFECYCLE REOPENED", entry["claim_boundary"])
+        self.assertEqual(entry["descriptions"]["nonlinear"], "CERTIFIED")
+        self.assertEqual(second_order["bounded_or_finite_quasiperiodic"]["status"], "CERTIFIED")
+        self.assertIn("c,W_x,A", second_order["bounded_or_finite_quasiperiodic"]["statement"])
+        self.assertEqual(entry["mode_data"]["resonance"]["status"], "CERTIFIED")
+        self.assertIn("historical A=0 restriction is superseded", entry["claim_boundary"])
         self.assertEqual(second_order["causal_retarded"]["status"], "NO_CERTIFIED_MAP")
 
     def test_fixed_ell_constant_twist_factorization_is_registered(self) -> None:

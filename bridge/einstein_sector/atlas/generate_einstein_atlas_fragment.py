@@ -51,6 +51,7 @@ CERTIFICATES = {
     "fixed_ell_combined": ROOT / "bridge/certificates/einstein_maxwell_weyl_fixed_ell_k0_combined_cone_second_order.json",
     "abd_generic_lambda_pivot": ROOT / "bridge/certificates/einstein_maxwell_weyl_abd_generic_lambda_pivot.json",
     "global_fixed_ell_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_fixed_ell_k0_bounded_cone.json",
+    "complete_global_twist_fixed_ell_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.json",
     "global_finite_harmonic_k0_bounded": ROOT / "bridge/certificates/einstein_maxwell_weyl_global_finite_harmonic_k0_bounded_cone.json",
     "constant_twist_wave_counterexample": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_wave_counterexample.json",
     "constant_twist_extra_position_zero_locus": ROOT / "bridge/certificates/einstein_maxwell_weyl_constant_twist_ell2_extra_position_zero_locus.json",
@@ -558,14 +559,14 @@ def entries() -> list[dict[str, object]]:
         _entry(
             "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
             _scope(theory="Weyl-Maxwell target", carrier="complete standard globals plus every axial/polar q/p primary in one arbitrary fixed generic ell block", degree=2, parity="homogeneous, axial and polar", ell="one fixed integer ell>=2 with global ell=0,1 data adjoined", m="all wave m=-ell,...,ell and all three real twist components", k=0, omega="generalized zero and every fixed-ell q/p shell"),
-            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "OPEN", "observational": "OPEN", "quantum": "OPEN"},
+            {"causal": "NO_CERTIFIED_MAP", "symplectic": "CERTIFIED", "nonlinear": "CERTIFIED", "observational": "OPEN", "quantum": "OPEN"},
             ("CERTIFIED", "The carrier contains every q/p primary at one arbitrary fixed ell>=2 and all standard global coordinates."),
             ("CERTIFIED", "The generic-lambda axial and polar pivots are obtained by a direct formal-Legendre-jet tensor calculation, not finite-ell interpolation."),
             ("CERTIFIED", "Every nonzero common H,J_i zero contains an Einstein-minus component; the full homogeneous source separately excludes Q_e."),
-            ("OPEN", "The generic C_A and C_P pivots certify a=b=d=0 and the A=0 wave extension on every physical fibre; constant-twist resonance is not classified beyond its ell2 counterexample."),
-            _second_order(("OPEN", "For every fixed ell>=2 the wave-free static branch and A=0 common-moment-map wave subcone are certified; nonzero-A wave strata are open."), ("CERTIFIED", "The certified bounded subcones are smooth finite exponential-polynomial corrections."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
-            _evidence("global_fixed_ell_k0_bounded", "constant_twist_wave_counterexample", "abd_generic_lambda_pivot", "global_ell2_both_parity_bounded", "standard_global_bounded", "taub", "abstract_cone"),
-            "This theorem is blockwise in one fixed ell at k=0 and only complete at A=0 or with no waves. Nonzero-A, cross-ell, nonzero-momentum, exceptional and higher scopes remain fail-closed.",
+            ("CERTIFIED", "The generic pivots remove a,b,d, the independent homogeneous row removes Q_e, and the corrected fixed-ell flat-connection theorem leaves constant twist position A free."),
+            _second_order(("CERTIFIED", "The exact bounded cone is stratified: wave=0 retains c,d,W_x,A; every nonzero H,J_i-zero wave retains c,W_x,A and removes a,b,d,Q_e,B."), ("CERTIFIED", "The bounded corrections are smooth finite exponential-polynomial corrections; the unrestricted secular cone is not reclassified."), ("NO_CERTIFIED_MAP", "No background-specific compact-source retarded Weyl-Maxwell complex is certified.")),
+            _evidence("complete_global_twist_fixed_ell_bounded", "fixed_ell_constant_twist_bounded_cone", "global_fixed_ell_k0_bounded", "abd_generic_lambda_pivot", "standard_global_bounded", "electric_wilson_transport", "circumference_classification", "taub", "abstract_cone"),
+            "The historical A=0 restriction is superseded by the complete fixed-ell constant-twist theorem. This result remains blockwise in one fixed ell at k=0; finite multi-ell, nonzero-momentum, exceptional and higher scopes remain fail-closed.",
         ),
         _entry(
             "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
@@ -634,10 +635,7 @@ def entries() -> list[dict[str, object]]:
         "einstein.ph.wm.mixed.global_axial_ell2_all_m_minus_extra_bounded_cone",
         "einstein.ph.wm.mixed.global_ell2_all_m_both_parity_bounded_cone",
     }
-    reopened_generic_twist_rows = {
-        "einstein.ph.wm.mixed.global_fixed_ell_k0_bounded_cone",
-        "einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone",
-    }
+    reopened_generic_twist_rows = {"einstein.ph.wm.mixed.global_finite_harmonic_k0_bounded_cone"}
     for entry in result:
         identifier = entry["id"]
         if identifier in superseded:
@@ -933,6 +931,16 @@ def build() -> dict[str, object]:
         raise AssertionError("fixed-ell constant-twist bounded cone changed")
     if fixed_ell_bounded["finite_multi_ell_twist_cone_classified"] or fixed_ell_bounded["causal_or_quantum_claim"]:
         raise AssertionError("fixed-ell bounded cone exceeded its declared scope")
+    complete_fixed_global = records["complete_global_twist_fixed_ell_bounded"]["classification"]
+    if not (
+        complete_fixed_global["every_fixed_generic_ell_complete_global_bounded_cone_classified"]
+        and complete_fixed_global["all_standard_globals_all_m_both_parities_all_qp_branches_included"]
+        and complete_fixed_global["bounded_zero_locus_necessary_and_sufficient"]
+        and complete_fixed_global["constant_twist_position_free_on_wave_stratum"]
+    ):
+        raise AssertionError("complete fixed-ell global/twist cone changed")
+    if complete_fixed_global["finite_multi_ell_twist_cone_classified"] or complete_fixed_global["causal_or_quantum_claim"]:
+        raise AssertionError("complete fixed-ell global theorem exceeded its scope")
     if not records["global_self_coefficients"]["classification"]["complete_aligned_global_self_source_classified"]:
         raise AssertionError("global self coefficient input changed")
     if not records["extra_self_coefficients"]["classification"]["complete_C4_extra_self_source_coefficient_explicit"]:

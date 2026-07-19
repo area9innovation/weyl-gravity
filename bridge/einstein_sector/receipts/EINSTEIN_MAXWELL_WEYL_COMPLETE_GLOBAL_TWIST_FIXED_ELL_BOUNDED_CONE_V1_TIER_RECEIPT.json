@@ -1,0 +1,42 @@
+{
+  "result_id": "EINSTEIN_MAXWELL_WEYL_COMPLETE_GLOBAL_TWIST_FIXED_ELL_BOUNDED_CONE",
+  "producing_date": "2026-07-19",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "artifact_hashes": {
+    "bridge/einstein_sector/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.py": "f4a4f9cb92683059f261587843a797066f2b026ba284e5fbae7461b3657e887f",
+    "bridge/certificates/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.json": "6ffb2279d37686514d18625392a6cf0fb44904324f857d43728c0983c1e7c6d4",
+    "bridge/einstein_sector/schema/einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.schema.json": "6f2f77f36ed55d21d603f132355826d073b1fffcf72b8d838c8e384f4e82f5c0",
+    "bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.py": "c6112a34b41640c8ef8c7cf3f194e42441e49e354d3daa92d45095c4582eb1bd",
+    "bridge/einstein_sector/tests/test_einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.py": "fe4e5542501f5c4b74555d9e56323d359e81d353f3744b03293ec34c3d2ce5a3",
+    "bridge/einstein_sector/reports/einstein-maxwell-weyl-complete-global-twist-fixed-ell-bounded-cone.md": "a8785b3d82e09bd25052163504cd4dc9870619743d33d9c2afc59fa5c4e460a5",
+    "bridge/einstein_sector/atlas/generate_einstein_atlas_fragment.py": "e26c564f7d69ee71c591a4af583aa10237e309586ab2a65d5e86c63597fba437",
+    "bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json": "6603803153ef57e15c0b66e1f5fe294adbc3a19199522a5ddadb4c287ed8bc3d",
+    "bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py": "6df118b7b99f4e732f2015e02492389c18f755347b40e538d0a7746298291179",
+    "bridge/einstein_sector/atlas/tests/test_einstein_atlas_fragment.py": "666218d04f7242c0683aca0f863119e9c04c900bef07837bca49674c8d5cad58",
+    "notes/d-quotient-einstein-team-brief.md": "3e3e08ff24be6cde70ccfc3352f2665994b58748120396842e5ac865892c37e8",
+    "notes/universe-building-roadmap.md": "4568f179d4b6e063fc9b0fa0e5e40b4b0c2af3504a62ad59a9b33ab76cbc8bc3"
+  },
+  "claim": {
+    "certified": "For the complete standard-global carrier plus one arbitrary fixed ell>=2 wave block at k=0, the bounded second-order zero locus is the union of the static c,d,W_x,A stratum and the nonzero-wave c,W_x,A times common H,J_i zero stratum.",
+    "lifecycle": "The theorem is an append-only acyclic successor that retains the historical partial certificate as an input and supersedes only its A=0 wave restriction.",
+    "open": "Finite multi-ell sums, exceptional wave inputs, nonzero momentum, causal propagation, all-orders integration, residual observables and quantum transfer."
+  },
+  "tiers": {
+    "tier_0": {"status": "PASS", "elapsed_seconds": 0.20},
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 1.40,
+      "tests_run": 34,
+      "commands": [
+        "python3 -m bridge.einstein_sector.einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone --check",
+        "python3 bridge/einstein_sector/verify_einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone.py",
+        "python3 -m unittest bridge.einstein_sector.tests.test_einstein_maxwell_weyl_complete_global_twist_fixed_ell_bounded_cone bridge.einstein_sector.atlas.tests.test_einstein_atlas_fragment",
+        "python3 -m bridge.einstein_sector.atlas.generate_einstein_atlas_fragment --check",
+        "python3 bridge/einstein_sector/atlas/verify_einstein_atlas_fragment.py",
+        "python3 residual_atlas/validate_fragment.py bridge/einstein_sector/atlas/einstein-compact-product-atlas-fragment.json"
+      ]
+    },
+    "tier_2": {"status": "PASS_BY_CONTENT_ADDRESS", "criterion": "The fixed-ell twist product, historical global necessity, standard-global, circumference, Wilson and ell2 calibration inputs are unchanged exact hashed dependencies."},
+    "tier_3": {"status": "NOT_RUN", "reason": "Finite multi-ell, nonzero momentum, causal and higher-lifecycle gates remain fail-closed."}
+  }
+}

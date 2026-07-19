@@ -2748,6 +2748,22 @@ The next bounded gate is to regenerate the full standard-global plus
 one-fixed-`ell` stratified cone with `A` free.  Finite multi-`ell` sums remain
 a distinct later scope.
 
+That successor is now certified without rewriting the historical partial
+certificate.  The separation is load-bearing: the fixed-`ell` twist
+factorization already imports the historical global subcone, so replacing it
+in place would create a certificate cycle.  The append-only successor proves
+
+```text
+wave=0:  a=b=Q_e=B=0; c,d,W_x,A arbitrary,
+wave!=0: a=b=d=Q_e=B=0; c,W_x,A arbitrary; H=J_i=0.
+```
+
+It retains the generic `a,b,d` pivots, universal `B=0`, independent
+`E11=Q_e^2/2`, bounded `c` transport and zero `W_x` source, replacing only
+the obsolete `A=0` restriction.  The next bounded gate is the finite
+multi-`ell` constant-twist cross ledger.  Nonzero momentum, exceptional wave
+inputs and `CAUSAL_RETARDED` remain fail-closed.
+
 These nonlinear results are inputs to active Bridge 1; they do not promote
 the linear relative triangle to a nonlinear morphism.
 See the authoritative queue in
