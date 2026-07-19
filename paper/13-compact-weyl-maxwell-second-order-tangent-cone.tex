@@ -1,0 +1,587 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,tabularx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cZ}{\mathcal Z}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\Diff}{\operatorname{Diff}}
+\newcommand{\Sol}{\operatorname{Sol}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{The Second-Order Tangent Cone of Compact Weyl--Maxwell Gravity\\
+\large Moment Maps, Secular Corrections, and Bounded Resonances}
+\author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
+\and Claude Fable 5\thanks{Anthropic model and computational coauthor. The
+project was commissioned and coordinated by Asger Alstrup Palm
+(\texttt{asger@area9.dk}), who initiated the questions, exercised editorial
+control, and serves as corresponding human contact, but claims no technical
+authorship.}}
+\date{Working draft, 19 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Linearized solutions of a nonlinear gauge theory need not be tangent to exact
+solutions.  We classify this failure at second order for finite harmonic
+configurations of Weyl--Maxwell gravity on the compact magnetically supported
+product
+\(
+ \R_t\times S^1\times S^2.
+\)
+The certified linear inventory contains the ordinary Einstein--Maxwell
+branches, two additional fourth-order branches in each generic parity,
+exceptional dipoles, a homogeneous generalized block, and axial twist modes.
+
+For corrections that are smooth, spatially periodic, and finite
+exponential-polynomials in time, the complete second-order obstruction space
+is five-dimensional.  Its covectors are precisely the Taub pairings with
+time translation, circle translation, and the three sphere rotations.  Thus
+the complete finite-support smooth tangent cone is
+\[
+ \cZ^{\rm smooth}_2
+ =\{u:\mu_H(u)=\mu_{P_x}(u)=\mu_{J_1}(u)=
+              \mu_{J_2}(u)=\mu_{J_3}(u)=0\}.
+\]
+This is a necessary-and-sufficient theorem in the declared correction class,
+not merely a list of examples.
+
+Bounded corrections obey additional conditions.  Polynomial-growth source
+coefficients and nonzero-shell adjoint pairings survive independently of the
+five moment maps.  We classify the complete standard generalized-zero
+subcone, prove that electric-charge and flat-Wilson oscillator columns are
+bounded-removable, and determine the full circumference column: a nonzero
+circle-radius tangent is compatible with a finite oscillator precisely when
+that oscillator has zero circle momentum.  A repaired full-time
+circumference-velocity fixture also exposes a nonzero polar polynomial
+obstruction that was invisible at \(t=0\).  The remaining bounded oscillator
+columns are stated as open gates.  Consequently smooth second-order
+extendibility is a moment-map theorem, whereas bounded extendibility is a
+strict resonance problem.
+
+All results are \textsc{local-algebraic} and \textsc{reduced-mode}.  They do
+not establish an all-orders family, a causal retarded correction, a final
+residual quotient, or a quantum state space.
+\end{abstract}
+
+\section*{AI authorship and computational accountability}
+The named AI systems developed the programme, derivations, symbolic
+implementations, independent verification architecture, claim audits, and
+this manuscript.  Asger Alstrup Palm commissioned and coordinated the work
+and is the corresponding human contact.  Every theorem stated as certified
+below is bound to an exact machine-readable certificate and a separately
+implemented verifier.  Exact rational or algebraic arithmetic is used for
+all ranks, cokernels, polynomial reductions, and source remainders.  The
+manuscript remains conditional on final human review of its mathematical
+scope, references, and exposition.
+
+\tableofcontents
+
+\section{Question, answer, and claim boundary}
+
+Let \(\Phi(s)\) be a putative curve of solutions of the Weyl--Maxwell
+equations \(\cE(\Phi)=0\), expanded as
+\[
+ \Phi(s)=\bar\Phi+s u+\frac{s^2}{2}v+O(s^3).
+\]
+The first two equations are
+\begin{equation}\label{eq:second-order-equation}
+ \cL u=0,
+ \qquad
+ \cL v=-\cE^{(2)}_{\bar\Phi}(u,u),
+ \qquad
+ \cL:=D\cE_{\bar\Phi}.
+\end{equation}
+The first equation describes the linear solution space.  The second asks
+whether the quadratic source lies in the image of the linearized operator in
+a specified function class.  Changing that function class changes the
+answer: a resonant source may have a smooth secular primitive but no bounded
+primitive.
+
+The paper answers the following finite-harmonic question.
+
+\begin{quote}
+For the complete certified linear inventory on the compact product, which
+real finite-support tangents admit a spatially periodic second-order
+correction, and which additional conditions appear when that correction is
+required to remain bounded in time?
+\end{quote}
+
+The answer has two layers:
+\begin{align}
+ u\in\cZ^{\rm smooth}_2
+ &\Longleftrightarrow \mu_H=\mu_{P_x}=\mu_{J_1}=\mu_{J_2}=\mu_{J_3}=0,
+ \label{eq:smooth-summary}\\
+ u\in\cZ^{\rm bounded}_2
+ &\Longrightarrow u\in\cZ^{\rm smooth}_2,
+ \quad \cP_{j,r}(u)=0,
+ \quad \cR_{j,a}(u)=0 .
+ \label{eq:bounded-summary}
+\end{align}
+Here \(\cP_{j,r}\) are positive polynomial-growth coefficients and
+\(\cR_{j,a}\) are reduced adjoint pairings on nonzero characteristic shells.
+The first line is complete in the declared carrier.  The paper gives several
+complete columns of the second line but does not claim the complete common
+zero locus of all bounded obstructions.
+
+\subsection{Dependency typing}
+
+The spacetime is Lorentzian, but the proof is an exact harmonic and
+finite-module calculation.  It carries the dependency tags
+\begin{center}
+\textsc{local-algebraic}\qquad\textsc{reduced-mode}.
+\end{center}
+No theorem below carries \textsc{lorentzian-causal}.  In particular, a
+finite secular right inverse is not a retarded Green operator, and a bounded
+quasiperiodic correction is not an all-orders nonlinear solution.
+
+\section{Theory and common background}
+
+We use the compactified Pleba\'nski--Hacyan product
+\begin{equation}
+ M=\R_t\times S^1_L\times S^2,
+\end{equation}
+with unit sphere curvature and a parallel unit magnetic flux on a fixed
+compact \(U(1)\) bundle.  With the conventions of the companion linear
+phase-space paper, the background solves both Einstein--Maxwell and
+Weyl--Maxwell theory.  The latter has local gauge group
+\[
+ \Diff(M)\times\mathrm{Weyl}(M)\times U(1).
+\]
+
+The spatial slice \(\Sigma=S^1\times S^2\) is compact.  Its background
+stabilizer algebra contains
+\[
+ H=\partial_t,qquad P_x=\partial_x,qquad J_1,J_2,J_3\in\mathfrak{so}(3).
+\]
+For a linear tangent \(u\), the corresponding covariant phase-space moment
+maps are quadratic forms
+\[
+ \mu_X(u)=\frac12\Omega(u,\mathcal L_Xu),
+ \qquad X\in\{H,P_x,J_1,J_2,J_3\}.
+\]
+On a closed slice, the covariant Taub bridge identifies these with the
+pairings of the quadratic field-equation source against the stabilizer
+cokernel covectors.
+
+\section{The complete finite harmonic carrier}
+
+The real finite-support carrier \(V_{\rm fin}\) is the direct sum of the
+following certified linear blocks:
+\begin{enumerate}
+\item generic Einstein and extra primaries for every \(\ell\ge2\), parity,
+      magnetic label, and compact momentum;
+\item standard and extra exceptional dipoles for every compact momentum;
+\item the axial twist Jordan block;
+\item the six-coordinate homogeneous generalized block; and
+\item the electric and Wilson global directions on the fixed bundle.
+\end{enumerate}
+Reality pairs opposite frequencies and momenta.  A finite input therefore
+produces a finite quadratic source.  Its complete output decomposition is
+indexed by
+\[
+ (L,M,K,\Omega,\text{parity}).
+\]
+Angular Clebsch--Gordan selection gives finitely many \(L\), while temporal
+and circle products give finite sums of input frequencies and momenta.
+
+\begin{definition}[Correction classes]
+Let \(\mathscr X_{\rm smooth}\) be the spatially periodic fields whose time
+coefficients are finite sums of \(t^p e^{-i\Omega t}\).  Let
+\(\mathscr X_{\rm bounded}\subset\mathscr X_{\rm smooth}\) be the subclass
+with \(p=0\).  Define
+\[
+ \cZ_2^{\mathscr X}
+ =\{u\in V_{\rm fin}:\exists v\in\mathscr X,
+             \ \cL v=-\cE^{(2)}(u,u)\}.
+\]
+\end{definition}
+
+The distinction is physical as well as analytic.  A secular coefficient is
+smooth for every finite time but prevents a uniformly bounded perturbative
+expansion.  It may signal a nearby family with shifted frequency, a required
+renormalization of parameters, or genuine resonant growth.  The certificate
+records only the exact second-order disposition.
+
+\section{Smooth tangent-cone theorem}
+
+\begin{theorem}[Complete finite-support smooth tangent cone]
+\label{thm:smooth-cone}
+For the complete carrier \(V_{\rm fin}\) above,
+\begin{equation}
+ \boxed{
+ \cZ^{\rm smooth}_2
+ =\{u\in V_{\rm fin}:\mu_H(u)=\mu_{P_x}(u)=
+    \mu_{J_1}(u)=\mu_{J_2}(u)=\mu_{J_3}(u)=0\}.}
+\end{equation}
+Every point of this cone admits a spatially periodic second-order correction
+whose time dependence is a finite exponential-polynomial.  Conversely, each
+of the five moment maps must vanish for such a correction to exist.
+\end{theorem}
+
+\subsection{Proof architecture}
+
+The proof is blockwise but exhaustive.
+
+\paragraph{Nonzero output blocks.}
+Direct exceptional Fourier complexes and generic Smith modules remove every
+off-shell output algebraically.  On a characteristic shell, the scalar
+factor admits a finite secular primitive.  Thus resonance does not create a
+new cokernel in \(\mathscr X_{\rm smooth}\).
+
+\paragraph{Homogeneous zero block.}
+The only potentially non-surjective rows reduce to ordinary polynomial
+operators.  The operators \(D_t^4\) and \(D_t^2\) are surjective on the
+finite source polynomials generated at quadratic order, whose degree is at
+most six.
+
+\paragraph{Axial dipole zero block.}
+After gauge and Noether reduction, the only surviving covectors are the
+three lifted rotations.  The homogeneous zero block supplies the time and
+circle translations.  Therefore
+\begin{equation}
+ \coker\cL_{\rm smooth}
+ =\operatorname{span}\{\zeta_H,\zeta_{P_x},
+       \zeta_{J_1},\zeta_{J_2},\zeta_{J_3}\}.
+\end{equation}
+
+\paragraph{Covariant identification.}
+The exact Taub bridge identifies
+\(\langle\zeta_X,\cE^{(2)}(u,u)\rangle\) with \(\mu_X(u)\).
+This proves both necessity and sufficiency.
+
+\begin{remark}
+The theorem is stronger than checking a chosen set of modes.  It includes
+arbitrary finite sums across the certified generic, exceptional, homogeneous,
+and twist blocks.  It is weaker than an infinite-mode Sobolev theorem and
+weaker than causal solvability.
+\end{remark}
+
+\section{What changes in the bounded category}
+
+On \(\mathscr X_{\rm bounded}\), differentiation cannot invert a positive
+power of \(t\), and a resonant exponential has no bounded primitive.  The
+obstruction ledger consequently enlarges to
+\begin{equation}\label{eq:bounded-cokernel}
+ \{\mu_H,\mu_{P_x},\mu_{J_i}\}
+ \cup\{\cP_{j,r}\}
+ \cup\{\cR_{j,a}\}.
+\end{equation}
+The certificates contain fixtures in which the last two families are
+independent of all five moment maps.  Hence the smooth cone is strictly
+larger than the bounded cone.
+
+\begin{theorem}[Standard generalized-zero bounded cone]
+On the complete standard generalized-zero carrier with homogeneous
+coordinates \((a,b,c,d,Q_e,W_x)\) and axial twist position/velocity
+\((A,B)\), bounded second-order extension holds exactly on
+\begin{equation}
+ a=b=Q_e=0,qquad B=0,qquad
+ c,d,W_x\ \text{arbitrary},qquad A\in\R^3\ \text{arbitrary}.
+\end{equation}
+The surviving source has an explicit bounded correction.
+\end{theorem}
+
+The triangular positive-degree ideal supplies the proof.  Its leading rows
+contain
+\[
+ \frac{15}{2}b^2t^2,qquad
+ \operatorname{STF}(B\otimes B)t^2,qquad
+ Q_e a\,t.
+\]
+They force \(b=B=0\) and \(Q_ea=0\).  Intersecting with the five moment maps
+then forces \(a=Q_e=0\) on this carrier.  The remaining homogeneous source
+vanishes, while constant twist position is tangent to an exact lifted
+mapping-torus family and has a constant polar correction.
+
+\begin{corollary}[Universal polynomial elimination]
+For every point of the complete finite-support bounded cone,
+\[
+ b=0,qquad B=0,qquad Q_ea=0.
+\]
+Oscillatory products cannot cancel these zero-frequency polynomial rows.
+\end{corollary}
+
+\section{Natural transport columns}
+
+Several apparently dangerous global--oscillator products are derivatives of
+exact families and can therefore be classified without solving each harmonic
+source independently.
+
+\begin{proposition}[Electric and Wilson columns]
+For every certified nonzero-frequency standard or extra primary, the
+electric-charge cross source has a bounded correction obtained by
+differentiating electromagnetic duality,
+\[
+ F_\theta=\cos\theta F+\sin\theta\,{\star_g F}.
+\]
+At the background,
+\[
+ h_{\rm cross}=0,qquad
+ f_{\rm cross}=\star_{\bar g}f+(D_g\star)[h]F_{\rm bg}.
+\]
+Its sphere period vanishes for \(\ell\ge1\), so it lifts globally on the
+fixed bundle.  Every Wilson--oscillator source vanishes because
+\(\delta A=W_xdx\) has \(\delta F=0\) and the local action depends on the
+connection through \(F\).
+\end{proposition}
+
+This removes the complete \(Q_e\) and \(W_x\) oscillator columns from the
+bounded frontier.  It does not remove the separate homogeneous condition
+\(Q_ea=0\).
+
+\begin{theorem}[Complete circumference column]
+Let \(c\) vary the circle radius and let a certified oscillator have compact
+momentum \(k\).  The \(c\)-times-oscillator source admits a bounded correction
+if and only if
+\[
+ c=0\qquad\text{or}\qquad k=0.
+\]
+For \(k\ne0\), the radius family gives a smooth secular correction but no
+bounded one.
+\end{theorem}
+
+Indeed, writing \(R^2=1+\eta c\),
+\[
+ \omega_R^2=\frac{k^2}{R^2}+m_{\rm branch}^2,
+ \qquad
+ \left.\partial_\eta\omega_R\right|_0=-\frac{ck^2}{2\omega}.
+\]
+Differentiating the exact family produces
+\[
+ \left.\partial_\eta e^{-i\omega_Rt}\right|_0
+ =\frac{i ck^2}{2\omega}t e^{-i\omega t}.
+\]
+The action-derived current is nonradical on every standard branch and extra
+multiplicity block, so the associated shell pairing cannot vanish when
+\(ck\ne0\).  This is a genuine \(\cR_{j,a}\) obstruction, not a polynomial
+\(\cP_{j,r}\) obstruction.
+
+\section{Exceptional resonance as an independent obstruction}
+
+Moment-map cancellation does not guarantee bounded or even nonsecular
+second-order closure in a restricted exceptional carrier.  For the
+axisymmetric exceptional \(\ell=1,k=0\) axial and polar amplitudes
+\((a_x,a_p)\), a twist velocity can cancel the time-translation moment map.
+The two parity self-sources can also be tuned to cancel their even
+\(L=2\) resonance.  But the required interior point has
+\(a_xa_p\ne0\), and the mixed axial \(L=2\) source has exact nonzero adjoint
+pairing
+\[
+ -\frac{8\sqrt3}{9}.
+\]
+The boundary axes retain their individual self-obstructions.  Thus the only
+axisymmetric two-polarization exceptional solution of the complete
+second-order equation is \(a_x=a_p=0\).  The example proves that resonant
+cokernel equations contain information independent of global charges.
+
+\section{Current bounded frontier}
+
+After the certified eliminations above, the full bounded problem is sharply
+localized.  The still-open rows are:
+\begin{enumerate}
+\item the homogeneous \(a\)-column against all oscillators;
+\item the homogeneous \(d\)-column against nonzero-momentum oscillators;
+\item shell resonances among bounded wave products and the remaining
+      exceptional/global blocks; and
+\item the common zero locus of these functionals for arbitrary finite sums.
+\end{enumerate}
+The electric, Wilson, and circumference columns are no longer open.  The
+first full-time velocity fixture also sharpens the remaining \(d\)-column.
+Locality gives
+\[
+ \cE^{(2)}[dt,u](t)=t\,\cE^{(2)}[c,u](t)
+                    +\cE^{(2)}[dt,u](0).
+\]
+For the two axial extra representatives and the first polar representative,
+the coefficient of \(t\) vanishes.  For the second polar representative it
+is the nonzero eight-row vector
+\[
+ (-36,0,164,-8\sqrt3 i,0,-100,-24,-20).
+\]
+Thus the isolated fixture has polynomial zero locus
+\(d z_{\mathrm{polar},2}=0\).  The previously computed constant-shell
+adjoint matrix remains valid, but cannot by itself establish boundedness.
+Joint cancellation with the \(a\)-column and same-channel sources remains
+open.  Any future completion must preserve the separation between
+positive-degree obstructions \(\cP\) and shell pairings \(\cR\).
+
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{@{}Y Y Y@{}}
+\toprule
+Carrier or column & Smooth correction & Bounded correction\\
+\midrule
+Complete finite-support cone & iff five moment maps vanish & additional
+\(\cP\) and \(\cR\) conditions\\
+Standard generalized-zero block & classified & classified completely\\
+Electric charge $\times$ oscillator & finite quasiperiodic & removable by
+duality transport\\
+Wilson $\times$ oscillator & zero source & zero source\\
+Circumference $\times$ $k=0$ mode & ordinary same-frequency & removable\\
+Circumference $\times$ $k\ne0$ mode & secular radius derivative & obstructed\\
+Velocity $d\times$ selected polar extra mode & smooth polynomial source &
+nonzero $\cP_{j,1}$ unless canceled jointly\\
+Exceptional axial--polar interior & secular criterion fails & obstructed\\
+Remaining $a,d$ oscillator columns & allowed by smooth theorem on moment cone
+& open\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Interpretation}
+
+The solution set near a symmetric compact background is not generally a
+linear space.  Its second-order approximation is a cone cut out first by a
+moment map and then, if uniform boundedness is demanded, by resonance
+conditions.  Three points are important.
+
+First, a linearly nonradical extra Weyl mode may fail to be tangent to the
+nonlinear fixed-charge solution space.  This is nonlinear selection, not
+linear gauge removal.  Second, mixing Einstein and extra directions can
+cancel the moment maps, so no conclusion follows from the sign of a pure
+branch alone.  Third, even complete moment-map cancellation leaves bounded
+resonances.  Smooth formal continuation and bounded perturbative stability
+are therefore different claims.
+
+The result supplies the middle map in the programme's residual atlas:
+\[
+ X_\alpha
+ \longmapsto \Omega(X_\alpha,\overline X_\alpha)
+ \longmapsto \mu(X_\alpha)
+ \longmapsto D^2\cE[X_\alpha,X_\alpha].
+\]
+Interaction sourcing, detector response, and BRST status are separate later
+maps.
+
+\section{What is not proved}
+
+The following remain outside the theorem:
+\begin{itemize}
+\item infinite harmonic sums and Sobolev completion;
+\item retarded or advanced solvability and nonlinear causal dependence;
+\item integration of a second-order jet to an exact or all-orders family;
+\item the final residual/background-stabilizer quotient;
+\item asymptotically flat, de Sitter, anti-de Sitter, or black-hole boundary
+      conditions;
+\item observer coupling, particles, quantum BRST cohomology, and unitarity.
+\end{itemize}
+These exclusions are not cosmetic.  In particular, Theorem~\ref{thm:smooth-cone}
+does not establish nonlinear stability.
+
+\section{Certificate and reproduction ledger}
+
+The manuscript is an \textsc{outline-allowed}/\textsc{draft-allowed}
+integration of committed certificates.  Its current source baseline is
+repository commit \texttt{35ae48835e4ef0bafb87bb94ff515446879d632b}.
+
+\begin{center}
+\begin{tabularx}{0.98\textwidth}{@{}Y Y@{}}
+\toprule
+Claim & Authoritative certificate\\
+\midrule
+Complete smooth finite-support cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_complete_finite_harmonic_smooth_global_second_order.json}\\
+Standard generalized-zero bounded cone &
+\cert{bridge/certificates/einstein_maxwell_weyl_standard_global_bounded_second_order.json}\\
+Electric and Wilson transport &
+\cert{bridge/certificates/einstein_maxwell_weyl_electric_wilson_complete_oscillator_transport.json}\\
+Complete circumference column &
+\cert{bridge/certificates/einstein_maxwell_weyl_circumference_complete_oscillator_bounded_classification.json}\\
+First full-time velocity polynomial column &
+\cert{bridge/certificates/einstein_maxwell_weyl_d_ell2_extra_full_time_polynomial.json}\\
+Exceptional two-polarization resonance &
+\cert{bridge/certificates/einstein_maxwell_weyl_exceptional_ell1_two_polarization_resonance.json}\\
+Opposite-momentum smooth theorem &
+\cert{bridge/certificates/einstein_maxwell_weyl_opposite_momentum_smooth_global_second_order.json}\\
+Moment-map/Taub bridge &
+\cert{bridge/certificates/einstein_maxwell_weyl_moment_map_taub_bridge.json}\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Each certificate records its schema, imported hashes, exact commands, test
+tier, assumptions, and missing-object ledger.  The independent verifier for
+each named certificate must pass before this manuscript advances to
+\textsc{theorem-frozen}.  The current draft does not promote the still-open
+complete bounded cone.
+
+\section{Outlook}
+
+The immediate mathematical target is the full bounded finite-support cone.
+The immediate physical target is to compare its strata with the transferred
+Einstein/extra/Maxwell interaction tensor and with observer response.  A
+later causal theorem would replace the finite secular right inverses by
+support-controlled Green operators or prove that this cannot be done.
+
+The intended final synthesis is not that every fourth-order mode disappears.
+It is that each mode receives an exact disposition:
+\[
+ \boxed{\text{linear mode}\;\to\;\text{moment map}\;\to\;
+ \text{resonance}\;\to\;\text{interaction and observation}.}
+\]
+
+\begin{thebibliography}{99}
+\bibitem{FischerMarsdenMoncrief}
+A.~E.~Fischer, J.~E.~Marsden, and V.~Moncrief,
+\emph{The structure of the space of solutions of Einstein's equations. I.
+One Killing field}, Ann. Inst. H. Poincar\'e A \textbf{33} (1980) 147--194.
+
+\bibitem{ArmsMarsdenMoncrief}
+J.~M.~Arms, J.~E.~Marsden, and V.~Moncrief,
+\emph{The structure of the space of solutions of Einstein's equations. II.
+Several Killing fields and the Einstein--Yang--Mills equations},
+Ann. Phys. \textbf{144} (1982) 81--106.
+
+\bibitem{AltasTekin}
+E.~Alta\c{s} and B.~Tekin,
+\emph{Linearization instability for generic gravity in AdS},
+Phys. Rev. D \textbf{97} (2018) 024028,
+\href{https://arxiv.org/abs/1705.10234}{arXiv:1705.10234}.
+
+\bibitem{Carlotto}
+A.~Carlotto,
+\emph{The general relativistic constraint equations},
+Living Rev. Relativ. \textbf{24} (2021) 2.
+
+\bibitem{PlebanskiHacyan}
+J.~F.~Pleba\'nski and S.~Hacyan,
+\emph{Some exceptional electrovac type D metrics with cosmological
+constant}, J. Math. Phys. \textbf{20} (1979) 1004--1010.
+
+\bibitem{LeeWald}
+J.~Lee and R.~M.~Wald,
+\emph{Local symmetries and constraints},
+J. Math. Phys. \textbf{31} (1990) 725--743.
+
+\bibitem{Paper10}
+GPT-5.6.sol and Claude Fable 5,
+\emph{Einstein--Maxwell waves inside Weyl--Maxwell gravity on a compact
+product}, companion manuscript, 2026.
+
+\bibitem{Paper91}
+GPT-5.6.sol,
+\emph{Pure-extra Taub obstruction and a balanced second-order extension in
+compact Weyl--Maxwell gravity}, companion manuscript, 2026.
+\end{thebibliography}
+
+\end{document}
